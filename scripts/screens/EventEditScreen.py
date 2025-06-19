@@ -27,7 +27,7 @@ from scripts.screens.Screens import Screens
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import ui_scale, process_text, ui_scale_dimensions, generate_sprite
+from scripts.utility import ui_scale, process_text, ui_scale_dimensions, generate_sprite, get_text_box_theme
 
 
 class EventEditScreen(Screens):
@@ -1413,7 +1413,7 @@ class EventEditScreen(Screens):
             self.editor_element["intro_text"] = UITextBoxTweaked(
                 "screens.event_edit.intro_text",
                 ui_scale(pygame.Rect((0, 0), (450, -1))),
-                object_id="#text_box_26_horizleft_pad_10_14",
+                object_id=get_text_box_theme("#text_box_26_horizleft_pad_10_14"),
                 line_spacing=1,
                 manager=MANAGER,
                 container=self.editor_container
@@ -3266,7 +3266,7 @@ class EventEditScreen(Screens):
         self.supply_element["text"] = UITextBoxTweaked(
             "screens.event_edit.supplies_info",
             ui_scale(pygame.Rect((0, 10), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -3278,7 +3278,7 @@ class EventEditScreen(Screens):
         self.supply_element["display"] = UITextBoxTweaked(
             "No block selected",
             ui_scale(pygame.Rect((0, 30), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -3387,7 +3387,7 @@ class EventEditScreen(Screens):
         self.supply_element["text"] = UITextBoxTweaked(
             "screens.event_edit.supply_type_info",
             ui_scale(pygame.Rect((0, 0), (270, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.supply_element["constraint_container"],
@@ -3415,7 +3415,7 @@ class EventEditScreen(Screens):
         self.supply_element["trigger_text"] = UITextBoxTweaked(
             "screens.event_edit.supply_trigger_info",
             ui_scale(pygame.Rect((0, 10), (270, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.supply_element["constraint_container"],
@@ -3444,7 +3444,7 @@ class EventEditScreen(Screens):
         self.supply_element["adjust_text"] = UITextBoxTweaked(
             "screens.event_edit.supply_adjust_info",
             ui_scale(pygame.Rect((0, 10), (270, 250))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.supply_element["constraint_container"],
@@ -3492,7 +3492,7 @@ class EventEditScreen(Screens):
         self.supply_element["increase_text"] = UITextBoxTweaked(
             "screens.event_edit.supply_increase_info",
             ui_scale(pygame.Rect((280, 12), (100, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -3517,7 +3517,7 @@ class EventEditScreen(Screens):
         self.other_clan_element["text"] = UITextBoxTweaked(
             "screens.event_edit.other_clan_info",
             ui_scale(pygame.Rect((0, 4), (270, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -3583,7 +3583,7 @@ class EventEditScreen(Screens):
         self.other_clan_element["display"] = UITextBoxTweaked(
             f"{self.other_clan_info}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -3602,7 +3602,7 @@ class EventEditScreen(Screens):
         self.outsider_element["text"] = UITextBoxTweaked(
             "screens.event_edit.outsider_info",
             ui_scale(pygame.Rect((0, 14), (270, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container
@@ -3662,7 +3662,7 @@ class EventEditScreen(Screens):
         self.outsider_element["display"] = UITextBoxTweaked(
             f"{self.outsider_info}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -3770,7 +3770,7 @@ class EventEditScreen(Screens):
         self.injury_element["start_intro"] = UITextBoxTweaked(
             "screens.event_edit.injury_info",
             ui_scale(pygame.Rect((0, 10), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["container"]
@@ -3780,7 +3780,7 @@ class EventEditScreen(Screens):
         self.injury_element["display"] = UITextBoxTweaked(
             "No block selected",
             ui_scale(pygame.Rect((0, 30), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["container"],
@@ -3889,7 +3889,7 @@ class EventEditScreen(Screens):
         self.injury_element["cat_intro"] = UITextBoxTweaked(
             "screens.event_edit.injury_cat_info",
             ui_scale(pygame.Rect((0, 10), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
@@ -3922,7 +3922,7 @@ class EventEditScreen(Screens):
         self.injury_element["cats_info"] = UITextBoxTweaked(
             f"cats: {selected_constraints['cats']}",
             ui_scale(pygame.Rect((10, 0), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
@@ -3937,7 +3937,7 @@ class EventEditScreen(Screens):
         self.injury_element["injury_intro"] = UITextBoxTweaked(
             "screens.event_edit.injury_pick_info",
             ui_scale(pygame.Rect((0, 10), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
@@ -3982,7 +3982,7 @@ class EventEditScreen(Screens):
         self.injury_element["injury_info"] = UITextBoxTweaked(
             f"injuries: {selected_constraints['injuries']}",
             ui_scale(pygame.Rect((10, 50), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
@@ -3995,7 +3995,7 @@ class EventEditScreen(Screens):
         self.injury_element["scar_text"] = UITextBoxTweaked(
             "screens.event_edit.scar_pick_info",
             ui_scale(pygame.Rect((0, 14), (250, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
@@ -4040,7 +4040,7 @@ class EventEditScreen(Screens):
         self.injury_element["scar_info"] = UITextBoxTweaked(
             f"scars: {selected_constraints['scars']}",
             ui_scale(pygame.Rect((10, 20), (200, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
@@ -4075,7 +4075,7 @@ class EventEditScreen(Screens):
         self.history_element["start_intro"] = UITextBoxTweaked(
             "screens.event_edit.history_info",
             ui_scale(pygame.Rect((0, 10), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["container"]
@@ -4085,7 +4085,7 @@ class EventEditScreen(Screens):
         self.history_element["display"] = UITextBoxTweaked(
             "No block selected",
             ui_scale(pygame.Rect((0, 50), (330, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["container"],
@@ -4195,7 +4195,7 @@ class EventEditScreen(Screens):
         self.history_element["cat_intro"] = UITextBoxTweaked(
             "screens.event_edit.history_cat_info",
             ui_scale(pygame.Rect((0, 10), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["constraint_container"],
@@ -4228,7 +4228,7 @@ class EventEditScreen(Screens):
         self.history_element["cats_info"] = UITextBoxTweaked(
             f"cats: {selected_constraints['cats']}",
             ui_scale(pygame.Rect((10, 0), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["constraint_container"],
@@ -4242,7 +4242,7 @@ class EventEditScreen(Screens):
         self.history_element["scar_history_text"] = UITextBoxTweaked(
             "screens.event_edit.scar_history_info",
             ui_scale(pygame.Rect((0, 10), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["constraint_container"],
@@ -4267,7 +4267,7 @@ class EventEditScreen(Screens):
         self.history_element["reg_history_text"] = UITextBoxTweaked(
             "screens.event_edit.reg_history_info",
             ui_scale(pygame.Rect((0, 10), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["constraint_container"],
@@ -4292,7 +4292,7 @@ class EventEditScreen(Screens):
         self.history_element["lead_history_text"] = UITextBoxTweaked(
             "screens.event_edit.lead_history_info",
             ui_scale(pygame.Rect((0, 10), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["constraint_container"],
@@ -4328,7 +4328,7 @@ class EventEditScreen(Screens):
         self.relationships_element["start_intro"] = UITextBoxTweaked(
             "screens.event_edit.relationships_info",
             ui_scale(pygame.Rect((0, 10), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["container"]
@@ -4338,7 +4338,7 @@ class EventEditScreen(Screens):
         self.relationships_element["display"] = UITextBoxTweaked(
             "No block selected",
             ui_scale(pygame.Rect((0, 50), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["container"],
@@ -4451,7 +4451,7 @@ class EventEditScreen(Screens):
         self.relationships_element["cat_intro"] = UITextBoxTweaked(
             "screens.event_edit.relationships_cat_info",
             ui_scale(pygame.Rect((0, 10), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
@@ -4471,7 +4471,7 @@ class EventEditScreen(Screens):
         self.relationships_element["mutual_info"] = UITextBoxTweaked(
             "screens.event_edit.relationships_mutual_info",
             ui_scale(pygame.Rect((5, 10), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
@@ -4525,7 +4525,7 @@ class EventEditScreen(Screens):
         self.relationships_element["cats_from_info"] = UITextBoxTweaked(
             f"selected: {selected_constraints['cats_from']}",
             ui_scale(pygame.Rect((10, 0), (110, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
@@ -4567,7 +4567,7 @@ class EventEditScreen(Screens):
         self.relationships_element["values_text"] = UITextBoxTweaked(
             "screens.event_edit.relationships_values_info",
             ui_scale(pygame.Rect((0, 14), (250, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
@@ -4594,7 +4594,7 @@ class EventEditScreen(Screens):
         self.relationships_element["values_info"] = UITextBoxTweaked(
             f"values: {selected_constraints['values']}",
             ui_scale(pygame.Rect((10, 20), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
@@ -4609,7 +4609,7 @@ class EventEditScreen(Screens):
         self.relationships_element["amount_text"] = UITextBoxTweaked(
             f"screens.event_edit.relationships_amount_info",
             ui_scale(pygame.Rect((0, 10), (240, 130))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
@@ -4655,7 +4655,7 @@ class EventEditScreen(Screens):
         self.exclusion_element["intro"] = UITextBoxTweaked(
             "screens.event_edit.exclude_info",
             ui_scale(pygame.Rect((0, 10), (300, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container
@@ -4683,7 +4683,7 @@ class EventEditScreen(Screens):
         self.exclusion_element["display"] = UITextBoxTweaked(
             f"exclude_involved: {self.excluded_cats}",
             ui_scale(pygame.Rect((10, 10), (250, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -4704,7 +4704,7 @@ class EventEditScreen(Screens):
         self.new_cat_editor["intro"] = UITextBoxTweaked(
             "screens.event_edit.n_c_info",
             ui_scale(pygame.Rect((0, 10), (295, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container
@@ -4765,7 +4765,7 @@ class EventEditScreen(Screens):
         self.new_cat_editor["display"] = UITextBoxTweaked(
             "No cat selected",
             ui_scale(pygame.Rect((0, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -4862,7 +4862,7 @@ class EventEditScreen(Screens):
         self.connections_element["text"] = UITextBoxTweaked(
             "screens.event_edit.new_cat_parent_info",
             ui_scale(pygame.Rect((0, 14), (260, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -4873,7 +4873,7 @@ class EventEditScreen(Screens):
         self.connections_element["display"] = UITextBoxTweaked(
             f"chosen cats: {self.selected_new_cat_info['parent']}",
             ui_scale(pygame.Rect((0, 10), (260, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -4910,7 +4910,7 @@ class EventEditScreen(Screens):
         self.new_gender_element["text"] = UITextBoxTweaked(
             "screens.event_edit.new_cat_gender_info",
             ui_scale(pygame.Rect((0, 14), (290, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -4947,7 +4947,7 @@ class EventEditScreen(Screens):
         self.new_age_element["text"] = UITextBoxTweaked(
             "screens.event_edit.new_cat_age_info",
             ui_scale(pygame.Rect((0, 14), (290, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -4985,7 +4985,7 @@ class EventEditScreen(Screens):
         self.new_status_element["text"] = UITextBoxTweaked(
             "screens.event_edit.new_cat_rank_info",
             ui_scale(pygame.Rect((0, 14), (260, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5018,7 +5018,7 @@ class EventEditScreen(Screens):
         self.cat_story_element["text"] = UITextBoxTweaked(
             "screens.event_edit.cat_type_info",
             ui_scale(pygame.Rect((0, 14), (310, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5073,7 +5073,7 @@ class EventEditScreen(Screens):
             self.new_cat_checkbox[f"{info['tag']}_text"] = UITextBoxTweaked(
                 f"screens.event_edit.{info['tag']}",
                 ui_scale(pygame.Rect((50, 10), (370, -1))),
-                object_id="#text_box_30_horizleft_pad_10_10",
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
                 line_spacing=1,
                 manager=MANAGER,
                 container=self.new_cat_element["checkbox_container"],
@@ -5091,7 +5091,7 @@ class EventEditScreen(Screens):
         self.main_cat_editor["intro"] = UITextBoxTweaked(
             "screens.event_edit.mass_death_info" if "mass_death" in self.sub_info else "screens.event_edit.m_c_info",
             ui_scale(pygame.Rect((0, 10), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container
@@ -5122,7 +5122,7 @@ class EventEditScreen(Screens):
         self.random_cat_editor["intro"] = UITextBoxTweaked(
             "screens.event_edit.r_c_info",
             ui_scale(pygame.Rect((0, 10), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container
@@ -5155,7 +5155,7 @@ class EventEditScreen(Screens):
         self.backstory_element["text"] = UITextBoxTweaked(
             "screens.event_edit.backstory_info",
             ui_scale(pygame.Rect((0, 14), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5208,7 +5208,7 @@ class EventEditScreen(Screens):
         self.backstory_element["display"] = UITextBoxTweaked(
             f"chosen backstories: {self.current_cat_dict['backstory']}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -5229,7 +5229,7 @@ class EventEditScreen(Screens):
         self.trait_element["text"] = UITextBoxTweaked(
             "screens.event_edit.trait_info",
             ui_scale(pygame.Rect((0, 14), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5296,7 +5296,7 @@ class EventEditScreen(Screens):
         self.trait_element["include_info"] = UITextBoxTweaked(
             f"chosen allowed traits: {self.current_cat_dict['trait']}",
             ui_scale(pygame.Rect((10, 60), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -5314,7 +5314,7 @@ class EventEditScreen(Screens):
         self.trait_element["exclude_info"] = UITextBoxTweaked(
             f"chosen excluded traits: {self.current_cat_dict['not_trait']}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -5333,7 +5333,7 @@ class EventEditScreen(Screens):
         self.skill_element["text"] = UITextBoxTweaked(
             "screens.event_edit.skill_info",
             ui_scale(pygame.Rect((0, 14), (440, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5392,7 +5392,7 @@ class EventEditScreen(Screens):
         self.skill_element["include_info"] = UITextBoxTweaked(
             f"chosen allowed skills: {self.current_cat_dict['skill']}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -5409,7 +5409,7 @@ class EventEditScreen(Screens):
         self.skill_element["exclude_info"] = UITextBoxTweaked(
             f"chosen excluded skills: {self.current_cat_dict['not_skill']}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -5471,7 +5471,7 @@ class EventEditScreen(Screens):
         self.death_element["text"] = UITextBoxTweaked(
             "screens.event_edit.death_info",
             ui_scale(pygame.Rect((40, 6), (-1, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5487,7 +5487,7 @@ class EventEditScreen(Screens):
         self.death_element["display"] = UITextBoxTweaked(
             f"dies: {self.current_cat_dict['dies']}",
             ui_scale(pygame.Rect((0, 6), (-1, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5513,6 +5513,7 @@ class EventEditScreen(Screens):
             scrolling_container_to_reset=self.editor_container,
             manager=MANAGER,
             container=self.editor_container,
+            title_object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             anchors={
                 "top_target": self.editor_element["age"]
             }
@@ -5545,7 +5546,7 @@ class EventEditScreen(Screens):
                 self.rel_status_element[f"{info['tag']}_text"] = UITextBoxTweaked(
                     f"screens.event_edit.{info['tag']}",
                     ui_scale(pygame.Rect((0, 10), (350, -1))),
-                    object_id="#text_box_30_horizleft_pad_10_10",
+                    object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
                     line_spacing=1,
                     manager=MANAGER,
                     container=self.rel_status_element["checkboxes"],
@@ -5580,7 +5581,7 @@ class EventEditScreen(Screens):
             self.rel_status_element[f"{value}_text"] = UITextBoxTweaked(
                 f"screens.event_edit.rel_values_{value}",
                 ui_scale(pygame.Rect((0, 10), (-1, -1))),
-                object_id="#text_box_30_horizleft_pad_10_10",
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
                 line_spacing=1,
                 manager=MANAGER,
                 container=self.rel_status_element["values"],
@@ -5663,7 +5664,7 @@ class EventEditScreen(Screens):
         self.rel_status_element["display"] = UITextBoxTweaked(
             f"chosen relationship_status: {self.current_cat_dict['rel_status']}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5684,7 +5685,7 @@ class EventEditScreen(Screens):
         self.age_element["text"] = UITextBoxTweaked(
             "screens.event_edit.age_info",
             ui_scale(pygame.Rect((0, 6), (220, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5709,7 +5710,7 @@ class EventEditScreen(Screens):
         self.age_element["display"] = UITextBoxTweaked(
             f"chosen age: {self.current_cat_dict['age']}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5729,7 +5730,7 @@ class EventEditScreen(Screens):
         self.rank_element["text"] = UITextBoxTweaked(
             "screens.event_edit.rank_info",
             ui_scale(pygame.Rect((0, 10), (220, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5754,7 +5755,7 @@ class EventEditScreen(Screens):
         self.rank_element["display"] = UITextBoxTweaked(
             f"chosen rank: {self.current_cat_dict['rank']}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5791,7 +5792,7 @@ class EventEditScreen(Screens):
         self.acc_element["text"] = UITextBoxTweaked(
             "screens.event_edit.acc_info",
             ui_scale(pygame.Rect((0, 15), (450, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5832,7 +5833,7 @@ class EventEditScreen(Screens):
         self.acc_element["display"] = UITextBoxTweaked(
             f"chosen accessories: {self.acc_info}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -5899,7 +5900,7 @@ class EventEditScreen(Screens):
         self.weight_element["text"] = UITextBoxTweaked(
             "<b>* weight:</b>",
             ui_scale(pygame.Rect((0, 15), (-1, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -5936,6 +5937,7 @@ class EventEditScreen(Screens):
             scrolling_container_to_reset=self.editor_container,
             manager=MANAGER,
             container=self.editor_container,
+            title_object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             anchors={
                 "top_target": self.type_element["display"]
             }
@@ -5954,7 +5956,7 @@ class EventEditScreen(Screens):
         self.rank_tag_checkbox["text"] = UITextBoxTweaked(
             "screens.event_edit.rank_tags",
             ui_scale(pygame.Rect((0, 10), (250, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.tag_element["collapse_container"],
@@ -6011,7 +6013,7 @@ class EventEditScreen(Screens):
         self.tag_element["display"] = UITextBoxTweaked(
             f"chosen tags: {self.tag_info}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -6060,7 +6062,7 @@ class EventEditScreen(Screens):
             self.basic_tag_checkbox[f"{info['tag']}_text"] = UITextBoxTweaked(
                 f"screens.event_edit.{info['tag']}",
                 ui_scale(pygame.Rect((0, 10), (350, -1))),
-                object_id="#text_box_30_horizleft_pad_10_10",
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
                 line_spacing=1,
                 manager=MANAGER,
                 container=self.tag_element["basic_checkbox_container"],
@@ -6087,7 +6089,7 @@ class EventEditScreen(Screens):
         self.type_element["text"] = UITextBoxTweaked(
             "<b>sub/type:</b>",
             ui_scale(pygame.Rect((0, 14), (-1, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -6118,7 +6120,7 @@ class EventEditScreen(Screens):
         self.type_element["display"] = UITextBoxTweaked(
             f"chosen subtypes: {self.sub_info}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -6159,7 +6161,7 @@ class EventEditScreen(Screens):
         self.season_element["text"] = UITextBoxTweaked(
             "screens.event_edit.season_info",
             ui_scale(pygame.Rect((0, 10), (250, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -6188,7 +6190,7 @@ class EventEditScreen(Screens):
         self.season_element["display"] = UITextBoxTweaked(
             f"chosen season: {self.season_info}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -6207,7 +6209,7 @@ class EventEditScreen(Screens):
         self.location_element["text"] = UITextBoxTweaked(
             "screens.event_edit.location_info",
             ui_scale(pygame.Rect((0, 10), (450, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
@@ -6238,7 +6240,7 @@ class EventEditScreen(Screens):
         self.location_element["display"] = UITextBoxTweaked(
             f"chosen location: {self.location_info}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
@@ -6290,7 +6292,7 @@ class EventEditScreen(Screens):
         self.event_id_element["text"] = UITextBoxTweaked(
             f"<b>event_id:</b>",
             ui_scale(pygame.Rect((0, 10), (-1, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container
@@ -6308,7 +6310,7 @@ class EventEditScreen(Screens):
         self.event_id_element["check_text"] = UITextBoxTweaked(
             "",
             ui_scale(pygame.Rect((0, 10), (-1, -1))),
-            object_id="#text_box_30_horizleft_pad_10_10",
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
