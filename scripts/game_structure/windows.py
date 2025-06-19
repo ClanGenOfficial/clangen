@@ -446,7 +446,7 @@ class EditorMissingInfo(UIWindow):
         text = "windows.editor_missing_info" if not alert_text else alert_text
         self.missing_info = UITextBoxTweaked(
             text,
-            ui_scale(pygame.Rect((0, 10), (360, -1))),
+            ui_scale(pygame.Rect((0, 30), (360, -1))),
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,

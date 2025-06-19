@@ -735,6 +735,7 @@ class EventEdit(Screens):
                             or not self.event_text_info
                             or not self.weight_info
                             or not self.type_info
+                            or not self.valid_injury()
                             or not self.valid_history()):
                         EditorMissingInfo(self.alert_text)
                     else:
@@ -1711,11 +1712,29 @@ class EventEdit(Screens):
                 }
         self.current_cat_dict = self.selected_new_cat_info
 
+
+    def valid_injury(self) -> bool:
+        """
+        Checks that all injury blocks have all required info.
+        """
+        valid = True
+        for block in self.injury_block_list:
+            if not block["cats"]:
+                valid = False
+            elif not block["injuries"]:
+                valid = False
+
+        if not valid:
+            self.alert_text = f"An Injury block is missing information! Do all blocks have cats and injuries selected?"
+
+        return valid
+
     def valid_history(self) -> bool:
         """
-        Checks if user has included death/injury histories for all killed or injured cats
+        Checks if user has included death/injury histories for all killed or injured cats. Also checks if history blocks
+        have all required info.
         """
-
+        valid = True
         dead_cats = []
         injured_cats = []
         if self.main_cat_info["dies"]:
@@ -1739,18 +1758,30 @@ class EventEdit(Screens):
         injury_histories = []
         for block in self.history_block_list:
             if "reg_death" in block or "lead_death" in block:
-                death_histories.extend("cats")
+                death_histories.extend(block["cats"])
             if "scar" in block:
-                injury_histories.extend("cats")
+                injury_histories.extend(block["cats"])
 
         missing_deaths = [cat for cat in dead_cats if cat not in death_histories]
         missing_injuries = [cat for cat in injured_cats if cat not in injury_histories]
 
         if missing_deaths or missing_injuries:
-            self.alert_text = f"<br><br>Death and/or Injury histories are missing for some affected cats. " \
+            self.alert_text = f"Death and/or Injury histories are missing for some affected cats. " \
                               f"<br><br>Missing Death for: {missing_deaths}<br>Missing Injury for: {missing_injuries} "
-            return False
-        return True
+            valid = False
+
+        if valid:
+            for block in self.history_block_list:
+                if not block["cats"]:
+                    valid = False
+                elif not block["scar"] and not block["reg_death"] and not block["lead_death"]:
+                    valid = False
+
+            if not valid:
+                self.alert_text = f"A History block is missing information! Do all blocks have cats selected and at " \
+                                  f"least one text section filled? "
+
+        return valid
     # HANDLE EVENT FUNCS
     def handle_outside_events(self, event):
         # AMOUNT CHANGES
