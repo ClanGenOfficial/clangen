@@ -647,7 +647,8 @@ class EventEditScreen(Screens):
 
         # HOVER PREVIEWS
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            if self.injury_element.get("scar_list") and event.ui_element in self.injury_element["scar_list"].buttons.values():
+            if (self.injury_element.get("scar_list")
+                    and event.ui_element in self.injury_element["scar_list"].buttons.values()):
                 for name, button in self.injury_element["scar_list"].buttons.items():
                     if button == event.ui_element:
                         self.injury_element["scar_preview"].set_image(
@@ -711,7 +712,7 @@ class EventEditScreen(Screens):
                         for ev in old_json:
                             if ev["event_id"] == opened_event["event_id"]:
                                 self.old_event_index = old_json.index(ev)
-                                
+
                         self.current_editor_tab = "settings"
                         self.clear_editor_tab()
                         if self.editor_element.get("save"):
@@ -735,7 +736,8 @@ class EventEditScreen(Screens):
                             or not self.weight_info
                             or not self.type_info
                             or not self.valid_injury()
-                            or not self.valid_history()):
+                            or not self.valid_history()
+                            or not self.valid_relationships()):
                         EditorMissingInfo(self.alert_text)
                     else:
                         new_event = self.compile_new_event()
@@ -1711,7 +1713,6 @@ class EventEditScreen(Screens):
                 }
         self.current_cat_dict = self.selected_new_cat_info
 
-
     def valid_injury(self) -> bool:
         """
         Checks that all injury blocks have all required info.
@@ -1778,9 +1779,28 @@ class EventEditScreen(Screens):
 
             if not valid:
                 self.alert_text = f"A History block is missing information! Do all blocks have cats selected and at " \
-                                  f"least one text section filled? "
+                                  f"least one text section filled?"
 
         return valid
+
+    def valid_relationships(self) -> bool:
+        """
+        Checks if relationship blocks have all required info
+        """
+        valid = True
+
+        for block in self.relationships_block_list:
+            if (not block["cats_from"]
+                    or not block["cats_to"]
+                    or not block["values"]
+                    or not block["amount"]):
+                valid = False
+
+        if not valid:
+            self.alert_text = f"A Relationship block is missing information! Do all blocks have cats, values, " \
+                              f"and an amount chosen?"
+        return valid
+
     # HANDLE EVENT FUNCS
     def handle_outside_events(self, event):
         # AMOUNT CHANGES
@@ -2972,8 +2992,8 @@ class EventEditScreen(Screens):
                 self.location_info.append(new_string)
 
         self.location_element["display"].set_text((f"chosen location: {str(self.location_info)}"
-                                                            if self.location_info
-                                                            else "chosen location: ['any']"))
+                                                   if self.location_info
+                                                   else "chosen location: ['any']"))
         self.editor_container.on_contained_elements_changed(self.location_element["display"])
 
     def update_season_info(self):
@@ -3112,6 +3132,7 @@ class EventEditScreen(Screens):
 
         # SUPPLY
         self.create_supply_editor()
+
     # OUTSIDE CONSEQUENCES EDITOR
 
     def create_supply_editor(self):
@@ -3858,8 +3879,8 @@ class EventEditScreen(Screens):
         self.injury_element["scar_preview"] = UIModifiedImage(
             ui_scale(pygame.Rect((150, 0), (100, 100))),
             image_surface=self.get_scar_example(selected_constraints["scars"][0]
-                                                          if selected_constraints["scars"]
-                                                          else self.all_scars[0]),
+                                                if selected_constraints["scars"]
+                                                else self.all_scars[0]),
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
             anchors={
@@ -3882,7 +3903,8 @@ class EventEditScreen(Screens):
 
     def get_scar_example(self, scar):
 
-        return pygame.transform.scale(generate_sprite(create_option_preview_cat(scar=scar)), ui_scale_dimensions((100, 100)))
+        return pygame.transform.scale(generate_sprite(create_option_preview_cat(scar=scar)),
+                                      ui_scale_dimensions((100, 100)))
 
     def create_history_editor(self):
 
@@ -3977,7 +3999,8 @@ class EventEditScreen(Screens):
             tool_tip_text="delete selected block"
         )
 
-        self.create_divider(self.history_element["display"], "history_start", container=self.history_element["container"])
+        self.create_divider(self.history_element["display"], "history_start",
+                            container=self.history_element["container"])
 
     def clear_history_constraints(self):
         if self.history_element.get("constraint_container"):
@@ -5612,8 +5635,8 @@ class EventEditScreen(Screens):
         if not self.acc_element.get("preview"):
             self.acc_element["preview"] = UIModifiedImage(
                 ui_scale(pygame.Rect((80, 0), (100, 100))),
-                image_surface=self.get_acc_example(acc = self.acc_info[0] if self.acc_info
-                                                   else category[0]),
+                image_surface=self.get_acc_example(acc=self.acc_info[0] if self.acc_info
+                else category[0]),
                 manager=MANAGER,
                 container=self.editor_container,
                 anchors={
@@ -5626,7 +5649,8 @@ class EventEditScreen(Screens):
         """
         Returns the example sprite image for the given acc.
         """
-        return pygame.transform.scale(generate_sprite(create_option_preview_cat(acc=acc)), ui_scale_dimensions((100, 100)))
+        return pygame.transform.scale(generate_sprite(create_option_preview_cat(acc=acc)),
+                                      ui_scale_dimensions((100, 100)))
 
     def create_weight_editor(self):
         self.weight_element["text"] = UITextBoxTweaked(
@@ -5869,7 +5893,7 @@ class EventEditScreen(Screens):
             },
             starting_selection=self.sub_info
         )
-        
+
     def create_season_editor(self):
         self.season_element["text"] = UITextBoxTweaked(
             "screens.event_edit.season_info",
@@ -6034,7 +6058,3 @@ class EventEditScreen(Screens):
             text = "screens.event_edit.valid_id"
 
         self.event_id_element["check_text"].set_text(text)
-
-
-
-
