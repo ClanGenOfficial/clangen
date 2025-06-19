@@ -3066,6 +3066,10 @@ class EventEditScreen(Screens):
                         break
                     else:
                         new_string = f"{location}_camp{camp_index}"
+                        selected_camps = [camp for camp in new_string.split("_") if "camp" in camp]
+                        available_camps = len(self.all_camps[parent_biome])
+                        if len(selected_camps) == available_camps:
+                            new_string = f"{parent_biome.casefold()}"
                         present = False
                         old_location_tag = location
                         break
