@@ -215,6 +215,9 @@ class EventEditScreen(Screens):
         self.editor_element = {}
         self.lock_buttons = {}
 
+        self.param_locks: dict = {}
+        """Param lock information. Key is the name of the lock, value is bool of the lock."""
+
         self.current_preview_state: int = self.preview_states[0]
         """The currently used preview state. This can be 0 (preview off), 1 (plural), or 2 (singular)"""
 
@@ -700,6 +703,7 @@ class EventEditScreen(Screens):
             elif event.ui_element in self.event_buttons.values():
                 for index, button in self.event_buttons.items():
                     if button == event.ui_element:
+                        self.param_locks.clear()
                         game.event_editing = True
                         self.clear_event_info()
                         opened_event: dict = self.event_list[index]
@@ -730,10 +734,15 @@ class EventEditScreen(Screens):
 
             # PARAM LOCKS
             elif event.ui_element in self.lock_buttons.values():
-                if event.ui_element.text == Icon.PAW:
-                    event.ui_element.set_text(Icon.SCRATCHES)
-                elif event.ui_element.text == Icon.SCRATCHES:
-                    event.ui_element.set_text(Icon.PAW)
+                for name, button in self.lock_buttons.items():
+                    if button != event.ui_element:
+                        continue
+                    if button.text == Icon.PAW:
+                        button.set_text(Icon.SCRATCHES)
+                        self.param_locks[name] = True
+                    elif button.text == Icon.SCRATCHES:
+                        button.set_text(Icon.PAW)
+                        self.param_locks[name] = False
 
             elif event.ui_element in self.editor_element.values():
                 # SAVE NEW EVENT
@@ -1235,7 +1244,8 @@ class EventEditScreen(Screens):
         self.event_id_element = {}
         self.event_id_info = ""
         self.location_element = {}
-        self.location_info = []
+        if not self.param_locks.get("location"):
+            self.location_info = []
         self.season_element = {}
         self.season_info = []
         self.type_element = {}
@@ -1493,6 +1503,13 @@ class EventEditScreen(Screens):
             },
             tool_tip_text="If locked, these parameters will be preserved when making a new event."
         )
+        if name in self.param_locks.keys():
+            # ensure lock reflects current setting
+            if self.param_locks[name]:
+                self.lock_buttons[name].set_text(Icon.SCRATCHES)
+        else:
+            self.param_locks[name] = False
+
 
     def create_divider(self, top_anchor, name, off_set: int = -12, container=None):
         """
