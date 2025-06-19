@@ -1224,9 +1224,9 @@ class EventEditScreen(Screens):
                     )
                 preview = process_text(event["event_text"], test_dict)
                 self.event_buttons[index] = UISurfaceImageButton(
-                    ui_scale(pygame.Rect((0, -2 if index > 0 else 0), (216, 36))),
+                    ui_scale(pygame.Rect((0, -2 if index > 0 else 0), (234, 36))),
                     event["event_id"],
-                    get_button_dict(ButtonStyles.DROPDOWN, (216, 36)),
+                    get_button_dict(ButtonStyles.DROPDOWN, (234, 36)),
                     manager=MANAGER,
                     object_id="@buttonstyles_dropdown",
                     starting_height=1,
