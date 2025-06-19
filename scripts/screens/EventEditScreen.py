@@ -442,6 +442,10 @@ class EventEditScreen(Screens):
         if len(matching_biomes) <= 1:
             biome = matching_biomes[0] if matching_biomes else "general"
 
+        if not self.chosen_type:
+            for name in self.event_types.keys():
+                if name in event["event_id"]:
+                    self.chosen_type = name
         self.old_event_path = f"resources/lang/en/events/{self.chosen_type}/{biome.casefold()}.json"
 
         self.type_info = [self.chosen_type]
@@ -656,8 +660,7 @@ class EventEditScreen(Screens):
         # SEARCHING
         if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
             self.search_text = self.event_search.get_text()
-            if self.search_text:
-                self.create_event_display(event_type=self.chosen_type, biome=self.chosen_biome)
+            self.create_event_display(event_type=self.chosen_type, biome=self.chosen_biome)
 
         # HOVER PREVIEWS
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
@@ -700,6 +703,7 @@ class EventEditScreen(Screens):
                 if event.ui_element == self.biome_tab_buttons["back"]:
                     self.select_type_tab_creation()
                     self.chosen_biome = None
+                    self.chosen_type = None
                     self.create_event_display(event_type=self.chosen_type)
 
                 else:
@@ -1235,29 +1239,28 @@ class EventEditScreen(Screens):
         for index, event in enumerate(event_list):
             if not event_type:
                 self.all_event_ids.append(event["event_id"])
-            else:
-                test_dict = {}
-                for abbr in self.test_cat_names:
-                    pronoun = choice(
-                        [pro for pro in self.test_pronouns if pro["conju"] == 2]
-                    )
-                    test_dict[abbr] = (
-                        self.test_cat_names[abbr], pronoun
-                    )
-                preview = process_text(event["event_text"], test_dict)
-                self.event_buttons[index] = UISurfaceImageButton(
-                    ui_scale(pygame.Rect((0, -2 if index > 0 else 0), (234, 36))),
-                    event["event_id"],
-                    get_button_dict(ButtonStyles.DROPDOWN, (234, 36)),
-                    manager=MANAGER,
-                    object_id="@buttonstyles_dropdown",
-                    starting_height=1,
-                    anchors={
-                        "top_target": self.event_buttons[index - 1]
-                    } if self.event_buttons.get(index - 1) else None,
-                    container=self.event_list_container,
-                    tool_tip_text=preview
+            test_dict = {}
+            for abbr in self.test_cat_names:
+                pronoun = choice(
+                    [pro for pro in self.test_pronouns if pro["conju"] == 2]
                 )
+                test_dict[abbr] = (
+                    self.test_cat_names[abbr], pronoun
+                )
+            preview = process_text(event["event_text"], test_dict)
+            self.event_buttons[index] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((0, -2 if index > 0 else 0), (234, 36))),
+                event["event_id"],
+                get_button_dict(ButtonStyles.DROPDOWN, (234, 36)),
+                manager=MANAGER,
+                object_id="@buttonstyles_dropdown",
+                starting_height=1,
+                anchors={
+                    "top_target": self.event_buttons[index - 1]
+                } if self.event_buttons.get(index - 1) else None,
+                container=self.event_list_container,
+                tool_tip_text=preview
+            )
 
         if not self.event_search:
             self.event_search = pygame_gui.elements.UITextEntryLine(
@@ -1274,6 +1277,9 @@ class EventEditScreen(Screens):
     def kill_event_buttons(self):
         for event in self.event_buttons:
             self.event_buttons[event].kill()
+        if self.event_list_container:
+            self.event_list_container.kill()
+            self.event_list_container = None
 
     # EDITOR DISPLAY
     def clear_editor_tab(self):
