@@ -193,6 +193,8 @@ class EventEditScreen(Screens):
         self.event_list_container = None
         self.list_frame = None
         self.main_menu_button = None
+        self.event_search = None
+        self.search_text = None
 
         self.event_list: list = []
         """List of loaded existing events"""
@@ -651,6 +653,12 @@ class EventEditScreen(Screens):
             elif platform.system() == "Linux":
                 subprocess.Popen(["xdg-open", event.link_target])
 
+        # SEARCHING
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+            self.search_text = self.event_search.get_text()
+            if self.search_text:
+                self.create_event_display(event_type=self.chosen_type, biome=self.chosen_biome)
+
         # HOVER PREVIEWS
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if (self.injury_element.get("scar_list")
@@ -691,6 +699,7 @@ class EventEditScreen(Screens):
             elif event.ui_element in self.biome_tab_buttons.values():
                 if event.ui_element == self.biome_tab_buttons["back"]:
                     self.select_type_tab_creation()
+                    self.chosen_biome = None
                     self.create_event_display(event_type=self.chosen_type)
 
                 else:
@@ -934,6 +943,10 @@ class EventEditScreen(Screens):
 
         if self.event_list_container:
             self.event_list_container.kill()
+        if self.event_search:
+            self.event_search.kill()
+            self.event_search = None
+        self.search_text = None
 
         if self.editor_container:
             self.editor_container.kill()
@@ -1033,6 +1046,7 @@ class EventEditScreen(Screens):
     def select_type_tab_creation(self):
         # clear all tabs first
         self.kill_tabs()
+
         self.type_tab_buttons["death"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 136), (36, 36))),
             Icon.STARCLAN,
@@ -1200,9 +1214,17 @@ class EventEditScreen(Screens):
         elif event_type and biome:
             event_list.extend(self.get_event_json(f"{path}/{event_type}/{biome.casefold()}.json"))
 
+        if self.search_text:
+            available = event_list.copy()
+            event_list = []
+            for event in available:
+                if self.search_text in event["event_id"]:
+                    event_list.append(event)
+            event_list = [event for event in event_list.copy() if set(event["event_id"]).intersection(set(self.search_text))]
+
         if not self.event_list_container:
             self.event_list_container = UIModifiedScrollingContainer(
-                ui_scale(pygame.Rect((68, 90), (236, 540))),
+                ui_scale(pygame.Rect((68, 90), (236, 511))),
                 starting_height=3,
                 manager=MANAGER,
                 allow_scroll_y=True,
@@ -1236,6 +1258,18 @@ class EventEditScreen(Screens):
                     container=self.event_list_container,
                     tool_tip_text=preview
                 )
+
+        if not self.event_search:
+            self.event_search = pygame_gui.elements.UITextEntryLine(
+                ui_scale(pygame.Rect((70, 0), (230, 29))),
+                manager=MANAGER,
+                anchors={
+                    "top_target": self.event_list_container
+                },
+                placeholder_text="type and hit enter to search"
+            )
+            self.event_search.change_layer(3)
+            self.event_search.set_tooltip("ddd")
 
     def kill_event_buttons(self):
         for event in self.event_buttons:
