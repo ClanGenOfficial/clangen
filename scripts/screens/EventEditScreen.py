@@ -748,6 +748,7 @@ class EventEditScreen(Screens):
                 # SAVE NEW EVENT
                 if event.ui_element == self.editor_element["save"]:
                     self.event_text_info = self.event_text_element["event_text"].html_text
+                    # check validity of save first
                     if (not self.event_text_info
                             or not self.weight_info
                             or not self.type_info
@@ -757,6 +758,7 @@ class EventEditScreen(Screens):
                             or not self.valid_relationships()
                             or not self.valid_supply()):
                         EditorMissingInfo(self.alert_text)
+                    # if it's all good, SAVE!
                     else:
                         new_event = self.compile_new_event()
                         path = self.find_event_path()
@@ -1547,12 +1549,12 @@ class EventEditScreen(Screens):
         )
 
     # HELPERS
-    def get_involved_cats(self, index_limit=None) -> list:
+    def get_involved_cats(self, index_limit=None, include_clan=True) -> list:
         """
         Returns a list of cats involved in this event.
         :param index_limit: indicate a maximum index for the new cat list.
+        :param include_clan: should "clan" and "some_clan" tags be included
         """
-        # TODO: make sure this gets an option to indicate if r_c is in the event
         involved_cats = ["m_c"]
         if self.random_cat_info:
             involved_cats.append("r_c")
@@ -1564,6 +1566,9 @@ class EventEditScreen(Screens):
                     new_cat_list.remove(item)
 
         involved_cats.extend(new_cat_list)
+
+        if include_clan:
+            involved_cats.extend(["some_clan", "clan"])
 
         return involved_cats
 
@@ -2722,7 +2727,7 @@ class EventEditScreen(Screens):
 
         # AVAILABLE CATS
         self.connections_element["cat_list"].new_item_list(self.get_involved_cats(
-            index_limit=int(self.selected_new_cat.strip("n_c:"))
+            index_limit=int(self.selected_new_cat.strip("n_c:"), False)
         ))
 
         # EVERYTHING ELSE
@@ -4601,7 +4606,7 @@ class EventEditScreen(Screens):
         )
         self.exclusion_element["cat_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 148)),
-            item_list=self.get_involved_cats(),
+            item_list=self.get_involved_cats(include_clan=False),
             button_dimensions=(96, 30),
             container=self.editor_container,
             manager=MANAGER,
@@ -4809,7 +4814,7 @@ class EventEditScreen(Screens):
         )
         self.connections_element["cat_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (120, 148)),
-            item_list=self.get_involved_cats(index_limit=int(self.selected_new_cat.strip("n_c:"))),
+            item_list=self.get_involved_cats(index_limit=int(self.selected_new_cat.strip("n_c:")), include_clan=False),
             button_dimensions=(116, 30),
             container=self.editor_container,
             manager=MANAGER,
