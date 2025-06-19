@@ -170,12 +170,12 @@ class EventEditScreen(Screens):
     """Dict for section tab info. Key is the name of the tab, value is the icon assigned."""
 
     amount_buttons: dict = {
-        "amount_up_low_button": Icon.ARROW_RIGHT,
-        "amount_up_mid_button": Icon.ARROW_RIGHT,
-        "amount_up_high_button": Icon.ARROW_RIGHT,
-        "amount_down_low_button": Icon.ARROW_LEFT,
-        "amount_down_mid_button": Icon.ARROW_LEFT,
-        "amount_down_high_button": Icon.ARROW_LEFT
+        "amount_up_low_button": Icon.UP_LOW,
+        "amount_up_mid_button": Icon.UP_MID,
+        "amount_up_high_button": Icon.UP_HIGH,
+        "amount_down_low_button": Icon.DOWN_LOW,
+        "amount_down_mid_button": Icon.DOWN_MID,
+        "amount_down_high_button": Icon.DOWN_HIGH
     }
     """Dict for amount button names and icons. Key is the name, value is the icon assigned."""
 
@@ -752,11 +752,11 @@ class EventEditScreen(Screens):
                 for name, button in self.lock_buttons.items():
                     if button != event.ui_element:
                         continue
-                    if button.text == Icon.PAW:
-                        button.set_text(Icon.SCRATCHES)
+                    if button.text == Icon.UNLOCK:
+                        button.set_text(Icon.LOCK)
                         self.param_locks[name] = True
-                    elif button.text == Icon.SCRATCHES:
-                        button.set_text(Icon.PAW)
+                    elif button.text == Icon.LOCK:
+                        button.set_text(Icon.UNLOCK)
                         self.param_locks[name] = False
 
             elif event.ui_element in self.editor_element.values():
@@ -1561,7 +1561,7 @@ class EventEditScreen(Screens):
 
         self.lock_buttons[name] = UISurfaceImageButton(
             ui_scale(pygame.Rect((x_offset, y_offset), (36, 36))),
-            Icon.PAW,
+            Icon.UNLOCK,
             get_button_dict(ButtonStyles.ICON, (36, 36)),
             manager=MANAGER,
             object_id="@buttonstyles_icon",
@@ -1582,7 +1582,7 @@ class EventEditScreen(Screens):
         if name in self.param_locks.keys():
             # ensure lock reflects current setting
             if self.param_locks[name]:
-                self.lock_buttons[name].set_text(Icon.SCRATCHES)
+                self.lock_buttons[name].set_text(Icon.LOCK)
         else:
             self.param_locks[name] = False
 
@@ -3596,7 +3596,9 @@ class EventEditScreen(Screens):
                 prev_element = None
             self.other_clan_element[button] = UISurfaceImageButton(
                 ui_scale(
-                    pygame.Rect(((-2 if prev_element else 20), (-2 if icon == Icon.ARROW_LEFT else 110)), (30, 30))),
+                    pygame.Rect(((-2 if prev_element else 20), (-2
+                                                                if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
+                                                                else 110)), (30, 30))),
                 icon,
                 get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
                 manager=MANAGER,
@@ -3609,7 +3611,7 @@ class EventEditScreen(Screens):
                                         if prev_element
                                         else self.other_clan_element["entry"])
                     }
-                    if icon == Icon.ARROW_LEFT
+                    if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
                     else
                     {
                         "left_target": (prev_element
@@ -3676,7 +3678,9 @@ class EventEditScreen(Screens):
                 prev_element = None
             self.outsider_element[button] = UISurfaceImageButton(
                 ui_scale(
-                    pygame.Rect(((-2 if prev_element else 20), (-2 if icon == Icon.ARROW_LEFT else 100)), (30, 30))),
+                    pygame.Rect(((-2 if prev_element else 20), (-2
+                                                                if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
+                                                                else 100)), (30, 30))),
                 icon,
                 get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
                 manager=MANAGER,
@@ -3689,7 +3693,7 @@ class EventEditScreen(Screens):
                                         if prev_element
                                         else self.outsider_element["entry"])
                     }
-                    if icon == Icon.ARROW_LEFT
+                    if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
                     else
                     {
                         "left_target": (prev_element
@@ -4674,7 +4678,9 @@ class EventEditScreen(Screens):
                 prev_element = None
             self.relationships_element[button] = UISurfaceImageButton(
                 ui_scale(
-                    pygame.Rect(((-2 if prev_element else 20), (-2 if icon == Icon.ARROW_LEFT else 10)), (30, 30))),
+                    pygame.Rect(((-2 if prev_element else 20), (-2
+                                                                if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
+                                                                else 10)), (30, 30))),
                 icon,
                 get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
                 manager=MANAGER,
@@ -4682,7 +4688,7 @@ class EventEditScreen(Screens):
                 container=self.relationships_element["constraint_container"],
                 anchors={
                     "top_target": (self.relationships_element["amount_up_high_button"]
-                                   if icon == Icon.ARROW_LEFT
+                                   if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
                                    else self.editor_element["values"]),
                     "left_target": (prev_element
                                     if prev_element
@@ -5645,7 +5651,7 @@ class EventEditScreen(Screens):
             )
             self.rel_value_element[f"{value}_low_button"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((10, 12), (30, 30))),
-                Icon.ARROW_RIGHT,
+                Icon.UP_LOW,
                 get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
                 manager=MANAGER,
                 object_id="@buttonstyles_dropdown",
@@ -5664,7 +5670,7 @@ class EventEditScreen(Screens):
             )
             self.rel_value_element[f"{value}_mid_button"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-2, 12), (30, 30))),
-                Icon.ARROW_RIGHT,
+                Icon.UP_MID,
                 get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
                 manager=MANAGER,
                 object_id="@buttonstyles_dropdown",
@@ -5683,7 +5689,7 @@ class EventEditScreen(Screens):
             )
             self.rel_value_element[f"{value}_high_button"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-2, 12), (30, 30))),
-                Icon.ARROW_RIGHT,
+                Icon.UP_HIGH,
                 get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
                 manager=MANAGER,
                 object_id="@buttonstyles_dropdown",
