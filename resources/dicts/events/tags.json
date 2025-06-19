@@ -149,7 +149,8 @@
             "tag": "dead",
             "setting": false,
             "conflict": []
-        },{
+        },
+        {
             "tag": "litter",
             "setting": false,
             "conflict": ["exists", "new_name", "old_name"]
