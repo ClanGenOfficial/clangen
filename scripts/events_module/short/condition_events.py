@@ -26,6 +26,7 @@ from scripts.game_structure.game.switches import (
     Switches,
     get_switch,
     set_switch,
+    switch_list_append,
 )
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
@@ -612,10 +613,7 @@ class Condition_Events:
             # heal the cat
             elif cat.healed_condition is True:
                 History.remove_possible_history(cat, illness)
-                set_switch(
-                    Switches.skip_conditions,
-                    get_switch(Switches.skip_conditions).append(illness),
-                )
+                switch_list_append(Switches.skip_conditions, illness)
                 # gather potential event strings for healed illness
                 possible_string_list = Condition_Events.ILLNESS_HEALED_STRINGS[illness]
 
@@ -719,10 +717,7 @@ class Condition_Events:
                 break
 
             elif cat.healed_condition is True:
-                set_switch(
-                    Switches.skip_conditions,
-                    get_switch(Switches.skip_conditions).append(injury),
-                )
+                switch_list_append(Switches.skip_conditions, injury)
                 triggered = True
 
                 # Try to give a scar, and get the event text to be displayed
@@ -1198,10 +1193,7 @@ class Condition_Events:
                 event_list.append(event)
 
                 # we add the condition to this game switch, this is so we can ensure it's skipped over for this moon
-                set_switch(
-                    Switches.skip_conditions,
-                    get_switch(Switches.skip_conditions).append(new_condition_name),
-                )
+                switch_list_append(Switches.skip_conditions, new_condition_name)
                 # here we give the new condition
                 if new_condition_name in Condition_Events.INJURIES:
                     cat.get_injured(new_condition_name, event_triggered=event_triggered)
