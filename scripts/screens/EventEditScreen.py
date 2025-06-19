@@ -5261,7 +5261,6 @@ class EventEditScreen(Screens):
             prev_element = self.level_element[f"{level + 1}"]
 
     def create_dies_editor(self, editor):
-        # TODO: set up a lock if subtype is death
         self.death_element["checkbox"] = UICheckbox(
             position=(7, 7),
             container=self.editor_container,
@@ -5286,6 +5285,11 @@ class EventEditScreen(Screens):
                 "top_target": editor["intro"]
             }
         )
+        if ("death" in self.type_info
+                and self.current_cat_dict == self.main_cat_info
+                and not self.current_cat_dict["dies"]):
+            self.current_cat_dict["dies"] = True
+
         self.death_element["display"] = UITextBoxTweaked(
             f"dies: {self.current_cat_dict['dies']}",
             ui_scale(pygame.Rect((0, 6), (-1, -1))),
