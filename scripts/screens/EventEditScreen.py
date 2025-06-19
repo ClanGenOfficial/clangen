@@ -943,6 +943,11 @@ class EventEditScreen(Screens):
                 ele.kill()
             self.editor_element.clear()
 
+        if self.event_text_element:
+            for ele in self.event_text_element.values():
+                ele.kill()
+        self.event_text_element.clear()
+
         self.add_button.kill()
         self.kill_tabs()
         self.kill_event_buttons()
