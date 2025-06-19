@@ -1482,15 +1482,17 @@ class EventEditScreen(Screens):
         elif self.current_editor_tab == "outside consequences":
             self.generate_outside_tab()
 
-    def create_lock(self, top_anchor, name, container=None):
+    def create_lock(self, name, top_anchor, left_anchor=None, container=None):
         """
         Creates a lock button based on parameters.
         :param top_anchor: The element the divider should anchor it's top coord to
+        :param left_anchor: The element the divider should anchor it's left coord to
         :param name: The key the divider should use within the self.editor_element dict
         :param container: As a default, it uses self.editor_container, but you can change that with this param
         """
         if not container:
             container = self.editor_container
+
         self.lock_buttons[name] = UISurfaceImageButton(
             ui_scale(pygame.Rect((10, 10), (36, 36))),
             Icon.PAW,
@@ -1498,9 +1500,16 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             object_id="@buttonstyles_icon",
             container=container,
-            anchors={
-                "top_target": top_anchor
-            },
+            anchors=(
+                {
+                    "top_target": top_anchor
+                }
+                if not left_anchor else
+                {
+                    "top_target": top_anchor,
+                    "left_target": left_anchor
+                }
+            ),
             tool_tip_text="If locked, these parameters will be preserved when making a new event."
         )
         if name in self.param_locks.keys():
@@ -1509,7 +1518,6 @@ class EventEditScreen(Screens):
                 self.lock_buttons[name].set_text(Icon.SCRATCHES)
         else:
             self.param_locks[name] = False
-
 
     def create_divider(self, top_anchor, name, off_set: int = -12, container=None):
         """
@@ -6055,20 +6063,24 @@ class EventEditScreen(Screens):
             )
             prev_element = self.location_element[biome]
 
-        self.create_lock(self.location_element[biome_list[-1]], "location")
-
         self.location_element["display"] = UITextBoxTweaked(
             f"chosen location: {self.location_info}",
-            ui_scale(pygame.Rect((0, 10), (420, -1))),
+            ui_scale(pygame.Rect((10, 10), (380, -1))),
             object_id="#text_box_30_horizleft_pad_10_10",
             manager=MANAGER,
             container=self.editor_container,
             anchors={
-                "top_target": self.location_element[biome_list[-1]],
-                "left_target": self.lock_buttons["location"]
+                "top_target": self.location_element[biome_list[-1]]
             },
             allow_split_dashes=False
         )
+
+        self.create_lock(
+            name="location",
+            top_anchor=self.location_element[biome_list[-1]],
+            left_anchor=self.location_element["display"]
+        )
+
         self.create_divider(self.location_element["display"], "location")
 
     def update_camp_list(self, chosen_biome):
