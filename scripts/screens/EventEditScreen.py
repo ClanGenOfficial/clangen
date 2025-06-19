@@ -30,7 +30,7 @@ from scripts.ui.icon import Icon
 from scripts.utility import ui_scale, process_text, ui_scale_dimensions, generate_sprite
 
 
-class EventEdit(Screens):
+class EventEditScreen(Screens):
     """
     This screen provides an interface to allow devs to edit and create events.
     """
@@ -76,7 +76,6 @@ class EventEdit(Screens):
     event_types: dict = TYPES
     """Dict with key as event type and value as allowed subtypes for that type."""
 
-    # TODO: consider moving some of these into a file that better facilitates new additions
     basic_tag_list: list = TAGS["settings"]
     """List of dicts for all basic event tags. Each dict holds tag name, conflicts, setting, and type required."""
 

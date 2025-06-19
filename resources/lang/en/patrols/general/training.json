@@ -11792,5 +11792,116 @@
             "art": "train_general_intro"        
                 }
 	]
-}
+},
+{
+     "patrol_id": "gen_train_ihatethisfluffingfamily1",
+     "biome": ["any"],
+     "season": ["any"],
+     "types": ["training"],
+     "tags": [],
+     "patrol_art": "app_cat_looking_up",
+     "min_cats": 1,
+     "max_cats": 1,
+     "min_max_status": {
+         "apprentice": [1, 1]
+     },
+     "weight": 20,
+     "intro_text": "p_l storms out of camp in a huff after being scolded. Mouse-brains! They're all mouse-brains!",
+     "decline_text": "Of course, the <i>moment</i> {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves}, someone chases after {PRONOUN/p_l/object} and brings {PRONOUN/p_l/object} straight back to camp. <i>Fox-dung!</i>",
+     "chance_of_success": 70,
+     "success_outcomes": [
+         {
+             "text": "p_l takes some time to {PRONOUN/p_l/self}, eventually calming down enough to return to camp.",
+             "exp": 20,
+             "weight": 20
+         },
+         {
+             "text": "Deep breaths, s_c. Go to your happy place. s_c repeats that mantra over and over until, finally, {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/poss} anger begin to dissipate.",
+             "exp": 20,
+             "weight": 40,
+             "stat_trait": [
+                 "calm"
+             ],
+             "can_have_stat": ["p_l"]
+         },
+         {
+             "text": "Now wait just a stars-damned minute, since when has s_c allowed other cats' opinions to affect {PRONOUN/s_c/object} so much? {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} s_c for StarClan's sake, best apprentice in all of c_n! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} not going to sit around moping! No, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} going to walk <i>straight</i> back to camp with {PRONOUN/s_c/poss} head held high!",
+             "exp": 20,
+             "weight": 40,
+             "stat_trait": [
+                 "confident",
+                 "bold",
+                 "arrogant",
+                 "shameless"
+             ],
+             "can_have_stat": ["p_l"]
+         }
+     ],
+     "fail_outcomes": [
+         {
+             "text": "p_l takes some time to {PRONOUN/p_l/self}, eventually calming down enough to go back to camp. However, upon returning, p_l is <i>immediately</i> scolded again for leaving. Sweet suffering StarClan, {PRONOUN/p_l/subject} just can't win, can {PRONOUN/p_l/subject}?",
+             "exp": 0,
+             "weight": 20,
+             "relationships": [
+                 {
+                     "cats_to": ["clan"],
+                     "cats_from": ["patrol"],
+                     "mutual": false,
+                     "values": ["dislike"],
+                     "amount": 10
+                 }
+             ]
+         },
+         {
+             "text": "Whatever. What do those gray-pelts know anyway? Stupid tail-lickers wouldn't know fun if it bit them in the face... At least, that's what s_c tells {PRONOUN/s_c/self}.",
+             "exp": 0,
+             "weight": 40,
+             "stat_trait": [
+                 "troublesome",
+                 "childish",
+                 "arrogant",
+                 "rebellious"
+             ],
+             "can_have_stat": ["p_l"],
+             "relationships": [
+                 {
+                     "cats_to": ["clan"],
+                     "cats_from": ["patrol"],
+                     "mutual": false,
+                     "values": ["dislike"],
+                     "amount": 10
+                 }
+             ]
+         },
+         {
+             "text": "p_l decides to go for a walk to clear {PRONOUN/p_l/poss} head, figuring that {PRONOUN/p_l/subject}'ll return to camp when {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} ready. However, when night falls and p_l finally decides to head home, {PRONOUN/p_l/subject} quickly {VERB/p_l/discover/discovers} that {PRONOUN/p_l/subject} {VERB/p_l/have/has} no clue where {PRONOUN/p_l/subject} {VERB/p_l/are/is}.",
+             "exp": 0,
+             "weight": 5,
+             "lost_cats": ["p_l"]
+         },
+         {
+             "text": "Stupid Clanmates! Who needs them? Certainly not s_c, <i>that's</i> for sure! ...Actually, the more s_c thinks about it, the more {PRONOUN/s_c/subject} {VERB/s_c/start/starts} to believe exactly that: maybe {PRONOUN/s_c/subject} <i>{VERB/s_c/don't/doesn't}</i> need c_n...",
+             "exp": 0,
+             "weight": 10,
+             "stat_trait": [
+                 "arrogant",
+                 "rebellious",
+                 "bold",
+                 "confident",
+                 "fierce"
+             ],
+             "can_have_stat": ["p_l"],
+             "lost_cats": ["s_c"],
+             "relationships": [
+                 {
+                     "cats_to": ["clan"],
+                     "cats_from": ["patrol"],
+                     "mutual": false,
+                     "values": ["dislike"],
+                     "amount": 10
+                 }
+             ]
+         }
+     ]
+ }
 ]
