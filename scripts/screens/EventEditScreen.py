@@ -731,10 +731,10 @@ class EventEditScreen(Screens):
                 # SAVE NEW EVENT
                 if event.ui_element == self.editor_element["save"]:
                     self.event_text_info = self.event_text_element["event_text"].html_text
-                    if (not self.event_id_info
-                            or not self.event_text_info
+                    if (not self.event_text_info
                             or not self.weight_info
                             or not self.type_info
+                            or not self.valid_id()
                             or not self.valid_injury()
                             or not self.valid_history()
                             or not self.valid_relationships()
@@ -824,7 +824,7 @@ class EventEditScreen(Screens):
             if self.current_editor_tab == "settings":
                 if event.ui_element == self.event_id_element.get("entry"):
                     self.event_id_info = self.event_id_element["entry"].text
-                    self.change_id_validation_display()
+                    self.valid_id()
 
             # REL VALUE CONSTRAINTS
             elif self.current_editor_tab in ["random cat", "main cat"]:
@@ -1713,6 +1713,26 @@ class EventEditScreen(Screens):
                     "mate": []
                 }
         self.current_cat_dict = self.selected_new_cat_info
+
+    def valid_id(self) -> bool:
+        """
+        Checks that the event_id is valid. This also controls the id validation display.
+        """
+        valid = True
+        if self.event_id_info in self.all_event_ids and self.event_id_info != self.open_event.get("event_id"):
+            text = "screens.event_edit.dupe_id"
+            valid = False
+        elif not self.event_id_info or self.event_id_info.isspace():
+            text = "screens.event_edit.invalid_id"
+            valid = False
+        else:
+            text = "screens.event_edit.valid_id"
+        if not valid:
+            self.alert_text = f"Event ID is either invalid or a duplicate. Pick a new ID."
+
+        self.event_id_element["check_text"].set_text(text)
+
+        return valid
 
     def valid_injury(self) -> bool:
         """
@@ -6062,18 +6082,5 @@ class EventEditScreen(Screens):
                 "left_target": self.event_id_element["entry"]
             }
         )
-        self.change_id_validation_display()
+        self.valid_id()
         self.create_divider(self.event_id_element["text"], "event_id")
-
-    def change_id_validation_display(self):
-        """
-        Checks if event_id is valid and changes the display appropriately
-        """
-        if self.event_id_info in self.all_event_ids and self.event_id_info != self.open_event.get("event_id"):
-            text = "screens.event_edit.dupe_id"
-        elif not self.event_id_info:
-            text = "screens.event_edit.invalid_id"
-        else:
-            text = "screens.event_edit.valid_id"
-
-        self.event_id_element["check_text"].set_text(text)
