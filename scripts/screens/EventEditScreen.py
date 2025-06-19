@@ -11,7 +11,9 @@ from scripts.cat.cats import Cat, BACKSTORIES, create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
+from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.handle_short_events import INJURY_GROUPS, EVENT_ALLOWED_CONDITIONS, HandleShortEvents
+from scripts.events_module.short.scar_events import Scar_Events
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource, get_default_pronouns
@@ -130,6 +132,23 @@ class EventEdit(Screens):
     """Dict of all injury pools. Key is pool name, value is the injuries within the pool."""
     all_possible_injuries: list = EVENT_ALLOWED_CONDITIONS
     """List of all possible injuries/conditions."""
+    fatal_conditions: list = []
+    """We need this for death history validity checking. This is a list of all conditions that can kill."""
+    for condition in all_possible_injuries:
+        if Condition_Events.INJURIES.get(condition):
+            for age in Condition_Events.INJURIES[condition]["mortality"]:
+                if Condition_Events.INJURIES[condition]["mortality"][age]:
+                    fatal_conditions.append(condition)
+                    break
+                else:
+                    break
+        elif Condition_Events.ILLNESSES.get(condition):
+            for age in Condition_Events.ILLNESSES[condition]["mortality"]:
+                if Condition_Events.ILLNESSES[condition]["mortality"][age]:
+                    fatal_conditions.append(condition)
+                    break
+                else:
+                    break
 
     all_scars: list = Pelt.scars1 + Pelt.scars2 + Pelt.scars3
     """List of all possible scars"""
@@ -167,6 +186,7 @@ class EventEdit(Screens):
         """The type currently viewed in the existing events side bar"""
         self.chosen_biome: str = ""
         """The biome currently viewed in the existing events side bar"""
+        self.alert_text: str = ""
 
         self.event_text_container = None
         self.editor_container = None
@@ -714,8 +734,9 @@ class EventEdit(Screens):
                     if (not self.event_id_info
                             or not self.event_text_info
                             or not self.weight_info
-                            or not self.type_info):
-                        EditorMissingInfo()
+                            or not self.type_info
+                            or not self.valid_history()):
+                        EditorMissingInfo(self.alert_text)
                     else:
                         new_event = self.compile_new_event()
                         path = self.find_event_path()
@@ -1690,6 +1711,46 @@ class EventEdit(Screens):
                 }
         self.current_cat_dict = self.selected_new_cat_info
 
+    def valid_history(self) -> bool:
+        """
+        Checks if user has included death/injury histories for all killed or injured cats
+        """
+
+        dead_cats = []
+        injured_cats = []
+        if self.main_cat_info["dies"]:
+            dead_cats.append("m_c")
+        if self.random_cat_info["dies"]:
+            dead_cats.append("r_c")
+        for cat, block in self.new_cat_block_dict.items():
+            if "dead" in block:
+                dead_cats.append(cat)
+
+        for block in self.injury_block_list:
+            if set(block["injuries"]).intersection(set(Scar_Events.scar_allowed)) or block["scars"]:
+                injured_cats.extend(block["cats"])
+                # scar-able injuries are generally also possibly fatal, so plop them in dead
+                dead_cats.extend(block["cats"])
+            # injuries that don't scar but DO kill
+            elif set(block["injuries"]).intersection(set(self.fatal_conditions)):
+                dead_cats.extend(block["cats"])
+
+        death_histories = []
+        injury_histories = []
+        for block in self.history_block_list:
+            if "reg_death" in block or "lead_death" in block:
+                death_histories.extend("cats")
+            if "scar" in block:
+                injury_histories.extend("cats")
+
+        missing_deaths = [cat for cat in dead_cats if cat not in death_histories]
+        missing_injuries = [cat for cat in injured_cats if cat not in injury_histories]
+
+        if missing_deaths or missing_injuries:
+            self.alert_text = f"<br><br>Death and/or Injury histories are missing for some affected cats. " \
+                              f"<br><br>Missing Death for: {missing_deaths}<br>Missing Injury for: {missing_injuries} "
+            return False
+        return True
     # HANDLE EVENT FUNCS
     def handle_outside_events(self, event):
         # AMOUNT CHANGES
