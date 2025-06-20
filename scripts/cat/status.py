@@ -54,13 +54,17 @@ class Status:
 
     def _start_group_history(
             self,
-            age: CatAge = None,
+            age: CatAge,
             social: CatSocial = None,
             group: str = None,
             rank: CatRank = None
     ):
         """
         Generates initial group history for a cat
+        :param age: The age of the cat. This is required as it will be used to decide any other missing attributes.
+        :param social: The social standing of the cat (rogue, loner, clancat, ect.)
+        :param group: The group this cat belongs to
+        :param rank: This cat's rank. If the cat is outside of the Clan, this will match it's social.
         """
         new_history = {
             "group": group,
