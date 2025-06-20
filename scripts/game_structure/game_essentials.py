@@ -14,6 +14,15 @@ pygame.init()
 
 # G A M E
 class Game:
+    event_editing = False
+    max_name_length = 10
+    # max_events_displayed = 10
+    # event_scroll_ct = 0
+    # max_allegiance_displayed = 17
+    # allegiance_scroll_ct = 0
+    # max_relation_events_displayed = 10
+    # relation_scroll_ct = 0
+
     mediated = []  # Keep track of which couples have been mediated this moon.
     just_died = []  # keeps track of which cats died this moon via die()
 
@@ -49,6 +58,11 @@ class Game:
     }"""
     patrol_cats = {}
     patrolled = []
+
+    outsider_reps = ["welcoming", "neutral", "hostile"]
+    other_clan_reps = ["ally", "neutral", "hostile"]
+
+    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
     # store changing parts of the game that the user can toggle with buttons
 

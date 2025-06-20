@@ -48,6 +48,20 @@ class RelationshipScreen(Screens):
 
     inspect_cat: Optional[Cat] = None
 
+    # this isn't actually used here (thought likely could, if anyone is looking to refactor a bit
+    # rather this is used for the event editor, if changes are made to what each value is referred to in the code,
+    # this should also change to reflect it so that the editor changes alongside it.
+    # if you modify this, also add a matching string to resources/lang/en/screens/event_edit.en.json
+    rel_value_names = (
+        "romantic",
+        "platonic",
+        "dislike",
+        "comfortable",
+        "jealousy",
+        "admiration",
+        "trust"
+    )
+
     def __init__(self, name=None):
         super().__init__(name)
         self.all_relations = None

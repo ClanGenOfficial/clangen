@@ -78,12 +78,6 @@ class SkillPath(Enum):
         "deep StarClan bond",
         "unshakable StarClan link",
     )
-    DARK = (
-        "interested in the Dark Forest",
-        "Dark Forest affinity",
-        "deep Dark Forest bond",
-        "unshakable Dark Forest link",
-    )
     OMEN = ("interested in oddities", "omen seeker", "omen sense", "omen sight")
     DREAM = ("restless sleeper", "strange dreamer", "dream walker", "dream shaper")
     CLAIRVOYANT = (
@@ -99,6 +93,14 @@ class SkillPath(Enum):
         "prophet",
     )
     GHOST = ("morbid curiosity", "ghost sense", "ghost sight", "ghost speaker")
+    DARK = (
+        "interested in the Dark Forest",
+        "Dark Forest affinity",
+        "deep Dark Forest bond",
+        "unshakable Dark Forest link",
+    )
+
+
 
     @staticmethod
     def get_random(exclude: list = ()):
@@ -151,6 +153,7 @@ class Skill:
     tier_ranges = ((0, 9), (10, 19), (20, 29))
     point_range = (0, 29)
 
+    # these MUST be in the same order as the SkillPath enums
     short_strings = {
         SkillPath.TEACHER: "teaching",
         SkillPath.HUNTER: "hunting",

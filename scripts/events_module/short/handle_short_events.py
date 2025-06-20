@@ -3,6 +3,7 @@ from typing import List
 
 import i18n
 
+from scripts.clan_resources.herb.herb import HERBS
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
@@ -40,6 +41,11 @@ from scripts.utility import (
 
 class HandleShortEvents:
     """Handles generating and executing ShortEvents"""
+
+    supply_types = ["fresh_kill", "all_herb", "any_herb"]
+    supply_types.extend(HERBS)
+    supply_triggers = ["always", "low", "adequate", "full", "excess"]
+    supply_adjustments = ["reduce_eighth", "reduce_quarter", "reduce_half", "reduce_full", "increase_#"]
 
     def __init__(self):
         self.current_lives = None
@@ -918,6 +924,60 @@ handle_short_events = HandleShortEvents()
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
 # ---------------------------------------------------------------------------- #
+
+EVENT_ALLOWED_CONDITIONS = [
+    "tick bites",
+    "claw-wound",
+    "bite-wound",
+    "cat bite",
+    "beak bite",
+    "snake bite",
+    "quilled by a porcupine",
+    "rat bite",
+    "mangled leg",
+    "mangled tail",
+    "broken jaw",
+    "broken bone",
+    "sore",
+    "bruises",
+    "scrapes",
+    "cracked pads",
+    "small cut",
+    "sprain",
+    "bee sting",
+    "joint pain",
+    "dislocated joint",
+    "torn pelt",
+    "torn ear",
+    "water in their lungs",
+    "shivering",
+    "frostbite",
+    "burn",
+    "severe burn",
+    "shock",
+    "dehydrated",
+    "head damage",
+    "damaged eyes",
+    "broken back",
+    "poisoned",
+    "headache",
+    "severe headache",
+    "fleas",
+    "seizure",
+    "diarrhea",
+    "running nose",
+    "kittencough",
+    "whitecough",
+    "greencough",
+    "yellowcough",
+    "redcough",
+    "carrionplace disease",
+    "heat stroke",
+    "heat exhaustion",
+    "stomachache",
+    "constant nightmares"
+]
+
 
 INJURY_GROUPS = {
     "battle_injury": [

@@ -282,7 +282,7 @@
             "Is hoping r_c will tell {PRONOUN/m_c/object} a new story",
             "Wonders at all that r_c has seen and done",
             "Is telling r_c a story",
-            "Is spending time with r_c", 
+            "Is spending time with r_c",
             "Wonders if r_c misses {PRONOUN/r_c/poss} warrior days",
             "Wants to visit the elders to hear a story"
         ],
@@ -1016,7 +1016,8 @@
             "mediator",
             "deputy",
             "leader",
-            "elder"],
+            "elder"
+        ],
         "random_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
@@ -1227,10 +1228,11 @@
             "apprentice",
             "warrior",
             "deputy",
-            "leader" ],
-            "main_trait_constraint": [
-                "confident"
-            ]
+            "leader"
+        ],
+        "main_trait_constraint": [
+            "confident"
+        ]
     },
     {
         "id": "cunning_gen",
@@ -1281,7 +1283,7 @@
             "Feels safe within the walls of the camp",
             "Promises to stick by a Clanmate's side",
             "Refuses to reconsider a belief a Clanmate disagreed with",
-            "Is debating a conflicting belief with a Clanmate", 
+            "Is debating a conflicting belief with a Clanmate",
             "Leaves fresh-kill at the grave of a dead loved one",
             "Is certain of {PRONOUN/m_c/poss} purpose",
             "Doesn't question {PRONOUN/m_c/poss} own judgment",
@@ -1715,7 +1717,7 @@
         "main_trait_constraint": [
             "nervous"
         ]
-        },
+    },
     {
         "id": "playful_gen",
         "thoughts": [
@@ -1889,10 +1891,10 @@
         "main_trait_constraint": [
             "responsible"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "kitten"
         ],
-        "random_living_status":[
+        "random_living_status": [
             "living"
         ]
     },
@@ -1920,10 +1922,10 @@
         "main_trait_constraint": [
             "righteous"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "kitten"
         ],
-        "random_living_status":[
+        "random_living_status": [
             "living"
         ]
     },
@@ -2236,7 +2238,7 @@
             "Is considering bending the rules just this once... again",
             "Climbed up a tree and nearly fell out",
             "Is talking far too loud, to the annoyance of every cat in camp",
-            "Thinks about the various ways {PRONOUN/m_c/subject} could bend the rules" ,
+            "Thinks about the various ways {PRONOUN/m_c/subject} could bend the rules",
             "Concocts elaborate pranks",
             "Recruits r_c into a scheme",
             "Spreads a mostly harmless rumor about r_c",
@@ -2578,7 +2580,7 @@
         "thoughts": [
             "Play fights with r_c, just like old times",
             "Reminisces with r_c about being kits",
-            "Takes the fresh-kill r_c was saving specifically because {PRONOUN/r_c/subject} {VERB/r_c/were/was} saving it", 
+            "Takes the fresh-kill r_c was saving specifically because {PRONOUN/r_c/subject} {VERB/r_c/were/was} saving it",
             "Is waiting for r_c to return to camp",
             "Explores the territory with r_c",
             "Reminds r_c of that time {PRONOUN/r_c/subject} wet the bedding in the nursery",
@@ -2617,7 +2619,7 @@
     },
     {
         "id": "parent_to_kit",
-        "thoughts":[
+        "thoughts": [
             "Pulls r_c aside and starts grooming {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} protests",
             "Purrs as {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} to r_c talk about nothing in particular",
             "Is comforting r_c after a hard day",
@@ -4414,7 +4416,7 @@
     },
     {
         "id": "gen_to_dead_parent",
-        "thoughts":[
+        "thoughts": [
             "Heard r_c humming a tune in {PRONOUN/m_c/poss} dream that {PRONOUN/m_c/subject} remembered r_c humming in the nursery",
             "Had a tearful visit from r_c in {PRONOUN/m_c/poss} dream last night",
             "Wants to work hard knowing r_c is watching {PRONOUN/m_c/object}",
@@ -4563,7 +4565,7 @@
             "Feels something missing without r_c at {PRONOUN/m_c/poss} side",
             "Thought {PRONOUN/m_c/subject} caught r_c's scent, then realized it was {PRONOUN/m_c/poss} own"
         ],
-        "relationship_constraint":[
+        "relationship_constraint": [
             "littermates"
         ],
         "random_living_status": [

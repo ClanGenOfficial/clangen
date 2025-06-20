@@ -38,7 +38,7 @@ class ShortEvent:
         self.tags = tags if tags else []
         self.weight = weight
         self.text = text
-        self.new_accessory = new_accessory
+        self.new_accessory = new_accessory if new_accessory else []
         self.m_c = m_c if m_c else {"age": ["any"]}
         if self.m_c:
             if "age" not in self.m_c:

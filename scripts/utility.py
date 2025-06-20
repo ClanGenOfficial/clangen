@@ -2194,7 +2194,7 @@ def event_text_adjust(
     # patrol_apprentices
     app_abbr = ["app1", "app2", "app3", "app4", "app5", "app6"]
     for i, abbr in enumerate(app_abbr):
-        if abbr not in text:
+        if abbr not in text or not patrol_apprentices:
             continue
         if len(patrol_apprentices) > i:
             replace_dict[abbr] = (
@@ -2214,7 +2214,7 @@ def event_text_adjust(
             replace_dict[f"n_c_pre:{i}"] = (str(cat_list[0].name.prefix), pronoun)
 
     # mur_c (murdered cat for reveals)
-    if "mur_c" in text:
+    if "mur_c" in text and victim_cat:
         replace_dict["mur_c"] = (str(victim_cat.name), get_pronouns(victim_cat))
 
     # lead_name
@@ -2237,7 +2237,7 @@ def event_text_adjust(
         text = process_text(text, replace_dict)
 
     # multi_cat
-    if "multi_cat" in text:
+    if "multi_cat" in text and multi_cats:
         name_list = []
         for _cat in multi_cats:
             name_list.append(str(_cat.name))
@@ -2246,7 +2246,7 @@ def event_text_adjust(
 
     # other_clan_name
     if "o_c_n" in text:
-        other_clan_name = other_clan.name
+        other_clan_name = other_clan.name if other_clan else "Default"
         pos = 0
         for x in range(text.count("o_c_n")):
             if "o_c_n" in text:
@@ -2299,20 +2299,20 @@ def event_text_adjust(
     text = adjust_prey_abbr(text)
 
     # acc_plural (only works for main_cat's acc)
-    if "acc_plural" in text:
+    if "acc_plural" in text and main_cat:
         text = text.replace(
             "acc_plural",
             i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=2),
         )
 
     # acc_singular (only works for main_cat's acc)
-    if "acc_singular" in text:
+    if "acc_singular" in text and main_cat:
         text = text.replace(
             "acc_singular",
             i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
         )
 
-    if "given_herb" in text:
+    if "given_herb" in text and chosen_herb:
         text = text.replace(
             "given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2)
         )
@@ -2597,6 +2597,30 @@ def update_sprite(cat):
     cat.sprite = generate_sprite(cat)
     # update class dictionary
     cat.all_cats[cat.ID] = cat
+
+
+def update_mask(cat):
+    val = pygame.mask.from_surface(
+        pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))), threshold=250
+    )
+
+    inflated_mask = pygame.Mask(
+        (
+            val.get_size()[0] + 10,
+            val.get_size()[1] + 10,
+        )
+    )
+    inflated_mask.draw(val, (5, 5))
+    for _ in range(3):
+        outline = inflated_mask.outline()
+        for point in outline:
+            for dx in range(-1, 2):
+                for dy in range(-1, 2):
+                    try:
+                        inflated_mask.set_at((point[0] + dx, point[1] + dy), 1)
+                    except IndexError:
+                        continue
+    cat.sprite_mask = inflated_mask
 
 
 def clan_symbol_sprite(clan, return_string=False, force_light=False):
