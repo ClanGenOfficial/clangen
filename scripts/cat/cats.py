@@ -1493,7 +1493,7 @@ class Cat:
             self.thoughts()
             return
 
-        if self.dead:
+        if self.dead and not self.faded:
             self.thoughts()
             return
 
@@ -1583,7 +1583,11 @@ class Cat:
         chosen_thought = Thoughts.get_chosen_thought(
             self, other_cat, game_mode, biome, season, camp
         )
-
+        if not self.pronouns:
+            pass
+        print(self.pronouns)
+        print(self.ID)
+        print(chosen_thought)
         chosen_thought = event_text_adjust(
             self.__class__,
             chosen_thought,
