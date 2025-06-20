@@ -393,12 +393,6 @@ class Status:
 
         return False
 
-    def in_player_clan(self) -> bool:
-        """
-        Returns True if the cat is currently part of the player clan
-        """
-        return True if self.group == game.clan.name else False
-
     def is_clancat(self) -> bool:
         """
         Returns True if the cat is currently a clancat
@@ -429,8 +423,20 @@ class Status:
         """
         Returns True if the cat is currently dead
         """
-        return True if self.group in ["darkforest", "unknown", "starclan"] else False
+        return True if self.group in [CatGroup.DARK_FOREST,
+                                      CatGroup.UNKNOWN_RESIDENCE,
+                                      CatGroup.STAR_CLAN] else False
 
+    def is_exiled(self, group):
+        """
+        Returns True if the cat is currently exiled from the given group.
+        """
+        standing = self.get_standing_with_group(group)
+
+        if standing[-1] == CatStanding.EXILED:
+            return True
+
+        return False
 
 class StatusDict(TypedDict, total=False):
     """

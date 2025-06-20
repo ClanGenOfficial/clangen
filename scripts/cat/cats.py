@@ -864,8 +864,7 @@ class Cat:
         """Makes an "outside cat" a Clan cat. Returns a list of IDs for any additional cats that
         are coming with them."""
 
-        if not self.exiled:
-            # TODO: figure out how to handle this...
+        if not self.status.is_exiled(CatGroup.PLAYER_CLAN):
             History.add_beginning(self)
 
         self.status.add_to_group(
