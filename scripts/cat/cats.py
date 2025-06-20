@@ -497,7 +497,8 @@ class Cat:
         :return: List of dicts for the cat's pronouns
         """
         if self.faded:
-            return []
+            value = pronouns.get_default_pronouns()["0"]
+            return [value]
 
         locale = i18n.config.get("locale")
         value = self._pronouns.get(locale)
