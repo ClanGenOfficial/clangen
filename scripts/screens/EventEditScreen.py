@@ -5628,7 +5628,7 @@ class EventEditScreen(Screens):
         prev_element = None
         for value in self.rel_value_types:
             self.rel_status_element[f"{value}_text"] = UITextBoxTweaked(
-                f"screens.event_edit.rel_values_{value}",
+                f"{value} toward r_c is > than:",
                 ui_scale(pygame.Rect((0, 10), (-1, -1))),
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
                 line_spacing=1,
