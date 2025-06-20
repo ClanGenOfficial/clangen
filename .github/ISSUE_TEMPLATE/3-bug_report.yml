@@ -1,0 +1,76 @@
+name: Bug - Code
+description: General bugs related to how the game runs and responds to you.
+title: "[BUG] "
+labels: [ 'bug' ]
+body:
+  - type: checkboxes
+    id: existing_issue
+    attributes:
+      label: Pre-requisites
+      options:
+        - label: I have searched the existing issues
+          required: true
+        - label: This issue was encountered (or replicated) on a non-edited Clan
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the bug
+      placeholder: "e.g. Cats are lost in a moon event but are still in the clan cat list."
+    validations:
+      required: true
+  - type: dropdown
+    id: grade
+    attributes:
+      label: Grade
+      description: How much of an impact does this issue have on play?
+      options:
+        - Unimportant - Little to no impact on play
+        - Non-vital - Can easily be ignored and does not have a large impact on play
+        - Regular - Should be handled soon, but doesn't necessarily break the game or inhibit the player
+        - Important - Has a large effect on the gameplay but is not urgent
+        - Dire - Still playable, but a major feature is broken
+        - Game-breaking - makes it impossible to play the game
+      default: 2
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: patrol
+    attributes:
+      label: Patrol ID + Outcome Print (if applicable)
+      description: See [what's a patrol ID and do I need it?](https://www.clangen.io/docs/report-a-bug#whats-a-patrol-id-do-i-need-it) and [how do I find the patrol ID?](https://www.clangen.io/docs/report-a-bug#how-do-i-find-the-patrol-id)
+  - type: input
+    id: version
+    attributes:
+      description: See [here](https://www.clangen.io/docs/report-a-bug/#how-do-i-find-my-game-version) for help finding your game version.
+      label: "Commit # or Game Version Number"
+      placeholder: e.g. "4ef20d05" (if on development) or "v0.12.2" (if stable)
+    validations:
+      required: true
+  - type: textarea
+    id: errormsg
+    attributes:
+      label: Error log
+      description: Attach the full error log here. Details on how to find the error log are given [here](https://www.clangen.io/docs/report-a-bug#how-do-i-find-the-error-log
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      placeholder: Add any other context about the problem here.
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      placeholder: If applicable, add screenshots to help explain your problem.

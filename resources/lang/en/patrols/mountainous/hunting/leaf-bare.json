@@ -195,7 +195,7 @@
                 "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["ambitious", "fierce", "confident", "arrogant" ],
+                "stat_trait": ["ambitious", "fierce", "confident", "arrogant"],
                 "prey": ["huge"],
                 "relationships": [
                     {
@@ -303,7 +303,7 @@
                 "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["ambitious", "fierce", "arrogant", "confident" ],
+                "stat_trait": ["ambitious", "fierce", "arrogant", "confident"],
                 "prey": ["large"],
                 "relationships": [
                     {
@@ -336,7 +336,7 @@
                 "text": "Far too keen to try and prove {PRONOUN/s_c/self} against the king of the skies, s_c leaps for the eagle and startles it into flight with its massive catch, and the opportunity is lost.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "arrogant", "confident", "ambitious" ],
+                "stat_trait": ["bloodthirsty", "arrogant", "confident", "ambitious"],
                 "relationships": [
                     {
                         "cats_to": ["s_c", "patrol"],
@@ -397,7 +397,7 @@
                 "text": "Keen to prove {PRONOUN/s_c/self}, s_c sprints across the ice and leaps for the eagle. Instead, what {PRONOUN/s_c/subject} {VERB/s_c/get/gets} is a damp, cold trip in the leaf-bare, and the patrol rushes {PRONOUN/s_c/object} home to get treated for chills and frostbite.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": ["bloodthirsty", "ambitious", "arrogant", "confident" ],
+                "stat_trait": ["bloodthirsty", "ambitious", "arrogant", "confident"],
                 "injury": [
                     {
                         "cats": ["s_c"],
@@ -489,7 +489,7 @@
                 "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["ambitious", "fierce", "arrogant", "confident" ],
+                "stat_trait": ["ambitious", "fierce", "arrogant", "confident"],
                 "prey": ["huge"],
                 "relationships": [
                     {
@@ -521,7 +521,7 @@
                 "text": "Far too keen to try and prove {PRONOUN/s_c/self} against the king of the skies, s_c leaps for the eagle and startles it into flight with its massive catch, and the opportunity is lost.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "ambitious", "confident", "arrogant" ],
+                "stat_trait": ["bloodthirsty", "ambitious", "confident", "arrogant"],
                 "relationships": [
                     {
                         "cats_to": ["p_l", "patrol"],
@@ -582,7 +582,7 @@
                 "text": "Keen to prove {PRONOUN/s_c/self}, s_c sprints across the ice and leaps for the eagle. Instead, what {PRONOUN/s_c/subject} {VERB/s_c/get/gets} is a damp, cold trip in the leaf-bare, and the patrol rushes {PRONOUN/s_c/object} home to get treated for chills and frostbite.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": ["bloodthirsty", "ambitious", "arrogant", "confident" ],
+                "stat_trait": ["bloodthirsty", "ambitious", "arrogant", "confident"],
                 "injury": [
                     {
                         "cats": ["s_c"],
@@ -657,7 +657,7 @@
                 "text": "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": [ "compassionate", "faithful", "loving", "thoughtful" ],
+                "stat_trait": ["compassionate", "faithful", "loving", "thoughtful"],
                 "prey": ["medium"],
                 "relationships": [
                     {
@@ -819,7 +819,7 @@
                 "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide under shrubbery of a sheltered valley, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it through safely, closer than ever afterwards.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": [ "compassionate", "faithful", "loving", "thoughtful" ],
+                "stat_trait": ["compassionate", "faithful", "loving", "thoughtful"],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -993,7 +993,7 @@
                 "text": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": ["troublesome", "bloodthirsty", "bold", "ambitious", "daring", "arrogant", "confident" ],
+                "stat_trait": ["troublesome", "bloodthirsty", "bold", "ambitious", "daring", "arrogant", "confident"],
                 "injury": [
                     {
                         "cats": ["s_c"],
@@ -1129,7 +1129,7 @@
                 "text": "s_c means well, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": ["troublesome", "bloodthirsty", "bold", "ambitious", "daring", "arrogant", "confident" ],
+                "stat_trait": ["troublesome", "bloodthirsty", "bold", "ambitious", "daring", "arrogant", "confident"],
                 "injury": [
                     {
                         "cats": ["s_c"],
@@ -1287,7 +1287,7 @@
                 "text": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": ["troublesome", "bloodthirsty", "bold", "ambitious", "daring", "arrogant", "confident" ],
+                "stat_trait": ["troublesome", "bloodthirsty", "bold", "ambitious", "daring", "arrogant", "confident"],
                 "injury": [
                     {
                         "cats": ["s_c"],
@@ -1546,7 +1546,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and land heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
+                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and lands heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1554,7 +1554,7 @@
                         "cats": ["r_c"],
                         "injuries": ["broken bone"],
                         "history_text": [
-                            { "reg_death": "m_c died after falling out of a tree on a hunt." },
+                            {"reg_death": "m_c died after falling out of a tree on a hunt."},
                             {
                                 "lead_death": "died after falling out of a tree"
                             },
@@ -1950,7 +1950,7 @@
                 "can_have_stat": ["adult"]
             },
             {
-                "text": "p_l lunges for the common buzzard, only for the buzzard to spread their wings to much, much larger then they look folded and startle the cat right off the cliff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} never seen again.",
+                "text": "p_l lunges for the common buzzard, only for the buzzard to spread their wings too much, much larger than they look folded and startle the cat right off the cliff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} never seen again.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c", "all_lives"],
@@ -2062,7 +2062,7 @@
                 "stat_trait": ["troublesome", "bold", "daring", "ambitious"]
             },
             {
-                "text": "p_l looks around the rocks, only to spy something flying above {PRONOUN/p_l/object}, hearing the cat from up there. Oh. It's star-blasted raven. The raven swoops and sinks its talons into p_l, who shrieks and thrashes as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} carried into the air. {PRONOUN/p_l/subject/CAP} {VERB/p_l/struggle/struggles} to free {PRONOUN/p_l/self} as the raven drops {PRONOUN/p_l/object} into the jaws of wolves.",
+                "text": "p_l looks around the rocks, only to spy something flying above {PRONOUN/p_l/object}, hearing the cat from up there. Oh. It's a star-blasted raven. The raven swoops and sinks its talons into p_l, who shrieks and thrashes as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} carried into the air. {PRONOUN/p_l/subject/CAP} {VERB/p_l/struggle/struggles} to free {PRONOUN/p_l/self} as the raven drops {PRONOUN/p_l/object} into the jaws of wolves.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -3336,7 +3336,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -3540,7 +3540,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],

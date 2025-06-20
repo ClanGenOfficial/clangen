@@ -122,7 +122,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         medicine_to_warrior.random_status_constraint = ["warrior"]
 
         # then
-        for game_mode in ["classic", "expanded", "cruel season"]:
+        for game_mode in ("classic", "expanded", "cruel season"):
             self.assertTrue(cats_fulfill_single_interaction_constraints(
                 warrior, warrior, warrior_to_all, game_mode))
             self.assertTrue(cats_fulfill_single_interaction_constraints(
@@ -161,7 +161,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         all_to_calm.random_trait_constraint = ["calm"]
 
         # then
-        for game_mode in ["classic", "expanded", "cruel season"]:
+        for game_mode in ("classic", "expanded", "cruel season"):
             self.assertTrue(cats_fulfill_single_interaction_constraints(calm, troublesome, calm_to_all, game_mode))
             self.assertFalse(cats_fulfill_single_interaction_constraints(calm, troublesome, all_to_calm, game_mode))
 
@@ -188,7 +188,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         all_to_hunter.random_skill_constraint = ["good hunter"]
 
         # then
-        for game_mode in ["classic", "expanded", "cruel season"]:
+        for game_mode in ("classic", "expanded", "cruel season"):
             self.assertTrue(cats_fulfill_single_interaction_constraints(hunter, fighter, hunter_to_all, game_mode))
             self.assertFalse(cats_fulfill_single_interaction_constraints(hunter, fighter, all_to_hunter, game_mode))
 
@@ -218,7 +218,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         }
 
         # then
-        for game_mode in ["classic", "expanded", "cruel season"]:
+        for game_mode in ("classic", "expanded", "cruel season"):
             self.assertTrue(cats_fulfill_single_interaction_constraints(clan, half, clan_to_all, game_mode))
             self.assertFalse(cats_fulfill_single_interaction_constraints(clan, half, all_to_clan, game_mode))
 

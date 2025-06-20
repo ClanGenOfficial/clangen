@@ -34,6 +34,7 @@ class ClanScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.taken_spaces = {}
         self.show_den_labels_text = None
         self.show_den_labels = None
         self.show_den_text = None
@@ -132,61 +133,57 @@ class ClanScreen(Screens):
         # We have to convert the positions to something pygame_gui buttons will understand
         # This should be a temp solution. We should change the code that determines positions.
         i = 0
-        for x in game.clan.clan_cats:
-            if (
-                not Cat.all_cats[x].dead
-                and Cat.all_cats[x].in_camp
-                and not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside)
-                and (
-                    Cat.all_cats[x].status != "newborn"
-                    or game.config["fun"]["all_cats_are_newborn"]
-                    or game.config["fun"]["newborns_can_roam"]
+        all_positions = list(self.taken_spaces.values())
+        used_positions = all_positions.copy()
+        cat_list = [
+            Cat.all_cats[x]
+            for i, x in enumerate(game.clan.clan_cats)
+            if i < self.max_sprites_displayed
+            and not Cat.all_cats[x].dead
+            and Cat.all_cats[x].in_camp
+            and not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside)
+            and (
+                Cat.all_cats[x].status != "newborn"
+                or game.config["fun"]["all_cats_are_newborn"]
+                or game.config["fun"]["newborns_can_roam"]
+            )
+        ]
+        layers = []
+        for x in cat_list:
+            layers.append(2)
+            place = self.taken_spaces[x.ID]
+            layers[-1] += all_positions.count(place) - used_positions.count(place)
+            used_positions.remove(place)
+
+            try:
+                image = x.sprite.convert_alpha()
+                blend_layer = (
+                    self.game_bgs[self.active_bg]
+                    .subsurface(ui_scale(pygame.Rect(tuple(x.placement), (50, 50))))
+                    .convert_alpha()
                 )
-            ):
-                i += 1
-                if i > self.max_sprites_displayed:
-                    break
+                blend_layer = pygame.transform.box_blur(
+                    blend_layer, self.layout["cat_shading"]["blur"]
+                )
 
-                try:
-                    image = Cat.all_cats[x].sprite.convert_alpha()
-                    blend_layer = (
-                        self.game_bgs[self.active_bg]
-                        .subsurface(
-                            ui_scale(
-                                pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50))
-                            )
-                        )
-                        .convert_alpha()
-                    )
-                    blend_layer = pygame.transform.box_blur(
-                        blend_layer, self.layout["cat_shading"]["blur"]
-                    )
+                sprite = image.copy()
+                sprite.fill((255, 255, 255, 255), special_flags=pygame.BLEND_RGB_MAX)
+                sprite.blit(blend_layer, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                image.set_alpha(self.layout["cat_shading"]["blend_strength"])
+                sprite.blit(image, (0, 0), special_flags=pygame.BLEND_ALPHA_SDL2)
+                sprite.set_alpha(255)
 
-                    sprite = image.copy()
-                    sprite.fill(
-                        (255, 255, 255, 255), special_flags=pygame.BLEND_RGB_MAX
+                self.cat_buttons.append(
+                    UISpriteButton(
+                        ui_scale(pygame.Rect(tuple(x.placement), (50, 50))),
+                        sprite,
+                        mask=x.sprite_mask,
+                        cat_id=x.ID,
+                        starting_height=layers[-1],
                     )
-                    sprite.blit(
-                        blend_layer, (0, 0), special_flags=pygame.BLEND_RGBA_MULT
-                    )
-                    image.set_alpha(self.layout["cat_shading"]["blend_strength"])
-                    sprite.blit(image, (0, 0), special_flags=pygame.BLEND_ALPHA_SDL2)
-                    sprite.set_alpha(255)
-
-                    self.cat_buttons.append(
-                        UISpriteButton(
-                            ui_scale(
-                                pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50))
-                            ),
-                            sprite,
-                            cat_id=x,
-                            starting_height=i,
-                        )
-                    )
-                except:
-                    print(
-                        f"ERROR: placing {Cat.all_cats[x].name}'s sprite on Clan page"
-                    )
+                )
+            except:
+                print(f"ERROR: placing {x.name}'s sprite on Clan page")
 
         # Den Labels
         # Redo the locations, so that it uses layout on the Clan page
@@ -416,7 +413,7 @@ class ClanScreen(Screens):
                         just_pos[0] += 15 * random.choice([-1, 1])
                     if "y" in pos[1]:
                         just_pos[1] += 15
-                return tuple(just_pos)
+                return tuple(just_pos), pos[0]
             dens.pop(chosen_index)
             weights.pop(chosen_index)
             if not dens:
@@ -458,6 +455,7 @@ class ClanScreen(Screens):
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
+            base_pos = None
             # Newborns are not meant to be placed. They are hiding.
             if (
                 Cat.all_cats[x].status == "newborn"
@@ -468,41 +466,66 @@ class ClanScreen(Screens):
                     or game.config["fun"]["newborns_can_roam"]
                 ):
                     # Free them
-                    Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+                    [
+                        Cat.all_cats[x].placement,
+                        base_pos,
+                    ] = self.choose_nonoverlapping_positions(
                         first_choices, all_dens, [1, 100, 1, 1, 1, 100, 50]
                     )
                 else:
                     continue
 
-            if Cat.all_cats[x].status in ["apprentice", "mediator apprentice"]:
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+            if Cat.all_cats[x].status in ("apprentice", "mediator apprentice"):
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 50, 1, 1, 100, 100, 1]
                 )
             elif Cat.all_cats[x].status == "deputy":
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 50, 1, 1, 1, 50, 1]
                 )
 
             elif Cat.all_cats[x].status == "elder":
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 2000, 1, 1, 1, 1]
                 )
             elif Cat.all_cats[x].status == "kitten":
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [60, 8, 1, 1, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ["medicine cat apprentice", "medicine cat"]:
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+            elif Cat.all_cats[x].status in ("medicine cat apprentice", "medicine cat"):
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [20, 20, 20, 400, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ["warrior", "mediator"]:
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+            elif Cat.all_cats[x].status in ("warrior", "mediator"):
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 1, 1, 1, 60, 60]
                 )
             elif Cat.all_cats[x].status == "leader":
-                game.clan.leader.placement = self.choose_nonoverlapping_positions(
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 200, 1, 1, 1, 1, 1]
                 )
+            self.taken_spaces[Cat.all_cats[x].ID] = base_pos
 
     def update_buttons_and_text(self):
         if game.switches["saved_clan"]:

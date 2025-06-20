@@ -410,7 +410,7 @@ def csv_load(all_cats):
                 ] = "10There was an error loading cat # " + str(attr[0])
                 the_cat.skill = attr[25]
                 if len(attr) > 28:
-                    the_cat.pelt.accessory = attr[28]
+                    the_cat.pelt.accessory = [attr[28]]
                 if len(attr) > 29:
                     the_cat.specialty2 = attr[29]
                 else:

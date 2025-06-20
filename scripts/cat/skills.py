@@ -78,12 +78,6 @@ class SkillPath(Enum):
         "deep StarClan bond",
         "unshakable StarClan link",
     )
-    DARK = (
-        "interested in the Dark Forest",
-        "Dark Forest affinity",
-        "deep Dark Forest bond",
-        "unshakable Dark Forest link",
-    )
     OMEN = ("interested in oddities", "omen seeker", "omen sense", "omen sight")
     DREAM = ("restless sleeper", "strange dreamer", "dream walker", "dream shaper")
     CLAIRVOYANT = (
@@ -99,6 +93,14 @@ class SkillPath(Enum):
         "prophet",
     )
     GHOST = ("morbid curiosity", "ghost sense", "ghost sight", "ghost speaker")
+    DARK = (
+        "interested in the Dark Forest",
+        "Dark Forest affinity",
+        "deep Dark Forest bond",
+        "unshakable Dark Forest link",
+    )
+
+
 
     @staticmethod
     def get_random(exclude: list = ()):
@@ -106,7 +108,7 @@ class SkillPath(Enum):
 
         uncommon_paths = [
             i
-            for i in [
+            for i in (
                 SkillPath.GHOST,
                 SkillPath.PROPHET,
                 SkillPath.CLAIRVOYANT,
@@ -115,7 +117,7 @@ class SkillPath(Enum):
                 SkillPath.STAR,
                 SkillPath.HEALER,
                 SkillPath.DARK,
-            ]
+            )
             if i not in exclude
         ]
 
@@ -151,6 +153,7 @@ class Skill:
     tier_ranges = ((0, 9), (10, 19), (20, 29))
     point_range = (0, 29)
 
+    # these MUST be in the same order as the SkillPath enums
     short_strings = {
         SkillPath.TEACHER: "teaching",
         SkillPath.HUNTER: "hunting",
@@ -495,15 +498,15 @@ class CatSkills:
                     random.choice(parental_paths),
                     points=0,
                     interest_only=(
-                        True if the_cat.status in ["apprentice", "kitten"] else False
-                    ),
+                        the_cat.status in ("apprentice", "kitten")
+                    )
                 )
             else:
                 self.primary = Skill.get_random_skill(
                     points=0,
                     interest_only=(
-                        True if the_cat.status in ["apprentice", "kitten"] else False
-                    ),
+                        the_cat.status in ("apprentice", "kitten")
+                    )
                 )
 
         if not (the_cat.outside or the_cat.exiled):
@@ -591,7 +594,7 @@ class CatSkills:
         else:
             # For outside cats, just check interest and flip it if needed.
             # Going on age, rather than status here.
-            if the_cat.age not in ["kitten", "adolescent"]:
+            if the_cat.age not in ("kitten", "adolescent"):
                 self.primary.interest_only = False
                 if self.secondary:
                     self.secondary.interest_only = False

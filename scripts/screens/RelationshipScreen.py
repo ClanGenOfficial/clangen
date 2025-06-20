@@ -45,6 +45,20 @@ class RelationshipScreen(Screens):
 
     inspect_cat: Optional[Cat] = None
 
+    # this isn't actually used here (thought likely could, if anyone is looking to refactor a bit
+    # rather this is used for the event editor, if changes are made to what each value is referred to in the code,
+    # this should also change to reflect it so that the editor changes alongside it.
+    # if you modify this, also add a matching string to resources/lang/en/screens/event_edit.en.json
+    rel_value_names = (
+        "romantic",
+        "platonic",
+        "dislike",
+        "comfortable",
+        "jealousy",
+        "admiration",
+        "trust"
+    )
+
     def __init__(self, name=None):
         super().__init__(name)
         self.all_relations = None
@@ -570,16 +584,16 @@ class RelationshipScreen(Screens):
             if related:
                 relation = ""
                 if self.the_cat.is_uncle_aunt(self.inspect_cat):
-                    if self.inspect_cat.genderalign in ["female", "trans female"]:
+                    if self.inspect_cat.genderalign in ("female", "trans female"):
                         relation = "general.niece"
-                    elif self.inspect_cat.genderalign in ["male", "trans male"]:
+                    elif self.inspect_cat.genderalign in ("male", "trans male"):
                         relation = "general.nephew"
                     else:
                         relation = "general.siblings_child"
                 elif self.inspect_cat.is_uncle_aunt(self.the_cat):
-                    if self.inspect_cat.genderalign in ["female", "trans female"]:
+                    if self.inspect_cat.genderalign in ("female", "trans female"):
                         relation = "general.aunt"
-                    elif self.inspect_cat.genderalign in ["male", "trans male"]:
+                    elif self.inspect_cat.genderalign in ("male", "trans male"):
                         relation = "general.uncle"
                     else:
                         relation = "general.parents_sibling"

@@ -258,7 +258,7 @@
             ]
         },
         "conclusion_events": [
-            "As the days pass, the forest slowly dries more and more. Eventually the mud has disappears and the Clan can finally feel clean and safe once more."
+            "As the days pass, the forest slowly dries more and more. Eventually the mud has disappeared, and the Clan can finally feel clean and safe once more."
         ],
         "secondary_disasters": [
             {
@@ -427,7 +427,7 @@
             "moon1": [
                 "The Clan hunts and scrounges for any hint of possible food, but they never seem to find enough.",
                 "As famine hunts the Clan, none of their own hunts seem enough to drive it from haunting their paws.",
-                "Every cat in the Clan seems a little sadder, a little more serious as the situation dawns on them all. They have to try find more prey, before it becomes too late."
+                "Every cat in the Clan seems a little sadder, a little more serious as the situation dawns on them all. They have to try to find more prey, before it becomes too late."
             ],
             "moon2": [
                 "c_n has started wandering past their borders to find prey. While it might not be as much as they hoped for, any catch is considered a blessing from StarClan, even if some prey might smell like a rival Clan. No questions are asked if it means not going hungry.",
@@ -497,7 +497,7 @@
         "trigger_events": [],
         "progress_events": {
             "moon1": [
-                "It's both exhausting and heartbreaking, tearing down the battered remnants of what used to be a safe and whole home. But c_n grits their teeth and yowl encouragement to each other. Nothing will drive them from the forest, and they're determined to make this their home again.",
+                "It's both exhausting and heartbreaking, tearing down the battered remnants of what used to be a safe and whole home. But c_n grits their teeth and yowls encouragement to each other. Nothing will drive them from the forest, and they're determined to make this their home again.",
                 "As dep_name roughly rips down the broken back of the nursery, pulling down the brambles that failed to protect it, something flutters down along with them. Feathers from the artfully made, carefully chosen kitten-nests inside, heartbreaking survivors of the devastation of c_n.",
                 "As lead_name surveys the camp, full of their cats hauling the tattered wreckage of their lives out to the dirt-place, they wonder if staying here was the right decision. How can anything be the same after this? How can any cat ever feel safe here again, on the ground that was supposed to be their greatest and safest shelter?",
                 "lead_name announced their plans confidently, what needed to happen to repair the camp. But they can't watch as the  shattered wreckage of the apprentices' den is torn down and carted away. Maybe it's a weakness. But they can't watch.",

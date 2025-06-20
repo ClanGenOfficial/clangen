@@ -1,6 +1,60 @@
 [
   {
     "interaction_type": "hunt",
+    "event_text": "The c_n patrol catches m_c's scent, but it only leads them in circles.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n trails m_c, but never manages to corner {PRONOUN/m_c/object}. The frustrated patrol returns to camp with nothing to show for it.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Shook off {PRONOUN/m_c/poss} pursuers easily",
+      "relationships": [
+        {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n sets up an ambush for m_c, but the outsider knows the territory beyond the border better than c_n and escapes.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Won't fall for such an obvious trap",
+      "relationships": [
+        {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
     "reputation": ["any"],
     "rep_change": -2,
@@ -173,6 +227,52 @@
   },
   {
     "interaction_type": "drive",
+    "event_text": "The c_n patrol catches m_c's scent, but it only leads them in circles.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
+          "values": ["dislike"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "c_n attacks and chases m_c beyond the borders, but only a few days later, a patrol catches {PRONOUN/m_c/poss} fresh scent on c_n's territory.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Can't be forced out that easily",
+      "relationships": [
+        {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
+          "values": ["dislike"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "A c_n patrol confronts m_c and tells {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not welcome anywhere near c_n's territory. m_c agrees - and is scented trespassing <i>again</i> within the quarter-moon.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Considers Clan cats especially gullible"
+    }
+  },
+  {
+    "interaction_type": "drive",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
     "reputation": ["any"],
     "rep_change": -1,
@@ -247,6 +347,36 @@
   },
   {
     "interaction_type": "invite",
+    "event_text": "The c_n patrol catches m_c's scent, but it only leads them in circles.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}"
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "A c_n patrol approaches m_c with an offer, but {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't seem receptive.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Has no plans to change {PRONOUN/m_c/poss} lifestyle"
+    }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "When {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} found, m_c ignores the c_n patrol's invitation and runs off.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet"],
+      "new_thought": "Doesn't want to be involved in c_n drama"
+    }
+  },
+  {
+    "interaction_type": "invite",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
     "reputation": ["any"],
     "rep_change": 1,
@@ -288,7 +418,7 @@
     "rep_change": -1,
     "m_c": {
       "status": ["exiled"],
-      "trait": [ "bloodthirsty", "vengeful", "fierce", "cold" ],
+      "trait": [ "bloodthirsty", "vengeful", "fierce", "cold", "bold", "shameless" ],
       "new_thought": "Spits at {PRONOUN/m_c/poss} Clanmates' retreating tails",
       "relationships": [
         {
@@ -356,9 +486,39 @@
   },
   {
     "interaction_type": "search",
+    "event_text": "The c_n patrol catches m_c's scent, but it only leads them in circles.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Wonders if {PRONOUN/m_c/subject} will ever find {PRONOUN/m_c/poss} way back"
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "A c_n patrol thought they caught a glimpse of m_c, but their search of the surrounding area yields no sign of their old Clanmate.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Wonders if {PRONOUN/m_c/subject} will ever find {PRONOUN/m_c/poss} way back"
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "c_n's search for m_c is utterly fruitless. {PRONOUN/m_c/poss/CAP} Clanmates begin to dread ever finding m_c.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Fears never returning to c_n"
+    }
+  },
+  {
+    "interaction_type": "search",
     "event_text": "No matter how much c_n searches, they can't find a hair on m_c's pelt.",
     "reputation": ["any"],
-    "rep_change": -2,
+    "rep_change": 0,
     "m_c": {
       "status": ["lost"],
       "new_thought": "Wonders if {PRONOUN/m_c/subject} will ever find {PRONOUN/m_c/poss} way back"
@@ -368,10 +528,30 @@
     "interaction_type": "search",
     "event_text": "c_n's search for m_c turns up nothing.",
     "reputation": ["any"],
-    "rep_change": -2,
+    "rep_change": 0,
     "m_c": {
       "status": ["lost"],
       "new_thought": "Wonders if {PRONOUN/m_c/subject} will ever find {PRONOUN/m_c/poss} way back"
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "A c_n search patrol finally finds m_c, but {PRONOUN/m_c/poss} Clanmates are shocked to hear that m_c has unfinished business outside of the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/promise/promises} to return soon.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Is relieved to see {PRONOUN/m_c/poss} Clanmates again"
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "When c_n finds m_c, {PRONOUN/m_c/subject} {VERB/m_c/tell/tells} them {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't ready to come home just yet. They part on good terms, and {PRONOUN/m_c/subject} {VERB/m_c/promise/promises} to be home soon.",
+    "reputation": ["any"],
+    "rep_change": 0,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Is relieved to see {PRONOUN/m_c/poss} Clanmates again"
     }
   },
   {
@@ -460,7 +640,7 @@
     "rep_change": 1,
     "m_c": {
       "status": ["lost"],
-      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan has been searching for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} Clan has been searching for {PRONOUN/m_c/object}",
       "relationships": [
         {
           "cats_from": ["m_c"],
@@ -571,7 +751,7 @@
   },
   {
     "interaction_type": "drive",
-    "event_text": "c_n can't seem to catch m_c unaware; it's as if {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been warned in advance every time.",
+    "event_text": "c_n can't seem to catch m_c unaware. It's as if {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been warned in advance every time.",
     "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
@@ -603,7 +783,7 @@
       "skill": [
         "HUNTER,3"
       ],
-      "new_thought": "Is feeling rather pleased after showing those whippersnappers a thing or two",
+      "new_thought": "Feels pleased to show those whippersnappers a thing or two",
       "relationships": [
         {
           "cats_from": ["m_c"],
@@ -865,7 +1045,7 @@
     "rep_change": -1,
     "m_c": {
       "status": ["kittypet", "loner", "rogue"],
-      "new_thought": "Is stunned to discover Clan cats are much more vicious than their reputation suggested",
+      "new_thought": "Is stunned to discover Clan cats are much more vicious than {PRONOUN/m_c/subject} thought",
       "relationships": [
         {
           "cats_from": ["m_c"],

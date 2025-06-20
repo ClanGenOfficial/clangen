@@ -168,7 +168,7 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.language_button:
                 self.open_lang_settings()
-            if self.sub_menu in ["general", "relation", "language"]:
+            if self.sub_menu in ("general", "relation", "language"):
                 self.handle_checkbox_events(event)
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
@@ -290,7 +290,9 @@ class SettingsScreen(Screens):
             "buttons.toggle_fullscreen",
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
-            tool_tip_text="buttons.toggle_fullscreen_tooltip",
+            tool_tip_text="buttons.toggle_fullscreen_windowed"
+            if game.settings["fullscreen"]
+            else "buttons.toggle_fullscreen_fullscreen",
             tool_tip_text_kwargs={
                 "screentext": "windowed"
                 if game.settings["fullscreen"]
