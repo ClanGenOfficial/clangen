@@ -187,9 +187,6 @@ class Cat:
         self.placement = None
         self.example = example
         self.dead = False
-        self.exiled = False
-        self.outside = False
-        self.driven_out = False
         self.dead_for = 0  # moons
         self.thought = ""
         self.genderalign = None
@@ -200,7 +197,6 @@ class Cat:
         self.leader_death_heal = None
         self.also_got = False
         self.permanent_condition = {}
-        self.df = False
         self.experience_level = None
 
         # Various behavior toggles
