@@ -4,7 +4,7 @@ from typing import TypedDict
 
 import ujson
 
-from scripts.cat.enums import CatRank, CatSocial, CatStanding, CatAge
+from scripts.cat.enums import CatRank, CatSocial, CatStanding, CatAge, CatGroup
 from scripts.game_structure.game_essentials import game
 
 
@@ -300,14 +300,14 @@ class Status:
 
     def move_to_afterlife(self):
         """
-        Changes a cat's group into the appropriate afterlife ("darkforest", "unknown", "starclan")
+        Changes a cat's group into the appropriate afterlife
         """
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
         if self.is_outsider() and not self.is_former_clancat():
             self._modify_group(
                 new_rank=self.rank,
-                new_group="unknown"
+                new_group=CatGroup.UNKNOWN_RESIDENCE
             )
             return
 

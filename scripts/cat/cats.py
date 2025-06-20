@@ -14,7 +14,7 @@ from typing import Dict, List, Any, Union, Callable
 import i18n
 import ujson  # type: ignore
 
-from scripts.cat.enums import CatAge, CatRank, CatSocial
+from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -571,7 +571,7 @@ class Cat:
 
         # Deal with leader death
         text = ""
-        darkforest = True if game.clan.instructor.status.group == "darkforest" else False
+        darkforest = True if game.clan.instructor.status.group == CatGroup.DARK_FOREST else False
         isoutside = self.status.is_outsider()
         if self.status.rank == CatRank.LEADER:
             if game.clan.leader_lives > 0:

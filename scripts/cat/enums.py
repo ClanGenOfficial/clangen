@@ -74,3 +74,17 @@ class CatStanding(StrEnum):
     LOST = "lost"
     EXILED = "exiled"
     KNOWN = "known"
+
+
+class CatGroup(StrEnum):
+    PLAYER_CLAN = "player_clan"
+
+    OTHER_CLAN1 = "other_clan1"
+    OTHER_CLAN2 = "other_clan2"
+    OTHER_CLAN3 = "other_clan3"
+    OTHER_CLAN4 = "other_clan4"
+    OTHER_CLAN5 = "other_clan5"
+
+    DARK_FOREST = "dark_forest"
+    STAR_CLAN = "star_clan"
+    UNKNOWN_RESIDENCE = "unknown_residence"
