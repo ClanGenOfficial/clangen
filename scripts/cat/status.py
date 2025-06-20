@@ -29,6 +29,13 @@ class Status:
         standings with the group. Near is a bool with True indicating the cat is within interact-able distance of that 
         group."""
 
+    def get_status_dict(self) -> dict:
+
+        return {
+            "group_history": self.group_history,
+            "standing_history": self.standing_history
+                }
+
     def generate_new_status(
             self,
             age: CatAge = None,

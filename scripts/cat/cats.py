@@ -3242,8 +3242,8 @@ class Cat:
 
     @staticmethod
     def rank_order(cat: Cat):
-        if cat.status in Cat.rank_sort_order:
-            return Cat.rank_sort_order.index(cat.status)
+        if cat.status.rank in Cat.rank_sort_order:
+            return Cat.rank_sort_order.index(cat.status.rank)
         else:
             return 0
 
@@ -3343,7 +3343,7 @@ class Cat:
         elif patrol:
             return "<br>".join(
                 [
-                    i18n.t(f"general.{self.status.lower()}", count=1),
+                    i18n.t(f"general.{self.status.rank.lower()}", count=1),
                     i18n.t(f"cat.personality.{self.personality.trait}"),
                     self.skills.skill_string(short=True),
                     i18n.t(f"cat.skills.{self.experience_level}")
@@ -3366,7 +3366,7 @@ class Cat:
         return "\n".join(
             [
                 i18n.t("general.moons_age", count=self.moons),
-                i18n.t(f"general.{self.status.lower()}", count=1),
+                i18n.t(f"general.{self.status.rank.lower()}", count=1),
                 self.genderalign,
                 i18n.t(f"cat.personality.{self.personality.trait}"),
             ]
@@ -3378,7 +3378,7 @@ class Cat:
                 "ID": self.ID,
                 "name_prefix": self.name.prefix,
                 "name_suffix": self.name.suffix,
-                "status": self.status,
+                "status": self.status.get_status_dict(),
                 "moons": self.moons,
                 "dead_for": self.dead_for,
                 "parent1": self.parent1,
@@ -3399,7 +3399,7 @@ class Cat:
                 if self._pronouns is not None
                 else {i18n.config.get("locale"): self.pronouns},
                 "birth_cooldown": self.birth_cooldown,
-                "status": self.status,
+                "status": self.status.get_status_dict(),
                 "backstory": self.backstory or None,
                 "moons": self.moons,
                 "trait": self.personality.trait,
@@ -3419,8 +3419,6 @@ class Cat:
                 "no_kits": self.no_kits,
                 "no_retire": self.no_retire,
                 "no_mates": self.no_mates,
-                "exiled": self.exiled,
-                "driven_out": self.driven_out,
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,
                 "pelt_length": self.pelt.length,
@@ -3449,8 +3447,6 @@ class Cat:
                 "dead_moons": self.dead_for,
                 "current_apprentice": list(self.apprentice),
                 "former_apprentices": list(self.former_apprentices),
-                "df": self.df,
-                "outside": self.outside,
                 "faded_offspring": self.faded_offspring,
                 "opacity": self.pelt.opacity,
                 "prevent_fading": self.prevent_fading,
@@ -3462,7 +3458,6 @@ class Cat:
     ):
         """Determines where the next and previous buttons point to, relative to this cat.
 
-        :param status: Allows you to constrain the list by status
         :param filter_func: Allows you to constrain the list by any attribute of
             the Cat object. Takes a function which takes in a Cat instance and
             returns a boolean.
