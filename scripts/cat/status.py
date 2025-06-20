@@ -280,17 +280,11 @@ class Status:
         """
         new_rank = None
 
-        if new_group in self.all_groups:
-            new_rank = self.find_prior_clan_rank(new_group)
-            if new_rank in [CatRank.LEADER, CatRank.DEPUTY]:
-                new_rank = None
-        elif self.is_former_clancat():
+        # adding a cat who has been in the group in the past, they will take their old rank if possible
+        if self.is_former_clancat():
             new_rank = self.find_prior_clan_rank()
             if new_rank in [CatRank.LEADER, CatRank.DEPUTY]:
-                new_rank = None
-
-        if not new_rank:
-            new_rank = self.get_rank_from_age(age)
+                new_rank = self.get_rank_from_age(age)
 
         self._modify_group(
             new_rank=new_rank,
@@ -309,7 +303,6 @@ class Status:
                 break
 
         return standing_list
-
 
     def move_to_afterlife(self):
         """
