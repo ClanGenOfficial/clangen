@@ -801,6 +801,8 @@ class EventEditScreen(Screens):
                     for name, button in self.editor_element.items():
                         if event.ui_element == button and name != self.current_editor_tab:
                             self.current_editor_tab = name
+                            if self.event_text_element["event_text"].html_text:
+                                self.event_text_info = self.event_text_element["event_text"].html_text
                             self.clear_editor_tab()
                             break
 
@@ -1484,6 +1486,7 @@ class EventEditScreen(Screens):
             self.event_text_element["event_text"].show()
             self.event_text_element["preview_text"].hide()
         game.event_editing = True
+
         if self.event_text_info:
             self.event_text_element["event_text"].set_text(self.event_text_info)
         else:
