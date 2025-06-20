@@ -2695,7 +2695,7 @@ class EventEditScreen(Screens):
 
         # CATS
         self.relationships_element["cats_from_list"].set_selected_list(selected_constraints["cats_from"].copy())
-        self.relationships_element["cats_from_info"].set_text(f"selected: {selected_constraints['cats_from']}")
+        self.relationships_element["cats_from_info"].set_text(f"cats: {selected_constraints['cats_from']}")
         for name, button in self.relationships_element["cats_from_list"].buttons.items():
             if name in selected_constraints["cats_to"]:
                 button.disable()
@@ -2703,7 +2703,7 @@ class EventEditScreen(Screens):
                 button.enable()
 
         self.relationships_element["cats_to_list"].set_selected_list(selected_constraints["cats_to"].copy())
-        self.relationships_element["cats_to_info"].set_text(f"selected: {selected_constraints['cats_to']}")
+        self.relationships_element["cats_to_info"].set_text(f"cats: {selected_constraints['cats_to']}")
         for name, button in self.relationships_element["cats_to_list"].buttons.items():
             if name in selected_constraints["cats_from"]:
                 button.disable()
@@ -4570,7 +4570,7 @@ class EventEditScreen(Screens):
             starting_selection=self.relationships_template["cats_to"]
         )
         self.relationships_element["cats_from_info"] = UITextBoxTweaked(
-            f"selected: {selected_constraints['cats_from']}",
+            f"cats: {selected_constraints['cats_from']}",
             ui_scale(pygame.Rect((10, 0), (110, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
@@ -4581,7 +4581,7 @@ class EventEditScreen(Screens):
             }
         )
         self.relationships_element["cats_to_info"] = UITextBoxTweaked(
-            f"selected: {selected_constraints['cats_to']}",
+            f"cats: {selected_constraints['cats_to']}",
             ui_scale(pygame.Rect((200, 0), (110, -1))),
             object_id="#text_box_30_horizright_pad_10_10",
             line_spacing=1,
