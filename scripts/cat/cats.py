@@ -2835,7 +2835,7 @@ class Cat:
         else:
             apply_bonus = True
             # EX gain on success
-            if mediator.status != "mediator apprentice":
+            if mediator.status.rank == CatRank.MEDIATOR:
                 exp_gain = randint(10, 24)
 
                 gm_modifier = 1
@@ -2854,7 +2854,7 @@ class Cat:
                     lvl_modifier = 1
                 mediator.experience += exp_gain / lvl_modifier / gm_modifier
 
-        if mediator.status == "mediator apprentice":
+        if mediator.status.rank == CatRank.MEDIATOR_APPRENTICE:
             mediator.experience += max(randint(1, 6), 1)
 
         # determine the traits to effect
