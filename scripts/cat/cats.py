@@ -612,16 +612,16 @@ class Cat:
         if game.clan and not self.outside and not self.exiled:
             self.grief(body)
 
-        self.status.send_to_afterlife()
+        self.status.move_to_afterlife()
 
-        if not self.status.is_former_clancat():
+        if self.status.is_outsider() and not self.status.is_former_clancat():
+            game.clan.add_to_unknown(self)
+        else:
             Cat.dead_cats.append(self)
             if darkforest:
                 game.clan.add_to_darkforest(self)
             else:
                 game.clan.add_to_starclan(self)
-        else:
-            game.clan.add_to_unknown(self)
 
         return
 

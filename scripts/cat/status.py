@@ -21,12 +21,13 @@ class Status:
         Cats that are being newly generated should use function .generate_new_status()
         """
         self.group_history = group_history if group_history else []
-        """List of dicts containing the keys group, rank, and moons_as. A new dict is added any time group or rank are
+        """List of dicts containing the keys group, rank, and moons_as. A new dict is added anytime group or rank are
         changed."""
 
         self.standing_history = standing_history if standing_history else []
         """List of dicts containing the keys group, standing, and near. Standing is a chronological list of the cat's 
-        standings with the group. Near is a bool with True indicating the cat is within interactable distance of that group."""
+        standings with the group. Near is a bool with True indicating the cat is within interact-able distance of that 
+        group."""
 
     def generate_new_status(
             self,
@@ -64,7 +65,7 @@ class Status:
         :param age: The age of the cat. This is required as it will be used to decide any other missing attributes.
         :param social: The social standing of the cat (rogue, loner, clancat, ect.)
         :param group: The group this cat belongs to
-        :param rank: This cat's rank. If the cat is outside of the Clan, this will match it's social.
+        :param rank: This cat's rank. If the cat is outside the Clan, this will match it's social.
         """
         new_history = {
             "group": group,
@@ -213,8 +214,8 @@ class Status:
         Changes group status for a cat. They can be entering, leaving, or switching their group.
         :param new_group: the name of the new group they will be joining, default None
         :param new_rank: Indicate what social category the cat is now part of
-        :param standing_with_past_group: Indicate what standing the cat should have with their old group, leave None if they
-        didn't have a group
+        :param standing_with_past_group: Indicate what standing the cat should have with their old group, leave None if
+        they didn't have a group
         """
         if standing_with_past_group:
             self.add_standing(standing_with_past_group)
@@ -297,14 +298,13 @@ class Status:
             new_group=new_group
         )
 
-    def send_to_afterlife(self):
+    def move_to_afterlife(self):
         """
         Changes a cat's group into the appropriate afterlife ("darkforest", "unknown", "starclan")
         """
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
-        if not self.is_former_clancat() and self.social in [CatSocial.ROGUE, CatSocial.LONER,
-                                                            CatSocial.KITTYPET]:
+        if self.is_outsider() and not self.is_former_clancat():
             self._modify_group(
                 new_rank=self.rank,
                 new_group="unknown"
@@ -312,7 +312,7 @@ class Status:
             return
 
         # meanwhile clan cats go wherever their guide points them
-        if self.social != CatSocial.CLANCAT:
+        if self.is_former_clancat():
             clan_rank = self.find_prior_clan_rank()
         else:
             clan_rank = self.rank
