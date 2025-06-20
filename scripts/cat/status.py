@@ -298,6 +298,19 @@ class Status:
             new_group=new_group
         )
 
+    def get_standing_with_group(self, group: CatGroup) -> list:
+        """
+        Returns the list of standings a cat has for the given group.
+        """
+        standing_list = []
+        for entry in self.standing_history:
+            if entry["group"] == group:
+                standing_list = entry
+                break
+
+        return standing_list
+
+
     def move_to_afterlife(self):
         """
         Changes a cat's group into the appropriate afterlife
@@ -365,6 +378,13 @@ class Status:
                                           CatRank.ROGUE]]
 
         return past_ranks[-1]
+
+
+    def in_player_clan(self) -> bool:
+        """
+        Returns True if the cat is currently part of the player clan
+        """
+        return True if self.group == CatGroup.PLAYER_CLAN else False
 
     def is_outsider(self) -> bool:
 
