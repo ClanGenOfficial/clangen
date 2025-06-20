@@ -938,6 +938,7 @@ class EventEditScreen(Screens):
 
     # OVERALL SCREEN CONTROLS
     def exit_screen(self):
+        game.event_editing = False
 
         self.main_menu_button.kill()
         self.list_frame.kill()
