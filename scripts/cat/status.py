@@ -4,7 +4,7 @@ from typing import TypedDict
 
 import ujson
 
-from scripts.cat.enums import CatRankEnum, CatSocialEnum, CatStandingEnum, CatAgeEnum
+from scripts.cat.enums import CatRank, CatSocial, CatStanding, CatAge
 from scripts.game_structure.game_essentials import game
 
 
@@ -30,10 +30,10 @@ class Status:
 
     def generate_new_status(
             self,
-            age: CatAgeEnum = None,
-            social: CatSocialEnum = None,
+            age: CatAge = None,
+            social: CatSocial = None,
             group: str = None,
-            rank: CatRankEnum = None,
+            rank: CatRank = None,
     ):
         """
         Starts a group history and standing history for a newly generated cat
@@ -54,10 +54,10 @@ class Status:
 
     def _start_group_history(
             self,
-            age: CatAgeEnum = None,
-            social: CatSocialEnum = None,
+            age: CatAge = None,
+            social: CatSocial = None,
             group: str = None,
-            rank: CatRankEnum = None
+            rank: CatRank = None
     ):
         """
         Generates initial group history for a cat
@@ -70,27 +70,27 @@ class Status:
 
         # if no rank, we find rank according to age
         if not rank:
-            if social and social != CatSocialEnum.CLANCAT:
-                if social == CatSocialEnum.ROGUE:
-                    rank = CatRankEnum.ROGUE
-                elif social == CatSocialEnum.LONER:
-                    rank = CatRankEnum.LONER
-                elif social == CatSocialEnum.KITTYPET:
-                    rank = CatRankEnum.KITTYPET
+            if social and social != CatSocial.CLANCAT:
+                if social == CatSocial.ROGUE:
+                    rank = CatRank.ROGUE
+                elif social == CatSocial.LONER:
+                    rank = CatRank.LONER
+                elif social == CatSocial.KITTYPET:
+                    rank = CatRank.KITTYPET
             else:
                 rank = self.get_rank_from_age(age)
 
         # if not social, then social category is found via the rank
         if not social:
-            if rank in CatRankEnum.all_clancat_ranks:
-                social = CatSocialEnum.CLANCAT
+            if rank in CatRank.all_clancat_ranks:
+                social = CatSocial.CLANCAT
             else:
-                social = choice([CatSocialEnum.ROGUE, CatSocialEnum.LONER, CatSocialEnum.KITTYPET])
+                social = choice([CatSocial.ROGUE, CatSocial.LONER, CatSocial.KITTYPET])
 
         # group assignment via social
         # we assume a clancat is the player's as default
         # otherwise if the cat isn't a clancat, then we assume no group
-        if social == CatSocialEnum.CLANCAT and not group:
+        if social == CatSocial.CLANCAT and not group:
             new_history["group"] = game.clan.name
 
         # next, we double-check that the rank is appropriate for the social, this is mostly for loner/rogue/kittypet
@@ -114,7 +114,7 @@ class Status:
             self.standing_history = [
                 {
                     "group": self.group,
-                    "standing": [CatStandingEnum.MEMBER],
+                    "standing": [CatStanding.MEMBER],
                     "near": True
                 }
             ]
@@ -122,7 +122,7 @@ class Status:
             self.standing_history = [
                 {
                     "group": game.clan.name,
-                    "standing": [CatStandingEnum.KNOWN],
+                    "standing": [CatStanding.KNOWN],
                     "near": True
                 }
             ]
@@ -158,11 +158,11 @@ class Status:
         return [record["group"] for record in self.group_history]
 
     @property
-    def rank(self) -> CatRankEnum:
+    def rank(self) -> CatRank:
         """
         Returns the rank that a cat currently holds within their group
         """
-        rank = [rank for rank in list(CatRankEnum) if rank == self.group_history[-1]["rank"]]
+        rank = [rank for rank in list(CatRank) if rank == self.group_history[-1]["rank"]]
         return rank[0]
 
     @property
@@ -181,21 +181,21 @@ class Status:
         return history
 
     @staticmethod
-    def get_rank_from_age(age) -> CatRankEnum:
+    def get_rank_from_age(age) -> CatRank:
         """
         Returns clan rank according to given age
         """
-        if age == CatAgeEnum.NEWBORN:
-            rank = CatRankEnum.NEWBORN
-        elif age == CatAgeEnum.KITTEN:
-            rank = CatRankEnum.KITTEN
-        elif age == CatAgeEnum.ADOLESCENT:
+        if age == CatAge.NEWBORN:
+            rank = CatRank.NEWBORN
+        elif age == CatAge.KITTEN:
+            rank = CatRank.KITTEN
+        elif age == CatAge.ADOLESCENT:
             rank = choice(
-                [CatRankEnum.APPRENTICE, CatRankEnum.MEDIATOR_APPRENTICE, CatRankEnum.MEDICINE_APPRENTICE])
-        elif age in [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT]:
-            rank = choice([CatRankEnum.WARRIOR, CatRankEnum.MEDICINE_CAT, CatRankEnum.MEDIATOR])
+                [CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE, CatRank.MEDICINE_APPRENTICE])
+        elif age in [CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT]:
+            rank = choice([CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR])
         else:
-            rank = CatRankEnum.ELDER
+            rank = CatRank.ELDER
 
         return rank
 
@@ -233,7 +233,7 @@ class Status:
 
     def lost_from_group(
             self,
-            new_social_status=CatSocialEnum.KITTYPET
+            new_social_status=CatSocial.KITTYPET
     ):
         """
         Removes from previous group and sets standing with that group to Lost.
@@ -243,7 +243,7 @@ class Status:
 
         self._modify_group(
             new_social_status,
-            standing_with_past_group=CatStandingEnum.LOST
+            standing_with_past_group=CatStanding.LOST
         )
 
     def exile_from_group(self):
@@ -253,8 +253,8 @@ class Status:
         """
 
         self._modify_group(
-            new_rank=CatRankEnum.LONER,
-            standing_with_past_group=CatStandingEnum.EXILED)
+            new_rank=CatRank.LONER,
+            standing_with_past_group=CatStanding.EXILED)
 
     def add_to_group(
             self,
@@ -277,11 +277,11 @@ class Status:
 
         if new_group in self.all_groups:
             new_rank = self.find_prior_clan_rank(new_group)
-            if new_rank in [CatRankEnum.LEADER, CatRankEnum.DEPUTY]:
+            if new_rank in [CatRank.LEADER, CatRank.DEPUTY]:
                 new_rank = None
         elif self.is_former_clancat():
             new_rank = self.find_prior_clan_rank()
-            if new_rank in [CatRankEnum.LEADER, CatRankEnum.DEPUTY]:
+            if new_rank in [CatRank.LEADER, CatRank.DEPUTY]:
                 new_rank = None
 
         if not new_rank:
@@ -299,8 +299,8 @@ class Status:
         """
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
-        if not self.is_former_clancat() and self.social in [CatSocialEnum.ROGUE, CatSocialEnum.LONER,
-                                                            CatSocialEnum.KITTYPET]:
+        if not self.is_former_clancat() and self.social in [CatSocial.ROGUE, CatSocial.LONER,
+                                                            CatSocial.KITTYPET]:
             self._modify_group(
                 new_rank=self.rank,
                 new_group="unknown"
@@ -308,7 +308,7 @@ class Status:
             return
 
         # meanwhile clan cats go wherever their guide points them
-        if self.social != CatSocialEnum.CLANCAT:
+        if self.social != CatSocial.CLANCAT:
             clan_rank = self.find_prior_clan_rank()
         else:
             clan_rank = self.rank
@@ -316,7 +316,7 @@ class Status:
         self._modify_group(
             new_rank=clan_rank,
             new_group=game.clan.instructor.status.group,
-            standing_with_past_group=CatStandingEnum.MEMBER
+            standing_with_past_group=CatStanding.MEMBER
         )
 
     def change_rank(self, new_rank):
@@ -335,7 +335,7 @@ class Status:
         if self.group:
             self._modify_group(
                 new_social,
-                standing_with_past_group=CatStandingEnum.LEFT
+                standing_with_past_group=CatStanding.LEFT
             )
         else:
             self.group_history.append(
@@ -356,15 +356,15 @@ class Status:
             past_ranks = [record["rank"] for record in self.group_history if record["group"] == clan]
         else:
             past_ranks = [rank for rank in self.rank_history.keys()
-                          if rank not in [CatRankEnum.LONER,
-                                          CatRankEnum.KITTYPET,
-                                          CatRankEnum.ROGUE]]
+                          if rank not in [CatRank.LONER,
+                                          CatRank.KITTYPET,
+                                          CatRank.ROGUE]]
 
         return past_ranks[-1]
 
     def is_outsider(self) -> bool:
 
-        if self.social != CatSocialEnum.CLANCAT:
+        if self.social != CatSocial.CLANCAT:
             return True
 
         return False
@@ -379,14 +379,14 @@ class Status:
         """
         Returns True if the cat is currently a clancat
         """
-        return True if self.social == CatSocialEnum.CLANCAT else False
+        return True if self.social == CatSocial.CLANCAT else False
 
     def is_former_clancat(self) -> bool:
         """
         Returns True if the cat has been a clancat in the past, but is not currently a clancat
         """
 
-        if CatSocialEnum.CLANCAT in self.social_history and self.social != CatSocialEnum.CLANCAT:
+        if CatSocial.CLANCAT in self.social_history and self.social != CatSocial.CLANCAT:
             return True
 
         return False
@@ -396,7 +396,7 @@ class Status:
         Returns True if the cat is currently an apprentice of any type
         """
 
-        if self.rank in [CatRankEnum.APPRENTICE, CatRankEnum.MEDICINE_APPRENTICE, CatRankEnum.MEDIATOR_APPRENTICE]:
+        if self.rank in [CatRank.APPRENTICE, CatRank.MEDICINE_APPRENTICE, CatRank.MEDIATOR_APPRENTICE]:
             return True
 
         return False
@@ -422,9 +422,9 @@ class StatusDict(TypedDict, total=False):
     """
     group_history: list[dict]
     standing_history: list[dict]
-    social: CatSocialEnum
+    social: CatSocial
     group: str
-    rank: CatRankEnum
+    rank: CatRank
 
 
 with open(

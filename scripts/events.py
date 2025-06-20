@@ -14,7 +14,7 @@ import traceback
 import i18n
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
-from scripts.cat.enums import CatAgeEnum
+from scripts.cat.enums import CatAge
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
@@ -1254,7 +1254,7 @@ class Events:
                     self.ceremony(cat, "elder")
 
             # apprentice a kitten to either med or warrior
-            if cat.moons == cat_class.age_moons[CatAgeEnum.ADOLESCENT][0]:
+            if cat.moons == cat_class.age_moons[CatAge.ADOLESCENT][0]:
                 if cat.status == "kitten":
                     med_cat_list = [
                         i
@@ -1722,9 +1722,9 @@ class Events:
         chance = acc_chances["base_acc_chance"]
         if cat.status in ["medicine cat", "medicine cat apprentice"]:
             chance += acc_chances["med_modifier"]
-        if cat.age in [CatAgeEnum.KITTEN, CatAgeEnum.ADOLESCENT]:
+        if cat.age in [CatAge.KITTEN, CatAge.ADOLESCENT]:
             chance += acc_chances["baby_modifier"]
-        elif cat.age in [CatAgeEnum.SENIOR_ADULT, CatAgeEnum.SENIOR]:
+        elif cat.age in [CatAge.SENIOR_ADULT, CatAge.SENIOR]:
             chance += acc_chances["elder_modifier"]
         if cat.personality.trait in [
             "adventurous",
@@ -1783,12 +1783,12 @@ class Events:
             if cat.not_working() and int(random.random() * 3):
                 return
 
-            if cat.age == CatAgeEnum.KITTEN:
+            if cat.age == CatAge.KITTEN:
                 return
 
-            if cat.age == CatAgeEnum.ADOLESCENT:
+            if cat.age == CatAge.ADOLESCENT:
                 ran = game.config["outside_ex"]["base_adolescent_timeskip_ex"]
-            elif cat.age == CatAgeEnum.SENIOR:
+            elif cat.age == CatAge.SENIOR:
                 ran = game.config["outside_ex"]["base_senior_timeskip_ex"]
             else:
                 ran = game.config["outside_ex"]["base_adult_timeskip_ex"]
@@ -2308,9 +2308,9 @@ class Events:
 
         transing_chance = game.config["transition_related"]
         chance = transing_chance["base_trans_chance"]
-        if cat.age in [CatAgeEnum.ADOLESCENT]:
+        if cat.age in [CatAge.ADOLESCENT]:
             chance += transing_chance["adolescent_modifier"]
-        elif cat.age in [CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT, CatAgeEnum.SENIOR]:
+        elif cat.age in [CatAge.ADULT, CatAge.SENIOR_ADULT, CatAge.SENIOR]:
             chance += transing_chance["older_modifier"]
 
         if not int(random.random() * chance):

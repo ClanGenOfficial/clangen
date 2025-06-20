@@ -12,7 +12,7 @@ import pygame
 
 from scripts.game_structure import localization
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAgeEnum
+from scripts.cat.enums import CatAge
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.event_filters import event_for_tags
@@ -183,7 +183,7 @@ class Patrol:
 
             if (
                 cat.status in ("warrior", "deputy", "leader")
-                and cat.age != CatAgeEnum.ADOLESCENT
+                and cat.age != CatAge.ADOLESCENT
             ):
                 if "normal adult" in self.patrol_statuses:
                     self.patrol_statuses["normal adult"] += 1

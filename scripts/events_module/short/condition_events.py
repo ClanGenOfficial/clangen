@@ -6,7 +6,7 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAgeEnum
+from scripts.cat.enums import CatAge
 from scripts.cat.history import History
 from scripts.clan_resources.freshkill import (
     FRESHKILL_ACTIVE,
@@ -1008,30 +1008,30 @@ class Condition_Events:
                     # Higher chances for "severe". These are meant to be nearly 100% without
                     # being 100%
                     retire_chances = {
-                        CatAgeEnum.NEWBORN: 0,
-                        CatAgeEnum.KITTEN: 0,
-                        CatAgeEnum.ADOLESCENT: 50,  # This is high so instances where a cat retires the same moon they become an apprentice is rare
-                        CatAgeEnum.YOUNG_ADULT: 10,
-                        CatAgeEnum.ADULT: 5,
-                        CatAgeEnum.SENIOR_ADULT: 5,
-                        CatAgeEnum.SENIOR: 5,
+                        CatAge.NEWBORN: 0,
+                        CatAge.KITTEN: 0,
+                        CatAge.ADOLESCENT: 50,  # This is high so instances where a cat retires the same moon they become an apprentice is rare
+                        CatAge.YOUNG_ADULT: 10,
+                        CatAge.ADULT: 5,
+                        CatAge.SENIOR_ADULT: 5,
+                        CatAge.SENIOR: 5,
                     }
                 else:
                     retire_chances = {
-                        CatAgeEnum.NEWBORN: 0,
-                        CatAgeEnum.KITTEN: 0,
-                        CatAgeEnum.ADOLESCENT: 100,
-                        CatAgeEnum.YOUNG_ADULT: 80,
-                        CatAgeEnum.ADULT: 70,
-                        CatAgeEnum.SENIOR_ADULT: 50,
-                        CatAgeEnum.SENIOR: 10,
+                        CatAge.NEWBORN: 0,
+                        CatAge.KITTEN: 0,
+                        CatAge.ADOLESCENT: 100,
+                        CatAge.YOUNG_ADULT: 80,
+                        CatAge.ADULT: 70,
+                        CatAge.SENIOR_ADULT: 50,
+                        CatAge.SENIOR: 10,
                     }
 
                 chance = int(retire_chances.get(cat.age))
                 if not int(random.random() * chance):
                     retire_involved = [cat.ID]
                     cat_dict = {"m_c": cat}
-                    if cat.age == CatAgeEnum.ADOLESCENT:
+                    if cat.age == CatAge.ADOLESCENT:
                         event = i18n.t(
                             "hardcoded.condition_retire_adolescent", name=cat.name
                         )
@@ -1049,7 +1049,7 @@ class Condition_Events:
                     else:
                         event = i18n.t("hardcoded.condition_retire_no_leader")
 
-                    if cat.age == CatAgeEnum.ADOLESCENT:
+                    if cat.age == CatAge.ADOLESCENT:
                         event += i18n.t(
                             "hardcoded.condition_retire_adolescent_ceremony",
                             clan=game.clan.name,

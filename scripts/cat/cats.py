@@ -14,7 +14,7 @@ from typing import Dict, List, Any, Union, Callable
 import i18n
 import ujson  # type: ignore
 
-from scripts.cat.enums import CatAgeEnum, CatRankEnum, CatSocialEnum
+from scripts.cat.enums import CatAge, CatRank, CatSocial
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -59,29 +59,29 @@ class Cat:
     current_pronoun_lang = None
 
     age_moons = {
-        CatAgeEnum.NEWBORN: game.config["cat_ages"]["newborn"],
-        CatAgeEnum.KITTEN: game.config["cat_ages"]["kitten"],
-        CatAgeEnum.ADOLESCENT: game.config["cat_ages"]["adolescent"],
-        CatAgeEnum.YOUNG_ADULT: game.config["cat_ages"]["young adult"],
-        CatAgeEnum.ADULT: game.config["cat_ages"]["adult"],
-        CatAgeEnum.SENIOR_ADULT: game.config["cat_ages"]["senior adult"],
-        CatAgeEnum.SENIOR: game.config["cat_ages"]["senior"],
+        CatAge.NEWBORN: game.config["cat_ages"]["newborn"],
+        CatAge.KITTEN: game.config["cat_ages"]["kitten"],
+        CatAge.ADOLESCENT: game.config["cat_ages"]["adolescent"],
+        CatAge.YOUNG_ADULT: game.config["cat_ages"]["young adult"],
+        CatAge.ADULT: game.config["cat_ages"]["adult"],
+        CatAge.SENIOR_ADULT: game.config["cat_ages"]["senior adult"],
+        CatAge.SENIOR: game.config["cat_ages"]["senior"],
     }
 
 
     # This in is in reverse order: top of the list at the bottom
     rank_sort_order = [
-        CatRankEnum.NEWBORN,
-        CatRankEnum.KITTEN,
-        CatRankEnum.ELDER,
-        CatRankEnum.APPRENTICE,
-        CatRankEnum.WARRIOR,
-        CatRankEnum.MEDIATOR_APPRENTICE,
-        CatRankEnum.MEDIATOR,
-        CatRankEnum.MEDICINE_APPRENTICE,
-        CatRankEnum.MEDICINE_CAT,
-        CatRankEnum.DEPUTY,
-        CatRankEnum.LEADER,
+        CatRank.NEWBORN,
+        CatRank.KITTEN,
+        CatRank.ELDER,
+        CatRank.APPRENTICE,
+        CatRank.WARRIOR,
+        CatRank.MEDIATOR_APPRENTICE,
+        CatRank.MEDIATOR,
+        CatRank.MEDICINE_APPRENTICE,
+        CatRank.MEDICINE_CAT,
+        CatRank.DEPUTY,
+        CatRank.LEADER,
     ]
 
     gender_tags = {"female": "F", "male": "M"}
@@ -241,14 +241,14 @@ class Cat:
 
         # age and status
         if self.status is None and moons is None:
-            self.age = choice(list(CatAgeEnum))
+            self.age = choice(list(CatAge))
         elif moons is not None:
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = CatAgeEnum.SENIOR
+                self.age = CatAge.SENIOR
             elif moons == 0:
-                self.age = CatAgeEnum.NEWBORN
+                self.age = CatAge.NEWBORN
             else:
                 # In range
                 for key_age in self.age_moons.keys():
@@ -257,21 +257,21 @@ class Cat:
                     ):
                         self.age = key_age
         else:
-            if self.status.rank == CatRankEnum.NEWBORN:
-                self.age = CatAgeEnum.NEWBORN
-            elif self.status.rank == CatRankEnum.KITTEN:
-                self.age = CatAgeEnum.KITTEN
-            elif self.status.rank == CatRankEnum.ELDER:
-                self.age = CatAgeEnum.SENIOR
+            if self.status.rank == CatRank.NEWBORN:
+                self.age = CatAge.NEWBORN
+            elif self.status.rank == CatRank.KITTEN:
+                self.age = CatAge.KITTEN
+            elif self.status.rank == CatRank.ELDER:
+                self.age = CatAge.SENIOR
             elif self.status.is_any_apprentice():
-                self.age = CatAgeEnum.ADOLESCENT
+                self.age = CatAge.ADOLESCENT
             else:
                 self.age = choice(
                     [
-                        CatAgeEnum.YOUNG_ADULT,
-                        CatAgeEnum.ADULT,
-                        CatAgeEnum.ADULT,
-                        CatAgeEnum.SENIOR_ADULT,
+                        CatAge.YOUNG_ADULT,
+                        CatAge.ADULT,
+                        CatAge.ADULT,
+                        CatAge.SENIOR_ADULT,
                     ]
                 )
             self.moons = randint(
@@ -379,9 +379,9 @@ class Cat:
         """
         if moons > 300:
             # Out of range, always elder
-            self.age = CatAgeEnum.SENIOR
+            self.age = CatAge.SENIOR
         elif moons == 0:
-            self.age = CatAgeEnum.NEWBORN
+            self.age = CatAge.NEWBORN
         else:
             # In range
             for key_age in self.age_moons.keys():
@@ -433,10 +433,10 @@ class Cat:
         # experience and current patrol status
         if self.age.is_baby():
             self.experience = 0
-        elif self.age == CatAgeEnum.ADOLESCENT:
+        elif self.age == CatAge.ADOLESCENT:
             m = self.moons
             self.experience = 0
-            while m > Cat.age_moons[CatAgeEnum.ADOLESCENT][0]:
+            while m > Cat.age_moons[CatAge.ADOLESCENT][0]:
                 ran = game.config["graduation"]["base_app_timeskip_ex"]
                 exp = choice(
                     list(range(ran[0][0], ran[0][1] + 1))
@@ -444,17 +444,17 @@ class Cat:
                 )
                 self.experience += exp + 3
                 m -= 1
-        elif self.age in [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT]:
+        elif self.age in [CatAge.YOUNG_ADULT, CatAge.ADULT]:
             self.experience = randint(
                 Cat.experience_levels_range["prepared"][0],
                 Cat.experience_levels_range["proficient"][1],
             )
-        elif self.age == CatAgeEnum.SENIOR_ADULT:
+        elif self.age == CatAge.SENIOR_ADULT:
             self.experience = randint(
                 Cat.experience_levels_range["competent"][0],
                 Cat.experience_levels_range["expert"][1],
             )
-        elif self.age == CatAgeEnum.SENIOR:
+        elif self.age == CatAge.SENIOR:
             self.experience = randint(
                 Cat.experience_levels_range["competent"][0],
                 Cat.experience_levels_range["master"][1],
@@ -558,7 +558,7 @@ class Cat:
         - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
         """
         if (
-            self.status.rank == CatRankEnum.LEADER
+            self.status.rank == CatRank.LEADER
             and "pregnant" in self.injuries
             and game.clan.leader_lives > 0
         ):
@@ -577,7 +577,7 @@ class Cat:
         text = ""
         darkforest = True if game.clan.instructor.status.group == "darkforest" else False
         isoutside = self.status.is_outsider()
-        if self.status.rank == CatRankEnum.LEADER:
+        if self.status.rank == CatRank.LEADER:
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
                 death_thought = Thoughts.leader_death_thought(
@@ -849,7 +849,7 @@ class Cat:
         """Makes a Clan cat a lost cat. Makes status changes and removes apprentices."""
 
         self.status.lost_from_group(
-            new_social_status=choice([CatSocialEnum.KITTYPET, CatSocialEnum.LONER])
+            new_social_status=choice([CatSocial.KITTYPET, CatSocial.LONER])
         )
 
         for app in self.apprentice.copy():
@@ -922,14 +922,14 @@ class Cat:
             game.clan.remove_med_cat(self)
 
         # updates mentors
-        if self.status.rank == CatRankEnum.APPRENTICE:
+        if self.status.rank == CatRank.APPRENTICE:
             pass
 
-        elif self.status.rank == CatRankEnum.MEDICINE_APPRENTICE:
+        elif self.status.rank == CatRank.MEDICINE_APPRENTICE:
             pass
 
-        elif self.status.rank == CatRankEnum.WARRIOR:
-            if old_rank == CatRankEnum.LEADER and (
+        elif self.status.rank == CatRank.WARRIOR:
+            if old_rank == CatRank.LEADER and (
                 game.clan.leader and game.clan.leader.ID == self.ID
             ):
                 game.clan.leader = None
@@ -938,13 +938,13 @@ class Cat:
                 game.clan.deputy = None
                 game.clan.deputy_predecessors += 1
 
-        elif self.status.rank == CatRankEnum.MEDICINE_CAT:
+        elif self.status.rank == CatRank.MEDICINE_CAT:
             if game.clan is not None:
                 game.clan.new_medicine_cat(self)
 
-        elif self.status.rank == CatRankEnum.ELDER:
+        elif self.status.rank == CatRank.ELDER:
             if (
-                old_rank == CatRankEnum.LEADER
+                old_rank == CatRank.LEADER
                 and game.clan.leader
                 and game.clan.leader.ID == self.ID
             ):
@@ -955,10 +955,10 @@ class Cat:
                 game.clan.deputy = None
                 game.clan.deputy_predecessors += 1
 
-        elif self.status.rank == CatRankEnum.MEDIATOR:
+        elif self.status.rank == CatRank.MEDIATOR:
             pass
 
-        elif self.status.rank == CatRankEnum.MEDIATOR_APPRENTICE:
+        elif self.status.rank == CatRank.MEDIATOR_APPRENTICE:
             pass
 
         # update class dictionary
@@ -971,7 +971,7 @@ class Cat:
     def rank_change_traits_skill(self, mentor):
         """Updates trait and skill upon ceremony"""
 
-        if self.status.rank in [CatRankEnum.WARRIOR, CatRankEnum.MEDICINE_CAT, CatRankEnum.MEDIATOR]:
+        if self.status.rank in [CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR]:
             # Give a couple doses of mentor influence:
             if mentor:
                 max_influence = randint(0, 2)
@@ -1194,7 +1194,7 @@ class Cat:
 
         for rel in relationships:
             kitty = self.fetch_cat(rel.cat_to)
-            if kitty and kitty.dead and kitty.status.rank != CatRankEnum.NEWBORN:
+            if kitty and kitty.dead and kitty.status.rank != CatRank.NEWBORN:
                 # check where they reside
                 if starclan:
                     if kitty.ID not in game.clan.starclan_cats:
@@ -1224,7 +1224,7 @@ class Cat:
             for rel in dead_relations:
                 if i == 8:
                     break
-                if rel.cat_to.status.rank == CatRankEnum.LEADER:
+                if rel.cat_to.status.rank == CatRank.LEADER:
                     life_giving_leader = rel.cat_to
                     continue
                 life_givers.append(rel.cat_to.ID)
@@ -1242,7 +1242,7 @@ class Cat:
                     for i in game.clan.starclan_cats
                     if self.fetch_cat(i)
                     and i not in life_givers
-                    and self.fetch_cat(i).status.rank not in [CatRankEnum.LEADER, CatRankEnum.NEWBORN]
+                    and self.fetch_cat(i).status.rank not in [CatRank.LEADER, CatRank.NEWBORN]
                 ]
 
                 if len(possible_sc_cats) - 1 < amount:
@@ -1255,7 +1255,7 @@ class Cat:
                     for i in game.clan.darkforest_cats
                     if self.fetch_cat(i)
                     and i not in life_givers
-                    and self.fetch_cat(i).status.rank not in [CatRankEnum.LEADER, CatRankEnum.NEWBORN]
+                    and self.fetch_cat(i).status.rank not in [CatRank.LEADER, CatRank.NEWBORN]
                 ]
                 if len(possible_df_cats) - 1 < amount:
                     extra_givers = possible_df_cats
@@ -1278,7 +1278,7 @@ class Cat:
                     for kitty in sc_cats:
                         if (
                             self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status.rank == CatRankEnum.LEADER
+                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1288,7 +1288,7 @@ class Cat:
                     for kitty in df_kitties:
                         if (
                             self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status.rank == CatRankEnum.LEADER
+                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1300,7 +1300,7 @@ class Cat:
                     for kitty in sc_cats:
                         if (
                             self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status.rank == CatRankEnum.LEADER
+                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1310,7 +1310,7 @@ class Cat:
                     for kitty in df_kitties:
                         if (
                             self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status.rank == CatRankEnum.LEADER
+                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1503,8 +1503,8 @@ class Cat:
         """Handles a moon skip for an alive cat."""
         old_age = self.age
         self.moons += 1
-        if self.moons == 1 and self.status.rank == CatRankEnum.NEWBORN:
-            self.status.change_rank(CatRankEnum.KITTEN)
+        if self.moons == 1 and self.status.rank == CatRank.NEWBORN:
+            self.status.change_rank(CatRank.KITTEN)
         self.in_camp = 1
 
         if not self.status.in_player_clan():
@@ -1648,13 +1648,13 @@ class Cat:
         mortality = self.illnesses[illness]["mortality"]
 
         # leader should have a higher chance of death
-        if self.status.rank == CatRankEnum.LEADER and mortality != 0:
+        if self.status.rank == CatRank.LEADER and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status.rank == CatRankEnum.LEADER:
+            if self.status.rank == CatRank.LEADER:
                 self.leader_death_heal = True
                 game.clan.leader_lives -= 1
 
@@ -1690,13 +1690,13 @@ class Cat:
         mortality = self.injuries[injury]["mortality"]
 
         # leader should have a higher chance of death
-        if self.status.rank == CatRankEnum.LEADER and mortality != 0:
+        if self.status.rank == CatRank.LEADER and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status.rank == CatRankEnum.LEADER:
+            if self.status.rank == CatRank.LEADER:
                 game.clan.leader_lives -= 1
             self.die()
             return False
@@ -1750,13 +1750,13 @@ class Cat:
             return "reveal"
 
         # leader should have a higher chance of death
-        if self.status.rank == CatRankEnum.LEADER and mortality != 0:
+        if self.status.rank == CatRank.LEADER and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status.rank == CatRankEnum.LEADER:
+            if self.status.rank == CatRank.LEADER:
                 game.clan.leader_lives -= 1
             self.die()
             return "continue"
@@ -1854,7 +1854,7 @@ class Cat:
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
-        if name == "kittencough" and self.status.rank != CatRankEnum.KITTEN:
+        if name == "kittencough" and self.status.rank != CatRank.KITTEN:
             return
 
         illness = ILLNESSES[name]
@@ -2073,7 +2073,7 @@ class Cat:
             )  # creating a range in which a condition can present
             moons_until = max(moons_until, 0)
 
-        if born_with and self.status.rank not in [CatRankEnum.KITTEN, CatRankEnum.NEWBORN]:
+        if born_with and self.status.rank not in [CatRank.KITTEN, CatRank.NEWBORN]:
             moons_until = -2
         elif born_with is False:
             moons_until = 0
@@ -2285,19 +2285,19 @@ class Cat:
 
         # Match jobs
         if (
-            self.status.rank == CatRankEnum.MEDICINE_APPRENTICE
-            and potential_mentor.status.rank != CatRankEnum.MEDICINE_CAT
+            self.status.rank == CatRank.MEDICINE_APPRENTICE
+            and potential_mentor.status.rank != CatRank.MEDICINE_CAT
         ):
             return False
-        if self.status.rank == CatRankEnum.APPRENTICE and potential_mentor.status.rank not in [
-            CatRankEnum.LEADER,
-            CatRankEnum.DEPUTY,
-            CatRankEnum.WARRIOR
+        if self.status.rank == CatRank.APPRENTICE and potential_mentor.status.rank not in [
+            CatRank.LEADER,
+            CatRank.DEPUTY,
+            CatRank.WARRIOR
         ]:
             return False
         if (
-            self.status.rank == CatRankEnum.MEDIATOR_APPRENTICE
-            and potential_mentor.status.rank != CatRankEnum.MEDIATOR
+            self.status.rank == CatRank.MEDIATOR_APPRENTICE
+            and potential_mentor.status.rank != CatRank.MEDIATOR
         ):
             return False
 
@@ -3089,17 +3089,17 @@ class Cat:
         self.faded = True
 
         # Silhouette sprite
-        if self.age == CatAgeEnum.NEWBORN:
+        if self.age == CatAge.NEWBORN:
             file_name = "faded_newborn"
-        elif self.age == CatAgeEnum.KITTEN:
+        elif self.age == CatAge.KITTEN:
             file_name = "faded_kitten"
         elif self.age in [
-            CatAgeEnum.ADULT,
-            CatAgeEnum.YOUNG_ADULT,
-            CatAgeEnum.SENIOR_ADULT,
+            CatAge.ADULT,
+            CatAge.YOUNG_ADULT,
+            CatAge.SENIOR_ADULT,
         ]:
             file_name = "faded_adult"
-        elif self.age == CatAgeEnum.ADOLESCENT:
+        elif self.age == CatAge.ADOLESCENT:
             file_name = "faded_adol"
         else:
             file_name = "faded_senior"
@@ -3318,7 +3318,7 @@ class Cat:
                 self.age = key_age
         try:
             if not updated_age and self.age is not None:
-                self.age = CatAgeEnum.SENIOR
+                self.age = CatAge.SENIOR
         except AttributeError:
             print(f"ERROR: cat has no age attribute! Cat ID: {self.ID}")
 
@@ -3556,7 +3556,7 @@ def create_example_cats():
             game.choose_cats[cat_index] = create_cat(status="warrior")
         else:
             random_rank = choice(
-                [CatRankEnum.KITTEN, CatRankEnum.APPRENTICE, CatRankEnum.WARRIOR, CatRankEnum.WARRIOR, CatRankEnum.ELDER]
+                [CatRank.KITTEN, CatRank.APPRENTICE, CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]
             )
             game.choose_cats[cat_index] = create_cat(status=random_rank)
 
