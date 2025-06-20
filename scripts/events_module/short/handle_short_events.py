@@ -45,7 +45,13 @@ class HandleShortEvents:
     supply_types = ["fresh_kill", "all_herb", "any_herb"]
     supply_types.extend(HERBS)
     supply_triggers = ["always", "low", "adequate", "full", "excess"]
-    supply_adjustments = ["reduce_eighth", "reduce_quarter", "reduce_half", "reduce_full", "increase_#"]
+    supply_adjustments = [
+        "reduce_eighth",
+        "reduce_quarter",
+        "reduce_half",
+        "reduce_full",
+        "increase_#",
+    ]
 
     def __init__(self):
         self.current_lives = None
@@ -709,8 +715,8 @@ class HandleShortEvents:
             # find all possible injuries
             possible_injuries = []
             for injury in block["injuries"]:
-                if injury in INJURY_GROUPS:
-                    possible_injuries.extend(INJURY_GROUPS[injury])
+                if injury in constants.INJURY_GROUPS:
+                    possible_injuries.extend(constants.INJURY_GROUPS[injury])
                 else:
                     possible_injuries.append(injury)
 
@@ -920,86 +926,3 @@ class HandleShortEvents:
 
 
 handle_short_events = HandleShortEvents()
-
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-
-EVENT_ALLOWED_CONDITIONS = [
-    "tick bites",
-    "claw-wound",
-    "bite-wound",
-    "cat bite",
-    "beak bite",
-    "snake bite",
-    "quilled by a porcupine",
-    "rat bite",
-    "mangled leg",
-    "mangled tail",
-    "broken jaw",
-    "broken bone",
-    "sore",
-    "bruises",
-    "scrapes",
-    "cracked pads",
-    "small cut",
-    "sprain",
-    "bee sting",
-    "joint pain",
-    "dislocated joint",
-    "torn pelt",
-    "torn ear",
-    "water in their lungs",
-    "shivering",
-    "frostbite",
-    "burn",
-    "severe burn",
-    "shock",
-    "dehydrated",
-    "head damage",
-    "damaged eyes",
-    "broken back",
-    "poisoned",
-    "headache",
-    "severe headache",
-    "fleas",
-    "seizure",
-    "diarrhea",
-    "running nose",
-    "kittencough",
-    "whitecough",
-    "greencough",
-    "yellowcough",
-    "redcough",
-    "carrionplace disease",
-    "heat stroke",
-    "heat exhaustion",
-    "stomachache",
-    "constant nightmares"
-]
-
-
-INJURY_GROUPS = {
-    "battle_injury": [
-        "claw-wound",
-        "mangled leg",
-        "mangled tail",
-        "torn pelt",
-        "cat bite",
-    ],
-    "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
-    "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
-    "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
-    "cold_injury": ["shivering", "frostbite"],
-    "big_bite_injury": [
-        "bite-wound",
-        "broken bone",
-        "torn pelt",
-        "mangled leg",
-        "mangled tail",
-    ],
-    "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
-    "beak_bite": ["beak bite", "torn ear", "scrapes"],
-    "rat_bite": ["rat bite", "torn ear", "torn pelt"],
-    "sickness": ["greencough", "redcough", "whitecough", "yellowcough"],
-}

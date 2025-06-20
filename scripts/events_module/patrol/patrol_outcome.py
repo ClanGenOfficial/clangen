@@ -9,7 +9,7 @@ import i18n
 import pygame
 
 from scripts.clan_package.settings import get_clan_setting
-from scripts.events_module.short.handle_short_events import INJURY_GROUPS
+from scripts.game_structure import constants
 from scripts.game_structure.game.settings import get_game_setting
 
 if TYPE_CHECKING:
@@ -554,7 +554,7 @@ class PatrolOutcome:
             return ""
 
         results = []
-        condition_lists = INJURY_GROUPS
+        condition_lists = constants.INJURY_GROUPS
 
         for block in self.injury:
             cats = gather_cat_objects(Cat, block.get("cats", ()), patrol, self.stat_cat)

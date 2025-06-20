@@ -23,6 +23,7 @@ from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import screen
 from scripts.game_structure.game.settings import get_game_setting
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -173,11 +174,11 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 offset = ui_scale_value(2)
             else:
                 offset = 0
-            offset = offset + ((self.text_layer.rect.height - self.relative_rect[3]) // 2)
-            current = self.text_layer.get_relative_rect()
-            self.text_layer.set_relative_position(
-                (current[0], current[1] - offset)
+            offset = offset + (
+                (self.text_layer.rect.height - self.relative_rect[3]) // 2
             )
+            current = self.text_layer.get_relative_rect()
+            self.text_layer.set_relative_position((current[0], current[1] - offset))
         text_layer_pos = self.text_layer.get_abs_rect()
         self.text_layer_offset = (text_layer_pos[0], text_layer_pos[1])
         self.text_layer_active_offset: Tuple[int, int] = (
@@ -295,7 +296,7 @@ class UIImageButton(pygame_gui.elements.UIButton):
         *,
         command: Union[Callable, Dict[int, Callable]] = None,
         tool_tip_object_id: Optional[ObjectID] = None,
-        text_kwargs: Optional[Dict[str, str]]=None,
+        text_kwargs: Optional[Dict[str, str]] = None,
         tool_tip_text_kwargs: Optional[Dict[str, str]] = None,
         max_dynamic_width: Optional[int] = None,
     ):
@@ -470,7 +471,9 @@ class UIImageButton(pygame_gui.elements.UIButton):
         return hover
 
 
-class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer, IContainerLikeInterface):
+class UIModifiedScrollingContainer(
+    pygame_gui.elements.UIScrollingContainer, IContainerLikeInterface
+):
     def __init__(
         self,
         relative_rect: pygame.Rect,
@@ -649,9 +652,13 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer, ICo
         for element in self:
             if any(sub_element.hovered for sub_element in element.get_focus_set()):
                 return True
-            elif isinstance(element, IContainerLikeInterface) and element.are_contents_hovered():
+            elif (
+                isinstance(element, IContainerLikeInterface)
+                and element.are_contents_hovered()
+            ):
                 return True
         return False
+
 
 class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
     def __init__(
@@ -741,7 +748,6 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
         super().set_visible_percentage(percentage)
         self.scroll_wheel_speed = (1 / self.visible_percentage) * ui_scale_value(15)
 
-
     def _check_should_handle_mousewheel_event(self) -> bool:
         def recursive_check_if_ignore(element):
             """
@@ -768,6 +774,7 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
                 self._container_to_scroll
                 and self._container_to_scroll.are_contents_hovered()
             ) or self._check_is_focus_set_hovered()
+
 
 class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
     def __init__(
@@ -813,10 +820,12 @@ class UISpriteButton:
         manager: IUIManagerInterface = None,
         container=None,
         object_id=None,
-        tool_tip_object_id=None,tool_tip_text=None,
+        tool_tip_object_id=None,
+        tool_tip_text=None,
         text_kwargs=None,
         tool_tip_text_kwargs=None,
-        anchors=None,mask=None,
+        anchors=None,
+        mask=None,
         mask_padding=None,
     ):
         # The transparent button. This a subclass that UIButton that also hold the cat_id.
@@ -1929,7 +1938,8 @@ class UIDropDown(UIDropDownContainer):
         child_dimensions: tuple = None,
         parent_style: ButtonStyles = ButtonStyles.DROPDOWN,
         parent_override=None,
-        parent_reflect_selection=False,child_style: ButtonStyles = ButtonStyles.DROPDOWN,
+        parent_reflect_selection=False,
+        child_style: ButtonStyles = ButtonStyles.DROPDOWN,
         multiple_choice: bool = False,
         disable_selection: bool = True,
         starting_height: int = 1,
@@ -1980,7 +1990,9 @@ class UIDropDown(UIDropDownContainer):
             starting_selection=starting_selection,
         )
 
-        rect = pygame.Rect((relative_rect.x, 0), (relative_rect.width, relative_rect.height))
+        rect = pygame.Rect(
+            (relative_rect.x, 0), (relative_rect.width, relative_rect.height)
+        )
 
         # create parent button
         if not parent_override:
@@ -2132,8 +2144,9 @@ class UIScrollingDropDown(UIDropDownContainer):
         manager: IUIManagerInterface,
         parent_text: str,
         item_list: list,
-        dropdown_dimensions: tuple,container: UIContainer = None,
-        child_dimensions:  tuple = None,
+        dropdown_dimensions: tuple,
+        container: UIContainer = None,
+        child_dimensions: tuple = None,
         parent_style: ButtonStyles = ButtonStyles.DROPDOWN,
         child_style: ButtonStyles = ButtonStyles.DROPDOWN,
         offset_scroll: bool = True,
@@ -2246,7 +2259,9 @@ class UIScrollingDropDown(UIDropDownContainer):
         self.child_button_dicts = self.child_button_container.buttons
 
 
-class UICollapsibleContainer(pygame_gui.elements.UIAutoResizingContainer, IContainerLikeInterface):
+class UICollapsibleContainer(
+    pygame_gui.elements.UIAutoResizingContainer, IContainerLikeInterface
+):
     def __init__(
         self,
         relative_rect: RectLike,

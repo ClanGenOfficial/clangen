@@ -355,7 +355,6 @@ class SaveCheck(UIWindow):
 
 class EditorSaveCheck(UIWindow):
     def __init__(self, path, old_path, editor_save, event_list, old_event_list):
-
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 200))),
             window_display_title="Editor Save Check",
@@ -376,9 +375,7 @@ class EditorSaveCheck(UIWindow):
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
-            anchors={
-                "centerx": "centerx"
-            }
+            anchors={"centerx": "centerx"},
         )
         self.path_text = UITextBoxTweaked(
             path,
@@ -386,10 +383,7 @@ class EditorSaveCheck(UIWindow):
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
-            anchors={
-                "top_target": self.game_over_message,
-                "centerx": "centerx"
-            }
+            anchors={"top_target": self.game_over_message, "centerx": "centerx"},
         )
 
         self.save_button = UISurfaceImageButton(
@@ -426,7 +420,6 @@ class EditorSaveCheck(UIWindow):
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-
             if event.ui_element == self.save_button:
                 if self.old_event_list:
                     self.modify_file(self.old_event_list, self.old_path)
@@ -442,7 +435,6 @@ class EditorSaveCheck(UIWindow):
 
 class EditorMissingInfo(UIWindow):
     def __init__(self):
-
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 200))),
             window_display_title="Info Missing",
@@ -457,10 +449,7 @@ class EditorMissingInfo(UIWindow):
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
-            anchors={
-                "centerx": "centerx",
-                "centery": "centery"
-            }
+            anchors={"centerx": "centerx", "centery": "centery"},
         )
 
         self.back_button = UIImageButton(
@@ -475,7 +464,6 @@ class EditorMissingInfo(UIWindow):
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-
             if event.ui_element == self.back_button:
                 self.kill()
 
@@ -761,9 +749,9 @@ class ChangeCatName(UIWindow):
                 # Suffixes can be empty, if you want. However, don't change the suffix if it's currently being hidden
                 # by a special suffix.
                 if (
-                        self.the_cat.status
-                        not in self.the_cat.name.names_dict["special_suffixes"]
-                        or self.the_cat.name.specsuffix_hidden
+                    self.the_cat.status
+                    not in self.the_cat.name.names_dict["special_suffixes"]
+                    or self.the_cat.name.specsuffix_hidden
                 ):
                     self.the_cat.name.suffix = sub(
                         r"[^A-Za-z0-9 ]+", "", self.suffix_entry_box.get_text()
@@ -1482,8 +1470,8 @@ class UpdateAvailablePopup(UIWindow):
                 )
                 self.kill()
             elif (
-                    event.ui_element == self.close_button
-                    or event.ui_element == self.cancel_button
+                event.ui_element == self.close_button
+                or event.ui_element == self.cancel_button
             ):
                 self.kill()
             elif event.ui_element == self.box_unchecked:
@@ -1492,7 +1480,7 @@ class UpdateAvailablePopup(UIWindow):
                 self.box_checked.enable()
                 self.box_checked.show()
                 with open(
-                        f"{get_cache_dir()}/suppress_update_popup", "w", encoding="utf-8"
+                    f"{get_cache_dir()}/suppress_update_popup", "w", encoding="utf-8"
                 ) as write_file:
                     write_file.write(get_latest_version_number())
             elif event.ui_element == self.box_checked:
@@ -1543,9 +1531,9 @@ class ChangelogPopup(UIWindow):
 
         dynamic_changelog = False
         if (
-                get_version_info().is_dev()
-                and get_version_info().is_source_build
-                and get_version_info().git_installed
+            get_version_info().is_dev()
+            and get_version_info().is_source_build
+            and get_version_info().git_installed
         ):
             file_cont = subprocess.check_output(
                 [
@@ -1657,8 +1645,8 @@ class RelationshipLog(UIWindow):
         if not relationship.opposite_relationship:
             relationship.link_relationship()
         if (
-                relationship.opposite_relationship
-                and len(relationship.opposite_relationship.log) > 0
+            relationship.opposite_relationship
+            and len(relationship.opposite_relationship.log) > 0
         ):
             opposite_log_string = f"{f'<br>-----------------------------<br>'.join(relationship.opposite_relationship.log)}<br>"
 
@@ -1838,7 +1826,7 @@ class SaveAsImage(UIWindow):
         i = 0
         while True:
             if os.path.isfile(
-                    f"{get_saved_images_dir()}/{file_name + file_number}.png"
+                f"{get_saved_images_dir()}/{file_name + file_number}.png"
             ):
                 i += 1
                 file_number = f"_{i}"
@@ -2169,8 +2157,8 @@ class SelectFocusClans(UIWindow):
                 if len(game.clan.clans_in_focus) < 1 and self.save_button.is_enabled:
                     self.save_button.disable()
                 if (
-                        len(game.clan.clans_in_focus) >= 1
-                        and not self.save_button.is_enabled
+                    len(game.clan.clans_in_focus) >= 1
+                    and not self.save_button.is_enabled
                 ):
                     self.save_button.enable()
 
@@ -2285,8 +2273,8 @@ class ConfirmDisplayChanges(UIMessageWindow):
     def process_event(self, event: pygame.event.Event) -> bool:
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if (
-                    event.ui_element == self.back_button
-                    or event.ui_element == self.dismiss_button
+                event.ui_element == self.back_button
+                or event.ui_element == self.dismiss_button
             ):
                 self.kill()
             elif event.ui_element == self.revert_button:

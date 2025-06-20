@@ -1,3 +1,5 @@
+from typing import Optional, TYPE_CHECKING
+
 import pygame
 import ujson
 
@@ -10,6 +12,9 @@ from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir
 
 pygame.init()
+
+if TYPE_CHECKING:
+    from scripts.clan import Clan
 
 
 # G A M E
@@ -89,6 +94,8 @@ class Game:
         self.clicked = False
         self.keyspressed = []
         self.switch_screens = False
+
+        self.clan: Optional["Clan"] = None
 
         with open(f"resources/prey_config.json", "r", encoding="utf-8") as read_file:
             self.prey_config = ujson.loads(read_file.read())

@@ -101,14 +101,14 @@ def switch_list_append(name: Switches, value):
     :raises: TypeError if name argument does not correspond to a list"""
     if not isinstance(__switches[name], list):
         raise TypeError(f"Switch {name} is not a list")
-    __switches[value].append(value)
+    __switches[name].append(value)
 
 
 def switch_list_remove(name: Switches, value):
     """Used to remove a value from a switch of type list"""
     if not isinstance(__switches[name], list):
         raise TypeError(f"Switch {name} is not a list")
-    __switches[value].remove(value)
+    __switches[name].remove(value)
 
 
 def switch_generator() -> Tuple[str, Any]:
