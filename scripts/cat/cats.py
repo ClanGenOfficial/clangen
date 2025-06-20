@@ -2328,16 +2328,15 @@ class Cat:
             return
         
         # Check if cat can have a mentor
-        illegible_for_mentor = (
+        if (
             self.dead
             or self.outside
             or self.exiled
-            or self.status
-            not in ["apprentice", "mediator apprentice", "medicine cat apprentice"]
-        )
-        if illegible_for_mentor:
+            or not self.status.is_any_apprentice()
+        ):
             self.__remove_mentor()
             return
+
         # If eligible, cat should get a mentor.
         if new_mentor:
             self.__remove_mentor()
