@@ -372,7 +372,6 @@ class Status:
 
         return past_ranks[-1]
 
-
     def in_player_clan(self) -> bool:
         """
         Returns True if the cat is currently part of the player clan
@@ -430,6 +429,7 @@ class Status:
             return True
 
         return False
+
 
 class StatusDict(TypedDict, total=False):
     """

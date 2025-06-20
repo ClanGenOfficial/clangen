@@ -1138,7 +1138,7 @@ class Cat:
         load_leader_ceremonies()
 
         # determine which dict we're pulling from
-        if game.clan.instructor.df:
+        if game.clan.instructor.status.group == CatGroup.DARK_FOREST:
             starclan = False
             ceremony_dict = LEAD_CEREMONY_DF
         else:
@@ -1538,9 +1538,9 @@ class Cat:
         # this figures out where the cat is
         where_kitty = None
         if self.dead:
-            if self.status.group == "darkforest":
+            if self.status.group == CatGroup.DARK_FOREST:
                 where_kitty = "hell"
-            elif self.status.group == "unknown":
+            elif self.status.group == CatGroup.UNKNOWN_RESIDENCE:
                 where_kitty = "UR"
             else:
                 where_kitty = "starclan"
@@ -1582,7 +1582,6 @@ class Cat:
                 and len(all_cats) > 1
                 or (other_cat not in self.relationships)
             ):
-                # or (self.status in ['kittypet', 'loner'] and not all_cats.get(other_cat).outside):
                 other_cat = choice(list(all_cats.keys()))
                 i += 1
                 if i > 100:
@@ -2213,7 +2212,7 @@ class Cat:
 
         if (
             (not self.is_ill() and not self.is_injured() and not self.is_disabled())
-            or self.status.is_dead()
+            or self.dead
             or self.status.is_outsider()
         ):
             if os.path.exists(condition_file_path):
@@ -2270,12 +2269,8 @@ class Cat:
         if not self.status.is_any_apprentice():
             return False
 
-        # App must be member of player clan
-        if not self.status.in_player_clan():
-            return False
-
-        # Mentor must be a member of the player clan
-        if not potential_mentor.status.in_player_clan():
+        # App and mentor must be members of the same clan
+        if self.status.group != potential_mentor.status.group:
             return False
 
         # Match jobs
