@@ -28,7 +28,7 @@ from scripts.game_structure.localization import (
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache, localization
-from scripts.cat.enums import CatAge
+from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
@@ -233,8 +233,7 @@ def get_random_moon_cat(
                 random_cat = Cat.fetch_cat(choice(possible_parents))
         if mentor_app_modifier:
             if (
-                    main_cat.status
-                    in ["apprentice", "mediator apprentice", "medicine cat apprentice"]
+                    main_cat.status.rank.is_any_apprentice_rank()
                     and main_cat.mentor
                     and not int(random() * 3)
             ):
@@ -379,9 +378,9 @@ def create_new_cat_block(
         for index in mate_indexes:
             if index in in_event_cats:
                 if in_event_cats[index] in [
-                    "apprentice",
-                    "medicine cat apprentice",
-                    "mediator apprentice",
+                    CatRank.APPRENTICE,
+                    CatRank.MEDICINE_APPRENTICE,
+                    CatRank.MEDIATOR_APPRENTICE,
                 ]:
                     print("Can't give apprentices mates")
                     continue
@@ -430,11 +429,11 @@ def create_new_cat_block(
             "newborn",
             "kitten",
             "elder",
-            "apprentice",
-            "warrior",
-            "mediator apprentice",
+            CatRank.APPRENTICE,
+            CatRank.WARRIOR,
+            CatRank.MEDIATOR_APPRENTICE,
             "mediator",
-            "medicine cat apprentice",
+            CatRank.MEDICINE_APPRENTICE,
             "medicine cat",
         ]:
             status = match.group(1)
@@ -463,12 +462,12 @@ def create_new_cat_block(
             break
 
     if status and not age:
-        if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
+        if not status in ["apprentice", CatRank.MEDIATOR_APPRENTICE, CatRank.MEDICINE_APPRENTICE]:
             age = randint(
                 Cat.age_moons[CatAge.ADOLESCENT][0],
                 Cat.age_moons[CatAge.ADOLESCENT][1],
             )
-        elif status in ["warrior", "mediator", "medicine cat"]:
+        elif status in [CatRank.WARRIOR, "mediator", "medicine cat"]:
             age = randint(
                 Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1]
             )
@@ -790,9 +789,9 @@ def create_new_cat(
             age = 0
         elif litter or kit:
             age = randint(1, 5)
-        elif status in ("apprentice", "medicine cat apprentice", "mediator apprentice"):
+        elif status in (CatRank.APPRENTICE, CatRank.MEDICINE_APPRENTICE, CatRank.MEDIATOR_APPRENTICE):
             age = randint(6, 11)
-        elif status == "warrior":
+        elif status == CatRank.WARRIOR:
             age = randint(23, 120)
         elif status == "medicine cat":
             age = randint(23, 140)
@@ -808,9 +807,9 @@ def create_new_cat(
         elif age < 6:
             status = "kitten"
         elif 6 <= age <= 11:
-            status = "apprentice"
+            status = CatRank.APPRENTICE
         elif age >= 12:
-            status = "warrior"
+            status = CatRank.WARRIOR
         elif age >= 120:
             status = "elder"
 

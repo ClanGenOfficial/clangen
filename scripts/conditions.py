@@ -21,12 +21,10 @@ def amount_clanmembers_covered(all_cats, amount_per_med) -> int:
     medicine_cats = [
         i for i in all_cats
         if not i.dead and not i.outside and
-           not i.not_working() and i.status in
-                    ["medicine cat",
-                     "medicine cat apprentice"]
+           not i.not_working() and i.status.rank.is_any_medicine_rank()
     ]
     full_med = [i for i in medicine_cats if i.status == "medicine cat"]
-    apprentices = [i for i in medicine_cats if i.status == "medicine cat apprentice"]
+    apprentices = [i for i in medicine_cats if i.status == CatRank.MEDICINE_APPRENTICE]
 
     total_exp = 0
     for cat in medicine_cats:

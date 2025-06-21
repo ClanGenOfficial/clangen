@@ -24,6 +24,7 @@ from scripts.events_module.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
 from scripts.utility import ui_scale_dimensions
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..cat.sprites import sprites
 from ..game_structure.screen_settings import MANAGER, screen
 from ..game_structure.windows import SymbolFilterWindow
@@ -1265,12 +1266,12 @@ class MakeClanScreen(Screens):
             self.symbol_selected = f"symbol{self.clan_name.upper()}0"
         else:
             self.symbol_selected = choice(sprites.clan_symbols)
-        self.leader = create_cat(rank="warrior")
-        self.deputy = create_cat(rank="warrior")
-        self.med_cat = create_cat(rank="warrior")
+        self.leader = create_cat(rank=CatRank.WARRIOR)
+        self.deputy = create_cat(rank=CatRank.WARRIOR)
+        self.med_cat = create_cat(rank=CatRank.WARRIOR)
         for _ in range(randrange(4, 8)):
             random_status = choice(
-                ["kitten", "apprentice", "warrior", "warrior", "elder"]
+                ["kitten", CatRank.APPRENTICE, CatRank.WARRIOR, CatRank.WARRIOR, "elder"]
             )
             self.members.append(create_cat(rank=random_status))
 

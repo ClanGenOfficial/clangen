@@ -193,7 +193,7 @@ class LeaderDenScreen(Screens):
             if not self.helper_cat:  # if dep is sick, med cat helps
                 meds = get_alive_status_cats(
                     Cat,
-                    get_status=["medicine cat", "medicine cat apprentice"],
+                    get_status=["medicine cat", CatRank.MEDICINE_APPRENTICE],
                     working=True,
                     sort=True,
                 )
@@ -207,7 +207,7 @@ class LeaderDenScreen(Screens):
                         and not i.exiled
                         and not i.outside
                         and not i.not_working()
-                        and i.status in ["mediator", "mediator apprentice"]
+                        and i.status in ["mediator", CatRank.MEDIATOR_APPRENTICE]
                     ]
                     if mediators:
                         self.helper_cat = mediators[0]
