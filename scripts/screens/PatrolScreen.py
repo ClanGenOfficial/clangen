@@ -20,6 +20,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..game_structure import image_cache
 from ..game_structure.propagating_thread import PropagatingThread
 from ..game_structure.screen_settings import MANAGER
@@ -988,7 +989,7 @@ class PatrolScreen(Screens):
                 and the_cat.in_camp
                 and the_cat.ID not in game.patrolled
                 and the_cat.status
-                not in ["elder", "kitten", "mediator", CatRank.MEDIATOR_APPRENTICE]
+                not in ["elder", "kitten", CatRank.MEDIATOR, CatRank.MEDIATOR_APPRENTICE]
                 and not the_cat.outside
                 and the_cat not in self.current_patrol
                 and not the_cat.not_working()

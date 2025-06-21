@@ -21,6 +21,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -130,7 +131,7 @@ class MediationScreen(Screens):
         # Gather the mediators:
         self.mediators = []
         for cat in Cat.all_cats_list:
-            if cat.status in ["mediator", CatRank.MEDIATOR_APPRENTICE] and not (
+            if cat.status in [CatRank.MEDIATOR, CatRank.MEDIATOR_APPRENTICE] and not (
                 cat.dead or cat.outside
             ):
                 self.mediators.append(cat)

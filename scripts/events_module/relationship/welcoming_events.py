@@ -47,7 +47,7 @@ class Welcoming_Events:
             rank = "medicine"
 
         if rank == CatRank.MEDIATOR_APPRENTICE:
-            rank = "mediator"
+            rank = CatRank.MEDIATOR
 
         # collect all events
         possible_events = deepcopy(GENERAL_WELCOMING)

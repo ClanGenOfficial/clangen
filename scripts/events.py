@@ -92,7 +92,7 @@ class Events:
                 CatRank.MEDICINE_CAT,
                 CatRank.MEDICINE_APPRENTICE,
                 CatRank.APPRENTICE,
-                "mediator",
+                CatRank.MEDIATOR,
                 CatRank.MEDIATOR_APPRENTICE,
             }
             and not cat.dead
@@ -524,7 +524,7 @@ class Events:
     def mediator_events(self, cat):
         """Check for mediator events"""
         # If the cat is a mediator, check if they visited other clans
-        if cat.status in ["mediator", CatRank.MEDIATOR_APPRENTICE] and not cat.not_working():
+        if cat.status in [CatRank.MEDIATOR, CatRank.MEDIATOR_APPRENTICE] and not cat.not_working():
             # 1/10 chance
             if not int(random.random() * 10):
                 random_cat = get_random_moon_cat(Cat, main_cat=cat)
@@ -532,7 +532,7 @@ class Events:
                     event_type="misc",
                     main_cat=cat,
                     random_cat=random_cat,
-                    sub_type=["mediator"],
+                    sub_type=[CatRank.MEDIATOR],
                     freshkill_pile=game.clan.freshkill_pile,
                 )
 
@@ -550,7 +550,7 @@ class Events:
                         cat.ID,
                     )
                 )
-                cat.rank_change("mediator")
+                cat.rank_change(CatRank.MEDIATOR)
 
     def get_moon_freshkill(self):
         """Adding auto freshkill for the current moon."""
@@ -854,7 +854,7 @@ class Events:
                     if x.status == CatRank.MEDICINE_APPRENTICE:
                         self.ceremony(x, CatRank.MEDICINE_CAT)
                     elif x.status == CatRank.MEDIATOR_APPRENTICE:
-                        self.ceremony(x, "mediator")
+                        self.ceremony(x, CatRank.MEDIATOR)
                     else:
                         self.ceremony(x, CatRank.WARRIOR)
                 elif (
@@ -1330,7 +1330,7 @@ class Events:
                         # Chance for mediator apprentice
                         mediator_list = list(
                             filter(
-                                lambda x: x.status == "mediator"
+                                lambda x: x.status == CatRank.MEDIATOR
                                 and not x.dead
                                 and not x.outside,
                                 Cat.all_cats_list,
@@ -1412,7 +1412,7 @@ class Events:
                         self.gain_accessories(cat)
 
                     elif cat.status == CatRank.MEDIATOR_APPRENTICE:
-                        self.ceremony(cat, "mediator", preparedness)
+                        self.ceremony(cat, CatRank.MEDIATOR, preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
@@ -1465,7 +1465,7 @@ class Events:
         mentor_type = {
             CatRank.MEDICINE_CAT: [CatRank.MEDICINE_CAT],
             CatRank.WARRIOR: [CatRank.WARRIOR, "deputy", "leader", "elder"],
-            "mediator": ["mediator"],
+            CatRank.MEDIATOR: [CatRank.MEDIATOR],
         }
 
         try:
@@ -1473,7 +1473,7 @@ class Events:
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
 
             # Get ones for prepared status ----------------------------------------------
-            if promoted_to in [CatRank.WARRIOR, CatRank.MEDICINE_CAT, "mediator"]:
+            if promoted_to in [CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR]:
                 possible_ceremonies = possible_ceremonies.intersection(
                     self.ceremony_id_by_tag[preparedness]
                 )
@@ -1630,7 +1630,7 @@ class Events:
 
         # getting the random honor if it's needed
         random_honor = None
-        if promoted_to in [CatRank.WARRIOR, "mediator", CatRank.MEDICINE_CAT]:
+        if promoted_to in [CatRank.WARRIOR, CatRank.MEDIATOR, CatRank.MEDICINE_CAT]:
             traits = load_lang_resource("events/ceremonies/ceremony_traits.json")
 
             try:
@@ -1638,7 +1638,7 @@ class Events:
             except KeyError:
                 random_honor = i18n.t("defaults.ceremony_honor")
 
-        if cat.status in [CatRank.WARRIOR, CatRank.MEDICINE_CAT, "mediator"]:
+        if cat.status in [CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR]:
             History.add_app_ceremony(cat, random_honor)
 
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[

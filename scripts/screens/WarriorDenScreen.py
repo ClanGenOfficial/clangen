@@ -89,7 +89,7 @@ class WarriorDenScreen(Screens):
                             # only create the mediator list if needed to check
                             mediator_list = list(
                                 filter(
-                                    lambda x: x.status == "mediator"
+                                    lambda x: x.status == CatRank.MEDIATOR
                                     and not x.dead
                                     and not x.outside,
                                     Cat.all_cats_list,

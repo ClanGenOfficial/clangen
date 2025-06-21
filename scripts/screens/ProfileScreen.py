@@ -664,7 +664,7 @@ class ProfileScreen(Screens):
                 tool_tip_text="screens.profile.leader_ceremony",
                 manager=MANAGER,
             )
-        elif self.the_cat.status in ["mediator", CatRank.MEDIATOR_APPRENTICE]:
+        elif self.the_cat.status in [CatRank.MEDIATOR, CatRank.MEDIATOR_APPRENTICE]:
             self.profile_elements["mediation"] = UIImageButton(
                 ui_scale(pygame.Rect((383, 110), (34, 34))),
                 "",

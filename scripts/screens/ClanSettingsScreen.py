@@ -424,7 +424,7 @@ class ClanSettingsScreen(Screens):
                 warrior_apprentices += 1
             elif cat.status == CatRank.MEDIATOR_APPRENTICE:
                 mediator_apprentices += 1
-            elif cat.status == "mediator":
+            elif cat.status == CatRank.MEDIATOR:
                 mediators += 1
             elif cat.status == "elder":
                 elders += 1

@@ -217,7 +217,7 @@ class Clan:
                     CatRank.WARRIOR,
                     CatRank.MEDICINE_CAT,
                     "leader",
-                    "mediator",
+                    CatRank.MEDIATOR,
                     "deputy",
                     "elder",
                 ]

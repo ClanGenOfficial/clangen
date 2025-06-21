@@ -432,7 +432,7 @@ def create_new_cat_block(
             CatRank.APPRENTICE,
             CatRank.WARRIOR,
             CatRank.MEDIATOR_APPRENTICE,
-            "mediator",
+            CatRank.MEDIATOR,
             CatRank.MEDICINE_APPRENTICE,
             CatRank.MEDICINE_CAT,
         ]:
@@ -467,7 +467,7 @@ def create_new_cat_block(
                 Cat.age_moons[CatAge.ADOLESCENT][0],
                 Cat.age_moons[CatAge.ADOLESCENT][1],
             )
-        elif status in [CatRank.WARRIOR, "mediator", CatRank.MEDICINE_CAT]:
+        elif status in [CatRank.WARRIOR, CatRank.MEDIATOR, CatRank.MEDICINE_CAT]:
             age = randint(
                 Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1]
             )
