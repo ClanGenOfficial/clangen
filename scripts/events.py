@@ -848,7 +848,7 @@ class Events:
                 CatRank.MEDICINE_APPRENTICE,
                 CatRank.MEDIATOR_APPRENTICE,
                 CatRank.KITTEN,
-                "newborn",
+                CatRank.NEWBORN,
             ]:
                 if x.moons >= 15:
                     if x.status == CatRank.MEDICINE_APPRENTICE:
@@ -869,7 +869,7 @@ class Events:
                     self.ceremony(x, CatRank.APPRENTICE)
             elif x.status != CatRank.MEDICINE_CAT:
                 if x.moons == 0:
-                    x.status = "newborn"
+                    x.status = CatRank.NEWBORN
                 elif x.moons < 6:
                     x.status = CatRank.KITTEN
                 elif x.moons < 12 and x.status != CatRank.APPRENTICE:
@@ -1018,7 +1018,7 @@ class Events:
             self.handle_outbreaks(cat)
 
         # newborns don't do much
-        if cat.status == "newborn":
+        if cat.status == CatRank.NEWBORN:
             cat.relationship_interaction()
             cat.thoughts()
             return
@@ -2227,7 +2227,7 @@ class Events:
                     alive_cats = list(
                         filter(
                             lambda kitty: (
-                                kitty.status in [CatRank.KITTEN, "newborn"]
+                                kitty.status in [CatRank.KITTEN, CatRank.NEWBORN]
                                 and not kitty.dead
                                 and not kitty.outside
                             ),

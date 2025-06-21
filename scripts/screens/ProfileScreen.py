@@ -1296,7 +1296,7 @@ class ProfileScreen(Screens):
         influence_history = ""
 
         # First, just list the mentors:
-        if self.the_cat.status in [CatRank.KITTEN, "newborn"]:
+        if self.the_cat.status in [CatRank.KITTEN, CatRank.NEWBORN]:
             influence_history = i18n.t("cat.history.training_kit")
         elif self.the_cat.status.rank.is_any_apprentice_rank():
             influence_history = i18n.t("cat.history.training_app")

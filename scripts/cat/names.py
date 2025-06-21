@@ -267,7 +267,7 @@ class Name:
         # Handles suffix assignment with outside cats
         if self.cat.status.is_former_clancat():
             if self.cat.moons == 0:
-                adjusted_status = "newborn"
+                adjusted_status = CatRank.NEWBORN
             elif self.cat.moons < 6:
                 adjusted_status = CatRank.KITTEN
             elif self.cat.moons < 12:

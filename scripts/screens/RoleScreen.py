@@ -527,7 +527,7 @@ class RoleScreen(Screens):
             output = "screens.role.blurb_mediator_app"
         elif self.the_cat.status == CatRank.KITTEN:
             output = "screens.role.blurb_kitten"
-        elif self.the_cat.status == "newborn":
+        elif self.the_cat.status == CatRank.NEWBORN:
             output = "screens.role.blurb_newborn"
         else:
             output = "screens.role.blurb_unknown"

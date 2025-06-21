@@ -48,7 +48,7 @@ def get_alive_clan_queens(living_cats):
     living_kits = [
         cat
         for cat in living_cats
-        if not (cat.dead or cat.outside) and cat.status in [CatRank.KITTEN, "newborn"]
+        if not (cat.dead or cat.outside) and cat.status in [CatRank.KITTEN, CatRank.NEWBORN]
     ]
 
     queen_dict = {}
@@ -426,7 +426,7 @@ def create_new_cat_block(
             continue
 
         if match.group(1) in [
-            "newborn",
+            CatRank.NEWBORN,
             CatRank.KITTEN,
             CatRank.ELDER,
             CatRank.APPRENTICE,
@@ -489,11 +489,11 @@ def create_new_cat_block(
     litter = False
     if "litter" in attribute_list:
         litter = True
-        if status not in [CatRank.KITTEN, "newborn"]:
+        if status not in [CatRank.KITTEN, CatRank.NEWBORN]:
             status = CatRank.KITTEN
 
     # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS
-    if status in (CatRank.KITTEN, "newborn"):
+    if status in (CatRank.KITTEN, CatRank.NEWBORN):
         chosen_backstory = choice(
             BACKSTORIES["backstory_categories"]["abandoned_backstories"]
         )
@@ -537,7 +537,7 @@ def create_new_cat_block(
         chosen_backstory = choice(stor)
 
     # KITTEN THOUGHT
-    if status in [CatRank.KITTEN, "newborn"]:
+    if status in [CatRank.KITTEN, CatRank.NEWBORN]:
         thought = i18n.t("hardcoded.thought_new_kitten")
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
@@ -619,7 +619,7 @@ def create_new_cat_block(
             loner=cat_type in ["loner", "rogue"],
             kittypet=cat_type == "kittypet",
             other_clan=cat_type == "former Clancat",
-            kit=False if litter else status in [CatRank.KITTEN, "newborn"],
+            kit=False if litter else status in [CatRank.KITTEN, CatRank.NEWBORN],
             # this is for singular kits, litters need this to be false
             litter=litter,
             backstory=chosen_backstory,
@@ -785,7 +785,7 @@ def create_new_cat(
         number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
 
     if not isinstance(age, int):
-        if status == "newborn":
+        if status == CatRank.NEWBORN:
             age = 0
         elif litter or kit:
             age = randint(1, 5)
@@ -803,7 +803,7 @@ def create_new_cat(
     # setting status
     if not status:
         if age == 0:
-            status = "newborn"
+            status = CatRank.NEWBORN
         elif age < 6:
             status = CatRank.KITTEN
         elif 6 <= age <= 11:

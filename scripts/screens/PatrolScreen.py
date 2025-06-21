@@ -995,7 +995,7 @@ class PatrolScreen(Screens):
                 and not the_cat.not_working()
             ):
                 if (
-                    the_cat.status == "newborn"
+                    the_cat.status == CatRank.NEWBORN
                     or game.config["fun"]["all_cats_are_newborn"]
                 ):
                     if game.config["fun"]["newborns_can_patrol"]:
