@@ -186,7 +186,7 @@ class HerbSupply:
             # if there are no working med cats, then only allow med cats to be treated. the idea being that a med cat
             # could conceivably attempt to care for themselves, but would not be well enough to care for the Clan as
             # a whole. also helps prevent death spiral when med cats aren't able to work.
-            if not med_cats and not kitty.status.rank.is_meddie():
+            if not med_cats and not kitty.status.rank.is_medical_rank():
                 break
             severities = []
             conditions = kitty.permanent_condition.copy()
