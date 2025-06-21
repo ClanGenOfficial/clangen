@@ -94,3 +94,16 @@ class CatGroup(StrEnum):
     DARK_FOREST = "dark_forest"
     STAR_CLAN = "star_clan"
     UNKNOWN_RESIDENCE = "unknown_residence"
+
+    def is_afterlife(self) -> bool:
+        return self in (self.DARK_FOREST,
+                        self.STAR_CLAN,
+                        self.UNKNOWN_RESIDENCE)
+
+    def is_clan_group(self) -> bool:
+        return self in (self.PLAYER_CLAN,
+                        self.OTHER_CLAN1,
+                        self.OTHER_CLAN2,
+                        self.OTHER_CLAN3,
+                        self.OTHER_CLAN4,
+                        self.OTHER_CLAN5)
