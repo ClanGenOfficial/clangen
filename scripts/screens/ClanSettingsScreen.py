@@ -19,7 +19,7 @@ from scripts.utility import (
     ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
-from ..cat.enums import CatRank
+from ..cat.enums import CatRank, CatGroup
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
@@ -401,32 +401,32 @@ class ClanSettingsScreen(Screens):
                 continue
 
             if cat.dead:
-                if cat.df:
+                if cat.status.group == CatGroup.DARK_FOREST:
                     df += 1
-                elif cat.outside:
+                elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                     ur += 1
                 else:
                     starclan += 1
                 continue
 
-            if cat.outside:
+            if cat.status.is_outsider():
                 cats_outside += 1
                 continue
 
             living_cats += 1
-            if cat.status == CatRank.MEDICINE_CAT:
+            if cat.status.rank == CatRank.MEDICINE_CAT:
                 med_cats += 1
-            elif cat.status == CatRank.MEDICINE_APPRENTICE:
+            elif cat.status.rank == CatRank.MEDICINE_APPRENTICE:
                 med_cat_apprentices += 1
-            elif cat.status == CatRank.WARRIOR:
+            elif cat.status.rank == CatRank.WARRIOR:
                 warriors += 1
-            elif cat.status == CatRank.APPRENTICE:
+            elif cat.status.rank == CatRank.APPRENTICE:
                 warrior_apprentices += 1
-            elif cat.status == CatRank.MEDIATOR_APPRENTICE:
+            elif cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
                 mediator_apprentices += 1
-            elif cat.status == CatRank.MEDIATOR:
+            elif cat.status.rank == CatRank.MEDIATOR:
                 mediators += 1
-            elif cat.status == CatRank.ELDER:
+            elif cat.status.rank == CatRank.ELDER:
                 elders += 1
             elif cat.status.rank.is_baby():
                 kits += 1
