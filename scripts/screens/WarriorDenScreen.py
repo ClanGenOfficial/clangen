@@ -5,6 +5,7 @@ import ujson
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
@@ -89,9 +90,8 @@ class WarriorDenScreen(Screens):
                             # only create the mediator list if needed to check
                             mediator_list = list(
                                 filter(
-                                    lambda x: x.status == CatRank.MEDIATOR
-                                    and not x.dead
-                                    and not x.outside,
+                                    lambda x: x.status.rank == CatRank.MEDIATOR
+                                    and x.status.in_player_clan(),
                                     Cat.all_cats_list,
                                 )
                             )
