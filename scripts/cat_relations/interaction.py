@@ -226,11 +226,11 @@ def cats_fulfill_single_interaction_constraints(
 ) -> bool:
     """Check if the two cats fulfills the interaction constraints."""
     if len(interaction.main_status_constraint) >= 1:
-        if main_cat.status not in interaction.main_status_constraint:
+        if main_cat.status.rank not in interaction.main_status_constraint:
             return False
 
     if len(interaction.random_status_constraint) >= 1:
-        if random_cat.status not in interaction.random_status_constraint:
+        if random_cat.status.rank not in interaction.random_status_constraint:
             return False
 
     if len(interaction.main_trait_constraint) >= 1:

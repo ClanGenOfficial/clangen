@@ -3,6 +3,7 @@ from random import choice
 
 import i18n
 
+from scripts.cat.enums import CatRank
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
     rel_fulfill_rel_constraints,
@@ -77,9 +78,9 @@ class Relationship:
     def start_interaction(self) -> None:
         """This function handles the simple interaction of this relationship."""
         # such interactions are only allowed for living Clan members
-        if self.cat_from.dead or self.cat_from.outside or self.cat_from.exiled:
+        if self.cat_from.dead or self.cat_from.status.is_outsider():
             return
-        if self.cat_to.dead or self.cat_to.outside or self.cat_to.exiled:
+        if self.cat_to.dead or self.cat_to.status.is_outsider():
             return
 
         if self.currently_loaded_lang != i18n.config.get("locale"):
@@ -191,7 +192,7 @@ class Relationship:
                     if "death_text" in injury_dict
                     else None
                 )
-                if injured_cat.status == "leader":
+                if injured_cat.status.rank == CatRank.LEADER:
                     possible_death = (
                         self.adjust_interaction_string(injury_dict["death_leader_text"])
                         if "death_leader_text" in injury_dict
