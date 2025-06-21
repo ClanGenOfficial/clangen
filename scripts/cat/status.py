@@ -21,8 +21,10 @@ class Status:
     ):
         """
         Saved cats should only be passing their saved group_history and standing into this class.
-        Cats that are being newly generated should use function .generate_new_status()
+        Cats that are being newly generated will default to the player clan and a rank appropriate for age.  If you'd
+        like to have more control, use the social, group, and rank params.
         """
+
         self.group_history = group_history if group_history else []
         """List of dicts containing the keys group, rank, and moons_as. A new dict is added anytime group or rank are
         changed."""
@@ -32,6 +34,7 @@ class Status:
         standings with the group. Near is a bool with True indicating the cat is within interact-able distance of that 
         group."""
 
+        # if no group_history was given, we'll see if any other info was given that we can build it with
         if not self.group_history and (social or group or rank):
             self.generate_new_status(
                 social=social,
@@ -39,7 +42,15 @@ class Status:
                 rank=rank
             )
 
+        # really we should never be missing a standing_history at this point, but just in case
+        if not self.standing_history:
+            self._start_standing()
+
     def get_status_dict(self) -> dict:
+        """
+        Returns group_history and standing_history bundled together as a dict. This is the format we should use to save
+        the status information for a cat.
+        """
 
         return {
             "group_history": self.group_history,
@@ -109,7 +120,7 @@ class Status:
 
         # if not social, then social category is found via the rank
         if not social:
-            if rank in CatRank.all_clancat_ranks:
+            if rank in CatRank.all_clancat_ranks():
                 social = CatSocial.CLANCAT
             else:
                 social = choice([CatSocial.ROGUE, CatSocial.LONER, CatSocial.KITTYPET])
@@ -134,8 +145,8 @@ class Status:
 
     def _start_standing(self):
         """
-        Generates basic standing info for a cat. If the cat is part of a group, it creates a "member" dict, else it
-        creates an "outsider" standing dict for the player's clan
+        Generates basic standing info for a cat. If the cat is part of a group, it creates a MEMBER dict, else it
+        creates a KNOWN standing dict for the player's clan.
         """
         if self.group:
             self.standing_history = [
@@ -164,8 +175,7 @@ class Status:
     @property
     def social_history(self) -> list:
         """
-        Returns a list of all social classes the cat has been part of or is
-        currently part of
+        Returns a list of all social classes the cat has been part of or is currently part of.
         """
         social_history_dupes = [SOCIAL_LOOKUP[record["rank"]] for record in self.group_history]
         return [k for k, g in groupby(social_history_dupes)]
@@ -173,21 +183,21 @@ class Status:
     @property
     def group(self) -> CatGroup:
         """
-        Returns the group that a cat is currently affiliated with
+        Returns the group that a cat is currently affiliated with.
         """
         return self.group_history[-1]["group"]
 
     @property
     def all_groups(self) -> list:
         """
-        Returns a list of all groups the cat has been a part of or is currently a part of
+        Returns a list of all groups the cat has been a part of or is currently a part of.
         """
         return [record["group"] for record in self.group_history]
 
     @property
     def rank(self) -> CatRank:
         """
-        Returns the rank that a cat currently holds within their group
+        Returns the rank that a cat currently holds within their group.
         """
         rank = [rank for rank in list(CatRank) if rank == self.group_history[-1]["rank"]]
         return rank[0]
@@ -254,6 +264,7 @@ class Status:
         """
         Adds given standing to cat's current group
         """
+        # TODO might be better to make this add the standing to a GIVEN group, instead of assuming current group
         for record in self.standing_history:
             if record["group"] == self.group:
                 record["standing"].append(new_standing)
