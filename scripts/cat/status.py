@@ -34,7 +34,7 @@ class Status:
         return {
             "group_history": self.group_history,
             "standing_history": self.standing_history
-                }
+        }
 
     def generate_new_status(
             self,
@@ -381,42 +381,36 @@ class Status:
 
     def in_player_clan(self) -> bool:
         """
-        Returns True if the cat is currently part of the player clan
+        Returns True if the cat is currently part of the player clan.
         """
         return True if self.group == CatGroup.PLAYER_CLAN else False
 
     def is_outsider(self) -> bool:
+        """
+        Returns True if the cat isn't part of a clan.
+        """
 
-        if self.social != CatSocial.CLANCAT:
-            return True
-
-        return False
+        return True if self.social != CatSocial.CLANCAT else False
 
     def is_clancat(self) -> bool:
         """
-        Returns True if the cat is currently a clancat
+        Returns True if the cat is currently a clancat in any clan.
         """
         return True if self.social == CatSocial.CLANCAT else False
 
     def is_former_clancat(self) -> bool:
         """
-        Returns True if the cat has been a clancat in the past, but is not currently a clancat
+        Returns True if the cat has been part of any clan in the past, but is not currently a clancat.
         """
 
-        if CatSocial.CLANCAT in self.social_history and self.social != CatSocial.CLANCAT:
-            return True
-
-        return False
+        return True if CatSocial.CLANCAT in self.social_history and self.social != CatSocial.CLANCAT else False
 
     def is_any_apprentice(self) -> bool:
         """
-        Returns True if the cat is currently an apprentice of any type
+        Returns True if the cat is currently an apprentice of any type.
         """
 
-        if self.rank in [CatRank.APPRENTICE, CatRank.MEDICINE_APPRENTICE, CatRank.MEDIATOR_APPRENTICE]:
-            return True
-
-        return False
+        return True if self.rank in CatRank.all_apprentice_ranks else False
 
     def is_dead(self) -> bool:
         """

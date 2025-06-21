@@ -48,24 +48,24 @@ class CatRank(StrEnum):
     # TODO: these might be useless tbh? bad practice?
     @property
     def all_apprentice_ranks(self) -> list:
-        return [CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE, CatRank.MEDICINE_APPRENTICE]
+        return [self.APPRENTICE, self.MEDIATOR_APPRENTICE, self.MEDICINE_APPRENTICE]
 
     @property
     def all_clancat_ranks(self) -> list:
-        return [CatRank.NEWBORN,
-                CatRank.KITTEN,
-                CatRank.APPRENTICE,
-                CatRank.MEDICINE_APPRENTICE,
-                CatRank.MEDIATOR_APPRENTICE,
-                CatRank.MEDICINE_CAT,
-                CatRank.MEDIATOR,
-                CatRank.DEPUTY,
-                CatRank.LEADER,
-                CatRank.ELDER]
+        return [self.NEWBORN,
+                self.KITTEN,
+                self.APPRENTICE,
+                self.MEDICINE_APPRENTICE,
+                self.MEDIATOR_APPRENTICE,
+                self.MEDICINE_CAT,
+                self.MEDIATOR,
+                self.DEPUTY,
+                self.LEADER,
+                self.ELDER]
 
     @property
     def all_outsider_ranks(self) -> list:
-        return [CatRank.LONER, CatRank.ROGUE, CatRank.KITTYPET]
+        return [self.LONER, self.ROGUE, self.KITTYPET]
 
 
 class CatStanding(StrEnum):

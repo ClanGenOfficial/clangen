@@ -340,13 +340,13 @@ class Cat:
 
         :return: None
         """
-        # TODO: not sure how status actually interacts with this
+        # TODO: make sure old faded will convert over safely
         self.ID = ID
         self.parent1 = None
         self.parent2 = None
         self.adoptive_parents = []
         self.mate = []
-        self.status = status
+        self.status = Status(**status) if status["group_history"] else None
         self._pronouns = {}  # Needs to be set as a dict
         self.moons = moons
         self.dead_for = 0
