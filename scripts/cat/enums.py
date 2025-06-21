@@ -56,6 +56,11 @@ class CatRank(StrEnum):
                         self.MEDIATOR_APPRENTICE,
                         self.MEDICINE_APPRENTICE)
 
+    def is_any_warrior_like_rank(self) -> bool:
+        return self in (self.WARRIOR,
+                        self.DEPUTY,
+                        self.LEADER)
+
     def is_any_clancat_rank(self) -> bool:
         return self in self.all_clancat_ranks()
 

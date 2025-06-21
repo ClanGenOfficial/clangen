@@ -632,7 +632,7 @@ class ChooseMentorScreen(Screens):
             cat
             for cat in Cat.all_cats_list
             if not (cat.dead or cat.status.is_outsider())
-            and cat.status.rank in [CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER]
+            and cat.status.rank.is_any_warrior_like_rank()
         ]
         valid_warrior_mentors = []
         potential_medcat_mentors = [
