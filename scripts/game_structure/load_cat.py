@@ -8,6 +8,7 @@ import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.game_structure.localization import get_new_pronouns
+from ..cat.enums import CatGroup
 from ..cat.personality import Personality
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
@@ -58,13 +59,15 @@ def json_load():
     for i, cat in enumerate(cat_data):
         try:
             # accounting for old saves
-            if cat.get("status"):
-                status_dict: StatusDict = {"rank": cat["status"]}
-            else:
+            # checks first if status is in the current format
+            if isinstance(cat.get("status"), StatusDict):
                 status_dict: StatusDict = {
                     "group_history": cat.get("group_history"),
                     "standing_history": cat.get("standing_history")
-                    }
+                }
+            # if not we use their old status info to provide an initial status dict
+            else:
+                status_dict: StatusDict = {"rank": cat["status"]}
 
             new_cat = Cat(
                 ID=cat["ID"],
@@ -197,7 +200,6 @@ def json_load():
             new_cat.no_kits = cat["no_kits"]
             new_cat.no_mates = cat["no_mates"] if "no_mates" in cat else False
             new_cat.no_retire = cat["no_retire"] if "no_retire" in cat else False
-            new_cat.exiled = cat["exiled"]
             new_cat.driven_out = cat["driven_out"] if "driven_out" in cat else False
 
             if "skill_dict" in cat:
@@ -213,7 +215,7 @@ def json_load():
                     else:
                         new_cat.backstory = "clanborn"
                 new_cat.skills = CatSkills.get_skills_from_old(
-                    cat["skill"], new_cat.status, new_cat.moons
+                    cat["skill"], new_cat.status.rank, new_cat.moons
                 )
 
             new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
@@ -227,9 +229,15 @@ def json_load():
             new_cat.experience = cat["experience"]
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]
-            new_cat.df = cat["df"] if "df" in cat else False
 
-            new_cat.outside = cat["outside"] if "outside" in cat else False
+            # these should properly change the cat's status to align with old bool info
+            if cat.get("df"):
+                cat.status.move_to_afterlife(target=CatGroup.DARK_FOREST)
+            if cat.get("exiled"):
+                cat.status.exile_from_group()
+            if cat.get("outside") and not cat.status.is_outsider():
+                cat.status.lost_from_group()
+
             new_cat.faded_offspring = (
                 cat["faded_offspring"] if "faded_offspring" in cat else []
             )
@@ -360,7 +368,7 @@ def csv_load(all_cats):
                     prefix=attr[1].split(":")[0],
                     suffix=attr[1].split(":")[1],
                     gender=attr[2],
-                    status=attr[3],
+                    status={"rank": attr[3]},
                     pelt=the_pelt,
                     parent1=attr[6],
                     parent2=attr[7],
@@ -477,7 +485,8 @@ def csv_load(all_cats):
                 if len(attr) > 38:
                     the_cat.no_kits = bool(attr[38])
                 if len(attr) > 39:
-                    the_cat.exiled = bool(attr[39])
+                    if bool(attr[39]):
+                        the_cat.status.exile_from_group()
                 if len(attr) > 40:
                     the_cat.genderalign = attr[40]
                 if len(attr) > 41 and attr[41] is not None:  # KEEP THIS AT THE END
@@ -497,7 +506,7 @@ def csv_load(all_cats):
             for app_id in inter_cat.apprentice:
                 app = Cat.all_cats.get(app_id)
                 # Make sure if cat isn't an apprentice, they're a former apprentice
-                if "apprentice" in app.status:
+                if "apprentice" == app.status.rank:
                     apps.append(app)
                 else:
                     former_apps.append(app)

@@ -337,9 +337,11 @@ class Status:
 
         return standing_list
 
-    def move_to_afterlife(self):
+    def move_to_afterlife(self, target: CatGroup=None):
         """
         Changes a cat's group into the appropriate afterlife
+        :param target: Use this to specify a certain afterlife, if unused a clancat (or former clancat) will match their
+        guide's afterlife, while an outsider will go to the unknown residence.
         """
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
