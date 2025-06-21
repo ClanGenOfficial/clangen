@@ -1,5 +1,6 @@
 import random
 
+from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
 from scripts.game_structure.game_essentials import game
 
@@ -351,7 +352,7 @@ class History:
             # Use a default is none is provided.
             # Will probably sound weird, but it's better than nothing
             if not death_text:
-                if cat.status == 'leader':
+                if cat.status.rank == CatRank.LEADER:
                     death_text = f"died from an injury or illness ({condition})"
                 else:
                     death_text = f"m_c died from an injury or illness ({condition})."
