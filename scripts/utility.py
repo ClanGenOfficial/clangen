@@ -48,7 +48,7 @@ def get_alive_clan_queens(living_cats):
     living_kits = [
         cat
         for cat in living_cats
-        if not (cat.dead or cat.outside) and cat.status in ["kitten", "newborn"]
+        if not (cat.dead or cat.outside) and cat.status in [CatRank.KITTEN, "newborn"]
     ]
 
     queen_dict = {}
@@ -427,7 +427,7 @@ def create_new_cat_block(
 
         if match.group(1) in [
             "newborn",
-            "kitten",
+            CatRank.KITTEN,
             CatRank.ELDER,
             CatRank.APPRENTICE,
             CatRank.WARRIOR,
@@ -489,11 +489,11 @@ def create_new_cat_block(
     litter = False
     if "litter" in attribute_list:
         litter = True
-        if status not in ["kitten", "newborn"]:
-            status = "kitten"
+        if status not in [CatRank.KITTEN, "newborn"]:
+            status = CatRank.KITTEN
 
     # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS
-    if status in ("kitten", "newborn"):
+    if status in (CatRank.KITTEN, "newborn"):
         chosen_backstory = choice(
             BACKSTORIES["backstory_categories"]["abandoned_backstories"]
         )
@@ -537,7 +537,7 @@ def create_new_cat_block(
         chosen_backstory = choice(stor)
 
     # KITTEN THOUGHT
-    if status in ["kitten", "newborn"]:
+    if status in [CatRank.KITTEN, "newborn"]:
         thought = i18n.t("hardcoded.thought_new_kitten")
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
@@ -619,7 +619,7 @@ def create_new_cat_block(
             loner=cat_type in ["loner", "rogue"],
             kittypet=cat_type == "kittypet",
             other_clan=cat_type == "former Clancat",
-            kit=False if litter else status in ["kitten", "newborn"],
+            kit=False if litter else status in [CatRank.KITTEN, "newborn"],
             # this is for singular kits, litters need this to be false
             litter=litter,
             backstory=chosen_backstory,
@@ -805,7 +805,7 @@ def create_new_cat(
         if age == 0:
             status = "newborn"
         elif age < 6:
-            status = "kitten"
+            status = CatRank.KITTEN
         elif 6 <= age <= 11:
             status = CatRank.APPRENTICE
         elif age >= 12:

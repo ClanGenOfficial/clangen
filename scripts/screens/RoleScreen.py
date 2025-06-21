@@ -525,7 +525,7 @@ class RoleScreen(Screens):
             output = "screens.role.blurb_medcat_app"
         elif self.the_cat.status == CatRank.MEDIATOR_APPRENTICE:
             output = "screens.role.blurb_mediator_app"
-        elif self.the_cat.status == "kitten":
+        elif self.the_cat.status == CatRank.KITTEN:
             output = "screens.role.blurb_kitten"
         elif self.the_cat.status == "newborn":
             output = "screens.role.blurb_newborn"

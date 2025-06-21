@@ -428,7 +428,7 @@ class ClanSettingsScreen(Screens):
                 mediators += 1
             elif cat.status == CatRank.ELDER:
                 elders += 1
-            elif cat.status in ("newborn", "kitten"):
+            elif cat.status in ("newborn", CatRank.KITTEN):
                 kits += 1
 
         self.checkboxes_text["stat_box"] = pygame_gui.elements.UITextBox(

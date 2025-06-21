@@ -223,7 +223,7 @@ class LeaderDenScreen(Screens):
                     if not i.dead
                     and not i.exiled
                     and not i.outside
-                    and i.status not in ["newborn", "kitten", CatRank.LEADER]
+                    and i.status not in ["newborn", CatRank.KITTEN, CatRank.LEADER]
                 ]
                 if adults:
                     self.helper_cat = random.choice(adults)

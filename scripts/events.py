@@ -847,7 +847,7 @@ class Events:
                 CatRank.APPRENTICE,
                 CatRank.MEDICINE_APPRENTICE,
                 CatRank.MEDIATOR_APPRENTICE,
-                "kitten",
+                CatRank.KITTEN,
                 "newborn",
             ]:
                 if x.moons >= 15:
@@ -871,7 +871,7 @@ class Events:
                 if x.moons == 0:
                     x.status = "newborn"
                 elif x.moons < 6:
-                    x.status = "kitten"
+                    x.status = CatRank.KITTEN
                 elif x.moons < 12 and x.status != CatRank.APPRENTICE:
                     x.rank_change(CatRank.APPRENTICE)
                 elif x.moons < 120 and x.status != CatRank.WARRIOR:
@@ -1255,7 +1255,7 @@ class Events:
 
             # apprentice a kitten to either med or warrior
             if cat.moons == cat_class.age_moons[CatAge.ADOLESCENT][0]:
-                if cat.status == "kitten":
+                if cat.status == CatRank.KITTEN:
                     med_cat_list = [
                         i
                         for i in Cat.all_cats_list
@@ -2227,7 +2227,7 @@ class Events:
                     alive_cats = list(
                         filter(
                             lambda kitty: (
-                                kitty.status in ["kitten", "newborn"]
+                                kitty.status in [CatRank.KITTEN, "newborn"]
                                 and not kitty.dead
                                 and not kitty.outside
                             ),

@@ -269,7 +269,7 @@ class Name:
             if self.cat.moons == 0:
                 adjusted_status = "newborn"
             elif self.cat.moons < 6:
-                adjusted_status = "kitten"
+                adjusted_status = CatRank.KITTEN
             elif self.cat.moons < 12:
                 adjusted_status = CatRank.APPRENTICE
             else:
