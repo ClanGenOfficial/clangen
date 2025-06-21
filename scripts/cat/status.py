@@ -85,7 +85,7 @@ class Status:
             self,
             age: CatAge = None,
             social: CatSocial = None,
-            group: str = None,
+            group: CatGroup = None,
             rank: CatRank = None
     ):
         """
@@ -120,7 +120,7 @@ class Status:
 
         # if not social, then social category is found via the rank
         if not social:
-            if rank in CatRank.all_clancat_ranks():
+            if rank.is_any_clancat_rank():
                 social = CatSocial.CLANCAT
             else:
                 social = choice([CatSocial.ROGUE, CatSocial.LONER, CatSocial.KITTYPET])
@@ -337,12 +337,17 @@ class Status:
 
         return standing_list
 
-    def move_to_afterlife(self, target: CatGroup=None):
+    def move_to_afterlife(self, target: CatGroup = None):
         """
         Changes a cat's group into the appropriate afterlife
         :param target: Use this to specify a certain afterlife, if unused a clancat (or former clancat) will match their
         guide's afterlife, while an outsider will go to the unknown residence.
         """
+        if target:
+            self._modify_group(
+                new_rank=self.rank,
+                new_group=target
+            )
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
         if self.is_outsider() and not self.is_former_clancat():
@@ -475,6 +480,7 @@ class Status:
 
         return False
 
+
 class StatusDict(TypedDict, total=False):
     """
     Dict containing:
@@ -490,7 +496,7 @@ class StatusDict(TypedDict, total=False):
     group_history: list[dict]
     standing_history: list[dict]
     social: CatSocial
-    group: str
+    group: CatGroup
     rank: CatRank
 
 
