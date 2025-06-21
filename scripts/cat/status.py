@@ -170,10 +170,10 @@ class Status:
         """
         Returns the cat's current social category, aka what the cat is considered by other cats within the world
         """
-        return self.social_history[-1]
+        return self.all_socials[-1]
 
     @property
-    def social_history(self) -> list:
+    def all_socials(self) -> list:
         """
         Returns a list of all social classes the cat has been part of or is currently part of.
         """
@@ -203,7 +203,7 @@ class Status:
         return rank[0]
 
     @property
-    def rank_history(self) -> dict:
+    def all_ranks(self) -> dict:
         """
         Returns a dict of past held ranks. Key is rank, value is moons spent as that rank.
         """
@@ -297,8 +297,8 @@ class Status:
     def add_to_group(
             self,
             new_group: CatGroup,
-            age,
-            standing_with_past_group=None
+            age=None,
+            standing_with_past_group: CatStanding = None
     ):
         """
         Adds the cat to the specified group. If the cat has previously been part of this group, they will take on their
@@ -307,17 +307,23 @@ class Status:
         the new group (unless it was leader or deputy). If no past valid past rank is found, they will gain a rank based
         off their age.
         :param new_group: The group the cat will be joining
-        :param age: The current age stage of the cat
+        :param age: The current age stage of the cat, only required if a former clan cat is joining a clan
         :param standing_with_past_group: If leaving a group to join the new one, this should be used to indicate how the
-        last group views the cat (exiled, lost, ect.)
+        last group views the cat (exiled, lost, ect.) Defaults to KNOWN if cat was in a group.
         """
-        new_rank = None
+        if not standing_with_past_group and self.group:
+            standing_with_past_group = CatStanding.KNOWN
 
-        # adding a cat who has been in the group in the past, they will take their old rank if possible
-        if self.is_former_clancat():
+        # if we're moving an afterlife cat, they don't change rank
+        if self.group.is_afterlife():
+            new_rank = self.rank
+        # adding a cat who has been in a clan in the past, they will take their old rank if possible
+        elif self.is_former_clancat() and not self.group.is_afterlife():
             new_rank = self.find_prior_clan_rank()
             if new_rank in [CatRank.LEADER, CatRank.DEPUTY]:
                 new_rank = self.get_rank_from_age(age)
+        else:
+            new_rank = None
 
         self._modify_group(
             new_rank=new_rank,
@@ -396,7 +402,7 @@ class Status:
                 }
             )
 
-    def find_prior_clan_rank(self, clan: CatGroup  = None):
+    def find_prior_clan_rank(self, clan: CatGroup = None):
         """
         Finds the last clan rank held of a current outsider
         :param clan: pass the name of a clan to only return the cat's prior rank within that clan. Default is None, if
@@ -405,7 +411,7 @@ class Status:
         if clan:
             past_ranks = [record["rank"] for record in self.group_history if record["group"] == clan]
         else:
-            past_ranks = [rank for rank in self.rank_history.keys()
+            past_ranks = [rank for rank in self.all_ranks.keys()
                           if rank not in [CatRank.LONER,
                                           CatRank.KITTYPET,
                                           CatRank.ROGUE]]
@@ -436,7 +442,7 @@ class Status:
         Returns True if the cat has been part of any clan in the past, but is not currently a clancat.
         """
 
-        return True if CatSocial.CLANCAT in self.social_history and self.social != CatSocial.CLANCAT else False
+        return True if CatSocial.CLANCAT in self.all_socials and self.social != CatSocial.CLANCAT else False
 
     def is_lost(self, group: CatGroup = None) -> bool:
         """
@@ -459,10 +465,18 @@ class Status:
                                       CatGroup.UNKNOWN_RESIDENCE,
                                       CatGroup.STAR_CLAN] else False
 
-    def is_exiled(self, group: CatGroup) -> bool:
+    def is_exiled(self, group: CatGroup = None) -> bool:
         """
-        Returns True if the cat is currently exiled from the given group.
+        Returns True if the cat is currently exiled from the given group. Giving no group will return True if cat is
+        exiled from any group.
         """
+        # if no group given
+        if not group:
+            for entry in self.standing_history:
+                if CatStanding.EXILED in entry["standing"]:
+                    return True
+
+        # if group given
         standing = self.get_standing_with_group(group)
 
         if standing[-1] == CatStanding.EXILED:
