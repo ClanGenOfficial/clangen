@@ -1516,13 +1516,18 @@ class Cat:
         ):
             self.update_mentor()
 
-    def thoughts(self):
+    def thoughts(self, game_mode = None, biome = None, camp = None):
         """Generates a thought for the cat, which displays on their profile."""
         all_cats = self.all_cats
         other_cat = choice(list(all_cats.keys()))
-        game_mode = game.clan.game_mode
-        biome = game.clan.biome
-        camp = game.clan.camp_bg
+        if game.clan:
+            if game_mode is None:
+                game_mode = game.clan.game_mode
+            if biome is None:
+                biome = game.clan.biome
+            if camp is None:
+                camp = game.clan.camp_bg
+
         try:
             season = game.clan.current_season
         except Exception:

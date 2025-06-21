@@ -252,7 +252,11 @@ class Clan:
             Cat.all_cats.get(cat_id).backstory = "clan_founder"
             if Cat.all_cats.get(cat_id).status == "apprentice":
                 Cat.all_cats.get(cat_id).status_change("apprentice")
-            Cat.all_cats.get(cat_id).thoughts()
+            Cat.all_cats.get(cat_id).thoughts(
+                game_mode = self.game_mode,
+                biome = self.biome,
+                camp = self.camp_bg
+            )
 
         game.save_cats()
         number_other_clans = randint(3, 5)
