@@ -61,7 +61,7 @@ class RoleScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element == self.promote_deputy:
                 game.clan.deputy = self.the_cat
-                self.the_cat.rank_change("deputy", resort=True)
+                self.the_cat.rank_change(CatRank.DEPUTY, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_warrior:
                 self.the_cat.rank_change(CatRank.WARRIOR, resort=True)
@@ -377,7 +377,7 @@ class RoleScreen(Screens):
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
-        elif self.the_cat.status == "deputy":
+        elif self.the_cat.status == CatRank.DEPUTY:
             if leader_invalid:
                 self.promote_leader.enable()
             else:
@@ -511,7 +511,7 @@ class RoleScreen(Screens):
             output = "screens.role.blurb_warrior"
         elif self.the_cat.status == "leader":
             output = "screens.role.blurb_leader"
-        elif self.the_cat.status == "deputy":
+        elif self.the_cat.status == CatRank.DEPUTY:
             output = "screens.role.blurb_deputy"
         elif self.the_cat.status == CatRank.MEDICINE_CAT:
             output = "screens.role.blurb_medicine_cat"

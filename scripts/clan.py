@@ -189,7 +189,7 @@ class Clan:
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
     def post_initialization_functions(self):
         if self.deputy is not None:
-            self.deputy.rank_change("deputy")
+            self.deputy.rank_change(CatRank.DEPUTY)
             self.clan_cats.append(self.deputy.ID)
 
         if self.leader:
@@ -218,7 +218,7 @@ class Clan:
                     CatRank.MEDICINE_CAT,
                     "leader",
                     CatRank.MEDIATOR,
-                    "deputy",
+                    CatRank.DEPUTY,
                     "elder",
                 ]
             ),
@@ -424,7 +424,7 @@ class Clan:
         """
         if deputy:
             self.deputy = deputy
-            Cat.all_cats[deputy.ID].rank_change("deputy")
+            Cat.all_cats[deputy.ID].rank_change(CatRank.DEPUTY)
             self.deputy_predecessors += 1
 
     def new_medicine_cat(self, medicine_cat):
@@ -1222,7 +1222,7 @@ class Clan:
         all_cats = [
             i
             for i in Cat.all_cats_list
-            if i.status not in ["leader", "deputy"] and not i.dead and not i.outside
+            if i.status not in ["leader", CatRank.DEPUTY] and not i.dead and not i.outside
         ]
         leader = (
             Cat.fetch_cat(self.leader)

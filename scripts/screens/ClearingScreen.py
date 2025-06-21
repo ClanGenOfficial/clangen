@@ -795,7 +795,7 @@ class ClearingScreen(Screens):
                     "number": str(n),
                     "status": i18n.t(
                         f"general.{status}",
-                        count=2 if status not in ["leader", "deputy"] else 1,
+                        count=2 if status not in ["leader", CatRank.DEPUTY] else 1,
                     ),
                     "prey": i18n.t("screens.clearing.prey_count", count=amount),
                 },

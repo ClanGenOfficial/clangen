@@ -87,7 +87,7 @@ class Events:
             str(cat.status)
             in {
                 "leader",
-                "deputy",
+                CatRank.DEPUTY,
                 CatRank.WARRIOR,
                 CatRank.MEDICINE_CAT,
                 CatRank.MEDICINE_APPRENTICE,
@@ -556,7 +556,7 @@ class Events:
         """Adding auto freshkill for the current moon."""
         healthy_hunter = list(
             filter(
-                lambda c: c.status in [CatRank.WARRIOR, CatRank.APPRENTICE, "leader", "deputy"]
+                lambda c: c.status in [CatRank.WARRIOR, CatRank.APPRENTICE, "leader", CatRank.DEPUTY]
                 and not c.dead
                 and not c.outside
                 and not c.exiled
@@ -609,7 +609,7 @@ class Events:
             # handle warrior
             healthy_warriors = list(
                 filter(
-                    lambda c: c.status in [CatRank.WARRIOR, "leader", "deputy"]
+                    lambda c: c.status in [CatRank.WARRIOR, "leader", CatRank.DEPUTY]
                     and not c.dead
                     and not c.outside
                     and not c.exiled
@@ -652,7 +652,7 @@ class Events:
             # get warriors to help
             healthy_warriors = get_alive_status_cats(
                 Cat,
-                get_status=[CatRank.WARRIOR, "deputy", "leader"],
+                get_status=[CatRank.WARRIOR, CatRank.DEPUTY, "leader"],
                 working=True
             )
 
@@ -691,7 +691,7 @@ class Events:
             # handle prey
             healthy_warriors = list(
                 filter(
-                    lambda c: c.status in [CatRank.WARRIOR, "leader", "deputy"]
+                    lambda c: c.status in [CatRank.WARRIOR, "leader", CatRank.DEPUTY]
                     and not c.dead
                     and not c.outside
                     and not c.exiled
@@ -732,7 +732,7 @@ class Events:
                     "raid other clans"
                 ) or random.getrandbits(1):
                     status_use = cat.status
-                    if status_use in ["deputy", "leader"]:
+                    if status_use in [CatRank.DEPUTY, "leader"]:
                         status_use = CatRank.WARRIOR
                     chance = info_dict[f"injury_chance_{status_use}"]
                     if game.clan.clan_settings.get("raid other clans"):
@@ -1233,7 +1233,7 @@ class Events:
             cat_dead = True
 
         if not cat_dead:
-            if cat.status == "deputy" and game.clan.deputy is None:
+            if cat.status == CatRank.DEPUTY and game.clan.deputy is None:
                 game.clan.deputy = cat
             if cat.status == CatRank.MEDICINE_CAT and game.clan.medicine_cat is None:
                 game.clan.medicine_cat = cat
@@ -1241,7 +1241,7 @@ class Events:
             # retiring to elder den
             if (
                 not cat.no_retire
-                and cat.status in [CatRank.WARRIOR, "deputy"]
+                and cat.status in [CatRank.WARRIOR, CatRank.DEPUTY]
                 and len(cat.apprentice) < 1
                 and cat.moons > 114
             ):
@@ -1249,7 +1249,7 @@ class Events:
                 if cat.moons > 140 or not int(
                     random.random() * (-0.7 * cat.moons + 100)
                 ):
-                    if cat.status == "deputy":
+                    if cat.status == CatRank.DEPUTY:
                         game.clan.deputy = None
                     self.ceremony(cat, "elder")
 
@@ -1464,7 +1464,7 @@ class Events:
         living_parents = []
         mentor_type = {
             CatRank.MEDICINE_CAT: [CatRank.MEDICINE_CAT],
-            CatRank.WARRIOR: [CatRank.WARRIOR, "deputy", "leader", "elder"],
+            CatRank.WARRIOR: [CatRank.WARRIOR, CatRank.DEPUTY, "leader", "elder"],
             CatRank.MEDIATOR: [CatRank.MEDIATOR],
         }
 
@@ -2454,7 +2454,7 @@ class Events:
                     return
 
             text = event_text_adjust(Cat, text, main_cat=random_cat, clan=game.clan)
-            random_cat.rank_change("deputy")
+            random_cat.rank_change(CatRank.DEPUTY)
             game.clan.deputy = random_cat
 
             game.cur_events_list.append(Single_Event(text, "ceremony", involved_cats))
