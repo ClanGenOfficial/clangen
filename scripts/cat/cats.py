@@ -607,8 +607,7 @@ class Cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        # if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body is not None:
-        if game.clan and not self.outside and not self.exiled:
+        if game.clan and not self.status.is_outsider():
             self.grief(body)
 
         self.status.move_to_afterlife()
@@ -656,7 +655,7 @@ class Cat:
 
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
-            if cat.dead or cat.outside or cat.moons < 1:
+            if cat.dead or cat.status.is_outsider() or cat.moons < 1:
                 continue
 
             to_self = cat.relationships.get(self.ID)
@@ -995,7 +994,7 @@ class Cat:
     def manage_outside_trait(self):
         """To be run every moon on outside cats
         to keep trait and skills making sense."""
-        if not (self.outside or self.exiled):
+        if not self.status.is_outsider():
             return
 
         self.personality.set_kit(self.age.is_baby())  # Update kit trait stuff
@@ -2329,8 +2328,7 @@ class Cat:
         # Check if cat can have a mentor
         if (
                 self.dead
-                or self.outside
-                or self.exiled
+                or self.status.is_outsider()
                 or not self.status.is_any_apprentice()
         ):
             self.__remove_mentor()
@@ -2616,10 +2614,8 @@ class Cat:
                 continue
             # if they are not outside of the Clan at the same time
             if (
-                    self.outside
-                    and not inter_cat.outside
-                    or not self.outside
-                    and inter_cat.outside
+                    self.status.is_outsider() and inter_cat.status.is_clancat()
+                    or self.status.is_clancat() and inter_cat.status.is_outsider()
             ):
                 continue
             inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
@@ -3092,7 +3088,7 @@ class Cat:
         else:
             file_name = "faded_senior"
 
-        if self.df:
+        if self.status.group == CatGroup.DARK_FOREST:
             file_name += "_df"
 
         file_name += ".png"
@@ -3383,7 +3379,6 @@ class Cat:
                 "parent1": self.parent1,
                 "parent2": self.parent2,
                 "adoptive_parents": self.adoptive_parents,
-                "df": self.df,
                 "faded_offspring": self.faded_offspring,
             }
         else:
@@ -3465,8 +3460,7 @@ class Cat:
             check_cat
             for check_cat in Cat.all_cats_list
             if check_cat.dead == self.dead
-               and check_cat.outside == self.outside
-               and check_cat.df == self.df
+               and check_cat.status.group == self.status.group
                and not check_cat.faded
         ]
 
