@@ -985,17 +985,15 @@ class PatrolScreen(Screens):
         # ASSIGN TO ABLE CATS
         for the_cat in Cat.all_cats_list:
             if (
-                not the_cat.dead
-                and the_cat.in_camp
+                the_cat.in_camp
                 and the_cat.ID not in game.patrolled
-                and the_cat.status
-                not in [CatRank.ELDER, CatRank.KITTEN, CatRank.MEDIATOR, CatRank.MEDIATOR_APPRENTICE]
-                and not the_cat.outside
+                and the_cat.status.rank.is_allowed_to_patrol()
+                and the_cat.status.in_player_clan()
                 and the_cat not in self.current_patrol
                 and not the_cat.not_working()
             ):
                 if (
-                    the_cat.status == CatRank.NEWBORN
+                    the_cat.status.rank == CatRank.NEWBORN
                     or game.config["fun"]["all_cats_are_newborn"]
                 ):
                     if game.config["fun"]["newborns_can_patrol"]:
@@ -1280,7 +1278,7 @@ class PatrolScreen(Screens):
             # Draw mentor or apprentice
             relation = "should not display"
             if (
-                self.selected_cat.status in [CatRank.MEDICINE_APPRENTICE, CatRank.APPRENTICE]
+                self.selected_cat.status.rank in [CatRank.MEDICINE_APPRENTICE, CatRank.APPRENTICE]
                 or self.selected_cat.apprentice != []
             ):
                 self.elements["app_mentor_frame"] = pygame_gui.elements.UIImage(
@@ -1290,7 +1288,7 @@ class PatrolScreen(Screens):
                 )
 
                 if (
-                    self.selected_cat.status
+                    self.selected_cat.status.rank
                     in [CatRank.MEDICINE_APPRENTICE, CatRank.APPRENTICE]
                     and self.selected_cat.mentor is not None
                 ):
