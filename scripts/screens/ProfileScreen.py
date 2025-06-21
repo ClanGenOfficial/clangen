@@ -617,7 +617,7 @@ class ProfileScreen(Screens):
             starting_height=2,
         )
         if not (self.the_cat.dead or self.the_cat.outside) and (
-                self.the_cat.status in ["medicine cat", "medicine cat apprentice"]
+                self.the_cat.status in ["medicine cat", CatRank.MEDICINE_APPRENTICE]
                 or self.the_cat.is_ill()
                 or self.the_cat.is_injured()
         ):
@@ -664,7 +664,7 @@ class ProfileScreen(Screens):
                 tool_tip_text="screens.profile.leader_ceremony",
                 manager=MANAGER,
             )
-        elif self.the_cat.status in ["mediator", "mediator apprentice"]:
+        elif self.the_cat.status in ["mediator", CatRank.MEDIATOR_APPRENTICE]:
             self.profile_elements["mediation"] = UIImageButton(
                 ui_scale(pygame.Rect((383, 110), (34, 34))),
                 "",
@@ -1298,11 +1298,7 @@ class ProfileScreen(Screens):
         # First, just list the mentors:
         if self.the_cat.status in ["kitten", "newborn"]:
             influence_history = i18n.t("cat.history.training_kit")
-        elif self.the_cat.status in [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-        ]:
+        elif self.the_cat.status.rank.is_any_apprentice_rank():
             influence_history = i18n.t("cat.history.training_app")
         else:
             valid_former_mentors = [
@@ -2116,8 +2112,7 @@ class ProfileScreen(Screens):
             else:
                 self.manage_roles.enable()
             if (
-                    self.the_cat.status
-                    not in ["apprentice", "medicine cat apprentice", "mediator apprentice"]
+                    not self.the_cat.status.rank.is_any_apprentice_rank()
                     or self.the_cat.dead
                     or self.the_cat.outside
             ):

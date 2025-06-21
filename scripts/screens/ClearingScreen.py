@@ -617,7 +617,7 @@ class ClearingScreen(Screens):
 
         current_prey_amount = game.clan.freshkill_pile.total_amount
         needed_amount = game.clan.freshkill_pile.amount_food_needed()
-        warrior_need = game.prey_config["prey_requirement"]["warrior"]
+        warrior_need = game.prey_config["prey_requirement"][CatRank.WARRIOR]
         warrior_amount = int(current_prey_amount / warrior_need)
         general_text = i18n.t(
             "screens.clearing.prey_amount_info", warrior_amount=warrior_amount

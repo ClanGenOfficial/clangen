@@ -162,7 +162,7 @@ class DisasterEvents():
 
         leader = Cat.fetch_cat(game.clan.leader)
         deputy = Cat.fetch_cat(game.clan.deputy)
-        med_cats = get_alive_status_cats(Cat, ["medicine cat", "medicine cat apprentice"], sort=True)
+        med_cats = get_alive_status_cats(Cat, ["medicine cat", CatRank.MEDICINE_APPRENTICE], sort=True)
 
         # checking if there are cats of the specified rank
         if not leader.dead and not leader.outside:

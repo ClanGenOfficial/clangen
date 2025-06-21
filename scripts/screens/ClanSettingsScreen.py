@@ -19,6 +19,7 @@ from scripts.utility import (
     ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
@@ -415,13 +416,13 @@ class ClanSettingsScreen(Screens):
             living_cats += 1
             if cat.status == "medicine cat":
                 med_cats += 1
-            elif cat.status == "medicine cat apprentice":
+            elif cat.status == CatRank.MEDICINE_APPRENTICE:
                 med_cat_apprentices += 1
-            elif cat.status == "warrior":
+            elif cat.status == CatRank.WARRIOR:
                 warriors += 1
-            elif cat.status == "apprentice":
+            elif cat.status == CatRank.APPRENTICE:
                 warrior_apprentices += 1
-            elif cat.status == "mediator apprentice":
+            elif cat.status == CatRank.MEDIATOR_APPRENTICE:
                 mediator_apprentices += 1
             elif cat.status == "mediator":
                 mediators += 1

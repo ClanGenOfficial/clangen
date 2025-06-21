@@ -21,6 +21,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -63,7 +64,7 @@ class RoleScreen(Screens):
                 self.the_cat.rank_change("deputy", resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_warrior:
-                self.the_cat.rank_change("warrior", resort=True)
+                self.the_cat.rank_change(CatRank.WARRIOR, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_med_cat:
                 self.the_cat.rank_change("medicine cat", resort=True)
@@ -77,13 +78,13 @@ class RoleScreen(Screens):
                 self.the_cat.rank_change("mediator", resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_warrior_app:
-                self.the_cat.rank_change("apprentice", resort=True)
+                self.the_cat.rank_change(CatRank.APPRENTICE, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_med_app:
-                self.the_cat.rank_change("medicine cat apprentice", resort=True)
+                self.the_cat.rank_change(CatRank.MEDICINE_APPRENTICE, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator_app:
-                self.the_cat.rank_change("mediator apprentice", resort=True)
+                self.the_cat.rank_change(CatRank.MEDIATOR_APPRENTICE, resort=True)
                 self.update_selected_cat()
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
@@ -339,7 +340,7 @@ class RoleScreen(Screens):
         else:
             deputy_invalid = True
 
-        if self.the_cat.status == "apprentice":
+        if self.the_cat.status == CatRank.APPRENTICE:
             # LEADERSHIP
             self.promote_leader.disable()
             self.promote_deputy.disable()
@@ -354,7 +355,7 @@ class RoleScreen(Screens):
             self.switch_med_app.enable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.enable()
-        elif self.the_cat.status == "warrior":
+        elif self.the_cat.status == CatRank.WARRIOR:
             # LEADERSHIP
             if leader_invalid:
                 self.promote_leader.enable()
@@ -448,7 +449,7 @@ class RoleScreen(Screens):
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
-        elif self.the_cat.status == "medicine cat apprentice":
+        elif self.the_cat.status == CatRank.MEDICINE_APPRENTICE:
             self.promote_leader.disable()
             self.promote_deputy.disable()
 
@@ -462,7 +463,7 @@ class RoleScreen(Screens):
             self.switch_med_app.disable()
             self.switch_warrior_app.enable()
             self.switch_mediator_app.enable()
-        elif self.the_cat.status == "mediator apprentice":
+        elif self.the_cat.status == CatRank.MEDIATOR_APPRENTICE:
             self.promote_leader.disable()
             self.promote_deputy.disable()
 
@@ -506,7 +507,7 @@ class RoleScreen(Screens):
             self.switch_mediator_app.disable()
 
     def get_role_blurb(self):
-        if self.the_cat.status == "warrior":
+        if self.the_cat.status == CatRank.WARRIOR:
             output = "screens.role.blurb_warrior"
         elif self.the_cat.status == "leader":
             output = "screens.role.blurb_leader"
@@ -518,11 +519,11 @@ class RoleScreen(Screens):
             output = "screens.role.blurb_mediator"
         elif self.the_cat.status == "elder":
             output = "screens.role.blurb_elder"
-        elif self.the_cat.status == "apprentice":
+        elif self.the_cat.status == CatRank.APPRENTICE:
             output = "screens.role.blurb_apprentice"
-        elif self.the_cat.status == "medicine cat apprentice":
+        elif self.the_cat.status == CatRank.MEDICINE_APPRENTICE:
             output = "screens.role.blurb_medcat_app"
-        elif self.the_cat.status == "mediator apprentice":
+        elif self.the_cat.status == CatRank.MEDIATOR_APPRENTICE:
             output = "screens.role.blurb_mediator_app"
         elif self.the_cat.status == "kitten":
             output = "screens.role.blurb_kitten"

@@ -8,6 +8,7 @@ import random
 
 import ujson
 
+from scripts.cat.enums import CatRank
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 
@@ -270,11 +271,11 @@ class Name:
             elif self.cat.moons < 6:
                 adjusted_status = "kitten"
             elif self.cat.moons < 12:
-                adjusted_status = "apprentice"
+                adjusted_status = CatRank.APPRENTICE
             else:
-                adjusted_status = "warrior"
+                adjusted_status = CatRank.WARRIOR
 
-            if adjusted_status != "warrior" and not self.specsuffix_hidden:
+            if adjusted_status != CatRank.WARRIOR and not self.specsuffix_hidden:
                 return (
                     self.prefix + self.names_dict["special_suffixes"][adjusted_status]
                 )

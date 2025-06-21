@@ -23,6 +23,7 @@ from scripts.utility import (
     get_current_season,
 )
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -474,7 +475,7 @@ class ClanScreen(Screens):
                 else:
                     continue
 
-            if Cat.all_cats[x].status in ["apprentice", "mediator apprentice"]:
+            if Cat.all_cats[x].status in [CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE]:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 50, 1, 1, 100, 100, 1]
                 )
@@ -491,11 +492,11 @@ class ClanScreen(Screens):
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [60, 8, 1, 1, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ["medicine cat apprentice", "medicine cat"]:
+            elif Cat.all_cats[x].status.rank.is_any_medicine_rank():
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [20, 20, 20, 400, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ["warrior", "mediator"]:
+            elif Cat.all_cats[x].status in [CatRank.WARRIOR, "mediator"]:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 1, 1, 1, 60, 60]
                 )

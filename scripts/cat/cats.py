@@ -2135,7 +2135,7 @@ class Cat:
         if self.moons > 6 and self.status.rank.is_any_apprentice_rank():
             _ment = Cat.fetch_cat(self.mentor) if self.mentor else None
             self.rank_change(
-                "warrior"
+                CatRank.WARRIOR
             )  # Temp switch them to warrior, so the following step will work
             self.rank_change_traits_skill(_ment)
 
@@ -3543,7 +3543,7 @@ def create_example_cats():
 
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(rank="warrior")
+            game.choose_cats[cat_index] = create_cat(rank=CatRank.WARRIOR)
         else:
             random_rank = choice(
                 [CatRank.KITTEN, CatRank.APPRENTICE, CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]

@@ -102,7 +102,7 @@ class WarriorDenScreen(Screens):
                             and self.save_button.is_enabled
                         ):
                             meds = get_alive_status_cats(
-                                Cat, ["medicine cat", "medicine cat apprentice"]
+                                Cat, ["medicine cat", CatRank.MEDICINE_APPRENTICE]
                             )
                             if len(meds) < 1:
                                 self.save_button.disable()

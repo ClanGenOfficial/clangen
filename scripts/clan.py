@@ -18,6 +18,7 @@ import pygame
 import ujson
 
 from scripts.cat.cats import Cat, cat_class
+from scripts.cat.enums import CatRank
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
@@ -210,10 +211,10 @@ class Clan:
         self.instructor = Cat(
             status=choice(
                 [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
+                    CatRank.APPRENTICE,
+                    CatRank.MEDIATOR_APPRENTICE,
+                    CatRank.MEDICINE_APPRENTICE,
+                    CatRank.WARRIOR,
                     "medicine cat",
                     "leader",
                     "mediator",
@@ -250,8 +251,8 @@ class Clan:
         for cat_id in Cat.all_cats:
             Cat.all_cats.get(cat_id).init_all_relationships()
             Cat.all_cats.get(cat_id).backstory = "clan_founder"
-            if Cat.all_cats.get(cat_id).status == "apprentice":
-                Cat.all_cats.get(cat_id).rank_change("apprentice")
+            if Cat.all_cats.get(cat_id).status == CatRank.APPRENTICE:
+                Cat.all_cats.get(cat_id).rank_change(CatRank.APPRENTICE)
             Cat.all_cats.get(cat_id).thoughts()
 
         game.save_cats()
@@ -729,7 +730,7 @@ class Clan:
                 game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(status=choice(["warrior", "warrior", "elder"]))
+            game.clan.instructor = Cat(status=choice([CatRank.WARRIOR, CatRank.WARRIOR, "elder"]))
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
@@ -843,7 +844,7 @@ class Clan:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(status=choice(["warrior", "warrior", "elder"]))
+            game.clan.instructor = Cat(status=choice([CatRank.WARRIOR, CatRank.WARRIOR, "elder"]))
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
