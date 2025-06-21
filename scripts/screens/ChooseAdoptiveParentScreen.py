@@ -906,9 +906,7 @@ class ChooseAdoptiveParentScreen(Screens):
         valid_parents = [
             inter_cat
             for inter_cat in Cat.all_cats_list
-            if not (
-                inter_cat.dead or inter_cat.status.is_outsider()
-            )  # Adoptive parents cant be dead or outside
+            if inter_cat.status.in_player_clan() # Adoptive parents must be part of the clan
             and inter_cat.ID != self.the_cat.ID  # Can't be your own adoptive parent
             and inter_cat.moons - self.the_cat.moons
             >= 14  # Adoptive parent must be at least 14 moons older. -> own child can't adopt you

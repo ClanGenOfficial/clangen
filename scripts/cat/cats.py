@@ -610,7 +610,7 @@ class Cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan and not self.status.is_outsider():
+        if game.clan and self.status.in_player_clan():
             self.grief(body)
 
         self.status.move_to_afterlife()
@@ -2617,8 +2617,7 @@ class Cat:
                 continue
             # if they are not outside of the Clan at the same time
             if (
-                    self.status.is_outsider() and inter_cat.status.is_clancat()
-                    or self.status.is_clancat() and inter_cat.status.is_outsider()
+                    self.status.group != inter_cat.status.group
             ):
                 continue
             inter_cat.relationships[self.ID] = Relationship(inter_cat, self)

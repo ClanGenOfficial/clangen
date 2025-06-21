@@ -199,7 +199,7 @@ class ClearingScreen(Screens):
             if nutrient.percentage <= 99
         ]
         for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and not the_cat.status.is_outsider():
+            if the_cat.status.in_player_clan():
                 if the_cat.ID in low_nutrition_cats:
                     self.hungry_cats.append(the_cat)
                 else:

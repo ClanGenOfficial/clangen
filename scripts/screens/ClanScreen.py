@@ -135,9 +135,8 @@ class ClanScreen(Screens):
         i = 0
         for x in game.clan.clan_cats:
             if (
-                not Cat.all_cats[x].dead
+                Cat.all_cats[x].status.in_player_clan()
                 and Cat.all_cats[x].in_camp
-                and not Cat.all_cats[x].status.is_outsider()
                 and (
                     Cat.all_cats[x].status.rank != CatRank.NEWBORN
                     or game.config["fun"]["all_cats_are_newborn"]
@@ -456,7 +455,7 @@ class ClanScreen(Screens):
             first_choices[x].extend(first_choices[x])
 
         for x in game.clan.clan_cats:
-            if Cat.all_cats[x].dead or Cat.all_cats[x].status.is_outsider():
+            if not Cat.all_cats[x].status.in_player_clan():
                 continue
 
             # Newborns are not meant to be placed. They are hiding.

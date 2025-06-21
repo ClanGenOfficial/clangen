@@ -131,7 +131,7 @@ class FreshkillPile:
         # kits under 3 months are feed by the queen
         for queen_id, their_kits in queen_dict.items():
             queen = Cat.fetch_cat(queen_id)
-            if queen and queen.status.is_outsider():
+            if queen and not queen.status.in_player_clan():
                 continue
             young_kits = [kit for kit in their_kits if kit.moons < 3]
             if len(young_kits) > 0:
@@ -141,7 +141,7 @@ class FreshkillPile:
             for cat in living_cats
             if "pregnant" in cat.injuries
             and cat.ID not in queen_dict.keys()
-            and not cat.status.is_outsider()
+            and cat.status.in_player_clan()
         ]
 
         # all normal status cats calculation
@@ -149,7 +149,7 @@ class FreshkillPile:
             [
                 PREY_REQUIREMENT[cat.status.rank]
                 for cat in living_cats
-                if not cat.status.rank.is_baby() and not cat.status.is_outsider()
+                if not cat.status.rank.is_baby() and cat.status.in_player_clan()
             ]
         )
         # increase the number for sick cats
@@ -166,7 +166,7 @@ class FreshkillPile:
         )
         # increase the number of prey for kits, which are not taken care by a queen
         needed_prey += sum(
-            [PREY_REQUIREMENT[cat.status.rank] for cat in living_kits if not cat.status.is_outsider()]
+            [PREY_REQUIREMENT[cat.status.rank] for cat in living_kits if cat.status.in_player_clan()]
         )
 
         self.needed_prey = needed_prey

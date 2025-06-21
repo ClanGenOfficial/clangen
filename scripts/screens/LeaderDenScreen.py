@@ -218,8 +218,7 @@ class LeaderDenScreen(Screens):
                 adults = [
                     i
                     for i in Cat.all_cats.values()
-                    if not i.dead
-                    and not i.status.is_outsider()
+                    if i.status.in_player_clan()
                     and i.status.rank not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
                 ]
                 if adults:
@@ -284,7 +283,7 @@ class LeaderDenScreen(Screens):
                 "screens.leader_den.no_cats_outsider"
             )
         # if leader is dead and no one new is leading, give special notice
-        elif self.no_leader or game.clan.leader.dead or game.clan.leader.status.is_outsider():
+        elif self.no_leader or not game.clan.leader.status.in_player_clan():
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
                 "screens.leader_den.no_leader_clan"

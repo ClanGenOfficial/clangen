@@ -631,20 +631,20 @@ class ChooseMentorScreen(Screens):
         potential_warrior_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if not (cat.dead or cat.status.is_outsider())
-               and cat.status.rank.is_any_adult_warrior_like_rank()
+            if cat.status.in_player_clan()
+            and cat.status.rank.is_any_adult_warrior_like_rank()
         ]
         valid_warrior_mentors = []
         potential_medcat_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if not (cat.dead or cat.status.is_outsider()) and cat.status.rank == CatRank.MEDICINE_CAT
+            if cat.status.in_player_clan() and cat.status.rank == CatRank.MEDICINE_CAT
         ]
         valid_medcat_mentors = []
         potential_mediator_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if not (cat.dead or cat.status.is_outsider()) and cat.status.rank == CatRank.MEDIATOR
+            if cat.status.in_player_clan() and cat.status.rank == CatRank.MEDIATOR
         ]
         valid_mediator_mentors = []
 

@@ -61,7 +61,7 @@ class Status:
             self,
             age: CatAge = None,
             social: CatSocial = None,
-            group: str = None,
+            group: CatGroup = None,
             rank: CatRank = None,
     ):
         """
@@ -238,9 +238,9 @@ class Status:
 
     def _modify_group(
             self,
-            new_rank,
-            standing_with_past_group=None,
-            new_group=None
+            new_rank: CatRank,
+            standing_with_past_group: CatStanding = None,
+            new_group: CatGroup = None
     ):
         """
         Changes group status for a cat. They can be entering, leaving, or switching their group.
@@ -260,7 +260,7 @@ class Status:
             }
         )
 
-    def add_standing(self, new_standing):
+    def add_standing(self, new_standing: CatStanding):
         """
         Adds given standing to cat's current group
         """
@@ -271,7 +271,7 @@ class Status:
 
     def lost_from_group(
             self,
-            new_social_status=CatSocial.KITTYPET
+            new_social_status: CatSocial = CatSocial.KITTYPET
     ):
         """
         Removes from previous group and sets standing with that group to Lost.
@@ -296,7 +296,7 @@ class Status:
 
     def add_to_group(
             self,
-            new_group,
+            new_group: CatGroup,
             age,
             standing_with_past_group=None
     ):
@@ -340,8 +340,8 @@ class Status:
     def move_to_afterlife(self, target: CatGroup = None):
         """
         Changes a cat's group into the appropriate afterlife
-        :param target: Use this to specify a certain afterlife, if unused a clancat (or former clancat) will match their
-        guide's afterlife, while an outsider will go to the unknown residence.
+        :param target: Use this to specify a certain afterlife, if unused a clancat (or a former clancat) will match
+        their guide's afterlife, while an outsider will go to the unknown residence.
         """
         if target:
             self._modify_group(
@@ -369,7 +369,7 @@ class Status:
             standing_with_past_group=CatStanding.MEMBER
         )
 
-    def change_rank(self, new_rank):
+    def change_rank(self, new_rank: CatRank):
         """
         Changes the cats rank to the new_rank
         """
@@ -381,7 +381,7 @@ class Status:
             }
         )
 
-    def _change_outsider_social(self, new_social):
+    def _change_outsider_social(self, new_social: CatSocial):
         if self.group:
             self._modify_group(
                 new_social,
@@ -396,7 +396,7 @@ class Status:
                 }
             )
 
-    def find_prior_clan_rank(self, clan=None):
+    def find_prior_clan_rank(self, clan: CatGroup  = None):
         """
         Finds the last clan rank held of a current outsider
         :param clan: pass the name of a clan to only return the cat's prior rank within that clan. Default is None, if
@@ -438,7 +438,7 @@ class Status:
 
         return True if CatSocial.CLANCAT in self.social_history and self.social != CatSocial.CLANCAT else False
 
-    def is_lost(self, group=None) -> bool:
+    def is_lost(self, group: CatGroup = None) -> bool:
         """
         Returns True if the cat is considered "lost" by a group.
         :param group: use this to specify a certain group to check lost status against
@@ -459,7 +459,7 @@ class Status:
                                       CatGroup.UNKNOWN_RESIDENCE,
                                       CatGroup.STAR_CLAN] else False
 
-    def is_exiled(self, group) -> bool:
+    def is_exiled(self, group: CatGroup) -> bool:
         """
         Returns True if the cat is currently exiled from the given group.
         """
@@ -470,7 +470,7 @@ class Status:
 
         return False
 
-    def is_near(self, group) -> bool:
+    def is_near(self, group: CatGroup) -> bool:
         """
         Returns True if the cat is near the specified group
         """

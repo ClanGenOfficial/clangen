@@ -1026,9 +1026,7 @@ class Condition_Events:
                             "hardcoded.condition_retire_adolescent", name=cat.name
                         )
                     elif game.clan.leader is not None:
-                        if (
-                            not game.clan.leader.dead
-                            and not game.clan.leader.status.is_outsider()
+                        if (game.clan.leader.status.in_player_clan()
                             and cat.moons < 120
                         ):
                             retire_involved.append(game.clan.leader.ID)

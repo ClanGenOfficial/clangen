@@ -371,7 +371,7 @@ class HandleShortEvents:
                             or game.clan.clan_settings["same sex birth"]
                         )
                         and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2)
-                        and not (sub_sub[0].dead or sub_sub[0].status.is_outsider())
+                        and sub_sub[0].status.in_player_clan()
                     ):
                         sub_sub[0].get_injured("recovering from birth")
                         break  # Break - only one parent ever gives birth
@@ -493,7 +493,7 @@ class HandleShortEvents:
         alive_cats = [
             i
             for i in Cat.all_cats.values()
-            if not i.dead and not i.status.is_outsider()
+            if i.status.in_player_clan()
         ]
 
         # make sure all cats in the pool fit the event requirements

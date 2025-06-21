@@ -78,9 +78,9 @@ class Relationship:
     def start_interaction(self) -> None:
         """This function handles the simple interaction of this relationship."""
         # such interactions are only allowed for living Clan members
-        if self.cat_from.dead or self.cat_from.status.is_outsider():
+        if not self.cat_from.status.in_player_clan():
             return
-        if self.cat_to.dead or self.cat_to.status.is_outsider():
+        if not self.cat_to.status.in_player_clan():
             return
 
         if self.currently_loaded_lang != i18n.config.get("locale"):

@@ -7,6 +7,7 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatGroup
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
 from scripts.game_structure.ui_elements import (
@@ -41,7 +42,7 @@ class ListScreen(Screens):
         self.all_pages = None
         self.filter_options_visible = True
         self.group_options_visible = False
-        self.death_status = "living"
+        self.death_page = "living"
         self.current_group = "clan"
         self.full_cat_list = []
         self.current_listed_cats = []
@@ -145,12 +146,12 @@ class ListScreen(Screens):
                 if event.ui_element.text == "screens.list.view_dead":
                     element.set_text("screens.list.view_living")
                     element.set_tooltip("screens.list.view_living_tooltip")
-                    self.death_status = "dead"
+                    self.death_page = "dead"
                     self.get_sc_cats()
                 else:
                     element.set_text("screens.list.view_dead")
                     element.set_tooltip("screens.list.view_dead_tooltip")
-                    self.death_status = "living"
+                    self.death_page = "living"
                     if (
                         i18n.t("screens.list.filter_death")
                         in self.cat_list_bar_elements["sort_by_button"].text
@@ -169,8 +170,8 @@ class ListScreen(Screens):
 
             # CHOOSE GROUP
             elif (
-                element == self.cat_list_bar_elements["choose_group_button"]
-                and self.death_status == "living"
+                    element == self.cat_list_bar_elements["choose_group_button"]
+                    and self.death_page == "living"
             ):
                 if self.choose_living_dropdown.is_open:
                     self.choose_living_dropdown.close()
@@ -178,8 +179,8 @@ class ListScreen(Screens):
                     self.choose_living_dropdown.open()
 
             elif (
-                element == self.cat_list_bar_elements["choose_group_button"]
-                and self.death_status == "dead"
+                    element == self.cat_list_bar_elements["choose_group_button"]
+                    and self.death_page == "dead"
             ):
                 if self.choose_dead_dropdown.is_open:
                     self.choose_dead_dropdown.close()
@@ -218,7 +219,7 @@ class ListScreen(Screens):
                     self.sort_by_dropdown.close()
                 else:
                     self.sort_by_dropdown.open()
-                    if self.death_status == "living":
+                    if self.death_page == "living":
                         self.sort_by_buttons["filter_death"].hide()
             elif element in self.sort_by_buttons.values():
                 # close dropdowns
@@ -343,19 +344,19 @@ class ListScreen(Screens):
         self.cat_list_bar_elements["view_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((172, 0), (103, 34))),
             "screens.list.view_dead"
-            if self.death_status != "dead"
+            if self.death_page != "dead"
             else "screens.list.view_living",
             get_button_dict(ButtonStyles.DROPDOWN, (103, 34)),
             object_id="@buttonstyles_dropdown",
             container=self.cat_list_bar,
             tool_tip_text="screens.list.view_dead_tooltip"
-            if self.death_status != "dead"
+            if self.death_page != "dead"
             else "screens.list.view_living_tooltip",
             manager=MANAGER,
             starting_height=1,
         )
 
-        if self.death_status != "dead" and game.sort_type == "death":
+        if self.death_page != "dead" and game.sort_type == "death":
             game.sort_type = "rank"
 
         # CHOOSE GROUP DROPDOWN
@@ -583,7 +584,7 @@ class ListScreen(Screens):
             container=self.list_screen_container,
             placeholder_text=str(self.current_page),
             object_id=get_text_box_theme("#page_entry_box")
-            if self.death_status == "living"
+            if self.death_page == "living"
             else ObjectID("#dark", "#page_entry_box"),
             manager=MANAGER,
         )
@@ -592,7 +593,7 @@ class ListScreen(Screens):
             ui_scale(pygame.Rect((365, 602), (100, 30))),
             container=self.list_screen_container,
             object_id=get_text_box_theme("#text_box_30_horizleft")
-            if self.death_status == "living"
+            if self.death_page == "living"
             else "#text_box_30_horizleft_light",
             manager=MANAGER,
         )  # Text will be filled in later
@@ -612,7 +613,7 @@ class ListScreen(Screens):
         variable_dict = super().display_change_save()
 
         variable_dict["current_group"] = self.current_group
-        variable_dict["death_status"] = self.death_status
+        variable_dict["death_page"] = self.death_page
 
         return variable_dict
 
@@ -696,13 +697,13 @@ class ListScreen(Screens):
         """
         self.display_container_elements["page_entry"].change_object_id(
             get_text_box_theme("#page_entry_box")
-            if self.death_status == "living"
+            if self.death_page == "living"
             else ObjectID("#dark", "#page_entry_box")
         )
         self.display_container_elements["page_entry"].set_text(str(self.current_page))
         self.display_container_elements["page_number"].change_object_id(
             get_text_box_theme("#text_box_30_horizcenter")
-            if self.death_status == "living"
+            if self.death_page == "living"
             else "#text_box_30_horizcenter_light"
         )
         self.display_container_elements["page_number"].set_text(f"/{self.all_pages}")
@@ -725,7 +726,7 @@ class ListScreen(Screens):
                 current_page=self.current_page,
                 show_names=True,
                 text_theme=get_text_box_theme("#text_box_30_horizcenter")
-                if self.death_status == "living"
+                if self.death_page == "living"
                 else "#text_box_30_horizcenter_light",
                 manager=MANAGER,
                 anchors={
@@ -749,7 +750,7 @@ class ListScreen(Screens):
                 ]
             self.cat_display.text_theme = (
                 get_text_box_theme("#text_box_30_horizcenter")
-                if self.death_status == "living"
+                if self.death_page == "living"
                 else "#text_box_30_horizcenter_light"
             )
             self.cat_display.update_display(
@@ -801,9 +802,9 @@ class ListScreen(Screens):
         grabs clan cats
         """
         self.current_group = "clan"
-        self.death_status = "living"
+        self.death_page = "living"
         self.full_cat_list = [
-            cat for cat in Cat.all_cats_list if not cat.dead and not cat.outside
+            cat for cat in Cat.all_cats_list if not cat.dead and not cat.status.in_player_clan()
         ]
 
     def get_cotc_cats(self):
@@ -811,10 +812,10 @@ class ListScreen(Screens):
         grabs cats outside the clan
         """
         self.current_group = "cotc"
-        self.death_status = "living"
+        self.death_page = "living"
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and the_cat.outside and not the_cat.driven_out:
+            if not the_cat.dead and the_cat.status.is_outsider() and the_cat.status.is_near(CatGroup.PLAYER_CLAN):
                 self.full_cat_list.append(the_cat)
 
     def get_sc_cats(self):
@@ -822,14 +823,13 @@ class ListScreen(Screens):
         grabs starclan cats
         """
         self.current_group = "sc"
-        self.death_status = "dead"
+        self.death_page = "dead"
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
             if (
                 the_cat.dead
                 and the_cat.ID != game.clan.instructor.ID
-                and not the_cat.outside
-                and not the_cat.df
+                and the_cat.status.group == CatGroup.STAR_CLAN
                 and not the_cat.faded
             ):
                 self.full_cat_list.append(the_cat)
@@ -839,7 +839,7 @@ class ListScreen(Screens):
         grabs dark forest cats
         """
         self.current_group = "df"
-        self.death_status = "dead"
+        self.death_page = "dead"
         self.full_cat_list = []
 
         for the_cat in Cat.all_cats_list:
@@ -856,7 +856,7 @@ class ListScreen(Screens):
         grabs unknown residence cats
         """
         self.current_group = "ur"
-        self.death_status = "dead"
+        self.death_page = "dead"
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
             if (
