@@ -6,6 +6,7 @@ from typing import Dict, List
 import i18n
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import (
     rel_fulfill_rel_constraints,
@@ -260,7 +261,7 @@ class RomanticEvents:
                 possible_death = (
                     injury_dict["death_text"] if "death_text" in injury_dict else None
                 )
-                if injured_cat.status == "leader":
+                if injured_cat.status.rank == CatRank.LEADER:
                     possible_death = (
                         injury_dict["death_leader_text"]
                         if "death_leader_text" in injury_dict
@@ -359,7 +360,7 @@ class RomanticEvents:
             Cat.fetch_cat(x)
             for x in cat.relationships
             if isinstance(Cat.fetch_cat(x), Cat)
-            and not (Cat.fetch_cat(x).dead or Cat.fetch_cat(x).outside)
+            and not (Cat.fetch_cat(x).dead or Cat.fetch_cat(x).status.is_outsider())
         ]
         if not subset:
             return
@@ -402,7 +403,7 @@ class RomanticEvents:
             if (
                 cat_mate
                 and "grief stricken" not in cat.illnesses
-                and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside)
+                and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.status.is_outsider())
             ):
                 # randint is a slow function, don't call it unless we have to.
                 if not cat_mate.no_mates and random.random() > 0.5:
@@ -547,7 +548,7 @@ class RomanticEvents:
 
         cat_to = highest_romantic_relation.cat_to
 
-        if cat_to.outside != cat_from.outside:
+        if cat_to.status.is_outsider() != cat_from.status.is_outsider():
             return False
 
         if not cat_to.is_potential_mate(cat_from) or not cat_from.is_potential_mate(
@@ -559,12 +560,12 @@ class RomanticEvents:
             mate
             for mate in cat_from.mate
             if not cat_from.fetch_cat(mate).dead
-            and not cat_from.fetch_cat(mate).outside
+            and not cat_from.fetch_cat(mate).status.is_outsider()
         ]
         alive_inclan_to_mates = [
             mate
             for mate in cat_to.mate
-            if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside
+            if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).status.is_outsider()
         ]
         poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
 
@@ -649,7 +650,7 @@ class RomanticEvents:
             return False
 
         # Moving on, not breakups, occur when one mate is dead or outside.
-        if cat_from.dead or cat_from.outside or cat_to.dead or cat_to.outside:
+        if cat_from.dead or cat_from.status.is_outsider() or cat_to.dead or cat_to.status.is_outsider():
             return False
 
         chance_number = RomanticEvents.get_breakup_chance(cat_from, cat_to)
@@ -663,7 +664,7 @@ class RomanticEvents:
         """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
         become_mates = False
         young_age = ["newborn", "kitten", "adolescent"]
-        if cat_to.outside != cat_from.outside:
+        if cat_to.status.is_outsider() != cat_from.status.is_outsider():
             return False, None
 
         if not cat_from.is_potential_mate(cat_to):
@@ -699,12 +700,12 @@ class RomanticEvents:
             mate
             for mate in cat_from.mate
             if not cat_from.fetch_cat(mate).dead
-            and not cat_from.fetch_cat(mate).outside
+            and not cat_from.fetch_cat(mate).status.is_outsider()
         ]
         alive_inclan_to_mates = [
             mate
             for mate in cat_to.mate
-            if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside
+            if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).status.is_outsider()
         ]
         poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
 
@@ -852,7 +853,7 @@ class RomanticEvents:
             mate
             for mate in cat_from.mate
             if not cat_from.fetch_cat(mate).dead
-            and not cat_from.fetch_cat(mate).outside
+            and not cat_from.fetch_cat(mate).status.is_outsider()
         ]
         if len(alive_inclan_from_mates) > 0:
             for mate_id in alive_inclan_from_mates:
@@ -892,7 +893,7 @@ class RomanticEvents:
         alive_inclan_to_mates = [
             mate
             for mate in cat_to.mate
-            if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).outside
+            if not cat_to.fetch_cat(mate).dead and not cat_to.fetch_cat(mate).status.is_outsider()
         ]
         if len(alive_inclan_to_mates) > 0:
             for mate_id in alive_inclan_to_mates:
@@ -938,7 +939,7 @@ class RomanticEvents:
                 for mate_id in cat_from.mate
                 if cat_from.fetch_cat(mate_id) is not None
                 and not cat_from.fetch_cat(mate_id).dead
-                and not cat_from.fetch_cat(mate_id).outside
+                and not cat_from.fetch_cat(mate_id).status.is_outsider()
             ]
             mate_name_string = mate_names[0]
             if len(mate_names) == 2:
@@ -955,7 +956,7 @@ class RomanticEvents:
                 for mate_id in cat_to.mate
                 if cat_to.fetch_cat(mate_id) is not None
                 and not cat_to.fetch_cat(mate_id).dead
-                and not cat_to.fetch_cat(mate_id).outside
+                and not cat_to.fetch_cat(mate_id).status.is_outsider()
             ]
             mate_name_string = mate_names[0]
             if len(mate_names) == 2:
@@ -995,13 +996,13 @@ class RomanticEvents:
                 mate
                 for mate in cat_from.mate
                 if not cat_from.fetch_cat(mate).dead
-                and not cat_from.fetch_cat(mate).outside
+                and not cat_from.fetch_cat(mate).status.is_outsider()
             ]
             alive_inclan_to_mates = [
                 mate
                 for mate in cat_to.mate
                 if not cat_to.fetch_cat(mate).dead
-                and not cat_to.fetch_cat(mate).outside
+                and not cat_to.fetch_cat(mate).status.is_outsider()
             ]
             if len(alive_inclan_from_mates) > 0 and len(alive_inclan_to_mates) > 0:
                 poly_key = "both_mates"
