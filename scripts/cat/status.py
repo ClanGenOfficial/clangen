@@ -14,7 +14,10 @@ class Status:
     def __init__(
             self,
             group_history: list = None,
-            standing_history: list = None
+            standing_history: list = None,
+            social: CatSocial = None,
+            group: CatGroup = None,
+            rank: CatRank = None
     ):
         """
         Saved cats should only be passing their saved group_history and standing into this class.
@@ -28,6 +31,13 @@ class Status:
         """List of dicts containing the keys group, standing, and near. Standing is a chronological list of the cat's 
         standings with the group. Near is a bool with True indicating the cat is within interact-able distance of that 
         group."""
+
+        if not self.group_history and (social or group or rank):
+            self.generate_new_status(
+                social=social,
+                group=group,
+                rank=rank
+            )
 
     def get_status_dict(self) -> dict:
 
@@ -62,14 +72,15 @@ class Status:
 
     def _start_group_history(
             self,
-            age: CatAge,
+            age: CatAge = None,
             social: CatSocial = None,
             group: str = None,
             rank: CatRank = None
     ):
         """
         Generates initial group history for a cat
-        :param age: The age of the cat. This is required as it will be used to decide any other missing attributes.
+        You HAVE to include either an age or a rank for this to work correctly
+        :param age: The age of the cat.
         :param social: The social standing of the cat (rogue, loner, clancat, ect.)
         :param group: The group this cat belongs to
         :param rank: This cat's rank. If the cat is outside the Clan, this will match it's social.
@@ -79,6 +90,10 @@ class Status:
             "rank": rank,
             "moons_as": 0
         }
+
+        if not age and not rank:
+            print("WARNING: group history could not be made due to missing age and rank information")
+            return
 
         # if no rank, we find rank according to age
         if not rank:
@@ -140,7 +155,7 @@ class Status:
             ]
 
     @property
-    def social(self) -> str:
+    def social(self) -> CatSocial:
         """
         Returns the cat's current social category, aka what the cat is considered by other cats within the world
         """
@@ -156,7 +171,7 @@ class Status:
         return [k for k, g in groupby(social_history_dupes)]
 
     @property
-    def group(self) -> str:
+    def group(self) -> CatGroup:
         """
         Returns the group that a cat is currently affiliated with
         """
@@ -299,7 +314,7 @@ class Status:
             new_group=new_group
         )
 
-    def get_standing_with_group(self, group: CatGroup) -> list:
+    def get_standing_with_group(self, group: CatGroup) -> list[CatStanding]:
         """
         Returns the list of standings a cat has for the given group.
         """

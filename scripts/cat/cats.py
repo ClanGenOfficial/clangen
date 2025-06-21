@@ -164,7 +164,7 @@ class Cat:
 
         # Public attributes
         self.gender = gender
-        self.status = Status(**status_dict) if status_dict["group_history"] else None
+        self.status: Status = Status(**status_dict) if status_dict["group_history"] else None
         self.backstory = backstory
         self.age = None
         self.skills = CatSkills(skill_dict=skill_dict)
@@ -237,6 +237,7 @@ class Cat:
         # age and status
         if self.status is None and moons is None:
             self.age = choice(list(CatAge))
+            self.status = Status().generate_new_status(age=self.age)
         elif moons is not None:
             self.moons = moons
             if moons > 300:
@@ -251,6 +252,8 @@ class Cat:
                             self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
                     ):
                         self.age = key_age
+            if self.status is None:
+                self.status = Status().generate_new_status(age=self.age)
         else:
             if self.status.rank == CatRank.NEWBORN:
                 self.age = CatAge.NEWBORN
