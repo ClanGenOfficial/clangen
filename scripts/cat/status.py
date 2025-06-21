@@ -343,7 +343,7 @@ class Status:
 
         return standing_list
 
-    def move_to_afterlife(self, target: CatGroup = None):
+    def send_to_afterlife(self, target: CatGroup = None):
         """
         Changes a cat's group into the appropriate afterlife
         :param target: Use this to specify a certain afterlife, if unused a clancat (or a former clancat) will match
@@ -377,7 +377,9 @@ class Status:
 
     def change_rank(self, new_rank: CatRank):
         """
-        Changes the cats rank to the new_rank
+        Changes the cats rank to the new_rank. Generally you shouldn't use just this to change a cat's rank!
+        cat.rank_change() should typically be called instead, since it will handle mentor switches and other complex
+        changes.
         """
         self.group_history.append(
             {

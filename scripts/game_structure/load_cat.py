@@ -232,7 +232,7 @@ def json_load():
 
             # these should properly change the cat's status to align with old bool info
             if cat.get("df"):
-                cat.status.move_to_afterlife(target=CatGroup.DARK_FOREST)
+                cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
             if cat.get("exiled"):
                 cat.status.exile_from_group()
             if cat.get("outside") and not cat.status.is_outsider():

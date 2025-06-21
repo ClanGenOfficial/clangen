@@ -186,6 +186,7 @@ class Cat:
         self.placement = None
         self.example = example
         self.dead = False
+        # TODO: might be able to yeet this, or turn into property that finds moons spent in afterlifes
         self.dead_for = 0  # moons
         self.thought = ""
         self.genderalign = None
@@ -613,7 +614,7 @@ class Cat:
         if game.clan and self.status.in_player_clan():
             self.grief(body)
 
-        self.status.move_to_afterlife()
+        self.status.send_to_afterlife()
 
         if self.status.is_outsider() and not self.status.is_former_clancat():
             game.clan.add_to_unknown(self)

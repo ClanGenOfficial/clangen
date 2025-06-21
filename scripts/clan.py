@@ -18,7 +18,7 @@ import pygame
 import ujson
 
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatRank, CatGroup
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
@@ -199,7 +199,7 @@ class Clan:
         if self.medicine_cat is not None:
             self.clan_cats.append(self.medicine_cat.ID)
             self.med_cat_list.append(self.medicine_cat.ID)
-            if self.medicine_cat.status != CatRank.MEDICINE_CAT:
+            if self.medicine_cat.status.rank != CatRank.MEDICINE_CAT:
                 Cat.all_cats[self.medicine_cat.ID].rank_change(CatRank.MEDICINE_CAT)
 
     def create_clan(self):
@@ -208,9 +208,8 @@ class Clan:
         created in the 'clan created' screen, not every time
         the program starts
         """
-        self.instructor = Cat(
-            status=choice(
-                [
+        instructor_rank = choice(
+                (
                     CatRank.APPRENTICE,
                     CatRank.MEDIATOR_APPRENTICE,
                     CatRank.MEDICINE_APPRENTICE,
@@ -220,9 +219,14 @@ class Clan:
                     CatRank.MEDIATOR,
                     CatRank.DEPUTY,
                     CatRank.ELDER,
-                ]
-            ),
+                )
+            )
+
+        self.instructor = Cat(
+            status={"rank": instructor_rank,
+                    "group": CatGroup.STAR_CLAN},
         )
+
         self.instructor.dead = True
         self.instructor.dead_for = randint(20, 200)
         self.add_cat(self.instructor)
@@ -251,7 +255,7 @@ class Clan:
         for cat_id in Cat.all_cats:
             Cat.all_cats.get(cat_id).init_all_relationships()
             Cat.all_cats.get(cat_id).backstory = "clan_founder"
-            if Cat.all_cats.get(cat_id).status == CatRank.APPRENTICE:
+            if Cat.all_cats.get(cat_id).status.rank == CatRank.APPRENTICE:
                 Cat.all_cats.get(cat_id).rank_change(CatRank.APPRENTICE)
             Cat.all_cats.get(cat_id).thoughts()
 
@@ -306,7 +310,7 @@ class Clan:
             cat.ID in Cat.all_cats
             and cat.dead
             and cat.ID not in self.starclan_cats
-            and cat.df is False
+            and cat.status.group == CatGroup.STAR_CLAN
         ):
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
@@ -323,7 +327,7 @@ class Clan:
         Places the dead cat into the dark forest.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.df:
+        if cat.ID in Cat.all_cats and cat.dead and cat.status.group == CatGroup.DARK_FOREST:
             self.darkforest_cats.append(cat.ID)
             if cat.ID in self.starclan_cats:
                 self.starclan_cats.remove(cat.ID)
@@ -341,7 +345,7 @@ class Clan:
         It should not be removed from the list of cats in the clan
         :param cat: cat object
         """
-        if cat.ID in Cat.all_cats and cat.dead and cat.outside:
+        if cat.ID in Cat.all_cats and cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
             self.unknown_cats.append(cat.ID)
             if cat.ID in self.starclan_cats:
                 self.starclan_cats.remove(cat.ID)
@@ -357,8 +361,7 @@ class Clan:
         """
         if (
             cat.ID in Cat.all_cats
-            and not cat.outside
-            and not cat.dead
+            and cat.status.in_player_clan()
             and cat.ID in Cat.outside_cats
         ):
             # The outside-value must be set to True before the cat can go to cotc
@@ -370,7 +373,7 @@ class Clan:
         Places the gone cat into cotc.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats and cat.outside and cat.ID not in Cat.outside_cats:
+        if cat.ID in Cat.all_cats and cat.status.is_outsider() and cat.ID not in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID: cat})
 
@@ -432,7 +435,7 @@ class Clan:
         TODO: DOCS
         """
         if medicine_cat:
-            if medicine_cat.status != CatRank.MEDICINE_CAT:
+            if medicine_cat.status.rank != CatRank.MEDICINE_CAT:
                 Cat.all_cats[medicine_cat.ID].rank_change(CatRank.MEDICINE_CAT)
             if medicine_cat.ID not in self.med_cat_list:
                 self.med_cat_list.append(medicine_cat.ID)
@@ -730,7 +733,10 @@ class Clan:
                 game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(status=choice([CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]))
+            game.clan.instructor = Cat(
+                status_dict={"rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
+                             "group": CatGroup.STAR_CLAN}
+            )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
@@ -844,7 +850,10 @@ class Clan:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(status=choice([CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]))
+            game.clan.instructor = Cat(
+                status_dict={"rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
+                             "group": CatGroup.STAR_CLAN}
+            )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
@@ -1222,7 +1231,7 @@ class Clan:
         all_cats = [
             i
             for i in Cat.all_cats_list
-            if i.status not in [CatRank.LEADER, CatRank.DEPUTY] and not i.dead and not i.outside
+            if i.status.rank not in [CatRank.LEADER, CatRank.DEPUTY] and i.status.in_player_clan()
         ]
         leader = (
             Cat.fetch_cat(self.leader)
