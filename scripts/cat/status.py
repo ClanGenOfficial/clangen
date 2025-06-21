@@ -260,6 +260,9 @@ class Status:
             }
         )
 
+        # add member standing for new group
+        self.add_standing(CatStanding.MEMBER)
+
     def add_standing(self, new_standing: CatStanding):
         """
         Adds given standing to cat's current group
@@ -403,6 +406,17 @@ class Status:
                     "moons_as": 0
                 }
             )
+
+    def change_group_nearness(self, group: CatGroup):
+        """
+        Flips the "near" bool of the given group.
+        """
+        for entry in self.standing_history:
+            if entry.get("group") == group:
+                if entry.get("near"):
+                    entry["near"] = False
+                else:
+                    entry["near"] = True
 
     def find_prior_clan_rank(self, clan: CatGroup = None):
         """
