@@ -914,7 +914,7 @@ class Cat:
                 fetched_cat.update_mentor()
 
         # If they have any apprentices, make sure they are still valid:
-        if old_rank == "medicine cat":
+        if old_rank == CatRank.MEDICINE_CAT:
             game.clan.remove_med_cat(self)
 
         # updates mentors
@@ -1976,7 +1976,7 @@ class Cat:
             avoided = False
             if (
                     "blood loss" in new_injury.also_got
-                    and len(get_alive_status_cats(Cat, ["medicine cat"], working=True)) != 0
+                    and len(get_alive_status_cats(Cat, [CatRank.MEDICINE_CAT], working=True)) != 0
             ):
                 clan_herbs = set(game.clan.herb_supply.entire_supply.keys())
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}

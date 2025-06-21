@@ -6,6 +6,7 @@ import pygame_gui
 from pygame_gui.core import UIContainer
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank
 from scripts.clan import OtherClan
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
@@ -193,7 +194,7 @@ class LeaderDenScreen(Screens):
             if not self.helper_cat:  # if dep is sick, med cat helps
                 meds = get_alive_status_cats(
                     Cat,
-                    get_status=["medicine cat", CatRank.MEDICINE_APPRENTICE],
+                    get_status=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
                     working=True,
                     sort=True,
                 )

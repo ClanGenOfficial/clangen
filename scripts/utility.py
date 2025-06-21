@@ -434,7 +434,7 @@ def create_new_cat_block(
             CatRank.MEDIATOR_APPRENTICE,
             "mediator",
             CatRank.MEDICINE_APPRENTICE,
-            "medicine cat",
+            CatRank.MEDICINE_CAT,
         ]:
             status = match.group(1)
             break
@@ -467,7 +467,7 @@ def create_new_cat_block(
                 Cat.age_moons[CatAge.ADOLESCENT][0],
                 Cat.age_moons[CatAge.ADOLESCENT][1],
             )
-        elif status in [CatRank.WARRIOR, "mediator", "medicine cat"]:
+        elif status in [CatRank.WARRIOR, "mediator", CatRank.MEDICINE_CAT]:
             age = randint(
                 Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1]
             )
@@ -497,9 +497,9 @@ def create_new_cat_block(
         chosen_backstory = choice(
             BACKSTORIES["backstory_categories"]["abandoned_backstories"]
         )
-    elif status == "medicine cat" and cat_type == "former Clancat":
+    elif status == CatRank.MEDICINE_CAT and cat_type == "former Clancat":
         chosen_backstory = choice(["medicine_cat", "disgraced1"])
-    elif status == "medicine cat":
+    elif status == CatRank.MEDICINE_CAT:
         chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
     else:
         if cat_type == "former Clancat":
@@ -793,7 +793,7 @@ def create_new_cat(
             age = randint(6, 11)
         elif status == CatRank.WARRIOR:
             age = randint(23, 120)
-        elif status == "medicine cat":
+        elif status == CatRank.MEDICINE_CAT:
             age = randint(23, 140)
         elif status == "elder":
             age = randint(120, 130)
@@ -2070,7 +2070,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         kitty = Cat.fetch_cat(game.clan.deputy)
         cat_dict["dep_name"] = (str(kitty.name), choice(kitty.pronouns))
     if "med_name" in text:
-        kitty = choice(get_alive_status_cats(Cat, ["medicine cat"], working=True))
+        kitty = choice(get_alive_status_cats(Cat, [CatRank.MEDICINE_CAT], working=True))
         cat_dict["med_name"] = (str(kitty.name), choice(kitty.pronouns))
 
     if cat_dict:
@@ -2226,7 +2226,7 @@ def event_text_adjust(
 
     # med_name
     if "med_name" in text:
-        med = choice(get_alive_status_cats(Cat, ["medicine cat"], working=True))
+        med = choice(get_alive_status_cats(Cat, [CatRank.MEDICINE_CAT], working=True))
         replace_dict["med_name"] = (str(med.name), choice(med.pronouns))
 
     # assign all names and pronouns

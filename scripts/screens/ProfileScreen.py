@@ -10,7 +10,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from ..cat.enums import CatAge
+from ..cat.enums import CatAge, CatRank
 from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
@@ -617,7 +617,7 @@ class ProfileScreen(Screens):
             starting_height=2,
         )
         if not (self.the_cat.dead or self.the_cat.outside) and (
-                self.the_cat.status in ["medicine cat", CatRank.MEDICINE_APPRENTICE]
+                self.the_cat.status in [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE]
                 or self.the_cat.is_ill()
                 or self.the_cat.is_injured()
         ):

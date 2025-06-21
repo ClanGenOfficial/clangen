@@ -414,7 +414,7 @@ class ClanSettingsScreen(Screens):
                 continue
 
             living_cats += 1
-            if cat.status == "medicine cat":
+            if cat.status == CatRank.MEDICINE_CAT:
                 med_cats += 1
             elif cat.status == CatRank.MEDICINE_APPRENTICE:
                 med_cat_apprentices += 1

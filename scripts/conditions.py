@@ -5,8 +5,8 @@ TODO: Docs
 
 
 """
-
-  # pylint: enable=line-too-long
+from scripts.cat.enums import CatRank
+# pylint: enable=line-too-long
 
 from scripts.cat.skills import SkillPath
 from scripts.game_structure.game_essentials import game
@@ -23,7 +23,7 @@ def amount_clanmembers_covered(all_cats, amount_per_med) -> int:
         if not i.dead and not i.outside and
            not i.not_working() and i.status.rank.is_any_medicine_rank()
     ]
-    full_med = [i for i in medicine_cats if i.status == "medicine cat"]
+    full_med = [i for i in medicine_cats if i.status == CatRank.MEDICINE_CAT]
     apprentices = [i for i in medicine_cats if i.status == CatRank.MEDICINE_APPRENTICE]
 
     total_exp = 0

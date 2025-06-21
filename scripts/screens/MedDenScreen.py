@@ -23,6 +23,7 @@ from scripts.utility import (
     ui_scale_offset,
 )
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..conditions import get_amount_cat_for_one_medic, amount_clanmembers_covered
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
@@ -435,7 +436,7 @@ class MedDenScreen(Screens):
 
         # get the med cats
         self.meds = get_alive_status_cats(
-            Cat, ["medicine cat", CatRank.MEDICINE_APPRENTICE], sort=True
+            Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
         )
 
         if not self.meds:

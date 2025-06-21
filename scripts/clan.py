@@ -199,8 +199,8 @@ class Clan:
         if self.medicine_cat is not None:
             self.clan_cats.append(self.medicine_cat.ID)
             self.med_cat_list.append(self.medicine_cat.ID)
-            if self.medicine_cat.status != "medicine cat":
-                Cat.all_cats[self.medicine_cat.ID].rank_change("medicine cat")
+            if self.medicine_cat.status != CatRank.MEDICINE_CAT:
+                Cat.all_cats[self.medicine_cat.ID].rank_change(CatRank.MEDICINE_CAT)
 
     def create_clan(self):
         """
@@ -215,7 +215,7 @@ class Clan:
                     CatRank.MEDIATOR_APPRENTICE,
                     CatRank.MEDICINE_APPRENTICE,
                     CatRank.WARRIOR,
-                    "medicine cat",
+                    CatRank.MEDICINE_CAT,
                     "leader",
                     "mediator",
                     "deputy",
@@ -432,8 +432,8 @@ class Clan:
         TODO: DOCS
         """
         if medicine_cat:
-            if medicine_cat.status != "medicine cat":
-                Cat.all_cats[medicine_cat.ID].rank_change("medicine cat")
+            if medicine_cat.status != CatRank.MEDICINE_CAT:
+                Cat.all_cats[medicine_cat.ID].rank_change(CatRank.MEDICINE_CAT)
             if medicine_cat.ID not in self.med_cat_list:
                 self.med_cat_list.append(medicine_cat.ID)
             medicine_cat = self.med_cat_list[0]

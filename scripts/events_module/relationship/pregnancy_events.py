@@ -481,7 +481,7 @@ class Pregnancy_Events:
             mate_is_med = [mate_id for mate_id in cat.mate if mate_id in meds]
             if not meds or cat in meds or len(mate_is_med) > 0:
                 for event in possible_events:
-                    if "medicine cat" in event:
+                    if CatRank.MEDICINE_CAT in event:
                         possible_events.remove(event)
 
             if cat.status.is_outsider():
@@ -520,7 +520,7 @@ class Pregnancy_Events:
                 mate_is_med = [mate_id for mate_id in cat.mate if mate_id in meds]
                 if not meds or cat in meds or len(mate_is_med) > 0:
                     for event in possible_events:
-                        if "medicine cat" in event:
+                        if CatRank.MEDICINE_CAT in event:
                             possible_events.remove(event)
 
                 event_list.append(choice(possible_events))
