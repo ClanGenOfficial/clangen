@@ -4,6 +4,8 @@ from typing import Union
 
 import i18n
 
+from scripts.cat.enums import CatRank
+
 
 class SkillPath(Enum):
     TEACHER = ("quick to help", "good teacher", "great teacher", "excellent teacher")
@@ -359,17 +361,17 @@ class CatSkills:
         return f"<CatSkills: Primary: |{self.primary}|, Secondary: |{self.secondary}|, Hidden: |{self.hidden}|>"
 
     @staticmethod
-    def generate_new_catskills(status, moons, hidden_skill: HiddenSkillEnum = None):
+    def generate_new_catskills(rank, moons, hidden_skill: HiddenSkillEnum = None):
         """Generates a new skill"""
         new_skill = CatSkills()
 
         new_skill.hidden = hidden_skill
 
-        if status == "newborn" or moons <= 0:
+        if rank == CatRank.NEWBORN or moons <= 0:
             pass
-        elif status == "kitten" or moons < 6:
+        elif rank == CatRank.KITTEN or moons < 6:
             new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
-        elif status == "apprentice":
+        elif rank in CatRank.all_apprentice_ranks:
             new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)
             if random.randint(1, 3) == 1:
                 new_skill.secondary = Skill.get_random_skill(
@@ -475,7 +477,7 @@ class CatSkills:
         this function should be run every moon for every cat to progress their skills accordingly
         :param the_cat: the cat object for affected cat
         """
-        if the_cat.status == "newborn" or the_cat.moons <= 0:
+        if the_cat.status.rank == CatRank.NEWBORN or the_cat.moons <= 0:
             return
 
         # Give a primary is there isn't one already, and the cat is older than one moon.
@@ -495,19 +497,19 @@ class CatSkills:
                     random.choice(parental_paths),
                     points=0,
                     interest_only=(
-                        True if the_cat.status in ["apprentice", "kitten"] else False
+                        True if the_cat.status.rank in [CatRank.APPRENTICE, CatRank.KITTEN] else False
                     ),
                 )
             else:
                 self.primary = Skill.get_random_skill(
                     points=0,
                     interest_only=(
-                        True if the_cat.status in ["apprentice", "kitten"] else False
+                        True if the_cat.status.rank in [CatRank.APPRENTICE, CatRank.KITTEN] else False
                     ),
                 )
 
-        if not (the_cat.outside or the_cat.exiled):
-            if the_cat.status == "kitten":
+        if the_cat.status.is_clancat():
+            if the_cat.status.rank == CatRank.KITTEN:
                 # Check to see if the cat gains a secondary
                 if not self.secondary and not int(random.random() * 22):
                     # if there's no secondary skill, try to give one!
@@ -526,7 +528,7 @@ class CatSkills:
                     elif self.primary:
                         self.primary.points += amount_effect
 
-            elif "apprentice" in the_cat.status:
+            elif the_cat.status.is_any_apprentice():
                 # Check to see if the cat gains a secondary
                 if not self.secondary and not int(random.random() * 22):
                     # if there's no secondary skill, try to give one!
@@ -657,7 +659,7 @@ class CatSkills:
         return skills_meet
 
     @staticmethod
-    def get_skills_from_old(old_skill, status, moons):
+    def get_skills_from_old(old_skill, rank, moons):
         """Generates a CatSkill object"""
         new_skill = CatSkills()
         conversion = {
@@ -707,6 +709,6 @@ class CatSkills:
             new_skill.primary = Skill(conversion[old_skill][0])
             new_skill.primary.set_points_to_tier(conversion[old_skill][1])
         else:
-            new_skill = CatSkills.generate_new_catskills(status, moons)
+            new_skill = CatSkills.generate_new_catskills(rank, moons)
 
         return new_skill
