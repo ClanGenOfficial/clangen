@@ -193,7 +193,7 @@ class Clan:
             self.clan_cats.append(self.deputy.ID)
 
         if self.leader:
-            self.leader.rank_change("leader")
+            self.leader.rank_change(CatRank.LEADER)
             self.clan_cats.append(self.leader.ID)
 
         if self.medicine_cat is not None:
@@ -216,7 +216,7 @@ class Clan:
                     CatRank.MEDICINE_APPRENTICE,
                     CatRank.WARRIOR,
                     CatRank.MEDICINE_CAT,
-                    "leader",
+                    CatRank.LEADER,
                     CatRank.MEDIATOR,
                     CatRank.DEPUTY,
                     "elder",
@@ -413,7 +413,7 @@ class Clan:
         if leader:
             self.history.add_lead_ceremony(leader)
             self.leader = leader
-            Cat.all_cats[leader.ID].rank_change("leader")
+            Cat.all_cats[leader.ID].rank_change(CatRank.LEADER)
             self.leader_predecessors += 1
             self.leader_lives = 9
         game.switches["new_leader"] = None
@@ -1222,7 +1222,7 @@ class Clan:
         all_cats = [
             i
             for i in Cat.all_cats_list
-            if i.status not in ["leader", CatRank.DEPUTY] and not i.dead and not i.outside
+            if i.status not in [CatRank.LEADER, CatRank.DEPUTY] and not i.dead and not i.outside
         ]
         leader = (
             Cat.fetch_cat(self.leader)

@@ -656,7 +656,7 @@ class ProfileScreen(Screens):
         if self.open_tab == "history" and self.open_sub_tab == "user notes":
             self.load_user_notes()
 
-        if self.the_cat.status == "leader" and not self.the_cat.dead:
+        if self.the_cat.status == CatRank.LEADER and not self.the_cat.dead:
             self.profile_elements["leader_ceremony"] = UIImageButton(
                 ui_scale(pygame.Rect((383, 110), (34, 34))),
                 "",
@@ -812,7 +812,7 @@ class ProfileScreen(Screens):
 
         # LEADER LIVES:
         # Optional - Only shows up for leaders
-        if not the_cat.dead and "leader" in the_cat.status:
+        if not the_cat.dead and CatRank.LEADER in the_cat.status:
             output += i18n.t(
                 "screens.profile.lives_remaining_label", count=game.clan.leader_lives
             )
@@ -1507,7 +1507,7 @@ class ProfileScreen(Screens):
                         random_cat=Cat.fetch_cat(death["involved"]),
                     )
 
-                if self.the_cat.status == "leader":
+                if self.the_cat.status == CatRank.LEADER:
                     if text == "multi_lives":
                         multi_life_count += 1
                         continue
@@ -1571,7 +1571,7 @@ class ProfileScreen(Screens):
                         text += f" ({i18n.t('general.moons_date', moon=death['moon'])})"
                     all_deaths.append(text)
 
-            if self.the_cat.status == "leader" or death_number > 1:
+            if self.the_cat.status == CatRank.LEADER or death_number > 1:
                 if death_number > 1:
                     deaths = str("\n" + str(self.the_cat.name) + " ").join(all_deaths)
                 else:

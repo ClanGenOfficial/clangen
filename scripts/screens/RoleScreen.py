@@ -477,7 +477,7 @@ class RoleScreen(Screens):
             self.switch_med_app.enable()
             self.switch_warrior_app.enable()
             self.switch_mediator_app.disable()
-        elif self.the_cat.status == "leader":
+        elif self.the_cat.status == CatRank.LEADER:
             self.promote_leader.disable()
             self.promote_deputy.disable()
 
@@ -509,7 +509,7 @@ class RoleScreen(Screens):
     def get_role_blurb(self):
         if self.the_cat.status == CatRank.WARRIOR:
             output = "screens.role.blurb_warrior"
-        elif self.the_cat.status == "leader":
+        elif self.the_cat.status == CatRank.LEADER:
             output = "screens.role.blurb_leader"
         elif self.the_cat.status == CatRank.DEPUTY:
             output = "screens.role.blurb_deputy"

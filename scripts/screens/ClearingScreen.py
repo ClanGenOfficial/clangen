@@ -21,6 +21,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from scripts.events_module.short.condition_events import Condition_Events
+from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import ButtonStyles, get_button_dict
@@ -795,7 +796,7 @@ class ClearingScreen(Screens):
                     "number": str(n),
                     "status": i18n.t(
                         f"general.{status}",
-                        count=2 if status not in ["leader", CatRank.DEPUTY] else 1,
+                        count=2 if status not in [CatRank.LEADER, CatRank.DEPUTY] else 1,
                     ),
                     "prey": i18n.t("screens.clearing.prey_count", count=amount),
                 },

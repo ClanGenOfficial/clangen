@@ -86,7 +86,7 @@ class Events:
         if any(
             str(cat.status)
             in {
-                "leader",
+                CatRank.LEADER,
                 CatRank.DEPUTY,
                 CatRank.WARRIOR,
                 CatRank.MEDICINE_CAT,
@@ -191,7 +191,7 @@ class Events:
                     alive_cats = list(
                         filter(
                             lambda kitty: (
-                                kitty.status != "leader"
+                                kitty.status != CatRank.LEADER
                                 and not kitty.dead
                                 and not kitty.outside
                                 and not kitty.exiled
@@ -556,7 +556,7 @@ class Events:
         """Adding auto freshkill for the current moon."""
         healthy_hunter = list(
             filter(
-                lambda c: c.status in [CatRank.WARRIOR, CatRank.APPRENTICE, "leader", CatRank.DEPUTY]
+                lambda c: c.status in [CatRank.WARRIOR, CatRank.APPRENTICE, CatRank.LEADER, CatRank.DEPUTY]
                 and not c.dead
                 and not c.outside
                 and not c.exiled
@@ -609,7 +609,7 @@ class Events:
             # handle warrior
             healthy_warriors = list(
                 filter(
-                    lambda c: c.status in [CatRank.WARRIOR, "leader", CatRank.DEPUTY]
+                    lambda c: c.status in [CatRank.WARRIOR, CatRank.LEADER, CatRank.DEPUTY]
                     and not c.dead
                     and not c.outside
                     and not c.exiled
@@ -652,7 +652,7 @@ class Events:
             # get warriors to help
             healthy_warriors = get_alive_status_cats(
                 Cat,
-                get_status=[CatRank.WARRIOR, CatRank.DEPUTY, "leader"],
+                get_status=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
                 working=True
             )
 
@@ -691,7 +691,7 @@ class Events:
             # handle prey
             healthy_warriors = list(
                 filter(
-                    lambda c: c.status in [CatRank.WARRIOR, "leader", CatRank.DEPUTY]
+                    lambda c: c.status in [CatRank.WARRIOR, CatRank.LEADER, CatRank.DEPUTY]
                     and not c.dead
                     and not c.outside
                     and not c.exiled
@@ -732,7 +732,7 @@ class Events:
                     "raid other clans"
                 ) or random.getrandbits(1):
                     status_use = cat.status
-                    if status_use in [CatRank.DEPUTY, "leader"]:
+                    if status_use in [CatRank.DEPUTY, CatRank.LEADER]:
                         status_use = CatRank.WARRIOR
                     chance = info_dict[f"injury_chance_{status_use}"]
                     if game.clan.clan_settings.get("raid other clans"):
@@ -1464,7 +1464,7 @@ class Events:
         living_parents = []
         mentor_type = {
             CatRank.MEDICINE_CAT: [CatRank.MEDICINE_CAT],
-            CatRank.WARRIOR: [CatRank.WARRIOR, CatRank.DEPUTY, "leader", "elder"],
+            CatRank.WARRIOR: [CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER, "elder"],
             CatRank.MEDIATOR: [CatRank.MEDIATOR],
         }
 
@@ -1483,7 +1483,7 @@ class Events:
 
             # CURRENT MENTOR TAG CHECK
             if cat.mentor:
-                if Cat.fetch_cat(cat.mentor).status == "leader":
+                if Cat.fetch_cat(cat.mentor).status == CatRank.LEADER:
                     tags.append("yes_leader_mentor")
                 else:
                     tags.append("yes_mentor")
@@ -1513,7 +1513,7 @@ class Events:
             if valid_living_former_mentors:
                 #  Living Former mentors. Grab the latest living valid mentor.
                 previous_alive_mentor = Cat.fetch_cat(valid_living_former_mentors[-1])
-                if previous_alive_mentor.status == "leader":
+                if previous_alive_mentor.status == CatRank.LEADER:
                     tags.append("alive_leader_mentor")
                 else:
                     tags.append("alive_mentor")
@@ -1543,7 +1543,7 @@ class Events:
                     elif (
                         not Cat.fetch_cat(p).dead
                         and not Cat.fetch_cat(p).outside
-                        and Cat.fetch_cat(p).status != "leader"
+                        and Cat.fetch_cat(p).status != CatRank.LEADER
                     ):
                         living_parents.append(Cat.fetch_cat(p))
 
@@ -1850,7 +1850,7 @@ class Events:
         alive_cats = list(
             filter(
                 lambda kitty: (
-                    kitty.status != "leader" and not kitty.dead and not kitty.outside
+                    kitty.status != CatRank.LEADER and not kitty.dead and not kitty.outside
                 ),
                 Cat.all_cats.values(),
             )
@@ -1938,7 +1938,7 @@ class Events:
                 random.random()
                 * game.get_config_value("death_related", "leader_death_chance")
             )
-            and cat.status == "leader"
+            and cat.status == CatRank.LEADER
             and not cat.not_working()
         ):
             handle_short_events.handle_event(
@@ -2118,7 +2118,7 @@ class Events:
             # little easter egg just for fun
             if (
                 cat.personality.trait == "ambitious"
-                and Cat.fetch_cat(chosen_target.cat_to).status == "leader"
+                and Cat.fetch_cat(chosen_target.cat_to).status == CatRank.LEADER
             ):
                 kill_chance -= 10
 
