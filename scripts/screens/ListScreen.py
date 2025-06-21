@@ -661,8 +661,8 @@ class ListScreen(Screens):
 
         # adding in the guide if necessary, this ensures the guide isn't affected by sorting as we always want them to
         # be the first cat on the list
-        if (self.current_group == "df" and game.clan.instructor.df) or (
-            self.current_group == "sc" and not game.clan.instructor.df
+        if (self.current_group == "df" and game.clan.instructor.status.group == CatGroup.DARK_FOREST) or (
+            self.current_group == "sc" and not game.clan.instructor.status.group == CatGroup.STAR_CLAN
         ):
             if game.clan.instructor in self.full_cat_list:
                 self.full_cat_list.remove(game.clan.instructor)
@@ -846,7 +846,7 @@ class ListScreen(Screens):
             if (
                 the_cat.dead
                 and the_cat.ID != game.clan.instructor.ID
-                and the_cat.df
+                and the_cat.status.group == CatGroup.DARK_FOREST
                 and not the_cat.faded
             ):
                 self.full_cat_list.append(the_cat)
@@ -861,7 +861,7 @@ class ListScreen(Screens):
         for the_cat in Cat.all_cats_list:
             if (
                 the_cat.ID in game.clan.unknown_cats
+                and the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE
                 and not the_cat.faded
-                and not the_cat.driven_out
             ):
                 self.full_cat_list.append(the_cat)
