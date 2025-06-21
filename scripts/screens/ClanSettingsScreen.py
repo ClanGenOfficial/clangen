@@ -426,7 +426,7 @@ class ClanSettingsScreen(Screens):
                 mediator_apprentices += 1
             elif cat.status == CatRank.MEDIATOR:
                 mediators += 1
-            elif cat.status == "elder":
+            elif cat.status == CatRank.ELDER:
                 elders += 1
             elif cat.status in ("newborn", "kitten"):
                 kits += 1

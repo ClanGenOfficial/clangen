@@ -428,7 +428,7 @@ def create_new_cat_block(
         if match.group(1) in [
             "newborn",
             "kitten",
-            "elder",
+            CatRank.ELDER,
             CatRank.APPRENTICE,
             CatRank.WARRIOR,
             CatRank.MEDIATOR_APPRENTICE,
@@ -471,7 +471,7 @@ def create_new_cat_block(
             age = randint(
                 Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1]
             )
-        elif status == "elder":
+        elif status == CatRank.ELDER:
             age = randint(Cat.age_moons["senior"][0], Cat.age_moons["senior"][1])
 
     if "kittypet" in attribute_list:
@@ -795,7 +795,7 @@ def create_new_cat(
             age = randint(23, 120)
         elif status == CatRank.MEDICINE_CAT:
             age = randint(23, 140)
-        elif status == "elder":
+        elif status == CatRank.ELDER:
             age = randint(120, 130)
         else:
             age = randint(6, 120)
@@ -811,7 +811,7 @@ def create_new_cat(
         elif age >= 12:
             status = CatRank.WARRIOR
         elif age >= 120:
-            status = "elder"
+            status = CatRank.ELDER
 
     # cat creation and naming time
     for index in range(number_of_cats):

@@ -219,7 +219,7 @@ class Clan:
                     CatRank.LEADER,
                     CatRank.MEDIATOR,
                     CatRank.DEPUTY,
-                    "elder",
+                    CatRank.ELDER,
                 ]
             ),
         )
@@ -730,7 +730,7 @@ class Clan:
                 game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(status=choice([CatRank.WARRIOR, CatRank.WARRIOR, "elder"]))
+            game.clan.instructor = Cat(status=choice([CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]))
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
@@ -844,7 +844,7 @@ class Clan:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(status=choice([CatRank.WARRIOR, CatRank.WARRIOR, "elder"]))
+            game.clan.instructor = Cat(status=choice([CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]))
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)

@@ -70,7 +70,7 @@ class RoleScreen(Screens):
                 self.the_cat.rank_change(CatRank.MEDICINE_CAT, resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.retire:
-                self.the_cat.rank_change("elder", resort=True)
+                self.the_cat.rank_change(CatRank.ELDER, resort=True)
                 # Since you can't "unretire" a cat, apply the skill and trait change
                 # here
                 self.update_selected_cat()
@@ -428,7 +428,7 @@ class RoleScreen(Screens):
             self.switch_med_app.disable()
             self.switch_warrior_app.disable()
             self.switch_mediator_app.disable()
-        elif self.the_cat.status == "elder":
+        elif self.the_cat.status == CatRank.ELDER:
             if leader_invalid:
                 self.promote_leader.enable()
             else:
@@ -517,7 +517,7 @@ class RoleScreen(Screens):
             output = "screens.role.blurb_medicine_cat"
         elif self.the_cat.status == CatRank.MEDIATOR:
             output = "screens.role.blurb_mediator"
-        elif self.the_cat.status == "elder":
+        elif self.the_cat.status == CatRank.ELDER:
             output = "screens.role.blurb_elder"
         elif self.the_cat.status == CatRank.APPRENTICE:
             output = "screens.role.blurb_apprentice"

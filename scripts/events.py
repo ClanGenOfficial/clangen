@@ -468,7 +468,7 @@ class Events:
                                     invited_cat.specsuffix_hidden = False
 
                             elif invited_cat.age == "senior":
-                                invited_cat.status = "elder"
+                                invited_cat.status = CatRank.ELDER
                             elif invited_cat.age == "adolescent":
                                 invited_cat.status = CatRank.APPRENTICE
                                 invited_cat.update_mentor()
@@ -877,7 +877,7 @@ class Events:
                 elif x.moons < 120 and x.status != CatRank.WARRIOR:
                     x.rank_change(CatRank.WARRIOR)
                 elif x.moons > 120:
-                    x.rank_change("elder")
+                    x.rank_change(CatRank.ELDER)
 
     def handle_fading(self, cat):
         """
@@ -1251,7 +1251,7 @@ class Events:
                 ):
                     if cat.status == CatRank.DEPUTY:
                         game.clan.deputy = None
-                    self.ceremony(cat, "elder")
+                    self.ceremony(cat, CatRank.ELDER)
 
             # apprentice a kitten to either med or warrior
             if cat.moons == cat_class.age_moons[CatAge.ADOLESCENT][0]:
@@ -1464,7 +1464,7 @@ class Events:
         living_parents = []
         mentor_type = {
             CatRank.MEDICINE_CAT: [CatRank.MEDICINE_CAT],
-            CatRank.WARRIOR: [CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER, "elder"],
+            CatRank.WARRIOR: [CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER, CatRank.ELDER],
             CatRank.MEDIATOR: [CatRank.MEDIATOR],
         }
 
@@ -2359,7 +2359,7 @@ class Events:
             not game.clan.deputy
             or game.clan.deputy.dead
             or game.clan.deputy.outside
-            or game.clan.deputy.status == "elder"
+            or game.clan.deputy.status == CatRank.ELDER
         ):
             if not game.clan.clan_settings.get("deputy"):
                 game.cur_events_list.insert(0, Single_Event("defaults.warn_no_deputy"))

@@ -2139,7 +2139,7 @@ class Cat:
             )  # Temp switch them to warrior, so the following step will work
             self.rank_change_traits_skill(_ment)
 
-        self.rank_change("elder")
+        self.rank_change(CatRank.ELDER)
         return
 
     def is_ill(self):
