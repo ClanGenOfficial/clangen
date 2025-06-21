@@ -45,12 +45,12 @@ class CatRank(StrEnum):
     ROGUE = "rogue"
     KITTYPET = "kittypet"
 
-    # TODO: these might be useless tbh? bad practice?
-    @property
+    def is_baby(self) -> bool:
+        return self in (self.NEWBORN, self.KITTEN)
+
     def all_apprentice_ranks(self) -> list:
         return [self.APPRENTICE, self.MEDIATOR_APPRENTICE, self.MEDICINE_APPRENTICE]
 
-    @property
     def all_clancat_ranks(self) -> list:
         return [self.NEWBORN,
                 self.KITTEN,
@@ -63,7 +63,6 @@ class CatRank(StrEnum):
                 self.LEADER,
                 self.ELDER]
 
-    @property
     def all_outsider_ranks(self) -> list:
         return [self.LONER, self.ROGUE, self.KITTYPET]
 
