@@ -199,7 +199,7 @@ class ClearingScreen(Screens):
             if nutrient.percentage <= 99
         ]
         for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and not the_cat.outside:
+            if not the_cat.dead and not the_cat.status.is_outsider():
                 if the_cat.ID in low_nutrition_cats:
                     self.hungry_cats.append(the_cat)
                 else:
@@ -782,8 +782,8 @@ class ClearingScreen(Screens):
 
         prey_requirement = game.prey_config["prey_requirement"]
         feeding_order = game.prey_config["feeding_order"]
-        for status in feeding_order:
-            amount = prey_requirement[status]
+        for rank in feeding_order:
+            amount = prey_requirement[rank]
             self.additional_text[
                 f"condition_increase_{n}"
             ] = pygame_gui.elements.UITextBox(
@@ -795,8 +795,8 @@ class ClearingScreen(Screens):
                 text_kwargs={
                     "number": str(n),
                     "status": i18n.t(
-                        f"general.{status}",
-                        count=2 if status not in [CatRank.LEADER, CatRank.DEPUTY] else 1,
+                        f"general.{rank}",
+                        count=2 if rank not in [CatRank.LEADER, CatRank.DEPUTY] else 1,
                     ),
                     "prey": i18n.t("screens.clearing.prey_count", count=amount),
                 },

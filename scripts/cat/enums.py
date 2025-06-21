@@ -65,21 +65,7 @@ class CatRank(StrEnum):
                         self.LEADER)
 
     def is_any_clancat_rank(self) -> bool:
-        return self in self.all_clancat_ranks()
-
-    def all_clancat_ranks(self) -> tuple:
-        return (self.NEWBORN,
-                self.KITTEN,
-                self.APPRENTICE,
-                self.MEDICINE_APPRENTICE,
-                self.MEDIATOR_APPRENTICE,
-                self.MEDICINE_CAT,
-                self.MEDIATOR,
-                self.DEPUTY,
-                self.LEADER,
-                self.ELDER)
-
-
+        return self not in (self.ROGUE, self.LONER, self.KITTYPET)
 
 class CatStanding(StrEnum):
     MEMBER = "member"
