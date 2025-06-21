@@ -50,8 +50,9 @@ class CatRank(StrEnum):
 
     def is_meddie(self) -> bool:
         return self in (self.MEDICINE_CAT, self.MEDICINE_APPRENTICE)
-    def all_apprentice_ranks(self) -> list:
-        return [self.APPRENTICE, self.MEDIATOR_APPRENTICE, self.MEDICINE_APPRENTICE]
+
+    def is_any_apprentice_rank(self) -> bool:
+        return self in (self.APPRENTICE, self.MEDIATOR_APPRENTICE, self.MEDICINE_APPRENTICE)
 
     def all_clancat_ranks(self) -> list:
         return [self.NEWBORN,

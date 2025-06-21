@@ -415,13 +415,6 @@ class Status:
 
         return False
 
-    def is_any_apprentice(self) -> bool:
-        """
-        Returns True if the cat is currently an apprentice of any type.
-        """
-
-        return True if self.rank in CatRank.all_apprentice_ranks else False
-
     def is_dead(self) -> bool:
         """
         Returns True if the cat is currently dead

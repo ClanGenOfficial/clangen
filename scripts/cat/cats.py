@@ -258,7 +258,7 @@ class Cat:
                 self.age = CatAge.KITTEN
             elif self.status.rank == CatRank.ELDER:
                 self.age = CatAge.SENIOR
-            elif self.status.is_any_apprentice():
+            elif self.status.rank.is_any_apprentice_rank():
                 self.age = CatAge.ADOLESCENT
             else:
                 self.age = choice(
@@ -1518,7 +1518,7 @@ class Cat:
         self.personality.set_kit(self.age.is_baby())
         # Upon age-change
 
-        if self.status.is_any_apprentice():
+        if self.status.rank.is_any_apprentice_rank():
             self.update_mentor()
 
     def thoughts(self):
@@ -2065,7 +2065,7 @@ class Cat:
             )  # creating a range in which a condition can present
             moons_until = max(moons_until, 0)
 
-        if born_with and self.status.rank not in [CatRank.KITTEN, CatRank.NEWBORN]:
+        if born_with and not self.status.rank.is_baby():
             moons_until = -2
         elif born_with is False:
             moons_until = 0
@@ -2129,7 +2129,7 @@ class Cat:
 
         # There are some special tasks we need to do for apprentice
         # Note that although you can un-retire cats, they will be a full warrior/med_cat/mediator
-        if self.moons > 6 and self.status.is_any_apprentice():
+        if self.moons > 6 and self.status.rank.is_any_apprentice_rank():
             _ment = Cat.fetch_cat(self.mentor) if self.mentor else None
             self.rank_change(
                 "warrior"
@@ -2264,7 +2264,7 @@ class Cat:
     def is_valid_mentor(self, potential_mentor: Cat):
 
         # If not an app, don't need a mentor
-        if not self.status.is_any_apprentice():
+        if not self.status.rank.is_any_apprentice_rank():
             return False
 
         # App and mentor must be members of the same clan
@@ -2329,7 +2329,7 @@ class Cat:
         if (
                 self.dead
                 or self.status.is_outsider()
-                or not self.status.is_any_apprentice()
+                or not self.status.rank.is_any_apprentice_rank()
         ):
             self.__remove_mentor()
             return
