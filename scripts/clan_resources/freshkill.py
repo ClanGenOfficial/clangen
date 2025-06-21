@@ -379,7 +379,7 @@ class FreshkillPile:
             cat = Cat.all_cats[cat_id]
             status = str(cat.status.rank)
             # check if this is a kit: if so, check if they are fed by the mother
-            if status in [CatRank.NEWBORN, CatRank.KITTEN] and cat in fed_kits:
+            if status.rank.is_baby() and cat in fed_kits:
                 continue
 
             # check for queens / pregnant
@@ -500,7 +500,7 @@ class FreshkillPile:
                 continue
             status = str(cat.status.rank)
             # check if this is a kit: if so, check if they are fed by the mother
-            if status in [CatRank.NEWBORN, CatRank.KITTEN] and fed_kits and cat in fed_kits:
+            if status.rank.is_baby() and fed_kits and cat in fed_kits:
                 continue
 
             # check for queens / pregnant
