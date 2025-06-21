@@ -617,7 +617,7 @@ class ProfileScreen(Screens):
             starting_height=2,
         )
         if not (self.the_cat.dead or self.the_cat.outside) and (
-                self.the_cat.status in [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE]
+                self.the_cat.status.rank.is_any_medicine_rank()
                 or self.the_cat.is_ill()
                 or self.the_cat.is_injured()
         ):
