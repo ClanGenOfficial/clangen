@@ -48,7 +48,7 @@ class CatRank(StrEnum):
     def is_baby(self) -> bool:
         return self in (self.NEWBORN, self.KITTEN)
 
-    def is_meddie(self) -> bool:
+    def is_any_medicine_rank(self) -> bool:
         return self in (self.MEDICINE_CAT, self.MEDICINE_APPRENTICE)
 
     def is_any_apprentice_rank(self) -> bool:
@@ -58,6 +58,9 @@ class CatRank(StrEnum):
 
     def is_any_clancat_rank(self) -> bool:
         return self in self.all_clancat_ranks()
+
+    def all_clancat_ranks(self) -> tuple:
+        return (self.NEWBORN,
                 self.KITTEN,
                 self.APPRENTICE,
                 self.MEDICINE_APPRENTICE,
@@ -66,10 +69,8 @@ class CatRank(StrEnum):
                 self.MEDIATOR,
                 self.DEPUTY,
                 self.LEADER,
-                self.ELDER]
+                self.ELDER)
 
-    def all_outsider_ranks(self) -> list:
-        return [self.LONER, self.ROGUE, self.KITTYPET]
 
 
 class CatStanding(StrEnum):
