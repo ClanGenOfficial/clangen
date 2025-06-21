@@ -524,7 +524,7 @@ class Events:
     def mediator_events(self, cat):
         """Check for mediator events"""
         # If the cat is a mediator, check if they visited other clans
-        if cat.status in [CatRank.MEDIATOR, CatRank.MEDIATOR_APPRENTICE] and not cat.not_working():
+        if cat.status.rank.is_any_mediator_rank and not cat.not_working():
             # 1/10 chance
             if not int(random.random() * 10):
                 random_cat = get_random_moon_cat(Cat, main_cat=cat)
