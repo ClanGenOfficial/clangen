@@ -51,6 +51,9 @@ class CatRank(StrEnum):
     def is_any_medicine_rank(self) -> bool:
         return self in (self.MEDICINE_CAT, self.MEDICINE_APPRENTICE)
 
+    def is_any_mediator_rank(self) -> bool:
+        return self in (self.MEDIATOR, self.MEDIATOR_APPRENTICE)
+
     def is_any_apprentice_rank(self) -> bool:
         return self in (self.APPRENTICE,
                         self.MEDIATOR_APPRENTICE,

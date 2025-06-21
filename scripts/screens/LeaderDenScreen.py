@@ -208,7 +208,7 @@ class LeaderDenScreen(Screens):
                         and not i.exiled
                         and not i.outside
                         and not i.not_working()
-                        and i.status in [CatRank.MEDIATOR, CatRank.MEDIATOR_APPRENTICE]
+                        and i.status.rank.is_any_mediator_rank()
                     ]
                     if mediators:
                         self.helper_cat = mediators[0]

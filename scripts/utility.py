@@ -462,7 +462,7 @@ def create_new_cat_block(
             break
 
     if status and not age:
-        if not status in ["apprentice", CatRank.MEDIATOR_APPRENTICE, CatRank.MEDICINE_APPRENTICE]:
+        if not status in [CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE, CatRank.MEDICINE_APPRENTICE]:
             age = randint(
                 Cat.age_moons[CatAge.ADOLESCENT][0],
                 Cat.age_moons[CatAge.ADOLESCENT][1],
