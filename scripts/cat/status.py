@@ -433,12 +433,15 @@ class Status:
 
         return True if CatSocial.CLANCAT in self.social_history and self.social != CatSocial.CLANCAT else False
 
-    def is_lost(self) -> bool:
+    def is_lost(self, group=None) -> bool:
         """
         Returns True if the cat is considered "lost" by a group.
+        :param group: use this to specify a certain group to check lost status against
         """
         for entry in self.standing_history:
-            if CatStanding.LOST in entry["standing"]:
+            if group and entry["group"] != group:
+                continue
+            if CatStanding.LOST == entry["standing"][-1]:
                 return True
 
         return False
@@ -451,7 +454,7 @@ class Status:
                                       CatGroup.UNKNOWN_RESIDENCE,
                                       CatGroup.STAR_CLAN] else False
 
-    def is_exiled(self, group):
+    def is_exiled(self, group) -> bool:
         """
         Returns True if the cat is currently exiled from the given group.
         """
@@ -462,6 +465,15 @@ class Status:
 
         return False
 
+    def is_near(self, group) -> bool:
+        """
+        Returns True if the cat is near the specified group
+        """
+        for entry in self.standing_history:
+            if entry.get("group") == group and entry.get("near"):
+                return True
+
+        return False
 
 class StatusDict(TypedDict, total=False):
     """
