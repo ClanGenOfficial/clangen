@@ -405,6 +405,16 @@ class Status:
 
         return True if CatSocial.CLANCAT in self.social_history and self.social != CatSocial.CLANCAT else False
 
+    def is_lost(self) -> bool:
+        """
+        Returns True if the cat is considered "lost" by a group.
+        """
+        for entry in self.standing_history:
+            if CatStanding.LOST in entry["standing"]:
+                return True
+
+        return False
+
     def is_any_apprentice(self) -> bool:
         """
         Returns True if the cat is currently an apprentice of any type.
