@@ -440,7 +440,7 @@ class ChooseMentorScreen(Screens):
             self.next_cat,
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats(
-            filter_func = (lambda cat: cat.status.rank.is_any_apprentice_rank())
+            filter_func=(lambda cat: cat.status.rank.is_any_apprentice_rank())
         )
 
         self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
@@ -451,8 +451,8 @@ class ChooseMentorScreen(Screens):
         if new_mentor == old_mentor:
             # if "changing mentor" to the same cat, remove them as mentor instead
             if (
-                self.the_cat.moons > 6
-                and self.the_cat.ID not in old_mentor.former_apprentices
+                    self.the_cat.moons > 6
+                    and self.the_cat.ID not in old_mentor.former_apprentices
             ):
                 old_mentor.former_apprentices.append(self.the_cat.ID)
             self.the_cat.mentor = None
@@ -461,8 +461,8 @@ class ChooseMentorScreen(Screens):
         elif new_mentor and old_mentor is not None:
             old_mentor.apprentice.remove(self.the_cat.ID)
             if (
-                self.the_cat.moons > 6
-                and self.the_cat.ID not in old_mentor.former_apprentices
+                    self.the_cat.moons > 6
+                    and self.the_cat.ID not in old_mentor.former_apprentices
             ):
                 old_mentor.former_apprentices.append(self.the_cat.ID)
 
@@ -632,7 +632,7 @@ class ChooseMentorScreen(Screens):
             cat
             for cat in Cat.all_cats_list
             if not (cat.dead or cat.status.is_outsider())
-            and cat.status.rank.is_any_adult_warrior_like_rank()
+               and cat.status.rank.is_any_adult_warrior_like_rank()
         ]
         valid_warrior_mentors = []
         potential_medcat_mentors = [
@@ -688,7 +688,7 @@ class ChooseMentorScreen(Screens):
 
             return valid_medcat_mentors
 
-        elif self.the_cat.status == CatRank.MEDIATOR_APPRENTICE:
+        elif self.the_cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
             for cat in potential_mediator_mentors:
                 # Assume cat is valid initially
                 is_valid = True
@@ -713,4 +713,4 @@ class ChooseMentorScreen(Screens):
         super().on_use()
 
     def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
+        return [L[x: x + n] for x in range(0, len(L), n)]
