@@ -148,11 +148,8 @@ class Cat:
 
         self.history = None
 
-        # TODO: figure out status stuff for faded cats
-        if (
-                faded
-        ):  # This must be at the top. It's a smaller list of things to init, which is only for faded cats
-            self.init_faded(ID, status, prefix, suffix, moons, **kwargs)
+        if faded:  # This must be at the top. It's a smaller list of things to init, which is only for faded cats
+            self.init_faded(ID, status_dict, prefix, suffix, moons, **kwargs)
             return
 
         self.generate_events = GenerateEvents()
@@ -164,7 +161,7 @@ class Cat:
 
         # Public attributes
         self.gender = gender
-        self.status: Status = Status(**status_dict) if status_dict["group_history"] else None
+        self.status: Status = Status(**status_dict) if status_dict else Status()
         self.backstory = backstory
         self.age = None
         self.skills = CatSkills(skill_dict=skill_dict)
@@ -344,7 +341,6 @@ class Cat:
 
         :return: None
         """
-        # TODO: make sure old faded will convert over safely
         self.ID = ID
         self.parent1 = None
         self.parent2 = None
@@ -353,16 +349,8 @@ class Cat:
         self.status = Status(**status) if status["group_history"] else None
         self._pronouns = {}  # Needs to be set as a dict
         self.moons = moons
-        self.dead_for = 0
-        self.dead = True
-        self.outside = False
-        self.exiled = False
         self.inheritance = None  # This should never be used, but just for safety
         self.name = Name(prefix=prefix, suffix=suffix, cat=self)
-        if "df" in kwargs:
-            self.df = kwargs["df"]
-        else:
-            self.df = False
 
         self.init_moons_age(moons)
 
@@ -472,6 +460,28 @@ class Cat:
 
     def __hash__(self):
         return hash(self.ID)
+
+    @property
+    def dead(self) -> bool:
+        return self.status.group.is_afterlife()
+
+    @dead.setter
+    def dead(self, dead: bool):
+        if dead and not self.status.group.is_afterlife():
+            self.status.send_to_afterlife()
+    @property
+    def dead_for(self) -> int:
+        count = 0
+        for entry in self.status.group_history:
+            if entry.get("group") in (CatGroup.STAR_CLAN,
+                                      CatGroup.UNKNOWN_RESIDENCE,
+                                      CatGroup.DARK_FOREST):
+                count += entry.get("moons_as")
+        return count
+
+    @dead_for.setter
+    def dead_for(self, moons: int):
+        self.status.change_current_moons_as(int)
 
     @property
     def mentor(self):

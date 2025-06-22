@@ -235,7 +235,7 @@ class FreshkillPile:
         living_cats = [
             cat
             for cat in Cat.all_cats.values()
-            if not (cat.dead or cat.outside or cat.exiled)
+            if cat.status.in_player_clan()
         ]
         self._update_needed_food(living_cats)
         return self.needed_prey

@@ -166,9 +166,9 @@ class DisasterEvents():
         med_cats = find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True)
 
         # checking if there are cats of the specified rank
-        if not leader.dead and not leader.outside:
+        if leader.status.in_player_clan():
             leader_exists = True
-        if not deputy.dead and not deputy.outside:
+        if deputy.status.in_player_clan():
             dep_exists = True
         if med_cats:
             med_exists = True
