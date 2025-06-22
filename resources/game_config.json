@@ -272,8 +272,8 @@
 		"classic_death_chance": 500,
 		"expanded_death_chance": 350,
 		"cruel season_death_chance": 300,
-		"war_death_modifier_leader": 95,
-		"war_death_modifier": 250,
+		"war_death_modifier_leader": 35,
+		"war_death_modifier": 330,
 		"base_random_murder_chance": 25,
 		"base_murder_kill_chance": 80,
 		"old_age_death_start": 150,
@@ -292,7 +292,7 @@
 		"expanded_injury_chance": 250,
 		"cruel season_injury_chance": 150,
 		"permanent_condition_chance": 15,
-		"war_injury_modifier": 100
+		"war_injury_modifier": 240
 	},
 	"clan_creation": {
 		"rerolls": 3,
