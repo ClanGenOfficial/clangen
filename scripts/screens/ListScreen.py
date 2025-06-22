@@ -702,7 +702,7 @@ class ListScreen(Screens):
         self.death_status = "living"
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
-            if the_cat.status.is_outsider() and the_cat.status.is_near(CatGroup.PLAYER_CLAN):
+            if not the_cat.dead and the_cat.status.is_outsider() and the_cat.status.is_near(CatGroup.PLAYER_CLAN):
                 self.full_cat_list.append(the_cat)
 
     def get_sc_cats(self):
