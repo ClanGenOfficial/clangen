@@ -145,7 +145,9 @@ class GenerateEvents:
                         r_c=event["r_c"] if "r_c" in event else {},
                         new_cat=event["new_cat"] if "new_cat" in event else [],
                         injury=event["injury"] if "injury" in event else [],
-                        exclude_involved=event["exclude_involved"] if "exclude_involved" in event else [],
+                        exclude_involved=event["exclude_involved"]
+                        if "exclude_involved" in event
+                        else [],
                         history=event["history"] if "history" in event else [],
                         relationships=event["relationships"]
                         if "relationships" in event

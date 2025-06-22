@@ -162,7 +162,9 @@ class Sprites:
             "fadedarkforest",
             "symbols",
         ):
-            if "lineart" in x and (game.config["fun"]["april_fools"] or is_today(SpecialDate.APRIL_FOOLS)):
+            if "lineart" in x and (
+                game.config["fun"]["april_fools"] or is_today(SpecialDate.APRIL_FOOLS)
+            ):
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
