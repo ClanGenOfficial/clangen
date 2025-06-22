@@ -225,8 +225,8 @@ class Clan:
         )
 
         self.instructor = Cat(
-            status={"rank": instructor_rank,
-                    "group": CatGroup.STAR_CLAN},
+            status_dict={"rank": instructor_rank,
+                         "group": CatGroup.STAR_CLAN},
         )
 
         self.instructor.dead = True
@@ -234,7 +234,6 @@ class Clan:
         self.add_cat(self.instructor)
         self.add_to_starclan(self.instructor)
         self.all_clans = []
-
 
         key_copy = tuple(Cat.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
