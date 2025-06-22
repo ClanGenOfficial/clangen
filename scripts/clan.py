@@ -880,7 +880,6 @@ class Clan:
                         int(other_clan["relations"]),
                         other_clan["temperament"],
                         other_clan["chosen_symbol"],
-                        enum=enum
                     )
                 )
         else:
@@ -901,7 +900,7 @@ class Clan:
                         other_clan_enums
                 ):
                     game.clan.all_clans.append(
-                        OtherClan(name, int(relation), temper, symbol, enum=enum)
+                        OtherClan(name, int(relation), temper, symbol)
                     )
 
         for cat in clan_data["clan_cats"].split(","):

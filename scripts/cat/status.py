@@ -36,6 +36,9 @@ class Status:
         standings with the group. Near is a bool with True indicating the cat is within interact-able distance of that 
         group."""
 
+        # just some extra checks in case a str snuck in
+        group, rank, social = self.check_enums(group, rank, social, age)
+
         # if no group_history was given, we'll see if any other info was given that we can build it with
         if not self.group_history and (rank or age):
             self.generate_new_status(
@@ -44,10 +47,40 @@ class Status:
                 rank=rank,
                 age=age
             )
+        # if we didn't get any information at all, we're gonna default to a warrior
+        elif not self.group_history and not rank and not age:
+            self.generate_new_status(
+                rank=CatRank.WARRIOR
+            )
 
         # really we should never be missing a standing_history at this point, but just in case
         if self.group_history and not self.standing_history:
             self._start_standing()
+
+    def check_enums(self, group, rank, social, age):
+        """
+        this is mostly to catch the old status strings like exiled and lost, but it also helps with loading cat info
+        into the correct enums
+        """
+        if rank and not isinstance(rank, CatRank):
+            if rank in ("exiled", "lost", "former clancat"):
+                if age:
+                    rank = self.get_rank_from_age(age)
+                else:  # god this should never happen, but I'm paranoid
+                    rank = CatRank.WARRIOR
+            for enum in CatRank:
+                if enum == rank:
+                    rank = enum
+                    break
+        if social and not isinstance(social, CatSocial):
+            for enum in CatSocial:
+                if enum == social:
+                    social = enum
+        if group and not isinstance(group, CatGroup):
+            for enum in CatGroup:
+                if enum == group:
+                    group = enum
+        return group, rank, social
 
     def get_status_dict(self) -> dict:
         """
@@ -75,6 +108,9 @@ class Status:
          group will default to player clan.
         :param rank: The rank the cat holds within a group. If they have no group, then this matches their social.
         """
+        # just some extra checks in case a str snuck in
+        group, rank, social = self.check_enums(group, rank, social, age)
+
         self._start_group_history(
             age,
             social,
@@ -120,10 +156,11 @@ class Status:
                     rank = CatRank.KITTYPET
             else:
                 rank = self.get_rank_from_age(age)
+                new_history["rank"] = rank
 
         # if not social, then social category is found via the rank
         if not social:
-            if rank.is_any_clancat_rank():
+            if rank and rank.is_any_clancat_rank():
                 social = CatSocial.CLANCAT
             else:
                 social = choice([CatSocial.ROGUE, CatSocial.LONER, CatSocial.KITTYPET])
@@ -132,7 +169,7 @@ class Status:
         # we assume a clancat is the player's as default
         # otherwise if the cat isn't a clancat, then we assume no group
         if social == CatSocial.CLANCAT and not group:
-            new_history["group"] = game.clan.name
+            new_history["group"] = CatGroup.PLAYER_CLAN
 
         # next, we double-check that the rank is appropriate for the social, this is mostly for loner/rogue/kittypet
         if social != SOCIAL_LOOKUP[rank]:
@@ -151,7 +188,7 @@ class Status:
         Used to adjust the cat's "moons_as" their current rank. This is meant mostly for use in adjusting a newly
         created cat's value to give the illusion that they have existed in the world for longer.
         """
-        self.group_history[-1].update("moons_as", new_moons_as)
+        self.group_history[-1].update({"moons_as": new_moons_as})
 
     def _start_standing(self):
         """
@@ -169,7 +206,7 @@ class Status:
         else:
             self.standing_history = [
                 {
-                    "group": game.clan.name,
+                    "group": CatGroup.PLAYER_CLAN,
                     "standing": [CatStanding.KNOWN],
                     "near": True
                 }
@@ -367,6 +404,7 @@ class Status:
                 new_rank=self.rank,
                 new_group=target
             )
+            return
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
         if self.is_outsider() and not self.is_former_clancat():

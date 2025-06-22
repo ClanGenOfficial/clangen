@@ -8,7 +8,7 @@ import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.game_structure.localization import get_new_pronouns
-from ..cat.enums import CatGroup
+from ..cat.enums import CatGroup, CatRank
 from ..cat.personality import Personality
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
@@ -59,15 +59,19 @@ def json_load():
     for i, cat in enumerate(cat_data):
         try:
             # accounting for old saves
-            # checks first if status is in the current format
-            if isinstance(cat.get("status"), StatusDict):
-                status_dict: StatusDict = {
-                    "group_history": cat.get("group_history"),
-                    "standing_history": cat.get("standing_history")
-                }
-            # if not we use their old status info to provide an initial status dict
+            # checks first if status is in the old format
+            # if it is then we use the old info to provide an initial status dict
+            if isinstance(cat["status"], str):
+                # this sucks, but we need to get the actual str age to make sure nothing goes wonky
+                age = None
+                for key_age in Cat.age_moons.keys():
+                    if cat["moons"] in range(
+                            Cat.age_moons[key_age][0], Cat.age_moons[key_age][1] + 1
+                    ):
+                        age = key_age
+                status_dict = {"rank": cat["status"], "age": age}
             else:
-                status_dict: StatusDict = {"rank": cat["status"]}
+                status_dict = cat["status"]
 
             new_cat = Cat(
                 ID=cat["ID"],
@@ -224,6 +228,16 @@ def json_load():
             new_cat.previous_mates = (
                 cat["previous_mates"] if "previous_mates" in cat else []
             )
+
+            # checking for old dead
+            if cat.get("dead"):
+                if cat.get("df"):
+                    new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
+                elif cat.get("outside"):
+                    new_cat.status.send_to_afterlife(target=CatGroup.UNKNOWN_RESIDENCE)
+                else:
+                    new_cat.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
+
             new_cat.dead = cat["dead"]
             new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
@@ -232,11 +246,11 @@ def json_load():
 
             # these should properly change the cat's status to align with old bool info
             if cat.get("df"):
-                cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
+                new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
             if cat.get("exiled"):
-                cat.status.exile_from_group()
-            if cat.get("outside") and not cat.status.is_outsider():
-                cat.status.lost_from_group()
+                new_cat.status.exile_from_group()
+            if cat.get("outside") and not new_cat.status.is_outsider():
+                new_cat.status.lost_from_group()
 
             new_cat.faded_offspring = (
                 cat["faded_offspring"] if "faded_offspring" in cat else []
@@ -465,7 +479,7 @@ def csv_load(all_cats):
                         the_cat.mate = [attr[31]]
                     if len(attr) >= 32:
                         # Is the cat dead
-                        the_cat.dead = attr[32]
+                        the_cat.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
                         the_cat.pelt.cat_sprites["dead"] = attr[33]
                 game.switches[
                     "error_message"

@@ -283,7 +283,7 @@ class Name:
             self.cat.status.rank in self.names_dict["special_suffixes"]
             and not self.specsuffix_hidden
         ):
-            return self.prefix + self.names_dict["special_suffixes"][self.cat.status]
+            return self.prefix + self.names_dict["special_suffixes"][self.cat.status.rank]
         if game.config["fun"]["april_fools"]:
             return f"{self.prefix}egg"
         return self.prefix + self.suffix

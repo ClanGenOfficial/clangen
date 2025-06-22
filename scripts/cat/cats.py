@@ -233,9 +233,9 @@ class Cat:
             self.ID = ID
 
         # age and status
-        if self.status is None and moons is None:
+        if status_dict is None and moons is None:
             self.age = choice(list(CatAge))
-            self.status = Status().generate_new_status(age=self.age)
+            self.status.generate_new_status(age=self.age)
         elif moons is not None:
             self.moons = moons
             if moons > 300:
@@ -250,8 +250,8 @@ class Cat:
                             self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
                     ):
                         self.age = key_age
-            if self.status is None:
-                self.status = Status().generate_new_status(age=self.age)
+            if status_dict is None:
+                self.status.generate_new_status(age=self.age)
         else:
             if self.status.rank == CatRank.NEWBORN:
                 self.age = CatAge.NEWBORN
@@ -270,6 +270,7 @@ class Cat:
                         CatAge.SENIOR_ADULT,
                     ]
                 )
+        if moons is None:
             self.moons = randint(
                 self.age_moons[self.age][0], self.age_moons[self.age][1]
             )
@@ -289,7 +290,7 @@ class Cat:
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            self.init_generate_cat(skill_dict, status_dict)
+            self.init_generate_cat(skill_dict)
 
         # In camp status
         self.in_camp = 1
@@ -347,7 +348,7 @@ class Cat:
         self.parent2 = None
         self.adoptive_parents = []
         self.mate = []
-        self.status = Status(**status) if status["group_history"] else None
+        self.status = Status(**status) if status else Status()
         self._pronouns = {}  # Needs to be set as a dict
         self.moons = moons
         self.inheritance = None  # This should never be used, but just for safety
@@ -378,11 +379,10 @@ class Cat:
                 ):
                     self.age = key_age
 
-    def init_generate_cat(self, skill_dict, status_dict):
+    def init_generate_cat(self, skill_dict):
         """
         Used to roll a new cat
         :param skill_dict: TODO what is a skill dict exactly
-        :param status_dict: Dict containing status info (rank, social, group)
         :return: None
         """
         # trans cat chances
@@ -414,9 +414,6 @@ class Cat:
 
         # Personality
         self.personality = Personality(kit_trait=self.age.is_baby())
-
-        # STATUS
-        self.status.generate_new_status(age=self.age, **skill_dict)
 
         # experience and current patrol status
         if self.age.is_baby():
@@ -464,7 +461,9 @@ class Cat:
 
     @property
     def dead(self) -> bool:
-        return self.status.group.is_afterlife()
+        if self.status.group and self.status.group.is_afterlife():
+            return True
+        return False
 
     @dead.setter
     def dead(self, dead: bool):
@@ -482,7 +481,7 @@ class Cat:
 
     @dead_for.setter
     def dead_for(self, moons: int):
-        self.status.change_current_moons_as(int)
+        self.status.change_current_moons_as(moons)
 
     @property
     def mentor(self):
@@ -3179,14 +3178,18 @@ class Cat:
             print("ERROR: in loading faded cat")
             return False
 
+        if isinstance(cat_info["status"], str):
+            status_dict = {"rank": cat_info["status"]}
+        else:
+            status_dict = cat_info["status"]
+
         cat_ob = Cat(
             ID=cat_info["ID"],
             prefix=cat_info["name_prefix"],
             suffix=cat_info["name_suffix"],
-            status=cat_info["status"],
+            status_dict=status_dict,
             moons=cat_info["moons"],
-            faded=True,
-            df=cat_info["df"] if "df" in cat_info else False,
+            faded=True
         )
         if cat_info["parent1"]:
             cat_ob.parent1 = cat_info["parent1"]
@@ -3197,6 +3200,12 @@ class Cat:
             cat_info["adoptive_parents"] if "adoptive_parents" in cat_info else []
         )
         cat_ob.faded = True
+
+        if cat_info.get("df"):
+            cat_ob.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
+        elif isinstance(cat_info["status"], str):
+            cat_ob.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
+
         cat_ob.dead_for = cat_info["dead_for"] if "dead_for" in cat_info else 1
 
         return cat_ob
