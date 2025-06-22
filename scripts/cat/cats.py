@@ -3551,17 +3551,9 @@ class Cat:
 
 # Creates a random cat
 def create_cat(rank, moons=None, biome=None):
-    status_dict = {
-        "group_history": [
-            {
-                "group": CatGroup.PLAYER_CLAN,
-                "rank": rank,
-                "moons_as": 0
-            }
-        ]
-    }
+    status_dict = {"rank": rank}
 
-    new_cat = Cat(status=status_dict, biome=biome)
+    new_cat = Cat(status_dict=status_dict, biome=biome)
 
     if moons is not None:
         new_cat.moons = moons
