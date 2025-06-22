@@ -495,7 +495,7 @@ class Events:
                     event_type="misc",
                     main_cat=cat,
                     random_cat=random_cat,
-                    sub_type=[CatRank.MEDIATOR],
+                    sub_type=["mediator"],
                     freshkill_pile=game.clan.freshkill_pile,
                 )
 

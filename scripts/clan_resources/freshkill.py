@@ -498,15 +498,15 @@ class FreshkillPile:
         for cat in group:
             if cat in self.already_fed:
                 continue
-            status = str(cat.status.rank)
+            rank = cat.status.rank
             # check if this is a kit: if so, check if they are fed by the mother
-            if status.rank.is_baby() and fed_kits and cat in fed_kits:
+            if rank.is_baby() and fed_kits and cat in fed_kits:
                 continue
 
             # check for queens / pregnant
             if queens_only:
-                status = "queen/pregnant"
-            feeding_amount = PREY_REQUIREMENT[status]
+                rank = "queen/pregnant"
+            feeding_amount = PREY_REQUIREMENT[rank]
             needed_amount = feeding_amount
 
             # check for condition
@@ -515,7 +515,7 @@ class FreshkillPile:
                     feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
-                if ration_prey and status == CatRank.WARRIOR:
+                if ration_prey and rank == CatRank.WARRIOR:
                     feeding_amount = feeding_amount / 2
 
             if (

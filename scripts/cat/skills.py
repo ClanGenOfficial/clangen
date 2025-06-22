@@ -528,7 +528,7 @@ class CatSkills:
                     elif self.primary:
                         self.primary.points += amount_effect
 
-            elif the_cat.status.is_any_apprentice():
+            elif the_cat.status.rank.is_any_apprentice_rank():
                 # Check to see if the cat gains a secondary
                 if not self.secondary and not int(random.random() * 22):
                     # if there's no secondary skill, try to give one!
