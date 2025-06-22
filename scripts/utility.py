@@ -29,7 +29,7 @@ from scripts.game_structure.localization import (
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache, localization
-from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
+from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatStanding
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
@@ -560,7 +560,7 @@ def create_new_cat_block(
     chosen_cat = None
     if "exists" in attribute_list:
         existing_outsiders = [
-            i for i in Cat.all_cats.values() if i.status.is_outsider()
+            i for i in Cat.all_cats.values() if i.status.is_outsider() and not i.dead
         ]
         possible_outsiders = []
         for cat in existing_outsiders:
