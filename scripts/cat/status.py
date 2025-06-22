@@ -246,6 +246,11 @@ class Status:
         """
         Returns a list of all groups the cat has been a part of or is currently a part of.
         """
+        groups = []
+        for record in self.group_history:
+            if record["group"] not in groups:
+                groups.append(record["group"])
+
         return [record["group"] for record in self.group_history]
 
     @property
