@@ -9,6 +9,7 @@ from pygame_gui.core import ObjectID
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatGroup
 from scripts.game_structure import image_cache
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game_essentials import game
@@ -900,7 +901,7 @@ class Screens:
         if cat.dead and not cat.faded:
             blur_bg = (
                 "darkforest"
-                if cat.df
+                if cat.status.group == CatGroup.DARK_FOREST
                 else "unknown_residence"
                 if cat.ID in game.clan.unknown_cats
                 else "starclan"

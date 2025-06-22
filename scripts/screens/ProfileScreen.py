@@ -530,13 +530,13 @@ class ProfileScreen(Screens):
         if (
                 self.the_cat.dead
                 and game.clan.instructor.ID == self.the_cat.ID
-                and self.the_cat.df is False
+                and self.the_cat.status.group == CatGroup.STAR_CLAN
         ):
             is_sc_instructor = True
         elif (
                 self.the_cat.dead
                 and game.clan.instructor.ID == self.the_cat.ID
-                and self.the_cat.df is True
+                and self.the_cat.status.group.DARK_FOREST
         ):
             is_df_instructor = True
 
@@ -800,12 +800,19 @@ class ProfileScreen(Screens):
         # STATUS
         if the_cat.status.is_lost():
             output += f"<font color='#FF0000'>{i18n.t('general.lost', count=1)}</font>"
+            # NEWLINE ----------
+            output += "\n"
         elif the_cat.status.is_exiled():
             output += (
                 f"<font color='#FF0000'>{i18n.t('general.exiled', count=1)}</font>"
             )
+            # NEWLINE ----------
+            output += "\n"
+
         if the_cat.status.is_outsider():
             output += i18n.t(f"general.{the_cat.status.social}", count=1)
+        else:
+            output += i18n.t(f"general.{the_cat.status.rank}", count=1)
 
         # NEWLINE ----------
         output += "\n"
