@@ -275,7 +275,7 @@
         "biome": ["plains"],
         "season": ["leaf-fall"],
         "tags": [],
-        "types": [],
+        "types": ["training"],
         "patrol_art": "gen_bord_story",
         "min_cats": 3,
         "max_cats": 6,

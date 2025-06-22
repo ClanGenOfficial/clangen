@@ -71,11 +71,11 @@ def test():
 
     for root, _, files in os.walk("resources"):
         for file in files:
-            if file.endswith(".json") and file not in [
+            if file.endswith(".json") and file not in (
                 "credits_text.json",
                 "clansettings.json",
                 "gamesettings.json",
-            ]:
+            ):
                 path = os.path.join(root, file)
 
                 if not test_replacement_failure(path, replacement_dict):

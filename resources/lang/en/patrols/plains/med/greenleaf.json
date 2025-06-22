@@ -6054,7 +6054,7 @@
         "decline_text": "The cats are too busy trying to avoid thorns to listen to stories",
         "success_outcomes": [
             {
-                    "text": "During the time of the first medicine cats, when raspberries grew white, there lived a gentle old tom. He couldn't harvest the berries without tearing his coat on the sharp thorns - but he had sick cats who needed the fruit, so he stepped forward regardless, and since then every raspberry has been stained with the blood from his thorn wounds.",
+                "text": "During the time of the first medicine cats, when raspberries grew white, there lived a gentle old tom. He couldn't harvest the berries without tearing his coat on the sharp thorns - but he had sick cats who needed the fruit, so he stepped forward regardless, and since then every raspberry has been stained with the blood from his thorn wounds.",
                     "exp": 40,
                     "weight": 20,
                     "herbs": ["many_herbs", "raspberry"],
@@ -6786,7 +6786,8 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "all apprentices": [1, 6]
+            "all apprentices": [1, 5],
+            "medicine cat": [1, 5]
         },
         "weight": 20,
         "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without a care in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",

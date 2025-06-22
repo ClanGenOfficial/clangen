@@ -1173,11 +1173,11 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": { 
+                "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
                     "reg_death": "m_c died of an injury inflicted by an invading rogue.",
                     "lead_death": "died of an injury inflicted by an invading rogue"
-                 },
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],

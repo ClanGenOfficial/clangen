@@ -376,7 +376,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
         birth_parents = [
             Cat.fetch_cat(i)
-            for i in [self.the_cat.parent1, self.the_cat.parent2]
+            for i in (self.the_cat.parent1, self.the_cat.parent2)
             if isinstance(Cat.fetch_cat(i), Cat)
         ]
 

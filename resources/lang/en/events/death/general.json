@@ -1,7 +1,7 @@
 [
     {
         "event_id": "gen_death_murder_any1",
-        "location": [ "any" ],
+        "location": ["any"],
         "season": [
             "any"
         ],
@@ -25,13 +25,15 @@
         },
         "r_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"],
-            "status": [ "any" ]
+            "status": ["any"]
         },
         "exclude_involved": ["r_c"],
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was secretly murdered by r_c."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was secretly murdered by r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -61,11 +63,11 @@
     },
     {
         "event_id": "gen_death_murder_any2",
-        "location": [ "any" ],
+        "location": ["any"],
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c was murdered. r_c stands over {PRONOUN/m_c/object}, blood dripping from {PRONOUN/r_c/poss} pelt.",
@@ -90,10 +92,12 @@
                 "FIGHTER,2"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was murdered by r_c."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was murdered by r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -127,14 +131,14 @@
         "season": [
             "any"
         ],
-        "sub_type":  [
+        "sub_type": [
             "murder"
         ],
         "tags": [],
         "weight": 20,
         "event_text": "m_c was murdered by r_c in cold blood.",
         "m_c": {
-            "age": [ "any" ],
+            "age": ["any"],
             "status": [
                 "kitten",
                 "apprentice",
@@ -152,15 +156,17 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
             "skill": [
                 "FIGHTER,2"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was murdered by r_c."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was murdered by r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -194,7 +200,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c was murdered by r_c in cold blood. r_c has made the death look accidental.",
@@ -216,17 +222,19 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "any" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["any"],
             "skill": [
                 "FIGHTER,2",
                 "CLEVER,3"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was secretly murdered by r_c, who made the death look accidental."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was secretly murdered by r_c, who made the death look accidental."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -260,7 +268,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 30,
         "event_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} deathberries.",
@@ -282,13 +290,15 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "medicine cat apprentice", "medicine cat" ]
+            "age": ["any"],
+            "status": ["medicine cat apprentice", "medicine cat"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} deathberries."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} deathberries."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -323,12 +333,12 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 30,
         "event_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} foxglove seeds.",
         "m_c": {
-            "age": [ "any" ],
+            "age": ["any"],
             "status": [
                 "kitten",
                 "apprentice",
@@ -346,13 +356,15 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "medicine cat apprentice", "medicine cat" ]
+            "age": ["any"],
+            "status": ["medicine cat apprentice", "medicine cat"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} foxglove seeds."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} foxglove seeds."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -387,12 +399,12 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 30,
         "event_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} nightshade berries.",
         "m_c": {
-            "age": [ "any" ],
+            "age": ["any"],
             "status": [
                 "kitten",
                 "apprentice",
@@ -410,13 +422,15 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": ["medicine cat apprentice", "medicine cat" ]
+            "age": ["any"],
+            "status": ["medicine cat apprentice", "medicine cat"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} nightshade berries."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} nightshade berries."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -451,12 +465,12 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 30,
         "event_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} water hemlock.",
         "m_c": {
-            "age": [ "any" ],
+            "age": ["any"],
             "status": [
                 "kitten",
                 "apprentice",
@@ -474,13 +488,15 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "medicine cat apprentice", "medicine cat" ]
+            "age": ["any"],
+            "status": ["medicine cat apprentice", "medicine cat"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} water hemlock."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} water hemlock."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -515,12 +531,12 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 30,
         "event_text": "r_c killed m_c by consciously giving {PRONOUN/m_c/object} the wrong herbs.",
         "m_c": {
-            "age": [ "any" ],
+            "age": ["any"],
             "status": [
                 "kitten",
                 "apprentice",
@@ -538,13 +554,15 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "medicine cat apprentice", "medicine cat" ]
+            "age": ["any"],
+            "status": ["medicine cat apprentice", "medicine cat"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was murdered by r_c, who purposefully fed {PRONOUN/m_c/object} the wrong herbs."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was murdered by r_c, who purposefully fed {PRONOUN/m_c/object} the wrong herbs."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -583,7 +601,7 @@
         "weight": 20,
         "event_text": "m_c was found dead near a fox den.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult"],
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
             "not_skill": [
                 "FIGHTER,2"
             ],
@@ -598,11 +616,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a fox.",
-            "lead_death": "{VERB/m_c/were/was} killed by a fox"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a fox.",
+                "lead_death": "{VERB/m_c/were/was} killed by a fox"
+            }
+        ]
     },
     {
         "event_id": "gen_death_snake_any1",
@@ -617,11 +637,13 @@
             "age": ["adolescent", "young adult", "adult", "senior adult"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a snake.",
-            "lead_death": "{VERB/m_c/were/was} bitten by a snake"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a snake.",
+                "lead_death": "{VERB/m_c/were/was} bitten by a snake"
+            }
+        ]
     },
     {
         "event_id": "gen_death_snake_any2",
@@ -632,8 +654,8 @@
         "weight": 20,
         "event_text": "m_c saved r_c from a snake but was bitten in the process. The venom killed {PRONOUN/m_c/object}.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult", "senior"],
-            "status": [ "any" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"],
             "trait": [
                 "bold",
                 "ambitious",
@@ -650,14 +672,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "newborn", "kitten" ],
-            "status": [ "any" ]
+            "age": ["newborn", "kitten"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a snake while saving a kit.",
-            "lead_death": "died saving a kit from a snake"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a snake while saving a kit.",
+                "lead_death": "died saving a kit from a snake"
+            }
+        ]
     },
     {
         "event_id": "gen_death_missing_any1",
@@ -673,11 +697,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c went missing and was found dead.",
-            "lead_death": "went missing and {VERB/m_c/were/was} found dead"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c went missing and was found dead.",
+                "lead_death": "went missing and {VERB/m_c/were/was} found dead"
+            }
+        ]
     },
     {
         "event_id": "gen_death_border_any1",
@@ -698,10 +724,10 @@
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "reg_death": "m_c was found dead near the o_c_n border.",
-            "lead_death": "to mysterious circumstances near the o_c_n border"
-        }
+                "cats": ["m_c"],
+                "reg_death": "m_c was found dead near the o_c_n border.",
+                "lead_death": "to mysterious circumstances near the o_c_n border"
+            }
         ],
         "other_clan": {
             "current_rep": ["any"],
@@ -724,11 +750,13 @@
         "r_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat died when o_c_n tried to break into camp.",
-            "lead_death": "tried to defend the Clan from o_c_n"
-        }],
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "This cat died when o_c_n tried to break into camp.",
+                "lead_death": "tried to defend the Clan from o_c_n"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -767,13 +795,15 @@
                 "newborn",
                 "kitten"
             ],
-            "status": [ "any" ]
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died defending r_c from o_c_n warriors.",
-            "lead_death": "died defending the nursery"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died defending r_c from o_c_n warriors.",
+                "lead_death": "died defending the nursery"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -831,7 +861,7 @@
         "event_text": "m_c was burnt alive while trying to save r_c from a fire.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-            "status": [ "any" ],
+            "status": ["any"],
             "relationship_status": [],
             "trait": [
                 "bold",
@@ -842,20 +872,21 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible"
             ],
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ]
+            "age": ["any"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed in a fire while trying to save r_c.",
-            "lead_death": "{VERB/m_c/were/was} burnt alive saving r_c"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed in a fire while trying to save r_c.",
+                "lead_death": "{VERB/m_c/were/was} burnt alive saving r_c"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -899,11 +930,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of greencough.",
-            "lead_death": "died of greencough"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of greencough.",
+                "lead_death": "died of greencough"
+            }
+        ]
     },
     {
         "event_id": "gen_death_infection_any1",
@@ -917,15 +950,17 @@
         "weight": 20,
         "event_text": "m_c died from infected wounds.",
         "m_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died from infected wounds.",
-            "lead_death": "died from infected wounds"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died from infected wounds.",
+                "lead_death": "died from infected wounds"
+            }
+        ]
     },
     {
         "event_id": "gen_death_badprey_anydoubledeath1",
@@ -939,21 +974,23 @@
         "weight": 20,
         "event_text": "m_c and r_c die from eating tainted prey.",
         "m_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "relationship_status": [],
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": [ "m_c", "r_c" ],
-            "reg_death": "m_c died from eating tainted prey.",
-            "lead_death": "ate tainted prey"
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "m_c died from eating tainted prey.",
+                "lead_death": "ate tainted prey"
+            }
+        ]
     },
     {
         "event_id": "gen_death_drown_any1",
@@ -965,8 +1002,8 @@
         "weight": 20,
         "event_text": "m_c fell into the river. r_c drowned alongside m_c while trying to rescue {PRONOUN/m_c/object}.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult", "senior" ],
-            "status": [ "any" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"],
             "dies": true
         },
         "r_c": {
@@ -975,7 +1012,7 @@
                 "adult",
                 "senior adult"
             ],
-            "status": [ "any" ],
+            "status": ["any"],
             "trait": [
                 "bold",
                 "ambitious",
@@ -985,16 +1022,17 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible"
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat drowned alongside a Clanmate.",
-            "lead_death": "drowned alongside a Clanmate"
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "This cat drowned alongside a Clanmate.",
+                "lead_death": "drowned alongside a Clanmate"
+            }
+        ]
     },
     {
         "event_id": "gen_death_rogue_anydoubledeath1",
@@ -1007,10 +1045,11 @@
         "event_text": "m_c and r_c are killed by a gang of rogues.",
         "m_c": {
             "age": [
-            "young adult",
-            "adult",
-            "senior adult" ],
-            "status": [ "any" ],
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": ["any"],
             "dies": true
         },
         "r_c": {
@@ -1019,14 +1058,16 @@
                 "adult",
                 "senior adult"
             ],
-            "status": [ "any" ],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": [ "m_c", "r_c" ],
-            "reg_death": "m_c was killed by a gang of rogues.",
-            "lead_death": "{VERB/m_c/were/was} killed by a gang of rogues"
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "m_c was killed by a gang of rogues.",
+                "lead_death": "{VERB/m_c/were/was} killed by a gang of rogues"
+            }
+        ]
     },
     {
         "event_id": "gen_death_greencough_any1",
@@ -1040,20 +1081,22 @@
         "weight": 20,
         "event_text": "r_c and m_c die of greencough.",
         "m_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat died of greencough.",
-            "lead_death": "died of greencough"
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "This cat died of greencough.",
+                "lead_death": "died of greencough"
+            }
+        ]
     },
     {
         "event_id": "gen_death_yellowcough_any1",
@@ -1067,20 +1110,22 @@
         "weight": 20,
         "event_text": "r_c and m_c die of yellowcough.",
         "m_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat died of yellowcough.",
-            "lead_death": "died of yellowcough"
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "This cat died of yellowcough.",
+                "lead_death": "died of yellowcough"
+            }
+        ]
     },
     {
         "event_id": "gen_death_any1",
@@ -1094,20 +1139,22 @@
         "weight": 20,
         "event_text": "A bad case of greencough strikes the Clan, taking r_c and m_c's lives.",
         "m_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat died of greencough.",
-            "lead_death": "died of greencough"
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "This cat died of greencough.",
+                "lead_death": "died of greencough"
+            }
+        ]
     },
     {
         "event_id": "gen_death_curious_any1",
@@ -1119,8 +1166,16 @@
         "weight": 20,
         "event_text": "m_c sneaked out of camp, intending to discover more about {PRONOUN/m_c/poss} origins. After a long morning search, c_n found {PRONOUN/m_c/poss} cooling body.",
         "m_c": {
-            "age": [ "adolescent", "young adult"],
-            "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "mediator", "medicine cat", "deputy" ],
+            "age": ["adolescent", "young adult"],
+            "status": [
+                "apprentice",
+                "mediator apprentice",
+                "medicine cat apprentice",
+                "warrior",
+                "mediator",
+                "medicine cat",
+                "deputy"
+            ],
             "backstory": [
                 "abandoned1",
                 "abandoned2",
@@ -1128,10 +1183,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "Curiosity killed this cat."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "Curiosity killed this cat."
+            }
+        ]
     },
     {
         "event_id": "gen_death_war_any1",
@@ -1139,7 +1196,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
+        "sub_type": ["war"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c sacrificed {PRONOUN/m_c/self} for r_c in a battle with o_c_n.",
@@ -1150,11 +1207,13 @@
         "r_c": {
             "status": ["apprentice", "warrior", "deputy", "leader"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
-            "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in battle."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
+                "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in battle."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -1194,7 +1253,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
+        "sub_type": ["war"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c threw {PRONOUN/m_c/self} in front of an oncoming attack meant for r_c, taking the deadly blow instead.",
@@ -1207,9 +1266,9 @@
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
-            "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in battle."
+                "cats": ["m_c"],
+                "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
+                "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in battle."
             }
         ],
         "relationships": [
@@ -1251,7 +1310,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
+        "sub_type": ["war"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c stayed behind and fought a losing battle to give r_c time to escape.",
@@ -1262,11 +1321,13 @@
         "r_c": {
             "status": ["apprentice", "warrior", "deputy", "leader"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
-            "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in battle."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in battle.",
+                "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in battle."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -1306,7 +1367,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
+        "sub_type": ["war"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c used {PRONOUN/m_c/poss} own body to shield r_c from a surprise o_c_n ambush, even though it meant certain death.",
@@ -1315,14 +1376,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "any" ]
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in an ambush.",
-            "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in an ambush."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c sacrificed {PRONOUN/m_c/self} for r_c in an ambush.",
+                "lead_death": "sacrificed {PRONOUN/m_c/self} for r_c in an ambush."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -1362,7 +1425,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
+        "sub_type": ["war"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c was killed while investigating enemy territory.",
@@ -1370,10 +1433,12 @@
             "status": ["apprentice", "warrior"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed investigating enemy territory."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed investigating enemy territory."
+            }
+        ],
         "other_clan": {
             "current_rep": ["hostile"],
             "changed": -3
@@ -1387,7 +1452,7 @@
             "newleaf",
             "greenleaf"
         ],
-        "sub_type": [ "war" ],
+        "sub_type": ["war"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c drowned in a river while trying to escape from a sudden o_c_n attack.",
@@ -1396,11 +1461,13 @@
             "not_skill": ["SWIMMER,2"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c drowned in a river attempting to escape an enemy attack.",
-            "lead_death": "drowned in a river attempting to escape an enemy attack."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c drowned in a river attempting to escape an enemy attack.",
+                "lead_death": "drowned in a river attempting to escape an enemy attack."
+            }
+        ],
         "other_clan": {
             "current_rep": ["hostile"],
             "changed": -2
@@ -1412,19 +1479,21 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
-        "tags": [ "some_lives" ],
+        "sub_type": ["war"],
+        "tags": ["some_lives"],
         "weight": 20,
         "event_text": "m_c fell into a pit trap set by o_c_n's warriors.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c fell into a pit trap set by an enemy Clan.",
-            "lead_death": "fell into a pit trap set by an enemy Clan."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c fell into a pit trap set by an enemy Clan.",
+                "lead_death": "fell into a pit trap set by an enemy Clan."
+            }
+        ],
         "other_clan": {
             "current_rep": ["hostile"],
             "changed": -3
@@ -1436,19 +1505,21 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
-        "tags": [ "some_lives" ],
+        "sub_type": ["war"],
+        "tags": ["some_lives"],
         "weight": 20,
         "event_text": "m_c was hit by a monster while escaping across a Thunderpath from o_c_n warriors.",
         "m_c": {
-            "status": [ "apprentice", "warrior", "deputy", "leader" ],
+            "status": ["apprentice", "warrior", "deputy", "leader"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was hit by a monster.",
-            "lead_death": "{VERB/m_c/were/was} hit by a monster."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was hit by a monster.",
+                "lead_death": "{VERB/m_c/were/was} hit by a monster."
+            }
+        ],
         "other_clan": {
             "current_rep": ["hostile"],
             "changed": -3
@@ -1460,19 +1531,21 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "old_age" ],
+        "sub_type": ["old_age"],
         "tags": ["all_lives"],
         "weight": 20,
         "event_text": "m_c wandered out into the territory and was later found dead, a peaceful expression on {PRONOUN/m_c/poss} face.",
         "m_c": {
-            "age": [ "senior" ],
+            "age": ["senior"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of old age.",
-            "lead_death": "died of old age"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of old age.",
+                "lead_death": "died of old age"
+            }
+        ]
     },
     {
         "event_id": "gen_death_age_any2",
@@ -1490,11 +1563,13 @@
             "age": ["senior"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of old age.",
-            "lead_death": "died of old age"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of old age.",
+                "lead_death": "died of old age"
+            }
+        ]
     },
     {
         "event_id": "gen_death_age_any3",
@@ -1512,11 +1587,13 @@
             "age": ["senior"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of old age.",
-            "lead_death": "died of old age"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of old age.",
+                "lead_death": "died of old age"
+            }
+        ]
     },
     {
         "event_id": "gen_death_age_any4",
@@ -1531,14 +1608,16 @@
         "weight": 20,
         "event_text": "m_c is suddenly struck by a sharp pain in {PRONOUN/m_c/poss} chest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} found later that day, cold.",
         "m_c": {
-            "age": [ "senior" ],
+            "age": ["senior"],
             "status": ["medicine cat", "mediator", "elder"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of a heart attack."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of a heart attack."
+            }
+        ]
     },
     {
         "event_id": "gen_death_age_any5",
@@ -1546,28 +1625,30 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "old_age" ],
-        "tags": [ "all_lives" ],
+        "sub_type": ["old_age"],
+        "tags": ["all_lives"],
         "weight": 20,
         "event_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n found their bodies still wrapped around each other in the morning.",
         "m_c": {
-            "age": [ "senior" ],
-            "status": [ "any" ],
+            "age": ["senior"],
+            "status": ["any"],
             "relationship_status": [
                 "mates"
             ],
             "dies": true
         },
         "r_c": {
-            "age": [ "senior" ],
-            "status": [ "any" ],
+            "age": ["senior"],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat died from old age.",
-            "lead_death": "lost all remaining lives from old age."
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "This cat died from old age.",
+                "lead_death": "lost all remaining lives from old age."
+            }
+        ]
     },
     {
         "event_id": "gen_death_predator_any1",
@@ -1575,18 +1656,20 @@
         "season": [
             "any"
         ],
-        "tags": [ "no_body", "all_lives" ],
+        "tags": ["no_body", "all_lives"],
         "weight": 20,
         "event_text": "m_c met their end to the long claws of a predator. Later, c_n found only {PRONOUN/m_c/poss} blood and a foul smell.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by an unknown predator.",
-            "lead_death": "{VERB/m_c/were/was} killed by an unknown predator."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by an unknown predator.",
+                "lead_death": "{VERB/m_c/were/was} killed by an unknown predator."
+            }
+        ]
     },
     {
         "event_id": "gen_death_murder_anydep1",
@@ -1594,7 +1677,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder"],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 30,
         "event_text": "m_c was murdered by r_c in cold blood in the hope of taking {PRONOUN/m_c/poss} place.",
@@ -1608,8 +1691,8 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "warrior" ],
+            "age": ["any"],
+            "status": ["warrior"],
             "skill": [
                 "FIGHTER,2"
             ],
@@ -1623,10 +1706,12 @@
                 "bloodthirsty"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was murdered by r_c."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was murdered by r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -1662,7 +1747,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 30,
         "event_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident and hopes to take {PRONOUN/m_c/poss} place.",
@@ -1676,8 +1761,8 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "warrior" ],
+            "age": ["any"],
+            "status": ["warrior"],
             "skill": [
                 "CLEVER,2"
             ],
@@ -1690,10 +1775,12 @@
                 "sneaky"
             ]
         },
-        "history": [{
-            "cats": [ "m_c", "r_c" ],
-            "reg_death": "m_c was secretly murdered by r_c."
-        }],
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "m_c was secretly murdered by r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -1729,8 +1816,8 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
-        "tags": [ "all_lives" ],
+        "sub_type": ["murder"],
+        "tags": ["all_lives"],
         "weight": 20,
         "event_text": "Lured by trickery and deceptive words, m_c was shoved into a ravine by r_c, killing {PRONOUN/m_c/object}.",
         "m_c": {
@@ -1740,14 +1827,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "warrior", "deputy" ]
+            "age": ["any"],
+            "status": ["warrior", "deputy"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c {VERB/m_c/were/was} pushed into a ravine by r_c.",
-            "lead_death": "{VERB/m_c/were/was} pushed into a ravine by r_c"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c {VERB/m_c/were/was} pushed into a ravine by r_c.",
+                "lead_death": "{VERB/m_c/were/was} pushed into a ravine by r_c"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -1804,14 +1893,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "any" ]
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c" ],
-            "reg_death": "m_c was lured onto thin ice by r_c, resulting in {PRONOUN/m_c/poss} death.",
-            "lead_death": "{VERB/m_c/were/was} lured onto thin ice by r_c and fell through, becoming trapped underwater"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was lured onto thin ice by r_c, resulting in {PRONOUN/m_c/poss} death.",
+                "lead_death": "{VERB/m_c/were/was} lured onto thin ice by r_c and fell through, becoming trapped underwater"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -1868,8 +1959,8 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "any" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["any"],
             "not_skill": [
                 "PROPHET,3",
                 "OMEN,3",
@@ -1884,11 +1975,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": [ "m_c", "r_c" ],
-            "reg_death": "m_c and r_c went to play on the ice of a frozen pond, not knowing it was too thin.",
-            "lead_death": "fell through thin ice and drowned"
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "m_c and r_c went to play on the ice of a frozen pond, not knowing it was too thin.",
+                "lead_death": "fell through thin ice and drowned"
+            }
+        ]
     },
     {
         "event_id": "gen_death_sinkhole_any1",
@@ -1906,11 +1999,13 @@
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c fell into a sinkhole.",
-            "lead_death": "fell into a sinkhole"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c fell into a sinkhole.",
+                "lead_death": "fell into a sinkhole"
+            }
+        ]
     },
     {
         "event_id": "gen_death_bury_any1",
@@ -1924,11 +2019,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c fell into a hidden burrow.",
-            "lead_death": "{VERB/m_c/were/was} buried alive in a hidden burrow"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c fell into a hidden burrow.",
+                "lead_death": "{VERB/m_c/were/was} buried alive in a hidden burrow"
+            }
+        ]
     },
     {
         "event_id": "gen_death_bury_any2",
@@ -1936,17 +2033,19 @@
         "season": [
             "any"
         ],
-        "tags": [ "all_lives" ],
+        "tags": ["all_lives"],
         "weight": 20,
         "event_text": "m_c was buried alive when a burrow collapsed on {PRONOUN/m_c/object}.",
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was buried alive when a burrow collapsed.",
-            "lead_death": "{VERB/m_c/were/was} buried alive in a hidden burrow"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was buried alive when a burrow collapsed.",
+                "lead_death": "{VERB/m_c/were/was} buried alive in a hidden burrow"
+            }
+        ]
     },
     {
         "event_id": "gen_death_heat_greenleaf1",
@@ -1960,15 +2059,17 @@
         "weight": 20,
         "event_text": "m_c died from dehydration and heat stroke.",
         "m_c": {
-            "age": [ "any" ],
-            "status": [ "any" ],
+            "age": ["any"],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of dehydration and heat stroke.",
-            "lead_death": "died of dehydration and heat stroke"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of dehydration and heat stroke.",
+                "lead_death": "died of dehydration and heat stroke"
+            }
+        ]
     },
     {
         "event_id": "gen_death_freeze_leafbare1",
@@ -1984,11 +2085,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c froze to death.",
-            "lead_death": "froze to death"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c froze to death.",
+                "lead_death": "froze to death"
+            }
+        ]
     },
     {
         "event_id": "gen_death_freeze_leafbare2",
@@ -2002,11 +2105,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c froze to death.",
-            "lead_death": "froze to death"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c froze to death.",
+                "lead_death": "froze to death"
+            }
+        ]
     },
     {
         "event_id": "gen_death_drown_leafbare1",
@@ -2021,11 +2126,13 @@
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c froze to death after falling through ice.",
-            "lead_death": "fell through thin ice and drowned"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c froze to death after falling through ice.",
+                "lead_death": "fell through thin ice and drowned"
+            }
+        ]
     },
     {
         "event_id": "gen_death_bury_any3",
@@ -2034,19 +2141,21 @@
             "any"
         ],
         "sub_type": ["war"],
-        "tags": [ "all_lives" ],
+        "tags": ["all_lives"],
         "weight": 20,
         "event_text": "m_c was sealed in a cramped rabbit burrow by o_c_n warriors. {PRONOUN/m_c/subject/CAP} didn't make it out alive.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "any" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c suffocated underground.",
-            "lead_death": "{VERB/m_c/were/was} suffocated underground."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c suffocated underground.",
+                "lead_death": "{VERB/m_c/were/was} suffocated underground."
+            }
+        ],
         "other_clan": {
             "current_rep": ["hostile"],
             "changed": -3
@@ -2072,11 +2181,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died in a border skirmish against o_c_n.",
-            "lead_death": "died in a border skirmish against o_c_n"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died in a border skirmish against o_c_n.",
+                "lead_death": "died in a border skirmish against o_c_n"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile",
@@ -2091,7 +2202,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
+        "sub_type": ["war"],
         "tags": [],
         "weight": 20,
         "event_text": "Blinded by blood in the midst of battle, r_c fatally mistakes m_c for a foe.",
@@ -2108,13 +2219,16 @@
                 "apprentice",
                 "warrior",
                 "deputy",
-                "leader" ]
+                "leader"
+            ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was accidentally killed by r_c in battle.",
-            "lead_death": "{VERB/m_c/were/was} accidentally killed by r_c in battle"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was accidentally killed by r_c in battle.",
+                "lead_death": "{VERB/m_c/were/was} accidentally killed by r_c in battle"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -2170,11 +2284,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed while trying to save o_c_n's medicine cat.",
-            "lead_death": "{VERB/m_c/were/was} killed while trying to save o_c_n's medicine cat"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed while trying to save o_c_n's medicine cat.",
+                "lead_death": "{VERB/m_c/were/was} killed while trying to save o_c_n's medicine cat"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile",
@@ -2204,11 +2320,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by the deputy of o_c_n.",
-            "lead_death": "{VERB/m_c/were/was} killed by the deputy of o_c_n"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by the deputy of o_c_n.",
+                "lead_death": "{VERB/m_c/were/was} killed by the deputy of o_c_n"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile",
@@ -2253,11 +2371,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed while trying to save o_c_n's deputy.",
-            "lead_death": "{VERB/m_c/were/was} killed while trying to save o_c_n's deputy"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed while trying to save o_c_n's deputy.",
+                "lead_death": "{VERB/m_c/were/was} killed while trying to save o_c_n's deputy"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "neutral",
@@ -2286,11 +2406,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by the leader of o_c_n.",
-            "lead_death": "{VERB/m_c/were/was} killed by the leader of o_c_n"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by the leader of o_c_n.",
+                "lead_death": "{VERB/m_c/were/was} killed by the leader of o_c_n"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile",
@@ -2335,11 +2457,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed while trying to save o_c_n's leader.",
-            "lead_death": "{VERB/m_c/were/was} killed while trying to save o_c_n's leader"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed while trying to save o_c_n's leader.",
+                "lead_death": "{VERB/m_c/were/was} killed while trying to save o_c_n's leader"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "neutral",
@@ -2381,11 +2505,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat died in a border skirmish against o_c_n.",
-            "lead_death": "{VERB/m_c/were/was} killed in a border skirmish against o_c_n."
-        }],
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "This cat died in a border skirmish against o_c_n.",
+                "lead_death": "{VERB/m_c/were/was} killed in a border skirmish against o_c_n."
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile",
@@ -2401,19 +2527,21 @@
             "leaf-fall",
             "leaf-bare"
         ],
-        "tags": [ "all_lives", "no_body" ],
+        "tags": ["all_lives", "no_body"],
         "weight": 20,
         "event_text": "m_c was buried alive in an avalanche.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-            "status": [ "any" ],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was buried alive in an avalanche.",
-            "lead_death": "{VERB/m_c/were/was} buried alive in an avalanche"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was buried alive in an avalanche.",
+                "lead_death": "{VERB/m_c/were/was} buried alive in an avalanche"
+            }
+        ]
     },
     {
         "event_id": "gen_death_bury_multi2",
@@ -2423,18 +2551,20 @@
             "newleaf",
             "leaf-fall"
         ],
-        "tags": [ "all_lives", "no_body" ],
+        "tags": ["all_lives", "no_body"],
         "weight": 20,
         "event_text": "m_c was buried alive in a landslide.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was buried alive in a landslide.",
-            "lead_death": "{VERB/m_c/were/was} buried alive in a landslide"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was buried alive in a landslide.",
+                "lead_death": "{VERB/m_c/were/was} buried alive in a landslide"
+            }
+        ]
     },
     {
         "event_id": "gen_death_bury_newleaf1",
@@ -2446,15 +2576,17 @@
         "weight": 20,
         "event_text": "m_c was buried alive in a mudslide.",
         "m_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult", "senior"],
-            "status": [ "any" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was buried alive in a mudslide.",
-            "lead_death": "{VERB/m_c/were/was} buried alive in a mudslide"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was buried alive in a mudslide.",
+                "lead_death": "{VERB/m_c/were/was} buried alive in a mudslide"
+            }
+        ]
     },
     {
         "event_id": "gen_death_cliff_any1",
@@ -2466,19 +2598,21 @@
         "weight": 20,
         "event_text": "m_c slipped off a cliff onto the sharp rocks at the bottom.",
         "m_c": {
-            "age": ["adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "any" ],
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["any"],
             "trait": [
                 "playful",
                 "childish"
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c slipped off the edge of a cliff.",
-            "lead_death": "slipped off the edge of a cliff"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c slipped off the edge of a cliff.",
+                "lead_death": "slipped off the edge of a cliff"
+            }
+        ]
     },
     {
         "event_id": "gen_death_cliff_anylead1",
@@ -2499,10 +2633,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "slipped off the edge of a cliff"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "slipped off the edge of a cliff"
+            }
+        ]
     },
     {
         "event_id": "gen_death_murder_anycliff1",
@@ -2510,12 +2646,20 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom.",
         "m_c": {
-            "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "medicine cat", "mediator", "deputy" ],
+            "status": [
+                "apprentice",
+                "mediator apprentice",
+                "medicine cat apprentice",
+                "warrior",
+                "medicine cat",
+                "mediator",
+                "deputy"
+            ],
             "not_skill": [
                 "PROPHET,3",
                 "OMEN,3",
@@ -2524,16 +2668,26 @@
             "dies": true
         },
         "r_c": {
-            "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "medicine cat", "mediator", "deputy" ],
+            "status": [
+                "apprentice",
+                "mediator apprentice",
+                "medicine cat apprentice",
+                "warrior",
+                "medicine cat",
+                "mediator",
+                "deputy"
+            ],
             "skill": [
                 "CLEVER,2",
                 "HUNTER,3"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was pushed off a cliff by r_c."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was pushed off a cliff by r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -2569,19 +2723,21 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
-        "tags": [ "some_lives"],
+        "sub_type": ["war"],
+        "tags": ["some_lives"],
         "weight": 20,
         "event_text": "m_c was killed by a falling boulder that o_c_n warriors pushed from a cliff above {PRONOUN/m_c/object}.",
         "m_c": {
-            "status": [ "apprentice", "warrior", "deputy", "leader" ],
+            "status": ["apprentice", "warrior", "deputy", "leader"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was crushed by a falling boulder.",
-            "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was crushed by a falling boulder.",
+                "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -2599,21 +2755,23 @@
         "weight": 20,
         "event_text": "r_c yowled a warning as {PRONOUN/r_c/subject} saw a circling shadow, right above m_c. r_c couldn't get there before m_c was carried high into the sky.",
         "m_c": {
-            "age": [ "kitten", "adolescent"],
-            "status": [ "any" ],
+            "age": ["kitten", "adolescent"],
+            "status": ["any"],
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
+            "age": ["any"],
             "status": ["apprentice", "warrior", "deputy"],
             "not_skill": [
                 "RUNNER,2"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was grabbed by a hawk, never to be seen again."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was grabbed by a hawk, never to be seen again."
+            }
+        ]
     },
     {
         "event_id": "gen_death_hawk_any2",
@@ -2643,7 +2801,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -2651,14 +2808,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "kitten", "adolescent"],
-            "status": [ "any" ]
+            "age": ["kitten", "adolescent"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died defending r_c from a hawk",
-            "lead_death": "defended r_c from a hawk"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died defending r_c from a hawk",
+                "lead_death": "defended r_c from a hawk"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -2705,10 +2864,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was carried away by an eagle."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was carried away by an eagle."
+            }
+        ]
     },
     {
         "event_id": "gen_death_river_multiriver2",
@@ -2735,11 +2896,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was swept away by the river.",
-            "lead_death": "{VERB/m_c/were/was} swept away by the river"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was swept away by the river.",
+                "lead_death": "{VERB/m_c/were/was} swept away by the river"
+            }
+        ]
     },
     {
         "event_id": "gen_death_hawk_any2",
@@ -2761,10 +2924,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was taken by a hawk."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was taken by a hawk."
+            }
+        ]
     },
     {
         "event_id": "gen_death_weak_any1",
@@ -2784,10 +2949,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c failed to thrive."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c failed to thrive."
+            }
+        ]
     },
     {
         "event_id": "gen_death_drown_multi2",
@@ -2806,14 +2973,16 @@
             ],
             "not_skill": [
                 "SWIMMER,2"
-                ],
+            ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c fell into the river and drowned.",
-            "lead_death": "fell into the river and drowned"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c fell into the river and drowned.",
+                "lead_death": "fell into the river and drowned"
+            }
+        ]
     },
     {
         "event_id": "gen_death_sneak_any1",
@@ -2839,10 +3008,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died when {PRONOUN/m_c/subject} snuck out of camp."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died when {PRONOUN/m_c/subject} snuck out of camp."
+            }
+        ]
     },
     {
         "event_id": "gen_death_poison_any1",
@@ -2864,14 +3035,15 @@
                 "troublesome",
                 "impulsive",
                 "attention-seeker"
-                
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died when {PRONOUN/m_c/subject} got into the herb stores and ate deathberries."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died when {PRONOUN/m_c/subject} got into the herb stores and ate deathberries."
+            }
+        ]
     },
     {
         "event_id": "gen_death_snake_any3",
@@ -2891,10 +3063,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a snake."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a snake."
+            }
+        ]
     },
     {
         "event_id": "gen_death_kittencough_multi1",
@@ -2914,10 +3088,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of kittencough."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of kittencough."
+            }
+        ]
     },
     {
         "event_id": "gen_death_kittencough_any1",
@@ -2940,13 +3116,15 @@
             "age": [
                 "kitten"
             ],
-            "status": [ "kitten" ],
+            "status": ["kitten"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat died of kittencough."
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "This cat died of kittencough."
+            }
+        ]
     },
     {
         "event_id": "gen_death_greencough_any2",
@@ -2969,13 +3147,15 @@
             "age": [
                 "kitten"
             ],
-            "status": [ "kitten" ],
+            "status": ["kitten"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c", "r_c"],
-            "reg_death": "This cat died of greencough."
-        }]
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "This cat died of greencough."
+            }
+        ]
     },
     {
         "event_id": "gen_death_murder_anykit1",
@@ -2983,7 +3163,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 20,
         "event_text": "r_c invited m_c to private battle training. When m_c slipped and hit {PRONOUN/m_c/poss} head, {PRONOUN/m_c/subject} never woke back up.",
@@ -2994,16 +3174,18 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult"],
-            "status": [ "apprentice", "warrior", "deputy", "leader"],
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["apprentice", "warrior", "deputy", "leader"],
             "skill": [
                 "FIGHTER,1"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed in battle training with r_c."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed in battle training with r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3039,7 +3221,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 20,
         "event_text": "r_c suggested m_c try some shiny red berries. m_c's excitement faded with {PRONOUN/m_c/poss} life.",
@@ -3050,13 +3232,15 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "apprentice", "warrior", "deputy", "leader" ]
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["apprentice", "warrior", "deputy", "leader"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c ate deathberries and succumbed to the poison."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c ate deathberries and succumbed to the poison."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3094,7 +3278,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c sneaked out of camp and misjudged the jump across a stream. r_c watched without concern as {PRONOUN/m_c/subject} disappeared under the water.",
@@ -3107,18 +3291,19 @@
                 "troublesome",
                 "attention-seeker",
                 "impulsive"
-                
             ],
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult"],
-            "status": [ "any" ]
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c drowned in a stream while r_c watched."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c drowned in a stream while r_c watched."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3175,10 +3360,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed when o_c_n warriors broke into camp."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed when o_c_n warriors broke into camp."
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -3217,11 +3404,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed when o_c_n warriors broke into camp.",
-            "lead_death": "when o_c_n warrior broke into camp"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed when o_c_n warriors broke into camp.",
+                "lead_death": "when o_c_n warrior broke into camp"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -3266,13 +3455,15 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult"],
-            "status": [ "apprentice", "warrior", "deputy", "leader"]
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["apprentice", "warrior", "deputy", "leader"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a o_c_n warrior while trying to aid an injured Clanmate."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a o_c_n warrior while trying to aid an injured Clanmate."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3324,10 +3515,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of greencough."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of greencough."
+            }
+        ]
     },
     {
         "event_id": "gen_death_wander_any1",
@@ -3349,10 +3542,12 @@
             "status": [],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died while wandering the territory."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died while wandering the territory.",
+            "lead_death": "died while wandering the territory"}
+        ]
     },
     {
         "event_id": "gen_death_fox_any2",
@@ -3371,14 +3566,16 @@
                 "senior adult",
                 "senior"
             ],
-            "status": [ "any" ],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a fox.",
-            "lead_death": "{VERB/m_c/were/was} killed by a fox"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a fox.",
+                "lead_death": "{VERB/m_c/were/was} killed by a fox"
+            }
+        ]
     },
     {
         "event_id": "gen_death_badger_any1",
@@ -3397,14 +3594,16 @@
                 "senior adult",
                 "senior"
             ],
-            "status": [ "any" ],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a badger.",
-            "lead_death": "{VERB/m_c/were/was} killed by a badger"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a badger.",
+                "lead_death": "{VERB/m_c/were/was} killed by a badger"
+            }
+        ]
     },
     {
         "event_id": "gen_death_dog_any1",
@@ -3423,14 +3622,16 @@
                 "senior adult",
                 "senior"
             ],
-            "status": [ "any" ],
+            "status": ["any"],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a dog.",
-            "lead_death": "{VERB/m_c/were/was} killed by a dog"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a dog.",
+                "lead_death": "{VERB/m_c/were/was} killed by a dog"
+            }
+        ]
     },
     {
         "event_id": "gen_death_whitecough_leafbare1",
@@ -3446,11 +3647,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of whitecough.",
-            "lead_death": "died of whitecough"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of whitecough.",
+                "lead_death": "died of whitecough"
+            }
+        ]
     },
     {
         "event_id": "gen_death_illness_leafbare1",
@@ -3466,11 +3669,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c succumbed to illness.",
-            "lead_death": "succumbed to illness"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c succumbed to illness.",
+                "lead_death": "succumbed to illness"
+            }
+        ]
     },
     {
         "event_id": "gen_death_greencough_leafbare2",
@@ -3486,11 +3691,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of greencough.",
-            "lead_death": "died of greencough"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of greencough.",
+                "lead_death": "died of greencough"
+            }
+        ]
     },
     {
         "event_id": "gen_death_stress_anywar1",
@@ -3510,11 +3717,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died of a heart attack due to stress.",
-            "lead_death": "died of a heart attack due to stress"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died of a heart attack due to stress.",
+                "lead_death": "died of a heart attack due to stress"
+            }
+        ]
     },
     {
         "event_id": "gen_death_lightning_multilead1",
@@ -3538,11 +3747,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} struck by lightning.",
-            "lead_death": "{VERB/m_c/were/was} struck by lightning"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} struck by lightning.",
+                "lead_death": "{VERB/m_c/were/was} struck by lightning"
+            }
+        ]
     },
     {
         "event_id": "gen_death_flood_multilead1",
@@ -3566,15 +3777,17 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was swept away by a flood.",
-            "lead_death": "{VERB/m_c/were/was} swept away by a flood"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was swept away by a flood.",
+                "lead_death": "{VERB/m_c/were/was} swept away by a flood"
+            }
+        ]
     },
     {
         "event_id": "gen_death_tree_any1",
-        "location": [ "beach", "forest", "mountainous" ],
+        "location": ["beach", "forest", "mountainous"],
         "season": [
             "any"
         ],
@@ -3593,7 +3806,7 @@
         },
         "history": [
             {
-                "cats": [ "m_c" ],
+                "cats": ["m_c"],
                 "reg_death": "m_c fell from a tall tree.",
                 "lead_death": "fell from a tall tree"
             }
@@ -3619,9 +3832,9 @@
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "reg_death": "m_c was mauled by a dog.",
-            "lead_death": "{VERB/m_c/were/was} mauled by a dog"
+                "cats": ["m_c"],
+                "reg_death": "m_c was mauled by a dog.",
+                "lead_death": "{VERB/m_c/were/was} mauled by a dog"
             }
         ]
     },
@@ -3643,11 +3856,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a badger.",
-            "lead_death": "{VERB/m_c/were/was} killed by a badger"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a badger.",
+                "lead_death": "{VERB/m_c/were/was} killed by a badger"
+            }
+        ]
     },
     {
         "event_id": "gen_death_rogue_any1",
@@ -3667,11 +3882,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed in a fight with a rogue.",
-            "lead_death": "fought a rogue"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed in a fight with a rogue.",
+                "lead_death": "fought a rogue"
+            }
+        ]
     },
     {
         "event_id": "gen_death_spider_any1",
@@ -3685,11 +3902,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was bitten by a venomous spider.",
-            "lead_death": "{VERB/m_c/were/was} bitten by a venomous spider"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was bitten by a venomous spider.",
+                "lead_death": "{VERB/m_c/were/was} bitten by a venomous spider"
+            }
+        ]
     },
     {
         "event_id": "gen_death_badprey_any1",
@@ -3703,11 +3922,13 @@
         "m_c": {
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died after eating tainted fresh-kill.",
-            "lead_death": "ate tainted fresh-kill"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died after eating tainted fresh-kill.",
+                "lead_death": "ate tainted fresh-kill"
+            }
+        ]
     },
     {
         "event_id": "gen_death_warned_anylead1",
@@ -3728,10 +3949,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "failed to interpret a warning from StarClan"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "failed to interpret a warning from StarClan"
+            }
+        ]
     },
     {
         "event_id": "gen_death_dog_anylead1",
@@ -3769,14 +3992,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ]
+            "age": ["any"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died defending r_c from a dog",
-            "lead_death": "defended r_c from a dog"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died defending r_c from a dog",
+                "lead_death": "defended r_c from a dog"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3836,7 +4061,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -3844,14 +4068,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ]
+            "age": ["any"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c" ],
-            "reg_death": "m_c died defending r_c from a badger.",
-            "lead_death": "defended r_c from a badger"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died defending r_c from a badger.",
+                "lead_death": "defended r_c from a badger"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3911,7 +4137,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -3919,14 +4144,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ]
+            "age": ["any"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": [ "m_c", "r_c"],
-            "reg_death": "m_c died defending r_c from a fox.",
-            "lead_death": "defended r_c from a fox"
-        }],
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "reg_death": "m_c died defending r_c from a fox.",
+                "lead_death": "defended r_c from a fox"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -3988,14 +4215,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ]
+            "age": ["any"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died saving r_c from drowning.",
-            "lead_death": "saved r_c from drowning"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died saving r_c from drowning.",
+                "lead_death": "saved r_c from drowning"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -4057,14 +4286,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ]
+            "age": ["any"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died saving r_c from a monster.",
-            "lead_death": "saved r_c from a monster"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died saving r_c from a monster.",
+                "lead_death": "saved r_c from a monster"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -4128,14 +4359,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any" ]
+            "age": ["any"],
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died saving r_c from a snake.",
-            "lead_death": "saved r_c from a snake"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died saving r_c from a snake.",
+                "lead_death": "saved r_c from a snake"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -4205,11 +4438,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died defending the kits from o_c_n warriors",
-            "lead_death": "defended the kits from o_c_n warriors"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died defending the kits from o_c_n warriors",
+                "lead_death": "defended the kits from o_c_n warriors"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -4255,14 +4490,16 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "adolescent", "young adult", "adult", "senior adult" ],
-            "status": [ "apprentice", "warrior", "medicine cat apprentice", "medicine cat", "deputy"]
+            "age": ["adolescent", "young adult", "adult", "senior adult"],
+            "status": ["apprentice", "warrior", "medicine cat apprentice", "medicine cat", "deputy"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died defending r_c from o_c_n warriors.",
-            "lead_death": "defended r_c from o_c_n warriors"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died defending r_c from o_c_n warriors.",
+                "lead_death": "defended r_c from o_c_n warriors"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -4322,11 +4559,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a o_c_n apprentice.",
-            "lead_death": "fought an apprentice from o_c_n"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a o_c_n apprentice.",
+                "lead_death": "fought an apprentice from o_c_n"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile",
@@ -4367,11 +4606,13 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died trying to save an apprentice from o_c_n.",
-            "lead_death": "saved an apprentice from o_c_n"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died trying to save an apprentice from o_c_n.",
+                "lead_death": "saved an apprentice from o_c_n"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "neutral",
@@ -4386,8 +4627,8 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "old_age" ],
-        "tags": [ "some_lives" ],
+        "sub_type": ["old_age"],
+        "tags": ["some_lives"],
         "weight": 20,
         "event_text": "m_c lost some lives to {PRONOUN/m_c/poss} old age.",
         "m_c": {
@@ -4399,10 +4640,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "succumbed to old age"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "succumbed to old age"
+            }
+        ]
     },
     {
         "event_id": "gen_death_age_anylead2",
@@ -4410,8 +4653,8 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "old_age" ],
-        "tags": [ "all_lives" ],
+        "sub_type": ["old_age"],
+        "tags": ["all_lives"],
         "weight": 20,
         "event_text": "m_c has lost all of {PRONOUN/m_c/poss} remaining lives to old age.",
         "m_c": {
@@ -4423,10 +4666,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "succumbed to old age"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "succumbed to old age"
+            }
+        ]
     },
     {
         "event_id": "gen_death_rogue_anylead2",
@@ -4448,10 +4693,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} brutally attacked by a rogue"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "{VERB/m_c/were/was} brutally attacked by a rogue"
+            }
+        ]
     },
     {
         "event_id": "gen_death_dog_anylead2",
@@ -4473,10 +4720,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} mauled by dogs"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "{VERB/m_c/were/was} mauled by dogs"
+            }
+        ]
     },
     {
         "event_id": "gen_death_fire_anylead1",
@@ -4507,10 +4756,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} killed in a fire trying to save {PRONOUN/m_c/poss} Clanmates"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "{VERB/m_c/were/was} killed in a fire trying to save {PRONOUN/m_c/poss} Clanmates"
+            }
+        ]
     },
     {
         "event_id": "gen_death_ockill_anylead7",
@@ -4533,10 +4784,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} brutally murdered by a warrior from o_c_n"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "{VERB/m_c/were/was} brutally murdered by a warrior from o_c_n"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -4565,10 +4818,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} brutally murdered by the leader of o_c_n"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "{VERB/m_c/were/was} brutally murdered by the leader of o_c_n"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -4597,10 +4852,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} brutally murdered by the deputy of o_c_n"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "{VERB/m_c/were/was} brutally murdered by the deputy of o_c_n"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -4627,10 +4884,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "contracted greencough"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "contracted greencough"
+            }
+        ]
     },
     {
         "event_id": "gen_death_whitecough_multilead2",
@@ -4651,10 +4910,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "contracted whitecough"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "contracted whitecough"
+            }
+        ]
     },
     {
         "event_id": "gen_death_yellowcough_multilead2",
@@ -4675,10 +4936,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "contracted yellowcough"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "contracted yellowcough"
+            }
+        ]
     },
     {
         "event_id": "gen_death_age_anylead3",
@@ -4701,8 +4964,8 @@
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "lead_death": "died of old age"
+                "cats": ["m_c"],
+                "lead_death": "died of old age"
             }
         ]
     },
@@ -4725,10 +4988,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "died of old age"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "died of old age"
+            }
+        ]
     },
     {
         "event_id": "gen_death_age_anylead5",
@@ -4736,8 +5001,8 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "old_age" ],
-        "tags": [ ],
+        "sub_type": ["old_age"],
+        "tags": [],
         "weight": 20,
         "event_text": "One day, the deputy found m_c dead in the leader's den, a life lost to old age.",
         "m_c": {
@@ -4749,10 +5014,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "died of old age"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "died of old age"
+            }
+        ]
     },
     {
         "event_id": "gen_death_age_anylead6",
@@ -4760,7 +5027,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "old_age" ],
+        "sub_type": ["old_age"],
         "tags": [
             "all_lives"
         ],
@@ -4777,8 +5044,8 @@
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "lead_death": "died of old age"
+                "cats": ["m_c"],
+                "lead_death": "died of old age"
             }
         ]
     },
@@ -4788,7 +5055,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "old_age" ],
+        "sub_type": ["old_age"],
         "tags": [
             "all_lives"
         ],
@@ -4805,9 +5072,9 @@
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "lead_death": "died of old age"
-        }
+                "cats": ["m_c"],
+                "lead_death": "died of old age"
+            }
         ]
     },
     {
@@ -4816,7 +5083,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": ["low_lives"],
         "weight": 15,
         "event_text": "m_c was pushed under a monster by r_c.",
@@ -4847,9 +5114,9 @@
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "reg_death": "m_c was pushed under a monster by r_c.",
-            "lead_death": "{VERB/m_c/were/was} pushed under a monster by r_c"
+                "cats": ["m_c"],
+                "reg_death": "m_c was pushed under a monster by r_c.",
+                "lead_death": "{VERB/m_c/were/was} pushed under a monster by r_c"
             }
         ],
         "relationships": [
@@ -4919,10 +5186,12 @@
                 "sneaky"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} murdered by r_c"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "{VERB/m_c/were/was} murdered by r_c"
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -4944,8 +5213,8 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
-        "tags": [ "some_lives", "mid_lives"],
+        "sub_type": ["murder"],
+        "tags": ["some_lives", "mid_lives"],
         "weight": 40,
         "event_text": "r_c attempted to murder m_c, but miscalculated how many lives {PRONOUN/m_c/subject} had. m_c retaliated with a killing blow.",
         "m_c": {
@@ -5035,8 +5304,8 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "young adult", "adult", "senior adult" ],
-            "status": [ "any" ]
+            "age": ["young adult", "adult", "senior adult"],
+            "status": ["any"]
         },
         "history": [
             {
@@ -5079,7 +5348,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [
             "clan:kitten",
             "lives_remain",
@@ -5114,7 +5383,7 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "young adult", "adult", "senior adult", "senior" ],
+            "age": ["young adult", "adult", "senior adult", "senior"],
             "skill": [
                 "CLEVER,2",
                 "SPEAKER,2"
@@ -5135,10 +5404,10 @@
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "lead_death": "saved a drowning kit that was set up by r_c"
-        }
-    ]
+                "cats": ["m_c"],
+                "lead_death": "saved a drowning kit that was set up by r_c"
+            }
+        ]
     },
     {
         "event_id": "gen_death_curious_anylead1",
@@ -5146,7 +5415,7 @@
         "season": [
             "any"
         ],
-        "tags": [ "some_lives" ],
+        "tags": ["some_lives"],
         "weight": 20,
         "event_text": "m_c snuck out of camp to investigate {PRONOUN/m_c/poss} origins. {PRONOUN/m_c/subject/CAP} returned in the morning, haggard and haunted.",
         "m_c": {
@@ -5163,10 +5432,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "became a bit too curious"
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "became a bit too curious"
+            }
+        ]
     },
     {
         "event_id": "gen_death_ockill_anylead10",
@@ -5209,12 +5480,14 @@
                 "newborn",
                 "kitten"
             ],
-            "status": [ "any" ]
+            "status": ["any"]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "lead_death": "defended r_c from o_c_n warriors"
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "lead_death": "defended r_c from o_c_n warriors"
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -5237,10 +5510,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c died in a training accident."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c died in a training accident."
+            }
+        ]
     },
     {
         "event_id": "gen_death_ockill_anyapp1",
@@ -5266,10 +5541,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by o_c_n warriors after accidentally trespassing."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by o_c_n warriors after accidentally trespassing."
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile",
@@ -5308,10 +5585,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by o_c_n warriors after deliberately trespassing."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by o_c_n warriors after deliberately trespassing."
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile",
@@ -5326,7 +5605,7 @@
         "season": [
             "any"
         ],
-        "sub_type": [ "murder" ],
+        "sub_type": ["murder"],
         "tags": [],
         "weight": 20,
         "event_text": "m_c died during battle training with r_c. {PRONOUN/r_c/subject/CAP} exclaimed that it was all an accident.",
@@ -5341,16 +5620,18 @@
             "dies": true
         },
         "r_c": {
-            "age": [ "any" ],
-            "status": [ "any"],
+            "age": ["any"],
+            "status": ["any"],
             "skill": [
                 "FIGHTER,1"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed in battle training with r_c."
-        }],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed in battle training with r_c."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": [
@@ -5401,10 +5682,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c froze to death."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c froze to death."
+            }
+        ]
     },
     {
         "event_id": "gen_death_drown_leafbarekit1",
@@ -5428,10 +5711,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c froze to death after falling through ice."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c froze to death after falling through ice."
+            }
+        ]
     },
     {
         "event_id": "gen_death_predator_anykit1",
@@ -5453,10 +5738,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was eaten by a predator."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was eaten by a predator."
+            }
+        ]
     },
     {
         "event_id": "gen_death_predator_anykit2",
@@ -5477,10 +5764,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was eaten by a predator."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was eaten by a predator."
+            }
+        ]
     },
     {
         "event_id": "gen_death_mouse_anykit1",
@@ -5499,10 +5788,12 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was killed by a rat."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a rat."
+            }
+        ]
     },
     {
         "event_id": "gen_death_shrew_anykit",
@@ -5523,214 +5814,217 @@
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was eaten by a raccoon."
-        }]
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was eaten by a raccoon."
+            }
+        ]
     },
-  {
-    "event_id": "multi_death_massdeath_flood1",
-    "location": ["forest", "beach", "plains"],
-    "season": ["newleaf"],
-    "sub_type": ["mass_death"],
-    "tags": [],
-    "weight": 10,
-    "event_text": "multi_cat drown after the camp becomes flooded.",
-    "history": [
-      {
-      "cats": ["multi_cat"],
-      "reg_death": "m_c drowned when the camp flooded.",
-      "lead_death": "drowned during a camp flood"
-      }
-    ]
-  },
-  {
-    "event_id": "multi_death_massdeath_fire1",
-    "location": ["forest:camp1_camp2", "plains:camp1_camp3", "beach:camp1_camp3", "mountainous:camp4"],
-    "season": ["greenleaf"],
-    "sub_type": ["mass_death"],
-    "tags": [],
-    "weight": 10,
-    "event_text": "multi_cat are killed after a fire rages through the camp.",
-    "history": [
-      {
-      "cats": ["all"],
-      "reg_death": "m_c died in a fire that raged through camp.",
-      "lead_death": "died during a fire"
-      }
-    ]
-  },
-  {
-    "event_id": "multi_death_massdeath_rogue1",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["mass_death"],
-    "tags": [],
-    "weight": 10,
-    "event_text": "multi_cat are killed in an ambush by a group of rogues.",
-    "m_c": {
-        "status": ["leader", "deputy", "apprentice", "warrior"]
+    {
+        "event_id": "multi_death_massdeath_flood1",
+        "location": ["forest", "beach", "plains"],
+        "season": ["newleaf"],
+        "sub_type": ["mass_death"],
+        "tags": [],
+        "weight": 10,
+        "event_text": "multi_cat drown after the camp becomes flooded.",
+        "history": [
+            {
+                "cats": ["multi_cat"],
+                "reg_death": "m_c drowned when the camp flooded.",
+                "lead_death": "drowned during a camp flood"
+            }
+        ]
     },
-    "history": [
-      {
-      "cats": ["multi_cat"],
-      "reg_death": "m_c was killed by a rogue ambush.",
-      "lead_death": "died to a rogue ambush"
-      }
-    ]
-  },
-  {
-    "event_id": "multi_death_massdeath_badger1",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["mass_death"],
-    "tags": [],
-    "weight": 10,
-    "event_text": "multi_cat are killed in a badger attack.",
-    "m_c": {
-        "status": ["leader", "deputy", "apprentice", "warrior"]
+    {
+        "event_id": "multi_death_massdeath_fire1",
+        "location": ["forest:camp1_camp2", "plains:camp1_camp3", "beach:camp1_camp3", "mountainous:camp4"],
+        "season": ["greenleaf"],
+        "sub_type": ["mass_death"],
+        "tags": [],
+        "weight": 10,
+        "event_text": "multi_cat are killed after a fire rages through the camp.",
+        "history": [
+            {
+                "cats": ["all"],
+                "reg_death": "m_c died in a fire that raged through camp.",
+                "lead_death": "died during a fire"
+            }
+        ]
     },
-    "history": [
-      {
-      "cats": ["multi_cat"],
-      "reg_death": "m_c was killed in a badger attack.",
-      "lead_death": "died to a badger"
-      }
-    ]
-  },
-  {
-    "event_id": "multi_death_massdeath_snow1",
-    "location": ["any"],
-    "season": ["leaf-bare"],
-    "sub_type": ["mass_death"],
-    "tags": [],
-    "weight": 10,
-    "event_text": "multi_cat freeze during a snowstorm.",
-    "history": [
-      {
-      "cats": ["multi_cat"],
-      "reg_death": "m_c died in a snowstorm.",
-      "lead_death": "froze in a snowstorm"
-      }
-    ]
-  },
-  {
-    "event_id": "multi_death_massdeath_heat1",
-    "location": ["any"],
-    "season": ["greenleaf"],
-    "sub_type": ["mass_death"],
-    "tags": [],
-    "weight": 10,
-    "event_text": "multi_cat die after the water dries up from a drought.",
-    "history": [
-      {
-      "cats": ["multi_cat"],
-      "reg_death": "m_c died to a drought.",
-      "lead_death": "died during a drought"
-      }
-    ]
-  },
-  {
-    "event_id": "multi_death_massdeath_greencough1",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["mass_death"],
-    "tags": ["classic"],
-    "weight": 10,
-    "event_text": "multi_cat die to a greencough outbreak.",
-    "history": [
-      {
-      "cats": ["multi_cat"],
-      "reg_death": "m_c died from greencough.",
-      "lead_death": "died to greencough"
-      }
-    ]
-  },
-  {
-    "event_id": "multi_death_massdeath_starvation1",
-    "location": ["any"],
-    "season": ["leaf-bare"],
-    "sub_type": ["mass_death"],
-    "tags": ["classic"],
-    "weight": 10,
-    "event_text": "multi_cat starve when no prey can be found.",
-    "history": [
-      {
-      "cats": ["multi_cat"],
-      "reg_death": "m_c starved.",
-      "lead_death": "starved"
-      }
-    ]
-  },
-  {
-    "event_id": "multi_death_massdeath_tainted1",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["mass_death"],
-    "tags": ["classic"],
-    "weight": 10,
-    "event_text": "multi_cat eat tainted fresh-kill and die.",
-    "history": [
-      {
-      "cats": ["multi_cat"],
-      "reg_death": "m_c died from tainted fresh-kill.",
-      "lead_death": "died to tainted fresh-kill"
-      }
-    ]
-  },
-  {
-    "event_id": "multi_death_massdeath_twoleg1",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["mass_death"],
-    "tags": ["lost"],
-    "weight": 10,
-    "event_text": "multi_cat are taken away by Twolegs.",
-    "m_c": {
-        "age": [
-            "adolescent",
-            "adult",
-            "young adult",
-            "senior adult"]
-    }
-  },
-  {
-    "event_id": "gen_death_freshkill_anyfox1",
-    "location": ["any"],
-    "season": ["any"],
-    "weight": 20,
-    "event_text": "m_c was killed when a fox followed fresh-kill scent into camp. Not even the fresh-kill pile was left untouched.",
-    "m_c": {
-        "status": ["any"],
-        "dies": true
-    },
-    "history": [
-      {
-          "cats": ["m_c"],
-          "reg_death": "m_c was killed by a fox that snuck into camp.",
-          "lead_death": "{VERB/m_c/were/was} killed by a fox that snuck into camp"
-      }
-    ],
-    "supplies": [
-      {
-          "type": "freshkill",
-          "trigger": ["excess"],
-          "adjust": "reduce_half"
-      }
-    ]
-  },
-  {
-    "event_id": "gen_death_freshkill_anyrat1",
-    "location": ["any"],
-    "season": ["any"],
-    "weight": 20,
-    "event_text": "m_c found a horde of rats lured by the fresh-kill pile. r_c helped {PRONOUN/m_c/object} fight, but m_c did not survive.",
-    "m_c": {
-        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-        "dies": true
+    {
+        "event_id": "multi_death_massdeath_rogue1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["mass_death"],
+        "tags": [],
+        "weight": 10,
+        "event_text": "multi_cat are killed in an ambush by a group of rogues.",
+        "m_c": {
+            "status": ["leader", "deputy", "apprentice", "warrior"]
         },
-    "r_c": {
-        "age": ["young adult", "adult", "senior adult", "senior"]
+        "history": [
+            {
+                "cats": ["multi_cat"],
+                "reg_death": "m_c was killed by a rogue ambush.",
+                "lead_death": "died to a rogue ambush"
+            }
+        ]
+    },
+    {
+        "event_id": "multi_death_massdeath_badger1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["mass_death"],
+        "tags": [],
+        "weight": 10,
+        "event_text": "multi_cat are killed in a badger attack.",
+        "m_c": {
+            "status": ["leader", "deputy", "apprentice", "warrior"]
+        },
+        "history": [
+            {
+                "cats": ["multi_cat"],
+                "reg_death": "m_c was killed in a badger attack.",
+                "lead_death": "died to a badger"
+            }
+        ]
+    },
+    {
+        "event_id": "multi_death_massdeath_snow1",
+        "location": ["any"],
+        "season": ["leaf-bare"],
+        "sub_type": ["mass_death"],
+        "tags": [],
+        "weight": 10,
+        "event_text": "multi_cat freeze during a snowstorm.",
+        "history": [
+            {
+                "cats": ["multi_cat"],
+                "reg_death": "m_c died in a snowstorm.",
+                "lead_death": "froze in a snowstorm"
+            }
+        ]
+    },
+    {
+        "event_id": "multi_death_massdeath_heat1",
+        "location": ["any"],
+        "season": ["greenleaf"],
+        "sub_type": ["mass_death"],
+        "tags": [],
+        "weight": 10,
+        "event_text": "multi_cat die after the water dries up from a drought.",
+        "history": [
+            {
+                "cats": ["multi_cat"],
+                "reg_death": "m_c died to a drought.",
+                "lead_death": "died during a drought"
+            }
+        ]
+    },
+    {
+        "event_id": "multi_death_massdeath_greencough1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["mass_death"],
+        "tags": ["classic"],
+        "weight": 10,
+        "event_text": "multi_cat die to a greencough outbreak.",
+        "history": [
+            {
+                "cats": ["multi_cat"],
+                "reg_death": "m_c died from greencough.",
+                "lead_death": "died to greencough"
+            }
+        ]
+    },
+    {
+        "event_id": "multi_death_massdeath_starvation1",
+        "location": ["any"],
+        "season": ["leaf-bare"],
+        "sub_type": ["mass_death"],
+        "tags": ["classic"],
+        "weight": 10,
+        "event_text": "multi_cat starve when no prey can be found.",
+        "history": [
+            {
+                "cats": ["multi_cat"],
+                "reg_death": "m_c starved.",
+                "lead_death": "starved"
+            }
+        ]
+    },
+    {
+        "event_id": "multi_death_massdeath_tainted1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["mass_death"],
+        "tags": ["classic"],
+        "weight": 10,
+        "event_text": "multi_cat eat tainted fresh-kill and die.",
+        "history": [
+            {
+                "cats": ["multi_cat"],
+                "reg_death": "m_c died from tainted fresh-kill.",
+                "lead_death": "died to tainted fresh-kill"
+            }
+        ]
+    },
+    {
+        "event_id": "multi_death_massdeath_twoleg1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["mass_death"],
+        "tags": ["lost"],
+        "weight": 10,
+        "event_text": "multi_cat are taken away by Twolegs.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "adult",
+                "young adult",
+                "senior adult"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_death_freshkill_anyfox1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c was killed when a fox followed fresh-kill scent into camp. Not even the fresh-kill pile was left untouched.",
+        "m_c": {
+            "status": ["any"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "reg_death": "m_c was killed by a fox that snuck into camp.",
+                "lead_death": "{VERB/m_c/were/was} killed by a fox that snuck into camp"
+            }
+        ],
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": ["excess"],
+                "adjust": "reduce_half"
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_freshkill_anyrat1",
+        "location": ["any"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c found a horde of rats lured by the fresh-kill pile. r_c helped {PRONOUN/m_c/object} fight, but m_c did not survive.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "dies": true
+        },
+        "r_c": {
+            "age": ["young adult", "adult", "senior adult", "senior"]
         },
     "injury": [
         {
@@ -5903,5 +6197,30 @@
             "reg_death": "r_c died after launching a failed assassination attempt on the Clan's leader."
         }
     ]
-  }
+  },
+    {
+        "event_id": "gen_death_war_predatorsaved",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": ["no_body", "all_lives"],
+        "weight": 20,
+        "event_text": "m_c acts without thinking, saving the life of a o_c_n warrior by distracting a predator - which instead turns on m_c.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader", "medicine cat", "medicine cat apprentice", "apprentice"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c was eaten by a predator.",
+                "lead_death": "eaten by a predator"
+            }
+        ],
+        "other_clan": {
+            "changed": 5
+        }
+    }
 ]

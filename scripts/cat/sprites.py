@@ -124,7 +124,7 @@ class Sprites:
 
         del width, height  # unneeded
 
-        for x in [
+        for x in (
             "lineart",
             "lineartdf",
             "lineartdead",
@@ -161,7 +161,7 @@ class Sprites:
             "fadestarclan",
             "fadedarkforest",
             "symbols",
-        ]:
+        ):
             if "lineart" in x and (game.config["fun"]["april_fools"] or is_today(SpecialDate.APRIL_FOOLS)):
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:

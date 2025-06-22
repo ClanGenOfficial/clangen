@@ -25,6 +25,8 @@ def translate(text: str, **kwargs):
     if text == "":
         return ""
     output = i18n.t(text, **kwargs)
+    if game.event_editing:
+        return output
     dict = {}
     for cat in groups:
         if cat in kwargs and cat in output:

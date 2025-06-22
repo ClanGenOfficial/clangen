@@ -9,9 +9,10 @@ import itertools
 import os.path
 import sys
 from random import choice, randint, sample, random, getrandbits, randrange
-from typing import Dict, List, Any, Union, Callable
+from typing import Dict, List, Any, Optional, Union, Callable
 
 import i18n
+import pygame
 import ujson  # type: ignore
 
 from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
@@ -45,11 +46,13 @@ from scripts.utility import (
     event_text_adjust,
     update_sprite,
     leader_ceremony_text_adjust,
+    update_mask,
 )
 from scripts.game_structure.localization import load_lang_resource
 
 import scripts.game_structure.localization as pronouns
 
+import scripts.game_structure.screen_settings
 
 class Cat:
     """The cat class."""
@@ -321,12 +324,13 @@ class Cat:
             )
 
         # Private Sprite
-        self._sprite = None
+        self._sprite: Optional[pygame.Surface] = None
+        self._sprite_mask: Optional[pygame.Mask] = None
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
-        if self.ID not in ["0", None]:
+        if self.ID is not None and self.ID != "0":
             Cat.insert_cat(self)
 
     def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
@@ -431,7 +435,7 @@ class Cat:
                 )
                 self.experience += exp + 3
                 m -= 1
-        elif self.age in [CatAge.YOUNG_ADULT, CatAge.ADULT]:
+        elif self.age in (CatAge.YOUNG_ADULT, CatAge.ADULT):
             self.experience = randint(
                 Cat.experience_levels_range["prepared"][0],
                 Cat.experience_levels_range["proficient"][1],
@@ -538,13 +542,13 @@ class Cat:
 
     def get_genderalign_string(self):
         # translate it if it's default
-        if self.genderalign in [
-            "female",
-            "male",
-            "trans female",
-            "trans male",
-            "nonbinary",
-        ]:
+        if self.genderalign in (
+                "female",
+                "male",
+                "trans female",
+                "trans male",
+                "nonbinary",
+        ):
             return i18n.t(f"general.{self.genderalign}")
         # otherwise, it's custom - just return it directly
         return self.genderalign
@@ -891,9 +895,9 @@ class Cat:
         ids = []
         for child_id in children:
             child = Cat.all_cats[child_id]
-            if (
-                    not child.dead
-                    and child.moons < 12
+            if (not child.dead
+                and not child.status.is_exiled(CatGroup.PLAYER_CLAN)
+                and child.moons < 12
             ):
                 child.status.add_to_group(
                     new_group=game.clan.name,
@@ -1259,7 +1263,7 @@ class Cat:
                     for i in game.clan.starclan_cats
                     if self.fetch_cat(i)
                        and i not in life_givers
-                       and self.fetch_cat(i).status.rank not in [CatRank.LEADER, CatRank.NEWBORN]
+                       and self.fetch_cat(i).status.rank not in (CatRank.LEADER, CatRank.NEWBORN)
                 ]
 
                 if len(possible_sc_cats) - 1 < amount:
@@ -1272,7 +1276,7 @@ class Cat:
                     for i in game.clan.darkforest_cats
                     if self.fetch_cat(i)
                        and i not in life_givers
-                       and self.fetch_cat(i).status.rank not in [CatRank.LEADER, CatRank.NEWBORN]
+                       and self.fetch_cat(i).status.rank not in (CatRank.LEADER, CatRank.NEWBORN)
                 ]
                 if len(possible_df_cats) - 1 < amount:
                     extra_givers = possible_df_cats
@@ -1537,6 +1541,7 @@ class Cat:
         if old_age != self.age:
             # Things to do if the age changes
             self.personality.facet_wobble(facet_max=2)
+            self.pelt.rebuild_sprite = True
 
         # Set personality to correct type
         self.personality.set_kit(self.age.is_baby())
@@ -1589,7 +1594,7 @@ class Cat:
                     other_cat = None
                     break
         # for dead cats
-        elif where_kitty in ["starclan", "hell", "UR"]:
+        elif where_kitty in ("starclan", "hell", "UR"):
             while other_cat == self.ID and len(all_cats) > 1:
                 other_cat = choice(list(all_cats.keys()))
                 i += 1
@@ -2032,7 +2037,7 @@ class Cat:
 
         for condition in PERMANENT:
             possible = PERMANENT[condition]
-            if possible["congenital"] in ["always", "sometimes"]:
+            if possible["congenital"] in ("always", "sometimes"):
                 possible_conditions.append(condition)
 
         new_condition = choice(possible_conditions)
@@ -2175,6 +2180,14 @@ class Cat:
         """Returns true if the cat have permanent condition"""
         return len(self.permanent_condition) > 0
 
+    def available_to_work(self):
+        return (
+                not self.dead
+                and not self.outside
+                and not self.exiled
+                and not self.not_working()
+        )
+
     def contact_with_ill_cat(self, cat: Cat):
         """handles if one cat had contact with an ill cat"""
 
@@ -2296,9 +2309,8 @@ class Cat:
             return False
 
         # Match jobs
-        if (
-                self.status.rank == CatRank.MEDICINE_APPRENTICE
-                and potential_mentor.status.rank != CatRank.MEDICINE_CAT
+        if (self.status.rank == CatRank.MEDICINE_APPRENTICE
+            and potential_mentor.status.rank != CatRank.MEDICINE_CAT
         ):
             return False
         if self.status.rank == CatRank.APPRENTICE and potential_mentor.status.rank not in [
@@ -2307,9 +2319,8 @@ class Cat:
             CatRank.WARRIOR
         ]:
             return False
-        if (
-                self.status.rank == CatRank.MEDIATOR_APPRENTICE
-                and potential_mentor.status.rank != CatRank.MEDIATOR
+        if (self.status.rank == CatRank.MEDIATOR_APPRENTICE
+            and potential_mentor.status.rank != CatRank.MEDIATOR
         ):
             return False
 
@@ -2660,15 +2671,15 @@ class Cat:
                         and the_cat.parent1 is not None
                         and the_cat.parent2 is not None
                 ):
-                    are_parents = the_cat.ID in [self.parent1, self.parent2]
-                    parents = are_parents or self.ID in [
+                    are_parents = the_cat.ID in (self.parent1, self.parent2)
+                    parents = are_parents or self.ID in (
                         the_cat.parent1,
                         the_cat.parent2,
-                    ]
-                    siblings = self.parent1 in [
+                    )
+                    siblings = self.parent1 in (
                         the_cat.parent1,
                         the_cat.parent2,
-                    ] or self.parent2 in [the_cat.parent1, the_cat.parent2]
+                    ) or self.parent2 in (the_cat.parent1, the_cat.parent2)
 
                 related = parents or siblings
 
@@ -2835,7 +2846,7 @@ class Cat:
             chance -= 5
 
         # Cat's compatibility with mediator also has an effect on success chance.
-        for cat in [cat1, cat2]:
+        for cat in (cat1, cat2):
             if get_personality_compatibility(cat, mediator) is True:
                 chance += 5
             elif get_personality_compatibility(cat, mediator) is False:
@@ -3332,12 +3343,29 @@ class Cat:
     @property
     def sprite(self):
         # Update the sprite
-        update_sprite(self)
+        if self.pelt.rebuild_sprite:
+            self.pelt.rebuild_sprite = False
+            update_sprite(self)
+            update_mask(self)
         return self._sprite
 
     @sprite.setter
     def sprite(self, new_sprite):
         self._sprite = new_sprite
+
+    @property
+    def sprite_mask(self):
+        if (
+            scripts.game_structure.screen_settings.screen_scale
+            != self.pelt.screen_scale
+        ):
+            self.pelt.screen_scale = scripts.game_structure.screen_settings.screen_scale
+            update_mask(self)
+        return self._sprite_mask
+
+    @sprite_mask.setter
+    def sprite_mask(self, val):
+        self._sprite_mask = val
 
     # ---------------------------------------------------------------------------- #
     #                                  other                                       #
@@ -3569,6 +3597,36 @@ def create_example_cats():
                 [CatRank.KITTEN, CatRank.APPRENTICE, CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]
             )
             game.choose_cats[cat_index] = create_cat(rank=random_rank)
+
+def create_option_preview_cat(scar: str = None, acc: str = None):
+    """
+    Creates a cat with the specified scar
+    """
+    new_cat = Cat(
+        loading_cat=True,
+        pelt=Pelt(
+            name="SingleColour",
+            colour="WHITE",
+            length="medium",
+            eye_color="SAGE",
+            reverse=False,
+            white_patches=None,
+            vitiligo=None,
+            points=None,
+            pattern=None,
+            tortiebase=None,
+            tortiepattern=None,
+            tortiecolour=None,
+            tint="gray",
+            skin="BLUE",
+            scars=[scar] if scar else [],
+            adult_sprite=8,
+            accessory=[acc] if acc else []
+        )
+    )
+    new_cat.age = CatAge.ADULT
+
+    return new_cat
 
 
 # CAT CLASS ITEMS

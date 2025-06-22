@@ -6,6 +6,8 @@ class Icon(StrEnum):
     MUTE = "\U0001F507"
 
     DICE = "\u2684"
+    LOCK = "\u26AD"
+    UNLOCK = "\u26AE"
 
     CAT_HEAD = "\U0001F431"
 
@@ -31,6 +33,14 @@ class Icon(StrEnum):
     ARROW_UP = "\u2191"
     ARROW_RIGHT = "\u2192"
     ARROW_DOWN = "\u2193"
+
+    UP_LOW = "\u21C8"
+    UP_MID = "\u290A"
+    UP_HIGH = "\u27F0"
+
+    DOWN_LOW = "\u21C9"
+    DOWN_MID = "\u290B"
+    DOWN_HIGH = "\u27F1"
 
     MAGNIFY = "\U0001F50D"
     NOTEPAD = "\U0001F5C9"
