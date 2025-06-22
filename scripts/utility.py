@@ -2584,6 +2584,28 @@ def update_sprite(cat):
     # update class dictionary
     cat.all_cats[cat.ID] = cat
 
+def update_mask(cat):
+    val = pygame.mask.from_surface(
+        pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))), threshold=250
+    )
+
+    inflated_mask = pygame.Mask(
+        (
+            val.get_size()[0] + 10,
+            val.get_size()[1] + 10,
+        )
+    )
+    inflated_mask.draw(val, (5, 5))
+    for _ in range(3):
+        outline = inflated_mask.outline()
+        for point in outline:
+            for dx in range(-1, 2):
+                for dy in range(-1, 2):
+                    try:
+                        inflated_mask.set_at((point[0] + dx, point[1] + dy), 1)
+                    except IndexError:
+                        continue
+    cat.sprite_mask = inflated_mask
 
 def clan_symbol_sprite(clan, return_string=False, force_light=False):
     """
