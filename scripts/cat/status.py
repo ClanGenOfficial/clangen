@@ -340,7 +340,7 @@ class Status:
         they didn't have a group
         """
         if standing_with_past_group:
-            self.add_standing(standing_with_past_group)
+            self.change_standing(standing_with_past_group)
 
         self.group_history.append(
             {
@@ -351,15 +351,17 @@ class Status:
         )
 
         # add member standing for new group
-        self.add_standing(CatStanding.MEMBER)
+        self.change_standing(CatStanding.MEMBER)
 
-    def add_standing(self, new_standing: CatStanding):
+    def change_standing(self, new_standing: CatStanding, group: CatGroup = None):
         """
-        Adds given standing to cat's current group
+        Update the given group with the given standing. If not group is given, the new standing will be added to the
+        cat's current group.
         """
-        # TODO might be better to make this add the standing to a GIVEN group, instead of assuming current group
+        if not group:
+            group = self.group
         for record in self.standing_history:
-            if record["group"] == self.group:
+            if record["group"] == group:
                 record["standing"].append(new_standing)
 
     def lost_from_group(
