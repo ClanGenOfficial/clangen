@@ -481,10 +481,7 @@ def create_new_cat_block(
         cat_social = CatSocial.LONER
     elif "clancat" in attribute_list:
         cat_social = CatSocial.CLANCAT
-        # TODO: we need a way to pull all possible other clan CatGroups, probably best to link it to game.clan
-        cat_group = choice((
-            CatGroup.OTHER_CLAN1,
-        ))
+        cat_group = choice(game.clan.other_clans)
     else:
         cat_social = choice([CatSocial.KITTYPET, CatSocial.LONER, "former Clancat"])
 
@@ -775,11 +772,7 @@ def create_new_cat(
             BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
             or BACKSTORIES["backstory_categories"]["otherclan_categories"]
     ) and not original_group:
-        original_group = choice((CatGroup.OTHER_CLAN1,
-                                 CatGroup.OTHER_CLAN2,
-                                 CatGroup.OTHER_CLAN3,
-                                 CatGroup.OTHER_CLAN4,
-                                 CatGroup.OTHER_CLAN5))
+        original_group = choice(game.clan.other_clans)
 
     created_cats = []
 
