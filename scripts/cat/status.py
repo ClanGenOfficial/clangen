@@ -186,9 +186,16 @@ class Status:
     def change_current_moons_as(self, new_moons_as: int):
         """
         Used to adjust the cat's "moons_as" their current rank. This is meant mostly for use in adjusting a newly
-        created cat's value to give the illusion that they have existed in the world for longer.
+        created cat's value to give the illusion that they have existed in the world for longer. If you want to
+        increment their current moons_as by 1, use increase_current_moons_as()
         """
         self.group_history[-1].update({"moons_as": new_moons_as})
+
+    def increase_current_moons_as(self):
+        """
+        Use to increment their current group/rank moons_as by 1
+        """
+        self.group_history[-1]["moons_as"] += 1
 
     def _start_standing(self):
         """
@@ -539,6 +546,7 @@ class Status:
             for entry in self.standing_history:
                 if CatStanding.EXILED in entry["standing"]:
                     return True
+            return False
 
         # if group given
         standing = self.get_standing_with_group(group)
