@@ -566,14 +566,6 @@ class Status:
 
         return False
 
-    def is_dead(self) -> bool:
-        """
-        Returns True if the cat is currently dead
-        """
-        return True if self.group in [CatGroup.DARK_FOREST,
-                                      CatGroup.UNKNOWN_RESIDENCE,
-                                      CatGroup.STAR_CLAN] else False
-
     def is_exiled(self, group: CatGroup = None) -> bool:
         """
         Returns True if the cat is currently exiled from the given group. Giving no group will return True if cat is
