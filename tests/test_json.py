@@ -19,7 +19,7 @@ def test():
     """Iterate through all files in 'resources'
     and verify all json files are valid"""
     failed = False
-    for (root, _, files) in os.walk("./resources"):
+    for root, _, files in os.walk("./resources"):
         for file in files:
             if file.endswith(".json"):
                 path = os.path.join(root, file)

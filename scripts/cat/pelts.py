@@ -396,7 +396,7 @@ class Pelt:
     acc_categories = {
         "PLANT": plant_accessories,
         "WILD": wild_accessories,
-        "COLLAR": collars
+        "COLLAR": collars,
     }
 
     tail_accessories = [
@@ -887,7 +887,6 @@ class Pelt:
         elif isinstance(self.accessory, str):
             self.accessory = [self.accessory]
 
-
     def init_eyes(self, parents):
         """Sets eye color for this cat's pelt. Takes parents' eye colors into account.
         Heterochromia is possible based on the white-ness of the pelt, so the pelt color and white_patches must be
@@ -1274,9 +1273,7 @@ class Pelt:
 
         if acc_display_choice == 1:
             self.accessory = [
-                choice(
-                    [choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)]
-                )
+                choice([choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)])
             ]
         else:
             self.accessory = []

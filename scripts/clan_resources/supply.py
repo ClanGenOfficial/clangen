@@ -7,4 +7,3 @@ class Supply(StrEnum):
     ADEQUATE = "adequate"
     FULL = "full"
     EXCESS = "excess"
-

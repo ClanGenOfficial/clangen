@@ -738,3 +738,4 @@ class ListScreen(Screens):
         for the_cat in Cat.all_cats_list:
             if the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE and not the_cat.faded:
                 self.full_cat_list.append(the_cat)
+

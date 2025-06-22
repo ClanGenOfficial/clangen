@@ -944,12 +944,22 @@ class Screens:
                 _settings = ujson.loads(read_file.read())
                 return "dark" if _settings["dark mode"] else "light"
 
+    # pragma pylint: disable=no-member
+    # noinspection PyUnresolvedReferences
     def update_previous_next_cat_buttons(self):
         """Updates disabled status of previous and next cat buttons. Does nothing if the screen does not have both previous and next cat buttons."""
-        if not hasattr(self, "previous_cat_button") or not hasattr(self, "next_cat_button"):
+        if not hasattr(self, "previous_cat_button") or not hasattr(
+            self, "next_cat_button"
+        ):
             return
-        self.previous_cat_button.enable() if hasattr(self, "previous_cat") and self.previous_cat else self.previous_cat_button.disable() # pylint: disable=no-member
-        self.next_cat_button.enable() if hasattr(self, "next_cat") and self.next_cat else self.next_cat_button.disable() # pylint: disable=no-member
+        self.previous_cat_button.enable() if hasattr(
+            self, "previous_cat"
+        ) and self.previous_cat else self.previous_cat_button.disable()
+        self.next_cat_button.enable() if hasattr(
+            self, "next_cat"
+        ) and self.next_cat else self.next_cat_button.disable()
+
+    # pragma pylint: enable=no-member
 
 
 # CAT PROFILES

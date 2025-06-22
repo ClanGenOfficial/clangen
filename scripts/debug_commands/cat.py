@@ -78,7 +78,7 @@ class CatsCommand(Command):
         AddCatCommand(),
         RemoveCatCommand(),
         ListCatsCommand(),
-        AgeCatsCommand()
+        AgeCatsCommand(),
     ]
 
     def callback(self, args: List[str]):

@@ -613,7 +613,9 @@ class Events:
                 working=True
             )
 
-            focus_text = game.clan.herb_supply.handle_focus(healthy_meds, healthy_warriors)
+            focus_text = game.clan.herb_supply.handle_focus(
+                healthy_meds, healthy_warriors
+            )
 
         elif game.clan.clan_settings.get("threaten outsiders"):
             amount = game.config["focus"]["outsiders"]["reputation"]
@@ -728,16 +730,15 @@ class Events:
             for condition_type, value in involved_cats.items():
                 game.cur_events_list.append(
                     Single_Event(
-                        i18n.t(text_snippet, condition=condition_type, count=len(value)),
+                        i18n.t(
+                            text_snippet, condition=condition_type, count=len(value)
+                        ),
                         "health",
                         value,
                     )
                 )
 
-            focus_text = i18n.t(
-                "hardcoded.focus_prey",
-                count=warrior_amount
-            )
+            focus_text = i18n.t("hardcoded.focus_prey", count=warrior_amount)
 
             if herb_focus_text:
                 focus_text += f" {herb_focus_text}"
