@@ -3,7 +3,15 @@
         "id": "gen",
         "thoughts": [
             "Is feeling quite lazy"
-            
+        ]
+    },
+    {
+        "id": "forest",
+        "thoughts": [
+            "forest constraint test"
+        ],
+        "biome": [
+            "forest"
         ]
     }
 ]
