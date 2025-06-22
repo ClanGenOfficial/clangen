@@ -35,7 +35,7 @@ from scripts.events_module.patrol.patrol import Patrol
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     get_living_clan_cat_count,
     get_random_moon_cat,
     ceremony_text_adjust,
@@ -255,9 +255,9 @@ class Events:
         game.clan.herb_supply.handle_moon(
             clan_size=get_living_clan_cat_count(Cat),
             clan_cats=Cat.all_cats_list,
-            med_cats=get_alive_status_cats(
+            med_cats=find_alive_cats_with_rank(
                 Cat,
-                get_status=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
+                ranks=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
                 working=True
             )
         )
@@ -601,15 +601,15 @@ class Events:
 
         elif game.clan.clan_settings.get("herb gathering"):
             # get medicine cats
-            healthy_meds = get_alive_status_cats(
+            healthy_meds = find_alive_cats_with_rank(
                 Cat,
-                get_status=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
+                ranks=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
                 working=True
             )
             # get warriors to help
-            healthy_warriors = get_alive_status_cats(
+            healthy_warriors = find_alive_cats_with_rank(
                 Cat,
-                get_status=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
+                ranks=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
                 working=True
             )
 
@@ -2098,7 +2098,7 @@ class Events:
         if already_sick_count >= alive_count * 0.25:
             return
 
-        meds = get_alive_status_cats(
+        meds = find_alive_cats_with_rank(
             Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], working=True, sort=True
         )
 

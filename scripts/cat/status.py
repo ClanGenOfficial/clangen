@@ -17,12 +17,14 @@ class Status:
             standing_history: list = None,
             social: CatSocial = None,
             group: CatGroup = None,
-            rank: CatRank = None
+            rank: CatRank = None,
+            age: CatAge = None
     ):
         """
         Saved cats should only be passing their saved group_history and standing into this class.
         Cats that are being newly generated will default to the player clan and a rank appropriate for age.  If you'd
-        like to have more control, use the social, group, and rank params.
+        like to have more control, use the social, group, and rank params. If you don't know the rank, include age, or
+        vice versa
         """
 
         self.group_history = group_history if group_history else []
@@ -35,15 +37,16 @@ class Status:
         group."""
 
         # if no group_history was given, we'll see if any other info was given that we can build it with
-        if not self.group_history and (social or group or rank):
+        if not self.group_history and (rank or age):
             self.generate_new_status(
                 social=social,
                 group=group,
-                rank=rank
+                rank=rank,
+                age=age
             )
 
         # really we should never be missing a standing_history at this point, but just in case
-        if not self.standing_history:
+        if self.group_history and not self.standing_history:
             self._start_standing()
 
     def get_status_dict(self) -> dict:
@@ -65,7 +68,7 @@ class Status:
             rank: CatRank = None,
     ):
         """
-        Starts a group history and standing history for a newly generated cat
+        Starts a group history and standing history for a newly generated cat. You MUST include either age or rank.
         :param age: The age the cat currently is.
         :param social: The social group the cat will be (rogue, clancat, loner, kittypet)
         :param group: The group the cat will be part of, default is None. If social is set to clancat and group is None,
@@ -142,6 +145,13 @@ class Status:
             new_history["rank"] = choice(possible_ranks)
 
         self.group_history = [new_history]
+
+    def change_current_moons_as(self, new_moons_as: int):
+        """
+        Used to adjust the cat's "moons_as" their current rank. This is meant mostly for use in adjusting a newly
+        created cat's value to give the illusion that they have existed in the world for longer.
+        """
+        self.group_history[-1].update("moons_as", new_moons_as)
 
     def _start_standing(self):
         """
@@ -517,17 +527,19 @@ class StatusDict(TypedDict, total=False):
 
     "group_history": list[dict],
     "standing_history": list[dict],
-    "social": CatSocialEnum,
-    "group": str
-    "rank": CatRankEnum
+    "social": CatSocial,
+    "group": CatGroup
+    "rank": CatRank
+    "age": CatAge
 
-    Dict does not need to contain all keys.
+    Dict does not need to contain all keys. However, if you have no group history, then you must include a rank or age
     """
-    group_history: list[dict]
-    standing_history: list[dict]
-    social: CatSocial
-    group: CatGroup
-    rank: CatRank
+    group_history: list[dict] | None
+    standing_history: list[dict] | None
+    social: CatSocial | None
+    group: CatGroup | None
+    rank: CatRank | None
+    age: CatAge | None
 
 
 with open(

@@ -28,7 +28,7 @@ from scripts.utility import (
     change_clan_reputation,
     create_new_cat_block,
     get_leader_life_notice,
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     adjust_list_text,
 )
 
@@ -224,7 +224,7 @@ class HandleShortEvents:
         # used in some murder events,
         # this kind of sucks tho it would be nice to change how this sort of thing is handled
         if "kit_manipulated" in self.chosen_event.tags:
-            kit = Cat.fetch_cat(random.choice(get_alive_status_cats(Cat, [CatRank.KITTEN])))
+            kit = Cat.fetch_cat(random.choice(find_alive_cats_with_rank(Cat, [CatRank.KITTEN])))
             self.involved_cats.append(kit.ID)
             change_relationship_values(
                 [self.random_cat],

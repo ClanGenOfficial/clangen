@@ -5,7 +5,7 @@ from scripts.cat.enums import CatRank
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure.game_essentials import game
-from scripts.utility import get_alive_status_cats
+from scripts.utility import find_alive_cats_with_rank
 
 
 # ---------------------------------------------------------------------------- #
@@ -163,7 +163,7 @@ class DisasterEvents():
 
         leader = Cat.fetch_cat(game.clan.leader)
         deputy = Cat.fetch_cat(game.clan.deputy)
-        med_cats = get_alive_status_cats(Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True)
+        med_cats = find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True)
 
         # checking if there are cats of the specified rank
         if not leader.dead and not leader.outside:

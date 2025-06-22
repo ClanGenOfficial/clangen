@@ -40,7 +40,7 @@ from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
     clamp,
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     get_personality_compatibility,
     event_text_adjust,
     update_sprite,
@@ -994,6 +994,16 @@ class Cat:
             History.add_mentor_skill_influence_strings(self)
             History.add_mentor_facet_influence_strings(self)
         return
+
+    def change_name(self, new_prefix=None, new_suffix=None):
+
+        self.name = Name(
+            prefix=new_prefix,
+            suffix=new_suffix,
+            biome=game.clan.biome,
+            specsuffix_hidden=self.specsuffix_hidden,
+            cat=self,
+        )
 
     def manage_outside_trait(self):
         """To be run every moon on outside cats
@@ -1977,7 +1987,7 @@ class Cat:
             avoided = False
             if (
                     "blood loss" in new_injury.also_got
-                    and len(get_alive_status_cats(Cat, [CatRank.MEDICINE_CAT], working=True)) != 0
+                    and len(find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)) != 0
             ):
                 clan_herbs = set(game.clan.herb_supply.entire_supply.keys())
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}

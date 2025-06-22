@@ -108,10 +108,13 @@ class CatGroup(StrEnum):
                         self.STAR_CLAN,
                         self.UNKNOWN_RESIDENCE)
 
-    def is_clan_group(self) -> bool:
+    def is_any_clan_group(self) -> bool:
         return self in (self.PLAYER_CLAN,
                         self.OTHER_CLAN1,
                         self.OTHER_CLAN2,
                         self.OTHER_CLAN3,
                         self.OTHER_CLAN4,
                         self.OTHER_CLAN5)
+
+    def is_other_clan_group(self) -> bool:
+        return True if self.is_any_clan_group() and not self.PLAYER_CLAN else False

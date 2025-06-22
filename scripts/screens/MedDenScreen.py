@@ -16,7 +16,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     shorten_text_to_fit,
     event_text_adjust,
     ui_scale_offset,
@@ -432,7 +432,7 @@ class MedDenScreen(Screens):
             self.med_name.kill()
 
         # get the med cats
-        self.meds = get_alive_status_cats(
+        self.meds = find_alive_cats_with_rank(
             Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
         )
 

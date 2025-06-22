@@ -14,7 +14,7 @@ from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.utility import (
     ui_scale,
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     get_text_box_theme,
     adjust_list_text,
 )
@@ -101,7 +101,7 @@ class WarriorDenScreen(Screens):
                             "medicine cat" in description
                             and self.save_button.is_enabled
                         ):
-                            meds = get_alive_status_cats(
+                            meds = find_alive_cats_with_rank(
                                 Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE]
                             )
                             if len(meds) < 1:
