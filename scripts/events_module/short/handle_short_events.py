@@ -3,6 +3,7 @@ from typing import List
 
 import i18n
 
+from scripts.clan_resources.herb.herb import HERBS
 from scripts.game_structure import localization
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank

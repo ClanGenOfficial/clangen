@@ -470,6 +470,7 @@ class Cat:
     def dead(self, die: bool):
         if die and (not self.status.group or self.status.group.is_afterlife()):
             self.status.send_to_afterlife()
+
     @property
     def dead_for(self) -> int:
         count = 0
@@ -625,7 +626,8 @@ class Cat:
         if game.clan and self.status.in_player_clan():
             self.grief(body)
 
-        self.status.send_to_afterlife()
+        if isoutside and self.status.is_exiled():
+            self.status.add_to_group(CatGroup.UNKNOWN_RESIDENCE)
 
         if self.status.is_outsider() and not self.status.is_former_clancat():
             game.clan.add_to_unknown(self)
