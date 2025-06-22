@@ -185,9 +185,6 @@ class Cat:
         self._pronouns: Dict[str, List[Dict[str, Union[str, int]]]] = {}
         self.placement = None
         self.example = example
-        self.dead = False
-        # TODO: might be able to yeet this, or turn into property that finds moons spent in afterlifes
-        self.dead_for = 0  # moons
         self.thought = ""
         self.genderalign = None
         self.birth_cooldown = 0
