@@ -582,6 +582,11 @@ def create_new_cat_block(
                 chosen_cat.add_to_clan()
                 if chosen_cat.status.rank != rank:
                     chosen_cat.status.change_rank(rank)
+            elif outside:
+                # updates so that the clan is marked as knowing of this cat
+                current_standing = chosen_cat.status.get_standing_with_group(CatGroup.PLAYER_CLAN)
+                if CatStanding.KNOWN not in current_standing and CatStanding.EXILED not in current_standing:
+                    chosen_cat.status.change_standing(CatStanding.KNOWN)
 
             if new_name:
                 name = f"{chosen_cat.name.prefix}"
