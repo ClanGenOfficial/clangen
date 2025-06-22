@@ -466,8 +466,8 @@ class Cat:
         return False
 
     @dead.setter
-    def dead(self, dead: bool):
-        if dead and not self.status.group.is_afterlife():
+    def dead(self, die: bool):
+        if die and (not self.status.group or self.status.group.is_afterlife()):
             self.status.send_to_afterlife()
     @property
     def dead_for(self) -> int:

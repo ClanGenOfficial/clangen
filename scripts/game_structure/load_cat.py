@@ -238,7 +238,6 @@ def json_load():
                 else:
                     new_cat.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
 
-            new_cat.dead = cat["dead"]
             new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
             new_cat.apprentice = cat["current_apprentice"]

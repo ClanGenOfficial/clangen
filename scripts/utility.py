@@ -832,6 +832,7 @@ def create_new_cat(
             moons=moons,
             status_dict={"social": original_social,
                          "age": age,
+                         "rank": rank,
                          "group": original_group},
             gender=_gender,
             backstory=backstory,
@@ -854,7 +855,7 @@ def create_new_cat(
 
         # NAMES and accs
         # past clancats and any little babies will take a clancat name, we love indoctrination
-        if not original_group.is_other_clan_group() and not kit and not litter and not moons < 12:
+        if not original_group or not original_group.is_other_clan_group() and not kit and not litter and not moons < 12:
 
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:

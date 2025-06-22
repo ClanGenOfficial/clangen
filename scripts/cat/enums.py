@@ -82,6 +82,7 @@ class CatRank(StrEnum):
     def is_any_clancat_rank(self) -> bool:
         return self not in (self.ROGUE, self.LONER, self.KITTYPET)
 
+
 class CatStanding(StrEnum):
     MEMBER = "member"
     LEFT = "left"

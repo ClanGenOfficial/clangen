@@ -377,15 +377,15 @@ class FreshkillPile:
         # first feed the cats with the lowest nutrition
         for cat_id, v in sorted_nutrition.items():
             cat = Cat.all_cats[cat_id]
-            status = str(cat.status.rank)
+            rank = cat.status.rank
             # check if this is a kit: if so, check if they are fed by the mother
-            if status.rank.is_baby() and cat in fed_kits:
+            if rank.is_baby() and cat in fed_kits:
                 continue
 
             # check for queens / pregnant
             if cat.ID in queen_dict.keys() or cat in pregnant_cats:
-                status = "queen/pregnant"
-            feeding_amount = PREY_REQUIREMENT[status]
+                rank = "queen/pregnant"
+            feeding_amount = PREY_REQUIREMENT[rank]
             needed_amount = feeding_amount
 
             # check for condition
@@ -394,7 +394,7 @@ class FreshkillPile:
                     feeding_amount += CONDITION_INCREASE
                 needed_amount = feeding_amount
             else:
-                if ration_prey and status == CatRank.WARRIOR:
+                if ration_prey and rank == CatRank.WARRIOR:
                     feeding_amount = feeding_amount / 2
 
             if (

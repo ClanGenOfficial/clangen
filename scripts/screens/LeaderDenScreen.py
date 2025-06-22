@@ -930,9 +930,9 @@ class LeaderDenScreen(Screens):
             and not self.focus_cat.status.is_exiled(CatGroup.PLAYER_CLAN)
             and not self.focus_cat.status.is_lost(CatGroup.PLAYER_CLAN)
         ):
-            self.focus_button["invite"].set_text("screens.leader_den.search")
-        else:
             self.focus_button["invite"].set_text("screens.leader_den.invite")
+        else:
+            self.focus_button["invite"].set_text("screens.leader_den.search")
 
         self.focus_button["invite"].show()
 
