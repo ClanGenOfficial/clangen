@@ -36,8 +36,33 @@ class Status:
         standings with the group. Near is a bool with True indicating the cat is within interact-able distance of that 
         group."""
 
+        # converting all the save info into enums
+        for entry in self.group_history:
+            for enum in CatGroup:
+                if enum == entry["group"]:
+                    entry["group"] = enum
+                    break
+            for enum in CatRank:
+                if enum == entry["rank"]:
+                    entry["rank"] = enum
+                    break
+
+        for entry in self.standing_history:
+            for enum in CatGroup:
+                if enum == entry["group"]:
+                    entry["group"] = enum
+                    break
+            standing_copy = entry["standing"].copy()
+            entry["standing"].clear()
+            for _s in standing_copy:
+                for enum in CatStanding:
+                    if enum == _s:
+                        entry["standing"].append(enum)
+                        break
+
         # just some extra checks in case a str snuck in
-        group, rank, social = self.check_enums(group, rank, social, age)
+        if group or rank or social or age:
+            group, rank, social = self.get_enums(group, rank, social, age)
 
         # if no group_history was given, we'll see if any other info was given that we can build it with
         if not self.group_history and (rank or age):
@@ -57,10 +82,9 @@ class Status:
         if self.group_history and not self.standing_history:
             self._start_standing()
 
-    def check_enums(self, group, rank, social, age):
+    def get_enums(self, group, rank, social=None, age=None):
         """
-        this is mostly to catch the old status strings like exiled and lost, but it also helps with loading cat info
-        into the correct enums
+        this is mostly to catch the old status strings like exiled and lost
         """
         if rank and not isinstance(rank, CatRank):
             if rank in ("exiled", "lost", "former clancat"):
@@ -80,6 +104,7 @@ class Status:
             for enum in CatGroup:
                 if enum == group:
                     group = enum
+
         return group, rank, social
 
     def get_status_dict(self) -> dict:
@@ -109,7 +134,7 @@ class Status:
         :param rank: The rank the cat holds within a group. If they have no group, then this matches their social.
         """
         # just some extra checks in case a str snuck in
-        group, rank, social = self.check_enums(group, rank, social, age)
+        group, rank, social = self.get_enums(group, rank, social, age)
 
         self._start_group_history(
             age,
@@ -232,7 +257,13 @@ class Status:
         Returns a list of all social classes the cat has been part of or is currently part of.
         """
         social_history_dupes = [SOCIAL_LOOKUP[record["rank"]] for record in self.group_history]
-        return [k for k, g in groupby(social_history_dupes)]
+        social_groups = [k for k, g in groupby(social_history_dupes)]
+        final_list = []
+        for social in social_groups:
+            for enum in CatSocial:
+                if enum == social:
+                    final_list.append(enum)
+        return final_list
 
     @property
     def group(self) -> CatGroup:
@@ -400,7 +431,7 @@ class Status:
         standing_list = []
         for entry in self.standing_history:
             if entry["group"] == group:
-                standing_list = entry
+                standing_list = entry["standing"]
                 break
 
         return standing_list
