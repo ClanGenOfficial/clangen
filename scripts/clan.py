@@ -30,7 +30,9 @@ from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import (
     get_current_season,
     quit,
-    clan_symbol_sprite, get_living_clan_cat_count,
+    clan_symbol_sprite,
+    get_living_clan_cat_count,
+    logger
 )  # pylint: disable=redefined-builtin
 
 
@@ -813,6 +815,20 @@ class Clan:
             else "Newleaf"
         )
         get_current_season()
+
+        for cat in Cat.all_cats.values():
+            try:
+                # initialization of thoughts
+                cat.thoughts()
+            except Exception as e:
+                logger.exception(
+                    f"There was an error when thoughts for cat #{cat} are created."
+                )
+                game.switches[
+                    "error_message"
+                ] = f"There was an error when thoughts for cat #{cat} are created."
+                game.switches["traceback"] = e
+                raise
 
         game.clan.leader_lives = leader_lives
         game.clan.leader_predecessors = clan_data["leader_predecessors"]
