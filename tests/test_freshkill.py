@@ -405,7 +405,7 @@ class FreshkillPileTest(unittest.TestCase):
         healthy_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
 
         freshkill_pile = FreshkillPile()
-        # be able to feed one queen and some of the warrior
+        # be able to feed one queen and some warriors
         current_amount = self.prey_requirement["warrior"] * 2
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount

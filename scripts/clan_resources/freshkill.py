@@ -279,13 +279,13 @@ class FreshkillPile:
         ]
 
         for feeding_status in FEEDING_ORDER:
-            if feeding_status == "newborn":
+            if feeding_status == CatRank.NEWBORN:
                 relevant_group = [
                     cat
                     for cat in living_cats
                     if cat.status.rank == CatRank.NEWBORN and cat not in fed_kits
                 ]
-            elif feeding_status == "kitten":
+            elif feeding_status == CatRank.KITTEN:
                 relevant_group = [
                     cat
                     for cat in living_cats
@@ -310,7 +310,7 @@ class FreshkillPile:
             sorted_group = sorted(relevant_group, key=lambda x: x.moons)
             if feeding_status == "queen/pregnant":
                 self.feed_group(sorted_group, additional_food_round, True)
-            elif feeding_status in ["newborn", "kitten"]:
+            elif feeding_status in [CatRank.NEWBORN, CatRank.KITTEN]:
                 self.feed_group(sorted_group, additional_food_round, False, fed_kits)
             else:
                 self.feed_group(sorted_group, additional_food_round)
