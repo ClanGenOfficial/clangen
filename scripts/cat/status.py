@@ -107,6 +107,8 @@ class Status:
                     rank = enum
                     break
         if social and not isinstance(social, CatSocial):
+            if social.casefold() == "former clancat":
+                social = CatSocial.CLANCAT
             for enum in CatSocial:
                 if enum == social:
                     social = enum
