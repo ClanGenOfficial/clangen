@@ -322,7 +322,7 @@ class Status:
             rank = choice(
                 [CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE, CatRank.MEDICINE_APPRENTICE])
         elif age in [CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT]:
-            rank = choice([CatRank.WARRIOR)
+            rank = CatRank.WARRIOR
         else:
             rank = CatRank.ELDER
 
