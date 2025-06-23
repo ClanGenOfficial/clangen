@@ -14,6 +14,7 @@ from typing import TYPE_CHECKING
 import i18n
 import pygame
 import pygame_gui
+import ujson
 from pygame_gui.elements import UIWindow
 from pygame_gui.windows import UIMessageWindow
 
@@ -33,7 +34,7 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
     UIModifiedScrollingContainer,
-    UIDropDownContainer,
+    UIDropDownContainer, UIDropDown,
 )
 from scripts.housekeeping.datadir import (
     get_save_dir,
