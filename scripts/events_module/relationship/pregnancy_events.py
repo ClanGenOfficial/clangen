@@ -58,9 +58,7 @@ class Pregnancy_Events:
     def biggest_family_is_big():
         """Returns if the current biggest family is big enough to 'activates' additional inbreeding counters."""
 
-        living_cats = len(
-            [i for i in Cat.all_cats.values() if i.status.in_player_clan]
-        )
+        living_cats = len([i for i in Cat.all_cats.values() if i.status.in_player_clan])
         return len(Pregnancy_Events.biggest_family) > (living_cats / 10)
 
     @staticmethod
@@ -397,9 +395,7 @@ class Pregnancy_Events:
         if cat.status.is_outsider():
             for kit in kits:
                 kit.status.generate_new_status(
-                    age=kit.age,
-                    social=cat.status.social,
-                    group=cat.status.group
+                    age=kit.age, social=cat.status.social, group=cat.status.group
                 )
                 game.clan.add_to_outside(kit)
                 kit.backstory = "outsider1"
@@ -411,7 +407,9 @@ class Pregnancy_Events:
                 if other_cat and not other_cat.status.is_outsider():
                     kit.backstory = "outsider2"
 
-                if cat.status.is_outsider() and not cat.status.is_exiled(CatGroup.PLAYER_CLAN):
+                if cat.status.is_outsider() and not cat.status.is_exiled(
+                    CatGroup.PLAYER_CLAN
+                ):
                     kit.backstory = "outsider3"
                 kit.relationships = {}
                 kit.create_one_relationship(cat)
@@ -438,7 +436,11 @@ class Pregnancy_Events:
             involved_cats.append(other_cat.ID)
             cat_dict["r_c"] = other_cat
             event_list.append(choice(events["birth"]["two_parents"]))
-        elif other_cat.ID in cat.mate and other_cat.dead or other_cat.status.is_outsider():
+        elif (
+            other_cat.ID in cat.mate
+            and other_cat.dead
+            or other_cat.status.is_outsider()
+        ):
             involved_cats.append(other_cat.ID)
             cat_dict["r_c"] = other_cat
             # TODO: this seems odd, outsider mates are also treated as dead?
@@ -501,7 +503,9 @@ class Pregnancy_Events:
                     "conditions.pregnancy.kitting_death", name=cat.name
                 )
             History.add_death(cat, death_text=death_event)
-        elif not cat.status.is_outsider():  # if cat doesn't die, give recovering from birth
+        elif (
+            not cat.status.is_outsider()
+        ):  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if "blood loss" in cat.injuries:
                 if cat.status.rank == CatRank.LEADER:
@@ -823,25 +827,17 @@ class Pregnancy_Events:
                     )[0]
                     blood_parent.thought = thought
 
-                kit = Cat(
-                    parent1=blood_parent.ID,
-                    moons=0,
-                    backstory=backstory
-                )
+                kit = Cat(parent1=blood_parent.ID, moons=0, backstory=backstory)
 
             elif cat and other_cat:
                 # Two parents provided
                 # The cat that gave birth is always parent1 so there is no need to check gender
-                kit = Cat(
-                    parent1=cat.ID, parent2=other_cat.ID, moons=0
-                )
+                kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
                 kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
                 kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
             else:
                 # A one blood parent litter is the only option left.
-                kit = Cat(
-                    parent1=cat.ID, moons=0, backstory=backstory
-                )
+                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
                 kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
                 kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
 

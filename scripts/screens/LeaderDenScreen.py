@@ -150,7 +150,11 @@ class LeaderDenScreen(Screens):
         # This is here incase the leader comes back
         self.no_leader = False
 
-        if not game.clan.leader or game.clan.leader.dead or game.clan.leader.status.is_outsider():
+        if (
+            not game.clan.leader
+            or game.clan.leader.dead
+            or game.clan.leader.status.is_outsider()
+        ):
             self.no_leader = True
 
         # LEADER DEN BG AND LEADER SPRITE
@@ -219,7 +223,8 @@ class LeaderDenScreen(Screens):
                     i
                     for i in Cat.all_cats.values()
                     if i.status.in_player_clan()
-                    and i.status.rank not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
+                    and i.status.rank
+                    not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
                 ]
                 if adults:
                     self.helper_cat = random.choice(adults)
@@ -926,7 +931,8 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        if (self.focus_cat.status.is_outsider()
+        if (
+            self.focus_cat.status.is_outsider()
             and not self.focus_cat.status.is_exiled(CatGroup.PLAYER_CLAN)
             and not self.focus_cat.status.is_lost(CatGroup.PLAYER_CLAN)
         ):

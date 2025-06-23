@@ -1279,7 +1279,13 @@ class MakeClanScreen(Screens):
         self.med_cat = create_cat(rank=CatRank.WARRIOR)
         for _ in range(randrange(4, 8)):
             random_rank = choice(
-                [CatRank.KITTEN, CatRank.APPRENTICE, CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]
+                [
+                    CatRank.KITTEN,
+                    CatRank.APPRENTICE,
+                    CatRank.WARRIOR,
+                    CatRank.WARRIOR,
+                    CatRank.ELDER,
+                ]
             )
             self.members.append(create_cat(rank=random_rank))
 

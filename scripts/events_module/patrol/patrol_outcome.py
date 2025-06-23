@@ -352,13 +352,22 @@ class PatrolOutcome:
         possible_stat_cats = []
         for kitty in patrol.patrol_cats:
             # First, the blanket requirements
-            if "app" in self.can_have_stat and not kitty.status.rank.is_any_apprentice_rank():
+            if (
+                "app" in self.can_have_stat
+                and not kitty.status.rank.is_any_apprentice_rank()
+            ):
                 continue
 
-            if "adult" in self.can_have_stat and kitty.status.rank.is_any_apprentice_rank():
+            if (
+                "adult" in self.can_have_stat
+                and kitty.status.rank.is_any_apprentice_rank()
+            ):
                 continue
 
-            if "healer" in self.can_have_stat and not kitty.status.rank.is_any_medicine_rank():
+            if (
+                "healer" in self.can_have_stat
+                and not kitty.status.rank.is_any_medicine_rank()
+            ):
                 continue
 
             # Then, move on the specific requirements.

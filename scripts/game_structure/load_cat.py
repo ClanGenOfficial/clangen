@@ -66,7 +66,7 @@ def json_load():
                 age = None
                 for key_age in Cat.age_moons.keys():
                     if cat["moons"] in range(
-                            Cat.age_moons[key_age][0], Cat.age_moons[key_age][1] + 1
+                        Cat.age_moons[key_age][0], Cat.age_moons[key_age][1] + 1
                     ):
                         age = key_age
                 status_dict = {"rank": cat["status"], "age": age}
@@ -235,7 +235,9 @@ def json_load():
                     if cat.get("df"):
                         new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
                     elif cat.get("outside"):
-                        new_cat.status.send_to_afterlife(target=CatGroup.UNKNOWN_RESIDENCE)
+                        new_cat.status.send_to_afterlife(
+                            target=CatGroup.UNKNOWN_RESIDENCE
+                        )
                     else:
                         new_cat.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
 
@@ -249,7 +251,11 @@ def json_load():
                 new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
             if not new_cat.dead and cat.get("exiled"):
                 new_cat.status.exile_from_group()
-            if not new_cat.dead and cat.get("outside") and not new_cat.status.is_outsider():
+            if (
+                not new_cat.dead
+                and cat.get("outside")
+                and not new_cat.status.is_outsider()
+            ):
                 new_cat.status.become_lost()
 
             new_cat.faded_offspring = (

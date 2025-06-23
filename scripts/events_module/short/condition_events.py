@@ -561,7 +561,8 @@ class Condition_Events:
 
             # death event text and break bc any other illnesses no longer matter
             if cat.dead or (
-                cat.status.rank == CatRank.LEADER and starting_life_count != game.clan.leader_lives
+                cat.status.rank == CatRank.LEADER
+                and starting_life_count != game.clan.leader_lives
             ):
                 try:
                     possible_string_list = Condition_Events.ILLNESS_DEATH_STRINGS[
@@ -599,7 +600,10 @@ class Condition_Events:
                 break
 
             # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead-dead
-            if cat.status.rank == CatRank.LEADER and starting_life_count != game.clan.leader_lives:
+            if (
+                cat.status.rank == CatRank.LEADER
+                and starting_life_count != game.clan.leader_lives
+            ):
                 break
 
             # heal the cat
@@ -668,7 +672,8 @@ class Condition_Events:
                 continue
 
             if cat.dead or (
-                cat.status.rank == CatRank.LEADER and starting_life_count != game.clan.leader_lives
+                cat.status.rank == CatRank.LEADER
+                and starting_life_count != game.clan.leader_lives
             ):
                 triggered = True
 
@@ -784,7 +789,9 @@ class Condition_Events:
                     random_index = random.randrange(0, len(possible_string_list))
 
                     med_list = find_alive_cats_with_rank(
-                        Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], working=True
+                        Cat,
+                        [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
+                        working=True,
                     )
                     # If the cat is a med cat, don't consider them as one for the event.
 
@@ -1022,9 +1029,7 @@ class Condition_Events:
                             "hardcoded.condition_retire_adolescent", name=cat.name
                         )
                     elif game.clan.leader is not None:
-                        if (game.clan.leader.status.in_player_clan()
-                            and cat.moons < 120
-                        ):
+                        if game.clan.leader.status.in_player_clan() and cat.moons < 120:
                             retire_involved.append(game.clan.leader.ID)
                             event = i18n.t("hardcoded.condition_retire_normal")
                         else:

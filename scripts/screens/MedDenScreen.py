@@ -259,8 +259,8 @@ class MedDenScreen(Screens):
             self.minor_cats = []
             self.injured_and_sick_cats = []
             for the_cat in Cat.all_cats_list:
-                if (the_cat.status.in_player_clan()
-                    and (the_cat.injuries or the_cat.illnesses)
+                if the_cat.status.in_player_clan() and (
+                    the_cat.injuries or the_cat.illnesses
                 ):
                     self.injured_and_sick_cats.append(the_cat)
             for cat in self.injured_and_sick_cats:

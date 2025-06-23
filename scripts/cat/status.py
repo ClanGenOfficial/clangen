@@ -25,18 +25,18 @@ class Status:
         CatRank.ELDER: CatSocial.CLANCAT,
         CatRank.LONER: CatSocial.LONER,
         CatRank.ROGUE: CatSocial.ROGUE,
-        CatRank.KITTYPET: CatSocial.KITTYPET
+        CatRank.KITTYPET: CatSocial.KITTYPET,
     }
     """A dict with rank as the key and it's matching social status as the value"""
 
     def __init__(
-            self,
-            group_history: list = None,
-            standing_history: list = None,
-            social: CatSocial = None,
-            group: CatGroup = None,
-            rank: CatRank = None,
-            age: CatAge = None
+        self,
+        group_history: list = None,
+        standing_history: list = None,
+        social: CatSocial = None,
+        group: CatGroup = None,
+        rank: CatRank = None,
+        age: CatAge = None,
     ):
         """
         Saved cats should only be passing their saved group_history and standing into this class.
@@ -84,17 +84,10 @@ class Status:
 
         # if no group_history was given, we'll see if any other info was given that we can build it with
         if not self.group_history and (rank or age):
-            self.generate_new_status(
-                social=social,
-                group=group,
-                rank=rank,
-                age=age
-            )
+            self.generate_new_status(social=social, group=group, rank=rank, age=age)
         # if we didn't get any information at all, we're gonna default to a warrior
         elif not self.group_history and not rank and not age:
-            self.generate_new_status(
-                rank=CatRank.WARRIOR
-            )
+            self.generate_new_status(rank=CatRank.WARRIOR)
 
         # really we should never be missing a standing_history at this point, but just in case
         if self.group_history and not self.standing_history:
@@ -134,15 +127,15 @@ class Status:
 
         return {
             "group_history": self.group_history,
-            "standing_history": self.standing_history
+            "standing_history": self.standing_history,
         }
 
     def generate_new_status(
-            self,
-            age: CatAge = None,
-            social: CatSocial = None,
-            group: CatGroup = None,
-            rank: CatRank = None,
+        self,
+        age: CatAge = None,
+        social: CatSocial = None,
+        group: CatGroup = None,
+        rank: CatRank = None,
     ):
         """
         Starts a group history and standing history for a newly generated cat. You MUST include either age or rank.
@@ -165,11 +158,11 @@ class Status:
         self._start_standing()
 
     def _start_group_history(
-            self,
-            age: CatAge = None,
-            social: CatSocial = None,
-            group: CatGroup = None,
-            rank: CatRank = None
+        self,
+        age: CatAge = None,
+        social: CatSocial = None,
+        group: CatGroup = None,
+        rank: CatRank = None,
     ):
         """
         Generates initial group history for a cat
@@ -179,14 +172,12 @@ class Status:
         :param group: The group this cat belongs to
         :param rank: This cat's rank. If the cat is outside the Clan, this will match it's social.
         """
-        new_history = {
-            "group": group,
-            "rank": rank,
-            "moons_as": 0
-        }
+        new_history = {"group": group, "rank": rank, "moons_as": 0}
 
         if not age and not rank:
-            print("WARNING: group history could not be made due to missing age and rank information")
+            print(
+                "WARNING: group history could not be made due to missing age and rank information"
+            )
             return
 
         # if no rank, we find rank according to age
@@ -219,7 +210,8 @@ class Status:
         if social != self.social_lookup[rank]:
             # getting ranks according to social category
             possible_ranks = [
-                rank for rank in self.social_lookup.keys()
+                rank
+                for rank in self.social_lookup.keys()
                 if self.social_lookup.get(rank) == social
             ]
 
@@ -234,18 +226,14 @@ class Status:
         """
         if self.group:
             self.standing_history = [
-                {
-                    "group": self.group,
-                    "standing": [CatStanding.MEMBER],
-                    "near": True
-                }
+                {"group": self.group, "standing": [CatStanding.MEMBER], "near": True}
             ]
         else:
             self.standing_history = [
                 {
                     "group": CatGroup.PLAYER_CLAN,
                     "standing": [CatStanding.KNOWN],
-                    "near": True
+                    "near": True,
                 }
             ]
 
@@ -262,7 +250,9 @@ class Status:
         """
         Returns a list of all social classes the cat has been part of or is currently part of.
         """
-        social_history_dupes = [self.social_lookup[record["rank"]] for record in self.group_history]
+        social_history_dupes = [
+            self.social_lookup[record["rank"]] for record in self.group_history
+        ]
         social_groups = [k for k, g in groupby(social_history_dupes)]
 
         return social_groups
@@ -291,7 +281,9 @@ class Status:
         """
         Returns the rank that a cat currently holds within their group.
         """
-        rank = [rank for rank in list(CatRank) if rank == self.group_history[-1]["rank"]]
+        rank = [
+            rank for rank in list(CatRank) if rank == self.group_history[-1]["rank"]
+        ]
         return rank[0]
 
     @property
@@ -320,7 +312,12 @@ class Status:
             rank = CatRank.KITTEN
         elif age == CatAge.ADOLESCENT:
             rank = choice(
-                [CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE, CatRank.MEDICINE_APPRENTICE])
+                [
+                    CatRank.APPRENTICE,
+                    CatRank.MEDIATOR_APPRENTICE,
+                    CatRank.MEDICINE_APPRENTICE,
+                ]
+            )
         elif age in [CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT]:
             rank = CatRank.WARRIOR
         else:
@@ -344,10 +341,10 @@ class Status:
         self.group_history[-1]["moons_as"] += 1
 
     def _modify_group(
-            self,
-            new_rank: CatRank,
-            standing_with_past_group: CatStanding = None,
-            new_group: CatGroup = None
+        self,
+        new_rank: CatRank,
+        standing_with_past_group: CatStanding = None,
+        new_group: CatGroup = None,
     ):
         """
         Changes group status for a cat. They can be entering, leaving, or switching their group.
@@ -360,13 +357,7 @@ class Status:
         if standing_with_past_group:
             self.change_standing(standing_with_past_group)
 
-        self.group_history.append(
-            {
-                "group": new_group,
-                "rank": new_rank,
-                "moons_as": 0
-            }
-        )
+        self.group_history.append({"group": new_group, "rank": new_rank, "moons_as": 0})
 
         # add member standing for new group
         self.change_standing(CatStanding.MEMBER)
@@ -385,17 +376,10 @@ class Status:
                 found_record = True
         if not found_record:
             self.standing_history.append(
-                {
-                    "group": group,
-                    "standing": [new_standing],
-                    "near": True
-                }
+                {"group": group, "standing": [new_standing], "near": True}
             )
 
-    def become_lost(
-            self,
-            new_social_status: CatSocial = CatSocial.KITTYPET
-    ):
+    def become_lost(self, new_social_status: CatSocial = CatSocial.KITTYPET):
         """
         Removes from previous group and sets standing with that group to Lost.
         :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by
@@ -409,10 +393,7 @@ class Status:
                 rank = enum
                 break
 
-        self._modify_group(
-            rank,
-            standing_with_past_group=CatStanding.LOST
-        )
+        self._modify_group(rank, standing_with_past_group=CatStanding.LOST)
 
     def exile_from_group(self):
         """
@@ -421,14 +402,14 @@ class Status:
         """
 
         self._modify_group(
-            new_rank=CatRank.LONER,
-            standing_with_past_group=CatStanding.EXILED)
+            new_rank=CatRank.LONER, standing_with_past_group=CatStanding.EXILED
+        )
 
     def add_to_group(
-            self,
-            new_group: CatGroup,
-            age=None,
-            standing_with_past_group: CatStanding = CatStanding.KNOWN
+        self,
+        new_group: CatGroup,
+        age=None,
+        standing_with_past_group: CatStanding = CatStanding.KNOWN,
     ):
         """
         Adds the cat to the specified group. If the cat has previously been part of this group, they will take on their
@@ -453,7 +434,10 @@ class Status:
         elif self.is_former_clancat() and not self.group.is_afterlife():
             new_rank = self.find_prior_clan_rank()
             # we don't need to change leaders and deps if they're going to an afterlife
-            if new_rank in [CatRank.LEADER, CatRank.DEPUTY] and not new_group.is_afterlife():
+            if (
+                new_rank in [CatRank.LEADER, CatRank.DEPUTY]
+                and not new_group.is_afterlife()
+            ):
                 new_rank = self.get_rank_from_age(age)
         else:
             new_rank = self.rank
@@ -464,7 +448,7 @@ class Status:
         self._modify_group(
             new_rank=new_rank,
             standing_with_past_group=standing_with_past_group,
-            new_group=new_group
+            new_group=new_group,
         )
 
     def send_to_afterlife(self, target: CatGroup = None):
@@ -482,15 +466,11 @@ class Status:
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
         if self.is_outsider() and not self.is_former_clancat():
-            self.add_to_group(
-                new_group=CatGroup.UNKNOWN_RESIDENCE
-            )
+            self.add_to_group(new_group=CatGroup.UNKNOWN_RESIDENCE)
             return
 
         # meanwhile clan cats go wherever their guide points them
-        self.add_to_group(
-            new_group=game.clan.instructor.status.group
-        )
+        self.add_to_group(new_group=game.clan.instructor.status.group)
 
     def change_rank(self, new_rank: CatRank):
         """
@@ -505,11 +485,7 @@ class Status:
                 return
 
         self.group_history.append(
-            {
-                "group": self.group,
-                "rank": new_rank,
-                "moons_as": 0
-            }
+            {"group": self.group, "rank": new_rank, "moons_as": 0}
         )
 
     def change_group_nearness(self, group: CatGroup):
@@ -543,12 +519,17 @@ class Status:
         None then the last rank within any Clan will be returned.
         """
         if clan:
-            past_ranks = [record["rank"] for record in self.group_history if record["group"] == clan]
+            past_ranks = [
+                record["rank"]
+                for record in self.group_history
+                if record["group"] == clan
+            ]
         else:
-            past_ranks = [rank for rank in self.all_ranks.keys()
-                          if rank not in [CatRank.LONER,
-                                          CatRank.KITTYPET,
-                                          CatRank.ROGUE]]
+            past_ranks = [
+                rank
+                for rank in self.all_ranks.keys()
+                if rank not in [CatRank.LONER, CatRank.KITTYPET, CatRank.ROGUE]
+            ]
 
         return past_ranks[-1]
 
@@ -576,7 +557,12 @@ class Status:
         Returns True if the cat has been part of any clan in the past, but is not currently a clancat.
         """
 
-        return True if CatSocial.CLANCAT in self.all_socials and self.social != CatSocial.CLANCAT else False
+        return (
+            True
+            if CatSocial.CLANCAT in self.all_socials
+            and self.social != CatSocial.CLANCAT
+            else False
+        )
 
     def is_lost(self, group: CatGroup = None) -> bool:
         """
@@ -635,10 +621,10 @@ class StatusDict(TypedDict, total=False):
 
     Dict does not need to contain all keys. However, if you have no group history, then you must include a rank or age
     """
+
     group_history: list[dict] | None
     standing_history: list[dict] | None
     social: CatSocial | None
     group: CatGroup | None
     rank: CatRank | None
     age: CatAge | None
-

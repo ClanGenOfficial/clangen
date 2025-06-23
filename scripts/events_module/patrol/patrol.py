@@ -315,7 +315,9 @@ class Patrol:
                     possible_patrols.extend(
                         self.generate_patrol_events(self.NEW_CAT_HOSTILE)
                     )
-                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.OTHER_CLAN)
+                    )
                     possible_patrols.extend(
                         self.generate_patrol_events(self.OTHER_CLAN_ALLIES)
                     )
@@ -326,7 +328,8 @@ class Patrol:
         # this next one is needed for Classic specifically
         patrol_type = (
             "med"
-            if [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE] in self.patrol_status_list
+            if [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE]
+            in self.patrol_status_list
             else patrol_type
         )
         patrol_size = len(self.patrol_cats)
@@ -633,8 +636,18 @@ class Patrol:
             i = 0
             while not herb_filtered_patrols and i <= len(target_herbs):
                 i += 1
-                herb_filtered_patrols = [patrol for patrol in filtered_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
-                herb_romance_patrols = [patrol for patrol in romantic_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
+                herb_filtered_patrols = [
+                    patrol
+                    for patrol in filtered_patrols
+                    if target_herbs[i] in patrol.herbs_given
+                    or "random_herbs" in patrol.herbs_given
+                ]
+                herb_romance_patrols = [
+                    patrol
+                    for patrol in romantic_patrols
+                    if target_herbs[i] in patrol.herbs_given
+                    or "random_herbs" in patrol.herbs_given
+                ]
 
             if herb_filtered_patrols:
                 filtered_patrols = herb_filtered_patrols

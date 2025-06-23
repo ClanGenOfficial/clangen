@@ -50,4 +50,3 @@ class OutsiderEvents:
                 game.cur_events_list.append(
                     Single_Event(text, "birth_death", cat_dict={"m_c": cat})
                 )
-

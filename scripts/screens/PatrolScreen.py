@@ -414,10 +414,7 @@ class PatrolScreen(Screens):
 
             # making sure meds don't get the option for other patrols
             if any(
-                (
-                    cat.status.rank.is_any_medicine_rank()
-                    for cat in self.current_patrol
-                )
+                (cat.status.rank.is_any_medicine_rank() for cat in self.current_patrol)
             ):
                 self.patrol_type = "med"
             else:
@@ -1290,7 +1287,8 @@ class PatrolScreen(Screens):
             # Draw mentor or apprentice
             relation = "should not display"
             if (
-                self.selected_cat.status.rank in [CatRank.MEDICINE_APPRENTICE, CatRank.APPRENTICE]
+                self.selected_cat.status.rank
+                in [CatRank.MEDICINE_APPRENTICE, CatRank.APPRENTICE]
                 or self.selected_cat.apprentice != []
             ):
                 self.elements["app_mentor_frame"] = pygame_gui.elements.UIImage(

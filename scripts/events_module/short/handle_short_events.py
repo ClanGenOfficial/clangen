@@ -202,7 +202,7 @@ class HandleShortEvents:
             self.handle_mass_death()
             if len(self.multi_cat) <= 2:
                 return
-            
+
         # remove cats from involved_cats if theyre supposed to be
         if self.chosen_event.r_c and "r_c" in self.chosen_event.exclude_involved:
             self.involved_cats.remove(self.random_cat.ID)
@@ -235,7 +235,9 @@ class HandleShortEvents:
         # used in some murder events,
         # this kind of sucks tho it would be nice to change how this sort of thing is handled
         if "kit_manipulated" in self.chosen_event.tags:
-            kit = Cat.fetch_cat(random.choice(find_alive_cats_with_rank(Cat, [CatRank.KITTEN])))
+            kit = Cat.fetch_cat(
+                random.choice(find_alive_cats_with_rank(Cat, [CatRank.KITTEN]))
+            )
             self.involved_cats.append(kit.ID)
             change_relationship_values(
                 [self.random_cat],
@@ -505,11 +507,7 @@ class HandleShortEvents:
         cats that will die are added to self.dead_cats
         """
         # gather living clan cats except leader bc leader lives would be frustrating to handle in these
-        alive_cats = [
-            i
-            for i in Cat.all_cats.values()
-            if i.status.in_player_clan()
-        ]
+        alive_cats = [i for i in Cat.all_cats.values() if i.status.in_player_clan()]
 
         # make sure all cats in the pool fit the event requirements
         requirements = self.chosen_event.m_c

@@ -55,27 +55,31 @@ class CatRank(StrEnum):
         return self in (self.MEDIATOR, self.MEDIATOR_APPRENTICE)
 
     def is_any_apprentice_rank(self) -> bool:
-        return self in (self.APPRENTICE,
-                        self.MEDIATOR_APPRENTICE,
-                        self.MEDICINE_APPRENTICE)
+        return self in (
+            self.APPRENTICE,
+            self.MEDIATOR_APPRENTICE,
+            self.MEDICINE_APPRENTICE,
+        )
 
     def is_any_adult_warrior_like_rank(self) -> bool:
-        return self in (self.WARRIOR,
-                        self.DEPUTY,
-                        self.LEADER)
+        return self in (self.WARRIOR, self.DEPUTY, self.LEADER)
 
     def is_allowed_to_patrol(self) -> bool:
         # newborn is not included in this because the game.config["fun"] needs extra checks
-        if self.is_any_clancat_rank() and self not in (self.ELDER,
-                                                       self.KITTEN,
-                                                       self.NEWBORN):
+        if self.is_any_clancat_rank() and self not in (
+            self.ELDER,
+            self.KITTEN,
+            self.NEWBORN,
+        ):
             return True
         return False
 
     def is_active_clan_rank(self):
-        if self.is_any_clancat_rank() and self not in (self.ELDER,
-                                                       self.KITTEN,
-                                                       self.NEWBORN):
+        if self.is_any_clancat_rank() and self not in (
+            self.ELDER,
+            self.KITTEN,
+            self.NEWBORN,
+        ):
             return True
         return False
 
@@ -105,17 +109,17 @@ class CatGroup(StrEnum):
     UNKNOWN_RESIDENCE = "unknown_residence"
 
     def is_afterlife(self) -> bool:
-        return self in (self.DARK_FOREST,
-                        self.STAR_CLAN,
-                        self.UNKNOWN_RESIDENCE)
+        return self in (self.DARK_FOREST, self.STAR_CLAN, self.UNKNOWN_RESIDENCE)
 
     def is_any_clan_group(self) -> bool:
-        return self in (self.PLAYER_CLAN,
-                        self.OTHER_CLAN1,
-                        self.OTHER_CLAN2,
-                        self.OTHER_CLAN3,
-                        self.OTHER_CLAN4,
-                        self.OTHER_CLAN5)
+        return self in (
+            self.PLAYER_CLAN,
+            self.OTHER_CLAN1,
+            self.OTHER_CLAN2,
+            self.OTHER_CLAN3,
+            self.OTHER_CLAN4,
+            self.OTHER_CLAN5,
+        )
 
     def is_other_clan_group(self) -> bool:
         return True if self.is_any_clan_group() and not self.PLAYER_CLAN else False

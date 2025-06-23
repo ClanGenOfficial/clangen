@@ -96,16 +96,27 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
         for rank in ranks:
             if rank == "apps":
                 if not find_alive_cats_with_rank(
-                        cat,
-                        [CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE, CatRank.MEDICINE_APPRENTICE]):
+                    cat,
+                    [
+                        CatRank.APPRENTICE,
+                        CatRank.MEDIATOR_APPRENTICE,
+                        CatRank.MEDICINE_APPRENTICE,
+                    ],
+                ):
                     return False
                 else:
                     continue
 
-            if rank in [CatRank.LEADER, CatRank.DEPUTY] and not find_alive_cats_with_rank(cat, [rank]):
+            if rank in [
+                CatRank.LEADER,
+                CatRank.DEPUTY,
+            ] and not find_alive_cats_with_rank(cat, [rank]):
                 return False
 
-            if rank not in [CatRank.LEADER, CatRank.DEPUTY] and not len(find_alive_cats_with_rank(cat, [rank])) >= 2:
+            if (
+                rank not in [CatRank.LEADER, CatRank.DEPUTY]
+                and not len(find_alive_cats_with_rank(cat, [rank])) >= 2
+            ):
                 return False
 
     special_date = get_special_date()
@@ -286,7 +297,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
     if cat.status.rank in statuses:
         return True
 
-    if 'lost' in statuses and cat.status.is_lost():
+    if "lost" in statuses and cat.status.is_lost():
         return True
 
     return False

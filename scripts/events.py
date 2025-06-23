@@ -84,8 +84,7 @@ class Events:
         game.just_died.clear()
 
         if any(
-            cat.status.rank.is_active_clan_rank()
-            and cat.status.in_player_clan()
+            cat.status.rank.is_active_clan_rank() and cat.status.in_player_clan()
             for cat in Cat.all_cats.values()
         ):
             game.switches["no_able_left"] = False
@@ -258,8 +257,8 @@ class Events:
             med_cats=find_alive_cats_with_rank(
                 Cat,
                 ranks=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
-                working=True
-            )
+                working=True,
+            ),
         )
 
         if game.clan.game_mode in ["expanded", "cruel season"]:
@@ -273,8 +272,7 @@ class Events:
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
         else:
             has_med = any(
-                cat.status.rank.is_any_medicine_rank()
-                and cat.status.in_player_clan()
+                cat.status.rank.is_any_medicine_rank() and cat.status.in_player_clan()
                 for cat in Cat.all_cats.values()
             )
             if not has_med:
@@ -412,12 +410,22 @@ class Events:
                     for cat_ID in invited_cats:
                         invited_cat = Cat.fetch_cat(cat_ID)
                         # some things to handle if the cat has not been in the clan before
-                        if CatStanding.EXILED not in invited_cat.status.get_standing_with_group(CatGroup.PLAYER_CLAN):
+                        if (
+                            CatStanding.EXILED
+                            not in invited_cat.status.get_standing_with_group(
+                                CatGroup.PLAYER_CLAN
+                            )
+                        ):
                             # reset to make sure backstory makes sense
                             if "guided" in invited_cat.backstory:
                                 invited_cat.backstory = "outsider1"
                             # if the cat is a healer, give healer rank
-                            elif invited_cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
+                            elif (
+                                invited_cat.backstory
+                                in BACKSTORIES["backstory_categories"][
+                                    "healer_backstories"
+                                ]
+                            ):
                                 invited_cat.status.change_rank(CatRank.MEDICINE_CAT)
                             # if cat is a little baby, check name
                             elif invited_cat.age in (CatAge.NEWBORN, CatAge.KITTEN):
@@ -519,7 +527,8 @@ class Events:
         """Adding auto freshkill for the current moon."""
         healthy_hunter = list(
             filter(
-                lambda c: c.status.rank in (CatRank.WARRIOR, CatRank.APPRENTICE, CatRank.LEADER, CatRank.DEPUTY)
+                lambda c: c.status.rank
+                in (CatRank.WARRIOR, CatRank.APPRENTICE, CatRank.LEADER, CatRank.DEPUTY)
                 and c.status.in_player_clan()
                 and not c.not_working(),
                 Cat.all_cats.values(),
@@ -590,7 +599,8 @@ class Events:
                 )
             )
             app_amount = (
-                len(healthy_apprentices) * game.config["focus"]["hunting"][CatRank.APPRENTICE]
+                len(healthy_apprentices)
+                * game.config["focus"]["hunting"][CatRank.APPRENTICE]
             )
 
             # finish
@@ -604,13 +614,13 @@ class Events:
             healthy_meds = find_alive_cats_with_rank(
                 Cat,
                 ranks=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
-                working=True
+                working=True,
             )
             # get warriors to help
             healthy_warriors = find_alive_cats_with_rank(
                 Cat,
                 ranks=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
-                working=True
+                working=True,
             )
 
             focus_text = game.clan.herb_supply.handle_focus(
@@ -1162,7 +1172,10 @@ class Events:
         if not cat_dead:
             if cat.status.rank == CatRank.DEPUTY and game.clan.deputy is None:
                 game.clan.deputy = cat
-            if cat.status.rank == CatRank.MEDICINE_CAT and game.clan.medicine_cat is None:
+            if (
+                cat.status.rank == CatRank.MEDICINE_CAT
+                and game.clan.medicine_cat is None
+            ):
                 game.clan.medicine_cat = cat
 
             # retiring to elder den
@@ -1211,7 +1224,8 @@ class Events:
 
                     # check if a med cat app already exists
                     has_med_app = any(
-                        cat.status.rank == CatRank.MEDICINE_APPRENTICE for cat in med_cat_list
+                        cat.status.rank == CatRank.MEDICINE_APPRENTICE
+                        for cat in med_cat_list
                     )
 
                     # assign chance to become med app depending on current med cat and traits
@@ -1386,7 +1400,12 @@ class Events:
         living_parents = []
         mentor_type = {
             CatRank.MEDICINE_CAT: [CatRank.MEDICINE_CAT],
-            CatRank.WARRIOR: [CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER, CatRank.ELDER],
+            CatRank.WARRIOR: [
+                CatRank.WARRIOR,
+                CatRank.DEPUTY,
+                CatRank.LEADER,
+                CatRank.ELDER,
+            ],
             CatRank.MEDIATOR: [CatRank.MEDIATOR],
         }
 
@@ -1494,10 +1513,7 @@ class Events:
             # Gather for leader ---------------------------------------------------------
 
             tags = []
-            if (
-                game.clan.leader
-                and game.clan.leader.status.in_player_clan()
-            ):
+            if game.clan.leader and game.clan.leader.status.in_player_clan():
                 tags.append("yes_leader")
             else:
                 tags.append("no_leader")
@@ -1770,7 +1786,8 @@ class Events:
         alive_cats = list(
             filter(
                 lambda kitty: (
-                    kitty.status.rank != CatRank.LEADER and kitty.status.in_player_clan()
+                    kitty.status.rank != CatRank.LEADER
+                    and kitty.status.in_player_clan()
                 ),
                 Cat.all_cats.values(),
             )
@@ -1952,8 +1969,7 @@ class Events:
             targets = [
                 i
                 for i in relationships
-                if i.dislike > 1
-                and Cat.fetch_cat(i.cat_to).status.in_player_clan()
+                if i.dislike > 1 and Cat.fetch_cat(i.cat_to).status.in_player_clan()
             ]
             if not targets:
                 return
@@ -1990,15 +2006,13 @@ class Events:
         hate_relation = [
             i
             for i in relationships
-            if i.dislike > 15
-            and Cat.fetch_cat(i.cat_to).status.in_player_clan()
+            if i.dislike > 15 and Cat.fetch_cat(i.cat_to).status.in_player_clan()
         ]
         targets.extend(hate_relation)
         resent_relation = [
             i
             for i in relationships
-            if i.jealousy > 15
-            and Cat.fetch_cat(i.cat_to).status.in_player_clan()
+            if i.jealousy > 15 and Cat.fetch_cat(i.cat_to).status.in_player_clan()
         ]
         targets.extend(resent_relation)
 
@@ -2091,9 +2105,7 @@ class Events:
         # round up the living kitties
         alive_cats = list(
             filter(
-                lambda kitty: (
-                    kitty.status.in_player_clan() and not kitty.is_ill()
-                ),
+                lambda kitty: (kitty.status.in_player_clan() and not kitty.is_ill()),
                 Cat.all_cats.values(),
             )
         )
@@ -2104,7 +2116,10 @@ class Events:
             return
 
         meds = find_alive_cats_with_rank(
-            Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], working=True, sort=True
+            Cat,
+            [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
+            working=True,
+            sort=True,
         )
 
         for illness in cat.illnesses:

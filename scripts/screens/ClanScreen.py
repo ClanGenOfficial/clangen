@@ -475,7 +475,10 @@ class ClanScreen(Screens):
                 else:
                     continue
 
-            if Cat.all_cats[x].status.rank in (CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE):
+            if Cat.all_cats[x].status.rank in (
+                CatRank.APPRENTICE,
+                CatRank.MEDIATOR_APPRENTICE,
+            ):
                 [
                     Cat.all_cats[x].placement,
                     base_pos,

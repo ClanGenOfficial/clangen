@@ -403,7 +403,10 @@ class RomanticEvents:
             if (
                 cat_mate
                 and "grief stricken" not in cat.illnesses
-                and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.status.is_outsider())
+                and (
+                    (cat_mate.dead and cat_mate.dead_for >= 4)
+                    or cat_mate.status.is_outsider()
+                )
             ):
                 # randint is a slow function, don't call it unless we have to.
                 if not cat_mate.no_mates and random.random() > 0.5:
@@ -568,9 +571,7 @@ class RomanticEvents:
             return False
 
         alive_inclan_from_mates = [
-            mate
-            for mate in cat_from.mate
-            if cat_from.status.in_player_clan()
+            mate for mate in cat_from.mate if cat_from.status.in_player_clan()
         ]
         alive_inclan_to_mates = [
             mate

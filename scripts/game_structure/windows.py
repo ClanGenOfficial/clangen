@@ -344,6 +344,7 @@ class SaveCheck(UIWindow):
                 # only allow one instance of this window
         return super().process_event(event)
 
+
 class EditorSaveCheck(UIWindow):
     def __init__(self, path, old_path, editor_save, event_list, old_event_list):
         super().__init__(

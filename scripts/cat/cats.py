@@ -111,24 +111,24 @@ class Cat:
     grief_strings = {}
 
     def __init__(
-            self,
-            prefix=None,
-            gender=None,
-            status_dict: StatusDict = None,
-            backstory="clanborn",
-            parent1=None,
-            parent2=None,
-            adoptive_parents=None,
-            suffix=None,
-            specsuffix_hidden=False,
-            ID=None,
-            moons=None,
-            example=False,
-            faded=False,
-            skill_dict=None,
-            pelt: Pelt = None,
-            loading_cat=False,  # Set to true if you are loading a cat at start-up.
-            **kwargs,
+        self,
+        prefix=None,
+        gender=None,
+        status_dict: StatusDict = None,
+        backstory="clanborn",
+        parent1=None,
+        parent2=None,
+        adoptive_parents=None,
+        suffix=None,
+        specsuffix_hidden=False,
+        ID=None,
+        moons=None,
+        example=False,
+        faded=False,
+        skill_dict=None,
+        pelt: Pelt = None,
+        loading_cat=False,  # Set to true if you are loading a cat at start-up.
+        **kwargs,
     ):
         """Initialise the cat.
 
@@ -152,7 +152,9 @@ class Cat:
 
         self.history = None
 
-        if faded:  # This must be at the top. It's a smaller list of things to init, which is only for faded cats
+        if (
+            faded
+        ):  # This must be at the top. It's a smaller list of things to init, which is only for faded cats
             self.init_faded(ID, status_dict, prefix, suffix, moons, **kwargs)
             return
 
@@ -479,9 +481,11 @@ class Cat:
     def dead_for(self) -> int:
         count = 0
         for entry in self.status.group_history:
-            if entry.get("group") in (CatGroup.STAR_CLAN,
-                                      CatGroup.UNKNOWN_RESIDENCE,
-                                      CatGroup.DARK_FOREST):
+            if entry.get("group") in (
+                CatGroup.STAR_CLAN,
+                CatGroup.UNKNOWN_RESIDENCE,
+                CatGroup.DARK_FOREST,
+            ):
                 count += entry.get("moons_as")
         return count
 
@@ -574,9 +578,9 @@ class Cat:
         - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
         """
         if (
-                self.status.rank == CatRank.LEADER
-                and "pregnant" in self.injuries
-                and game.clan.leader_lives > 0
+            self.status.rank == CatRank.LEADER
+            and "pregnant" in self.injuries
+            and game.clan.leader_lives > 0
         ):
             self.illnesses.clear()
 
@@ -591,7 +595,9 @@ class Cat:
 
         # Deal with leader death
         text = ""
-        darkforest = True if game.clan.instructor.status.group == CatGroup.DARK_FOREST else False
+        darkforest = (
+            True if game.clan.instructor.status.group == CatGroup.DARK_FOREST else False
+        )
         isoutside = self.status.is_outsider()
         if self.status.rank == CatRank.LEADER:
             if game.clan.leader_lives > 0:
@@ -892,10 +898,7 @@ class Cat:
         if not self.status.is_exiled(CatGroup.PLAYER_CLAN):
             History.add_beginning(self)
 
-        self.status.add_to_group(
-            new_group=CatGroup.PLAYER_CLAN,
-            age=self.age
-        )
+        self.status.add_to_group(new_group=CatGroup.PLAYER_CLAN, age=self.age)
 
         game.clan.add_to_clan(self)
 
@@ -904,14 +907,12 @@ class Cat:
         ids = []
         for child_id in children:
             child = Cat.all_cats[child_id]
-            if (not child.dead
+            if (
+                not child.dead
                 and not child.status.is_exiled(CatGroup.PLAYER_CLAN)
                 and child.moons < 12
             ):
-                child.status.add_to_group(
-                    new_group=CatGroup.PLAYER_CLAN,
-                    age=self.age
-                )
+                child.status.add_to_group(new_group=CatGroup.PLAYER_CLAN, age=self.age)
                 child.add_to_clan()
                 History.add_beginning(child)
                 ids.append(child_id)
@@ -950,7 +951,7 @@ class Cat:
 
         elif self.status.rank == CatRank.WARRIOR:
             if old_rank == CatRank.LEADER and (
-                    game.clan.leader and game.clan.leader.ID == self.ID
+                game.clan.leader and game.clan.leader.ID == self.ID
             ):
                 game.clan.leader = None
                 game.clan.leader_predecessors += 1
@@ -964,9 +965,9 @@ class Cat:
 
         elif self.status.rank == CatRank.ELDER:
             if (
-                    old_rank == CatRank.LEADER
-                    and game.clan.leader
-                    and game.clan.leader.ID == self.ID
+                old_rank == CatRank.LEADER
+                and game.clan.leader
+                and game.clan.leader.ID == self.ID
             ):
                 game.clan.leader = None
                 game.clan.leader_predecessors += 1
@@ -991,7 +992,11 @@ class Cat:
     def rank_change_traits_skill(self, mentor):
         """Updates trait and skill upon ceremony"""
 
-        if self.status.rank in [CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR]:
+        if self.status.rank in [
+            CatRank.WARRIOR,
+            CatRank.MEDICINE_CAT,
+            CatRank.MEDIATOR,
+        ]:
             # Give a couple doses of mentor influence:
             if mentor:
                 max_influence = randint(0, 2)
@@ -1019,7 +1024,6 @@ class Cat:
         return
 
     def change_name(self, new_prefix=None, new_suffix=None):
-
         self.name = Name(
             prefix=new_prefix,
             suffix=new_suffix,
@@ -1271,8 +1275,9 @@ class Cat:
                     i
                     for i in game.clan.starclan_cats
                     if self.fetch_cat(i)
-                       and i not in life_givers
-                       and self.fetch_cat(i).status.rank not in (CatRank.LEADER, CatRank.NEWBORN)
+                    and i not in life_givers
+                    and self.fetch_cat(i).status.rank
+                    not in (CatRank.LEADER, CatRank.NEWBORN)
                 ]
 
                 if len(possible_sc_cats) - 1 < amount:
@@ -1284,8 +1289,9 @@ class Cat:
                     i
                     for i in game.clan.darkforest_cats
                     if self.fetch_cat(i)
-                       and i not in life_givers
-                       and self.fetch_cat(i).status.rank not in (CatRank.LEADER, CatRank.NEWBORN)
+                    and i not in life_givers
+                    and self.fetch_cat(i).status.rank
+                    not in (CatRank.LEADER, CatRank.NEWBORN)
                 ]
                 if len(possible_df_cats) - 1 < amount:
                     extra_givers = possible_df_cats
@@ -1307,8 +1313,8 @@ class Cat:
                     sc_cats.sort(key=lambda x: -1 * int(Cat.fetch_cat(x).dead_for))
                     for kitty in sc_cats:
                         if (
-                                self.fetch_cat(kitty)
-                                and self.fetch_cat(kitty).status.rank == CatRank.LEADER
+                            self.fetch_cat(kitty)
+                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1317,8 +1323,8 @@ class Cat:
                     df_kitties.sort(key=lambda x: -1 * int(Cat.fetch_cat(x).dead_for))
                     for kitty in df_kitties:
                         if (
-                                self.fetch_cat(kitty)
-                                and self.fetch_cat(kitty).status.rank == CatRank.LEADER
+                            self.fetch_cat(kitty)
+                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1329,8 +1335,8 @@ class Cat:
                     sc_cats.sort(key=lambda x: int(Cat.fetch_cat(x).dead_for))
                     for kitty in sc_cats:
                         if (
-                                self.fetch_cat(kitty)
-                                and self.fetch_cat(kitty).status.rank == CatRank.LEADER
+                            self.fetch_cat(kitty)
+                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1339,8 +1345,8 @@ class Cat:
                     df_kitties.sort(key=lambda x: int(Cat.fetch_cat(x).dead_for))
                     for kitty in df_kitties:
                         if (
-                                self.fetch_cat(kitty)
-                                and self.fetch_cat(kitty).status.rank == CatRank.LEADER
+                            self.fetch_cat(kitty)
+                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
                         ):
                             life_giving_leader = kitty
                             break
@@ -1647,8 +1653,7 @@ class Cat:
         cats_to_choose = [
             iter_cat
             for iter_cat in Cat.all_cats.values()
-            if iter_cat.ID != self.ID
-               and iter_cat.status.in_player_clan()
+            if iter_cat.ID != self.ID and iter_cat.status.in_player_clan()
         ]
         # if there are no cats to interact, stop
         if not cats_to_choose:
@@ -2010,8 +2015,11 @@ class Cat:
         if len(new_injury.also_got) > 0 and not int(random() * 5):
             avoided = False
             if (
-                    "blood loss" in new_injury.also_got
-                    and len(find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)) != 0
+                "blood loss" in new_injury.also_got
+                and len(
+                    find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)
+                )
+                != 0
             ):
                 clan_herbs = set(game.clan.herb_supply.entire_supply.keys())
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
@@ -2189,11 +2197,7 @@ class Cat:
         return len(self.permanent_condition) > 0
 
     def available_to_work(self):
-        return (
-            not self.dead
-            and self.status.in_player_clan()
-            and not self.not_working()
-        )
+        return not self.dead and self.status.in_player_clan() and not self.not_working()
 
     def contact_with_ill_cat(self, cat: Cat):
         """handles if one cat had contact with an ill cat"""
@@ -2253,9 +2257,9 @@ class Cat:
         condition_file_path = condition_directory + "/" + self.ID + "_conditions.json"
 
         if (
-                (not self.is_ill() and not self.is_injured() and not self.is_disabled())
-                or self.dead
-                or self.status.is_outsider()
+            (not self.is_ill() and not self.is_injured() and not self.is_disabled())
+            or self.dead
+            or self.status.is_outsider()
         ):
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
@@ -2306,7 +2310,6 @@ class Cat:
     # ---------------------------------------------------------------------------- #
 
     def is_valid_mentor(self, potential_mentor: Cat):
-
         # If not an app, don't need a mentor
         if not self.status.rank.is_any_apprentice_rank():
             return False
@@ -2316,17 +2319,19 @@ class Cat:
             return False
 
         # Match jobs
-        if (self.status.rank == CatRank.MEDICINE_APPRENTICE
+        if (
+            self.status.rank == CatRank.MEDICINE_APPRENTICE
             and potential_mentor.status.rank != CatRank.MEDICINE_CAT
         ):
             return False
-        if self.status.rank == CatRank.APPRENTICE and potential_mentor.status.rank not in [
-            CatRank.LEADER,
-            CatRank.DEPUTY,
-            CatRank.WARRIOR
-        ]:
+        if (
+            self.status.rank == CatRank.APPRENTICE
+            and potential_mentor.status.rank
+            not in [CatRank.LEADER, CatRank.DEPUTY, CatRank.WARRIOR]
+        ):
             return False
-        if (self.status.rank == CatRank.MEDIATOR_APPRENTICE
+        if (
+            self.status.rank == CatRank.MEDIATOR_APPRENTICE
             and potential_mentor.status.rank != CatRank.MEDIATOR
         ):
             return False
@@ -2369,9 +2374,9 @@ class Cat:
 
         # Check if cat can have a mentor
         if (
-                self.dead
-                or self.status.is_outsider()
-                or not self.status.rank.is_any_apprentice_rank()
+            self.dead
+            or self.status.is_outsider()
+            or not self.status.rank.is_any_apprentice_rank()
         ):
             self.__remove_mentor()
             return
@@ -2655,9 +2660,7 @@ class Cat:
             if self.dead or inter_cat.dead:
                 continue
             # if they are not outside of the Clan at the same time
-            if (
-                    self.status.group != inter_cat.status.group
-            ):
+            if self.status.group != inter_cat.status.group:
                 continue
             inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
             self.relationships[inter_cat.ID] = Relationship(self, inter_cat)
@@ -3206,7 +3209,7 @@ class Cat:
             suffix=cat_info["name_suffix"],
             status_dict=status_dict,
             moons=cat_info["moons"],
-            faded=True
+            faded=True,
         )
         if cat_info["parent1"]:
             cat_ob.parent1 = cat_info["parent1"]
@@ -3539,8 +3542,8 @@ class Cat:
             check_cat
             for check_cat in Cat.all_cats_list
             if check_cat.dead == self.dead
-               and check_cat.status.group == self.status.group
-               and not check_cat.faded
+            and check_cat.status.group == self.status.group
+            and not check_cat.faded
         ]
 
         if filter_func is not None:
@@ -3614,9 +3617,16 @@ def create_example_cats():
             game.choose_cats[cat_index] = create_cat(rank=CatRank.WARRIOR)
         else:
             random_rank = choice(
-                [CatRank.KITTEN, CatRank.APPRENTICE, CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]
+                [
+                    CatRank.KITTEN,
+                    CatRank.APPRENTICE,
+                    CatRank.WARRIOR,
+                    CatRank.WARRIOR,
+                    CatRank.ELDER,
+                ]
             )
             game.choose_cats[cat_index] = create_cat(rank=random_rank)
+
 
 def create_option_preview_cat(scar: str = None, acc: str = None):
     """

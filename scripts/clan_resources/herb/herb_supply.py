@@ -310,11 +310,13 @@ class HerbSupply:
         """
         messages: list = MESSAGES["storage_status"][self.get_overall_rating()]
         for message in messages.copy():
-            if "lead_name" in message and (not game.clan.leader
-                                           or not game.clan.leader.status.in_player_clan()):
+            if "lead_name" in message and (
+                not game.clan.leader or not game.clan.leader.status.in_player_clan()
+            ):
                 messages.remove(message)
-            if "dep_name" in message and (not game.clan.deputy
-                                          or not game.clan.deputy.status.in_player_clan()):
+            if "dep_name" in message and (
+                not game.clan.deputy or not game.clan.deputy.status.in_player_clan()
+            ):
                 messages.remove(message)
 
         return event_text_adjust(

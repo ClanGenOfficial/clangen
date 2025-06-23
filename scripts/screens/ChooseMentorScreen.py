@@ -459,8 +459,8 @@ class ChooseMentorScreen(Screens):
         if new_mentor == old_mentor:
             # if "changing mentor" to the same cat, remove them as mentor instead
             if (
-                    self.the_cat.moons > 6
-                    and self.the_cat.ID not in old_mentor.former_apprentices
+                self.the_cat.moons > 6
+                and self.the_cat.ID not in old_mentor.former_apprentices
             ):
                 old_mentor.former_apprentices.append(self.the_cat.ID)
             self.the_cat.mentor = None
@@ -469,8 +469,8 @@ class ChooseMentorScreen(Screens):
         elif new_mentor and old_mentor is not None:
             old_mentor.apprentice.remove(self.the_cat.ID)
             if (
-                    self.the_cat.moons > 6
-                    and self.the_cat.ID not in old_mentor.former_apprentices
+                self.the_cat.moons > 6
+                and self.the_cat.ID not in old_mentor.former_apprentices
             ):
                 old_mentor.former_apprentices.append(self.the_cat.ID)
 
@@ -721,4 +721,4 @@ class ChooseMentorScreen(Screens):
         super().on_use()
 
     def chunks(self, L, n):
-        return [L[x: x + n] for x in range(0, len(L), n)]
+        return [L[x : x + n] for x in range(0, len(L), n)]

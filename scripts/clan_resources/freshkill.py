@@ -166,7 +166,11 @@ class FreshkillPile:
         )
         # increase the number of prey for kits, which are not taken care by a queen
         needed_prey += sum(
-            [PREY_REQUIREMENT[cat.status.rank] for cat in living_kits if cat.status.in_player_clan()]
+            [
+                PREY_REQUIREMENT[cat.status.rank]
+                for cat in living_kits
+                if cat.status.in_player_clan()
+            ]
         )
 
         self.needed_prey = needed_prey
@@ -233,9 +237,7 @@ class FreshkillPile:
         :return int|float needed_prey: The amount of prey the Clan needs
         """
         living_cats = [
-            cat
-            for cat in Cat.all_cats.values()
-            if cat.status.in_player_clan()
+            cat for cat in Cat.all_cats.values() if cat.status.in_player_clan()
         ]
         self._update_needed_food(living_cats)
         return self.needed_prey
@@ -634,8 +636,9 @@ class FreshkillPile:
                 self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID]
                 factor = 3
                 status_ = str(cat.status.rank)
-                if cat.status.rank.is_baby() or (cat.moons > 114
-                                                 and str(cat.status.rank) == CatRank.ELDER):
+                if cat.status.rank.is_baby() or (
+                    cat.moons > 114 and str(cat.status.rank) == CatRank.ELDER
+                ):
                     factor = 2
                 if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
                     status_ = "queen/pregnant"
