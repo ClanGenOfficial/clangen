@@ -1152,11 +1152,10 @@
                 "warrior"
             ],
             "trait": [
-                "calm",
-                "compassionate",
+                "laid-back",
+                "considerate",
                 "loving",
                 "careful",
-                "sincere",
                 "bold",
                 "fierce",
                 "bloodthirsty",
@@ -1479,7 +1478,7 @@
                 "arrogant",
                 "competitive",
                 "flamboyant",
-                "rebellious"
+                "defiant"
             ]
         },
         "injury": [
@@ -2164,13 +2163,11 @@
             ],
             "trait": [
                 "charismatic",
-                "compassionate",
+                "considerate",
                 "daring",
-                "faithful",
                 "lonesome",
                 "loving",
-                "strange",
-                "sincere"
+                "strange"
             ]
         },
         "injury": [
@@ -2206,10 +2203,10 @@
                 "RUNNER,3"
             ],
             "trait": [
-                "compassionate",
+                "considerate",
                 "loving",
                 "responsible",
-                "loyal",
+                "devoted",
                 "adventurous",
                 "ambitious",
                 "bloodthirsty",
@@ -2279,10 +2276,10 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "compassionate",
+                "considerate",
                 "loving",
                 "responsible",
-                "loyal",
+                "devoted",
                 "adventurous",
                 "ambitious",
                 "bloodthirsty",
@@ -2623,10 +2620,10 @@
                 "FIGHTER,3"
             ],
             "trait": [
-                "compassionate",
+                "considerate",
                 "loving",
                 "responsible",
-                "loyal",
+                "devoted",
                 "ambitious",
                 "bloodthirsty",
                 "bold",
@@ -2817,11 +2814,11 @@
                 "FIGHTER,2"
             ],
             "trait": [
-                "compassionate",
+                "considerate",
                 "loving",
                 "righteous",
                 "responsible",
-                "loyal",
+                "devoted",
                 "adventurous",
                 "ambitious",
                 "bloodthirsty",
@@ -3105,8 +3102,7 @@
                 "fierce",
                 "insecure",
                 "grumpy",
-                "shameless",
-                "sneaky"
+                "shameless"
             ]
         },
         "injury": [
@@ -3139,7 +3135,7 @@
                 "competitive",
                 "daring",
                 "playful",
-                "rebellious",
+                "defiant",
                 "strange",
                 "troublesome"
             ]
@@ -3227,13 +3223,11 @@
             ],
             "trait": [
                 "adventurous",
-                "calm",
-                "cold",
+                "laid-back",
+                "aloof",
                 "cunning",
                 "responsible",
                 "righteous",
-                "sincere",
-                "thoughtful",
                 "wise"
             ]
         },
@@ -3300,12 +3294,11 @@
             "trait": [
                 "charismatic",
                 "childish",
-                "compassionate",
+                "considerate",
                 "flamboyant",
                 "loving",
-                "loyal",
-                "playful",
-                "sincere"
+                "devoted",
+                "playful"
             ]
         },
         "injury": [
@@ -3342,8 +3335,7 @@
                 "daring",
                 "insecure",
                 "playful",
-                "rebellious",
-                "sneaky",
+                "defiant",
                 "troublesome"
             ]
         },
@@ -3390,10 +3382,9 @@
                 "confident",
                 "fierce",
                 "flamboyant",
-                "loyal",
+                "devoted",
                 "oblivious", 
-                "righteous",
-                "sincere"
+                "righteous"
             ]
         },
         "injury": [
@@ -3625,12 +3616,10 @@
                 "daring",
                 "fierce",
                 "loving",
-                "loyal",
+                "devoted",
                 "nervous",
                 "responsible", 
                 "righteous",
-                "sincere",
-                "thoughtful",
                 "wise"
             ]
         },
@@ -3652,12 +3641,10 @@
                 "daring",
                 "fierce",
                 "loving",
-                "loyal",
+                "devoted",
                 "nervous",
                 "responsible", 
                 "righteous",
-                "sincere",
-                "thoughtful",
                 "wise"
             ]
         },
@@ -3907,7 +3894,6 @@
                 "careful",
                 "cunning",
                 "flamboyant", 
-                "thoughtful",
                 "wise"
             ]
         },
@@ -4712,13 +4698,12 @@
                 "any"
             ],
             "not_trait": [
-                "calm",
+                "laid-back",
                 "careful",
                 "gloomy",
                 "grumpy",
                 "nervous",
                 "strict",
-                "thoughtful",
                 "wise"
             ]
         },
@@ -4938,7 +4923,7 @@
                 "adventurous",
                 "vengeful",
                 "competitive",
-                "rebellious",
+                "defiant",
                 "flamboyant"
             ]
         },
@@ -4960,7 +4945,7 @@
                 "adventurous",
                 "vengeful",
                 "competitive",
-                "rebellious",
+                "defiant",
                 "flamboyant"
             ]
         },
