@@ -12,8 +12,8 @@ from scripts.cat.thoughts import Thoughts
 
 class TestNotWorkingThoughts(unittest.TestCase):
     def setUp(self):
-        self.main = Cat(status="warrior")
-        self.other = Cat(status="warrior")
+        self.main = Cat(status_dict={"rank": CatRank.WARRIOR})
+        self.other = Cat(status_dict={"rank": CatRank.WARRIOR})
         self.biome = "Forest"
         self.season = "Newleaf"
         self.camp = "camp2"
@@ -128,7 +128,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
     def test_lost_thoughts(self):
         # given
-        cat = Cat(status="warrior", moons=40)
+        cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=40)
         cat.status.become_lost()
         biome = "Forest"
         season = "Newleaf"
