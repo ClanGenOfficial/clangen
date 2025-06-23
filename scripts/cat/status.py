@@ -11,6 +11,23 @@ from scripts.game_structure.game_essentials import game
 class Status:
     """Holds all status information for a cat (group affiliations, ranks, location relative to others)"""
 
+    social_lookup = {
+        CatRank.NEWBORN: CatSocial.CLANCAT,
+        CatRank.KITTEN: CatSocial.CLANCAT,
+        CatRank.APPRENTICE: CatSocial.CLANCAT,
+        CatRank.MEDICINE_APPRENTICE: CatSocial.CLANCAT,
+        CatRank.MEDIATOR_APPRENTICE: CatSocial.CLANCAT,
+        CatRank.WARRIOR: CatSocial.CLANCAT,
+        CatRank.MEDICINE_CAT: CatSocial.CLANCAT,
+        CatRank.MEDIATOR: CatSocial.CLANCAT,
+        CatRank.DEPUTY: CatSocial.CLANCAT,
+        CatRank.LEADER: CatSocial.CLANCAT,
+        CatRank.ELDER: CatSocial.CLANCAT,
+        CatRank.LONER: CatSocial.LONER,
+        CatRank.ROGUE: CatSocial.ROGUE,
+        CatRank.KITTYPET: CatSocial.KITTYPET
+    }
+
     def __init__(
             self,
             group_history: list = None,
@@ -198,11 +215,11 @@ class Status:
             new_history["group"] = CatGroup.PLAYER_CLAN
 
         # next, we double-check that the rank is appropriate for the social, this is mostly for loner/rogue/kittypet
-        if social != SOCIAL_LOOKUP[rank]:
+        if social != self.social_lookup:
             # getting ranks according to social category
             possible_ranks = [
-                rank for rank in SOCIAL_LOOKUP.keys()
-                if SOCIAL_LOOKUP.get(rank) == social
+                rank for rank in self.social_lookup.keys()
+                if self.social_lookup.get(rank) == social
             ]
 
             new_history["rank"] = choice(possible_ranks)
@@ -244,14 +261,10 @@ class Status:
         """
         Returns a list of all social classes the cat has been part of or is currently part of.
         """
-        social_history_dupes = [SOCIAL_LOOKUP[record["rank"]] for record in self.group_history]
+        social_history_dupes = [self.social_lookup[record["rank"]] for record in self.group_history]
         social_groups = [k for k, g in groupby(social_history_dupes)]
-        final_list = []
-        for social in social_groups:
-            for enum in CatSocial:
-                if enum == social:
-                    final_list.append(enum)
-        return final_list
+
+        return social_groups
 
     @property
     def group(self) -> CatGroup:
@@ -618,8 +631,3 @@ class StatusDict(TypedDict, total=False):
     rank: CatRank | None
     age: CatAge | None
 
-
-with open(
-        "resources/dicts/social_lookup.json", "r", encoding="utf-8"
-) as read_file:
-    SOCIAL_LOOKUP = ujson.loads(read_file.read())
