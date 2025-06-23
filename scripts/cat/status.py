@@ -322,7 +322,7 @@ class Status:
             rank = choice(
                 [CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE, CatRank.MEDICINE_APPRENTICE])
         elif age in [CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT]:
-            rank = choice([CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR])
+            rank = choice([CatRank.WARRIOR)
         else:
             rank = CatRank.ELDER
 
@@ -437,7 +437,8 @@ class Status:
         rank in the new group (unless it was leader or deputy). If no past valid past rank is found, they will gain a
         rank based off their age.
         :param new_group: The group the cat will be joining
-        :param age: The current age stage of the cat, only required if a former clan cat is joining a clan
+        :param age: The current age stage of the cat, required if cat is going into a group that will require a rank
+        change
         :param standing_with_past_group: If leaving a group to join the new one, this should be used to indicate how the
         last group views the cat (exiled, lost, ect.) Defaults to KNOWN if cat was in a group.
         """
@@ -456,6 +457,9 @@ class Status:
                 new_rank = self.get_rank_from_age(age)
         else:
             new_rank = self.rank
+
+        if new_group.is_any_clan_group() and not new_rank.is_any_clancat_rank():
+            new_rank = self.get_rank_from_age(age)
 
         self._modify_group(
             new_rank=new_rank,
@@ -602,7 +606,7 @@ class Status:
         # if group given
         standing = self.get_standing_with_group(group)
 
-        if standing[-1] == CatStanding.EXILED:
+        if standing and standing[-1] == CatStanding.EXILED:
             return True
 
         return False
