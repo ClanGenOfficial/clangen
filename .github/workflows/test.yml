@@ -9,11 +9,8 @@ jobs:
     strategy:
       matrix:
         include:
-          # v2 of poetry dropped support for 3.8
           - python-version: '3.8'
-            test-poetry-version: '1.8.5'
           - python-version: '3.11'
-            test-poetry-version: 'latest'
     steps:
       - uses: actions/checkout@v4
       - name: Download the test saves
@@ -24,25 +21,25 @@ jobs:
         run: mv clangen-unittest-saves-main tests/testSaves
       - name: Remove the zip
         run: rm tests/saves.zip
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v3
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          poetry-version: ${{ matrix.test-poetry-version }}
+          enable-cache: true
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           architecture: 'x64'
-      - name: Switch Poetry Python environment
+      - name: Switch uv Python environment
         if: matrix.python-version == '3.8'
-        run: poetry env use 3.8
+        run: uv venv --python 3.8
       - name: install dependencies
-        run: poetry install
+        run: uv sync
       - name: Run unit tests
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
-        run: poetry run python3 -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_group_interaction.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py tests/test_filter_patrol.py tests/test_lang.py
+        run: uv run python -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_group_interaction.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py tests/test_filter_patrol.py tests/test_lang.py
   json_test:
     runs-on: ubuntu-latest
     steps:
@@ -52,16 +49,16 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v3
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          poetry-version: latest
+          enable-cache: true
       - name: install dependencies
-        run: poetry install --with test
+        run: uv sync --group test
       - name: Check json validity
-        run: poetry run python3 tests/test_json.py
+        run: uv run tests/test_json.py
       - name: Check json schemas
-        run: poetry run python3 tests/test_json_schemas.py
+        run: uv run tests/test_json_schemas.py
   pronoun_test:
       runs-on: ubuntu-latest
       steps:
@@ -71,14 +68,14 @@ jobs:
           with:
             python-version: '3.11'
             architecture: 'x64'
-        - name: Install poetry
-          uses: abatilo/actions-poetry@v3
+        - name: Install uv
+          uses: astral-sh/setup-uv@v5
           with:
-            poetry-version: latest
+            enable-cache: true
         - name: install dependencies
-          run: poetry install
+          run: uv sync --group test
         - name: Check for pronoun tag errors in resources
-          run: poetry run python3 -m unittest tests/test_pronouns.py
+          run: uv run python -m unittest tests/test_pronouns.py
   freshkill_test:
       runs-on: ubuntu-latest
       steps:
@@ -88,11 +85,11 @@ jobs:
           with:
             python-version: '3.11'
             architecture: 'x64'
-        - name: Install poetry
-          uses: abatilo/actions-poetry@v3
+        - name: Install uv
+          uses: astral-sh/setup-uv@v5
           with:
-            poetry-version: latest
+            enable-cache: true
         - name: install dependencies
-          run: poetry install
+          run: uv sync --group test
         - name: Check for pronoun tag errors in resources
-          run: poetry run python3 -m unittest tests/test_freshkill.py
+          run: uv run python -m unittest tests/test_freshkill.py

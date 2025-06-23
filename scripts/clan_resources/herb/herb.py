@@ -7,10 +7,7 @@ from scripts.game_structure.localization import load_lang_resource
 
 
 class Herb:
-    def __init__(
-            self,
-            herb_name
-    ):
+    def __init__(self, herb_name):
         self.name: str = herb_name
         self._herb_dict: dict = HERBS.get(self.name, {})
 
@@ -42,6 +39,6 @@ class Herb:
 
 
 with open(
-        os.path.normpath("resources/dicts/herb_info.json"), "r", encoding="utf-8"
+    os.path.normpath("resources/dicts/herb_info.json"), "r", encoding="utf-8"
 ) as read_file:
     HERBS = ujson.loads(read_file.read())

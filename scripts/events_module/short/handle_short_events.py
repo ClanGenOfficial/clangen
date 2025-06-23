@@ -44,7 +44,13 @@ class HandleShortEvents:
     supply_types = ["fresh_kill", "all_herb", "any_herb"]
     supply_types.extend(HERBS)
     supply_triggers = ["always", "low", "adequate", "full", "excess"]
-    supply_adjustments = ["reduce_eighth", "reduce_quarter", "reduce_half", "reduce_full", "increase_#"]
+    supply_adjustments = [
+        "reduce_eighth",
+        "reduce_quarter",
+        "reduce_half",
+        "reduce_full",
+        "increase_#",
+    ]
 
     def __init__(self):
         self.current_lives = None
@@ -100,7 +106,7 @@ class HandleShortEvents:
         self.involved_cats = [self.main_cat.ID]
 
         # check for war and assign self.other_clan accordingly
-        if game.clan.war.get("at_war", False):
+        if game.clan.war.get("at_war", False) and random.randint(1, 5) != 1:
             enemy_clan = get_warring_clan()
             self.other_clan = enemy_clan
             self.other_clan_name = f"{self.other_clan.name}Clan"
@@ -216,7 +222,6 @@ class HandleShortEvents:
         if self.chosen_event.new_accessory:
             if self.handle_accessories() is False:
                 return
-
 
         # change relationships before killing anyone
         if self.chosen_event.relationships:
@@ -361,8 +366,8 @@ class HandleShortEvents:
                 elif cat.outside:
                     n_c_index = self.new_cats.index([cat])
                     if (
-                        f"n_c:{n_c_index}" in self.chosen_event.exclude_involved or
-                        "unknown" in attribute_list
+                        f"n_c:{n_c_index}" in self.chosen_event.exclude_involved
+                        or "unknown" in attribute_list
                     ):
                         extra_text = ""
                     else:
@@ -423,7 +428,12 @@ class HandleShortEvents:
                     if acc in acc_list:
                         acc_list.remove(acc)
 
-        accessory_groups = [pelts.collars, pelts.head_accessories, pelts.tail_accessories, pelts.body_accessories]
+        accessory_groups = [
+            pelts.collars,
+            pelts.head_accessories,
+            pelts.tail_accessories,
+            pelts.body_accessories,
+        ]
         if self.main_cat.pelt.accessory:
             for acc in self.main_cat.pelt.accessory:
                 # find which accessory group it belongs to
@@ -440,7 +450,6 @@ class HandleShortEvents:
             self.main_cat.pelt.accessory.append(random.choice(acc_list))
         else:
             self.main_cat.pelt.accessory = [random.choice(acc_list)]
-
 
     def handle_transition(self):
         """
@@ -829,7 +838,7 @@ class HandleShortEvents:
 
         # adjust entire herb store
         if supply_type == "all_herb":
-            for (herb, count) in herb_supply.entire_supply.items():
+            for herb, count in herb_supply.entire_supply.items():
                 herb_list.append(herb)
                 if adjustment == "reduce_full":
                     herb_supply.remove_herb(herb, count)
@@ -878,13 +887,11 @@ class HandleShortEvents:
 
         if "reduce" in adjustment:
             self.herb_notice = i18n.t(
-                "screens.med_den.loss_event",
-                herbs=adjust_list_text(herb_list)
+                "screens.med_den.loss_event", herbs=adjust_list_text(herb_list)
             )
         elif "increase" in adjustment:
             self.herb_notice = i18n.t(
-                "screens.med_den.gain_event",
-                herbs=adjust_list_text(herb_list)
+                "screens.med_den.gain_event", herbs=adjust_list_text(herb_list)
             )
 
     def reset(self):
@@ -971,7 +978,7 @@ EVENT_ALLOWED_CONDITIONS = [
     "heat stroke",
     "heat exhaustion",
     "stomachache",
-    "constant nightmares"
+    "constant nightmares",
 ]
 
 

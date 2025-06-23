@@ -631,7 +631,9 @@ class MediationScreen(Screens):
             # ROMANTIC LOVE
             # CHECK AGE DIFFERENCE
             same_age = the_relationship.cat_to.age == cat.age
-            both_adult = cat.age.can_have_mate() and the_relationship.cat_to.age.can_have_mate()
+            both_adult = (
+                cat.age.can_have_mate() and the_relationship.cat_to.age.can_have_mate()
+            )
             check_age = both_adult or same_age
 
             # If they are not both adults, or the same age, OR they are related, don't display any romantic affection,
@@ -893,9 +895,9 @@ class MediationScreen(Screens):
         self.romantic_checkbox = UIImageButton(
             ui_scale(pygame.Rect((321, 317), (34, 34))),
             "",
-            object_id="@checked_checkbox"
-            if self.allow_romantic
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox" if self.allow_romantic else "@unchecked_checkbox"
+            ),
             tool_tip_text="screens.mediation.allow_romantic_tooltip",
             manager=MANAGER,
         )

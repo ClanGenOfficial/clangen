@@ -439,6 +439,8 @@ class RomanticEvents:
     def handle_breakup(cat_from: Cat, cat_to: Cat) -> bool:
         """Handles cats breaking up their relationship"""
 
+        RomanticEvents.rebuild_dicts()
+
         if cat_from.ID not in cat_to.mate:
             return False
 
@@ -453,8 +455,17 @@ class RomanticEvents:
 
         # Determine if this is a nice breakup or a fight breakup
         # TODO - make this better
-        breakup_type = random.choices(["had_fight", "decided_to_be_friends", "lost_feelings", "bad_breakup", "chill_breakup"], [3, 3, 2, 5, 5])[0]
-        
+        breakup_type = random.choices(
+            [
+                "had_fight",
+                "decided_to_be_friends",
+                "lost_feelings",
+                "bad_breakup",
+                "chill_breakup",
+            ],
+            [3, 3, 2, 5, 5],
+        )[0]
+
         cat_from.unset_mate(cat_to, breakup=False)
 
         if cat_to.ID in cat_from.relationships:

@@ -100,8 +100,6 @@ class SkillPath(Enum):
         "unshakable Dark Forest link",
     )
 
-
-
     @staticmethod
     def get_random(exclude: list = ()):
         """Get a random path, with more uncommon paths being less common"""
@@ -497,16 +495,11 @@ class CatSkills:
                 self.primary = Skill(
                     random.choice(parental_paths),
                     points=0,
-                    interest_only=(
-                        the_cat.status in ("apprentice", "kitten")
-                    )
+                    interest_only=(the_cat.status in ("apprentice", "kitten")),
                 )
             else:
                 self.primary = Skill.get_random_skill(
-                    points=0,
-                    interest_only=(
-                        the_cat.status in ("apprentice", "kitten")
-                    )
+                    points=0, interest_only=(the_cat.status in ("apprentice", "kitten"))
                 )
 
         if not (the_cat.outside or the_cat.exiled):
