@@ -364,7 +364,7 @@ class Status:
             if record["group"] == group:
                 record["standing"].append(new_standing)
 
-    def lost_from_group(
+    def become_lost(
             self,
             new_social_status: CatSocial = CatSocial.KITTYPET
     ):
@@ -410,7 +410,7 @@ class Status:
             standing_with_past_group = CatStanding.KNOWN
 
         # if we're moving an afterlife cat, they don't change rank
-        if self.group.is_afterlife():
+        if self.group and self.group.is_afterlife():
             new_rank = self.rank
         # adding a cat who has been in a clan in the past, they will take their old rank if possible
         elif self.is_former_clancat() and not self.group.is_afterlife():
@@ -425,18 +425,6 @@ class Status:
             standing_with_past_group=standing_with_past_group,
             new_group=new_group
         )
-
-    def get_standing_with_group(self, group: CatGroup) -> list[CatStanding]:
-        """
-        Returns the list of standings a cat has for the given group.
-        """
-        standing_list = []
-        for entry in self.standing_history:
-            if entry["group"] == group:
-                standing_list = entry["standing"]
-                break
-
-        return standing_list
 
     def send_to_afterlife(self, target: CatGroup = None):
         """
@@ -470,6 +458,18 @@ class Status:
             new_group=game.clan.instructor.status.group,
             standing_with_past_group=CatStanding.MEMBER
         )
+    def get_standing_with_group(self, group: CatGroup) -> list[CatStanding]:
+        """
+        Returns the list of standings a cat has for the given group.
+        """
+        standing_list = []
+        for entry in self.standing_history:
+            if entry["group"] == group:
+                standing_list = entry["standing"]
+                break
+
+        return standing_list
+
 
     def change_rank(self, new_rank: CatRank):
         """

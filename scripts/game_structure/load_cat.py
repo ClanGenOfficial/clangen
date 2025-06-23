@@ -249,7 +249,7 @@ def json_load():
             if not new_cat.dead and cat.get("exiled"):
                 new_cat.status.exile_from_group()
             if not new_cat.dead and cat.get("outside") and not new_cat.status.is_outsider():
-                new_cat.status.lost_from_group()
+                new_cat.status.become_lost()
 
             new_cat.faded_offspring = (
                 cat["faded_offspring"] if "faded_offspring" in cat else []

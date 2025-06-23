@@ -863,7 +863,7 @@ class Cat:
     def become_lost(self):
         """Makes a Clan cat a lost cat. Makes status changes and removes apprentices."""
 
-        self.status.lost_from_group(
+        self.status.become_lost(
             new_social_status=choice([CatSocial.KITTYPET, CatSocial.LONER])
         )
 

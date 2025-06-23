@@ -551,7 +551,7 @@ class HandleShortEvents:
             taken_cats = []
             for kitty in self.dead_cats:
                 if "lost" in self.chosen_event.tags:
-                    kitty.lost_from_group()
+                    kitty.become_lost()
                     taken_cats.append(kitty)
                 self.multi_cat.append(kitty)
                 if kitty.ID not in self.involved_cats:
