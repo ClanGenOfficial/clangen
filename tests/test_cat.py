@@ -470,15 +470,25 @@ class TestNameRepr(unittest.TestCase):
             [[{"rank": CatRank.KITTEN}], 0, "kit"],
             [[{"rank": CatRank.KITTEN}], 1, "kit"],
             [
-                [{"rank": CatRank.APPRENTICE}, {"rank": CatRank.MEDICINE_APPRENTICE}, {"rank": CatRank.MEDIATOR_APPRENTICE}],
+                [
+                    {"rank": CatRank.APPRENTICE},
+                    {"rank": CatRank.MEDICINE_APPRENTICE},
+                    {"rank": CatRank.MEDIATOR_APPRENTICE},
+                ],
                 6,
                 "paw",
             ],
-            [[{"rank": CatRank.WARRIOR},
-              {"rank": CatRank.MEDICINE_CAT},
-              {"rank": CatRank.MEDIATOR},
-              {"rank": CatRank.ELDER},
-              {"rank": CatRank.DEPUTY}], 14, "test"],
+            [
+                [
+                    {"rank": CatRank.WARRIOR},
+                    {"rank": CatRank.MEDICINE_CAT},
+                    {"rank": CatRank.MEDIATOR},
+                    {"rank": CatRank.ELDER},
+                    {"rank": CatRank.DEPUTY},
+                ],
+                14,
+                "test",
+            ],
             [[{"rank": CatRank.LEADER}], 14, "star"],
         ]
         for testset, moons, suffix in statuses:
@@ -496,15 +506,25 @@ class TestNameRepr(unittest.TestCase):
             [[{"rank": CatRank.NEWBORN}], 0, "test"],
             [[{"rank": CatRank.KITTEN}], 1, "kit"],
             [
-                [{"rank": CatRank.APPRENTICE}, {"rank": CatRank.MEDICINE_APPRENTICE}, {"rank": CatRank.MEDIATOR_APPRENTICE}],
+                [
+                    {"rank": CatRank.APPRENTICE},
+                    {"rank": CatRank.MEDICINE_APPRENTICE},
+                    {"rank": CatRank.MEDIATOR_APPRENTICE},
+                ],
                 6,
                 "test",
             ],
-            [[{"rank": CatRank.WARRIOR},
-              {"rank": CatRank.MEDICINE_CAT},
-              {"rank": CatRank.MEDIATOR},
-              {"rank": CatRank.ELDER},
-              {"rank": CatRank.DEPUTY}], 14, "test"],
+            [
+                [
+                    {"rank": CatRank.WARRIOR},
+                    {"rank": CatRank.MEDICINE_CAT},
+                    {"rank": CatRank.MEDIATOR},
+                    {"rank": CatRank.ELDER},
+                    {"rank": CatRank.DEPUTY},
+                ],
+                14,
+                "test",
+            ],
             [[{"rank": CatRank.LEADER}], 14, "test"],
         ]
         for testset, moons, suffix in statuses:
@@ -519,46 +539,28 @@ class TestNameRepr(unittest.TestCase):
         Test that basic outsiders return the correct name
         :return:
         """
-        outsider_statuses = [{"rank": CatRank.LONER}, {"rank": CatRank.ROGUE}, {"rank": CatRank.KITTYPET}]
+        outsider_statuses = [
+            {"rank": CatRank.LONER},
+            {"rank": CatRank.ROGUE},
+            {"rank": CatRank.KITTYPET},
+        ]
         former_clancat_status = {
             "group_history": [
-                {
-                    "group": CatGroup.OTHER_CLAN1,
-                    "rank": CatRank.WARRIOR,
-                    "moons_as": 1
-                },
-                {
-                    "group": None,
-                    "rank": CatRank.LONER,
-                    "moons_as": 1
-                }
+                {"group": CatGroup.OTHER_CLAN1, "rank": CatRank.WARRIOR, "moons_as": 1},
+                {"group": None, "rank": CatRank.LONER, "moons_as": 1},
             ],
             "standing_history": [
-                {
-                    "group": CatGroup.OTHER_CLAN1,
-                    "standing": ["member", "known"]
-                }
-            ]
+                {"group": CatGroup.OTHER_CLAN1, "standing": ["member", "known"]}
+            ],
         }
         exiled_status = {
             "group_history": [
-                {
-                    "group": CatGroup.PLAYER_CLAN,
-                    "rank": CatRank.WARRIOR,
-                    "moons_as": 1
-                },
-                {
-                    "group": None,
-                    "rank": CatRank.LONER,
-                    "moons_as": 1
-                }
+                {"group": CatGroup.PLAYER_CLAN, "rank": CatRank.WARRIOR, "moons_as": 1},
+                {"group": None, "rank": CatRank.LONER, "moons_as": 1},
             ],
             "standing_history": [
-                {
-                    "group": CatGroup.PLAYER_CLAN,
-                    "standing": ["member", "exiled"]
-                }
-            ]
+                {"group": CatGroup.PLAYER_CLAN, "standing": ["member", "exiled"]}
+            ],
         }
         ex_clancat_statuses = [former_clancat_status, exiled_status]
 
@@ -581,49 +583,30 @@ class TestNameRepr(unittest.TestCase):
         Test that outsiders with hidden special suffixes return the correct name
         :return:
         """
-        outsider_statuses = [{"rank": CatRank.LONER}, {"rank": CatRank.ROGUE}, {"rank": CatRank.KITTYPET}]
+        outsider_statuses = [
+            {"rank": CatRank.LONER},
+            {"rank": CatRank.ROGUE},
+            {"rank": CatRank.KITTYPET},
+        ]
         former_clancat_status = {
             "group_history": [
-                {
-                    "group": CatGroup.OTHER_CLAN1,
-                    "rank": CatRank.WARRIOR,
-                    "moons_as": 1
-                },
-                {
-                    "group": None,
-                    "rank": CatRank.LONER,
-                    "moons_as": 1
-                }
+                {"group": CatGroup.OTHER_CLAN1, "rank": CatRank.WARRIOR, "moons_as": 1},
+                {"group": None, "rank": CatRank.LONER, "moons_as": 1},
             ],
             "standing_history": [
-                {
-                    "group": CatGroup.OTHER_CLAN1,
-                    "standing": ["member", "known"]
-                }
-            ]
+                {"group": CatGroup.OTHER_CLAN1, "standing": ["member", "known"]}
+            ],
         }
         exiled_status = {
             "group_history": [
-                {
-                    "group": CatGroup.PLAYER_CLAN,
-                    "rank": CatRank.WARRIOR,
-                    "moons_as": 1
-                },
-                {
-                    "group": None,
-                    "rank": CatRank.LONER,
-                    "moons_as": 1
-                }
+                {"group": CatGroup.PLAYER_CLAN, "rank": CatRank.WARRIOR, "moons_as": 1},
+                {"group": None, "rank": CatRank.LONER, "moons_as": 1},
             ],
             "standing_history": [
-                {
-                    "group": CatGroup.PLAYER_CLAN,
-                    "standing": ["member", "exiled"]
-                }
-            ]
+                {"group": CatGroup.PLAYER_CLAN, "standing": ["member", "exiled"]}
+            ],
         }
         ex_clancat_statuses = [former_clancat_status, exiled_status]
-
 
         age_suffix = [[0, "kit"], [1, "kit"], [6, "paw"], [14, "test"]]
 

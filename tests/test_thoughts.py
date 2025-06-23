@@ -111,23 +111,12 @@ class TestsGetStatusThought(unittest.TestCase):
         # given
         exiled_status = {
             "group_history": [
-                {
-                    "group": CatGroup.PLAYER_CLAN,
-                    "rank": CatRank.WARRIOR,
-                    "moons_as": 1
-                },
-                {
-                    "group": None,
-                    "rank": CatRank.LONER,
-                    "moons_as": 1
-                }
+                {"group": CatGroup.PLAYER_CLAN, "rank": CatRank.WARRIOR, "moons_as": 1},
+                {"group": None, "rank": CatRank.LONER, "moons_as": 1},
             ],
             "standing_history": [
-                {
-                    "group": CatGroup.PLAYER_CLAN,
-                    "standing": ["member", "exiled"]
-                }
-            ]
+                {"group": CatGroup.PLAYER_CLAN, "standing": ["member", "exiled"]}
+            ],
         }
         cat = Cat(status_dict=exiled_status, moons=40)
         biome = "Forest"
