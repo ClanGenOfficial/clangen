@@ -124,7 +124,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
         # given
         warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
-        medicine = Cat(status_dict={"rank": CatRank.WARRIOR})
+        medicine = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
 
         # when
         warrior_to_all = SingleInteraction("test")
