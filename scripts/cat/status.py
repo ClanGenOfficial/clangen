@@ -82,6 +82,7 @@ class Status:
         if self.group_history and not self.standing_history:
             self._start_standing()
 
+    # SAVE/LOAD
     def get_enums(self, group, rank, social=None, age=None):
         """
         this is mostly to catch the old status strings like exiled and lost
@@ -208,20 +209,6 @@ class Status:
 
         self.group_history = [new_history]
 
-    def change_current_moons_as(self, new_moons_as: int):
-        """
-        Used to adjust the cat's "moons_as" their current rank. This is meant mostly for use in adjusting a newly
-        created cat's value to give the illusion that they have existed in the world for longer. If you want to
-        increment their current moons_as by 1, use increase_current_moons_as()
-        """
-        self.group_history[-1].update({"moons_as": new_moons_as})
-
-    def increase_current_moons_as(self):
-        """
-        Use to increment their current group/rank moons_as by 1
-        """
-        self.group_history[-1]["moons_as"] += 1
-
     def _start_standing(self):
         """
         Generates basic standing info for a cat. If the cat is part of a group, it creates a MEMBER dict, else it
@@ -244,6 +231,7 @@ class Status:
                 }
             ]
 
+    # PROPERTIES
     @property
     def social(self) -> CatSocial:
         """
@@ -326,6 +314,21 @@ class Status:
 
         return rank
 
+    # MODIFY INFO
+    def change_current_moons_as(self, new_moons_as: int):
+        """
+        Used to adjust the cat's "moons_as" their current rank. This is meant mostly for use in adjusting a newly
+        created cat's value to give the illusion that they have existed in the world for longer. If you want to
+        increment their current moons_as by 1, use increase_current_moons_as()
+        """
+        self.group_history[-1].update({"moons_as": new_moons_as})
+
+    def increase_current_moons_as(self):
+        """
+        Use to increment their current group/rank moons_as by 1
+        """
+        self.group_history[-1]["moons_as"] += 1
+
     def _modify_group(
             self,
             new_rank: CatRank,
@@ -373,9 +376,16 @@ class Status:
         :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by
         Twolegs and are now a kittypet)
         """
+        # fallback
+        rank = CatRank.KITTYPET
+        # find matching rank enum
+        for enum in CatRank:
+            if enum == new_social_status:
+                rank = enum
+                break
 
         self._modify_group(
-            new_social_status,
+            rank,
             standing_with_past_group=CatStanding.LOST
         )
 
@@ -397,10 +407,10 @@ class Status:
     ):
         """
         Adds the cat to the specified group. If the cat has previously been part of this group, they will take on their
-        last held rank within that group (unless it was leader or deputy). Groups are currently assumed to be Clans only,
-        so if the cat has held a Clan rank within any Clan in the past, they will attempt to take on that same rank in
-        the new group (unless it was leader or deputy). If no past valid past rank is found, they will gain a rank based
-        off their age.
+        last held rank within that group (unless it was leader or deputy). Groups are currently assumed to be Clans
+        only, so if the cat has held a Clan rank within any Clan in the past, they will attempt to take on that same
+        rank in the new group (unless it was leader or deputy). If no past valid past rank is found, they will gain a
+        rank based off their age.
         :param new_group: The group the cat will be joining
         :param age: The current age stage of the cat, only required if a former clan cat is joining a clan
         :param standing_with_past_group: If leaving a group to join the new one, this should be used to indicate how the
@@ -458,18 +468,6 @@ class Status:
             new_group=game.clan.instructor.status.group,
             standing_with_past_group=CatStanding.MEMBER
         )
-    def get_standing_with_group(self, group: CatGroup) -> list[CatStanding]:
-        """
-        Returns the list of standings a cat has for the given group.
-        """
-        standing_list = []
-        for entry in self.standing_history:
-            if entry["group"] == group:
-                standing_list = entry["standing"]
-                break
-
-        return standing_list
-
 
     def change_rank(self, new_rank: CatRank):
         """
@@ -485,21 +483,6 @@ class Status:
             }
         )
 
-    def _change_outsider_social(self, new_social: CatSocial):
-        if self.group:
-            self._modify_group(
-                new_social,
-                standing_with_past_group=CatStanding.LEFT
-            )
-        else:
-            self.group_history.append(
-                {
-                    "group": None,
-                    "rank": new_social,
-                    "moons_as": 0
-                }
-            )
-
     def change_group_nearness(self, group: CatGroup):
         """
         Flips the "near" bool of the given group.
@@ -510,6 +493,19 @@ class Status:
                     entry["near"] = False
                 else:
                     entry["near"] = True
+
+    # RETRIEVE INFO
+    def get_standing_with_group(self, group: CatGroup) -> list[CatStanding]:
+        """
+        Returns the list of standings a cat has for the given group.
+        """
+        standing_list = []
+        for entry in self.standing_history:
+            if entry["group"] == group:
+                standing_list = entry["standing"]
+                break
+
+        return standing_list
 
     def find_prior_clan_rank(self, clan: CatGroup = None):
         """
