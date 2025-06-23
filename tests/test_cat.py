@@ -529,8 +529,8 @@ class TestNameRepr(unittest.TestCase):
         ]
         for testset, moons, suffix in statuses:
             for status in testset:
-                with self.subTest("clancats specsuffix", status=status):
-                    cat = Cat(moons=moons, status=status, suffix="test")
+                with self.subTest("clancats specsuffix", status_dict=status):
+                    cat = Cat(moons=moons, status_dict=status, suffix="test")
                     cat.name.specsuffix_hidden = True
                     self.assertTrue(str(cat.name).endswith(suffix))
 
