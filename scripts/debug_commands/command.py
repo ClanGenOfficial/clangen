@@ -7,7 +7,6 @@ from typing import List
 
 
 class Command(ABC):
-
     @property
     @abstractmethod
     def name(self):

@@ -94,7 +94,7 @@
                         "scars": ["LEFTEAR"]
                     }
                 ],
-                "history_text": { "scar": "r_c was scarred by a sharp piece of Twoleg garbage." }
+                "history_text": {"scar": "r_c was scarred by a sharp piece of Twoleg garbage."}
             }
         ]
     },
@@ -536,7 +536,7 @@
         "patrol_id": "pln_hunt_greenleaf_redvixen5",
         "biome": ["plains"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -699,7 +699,7 @@
         "patrol_id": "pln_hunt_greenleaf_redvixen6",
         "biome": ["plains"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -854,7 +854,7 @@
         "patrol_id": "pln_hunt_greenleaf_redvixen4",
         "biome": ["plains"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -1252,7 +1252,8 @@
         "decline_text": "The patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
         "success_outcomes": [
-            {                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating, the patrol is able to at least drag some of the intestines home to camp.",
+            {
+                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating, the patrol is able to at least drag some of the intestines home to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -2073,11 +2074,11 @@
             }
             ]
         },
-        { 
-        "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path - that was too close!",
+        {
+            "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path - that was too close!",
                 "exp": 5,
-                "weight": 20, 
-                "prey": ["very_small"],
+                "weight": 20,
+            "prey": ["very_small"],
                 "relationships": [
                     {
                         "cats_to": ["r_c"],

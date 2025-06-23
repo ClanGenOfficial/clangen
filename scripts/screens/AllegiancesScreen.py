@@ -131,8 +131,7 @@ class AllegiancesScreen(Screens):
         """Determine Text. Ouputs list of tuples."""
 
         living_cats = [
-            cat for cat in Cat.all_cats.values()
-            if not cat.dead and not cat.outside
+            cat for cat in Cat.all_cats.values() if not cat.dead and not cat.outside
         ]
         living_meds = []
         living_mediators = []

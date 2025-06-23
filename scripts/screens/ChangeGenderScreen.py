@@ -20,7 +20,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_value,
-    ui_scale_offset
+    ui_scale_offset,
 )
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import ui_scale

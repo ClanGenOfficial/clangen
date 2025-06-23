@@ -145,7 +145,9 @@ class GenerateEvents:
                         r_c=event["r_c"] if "r_c" in event else {},
                         new_cat=event["new_cat"] if "new_cat" in event else [],
                         injury=event["injury"] if "injury" in event else [],
-                        exclude_involved=event["exclude_involved"] if "exclude_involved" in event else [],
+                        exclude_involved=event["exclude_involved"]
+                        if "exclude_involved" in event
+                        else [],
                         history=event["history"] if "history" in event else [],
                         relationships=event["relationships"]
                         if "relationships" in event
@@ -246,13 +248,6 @@ class GenerateEvents:
     ):
         final_events = []
         incorrect_format = []
-
-        # Chance to bypass the skill or trait requirements.
-        trait_skill_bypass = 15
-
-        # check if generated event should be a war event
-        if "war" in sub_types and random.randint(1, 10) == 1:
-            sub_types.remove("war")
 
         for event in possible_events:
             if event.history:

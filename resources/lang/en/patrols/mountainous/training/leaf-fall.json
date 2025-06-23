@@ -699,7 +699,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-fall"],
         "tags": [],
-        "types": [],
+        "types": ["training"],
         "patrol_art": "gen_bord_story",
         "min_cats": 4,
         "max_cats": 6,

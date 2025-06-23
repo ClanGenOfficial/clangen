@@ -330,7 +330,7 @@ buttonstyles = {
     "icon_tab_top": {
         "ninetile": True,
         "scale_only": False,
-        "tab_movement": {"hovered": True, "disabled": True, "amount": (0, -4)},
+        "tab_movement": {"hovered": True, "disabled": True, "amount": (0, 4)},
     },
     "icon_tab_left": {
         "ninetile": True,
@@ -340,7 +340,7 @@ buttonstyles = {
     "icon_tab_bottom": {
         "ninetile": True,
         "scale_only": False,
-        "tab_movement": {"hovered": True, "disabled": True, "amount": (0, 4)},
+        "tab_movement": {"hovered": True, "disabled": True, "amount": (0, -4)},
     },
     "icon_tab_right": {
         "ninetile": True,
