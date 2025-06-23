@@ -274,8 +274,27 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     # test that is_potential_mate returns False for exiled or dead cats
     def test_dead_exiled(self):
-        exiled_cat = Cat()
-        exiled_cat.exiled = True
+        exiled_status = {
+            "group_history": [
+                {
+                    "group": CatGroup.PLAYER_CLAN,
+                    "rank": CatRank.WARRIOR,
+                    "moons_as": 1
+                },
+                {
+                    "group": None,
+                    "rank": CatRank.LONER,
+                    "moons_as": 1
+                }
+            ],
+            "standing_history": [
+                {
+                    "group": CatGroup.PLAYER_CLAN,
+                    "standing": ["member", "exiled"]
+                }
+            ]
+        }
+        exiled_cat = Cat(exiled_status)
         dead_cat = Cat()
         dead_cat.dead = True
         normal_cat = Cat()
@@ -436,6 +455,7 @@ class TestUpdateMentor(unittest.TestCase):
     # test that an exiled cat apprentice becomes a former apprentice
     def test_exile_apprentice(self):
         # given
+
         app = Cat(moons=7, status_dict={"rank": CatRank.APPRENTICE})
         mentor = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR})
         app.update_mentor(mentor.ID)
@@ -444,7 +464,8 @@ class TestUpdateMentor(unittest.TestCase):
         self.assertTrue(app.ID in mentor.apprentice)
         self.assertFalse(app.ID in mentor.former_apprentices)
         self.assertEqual(app.mentor, mentor.ID)
-        app.exiled = True
+
+        app.status.exile_from_group()
         app.update_mentor()
 
         # then
