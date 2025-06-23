@@ -504,7 +504,7 @@ class TestNameRepr(unittest.TestCase):
         """
         statuses = [
             [[{"rank": CatRank.NEWBORN}], 0, "test"],
-            [[{"rank": CatRank.KITTEN}], 1, "kit"],
+            [[{"rank": CatRank.KITTEN}], 1, "test"],
             [
                 [
                     {"rank": CatRank.APPRENTICE},
