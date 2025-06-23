@@ -2,8 +2,6 @@ from itertools import groupby
 from random import choice
 from typing import TypedDict
 
-import ujson
-
 from scripts.cat.enums import CatRank, CatSocial, CatStanding, CatAge, CatGroup
 from scripts.game_structure.game_essentials import game
 
@@ -397,7 +395,7 @@ class Status:
 
     def exile_from_group(self):
         """
-        Removes cat from current group and changes their standing with that group to exiled.
+        Removes cat from current group and changes their standing with that group to be exiled.
         Cat will become a loner.
         """
 

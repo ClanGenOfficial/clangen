@@ -40,7 +40,7 @@ class OutsiderEvents:
                     )
                 else:
                     text = (
-                        f"Rumors reach your Clan that the {cat.status} "
+                        f"Rumors reach your Clan that the {cat.status.social} "
                         f"{cat.name} has died recently."
                     )
                     death_history = "m_c died while roaming around."
