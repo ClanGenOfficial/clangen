@@ -9,11 +9,9 @@ TODO: Docs
 # pylint: enable=line-too-long
 
 import os
-import random
 import statistics
 from random import choice, randint
 
-import i18n
 import pygame
 import ujson
 
@@ -890,7 +888,7 @@ class Clan:
                         clan_data["other_clan_temperament"].split(","),
                         other_clan_enums
                 ):
-                    game.clan.all_clans.append(OtherClan(name, int(relation), temper, enum=enum))
+                    game.clan.all_clans.append(OtherClan(name, int(relation), temper))
             else:
                 for name, relation, temper, symbol, enum in zip(
                         clan_data["other_clans_names"].split(","),
