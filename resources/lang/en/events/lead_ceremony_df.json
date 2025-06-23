@@ -90,7 +90,7 @@
     "abrasive_adult": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+      "star_trait": ["ambitious", "bloodthirsty", "aloof", "fierce", "shameless", "strict", "troublesome", "vengeful"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
@@ -118,7 +118,7 @@
     "reserved_adult": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "strange"],
+      "star_trait": ["laid-back", "careful", "insecure", "lonesome", "devoted", "nervous", "strange"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
@@ -193,10 +193,10 @@
       ]
     },
 
-    "calm_adult": {
+    "laid-back_adult": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["calm"],
+      "star_trait": ["laid-back"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
@@ -259,10 +259,10 @@
       ]
     },
 
-    "cold_adult": {
+    "aloof_adult": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["cold"],
+      "star_trait": ["aloof"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
@@ -280,10 +280,10 @@
       ]
     },
 
-    "compassionate_adult": {
+    "considerate_adult": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["compassionate"],
+      "star_trait": ["considerate"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
@@ -405,10 +405,10 @@
       ]
     },
 
-  	"loyal_adult": {
+  	"devoted_adult": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["loyal"],
+      "star_trait": ["devoted"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
@@ -629,10 +629,10 @@
         }
       ]
     },
-    "rebellious_adult": {
+    "defiant_adult": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["rebellious"],
+      "star_trait": ["defiant"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
@@ -745,9 +745,9 @@
       ]
     },
   
-    "calm_warrior": {
+    "laid-back_warrior": {
       "tags": [],
-      "lead_trait": ["calm"],
+      "lead_trait": ["laid-back"],
       "star_trait": [],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
@@ -817,9 +817,9 @@
       ]
     },
 
-    "cold_warrior": {
+    "aloof_warrior": {
       "tags": [],
-      "lead_trait": ["cold"],
+      "lead_trait": ["aloof"],
       "star_trait": [],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
@@ -832,9 +832,9 @@
       ]
     },
 
-    "compassionate_warrior": {
+    "considerate_warrior": {
       "tags": [],
-      "lead_trait": ["compassionate"],
+      "lead_trait": ["considerate"],
       "star_trait": [],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
@@ -851,7 +851,7 @@
       "stubbornness", "authority"]
         },
         {
-          "text": "r_c's tired gaze watches m_c. Whispering how m_c's compassionate nature will only hurt c_n in the end, r_c presses {PRONOUN/r_c/poss} nose against the new leader and sighs out a life for [virtue].",
+          "text": "r_c's tired gaze watches m_c. Whispering how m_c's considerate nature will only hurt c_n in the end, r_c presses {PRONOUN/r_c/poss} nose against the new leader and sighs out a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgment", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
@@ -965,9 +965,9 @@
       ]
     },
   
-  	"loyal_warrior": {
+  	"devoted_warrior": {
       "tags": [],
-      "lead_trait": ["loyal"],
+      "lead_trait": ["devoted"],
       "star_trait": [],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
@@ -1232,9 +1232,9 @@
         }
       ]
     },
-    "rebellious_warrior": {
+    "defiant_warrior": {
       "tags": [],
-      "lead_trait": ["Rebellious"],
+      "lead_trait": ["defiant"],
       "star_trait": [],
       "rank": ["warrior", "deputy"],
       "life_giving": [
