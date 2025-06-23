@@ -313,7 +313,7 @@
             "greenleaf"
         ],
         "weight": 30,
-        "event_text": "The dry greenleaf weather lead to a fire starting in camp. m_c dove into the nursery to save r_c and was burnt in the process.",
+        "event_text": "The dry greenleaf weather led to a fire starting in camp. m_c dove into the nursery to save r_c and was burnt in the process.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -416,7 +416,7 @@
             "leaf-bare"
         ],
         "weight": 30,
-        "event_text": "m_c and r_c played on the ice covered pond near camp. They weren't quick enough to react to the sound of cracking beneath them, but m_c managed to drag r_c out of the freezing water.",
+        "event_text": "m_c and r_c played on the ice-covered pond near camp. They weren't quick enough to react to the sound of cracking beneath them, but m_c managed to drag r_c out of the freezing water.",
         "m_c": {
             "status": [
                 "apprentice",
