@@ -70,7 +70,7 @@
     "benevolent_adult": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["faithful", "loving", "responsible", "thoughtful", "wise", "charismatic"],
+      "star_trait": ["devoted", "loving", "responsible", "considerate", "wise", "charismatic"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
@@ -122,7 +122,7 @@
     "benevolent_adult_bloodthirsty_lead": {
       "tags": [],
       "lead_trait": ["bloodthirsty"],
-      "star_trait": ["faithful", "loving", "responsible", "thoughtful", "wise", "charismatic"],
+      "star_trait": ["devoted", "loving", "responsible", "considerate", "wise", "charismatic"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
@@ -620,12 +620,12 @@
       ]
     },
   
-    "sneaky_warrior": {
+    "cunning_warrior": {
       "tags": [],
-      "lead_trait": ["sneaky"],
+      "lead_trait": ["cunning"],
       "star_trait": [],
       "rank": ["warrior", "deputy"],
-      "life_giving": [
+      "life_giving": [,
         {
           "text": "m_c's breath catches in {PRONOUN/m_c/poss} throat as r_c steps forward, feeling as though the divine warrior can see right through {PRONOUN/m_c/object}. r_c holds m_c's gaze as {PRONOUN/r_c/subject} {VERB/r_c/give/gives} a life for [virtue], imploring {PRONOUN/m_c/object} to embrace transparency in {PRONOUN/m_c/poss} actions. Only then will {PRONOUN/m_c/subject} earn the respect and loyalty of c_n.",
           "virtue": ["honesty", "integrity", "sincerity", "respect", "accountability", "openness", "honor", "clarity", "courage", "trust", "humility", "instincts", "loyalty", "gratitude", "unity"]
@@ -633,10 +633,10 @@
       ]
     },
   
-    "sneaky_starclanwarrior": {
+    "cunning_starclanwarrior": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["sneaky"],
+      "star_trait": ["cunning"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
@@ -689,23 +689,6 @@
         {
           "text": "m_c squares {PRONOUN/m_c/poss} jaw as r_c approaches, preparing to receive another life. r_c gazes at {PRONOUN/m_c/object}, an intensity in {PRONOUN/r_c/poss} eyes that makes m_c want to shrink back. r_c gives a life for [virtue], implying that m_c could use it.",
           "virtue": ["certainty", "righteousness", "confidence", "power", "commitment", "determination", "bravery", "clear judgment", "decisiveness", "integrity", "justice"]
-        }
-      ]
-    },
-  
-    "thoughtful_warrior": {
-      "tags": [],
-      "lead_trait": ["thoughtful"],
-      "star_trait": [],
-      "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
-      "life_giving": [
-        {
-          "text": "Valuing m_c's thoughtful nature, r_c hopes that {PRONOUN/m_c/subject} will not let the stress of leadership get to {PRONOUN/m_c/object} as the StarClan cat gives a life for [virtue].",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
-        },
-        {
-          "text": "Urging m_c to take {PRONOUN/r_c/poss} time and to chart out c_n's future carefully, r_c bestows a life of [virtue] upon the new leader.",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
     },
@@ -818,18 +801,6 @@
       "life_giving": [
         {
           "text": "Not all of StarClan is as rigid as the Code some cling to. r_c hopes that m_c will use {PRONOUN/m_c/poss} rebellious nature to make c_n a better place as {PRONOUN/r_c/subject} {VERB/r_c/gives/give} a life for [virtue].",
-          "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
-        }
-      ]
-    },
-    "sincere_warrior": {
-      "tags": [],
-      "lead_trait": ["sincere"],
-      "star_trait": [],
-      "rank": ["warrior", "deputy"],
-      "life_giving": [
-        {
-          "text": "Sincerity and honesty are prominent traits of a StarClan cat. r_c presses {PRONOUN/r_c/poss} nose against m_c and, in a serene voice, gives the new leader a life for [virtue].",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
