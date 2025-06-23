@@ -274,27 +274,8 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     # test that is_potential_mate returns False for exiled or dead cats
     def test_dead_exiled(self):
-        exiled_status = {
-            "group_history": [
-                {
-                    "group": CatGroup.PLAYER_CLAN,
-                    "rank": CatRank.WARRIOR,
-                    "moons_as": 1
-                },
-                {
-                    "group": None,
-                    "rank": CatRank.LONER,
-                    "moons_as": 1
-                }
-            ],
-            "standing_history": [
-                {
-                    "group": CatGroup.PLAYER_CLAN,
-                    "standing": ["member", "exiled"]
-                }
-            ]
-        }
-        exiled_cat = Cat(exiled_status)
+        exiled_cat = Cat()
+        exiled_cat.status.exile_from_group()
         dead_cat = Cat()
         dead_cat.dead = True
         normal_cat = Cat()
