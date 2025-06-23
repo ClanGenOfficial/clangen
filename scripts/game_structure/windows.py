@@ -964,24 +964,28 @@ class PronounCreation(UIWindow):
                 object_id="#text_box_30_horizcenter_spacing_95",
                 manager=MANAGER,
                 container=self.elements["core_container"],
-                anchors={"top_target": self.box_labels[text_inputs[i - 1]]}
-                if i > 0
-                else {"top_target": self.dropdowns["gender_label"]},
+                anchors=(
+                    {"top_target": self.box_labels[text_inputs[i - 1]]}
+                    if i > 0
+                    else {"top_target": self.dropdowns["gender_label"]}
+                ),
             )
             self.boxes[item] = pygame_gui.elements.UITextEntryLine(
                 ui_scale(pygame.Rect((0, 5), (150, 30))),
                 placeholder_text=self.the_cat.pronouns[0][item],
                 manager=MANAGER,
                 container=self,
-                anchors={
-                    "top_target": self.boxes[text_inputs[i - 1]],
-                    "left_target": self.box_labels[item],
-                }
-                if i > 0
-                else {
-                    "top_target": self.dropdowns["gender_label"],
-                    "left_target": self.box_labels[item],
-                },
+                anchors=(
+                    {
+                        "top_target": self.boxes[text_inputs[i - 1]],
+                        "left_target": self.box_labels[item],
+                    }
+                    if i > 0
+                    else {
+                        "top_target": self.dropdowns["gender_label"],
+                        "left_target": self.box_labels[item],
+                    }
+                ),
             )
             self.boxes[item].set_allowed_characters("alpha_numeric")
 
@@ -1667,7 +1671,7 @@ class RelationshipLog(UIWindow):
             )
             self.opp_heading = pygame_gui.elements.UITextBox(
                 "windows.other_perspective",
-                ui_scale(pygame.Rect((15, 275), (476, 280))),
+                ui_scale(pygame.Rect((15, 275), (-1, -1))),
                 object_id="#text_box_30_horizleft",
                 manager=MANAGER,
                 container=self,
@@ -2009,9 +2013,9 @@ class ChangeCatToggles(UIWindow):
             ui_scale(pygame.Rect((22, 50), (34, 34))),
             "",
             container=self,
-            object_id="@checked_checkbox"
-            if self.the_cat.no_kits
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox" if self.the_cat.no_kits else "@unchecked_checkbox"
+            ),
             tool_tip_text="windows.prevent_kits_tooltip",
         )
 
@@ -2020,12 +2024,14 @@ class ChangeCatToggles(UIWindow):
             ui_scale(pygame.Rect((22, 75), (34, 34))),
             "",
             container=self,
-            object_id="@checked_checkbox"
-            if self.the_cat.no_retire
-            else "@unchecked_checkbox",
-            tool_tip_text="windows.prevent_retirement_tooltip_yes"
-            if self.the_cat.no_retire
-            else "windows.prevent_retirement_tooltip_no",
+            object_id=(
+                "@checked_checkbox" if self.the_cat.no_retire else "@unchecked_checkbox"
+            ),
+            tool_tip_text=(
+                "windows.prevent_retirement_tooltip_yes"
+                if self.the_cat.no_retire
+                else "windows.prevent_retirement_tooltip_no"
+            ),
         )
 
         # No mates
@@ -2033,9 +2039,9 @@ class ChangeCatToggles(UIWindow):
             ui_scale(pygame.Rect((22, 100), (34, 34))),
             "",
             container=self,
-            object_id="@checked_checkbox"
-            if self.the_cat.no_mates
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox" if self.the_cat.no_mates else "@unchecked_checkbox"
+            ),
             tool_tip_text="windows.prevent_romance_tooltip",
         )
 

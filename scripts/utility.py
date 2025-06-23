@@ -2531,12 +2531,16 @@ def ui_scale_dimensions(dim: Tuple[int, int]):
     :return: The scaled dimensions
     """
     return (
-        floor(dim[0] * scripts.game_structure.screen_settings.screen_scale)
-        if dim[0] > 0
-        else dim[0],
-        floor(dim[1] * scripts.game_structure.screen_settings.screen_scale)
-        if dim[1] > 0
-        else dim[1],
+        (
+            floor(dim[0] * scripts.game_structure.screen_settings.screen_scale)
+            if dim[0] > 0
+            else dim[0]
+        ),
+        (
+            floor(dim[1] * scripts.game_structure.screen_settings.screen_scale)
+            if dim[1] > 0
+            else dim[1]
+        ),
     )
 
 
@@ -2643,12 +2647,12 @@ def clan_symbol_sprite(clan, return_string=False, force_light=False):
 
 
 def generate_sprite(
-        cat,
-        life_state=None,
-        scars_hidden=False,
-        acc_hidden=False,
-        always_living=False,
-        no_not_working=False,
+    cat,
+    life_state=None,
+    scars_hidden=False,
+    acc_hidden=False,
+    always_living=False,
+    disable_sick_sprite=False,
 ) -> pygame.Surface:
     """
     Generates the sprite for a cat, with optional arguments that will override certain things.
@@ -2657,7 +2661,7 @@ def generate_sprite(
     :param scars_hidden: If True, doesn't display the cat's scars. If False, display cat scars.
     :param acc_hidden: If True, hide the accessory. If false, show the accessory.
     :param always_living: If True, always show the cat with living lineart
-    :param no_not_working: If true, never use the not_working lineart.
+    :param disable_sick_sprite: If true, never use the not_working lineart.
                     If false, use the cat.not_working() to determine the no_working art.
     """
 
@@ -2673,10 +2677,10 @@ def generate_sprite(
 
     # setting the cat_sprite (bc this makes things much easier)
     if (
-            not no_not_working
-            and cat.not_working()
-            and age != "newborn"
-            and game.config["cat_sprites"]["sick_sprites"]
+        not disable_sick_sprite
+        and cat.not_working()
+        and age != "newborn"
+        and game.config["cat_sprites"]["sick_sprites"]
     ):
         if age in ["kitten", "adolescent"]:
             cat_sprite = str(19)

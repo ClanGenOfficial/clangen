@@ -893,9 +893,9 @@ class MediationScreen(Screens):
         self.romantic_checkbox = UIImageButton(
             ui_scale(pygame.Rect((321, 317), (34, 34))),
             "",
-            object_id="@checked_checkbox"
-            if self.allow_romantic
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox" if self.allow_romantic else "@unchecked_checkbox"
+            ),
             tool_tip_text="screens.mediation.allow_romantic_tooltip",
             manager=MANAGER,
         )

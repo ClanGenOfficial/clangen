@@ -636,9 +636,11 @@ class ProfileScreen(Screens):
             "",
             object_id="#fav_star" if self.the_cat.favourite else "#not_fav_star",
             manager=MANAGER,
-            tool_tip_text="general.remove_favorite"
-            if self.the_cat.favourite
-            else "general.mark_favorite",
+            tool_tip_text=(
+                "general.remove_favorite"
+                if self.the_cat.favourite
+                else "general.mark_favorite"
+            ),
             starting_height=2,
             anchors={
                 "right": "right",
@@ -2161,11 +2163,15 @@ class ProfileScreen(Screens):
                 "",
                 get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
                 object_id="@buttonstyles_ladder_top",
-                tool_tip_text="screens.profile.exile_guide_tooltip"
-                if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID
-                else "screens.profile.exile_tooltip"
-                if not self.the_cat.dead
-                else None,
+                tool_tip_text=(
+                    "screens.profile.exile_guide_tooltip"
+                    if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID
+                    else (
+                        "screens.profile.exile_tooltip"
+                        if not self.the_cat.dead
+                        else None
+                    )
+                ),
                 starting_height=2,
                 manager=MANAGER,
             )

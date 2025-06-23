@@ -12,6 +12,7 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
     UISurfaceImageButton,
+    UIModifiedImage,
 )
 from scripts.utility import (
     get_text_box_theme,
@@ -189,7 +190,7 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
             )
             self.log_title.hide()
-            self.cat_bg = pygame_gui.elements.UIImage(
+            self.cat_bg = UIModifiedImage(
                 ui_scale(pygame.Rect((140, 440), (560, 200))),
                 get_box(BoxStyles.ROUNDED_BOX, (560, 200)),
                 manager=MANAGER,

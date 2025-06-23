@@ -223,9 +223,9 @@ class Events:
                     event,
                     ["birth_death"],
                     [i.ID for i in Cat.dead_cats],
-                    cat_dict={"m_c": Cat.dead_cats[0]}
-                    if len(Cat.dead_cats) == 1
-                    else None,
+                    cat_dict=(
+                        {"m_c": Cat.dead_cats[0]} if len(Cat.dead_cats) == 1 else None
+                    ),
                 )
             )
             if extra_event:
@@ -891,6 +891,9 @@ class Events:
         -if the cat was not injured or ill, then they will do all of the above *and* trigger misc events, acc events,
         and new cat events
         """
+        if cat.faded:
+            return
+
         # this will also handle increasing dead_for!
         cat.status.increase_current_moons_as()
 

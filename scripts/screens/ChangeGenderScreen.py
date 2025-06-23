@@ -330,12 +330,14 @@ class ChangeGenderScreen(Screens):
                 block_rect,
                 container=self.removalboxes_text["container_general"],
                 manager=MANAGER,
-                anchors={
-                    "centerx": "centerx",
-                    "top_target": self.elements[f"cat_pronouns_{n - 1}"],
-                }
-                if n > 0
-                else {"centerx": "centerx"},
+                anchors=(
+                    {
+                        "centerx": "centerx",
+                        "top_target": self.elements[f"cat_pronouns_{n - 1}"],
+                    }
+                    if n > 0
+                    else {"centerx": "centerx"}
+                ),
                 margins={"left": 0, "right": 0, "top": ui_scale_value(2), "bottom": 0},
             )
             self.elements[
@@ -447,12 +449,14 @@ class ChangeGenderScreen(Screens):
                 block_rect,
                 container=self.removalboxes_text["container_general2"],
                 manager=MANAGER,
-                anchors={
-                    "centerx": "centerx",
-                    "top_target": self.elements[f"{n - 1}"],
-                }
-                if n > 0
-                else {"centerx": "centerx"},
+                anchors=(
+                    {
+                        "centerx": "centerx",
+                        "top_target": self.elements[f"{n - 1}"],
+                    }
+                    if n > 0
+                    else {"centerx": "centerx"}
+                ),
                 margins={"left": 0, "right": 0, "top": ui_scale_value(2), "bottom": 0},
             )
             self.elements[f"{n}"].background_image = pygame.transform.scale(

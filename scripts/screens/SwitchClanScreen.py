@@ -191,12 +191,14 @@ class SwitchClanScreen(Screens):
                     ),
                     object_id=ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
                     manager=MANAGER,
-                    anchors={
-                        "centerx": "centerx",
-                        "top_target": self.clan_buttons[-1][-1],
-                    }
-                    if len(self.clan_buttons[-1]) % 8 != 0
-                    else {"centerx": "centerx"},
+                    anchors=(
+                        {
+                            "centerx": "centerx",
+                            "top_target": self.clan_buttons[-1][-1],
+                        }
+                        if len(self.clan_buttons[-1]) % 8 != 0
+                        else {"centerx": "centerx"}
+                    ),
                 )
             )
 

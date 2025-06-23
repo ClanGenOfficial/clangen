@@ -325,6 +325,8 @@ class Cat:
         # Private Sprite
         self._sprite: Optional[pygame.Surface] = None
         self._sprite_mask: Optional[pygame.Mask] = None
+        self._sprite_working: bool = self.not_working()
+        """used to store whether we should be displaying sick sprite or not"""
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
@@ -510,7 +512,8 @@ class Cat:
         :return: List of dicts for the cat's pronouns
         """
         if self.faded:
-            return []
+            value = pronouns.get_default_pronouns()["0"]
+            return [value]
 
         locale = i18n.config.get("locale")
         value = self._pronouns.get(locale)
@@ -1540,7 +1543,7 @@ class Cat:
             self.thoughts()
             return
 
-        if self.dead:
+        if self.dead and not self.faded:
             self.thoughts()
             return
 
@@ -3363,8 +3366,9 @@ class Cat:
     @property
     def sprite(self):
         # Update the sprite
-        if self.pelt.rebuild_sprite:
+        if self.pelt.rebuild_sprite or self.not_working() != self._sprite_working:
             self.pelt.rebuild_sprite = False
+            self._sprite_working = self.not_working()
             update_sprite(self)
             update_mask(self)
         return self._sprite
@@ -3397,9 +3401,11 @@ class Cat:
                 [
                     self.genderalign,
                     i18n.t(
-                        f"general.{self.age}"
-                        if self.age != "kitten"
-                        else "general.kitten_profile",
+                        (
+                            f"general.{self.age}"
+                            if self.age != "kitten"
+                            else "general.kitten_profile"
+                        ),
                         count=1,
                     ),
                     i18n.t(f"cat.personality.{self.personality.trait}"),
@@ -3460,9 +3466,11 @@ class Cat:
                 "specsuffix_hidden": self.name.specsuffix_hidden,
                 "gender": self.gender,
                 "gender_align": self.genderalign,
-                "pronouns": self._pronouns
-                if self._pronouns is not None
-                else {i18n.config.get("locale"): self.pronouns},
+                "pronouns": (
+                    self._pronouns
+                    if self._pronouns is not None
+                    else {i18n.config.get("locale"): self.pronouns}
+                ),
                 "birth_cooldown": self.birth_cooldown,
                 "status": self.status.get_status_dict(),
                 "backstory": self.backstory or None,
