@@ -7,7 +7,7 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge
+from scripts.cat.enums import CatAge, CatRank, CatGroup
 from scripts.cat_relations.relationship import Relationship
 
 
@@ -436,8 +436,8 @@ class TestUpdateMentor(unittest.TestCase):
     # test that an exiled cat apprentice becomes a former apprentice
     def test_exile_apprentice(self):
         # given
-        app = Cat(moons=7, status="apprentice")
-        mentor = Cat(moons=20, status="warrior")
+        app = Cat(moons=7, status_dict={"rank": CatRank.APPRENTICE})
+        mentor = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR})
         app.update_mentor(mentor.ID)
 
         # when
@@ -465,20 +465,24 @@ class TestNameRepr(unittest.TestCase):
         :return:
         """
         statuses = [
-            [["newborn"], 0, "kit"],
-            [["kitten"], 1, "kit"],
+            [[{"rank": CatRank.KITTEN}], 0, "kit"],
+            [[{"rank": CatRank.KITTEN}], 1, "kit"],
             [
-                ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+                [{"rank": CatRank.APPRENTICE}, {"rank": CatRank.MEDICINE_APPRENTICE}, {"rank": CatRank.MEDIATOR_APPRENTICE}],
                 6,
                 "paw",
             ],
-            [["warrior", "medicine cat", "mediator", "elder", "deputy"], 14, "test"],
-            [["leader"], 14, "star"],
+            [[{"rank": CatRank.WARRIOR},
+              {"rank": CatRank.MEDICINE_CAT},
+              {"rank": CatRank.MEDIATOR},
+              {"rank": CatRank.ELDER},
+              {"rank": CatRank.DEPUTY}], 14, "test"],
+            [[{"rank": CatRank.LEADER}], 14, "star"],
         ]
         for testset, moons, suffix in statuses:
             for status in testset:
-                with self.subTest("clancats", status=status):
-                    cat = Cat(moons=moons, status=status, suffix="test")
+                with self.subTest("clancats", status_dict=status):
+                    cat = Cat(moons=moons, status_dict=status, suffix="test")
                     self.assertTrue(str(cat.name).endswith(suffix))
 
     def test_specsuffix_clancats(self):
@@ -487,15 +491,19 @@ class TestNameRepr(unittest.TestCase):
         :return:
         """
         statuses = [
-            [["newborn"], 0, "test"],
-            [["kitten"], 1, "test"],
+            [[{"rank": CatRank.NEWBORN}], 0, "test"],
+            [[{"rank": CatRank.KITTEN}], 1, "kit"],
             [
-                ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+                [{"rank": CatRank.APPRENTICE}, {"rank": CatRank.MEDICINE_APPRENTICE}, {"rank": CatRank.MEDIATOR_APPRENTICE}],
                 6,
                 "test",
             ],
-            [["warrior", "medicine cat", "mediator", "elder", "deputy"], 14, "test"],
-            [["leader"], 14, "test"],
+            [[{"rank": CatRank.WARRIOR},
+              {"rank": CatRank.MEDICINE_CAT},
+              {"rank": CatRank.MEDIATOR},
+              {"rank": CatRank.ELDER},
+              {"rank": CatRank.DEPUTY}], 14, "test"],
+            [[{"rank": CatRank.LEADER}], 14, "test"],
         ]
         for testset, moons, suffix in statuses:
             for status in testset:
@@ -509,23 +517,61 @@ class TestNameRepr(unittest.TestCase):
         Test that basic outsiders return the correct name
         :return:
         """
-        outsider_statuses = ["loner", "rogue", "kittypet"]
-        ex_clancat_statuses = ["former Clancat", "exiled"]
+        outsider_statuses = [{"rank": CatRank.LONER}, {"rank": CatRank.ROGUE}, {"rank": CatRank.KITTYPET}]
+        former_clancat_status = {
+            "group_history": [
+                {
+                    "group": CatGroup.OTHER_CLAN1,
+                    "rank": CatRank.WARRIOR,
+                    "moons_as": 1
+                },
+                {
+                    "group": None,
+                    "rank": CatRank.LONER,
+                    "moons_as": 1
+                }
+            ],
+            "standing_history": [
+                {
+                    "group": CatGroup.OTHER_CLAN1,
+                    "standing": ["member", "known"]
+                }
+            ]
+        }
+        exiled_status = {
+            "group_history": [
+                {
+                    "group": CatGroup.PLAYER_CLAN,
+                    "rank": CatRank.WARRIOR,
+                    "moons_as": 1
+                },
+                {
+                    "group": None,
+                    "rank": CatRank.LONER,
+                    "moons_as": 1
+                }
+            ],
+            "standing_history": [
+                {
+                    "group": CatGroup.PLAYER_CLAN,
+                    "standing": ["member", "exiled"]
+                }
+            ]
+        }
+        ex_clancat_statuses = [former_clancat_status, exiled_status]
 
         age_suffix = [[0, "kit"], [1, "kit"], [6, "paw"], [14, "test"]]
 
         for status in outsider_statuses:
             for moons, suffix in age_suffix:
-                with self.subTest("outsiders", status=status, moons=moons):
-                    cat = Cat(status=status, moons=moons, suffix="test")
-                    cat.outside = True
+                with self.subTest("outsiders", status_dict=status, moons=moons):
+                    cat = Cat(status_dict=status, moons=moons, suffix="test")
                     self.assertTrue(str(cat.name).endswith("test"))
 
         for status in ex_clancat_statuses:
             for moons, suffix in age_suffix:
-                with self.subTest("Clan-like names", status=status, moons=moons):
-                    cat = Cat(status=status, moons=moons, suffix="test")
-                    cat.outside = True
+                with self.subTest("Clan-like names", status_dict=status, moons=moons):
+                    cat = Cat(status_dict=status, moons=moons, suffix="test")
                     self.assertTrue(str(cat.name).endswith(suffix))
 
     def test_specsuffix_outsiders(self):
@@ -533,23 +579,64 @@ class TestNameRepr(unittest.TestCase):
         Test that outsiders with hidden special suffixes return the correct name
         :return:
         """
-        outsider_statuses = ["loner", "rogue", "kittypet"]
-        ex_clancat_statuses = ["former Clancat", "exiled"]
+        outsider_statuses = [{"rank": CatRank.LONER}, {"rank": CatRank.ROGUE}, {"rank": CatRank.KITTYPET}]
+        former_clancat_status = {
+            "group_history": [
+                {
+                    "group": CatGroup.OTHER_CLAN1,
+                    "rank": CatRank.WARRIOR,
+                    "moons_as": 1
+                },
+                {
+                    "group": None,
+                    "rank": CatRank.LONER,
+                    "moons_as": 1
+                }
+            ],
+            "standing_history": [
+                {
+                    "group": CatGroup.OTHER_CLAN1,
+                    "standing": ["member", "known"]
+                }
+            ]
+        }
+        exiled_status = {
+            "group_history": [
+                {
+                    "group": CatGroup.PLAYER_CLAN,
+                    "rank": CatRank.WARRIOR,
+                    "moons_as": 1
+                },
+                {
+                    "group": None,
+                    "rank": CatRank.LONER,
+                    "moons_as": 1
+                }
+            ],
+            "standing_history": [
+                {
+                    "group": CatGroup.PLAYER_CLAN,
+                    "standing": ["member", "exiled"]
+                }
+            ]
+        }
+        ex_clancat_statuses = [former_clancat_status, exiled_status]
+
 
         age_suffix = [[0, "kit"], [1, "kit"], [6, "paw"], [14, "test"]]
 
         for status in outsider_statuses:
             for moons, suffix in age_suffix:
-                with self.subTest("outsiders", status=status, moons=moons):
-                    cat = Cat(status=status, moons=moons, suffix="test")
+                with self.subTest("outsiders", status_dict=status, moons=moons):
+                    cat = Cat(status_dict=status, moons=moons, suffix="test")
                     cat.outside = True
                     cat.name.specsuffix_hidden = True
                     self.assertTrue(str(cat.name).endswith("test"))
 
         for status in ex_clancat_statuses:
             for moons, suffix in age_suffix:
-                with self.subTest("Clan-like names", status=status, moons=moons):
-                    cat = Cat(status=status, moons=moons, suffix="test")
+                with self.subTest("Clan-like names", status_dict=status, moons=moons):
+                    cat = Cat(status_dict=status, moons=moons, suffix="test")
                     cat.name.specsuffix_hidden = True
                     self.assertTrue(str(cat.name).endswith("test"))
 
@@ -559,14 +646,15 @@ class TestNameRepr(unittest.TestCase):
         :return:
         """
         statuses = [
-            ["newborn", 0, "kit"],
-            ["kitten", 1, "kit"],
-            ["apprentice", 6, "paw"],
-            ["warrior", 14, "test"],
+            [{"rank": CatRank.NEWBORN}, 0, "kit"],
+            [{"rank": CatRank.KITTEN}, 1, "kit"],
+            [{"rank": CatRank.APPRENTICE}, 6, "paw"],
+            [{"rank": CatRank.WARRIOR}, 14, "test"],
         ]
         for status, moons, suffix in statuses:
             with self.subTest("lost clancats", moons=moons):
-                cat = Cat(status=status, moons=moons, suffix="test")
+                cat = Cat(status_dict=status, moons=moons, suffix="test")
+                cat.status.become_lost()
                 cat.outside = True
                 self.assertTrue(str(cat.name).endswith(suffix))
 
@@ -576,14 +664,14 @@ class TestNameRepr(unittest.TestCase):
         :return:
         """
         statuses = [
-            ["newborn", 0, "kit"],
-            ["kitten", 1, "kit"],
-            ["apprentice", 6, "paw"],
-            ["warrior", 14, "test"],
+            [{"rank": CatRank.NEWBORN}, 0, "kit"],
+            [{"rank": CatRank.KITTEN}, 1, "kit"],
+            [{"rank": CatRank.APPRENTICE}, 6, "paw"],
+            [{"rank": CatRank.WARRIOR}, 14, "test"],
         ]
         for status, moons, suffix in statuses:
-            with self.subTest("lost clancats", status=status):
-                cat = Cat(status=status, moons=moons, suffix="test")
-                cat.outside = True
+            with self.subTest("lost clancats", status_dict=status):
+                cat = Cat(status_dict=status, moons=moons, suffix="test")
+                cat.status.become_lost()
                 cat.name.specsuffix_hidden = True
                 self.assertTrue(str(cat.name).endswith("test"))
