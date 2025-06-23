@@ -494,6 +494,12 @@ class Status:
         cat.rank_change() should typically be called instead, since it will handle mentor switches and other complex
         changes.
         """
+        # checks that we don't add a duplicate group/rank pairing
+        if self.group_history:
+            last_entry = self.group_history[-1]
+            if last_entry["group"] == self.group and last_entry["rank"] == new_rank:
+                return
+
         self.group_history.append(
             {
                 "group": self.group,
