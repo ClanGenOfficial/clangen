@@ -39,7 +39,7 @@
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["calm", "charismatic", "confident", "wise"],
+                "stat_trait": ["laid-back", "charismatic", "confident", "wise"],
                 "other_clan_rep": 2
             }
         ],
@@ -138,7 +138,7 @@
                 "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious - and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["vengeful", "bloodthirsty", "righteous", "vengeful", "cold"],
+                "stat_trait": ["vengeful", "bloodthirsty", "righteous", "vengeful", "aloof"],
                 "other_clan_rep": -1
             }
         ],
@@ -199,7 +199,7 @@
                 "weight": 20,
                 "stat_trait": [
                     "careful",
-                    "calm",
+                    "laid-back",
                     "wise",
                     "responsible"
                 ],
@@ -302,7 +302,7 @@
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["calm", "charismatic", "confident", "wise"],
+                "stat_trait": ["laid-back", "charismatic", "confident", "wise"],
                 "other_clan_rep": 2
             }
         ],
@@ -401,7 +401,7 @@
                 "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious - and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["vengeful", "bloodthirsty", "righteous", "vengeful", "cold"],
+                "stat_trait": ["vengeful", "bloodthirsty", "righteous", "vengeful", "aloof"],
                 "other_clan_rep": -1
             }
         ],
@@ -531,7 +531,7 @@
                 "text": "The patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists that the patrol at least escort the wounded warrior to the border.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["compassionate", "calm"],
+                "stat_trait": ["considerate", "laid-back"],
                 "other_clan_rep": 2
             }
         ],
@@ -546,7 +546,7 @@
                 "text": "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass when the patrol finds a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c finally lets them go and the patrol leads them back to the border line, tension thick in the air.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
+                "stat_trait": ["bloodthirsty", "aloof", "fierce", "strict", "vengeful"],
                 "other_clan_rep": -1
             },
             {
@@ -630,7 +630,7 @@
                 "text": "s_c follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists on helping the warrior back to the border.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["compassionate", "calm"],
+                "stat_trait": ["considerate", "laid-back"],
                 "other_clan_rep": 2
             }
         ],
@@ -645,7 +645,7 @@
                 "text": "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass when they find a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c finally lets them go and grumpily leads them back to the border line, tension thick in the air.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
+                "stat_trait": ["bloodthirsty", "aloof", "fierce", "strict", "vengeful"],
                 "other_clan_rep": -1
             },
             {
@@ -738,7 +738,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -760,7 +760,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -826,7 +826,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -848,7 +848,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -930,7 +930,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -952,7 +952,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -1034,7 +1034,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1106,7 +1106,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1176,7 +1176,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1198,7 +1198,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -1250,7 +1250,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1272,7 +1272,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -1338,7 +1338,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1360,7 +1360,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -1426,7 +1426,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1484,7 +1484,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1543,7 +1543,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1565,7 +1565,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -1632,7 +1632,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1654,7 +1654,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -1736,7 +1736,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1758,7 +1758,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -1840,7 +1840,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1912,7 +1912,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -1984,7 +1984,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2012,7 +2012,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -2078,7 +2078,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2100,7 +2100,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -2166,7 +2166,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2188,7 +2188,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -2254,7 +2254,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2312,7 +2312,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2367,7 +2367,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2389,7 +2389,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -2455,7 +2455,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2477,7 +2477,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -2559,7 +2559,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2581,7 +2581,7 @@
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
-                    "cold",
+                    "aloof",
                     "fierce",
                     "shameless",
                     "strict",
@@ -2663,7 +2663,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2735,7 +2735,7 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "compassionate",
+                    "considerate",
                     "loving",
                     "responsible",
                     "wise"
@@ -2791,7 +2791,7 @@
                 "weight": 30,
                 "art": "gen_hunt_huntassessment",
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["bold", "childish", "cold", "cunning", "daring", "troublesome", "vengeful", "bloodthirsty", "rebellious"],
+                "stat_trait": ["bold", "childish", "aloof", "cunning", "daring", "troublesome", "vengeful", "bloodthirsty", "defiant"],
                 "herbs": ["catmint"],
                 "relationships": [
                     {
@@ -2923,7 +2923,7 @@
                 "exp": 15,
                 "weight": 40,
                 "stat_skill": [ "SPEAKER,1", "CLEVER,1", "MEDIATOR,1" ],
-                "stat_trait": [ "childish", "playful", "charismatic", "bold", "compassionate", "confident", "adventurous", "flamboyant", "loving", "wise" ],
+                "stat_trait": [ "childish", "playful", "charismatic", "bold", "considerate", "confident", "adventurous", "flamboyant", "loving", "wise" ],
                 "can_have_stat": [ "app1" ],
                 "art": "gen_happy_cat2",
                 "other_clan_rep": 2,
@@ -2943,7 +2943,7 @@
                 "exp": 15,
                 "weight": 40,
                 "art": "gen_train_speakingromance1",
-                "stat_trait": [ "careful", "nervous", "gloomy", "lonesome", "strange", "calm" ],
+                "stat_trait": [ "careful", "nervous", "gloomy", "lonesome", "strange", "laid-back" ],
                 "can_have_stat": [ "app1" ],
                 "other_clan_rep": 1
             },
@@ -2966,7 +2966,7 @@
                 "text": "app1 averts {PRONOUN/app1/poss} eyes from the other apprentice. Friendships with other Clans shouldn't be encouraged; loyalty to c_n comes first. The patrol continues marking the border in icy silence",
                 "exp": 0,
                 "weight": 40,
-                "stat_trait": [ "cold", "loyal", "righteous", "ambitious", "grumpy", "oblivious", "careful", "nervous", "strict" ],
+                "stat_trait": [ "aloof", "devoted", "righteous", "ambitious", "grumpy", "oblivious", "careful", "nervous", "strict" ],
                 "can_have_stat": [ "app1" ],
                 "other_clan_rep": -1
             },
@@ -2975,7 +2975,7 @@
                 "exp": 0,
                 "weight": 40,
                 "art": "gen_train_argueWA",
-                "stat_trait": [ "childish", "playful", "charismatic", "bold", "compassionate", "confident", "adventurous", "flamboyant", "loving", "wise" ],
+                "stat_trait": [ "childish", "playful", "charismatic", "bold", "considerate", "confident", "adventurous", "flamboyant", "loving", "wise" ],
                 "can_have_stat": [ "app1" ],
                 "other_clan_rep": -1,
                 "relationships":
@@ -2994,7 +2994,7 @@
                 "exp": 0,
                 "weight": 40,
                 "art": "gen_train_patrolapprenticesessionfail",
-                "stat_trait": [ "bloodthirsty", "fierce", "vengeful", "cold", "arrogant" ],
+                "stat_trait": [ "bloodthirsty", "fierce", "vengeful", "aloof", "arrogant" ],
                 "can_have_stat": [ "any", "adult" ],
                 "other_clan_rep": -2,
                 "relationships":
@@ -3029,7 +3029,7 @@
                 "text": "app1 sashays up to the border with a smirk and marks the border just a <i>bit</i> further forward than {PRONOUN/app1/subject} should. r_c points this out to app1, who protests that it's just one little mouse-length and shoots an insolent smile at the o_c_n apprentice. The o_c_n patrol's annoyed stares follow c_n's patrol as they carry on.",
                 "exp": 15,
                 "weight": 40,
-                "stat_trait": [ "arrogant", "troublesome", "shameless", "confident", "daring", "flamboyant", "daring", "cunning", "rebellious", "vengeful", "bold" ],
+                "stat_trait": [ "arrogant", "troublesome", "shameless", "confident", "daring", "flamboyant", "daring", "cunning", "defiant", "vengeful", "bold" ],
                 "can_have_stat": [ "app1" ],
                 "other_clan_rep": -2,
                 "art": "gen_bord_twocat_hostile_app_warrior",
@@ -3053,7 +3053,7 @@
                 "exp": 15,
                 "weight": 40,
                 "art": "gen_bord_twocat_hostile_app_warrior",
-                "stat_trait": [ "bloodthirsty", "fierce", "vengeful", "cold", "arrogant", "daring", "bold", "confident" ],
+                "stat_trait": [ "bloodthirsty", "fierce", "vengeful", "aloof", "arrogant", "daring", "bold", "confident" ],
                 "can_have_stat": [ "any", "adult" ],
                 "other_clan_rep": -2,
                 "relationships": [
@@ -3070,7 +3070,7 @@
                 "exp": 15,
                 "weight": 40,
                 "art": "gen_bord_twocat_hostile_app_warrior",
-                "stat_trait": [ "arrogant", "troublesome", "shameless", "confident", "daring", "flamboyant", "daring", "cunning", "rebellious", "vengeful", "bold" ],
+                "stat_trait": [ "arrogant", "troublesome", "shameless", "confident", "daring", "flamboyant", "daring", "cunning", "defiant", "vengeful", "bold" ],
                 "can_have_stat": [ "app1" ],
                 "other_clan_rep": -2
             },
@@ -3087,7 +3087,7 @@
                 "weight": 40,
                 "art": "gen_bord_twocat_hostile_app_warrior",
                 "stat_skill": [ "SPEAKER,1" ],
-                "stat_trait": [ "arrogant", "troublesome", "shameless", "charismatic", "confident", "daring", "flamboyant", "daring", "cunning", "rebellious", "vengeful", "bold", "childish", "playful" ],
+                "stat_trait": [ "arrogant", "troublesome", "shameless", "charismatic", "confident", "daring", "flamboyant", "daring", "cunning", "defiant", "vengeful", "bold", "childish", "playful" ],
                 "other_clan_rep": -2
                 }
         ],
@@ -3125,7 +3125,7 @@
                 "weight": 40,
                 "art": "gen_battle_app_other_clan",
                 "stat_skill": [ "MEDIATOR,1", "SPEAKER,1", "TEACHER,1", "INSIGHTFUL,1"],
-                "stat_trait": [ "charismatic", "compassionate", "responsible", "loyal", "calm", "wise", "loving" ],
+                "stat_trait": [ "charismatic", "considerate", "responsible", "devoted", "laid-back", "wise", "loving" ],
                 "can_have_stat": [ "any", "adult" ],
                 "other_clan_rep": -2,
                 "injury": [
@@ -3244,7 +3244,7 @@
                 "text": "p_l decides to bring r_c with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l - knowing {PRONOUN/p_l/object} to be a kind and caring cat - and thanks both of them sincerely.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["compassionate", "loving", "charismatic"],
+                "stat_trait": ["considerate", "loving", "charismatic"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -3321,7 +3321,7 @@
                 "exp": 20,
                 "weight": 20,
                 "can_have_stat": ["p_l"],
-                "stat_trait":["bloodthirsty", "cold", "troublesome","shameless", "arrogant", "ambitious"],
+                "stat_trait":["bloodthirsty", "aloof", "troublesome","shameless", "arrogant", "ambitious"],
                 "other_clan_rep": -8,
                 "new_cat": [
                     ["age: kitten", "backstory: otherclan5"],
