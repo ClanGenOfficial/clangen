@@ -71,7 +71,7 @@ class CatRank(StrEnum):
             self.KITTEN,
             self.NEWBORN,
             self.MEDIATOR,
-            self.MEDIATOR_APPRENTICE
+            self.MEDIATOR_APPRENTICE,
         ):
             return True
         return False

@@ -34,7 +34,8 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
     UIModifiedScrollingContainer,
-    UIDropDownContainer, UIDropDown,
+    UIDropDownContainer,
+    UIDropDown,
 )
 from scripts.housekeeping.datadir import (
     get_save_dir,
