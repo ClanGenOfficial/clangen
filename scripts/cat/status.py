@@ -372,6 +372,10 @@ class Status:
         Update the given group with the given standing. If not group is given, the new standing will be added to the
         cat's current group.
         """
+        # can't change the standing if we have no group to change
+        if not group and not self.group:
+            return
+
         if not group:
             group = self.group
         found_record = False
