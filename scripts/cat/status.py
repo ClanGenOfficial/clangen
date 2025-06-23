@@ -97,7 +97,7 @@ class Status:
         this is mostly to catch the old status strings like exiled and lost
         """
         if rank and not isinstance(rank, CatRank):
-            if rank in ("exiled", "lost", "former clancat"):
+            if rank.casefold() in ("exiled", "lost", "former clancat"):
                 if age:
                     rank = self.get_rank_from_age(age)
                 else:  # god this should never happen, but I'm paranoid
@@ -114,6 +114,14 @@ class Status:
             for enum in CatGroup:
                 if enum == group:
                     group = enum
+
+        if rank and not isinstance(rank, CatRank):
+            print(f"ERROR: {rank} is not a valid rank")
+        if social and not isinstance(social, CatSocial):
+            print(f"ERROR: {social} is not a valid social")
+        if group and not isinstance(group, CatGroup):
+            print(f"ERROR: {group} is not a valid group")
+
 
         return group, rank, social
 
