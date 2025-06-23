@@ -12,22 +12,40 @@ from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.events_module.short.condition_events import Condition_Events
-from scripts.events_module.short.handle_short_events import INJURY_GROUPS, EVENT_ALLOWED_CONDITIONS, HandleShortEvents
+from scripts.events_module.short.handle_short_events import (
+    INJURY_GROUPS,
+    EVENT_ALLOWED_CONDITIONS,
+    HandleShortEvents,
+)
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource, get_default_pronouns
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import UISurfaceImageButton, UIModifiedScrollingContainer, UITextBoxTweaked, \
-    UICheckbox, UIModifiedImage, UIScrollingButtonList, UIDropDown, \
-    UICollapsibleContainer, UIScrollingDropDown
+from scripts.game_structure.ui_elements import (
+    UISurfaceImageButton,
+    UIModifiedScrollingContainer,
+    UITextBoxTweaked,
+    UICheckbox,
+    UIModifiedImage,
+    UIScrollingButtonList,
+    UIDropDown,
+    UICollapsibleContainer,
+    UIScrollingDropDown,
+)
 from scripts.game_structure.windows import EditorSaveCheck, EditorMissingInfo
 from scripts.screens.RelationshipScreen import RelationshipScreen
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import ui_scale, process_text, ui_scale_dimensions, generate_sprite, get_text_box_theme
+from scripts.utility import (
+    ui_scale,
+    process_text,
+    ui_scale_dimensions,
+    generate_sprite,
+    get_text_box_theme,
+)
 
 
 class EventEditScreen(Screens):
@@ -48,7 +66,7 @@ class EventEditScreen(Screens):
         "lead_name": "TestStar",
         "dep_name": "DepCat",
         "med_name": "MedCat",
-        "multi_cat": "DeadCat, PerishedCat, and RipCat"
+        "multi_cat": "DeadCat, PerishedCat, and RipCat",
     }
     """Placeholder names for each possible cat abbreviation."""
     # it's possible to have more than 6 new cats, but doubtful that we'll ever refer to more than 2 within event text
@@ -66,7 +84,7 @@ class EventEditScreen(Screens):
         "Forest": ["Classic", "Gully", "Grotto", "Lakeside"],
         "Mountainous": ["Cliff", "Cavern", "Crystal River", "Ruins"],
         "Plains": ["Grasslands", "Tunnels", "Wastelands"],
-        "Beach": ["Tidepools", "Tidal Cave", "Shipwreck", "Fjord"]
+        "Beach": ["Tidepools", "Tidal Cave", "Shipwreck", "Fjord"],
     }
     """Dict with key as biome and value as camp name."""
     # TODO: when possible, change this to pull this from a global attr
@@ -92,7 +110,12 @@ class EventEditScreen(Screens):
     """List of all possible ages from oldest to youngest."""
     all_ages.reverse()
 
-    all_skills: dict = {k: v for (k, v) in zip([path.name for path in SkillPath], [path.value for path in SkillPath])}
+    all_skills: dict = {
+        k: v
+        for (k, v) in zip(
+            [path.name for path in SkillPath], [path.value for path in SkillPath]
+        )
+    }
     """Dict holding all skill info. Key is skill path, value is list of skill levels."""
 
     adult_traits: list = Personality.trait_ranges["normal_traits"].keys()
@@ -165,7 +188,7 @@ class EventEditScreen(Screens):
         "random cat": Icon.CAT_HEAD,
         "new cats": Icon.CAT_HEAD,
         "personal consequences": Icon.SCRATCHES,
-        "outside consequences": Icon.CLAN_UNKNOWN
+        "outside consequences": Icon.CLAN_UNKNOWN,
     }
     """Dict for section tab info. Key is the name of the tab, value is the icon assigned."""
 
@@ -175,7 +198,7 @@ class EventEditScreen(Screens):
         "amount_up_high_button": Icon.UP_HIGH,
         "amount_down_low_button": Icon.DOWN_LOW,
         "amount_down_mid_button": Icon.DOWN_MID,
-        "amount_down_high_button": Icon.DOWN_HIGH
+        "amount_down_high_button": Icon.DOWN_HIGH,
     }
     """Dict for amount button names and icons. Key is the name, value is the icon assigned."""
 
@@ -304,7 +327,7 @@ class EventEditScreen(Screens):
             "not_skill": [],
             "trait": [],
             "not_trait": [],
-            "backstory": []
+            "backstory": [],
         }
         """The main cat's loaded information"""
 
@@ -317,7 +340,7 @@ class EventEditScreen(Screens):
             "not_skill": [],
             "trait": [],
             "not_trait": [],
-            "backstory": []
+            "backstory": [],
         }
         """The random cat's loaded information"""
 
@@ -331,7 +354,7 @@ class EventEditScreen(Screens):
             "backstory": [],
             "parent": [],
             "adoptive": [],
-            "mate": []
+            "mate": [],
         }
         """The new cat info *template*, this should not hold the open new_cat's information."""
 
@@ -362,11 +385,7 @@ class EventEditScreen(Screens):
         self.injury_element = {}
         self.injury_block_list: list = []
         """The list of currently loaded injury blocks"""
-        self.injury_template: dict = {
-            "cats": [],
-            "injuries": [],
-            "scars": []
-        }
+        self.injury_template: dict = {"cats": [], "injuries": [], "scars": []}
         """The template for the injury block info"""
         self.selected_injury_block: str = ""
         """The list index for the injury block currently viewed by the user. This is kept as a string due to it doubling
@@ -379,7 +398,7 @@ class EventEditScreen(Screens):
             "cats": [],
             "scar": "",
             "reg_death": "",
-            "lead_death": ""
+            "lead_death": "",
         }
         """The template for the history block info"""
         self.selected_history_block_index: str = ""
@@ -394,7 +413,7 @@ class EventEditScreen(Screens):
             "cats_to": [],
             "mutual": False,
             "values": [],
-            "amount": 0
+            "amount": 0,
         }
         """The template for the relationships block info"""
         self.selected_relationships_block_index: str = ""
@@ -402,16 +421,10 @@ class EventEditScreen(Screens):
              as the text for its button."""
 
         self.outsider_element = {}
-        self.outsider_info: dict = {
-            "current_rep": [],
-            "changed": 0
-        }
+        self.outsider_info: dict = {"current_rep": [], "changed": 0}
         """The currently loaded outsider info"""
         self.other_clan_element = {}
-        self.other_clan_info: dict = {
-            "current_rep": [],
-            "changed": 0
-        }
+        self.other_clan_info: dict = {"current_rep": [], "changed": 0}
         """The currently loaded other clan info"""
         self.supply_element = {}
         self.supply_block_list: list = []
@@ -419,11 +432,7 @@ class EventEditScreen(Screens):
         self.selected_supply_block_index: str = ""
         """The list index for the supply block currently viewed by the user. This is kept as a string due to it doubling
              as the text for its button."""
-        self.supply_info: dict = {
-            "type": "",
-            "trigger": [],
-            "adjust": ""
-        }
+        self.supply_info: dict = {"type": "", "trigger": [], "adjust": ""}
         """The info for the currently viewed supply block"""
 
     # EVENT JSON PROCESSING
@@ -446,7 +455,9 @@ class EventEditScreen(Screens):
             for name in self.event_types.keys():
                 if name in event["event_id"]:
                     self.chosen_type = name
-        self.old_event_path = f"resources/lang/en/events/{self.chosen_type}/{biome.casefold()}.json"
+        self.old_event_path = (
+            f"resources/lang/en/events/{self.chosen_type}/{biome.casefold()}.json"
+        )
 
         self.type_info = [self.chosen_type]
         self.event_id_info = event["event_id"]
@@ -465,25 +476,41 @@ class EventEditScreen(Screens):
             self.main_cat_info = {
                 "rank": event["m_c"]["status"] if event["m_c"].get("status") else [],
                 "age": event["m_c"]["age"] if event["m_c"].get("age") else [],
-                "rel_status": event["m_c"]["relationship_status"] if event["m_c"].get("relationship_status") else [],
+                "rel_status": event["m_c"]["relationship_status"]
+                if event["m_c"].get("relationship_status")
+                else [],
                 "dies": event["m_c"]["dies"] if event["m_c"].get("dies") else False,
                 "skill": event["m_c"]["skill"] if event["m_c"].get("skill") else [],
-                "not_skill": event["m_c"]["not_skill"] if event["m_c"].get("not_skill") else [],
+                "not_skill": event["m_c"]["not_skill"]
+                if event["m_c"].get("not_skill")
+                else [],
                 "trait": event["m_c"]["trait"] if event["m_c"].get("trait") else [],
-                "not_trait": event["m_c"]["not_trait"] if event["m_c"].get("not_trait") else [],
-                "backstory": event["m_c"]["backstory"] if event["m_c"].get("backstory") else []
+                "not_trait": event["m_c"]["not_trait"]
+                if event["m_c"].get("not_trait")
+                else [],
+                "backstory": event["m_c"]["backstory"]
+                if event["m_c"].get("backstory")
+                else [],
             }
         if event.get("r_c"):
             self.random_cat_info = {
                 "rank": event["r_c"]["status"] if event["r_c"].get("status") else [],
                 "age": event["r_c"]["age"] if event["r_c"].get("age") else [],
-                "rel_status": event["r_c"]["relationship_status"] if event["r_c"].get("relationship_status") else [],
+                "rel_status": event["r_c"]["relationship_status"]
+                if event["r_c"].get("relationship_status")
+                else [],
                 "dies": event["r_c"]["dies"] if event["r_c"].get("dies") else False,
                 "skill": event["r_c"]["skill"] if event["r_c"].get("skill") else [],
-                "not_skill": event["r_c"]["not_skill"] if event["r_c"].get("not_skill") else [],
+                "not_skill": event["r_c"]["not_skill"]
+                if event["r_c"].get("not_skill")
+                else [],
                 "trait": event["r_c"]["trait"] if event["r_c"].get("trait") else [],
-                "not_trait": event["r_c"]["not_trait"] if event["r_c"].get("not_trait") else [],
-                "backstory": event["r_c"]["backstory"] if event["r_c"].get("backstory") else []
+                "not_trait": event["r_c"]["not_trait"]
+                if event["r_c"].get("not_trait")
+                else [],
+                "backstory": event["r_c"]["backstory"]
+                if event["r_c"].get("backstory")
+                else [],
             }
         if event.get("new_cat"):
             names = [f"n_c:{index}" for index in range(len(event["new_cat"]))]
@@ -496,7 +523,9 @@ class EventEditScreen(Screens):
                 block["injuries"] = []
             if "scars" not in block:
                 block["scars"] = []
-        self.excluded_cats = event["exclude_involved"] if event.get("exclude_involved") else []
+        self.excluded_cats = (
+            event["exclude_involved"] if event.get("exclude_involved") else []
+        )
         self.history_block_list = event["history"] if event.get("history") else []
         for block in self.history_block_list:
             if "scar" not in block:
@@ -505,21 +534,25 @@ class EventEditScreen(Screens):
                 block["reg_death"] = ""
             if "lead_death" not in block:
                 block["lead_death"] = ""
-        self.relationships_block_list = event["relationships"] if event.get("relationships") else []
+        self.relationships_block_list = (
+            event["relationships"] if event.get("relationships") else []
+        )
         for block in self.relationships_block_list:
             if "mutual" not in block:
                 block["mutual"] = False
-        self.outsider_info = event["outsider"] if event.get("outsider") else self.outsider_info
-        self.other_clan_info = event["other_clan"] if event.get("other_clan") else self.other_clan_info
+        self.outsider_info = (
+            event["outsider"] if event.get("outsider") else self.outsider_info
+        )
+        self.other_clan_info = (
+            event["other_clan"] if event.get("other_clan") else self.other_clan_info
+        )
         self.supply_block_list = event["supplies"] if event.get("supplies") else []
 
     def compile_new_event(self) -> dict:
         """
         Compiles all information for created/edited event into an event dict to return.
         """
-        new_event = {
-            "event_id": self.event_id_info
-        }
+        new_event = {"event_id": self.event_id_info}
         if self.location_info:
             new_event["location"] = self.location_info
         else:
@@ -634,12 +667,16 @@ class EventEditScreen(Screens):
             print(f"Something went wrong with event loading. Is {path} valid?")
 
         if not event_list and self.editor_element.get("intro_text"):
-            self.editor_element["intro_text"].set_text("screens.event_edit.empty_event_list")
+            self.editor_element["intro_text"].set_text(
+                "screens.event_edit.empty_event_list"
+            )
             return []
 
         try:
             if event_list and not isinstance(event_list[0], dict):
-                print(f"{path} isn't in the correct event format. Perhaps it isn't an event .json?")
+                print(
+                    f"{path} isn't in the correct event format. Perhaps it isn't an event .json?"
+                )
         except KeyError:
             return []
 
@@ -647,7 +684,6 @@ class EventEditScreen(Screens):
 
     # USER EVENT HANDLING
     def handle_event(self, event):
-
         # HANDLE TEXT LINKS
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if platform.system() == "Darwin":
@@ -660,19 +696,27 @@ class EventEditScreen(Screens):
         # SEARCHING
         if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
             self.search_text = self.event_search.get_text()
-            self.create_event_display(event_type=self.chosen_type, biome=self.chosen_biome)
+            self.create_event_display(
+                event_type=self.chosen_type, biome=self.chosen_biome
+            )
 
         # HOVER PREVIEWS
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            if (self.injury_element.get("scar_list")
-                    and event.ui_element in self.injury_element["scar_list"].buttons.values()):
+            if (
+                self.injury_element.get("scar_list")
+                and event.ui_element
+                in self.injury_element["scar_list"].buttons.values()
+            ):
                 for name, button in self.injury_element["scar_list"].buttons.items():
                     if button == event.ui_element:
                         self.injury_element["scar_preview"].set_image(
                             self.get_scar_example(name)
                         )
                         break
-            if self.acc_element.get("list") and event.ui_element in self.acc_element["list"].buttons.values():
+            if (
+                self.acc_element.get("list")
+                and event.ui_element in self.acc_element["list"].buttons.values()
+            ):
                 for name, button in self.acc_element["list"].buttons.items():
                     if button == event.ui_element:
                         self.acc_element["preview"].set_image(
@@ -709,10 +753,14 @@ class EventEditScreen(Screens):
                 else:
                     for tab in self.biome_tab_buttons:
                         if event.ui_element == self.biome_tab_buttons[tab]:
-                            self.chosen_biome = tab.capitalize() if tab != "general" else tab
+                            self.chosen_biome = (
+                                tab.capitalize() if tab != "general" else tab
+                            )
                             break
 
-                    self.create_event_display(event_type=self.chosen_type, biome=self.chosen_biome)
+                    self.create_event_display(
+                        event_type=self.chosen_type, biome=self.chosen_biome
+                    )
 
             # SELECT EVENT
             elif event.ui_element in self.event_buttons.values():
@@ -762,16 +810,20 @@ class EventEditScreen(Screens):
             elif event.ui_element in self.editor_element.values():
                 # SAVE NEW EVENT
                 if event.ui_element == self.editor_element["save"]:
-                    self.event_text_info = self.event_text_element["event_text"].html_text
+                    self.event_text_info = self.event_text_element[
+                        "event_text"
+                    ].html_text
                     # check validity of save first
-                    if (not self.event_text_info
-                            or not self.weight_info
-                            or not self.type_info
-                            or not self.valid_id()
-                            or not self.valid_injury()
-                            or not self.valid_history()
-                            or not self.valid_relationships()
-                            or not self.valid_supply()):
+                    if (
+                        not self.event_text_info
+                        or not self.weight_info
+                        or not self.type_info
+                        or not self.valid_id()
+                        or not self.valid_injury()
+                        or not self.valid_history()
+                        or not self.valid_relationships()
+                        or not self.valid_supply()
+                    ):
                         EditorMissingInfo(self.alert_text)
                     # if it's all good, SAVE!
                     else:
@@ -781,7 +833,9 @@ class EventEditScreen(Screens):
                         old_event_file = None
                         if self.open_event:
                             if self.old_event_path != path:
-                                old_event_file = self.get_event_json(self.old_event_path)
+                                old_event_file = self.get_event_json(
+                                    self.old_event_path
+                                )
                                 old_event_file.pop(self.old_event_index)
                                 event_list.append(new_event)
                             else:
@@ -794,15 +848,21 @@ class EventEditScreen(Screens):
                             old_path=self.old_event_path,
                             editor_save=self.editor_element["save"],
                             event_list=event_list,
-                            old_event_list=old_event_file)
+                            old_event_list=old_event_file,
+                        )
 
                 # SWITCH EDITOR TAB
                 else:
                     for name, button in self.editor_element.items():
-                        if event.ui_element == button and name != self.current_editor_tab:
+                        if (
+                            event.ui_element == button
+                            and name != self.current_editor_tab
+                        ):
                             self.current_editor_tab = name
                             if self.event_text_element["event_text"].html_text:
-                                self.event_text_info = self.event_text_element["event_text"].html_text
+                                self.event_text_info = self.event_text_element[
+                                    "event_text"
+                                ].html_text
                             self.clear_editor_tab()
                             break
 
@@ -826,11 +886,13 @@ class EventEditScreen(Screens):
                     test_dict = {}
                     for abbr in self.test_cat_names:
                         pronoun = choice(
-                            [pro for pro in self.test_pronouns if pro["conju"] == self.current_preview_state]
+                            [
+                                pro
+                                for pro in self.test_pronouns
+                                if pro["conju"] == self.current_preview_state
+                            ]
                         )
-                        test_dict[abbr] = (
-                            self.test_cat_names[abbr], pronoun
-                        )
+                        test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
 
                     text = process_text(text, test_dict)
                     self.event_text_element["preview_text"].set_text(text)
@@ -867,7 +929,7 @@ class EventEditScreen(Screens):
                 if event.ui_element in self.rel_value_element.values():
                     info = self.current_cat_dict["rel_status"]
                     for value, element in self.rel_value_element.items():
-                        value = value.replace('_entry', '')
+                        value = value.replace("_entry", "")
                         if element != event.ui_element:
                             continue
                         remove_tag = None
@@ -878,15 +940,23 @@ class EventEditScreen(Screens):
                         if remove_tag:
                             info.remove(remove_tag)
                         if element.text:
-                            self.current_cat_dict["rel_status"].append(f"{value}_{element.text}")
+                            self.current_cat_dict["rel_status"].append(
+                                f"{value}_{element.text}"
+                            )
                         self.update_rel_status_info()
                         break
 
             # REL CHANGE AMOUNT
-            elif self.current_editor_tab == "personal consequences" and self.open_block == "relationships":
+            elif (
+                self.current_editor_tab == "personal consequences"
+                and self.open_block == "relationships"
+            ):
                 if event.ui_element == self.relationships_element["amount_entry"]:
                     info = self.get_selected_block_info()
-                    if info["amount"] != self.relationships_element["amount_entry"].text:
+                    if (
+                        info["amount"]
+                        != self.relationships_element["amount_entry"].text
+                    ):
                         info["amount"] = self.relationships_element["amount_entry"].text
                         self.update_block_info()
 
@@ -895,22 +965,32 @@ class EventEditScreen(Screens):
                 if event.ui_element == self.outsider_element["entry"]:
                     info = self.outsider_info["changed"]
                     if info != self.outsider_element["entry"].text:
-                        self.outsider_info["changed"] = self.outsider_element["entry"].text
-                        self.outsider_element["display"].set_text(f"{self.outsider_info}")
+                        self.outsider_info["changed"] = self.outsider_element[
+                            "entry"
+                        ].text
+                        self.outsider_element["display"].set_text(
+                            f"{self.outsider_info}"
+                        )
 
                 # OTHER CLAN CHANGE AMOUNT
                 if event.ui_element == self.other_clan_element["entry"]:
                     info = self.other_clan_info["changed"]
                     if info != self.other_clan_element["entry"].text:
-                        self.other_clan_info["changed"] = self.other_clan_element["entry"].text
-                        self.other_clan_element["display"].set_text(f"{self.other_clan_info}")
+                        self.other_clan_info["changed"] = self.other_clan_element[
+                            "entry"
+                        ].text
+                        self.other_clan_element["display"].set_text(
+                            f"{self.other_clan_info}"
+                        )
 
                 # SUPPLY INCREASE
                 if event.ui_element == self.supply_element.get("increase_entry"):
                     selected_block = self.get_selected_block_info()
                     info = selected_block["adjust"].replace("increase_", "")
                     if info != self.supply_element["increase_entry"].text:
-                        selected_block["adjust"] = f"increase_{self.supply_element['increase_entry'].text}"
+                        selected_block[
+                            "adjust"
+                        ] = f"increase_{self.supply_element['increase_entry'].text}"
                         self.update_block_info()
 
     def on_use(self):
@@ -973,7 +1053,6 @@ class EventEditScreen(Screens):
         self.kill_event_buttons()
 
     def screen_switches(self):
-
         super().screen_switches()
         Screens.show_mute_buttons()
 
@@ -1009,7 +1088,7 @@ class EventEditScreen(Screens):
             container=self.event_text_container,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
-            tool_tip_text="buttons.preview_text"
+            tool_tip_text="buttons.preview_text",
         )
 
         self.event_text_element["box"] = UIModifiedImage(
@@ -1017,7 +1096,7 @@ class EventEditScreen(Screens):
             get_box(BoxStyles.ROUNDED_BOX, (460, 120)),
             starting_height=1,
             manager=MANAGER,
-            container=self.event_text_container
+            container=self.event_text_container,
         )
         self.event_text_element["box"].disable()
 
@@ -1034,7 +1113,7 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
-            tool_tip_text="buttons.add_event"
+            tool_tip_text="buttons.add_event",
         )
 
         self.create_editor_display()
@@ -1061,7 +1140,7 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
-            tool_tip_text="buttons.edit_deaths"
+            tool_tip_text="buttons.edit_deaths",
         )
         self.type_tab_buttons["injury"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 10), (36, 36))),
@@ -1071,9 +1150,7 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_injuries",
-            anchors={
-                "top_target": self.type_tab_buttons["death"]
-            }
+            anchors={"top_target": self.type_tab_buttons["death"]},
         )
         self.type_tab_buttons["misc"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 10), (36, 36))),
@@ -1083,9 +1160,7 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_misc",
-            anchors={
-                "top_target": self.type_tab_buttons["injury"]
-            }
+            anchors={"top_target": self.type_tab_buttons["injury"]},
         )
         self.type_tab_buttons["new_cat"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 10), (36, 36))),
@@ -1095,9 +1170,7 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_new_cat",
-            anchors={
-                "top_target": self.type_tab_buttons["misc"]
-            }
+            anchors={"top_target": self.type_tab_buttons["misc"]},
         )
 
     def select_biome_tab_creation(self):
@@ -1110,7 +1183,7 @@ class EventEditScreen(Screens):
             get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
-            starting_height=1
+            starting_height=1,
         )
         self.biome_tab_buttons["general"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 10), (36, 36))),
@@ -1120,9 +1193,7 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_general",
-            anchors={
-                "top_target": self.biome_tab_buttons["back"]
-            }
+            anchors={"top_target": self.biome_tab_buttons["back"]},
         )
         self.biome_tab_buttons["forest"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 10), (36, 36))),
@@ -1132,9 +1203,7 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_forest",
-            anchors={
-                "top_target": self.biome_tab_buttons["general"]
-            }
+            anchors={"top_target": self.biome_tab_buttons["general"]},
         )
         self.biome_tab_buttons["mountainous"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 10), (36, 36))),
@@ -1144,9 +1213,7 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_mountain",
-            anchors={
-                "top_target": self.biome_tab_buttons["forest"]
-            }
+            anchors={"top_target": self.biome_tab_buttons["forest"]},
         )
         self.biome_tab_buttons["plains"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 10), (36, 36))),
@@ -1156,9 +1223,7 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_plains",
-            anchors={
-                "top_target": self.biome_tab_buttons["mountainous"]
-            }
+            anchors={"top_target": self.biome_tab_buttons["mountainous"]},
         )
         self.biome_tab_buttons["beach"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((27, 10), (36, 36))),
@@ -1168,9 +1233,7 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_beach",
-            anchors={
-                "top_target": self.biome_tab_buttons["plains"]
-            }
+            anchors={"top_target": self.biome_tab_buttons["plains"]},
         )
 
         self.biome_tab_buttons["desert"] = UISurfaceImageButton(
@@ -1181,9 +1244,7 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_desert",
-            anchors={
-                "top_target": self.biome_tab_buttons["beach"]
-            }
+            anchors={"top_target": self.biome_tab_buttons["beach"]},
         )
 
         self.biome_tab_buttons["wetlands"] = UISurfaceImageButton(
@@ -1194,13 +1255,10 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_wetlands",
-            anchors={
-                "top_target": self.biome_tab_buttons["desert"]
-            }
+            anchors={"top_target": self.biome_tab_buttons["desert"]},
         )
 
     def create_event_display(self, event_type=None, biome=None):
-
         self.kill_event_buttons()
         event_list = []
         if self.editor_element.get("intro_text"):
@@ -1214,12 +1272,22 @@ class EventEditScreen(Screens):
         if not event_type:
             for type_name in type_list:
                 for biome_name in all_biomes:
-                    event_list.extend(self.get_event_json(f"{path}/{type_name}/{biome_name.casefold()}.json"))
+                    event_list.extend(
+                        self.get_event_json(
+                            f"{path}/{type_name}/{biome_name.casefold()}.json"
+                        )
+                    )
         elif event_type and not biome:
             for biome_name in all_biomes:
-                event_list.extend(self.get_event_json(f"{path}/{event_type}/{biome_name.casefold()}.json"))
+                event_list.extend(
+                    self.get_event_json(
+                        f"{path}/{event_type}/{biome_name.casefold()}.json"
+                    )
+                )
         elif event_type and biome:
-            event_list.extend(self.get_event_json(f"{path}/{event_type}/{biome.casefold()}.json"))
+            event_list.extend(
+                self.get_event_json(f"{path}/{event_type}/{biome.casefold()}.json")
+            )
 
         if self.search_text:
             available = event_list.copy()
@@ -1227,7 +1295,11 @@ class EventEditScreen(Screens):
             for event in available:
                 if self.search_text in event["event_id"]:
                     event_list.append(event)
-            event_list = [event for event in event_list.copy() if set(event["event_id"]).intersection(set(self.search_text))]
+            event_list = [
+                event
+                for event in event_list.copy()
+                if set(event["event_id"]).intersection(set(self.search_text))
+            ]
 
         if not self.event_list_container:
             self.event_list_container = UIModifiedScrollingContainer(
@@ -1247,9 +1319,7 @@ class EventEditScreen(Screens):
                 pronoun = choice(
                     [pro for pro in self.test_pronouns if pro["conju"] == 2]
                 )
-                test_dict[abbr] = (
-                    self.test_cat_names[abbr], pronoun
-                )
+                test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
             preview = process_text(event["event_text"], test_dict)
             self.event_buttons[index] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, -2 if index > 0 else 0), (234, 36))),
@@ -1258,21 +1328,19 @@ class EventEditScreen(Screens):
                 manager=MANAGER,
                 object_id="@buttonstyles_dropdown",
                 starting_height=1,
-                anchors={
-                    "top_target": self.event_buttons[index - 1]
-                } if self.event_buttons.get(index - 1) else None,
+                anchors={"top_target": self.event_buttons[index - 1]}
+                if self.event_buttons.get(index - 1)
+                else None,
                 container=self.event_list_container,
-                tool_tip_text=preview
+                tool_tip_text=preview,
             )
 
         if not self.event_search:
             self.event_search = pygame_gui.elements.UITextEntryLine(
                 ui_scale(pygame.Rect((70, 0), (230, 29))),
                 manager=MANAGER,
-                anchors={
-                    "top_target": self.event_list_container
-                },
-                placeholder_text="type and hit enter to search"
+                anchors={"top_target": self.event_list_container},
+                placeholder_text="type and hit enter to search",
             )
             self.event_search.change_layer(3)
             self.event_search.set_tooltip("ddd")
@@ -1286,7 +1354,6 @@ class EventEditScreen(Screens):
 
     # EDITOR DISPLAY
     def clear_editor_tab(self):
-
         self.editor_container.kill()
 
         self.create_editor_display()
@@ -1343,34 +1410,70 @@ class EventEditScreen(Screens):
         self.open_pool = None
         reference_dict = self.main_cat_info.copy()
         self.main_cat_info = {
-            "rank": [] if not self.param_locks.get("main_rank") else reference_dict["rank"],
-            "age": [] if not self.param_locks.get("main_age") else reference_dict["age"],
-            "rel_status": [] if not self.param_locks.get("get_rel_status") else reference_dict["rel_status"],
-            "dies": False if not self.param_locks.get("main_dies") else reference_dict["dies"],
-            "skill": [] if not self.param_locks.get("main_skill") else reference_dict["skill"],
-            "not_skill": [] if not self.param_locks.get("main_not_skill") else reference_dict["not_skill"],
-            "trait": [] if not self.param_locks.get("main_trait") else reference_dict["trait"],
-            "not_trait": [] if not self.param_locks.get("main_not_trait") else reference_dict["not_trait"],
-            "backstory": [] if not self.param_locks.get("main_backstory") else reference_dict["backstory"]
+            "rank": []
+            if not self.param_locks.get("main_rank")
+            else reference_dict["rank"],
+            "age": []
+            if not self.param_locks.get("main_age")
+            else reference_dict["age"],
+            "rel_status": []
+            if not self.param_locks.get("get_rel_status")
+            else reference_dict["rel_status"],
+            "dies": False
+            if not self.param_locks.get("main_dies")
+            else reference_dict["dies"],
+            "skill": []
+            if not self.param_locks.get("main_skill")
+            else reference_dict["skill"],
+            "not_skill": []
+            if not self.param_locks.get("main_not_skill")
+            else reference_dict["not_skill"],
+            "trait": []
+            if not self.param_locks.get("main_trait")
+            else reference_dict["trait"],
+            "not_trait": []
+            if not self.param_locks.get("main_not_trait")
+            else reference_dict["not_trait"],
+            "backstory": []
+            if not self.param_locks.get("main_backstory")
+            else reference_dict["backstory"],
         }
         reference_dict = self.random_cat_info.copy()
         self.random_cat_info = {
-            "rank": [] if not self.param_locks.get("random_rank") else reference_dict["rank"],
-            "age": [] if not self.param_locks.get("random_age") else reference_dict["age"],
-            "rel_status": [] if not self.param_locks.get("get_rel_status") else reference_dict["rel_status"],
-            "dies": False if not self.param_locks.get("random_dies") else reference_dict["dies"],
-            "skill": [] if not self.param_locks.get("random_skill") else reference_dict["skill"],
-            "not_skill": [] if not self.param_locks.get("random_not_skill") else reference_dict["not_skill"],
-            "trait": [] if not self.param_locks.get("random_trait") else reference_dict["trait"],
-            "not_trait": [] if not self.param_locks.get("random_not_trait") else reference_dict["not_trait"],
-            "backstory": [] if not self.param_locks.get("random_backstory") else reference_dict["backstory"]
+            "rank": []
+            if not self.param_locks.get("random_rank")
+            else reference_dict["rank"],
+            "age": []
+            if not self.param_locks.get("random_age")
+            else reference_dict["age"],
+            "rel_status": []
+            if not self.param_locks.get("get_rel_status")
+            else reference_dict["rel_status"],
+            "dies": False
+            if not self.param_locks.get("random_dies")
+            else reference_dict["dies"],
+            "skill": []
+            if not self.param_locks.get("random_skill")
+            else reference_dict["skill"],
+            "not_skill": []
+            if not self.param_locks.get("random_not_skill")
+            else reference_dict["not_skill"],
+            "trait": []
+            if not self.param_locks.get("random_trait")
+            else reference_dict["trait"],
+            "not_trait": []
+            if not self.param_locks.get("random_not_trait")
+            else reference_dict["not_trait"],
+            "backstory": []
+            if not self.param_locks.get("random_backstory")
+            else reference_dict["backstory"],
         }
         self.selected_new_cat_info = {}
         self.new_cat_template = {
             "backstory": [],
             "parent": [],
             "adoptive": [],
-            "mate": []
+            "mate": [],
         }
         self.current_cat_dict = self.main_cat_info
         self.new_cat_editor = {}
@@ -1393,11 +1496,7 @@ class EventEditScreen(Screens):
         if not self.param_locks.get("injury"):
             self.injury_block_list = []
             self.selected_injury_block: str = ""
-        self.injury_template = {
-            "cats": [],
-            "injuries": [],
-            "scars": []
-        }
+        self.injury_template = {"cats": [], "injuries": [], "scars": []}
         self.history_element = {}
         if not self.param_locks.get("history"):
             self.history_block_list = []
@@ -1406,7 +1505,7 @@ class EventEditScreen(Screens):
             "cats": [],
             "scar": "",
             "reg_death": "",
-            "lead_death": ""
+            "lead_death": "",
         }
         self.relationships_element = {}
         if not self.param_locks.get("relationships"):
@@ -1417,33 +1516,22 @@ class EventEditScreen(Screens):
             "cats_to": [],
             "mutual": False,
             "values": [],
-            "amount": 0
+            "amount": 0,
         }
         self.outsider_element = {}
         if not self.param_locks.get("outsider"):
-            self.outsider_info = {
-                "current_rep": [],
-                "changed": 0
-            }
+            self.outsider_info = {"current_rep": [], "changed": 0}
         self.other_clan_element = {}
         if not self.param_locks.get("other_clan"):
-            self.other_clan_info = {
-                "current_rep": [],
-                "changed": 0
-            }
+            self.other_clan_info = {"current_rep": [], "changed": 0}
         self.supply_element = {}
         if not self.param_locks.get("supply"):
             self.supply_block_list = []
             self.selected_supply_block_index: str = ""
-        self.supply_info = {
-            "type": "",
-            "trigger": [],
-            "adjust": ""
-        }
+        self.supply_info = {"type": "", "trigger": [], "adjust": ""}
         self.current_preview_state = self.preview_states[0]
 
     def create_editor_display(self):
-
         self.editor_container = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((314, 150), (470, 470))),
             starting_height=4,
@@ -1459,7 +1547,7 @@ class EventEditScreen(Screens):
                 object_id=get_text_box_theme("#text_box_26_horizleft_pad_10_14"),
                 line_spacing=1,
                 manager=MANAGER,
-                container=self.editor_container
+                container=self.editor_container,
             )
             return
         elif self.editor_element.get("intro_text"):
@@ -1491,7 +1579,9 @@ class EventEditScreen(Screens):
         if self.event_text_info:
             self.event_text_element["event_text"].set_text(self.event_text_info)
         else:
-            self.event_text_element["event_text"].set_text("screens.event_edit.event_text_initial")
+            self.event_text_element["event_text"].set_text(
+                "screens.event_edit.event_text_initial"
+            )
 
         # SECTION TABS
         if not self.editor_element.get(list(self.section_tabs.keys())[0]):
@@ -1508,15 +1598,14 @@ class EventEditScreen(Screens):
                     anchors=(
                         {
                             "top_target": self.editor_element["frame"],
-                            "left_target": self.list_frame
+                            "left_target": self.list_frame,
                         }
                         if not prev_element
-                        else
-                        {
+                        else {
                             "top_target": self.editor_element["frame"],
-                            "left_target": prev_element
+                            "left_target": prev_element,
                         }
-                    )
+                    ),
                 )
                 prev_element = self.editor_element[name]
 
@@ -1532,9 +1621,9 @@ class EventEditScreen(Screens):
                 anchors=(
                     {
                         "top_target": self.editor_element["frame"],
-                        "left_target": self.list_frame
+                        "left_target": self.list_frame,
                     }
-                )
+                ),
             )
 
         if self.current_editor_tab == "settings":
@@ -1552,7 +1641,15 @@ class EventEditScreen(Screens):
         elif self.current_editor_tab == "outside consequences":
             self.generate_outside_tab()
 
-    def create_lock(self, name, top_anchor, left_anchor=None, container=None, x_offset=10, y_offset=10):
+    def create_lock(
+        self,
+        name,
+        top_anchor,
+        left_anchor=None,
+        container=None,
+        x_offset=10,
+        y_offset=10,
+    ):
         """
         Creates a lock button based on parameters.
         :param top_anchor: The element the divider should anchor it's top coord to
@@ -1571,17 +1668,12 @@ class EventEditScreen(Screens):
             object_id="@buttonstyles_icon",
             container=container,
             anchors=(
-                {
-                    "top_target": top_anchor
-                }
-                if not left_anchor else
-                {
-                    "top_target": top_anchor,
-                    "left_target": left_anchor
-                }
+                {"top_target": top_anchor}
+                if not left_anchor
+                else {"top_target": top_anchor, "left_target": left_anchor}
             ),
             starting_height=2,
-            tool_tip_text="If locked, these parameters will be preserved when making a new event."
+            tool_tip_text="If locked, these parameters will be preserved when making a new event.",
         )
         if name in self.param_locks.keys():
             # ensure lock reflects current setting
@@ -1605,16 +1697,12 @@ class EventEditScreen(Screens):
         self.editor_element[name] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, off_set), (524, 24))),
             pygame.transform.scale(
-                image_cache.load_image(
-                    "resources/images/spacer.png"
-                ).convert_alpha(),
+                image_cache.load_image("resources/images/spacer.png").convert_alpha(),
                 ui_scale_dimensions((524, 24)),
             ),
             container=container,
             manager=MANAGER,
-            anchors={
-                "top_target": top_anchor
-            }
+            anchors={"top_target": top_anchor},
         )
 
     # HELPERS
@@ -1644,10 +1732,12 @@ class EventEditScreen(Screens):
         Handles adding a block to a block list.
         :param event: the event.ui_element that triggers this func
         """
-        if event not in [self.injury_element.get("add"),
-                         self.history_element.get("add"),
-                         self.relationships_element.get("add"),
-                         self.supply_element.get("add")]:
+        if event not in [
+            self.injury_element.get("add"),
+            self.history_element.get("add"),
+            self.relationships_element.get("add"),
+            self.supply_element.get("add"),
+        ]:
             return
 
         attr = self.get_block_attributes()
@@ -1655,7 +1745,9 @@ class EventEditScreen(Screens):
         added_block = int(attr["selected"]) + 1 if attr["selected"] else 0
         attr["block_list"].insert(added_block, attr["info_dict"].copy())
         attr["selected"] = str(added_block)
-        attr["view"].new_item_list([str(index) for index in range(len(attr["block_list"]))])
+        attr["view"].new_item_list(
+            [str(index) for index in range(len(attr["block_list"]))]
+        )
         attr["view"].set_selected_list([attr["selected"]] if attr["selected"] else [])
 
         if self.open_block == "injury":
@@ -1679,10 +1771,12 @@ class EventEditScreen(Screens):
         :param event: the event.ui_element that triggers this func
         """
 
-        if event not in [self.injury_element.get("delete"),
-                         self.history_element.get("delete"),
-                         self.relationships_element.get("delete"),
-                         self.supply_element.get("delete")]:
+        if event not in [
+            self.injury_element.get("delete"),
+            self.history_element.get("delete"),
+            self.relationships_element.get("delete"),
+            self.supply_element.get("delete"),
+        ]:
             return
 
         attr = self.get_block_attributes()
@@ -1690,7 +1784,9 @@ class EventEditScreen(Screens):
         removed_block = int(attr["selected"])
         attr["block_list"].remove(attr["block_list"][removed_block])
         attr["selected"] = str(removed_block - 1) if len(attr["block_list"]) else ""
-        attr["view"].new_item_list([str(index) for index in range(len(attr["block_list"]))])
+        attr["view"].new_item_list(
+            [str(index) for index in range(len(attr["block_list"]))]
+        )
         attr["view"].set_selected_list([attr["selected"]] if attr["selected"] else [])
 
         if self.open_block == "injury":
@@ -1715,7 +1811,9 @@ class EventEditScreen(Screens):
             self.update_relationships_block_options()
 
         self.update_block_info()
-        self.editor_container.on_contained_elements_changed(self.editor_element[f"{self.open_block}_start"])
+        self.editor_container.on_contained_elements_changed(
+            self.editor_element[f"{self.open_block}_start"]
+        )
 
     def get_block_attributes(self) -> dict:
         """
@@ -1727,28 +1825,42 @@ class EventEditScreen(Screens):
             view = self.injury_element["block_list"]
             block_list = self.injury_block_list
             info_dict = self.injury_template
-            selected = self.selected_injury_block if self.selected_injury_block else None
+            selected = (
+                self.selected_injury_block if self.selected_injury_block else None
+            )
             display = self.injury_element["display"]
         elif self.open_block == "history":
             element = self.history_element
             view = self.history_element["block_list"]
             block_list = self.history_block_list
             info_dict = self.history_template
-            selected = self.selected_history_block_index if self.selected_history_block_index else None
+            selected = (
+                self.selected_history_block_index
+                if self.selected_history_block_index
+                else None
+            )
             display = self.history_element["display"]
         elif self.open_block == "supply":
             element = self.supply_element
             view = self.supply_element["block_list"]
             block_list = self.supply_block_list
             info_dict = self.supply_info
-            selected = self.selected_supply_block_index if self.selected_supply_block_index else None
+            selected = (
+                self.selected_supply_block_index
+                if self.selected_supply_block_index
+                else None
+            )
             display = self.supply_element["display"]
         else:
             element = self.relationships_element
             view = self.relationships_element["block_list"]
             block_list = self.relationships_block_list
             info_dict = self.relationships_template
-            selected = self.selected_relationships_block_index if self.selected_relationships_block_index else None
+            selected = (
+                self.selected_relationships_block_index
+                if self.selected_relationships_block_index
+                else None
+            )
             display = self.relationships_element["display"]
 
         return {
@@ -1757,7 +1869,7 @@ class EventEditScreen(Screens):
             "block_list": block_list,
             "info_dict": info_dict,
             "selected": selected,
-            "display": display
+            "display": display,
         }
 
     def get_selected_block_info(self) -> dict:
@@ -1765,24 +1877,41 @@ class EventEditScreen(Screens):
         Returns the loaded information dict for the currently viewed block.
         """
         if self.open_block == "injury":
-            return self.injury_block_list[
-                int(self.selected_injury_block)] if self.selected_injury_block else self.injury_template
+            return (
+                self.injury_block_list[int(self.selected_injury_block)]
+                if self.selected_injury_block
+                else self.injury_template
+            )
         elif self.open_block == "history":
-            return self.history_block_list[
-                int(self.selected_history_block_index)] if self.selected_history_block_index else self.history_template
+            return (
+                self.history_block_list[int(self.selected_history_block_index)]
+                if self.selected_history_block_index
+                else self.history_template
+            )
         elif self.open_block == "relationships":
-            return self.relationships_block_list[
-                int(self.selected_relationships_block_index)] if self.selected_relationships_block_index else self.relationships_template
+            return (
+                self.relationships_block_list[
+                    int(self.selected_relationships_block_index)
+                ]
+                if self.selected_relationships_block_index
+                else self.relationships_template
+            )
         elif self.open_block == "supply":
-            return self.supply_block_list[
-                int(self.selected_supply_block_index)] if self.selected_supply_block_index else self.supply_info
+            return (
+                self.supply_block_list[int(self.selected_supply_block_index)]
+                if self.selected_supply_block_index
+                else self.supply_info
+            )
 
     def new_cat_select(self):
         """
         Handles selecting a new cat block from the button list.
         """
-        new_selection = (self.new_cat_editor["cat_list"].selected_list[0]
-                         if self.new_cat_editor["cat_list"].selected_list else None)
+        new_selection = (
+            self.new_cat_editor["cat_list"].selected_list[0]
+            if self.new_cat_editor["cat_list"].selected_list
+            else None
+        )
         if self.selected_new_cat != new_selection:
             self.selected_new_cat = new_selection
             self.change_new_cat_info_dict()
@@ -1793,13 +1922,19 @@ class EventEditScreen(Screens):
             self.update_new_cat_options()
             self.new_cat_editor["display"].set_text(
                 f"selected cat: "
-                f"{self.new_cat_block_dict.get(self.selected_new_cat) if self.new_cat_block_dict.get(self.selected_new_cat) else '[]'}")
+                f"{self.new_cat_block_dict.get(self.selected_new_cat) if self.new_cat_block_dict.get(self.selected_new_cat) else '[]'}"
+            )
             self.update_new_cat_button_tooltips()
 
             # need to reset the cat connections info here or it'll be incorrect
-            new_selection = (self.connections_element["cat_list"].selected_list.copy()
-                             if self.connections_element["cat_list"].selected_list else [])
-            self.connections_element["display"].set_text(f"chosen cats: {new_selection}")
+            new_selection = (
+                self.connections_element["cat_list"].selected_list.copy()
+                if self.connections_element["cat_list"].selected_list
+                else []
+            )
+            self.connections_element["display"].set_text(
+                f"chosen cats: {new_selection}"
+            )
 
     def change_new_cat_info_dict(self):
         """
@@ -1809,12 +1944,7 @@ class EventEditScreen(Screens):
         if not self.selected_new_cat_info:
             if self.new_cat_block_dict.get(self.selected_new_cat):
                 saved_info = self.new_cat_block_dict[self.selected_new_cat]
-                unpacked = {
-                    "backstory": [],
-                    "parent": [],
-                    "adoptive": [],
-                    "mate": []
-                }
+                unpacked = {"backstory": [], "parent": [], "adoptive": [], "mate": []}
                 for tag in saved_info:
                     if "backstory" in tag:
                         stories = tag.replace("backstory:", "")
@@ -1838,7 +1968,7 @@ class EventEditScreen(Screens):
                     "backstory": [],
                     "parent": [],
                     "adoptive": [],
-                    "mate": []
+                    "mate": [],
                 }
         self.current_cat_dict = self.selected_new_cat_info
 
@@ -1847,7 +1977,10 @@ class EventEditScreen(Screens):
         Checks that the event_id is valid. This also controls the id validation display.
         """
         valid = True
-        if self.event_id_info in self.all_event_ids and self.event_id_info != self.open_event.get("event_id"):
+        if (
+            self.event_id_info in self.all_event_ids
+            and self.event_id_info != self.open_event.get("event_id")
+        ):
             text = "screens.event_edit.dupe_id"
             valid = False
         elif not self.event_id_info or self.event_id_info.isspace():
@@ -1856,7 +1989,9 @@ class EventEditScreen(Screens):
         else:
             text = "screens.event_edit.valid_id"
         if not valid:
-            self.alert_text = f"Event ID is either invalid or a duplicate. Pick a new ID."
+            self.alert_text = (
+                f"Event ID is either invalid or a duplicate. Pick a new ID."
+            )
 
         self.event_id_element["check_text"].set_text(text)
 
@@ -1895,7 +2030,10 @@ class EventEditScreen(Screens):
                 dead_cats.append(cat)
 
         for block in self.injury_block_list:
-            if set(block["injuries"]).intersection(set(Scar_Events.scar_allowed)) or block["scars"]:
+            if (
+                set(block["injuries"]).intersection(set(Scar_Events.scar_allowed))
+                or block["scars"]
+            ):
                 injured_cats.extend(block["cats"])
                 # scar-able injuries are generally also possibly fatal, so plop them in dead
                 dead_cats.extend(block["cats"])
@@ -1915,20 +2053,28 @@ class EventEditScreen(Screens):
         missing_injuries = [cat for cat in injured_cats if cat not in injury_histories]
 
         if missing_deaths or missing_injuries:
-            self.alert_text = f"Death and/or Injury histories are missing for some affected cats. " \
-                              f"<br><br>Missing Death for: {missing_deaths}<br>Missing Injury for: {missing_injuries} "
+            self.alert_text = (
+                f"Death and/or Injury histories are missing for some affected cats. "
+                f"<br><br>Missing Death for: {missing_deaths}<br>Missing Injury for: {missing_injuries} "
+            )
             valid = False
 
         if valid:
             for block in self.history_block_list:
                 if not block["cats"]:
                     valid = False
-                elif not block["scar"] and not block["reg_death"] and not block["lead_death"]:
+                elif (
+                    not block["scar"]
+                    and not block["reg_death"]
+                    and not block["lead_death"]
+                ):
                     valid = False
 
             if not valid:
-                self.alert_text = f"A History block is missing information! Do all blocks have cats selected and at " \
-                                  f"least one text section filled?"
+                self.alert_text = (
+                    f"A History block is missing information! Do all blocks have cats selected and at "
+                    f"least one text section filled?"
+                )
 
         return valid
 
@@ -1939,15 +2085,19 @@ class EventEditScreen(Screens):
         valid = True
 
         for block in self.relationships_block_list:
-            if (not block["cats_from"]
-                    or not block["cats_to"]
-                    or not block["values"]
-                    or not block["amount"]):
+            if (
+                not block["cats_from"]
+                or not block["cats_to"]
+                or not block["values"]
+                or not block["amount"]
+            ):
                 valid = False
 
         if not valid:
-            self.alert_text = f"A Relationship block is missing information! Do all blocks have cats, values, " \
-                              f"and an amount chosen?"
+            self.alert_text = (
+                f"A Relationship block is missing information! Do all blocks have cats, values, "
+                f"and an amount chosen?"
+            )
         return valid
 
     def valid_supply(self) -> bool:
@@ -1960,7 +2110,9 @@ class EventEditScreen(Screens):
                 valid = False
 
         if not valid:
-            self.alert_text = f"A Supply block has no type selected. A type must be chosen!"
+            self.alert_text = (
+                f"A Supply block has no type selected. A type must be chosen!"
+            )
 
         return valid
 
@@ -2038,12 +2190,14 @@ class EventEditScreen(Screens):
                 self.relationships_element["mutual"].uncheck()
                 selected_info["mutual"] = False
                 self.relationships_element["cat_bridge_info"].set_text(
-                    "screens.event_edit.relationships_one_way")
+                    "screens.event_edit.relationships_one_way"
+                )
             else:
                 self.relationships_element["mutual"].check()
                 selected_info["mutual"] = True
                 self.relationships_element["cat_bridge_info"].set_text(
-                    "screens.event_edit.relationships_mutual")
+                    "screens.event_edit.relationships_mutual"
+                )
             self.update_block_info()
         # AMOUNT CHANGES
         amount = None
@@ -2051,13 +2205,21 @@ class EventEditScreen(Screens):
             amount = 5
         elif event.ui_element == self.relationships_element.get("amount_up_mid_button"):
             amount = 10
-        elif event.ui_element == self.relationships_element.get("amount_up_high_button"):
+        elif event.ui_element == self.relationships_element.get(
+            "amount_up_high_button"
+        ):
             amount = 20
-        elif event.ui_element == self.relationships_element.get("amount_down_low_button"):
+        elif event.ui_element == self.relationships_element.get(
+            "amount_down_low_button"
+        ):
             amount = -5
-        elif event.ui_element == self.relationships_element.get("amount_down_mid_button"):
+        elif event.ui_element == self.relationships_element.get(
+            "amount_down_mid_button"
+        ):
             amount = -10
-        elif event.ui_element == self.relationships_element.get("amount_down_high_button"):
+        elif event.ui_element == self.relationships_element.get(
+            "amount_down_high_button"
+        ):
             amount = -20
         if amount:
             self.relationships_element["amount_entry"].set_text(str(amount))
@@ -2076,7 +2238,9 @@ class EventEditScreen(Screens):
             self.selected_new_cat = f"n_c:{new_index}"
             self.change_new_cat_info_dict()
             self.new_cat_block_dict[self.selected_new_cat] = []
-            self.new_cat_editor["cat_list"].new_item_list(self.new_cat_block_dict.keys())
+            self.new_cat_editor["cat_list"].new_item_list(
+                self.new_cat_block_dict.keys()
+            )
             self.new_cat_editor["cat_list"].set_selected_list([self.selected_new_cat])
             self.new_cat_editor["display"].set_text(f"selected cat: []")
             self.update_new_cat_button_tooltips()
@@ -2085,7 +2249,9 @@ class EventEditScreen(Screens):
                 self.update_new_cat_options()
 
         # DELETE CAT
-        elif event.ui_element == self.new_cat_editor["delete"] and self.selected_new_cat:
+        elif (
+            event.ui_element == self.new_cat_editor["delete"] and self.selected_new_cat
+        ):
             # retain needed info then clear new_cat_list
             deleted = self.selected_new_cat
             self.new_cat_block_dict.pop(deleted)
@@ -2097,14 +2263,23 @@ class EventEditScreen(Screens):
             for index, cat in enumerate(old_list.values()):
                 self.new_cat_block_dict[f"n_c:{index}"] = cat
 
-            self.new_cat_editor["cat_list"].new_item_list(self.new_cat_block_dict.keys())
+            self.new_cat_editor["cat_list"].new_item_list(
+                self.new_cat_block_dict.keys()
+            )
 
-            self.selected_new_cat = list(self.new_cat_block_dict.keys())[-1] if self.new_cat_block_dict.keys() else None
+            self.selected_new_cat = (
+                list(self.new_cat_block_dict.keys())[-1]
+                if self.new_cat_block_dict.keys()
+                else None
+            )
 
             if self.selected_new_cat:
-                self.new_cat_editor["cat_list"].set_selected_list([self.selected_new_cat])
+                self.new_cat_editor["cat_list"].set_selected_list(
+                    [self.selected_new_cat]
+                )
                 self.new_cat_editor["display"].set_text(
-                    f"selected cat: {self.new_cat_block_dict.get(self.selected_new_cat) if self.new_cat_block_dict.get(self.selected_new_cat) else '[]'}")
+                    f"selected cat: {self.new_cat_block_dict.get(self.selected_new_cat) if self.new_cat_block_dict.get(self.selected_new_cat) else '[]'}"
+                )
                 self.change_new_cat_info_dict()
 
             else:
@@ -2121,20 +2296,26 @@ class EventEditScreen(Screens):
                     self.new_cat_bools[index] = {
                         "tag": info["tag"],
                         "setting": False if info["setting"] else True,
-                        "conflict": info["conflict"]
+                        "conflict": info["conflict"],
                     }
 
                     # flip the setting of any conflicting tags
                     if info["conflict"]:
                         for tag in info["conflict"]:
-                            conflict_info = [block for block in self.new_cat_bools if tag == block["tag"]][0]
+                            conflict_info = [
+                                block
+                                for block in self.new_cat_bools
+                                if tag == block["tag"]
+                            ][0]
                             conflict_index = self.new_cat_bools.index(conflict_info)
-                            if not info["setting"]:  # unchecks if conflicted setting is checked
+                            if not info[
+                                "setting"
+                            ]:  # unchecks if conflicted setting is checked
                                 self.new_cat_checkbox[tag].uncheck()
                             self.new_cat_bools[conflict_index] = {
                                 "tag": conflict_info["tag"],
                                 "setting": False,
-                                "conflict": conflict_info["conflict"]
+                                "conflict": conflict_info["conflict"],
                             }
                     self.update_new_cat_tags()
                     break
@@ -2146,12 +2327,23 @@ class EventEditScreen(Screens):
             self.connections_element["adopt_parent"].enable()
             self.connections_element["mate"].enable()
 
-            self.connections_element["text"].set_text("screens.event_edit.new_cat_parent_info")
-            self.editor_container.on_contained_elements_changed(self.connections_element["text"])
-            self.connections_element["display"].set_text(f"chosen cats: {self.selected_new_cat_info['parent']}")
+            self.connections_element["text"].set_text(
+                "screens.event_edit.new_cat_parent_info"
+            )
+            self.editor_container.on_contained_elements_changed(
+                self.connections_element["text"]
+            )
+            self.connections_element["display"].set_text(
+                f"chosen cats: {self.selected_new_cat_info['parent']}"
+            )
 
-            self.connections_element["cat_list"].set_selected_list(self.selected_new_cat_info["parent"].copy())
-            used_cats = self.selected_new_cat_info["adoptive"] + self.selected_new_cat_info["mate"]
+            self.connections_element["cat_list"].set_selected_list(
+                self.selected_new_cat_info["parent"].copy()
+            )
+            used_cats = (
+                self.selected_new_cat_info["adoptive"]
+                + self.selected_new_cat_info["mate"]
+            )
             for cat, button in self.connections_element["cat_list"].buttons.items():
                 if cat in used_cats:
                     button.disable()
@@ -2164,12 +2356,23 @@ class EventEditScreen(Screens):
             self.connections_element["adopt_parent"].disable()
             self.connections_element["mate"].enable()
 
-            self.connections_element["text"].set_text("screens.event_edit.new_cat_adoptive_info")
-            self.editor_container.on_contained_elements_changed(self.connections_element["text"])
-            self.connections_element["display"].set_text(f"chosen cats: {self.selected_new_cat_info['adoptive']}")
+            self.connections_element["text"].set_text(
+                "screens.event_edit.new_cat_adoptive_info"
+            )
+            self.editor_container.on_contained_elements_changed(
+                self.connections_element["text"]
+            )
+            self.connections_element["display"].set_text(
+                f"chosen cats: {self.selected_new_cat_info['adoptive']}"
+            )
 
-            self.connections_element["cat_list"].set_selected_list(self.selected_new_cat_info["adoptive"].copy())
-            used_cats = self.selected_new_cat_info["parent"] + self.selected_new_cat_info["mate"]
+            self.connections_element["cat_list"].set_selected_list(
+                self.selected_new_cat_info["adoptive"].copy()
+            )
+            used_cats = (
+                self.selected_new_cat_info["parent"]
+                + self.selected_new_cat_info["mate"]
+            )
             for cat, button in self.connections_element["cat_list"].buttons.items():
                 if cat in used_cats:
                     button.disable()
@@ -2181,12 +2384,23 @@ class EventEditScreen(Screens):
             self.connections_element["adopt_parent"].enable()
             self.connections_element["mate"].disable()
 
-            self.connections_element["text"].set_text("screens.event_edit.new_cat_mate_info")
-            self.editor_container.on_contained_elements_changed(self.connections_element["text"])
-            self.connections_element["display"].set_text(f"chosen cats: {self.selected_new_cat_info['mate']}")
+            self.connections_element["text"].set_text(
+                "screens.event_edit.new_cat_mate_info"
+            )
+            self.editor_container.on_contained_elements_changed(
+                self.connections_element["text"]
+            )
+            self.connections_element["display"].set_text(
+                f"chosen cats: {self.selected_new_cat_info['mate']}"
+            )
 
-            self.connections_element["cat_list"].set_selected_list(self.selected_new_cat_info["mate"].copy())
-            used_cats = self.selected_new_cat_info["adoptive"] + self.selected_new_cat_info["parent"]
+            self.connections_element["cat_list"].set_selected_list(
+                self.selected_new_cat_info["mate"].copy()
+            )
+            used_cats = (
+                self.selected_new_cat_info["adoptive"]
+                + self.selected_new_cat_info["parent"]
+            )
             for cat, button in self.connections_element["cat_list"].buttons.items():
                 if cat in used_cats:
                     button.disable()
@@ -2216,20 +2430,26 @@ class EventEditScreen(Screens):
                     self.rel_tag_list[index] = {
                         "tag": info["tag"],
                         "setting": False if info["setting"] else True,
-                        "conflict": info["conflict"]
+                        "conflict": info["conflict"],
                     }
 
                     # flip the setting of any conflicting tags
                     if info["conflict"]:
                         for tag in info["conflict"]:
-                            conflict_info = [block for block in self.rel_tag_list if tag == block["tag"]][0]
+                            conflict_info = [
+                                block
+                                for block in self.rel_tag_list
+                                if tag == block["tag"]
+                            ][0]
                             conflict_index = self.rel_tag_list.index(conflict_info)
-                            if not info["setting"]:  # unchecks if conflicted setting is checked
+                            if not info[
+                                "setting"
+                            ]:  # unchecks if conflicted setting is checked
                                 self.rel_status_checkbox[tag].uncheck()
                             self.rel_tag_list[conflict_index] = {
                                 "tag": conflict_info["tag"],
                                 "setting": False,
-                                "conflict": conflict_info["conflict"]
+                                "conflict": conflict_info["conflict"],
                             }
 
                     self.update_rel_status_info()
@@ -2289,9 +2509,13 @@ class EventEditScreen(Screens):
             self.trait_allowed = True
             # reset selected list
             self.trait_element["adult"].set_selected_list(
-                list(set(self.current_cat_dict["trait"]).intersection(self.adult_traits)))
+                list(
+                    set(self.current_cat_dict["trait"]).intersection(self.adult_traits)
+                )
+            )
             self.trait_element["kitten"].set_selected_list(
-                list(set(self.current_cat_dict["trait"]).intersection(self.kit_traits)))
+                list(set(self.current_cat_dict["trait"]).intersection(self.kit_traits))
+            )
 
         elif event.ui_element == self.trait_element.get("exclude"):
             self.trait_element["exclude"].disable()
@@ -2299,13 +2523,26 @@ class EventEditScreen(Screens):
             self.trait_allowed = False
             # reset selected list
             self.trait_element["adult"].set_selected_list(
-                list(set(self.current_cat_dict["not_trait"]).intersection(self.adult_traits)))
+                list(
+                    set(self.current_cat_dict["not_trait"]).intersection(
+                        self.adult_traits
+                    )
+                )
+            )
             self.trait_element["kitten"].set_selected_list(
-                list(set(self.current_cat_dict["not_trait"]).intersection(self.kit_traits)))
+                list(
+                    set(self.current_cat_dict["not_trait"]).intersection(
+                        self.kit_traits
+                    )
+                )
+            )
 
         # BACKSTORY LIST
-        elif event.ui_element in (self.backstory_element.get("list").buttons.values()
-        if self.backstory_element.get("list") else []):
+        elif event.ui_element in (
+            self.backstory_element.get("list").buttons.values()
+            if self.backstory_element.get("list")
+            else []
+        ):
             for name, button in self.backstory_element["list"].buttons.items():
                 if button != event.ui_element:
                     continue
@@ -2313,7 +2550,9 @@ class EventEditScreen(Screens):
 
                 if name in chosen_stories:
                     chosen_stories.remove(name)
-                    if not set(chosen_stories).intersection(self.backstory_element["list"].selected_list):
+                    if not set(chosen_stories).intersection(
+                        self.backstory_element["list"].selected_list
+                    ):
                         chosen_stories.append(self.open_pool)
                 else:
                     chosen_stories.append(name)
@@ -2323,7 +2562,6 @@ class EventEditScreen(Screens):
                 break
 
     def handle_settings_events(self, event):
-
         # CHANGE LOCATION LIST
         if event.ui_element in self.location_element.values():
             biome_list = game.clan.BIOME_TYPES
@@ -2346,21 +2584,27 @@ class EventEditScreen(Screens):
                         "tag": info["tag"],
                         "setting": False if info["setting"] else True,
                         "required_type": info["required_type"],
-                        "conflict": info["conflict"]
+                        "conflict": info["conflict"],
                     }
 
                     # flip the setting of any conflicting tags
                     if info["conflict"]:
                         for tag in info["conflict"]:
-                            conflict_info = [block for block in self.basic_tag_list if tag == block["tag"]][0]
+                            conflict_info = [
+                                block
+                                for block in self.basic_tag_list
+                                if tag == block["tag"]
+                            ][0]
                             conflict_index = self.basic_tag_list.index(conflict_info)
-                            if not info["setting"]:  # unchecks if conflicted setting is checked
+                            if not info[
+                                "setting"
+                            ]:  # unchecks if conflicted setting is checked
                                 self.basic_tag_checkbox[tag].uncheck()
                             self.basic_tag_list[conflict_index] = {
                                 "tag": conflict_info["tag"],
                                 "setting": False,
                                 "required_type": conflict_info["required_type"],
-                                "conflict": conflict_info["conflict"]
+                                "conflict": conflict_info["conflict"],
                             }
 
                     self.update_tag_info()
@@ -2373,8 +2617,10 @@ class EventEditScreen(Screens):
 
         # CHANGE ACC CATEGORY
         # individual accs
-        elif (self.acc_element.get("list")
-              and event.ui_element in self.acc_element["list"].buttons.values()):
+        elif (
+            self.acc_element.get("list")
+            and event.ui_element in self.acc_element["list"].buttons.values()
+        ):
             for acc, button in self.acc_element["list"].buttons.items():
                 if event.ui_element != button:
                     continue
@@ -2407,26 +2653,44 @@ class EventEditScreen(Screens):
 
     def handle_outside_on_use(self):
         # SUPPLY CONSTRAINT DISPLAY
-        if self.selected_supply_block_index and not self.supply_element.get("constraint_container"):
+        if self.selected_supply_block_index and not self.supply_element.get(
+            "constraint_container"
+        ):
             self.display_supply_constraints()
         elif not self.selected_supply_block_index:
             self.clear_supply_constraints()
         # SELECT NEW SUPPLY BLOCK
-        if self.supply_element.get("block_list").selected_list and not self.supply_element.get("adjust_list"):
+        if self.supply_element.get(
+            "block_list"
+        ).selected_list and not self.supply_element.get("adjust_list"):
             self.display_supply_constraints()
         if self.supply_element.get("adjust_list"):
-            selected_block = [str(self.selected_supply_block_index)] if self.selected_supply_block_index else []
+            selected_block = (
+                [str(self.selected_supply_block_index)]
+                if self.selected_supply_block_index
+                else []
+            )
             if self.supply_element["block_list"].selected_list != selected_block:
                 self.update_supply_block_options()
         # OUTSIDER
         if self.outsider_element.get("list"):
-            if self.outsider_element["list"].selected_list != self.outsider_info["current_rep"]:
-                self.outsider_info["current_rep"] = self.outsider_element["list"].selected_list.copy()
+            if (
+                self.outsider_element["list"].selected_list
+                != self.outsider_info["current_rep"]
+            ):
+                self.outsider_info["current_rep"] = self.outsider_element[
+                    "list"
+                ].selected_list.copy()
                 self.outsider_element["display"].set_text(f"{self.outsider_info}")
         # OTHER CLAN
         if self.other_clan_element.get("list"):
-            if self.other_clan_element["list"].selected_list != self.other_clan_info["current_rep"]:
-                self.other_clan_info["current_rep"] = self.other_clan_element["list"].selected_list.copy()
+            if (
+                self.other_clan_element["list"].selected_list
+                != self.other_clan_info["current_rep"]
+            ):
+                self.other_clan_info["current_rep"] = self.other_clan_element[
+                    "list"
+                ].selected_list.copy()
                 self.other_clan_element["display"].set_text(f"{self.other_clan_info}")
         # SUPPLY TYPE
         changed = False
@@ -2437,21 +2701,31 @@ class EventEditScreen(Screens):
 
             # TYPE
             if self.supply_element["type_list"].selected_list != new_type:
-                selected_info["type"] = (self.supply_element["type_list"].selected_list[0]
-                                         if self.supply_element["type_list"].selected_list else "")
+                selected_info["type"] = (
+                    self.supply_element["type_list"].selected_list[0]
+                    if self.supply_element["type_list"].selected_list
+                    else ""
+                )
                 changed = True
 
             # TRIGGER
-            elif self.supply_element["trigger_list"].selected_list != selected_info["trigger"]:
-                selected_info["trigger"] = self.supply_element["trigger_list"].selected_list.copy()
+            elif (
+                self.supply_element["trigger_list"].selected_list
+                != selected_info["trigger"]
+            ):
+                selected_info["trigger"] = self.supply_element[
+                    "trigger_list"
+                ].selected_list.copy()
                 changed = True
 
             # ADJUST
             elif self.supply_element["adjust_list"].selected_list != new_adjust:
                 # gotta be a little careful here, since the "increase" tag changes upon user input
-                new_tag = (self.supply_element["adjust_list"].selected_list.copy()[0]
-                           if self.supply_element["adjust_list"].selected_list
-                           else "")
+                new_tag = (
+                    self.supply_element["adjust_list"].selected_list.copy()[0]
+                    if self.supply_element["adjust_list"].selected_list
+                    else ""
+                )
                 tag_change = True
                 if "increase_" in new_tag and "increase_" in selected_info["adjust"]:
                     tag_change = False
@@ -2468,66 +2742,103 @@ class EventEditScreen(Screens):
         # EXCLUDE
         if self.exclusion_element.get("cat_list"):
             if self.exclusion_element["cat_list"].selected_list != self.excluded_cats:
-                self.excluded_cats = self.exclusion_element["cat_list"].selected_list.copy()
-                self.exclusion_element["display"].set_text(f"exclude_involved: {self.excluded_cats}")
+                self.excluded_cats = self.exclusion_element[
+                    "cat_list"
+                ].selected_list.copy()
+                self.exclusion_element["display"].set_text(
+                    f"exclude_involved: {self.excluded_cats}"
+                )
 
         changed = False
 
         if self.open_block == "injury":
             # CONSTRAINT DISPLAY
-            if self.selected_injury_block and not self.injury_element.get("constraint_container"):
+            if self.selected_injury_block and not self.injury_element.get(
+                "constraint_container"
+            ):
                 self.display_injury_constraints()
             elif not self.selected_injury_block:
                 self.clear_injury_constraints()
 
             # SELECT NEW BLOCK
             if self.injury_element.get("scar_list"):
-                selected_injury = [str(self.selected_injury_block)] if self.selected_injury_block else []
+                selected_injury = (
+                    [str(self.selected_injury_block)]
+                    if self.selected_injury_block
+                    else []
+                )
                 if self.injury_element["block_list"].selected_list != selected_injury:
                     self.update_injury_block_options()
 
             # CAT LIST
             if self.injury_element.get("cats_list"):
                 selected_info = self.get_selected_block_info()
-                if self.injury_element["cats_list"].selected_list != selected_info["cats"]:
-                    selected_info["cats"] = self.injury_element["cats_list"].selected_list.copy()
-                    self.injury_element["cats_info"].set_text(f"cats: {selected_info['cats']}")
-                    self.injury_element["constraint_container"].on_contained_elements_changed(
-                        self.injury_element["cats_info"])
+                if (
+                    self.injury_element["cats_list"].selected_list
+                    != selected_info["cats"]
+                ):
+                    selected_info["cats"] = self.injury_element[
+                        "cats_list"
+                    ].selected_list.copy()
+                    self.injury_element["cats_info"].set_text(
+                        f"cats: {selected_info['cats']}"
+                    )
+                    self.injury_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.injury_element["cats_info"])
                     changed = True
 
             # INJURY LIST
             if self.injury_element.get("individual_injuries"):
-                full_selection = self.injury_element["injury_pools"].selected_list + self.injury_element[
-                    "individual_injuries"].selected_list
+                full_selection = (
+                    self.injury_element["injury_pools"].selected_list
+                    + self.injury_element["individual_injuries"].selected_list
+                )
                 selected_info = self.get_selected_block_info()
                 if full_selection != selected_info["injuries"]:
                     selected_info["injuries"] = full_selection
-                    self.injury_element["injury_info"].set_text(f"injuries: {full_selection}")
-                    self.injury_element["constraint_container"].on_contained_elements_changed(
-                        self.injury_element["injury_info"])
+                    self.injury_element["injury_info"].set_text(
+                        f"injuries: {full_selection}"
+                    )
+                    self.injury_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.injury_element["injury_info"])
                     changed = True
 
             # SCAR LIST
             if self.injury_element.get("scar_list"):
                 selected_info = self.get_selected_block_info()
-                if self.injury_element["scar_list"].selected_list != selected_info["injuries"]:
-                    selected_info["scars"] = self.injury_element["scar_list"].selected_list.copy()
-                    self.injury_element["scar_info"].set_text(f"scars: {selected_info['scars']}")
-                    self.injury_element["constraint_container"].on_contained_elements_changed(
-                        self.injury_element["scar_info"])
+                if (
+                    self.injury_element["scar_list"].selected_list
+                    != selected_info["injuries"]
+                ):
+                    selected_info["scars"] = self.injury_element[
+                        "scar_list"
+                    ].selected_list.copy()
+                    self.injury_element["scar_info"].set_text(
+                        f"scars: {selected_info['scars']}"
+                    )
+                    self.injury_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.injury_element["scar_info"])
                     changed = True
 
         elif self.open_block == "history":
             # CONSTRAINT DISPLAY
-            if self.selected_history_block_index and not self.history_element.get("constraint_container"):
+            if self.selected_history_block_index and not self.history_element.get(
+                "constraint_container"
+            ):
                 self.display_history_constraints()
             elif not self.selected_history_block_index:
                 self.clear_history_constraints()
 
             # SELECT NEW BLOCK
             if self.history_element.get("lead_history_input"):
-                selected_history = [str(self.selected_history_block_index)] if self.selected_history_block_index else []
+                selected_history = (
+                    [str(self.selected_history_block_index)]
+                    if self.selected_history_block_index
+                    else []
+                )
                 if self.history_element["block_list"].selected_list != selected_history:
                     self.update_history_block_options()
 
@@ -2537,11 +2848,19 @@ class EventEditScreen(Screens):
                 used_cats = []
                 for block in self.history_block_list:
                     used_cats.extend(block["cats"])
-                if self.history_element["cats_list"].selected_list != selected_info["cats"]:
-                    selected_info["cats"] = self.history_element["cats_list"].selected_list.copy()
-                    self.history_element["cats_info"].set_text(f"cats: {selected_info['cats']}")
-                    self.history_element["constraint_container"].on_contained_elements_changed(
-                        self.history_element["cats_info"])
+                if (
+                    self.history_element["cats_list"].selected_list
+                    != selected_info["cats"]
+                ):
+                    selected_info["cats"] = self.history_element[
+                        "cats_list"
+                    ].selected_list.copy()
+                    self.history_element["cats_info"].set_text(
+                        f"cats: {selected_info['cats']}"
+                    )
+                    self.history_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.history_element["cats_info"])
                     changed = True
 
                 for name, button in self.history_element["cats_list"].buttons.items():
@@ -2553,64 +2872,119 @@ class EventEditScreen(Screens):
             # TEXT ENTRY
             if self.history_element.get("scar_history_input"):
                 selected_info = self.get_selected_block_info()
-                if selected_info["scar"] != self.history_element["scar_history_input"].get_text():
-                    selected_info["scar"] = self.history_element["scar_history_input"].get_text()
+                if (
+                    selected_info["scar"]
+                    != self.history_element["scar_history_input"].get_text()
+                ):
+                    selected_info["scar"] = self.history_element[
+                        "scar_history_input"
+                    ].get_text()
                     changed = True
             if self.history_element.get("reg_history_input"):
                 selected_info = self.get_selected_block_info()
-                if selected_info["reg_death"] != self.history_element["reg_history_input"].get_text():
-                    selected_info["reg_death"] = self.history_element["reg_history_input"].get_text()
+                if (
+                    selected_info["reg_death"]
+                    != self.history_element["reg_history_input"].get_text()
+                ):
+                    selected_info["reg_death"] = self.history_element[
+                        "reg_history_input"
+                    ].get_text()
                     changed = True
             if self.history_element.get("lead_history_input"):
                 selected_info = self.get_selected_block_info()
-                if selected_info["lead_death"] != self.history_element["lead_history_input"].get_text():
-                    selected_info["lead_death"] = self.history_element["lead_history_input"].get_text()
+                if (
+                    selected_info["lead_death"]
+                    != self.history_element["lead_history_input"].get_text()
+                ):
+                    selected_info["lead_death"] = self.history_element[
+                        "lead_history_input"
+                    ].get_text()
                     changed = True
 
         elif self.open_block == "relationships":
             # CONSTRAINT DISPLAY
-            if self.selected_relationships_block_index and not self.relationships_element.get("constraint_container"):
+            if (
+                self.selected_relationships_block_index
+                and not self.relationships_element.get("constraint_container")
+            ):
                 self.display_relationships_constraints()
             elif not self.selected_relationships_block_index:
                 self.clear_relationships_constraints()
 
             if self.relationships_element.get("amount_down_high_button"):
-                selected_relationship = [
-                    str(self.selected_relationships_block_index)] if self.selected_relationships_block_index else []
+                selected_relationship = (
+                    [str(self.selected_relationships_block_index)]
+                    if self.selected_relationships_block_index
+                    else []
+                )
                 selected_info = self.get_selected_block_info()
 
                 # SELECT NEW BLOCK
-                if self.relationships_element["block_list"].selected_list != selected_relationship:
+                if (
+                    self.relationships_element["block_list"].selected_list
+                    != selected_relationship
+                ):
                     self.update_relationships_block_options()
 
                 # CAT LIST
-                elif self.relationships_element["cats_from_list"].selected_list != selected_info["cats_from"]:
-                    selected_info["cats_from"] = self.relationships_element["cats_from_list"].selected_list.copy()
-                    for name, button in self.relationships_element["cats_to_list"].buttons.items():
+                elif (
+                    self.relationships_element["cats_from_list"].selected_list
+                    != selected_info["cats_from"]
+                ):
+                    selected_info["cats_from"] = self.relationships_element[
+                        "cats_from_list"
+                    ].selected_list.copy()
+                    for name, button in self.relationships_element[
+                        "cats_to_list"
+                    ].buttons.items():
                         if name in selected_info["cats_from"]:
                             button.disable()
                         else:
                             button.enable()
-                    self.relationships_element["cats_from_info"].set_text(f"cats: {selected_info['cats_from']}")
-                    self.relationships_element["constraint_container"].on_contained_elements_changed(
-                        self.relationships_element["cats_from_info"])
+                    self.relationships_element["cats_from_info"].set_text(
+                        f"cats: {selected_info['cats_from']}"
+                    )
+                    self.relationships_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(
+                        self.relationships_element["cats_from_info"]
+                    )
                     changed = True
-                elif self.relationships_element["cats_to_list"].selected_list != selected_info["cats_to"]:
-                    selected_info["cats_to"] = self.relationships_element["cats_to_list"].selected_list.copy()
-                    for name, button in self.relationships_element["cats_from_list"].buttons.items():
+                elif (
+                    self.relationships_element["cats_to_list"].selected_list
+                    != selected_info["cats_to"]
+                ):
+                    selected_info["cats_to"] = self.relationships_element[
+                        "cats_to_list"
+                    ].selected_list.copy()
+                    for name, button in self.relationships_element[
+                        "cats_from_list"
+                    ].buttons.items():
                         if name in selected_info["cats_to"]:
                             button.disable()
                         else:
                             button.enable()
-                    self.relationships_element["cats_to_info"].set_text(f"cats: {selected_info['cats_to']}")
-                    self.relationships_element["constraint_container"].on_contained_elements_changed(
-                        self.relationships_element["cats_to_info"])
+                    self.relationships_element["cats_to_info"].set_text(
+                        f"cats: {selected_info['cats_to']}"
+                    )
+                    self.relationships_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(
+                        self.relationships_element["cats_to_info"]
+                    )
                     changed = True
 
                 # VALUES
-                elif self.relationships_element["values_list"].selected_list != selected_info["values"]:
-                    selected_info["values"] = self.relationships_element["values_list"].selected_list.copy()
-                    self.relationships_element["values_info"].set_text(f"values: {selected_info['values']}")
+                elif (
+                    self.relationships_element["values_list"].selected_list
+                    != selected_info["values"]
+                ):
+                    selected_info["values"] = self.relationships_element[
+                        "values_list"
+                    ].selected_list.copy()
+                    self.relationships_element["values_info"].set_text(
+                        f"values: {selected_info['values']}"
+                    )
                     changed = True
 
         if changed:
@@ -2621,18 +2995,25 @@ class EventEditScreen(Screens):
         if self.selected_new_cat and not self.new_cat_element.get("checkbox_container"):
             self.display_new_cat_constraints()
 
-        elif not self.selected_new_cat and self.new_cat_element.get("checkbox_container"):
+        elif not self.selected_new_cat and self.new_cat_element.get(
+            "checkbox_container"
+        ):
             self.clear_new_cat_constraints()
         # CHANGE SELECTED CAT
         if self.new_cat_editor.get("cat_list"):
             self.new_cat_select()
         # CAT CONNECTIONS
         if self.connections_element.get("cat_list"):
-            new_selection = (self.connections_element["cat_list"].selected_list.copy()
-                             if self.connections_element["cat_list"].selected_list else [])
+            new_selection = (
+                self.connections_element["cat_list"].selected_list.copy()
+                if self.connections_element["cat_list"].selected_list
+                else []
+            )
             if self.selected_new_cat_info[self.open_connection] != new_selection:
                 self.selected_new_cat_info[self.open_connection] = new_selection
-                self.connections_element["display"].set_text(f"chosen cats: {new_selection}")
+                self.connections_element["display"].set_text(
+                    f"chosen cats: {new_selection}"
+                )
         self.handle_main_and_random_cat_on_use()
         self.update_new_cat_tags()
 
@@ -2643,34 +3024,51 @@ class EventEditScreen(Screens):
         """
         attr = self.get_block_attributes()
         if attr["selected"]:
-            text = '<br>'.join([f"{key}: {value}" for key, value in attr["block_list"][int(attr["selected"])].items()])
+            text = "<br>".join(
+                [
+                    f"{key}: {value}"
+                    for key, value in attr["block_list"][int(attr["selected"])].items()
+                ]
+            )
         else:
             text = "No block selected"
         attr["display"].set_text(text)
 
-        self.editor_container.on_contained_elements_changed(self.editor_element[f"{self.open_block}_start"])
+        self.editor_container.on_contained_elements_changed(
+            self.editor_element[f"{self.open_block}_start"]
+        )
 
     def update_supply_block_options(self):
         if not self.supply_element.get("adjust_list"):
             return
 
-        self.selected_supply_block_index = (self.supply_element["block_list"].selected_list.copy()[0]
-                                            if self.supply_element["block_list"].selected_list
-                                            else "")
+        self.selected_supply_block_index = (
+            self.supply_element["block_list"].selected_list.copy()[0]
+            if self.supply_element["block_list"].selected_list
+            else ""
+        )
 
         if self.selected_supply_block_index:
-            selected_constraints = self.supply_block_list.copy()[int(self.selected_supply_block_index)]
+            selected_constraints = self.supply_block_list.copy()[
+                int(self.selected_supply_block_index)
+            ]
         else:
             selected_constraints = self.supply_info.copy()
 
         # TYPE
-        self.supply_element["type_list"].set_selected_list([selected_constraints["type"]])
+        self.supply_element["type_list"].set_selected_list(
+            [selected_constraints["type"]]
+        )
 
         # TRIGGER
-        self.supply_element["trigger_list"].set_selected_list(selected_constraints["trigger"].copy())
+        self.supply_element["trigger_list"].set_selected_list(
+            selected_constraints["trigger"].copy()
+        )
 
         # ADJUST
-        self.supply_element["adjust_list"].set_selected_list([selected_constraints["adjust"]])
+        self.supply_element["adjust_list"].set_selected_list(
+            [selected_constraints["adjust"]]
+        )
         self.create_supply_increase_editor()
         self.update_block_info()
 
@@ -2678,33 +3076,57 @@ class EventEditScreen(Screens):
         if not self.relationships_element.get("amount_down_high_button"):
             return
 
-        self.selected_relationships_block_index = (self.relationships_element["block_list"].selected_list.copy()[0]
-                                                   if self.relationships_element["block_list"].selected_list
-                                                   else "")
+        self.selected_relationships_block_index = (
+            self.relationships_element["block_list"].selected_list.copy()[0]
+            if self.relationships_element["block_list"].selected_list
+            else ""
+        )
         if self.selected_relationships_block_index:
-            selected_constraints = self.relationships_block_list.copy()[int(self.selected_relationships_block_index)]
+            selected_constraints = self.relationships_block_list.copy()[
+                int(self.selected_relationships_block_index)
+            ]
         else:
             selected_constraints = self.relationships_template.copy()
 
         # MUTUAL
-        if self.relationships_element["mutual"].checked and not selected_constraints["mutual"]:
+        if (
+            self.relationships_element["mutual"].checked
+            and not selected_constraints["mutual"]
+        ):
             self.relationships_element["mutual"].uncheck()
-            self.relationships_element["cat_bridge_info"].set_text("screens.event_edit.relationships_one_way")
-        elif not self.relationships_element["mutual"].checked and selected_constraints["mutual"]:
+            self.relationships_element["cat_bridge_info"].set_text(
+                "screens.event_edit.relationships_one_way"
+            )
+        elif (
+            not self.relationships_element["mutual"].checked
+            and selected_constraints["mutual"]
+        ):
             self.relationships_element["mutual"].check()
-            self.relationships_element["cat_bridge_info"].set_text("screens.event_edit.relationships_mutual")
+            self.relationships_element["cat_bridge_info"].set_text(
+                "screens.event_edit.relationships_mutual"
+            )
 
         # CATS
-        self.relationships_element["cats_from_list"].set_selected_list(selected_constraints["cats_from"].copy())
-        self.relationships_element["cats_from_info"].set_text(f"cats: {selected_constraints['cats_from']}")
-        for name, button in self.relationships_element["cats_from_list"].buttons.items():
+        self.relationships_element["cats_from_list"].set_selected_list(
+            selected_constraints["cats_from"].copy()
+        )
+        self.relationships_element["cats_from_info"].set_text(
+            f"cats: {selected_constraints['cats_from']}"
+        )
+        for name, button in self.relationships_element[
+            "cats_from_list"
+        ].buttons.items():
             if name in selected_constraints["cats_to"]:
                 button.disable()
             else:
                 button.enable()
 
-        self.relationships_element["cats_to_list"].set_selected_list(selected_constraints["cats_to"].copy())
-        self.relationships_element["cats_to_info"].set_text(f"cats: {selected_constraints['cats_to']}")
+        self.relationships_element["cats_to_list"].set_selected_list(
+            selected_constraints["cats_to"].copy()
+        )
+        self.relationships_element["cats_to_info"].set_text(
+            f"cats: {selected_constraints['cats_to']}"
+        )
         for name, button in self.relationships_element["cats_to_list"].buttons.items():
             if name in selected_constraints["cats_from"]:
                 button.disable()
@@ -2712,11 +3134,17 @@ class EventEditScreen(Screens):
                 button.enable()
 
         # VALUES
-        self.relationships_element["values_list"].set_selected_list(selected_constraints["values"].copy())
-        self.relationships_element["values_info"].set_text(f"values: {selected_constraints['values']}")
+        self.relationships_element["values_list"].set_selected_list(
+            selected_constraints["values"].copy()
+        )
+        self.relationships_element["values_info"].set_text(
+            f"values: {selected_constraints['values']}"
+        )
 
         # AMOUNT
-        self.relationships_element["amount_entry"].set_text(str(selected_constraints["amount"]))
+        self.relationships_element["amount_entry"].set_text(
+            str(selected_constraints["amount"])
+        )
 
         self.update_block_info()
 
@@ -2724,43 +3152,65 @@ class EventEditScreen(Screens):
         if not self.history_element.get("lead_history_input"):
             return
 
-        self.selected_history_block_index = (self.history_element["block_list"].selected_list.copy()[0]
-                                             if self.history_element["block_list"].selected_list
-                                             else "")
+        self.selected_history_block_index = (
+            self.history_element["block_list"].selected_list.copy()[0]
+            if self.history_element["block_list"].selected_list
+            else ""
+        )
         if self.selected_history_block_index:
-            selected_constraints = self.history_block_list.copy()[int(self.selected_history_block_index)]
+            selected_constraints = self.history_block_list.copy()[
+                int(self.selected_history_block_index)
+            ]
         else:
             selected_constraints = self.history_template.copy()
 
         # CATS
-        self.history_element["cats_list"].set_selected_list(selected_constraints["cats"].copy())
-        self.history_element["cats_info"].set_text(f"cats: {selected_constraints['cats']}")
+        self.history_element["cats_list"].set_selected_list(
+            selected_constraints["cats"].copy()
+        )
+        self.history_element["cats_info"].set_text(
+            f"cats: {selected_constraints['cats']}"
+        )
 
         # SCAR
-        self.history_element["scar_history_input"].set_text(selected_constraints["scar"])
+        self.history_element["scar_history_input"].set_text(
+            selected_constraints["scar"]
+        )
 
         # REG_DEATH
-        self.history_element["reg_history_input"].set_text(selected_constraints["reg_death"])
+        self.history_element["reg_history_input"].set_text(
+            selected_constraints["reg_death"]
+        )
 
         # LEAD_DEATH
-        self.history_element["lead_history_input"].set_text(selected_constraints["lead_death"])
+        self.history_element["lead_history_input"].set_text(
+            selected_constraints["lead_death"]
+        )
 
         self.update_block_info()
 
     def update_injury_block_options(self):
         if not self.injury_element.get("scar_info"):
             return
-        self.selected_injury_block = (self.injury_element["block_list"].selected_list.copy()[0]
-                                      if self.injury_element["block_list"].selected_list
-                                      else "")
+        self.selected_injury_block = (
+            self.injury_element["block_list"].selected_list.copy()[0]
+            if self.injury_element["block_list"].selected_list
+            else ""
+        )
         if self.selected_injury_block:
-            selected_constraints = self.injury_block_list.copy()[int(self.selected_injury_block)]
+            selected_constraints = self.injury_block_list.copy()[
+                int(self.selected_injury_block)
+            ]
         else:
             selected_constraints = self.injury_template.copy()
 
         # CATS
-        self.injury_element["cats_list"].set_selected_list(selected_constraints["cats"].copy())
-        self.injury_element["cats_info"].set_text(f"cats: {selected_constraints['cats']}")
+        self.injury_element["cats_list"].set_selected_list(
+            selected_constraints["cats"].copy()
+        )
+        self.injury_element["cats_info"].set_text(
+            f"cats: {selected_constraints['cats']}"
+        )
 
         # INJURIES
         all_injuries = selected_constraints["injuries"]
@@ -2778,8 +3228,12 @@ class EventEditScreen(Screens):
         self.injury_element["injury_info"].set_text(f"injuries: {all_injuries}")
 
         # SCARS
-        self.injury_element["scar_list"].set_selected_list(selected_constraints["scars"])
-        self.injury_element["scar_info"].set_text(f"scars: {selected_constraints['scars']}")
+        self.injury_element["scar_list"].set_selected_list(
+            selected_constraints["scars"]
+        )
+        self.injury_element["scar_info"].set_text(
+            f"scars: {selected_constraints['scars']}"
+        )
 
         self.update_block_info()
 
@@ -2788,17 +3242,25 @@ class EventEditScreen(Screens):
             return
         # BOOLS
         for info in self.new_cat_bools:
-            if info["tag"] in self.new_cat_block_dict[self.selected_new_cat] and not info["setting"]:
+            if (
+                info["tag"] in self.new_cat_block_dict[self.selected_new_cat]
+                and not info["setting"]
+            ):
                 info["setting"] = True
                 self.new_cat_checkbox[info["tag"]].check()
-            elif info["tag"] not in self.new_cat_block_dict[self.selected_new_cat] and info["setting"]:
+            elif (
+                info["tag"] not in self.new_cat_block_dict[self.selected_new_cat]
+                and info["setting"]
+            ):
                 info["setting"] = False
                 self.new_cat_checkbox[info["tag"]].uncheck()
 
         # AVAILABLE CATS
-        self.connections_element["cat_list"].new_item_list(self.get_involved_cats(
-            index_limit=int(self.selected_new_cat.strip("n_c:"), False)
-        ))
+        self.connections_element["cat_list"].new_item_list(
+            self.get_involved_cats(
+                index_limit=int(self.selected_new_cat.strip("n_c:"), False)
+            )
+        )
 
         # EVERYTHING ELSE
         cat_type = []
@@ -2865,9 +3327,11 @@ class EventEditScreen(Screens):
                 selected_cat_info.remove(bool["tag"])
 
         # CAT TYPES
-        selected_type = (self.cat_story_element["list"].selected_list[0]
-                         if self.cat_story_element["list"].selected_list
-                         else None)
+        selected_type = (
+            self.cat_story_element["list"].selected_list[0]
+            if self.cat_story_element["list"].selected_list
+            else None
+        )
 
         for cat_type in self.new_cat_types:
             if cat_type == selected_type and cat_type not in selected_cat_info:
@@ -2876,8 +3340,10 @@ class EventEditScreen(Screens):
                 selected_cat_info.remove(cat_type)
 
         # BACKSTORIES
-        possible_stories = (list(self.all_backstories.keys()) + self.individual_stories)
-        chosen_stories = set(possible_stories).intersection(self.selected_new_cat_info["backstory"])
+        possible_stories = list(self.all_backstories.keys()) + self.individual_stories
+        chosen_stories = set(possible_stories).intersection(
+            self.selected_new_cat_info["backstory"]
+        )
 
         new_story_tag = None
         if chosen_stories:
@@ -2898,8 +3364,8 @@ class EventEditScreen(Screens):
             selected_cat_info.append(new_story_tag)
 
         # RANK
-        if self.new_status_element['list'].selected_list:
-            rank = self.new_status_element['list'].selected_list[0]
+        if self.new_status_element["list"].selected_list:
+            rank = self.new_status_element["list"].selected_list[0]
         else:
             rank = None
 
@@ -2920,8 +3386,8 @@ class EventEditScreen(Screens):
             selected_cat_info.append(new_rank_tag)
 
         # AGE
-        if self.new_age_element['list'].selected_list:
-            age = self.new_age_element['list'].selected_list[0]
+        if self.new_age_element["list"].selected_list:
+            age = self.new_age_element["list"].selected_list[0]
         else:
             age = None
 
@@ -2942,8 +3408,8 @@ class EventEditScreen(Screens):
             selected_cat_info.append(new_age_tag)
 
         # GENDER
-        if self.new_gender_element['list'].selected_list:
-            gender = self.new_gender_element['list'].selected_list[0]
+        if self.new_gender_element["list"].selected_list:
+            gender = self.new_gender_element["list"].selected_list[0]
         else:
             gender = None
 
@@ -2980,10 +3446,17 @@ class EventEditScreen(Screens):
                 if self.open_connection in tag:
                     selected_cat_info.remove(tag)
 
-        if self.new_cat_editor["display"].html_text != f"selected cat: {selected_cat_info}":
-            self.new_cat_editor["display"].set_text(f"selected cat: {selected_cat_info}")
+        if (
+            self.new_cat_editor["display"].html_text
+            != f"selected cat: {selected_cat_info}"
+        ):
+            self.new_cat_editor["display"].set_text(
+                f"selected cat: {selected_cat_info}"
+            )
 
-        self.editor_container.on_contained_elements_changed(self.new_cat_editor["display"])
+        self.editor_container.on_contained_elements_changed(
+            self.new_cat_editor["display"]
+        )
 
     def update_backstory_info(self):
         chosen_stories = self.current_cat_dict["backstory"]
@@ -2992,24 +3465,30 @@ class EventEditScreen(Screens):
             pool = self.all_backstories[self.open_pool]
 
             # pool category added only if none of its stories have been selected
-            if self.open_pool not in chosen_stories and not set(chosen_stories).intersection(set(pool)):
+            if self.open_pool not in chosen_stories and not set(
+                chosen_stories
+            ).intersection(set(pool)):
                 chosen_stories.append(self.open_pool)
 
-        self.backstory_element["display"].set_text(f"chosen backstory: {chosen_stories}")
-        self.editor_container.on_contained_elements_changed(self.backstory_element["display"])
+        self.backstory_element["display"].set_text(
+            f"chosen backstory: {chosen_stories}"
+        )
+        self.editor_container.on_contained_elements_changed(
+            self.backstory_element["display"]
+        )
 
     def update_trait_info(self, trait_dict, selected_list):
         saved_traits = "trait" if self.trait_allowed else "not_trait"
 
         if self.current_cat_dict.get(saved_traits):
-            selected_traits = set(self.current_cat_dict.get(saved_traits)).intersection(trait_dict)
+            selected_traits = set(self.current_cat_dict.get(saved_traits)).intersection(
+                trait_dict
+            )
         else:
             selected_traits = []
         if selected_list != selected_traits:
-            removed = [trait for trait in selected_traits
-                       if trait not in selected_list]
-            added = [trait for trait in selected_list
-                     if trait not in selected_traits]
+            removed = [trait for trait in selected_traits if trait not in selected_list]
+            added = [trait for trait in selected_list if trait not in selected_traits]
             if removed:
                 for trait in removed:
                     self.current_cat_dict[saved_traits].remove(trait)
@@ -3017,46 +3496,74 @@ class EventEditScreen(Screens):
                 self.current_cat_dict[saved_traits].extend(added)
 
         if self.trait_allowed:
-            self.trait_element["include_info"].set_text(f"chosen allowed traits: {self.current_cat_dict.get('trait')}")
-            self.editor_container.on_contained_elements_changed(self.trait_element["include_info"])
+            self.trait_element["include_info"].set_text(
+                f"chosen allowed traits: {self.current_cat_dict.get('trait')}"
+            )
+            self.editor_container.on_contained_elements_changed(
+                self.trait_element["include_info"]
+            )
         else:
             self.trait_element["exclude_info"].set_text(
-                f"chosen excluded traits: {self.current_cat_dict.get('not_trait')}")
-            self.editor_container.on_contained_elements_changed(self.trait_element["exclude_info"])
+                f"chosen excluded traits: {self.current_cat_dict.get('not_trait')}"
+            )
+            self.editor_container.on_contained_elements_changed(
+                self.trait_element["exclude_info"]
+            )
 
     def update_skill_info(self):
-
         skill_tag = f"{self.open_path},{self.chosen_level if self.chosen_level else 0}"
 
         if self.skill_allowed:
-            already_tagged = [tag for tag in self.current_cat_dict["skill"] if self.open_path in tag]
+            already_tagged = [
+                tag for tag in self.current_cat_dict["skill"] if self.open_path in tag
+            ]
             if already_tagged:
                 self.current_cat_dict["skill"].remove(already_tagged[0])
             if self.chosen_level:
                 self.current_cat_dict["skill"].append(skill_tag)
-            self.skill_element["include_info"].set_text(f"chosen allowed skills: {self.current_cat_dict['skill']}")
-            self.editor_container.on_contained_elements_changed(self.skill_element["include_info"])
+            self.skill_element["include_info"].set_text(
+                f"chosen allowed skills: {self.current_cat_dict['skill']}"
+            )
+            self.editor_container.on_contained_elements_changed(
+                self.skill_element["include_info"]
+            )
         else:
-            already_tagged = [tag for tag in self.current_cat_dict["not_skill"] if self.open_path in tag]
+            already_tagged = [
+                tag
+                for tag in self.current_cat_dict["not_skill"]
+                if self.open_path in tag
+            ]
             if already_tagged:
                 self.current_cat_dict["not_skill"].remove(already_tagged[0])
             if self.chosen_level:
                 self.current_cat_dict["not_skill"].append(skill_tag)
-            self.skill_element["exclude_info"].set_text(f"chosen excluded skills: {self.current_cat_dict['not_skill']}")
-            self.editor_container.on_contained_elements_changed(self.skill_element["exclude_info"])
+            self.skill_element["exclude_info"].set_text(
+                f"chosen excluded skills: {self.current_cat_dict['not_skill']}"
+            )
+            self.editor_container.on_contained_elements_changed(
+                self.skill_element["exclude_info"]
+            )
 
     def update_rel_status_info(self):
-
         for info in self.rel_tag_list:
-            if info["tag"] not in self.current_cat_dict['rel_status'] and info["setting"]:
+            if (
+                info["tag"] not in self.current_cat_dict["rel_status"]
+                and info["setting"]
+            ):
                 self.current_cat_dict["rel_status"].append(info["tag"])
-            elif info["tag"] in self.current_cat_dict['rel_status'] and not info["setting"]:
+            elif (
+                info["tag"] in self.current_cat_dict["rel_status"]
+                and not info["setting"]
+            ):
                 self.current_cat_dict["rel_status"].remove(info["tag"])
 
         if self.rel_status_element.get("display"):
             self.rel_status_element["display"].set_text(
-                f"chosen relationship_status: {self.current_cat_dict['rel_status']}")
-            self.editor_container.on_contained_elements_changed(self.rel_status_element["display"])
+                f"chosen relationship_status: {self.current_cat_dict['rel_status']}"
+            )
+            self.editor_container.on_contained_elements_changed(
+                self.rel_status_element["display"]
+            )
 
     def replace_accs_with_group(self, group):
         for category_name, accs in self.acc_categories.items():
@@ -3069,10 +3576,14 @@ class EventEditScreen(Screens):
             self.acc_info.append(group)
 
     def update_acc_info(self):
-
         if self.acc_info:
-            for category_name, accs, in self.acc_categories.items():
-                if category_name in self.acc_info and set(self.acc_info).intersection(set(accs)):
+            for (
+                category_name,
+                accs,
+            ) in self.acc_categories.items():
+                if category_name in self.acc_info and set(self.acc_info).intersection(
+                    set(accs)
+                ):
                     self.acc_info.remove(category_name)
                     break
             self.acc_element["display"].set_text(f"chosen accessories: {self.acc_info}")
@@ -3082,7 +3593,6 @@ class EventEditScreen(Screens):
         self.editor_container.on_contained_elements_changed(self.acc_element["display"])
 
     def update_tag_info(self):
-
         for info in self.basic_tag_list:
             if info["tag"] not in self.tag_info and info["setting"]:
                 self.tag_info.append(info["tag"])
@@ -3100,10 +3610,11 @@ class EventEditScreen(Screens):
 
         if self.tag_element.get("display"):
             self.tag_element["display"].set_text(f"chosen tags: {self.tag_info}")
-            self.editor_container.on_contained_elements_changed(self.tag_element["display"])
+            self.editor_container.on_contained_elements_changed(
+                self.tag_element["display"]
+            )
 
     def update_location_info(self, biome=None, camp=None):
-
         if biome:
             biome = biome.casefold()
             present = False
@@ -3141,7 +3652,9 @@ class EventEditScreen(Screens):
                         break
                     else:
                         new_string = f"{location}_camp{camp_index}"
-                        selected_camps = [camp for camp in new_string.split("_") if "camp" in camp]
+                        selected_camps = [
+                            camp for camp in new_string.split("_") if "camp" in camp
+                        ]
                         available_camps = len(self.all_camps[parent_biome])
                         if len(selected_camps) == available_camps:
                             new_string = f"{parent_biome.casefold()}"
@@ -3160,15 +3673,22 @@ class EventEditScreen(Screens):
                 self.location_info.remove(old_location_tag)
                 self.location_info.append(new_string)
 
-        self.location_element["display"].set_text((f"chosen location: {str(self.location_info)}"
-                                                   if self.location_info
-                                                   else "chosen location: ['any']"))
-        self.editor_container.on_contained_elements_changed(self.location_element["display"])
+        self.location_element["display"].set_text(
+            (
+                f"chosen location: {str(self.location_info)}"
+                if self.location_info
+                else "chosen location: ['any']"
+            )
+        )
+        self.editor_container.on_contained_elements_changed(
+            self.location_element["display"]
+        )
 
     def update_season_info(self):
-
         if self.season_info:
-            self.season_element["display"].set_text(f"chosen season: {self.season_info}")
+            self.season_element["display"].set_text(
+                f"chosen season: {self.season_info}"
+            )
         else:
             self.season_element["display"].set_text("chosen season: ['any']")
 
@@ -3193,29 +3713,45 @@ class EventEditScreen(Screens):
     # ON USE FUNCS
     def handle_main_and_random_cat_on_use(self):
         # RANKS
-        if (self.rank_element.get("dropdown")
-                and self.rank_element["dropdown"].selected_list != self.current_cat_dict.get("rank")):
-            self.current_cat_dict["rank"] = self.rank_element["dropdown"].selected_list.copy()
+        if self.rank_element.get("dropdown") and self.rank_element[
+            "dropdown"
+        ].selected_list != self.current_cat_dict.get("rank"):
+            self.current_cat_dict["rank"] = self.rank_element[
+                "dropdown"
+            ].selected_list.copy()
             if self.current_cat_dict["rank"]:
-                self.rank_element["display"].set_text(f"chosen rank: {self.current_cat_dict['rank']}")
+                self.rank_element["display"].set_text(
+                    f"chosen rank: {self.current_cat_dict['rank']}"
+                )
             else:
                 self.rank_element["display"].set_text(f"chosen rank: ['any']")
-            self.editor_container.on_contained_elements_changed(self.rank_element["display"])
+            self.editor_container.on_contained_elements_changed(
+                self.rank_element["display"]
+            )
         # AGES
-        if (self.age_element.get("dropdown")
-                and self.age_element["dropdown"].selected_list != self.current_cat_dict.get("age")):
-            self.current_cat_dict["age"] = self.age_element["dropdown"].selected_list.copy()
+        if self.age_element.get("dropdown") and self.age_element[
+            "dropdown"
+        ].selected_list != self.current_cat_dict.get("age"):
+            self.current_cat_dict["age"] = self.age_element[
+                "dropdown"
+            ].selected_list.copy()
 
             if self.current_cat_dict["age"]:
-                self.age_element["display"].set_text(f"chosen age: {self.current_cat_dict['age']}")
+                self.age_element["display"].set_text(
+                    f"chosen age: {self.current_cat_dict['age']}"
+                )
             else:
                 self.age_element["display"].set_text(f"chosen age: ['any']")
-            self.editor_container.on_contained_elements_changed(self.age_element["display"])
+            self.editor_container.on_contained_elements_changed(
+                self.age_element["display"]
+            )
         # SKILLS
         if self.skill_element.get("paths"):
             # chosen path has changed
-            if (self.skill_element["paths"].selected_list
-                    and self.open_path not in self.skill_element["paths"].selected_list):
+            if (
+                self.skill_element["paths"].selected_list
+                and self.open_path not in self.skill_element["paths"].selected_list
+            ):
                 self.open_path = self.skill_element["paths"].selected_list[0]
                 self.update_level_list()
             # there is no path selected
@@ -3234,8 +3770,12 @@ class EventEditScreen(Screens):
 
             saved_traits = "trait" if self.trait_allowed else "not_trait"
             if combined_selection != self.current_cat_dict.get(saved_traits):
-                self.update_trait_info(self.kit_traits, self.trait_element["kitten"].selected_list)
-                self.update_trait_info(self.adult_traits, self.trait_element["adult"].selected_list)
+                self.update_trait_info(
+                    self.kit_traits, self.trait_element["kitten"].selected_list
+                )
+                self.update_trait_info(
+                    self.adult_traits, self.trait_element["adult"].selected_list
+                )
         # BACKSTORIES
         if self.backstory_element.get("pools"):
             selected_list = self.backstory_element["pools"].selected_list
@@ -3247,7 +3787,9 @@ class EventEditScreen(Screens):
             # pool has changed
             elif selected_list and self.open_pool not in selected_list:
                 self.open_pool = selected_list[0]
-                self.backstory_element["list"].new_item_list(self.all_backstories[self.open_pool])
+                self.backstory_element["list"].new_item_list(
+                    self.all_backstories[self.open_pool]
+                )
 
                 for name, button in self.backstory_element["list"].buttons.items():
                     button.set_tooltip(f"cat.backstories.{name}")
@@ -3258,8 +3800,9 @@ class EventEditScreen(Screens):
                 if self.open_pool in self.current_cat_dict["backstory"]:
                     self.current_cat_dict["backstory"].remove(self.open_pool)
 
-                singles_to_remove = set(self.current_cat_dict["backstory"]).intersection(
-                    set(self.all_backstories[self.open_pool]))
+                singles_to_remove = set(
+                    self.current_cat_dict["backstory"]
+                ).intersection(set(self.all_backstories[self.open_pool]))
                 if singles_to_remove:
                     for story in singles_to_remove:
                         self.current_cat_dict["backstory"].remove(story)
@@ -3270,8 +3813,10 @@ class EventEditScreen(Screens):
 
     def handle_settings_on_use(self):
         # CHANGE TYPE
-        if (self.type_element.get("type_dropdown")
-                and self.type_element["type_dropdown"].selected_list != self.type_info):
+        if (
+            self.type_element.get("type_dropdown")
+            and self.type_element["type_dropdown"].selected_list != self.type_info
+        ):
             new_type = self.type_element["type_dropdown"].selected_list[0]
             self.type_element["type_dropdown"].parent_button.set_text(new_type)
             self.type_info = [new_type]
@@ -3280,19 +3825,22 @@ class EventEditScreen(Screens):
             self.update_sub_buttons(self.event_types.get(new_type))
             self.update_basic_checkboxes()
         # CHANGE SUBTYPES
-        if (self.type_element.get("subtype_dropdown")
-                and self.type_element["subtype_dropdown"].selected_list != self.sub_info):
+        if (
+            self.type_element.get("subtype_dropdown")
+            and self.type_element["subtype_dropdown"].selected_list != self.sub_info
+        ):
             self.sub_info = self.type_element["subtype_dropdown"].selected_list.copy()
             self.update_sub_info()
         # CHANGE SEASONS
-        if (self.season_element.get("dropdown")
-                and self.season_element["dropdown"].selected_list != self.season_info):
+        if (
+            self.season_element.get("dropdown")
+            and self.season_element["dropdown"].selected_list != self.season_info
+        ):
             self.season_info = self.season_element["dropdown"].selected_list.copy()
             self.update_season_info()
 
     # EDITOR GENERATION
     def generate_outside_tab(self):
-
         # OUTSIDER
         self.create_outsider_editor()
 
@@ -3314,9 +3862,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["other_clan"]
-            }
+            anchors={"top_target": self.editor_element["other_clan"]},
         )
         # INFO DISPLAY
         self.supply_element["display"] = UITextBoxTweaked(
@@ -3326,16 +3872,14 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.supply_element["text"]
-            }
+            anchors={"top_target": self.supply_element["text"]},
         )
 
         self.create_lock(
             name=f"supply",
             top_anchor=self.supply_element["text"],
             y_offset=-20,
-            x_offset=270
+            x_offset=270,
         )
         # BLOCK LIST
         self.supply_element["block_frame"] = pygame_gui.elements.UIImage(
@@ -3345,13 +3889,16 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "left_target": self.supply_element["text"],
-                "top_target": self.editor_element["other_clan"]
-            }
+                "top_target": self.editor_element["other_clan"],
+            },
         )
         self.supply_element["block_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 118)),
-            item_list=([str(index) for index in range(len(self.supply_block_list))]
-                       if self.supply_block_list else []),
+            item_list=(
+                [str(index) for index in range(len(self.supply_block_list))]
+                if self.supply_block_list
+                else []
+            ),
             button_dimensions=(96, 30),
             multiple_choice=False,
             disable_selection=True,
@@ -3359,8 +3906,8 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             anchors={
                 "left_target": self.supply_element["text"],
-                "top_target": self.editor_element["other_clan"]
-            }
+                "top_target": self.editor_element["other_clan"],
+            },
         )
 
         self.supply_element["add"] = UISurfaceImageButton(
@@ -3372,9 +3919,9 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.supply_element["block_list"],
-                "left_target": self.supply_element["text"]
+                "left_target": self.supply_element["text"],
             },
-            tool_tip_text="add a new block"
+            tool_tip_text="add a new block",
         )
         self.supply_element["delete"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((5, 4), (36, 36))),
@@ -3385,9 +3932,9 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.supply_element["block_list"],
-                "left_target": self.supply_element["add"]
+                "left_target": self.supply_element["add"],
             },
-            tool_tip_text="delete selected block"
+            tool_tip_text="delete selected block",
         )
         self.create_divider(self.supply_element["display"], "supply_start")
 
@@ -3399,13 +3946,15 @@ class EventEditScreen(Screens):
             self.supply_element["constraint_container"].kill()
 
         for name in self.supply_element.copy().keys():
-            if name in ["text",
-                        "display",
-                        "block_frame",
-                        "block_list",
-                        "add",
-                        "delete",
-                        "supply"]:
+            if name in [
+                "text",
+                "display",
+                "block_frame",
+                "block_list",
+                "add",
+                "delete",
+                "supply",
+            ]:
                 continue
             self.supply_element.pop(name)
 
@@ -3413,16 +3962,16 @@ class EventEditScreen(Screens):
         self.clear_supply_constraints()
 
         # CONSTRAINT CONTAINER
-        self.supply_element["constraint_container"] = pygame_gui.elements.UIAutoResizingContainer(
+        self.supply_element[
+            "constraint_container"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((0, 0), (440, 0))),
             container=self.editor_container,
             manager=MANAGER,
             resize_left=False,
             resize_top=False,
             resize_right=False,
-            anchors={
-                "top_target": self.editor_element["supply_start"]
-            }
+            anchors={"top_target": self.editor_element["supply_start"]},
         )
 
         selected_constraints = self.get_selected_block_info()
@@ -3435,9 +3984,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.supply_element["constraint_container"],
-            anchors={
-                "top_target": self.editor_element["supply_start"]
-            }
+            anchors={"top_target": self.editor_element["supply_start"]},
         )
         self.supply_element["type_list"] = UIScrollingDropDown(
             pygame.Rect((20, 10), (130, 30)),
@@ -3448,12 +3995,14 @@ class EventEditScreen(Screens):
             container=self.supply_element["constraint_container"],
             anchors={
                 "left_target": self.supply_element["text"],
-                "top_target": self.editor_element["supply_start"]
+                "top_target": self.editor_element["supply_start"],
             },
-            manager=MANAGER
+            manager=MANAGER,
         )
         if selected_constraints.get("type"):
-            self.supply_element["type_list"].set_selected_list([selected_constraints["type"]])
+            self.supply_element["type_list"].set_selected_list(
+                [selected_constraints["type"]]
+            )
 
         # TRIGGER
         self.supply_element["trigger_text"] = UITextBoxTweaked(
@@ -3463,9 +4012,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.supply_element["constraint_container"],
-            anchors={
-                "top_target": self.supply_element["text"]
-            }
+            anchors={"top_target": self.supply_element["text"]},
         )
         self.supply_element["trigger_list"] = UIDropDown(
             pygame.Rect((10, 20), (130, 30)),
@@ -3477,12 +4024,14 @@ class EventEditScreen(Screens):
             container=self.supply_element["constraint_container"],
             anchors={
                 "left_target": self.supply_element["trigger_text"],
-                "top_target": self.supply_element["text"]
+                "top_target": self.supply_element["text"],
             },
-            manager=MANAGER
+            manager=MANAGER,
         )
         if selected_constraints.get("trigger"):
-            self.supply_element["trigger_list"].set_selected_list(selected_constraints["trigger"])
+            self.supply_element["trigger_list"].set_selected_list(
+                selected_constraints["trigger"]
+            )
 
         # ADJUST
         self.supply_element["adjust_text"] = UITextBoxTweaked(
@@ -3492,9 +4041,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.supply_element["constraint_container"],
-            anchors={
-                "top_target": self.supply_element["trigger_text"]
-            }
+            anchors={"top_target": self.supply_element["trigger_text"]},
         )
         self.supply_element["adjust_list"] = UIDropDown(
             pygame.Rect((10, 10), (130, 30)),
@@ -3505,12 +4052,14 @@ class EventEditScreen(Screens):
             container=self.supply_element["constraint_container"],
             anchors={
                 "left_target": self.supply_element["adjust_text"],
-                "top_target": self.supply_element["trigger_text"]
+                "top_target": self.supply_element["trigger_text"],
             },
             manager=MANAGER,
         )
         if selected_constraints.get("adjust"):
-            self.supply_element["adjust_list"].set_selected_list([selected_constraints["adjust"]])
+            self.supply_element["adjust_list"].set_selected_list(
+                [selected_constraints["adjust"]]
+            )
 
         self.create_supply_increase_editor()
 
@@ -3518,7 +4067,7 @@ class EventEditScreen(Screens):
         if not self.supply_element.get("adjust_entry"):
             return
 
-        self.supply_element['adjust_text'].kill()
+        self.supply_element["adjust_text"].kill()
         self.supply_element["adjust_entry"].kill()
         self.supply_element.pop("adjust_text")
         self.supply_element.pop("adjust_entry")
@@ -3540,9 +4089,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.supply_element["adjust_list"]
-            }
+            anchors={"top_target": self.supply_element["adjust_list"]},
         )
         self.supply_element[f"increase_entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((0, 15), (40, 29))),
@@ -3551,7 +4098,7 @@ class EventEditScreen(Screens):
             initial_text=str(amount),
             anchors={
                 "left_target": self.supply_element["increase_text"],
-                "top_target": self.supply_element["adjust_list"]
+                "top_target": self.supply_element["adjust_list"],
             },
         )
 
@@ -3565,9 +4112,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["outsider"]
-            }
+            anchors={"top_target": self.editor_element["outsider"]},
         )
         self.other_clan_element["list"] = UIDropDown(
             pygame.Rect((20, 60), (130, 30)),
@@ -3579,10 +4124,10 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "left_target": self.other_clan_element["text"],
-                "top_target": self.editor_element["outsider"]
+                "top_target": self.editor_element["outsider"],
             },
             manager=MANAGER,
-            starting_selection=self.other_clan_info["current_rep"]
+            starting_selection=self.other_clan_info["current_rep"],
         )
         self.other_clan_element[f"entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((10, 123), (40, 29))),
@@ -3590,9 +4135,9 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "left_target": self.other_clan_element["text"],
-                "top_target": self.editor_element["outsider"]
+                "top_target": self.editor_element["outsider"],
             },
-            initial_text=str(self.other_clan_info["changed"])
+            initial_text=str(self.other_clan_info["changed"]),
         )
         prev_element = None
         for button, icon in self.amount_buttons.items():
@@ -3600,9 +4145,19 @@ class EventEditScreen(Screens):
                 prev_element = None
             self.other_clan_element[button] = UISurfaceImageButton(
                 ui_scale(
-                    pygame.Rect(((-2 if prev_element else 20), (-2
-                                                                if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
-                                                                else 110)), (30, 30))),
+                    pygame.Rect(
+                        (
+                            (-2 if prev_element else 20),
+                            (
+                                -2
+                                if icon
+                                in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
+                                else 110
+                            ),
+                        ),
+                        (30, 30),
+                    )
+                ),
                 icon,
                 get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
                 manager=MANAGER,
@@ -3610,20 +4165,25 @@ class EventEditScreen(Screens):
                 container=self.editor_container,
                 anchors=(
                     {
-                        "top_target": (self.other_clan_element["amount_up_high_button"]),
-                        "left_target": (prev_element
-                                        if prev_element
-                                        else self.other_clan_element["entry"])
+                        "top_target": (
+                            self.other_clan_element["amount_up_high_button"]
+                        ),
+                        "left_target": (
+                            prev_element
+                            if prev_element
+                            else self.other_clan_element["entry"]
+                        ),
                     }
                     if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
-                    else
-                    {
-                        "left_target": (prev_element
-                                        if prev_element
-                                        else self.other_clan_element["entry"]),
-                        "top_target": self.editor_element["outsider"]
+                    else {
+                        "left_target": (
+                            prev_element
+                            if prev_element
+                            else self.other_clan_element["entry"]
+                        ),
+                        "top_target": self.editor_element["outsider"],
                     }
-                )
+                ),
             )
             prev_element = self.other_clan_element[button]
         self.other_clan_element["display"] = UITextBoxTweaked(
@@ -3635,12 +4195,12 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.other_clan_element["text"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
         self.create_lock(
             name=f"other_clan",
             top_anchor=self.other_clan_element["text"],
-            left_anchor=self.other_clan_element["display"]
+            left_anchor=self.other_clan_element["display"],
         )
         self.create_divider(self.other_clan_element["display"], "other_clan")
 
@@ -3651,7 +4211,7 @@ class EventEditScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.editor_container
+            container=self.editor_container,
         )
         self.outsider_element["list"] = UIDropDown(
             pygame.Rect((20, 50), (130, 30)),
@@ -3661,20 +4221,16 @@ class EventEditScreen(Screens):
             multiple_choice=True,
             container=self.editor_container,
             child_trigger_close=False,
-            anchors={
-                "left_target": self.outsider_element["text"]
-            },
+            anchors={"left_target": self.outsider_element["text"]},
             manager=MANAGER,
-            starting_selection=self.outsider_info["current_rep"]
+            starting_selection=self.outsider_info["current_rep"],
         )
         self.outsider_element[f"entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((10, 113), (40, 29))),
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "left_target": self.outsider_element["text"]
-            },
-            initial_text=str(self.outsider_info["changed"])
+            anchors={"left_target": self.outsider_element["text"]},
+            initial_text=str(self.outsider_info["changed"]),
         )
         prev_element = None
         for button, icon in self.amount_buttons.items():
@@ -3682,9 +4238,19 @@ class EventEditScreen(Screens):
                 prev_element = None
             self.outsider_element[button] = UISurfaceImageButton(
                 ui_scale(
-                    pygame.Rect(((-2 if prev_element else 20), (-2
-                                                                if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
-                                                                else 100)), (30, 30))),
+                    pygame.Rect(
+                        (
+                            (-2 if prev_element else 20),
+                            (
+                                -2
+                                if icon
+                                in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
+                                else 100
+                            ),
+                        ),
+                        (30, 30),
+                    )
+                ),
                 icon,
                 get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
                 manager=MANAGER,
@@ -3693,18 +4259,21 @@ class EventEditScreen(Screens):
                 anchors=(
                     {
                         "top_target": (self.outsider_element["amount_up_high_button"]),
-                        "left_target": (prev_element
-                                        if prev_element
-                                        else self.outsider_element["entry"])
+                        "left_target": (
+                            prev_element
+                            if prev_element
+                            else self.outsider_element["entry"]
+                        ),
                     }
                     if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
-                    else
-                    {
-                        "left_target": (prev_element
-                                        if prev_element
-                                        else self.outsider_element["entry"])
+                    else {
+                        "left_target": (
+                            prev_element
+                            if prev_element
+                            else self.outsider_element["entry"]
+                        )
                     }
-                )
+                ),
             )
             prev_element = self.outsider_element[button]
         self.outsider_element["display"] = UITextBoxTweaked(
@@ -3716,12 +4285,12 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.outsider_element["text"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
         self.create_lock(
             name=f"outsider",
             top_anchor=self.outsider_element["text"],
-            left_anchor=self.outsider_element["display"]
+            left_anchor=self.outsider_element["display"],
         )
         self.create_divider(self.outsider_element["display"], "outsider")
 
@@ -3737,9 +4306,7 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             object_id="@buttonstyles_menu_left",
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["exclude"]
-            }
+            anchors={"top_target": self.editor_element["exclude"]},
         )
         # injury is picked by default, so this is initially disabled
         self.injury_element["injury"].disable()
@@ -3752,8 +4319,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "left_target": self.injury_element["injury"],
-                "top_target": self.editor_element["exclude"]
-            }
+                "top_target": self.editor_element["exclude"],
+            },
         )
         self.relationships_element["relationships"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 10), (120, 30))),
@@ -3764,8 +4331,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "left_target": self.history_element["history"],
-                "top_target": self.editor_element["exclude"]
-            }
+                "top_target": self.editor_element["exclude"],
+            },
         )
 
         # BLOCKS
@@ -3773,7 +4340,6 @@ class EventEditScreen(Screens):
         self.change_block_editor()
 
     def change_block_editor(self):
-
         if self.injury_element.get("container"):
             self.injury_element["container"].kill()
         if self.history_element.get("container"):
@@ -3800,7 +4366,6 @@ class EventEditScreen(Screens):
             self.update_relationships_block_options()
 
     def create_injury_editor(self):
-
         # CONTAINER
         self.injury_element["container"] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((0, 0), (440, 0))),
@@ -3809,9 +4374,7 @@ class EventEditScreen(Screens):
             resize_left=False,
             resize_top=False,
             resize_right=False,
-            anchors={
-                "top_target": self.history_element["history"]
-            }
+            anchors={"top_target": self.history_element["history"]},
         )
 
         # INTRO
@@ -3821,7 +4384,7 @@ class EventEditScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.injury_element["container"]
+            container=self.injury_element["container"],
         )
 
         # INFO DISPLAY
@@ -3832,16 +4395,14 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["container"],
-            anchors={
-                "top_target": self.injury_element["start_intro"]
-            }
+            anchors={"top_target": self.injury_element["start_intro"]},
         )
         self.create_lock(
             name=f"injury",
             top_anchor=self.injury_element["start_intro"],
             y_offset=-20,
             x_offset=270,
-            container=self.injury_element["container"]
+            container=self.injury_element["container"],
         )
         # BLOCK LIST
         self.injury_element["block_frame"] = pygame_gui.elements.UIImage(
@@ -3849,23 +4410,22 @@ class EventEditScreen(Screens):
             get_box(BoxStyles.FRAME, (112, 136)),
             manager=MANAGER,
             container=self.injury_element["container"],
-            anchors={
-                "left_target": self.injury_element["start_intro"]
-            }
+            anchors={"left_target": self.injury_element["start_intro"]},
         )
 
         self.injury_element["block_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 118)),
-            item_list=([str(index) for index in range(len(self.injury_block_list))]
-                       if self.injury_block_list else []),
+            item_list=(
+                [str(index) for index in range(len(self.injury_block_list))]
+                if self.injury_block_list
+                else []
+            ),
             button_dimensions=(96, 30),
             multiple_choice=False,
             disable_selection=True,
             container=self.injury_element["container"],
             manager=MANAGER,
-            anchors={
-                "left_target": self.injury_element["start_intro"]
-            }
+            anchors={"left_target": self.injury_element["start_intro"]},
         )
         if self.injury_block_list:
             self.injury_element["block_list"].set_selected_list(["0"])
@@ -3879,9 +4439,9 @@ class EventEditScreen(Screens):
             container=self.injury_element["container"],
             anchors={
                 "top_target": self.injury_element["block_list"],
-                "left_target": self.injury_element["start_intro"]
+                "left_target": self.injury_element["start_intro"],
             },
-            tool_tip_text="add a new block"
+            tool_tip_text="add a new block",
         )
 
         self.injury_element["delete"] = UISurfaceImageButton(
@@ -3893,27 +4453,33 @@ class EventEditScreen(Screens):
             container=self.injury_element["container"],
             anchors={
                 "top_target": self.injury_element["block_list"],
-                "left_target": self.injury_element["add"]
+                "left_target": self.injury_element["add"],
             },
-            tool_tip_text="delete selected block"
+            tool_tip_text="delete selected block",
         )
 
-        self.create_divider(self.injury_element["display"], "injury_start", container=self.injury_element["container"])
+        self.create_divider(
+            self.injury_element["display"],
+            "injury_start",
+            container=self.injury_element["container"],
+        )
 
     def clear_injury_constraints(self):
         if self.injury_element.get("constraint_container"):
             self.injury_element["constraint_container"].kill()
 
         for name in self.injury_element.copy().keys():
-            if name in ["injury",
-                        "container",
-                        "start_intro",
-                        "display",
-                        "block_frame",
-                        "block_list",
-                        "add",
-                        "delete",
-                        "injury_start"]:
+            if name in [
+                "injury",
+                "container",
+                "start_intro",
+                "display",
+                "block_frame",
+                "block_list",
+                "add",
+                "delete",
+                "injury_start",
+            ]:
                 continue
             self.injury_element.pop(name)
 
@@ -3921,16 +4487,16 @@ class EventEditScreen(Screens):
         self.clear_injury_constraints()
 
         # CONSTRAINT CONTAINER
-        self.injury_element["constraint_container"] = pygame_gui.elements.UIAutoResizingContainer(
+        self.injury_element[
+            "constraint_container"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((0, 0), (440, 0))),
             container=self.injury_element["container"],
             manager=MANAGER,
             resize_left=False,
             resize_top=False,
             resize_right=False,
-            anchors={
-                "top_target": self.editor_element["injury_start"]
-            }
+            anchors={"top_target": self.editor_element["injury_start"]},
         )
         selected_constraints = self.get_selected_block_info()
         # CAT SELECTION
@@ -3953,7 +4519,7 @@ class EventEditScreen(Screens):
             anchors={
                 "left_target": self.injury_element["cat_intro"],
                 "top_target": self.editor_element["injury_start"],
-            }
+            },
         )
         self.injury_element["cats_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 148)),
@@ -3965,7 +4531,7 @@ class EventEditScreen(Screens):
                 "left_target": self.injury_element["cat_intro"],
                 "top_target": self.editor_element["injury_start"],
             },
-            starting_selection=selected_constraints["cats"]
+            starting_selection=selected_constraints["cats"],
         )
         self.injury_element["cats_info"] = UITextBoxTweaked(
             f"cats: {selected_constraints['cats']}",
@@ -3974,12 +4540,13 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
-            anchors={
-                "top_target": self.injury_element["cat_intro"]
-            }
+            anchors={"top_target": self.injury_element["cat_intro"]},
         )
-        self.create_divider(self.injury_element["cat_frame"], "injury_cat",
-                            container=self.injury_element["constraint_container"])
+        self.create_divider(
+            self.injury_element["cat_frame"],
+            "injury_cat",
+            container=self.injury_element["constraint_container"],
+        )
         # INJURY SELECTION
         # CAT SELECTION
         self.injury_element["injury_intro"] = UITextBoxTweaked(
@@ -4000,14 +4567,13 @@ class EventEditScreen(Screens):
             item_list=list(self.all_injury_pools.keys()),
             dropdown_dimensions=(150, 300),
             container=self.injury_element["constraint_container"],
-            anchors={
-                "top_target": self.injury_element["injury_intro"]
-            },
+            anchors={"top_target": self.injury_element["injury_intro"]},
             starting_height=16,
-
         )
         chosen_pools = []
-        for pool, button in self.injury_element["injury_pools"].child_button_dicts.items():
+        for pool, button in self.injury_element[
+            "injury_pools"
+        ].child_button_dicts.items():
             button.set_tooltip(str(self.all_injury_pools[pool]))
             if pool in selected_constraints["injuries"]:
                 chosen_pools.append(pool)
@@ -4020,12 +4586,13 @@ class EventEditScreen(Screens):
             item_list=self.all_possible_injuries,
             dropdown_dimensions=(220, 300),
             container=self.injury_element["constraint_container"],
-            anchors={
-                "top_target": self.injury_element["injury_intro"]
-            },
+            anchors={"top_target": self.injury_element["injury_intro"]},
             starting_height=15,
-            starting_selection=[injury for injury in self.all_possible_injuries
-                                if injury in selected_constraints["injuries"]]
+            starting_selection=[
+                injury
+                for injury in self.all_possible_injuries
+                if injury in selected_constraints["injuries"]
+            ],
         )
         self.injury_element["injury_info"] = UITextBoxTweaked(
             f"injuries: {selected_constraints['injuries']}",
@@ -4034,12 +4601,13 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
-            anchors={
-                "top_target": self.injury_element["injury_intro"]
-            }
+            anchors={"top_target": self.injury_element["injury_intro"]},
         )
-        self.create_divider(self.injury_element["injury_info"], "injury_cat",
-                            container=self.injury_element["constraint_container"])
+        self.create_divider(
+            self.injury_element["injury_info"],
+            "injury_cat",
+            container=self.injury_element["constraint_container"],
+        )
         self.injury_element["scar_text"] = UITextBoxTweaked(
             "screens.event_edit.scar_pick_info",
             ui_scale(pygame.Rect((0, 14), (250, -1))),
@@ -4047,9 +4615,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
-            anchors={
-                "top_target": self.editor_element["injury_cat"]
-            }
+            anchors={"top_target": self.editor_element["injury_cat"]},
         )
         self.injury_element["scar_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((2, 20), (152, 226))),
@@ -4059,7 +4625,7 @@ class EventEditScreen(Screens):
             anchors={
                 "left_target": self.injury_element["scar_text"],
                 "top_target": self.editor_element["injury_cat"],
-            }
+            },
         )
         self.injury_element["scar_list"] = UIScrollingButtonList(
             pygame.Rect((10, 30), (140, 206)),
@@ -4072,18 +4638,20 @@ class EventEditScreen(Screens):
                 "top_target": self.editor_element["injury_cat"],
             },
             starting_height=1,
-            starting_selection=[scar for scar in self.all_scars if scar in selected_constraints["scars"]]
+            starting_selection=[
+                scar for scar in self.all_scars if scar in selected_constraints["scars"]
+            ],
         )
         self.injury_element["scar_preview"] = UIModifiedImage(
             ui_scale(pygame.Rect((150, 0), (100, 100))),
-            image_surface=self.get_scar_example(selected_constraints["scars"][0]
-                                                if selected_constraints["scars"]
-                                                else self.all_scars[0]),
+            image_surface=self.get_scar_example(
+                selected_constraints["scars"][0]
+                if selected_constraints["scars"]
+                else self.all_scars[0]
+            ),
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
-            anchors={
-                "top_target": self.injury_element["scar_text"]
-            }
+            anchors={"top_target": self.injury_element["scar_text"]},
         )
         self.injury_element["scar_info"] = UITextBoxTweaked(
             f"scars: {selected_constraints['scars']}",
@@ -4092,20 +4660,21 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.injury_element["constraint_container"],
-            anchors={
-                "top_target": self.injury_element["scar_preview"]
-            }
+            anchors={"top_target": self.injury_element["scar_preview"]},
         )
-        self.create_divider(self.injury_element["scar_frame"], "injury_scars",
-                            container=self.injury_element["constraint_container"])
+        self.create_divider(
+            self.injury_element["scar_frame"],
+            "injury_scars",
+            container=self.injury_element["constraint_container"],
+        )
 
     def get_scar_example(self, scar):
-
-        return pygame.transform.scale(generate_sprite(create_option_preview_cat(scar=scar)),
-                                      ui_scale_dimensions((100, 100)))
+        return pygame.transform.scale(
+            generate_sprite(create_option_preview_cat(scar=scar)),
+            ui_scale_dimensions((100, 100)),
+        )
 
     def create_history_editor(self):
-
         # CONTAINER
         self.history_element["container"] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((0, 0), (440, 0))),
@@ -4114,9 +4683,7 @@ class EventEditScreen(Screens):
             resize_left=False,
             resize_top=False,
             resize_right=False,
-            anchors={
-                "top_target": self.history_element["history"]
-            }
+            anchors={"top_target": self.history_element["history"]},
         )
 
         # INTRO
@@ -4126,7 +4693,7 @@ class EventEditScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.history_element["container"]
+            container=self.history_element["container"],
         )
 
         # INFO DISPLAY
@@ -4137,16 +4704,14 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["container"],
-            anchors={
-                "top_target": self.history_element["start_intro"]
-            }
+            anchors={"top_target": self.history_element["start_intro"]},
         )
         self.create_lock(
             name=f"history",
             top_anchor=self.history_element["start_intro"],
             y_offset=-5,
             x_offset=270,
-            container=self.history_element["container"]
+            container=self.history_element["container"],
         )
         # BLOCK LIST
         self.history_element["block_frame"] = pygame_gui.elements.UIImage(
@@ -4154,23 +4719,22 @@ class EventEditScreen(Screens):
             get_box(BoxStyles.FRAME, (112, 136)),
             manager=MANAGER,
             container=self.history_element["container"],
-            anchors={
-                "left_target": self.history_element["start_intro"]
-            }
+            anchors={"left_target": self.history_element["start_intro"]},
         )
 
         self.history_element["block_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 118)),
-            item_list=([str(index) for index in range(len(self.history_block_list))]
-                       if self.history_block_list else []),
+            item_list=(
+                [str(index) for index in range(len(self.history_block_list))]
+                if self.history_block_list
+                else []
+            ),
             button_dimensions=(96, 30),
             multiple_choice=False,
             disable_selection=True,
             container=self.history_element["container"],
             manager=MANAGER,
-            anchors={
-                "left_target": self.history_element["start_intro"]
-            }
+            anchors={"left_target": self.history_element["start_intro"]},
         )
         if self.history_block_list:
             self.history_element["block_list"].set_selected_list(["0"])
@@ -4184,9 +4748,9 @@ class EventEditScreen(Screens):
             container=self.history_element["container"],
             anchors={
                 "top_target": self.history_element["block_list"],
-                "left_target": self.history_element["start_intro"]
+                "left_target": self.history_element["start_intro"],
             },
-            tool_tip_text="add a new block"
+            tool_tip_text="add a new block",
         )
 
         self.history_element["delete"] = UISurfaceImageButton(
@@ -4198,28 +4762,33 @@ class EventEditScreen(Screens):
             container=self.history_element["container"],
             anchors={
                 "top_target": self.history_element["block_list"],
-                "left_target": self.history_element["add"]
+                "left_target": self.history_element["add"],
             },
-            tool_tip_text="delete selected block"
+            tool_tip_text="delete selected block",
         )
 
-        self.create_divider(self.history_element["display"], "history_start",
-                            container=self.history_element["container"])
+        self.create_divider(
+            self.history_element["display"],
+            "history_start",
+            container=self.history_element["container"],
+        )
 
     def clear_history_constraints(self):
         if self.history_element.get("constraint_container"):
             self.history_element["constraint_container"].kill()
 
         for name in self.history_element.copy().keys():
-            if name in ["history",
-                        "container",
-                        "start_intro",
-                        "display",
-                        "block_frame",
-                        "block_list",
-                        "add",
-                        "delete",
-                        "history_start"]:
+            if name in [
+                "history",
+                "container",
+                "start_intro",
+                "display",
+                "block_frame",
+                "block_list",
+                "add",
+                "delete",
+                "history_start",
+            ]:
                 continue
             self.history_element.pop(name)
 
@@ -4227,16 +4796,16 @@ class EventEditScreen(Screens):
         self.clear_history_constraints()
 
         # CONSTRAINT CONTAINER
-        self.history_element["constraint_container"] = pygame_gui.elements.UIAutoResizingContainer(
+        self.history_element[
+            "constraint_container"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((0, 0), (440, 0))),
             container=self.history_element["container"],
             manager=MANAGER,
             resize_left=False,
             resize_top=False,
             resize_right=False,
-            anchors={
-                "top_target": self.editor_element["history_start"]
-            }
+            anchors={"top_target": self.editor_element["history_start"]},
         )
         selected_constraints = self.get_selected_block_info()
         # CAT SELECTION
@@ -4259,7 +4828,7 @@ class EventEditScreen(Screens):
             anchors={
                 "left_target": self.history_element["cat_intro"],
                 "top_target": self.editor_element["history_start"],
-            }
+            },
         )
         self.history_element["cats_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 148)),
@@ -4271,7 +4840,7 @@ class EventEditScreen(Screens):
                 "left_target": self.history_element["cat_intro"],
                 "top_target": self.editor_element["history_start"],
             },
-            starting_selection=selected_constraints["cats"]
+            starting_selection=selected_constraints["cats"],
         )
         self.history_element["cats_info"] = UITextBoxTweaked(
             f"cats: {selected_constraints['cats']}",
@@ -4280,12 +4849,13 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["constraint_container"],
-            anchors={
-                "top_target": self.history_element["cat_intro"]
-            }
+            anchors={"top_target": self.history_element["cat_intro"]},
         )
-        self.create_divider(self.history_element["cat_frame"], "history_cat",
-                            container=self.history_element["constraint_container"])
+        self.create_divider(
+            self.history_element["cat_frame"],
+            "history_cat",
+            container=self.history_element["constraint_container"],
+        )
 
         self.history_element["scar_history_text"] = UITextBoxTweaked(
             "screens.event_edit.scar_history_info",
@@ -4294,23 +4864,22 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["constraint_container"],
-            anchors={
-                "top_target": self.editor_element["history_cat"]
-            }
+            anchors={"top_target": self.editor_element["history_cat"]},
         )
         self.history_element["scar_history_input"] = pygame_gui.elements.UITextEntryBox(
             ui_scale(pygame.Rect((10, 10), (420, 60))),
             manager=MANAGER,
             container=self.history_element["constraint_container"],
-            anchors={
-                "top_target": self.history_element["scar_history_text"]
-            },
+            anchors={"top_target": self.history_element["scar_history_text"]},
             object_id="#visible_entry_box",
-            initial_text=selected_constraints["scar"]
+            initial_text=selected_constraints["scar"],
         )
 
-        self.create_divider(self.history_element["scar_history_input"], "history_scar",
-                            container=self.history_element["constraint_container"])
+        self.create_divider(
+            self.history_element["scar_history_input"],
+            "history_scar",
+            container=self.history_element["constraint_container"],
+        )
 
         self.history_element["reg_history_text"] = UITextBoxTweaked(
             "screens.event_edit.reg_history_info",
@@ -4319,23 +4888,22 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["constraint_container"],
-            anchors={
-                "top_target": self.editor_element["history_scar"]
-            }
+            anchors={"top_target": self.editor_element["history_scar"]},
         )
         self.history_element["reg_history_input"] = pygame_gui.elements.UITextEntryBox(
             ui_scale(pygame.Rect((10, 10), (420, 60))),
             manager=MANAGER,
             container=self.history_element["constraint_container"],
-            anchors={
-                "top_target": self.history_element["reg_history_text"]
-            },
+            anchors={"top_target": self.history_element["reg_history_text"]},
             object_id="#visible_entry_box",
-            initial_text=selected_constraints["reg_death"]
+            initial_text=selected_constraints["reg_death"],
         )
 
-        self.create_divider(self.history_element["reg_history_input"], "history_reg",
-                            container=self.history_element["constraint_container"])
+        self.create_divider(
+            self.history_element["reg_history_input"],
+            "history_reg",
+            container=self.history_element["constraint_container"],
+        )
 
         self.history_element["lead_history_text"] = UITextBoxTweaked(
             "screens.event_edit.lead_history_info",
@@ -4344,34 +4912,33 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.history_element["constraint_container"],
-            anchors={
-                "top_target": self.editor_element["history_reg"]
-            }
+            anchors={"top_target": self.editor_element["history_reg"]},
         )
         self.history_element["lead_history_input"] = pygame_gui.elements.UITextEntryBox(
             ui_scale(pygame.Rect((10, 10), (420, 60))),
             manager=MANAGER,
             container=self.history_element["constraint_container"],
-            anchors={
-                "top_target": self.history_element["lead_history_text"]
-            },
+            anchors={"top_target": self.history_element["lead_history_text"]},
             object_id="#visible_entry_box",
-            initial_text=selected_constraints["lead_death"]
+            initial_text=selected_constraints["lead_death"],
         )
 
-        self.create_divider(self.history_element["lead_history_input"], "history_lead",
-                            container=self.history_element["constraint_container"])
+        self.create_divider(
+            self.history_element["lead_history_input"],
+            "history_lead",
+            container=self.history_element["constraint_container"],
+        )
 
     def create_relationships_editor(self):
-        self.relationships_element["container"] = pygame_gui.elements.UIAutoResizingContainer(
+        self.relationships_element[
+            "container"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((0, 0), (0, 0))),
             container=self.editor_container,
             manager=MANAGER,
             resize_left=False,
             resize_top=False,
-            anchors={
-                "top_target": self.history_element["history"]
-            }
+            anchors={"top_target": self.history_element["history"]},
         )
         self.relationships_element["start_intro"] = UITextBoxTweaked(
             "screens.event_edit.relationships_info",
@@ -4379,7 +4946,7 @@ class EventEditScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.relationships_element["container"]
+            container=self.relationships_element["container"],
         )
 
         # INFO DISPLAY
@@ -4390,9 +4957,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["container"],
-            anchors={
-                "top_target": self.relationships_element["start_intro"]
-            }
+            anchors={"top_target": self.relationships_element["start_intro"]},
         )
 
         self.create_lock(
@@ -4400,7 +4965,7 @@ class EventEditScreen(Screens):
             top_anchor=self.relationships_element["start_intro"],
             y_offset=-5,
             x_offset=270,
-            container=self.relationships_element["container"]
+            container=self.relationships_element["container"],
         )
 
         # BLOCK LIST
@@ -4409,23 +4974,22 @@ class EventEditScreen(Screens):
             get_box(BoxStyles.FRAME, (112, 136)),
             manager=MANAGER,
             container=self.relationships_element["container"],
-            anchors={
-                "left_target": self.relationships_element["start_intro"]
-            }
+            anchors={"left_target": self.relationships_element["start_intro"]},
         )
 
         self.relationships_element["block_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 118)),
-            item_list=([str(index) for index in range(len(self.relationships_block_list))]
-                       if self.relationships_block_list else []),
+            item_list=(
+                [str(index) for index in range(len(self.relationships_block_list))]
+                if self.relationships_block_list
+                else []
+            ),
             button_dimensions=(96, 30),
             multiple_choice=False,
             disable_selection=True,
             container=self.relationships_element["container"],
             manager=MANAGER,
-            anchors={
-                "left_target": self.relationships_element["start_intro"]
-            }
+            anchors={"left_target": self.relationships_element["start_intro"]},
         )
         if self.relationships_block_list:
             self.relationships_element["block_list"].set_selected_list(["0"])
@@ -4439,9 +5003,9 @@ class EventEditScreen(Screens):
             container=self.relationships_element["container"],
             anchors={
                 "top_target": self.relationships_element["block_list"],
-                "left_target": self.relationships_element["start_intro"]
+                "left_target": self.relationships_element["start_intro"],
             },
-            tool_tip_text="add a new block"
+            tool_tip_text="add a new block",
         )
 
         self.relationships_element["delete"] = UISurfaceImageButton(
@@ -4453,28 +5017,33 @@ class EventEditScreen(Screens):
             container=self.relationships_element["container"],
             anchors={
                 "top_target": self.relationships_element["block_list"],
-                "left_target": self.relationships_element["add"]
+                "left_target": self.relationships_element["add"],
             },
-            tool_tip_text="delete selected block"
+            tool_tip_text="delete selected block",
         )
 
-        self.create_divider(self.relationships_element["display"], "relationships_start",
-                            container=self.relationships_element["container"])
+        self.create_divider(
+            self.relationships_element["display"],
+            "relationships_start",
+            container=self.relationships_element["container"],
+        )
 
     def clear_relationships_constraints(self):
         if self.relationships_element.get("constraint_container"):
             self.relationships_element["constraint_container"].kill()
 
         for name in self.relationships_element.copy().keys():
-            if name in ["relationships",
-                        "container",
-                        "start_intro",
-                        "display",
-                        "block_frame",
-                        "block_list",
-                        "add",
-                        "delete",
-                        "relationships_start"]:
+            if name in [
+                "relationships",
+                "container",
+                "start_intro",
+                "display",
+                "block_frame",
+                "block_list",
+                "add",
+                "delete",
+                "relationships_start",
+            ]:
                 continue
             self.relationships_element.pop(name)
 
@@ -4482,16 +5051,16 @@ class EventEditScreen(Screens):
         self.clear_relationships_constraints()
 
         # CONSTRAINT CONTAINER
-        self.relationships_element["constraint_container"] = pygame_gui.elements.UIAutoResizingContainer(
+        self.relationships_element[
+            "constraint_container"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((0, 0), (440, 0))),
             container=self.relationships_element["container"],
             manager=MANAGER,
             resize_left=False,
             resize_top=False,
             resize_right=False,
-            anchors={
-                "top_target": self.editor_element["relationships_start"]
-            }
+            anchors={"top_target": self.editor_element["relationships_start"]},
         )
         selected_constraints = self.get_selected_block_info()
 
@@ -4511,10 +5080,8 @@ class EventEditScreen(Screens):
             position=(20, 10),
             container=self.relationships_element["constraint_container"],
             manager=MANAGER,
-            anchors={
-                "top_target": self.relationships_element["cat_intro"]
-            },
-            check=selected_constraints["mutual"]
+            anchors={"top_target": self.relationships_element["cat_intro"]},
+            check=selected_constraints["mutual"],
         )
         self.relationships_element["mutual_info"] = UITextBoxTweaked(
             "screens.event_edit.relationships_mutual_info",
@@ -4525,7 +5092,7 @@ class EventEditScreen(Screens):
             container=self.relationships_element["constraint_container"],
             anchors={
                 "top_target": self.relationships_element["cat_intro"],
-                "left_target": self.relationships_element["mutual"]
+                "left_target": self.relationships_element["mutual"],
             },
         )
         self.relationships_element["cats_from_frame"] = pygame_gui.elements.UIImage(
@@ -4533,9 +5100,7 @@ class EventEditScreen(Screens):
             get_box(BoxStyles.FRAME, (112, 166)),
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
-            anchors={
-                "top_target": self.relationships_element["mutual"]
-            }
+            anchors={"top_target": self.relationships_element["mutual"]},
         )
         self.relationships_element["cats_from_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 148)),
@@ -4543,10 +5108,8 @@ class EventEditScreen(Screens):
             button_dimensions=(96, 30),
             container=self.relationships_element["constraint_container"],
             manager=MANAGER,
-            anchors={
-                "top_target": self.relationships_element["mutual"]
-            },
-            starting_selection=selected_constraints["cats_from"]
+            anchors={"top_target": self.relationships_element["mutual"]},
+            starting_selection=selected_constraints["cats_from"],
         )
         self.relationships_element["cats_to_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((192, 20), (112, 166))),
@@ -4555,8 +5118,8 @@ class EventEditScreen(Screens):
             container=self.relationships_element["constraint_container"],
             anchors={
                 "top_target": self.relationships_element["mutual"],
-                "left_target": self.relationships_element["cats_from_frame"]
-            }
+                "left_target": self.relationships_element["cats_from_frame"],
+            },
         )
         self.relationships_element["cats_to_list"] = UIScrollingButtonList(
             pygame.Rect((200, 28), (100, 148)),
@@ -4566,9 +5129,9 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             anchors={
                 "top_target": self.relationships_element["mutual"],
-                "left_target": self.relationships_element["cats_from_frame"]
+                "left_target": self.relationships_element["cats_from_frame"],
             },
-            starting_selection=self.relationships_template["cats_to"]
+            starting_selection=self.relationships_template["cats_to"],
         )
         self.relationships_element["cats_from_info"] = UITextBoxTweaked(
             f"cats: {selected_constraints['cats_from']}",
@@ -4577,9 +5140,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
-            anchors={
-                "top_target": self.relationships_element["cats_from_frame"]
-            }
+            anchors={"top_target": self.relationships_element["cats_from_frame"]},
         )
         self.relationships_element["cats_to_info"] = UITextBoxTweaked(
             f"cats: {selected_constraints['cats_to']}",
@@ -4590,13 +5151,15 @@ class EventEditScreen(Screens):
             container=self.relationships_element["constraint_container"],
             anchors={
                 "top_target": self.relationships_element["cats_from_frame"],
-                "left_target": self.relationships_element["cats_from_info"]
-            }
+                "left_target": self.relationships_element["cats_from_info"],
+            },
         )
         self.relationships_element["cat_bridge_info"] = UITextBoxTweaked(
-            ("screens.event_edit.relationships_one_way"
-             if not self.relationships_element["mutual"].checked
-             else "screens.event_edit.relationships_mutual"),
+            (
+                "screens.event_edit.relationships_one_way"
+                if not self.relationships_element["mutual"].checked
+                else "screens.event_edit.relationships_mutual"
+            ),
             ui_scale(pygame.Rect((-5, 50), (200, -1))),
             object_id="#text_box_30_horizcenter_pad_10_10",
             line_spacing=1,
@@ -4604,13 +5167,15 @@ class EventEditScreen(Screens):
             container=self.relationships_element["constraint_container"],
             anchors={
                 "top_target": self.relationships_element["mutual"],
-                "left_target": self.relationships_element["cats_from_frame"]
+                "left_target": self.relationships_element["cats_from_frame"],
             },
         )
 
-        self.create_divider(self.relationships_element["cats_from_info"],
-                            "relationships_cats",
-                            container=self.relationships_element["constraint_container"])
+        self.create_divider(
+            self.relationships_element["cats_from_info"],
+            "relationships_cats",
+            container=self.relationships_element["constraint_container"],
+        )
 
         self.relationships_element["values_text"] = UITextBoxTweaked(
             "screens.event_edit.relationships_values_info",
@@ -4619,9 +5184,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
-            anchors={
-                "top_target": self.editor_element["relationships_cats"]
-            }
+            anchors={"top_target": self.editor_element["relationships_cats"]},
         )
         self.relationships_element["values_list"] = UIDropDown(
             ui_scale(pygame.Rect((0, 26), (120, 30))),
@@ -4633,10 +5196,10 @@ class EventEditScreen(Screens):
             container=self.relationships_element["constraint_container"],
             anchors={
                 "top_target": self.editor_element["relationships_cats"],
-                "left_target": self.relationships_element["values_text"]
+                "left_target": self.relationships_element["values_text"],
             },
             manager=MANAGER,
-            starting_selection=selected_constraints["values"]
+            starting_selection=selected_constraints["values"],
         )
 
         self.relationships_element["values_info"] = UITextBoxTweaked(
@@ -4646,13 +5209,13 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
-            anchors={
-                "top_target": self.relationships_element["values_text"]
-            }
+            anchors={"top_target": self.relationships_element["values_text"]},
         )
-        self.create_divider(self.relationships_element["values_info"],
-                            "values",
-                            container=self.relationships_element["constraint_container"])
+        self.create_divider(
+            self.relationships_element["values_info"],
+            "values",
+            container=self.relationships_element["constraint_container"],
+        )
 
         self.relationships_element["amount_text"] = UITextBoxTweaked(
             f"screens.event_edit.relationships_amount_info",
@@ -4663,17 +5226,19 @@ class EventEditScreen(Screens):
             container=self.relationships_element["constraint_container"],
             anchors={
                 "top_target": self.editor_element["values"],
-            }
+            },
         )
-        self.relationships_element[f"amount_entry"] = pygame_gui.elements.UITextEntryLine(
+        self.relationships_element[
+            f"amount_entry"
+        ] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((10, 23), (40, 29))),
             manager=MANAGER,
             container=self.relationships_element["constraint_container"],
             anchors={
                 "top_target": self.editor_element["values"],
-                "left_target": self.relationships_element["amount_text"]
+                "left_target": self.relationships_element["amount_text"],
             },
-            initial_text=str(selected_constraints["amount"])
+            initial_text=str(selected_constraints["amount"]),
         )
 
         prev_element = None
@@ -4682,22 +5247,36 @@ class EventEditScreen(Screens):
                 prev_element = None
             self.relationships_element[button] = UISurfaceImageButton(
                 ui_scale(
-                    pygame.Rect(((-2 if prev_element else 20), (-2
-                                                                if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
-                                                                else 10)), (30, 30))),
+                    pygame.Rect(
+                        (
+                            (-2 if prev_element else 20),
+                            (
+                                -2
+                                if icon
+                                in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
+                                else 10
+                            ),
+                        ),
+                        (30, 30),
+                    )
+                ),
                 icon,
                 get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
                 manager=MANAGER,
                 object_id="@buttonstyles_dropdown",
                 container=self.relationships_element["constraint_container"],
                 anchors={
-                    "top_target": (self.relationships_element["amount_up_high_button"]
-                                   if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
-                                   else self.editor_element["values"]),
-                    "left_target": (prev_element
-                                    if prev_element
-                                    else self.relationships_element["amount_entry"])
-                }
+                    "top_target": (
+                        self.relationships_element["amount_up_high_button"]
+                        if icon in [Icon.DOWN_HIGH, Icon.DOWN_MID, Icon.DOWN_LOW]
+                        else self.editor_element["values"]
+                    ),
+                    "left_target": (
+                        prev_element
+                        if prev_element
+                        else self.relationships_element["amount_entry"]
+                    ),
+                },
             )
             prev_element = self.relationships_element[button]
 
@@ -4708,16 +5287,14 @@ class EventEditScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.editor_container
+            container=self.editor_container,
         )
         self.exclusion_element["frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((12, 20), (112, 166))),
             get_box(BoxStyles.FRAME, (112, 166)),
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "left_target": self.exclusion_element["intro"]
-            }
+            anchors={"left_target": self.exclusion_element["intro"]},
         )
         self.exclusion_element["cat_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (100, 148)),
@@ -4725,10 +5302,8 @@ class EventEditScreen(Screens):
             button_dimensions=(96, 30),
             container=self.editor_container,
             manager=MANAGER,
-            anchors={
-                "left_target": self.exclusion_element["intro"]
-            },
-            starting_selection=self.excluded_cats
+            anchors={"left_target": self.exclusion_element["intro"]},
+            starting_selection=self.excluded_cats,
         )
         self.exclusion_element["display"] = UITextBoxTweaked(
             f"exclude_involved: {self.excluded_cats}",
@@ -4737,15 +5312,13 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.exclusion_element["intro"]
-            }
+            anchors={"top_target": self.exclusion_element["intro"]},
         )
         self.create_lock(
             name=f"exclude",
             top_anchor=self.exclusion_element["intro"],
             left_anchor=self.exclusion_element["display"],
-            y_offset=50
+            y_offset=50,
         )
         self.create_divider(self.exclusion_element["frame"], "exclude")
 
@@ -4757,7 +5330,7 @@ class EventEditScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.editor_container
+            container=self.editor_container,
         )
 
         self.new_cat_editor["frame"] = pygame_gui.elements.UIImage(
@@ -4765,9 +5338,7 @@ class EventEditScreen(Screens):
             get_box(BoxStyles.FRAME, (112, 186)),
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "left_target": self.new_cat_editor["intro"]
-            }
+            anchors={"left_target": self.new_cat_editor["intro"]},
         )
 
         self.new_cat_editor["cat_list"] = UIScrollingButtonList(
@@ -4778,9 +5349,7 @@ class EventEditScreen(Screens):
             disable_selection=True,
             container=self.editor_container,
             manager=MANAGER,
-            anchors={
-                "left_target": self.new_cat_editor["intro"]
-            }
+            anchors={"left_target": self.new_cat_editor["intro"]},
         )
         self.update_new_cat_button_tooltips()
 
@@ -4793,9 +5362,9 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.new_cat_editor["cat_list"],
-                "left_target": self.new_cat_editor["intro"]
+                "left_target": self.new_cat_editor["intro"],
             },
-            tool_tip_text="add a new cat"
+            tool_tip_text="add a new cat",
         )
 
         self.new_cat_editor["delete"] = UISurfaceImageButton(
@@ -4807,9 +5376,9 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.new_cat_editor["cat_list"],
-                "left_target": self.new_cat_editor["add"]
+                "left_target": self.new_cat_editor["add"],
             },
-            tool_tip_text="delete selected cat"
+            tool_tip_text="delete selected cat",
         )
 
         self.new_cat_editor["display"] = UITextBoxTweaked(
@@ -4819,14 +5388,12 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.new_cat_editor["intro"]
-            }
+            anchors={"top_target": self.new_cat_editor["intro"]},
         )
         self.create_lock(
             name=f"new_cat",
             top_anchor=self.new_cat_editor["intro"],
-            left_anchor=self.new_cat_editor["display"]
+            left_anchor=self.new_cat_editor["display"],
         )
         self.create_divider(self.new_cat_editor["display"], "display")
 
@@ -4881,7 +5448,7 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.editor_element["gender"],
-            }
+            },
         )
         # parent is picked by default, so this is initially disabled
         self.connections_element["birth_parent"].disable()
@@ -4894,8 +5461,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.editor_element["gender"],
-                "left_target": self.connections_element["birth_parent"]
-            }
+                "left_target": self.connections_element["birth_parent"],
+            },
         )
         self.connections_element["mate"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 20), (80, 30))),
@@ -4906,8 +5473,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "left_target": self.connections_element["adopt_parent"],
-                "top_target": self.editor_element["gender"]
-            }
+                "top_target": self.editor_element["gender"],
+            },
         )
         self.connections_element["text"] = UITextBoxTweaked(
             "screens.event_edit.new_cat_parent_info",
@@ -4916,9 +5483,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.connections_element["adopt_parent"]
-            }
+            anchors={"top_target": self.connections_element["adopt_parent"]},
         )
         self.connections_element["display"] = UITextBoxTweaked(
             f"chosen cats: {self.selected_new_cat_info['parent']}",
@@ -4927,9 +5492,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.connections_element["text"]
-            }
+            anchors={"top_target": self.connections_element["text"]},
         )
         self.connections_element["frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((12, 20), (132, 166))),
@@ -4938,20 +5501,22 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.connections_element["mate"],
-                "left_target": self.connections_element["text"]
-            }
+                "left_target": self.connections_element["text"],
+            },
         )
         self.connections_element["cat_list"] = UIScrollingButtonList(
             pygame.Rect((20, 28), (120, 148)),
-            item_list=self.get_involved_cats(index_limit=int(self.selected_new_cat.strip("n_c:")), include_clan=False),
+            item_list=self.get_involved_cats(
+                index_limit=int(self.selected_new_cat.strip("n_c:")), include_clan=False
+            ),
             button_dimensions=(116, 30),
             container=self.editor_container,
             manager=MANAGER,
             anchors={
                 "top_target": self.connections_element["mate"],
-                "left_target": self.connections_element["text"]
+                "left_target": self.connections_element["text"],
             },
-            starting_selection=self.selected_new_cat_info["parent"]
+            starting_selection=self.selected_new_cat_info["parent"],
         )
 
         self.create_divider(self.connections_element["frame"], "connections")
@@ -4964,9 +5529,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["age"]
-            }
+            anchors={"top_target": self.editor_element["age"]},
         )
 
         chosen_gender = []
@@ -4984,12 +5547,14 @@ class EventEditScreen(Screens):
             parent_reflect_selection=True,
             anchors={
                 "top_target": self.editor_element["age"],
-                "left_target": self.new_gender_element["text"]
+                "left_target": self.new_gender_element["text"],
             },
             manager=MANAGER,
-            starting_selection=chosen_gender
+            starting_selection=chosen_gender,
         )
-        self.new_gender_element["list"].child_button_dicts["can_birth"].set_tooltip("screens.event_edit.can_birth")
+        self.new_gender_element["list"].child_button_dicts["can_birth"].set_tooltip(
+            "screens.event_edit.can_birth"
+        )
 
         self.create_divider(self.new_gender_element["text"], "gender")
 
@@ -5001,9 +5566,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["rank"]
-            }
+            anchors={"top_target": self.editor_element["rank"]},
         )
 
         chosen_age = []
@@ -5022,13 +5585,17 @@ class EventEditScreen(Screens):
             parent_reflect_selection=True,
             anchors={
                 "top_target": self.editor_element["rank"],
-                "left_target": self.new_age_element["text"]
+                "left_target": self.new_age_element["text"],
             },
             manager=MANAGER,
-            starting_selection=chosen_age
+            starting_selection=chosen_age,
         )
-        self.new_age_element["list"].child_button_dicts["mate"].set_tooltip("screens.event_edit.mate")
-        self.new_age_element["list"].child_button_dicts["has_kits"].set_tooltip("screens.event_edit.has_kits")
+        self.new_age_element["list"].child_button_dicts["mate"].set_tooltip(
+            "screens.event_edit.mate"
+        )
+        self.new_age_element["list"].child_button_dicts["has_kits"].set_tooltip(
+            "screens.event_edit.has_kits"
+        )
         self.create_divider(self.new_age_element["text"], "age")
 
     def create_new_cat_status_editor(self):
@@ -5039,9 +5606,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["backstory"]
-            }
+            anchors={"top_target": self.editor_element["backstory"]},
         )
         chosen_status = []
         for tag in self.new_cat_block_dict[self.selected_new_cat]:
@@ -5057,10 +5622,10 @@ class EventEditScreen(Screens):
             parent_reflect_selection=True,
             anchors={
                 "top_target": self.editor_element["backstory"],
-                "left_target": self.new_status_element["text"]
+                "left_target": self.new_status_element["text"],
             },
             manager=MANAGER,
-            starting_selection=chosen_status
+            starting_selection=chosen_status,
         )
         self.create_divider(self.new_status_element["text"], "rank")
 
@@ -5072,9 +5637,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["bools"]
-            }
+            anchors={"top_target": self.editor_element["bools"]},
         )
         chosen_type = []
         for tag in self.new_cat_block_dict[self.selected_new_cat]:
@@ -5091,22 +5654,22 @@ class EventEditScreen(Screens):
             parent_reflect_selection=True,
             anchors={
                 "top_target": self.editor_element["bools"],
-                "left_target": self.cat_story_element["text"]
+                "left_target": self.cat_story_element["text"],
             },
             manager=MANAGER,
-            starting_selection=chosen_type
+            starting_selection=chosen_type,
         )
         self.create_backstory_editor(self.cat_story_element["text"])
         self.create_divider(self.backstory_element["display"], "backstory")
 
     def create_bool_editor(self):
-        self.new_cat_element["checkbox_container"] = pygame_gui.elements.UIAutoResizingContainer(
+        self.new_cat_element[
+            "checkbox_container"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((20, 0), (0, 0))),
             container=self.editor_container,
             manager=MANAGER,
-            anchors={
-                "top_target": self.editor_element["display"]
-            }
+            anchors={"top_target": self.editor_element["display"]},
         )
         prev_element = None
         for info in self.new_cat_bools:
@@ -5115,9 +5678,7 @@ class EventEditScreen(Screens):
                 container=self.new_cat_element["checkbox_container"],
                 manager=MANAGER,
                 check=info["setting"],
-                anchors={
-                    "top_target": prev_element
-                } if prev_element else None
+                anchors={"top_target": prev_element} if prev_element else None,
             )
 
             self.new_cat_checkbox[f"{info['tag']}_text"] = UITextBoxTweaked(
@@ -5129,7 +5690,9 @@ class EventEditScreen(Screens):
                 container=self.new_cat_element["checkbox_container"],
                 anchors={
                     "top_target": prev_element,
-                } if prev_element else None
+                }
+                if prev_element
+                else None,
             )
 
             prev_element = self.new_cat_checkbox[f"{info['tag']}_text"]
@@ -5139,12 +5702,14 @@ class EventEditScreen(Screens):
     # MAIN/RANDOM CAT EDITOR
     def generate_main_cat_tab(self):
         self.main_cat_editor["intro"] = UITextBoxTweaked(
-            "screens.event_edit.mass_death_info" if "mass_death" in self.sub_info else "screens.event_edit.m_c_info",
+            "screens.event_edit.mass_death_info"
+            if "mass_death" in self.sub_info
+            else "screens.event_edit.m_c_info",
             ui_scale(pygame.Rect((0, 10), (440, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.editor_container
+            container=self.editor_container,
         )
 
         # DEATH
@@ -5175,7 +5740,7 @@ class EventEditScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.editor_container
+            container=self.editor_container,
         )
 
         # DEATH
@@ -5209,9 +5774,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": prev_element
-            }
+            anchors={"top_target": prev_element},
         )
 
         self.backstory_element["pools"] = UIScrollingButtonList(
@@ -5220,12 +5783,12 @@ class EventEditScreen(Screens):
             button_dimensions=(200, 30),
             multiple_choice=False,
             container=self.editor_container,
-            anchors={
-                "top_target": self.backstory_element["text"]
-            },
-            manager=MANAGER
+            anchors={"top_target": self.backstory_element["text"]},
+            manager=MANAGER,
         )
-        backstory = set(self.current_cat_dict["backstory"]).intersection(self.all_backstories.keys())
+        backstory = set(self.current_cat_dict["backstory"]).intersection(
+            self.all_backstories.keys()
+        )
         if backstory:
             self.backstory_element["pools"].set_selected_list(list(backstory))
 
@@ -5236,8 +5799,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.backstory_element["text"],
-                "left_target": self.backstory_element["pools"]
-            }
+                "left_target": self.backstory_element["pools"],
+            },
         )
         self.backstory_element["frame"].disable()
         self.backstory_element["list"] = UIScrollingButtonList(
@@ -5247,11 +5810,13 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.backstory_element["text"],
-                "left_target": self.backstory_element["pools"]
+                "left_target": self.backstory_element["pools"],
             },
-            manager=MANAGER
+            manager=MANAGER,
         )
-        backstory = set(self.current_cat_dict["backstory"]).intersection(self.individual_stories)
+        backstory = set(self.current_cat_dict["backstory"]).intersection(
+            self.individual_stories
+        )
         if backstory:
             self.backstory_element["list"].set_selected_list(list(backstory))
 
@@ -5264,14 +5829,14 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.backstory_element["pools"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
         if self.current_cat_dict != self.selected_new_cat_info:
             label = "main" if self.current_cat_dict == self.main_cat_info else "random"
             self.create_lock(
                 name=f"{label}_trait",
                 top_anchor=self.backstory_element["pools"],
-                left_anchor=self.backstory_element["display"]
+                left_anchor=self.backstory_element["display"],
             )
         self.create_divider(self.backstory_element["display"], "backstory")
 
@@ -5283,9 +5848,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["skills"]
-            }
+            anchors={"top_target": self.editor_element["skills"]},
         )
         self.trait_element["allow"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((130, 10), (80, 30))),
@@ -5294,9 +5857,7 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             object_id="@buttonstyles_menu_left",
             container=self.editor_container,
-            anchors={
-                "top_target": self.trait_element["text"]
-            }
+            anchors={"top_target": self.trait_element["text"]},
         )
         # allow is picked by default, so this is initially disabled
         self.trait_element["allow"].disable()
@@ -5309,8 +5870,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "left_target": self.trait_element["allow"],
-                "top_target": self.trait_element["text"]
-            }
+                "top_target": self.trait_element["text"],
+            },
         )
 
         self.trait_element["kitten"] = UIScrollingDropDown(
@@ -5319,10 +5880,8 @@ class EventEditScreen(Screens):
             item_list=self.kit_traits,
             parent_text="kitten traits",
             container=self.editor_container,
-            anchors={
-                "top_target": self.trait_element["allow"]
-            },
-            manager=MANAGER
+            anchors={"top_target": self.trait_element["allow"]},
+            manager=MANAGER,
         )
         traits = set(self.current_cat_dict["trait"]).intersection(self.kit_traits)
         if traits:
@@ -5337,7 +5896,7 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.trait_element["allow"],
             },
-            manager=MANAGER
+            manager=MANAGER,
         )
         traits = set(self.current_cat_dict["trait"]).intersection(self.adult_traits)
         if traits:
@@ -5352,14 +5911,14 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.trait_element["allow"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
         label = "main" if self.current_cat_dict == self.main_cat_info else "random"
         self.create_lock(
             name=f"{label}_trait",
             top_anchor=self.trait_element["allow"],
             left_anchor=self.trait_element["include_info"],
-            y_offset=60
+            y_offset=60,
         )
         self.trait_element["exclude_info"] = UITextBoxTweaked(
             f"chosen excluded traits: {self.current_cat_dict['not_trait']}",
@@ -5370,12 +5929,12 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.trait_element["include_info"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
         self.create_lock(
             name=f"{label}_not_trait",
             top_anchor=self.trait_element["include_info"],
-            left_anchor=self.trait_element["exclude_info"]
+            left_anchor=self.trait_element["exclude_info"],
         )
         self.create_divider(self.trait_element["exclude_info"], "traits")
 
@@ -5387,9 +5946,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["rel_status"]
-            }
+            anchors={"top_target": self.editor_element["rel_status"]},
         )
         self.skill_element["paths"] = UIScrollingButtonList(
             pygame.Rect((30, 20), (140, 198)),
@@ -5397,10 +5954,8 @@ class EventEditScreen(Screens):
             button_dimensions=(140, 30),
             multiple_choice=False,
             container=self.editor_container,
-            anchors={
-                "top_target": self.skill_element["text"]
-            },
-            manager=MANAGER
+            anchors={"top_target": self.skill_element["text"]},
+            manager=MANAGER,
         )
         self.skill_element["allow"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((30, 20), (80, 30))),
@@ -5411,8 +5966,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.skill_element["text"],
-                "left_target": self.skill_element["paths"]
-            }
+                "left_target": self.skill_element["paths"],
+            },
         )
         # allow is picked by default, so this is initially disabled
         self.skill_element["allow"].disable()
@@ -5425,8 +5980,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "left_target": self.skill_element["allow"],
-                "top_target": self.skill_element["text"]
-            }
+                "top_target": self.skill_element["text"],
+            },
         )
         self.skill_element["frame"] = UIModifiedImage(
             ui_scale(pygame.Rect((-20, 20), (254, 130))),
@@ -5435,8 +5990,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.skill_element["allow"],
-                "left_target": self.skill_element["paths"]
-            }
+                "left_target": self.skill_element["paths"],
+            },
         )
         self.skill_element["frame"].disable()
         self.skill_element["include_info"] = UITextBoxTweaked(
@@ -5448,13 +6003,13 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.skill_element["paths"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
         label = "main" if self.current_cat_dict == self.main_cat_info else "random"
         self.create_lock(
             name=f"{label}_skill",
             top_anchor=self.skill_element["paths"],
-            left_anchor=self.skill_element["include_info"]
+            left_anchor=self.skill_element["include_info"],
         )
         self.skill_element["exclude_info"] = UITextBoxTweaked(
             f"chosen excluded skills: {self.current_cat_dict['not_skill']}",
@@ -5465,12 +6020,12 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.skill_element["include_info"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
         self.create_lock(
             name=f"{label}_not_skill",
             top_anchor=self.skill_element["include_info"],
-            left_anchor=self.skill_element["exclude_info"]
+            left_anchor=self.skill_element["exclude_info"],
         )
         self.create_divider(self.skill_element["exclude_info"], "skills")
 
@@ -5485,22 +6040,26 @@ class EventEditScreen(Screens):
             return
 
         # make new buttons
-        level_list = (self.all_skills[self.open_path])
+        level_list = self.all_skills[self.open_path]
         prev_element = None
         for level in range(len(level_list)):
             self.level_element[f"{level + 1}"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((-4, (28 if not prev_element else -2)), (230, 30))),
+                ui_scale(
+                    pygame.Rect((-4, (28 if not prev_element else -2)), (230, 30))
+                ),
                 level_list[level],
                 get_button_dict(ButtonStyles.DROPDOWN, (230, 30)),
                 manager=MANAGER,
                 object_id="@buttonstyles_dropdown",
                 container=self.editor_container,
                 anchors={
-                    "top_target": (self.skill_element["allow"]
-                                   if not prev_element
-                                   else prev_element),
+                    "top_target": (
+                        self.skill_element["allow"]
+                        if not prev_element
+                        else prev_element
+                    ),
                     "left_target": self.skill_element["paths"],
-                }
+                },
             )
             prev_element = self.level_element[f"{level + 1}"]
 
@@ -5509,10 +6068,8 @@ class EventEditScreen(Screens):
             position=(7, 7),
             container=self.editor_container,
             manager=MANAGER,
-            anchors={
-                "top_target": editor["intro"]
-            },
-            check=self.current_cat_dict["dies"]
+            anchors={"top_target": editor["intro"]},
+            check=self.current_cat_dict["dies"],
         )
         if "death" in self.type_info and self.current_editor_tab == "main cat":
             self.death_element["checkbox"].check()
@@ -5525,13 +6082,13 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": editor["intro"]
-            }
+            anchors={"top_target": editor["intro"]},
         )
-        if ("death" in self.type_info
-                and self.current_cat_dict == self.main_cat_info
-                and not self.current_cat_dict["dies"]):
+        if (
+            "death" in self.type_info
+            and self.current_cat_dict == self.main_cat_info
+            and not self.current_cat_dict["dies"]
+        ):
             self.current_cat_dict["dies"] = True
 
         self.death_element["display"] = UITextBoxTweaked(
@@ -5543,14 +6100,14 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.death_element["text"],
-            }
+            },
         )
         label = "main" if self.current_cat_dict == self.main_cat_info else "random"
         self.create_lock(
             name=f"{label}_dies",
             top_anchor=self.death_element["text"],
             left_anchor=self.death_element["display"],
-            x_offset=320
+            x_offset=320,
         )
         self.create_divider(self.death_element["display"], "dies")
 
@@ -5564,18 +6121,16 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             container=self.editor_container,
             title_object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            anchors={
-                "top_target": self.editor_element["age"]
-            }
+            anchors={"top_target": self.editor_element["age"]},
         )
         # container for the checkbox list, this will get tossed into the collapsible container ^
-        self.rel_status_element["checkboxes"] = pygame_gui.elements.UIAutoResizingContainer(
+        self.rel_status_element[
+            "checkboxes"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((48, 0), (0, 0))),
             container=self.rel_status_element["container"],
             manager=MANAGER,
-            anchors={
-                "top_target": self.rel_status_element["container"].top_button
-            }
+            anchors={"top_target": self.rel_status_element["container"].top_button},
         )
 
         # only the main cat has access to these tags
@@ -5585,7 +6140,10 @@ class EventEditScreen(Screens):
             # clear old elements
             if self.rel_status_checkbox:
                 for info in self.rel_tag_list:
-                    if info["tag"] in self.main_cat_info["rel_status"] and not info["setting"]:
+                    if (
+                        info["tag"] in self.main_cat_info["rel_status"]
+                        and not info["setting"]
+                    ):
                         info["setting"] = True
                     if self.rel_status_checkbox.get(f"{info['tag']}_text"):
                         self.rel_status_checkbox[f"{info['tag']}_text"].kill()
@@ -5602,7 +6160,9 @@ class EventEditScreen(Screens):
                     container=self.rel_status_element["checkboxes"],
                     anchors={
                         "top_target": prev_element,
-                    } if prev_element else None
+                    }
+                    if prev_element
+                    else None,
                 )
 
                 self.rel_status_checkbox[info["tag"]] = UICheckbox(
@@ -5610,9 +6170,7 @@ class EventEditScreen(Screens):
                     container=self.rel_status_element["checkboxes"],
                     manager=MANAGER,
                     check=info["setting"],
-                    anchors={
-                        "top_target": prev_element
-                    } if prev_element else None
+                    anchors={"top_target": prev_element} if prev_element else None,
                 )
 
                 prev_element = self.rel_status_element[f"{info['tag']}_text"]
@@ -5622,9 +6180,7 @@ class EventEditScreen(Screens):
             ui_scale(pygame.Rect((48, 0), (0, 0))),
             container=self.rel_status_element["container"],
             manager=MANAGER,
-            anchors={
-                "top_target": self.rel_status_element["checkboxes"]
-            }
+            anchors={"top_target": self.rel_status_element["checkboxes"]},
         )
         prev_element = None
         for value in self.rel_value_types:
@@ -5637,21 +6193,23 @@ class EventEditScreen(Screens):
                 container=self.rel_status_element["values"],
                 anchors={
                     "top_target": prev_element,
-                } if prev_element else None
+                }
+                if prev_element
+                else None,
             )
             initial_text = "0"
             for tag in self.current_cat_dict["rel_status"]:
                 if value in tag:
                     initial_text = tag.replace(f"{value}_", "")
 
-            self.rel_value_element[f"{value}_entry"] = pygame_gui.elements.UITextEntryLine(
+            self.rel_value_element[
+                f"{value}_entry"
+            ] = pygame_gui.elements.UITextEntryLine(
                 ui_scale(pygame.Rect((250, 13), (40, 29))),
                 manager=MANAGER,
                 container=self.rel_status_element["values"],
-                anchors={
-                    "top_target": prev_element
-                } if prev_element else None,
-                initial_text=initial_text
+                anchors={"top_target": prev_element} if prev_element else None,
+                initial_text=initial_text,
             )
             self.rel_value_element[f"{value}_low_button"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((10, 12), (30, 30))),
@@ -5663,14 +6221,13 @@ class EventEditScreen(Screens):
                 anchors=(
                     {
                         "left_target": self.rel_value_element[f"{value}_entry"],
-                        "top_target": prev_element
+                        "top_target": prev_element,
                     }
                     if prev_element
-                    else
-                    {
+                    else {
                         "left_target": self.rel_value_element[f"{value}_entry"],
                     }
-                )
+                ),
             )
             self.rel_value_element[f"{value}_mid_button"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-2, 12), (30, 30))),
@@ -5682,14 +6239,13 @@ class EventEditScreen(Screens):
                 anchors=(
                     {
                         "left_target": self.rel_value_element[f"{value}_low_button"],
-                        "top_target": prev_element
+                        "top_target": prev_element,
                     }
                     if prev_element
-                    else
-                    {
+                    else {
                         "left_target": self.rel_value_element[f"{value}_low_button"],
                     }
-                )
+                ),
             )
             self.rel_value_element[f"{value}_high_button"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-2, 12), (30, 30))),
@@ -5701,14 +6257,13 @@ class EventEditScreen(Screens):
                 anchors=(
                     {
                         "left_target": self.rel_value_element[f"{value}_mid_button"],
-                        "top_target": prev_element
+                        "top_target": prev_element,
                     }
                     if prev_element
-                    else
-                    {
+                    else {
                         "left_target": self.rel_value_element[f"{value}_mid_button"],
                     }
-                )
+                ),
             )
             prev_element = self.rel_status_element[f"{value}_text"]
         self.rel_status_element["display"] = UITextBoxTweaked(
@@ -5718,15 +6273,13 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.rel_status_element["container"]
-            }
+            anchors={"top_target": self.rel_status_element["container"]},
         )
         label = "main" if self.current_cat_dict == self.main_cat_info else "random"
         self.create_lock(
             name=f"{label}_rel_status",
             top_anchor=self.rel_status_element["container"],
-            left_anchor=self.rel_status_element["display"]
+            left_anchor=self.rel_status_element["display"],
         )
         self.rel_status_element["container"].close()
         self.create_divider(self.rel_status_element["display"], "rel_status")
@@ -5739,9 +6292,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["rank"]
-            }
+            anchors={"top_target": self.editor_element["rank"]},
         )
         self.age_element["dropdown"] = UIScrollingDropDown(
             pygame.Rect((0, 16), (200, 30)),
@@ -5752,10 +6303,10 @@ class EventEditScreen(Screens):
             dropdown_dimensions=(200, 198),
             anchors={
                 "top_target": self.editor_element["rank"],
-                "left_target": self.age_element["text"]
+                "left_target": self.age_element["text"],
             },
             starting_height=1,
-            starting_selection=self.current_cat_dict["age"]
+            starting_selection=self.current_cat_dict["age"],
         )
         self.age_element["display"] = UITextBoxTweaked(
             f"chosen age: {self.current_cat_dict['age']}",
@@ -5764,15 +6315,13 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.age_element["text"]
-            }
+            anchors={"top_target": self.age_element["text"]},
         )
         label = "main" if self.current_cat_dict == self.main_cat_info else "random"
         self.create_lock(
             name=f"{label}_age",
             top_anchor=self.age_element["text"],
-            left_anchor=self.age_element["display"]
+            left_anchor=self.age_element["display"],
         )
         self.create_divider(self.age_element["display"], "age")
 
@@ -5784,9 +6333,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["dies"]
-            }
+            anchors={"top_target": self.editor_element["dies"]},
         )
         self.rank_element["dropdown"] = UIScrollingDropDown(
             pygame.Rect((0, 28), (200, 30)),
@@ -5798,9 +6345,9 @@ class EventEditScreen(Screens):
             starting_height=2,
             anchors={
                 "top_target": self.death_element["display"],
-                "left_target": self.rank_element["text"]
+                "left_target": self.rank_element["text"],
             },
-            starting_selection=self.current_cat_dict["rank"]
+            starting_selection=self.current_cat_dict["rank"],
         )
         self.rank_element["display"] = UITextBoxTweaked(
             f"chosen rank: {self.current_cat_dict['rank']}",
@@ -5809,15 +6356,13 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.rank_element["text"]
-            }
+            anchors={"top_target": self.rank_element["text"]},
         )
         label = "main" if self.current_cat_dict == self.main_cat_info else "random"
         self.create_lock(
             name=f"{label}_rank",
             top_anchor=self.rank_element["text"],
-            left_anchor=self.rank_element["display"]
+            left_anchor=self.rank_element["display"],
         )
         self.create_divider(self.rank_element["display"], "rank")
 
@@ -5846,9 +6391,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.weight_element["text"]
-            }
+            anchors={"top_target": self.weight_element["text"]},
         )
         prev_element = None
         for group in self.acc_categories.keys():
@@ -5860,10 +6403,10 @@ class EventEditScreen(Screens):
                 object_id="@buttonstyles_dropdown",
                 container=self.editor_container,
                 anchors={
-                    "top_target": (prev_element
-                                   if prev_element
-                                   else self.acc_element["text"])
-                }
+                    "top_target": (
+                        prev_element if prev_element else self.acc_element["text"]
+                    )
+                },
             )
             prev_element = self.acc_element[group]
             if "accessory" not in self.sub_info:
@@ -5876,8 +6419,8 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.acc_element["text"],
-                "left_target": prev_element
-            }
+                "left_target": prev_element,
+            },
         )
 
         self.acc_element["display"] = UITextBoxTweaked(
@@ -5889,13 +6432,13 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.acc_element["frame"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
 
         self.create_lock(
             name="acc",
             top_anchor=self.acc_element["frame"],
-            left_anchor=self.acc_element["display"]
+            left_anchor=self.acc_element["display"],
         )
         self.create_divider(self.acc_element["display"], "acc")
 
@@ -5922,20 +6465,21 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.acc_element["text"],
-                "left_target": self.acc_element["WILD"]
+                "left_target": self.acc_element["WILD"],
             },
-            starting_selection=self.acc_info
+            starting_selection=self.acc_info,
         )
         if not self.acc_element.get("preview"):
             self.acc_element["preview"] = UIModifiedImage(
                 ui_scale(pygame.Rect((80, 0), (100, 100))),
-                image_surface=self.get_acc_example(acc=self.acc_info[0] if self.acc_info
-                else category[0]),
+                image_surface=self.get_acc_example(
+                    acc=self.acc_info[0] if self.acc_info else category[0]
+                ),
                 manager=MANAGER,
                 container=self.editor_container,
                 anchors={
                     "top_target": self.acc_element[list(self.acc_categories.keys())[-1]]
-                }
+                },
             )
 
     @staticmethod
@@ -5943,8 +6487,10 @@ class EventEditScreen(Screens):
         """
         Returns the example sprite image for the given acc.
         """
-        return pygame.transform.scale(generate_sprite(create_option_preview_cat(acc=acc)),
-                                      ui_scale_dimensions((100, 100)))
+        return pygame.transform.scale(
+            generate_sprite(create_option_preview_cat(acc=acc)),
+            ui_scale_dimensions((100, 100)),
+        )
 
     def create_weight_editor(self):
         self.weight_element["text"] = UITextBoxTweaked(
@@ -5954,9 +6500,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["tag"]
-            }
+            anchors={"top_target": self.editor_element["tag"]},
         )
         self.weight_element["entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((0, 18), (50, 29))),
@@ -5964,20 +6508,19 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "top_target": self.editor_element["tag"],
-                "left_target": self.weight_element["text"]
+                "left_target": self.weight_element["text"],
             },
-            initial_text=f"{self.weight_info}"
+            initial_text=f"{self.weight_info}",
         )
         self.create_lock(
             name="weight",
             top_anchor=self.editor_element["tag"],
             left_anchor=self.weight_element["entry"],
-            x_offset=268
+            x_offset=268,
         )
         self.create_divider(self.weight_element["entry"], "weight", -10)
 
     def create_tag_editor(self):
-
         self.tag_element["collapse_container"] = UICollapsibleContainer(
             ui_scale(pygame.Rect((0, 0), (440, 0))),
             top_button_oriented_left=False,
@@ -5988,17 +6531,15 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             container=self.editor_container,
             title_object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            anchors={
-                "top_target": self.type_element["display"]
-            }
+            anchors={"top_target": self.type_element["display"]},
         )
-        self.tag_element["basic_checkbox_container"] = pygame_gui.elements.UIAutoResizingContainer(
+        self.tag_element[
+            "basic_checkbox_container"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
             ui_scale(pygame.Rect((48, 0), (0, 0))),
             container=self.tag_element["collapse_container"],
             manager=MANAGER,
-            anchors={
-                "top_target": self.tag_element["collapse_container"].top_button
-            }
+            anchors={"top_target": self.tag_element["collapse_container"].top_button},
         )
 
         self.update_basic_checkboxes()
@@ -6013,8 +6554,7 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.tag_element["basic_checkbox_container"],
                 "left_target": self.event_id_element["text"],
-
-            }
+            },
         )
         prev_element = None
         rank_list = Cat.rank_sort_order.copy()
@@ -6031,10 +6571,10 @@ class EventEditScreen(Screens):
                 manager=MANAGER,
                 check=setting,
                 anchors={
-                    "top_target": (prev_element if
-                                   prev_element else
-                                   self.rank_tag_checkbox["text"]),
-                }
+                    "top_target": (
+                        prev_element if prev_element else self.rank_tag_checkbox["text"]
+                    ),
+                },
             )
 
             check_box_rect = pygame.Rect((0, 10), (350, -1))
@@ -6042,7 +6582,9 @@ class EventEditScreen(Screens):
             if rank == "apps":
                 rank_string = f"two of any apprentice type"
             else:
-                rank_string = f"two {rank}s" if rank not in ("deputy", "leader") else rank
+                rank_string = (
+                    f"two {rank}s" if rank not in ("deputy", "leader") else rank
+                )
             self.rank_tag_checkbox[f"{rank}_text"] = UITextBoxTweaked(
                 rank_string,
                 ui_scale(check_box_rect),
@@ -6051,11 +6593,11 @@ class EventEditScreen(Screens):
                 manager=MANAGER,
                 container=self.tag_element["collapse_container"],
                 anchors={
-                    "top_target": (prev_element if
-                                   prev_element else
-                                   self.rank_tag_checkbox["text"]),
-                    "right": "right"
-                }
+                    "top_target": (
+                        prev_element if prev_element else self.rank_tag_checkbox["text"]
+                    ),
+                    "right": "right",
+                },
             )
 
             prev_element = self.rank_tag_checkbox[f"{rank}_text"]
@@ -6069,7 +6611,7 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.tag_element["collapse_container"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
 
         self.tag_element["collapse_container"].close()
@@ -6077,7 +6619,7 @@ class EventEditScreen(Screens):
         self.create_lock(
             name="tag",
             top_anchor=self.tag_element["collapse_container"],
-            left_anchor=self.tag_element["display"]
+            left_anchor=self.tag_element["display"],
         )
         self.create_divider(self.tag_element["display"], "tag")
 
@@ -6105,7 +6647,7 @@ class EventEditScreen(Screens):
                     "tag": info["tag"],
                     "setting": False,
                     "required_type": info["required_type"],
-                    "conflict": info["conflict"]
+                    "conflict": info["conflict"],
                 }
                 continue
 
@@ -6118,7 +6660,9 @@ class EventEditScreen(Screens):
                 container=self.tag_element["basic_checkbox_container"],
                 anchors={
                     "top_target": prev_element,
-                } if prev_element else None
+                }
+                if prev_element
+                else None,
             )
 
             self.basic_tag_checkbox[info["tag"]] = UICheckbox(
@@ -6126,9 +6670,7 @@ class EventEditScreen(Screens):
                 container=self.tag_element["basic_checkbox_container"],
                 manager=MANAGER,
                 check=info["setting"],
-                anchors={
-                    "top_target": prev_element
-                } if prev_element else None
+                anchors={"top_target": prev_element} if prev_element else None,
             )
 
             prev_element = self.basic_tag_checkbox[f"{info['tag']}_text"]
@@ -6143,9 +6685,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.season_element["display"]
-            }
+            anchors={"top_target": self.season_element["display"]},
         )
         if not self.type_info:
             self.type_info = ["death"]
@@ -6157,12 +6697,12 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={
                 "left_target": self.event_id_element["text"],
-                "top_target": (self.season_element["display"])
+                "top_target": (self.season_element["display"]),
             },
             starting_height=3,
             manager=MANAGER,
             child_trigger_close=True,
-            starting_selection=self.type_info
+            starting_selection=self.type_info,
         )
 
         self.update_sub_buttons(self.event_types[self.type_info[0]])
@@ -6176,17 +6716,16 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.type_element["text"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
         self.create_lock(
             name="subtypes",
             top_anchor=self.type_element["text"],
-            left_anchor=self.type_element["display"]
+            left_anchor=self.type_element["display"],
         )
         self.create_divider(self.type_element["display"], "type")
 
     def update_sub_buttons(self, type_list):
-
         if self.type_element.get("subtype_dropdown"):
             self.type_element["subtype_dropdown"].kill()
 
@@ -6202,9 +6741,9 @@ class EventEditScreen(Screens):
             starting_height=3,
             anchors={
                 "left_target": self.type_element["type_dropdown"],
-                "top_target": self.season_element["display"]
+                "top_target": self.season_element["display"],
             },
-            starting_selection=self.sub_info
+            starting_selection=self.sub_info,
         )
 
     def create_season_editor(self):
@@ -6215,9 +6754,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.location_element["display"]
-            }
+            anchors={"top_target": self.location_element["display"]},
         )
 
         self.season_element["dropdown"] = UIDropDown(
@@ -6233,8 +6770,8 @@ class EventEditScreen(Screens):
             starting_height=5,
             anchors={
                 "left_target": self.season_element["text"],
-                "top_target": self.location_element["display"]
-            }
+                "top_target": self.location_element["display"],
+            },
         )
 
         self.season_element["display"] = UITextBoxTweaked(
@@ -6246,12 +6783,12 @@ class EventEditScreen(Screens):
             anchors={
                 "top_target": self.season_element["text"],
             },
-            allow_split_dashes=False
+            allow_split_dashes=False,
         )
         self.create_lock(
             name="season",
             top_anchor=self.season_element["text"],
-            left_anchor=self.season_element["display"]
+            left_anchor=self.season_element["display"],
         )
         self.create_divider(self.season_element["display"], "season")
 
@@ -6263,9 +6800,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["event_id"]
-            }
+            anchors={"top_target": self.editor_element["event_id"]},
         )
         biome_list = game.clan.BIOME_TYPES
         prev_element = None
@@ -6280,10 +6815,12 @@ class EventEditScreen(Screens):
                 container=self.editor_container,
                 anchors={
                     "left_target": self.event_id_element["text"],
-                    "top_target": (self.location_element["text"]
-                                   if not prev_element
-                                   else prev_element)
-                }
+                    "top_target": (
+                        self.location_element["text"]
+                        if not prev_element
+                        else prev_element
+                    ),
+                },
             )
             prev_element = self.location_element[biome]
 
@@ -6293,22 +6830,19 @@ class EventEditScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "top_target": self.location_element[biome_list[-1]]
-            },
-            allow_split_dashes=False
+            anchors={"top_target": self.location_element[biome_list[-1]]},
+            allow_split_dashes=False,
         )
 
         self.create_lock(
             name="location",
             top_anchor=self.location_element[biome_list[-1]],
-            left_anchor=self.location_element["display"]
+            left_anchor=self.location_element["display"],
         )
 
         self.create_divider(self.location_element["display"], "location")
 
     def update_camp_list(self, chosen_biome):
-
         for biome in self.all_camps:
             for camp in self.all_camps[biome]:
                 if self.location_element.get(camp):
@@ -6331,10 +6865,12 @@ class EventEditScreen(Screens):
                 container=self.editor_container,
                 anchors={
                     "left_target": self.location_element[chosen_biome],
-                    "top_target": (self.location_element["text"]
-                                   if not prev_element
-                                   else prev_element)
-                }
+                    "top_target": (
+                        self.location_element["text"]
+                        if not prev_element
+                        else prev_element
+                    ),
+                },
             )
             prev_element = self.location_element[camp]
 
@@ -6345,16 +6881,14 @@ class EventEditScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.editor_container
+            container=self.editor_container,
         )
         self.event_id_element["entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((0, 13), (230, 29))),
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "left_target": self.event_id_element["text"]
-            },
-            initial_text=self.event_id_info if self.event_id_info else ""
+            anchors={"left_target": self.event_id_element["text"]},
+            initial_text=self.event_id_info if self.event_id_info else "",
         )
 
         self.event_id_element["check_text"] = UITextBoxTweaked(
@@ -6364,9 +6898,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={
-                "left_target": self.event_id_element["entry"]
-            }
+            anchors={"left_target": self.event_id_element["entry"]},
         )
         self.valid_id()
         self.create_divider(self.event_id_element["text"], "event_id")

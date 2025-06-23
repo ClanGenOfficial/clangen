@@ -56,7 +56,7 @@ class RelationshipScreen(Screens):
         "comfort",
         "jealousy",
         "respect",
-        "trust"
+        "trust",
     )
 
     def __init__(self, name=None):
