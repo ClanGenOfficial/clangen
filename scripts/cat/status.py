@@ -27,6 +27,7 @@ class Status:
         CatRank.ROGUE: CatSocial.ROGUE,
         CatRank.KITTYPET: CatSocial.KITTYPET
     }
+    """A dict with rank as the key and it's matching social status as the value"""
 
     def __init__(
             self,
