@@ -931,9 +931,8 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        if (
-            self.focus_cat.status.is_outsider()
-            and not self.focus_cat.status.is_lost(CatGroup.PLAYER_CLAN)
+        if self.focus_cat.status.is_outsider() and not self.focus_cat.status.is_lost(
+            CatGroup.PLAYER_CLAN
         ):
             self.focus_button["invite"].set_text("screens.leader_den.invite")
         else:
