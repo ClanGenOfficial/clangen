@@ -216,7 +216,7 @@ class Status:
             new_history["group"] = CatGroup.PLAYER_CLAN
 
         # next, we double-check that the rank is appropriate for the social, this is mostly for loner/rogue/kittypet
-        if social != self.social_lookup:
+        if social != self.social_lookup[rank]:
             # getting ranks according to social category
             possible_ranks = [
                 rank for rank in self.social_lookup.keys()
