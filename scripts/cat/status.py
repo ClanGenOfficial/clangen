@@ -338,7 +338,8 @@ class Status:
         """
         Changes group status for a cat. They can be entering, leaving, or switching their group.
         :param new_group: the name of the new group they will be joining, default None
-        :param new_rank: Indicate what social category the cat is now part of
+        :param new_rank: Indicate what rank the cat should take, if they aren't joining a new group then this should
+        match their social.
         :param standing_with_past_group: Indicate what standing the cat should have with their old group, leave None if
         they didn't have a group
         """
@@ -363,9 +364,19 @@ class Status:
         """
         if not group:
             group = self.group
+        found_record = False
         for record in self.standing_history:
             if record["group"] == group:
                 record["standing"].append(new_standing)
+                found_record = True
+        if not found_record:
+            self.standing_history.append(
+                {
+                    "group": group,
+                    "standing": [new_standing],
+                    "near": True
+                }
+            )
 
     def become_lost(
             self,
@@ -403,7 +414,7 @@ class Status:
             self,
             new_group: CatGroup,
             age=None,
-            standing_with_past_group: CatStanding = None
+            standing_with_past_group: CatStanding = CatStanding.KNOWN
     ):
         """
         Adds the cat to the specified group. If the cat has previously been part of this group, they will take on their
@@ -416,8 +427,9 @@ class Status:
         :param standing_with_past_group: If leaving a group to join the new one, this should be used to indicate how the
         last group views the cat (exiled, lost, ect.) Defaults to KNOWN if cat was in a group.
         """
-        if not standing_with_past_group and self.group:
-            standing_with_past_group = CatStanding.KNOWN
+        # if they weren't in a group, they don't need to update standing
+        if not self.group:
+            standing_with_past_group = None
 
         # if we're moving an afterlife cat, they don't change rank
         if self.group and self.group.is_afterlife():
@@ -425,10 +437,11 @@ class Status:
         # adding a cat who has been in a clan in the past, they will take their old rank if possible
         elif self.is_former_clancat() and not self.group.is_afterlife():
             new_rank = self.find_prior_clan_rank()
-            if new_rank in [CatRank.LEADER, CatRank.DEPUTY]:
+            # we don't need to change leaders and deps if they're going to an afterlife
+            if new_rank in [CatRank.LEADER, CatRank.DEPUTY] and not new_group.is_afterlife():
                 new_rank = self.get_rank_from_age(age)
         else:
-            new_rank = None
+            new_rank = self.rank
 
         self._modify_group(
             new_rank=new_rank,
@@ -442,31 +455,23 @@ class Status:
         :param target: Use this to specify a certain afterlife, if unused a clancat (or a former clancat) will match
         their guide's afterlife, while an outsider will go to the unknown residence.
         """
+        # if we have a specific afterlife to send them to
         if target:
-            self._modify_group(
-                new_rank=self.rank,
-                new_group=target
+            self.add_to_group(
+                new_group=target,
             )
             return
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
         if self.is_outsider() and not self.is_former_clancat():
-            self._modify_group(
-                new_rank=self.rank,
+            self.add_to_group(
                 new_group=CatGroup.UNKNOWN_RESIDENCE
             )
             return
 
         # meanwhile clan cats go wherever their guide points them
-        if self.is_former_clancat():
-            clan_rank = self.find_prior_clan_rank()
-        else:
-            clan_rank = self.rank
-
-        self._modify_group(
-            new_rank=clan_rank,
-            new_group=game.clan.instructor.status.group,
-            standing_with_past_group=CatStanding.MEMBER
+        self.add_to_group(
+            new_group=game.clan.instructor.status.group
         )
 
     def change_rank(self, new_rank: CatRank):

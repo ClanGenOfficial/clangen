@@ -231,12 +231,13 @@ def json_load():
 
             # checking for old dead
             if cat.get("dead"):
-                if cat.get("df"):
-                    new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
-                elif cat.get("outside"):
-                    new_cat.status.send_to_afterlife(target=CatGroup.UNKNOWN_RESIDENCE)
-                else:
-                    new_cat.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
+                if not new_cat.status.group or not new_cat.status.group.is_afterlife():
+                    if cat.get("df"):
+                        new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
+                    elif cat.get("outside"):
+                        new_cat.status.send_to_afterlife(target=CatGroup.UNKNOWN_RESIDENCE)
+                    else:
+                        new_cat.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
 
             new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]

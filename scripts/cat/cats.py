@@ -468,7 +468,9 @@ class Cat:
 
     @dead.setter
     def dead(self, die: bool):
-        if die and (not self.status.group or self.status.group.is_afterlife()):
+        if die:
+            if self.status.group and self.status.group.is_afterlife():
+                return
             self.status.send_to_afterlife()
 
     @property
@@ -626,6 +628,7 @@ class Cat:
         if game.clan and self.status.in_player_clan():
             self.grief(body)
 
+        # exiled cats are special, cus they get kicked out a heaven
         if isoutside and self.status.is_exiled():
             self.status.add_to_group(CatGroup.UNKNOWN_RESIDENCE)
 
@@ -887,7 +890,7 @@ class Cat:
             History.add_beginning(self)
 
         self.status.add_to_group(
-            new_group=game.clan.name,
+            new_group=CatGroup.PLAYER_CLAN,
             age=self.age
         )
 
@@ -903,7 +906,7 @@ class Cat:
                 and child.moons < 12
             ):
                 child.status.add_to_group(
-                    new_group=game.clan.name,
+                    new_group=CatGroup.PLAYER_CLAN,
                     age=self.age
                 )
                 child.add_to_clan()
@@ -2185,8 +2188,7 @@ class Cat:
     def available_to_work(self):
         return (
             not self.dead
-            and not self.outside
-            and not self.exiled
+            and self.status.in_player_clan()
             and not self.not_working()
         )
 
