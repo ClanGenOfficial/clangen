@@ -292,7 +292,6 @@ class TestGetQueens(unittest.TestCase):
         self.test_cat2.gender = "male"
 
         self.test_cat3.status.change_rank(CatRank.KITTEN)
-        self.test_cat3.status = "kitten"
         self.test_cat3.parent1 = self.test_cat2.ID
         self.test_cat3.parent2 = self.test_cat1.ID
 
@@ -302,7 +301,6 @@ class TestGetQueens(unittest.TestCase):
         self.test_cat5.gender = "male"
 
         self.test_cat6.status.change_rank(CatRank.APPRENTICE)
-        self.test_cat6.status = "apprentice"
         self.test_cat6.parent1 = self.test_cat5.ID
         self.test_cat6.parent2 = self.test_cat4.ID
 

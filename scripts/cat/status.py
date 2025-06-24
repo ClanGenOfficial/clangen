@@ -1,6 +1,6 @@
 from itertools import groupby
 from random import choice
-from typing import TypedDict
+from typing import TypedDict, Optional, List, Dict
 
 from scripts.cat.enums import CatRank, CatSocial, CatStanding, CatAge, CatGroup
 from scripts.game_structure.game_essentials import game
@@ -102,20 +102,13 @@ class Status:
                     rank = self.get_rank_from_age(age)
                 else:  # god this should never happen, but I'm paranoid
                     rank = CatRank.WARRIOR
-            for enum in CatRank:
-                if enum == rank:
-                    rank = enum
-                    break
+            rank = CatRank(rank)
         if social and not isinstance(social, CatSocial):
             if social.casefold() == "former clancat":
                 social = CatSocial.CLANCAT
-            for enum in CatSocial:
-                if enum == social:
-                    social = enum
+            social = CatSocial(social)
         if group and not isinstance(group, CatGroup):
-            for enum in CatGroup:
-                if enum == group:
-                    group = enum
+            group = CatGroup(group)
 
         if rank and not isinstance(rank, CatRank):
             print(f"ERROR: {rank} is not a valid rank")
@@ -205,7 +198,7 @@ class Status:
             if rank and rank.is_any_clancat_rank():
                 social = CatSocial.CLANCAT
             else:
-                social = choice([CatSocial.ROGUE, CatSocial.LONER, CatSocial.KITTYPET])
+                social = CatSocial(rank)
 
         # group assignment via social
         # we assume a clancat is the player's as default
@@ -483,7 +476,10 @@ class Status:
             return
 
         # meanwhile clan cats go wherever their guide points them
-        self.add_to_group(new_group=game.clan.instructor.status.group)
+        if game.clan:
+            self.add_to_group(new_group=game.clan.instructor.status.group)
+        else:
+            self.add_to_group(new_group=CatGroup.STAR_CLAN)
 
     def change_rank(self, new_rank: CatRank):
         """
@@ -635,9 +631,9 @@ class StatusDict(TypedDict, total=False):
     Dict does not need to contain all keys. However, if you have no group history, then you must include a rank or age
     """
 
-    group_history: list[dict] | None
-    standing_history: list[dict] | None
-    social: CatSocial | None
-    group: CatGroup | None
-    rank: CatRank | None
-    age: CatAge | None
+    group_history: Optional[List[Dict]]  # list[dict] | None
+    standing_history: Optional[List[Dict]]
+    social: Optional[CatSocial]
+    group: Optional[CatGroup]
+    rank: Optional[CatRank]
+    age: Optional[CatAge]
