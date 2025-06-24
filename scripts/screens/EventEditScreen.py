@@ -435,15 +435,15 @@ class EventEditScreen(Screens):
             self.main_cat_info = {
                 "rank": event["m_c"]["status"] if event["m_c"].get("status") else [],
                 "age": event["m_c"]["age"] if event["m_c"].get("age") else [],
-                "rel_status": (event["m_c"]["relationship_status"]
-                if event["m_c"].get("relationship_status")
-                else []),
+                "rel_status": (
+                    event["m_c"]["relationship_status"]
+                    if event["m_c"].get("relationship_status")
+                    else []
+                ),
                 "dies": event["m_c"]["dies"] if event["m_c"].get("dies") else False,
                 "skill": event["m_c"]["skill"] if event["m_c"].get("skill") else [],
                 "not_skill": (
-                    event["m_c"]["not_skill"]
-                if event["m_c"].get("not_skill")
-                else []
+                    event["m_c"]["not_skill"] if event["m_c"].get("not_skill") else []
                 ),
                 "trait": event["m_c"]["trait"] if event["m_c"].get("trait") else [],
                 "not_trait": (
@@ -457,15 +457,15 @@ class EventEditScreen(Screens):
             self.random_cat_info = {
                 "rank": event["r_c"]["status"] if event["r_c"].get("status") else [],
                 "age": event["r_c"]["age"] if event["r_c"].get("age") else [],
-                "rel_status": (event["r_c"]["relationship_status"]
-                if event["r_c"].get("relationship_status")
-                else []),
+                "rel_status": (
+                    event["r_c"]["relationship_status"]
+                    if event["r_c"].get("relationship_status")
+                    else []
+                ),
                 "dies": event["r_c"]["dies"] if event["r_c"].get("dies") else False,
                 "skill": event["r_c"]["skill"] if event["r_c"].get("skill") else [],
                 "not_skill": (
-                    event["r_c"]["not_skill"]
-                if event["r_c"].get("not_skill")
-                else []
+                    event["r_c"]["not_skill"] if event["r_c"].get("not_skill") else []
                 ),
                 "trait": event["r_c"]["trait"] if event["r_c"].get("trait") else [],
                 "not_trait": (
@@ -1235,7 +1235,8 @@ class EventEditScreen(Screens):
                     anchors=(
                         {"top_target": self.event_buttons[index - 1]}
                         if self.event_buttons.get(index - 1)
-                    else None),
+                        else None
+                    ),
                     container=self.event_list_container,
                     tool_tip_text=preview,
                 )
@@ -5295,9 +5296,11 @@ class EventEditScreen(Screens):
     # MAIN/RANDOM CAT EDITOR
     def generate_main_cat_tab(self):
         self.main_cat_editor["intro"] = UITextBoxTweaked(
-            ("screens.event_edit.mass_death_info"
-            if "mass_death" in self.sub_info
-            else "screens.event_edit.m_c_info"),
+            (
+                "screens.event_edit.mass_death_info"
+                if "mass_death" in self.sub_info
+                else "screens.event_edit.m_c_info"
+            ),
             ui_scale(pygame.Rect((0, 10), (440, -1))),
             object_id="#text_box_30_horizleft_pad_10_10",
             line_spacing=1,

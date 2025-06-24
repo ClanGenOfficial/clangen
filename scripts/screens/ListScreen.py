@@ -536,8 +536,8 @@ class ListScreen(Screens):
         # SORT BY DROPDOWN
         if self.sort_by_dropdown and self.sort_by_dropdown.selected_list[0].replace(
             "screens.list.filter_", ""
-        ) != get_switch(Switches.sort_type
-        ):    sort_type = self.sort_by_dropdown.selected_list[0].replace(
+        ) != get_switch(Switches.sort_type):
+            sort_type = self.sort_by_dropdown.selected_list[0].replace(
                 "screens.list.filter_", ""
             )
             set_switch(Switches.sort_type, sort_type)

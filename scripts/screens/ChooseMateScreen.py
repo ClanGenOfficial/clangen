@@ -810,7 +810,6 @@ class ChooseMateScreen(Screens):
             filter_func=(
                 lambda cat: cat.age
                 in ("young adult", "adult", "senior adult", "senior")
-
             )
         )
         (

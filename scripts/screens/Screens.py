@@ -965,7 +965,6 @@ class Screens:
             self, "next_cat"
         ) and self.next_cat else self.next_cat_button.disable()
 
-
     # pragma pylint: enable=no-member
 
 
