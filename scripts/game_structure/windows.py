@@ -425,7 +425,7 @@ class EditorSaveCheck(UIWindow):
 
 
 class EditorMissingInfo(UIWindow):
-    def __init__(self):
+    def __init__(self, alert_text):
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 200))),
             window_display_title="Info Missing",
@@ -434,13 +434,16 @@ class EditorMissingInfo(UIWindow):
             always_on_top=True,
         )
 
+        text = "windows.editor_missing_info" if not alert_text else alert_text
         self.missing_info = UITextBoxTweaked(
-            "windows.editor_missing_info",
-            ui_scale(pygame.Rect((0, -30), (360, -1))),
+            text,
+            ui_scale(pygame.Rect((0, 30), (360, -1))),
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
-            anchors={"centerx": "centerx", "centery": "centery"},
+            anchors={
+                "centerx": "centerx",
+            },
         )
 
         self.back_button = UIImageButton(

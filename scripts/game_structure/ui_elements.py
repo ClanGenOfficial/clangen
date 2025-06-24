@@ -2289,6 +2289,7 @@ class UICollapsibleContainer(
         container: Optional[IContainerLikeInterface] = None,
         parent_element: Optional[UIElement] = None,
         object_id: Optional[Union[ObjectID, str]] = None,
+        title_object_id: Optional[Union[ObjectID, str]] = None,
         anchors: Optional[Dict[str, Union[str, UIElement]]] = None,
         visible: int = 1,
     ):
@@ -2346,7 +2347,7 @@ class UICollapsibleContainer(
             self.title_text = UITextBoxTweaked(
                 title_text,
                 ui_scale(pygame.Rect((0, 10), (-1, -1))),
-                object_id="#text_box_30_horizleft_pad_10_10",
+                object_id=title_object_id,
                 line_spacing=1,
                 manager=manager,
                 container=self,
