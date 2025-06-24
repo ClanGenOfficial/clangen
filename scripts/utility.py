@@ -481,7 +481,7 @@ def create_new_cat_block(
         cat_social = CatSocial.ROGUE
     elif "loner" in attribute_list:
         cat_social = CatSocial.LONER
-    elif "clancat" in attribute_list or 'former Clancat' in attribute_list:
+    elif "clancat" in attribute_list or "former Clancat" in attribute_list:
         cat_social = CatSocial.CLANCAT
         cat_group = choice(game.clan.other_clans)
     else:

@@ -903,7 +903,7 @@ class Screens:
                 "darkforest"
                 if cat.status.group == CatGroup.DARK_FOREST
                 else "unknown_residence"
-                if cat.ID in game.clan.unknown_cats
+                if cat.status.group == CatGroup.UNKNOWN_RESIDENCE
                 else "starclan"
             )
             self.set_bg(bg=bg, blur_bg=blur_bg)

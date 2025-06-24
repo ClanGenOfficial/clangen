@@ -58,9 +58,6 @@ class Clan:
 
     leader_lives = 0
     clan_cats = []
-    starclan_cats = []
-    darkforest_cats = []
-    unknown_cats = []
     seasons = [
         "Newleaf",
         "Newleaf",
@@ -230,7 +227,6 @@ class Clan:
         self.instructor.dead = True
         self.instructor.dead_for = randint(20, 200)
         self.add_cat(self.instructor)
-        self.add_to_starclan(self.instructor)
         self.all_clans = []
 
         key_copy = tuple(Cat.all_cats.keys())
@@ -301,64 +297,6 @@ class Clan:
         if cat.ID in Cat.all_cats and cat.ID not in self.clan_cats:
             self.clan_cats.append(cat.ID)
 
-    def add_to_starclan(self, cat):  # Same as add_cat
-        """
-        Places the dead cat into StarClan.
-        It should not be removed from the list of cats in the clan
-        """
-        if (
-            cat.ID in Cat.all_cats
-            and cat.dead
-            and cat.ID not in self.starclan_cats
-            and cat.status.group == CatGroup.STAR_CLAN
-        ):
-            # The dead-value must be set to True before the cat can go to starclan
-            self.starclan_cats.append(cat.ID)
-            if cat.ID in self.darkforest_cats:
-                self.darkforest_cats.remove(cat.ID)
-            if cat.ID in self.unknown_cats:
-                self.unknown_cats.remove(cat.ID)
-            if cat.ID in self.med_cat_list:
-                self.med_cat_list.remove(cat.ID)
-                self.med_cat_predecessors += 1
-
-    def add_to_darkforest(self, cat):  # Same as add_cat
-        """
-        Places the dead cat into the dark forest.
-        It should not be removed from the list of cats in the clan
-        """
-        if (
-            cat.ID in Cat.all_cats
-            and cat.dead
-            and cat.status.group == CatGroup.DARK_FOREST
-        ):
-            self.darkforest_cats.append(cat.ID)
-            if cat.ID in self.starclan_cats:
-                self.starclan_cats.remove(cat.ID)
-            if cat.ID in self.unknown_cats:
-                self.unknown_cats.remove(cat.ID)
-            if cat.ID in self.med_cat_list:
-                self.med_cat_list.remove(cat.ID)
-                self.med_cat_predecessors += 1
-            # update_sprite(Cat.all_cats[str(cat)])
-            # The dead-value must be set to True before the cat can go to starclan
-
-    def add_to_unknown(self, cat):
-        """
-        Places dead cat into the unknown residence.
-        It should not be removed from the list of cats in the clan
-        :param cat: cat object
-        """
-        if cat.ID in Cat.all_cats and cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
-            self.unknown_cats.append(cat.ID)
-            if cat.ID in self.starclan_cats:
-                self.starclan_cats.remove(cat.ID)
-            if cat.ID in self.darkforest_cats:
-                self.darkforest_cats.remove(cat.ID)
-            if cat.ID in self.med_cat_list:
-                self.med_cat_list.remove(cat.ID)
-                self.med_cat_predecessors += 1
-
     def add_to_clan(self, cat):
         """
         TODO: DOCS
@@ -371,19 +309,6 @@ class Clan:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
-
-    def add_to_outside(self, cat):  # same as add_cat
-        """
-        Places the gone cat into cotc.
-        It should not be removed from the list of cats in the clan
-        """
-        if (
-            cat.ID in Cat.all_cats
-            and cat.status.is_outsider()
-            and cat.ID not in Cat.outside_cats
-        ):
-            # The outside-value must be set to True before the cat can go to cotc
-            Cat.outside_cats.update({cat.ID: cat})
 
     def remove_cat(self, ID):  # ID is cat.ID
         """
@@ -399,12 +324,6 @@ class Clan:
 
         if ID in self.clan_cats:
             self.clan_cats.remove(ID)
-        if ID in self.starclan_cats:
-            self.starclan_cats.remove(ID)
-        if ID in self.unknown_cats:
-            self.unknown_cats.remove(ID)
-        if ID in self.darkforest_cats:
-            self.darkforest_cats.remove(ID)
 
     def __repr__(self):
         if self.name is not None:
@@ -767,7 +686,6 @@ class Clan:
         for cat in members:
             if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
-                game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
                 print("WARNING: Cat not found:", cat)
         self.load_pregnancy(game.clan)
@@ -917,9 +835,6 @@ class Clan:
         for cat in clan_data["clan_cats"].split(","):
             if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
-                game.clan.add_to_starclan(Cat.all_cats[cat])
-                game.clan.add_to_darkforest(Cat.all_cats[cat])
-                game.clan.add_to_unknown(Cat.all_cats[cat])
             else:
                 print("WARNING: Cat not found:", cat)
         if "war" in clan_data:

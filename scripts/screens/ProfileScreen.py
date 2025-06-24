@@ -305,13 +305,11 @@ class ProfileScreen(Screens):
                 if self.the_cat.dead:
                     if self.the_cat.status.group == CatGroup.DARK_FOREST:
                         self.the_cat.status.add_to_group(new_group=CatGroup.STAR_CLAN)
-                        game.clan.add_to_starclan(self.the_cat)
                         self.the_cat.thought = (
                             "Is relieved to once again hunt in StarClan"
                         )
                     else:
                         self.the_cat.status.add_to_group(new_group=CatGroup.DARK_FOREST)
-                        game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = (
                             "Is distraught after being sent to the Place of No Stars"
                         )

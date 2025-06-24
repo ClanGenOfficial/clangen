@@ -397,7 +397,6 @@ class Pregnancy_Events:
                 kit.status.generate_new_status(
                     age=kit.age, social=cat.status.social, group=cat.status.group
                 )
-                game.clan.add_to_outside(kit)
                 kit.backstory = "outsider1"
 
                 if cat.status.is_exiled(CatGroup.PLAYER_CLAN):
@@ -961,9 +960,6 @@ class Pregnancy_Events:
                         jealousy=parent_to_kit["jealousy"],
                         trust=parent_to_kit["trust"],
                     )
-
-        if blood_parent:
-            clan.unknown_cats.append(blood_parent.ID)
 
         return all_kitten
 

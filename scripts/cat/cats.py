@@ -641,14 +641,8 @@ class Cat:
         if isoutside and self.status.is_exiled():
             self.status.add_to_group(CatGroup.UNKNOWN_RESIDENCE)
 
-        if self.status.is_outsider() and not self.status.is_former_clancat():
-            game.clan.add_to_unknown(self)
-        else:
+        if not self.status.is_outsider() or self.status.is_former_clancat():
             Cat.dead_cats.append(self)
-            if darkforest:
-                game.clan.add_to_darkforest(self)
-            else:
-                game.clan.add_to_starclan(self)
 
         return
 
@@ -888,8 +882,6 @@ class Cat:
 
         for x in self.apprentice:
             Cat.fetch_cat(x).update_mentor()
-
-        game.clan.add_to_outside(self)
 
     def add_to_clan(self) -> list:
         """Makes an "outside cat" a Clan cat. Returns a list of IDs for any additional cats that
@@ -1231,10 +1223,10 @@ class Cat:
             if kitty and kitty.dead and kitty.status.rank != CatRank.NEWBORN:
                 # check where they reside
                 if starclan:
-                    if kitty.ID not in game.clan.starclan_cats:
+                    if kitty.status.group != CatGroup.STAR_CLAN:
                         continue
                 else:
-                    if kitty.ID not in game.clan.darkforest_cats:
+                    if kitty.status.group != CatGroup.DARK_FOREST:
                         continue
                 # guides aren't allowed here
                 if kitty == game.clan.instructor:
@@ -1263,22 +1255,34 @@ class Cat:
                     continue
                 life_givers.append(rel.cat_to.ID)
                 i += 1
+
+        cats_in_starclan = [
+            self.fetch_cat(i)
+            for i in game.clan.clan_cats
+            if self.fetch_cat(i)
+            and i not in life_givers
+            and self.fetch_cat(i).status.group == CatGroup.STAR_CLAN
+        ]
+        cats_in_darkforest = [
+            self.fetch_cat(i)
+            for i in game.clan.clan_cats
+            if self.fetch_cat(i)
+            and i not in life_givers
+            and self.fetch_cat(i).status.group == CatGroup.DARK_FOREST
+        ]
+
         # check amount of life givers, if we need more, then grab from the other dead cats
         if len(life_givers) < 8:
             amount = 8 - len(life_givers)
 
             if starclan:
-                # this part just checks how many SC cats are available, if there aren't enough to fill all the slots,
-                # then we just take however many are available
-
                 possible_sc_cats = [
                     i
-                    for i in game.clan.starclan_cats
-                    if self.fetch_cat(i)
-                    and i not in life_givers
-                    and self.fetch_cat(i).status.rank
-                    not in (CatRank.LEADER, CatRank.NEWBORN)
+                    for i in cats_in_starclan
+                    if i.status.rank not in (CatRank.LEADER, CatRank.NEWBORN)
                 ]
+                # this part just checks how many SC cats are available, if there aren't enough to fill all the slots,
+                # then we just take however many are available
 
                 if len(possible_sc_cats) - 1 < amount:
                     extra_givers = possible_sc_cats
@@ -1287,11 +1291,8 @@ class Cat:
             else:
                 possible_df_cats = [
                     i
-                    for i in game.clan.darkforest_cats
-                    if self.fetch_cat(i)
-                    and i not in life_givers
-                    and self.fetch_cat(i).status.rank
-                    not in (CatRank.LEADER, CatRank.NEWBORN)
+                    for i in cats_in_darkforest
+                    if i.status.rank not in (CatRank.LEADER, CatRank.NEWBORN)
                 ]
                 if len(possible_df_cats) - 1 < amount:
                     extra_givers = possible_df_cats
@@ -1303,53 +1304,26 @@ class Cat:
         # making sure we have a leader at the end
         ancient_leader = False
         if not life_giving_leader:
+            if starclan:
+                leaders = [
+                    x for x in cats_in_starclan if x.status.rank == CatRank.LEADER
+                ]
+            else:
+                leaders = [
+                    x for x in cats_in_darkforest if x.status.rank == CatRank.LEADER
+                ]
+
             # choosing if the life giving leader will be the oldest leader or previous leader
             coin_flip = randint(1, 2)
             if coin_flip == 1:
                 # pick the oldest leader in SC
+                leaders.sort(key=lambda x: -1 * int(x.dead_for))
                 ancient_leader = True
-                if starclan:
-                    sc_cats = game.clan.starclan_cats.copy()
-                    sc_cats.sort(key=lambda x: -1 * int(Cat.fetch_cat(x).dead_for))
-                    for kitty in sc_cats:
-                        if (
-                            self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
-                        ):
-                            life_giving_leader = kitty
-                            break
-                else:
-                    df_kitties = game.clan.darkforest_cats.copy()
-                    df_kitties.sort(key=lambda x: -1 * int(Cat.fetch_cat(x).dead_for))
-                    for kitty in df_kitties:
-                        if (
-                            self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
-                        ):
-                            life_giving_leader = kitty
-                            break
+                life_giving_leader = leaders[0]
             else:
                 # pick previous leader
-                if starclan:
-                    sc_cats = game.clan.starclan_cats.copy()
-                    sc_cats.sort(key=lambda x: int(Cat.fetch_cat(x).dead_for))
-                    for kitty in sc_cats:
-                        if (
-                            self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
-                        ):
-                            life_giving_leader = kitty
-                            break
-                else:
-                    df_kitties = game.clan.darkforest_cats.copy()
-                    df_kitties.sort(key=lambda x: int(Cat.fetch_cat(x).dead_for))
-                    for kitty in df_kitties:
-                        if (
-                            self.fetch_cat(kitty)
-                            and self.fetch_cat(kitty).status.rank == CatRank.LEADER
-                        ):
-                            life_giving_leader = kitty
-                            break
+                leaders.sort(key=lambda x: int(Cat.fetch_cat(x).dead_for))
+                life_giving_leader = leaders[0]
 
         if life_giving_leader:
             life_givers.append(life_giving_leader)

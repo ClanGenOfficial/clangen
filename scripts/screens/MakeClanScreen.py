@@ -2173,7 +2173,6 @@ class MakeClanScreen(Screens):
             starting_season=self.selected_season,
         )
         game.clan.create_clan()
-        # game.clan.starclan_cats.clear()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
         game.clan.herb_supply.start_storage(len(self.members))
