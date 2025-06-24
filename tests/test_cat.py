@@ -3,11 +3,13 @@ import unittest
 from copy import deepcopy
 from unittest.mock import patch
 
+from scripts.game_structure.game_essentials import game
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatRank, CatGroup
+from scripts.cat.enums import CatAge, CatRank, CatGroup, CatSocial
 from scripts.cat_relations.relationship import Relationship
 
 
@@ -639,8 +641,7 @@ class TestNameRepr(unittest.TestCase):
         for status, moons, suffix in statuses:
             with self.subTest("lost clancats", moons=moons):
                 cat = Cat(status_dict=status, moons=moons, suffix="test")
-                cat.status.become_lost()
-                cat.outside = True
+                cat.become_lost()
                 self.assertTrue(str(cat.name).endswith(suffix))
 
     def test_specsuffix_lost(self):
@@ -660,3 +661,64 @@ class TestNameRepr(unittest.TestCase):
                 cat.status.become_lost()
                 cat.name.specsuffix_hidden = True
                 self.assertTrue(str(cat.name).endswith("test"))
+
+
+class TestSocialAssignment(unittest.TestCase):
+
+    def test_clancat_social(self):
+        clancat_ranks = (
+            CatRank.NEWBORN,
+            CatRank.KITTEN,
+            CatRank.APPRENTICE,
+            CatRank.MEDIATOR_APPRENTICE,
+            CatRank.MEDICINE_APPRENTICE,
+            CatRank.MEDICINE_CAT,
+            CatRank.MEDIATOR,
+            CatRank.DEPUTY,
+            CatRank.LEADER,
+            CatRank.ELDER
+        )
+
+        for rank in clancat_ranks:
+            with self.subTest("clancat social assignment"):
+                cat = Cat(status_dict={"rank": rank})
+                self.assertEqual(cat.status.social, CatSocial.CLANCAT)
+
+    def test_outsider_social(self):
+        outsider_ranks = (
+            CatRank.LONER,
+            CatRank.ROGUE,
+            CatRank.KITTYPET
+        )
+        outsider_social = (
+            CatSocial.LONER,
+            CatSocial.ROGUE,
+            CatSocial.KITTYPET
+        )
+
+        for rank, social in zip(outsider_ranks, outsider_social):
+            with self.subTest("outsider social assignment"):
+                cat = Cat(status_dict={"rank": rank})
+                self.assertTrue(cat.status.social == social)
+
+
+class TestRankChange(unittest.TestCase):
+
+    def test_newborn_to_kitten(self):
+        newborn = Cat(status_dict={"rank": CatRank.NEWBORN})
+        newborn.one_moon()
+
+        self.assertEqual(newborn.status.rank, CatRank.KITTEN)
+
+    def test_kitten_to_apprentice(self):
+        kitten = Cat(
+            status_dict={"rank": CatRank.KITTEN},
+            moons=game.config["cat_ages"][CatAge.KITTEN][1])
+        kitten.one_moon()
+
+        self.assertTrue(kitten.status.rank.is_any_apprentice_rank())
+
+    def test_apprentice_to_full_rank(self):
+        warrior_app = Cat(
+            status_dict={"rank": CatRank.APPRENTICE},
+        )
