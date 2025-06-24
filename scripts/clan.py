@@ -32,7 +32,7 @@ from scripts.utility import (
     quit,
     clan_symbol_sprite,
     get_living_clan_cat_count,
-    logger
+    logger,
 )  # pylint: disable=redefined-builtin
 
 
@@ -258,9 +258,7 @@ class Clan:
             if Cat.all_cats.get(cat_id).status == "apprentice":
                 Cat.all_cats.get(cat_id).status_change("apprentice")
             Cat.all_cats.get(cat_id).thoughts(
-                game_mode = self.game_mode,
-                biome = self.biome,
-                camp = self.camp_bg
+                game_mode=self.game_mode, biome=self.biome, camp=self.camp_bg
             )
 
         game.save_cats()

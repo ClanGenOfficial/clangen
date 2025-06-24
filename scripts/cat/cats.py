@@ -1529,7 +1529,7 @@ class Cat:
         ):
             self.update_mentor()
 
-    def thoughts(self, game_mode = None, biome = None, camp = None):
+    def thoughts(self, game_mode=None, biome=None, camp=None):
         """Generates a thought for the cat, which displays on their profile."""
         all_cats = self.all_cats
         other_cat = choice(list(all_cats.keys()))
