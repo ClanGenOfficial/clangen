@@ -70,10 +70,12 @@
             "many": "With the focus of the Clan, %{amount} pieces of prey were... acquired."
         },
         "focus_injury_hoarding": {
+            "zero": "Luckily, nobody in the Clan got %{condition} due to hoarding.",
             "one": "A cat got %{condition} due to hoarding herbs and prey.",
             "many": "Multiple cats got %{condition} due to hoarding herbs and prey."
         },
         "focus_injury_raiding": {
+            "zero": "Luckily, nobody in the Clan got %{condition} during raids.",
             "one": "A cat got %{condition} while raiding other Clans for more prey.",
             "many": "Multiple cats got %{condition} while raiding other Clans for more prey."
         },

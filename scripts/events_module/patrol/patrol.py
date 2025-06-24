@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+import logging
 import random
 from copy import deepcopy
 from itertools import repeat
 from os.path import exists as path_exists
 from random import choice, randint, choices
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Union
 
 import i18n
 import pygame
@@ -29,6 +30,8 @@ from scripts.utility import (
     adjust_list_text,
 )
 from scripts.game_structure.localization import load_lang_resource
+
+logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -57,6 +60,9 @@ class Patrol:
         # Holds new cats for easy access
         self.new_cats: List[List[Cat]] = []
 
+        # False if no debug patrol set, value if one is set
+        self.debug_patrol: Union[bool, str] = False
+
         # the patrols
         self.HUNTING_SZN = None
         self.HUNTING = None
@@ -84,6 +90,12 @@ class Patrol:
         print("PATROL START ---------------------------------------------------")
 
         self.add_patrol_cats(patrol_cats, game.clan)
+
+        self.debug_patrol = (
+            game.config["patrol_generation"]["debug_ensure_patrol_id"]
+            if game.config["patrol_generation"]["debug_ensure_patrol_id"]
+            else False
+        )
 
         final_patrols, final_romance_patrols = self.get_possible_patrols(
             str(game.clan.current_season).casefold(),
@@ -315,7 +327,9 @@ class Patrol:
                     possible_patrols.extend(
                         self.generate_patrol_events(self.NEW_CAT_HOSTILE)
                     )
-                    possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
+                    possible_patrols.extend(
+                        self.generate_patrol_events(self.OTHER_CLAN)
+                    )
                     possible_patrols.extend(
                         self.generate_patrol_events(self.OTHER_CLAN_ALLIES)
                     )
@@ -419,6 +433,12 @@ class Patrol:
                     self.generate_patrol_events(self.OTHER_CLAN_HOSTILE)
                 )
 
+        patrol_ids = [patrol.patrol_id for patrol in possible_patrols]
+        if self.debug_patrol and self.debug_patrol not in patrol_ids:
+            print(
+                "DEBUG: requested patrol not present (check spelling/mismatched season, biome, patrol type, new cat flag, other clan relations, disaster setting)"
+            )
+
         final_patrols, final_romance_patrols = self.get_filtered_patrols(
             possible_patrols, biome, camp, current_season, patrol_type
         )
@@ -431,14 +451,11 @@ class Patrol:
                 "All patrol filters regarding location, session, etc. have been removed."
             )
 
-        # This is a debug option. If the patrol_id set isn "debug_ensure_patrol" is possible,
+        # This is a debug option. If the patrol_id set in "debug_ensure_patrol" is possible,
         # make it the *only* possible patrol
-        if isinstance(game.config["patrol_generation"]["debug_ensure_patrol_id"], str):
+        if self.debug_patrol:
             for _pat in final_patrols:
-                if (
-                    _pat.patrol_id
-                    == game.config["patrol_generation"]["debug_ensure_patrol_id"]
-                ):
+                if _pat.patrol_id == self.debug_patrol:
                     patrol_type = choice(_pat.types) if _pat.types != [] else "general"
                     final_patrols = final_romance_patrols = [_pat]
                     print(
@@ -452,7 +469,7 @@ class Patrol:
                 print(
                     f"debug_ensure_patrol_id: "
                     f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
-                    f"is not found."
+                    f"is not found. Check output for reason."
                 )
         return final_patrols, final_romance_patrols
 
@@ -463,6 +480,10 @@ class Patrol:
             event_id=patrol.patrol_id,
             patrol_leader=self.patrol_leader,
         ):
+            if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                print(
+                    "DEBUG: requested patrol does not meet constraints (relationship type)"
+                )
             return False
 
         if (
@@ -471,12 +492,16 @@ class Patrol:
                 patrol.pl_skill_constraints
             )
         ):
+            if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                print("DEBUG: requested patrol does not meet constraints (pl_skill)")
             return False
 
         if (
             patrol.pl_trait_constraints
             and self.patrol_leader.personality.trait not in patrol.pl_trait_constraints
         ):
+            if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                print("DEBUG: requested patrol does not meet constraints (pl_trait)")
             return False
 
         return True
@@ -574,6 +599,10 @@ class Patrol:
                 continue
 
             if not (patrol.min_cats <= len(self.patrol_cats) <= patrol.max_cats):
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print(
+                        "DEBUG: requested patrol does not meet constraints (min or max cats range)"
+                    )
                 continue
 
             flag = False
@@ -586,25 +615,53 @@ class Patrol:
                     flag = True
                     break
             if flag:
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print(
+                        "DEBUG: requested patrol does not meet constraints (min max status)"
+                    )
                 continue
 
             if not event_for_tags(patrol.tags, Cat):
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print("DEBUG: requested patrol does not meet constraints (tags)")
                 continue
 
             if biome not in patrol.biome and "any" not in patrol.biome:
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print("DEBUG: requested patrol does not meet constraints (biome)")
                 continue
             if camp not in patrol.camp and "any" not in patrol.camp:
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print("DEBUG: requested patrol does not meet constraints (camp)")
                 continue
             if current_season not in patrol.season and "any" not in patrol.season:
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print("DEBUG: requested patrol does not meet constraints (season)")
                 continue
 
             if "hunting" not in patrol.types and patrol_type == "hunting":
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print(
+                        "DEBUG: requested patrol does not meet constraints (patrol type)"
+                    )
                 continue
             elif "border" not in patrol.types and patrol_type == "border":
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print(
+                        "DEBUG: requested patrol does not meet constraints (patrol type)"
+                    )
                 continue
             elif "training" not in patrol.types and patrol_type == "training":
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print(
+                        "DEBUG: requested patrol does not meet constraints (patrol type)"
+                    )
                 continue
             elif "herb_gathering" not in patrol.types and patrol_type == "med":
+                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                    print(
+                        "DEBUG: requested patrol does not meet constraints (patrol type)"
+                    )
                 continue
 
             if "romantic" in patrol.tags:
@@ -633,12 +690,29 @@ class Patrol:
             i = 0
             while not herb_filtered_patrols and i <= len(target_herbs):
                 i += 1
-                herb_filtered_patrols = [patrol for patrol in filtered_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
-                herb_romance_patrols = [patrol for patrol in romantic_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
+                herb_filtered_patrols = [
+                    patrol
+                    for patrol in filtered_patrols
+                    if target_herbs[i] in patrol.herbs_given
+                    or "random_herbs" in patrol.herbs_given
+                ]
+                herb_romance_patrols = [
+                    patrol
+                    for patrol in romantic_patrols
+                    if target_herbs[i] in patrol.herbs_given
+                    or "random_herbs" in patrol.herbs_given
+                ]
 
             if herb_filtered_patrols:
                 filtered_patrols = herb_filtered_patrols
                 romantic_patrols = herb_romance_patrols
+
+                if self.debug_patrol and self.debug_patrol not in [
+                    patrol.patrol_id for patrol in filtered_patrols + romantic_patrols
+                ]:
+                    print(
+                        "DEBUG: requested patrol removed during herb filtering (not target herb)"
+                    )
 
         if not filtered_patrols:
             print(
@@ -897,6 +971,10 @@ class Patrol:
 
             if chosen_prey_size == most_prey_size:
                 filtered_patrols.append(patrol)
+            elif self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                print(
+                    "DEBUG: requested patrol does not meet constraints (failed prey balancing)"
+                )
 
         # if the filtering results in an empty list, don't filter and return whole possible patrols
         if len(filtered_patrols) <= 0:

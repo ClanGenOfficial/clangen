@@ -138,18 +138,22 @@ class GenerateEvents:
                         tags=event["tags"] if "tags" in event else [],
                         weight=event["weight"] if "weight" in event else 20,
                         text=event_text,
-                        new_accessory=event["new_accessory"]
-                        if "new_accessory" in event
-                        else [],
+                        new_accessory=(
+                            event["new_accessory"] if "new_accessory" in event else []
+                        ),
                         m_c=event["m_c"] if "m_c" in event else {},
                         r_c=event["r_c"] if "r_c" in event else {},
                         new_cat=event["new_cat"] if "new_cat" in event else [],
                         injury=event["injury"] if "injury" in event else [],
-                        exclude_involved=event["exclude_involved"] if "exclude_involved" in event else [],
+                        exclude_involved=(
+                            event["exclude_involved"]
+                            if "exclude_involved" in event
+                            else []
+                        ),
                         history=event["history"] if "history" in event else [],
-                        relationships=event["relationships"]
-                        if "relationships" in event
-                        else [],
+                        relationships=(
+                            event["relationships"] if "relationships" in event else []
+                        ),
                         outsider=event["outsider"] if "outsider" in event else {},
                         other_clan=event["other_clan"] if "other_clan" in event else {},
                         supplies=event["supplies"] if "supplies" in event else [],
@@ -246,13 +250,6 @@ class GenerateEvents:
     ):
         final_events = []
         incorrect_format = []
-
-        # Chance to bypass the skill or trait requirements.
-        trait_skill_bypass = 15
-
-        # check if generated event should be a war event
-        if "war" in sub_types and random.randint(1, 10) == 1:
-            sub_types.remove("war")
 
         for event in possible_events:
             if event.history:

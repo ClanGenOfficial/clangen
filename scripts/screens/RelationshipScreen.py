@@ -45,6 +45,20 @@ class RelationshipScreen(Screens):
 
     inspect_cat: Optional[Cat] = None
 
+    # this isn't actually used here (thought likely could, if anyone is looking to refactor a bit
+    # rather this is used for the event editor, if changes are made to what each value is referred to in the code,
+    # this should also change to reflect it so that the editor changes alongside it.
+    # if you modify this, also add a matching string to resources/lang/en/screens/event_edit.en.json
+    rel_value_names = (
+        "romantic",
+        "platonic",
+        "dislike",
+        "comfort",
+        "jealousy",
+        "respect",
+        "trust",
+    )
+
     def __init__(self, name=None):
         super().__init__(name)
         self.all_relations = None
@@ -378,17 +392,21 @@ class RelationshipScreen(Screens):
         self.checkboxes["show_dead"] = UIImageButton(
             ui_scale(pygame.Rect((78, 505), (34, 34))),
             "",
-            object_id="@checked_checkbox"
-            if game.clan.clan_settings["show dead relation"]
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox"
+                if game.clan.clan_settings["show dead relation"]
+                else "@unchecked_checkbox"
+            ),
         )
 
         self.checkboxes["show_empty"] = UIImageButton(
             ui_scale(pygame.Rect((78, 550), (34, 34))),
             "",
-            object_id="@checked_checkbox"
-            if game.clan.clan_settings["show empty relation"]
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox"
+                if game.clan.clan_settings["show empty relation"]
+                else "@unchecked_checkbox"
+            ),
         )
 
     def update_focus_cat(self):
@@ -444,8 +462,16 @@ class RelationshipScreen(Screens):
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats()
 
-        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
-        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
+        (
+            self.next_cat_button.disable()
+            if self.next_cat == 0
+            else self.next_cat_button.enable()
+        )
+        (
+            self.previous_cat_button.disable()
+            if self.previous_cat == 0
+            else self.previous_cat_button.enable()
+        )
 
         self.apply_cat_filter(self.search_bar.get_text())
         self.update_inspected_relation()

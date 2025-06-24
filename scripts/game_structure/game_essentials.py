@@ -15,6 +15,7 @@ pygame.init()
 
 # G A M E
 class Game:
+    event_editing = False
     max_name_length = 10
     # max_events_displayed = 10
     # event_scroll_ct = 0
@@ -73,6 +74,11 @@ class Game:
     }"""
     patrol_cats = {}
     patrolled = []
+
+    outsider_reps = ["welcoming", "neutral", "hostile"]
+    other_clan_reps = ["ally", "neutral", "hostile"]
+
+    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
     # store changing parts of the game that the user can toggle with buttons
     switches = {

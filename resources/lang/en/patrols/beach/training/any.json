@@ -709,7 +709,7 @@
                         "scars": ["RIGHTEAR"]
                     }
                 ],
-                "history_text": { "scar": "m_c got injured as an apprentice while exploring alone." }
+                "history_text": {"scar": "m_c got injured as an apprentice while exploring alone."}
             }
         ]
     },
