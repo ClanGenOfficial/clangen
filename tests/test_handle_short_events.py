@@ -20,17 +20,19 @@ class TestHandleAccessories(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # Mock classes
-        cls.event_class = type('EventClass', (), dict(
-            new_accessory = []
-        ))
-        cls.pelt_class = type('PeltClass', (), dict(
-            wild_accessories=["WILD1", "WILD2"],
-            plant_accessories=["PLANT1", "PLANT2"],
-            collars=["COLLAR1", "COLLAR2"],
-            head_accessories=["HEAD1", "HEAD2"],
-            body_accessories=["BODY1", "BODY2"],
-            tail_accessories=["TAIL1", "TAIL2"],
-        ))
+        cls.event_class = type("EventClass", (), dict(new_accessory=[]))
+        cls.pelt_class = type(
+            "PeltClass",
+            (),
+            dict(
+                wild_accessories=["WILD1", "WILD2"],
+                plant_accessories=["PLANT1", "PLANT2"],
+                collars=["COLLAR1", "COLLAR2"],
+                head_accessories=["HEAD1", "HEAD2"],
+                body_accessories=["BODY1", "BODY2"],
+                tail_accessories=["TAIL1", "TAIL2"],
+            ),
+        )
 
     def setUp(self):
         self.test = HandleShortEvents()
@@ -40,7 +42,7 @@ class TestHandleAccessories(unittest.TestCase):
 
     def assert_intersection(self, a, b):
         """assert that the intersection of iterables a and b is non-empty"""
-        
+
         self.assertTrue(set(a) & set(b))
 
     def test_misc_appended_to_types(self):
@@ -59,13 +61,17 @@ class TestHandleAccessories(unittest.TestCase):
         self.test.chosen_event.new_accessory = ["WILD"]
 
         self.test.handle_accessories(pelts=self.pelt_class)
-        self.assert_intersection(self.test.main_cat.pelt.accessory, self.pelts.wild_accessories)
+        self.assert_intersection(
+            self.test.main_cat.pelt.accessory, self.pelts.wild_accessories
+        )
 
     def test_cat_gets_random_plant_accessory(self):
         self.test.chosen_event.new_accessory = ["PLANT"]
 
         self.test.handle_accessories(pelts=self.pelt_class)
-        self.assert_intersection(self.test.main_cat.pelt.accessory, self.pelts.plant_accessories)
+        self.assert_intersection(
+            self.test.main_cat.pelt.accessory, self.pelts.plant_accessories
+        )
 
     def test_cat_gets_random_collar_accessory(self):
         self.test.chosen_event.new_accessory = ["COLLAR"]
@@ -120,26 +126,30 @@ class TestReset(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # Mock class
-        cls.handle = type('HandleShortEventsClass', (), dict(
-            herb_notice=None,
-            types=[],
-            sub_types=[],
-            text=None,
-            involved_cats=[],
-            main_cat=None,
-            random_cat=None,
-            new_cat_objects=[],
-            new_cats=[],
-            victim_cat=None,
-            murder_index=None,
-            multi_cat=[],
-            dead_cats=[],
-            chosen_herb=None,
-            other_clan=None,
-            other_clan_name=None,
-            chosen_event=None,
-            additional_event_text=""
-        ))
+        cls.handle = type(
+            "HandleShortEventsClass",
+            (),
+            dict(
+                herb_notice=None,
+                types=[],
+                sub_types=[],
+                text=None,
+                involved_cats=[],
+                main_cat=None,
+                random_cat=None,
+                new_cat_objects=[],
+                new_cats=[],
+                victim_cat=None,
+                murder_index=None,
+                multi_cat=[],
+                dead_cats=[],
+                chosen_herb=None,
+                other_clan=None,
+                other_clan_name=None,
+                chosen_event=None,
+                additional_event_text="",
+            ),
+        )
 
     def test_reset_resets_all_attributes_to_default_values(self):
         default = self.handle()

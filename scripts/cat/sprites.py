@@ -782,9 +782,11 @@ class Sprites:
         var = pygame.PixelArray(recolored_symbol)
         var.replace(
             (87, 76, 45),
-            pygame.Color(constants.CONFIG["theme"]["dark_mode_clan_symbols"])
-            if not force_light and get_game_setting("dark mode")
-            else pygame.Color(constants.CONFIG["theme"]["light_mode_clan_symbols"]),
+            (
+                pygame.Color(constants.CONFIG["theme"]["dark_mode_clan_symbols"])
+                if not force_light and get_game_setting("dark mode")
+                else pygame.Color(constants.CONFIG["theme"]["light_mode_clan_symbols"])
+            ),
             distance=0,
         )
         del var

@@ -10,7 +10,7 @@ import ujson
 from scripts.cat.cats import Cat, BACKSTORIES, create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
-from scripts.cat.skills import SkillPath
+from scripts.cat.skills import SkillPath, Skill
 from scripts.events_module.short.handle_short_events import HandleShortEvents
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game_essentials import game
@@ -435,41 +435,45 @@ class EventEditScreen(Screens):
             self.main_cat_info = {
                 "rank": event["m_c"]["status"] if event["m_c"].get("status") else [],
                 "age": event["m_c"]["age"] if event["m_c"].get("age") else [],
-                "rel_status": event["m_c"]["relationship_status"]
+                "rel_status": (event["m_c"]["relationship_status"]
                 if event["m_c"].get("relationship_status")
-                else [],
+                else []),
                 "dies": event["m_c"]["dies"] if event["m_c"].get("dies") else False,
                 "skill": event["m_c"]["skill"] if event["m_c"].get("skill") else [],
-                "not_skill": event["m_c"]["not_skill"]
+                "not_skill": (
+                    event["m_c"]["not_skill"]
                 if event["m_c"].get("not_skill")
-                else [],
+                else []
+                ),
                 "trait": event["m_c"]["trait"] if event["m_c"].get("trait") else [],
-                "not_trait": event["m_c"]["not_trait"]
-                if event["m_c"].get("not_trait")
-                else [],
-                "backstory": event["m_c"]["backstory"]
-                if event["m_c"].get("backstory")
-                else [],
+                "not_trait": (
+                    event["m_c"]["not_trait"] if event["m_c"].get("not_trait") else []
+                ),
+                "backstory": (
+                    event["m_c"]["backstory"] if event["m_c"].get("backstory") else []
+                ),
             }
         if event.get("r_c"):
             self.random_cat_info = {
                 "rank": event["r_c"]["status"] if event["r_c"].get("status") else [],
                 "age": event["r_c"]["age"] if event["r_c"].get("age") else [],
-                "rel_status": event["r_c"]["relationship_status"]
+                "rel_status": (event["r_c"]["relationship_status"]
                 if event["r_c"].get("relationship_status")
-                else [],
+                else []),
                 "dies": event["r_c"]["dies"] if event["r_c"].get("dies") else False,
                 "skill": event["r_c"]["skill"] if event["r_c"].get("skill") else [],
-                "not_skill": event["r_c"]["not_skill"]
+                "not_skill": (
+                    event["r_c"]["not_skill"]
                 if event["r_c"].get("not_skill")
-                else [],
+                else []
+                ),
                 "trait": event["r_c"]["trait"] if event["r_c"].get("trait") else [],
-                "not_trait": event["r_c"]["not_trait"]
-                if event["r_c"].get("not_trait")
-                else [],
-                "backstory": event["r_c"]["backstory"]
-                if event["r_c"].get("backstory")
-                else [],
+                "not_trait": (
+                    event["r_c"]["not_trait"] if event["r_c"].get("not_trait") else []
+                ),
+                "backstory": (
+                    event["r_c"]["backstory"] if event["r_c"].get("backstory") else []
+                ),
             }
         if event.get("new_cat"):
             names = [f"n_c:{index}" for index in range(len(event["new_cat"]))]
@@ -1228,9 +1232,10 @@ class EventEditScreen(Screens):
                     manager=MANAGER,
                     object_id="@buttonstyles_dropdown",
                     starting_height=1,
-                    anchors={"top_target": self.event_buttons[index - 1]}
-                    if self.event_buttons.get(index - 1)
-                    else None,
+                    anchors=(
+                        {"top_target": self.event_buttons[index - 1]}
+                        if self.event_buttons.get(index - 1)
+                    else None),
                     container=self.event_list_container,
                     tool_tip_text=preview,
                 )
@@ -1936,7 +1941,11 @@ class EventEditScreen(Screens):
 
         # CHECKBOXES
         elif event.ui_element in self.new_cat_checkbox.values():
-            event.ui_element.uncheck() if event.ui_element.checked else event.ui_element.check()
+            (
+                event.ui_element.uncheck()
+                if event.ui_element.checked
+                else event.ui_element.check()
+            )
             for info in self.new_cat_bools:
                 if event.ui_element == self.new_cat_checkbox.get(info["tag"]):
                     index = self.new_cat_bools.index(info)
@@ -2070,7 +2079,11 @@ class EventEditScreen(Screens):
 
         # REL STATUS CHECKBOXES
         elif event.ui_element in self.rel_status_checkbox.values():
-            event.ui_element.uncheck() if event.ui_element.checked else event.ui_element.check()
+            (
+                event.ui_element.uncheck()
+                if event.ui_element.checked
+                else event.ui_element.check()
+            )
             for info in self.rel_tag_list:
                 if event.ui_element == self.rel_status_checkbox.get(info["tag"]):
                     index = self.rel_tag_list.index(info)
@@ -2223,7 +2236,11 @@ class EventEditScreen(Screens):
 
         # CHANGE BASIC TAGS
         elif event.ui_element in self.basic_tag_checkbox.values():
-            event.ui_element.uncheck() if event.ui_element.checked else event.ui_element.check()
+            (
+                event.ui_element.uncheck()
+                if event.ui_element.checked
+                else event.ui_element.check()
+            )
             for info in self.basic_tag_list:
                 if event.ui_element == self.basic_tag_checkbox.get(info["tag"]):
                     index = self.basic_tag_list.index(info)
@@ -2259,7 +2276,11 @@ class EventEditScreen(Screens):
 
         # CHANGE RANK TAGS
         elif event.ui_element in self.rank_tag_checkbox.values():
-            event.ui_element.uncheck() if event.ui_element.checked else event.ui_element.check()
+            (
+                event.ui_element.uncheck()
+                if event.ui_element.checked
+                else event.ui_element.check()
+            )
             self.update_tag_info()
 
         # CHANGE ACC CATEGORY
@@ -5258,11 +5279,13 @@ class EventEditScreen(Screens):
                 line_spacing=1,
                 manager=MANAGER,
                 container=self.new_cat_element["checkbox_container"],
-                anchors={
-                    "top_target": prev_element,
-                }
-                if prev_element
-                else None,
+                anchors=(
+                    {
+                        "top_target": prev_element,
+                    }
+                    if prev_element
+                    else None
+                ),
             )
 
             prev_element = self.new_cat_checkbox[f"{info['tag']}_text"]
@@ -5272,9 +5295,9 @@ class EventEditScreen(Screens):
     # MAIN/RANDOM CAT EDITOR
     def generate_main_cat_tab(self):
         self.main_cat_editor["intro"] = UITextBoxTweaked(
-            "screens.event_edit.mass_death_info"
+            ("screens.event_edit.mass_death_info"
             if "mass_death" in self.sub_info
-            else "screens.event_edit.m_c_info",
+            else "screens.event_edit.m_c_info"),
             ui_scale(pygame.Rect((0, 10), (440, -1))),
             object_id="#text_box_30_horizleft_pad_10_10",
             line_spacing=1,
@@ -5684,11 +5707,13 @@ class EventEditScreen(Screens):
                     line_spacing=1,
                     manager=MANAGER,
                     container=self.rel_status_element["checkboxes"],
-                    anchors={
-                        "top_target": prev_element,
-                    }
-                    if prev_element
-                    else None,
+                    anchors=(
+                        {
+                            "top_target": prev_element,
+                        }
+                        if prev_element
+                        else None
+                    ),
                 )
 
                 self.rel_status_checkbox[info["tag"]] = UICheckbox(
@@ -5717,11 +5742,13 @@ class EventEditScreen(Screens):
                 line_spacing=1,
                 manager=MANAGER,
                 container=self.rel_status_element["values"],
-                anchors={
-                    "top_target": prev_element,
-                }
-                if prev_element
-                else None,
+                anchors=(
+                    {
+                        "top_target": prev_element,
+                    }
+                    if prev_element
+                    else None
+                ),
             )
             initial_text = "0"
             for tag in self.current_cat_dict["rel_status"]:
@@ -6147,11 +6174,13 @@ class EventEditScreen(Screens):
                 line_spacing=1,
                 manager=MANAGER,
                 container=self.tag_element["basic_checkbox_container"],
-                anchors={
-                    "top_target": prev_element,
-                }
-                if prev_element
-                else None,
+                anchors=(
+                    {
+                        "top_target": prev_element,
+                    }
+                    if prev_element
+                    else None
+                ),
             )
 
             self.basic_tag_checkbox[info["tag"]] = UICheckbox(

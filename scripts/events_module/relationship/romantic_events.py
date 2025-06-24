@@ -440,6 +440,8 @@ class RomanticEvents:
     def handle_breakup(cat_from: Cat, cat_to: Cat) -> bool:
         """Handles cats breaking up their relationship"""
 
+        RomanticEvents.rebuild_dicts()
+
         if cat_from.ID not in cat_to.mate:
             return False
 

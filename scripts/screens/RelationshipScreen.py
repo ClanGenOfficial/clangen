@@ -59,7 +59,7 @@ class RelationshipScreen(Screens):
         "comfortable",
         "jealousy",
         "admiration",
-        "trust"
+        "trust",
     )
 
     def __init__(self, name=None):
@@ -395,17 +395,21 @@ class RelationshipScreen(Screens):
         self.checkboxes["show_dead"] = UIImageButton(
             ui_scale(pygame.Rect((78, 505), (34, 34))),
             "",
-            object_id="@checked_checkbox"
-            if get_clan_setting("show dead relation")
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox"
+                if get_clan_setting("show dead relation")
+                else "@unchecked_checkbox"
+            ),
         )
 
         self.checkboxes["show_empty"] = UIImageButton(
             ui_scale(pygame.Rect((78, 550), (34, 34))),
             "",
-            object_id="@checked_checkbox"
-            if get_clan_setting("show empty relation")
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox"
+                if get_clan_setting("show empty relation")
+                else "@unchecked_checkbox"
+            ),
         )
 
     def update_focus_cat(self):
@@ -461,8 +465,16 @@ class RelationshipScreen(Screens):
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats()
 
-        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
-        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
+        (
+            self.next_cat_button.disable()
+            if self.next_cat == 0
+            else self.next_cat_button.enable()
+        )
+        (
+            self.previous_cat_button.disable()
+            if self.previous_cat == 0
+            else self.previous_cat_button.enable()
+        )
 
         self.apply_cat_filter(self.search_bar.get_text())
         self.update_inspected_relation()

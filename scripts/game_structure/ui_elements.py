@@ -98,12 +98,16 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                     "Button is tab, but unable to find matching data! Ensure object_id is correct & that buttonstyles has tab_movement key"
                 )
             self.tab_movement = {
-                "hovered": self.tab_data["hovered"]
-                if not hasattr(tab_movement, "hovered")
-                else tab_movement["hovered"],
-                "disabled": self.tab_data["disabled"]
-                if not hasattr(tab_movement, "disabled")
-                else tab_movement["disabled"],
+                "hovered": (
+                    self.tab_data["hovered"]
+                    if not hasattr(tab_movement, "hovered")
+                    else tab_movement["hovered"]
+                ),
+                "disabled": (
+                    self.tab_data["disabled"]
+                    if not hasattr(tab_movement, "disabled")
+                    else tab_movement["disabled"]
+                ),
             }
 
         self._normal_image = image_dict["normal"]
@@ -154,9 +158,11 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
             self.text_layer = UITextBoxTweaked(
                 temp_text,
                 text_rect,
-                object_id=text_layer_object_id
-                if text_layer_object_id is not None
-                else object_id,
+                object_id=(
+                    text_layer_object_id
+                    if text_layer_object_id is not None
+                    else object_id
+                ),
                 container=container,
                 starting_height=self.starting_height,
                 anchors=self.anchors,
@@ -314,9 +320,11 @@ class UIImageButton(pygame_gui.elements.UIButton):
             tool_tip_text_kwargs=tool_tip_text_kwargs,
             starting_height=starting_height,
             parent_element=parent_element,
-            object_id=ObjectID(class_id="@image_button", object_id=object_id)
-            if not isinstance(object_id, ObjectID)
-            else object_id,
+            object_id=(
+                ObjectID(class_id="@image_button", object_id=object_id)
+                if not isinstance(object_id, ObjectID)
+                else object_id
+            ),
             anchors=anchors,
             allow_double_clicks=allow_double_clicks,
             generate_click_events_from=generate_click_events_from,
@@ -2014,6 +2022,8 @@ class UIDropDown(UIDropDownContainer):
             ui_scale(pygame.Rect(dropdown_rect)),
             manager=manager,
             container=self,
+            resize_left=False,
+            resize_top=False,
             anchors=(
                 {
                     "top_target": self.parent_button,
@@ -2342,9 +2352,11 @@ class UICollapsibleContainer(
                 line_spacing=1,
                 manager=manager,
                 container=self,
-                anchors={"left_target": self.top_button}
-                if self.top_button_oriented_left
-                else None,
+                anchors=(
+                    {"left_target": self.top_button}
+                    if self.top_button_oriented_left
+                    else None
+                ),
             )
 
         self.bottom_button = None

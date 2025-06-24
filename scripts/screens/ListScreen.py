@@ -156,7 +156,7 @@ class ListScreen(Screens):
                 if event.ui_element.text == "screens.list.view_dead":
                     # changing dropdown options
                     self.choose_group_dropdown.new_item_list(self.dead_group_names)
-                    self.choose_group_dropdown.disable_child("general.starclan")
+                    self.choose_group_dropdown.set_selected_list(["general.starclan"])
                     self.sort_by_dropdown.new_item_list(self.dead_filter_names)
                     self.sort_by_dropdown.disable_child(
                         f"screens.list.filter_{get_switch(Switches.sort_type)}"
@@ -170,7 +170,7 @@ class ListScreen(Screens):
                 else:
                     # changing dropdown options
                     self.choose_group_dropdown.new_item_list(self.living_group_names)
-                    self.choose_group_dropdown.disable_child("general.your_clan")
+                    self.choose_group_dropdown.set_selected_list(["general.your_clan"])
                     self.sort_by_dropdown.new_item_list(self.dead_filter_names)
                     if get_switch(Switches.sort_type) == "death":
                         set_switch(Switches.sort_type, "rank")
@@ -267,13 +267,17 @@ class ListScreen(Screens):
         self.cat_list_bar_elements["fav_toggle"] = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (38, 34))),
             "",
-            object_id="#fav_cat_toggle_on"
-            if get_clan_setting("show fav")
-            else "#fav_cat_toggle_off",
+            object_id=(
+                "#fav_cat_toggle_on"
+                if get_clan_setting("show fav")
+                else "#fav_cat_toggle_off"
+            ),
             container=self.cat_list_bar,
-            tool_tip_text="screens.list.favorite_hide_tooltip"
-            if get_clan_setting("show fav")
-            else "screens.list.favorite_show_tooltip",
+            tool_tip_text=(
+                "screens.list.favorite_hide_tooltip"
+                if get_clan_setting("show fav")
+                else "screens.list.favorite_show_tooltip"
+            ),
             starting_height=1,
         )
 
@@ -300,15 +304,19 @@ class ListScreen(Screens):
         # SHOW LIVING/DEAD
         self.cat_list_bar_elements["view_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((172, 0), (103, 34))),
-            "screens.list.view_dead"
-            if self.death_status != "dead"
-            else "screens.list.view_living",
+            (
+                "screens.list.view_dead"
+                if self.death_status != "dead"
+                else "screens.list.view_living"
+            ),
             get_button_dict(ButtonStyles.DROPDOWN, (103, 34)),
             object_id="@buttonstyles_dropdown",
             container=self.cat_list_bar,
-            tool_tip_text="screens.list.view_dead_tooltip"
-            if self.death_status != "dead"
-            else "screens.list.view_living_tooltip",
+            tool_tip_text=(
+                "screens.list.view_dead_tooltip"
+                if self.death_status != "dead"
+                else "screens.list.view_living_tooltip"
+            ),
             manager=MANAGER,
             starting_height=1,
         )
@@ -431,18 +439,22 @@ class ListScreen(Screens):
             ui_scale(pygame.Rect((370, 604), (30, 27))),
             container=self.list_screen_container,
             placeholder_text=str(self.current_page),
-            object_id=get_text_box_theme("#page_entry_box")
-            if self.death_status == "living"
-            else ObjectID("#dark", "#page_entry_box"),
+            object_id=(
+                get_text_box_theme("#page_entry_box")
+                if self.death_status == "living"
+                else ObjectID("#dark", "#page_entry_box")
+            ),
             manager=MANAGER,
         )
         self.display_container_elements["page_number"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((365, 602), (100, 30))),
             container=self.list_screen_container,
-            object_id=get_text_box_theme("#text_box_30_horizleft")
-            if self.death_status == "living"
-            else "#text_box_30_horizleft_light",
+            object_id=(
+                get_text_box_theme("#text_box_30_horizleft")
+                if self.death_status == "living"
+                else "#text_box_30_horizleft_light"
+            ),
             manager=MANAGER,
         )  # Text will be filled in later
 
@@ -524,8 +536,8 @@ class ListScreen(Screens):
         # SORT BY DROPDOWN
         if self.sort_by_dropdown and self.sort_by_dropdown.selected_list[0].replace(
             "screens.list.filter_", ""
-        ) != get_switch(Switches.sort_type):
-            sort_type = self.sort_by_dropdown.selected_list[0].replace(
+        ) != get_switch(Switches.sort_type
+        ):    sort_type = self.sort_by_dropdown.selected_list[0].replace(
                 "screens.list.filter_", ""
             )
             set_switch(Switches.sort_type, sort_type)
@@ -612,9 +624,11 @@ class ListScreen(Screens):
                 last_button=self.display_container_elements["last_page_button"],
                 current_page=self.current_page,
                 show_names=True,
-                text_theme=get_text_box_theme("#text_box_30_horizcenter")
-                if self.death_status == "living"
-                else "#text_box_30_horizcenter_light",
+                text_theme=(
+                    get_text_box_theme("#text_box_30_horizcenter")
+                    if self.death_status == "living"
+                    else "#text_box_30_horizcenter_light"
+                ),
                 manager=MANAGER,
                 anchors={
                     "top_target": self.cat_list_bar_elements["search_bar_entry"],

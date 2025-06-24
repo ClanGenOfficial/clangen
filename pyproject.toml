@@ -1,57 +1,56 @@
-[tool.poetry]
+[project]
 name = "clangen"
 version = "0.7.9"
 description = "Fan-edit of the warrior cat clangen game"
 license = "MPL-2.0"
 authors = [
-    "Sablesteel <noemail@null.com>"
+    { name = "Sablesteel", email = "noemail@null.com" },
 ]
 readme = "README.md"
-homepage = "https://clangen.io"
-repository = "https://github.com/ClanGenOfficial/clangen"
-keywords = ["warriorcats", "fanedit", "game", "pygame"]
-package-mode = false
+keywords = [
+    "game",
+    "warrior cat",
+    "fan-edit",
+    "warrior cats",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "black~=23.0",
+    "cryptography~=42.0",
+    "pgpy~=0.6",
+    "platformdirs~=3.3",
+    "pygame-ce~=2.2",
+    "pygame-gui~=0.6",
+    "requests~=2.28",
+    "strenum~=0.4",
+    "ujson~=5.7",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.8,<3.13"
-pygame-ce = "^2.2.1"
-ujson = "^5.7.0"
-pygame-gui = "0.6.12"
-platformdirs = "^3.3.0"
-pypresence = { version = "^4.2.1", optional = true }
-pgpy = "^0.6.0"
-requests = "^2.28.2"
-strenum = "^0.4.10"
-black = { version = "^23.0", python = ">=3.8," }
-cryptography = "^42.0.0"
+[dependency-groups]
+build = [
+    "pillow~=9.5",
+    "pyinstaller~=6.6",
+    "setuptools~=67.7",
+    "wheel~=0.40",
+]
+dev = [
+    "pytest~=8.2",
+]
+docs = [
+    "mkdocs~=1.6",
+    "mkdocs-git-committers-plugin-2>=2.4.1",
+    "mkdocs-git-revision-date-localized-plugin>=1.3.0",
+    "mkdocs-material>=9.5.49",
+]
+test = [
+    "jsonschema>=4.23.0",
+    "pylint>=2.17.3",
+]
 
-[tool.poetry.group.test]
-optional = true
-[tool.poetry.group.test.dependencies]
-pylint = "^2.17.3"
-jsonschema = "^4.23.0"
-
-[tool.poetry.group.build]
-optional = true
-[tool.poetry.group.build.dependencies]
-pyinstaller = "^6.6.0"
-pillow = "^9.5.0"
-setuptools = "^67.7.2"
-wheel = "^0.40.0"
-
-[tool.poetry.group.docs]
-optional = true
-[tool.poetry.group.docs.dependencies]
-mkdocs-material = ">=9.5.49"
-mkdocs = ">=1.6.1"
-mkdocs-git-committers-plugin-2 = ">=2.4.1"
-mkdocs-git-revision-date-localized-plugin = ">=1.3.0"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.2.2"
-
-[tool.poetry.extras]
-discord = ["pypresence"]
+[project.optional-dependencies]
+discord = [
+    "pypresence~=4.2",
+]
 
 [tool.pytest.ini_options]
 pythonpath = [

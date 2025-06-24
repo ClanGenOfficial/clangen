@@ -212,7 +212,7 @@ def _get_box(
     sides: Union[bool, Tuple[bool, bool, bool, bool]] = True,
     use_extra_if_available=True,
     *,
-    scale
+    scale,
 ) -> pygame.Surface:
     """
     A wrapper for get_box that lets it be typehinted & still cache properly

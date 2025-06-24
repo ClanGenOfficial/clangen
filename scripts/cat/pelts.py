@@ -397,7 +397,7 @@ class Pelt:
     acc_categories = {
         "PLANT": plant_accessories,
         "WILD": wild_accessories,
-        "COLLAR": collars
+        "COLLAR": collars,
     }
 
     tail_accessories = [
