@@ -454,9 +454,11 @@ class PatrolScreen(Screens):
 
             self.elements["info"] = pygame_gui.elements.UITextBox(
                 text,
-                ui_scale(pygame.Rect((250, 525), (300, 400))),
+                ui_scale(pygame.Rect((0, 525), (175, -1))),
+                starting_height=0,
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
+                anchors={"centerx": "centerx"},
             )
 
             able_no_med = [
@@ -812,14 +814,16 @@ class PatrolScreen(Screens):
         )
         self.elements["intro_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((75, 150), (300, 300))),
-            pygame.transform.scale(
-                self.patrol_obj.get_patrol_art().premul_alpha(),
-                ui_scale_dimensions((300, 300)),
-            )
-            if game.settings["no sprite antialiasing"]
-            else pygame.transform.smoothscale(
-                self.patrol_obj.get_patrol_art().premul_alpha(),
-                ui_scale_dimensions((300, 300)),
+            (
+                pygame.transform.scale(
+                    self.patrol_obj.get_patrol_art().premul_alpha(),
+                    ui_scale_dimensions((300, 300)),
+                )
+                if game.settings["no sprite antialiasing"]
+                else pygame.transform.smoothscale(
+                    self.patrol_obj.get_patrol_art().premul_alpha(),
+                    ui_scale_dimensions((300, 300)),
+                )
             ),
         )
 
@@ -1048,10 +1052,12 @@ class PatrolScreen(Screens):
                 self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
-                pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50)))
-                if game.settings["no sprite antialiasing"]
-                else pygame.transform.smoothscale(
-                    cat.sprite, ui_scale_dimensions((50, 50))
+                (
+                    pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50)))
+                    if game.settings["no sprite antialiasing"]
+                    else pygame.transform.smoothscale(
+                        cat.sprite, ui_scale_dimensions((50, 50))
+                    )
                 ),
                 cat_object=cat,
                 manager=MANAGER,
@@ -1072,10 +1078,14 @@ class PatrolScreen(Screens):
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(
                     ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
-                    pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50)))
-                    if game.settings["no sprite antialiasing"]
-                    else pygame.transform.smoothscale(
-                        cat.sprite, ui_scale_dimensions((50, 50))
+                    (
+                        pygame.transform.scale(
+                            cat.sprite, ui_scale_dimensions((50, 50))
+                        )
+                        if game.settings["no sprite antialiasing"]
+                        else pygame.transform.smoothscale(
+                            cat.sprite, ui_scale_dimensions((50, 50))
+                        )
                     ),
                     cat_object=cat,
                     manager=MANAGER,
@@ -1247,9 +1257,11 @@ class PatrolScreen(Screens):
                 )
                 self.elements["mate_button"] = UIImageButton(
                     ui_scale(pygame.Rect((148, -4), (104, 26))),
-                    "screens.patrol.select"
-                    if self.mate in self.able_cats
-                    else "screens.patrol.unavailable",
+                    (
+                        "screens.patrol.select"
+                        if self.mate in self.able_cats
+                        else "screens.patrol.unavailable"
+                    ),
                     object_id="#patrol_select_button",
                     manager=MANAGER,
                     anchors={"top_target": self.elements["mate_frame"]},
@@ -1341,9 +1353,11 @@ class PatrolScreen(Screens):
                     # Button to switch to that cat
                     self.elements["app_mentor_button"] = UIImageButton(
                         ui_scale(pygame.Rect((548, -4), (104, 26))),
-                        "screens.patrol.select"
-                        if self.app_mentor in self.able_cats
-                        else "screens.patrol.unavailable",
+                        (
+                            "screens.patrol.select"
+                            if self.app_mentor in self.able_cats
+                            else "screens.patrol.unavailable"
+                        ),
                         object_id="#patrol_select_button",
                         manager=MANAGER,
                         anchors={"top_target": self.elements["app_mentor_frame"]},

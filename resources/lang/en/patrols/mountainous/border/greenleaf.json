@@ -300,7 +300,7 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." }
+                "history_text": {"scar": "m_c was scarred by an invading rogue."}
             }
         ]
     },

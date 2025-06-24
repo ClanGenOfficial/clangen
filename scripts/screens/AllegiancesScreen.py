@@ -14,6 +14,7 @@ from scripts.utility import (
     event_text_adjust,
 )
 from .Screens import Screens
+from ..game_structure.ui_elements import UIModifiedScrollingContainer
 
 
 class AllegiancesScreen(Screens):
@@ -53,9 +54,10 @@ class AllegiancesScreen(Screens):
         self.update_heading_text(f"{game.clan.name}Clan")
         allegiance_list = self.get_allegiances_text()
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(
+        self.scroll_container = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((50, 165), (715, 470))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 
@@ -69,9 +71,11 @@ class AllegiancesScreen(Screens):
                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                     container=self.scroll_container,
                     manager=MANAGER,
-                    anchors={"top_target": self.names_boxes[-1]}
-                    if len(self.names_boxes) > 0
-                    else None,
+                    anchors=(
+                        {"top_target": self.names_boxes[-1]}
+                        if len(self.names_boxes) > 0
+                        else None
+                    ),
                 )
             )
             self.ranks_boxes[-1].disable()
@@ -131,8 +135,7 @@ class AllegiancesScreen(Screens):
         """Determine Text. Ouputs list of tuples."""
 
         living_cats = [
-            cat for cat in Cat.all_cats.values()
-            if not cat.dead and not cat.outside
+            cat for cat in Cat.all_cats.values() if not cat.dead and not cat.outside
         ]
         living_meds = []
         living_mediators = []

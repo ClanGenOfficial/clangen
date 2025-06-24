@@ -2306,7 +2306,7 @@
                     "text": "Two lovers met in leaf-bare at the border between their Clans, under the shelter of a bushy white-berried yew. One night, it was not love that met there, but a great battle between their rival Clans, one neither would stagger from alive. The yew drank of their blood, and in the colder moons, even now, you can see it shining in its deathberries.",
                     "exp": 40,
                     "weight": 20,
-                    "herbs": ["random_herbs"],
+                "herbs": ["random_herbs"],
                     "relationships": [
                         {
                             "cats_to": ["p_l"],
