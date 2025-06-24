@@ -12,12 +12,12 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
+from scripts.housekeeping.datadir import open_data_dir
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
-    ui_scale_offset,
-    open_data_dir
+    ui_scale_offset
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen

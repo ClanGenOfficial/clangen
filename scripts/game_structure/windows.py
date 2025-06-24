@@ -37,6 +37,7 @@ from scripts.housekeeping.datadir import (
     get_save_dir,
     get_cache_dir,
     get_saved_images_dir,
+    open_data_dir,
 )
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import (
@@ -55,8 +56,7 @@ from scripts.utility import (
     logger,
     process_text,
     ui_scale_dimensions,
-    ui_scale_offset,
-    open_data_dir
+    ui_scale_offset
 )
 
 if TYPE_CHECKING:
