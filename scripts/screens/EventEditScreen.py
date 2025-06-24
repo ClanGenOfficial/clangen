@@ -3479,6 +3479,8 @@ class EventEditScreen(Screens):
 
     def update_trait_info(self, trait_dict, selected_list):
         saved_traits = "trait" if self.trait_allowed else "not_trait"
+        if saved_traits not in self.current_cat_dict.keys():
+            return
 
         if self.current_cat_dict.get(saved_traits):
             selected_traits = set(self.current_cat_dict.get(saved_traits)).intersection(
