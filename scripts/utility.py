@@ -209,9 +209,9 @@ def get_random_moon_cat(
         cat
         for cat in Cat.all_cats.values()
         if not cat.dead
-            and not cat.exiled
-            and not cat.outside
-            and (cat.ID != main_cat.ID)
+        and not cat.exiled
+        and not cat.outside
+        and (cat.ID != main_cat.ID)
     ]
 
     if possible_r_c:

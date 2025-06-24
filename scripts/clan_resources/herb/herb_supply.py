@@ -466,9 +466,7 @@ class HerbSupply:
                 if not game.clan.override_biome
                 else game.clan.override_biome
             ).casefold()
-        ][
-            game.clan.current_season.casefold()
-        ]
+        ][game.clan.current_season.casefold()]
 
         # the amount of herb types the med has found
         amount_of_herbs = (
@@ -786,9 +784,11 @@ class HerbSupply:
         # create and append log message
         message = i18n.t(
             "screens.med_den.herb_used",
-            herb=(self.herb[herb_used].plural_display
-            if amount_used > 1
-            else str("a ") + self.herb[herb_used].singular_display),
+            herb=(
+                self.herb[herb_used].plural_display
+                if amount_used > 1
+                else str("a ") + self.herb[herb_used].singular_display
+            ),
             condition=condition,
             effect=effect_message,
         )
