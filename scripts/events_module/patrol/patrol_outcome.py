@@ -708,7 +708,10 @@ class PatrolOutcome:
                 found_herbs[herb] = amount
 
             # add found_herbs to storage and get patrol outcome msg
-            list_of_herb_strs, found_herbs = game.clan.herb_supply.handle_found_herbs_outcomes(found_herbs)
+            (
+                list_of_herb_strs,
+                found_herbs,
+            ) = game.clan.herb_supply.handle_found_herbs_outcomes(found_herbs)
 
         herb_string = adjust_list_text(list_of_herb_strs).capitalize()
 

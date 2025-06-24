@@ -681,7 +681,7 @@
                 "text": "As s_c rarely has patience for other cats, {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} s_c harshly that {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have time for some mouse-brain who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out from the loose rocks.",
                 "exp": 0,
                 "weight": 20,
-                "can_have_stat": [ "r_c" ],
+                "can_have_stat": ["r_c"],
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",

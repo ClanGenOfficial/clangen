@@ -1,19 +1,20 @@
 {
     "general": {
         "body": [
-            "r_c nuzzles against the fur of {PRONOUN/r_c/poss} dead child, {PRONOUN/r_c/poss} kit, {PRONOUN/r_c/poss} m_c, and feels as though the world has ended.",
-            "No parent wants to outlive their child, and r_c wails over m_c's body.",
-            "r_c lays next to m_c's body, numb to the world around {PRONOUN/r_c/object}.",
-            "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
-            "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-            "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
-            "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
+            "r_c sits all night at m_c's vigil, struggling to cling to comfort {PRONOUN/r_c/subject} once felt with {PRONOUN/r_c/poss} kit at {PRONOUN/r_c/poss} side.",
+            "r_c feels {PRONOUN/r_c/poss} world shift under {PRONOUN/r_c/poss} feet at the loss of m_c. All the warmth, security, and love that {PRONOUN/r_c/poss} kit brought to {PRONOUN/r_c/poss} life is taken away in an instant.",
+            "The world seemed brighter and warmer to r_c with {PRONOUN/r_c/poss} kit by {PRONOUN/r_c/poss} side, and {PRONOUN/r_c/subject} never imagined m_c would be taken first.",
+            "r_c can't put into words how much comfort and joy m_c brought to {PRONOUN/r_c/poss} life from the first moment {PRONOUN/r_c/subject} laid eyes on {PRONOUN/m_c/object}.",
+            "The vigil is impossible for r_c to sit through in its entirety. Without {PRONOUN/r_c/poss} kit, m_c, the world is bleak.",
+            "r_c treasured the easy, companionable silences with m_c that only kin can share. Now, the silence of death fills the air between r_c and {PRONOUN/r_c/poss} kit."
         ],
         "no_body": [
-            "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
-            "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-            "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
-            "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
+            "r_c sits all night at m_c's vigil, struggling to cling to comfort {PRONOUN/r_c/subject} once felt with {PRONOUN/r_c/poss} kit at {PRONOUN/r_c/poss} side.",
+            "r_c feels {PRONOUN/r_c/poss} world shift under {PRONOUN/r_c/poss} feet at the loss of m_c. All the warmth, security, and love that {PRONOUN/r_c/poss} kit brought to {PRONOUN/r_c/poss} life is taken away in an instant.",
+            "The world seemed brighter and warmer to r_c with {PRONOUN/r_c/poss} kit by {PRONOUN/r_c/poss} side, and {PRONOUN/r_c/subject} never imagined m_c would be taken first.",
+            "r_c can't put into words how much comfort and joy m_c brought to {PRONOUN/r_c/poss} life from the first moment {PRONOUN/r_c/subject} laid eyes on {PRONOUN/m_c/object}.",
+            "The vigil is impossible for r_c to sit through in its entirety. Without {PRONOUN/r_c/poss} kit, m_c, the world is bleak.",
+            "r_c treasured the easy, companionable silences with m_c that only kin can share. Now, the silence of death fills the air between r_c and {PRONOUN/r_c/poss} kit."
         ]
     },
     "adventurous": {

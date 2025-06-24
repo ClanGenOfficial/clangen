@@ -63,16 +63,16 @@ jobs:
         shell: bash -l {0}
     steps:
       - uses: actions/checkout@v4
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v3
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          poetry-version: latest
+          enable-cache: true
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python_version }}
           architecture: ${{ matrix.python_arch }}
-          cache: "poetry"
       - name: Install build dependencies (Ubuntu)
         if: startsWith(matrix.os, 'ubuntu')
         run: |
@@ -99,7 +99,7 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
-        run: poetry install --with build -E discord
+        run: uv sync --group build --extra discord
       - name: Build PyInstaller bootloader
         run: |
           git clone https://github.com/pyinstaller/pyinstaller.git
@@ -108,7 +108,7 @@ jobs:
           cd bootloader
           python ./waf all
           cd ../../
-          poetry run pip install -e pyinstaller
+          uv pip install -e pyinstaller
       - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
@@ -137,12 +137,12 @@ jobs:
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller (Development)
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python -m PyInstaller Clangen.spec
+        run: uv run pyinstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller (Release)
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python -m PyInstaller Clangen.spec
+        run: uv run pyinstaller Clangen.spec
         env:
           IS_RELEASE: 1
       - name: Create archive (Linux)
