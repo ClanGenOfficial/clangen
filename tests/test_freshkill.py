@@ -95,7 +95,7 @@ class FreshkillPileTest(unittest.TestCase):
             game_mode="expanded",
             starting_season="Newleaf",
         )
-        test_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        test_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         test_clan.add_cat(test_warrior)
 
         # then
@@ -113,11 +113,11 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 
-        youngest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        youngest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         youngest_warrior.moons = 20
-        middle_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        middle_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         middle_warrior.moons = 30
-        oldest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        oldest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         oldest_warrior.moons = 40
 
         freshkill_pile.add_cat_to_nutrition(youngest_warrior)
@@ -156,11 +156,11 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 
-        lowest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        lowest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         lowest_warrior.moons = 20
-        middle_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        middle_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         middle_warrior.moons = 30
-        highest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        highest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         highest_warrior.moons = 40
 
         freshkill_pile.add_cat_to_nutrition(lowest_warrior)
@@ -203,11 +203,11 @@ class FreshkillPileTest(unittest.TestCase):
     def test_tactic_sick_injured_first(self) -> None:
         # given
         # young enough kid
-        injured_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        injured_cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         injured_cat.injuries["test_injury"] = {"severity": "major"}
-        sick_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        sick_cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         sick_cat.illnesses["test_illness"] = {"severity": "major"}
-        healthy_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        healthy_cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
 
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some warriors
@@ -237,11 +237,11 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 
-        lowest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        lowest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         lowest_warrior.experience = 20
-        middle_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        middle_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         middle_warrior.experience = 30
-        highest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        highest_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         highest_warrior.experience = 40
 
         freshkill_pile.add_cat_to_nutrition(lowest_warrior)
@@ -280,13 +280,13 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile.pile["expires_in_4"] = current_amount
         freshkill_pile.total_amount = current_amount
 
-        best_hunter_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        best_hunter_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         best_hunter_warrior.skills.primary = Skill(SkillPath.HUNTER, 25)
         self.assertEqual(best_hunter_warrior.skills.primary.tier, 3)
-        hunter_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        hunter_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         hunter_warrior.skills.primary = Skill(SkillPath.HUNTER, 0)
         self.assertEqual(hunter_warrior.skills.primary.tier, 1)
-        no_hunter_warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        no_hunter_warrior = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         no_hunter_warrior.skills.primary = Skill(SkillPath.MEDIATOR, 0, True)
 
         freshkill_pile.add_cat_to_nutrition(best_hunter_warrior)
@@ -324,16 +324,16 @@ class FreshkillPileTest(unittest.TestCase):
     def test_queen_handling(self) -> None:
         # given
         # young enough kid
-        mother = Cat(status_dict={"rank": CatRank.WARRIOR})
+        mother = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         mother.gender = "female"
-        father = Cat(status_dict={"rank": CatRank.WARRIOR})
+        father = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         father.gender = "male"
-        kid = Cat(status_dict={"rank": CatRank.KITTEN})
+        kid = Cat(status_dict={"rank": CatRank.KITTEN}, moons=1)
         kid.moons = 2
         kid.parent1 = father
         kid.parent2 = mother
 
-        no_parent = Cat(status_dict={"rank": CatRank.WARRIOR})
+        no_parent = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
 
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior
@@ -369,10 +369,10 @@ class FreshkillPileTest(unittest.TestCase):
     def test_pregnant_handling(self) -> None:
         # given
         # young enough kid
-        pregnant_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        pregnant_cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         pregnant_cat.injuries["pregnant"] = {"severity": "minor"}
-        cat2 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        cat3 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        cat2 = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
+        cat3 = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
 
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior
@@ -398,11 +398,11 @@ class FreshkillPileTest(unittest.TestCase):
     def test_sick_handling(self) -> None:
         # given
         # young enough kid
-        injured_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        injured_cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         injured_cat.injuries["claw-wound"] = {"severity": "major"}
-        sick_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        sick_cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
         sick_cat.illnesses["diarrhea"] = {"severity": "major"}
-        healthy_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        healthy_cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=1)
 
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some warriors
