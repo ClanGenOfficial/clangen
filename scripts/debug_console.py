@@ -1,7 +1,6 @@
 """
 Stores the DebugMenu class and the DebugMode class
 """
-
 import pygame
 import pygame_gui
 import html

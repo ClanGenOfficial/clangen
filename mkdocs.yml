@@ -16,7 +16,6 @@ nav:
     - Code:
         - dev/code/index.md
         - dev/code/content-adding.md
-        - dev/code/localization.md
     - Writing:
         - dev/writing/index.md
         - Reference:

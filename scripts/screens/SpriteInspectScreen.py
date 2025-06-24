@@ -12,8 +12,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_offset,
-    get_text_box_theme,
-)
+    get_text_box_theme, )
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
@@ -286,11 +285,9 @@ class SpriteInspectScreen(Screens):
             "",
             object_id="#fav_star" if self.the_cat.favourite else "#not_fav_star",
             manager=MANAGER,
-            tool_tip_text=(
-                "general.remove_favorite"
-                if self.the_cat.favourite
-                else "general.mark_favorite"
-            ),
+            tool_tip_text="general.remove_favorite"
+            if self.the_cat.favourite
+            else "general.mark_favorite",
             starting_height=2,
             anchors={"right": "right", "right_target": self.cat_elements["cat_name"]},
         )
@@ -395,7 +392,7 @@ class SpriteInspectScreen(Screens):
             scars_hidden=not self.scars_shown,
             acc_hidden=not self.acc_shown,
             always_living=self.override_dead_lineart,
-            disable_sick_sprite=self.override_not_working,
+            no_not_working=self.override_not_working,
         )
 
         self.cat_elements["cat_image"] = pygame_gui.elements.UIImage(
@@ -446,6 +443,7 @@ class SpriteInspectScreen(Screens):
         return super().exit_screen()
 
     def update_disabled_buttons(self):
+
         self.update_previous_next_cat_buttons()
 
         if self.displayed_life_stage >= len(self.valid_life_stages) - 1:

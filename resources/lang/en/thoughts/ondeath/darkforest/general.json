@@ -3,7 +3,7 @@
         "id": "general_death_dark_forest_thoughts",
         "thoughts": [
             "Is startled to find {PRONOUN/m_c/self} wading in the muck of a shadowed forest",
-            "Is watching {PRONOUN/m_c/poss} own vigil",
+            "Is watching {PRONOUN/m_c/poss} own vigil", 
             "Wants to comfort a Clanmate who is grieving over {PRONOUN/m_c/object}"
         ]
     },

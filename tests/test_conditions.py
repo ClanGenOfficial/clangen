@@ -9,6 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.conditions import medicine_cats_can_cover_clan
 
 
+
 class TestsMedCondition(unittest.TestCase):
     def test_fulfilled(self):
         cat1 = Cat(moons=20)
@@ -66,7 +67,7 @@ class TestsIllnesses(unittest.TestCase):
         resource_directory = "resources/dicts/conditions/"
 
         illnesses = None
-        with open(f"{resource_directory}Illnesses.json", "r") as read_file:
+        with open(f"{resource_directory}Illnesses.json", 'r') as read_file:
             illnesses = ujson.loads(read_file.read())
         return illnesses
 
@@ -76,6 +77,7 @@ class TestInjury(unittest.TestCase):
         resource_directory = "resources/dicts/conditions/"
 
         injuries = None
-        with open(f"{resource_directory}Injuries.json", "r") as read_file:
+        with open(f"{resource_directory}Injuries.json", 'r') as read_file:
             injuries = ujson.loads(read_file.read())
         return injuries
+    

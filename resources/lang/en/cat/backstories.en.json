@@ -56,7 +56,6 @@
         "outsider1": "m_c was born outside of a Clan.",
         "outsider2": "m_c was born outside of a Clan, but at {PRONOUN/m_c/poss} birth one parent was a member of a Clan.",
         "outsider3": "m_c was born outside of a Clan, while {PRONOUN/m_c/poss} parent was lost.",
-        "stolenkit1": "{PRONOUN/m_c/subject/CAP} was a victim of war, stolen from a rival Clan at a young age.",
         "unknown": "%{name}'s past history is unknown.",
         "cats_outside_the_clan": "This cat is a %{status} and currently resides outside of the Clans.",
         "cats_outside_the_clan_dead": "This cat was a %{status} in life.",

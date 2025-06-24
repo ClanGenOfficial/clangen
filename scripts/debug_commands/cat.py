@@ -42,9 +42,7 @@ class ListCatsCommand(Command):
 
     def callback(self, args: List[str]):
         for cat in Cat.all_cats_list:
-            add_output_line_to_log(
-                f"{cat.ID} - {cat.name}, {cat.status}, {cat.moons} moons old"
-            )
+            add_output_line_to_log(f"{cat.ID} - {cat.name}, {cat.status}, {cat.moons} moons old")
 
 
 class AgeCatsCommand(Command):
@@ -80,7 +78,7 @@ class CatsCommand(Command):
         AddCatCommand(),
         RemoveCatCommand(),
         ListCatsCommand(),
-        AgeCatsCommand(),
+        AgeCatsCommand()
     ]
 
     def callback(self, args: List[str]):

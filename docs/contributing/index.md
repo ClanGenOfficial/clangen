@@ -21,16 +21,16 @@ If you want to create a new page, create a new `.md` file. Then edit `mkdocs.yml
 !!! important
     If you only want to contribute documentation, you don't **have** to do this. Building the documentation creates a local copy of the documentation website on your computer, which can be useful for previewing your changes, but isn't necessarily required.
 
-### Using uv
+### Using Poetry
 
-1. Install uv (see [CONTRIBUTING.md](https://github.com/ClanGenOfficial/clangen/blob/development/CONTRIBUTING.md) for details).
+1. Install Poetry (see [CONTRIBUTING.md](https://github.com/ClanGenOfficial/clangen/blob/development/CONTRIBUTING.md) for details).
 2. Install dependencies:
    ```
-   uv sync --group docs
+   poetry install --only docs --no-root
    ```
 3. Build and serve documentation:
    ```
-   uv run mkdocs serve
+   poetry run mkdocs serve
    ```
    Running this command will build the documentation and start a local server on your computer. While the server is running, you can access the documentation at [http://localhost:8000](http://localhost:8000). The site will update whenever the files in `/docs` are changed.
 
@@ -45,4 +45,4 @@ If you want to create a new page, create a new `.md` file. Then edit `mkdocs.yml
    ```
    docker run -p 8000:80 clangen-docs
    ```
-4. You can access the documentation at [http://localhost:8000](http://localhost:8000). Unlike with uv, this site will *not* update when the files in `/docs` are changed. To update the site, you have to close the server, then rebuild the image and run the server again.
+4. You can access the documentation at [http://localhost:8000](http://localhost:8000). Unlike with Poetry, this site will *not* update when the files in `/docs` are changed. To update the site, you have to close the server, then rebuild the image and run the server again.

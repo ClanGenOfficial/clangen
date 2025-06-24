@@ -7,7 +7,6 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 from scripts.cat.cats import Cat
 from scripts.cat.thoughts import Thoughts
 
-
 class TestNotWorkingThoughts(unittest.TestCase):
     def setUp(self):
         self.main = Cat(status="warrior")
@@ -24,70 +23,52 @@ class TestNotWorkingThoughts(unittest.TestCase):
 
     def available_thought_ids(self):
         """Return a list of id's for available thoughts"""
-        possible = [
-            thought
-            for thought in self.thoughts
-            if Thoughts.cats_fulfill_thought_constraints(
-                self.main,
-                self.other,
-                thought,
-                "expanded",
-                self.biome,
-                self.season,
-                self.camp,
-            )
-        ]
+        possible = [thought for thought in self.thoughts if
+                    Thoughts.cats_fulfill_thought_constraints(
+                        self.main,
+                        self.other,
+                        thought,
+                        "expanded",
+                        self.biome,
+                        self.season,
+                        self.camp)]
 
         return {thought["id"] for thought in possible}
 
     def test_not_working_thought_null(self):
-        self.assertEqual(
-            {"test_not_working_false", "test_not_working_any"},
-            self.available_thought_ids(),
-        )
+        self.assertEqual({"test_not_working_false", "test_not_working_any"}, self.available_thought_ids())
 
     def test_not_working_thought_injury_minor(self):
         # given
         self.main.injuries["test-injury-1"] = {"severity": "minor"}
 
         # then
-        self.assertEqual(
-            {"test_not_working_false", "test_not_working_any"},
-            self.available_thought_ids(),
-        )
+        self.assertEqual({"test_not_working_false", "test_not_working_any"}, self.available_thought_ids())
 
     def test_not_working_thought_injury_major(self):
         # given
         self.main.injuries["test-injury-1"] = {"severity": "major"}
 
         # then
-        self.assertEqual(
-            {"test_not_working_any", "test_not_working_true"},
-            self.available_thought_ids(),
-        )
+        self.assertEqual({"test_not_working_any", "test_not_working_true"}, self.available_thought_ids())
 
     def test_not_working_thought_illness_minor(self):
         # given
         self.main.illnesses["test-illness-1"] = {"severity": "minor"}
 
         # then
-        self.assertEqual(
-            {"test_not_working_false", "test_not_working_any"},
-            self.available_thought_ids(),
-        )
+        self.assertEqual({"test_not_working_false", "test_not_working_any"}, self.available_thought_ids())
 
     def test_not_working_thought_illness_major(self):
         # given
         self.main.illnesses["test-illness-1"] = {"severity": "major"}
 
         # then
-        self.assertEqual(
-            {"test_not_working_any", "test_not_working_true"},
-            self.available_thought_ids(),
-        )
+        self.assertEqual({"test_not_working_any", "test_not_working_true"}, self.available_thought_ids())
 
 
 class TestsGetStatusThought(unittest.TestCase):
+
     def test_medicine_thought(self):
         # given
         medicine = Cat()
@@ -100,9 +81,7 @@ class TestsGetStatusThought(unittest.TestCase):
         camp = "camp2"
 
         # load thoughts
-        thoughts = Thoughts.load_thoughts(
-            medicine, warrior, "expanded", biome, season, camp
-        )
+        thoughts = Thoughts.load_thoughts(medicine, warrior, "expanded", biome, season, camp)
 
         # when
         function_thoughts = thoughts
@@ -132,6 +111,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
 
 class TestFamilyThoughts(unittest.TestCase):
+
     def test_family_thought_young_children(self):
         # given
         parent = Cat(moons=40)
@@ -141,20 +121,16 @@ class TestFamilyThoughts(unittest.TestCase):
         camp = "camp2"
 
         # when
-        function_thoughts1 = Thoughts.load_thoughts(
-            parent, kit, "expanded", biome, season, camp
-        )
-        function_thoughts2 = Thoughts.load_thoughts(
-            kit, parent, "expanded", biome, season, camp
-        )
+        function_thoughts1 = Thoughts.load_thoughts(parent, kit, "expanded", biome, season, camp)
+        function_thoughts2 = Thoughts.load_thoughts(kit, parent, "expanded", biome, season, camp)
 
         # then
-        """
+        '''
         self.assertTrue(all(t in own_collection_thoughts for t in function_thoughts1))
         self.assertFalse(all(t in not_collection_thoughts for t in function_thoughts1))
         self.assertEqual(function_thoughts2,[])
-        """
-
+        '''
+    
     def test_family_thought_unrelated(self):
         # given
         cat1 = Cat(moons=40)

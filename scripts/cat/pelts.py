@@ -4,7 +4,6 @@ from re import sub
 
 import i18n
 
-import scripts.game_structure.screen_settings
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import get_lang_config
@@ -271,7 +270,6 @@ class Pelt:
     ]
 
     # make sure to add plural and singular forms of new accs to acc_display.json so that they will display nicely
-
     plant_accessories = [
         "MAPLE LEAF",
         "HOLLY",
@@ -327,6 +325,18 @@ class Pelt:
         "MONARCH BUTTERFLY",
         "CICADA WINGS",
         "BLACK CICADA",
+    ]
+
+    tail_accessories = [
+        "RED FEATHERS",
+        "BLUE FEATHERS",
+        "JAY FEATHERS",
+        "GULL FEATHERS",
+        "SPARROW FEATHERS",
+        "CLOVER",
+        "DAISY",
+        "WISTERIA",
+        "GOLDEN CREEPING JENNY",
     ]
     collars = [
         "CRIMSON",
@@ -389,26 +399,6 @@ class Pelt:
         "PURPLENYLON",
         "MULTINYLON",
         "INDIGONYLON",
-    ]
-
-    # this is used for acc-giving events, only change if you're adding a new category tag to the event filter
-    # adding a category here will automatically update the event editor's options
-    acc_categories = {
-        "PLANT": plant_accessories,
-        "WILD": wild_accessories,
-        "COLLAR": collars,
-    }
-
-    tail_accessories = [
-        "RED FEATHERS",
-        "BLUE FEATHERS",
-        "JAY FEATHERS",
-        "GULL FEATHERS",
-        "SPARROW FEATHERS",
-        "CLOVER",
-        "DAISY",
-        "WISTERIA",
-        "GOLDEN CREEPING JENNY",
     ]
 
     head_accessories = [
@@ -735,14 +725,12 @@ class Pelt:
         self.vitiligo = vitiligo
         self.length = length
         self.points = points
-        self.rebuild_sprite = True
-        self._accessory = accessory
-        self._paralyzed = paralyzed
+        self.accessory = accessory
+        self.paralyzed = paralyzed
         self.opacity = opacity
         self.scars = scars if isinstance(scars, list) else []
         self.tint = tint
         self.white_patches_tint = white_patches_tint
-        self.screen_scale = scripts.game_structure.screen_settings.screen_scale
         self.cat_sprites = {
             "kitten": kitten_sprite if kitten_sprite is not None else 0,
             "adolescent": adol_sprite if adol_sprite is not None else 0,
@@ -759,24 +747,6 @@ class Pelt:
 
         self.reverse = reverse
         self.skin = skin
-
-    @property
-    def accessory(self):
-        return self._accessory
-
-    @accessory.setter
-    def accessory(self, val):
-        self.rebuild_sprite = True
-        self._accessory = val
-
-    @property
-    def paralyzed(self):
-        return self._paralyzed
-
-    @paralyzed.setter
-    def paralyzed(self, val):
-        self.rebuild_sprite = True
-        self._paralyzed = val
 
     @staticmethod
     def generate_new_pelt(gender: str, parents: tuple = (), age: str = "adult"):
@@ -886,6 +856,7 @@ class Pelt:
             self.accessory = []
         elif isinstance(self.accessory, str):
             self.accessory = [self.accessory]
+
 
     def init_eyes(self, parents):
         """Sets eye color for this cat's pelt. Takes parents' eye colors into account.
@@ -1273,7 +1244,9 @@ class Pelt:
 
         if acc_display_choice == 1:
             self.accessory = [
-                choice([choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)])
+                choice(
+                    [choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)]
+                )
             ]
         else:
             self.accessory = []

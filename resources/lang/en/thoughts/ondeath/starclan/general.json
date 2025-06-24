@@ -6,7 +6,7 @@
             "Is begging StarClan to send {PRONOUN/m_c/object} back",
             "Is watching {PRONOUN/m_c/poss} own vigil",
             "Wants to comfort a Clanmate who is grieving over {PRONOUN/m_c/object}",
-            "Is overwhelmed after meeting so many starry cats",
+            "Is overwhelmed after meeting so many starry cats", 
             "Is regretting leaving {PRONOUN/m_c/poss} Clan without {PRONOUN/m_c/object}" 
         ]
     }

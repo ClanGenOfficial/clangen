@@ -24,7 +24,6 @@
         "location": "location",
         "descriptor": "descriptor",
         "miscellaneous": "miscellaneous",
-        "editor_save_check_message": "This event will be saved to:",
         "save_check_message": "Would you like to save your game before exiting? If you don't, progress may be lost!",
         "delete_check_message": "Do you wish to delete %{clan}? This is permanent and cannot be undone.",
         "delete_yes": "Delete it!",
@@ -89,7 +88,6 @@
         "focus_prompt": "<b>Which Clans will you target?</b>",
         "confirm_changes": "Confirm changes",
         "revert": "Revert",
-        "display_change_confirm": "Do you want to keep these changes? Display changes will be reverted in %{count} seconds.",
-        "editor_missing_info": "Uh oh! There's something missing. Have you added an event text, ID, type, and weight?"
+        "display_change_confirm": "Do you want to keep these changes? Display changes will be reverted in %{count} seconds."
     }
 }

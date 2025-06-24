@@ -526,7 +526,7 @@
         "id": "insecure_elder",
         "thoughts": [
             "Doesn't think {PRONOUN/m_c/subject} achieved all {PRONOUN/m_c/subject} should have...",
-            "Wonders if c_n thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a waste of space now"
+            "Wonders if c_n thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a waste of space now" 
         ],
         "main_age_constraint": [
             "senior adult",
@@ -627,7 +627,7 @@
         "main_trait_constraint": [
             "loyal"
         ],
-        "random_age_constraint": [
+         "random_age_constraint": [
             "kitten",
             "adolescent",
             "young adult"

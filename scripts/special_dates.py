@@ -9,10 +9,9 @@ from typing import Dict, Tuple, Union, List
 
 from scripts.game_structure.game_essentials import game
 
-# fixing year to 2000 so we can use date comparison functions.
-# 2000 is used because it is a leap year.
+#fixing year to 2000 so we can use date comparison functions.
+#2000 is used because it is a leap year.
 _today = datetime.date.today().replace(year=2000)
-
 
 @dataclass
 class DateInfo:
@@ -24,13 +23,9 @@ class DateInfo:
     end_date: datetime.date representing end date.
     patrol_tag: Patrol tag for patrols exclusive to this date.
     """
-
-    def __init__(
-        self,
-        patrol_tag: str,
-        start_date: Tuple[int],
-        end_date: Union[Tuple[int], None] = None,
-    ):
+    def __init__(self, patrol_tag: str,
+                 start_date: Tuple[int],
+                 end_date: Union[Tuple[int], None] = None):
         """
         start_date: Start date in the form of (mm, dd)
         end_date: End date in the form of (mm, dd)
@@ -51,29 +46,25 @@ class DateInfo:
         """
         return self.start_date <= date <= self.end_date
 
-
 class SpecialDate(Enum):
     """
     Enum keeping track of registered 'special dates'.
     """
-
     APRIL_FOOLS = auto()
     HALLOWEEN = auto()
     NEW_YEARS = auto()
-
 
 # Maps SpecialDate enums to actual DateInfo classes.
 _date_map: Dict[SpecialDate, DateInfo] = {
     SpecialDate.APRIL_FOOLS: DateInfo("april_fools", (4, 1)),
     SpecialDate.HALLOWEEN: DateInfo("halloween", (10, 21), (11, 7)),
-    SpecialDate.NEW_YEARS: DateInfo("new_years", (1, 1)),
+    SpecialDate.NEW_YEARS: DateInfo("new_years", (1, 1))
 }
-
 
 def is_today(date: SpecialDate) -> bool:
     """
     Checks if today is a specified 'special date'.
-
+    
     Only returns True if "special_dates" setting is True.
     """
     if not game.settings["special_dates"]:
@@ -84,10 +75,9 @@ def is_today(date: SpecialDate) -> bool:
     d = _date_map.get(date, None)
     return d and d.in_range(_today)
 
-
 def get_special_date() -> Union[DateInfo, None]:
     """
-    If today is a 'special date', return the DateInfo.
+    If today is a 'special date', return the DateInfo. 
     Only returns succeeds if "special_dates" setting is True.
 
     Otherwise, return None.
@@ -101,7 +91,6 @@ def get_special_date() -> Union[DateInfo, None]:
         if date.in_range(_today):
             return date
     return None
-
 
 def contains_special_date_tag(lst: List[str]) -> bool:
     """

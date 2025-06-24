@@ -136,15 +136,15 @@
         "random_living_status": [
             "living"
         ],
-        "random_trait_constraint": [
-            "arrogant",
-            "cold",
-            "bloodthirsty",
-            "fierce",
-            "sneaky",
-            "vengeful",
-            "strange",
-            "rebellious"
+         "random_trait_constraint": [
+             "arrogant",
+             "cold",
+             "bloodthirsty",
+             "fierce",
+             "sneaky",
+             "vengeful",
+             "strange",
+             "rebellious"
         ]
     },
     {
@@ -250,7 +250,7 @@
     },
     {
         "id": "dead_parent_to_alive_child1",
-        "thoughts": [
+        "thoughts":[
             "Can't stop fretting over r_c, even though there's nothing {PRONOUN/m_c/subject} can do",
             "Is talking the ears off any cat willing to listen to {PRONOUN/m_c/object} go on and on and on about r_c",
             "Is feeling guilty watching r_c miss {PRONOUN/m_c/object}",
@@ -270,7 +270,7 @@
     },
     {
         "id": "dead_parent_to_alive_child2",
-        "thoughts": [
+        "thoughts":[
             "Snuck into r_c's dream to comfort {PRONOUN/r_c/object} after a hard day",
             "Visited r_c's dream to tell {PRONOUN/r_c/object} just how immensely proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/object}"
         ],
@@ -292,7 +292,7 @@
     },
     {
         "id": "dead_outsider_parent_to_alive_child",
-        "thoughts": [
+        "thoughts":[
             "Regrets not joining a Clan if it meant being able to raise r_c",
             "Still doesn't trust Clan cats, but is happy r_c is safe",
             "Is just glad r_c was saved from meeting the same fate {PRONOUN/m_c/subject} did",
@@ -303,7 +303,7 @@
             "orphaned2",
             "orphaned4",
             "orphaned5"
-        ],
+            ],
         "main_living_status": [
             "unknownresidence"
         ],
@@ -337,9 +337,9 @@
             "kitten"
         ]
     },
-    {
+     {
         "id": "dead_child_to_alive_child_sibling2",
-        "thoughts": [
+        "thoughts":[
             "Snuck into r_c's dreams to play with {PRONOUN/r_c/object} one last time",
             "Visits r_c in {PRONOUN/r_c/poss} dream to tell {PRONOUN/r_c/object} to live for the both of them"
         ],
@@ -347,10 +347,10 @@
             "newborn",
             "kitten"
         ],
-        "main_skill_constraint": [
-            "DREAM,1",
-            "STAR,1"
-        ],
+         "main_skill_constraint": [
+             "DREAM,1",
+             "STAR,1"
+         ],
         "relationship_constraint": [
             "siblings"
         ],
@@ -498,13 +498,13 @@
         ]
     },
     {
-        "id": "dead_refugee_thoughts",
-        "thoughts": [
-            "Is happy to hear {PRONOUN/m_c/poss} old leader is in the Dark Forest",
-            "Is so happy to reconnect with the cats from {PRONOUN/m_c/poss} old Clan"
-        ],
+    "id": "dead_refugee_thoughts",
+    "thoughts": [
+        "Is happy to hear {PRONOUN/m_c/poss} old leader is in the Dark Forest",
+        "Is so happy to reconnect with the cats from {PRONOUN/m_c/poss} old Clan"
+    ],
         "main_backstory_constraint": [
             "refugee1"
-        ]
-    }
+            ]
+}
 ]

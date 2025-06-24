@@ -12,7 +12,6 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
     UISurfaceImageButton,
-    UIModifiedImage,
 )
 from scripts.utility import (
     get_text_box_theme,
@@ -295,7 +294,7 @@ class ClearingScreen(Screens):
         )
         self.log_title.hide()
         self.tactic_title.hide()
-        self.cat_bg = UIModifiedImage(
+        self.cat_bg = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((140, 440), (560, 200))),
             get_box(BoxStyles.ROUNDED_BOX, (560, 200)),
             manager=MANAGER,
@@ -801,11 +800,9 @@ class ClearingScreen(Screens):
                     "prey": i18n.t("screens.clearing.prey_count", count=amount),
                 },
                 anchors={
-                    "top_target": (
-                        self.additional_text[f"condition_increase_{n-1}"]
-                        if n > 1
-                        else self.additional_text["condition_increase"]
-                    )
+                    "top_target": self.additional_text[f"condition_increase_{n-1}"]
+                    if n > 1
+                    else self.additional_text["condition_increase"]
                 },
             )
             n += 1

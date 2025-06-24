@@ -132,14 +132,14 @@
             "Talked {PRONOUN/m_c/poss} way out of a training session",
             "Tricked a shadowy cat into doing {PRONOUN/m_c/poss} bidding"
         ],
-        "main_trait_constraint": [
-            "sneaky",
-            "arrogant",
-            "shameless",
-            "wise",
-            "cunning",
-            "charismatic",
-            "strange"
+    "main_trait_constraint": [
+        "sneaky",
+        "arrogant",
+        "shameless",
+        "wise",
+        "cunning",
+        "charismatic",
+        "strange"
         ]
     }
 ]

@@ -1,4 +1,4 @@
 @echo off
 
-uv sync || ( pause & exit /b )
-uv run main.py || ( pause & exit /b )
+poetry install --no-root || ( pause & exit /b )
+poetry run python main.py || ( pause & exit /b )

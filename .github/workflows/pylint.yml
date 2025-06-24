@@ -10,11 +10,11 @@ jobs:
         with:
           python-version: '3.10'
           architecture: 'x64'
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v3
         with:
-          enable-cache: true
+          poetry-version: latest
       - name: install dependencies
-        run: uv sync --group test
+        run: poetry install --with test
       - name: Run Pylint
-        run: uv run pylint --ignore='.venv' --recursive=y --errors-only "$PWD"
+        run: poetry run pylint --recursive=y --errors-only "$PWD"
