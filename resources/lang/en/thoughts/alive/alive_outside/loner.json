@@ -139,7 +139,7 @@
             "Frowns deeply at the first frost"
         ],
         "season": [
-            "Leaf-fall"
+            "leaf-fall"
         ]
     },
     {
@@ -148,7 +148,7 @@
             "Wishes newleaf would come already"
         ],
         "season": [
-            "Leaf-bare"
+            "leaf-bare"
         ]
     }
 ]

@@ -144,7 +144,7 @@
             "Is buzzing after swallowing a cicada"
         ],
         "season": [
-            "Greenleaf"
+            "greenleaf"
         ],
         "main_status_constraint": [
             "kitten"
@@ -157,7 +157,7 @@
             "Is whining about having caught frostbite, despite having just stepped outside"
         ],
         "season": [
-            "Leaf-bare"
+            "leaf-bare"
         ],
         "main_status_constraint": [
             "kitten"

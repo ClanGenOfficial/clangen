@@ -63,7 +63,7 @@
         "description": "Constrains the thought to only occur once the Clan is in a specific season.",
         "type": "array",
         "items": {
-          "enum": ["Greenleaf", "Leaf-fall", "Leaf-bare", "Newleaf"]
+          "enum": ["greenleaf", "leaf-fall", "leaf-bare", "newleaf"]
         }
       },
       "camp": {

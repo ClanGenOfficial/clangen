@@ -360,7 +360,7 @@
             "Purrs as a cool breeze hits {PRONOUN/m_c/object}"
         ],
         "season": [
-            "Newleaf"
+            "newleaf"
         ]
     },
     {
@@ -375,7 +375,7 @@
             "Is debating swimming to cool down"
         ],
         "season": [
-            "Greenleaf"
+            "greenleaf"
         ]
     },
     {
@@ -386,7 +386,7 @@
             "Is glad it's not so hot out anymore"
         ],
         "season": [
-            "Leaf-fall"
+            "leaf-fall"
         ]
     },
     {
@@ -402,7 +402,7 @@
             "Is careful not to stand under branches with snow on them"
         ],
         "season": [
-            "Leaf-bare"
+            "leaf-bare"
         ]
     },
     {
@@ -1469,9 +1469,9 @@
             "self-conscious"
         ],
         "season": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall"
+            "newleaf",
+            "greenleaf",
+            "leaf-fall"
         ]
     },
     {
@@ -3184,7 +3184,7 @@
             "Is cautious of animals waking from hibernation"
         ],
         "season": [
-            "Newleaf"
+            "newleaf"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -3204,7 +3204,7 @@
             "Admires the colorful trees on patrol"
         ],
         "season": [
-            "Leaf-fall"
+            "leaf-fall"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -5040,7 +5040,7 @@
             "Can't warm up, even in the sun"
         ],
         "season": [
-            "Greenleaf"
+            "greenleaf"
         ],
         "perm_conditions": {
             "m_c": [
@@ -5057,7 +5057,7 @@
             "Wonders if {PRONOUN/m_c/subject}'ll see newleaf"
         ],
         "season": [
-            "Leaf-fall"
+            "leaf-fall"
         ],
         "perm_conditions": {
             "m_c": [
