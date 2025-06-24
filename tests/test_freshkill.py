@@ -418,7 +418,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
 
         # when
-        freshkill_pile.feed_cats([sick_cat, injured_cat, healthy_cat])
+        freshkill_pile.tactic_sick_injured_first([sick_cat, injured_cat, healthy_cat])
 
         # then
         self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
