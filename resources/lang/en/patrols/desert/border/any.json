@@ -725,5 +725,53 @@
                 }
             }
         ]
+    },
+    {
+        "patrol_id": "dst_bord_awdencounter",
+        "biome": ["desert"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "p_l and {PRONOUN/p_l/poss} patrol pad through the territory, blinking against the sudden gusts of wind, when they hear a sound that makes them all freeze... a chorus of squeaks and yips that sound a bit <i>too</i> close.",
+        "decline_text": "The patrol decides not to approach the sound, recognizing that it could be dangerous.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "p_l thinks {PRONOUN/p_l/subject} {VERB/p_l/know/knows} what to expect as {PRONOUN/p_l/subject} {VERB/p_l/urge/urges} {PRONOUN/p_l/poss} patrol forward towards the noise, yet {PRONOUN/p_l/subject} {VERB/p_l/are/is} shocked to find a pack of wild dogs feasting on an animal big enough to feed c_n for six moons. The cats stare in awe for a moment before r_c orders them to leave; if these animals can take down a beast like that, what's stopping the creatures from killing them, too?",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -15
+                    }
+                ]
+            },
+            {
+                "text": "The three cats stalk forward, fur bristling and hackles raised, ready for a possible fight- but p_l's tail flicks up in sudden amusement. Across the clearing, the alpha mother of the wild dog pack scolds her offspring in swirling squeaks and chirps, her youngling apologetically licking its lips and tucking tail. From their posture, this pup has just failed a hunt, and the cat's hearts prick with the sympathy of fellow carnivores.",
+                "exp": 10,
+                "weight": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l instructs {PRONOUN/p_l/poss} cats forward, nearing the noise rather quickly. The group strides out in front of a wild dog, the creature yipping excitably. Before any of them can react, another one leaps from the right, then the left... They're surrounded, hollers and yips deafening them as they try and fail to escape. A gaggle of cats are no match for hungry canines.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["patrol"],
+                "history_text": {
+                    "reg_death": "This cat was ambushed by a pack of wild dogs.",
+                    "lead_death": "ambushed by a pack of wild dogs"
+                }
+            }
+        ]
     }
 ]

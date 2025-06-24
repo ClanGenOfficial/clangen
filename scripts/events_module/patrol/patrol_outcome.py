@@ -352,22 +352,22 @@ class PatrolOutcome:
         possible_stat_cats = []
         for kitty in patrol.patrol_cats:
             # First, the blanket requirements
-            if "app" in self.can_have_stat and kitty.status not in [
+            if "app" in self.can_have_stat and kitty.status not in (
                 "apprentice",
                 "medicine cat apprentice",
-            ]:
+            ):
                 continue
 
-            if "adult" in self.can_have_stat and kitty.status in [
+            if "adult" in self.can_have_stat and kitty.status in (
                 "apprentice",
                 "medicine cat apprentice",
-            ]:
+            ):
                 continue
 
-            if "healer" in self.can_have_stat and kitty.status not in [
+            if "healer" in self.can_have_stat and kitty.status not in (
                 "medicine cat",
                 "medicine cat apprentice",
-            ]:
+            ):
                 continue
 
             # Then, move on the specific requirements.
@@ -429,7 +429,7 @@ class PatrolOutcome:
             gm_modifier = 1
 
         base_exp = 0
-        if "master" in [x.experience_level for x in patrol.patrol_cats]:
+        if "master" in (x.experience_level for x in patrol.patrol_cats):
             max_boost = 10
         else:
             max_boost = 0
@@ -447,7 +447,7 @@ class PatrolOutcome:
 
         if gained_exp or app_exp:
             for cat in patrol.patrol_cats:
-                if cat.status in ["apprentice", "medicine cat apprentice"]:
+                if cat.status in ("apprentice", "medicine cat apprentice"):
                     cat.experience = cat.experience + app_exp
                 else:
                     cat.experience = cat.experience + gained_exp
@@ -708,7 +708,10 @@ class PatrolOutcome:
                 found_herbs[herb] = amount
 
             # add found_herbs to storage and get patrol outcome msg
-            list_of_herb_strs, found_herbs = game.clan.herb_supply.handle_found_herbs_outcomes(found_herbs)
+            (
+                list_of_herb_strs,
+                found_herbs,
+            ) = game.clan.herb_supply.handle_found_herbs_outcomes(found_herbs)
 
         herb_string = adjust_list_text(list_of_herb_strs).capitalize()
 

@@ -69,9 +69,11 @@ class AllegiancesScreen(Screens):
                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                     container=self.scroll_container,
                     manager=MANAGER,
-                    anchors={"top_target": self.names_boxes[-1]}
-                    if len(self.names_boxes) > 0
-                    else None,
+                    anchors=(
+                        {"top_target": self.names_boxes[-1]}
+                        if len(self.names_boxes) > 0
+                        else None
+                    ),
                 )
             )
             self.ranks_boxes[-1].disable()
@@ -130,7 +132,9 @@ class AllegiancesScreen(Screens):
     def get_allegiances_text(self):
         """Determine Text. Ouputs list of tuples."""
 
-        living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside)]
+        living_cats = [
+            cat for cat in Cat.all_cats.values() if not cat.dead and not cat.outside
+        ]
         living_meds = []
         living_mediators = []
         living_warriors = []
@@ -144,13 +148,13 @@ class AllegiancesScreen(Screens):
                 living_warriors.append(cat)
             elif cat.status == "mediator":
                 living_mediators.append(cat)
-            elif cat.status in [
+            elif cat.status in (
                 "apprentice",
                 "medicine cat apprentice",
                 "mediator apprentice",
-            ]:
+            ):
                 living_apprentices.append(cat)
-            elif cat.status in ["kitten", "newborn"]:
+            elif cat.status in ("kitten", "newborn"):
                 living_kits.append(cat)
             elif cat.status == "elder":
                 living_elders.append(cat)

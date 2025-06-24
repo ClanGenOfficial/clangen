@@ -1,0 +1,180 @@
+{
+    "settings": [
+        {
+            "tag": "classic",
+            "setting": false,
+            "required_type": null,
+            "conflict": null
+        },
+        {
+            "tag": "cruel_season",
+            "setting": false,
+            "required_type": null,
+            "conflict": null
+        },
+        {
+            "tag": "no_body",
+            "setting": false,
+            "required_type": "death",
+            "conflict": null
+        },
+        {
+            "tag": "clan_wide",
+            "setting": false,
+            "required_type": null,
+            "conflict": null
+        },
+        {
+            "tag": "romance",
+            "setting": false,
+            "required_type": null,
+            "conflict": null
+        },
+        {
+            "tag": "adoption",
+            "setting": false,
+            "required_type": null,
+            "conflict": null
+        },
+        {
+            "tag": "all_lives",
+            "setting": false,
+            "required_type": "death",
+            "conflict": ["some_lives", "lives_remain"]
+        },
+        {
+            "tag": "some_lives",
+            "setting": false,
+            "required_type": "death",
+            "conflict": ["all_lives"]
+        },
+        {
+            "tag": "lives_remain",
+            "setting": false,
+            "required_type": "death",
+            "conflict": ["all_lives"]
+        },
+        {
+            "tag": "high_lives",
+            "setting": false,
+            "required_type": null,
+            "conflict": ["mid_lives", "low_lives"]
+        },
+        {
+            "tag": "mid_lives",
+            "setting": false,
+            "required_type": null,
+            "conflict": ["high_lives", "low_lives"]
+        },
+        {
+            "tag": "low_lives",
+            "setting": false,
+            "required_type": null,
+            "conflict": ["mid_lives", "high_lives"]
+        }
+    ],
+    
+    "relationship": [
+        {
+            "tag": "siblings",
+            "setting": false,
+            "conflict": ["mates",
+                         "not_mates",
+                         "parent/child",
+                         "child/parent"]
+        },
+        {
+            "tag": "mates",
+            "setting": false,
+            "conflict": ["siblings",
+                         "parent/child",
+                         "child/parent",
+                         "app/mentor",
+                         "mentor/app",
+                         "not_mates"]
+        },
+        {
+            "tag": "not_mates",
+            "setting": false,
+            "conflict": ["siblings",
+                         "mates",
+                         "parent/child",
+                         "child/parent",
+                         "app/mentor",
+                         "mentor/app"]
+        },
+        {
+            "tag": "parent/child",
+            "setting": false,
+            "conflict": ["siblings",
+                         "mates",
+                         "not_mates",
+                         "child/parent",
+                         "app/mentor"]
+        },
+        {
+            "tag": "child/parent",
+            "setting": false,
+            "conflict": ["siblings",
+                         "mates",
+                         "not_mates",
+                         "parent/child",
+                         "mentor/app"]
+        },
+        {
+            "tag": "app/mentor",
+            "setting": false,
+            "conflict": ["mates",
+                         "not_mates",
+                         "parent/child",
+                         "mentor/app"]
+        },
+        {
+            "tag": "mentor/app",
+            "setting": false,
+            "conflict": ["mates",
+                         "not_mates",
+                         "child/parent",
+                         "app/mentor"]
+        }
+    ],
+    
+    "new_cat": {
+        "types": ["kittypet", "loner", "rogue", "clancat"],
+        "disallowed_ranks": ["deputy", "leader"],
+        "special_ages": ["has_kits", "mate"],
+        "genders": ["male", "female", "can_birth"],
+        "bool_settings": [
+        {
+            "tag": "dead",
+            "setting": false,
+            "conflict": []
+        },
+        {
+            "tag": "litter",
+            "setting": false,
+            "conflict": ["exists", "new_name", "old_name"]
+        },
+        {
+            "tag": "meeting",
+            "setting": false,
+            "conflict": ["old_name", "new_name"]
+        },
+        {
+            "tag": "exists",
+            "setting": false,
+            "conflict": ["litter"]
+        },
+        {
+            "tag": "new_name",
+            "setting": false,
+            "conflict": ["old_name", "litter", "meeting"]
+        },
+        {
+            "tag": "old_name",
+            "setting": false,
+            "conflict": ["new_name", "litter", "meeting"]
+        }
+    ]
+    }
+}

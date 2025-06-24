@@ -8,25 +8,26 @@ class ShortEvent:
     """
 
     def __init__(
-            self,
-            event_id: str = "",
-            location: List[str] = None,
-            season: List[str] = None,
-            sub_type: List[str] = None,
-            tags: List[str] = None,
-            weight: int = 0,
-            text: str = "",
-            new_accessory: List[str] = None,
-            m_c=None,
-            r_c=None,
-            new_cat: List[list] = None,
-            injury: list = None,
-            history: list = None,
-            relationships: list = None,
-            outsider: dict = None,
-            other_clan: dict = None,
-            supplies: list = None,
-            new_gender: List[str] = None
+        self,
+        event_id: str = "",
+        location: List[str] = None,
+        season: List[str] = None,
+        sub_type: List[str] = None,
+        tags: List[str] = None,
+        weight: int = 0,
+        text: str = "",
+        new_accessory: List[str] = None,
+        m_c=None,
+        r_c=None,
+        new_cat: List[list] = None,
+        injury: list = None,
+        exclude_involved: list = None,
+        history: list = None,
+        relationships: list = None,
+        outsider: dict = None,
+        other_clan: dict = None,
+        supplies: list = None,
+        new_gender: List[str] = None,
     ):
         if not event_id:
             print("WARNING: moon event has no event_id")
@@ -37,7 +38,7 @@ class ShortEvent:
         self.tags = tags if tags else []
         self.weight = weight
         self.text = text
-        self.new_accessory = new_accessory
+        self.new_accessory = new_accessory if new_accessory else []
         self.m_c = m_c if m_c else {"age": ["any"]}
         if self.m_c:
             if "age" not in self.m_c:
@@ -89,6 +90,7 @@ class ShortEvent:
                 self.r_c["gender"] = []
 
         self.new_cat = new_cat if new_cat else []
+        self.exclude_involved = exclude_involved if exclude_involved else []
         self.injury = injury if injury else []
         self.history = history if history else []
         self.relationships = relationships if relationships else []

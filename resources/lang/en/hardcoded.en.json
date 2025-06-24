@@ -70,10 +70,12 @@
             "many": "With the focus of the Clan, %{amount} pieces of prey were... acquired."
         },
         "focus_injury_hoarding": {
+            "zero": "Luckily, nobody in the Clan got %{condition} due to hoarding.",
             "one": "A cat got %{condition} due to hoarding herbs and prey.",
             "many": "Multiple cats got %{condition} due to hoarding herbs and prey."
         },
         "focus_injury_raiding": {
+            "zero": "Luckily, nobody in the Clan got %{condition} during raids.",
             "one": "A cat got %{condition} while raiding other Clans for more prey.",
             "many": "Multiple cats got %{condition} while raiding other Clans for more prey."
         },
@@ -101,8 +103,6 @@
         "scar_event1": "m_c healed from {PRONOUN/m_c/poss} %{injury} but will forever be marked by a scar.",
         "scar_event2": "m_c's %{injury} has healed, but the injury left {PRONOUN/m_c/object} scarred.",
         "move_on_dead_mate": "m_c will always love r_c, but has decided to move on.",
-        "breakup_angy": "m_c and r_c had a huge fight and broke up.",
-        "breakup_chill": "m_c and r_c broke up.",
         "expired_prey": {
             "one": "A piece of freshkill expired and was removed from the freshkill pile.",
             "many": "%{count} pieces of prey expired and were removed from the freshkill pile."

@@ -74,7 +74,7 @@
         "pl_skill_constraint": ["CLAIRVOYANT,1"],
         "success_outcomes": [
             {
-                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} and {VERB/p_l/consider/considers} the feeling for a moment, allowing {PRONOUN/p_l/self} to meditate on it. This might be important for the future, or perahaps simply the leftover feelings of an event long past... Either way, p_l doesn't stay too long before returning to herb collecting.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} and {VERB/p_l/consider/considers} the feeling for a moment, allowing {PRONOUN/p_l/self} to meditate on it. This might be important for the future, or perhaps simply the leftover feelings of an event long past... Either way, p_l doesn't stay too long before returning to herb collecting.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["random_herbs"]
@@ -1161,7 +1161,7 @@
         "patrol_id": "pln_med_discussion1",
         "biome": ["plains"],
         "season": ["any"],
-        "types": [],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_discussion",
         "min_cats": 2,
@@ -1317,7 +1317,7 @@
         "patrol_id": "pln_med_dwindleherbsgathering1",
         "biome": ["plains"],
         "season": ["any"],
-        "types": [],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,

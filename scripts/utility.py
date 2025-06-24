@@ -48,7 +48,7 @@ def get_alive_clan_queens(living_cats):
     living_kits = [
         cat
         for cat in living_cats
-        if not (cat.dead or cat.outside) and cat.status in ["kitten", "newborn"]
+        if not (cat.dead or cat.outside) and cat.status in ("kitten", "newborn")
     ]
 
     queen_dict = {}
@@ -205,15 +205,14 @@ def get_random_moon_cat(
     random_cat = None
 
     # grab list of possible random cats
-    possible_r_c = list(
-        filter(
-            lambda c: not c.dead
-            and not c.exiled
-            and not c.outside
-            and (c.ID != main_cat.ID),
-            Cat.all_cats.values(),
-        )
-    )
+    possible_r_c = [
+        cat
+        for cat in Cat.all_cats.values()
+        if not cat.dead
+            and not cat.exiled
+            and not cat.outside
+            and (cat.ID != main_cat.ID)
+    ]
 
     if possible_r_c:
         random_cat = choice(possible_r_c)
@@ -234,7 +233,7 @@ def get_random_moon_cat(
         if mentor_app_modifier:
             if (
                 main_cat.status
-                in ["apprentice", "mediator apprentice", "medicine cat apprentice"]
+                in ("apprentice", "mediator apprentice", "medicine cat apprentice")
                 and main_cat.mentor
                 and not int(random() * 3)
             ):
@@ -292,6 +291,10 @@ def change_clan_reputation(difference):
     will change the Clan's reputation with outsider cats according to the difference parameter.
     """
     game.clan.reputation += difference
+    if game.clan.reputation < 0:
+        game.clan.reputation = 0  # clamp to 0
+    elif game.clan.reputation > 100:
+        game.clan.reputation = 100  # clamp to 100
 
 
 def change_clan_relations(other_clan, difference):
@@ -375,11 +378,11 @@ def create_new_cat_block(
         # TODO: make this less ugly
         for index in mate_indexes:
             if index in in_event_cats:
-                if in_event_cats[index] in [
+                if in_event_cats[index] in (
                     "apprentice",
                     "medicine cat apprentice",
                     "mediator apprentice",
-                ]:
+                ):
                     print("Can't give apprentices mates")
                     continue
 
@@ -423,7 +426,7 @@ def create_new_cat_block(
         if not match:
             continue
 
-        if match.group(1) in [
+        if match.group(1) in (
             "newborn",
             "kitten",
             "elder",
@@ -433,7 +436,7 @@ def create_new_cat_block(
             "mediator",
             "medicine cat apprentice",
             "medicine cat",
-        ]:
+        ):
             status = match.group(1)
             break
 
@@ -460,12 +463,12 @@ def create_new_cat_block(
             break
 
     if status and not age:
-        if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
+        if status in ("apprentice", "mediator apprentice", "medicine cat apprentice"):
             age = randint(
                 Cat.age_moons[CatAgeEnum.ADOLESCENT][0],
                 Cat.age_moons[CatAgeEnum.ADOLESCENT][1],
             )
-        elif status in ["warrior", "mediator", "medicine cat"]:
+        elif status in ("warrior", "mediator", "medicine cat"):
             age = randint(
                 Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1]
             )
@@ -487,7 +490,7 @@ def create_new_cat_block(
     litter = False
     if "litter" in attribute_list:
         litter = True
-        if status not in ["kitten", "newborn"]:
+        if status not in ("kitten", "newborn"):
             status = "kitten"
 
     # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS
@@ -535,7 +538,7 @@ def create_new_cat_block(
         chosen_backstory = choice(stor)
 
     # KITTEN THOUGHT
-    if status in ["kitten", "newborn"]:
+    if status in ("kitten", "newborn"):
         thought = i18n.t("hardcoded.thought_new_kitten")
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
@@ -614,10 +617,10 @@ def create_new_cat_block(
         new_cats = create_new_cat(
             Cat,
             new_name=new_name,
-            loner=cat_type in ["loner", "rogue"],
+            loner=cat_type in ("loner", "rogue"),
             kittypet=cat_type == "kittypet",
             other_clan=cat_type == "former Clancat",
-            kit=False if litter else status in ["kitten", "newborn"],
+            kit=(not litter) and status in ("kitten", "newborn"),
             # this is for singular kits, litters need this to be false
             litter=litter,
             backstory=chosen_backstory,
@@ -928,10 +931,10 @@ def create_new_cat(
         if not int(random() * chance):
             possible_conditions = []
             for condition in PERMANENT:
-                if (kit or litter) and PERMANENT[condition]["congenital"] not in [
+                if (kit or litter) and PERMANENT[condition]["congenital"] not in (
                     "always",
                     "sometimes",
-                ]:
+                ):
                     continue
                 # next part ensures that a kit won't get a condition that takes too long to reveal
                 age = new_cat.moons
@@ -943,10 +946,10 @@ def create_new_cat(
             if possible_conditions:
                 chosen_condition = choice(possible_conditions)
                 born_with = False
-                if PERMANENT[chosen_condition]["congenital"] in [
+                if PERMANENT[chosen_condition]["congenital"] in (
                     "always",
                     "sometimes",
-                ]:
+                ):
                     born_with = True
 
                     new_cat.get_permanent_condition(chosen_condition, born_with)
@@ -959,9 +962,9 @@ def create_new_cat(
                         ] = -2
 
                 # assign scars
-                if chosen_condition in ["lost a leg", "born without a leg"]:
+                if chosen_condition in ("lost a leg", "born without a leg"):
                     new_cat.pelt.scars.append("NOPAW")
-                elif chosen_condition in ["lost their tail", "born without a tail"]:
+                elif chosen_condition in ("lost their tail", "born without a tail"):
                     new_cat.pelt.scars.append("NOTAIL")
 
         if outside:
@@ -2191,7 +2194,7 @@ def event_text_adjust(
     # patrol_apprentices
     app_abbr = ["app1", "app2", "app3", "app4", "app5", "app6"]
     for i, abbr in enumerate(app_abbr):
-        if abbr not in text:
+        if abbr not in text or not patrol_apprentices:
             continue
         if len(patrol_apprentices) > i:
             replace_dict[abbr] = (
@@ -2200,7 +2203,7 @@ def event_text_adjust(
             )
 
     # new_cats (include pre version)
-    if "n_c" in text:
+    if "n_c" in text and new_cats:
         for i, cat_list in enumerate(new_cats):
             if len(new_cats) > 1:
                 pronoun = localization.get_new_pronouns("default plural")[0]
@@ -2211,7 +2214,7 @@ def event_text_adjust(
             replace_dict[f"n_c_pre:{i}"] = (str(cat_list[0].name.prefix), pronoun)
 
     # mur_c (murdered cat for reveals)
-    if "mur_c" in text:
+    if "mur_c" in text and victim_cat:
         replace_dict["mur_c"] = (str(victim_cat.name), get_pronouns(victim_cat))
 
     # lead_name
@@ -2234,7 +2237,7 @@ def event_text_adjust(
         text = process_text(text, replace_dict)
 
     # multi_cat
-    if "multi_cat" in text:
+    if "multi_cat" in text and multi_cats:
         name_list = []
         for _cat in multi_cats:
             name_list.append(str(_cat.name))
@@ -2243,7 +2246,7 @@ def event_text_adjust(
 
     # other_clan_name
     if "o_c_n" in text:
-        other_clan_name = other_clan.name
+        other_clan_name = other_clan.name if other_clan else "Default"
         pos = 0
         for x in range(text.count("o_c_n")):
             if "o_c_n" in text:
@@ -2295,20 +2298,20 @@ def event_text_adjust(
     text = adjust_prey_abbr(text)
 
     # acc_plural (only works for main_cat's acc)
-    if "acc_plural" in text:
+    if "acc_plural" in text and main_cat:
         text = text.replace(
             "acc_plural",
             i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=2),
         )
 
     # acc_singular (only works for main_cat's acc)
-    if "acc_singular" in text:
+    if "acc_singular" in text and main_cat:
         text = text.replace(
             "acc_singular",
             i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
         )
 
-    if "given_herb" in text:
+    if "given_herb" in text and chosen_herb:
         text = text.replace(
             "given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2)
         )
@@ -2454,12 +2457,13 @@ def ceremony_text_adjust(
     return adjust_text, random_living_parent, random_dead_parent
 
 
-def get_pronouns(Cat: "Cat"):
+def get_pronouns(cat: "Cat"):
     """Get a cat's pronoun even if the cat has faded to prevent crashes (use gender-neutral pronouns when the cat has faded)"""
-    if Cat.pronouns == {}:
-        return localization.get_new_pronouns("default")
+    if not cat.pronouns:
+        # since get_new_pronouns returns a list with length 1
+        return localization.get_new_pronouns("default")[0]
     else:
-        return choice(Cat.pronouns)
+        return choice(cat.pronouns)
 
 
 def shorten_text_to_fit(
@@ -2534,12 +2538,16 @@ def ui_scale_dimensions(dim: Tuple[int, int]):
     :return: The scaled dimensions
     """
     return (
-        floor(dim[0] * scripts.game_structure.screen_settings.screen_scale)
-        if dim[0] > 0
-        else dim[0],
-        floor(dim[1] * scripts.game_structure.screen_settings.screen_scale)
-        if dim[1] > 0
-        else dim[1],
+        (
+            floor(dim[0] * scripts.game_structure.screen_settings.screen_scale)
+            if dim[0] > 0
+            else dim[0]
+        ),
+        (
+            floor(dim[1] * scripts.game_structure.screen_settings.screen_scale)
+            if dim[1] > 0
+            else dim[1]
+        ),
     )
 
 
@@ -2594,6 +2602,30 @@ def update_sprite(cat):
     cat.all_cats[cat.ID] = cat
 
 
+def update_mask(cat):
+    val = pygame.mask.from_surface(
+        pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))), threshold=250
+    )
+
+    inflated_mask = pygame.Mask(
+        (
+            val.get_size()[0] + 10,
+            val.get_size()[1] + 10,
+        )
+    )
+    inflated_mask.draw(val, (5, 5))
+    for _ in range(3):
+        outline = inflated_mask.outline()
+        for point in outline:
+            for dx in range(-1, 2):
+                for dy in range(-1, 2):
+                    try:
+                        inflated_mask.set_at((point[0] + dx, point[1] + dy), 1)
+                    except IndexError:
+                        continue
+    cat.sprite_mask = inflated_mask
+
+
 def clan_symbol_sprite(clan, return_string=False, force_light=False):
     """
     returns the clan symbol for the given clan_name, if no symbol exists then random symbol is chosen
@@ -2601,47 +2633,26 @@ def clan_symbol_sprite(clan, return_string=False, force_light=False):
     :param return_string: default False, set True if the sprite name string is required rather than the sprite image
     :param force_light: Set true if you want this sprite to override the dark/light mode changes with the light sprite
     """
-    clan_name = clan.name
-    if clan.chosen_symbol:
-        if return_string:
-            return clan.chosen_symbol
-        else:
-            if game.settings["dark mode"] and not force_light:
-                return sprites.dark_mode_symbol(sprites.sprites[clan.chosen_symbol])
-            else:
-                return sprites.sprites[clan.chosen_symbol]
-    else:
+    if not clan.chosen_symbol:
         possible_sprites = []
         for sprite in sprites.clan_symbols:
             name = sprite.strip("1234567890")
-            if f"symbol{clan_name.upper()}" == name:
+            if f"symbol{clan.name.upper()}" == name:
                 possible_sprites.append(sprite)
-        if return_string:  # returns the str of the symbol
-            if possible_sprites:
-                return choice(possible_sprites)
-            else:
-                # give random symbol if no matching symbol exists
-                print(
-                    f"WARNING: attempted to return symbol string, but there's no clan symbol for {clan_name.upper()}.  Random symbol string returned."
-                )
-                return f"{choice(sprites.clan_symbols)}"
-
-        # returns the actual sprite of the symbol
         if possible_sprites:
-            if game.settings["dark mode"] and not force_light:
-                return sprites.dark_mode_symbol(
-                    sprites.sprites[choice(possible_sprites)]
-                )
-            else:
-                return sprites.sprites[choice(possible_sprites)]
+            clan.chosen_symbol = choice(possible_sprites)
         else:
             # give random symbol if no matching symbol exists
             print(
-                f"WARNING: attempted to return symbol sprite, but there's no clan symbol for {clan_name.upper()}.  Random symbol sprite returned."
+                f"WARNING: attempted to return symbol, but there's no clan symbol for {clan.name.upper()}. "
+                f"Random chosen."
             )
-            return sprites.dark_mode_symbol(
-                sprites.sprites[f"{choice(sprites.clan_symbols)}"]
-            )
+            clan.chosen_symbol = choice(sprites.clan_symbols)
+
+    if return_string:
+        return clan.chosen_symbol
+    else:
+        return sprites.get_symbol(clan.chosen_symbol, force_light=force_light)
 
 
 def generate_sprite(
@@ -2650,7 +2661,7 @@ def generate_sprite(
     scars_hidden=False,
     acc_hidden=False,
     always_living=False,
-    no_not_working=False,
+    disable_sick_sprite=False,
 ) -> pygame.Surface:
     """
     Generates the sprite for a cat, with optional arguments that will override certain things.
@@ -2659,7 +2670,7 @@ def generate_sprite(
     :param scars_hidden: If True, doesn't display the cat's scars. If False, display cat scars.
     :param acc_hidden: If True, hide the accessory. If false, show the accessory.
     :param always_living: If True, always show the cat with living lineart
-    :param no_not_working: If true, never use the not_working lineart.
+    :param disable_sick_sprite: If true, never use the not_working lineart.
                     If false, use the cat.not_working() to determine the no_working art.
     """
 
@@ -2675,7 +2686,7 @@ def generate_sprite(
 
     # setting the cat_sprite (bc this makes things much easier)
     if (
-        not no_not_working
+        not disable_sick_sprite
         and cat.not_working()
         and age != "newborn"
         and game.config["cat_sprites"]["sick_sprites"]

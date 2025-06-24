@@ -168,7 +168,7 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.language_button:
                 self.open_lang_settings()
-            if self.sub_menu in ["general", "relation", "language"]:
+            if self.sub_menu in ("general", "relation", "language"):
                 self.handle_checkbox_events(event)
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
@@ -290,11 +290,15 @@ class SettingsScreen(Screens):
             "buttons.toggle_fullscreen",
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
-            tool_tip_text="buttons.toggle_fullscreen_tooltip",
-            tool_tip_text_kwargs={
-                "screentext": "windowed"
+            tool_tip_text=(
+                "buttons.toggle_fullscreen_windowed"
                 if game.settings["fullscreen"]
-                else "fullscreen"
+                else "buttons.toggle_fullscreen_fullscreen"
+            ),
+            tool_tip_text_kwargs={
+                "screentext": (
+                    "windowed" if game.settings["fullscreen"] else "fullscreen"
+                )
             },
         )
 
@@ -389,11 +393,11 @@ class SettingsScreen(Screens):
                 container=self.checkboxes_text["container_general"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_vertcenter"),
                 manager=MANAGER,
-                anchors={
-                    "top_target": self.checkboxes_text[list(self.checkboxes_text)[-1]]
-                }
-                if i > 0
-                else None,
+                anchors=(
+                    {"top_target": self.checkboxes_text[list(self.checkboxes_text)[-1]]}
+                    if i > 0
+                    else None
+                ),
             )
             self.checkboxes_text[code].disable()
 
@@ -569,23 +573,31 @@ class SettingsScreen(Screens):
             # determine position
             if contributors_block:
                 position = (
-                    0
-                    if final_row_contribs == 1 and i == len(self.tooltip_text) - 1
-                    else rows[contributors_index % 3],
+                    (
+                        0
+                        if final_row_contribs == 1 and i == len(self.tooltip_text) - 1
+                        else rows[contributors_index % 3]
+                    ),
                     # y-axis
-                    10
-                    if contributors_index
-                    < 3  # first rows have a bit of space below the header
-                    else 0,
+                    (
+                        10
+                        if contributors_index
+                        < 3  # first rows have a bit of space below the header
+                        else 0
+                    ),
                 )
             else:
                 position = (
-                    0
-                    if final_row_seniors == 1 and (i == self.contributors_start - 1)
-                    else rows[i % 3],
-                    10
-                    if i < 3  # first rows have a bit of space below the header
-                    else 0,
+                    (
+                        0
+                        if final_row_seniors == 1 and (i == self.contributors_start - 1)
+                        else rows[i % 3]
+                    ),
+                    (
+                        10
+                        if i < 3  # first rows have a bit of space below the header
+                        else 0
+                    ),
                 )
             self.tooltip[f"tip{i}"] = UIImageButton(
                 ui_scale(
@@ -595,9 +607,11 @@ class SettingsScreen(Screens):
                     )
                 ),
                 self.info_text["contribs"][i],
-                object_id="#blank_button_dark"
-                if self.toggled_theme == "dark"
-                else "#blank_button",
+                object_id=(
+                    "#blank_button_dark"
+                    if self.toggled_theme == "dark"
+                    else "#blank_button"
+                ),
                 container=self.checkboxes_text["info_container"],
                 manager=MANAGER,
                 tool_tip_text=tooltip if tooltip else None,
@@ -605,20 +619,24 @@ class SettingsScreen(Screens):
                 sound_id=None,
                 anchors={
                     "centerx": "centerx",
-                    "top_target": self.checkboxes_text[
-                        "info_text_seniors"
-                    ]  # seniors first row
-                    if i < 3
-                    else self.tooltip[
-                        f"tip{(floor(i / 3) * 3) - 1}"
-                    ]  # seniors other rows
-                    if not contributors_block
-                    # contributor block
-                    else self.checkboxes_text[
-                        "info_text_contributors"
-                    ]  # contributors first row
-                    if contributors_index < 3
-                    else self.tooltip[f"tip{i - 3}"],  # contributors other rows
+                    "top_target": (
+                        self.checkboxes_text["info_text_seniors"]  # seniors first row
+                        if i < 3
+                        else (
+                            self.tooltip[
+                                f"tip{(floor(i / 3) * 3) - 1}"
+                            ]  # seniors other rows
+                            if not contributors_block
+                            # contributor block
+                            else (
+                                self.checkboxes_text[
+                                    "info_text_contributors"
+                                ]  # contributors first row
+                                if contributors_index < 3
+                                else self.tooltip[f"tip{i - 3}"]
+                            )
+                        )
+                    ),  # contributors other rows
                 },
             )
 
@@ -776,11 +794,11 @@ class SettingsScreen(Screens):
                     object_id=box_type,
                     container=self.checkboxes_text["container_" + self.sub_menu],
                     tool_tip_text=f"settings.{code}_tooltip",
-                    anchors={
-                        "top_target": self.checkboxes_text[list(self.checkboxes)[-1]]
-                    }
-                    if i > 0
-                    else None,
+                    anchors=(
+                        {"top_target": self.checkboxes_text[list(self.checkboxes)[-1]]}
+                        if i > 0
+                        else None
+                    ),
                 )
 
     def clear_sub_settings_buttons_and_text(self):
