@@ -88,6 +88,8 @@
     --md-code-hl-special-color: #700A2C;
     --md-code-hl-number-color: #611414;
     --md-code-hl-color: #003694;
+    --md-code-hl-operator-color: #2F1F17;
+    --md-code-hl-generic-color: #2F1F17;
 
     /* admonition bg color */
     --md-admonition-bg-color: #EFE5CE;
@@ -142,6 +144,8 @@
     --md-code-hl-special-color: #F6A2BE;
     --md-code-hl-number-color: #EEAAAA;
     --md-code-hl-color: #99BEFF;
+    --md-code-hl-operator-color: #EFE5CE;
+    --md-code-hl-generic-color: #EFE5CE;
 
     /* admonition bg color */
     --md-admonition-bg-color: #393224;

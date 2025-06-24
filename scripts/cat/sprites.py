@@ -162,7 +162,9 @@ class Sprites:
             "fadedarkforest",
             "symbols",
         ):
-            if "lineart" in x and (game.config["fun"]["april_fools"] or is_today(SpecialDate.APRIL_FOOLS)):
+            if "lineart" in x and (
+                game.config["fun"]["april_fools"] or is_today(SpecialDate.APRIL_FOOLS)
+            ):
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
@@ -778,9 +780,11 @@ class Sprites:
         var = pygame.PixelArray(recolored_symbol)
         var.replace(
             (87, 76, 45),
-            pygame.Color(game.config["theme"]["dark_mode_clan_symbols"])
-            if not force_light and game.settings["dark mode"]
-            else pygame.Color(game.config["theme"]["light_mode_clan_symbols"]),
+            (
+                pygame.Color(game.config["theme"]["dark_mode_clan_symbols"])
+                if not force_light and game.settings["dark mode"]
+                else pygame.Color(game.config["theme"]["light_mode_clan_symbols"])
+            ),
             distance=0,
         )
         del var

@@ -168,7 +168,7 @@
         "three_kit_possibility": {"young adult": 17, "adult": 15, "senior adult": 5, "senior": 1},
         "four_kit_possibility": {"young adult": 12, "adult": 8, "senior adult": 2, "senior": 0},
         "five_kit_possibility": {"young adult": 6, "adult": 2, "senior adult": 0, "senior": 0},
-		"max_kit_possibility": {"young adult": 2, "adult": 0, "senior adult": 0, "senior": 0},
+        "max_kit_possibility": {"young adult": 2, "adult": 0, "senior adult": 0, "senior": 0},
 		"min_kits": 1,
 		"max_kits": 6,
 		"comment": [
@@ -209,11 +209,11 @@
 		"ceremony_modifier": -20,
 		"multiple_acc_modifier": 50
 	},
-	"transition_related": {
-		"base_trans_chance": 256,
-		"adolescent_modifier": -128,
-		"older_modifier": 256
-	},
+    "transition_related": {
+        "base_trans_chance": 256,
+        "adolescent_modifier": -128,
+        "older_modifier": 256
+    },
 	"fading": {
 		"age_to_fade": 202,
 		"opacity_at_fade": 20,
@@ -272,8 +272,8 @@
 		"classic_death_chance": 500,
 		"expanded_death_chance": 350,
 		"cruel season_death_chance": 300,
-		"war_death_modifier_leader": 95,
-		"war_death_modifier": 250,
+		"war_death_modifier_leader": 35,
+		"war_death_modifier": 330,
 		"base_random_murder_chance": 25,
 		"base_murder_kill_chance": 80,
 		"old_age_death_start": 150,
@@ -287,12 +287,12 @@
 	"condition_related": {
 		"expanded_illness_chance": 250,
 		"cruel season_illness_chance": 200,
-		"classic_illness_chance": 500,
+        "classic_illness_chance": 500,
 		"classic_injury_chance": 450,
 		"expanded_injury_chance": 250,
 		"cruel season_injury_chance": 150,
 		"permanent_condition_chance": 15,
-		"war_injury_modifier": 100
+		"war_injury_modifier": 240
 	},
 	"clan_creation": {
 		"rerolls": 3,
@@ -426,20 +426,20 @@
 	},
 	"theme": {
 		"dark_mode_background": [57, 50, 36],
-		"light_mode_background": [206, 194, 168],
-		"fullscreen_background": {
-			"light": {
-				"vignette_alpha": 10,
-				"fade_color": [150, 150, 148],
-				"dropshadow_alpha": 30
-			},
-			"dark": {
-				"vignette_alpha": 50,
-				"fade_color": [100, 100, 100],
-				"dropshadow_alpha": 100,
-				"mainmenu_tint": [239, 229, 206]
-			}
-		},
+        "light_mode_background": [206, 194, 168],
+        "fullscreen_background": {
+            "light": {
+                "vignette_alpha": 10,
+                "fade_color": [150, 150, 148],
+                "dropshadow_alpha": 30
+            },
+            "dark": {
+                "vignette_alpha": 50,
+                "fade_color": [100, 100, 100],
+                "dropshadow_alpha": 100,
+                "mainmenu_tint": [239, 229, 206]
+            }
+        },
 		"dark_mode_clan_symbols": [239, 229, 206],
 		"light_mode_clan_symbols": [87, 76, 45],
 		"dark_mode_event_alternate": [87, 76, 55],
@@ -498,5 +498,6 @@
 				"leaf-bare": [5, 2, 1]
 			}
 		}
-	}
+	},
+	"dev_tools": false
 }

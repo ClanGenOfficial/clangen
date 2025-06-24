@@ -1,5 +1,8 @@
 # Localization
 
+!!! info "Disambiguation"
+    This is the page for *writers and translators* using `i18n` to create or modify content for the game in a target language. If you're a developer, you'll want the [code localization page](../code/localization.md).
+
 Localizing ClanGen can be broadly divided into two key sections: the UI and in-game content.
 
 We use ISO 2-letter language codes for storing the language a player wants to use. This means that `en` is English, `fr` is French, `es` is Spanish, etc. Check online what the code is for the language you are planning to implement, as you'll need it in many places.
@@ -40,7 +43,10 @@ _Example `i18n` JSON file_
 
 There are two main types of `i18n` string: basic and pluralized forms. Basic keys are just a string: this is what will display all the time, whenever that value is requested. Pluralized forms are dictionaries. Depending on the needs of the language you're translating into, there may be different sentence structures or wordings depending on the number of items in the sentence.
 
-The possible keys for a pluralized value are `zero`, `one`, `two`, `some`, and `many`. The minimum that are required to ensure no errors occur are `one` and `many`. Sometimes, we use the pluralization nodule in some... unconventional ways.
+The possible keys for a pluralized value are `zero`, `one`, `some`, and `many`. The minimum that are required to ensure no errors occur are `one` and `many`. Sometimes, we use the pluralization module in some... unconventional ways.
+
+!!! todo
+    We really ought not do these crimes against pluralization. I was exhausted.
 
 #### Crimes against Pluralization (or, where we use it weirdly)
 | File name | Affected records | Quirks 

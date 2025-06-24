@@ -326,7 +326,6 @@ class RoleScreen(Screens):
         self.update_disabled_buttons()
 
     def update_disabled_buttons(self):
-
         self.update_previous_next_cat_buttons()
 
         if game.clan.leader:
