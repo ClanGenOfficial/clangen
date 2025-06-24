@@ -50,12 +50,12 @@
         "type": "array",
         "items": {
           "enum": [
-            "Mountainous",
-            "Plains",
-            "Forest",
-            "Beach",
-            "Wetlands",
-            "Desert"
+            "mountainous",
+            "plains",
+            "forest",
+            "beach",
+            "wetlands",
+            "desert"
           ]
         }
       },
