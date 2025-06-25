@@ -189,6 +189,7 @@ class EventEditScreen(Screens):
         "new cats": Icon.CAT_HEAD,
         "personal consequences": Icon.SCRATCHES,
         "outside consequences": Icon.CLAN_UNKNOWN,
+        "future effects": Icon.NOTEPAD,
     }
     """Dict for section tab info. Key is the name of the tab, value is the icon assigned."""
 
@@ -246,12 +247,10 @@ class EventEditScreen(Screens):
         self.current_preview_state: int = self.preview_states[0]
         """The currently used preview state. This can be 0 (preview off), 1 (plural), or 2 (singular)"""
 
-        # Event text display
         self.event_text_element = {}
         self.event_text_info: str = ""
         """Loaded event text"""
 
-        # Settings elements
         self.event_id_element = {}
         self.event_id_info: str = ""
         """Loaded event_id"""
@@ -423,9 +422,11 @@ class EventEditScreen(Screens):
         self.outsider_element = {}
         self.outsider_info: dict = {"current_rep": [], "changed": 0}
         """The currently loaded outsider info"""
+
         self.other_clan_element = {}
         self.other_clan_info: dict = {"current_rep": [], "changed": 0}
         """The currently loaded other clan info"""
+
         self.supply_element = {}
         self.supply_block_list: list = []
         """The list of the currently loaded supply blocks"""
@@ -434,6 +435,20 @@ class EventEditScreen(Screens):
              as the text for its button."""
         self.supply_info: dict = {"type": "", "trigger": [], "adjust": ""}
         """The info for the currently viewed supply block"""
+
+        self.future_element = {}
+        self.future_block_list: list = []
+        """The list of the currently loaded future blocks"""
+        self.selected_future_block_index: str = ""
+        """The list index for the future block currently viewed by the user. This is kept as a string due to it doubling
+             as the text for its button."""
+        self.future_info: dict = {
+            "event_type": "",
+            "pool": {},
+            "moon_delay": [1, 1],
+            "involved_cats": {},
+        }
+        """The info for the currently viewed future block"""
 
     # EVENT JSON PROCESSING
     def unpack_existing_event(self, event: dict):
@@ -789,7 +804,7 @@ class EventEditScreen(Screens):
 
             # OPEN EDITOR
             elif event.ui_element == self.add_button:
-                self.current_editor_tab = "settings"
+                self.current_editor_tab = "future effects"
                 self.open_event = {}
                 self.old_event_index = None
                 self.clear_event_info()
@@ -1642,6 +1657,8 @@ class EventEditScreen(Screens):
             self.generate_personal_tab()
         elif self.current_editor_tab == "outside consequences":
             self.generate_outside_tab()
+        elif self.current_editor_tab == "future effects":
+            self.generate_future_tab()
 
     def create_lock(
         self,
@@ -1739,6 +1756,7 @@ class EventEditScreen(Screens):
             self.history_element.get("add"),
             self.relationships_element.get("add"),
             self.supply_element.get("add"),
+            self.future_element.get("add"),
         ]:
             return
 
@@ -1761,6 +1779,9 @@ class EventEditScreen(Screens):
         elif self.open_block == "supply":
             self.selected_supply_block_index = attr["selected"]
             self.update_supply_block_options()
+        elif self.open_block == "future":
+            self.selected_future_block_index = attr["selected"]
+            self.update_future_block_options()
         else:
             self.selected_relationships_block_index = attr["selected"]
             self.update_relationships_block_options()
@@ -1778,6 +1799,7 @@ class EventEditScreen(Screens):
             self.history_element.get("delete"),
             self.relationships_element.get("delete"),
             self.supply_element.get("delete"),
+            self.future_element.get("delete"),
         ]:
             return
 
@@ -1806,6 +1828,11 @@ class EventEditScreen(Screens):
             if not attr["selected"]:
                 self.clear_supply_constraints()
             self.update_supply_block_options()
+        elif self.open_block == "future":
+            self.selected_future_block_index = attr["selected"]
+            if not attr["selected"]:
+                self.clear_future_constraints()
+            self.update_future_constraints()
         else:
             self.selected_relationships_block_index = attr["selected"]
             if not attr["selected"]:
@@ -1903,6 +1930,12 @@ class EventEditScreen(Screens):
                 self.supply_block_list[int(self.selected_supply_block_index)]
                 if self.selected_supply_block_index
                 else self.supply_info
+            )
+        elif self.open_block == "future":
+            return (
+                self.future_block_list[int(self.selected_future_block_index)]
+                if self.selected_future_block_index
+                else self.future_info
             )
 
     def new_cat_select(self):
@@ -3844,6 +3877,92 @@ class EventEditScreen(Screens):
             self.update_season_info()
 
     # EDITOR GENERATION
+
+    # FUTURE EFFECTS EDITOR
+
+    def generate_future_tab(self):
+        self.future_element["intro"] = UITextBoxTweaked(
+            "screens.event_edit.future_info",
+            ui_scale(pygame.Rect((0, 10), (295, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+        )
+
+        self.future_element["frame"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((12, 20), (112, 186))),
+            get_box(BoxStyles.FRAME, (112, 186)),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"left_target": self.future_element["intro"]},
+        )
+
+        self.future_element["block_list"] = UIScrollingButtonList(
+            pygame.Rect((20, 28), (100, 168)),
+            item_list=self.future_block_list,
+            button_dimensions=(96, 30),
+            multiple_choice=False,
+            disable_selection=True,
+            container=self.editor_container,
+            manager=MANAGER,
+            anchors={"left_target": self.future_element["intro"]},
+        )
+
+        self.future_element["add"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((30, 4), (36, 36))),
+            "+",
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            manager=MANAGER,
+            object_id="@buttonstyles_icon_tab_bottom",
+            container=self.editor_container,
+            anchors={
+                "top_target": self.future_element["cat_list"],
+                "left_target": self.future_element["intro"],
+            },
+            tool_tip_text="add a new cat",
+        )
+
+        self.future_element["delete"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((5, 4), (36, 36))),
+            "-",
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            manager=MANAGER,
+            object_id="@buttonstyles_icon_tab_bottom",
+            container=self.editor_container,
+            anchors={
+                "top_target": self.future_element["cat_list"],
+                "left_target": self.future_element["add"],
+            },
+            tool_tip_text="delete selected cat",
+        )
+
+        self.future_element["display"] = UITextBoxTweaked(
+            "No block selected",
+            ui_scale(pygame.Rect((0, 10), (380, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"top_target": self.future_element["intro"]},
+        )
+        self.create_lock(
+            name=f"future",
+            top_anchor=self.future_element["intro"],
+            left_anchor=self.future_element["display"],
+        )
+        self.create_divider(self.future_element["display"], "future")
+
+        if self.future_block_list and not self.selected_future_block_index:
+            self.selected_future_block_index = "0"
+            self.future_element["block_list"].set_selected_list(
+                [self.selected_future_block_index]
+            )
+            self.new_cat_select()
+            self.display_new_cat_constraints()
+
+    # OUTSIDE CONSEQUENCES EDITOR
+
     def generate_outside_tab(self):
         # OUTSIDER
         self.create_outsider_editor()
@@ -3853,8 +3972,6 @@ class EventEditScreen(Screens):
 
         # SUPPLY
         self.create_supply_editor()
-
-    # OUTSIDE CONSEQUENCES EDITOR
 
     def create_supply_editor(self):
         # INTRO

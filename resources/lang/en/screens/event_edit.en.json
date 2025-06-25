@@ -52,6 +52,7 @@
         "supply_trigger_info": "<b>trigger:</b> How much of the supply should be present for this event to trigger?",
         "supply_adjust_info": "<b>adjust:</b> How will the supply change?",
         "supply_increase_info": "increase by:",
+        "future_info": "You can add any number of future events to this event. Future events will trigger after a specific number of moons have passed. You choose what event pool it chooses from, what cats will be involved in it, and how many moons it will take to trigger. Each event block will trigger a single event.",
         "classic": "Is this limited to classic mode?",
         "cruel_season": "Is this limited to cruel season?",
         "no_body": "Is the dead cat's body irretrievable?",
