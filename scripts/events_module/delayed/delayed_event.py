@@ -4,14 +4,14 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
 
 
-class DelayedEvent:
+class FutureEvent:
     def __init__(
-            self,
-            parent_event: str = None,
-            event_type: str = None,
-            pool: dict = None,
-            moon_delay: int = 0,
-            involved_cats: dict = None,
+        self,
+        parent_event: str = None,
+        event_type: str = None,
+        pool: dict = None,
+        moon_delay: int = 0,
+        involved_cats: dict = None,
     ):
         self.parent_event = parent_event
         self.event_type = event_type
@@ -20,7 +20,7 @@ class DelayedEvent:
 
         self.involved_cats = involved_cats
 
-    def prep_event(self, event, event_id:str, possible_cats:dict):
+    def prep_event(self, event, event_id: str, possible_cats: dict):
         """
         Checks if the given event has a delayed event attached, then creates the delayed event
         :param event: the class object for the event
@@ -28,28 +28,25 @@ class DelayedEvent:
         :param possible_cats: a dict of all cats involved in the event. This should provide the cat
         abbreviation as the key and the cat object as the value.
         """
-        if not event.delayed_event:
+        if not event.future_event:
             return
 
-        for delayed_info in event.delayed_event:
-
+        for event_info in event.future_event:
             # create dict of all cats that need to be involved in delayed event
-            gathered_cat_dict = self._collect_involved_cats(
-                possible_cats,
-                delayed_info
-            )
+            gathered_cat_dict = self._collect_involved_cats(possible_cats, event_info)
 
             # create delayed event and add it to the delayed event list
             game.clan.delayed_events.append(
-                DelayedEvent(
+                FutureEvent(
                     parent_event=event_id,
-                    event_type=delayed_info["event_type"],
-                    pool=delayed_info["pool"],
+                    event_type=event_info["event_type"],
+                    pool=event_info["pool"],
                     moon_delay=randint(
-                        delayed_info["moon_delay"][0], delayed_info["moon_delay"][1]
-                        ),
-                    involved_cats=gathered_cat_dict
-                ))
+                        event_info["moon_delay"][0], event_info["moon_delay"][1]
+                    ),
+                    involved_cats=gathered_cat_dict,
+                )
+            )
 
     def _collect_involved_cats(self, cat_dict: dict, delayed_info: dict) -> dict:
         """
@@ -70,17 +67,16 @@ class DelayedEvent:
 
         # we're just keeping this to living cats within the clan for now, more complexity can come later
         possible_cats = [
-            kitty for kitty in Cat.all_cats.values()
-            if not kitty.dead
-            and not kitty.outside
+            kitty
+            for kitty in Cat.all_cats.values()
+            if not kitty.dead and not kitty.outside
         ]
 
         for new_role, cat_involved in delayed_info["involved_cats"].items():
             # grab any cats that need to be newly gathered
             if isinstance(cat_involved, dict):
                 gathered_cat_dict[new_role] = self._get_constrained_cat(
-                    cat_involved,
-                    possible_cats
+                    cat_involved, possible_cats
                 )
                 possible_cats.remove(Cat.fetch_cat(gathered_cat_dict[new_role]))
                 continue
@@ -103,7 +99,7 @@ class DelayedEvent:
             "status": self._check_status,
             "skill": self._check_skill,
             "trait": self._check_trait,
-            "backstory": self._check_backstory
+            "backstory": self._check_backstory,
         }
 
         allowed_cats = []
@@ -157,7 +153,9 @@ class DelayedEvent:
                     print("Cat skill incorrectly formatted", _skill)
                     continue
 
-                if kitty.skills.meets_skill_requirement(split_skill[0], int(split_skill[1])):
+                if kitty.skills.meets_skill_requirement(
+                    split_skill[0], int(split_skill[1])
+                ):
                     has_skill = True
 
             if not has_skill:
@@ -186,4 +184,4 @@ class DelayedEvent:
         return [kitty for kitty in cat_list if kitty.backstory in backstories]
 
 
-delayed_event = DelayedEvent()
+delayed_event = FutureEvent()

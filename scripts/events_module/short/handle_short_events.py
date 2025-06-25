@@ -15,7 +15,7 @@ from scripts.clan_resources.freshkill import (
     FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.delayed.delayed_event import delayed_event, DelayedEvent
+from scripts.events_module.delayed.delayed_event import delayed_event, FutureEvent
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure.game_essentials import game
@@ -77,13 +77,13 @@ class HandleShortEvents:
         self.delayed_event = None
 
     def handle_event(
-            self,
-            event_type: str,
-            main_cat: Cat,
-            random_cat: Cat,
-            freshkill_pile: FreshkillPile,
-            victim_cat: Cat = None,
-            sub_type: list = None,
+        self,
+        event_type: str,
+        main_cat: Cat,
+        random_cat: Cat,
+        freshkill_pile: FreshkillPile,
+        victim_cat: Cat = None,
+        sub_type: list = None,
     ):
         """
         This function handles the generation and execution of the event
@@ -135,15 +135,15 @@ class HandleShortEvents:
             freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
             sub_types=self.sub_types,
             allowed_events=self.allowed_events,
-            excluded_events=self.excluded_events
+            excluded_events=self.excluded_events,
         )
 
         if isinstance(game.config["event_generation"]["debug_ensure_event_id"], str):
             found = False
             for _event in final_events:
                 if (
-                        _event.event_id
-                        == game.config["event_generation"]["debug_ensure_event_id"]
+                    _event.event_id
+                    == game.config["event_generation"]["debug_ensure_event_id"]
                 ):
                     final_events = [_event]
                     print(
@@ -310,7 +310,7 @@ class HandleShortEvents:
         if self.chosen_herb:
             game.herb_events_list.append(f"{self.chosen_event} {self.herb_notice}.")
 
-        self.handle_delayed_event()
+        self.gather_future_event()
 
         game.cur_events_list.append(
             Single_Event(
@@ -320,17 +320,17 @@ class HandleShortEvents:
             )
         )
 
-    def handle_delayed_event(self):
+    def gather_future_event(self):
         """
         Handles gathering information for delayed event
         """
-        if not self.chosen_event.delayed_event:
+        if not self.chosen_event.future_event:
             return
 
         possible_cats = {
             "m_c": self.main_cat,
             "r_c": self.random_cat,
-            "mur_c": self.victim_cat
+            "mur_c": self.victim_cat,
         }
 
         for x, newbie in enumerate(self.new_cats):
@@ -339,10 +339,10 @@ class HandleShortEvents:
         delayed_event.prep_event(
             event=self.chosen_event,
             event_id=self.chosen_event.event_id,
-            possible_cats=possible_cats
+            possible_cats=possible_cats,
         )
 
-    def trigger_delayed_event(self, event):
+    def trigger_future_event(self, event):
         self.allowed_events = event.pool.get("event_id")
         self.excluded_events = event.pool.get("excluded_event_id")
 
@@ -352,7 +352,7 @@ class HandleShortEvents:
             random_cat=Cat.fetch_cat(event.involved_cats.get("r_c")),
             freshkill_pile=game.clan.freshkill_pile,
             victim_cat=Cat.fetch_cat(event.involved_cats.get("mur_c")),
-            sub_type=event.pool.get("subtype")
+            sub_type=event.pool.get("subtype"),
         )
 
         self.allowed_events = []
@@ -411,13 +411,13 @@ class HandleShortEvents:
                 # Search for parent
                 for sub_sub in self.new_cats:
                     if (
-                            sub_sub[0] != sub[0]
-                            and (
+                        sub_sub[0] != sub[0]
+                        and (
                             sub_sub[0].gender == "female"
                             or game.clan.clan_settings["same sex birth"]
-                    )
-                            and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2)
-                            and not (sub_sub[0].dead or sub_sub[0].outside)
+                        )
+                        and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2)
+                        and not (sub_sub[0].dead or sub_sub[0].outside)
                     ):
                         sub_sub[0].get_injured("recovering from birth")
                         break  # Break - only one parent ever gives birth
@@ -446,8 +446,8 @@ class HandleShortEvents:
 
         if hasattr(self.main_cat.pelt, "scars"):
             if (
-                    "NOTAIL" in self.main_cat.pelt.scars
-                    or "HALFTAIL" in self.main_cat.pelt.scars
+                "NOTAIL" in self.main_cat.pelt.scars
+                or "HALFTAIL" in self.main_cat.pelt.scars
             ):
                 for acc in pelts.tail_accessories:
                     if acc in acc_list:
@@ -522,9 +522,7 @@ class HandleShortEvents:
                 if "all_lives" in self.chosen_event.tags:
                     game.clan.leader_lives -= 10
                 elif "some_lives" in self.chosen_event.tags:
-                    game.clan.leader_lives -= randrange(
-                        2, self.current_lives - 1
-                    )
+                    game.clan.leader_lives -= randrange(2, self.current_lives - 1)
                 else:
                     game.clan.leader_lives -= 1
 
@@ -550,14 +548,14 @@ class HandleShortEvents:
         requirements = self.chosen_event.m_c
         for kitty in alive_cats:
             if (
-                    kitty.status not in requirements["status"]
-                    and "any" not in requirements["status"]
+                kitty.status not in requirements["status"]
+                and "any" not in requirements["status"]
             ):
                 alive_cats.remove(kitty)
                 continue
             if (
-                    kitty.age not in requirements["age"]
-                    and "any" not in requirements["age"]
+                kitty.age not in requirements["age"]
+                and "any" not in requirements["age"]
             ):
                 alive_cats.remove(kitty)
         alive_count = len(alive_cats)

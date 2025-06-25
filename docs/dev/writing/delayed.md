@@ -1,18 +1,18 @@
-# DelayedEvents
+# FutureEvents
 
-## What is a Delayed Event?
+## What is a Future Event?
 
-Delayed events are special event blocks that can be added to the ShortEvent and Patrol outcome formats. They allow the writer to specify a ShortEvent to be **triggered** by the parent event. These are called delayed events because their appearance can be delayed by a certain number of moons.
+Future events are special event blocks that can be added to the ShortEvent and Patrol outcome formats. They allow the writer to specify a ShortEvent that will be created in a given number of moons. Writers can even specify a larger pool of events for the future event to be chosen from.  Writers can also add multiple future events to a single event, meaning that one event could trigger multiple events!
 
-Throughout this documentation we will refer to the DelayedEvent format block as the "delayed event" and the event that is *chosen to eventually display* as the "triggered event". The event that the delayed event is contained within will be referred to as the "parent event".
+## Throughout this documentation we will refer to the FutureEvent format block as the "future event" and the event that is *chosen to eventually display* as the "triggered event". The event that initially creates the future event will be referred to as the "parent event".
 
 !!! tip
-    Currently, triggered events are removed from the "queue" if they go 12 moons without being able to display. For example, if an involved cat dies before the triggered event is able to display, then the event won't display to the player. A 12 moon buffer is provided so that any season-locked triggered events will have the opportunity to "wait" for their required season.
+    Currently, future events are removed from the "queue" if they go 12 moons without being able to display. For example, if an involved cat dies before the future event is able to display, then the event will no longer trigger and the player will never see it. A 12 moon buffer is provided so that any season-locked triggered events will have the opportunity to "wait" for their required season.
 
-## DelayedEvent Format
+## FutureEvent Format
 
 ```json
-"delayed_event": [
+"future_event": [
         {
         "event_type": "",
         "pool": {},
@@ -22,10 +22,10 @@ Throughout this documentation we will refer to the DelayedEvent format block as 
 ]
 ```
 
-This block can be added to the end of ShortEvent and Patrol outcome formats.
+This parameter can be added to the end of ShortEvent and Patrol outcome formats.
 
 !!! note
-    The delayed event block is a *list*, this means that you could have multiple delayed event dictionaries contained within, each dictionary creating its own triggered event.
+    The future event parameter is a *list*, this means that you could have multiple future event dictionaries contained within, each dictionary creating its own triggered event. 
 
 ### event_type:str
 
@@ -44,8 +44,8 @@ Specify which ShortEvent type the triggered event will be.
 You can specify a whole pool of events to be chosen from. Only one event from this pool will be chosen as the triggered event. You can specify by `subtype`, `event_id`, or `excluded_event_id`. You do not need to include every parameter, but you must utilize at least one.
 
 !!! important
-    You **cannot** specify both `subtype` *and* `event_id`. 
-    You **can** specify both `subtype` *and* `excluded_event_id`.
+    All events must have the same subtypes. 
+    You can specify both `subtype` *and* `excluded_event_id`.
     If you specify `event_id`, you *must* include the corresponding subtypes in `subtype`
 
 ```json
@@ -96,11 +96,11 @@ Example of how this looks in use, the parent event for this hypothetical event i
 The cat constraints that can be utilized here are the same as [ShortEvents](shortevents.md#r_cdictstr-various), with a few exclusions. The ***only*** constraints you *can* use are `age`, `status`, `skill`, `trait`, and `backstory`.
 
 !!! warning
-    Keep in mind that if you constrain certain roles, you *need* to be certain that there is at least one possible event within the pool that will allow for those constraints.  For example, if you specify that r_c must be an elder with the CAMP skill, then there must be at least one event in the pool that allows r_c to be an elder with the CAMP skill.  If there is not, then a triggered event will never be chosen and the delayed event has essentially done nothing.
+    Keep in mind that if you constrain certain roles, you *need* to be certain that there is at least one possible event within the pool that will allow for those constraints.  For example, if you specify that r_c must be an elder with the CAMP skill, then there must be at least one event in the pool that allows r_c to be an elder with the CAMP skill.  If there is not, then a triggered event will never be chosen and the future event has essentially done nothing.
 
 ## Example
 
-Here's an example of a delayed event being utilized for a murder event.
+Here's an example of a future event being utilized for a murder event.
 
 ```json
     {
@@ -161,7 +161,7 @@ Here's an example of a delayed event being utilized for a murder event.
                 "amount": 15
             }
         ],
-        "delayed_event": [
+        "future_event": [
                 {
                 "event_type": "misc",
                 "pool": {

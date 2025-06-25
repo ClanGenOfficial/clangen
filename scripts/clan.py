@@ -31,7 +31,7 @@ from scripts.utility import (
     clan_symbol_sprite,
     get_living_clan_cat_count,
 )  # pylint: disable=redefined-builtin
-from scripts.events_module.delayed.delayed_event import DelayedEvent
+from scripts.events_module.delayed.delayed_event import FutureEvent
 
 
 class Clan:
@@ -1109,23 +1109,23 @@ class Clan:
         # load the current file path, if it exists in save
         file_path = f"{get_save_dir()}/{game.clan.name}/delayed_events.json"
         if os.path.exists(file_path):
-            with open(
-                    file_path, "r", encoding="utf-8"
-            ) as save_file:
+            with open(file_path, "r", encoding="utf-8") as save_file:
                 save_list = ujson.load(save_file)
                 for event in save_list:
                     try:
                         game.clan.delayed_events.append(
-                            DelayedEvent(
+                            FutureEvent(
                                 parent_event=event["parent_event"],
                                 event_type=event["event_type"],
                                 pool=event["pool"],
                                 moon_delay=event["moon_delay"],
-                                involved_cats=event["involved_cats"]
+                                involved_cats=event["involved_cats"],
                             )
                         )
                     except KeyError:
-                        print(f"WARNING: A saved delayed event was missing information and was not loaded. event: {event}")
+                        print(
+                            f"WARNING: A saved delayed event was missing information and was not loaded. event: {event}"
+                        )
                         continue
 
                 game.clan.delayed_events = ujson.load(save_file)
@@ -1140,17 +1140,18 @@ class Clan:
         save_list = []
 
         for event in game.clan.delayed_events:
-            save_list.append({
-                "parent_event": event.parent_event,
-                "event_type": event.event_type,
-                "pool": event.pool,
-                "moon_delay": event.moon_delay,
-                "involved_cats": event.involved_cats
-            })
+            save_list.append(
+                {
+                    "parent_event": event.parent_event,
+                    "event_type": event.event_type,
+                    "pool": event.pool,
+                    "moon_delay": event.moon_delay,
+                    "involved_cats": event.involved_cats,
+                }
+            )
 
         game.safe_save(
-            f"{get_save_dir()}/{game.clan.name}/delayed_events.json",
-            save_list
+            f"{get_save_dir()}/{game.clan.name}/delayed_events.json", save_list
         )
 
     def load_herb_supply(self, clan):

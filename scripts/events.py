@@ -329,7 +329,7 @@ class Events:
             if event.moon_delay <= -12:
                 removals.append(event)
             if event.moon_delay <= 0:
-                handle_short_events.trigger_delayed_event(event)
+                handle_short_events.trigger_future_event(event)
 
         for event in removals:
             if event in game.clan.delayed_events:
