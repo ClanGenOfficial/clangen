@@ -1,4 +1,5 @@
 import re
+from random import choice
 
 from scripts.game_structure.game_essentials import game
 from scripts.special_dates import get_special_date, contains_special_date_tag
@@ -380,3 +381,102 @@ def _check_cat_gender(cat, genders: list) -> bool:
         return True
 
     return False
+
+
+def cat_for_event(constraint_dict: dict, possible_cats: list):
+    """
+    Checks the given cat list against constraint_dict to find any eligible cats.
+    Returns a single cat ID chosen from eligible cats.
+    :param constraint_dict: Can include age, status, skill, trait, and backstory lists
+    :param possible_cats: List of possible cat objects
+    """
+    # gather funcs to use
+    funct_dict = {
+        "age": _get_cats_with_age,
+        "status": _get_cats_with_status,
+        "skill": _get_cats_with_skill,
+        "trait": _get_cats_with_trait,
+        "backstory": _get_cats_with_backstory,
+    }
+
+    # run funcs
+    allowed_cats = []
+    for param in funct_dict:
+        allowed_cats = funct_dict[param](possible_cats, constraint_dict.get(param))
+
+        # if the list is emptied, break
+        if not allowed_cats:
+            break
+
+    if not allowed_cats:
+        return None
+
+    return choice(allowed_cats).ID
+
+
+def _get_cats_with_age(cat_list: list, ages: list) -> list:
+    """
+    checks cat_list against required ages and returns qualifying cats
+    """
+    if not ages or "any" in ages:
+        return cat_list
+
+    return [kitty for kitty in cat_list if kitty.age in ages]
+
+
+def _get_cats_with_status(cat_list: list, statuses: list) -> list:
+    """
+    checks cat_list against required statuses and returns qualifying cats
+    """
+    if not statuses or "any" in statuses:
+        return cat_list
+
+    return [kitty for kitty in cat_list if kitty.status in statuses]
+
+
+def _get_cats_with_skill(cat_list: list, skills: list) -> list:
+    """
+    checks cat_list against required skills and returns qualifying cats
+    """
+    removals = []
+    if not skills:
+        return cat_list
+
+    for kitty in cat_list:
+        has_skill = False
+        for _skill in skills:
+            split_skill = _skill.split(",")
+
+            if len(split_skill) < 2:
+                print("Cat skill incorrectly formatted", _skill)
+                continue
+
+            if kitty.skills.meets_skill_requirement(
+                split_skill[0], int(split_skill[1])
+            ):
+                has_skill = True
+
+        if not has_skill:
+            removals.append(kitty)
+
+    return [kitty for kitty in cat_list if kitty not in removals]
+
+
+def _get_cats_with_trait(cat_list: list, traits: list) -> list:
+    """
+    checks cat_list against required traits and returns qualifying cats
+    """
+    if not traits:
+        return cat_list
+
+    return [kitty for kitty in cat_list if kitty.trait in traits]
+
+
+def _get_cats_with_backstory(cat_list: list, backstories: list) -> list:
+    """
+    checks cat_list against required backstories and returns qualifying cats
+    """
+    if not backstories:
+        return cat_list
+
+    return [kitty for kitty in cat_list if kitty.backstory in backstories]

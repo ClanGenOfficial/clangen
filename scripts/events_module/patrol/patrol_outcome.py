@@ -9,7 +9,6 @@ from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
 import i18n
 import pygame
 
-from scripts.events_module.future.future_event import future_event
 from scripts.events_module.short.handle_short_events import INJURY_GROUPS
 
 if TYPE_CHECKING:
@@ -43,33 +42,32 @@ class PatrolOutcome:
     """Holds all info on patrol outcomes, and methods to handle that outcome"""
 
     def __init__(
-            self,
-            success: bool = True,
-            antagonize: bool = False,
-            text: str = None,
-            weight: int = 20,
-            exp: int = 0,
-            stat_trait: List[str] = None,
-            stat_skill: List[str] = None,
-            can_have_stat: List[str] = None,
-            dead_cats: List[str] = None,
-            lost_cats: List[str] = None,
-            injury: List[Dict] = None,
-            history_reg_death: str = None,
-            history_leader_death: str = None,
-            history_scar: str = None,
-            new_cat: List[List[str]] = None,
-            herbs: List[str] = None,
-            prey: List[str] = None,
-            outsider_rep: Union[int, None] = None,
-            other_clan_rep: Union[int, None] = None,
-            relationship_effects: List[dict] = None,
-            relationship_constraints: List[str] = None,
-            outcome_art: Union[str, None] = None,
-            outcome_art_clean: Union[str, None] = None,
-            stat_cat: Cat = None,
-            future_event: Dict = None
-
+        self,
+        success: bool = True,
+        antagonize: bool = False,
+        text: str = None,
+        weight: int = 20,
+        exp: int = 0,
+        stat_trait: List[str] = None,
+        stat_skill: List[str] = None,
+        can_have_stat: List[str] = None,
+        dead_cats: List[str] = None,
+        lost_cats: List[str] = None,
+        injury: List[Dict] = None,
+        history_reg_death: str = None,
+        history_leader_death: str = None,
+        history_scar: str = None,
+        new_cat: List[List[str]] = None,
+        herbs: List[str] = None,
+        prey: List[str] = None,
+        outsider_rep: Union[int, None] = None,
+        other_clan_rep: Union[int, None] = None,
+        relationship_effects: List[dict] = None,
+        relationship_constraints: List[str] = None,
+        outcome_art: Union[str, None] = None,
+        outcome_art_clean: Union[str, None] = None,
+        stat_cat: Cat = None,
+        future_event: Dict = None,
     ):
         self.success = success
         self.antagonize = antagonize
@@ -207,7 +205,7 @@ class PatrolOutcome:
                     relationship_constraints=_d.get("relationship_constraint"),
                     outcome_art=_d.get("art"),
                     outcome_art_clean=_d.get("art_clean"),
-                    future_event=_d.get("future_event")
+                    future_event=_d.get("future_event"),
                 )
             )
 
@@ -315,7 +313,7 @@ class PatrolOutcome:
         future_event.prep_event(
             event=self,
             event_id=patrol.patrol_event.patrol_id,
-            possible_cats=possible_cats
+            possible_cats=possible_cats,
         )
 
     def _allowed_stat_cat_specific(

@@ -1,6 +1,7 @@
 from random import choice, randint
 
 from scripts.cat.cats import Cat
+from scripts.events_module.event_filters import cat_for_event
 from scripts.game_structure.game_essentials import game
 
 
@@ -19,6 +20,7 @@ class FutureEvent:
         self.moon_delay = moon_delay
 
         self.involved_cats = involved_cats
+
 
 def prep_event(event, event_id: str, possible_cats: dict):
     """
@@ -48,6 +50,7 @@ def prep_event(event, event_id: str, possible_cats: dict):
             )
         )
 
+
 def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
     """
     collects involved cats and assigns their roles for the future event, then
@@ -67,15 +70,13 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
 
     # we're just keeping this to living cats within the clan for now, more complexity can come later
     possible_cats = [
-        kitty
-        for kitty in Cat.all_cats.values()
-        if not kitty.dead and not kitty.outside
+        kitty for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside
     ]
 
     for new_role, cat_involved in future_info["involved_cats"].items():
         # grab any cats that need to be newly gathered
         if isinstance(cat_involved, dict):
-            gathered_cat_dict[new_role] = _get_constrained_cat(
+            gathered_cat_dict[new_role] = cat_for_event(
                 cat_involved, possible_cats
             )
             possible_cats.remove(Cat.fetch_cat(gathered_cat_dict[new_role]))
@@ -88,95 +89,3 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
 
     return gathered_cat_dict
 
-def _get_constrained_cat(constraint_dict, possible_cats):
-    """
-    checks the living clan cat list against constraint_dict to find any eligible cats.
-    returns a single cat ID chosen from eligible cats
-    """
-
-    funct_dict = {
-        "age": _check_age,
-        "status": _check_status,
-        "skill": _check_skill,
-        "trait": _check_trait,
-        "backstory": _check_backstory,
-    }
-
-    allowed_cats = []
-    for param in funct_dict:
-        allowed_cats = funct_dict[param](possible_cats, constraint_dict.get(param))
-
-        # if the list is emptied, break
-        if not allowed_cats:
-            break
-
-    if not allowed_cats:
-        return None
-
-    return choice(allowed_cats).ID
-
-def _check_age(cat_list: list, ages: list) -> list:
-    """
-    checks cat_list against required ages and returns qualifying cats
-    """
-    if not ages or "any" in ages:
-        return cat_list
-
-    return [kitty for kitty in cat_list if kitty.age in ages]
-
-def _check_status(cat_list: list, statuses: list) -> list:
-    """
-    checks cat_list against required statuses and returns qualifying cats
-    """
-    if not statuses or "any" in statuses:
-        return cat_list
-
-    return [kitty for kitty in cat_list if kitty.status in statuses]
-
-def _check_skill(cat_list: list, skills: list) -> list:
-    """
-    checks cat_list against required skills and returns qualifying cats
-    """
-    removals = []
-    if not skills:
-        return cat_list
-
-    for kitty in cat_list:
-        has_skill = False
-        for _skill in skills:
-            split_skill = _skill.split(",")
-
-            if len(split_skill) < 2:
-                print("Cat skill incorrectly formatted", _skill)
-                continue
-
-            if kitty.skills.meets_skill_requirement(
-                split_skill[0], int(split_skill[1])
-            ):
-                has_skill = True
-
-        if not has_skill:
-            removals.append(kitty)
-
-    return [kitty for kitty in cat_list if kitty not in removals]
-
-def _check_trait(cat_list: list, traits: list) -> list:
-    """
-    checks cat_list against required traits and returns qualifying cats
-    """
-    if not traits:
-        return cat_list
-
-    return [kitty for kitty in cat_list if kitty.trait in traits]
-
-def _check_backstory(cat_list: list, backstories: list) -> list:
-    """
-    checks cat_list against required backstories and returns qualifying cats
-    """
-    if not backstories:
-        return cat_list
-
-    return [kitty for kitty in cat_list if kitty.backstory in backstories]
-
-
-future_event = FutureEvent()

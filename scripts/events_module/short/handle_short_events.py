@@ -4,6 +4,7 @@ from typing import List
 import i18n
 
 from scripts.clan_resources.herb.herb import HERBS
+from scripts.events_module.future.future_event import prep_event
 from scripts.game_structure import localization
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
@@ -15,7 +16,6 @@ from scripts.clan_resources.freshkill import (
     FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.future.future_event import future_event, FutureEvent
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure.game_essentials import game
@@ -338,7 +338,7 @@ class HandleShortEvents:
         for x, newbie in enumerate(self.new_cats):
             possible_cats[f"n_c:{x}"] = newbie
 
-        future_event.prep_event(
+        prep_event(
             event=self.chosen_event,
             event_id=self.chosen_event.event_id,
             possible_cats=possible_cats,
