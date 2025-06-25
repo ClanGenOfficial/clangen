@@ -15,7 +15,7 @@ from scripts.clan_resources.freshkill import (
     FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.delayed.delayed_event import delayed_event, FutureEvent
+from scripts.events_module.future.future_event import future_event, FutureEvent
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure.game_essentials import game
@@ -74,7 +74,7 @@ class HandleShortEvents:
         self.additional_event_text = ""
         self.allowed_events = None
         self.excluded_events = None
-        self.delayed_event = None
+        self.future_event = None
 
     def handle_event(
         self,
@@ -324,7 +324,7 @@ class HandleShortEvents:
 
     def gather_future_event(self):
         """
-        Handles gathering information for delayed event
+        Handles gathering information for future event
         """
         if not self.chosen_event.future_event:
             return
@@ -338,7 +338,7 @@ class HandleShortEvents:
         for x, newbie in enumerate(self.new_cats):
             possible_cats[f"n_c:{x}"] = newbie
 
-        delayed_event.prep_event(
+        future_event.prep_event(
             event=self.chosen_event,
             event_id=self.chosen_event.event_id,
             possible_cats=possible_cats,

@@ -156,8 +156,8 @@ class GenerateEvents:
                         other_clan=event["other_clan"] if "other_clan" in event else {},
                         supplies=event["supplies"] if "supplies" in event else [],
                         new_gender=event["new_gender"] if "new_gender" in event else [],
-                        delayed_event=event["delayed_event"]
-                        if "delayed_event" in event
+                        future_event=event["future_event"]
+                        if "future_event" in event
                         else {},
                     )
                     event_list.append(event)
