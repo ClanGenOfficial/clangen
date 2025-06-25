@@ -3,7 +3,6 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Type
 
 import ujson
-from ujson import JSONDecodeError
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.settings.settings import game_setting_get
@@ -148,7 +147,7 @@ def add_faded_offspring_to_faded_cat(clanname, parent: str, offspring: str):
     except IOError:
         print("ERROR loading faded cat (file read error)")
         return False
-    except JSONDecodeError:
+    except ujson.JSONDecodeError:
         print("ERROR: loading faded cat (invalid JSON)")
         return False
 
