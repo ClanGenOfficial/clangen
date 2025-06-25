@@ -71,7 +71,7 @@
                 "amount": 15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -171,7 +171,7 @@
                 "amount": 15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -274,7 +274,7 @@
                 "amount": 15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -378,7 +378,7 @@
                 "amount": 15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -477,7 +477,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -579,7 +579,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -681,7 +681,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -785,7 +785,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -887,7 +887,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -2440,7 +2440,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -2543,7 +2543,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -2636,7 +2636,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -2746,7 +2746,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -3753,7 +3753,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -4399,7 +4399,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -4493,7 +4493,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -4592,7 +4592,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -6732,7 +6732,7 @@
                 "amount": 15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -6820,7 +6820,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -6931,7 +6931,7 @@
                 "amount": 15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -7026,7 +7026,7 @@
                 "amount": 15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -7131,7 +7131,7 @@
                 "lead_death": "saved a drowning kit that was set up by r_c"
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -7441,7 +7441,7 @@
                 "amount": -15
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -8090,7 +8090,7 @@
             ],
             "changed": 0
         },
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -8164,7 +8164,7 @@
             ],
             "changed": -1
         },
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -8245,7 +8245,7 @@
                 "lead_death": "{VERB/m_c/were/was} lured by r_c into a Twoleg trap"
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -8321,7 +8321,7 @@
                 "lead_death": "{VERB/m_c/were/was} murdered by r_c"
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -8397,7 +8397,7 @@
                 "reg_death": "r_c died after launching a failed assassination attempt on the Clan's leader."
             }
         ],
-        "delayed_event": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {

@@ -468,7 +468,7 @@
                 "amount": -25
             }
         ],
-        "delayed_event": [
+        "future_event": [
                 {
                 "event_type": "misc",
                 "pool": {
@@ -588,7 +588,7 @@
                 "amount": -25
             }
         ],
-        "delayed_event": [
+        "future_event": [
                 {
                 "event_type": "misc",
                 "pool": {
@@ -695,7 +695,7 @@
                 "amount": -25
             }
         ],
-        "delayed_event": [
+        "future_event": [
                 {
                 "event_type": "misc",
                 "pool": {
