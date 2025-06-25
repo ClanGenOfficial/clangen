@@ -1127,8 +1127,6 @@ class Clan:
                         )
                         continue
 
-                game.clan.future_events = ujson.load(save_file)
-
     def save_future_events(self, clan):
         """
         saves the Clan's current future events
