@@ -435,9 +435,9 @@ class Clan:
         TODO: DOCS
         """
         if save:
-            game.save_clanlist(clan, True)
+            save_clanlist(clan, True)
         else:
-            game.save_clanlist(clan)
+            save_clanlist(clan)
         switch_set_value(Switch.switch_clan, True)
         # quit(savesettings=False, clearevents=True)
 

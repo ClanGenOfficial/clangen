@@ -135,7 +135,9 @@ def add_faded_offspring_to_faded_cat(clanname, parent: str, offspring: str):
     """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
     both active and faded cat's faded offpsring. This will add a faded offspring to a faded parents file.
     """
-    faded_parent_path = Path(get_save_dir()) / clanname / "faded_cats" / (parent + ".json")
+    faded_parent_path = (
+        Path(get_save_dir()) / clanname / "faded_cats" / (parent + ".json")
+    )
     try:
         with open(
             faded_parent_path,

@@ -95,8 +95,6 @@ class StartScreen(Screens):
                 self.closebtn.kill()
                 self.open_data_directory_button.kill()
                 self.error_open = False
-                # game.switches['error_message'] = ''
-                # game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
                 UpdateAvailablePopup()
             elif event.ui_element == self.quit:

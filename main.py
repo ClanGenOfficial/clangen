@@ -314,7 +314,7 @@ def load_game():
     game.patrol_cats.clear()
     game.patrolled.clear()
     game.clan = None
-    game.switches["switch_clan"] = False
+    switch_set_value(Switch.switch_clan, False)
 
     finished_loading = False
     loading_thread = threading.Thread(target=load_data)
@@ -355,7 +355,7 @@ while 1:
     elif pygame.mouse.get_cursor() == cursor:
         pygame.mouse.set_cursor(disabled_cursor)
 
-    if game.switches["switch_clan"]:
+    if switch_get_value(Switch.switch_clan):
         load_game()
 
     # Draw screens

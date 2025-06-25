@@ -66,10 +66,11 @@ def safe_save(
             os.fsync(write_file.fileno())
 
 
-def save_clanlist(loaded_clan=None):
+def save_clanlist(loaded_clan=None, only_switch=False):
     """
     Save clanlist to file
-    :param loaded_clan:
+    :param loaded_clan: currently loaded clan name
+    :param only_switch: If true, don't save previous clan before switching
     :return: None
     """
     currentclan_path = Path(get_save_dir()) / "currentclan.txt"
@@ -78,7 +79,9 @@ def save_clanlist(loaded_clan=None):
         if clanlist_path.exists():
             # we don't need clanlist.txt anymore
             clanlist_path.unlink()
-        safe_save(currentclan_path, loaded_clan)
+
+        if not only_switch:
+            safe_save(currentclan_path, loaded_clan)
     else:
         if currentclan_path.exists():
             currentclan_path.unlink()
