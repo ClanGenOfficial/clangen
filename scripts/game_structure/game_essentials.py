@@ -145,6 +145,7 @@ class Game:
         "disallowed_symbol_tags": [],
         "saved_scroll_positions": {},
         "moon&season_open": False,
+        "switch_clan": False,
     }
     all_screens = {}
     cur_events = {}
@@ -328,7 +329,7 @@ class Game:
             return None
         return clan_list
 
-    def save_clanlist(self, loaded_clan=None):
+    def save_clanlist(self, loaded_clan=None, only_switch=False):
         """clans = []
         if loaded_clan:
             clans.append(f"{loaded_clan}\n")
@@ -344,7 +345,8 @@ class Game:
             if os.path.exists(get_save_dir() + "/clanlist.txt"):
                 # we don't need clanlist.txt anymore
                 os.remove(get_save_dir() + "/clanlist.txt")
-            game.safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
+            if not only_switch:
+                game.safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
         else:
             if os.path.exists(get_save_dir() + "/currentclan.txt"):
                 os.remove(get_save_dir() + "/currentclan.txt")

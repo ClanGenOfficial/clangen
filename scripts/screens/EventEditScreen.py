@@ -859,10 +859,6 @@ class EventEditScreen(Screens):
                             and name != self.current_editor_tab
                         ):
                             self.current_editor_tab = name
-                            if self.event_text_element["event_text"].html_text:
-                                self.event_text_info = self.event_text_element[
-                                    "event_text"
-                                ].html_text
                             self.clear_editor_tab()
                             break
 
@@ -918,6 +914,12 @@ class EventEditScreen(Screens):
                 self.handle_outside_events(event)
 
         elif event.type == pygame_gui.UI_TEXT_ENTRY_CHANGED:
+            if self.event_text_element["event_text"] == event.ui_element:
+                self.event_text_info = self.event_text_element["event_text"].html_text
+                if "t_initial" in self.event_text_info:
+                    self.event_text_info = ""
+                    self.event_text_element["event_text"].set_text(self.event_text_info)
+
             # CHANGE EVENT ID
             if self.current_editor_tab == "settings":
                 if event.ui_element == self.event_id_element.get("entry"):
@@ -3479,6 +3481,8 @@ class EventEditScreen(Screens):
 
     def update_trait_info(self, trait_dict, selected_list):
         saved_traits = "trait" if self.trait_allowed else "not_trait"
+        if saved_traits not in self.current_cat_dict.keys():
+            return
 
         if self.current_cat_dict.get(saved_traits):
             selected_traits = set(self.current_cat_dict.get(saved_traits)).intersection(

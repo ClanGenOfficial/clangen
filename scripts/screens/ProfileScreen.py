@@ -32,6 +32,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
+from ..cat.enums import CatAgeEnum
 from ..cat.history import History
 from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
@@ -2383,7 +2384,11 @@ class ProfileScreen(Screens):
             light_dark = "dark"
 
         available_biome = ["Forest", "Mountainous", "Plains", "Beach"]
-        biome = game.clan.biome
+        biome = (
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        )
 
         if biome not in available_biome:
             biome = available_biome[0]

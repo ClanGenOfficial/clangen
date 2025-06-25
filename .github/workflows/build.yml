@@ -24,13 +24,6 @@ jobs:
             itch_channel: linux64_glibc_235
             api_artifact_name: linux2.35
             
-          - os: windows-2019
-            artifact_name: Clangen_Win32.zip
-            python_version: "3.8"
-            python_arch: "x86"
-            itch_channel: win32
-            api_artifact_name: win32
-            
           - os: windows-latest
             artifact_name: Clangen_Win64.zip
             python_version: "3.8"

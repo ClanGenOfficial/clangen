@@ -37,6 +37,7 @@ from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
@@ -48,9 +49,6 @@ from scripts.utility import (
     leader_ceremony_text_adjust,
     update_mask,
 )
-from scripts.game_structure.localization import load_lang_resource
-
-import scripts.game_structure.localization as pronouns
 
 import scripts.game_structure.screen_settings
 
@@ -300,7 +298,11 @@ class Cat:
         if "biome" in kwargs:
             biome = kwargs["biome"]
         elif game.clan is not None:
-            biome = game.clan.biome
+            biome = (
+                game.clan.biome
+                if not game.clan.override_biome
+                else game.clan.override_biome
+            )
         else:
             biome = None
         # NAME
