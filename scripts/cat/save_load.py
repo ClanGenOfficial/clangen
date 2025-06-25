@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Type
 
 import ujson
+from ujson import JSONDecodeError
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.settings.settings import game_setting_get
@@ -134,19 +135,23 @@ def add_faded_offspring_to_faded_cat(clanname, parent: str, offspring: str):
     """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
     both active and faded cat's faded offpsring. This will add a faded offspring to a faded parents file.
     """
+    faded_parent_path = Path(get_save_dir()) / clanname / "faded_cats" / (parent + ".json")
     try:
         with open(
-            get_save_dir() + "/" + clanname + "/faded_cats/" + parent + ".json",
+            faded_parent_path,
             "r",
             encoding="utf-8",
         ) as read_file:
             cat_info = ujson.loads(read_file.read())
-    except:
-        print("ERROR: loading faded cat")
+    except IOError:
+        print("ERROR loading faded cat (file read error)")
+        return False
+    except JSONDecodeError:
+        print("ERROR: loading faded cat (invalid JSON)")
         return False
 
     cat_info["faded_offspring"].append(offspring)
 
-    safe_save(f"{get_save_dir()}/{clanname}/faded_cats/{parent}.json", cat_info)
+    safe_save(faded_parent_path, cat_info)
 
     return True
