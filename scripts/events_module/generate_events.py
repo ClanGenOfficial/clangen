@@ -18,10 +18,10 @@ from scripts.events_module.event_filters import (
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_living_clan_cat_count,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 def get_resource_directory(fallback=False):
@@ -221,13 +221,18 @@ class GenerateEvents:
         event_list = []
 
         # skip the rest of the loading if there is an unrecognised biome
-        if game.clan.biome not in game.clan.BIOME_TYPES:
+        temp_biome = (
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        )
+        if temp_biome not in game.clan.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
                 f"in clan.py?"
             )
 
-        biome = game.clan.biome.lower()
+        biome = temp_biome.lower()
 
         # biome specific events
         event_list.extend(GenerateEvents.generate_short_events(event_type, biome))

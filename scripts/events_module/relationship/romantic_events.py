@@ -5,22 +5,22 @@ from typing import Dict, List
 
 import i18n
 
+import scripts.cat_relations.interaction as interactions
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import (
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
 )
-import scripts.cat_relations.interaction as interactions
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_highest_romantic_relation,
     event_text_adjust,
     get_personality_compatibility,
     process_text,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 class RomanticEvents:
@@ -182,7 +182,15 @@ class RomanticEvents:
         )
         filtered_interactions = []
         _season = [str(game.clan.current_season).casefold(), "Any", "any"]
-        _biome = [str(game.clan.biome).casefold(), "Any", "any"]
+        _biome = [
+            str(
+                game.clan.biome
+                if not game.clan.override_biome
+                else game.clan.override_biome
+            ).casefold(),
+            "Any",
+            "any",
+        ]
         for interaction in possible_interactions:
             in_tags = [i for i in interaction.biome if i not in _biome]
             if len(in_tags) > 0:

@@ -9,11 +9,9 @@ TODO: Docs
 # pylint: enable=line-too-long
 
 import os
-import random
 import statistics
 from random import choice, randint
 
-import i18n
 import pygame
 import ujson
 
@@ -129,7 +127,9 @@ class Clan:
         self.starting_season = starting_season
         self.instructor = None
         # This is the first cat in starclan, to "guide" the other dead cats there.
+        self.clan_cats = []
         self.biome = biome
+        self.override_biome = None
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
@@ -163,6 +163,8 @@ class Clan:
         # it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
         # and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
         self._reputation = 80
+
+        self.all_clans = []
 
         self.starting_members = starting_members
         if game_mode in ("expanded", "cruel season"):
@@ -459,12 +461,16 @@ class Clan:
                         game.clan.medicine_cat = None
 
     @staticmethod
-    def switch_clans(clan):
+    def switch_clans(clan, save=True):
         """
         TODO: DOCS
         """
-        game.save_clanlist(clan)
-        quit(savesettings=False, clearevents=True)
+        if save:
+            game.save_clanlist(clan, True)
+        else:
+            game.save_clanlist(clan)
+        game.switches["switch_clan"] = True
+        # quit(savesettings=False, clearevents=True)
 
     def save_clan(self):
         """

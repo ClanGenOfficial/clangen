@@ -1893,7 +1893,9 @@ def get_special_snippet_list(
     (i.e. ["hate", "fear", "dread"] becomes "hate, fear, and dread") - Default is True
     :return: a list of the chosen items from chosen_list or a formatted string if format is True
     """
-    biome = game.clan.biome.casefold()
+    biome = (
+        game.clan.biome if not game.clan.override_biome else game.clan.override_biome
+    ).casefold()
     global SNIPPETS
     if langs["snippet"] != i18n.config.get("locale"):
         langs["snippet"] = i18n.config.get("locale")

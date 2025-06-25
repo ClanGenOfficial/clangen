@@ -460,9 +460,13 @@ class HerbSupply:
         found_herbs = {}
 
         # adjust weighting according to season
-        weight = game.config["clan_resources"]["herbs"][game.clan.biome.casefold()][
-            game.clan.current_season.casefold()
-        ]
+        weight = game.config["clan_resources"]["herbs"][
+            (
+                game.clan.biome
+                if not game.clan.override_biome
+                else game.clan.override_biome
+            ).casefold()
+        ][game.clan.current_season.casefold()]
 
         # the amount of herb types the med has found
         amount_of_herbs = (
@@ -484,7 +488,10 @@ class HerbSupply:
 
             # rarity is set to 0 if the herb can't be found in the current season
             if not self.herb[herb].get_rarity(
-                game.clan.biome, game.clan.current_season
+                game.clan.biome
+                if not game.clan.override_biome
+                else game.clan.override_biome,
+                game.clan.current_season,
             ):
                 continue
 
@@ -493,7 +500,10 @@ class HerbSupply:
                 randint(
                     1,
                     self.herb[herb].get_rarity(
-                        game.clan.biome, game.clan.current_season
+                        game.clan.biome
+                        if not game.clan.override_biome
+                        else game.clan.override_biome,
+                        game.clan.current_season,
                     ),
                 )
                 == 1
