@@ -84,6 +84,7 @@ class HandleShortEvents:
         freshkill_pile: FreshkillPile,
         victim_cat: Cat = None,
         sub_type: list = None,
+        ignore_subtyping: bool = False,
     ):
         """
         This function handles the generation and execution of the event
@@ -136,6 +137,7 @@ class HandleShortEvents:
             sub_types=self.sub_types,
             allowed_events=self.allowed_events,
             excluded_events=self.excluded_events,
+            ignore_subtyping=ignore_subtyping,
         )
 
         if isinstance(game.config["event_generation"]["debug_ensure_event_id"], str):
@@ -353,6 +355,7 @@ class HandleShortEvents:
             freshkill_pile=game.clan.freshkill_pile,
             victim_cat=Cat.fetch_cat(event.involved_cats.get("mur_c")),
             sub_type=event.pool.get("subtype"),
+            ignore_subtyping=True if "subtype" in event.pool else False,
         )
 
         self.allowed_events = []

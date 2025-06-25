@@ -156,7 +156,9 @@ class GenerateEvents:
                         other_clan=event["other_clan"] if "other_clan" in event else {},
                         supplies=event["supplies"] if "supplies" in event else [],
                         new_gender=event["new_gender"] if "new_gender" in event else [],
-                        delayed_event=event["delayed_event"] if "delayed_event" in event else {}
+                        delayed_event=event["delayed_event"]
+                        if "delayed_event" in event
+                        else {},
                     )
                     event_list.append(event)
 
@@ -243,16 +245,17 @@ class GenerateEvents:
 
     @staticmethod
     def filter_possible_short_events(
-            Cat_class,
-            possible_events,
-            cat,
-            random_cat,
-            other_clan,
-            freshkill_active,
-            freshkill_trigger_factor,
-            sub_types=None,
-            allowed_events=None,
-            excluded_events=None
+        Cat_class,
+        possible_events,
+        cat,
+        random_cat,
+        other_clan,
+        freshkill_active,
+        freshkill_trigger_factor,
+        sub_types=None,
+        allowed_events=None,
+        excluded_events=None,
+        ignore_subtyping=False,
     ):
         final_events = []
         incorrect_format = []
@@ -287,8 +290,9 @@ class GenerateEvents:
                 continue
 
             # check for event sub_type
-            if set(event.sub_type) != set(sub_types):
-                continue
+            if not ignore_subtyping:
+                if set(event.sub_type) != set(sub_types):
+                    continue
 
             if not event_for_location(event.location):
                 continue
@@ -299,9 +303,6 @@ class GenerateEvents:
             # check tags
             if not event_for_tags(event.tags, cat, random_cat):
                 continue
-
-            # TODO: just remove this tag man its not a useful feature
-            prevent_bypass = "skill_trait_required" in event.tags
 
             # make complete leader death less likely until the leader is over 150 moons (or unless it's a murder)
             if cat.status == "leader":
@@ -568,4 +569,3 @@ class GenerateEvents:
 
 
 generate_events = GenerateEvents()
-
