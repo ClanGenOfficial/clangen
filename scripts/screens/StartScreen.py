@@ -168,6 +168,8 @@ class StartScreen(Screens):
         """
 
         super().screen_switches()
+        if game.event_editing:
+            game.event_editing = False
 
         # start menu music if it isn't already playing
         # this is the only screen that has to check its own music, other screens handle that in the screen change
