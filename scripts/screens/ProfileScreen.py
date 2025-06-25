@@ -32,7 +32,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
-from ..cat.enums import CatAgeEnum
+from ..cat.enums import CatAge
 from ..cat.history import History
 from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
