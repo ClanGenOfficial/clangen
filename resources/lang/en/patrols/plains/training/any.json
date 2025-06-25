@@ -2893,7 +2893,7 @@
         "biome": ["plains"],
         "season": ["any"],
         "tags": [],
-        "types": [],
+        "types": ["training"],
         "patrol_art": "pln_train_session1",
         "min_cats": 3,
         "max_cats": 6,
@@ -3201,7 +3201,7 @@
                         }
                     ],
                     "history_text": {
-                        "scar":"m_c was scarred from being dragged away from a Thunderpath {PRONOUN/m_c/subject} got too close to as a curious apprentice.",
+                        "scar": "m_c was scarred from being dragged away from a Thunderpath {PRONOUN/m_c/subject} got too close to as a curious apprentice.",
                         "reg_death": "Being hauled away from the Thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death for m_c",
                         "lead_death": "being hauled away from the Thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death"
                     }

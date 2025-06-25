@@ -266,13 +266,15 @@ class WarriorDenScreen(Screens):
                 container=self.focus["button_container"],
                 starting_height=2,
                 manager=MANAGER,
-                anchors={
-                    "top_target": self.focus_buttons[
-                        list(settings_dict["clan_focus"])[i - 1]
-                    ]
-                }
-                if i > 0
-                else {"top": "top"},
+                anchors=(
+                    {
+                        "top_target": self.focus_buttons[
+                            list(settings_dict["clan_focus"])[i - 1]
+                        ]
+                    }
+                    if i > 0
+                    else {"top": "top"}
+                ),
             )
 
             if game.clan.clan_settings[code]:

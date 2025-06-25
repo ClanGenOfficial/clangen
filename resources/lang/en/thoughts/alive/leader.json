@@ -296,5 +296,30 @@
             "cold",
             "vengeful"
         ]
+    },
+    {
+        "id": "gen_former_kittypet_leader",
+        "thoughts": [
+            "Is proud of how far {PRONOUN/m_c/subject} {verb/m_c/have/has} come from {PRONOUN/m_c/poss} kittypet life",
+            "Would never wish to return to {PRONOUN/m_c/poss} old kittypet life",
+            "Is happy to prove StarClan's trust in {PRONOUN/m_c/poss} leadership",
+            "Carefully practices the words to every ceremony in {PRONOUN/m_c/poss} den",
+            "Looks back on {PRONOUN/m_c/poss} life as a kittypet, amazed at how different things are now",
+            "Thinks about taking in some kittypets as apprentices",
+            "Wonders if {PRONOUN/m_c/poss} old Twolegs would even recognize {PRONOUN/m_c/object}",
+            "Wonders if new kits will be told of {PRONOUN/m_c/poss} past"
+        ],
+        "main_backstory_constraint": [
+            "kittypet1",
+            "kittypet2",
+            "kittypet3",
+            "kittypet4",
+            "refugee3",
+            "tragedy_survivor3",
+            "guided1"
+        ],
+        "main_status_constraint": [
+            "leader"
+        ]
     }
 ]

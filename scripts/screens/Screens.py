@@ -52,10 +52,10 @@ class Screens:
         game.last_screen_forupdate = self.name
 
         # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in ["camp screen", "list screen", "events screen"]:
+        if self.name in ("camp screen", "list screen", "events screen"):
             game.last_screen_forProfile = self.name
 
-        if new_screen not in [
+        if new_screen not in (
             "list screen",
             "profile screen",
             "sprite inspect screen",
@@ -68,9 +68,9 @@ class Screens:
             "see kits screen",
             "mediation screen",
             "change gender screen",
-        ]:
+        ):
             game.last_list_forProfile = None
-            self.current_group = "clan"
+            self.current_group = "your_clan"
             self.death_status = "living"
             self.current_page = 1
 
@@ -241,7 +241,7 @@ class Screens:
                 ):
                     button.show()
                 button.hide()
-            if name in [
+            if name in (
                 "moons_n_seasons",
                 "moons_n_seasons_arrow",
                 "dens",
@@ -252,7 +252,7 @@ class Screens:
                 "dens_bar",
                 "mute_button",
                 "unmute_button",
-            ]:
+            ):
                 continue
             else:
                 button.show()
@@ -839,11 +839,11 @@ class Screens:
 
         if self.active_blur_bg == "default" or self.active_blur_bg == season:
             blur_bg = season_bg
-        elif self.name in [
+        elif self.name in (
             "start screen",
             "settings screen",
             "switch clan screen",
-        ]:
+        ):
             # if we're in the main menu levels, display the main menu bg
             blur_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
                 theme
@@ -901,9 +901,11 @@ class Screens:
             blur_bg = (
                 "darkforest"
                 if cat.df
-                else "unknown_residence"
-                if cat.ID in game.clan.unknown_cats
-                else "starclan"
+                else (
+                    "unknown_residence"
+                    if cat.ID in game.clan.unknown_cats
+                    else "starclan"
+                )
             )
             self.set_bg(bg=bg, blur_bg=blur_bg)
         else:
@@ -943,12 +945,26 @@ class Screens:
                 _settings = ujson.loads(read_file.read())
                 return "dark" if _settings["dark mode"] else "light"
 
+    # pragma pylint: disable=no-member
+    # noinspection PyUnresolvedReferences
     def update_previous_next_cat_buttons(self):
         """Updates disabled status of previous and next cat buttons. Does nothing if the screen does not have both previous and next cat buttons."""
-        if not hasattr(self, "previous_cat_button") or not hasattr(self, "next_cat_button"):
+        if not hasattr(self, "previous_cat_button") or not hasattr(
+            self, "next_cat_button"
+        ):
             return
-        self.previous_cat_button.enable() if hasattr(self, "previous_cat") and self.previous_cat else self.previous_cat_button.disable() # pylint: disable=no-member
-        self.next_cat_button.enable() if hasattr(self, "next_cat") and self.next_cat else self.next_cat_button.disable() # pylint: disable=no-member
+        (
+            self.previous_cat_button.enable()
+            if hasattr(self, "previous_cat") and self.previous_cat
+            else self.previous_cat_button.disable()
+        )
+        (
+            self.next_cat_button.enable()
+            if hasattr(self, "next_cat") and self.next_cat
+            else self.next_cat_button.disable()
+        )
+
+    # pragma pylint: enable=no-member
 
 
 # CAT PROFILES

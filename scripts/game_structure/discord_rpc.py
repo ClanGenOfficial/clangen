@@ -96,12 +96,16 @@ class _DiscordRPC(threading.Thread):
                 state_text = "Leading the Clan"
 
             try:
-                img_str = (f"{game.clan.biome}_{game.clan.current_season.replace('-', '')}_"
-                           f"{game.clan.camp_bg}_{'dark' if game.settings['dark mode'] else 'light'}")
+                img_str = (
+                    f"{game.clan.biome}_{game.clan.current_season.replace('-', '')}_"
+                    f"{game.clan.camp_bg}_{'dark' if game.settings['dark mode'] else 'light'}"
+                )
                 img_text = game.clan.biome
             except AttributeError:
-                print("Failed to get image string, game may not be fully loaded yet. "
-                      "Don't worry, it will fix itself. Hopefully.")
+                print(
+                    "Failed to get image string, game may not be fully loaded yet. "
+                    "Don't worry, it will fix itself. Hopefully."
+                )
                 img_str = "discord"  # fallback incase the game isn't loaded yet
                 img_text = "Clangen!!"
 

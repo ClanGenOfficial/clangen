@@ -198,7 +198,7 @@ class Thoughts:
             random_cat
             and random_cat.outside
             and random_cat.status
-            not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]
+            not in ("kittypet", "loner", "rogue", "former Clancat", "exiled")
         ):
             outside_status = "lost"
         elif random_cat and random_cat.outside:
@@ -220,8 +220,8 @@ class Thoughts:
             if "has_injuries" in thought:
                 if "m_c" in thought["has_injuries"]:
                     if main_cat.injuries or main_cat.illnesses:
-                        injuries_and_illnesses = (
-                            list(main_cat.injuries.keys()) + list(main_cat.injuries.keys())
+                        injuries_and_illnesses = list(main_cat.injuries.keys()) + list(
+                            main_cat.injuries.keys()
                         )
                         if (
                             not [
@@ -237,9 +237,9 @@ class Thoughts:
 
                 if "r_c" in thought["has_injuries"] and random_cat:
                     if random_cat.injuries or random_cat.illnesses:
-                        injuries_and_illnesses = (
-                            list(random_cat.injuries.keys()) + list(random_cat.injuries.keys())
-                        )
+                        injuries_and_illnesses = list(
+                            random_cat.injuries.keys()
+                        ) + list(random_cat.injuries.keys())
                         if (
                             not [
                                 i

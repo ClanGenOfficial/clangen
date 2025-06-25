@@ -11,7 +11,11 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UISurfaceImageButton,
+    UIModifiedScrollingContainer,
+)
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -191,9 +195,11 @@ class ClanSettingsScreen(Screens):
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
             starting_height=2,
-            tool_tip_text="buttons.toggle_fullscreen_windowed"
-            if game.settings["fullscreen"]
-            else "buttons.toggle_fullscreen_fullscreen",
+            tool_tip_text=(
+                "buttons.toggle_fullscreen_windowed"
+                if game.settings["fullscreen"]
+                else "buttons.toggle_fullscreen_fullscreen"
+            ),
             anchors={
                 "bottom": "bottom",
                 "right": "right",
@@ -251,11 +257,10 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "general"
 
-        self.checkboxes_text[
-            "container_general"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["container_general"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((0, 245), (700, 300))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 
@@ -299,11 +304,10 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "role"
 
-        self.checkboxes_text[
-            "container_role"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["container_role"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((0, 245), (700, 300))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 
@@ -340,11 +344,10 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "relation"
 
-        self.checkboxes_text[
-            "container_relation"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["container_relation"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((0, 245), (700, 300))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 

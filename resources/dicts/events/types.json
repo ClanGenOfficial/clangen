@@ -1,0 +1,6 @@
+{
+    "death": ["murder", "old_age", "mass_death", "war"],
+    "injury": ["war"],
+    "misc": ["murder_reveal", "accessory", "ceremony", "war", "transition"],
+    "new_cat": ["war"]
+}

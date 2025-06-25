@@ -76,15 +76,18 @@
 
       ],
       "beach": [
-        
+        ["an eerily still ocean"]
       ],
       "mountainous": [
+        ["the mountains crumbling away"]
 
       ],
       "wetlands": [
+        ["an endless field of mud"]
 
       ],
       "desert": [
+        ["the skeleton of a beast long gone"]
 
       ]
     },
@@ -112,21 +115,32 @@
 
       ],
       "forest": [
+        ["the endess crashing of trees"]
 
       ],
       "plains": [
+        ["the rustling of grass in the wind"],
+        ["the drilling of a woodpecker"]
 
       ],
       "beach": [
+        ["the crashing of waves along the shore"],
+        ["a gull's cry"]
 
       ],
       "mountainous": [
+        ["the whistling wind through mountaintops"],
+        ["the roar of a cougar"]
 
       ],
       "wetlands": [
+        ["the endless croaking of frogs"],
+        ["the sound of squelching mud"]
 
       ],
       "desert": [
+        ["the rattling of a snake", "the hiss of a snake"],
+        ["the sound of a duststorm"]
 
       ]
     },
@@ -142,21 +156,33 @@
         ["the scent of milk far from the nursery"]
       ],
       "forest": [
+        ["the scent of decaying wood"],
+        ["the scent of bark"]
 
       ],
       "plains": [
+        ["the smell of a thousand flowers"],
+        ["the smell of fresh grass"]
 
       ],
       "beach": [
+        ["the scent of salty air"],
+        ["the scent of decaying fish"]
 
       ],
       "mountainous": [
+        ["the smell of damp rocks"]
 
       ],
       "wetlands": [
+        ["the stink of a skunk cabbage"],
+        ["the scent of mud"],
+        ["the smell of reeds"]
 
       ],
       "desert": [
+        ["the smell of a carcass"],
+        ["the smell of a cactus in bloom"]
 
       ]
     },
@@ -166,27 +192,35 @@
         ["the strength of a warrior", "the steadfastness of a warrior", "a warrior's loyalty"],
         ["the ache of an elder's bones", "the wisdom of an elder"],
         ["the sensation of falling"],
-        ["the feeling of flight"],
+        ["the weightlessness of flight"],
         ["a half-remembered promise"],
-        ["a foreboding feeling"],
-        ["the embrace of a family"]
+        ["a foreboding feeling", "a foreboding dread"],
+        ["the embrace of a family"],
+        ["the ache of wounds"]
+
       ],
       "forest": [
+        ["the thrill of running through the trees"]
 
       ],
       "plains": [
+        ["the freedom of the vast plains"]
 
       ],
       "beach": [
+        ["the wrath of the ocean"]
 
       ],
       "mountainous": [
+        ["the wonder of the mountains"]
 
       ],
       "wetlands": [
+        ["the security of the wetlands"]
 
       ],
       "desert": [
+        ["the emptiness of the desert"]
 
       ]
     },
@@ -195,24 +229,32 @@
         ["the brush of a pelt against {PRONOUN/cat_tag/poss} own"],
         ["the touch of a mentor to an apprentice's forehead"],
         ["a tail twining with {PRONOUN/cat_tag/poss} own"],
-        ["the warmth of a parent"]
+        ["the warmth of a parent"],
+        ["the dampness of rain"],
+        ["the solidity of stone underpaw"]
       ],
       "forest": [
+        ["the clawing of bark"]
 
       ],
       "plains": [
+        ["the tickle of grass"]
 
       ],
       "beach": [
+        ["the spray of water"]
 
       ],
       "mountainous": [
+        ["the wind ruffling {PRONOUN/cat_tag/poss} fur"]
 
       ],
       "wetlands": [
+        ["the softness of mud underpaw"]
 
       ],
       "desert": [
+        ["the dryness of the air"]
 
       ]
     }
@@ -264,7 +306,9 @@
 
       ],
       "mountainous": [
-        ["a crooked-jawed squirrel"]
+        ["a crooked-jawed squirrel"],
+        ["a one-winged vulture"],
+        ["a dark cloud towering endlessly"]
       ],
       "wetlands": [
         ["a three-eyed fish"],
@@ -273,6 +317,9 @@
 
       ],
       "desert": [
+        ["a lizard missing its tail"],
+        ["a cactus without spikes"],
+        ["a seven-legged beetle"]
 
       ]
     },
@@ -282,30 +329,38 @@
         ["the sound of a cat no longer here"]
       ],
       "forest": [
+        ["the hooting of an owl"],
+        ["the falling of a tree", "the crack of a tree falling"]
 
       ],
       "plains": [
         ["the rustle of wind through the grass", "the howl of wind over an empty plain"],
-        ["the cry of hawk", "the screech of an eagle"]
+        ["the cry of a hawk", "the screech of an eagle"]
 
       ],
       "beach": [
+        ["the cry of a gull"],
+        ["the scuttling of endless crabs"],
+        ["the slam of waves"]
 
       ],
       "mountainous": [
-        ["the cry of hawk", "the screech of an eagle"]
+        ["the cry of a hawk", "the screech of an eagle"]
       ],
       "wetlands": [
+        ["the chorus of a thousand frogs"]
 
       ],
       "desert": [
+        ["the thunder of rain hitting arid land"]
 
       ]
     },
     "smell": {
       "general": [
         ["the scent of spoiled queen's milk"],
-        ["the scent of a long dead cat"]
+        ["the scent of a long dead cat"],
+        ["the choking scent of monsters"]
 
       ],
       "forest": [
@@ -330,28 +385,47 @@
     },
     "emotional": {
       "general": [
-        ["a pervasive feeling of dread"],
+        ["a pervasive feeling of dread", "the dread of what is to come"],
         ["the feeling of ants crawling through fur", "the drag of a claw through fur"],
-        ["the imprint of fangs on skin"],
-        ["the feeling of a hidden onlooker", "the oppressive feeling of eyes unseen"],
-        ["the stillness that comes before disaster"]
+        ["the imprint of fangs on skin", "the piercing of fangs through skin"],
+        ["the feeling of a hidden onlooker", "the oppressive feeling of eyes unseen", "the dangerous prickle of a glare"],
+        ["the stillness that comes before disaster"],
+        ["the silence before a storm"],
+        ["the chill of wind"],
+        ["the warmth of sunlight on fur"],
+        ["the weight of actions unknown"],
+        ["the heat of fire", "the anger of fire", "the rage of fire"],
+        ["the cunning of a fox", "the strength of a lion", "the intelligence of a raven", "the slyness of a snake", "the voice of an eagle"]
       ],
       "forest": [
+        ["the softness of leaves"],
+        ["the stickiness of sap"],
+        ["the grace of a deer"]
 
       ],
       "plains": [
+        ["the gentleness of grass"],
+        ["the agility of a rabbit"]
 
       ],
       "beach": [
+        ["the power of the waves"],
+        ["the stealth of an octopus"]
 
       ],
       "mountainous": [
+        ["the towering of mountains"],
+        ["the fear of walking along cliffs"]
 
       ],
       "wetlands": [
+        ["the sinking of quicksand"],
+        ["the beauty of a heron"]
 
       ],
       "desert": [
+        ["the overpowering heat of the sun"],
+        ["the apprehension of a storm to come"]
 
       ]
     },
@@ -359,10 +433,12 @@
       "general": [
         ["the wind whistling past a claw raised in anger"],
         ["the ache of fatigue as eyes close for good"],
-        ["an endless cold that seeps into {PRONOUN/cat_tag/poss} bones"]
+        ["an endless cold that seeps into {PRONOUN/cat_tag/poss} bones"],
+        ["the shaking of the earth below"]
       ],
       "forest": [
-
+        ["the roughness of bark underpaw"]
+        
       ],
       "plains": [
 

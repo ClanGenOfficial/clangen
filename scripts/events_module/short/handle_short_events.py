@@ -3,6 +3,7 @@ from typing import List
 
 import i18n
 
+from scripts.clan_resources.herb.herb import HERBS
 from scripts.game_structure import localization
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
@@ -35,6 +36,17 @@ from scripts.utility import (
 
 class HandleShortEvents:
     """Handles generating and executing ShortEvents"""
+
+    supply_types = ["fresh_kill", "all_herb", "any_herb"]
+    supply_types.extend(HERBS)
+    supply_triggers = ["always", "low", "adequate", "full", "excess"]
+    supply_adjustments = [
+        "reduce_eighth",
+        "reduce_quarter",
+        "reduce_half",
+        "reduce_full",
+        "increase_#",
+    ]
 
     def __init__(self):
         self.current_lives = None
@@ -95,7 +107,7 @@ class HandleShortEvents:
         self.involved_cats = [self.main_cat.ID]
 
         # check for war and assign self.other_clan accordingly
-        if game.clan.war.get("at_war", False):
+        if game.clan.war.get("at_war", False) and random.randint(1, 5) != 1:
             enemy_clan = get_warring_clan()
             self.other_clan = enemy_clan
             self.other_clan_name = f"{self.other_clan.name}Clan"
@@ -175,21 +187,27 @@ class HandleShortEvents:
             self.handle_mass_death()
             if len(self.multi_cat) <= 2:
                 return
-            
+
+        # create new cats (must happen here so that new cats can be included in further changes)
+        self.handle_new_cats()
+
         # remove cats from involved_cats if theyre supposed to be
         if self.chosen_event.r_c and "r_c" in self.chosen_event.exclude_involved:
             self.involved_cats.remove(self.random_cat.ID)
         if "m_c" in self.chosen_event.exclude_involved:
             self.involved_cats.remove(self.main_cat.ID)
 
-        # create new cats (must happen here so that new cats can be included in further changes)
-        self.handle_new_cats()
+        for n_c in self.new_cats:
+            nc_index = self.new_cats.index(n_c)
+            n_c_string = f"n_c:{nc_index}"
+            if n_c_string in self.chosen_event.exclude_involved:
+                if n_c[0].ID in self.involved_cats:
+                    self.involved_cats.remove(str(n_c[0].ID))
 
         # give accessory
         if self.chosen_event.new_accessory:
             if self.handle_accessories() is False:
                 return
-
 
         # change relationships before killing anyone
         if self.chosen_event.relationships:
@@ -371,7 +389,11 @@ class HandleShortEvents:
                         Cat, i18n.t("defaults.event_dead_outsider"), main_cat=cat
                     )
                 elif cat.outside:
-                    if "unknown" in attribute_list:
+                    n_c_index = self.new_cats.index([cat])
+                    if (
+                        f"n_c:{n_c_index}" in self.chosen_event.exclude_involved
+                        or "unknown" in attribute_list
+                    ):
                         extra_text = ""
                     else:
                         extra_text = event_text_adjust(
@@ -419,7 +441,7 @@ class HandleShortEvents:
             acc_list.extend(pelts.collars)
 
         for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR"]:
+            if acc not in ("WILD", "PLANT", "COLLAR"):
                 acc_list.append(acc)
 
         if hasattr(self.main_cat.pelt, "scars"):
@@ -431,7 +453,12 @@ class HandleShortEvents:
                     if acc in acc_list:
                         acc_list.remove(acc)
 
-        accessory_groups = [pelts.collars, pelts.head_accessories, pelts.tail_accessories, pelts.body_accessories]
+        accessory_groups = [
+            pelts.collars,
+            pelts.head_accessories,
+            pelts.tail_accessories,
+            pelts.body_accessories,
+        ]
         if self.main_cat.pelt.accessory:
             for acc in self.main_cat.pelt.accessory:
                 # find which accessory group it belongs to
@@ -448,7 +475,6 @@ class HandleShortEvents:
             self.main_cat.pelt.accessory.append(choice(acc_list))
         else:
             self.main_cat.pelt.accessory = [choice(acc_list)]
-
 
     def handle_transition(self):
         """
@@ -838,7 +864,7 @@ class HandleShortEvents:
 
         # adjust entire herb store
         if supply_type == "all_herb":
-            for (herb, count) in herb_supply.entire_supply.items():
+            for herb, count in herb_supply.entire_supply.items():
                 herb_list.append(herb)
                 if adjustment == "reduce_full":
                     herb_supply.remove_herb(herb, count)
@@ -887,13 +913,11 @@ class HandleShortEvents:
 
         if "reduce" in adjustment:
             self.herb_notice = i18n.t(
-                "screens.med_den.loss_event",
-                herbs=adjust_list_text(herb_list)
+                "screens.med_den.loss_event", herbs=adjust_list_text(herb_list)
             )
         elif "increase" in adjustment:
             self.herb_notice = i18n.t(
-                "screens.med_den.gain_event",
-                herbs=adjust_list_text(herb_list)
+                "screens.med_den.gain_event", herbs=adjust_list_text(herb_list)
             )
 
     def reset(self):
@@ -929,6 +953,60 @@ handle_short_events = HandleShortEvents()
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
 # ---------------------------------------------------------------------------- #
+
+EVENT_ALLOWED_CONDITIONS = [
+    "tick bites",
+    "claw-wound",
+    "bite-wound",
+    "cat bite",
+    "beak bite",
+    "snake bite",
+    "quilled by a porcupine",
+    "rat bite",
+    "mangled leg",
+    "mangled tail",
+    "broken jaw",
+    "broken bone",
+    "sore",
+    "bruises",
+    "scrapes",
+    "cracked pads",
+    "small cut",
+    "sprain",
+    "bee sting",
+    "joint pain",
+    "dislocated joint",
+    "torn pelt",
+    "torn ear",
+    "water in their lungs",
+    "shivering",
+    "frostbite",
+    "burn",
+    "severe burn",
+    "shock",
+    "dehydrated",
+    "head damage",
+    "damaged eyes",
+    "broken back",
+    "poisoned",
+    "headache",
+    "severe headache",
+    "fleas",
+    "seizure",
+    "diarrhea",
+    "running nose",
+    "kittencough",
+    "whitecough",
+    "greencough",
+    "yellowcough",
+    "redcough",
+    "carrionplace disease",
+    "heat stroke",
+    "heat exhaustion",
+    "stomachache",
+    "constant nightmares",
+]
+
 
 INJURY_GROUPS = {
     "battle_injury": [

@@ -376,7 +376,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
         birth_parents = [
             Cat.fetch_cat(i)
-            for i in [self.the_cat.parent1, self.the_cat.parent2]
+            for i in (self.the_cat.parent1, self.the_cat.parent2)
             if isinstance(Cat.fetch_cat(i), Cat)
         ]
 
@@ -667,8 +667,16 @@ class ChooseAdoptiveParentScreen(Screens):
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats()
 
-        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
-        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
+        (
+            self.next_cat_button.disable()
+            if self.next_cat == 0
+            else self.next_cat_button.enable()
+        )
+        (
+            self.previous_cat_button.disable()
+            if self.previous_cat == 0
+            else self.previous_cat_button.enable()
+        )
 
         for ele in self.current_cat_elements:
             self.current_cat_elements[ele].kill()
@@ -777,9 +785,11 @@ class ChooseAdoptiveParentScreen(Screens):
                 anchors={
                     "bottom": "bottom",
                     "bottom_target": self.list_frame,
-                    "left_target": self.tab_buttons["adoptive"]
-                    if adoptive_parents_shown
-                    else self.tab_buttons["potential"],
+                    "left_target": (
+                        self.tab_buttons["adoptive"]
+                        if adoptive_parents_shown
+                        else self.tab_buttons["potential"]
+                    ),
                 },
             )
             birth_parents_shown = True

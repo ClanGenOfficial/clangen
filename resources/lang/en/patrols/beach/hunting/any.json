@@ -347,7 +347,7 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": { 
+                "history_text": {
                     "scar": "m_c got injured as an apprentice while exploring alone." 
                 },
                 "relationships": [
@@ -5413,7 +5413,7 @@
         "patrol_id": "bch_hunt_wareprey_lorelocked1",
         "biome": ["beach"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,

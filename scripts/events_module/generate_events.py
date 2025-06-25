@@ -18,10 +18,10 @@ from scripts.events_module.event_filters import (
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_living_clan_cat_count,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 def get_resource_directory(fallback=False):
@@ -136,18 +136,22 @@ class GenerateEvents:
                         tags=event["tags"] if "tags" in event else [],
                         weight=event["weight"] if "weight" in event else 20,
                         text=event_text,
-                        new_accessory=event["new_accessory"]
-                        if "new_accessory" in event
-                        else [],
+                        new_accessory=(
+                            event["new_accessory"] if "new_accessory" in event else []
+                        ),
                         m_c=event["m_c"] if "m_c" in event else {},
                         r_c=event["r_c"] if "r_c" in event else {},
                         new_cat=event["new_cat"] if "new_cat" in event else [],
                         injury=event["injury"] if "injury" in event else [],
-                        exclude_involved=event["exclude_involved"] if "exclude_involved" in event else [],
+                        exclude_involved=(
+                            event["exclude_involved"]
+                            if "exclude_involved" in event
+                            else []
+                        ),
                         history=event["history"] if "history" in event else [],
-                        relationships=event["relationships"]
-                        if "relationships" in event
-                        else [],
+                        relationships=(
+                            event["relationships"] if "relationships" in event else []
+                        ),
                         outsider=event["outsider"] if "outsider" in event else {},
                         other_clan=event["other_clan"] if "other_clan" in event else {},
                         supplies=event["supplies"] if "supplies" in event else [],
@@ -216,13 +220,18 @@ class GenerateEvents:
         event_list = []
 
         # skip the rest of the loading if there is an unrecognised biome
-        if game.clan.biome not in game.clan.BIOME_TYPES:
+        temp_biome = (
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        )
+        if temp_biome not in game.clan.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
                 f"in clan.py?"
             )
 
-        biome = game.clan.biome.lower()
+        biome = temp_biome.lower()
 
         # biome specific events
         event_list.extend(GenerateEvents.generate_short_events(event_type, biome))
@@ -247,13 +256,6 @@ class GenerateEvents:
     ):
         final_events = []
         incorrect_format = []
-
-        # Chance to bypass the skill or trait requirements.
-        trait_skill_bypass = 15
-
-        # check if generated event should be a war event
-        if "war" in sub_types and random.randint(1, 10) == 1:
-            sub_types.remove("war")
 
         for event in possible_events:
             if event.history:
