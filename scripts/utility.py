@@ -21,8 +21,8 @@ import ujson
 from pygame_gui.core import ObjectID
 
 from scripts.clan_package.settings import get_clan_setting
-from scripts.game_structure.game.settings import save_game_settings, get_game_setting
-from scripts.game_structure.game.switches import get_switch, Switches
+from scripts.game_structure.game.settings import game_settings_save, game_setting_get
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,
@@ -2084,8 +2084,8 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
         clan_name = str(clan.name)
     else:
         if game.clan is None:
-            # todo can this be Switches.clan_name ?
-            clan_name = get_switch(Switches.clan_list)[0]
+            # todo can this be Switch.clan_name ?
+            clan_name = switch_get_value(Switch.clan_list)[0]
         else:
             clan_name = str(game.clan.name)
 
@@ -2272,8 +2272,8 @@ def event_text_adjust(
         try:
             clan_name = clan.name
         except AttributeError:
-            # todo can this be Switches.clan_name ?
-            clan_name = get_switch(Switches.clan_list)[0]
+            # todo can this be Switch.clan_name ?
+            clan_name = switch_get_value(Switch.clan_list)[0]
 
         pos = 0
         for x in range(text.count("c_n")):
@@ -2839,7 +2839,7 @@ def generate_sprite(
                     )
 
         # draw line art
-        if get_game_setting("shaders") and not dead:
+        if game_setting_get("shaders") and not dead:
             new_sprite.blit(
                 sprites.sprites["shaders" + cat_sprite],
                 (0, 0),
@@ -2983,7 +2983,7 @@ def is_iterable(y):
 
 def get_text_box_theme(theme_name=None):
     """Updates the name of the theme based on dark or light mode"""
-    if get_game_setting("dark mode"):
+    if game_setting_get("dark mode"):
         return ObjectID("#dark", theme_name)
     else:
         return theme_name
@@ -2994,7 +2994,7 @@ def quit(savesettings=False, clearevents=False):
     Quits the game, avoids a bunch of repeated lines
     """
     if savesettings:
-        save_game_settings(None)
+        game_settings_save(None)
     if clearevents:
         game.cur_events_list.clear()
     game.rpc.close_rpc.set()

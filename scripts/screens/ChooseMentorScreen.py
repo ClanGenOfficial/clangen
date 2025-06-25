@@ -18,7 +18,7 @@ from scripts.utility import (
     shorten_text_to_fit,
 )
 from .Screens import Screens
-from ..game_structure.game.switches import set_switch, get_switch, Switches
+from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -83,7 +83,7 @@ class ChooseMentorScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    set_switch(Switches.cat, self.next_cat)
+                    switch_set_value(Switch.cat, self.next_cat)
                     self.update_apprentice()
                     self.update_cat_list()
                     self.update_selected_cat()
@@ -92,7 +92,7 @@ class ChooseMentorScreen(Screens):
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    set_switch(Switches.cat, self.previous_cat)
+                    switch_set_value(Switch.cat, self.previous_cat)
                     self.update_apprentice()
                     self.update_cat_list()
                     self.update_selected_cat()
@@ -121,7 +121,7 @@ class ChooseMentorScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
-        self.the_cat = Cat.all_cats[get_switch(Switches.cat)]
+        self.the_cat = Cat.all_cats[switch_get_value(Switch.cat)]
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 
         self.heading = pygame_gui.elements.UITextBox(
@@ -390,7 +390,7 @@ class ChooseMentorScreen(Screens):
             self.apprentice_details[ele].kill()
         self.apprentice_details = {}
 
-        self.the_cat = Cat.all_cats[get_switch(Switches.cat)]
+        self.the_cat = Cat.all_cats[switch_get_value(Switch.cat)]
         self.current_page = 1
         self.selected_mentor = Cat.fetch_cat(self.the_cat.mentor)
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)

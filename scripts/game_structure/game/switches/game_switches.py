@@ -1,5 +1,5 @@
 from enum import auto
-from typing import Tuple, Any, Union, Dict
+from typing import Tuple, Any, Union, Dict, Generator
 
 from strenum import StrEnum
 
@@ -10,7 +10,7 @@ from strenum import StrEnum
 # 3. Add the name and actual default value to __switches dict below
 
 
-class Switches(StrEnum):
+class Switch(StrEnum):
     cat = auto()
     clan_name = auto()
     cur_screen = auto()
@@ -35,7 +35,7 @@ class Switches(StrEnum):
     new_leader = auto()
 
 
-__switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
+_switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
     "cat": "",
     "clan_name": "",
     "cur_screen": "start screen",
@@ -62,26 +62,26 @@ __switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
 """If you are somehow accessing this from outside game_switches.py, something has gone terribly wrong."""
 
 
-def get_switch(name: Switches):
+def switch_get_value(name: Switch):
     """
     Get a game switch
-    :param name: The name of the switch
+    :param name: The name of the switch.
     :return: The switch value
     """
-    return __switches[name]
+    return _switches[name]
 
 
-def set_switch(name: Switches, value):
+def switch_set_value(name: Switch, value):
     """
     Set a game switch
     :param name: The name of the switch
     :param value: The new value
     :return:
     """
-    __switches[name] = value
+    _switches[name] = value
 
 
-def set_switch_dict_value(name: Switches, key: str, value):
+def switch_set_dict_value(name: Switch, key: str, value):
     """
     Change the value of a nested dictionary
     :param name: The switch to change
@@ -89,32 +89,32 @@ def set_switch_dict_value(name: Switches, key: str, value):
     :param value: New dictionary value
     :return: None
     """
-    if not isinstance(__switches[name], dict):
+    if not isinstance(_switches[name], dict):
         raise TypeError(f"Switch {name} is not a dict")
-    __switches[name][key] = value
+    _switches[name][key] = value
 
 
-def switch_list_append(name: Switches, value):
+def switch_append_list_value(name: Switch, value):
     """Used to append a value to a switch of type list
     :param name: The name of the switch
     :param value: Value to append to list
     :raises: TypeError if name argument does not correspond to a list"""
-    if not isinstance(__switches[name], list):
+    if not isinstance(_switches[name], list):
         raise TypeError(f"Switch {name} is not a list")
-    __switches[name].append(value)
+    _switches[name].append(value)
 
 
-def switch_list_remove(name: Switches, value):
+def switch_remove_list_value(name: Switch, value):
     """Used to remove a value from a switch of type list"""
-    if not isinstance(__switches[name], list):
+    if not isinstance(_switches[name], list):
         raise TypeError(f"Switch {name} is not a list")
-    __switches[name].remove(value)
+    _switches[name].remove(value)
 
 
-def switch_generator() -> Tuple[str, Any]:
+def switch_generator() -> Generator[Tuple[str, Any], None, None]:
     """
     Iterate through the switch keys and values. Made for debug, try to avoid using
     :return:
     """
-    for key, value in __switches.items():
+    for key, value in _switches.items():
         yield key, value

@@ -10,7 +10,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game.settings import get_game_setting
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.utility import (
@@ -194,7 +194,7 @@ class ClanSettingsScreen(Screens):
             starting_height=2,
             tool_tip_text=(
                 "buttons.toggle_fullscreen_windowed"
-                if get_game_setting("fullscreen")
+                if game_setting_get("fullscreen")
                 else "buttons.toggle_fullscreen_fullscreen"
             ),
             anchors={

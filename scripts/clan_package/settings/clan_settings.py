@@ -1,19 +1,21 @@
 import os
+from pathlib import Path
 
 import ujson
 
 from scripts.game_structure.game.save_load import safe_save
-from scripts.game_structure.game.switches import Switches, get_switch
+from scripts.game_structure.game.switches import Switch, switch_get_value
 from scripts.housekeeping.datadir import get_save_dir
 
 
 def load_clan_settings():
     reset_loaded_clan_settings()
     if os.path.exists(
-        get_save_dir() + f"/{get_switch(Switches.clan_list)[0]}/clan_settings.json"
+        get_save_dir() + f"/{switch_get_value(Switch.clan_list)[0]}/clan_settings.json"
     ):
         with open(
-            get_save_dir() + f"/{get_switch(Switches.clan_list)[0]}/clan_settings.json",
+            get_save_dir()
+            + f"/{switch_get_value(Switch.clan_list)[0]}/clan_settings.json",
             "r",
             encoding="utf-8",
         ) as write_file:
@@ -28,7 +30,9 @@ def load_clan_settings():
 
 def save_clan_settings():
     safe_save(
-        get_save_dir() + f"/{get_switch(Switches.clan_name)}/clan_settings.json",
+        Path(get_save_dir())
+        / switch_get_value(Switch.clan_name)
+        / "clan_settings.json",
         clan_settings,
     )
 

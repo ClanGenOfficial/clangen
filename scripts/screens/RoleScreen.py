@@ -21,8 +21,8 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
-from ..game_structure.game.settings import get_game_setting
-from ..game_structure.game.switches import set_switch, get_switch, Switches
+from ..game_structure.game.settings import game_setting_get
+from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -43,13 +43,13 @@ class RoleScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    set_switch(Switches.cat, self.next_cat)
+                    switch_set_value(Switch.cat, self.next_cat)
                     self.update_selected_cat()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    set_switch(Switches.cat, self.previous_cat)
+                    switch_set_value(Switch.cat, self.previous_cat)
                     self.update_selected_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
@@ -57,7 +57,7 @@ class RoleScreen(Screens):
                 if self.the_cat == game.clan.deputy:
                     game.clan.deputy = None
                 game.clan.new_leader(self.the_cat)
-                if get_switch(Switches.sort_type) == "rank":
+                if switch_get_value(Switch.sort_type) == "rank":
                     Cat.sort_cats()
                 self.update_selected_cat()
             elif event.ui_element == self.promote_deputy:
@@ -88,14 +88,14 @@ class RoleScreen(Screens):
                 self.the_cat.status_change("mediator apprentice", resort=True)
                 self.update_selected_cat()
 
-        elif event.type == pygame.KEYDOWN and get_game_setting("keybinds"):
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("profile screen")
             elif event.key == pygame.K_RIGHT:
-                set_switch(Switches.cat, self.next_cat)
+                switch_set_value(Switch.cat, self.next_cat)
                 self.update_selected_cat()
             elif event.key == pygame.K_LEFT:
-                set_switch(Switches.cat, self.previous_cat)
+                switch_set_value(Switch.cat, self.previous_cat)
                 self.update_selected_cat()
 
     def screen_switches(self):
@@ -225,7 +225,7 @@ class RoleScreen(Screens):
             self.selected_cat_elements[ele].kill()
         self.selected_cat_elements = {}
 
-        self.the_cat = Cat.fetch_cat(get_switch(Switches.cat))
+        self.the_cat = Cat.fetch_cat(switch_get_value(Switch.cat))
         if not self.the_cat:
             return
 

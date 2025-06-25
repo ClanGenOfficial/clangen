@@ -6,7 +6,7 @@ import pygame
 import ujson
 
 from scripts.game_structure import constants
-from scripts.game_structure.game.settings import get_game_setting
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.special_dates import SpecialDate, is_today
 
 logger = logging.getLogger(__name__)
@@ -784,7 +784,7 @@ class Sprites:
             (87, 76, 45),
             (
                 pygame.Color(constants.CONFIG["theme"]["dark_mode_clan_symbols"])
-                if not force_light and get_game_setting("dark mode")
+                if not force_light and game_setting_get("dark mode")
                 else pygame.Color(constants.CONFIG["theme"]["light_mode_clan_symbols"])
             ),
             distance=0,

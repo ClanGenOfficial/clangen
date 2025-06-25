@@ -18,7 +18,7 @@ from scripts.events_module.event_filters import (
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants
-from scripts.game_structure.game.switches import get_switch, Switches
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
@@ -415,7 +415,7 @@ class GenerateEvents:
                 # during a war we want to encourage the clans to have positive events
                 # when the overall war notice was positive
                 if "war" in event.sub_type:
-                    rel_change_type = get_switch(Switches.war_rel_change_type)
+                    rel_change_type = switch_get_value(Switch.war_rel_change_type)
                     if (
                         event.other_clan["changed"] < 0
                         and rel_change_type != "rel_down"

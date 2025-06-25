@@ -28,8 +28,8 @@ from .Screens import Screens
 from ..cat_relations.relationship import Relationship
 from ..clan_package.settings import get_clan_setting
 from ..clan_package.settings.clan_settings import set_clan_setting
-from ..game_structure.game.settings import get_game_setting
-from ..game_structure.game.switches import set_switch, get_switch, Switches
+from ..game_structure.game.settings import game_setting_get
+from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -95,20 +95,20 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.switch_focus_button:
-                set_switch(Switches.cat, self.inspect_cat.ID)
+                switch_set_value(Switch.cat, self.inspect_cat.ID)
                 self.update_focus_cat()
             elif event.ui_element == self.view_profile_button:
-                set_switch(Switches.cat, self.inspect_cat.ID)
+                switch_set_value(Switch.cat, self.inspect_cat.ID)
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    set_switch(Switches.cat, self.next_cat)
+                    switch_set_value(Switch.cat, self.next_cat)
                     self.update_focus_cat()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    set_switch(Switches.cat, self.previous_cat)
+                    switch_set_value(Switch.cat, self.previous_cat)
                     self.update_focus_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
@@ -417,7 +417,9 @@ class RelationshipScreen(Screens):
             self.focus_cat_elements[ele].kill()
         self.focus_cat_elements = {}
 
-        self.the_cat = Cat.all_cats.get(get_switch(Switches.cat), game.clan.instructor)
+        self.the_cat = Cat.all_cats.get(
+            switch_get_value(Switch.cat), game.clan.instructor
+        )
 
         self.current_page = 1
         self.inspect_cat = None
@@ -891,7 +893,7 @@ class RelationshipScreen(Screens):
             ),
             display_romantic,
             positive_trait=True,
-            dark_mode=get_game_setting("dark mode"),
+            dark_mode=game_setting_get("dark mode"),
         )
         bar_count += 1
 
@@ -918,7 +920,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.platonic_like,
             positive_trait=True,
-            dark_mode=get_game_setting("dark mode"),
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -941,7 +943,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.dislike,
             positive_trait=False,
-            dark_mode=get_game_setting("dark mode"),
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -969,7 +971,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.admiration,
             positive_trait=True,
-            dark_mode=get_game_setting("dark mode"),
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -997,7 +999,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.comfortable,
             positive_trait=True,
-            dark_mode=get_game_setting("dark mode"),
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -1023,7 +1025,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.jealousy,
             positive_trait=False,
-            dark_mode=get_game_setting("dark mode"),
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -1049,7 +1051,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.trust,
             positive_trait=True,
-            dark_mode=get_game_setting("dark mode"),
+            dark_mode=game_setting_get("dark mode"),
         )
 
     def on_use(self):

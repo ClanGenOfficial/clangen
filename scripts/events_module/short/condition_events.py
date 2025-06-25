@@ -23,10 +23,10 @@ from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.game_structure import constants
 from scripts.game_structure.game.switches import (
-    Switches,
-    get_switch,
-    set_switch,
-    switch_list_append,
+    Switch,
+    switch_get_value,
+    switch_set_value,
+    switch_append_list_value,
 )
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
@@ -557,7 +557,7 @@ class Condition_Events:
         # making a copy, so we can iterate through copy and modify the real dict at the same time
         illnesses = deepcopy(cat.illnesses)
         for illness in illnesses:
-            if illness in get_switch(Switches.skip_conditions):
+            if illness in switch_get_value(Switch.skip_conditions):
                 continue
 
             # moon skip to try and kill or heal cat
@@ -613,7 +613,7 @@ class Condition_Events:
             # heal the cat
             elif cat.healed_condition is True:
                 History.remove_possible_history(cat, illness)
-                switch_list_append(Switches.skip_conditions, illness)
+                switch_append_list_value(Switch.skip_conditions, illness)
                 # gather potential event strings for healed illness
                 possible_string_list = Condition_Events.ILLNESS_HEALED_STRINGS[illness]
 
@@ -668,7 +668,7 @@ class Condition_Events:
 
         injuries = deepcopy(cat.injuries)
         for injury in injuries:
-            if injury in get_switch(Switches.skip_conditions):
+            if injury in switch_get_value(Switch.skip_conditions):
                 continue
 
             skipped = cat.moon_skip_injury(injury)
@@ -717,7 +717,7 @@ class Condition_Events:
                 break
 
             elif cat.healed_condition is True:
-                switch_list_append(Switches.skip_conditions, injury)
+                switch_append_list_value(Switch.skip_conditions, injury)
                 triggered = True
 
                 # Try to give a scar, and get the event text to be displayed
@@ -1193,7 +1193,7 @@ class Condition_Events:
                 event_list.append(event)
 
                 # we add the condition to this game switch, this is so we can ensure it's skipped over for this moon
-                switch_list_append(Switches.skip_conditions, new_condition_name)
+                switch_append_list_value(Switch.skip_conditions, new_condition_name)
                 # here we give the new condition
                 if new_condition_name in Condition_Events.INJURIES:
                     cat.get_injured(new_condition_name, event_triggered=event_triggered)

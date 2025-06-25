@@ -22,7 +22,7 @@ from scripts.utility import (
 from .Screens import Screens
 from ..clan_package.settings import get_clan_setting
 from ..game_structure import image_cache, constants
-from ..game_structure.game.settings import get_game_setting
+from ..game_structure.game.settings import game_setting_get
 from ..game_structure.propagating_thread import PropagatingThread
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
@@ -87,7 +87,7 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
             self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and get_game_setting("keybinds"):
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_LEFT:
                 self.change_screen("list screen")
             # elif event.key == pygame.K_RIGHT:
@@ -821,7 +821,7 @@ class PatrolScreen(Screens):
                     self.patrol_obj.get_patrol_art().premul_alpha(),
                     ui_scale_dimensions((300, 300)),
                 )
-                if get_game_setting("no sprite antialiasing")
+                if game_setting_get("no sprite antialiasing")
                 else pygame.transform.smoothscale(
                     self.patrol_obj.get_patrol_art().premul_alpha(),
                     ui_scale_dimensions((300, 300)),
@@ -1056,7 +1056,7 @@ class PatrolScreen(Screens):
                 ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 (
                     pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50)))
-                    if get_game_setting("no sprite antialiasing")
+                    if game_setting_get("no sprite antialiasing")
                     else pygame.transform.smoothscale(
                         cat.sprite, ui_scale_dimensions((50, 50))
                     )
@@ -1084,7 +1084,7 @@ class PatrolScreen(Screens):
                         pygame.transform.scale(
                             cat.sprite, ui_scale_dimensions((50, 50))
                         )
-                        if get_game_setting("no sprite antialiasing")
+                        if game_setting_get("no sprite antialiasing")
                         else pygame.transform.smoothscale(
                             cat.sprite, ui_scale_dimensions((50, 50))
                         )

@@ -11,7 +11,7 @@ from scripts.clan_package.settings.clan_settings import (
     switch_clan_setting,
 )
 from scripts.game_structure import constants
-from scripts.game_structure.game.settings import get_game_setting
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
@@ -180,7 +180,7 @@ class WarriorDenScreen(Screens):
         if self.base_image:
             self.base_image.kill()
 
-        if get_game_setting("dark mode"):
+        if game_setting_get("dark mode"):
             image = "base_image_dark"
         else:
             image = "base_image"

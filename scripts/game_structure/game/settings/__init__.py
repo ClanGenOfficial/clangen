@@ -1,8 +1,8 @@
 from scripts.game_structure.game.settings.settings import (
-    get_game_setting,
-    set_game_setting,
-    save_game_settings,
-    load_game_settings,
-    switch_game_setting,
+    game_setting_get,
+    game_setting_set,
+    game_settings_save,
+    game_settings_load,
+    game_setting_toggle,
     game_settings_generator,
 )

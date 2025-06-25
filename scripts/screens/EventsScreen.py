@@ -8,12 +8,12 @@ from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.events import events_class
 from scripts.game_structure import image_cache
-from scripts.game_structure.game.settings import get_game_setting
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import (
-    Switches,
-    get_switch,
-    set_switch,
-    set_switch_dict_value,
+    Switch,
+    switch_get_value,
+    switch_set_value,
+    switch_set_dict_value,
 )
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
@@ -141,14 +141,14 @@ class EventsScreen(Screens):
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons:
                 self.save_scroll_position()
-                set_switch(Switches.cat, element.cat_id)
+                switch_set_value(Switch.cat, element.cat_id)
                 self.change_screen("profile screen")
             else:
                 self.save_scroll_position()
                 self.menu_button_pressed(event)
 
         # KEYBIND CONTROLS
-        elif get_game_setting("keybinds"):
+        elif game_setting_get("keybinds"):
             # ON PRESSING A KEY
             if event.type == pygame.KEYDOWN:
                 # LEFT ARROW
@@ -172,8 +172,8 @@ class EventsScreen(Screens):
                 self.event_display.vert_scroll_bar.scroll_position
                 / self.event_display.vert_scroll_bar.scrollable_height
             )
-            set_switch_dict_value(
-                Switches.saved_scroll_positions, self.current_display, position
+            switch_set_dict_value(
+                Switch.saved_scroll_positions, self.current_display, position
             )
 
     def handle_tab_select(self, event):
@@ -375,9 +375,9 @@ class EventsScreen(Screens):
         self.handle_tab_switch(self.current_display, is_rescale=True)
         MANAGER.update(1)
 
-        if get_switch(Switches.saved_scroll_positions).get(self.current_display):
+        if switch_get_value(Switch.saved_scroll_positions).get(self.current_display):
             self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
-                get_switch(Switches.saved_scroll_positions)[self.current_display]
+                switch_get_value(Switch.saved_scroll_positions)[self.current_display]
             )
 
     def make_event_scrolling_container(self):
@@ -616,7 +616,7 @@ class EventsScreen(Screens):
 
         alternate_color = (
             pygame.Color(87, 76, 55)
-            if get_game_setting("dark mode")
+            if game_setting_get("dark mode")
             else pygame.Color(167, 148, 111)
         )
 
@@ -634,7 +634,7 @@ class EventsScreen(Screens):
                 MANAGER,
                 container=self.event_display,
                 element_id="event_panel",
-                object_id="#dark" if get_game_setting("dark mode") else None,
+                object_id="#dark" if game_setting_get("dark mode") else None,
                 margins={"top": 0, "bottom": 0, "left": 0, "right": 0},
                 anchors=anchor,
             )
@@ -709,9 +709,9 @@ class EventsScreen(Screens):
         )
 
         # set saved scroll position
-        if get_switch(Switches.saved_scroll_positions).get(self.current_display):
+        if switch_get_value(Switch.saved_scroll_positions).get(self.current_display):
             self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
-                get_switch(Switches.saved_scroll_positions)[self.current_display]
+                switch_get_value(Switch.saved_scroll_positions)[self.current_display]
             )
 
     def update_list_buttons(self):
@@ -730,7 +730,7 @@ class EventsScreen(Screens):
     def timeskip_done(self):
         """Various sorting and other tasks that must be done with the timeskip is over."""
 
-        set_switch(Switches.saved_scroll_positions, {})
+        switch_set_value(Switch.saved_scroll_positions, {})
 
         if get_living_clan_cat_count(Cat) == 0:
             GameOver("events screen")

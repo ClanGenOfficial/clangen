@@ -12,8 +12,12 @@ from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.audio import music_manager
-from scripts.game_structure.game.settings import get_game_setting
-from scripts.game_structure.game.switches import set_switch, get_switch, Switches
+from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure.game.switches import (
+    switch_set_value,
+    switch_get_value,
+    Switch,
+)
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
@@ -77,7 +81,7 @@ class Screens:
             self.death_status = "living"
             self.current_page = 1
 
-        set_switch(Switches.cur_screen, new_screen)
+        switch_set_value(Switch.cur_screen, new_screen)
         game.switch_screens = True
         game.rpc.update_rpc.set()
         if game.clan:
@@ -235,12 +239,12 @@ class Screens:
             if name == "dens":
                 if (
                     get_clan_setting("moons and seasons")
-                    and get_switch(Switches.cur_screen) == "events screen"
+                    and switch_get_value(Switch.cur_screen) == "events screen"
                 ):
                     button.show()
                 elif (
                     not get_clan_setting("moons and seasons")
-                    and get_switch(Switches.cur_screen) != "camp screen"
+                    and switch_get_value(Switch.cur_screen) != "camp screen"
                 ):
                     button.show()
                 button.hide()
@@ -316,16 +320,18 @@ class Screens:
             self.change_screen("patrol screen")
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
             SaveCheck(
-                get_switch(Switches.cur_screen), True, Screens.menu_buttons["main_menu"]
+                switch_get_value(Switch.cur_screen),
+                True,
+                Screens.menu_buttons["main_menu"],
             )
         elif event.ui_element == Screens.menu_buttons["allegiances"]:
             self.change_screen("allegiances screen")
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
             self.change_screen("clan settings screen")
         elif event.ui_element == Screens.menu_buttons["moons_n_seasons_arrow"]:
-            set_switch(
-                Switches.moon_and_seasons_open,
-                not get_switch(Switches.moon_and_seasons_open),
+            switch_set_value(
+                Switch.moon_and_seasons_open,
+                not switch_get_value(Switch.moon_and_seasons_open),
             )
             self.update_moon_and_season()
         elif event.ui_element == Screens.menu_buttons["dens"]:
@@ -548,7 +554,7 @@ class Screens:
                 }
             )
 
-        if get_switch(Switches.cur_screen) != "camp screen":
+        if switch_get_value(Switch.cur_screen) != "camp screen":
             cls.menu_buttons.update(
                 {
                     "dens": UIImageButton(
@@ -567,11 +573,11 @@ class Screens:
         """Updates the moons and seasons widget."""
         if (
             get_clan_setting("moons and seasons")
-            and get_switch(Switches.cur_screen) != "events screen"
+            and switch_get_value(Switch.cur_screen) != "events screen"
         ):
             cls.menu_buttons["moons_n_seasons_arrow"].kill()
             cls.menu_buttons["moons_n_seasons"].kill()
-            if get_switch(Switches.moon_and_seasons_open):
+            if switch_get_value(Switch.moon_and_seasons_open):
                 if cls.name == "events screen":
                     cls.close_moon_and_season()
                 else:
@@ -727,7 +733,7 @@ class Screens:
         vignette = scripts.screens.screens_core.screens_core.vignette
         if vignette_alpha is None:
             vignette_alpha = constants.CONFIG["theme"]["fullscreen_background"][
-                "dark" if get_game_setting("dark mode") else "light"
+                "dark" if game_setting_get("dark mode") else "light"
             ]["vignette_alpha"]
         if not (0 <= vignette_alpha <= 255):
             raise Exception("Vignette alpha out of range. Permitted values: 0-255.")
@@ -940,7 +946,7 @@ class Screens:
     @property
     def theme(self) -> str:
         try:
-            return "dark" if get_game_setting("dark mode") else "light"
+            return "dark" if game_setting_get("dark mode") else "light"
         except AttributeError:
             with open(
                 "resources/gamesettings.json", "r", encoding="utf-8"

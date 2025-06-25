@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Type
 import ujson
 
 from scripts.game_structure.game.save_load import safe_save
-from scripts.game_structure.game.settings.settings import get_game_setting
+from scripts.game_structure.game.settings.settings import game_setting_get
 from scripts.housekeeping.datadir import get_save_dir
 
 if TYPE_CHECKING:
@@ -82,7 +82,7 @@ def save_faded_cats(clanname, cat_class: Type["Cat"], game: "Game"):
                     print(f"WARNING: Can't find parent {x} of {cat.name}")
 
         # Get a copy of info
-        if get_game_setting("save_faded_copy"):
+        if game_setting_get("save_faded_copy"):
             copy_of_info += (
                 ujson.dumps(inter_cat.get_save_dict(), indent=4)
                 + "\n--------------------------------------------------------------------------\n"
@@ -101,7 +101,7 @@ def save_faded_cats(clanname, cat_class: Type["Cat"], game: "Game"):
     cat_to_fade = []
 
     # Save the copies, flush the file.
-    if get_game_setting("save_faded_copy"):
+    if game_setting_get("save_faded_copy"):
         with open(
             get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
             "a",

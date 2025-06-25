@@ -5,11 +5,11 @@ from typing import TYPE_CHECKING
 import ujson
 
 from scripts.game_structure.game.settings import (
-    save_game_settings,
-    get_game_setting,
-    set_game_setting,
+    game_settings_save,
+    game_setting_get,
+    game_setting_set,
 )
-from scripts.game_structure.game.switches import get_switch, Switches
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.housekeeping.datadir import get_save_dir
 
 if TYPE_CHECKING:
@@ -67,7 +67,7 @@ def set_display_mode(
     mouse_pos = pygame.mouse.get_pos()
 
     if fullscreen is None:
-        fullscreen = get_game_setting("fullscreen")
+        fullscreen = game_setting_get("fullscreen")
 
     with open("resources/screen_config.json", "r", encoding="utf-8") as read_config:
         screen_config = ujson.load(read_config)
@@ -123,7 +123,7 @@ def set_display_mode(
             from scripts.screens.all_screens import AllScreens
             import scripts.screens.screens_core.screens_core
 
-            save_game_settings(currentscreen=source_screen)
+            game_settings_save(currentscreen=source_screen)
             source_screen.exit_screen()
 
             if fullscreen:
@@ -157,7 +157,7 @@ def set_display_mode(
         from scripts.screens.all_screens import AllScreens
 
         new_screen: "Screens" = getattr(
-            AllScreens, get_switch(Switches.cur_screen).replace(" ", "_")
+            AllScreens, switch_get_value(Switch.cur_screen).replace(" ", "_")
         )
         new_screen.display_change_load(curr_variable_dict)
 
@@ -217,7 +217,7 @@ def set_display_mode(
 def determine_screen_scale(x, y):
     global screen_scale, screen_x, screen_y, offset, game_screen_size
 
-    if get_game_setting("fullscreen_scaling"):
+    if game_setting_get("fullscreen_scaling"):
         scalex = (x - 20) // 80
         scaley = (y - 20) // 70
 
@@ -261,10 +261,10 @@ def toggle_fullscreen(
         continue
 
     if fullscreen is None:
-        fullscreen = not get_game_setting("fullscreen")
+        fullscreen = not game_setting_get("fullscreen")
 
-    set_game_setting("fullscreen", fullscreen)
-    save_game_settings()
+    game_setting_set("fullscreen", fullscreen)
+    game_settings_save()
 
     set_display_mode(
         fullscreen=fullscreen,

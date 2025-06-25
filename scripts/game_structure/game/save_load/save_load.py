@@ -1,12 +1,16 @@
 import os
+from pathlib import Path
 from shutil import move as shutil_move
+from typing import Union, List
 
 import ujson
 
 from scripts.housekeeping.datadir import get_temp_dir, get_save_dir
 
 
-def safe_save(path: str, write_data, check_integrity=False, max_attempts: int = 15):
+def safe_save(
+    path: Union[str, Path], write_data, check_integrity=False, max_attempts: int = 15
+):
     """If write_data is not a string, assumes you want this
     in json format. If check_integrity is true, it will read back the file
     to check that the correct data has been written to the file.
@@ -25,7 +29,7 @@ def safe_save(path: str, write_data, check_integrity=False, max_attempts: int = 
         if not file_name:
             raise RuntimeError(f"Safe_Save: No file name was found in {path}")
 
-        temp_file_path = get_temp_dir() + "/" + file_name + ".tmp"
+        temp_file_path = Path(get_temp_dir()) / (file_name + ".tmp")
         i = 0
         while True:
             # Attempt to write to temp file
@@ -68,14 +72,16 @@ def save_clanlist(loaded_clan=None):
     :param loaded_clan:
     :return: None
     """
+    currentclan_path = Path(get_save_dir()) / "currentclan.txt"
     if loaded_clan:
-        if os.path.exists(get_save_dir() + "/clanlist.txt"):
+        clanlist_path = Path(get_save_dir()) / "clanlist.txt"
+        if clanlist_path.exists():
             # we don't need clanlist.txt anymore
-            os.remove(get_save_dir() + "/clanlist.txt")
-        safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
+            clanlist_path.unlink()
+        safe_save(currentclan_path, loaded_clan)
     else:
-        if os.path.exists(get_save_dir() + "/currentclan.txt"):
-            os.remove(get_save_dir() + "/currentclan.txt")
+        if currentclan_path.exists():
+            currentclan_path.unlink()
 
 
 def read_clans():
@@ -83,31 +89,36 @@ def read_clans():
     Get clan data
     :return:
     """
+    save_dir = Path(get_save_dir())
+    clanlist_path = Path(get_save_dir()) / "clanlist.txt"
+    """save_dir/clanlist.txt"""
+    currentclan_path = Path(get_save_dir()) / "currentclan.txt"
+    """save_dir/currentclan.txt"""
 
     # First, we need to make sure the saves folder exists
-    if not os.path.exists(get_save_dir()):
-        os.makedirs(get_save_dir())
+    if not save_dir.exists():
+        save_dir.mkdir(parents=True)
         print("Created saves folder")
         return None
 
     # Now we can get a list of all the folders in the saves folder
-    clan_list = [f.name for f in os.scandir(get_save_dir()) if f.is_dir()]
+    clan_list: List[str] = [d.name for d in save_dir.iterdir() if d.is_dir()]
+    clan_list.sort()  # because iterdir doesn't guarantee an order, we guarantee alphabetical here
 
     # the Clan specified in saves/clanlist.txt should be first in the list
     # so that we can load it automatically
-
-    if os.path.exists(get_save_dir() + "/clanlist.txt"):
-        with open(get_save_dir() + "/clanlist.txt", "r", encoding="utf-8") as f:
+    if clanlist_path.exists():
+        with open(clanlist_path, "r", encoding="utf-8") as f:
             loaded_clan = f.read().strip().splitlines()
             if loaded_clan:
                 loaded_clan = loaded_clan[0]
             else:
                 loaded_clan = None
-        os.remove(get_save_dir() + "/clanlist.txt")
+        clanlist_path.unlink()
         if loaded_clan:
-            safe_save(get_save_dir() + "/currentclan.txt", loaded_clan)
-    elif os.path.exists(get_save_dir() + "/currentclan.txt"):
-        with open(get_save_dir() + "/currentclan.txt", "r", encoding="utf-8") as f:
+            safe_save(currentclan_path, loaded_clan)
+    elif currentclan_path.exists():
+        with open(currentclan_path, "r", encoding="utf-8") as f:
             loaded_clan = f.read().strip()
     else:
         loaded_clan = None

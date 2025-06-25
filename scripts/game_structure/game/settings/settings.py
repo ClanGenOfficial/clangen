@@ -1,6 +1,6 @@
-import os
 import traceback
-from typing import Any, Tuple
+from pathlib import Path
+from typing import Any, Tuple, Generator
 
 import ujson
 
@@ -11,16 +11,19 @@ settings_changed: bool = False
 settings = {"moon_and_seasons_open": False}
 setting_lists = {}
 
+settings_path = Path(get_save_dir()) / "settings.json"
+settings_txt_path = Path(get_save_dir()) / "settings.txt"
 
-def save_game_settings(currentscreen=None):
+
+def game_settings_save(currentscreen=None):
     """Save user settings for later use"""
-    if os.path.exists(get_save_dir() + "/settings.txt"):
-        os.remove(get_save_dir() + "/settings.txt")
+    if settings_txt_path.exists():
+        settings_txt_path.unlink()
     global settings_changed
 
     settings_changed = False
     try:
-        safe_save(get_save_dir() + "/settings.json", settings)
+        safe_save(settings_path, settings)
     except RuntimeError:
         from scripts.game_structure.windows import SaveError
 
@@ -29,13 +32,11 @@ def save_game_settings(currentscreen=None):
             currentscreen.change_screen("start screen")
 
 
-def load_game_settings():
+def game_settings_load():
     """Load settings that user has saved from previous use"""
 
     try:
-        with open(
-            get_save_dir() + "/settings.json", "r", encoding="utf-8"
-        ) as read_file:
+        with open(settings_path, "r", encoding="utf-8") as read_file:
             settings_data = ujson.loads(read_file.read())
     except FileNotFoundError:
         return
@@ -45,7 +46,7 @@ def load_game_settings():
             settings[key] = value
 
 
-def switch_game_setting(setting_name):
+def game_setting_toggle(setting_name):
     """Call this function to change a setting given in the parameter by one to the right on it's list"""
     global settings_changed, settings
     settings_changed = True
@@ -62,21 +63,21 @@ def switch_game_setting(setting_name):
         settings[setting_name] = setting_lists[setting_name][list_index + 1]
 
 
-def get_game_setting(name, *, default=None):
+def game_setting_get(name, *, default=None):
     return settings.get(name, default)
 
 
-def set_game_setting(name, value):
+def game_setting_set(name, value):
     settings[name] = value
 
 
-def game_settings_generator() -> Tuple[str, Any]:
+def game_settings_generator() -> Generator[Tuple[str, Any], None, None]:
     for key, value in settings.items():
         yield key, value
 
 
 # Init Settings
-with open("resources/gamesettings.json", "r", encoding="utf-8") as read_file:
+with open(Path("resources") / "gamesettings.json", "r", encoding="utf-8") as read_file:
     _settings = ujson.loads(read_file.read())
 
 for setting, values in _settings["__other"].items():
@@ -91,9 +92,10 @@ for cat in _:  # Add all the settings to the settings dictionary
         setting_lists[setting_name] = [inf[2], not inf[2]]
 del _settings, setting_name, _
 
-if not os.path.exists(get_save_dir() + "/settings.txt"):
-    os.makedirs(get_save_dir(), exist_ok=True)
-    with open(get_save_dir() + "/settings.txt", "w", encoding="utf-8") as write_file:
+if not settings_txt_path.exists():
+    if not settings_txt_path.parent.exists():
+        settings_txt_path.parent.mkdir(parents=True)
+    with open(settings_txt_path, "w", encoding="utf-8") as write_file:
         write_file.write("")
-load_game_settings()
+game_settings_load()
 # End init settings
