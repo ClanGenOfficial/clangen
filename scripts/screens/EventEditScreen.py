@@ -877,20 +877,7 @@ class EventEditScreen(Screens):
                 else:
                     game.event_editing = False
                     self.event_text_element["event_text"].hide()
-                    text = self.event_text_element["event_text"].html_text
-
-                    test_dict = {}
-                    for abbr in self.test_cat_names:
-                        pronoun = choice(
-                            [
-                                pro
-                                for pro in self.test_pronouns
-                                if pro["conju"] == self.current_preview_state
-                            ]
-                        )
-                        test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
-
-                    text = process_text(text, test_dict)
+                    text = self.get_processed_text()
                     self.event_text_element["preview_text"].set_text(text)
                     self.event_text_element["preview_text"].show()
 
@@ -914,11 +901,16 @@ class EventEditScreen(Screens):
                 self.handle_outside_events(event)
 
         elif event.type == pygame_gui.UI_TEXT_ENTRY_CHANGED:
+            # CHANGE EVENT TEXT
             if self.event_text_element["event_text"] == event.ui_element:
                 self.event_text_info = self.event_text_element["event_text"].html_text
                 if "t_initial" in self.event_text_info:
                     self.event_text_info = ""
                     self.event_text_element["event_text"].set_text(self.event_text_info)
+                character_count = len(self.get_processed_text())
+                self.event_text_element["counter"].set_text(
+                    f"{character_count} characters after processing"
+                )
 
             # CHANGE EVENT ID
             if self.current_editor_tab == "settings":
@@ -994,6 +986,23 @@ class EventEditScreen(Screens):
                             "adjust"
                         ] = f"increase_{self.supply_element['increase_entry'].text}"
                         self.update_block_info()
+
+    def get_processed_text(self):
+        text = self.event_text_element["event_text"].html_text
+        test_dict = {}
+
+        if not self.current_preview_state:
+            conju = 1
+        else:
+            conju = self.current_preview_state
+
+        for abbr in self.test_cat_names:
+            pronoun = choice(
+                [pro for pro in self.test_pronouns if pro["conju"] == conju]
+            )
+            test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
+        text = process_text(text, test_dict)
+        return text
 
     def on_use(self):
         """
@@ -1078,12 +1087,12 @@ class EventEditScreen(Screens):
         self.create_event_display()
 
         self.event_text_container = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((290, 30), (0, 0))),
+            ui_scale(pygame.Rect((290, 10), (0, 0))),
             starting_height=1,
             manager=MANAGER,
         )
         self.event_text_element["preview_button"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((-30, 10), (36, 36))),
+            ui_scale(pygame.Rect((-30, 30), (36, 36))),
             Icon.MAGNIFY,
             get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
             manager=MANAGER,
@@ -1094,13 +1103,28 @@ class EventEditScreen(Screens):
         )
 
         self.event_text_element["box"] = UIModifiedImage(
-            ui_scale(pygame.Rect((0, 0), (460, 120))),
+            ui_scale(pygame.Rect((0, 20), (460, 120))),
             get_box(BoxStyles.ROUNDED_BOX, (460, 120)),
             starting_height=1,
             manager=MANAGER,
             container=self.event_text_container,
         )
         self.event_text_element["box"].disable()
+
+        self.event_text_element["character_info"] = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((10, 5), (-1, -1))),
+            "screens.event_edit.event_text_character_count",
+            object_id=get_text_box_theme("#text_box_22_horizleft"),
+            manager=MANAGER,
+            container=self.event_text_container,
+        )
+        self.event_text_element["counter"] = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((250, 5), (200, -1))),
+            "0 characters after processing",
+            object_id=get_text_box_theme("#text_box_22_horizright"),
+            manager=MANAGER,
+            container=self.event_text_container,
+        )
 
         self.editor_element["frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((300, 140), (470, 490))),
@@ -1560,7 +1584,7 @@ class EventEditScreen(Screens):
         if not self.event_text_element.get("preview_text"):
             self.event_text_element["preview_text"] = UITextBoxTweaked(
                 "",
-                ui_scale(pygame.Rect((48, 10), (435, 100))),
+                ui_scale(pygame.Rect((48, 30), (435, 100))),
                 object_id="#text_box_26_horizleft_pad_10_14",
                 manager=MANAGER,
                 container=self.event_text_container,
@@ -1568,7 +1592,7 @@ class EventEditScreen(Screens):
             )
             self.event_text_element["preview_text"].disable()
             self.event_text_element["event_text"] = pygame_gui.elements.UITextEntryBox(
-                ui_scale(pygame.Rect((48, 10), (435, 100))),
+                ui_scale(pygame.Rect((48, 30), (435, 100))),
                 object_id="#text_box_26_horizleft_pad_10_14",
                 manager=MANAGER,
                 container=self.event_text_container,
@@ -1580,6 +1604,9 @@ class EventEditScreen(Screens):
 
         if self.event_text_info:
             self.event_text_element["event_text"].set_text(self.event_text_info)
+            self.event_text_element["counter"].set_text(
+                f"{len(self.get_processed_text())} characters after processing"
+            )
         else:
             self.event_text_element["event_text"].set_text(
                 "screens.event_edit.event_text_initial"
