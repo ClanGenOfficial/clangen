@@ -413,8 +413,8 @@ def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=Non
             break
 
     # rel status check
-    for cat in allowed_cats.copy():
-        if comparison_cat and constraint_dict.get("relationship_status", []):
+    if comparison_cat and constraint_dict.get("relationship_status", []):
+        for cat in allowed_cats.copy():
             if not filter_relationship_type(
                 group=[cat, comparison_cat],
                 filter_types=constraint_dict["relationship_status"],
@@ -473,6 +473,7 @@ def _get_cats_with_skill(cat_list: list, skills: list) -> list:
 
     return cat_list
 
+
 def _get_cats_without_skill(cat_list: list, skills: list) -> list:
     """
     checks cat_list against disallowed skills and returns qualifying cats
@@ -506,6 +507,7 @@ def _get_cats_with_trait(cat_list: list, traits: list) -> list:
 
     return [kitty for kitty in cat_list if kitty.trait in traits]
 
+
 def _get_cats_without_trait(cat_list: list, traits: list) -> list:
     """
     checks cat_list against disallowed traits and returns qualifying cats
@@ -514,6 +516,7 @@ def _get_cats_without_trait(cat_list: list, traits: list) -> list:
         return cat_list
 
     return [kitty for kitty in cat_list if kitty.trait not in traits]
+
 
 def _get_cats_with_backstory(cat_list: list, backstories: list) -> list:
     """
