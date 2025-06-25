@@ -5,23 +5,6 @@ from scripts.events_module.event_filters import cat_for_event
 from scripts.game_structure.game_essentials import game
 
 
-class FutureEvent:
-    def __init__(
-        self,
-        parent_event: str = None,
-        event_type: str = None,
-        pool: dict = None,
-        moon_delay: int = 0,
-        involved_cats: dict = None,
-    ):
-        self.parent_event = parent_event
-        self.event_type = event_type
-        self.pool = pool
-        self.moon_delay = moon_delay
-
-        self.involved_cats = involved_cats
-
-
 def prep_event(event, event_id: str, possible_cats: dict):
     """
     Checks if the given event has a future event attached, then creates the future event
@@ -76,9 +59,7 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
     for new_role, cat_involved in future_info["involved_cats"].items():
         # grab any cats that need to be newly gathered
         if isinstance(cat_involved, dict):
-            gathered_cat_dict[new_role] = cat_for_event(
-                cat_involved, possible_cats
-            )
+            gathered_cat_dict[new_role] = cat_for_event(cat_involved, possible_cats)
             possible_cats.remove(Cat.fetch_cat(gathered_cat_dict[new_role]))
             continue
 
@@ -89,3 +70,19 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
 
     return gathered_cat_dict
 
+
+class FutureEvent:
+    def __init__(
+        self,
+        parent_event: str = None,
+        event_type: str = None,
+        pool: dict = None,
+        moon_delay: int = 0,
+        involved_cats: dict = None,
+    ):
+        self.parent_event = parent_event
+        self.event_type = event_type
+        self.pool = pool
+        self.moon_delay = moon_delay
+
+        self.involved_cats = involved_cats

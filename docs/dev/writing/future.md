@@ -71,7 +71,7 @@ This specifies how many moons must pass before the future event appears in game.
 This specifies what cats can fill the roles within the future event. You can also use this to carry cats from the parent event into the future event. This is structured as a dictionary, with the **key** being the future event's cat role and the **value** being either a dictionary of constraints or a parent event's cat role.
 
 Example of how this looks in use, the parent event for this hypothetical event is a murder event:
-```json linenums="1"
+```json
     "involved_cats": {
         "m_c": "r_c",
         "mur_c": "m_c", 
