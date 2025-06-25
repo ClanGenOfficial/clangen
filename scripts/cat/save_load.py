@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from typing import TYPE_CHECKING, Type
 
 import ujson
@@ -21,15 +22,18 @@ cat_to_fade = []
 def save_cats(clanname, cat_class: Type["Cat"], game: "Game"):
     """Save the cat data."""
 
-    directory = get_save_dir() + "/" + clanname
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    directory = Path(get_save_dir()) / clanname
+    history_dir = directory / "history"
+    relationships_dir = directory / "relationships"
+
+    if not directory.exists():
+        directory.mkdir(parents=True)
 
     # Delete all existing relationship files
-    if not os.path.exists(directory + "/relationships"):
-        os.makedirs(directory + "/relationships")
-    for f in os.listdir(directory + "/relationships"):
-        os.remove(os.path.join(directory + "/relationships", f))
+    if not relationships_dir.exists():
+        relationships_dir.mkdir()
+    for f in relationships_dir.glob("*.json"):
+        f.unlink()
 
     save_faded_cats(clanname, cat_class, game)  # Fades cat and saves them, if needed
 
@@ -41,11 +45,11 @@ def save_cats(clanname, cat_class: Type["Cat"], game: "Game"):
         inter_cat.save_condition()
 
         if inter_cat.history:
-            inter_cat.save_history(directory + "/history")
+            inter_cat.save_history(history_dir)
             # after saving, dump the history info
             inter_cat.history = None
         if not inter_cat.dead:
-            inter_cat.save_relationship_of_cat(directory + "/relationships")
+            inter_cat.save_relationship_of_cat(relationships_dir)
 
     safe_save(f"{get_save_dir()}/{clanname}/clan_cats.json", clan_cats)
 
@@ -54,10 +58,11 @@ def save_faded_cats(clanname, cat_class: Type["Cat"], game: "Game"):
     """Deals with fades cats, if needed, adding them as faded"""
     global cat_to_fade
 
+    fade_cat_dir = Path(get_save_dir()) / clanname / "faded_cats"
+
     if cat_to_fade:
-        directory = get_save_dir() + "/" + clanname + "/faded_cats"
-        if not os.path.exists(directory):
-            os.makedirs(directory)
+        if not fade_cat_dir.exists():
+            fade_cat_dir.mkdir()
 
     copy_of_info = ""
     for cat in cat_to_fade:
@@ -90,8 +95,8 @@ def save_faded_cats(clanname, cat_class: Type["Cat"], game: "Game"):
 
         # SAVE TO ITS OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.
         cat_data = inter_cat.get_save_dict(faded=True)
-
-        safe_save(f"{get_save_dir()}/{clanname}/faded_cats/{cat}.json", cat_data)
+        cat_path = fade_cat_dir / f"{cat}.json"
+        safe_save(cat_path, cat_data)
 
         # Remove the cat from the active cats lists
         game.clan.remove_cat(
@@ -102,31 +107,27 @@ def save_faded_cats(clanname, cat_class: Type["Cat"], game: "Game"):
 
     # Save the copies, flush the file.
     if game_setting_get("save_faded_copy"):
+        faded_info_copy_path = (
+            Path(get_save_dir()) / clanname / "faded_cats_info_copy.txt"
+        )
+        if not faded_info_copy_path.exists():
+            # Create the file if it doesn't exist
+            with open(
+                faded_info_copy_path,
+                "w",
+                encoding="utf-8",
+            ):
+                pass
+
         with open(
-            get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
+            faded_info_copy_path,
             "a",
             encoding="utf-8",
         ) as write_file:
-            if not os.path.exists(
-                get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt"
-            ):
-                # Create the file if it doesn't exist
-                with open(
-                    get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
-                    "w",
-                    encoding="utf-8",
-                ) as create_file:
-                    pass
+            write_file.write(copy_of_info)
 
-            with open(
-                get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
-                "a",
-                encoding="utf-8",
-            ) as write_file:
-                write_file.write(copy_of_info)
-
-                write_file.flush()
-                os.fsync(write_file.fileno())
+            write_file.flush()
+            os.fsync(write_file.fileno())
 
 
 def add_faded_offspring_to_faded_cat(clanname, parent: str, offspring: str):
