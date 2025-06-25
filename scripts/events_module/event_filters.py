@@ -383,13 +383,13 @@ def _check_cat_gender(cat, genders: list) -> bool:
     return False
 
 
-def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=None):
+def cat_for_event(constraint_dict: dict, possible_cats: list, target_cat=None):
     """
     Checks the given cat list against constraint_dict to find any eligible cats.
     Returns a single cat ID chosen from eligible cats.
     :param constraint_dict: Can include age, status, skill, trait, and backstory lists
     :param possible_cats: List of possible cat objects
-    :param comparison_cat: If you need to search for cats with a specific relationship status, then include a comparison
+    :param target_cat: If you need to search for cats with a specific relationship status, then include a comparison
      cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
     """
     # gather funcs to use
@@ -413,10 +413,10 @@ def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=Non
             break
 
     # rel status check
-    if comparison_cat and constraint_dict.get("relationship_status", []):
+    if target_cat and constraint_dict.get("relationship_status", []):
         for cat in allowed_cats.copy():
             if not filter_relationship_type(
-                group=[cat, comparison_cat],
+                group=[cat, target_cat],
                 filter_types=constraint_dict["relationship_status"],
             ):
                 allowed_cats.remove(cat)

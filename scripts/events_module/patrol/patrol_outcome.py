@@ -9,6 +9,7 @@ from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
 import i18n
 import pygame
 
+from scripts.events_module.future.future_event import prep_event
 from scripts.events_module.short.handle_short_events import INJURY_GROUPS
 
 if TYPE_CHECKING:
@@ -310,7 +311,7 @@ class PatrolOutcome:
         for x, newbie in enumerate(self.new_cat):
             possible_cats[f"n_c:{x}"] = newbie
 
-        future_event.prep_event(
+        prep_event(
             event=self,
             event_id=patrol.patrol_event.patrol_id,
             possible_cats=possible_cats,
