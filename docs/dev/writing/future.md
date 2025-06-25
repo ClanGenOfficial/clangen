@@ -4,10 +4,10 @@
 
 Future events are special event blocks that can be added to the ShortEvent and Patrol outcome formats. They allow the writer to specify a ShortEvent that will be created in a given number of moons. Writers can even specify a larger pool of events for the future event to be chosen from.  Writers can also add multiple future events to a single event, meaning that one event could trigger multiple events!
 
-## Throughout this documentation we will refer to the FutureEvent format block as the "future event" and the event that is *chosen to eventually display* as the "triggered event". The event that initially creates the future event will be referred to as the "parent event".
+## Throughout this documentation we will refer to the FutureEvent format block as the "future event" and the event that is *chosen to eventually display* as the "future event". The event that initially creates the future event will be referred to as the "parent event".
 
 !!! tip
-    Currently, future events are removed from the "queue" if they go 12 moons without being able to display. For example, if an involved cat dies before the future event is able to display, then the event will no longer trigger and the player will never see it. A 12 moon buffer is provided so that any season-locked triggered events will have the opportunity to "wait" for their required season.
+    Currently, future events are removed from the "queue" if they go 12 moons without being able to display. For example, if an involved cat dies before the future event is able to display, then the event will no longer trigger and the player will never see it. A 12 moon buffer is provided so that any season-locked future events will have the opportunity to "wait" for their required season.
 
 ## FutureEvent Format
 
@@ -25,11 +25,11 @@ Future events are special event blocks that can be added to the ShortEvent and P
 This parameter can be added to the end of ShortEvent and Patrol outcome formats.
 
 !!! note
-    The future event parameter is a *list*, this means that you could have multiple future event dictionaries contained within, each dictionary creating its own triggered event. 
+    The future event parameter is a *list*, this means that you could have multiple future event dictionaries contained within, each dictionary creating its own future event. 
 
 ### event_type:str
 
-Specify which ShortEvent type the triggered event will be. 
+Specify which ShortEvent type the future event will be. 
 
 > * death
 * injury
@@ -41,12 +41,11 @@ Specify which ShortEvent type the triggered event will be.
 
 ### pool:dict[list]
 
-You can specify a whole pool of events to be chosen from. Only one event from this pool will be chosen as the triggered event. You can specify by `subtype`, `event_id`, or `excluded_event_id`. You do not need to include every parameter, but you must utilize at least one.
+You can specify a whole pool of events to be chosen from. Only one event from this pool will be chosen as the future event. You can specify by `subtype`, `event_id`, or `excluded_event_id`. You do not need to include every parameter, but you must utilize at least one.
 
 !!! important
-    All events must have the same subtypes. 
-    You can specify both `subtype` *and* `excluded_event_id`.
-    If you specify `event_id`, you *must* include the corresponding subtypes in `subtype`
+    If you include subtypes, only events that have *all* the listed subtypes will be available.
+    If you do not include subtypes, all events (that match `event_type`) will be available. Please be mindful!
 
 ```json
         "pool": {
@@ -65,11 +64,11 @@ You can specify a whole pool of events to be chosen from. Only one event from th
 
 ### moon_delay:tuple[int, int]
 
-This specifies how many moons must pass before the triggered event appears. Writers are able to specify a range `[x, y]` with `x` being the smallest possible delay and `y` being the largest possible delay.  One number will be picked between `x` and `y` to serve as the delay.  Setting both `x` and `y` as the same number will make that number the only option.
+This specifies how many moons must pass before the future event appears in game. Writers are able to specify a range `[x, y]` with `x` being the smallest possible delay and `y` being the largest possible delay.  One number will be picked between `x` and `y` to serve as the delay.  Setting both `x` and `y` as the same number will make that number the only option.
 
 ### involved_cats:dict[str, dict]
 
-This specifies what cats can fill the roles within the triggered event. You can also use this to carry cats from the parent event into the triggered event. This is structured as a dictionary, with the **key** being the triggered event's cat role and the **value** being either a dictionary of constraints or a parent event's cat role.
+This specifies what cats can fill the roles within the future event. You can also use this to carry cats from the parent event into the future event. This is structured as a dictionary, with the **key** being the future event's cat role and the **value** being either a dictionary of constraints or a parent event's cat role.
 
 Example of how this looks in use, the parent event for this hypothetical event is a murder event:
 ```json linenums="1"
@@ -82,13 +81,13 @@ Example of how this looks in use, the parent event for this hypothetical event i
     }
 ```
 **"m_c": "r_c",**
-> r_c is the random cat from the parent event. They will be m_c, or the main cat, in the triggered event. 
+> r_c is the random cat from the parent event. They will be m_c, or the main cat, in the future event. 
 
 **"mur_c": "m_c"**
-> m_c is the main cat from the parent event. They will be mur_c, or the murdered cat, in the triggered event.
+> m_c is the main cat from the parent event. They will be mur_c, or the murdered cat, in the future event.
 
 !!! tip
-    Any role used in the parent event can be used to carry a cat into the triggered event! For example, a new cat, `n_c:0`, from the parent event could be carried into the triggered event as `m_c` or any other possible role.
+    Any role used in the parent event can be used to carry a cat into the future event! For example, a new cat, `n_c:0`, from the parent event could be carried into the future event as `m_c` or any other possible role.
 
 **"r_c": {...}**
 > In this line, we aren't carrying over any cat from the parent event. Instead, we're trying to find a new cat. We've decided this cat can only be a senior, so that constraint is added. A cat will be chosen from the currently living cats, excluding any cats already involved in this event. We could provide 0 constraints if we wanted any cat to have access, in that case we would just leave an empty dictionary.
@@ -96,7 +95,7 @@ Example of how this looks in use, the parent event for this hypothetical event i
 The cat constraints that can be utilized here are the same as [ShortEvents](shortevents.md#r_cdictstr-various), with a few exclusions. The ***only*** constraints you *can* use are `age`, `status`, `skill`, `trait`, and `backstory`.
 
 !!! warning
-    Keep in mind that if you constrain certain roles, you *need* to be certain that there is at least one possible event within the pool that will allow for those constraints.  For example, if you specify that r_c must be an elder with the CAMP skill, then there must be at least one event in the pool that allows r_c to be an elder with the CAMP skill.  If there is not, then a triggered event will never be chosen and the future event has essentially done nothing.
+    Keep in mind that if you constrain certain roles, you *need* to be certain that there is at least one possible event within the pool that will allow for those constraints.  For example, if you specify that r_c must be an elder with the CAMP skill, then there must be at least one event in the pool that allows r_c to be an elder with the CAMP skill.  If there is not, then a future event will never be chosen.
 
 ## Example
 
