@@ -14,6 +14,7 @@ from scripts.utility import (
     event_text_adjust,
 )
 from .Screens import Screens
+from ..game_structure.ui_elements import UIModifiedScrollingContainer
 
 
 class AllegiancesScreen(Screens):
@@ -53,9 +54,10 @@ class AllegiancesScreen(Screens):
         self.update_heading_text(f"{game.clan.name}Clan")
         allegiance_list = self.get_allegiances_text()
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(
+        self.scroll_container = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((50, 165), (715, 470))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 
