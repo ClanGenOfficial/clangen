@@ -309,7 +309,11 @@ class Cat:
         if "biome" in kwargs:
             biome = kwargs["biome"]
         elif game.clan is not None:
-            biome = game.clan.biome
+            biome = (
+                game.clan.biome
+                if not game.clan.override_biome
+                else game.clan.override_biome
+            )
         else:
             biome = None
         # NAME

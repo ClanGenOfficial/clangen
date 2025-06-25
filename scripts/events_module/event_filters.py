@@ -24,7 +24,11 @@ def event_for_location(locations: list) -> bool:
             req_biome = place
             req_camps = ["any"]
 
-        if req_biome == game.clan.biome.lower():
+        if game.clan.override_biome:
+            if req_biome == game.clan.override_biome:
+                if "any" in req_camps or game.clan.camp_bg in req_camps:
+                    return True
+        elif req_biome == game.clan.biome.lower():
             if "any" in req_camps or game.clan.camp_bg in req_camps:
                 return True
         return False

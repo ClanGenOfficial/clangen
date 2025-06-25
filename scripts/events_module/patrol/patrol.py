@@ -100,7 +100,11 @@ class Patrol:
 
         final_patrols, final_romance_patrols = self.get_possible_patrols(
             str(game.clan.current_season).casefold(),
-            str(game.clan.biome).casefold(),
+            str(
+                game.clan.biome
+                if not game.clan.override_biome
+                else game.clan.override_biome
+            ).casefold(),
             str(game.clan.camp_bg).casefold(),
             patrol_type,
             get_clan_setting("disasters"),
@@ -933,7 +937,11 @@ class Patrol:
         filtered_patrols = []
 
         # get first what kind of prey size which will be chosen
-        biome = game.clan.biome
+        biome = (
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        )
         season = game.clan.current_season
         possible_prey_size = []
         idx = 0

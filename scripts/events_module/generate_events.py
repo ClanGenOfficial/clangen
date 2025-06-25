@@ -223,13 +223,18 @@ class GenerateEvents:
         event_list = []
 
         # skip the rest of the loading if there is an unrecognised biome
-        if game.clan.biome not in constants.BIOME_TYPES:
+        temp_biome = (
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        )
+        if temp_biome not in constants.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
                 f"in clan.py?"
             )
 
-        biome = game.clan.biome.lower()
+        biome = temp_biome.lower()
 
         # biome specific events
         event_list.extend(GenerateEvents.generate_short_events(event_type, biome))

@@ -4,13 +4,13 @@ from random import choice
 import i18n
 
 from scripts.game_structure import constants
+import scripts.cat_relations.interaction as interactions
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
     rebuild_relationship_dicts,
 )
-import scripts.cat_relations.interaction as interactions
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_personality_compatibility, process_text
@@ -116,7 +116,11 @@ class Relationship:
 
         # get other possible filters
         season = str(game.clan.current_season).casefold()
-        biome = str(game.clan.biome).casefold()
+        biome = str(
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        ).casefold()
         game_mode = game.clan.game_mode
 
         all_interactions = interactions.NEUTRAL_INTERACTIONS.copy()

@@ -465,7 +465,9 @@ class Events:
                                     )
                                     invited_cat.name.give_suffix(
                                         pelt=None,
-                                        biome=game.clan.biome,
+                                        biome=game.clan.biome
+                                        if not game.clan.override_biome
+                                        else game.clan.override_biome,
                                         tortiepattern=None,
                                     )
                                     invited_cat.specsuffix_hidden = False
