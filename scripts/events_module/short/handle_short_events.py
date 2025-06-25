@@ -1,4 +1,4 @@
-from random import choice, choices, randrange, sample, random
+from random import choice, choices, randrange, sample, randint
 from typing import List
 
 import i18n
@@ -108,7 +108,7 @@ class HandleShortEvents:
         self.involved_cats = [self.main_cat.ID]
 
         # check for war and assign self.other_clan accordingly
-        if game.clan.war.get("at_war", False) and random.randint(1, 5) != 1:
+        if game.clan.war.get("at_war", False) and randint(1, 5) != 1:
             enemy_clan = get_warring_clan()
             self.other_clan = enemy_clan
             self.other_clan_name = f"{self.other_clan.name}Clan"
