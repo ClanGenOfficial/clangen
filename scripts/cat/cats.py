@@ -2426,6 +2426,10 @@ class Cat:
         if self.dead != other_cat.dead:
             return False
 
+        # check that outside status is the same
+        if self.status.is_outsider() != other_cat.status.is_outsider():
+            return False
+
         # check for age
         if age_restriction:
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
