@@ -24,7 +24,7 @@
           "season": ["any"],
           "tags": [],
           "weight": 20,
-          "event_text": "m_c chased a kangaroo rat into a burrow, only to run right into the fangs of a surprised rattlesnake. {PRONOUN/m_c/subject/CAP} didn't make it back to camp...",
+          "event_text": "m_c chased a kangaroo rat into a burrow, only to run right into the fangs of a surprised rattlesnake.",
           "m_c": {
               "status": ["apprentice", "warrior", "deputy", "leader"],
               "dies": true
