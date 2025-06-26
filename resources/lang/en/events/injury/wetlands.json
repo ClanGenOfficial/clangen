@@ -56,7 +56,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c was stalking through the tall grass of the marsh hunting, however {PRONOUN/m_c/subject} stepped on a hidden snake and it bit {PRONOUN/m_c/object}!",
+        "event_text": "m_c was bitten by a hidden snake whilst hunting in the marsh.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"]
         },
