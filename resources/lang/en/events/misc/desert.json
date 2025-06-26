@@ -4,7 +4,7 @@
     "location": ["desert"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "weight": 20,
-    "event_text": "m_c was sniffing at an odd lump in the sand when suddenly an upset lizard gave {PRONOUN/m_c/object} a nip on the nose and dashed away!",
+    "event_text": "m_c was nipped on the nose when {PRONOUN/m_c/subject} investigated an odd, lizard-shaped lump in the sand.",
     "m_c": {
       "status": ["warrior", "apprentice", "kitten", "elder"]
     }
