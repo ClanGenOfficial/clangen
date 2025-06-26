@@ -62,7 +62,7 @@
           "season": ["greenleaf", "newleaf"],
           "tags": [],
           "weight": 20,
-          "event_text": "m_c was out alone in the territory searching for water, however the mirage from the intense heat led {PRONOUN/m_c/object} to keep walking further away from any real water source.",
+          "event_text": "m_c died of dehydration after mistakenly following a mirage.",
           "m_c": {
               "status": ["apprentice", "warrior", "deputy", "leader"],
               "dies": true
