@@ -24,7 +24,7 @@
         "season": ["greenleaf", "newleaf", "leaf-fall"],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c was out hunting when {PRONOUN/m_c/subject} found a snake with a strikingly white mouth, moving to hunt it m_c was bitten and killed by the lightning quick reptile.",
+        "event_text": "m_c was killed by a snake with a strikingly white mouth.",
         "m_c": {
             "status": ["apprentice"],
             "dies": true
