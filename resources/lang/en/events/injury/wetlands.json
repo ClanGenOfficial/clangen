@@ -20,7 +20,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c was out in the territory when {PRONOUN/m_c/subject} came across a cluster of red berries and ate some, later r_c found them barely alive and rushed {PRONOUN/m_c/object} back to camp.",
+        "event_text": "m_c ate some red berries out in the territory and was rushed back to camp by r_c.",
         "m_c": {
             "age": ["adolescent"],
             "not_skill": ["HEALER,1"]
