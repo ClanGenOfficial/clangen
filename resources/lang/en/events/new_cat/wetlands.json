@@ -4,7 +4,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "weight": 5,
-        "event_text": "m_c returned to camp carrying a muddy kitten, and explains that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} wandering - lost - around the marsh, no parent in sight.",
+        "event_text": "m_c returned to camp carrying a muddy kitten, explaining that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} wandering around the marsh, no parent in sight.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"]
