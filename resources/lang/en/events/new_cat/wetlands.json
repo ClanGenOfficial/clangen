@@ -31,7 +31,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "weight": 5,
-        "event_text": "m_c found an abandoned kitten wandering around the marsh and carries {PRONOUN/n_c:0/object} back to camp. Though c_n isn't happy about it, m_c persuades them to let n_c:0 stay in the Clan.",
+        "event_text": "m_c found an abandoned kitten wandering around the marsh and carried {PRONOUN/n_c:0/object} back to camp. Though c_n isn't happy about it, m_c persuades them to let n_c:0 stay in the Clan.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"],
