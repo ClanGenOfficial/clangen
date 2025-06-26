@@ -4,7 +4,7 @@
         "location": ["desert"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c was out in the territory and took a bad tumble over a rock hidden by the dusty ground.",
+        "event_text": "m_c took a bad tumble over a rock hidden by the dusty ground.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
