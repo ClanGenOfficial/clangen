@@ -26,7 +26,7 @@
     "location": ["desert"],
     "season": ["newleaf", "greenleaf"],
     "weight": 20,
-    "event_text": "m_c is out finding valuable herbs, but in the distant mirage {PRONOUN/m_c/subject} sees prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/continue/continues} gathering, attempting to decipher what the visions could mean.",
+    "event_text": "While out gathering valuable herbs, m_c sees a vision of prophecy_list_sight/m_c.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["PROPHET,2"]
