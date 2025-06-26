@@ -37,7 +37,7 @@
         "location": ["desert"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "A snake managed to slither its way into camp and m_c got bitten by it.",
+        "event_text": "A snake managed to slither into camp and bite m_c.",
         "m_c": {
             "age": ["any"]
         },
