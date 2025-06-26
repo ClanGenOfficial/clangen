@@ -67,7 +67,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "weight": 5,
-        "event_text": "m_c finds an abandoned litter buried in the reeds while on patrol and rushes them back to camp. Such young cats were lucky that m_c found them before something else did.",
+        "event_text": "m_c found an abandoned litter concealed in the reeds and rushed them back to camp. Such young kits were lucky that m_c found them before something else did.",
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["leader", "deputy", "medicine cat", "warrior"]
