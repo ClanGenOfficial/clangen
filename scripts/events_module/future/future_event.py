@@ -59,9 +59,8 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
     for new_role, cat_involved in future_info["involved_cats"].items():
         # grab any cats that need to be newly gathered
         if isinstance(cat_involved, dict):
-            target_cat = cat_involved.get("target_cat")
             gathered_cat_dict[new_role] = cat_for_event(
-                cat_involved, possible_cats, target_cat
+                cat_involved, possible_cats
             )
             possible_cats.remove(Cat.fetch_cat(gathered_cat_dict[new_role]))
             continue
