@@ -43,7 +43,7 @@
           "season": ["any"],
           "tags": [],
           "weight": 20,
-          "event_text": "m_c was out training {PRONOUN/m_c/poss} agility by jumping from rock to rock. {PRONOUN/m_c/subject/CAP} didn't notice the rattlesnake until their paw landed on top of it, earning {PRONOUN/m_c/object} a nasty bite and a lethal dose of venom.",
+          "event_text": "m_c jumped on top of a rattlesnake by mistake and was killed by the ensuing bite.",
           "m_c": {
               "status": ["apprentice"],
               "dies": true
