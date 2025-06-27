@@ -865,7 +865,7 @@ class EventEditScreen(Screens):
             # TEXT PREVIEW
             if event.ui_element == self.event_text_element[
                 "preview_button"
-            ] and self.event_text_element.get("event_texta"):
+            ] and self.event_text_element.get("event_text"):
                 # finds what the new preview state should be
                 index = self.preview_states.index(self.current_preview_state)
                 new_index = (index + 1) % 3
