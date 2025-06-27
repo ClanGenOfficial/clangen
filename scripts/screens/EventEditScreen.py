@@ -1081,10 +1081,7 @@ class EventEditScreen(Screens):
                     else:
                         most = 1
 
-                    self.get_selected_block_info()["moon_delay"] = [
-                        least,
-                        most,2
-                    ]
+                    self.get_selected_block_info()["moon_delay"] = [least, most]
 
     def on_use(self):
         """
