@@ -450,7 +450,7 @@ class EventEditScreen(Screens):
                 "excluded_event_id": [],
             },
             "moon_delay": [1, 1],
-            "involved_cats": {"m_c": "", "r_c": ""},
+            "involved_cats": {"m_c": None, "r_c": None},
         }
         """The template for the future block info"""
         self.future_cat_info_template: dict = {
@@ -462,8 +462,6 @@ class EventEditScreen(Screens):
             "not_trait": [],
         }
         """The template for an uninvolved cat's info."""
-        self.future_cats_needed: list = ["m_c", "r_c"]
-        """List of cats that will feature in the future event."""
         self.available_cats: list = []
         """List of cats who are available to be in the future event."""
 
@@ -727,10 +725,36 @@ class EventEditScreen(Screens):
 
         # SEARCHING
         if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
-            self.search_text = self.event_search.get_text()
-            self.create_event_display(
-                event_type=self.chosen_type, biome=self.chosen_biome
-            )
+            if self.event_search.is_focused:
+                self.search_text = self.event_search.get_text()
+                self.create_event_display(
+                    event_type=self.chosen_type, biome=self.chosen_biome
+                )
+            # FUTURE EVENT IDS
+            elif self.future_element["include_entry"].is_focused:
+                new_id = self.future_element["include_entry"].get_text()
+                block_info = self.get_selected_block_info()["pool"]["event_id"]
+                if new_id not in block_info:
+                    block_info.append(new_id)
+                else:
+                    block_info.remove(new_id)
+                text = ""
+                for id in block_info:
+                    text += f"'{id}'<br>"
+                self.future_element["include_display"].set_text(text)
+                self.future_element["include_entry"].set_text("")
+            elif self.future_element["exclude_entry"].is_focused():
+                new_id = self.future_element["exclude_entry"].get_text()
+                block_info = self.get_selected_block_info()["pool"]["excluded_event_id"]
+                if new_id not in block_info:
+                    block_info.append(new_id)
+                else:
+                    block_info.remove(new_id)
+                text = ""
+                for id in block_info:
+                    text += f"'{id}'<br>"
+                self.future_element["exclude_display"].set_text(text)
+                self.future_element["exclude_entry"].set_text("")
 
         # HOVER PREVIEWS
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
@@ -1916,7 +1940,7 @@ class EventEditScreen(Screens):
                 if self.selected_future_block_index
                 else None
             )
-            display = self.future_element["display"]
+            display = None
         else:
             element = self.relationships_element
             view = self.relationships_element["block_list"]
@@ -2751,399 +2775,12 @@ class EventEditScreen(Screens):
                 break
             self.update_acc_info()
 
-    def handle_future_on_use(self):
-        # FUTURE CONSTRAINT DISPLAY
-        if self.selected_future_block_index and not self.future_element.get(
-            "m_c_involved_dropdown"
-        ):
-            self.display_future_constraints()
-        elif not self.selected_future_block_index:
-            self.clear_future_constraints()
-        # SELECT NEW FUTURE BLOCK
-        if self.future_element.get(
-            "block_list"
-        ).selected_list and not self.future_element.get("m_c_involved_dropdown"):
-            self.display_future_constraints()
-        if self.future_element.get("m_c_involved_dropdown"):
-            selected_block = (
-                [str(self.selected_future_block_index)]
-                if self.selected_future_block_index
-                else []
-            )
-            if self.future_element["block_list"].selected_list != selected_block:
-                self.update_future_block_options()
-
-    def handle_outside_on_use(self):
-        # SUPPLY CONSTRAINT DISPLAY
-        if self.selected_supply_block_index and not self.supply_element.get(
-            "constraint_container"
-        ):
-            self.display_supply_constraints()
-        elif not self.selected_supply_block_index:
-            self.clear_supply_constraints()
-        # SELECT NEW SUPPLY BLOCK
-        if self.supply_element.get(
-            "block_list"
-        ).selected_list and not self.supply_element.get("adjust_list"):
-            self.display_supply_constraints()
-        if self.supply_element.get("adjust_list"):
-            selected_block = (
-                [str(self.selected_supply_block_index)]
-                if self.selected_supply_block_index
-                else []
-            )
-            if self.supply_element["block_list"].selected_list != selected_block:
-                self.update_supply_block_options()
-        # OUTSIDER
-        if self.outsider_element.get("list"):
-            if (
-                self.outsider_element["list"].selected_list
-                != self.outsider_info["current_rep"]
-            ):
-                self.outsider_info["current_rep"] = self.outsider_element[
-                    "list"
-                ].selected_list.copy()
-                self.outsider_element["display"].set_text(f"{self.outsider_info}")
-        # OTHER CLAN
-        if self.other_clan_element.get("list"):
-            if (
-                self.other_clan_element["list"].selected_list
-                != self.other_clan_info["current_rep"]
-            ):
-                self.other_clan_info["current_rep"] = self.other_clan_element[
-                    "list"
-                ].selected_list.copy()
-                self.other_clan_element["display"].set_text(f"{self.other_clan_info}")
-        # SUPPLY TYPE
-        changed = False
-        selected_info = self.get_selected_block_info()
-        if self.supply_element.get("adjust_list"):
-            new_type = [selected_info["type"]] if selected_info["type"] else []
-            new_adjust = [selected_info["adjust"]] if selected_info["adjust"] else []
-
-            # TYPE
-            if self.supply_element["type_list"].selected_list != new_type:
-                selected_info["type"] = (
-                    self.supply_element["type_list"].selected_list[0]
-                    if self.supply_element["type_list"].selected_list
-                    else ""
-                )
-                changed = True
-
-            # TRIGGER
-            elif (
-                self.supply_element["trigger_list"].selected_list
-                != selected_info["trigger"]
-            ):
-                selected_info["trigger"] = self.supply_element[
-                    "trigger_list"
-                ].selected_list.copy()
-                changed = True
-
-            # ADJUST
-            elif self.supply_element["adjust_list"].selected_list != new_adjust:
-                # gotta be a little careful here, since the "increase" tag changes upon user input
-                new_tag = (
-                    self.supply_element["adjust_list"].selected_list.copy()[0]
-                    if self.supply_element["adjust_list"].selected_list
-                    else ""
-                )
-                tag_change = True
-                if "increase_" in new_tag and "increase_" in selected_info["adjust"]:
-                    tag_change = False
-
-                if tag_change:
-                    selected_info["adjust"] = new_tag
-
-                self.create_supply_increase_editor()
-                changed = True
-        if changed:
-            self.update_block_info()
-
-    def handle_personal_on_use(self):
-        # EXCLUDE
-        if self.exclusion_element.get("cat_list"):
-            if self.exclusion_element["cat_list"].selected_list != self.excluded_cats:
-                self.excluded_cats = self.exclusion_element[
-                    "cat_list"
-                ].selected_list.copy()
-                self.exclusion_element["display"].set_text(
-                    f"exclude_involved: {self.excluded_cats}"
-                )
-
-        changed = False
-
-        if self.open_block == "injury":
-            # CONSTRAINT DISPLAY
-            if self.selected_injury_block and not self.injury_element.get(
-                "constraint_container"
-            ):
-                self.display_injury_constraints()
-            elif not self.selected_injury_block:
-                self.clear_injury_constraints()
-
-            # SELECT NEW BLOCK
-            if self.injury_element.get("scar_list"):
-                selected_injury = (
-                    [str(self.selected_injury_block)]
-                    if self.selected_injury_block
-                    else []
-                )
-                if self.injury_element["block_list"].selected_list != selected_injury:
-                    self.update_injury_block_options()
-
-            # CAT LIST
-            if self.injury_element.get("cats_list"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    self.injury_element["cats_list"].selected_list
-                    != selected_info["cats"]
-                ):
-                    selected_info["cats"] = self.injury_element[
-                        "cats_list"
-                    ].selected_list.copy()
-                    self.injury_element["cats_info"].set_text(
-                        f"cats: {selected_info['cats']}"
-                    )
-                    self.injury_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(self.injury_element["cats_info"])
-                    changed = True
-
-            # INJURY LIST
-            if self.injury_element.get("individual_injuries"):
-                full_selection = (
-                    self.injury_element["injury_pools"].selected_list
-                    + self.injury_element["individual_injuries"].selected_list
-                )
-                selected_info = self.get_selected_block_info()
-                if full_selection != selected_info["injuries"]:
-                    selected_info["injuries"] = full_selection
-                    self.injury_element["injury_info"].set_text(
-                        f"injuries: {full_selection}"
-                    )
-                    self.injury_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(self.injury_element["injury_info"])
-                    changed = True
-
-            # SCAR LIST
-            if self.injury_element.get("scar_list"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    self.injury_element["scar_list"].selected_list
-                    != selected_info["injuries"]
-                ):
-                    selected_info["scars"] = self.injury_element[
-                        "scar_list"
-                    ].selected_list.copy()
-                    self.injury_element["scar_info"].set_text(
-                        f"scars: {selected_info['scars']}"
-                    )
-                    self.injury_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(self.injury_element["scar_info"])
-                    changed = True
-
-        elif self.open_block == "history":
-            # CONSTRAINT DISPLAY
-            if self.selected_history_block_index and not self.history_element.get(
-                "constraint_container"
-            ):
-                self.display_history_constraints()
-            elif not self.selected_history_block_index:
-                self.clear_history_constraints()
-
-            # SELECT NEW BLOCK
-            if self.history_element.get("lead_history_input"):
-                selected_history = (
-                    [str(self.selected_history_block_index)]
-                    if self.selected_history_block_index
-                    else []
-                )
-                if self.history_element["block_list"].selected_list != selected_history:
-                    self.update_history_block_options()
-
-            # CAT LIST
-            if self.history_element.get("cats_list"):
-                selected_info = self.get_selected_block_info()
-                used_cats = []
-                for block in self.history_block_list:
-                    used_cats.extend(block["cats"])
-                if (
-                    self.history_element["cats_list"].selected_list
-                    != selected_info["cats"]
-                ):
-                    selected_info["cats"] = self.history_element[
-                        "cats_list"
-                    ].selected_list.copy()
-                    self.history_element["cats_info"].set_text(
-                        f"cats: {selected_info['cats']}"
-                    )
-                    self.history_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(self.history_element["cats_info"])
-                    changed = True
-
-                for name, button in self.history_element["cats_list"].buttons.items():
-                    if name in used_cats and name not in selected_info["cats"]:
-                        button.disable()
-                    else:
-                        button.enable()
-
-            # TEXT ENTRY
-            if self.history_element.get("scar_history_input"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    selected_info["scar"]
-                    != self.history_element["scar_history_input"].get_text()
-                ):
-                    selected_info["scar"] = self.history_element[
-                        "scar_history_input"
-                    ].get_text()
-                    changed = True
-            if self.history_element.get("reg_history_input"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    selected_info["reg_death"]
-                    != self.history_element["reg_history_input"].get_text()
-                ):
-                    selected_info["reg_death"] = self.history_element[
-                        "reg_history_input"
-                    ].get_text()
-                    changed = True
-            if self.history_element.get("lead_history_input"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    selected_info["lead_death"]
-                    != self.history_element["lead_history_input"].get_text()
-                ):
-                    selected_info["lead_death"] = self.history_element[
-                        "lead_history_input"
-                    ].get_text()
-                    changed = True
-
-        elif self.open_block == "relationships":
-            # CONSTRAINT DISPLAY
-            if (
-                self.selected_relationships_block_index
-                and not self.relationships_element.get("constraint_container")
-            ):
-                self.display_relationships_constraints()
-            elif not self.selected_relationships_block_index:
-                self.clear_relationships_constraints()
-
-            if self.relationships_element.get("amount_down_high_button"):
-                selected_relationship = (
-                    [str(self.selected_relationships_block_index)]
-                    if self.selected_relationships_block_index
-                    else []
-                )
-                selected_info = self.get_selected_block_info()
-
-                # SELECT NEW BLOCK
-                if (
-                    self.relationships_element["block_list"].selected_list
-                    != selected_relationship
-                ):
-                    self.update_relationships_block_options()
-
-                # CAT LIST
-                elif (
-                    self.relationships_element["cats_from_list"].selected_list
-                    != selected_info["cats_from"]
-                ):
-                    selected_info["cats_from"] = self.relationships_element[
-                        "cats_from_list"
-                    ].selected_list.copy()
-                    for name, button in self.relationships_element[
-                        "cats_to_list"
-                    ].buttons.items():
-                        if name in selected_info["cats_from"]:
-                            button.disable()
-                        else:
-                            button.enable()
-                    self.relationships_element["cats_from_info"].set_text(
-                        f"cats: {selected_info['cats_from']}"
-                    )
-                    self.relationships_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(
-                        self.relationships_element["cats_from_info"]
-                    )
-                    changed = True
-                elif (
-                    self.relationships_element["cats_to_list"].selected_list
-                    != selected_info["cats_to"]
-                ):
-                    selected_info["cats_to"] = self.relationships_element[
-                        "cats_to_list"
-                    ].selected_list.copy()
-                    for name, button in self.relationships_element[
-                        "cats_from_list"
-                    ].buttons.items():
-                        if name in selected_info["cats_to"]:
-                            button.disable()
-                        else:
-                            button.enable()
-                    self.relationships_element["cats_to_info"].set_text(
-                        f"cats: {selected_info['cats_to']}"
-                    )
-                    self.relationships_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(
-                        self.relationships_element["cats_to_info"]
-                    )
-                    changed = True
-
-                # VALUES
-                elif (
-                    self.relationships_element["values_list"].selected_list
-                    != selected_info["values"]
-                ):
-                    selected_info["values"] = self.relationships_element[
-                        "values_list"
-                    ].selected_list.copy()
-                    self.relationships_element["values_info"].set_text(
-                        f"values: {selected_info['values']}"
-                    )
-                    changed = True
-
-        if changed:
-            self.update_block_info()
-
-    def handle_new_cat_on_use(self):
-        # NEW CAT CONSTRAINT DISPLAY
-        if self.selected_new_cat and not self.new_cat_element.get("checkbox_container"):
-            self.display_new_cat_constraints()
-
-        elif not self.selected_new_cat and self.new_cat_element.get(
-            "checkbox_container"
-        ):
-            self.clear_new_cat_constraints()
-        # CHANGE SELECTED CAT
-        if self.new_cat_editor.get("cat_list"):
-            self.new_cat_select()
-        # CAT CONNECTIONS
-        if self.connections_element.get("cat_list"):
-            new_selection = (
-                self.connections_element["cat_list"].selected_list.copy()
-                if self.connections_element["cat_list"].selected_list
-                else []
-            )
-            if self.selected_new_cat_info[self.open_connection] != new_selection:
-                self.selected_new_cat_info[self.open_connection] = new_selection
-                self.connections_element["display"].set_text(
-                    f"chosen cats: {new_selection}"
-                )
-        self.handle_main_and_random_cat_on_use()
-        self.update_new_cat_tags()
-
     # INFO DISPLAY UPDATES
     def update_block_info(self):
         """
         Update the block's full text display
         """
+
         attr = self.get_block_attributes()
         if attr["selected"]:
             text = "<br>".join(
@@ -3154,6 +2791,10 @@ class EventEditScreen(Screens):
             )
         else:
             text = "No block selected"
+
+        if not attr.get("display"):
+            return
+
         attr["display"].set_text(text)
 
         if self.editor_element.get(f"{self.open_block}_start"):
@@ -3210,13 +2851,17 @@ class EventEditScreen(Screens):
                 selected_constraints["event_type"] == "misc"
                 and not selected_constraints["subtypes"]
             )
-            and "mur_c" not in self.future_cats_needed
+            and "mur_c" not in selected_constraints["involved_cats"]
         ):
-            self.future_cats_needed.append("mur_c")
+            selected_constraints["involved_cats"] = {
+                "m_c": "r_c",
+                "mur_c": "m_c",
+                "r_c": None,
+            }
 
         self.available_cats = self.get_involved_cats(include_clan=False)
-        if "new uninvolved cat" not in self.available_cats:
-            self.available_cats.append("new uninvolved cat")
+        if "new random cat" not in self.available_cats:
+            self.available_cats.append("new random cat")
 
         self.create_involved_cats_editor(selected_constraints)
 
@@ -3897,6 +3542,437 @@ class EventEditScreen(Screens):
             self.type_element["display"].set_text("chosen subtypes: []")
 
     # ON USE FUNCS
+    def handle_future_on_use(self):
+        # FUTURE CONSTRAINT DISPLAY
+        if self.selected_future_block_index and not self.future_element.get(
+            "m_c_involved_dropdown"
+        ):
+            self.display_future_constraints()
+        elif not self.selected_future_block_index:
+            self.clear_future_constraints()
+        # SELECT NEW FUTURE BLOCK
+        if self.future_element.get(
+            "block_list"
+        ).selected_list and not self.future_element.get("m_c_involved_dropdown"):
+            self.display_future_constraints()
+        if self.future_element.get("m_c_involved_dropdown"):
+            selected_block = (
+                [str(self.selected_future_block_index)]
+                if self.selected_future_block_index
+                else []
+            )
+            if self.future_element["block_list"].selected_list != selected_block:
+                self.update_future_block_options()
+
+        block_info = self.get_selected_block_info()
+
+        # TYPE CHANGE
+        if (
+            self.future_element.get("type_dropdown")
+            and self.future_element["type_dropdown"].selected_list[0]
+            != block_info["event_type"]
+        ):
+            # update block info
+            block_info["event_type"] = self.future_element[
+                "type_dropdown"
+            ].selected_list.copy()[0]
+            # update available subtypes
+            self.future_element["sub_dropdown"].set_selected_list = []
+            self.future_element["sub_dropdown"].new_item_list(
+                self.event_types[block_info["event_type"]]
+            )
+            block_info["pool"]["subtype"] = []
+
+        # SUB CHANGE
+        elif (
+            self.future_element.get("sub_dropdown")
+            and self.future_element["sub_dropdown"].selected_list
+            != block_info["pool"]["subtype"]
+        ):
+            # update block info
+            block_info["pool"]["subtype"] = self.future_element[
+                "sub_dropdown"
+            ].selected_list.copy()
+            # update display
+            self.future_element["sub_display"].set_text(
+                f"subtype:{block_info['pool']['subtype']}"
+            )
+            if "murder_reveal" in block_info["pool"]["subtype"]:
+                block_info["involved_cats"] = {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": None,
+                }
+            else:
+                block_info["involved_cats"] = {"m_c": None, "r_c": None}
+            self.create_involved_cats_editor()
+
+    def handle_outside_on_use(self):
+        # SUPPLY CONSTRAINT DISPLAY
+        if self.selected_supply_block_index and not self.supply_element.get(
+            "constraint_container"
+        ):
+            self.display_supply_constraints()
+        elif not self.selected_supply_block_index:
+            self.clear_supply_constraints()
+        # SELECT NEW SUPPLY BLOCK
+        if self.supply_element.get(
+            "block_list"
+        ).selected_list and not self.supply_element.get("adjust_list"):
+            self.display_supply_constraints()
+        if self.supply_element.get("adjust_list"):
+            selected_block = (
+                [str(self.selected_supply_block_index)]
+                if self.selected_supply_block_index
+                else []
+            )
+            if self.supply_element["block_list"].selected_list != selected_block:
+                self.update_supply_block_options()
+        # OUTSIDER
+        if self.outsider_element.get("list"):
+            if (
+                self.outsider_element["list"].selected_list
+                != self.outsider_info["current_rep"]
+            ):
+                self.outsider_info["current_rep"] = self.outsider_element[
+                    "list"
+                ].selected_list.copy()
+                self.outsider_element["display"].set_text(f"{self.outsider_info}")
+        # OTHER CLAN
+        if self.other_clan_element.get("list"):
+            if (
+                self.other_clan_element["list"].selected_list
+                != self.other_clan_info["current_rep"]
+            ):
+                self.other_clan_info["current_rep"] = self.other_clan_element[
+                    "list"
+                ].selected_list.copy()
+                self.other_clan_element["display"].set_text(f"{self.other_clan_info}")
+        # SUPPLY TYPE
+        changed = False
+        selected_info = self.get_selected_block_info()
+        if self.supply_element.get("adjust_list"):
+            new_type = [selected_info["type"]] if selected_info["type"] else []
+            new_adjust = [selected_info["adjust"]] if selected_info["adjust"] else []
+
+            # TYPE
+            if self.supply_element["type_list"].selected_list != new_type:
+                selected_info["type"] = (
+                    self.supply_element["type_list"].selected_list[0]
+                    if self.supply_element["type_list"].selected_list
+                    else ""
+                )
+                changed = True
+
+            # TRIGGER
+            elif (
+                self.supply_element["trigger_list"].selected_list
+                != selected_info["trigger"]
+            ):
+                selected_info["trigger"] = self.supply_element[
+                    "trigger_list"
+                ].selected_list.copy()
+                changed = True
+
+            # ADJUST
+            elif self.supply_element["adjust_list"].selected_list != new_adjust:
+                # gotta be a little careful here, since the "increase" tag changes upon user input
+                new_tag = (
+                    self.supply_element["adjust_list"].selected_list.copy()[0]
+                    if self.supply_element["adjust_list"].selected_list
+                    else ""
+                )
+                tag_change = True
+                if "increase_" in new_tag and "increase_" in selected_info["adjust"]:
+                    tag_change = False
+
+                if tag_change:
+                    selected_info["adjust"] = new_tag
+
+                self.create_supply_increase_editor()
+                changed = True
+        if changed:
+            self.update_block_info()
+
+    def handle_personal_on_use(self):
+        # EXCLUDE
+        if self.exclusion_element.get("cat_list"):
+            if self.exclusion_element["cat_list"].selected_list != self.excluded_cats:
+                self.excluded_cats = self.exclusion_element[
+                    "cat_list"
+                ].selected_list.copy()
+                self.exclusion_element["display"].set_text(
+                    f"exclude_involved: {self.excluded_cats}"
+                )
+
+        changed = False
+
+        if self.open_block == "injury":
+            # CONSTRAINT DISPLAY
+            if self.selected_injury_block and not self.injury_element.get(
+                "constraint_container"
+            ):
+                self.display_injury_constraints()
+            elif not self.selected_injury_block:
+                self.clear_injury_constraints()
+
+            # SELECT NEW BLOCK
+            if self.injury_element.get("scar_list"):
+                selected_injury = (
+                    [str(self.selected_injury_block)]
+                    if self.selected_injury_block
+                    else []
+                )
+                if self.injury_element["block_list"].selected_list != selected_injury:
+                    self.update_injury_block_options()
+
+            # CAT LIST
+            if self.injury_element.get("cats_list"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    self.injury_element["cats_list"].selected_list
+                    != selected_info["cats"]
+                ):
+                    selected_info["cats"] = self.injury_element[
+                        "cats_list"
+                    ].selected_list.copy()
+                    self.injury_element["cats_info"].set_text(
+                        f"cats: {selected_info['cats']}"
+                    )
+                    self.injury_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.injury_element["cats_info"])
+                    changed = True
+
+            # INJURY LIST
+            if self.injury_element.get("individual_injuries"):
+                full_selection = (
+                    self.injury_element["injury_pools"].selected_list
+                    + self.injury_element["individual_injuries"].selected_list
+                )
+                selected_info = self.get_selected_block_info()
+                if full_selection != selected_info["injuries"]:
+                    selected_info["injuries"] = full_selection
+                    self.injury_element["injury_info"].set_text(
+                        f"injuries: {full_selection}"
+                    )
+                    self.injury_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.injury_element["injury_info"])
+                    changed = True
+
+            # SCAR LIST
+            if self.injury_element.get("scar_list"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    self.injury_element["scar_list"].selected_list
+                    != selected_info["injuries"]
+                ):
+                    selected_info["scars"] = self.injury_element[
+                        "scar_list"
+                    ].selected_list.copy()
+                    self.injury_element["scar_info"].set_text(
+                        f"scars: {selected_info['scars']}"
+                    )
+                    self.injury_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.injury_element["scar_info"])
+                    changed = True
+
+        elif self.open_block == "history":
+            # CONSTRAINT DISPLAY
+            if self.selected_history_block_index and not self.history_element.get(
+                "constraint_container"
+            ):
+                self.display_history_constraints()
+            elif not self.selected_history_block_index:
+                self.clear_history_constraints()
+
+            # SELECT NEW BLOCK
+            if self.history_element.get("lead_history_input"):
+                selected_history = (
+                    [str(self.selected_history_block_index)]
+                    if self.selected_history_block_index
+                    else []
+                )
+                if self.history_element["block_list"].selected_list != selected_history:
+                    self.update_history_block_options()
+
+            # CAT LIST
+            if self.history_element.get("cats_list"):
+                selected_info = self.get_selected_block_info()
+                used_cats = []
+                for block in self.history_block_list:
+                    used_cats.extend(block["cats"])
+                if (
+                    self.history_element["cats_list"].selected_list
+                    != selected_info["cats"]
+                ):
+                    selected_info["cats"] = self.history_element[
+                        "cats_list"
+                    ].selected_list.copy()
+                    self.history_element["cats_info"].set_text(
+                        f"cats: {selected_info['cats']}"
+                    )
+                    self.history_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.history_element["cats_info"])
+                    changed = True
+
+                for name, button in self.history_element["cats_list"].buttons.items():
+                    if name in used_cats and name not in selected_info["cats"]:
+                        button.disable()
+                    else:
+                        button.enable()
+
+            # TEXT ENTRY
+            if self.history_element.get("scar_history_input"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    selected_info["scar"]
+                    != self.history_element["scar_history_input"].get_text()
+                ):
+                    selected_info["scar"] = self.history_element[
+                        "scar_history_input"
+                    ].get_text()
+                    changed = True
+            if self.history_element.get("reg_history_input"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    selected_info["reg_death"]
+                    != self.history_element["reg_history_input"].get_text()
+                ):
+                    selected_info["reg_death"] = self.history_element[
+                        "reg_history_input"
+                    ].get_text()
+                    changed = True
+            if self.history_element.get("lead_history_input"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    selected_info["lead_death"]
+                    != self.history_element["lead_history_input"].get_text()
+                ):
+                    selected_info["lead_death"] = self.history_element[
+                        "lead_history_input"
+                    ].get_text()
+                    changed = True
+
+        elif self.open_block == "relationships":
+            # CONSTRAINT DISPLAY
+            if (
+                self.selected_relationships_block_index
+                and not self.relationships_element.get("constraint_container")
+            ):
+                self.display_relationships_constraints()
+            elif not self.selected_relationships_block_index:
+                self.clear_relationships_constraints()
+
+            if self.relationships_element.get("amount_down_high_button"):
+                selected_relationship = (
+                    [str(self.selected_relationships_block_index)]
+                    if self.selected_relationships_block_index
+                    else []
+                )
+                selected_info = self.get_selected_block_info()
+
+                # SELECT NEW BLOCK
+                if (
+                    self.relationships_element["block_list"].selected_list
+                    != selected_relationship
+                ):
+                    self.update_relationships_block_options()
+
+                # CAT LIST
+                elif (
+                    self.relationships_element["cats_from_list"].selected_list
+                    != selected_info["cats_from"]
+                ):
+                    selected_info["cats_from"] = self.relationships_element[
+                        "cats_from_list"
+                    ].selected_list.copy()
+                    for name, button in self.relationships_element[
+                        "cats_to_list"
+                    ].buttons.items():
+                        if name in selected_info["cats_from"]:
+                            button.disable()
+                        else:
+                            button.enable()
+                    self.relationships_element["cats_from_info"].set_text(
+                        f"cats: {selected_info['cats_from']}"
+                    )
+                    self.relationships_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(
+                        self.relationships_element["cats_from_info"]
+                    )
+                    changed = True
+                elif (
+                    self.relationships_element["cats_to_list"].selected_list
+                    != selected_info["cats_to"]
+                ):
+                    selected_info["cats_to"] = self.relationships_element[
+                        "cats_to_list"
+                    ].selected_list.copy()
+                    for name, button in self.relationships_element[
+                        "cats_from_list"
+                    ].buttons.items():
+                        if name in selected_info["cats_to"]:
+                            button.disable()
+                        else:
+                            button.enable()
+                    self.relationships_element["cats_to_info"].set_text(
+                        f"cats: {selected_info['cats_to']}"
+                    )
+                    self.relationships_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(
+                        self.relationships_element["cats_to_info"]
+                    )
+                    changed = True
+
+                # VALUES
+                elif (
+                    self.relationships_element["values_list"].selected_list
+                    != selected_info["values"]
+                ):
+                    selected_info["values"] = self.relationships_element[
+                        "values_list"
+                    ].selected_list.copy()
+                    self.relationships_element["values_info"].set_text(
+                        f"values: {selected_info['values']}"
+                    )
+                    changed = True
+
+        if changed:
+            self.update_block_info()
+
+    def handle_new_cat_on_use(self):
+        # NEW CAT CONSTRAINT DISPLAY
+        if self.selected_new_cat and not self.new_cat_element.get("checkbox_container"):
+            self.display_new_cat_constraints()
+
+        elif not self.selected_new_cat and self.new_cat_element.get(
+            "checkbox_container"
+        ):
+            self.clear_new_cat_constraints()
+        # CHANGE SELECTED CAT
+        if self.new_cat_editor.get("cat_list"):
+            self.new_cat_select()
+        # CAT CONNECTIONS
+        if self.connections_element.get("cat_list"):
+            new_selection = (
+                self.connections_element["cat_list"].selected_list.copy()
+                if self.connections_element["cat_list"].selected_list
+                else []
+            )
+            if self.selected_new_cat_info[self.open_connection] != new_selection:
+                self.selected_new_cat_info[self.open_connection] = new_selection
+                self.connections_element["display"].set_text(
+                    f"chosen cats: {new_selection}"
+                )
+        self.handle_main_and_random_cat_on_use()
+        self.update_new_cat_tags()
+
     def handle_main_and_random_cat_on_use(self):
         # RANKS
         if self.rank_element.get("dropdown") and self.rank_element[
@@ -4085,21 +4161,10 @@ class EventEditScreen(Screens):
             tool_tip_text="delete selected block",
         )
 
-        self.future_element["display"] = UITextBoxTweaked(
-            "No block selected",
-            ui_scale(pygame.Rect((0, 10), (260, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.future_element["text"]},
-        )
         self.create_lock(
-            name=f"future",
-            top_anchor=self.future_element["text"],
-            left_anchor=self.future_element["display"],
+            name=f"future", top_anchor=self.future_element["text"], x_offset=260
         )
-        self.create_divider(self.future_element["display"], "future_start")
+        self.create_divider(self.future_element["delete"], "future_start")
 
         if self.future_block_list and not self.selected_future_block_index:
             self.selected_future_block_index = "0"
@@ -4153,11 +4218,11 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             child_trigger_close=True,
             parent_reflect_selection=True,
+            disable_selection=True,
+            starting_selection=[list(self.event_types.keys())[0]],
         )
 
-        self.create_divider(
-            self.future_element["type_dropdown"], "future_type", off_set=-2
-        )
+        self.create_divider(self.future_element["type_text"], "future_type", off_set=-2)
 
         # POOL
         self.future_element["pool_text"] = UITextBoxTweaked(
@@ -4172,7 +4237,9 @@ class EventEditScreen(Screens):
         self.future_element["sub_dropdown"] = UIDropDown(
             pygame.Rect((10, 17), (150, 30)),
             parent_text="subtypes",
-            item_list=[],
+            item_list=self.event_types[
+                self.future_element["type_dropdown"].selected_list[0]
+            ],
             container=self.editor_container,
             anchors={
                 "top_target": self.future_element["pool_text"],
@@ -4181,18 +4248,19 @@ class EventEditScreen(Screens):
             manager=MANAGER,
             child_trigger_close=False,
             multiple_choice=True,
+            disable_selection=False,
         )
         self.future_element["sub_display"] = UITextBoxTweaked(
-            "",
-            ui_scale(pygame.Rect((10, 10), (-1, -1))),
+            "subtype:",
+            ui_scale(pygame.Rect((10, 60), (420, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.future_element["sub_dropdown"]},
+            anchors={"top_target": self.future_element["pool_text"]},
         )
         self.future_element["include_text"] = UITextBoxTweaked(
-            "<b>event_id:</b>",
+            "event_id:",
             ui_scale(pygame.Rect((10, 0), (-1, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
@@ -4219,7 +4287,7 @@ class EventEditScreen(Screens):
             anchors={"top_target": self.future_element["include_text"]},
         )
         self.future_element["exclude_text"] = UITextBoxTweaked(
-            "<b>excluded_event_id:</b>",
+            "excluded_event_id:",
             ui_scale(pygame.Rect((10, 0), (-1, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
@@ -4301,29 +4369,20 @@ class EventEditScreen(Screens):
                 ele.kill()
                 self.future_element.pop(name)
 
-        involved_cats = (
-            selected_constraints["involved_cats"]
-            if selected_constraints
-            else self.future_template["involved_cats"]
-        )
+        future_cats = self.get_selected_block_info()["involved_cats"]
 
         if not self.available_cats:
             self.available_cats = self.get_involved_cats(include_clan=False)
-            self.available_cats.append("new uninvolved cat")
-
-
+            self.available_cats.append("new random cat")
 
         # make new ones
         prev_element = None
-        for cat in self.future_cats_needed:
-
+        for cat in future_cats:
             # find what cat has been picked
-            selection = involved_cats.get(cat)
-            if isinstance(selection, dict):
-                selection = "new uninvolved cat"
+            selection = future_cats.get(cat)
 
             self.future_element[f"{cat}_involved_text"] = UITextBoxTweaked(
-                f"The future event's {self.test_cat_names[cat]} should be played by this event's: ",
+                f"The future event's {self.test_cat_names[cat]} should be played by: ",
                 ui_scale(pygame.Rect((0, 10), (260, -1))),
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
                 line_spacing=1,
@@ -4337,8 +4396,6 @@ class EventEditScreen(Screens):
                     )
                 },
             )
-
-
 
             self.future_element[f"{cat}_involved_dropdown"] = UIDropDown(
                 pygame.Rect((0, 20), (150, 30)),
@@ -4360,12 +4417,6 @@ class EventEditScreen(Screens):
                 starting_selection=[selection] if selection else None,
             )
             prev_element = self.future_element[f"{cat}_involved_text"]
-
-    def create_uninvolved_cat_constraints(self):
-        self.create_rank_editor()
-        self.create_age_editor()
-        self.create_skill_editor(prev_element=self.editor_element["age"])
-        self.create_trait_editor()
 
     # OUTSIDE CONSEQUENCES EDITOR
     def generate_outside_tab(self):
@@ -6855,7 +6906,7 @@ class EventEditScreen(Screens):
         )
         self.create_divider(self.age_element["display"], "age")
 
-    def create_rank_editor(self):
+    def create_rank_editor(self, prev_element):
         self.rank_element["text"] = UITextBoxTweaked(
             "screens.event_edit.rank_info",
             ui_scale(pygame.Rect((0, 10), (220, -1))),
@@ -6863,7 +6914,11 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.editor_element["dies"]},
+            anchors={
+                "top_target": self.editor_element["dies"]
+                if not prev_element
+                else prev_element
+            },
         )
         self.rank_element["dropdown"] = UIScrollingDropDown(
             pygame.Rect((0, 28), (200, 30)),
