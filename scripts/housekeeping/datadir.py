@@ -3,6 +3,7 @@ import platform
 import subprocess
 
 from scripts.housekeeping.version import get_version_info
+from scripts.utility import logger
 
 
 def setup_data_dir():
