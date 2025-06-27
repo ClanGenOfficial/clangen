@@ -1908,7 +1908,7 @@ class EventEditScreen(Screens):
             self.selected_future_block_index = attr["selected"]
             if not attr["selected"]:
                 self.clear_future_constraints()
-            self.update_future_constraints()
+            self.update_future_block_options()
         else:
             self.selected_relationships_block_index = attr["selected"]
             if not attr["selected"]:
@@ -6939,7 +6939,7 @@ class EventEditScreen(Screens):
         )
         self.create_divider(self.age_element["display"], "age")
 
-    def create_rank_editor(self, prev_element):
+    def create_rank_editor(self, prev_element=None):
         self.rank_element["text"] = UITextBoxTweaked(
             "screens.event_edit.rank_info",
             ui_scale(pygame.Rect((0, 10), (220, -1))),
