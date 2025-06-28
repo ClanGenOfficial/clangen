@@ -406,7 +406,9 @@ def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=Non
     # run funcs
     allowed_cats = []
     for param in func_dict:
-        allowed_cats = func_dict[param](possible_cats, tuple(constraint_dict.get(param)))
+        allowed_cats = func_dict[param](
+            possible_cats, tuple(constraint_dict.get(param))
+        )
 
         # if the list is emptied, break
         if not allowed_cats:

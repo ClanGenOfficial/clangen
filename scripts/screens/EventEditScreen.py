@@ -733,44 +733,15 @@ class EventEditScreen(Screens):
             elif platform.system() == "Linux":
                 subprocess.Popen(["xdg-open", event.link_target])
 
-        # SEARCHING
         if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+            # SEARCHING
             if self.event_search.is_focused:
                 self.search_text = self.event_search.get_text()
                 self.create_event_display(
                     event_type=self.chosen_type, biome=self.chosen_biome
                 )
             # FUTURE EVENT IDS
-            elif self.future_element["include_entry"].is_focused:
-                new_id = self.future_element["include_entry"].get_text()
-                block_info = self.get_selected_block_info()["pool"]["event_id"]
-                if new_id not in block_info:
-                    block_info.append(new_id)
-                else:
-                    block_info.remove(new_id)
-                text = ""
-                for id in block_info:
-                    text += f"'{id}'<br>"
-                self.future_element["include_display"].set_text(text)
-                self.future_element["include_entry"].set_text("")
-                self.editor_container.on_contained_elements_changed(
-                    self.future_element["include_display"]
-                )
-            elif self.future_element["exclude_entry"].is_focused:
-                new_id = self.future_element["exclude_entry"].get_text()
-                block_info = self.get_selected_block_info()["pool"]["excluded_event_id"]
-                if new_id not in block_info:
-                    block_info.append(new_id)
-                else:
-                    block_info.remove(new_id)
-                text = ""
-                for id in block_info:
-                    text += f"'{id}'<br>"
-                self.future_element["exclude_display"].set_text(text)
-                self.future_element["exclude_entry"].set_text("")
-                self.editor_container.on_contained_elements_changed(
-                    self.future_element["exclude_display"]
-                )
+            self.handle_future_event_ids()
 
         # HOVER PREVIEWS
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
@@ -1086,6 +1057,38 @@ class EventEditScreen(Screens):
                         most = 1
 
                     self.get_selected_block_info()["moon_delay"] = [least, most]
+
+    def handle_future_event_ids(self):
+        if self.future_element["include_entry"].is_focused:
+            new_id = self.future_element["include_entry"].get_text()
+            block_info = self.get_selected_block_info()["pool"]["event_id"]
+            if new_id not in block_info:
+                block_info.append(new_id)
+            else:
+                block_info.remove(new_id)
+            text = ""
+            for id in block_info:
+                text += f"'{id}'<br>"
+            self.future_element["include_display"].set_text(text)
+            self.future_element["include_entry"].set_text("")
+            self.editor_container.on_contained_elements_changed(
+                self.future_element["include_display"]
+            )
+        elif self.future_element["exclude_entry"].is_focused:
+            new_id = self.future_element["exclude_entry"].get_text()
+            block_info = self.get_selected_block_info()["pool"]["excluded_event_id"]
+            if new_id not in block_info:
+                block_info.append(new_id)
+            else:
+                block_info.remove(new_id)
+            text = ""
+            for id in block_info:
+                text += f"'{id}'<br>"
+            self.future_element["exclude_display"].set_text(text)
+            self.future_element["exclude_entry"].set_text("")
+            self.editor_container.on_contained_elements_changed(
+                self.future_element["exclude_display"]
+            )
 
     def on_use(self):
         """
