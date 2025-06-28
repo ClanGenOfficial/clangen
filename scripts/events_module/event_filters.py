@@ -405,8 +405,8 @@ def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=Non
 
     # run funcs
     allowed_cats = []
-    for param in funct_dict:
-        allowed_cats = funct_dict[param](possible_cats, constraint_dict.get(param))
+    for param in func_dict:
+        allowed_cats = func_dict[param](possible_cats, tuple(constraint_dict.get(param)))
 
         # if the list is emptied, break
         if not allowed_cats:
@@ -427,7 +427,7 @@ def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=Non
     return choice(allowed_cats).ID
 
 
-def _get_cats_with_age(cat_list: list, ages: list) -> list:
+def _get_cats_with_age(cat_list: list, ages: tuple) -> list:
     """
     checks cat_list against required ages and returns qualifying cats
     """
@@ -437,7 +437,7 @@ def _get_cats_with_age(cat_list: list, ages: list) -> list:
     return [kitty for kitty in cat_list if kitty.age in ages]
 
 
-def _get_cats_with_status(cat_list: list, statuses: list) -> list:
+def _get_cats_with_status(cat_list: list, statuses: tuple) -> list:
     """
     checks cat_list against required statuses and returns qualifying cats
     """
@@ -447,7 +447,7 @@ def _get_cats_with_status(cat_list: list, statuses: list) -> list:
     return [kitty for kitty in cat_list if kitty.status in statuses]
 
 
-def _get_cats_with_skill(cat_list: list, skills: list) -> list:
+def _get_cats_with_skill(cat_list: list, skills: tuple) -> list:
     """
     checks cat_list against required skills and returns qualifying cats
     """
@@ -474,7 +474,7 @@ def _get_cats_with_skill(cat_list: list, skills: list) -> list:
     return cat_list
 
 
-def _get_cats_without_skill(cat_list: list, skills: list) -> list:
+def _get_cats_without_skill(cat_list: list, skills: tuple) -> list:
     """
     checks cat_list against disallowed skills and returns qualifying cats
     """
@@ -498,7 +498,7 @@ def _get_cats_without_skill(cat_list: list, skills: list) -> list:
     return cat_list
 
 
-def _get_cats_with_trait(cat_list: list, traits: list) -> list:
+def _get_cats_with_trait(cat_list: list, traits: tuple) -> list:
     """
     checks cat_list against required traits and returns qualifying cats
     """
@@ -508,7 +508,7 @@ def _get_cats_with_trait(cat_list: list, traits: list) -> list:
     return [kitty for kitty in cat_list if kitty.trait in traits]
 
 
-def _get_cats_without_trait(cat_list: list, traits: list) -> list:
+def _get_cats_without_trait(cat_list: list, traits: tuple) -> list:
     """
     checks cat_list against disallowed traits and returns qualifying cats
     """
@@ -518,7 +518,7 @@ def _get_cats_without_trait(cat_list: list, traits: list) -> list:
     return [kitty for kitty in cat_list if kitty.trait not in traits]
 
 
-def _get_cats_with_backstory(cat_list: list, backstories: list) -> list:
+def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:
     """
     checks cat_list against required backstories and returns qualifying cats
     """
