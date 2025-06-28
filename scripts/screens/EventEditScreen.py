@@ -671,6 +671,10 @@ class EventEditScreen(Screens):
 
         if self.future_block_list:
             new_event["future_event"] = self.future_block_list
+            for block in self.future_block_list:
+                for cat in block["involved_cats"]:
+                    if block["involved_cats"][cat] == "new random cat":
+                        block["involved_cats"][cat] = None
 
         return new_event
 
@@ -3654,13 +3658,14 @@ class EventEditScreen(Screens):
                 block_info["involved_cats"] = {"m_c": None, "r_c": None}
             self.create_involved_cats_editor()
 
+        # INVOLVED CATS
         else:
             for cat in block_info["involved_cats"]:
                 if (
                     self.future_element[f"{cat}_involved_dropdown"].selected_list
                     != block_info["involved_cats"][cat]
                 ):
-                    block_info[cat] = self.future_element[
+                    block_info["involved_cats"][cat] = self.future_element[
                         f"{cat}_involved_dropdown"
                     ].selected_list.copy()[0]
 
