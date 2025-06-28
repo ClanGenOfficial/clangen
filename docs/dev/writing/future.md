@@ -4,7 +4,6 @@
 
 Future events are special event blocks that can be added to the ShortEvent and Patrol outcome formats. They allow the writer to specify a ShortEvent that will be created in a given number of moons. Writers can even specify a larger pool of events for the future event to be chosen from.  Writers can also add multiple future events to a single event, meaning that one event could trigger multiple events!
 
-## Throughout this documentation we will refer to the FutureEvent format block as the "future event" and the event that is *chosen to eventually display* as the "future event". The event that initially creates the future event will be referred to as the "parent event".
 
 !!! tip
     Currently, future events are removed from the "queue" if they go 12 moons without being able to display. For example, if an involved cat dies before the future event is able to display, then the event will no longer trigger and the player will never see it. A 12 moon buffer is provided so that any season-locked future events will have the opportunity to "wait" for their required season.
