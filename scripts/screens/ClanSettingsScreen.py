@@ -21,7 +21,7 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     ui_scale_dimensions,
-    ui_scale_offset
+    ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen

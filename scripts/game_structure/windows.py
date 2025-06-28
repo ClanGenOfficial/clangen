@@ -57,7 +57,7 @@ from scripts.utility import (
     logger,
     process_text,
     ui_scale_dimensions,
-    ui_scale_offset
+    ui_scale_offset,
 )
 
 if TYPE_CHECKING:
