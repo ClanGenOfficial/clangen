@@ -1623,6 +1623,20 @@ class EventEditScreen(Screens):
             self.selected_supply_block_index: str = ""
         self.supply_info = {"type": "", "trigger": [], "adjust": ""}
         self.current_preview_state = self.preview_states[0]
+        self.future_element = {}
+        if not self.param_locks.get("future"):
+            self.future_block_list = []
+            self.selected_future_block_index: str = ""
+        self.future_template = {
+            "event_type": "death",
+            "pool": {
+                "subtype": [],
+                "event_id": [],
+                "excluded_event_id": [],
+            },
+            "moon_delay": [1, 1],
+            "involved_cats": {"m_c": None, "r_c": None},
+        }
 
     def create_editor_display(self):
         self.editor_container = UIModifiedScrollingContainer(
@@ -1704,7 +1718,7 @@ class EventEditScreen(Screens):
 
         if not self.editor_element.get("save"):
             self.editor_element["save"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((320, -8), (80, 36))),
+                ui_scale(pygame.Rect((340, -8), (80, 36))),
                 "buttons.save",
                 get_button_dict(ButtonStyles.HORIZONTAL_TAB_MIRRORED, (80, 36)),
                 manager=MANAGER,
@@ -1857,6 +1871,7 @@ class EventEditScreen(Screens):
             self.update_supply_block_options()
         elif self.open_block == "future":
             self.selected_future_block_index = attr["selected"]
+            self.display_future_constraints()
             self.update_future_block_options()
         else:
             self.selected_relationships_block_index = attr["selected"]
@@ -1960,7 +1975,7 @@ class EventEditScreen(Screens):
             element = self.future_element
             view = self.future_element["block_list"]
             block_list = self.future_block_list
-            info_dict = self.future_template
+            info_dict = self.future_template.copy()
             selected = (
                 self.selected_future_block_index
                 if self.selected_future_block_index
@@ -2022,7 +2037,7 @@ class EventEditScreen(Screens):
             return (
                 self.future_block_list[int(self.selected_future_block_index)]
                 if self.selected_future_block_index
-                else self.future_template
+                else self.future_template.copy()
             )
 
     def new_cat_select(self):
@@ -2257,6 +2272,9 @@ class EventEditScreen(Screens):
             ):
                 valid = False
                 self.alert_text = "A Future Event block has no subtype, event_id, or excluded_event_id given. Event pool is too broad, you must use at least one of these constraints!"
+            elif block["moon_delay"][0] > block["moon_delay"][1]:
+                valid = False
+                self.alert_text = "A Future Event block has an invalid moon delay. The 2nd moon delay number should be equal to or larger than the 1st!"
 
         return valid
 
@@ -2838,7 +2856,7 @@ class EventEditScreen(Screens):
             else ""
         )
         if self.selected_future_block_index:
-            selected_constraints = self.future_block_list.copy()[
+            selected_constraints = self.future_block_list[
                 int(self.selected_future_block_index)
             ]
         else:
@@ -2851,16 +2869,19 @@ class EventEditScreen(Screens):
 
         # POOL
         pool = selected_constraints["pool"]
-        self.future_element["sub_dropdown"].set_selected_list(pool["subtype"])
+        self.future_element["sub_dropdown"].set_selected_list(pool["subtype"].copy())
+        self.future_element["sub_display"].set_text(f"subtype: {pool['subtype']}")
 
-        text = ""
-        for id in pool["event_id"]:
-            text += f"'{id}'<br>"
-        self.future_element["include_display"].set_text(text)
-        text = ""
-        for id in pool["excluded_event_id"]:
-            text += f"'{id}'<br>"
-        self.future_element["exclude_display"].set_text(text)
+        if pool.get("event_id"):
+            text = ""
+            for event_id in pool["event_id"]:
+                text += f"'{event_id}'<br>"
+            self.future_element["include_display"].set_text(text)
+        if pool.get("excluded_event_id"):
+            text = ""
+            for event_id in pool.get("excluded_event_id"):
+                text += f"'{event_id}'<br>"
+            self.future_element["exclude_display"].set_text(text)
 
         # DELAY
         self.future_element["least_entry"].set_text(
@@ -3587,6 +3608,8 @@ class EventEditScreen(Screens):
             if self.future_element["block_list"].selected_list != selected_block:
                 self.update_future_block_options()
 
+        if not self.future_element.get("m_c_involved_dropdown"):
+            return
         block_info = self.get_selected_block_info()
 
         # TYPE CHANGE
@@ -3620,6 +3643,7 @@ class EventEditScreen(Screens):
             self.future_element["sub_display"].set_text(
                 f"subtype:{block_info['pool']['subtype']}"
             )
+
             if "murder_reveal" in block_info["pool"]["subtype"]:
                 block_info["involved_cats"] = {
                     "m_c": "r_c",
@@ -3629,6 +3653,16 @@ class EventEditScreen(Screens):
             else:
                 block_info["involved_cats"] = {"m_c": None, "r_c": None}
             self.create_involved_cats_editor()
+
+        else:
+            for cat in block_info["involved_cats"]:
+                if (
+                    self.future_element[f"{cat}_involved_dropdown"].selected_list
+                    != block_info["involved_cats"][cat]
+                ):
+                    block_info[cat] = self.future_element[
+                        f"{cat}_involved_dropdown"
+                    ].selected_list.copy()[0]
 
     def handle_outside_on_use(self):
         # SUPPLY CONSTRAINT DISPLAY
@@ -4276,7 +4310,7 @@ class EventEditScreen(Screens):
             child_trigger_close=False,
             multiple_choice=True,
             disable_selection=False,
-            starting_selection=block_info["pool"]["subtype"],
+            starting_selection=block_info["pool"]["subtype"].copy(),
         )
         self.future_element["sub_display"] = UITextBoxTweaked(
             f"subtype:{block_info['pool']['subtype']}",
@@ -4391,6 +4425,18 @@ class EventEditScreen(Screens):
             self.future_element["most_entry"], "future_delay", off_set=-2
         )
         self.create_involved_cats_editor()
+        # we redefine this here because somehow subtypes were fucking it up. i've searched for a couple hours and found
+        # no discernable reason, but this fixes it.
+        self.future_template = {
+            "event_type": "death",
+            "pool": {
+                "subtype": [],
+                "event_id": [],
+                "excluded_event_id": [],
+            },
+            "moon_delay": [1, 1],
+            "involved_cats": {"m_c": None, "r_c": None},
+        }
 
     def create_involved_cats_editor(self, selected_constraints=None):
         # clear old ones
@@ -4445,9 +4491,8 @@ class EventEditScreen(Screens):
                 },
                 manager=MANAGER,
                 child_trigger_close=True,
-                multiple_choice=False,
                 parent_reflect_selection=True,
-                starting_selection=[selection] if selection else None,
+                starting_selection=[selection] if selection else ["new random cat"],
             )
             prev_element = self.future_element[f"{cat}_involved_text"]
 
