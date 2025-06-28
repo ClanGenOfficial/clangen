@@ -1137,15 +1137,7 @@ class Clan:
         save_list = []
 
         for event in game.clan.future_events:
-            save_list.append(
-                {
-                    "parent_event": event.parent_event,
-                    "event_type": event.event_type,
-                    "pool": event.pool,
-                    "moon_delay": event.moon_delay,
-                    "involved_cats": event.involved_cats,
-                }
-            )
+            save_list.append(event.to_dict())
 
         game.safe_save(
             f"{get_save_dir()}/{game.clan.name}/future_events.json", save_list

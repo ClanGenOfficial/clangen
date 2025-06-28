@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import randint
 
 from scripts.cat.cats import Cat
 from scripts.events_module.event_filters import cat_for_event
@@ -86,3 +86,12 @@ class FutureEvent:
         self.moon_delay = moon_delay
 
         self.involved_cats = involved_cats
+
+    def to_dict(self):
+        return {
+            "parent_event": self.parent_event,
+            "event_type": self.event_type,
+            "pool": self.pool,
+            "moon_delay": self.moon_delay,
+            "involved_cats": self.involved_cats,
+        }
