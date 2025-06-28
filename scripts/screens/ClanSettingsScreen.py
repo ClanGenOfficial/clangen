@@ -11,7 +11,12 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
+from scripts.game_structure.ui_elements import (
+    UIImageButton,
+    UISurfaceImageButton,
+    UIModifiedScrollingContainer,
+)
+from scripts.housekeeping.datadir import open_data_dir
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -20,7 +25,6 @@ from scripts.utility import (
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
-from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
@@ -75,15 +79,7 @@ class ClanSettingsScreen(Screens):
             if event.ui_element == self.fullscreen_toggle:
                 toggle_fullscreen(source_screen=self)
             elif event.ui_element == self.open_data_directory_button:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", "-R", get_data_dir()])
-                elif platform.system() == "Windows":
-                    os.startfile(get_data_dir())  # pylint: disable=no-member
-                elif platform.system() == "Linux":
-                    try:
-                        subprocess.Popen(["xdg-open", get_data_dir()])
-                    except OSError:
-                        logger.exception("Failed to call to xdg-open.")
+                open_data_dir()
                 return
             elif event.ui_element == self.relation_settings_button:
                 self.open_relation_settings()
@@ -191,9 +187,11 @@ class ClanSettingsScreen(Screens):
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
             starting_height=2,
-            tool_tip_text="buttons.toggle_fullscreen_windowed"
-            if game.settings["fullscreen"]
-            else "buttons.toggle_fullscreen_fullscreen",
+            tool_tip_text=(
+                "buttons.toggle_fullscreen_windowed"
+                if game.settings["fullscreen"]
+                else "buttons.toggle_fullscreen_fullscreen"
+            ),
             anchors={
                 "bottom": "bottom",
                 "right": "right",
@@ -251,11 +249,10 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "general"
 
-        self.checkboxes_text[
-            "container_general"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["container_general"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((0, 245), (700, 300))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 
@@ -299,11 +296,10 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "role"
 
-        self.checkboxes_text[
-            "container_role"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["container_role"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((0, 245), (700, 300))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 
@@ -340,11 +336,10 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "relation"
 
-        self.checkboxes_text[
-            "container_relation"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["container_relation"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((0, 245), (700, 300))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 

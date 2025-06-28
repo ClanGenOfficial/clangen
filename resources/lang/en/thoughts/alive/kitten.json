@@ -70,7 +70,7 @@
         "main_status_constraint": [
             "kitten"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "kitten"
         ],
         "random_living_status": [
@@ -141,7 +141,7 @@
         "id": "gen_greenleaf_kit",
         "thoughts": [
             "Is whining about the heat",
-            "Is buzzing after swallowing a cicada" 
+            "Is buzzing after swallowing a cicada"
         ],
         "season": [
             "Greenleaf"
@@ -191,7 +191,7 @@
             "Guards the fresh-kill pile to make sure each Clanmate only takes one piece",
             "Demands to be allowed to guard camp",
             "Wants to guard the nursery"
-	],
+        ],
         "main_trait_constraint": [
             "attention-seeker",
             "bossy",
@@ -314,7 +314,7 @@
         "main_trait_constraint": [
             "bullying"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "kitten"
         ],
         "random_living_status": [

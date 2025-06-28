@@ -169,7 +169,7 @@
             "Wonders if r_c was a good apprentice"
         ],
         "backstory_constraint": {
-            "r_c": ["clan_founder_backstories", 
+            "r_c": ["clan_founder_backstories",
                     "clanborn_backstories",
                     "outsider_roots_backstories",
                     "half_clan_backstories"]
@@ -222,10 +222,12 @@
             "Is listening to a story r_c heard when {PRONOUN/r_c/subject} {VERB/r_c/were/was} a kit"
         ],
         "backstory_constraint": {
-            "r_c": ["clan_founder_backstories", 
-                    "clanborn_backstories",
-                    "outsider_roots_backstories",
-                    "half_clan_backstories"]
+            "r_c": [
+                "clan_founder_backstories",
+                "clanborn_backstories",
+                "outsider_roots_backstories",
+                "half_clan_backstories"
+            ]
         },
         "random_living_status": [
             "living"

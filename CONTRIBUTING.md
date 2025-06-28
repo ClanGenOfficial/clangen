@@ -8,18 +8,22 @@ For quality-of-life changes, bug fixes, minor enhancements (such as balance and 
 **IF YOU ARE DOING A BUG FIX**: Before fixing the bug, please check if it also exists in the latest release branch. If it does, please branch off the release branch and target the release branch in your PR. You do not have to make another PR of the same bugfix to the development branch; the release branch is periodically merged back into development.
 
 ## Installation
-The following instructions assume that you have already [installed Python](https://www.python.org/downloads/), and the working directory in your terminal is `clangen`.
+> [!WARNING]
+> Running the game via poetry is no longer supported. Please use uv instead.
 
-ClanGen utilises a tool called "Poetry" for Python dependency management and packaging. Poetry will automatically set up and manage your virtual environment for you. Installation instructions for Poetry can be found [here](https://python-poetry.org/docs/#installation).
+> [!NOTE] 
+> You no longer need to install Python on your system. uv will automatically install the correct version for you.
 
-To install requirements using Poetry:
+ClanGen now utilises a new tool called "uv" for Python dependency management and packaging. uv will automatically set up and manage your virtual environment for you. Installation instructions for uv can be found [here](https://docs.astral.sh/uv/getting-started/installation/).
+
+To install requirements using uv:
 ```sh
-poetry install --no-root
+uv sync
 ```
 
 Then run using:
 ```sh
-poetry run python main.py
+uv run main.py
 ```
 
 For your convenience, a helper script has been included for the major platforms which automatically installs the dependencies and then executes the main script.

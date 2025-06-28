@@ -9,11 +9,13 @@ import itertools
 import os.path
 import sys
 from random import choice, randint, sample, random, getrandbits, randrange
-from typing import Dict, List, Any, Union, Callable
+from typing import Dict, List, Any, Optional, Union, Callable
 
 import i18n
+import pygame
 import ujson  # type: ignore
 
+import scripts.game_structure.localization as pronouns
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -35,6 +37,7 @@ from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
@@ -44,10 +47,10 @@ from scripts.utility import (
     event_text_adjust,
     update_sprite,
     leader_ceremony_text_adjust,
+    update_mask,
 )
-from scripts.game_structure.localization import load_lang_resource
 
-import scripts.game_structure.localization as pronouns
+import scripts.game_structure.screen_settings
 
 
 class Cat:
@@ -301,7 +304,11 @@ class Cat:
         if "biome" in kwargs:
             biome = kwargs["biome"]
         elif game.clan is not None:
-            biome = game.clan.biome
+            biome = (
+                game.clan.biome
+                if not game.clan.override_biome
+                else game.clan.override_biome
+            )
         else:
             biome = None
         # NAME
@@ -326,7 +333,10 @@ class Cat:
             )
 
         # Private Sprite
-        self._sprite = None
+        self._sprite: Optional[pygame.Surface] = None
+        self._sprite_mask: Optional[pygame.Mask] = None
+        self._sprite_working: bool = self.not_working()
+        """used to store whether we should be displaying sick sprite or not"""
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
@@ -493,7 +503,8 @@ class Cat:
         :return: List of dicts for the cat's pronouns
         """
         if self.faded:
-            return []
+            value = pronouns.get_default_pronouns()["0"]
+            return [value]
 
         locale = i18n.config.get("locale")
         value = self._pronouns.get(locale)
@@ -703,7 +714,11 @@ class Cat:
                     major_chance -= 1
 
                 # decrease major grief chance if grave herbs are used
-                if body and not body_treated and "rosemary" in game.clan.herb_supply.entire_supply:
+                if (
+                    body
+                    and not body_treated
+                    and "rosemary" in game.clan.herb_supply.entire_supply
+                ):
                     body_treated = True
                     game.clan.herb_supply.remove_herb("rosemary", -1)
                     game.herb_events_list.append(
@@ -1497,13 +1512,14 @@ class Cat:
             self.thoughts()
             return
 
-        if self.dead:
+        if self.dead and not self.faded:
             self.thoughts()
             return
 
         if old_age != self.age:
             # Things to do if the age changes
             self.personality.facet_wobble(facet_max=2)
+            self.pelt.rebuild_sprite = True
 
         # Set personality to correct type
         self.personality.set_kit(self.age.is_baby())
@@ -1981,10 +1997,7 @@ class Cat:
                     herb_used = choice(usable_herbs)
                     game.clan.herb_supply.remove_herb(herb_used, -1)
                     avoided = True
-                    text = i18n.t(
-                        "screens.med_den.blood_loss",
-                        name=self.name
-                    )
+                    text = i18n.t("screens.med_den.blood_loss", name=self.name)
                     game.herb_events_list.append(text)
 
             if not avoided:
@@ -2033,8 +2046,10 @@ class Cat:
         # remove accessories if need be
         if "NOTAIL" in self.pelt.scars or "HALFTAIL" in self.pelt.scars:
             self.pelt.accessory = [
-                acc for acc in self.pelt.accessory
-                if acc not in (
+                acc
+                for acc in self.pelt.accessory
+                if acc
+                not in (
                     "RED FEATHERS",
                     "BLUE FEATHERS",
                     "JAY FEATHERS",
@@ -3070,9 +3085,15 @@ class Cat:
                 decrease = not decrease
 
             if decrease:
-                output += i18n.t("screens.mediation.output_decrease", trait=i18n.t(f"screens.mediation.{trait}"))
+                output += i18n.t(
+                    "screens.mediation.output_decrease",
+                    trait=i18n.t(f"screens.mediation.{trait}"),
+                )
             else:
-                output += i18n.t("screens.mediation.output_increase", trait=i18n.t(f"screens.mediation.{trait}"))
+                output += i18n.t(
+                    "screens.mediation.output_increase",
+                    trait=i18n.t(f"screens.mediation.{trait}"),
+                )
 
         return output
 
@@ -3321,12 +3342,30 @@ class Cat:
     @property
     def sprite(self):
         # Update the sprite
-        update_sprite(self)
+        if self.pelt.rebuild_sprite or self.not_working() != self._sprite_working:
+            self.pelt.rebuild_sprite = False
+            self._sprite_working = self.not_working()
+            update_sprite(self)
+            update_mask(self)
         return self._sprite
 
     @sprite.setter
     def sprite(self, new_sprite):
         self._sprite = new_sprite
+
+    @property
+    def sprite_mask(self):
+        if (
+            scripts.game_structure.screen_settings.screen_scale
+            != self.pelt.screen_scale
+        ):
+            self.pelt.screen_scale = scripts.game_structure.screen_settings.screen_scale
+            update_mask(self)
+        return self._sprite_mask
+
+    @sprite_mask.setter
+    def sprite_mask(self, val):
+        self._sprite_mask = val
 
     # ---------------------------------------------------------------------------- #
     #                                  other                                       #
@@ -3338,9 +3377,11 @@ class Cat:
                 [
                     self.genderalign,
                     i18n.t(
-                        f"general.{self.age}"
-                        if self.age != "kitten"
-                        else "general.kitten_profile",
+                        (
+                            f"general.{self.age}"
+                            if self.age != "kitten"
+                            else "general.kitten_profile"
+                        ),
                         count=1,
                     ),
                     i18n.t(f"cat.personality.{self.personality.trait}"),
@@ -3402,9 +3443,11 @@ class Cat:
                 "specsuffix_hidden": self.name.specsuffix_hidden,
                 "gender": self.gender,
                 "gender_align": self.genderalign,
-                "pronouns": self._pronouns
-                if self._pronouns is not None
-                else {i18n.config.get("locale"): self.pronouns},
+                "pronouns": (
+                    self._pronouns
+                    if self._pronouns is not None
+                    else {i18n.config.get("locale"): self.pronouns}
+                ),
                 "birth_cooldown": self.birth_cooldown,
                 "status": self.status,
                 "backstory": self.backstory or None,
@@ -3556,6 +3599,36 @@ def create_example_cats():
             )
             game.choose_cats[cat_index] = create_cat(status=random_status)
 
+
+def create_option_preview_cat(scar: str = None, acc: str = None):
+    """
+    Creates a cat with the specified scar
+    """
+    new_cat = Cat(
+        loading_cat=True,
+        pelt=Pelt(
+            name="SingleColour",
+            colour="WHITE",
+            length="medium",
+            eye_color="SAGE",
+            reverse=False,
+            white_patches=None,
+            vitiligo=None,
+            points=None,
+            pattern=None,
+            tortiebase=None,
+            tortiepattern=None,
+            tortiecolour=None,
+            tint="gray",
+            skin="BLUE",
+            scars=[scar] if scar else [],
+            adult_sprite=8,
+            accessory=[acc] if acc else [],
+        ),
+    )
+    new_cat.age = CatAgeEnum.ADULT
+
+    return new_cat
 
 
 # CAT CLASS ITEMS

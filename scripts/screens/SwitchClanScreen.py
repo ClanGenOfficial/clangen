@@ -60,8 +60,10 @@ class SwitchClanScreen(Screens):
 
                 for page in self.clan_buttons:
                     if event.ui_element in page:
+                        self.change_screen("start screen")
                         Clan.switch_clans(
-                            self.clan_name[self.page][page.index(event.ui_element)]
+                            self.clan_name[self.page][page.index(event.ui_element)],
+                            False,
                         )
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
@@ -74,8 +76,6 @@ class SwitchClanScreen(Screens):
         """
         self.main_menu.kill()
         del self.main_menu
-        self.info.kill()
-        del self.info
         self.current_clan.kill()
         del self.current_clan
 
@@ -123,14 +123,6 @@ class SwitchClanScreen(Screens):
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
             starting_height=1,
-        )
-
-        self.info = pygame_gui.elements.UITextBox(
-            "screens.switch_clan.info",
-            # pylint: disable=line-too-long
-            ui_scale(pygame.Rect((100, 600), (600, 70))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
-            manager=MANAGER,
         )
 
         self.current_clan = pygame_gui.elements.UITextBox(
@@ -191,12 +183,14 @@ class SwitchClanScreen(Screens):
                     ),
                     object_id=ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
                     manager=MANAGER,
-                    anchors={
-                        "centerx": "centerx",
-                        "top_target": self.clan_buttons[-1][-1],
-                    }
-                    if len(self.clan_buttons[-1]) % 8 != 0
-                    else {"centerx": "centerx"},
+                    anchors=(
+                        {
+                            "centerx": "centerx",
+                            "top_target": self.clan_buttons[-1][-1],
+                        }
+                        if len(self.clan_buttons[-1]) % 8 != 0
+                        else {"centerx": "centerx"}
+                    ),
                 )
             )
 

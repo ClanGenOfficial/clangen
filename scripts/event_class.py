@@ -43,8 +43,6 @@ class Single_Event:
         if self.cat_dict and self.cats_involved == []:
             self.cats_involved = [cat.ID for cat in self.cat_dict.values()]
 
-
-
     def to_dict(self):
         """
         Convert Single_Event to dictionary.

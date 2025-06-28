@@ -4310,6 +4310,269 @@
         ]
     },
     {
+        "patrol_id": "gen_med_warrior_bodyguard",
+        "biome": [ "any" ],
+        "season": [ "any" ],
+        "types": [ "herb_gathering"],
+        "tags": [ "romantic" ],
+        "patrol_art": "gen_warrior_med_meadow",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat apprentice": [-1, -1],
+            "medicine cat": [1, 1],
+            "normal adult": [1, 1]
+        },
+        "weight": 20,
+        "chance_of_success": 50,
+        "intro_text": "r_c joins p_l to gather juniper berries. {PRONOUN/r_c/subject/CAP} {VERB/r_c/station/stations} {PRONOUN/r_c/self} by the edge of the clearing as p_l gathers from a bush. r_c's fur bushes up when {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a snake slithering closer!",
+        "decline_text": "r_c squints and realizes it's actually a curvy stick, rolled along by a breeze.",
+        "success_outcomes": [
+            {
+                "text": "r_c immediately bushes up {PRONOUN/r_c/poss} fur and hisses, raising a paw to swipe at the snake. The snake vanishes back into the grass, and both cats breathe a sigh of relief. p_l and r_c agree to head back to camp early.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["juniper"],
+                "relationships": [
+            {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "platonic"],
+                        "amount": 10
+            },  
+            {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    },  
+             {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["romantic"],
+                        "amount": 5
+              }
+            ],
+                "art": "gen_bump_heads_warrior_med"
+            },
+            {
+                "text": "s_c pounces on the snake and crushes its head with {PRONOUN/s_c/poss} unsheathed claws. p_l purrs at {PRONOUN/p_l/poss} Clanmate's quick thinking, heart fluttering when {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} s_c may have saved {PRONOUN/p_l/poss} life. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} all the time {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to gather plenty of herbs.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "can_have_stat": [ "r_c" ],
+                "herbs": ["many_herbs", "juniper"],
+                "relationships": [
+            {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+            },  
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["trust", "platonic"],
+                        "amount": 15
+                    }
+                    ,  
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["romantic"],
+                        "amount": 10
+                    }
+            ],
+                "art": "gen_bump_heads_warrior_med"
+            },
+            {
+                "text": "r_c bundles {PRONOUN/r_c/self} and p_l into the bushes, hiding among the branches as the snake slithers by. p_l's heart beats faster, nestled in the bushes next to r_c. Once the snake is gone, {PRONOUN/p_l/subject} {VERB/p_l/resume/resumes} gathering berries.",
+                "exp": 10,
+                "weight": 20,
+                "herbs": ["juniper"],
+                "relationships": [
+            {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+            },  
+            {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["platonic", "trust", "romantic"],
+                        "amount": 15
+                    }
+            ],
+                "art": "gen_med_romanticstroll_v1"
+            },
+            {
+                "text": "r_c bushes up {PRONOUN/r_c/poss} fur, ready to pounce, but s_c shoots past {PRONOUN/r_c/object} and slams {PRONOUN/s_c/poss} paw down on the snake. r_c is astonished by s_c's fighting ability and gets hot around the ears when s_c glances back at {PRONOUN/r_c/object}, the dead snake dangling from {PRONOUN/s_c/poss} jaws.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": [ "FIGHTER,1"],
+                "can_have_stat": ["p_l"],
+                "herbs": ["juniper"],
+                "relationships": [
+            {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+            },  
+            {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "trust"],
+                        "amount": 15
+                    }
+            ],
+                "art": "gen_med_romanticstroll_v2"
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c leaps out of the way, and the snake is scared off by the sudden movement. However, p_l is steaming mad that r_c left {PRONOUN/p_l/object} to face the snake on {PRONOUN/p_l/poss} own.",
+                "exp": 0,
+                "weight": 40,
+                "relationships": [
+            {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 10
+            },
+            {
+                "cats_to": ["r_c"],
+                "cats_from": ["p_l"],
+                "mutual": false,
+                "values": ["platonic", "trust", "respect"],
+                "amount": -10
+            }
+            ],
+            "art": "gen_train_argueWM"
+            },
+            {
+                "text": "s_c turns tail and runs. p_l rolls {PRONOUN/p_l/poss} eyes. Can't s_c tell that snake isn't venomous? Not much of a warrior escort...",
+                "exp": 0,
+                "weight": 50,
+                "stat_trait": ["nervous", "careful", "oblivious", "shameless"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+            {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "platonic"],
+                        "amount": -10
+            }
+            ],
+                "art": "gen_train_argueWM"
+            },
+            {
+                "text": "s_c doesn't think before throwing {PRONOUN/s_c/self} in front of the striking snake. p_l abandons the juniper and looks for herbs to treat {PRONOUN/s_c/poss} bite.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["bold", "daring", "fierce", "bloodthirsty", "loving", "compassionate", "confident", "responsible", "troublesome", "rebellious", "faithful", "righteous"],
+                "can_have_stat": [ "r_c"],
+                "injury": [
+            {
+                        "cats": ["r_c"],
+                        "injuries": ["snake bite"],
+                        "scars": ["SNAKETWO"],
+                        "no_results": false
+            }
+            ],
+                "history_text": {
+                    "reg_death": "m_c died after being bitten by a snake on patrol.",
+                    "lead_death": "died from a snake bite",
+                    "scars": "m_c was scarred after being bitten by a snake on patrol"
+                },
+                "relationships": [
+            {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic", "romantic"],
+                        "amount": 5
+            },  
+            {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "trust", "respect"],
+                        "amount": 10
+                    }
+            ],
+            "art": "running_med"
+            },
+            {
+                "text": "r_c throws {PRONOUN/r_c/self} in front of the striking snake. p_l doesn't have time to look for herbs to help as the venom takes root in r_c's heart. p_l can only comfort {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/pass/passes} on to StarClan.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c died to save the medicine cat from a snake.",
+                    "lead_death": "died to save the medicine cat from a snake"
+                },
+                "relationships": [
+            {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["platonic", "trust", "respect"],
+                        "amount": 15
+            }
+            ]
+            },
+            {
+                "text": "r_c doesn't move fast enough to intercept the snake as it lunges for p_l, sinking its fangs into {PRONOUN/p_l/poss} flank. r_c chases it away, but p_l gasps that {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to go back to camp <i>now</i>.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+            {
+                        "cats": ["p_l"],
+                        "injuries": ["snake bite"],
+                        "scars": ["SNAKE"],
+                        "no_results": false
+            }
+            ],
+                "history_text": {
+                    "reg_death": "m_c died from a snake bite while gathering herbs.",
+                    "scars": "m_c was scarred after being bitten by a snake on patrol"
+                },
+                "relationships": [
+            {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -10
+            }
+            ],
+            "art": "running_warrior"
+            },
+            {
+                "text": "r_c and p_l waste no time when they see the snake - they turn tail and sprint off into the bushes, leaving the juniper ungathered.",
+                "exp": 0,
+                "weight": 30,
+                "art": "running_warrior_med"
+            }
+        ]
+    },
+{
         "patrol_id": "gen_two_med_apps",
         "biome": ["any"],
         "season": ["any"],

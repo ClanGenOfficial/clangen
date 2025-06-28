@@ -10,8 +10,6 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from ..cat.enums import CatAgeEnum
-from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
@@ -29,8 +27,10 @@ from scripts.utility import (
     ui_scale_dimensions,
     shorten_text_to_fit,
     ui_scale_offset,
-    adjust_list_text, )
+    adjust_list_text,
+)
 from .Screens import Screens
+from ..cat.enums import CatAgeEnum
 from ..cat.history import History
 from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
@@ -526,27 +526,47 @@ class ProfileScreen(Screens):
         or for changes in the profile."""
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
+        # use these attributes to create differing profiles for StarClan cats etc.
+        is_sc_instructor = False
+        is_df_instructor = False
+        is_ur_instructor = False
+        if self.the_cat is None:
+            return
+        if (
+            self.the_cat.dead
+            and game.clan.instructor.ID == self.the_cat.ID
+            and self.the_cat.df is False
+        ):
+            is_sc_instructor = True
+        elif (
+            self.the_cat.dead
+            and game.clan.instructor.ID == self.the_cat.ID
+            and self.the_cat.df is True
+        ):
+            is_df_instructor = True
+        elif (
+            self.the_cat.dead
+            and game.clan.instructor.ID == self.the_cat.ID
+            and self.the_cat.outside
+        ):
+            is_ur_instructor = True
         # Info in string
         cat_name = str(self.the_cat.name)
         cat_name = shorten_text_to_fit(cat_name, 500, 20)
         if self.the_cat.dead:
             cat_name = i18n.t("general.dead_label", name=cat_name)
-
-            # set guide cat thought
-            if game.clan.instructor.ID == self.the_cat.ID:
-                if self.the_cat.outside:
-                    self.the_cat.thought = i18n.t(
-                        "screens.profile.guide_thought_ur", clan=game.clan.name
-                    )
-                elif self.the_cat.df:
-                    self.the_cat.thought = i18n.t(
-                        "screens.profile.guide_thought_df", clan=game.clan.name
-                    )
-                else:
-                    self.the_cat.thought = i18n.t(
-                        "screens.profile.guide_thought_sc", clan=game.clan.name
-                    )
-
+        if is_sc_instructor:
+            self.the_cat.thought = i18n.t(
+                "screens.profile.guide_thought_sc", clan=game.clan.name
+            )
+        if is_df_instructor:
+            self.the_cat.thought = i18n.t(
+                "screens.profile.guide_thought_df", clan=game.clan.name
+            )
+        if is_ur_instructor:
+            self.the_cat.thought = i18n.t(
+                "screens.profile.guide_thought_sc", clan=game.clan.name
+            )
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
@@ -615,9 +635,9 @@ class ProfileScreen(Screens):
             starting_height=2,
         )
         if not (self.the_cat.dead or self.the_cat.outside) and (
-                self.the_cat.status in ("medicine cat", "medicine cat apprentice")
-                or self.the_cat.is_ill()
-                or self.the_cat.is_injured()
+            self.the_cat.status in ("medicine cat", "medicine cat apprentice")
+            or self.the_cat.is_ill()
+            or self.the_cat.is_injured()
         ):
             self.profile_elements["med_den"].show()
         else:
@@ -630,9 +650,11 @@ class ProfileScreen(Screens):
             "",
             object_id="#fav_star" if self.the_cat.favourite else "#not_fav_star",
             manager=MANAGER,
-            tool_tip_text="general.remove_favorite"
-            if self.the_cat.favourite
-            else "general.mark_favorite",
+            tool_tip_text=(
+                "general.remove_favorite"
+                if self.the_cat.favourite
+                else "general.mark_favorite"
+            ),
             starting_height=2,
             anchors={
                 "right": "right",
@@ -720,7 +742,12 @@ class ProfileScreen(Screens):
             output += "\n"
             output += i18n.t(
                 "screens.profile.accessory_label",
-                accessory=i18n.t(f"cat.accessories.{the_cat.pelt.accessory}", count=0),
+                accessory=adjust_list_text(
+                    [
+                        i18n.t(f"cat.accessories.{acc}", count=0)
+                        for acc in the_cat.pelt.accessory
+                    ]
+                ),
             )
             # NEWLINE ----------
 
@@ -792,9 +819,9 @@ class ProfileScreen(Screens):
 
         # STATUS
         if (
-                the_cat.outside
-                and not the_cat.exiled
-                and the_cat.status not in ("kittypet", "loner", "rogue", "former Clancat")
+            the_cat.outside
+            and not the_cat.exiled
+            and the_cat.status not in ("kittypet", "loner", "rogue", "former Clancat")
         ):
             output += f"<font color='#FF0000'>{i18n.t('general.lost', count=1)}</font>"
         elif the_cat.exiled:
@@ -903,9 +930,9 @@ class ProfileScreen(Screens):
 
         # NUTRITION INFO (if the game is in the correct mode)
         if (
-                game.clan.game_mode in ("expanded", "cruel season")
-                and the_cat.is_alive()
-                and FRESHKILL_ACTIVE
+            game.clan.game_mode in ("expanded", "cruel season")
+            and the_cat.is_alive()
+            and FRESHKILL_ACTIVE
         ):
             # Check to only show nutrition for clan cats
             if str(the_cat.status) not in (
@@ -1178,8 +1205,8 @@ class ProfileScreen(Screens):
         if self.the_cat.backstory:
             bs_blurb = i18n.t(f"cat.backstories.{self.the_cat.backstory}")
         if (
-                self.the_cat.status in ("kittypet", "loner", "rogue", "former Clancat")
-                and self.the_cat.dead
+            self.the_cat.status in ("kittypet", "loner", "rogue", "former Clancat")
+            and self.the_cat.dead
         ):
             bs_blurb = i18n.t(
                 "cat.backstories.cats_outside_the_clan_dead",
@@ -2097,10 +2124,10 @@ class ProfileScreen(Screens):
                 self.change_adoptive_parent_button.enable()
 
             if (
-                    self.the_cat.age
-                    not in ("young adult", "adult", "senior adult", "senior")
-                    or self.the_cat.exiled
-                    or self.the_cat.outside
+                self.the_cat.age
+                not in ("young adult", "adult", "senior adult", "senior")
+                or self.the_cat.exiled
+                or self.the_cat.outside
             ):
                 self.choose_mate_button.disable()
             else:
@@ -2167,11 +2194,15 @@ class ProfileScreen(Screens):
                 "",
                 get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
                 object_id="@buttonstyles_ladder_top",
-                tool_tip_text="screens.profile.exile_guide_tooltip"
-                if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID
-                else "screens.profile.exile_tooltip"
-                if not self.the_cat.dead
-                else None,
+                tool_tip_text=(
+                    "screens.profile.exile_guide_tooltip"
+                    if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID
+                    else (
+                        "screens.profile.exile_tooltip"
+                        if not self.the_cat.dead
+                        else None
+                    )
+                ),
                 starting_height=2,
                 manager=MANAGER,
             )
@@ -2384,7 +2415,11 @@ class ProfileScreen(Screens):
             light_dark = "dark"
 
         available_biome = ["Forest", "Mountainous", "Plains", "Beach"]
-        biome = game.clan.biome
+        biome = (
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        )
 
         if biome not in available_biome:
             biome = available_biome[0]
