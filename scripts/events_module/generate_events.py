@@ -37,7 +37,6 @@ def get_resource_directory(fallback=False):
 class GenerateEvents:
     loaded_events = {}
 
-    INJURY_DISTRIBUTION = None
     with open(
         f"resources/dicts/conditions/event_injuries_distribution.json",
         "r",
@@ -45,7 +44,6 @@ class GenerateEvents:
     ) as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
-    INJURIES = None
     with open(
         f"resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
     ) as read_file:
@@ -159,6 +157,9 @@ class GenerateEvents:
                         other_clan=event["other_clan"] if "other_clan" in event else {},
                         supplies=event["supplies"] if "supplies" in event else [],
                         new_gender=event["new_gender"] if "new_gender" in event else [],
+                        future_event=event["future_event"]
+                        if "future_event" in event
+                        else {},
                     )
                     event_list.append(event)
 
@@ -253,6 +254,9 @@ class GenerateEvents:
         freshkill_active,
         freshkill_trigger_factor,
         sub_types=None,
+        allowed_events=None,
+        excluded_events=None,
+        ignore_subtyping=False,
     ):
         final_events = []
         incorrect_format = []
@@ -280,9 +284,16 @@ class GenerateEvents:
                             f"{event.event_id} injury formatted incorrectly"
                         )
 
-            # check for event sub_type
-            if set(event.sub_type) != set(sub_types):
+            # check if event is in allowed or excluded
+            if allowed_events and event.event_id not in allowed_events:
                 continue
+            if excluded_events and event.event_id in excluded_events:
+                continue
+
+            # check for event sub_type
+            if not ignore_subtyping:
+                if set(event.sub_type) != set(sub_types):
+                    continue
 
             if not event_for_location(event.location):
                 continue
@@ -293,9 +304,6 @@ class GenerateEvents:
             # check tags
             if not event_for_tags(event.tags, cat, random_cat):
                 continue
-
-            # TODO: just remove this tag man its not a useful feature
-            prevent_bypass = "skill_trait_required" in event.tags
 
             # make complete leader death less likely until the leader is over 150 moons (or unless it's a murder)
             if cat.status.rank == CatRank.LEADER:

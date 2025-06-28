@@ -50,7 +50,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
        {
         "cats": [],
         "injuries": [],
-        "scars": [],
+        "scars": []
        }
     ],
     "exclude_involved": [],
@@ -85,7 +85,8 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
             "trigger": [],
             "adjust": ""
         }
-    ]
+    ],
+    "future_event": []
 
   }
 ```
@@ -176,6 +177,7 @@ lowercase season names + "any"
 | murder_reveal       | marks event as being the reveal of a murder                       |
 | accessory           | marks event as giving an accessory to m_c                         |
 | ceremony            | marks event as being the gifting of an accessory after a ceremony |
+| transition          | marks event as being a cat transitioning their gender             |
 
 ***
 
@@ -330,27 +332,28 @@ lowercase season names + "any"
 >
 >You can include the following details:
 
-| string                                      | effect                                                                                                                                                                                                                                                                                                                                                               |
-|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "male"                                      | Makes the cat male                                                                                                                                                                                                                                                                                                                                                   |
-| "female"                                    | Makes the cat female                                                                                                                                                                                                                                                                                                                                                 |
-| "can_birth"                                 | If same-sex breeding is OFF, make the cat female. Otherwise, 50 - 50 gender-roll.                                                                                                                                                                                                                                                                                    |
-| "new_name"                                  | Ensure the cat takes on a clan-like name                                                                                                                                                                                                                                                                                                                             |
-| "old_name"                                  | Ensure the cat keeps their old (maybe loner or kittypet) name. Doesn't work for kittens or litters.                                                                                                                                                                                                                                                                  |
-| "kittypet"                                  | Gives the cat a kitty-pet type backstory. If "meeting" is also included, this tag will make the cat an kittypet outsider                                                                                                                                                                                                                                             |
-| "loner"                                     | Gives the cat a loner type backstory. If "meeting" is also included, this tag will make the cat an loner outsider      
-| "rogue"                                     | Gives the cat a rogue type backstory. If "meeting" is also included, this tag will make the cat an rogue outsider                                                                                                                                                                                                                                                |
-| "clancat"                                   | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                  |
-| "meeting"                                   | Make the cat an outsider (the patrol just met them, but they didn't join). That cat will never take a new clan-like name.             
-| "exists"                                   | Will attempt to find an existing outsider to utilize instead of creating a new one.  Keep in mind that this ONLY checks if the existing outsider matches indicated status, age, and backstory.  DO NOT use this tag in conjunction with creating litters or assigning parentage.       
-| "unknown"                                   | Prevents the inclusion of "notifying" text such as "The Clan has met `name`". Best used for situations in which a cat needs to be created, but the Clan didn't actually interact with them (i.e. creating abandoned litters).                                                                                                                                                                                                          |
-| "litter"                                    | Turns a single cat generation into a litter of kittens or newborns. Make sure to have a parent for them!                                                                                                                                                                                                                                                             |
-| "status:{some_status}"                      | Cats will join with this status. Include "medicine cat", "apprentice", "mediator", "kitten", "newborn", "medicine cat apprentice", etc, but not leader or deputy. Default for not-litters is warrior. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together.                                                   |
-| "age:{some_age}"                            | Cats are "newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior". You can also specify "mate" to put them in the same age-category as the first specified mate, or "has_kits" to generate an age between 14 and 120 moons. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together.  |
-| "backstory:{some}, {backstories},{another}" | Comma-separated exact backstories to pick from. Overrides "kittypet", "loner", "clancat"                                                                                                                                                                                                                                                                             |
-| "parent:{index},{index}"                    | You can include one or two biological parents. Parents must be created BEFORE children, so the parent details must be listed before the children. If you mark parents, and the child(ren) are young enough, one will be given the "recovering from birth" condition.      
-| "adoptive:{index},{index}"                    | You can include multiple adoptive parents. Parents must be created BEFORE children, so the parent details must be listed before the children. You can denote any cat included in the event as being an adoptive parent by using their abbreviation (`m_c`, `p_l`, ect).  The mates of the adoptive parent will automatically be included as adoptive parents.                                                                                         |
-| "mate:{index},{index}"                      | Indexes of mates. Mates must be created BEFORE the cat with this tag. You can also specify patrol-cats (p_l, r_c, or s_c)                                                                                                                                                                                                                                            |
+| string                                      | effect                                                                                                                                                                                                                                                                                                                                                              |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| "dead"                                      | This cat will be generated as a dead cat.                                                                                                                                                                                                                                                                                                                           |
+| "male"                                      | Makes the cat male.                                                                                                                                                                                                                                                                                                                                                 |
+| "female"                                    | Makes the cat female.                                                                                                                                                                                                                                                                                                                                               |
+| "can_birth"                                 | If same-sex breeding is OFF, make the cat female. Otherwise, either male or female will be chosen at random.                                                                                                                                                                                                                                                                                   |
+| "new_name"                                  | Ensure the cat takes on a clan-like name.                                                                                                                                                                                                                                                                                                                           |
+| "old_name"                                  | Ensure the cat keeps their old (maybe loner or kittypet) name. Doesn't work for kittens or litters.                                                                                                                                                                                                                                                                 |
+| "kittypet"                                  | Gives the cat a kitty-pet type backstory. If "meeting" is also included, this tag will make the cat a kittypet outsider.                                                                                                                                                                                                                                           |
+| "loner"                                     | Gives the cat a loner type backstory. If "meeting" is also included, this tag will make the cat a loner outsider.                                                                                                                                                                                                                                                  |
+| "rogue"                                     | Gives the cat a rogue type backstory. If "meeting" is also included, this tag will make the cat a rogue outsider.                                                                                                                                                                                                                                                  |
+| "clancat"                                   | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                 |
+| "meeting"                                   | Make the cat an outsider (the patrol just met them, but they didn't join). That cat will never take a new Clan-like name.                                                                                                                                                                                                                                           |
+| "exists"                                    | Will attempt to find an existing outsider to utilize instead of creating a new one. Keep in mind that this ONLY checks if the existing outsider matches indicated status, age, and backstory.  DO NOT use this tag in conjunction with creating litters or assigning parentage.                                                                                    |
+| "unknown"                                   | Prevents the inclusion of "notifying" text such as "The Clan has met `name`". Best used for situations in which a cat needs to be created, but the Clan didn't actually interact with them (i.e. creating abandoned litters).                                                                                                                                       |
+| "litter"                                    | Turns a single cat generation into a litter of kittens or newborns. Make sure to have a parent for them!                                                                                                                                                                                                                                                            |
+| "status:{some_status}"                      | Cats will join with this status. Include "medicine cat", "apprentice", "mediator", "kitten", "newborn", "medicine cat apprentice", etc, but not leader or deputy. Default for not-litters is warrior. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together.                                                  |
+| "age:{some_age}"                            | Cats are "newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior". You can also specify "mate" to put them in the same age-category as the first specified mate, or "has_kits" to generate an age between 14 and 120 moons. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together. |
+| "backstory:{some}, {backstories},{another}" | Comma-separated exact backstories to pick from. Overrides "kittypet", "loner", "clancat"                                                                                                                                                                                                                                                                            |
+| "parent:{index},{index}"                    | You can include one or two biological parents. Parents must be created BEFORE children, so the parent details must be listed before the children. If you mark parents, and the child(ren) are young enough, one will be given the "recovering from birth" condition.                                                                                                |
+| "adoptive:{index},{index}"                  | You can include multiple adoptive parents. Parents must be created BEFORE children, so the parent details must be listed before the children. You can denote any cat included in the event as being an adoptive parent by using their abbreviation (`m_c`, `p_l`, ect).  The mates of the adoptive parent will automatically be included as adoptive parents.       |
+| "mate:{index},{index}"                      | Indexes of mates. Mates must be created BEFORE the cat with this tag. You can also specify patrol-cats (p_l, r_c, or s_c)                                                                                                                                                                                                                                           |
 
 ***
 
@@ -377,7 +380,7 @@ lowercase season names + "any"
 | string      |                                   |
 |-------------|-----------------------------------|
 | m_c         | main cat is injured               |
-| r_c   | other cat in the event is injured              |
+| r_c         | other cat in the event is injured |
 | n_c:{index} | new cat of given index is injured |
 
 >**injuries: List[str]:** Pool of injures to draw from
@@ -391,7 +394,7 @@ lowercase season names + "any"
 >
 >[Scar List](reference/index.md#__tabbed_1_5)
 
-## exclude_involved: List[str]:
+### exclude_involved: List[str]:
 >Optional. Excludes certain cats from showing up in the "involved cats" list of the event, meaning their button will not be present on the events screen. Cats listed here will still be a part of the event and can be affected by other parameters like injuries, accessories, relationships, and death, if they're written to.
 
 | string      |                                    |
@@ -400,7 +403,7 @@ lowercase season names + "any"
 | r_c         | other cat in the event is excluded |
 | n_c:{index} | new cat of given index is excluded |
 
-## history_text: Dict[str, str]:
+### history_text: Dict[str, str]:
 >Controls the history-text for scars and death. You must include a list of cats for whom the history will be assigned (i.e. "m_c", "r_c").
 >[History Writing Guidelines](reference/index.md#writing-histories)
 >
@@ -408,7 +411,7 @@ lowercase season names + "any"
 >
 >```json
 >      {
->      "cats": []
+>      "cats": [],
 >      "scar": "",
 >      "reg_death": "",
 >      "lead_death": ""
@@ -543,3 +546,6 @@ lowercase season names + "any"
 | reduce_full    | reduces indicated supply to 0                               |
 | increase_#     | replace # with int, increases indicated supply by given int |
 
+### future_event:list[dict{str, various}]
+
+ [Using Future Events](future.md)
