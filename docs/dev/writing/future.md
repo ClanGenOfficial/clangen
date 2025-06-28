@@ -80,6 +80,7 @@ Example of how this looks in use, the parent event for this hypothetical event i
         }
     }
 ```
+
 **"m_c": "r_c",**
 > r_c is the random cat from the parent event. They will be m_c, or the main cat, in the future event. 
 
@@ -89,8 +90,8 @@ Example of how this looks in use, the parent event for this hypothetical event i
 !!! tip
     Any role used in the parent event can be used to carry a cat into the future event! For example, a new cat, `n_c:0`, from the parent event could be carried into the future event as `m_c` or any other possible role.
 
-**"r_c": {...}**
-> In this line, we aren't carrying over any cat from the parent event. Instead, we're trying to find a new cat. We've decided this cat can only be a senior, so that constraint is added. A cat will be chosen from the currently living cats, excluding any cats already involved in this event. We could provide 0 constraints if we wanted any cat to have access, in that case we would just leave an empty dictionary.
+**"r_c": {...}** or **"r_c": null**
+> In this line, we aren't carrying over any cat from the parent event. Instead, we're trying to find a new cat. We've decided this cat can only be a senior, so that constraint is added. A cat will be chosen from the currently living cats, excluding any cats already involved in this event. If we don't want to constrain this at all, we can leave it null or remove the parameter.
 
 The cat constraints that can be utilized here are the same as [ShortEvents](shortevents.md#r_cdictstr-various), with a few exclusions. You cannot use `dies`, `backstory` or `relationship_status`.
 
@@ -98,7 +99,7 @@ The cat constraints that can be utilized here are the same as [ShortEvents](shor
     Keep in mind that if you constrain certain roles, you *need* to be certain that there is at least one possible event within the pool that will allow for those constraints.  For example, if you specify that r_c must be an elder with the CAMP skill, then there must be at least one event in the pool that allows r_c to be an elder with the CAMP skill.  If there is not, then a future event will never be chosen. 
 
 !!! important
-    In general it's best to keep cat constraints to a minimum. Remember that all the events in the pool will have their own cat constraints to match! The more constraints you add here, the more limited that pool will become.
+    In general it's best to keep cat constraints to a minimum. Remember that all the events in the pool will have their own cat constraints to match! The more constraints you add here, the more limited that pool will become. It's very easy to out-constrain yourself to the point of having no events possible.
 
 ## Example
 
