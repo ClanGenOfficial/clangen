@@ -301,21 +301,21 @@ class ProfileScreen(Screens):
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
                 if self.the_cat.dead:
-                    if self.the_cat.df: # DF -> UR
+                    if self.the_cat.df:  # DF -> UR
                         self.the_cat.outside, self.the_cat.exiled = True, False
                         self.the_cat.df = False
                         game.clan.add_to_unknown(self.the_cat)
                         self.the_cat.thought = (
                             "Is surprised to find themself walking among a foreign land"
                         )
-                    elif self.the_cat.outside: # UR -> SC
+                    elif self.the_cat.outside:  # UR -> SC
                         self.the_cat.outside, self.the_cat.exiled = False, False
                         self.the_cat.df = False
                         game.clan.add_to_starclan(self.the_cat)
                         self.the_cat.thought = (
                             "Is relieved to once again hunt in StarClan"
                         )
-                    else: # SC -> DF
+                    else:  # SC -> DF
                         self.the_cat.outside, self.the_cat.exiled = False, False
                         self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
@@ -532,24 +532,16 @@ class ProfileScreen(Screens):
         is_ur_instructor = False
         if self.the_cat is None:
             return
-        if (
-            self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.df is False
-        ):
-            is_sc_instructor = True
-        elif (
-            self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.df is True
-        ):
-            is_df_instructor = True
-        elif (
-            self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.outside
-        ):
-            is_ur_instructor = True
+
+        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+            assert game.clan.instructor is self.the_cat
+            if not self.the_cat.df:
+                is_sc_instructor = True
+            elif self.the_cat.df:
+                is_df_instructor = True
+            elif self.the_cat.outside:
+                is_ur_instructor = True
+
         # Info in string
         cat_name = str(self.the_cat.name)
         cat_name = shorten_text_to_fit(cat_name, 500, 20)
