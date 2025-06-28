@@ -534,7 +534,6 @@ class ProfileScreen(Screens):
             return
 
         if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            assert game.clan.instructor is self.the_cat
             if not self.the_cat.df:
                 is_sc_instructor = True
             elif self.the_cat.df:
