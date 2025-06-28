@@ -20,12 +20,17 @@ from scripts.utility import (
 class HerbSupply:
     """Handles managing the Clan's herb supply."""
 
-    def __init__(self, herb_supply: dict = None):
+    def __init__(self, herb_supply: dict[str, list[int | float]] = None):
         """
         Initialize the class
         """
         # a dict of current stored herbs - herbs collected this moon
-        self.storage: dict = herb_supply if herb_supply else {}
+        if herb_supply:
+            self.storage: dict[str, list[int]] = {
+                herb: [int(i) for i in amounts] for herb, amounts in herb_supply.items()
+            }
+        else:
+            self.storage = {}
 
         # a dict of herbs collected this moon
         self.collected: dict = {}
@@ -173,6 +178,7 @@ class HerbSupply:
         """
         handle herbs on moon skip: add collected to supply, use herbs where needed, expire old herbs, look for new herbs
         """
+
         # clear log
         self.log = []
 
@@ -508,7 +514,7 @@ class HerbSupply:
                 )
                 == 1
             ):
-                found_herbs[herb] = (
+                found_herbs[herb] = int(
                     choices(population=[1, 2, 3], weights=weight, k=1)[0]
                     * quantity_modifier
                 )

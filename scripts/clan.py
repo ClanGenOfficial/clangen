@@ -1192,9 +1192,22 @@ class Clan:
         if not clan.herb_supply:
             return
 
+        combined_supply_dict = clan.herb_supply.combined_supply_dict
+
+        combined_supply_dict = {
+            "storage": {
+                herb: [int(i) for i in amounts]
+                for herb, amounts in combined_supply_dict["storage"].items()
+            },
+            "collected": {
+                herb: int(amount)
+                for herb, amount in combined_supply_dict["collected"].items()
+            },
+        }
+
         game.safe_save(
             f"{get_save_dir()}/{game.clan.name}/herb_supply.json",
-            clan.herb_supply.combined_supply_dict,
+            combined_supply_dict,
         )
 
         # delete old herb save file if it exists
