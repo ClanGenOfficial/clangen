@@ -438,7 +438,7 @@ class EventEditScreen(Screens):
 
         self.future_element = {}
         self.future_block_list: list = []
-        """The list of the currently loaded future blocks"""
+        """The list of currently loaded future blocks"""
         self.selected_future_block_index: str = ""
         """The list index for the future block currently viewed by the user. This is kept as a string due to it doubling
              as the text for its button."""
@@ -2278,7 +2278,7 @@ class EventEditScreen(Screens):
                 self.alert_text = "A Future Event block has no subtype, event_id, or excluded_event_id given. Event pool is too broad, you must use at least one of these constraints!"
             elif block["moon_delay"][0] > block["moon_delay"][1]:
                 valid = False
-                self.alert_text = "A Future Event block has an invalid moon delay. The 2nd moon delay number should be equal to or larger than the 1st!"
+                self.alert_text = "A Future Event block has an invalid moon delay. The second moon delay number should be equal to or larger than the first!"
 
         return valid
 

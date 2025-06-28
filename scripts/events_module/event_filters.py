@@ -393,7 +393,7 @@ def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=Non
      cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
     """
     # gather funcs to use
-    funct_dict = {
+    func_dict = {
         "age": _get_cats_with_age,
         "status": _get_cats_with_status,
         "skill": _get_cats_without_skill,
