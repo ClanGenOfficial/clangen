@@ -824,7 +824,8 @@ class EventEditScreen(Screens):
                             if ev["event_id"] == opened_event["event_id"]:
                                 self.old_event_index = old_json.index(ev)
 
-                        self.current_editor_tab = "settings"
+                        if not self.current_editor_tab:
+                            self.current_editor_tab = "settings"
                         self.clear_editor_tab()
                         if self.editor_element.get("save"):
                             self.editor_element["save"].set_text("buttons.save")
@@ -832,8 +833,7 @@ class EventEditScreen(Screens):
 
             # OPEN EDITOR
             elif event.ui_element == self.add_button:
-                if not self.current_editor_tab:
-                    self.current_editor_tab = "settings"
+                self.current_editor_tab = "settings"
                 self.open_event = {}
                 self.old_event_index = None
                 self.clear_event_info()
@@ -6767,9 +6767,15 @@ class EventEditScreen(Screens):
             anchors={"top_target": editor["intro"]},
             check=self.current_cat_dict["dies"],
         )
+        # this checks if death is requried and locks out user input
         if "death" in self.type_info and self.current_editor_tab == "main cat":
             self.death_element["checkbox"].check()
             self.death_element["checkbox"].disable()
+            self.current_cat_dict["dies"] = True
+
+        # this just checks if the cat's dict says they should die
+        if self.current_cat_dict["dies"] and not self.death_element["checkbox"].checked:
+            self.death_element["checkbox"].check()
 
         self.death_element["text"] = UITextBoxTweaked(
             "screens.event_edit.death_info",
@@ -6780,12 +6786,6 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={"top_target": editor["intro"]},
         )
-        if (
-            "death" in self.type_info
-            and self.current_cat_dict == self.main_cat_info
-            and not self.current_cat_dict["dies"]
-        ):
-            self.current_cat_dict["dies"] = True
 
         self.death_element["display"] = UITextBoxTweaked(
             f"dies: {self.current_cat_dict['dies']}",
