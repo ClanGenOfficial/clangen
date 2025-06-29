@@ -16,6 +16,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIModifiedScrollingContainer,
 )
+from scripts.housekeeping.datadir import open_data_dir
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -24,7 +25,6 @@ from scripts.utility import (
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
-from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
@@ -79,15 +79,7 @@ class ClanSettingsScreen(Screens):
             if event.ui_element == self.fullscreen_toggle:
                 toggle_fullscreen(source_screen=self)
             elif event.ui_element == self.open_data_directory_button:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", "-R", get_data_dir()])
-                elif platform.system() == "Windows":
-                    os.startfile(get_data_dir())  # pylint: disable=no-member
-                elif platform.system() == "Linux":
-                    try:
-                        subprocess.Popen(["xdg-open", get_data_dir()])
-                    except OSError:
-                        logger.exception("Failed to call to xdg-open.")
+                open_data_dir()
                 return
             elif event.ui_element == self.relation_settings_button:
                 self.open_relation_settings()

@@ -38,7 +38,7 @@ from scripts.housekeeping.datadir import (
     get_save_dir,
     get_cache_dir,
     get_saved_images_dir,
-    get_data_dir,
+    open_data_dir,
 )
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import (
@@ -1844,15 +1844,7 @@ class SaveAsImage(UIWindow):
             if event.ui_element == self.close_button:
                 self.kill()
             elif event.ui_element == self.open_data_directory_button:
-                if system() == "Darwin":
-                    subprocess.Popen(["open", "-R", get_data_dir()])
-                elif system() == "Windows":
-                    os.startfile(get_data_dir())  # pylint: disable=no-member
-                elif system() == "Linux":
-                    try:
-                        subprocess.Popen(["xdg-open", get_data_dir()])
-                    except OSError:
-                        logger.exception("Failed to call to xdg-open.")
+                open_data_dir()
                 return True
             elif event.ui_element == self.save_as_image:
                 file_name = self.save_image()

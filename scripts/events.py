@@ -134,6 +134,8 @@ class Events:
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
 
+        self.handle_future_events()
+
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
@@ -314,6 +316,24 @@ class Events:
                 game.save_events()
             except:
                 SaveError(traceback.format_exc())
+
+    def handle_future_events(self):
+        """
+        Handles aging future events and triggering them.
+        """
+        removals = []
+
+        for event in game.clan.future_events:
+            event.moon_delay -= 1
+            # we give events a buffer of 12 moons to allow any season-locked events a chance to trigger, then we remove
+            if event.moon_delay <= -12:
+                removals.append(event)
+            if event.moon_delay <= 0:
+                handle_short_events.trigger_future_event(event)
+
+        for event in removals:
+            if event in game.clan.future_events:
+                game.clan.future_events.remove(event)
 
     def handle_lead_den_event(self):
         """
@@ -955,8 +975,16 @@ class Events:
         # are connected to cats are located in there
         cat.one_moon()
 
+        if game.config["event_generation"]["debug_type_override"]:
+            debug_type_override = game.config["event_generation"]["debug_type_override"]
+            if debug_type_override in ["death", "injury"]:
+                self.handle_injuries_or_general_death(cat)
+            elif debug_type_override == "misc":
+                self.other_interactions(cat)
+            elif debug_type_override == "new_cat":
+                self.invite_new_cats(cat)
+
         # Handle Mediator Events
-        # TODO: this is not a great way to handle them, ideally they should be converted to ShortEvent format
         self.mediator_events(cat)
 
         # handle nutrition amount
@@ -1867,6 +1895,15 @@ class Events:
             Cat, main_cat=cat, parent_child_modifier=True, mentor_app_modifier=True
         )
 
+        if game.config["event_generation"]["debug_type_override"] == "new_cat":
+            handle_short_events.handle_event(
+                event_type="new_cat",
+                main_cat=cat,
+                random_cat=random_cat,
+                freshkill_pile=game.clan.freshkill_pile,
+            )
+            return
+
         if (
             not int(random.random() * chance)
             and not cat.age.is_baby()
@@ -1885,6 +1922,16 @@ class Events:
         """
         TODO: DOCS
         """
+        if game.config["event_generation"]["debug_type_override"] == "misc":
+            random_cat = get_random_moon_cat(Cat, main_cat=cat)
+            handle_short_events.handle_event(
+                event_type="misc",
+                main_cat=cat,
+                random_cat=random_cat,
+                freshkill_pile=game.clan.freshkill_pile,
+            )
+            return
+
         hit = int(random.random() * 30)
         if hit:
             return
@@ -1907,6 +1954,18 @@ class Events:
         random_cat = get_random_moon_cat(
             Cat, cat, parent_child_modifier=True, mentor_app_modifier=True
         )
+
+        if game.config["event_generation"]["debug_type_override"] == "death":
+            handle_short_events.handle_event(
+                event_type="birth_death",
+                main_cat=cat,
+                random_cat=random_cat,
+                freshkill_pile=game.clan.freshkill_pile,
+            )
+            return
+        elif game.config["event_generation"]["debug_type_override"] == "injury":
+            Condition_Events.handle_injuries(cat, random_cat)
+            return
 
         # chance to kill leader: 1/50 by default
         if (

@@ -28,6 +28,7 @@ class ShortEvent:
         other_clan: dict = None,
         supplies: list = None,
         new_gender: List[str] = None,
+        future_event: dict = None,
     ):
         if not event_id:
             print("WARNING: moon event has no event_id")
@@ -108,3 +109,4 @@ class ShortEvent:
                 self.other_clan["changed"] = 0
         self.supplies = supplies if supplies else []
         self.new_gender = new_gender
+        self.future_event = future_event if future_event else {}
