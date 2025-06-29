@@ -128,5 +128,38 @@
                 "senior"
             ]
         }
+    },
+    {
+        "event_id": "pln_misc_war_leadercontemplates",
+        "location": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "m_c sat and watched the grass wave across the plain, wondering when times would feel that gentle again. ",
+        "m_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "thoughtful",
+                "wise",
+                "righteous",
+                "lonesome",
+                "playful",
+                "childish",
+                "compassionate",
+                "calm",
+                "loving",
+                "gloomy",
+                "sincere"
+            ]
+        },
+        "r_c": {}
     }
 ]

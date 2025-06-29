@@ -144,5 +144,38 @@
         "new_accessory": [
             "SPARROW FEATHERS"
         ]
+    },
+    {
+        "event_id": "fst_misc_war_leadercontemplates",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "m_c watched the sun set over the forest, wondering at how the sky gleamed despite the war.",
+        "m_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "thoughtful",
+                "wise",
+                "righteous",
+                "lonesome",
+                "playful",
+                "childish",
+                "compassionate",
+                "calm",
+                "loving",
+                "gloomy",
+                "sincere"
+            ]
+        },
+        "r_c": {}
     }
 ]

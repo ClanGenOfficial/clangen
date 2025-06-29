@@ -63,7 +63,7 @@
         }
     },
     {
-        "event_id": "bch_misc_war_anymultitraitleader1",
+        "event_id": "bch_misc_war_leadercontemplates",
         "location": [
             "beach"
         ],
