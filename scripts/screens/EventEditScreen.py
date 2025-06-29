@@ -741,7 +741,8 @@ class EventEditScreen(Screens):
                     event_type=self.chosen_type, biome=self.chosen_biome
                 )
             # FUTURE EVENT IDS
-            self.handle_future_event_ids()
+            if self.current_editor_tab == "future effects":
+                self.handle_future_event_ids()
 
         # HOVER PREVIEWS
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
