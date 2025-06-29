@@ -56,6 +56,9 @@ class HerbSupply:
                 self.storage[herb] = []
             if herb not in self.collected:
                 self.collected[herb] = 0
+            if herb not in self.herb:
+                self.herb[herb] = Herb(herb)
+                print("get OWNED you stinky herb crash")
 
     @property
     def combined_supply_dict(self) -> dict:
