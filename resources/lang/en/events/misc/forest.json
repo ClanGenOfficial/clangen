@@ -177,5 +177,40 @@
             ]
         },
         "r_c": {}
+    },
+    {
+        "event_id": "fst_misc_war_bolster1",
+        "location": [
+            "forest_camp1"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "m_c has been bolstering the edges of camp with new brambles.",
+        "m_c": {},
+        "r_c": {}
+    },
+    {
+        "event_id": "fst_misc_war_bolster4",
+        "location": [
+            "forest_camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [
+            "clan:warrior"
+        ],
+        "weight": 20,
+        "event_text": "More warriors have been posted to keep watch around the edges of camp.",
+        "m_c": {},
+        "r_c": {}
     }
 ]

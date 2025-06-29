@@ -2772,7 +2772,7 @@
             "war"
         ],
         "weight": 30,
-        "event_text": "m_c is being comforted by r_c after having nightmares about the big, bad o_c_n cats.",
+        "event_text": "m_c was comforted by r_c after having nightmares about the big, bad o_c_n cats.",
         "m_c": {
             "status": [
                 "kitten"
@@ -3776,8 +3776,16 @@
         "m_c": {
             "age": [
                 "adolescent"
+            ],
+            "not_trait": [
+                "fierce",
+                "bloodthirsty",
+                "cold",
+                "ambitious",
+                "arrogant"
             ]
-        }
+        },
+        "r_c": {}
     },
     {
         "event_id": "multi_misc_any_scandalous_kittypet1",
@@ -5157,7 +5165,7 @@
             "war"
         ],
         "weight": 30,
-        "event_text": "m_c is giving r_c bad war advice on purpose.",
+        "event_text": "m_c is giving r_c war advice, it's unclear how helpful it really is.",
         "m_c": {
             "status": [
                 "mediator",
@@ -9100,5 +9108,77 @@
         "other_clan": {
             "changed": 2
         }
+    },
+    {
+        "event_id": "gen_misc_war_guards1",
+        "location": [
+            "forest_camp2_camp4",
+            "plains_camp1_camp3"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [
+            "clan:warrior"
+        ],
+        "weight": 20,
+        "event_text": "More warriors have been posted around the edges of camp to keep watch on m_c's order",
+        "m_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "fierce",
+                "nervous",
+                "strict",
+                "thoughtful",
+                "careful",
+                "calm",
+                "responsible",
+                "wise",
+                "cunning"
+            ]
+        },
+        "r_c": {}
+    },
+    {
+        "event_id": "gen_misc_war_guards2",
+        "location": [
+            "forest_camp4",
+            "plains_camp3_camp1",
+            "mountainous",
+            "beach_camp3_camp4_camp1",
+            "wetlands",
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "m_c has been assigning more warriors to watch the entrances into camp.",
+        "m_c": {
+            "status": [
+                "deputy"
+            ],
+            "trait": [
+                "fierce",
+                "nervous",
+                "strict",
+                "thoughtful",
+                "ambitious",
+                "calm",
+                "careful",
+                "responsible",
+                "wise",
+                "cunning"
+            ]
+        },
+        "r_c": {}
     }
 ]

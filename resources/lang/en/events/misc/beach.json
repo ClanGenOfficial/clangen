@@ -74,7 +74,7 @@
             "war"
         ],
         "weight": 15,
-        "event_text": "m_c sits by the water, wondering why times are not as peaceful as the tides.",
+        "event_text": "m_c sat by the water, wondering why times are not as peaceful as the tides.",
         "m_c": {
             "status": [
                 "leader"

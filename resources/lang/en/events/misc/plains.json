@@ -161,5 +161,21 @@
             ]
         },
         "r_c": {}
+    },
+    {
+        "event_id": "pln_misc_war_bolster1",
+        "location": [
+            "plains_camp2"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "m_c has been working to disguise the entrance into the camp tunnels.",
+        "m_c": {},
+        "r_c": {}
     }
 ]
