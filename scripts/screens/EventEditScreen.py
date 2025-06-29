@@ -5054,6 +5054,7 @@ class EventEditScreen(Screens):
         if self.lock_buttons:
             for ele in self.lock_buttons.values():
                 ele.kill()
+            self.lock_buttons.clear()
         if self.open_block == "injury":
             self.create_injury_editor()
             if self.injury_block_list:
@@ -6539,7 +6540,7 @@ class EventEditScreen(Screens):
         if self.current_cat_dict != self.selected_new_cat_info:
             label = "main" if self.current_cat_dict == self.main_cat_info else "random"
             self.create_lock(
-                name=f"{label}_trait",
+                name=f"{label}_backstory",
                 top_anchor=self.backstory_element["pools"],
                 left_anchor=self.backstory_element["display"],
             )
