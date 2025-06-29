@@ -576,6 +576,10 @@ class EventEditScreen(Screens):
         self.other_clan_info = (
             event["other_clan"] if event.get("other_clan") else self.other_clan_info
         )
+        if not "current_rep" in self.other_clan_info:
+            self.other_clan_info["current_rep"] = None
+        if not "changed" in self.other_clan_info:
+            self.other_clan_info["changed"] = 0
         self.supply_block_list = event["supplies"] if event.get("supplies") else []
         self.future_block_list = (
             event["future_event"] if event.get("future_event") else []
@@ -4822,7 +4826,7 @@ class EventEditScreen(Screens):
                 "top_target": self.editor_element["outsider"],
             },
             manager=MANAGER,
-            starting_selection=self.other_clan_info["current_rep"],
+            starting_selection=self.other_clan_info.get("current_rep"),
         )
         self.other_clan_element[f"entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((10, 123), (40, 29))),
@@ -4832,7 +4836,7 @@ class EventEditScreen(Screens):
                 "left_target": self.other_clan_element["text"],
                 "top_target": self.editor_element["outsider"],
             },
-            initial_text=str(self.other_clan_info["changed"]),
+            initial_text=str(self.other_clan_info.get("changed")),
         )
         prev_element = None
         for button, icon in self.amount_buttons.items():
