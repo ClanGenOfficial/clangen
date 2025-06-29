@@ -2173,7 +2173,8 @@ class EventEditScreen(Screens):
                 f"Event ID is either invalid or a duplicate. Pick a new ID."
             )
 
-        self.event_id_element["check_text"].set_text(text)
+        if self.event_id_element.get("check_text"):
+            self.event_id_element["check_text"].set_text(text)
 
         return valid
 
