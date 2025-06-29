@@ -1426,7 +1426,12 @@ class EventEditScreen(Screens):
             available = event_list.copy()
             event_list = []
             for event in available:
+                subtypes = [x for x in event.get("sub_type", [])]
                 if self.search_text in event["event_id"]:
+                    event_list.append(event)
+                elif self.search_text in event["event_text"]:
+                    event_list.append(event)
+                elif self.search_text in subtypes:
                     event_list.append(event)
             event_list = [
                 event
