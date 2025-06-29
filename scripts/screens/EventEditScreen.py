@@ -1054,6 +1054,8 @@ class EventEditScreen(Screens):
                     self.get_selected_block_info()["moon_delay"] = [least, most]
 
     def handle_future_event_ids(self):
+        if not self.future_element.get("include_entry"):
+            return
         if self.future_element["include_entry"].is_focused:
             new_id = self.future_element["include_entry"].get_text()
             block_info = self.get_selected_block_info()["pool"]["event_id"]
