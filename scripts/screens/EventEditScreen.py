@@ -832,7 +832,8 @@ class EventEditScreen(Screens):
 
             # OPEN EDITOR
             elif event.ui_element == self.add_button:
-                self.current_editor_tab = "future effects"
+                if not self.current_editor_tab:
+                    self.current_editor_tab = "settings"
                 self.open_event = {}
                 self.old_event_index = None
                 self.clear_event_info()
