@@ -3526,7 +3526,7 @@ class EventEditScreen(Screens):
         for rank, box in self.rank_tag_checkbox.items():
             if "text" in rank:
                 continue
-            tag = f"clan:{rank}".replace(" ", "_")
+            tag = f"clan:{rank}"
             if box.checked and tag not in self.tag_info:
                 self.tag_info.append(tag)
             elif not box.checked and tag in self.tag_info:
@@ -7273,7 +7273,7 @@ class EventEditScreen(Screens):
         rank_list = Cat.rank_sort_order.copy()
         rank_list.append("apps")
         for rank in rank_list:
-            if f"clan_{rank}" in self.tag_info:
+            if f"clan:{rank}" in self.tag_info:
                 setting = True
             else:
                 setting = False
