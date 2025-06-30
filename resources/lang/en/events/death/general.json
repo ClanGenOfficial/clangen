@@ -1114,7 +1114,6 @@
         "sub_type": [
             "war"
         ],
-        "tags": [],
         "weight": 20,
         "event_text": "o_c_n attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
         "m_c": {
@@ -1130,7 +1129,8 @@
                     "r_c"
                 ],
                 "reg_death": "This cat died when o_c_n tried to break into camp.",
-                "lead_death": "tried to defend the Clan from o_c_n"
+                "lead_death": "tried to defend the Clan from o_c_n",
+                "scar": ""
             }
         ],
         "other_clan": {
@@ -2083,10 +2083,6 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "some_lives",
-            "no_body"
-        ],
         "weight": 20,
         "event_text": "m_c fell into a pit trap set by o_c_n's warriors.",
         "m_c": {
@@ -2127,9 +2123,6 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "some_lives"
-        ],
         "weight": 20,
         "event_text": "m_c was hit by a monster while escaping across a Thunderpath from o_c_n warriors.",
         "m_c": {
@@ -2141,13 +2134,15 @@
             ],
             "dies": true
         },
+        "r_c": {},
         "history": [
             {
                 "cats": [
                     "m_c"
                 ],
                 "reg_death": "m_c was hit by a monster.",
-                "lead_death": "{VERB/m_c/were/was} hit by a monster."
+                "lead_death": "{VERB/m_c/were/was} hit by a monster.",
+                "scar": ""
             }
         ],
         "other_clan": {
@@ -3156,8 +3151,6 @@
             "war"
         ],
         "tags": [
-            "no_body",
-            "all_lives",
             "some_lives"
         ],
         "weight": 20,
@@ -3829,9 +3822,7 @@
             "war"
         ],
         "tags": [
-            "some_lives",
-            "no_body",
-            "all_lives"
+            "some_lives"
         ],
         "weight": 20,
         "event_text": "m_c was killed by a falling boulder that o_c_n warriors pushed from a cliff above {PRONOUN/m_c/object}.",
@@ -4667,8 +4658,6 @@
             "any"
         ],
         "tags": [
-            "no_body",
-            "all_lives",
             "some_lives"
         ],
         "weight": 20,
