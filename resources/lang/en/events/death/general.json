@@ -3064,9 +3064,8 @@
             "war"
         ],
         "tags": [
-            "all_lives",
             "no_body",
-            "some_lives"
+            "all_lives"
         ],
         "weight": 20,
         "event_text": "m_c was sealed in a cramped rabbit burrow by o_c_n warriors and couldn't get out.",
@@ -3150,9 +3149,7 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "some_lives"
-        ],
+        "tags": [],
         "weight": 20,
         "event_text": "Blinded by blood in the midst of battle, r_c fatally mistakes m_c for a foe.",
         "m_c": {
@@ -3821,9 +3818,7 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "some_lives"
-        ],
+        "tags": [],
         "weight": 20,
         "event_text": "m_c was killed by a falling boulder that o_c_n warriors pushed from a cliff above {PRONOUN/m_c/object}.",
         "m_c": {
@@ -4657,9 +4652,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "some_lives"
-        ],
         "weight": 20,
         "event_text": "o_c_n warriors broke into the camp and killed m_c after damaging the herb stores.",
         "m_c": {
@@ -4766,9 +4758,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "no_body"
         ],
         "weight": 20,
         "event_text": "m_c was killed by a o_c_n warrior while pulling an injured r_c away from battle.",
@@ -5104,11 +5093,7 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "no_body",
-            "all_lives",
-            "some_lives"
-        ],
+        "tags": [],
         "weight": 20,
         "event_text": "m_c suffered a heart attack due to the stress of the ongoing war.",
         "m_c": {
