@@ -5,7 +5,7 @@ import pygame_gui
 import os
 import platform
 import subprocess
-import ujson
+import scripts.json_shim as ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES, create_option_preview_cat
 from scripts.cat.pelts import Pelt

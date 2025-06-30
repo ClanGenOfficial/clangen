@@ -14,7 +14,7 @@ from typing import TYPE_CHECKING
 import i18n
 import pygame
 import pygame_gui
-import ujson
+import scripts.json_shim as ujson
 from pygame_gui.elements import UIWindow
 from pygame_gui.windows import UIMessageWindow
 
