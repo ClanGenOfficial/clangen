@@ -346,6 +346,7 @@ class ClearingScreen(Screens):
             manager=MANAGER,
         )
         self.cat_tab_open = self.hungry_tab
+        self.hungry_tab.disable()
         self.current_page = 1
         self.update_cats_list()
         self.update_nutrition_cats()

@@ -3417,6 +3417,7 @@ class Cat:
                 i18n.t(f"general.{self.status.lower()}", count=1),
                 self.genderalign,
                 i18n.t(f"cat.personality.{self.personality.trait}"),
+                self.skills.skill_string(short=True),
             ]
         )
 
