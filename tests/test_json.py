@@ -14,6 +14,7 @@ import unittest
 
 import json as ujson
 
+
 def test():
     """Iterate through all files in 'resources'
     and verify all json files are valid"""
