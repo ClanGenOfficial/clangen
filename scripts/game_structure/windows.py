@@ -614,11 +614,12 @@ class ChangeCatName(UIWindow):
 
         self.heading = pygame_gui.elements.UITextBox(
             "windows.change_name_title",
-            ui_scale(pygame.Rect((0, 10), (400, 40))),
+            ui_scale(pygame.Rect((0, 10), (200, 40))),
             object_id="#text_box_30_horizcenter",
             manager=MANAGER,
             container=self,
             text_kwargs={"name": self.the_cat.name},
+            anchors={"centerx": "centerx"},
         )
 
         self.name_changed = pygame_gui.elements.UITextBox(
@@ -1098,10 +1099,11 @@ class KillCat(UIWindow):
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         self.heading = pygame_gui.elements.UITextBox(
             "windows.kill_cat_method",
-            ui_scale(pygame.Rect((10, 10), (430, 75))),
+            ui_scale(pygame.Rect((10, 10), (300, -1))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
             container=self,
+            anchors={"centerx": "centerx"},
         )
 
         self.one_life_check = UIImageButton(
@@ -1143,7 +1145,7 @@ class KillCat(UIWindow):
             self.all_lives_check.hide()
             self.life_text = pygame_gui.elements.UITextBox(
                 "windows.all_lives_leader",
-                ui_scale(pygame.Rect((60, 147), (450, 40))),
+                ui_scale(pygame.Rect((60, 147), (130, -1))),
                 object_id="#text_box_30_horizleft",
                 manager=MANAGER,
                 container=self,
@@ -1176,7 +1178,7 @@ class KillCat(UIWindow):
 
             self.beginning_prompt = pygame_gui.elements.UITextBox(
                 self.prompt,
-                ui_scale(pygame.Rect((25, 30), (450, 40))),
+                ui_scale(pygame.Rect((25, 30), (200, -1))),
                 object_id="#text_box_30_horizleft",
                 manager=MANAGER,
                 container=self,
