@@ -2059,7 +2059,7 @@
             "any"
         ],
         "weight": 20,
-        "event_text": "m_c saved r_c from an enemy warrior, and was barely even hurt! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} a bit bruised, but bruises are better than clawmarks.",
+        "event_text": "m_c saved r_c from an enemy warrior, both cats making it out with hardly even a scratch.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -2103,7 +2103,8 @@
                 ],
                 "injuries": [
                     "bruises"
-                ]
+                ],
+                "scars": []
             }
         ],
         "relationships": [
@@ -2120,7 +2121,8 @@
                     "trust",
                     "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "mutual": false
             }
         ]
     },
@@ -3709,41 +3711,51 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "A horrible battle occurred between c_n and o_c_n patrols after the two patrols traded insults at the border. m_c is left badly injured.",
+        "event_text": "A horrible battle occurred between c_n and o_c_n patrols after the two patrols traded insults at the border. m_c and r_c were left badly injured.",
         "m_c": {
             "status": [
                 "apprentice",
                 "warrior",
+                "leader",
                 "deputy"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
             ]
         },
         "injury": [
             {
                 "cats": [
-                    "m_c"
+                    "m_c",
+                    "r_c"
                 ],
                 "injuries": [
-                    "mangled leg"
+                    "battle_injury"
                 ],
-                "scars": [
-                    "MANLEG"
-                ]
+                "scars": []
             }
         ],
         "history": [
             {
                 "cats": [
-                    "m_c"
+                    "m_c",
+                    "r_c"
                 ],
                 "scar": "m_c was scarred after a fight with o_c_n cats.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting with o_c_n cats."
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting with o_c_n cats.",
+                "lead_death": ""
             }
         ],
         "other_clan": {
             "current_rep": [
                 "hostile"
             ],
-            "changed": -3
+            "changed": -1
         }
     },
     {
@@ -7031,7 +7043,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "During a skirmish, m_c bounds into battle against a o_c_n warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps {PRONOUN/m_c/object} back to camp.",
+        "event_text": "During a skirmish with o_c_n, m_c took a blow meant for r_c.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -7068,8 +7080,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "claw-wound"
-                ]
+                    "battle_injury"
+                ],
+                "scars": []
             }
         ],
         "history": [
@@ -7102,7 +7115,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -2
+            "changed": -1
         }
     },
     {
@@ -7214,51 +7227,6 @@
         ]
     },
     {
-        "event_id": "gen_misc_war_skirmish_dog",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "weight": 10,
-        "event_text": "Yet another skirmish with o_c_n takes place, though this one is interrupted by a dog. On instinct, the skirmishers unite to drive off the slavering beast. After, the patrols tend the injured - m_c among them - in a moment that makes it hard to remember they're on opposite sides of a war.",
-        "m_c": {
-            "status": [
-                "warrior"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "small_bite_injury"
-                ]
-            }
-        ],
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "scar": "m_c was scarred after a dog attacked during a skirmish.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a dog attacked during a skirmish.",
-                "lead_death": "died from wounds after a dog attacked during a skirmish"
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": 1
-        }
-    },
-    {
         "event_id": "gen_misc_war_medcat_assist1",
         "location": [
             "any"
@@ -7269,22 +7237,38 @@
         "sub_type": [
             "war"
         ],
+        "tags": [
+            "clan:medicine cat"
+        ],
         "weight": 10,
-        "event_text": "Things are looking bleak for m_c, struggling with severe injuries in the wake of a skirmish with o_c_n. Unexpectedly, the enemy Clan's medicine cat emerges from the shadows, tending to the injuries until c_n's own medicine cats can take over.",
+        "event_text": "m_c was left badly hurt during a battle with o_c_n. Surprisingly, the o_c_n medicine cat cares for {PRONOUN/m_c/object} until {PRONOUN/m_c/poss} Clanmates can get to {PRONOUN/m_c/object}.",
         "m_c": {
             "status": [
-                "warrior"
+                "warrior",
+                "leader",
+                "deputy",
+                "apprentice"
             ]
         },
+        "r_c": {},
         "injury": [
             {
                 "cats": [
                     "m_c"
                 ],
                 "injuries": [
-                    "claw-wound",
-                    "torn pelt"
-                ]
+                    "battle_injury"
+                ],
+                "scars": []
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "battle_injury"
+                ],
+                "scars": []
             }
         ],
         "history": [
@@ -7301,7 +7285,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": 2
+            "changed": 1
         }
     },
     {
@@ -7496,13 +7480,17 @@
                 "medicine cat apprentice",
                 "apprentice"
             ],
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+            "trait": [
+                "fierce",
+                "righteous",
+                "daring",
+                "compassionate",
+                "responsible",
+                "arrogant",
+                "confident"
             ]
         },
+        "r_c": {},
         "injury": [
             {
                 "cats": [
@@ -7510,7 +7498,8 @@
                 ],
                 "injuries": [
                     "small_bite_injury"
-                ]
+                ],
+                "scars": []
             }
         ],
         "history": [
@@ -7522,57 +7511,7 @@
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after protecting an enemy warrior.",
                 "lead_death": "died from wounds after protecting an enemy warrior"
             }
-        ],
-        "other_clan": {
-            "changed": 2
-        }
-    },
-    {
-        "event_id": "gen_injury_war_predatorsaved",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "weight": 20,
-        "event_text": "m_c acts without thinking, saving the life of a o_c_n warrior by chasing off the predator attempting to make them their lunch.",
-        "m_c": {
-            "status": [
-                "warrior",
-                "deputy",
-                "leader",
-                "medicine cat",
-                "medicine cat apprentice",
-                "apprentice"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "small_bite_injury"
-                ]
-            }
-        ],
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "scar": "m_c was scarred after protecting an enemy warrior.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after protecting an enemy warrior.",
-                "lead_death": "died from wounds after protecting an enemy warrior"
-            }
-        ],
-        "other_clan": {
-            "changed": 2
-        }
+        ]
     },
     {
         "event_id": "gen_injury_sprain_anyapprentice1",

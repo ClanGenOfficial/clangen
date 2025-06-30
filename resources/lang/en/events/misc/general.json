@@ -9180,5 +9180,34 @@
             ]
         },
         "r_c": {}
+    },
+    {
+        "event_id": "gen_misc_war_skirmish_dog",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 10,
+        "event_text": "A skirmish with o_c_n was interrupted by a dog. The two Clans were forced to work together to drive it off. ",
+        "m_c": {
+            "status": [
+                "warrior"
+            ]
+        },
+        "r_c": {},
+        "exclude_involved": [
+            "m_c"
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 1
+        }
     }
 ]
