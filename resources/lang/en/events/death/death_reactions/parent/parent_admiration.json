@@ -1,19 +1,20 @@
 {
     "general": {
         "body": [
-            "r_c nuzzles against the fur of {PRONOUN/r_c/poss} dead child, {PRONOUN/r_c/poss} kit, {PRONOUN/r_c/poss} m_c, and feels as though the world has ended.",
-            "No parent wants to outlive their child, and r_c wails over m_c's body.",
-            "r_c lays next to m_c's body, numb to the world around {PRONOUN/r_c/object}.",
-            "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
-            "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-            "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
-            "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
+            "r_c holds m_c close one last time, unable to truly believe that {PRONOUN/r_c/poss} kit, whom r_c is so, so proud of, is gone.",
+            "r_c sits at m_c's vigil, silently praying {PRONOUN/r_c/subject} told {PRONOUN/m_c/object} enough times in life that r_c is proud of {PRONOUN/m_c/object} beyond words.",
+            "m_c was not only r_c's kitten, but also an enormous source of inspiration and admiration for {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/struggle/struggles} to believe {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} really gone.",
+            "r_c wishes {PRONOUN/r_c/subject} could tell {PRONOUN/r_c/poss} kit one last time how proud {PRONOUN/r_c/subject} {VERB/r_c/are/is} of m_c.",
+            "It's bittersweet for r_c to hear {PRONOUN/r_c/poss} Clanmates reflect on the legacy and impact of m_c. Every word is true - r_c is so proud of {PRONOUN/r_c/poss} kit. {PRONOUN/r_c/subject/CAP} just {VERB/r_c/wish/wishes} {PRONOUN/r_c/subject}'d had more time with {PRONOUN/m_c/object}.",
+            "r_c goes on and on at m_c's vigil, trying to recollect every last memory since {PRONOUN/m_c/poss} kithood to make sure this special cat is always remembered by c_n for all {PRONOUN/m_c/subject} gave them."
         ],
         "no_body": [
-            "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
-            "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-            "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
-            "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
+            "r_c sits at m_c's vigil, silently praying {PRONOUN/r_c/subject} told {PRONOUN/m_c/object} enough times in life that r_c is proud of {PRONOUN/m_c/object} beyond words.",
+            "m_c was not only r_c's kitten, but also an enormous source of inspiration and admiration for {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/struggle/struggles} to believe {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} really gone.",
+            "r_c wishes {PRONOUN/r_c/subject} could tell {PRONOUN/r_c/poss} kit one last time how proud {PRONOUN/r_c/subject} {VERB/r_c/are/is} of m_c.",
+            "It's bittersweet for r_c to hear {PRONOUN/r_c/poss} Clanmates reflect on the legacy and impact of m_c. Every word is true - r_c is so proud of {PRONOUN/r_c/poss} kit. {PRONOUN/r_c/subject/CAP} just {VERB/r_c/wish/wishes} {PRONOUN/r_c/subject}'d had more time with {PRONOUN/m_c/object}.",
+            "r_c goes on and on at m_c's vigil, trying to recollect every last memory since {PRONOUN/m_c/poss} kithood to make sure this special cat is always remembered by c_n for all {PRONOUN/m_c/subject} gave them.",
+            "r_c struggles through m_c's vigil, unable to believe that the kit {PRONOUN/r_c/subject} loved and admired so much is really gone, without even a body for {PRONOUN/r_c/object} to bury."
         ]
     },
     "adventurous": {

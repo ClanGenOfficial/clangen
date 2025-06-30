@@ -32,10 +32,11 @@ from scripts.game_structure.game_essentials import (
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
+from scripts.housekeeping.datadir import open_data_dir, open_url
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
-from ..housekeeping.datadir import get_data_dir, get_cache_dir
+from ..housekeeping.datadir import get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -57,6 +58,7 @@ class StartScreen(Screens):
         self.social_buttons = {}
 
         self.error_open = False
+        self.event_edit = None
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
@@ -79,12 +81,7 @@ class StartScreen(Screens):
             if event.ui_element in screens and not self.error_open:
                 self.change_screen(screens[event.ui_element])
             elif event.ui_element == self.open_data_directory_button:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", "-R", get_data_dir()])
-                elif platform.system() == "Windows":
-                    os.startfile(get_data_dir())  # pylint: disable=no-member
-                elif platform.system() == "Linux":
-                    subprocess.Popen(["xdg-open", get_data_dir()])
+                open_data_dir()
                 return
             elif event.ui_element == self.closebtn:
                 self.error_box.kill()
@@ -99,35 +96,14 @@ class StartScreen(Screens):
                 UpdateAvailablePopup(game.switches["last_screen"])
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
+            elif event.ui_element == self.event_edit:
+                self.change_screen("event edit screen")
             elif event.ui_element == self.social_buttons["discord_button"]:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", "-u", "https://discord.gg/clangen"])
-                elif platform.system() == "Windows":
-                    os.system(f"start \"\" {'https://discord.gg/clangen'}")
-                elif platform.system() == "Linux":
-                    subprocess.Popen(["xdg-open", "https://discord.gg/clangen"])
+                open_url("https://discord.gg/clangen")
             elif event.ui_element == self.social_buttons["tumblr_button"]:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(
-                        ["open", "-u", "https://officialclangen.tumblr.com/"]
-                    )
-                elif platform.system() == "Windows":
-                    os.system(f"start \"\" {'https://officialclangen.tumblr.com/'}")
-                elif platform.system() == "Linux":
-                    subprocess.Popen(
-                        ["xdg-open", "https://officialclangen.tumblr.com/"]
-                    )
+                open_url("https://officialclangen.tumblr.com/")
             elif event.ui_element == self.social_buttons["twitter_button"]:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(
-                        ["open", "-u", "https://twitter.com/OfficialClangen"]
-                    )
-                elif platform.system() == "Windows":
-                    os.system(f"start \"\" {'https://twitter.com/OfficialClangen'}")
-                elif platform.system() == "Linux":
-                    subprocess.Popen(
-                        ["xdg-open", "https://twitter.com/OfficialClangen"]
-                    )
+                open_url("https://twitter.com/OfficialClangen")
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if (
                 event.key == pygame.K_RETURN or event.key == pygame.K_SPACE
@@ -153,6 +129,8 @@ class StartScreen(Screens):
         self.warning_label.kill()
         self.update_button.kill()
         self.quit.kill()
+        if self.event_edit:
+            self.event_edit.kill()
         self.closebtn.kill()
         for btn in self.social_buttons:
             self.social_buttons[btn].kill()
@@ -163,6 +141,8 @@ class StartScreen(Screens):
         """
 
         super().screen_switches()
+        if game.event_editing:
+            game.event_editing = False
 
         # start menu music if it isn't already playing
         # this is the only screen that has to check its own music, other screens handle that in the screen change
@@ -225,6 +205,15 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.settings_button},
         )
+        if game.config["dev_tools"]:
+            self.event_edit = UISurfaceImageButton(
+                ui_scale(pygame.Rect((70, 15), (200, 30))),
+                "buttons.event_edit",
+                image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
+                object_id="@buttonstyles_mainmenu",
+                manager=MANAGER,
+                anchors={"top_target": self.quit},
+            )
 
         self.social_buttons["twitter_button"] = UIImageButton(
             ui_scale(pygame.Rect((12, 647), (40, 40))),

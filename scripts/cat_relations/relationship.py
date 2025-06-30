@@ -3,13 +3,13 @@ from random import choice
 
 import i18n
 
+import scripts.cat_relations.interaction as interactions
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
     rebuild_relationship_dicts,
 )
-import scripts.cat_relations.interaction as interactions
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_personality_compatibility, process_text
@@ -101,7 +101,7 @@ class Relationship:
         # check if an increase interaction or a decrease interaction
         in_de_crease = "increase" if positive else "decrease"
         # if the type is jealousy or dislike, then increase and decrease has to be turned around
-        if rel_type in ["jealousy", "dislike"]:
+        if rel_type in ("jealousy", "dislike"):
             in_de_crease = "decrease" if positive else "increase"
 
         chance = game.config["relationship"]["chance_for_neutral"]
@@ -115,7 +115,11 @@ class Relationship:
 
         # get other possible filters
         season = str(game.clan.current_season).casefold()
-        biome = str(game.clan.biome).casefold()
+        biome = str(
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        ).casefold()
         game_mode = game.clan.game_mode
 
         all_interactions = interactions.NEUTRAL_INTERACTIONS.copy()

@@ -169,7 +169,7 @@
         "decline_text": "Still, that's no excuse to goof off. Time to focus on {PRONOUN/p_l/poss} work.",
         "success_outcomes": [
                 {
-                    "text": "This is the cycle, the fundemental truth underlying c_n. The grass sprouts in newleaf as the snows retreat, grows heavy and flush with life in greenleaf, droops with seeds in leaf-fall, and is buried and withered in leaf-bare. The very foundation of their lives relies on it.",
+                    "text": "This is the cycle, the fundamental truth underlying c_n. The grass sprouts in newleaf as the snows retreat, grows heavy and flush with life in greenleaf, droops with seeds in leaf-fall, and is buried and withered in leaf-bare. The very foundation of their lives relies on it.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_bord_story",

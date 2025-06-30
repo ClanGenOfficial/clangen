@@ -32,6 +32,9 @@ def load_cats():
 
 
 def json_load():
+    Cat.all_cats.clear()
+    Cat.all_cats_list.clear()
+    Cat.dead_cats.clear()
     all_cats = []
     clanname = game.switches["clan_list"][0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
@@ -410,7 +413,7 @@ def csv_load(all_cats):
                 ] = "10There was an error loading cat # " + str(attr[0])
                 the_cat.skill = attr[25]
                 if len(attr) > 28:
-                    the_cat.pelt.accessory = attr[28]
+                    the_cat.pelt.accessory = [attr[28]]
                 if len(attr) > 29:
                     the_cat.specialty2 = attr[29]
                 else:

@@ -319,7 +319,7 @@
         "patrol_id": "pln_train_greenleaf_lackofshade_storyloreteacherlocked1",
         "biome": ["plains"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["training"],
         "tags": [],
         "patrol_art": "fst_hunt_heat",
         "min_cats": 3,

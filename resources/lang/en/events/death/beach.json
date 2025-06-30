@@ -160,7 +160,7 @@
             "no_body"
         ],
         "weight": 20,
-        "event_text": "m_c found {PRONOUN/m_c/self} staring at an odd shadow in the sea. One distracted paw slipped and {PRONOUN/m_c/subject} fell into the waves, where something large and unseen tangled around {PRONOUN/m_c/object}, dragging {PRONOUN/m_c/object} into the abyss.",
+        "event_text": "When m_c fell into the water, something large and unseen dragged {PRONOUN/m_c/object} beneath the waves.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -176,8 +176,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was taken by a mysterious sea creature.",
-                "lead_death": "{VERB/m_c/were/was} taken by a mysterious sea creature"
+                "reg_death": "m_c was taken by a sea creature.",
+                "lead_death": "{VERB/m_c/were/was} taken by a sea creature"
             }
         ]
     },
@@ -230,15 +230,13 @@
             "beach"
         ],
         "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
+            "greenleaf"
         ],
         "tags": [
             "classic"
         ],
         "weight": 20,
-        "event_text": "m_c had not realized {PRONOUN/m_c/poss} fatal mistake until {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} paws get clammy and {PRONOUN/m_c/poss} blood, once burning hot and dry after being out in the sun with no water nor shade, turned cold. As the world turned right-side up and {PRONOUN/m_c/poss} consciousness faded right before {PRONOUN/m_c/poss} eyes, m_c knew {PRONOUN/m_c/subject} {VERB/m_c/were/was} beyond saving, as dehydration and overheating claimed the last bits of {PRONOUN/m_c/poss} strength.",
+        "event_text": "m_c carelessly died to dehydration and heat.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -258,62 +256,16 @@
         ]
     },
     {
-        "event_id": "bch_death_heat_multiapp2",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "r_c noticed m_c hadn't shown up for training again, yet after further prodding realized {PRONOUN/m_c/subject} hadn't been at camp for a few days. However, r_c never expected to find m_c like this: dead and dried out, their tattered pelt lifeless and dull.",
-        "m_c": {
-            "age": [
-                "adolescent"
-            ],
-            "status": [
-                "apprentice"
-            ],
-            "relationship_status": [
-                "app/mentor"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult"
-            ],
-            "status": [
-                "any"
-            ]
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "reg_death": "m_c died due to dehydration and overheating."
-            }
-        ]
-    },
-    {
         "event_id": "bch_death_heat_multiapp3",
         "location": [
             "beach"
         ],
         "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
+            "greenleaf"
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "r_c realizes {PRONOUN/r_c/subject} {VERB/r_c/haven't/hasn't} seen m_c around camp for a few days. Checking {PRONOUN/m_c/poss} favorite spots yields nothing, so r_c decides to go out and search for {PRONOUN/m_c/object} in the Clan's territory. However, r_c could never have expected to find m_c's shriveled-up body, clearly dead for some time now.",
+        "event_text": "r_c discovered m_c's dead body. It seems {PRONOUN/m_c/subject} died to dehydration and heat.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -344,60 +296,16 @@
         ]
     },
     {
-        "event_id": "bch_death_heat_multichild1",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "r_c is frantic with worry; m_c, {PRONOUN/r_c/poss} child, hadn't been seen around camp, no matter who {PRONOUN/r_c/subject} asked and where {PRONOUN/r_c/subject} searched. It's not until r_c stumbles across m_c's body, withered under the sun, that {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} with a despairing sound {PRONOUN/r_c/poss} greatest fears have come true.",
-        "m_c": {
-            "age": [
-                "adolescent"
-            ],
-            "status": [
-                "apprentice"
-            ],
-            "relationship_status": [
-                "child/parent"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ]
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "reg_death": "m_c shriveled up under the sun from heat exhaustion and dehydration."
-            }
-        ]
-    },
-    {
         "event_id": "bch_death_heat_multiapp4",
         "location": [
             "beach"
         ],
         "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
+            "greenleaf"
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c couldn't speak, yell for help, or beg StarClan to give {PRONOUN/m_c/object} a sign they were still with {PRONOUN/m_c/object}, {PRONOUN/m_c/poss} tongue having swelled up inside {PRONOUN/m_c/poss} dried mouth. As m_c collapses, feeling {PRONOUN/m_c/poss} body internally shut down because of dehydration and heat exhaustion, {PRONOUN/m_c/subject} {VERB/m_c/pray/prays} that {PRONOUN/m_c/poss} Clanmates locate m_c's body before {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} unrecognizable under the sun.",
+        "event_text": "m_c misjudged the weather and succumbed to the intense heat of the day.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -417,60 +325,16 @@
         ]
     },
     {
-        "event_id": "bch_death_heat_multiapp5",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c knew {PRONOUN/m_c/subject} made a mistake, as {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} last bits of strength slip away from {PRONOUN/m_c/object} and {PRONOUN/m_c/poss} heart stopped beating. {PRONOUN/m_c/poss/CAP} body was only discovered days later, r_c wailing at the shriveled body of {PRONOUN/r_c/poss} apprentice, who succumbed to heat and dehydration.",
-        "m_c": {
-            "age": [
-                "adolescent"
-            ],
-            "status": [
-                "apprentice"
-            ],
-            "relationship_status": [
-                "app/mentor"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ]
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "reg_death": "m_c succumbed to dehydration and heat exhaustion."
-            }
-        ]
-    },
-    {
         "event_id": "bch_death_heat_multiapp6",
         "location": [
             "beach"
         ],
         "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
+            "greenleaf"
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "It was purely accidental that r_c stumbled across m_c's decaying body in the sunlight, simply hoping to stretch {PRONOUN/r_c/poss} paws outside of camp. Now, r_c must explain to m_c's remaining family or friends that {PRONOUN/m_c/subject} {VERB/m_c/are/is} never returning home, having been caught unprepared under the treacherous sun.",
+        "event_text": "r_c was surprised to stumble upon m_c's dead body. It seems {PRONOUN/m_c/subject} died to the heat.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -496,192 +360,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was caught outside unprepared for the heat, dying because of dehydration and overheating."
-            }
-        ]
-    },
-    {
-        "event_id": "bch_death_heat_multichild2",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "m_c never meant to meet StarClan this way, rotting away under the sun after fainting from dehydration, heat exhaustion, and overexertion. r_c tragically discovers {PRONOUN/m_c/poss} body, unable to stop {PRONOUN/r_c/poss} desperate wails at the sight of {PRONOUN/r_c/poss} child's body.",
-        "m_c": {
-            "age": [
-                "adolescent"
-            ],
-            "status": [
-                "apprentice"
-            ],
-            "relationship_status": [
-                "child/parent"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "age": [],
-            "status": []
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "reg_death": "m_c tragically died due to dehydration and overheating."
-            }
-        ]
-    },
-    {
-        "event_id": "bch_death_heat_multichild3",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": [],
-        "weight": 20,
-        "event_text": "r_c's mournful sounds pierced through c_n's territory as {PRONOUN/r_c/subject} stumbled on the lifeless, decaying corpse of m_c. m_c had disappeared from camp days ago, having not returned, but only now did r_c understand why {PRONOUN/r_c/poss} child didn't come back home: m_c was caught out in the treacherous sun, ill-prepared, succumbing to dehydration and exhaustion.",
-        "m_c": {
-            "age": [
-                "adolescent"
-            ],
-            "status": [
-                "apprentice"
-            ],
-            "relationship_status": [
-                "child/parent"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult"
-            ],
-            "status": [
-                "any"
-            ]
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "reg_death": "m_c died because of overheating and dehydration.",
-                "lead_death": "died of overheating and dehydration"
-            }
-        ]
-    },
-    {
-        "event_id": "bch_death_heat_multiromance1",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": ["romantic"],
-        "weight": 20,
-        "event_text": "m_c asked r_c to meet them at their unique spot, which r_c readily accepted and journeyed through the territory. Yet, with a heartbroken sound that clawed its way out of r_c's throat, {PRONOUN/r_c/subject} {VERB/r_c/stumble/stumbles} upon m_c's body, passing from dehydration; r_c curses m_c for tainting what could have been a good memory of {PRONOUN/r_c/inposs}.",
-        "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "relationship_status": [],
-            "dies": true
-        },
-        "r_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "trait": [
-                "ambitious",
-                "bloodthirsty",
-                "cold",
-                "fierce",
-                "shameless",
-                "strict",
-                "troublesome",
-                "vengeful"
-            ]
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "reg_death": "m_c was caught unprepared in the heat and died of dehydration and heat exhaustion.",
-                "lead_death": "{VERB/m_c/were/was} caught unprepared in the heat and died of dehydration and heat exhaustion"
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "romantic"
-                ],
-                "amount": -5
-            }
-        ]
-    },
-    {
-        "event_id": "bch_death_heat_multiromance2",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
-        "tags": ["romantic"],
-        "weight": 20,
-        "event_text": "m_c had invited r_c out days earlier, aiming to train and grow closer together. However, when r_c arrived, m_c never showed up; m_c wasn't seen around camp, nor had {PRONOUN/m_c/subject} been to training. It wasn't until r_c stumbles upon {PRONOUN/m_c/poss} body, the former succumbing to dehydration and exhaustion, that {PRONOUN/r_c/subject} {VERB/r_c/understand/understands} why.",
-        "m_c": {
-            "status": [
-                "apprentice"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "age": [
-                "adolescent",
-                "young adult"
-            ],
-            "status": [
-                "apprentice"
-            ]
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "reg_death": "m_c was ill-prepared for the heat and succumbed to dehydration."
+                "reg_death": "m_c was claimed by dehydration and heat exhaustion."
             }
         ]
     },
@@ -701,7 +380,7 @@
             "no_body"
         ],
         "weight": 40,
-        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge, eyes narrowed and unblinking, until the body slid beneath the waves.",
+        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge until the body slid beneath the waves.",
         "m_c": {
             "age": [
                 "young adult",
@@ -787,6 +466,22 @@
                     "trust"
                 ],
                 "amount": -25
+            }
+        ],
+        "future_event": [
+                {
+                "event_type": "misc",
+                "pool": {
+                    "subtype": ["murder_reveal"]
+                },
+                "moon_delay": [1,24],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": ["any"]
+                    }
+                }
             }
         ]
     },
@@ -892,6 +587,22 @@
                 ],
                 "amount": -25
             }
+        ],
+        "future_event": [
+                {
+                "event_type": "misc",
+                "pool": {
+                    "subtype": ["murder_reveal"]
+                },
+                "moon_delay": [1,24],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": ["any"]
+                    }
+                }
+            }
         ]
     },
     {
@@ -910,15 +621,10 @@
             "no_body"
         ],
         "weight": 40,
-        "event_text": "Usually m_c is well aware of when the high tide will come in, but today {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} distracted and run ragged with Clan business. Trapped against the cliffs with treacherous waves pulling at {PRONOUN/m_c/poss} paws, the last thing {PRONOUN/m_c/subject} {VERB/m_c/see/sees} is the smug grin of r_c sat high above on the rocks.",
+        "event_text": "Distracted by other matters, m_c forgot the tide. {PRONOUN/m_c/subject/CAP} died trapped between the waves and the cliffs as r_c watched.",
         "m_c": {
             "status": [
                 "leader"
-            ],
-            "trait": [
-                "responsible",
-                "loyal",
-                "lonesome"
             ],
             "dies": true
         },
@@ -987,6 +693,22 @@
                     "trust"
                 ],
                 "amount": -25
+            }
+        ],
+        "future_event": [
+                {
+                "event_type": "misc",
+                "pool": {
+                    "subtype": ["murder_reveal"]
+                },
+                "moon_delay": [1,24],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": ["any"]
+                    }
+                }
             }
         ]
     }

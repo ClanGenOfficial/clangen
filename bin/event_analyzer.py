@@ -580,45 +580,45 @@ def event_analysis(directory: str = None, blacklist: list[str] = None):
         cmd = cmd.lower().strip()
         cmd_parts = cmd.split(" ")
         cmd_key = cmd_parts[0]
-        if cmd_key in ["help", "h"]:
+        if cmd_key in ("help", "h"):
             ea_help()
-        elif cmd_key in ["intersect", "i"]:
+        elif cmd_key in ("intersect", "i"):
             if len(cmd_parts) == 3:
                 ea_intersection(cmd_parts[1], cmd_parts[2])
             elif len(cmd_parts) == 4:
-                if cmd_parts[3] in ["id"]:
+                if cmd_parts[3] in ("id",):
                     ea_intersection(cmd_parts[1], cmd_parts[2], True)
                 else:
                     ea_intersection(cmd_parts[1], cmd_parts[2])
             else:
                 print("Intersect failed - check you have input the commands correctly.")
-        elif cmd_key in ["overview", "o"]:
+        elif cmd_key in ("overview", "o"):
             if len(cmd_parts) == 1:
                 ea_overview(len(all_ids))
             elif len(cmd_parts) == 2:
                 if cmd_parts[1] == ["m", "mc", "m_c"]:
                     ea_overview_cat(len(all_ids), "m_c")
-                elif cmd_parts[1] in ["r", "r_c", "rc"]:
+                elif cmd_parts[1] in ("r", "r_c", "rc"):
                     ea_overview_cat(len(all_ids), "r_c")
-                elif cmd_parts[1] in ["g", "general", "all"]:
+                elif cmd_parts[1] in ("g", "general", "all"):
                     ea_overview(len(all_ids))
-                elif cmd_parts[1] in ["location"]:
+                elif cmd_parts[1] in ("location",):
                     ea_overview(len(all_ids), "location")
-                elif cmd_parts[1] in ["season"]:
+                elif cmd_parts[1] in ("season",):
                     ea_overview(len(all_ids), "season")
-                elif cmd_parts[1] in ["subtype"]:
+                elif cmd_parts[1] in ("subtype",):
                     ea_overview(len(all_ids), "subtype")
-                elif cmd_parts[1] in ["tags"]:
+                elif cmd_parts[1] in ("tags",):
                     ea_overview(len(all_ids), "tags")
-                elif cmd_parts[1] in ["accessory"]:
+                elif cmd_parts[1] in ("accessory",):
                     ea_overview(len(all_ids), "accessory")
                 else:
                     print("Overview failed - invalid argument.")
             else:
                 print("Overview failed - check you have input the commands correctly.")
-        elif cmd_key in ["problems", "p"]:
+        elif cmd_key in ("problems", "p"):
             ea_problems()
-        elif cmd_key in ["quit", "q"]:
+        elif cmd_key in ("quit", "q"):
             print("Goodbye!")
             running = False
         else:
@@ -1187,23 +1187,23 @@ def ea_overview(count, subview="all"):
         "NB: Breakdown numbers will probably total to more than this as each event can have multiple of each group!!"
     )
 
-    if subview in ["all", "location"]:
+    if subview in ("all", "location"):
         print("Breakdown by location:")
         ea_subgroup_report(valid_records["location"], True)
 
-    if subview in ["all", "season"]:
+    if subview in ("all", "season"):
         print("\nBreakdown by season:")
         ea_group_report(valid_records["season"])
 
-    if subview in ["all", "subtype"]:
+    if subview in ("all", "subtype"):
         print("\nBreakdown by sub-type:")
         ea_group_report(valid_records["sub_type"])
 
-    if subview in ["all", "tags"]:
+    if subview in ("all", "tags"):
         print("\nBreakdown by tags:")
         ea_subgroup_report(valid_records["tags"], True)
 
-    if subview in ["all", "accessory"]:
+    if subview in ("all", "accessory"):
         print("\nBreakdown by accessory gained:")
         ea_subgroup_report(valid_records["new_accessory"])
     print("Returning to main program.")
@@ -1248,11 +1248,11 @@ def ea_overview_cat(count, cat="m_c"):
         elif cmd == "dies":
             print("\nBreakdown by backstory:")
             ea_group_report(valid_records[cat]["dies"], True)
-        elif cmd in ["help", "h"]:
+        elif cmd in ("help", "h"):
             print(
                 "Valid categories:\n\nage\nstatus\nrelationship_status\nskill\nnot_skill\ntrait\nnot_trait\nbackstory\ndies"
             )
-        elif cmd in ["quit", "q"]:
+        elif cmd in ("quit", "q"):
             print("Returning to main program.")
             running = False
 

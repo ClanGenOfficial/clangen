@@ -22,7 +22,7 @@
 			"r_c helps m_c hide from a Clanmate.",
 			"r_c makes a small sacrifice that benefits m_c.",
 			"r_c lets m_c know that a Clanmate was talking badly about {PRONOUN/m_c/object}.",
-			"r_c tells m_c that {PRONOUN/r_c/subject} was worried for {PRONOUN/m_c/object}."
+			"r_c tells m_c that {PRONOUN/r_c/subject} was worried about {PRONOUN/m_c/object}."
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -60,7 +60,7 @@
 			"m_c thinks about how r_c is always reliable.",
 			"m_c notices how r_c is being helpful around camp.",
 			"m_c has faith in r_c.",
-			"m_c is grateful that r_c has kept a secret of {PRONOUN/m_c/poss}s.",
+			"m_c is grateful that r_c has kept a secret of {PRONOUN/m_c/inposs}.",
 			"r_c seems respectful of m_c's boundaries as of late.",
 			"r_c explained something in detail to m_c that others wouldn't explain to {PRONOUN/m_c/object}.",
 			"m_c overhears r_c dispelling a false rumor about a Clanmate.",

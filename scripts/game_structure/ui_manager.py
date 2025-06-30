@@ -70,7 +70,7 @@ class UIManager(pygame_gui.UIManager):
         object_id: ObjectID,
         *,
         wrap_width: Optional[int] = None,
-        text_kwargs: Optional[Dict[str, str]] = None
+        text_kwargs: Optional[Dict[str, str]] = None,
     ) -> IUITooltipInterface:
         """
         Creates a tool tip ands returns it. Have hidden this away in the manager, so we can call it

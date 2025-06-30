@@ -91,6 +91,8 @@
     },
     "@checked_checkbox_smalltooltip.tool_tip": {"misc": {"rect_width": "100"}},
     "@unchecked_checkbox_smalltooltip.tool_tip": {"misc": {"rect_width": "100"}},
+    "#clan_screen_cat_tooltip": {"misc": {"rect_width": "120", "text_horiz_alignment": "center"}},
+    "#clan_screen_cat_tooltip.text_box": {"misc": {"text_horiz_alignment": "center"}},
     "@checked_checkbox.tool_tip": {"misc": {"rect_width": "200"}},
     "@unchecked_checkbox.tool_tip": {"misc": {"rect_width": "200"}},
     "#fav_star.tool_tip": {"misc": {"rect_width": "125"}},
@@ -242,6 +244,8 @@
     },
     "#game_over_window": {"prototype": "#window_base_theme"},
     "#save_check_window": {"prototype": "#window_base_theme"},
+    "#editor_save_check_window": {"prototype": "#window_base_theme"},
+    "#editor_missing_info_window": {"prototype": "#window_base_theme"},
     "#notif_window": {"prototype": "#window_base_theme"},
     "#filter_window": {"prototype": "#window_base_theme"},
     "#delete_check_window": {"prototype": "#window_base_theme"},
@@ -315,6 +319,10 @@
         "prototype": "#text_box_22",
         "misc": {"text_horiz_alignment": "left"}
     },
+    "#text_box_22_horizright": {
+        "prototype": "#text_box_22",
+        "misc": {"text_horiz_alignment": "right"}
+    },
     "#text_box_22_horizleft_spacing_95": {
         "prototype": "#text_box_22_horizleft",
         "misc": {"line_spacing": "0.95"}
@@ -364,6 +372,10 @@
         "prototype": "#text_box_30",
         "misc": {"text_horiz_alignment": "center"}
     },
+    "#text_box_30_horizcenter_pad_10_10": {
+        "prototype": "#text_box_30_horizcenter",
+        "misc": {"padding": "5,5"}
+    },
     "#text_box_30_horizcenter_red": {
         "prototype": "#text_box_30_horizcenter",
         "colours": {"normal_text": "#ae1515"}
@@ -399,6 +411,10 @@
     "#text_box_30_horizleft_pad_10_10": {
         "prototype": "#text_box_30_horizleft",
         "misc": {"padding": "5,5"}
+    },
+    "#text_box_30_horizright_pad_10_10": {
+        "prototype": "#text_box_30",
+        "misc": {"padding": "5,5", "text_horiz_alignment": "right"}
     },
     "#text_box_30_horizleft_pad_10_10_spacing_95": {
         "prototype": "#text_box_30_horizleft_pad_10_10",
@@ -645,6 +661,18 @@
             "shape_corner_radius": [2, 2],
             "border_width": "1",
             "text_horiz_alignment": "right"
+        }
+    },
+    "#visible_entry_box": {
+        "prototype": "#search_entry_box",
+        "colours": {
+            "normal_border": "#2F2918"
+        },
+        "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": [2, 2],
+            "border_width": "1",
+            "text_horiz_alignment": "left"
         }
     },
     "#text_box_34_horizcenter_light": {

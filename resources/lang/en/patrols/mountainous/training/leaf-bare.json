@@ -32,7 +32,7 @@
                 ]
             },
             {
-                "text": "app1 finds a snowdrift, and over the course of an hour {PRONOUN/app1/subject} and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+                "text": "app1 finds a snowdrift, and over the course of an hour {PRONOUN/app1/subject} and app2 turn it into a very respectable snow den, complete with a short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
@@ -538,8 +538,8 @@
                                 }
                             ],
                         "history_text": {
-                        "reg_death": "m_c died from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows.",
-                        "lead_death": "from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows"
+                            "reg_death": "m_c died from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows.",
+                            "lead_death": "from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows"
                        }
                 },
                 {
@@ -822,7 +822,7 @@
                     ]
                 },
                 {
-                    "text": "Somberly, p_l lists the cats {PRONOUN/p_l/subject} {VERB/p_l/know/knows} who died to avalanche, who thought they were faster, who didn't heed the signs. Most of these cats were dead long before p_l was born, {PRONOUN/p_l/poss} knowledge of history going back generations, but this is what history is <i>for</i>. To learn from it.",
+                    "text": "Somberly, p_l lists the cats {PRONOUN/p_l/subject} {VERB/p_l/know/knows} who died to an avalanche, who thought they were faster, who didn't heed the signs. Most of these cats were dead long before p_l was born, {PRONOUN/p_l/poss} knowledge of history going back generations, but this is what history is <i>for</i>. To learn from it.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_ghost",
@@ -860,7 +860,7 @@
                     ]
                 },
                 {
-                    "text": "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. If you're caught, it's luck whether you survive. So don't get caught - run to the side of the slope, out of the path of the flow, horizontal, not tyring to race anything. Climb, climb anything. The tree will get swept away, but they might float.",
+                    "text": "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. If you're caught, it's luck whether you survive. So don't get caught - run to the side of the slope, out of the path of the flow, horizontal, not trying to race anything. Climb, climb anything. The tree will get swept away, but they might float.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_ghost",
@@ -952,7 +952,7 @@
                     ]
                 },
                 {
-                    "text": "The cats think they're safe on the other side of the valley. It's a well-known spot for teaching, distant but with a view of the avalanche prone spot on the otherside, c_n cats have been here before. Surely they're safe. They are mistaken.",
+                    "text": "The cats think they're safe on the other side of the valley. It's a well-known spot for teaching, distant but with a view of the avalanche prone spot on the other side, c_n cats have been here before. Surely they're safe. They are mistaken.",
                     "exp": 0,
                     "weight": 1,
                     "injury": [

@@ -2458,7 +2458,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatedly in a safe spot until the beast calms down.",
+                "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliated in a safe spot until the beast calms down.",
                 "exp": 0,
                 "weight": 20
             },
@@ -2615,9 +2615,9 @@
         ]
     },{
         "patrol_id": "fst_bord_smalldog3",
-        "biome": ["forest"],
-        "season": ["any"],
-        "types": ["border"],
+    "biome": ["forest"],
+    "season": ["any"],
+    "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 4,

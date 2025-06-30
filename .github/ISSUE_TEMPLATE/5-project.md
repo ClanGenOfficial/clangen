@@ -1,7 +1,7 @@
 ---
 name: Project
 about: Request assistance with a coding project.
-title: "[PROJECT]"
+title: "[PROJECT] "
 labels: 'help-wanted'
 ---
 

@@ -5,22 +5,22 @@ from typing import Dict, List
 
 import i18n
 
+import scripts.cat_relations.interaction as interactions
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import (
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
 )
-import scripts.cat_relations.interaction as interactions
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_highest_romantic_relation,
     event_text_adjust,
     get_personality_compatibility,
     process_text,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 class RomanticEvents:
@@ -34,6 +34,7 @@ class RomanticEvents:
     # ---------------------------------------------------------------------------- #
 
     MATE_DICTS = {}
+    BREAKUP_STRINGS = {}
     POLY_MATE_DICTS = {}
     current_loaded_lang = None
     ROMANTIC_EVENTS: Dict = {}
@@ -52,6 +53,7 @@ class RomanticEvents:
 
         resources = [
             ("MATE_DICTS", "become_mates.json"),
+            ("BREAKUP_STRINGS", "breakup_mates.json"),
             (
                 "POLY_MATE_DICTS",
                 "become_mates_poly.json",
@@ -180,7 +182,15 @@ class RomanticEvents:
         )
         filtered_interactions = []
         _season = [str(game.clan.current_season).casefold(), "Any", "any"]
-        _biome = [str(game.clan.biome).casefold(), "Any", "any"]
+        _biome = [
+            str(
+                game.clan.biome
+                if not game.clan.override_biome
+                else game.clan.override_biome
+            ).casefold(),
+            "Any",
+            "any",
+        ]
         for interaction in possible_interactions:
             in_tags = [i for i in interaction.biome if i not in _biome]
             if len(in_tags) > 0:
@@ -437,6 +447,8 @@ class RomanticEvents:
     def handle_breakup(cat_from: Cat, cat_to: Cat) -> bool:
         """Handles cats breaking up their relationship"""
 
+        RomanticEvents.rebuild_dicts()
+
         if cat_from.ID not in cat_to.mate:
             return False
 
@@ -451,9 +463,17 @@ class RomanticEvents:
 
         # Determine if this is a nice breakup or a fight breakup
         # TODO - make this better
-        had_fight = not int(random.random() * 3)
+        breakup_type = random.choices(
+            [
+                "had_fight",
+                "decided_to_be_friends",
+                "lost_feelings",
+                "bad_breakup",
+                "chill_breakup",
+            ],
+            [3, 3, 2, 5, 5],
+        )[0]
 
-        # TODO : more varied breakup text.
         cat_from.unset_mate(cat_to, breakup=False)
 
         if cat_to.ID in cat_from.relationships:
@@ -467,24 +487,50 @@ class RomanticEvents:
             relationship_to = cat_to.create_one_relationship(cat_from)
 
         # These are large decreases - they are to prevent becoming mates again on the same moon.
-        relationship_to.romantic_love -= 15
-        relationship_from.romantic_love -= 15
-        relationship_to.comfortable -= 10
-        relationship_from.comfortable -= 10
-        if had_fight:
-            relationship_to.romantic_love -= 5
-            relationship_from.romantic_love -= 5
+        if breakup_type == "had_fight":
+            relationship_to.romantic_love -= 15
+            relationship_from.romantic_love -= 15
             relationship_from.platonic_like -= 10
             relationship_to.platonic_like -= 10
             relationship_from.trust -= 10
             relationship_to.trust -= 10
             relationship_to.dislike += 10
             relationship_from.dislike += 10
+        elif breakup_type == "decided_to_be_friends":
+            relationship_to.romantic_love -= 30
+            relationship_from.romantic_love -= 30
+            relationship_from.platonic_like += 30
+            relationship_to.platonic_like += 30
+            relationship_from.trust += 20
+            relationship_to.trust += 20
+            relationship_to.comfortable += 5
+            relationship_from.comfortable += 5
+        elif breakup_type == "lost_feelings":
+            relationship_to.romantic_love -= 30
+            relationship_from.romantic_love -= 30
+            relationship_from.platonic_like -= 10
+            relationship_to.platonic_like -= 10
+            relationship_to.comfortable -= 10
+            relationship_from.comfortable -= 10
+        elif breakup_type == "bad_breakup":
+            relationship_to.romantic_love -= 20
+            relationship_from.romantic_love -= 15
+            relationship_from.platonic_like -= 10
+            relationship_to.platonic_like -= 15
+            relationship_from.trust -= 20
+            relationship_to.trust -= 25
+            relationship_to.comfortable -= 20
+            relationship_from.comfortable -= 20
+            relationship_to.dislike += 10
+            relationship_from.dislike += 5
+        elif breakup_type == "chill_breakup":
+            relationship_to.romantic_love -= 15
+            relationship_from.romantic_love -= 15
+            relationship_to.comfortable -= 10
+            relationship_from.comfortable -= 10
 
-        if had_fight:
-            text = i18n.t("hardcoded.breakup_angy")
-        else:
-            text = i18n.t("hardcoded.breakup_chill")
+        text = choice(RomanticEvents.BREAKUP_STRINGS[breakup_type])
+        text = event_text_adjust(Cat, text, main_cat=cat_from, random_cat=cat_to)
         game.cur_events_list.append(
             Single_Event(
                 text,

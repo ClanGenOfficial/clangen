@@ -294,13 +294,15 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         return
 
     translation_paths = []
+    languages = []
     for root, dirs, files in os.walk(os.path.join("resources", "lang")):
         for directory in dirs:
+            languages.append(directory)
             translation_paths.append(os.path.join(root, directory))
         break
 
     # update old settings data from pre-localization
-    if settings_data["language"] == "english":
+    if settings_data["language"] not in languages:
         settings_data["language"] = "en"
         with open(
             get_save_dir() + "/settings.json", "w", encoding="utf-8"

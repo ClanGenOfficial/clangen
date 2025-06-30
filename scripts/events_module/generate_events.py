@@ -18,10 +18,10 @@ from scripts.events_module.event_filters import (
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_living_clan_cat_count,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 def get_resource_directory(fallback=False):
@@ -36,7 +36,6 @@ def get_resource_directory(fallback=False):
 class GenerateEvents:
     loaded_events = {}
 
-    INJURY_DISTRIBUTION = None
     with open(
         f"resources/dicts/conditions/event_injuries_distribution.json",
         "r",
@@ -44,7 +43,6 @@ class GenerateEvents:
     ) as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
-    INJURIES = None
     with open(
         f"resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
     ) as read_file:
@@ -138,21 +136,29 @@ class GenerateEvents:
                         tags=event["tags"] if "tags" in event else [],
                         weight=event["weight"] if "weight" in event else 20,
                         text=event_text,
-                        new_accessory=event["new_accessory"]
-                        if "new_accessory" in event
-                        else [],
+                        new_accessory=(
+                            event["new_accessory"] if "new_accessory" in event else []
+                        ),
                         m_c=event["m_c"] if "m_c" in event else {},
                         r_c=event["r_c"] if "r_c" in event else {},
                         new_cat=event["new_cat"] if "new_cat" in event else [],
                         injury=event["injury"] if "injury" in event else [],
+                        exclude_involved=(
+                            event["exclude_involved"]
+                            if "exclude_involved" in event
+                            else []
+                        ),
                         history=event["history"] if "history" in event else [],
-                        relationships=event["relationships"]
-                        if "relationships" in event
-                        else [],
+                        relationships=(
+                            event["relationships"] if "relationships" in event else []
+                        ),
                         outsider=event["outsider"] if "outsider" in event else {},
                         other_clan=event["other_clan"] if "other_clan" in event else {},
                         supplies=event["supplies"] if "supplies" in event else [],
                         new_gender=event["new_gender"] if "new_gender" in event else [],
+                        future_event=event["future_event"]
+                        if "future_event" in event
+                        else {},
                     )
                     event_list.append(event)
 
@@ -216,13 +222,18 @@ class GenerateEvents:
         event_list = []
 
         # skip the rest of the loading if there is an unrecognised biome
-        if game.clan.biome not in game.clan.BIOME_TYPES:
+        temp_biome = (
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        )
+        if temp_biome not in game.clan.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
                 f"in clan.py?"
             )
 
-        biome = game.clan.biome.lower()
+        biome = temp_biome.lower()
 
         # biome specific events
         event_list.extend(GenerateEvents.generate_short_events(event_type, biome))
@@ -242,16 +253,12 @@ class GenerateEvents:
         freshkill_active,
         freshkill_trigger_factor,
         sub_types=None,
+        allowed_events=None,
+        excluded_events=None,
+        ignore_subtyping=False,
     ):
         final_events = []
         incorrect_format = []
-
-        # Chance to bypass the skill or trait requirements.
-        trait_skill_bypass = 15
-
-        # check if generated event should be a war event
-        if "war" in sub_types and random.randint(1, 10) == 1:
-            sub_types.remove("war")
 
         for event in possible_events:
             if event.history:
@@ -276,9 +283,25 @@ class GenerateEvents:
                             f"{event.event_id} injury formatted incorrectly"
                         )
 
-            # check for event sub_type
-            if set(event.sub_type) != set(sub_types):
+            # check if event is in allowed or excluded
+            if allowed_events and event.event_id not in allowed_events:
                 continue
+            if excluded_events and event.event_id in excluded_events:
+                continue
+
+            # ensure ID and requirements override
+            if (
+                event.event_id
+                == game.config["event_generation"]["debug_ensure_event_id"]
+                and game.config["event_generation"]["debug_override_requirements"]
+            ):
+                final_events.append(event)
+                break
+
+            # check for event sub_type
+            if not ignore_subtyping:
+                if set(event.sub_type) != set(sub_types):
+                    continue
 
             if not event_for_location(event.location):
                 continue
@@ -289,9 +312,6 @@ class GenerateEvents:
             # check tags
             if not event_for_tags(event.tags, cat, random_cat):
                 continue
-
-            # TODO: just remove this tag man its not a useful feature
-            prevent_bypass = "skill_trait_required" in event.tags
 
             # make complete leader death less likely until the leader is over 150 moons (or unless it's a murder)
             if cat.status == "leader":
@@ -336,7 +356,10 @@ class GenerateEvents:
                     continue
 
             # check that injury is possible
-            if event.injury:
+            if (
+                event.injury
+                and game.config["event_generation"]["debug_type_override"] != "injury"
+            ):
                 # determine which injury severity list will be used
                 allowed_severity = None
                 discard = False
@@ -456,6 +479,14 @@ class GenerateEvents:
 
                 if discard:
                     continue
+
+            # ensure ID without requirements override
+            if (
+                event.event_id
+                == game.config["event_generation"]["debug_ensure_event_id"]
+            ):
+                final_events.append(event)
+                break
 
             final_events.extend([event] * event.weight)
 
