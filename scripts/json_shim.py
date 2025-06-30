@@ -22,7 +22,7 @@ def dumps(obj, indent=0, ensure_ascii=False) -> str:
     """
     opt = 0
     if indent > 0:
-        opt = orjson.OPT_INDENT_2
+        opt |= orjson.OPT_INDENT_2
     return orjson.dumps(obj, option=opt).decode()
 
 def loads(s: Union[str, bytes, bytearray]):
@@ -42,7 +42,7 @@ def dump(obj, fp, indent=0):
     """
     opt = 0
     if indent > 0:
-        opt = orjson.OPT_INDENT_2
+        opt |= orjson.OPT_INDENT_2
     fp.write(orjson.dumps(obj, option=opt).decode())
 
 def load(fp):
