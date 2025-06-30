@@ -648,27 +648,47 @@ class EventEditScreen(Screens):
             new_event["r_c"]["backstory"] = self.random_cat_info["backstory"]
         if self.random_cat_info["dies"]:
             new_event["r_c"]["dies"] = self.random_cat_info["dies"]
+        if not new_event["r_c"]:
+            new_event.pop("r_c")
 
         if self.new_cat_block_dict:
             new_event["new_cat"] = self.new_cat_block_dict.values()
 
         if self.injury_block_list:
+            for block in self.injury_block_list:
+                if not block["scars"]:
+                    block.pop("scars")
             new_event["injury"] = self.injury_block_list
 
         if self.excluded_cats:
             new_event["exclude_involved"] = self.excluded_cats
 
         if self.history_block_list:
+            for block in self.history_block_list:
+                if not block["scar"]:
+                    block.pop("scar")
+                if not block["reg_death"]:
+                    block.pop("reg_death")
+                if not block["lead_death"]:
+                    block.pop("lead_death")
             new_event["history"] = self.history_block_list
 
         if self.relationships_block_list:
             new_event["relationships"] = self.relationships_block_list
 
         if self.outsider_info["current_rep"] or self.outsider_info["changed"]:
-            new_event["outsider"] = self.outsider_info
+            new_event["outsider"] = {}
+            if self.outsider_info["current_rep"]:
+                new_event["current_rep"] = self.outsider_info["current_rep"]
+            if self.outsider_info["changed"]:
+                new_event["changed"] = int(self.outsider_info["changed"])
 
-        if self.other_clan_info["current_rep"] or self.outsider_info["changed"]:
-            new_event["other_clan"] = self.other_clan_info
+        if self.other_clan_info["current_rep"] or self.other_clan_info["changed"]:
+            new_event["other_clan"] = {}
+            if self.other_clan_info["current_rep"]:
+                new_event["current_rep"] = self.other_clan_info["current_rep"]
+            if self.other_clan_info["changed"]:
+                new_event["changed"] = int(self.other_clan_info["changed"])
 
         if self.supply_block_list:
             new_event["supplies"] = self.supply_block_list
