@@ -1500,6 +1500,13 @@ class EventEditScreen(Screens):
         """
         Clears all the saved event info, so we can start fresh.
         """
+        # resetting all tag lists
+        for tag in self.basic_tag_list:
+            tag["setting"] = False
+        for tag in self.rel_tag_list:
+            tag["setting"] = False
+        for tag in self.new_cat_bools:
+            tag["setting"] = False
         # Settings elements
         self.event_text_info = ""
         self.event_id_element = {}
@@ -1555,7 +1562,7 @@ class EventEditScreen(Screens):
             if not self.param_locks.get("main_age")
             else reference_dict["age"],
             "rel_status": []
-            if not self.param_locks.get("get_rel_status")
+            if not self.param_locks.get("main_rel_status")
             else reference_dict["rel_status"],
             "dies": False
             if not self.param_locks.get("main_dies")
@@ -1576,6 +1583,9 @@ class EventEditScreen(Screens):
             if not self.param_locks.get("main_backstory")
             else reference_dict["backstory"],
         }
+        if not self.param_locks.get("main_rel_status"):
+            for tag in self.rel_tag_list:
+                tag["setting"] = False
         reference_dict = self.random_cat_info.copy()
         self.random_cat_info = {
             "rank": []
@@ -1585,7 +1595,7 @@ class EventEditScreen(Screens):
             if not self.param_locks.get("random_age")
             else reference_dict["age"],
             "rel_status": []
-            if not self.param_locks.get("get_rel_status")
+            if not self.param_locks.get("random_rel_status")
             else reference_dict["rel_status"],
             "dies": False
             if not self.param_locks.get("random_dies")
