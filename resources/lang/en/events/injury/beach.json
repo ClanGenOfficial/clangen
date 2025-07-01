@@ -51,7 +51,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died from water-inhalation when {PRONOUN/m_c/subject} nearly drowned."
+                "reg_death": "m_c died from water-inhalation after nearly drowning.",
+                "lead_death": "died from water-inhalation after nearly drowning"
             }
         ],
         "relationships": [

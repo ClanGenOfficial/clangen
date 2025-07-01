@@ -3679,7 +3679,7 @@
                 ],
                 "scar": "m_c was scarred after a fight with o_c_n cats.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting with o_c_n cats.",
-                "lead_death": ""
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after fighting with o_c_n cats"
             }
         ],
         "other_clan": {
