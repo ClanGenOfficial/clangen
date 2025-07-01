@@ -873,9 +873,6 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "tags": [
-            "skill_trait_required"
-        ],
         "weight": 20,
         "event_text": "r_c sighs. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} unintentionally walking into one of {PRONOUN/r_c/poss} Clanmates' dreams again. It could have been just another boring or nonsensical dream, but r_c is horrified to discover this dream is m_c's recollection of murdering mur_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wake/wakes} up in shock, wondering what to do with this new knowledge.",
         "m_c": {
@@ -1331,9 +1328,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "skill_trait_required"
-        ],
         "weight": 10,
         "event_text": "m_c's dreams are filled with flashing teeth and blood-scent. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} up screaming.",
         "m_c": {
@@ -1355,9 +1349,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "skill_trait_required"
         ],
         "weight": 30,
         "event_text": "m_c thought {PRONOUN/m_c/subject} saw a familiar wispy form lingering at the edge of camp, but it disappeared before {PRONOUN/m_c/subject} could be sure.",
@@ -5536,9 +5527,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "skill_trait_required"
-        ],
         "weight": 10,
         "event_text": "m_c walks into the dreams of {PRONOUN/m_c/poss} Clanmates while everyone sleeps.",
         "m_c": {
@@ -5557,9 +5545,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "skill_trait_required"
         ],
         "weight": 10,
         "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dreamself pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list/m_c. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
@@ -5580,9 +5565,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "skill_trait_required"
         ],
         "weight": 10,
         "event_text": "m_c correctly warns the leader of an ambush, thanks to {PRONOUN/m_c/poss} clairvoyant nature.",
@@ -8151,9 +8133,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "skill_trait_required"
         ],
         "weight": 20,
         "event_text": "m_c thinks StarClan is trying to warn {PRONOUN/m_c/object} about r_c.",
