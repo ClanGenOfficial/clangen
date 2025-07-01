@@ -3068,7 +3068,7 @@
             "all_lives"
         ],
         "weight": 20,
-        "event_text": "m_c was sealed in a cramped rabbit burrow by o_c_n warriors and couldn't get out.",
+        "event_text": "m_c was buried alive in a cramped rabbit burrow by o_c_n warriors.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -3837,7 +3837,7 @@
                     "m_c"
                 ],
                 "reg_death": "m_c was crushed by a falling boulder.",
-                "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder.",
+                "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder",
                 "scar": ""
             }
         ],
@@ -5897,7 +5897,7 @@
             "any"
         ],
         "weight": 20,
-        "event_text": "o_c_n attacked the camp and m_c was killed defending the kits from enemy warriors.",
+        "event_text": "m_c was killed defending the kits during a o_c_n raid.",
         "m_c": {
             "age": [
                 "adolescent",

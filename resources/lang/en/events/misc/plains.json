@@ -14,7 +14,7 @@
             "clan:apprentice"
         ],
         "weight": 30,
-        "event_text": "The apprentices are learning how to survive in underground tunnels long-term, in the case of a siege.",
+        "event_text": "The apprentices are learning how to survive in underground tunnels long-term, in case of a siege.",
         "m_c": {
             "age": [
                 "any"

@@ -5165,7 +5165,7 @@
             "war"
         ],
         "weight": 30,
-        "event_text": "m_c is giving r_c war advice, it's unclear how helpful it really is.",
+        "event_text": "m_c is giving r_c advice on the war, though it's unclear how helpful it really is.",
         "m_c": {
             "status": [
                 "mediator",

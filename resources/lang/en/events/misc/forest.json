@@ -14,7 +14,7 @@
             "clan:apprentice"
         ],
         "weight": 15,
-        "event_text": "The apprentices are learning how to ambush enemies from high tree branches.",
+        "event_text": "The apprentices are learning how to ambush enemies from tall trees.",
         "m_c": {
             "status": [
                 "apprentice"

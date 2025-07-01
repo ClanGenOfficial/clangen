@@ -1687,7 +1687,7 @@
             "greenleaf"
         ],
         "weight": 20,
-        "event_text": "m_c sneaked out of camp and was found, confused and disoriented, in the full noon sun.",
+        "event_text": "m_c sneaked out of camp and was later found wandering in the full noon sun, confused and disoriented.",
         "m_c": {
             "status": [
                 "kitten"
@@ -3039,7 +3039,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "War training across the harsh landscape left m_c exhausted.",
+        "event_text": "Training for war in such a harsh landscape left m_c exhausted.",
         "m_c": {
             "status": [
                 "apprentice"

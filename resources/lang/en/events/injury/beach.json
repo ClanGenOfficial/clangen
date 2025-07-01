@@ -8,7 +8,7 @@
             "any"
         ],
         "weight": 30,
-        "event_text": "m_c went out of camp alone to practice swimming in the ocean; unfortunately, {PRONOUN/m_c/poss} inexperience led to {PRONOUN/m_c/object} being swept up by a riptide. r_c heard {PRONOUN/m_c/poss} cries and saved {PRONOUN/m_c/object}, but m_c almost drowned.",
+        "event_text": "r_c had to rescue m_c from drowning after the apprentice headed out to practice alone.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -95,7 +95,7 @@
             "any"
         ],
         "weight": 30,
-        "event_text": "m_c's paw pads aren't used to all the salt water {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been traipsing around in since becoming an apprentice, they've become cracked and sore.",
+        "event_text": "m_c's paw pads have become cracked and sore from walking through salty water.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -849,7 +849,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "A o_c_n warrior was nearly swept away by a wave during a shoreside battle. m_c dove in to pull {PRONOUN/m_c/poss} enemy back to the beach, despite {PRONOUN/m_c/poss} battle injuries.",
+        "event_text": "A o_c_n warrior was nearly swept away by a wave during a shoreside battle. m_c dove in to pull {PRONOUN/m_c/poss} enemy back to the beach, despite {PRONOUN/m_c/poss} own injuries.",
         "m_c": {
             "status": [
                 "warrior",

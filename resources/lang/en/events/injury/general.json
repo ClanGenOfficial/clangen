@@ -2059,7 +2059,7 @@
             "any"
         ],
         "weight": 20,
-        "event_text": "m_c saved r_c from an enemy warrior, both cats making it out with hardly even a scratch.",
+        "event_text": "m_c saved r_c from an enemy warrior, both making it out with hardly even a scratch.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -7241,7 +7241,7 @@
             "clan:medicine cat"
         ],
         "weight": 10,
-        "event_text": "m_c was left badly hurt during a battle with o_c_n. Surprisingly, the o_c_n medicine cat cares for {PRONOUN/m_c/object} until {PRONOUN/m_c/poss} Clanmates can get to {PRONOUN/m_c/object}.",
+        "event_text": "m_c was left badly hurt during a battle with o_c_n. Surprisingly, the o_c_n medicine cat cares for {PRONOUN/m_c/object} until {PRONOUN/m_c/poss} Clanmates get there.",
         "m_c": {
             "status": [
                 "warrior",
