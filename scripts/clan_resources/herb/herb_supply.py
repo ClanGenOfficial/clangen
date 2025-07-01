@@ -15,6 +15,7 @@ from scripts.utility import (
     ILLNESSES,
     INJURIES,
 )
+from collections import defaultdict
 
 
 class HerbSupply:
@@ -25,15 +26,13 @@ class HerbSupply:
         Initialize the class
         """
         # a dict of current stored herbs - herbs collected this moon
+        self.storage = defaultdict(list)
         if herb_supply:
-            self.storage: dict[str, list[int]] = {
-                herb: [int(i) for i in amounts] for herb, amounts in herb_supply.items()
-            }
-        else:
-            self.storage = {}
+            for herb, amounts in herb_supply.items():
+                self.storage[herb] = [int(i) for i in amounts]
 
         # a dict of herbs collected this moon
-        self.collected: dict = {}
+        self.collected = defaultdict(int)
 
         # herb count required for clan
         self.required_herb_count: int = 0
@@ -41,20 +40,14 @@ class HerbSupply:
         # herbs the clan needs for treatment of current clan ailments
         self.in_need_of: list = []
 
+        self.base_herb_list = HERBS
         self.herb = {}
+        for herb in self.base_herb_list:
+            self.herb[herb] = Herb(herb)
         self.base_herb_list = HERBS
 
         # med den log for current moon
         self.log = []
-
-        # ensures all herbs in HERBS are present as keys in self.storage and self.collected because KEYERRORS SUCK
-        for herb in self.base_herb_list:
-            if herb not in self.storage:
-                self.storage[herb] = []
-            if herb not in self.collected:
-                self.collected[herb] = 0
-            if herb not in self.herb:
-                self.herb[herb] = Herb(herb)
 
     @property
     def combined_supply_dict(self) -> dict:
