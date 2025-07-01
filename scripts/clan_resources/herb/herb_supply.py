@@ -43,9 +43,6 @@ class HerbSupply:
 
         self.herb = {}
         self.base_herb_list = HERBS
-        if game.clan:
-            for name in self.base_herb_list:
-                self.herb[name] = Herb(name)
 
         # med den log for current moon
         self.log = []
