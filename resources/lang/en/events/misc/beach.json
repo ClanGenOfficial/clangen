@@ -19,8 +19,7 @@
             "status": [
                 "apprentice"
             ]
-        },
-        "r_c": {}
+        }
     },
     {
         "event_id": "bch_misc_anyprophecymedcatprophet1",
@@ -92,8 +91,7 @@
                 "gloomy",
                 "sincere"
             ]
-        },
-        "r_c": {}
+        }
     },
     {
         "event_id": "bch_misc_herb_leafbareflooddestruction1",

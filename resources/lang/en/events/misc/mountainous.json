@@ -22,8 +22,7 @@
             "status": [
                 "apprentice"
             ]
-        },
-        "r_c": {}
+        }
     },
     {
         "event_id": "mtn_misc_anyprophecymedcatprophet1",
@@ -171,7 +170,6 @@
                 "gloomy",
                 "sincere"
             ]
-        },
-        "r_c": {}
+        }
     }
 ]

@@ -3775,8 +3775,7 @@
                 "ambitious",
                 "arrogant"
             ]
-        },
-        "r_c": {}
+        }
     },
     {
         "event_id": "multi_misc_any_scandalous_kittypet1",
@@ -9120,8 +9119,7 @@
                 "wise",
                 "cunning"
             ]
-        },
-        "r_c": {}
+        }
     },
     {
         "event_id": "gen_misc_war_guards2",
@@ -9157,8 +9155,7 @@
                 "wise",
                 "cunning"
             ]
-        },
-        "r_c": {}
+        }
     },
     {
         "event_id": "gen_misc_war_skirmish_dog",
@@ -9178,7 +9175,6 @@
                 "warrior"
             ]
         },
-        "r_c": {},
         "exclude_involved": [
             "m_c"
         ],

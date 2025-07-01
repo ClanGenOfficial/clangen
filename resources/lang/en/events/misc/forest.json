@@ -19,8 +19,7 @@
             "status": [
                 "apprentice"
             ]
-        },
-        "r_c": {}
+        }
     },
     {
         "event_id": "fst_misc_multiprophecymedcatprophet1",
@@ -175,8 +174,7 @@
                 "gloomy",
                 "sincere"
             ]
-        },
-        "r_c": {}
+        }
     },
     {
         "event_id": "fst_misc_war_bolster1",
@@ -191,7 +189,6 @@
         ],
         "weight": 20,
         "event_text": "m_c has been bolstering the edges of camp with new brambles.",
-        "m_c": {},
-        "r_c": {}
+        "m_c": {}
     }
 ]
