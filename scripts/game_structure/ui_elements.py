@@ -169,8 +169,14 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
             self.join_focus_sets(self.text_layer)
             self.text_layer.disable()
 
+            # Override the text layer hover check so that it doesn't block anything below it
+            self.text_layer.check_hover = self.__text_layer_check_hover
+
             if self._is_tab:
                 self.find_text_layer_pos()
+
+    def __text_layer_check_hover(self, time_delta: float, hovered_higher_element: bool):
+        return False
 
     def find_text_layer_pos(self):
         if self.text_layer.rect.height >= self.relative_rect[3]:
@@ -216,7 +222,8 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
 
     def on_hovered(self):
         if self._is_tab and self.tab_movement["hovered"]:
-            self.find_text_layer_pos()
+            if self._is_bottom_tab:
+                self.find_text_layer_pos()
             self.text_layer.set_position(self.text_layer_active_offset)
         super().on_hovered()
 
@@ -879,6 +886,10 @@ class UISpriteButton:
         )
         del input_sprite
         self.button.join_focus_sets(self.image)
+        self.image.check_hover = self.__image_check_hover
+
+    def __image_check_hover(self, time_delta: float, hovered_higher_element: bool):
+        return False
 
     def return_cat_id(self):
         return self.button.return_cat_id()

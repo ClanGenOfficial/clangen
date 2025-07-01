@@ -294,7 +294,7 @@
 		"expanded_injury_chance": 250,
 		"cruel season_injury_chance": 150,
 		"permanent_condition_chance": 15,
-		"war_injury_modifier": 240
+		"war_injury_modifier": 225
 	},
 	"clan_creation": {
 		"rerolls": 3,
