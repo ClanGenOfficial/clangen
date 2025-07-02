@@ -1,9 +1,13 @@
 import traceback
 from random import choice
+from typing import TYPE_CHECKING
 
 import i18n
 
 from scripts.game_structure.localization import load_lang_resource
+
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 
 class Thoughts:
@@ -54,7 +58,7 @@ class Thoughts:
 
     @staticmethod
     def cats_fulfill_thought_constraints(
-        main_cat, random_cat, thought, game_mode, biome, season, camp
+        main_cat: "Cat", random_cat: "Cat", thought, game_mode, biome, season, camp
     ) -> bool:
         """Check if the two cats fulfills the thought constraints."""
 
@@ -205,6 +209,7 @@ class Thoughts:
             outside_status = "outside"
         else:
             outside_status = "clancat"
+
         if random_cat and "random_outside_status" in thought:
             if outside_status not in thought["random_outside_status"]:
                 return False
@@ -217,93 +222,102 @@ class Thoughts:
                 if outside_status and outside_status != "clancat" and len(r_c_in) > 0:
                     return False
 
-            if "has_injuries" in thought:
-                if "m_c" in thought["has_injuries"]:
-                    if main_cat.injuries or main_cat.illnesses:
-                        injuries_and_illnesses = list(main_cat.injuries.keys()) + list(
-                            main_cat.injuries.keys()
-                        )
-                        if (
-                            not [
-                                i
-                                for i in injuries_and_illnesses
-                                if i in thought["has_injuries"]["m_c"]
-                            ]
-                            and "any" not in thought["has_injuries"]["m_c"]
-                        ):
-                            return False
-                    else:
+        if "has_injuries" in thought:
+            if "m_c" in thought["has_injuries"]:
+                if main_cat.injuries or main_cat.illnesses:
+                    injuries_and_illnesses = list(main_cat.injuries.keys()) + list(
+                        main_cat.injuries.keys()
+                    )
+                    if (
+                        not [
+                            i
+                            for i in injuries_and_illnesses
+                            if i in thought["has_injuries"]["m_c"]
+                        ]
+                        and "any" not in thought["has_injuries"]["m_c"]
+                    ):
                         return False
+                else:
+                    return False
 
-                if "r_c" in thought["has_injuries"] and random_cat:
-                    if random_cat.injuries or random_cat.illnesses:
-                        injuries_and_illnesses = list(
-                            random_cat.injuries.keys()
-                        ) + list(random_cat.injuries.keys())
-                        if (
-                            not [
-                                i
-                                for i in injuries_and_illnesses
-                                if i in thought["has_injuries"]["r_c"]
-                            ]
-                            and "any" not in thought["has_injuries"]["r_c"]
-                        ):
-                            return False
-                    else:
+            if "r_c" in thought["has_injuries"] and random_cat:
+                if random_cat.injuries or random_cat.illnesses:
+                    injuries_and_illnesses = list(random_cat.injuries.keys()) + list(
+                        random_cat.injuries.keys()
+                    )
+                    if (
+                        not [
+                            i
+                            for i in injuries_and_illnesses
+                            if i in thought["has_injuries"]["r_c"]
+                        ]
+                        and "any" not in thought["has_injuries"]["r_c"]
+                    ):
                         return False
-
-            if "perm_conditions" in thought:
-                if "m_c" in thought["perm_conditions"]:
-                    if main_cat.permanent_condition:
-                        if (
-                            not [
-                                i
-                                for i in main_cat.permanent_condition
-                                if i in thought["perm_conditions"]["m_c"]
-                            ]
-                            and "any" not in thought["perm_conditions"]["m_c"]
-                        ):
-                            return False
-                    else:
-                        return False
-
-                if "r_c" in thought["perm_conditions"] and random_cat:
-                    if random_cat.permanent_condition:
-                        if (
-                            not [
-                                i
-                                for i in random_cat.permanent_condition
-                                if i in thought["perm_conditions"]["r_c"]
-                            ]
-                            and "any" not in thought["perm_conditions"]["r_c"]
-                        ):
-                            return False
-                    else:
-                        return False
+                else:
+                    return False
 
         if "perm_conditions" in thought:
             if "m_c" in thought["perm_conditions"]:
-                if main_cat.permanent_condition:
-                    if (
-                        not [
-                            i
-                            for i in main_cat.permanent_condition
-                            if i in thought["perm_conditions"]["m_c"]
-                        ]
-                        and "any" not in thought["perm_conditions"]["m_c"]
+                if not main_cat.permanent_condition:
+                    return False
+
+                valid_conditions = [
+                    value
+                    for key, value in main_cat.permanent_condition.items()
+                    if key in thought["perm_conditions"]["m_c"]
+                ]
+
+                if (
+                    not valid_conditions
+                    and "any" not in thought["perm_conditions"]["m_c"]
+                ):
+                    return False
+
+                # find whether the status is constrained to congenital
+                if (
+                    congenital := thought["perm_conditions"]
+                    .get("born_with", {})
+                    .get("m_c")
+                ):
+                    # permit the event if any of the found permitted conditions matches the born_with param
+                    if any(
+                        condition["born_with"] == congenital
+                        for condition in valid_conditions
                     ):
+                        pass
+                    else:
                         return False
 
             if "r_c" in thought["perm_conditions"] and random_cat:
-                if random_cat.permanent_condition:
-                    if (
-                        not [
-                            i
-                            for i in random_cat.permanent_condition
-                            if i in thought["perm_conditions"]["r_c"]
-                        ]
-                        and "any" not in thought["perm_conditions"]["r_c"]
+                if not random_cat.permanent_condition:
+                    return False
+
+                valid_conditions = [
+                    value
+                    for key, value in random_cat.permanent_condition.items()
+                    if key in thought["perm_conditions"]["r_c"]
+                ]
+
+                if (
+                    not valid_conditions
+                    and "any" not in thought["perm_conditions"]["r_c"]
+                ):
+                    return False
+
+                # find whether the status is constrained to congenital
+                if (
+                    congenital := thought["perm_conditions"]
+                    .get("born_with", {})
+                    .get("r_c")
+                ):
+                    # permit the event if any of the given permitted conditions matches the born_with param
+                    if any(
+                        condition["born_with"] == congenital
+                        for condition in valid_conditions
                     ):
+                        pass
+                    else:
                         return False
 
         return True
