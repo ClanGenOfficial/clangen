@@ -945,21 +945,17 @@ class Pregnancy_Events:
                     change_relationship_values(
                         cats_from=[kit],
                         cats_to=[parent],
-                        platonic_like=kit_to_parent["platonic"],
-                        dislike=kit_to_parent["dislike"],
-                        admiration=kit_to_parent["admiration"],
-                        comfortable=kit_to_parent["comfortable"],
-                        jealousy=kit_to_parent["jealousy"],
+                        like=kit_to_parent["platonic"],
+                        respect=kit_to_parent["admiration"],
+                        comfort=kit_to_parent["comfortable"],
                         trust=kit_to_parent["trust"],
                     )
                     change_relationship_values(
                         cats_from=[parent],
                         cats_to=[kit],
-                        platonic_like=parent_to_kit["platonic"],
-                        dislike=parent_to_kit["dislike"],
-                        admiration=parent_to_kit["admiration"],
-                        comfortable=parent_to_kit["comfortable"],
-                        jealousy=parent_to_kit["jealousy"],
+                        like=parent_to_kit["platonic"],
+                        respect=parent_to_kit["admiration"],
+                        comfort=parent_to_kit["comfortable"],
                         trust=parent_to_kit["trust"],
                     )
 

@@ -73,23 +73,19 @@ class Welcoming_Events:
         change_relationship_values(
             cats_to=[clan_cat],
             cats_from=[new_cat],
-            romantic_love=new_to_clan_cat["romantic"],
-            platonic_like=new_to_clan_cat["platonic"],
-            dislike=new_to_clan_cat["dislike"],
-            admiration=new_to_clan_cat["admiration"],
-            comfortable=new_to_clan_cat["comfortable"],
-            jealousy=new_to_clan_cat["jealousy"],
+            romance=new_to_clan_cat["romantic"],
+            like=new_to_clan_cat["platonic"],
+            respect=new_to_clan_cat["admiration"],
+            comfort=new_to_clan_cat["comfortable"],
             trust=new_to_clan_cat["trust"],
         )
         change_relationship_values(
             cats_to=[new_cat],
             cats_from=[clan_cat],
-            romantic_love=clan_cat_to_new["romantic"],
-            platonic_like=clan_cat_to_new["platonic"],
-            dislike=clan_cat_to_new["dislike"],
-            admiration=clan_cat_to_new["admiration"],
-            comfortable=clan_cat_to_new["comfortable"],
-            jealousy=clan_cat_to_new["jealousy"],
+            romance=clan_cat_to_new["romantic"],
+            like=clan_cat_to_new["platonic"],
+            respect=clan_cat_to_new["admiration"],
+            comfort=clan_cat_to_new["comfortable"],
             trust=clan_cat_to_new["trust"],
         )
 

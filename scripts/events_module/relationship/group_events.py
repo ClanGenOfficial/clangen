@@ -540,9 +540,7 @@ class GroupEvents:
         if "trust" in dictionary and dictionary["trust"] != "neutral":
             platonic = amount if dictionary["admiration"] == "increase" else amount * -1
         if "comfort" in dictionary and dictionary["comfort"] != "neutral":
-            platonic = (
-                amount if dictionary["comfort"] == "increase" else amount * -1
-            )
+            platonic = amount if dictionary["comfort"] == "increase" else amount * -1
 
         abbreviations_cat = []
 
@@ -587,21 +585,13 @@ class GroupEvents:
             comfort = 0
 
             if "romance" in dictionary and dictionary["romance"] != "neutral":
-                romance = (
-                    amount if dictionary["romance"] == "increase" else amount * -1
-                )
+                romance = amount if dictionary["romance"] == "increase" else amount * -1
             if "like" in dictionary and dictionary["like"] != "neutral":
-                like = (
-                    amount if dictionary["like"] == "increase" else amount * -1
-                )
+                like = amount if dictionary["like"] == "increase" else amount * -1
             if "respect" in dictionary and dictionary["respect"] != "neutral":
-                respect = (
-                    amount if dictionary["respect"] == "increase" else amount * -1
-                )
+                respect = amount if dictionary["respect"] == "increase" else amount * -1
             if "trust" in dictionary and dictionary["trust"] != "neutral":
-                trust = (
-                    amount if dictionary["trust"] == "increase" else amount * -1
-                )
+                trust = amount if dictionary["trust"] == "increase" else amount * -1
             if "comfort" in dictionary and dictionary["comfort"] != "neutral":
                 comfort = amount if dictionary["comfort"] == "increase" else amount * -1
 

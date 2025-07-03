@@ -1588,13 +1588,11 @@ def unpack_rel_block(
         change_relationship_values(
             cats_to_ob,
             cats_from_ob,
-            romantic_love,
-            platonic_like,
-            dislike,
-            admiration,
-            comfortable,
-            jealousy,
-            trust,
+            romance=romantic_love,
+            like=platonic_like,
+            respect=admiration,
+            comfort=comfortable,
+            trust=trust,
             log=log1,
         )
 
@@ -1602,13 +1600,11 @@ def unpack_rel_block(
             change_relationship_values(
                 cats_from_ob,
                 cats_to_ob,
-                romantic_love,
-                platonic_like,
-                dislike,
-                admiration,
-                comfortable,
-                jealousy,
-                trust,
+                romance=romantic_love,
+                like=platonic_like,
+                respect=admiration,
+                comfort=comfortable,
+                trust=trust,
                 log=log2,
             )
 
@@ -1616,14 +1612,11 @@ def unpack_rel_block(
 def change_relationship_values(
     cats_to: list,
     cats_from: list,
-    romantic_love: int = 0,
-    platonic_like: int = 0,
-    dislike: int = 0,
-    admiration: int = 0,
-    comfortable: int = 0,
-    jealousy: int = 0,
+    romance: int = 0,
+    like: int = 0,
+    respect: int = 0,
+    comfort: int = 0,
     trust: int = 0,
-    auto_romance: bool = False,
     log: str = None,
 ):
     """
@@ -1633,15 +1626,11 @@ def change_relationship_values(
     (e.g. cat_from loses trust in cat_to)
     :param list[Cat] cats_to: list of cats objects who are the target of that rel value
     (e.g. cat_from loses trust in cat_to)
-    :param int romantic_love: amount to change romantic, default 0
-    :param int platonic_like: amount to change platonic, default 0
-    :param int dislike: amount to change dislike, default 0
-    :param int admiration: amount to change admiration (respect), default 0
-    :param int comfortable: amount to change comfort, default 0
-    :param int jealousy: amount to change jealousy, default 0
+    :param int romance: amount to change romantic, default 0
+    :param int like: amount to change platonic, default 0
+    :param int respect: amount to change admiration (respect), default 0
+    :param int comfort: amount to change comfort, default 0
     :param int trust: amount to change trust, default 0
-    :param bool auto_romance: if the cat_from already has romantic value with cat_to, then the platonic_like param value
-    will also be applied to romantic, default False
     :param str log: the string to append to the relationship log of cats involved
     """
 
@@ -1671,20 +1660,13 @@ def change_relationship_values(
                 single_cat_from.is_potential_mate(single_cat_to, for_love_interest=True)
                 or single_cat_to.ID in single_cat_from.mate
             ):
-                # if cat already has romantic feelings then automatically increase romantic feelings
-                # when platonic feelings would increase
-                if rel.romance > 0 and auto_romance:
-                    romantic_love = platonic_like
-
                 # now gain the romance
-                rel.romance += romantic_love
+                rel.romance += romance
 
             # gain other rel values
-            rel.like += platonic_like
-            rel.dislike += dislike
-            rel.respect += admiration
-            rel.comfort += comfortable
-            rel.jealousy += jealousy
+            rel.like += like
+            rel.respect += respect
+            rel.comfort += comfort
             rel.trust += trust
 
             # for testing purposes - DON'T DELETE - you can use this to test if relationships are changing

@@ -238,11 +238,9 @@ class HandleShortEvents:
             change_relationship_values(
                 [self.random_cat],
                 [kit],
-                platonic_like=-20,
-                dislike=40,
-                admiration=-30,
-                comfortable=-30,
-                jealousy=0,
+                like=-20,
+                respect=-30,
+                comfort=-30,
                 trust=-30,
             )
 
