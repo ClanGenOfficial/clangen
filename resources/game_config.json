@@ -18,7 +18,13 @@
 			"chance_of_special_group - 1/chance often when a group event is happening not all cats are considered, only a special group, which is defined in group_types.json",
 			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate",
 			"influence_condition_events - how much an event with a condition can influence the relationship"
-		]
+		],
+		"value_levels": {
+			"extreme_neg": -50,
+			"neg": 0,
+			"pos": 50,
+			"extreme_pos": 100
+		}
 	},
 	"mates":{
 		"age_range": 40,

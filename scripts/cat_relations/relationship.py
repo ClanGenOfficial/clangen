@@ -2,6 +2,7 @@ import random
 from random import choice
 
 import i18n
+from strenum import StrEnum
 
 import scripts.cat_relations.interaction as interactions
 from scripts.cat.history import History
@@ -299,27 +300,27 @@ class Relationship:
         # so a negative interaction will affect all values to a negative degree
         # and a positive interaction will affect all values to a positive degree
 
-        if rel_type != "romance":
+        if rel_type != RelValue.ROMANCE:
             self.romance += choice(buffs)
         else:
             self.romance += amount
 
-        if rel_type != "like":
+        if rel_type != RelValue.LIKE:
             self.like += choice(buffs)
         else:
             self.like += amount
 
-        if rel_type != "respect":
+        if rel_type != RelValue.RESPECT:
             self.respect += choice(buffs)
         else:
             self.respect += amount
 
-        if rel_type != "trust":
+        if rel_type != RelValue.TRUST:
             self.trust += choice(buffs)
         else:
             self.trust += amount
 
-        if rel_type != "comfort":
+        if rel_type != RelValue.COMFORT:
             self.comfort += choice(buffs)
         else:
             self.comfort += amount
@@ -352,15 +353,15 @@ class Relationship:
                 continue
             amount = self.get_amount(value, "low")
 
-            if key == "romance":
+            if key == RelValue.ROMANCE:
                 self.romance += amount
-            elif key == "platonic":
+            elif key == RelValue.LIKE:
                 self.like += amount
-            elif key == "respect":
+            elif key == RelValue.RESPECT:
                 self.respect += amount
-            elif key == "comfort":
+            elif key == RelValue.COMFORT:
                 self.comfort += amount
-            elif key == "trust":
+            elif key == RelValue.TRUST:
                 self.trust += amount
 
     def positive_interaction(self) -> bool:
@@ -409,39 +410,39 @@ class Relationship:
             the relationship type which will happen
         """
         value_weights = {
-            "trust": 1,
-            "comfort": 1,
-            "respect": 1,
-            "like": 1,
-            "romance": 1,
+            RelValue.TRUST: 1,
+            RelValue.COMFORT: 1,
+            RelValue.RESPECT: 1,
+            RelValue.LIKE: 1,
+            RelValue.ROMANCE: 1,
         }
 
         # change the weights according if the interaction should be positive or negative
         # existing rel values determine the weight added
         if positive:
             if self.like > 0:
-                value_weights["like"] += int(self.like / 10)
+                value_weights[RelValue.LIKE] += int(self.like / 10)
             if self.respect > 0:
-                value_weights["respect"] += int(self.respect / 10)
+                value_weights[RelValue.RESPECT] += int(self.respect / 10)
             if self.comfort > 0:
-                value_weights["comfort"] += int(self.comfort / 10)
+                value_weights[RelValue.COMFORT] += int(self.comfort / 10)
             if self.trust > 0:
-                value_weights["trust"] += int(self.trust / 10)
+                value_weights[RelValue.TRUST] += int(self.trust / 10)
             if self.romance > 0:
-                value_weights["romance"] += int(self.romance / 10)
+                value_weights[RelValue.ROMANCE] += int(self.romance / 10)
         else:
             if self.like < 0:
-                value_weights["like"] += int(abs(self.like) / 10)
+                value_weights[RelValue.LIKE] += int(abs(self.like) / 10)
             if self.respect < 0:
-                value_weights["respect"] += int(abs(self.respect) / 10)
+                value_weights[RelValue.RESPECT] += int(abs(self.respect) / 10)
             if self.comfort < 0:
-                value_weights["comfort"] += int(abs(self.comfort) / 10)
+                value_weights[RelValue.COMFORT] += int(abs(self.comfort) / 10)
             if self.trust < 0:
-                value_weights["trust"] += int(abs(self.trust) / 10)
+                value_weights[RelValue.TRUST] += int(abs(self.trust) / 10)
 
         # increase the chance of a romance interaction if they are already mates
         if self.mates:
-            value_weights["romance"] += 1
+            value_weights[RelValue.ROMANCE] += 1
 
         # if a romance relationship is not possible, remove this type, mut only if there are no mates
         # if there already mates (set up by the user for example), don't remove this type
@@ -452,16 +453,16 @@ class Relationship:
             self.cat_from, for_love_interest=True
         )
         if (not mate_from_to or not mate_to_from) and not self.mates:
-            while "romance" in value_weights:
-                value_weights.pop("romance")
+            while RelValue.ROMANCE in value_weights:
+                value_weights.pop(RelValue.ROMANCE)
 
         # if cats have no romance relationship already, don't allow romance decrease
         if (
             not positive
-            and "romance" in value_weights
+            and RelValue.ROMANCE in value_weights
             and not self.cat_from.relationships[self.cat_to.ID].romance
         ):
-            value_weights.pop("romance")
+            value_weights.pop(RelValue.ROMANCE)
 
         chosen_type = random.choices(
             [value for value in value_weights.keys()],
@@ -536,8 +537,20 @@ class Relationship:
 
         return filtered
 
+    def get_value_levels(self) -> list:
+        """
+        Returns a list of all current value level strings
+        """
+        return [
+            self.romance_level,
+            self.like_level,
+            self.trust_level,
+            self.comfort_level,
+            self.respect_level,
+        ]
+
     @property
-    def romance(self):
+    def romance(self) -> int:
         """0-100 scale, 0 is no romantic interest and 100 is full romantic interest"""
         return self._romance
 
@@ -550,7 +563,21 @@ class Relationship:
         self._romance = value
 
     @property
-    def like(self):
+    def romance_level(self):
+        if not self.romance:
+            return None
+
+        group = _get_level_group(self.romance)
+
+        if group == "pos":
+            return ValueLevel.FANCIES
+        elif group == "extreme_pos":
+            return ValueLevel.ADORES
+        else:
+            return None
+
+    @property
+    def like(self) -> int:
         return self._like
 
     @like.setter
@@ -562,7 +589,25 @@ class Relationship:
         self._like = value
 
     @property
-    def respect(self):
+    def like_level(self):
+        if not self.like:
+            return None
+
+        group = _get_level_group(self.like)
+
+        if group == "extreme_neg":
+            return ValueLevel.HATES
+        elif group == "neg":
+            return ValueLevel.DISLIKES
+        elif group == "pos":
+            return ValueLevel.LIKES
+        elif group == "extreme_pos":
+            return ValueLevel.LOVES
+        else:
+            return None
+
+    @property
+    def respect(self) -> int:
         return self._respect
 
     @respect.setter
@@ -574,7 +619,25 @@ class Relationship:
         self._respect = value
 
     @property
-    def comfort(self):
+    def respect_level(self):
+        if not self.respect:
+            return None
+
+        group = _get_level_group(self.respect)
+
+        if group == "extreme_neg":
+            return ValueLevel.RESENTS
+        elif group == "neg":
+            return ValueLevel.ENVIES
+        elif group == "pos":
+            return ValueLevel.RESPECTS
+        elif group == "extreme_pos":
+            return ValueLevel.ADMIRES
+        else:
+            return None
+
+    @property
+    def comfort(self) -> int:
         return self._comfort
 
     @comfort.setter
@@ -586,7 +649,25 @@ class Relationship:
         self._comfort = value
 
     @property
-    def trust(self):
+    def comfort_level(self):
+        if not self.comfort:
+            return None
+
+        group = _get_level_group(self.comfort)
+
+        if group == "extreme_neg":
+            return ValueLevel.FEARS
+        elif group == "neg":
+            return ValueLevel.AVOIDS
+        elif group == "pos":
+            return ValueLevel.SEEKS
+        elif group == "extreme_pos":
+            return ValueLevel.RELIES_ON
+        else:
+            return None
+
+    @property
+    def trust(self) -> int:
         return self._trust
 
     @trust.setter
@@ -596,3 +677,83 @@ class Relationship:
         if value < -100:
             value = -100
         self._trust = value
+
+    @property
+    def trust_level(self):
+        if not self.trust:
+            return None
+
+        group = _get_level_group(self.trust)
+
+        if group == "extreme_neg":
+            return ValueLevel.DISTRUSTS
+        elif group == "neg":
+            return ValueLevel.DOUBTS
+        elif group == "pos":
+            return ValueLevel.FAVORS
+        elif group == "extreme_pos":
+            return ValueLevel.TRUSTS
+        else:
+            return None
+
+
+def _get_level_group(value):
+    found_group = None
+    for group, interval in game.config["relationship"]["value_levels"].items():
+        if value <= interval:
+            found_group = group
+            break
+    return found_group
+
+
+class RelValue(StrEnum):
+    ROMANCE = "romance"
+    LIKE = "like"
+    RESPECT = "respect"
+    TRUST = "trust"
+    COMFORT = "comfort"
+
+
+class ValueLevel(StrEnum):
+    HATES = "hates"
+    DISLIKES = "dislikes"
+    LIKES = "likes"
+    LOVES = "loves"
+    RESENTS = "resents"
+    ENVIES = "envies"
+    RESPECTS = "respects"
+    ADMIRES = "admires"
+    DISTRUSTS = "distrusts"
+    DOUBTS = "doubts"
+    FAVORS = "favors"
+    TRUSTS = "trusts"
+    FEARS = "fears"
+    AVOIDS = "avoids"
+    SEEKS = "seeks"
+    RELIES_ON = "relies_on"
+    FANCIES = "fancies"
+    ADORES = "adores"
+
+    def is_extreme_neg(self):
+        return self in (self.HATES, self.RESENTS, self.DISTRUSTS, self.FEARS)
+
+    def is_neg(self):
+        return self in (self.DISLIKES, self.ENVIES, self.DOUBTS, self.AVOIDS)
+
+    def is_pos(self):
+        return self in (
+            self.LIKES,
+            self.RESPECTS,
+            self.FAVORS,
+            self.SEEKS,
+            self.FANCIES,
+        )
+
+    def is_extreme_pos(self):
+        return self in (
+            self.LOVES,
+            self.ADMIRES,
+            self.TRUSTS,
+            self.RELIES_ON,
+            self.ADORES,
+        )
