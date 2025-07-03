@@ -8,6 +8,11 @@ from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import create_group_interaction, GroupInteraction
 from scripts.event_class import Single_Event
+from scripts.events_module.event_filters import (
+    event_for_location,
+    event_for_season,
+    event_for_cat,
+)
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     change_relationship_values,
@@ -68,7 +73,7 @@ class GroupEvents:
             GroupEvents.current_lang = i18n.config.get("locale")
 
         cat_amount = choice(list(GroupEvents.GROUP_INTERACTION_MASTER_DICT.keys()))
-        inter_type = choice(["negative", "positive", "neutral"])
+        inter_type = choice(["negative", "positive"])
 
         # if the chosen amount is bigger than the given interaction cats,
         # there will be no possible solution and it will be returned
@@ -169,47 +174,22 @@ class GroupEvents:
             a list of interactions, which fulfill the criteria
         """
         filtered_interactions = []
-        allowed_season = [season, "Any", "any"]
-        allowed_biome = [biome, "Any", "any"]
         main_cat = Cat.all_cats[abbreviations_cat_id["m_c"]]
         for interact in interactions:
-            in_tags = [i for i in interact.biome if i in allowed_biome]
-            if len(in_tags) < 1:
+            if not event_for_location(interact.biome):
                 continue
 
-            in_tags = [i for i in interact.season if i in allowed_season]
-            if len(in_tags) < 1:
+            if not event_for_season(interact.season):
                 continue
 
-            if (
-                len(interact.status_constraint) >= 1
-                and "m_c" in interact.status_constraint
-            ):
-                if main_cat.status not in interact.status_constraint["m_c"]:
-                    continue
-
-            if (
-                len(interact.trait_constraint) >= 1
-                and "m_c" in interact.trait_constraint
-            ):
-                if main_cat.personality.trait not in interact.trait_constraint["m_c"]:
-                    continue
-
-            if (
-                len(interact.skill_constraint) >= 1
-                and "m_c" in interact.skill_constraint
-            ):
-                if not main_cat.skills.check_skill_requirement_list(
-                    interact.skill_constraint["m_c"]
-                ):
-                    continue
-
-            if (
-                len(interact.backstory_constraint) >= 1
-                and "m_c" in interact.backstory_constraint
-            ):
-                if main_cat.backstory not in interact.backstory_constraint["m_c"]:
-                    continue
+            main_constraint_dict = {
+                "status": interact.main_status_constraint["m_c"],
+                "trait": interact.main_trait_constraint["m_c"],
+                "backstory": interact.interaction.backstory_constraint["m_c"],
+                "skills": interact.main_skill_constraint["m_c"],
+            }
+            if not event_for_cat(main_constraint_dict, main_cat):
+                continue
 
             filtered_interactions.append(interact)
         return filtered_interactions
@@ -312,9 +292,6 @@ class GroupEvents:
 
             for abbreviation in dictionary:
                 dictionary[abbreviation] = []
-                status_ids = []
-                skill_ids = []
-                trait_ids = []
 
                 # if the abbreviation has a status constraint, check in details
                 if abbreviation in interact.status_constraint:
@@ -548,29 +525,25 @@ class GroupEvents:
         dictionary = chosen_interaction.general_reaction
 
         # set the amount
-        romantic = 0
-        platonic = 0
-        dislike = 0
-        admiration = 0
-        comfortable = 0
-        jealousy = 0
+        romance = 0
+        like = 0
+        respect = 0
         trust = 0
-        if "romantic" in dictionary and dictionary["romantic"] != "neutral":
+        comfort = 0
+
+        if "romance" in dictionary and dictionary["romance"] != "neutral":
             romantic = amount if dictionary["romantic"] == "increase" else amount * -1
-        if "platonic" in dictionary and dictionary["platonic"] != "neutral":
+        if "like" in dictionary and dictionary["like"] != "neutral":
             platonic = amount if dictionary["platonic"] == "increase" else amount * -1
-        if "dislike" in dictionary and dictionary["dislike"] != "neutral":
+        if "respect" in dictionary and dictionary["respect"] != "neutral":
             platonic = amount if dictionary["dislike"] == "increase" else amount * -1
-        if "admiration" in dictionary and dictionary["admiration"] != "neutral":
-            platonic = amount if dictionary["admiration"] == "increase" else amount * -1
-        if "comfortable" in dictionary and dictionary["comfortable"] != "neutral":
-            platonic = (
-                amount if dictionary["comfortable"] == "increase" else amount * -1
-            )
-        if "jealousy" in dictionary and dictionary["jealousy"] != "neutral":
-            platonic = amount if dictionary["jealousy"] == "increase" else amount * -1
         if "trust" in dictionary and dictionary["trust"] != "neutral":
-            platonic = amount if dictionary["trust"] == "increase" else amount * -1
+            platonic = amount if dictionary["admiration"] == "increase" else amount * -1
+        if "comfort" in dictionary and dictionary["comfort"] != "neutral":
+            platonic = (
+                amount if dictionary["comfort"] == "increase" else amount * -1
+            )
+
         abbreviations_cat = []
 
         for cat in abbreviations_cat_id:
@@ -579,13 +552,11 @@ class GroupEvents:
             change_relationship_values(
                 cats_from=[inter_cat],
                 cats_to=list(abbreviations_cat),
-                romantic_love=romantic,
-                platonic_like=platonic,
-                dislike=dislike,
-                admiration=admiration,
-                comfortable=comfortable,
-                jealousy=jealousy,
+                romance=romance,
+                like=like,
+                respect=respect,
                 trust=trust,
+                comfort=comfort,
             )
 
     @staticmethod
@@ -608,48 +579,40 @@ class GroupEvents:
             cat_to = Cat.all_cats[cat_to_id]
 
             # set all values to influence the relationship
-            romantic = 0
-            platonic = 0
-            dislike = 0
-            admiration = 0
-            comfortable = 0
-            jealousy = 0
+            # set the amount
+            romance = 0
+            like = 0
+            respect = 0
             trust = 0
-            if "romantic" in dictionary and dictionary["romantic"] != "neutral":
-                romantic = (
-                    amount if dictionary["romantic"] == "increase" else amount * -1
+            comfort = 0
+
+            if "romance" in dictionary and dictionary["romance"] != "neutral":
+                romance = (
+                    amount if dictionary["romance"] == "increase" else amount * -1
                 )
-            if "platonic" in dictionary and dictionary["platonic"] != "neutral":
-                platonic = (
-                    amount if dictionary["platonic"] == "increase" else amount * -1
+            if "like" in dictionary and dictionary["like"] != "neutral":
+                like = (
+                    amount if dictionary["like"] == "increase" else amount * -1
                 )
-            if "dislike" in dictionary and dictionary["dislike"] != "neutral":
-                dislike = amount if dictionary["dislike"] == "increase" else amount * -1
-            if "admiration" in dictionary and dictionary["admiration"] != "neutral":
-                admiration = (
-                    amount if dictionary["admiration"] == "increase" else amount * -1
-                )
-            if "comfortable" in dictionary and dictionary["comfortable"] != "neutral":
-                comfortable = (
-                    amount if dictionary["comfortable"] == "increase" else amount * -1
-                )
-            if "jealousy" in dictionary and dictionary["jealousy"] != "neutral":
-                jealousy = (
-                    amount if dictionary["jealousy"] == "increase" else amount * -1
+            if "respect" in dictionary and dictionary["respect"] != "neutral":
+                respect = (
+                    amount if dictionary["respect"] == "increase" else amount * -1
                 )
             if "trust" in dictionary and dictionary["trust"] != "neutral":
-                trust = amount if dictionary["trust"] == "increase" else amount * -1
+                trust = (
+                    amount if dictionary["trust"] == "increase" else amount * -1
+                )
+            if "comfort" in dictionary and dictionary["comfort"] != "neutral":
+                comfort = amount if dictionary["comfort"] == "increase" else amount * -1
 
             change_relationship_values(
-                cats_from=[cat_from],
-                cats_to=[cat_to],
-                romantic_love=romantic,
-                platonic_like=platonic,
-                dislike=dislike,
-                admiration=admiration,
-                comfortable=comfortable,
-                jealousy=jealousy,
+                cats_from=[inter_cat],
+                cats_to=list(abbreviations_cat),
+                romance=romance,
+                like=like,
+                respect=respect,
                 trust=trust,
+                comfort=comfort,
             )
 
     @staticmethod
