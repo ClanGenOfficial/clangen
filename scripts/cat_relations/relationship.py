@@ -734,6 +734,21 @@ class ValueLevel(StrEnum):
     FANCIES = "fancies"
     ADORES = "adores"
 
+    def is_like_level(self):
+        return self in (self.HATES, self.DISLIKES, self.LIKES, self.LOVES)
+
+    def is_respect_level(self):
+        return self in (self.RESENTS, self.ENVIES, self.RESPECTS, self.ADMIRES)
+
+    def is_trust_level(self):
+        return self in (self.DISTRUSTS, self.DOUBTS, self.FAVORS, self.TRUSTS)
+
+    def is_comfort_level(self):
+        return self in (self.FEARS, self.AVOIDS, self.SEEKS, self.RELIES_ON)
+
+    def is_romance_level(self):
+        return self in (self.FANCIES, self.ADORES)
+
     def is_extreme_neg(self):
         return self in (self.HATES, self.RESENTS, self.DISTRUSTS, self.FEARS)
 
