@@ -658,10 +658,10 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, inter_cat, False, True)
-                start_relation.like += 30 + y
-                start_relation.comfort = 10 + y
-                start_relation.respect = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 40 + y
+                start_relation.comfort = 40 + y
+                start_relation.respect = 10 + y
+                start_relation.trust = 30 + y
                 n_c.relationships[inter_cat.ID] = start_relation
 
             # BIO PARENTS
@@ -671,18 +671,18 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
-                start_relation.like += 30 + y
-                start_relation.comfort = 10 + y
-                start_relation.respect = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 60 + y
+                start_relation.comfort = 40 + y
+                start_relation.respect = 30 + y
+                start_relation.trust = 30 + y
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
-                start_relation.like += 30 + y
-                start_relation.comfort = 10 + y
-                start_relation.respect = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 40 + y
+                start_relation.comfort = 70 + y
+                start_relation.respect = 30 + y
+                start_relation.trust = 60 + y
                 n_c.relationships[par.ID] = start_relation
 
             # ADOPTIVE PARENTS
@@ -694,18 +694,18 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
-                start_relation.like += 30 + y
-                start_relation.comfort = 10 + y
-                start_relation.respect = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 60 + y
+                start_relation.comfort = 40 + y
+                start_relation.respect = 30 + y
+                start_relation.trust = 30 + y
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
-                start_relation.like += 30 + y
-                start_relation.comfort = 10 + y
-                start_relation.respect = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 40 + y
+                start_relation.comfort = 70 + y
+                start_relation.respect = 30 + y
+                start_relation.trust = 60 + y
                 n_c.relationships[par.ID] = start_relation
 
             # UPDATE INHERITANCE
@@ -1030,20 +1030,18 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     else:
         relationship = cat_from.create_one_relationship(cat_to)
 
-    if rel_value == "romantic":
+    if rel_value == "romance":
         return relationship.romance
-    elif rel_value == "platonic":
+    elif rel_value == "like":
         return relationship.like
-    elif rel_value == "dislike":
-        return relationship.dislike
     elif rel_value == "respect":
         return relationship.respect
     elif rel_value == "comfort":
         return relationship.comfort
-    elif rel_value == "jealousy":
-        return relationship.jealousy
     elif rel_value == "trust":
         return relationship.trust
+
+    return None
 
 
 def get_personality_compatibility(cat1, cat2):
@@ -1124,10 +1122,8 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
     relation_dict = {
         "romance": [],
         "like": [],
-        "dislike": [],
         "respect": [],
         "comfort": [],
-        "jealousy": [],
         "trust": [],
     }
 
@@ -1139,19 +1135,15 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
 
         relation_dict["romance"].append(relation.romance >= value)
         relation_dict["like"].append(relation.like >= value)
-        relation_dict["dislike"].append(relation.dislike >= value)
         relation_dict["respect"].append(relation.respect >= value)
         relation_dict["comfort"].append(relation.comfort >= value)
-        relation_dict["jealousy"].append(relation.jealousy >= value)
         relation_dict["trust"].append(relation.trust >= value)
 
     return_dict = {
         "romance": sum(relation_dict["romance"]),
         "like": sum(relation_dict["like"]),
-        "dislike": sum(relation_dict["dislike"]),
         "respect": sum(relation_dict["respect"]),
         "comfort": sum(relation_dict["comfort"]),
-        "jealousy": sum(relation_dict["jealousy"]),
         "trust": sum(relation_dict["trust"]),
     }
 

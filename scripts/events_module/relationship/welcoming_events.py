@@ -40,7 +40,7 @@ class Welcoming_Events:
             Welcoming_Events.currently_loaded_lang = i18n.config.get("locale")
             Welcoming_Events.rebuild_dicts()
 
-        # setup the status as "key" to use it
+        # set up the status as "key" to use it
         status = clan_cat.status
         if status == "medicine cat" or status == "medicine cat apprentice":
             status = "medicine"
@@ -208,7 +208,7 @@ class Welcoming_Events:
                     and "under" not in interaction.new_cat_moons
                 ):
                     print(
-                        f"ERROR: The new cat welcoming event {interaction.id} has a not valid moon restriction for the new cat."
+                        f"ERROR: The new cat welcoming event {interaction.id} has an invalid moon restriction for the new cat."
                     )
                     continue
 
