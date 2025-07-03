@@ -1,6 +1,6 @@
 {
 	"relationship":{
-		"in_decrease_value":{
+		"value_change_amount":{
 			"low": 8,
 			"medium": 12,
 			"high": 16
@@ -8,7 +8,7 @@
 		"max_interaction": 5,
 		"max_interaction_special": 8,
 		"compatibility_effect": 5,
-		"passive_influence_div": 1.5,
+		"passive_influence_div": 2.5,
 		"chance_for_neutral": 10,
 		"chance_of_special_group": 8,
 		"chance_romantic_not_mate": 15,

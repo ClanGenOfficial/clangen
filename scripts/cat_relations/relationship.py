@@ -53,8 +53,11 @@ class Relationship:
         else:
             self.log = []
 
-        # each stat can go from 0 to 200, lower half is neg and higher half is pos
+        # romance operates on a 0-100 scale, 0 is no romantic interest and 100 is full romantic interest
         self.romance = romance
+
+        # each stat can go from -100 to 100
+        # negative numbers are the negative state while positive is the positive state
         self.like = like
         self.respect = respect
         self.trust = trust
@@ -95,19 +98,10 @@ class Relationship:
         rel_type = self.get_interaction_type(positive)
 
         # check if an increase interaction or a decrease interaction
-        in_de_crease = "increase" if positive else "decrease"
-        # if the type is jealousy or dislike, then increase and decrease has to be turned around
-        if rel_type in ("jealousy", "dislike"):
-            in_de_crease = "decrease" if positive else "increase"
+        value_change = "increase" if positive else "decrease"
 
-        chance = game.config["relationship"]["chance_for_neutral"]
-        if chance == 1:
-            in_de_crease = "neutral"
-        elif chance > 1 and random.randint(1, chance) == 1:
-            in_de_crease = "neutral"
-
-        # choice any type of intensity
-        intensity = choice(random.choices(["low", "medium", "high"], weights=[4, 3, 2]))
+        # choose any type of intensity
+        intensity = random.choices(["low", "medium", "high"], weights=[4, 3, 2])[0]
 
         # get other possible filters
         season = str(game.clan.current_season).casefold()
@@ -118,31 +112,25 @@ class Relationship:
         ).casefold()
         game_mode = game.clan.game_mode
 
-        all_interactions = interactions.NEUTRAL_INTERACTIONS.copy()
-        if in_de_crease != "neutral":
-            all_interactions = interactions.INTERACTION_MASTER_DICT[rel_type][
-                in_de_crease
-            ].copy()
-            possible_interactions = self.get_relevant_interactions(
-                all_interactions, intensity, biome, season, game_mode
-            )
-        else:
-            intensity = None
-            possible_interactions = self.get_relevant_interactions(
-                all_interactions, intensity, biome, season, game_mode
-            )
+        all_interactions = interactions.INTERACTION_MASTER_DICT[rel_type][
+            value_change
+        ].copy()
+
+        possible_interactions = self.get_relevant_interactions(
+            all_interactions, intensity, biome, season, game_mode
+        )
 
         # return if there are no possible interactions.
         if len(possible_interactions) <= 0:
             print(
                 "WARNING: No interaction with this conditions.",
                 rel_type,
-                in_de_crease,
+                value_change,
                 intensity,
             )
             return
 
-        # check if the current interaction id is already used and us another if so
+        # check if the current interaction id is already used and use another if so
         chosen_interaction = choice(possible_interactions)
         while (
             chosen_interaction.id in self.used_interaction_ids
@@ -159,8 +147,10 @@ class Relationship:
         self.chosen_interaction = chosen_interaction
         self.used_interaction_ids.append(self.chosen_interaction.id)
 
-        self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
+        self.interaction_affect_relationships(value_change, intensity, rel_type)
         # give cats injuries
+        # TODO: the moment we can include more than 3 cats in a short event, this should get removed
+        # it only exists for one rel event, iirc, and that event is far more suited to being an injury short event
         if self.chosen_interaction.get_injuries:
             injuries = []
             for (
@@ -213,10 +203,10 @@ class Relationship:
         # prepare string for display
         interaction_str = self.adjust_interaction_string(interaction_str)
 
-        effect = i18n.t("relationships.neutral_postscript")
-        if in_de_crease != "neutral" and positive:
+        effect = ""
+        if value_change == "increase":
             effect = i18n.t(f"relationships.positive_postscript_{intensity}")
-        elif in_de_crease != "neutral" and not positive:
+        elif value_change == "decrease":
             effect = i18n.t(f"relationships.negative_postscript_{intensity}")
 
         interaction_str = interaction_str + effect
@@ -249,12 +239,12 @@ class Relationship:
 
         return process_text(string, cat_dict)
 
-    def get_amount(self, in_de_crease: str, intensity: str) -> int:
+    def get_amount(self, value_change: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
 
         Parameters
         ----------
-        in_de_crease : list
+        value_change : str
             if the relationship value is increasing or decreasing the value
         intensity : str
             the intensity of the affect
@@ -264,11 +254,9 @@ class Relationship:
         amount : int
             the amount (negative or positive) for the given parameter
         """
-        if in_de_crease == "neutral":
-            return 0
         # get the normal amount
-        amount = game.config["relationship"]["in_decrease_value"][intensity]
-        if in_de_crease == "decrease":
+        amount = game.config["relationship"]["value_change_amount"][intensity]
+        if value_change == "decrease":
             amount = amount * -1
 
         # take compatibility into account
@@ -285,13 +273,13 @@ class Relationship:
         return amount
 
     def interaction_affect_relationships(
-        self, in_de_crease: str, intensity: str, rel_type: str
+        self, value_change: str, intensity: str, rel_type: str
     ) -> None:
         """Affects the relationship according to the chosen types.
 
         Parameters
         ----------
-        in_de_crease : list
+        value_change : str
             if the relationship value is increasing or decreasing the value
         intensity : str
             the intensity of the affect
@@ -301,26 +289,41 @@ class Relationship:
         Returns
         -------
         """
-        amount = self.get_amount(in_de_crease, intensity)
+        amount = self.get_amount(value_change, intensity)
         passive_buff = int(
-            abs(amount / game.config["relationship"]["passive_influence_div"])
+            amount / game.config["relationship"]["passive_influence_div"]
         )
+        # just adding a teeny bit of variety
+        buffs = [passive_buff - 1, passive_buff, passive_buff + 1]
 
-        # influence the own relationship
-        if rel_type == "romantic":
-            self.complex_romantic(amount, passive_buff)
-        elif rel_type == "platonic":
-            self.complex_platonic(amount, passive_buff)
-        elif rel_type == "dislike":
-            self.complex_dislike(amount, passive_buff)
-        elif rel_type == "admiration":
-            self.complex_admiration(amount, passive_buff)
-        elif rel_type == "comfortable":
-            self.complex_comfortable(amount, passive_buff)
-        elif rel_type == "jealousy":
-            self.complex_jealousy(amount, passive_buff)
-        elif rel_type == "trust":
-            self.complex_trust(amount, passive_buff)
+        # the passive buff creates a cascade affect
+        # so a negative interaction will affect all values to a negative degree
+        # and a positive interaction will affect all values to a positive degree
+
+        if rel_type != "romance":
+            self.romance += choice(buffs)
+        else:
+            self.romance += amount
+
+        if rel_type != "like":
+            self.like += choice(buffs)
+        else:
+            self.like += amount
+
+        if rel_type != "respect":
+            self.respect += choice(buffs)
+        else:
+            self.respect += amount
+
+        if rel_type != "trust":
+            self.trust += choice(buffs)
+        else:
+            self.trust += amount
+
+        if rel_type != "comfort":
+            self.comfort += choice(buffs)
+        else:
+            self.comfort += amount
 
         # influence the opposite relationship
         if self.opposite_relationship is None:
@@ -350,18 +353,14 @@ class Relationship:
                 continue
             amount = self.get_amount(value, "low")
 
-            if key == "romantic":
+            if key == "romance":
                 self.romance += amount
             elif key == "platonic":
                 self.like += amount
-            elif key == "dislike":
-                self.dislike += amount
-            elif key == "admiration":
+            elif key == "respect":
                 self.respect += amount
-            elif key == "comfortable":
+            elif key == "comfort":
                 self.comfort += amount
-            elif key == "jealousy":
-                self.jealousy += amount
             elif key == "trust":
                 self.trust += amount
 
@@ -378,18 +377,23 @@ class Relationship:
 
         """
         # base for non-existing platonic like / dislike
-        list_to_choice = [True, True, False]
+        bool_ballot = [True, True, False]
 
         # take personality in count
         comp = get_personality_compatibility(self.cat_from, self.cat_to)
         if comp is not None:
-            list_to_choice.append(comp)
+            bool_ballot.append(comp)
 
         # further influence the partition based on the relationship
-        list_to_choice += [True] * int(self.like / 10)
-        list_to_choice += [False] * int(self.dislike / 10)
+        for value in [self.like, self.respect, self.comfort, self.trust]:
+            # each 10th above 100 adds another True
+            if value > 0:
+                bool_ballot += [True] * int(value / 10)
+            # each 10th below 100
+            else:
+                bool_ballot += [False] * int(abs(value) / 10)
 
-        return choice(list_to_choice)
+        return choice(bool_ballot)
 
     def get_interaction_type(self, positive: bool) -> str:
         """Returns the type of the interaction which should be made.
@@ -407,31 +411,40 @@ class Relationship:
         """
         value_weights = {
             "trust": 1,
-            "jealousy": 1,
-            "comfortable": 1,
-            "admiration": 1,
-            "dislike": 1,
-            "platonic": 1,
-            "romantic": 1,
+            "comfort": 1,
+            "respect": 1,
+            "like": 1,
+            "romance": 1,
         }
 
         # change the weights according if the interaction should be positive or negative
+        # existing rel values determine the weight added
         if positive:
-            value_weights["platonic"] += 1
+            if self.like > 0:
+                value_weights["like"] += int(self.like / 10)
+            if self.respect > 0:
+                value_weights["respect"] += int(self.respect / 10)
+            if self.comfort > 0:
+                value_weights["comfort"] += int(self.comfort / 10)
+            if self.trust > 0:
+                value_weights["trust"] += int(self.trust / 10)
+            if self.romance > 0:
+                value_weights["romance"] += int(self.romance / 10)
         else:
-            value_weights["dislike"] += 1
-            value_weights["jealousy"] += 1
+            if self.like < 0:
+                value_weights["like"] += int(abs(self.like) / 10)
+            if self.respect < 0:
+                value_weights["respect"] += int(abs(self.respect) / 10)
+            if self.comfort < 0:
+                value_weights["comfort"] += int(abs(self.comfort) / 10)
+            if self.trust < 0:
+                value_weights["trust"] += int(abs(self.trust) / 10)
 
-        # increase the chance of a romantic interaction if they are already mates
+        # increase the chance of a romance interaction if they are already mates
         if self.mates:
-            value_weights["romantic"] += 1
+            value_weights["romance"] += 1
 
-        # create the list of choices
-        types = []
-        for rel_type, weight in value_weights.items():
-            types += [rel_type] * weight
-
-        # if a romantic relationship is not possible, remove this type, mut only if there are no mates
+        # if a romance relationship is not possible, remove this type, mut only if there are no mates
         # if there already mates (set up by the user for example), don't remove this type
         mate_from_to = self.cat_from.is_potential_mate(
             self.cat_to, for_love_interest=True
@@ -440,19 +453,22 @@ class Relationship:
             self.cat_from, for_love_interest=True
         )
         if (not mate_from_to or not mate_to_from) and not self.mates:
-            while "romantic" in types:
-                types.remove("romantic")
+            while "romance" in value_weights:
+                value_weights.pop("romance")
 
-        # if cats have no romantic relationship already, don't allow romantic decrease
+        # if cats have no romance relationship already, don't allow romance decrease
         if (
             not positive
-            and "romantic" in types
+            and "romance" in value_weights
             and not self.cat_from.relationships[self.cat_to.ID].romance
         ):
-            types.remove("romantic")
+            value_weights.pop("romance")
 
-        rel_type = choice(types)
-        return rel_type
+        chosen_type = random.choices(
+            [value for value in value_weights.keys()],
+            [weight for weight in value_weights.values()],
+        )[0]
+        return chosen_type
 
     def get_relevant_interactions(
         self,
@@ -527,176 +543,54 @@ class Relationship:
 
         return filtered
 
-    # ---------------------------------------------------------------------------- #
-    #                            complex value addition                            #
-    # ---------------------------------------------------------------------------- #
-
-    # How increasing/decreasing one state influences another directly
-    # (an increase of one state doesn't trigger a chain reaction)
-
-    # increase romantic_love -> decreases: dislike | increases: like, comfortable
-    # decrease romantic_love -> decreases: comfortable | increases: -
-
-    # increase like -> decreases: dislike | increases: comfortable
-    # decrease like -> increases: dislike | decreases: comfortable
-
-    # increase dislike -> decreases: romantic_love, like | increases: -
-    # decrease dislike -> increases: like, comfortable | decreases: -
-
-    # increase admiration -> decreases: - | increases: trust
-    # decrease admiration -> increases: dislike | decreases: trust
-
-    # increase comfortable -> decreases: jealousy, dislike | increases: trust, like
-    # decrease comfortable -> increases: jealousy, dislike | decreases: trust, like
-
-    # increase jealousy -> decreases: - | increases: dislike
-    # decrease jealousy -> increases: comfortable | decreases: -
-
-    # increase trust -> decreases: dislike | increases: comfortable
-    # decrease trust -> increases: dislike | decreases: comfortable
-
-    def complex_romantic(self, value, buff):
-        """Add the value to the romantic type and influence other value types as well."""
-        self.romance += value
-        if value > 0:
-            self.like += buff
-            self.comfort += buff
-            self.dislike -= buff
-        if value < 0:
-            self.comfort -= buff
-
-    def complex_platonic(self, value, buff):
-        """Add the value to the platonic type and influence other value types as well."""
-        self.like += value
-        if value > 0:
-            self.comfort += buff
-            self.dislike -= buff
-        if value < 0:
-            self.comfort -= buff
-            self.dislike += buff
-
-    def complex_dislike(self, value, buff):
-        """Add the value to the dislike type and influence other value types as well."""
-        self.dislike += value
-        if value > 0:
-            self.romance -= buff
-            self.like -= buff
-        if value < 0:
-            self.like += buff
-            self.comfort += buff
-
-    def complex_admiration(self, value, buff):
-        """Add the value to the admiration type and influence other value types as well."""
-        self.respect += value
-        if value > 0:
-            self.trust += buff
-        if value < 0:
-            self.trust -= buff
-            self.dislike += buff
-
-    def complex_comfortable(self, value, buff):
-        """Add the value to the comfortable type and influence other value types as well."""
-        self.comfort += value
-        if value > 0:
-            self.trust += buff
-            self.like += buff
-            self.dislike -= buff
-            self.jealousy -= buff
-        if value < 0:
-            self.trust -= buff
-            self.like -= buff
-            self.dislike += buff
-
-    def complex_jealousy(self, value, buff):
-        """Add the value to the jealousy type and influence other value types as well."""
-        self.jealousy += value
-        if value > 0:
-            self.dislike += buff
-        if value < 0:
-            self.comfort += buff
-
-    def complex_trust(self, value, buff):
-        """Add the value to the trust type and influence other value types as well."""
-        self.trust += value
-        if value > 0:
-            self.comfort += buff
-            self.dislike -= buff
-
-    # ---------------------------------------------------------------------------- #
-    #                                   property                                   #
-    # ---------------------------------------------------------------------------- #
-
     @property
-    def romantic_love(self):
-        return self._romantic_love
+    def romance(self):
+        """0-100 scale, 0 is no romantic interest and 100 is full romantic interest"""
+        return self._romance
 
-    @romantic_love.setter
-    def romantic_love(self, value):
+    @romance.setter
+    def romance(self, value):
         if value > 100:
             value = 100
         if value < 0:
             value = 0
-        self._romantic_love = value
+        self._romance = value
 
     @property
-    def platonic_like(self):
-        return self._platonic_like
+    def like(self):
+        return self._like
 
-    @platonic_like.setter
-    def platonic_like(self, value):
+    @like.setter
+    def like(self, value):
         if value > 100:
             value = 100
-        if value < 0:
-            value = 0
-        self._platonic_like = value
+        if value < -100:
+            value = -100
+        self._like = value
 
     @property
-    def dislike(self):
-        return self._dislike
+    def respect(self):
+        return self._respect
 
-    @dislike.setter
-    def dislike(self, value):
+    @respect.setter
+    def respect(self, value):
         if value > 100:
             value = 100
-        if value < 0:
-            value = 0
-        self._dislike = value
+        if value < -100:
+            value = -100
+        self._respect = value
 
     @property
-    def admiration(self):
-        return self._admiration
+    def comfort(self):
+        return self._comfort
 
-    @admiration.setter
-    def admiration(self, value):
+    @comfort.setter
+    def comfort(self, value):
         if value > 100:
             value = 100
-        if value < 0:
-            value = 0
-        self._admiration = value
-
-    @property
-    def comfortable(self):
-        return self._comfortable
-
-    @comfortable.setter
-    def comfortable(self, value):
-        if value > 100:
-            value = 100
-        if value < 0:
-            value = 0
-        self._comfortable = value
-
-    @property
-    def jealousy(self):
-        return self._jealousy
-
-    @jealousy.setter
-    def jealousy(self, value):
-        if value > 100:
-            value = 100
-        if value < 0:
-            value = 0
-        self._jealousy = value
+        if value < -100:
+            value = -100
+        self._comfort = value
 
     @property
     def trust(self):
@@ -706,6 +600,6 @@ class Relationship:
     def trust(self, value):
         if value > 100:
             value = 100
-        if value < 0:
-            value = 0
+        if value < -100:
+            value = -100
         self._trust = value
