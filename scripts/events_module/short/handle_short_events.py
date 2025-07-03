@@ -847,6 +847,7 @@ class HandleShortEvents:
             reduce_amount = -int(freshkill_pile.total_amount / 8)
         elif "increase" in adjustment:
             increase_amount = adjustment.split("_")[1]
+            increase_amount = int(increase_amount)
 
         if reduce_amount != 0:
             freshkill_pile.remove_freshkill(reduce_amount, take_random=True)
