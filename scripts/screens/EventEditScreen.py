@@ -652,7 +652,7 @@ class EventEditScreen(Screens):
             new_event.pop("r_c")
 
         if self.new_cat_block_dict:
-            new_event["new_cat"] = self.new_cat_block_dict.values()
+            new_event["new_cat"] = list(self.new_cat_block_dict.values())
 
         if self.injury_block_list:
             for block in self.injury_block_list:
