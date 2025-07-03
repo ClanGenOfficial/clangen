@@ -596,8 +596,8 @@ class GroupEvents:
                 comfort = amount if dictionary["comfort"] == "increase" else amount * -1
 
             change_relationship_values(
-                cats_from=[inter_cat],
-                cats_to=list(abbreviations_cat),
+                cats_from=[cat_from],
+                cats_to=[cat_to],
                 romance=romance,
                 like=like,
                 respect=respect,
