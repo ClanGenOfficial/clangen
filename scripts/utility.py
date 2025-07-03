@@ -1036,9 +1036,9 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
         return relationship.like
     elif rel_value == "dislike":
         return relationship.dislike
-    elif rel_value == "admiration":
+    elif rel_value == "respect":
         return relationship.respect
-    elif rel_value == "comfortable":
+    elif rel_value == "comfort":
         return relationship.comfort
     elif rel_value == "jealousy":
         return relationship.jealousy
@@ -1122,11 +1122,11 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
     # later count or sum can be used to get the amount of cats
     # this will be handled like this, because it is easier / shorter to check
     relation_dict = {
-        "romantic_love": [],
-        "platonic_like": [],
+        "romance": [],
+        "like": [],
         "dislike": [],
-        "admiration": [],
-        "comfortable": [],
+        "respect": [],
+        "comfort": [],
         "jealousy": [],
         "trust": [],
     }
@@ -1137,20 +1137,20 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
         else:
             continue
 
-        relation_dict["romantic_love"].append(relation.romance >= value)
-        relation_dict["platonic_like"].append(relation.like >= value)
+        relation_dict["romance"].append(relation.romance >= value)
+        relation_dict["like"].append(relation.like >= value)
         relation_dict["dislike"].append(relation.dislike >= value)
-        relation_dict["admiration"].append(relation.respect >= value)
-        relation_dict["comfortable"].append(relation.comfort >= value)
+        relation_dict["respect"].append(relation.respect >= value)
+        relation_dict["comfort"].append(relation.comfort >= value)
         relation_dict["jealousy"].append(relation.jealousy >= value)
         relation_dict["trust"].append(relation.trust >= value)
 
     return_dict = {
-        "romantic_love": sum(relation_dict["romantic_love"]),
-        "platonic_like": sum(relation_dict["platonic_like"]),
+        "romance": sum(relation_dict["romance"]),
+        "like": sum(relation_dict["like"]),
         "dislike": sum(relation_dict["dislike"]),
-        "admiration": sum(relation_dict["admiration"]),
-        "comfortable": sum(relation_dict["comfortable"]),
+        "respect": sum(relation_dict["respect"]),
+        "comfort": sum(relation_dict["comfort"]),
         "jealousy": sum(relation_dict["jealousy"]),
         "trust": sum(relation_dict["trust"]),
     }
@@ -1191,10 +1191,10 @@ def filter_relationship_type(
         "romantic",
         "platonic",
         "dislike",
-        "comfortable",
+        "comfort",
         "jealousy",
         "trust",
-        "admiration",
+        "respect",
     ]
 
     if "siblings" in filter_types:
@@ -1357,7 +1357,7 @@ def filter_relationship_type(
                 rel_above_threshold = [
                     i for i in relevant_relationships if i.dislike >= threshold
                 ]
-            elif v_type == "comfortable":
+            elif v_type == "comfort":
                 rel_above_threshold = [
                     i for i in relevant_relationships if i.comfort >= threshold
                 ]
@@ -1369,7 +1369,7 @@ def filter_relationship_type(
                 rel_above_threshold = [
                     i for i in relevant_relationships if i.trust >= threshold
                 ]
-            elif v_type == "admiration":
+            elif v_type == "respect":
                 rel_above_threshold = [
                     i for i in relevant_relationships if i.respect >= threshold
                 ]

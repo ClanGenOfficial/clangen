@@ -75,8 +75,8 @@ class Welcoming_Events:
             cats_from=[new_cat],
             romance=new_to_clan_cat["romantic"],
             like=new_to_clan_cat["platonic"],
-            respect=new_to_clan_cat["admiration"],
-            comfort=new_to_clan_cat["comfortable"],
+            respect=new_to_clan_cat["respect"],
+            comfort=new_to_clan_cat["comfort"],
             trust=new_to_clan_cat["trust"],
         )
         change_relationship_values(
@@ -84,8 +84,8 @@ class Welcoming_Events:
             cats_from=[clan_cat],
             romance=clan_cat_to_new["romantic"],
             like=clan_cat_to_new["platonic"],
-            respect=clan_cat_to_new["admiration"],
-            comfort=clan_cat_to_new["comfortable"],
+            respect=clan_cat_to_new["respect"],
+            comfort=clan_cat_to_new["comfort"],
             trust=clan_cat_to_new["trust"],
         )
 
@@ -104,8 +104,8 @@ class Welcoming_Events:
         if (
             clan_cat_to_new["romantic"] > 0
             or clan_cat_to_new["platonic"] > 0
-            or clan_cat_to_new["admiration"] > 0
-            or new_to_clan_cat["comfortable"] > 0
+            or clan_cat_to_new["respect"] > 0
+            or new_to_clan_cat["comfort"] > 0
             or clan_cat_to_new["trust"] > 0
         ):
             effect = " (positive effect)"

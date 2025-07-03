@@ -553,15 +553,15 @@ class Patrol:
             "romantic",
             "platonic",
             "dislike",
-            "admiration",
-            "comfortable",
+            "respect",
+            "comfort",
             "jealousy",
             "trust",
         ]
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
             if (
-                val in ("romantic", "platonic", "admiration", "comfortable", "trust")
+                val in ("romantic", "platonic", "respect", "comfort", "trust")
                 and value_check >= 20
             ):
                 chance_of_romance_patrol -= 1

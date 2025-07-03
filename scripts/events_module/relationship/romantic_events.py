@@ -776,8 +776,8 @@ class RomanticEvents:
             "romantic": 20,
             "platonic": 30,
             "dislike": -10,
-            "admiration": 0,
-            "comfortable": 20,
+            "respect": 0,
+            "comfort": 20,
             "jealousy": 0,
             "trust": 0
             }
@@ -814,24 +814,24 @@ class RomanticEvents:
                 condition["dislike"]
             ):
                 return False
-        if "admiration" in condition and condition["admiration"] != 0:
+        if "respect" in condition and condition["respect"] != 0:
             if (
-                condition["admiration"] > 0
-                and relationship.respect < condition["admiration"]
+                condition["respect"] > 0
+                and relationship.respect < condition["respect"]
             ):
                 return False
-            if condition["admiration"] < 0 and relationship.respect > abs(
-                condition["admiration"]
+            if condition["respect"] < 0 and relationship.respect > abs(
+                condition["respect"]
             ):
                 return False
-        if "comfortable" in condition and condition["comfortable"] != 0:
+        if "comfort" in condition and condition["comfort"] != 0:
             if (
-                condition["comfortable"] > 0
-                and relationship.comfort < condition["comfortable"]
+                condition["comfort"] > 0
+                and relationship.comfort < condition["comfort"]
             ):
                 return False
-            if condition["comfortable"] < 0 and relationship.comfort > abs(
-                condition["comfortable"]
+            if condition["comfort"] < 0 and relationship.comfort > abs(
+                condition["comfort"]
             ):
                 return False
         if "jealousy" in condition and condition["jealousy"] != 0:

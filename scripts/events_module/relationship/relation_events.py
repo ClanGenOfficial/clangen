@@ -310,8 +310,8 @@ class Relation_Events:
                 "romantic",
                 "platonic",
                 "dislike",
-                "admiration",
-                "comfortable",
+                "respect",
+                "comfort",
                 "jealousy",
                 "trust",
             ]
@@ -362,7 +362,7 @@ class Relation_Events:
                         threshold_fulfilled = True
                     elif lower_than and relationship.dislike <= threshold:
                         threshold_fulfilled = True
-                if v_type == "comfortable":
+                if v_type == "comfort":
                     if not lower_than and relationship.comfort >= threshold:
                         threshold_fulfilled = True
                     elif lower_than and relationship.comfort <= threshold:

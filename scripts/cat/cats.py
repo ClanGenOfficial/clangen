@@ -691,9 +691,9 @@ class Cat:
                 high_values.append("platonic")
 
             if to_self.respect > 70:
-                very_high_values.append("admiration")
+                very_high_values.append("respect")
             if to_self.respect > 50:
-                high_values.append("admiration")
+                high_values.append("respect")
 
             if to_self.comfort > 60:
                 very_high_values.append("comfort")
@@ -2741,11 +2741,11 @@ class Cat:
                 "cat_to_id": r.cat_to.ID,
                 "mates": r.mates,
                 "family": r.family,
-                "romantic_love": r.romance,
-                "platonic_like": r.like,
+                "romance": r.romance,
+                "like": r.like,
                 "dislike": r.dislike,
-                "admiration": r.respect,
-                "comfortable": r.comfort,
+                "respect": r.respect,
+                "comfort": r.comfort,
                 "jealousy": r.jealousy,
                 "trust": r.trust,
                 "log": r.log,
@@ -2782,11 +2782,11 @@ class Cat:
                             cat_to=cat_to,
                             mates=rel["mates"] or False,
                             family=rel["family"] or False,
-                            romantic_love=(rel["romantic_love"] or 0),
-                            platonic_like=(rel["platonic_like"] or 0),
+                            romantic_love=(rel["romance"] or 0),
+                            platonic_like=(rel["like"] or 0),
                             dislike=rel["dislike"] or 0,
-                            admiration=rel["admiration"] or 0,
-                            comfortable=rel["comfortable"] or 0,
+                            admiration=rel["respect"] or 0,
+                            comfortable=rel["comfort"] or 0,
                             jealousy=rel["jealousy"] or 0,
                             trust=rel["trust"] or 0,
                             log=rel["log"],
@@ -2883,7 +2883,7 @@ class Cat:
         # Are they mates?
         mates = rel1.cat_from.ID in rel1.cat_to.mate
 
-        pos_traits = ["platonic", "respect", "comfortable", "trust"]
+        pos_traits = ["platonic", "respect", "comfort", "trust"]
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
             pos_traits.append("romantic")
 
@@ -2993,7 +2993,7 @@ class Cat:
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
-            elif trait == "comfortable":
+            elif trait == "comfort":
                 ran = (4, 6)
 
                 if sabotage:

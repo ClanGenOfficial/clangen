@@ -538,7 +538,7 @@ class GroupEvents:
         if "respect" in dictionary and dictionary["respect"] != "neutral":
             platonic = amount if dictionary["dislike"] == "increase" else amount * -1
         if "trust" in dictionary and dictionary["trust"] != "neutral":
-            platonic = amount if dictionary["admiration"] == "increase" else amount * -1
+            platonic = amount if dictionary["respect"] == "increase" else amount * -1
         if "comfort" in dictionary and dictionary["comfort"] != "neutral":
             platonic = amount if dictionary["comfort"] == "increase" else amount * -1
 
