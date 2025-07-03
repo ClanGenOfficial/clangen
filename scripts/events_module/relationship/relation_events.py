@@ -5,7 +5,7 @@ from random import choice, randint
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat_relations.relationship import RelValue
+from scripts.cat_relations.relationship import RelValue, ValueLevel
 from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
@@ -76,13 +76,11 @@ class Relation_Events:
         if not Relation_Events.can_trigger_events(cat):
             return
 
-        other_cat = None
-
         # get the cats which are relevant for romantic interactions
         free_possible_mates = get_free_possible_mates(cat)
         other_love_interest = get_cats_of_romantic_interest(cat)
         possible_cats = free_possible_mates
-        if len(other_love_interest) > 0 and len(other_love_interest) < 3:
+        if 0 < len(other_love_interest) < 3:
             possible_cats.extend(other_love_interest)
             possible_cats.extend(other_love_interest)
         elif len(other_love_interest) >= 3:
@@ -307,78 +305,14 @@ class Relation_Events:
             if "child/parent" in constraint and not cat_to.is_parent(cat_from):
                 continue
 
-            value_types = [v for v in RelValue]
-            fulfilled = True
-            for v_type in value_types:
-                tags = [i for i in constraint if v_type in i]
-                if len(tags) < 1:
-                    continue
-                threshold = 0
-                lower_than = False
-                # try to extract the value/threshold from the text
-                try:
-                    splitted = tags[0].split("_")
-                    threshold = int(splitted[1])
-                    if len(splitted) > 3:
-                        lower_than = True
-                except:
-                    print(
-                        f"ERROR: while creating a cat group, the relationship constraint for the value {v_type} follows not the formatting guidelines."
-                    )
-                    break
-
-                if threshold > 100:
-                    print(
-                        f"ERROR: while creating a cat group, the relationship constraints for the value {v_type}, which is higher than the max value of a relationship."
-                    )
-                    break
-
-                if threshold <= 0:
-                    print(
-                        f"ERROR: while creating a cat group, the relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0."
-                    )
-                    break
-
-                threshold_fulfilled = False
-                if v_type == RelValue.ROMANCE:
-                    if not lower_than and relationship.romance >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.romance <= threshold:
-                        threshold_fulfilled = True
-                if v_type == RelValue.LIKE:
-                    if not lower_than and relationship.like >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.like <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "dislike":
-                    if not lower_than and relationship.dislike >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.dislike <= threshold:
-                        threshold_fulfilled = True
-                if v_type == RelValue.COMFORT:
-                    if not lower_than and relationship.comfort >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.comfort <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "jealousy":
-                    if not lower_than and relationship.jealousy >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.jealousy <= threshold:
-                        threshold_fulfilled = True
-                if v_type == RelValue.TRUST:
-                    if not lower_than and relationship.trust >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.trust <= threshold:
-                        threshold_fulfilled = True
-
-                if not threshold_fulfilled:
-                    fulfilled = False
-                    continue
-
-            if not fulfilled:
+            cat_levels = [l for l in relationship.get_value_levels()]
+            all_levels = [l for l in ValueLevel]
+            needed = [l for l in constraint if l in all_levels]
+            if not set(needed).issubset(cat_levels):
                 continue
 
             filtered_cat_list.append(inter_cat)
+
         return filtered_cat_list
 
     @staticmethod
