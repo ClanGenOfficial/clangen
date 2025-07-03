@@ -11,6 +11,7 @@ import pygame
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
+from scripts.events_module.future.future_event import prep_event
 
 if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
@@ -68,6 +69,7 @@ class PatrolOutcome:
         outcome_art: Union[str, None] = None,
         outcome_art_clean: Union[str, None] = None,
         stat_cat: Cat = None,
+        future_event: Dict = None,
     ):
         self.success = success
         self.antagonize = antagonize
@@ -106,6 +108,8 @@ class PatrolOutcome:
         )
         self.outcome_art = outcome_art
         self.outcome_art_clean = outcome_art_clean
+
+        self.future_event = future_event
 
         # This will hold the stat cat, for filtering purposes
         self.stat_cat = stat_cat
@@ -203,6 +207,7 @@ class PatrolOutcome:
                     relationship_constraints=_d.get("relationship_constraint"),
                     outcome_art=_d.get("art"),
                     outcome_art_clean=_d.get("art_clean"),
+                    future_event=_d.get("future_event"),
                 )
             )
 
@@ -282,9 +287,36 @@ class PatrolOutcome:
         # Filter out empty results strings
         results = [x for x in results if x]
 
+        self._handle_future_event(patrol)
+
         print("PATROL END -----------------------------------------------------")
 
         return processed_text, " ".join(results), self.get_outcome_art()
+
+    def _handle_future_event(self, patrol):
+        """
+        collects required info and sends it to be prepped
+        """
+        if not self.future_event:
+            return
+
+        possible_cats = {
+            "p_l": patrol.patrol_leader,
+            "r_c": patrol.random_cat,
+            "s_c": self.stat_cat,
+        }
+
+        for x, app in enumerate(patrol.patrol_apprentices):
+            possible_cats[f"app{x}"] = app
+
+        for x, newbie in enumerate(self.new_cat):
+            possible_cats[f"n_c:{x}"] = newbie
+
+        prep_event(
+            event=self,
+            event_id=patrol.patrol_event.patrol_id,
+            possible_cats=possible_cats,
+        )
 
     def _allowed_stat_cat_specific(
         self, kitty: Cat, patrol: "Patrol", allowed_specific
@@ -485,7 +517,7 @@ class PatrolOutcome:
                     game.clan.leader_lives = 0
                     results.append(
                         event_text_adjust(
-                            Cat, i18n.t("cat.history.leader_death_all"), main_cat=_cat
+                            Cat, i18n.t("cat.history.n_leader_death_all"), main_cat=_cat
                         )
                     )
                 elif "some_lives" in self.dead_cats:
@@ -494,7 +526,7 @@ class PatrolOutcome:
                     results.append(
                         event_text_adjust(
                             Cat,
-                            i18n.t("cat.history.leader_death_all", count=lives_lost),
+                            i18n.t("cat.history.n_leader_lost_lives", count=lives_lost),
                             main_cat=_cat,
                         )
                     )
@@ -503,7 +535,7 @@ class PatrolOutcome:
                     results.append(
                         event_text_adjust(
                             Cat,
-                            i18n.t("cat.history.leader_death_all", count=1),
+                            i18n.t("cat.history.n_leader_lost_lives", count=1),
                             main_cat=_cat,
                         )
                     )

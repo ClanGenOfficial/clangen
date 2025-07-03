@@ -1246,7 +1246,7 @@
         "location": ["any"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c thinks about the possibility ofretiring.",
+        "event_text": "m_c thinks about the possibility of retiring.",
         "m_c": {
             "age": ["senior adult", "senior"],
             "status": ["warrior", "mediator", "medicine cat", "leader"]
@@ -1261,7 +1261,7 @@
       "wetlands"],
         "season": ["greenleaf", "newleaf"],
         "weight": 15,
-        "event_text": "m_c picks some flowers around the camp to bring back to the medicine catden.",
+        "event_text": "m_c picks some flowers around the camp to bring back to the medicine cat den.",
         "m_c": {
             "status": ["kitten"]
         }
@@ -1272,7 +1272,7 @@
         "season": ["greenleaf"],
         "tags": ["clan:warrior"],
         "weight": 15,
-        "event_text": "m_c chases fireflies around the camp while the  warriors sleep.",
+        "event_text": "m_c chases fireflies around the camp while the warriors sleep.",
         "m_c": {
             "status": ["kitten"]
         }

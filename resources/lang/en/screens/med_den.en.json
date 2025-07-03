@@ -9,7 +9,7 @@
         "out_den": "out of den",
         "minor": "minor",
         "meds_cover": {
-            "one": "m_c can care for a Clan of up to %{clansize} members, including {PRONOUN/med_name/self}.",
+            "one": "m_c can care for a Clan of up to %{clansize} members, including {PRONOUN/m_c/self}.",
             "many": "c_n's medicine cats can care for a Clan of up to %{clansize} members, including themselves."
         },
         "expiration": "It was discovered that some stores of %{herbs} were too old to be of use anymore.",
