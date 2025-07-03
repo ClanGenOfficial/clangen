@@ -746,7 +746,7 @@ class MediationScreen(Screens):
                     )
                 ),
                 object_id="#text_box_22_horizleft",
-                text_kwargs={"count": 2 if the_relationship.admiration > 49 else 1},
+                text_kwargs={"count": 2 if the_relationship.respect > 49 else 1},
             )
             self.selected_cat_elements[f"admiration_bar{tag}"] = UIRelationStatusBar(
                 ui_scale(
@@ -755,7 +755,7 @@ class MediationScreen(Screens):
                         (150, 9),
                     )
                 ),
-                the_relationship.admiration,
+                the_relationship.respect,
                 positive_trait=True,
                 dark_mode=game.settings["dark mode"],
             )

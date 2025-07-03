@@ -357,7 +357,7 @@ class Relationship:
             elif key == "dislike":
                 self.dislike += amount
             elif key == "admiration":
-                self.admiration += amount
+                self.respect += amount
             elif key == "comfortable":
                 self.comfortable += amount
             elif key == "jealousy":
@@ -587,7 +587,7 @@ class Relationship:
 
     def complex_admiration(self, value, buff):
         """Add the value to the admiration type and influence other value types as well."""
-        self.admiration += value
+        self.respect += value
         if value > 0:
             self.trust += buff
         if value < 0:

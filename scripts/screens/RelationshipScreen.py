@@ -430,7 +430,7 @@ class RelationshipScreen(Screens):
                             x.romance,
                             x.like,
                             x.dislike,
-                            x.admiration,
+                            x.respect,
                             x.comfortable,
                             x.jealousy,
                             x.trust,
@@ -673,7 +673,7 @@ class RelationshipScreen(Screens):
                         rel.romance
                         + rel.like
                         + rel.dislike
-                        + rel.admiration
+                        + rel.respect
                         + rel.comfortable
                         + rel.jealousy
                         + rel.trust
@@ -955,7 +955,7 @@ class RelationshipScreen(Screens):
                 )
             ),
             object_id="#text_box_22_horizleft",
-            text_kwargs={"count": 2 if the_relationship.admiration > 49 else 1},
+            text_kwargs={"count": 2 if the_relationship.respect > 49 else 1},
         )
         self.relation_list_elements[f"admiration_bar{i}"] = UIRelationStatusBar(
             ui_scale(
@@ -964,7 +964,7 @@ class RelationshipScreen(Screens):
                     (bar_size_x, bar_size_y),
                 )
             ),
-            the_relationship.admiration,
+            the_relationship.respect,
             positive_trait=True,
             dark_mode=game.settings["dark mode"],
         )

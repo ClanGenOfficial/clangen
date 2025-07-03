@@ -881,7 +881,7 @@ class Pregnancy_Events:
                     start_relation = Relationship(the_cat, kit, False, True)
                     start_relation.like += parent_to_kit["platonic"] + y
                     start_relation.comfortable = parent_to_kit["comfortable"] + y
-                    start_relation.admiration = parent_to_kit["admiration"] + y
+                    start_relation.respect = parent_to_kit["admiration"] + y
                     start_relation.trust = parent_to_kit["trust"] + y
                     the_cat.relationships[kit.ID] = start_relation
 
@@ -892,7 +892,7 @@ class Pregnancy_Events:
                     start_relation = Relationship(kit, the_cat, False, True)
                     start_relation.like += kit_to_parent["platonic"] + y
                     start_relation.comfortable = kit_to_parent["comfortable"] + y
-                    start_relation.admiration = kit_to_parent["admiration"] + y
+                    start_relation.respect = kit_to_parent["admiration"] + y
                     start_relation.trust = kit_to_parent["trust"] + y
                     kit.relationships[the_cat.ID] = start_relation
                 else:

@@ -821,10 +821,10 @@ class RomanticEvents:
         if "admiration" in condition and condition["admiration"] != 0:
             if (
                 condition["admiration"] > 0
-                and relationship.admiration < condition["admiration"]
+                and relationship.respect < condition["admiration"]
             ):
                 return False
-            if condition["admiration"] < 0 and relationship.admiration > abs(
+            if condition["admiration"] < 0 and relationship.respect > abs(
                 condition["admiration"]
             ):
                 return False

@@ -690,9 +690,9 @@ class Cat:
             if to_self.like > 30:
                 high_values.append("platonic")
 
-            if to_self.admiration > 70:
+            if to_self.respect > 70:
                 very_high_values.append("admiration")
-            if to_self.admiration > 50:
+            if to_self.respect > 50:
                 high_values.append("admiration")
 
             if to_self.comfortable > 60:
@@ -1211,7 +1211,7 @@ class Cat:
         dead_relations.sort(
             key=lambda rel: rel.romance
             + rel.like
-            + rel.admiration
+            + rel.respect
             + rel.comfortable
             + rel.trust,
             reverse=True,
@@ -2744,7 +2744,7 @@ class Cat:
                 "romantic_love": r.romance,
                 "platonic_like": r.like,
                 "dislike": r.dislike,
-                "admiration": r.admiration,
+                "admiration": r.respect,
                 "comfortable": r.comfortable,
                 "jealousy": r.jealousy,
                 "trust": r.trust,
@@ -2975,21 +2975,21 @@ class Cat:
                 ran = (4, 6)
 
                 if sabotage:
-                    rel1.admiration = Cat.effect_relation(
-                        rel1.admiration,
+                    rel1.respect = Cat.effect_relation(
+                        rel1.respect,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
-                    rel2.admiration = Cat.effect_relation(
-                        rel2.admiration,
+                    rel2.respect = Cat.effect_relation(
+                        rel2.respect,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
                 else:
-                    rel1.admiration = Cat.effect_relation(
-                        rel1.admiration,
+                    rel1.respect = Cat.effect_relation(
+                        rel1.respect,
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
-                    rel2.admiration = Cat.effect_relation(
-                        rel2.admiration,
+                    rel2.respect = Cat.effect_relation(
+                        rel2.respect,
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
