@@ -12,6 +12,7 @@ from scripts.cat_relations.relationship import (
     cats_fulfill_single_interaction_constraints,
 )
 from scripts.event_class import Single_Event
+from scripts.events_module.event_filters import event_for_season, event_for_location
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
@@ -100,26 +101,21 @@ class RomanticEvents:
         # resort the first generated overview dictionary to only "positive" and "negative" interactions
         cls.MATE_INTERACTIONS = {"positive": [], "negative": []}
         for val_type, dictionary in cls.MATE_RELEVANT_INTERACTIONS.items():
-            # pylint: disable = invalid-sequence-index
-            if val_type in ["jealousy", "dislike"]:
-                cls.MATE_INTERACTIONS["positive"].extend(dictionary["decrease"])
-                cls.MATE_INTERACTIONS["negative"].extend(dictionary["increase"])
-            else:
-                cls.MATE_INTERACTIONS["positive"].extend(dictionary["increase"])
-                cls.MATE_INTERACTIONS["negative"].extend(dictionary["decrease"])
+            cls.MATE_INTERACTIONS["positive"].extend(dictionary["increase"])
+            cls.MATE_INTERACTIONS["negative"].extend(dictionary["decrease"])
 
         # ---------------------------------------------------------------------------- #
         #                                   ROMANTIC                                   #
         # ---------------------------------------------------------------------------- #
 
         # Use the overall master interaction dictionary and filter for any interactions, which requires a certain
-        # amount of romantic
+        # amount of romance
         cls.ROMANTIC_RELEVANT_INTERACTIONS = {}
         for val_type, dictionary in interactions.INTERACTION_MASTER_DICT.items():
             cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type] = {}
 
-            # if it's the romantic interaction type add all interactions
-            if val_type == "romantic":
+            # if it's the romance interaction type add all interactions
+            if val_type == "romance":
                 cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type]["increase"] = dictionary[
                     "increase"
                 ]
@@ -131,25 +127,21 @@ class RomanticEvents:
                     interaction
                     for interaction in dictionary["decrease"]
                     for tag in interaction.relationship_constraint
-                    if "romantic" in tag
+                    if "romance" in tag
                 ]
 
                 cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type]["decrease"] = [
                     interaction
                     for interaction in dictionary["decrease"]
                     for tag in interaction.relationship_constraint
-                    if "romantic" in tag
+                    if "romance" in tag
                 ]
 
         # resort the first generated overview dictionary to only "positive" and "negative" interactions
         cls.ROMANTIC_INTERACTIONS = {"positive": [], "negative": []}
         for val_type, dictionary in cls.ROMANTIC_RELEVANT_INTERACTIONS.items():
-            if val_type in ["jealousy", "dislike"]:
-                cls.ROMANTIC_INTERACTIONS["positive"].extend(dictionary["decrease"])
-                cls.ROMANTIC_INTERACTIONS["negative"].extend(dictionary["increase"])
-            else:
-                cls.ROMANTIC_INTERACTIONS["positive"].extend(dictionary["increase"])
-                cls.ROMANTIC_INTERACTIONS["negative"].extend(dictionary["decrease"])
+            cls.ROMANTIC_INTERACTIONS["positive"].extend(dictionary["increase"])
+            cls.ROMANTIC_INTERACTIONS["negative"].extend(dictionary["decrease"])
 
     @staticmethod
     def start_interaction(cat_from, cat_to):
@@ -173,33 +165,19 @@ class RomanticEvents:
 
         # check if it should be a positive or negative interaction
         relationship = cat_from.relationships[cat_to.ID]
-        positive = RomanticEvents.check_if_positive_interaction(relationship)
+        positive = relationship.positive_interaction()
 
         # get the possible interaction list and filter them
         possible_interactions = (
             relevant_dict["positive"] if positive else relevant_dict["negative"]
         )
         filtered_interactions = []
-        _season = [str(game.clan.current_season).casefold(), "Any", "any"]
-        _biome = [
-            str(
-                game.clan.biome
-                if not game.clan.override_biome
-                else game.clan.override_biome
-            ).casefold(),
-            "Any",
-            "any",
-        ]
+
         for interaction in possible_interactions:
-            in_tags = [i for i in interaction.biome if i not in _biome]
-            if len(in_tags) > 0:
+            if not event_for_location(interaction.biome):
                 continue
 
-            in_tags = [i for i in interaction.season if i not in _season]
-            if len(in_tags) > 0:
-                continue
-
-            if not rel_fulfilled:
+            if not event_for_season(interaction.season):
                 continue
 
             cat_fulfill = cats_fulfill_single_interaction_constraints(
@@ -210,34 +188,38 @@ class RomanticEvents:
 
             filtered_interactions.append(interaction)
 
-        if len(filtered_interactions) < 1:
+        if not filtered_interactions:
             print(
-                f"There were no romantic interactions for: {cat_from.name} to {cat_to.name}"
+                f"There were no romance interactions for: {cat_from.name} to {cat_to.name}"
             )
             return False
 
         # chose interaction
         chosen_interaction = choice(filtered_interactions)
         # check if the current interaction id is already used and us another if so
-        chosen_interaction = choice(possible_interactions)
+        id_check_list = filtered_interactions.copy()
         while (
             chosen_interaction.id in relationship.used_interaction_ids
-            and len(possible_interactions) > 2
+            and len(id_check_list) > 2
         ):
-            possible_interactions.remove(chosen_interaction)
-            chosen_interaction = choice(possible_interactions)
+            id_check_list.remove(chosen_interaction)
+            chosen_interaction = choice(id_check_list)
+
+        # if we couldn't find a non-duplicate, we just pick any of them
+        if not chosen_interaction:
+            chosen_interaction = choice(filtered_interactions)
 
         # if the chosen_interaction is still in the TRIGGERED_SINGLE_INTERACTIONS, clean the list
         if chosen_interaction in relationship.used_interaction_ids:
             relationship.used_interaction_ids = []
         relationship.used_interaction_ids.append(chosen_interaction.id)
 
-        # affect relationship - it should always be in a romantic way
-        in_de_crease = "increase" if positive else "decrease"
-        rel_type = "romantic"
+        # affect relationship - it should always be in a romance way
+        value_change = "increase" if positive else "decrease"
+        rel_type = "romance"
         relationship.chosen_interaction = chosen_interaction
         relationship.interaction_affect_relationships(
-            in_de_crease, chosen_interaction.intensity, rel_type
+            value_change, chosen_interaction.intensity, rel_type
         )
 
         # give cats injuries
@@ -290,13 +272,13 @@ class RomanticEvents:
         }
         interaction_str = process_text(interaction_str, cat_dict)
 
-        # extract intensity from the interaction
-        intensity = getattr(chosen_interaction, "intensity", "neutral")
+        # extract intensity from the interaction, defaults to "positive"
+        intensity = getattr(chosen_interaction, "intensity", "positive")
 
-        effect = " (neutral effect)"
-        if in_de_crease != "neutral" and positive:
+        effect = ""
+        if value_change == "increase":
             effect = f" ({intensity} positive effect)"
-        if in_de_crease != "neutral" and not positive:
+        if value_change == "decrease":
             effect = f" ({intensity} negative effect)"
 
         interaction_str = interaction_str + effect
@@ -490,8 +472,6 @@ class RomanticEvents:
             relationship_to.like -= 10
             relationship_from.trust -= 10
             relationship_to.trust -= 10
-            relationship_to.dislike += 10
-            relationship_from.dislike += 10
         elif breakup_type == "decided_to_be_friends":
             relationship_to.romance -= 30
             relationship_from.romance -= 30
@@ -517,8 +497,8 @@ class RomanticEvents:
             relationship_to.trust -= 25
             relationship_to.comfort -= 20
             relationship_from.comfort -= 20
-            relationship_to.dislike += 10
-            relationship_from.dislike += 5
+            relationship_to.respect -= 10
+            relationship_from.respect -= 10
         elif breakup_type == "chill_breakup":
             relationship_to.romance -= 15
             relationship_from.romance -= 15
@@ -600,10 +580,10 @@ class RomanticEvents:
             )
         # second acceptance chance if the romantic is high enough
         elif (
-            "romantic" in condition
-            and condition["romantic"] != 0
-            and condition["romantic"] > 0
-            and rel_to_check.romance >= condition["romantic"] * 1.5
+            "romance" in condition
+            and condition["romance"] != 0
+            and condition["romance"] > 0
+            and rel_to_check.romance >= condition["romance"] * 1.5
         ):
             become_mate = True
             mate_string = RomanticEvents.get_mate_string(
@@ -637,24 +617,6 @@ class RomanticEvents:
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def check_if_positive_interaction(relationship) -> bool:
-        """Returns if the interaction should be a positive interaction or not."""
-        # base for non-existing platonic like / dislike
-        list_to_choice = [True, False]
-
-        # take personality in count
-        comp = get_personality_compatibility(relationship.cat_from, relationship.cat_to)
-        if comp is not None:
-            list_to_choice.append(comp)
-
-        # further influence the partition based on the relationship
-        list_to_choice += [True] * int(relationship.like / 15)
-        list_to_choice += [True] * int(relationship.romance / 15)
-        list_to_choice += [False] * int(relationship.dislike / 10)
-
-        return choice(list_to_choice)
-
-    @staticmethod
     def check_if_breakup(cat_from, cat_to):
         """More in depth check if the cats will break up.
         Returns:
@@ -677,7 +639,6 @@ class RomanticEvents:
     def check_if_new_mate(cat_from, cat_to):
         """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
         become_mates = False
-        young_age = ["newborn", "kitten", "adolescent"]
         if cat_to.outside != cat_from.outside:
             return False, None
 
@@ -773,13 +734,11 @@ class RomanticEvents:
         Check if the relationship can fulfill the condition.
         Example condition:
             {
-            "romantic": 20,
-            "platonic": 30,
-            "dislike": -10,
+            "romance": 20,
+            "like": 30,
             "respect": 0,
             "comfort": 20,
-            "jealousy": 0,
-            "trust": 0
+            "trust": -10
             }
 
         VALUES:
@@ -790,65 +749,43 @@ class RomanticEvents:
         """
         if not relationship:
             return False
-        if "romantic" in condition and condition["romantic"] != 0:
-            if (
-                condition["romantic"] > 0
-                and relationship.romance < condition["romantic"]
+
+        if "romance" in condition and condition["romance"] != 0:
+            if condition["romance"] > 0 and relationship.romance < condition["romance"]:
+                return False
+            if condition["romance"] < 0 and relationship.romance > abs(
+                condition["romance"]
             ):
                 return False
-            if condition["romantic"] < 0 and relationship.romance > abs(
-                condition["romantic"]
-            ):
+
+        if "like" in condition and condition["like"] != 0:
+            if condition["like"] > 0 and relationship.like < condition["like"]:
                 return False
-        if "platonic" in condition and condition["platonic"] != 0:
-            if condition["platonic"] > 0 and relationship.like < condition["platonic"]:
+            if condition["like"] < 0 and relationship.like > abs(condition["like"]):
                 return False
-            if condition["platonic"] < 0 and relationship.like > abs(
-                condition["platonic"]
-            ):
-                return False
-        if "dislike" in condition and condition["dislike"] != 0:
-            if condition["dislike"] > 0 and relationship.dislike < condition["dislike"]:
-                return False
-            if condition["dislike"] < 0 and relationship.dislike > abs(
-                condition["dislike"]
-            ):
-                return False
+
         if "respect" in condition and condition["respect"] != 0:
-            if (
-                condition["respect"] > 0
-                and relationship.respect < condition["respect"]
-            ):
+            if condition["respect"] > 0 and relationship.respect < condition["respect"]:
                 return False
             if condition["respect"] < 0 and relationship.respect > abs(
                 condition["respect"]
             ):
                 return False
+
         if "comfort" in condition and condition["comfort"] != 0:
-            if (
-                condition["comfort"] > 0
-                and relationship.comfort < condition["comfort"]
-            ):
+            if condition["comfort"] > 0 and relationship.comfort < condition["comfort"]:
                 return False
             if condition["comfort"] < 0 and relationship.comfort > abs(
                 condition["comfort"]
             ):
                 return False
-        if "jealousy" in condition and condition["jealousy"] != 0:
-            if (
-                condition["jealousy"] > 0
-                and relationship.jealousy < condition["jealousy"]
-            ):
-                return False
-            if condition["jealousy"] < 0 and relationship.jealousy > abs(
-                condition["jealousy"]
-            ):
-                return False
+
         if "trust" in condition and condition["trust"] != 0:
             if condition["trust"] > 0 and relationship.trust < condition["trust"]:
                 return False
             if condition["trust"] < 0 and relationship.trust > abs(condition["trust"]):
                 return False
+
         return True
 
     @staticmethod
@@ -1059,10 +996,12 @@ class RomanticEvents:
         chance_number += int(relationship_from.romance / 20)
         chance_number += int(relationship_from.like / 20)
         chance_number += int(relationship_to.like / 20)
-        chance_number -= int(relationship_from.dislike / 15)
-        chance_number -= int(relationship_from.jealousy / 15)
-        chance_number -= int(relationship_to.dislike / 15)
-        chance_number -= int(relationship_to.jealousy / 15)
+        chance_number += int(relationship_from.respect / 20)
+        chance_number += int(relationship_to.respect / 20)
+        chance_number += int(relationship_from.trust / 20)
+        chance_number += int(relationship_to.trust / 20)
+        chance_number += int(relationship_from.comfort / 20)
+        chance_number += int(relationship_to.comfort / 20)
 
         # change the change based on the personality
         get_along = get_personality_compatibility(cat_from, cat_to)
