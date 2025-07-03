@@ -689,7 +689,7 @@ class MediationScreen(Screens):
                         (150, 30),
                     )
                 ),
-                text_kwargs={"count": 2 if the_relationship.platonic_like > 49 else 1},
+                text_kwargs={"count": 2 if the_relationship.like > 49 else 1},
                 object_id="#text_box_22_horizleft",
             )
             self.selected_cat_elements[f"platonic_bar{tag}"] = UIRelationStatusBar(
@@ -699,7 +699,7 @@ class MediationScreen(Screens):
                         (150, 9),
                     )
                 ),
-                the_relationship.platonic_like,
+                the_relationship.like,
                 positive_trait=True,
                 dark_mode=game.settings["dark mode"],
             )

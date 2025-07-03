@@ -353,7 +353,7 @@ class Relationship:
             if key == "romantic":
                 self.romance += amount
             elif key == "platonic":
-                self.platonic_like += amount
+                self.like += amount
             elif key == "dislike":
                 self.dislike += amount
             elif key == "admiration":
@@ -386,7 +386,7 @@ class Relationship:
             list_to_choice.append(comp)
 
         # further influence the partition based on the relationship
-        list_to_choice += [True] * int(self.platonic_like / 10)
+        list_to_choice += [True] * int(self.like / 10)
         list_to_choice += [False] * int(self.dislike / 10)
 
         return choice(list_to_choice)
@@ -559,7 +559,7 @@ class Relationship:
         """Add the value to the romantic type and influence other value types as well."""
         self.romance += value
         if value > 0:
-            self.platonic_like += buff
+            self.like += buff
             self.comfortable += buff
             self.dislike -= buff
         if value < 0:
@@ -567,7 +567,7 @@ class Relationship:
 
     def complex_platonic(self, value, buff):
         """Add the value to the platonic type and influence other value types as well."""
-        self.platonic_like += value
+        self.like += value
         if value > 0:
             self.comfortable += buff
             self.dislike -= buff
@@ -580,9 +580,9 @@ class Relationship:
         self.dislike += value
         if value > 0:
             self.romance -= buff
-            self.platonic_like -= buff
+            self.like -= buff
         if value < 0:
-            self.platonic_like += buff
+            self.like += buff
             self.comfortable += buff
 
     def complex_admiration(self, value, buff):
@@ -599,12 +599,12 @@ class Relationship:
         self.comfortable += value
         if value > 0:
             self.trust += buff
-            self.platonic_like += buff
+            self.like += buff
             self.dislike -= buff
             self.jealousy -= buff
         if value < 0:
             self.trust -= buff
-            self.platonic_like -= buff
+            self.like -= buff
             self.dislike += buff
 
     def complex_jealousy(self, value, buff):

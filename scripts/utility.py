@@ -658,7 +658,7 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, inter_cat, False, True)
-                start_relation.platonic_like += 30 + y
+                start_relation.like += 30 + y
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
                 start_relation.trust = 10 + y
@@ -671,7 +671,7 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
-                start_relation.platonic_like += 30 + y
+                start_relation.like += 30 + y
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
                 start_relation.trust = 10 + y
@@ -679,7 +679,7 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
-                start_relation.platonic_like += 30 + y
+                start_relation.like += 30 + y
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
                 start_relation.trust = 10 + y
@@ -694,7 +694,7 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
-                start_relation.platonic_like += 30 + y
+                start_relation.like += 30 + y
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
                 start_relation.trust = 10 + y
@@ -702,7 +702,7 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
-                start_relation.platonic_like += 30 + y
+                start_relation.like += 30 + y
                 start_relation.comfortable = 10 + y
                 start_relation.admiration = 15 + y
                 start_relation.trust = 10 + y
@@ -1033,7 +1033,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     if rel_value == "romantic":
         return relationship.romance
     elif rel_value == "platonic":
-        return relationship.platonic_like
+        return relationship.like
     elif rel_value == "dislike":
         return relationship.dislike
     elif rel_value == "admiration":
@@ -1138,7 +1138,7 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
             continue
 
         relation_dict["romantic_love"].append(relation.romance >= value)
-        relation_dict["platonic_like"].append(relation.platonic_like >= value)
+        relation_dict["platonic_like"].append(relation.like >= value)
         relation_dict["dislike"].append(relation.dislike >= value)
         relation_dict["admiration"].append(relation.admiration >= value)
         relation_dict["comfortable"].append(relation.comfortable >= value)
@@ -1351,7 +1351,7 @@ def filter_relationship_type(
                 ]
             elif v_type == "platonic":
                 rel_above_threshold = [
-                    i for i in relevant_relationships if i.platonic_like >= threshold
+                    i for i in relevant_relationships if i.like >= threshold
                 ]
             elif v_type == "dislike":
                 rel_above_threshold = [
@@ -1680,7 +1680,7 @@ def change_relationship_values(
                 rel.romance += romantic_love
 
             # gain other rel values
-            rel.platonic_like += platonic_like
+            rel.like += platonic_like
             rel.dislike += dislike
             rel.admiration += admiration
             rel.comfortable += comfortable

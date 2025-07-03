@@ -879,7 +879,7 @@ class Pregnancy_Events:
                     ]
                     y = random.randrange(0, 15)
                     start_relation = Relationship(the_cat, kit, False, True)
-                    start_relation.platonic_like += parent_to_kit["platonic"] + y
+                    start_relation.like += parent_to_kit["platonic"] + y
                     start_relation.comfortable = parent_to_kit["comfortable"] + y
                     start_relation.admiration = parent_to_kit["admiration"] + y
                     start_relation.trust = parent_to_kit["trust"] + y
@@ -890,7 +890,7 @@ class Pregnancy_Events:
                     ]
                     y = random.randrange(0, 15)
                     start_relation = Relationship(kit, the_cat, False, True)
-                    start_relation.platonic_like += kit_to_parent["platonic"] + y
+                    start_relation.like += kit_to_parent["platonic"] + y
                     start_relation.comfortable = kit_to_parent["comfortable"] + y
                     start_relation.admiration = kit_to_parent["admiration"] + y
                     start_relation.trust = kit_to_parent["trust"] + y
@@ -913,7 +913,7 @@ class Pregnancy_Events:
                 y = random.randrange(0, 10)
                 if second_kitten.ID == kitten.ID:
                     continue
-                kitten.relationships[second_kitten.ID].platonic_like += 20 + y
+                kitten.relationships[second_kitten.ID].like += 20 + y
                 kitten.relationships[second_kitten.ID].comfortable += 10 + y
                 kitten.relationships[second_kitten.ID].trust += 10 + y
 

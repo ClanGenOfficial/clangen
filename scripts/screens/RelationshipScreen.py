@@ -428,7 +428,7 @@ class RelationshipScreen(Screens):
                         abs,
                         [
                             x.romance,
-                            x.platonic_like,
+                            x.like,
                             x.dislike,
                             x.admiration,
                             x.comfortable,
@@ -671,7 +671,7 @@ class RelationshipScreen(Screens):
                 filter(
                     lambda rel: (
                         rel.romance
-                        + rel.platonic_like
+                        + rel.like
                         + rel.dislike
                         + rel.admiration
                         + rel.comfortable
@@ -904,7 +904,7 @@ class RelationshipScreen(Screens):
                 )
             ),
             object_id="#text_box_22_horizleft",
-            text_kwargs={"count": 2 if the_relationship.platonic_like > 49 else 1},
+            text_kwargs={"count": 2 if the_relationship.like > 49 else 1},
         )
         self.relation_list_elements[f"platonic_bar{i}"] = UIRelationStatusBar(
             ui_scale(
@@ -913,7 +913,7 @@ class RelationshipScreen(Screens):
                     (bar_size_x, bar_size_y),
                 )
             ),
-            the_relationship.platonic_like,
+            the_relationship.like,
             positive_trait=True,
             dark_mode=game.settings["dark mode"],
         )

@@ -190,9 +190,9 @@ def rel_fulfill_rel_constraints(relationship, constraint, interaction_id) -> boo
             elif lower_than and relationship.romance <= threshold:
                 threshold_fulfilled = True
         if v_type == "platonic":
-            if not lower_than and relationship.platonic_like >= threshold:
+            if not lower_than and relationship.like >= threshold:
                 threshold_fulfilled = True
-            elif lower_than and relationship.platonic_like <= threshold:
+            elif lower_than and relationship.like <= threshold:
                 threshold_fulfilled = True
         if v_type == "dislike":
             if not lower_than and relationship.dislike >= threshold:

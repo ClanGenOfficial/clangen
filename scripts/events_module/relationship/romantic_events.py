@@ -490,8 +490,8 @@ class RomanticEvents:
         if breakup_type == "had_fight":
             relationship_to.romance -= 15
             relationship_from.romance -= 15
-            relationship_from.platonic_like -= 10
-            relationship_to.platonic_like -= 10
+            relationship_from.like -= 10
+            relationship_to.like -= 10
             relationship_from.trust -= 10
             relationship_to.trust -= 10
             relationship_to.dislike += 10
@@ -499,8 +499,8 @@ class RomanticEvents:
         elif breakup_type == "decided_to_be_friends":
             relationship_to.romance -= 30
             relationship_from.romance -= 30
-            relationship_from.platonic_like += 30
-            relationship_to.platonic_like += 30
+            relationship_from.like += 30
+            relationship_to.like += 30
             relationship_from.trust += 20
             relationship_to.trust += 20
             relationship_to.comfortable += 5
@@ -508,15 +508,15 @@ class RomanticEvents:
         elif breakup_type == "lost_feelings":
             relationship_to.romance -= 30
             relationship_from.romance -= 30
-            relationship_from.platonic_like -= 10
-            relationship_to.platonic_like -= 10
+            relationship_from.like -= 10
+            relationship_to.like -= 10
             relationship_to.comfortable -= 10
             relationship_from.comfortable -= 10
         elif breakup_type == "bad_breakup":
             relationship_to.romance -= 20
             relationship_from.romance -= 15
-            relationship_from.platonic_like -= 10
-            relationship_to.platonic_like -= 15
+            relationship_from.like -= 10
+            relationship_to.like -= 15
             relationship_from.trust -= 20
             relationship_to.trust -= 25
             relationship_to.comfortable -= 20
@@ -652,7 +652,7 @@ class RomanticEvents:
             list_to_choice.append(comp)
 
         # further influence the partition based on the relationship
-        list_to_choice += [True] * int(relationship.platonic_like / 15)
+        list_to_choice += [True] * int(relationship.like / 15)
         list_to_choice += [True] * int(relationship.romance / 15)
         list_to_choice += [False] * int(relationship.dislike / 10)
 
@@ -805,12 +805,9 @@ class RomanticEvents:
             ):
                 return False
         if "platonic" in condition and condition["platonic"] != 0:
-            if (
-                condition["platonic"] > 0
-                and relationship.platonic_like < condition["platonic"]
-            ):
+            if condition["platonic"] > 0 and relationship.like < condition["platonic"]:
                 return False
-            if condition["platonic"] < 0 and relationship.platonic_like > abs(
+            if condition["platonic"] < 0 and relationship.like > abs(
                 condition["platonic"]
             ):
                 return False
@@ -1064,8 +1061,8 @@ class RomanticEvents:
         chance_number = 30
         chance_number += int(relationship_from.romance / 20)
         chance_number += int(relationship_from.romance / 20)
-        chance_number += int(relationship_from.platonic_like / 20)
-        chance_number += int(relationship_to.platonic_like / 20)
+        chance_number += int(relationship_from.like / 20)
+        chance_number += int(relationship_to.like / 20)
         chance_number -= int(relationship_from.dislike / 15)
         chance_number -= int(relationship_from.jealousy / 15)
         chance_number -= int(relationship_to.dislike / 15)

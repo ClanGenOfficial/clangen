@@ -100,11 +100,11 @@ class Relation_Events:
                 inter_cat.create_one_relationship(cat)
 
             cat_to_inter = (
-                cat.relationships[inter_cat.ID].platonic_like > 10
+                cat.relationships[inter_cat.ID].like > 10
                 or cat.relationships[inter_cat.ID].comfortable > 10
             )
             inter_to_cat = (
-                inter_cat.relationships[cat.ID].platonic_like > 10
+                inter_cat.relationships[cat.ID].like > 10
                 or inter_cat.relationships[cat.ID].comfortable > 10
             )
             if cat_to_inter and inter_to_cat:
@@ -353,9 +353,9 @@ class Relation_Events:
                     elif lower_than and relationship.romance <= threshold:
                         threshold_fulfilled = True
                 if v_type == "platonic":
-                    if not lower_than and relationship.platonic_like >= threshold:
+                    if not lower_than and relationship.like >= threshold:
                         threshold_fulfilled = True
-                    elif lower_than and relationship.platonic_like <= threshold:
+                    elif lower_than and relationship.like <= threshold:
                         threshold_fulfilled = True
                 if v_type == "dislike":
                     if not lower_than and relationship.dislike >= threshold:

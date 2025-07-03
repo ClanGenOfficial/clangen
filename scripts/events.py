@@ -2133,9 +2133,7 @@ class Events:
             ) - int(
                 0.5
                 * int(
-                    chosen_target.platonic_like
-                    + chosen_target.trust
-                    + chosen_target.comfortable
+                    chosen_target.like + chosen_target.trust + chosen_target.comfortable
                 )
             )
             kill_chance -= relation_modifier
