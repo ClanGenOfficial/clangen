@@ -1120,11 +1120,11 @@ class Events:
                     enemy_clan = other_clan
                     break
 
-            threshold = 5
+            threshold = 10
             if enemy_clan.temperament == "bloodthirsty":
-                threshold = 10
+                threshold = 12
             if enemy_clan.temperament in ["mellow", "amiable", "gracious"]:
-                threshold = 3
+                threshold = 7
 
             threshold -= int(game.clan.war["duration"])
             if enemy_clan.relations < 0:
@@ -1135,11 +1135,11 @@ class Events:
                 game.clan.war["at_war"] = False
                 game.clan.war["enemy"] = None
                 game.clan.war["duration"] = 0
-                enemy_clan.relations += 12
+                enemy_clan.relations += 2
                 war_events = self.WAR_TXT["conclusion_events"]
             else:  # try to influence the relation with warring clan
                 game.clan.war["duration"] += 1
-                choice = random.choice(["rel_up", "rel_up", "neutral", "rel_down"])
+                choice = random.choice(["rel_up", "neutral", "rel_down"])
                 switch_set_value(Switch.war_rel_change_type, choice)
                 war_events = self.WAR_TXT["progress_events"][choice]
                 if enemy_clan.relations < 0:
@@ -1164,6 +1164,7 @@ class Events:
                     game.clan.war["at_war"] = True
                     game.clan.war["enemy"] = other_clan.name
                     war_events = self.WAR_TXT["trigger_events"]
+                    game.switches["war_rel_change_type"] = "rel_down"
 
         # if nothing happened, return
         if not war_events or not enemy_clan:
@@ -1178,6 +1179,7 @@ class Events:
                 if not game.clan.medicine_cat and "med_name" in event:
                     war_events.remove(event)
 
+        # grab our war "notice" for this moon
         event = random.choice(war_events)
         event = ongoing_event_text_adjust(
             Cat, event, other_clan_name=f"{enemy_clan.name}Clan", clan=game.clan

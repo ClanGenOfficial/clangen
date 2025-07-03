@@ -4875,18 +4875,150 @@
         ]
     },
     {
+        "id": "partial_hearing_loss_gen",
+        "thoughts": [
+            "Secretly worries that {PRONOUN/m_c/poss} hearing is getting worse...",
+            "Insists that {PRONOUN/m_c/poss} hearing is fine, everyone's just whispering"
+            ],
+        "perm_conditions": {
+            "m_c": [
+                "partial hearing loss"
+            ]
+        }
+    },
+    {
+        "id": "partial_hearing_loss_gen_to_alive_gen",
+        "thoughts": [
+            "Happily teaches r_c how to read whisker twitches",
+            "Is grateful r_c always makes sure to involve {PRONOUN/m_c/subject} in conversation",
+            "Gives up on understanding r_c today"
+        ],
+        "random_living_status": ["living"],
+        "perm_conditions": {
+            "m_c": [
+                "partial hearing loss"
+            ]
+        }
+    },
+    {
+        "id": "partial_hearing_loss_gen_congenital_to_alive_gen",
+        "thoughts": [
+            "Is curious about the sounds {PRONOUN/m_c/poss} Clanmates describe",
+            "Imagines birdsong",
+            "Wonders how high r_c's voice actually is compared to what {PRONOUN/m_c/subject} {VERB/m_c/hear/hears}"
+        ],
+        "random_living_status": ["living"],
+        "perm_conditions": {
+            "m_c": [
+                "partial hearing loss"
+            ],
+            "born_with": {
+                "m_c": true
+            }
+        }
+    },
+    {
+        "id": "partial_hearing_loss_acquired_gen",
+        "thoughts": [
+            "Misses hearing the birdsong at dawn",
+            "Remembers a sound differently to how {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} it now",
+            "Is grateful for the peace and quiet about camp lately",
+            "Wonders where all the birds have gone"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "partial hearing loss"
+            ],
+            "born_with": {
+                "m_c": false
+            }
+        }
+    },
+    {
+        "id": "partial_hearing_loss_gen_to_alive_medcat_any",
+        "thoughts": [
+            "Visits r_c for {PRONOUN/m_c/poss} regular hearing checkup",
+            "Reassures r_c that {PRONOUN/m_c/poss} hearing is the same as always",
+            "Asks r_c whether it's possible {PRONOUN/m_c/poss} hearing is getting worse",
+            "Grumbles when r_c corners {PRONOUN/m_c/object} for another hearing check"
+        ],
+        "random_living_status": ["living"],
+        "random_status_constraint": [
+            "medicine cat apprentice",
+            "medicine cat"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "partial hearing loss"
+            ]
+        }
+    },
+    {
+        "id": "partial_hearing_loss_gen_wet_biomes",
+        "thoughts": [
+            "Explains that everything sounds like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} underwater"
+        ],
+        "biome": ["beach", "wetlands"],
+        "random_living_status": ["living"],
+        "perm_conditions": {
+            "m_c": [
+                "partial hearing loss"
+            ],
+            "born_with": {
+                "m_c": false
+            }
+        }
+    },
+    {
+        "id": "partial_hearing_loss_gen_mountainous",
+        "thoughts": [
+            "Explains that everything sounds like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} deep in a cave"
+        ],
+        "biome": ["mountainous"],
+        "random_living_status": ["living"],
+        "perm_conditions": {
+            "m_c": [
+                "partial hearing loss"
+            ],
+            "born_with": {
+                "m_c": false
+            }
+        }
+    },
+    {
+        "id": "any_hearing_congenital_adolescent-adult_to_alive_medcat_any",
+        "thoughts": [
+            "Shyly asks r_c whether {PRONOUN/m_c/poss} kits might struggle to hear too"
+        ],
+        "random_living_status": ["living"],
+        "random_status_constraint": [
+            "medicine cat apprentice",
+            "medicine cat"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "partial hearing loss",
+                "deaf"
+            ],
+            "born_with": {
+                "m_c": true
+            }
+        }
+    },
+    {
         "id": "deaf_gen_to_alive_gen",
         "thoughts": [
             "Wishes {PRONOUN/m_c/subject} could hear the sounds of camp",
-            "Teaches a new Clanmate how to do tail signals",
             "Nearly hits the den ceiling when r_c suddenly enters {PRONOUN/m_c/poss} line of sight",
             "Can identify {PRONOUN/m_c/poss} Clanmates just by the feel of their pawsteps",
-            "Recently discovered that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a habit of stomping",
-            "Is confused when r_c indicates birdsong",
-            "Wonders what r_c sounds like",
             "Knows what r_c is saying from {PRONOUN/r_c/poss} mouth movements",
             "Teases a Clanmate for trying to call {PRONOUN/m_c/object} out loud",
-            "Correctly recognizes r_c by the thumps of {PRONOUN/r_c/poss} pawpads alone",
+            "Correctly recognizes r_c by the thump of {PRONOUN/r_c/poss} pawpads alone",
             "Purrs at {PRONOUN/m_c/poss} jumpy Clanmates during a lightning storm"
         ],
         "perm_conditions": {
@@ -4899,14 +5031,55 @@
         ]
     },
     {
-        "id": "deaf_adolescent_to_alive_gen",
+        "id": "deaf_congenital_gen_to_alive_gen",
+        "thoughts": [
+            "Teaches a Clanmate how to do tail signals",
+            "{VERB/m_c/Are/Is} delighted when r_c asks to learn tail signals",
+            "Recently discovered that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a habit of stomping",
+            "Is confused when r_c indicates birdsong",
+            "Wonders what r_c sounds like",
+            "Discovers {PRONOUN/m_c/subject} {VERB/m_c/have/has} a lisp"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ],
+            "born_with": {
+                "m_c": true
+            }
+        },
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "deaf_adolescent_congenital_to_alive_gen",
         "thoughts": [
             "Wonders if the clouds make noise",
             "Wonders if the sun makes noise",
             "Wonders what sound is like",
-            "Tries to ask r_c for something, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} understand",
             "Is frustrated that other cats don't understand {PRONOUN/m_c/poss} signals",
-            "Wishes {PRONOUN/m_c/subject} could talk to other cats",
+            "Wishes {PRONOUN/m_c/subject} could talk to other cats"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ],
+            "born_with": {
+                "m_c": true
+            }
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "deaf_adolescent_to_alive_gen",
+        "thoughts": [
+            "Tries to ask r_c for something, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} understand",
             "Feels thunder boom and watches the others flinch",
             "Curiously feels the thumps of {PRONOUN/m_c/poss} Clanmates' pawsteps on the ground",
             "Presses against r_c to feel {PRONOUN/r_c/poss} purr rumble"
@@ -4926,7 +5099,6 @@
     {
         "id": "deaf_adolescent_to_alive_kit",
         "thoughts": [
-            "Teaches tail signals to the kits",
             "Is patient with squealing kits",
             "Sleeps soundly when {PRONOUN/m_c/poss} denmates are woken by the crying kits"
         ],
@@ -4943,9 +5115,52 @@
         ]
     },
     {
+        "id": "deaf_congenital_adolescent_to_alive_kit",
+        "thoughts": [
+            "Teaches tail signals to the kits"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ],
+            "born_with": {
+                "m_c": true
+            }
+        },
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "deaf_congenital_kitten_to_alive_med",
+        "thoughts": [
+            "Is learning tail signals from r_c",
+            "Giggles when r_c pokes around in {PRONOUN/m_c/poss} ears. Ticklish!",
+            "Learns about sound with a fascinated expression"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "deaf"
+            ]
+        },
+        "main_age_constraint": [
+            "kitten"
+        ],
+        "random_status_constraint": [
+            "medicine cat apprentice",
+            "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "deaf_adolescent_to_alive_med",
         "thoughts": [
-            "Is learning tail signals with r_c",
+            "Is practicing tail signals with r_c",
             "Giggles when r_c pokes around in {PRONOUN/m_c/poss} ears. Ticklish!"
         ],
         "perm_conditions": {
@@ -4967,11 +5182,11 @@
     {
         "id": "deaf_adolescent_to_alive_deaf_adult",
         "thoughts": [
-            "Is learning tail signals with r_c",
+            "Is talking with r_c with tail signals",
             "Rubs cheeks with r_c to let the older cat feel {PRONOUN/m_c/poss} purr",
             "Appreciates r_c's company",
             "Can relax around r_c",
-            "Enjoys sharing a secret language with r_c"
+            "Feels like r_c understands {PRONOUN/m_c/poss} challenges"
         ],
         "perm_conditions": {
             "m_c": [

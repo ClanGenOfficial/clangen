@@ -29,7 +29,11 @@ It's essential to know how thoughts are formatted when adding or altering them 
         },
         "perm_conditions": {
             "m_c": [],
-            "r_c": []
+            "r_c": [],
+            "born_with": {
+                "m_c": bool
+                "r_c": bool
+            },
         },
         "relationship_constraint": [],
         "backstory_constraint": {
@@ -97,11 +101,16 @@ You can additionally use the tag "any" to allow the thought to occur if the cat 
 
 
 **PERM_CONDITIONS:**
-Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition. 
+Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition. 
 
 > [Permanent Conditions Tag List](reference/index.md#__tabbed_1_4)
 >
 > You can additionally use the tag "any" to allow the thought to occur if the cat is experiencing any permanent condition.
+
+The additional constraint `born_with` allows you to constrain whether this thought appears for cats born with a condition (congenital) or not. Not providing the constraint is the same as saying either is acceptable.
+
+!!! note Important
+    Be careful when specifying `born_with`. If you force a condition to be congenital when it can never generate as such, the thought will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
 
 **RELATIONSHIP_CONSTRAINT:**
 Constrains the thought to only occur if m_c and r_c fulfill the tags requirements: for the "parent/child" tag, the thinker is the parent, and whoever it's directed towards the child (vise versa with "child/parent"), and the same goes for the "app/mentor" and "mentor/app."

@@ -38,11 +38,15 @@
                 "any"
             ]
         },
-        "exclude_involved": ["r_c"],
+        "exclude_involved": [
+            "r_c"
+        ],
         "history": [
             {
-            "cats": ["m_c"],
-            "reg_death": "m_c was secretly murdered by r_c."
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c was secretly murdered by r_c."
             }
         ],
         "relationships": [
@@ -1110,7 +1114,6 @@
         "sub_type": [
             "war"
         ],
-        "tags": [],
         "weight": 20,
         "event_text": "o_c_n attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
         "m_c": {
@@ -1126,7 +1129,8 @@
                     "r_c"
                 ],
                 "reg_death": "This cat died when o_c_n tried to break into camp.",
-                "lead_death": "tried to defend the Clan from o_c_n"
+                "lead_death": "tried to defend the Clan from o_c_n",
+                "scar": ""
             }
         ],
         "other_clan": {
@@ -2079,9 +2083,6 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "some_lives"
-        ],
         "weight": 20,
         "event_text": "m_c fell into a pit trap set by o_c_n's warriors.",
         "m_c": {
@@ -2099,7 +2100,8 @@
                     "m_c"
                 ],
                 "reg_death": "m_c fell into a pit trap set by an enemy Clan.",
-                "lead_death": "fell into a pit trap set by an enemy Clan."
+                "lead_death": "fell into a pit trap set by an enemy Clan.",
+                "scar": ""
             }
         ],
         "other_clan": {
@@ -2120,9 +2122,6 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "some_lives"
-        ],
         "weight": 20,
         "event_text": "m_c was hit by a monster while escaping across a Thunderpath from o_c_n warriors.",
         "m_c": {
@@ -2140,7 +2139,8 @@
                     "m_c"
                 ],
                 "reg_death": "m_c was hit by a monster.",
-                "lead_death": "{VERB/m_c/were/was} hit by a monster."
+                "lead_death": "{VERB/m_c/were/was} hit by a monster.",
+                "scar": ""
             }
         ],
         "other_clan": {
@@ -3062,10 +3062,11 @@
             "war"
         ],
         "tags": [
+            "no_body",
             "all_lives"
         ],
         "weight": 20,
-        "event_text": "m_c was sealed in a cramped rabbit burrow by o_c_n warriors. {PRONOUN/m_c/subject/CAP} didn't make it out alive.",
+        "event_text": "m_c was buried alive in a cramped rabbit burrow by o_c_n warriors.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -3084,7 +3085,8 @@
                     "m_c"
                 ],
                 "reg_death": "m_c suffocated underground.",
-                "lead_death": "{VERB/m_c/were/was} suffocated underground."
+                "lead_death": "{VERB/m_c/were/was} suffocated underground.",
+                "scar": ""
             }
         ],
         "other_clan": {
@@ -3153,6 +3155,14 @@
                 "deputy",
                 "leader"
             ],
+            "trait": [
+                "fierce",
+                "bloodthirsty",
+                "bold",
+                "ambitious",
+                "arrogant",
+                "competitive"
+            ],
             "dies": true
         },
         "r_c": {
@@ -3169,7 +3179,8 @@
                     "m_c"
                 ],
                 "reg_death": "m_c was accidentally killed by r_c in battle.",
-                "lead_death": "{VERB/m_c/were/was} accidentally killed by r_c in battle"
+                "lead_death": "{VERB/m_c/were/was} accidentally killed by r_c in battle",
+                "scar": ""
             }
         ],
         "relationships": [
@@ -3183,7 +3194,22 @@
                 "values": [
                     "trust"
                 ],
-                "amount": -15
+                "amount": -15,
+                "mutual": false
+            },
+            {
+                "cats_from": [
+                    "some_clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": -10
             }
         ],
         "other_clan": {
@@ -3781,8 +3807,7 @@
         "event_id": "gen_death_war_any5",
         "location": [
             "mountainous",
-            "forest",
-            "beach"
+            "forest"
         ],
         "season": [
             "any"
@@ -3790,9 +3815,7 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "some_lives"
-        ],
+        "tags": [],
         "weight": 20,
         "event_text": "m_c was killed by a falling boulder that o_c_n warriors pushed from a cliff above {PRONOUN/m_c/object}.",
         "m_c": {
@@ -3810,7 +3833,8 @@
                     "m_c"
                 ],
                 "reg_death": "m_c was crushed by a falling boulder.",
-                "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder."
+                "lead_death": "{VERB/m_c/were/was} crushed by a falling boulder",
+                "scar": ""
             }
         ],
         "other_clan": {
@@ -4624,10 +4648,6 @@
         "season": [
             "any"
         ],
-        "subtype": [
-            "war"
-        ],
-        "tags": [],
         "weight": 20,
         "event_text": "o_c_n warriors broke into the camp and killed m_c after damaging the herb stores.",
         "m_c": {
@@ -4652,7 +4672,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was killed when o_c_n warriors broke into camp."
+                "reg_death": "m_c was killed when o_c_n warriors broke into camp.",
+                "scar": "",
+                "lead_death": ""
             }
         ],
         "other_clan": {
@@ -4732,15 +4754,14 @@
         "season": [
             "any"
         ],
-        "tags": [],
         "weight": 20,
         "event_text": "m_c was killed by a o_c_n warrior while pulling an injured r_c away from battle.",
         "m_c": {
             "status": [
                 "medicine cat apprentice",
-                "medicine cat"
+                "medicine cat",
+                "apprentice"
             ],
-            "relationship_status": [],
             "not_skill": [
                 "FIGHTER,2"
             ],
@@ -4777,7 +4798,9 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was killed by a o_c_n warrior while trying to aid an injured Clanmate."
+                "reg_death": "m_c was killed by a o_c_n warrior while trying to aid an injured Clanmate.",
+                "scar": "",
+                "lead_death": ""
             }
         ],
         "relationships": [
@@ -4792,15 +4815,15 @@
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 15,
+                "mutual": false
             }
         ],
         "other_clan": {
             "current_rep": [
-                "hostile",
-                "neutral"
+                "hostile"
             ],
-            "changed": -3
+            "changed": -4
         }
     },
     {
@@ -4866,9 +4889,12 @@
         },
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "reg_death": "m_c died while wandering the territory.",
-            "lead_death": "died while wandering the territory"}
+                "lead_death": "died while wandering the territory"
+            }
         ]
     },
     {
@@ -5079,7 +5105,8 @@
                     "m_c"
                 ],
                 "reg_death": "m_c died of a heart attack due to stress.",
-                "lead_death": "died of a heart attack due to stress"
+                "lead_death": "died of a heart attack due to stress",
+                "scar": ""
             }
         ]
     },
@@ -5863,14 +5890,8 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan:kitten"
-        ],
-        "subtype": [
-            "war"
-        ],
         "weight": 20,
-        "event_text": "m_c was killed defending the kits from o_c_n warriors.",
+        "event_text": "m_c was killed defending the kits during a o_c_n raid.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -5904,14 +5925,15 @@
                     "m_c"
                 ],
                 "reg_death": "m_c died defending the kits from o_c_n warriors",
-                "lead_death": "defended the kits from o_c_n warriors"
+                "lead_death": "defended the kits from o_c_n warriors",
+                "scar": ""
             }
         ],
         "other_clan": {
             "current_rep": [
                 "hostile"
             ],
-            "changed": -3
+            "changed": -5
         }
     },
     {

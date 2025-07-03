@@ -113,6 +113,18 @@
             "items": {
               "$ref": "#/definitions/perm_condition_any"
             }
+          },
+          "born_with": {
+            "description": "Used to determine whether or not the given cat has this condition from birth. Only use if the cat must have it from birth, or must not have it from birth (omit value if either is suitable).",
+            "type": "object",
+            "properties": {
+              "m_c": {
+                "type": "boolean"
+              },
+              "r_c": {
+                "type": "boolean"
+              }
+            }
           }
         }
       },

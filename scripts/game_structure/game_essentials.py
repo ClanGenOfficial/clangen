@@ -241,12 +241,16 @@ class Game:
 
         # Apply war if needed
         if self.clan and self.clan.war.get("at_war", False) and args in war_effected:
-            # Grabs the modifer
-            mod = constants.CONFIG
-            for key in war_effected[args]:
-                mod = mod[key]
+            rel_change_type = switch_get_value(Switch.war_rel_change_type)
+            # if the war was positively affected this moon, we don't apply war modifier
+            # this way we only see increased death/injury when the war is going badly or is neutral
+            if rel_change_type != "rel_up":
+                # Grabs the modifier
+                mod = constants.CONFIG
+                for key in war_effected[args]:
+                    mod = mod[key]
 
-            config_value -= mod
+                config_value -= mod
 
         return config_value
 
