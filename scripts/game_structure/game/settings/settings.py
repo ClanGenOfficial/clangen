@@ -92,10 +92,5 @@ for cat in _:  # Add all the settings to the settings dictionary
         setting_lists[setting_name] = [inf[2], not inf[2]]
 del _settings, setting_name, _
 
-if not settings_txt_path.exists():
-    if not settings_txt_path.parent.exists():
-        settings_txt_path.parent.mkdir(parents=True)
-    with open(settings_txt_path, "w", encoding="utf-8") as write_file:
-        write_file.write("")
 game_settings_load()
 # End init settings
