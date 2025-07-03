@@ -24,7 +24,7 @@ from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills
 from scripts.cat.thoughts import Thoughts
 from scripts.cat_relations.inheritance import Inheritance
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, RelValue
 from scripts.conditions import (
     Illness,
     Injury,
@@ -681,29 +681,29 @@ class Cat:
             high_values = []
 
             if to_self.romance > 55:
-                very_high_values.append("romantic")
+                very_high_values.append(RelValue.ROMANCE)
             if to_self.romance > 40:
-                high_values.append("romantic")
+                high_values.append(RelValue.ROMANCE)
 
             if to_self.like > 50:
-                very_high_values.append("platonic")
+                very_high_values.append(RelValue.LIKE)
             if to_self.like > 30:
-                high_values.append("platonic")
+                high_values.append(RelValue.LIKE)
 
             if to_self.respect > 70:
-                very_high_values.append("respect")
+                very_high_values.append(RelValue.RESPECT)
             if to_self.respect > 50:
-                high_values.append("respect")
+                high_values.append(RelValue.RESPECT)
 
             if to_self.comfort > 60:
-                very_high_values.append("comfort")
+                very_high_values.append(RelValue.COMFORT)
             if to_self.comfort > 40:
-                high_values.append("comfort")
+                high_values.append(RelValue.COMFORT)
 
             if to_self.trust > 70:
-                very_high_values.append("trust")
+                very_high_values.append(RelValue.TRUST)
             if to_self.trust > 50:
-                high_values.append("trust")
+                high_values.append(RelValue.TRUST)
 
             major_chance = 0
             if very_high_values:
@@ -2741,13 +2741,11 @@ class Cat:
                 "cat_to_id": r.cat_to.ID,
                 "mates": r.mates,
                 "family": r.family,
-                "romance": r.romance,
-                "like": r.like,
-                "dislike": r.dislike,
-                "respect": r.respect,
-                "comfort": r.comfort,
-                "jealousy": r.jealousy,
-                "trust": r.trust,
+                RelValue.ROMANCE: r.romance,
+                RelValue.LIKE: r.like,
+                RelValue.RESPECT: r.respect,
+                RelValue.COMFORT: r.comfort,
+                RelValue.TRUST: r.trust,
                 "log": r.log,
             }
             rel.append(r_data)
@@ -2782,13 +2780,11 @@ class Cat:
                             cat_to=cat_to,
                             mates=rel["mates"] or False,
                             family=rel["family"] or False,
-                            romantic_love=(rel["romance"] or 0),
-                            platonic_like=(rel["like"] or 0),
-                            dislike=rel["dislike"] or 0,
-                            admiration=rel["respect"] or 0,
-                            comfortable=rel["comfort"] or 0,
-                            jealousy=rel["jealousy"] or 0,
-                            trust=rel["trust"] or 0,
+                            romance=(rel[RelValue.ROMANCE] or 0),
+                            like=(rel[RelValue.LIKE] or 0),
+                            respect=rel[RelValue.RESPECT] or 0,
+                            comfort=rel[RelValue.COMFORT] or 0,
+                            trust=rel[RelValue.TRUST] or 0,
                             log=rel["log"],
                         )
                         self.relationships[rel["cat_to_id"]] = new_rel
@@ -2883,9 +2879,9 @@ class Cat:
         # Are they mates?
         mates = rel1.cat_from.ID in rel1.cat_to.mate
 
-        pos_traits = ["platonic", "respect", "comfort", "trust"]
+        pos_traits = [RelValue.LIKE, RelValue.RESPECT, RelValue.COMFORT, RelValue.TRUST]
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
-            pos_traits.append("romantic")
+            pos_traits.append(RelValue.ROMANCE)
 
         neg_traits = ["dislike", "jealousy"]
 
@@ -2924,7 +2920,7 @@ class Cat:
 
             decrease: bool = sabotage
 
-            if trait == "romantic":
+            if trait == RelValue.ROMANCE:
                 if mates:
                     ran = (5, 10)
                 else:
@@ -2949,7 +2945,7 @@ class Cat:
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
-            elif trait == "platonic":
+            elif trait == RelValue.LIKE:
                 ran = (4, 6)
 
                 if sabotage:
@@ -2971,7 +2967,7 @@ class Cat:
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
-            elif trait == "respect":
+            elif trait == RelValue.RESPECT:
                 ran = (4, 6)
 
                 if sabotage:
@@ -2993,7 +2989,7 @@ class Cat:
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
-            elif trait == "comfort":
+            elif trait == RelValue.COMFORT:
                 ran = (4, 6)
 
                 if sabotage:
@@ -3015,7 +3011,7 @@ class Cat:
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
-            elif trait == "trust":
+            elif trait == RelValue.TRUST:
                 ran = (4, 6)
 
                 if sabotage:

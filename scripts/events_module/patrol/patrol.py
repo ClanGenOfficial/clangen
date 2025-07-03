@@ -12,6 +12,7 @@ import pygame
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
+from scripts.cat_relations.relationship import RelValue
 from scripts.clan import Clan
 from scripts.events_module.event_filters import event_for_tags
 from scripts.events_module.patrol.patrol_event import PatrolEvent
@@ -550,18 +551,23 @@ class Patrol:
             chance_of_romance_patrol += 10
 
         values = [
-            "romantic",
-            "platonic",
-            "dislike",
-            "respect",
-            "comfort",
-            "jealousy",
-            "trust",
+            RelValue.ROMANCE,
+            RelValue.LIKE,
+            RelValue.RESPECT,
+            RelValue.COMFORT,
+            RelValue.TRUST,
         ]
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
             if (
-                val in ("romantic", "platonic", "respect", "comfort", "trust")
+                val
+                in (
+                    RelValue.ROMANCE,
+                    RelValue.LIKE,
+                    RelValue.RESPECT,
+                    RelValue.COMFORT,
+                    RelValue.TRUST,
+                )
                 and value_check >= 20
             ):
                 chance_of_romance_patrol -= 1
@@ -667,7 +673,7 @@ class Patrol:
                     )
                 continue
 
-            if "romantic" in patrol.tags:
+            if RelValue.ROMANCE in patrol.tags:
                 romantic_patrols.append(patrol)
             else:
                 filtered_patrols.append(patrol)

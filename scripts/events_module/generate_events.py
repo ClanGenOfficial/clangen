@@ -530,7 +530,7 @@ class GenerateEvents:
             possible_events.extend(events[trait][body_status])
 
         # grab family events if they're needed. Family events should not be romantic.
-        if family_relation != "general" and rel_value != "romantic":
+        if family_relation != "general" and rel_value != RelValue.ROMANCE:
             events = GenerateEvents.get_death_reaction_dicts(family_relation, rel_value)
             possible_events.extend(events["general"][body_status])
             if trait in events and body_status in events[trait]:

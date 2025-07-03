@@ -10,6 +10,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import (
     cats_fulfill_single_interaction_constraints,
+    RelValue,
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.event_filters import event_for_season, event_for_location
@@ -115,7 +116,7 @@ class RomanticEvents:
             cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type] = {}
 
             # if it's the romance interaction type add all interactions
-            if val_type == "romance":
+            if val_type == RelValue.ROMANCE:
                 cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type]["increase"] = dictionary[
                     "increase"
                 ]
@@ -127,14 +128,14 @@ class RomanticEvents:
                     interaction
                     for interaction in dictionary["decrease"]
                     for tag in interaction.relationship_constraint
-                    if "romance" in tag
+                    if RelValue.ROMANCE in tag
                 ]
 
                 cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type]["decrease"] = [
                     interaction
                     for interaction in dictionary["decrease"]
                     for tag in interaction.relationship_constraint
-                    if "romance" in tag
+                    if RelValue.ROMANCE in tag
                 ]
 
         # resort the first generated overview dictionary to only "positive" and "negative" interactions
@@ -216,7 +217,7 @@ class RomanticEvents:
 
         # affect relationship - it should always be in a romance way
         value_change = "increase" if positive else "decrease"
-        rel_type = "romance"
+        rel_type = RelValue.ROMANCE
         relationship.chosen_interaction = chosen_interaction
         relationship.interaction_affect_relationships(
             value_change, chosen_interaction.intensity, rel_type
@@ -580,10 +581,10 @@ class RomanticEvents:
             )
         # second acceptance chance if the romantic is high enough
         elif (
-            "romance" in condition
-            and condition["romance"] != 0
-            and condition["romance"] > 0
-            and rel_to_check.romance >= condition["romance"] * 1.5
+            RelValue.ROMANCE in condition
+            and condition[RelValue.ROMANCE] != 0
+            and condition[RelValue.ROMANCE] > 0
+            and rel_to_check.romance >= condition[RelValue.ROMANCE] * 1.5
         ):
             become_mate = True
             mate_string = RomanticEvents.get_mate_string(
@@ -750,40 +751,59 @@ class RomanticEvents:
         if not relationship:
             return False
 
-        if "romance" in condition and condition["romance"] != 0:
-            if condition["romance"] > 0 and relationship.romance < condition["romance"]:
+        if RelValue.ROMANCE in condition and condition[RelValue.ROMANCE] != 0:
+            if (
+                condition[RelValue.ROMANCE] > 0
+                and relationship.romance < condition[RelValue.ROMANCE]
+            ):
                 return False
-            if condition["romance"] < 0 and relationship.romance > abs(
-                condition["romance"]
+            if condition[RelValue.ROMANCE] < 0 and relationship.romance > abs(
+                condition[RelValue.ROMANCE]
             ):
                 return False
 
-        if "like" in condition and condition["like"] != 0:
-            if condition["like"] > 0 and relationship.like < condition["like"]:
+        if RelValue.LIKE in condition and condition[RelValue.LIKE] != 0:
+            if (
+                condition[RelValue.LIKE] > 0
+                and relationship.like < condition[RelValue.LIKE]
+            ):
                 return False
-            if condition["like"] < 0 and relationship.like > abs(condition["like"]):
-                return False
-
-        if "respect" in condition and condition["respect"] != 0:
-            if condition["respect"] > 0 and relationship.respect < condition["respect"]:
-                return False
-            if condition["respect"] < 0 and relationship.respect > abs(
-                condition["respect"]
+            if condition[RelValue.LIKE] < 0 and relationship.like > abs(
+                condition[RelValue.LIKE]
             ):
                 return False
 
-        if "comfort" in condition and condition["comfort"] != 0:
-            if condition["comfort"] > 0 and relationship.comfort < condition["comfort"]:
+        if RelValue.RESPECT in condition and condition[RelValue.RESPECT] != 0:
+            if (
+                condition[RelValue.RESPECT] > 0
+                and relationship.respect < condition[RelValue.RESPECT]
+            ):
                 return False
-            if condition["comfort"] < 0 and relationship.comfort > abs(
-                condition["comfort"]
+            if condition[RelValue.RESPECT] < 0 and relationship.respect > abs(
+                condition[RelValue.RESPECT]
             ):
                 return False
 
-        if "trust" in condition and condition["trust"] != 0:
-            if condition["trust"] > 0 and relationship.trust < condition["trust"]:
+        if RelValue.COMFORT in condition and condition[RelValue.COMFORT] != 0:
+            if (
+                condition[RelValue.COMFORT] > 0
+                and relationship.comfort < condition[RelValue.COMFORT]
+            ):
                 return False
-            if condition["trust"] < 0 and relationship.trust > abs(condition["trust"]):
+            if condition[RelValue.COMFORT] < 0 and relationship.comfort > abs(
+                condition[RelValue.COMFORT]
+            ):
+                return False
+
+        if RelValue.TRUST in condition and condition[RelValue.TRUST] != 0:
+            if (
+                condition[RelValue.TRUST] > 0
+                and relationship.trust < condition[RelValue.TRUST]
+            ):
+                return False
+            if condition[RelValue.TRUST] < 0 and relationship.trust > abs(
+                condition[RelValue.TRUST]
+            ):
                 return False
 
         return True

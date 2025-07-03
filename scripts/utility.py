@@ -20,6 +20,7 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
+from scripts.cat_relations.relationship import ValueLevel, RelValue
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,
@@ -1030,15 +1031,15 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     else:
         relationship = cat_from.create_one_relationship(cat_to)
 
-    if rel_value == "romance":
+    if rel_value == RelValue.ROMANCE:
         return relationship.romance
-    elif rel_value == "like":
+    elif rel_value == RelValue.LIKE:
         return relationship.like
-    elif rel_value == "respect":
+    elif rel_value == RelValue.RESPECT:
         return relationship.respect
-    elif rel_value == "comfort":
+    elif rel_value == RelValue.COMFORT:
         return relationship.comfort
-    elif rel_value == "trust":
+    elif rel_value == RelValue.TRUST:
         return relationship.trust
 
     return None
@@ -1120,11 +1121,11 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
     # later count or sum can be used to get the amount of cats
     # this will be handled like this, because it is easier / shorter to check
     relation_dict = {
-        "romance": [],
-        "like": [],
-        "respect": [],
-        "comfort": [],
-        "trust": [],
+        RelValue.ROMANCE: [],
+        RelValue.LIKE: [],
+        RelValue.RESPECT: [],
+        RelValue.COMFORT: [],
+        RelValue.TRUST: [],
     }
 
     for inter_cat in all_cats:
@@ -1133,18 +1134,18 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
         else:
             continue
 
-        relation_dict["romance"].append(relation.romance >= value)
-        relation_dict["like"].append(relation.like >= value)
-        relation_dict["respect"].append(relation.respect >= value)
-        relation_dict["comfort"].append(relation.comfort >= value)
-        relation_dict["trust"].append(relation.trust >= value)
+        relation_dict[RelValue.ROMANCE].append(relation.romance >= value)
+        relation_dict[RelValue.LIKE].append(relation.like >= value)
+        relation_dict[RelValue.RESPECT].append(relation.respect >= value)
+        relation_dict[RelValue.COMFORT].append(relation.comfort >= value)
+        relation_dict[RelValue.TRUST].append(relation.trust >= value)
 
     return_dict = {
-        "romance": sum(relation_dict["romance"]),
-        "like": sum(relation_dict["like"]),
-        "respect": sum(relation_dict["respect"]),
-        "comfort": sum(relation_dict["comfort"]),
-        "trust": sum(relation_dict["trust"]),
+        RelValue.ROMANCE: sum(relation_dict[RelValue.ROMANCE]),
+        RelValue.LIKE: sum(relation_dict[RelValue.LIKE]),
+        RelValue.RESPECT: sum(relation_dict[RelValue.RESPECT]),
+        RelValue.COMFORT: sum(relation_dict[RelValue.COMFORT]),
+        RelValue.TRUST: sum(relation_dict[RelValue.TRUST]),
     }
 
     return return_dict
@@ -1178,16 +1179,11 @@ def filter_relationship_type(
         "mentor/app",
         "app/mentor",
     ]
-
-    possible_value_types = [
-        "romantic",
-        "platonic",
-        "dislike",
-        "comfort",
-        "jealousy",
-        "trust",
-        "respect",
-    ]
+    all_possible_tags = set(possible_rel_types + [v for v in ValueLevel])
+    if not set(filter_types).issubset(all_possible_tags):
+        print(
+            f"WARNING: {[tag for tag in all_possible_tags if tag not in set(filter_types).intersection(all_possible_tags)]} is not a valid relationship_status tag!"
+        )
 
     if "siblings" in filter_types:
         test_cat = group[0]
@@ -1206,7 +1202,7 @@ def filter_relationship_type(
         if not all(len(i.mate) >= (len(group) - 1) for i in group):
             return False
 
-        # Now the expensive test.  We have to see if everone is mates with each other
+        # Now the expensive test.  We have to see if everyone is mates with each other
         # Hopefully the cheaper tests mean this is only needed on events with a small number of cats
         for x in combinations(group, 2):
             if x[0].ID not in x[1].mate:
@@ -1224,6 +1220,7 @@ def filter_relationship_type(
                 continue
             if cat.ID not in patrol_leader.mate:
                 return False
+        filter_types.remove("mates_with_pl")
 
     # Check if all cats are not mates
     if "not_mates" in filter_types:
@@ -1231,6 +1228,7 @@ def filter_relationship_type(
         for x in combinations(group, 2):
             if x[0].ID in x[1].mate:
                 return False
+        filter_types.remove("not_mates")
 
     # Check if the cats are in a parent/child relationship
     if "parent/child" in filter_types:
@@ -1244,6 +1242,7 @@ def filter_relationship_type(
         # test for parentage
         if not group[0].is_parent(group[1]):
             return False
+        filter_types.remove("parent/child")
 
     if "child/parent" in filter_types:
         if patrol_leader:
@@ -1256,6 +1255,7 @@ def filter_relationship_type(
         # test for parentage
         if not group[1].is_parent(group[0]):
             return False
+        filter_types.remove("child/parent")
 
     if "mentor/app" in filter_types:
         if patrol_leader:
@@ -1268,6 +1268,7 @@ def filter_relationship_type(
         # test for parentage
         if not group[1].ID in group[0].apprentice:
             return False
+        filter_types.remove("mentor/app")
 
     if "app/mentor" in filter_types:
         if patrol_leader:
@@ -1280,53 +1281,12 @@ def filter_relationship_type(
         # test for parentage
         if not group[0].ID in group[1].apprentice:
             return False
+        filter_types.remove("app/mentor")
 
     # Filtering relationship values
-    break_loop = False
-    for v_type in possible_value_types:
-        # first get all tags for current value types
-        tags = [constraint for constraint in filter_types if v_type in constraint]
-
-        # If there is not a tag for the current value type, check next one
-        if len(tags) == 0:
-            continue
-
-            # there should be only one value constraint for each value type
-        elif len(tags) > 1:
-            print(
-                f"ERROR: event {event_id} has multiple relationship constraints for the value {v_type}."
-            )
-            break_loop = True
-            break
-
-        # try to extract the value/threshold from the text
-        try:
-            threshold = int(tags[0].split("_")[1])
-        except:
-            print(
-                f"ERROR: event {event_id} with the relationship constraint for the value does not {v_type} follow the formatting guidelines."
-            )
-            break_loop = True
-            break
-
-        if threshold > 100:
-            print(
-                f"ERROR: event {event_id} has a relationship constraint for the value {v_type}, which is higher than the max value of a relationship."
-            )
-            break_loop = True
-            break
-
-        if threshold <= 0:
-            print(
-                f"ERROR: event {event_id} has a relationship constraint for the value {v_type}, which is lower than the min value of a relationship or 0."
-            )
-            break_loop = True
-            break
-
-        # each cat has to have relationships with this relationship value above the threshold
-        fulfilled = True
+    # each cat has to have relationships toward each other matching every level tag
+    for level in filter_types:
         for inter_cat in group:
-            rel_above_threshold = []
             group_ids = [cat.ID for cat in group]
             relevant_relationships = list(
                 filter(
@@ -1336,50 +1296,13 @@ def filter_relationship_type(
                 )
             )
 
-            # get the relationships depending on the current value type + threshold
-            if v_type == "romantic":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.romance >= threshold
-                ]
-            elif v_type == "platonic":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.like >= threshold
-                ]
-            elif v_type == "dislike":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.dislike >= threshold
-                ]
-            elif v_type == "comfort":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.comfort >= threshold
-                ]
-            elif v_type == "jealousy":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.jealousy >= threshold
-                ]
-            elif v_type == "trust":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.trust >= threshold
-                ]
-            elif v_type == "respect":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.respect >= threshold
-                ]
+            # list of every cat's level list
+            group_levels = [rel.get_value_levels for rel in relevant_relationships]
 
-            # if the lengths are not equal, one cat has not the relationship value which is needed to another cat of
-            # the event
-            if len(rel_above_threshold) + 1 != len(group):
-                fulfilled = False
-                break
-
-        if not fulfilled:
-            break_loop = True
-            break
-
-    # if break is used in the loop, the condition are not fulfilled
-    # and this event should not be added to the filtered list
-    if break_loop:
-        return False
+            # now test each list to see if the required tag is inside
+            for level_list in group_levels:
+                if level not in level_list:
+                    return False
 
     return True
 
@@ -1466,13 +1389,11 @@ def unpack_rel_block(
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
     """
     possible_values = (
-        "romantic",
-        "platonic",
-        "dislike",
-        "comfort",
-        "jealous",
-        "trust",
-        "respect",
+        RelValue.ROMANCE,
+        RelValue.LIKE,
+        RelValue.COMFORT,
+        RelValue.TRUST,
+        RelValue.RESPECT,
     )
 
     for block in relationship_effects:
@@ -1501,16 +1422,14 @@ def unpack_rel_block(
         # grabbing values
         romantic_love = 0
         platonic_like = 0
-        dislike = 0
         comfortable = 0
-        jealousy = 0
         admiration = 0
         trust = 0
-        if "romantic" in values:
+        if RelValue.ROMANCE in values:
             romantic_love = amount
             if amount > 0:
                 positive = True
-        if "platonic" in values:
+        if RelValue.LIKE in values:
             platonic_like = amount
             if amount > 0:
                 positive = True
@@ -1518,7 +1437,7 @@ def unpack_rel_block(
             dislike = amount
             if amount < 0:
                 positive = True
-        if "comfort" in values:
+        if RelValue.COMFORT in values:
             comfortable = amount
             if amount > 0:
                 positive = True
@@ -1526,11 +1445,11 @@ def unpack_rel_block(
             jealousy = amount
             if amount < 0:
                 positive = True
-        if "trust" in values:
+        if RelValue.TRUST in values:
             trust = amount
             if amount > 0:
                 positive = True
-        if "respect" in values:
+        if RelValue.RESPECT in values:
             admiration = amount
             if amount > 0:
                 positive = True

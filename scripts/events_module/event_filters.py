@@ -85,7 +85,11 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             if any(cat.fetch_cat(i).no_kits for i in cat.mate):
                 return False
 
-        if other_cat and "romantic" in tags and not other_cat.is_potential_mate(cat):
+        if (
+            other_cat
+            and RelValue.ROMANCE in tags
+            and not other_cat.is_potential_mate(cat)
+        ):
             return False
 
     # check for required ranks within the clan

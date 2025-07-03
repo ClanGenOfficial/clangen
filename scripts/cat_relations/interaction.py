@@ -1,5 +1,6 @@
 import i18n
 
+from scripts.cat_relations.relationship import RelValue
 from scripts.events_module.event_filters import event_for_cat
 from scripts.game_structure.localization import load_lang_resource
 
@@ -277,15 +278,7 @@ def create_group_interaction(inter_list) -> list:
     return created_list
 
 
-rel_types = (
-    "romance",
-    "like",
-    "respect",
-    "trust",
-    "comfort",
-)
-
-INTERACTION_MASTER_DICT = {x: {} for x in rel_types}
+INTERACTION_MASTER_DICT = {x: {} for x in RelValue}
 
 relationship_lang = None
 
@@ -295,7 +288,7 @@ def rebuild_relationship_dicts():
     if relationship_lang == i18n.config.get("locale"):
         return
 
-    for rel in rel_types:
+    for rel in RelValue:
         INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(
             load_lang_resource(
                 f"events/relationship_events/normal_interactions/{rel}/increase.json"

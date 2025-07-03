@@ -7,6 +7,7 @@ import i18n.config
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import create_group_interaction, GroupInteraction
+from scripts.cat_relations.relationship import RelValue
 from scripts.event_class import Single_Event
 from scripts.events_module.event_filters import (
     event_for_location,
@@ -531,16 +532,22 @@ class GroupEvents:
         trust = 0
         comfort = 0
 
-        if "romance" in dictionary and dictionary["romance"] != "neutral":
-            romantic = amount if dictionary["romantic"] == "increase" else amount * -1
-        if "like" in dictionary and dictionary["like"] != "neutral":
-            platonic = amount if dictionary["platonic"] == "increase" else amount * -1
-        if "respect" in dictionary and dictionary["respect"] != "neutral":
-            platonic = amount if dictionary["dislike"] == "increase" else amount * -1
-        if "trust" in dictionary and dictionary["trust"] != "neutral":
-            platonic = amount if dictionary["respect"] == "increase" else amount * -1
-        if "comfort" in dictionary and dictionary["comfort"] != "neutral":
-            platonic = amount if dictionary["comfort"] == "increase" else amount * -1
+        if RelValue.ROMANCE in dictionary and dictionary[RelValue.ROMANCE] != "neutral":
+            romance = (
+                amount if dictionary[RelValue.ROMANCE] == "increase" else amount * -1
+            )
+        if RelValue.LIKE in dictionary and dictionary[RelValue.LIKE] != "neutral":
+            like = amount if dictionary[RelValue.LIKE] == "increase" else amount * -1
+        if RelValue.RESPECT in dictionary and dictionary[RelValue.RESPECT] != "neutral":
+            respect = amount if dictionary["dislike"] == "increase" else amount * -1
+        if RelValue.TRUST in dictionary and dictionary[RelValue.TRUST] != "neutral":
+            trust = (
+                amount if dictionary[RelValue.RESPECT] == "increase" else amount * -1
+            )
+        if RelValue.COMFORT in dictionary and dictionary[RelValue.COMFORT] != "neutral":
+            comfort = (
+                amount if dictionary[RelValue.COMFORT] == "increase" else amount * -1
+            )
 
         abbreviations_cat = []
 
@@ -584,16 +591,41 @@ class GroupEvents:
             trust = 0
             comfort = 0
 
-            if "romance" in dictionary and dictionary["romance"] != "neutral":
-                romance = amount if dictionary["romance"] == "increase" else amount * -1
-            if "like" in dictionary and dictionary["like"] != "neutral":
-                like = amount if dictionary["like"] == "increase" else amount * -1
-            if "respect" in dictionary and dictionary["respect"] != "neutral":
-                respect = amount if dictionary["respect"] == "increase" else amount * -1
-            if "trust" in dictionary and dictionary["trust"] != "neutral":
-                trust = amount if dictionary["trust"] == "increase" else amount * -1
-            if "comfort" in dictionary and dictionary["comfort"] != "neutral":
-                comfort = amount if dictionary["comfort"] == "increase" else amount * -1
+            if (
+                RelValue.ROMANCE in dictionary
+                and dictionary[RelValue.ROMANCE] != "neutral"
+            ):
+                romance = (
+                    amount
+                    if dictionary[RelValue.ROMANCE] == "increase"
+                    else amount * -1
+                )
+            if RelValue.LIKE in dictionary and dictionary[RelValue.LIKE] != "neutral":
+                like = (
+                    amount if dictionary[RelValue.LIKE] == "increase" else amount * -1
+                )
+            if (
+                RelValue.RESPECT in dictionary
+                and dictionary[RelValue.RESPECT] != "neutral"
+            ):
+                respect = (
+                    amount
+                    if dictionary[RelValue.RESPECT] == "increase"
+                    else amount * -1
+                )
+            if RelValue.TRUST in dictionary and dictionary[RelValue.TRUST] != "neutral":
+                trust = (
+                    amount if dictionary[RelValue.TRUST] == "increase" else amount * -1
+                )
+            if (
+                RelValue.COMFORT in dictionary
+                and dictionary[RelValue.COMFORT] != "neutral"
+            ):
+                comfort = (
+                    amount
+                    if dictionary[RelValue.COMFORT] == "increase"
+                    else amount * -1
+                )
 
             change_relationship_values(
                 cats_from=[cat_from],

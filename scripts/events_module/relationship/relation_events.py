@@ -5,6 +5,7 @@ from random import choice, randint
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.cat_relations.relationship import RelValue
 from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
@@ -306,15 +307,7 @@ class Relation_Events:
             if "child/parent" in constraint and not cat_to.is_parent(cat_from):
                 continue
 
-            value_types = [
-                "romantic",
-                "platonic",
-                "dislike",
-                "respect",
-                "comfort",
-                "jealousy",
-                "trust",
-            ]
+            value_types = [v for v in RelValue]
             fulfilled = True
             for v_type in value_types:
                 tags = [i for i in constraint if v_type in i]
@@ -347,12 +340,12 @@ class Relation_Events:
                     break
 
                 threshold_fulfilled = False
-                if v_type == "romantic":
+                if v_type == RelValue.ROMANCE:
                     if not lower_than and relationship.romance >= threshold:
                         threshold_fulfilled = True
                     elif lower_than and relationship.romance <= threshold:
                         threshold_fulfilled = True
-                if v_type == "platonic":
+                if v_type == RelValue.LIKE:
                     if not lower_than and relationship.like >= threshold:
                         threshold_fulfilled = True
                     elif lower_than and relationship.like <= threshold:
@@ -362,7 +355,7 @@ class Relation_Events:
                         threshold_fulfilled = True
                     elif lower_than and relationship.dislike <= threshold:
                         threshold_fulfilled = True
-                if v_type == "comfort":
+                if v_type == RelValue.COMFORT:
                     if not lower_than and relationship.comfort >= threshold:
                         threshold_fulfilled = True
                     elif lower_than and relationship.comfort <= threshold:
@@ -372,7 +365,7 @@ class Relation_Events:
                         threshold_fulfilled = True
                     elif lower_than and relationship.jealousy <= threshold:
                         threshold_fulfilled = True
-                if v_type == "trust":
+                if v_type == RelValue.TRUST:
                     if not lower_than and relationship.trust >= threshold:
                         threshold_fulfilled = True
                     elif lower_than and relationship.trust <= threshold:

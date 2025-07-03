@@ -5,6 +5,7 @@ from random import choice
 import i18n
 
 from scripts.cat.cats import Cat
+from scripts.cat_relations.relationship import RelValue
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
@@ -73,20 +74,20 @@ class Welcoming_Events:
         change_relationship_values(
             cats_to=[clan_cat],
             cats_from=[new_cat],
-            romance=new_to_clan_cat["romantic"],
-            like=new_to_clan_cat["platonic"],
-            respect=new_to_clan_cat["respect"],
-            comfort=new_to_clan_cat["comfort"],
-            trust=new_to_clan_cat["trust"],
+            romance=new_to_clan_cat[RelValue.ROMANCE],
+            like=new_to_clan_cat[RelValue.LIKE],
+            respect=new_to_clan_cat[RelValue.RESPECT],
+            comfort=new_to_clan_cat[RelValue.COMFORT],
+            trust=new_to_clan_cat[RelValue.TRUST],
         )
         change_relationship_values(
             cats_to=[new_cat],
             cats_from=[clan_cat],
-            romance=clan_cat_to_new["romantic"],
-            like=clan_cat_to_new["platonic"],
-            respect=clan_cat_to_new["respect"],
-            comfort=clan_cat_to_new["comfort"],
-            trust=clan_cat_to_new["trust"],
+            romance=clan_cat_to_new[RelValue.ROMANCE],
+            like=clan_cat_to_new[RelValue.LIKE],
+            respect=clan_cat_to_new[RelValue.RESPECT],
+            comfort=clan_cat_to_new[RelValue.COMFORT],
+            trust=clan_cat_to_new[RelValue.TRUST],
         )
 
         # add it to the event list
@@ -102,11 +103,11 @@ class Welcoming_Events:
         # the effect is set through the settings, therefore a rough assumption has to be made
         effect = " (neutral effect)"
         if (
-            clan_cat_to_new["romantic"] > 0
-            or clan_cat_to_new["platonic"] > 0
-            or clan_cat_to_new["respect"] > 0
-            or new_to_clan_cat["comfort"] > 0
-            or clan_cat_to_new["trust"] > 0
+            clan_cat_to_new[RelValue.ROMANCE] > 0
+            or clan_cat_to_new[RelValue.LIKE] > 0
+            or clan_cat_to_new[RelValue.RESPECT] > 0
+            or new_to_clan_cat[RelValue.COMFORT] > 0
+            or clan_cat_to_new[RelValue.TRUST] > 0
         ):
             effect = " (positive effect)"
         elif clan_cat_to_new["dislike"] > 0 or clan_cat_to_new["jealousy"] > 0:
