@@ -6,7 +6,6 @@ import i18n
 import scripts.cat_relations.interaction as interactions
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
-    rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
     rebuild_relationship_dicts,
 )
@@ -528,15 +527,9 @@ class Relationship:
                 continue
 
             cats_fulfill_conditions = cats_fulfill_single_interaction_constraints(
-                self.cat_from, self.cat_to, interact, game_mode
+                self.cat_from, self.cat_to, interact
             )
             if not cats_fulfill_conditions:
-                continue
-
-            relationship_fulfill_conditions = rel_fulfill_rel_constraints(
-                self, interact.relationship_constraint, interact.id
-            )
-            if not relationship_fulfill_conditions:
                 continue
 
             filtered.append(interact)

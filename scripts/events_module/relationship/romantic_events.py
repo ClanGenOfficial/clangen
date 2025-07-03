@@ -9,7 +9,6 @@ import scripts.cat_relations.interaction as interactions
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import (
-    rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
 )
 from scripts.event_class import Single_Event
@@ -200,14 +199,11 @@ class RomanticEvents:
             if len(in_tags) > 0:
                 continue
 
-            rel_fulfilled = rel_fulfill_rel_constraints(
-                relationship, interaction.relationship_constraint, interaction.id
-            )
             if not rel_fulfilled:
                 continue
 
             cat_fulfill = cats_fulfill_single_interaction_constraints(
-                cat_from, cat_to, interaction, game.clan.game_mode
+                cat_from, cat_to, interaction
             )
             if not cat_fulfill:
                 continue

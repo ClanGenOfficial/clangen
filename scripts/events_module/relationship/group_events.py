@@ -6,16 +6,13 @@ import i18n.config
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.cat_relations.interaction import (
-    create_group_interaction,
-    GroupInteraction,
-    rel_fulfill_rel_constraints,
-)
+from scripts.cat_relations.interaction import create_group_interaction, GroupInteraction
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     change_relationship_values,
     process_text,
+    filter_relationship_type,
 )
 from scripts.game_structure.localization import load_lang_resource
 
@@ -454,10 +451,10 @@ class GroupEvents:
                     cat_to.create_one_relationship(cat_from)
                 continue
 
-            relationship = cat_from.relationships[cat_to_id]
-
-            fulfilled = rel_fulfill_rel_constraints(
-                relationship, rel_constraint, interaction.id
+            fulfilled = filter_relationship_type(
+                group=[cat_from, cat_to],
+                filter_types=rel_constraint,
+                event_id=interaction.id,
             )
             fulfilled_list.append(fulfilled)
 
