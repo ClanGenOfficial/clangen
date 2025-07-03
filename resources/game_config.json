@@ -27,59 +27,47 @@
 		"chance_friends_to_lovers": 170,
 		"confession": {
 			"make_confession" : {
-				"romantic": 30,
-				"platonic": 15,
-				"dislike": -15,
-				"admiration": 0,
-				"comfortable": 10,
-				"jealousy": 0,
+				"romance": 30,
+				"like": 15,
+				"respect": 0,
+				"comfort": 10,
 				"trust": 0
 			},
 			"accept_confession" : {
-				"romantic": 17,
-				"platonic": 15,
-				"dislike": -10,
-				"admiration": 0,
-				"comfortable": 10,
-				"jealousy": 0,
+				"romance": 17,
+				"like": 15,
+				"respect": 0,
+				"comfort": 10,
 				"trust": 0
 			}
 		},
 		"mate_condition": {
-			"romantic": 20,
-			"platonic": 30,
-			"dislike": -10,
-			"admiration": 0,
-			"comfortable": 20,
-			"jealousy": 0,
+			"romance": 20,
+			"like": 30,
+			"respect": 0,
+			"comfort": 20,
 			"trust": 0
 		},
 		"platonic_to_romantic": {
-			"romantic": 0,
-			"platonic": 30,
-			"dislike": -15,
-			"admiration": 0,
-			"comfortable": 20,
-			"jealousy": 0,
+			"romance": 0,
+			"like": 30,
+			"respect": 0,
+			"comfort": 20,
 			"trust": 0
 		},
 		"poly":{
 			"current_mate_condition": {
-				"romantic": 30,
-				"platonic": 0,
-				"dislike": 0,
-				"admiration": 0,
-				"comfortable": 15,
-				"jealousy": -15,
+				"romance": 30,
+				"like": 0,
+				"respect": 0,
+				"comfort": 15,
 				"trust": 25
 			},
 			"mates_to_each_other": {
-				"romantic": 0,
-				"platonic": 15,
-				"dislike": -10,
-				"admiration": 0,
-				"comfortable": 15,
-				"jealousy": -15,
+				"romance": 0,
+				"like": 15,
+				"respect": 0,
+				"comfort": 15,
 				"trust": 20
 			}
 		},
@@ -87,7 +75,7 @@
 			"chance_fulfilled_condition - 1/chance of becoming mates when the conditions are fulfilled",
 			"chance_friends_to_lovers - 1/chance of becoming mates, triggers with friends_to_lover (has to be a high number because many relationships are checked each moon)",
 			"VALUES IN RELATIONSHIP DICT - 0: no condition; positive number: value has to be higher than number; negative number: value has to be lower than number",
-			"confession (make_confession) - if one cat has these feelings for another, they confess (if there are more, the highest romantic will be chosen)",
+			"confession (make_confession) - if one cat has these feelings for another, they confess (if there are more, the highest romance will be chosen)",
 			"confession (confess_acceptance) - if these conditions are fulfilled by the opposite cat, they accept, otherwise, they reject.",
 			"conditions for mates - both relationships have to fulfill this condition",
 			"poly (current_mate) - which conditions all current mate relationships has to have towards the main cat + vise versa",
@@ -97,61 +85,49 @@
 	"new_cat": {
 		"parent_buff": {
 			"kit_to_parent": {
-				"romantic": 0,
-				"platonic": 40,
-				"dislike": 0,
-				"admiration": 30,
-				"comfortable": 40,
-				"jealousy": 0,
-				"trust": 50
+				"romance": 0,
+				"like": 40,
+				"respect": 30,
+				"comfort": 70,
+				"trust": 60
 			},
 			"parent_to_kit": {
-				"romantic": 0,
-				"platonic": 40,
-				"dislike": 0,
-				"admiration": 30,
-				"comfortable": 40,
-				"jealousy": 0,
+				"romance": 0,
+				"like": 60,
+				"respect": 30,
+				"comfort": 40,
 				"trust": 30
 			}
 		},
 		"sib_buff": {
 			"cat1_to_cat2": {
-				"romantic": 0,
-				"platonic": 40,
-				"dislike": 0,
-				"admiration": 10,
-				"comfortable": 40,
-				"jealousy": 0,
+				"romance": 0,
+				"like": 40,
+				"respect": 10,
+				"comfort": 40,
 				"trust": 30
 			},
 			"cat2_to_cat1": {
-				"romantic": 0,
-				"platonic": 40,
-				"dislike": 0,
-				"admiration": 10,
-				"comfortable": 40,
-				"jealousy": 0,
+				"romance": 0,
+				"like": 40,
+				"respect": 10,
+				"comfort": 40,
 				"trust": 30
 			}
 		},
 		"rel_buff":{
 			"new_to_clan_cat": {
-				"romantic": 0,
-				"platonic": 15,
-				"dislike": 0,
-				"admiration": 10,
-				"comfortable": 15,
-				"jealousy": 0,
+				"romance": 0,
+				"like": 15,
+				"respect": 10,
+				"comfort": 15,
 				"trust": 15
 			},
 			"clan_cat_to_new":{
-				"romantic": 0,
-				"platonic": 15,
-				"dislike": 0,
-				"admiration": 5,
-				"comfortable": 10,
-				"jealousy": 0,
+				"romance": 0,
+				"like": 15,
+				"respect": 5,
+				"comfort": 10,
 				"trust": 10
 			}
 		},
