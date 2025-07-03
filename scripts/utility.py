@@ -1163,14 +1163,14 @@ def filter_relationship_type(
 ):
     """
     filters for specific types of relationships between groups of cat objects, returns bool
-    :param list[Cat] group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for
+    :param group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for
     parent/child, the cat being tested as parent must be index 0)
-    :param list[str] filter_types: the relationship types to check for. possible types: "siblings", "mates",
+    :param filter_types: the relationship types to check for. possible types: "siblings", "mates",
     "mates_with_pl" (PATROL ONLY), "not_mates", "parent/child", "child/parent", "mentor/app", "app/mentor",
     (following tags check if value is over given int) "romantic_int", "platonic_int", "dislike_int", "comfortable_int",
     "jealousy_int", "trust_int"
-    :param str event_id: if the event has an ID, include it here
-    :param Cat patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
+    :param event_id: if the event has an ID, include it here
+    :param patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
     """
     if not filter_types:
         return True

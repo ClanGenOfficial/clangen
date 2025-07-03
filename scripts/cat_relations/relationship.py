@@ -100,7 +100,7 @@ class Relationship:
         value_change = "increase" if positive else "decrease"
 
         # choose any type of intensity
-        intensity = random.choices(["low", "medium", "high"], weights=[4, 3, 2])[0]
+        intensity = random.choices(("low", "medium", "high"), weights=[4, 3, 2])[0]
 
         # get other possible filters
         season = str(game.clan.current_season).casefold()
@@ -384,7 +384,7 @@ class Relationship:
             bool_ballot.append(comp)
 
         # further influence the partition based on the relationship
-        for value in [self.like, self.respect, self.comfort, self.trust]:
+        for value in (self.like, self.respect, self.comfort, self.trust):
             # each 10th above 100 adds another True
             if value > 0:
                 bool_ballot += [True] * int(value / 10)
@@ -499,8 +499,8 @@ class Relationship:
                 a list of interactions, which fulfill the criteria
         """
         filtered = []
-        _season = [season, "Any", "any"]
-        _biome = [biome, "Any", "any"]
+        _season = (season, "Any", "any")
+        _biome = (biome, "Any", "any")
         # if there are no loaded interactions, return empty list
         if not interactions:
             return filtered

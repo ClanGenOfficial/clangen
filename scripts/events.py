@@ -2132,9 +2132,7 @@ class Events:
                 0.5 * int(chosen_target.dislike + chosen_target.jealousy)
             ) - int(
                 0.5
-                * int(
-                    chosen_target.like + chosen_target.trust + chosen_target.comfort
-                )
+                * int(chosen_target.like + chosen_target.trust + chosen_target.comfort)
             )
             kill_chance -= relation_modifier
 

@@ -277,13 +277,13 @@ def create_group_interaction(inter_list) -> list:
     return created_list
 
 
-rel_types = [
+rel_types = (
     "romance",
     "like",
     "respect",
     "trust",
     "comfort",
-]
+)
 
 INTERACTION_MASTER_DICT = {x: {} for x in rel_types}
 
