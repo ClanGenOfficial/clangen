@@ -30,13 +30,11 @@ class Relationship:
         cat_to,
         mates=False,
         family=False,
-        romantic_love=0,
-        platonic_like=0,
-        dislike=0,
-        admiration=0,
-        comfortable=0,
-        jealousy=0,
+        romance=0,
+        like=0,
+        respect=0,
         trust=0,
+        comfort=0,
         log=None,
     ) -> None:
         self.chosen_interaction = None
@@ -55,14 +53,12 @@ class Relationship:
         else:
             self.log = []
 
-        # each stat can go from 0 to 100
-        self.romantic_love = romantic_love
-        self.platonic_like = platonic_like
-        self.dislike = dislike
-        self.admiration = admiration
-        self.comfortable = comfortable
-        self.jealousy = jealousy
+        # each stat can go from 0 to 200, lower half is neg and higher half is pos
+        self.romance = romance
+        self.like = like
+        self.respect = respect
         self.trust = trust
+        self.comfort = comfort
 
     def link_relationship(self):
         """Add the other relationship object to this easily access and change the other side."""
