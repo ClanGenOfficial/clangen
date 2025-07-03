@@ -672,38 +672,60 @@ class Cat:
             if cat.dead or cat.outside or cat.moons < 1:
                 continue
 
-            to_self = cat.relationships.get(self.ID)
-            if not isinstance(to_self, Relationship):
+            rel_with_dead = cat.relationships.get(self.ID)
+            if not isinstance(rel_with_dead, Relationship):
                 continue
 
             family_relation = self.familial_grief(living_cat=cat)
             very_high_values = []
             high_values = []
+            very_low_values = []
 
-            if to_self.romance > 55:
-                very_high_values.append(RelValue.ROMANCE)
-            if to_self.romance > 40:
-                high_values.append(RelValue.ROMANCE)
+            # find what level of rel they had for each value
+            levels = rel_with_dead.get_value_levels()
+            for level in levels:
+                if level.is_romance_level():
+                    if level.is_extreme_pos():
+                        very_high_values.append(RelValue.ROMANCE)
+                    elif level.is_pos():
+                        high_values.append(RelValue.ROMANCE)
+                    continue
 
-            if to_self.like > 50:
-                very_high_values.append(RelValue.LIKE)
-            if to_self.like > 30:
-                high_values.append(RelValue.LIKE)
+                if level.is_like_level():
+                    if level.is_extreme_pos():
+                        very_high_values.append(RelValue.LIKE)
+                    elif level.is_pos():
+                        high_values.append(RelValue.LIKE)
+                    elif level.is_extreme_neg():
+                        very_low_values.append(RelValue.LIKE)
+                    continue
 
-            if to_self.respect > 70:
-                very_high_values.append(RelValue.RESPECT)
-            if to_self.respect > 50:
-                high_values.append(RelValue.RESPECT)
+                if level.is_respect_level():
+                    if level.is_extreme_pos():
+                        very_high_values.append(RelValue.RESPECT)
+                    elif level.is_pos():
+                        high_values.append(RelValue.RESPECT)
+                    elif level.is_extreme_neg():
+                        very_low_values.append(RelValue.RESPECT)
+                    continue
 
-            if to_self.comfort > 60:
-                very_high_values.append(RelValue.COMFORT)
-            if to_self.comfort > 40:
-                high_values.append(RelValue.COMFORT)
+                if level.is_trust_level():
+                    if level.is_extreme_pos():
+                        very_high_values.append(RelValue.TRUST)
+                    elif level.is_pos():
+                        high_values.append(RelValue.TRUST)
+                    elif level.is_extreme_neg():
+                        very_low_values.append(RelValue.TRUST)
+                    continue
 
-            if to_self.trust > 70:
-                very_high_values.append(RelValue.TRUST)
-            if to_self.trust > 50:
-                high_values.append(RelValue.TRUST)
+                if level.is_comfort_level():
+                    if level.is_extreme_pos():
+                        very_high_values.append(RelValue.COMFORT)
+                    elif level.is_pos():
+                        high_values.append(RelValue.COMFORT)
+                    elif level.is_extreme_neg():
+                        very_low_values.append(RelValue.COMFORT)
+                    continue
 
             major_chance = 0
             if very_high_values:
@@ -816,18 +838,10 @@ class Cat:
                 continue
 
             # Negative "grief" messages are just for flavor.
-            high_values = []
-            very_high_values = []
-            if to_self.dislike > 50:
-                high_values.append("dislike")
-
-            if to_self.jealousy > 50:
-                high_values.append("jealousy")
-
-            if high_values:
+            if very_low_values:
                 # Generate the event:
                 possible_strings = []
-                for x in high_values:
+                for x in very_low_values:
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(
                             family_relation, x, cat.personality.trait, body_status
@@ -2677,12 +2691,10 @@ class Cat:
                 related = parents or siblings
 
                 # set the different stats
-                romantic_love = 0
+                romance = 0
                 like = 0
-                dislike = 0
-                admiration = 0
-                comfortable = 0
-                jealousy = 0
+                respect = 0
+                comfort = 0
                 trust = 0
                 if game.settings["random relation"]:
                     if (
@@ -2691,24 +2703,24 @@ class Cat:
                         and game.clan.instructor.dead_for >= self.moons
                     ):
                         pass
-                    elif randint(1, 20) == 1 and romantic_love < 1:
-                        dislike = randint(10, 25)
-                        jealousy = randint(5, 15)
-                        if randint(1, 30) == 1:
-                            trust = randint(1, 10)
+                    elif randint(1, 20) == 1 and romance < 1:
+                        like += randint(-25, 5)
+                        respect += randint(-10, 15)
+                        trust += randint(-15, 5)
+                        comfort += randint(-15, 10)
                     else:
-                        like = randint(0, 35)
-                        comfortable = randint(0, 25)
-                        trust = randint(0, 15)
-                        admiration = randint(0, 20)
+                        like += randint(-10, 35)
+                        respect += randint(-10, 25)
+                        trust += randint(-5, 15)
+                        comfort += randint(-5, 15)
                         if (
                             randint(1, 100 - like) == 1
                             and self.moons > 11
                             and the_cat.moons > 11
                             and self.age == the_cat.age
                         ):
-                            romantic_love = randint(15, 30)
-                            comfortable = int(comfortable * 1.3)
+                            romance += randint(15, 30)
+                            comfort = int(comfort * 1.3)
                             trust = int(trust * 1.2)
 
                 if are_parents and like < 60:
@@ -2721,12 +2733,10 @@ class Cat:
                     cat_to=the_cat,
                     mates=mates,
                     family=related,
-                    romantic_love=romantic_love,
-                    platonic_like=like,
-                    dislike=dislike,
-                    admiration=admiration,
-                    comfortable=comfortable,
-                    jealousy=jealousy,
+                    romance=romance,
+                    like=like,
+                    respect=respect,
+                    comfort=comfort,
                     trust=trust,
                 )
                 self.relationships[the_cat.ID] = rel
@@ -2741,11 +2751,11 @@ class Cat:
                 "cat_to_id": r.cat_to.ID,
                 "mates": r.mates,
                 "family": r.family,
-                RelValue.ROMANCE: r.romance,
-                RelValue.LIKE: r.like,
-                RelValue.RESPECT: r.respect,
-                RelValue.COMFORT: r.comfort,
-                RelValue.TRUST: r.trust,
+                "romance": r.romance,
+                "like": r.like,
+                "respect": r.respect,
+                "comfort": r.comfort,
+                "trust": r.trust,
                 "log": r.log,
             }
             rel.append(r_data)
@@ -2780,11 +2790,11 @@ class Cat:
                             cat_to=cat_to,
                             mates=rel["mates"] or False,
                             family=rel["family"] or False,
-                            romance=(rel[RelValue.ROMANCE] or 0),
-                            like=(rel[RelValue.LIKE] or 0),
-                            respect=rel[RelValue.RESPECT] or 0,
-                            comfort=rel[RelValue.COMFORT] or 0,
-                            trust=rel[RelValue.TRUST] or 0,
+                            romance=(rel["romance"] or 0),
+                            like=(rel["like"] or 0),
+                            respect=rel["respect"] or 0,
+                            comfort=rel["comfort"] or 0,
+                            trust=rel["trust"] or 0,
                             log=rel["log"],
                         )
                         self.relationships[rel["cat_to_id"]] = new_rel
@@ -2879,17 +2889,19 @@ class Cat:
         # Are they mates?
         mates = rel1.cat_from.ID in rel1.cat_to.mate
 
-        pos_traits = [RelValue.LIKE, RelValue.RESPECT, RelValue.COMFORT, RelValue.TRUST]
+        rel_values = [v for v in RelValue]
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
-            pos_traits.append(RelValue.ROMANCE)
-
-        neg_traits = ["dislike", "jealousy"]
+            rel_values.append(RelValue.ROMANCE)
+        else:
+            rel_values.remove(RelValue.ROMANCE)
 
         # Determine the number of positive traits to effect, and choose the traits
-        chosen_pos = sample(pos_traits, k=randint(2, len(pos_traits)))
+        chosen_pos = sample(rel_values, k=randint(2, len(rel_values)))
 
         # Determine negative trains effected
-        neg_traits = sample(neg_traits, k=randint(1, 2))
+        chosen_neg = sample(
+            [v for v in rel_values if v not in chosen_pos], k=randint(1, 2)
+        )
 
         if compat is True:
             personality_bonus = 2
@@ -2899,7 +2911,7 @@ class Cat:
             personality_bonus = 0
 
         # Effects on traits
-        for trait in chosen_pos + neg_traits:
+        for value in chosen_pos + chosen_neg:
             # The EX bonus in not applied upon a fail.
             if apply_bonus:
                 if mediator.experience_level == "very low":
@@ -2918,9 +2930,12 @@ class Cat:
             else:
                 bonus = 0
 
-            decrease: bool = sabotage
+            if sabotage or value in chosen_neg:
+                decrease = True
+            else:
+                decrease = False
 
-            if trait == RelValue.ROMANCE:
+            if value == RelValue.ROMANCE:
                 if mates:
                     ran = (5, 10)
                 else:
@@ -2945,10 +2960,10 @@ class Cat:
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
-            elif trait == RelValue.LIKE:
+            elif value == RelValue.LIKE:
                 ran = (4, 6)
 
-                if sabotage:
+                if sabotage or value in chosen_neg:
                     rel1.like = Cat.effect_relation(
                         rel1.like,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
@@ -2967,10 +2982,10 @@ class Cat:
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
-            elif trait == RelValue.RESPECT:
+            elif value == RelValue.RESPECT:
                 ran = (4, 6)
 
-                if sabotage:
+                if sabotage or value in chosen_neg:
                     rel1.respect = Cat.effect_relation(
                         rel1.respect,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
@@ -2989,10 +3004,10 @@ class Cat:
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
-            elif trait == RelValue.COMFORT:
+            elif value == RelValue.COMFORT:
                 ran = (4, 6)
 
-                if sabotage:
+                if sabotage or value in chosen_neg:
                     rel1.comfort = Cat.effect_relation(
                         rel1.comfort,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
@@ -3011,10 +3026,10 @@ class Cat:
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 
-            elif trait == RelValue.TRUST:
+            elif value == RelValue.TRUST:
                 ran = (4, 6)
 
-                if sabotage:
+                if sabotage or value in chosen_neg:
                     rel1.trust = Cat.effect_relation(
                         rel1.trust,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
@@ -3031,51 +3046,6 @@ class Cat:
                     rel2.trust = Cat.effect_relation(
                         rel2.trust,
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-
-            elif trait == "dislike":
-                ran = (4, 9)
-                if sabotage:
-                    rel1.dislike = Cat.effect_relation(
-                        rel1.dislike,
-                        (randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                    rel2.dislike = Cat.effect_relation(
-                        rel2.dislike,
-                        (randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                else:
-                    rel1.dislike = Cat.effect_relation(
-                        rel1.dislike,
-                        -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                    rel2.dislike = Cat.effect_relation(
-                        rel2.dislike,
-                        -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-
-                decrease = not decrease
-
-            elif trait == "jealousy":
-                ran = (4, 6)
-
-                if sabotage:
-                    rel1.jealousy = Cat.effect_relation(
-                        rel1.jealousy,
-                        (randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                    rel2.jealousy = Cat.effect_relation(
-                        rel2.jealousy,
-                        (randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                else:
-                    rel1.jealousy = Cat.effect_relation(
-                        rel1.jealousy,
-                        -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                    rel2.jealousy = Cat.effect_relation(
-                        rel2.jealousy,
-                        -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
                     )
 
                 decrease = not decrease
@@ -3083,12 +3053,12 @@ class Cat:
             if decrease:
                 output += i18n.t(
                     "screens.mediation.output_decrease",
-                    trait=i18n.t(f"screens.mediation.{trait}"),
+                    trait=i18n.t(f"screens.mediation.{value}"),
                 )
             else:
                 output += i18n.t(
                     "screens.mediation.output_increase",
-                    trait=i18n.t(f"screens.mediation.{trait}"),
+                    trait=i18n.t(f"screens.mediation.{value}"),
                 )
 
         return output

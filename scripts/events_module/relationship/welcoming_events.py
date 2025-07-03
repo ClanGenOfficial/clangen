@@ -101,7 +101,6 @@ class Welcoming_Events:
         )
 
         # the effect is set through the settings, therefore a rough assumption has to be made
-        effect = " (neutral effect)"
         if (
             clan_cat_to_new[RelValue.ROMANCE] > 0
             or clan_cat_to_new[RelValue.LIKE] > 0
@@ -110,7 +109,7 @@ class Welcoming_Events:
             or clan_cat_to_new[RelValue.TRUST] > 0
         ):
             effect = " (positive effect)"
-        elif clan_cat_to_new["dislike"] > 0 or clan_cat_to_new["jealousy"] > 0:
+        else:
             effect = " (negative effect)"
 
         interaction_str += effect
