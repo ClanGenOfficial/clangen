@@ -427,7 +427,7 @@ class RelationshipScreen(Screens):
                     map(
                         abs,
                         [
-                            x.romantic_love,
+                            x.romance,
                             x.platonic_like,
                             x.dislike,
                             x.admiration,
@@ -670,7 +670,7 @@ class RelationshipScreen(Screens):
             self.filtered_cats = list(
                 filter(
                     lambda rel: (
-                        rel.romantic_love
+                        rel.romance
                         + rel.platonic_like
                         + rel.dislike
                         + rel.admiration
@@ -845,12 +845,12 @@ class RelationshipScreen(Screens):
         if not check_age or related:
             display_romantic = 0
             # Print, just for bug checking. Again, they should not be able to get love towards their relative.
-            if the_relationship.romantic_love and related:
+            if the_relationship.romance and related:
                 print(
-                    f"WARNING: {self.the_cat.name} has {the_relationship.romantic_love} romantic love towards their relative, {the_relationship.cat_to.name}"
+                    f"WARNING: {self.the_cat.name} has {the_relationship.romance} romantic love towards their relative, {the_relationship.cat_to.name}"
                 )
         else:
-            display_romantic = the_relationship.romantic_love
+            display_romantic = the_relationship.romance
 
         # determine placing on screen
         barbar = 22

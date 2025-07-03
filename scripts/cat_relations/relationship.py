@@ -351,7 +351,7 @@ class Relationship:
             amount = self.get_amount(value, "low")
 
             if key == "romantic":
-                self.romantic_love += amount
+                self.romance += amount
             elif key == "platonic":
                 self.platonic_like += amount
             elif key == "dislike":
@@ -447,7 +447,7 @@ class Relationship:
         if (
             not positive
             and "romantic" in types
-            and not self.cat_from.relationships[self.cat_to.ID].romantic_love
+            and not self.cat_from.relationships[self.cat_to.ID].romance
         ):
             types.remove("romantic")
 
@@ -557,7 +557,7 @@ class Relationship:
 
     def complex_romantic(self, value, buff):
         """Add the value to the romantic type and influence other value types as well."""
-        self.romantic_love += value
+        self.romance += value
         if value > 0:
             self.platonic_like += buff
             self.comfortable += buff
@@ -579,7 +579,7 @@ class Relationship:
         """Add the value to the dislike type and influence other value types as well."""
         self.dislike += value
         if value > 0:
-            self.romantic_love -= buff
+            self.romance -= buff
             self.platonic_like -= buff
         if value < 0:
             self.platonic_like += buff

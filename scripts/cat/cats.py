@@ -680,9 +680,9 @@ class Cat:
             very_high_values = []
             high_values = []
 
-            if to_self.romantic_love > 55:
+            if to_self.romance > 55:
                 very_high_values.append("romantic")
-            if to_self.romantic_love > 40:
+            if to_self.romance > 40:
                 high_values.append("romantic")
 
             if to_self.platonic_like > 50:
@@ -1209,7 +1209,7 @@ class Cat:
 
         # sort relations by the strength of their relationship
         dead_relations.sort(
-            key=lambda rel: rel.romantic_love
+            key=lambda rel: rel.romance
             + rel.platonic_like
             + rel.admiration
             + rel.comfortable
@@ -2489,12 +2489,12 @@ class Cat:
                     self.create_one_relationship(other_cat)
                     self.relationships[other_cat.ID].mates = True
                 self_relationship = self.relationships[other_cat.ID]
-                self_relationship.romantic_love -= randint(20, 60)
+                self_relationship.romance -= randint(20, 60)
                 self_relationship.comfortable -= randint(10, 30)
                 self_relationship.trust -= randint(5, 15)
                 self_relationship.mates = False
                 if fight:
-                    self_relationship.romantic_love -= randint(10, 30)
+                    self_relationship.romance -= randint(10, 30)
                     self_relationship.platonic_like -= randint(15, 45)
 
             if not other_cat.dead:
@@ -2502,12 +2502,12 @@ class Cat:
                     other_cat.create_one_relationship(self)
                     other_cat.relationships[self.ID].mates = True
                 other_relationship = other_cat.relationships[self.ID]
-                other_relationship.romantic_love -= 40
+                other_relationship.romance -= 40
                 other_relationship.comfortable -= 20
                 other_relationship.trust -= 10
                 other_relationship.mates = False
                 if fight:
-                    self_relationship.romantic_love -= 20
+                    self_relationship.romance -= 20
                     other_relationship.platonic_like -= 30
 
         self.mate.remove(other_cat.ID)
@@ -2548,7 +2548,7 @@ class Cat:
                 self.create_one_relationship(other_cat)
                 self.relationships[other_cat.ID].mates = True
             self_relationship = self.relationships[other_cat.ID]
-            self_relationship.romantic_love += 20
+            self_relationship.romance += 20
             self_relationship.comfortable += 20
             self_relationship.trust += 10
             self_relationship.mates = True
@@ -2558,7 +2558,7 @@ class Cat:
                 other_cat.create_one_relationship(self)
                 other_cat.relationships[self.ID].mates = True
             other_relationship = other_cat.relationships[self.ID]
-            other_relationship.romantic_love += 20
+            other_relationship.romance += 20
             other_relationship.comfortable += 20
             other_relationship.trust += 10
             other_relationship.mates = True
@@ -2741,7 +2741,7 @@ class Cat:
                 "cat_to_id": r.cat_to.ID,
                 "mates": r.mates,
                 "family": r.family,
-                "romantic_love": r.romantic_love,
+                "romantic_love": r.romance,
                 "platonic_like": r.platonic_like,
                 "dislike": r.dislike,
                 "admiration": r.admiration,
@@ -2931,21 +2931,21 @@ class Cat:
                     ran = (4, 6)
 
                 if sabotage:
-                    rel1.romantic_love = Cat.effect_relation(
-                        rel1.romantic_love,
+                    rel1.romance = Cat.effect_relation(
+                        rel1.romance,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
-                    rel2.romantic_love = Cat.effect_relation(
-                        rel2.romantic_love,
+                    rel2.romance = Cat.effect_relation(
+                        rel2.romance,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
                 else:
-                    rel1.romantic_love = Cat.effect_relation(
-                        rel1.romantic_love,
+                    rel1.romance = Cat.effect_relation(
+                        rel1.romance,
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
-                    rel2.romantic_love = Cat.effect_relation(
-                        rel2.romantic_love,
+                    rel2.romance = Cat.effect_relation(
+                        rel2.romance,
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 

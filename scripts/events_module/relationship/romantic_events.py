@@ -488,8 +488,8 @@ class RomanticEvents:
 
         # These are large decreases - they are to prevent becoming mates again on the same moon.
         if breakup_type == "had_fight":
-            relationship_to.romantic_love -= 15
-            relationship_from.romantic_love -= 15
+            relationship_to.romance -= 15
+            relationship_from.romance -= 15
             relationship_from.platonic_like -= 10
             relationship_to.platonic_like -= 10
             relationship_from.trust -= 10
@@ -497,8 +497,8 @@ class RomanticEvents:
             relationship_to.dislike += 10
             relationship_from.dislike += 10
         elif breakup_type == "decided_to_be_friends":
-            relationship_to.romantic_love -= 30
-            relationship_from.romantic_love -= 30
+            relationship_to.romance -= 30
+            relationship_from.romance -= 30
             relationship_from.platonic_like += 30
             relationship_to.platonic_like += 30
             relationship_from.trust += 20
@@ -506,15 +506,15 @@ class RomanticEvents:
             relationship_to.comfortable += 5
             relationship_from.comfortable += 5
         elif breakup_type == "lost_feelings":
-            relationship_to.romantic_love -= 30
-            relationship_from.romantic_love -= 30
+            relationship_to.romance -= 30
+            relationship_from.romance -= 30
             relationship_from.platonic_like -= 10
             relationship_to.platonic_like -= 10
             relationship_to.comfortable -= 10
             relationship_from.comfortable -= 10
         elif breakup_type == "bad_breakup":
-            relationship_to.romantic_love -= 20
-            relationship_from.romantic_love -= 15
+            relationship_to.romance -= 20
+            relationship_from.romance -= 15
             relationship_from.platonic_like -= 10
             relationship_to.platonic_like -= 15
             relationship_from.trust -= 20
@@ -524,8 +524,8 @@ class RomanticEvents:
             relationship_to.dislike += 10
             relationship_from.dislike += 5
         elif breakup_type == "chill_breakup":
-            relationship_to.romantic_love -= 15
-            relationship_from.romantic_love -= 15
+            relationship_to.romance -= 15
+            relationship_from.romance -= 15
             relationship_to.comfortable -= 10
             relationship_from.comfortable -= 10
 
@@ -607,7 +607,7 @@ class RomanticEvents:
             "romantic" in condition
             and condition["romantic"] != 0
             and condition["romantic"] > 0
-            and rel_to_check.romantic_love >= condition["romantic"] * 1.5
+            and rel_to_check.romance >= condition["romantic"] * 1.5
         ):
             become_mate = True
             mate_string = RomanticEvents.get_mate_string(
@@ -617,7 +617,7 @@ class RomanticEvents:
             mate_string = RomanticEvents.get_mate_string(
                 "rejected", poly, cat_from, cat_to
             )
-            cat_from.relationships[cat_to.ID].romantic_love -= 10
+            cat_from.relationships[cat_to.ID].romance -= 10
             cat_to.relationships[cat_from.ID].comfortable -= 10
 
         mate_string = RomanticEvents.prepare_relationship_string(
@@ -653,7 +653,7 @@ class RomanticEvents:
 
         # further influence the partition based on the relationship
         list_to_choice += [True] * int(relationship.platonic_like / 15)
-        list_to_choice += [True] * int(relationship.romantic_love / 15)
+        list_to_choice += [True] * int(relationship.romance / 15)
         list_to_choice += [False] * int(relationship.dislike / 10)
 
         return choice(list_to_choice)
@@ -797,10 +797,10 @@ class RomanticEvents:
         if "romantic" in condition and condition["romantic"] != 0:
             if (
                 condition["romantic"] > 0
-                and relationship.romantic_love < condition["romantic"]
+                and relationship.romance < condition["romantic"]
             ):
                 return False
-            if condition["romantic"] < 0 and relationship.romantic_love > abs(
+            if condition["romantic"] < 0 and relationship.romance > abs(
                 condition["romantic"]
             ):
                 return False
@@ -1062,8 +1062,8 @@ class RomanticEvents:
             return 0
 
         chance_number = 30
-        chance_number += int(relationship_from.romantic_love / 20)
-        chance_number += int(relationship_from.romantic_love / 20)
+        chance_number += int(relationship_from.romance / 20)
+        chance_number += int(relationship_from.romance / 20)
         chance_number += int(relationship_from.platonic_like / 20)
         chance_number += int(relationship_to.platonic_like / 20)
         chance_number -= int(relationship_from.dislike / 15)

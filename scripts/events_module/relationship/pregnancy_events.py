@@ -1019,12 +1019,10 @@ class Pregnancy_Events:
             affair_relation.link_relationship()
 
         average_mate_love = (
-            mate_relation.romantic_love
-            + mate_relation.opposite_relationship.romantic_love
+            mate_relation.romance + mate_relation.opposite_relationship.romance
         ) / 2
         average_affair_love = (
-            affair_relation.romantic_love
-            + affair_relation.opposite_relationship.romantic_love
+            affair_relation.romance + affair_relation.opposite_relationship.romance
         ) / 2
 
         difference = average_mate_love - average_affair_love
@@ -1071,7 +1069,7 @@ class Pregnancy_Events:
 
         affair_chance = 15
         average_romantic_love = (
-            relation.romantic_love + relation.opposite_relationship.romantic_love
+            relation.romance + relation.opposite_relationship.romance
         ) / 2
 
         if average_romantic_love > 50:
@@ -1143,8 +1141,8 @@ class Pregnancy_Events:
                 )
 
             average_romantic_love = (
-                second_parent_relation.romantic_love
-                + second_parent_relation.opposite_relationship.romantic_love
+                second_parent_relation.romance
+                + second_parent_relation.opposite_relationship.romance
             ) / 2
             average_comfort = (
                 second_parent_relation.comfortable

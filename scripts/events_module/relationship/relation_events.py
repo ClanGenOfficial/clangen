@@ -118,7 +118,7 @@ class Relation_Events:
 
             # the more mates the cat has, the less likely it will be that they interact with another cat romantically
             for mate_id in cat.mate:
-                chance_number -= int(cat.relationships[mate_id].romantic_love / 20)
+                chance_number -= int(cat.relationships[mate_id].romance / 20)
             use_mate = int(random.random() * chance_number)
 
         # If use_mate is falsey, or if the cat has been marked as "no_mates", only allow romantic
@@ -348,9 +348,9 @@ class Relation_Events:
 
                 threshold_fulfilled = False
                 if v_type == "romantic":
-                    if not lower_than and relationship.romantic_love >= threshold:
+                    if not lower_than and relationship.romance >= threshold:
                         threshold_fulfilled = True
-                    elif lower_than and relationship.romantic_love <= threshold:
+                    elif lower_than and relationship.romance <= threshold:
                         threshold_fulfilled = True
                 if v_type == "platonic":
                     if not lower_than and relationship.platonic_like >= threshold:

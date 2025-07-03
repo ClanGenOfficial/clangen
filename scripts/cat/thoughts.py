@@ -50,7 +50,7 @@ class Thoughts:
         if (
             "strangers" in constraint
             and relationship
-            and (relationship.platonic_like < 1 or relationship.romantic_love < 1)
+            and (relationship.platonic_like < 1 or relationship.romance < 1)
         ):
             return False
 

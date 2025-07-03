@@ -1002,7 +1002,7 @@ def get_highest_romantic_relation(
     max_love_value = 0
     current_max_relationship = None
     for rel in relationships:
-        if rel.romantic_love < 0:
+        if rel.romance < 0:
             continue
         if exclude_mate and rel.cat_from.ID in rel.cat_to.mate:
             continue
@@ -1010,9 +1010,9 @@ def get_highest_romantic_relation(
             rel.cat_from, for_love_interest=True
         ):
             continue
-        if rel.romantic_love > max_love_value:
+        if rel.romance > max_love_value:
             current_max_relationship = rel
-            max_love_value = rel.romantic_love
+            max_love_value = rel.romance
 
     return current_max_relationship
 
@@ -1031,7 +1031,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
         relationship = cat_from.create_one_relationship(cat_to)
 
     if rel_value == "romantic":
-        return relationship.romantic_love
+        return relationship.romance
     elif rel_value == "platonic":
         return relationship.platonic_like
     elif rel_value == "dislike":
@@ -1104,7 +1104,7 @@ def get_cats_of_romantic_interest(cat):
         # Extra check to ensure they are potential mates
         if (
             inter_cat.is_potential_mate(cat, for_love_interest=True)
-            and cat.relationships[inter_cat.ID].romantic_love > 0
+            and cat.relationships[inter_cat.ID].romance > 0
         ):
             cats.append(inter_cat)
     return cats
@@ -1137,7 +1137,7 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
         else:
             continue
 
-        relation_dict["romantic_love"].append(relation.romantic_love >= value)
+        relation_dict["romantic_love"].append(relation.romance >= value)
         relation_dict["platonic_like"].append(relation.platonic_like >= value)
         relation_dict["dislike"].append(relation.dislike >= value)
         relation_dict["admiration"].append(relation.admiration >= value)
@@ -1347,7 +1347,7 @@ def filter_relationship_type(
             # get the relationships depending on the current value type + threshold
             if v_type == "romantic":
                 rel_above_threshold = [
-                    i for i in relevant_relationships if i.romantic_love >= threshold
+                    i for i in relevant_relationships if i.romance >= threshold
                 ]
             elif v_type == "platonic":
                 rel_above_threshold = [
@@ -1673,11 +1673,11 @@ def change_relationship_values(
             ):
                 # if cat already has romantic feelings then automatically increase romantic feelings
                 # when platonic feelings would increase
-                if rel.romantic_love > 0 and auto_romance:
+                if rel.romance > 0 and auto_romance:
                     romantic_love = platonic_like
 
                 # now gain the romance
-                rel.romantic_love += romantic_love
+                rel.romance += romantic_love
 
             # gain other rel values
             rel.platonic_like += platonic_like
