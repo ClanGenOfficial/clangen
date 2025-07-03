@@ -1164,7 +1164,7 @@ class Events:
                     game.clan.war["at_war"] = True
                     game.clan.war["enemy"] = other_clan.name
                     war_events = self.WAR_TXT["trigger_events"]
-                    game.switches["war_rel_change_type"] = "rel_down"
+                    switch_set_value(Switch.war_rel_change_type, "rel_down")
 
         # if nothing happened, return
         if not war_events or not enemy_clan:

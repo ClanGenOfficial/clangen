@@ -20,6 +20,7 @@ from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure import localization, constants
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     event_text_adjust,
@@ -112,7 +113,7 @@ class HandleShortEvents:
         # check for war and assign self.other_clan accordingly
         war_chance = 5
         # if the war didn't go badly, then we decrease the chance of this event being war-focused
-        if game.switches["war_rel_change_type"] != "rel_down":
+        if switch_get_value(Switch.war_rel_change_type) != "rel_down":
             war_chance = 2
         if game.clan.war.get("at_war", False) and randint(1, war_chance) != 1:
             enemy_clan = get_warring_clan()

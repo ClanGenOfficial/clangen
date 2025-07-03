@@ -103,7 +103,7 @@ class StartScreen(Screens):
                 open_url("https://officialclangen.tumblr.com/")
             elif event.ui_element == self.social_buttons["twitter_button"]:
                 open_url("https://twitter.com/OfficialClangen")
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if (
                 event.key == pygame.K_RETURN or event.key == pygame.K_SPACE
             ) and self.continue_button.is_enabled:

@@ -1071,9 +1071,7 @@ class Clan:
         for event in game.clan.future_events:
             save_list.append(event.to_dict())
 
-        game.safe_save(
-            f"{get_save_dir()}/{game.clan.name}/future_events.json", save_list
-        )
+        safe_save(f"{get_save_dir()}/{game.clan.name}/future_events.json", save_list)
 
     def load_herb_supply(self, clan):
         """
