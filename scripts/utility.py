@@ -659,7 +659,7 @@ def create_new_cat_block(
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, inter_cat, False, True)
                 start_relation.like += 30 + y
-                start_relation.comfortable = 10 + y
+                start_relation.comfort = 10 + y
                 start_relation.respect = 15 + y
                 start_relation.trust = 10 + y
                 n_c.relationships[inter_cat.ID] = start_relation
@@ -672,7 +672,7 @@ def create_new_cat_block(
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
                 start_relation.like += 30 + y
-                start_relation.comfortable = 10 + y
+                start_relation.comfort = 10 + y
                 start_relation.respect = 15 + y
                 start_relation.trust = 10 + y
                 par.relationships[n_c.ID] = start_relation
@@ -680,7 +680,7 @@ def create_new_cat_block(
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
                 start_relation.like += 30 + y
-                start_relation.comfortable = 10 + y
+                start_relation.comfort = 10 + y
                 start_relation.respect = 15 + y
                 start_relation.trust = 10 + y
                 n_c.relationships[par.ID] = start_relation
@@ -695,7 +695,7 @@ def create_new_cat_block(
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
                 start_relation.like += 30 + y
-                start_relation.comfortable = 10 + y
+                start_relation.comfort = 10 + y
                 start_relation.respect = 15 + y
                 start_relation.trust = 10 + y
                 par.relationships[n_c.ID] = start_relation
@@ -703,7 +703,7 @@ def create_new_cat_block(
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
                 start_relation.like += 30 + y
-                start_relation.comfortable = 10 + y
+                start_relation.comfort = 10 + y
                 start_relation.respect = 15 + y
                 start_relation.trust = 10 + y
                 n_c.relationships[par.ID] = start_relation
@@ -1039,7 +1039,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     elif rel_value == "admiration":
         return relationship.respect
     elif rel_value == "comfortable":
-        return relationship.comfortable
+        return relationship.comfort
     elif rel_value == "jealousy":
         return relationship.jealousy
     elif rel_value == "trust":
@@ -1141,7 +1141,7 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
         relation_dict["platonic_like"].append(relation.like >= value)
         relation_dict["dislike"].append(relation.dislike >= value)
         relation_dict["admiration"].append(relation.respect >= value)
-        relation_dict["comfortable"].append(relation.comfortable >= value)
+        relation_dict["comfortable"].append(relation.comfort >= value)
         relation_dict["jealousy"].append(relation.jealousy >= value)
         relation_dict["trust"].append(relation.trust >= value)
 
@@ -1359,7 +1359,7 @@ def filter_relationship_type(
                 ]
             elif v_type == "comfortable":
                 rel_above_threshold = [
-                    i for i in relevant_relationships if i.comfortable >= threshold
+                    i for i in relevant_relationships if i.comfort >= threshold
                 ]
             elif v_type == "jealousy":
                 rel_above_threshold = [
@@ -1683,7 +1683,7 @@ def change_relationship_values(
             rel.like += platonic_like
             rel.dislike += dislike
             rel.respect += admiration
-            rel.comfortable += comfortable
+            rel.comfort += comfortable
             rel.jealousy += jealousy
             rel.trust += trust
 

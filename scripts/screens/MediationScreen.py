@@ -766,7 +766,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"comfortable_text{tag}"
             ] = pygame_gui.elements.UITextBox(
-                "relationships.comfortable_label",
+                "relationships.comfort_label",
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 5),
@@ -774,7 +774,7 @@ class MediationScreen(Screens):
                     )
                 ),
                 object_id="#text_box_22_horizleft",
-                text_kwargs={"count": 2 if the_relationship.comfortable > 49 else 1},
+                text_kwargs={"count": 2 if the_relationship.comfort > 49 else 1},
             )
             self.selected_cat_elements[f"comfortable_bar{tag}"] = UIRelationStatusBar(
                 ui_scale(
@@ -783,7 +783,7 @@ class MediationScreen(Screens):
                         (150, 9),
                     )
                 ),
-                the_relationship.comfortable,
+                the_relationship.comfort,
                 positive_trait=True,
                 dark_mode=game.settings["dark mode"],
             )
@@ -802,7 +802,7 @@ class MediationScreen(Screens):
                     )
                 ),
                 object_id="#text_box_22_horizleft",
-                text_kwargs={"count": 2 if the_relationship.comfortable > 49 else 1},
+                text_kwargs={"count": 2 if the_relationship.comfort > 49 else 1},
             )
             self.selected_cat_elements[f"jealous_bar{tag}"] = UIRelationStatusBar(
                 ui_scale(

@@ -503,15 +503,15 @@ class RomanticEvents:
             relationship_to.like += 30
             relationship_from.trust += 20
             relationship_to.trust += 20
-            relationship_to.comfortable += 5
-            relationship_from.comfortable += 5
+            relationship_to.comfort += 5
+            relationship_from.comfort += 5
         elif breakup_type == "lost_feelings":
             relationship_to.romance -= 30
             relationship_from.romance -= 30
             relationship_from.like -= 10
             relationship_to.like -= 10
-            relationship_to.comfortable -= 10
-            relationship_from.comfortable -= 10
+            relationship_to.comfort -= 10
+            relationship_from.comfort -= 10
         elif breakup_type == "bad_breakup":
             relationship_to.romance -= 20
             relationship_from.romance -= 15
@@ -519,15 +519,15 @@ class RomanticEvents:
             relationship_to.like -= 15
             relationship_from.trust -= 20
             relationship_to.trust -= 25
-            relationship_to.comfortable -= 20
-            relationship_from.comfortable -= 20
+            relationship_to.comfort -= 20
+            relationship_from.comfort -= 20
             relationship_to.dislike += 10
             relationship_from.dislike += 5
         elif breakup_type == "chill_breakup":
             relationship_to.romance -= 15
             relationship_from.romance -= 15
-            relationship_to.comfortable -= 10
-            relationship_from.comfortable -= 10
+            relationship_to.comfort -= 10
+            relationship_from.comfort -= 10
 
         text = choice(RomanticEvents.BREAKUP_STRINGS[breakup_type])
         text = event_text_adjust(Cat, text, main_cat=cat_from, random_cat=cat_to)
@@ -618,7 +618,7 @@ class RomanticEvents:
                 "rejected", poly, cat_from, cat_to
             )
             cat_from.relationships[cat_to.ID].romance -= 10
-            cat_to.relationships[cat_from.ID].comfortable -= 10
+            cat_to.relationships[cat_from.ID].comfort -= 10
 
         mate_string = RomanticEvents.prepare_relationship_string(
             mate_string, cat_from, cat_to
@@ -831,10 +831,10 @@ class RomanticEvents:
         if "comfortable" in condition and condition["comfortable"] != 0:
             if (
                 condition["comfortable"] > 0
-                and relationship.comfortable < condition["comfortable"]
+                and relationship.comfort < condition["comfortable"]
             ):
                 return False
-            if condition["comfortable"] < 0 and relationship.comfortable > abs(
+            if condition["comfortable"] < 0 and relationship.comfort > abs(
                 condition["comfortable"]
             ):
                 return False

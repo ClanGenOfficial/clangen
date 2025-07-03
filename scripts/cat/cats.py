@@ -695,9 +695,9 @@ class Cat:
             if to_self.respect > 50:
                 high_values.append("admiration")
 
-            if to_self.comfortable > 60:
+            if to_self.comfort > 60:
                 very_high_values.append("comfort")
-            if to_self.comfortable > 40:
+            if to_self.comfort > 40:
                 high_values.append("comfort")
 
             if to_self.trust > 70:
@@ -1212,7 +1212,7 @@ class Cat:
             key=lambda rel: rel.romance
             + rel.like
             + rel.respect
-            + rel.comfortable
+            + rel.comfort
             + rel.trust,
             reverse=True,
         )
@@ -2490,7 +2490,7 @@ class Cat:
                     self.relationships[other_cat.ID].mates = True
                 self_relationship = self.relationships[other_cat.ID]
                 self_relationship.romance -= randint(20, 60)
-                self_relationship.comfortable -= randint(10, 30)
+                self_relationship.comfort -= randint(10, 30)
                 self_relationship.trust -= randint(5, 15)
                 self_relationship.mates = False
                 if fight:
@@ -2503,7 +2503,7 @@ class Cat:
                     other_cat.relationships[self.ID].mates = True
                 other_relationship = other_cat.relationships[self.ID]
                 other_relationship.romance -= 40
-                other_relationship.comfortable -= 20
+                other_relationship.comfort -= 20
                 other_relationship.trust -= 10
                 other_relationship.mates = False
                 if fight:
@@ -2549,7 +2549,7 @@ class Cat:
                 self.relationships[other_cat.ID].mates = True
             self_relationship = self.relationships[other_cat.ID]
             self_relationship.romance += 20
-            self_relationship.comfortable += 20
+            self_relationship.comfort += 20
             self_relationship.trust += 10
             self_relationship.mates = True
 
@@ -2559,7 +2559,7 @@ class Cat:
                 other_cat.relationships[self.ID].mates = True
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.romance += 20
-            other_relationship.comfortable += 20
+            other_relationship.comfort += 20
             other_relationship.trust += 10
             other_relationship.mates = True
 
@@ -2573,7 +2573,7 @@ class Cat:
                 self.create_one_relationship(other_cat)
             self_relationship = self.relationships[other_cat.ID]
             self_relationship.like -= randint(10, 30)
-            self_relationship.comfortable -= randint(10, 30)
+            self_relationship.comfort -= randint(10, 30)
             self_relationship.trust -= randint(5, 15)
 
         if not other_cat.dead:
@@ -2581,7 +2581,7 @@ class Cat:
                 other_cat.create_one_relationship(self)
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.like -= 20
-            other_relationship.comfortable -= 20
+            other_relationship.comfort -= 20
             other_relationship.trust -= 10
 
     def set_adoptive_parent(self, other_cat: Cat):
@@ -2595,7 +2595,7 @@ class Cat:
                 self.create_one_relationship(other_cat)
             self_relationship = self.relationships[other_cat.ID]
             self_relationship.like += 20
-            self_relationship.comfortable += 20
+            self_relationship.comfort += 20
             self_relationship.trust += 10
 
         if not other_cat.dead:
@@ -2603,7 +2603,7 @@ class Cat:
                 other_cat.create_one_relationship(self)
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.like += 20
-            other_relationship.comfortable += 20
+            other_relationship.comfort += 20
             other_relationship.trust += 10
 
     def create_inheritance_new_cat(self):
@@ -2745,7 +2745,7 @@ class Cat:
                 "platonic_like": r.like,
                 "dislike": r.dislike,
                 "admiration": r.respect,
-                "comfortable": r.comfortable,
+                "comfortable": r.comfort,
                 "jealousy": r.jealousy,
                 "trust": r.trust,
                 "log": r.log,
@@ -2997,21 +2997,21 @@ class Cat:
                 ran = (4, 6)
 
                 if sabotage:
-                    rel1.comfortable = Cat.effect_relation(
-                        rel1.comfortable,
+                    rel1.comfort = Cat.effect_relation(
+                        rel1.comfort,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
-                    rel2.comfortable = Cat.effect_relation(
-                        rel2.comfortable,
+                    rel2.comfort = Cat.effect_relation(
+                        rel2.comfort,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
                 else:
-                    rel1.comfortable = Cat.effect_relation(
-                        rel1.comfortable,
+                    rel1.comfort = Cat.effect_relation(
+                        rel1.comfort,
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
-                    rel2.comfortable = Cat.effect_relation(
-                        rel2.comfortable,
+                    rel2.comfort = Cat.effect_relation(
+                        rel2.comfort,
                         (randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
 

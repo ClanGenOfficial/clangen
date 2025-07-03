@@ -359,7 +359,7 @@ class Relationship:
             elif key == "admiration":
                 self.respect += amount
             elif key == "comfortable":
-                self.comfortable += amount
+                self.comfort += amount
             elif key == "jealousy":
                 self.jealousy += amount
             elif key == "trust":
@@ -560,19 +560,19 @@ class Relationship:
         self.romance += value
         if value > 0:
             self.like += buff
-            self.comfortable += buff
+            self.comfort += buff
             self.dislike -= buff
         if value < 0:
-            self.comfortable -= buff
+            self.comfort -= buff
 
     def complex_platonic(self, value, buff):
         """Add the value to the platonic type and influence other value types as well."""
         self.like += value
         if value > 0:
-            self.comfortable += buff
+            self.comfort += buff
             self.dislike -= buff
         if value < 0:
-            self.comfortable -= buff
+            self.comfort -= buff
             self.dislike += buff
 
     def complex_dislike(self, value, buff):
@@ -583,7 +583,7 @@ class Relationship:
             self.like -= buff
         if value < 0:
             self.like += buff
-            self.comfortable += buff
+            self.comfort += buff
 
     def complex_admiration(self, value, buff):
         """Add the value to the admiration type and influence other value types as well."""
@@ -596,7 +596,7 @@ class Relationship:
 
     def complex_comfortable(self, value, buff):
         """Add the value to the comfortable type and influence other value types as well."""
-        self.comfortable += value
+        self.comfort += value
         if value > 0:
             self.trust += buff
             self.like += buff
@@ -613,13 +613,13 @@ class Relationship:
         if value > 0:
             self.dislike += buff
         if value < 0:
-            self.comfortable += buff
+            self.comfort += buff
 
     def complex_trust(self, value, buff):
         """Add the value to the trust type and influence other value types as well."""
         self.trust += value
         if value > 0:
-            self.comfortable += buff
+            self.comfort += buff
             self.dislike -= buff
 
     # ---------------------------------------------------------------------------- #

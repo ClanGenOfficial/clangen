@@ -880,7 +880,7 @@ class Pregnancy_Events:
                     y = random.randrange(0, 15)
                     start_relation = Relationship(the_cat, kit, False, True)
                     start_relation.like += parent_to_kit["platonic"] + y
-                    start_relation.comfortable = parent_to_kit["comfortable"] + y
+                    start_relation.comfort = parent_to_kit["comfortable"] + y
                     start_relation.respect = parent_to_kit["admiration"] + y
                     start_relation.trust = parent_to_kit["trust"] + y
                     the_cat.relationships[kit.ID] = start_relation
@@ -891,7 +891,7 @@ class Pregnancy_Events:
                     y = random.randrange(0, 15)
                     start_relation = Relationship(kit, the_cat, False, True)
                     start_relation.like += kit_to_parent["platonic"] + y
-                    start_relation.comfortable = kit_to_parent["comfortable"] + y
+                    start_relation.comfort = kit_to_parent["comfortable"] + y
                     start_relation.respect = kit_to_parent["admiration"] + y
                     start_relation.trust = kit_to_parent["trust"] + y
                     kit.relationships[the_cat.ID] = start_relation
@@ -914,7 +914,7 @@ class Pregnancy_Events:
                 if second_kitten.ID == kitten.ID:
                     continue
                 kitten.relationships[second_kitten.ID].like += 20 + y
-                kitten.relationships[second_kitten.ID].comfortable += 10 + y
+                kitten.relationships[second_kitten.ID].comfort += 10 + y
                 kitten.relationships[second_kitten.ID].trust += 10 + y
 
             kitten.create_inheritance_new_cat()  # Calculate inheritance.
@@ -1145,8 +1145,8 @@ class Pregnancy_Events:
                 + second_parent_relation.opposite_relationship.romance
             ) / 2
             average_comfort = (
-                second_parent_relation.comfortable
-                + second_parent_relation.opposite_relationship.comfortable
+                second_parent_relation.comfort
+                + second_parent_relation.opposite_relationship.comfort
             ) / 2
             average_trust = (
                 second_parent_relation.trust

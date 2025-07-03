@@ -101,11 +101,11 @@ class Relation_Events:
 
             cat_to_inter = (
                 cat.relationships[inter_cat.ID].like > 10
-                or cat.relationships[inter_cat.ID].comfortable > 10
+                or cat.relationships[inter_cat.ID].comfort > 10
             )
             inter_to_cat = (
                 inter_cat.relationships[cat.ID].like > 10
-                or inter_cat.relationships[cat.ID].comfortable > 10
+                or inter_cat.relationships[cat.ID].comfort > 10
             )
             if cat_to_inter and inter_to_cat:
                 cat_to_choose_from.append(inter_cat)
@@ -363,9 +363,9 @@ class Relation_Events:
                     elif lower_than and relationship.dislike <= threshold:
                         threshold_fulfilled = True
                 if v_type == "comfortable":
-                    if not lower_than and relationship.comfortable >= threshold:
+                    if not lower_than and relationship.comfort >= threshold:
                         threshold_fulfilled = True
-                    elif lower_than and relationship.comfortable <= threshold:
+                    elif lower_than and relationship.comfort <= threshold:
                         threshold_fulfilled = True
                 if v_type == "jealousy":
                     if not lower_than and relationship.jealousy >= threshold:

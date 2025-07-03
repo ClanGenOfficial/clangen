@@ -431,7 +431,7 @@ class RelationshipScreen(Screens):
                             x.like,
                             x.dislike,
                             x.respect,
-                            x.comfortable,
+                            x.comfort,
                             x.jealousy,
                             x.trust,
                         ],
@@ -674,7 +674,7 @@ class RelationshipScreen(Screens):
                         + rel.like
                         + rel.dislike
                         + rel.respect
-                        + rel.comfortable
+                        + rel.comfort
                         + rel.jealousy
                         + rel.trust
                     )
@@ -975,7 +975,7 @@ class RelationshipScreen(Screens):
         self.relation_list_elements[
             f"comfortable_text{i}"
         ] = pygame_gui.elements.UITextBox(
-            "relationships.comfortable_label",
+            "relationships.comfort_label",
             ui_scale(
                 pygame.Rect(
                     (rel_pos_x, text_pos_y + (barbar * bar_count)),
@@ -983,7 +983,7 @@ class RelationshipScreen(Screens):
                 )
             ),
             object_id="#text_box_22_horizleft",
-            text_kwargs={"count": 2 if the_relationship.comfortable > 49 else 1},
+            text_kwargs={"count": 2 if the_relationship.comfort > 49 else 1},
         )
         self.relation_list_elements[f"comfortable_bar{i}"] = UIRelationStatusBar(
             ui_scale(
@@ -992,7 +992,7 @@ class RelationshipScreen(Screens):
                     (bar_size_x, bar_size_y),
                 )
             ),
-            the_relationship.comfortable,
+            the_relationship.comfort,
             positive_trait=True,
             dark_mode=game.settings["dark mode"],
         )
