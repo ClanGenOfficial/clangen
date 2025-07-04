@@ -2074,13 +2074,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": -5
                     }
                 ]
             }

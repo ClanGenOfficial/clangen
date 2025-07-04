@@ -2454,7 +2454,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["like", "jealous"],
+                        "values": ["like", "respect"],
                         "amount": 10
                     }
                 ]

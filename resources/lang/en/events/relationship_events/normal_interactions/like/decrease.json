@@ -614,7 +614,7 @@
 			"warrior"
 		],
 		"also_influences": {
-			"jealousy": "increase"
+			"respect": "decrease"
 		}
 	},
 	{

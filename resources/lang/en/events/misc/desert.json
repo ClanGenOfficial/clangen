@@ -838,8 +838,8 @@
         "cats_from": ["m_c"],
         "cats_to": ["n_c:0"],
         "mutual": true,
-        "values": ["jealous"],
-        "amount": 10
+        "values": ["respect"],
+        "amount": -10
       }
     ],
     "outsider": {

@@ -278,7 +278,7 @@
 			"senior"
 		],
 		"also_influences": {
-			"jealousy": "increase"
+			"respect": "decrease"
 		}
 	},
 	{
@@ -310,7 +310,7 @@
 			"leader"
 		],
 		"also_influences": {
-			"jealousy": "increase"
+			"respect": "decrease"
 		}
 	},
 	{
@@ -429,7 +429,7 @@
 			"m_c tells a story to r_c and r_c suggests how to make it even better."
 		],
 		"reaction_random_cat": {
-			"jealousy": "decrease"
+			"respect": "increase"
 		}
 	},
 	{
@@ -537,7 +537,7 @@
 			"m_c learns some pelt-grooming techniques from r_c, and tells r_c some of {PRONOUN/m_c/poss} own."
 		],
 		"reaction_random_cat": {
-			"jealousy": "decrease"
+			"respect": "increase"
 		}
 	}
 ]

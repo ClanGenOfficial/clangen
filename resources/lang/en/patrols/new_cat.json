@@ -605,7 +605,7 @@
                     {
                         "cats_from": ["p_l"],
                         "cats_to": ["r_c"],
-                        "values": ["like", "jealous"],
+                        "values": ["like", "respect"],
                         "mutual": false,
                         "amount": -10
                     }
@@ -2341,7 +2341,7 @@
         "fail_outcomes": [
             {
                 "text": "The patrol walks into an ambush by a group of rogues. Everyone is slaughtered.",
-                "exp": 0,R
+                "exp": 0,
                 "weight": 10,
                 "dead_cats": ["patrol"],
                 "history_text": {

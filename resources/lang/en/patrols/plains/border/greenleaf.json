@@ -4029,7 +4029,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "jealous"],
+                        "values": ["respect"],
                         "amount": 10
                     }
                 ]

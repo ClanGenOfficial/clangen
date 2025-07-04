@@ -28,12 +28,12 @@ from scripts.utility import (
     event_text_adjust,
 )
 from .Screens import Screens
-from ..cat_relations.enums import RelValue
-from ..cat_relations.relationship import Relationship
-from ..game_structure.screen_settings import MANAGER, screen
-from ..ui.generate_box import get_box, BoxStyles
-from ..ui.generate_button import get_button_dict, ButtonStyles
-from ..ui.icon import Icon
+from scripts.cat_relations.enums import RelValue
+from scripts.cat_relations.relationship import Relationship
+from scripts.game_structure.screen_settings import MANAGER, screen
+from scripts.ui.generate_box import get_box, BoxStyles
+from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from scripts.ui.icon import Icon
 
 
 class RelationshipScreen(Screens):
