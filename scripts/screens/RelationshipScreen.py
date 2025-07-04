@@ -750,7 +750,7 @@ class RelationshipScreen(Screens):
             ui_scale(pygame.Rect((pos_x - 5, pos_y - 25), (110, 30))),
             object_id="#text_box_26_horizcenter",
         )
-
+        self.relation_list_elements["name" + str(i)].disable()
         # Gender alignment
         if the_relationship.cat_to.genderalign == "female":
             gender_icon = image_cache.load_image(
