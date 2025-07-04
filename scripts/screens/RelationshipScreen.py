@@ -443,15 +443,17 @@ class RelationshipScreen(Screens):
 
         self.focus_cat_elements["header"] = pygame_gui.elements.UITextBox(
             "screens.relationship.heading",
-            ui_scale(pygame.Rect((75, 75), (400, 50))),
+            ui_scale(pygame.Rect((75, 75), (400, -1))),
             object_id=get_text_box_theme("#text_box_34_horizleft"),
             text_kwargs={"m_c": self.the_cat},
         )
+        self.focus_cat_elements["header"].disable()
         self.focus_cat_elements["details"] = pygame_gui.elements.UITextBox(
             self.the_cat.get_info_block(relationship=True),
-            ui_scale(pygame.Rect((80, 105), (400, 30))),
+            ui_scale(pygame.Rect((80, 105), (400, -1))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
         )
+        self.focus_cat_elements["details"].disable()
         self.focus_cat_elements["image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((25, 75), (50, 50))), self.the_cat.sprite
         )
@@ -569,12 +571,12 @@ class RelationshipScreen(Screens):
             # Column One Details:
             self.inspect_cat_elements["col1"] = pygame_gui.elements.UITextBox(
                 self.inspect_cat.get_info_block(relationship=True),
-                ui_scale(pygame.Rect((15, 185), (90, 70))),
+                ui_scale(pygame.Rect((10, 185), (100, 70))),
                 object_id="#text_box_22_horizleft_spacing_95",
                 manager=MANAGER,
                 container=self.selected_cat_container,
             )
-
+            self.inspect_cat_elements["col1"].disable()
             # Column Two Details:
             col2 = []
 
@@ -631,7 +633,7 @@ class RelationshipScreen(Screens):
                     relation = "general.cousin"
                 col2.append(i18n.t("general.related_label", relation=i18n.t(relation)))
 
-            col2_rect = ui_scale(pygame.Rect((0, 0), (90, 70)))
+            col2_rect = ui_scale(pygame.Rect((0, 0), (110, 70)))
             col2_rect.topright = ui_scale_offset((-15, 185))
 
             self.inspect_cat_elements["col2"] = pygame_gui.elements.UITextBox(
@@ -643,6 +645,7 @@ class RelationshipScreen(Screens):
                 anchors={"right": "right", "top": "top"},
             )
             del col2_rect
+            self.inspect_cat_elements["col2"].disable()
 
             if self.inspect_cat.dead:
                 self.view_profile_button.enable()
@@ -870,12 +873,15 @@ class RelationshipScreen(Screens):
                 object_id="#text_box_26_horizcenter",
                 anchors={"top_target": prev_element},
             )
+            self.relation_list_elements[f"{val}_text{i}"].set_tooltip(
+                f"relationships.{val}"
+            )
+            self.relation_list_elements[f"{val}_text{i}"].tool_tip_delay = 0
             self.relation_list_elements[f"{val}_text{i}"].disable()
             self.relation_list_elements[f"{val}_bar{i}"] = UIRelationStatusScaleBar(
                 ui_scale(pygame.Rect((rel_pos_x, -5), bar_size)),
                 anchors={"top_target": self.relation_list_elements[f"{val}_text{i}"]},
                 scale_position=num,
-                tool_tip_text=f"relationships.{val}",
             )
             prev_element = self.relation_list_elements[f"{val}_bar{i}"]
 
@@ -893,6 +899,11 @@ class RelationshipScreen(Screens):
                 anchors={"top_target": prev_element},
                 line_spacing=0.95,
             )
+            self.relation_list_elements[f"romance_text{i}"].set_tooltip(
+                f"relationships.romance"
+            )
+            self.relation_list_elements[f"romance_text{i}"].tool_tip_delay = 0
+            self.relation_list_elements[f"romance_text{i}"].disable()
             self.relation_list_elements[f"romance_text{i}"].disable()
             self.relation_list_elements[f"romance_bar{i}"] = UIRelationStatusFillBar(
                 ui_scale(
@@ -903,7 +914,6 @@ class RelationshipScreen(Screens):
                 ),
                 the_relationship.romance,
                 anchors={"top_target": self.relation_list_elements[f"romance_text{i}"]},
-                tool_tip_text="relationships.romance",
             )
 
     @staticmethod

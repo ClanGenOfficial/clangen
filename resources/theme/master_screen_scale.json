@@ -551,7 +551,7 @@
             "border_width": "0"
         }
     },
-    "#relation_bar.tool_tip": {"misc": {"rect_width": "80"}},
+    "#text_box_26_horizcenter.tool_tip": {"misc": {"rect_width": "80"}},
     "#events_cat_profile_button": {
         "colours": {
             "normal_bg": "#655934",

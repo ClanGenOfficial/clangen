@@ -1879,37 +1879,6 @@ class UIModifiedImage(pygame_gui.elements.UIImage):
         else:
             return False
 
-    def while_hovering(
-        self,
-        time_delta: float,
-        mouse_pos: Union[pygame.math.Vector2, Tuple[int, int], Tuple[float, float]],
-    ):
-        """
-        Called while we are in the hover state. It will create a tool tip if we've been in the
-        hover state for a while, the text exists to create one, and we haven't created one already.
-
-        :param time_delta: Time in seconds between calls to update.
-        :param mouse_pos: The current position of the mouse.
-
-        """
-        if (
-            self.tool_tip is None
-            and self.tool_tip_text is not None
-            and self.hover_time > self.tool_tip_delay
-        ):
-            hover_height = int(self.rect.height / 2)
-            self.tool_tip = self.ui_manager.create_tool_tip(
-                text=self.tool_tip_text,
-                position=(mouse_pos[0], self.rect.centery),
-                hover_distance=(0, hover_height),
-                parent_element=self,
-                object_id=self.tool_tip_object_id,
-                wrap_width=self.tool_tip_wrap_width,
-                text_kwargs=self.tool_tip_text_kwargs,
-            )
-
-        self.hover_time += time_delta
-
 
 class UIScrollingButtonList(UIModifiedScrollingContainer):
     def __init__(
