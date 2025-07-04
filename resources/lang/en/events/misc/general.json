@@ -436,7 +436,7 @@
                 "any"
             ],
             "relationship_status": [
-                "trust_20"
+                "favors"
             ]
         },
         "r_c": {
@@ -7522,7 +7522,7 @@
             ],
             "relationship_status": [
                 "siblings",
-                "platonic_50"
+                "loves"
             ]
         },
         "r_c": {
@@ -7530,7 +7530,7 @@
                 "warrior"
             ],
             "relationship_status": [
-                "platonic_50"
+                "loves"
             ]
         },
         "relationships": [
