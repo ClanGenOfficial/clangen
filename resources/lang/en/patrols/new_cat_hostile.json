@@ -25,7 +25,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -43,7 +43,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -137,7 +137,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -155,7 +155,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -240,7 +240,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -258,7 +258,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -319,7 +319,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -337,7 +337,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -533,7 +533,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -559,7 +559,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -673,7 +673,7 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 30
                     }
                 ],
@@ -698,7 +698,7 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["platonic", "romantic"],
+                        "values": ["like", "romance"],
                         "amount": 50
                     }
                 ],
@@ -723,7 +723,7 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["platonic", "romantic"],
+                        "values": ["like", "romance"],
                         "amount": 50
                     }
                 ],
@@ -748,7 +748,7 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["platonic", "romantic"],
+                        "values": ["like", "romance"],
                         "amount": 50
                     },
                     {
@@ -783,7 +783,7 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["platonic", "romantic"],
+                        "values": ["like", "romance"],
                         "amount": 50
                     }
                 ],
@@ -808,7 +808,7 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["dislike", "romantic"],
+                        "values": ["dislike", "romance"],
                         "amount": 50
                     }
                 ],
@@ -828,14 +828,14 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 30
                     },
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["dislike", "romantic"],
+                        "values": ["dislike", "romance"],
                         "amount": 50
                     }
                 ],
@@ -855,14 +855,14 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 30
                     },
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["p_l"],
                         "mutual": true,
-                        "values": ["dislike", "romantic"],
+                        "values": ["dislike", "romance"],
                         "amount": 50
                     }
                 ],
@@ -896,7 +896,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -960,7 +960,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1024,7 +1024,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1042,7 +1042,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1127,7 +1127,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1145,7 +1145,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1230,7 +1230,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1255,7 +1255,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1500,7 +1500,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1523,7 +1523,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1547,7 +1547,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1610,7 +1610,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1628,7 +1628,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1696,7 +1696,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1719,7 +1719,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1784,7 +1784,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1802,7 +1802,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1872,7 +1872,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1895,7 +1895,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1959,7 +1959,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -1977,7 +1977,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -2046,7 +2046,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -2069,7 +2069,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -2129,7 +2129,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -2153,7 +2153,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],
@@ -2178,7 +2178,7 @@
                     {
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
-                        "values": ["platonic", "trust", "comfort"],
+                        "values": ["like", "trust", "comfort"],
                         "amount": 10
                     }
                 ],

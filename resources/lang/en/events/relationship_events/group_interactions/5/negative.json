@@ -13,7 +13,7 @@
 	},
 	"specific_reaction": {
 		"r_c1_to_m_c": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
 			"comfortable": "increase",
 			"trust": "increase"

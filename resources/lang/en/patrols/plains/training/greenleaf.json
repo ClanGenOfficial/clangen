@@ -58,7 +58,7 @@
         "biome": ["plains"],
         "season": ["greenleaf"],
         "types": ["training"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "pln_train_newleaf_3mates_cloverfield1",
         "min_cats": 3,
         "max_cats": 3,
@@ -80,7 +80,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "comfort"],
+                        "values": ["romance", "comfort"],
                         "amount": 10
                     },
                     {
@@ -101,7 +101,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "comfort"],
+                        "values": ["romance", "comfort"],
                         "amount": 10
                     },
                     {
@@ -123,7 +123,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "comfort"],
+                        "values": ["romance", "comfort"],
                         "amount": 10
                     },
                     {
@@ -352,7 +352,7 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         }
                     ]
@@ -376,14 +376,14 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         },
                         {
                             "cats_to": ["s_c"],
                             "cats_from": ["r_c"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         }
                     ]
@@ -407,14 +407,14 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         },
                         {
                             "cats_to": ["s_c"],
                             "cats_from": ["r_c"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         }
                     ]
@@ -447,7 +447,7 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["r_c"],
                             "mutual": true,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         }
                     ]

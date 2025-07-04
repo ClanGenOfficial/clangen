@@ -1429,7 +1429,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -1579,7 +1579,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -1670,7 +1670,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "respect"
                 ],
@@ -1721,7 +1721,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 5
@@ -1799,7 +1799,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 5
@@ -1892,7 +1892,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -1942,8 +1942,8 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
-                    "platonic",
+                    "romance",
+                    "like",
                     "trust"
                 ],
                 "amount": 10
@@ -2055,7 +2055,7 @@
             "any"
         ],
         "tags": [
-            "romantic"
+            "romance"
         ],
         "weight": 15,
         "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
@@ -2083,7 +2083,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2130,7 +2130,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 10
@@ -2176,7 +2176,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2230,7 +2230,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2284,7 +2284,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2342,7 +2342,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2396,7 +2396,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2497,7 +2497,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 20
             }
@@ -2537,7 +2537,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2578,7 +2578,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2621,7 +2621,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -2661,7 +2661,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2700,7 +2700,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2743,7 +2743,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2971,7 +2971,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -3017,7 +3017,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -3094,7 +3094,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": -5
@@ -3231,7 +3231,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "respect",
                     "trust"
@@ -3271,7 +3271,7 @@
                 "mutual": true,
                 "values": [
                     "trust",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             }
@@ -3307,7 +3307,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -3345,7 +3345,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -3389,7 +3389,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3430,7 +3430,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3473,7 +3473,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3512,7 +3512,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3551,7 +3551,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3576,7 +3576,7 @@
             "accessory"
         ],
         "tags": [
-            "romantic"
+            "romance"
         ],
         "weight": 20,
         "event_text": "m_c and r_c were chatting about their day and the chores when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
@@ -3611,7 +3611,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust",
                     "respect"
@@ -3716,7 +3716,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 20
@@ -3816,7 +3816,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             }
@@ -3866,7 +3866,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             }
@@ -3917,7 +3917,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             }
@@ -4685,7 +4685,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             }
@@ -4805,7 +4805,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             }
@@ -4852,7 +4852,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             }
@@ -5123,7 +5123,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 10
@@ -5443,7 +5443,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -5678,7 +5678,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -6216,7 +6216,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "respect",
                     "trust"
                 ],
@@ -7334,7 +7334,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7383,7 +7383,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7432,7 +7432,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7482,7 +7482,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7543,7 +7543,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 10
@@ -7590,7 +7590,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 10
@@ -7642,7 +7642,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7657,7 +7657,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7712,7 +7712,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7777,7 +7777,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7835,7 +7835,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7850,7 +7850,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -7902,7 +7902,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7917,7 +7917,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -8003,7 +8003,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -8082,7 +8082,7 @@
             "accessory"
         ],
         "tags": [
-            "romantic"
+            "romance"
         ],
         "weight": 10,
         "event_text": "Flowers can be so pretty, even before they bloom, just like m_c. r_c blushes as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} m_c wear the acc_singular {PRONOUN/r_c/subject} got {PRONOUN/m_c/object}.",
@@ -8117,7 +8117,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -8934,7 +8934,7 @@
             ],
             "mutual": false,
             "values": [
-                "platonic",
+                "like",
                 "trust"
             ],
             "amount": -5,
@@ -8984,7 +8984,7 @@
             ],
             "mutual": false,
             "values": [
-                "platonic",
+                "like",
                 "trust"
             ],
             "amount": -5,

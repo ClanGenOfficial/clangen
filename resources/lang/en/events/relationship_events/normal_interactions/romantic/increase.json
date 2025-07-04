@@ -33,7 +33,7 @@
 			"m_c is prancing around in front of r_c."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase"
+			"romance": "increase"
 		}
 	},
 	{
@@ -71,7 +71,7 @@
 		],
 		"reaction_random_cat": {
 			"dislike": "decrease",
-			"platonic": "increase",
+			"like": "increase",
 			"comfortable": "increase"
 		}
 	},
@@ -89,7 +89,7 @@
             		"charismatic"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
 			"comfortable": "increase"
 		}
@@ -107,7 +107,7 @@
 			"romantic_20_lower"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
 			"admirable": "increase"
 		}
@@ -154,7 +154,7 @@
 			"m_c overhears r_c tell another cat {PRONOUN/r_c/subject} kind of {VERB/r_c/like/likes} m_c."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
 			"comfortable": "increase"
 		}
@@ -217,12 +217,12 @@
             		"troublesome"
 		],
         	"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
 			"comfortable": "increase"
 		},
 		"reaction_main_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
 			"comfortable": "increase"
 		}
@@ -236,12 +236,12 @@
             		"m_c and r_c got so into playing around that they got separated from the rest of the patrol, earning themselves an earful back at camp."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"platonic": "increase"
+			"romance": "increase",
+			"like": "increase"
             },
 		"reaction_main_cat": {
-			"romantic": "increase",
-			"platonic": "increase"
+			"romance": "increase",
+			"like": "increase"
 		}
 	},
 	{
@@ -264,9 +264,9 @@
 			"m_c compliments r_c on {PRONOUN/r_c/poss} catch during a hunting patrol, which causes {PRONOUN/r_c/object} to purr."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
-			"platonic": "increase",
+			"like": "increase",
 			"comfortable": "increase"
 		}
 	},
@@ -285,9 +285,9 @@
 			"m_c gave r_c a sprig of catmint {PRONOUN/m_c/subject} found."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
-			"platonic": "increase",
+			"like": "increase",
 			"comfortable": "increase"
 		}
 	},
@@ -304,9 +304,9 @@
 			"romantic_40"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
-			"platonic": "increase",
+			"like": "increase",
 			"comfortable": "increase"
 		}
 	},
@@ -326,9 +326,9 @@
 			"mates"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
-			"platonic": "increase",
+			"like": "increase",
 			"comfortable": "increase"
 		}
 	},
@@ -345,9 +345,9 @@
 			"mates"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
-			"platonic": "increase",
+			"like": "increase",
 			"comfortable": "increase"
 		}
 	},
@@ -362,9 +362,9 @@
 			"STORY,3"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
+			"romance": "increase",
 			"dislike": "decrease",
-			"platonic": "increase",
+			"like": "increase",
 			"comfortable": "increase"
 		}
 	}
