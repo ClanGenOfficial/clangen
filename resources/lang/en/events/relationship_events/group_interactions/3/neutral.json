@@ -36,7 +36,7 @@
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"comfortable": "increase",
+				"comfort": "increase",
 				"trust": "increase"
 			},
 			"r_c1_to_m_c": {
@@ -53,7 +53,7 @@
 			"m_c, r_c1, and r_c2 took a sunbath and had a little small talk."
 		],
 		"general_reaction": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"disliked": "decrease",
 			"like": "increase"
 		}

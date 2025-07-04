@@ -33,7 +33,7 @@
 			"m_c and r_c make each other laugh."
 		],
 		"reaction_random_cat": {
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -90,7 +90,7 @@
 			"m_c and r_c share little secrets about themselves."
 		],
 		"reaction_random_cat": {
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -122,7 +122,7 @@
 			"leader"
 		],
 		"reaction_random_cat": {
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -232,7 +232,7 @@
 		],
 		"reaction_random_cat": {
 			"like": "increase",
-			"comfortable": "increase"
+			"comfort": "increase"
 		},
 		"also_influences": {
 			"like": "increase"
@@ -252,7 +252,7 @@
 		],
 		"reaction_random_cat": {
 			"dislike": "increase:",
-			"comfortable": "decrease"
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -270,7 +270,7 @@
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		}
 	},
@@ -305,7 +305,7 @@
 			"After something happens, m_c and r_c find comfort in one another's company."
 		],
 		"reaction_random_cat": {
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -338,7 +338,7 @@
 			"comfortable_30"
 		],
 		"reaction_random_cat": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		}
 	}

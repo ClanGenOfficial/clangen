@@ -275,7 +275,7 @@
 			"like": "increase"
 		},
 		"also_influences": {
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -353,7 +353,7 @@
 			"like": "increase",
 			"respect": "increase",
 			"trust": "increase",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -376,12 +376,12 @@
 			"leader"
 		],
 		"reaction_random_cat": {
-			"comfortable": "decrease",
+			"comfort": "decrease",
 			"trust": "increase"
 		},
 		"also_influences": {
 			"trust": "increase",
-			"comfortable": "increase",
+			"comfort": "increase",
 			"respect": "increase"
 		}
 	},
@@ -613,7 +613,7 @@
 		],
 		"also_influences": {
 			"respect": "increase",
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		}
 	},

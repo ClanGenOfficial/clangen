@@ -124,7 +124,7 @@
 			"medicine cat apprentice"
 		],
 		"also_influences": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"like": "increase",
 			"trust": "increase"
 		}

@@ -12,7 +12,7 @@
 		},
 		"specific_reaction":{
 			"m_c_to_r_c1": {
-				"comfortable": "increase"
+				"comfort": "increase"
 			},
 			"m_c_to_r_c2": {
 				"like": "decrease",

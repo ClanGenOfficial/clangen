@@ -72,7 +72,7 @@
 		"reaction_random_cat": {
 			"dislike": "decrease",
 			"like": "increase",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -91,7 +91,7 @@
 		"reaction_random_cat": {
 			"romance": "increase",
 			"dislike": "decrease",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -156,7 +156,7 @@
 		"reaction_random_cat": {
 			"romance": "increase",
 			"dislike": "decrease",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -219,12 +219,12 @@
         	"reaction_random_cat": {
 			"romance": "increase",
 			"dislike": "decrease",
-			"comfortable": "increase"
+			"comfort": "increase"
 		},
 		"reaction_main_cat": {
 			"romance": "increase",
 			"dislike": "decrease",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -267,7 +267,7 @@
 			"romance": "increase",
 			"dislike": "decrease",
 			"like": "increase",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -288,7 +288,7 @@
 			"romance": "increase",
 			"dislike": "decrease",
 			"like": "increase",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -307,7 +307,7 @@
 			"romance": "increase",
 			"dislike": "decrease",
 			"like": "increase",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -329,7 +329,7 @@
 			"romance": "increase",
 			"dislike": "decrease",
 			"like": "increase",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -348,7 +348,7 @@
 			"romance": "increase",
 			"dislike": "decrease",
 			"like": "increase",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	},
 	{
@@ -365,7 +365,7 @@
 			"romance": "increase",
 			"dislike": "decrease",
 			"like": "increase",
-			"comfortable": "increase"
+			"comfort": "increase"
 		}
 	}
 ]

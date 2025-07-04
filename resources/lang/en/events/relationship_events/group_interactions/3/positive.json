@@ -17,12 +17,12 @@
 		"specific_reaction": {
 			"m_c_to_r_c1": {
 				"like": "increase",
-				"comfortable": "increase",
+				"comfort": "increase",
 				"trust": "increase"
 			},
 			"m_c_to_r_c2": {
 				"like": "increase",
-				"comfortable": "increase",
+				"comfort": "increase",
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {

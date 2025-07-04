@@ -86,7 +86,7 @@
 			"mediator apprentice"
 		],
 		"reaction_random_cat": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"like": "increase"
 		},
 		"also_influences": {
@@ -112,7 +112,7 @@
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {
-			"comfortable": "increase"
+			"comfort": "increase"
 		},
 		"also_influences": {
 			"respect": "increase"

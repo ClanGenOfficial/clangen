@@ -15,18 +15,18 @@
 		"r_c1_to_m_c": {
 			"romance": "increase",
 			"dislike": "decrease",
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         	"r_c2_to_m_c": {
 			"dislike": "increase"
 		},
         "r_c3_to_m_c": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "r_c4_to_m_c": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		}   
 	}

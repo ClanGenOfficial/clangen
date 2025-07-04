@@ -26,39 +26,39 @@
 		"r_c3_to_r_c4": {
 			"romance": "increase",
 			"dislike": "decrease",
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         	"r_c4_to_r_c3": {
 			"romance": "increase",
 			"dislike": "decrease",
 			"respect": "increase",
-			"comfortable": "increase",
+			"comfort": "increase",
 			"jealousy": "neutral",
 			"trust": "increase"
 		},
         "m_c_to_r_c1": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "m_c_to_r_c2": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
 		"r_c1_to_r_c2": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "r_c1_to_m_c": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "r_c2_to_m_c": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "r_c2_to_r_c1": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		}
         
