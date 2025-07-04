@@ -31,7 +31,7 @@
 			"r_c asked m_c to cover {PRONOUN/m_c/poss} mouth while {PRONOUN/m_c/subject} {VERB/m_c/cough/coughs}, so m_c coughed on {PRONOUN/r_c/object} out of spite."
 		],
 		"reaction_random_cat": {
-			"platonic": "decrease"
+			"like": "decrease"
 		}
 	},
 	{
@@ -132,7 +132,7 @@
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {
-			"platonic": "decrease"
+			"like": "decrease"
 		}
 	},
 	{
@@ -178,7 +178,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"platonic": "decrease"
+			"like": "decrease"
 		}
 	},
 	{
@@ -215,7 +215,7 @@
 			"A Clanmate has to comfort m_c when r_c says something cruel."
 		],
 		"reaction_random_cat": {
-			"platonic": "decrease"
+			"like": "decrease"
 		}
 	}
 ]

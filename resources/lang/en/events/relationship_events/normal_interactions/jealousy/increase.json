@@ -135,7 +135,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"platonic": "decrease"
+			"like": "decrease"
 		}
 	},
 	{

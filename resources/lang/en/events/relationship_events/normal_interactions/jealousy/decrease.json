@@ -87,10 +87,10 @@
 		],
 		"reaction_random_cat": {
 			"comfortable": "increase",
-			"platonic": "increase"
+			"like": "increase"
 		},
 		"also_influences": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{

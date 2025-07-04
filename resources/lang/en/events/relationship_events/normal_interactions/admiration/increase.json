@@ -125,7 +125,7 @@
 		],
 		"also_influences": {
 			"comfortable": "increase",
-			"platonic": "increase",
+			"like": "increase",
 			"trust": "increase"
 		}
 	},
@@ -152,7 +152,7 @@
 			"medicine cat"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase",
+			"like": "increase",
 			"trust": "increase"
 		}
 	},
@@ -214,7 +214,7 @@
 			"leader"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -388,7 +388,7 @@
 			"deputy"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	}
 ]

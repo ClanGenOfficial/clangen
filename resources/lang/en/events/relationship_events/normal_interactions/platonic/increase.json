@@ -34,7 +34,7 @@
 			"m_c asks r_c how {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing."
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -63,7 +63,7 @@
 			"m_c chats with r_c while grabbing something to eat."
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -92,7 +92,7 @@
 			"warrior"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -166,7 +166,7 @@
 			"childish"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -240,7 +240,7 @@
 			"apprentice"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -249,7 +249,7 @@
 			"m_c plays moss-ball with r_c."
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		},
 		"main_status_constraint": [
 			"kitten"
@@ -272,7 +272,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		},
 		"also_influences": {
 			"comfortable": "increase"
@@ -298,7 +298,7 @@
 			"leader"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -315,7 +315,7 @@
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -350,7 +350,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase",
+			"like": "increase",
 			"admiration": "increase",
 			"trust": "increase",
 			"comfortable": "increase"
@@ -403,7 +403,7 @@
 			"apprentice"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -421,7 +421,7 @@
 			"apprentice"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -490,7 +490,7 @@
 			"warrior"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -525,7 +525,7 @@
 			"elder"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -543,7 +543,7 @@
 			"m_c is happy to run into r_c today."
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -577,7 +577,7 @@
 			"platonic_40"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{

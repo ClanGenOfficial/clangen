@@ -16,12 +16,12 @@
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"platonic": "increase",
+				"like": "increase",
 				"comfortable": "increase",
 				"trust": "increase"
 			},
 			"m_c_to_r_c2": {
-				"platonic": "increase",
+				"like": "increase",
 				"comfortable": "increase",
 				"trust": "increase"
 			},

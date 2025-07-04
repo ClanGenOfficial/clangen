@@ -13,11 +13,11 @@
 				"comfortable": "increase"
 			},
 			"m_c_to_r_c2": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase"
 			},
 			"r_c1_to_r_c2": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase"
 			},
 			"r_c2_to_m_c":{
@@ -96,19 +96,19 @@
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase",
 				"comfortable": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_r_c1": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase",
 				"comfortable": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_m_c": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase",
 				"comfortable": "decrease",
 				"trust": "decrease"
@@ -146,19 +146,19 @@
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase",
 				"comfortable": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_r_c1": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase",
 				"comfortable": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_m_c": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase",
 				"comfortable": "decrease",
 				"trust": "decrease"

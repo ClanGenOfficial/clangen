@@ -46,7 +46,7 @@
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
             "mutual": true,
-            "values": ["comfort", "platonic"],
+            "values": ["comfort", "like"],
             "amount": 5
           },
           {
@@ -107,7 +107,7 @@
             "cats_from": ["m_c"],
             "cats_to": ["n_c:1"],
             "mutual": true,
-            "values": ["comfort", "platonic"],
+            "values": ["comfort", "like"],
             "amount": 5
           }
         ],

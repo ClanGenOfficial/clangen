@@ -209,7 +209,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -231,11 +231,11 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"platonic": "increase",
+			"like": "increase",
 			"comfortable": "increase"
 		},
 		"also_influences": {
-			"platonic": "increase"
+			"like": "increase"
 		}
 	},
 	{

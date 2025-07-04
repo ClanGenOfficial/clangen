@@ -369,7 +369,7 @@
 			"leader"
 		],
 		"reaction_random_cat": {
-			"platonic": "decrease",
+			"like": "decrease",
 			"comfortable": "decrease",
 			"admiration": "decrease",
 			"trust": "decrease"

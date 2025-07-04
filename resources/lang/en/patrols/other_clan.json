@@ -2942,7 +2942,7 @@
                 {
                             "cats_to": ["s_c"],
                             "cats_from": ["app1"],
-                            "values": ["platonic", "trust"],
+                            "values": ["like", "trust"],
                             "amount": -10
                         }
                 ]
@@ -2984,7 +2984,7 @@
                     "cats_to": [ "app1" ],
                     "cats_from": [ "patrol" ],
                     "mutual": false,
-                    "values": [ "platonic", "trust", "respect" ],
+                    "values": [ "like", "trust", "respect" ],
                     "amount": 10
                 }
 				]
@@ -3521,14 +3521,14 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "platonic"],
+                        "values": ["respect", "like"],
                         "amount": 10
                     },
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust", "platonic"],
+                        "values": ["comfort", "trust", "like"],
                         "amount": 5
                     },
                     {

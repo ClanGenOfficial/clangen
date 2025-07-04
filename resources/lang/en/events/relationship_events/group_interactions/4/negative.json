@@ -15,11 +15,11 @@
 				"comfortable": "increase"
 			},
 			"m_c_to_r_c2": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase"
 			},
 			"r_c1_to_r_c2": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase"
 			},
 			"r_c2_to_m_c":{
@@ -29,11 +29,11 @@
 				"dislike": "increase"
 			},
 			"m_c_to_r_c3": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase"
 			},
 			"r_c1_to_r_c3": {
-				"platonic": "decrease",
+				"like": "decrease",
 				"dislike": "increase"
 			},
 			"r_c3_to_m_c":{

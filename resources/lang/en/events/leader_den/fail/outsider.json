@@ -127,7 +127,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -5
         }
       ]
@@ -172,7 +172,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -10
         }
       ]
@@ -192,7 +192,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": 5
         },
         {
@@ -405,7 +405,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": 5
         }
       ]
@@ -432,7 +432,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -5
         }
       ]
@@ -478,7 +478,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": 5
         }
       ]
@@ -574,7 +574,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -5
         }
       ]
@@ -600,7 +600,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -5
         }
       ]
@@ -627,7 +627,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -5
         }
       ]
@@ -653,7 +653,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": 5
         }
       ]

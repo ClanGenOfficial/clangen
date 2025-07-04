@@ -55,7 +55,7 @@
 		"general_reaction": {
 			"comfortable": "increase",
 			"disliked": "decrease",
-			"platonic": "increase"
+			"like": "increase"
 		}
 	}
 ]
