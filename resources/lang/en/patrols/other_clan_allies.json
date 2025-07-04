@@ -2147,8 +2147,8 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
+                        "values": ["like"],
+                        "amount": 5
                     }
                 ]
             }

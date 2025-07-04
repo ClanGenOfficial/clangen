@@ -736,7 +736,7 @@
         "intro_text": "p_l paddles across a little streamlet on {PRONOUN/p_l/poss} way to a hump of raised ground near camp that's good for training. Upon arrival, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_10"],
+        "relationship_constraint": ["dislikes"],
         "success_outcomes": [
             {
                 "text": "r_c shows {PRONOUN/p_l/object} a deft technique {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to judge the depth and danger of quagmires, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle backflip with a smug smirk.",

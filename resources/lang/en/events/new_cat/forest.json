@@ -77,12 +77,6 @@
                 "mutual": true,
                 "values": ["comfort", "like"],
                 "amount": 10
-            },
-            {
-                "cats_from": ["clan"],
-                "cats_to": ["m_c", "n_c:0"],
-                "values": ["dislike"],
-                "amount": 5
             }
         ],
         "outsider": {

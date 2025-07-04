@@ -13,18 +13,16 @@
 				"comfort": "increase"
 			},
 			"m_c_to_r_c2": {
-				"like": "decrease",
-				"dislike": "increase"
+				"like": "decrease"
 			},
 			"r_c1_to_r_c2": {
-				"like": "decrease",
-				"dislike": "increase"
+				"like": "decrease"
 			},
 			"r_c2_to_m_c":{
-				"dislike": "increase"
+				"like": "decrease"
 			},
 			"r_c2_to_r_c1":{
-				"dislike": "increase"
+				"like": "decrease"
 			}
 		}
 	},	
@@ -86,30 +84,27 @@
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"dislike": "decrease",
+				"like": "increase",
 				"comfort": "increase",
 				"trust": "increase"
 			},
 			"r_c1_to_m_c": {
-				"dislike": "increase",
+				"like": "decrease",
 				"comfort": "decrease",
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
 				"like": "decrease",
-				"dislike": "increase",
 				"comfort": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_r_c1": {
 				"like": "decrease",
-				"dislike": "increase",
 				"comfort": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_m_c": {
 				"like": "decrease",
-				"dislike": "increase",
 				"comfort": "decrease",
 				"trust": "decrease"
 			}
@@ -136,30 +131,27 @@
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"dislike": "decrease",
+				"like": "decrease",
 				"comfort": "increase",
 				"trust": "increase"
 			},
 			"r_c1_to_m_c": {
-				"dislike": "decrease",
+				"like": "increase",
 				"comfort": "decrease",
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
 				"like": "decrease",
-				"dislike": "increase",
 				"comfort": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_r_c1": {
 				"like": "decrease",
-				"dislike": "increase",
 				"comfort": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_m_c": {
 				"like": "decrease",
-				"dislike": "increase",
 				"comfort": "decrease",
 				"trust": "decrease"
 			}

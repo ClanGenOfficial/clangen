@@ -477,8 +477,8 @@
                     "cats_to": ["clan"],
                     "cats_from": [ "p_l" ],
                     "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 10
+                    "values": ["like"],
+                    "amount": -10
             }
             ],
             "new_cat": [
@@ -603,8 +603,8 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
+                        "values": ["like"],
+                        "amount": 10
                     }	
                 ],
                 "other_clan_rep": -1
@@ -664,7 +664,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["dislike", "trust", "comfort"],
+                        "values": ["trust", "comfort"],
                         "amount": 5
                     }	
                 ]
@@ -720,13 +720,6 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
                         "values": ["trust", "like"],
                         "amount": 5
                     },
@@ -775,8 +768,8 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 10
+                        "values": ["like"],
+                        "amount": -10
                     },
                     {
                         "cats_to": ["p_l"],
@@ -798,8 +791,8 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 5
+                        "values": ["like"],
+                        "amount": -5
                     }	
                 ]
             },
@@ -4266,15 +4259,8 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": ["respect", "trust", "like"],
                         "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
                     }
                 ]
             },
@@ -4287,15 +4273,8 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": ["respect", "trust", "like"],
                         "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
                     }
                 ]
             }
@@ -4316,15 +4295,8 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": ["respect", "trust", "like"],
                         "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
                     }
                 ],
                 "other_clan_rep": -1
@@ -4350,15 +4322,8 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": ["respect", "trust", "like"],
                         "amount": -10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
                     }
                 ],
                 "other_clan_rep": -1

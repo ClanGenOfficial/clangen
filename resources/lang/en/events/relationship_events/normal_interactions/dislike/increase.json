@@ -33,7 +33,7 @@
 			"m_c loses in a race against r_c and acts bitterly about it."
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -67,7 +67,7 @@
 			"r_c flicked some sand over m_c's fresh-kill while {PRONOUN/m_c/subject} {VERB/m_c/were/was} eating."
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -96,7 +96,7 @@
 			"leader"
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -188,7 +188,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -209,7 +209,7 @@
 			"warrior"
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -231,7 +231,7 @@
 			"apprentice"
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -250,7 +250,7 @@
 			"medicine cat"
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -286,7 +286,7 @@
 			"m_c argues with r_c in front of other cats and reveals something embarrassing."
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -347,7 +347,7 @@
 			"deputy"
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -410,7 +410,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{
@@ -430,7 +430,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"dislike": "increase"
+			"like": "decrease"
 		}
 	},
 	{

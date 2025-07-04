@@ -150,19 +150,6 @@
                     "r_c"
                 ],
                 "values": [
-                    "dislike"
-                ],
-                "amount": 10,
-                "mutual": false
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
                     "like",
                     "comfort",
                     "trust"
@@ -385,19 +372,6 @@
                     "respect"
                 ],
                 "amount": 30,
-                "mutual": false
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": -30,
                 "mutual": false
             }
         ]

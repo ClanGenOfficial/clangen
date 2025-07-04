@@ -70,7 +70,6 @@
 			"m_c nuzzles against r_c and purrs."
 		],
 		"reaction_random_cat": {
-			"dislike": "decrease",
 			"like": "increase",
 			"comfort": "increase"
 		}
@@ -90,7 +89,7 @@
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
+			"like": "increase",
 			"comfort": "increase"
 		}
 	},
@@ -108,7 +107,7 @@
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
+			"like": "increase",
 			"admirable": "increase"
 		}
 	},
@@ -155,7 +154,7 @@
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
+			"like": "increase",
 			"comfort": "increase"
 		}
 	},
@@ -218,12 +217,12 @@
 		],
         	"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
+			"like": "increase",
 			"comfort": "increase"
 		},
 		"reaction_main_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
+			"like": "increase",
 			"comfort": "increase"
 		}
 	},
@@ -265,7 +264,6 @@
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
 			"like": "increase",
 			"comfort": "increase"
 		}
@@ -286,7 +284,6 @@
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
 			"like": "increase",
 			"comfort": "increase"
 		}
@@ -305,7 +302,6 @@
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
 			"like": "increase",
 			"comfort": "increase"
 		}
@@ -327,7 +323,6 @@
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
 			"like": "increase",
 			"comfort": "increase"
 		}
@@ -346,7 +341,6 @@
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
 			"like": "increase",
 			"comfort": "increase"
 		}
@@ -363,7 +357,6 @@
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
-			"dislike": "decrease",
 			"like": "increase",
 			"comfort": "increase"
 		}

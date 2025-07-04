@@ -31,7 +31,7 @@
 			"m_c clears up a misunderstanding with r_c."
 		],
 		"reaction_random_cat": {
-			"dislike": "decrease"
+			"like": "increase"
 		}
 	},
 	{
@@ -67,7 +67,7 @@
 			"m_c cheers r_c up after a small disagreement."
 		],
 		"reaction_random_cat": {
-			"dislike": "decrease"
+			"like": "increase"
 		}
 	},
 	{
@@ -102,7 +102,7 @@
 			"r_c thinks that m_c isn't so bad after all."
 		],
 		"reaction_random_cat": {
-			"dislike": "decrease"
+			"like": "increase"
 		}
 	},
 	{
@@ -116,7 +116,7 @@
 			"m_c and r_c had a great time on a patrol."
 		],
 		"reaction_random_cat": {
-			"dislike": "decrease"
+			"like": "increase"
 		},
 		"main_status_constraint": [
 			"elder",

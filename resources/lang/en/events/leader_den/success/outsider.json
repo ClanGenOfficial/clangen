@@ -34,8 +34,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -61,8 +61,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -88,8 +88,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -119,8 +119,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -218,8 +218,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["clan"],
@@ -281,8 +281,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -377,8 +377,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -405,8 +405,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }

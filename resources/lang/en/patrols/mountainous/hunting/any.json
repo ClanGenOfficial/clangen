@@ -1661,14 +1661,14 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -10
+                            "values": ["like"],
+                            "amount": 10
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["app1"],
                             "mutual": false,
-                            "values": ["comfort", "trust", "respect", "dislike"],
+                            "values": ["comfort", "trust", "respect"],
                             "amount": 10
                         }
                     ]

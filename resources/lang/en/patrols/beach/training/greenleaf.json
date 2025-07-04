@@ -107,13 +107,6 @@
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -128,13 +121,6 @@
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             }
@@ -200,13 +186,6 @@
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -221,13 +200,6 @@
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             }
@@ -545,13 +517,6 @@
                             "mutual": false,
                             "values": ["like", "comfort"],
                             "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
-                            "mutual": true,
-                            "values": ["dislike"],
-                            "amount": -5
                         }
                     ]
                 },
@@ -567,13 +532,6 @@
                             "mutual": true,
                             "values": ["like", "comfort", "romance"],
                             "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
-                            "mutual": true,
-                            "values": ["dislike"],
-                            "amount": -5
                         }
                     ]
                 }

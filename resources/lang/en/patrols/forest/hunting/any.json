@@ -3595,13 +3595,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -3617,13 +3610,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             }
@@ -3640,13 +3626,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     }
                 ]
             }
@@ -3702,15 +3681,8 @@
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["app1"],
-                            "mutual": false,
-                            "values": ["jealous", "dislike"],
-                            "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["app1"],
                             "mutual": true,
-                            "values": ["comfort", "trust"],
+                            "values": ["comfort", "trust", "respect", "like"],
                             "amount": -10
                         }
                     ]

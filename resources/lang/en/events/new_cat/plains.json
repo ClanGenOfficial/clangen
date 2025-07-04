@@ -79,16 +79,7 @@
             "mutual": true,
             "values": ["comfort", "like"],
             "amount": 10
-          },
-	  {
-            "cats_from": ["n_c:0"],
-            "cats_to": ["m_c"],
-            "mutual": true,
-            "values": ["dislike"],
-            "amount": -5
           }
-
-
         ],
         "outsider": {
             "current_rep": [

@@ -676,13 +676,6 @@
                         "mutual": false,
                         "values": ["respect", "trust", "comfort", "like"],
                         "amount": -10
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 10
                     }
                 ]
             },
@@ -1030,13 +1023,6 @@
                         "mutual": true,
                         "values": ["respect", "comfort"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 5
                     }
                 ]
             },
@@ -1129,13 +1115,6 @@
                         "mutual": false,
                         "values": ["respect", "trust", "comfort", "like"],
                         "amount": -10
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["app1"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 5
                     }
                 ]
             },
@@ -2673,13 +2652,6 @@
                         "mutual": false,
                         "values": ["comfort"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     }
                 ]
             },
@@ -2743,13 +2715,6 @@
                         "mutual": false,
                         "values": ["respect", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike", "jealous"],
-                        "amount": -5
                     }
                 ]
             },
@@ -2765,13 +2730,6 @@
                         "mutual": false,
                         "values": ["respect", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike", "jealous"],
-                        "amount": -5
                     }
                 ]
             },
@@ -2788,13 +2746,6 @@
                         "mutual": false,
                         "values": ["respect", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike", "jealous"],
-                        "amount": -5
                     }
                 ]
             }
@@ -2812,13 +2763,6 @@
                         "mutual": false,
                         "values": ["respect", "comfort"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike", "jealous"],
-                        "amount": 5
                     }
                 ]
             },
@@ -2835,13 +2779,6 @@
                         "mutual": false,
                         "values": ["respect", "comfort"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike", "jealous"],
-                        "amount": 5
                     }
                 ]
             },
@@ -2971,13 +2908,6 @@
                         "mutual": true,
                         "values": ["romance"],
                         "amount": 10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
                     }
                 ]
             },
@@ -2994,13 +2924,6 @@
                         "mutual": true,
                         "values": ["romance"],
                         "amount": 10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -10
                     }
                 ]
             }
@@ -3018,13 +2941,6 @@
                         "mutual": true,
                         "values": ["romance"],
                         "amount": -10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 10
                     }
                 ]
             }
@@ -3660,13 +3576,6 @@
                         "mutual": true,
                         "values": ["like", "comfort", "trust"],
                         "amount": 10
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -10
                     }
                 ]
             },
@@ -3697,13 +3606,6 @@
                         "mutual": false,
                         "values": ["like", "comfort", "trust"],
                         "amount": 10
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -10
                     }
                 ]
             },
@@ -3720,13 +3622,6 @@
 					"values": ["like",
 					"comfort", "trust"],
 					"amount": 10
-					},
-				{
-					"cats_to": ["patrol"],
-					"cats_from": ["patrol"],
-					"mutual": true,
-					"values": ["dislike", "jealous"],
-					"amount": -10
 					}
 				]
 			},
@@ -3744,13 +3639,6 @@
                         "mutual": false,
                         "values": ["like", "comfort", "trust"],
                         "amount": 10
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -10
                     }
                 ]
             },
@@ -3768,13 +3656,6 @@
                         "mutual": false,
                         "values": ["like", "respect", "trust"],
                         "amount": 10
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -10
                     }
                 ]
             },
@@ -3792,13 +3673,6 @@
                         "mutual": false,
                         "values": ["like", "respect", "trust"],
                         "amount": 10
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -10
                     }
                 ]
             },
@@ -3816,13 +3690,6 @@
                         "mutual": false,
                         "values": ["like", "respect", "trust"],
                         "amount": 10
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -10
                     }
                 ]
             }
@@ -3893,13 +3760,6 @@
                         "mutual": false,
                         "values": ["like", "comfort", "trust"],
                         "amount": 5
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ],
 	        "art": "gen_med_collectingmullein"
@@ -3918,13 +3778,6 @@
                         "mutual": false,
                         "values": ["like", "comfort", "trust"],
                         "amount": 5
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -3942,13 +3795,6 @@
                         "mutual": false,
                         "values": ["like", "comfort", "trust"],
                         "amount": 5
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -3964,13 +3810,6 @@
                         "mutual": false,
                         "values": ["like", "comfort", "trust"],
                         "amount": 5
-                    },
-					{
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -3988,13 +3827,6 @@
                         "mutual": false,
                         "values": ["like", "respect", "trust"],
                         "amount": 5
-                    },
-		    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             }
@@ -4077,12 +3909,6 @@
                         "cat_from": [ "s_c" ],
                         "values": [ "trust", "comfort" ],
                         "amount": -5
-                    },
-                    {
-                        "cat_to": [ "s_c" ],
-                        "cat_from": [ "app2" ],
-                        "values": [ "dislike", "jealous" ],
-                        "amount": 10
                     }
                 ],
                 "art": "gen_train_argueAA"
@@ -4100,12 +3926,6 @@
                         "cat_from": [ "s_c" ],
                         "values": [ "trust", "comfort" ],
                         "amount": -5
-                    },
-                    {
-                        "cat_to": [ "s_c" ],
-                        "cat_from": [ "app2" ],
-                        "values": [ "dislike" ],
-                        "amount": 5
                     }
                 ],
                 "art": "gen_train_argueAA"
@@ -4204,13 +4024,6 @@
                         "mutual": false,
                         "values": [ "like" ],
                         "amount": -10
-                    },
-                    {
-                        "cat_to": [ "app2" ],
-                        "cat_from": [ "p_l" ],
-                        "mutual": false,
-                        "values": [ "dislike" ],
-                        "amount": 10
                     }
                 ],
                 "art": "gen_train_argueAA"
@@ -4228,13 +4041,6 @@
                         "mutual": false,
                         "values": [ "like", "comfort" ],
                         "amount": 10
-                    },
-                    {
-                        "cat_to": [ "app2" ],
-                        "cat_from": [ "p_l" ],
-                        "mutual": false,
-                        "values": [ "dislike" ],
-                        "amount": -10
                     }
                 ],
                 "art": "gen_speaking_cat_app"
@@ -4252,13 +4058,6 @@
                         "mutual": false,
                         "values": [ "like", "comfort" ],
                         "amount": 10
-                    },
-                    {
-                        "cat_to": [ "app2" ],
-                        "cat_from": [ "p_l" ],
-                        "mutual": false,
-                        "values": [ "dislike" ],
-                        "amount": -10
                     }
                 ],
                 "art": "gen_speaking_cat_app"
@@ -4448,13 +4247,6 @@
                 "weight": 40,
                 "relationships": [
             {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["p_l"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
-            },
-            {
                 "cats_to": ["r_c"],
                 "cats_from": ["p_l"],
                 "mutual": false,
@@ -4602,14 +4394,7 @@
                         "mutual": true,
                         "values": ["comfort", "respect", "like"],
                         "amount": 10
-            },  
-            {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
+            }
             ],
             "art": "gen_med_warappmedapp_herbcontest"
             },
@@ -4648,16 +4433,9 @@
                             "cats_to": ["app1"],
                             "cats_from": ["app2"],
                             "mutual": false,
-                            "values": ["dislike", "respect"],
-                            "amount": 5
-                },  
-                {
-                            "cats_to": ["app1"],
-                            "cats_from": ["app2"],
-                            "mutual": false,
-                            "values": ["jealous"],
-                            "amount": 10
-                        }
+                            "values": ["like", "respect"],
+                            "amount": -5
+                }
                 ],
                 "art": "app_cat_looking_up"
                 },
@@ -4674,16 +4452,9 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["dislike", "respect"],
-                        "amount": 10
-            },  
-            {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": 15
-                    }
+                        "values": ["like", "respect"],
+                        "amount": -10
+            }
             ],
             "art": "app_cat_looking_up"
             },
@@ -4848,13 +4619,6 @@
                             "mutual": false,
                             "values": ["like", "comfort"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["app1"],
-                    "cats_from": ["app2"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 10
                 }
                 ],
                 "art": "app_cat_looking_up"
@@ -4873,13 +4637,6 @@
                             "mutual": true,
                             "values": ["like", "comfort", "respect"],
                             "amount": 5
-                },
-                {
-                    "cats_to": ["app1"],
-                    "cats_from": ["app2"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": -5
                 }
                 ],
                 "art": "fst_hunt_fun4"
@@ -4899,13 +4656,6 @@
                             "mutual": true,
                             "values": ["like", "comfort", "respect"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["app1"],
-                    "cats_from": ["app2"],
-                    "mutual": true,
-                    "values": ["dislike"],
-                    "amount": 10
                 }
                 ],
                 "art": "gen_train_argueAA"
@@ -4947,13 +4697,6 @@
                             "amount": -5
                 },
                 {
-                    "cats_to": ["p_l"],
-                    "cats_from": ["r_c"],
-                    "mutual": true,
-                    "values": ["dislike"],
-                    "amount": 10
-                },
-                {
                     "cats_to": ["r_c"],
                     "cats_from": ["p_l"],
                     "mutual": false,
@@ -4983,13 +4726,7 @@
                     "mutual": true,
                     "values": ["comfort"],
                     "amount": -5
-                },
-                {
-                    "cats_to": ["s_c"],
-                    "cats_from": ["p_l"],
-                    "mutual": false,
-                    "values": ["dislike", "jealous", "respect"],
-                    "amount": 5
+                }
                 }
                 ],
                 "art": "gen_train_patrolapprenticesessionfail"
@@ -5005,14 +4742,7 @@
                             "mutual": true,
                             "values": ["comfort", "like"],
                             "amount": 10
-                },
-                {
-                    "cats_to": ["app1"],
-                    "cats_from": ["app2"],
-                    "mutual": true,
-                    "values": ["dislike"],
-                    "amount": -5
-        }
+                }
                 ],
                 "art": "gen_app_siblings"
             },
@@ -5052,14 +4782,7 @@
                             "mutual": false,
                             "values": ["comfort", "like", "respect"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["s_c"],
-                    "cats_from": ["p_l"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 10
-        }
+                }
                 ],
                 "art": "gen_angry_cat_app"
             },
@@ -5094,14 +4817,7 @@
                             "mutual": false,
                             "values": ["like", "trust", "respect", "comfort"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["app2"],
-                    "cats_from": ["s_c"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 10
-        }
+                }
                 ],
                 "art": "gen_train_argueAA"
             },
@@ -5118,13 +4834,6 @@
                             "mutual": true,
                             "values": ["like", "comfort", "respect"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["app2"],
-                    "cats_from": ["s_c"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 5
                 }
                 ],
                 "art": "gen_train_argueAA"
@@ -5143,13 +4852,6 @@
                             "mutual": true,
                             "values": ["like", "comfort", "respect"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["s_c"],
-                    "cats_from": ["r_c"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 5
                 }
                 ],
                 "art": "gen_train_argueAA"
@@ -5189,14 +4891,7 @@
                         "mutual": true,
                         "values": ["comfort", "respect", "like"],
                         "amount": 10
-            },  
-            {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": -5
-                    }
+            }
             ],
             "art": "gen_med_warappmedapp_herbcontest"
             },
@@ -5235,16 +4930,9 @@
                             "cats_to": ["app1"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["dislike", "respect"],
-                            "amount": 5
-                },  
-                {
-                            "cats_to": ["app1"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["jealous"],
-                            "amount": 10
-                        }
+                            "values": ["like", "respect"],
+                            "amount": -5
+                }
                 ],
                 "art": "app_cat_looking_up"
                 },
@@ -5261,17 +4949,9 @@
                         "cats_to": ["app1"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "respect"],
-                        "amount": 10
-            },  
-            {
-                        "cats_to": ["app1"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": 15
-                    }
-            ],
+                        "values": ["like", "respect"],
+                        "amount": -10
+            }],
             "art": "app_cat_looking_up"
             },
             {
@@ -5352,14 +5032,7 @@
                             "mutual": false,
                             "values": ["like", "comfort", "trust"],
                             "amount": 10
-                        },
-                {
-                            "cats_to": ["app2"],
-                               "cats_from": ["app3"],
-                            "mutual": true,
-                           "values": ["dislike"],
-                               "amount": -15
-                                }
+                        }
 
                 ],
                 "art": "gen_bump_heads_apps"
@@ -5450,13 +5123,6 @@
                             "mutual": false,
                             "values": ["like", "comfort"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["s_c"],
-                    "cats_from": ["app2", "app3"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 10
                 }
                 ],
                 "art": "app_cat_looking_up"
@@ -5475,13 +5141,6 @@
                             "mutual": true,
                             "values": ["like", "comfort", "respect"],
                             "amount": 5
-                },
-                {
-                    "cats_to": ["app1"],
-                    "cats_from": ["patrol"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": -5
                 }
                 ],
                 "art": "fst_hunt_fun4"
@@ -5501,13 +5160,6 @@
                             "mutual": true,
                             "values": ["like", "comfort", "respect"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["patrol"],
-                    "cats_from": ["patrol"],
-                    "mutual": true,
-                    "values": ["dislike"],
-                    "amount": 10
                 }
                 ],
                 "art": "gen_train_argueAA"
@@ -5559,8 +5211,8 @@
                     "cats_to": ["p_l"],
                     "cats_from": ["patrol"],
                     "mutual": true,
-                    "values": ["dislike"],
-                    "amount": 10
+                    "values": ["like"],
+                    "amount": -10
                 },
                 {
                     "cats_to": ["r_c"],
@@ -5597,8 +5249,8 @@
                     "cats_to": ["s_c"],
                     "cats_from": ["p_l"],
                     "mutual": false,
-                    "values": ["dislike", "jealous", "respect"],
-                    "amount": 5
+                    "values": ["like", "respect"],
+                    "amount": -5
                 }
                 ],
                 "art": "gen_train_patrolapprenticesessionfail"
@@ -5614,14 +5266,7 @@
                             "mutual": true,
                             "values": ["comfort", "like"],
                             "amount": 10
-                },
-                {
-                    "cats_to": ["patrol"],
-                    "cats_from": ["patrol"],
-                    "mutual": true,
-                    "values": ["dislike"],
-                    "amount": -5
-        }
+                }
                 ],
                 "art": "gen_app_siblings"
             },
@@ -5675,14 +5320,7 @@
                             "mutual": false,
                             "values": ["comfort", "like", "respect"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["s_c"],
-                    "cats_from": ["patrol"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 10
-        }
+                }
                 ],
                 "art": "gen_angry_cat_app"
             },
@@ -5717,14 +5355,7 @@
                             "mutual": false,
                             "values": ["like", "trust", "respect", "comfort"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["patrol"],
-                    "cats_from": ["s_c"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 10
-        }
+                }
                 ],
                 "art": "gen_train_argueAA"
             },
@@ -5741,13 +5372,6 @@
                             "mutual": true,
                             "values": ["like", "comfort", "respect"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["patrol"],
-                    "cats_from": ["s_c"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 5
                 }
                 ],
                 "art": "gen_train_argueAA"
@@ -5766,13 +5390,6 @@
                             "mutual": true,
                             "values": ["like", "comfort", "respect"],
                             "amount": -5
-                },
-                {
-                    "cats_to": ["s_c"],
-                    "cats_from": ["patrol"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 5
                 }
                 ],
                 "art": "gen_train_argueAA"

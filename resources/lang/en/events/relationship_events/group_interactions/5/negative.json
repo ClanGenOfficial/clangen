@@ -14,12 +14,12 @@
 	"specific_reaction": {
 		"r_c1_to_m_c": {
 			"romance": "increase",
-			"dislike": "decrease",
+			"like": "increase",
 			"comfort": "increase",
 			"trust": "increase"
 		},
         	"r_c2_to_m_c": {
-			"dislike": "increase"
+			"like": "decrease"
 		},
         "r_c3_to_m_c": {
 			"comfort": "increase",

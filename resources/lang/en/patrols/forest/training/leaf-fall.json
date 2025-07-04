@@ -28,13 +28,6 @@
                         "mutual": true,
                         "values": ["romance", "like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -5
                     }
                 ]
             },
@@ -49,13 +42,6 @@
                         "mutual": true,
                         "values": ["romance", "like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -5
                     }
                 ]
             },
@@ -71,13 +57,6 @@
                         "mutual": true,
                         "values": ["romance", "like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -5
                     }
                 ]
             }
@@ -94,13 +73,6 @@
                         "mutual": true,
                         "values": ["romance", "like", "comfort"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": 5
                     }
                 ]
             }
@@ -189,13 +161,6 @@
                     "mutual": false,
                     "values": ["like", "trust"],
                     "amount": 10
-                },
-                {
-                    "cats_to": ["patrol"],
-                    "cats_from": ["patrol"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": -5
                 }
             ]
         }
@@ -237,13 +202,6 @@
                     "mutual": false,
                     "values": ["like", "trust"],
                     "amount": 10
-                },
-                {
-                    "cats_to": ["patrol"],
-                    "cats_from": ["patrol"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": -5
                 },
                 {
                     "cats_to": ["p_l"],
@@ -292,13 +250,6 @@
                     "mutual": false,
                     "values": ["like", "trust"],
                     "amount": 10
-                },
-                {
-                    "cats_to": ["patrol"],
-                    "cats_from": ["patrol"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": -5
                 },
                 {
                     "cats_to": ["app1"],
@@ -501,13 +452,6 @@
                         "mutual": false,
                         "values": ["respect", "trust", "like"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["p_l"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["r_c"],

@@ -251,7 +251,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"dislike": "increase:",
+			"like": "decrease:",
 			"comfort": "decrease"
 		}
 	},
