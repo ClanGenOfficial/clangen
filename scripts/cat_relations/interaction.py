@@ -1,6 +1,6 @@
 import i18n
 
-from scripts.cat_relations.relationship import RelValue
+from scripts.cat_relations.enums import RelValue
 from scripts.events_module.event_filters import event_for_cat
 from scripts.game_structure.localization import load_lang_resource
 

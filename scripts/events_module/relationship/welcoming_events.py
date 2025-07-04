@@ -5,7 +5,7 @@ from random import choice
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat_relations.relationship import RelValue
+from scripts.cat_relations.enums import RelValue
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (

@@ -20,7 +20,7 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
-from scripts.cat_relations.relationship import ValueLevel, RelValue
+from scripts.cat_relations.enums import RelValue
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,

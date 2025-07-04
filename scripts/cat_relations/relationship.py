@@ -2,7 +2,6 @@ import random
 from random import choice
 
 import i18n
-from strenum import StrEnum
 
 import scripts.cat_relations.interaction as interactions
 from scripts.cat.history import History
@@ -10,6 +9,7 @@ from scripts.cat_relations.interaction import (
     cats_fulfill_single_interaction_constraints,
     rebuild_relationship_dicts,
 )
+from scripts.cat_relations.enums import ValueLevel, RelValue
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_personality_compatibility, process_text
@@ -28,14 +28,14 @@ class Relationship:
         self,
         cat_from,
         cat_to,
-        mates=False,
-        family=False,
-        romance=0,
-        like=0,
-        respect=0,
-        trust=0,
-        comfort=0,
-        log=None,
+        mates: bool = False,
+        family: bool = False,
+        romance: int = 0,
+        like: int = 0,
+        respect: int = 0,
+        trust: int = 0,
+        comfort: int = 0,
+        log: list = None,
     ) -> None:
         self.chosen_interaction = None
         self.history = History()
@@ -62,6 +62,20 @@ class Relationship:
         self.respect = respect
         self.trust = trust
         self.comfort = comfort
+
+    def to_dict(self):
+        return {
+            "cat_from_id": self.cat_from.ID,
+            "cat_to_id": self.cat_to.ID,
+            "mates": self.mates,
+            "family": self.family,
+            "romance": self.romance,
+            "like": self.like,
+            "respect": self.respect,
+            "comfort": self.comfort,
+            "trust": self.trust,
+            "log": self.log,
+        }
 
     def link_relationship(self):
         """Add the other relationship object to this easily access and change the other side."""
@@ -581,7 +595,7 @@ class Relationship:
         if not self.romance:
             return None
 
-        group = _get_level_group(self.romance)
+        group = self._get_level_group(self.romance)
 
         if group == "pos":
             return ValueLevel.FANCIES
@@ -607,7 +621,7 @@ class Relationship:
         if not self.like:
             return None
 
-        group = _get_level_group(self.like)
+        group = self._get_level_group(self.like)
 
         if group == "extreme_neg":
             return ValueLevel.HATES
@@ -637,7 +651,7 @@ class Relationship:
         if not self.respect:
             return None
 
-        group = _get_level_group(self.respect)
+        group = self._get_level_group(self.respect)
 
         if group == "extreme_neg":
             return ValueLevel.RESENTS
@@ -667,7 +681,7 @@ class Relationship:
         if not self.comfort:
             return None
 
-        group = _get_level_group(self.comfort)
+        group = self._get_level_group(self.comfort)
 
         if group == "extreme_neg":
             return ValueLevel.FEARS
@@ -697,7 +711,7 @@ class Relationship:
         if not self.trust:
             return None
 
-        group = _get_level_group(self.trust)
+        group = self._get_level_group(self.trust)
 
         if group == "extreme_neg":
             return ValueLevel.DISTRUSTS
@@ -710,79 +724,11 @@ class Relationship:
         else:
             return None
 
-
-def _get_level_group(value):
-    found_group = None
-    for group, interval in game.config["relationship"]["value_levels"].items():
-        if value <= interval:
-            found_group = group
-            break
-    return found_group
-
-
-class RelValue(StrEnum):
-    ROMANCE = "romance"
-    LIKE = "like"
-    RESPECT = "respect"
-    TRUST = "trust"
-    COMFORT = "comfort"
-
-
-class ValueLevel(StrEnum):
-    HATES = "hates"
-    DISLIKES = "dislikes"
-    LIKES = "likes"
-    LOVES = "loves"
-    RESENTS = "resents"
-    ENVIES = "envies"
-    RESPECTS = "respects"
-    ADMIRES = "admires"
-    DISTRUSTS = "distrusts"
-    DOUBTS = "doubts"
-    FAVORS = "favors"
-    TRUSTS = "trusts"
-    FEARS = "fears"
-    AVOIDS = "avoids"
-    SEEKS = "seeks"
-    RELIES_ON = "relies_on"
-    FANCIES = "fancies"
-    ADORES = "adores"
-
-    def is_like_level(self):
-        return self in (self.HATES, self.DISLIKES, self.LIKES, self.LOVES)
-
-    def is_respect_level(self):
-        return self in (self.RESENTS, self.ENVIES, self.RESPECTS, self.ADMIRES)
-
-    def is_trust_level(self):
-        return self in (self.DISTRUSTS, self.DOUBTS, self.FAVORS, self.TRUSTS)
-
-    def is_comfort_level(self):
-        return self in (self.FEARS, self.AVOIDS, self.SEEKS, self.RELIES_ON)
-
-    def is_romance_level(self):
-        return self in (self.FANCIES, self.ADORES)
-
-    def is_extreme_neg(self):
-        return self in (self.HATES, self.RESENTS, self.DISTRUSTS, self.FEARS)
-
-    def is_neg(self):
-        return self in (self.DISLIKES, self.ENVIES, self.DOUBTS, self.AVOIDS)
-
-    def is_pos(self):
-        return self in (
-            self.LIKES,
-            self.RESPECTS,
-            self.FAVORS,
-            self.SEEKS,
-            self.FANCIES,
-        )
-
-    def is_extreme_pos(self):
-        return self in (
-            self.LOVES,
-            self.ADMIRES,
-            self.TRUSTS,
-            self.RELIES_ON,
-            self.ADORES,
-        )
+    @staticmethod
+    def _get_level_group(value):
+        found_group = None
+        for group, interval in game.config["relationship"]["value_levels"].items():
+            if value <= interval:
+                found_group = group
+                break
+        return found_group

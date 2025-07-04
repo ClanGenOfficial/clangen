@@ -1093,7 +1093,7 @@ class UITextBoxTweaked(pygame_gui.elements.UITextBox):
         self.text_box_layout.finalise_to_new()
 
 
-class UIRelationStatusBar:
+class UIRelationStatusFillBar(pygame_gui.elements.UIStatusBar):
     """Wraps together a status bar"""
 
     def __init__(
@@ -1104,6 +1104,7 @@ class UIRelationStatusBar:
         dark_mode=False,
         manager=None,
         style="bars",
+        anchors=None,
     ):
         # Change the color of the bar depending on the value and if it's a negative or positive trait
         if percent_full > 49:
@@ -1118,10 +1119,13 @@ class UIRelationStatusBar:
         if dark_mode:
             theme += "_dark"
 
-        self.status_bar = pygame_gui.elements.UIStatusBar(
-            relative_rect, object_id=theme, manager=manager
+        super().__init__(
+            relative_rect,
+            object_id=theme,
+            manager=manager,
+            anchors=anchors,
         )
-        self.status_bar.percent_full = percent_full / 100
+        self.percent_full = percent_full / 100
 
         # Now to make the overlay
         overlay_path = "resources/images/"
@@ -1129,12 +1133,12 @@ class UIRelationStatusBar:
             if dark_mode:
                 overlay_path += "relations_border_bars_dark.png"
             else:
-                overlay_path += "relations_border_bars.png"
+                overlay_path += "relations_border_bars_light.png"
         elif style == "dots":
             if dark_mode:
                 overlay_path += "relations_border_dots_dark.png"
             else:
-                overlay_path += "relations_border_dots.png"
+                overlay_path += "relations_border_dots_light.png"
 
         image = pygame.transform.scale(
             image_cache.load_image(overlay_path).convert_alpha(),
@@ -1142,11 +1146,76 @@ class UIRelationStatusBar:
         )
 
         self.overlay = pygame_gui.elements.UIImage(
-            relative_rect, image, manager=manager
+            relative_rect, image, manager=manager, anchors=anchors
         )
+        self.join_focus_sets(self.overlay)
 
     def kill(self):
-        self.status_bar.kill()
+        self.overlay.kill()
+        del self
+
+
+class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
+    """Wraps together a status bar"""
+
+    def __init__(
+        self,
+        relative_rect,
+        container=None,
+        manager=None,
+        anchors: dict = None,
+        starting_height: int = 1,
+        scale_position: int = 0,
+        style: str = "bars",
+    ):
+        # creating the colored bar
+        bar_rect = pygame.Surface(
+            size=(relative_rect.width, relative_rect.height),
+        )
+        # green fill
+        pygame.Surface.fill(bar_rect, color=(52, 86, 1))
+        # red fill
+        rect = pygame.Rect(
+            (0, 0),
+            (relative_rect.width / 2, relative_rect.height),
+        )
+        pygame.Surface.fill(bar_rect, color=(143, 43, 0), rect=rect)
+        # bar element is the base of this entire element
+        super().__init__(
+            relative_rect,
+            bar_rect,
+            container=container,
+            manager=manager,
+            starting_height=starting_height,
+            anchors=anchors,
+        )
+
+        # Now to make the overlay
+        overlay_path = "resources/images/"
+        if style == "bars":
+            overlay_path += "relations_border_bars.png"
+        elif style == "dots":
+            overlay_path += "relations_border_dots.png"
+
+        image = pygame.transform.scale(
+            image_cache.load_image(overlay_path).convert_alpha(),
+            (relative_rect[2], relative_rect[3]),
+        )
+
+        # overlay element
+        self.overlay = pygame_gui.elements.UIImage(
+            relative_rect,
+            image,
+            manager=manager,
+            container=container,
+            anchors=anchors,
+            starting_height=starting_height,
+        )
+        self.join_focus_sets(self.overlay)
+
+        # pointer element
+
+    def kill(self):
         self.overlay.kill()
         del self
 

@@ -7,7 +7,7 @@ import i18n.config
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import create_group_interaction, GroupInteraction
-from scripts.cat_relations.relationship import RelValue
+from scripts.cat_relations.enums import RelValue
 from scripts.event_class import Single_Event
 from scripts.events_module.event_filters import (
     event_for_location,

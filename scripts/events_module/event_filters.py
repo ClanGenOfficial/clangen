@@ -1,7 +1,7 @@
 import re
 from random import choice
 
-from scripts.cat_relations.relationship import RelValue
+from scripts.cat_relations.enums import RelValue
 from scripts.game_structure.game_essentials import game
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (

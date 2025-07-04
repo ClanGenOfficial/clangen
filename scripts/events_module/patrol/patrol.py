@@ -12,7 +12,7 @@ import pygame
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
-from scripts.cat_relations.relationship import RelValue
+from scripts.cat_relations.enums import RelValue
 from scripts.clan import Clan
 from scripts.events_module.event_filters import event_for_tags
 from scripts.events_module.patrol.patrol_event import PatrolEvent

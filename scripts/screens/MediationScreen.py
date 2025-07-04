@@ -11,7 +11,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
-    UIRelationStatusBar,
+    UIRelationStatusFillBar,
     UISurfaceImageButton,
 )
 from scripts.utility import (
@@ -655,7 +655,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"romantic_text{tag}"
             ] = pygame_gui.elements.UITextBox(
-                "relationships.romantic_label",
+                "relationships.romance_lable",
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 5),
@@ -665,7 +665,7 @@ class MediationScreen(Screens):
                 text_kwargs={"count": 2 if display_romantic > 49 else 1},
                 object_id="#text_box_22_horizleft",
             )
-            self.selected_cat_elements[f"romantic_bar{tag}"] = UIRelationStatusBar(
+            self.selected_cat_elements[f"romantic_bar{tag}"] = UIRelationStatusFillBar(
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 15 + (barbar * bar_count)),
@@ -682,7 +682,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"plantonic_text{tag}"
             ] = pygame_gui.elements.UITextBox(
-                "relationships.platonic_label",
+                "relationships.like_label",
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 5),
@@ -692,7 +692,7 @@ class MediationScreen(Screens):
                 text_kwargs={"count": 2 if the_relationship.like > 49 else 1},
                 object_id="#text_box_22_horizleft",
             )
-            self.selected_cat_elements[f"platonic_bar{tag}"] = UIRelationStatusBar(
+            self.selected_cat_elements[f"platonic_bar{tag}"] = UIRelationStatusFillBar(
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 15 + (barbar * bar_count)),
@@ -720,7 +720,9 @@ class MediationScreen(Screens):
                 object_id="#text_box_22_horizleft",
                 text_kwargs={"count": 2 if the_relationship.respect > 49 else 1},
             )
-            self.selected_cat_elements[f"admiration_bar{tag}"] = UIRelationStatusBar(
+            self.selected_cat_elements[
+                f"admiration_bar{tag}"
+            ] = UIRelationStatusFillBar(
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 15 + (barbar * bar_count)),
@@ -748,7 +750,9 @@ class MediationScreen(Screens):
                 object_id="#text_box_22_horizleft",
                 text_kwargs={"count": 2 if the_relationship.comfort > 49 else 1},
             )
-            self.selected_cat_elements[f"comfortable_bar{tag}"] = UIRelationStatusBar(
+            self.selected_cat_elements[
+                f"comfortable_bar{tag}"
+            ] = UIRelationStatusFillBar(
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 15 + (barbar * bar_count)),
@@ -779,7 +783,7 @@ class MediationScreen(Screens):
                 ),
                 object_id="#text_box_22_horizleft",
             )
-            self.selected_cat_elements[f"trust_bar{tag}"] = UIRelationStatusBar(
+            self.selected_cat_elements[f"trust_bar{tag}"] = UIRelationStatusFillBar(
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + 15 + (barbar * bar_count)),
