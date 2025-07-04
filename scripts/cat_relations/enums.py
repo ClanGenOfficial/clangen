@@ -28,7 +28,7 @@ class ValueLevel(StrEnum):
     # comfort
     FEARS = "fears"
     AVOIDS = "avoids"
-    SEEKS = "seeks"
+    SEEKS_OUT = "seeks_out"
     RELIES_ON = "relies_on"
     # romance
     FANCIES = "fancies"
@@ -44,7 +44,7 @@ class ValueLevel(StrEnum):
         return self in (self.DISTRUSTS, self.DOUBTS, self.FAVORS, self.TRUSTS)
 
     def is_comfort_level(self):
-        return self in (self.FEARS, self.AVOIDS, self.SEEKS, self.RELIES_ON)
+        return self in (self.FEARS, self.AVOIDS, self.SEEKS_OUT, self.RELIES_ON)
 
     def is_romance_level(self):
         return self in (self.FANCIES, self.ADORES)
@@ -60,7 +60,7 @@ class ValueLevel(StrEnum):
             self.LIKES,
             self.RESPECTS,
             self.FAVORS,
-            self.SEEKS,
+            self.SEEKS_OUT,
             self.FANCIES,
         )
 

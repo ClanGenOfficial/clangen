@@ -688,7 +688,7 @@ class Relationship:
         elif group == "neg":
             return ValueLevel.AVOIDS
         elif group == "pos":
-            return ValueLevel.SEEKS
+            return ValueLevel.SEEKS_OUT
         elif group == "extreme_pos":
             return ValueLevel.RELIES_ON
         else:

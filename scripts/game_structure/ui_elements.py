@@ -1100,59 +1100,47 @@ class UIRelationStatusFillBar(pygame_gui.elements.UIStatusBar):
         self,
         relative_rect,
         percent_full=0,
-        positive_trait=True,
-        dark_mode=False,
         manager=None,
-        style="bars",
         anchors=None,
+        tool_tip_text: str = None,
     ):
-        # Change the color of the bar depending on the value and if it's a negative or positive trait
-        if percent_full > 49:
-            if positive_trait:
-                theme = "#relation_bar_pos"
-            else:
-                theme = "#relation_bar_neg"
-        else:
-            theme = "#relation_bar"
-
-        # Determine dark mode or light mode
-        if dark_mode:
-            theme += "_dark"
-
+        rect = (
+            (relative_rect.x + ui_scale_value(2), relative_rect.y + ui_scale_value(2)),
+            (
+                relative_rect.width - ui_scale_value(4),
+                relative_rect.height - ui_scale_value(4),
+            ),
+        )
         super().__init__(
-            relative_rect,
-            object_id=theme,
+            rect,
+            object_id="#relation_bar",
             manager=manager,
             anchors=anchors,
         )
         self.percent_full = percent_full / 100
 
         # Now to make the overlay
-        overlay_path = "resources/images/"
-        if style == "bars":
-            if dark_mode:
-                overlay_path += "relations_border_bars_dark.png"
-            else:
-                overlay_path += "relations_border_bars_light.png"
-        elif style == "dots":
-            if dark_mode:
-                overlay_path += "relations_border_dots_dark.png"
-            else:
-                overlay_path += "relations_border_dots_light.png"
-
         image = pygame.transform.scale(
-            image_cache.load_image(overlay_path).convert_alpha(),
+            image_cache.load_image(
+                "resources/images/relations_border_bars.png"
+            ).convert_alpha(),
             (relative_rect[2], relative_rect[3]),
         )
 
         self.overlay = pygame_gui.elements.UIImage(
-            relative_rect, image, manager=manager, anchors=anchors
+            relative_rect,
+            image,
+            manager=manager,
+            anchors=anchors,
+            object_id="#relation_bar",
         )
+        self.overlay.set_tooltip(tool_tip_text)
+        self.overlay.tool_tip_delay = 0
         self.join_focus_sets(self.overlay)
 
     def kill(self):
         self.overlay.kill()
-        del self
+        super().kill()
 
 
 class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
@@ -1166,24 +1154,17 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         anchors: dict = None,
         starting_height: int = 1,
         scale_position: int = 0,
-        style: str = "bars",
+        tool_tip_text: str = None,
     ):
         # creating the colored bar
-        bar_rect = pygame.Surface(
-            size=(relative_rect.width, relative_rect.height),
+        bar = pygame.transform.scale(
+            image_cache.load_image("resources/images/relation_bar.png").convert_alpha(),
+            (relative_rect[2], relative_rect[3]),
         )
-        # green fill
-        pygame.Surface.fill(bar_rect, color=(52, 86, 1))
-        # red fill
-        rect = pygame.Rect(
-            (0, 0),
-            (relative_rect.width / 2, relative_rect.height),
-        )
-        pygame.Surface.fill(bar_rect, color=(143, 43, 0), rect=rect)
         # bar element is the base of this entire element
         super().__init__(
             relative_rect,
-            bar_rect,
+            bar,
             container=container,
             manager=manager,
             starting_height=starting_height,
@@ -1191,33 +1172,62 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         )
 
         # Now to make the overlay
-        overlay_path = "resources/images/"
-        if style == "bars":
-            overlay_path += "relations_border_bars.png"
-        elif style == "dots":
-            overlay_path += "relations_border_dots.png"
-
         image = pygame.transform.scale(
-            image_cache.load_image(overlay_path).convert_alpha(),
+            image_cache.load_image(
+                "resources/images/relations_border_bars.png"
+            ).convert_alpha(),
             (relative_rect[2], relative_rect[3]),
         )
 
         # overlay element
-        self.overlay = pygame_gui.elements.UIImage(
+        self.overlay = UIModifiedImage(
             relative_rect,
             image,
             manager=manager,
             container=container,
             anchors=anchors,
             starting_height=starting_height,
+            object_id="#relation_bar",
         )
         self.join_focus_sets(self.overlay)
+        self.overlay.set_tooltip(tool_tip_text)
+        self.overlay.tool_tip_delay = 0
 
         # pointer element
+        max_width = relative_rect.width - 10
+        scale_position = (scale_position + 100) / 2
+        percentage = scale_position / max_width
+        self.scale_position = int(percentage * 100)
+
+        offset = ui_scale_value(14)
+        if self.scale_position > max_width + offset:
+            self.scale_position = max_width + offset
+        elif self.scale_position < 0:
+            self.scale_position = 0
+
+        pointer_size = ui_scale_dimensions((14, 10))
+        pointer_pos = (
+            relative_rect.x - ui_scale_value(17) + ui_scale_value(self.scale_position),
+            relative_rect.y + ui_scale_value(4),
+        )
+        pointer = pygame.transform.scale(
+            image_cache.load_image("resources/images/rel_pointer.png").convert_alpha(),
+            pointer_size,
+        )
+        self.pointer = pygame_gui.elements.UIImage(
+            pygame.Rect(pointer_pos, pointer_size),
+            pointer,
+            manager=manager,
+            container=container,
+            anchors=anchors,
+            starting_height=starting_height,
+        )
+        self.join_focus_sets(self.pointer)
 
     def kill(self):
         self.overlay.kill()
-        del self
+        self.pointer.kill()
+        super().kill()
 
 
 class IDImageButton(UISurfaceImageButton):
@@ -1868,6 +1878,37 @@ class UIModifiedImage(pygame_gui.elements.UIImage):
             return True
         else:
             return False
+
+    def while_hovering(
+        self,
+        time_delta: float,
+        mouse_pos: Union[pygame.math.Vector2, Tuple[int, int], Tuple[float, float]],
+    ):
+        """
+        Called while we are in the hover state. It will create a tool tip if we've been in the
+        hover state for a while, the text exists to create one, and we haven't created one already.
+
+        :param time_delta: Time in seconds between calls to update.
+        :param mouse_pos: The current position of the mouse.
+
+        """
+        if (
+            self.tool_tip is None
+            and self.tool_tip_text is not None
+            and self.hover_time > self.tool_tip_delay
+        ):
+            hover_height = int(self.rect.height / 2)
+            self.tool_tip = self.ui_manager.create_tool_tip(
+                text=self.tool_tip_text,
+                position=(mouse_pos[0], self.rect.centery),
+                hover_distance=(0, hover_height),
+                parent_element=self,
+                object_id=self.tool_tip_object_id,
+                wrap_width=self.tool_tip_wrap_width,
+                text_kwargs=self.tool_tip_text_kwargs,
+            )
+
+        self.hover_time += time_delta
 
 
 class UIScrollingButtonList(UIModifiedScrollingContainer):

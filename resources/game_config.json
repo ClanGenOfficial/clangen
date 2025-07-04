@@ -21,7 +21,8 @@
 		],
 		"value_levels": {
 			"extreme_neg": -50,
-			"neg": 0,
+			"neg": -5,
+			"neutral": 5,
 			"pos": 50,
 			"extreme_pos": 100
 		}

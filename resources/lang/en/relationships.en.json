@@ -1,7 +1,6 @@
 {
     "en": {
-        "neutral": "neutral",
-        "no_romance": "no romance",
+        "neutral": "---",
         "fancies": "fancies",
         "adores": "adores",
         "hates": "hates",
@@ -18,8 +17,13 @@
         "trusts": "trusts",
         "fears": "fears",
         "avoids": "avoids",
-        "seeks": "seeks",
+        "seeks_out": "seeks out",
         "relies_on": "relies on",
+        "like": "like",
+        "respect": "respect",
+        "comfort": "comfort",
+        "trust": "trust",
+        "romance": "romance",
         "positive_postscript": " (positive effect)",
         "positive_postscript_low": " (low positive effect)",
         "positive_postscript_medium": " (medium positive effect)",
