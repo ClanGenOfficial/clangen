@@ -6656,7 +6656,7 @@
         "intro_text": "p_l is an annoying furball of a Clanmate, but there's no one else available for training. Another Clanmate spots r_c leading p_l out of camp and makes a <i>comment</i> about romantic sunset walks. r_c burns under {PRONOUN/r_c/poss} fur. Certainly not!",
         "decline_text": "Actually, r_c is headed straight back to camp to find whoever said that and box their ears!",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_20", "romantic_20", "not_mates"],
+        "relationship_constraint": ["dislikes", "romantic_20", "not_mates"],
         "success_outcomes": [
             {
                 "text": "It is sunset. That does <b>not</b> matter. Stupid fox-hearted teasing Clanmates! r_c is crabby and snippy with p_l, and {PRONOUN/p_l/subject} {VERB/p_l/snap/snaps} back just as irritably, backlit all golden and beautiful by the sun.",
@@ -6711,7 +6711,7 @@
         "intro_text": "p_l spots r_c padding out of camp and makes a beeline to follow {PRONOUN/r_c/object}. Because, of course, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} simply that dedicated to taking every opportunity to train, even with a tick like r_c.",
         "decline_text": "p_l is waylaid by a Clanmate with an actual need for help, disrupting {PRONOUN/p_l/poss} cunning plans.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_20", "romantic_20"],
+        "relationship_constraint": ["dislikes", "romantic_20"],
         "success_outcomes": [
             {
                 "text": "They argue all the way to the training grounds, all the way through training, and all the way back again, and yet p_l curls up to sleep feeling strangely satisfied that {PRONOUN/p_l/subject} got to spend time with r_c.",
@@ -6773,7 +6773,7 @@
         "intro_text": "Maybe it's a little immature to be so invested in an argument - ahem, refined conversation about battle strategies.",
         "decline_text": "Yeah, time to take a breather from this conversation, p_l and r_c decide.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_30", "romantic_30"],
+        "relationship_constraint": ["dislikes", "romantic_30"],
         "success_outcomes": [
             {
                 "text": "Yes, it definitely is dumb, p_l decides, eye twitching. {PRONOUN/p_l/subject/CAP}'ll prove {PRONOUN/p_l/poss} point in combat instead! p_l tackles r_c, both cats going flying in a ball of fur and insults and unnecessary physical contact.",
@@ -6838,7 +6838,7 @@
         "intro_text": "p_l can't believe that r_c is <i>such</i> a fox-heart that the leader of c_n sent them both out together to work out their problems. Like, what?",
         "decline_text": "Maybe this rivalry has gotten a little... excessive.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_30", "romantic_30"],
+        "relationship_constraint": ["dislikes", "romantic_30"],
         "success_outcomes": [
             {
                 "text": "If there is a single thing that r_c and p_l can both agree on, it's this: how dare anyone order them to be friends! They complain to each other about the leader's commands for a good long while, before both being swept up into their normal arguments. Which they'll be continuing as long as they feel like, thank you.",
@@ -6889,7 +6889,7 @@
         "intro_text": "Out for training with r_c, p_l is reaching the limit of {PRONOUN/p_l/poss} patience.",
         "decline_text": "Time for training to end. Now.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_30", "romantic_30"],
+        "relationship_constraint": ["dislikes", "romantic_30"],
         "success_outcomes": [
             {
                 "text": "p_l snaps. Great StarClan, is r_c incapable of shutting up for <i>one heartbeat</i>?! Falling onto {PRONOUN/p_l/poss} rump, horrified at {PRONOUN/p_l/self}, p_l has a fantastic view of r_c as {PRONOUN/r_c/poss} ears prick up with shock and {PRONOUN/r_c/subject} {VERB/r_c/twist/twists} round to gape at {PRONOUN/p_l/object}. Which lasts for a fraction of a heartbeat before r_c is calling p_l mouse-brained and about as helpful as Twolegs in leaf-bare, {PRONOUN/r_c/poss} tirade barely interrupted by p_l's outburst. Maybe there are some cats in the Clan p_l is still just another cat to. The thought is strangely comforting.",
@@ -6939,7 +6939,7 @@
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
         "decline_text": "...Best not to try it.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_40", "romantic_40"],
+        "relationship_constraint": ["dislikes"", "romantic_40"],
         "success_outcomes": [
             {
                 "text": "They cannot.",
@@ -7003,7 +7003,7 @@
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
         "decline_text": "...Best not to try it.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_40", "romantic_40"],
+        "relationship_constraint": ["dislikes"", "romantic_40"],
         "success_outcomes": [
             {
                 "text": "It <i>almost</i> devolves into the normal arguments, but... not quite. While insulting p_l, r_c accidentally lets it slip that {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} p_l has an astonishing skill. Neither cat knows what to do with this information, shifting their paws and blushing awkwardly under their fur.",
@@ -7054,7 +7054,7 @@
         "intro_text": "r_c, sick of hearing other cats gossip about how much p_l hates {PRONOUN/r_c/object}, pulls p_l aside to confront {PRONOUN/p_l/object}.",
         "decline_text": "r_c's nerves make {PRONOUN/r_c/object} think better of the idea.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_40", "romantic_40", "not_mates"],
+        "relationship_constraint": ["dislikes"", "romantic_40", "not_mates"],
         "success_outcomes": [
             {
                 "text": "p_l gapes at {PRONOUN/r_c/object}, mouth hanging open like a dumb fish, and r_c glares at {PRONOUN/p_l/object} for making such a dumb expression look so stupidly pretty. Fine. r_c hates {PRONOUN/p_l/object} too then, just like p_l wants.",

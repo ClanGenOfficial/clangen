@@ -3143,7 +3143,7 @@
     "min_max_status": {
         "normal adult": [2, 2]
     },
-    "relationship_constraint": ["dislike_20"],
+    "relationship_constraint": ["dislikes"],
     "weight": 40,
     "intro_text": "Hunting should be an easy task, but with p_l and r_c persistently rubbing each other the wrong way, one of them is bound to snap and return to camp.",
     "decline_text": "There is no way the duo were ever going to successfully hunt together. They each return to camp to find other duties.",
