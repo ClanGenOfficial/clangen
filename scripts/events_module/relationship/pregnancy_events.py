@@ -707,7 +707,7 @@ class Pregnancy_Events:
                         if not p_rel.opposite_relationship:
                             p_rel.link_relationship()
                         p_rel_opp = p_rel.opposite_relationship
-                        if p_rel.dislike < 20 and p_rel_opp.dislike < 20:
+                        if p_rel_opp.like < 20:
                             p_affairs.append(p_affair)
             possible_affair_partners = p_affairs
 

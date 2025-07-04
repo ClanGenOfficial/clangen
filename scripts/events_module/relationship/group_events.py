@@ -539,11 +539,11 @@ class GroupEvents:
         if RelValue.LIKE in dictionary:
             like = amount if dictionary[RelValue.LIKE] == "increase" else amount * -1
         if RelValue.RESPECT in dictionary:
-            respect = amount if dictionary["dislike"] == "increase" else amount * -1
-        if RelValue.TRUST in dictionary:
-            trust = (
+            respect = (
                 amount if dictionary[RelValue.RESPECT] == "increase" else amount * -1
             )
+        if RelValue.TRUST in dictionary:
+            trust = amount if dictionary[RelValue.TRUST] == "increase" else amount * -1
         if RelValue.COMFORT in dictionary:
             comfort = (
                 amount if dictionary[RelValue.COMFORT] == "increase" else amount * -1

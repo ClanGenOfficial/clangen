@@ -476,7 +476,6 @@ class Relationship:
         intensity: str,
         biome: str,
         season: str,
-        game_mode: str,
     ) -> list:
         """
         Filter interactions based on the status and other constraints.

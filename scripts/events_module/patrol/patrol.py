@@ -559,20 +559,11 @@ class Patrol:
         ]
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
-            if (
-                val
-                in (
-                    RelValue.ROMANCE,
-                    RelValue.LIKE,
-                    RelValue.RESPECT,
-                    RelValue.COMFORT,
-                    RelValue.TRUST,
-                )
-                and value_check >= 20
-            ):
+            if value_check >= 20:
                 chance_of_romance_patrol -= 1
-            elif val in ["dislike", "jealousy"] and value_check >= 20:
+            elif value_check >= 20:
                 chance_of_romance_patrol += 2
+
         if chance_of_romance_patrol <= 0:
             chance_of_romance_patrol = 1
         print("final romance chance:", chance_of_romance_patrol)

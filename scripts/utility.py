@@ -1024,7 +1024,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     :param cat_from: the cat who is having the feelings
     :param cat_to: the cat that the feelings are directed towards
     :param rel_value: the relationship value that you're looking for,
-    options are: romantic, platonic, dislike, admiration, comfortable, jealousy, trust
+    options are: romance, like, respect, comfort, trust
     """
     if cat_to.ID in cat_from.relationships:
         relationship = cat_from.relationships[cat_to.ID]
@@ -1158,10 +1158,7 @@ def filter_relationship_type(
     filters for specific types of relationships between groups of cat objects, returns bool
     :param group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for
     parent/child, the cat being tested as parent must be index 0)
-    :param filter_types: the relationship types to check for. possible types: "siblings", "mates",
-    "mates_with_pl" (PATROL ONLY), "not_mates", "parent/child", "child/parent", "mentor/app", "app/mentor",
-    (following tags check if value is over given int) "romantic_int", "platonic_int", "dislike_int", "comfortable_int",
-    "jealousy_int", "trust_int"
+    :param filter_types: the relationship types to check for.
     :param event_id: if the event has an ID, include it here
     :param patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
     """
@@ -1534,8 +1531,8 @@ def change_relationship_values(
 
     # This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
     """changed = False
-    if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
-            comfortable == 0 and jealousy == 0 and trust == 0:
+    if romance == 0 and like == 0 and respect == 0 and \
+            comfort == 0 and trust == 0:
         changed = False
     else:
         changed = True"""
@@ -1570,12 +1567,10 @@ def change_relationship_values(
             # for testing purposes - DON'T DELETE - you can use this to test if relationships are changing
             """
             print(str(single_cat_from.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                  "Romantic: " + str(romantic_love) +
-                  " /Platonic: " + str(platonic_like) +
-                  " /Dislike: " + str(dislike) +
-                  " /Respect: " + str(admiration) +
-                  " /Comfort: " + str(comfortable) +
-                  " /Jealousy: " + str(jealousy) +
+                  "Romance: " + str(romance) +
+                  " /Like: " + str(like) +
+                  " /Respect: " + str(respect) +
+                  " /Comfort: " + str(comfort) +
                   " /Trust: " + str(trust)) if changed else print("No relationship change")"""
 
             if log and isinstance(log, str):

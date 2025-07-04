@@ -706,34 +706,6 @@ class MediationScreen(Screens):
 
             bar_count += 1
 
-            # DISLIKE
-            self.selected_cat_elements[
-                f"dislike_text{tag}"
-            ] = pygame_gui.elements.UITextBox(
-                "relationships.dislike_label",
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + (barbar * bar_count) - 5),
-                        (150, 30),
-                    )
-                ),
-                text_kwargs={"count": 2 if the_relationship.dislike > 49 else 1},
-                object_id="#text_box_22_horizleft",
-            )
-            self.selected_cat_elements[f"dislike_bar{tag}"] = UIRelationStatusBar(
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + 15 + (barbar * bar_count)),
-                        (150, 9),
-                    )
-                ),
-                the_relationship.dislike,
-                positive_trait=False,
-                dark_mode=game.settings["dark mode"],
-            )
-
-            bar_count += 1
-
             # ADMIRE
             self.selected_cat_elements[
                 f"admiration_text{tag}"
@@ -785,34 +757,6 @@ class MediationScreen(Screens):
                 ),
                 the_relationship.comfort,
                 positive_trait=True,
-                dark_mode=game.settings["dark mode"],
-            )
-
-            bar_count += 1
-
-            # JEALOUS
-            self.selected_cat_elements[
-                f"jealous_text{tag}"
-            ] = pygame_gui.elements.UITextBox(
-                "relationships.jealous_label",
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + (barbar * bar_count) - 5),
-                        (150, 30),
-                    )
-                ),
-                object_id="#text_box_22_horizleft",
-                text_kwargs={"count": 2 if the_relationship.comfort > 49 else 1},
-            )
-            self.selected_cat_elements[f"jealous_bar{tag}"] = UIRelationStatusBar(
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + 15 + (barbar * bar_count)),
-                        (150, 9),
-                    )
-                ),
-                the_relationship.jealousy,
-                positive_trait=False,
                 dark_mode=game.settings["dark mode"],
             )
 
