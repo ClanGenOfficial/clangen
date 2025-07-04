@@ -1388,13 +1388,7 @@ def unpack_rel_block(
     :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
     """
-    possible_values = (
-        RelValue.ROMANCE,
-        RelValue.LIKE,
-        RelValue.COMFORT,
-        RelValue.TRUST,
-        RelValue.RESPECT,
-    )
+    possible_values = [v for v in RelValue]
 
     for block in relationship_effects:
         cats_from = block.get("cats_from", [])
@@ -1420,37 +1414,30 @@ def unpack_rel_block(
         positive = False
 
         # grabbing values
-        romantic_love = 0
-        platonic_like = 0
-        comfortable = 0
-        admiration = 0
+        romance = 0
+        like = 0
+        comfort = 0
+        respect = 0
         trust = 0
+
         if RelValue.ROMANCE in values:
-            romantic_love = amount
+            romance = amount
             if amount > 0:
                 positive = True
         if RelValue.LIKE in values:
-            platonic_like = amount
+            like = amount
             if amount > 0:
-                positive = True
-        if "dislike" in values:
-            dislike = amount
-            if amount < 0:
                 positive = True
         if RelValue.COMFORT in values:
-            comfortable = amount
+            comfort = amount
             if amount > 0:
-                positive = True
-        if "jealous" in values:
-            jealousy = amount
-            if amount < 0:
                 positive = True
         if RelValue.TRUST in values:
             trust = amount
             if amount > 0:
                 positive = True
         if RelValue.RESPECT in values:
-            admiration = amount
+            respect = amount
             if amount > 0:
                 positive = True
 
@@ -1499,10 +1486,10 @@ def unpack_rel_block(
         change_relationship_values(
             cats_to_ob,
             cats_from_ob,
-            romance=romantic_love,
-            like=platonic_like,
-            respect=admiration,
-            comfort=comfortable,
+            romance=romance,
+            like=like,
+            respect=respect,
+            comfort=comfort,
             trust=trust,
             log=log1,
         )
@@ -1511,10 +1498,10 @@ def unpack_rel_block(
             change_relationship_values(
                 cats_from_ob,
                 cats_to_ob,
-                romance=romantic_love,
-                like=platonic_like,
-                respect=admiration,
-                comfort=comfortable,
+                romance=romance,
+                like=like,
+                respect=respect,
+                comfort=comfort,
                 trust=trust,
                 log=log2,
             )

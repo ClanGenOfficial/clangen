@@ -52,9 +52,7 @@ class RelationshipScreen(Screens):
     rel_value_names = (
         "romantic",
         "platonic",
-        "dislike",
         "comfort",
-        "jealousy",
         "respect",
         "trust",
     )
@@ -429,10 +427,8 @@ class RelationshipScreen(Screens):
                         [
                             x.romance,
                             x.like,
-                            x.dislike,
                             x.respect,
                             x.comfort,
-                            x.jealousy,
                             x.trust,
                         ],
                     )
@@ -670,13 +666,7 @@ class RelationshipScreen(Screens):
             self.filtered_cats = list(
                 filter(
                     lambda rel: (
-                        rel.romance
-                        + rel.like
-                        + rel.dislike
-                        + rel.respect
-                        + rel.comfort
-                        + rel.jealousy
-                        + rel.trust
+                        rel.romance + rel.like + rel.respect + rel.comfort + rel.trust
                     )
                     > 0,
                     self.filtered_cats,
@@ -866,6 +856,7 @@ class RelationshipScreen(Screens):
         bar_size_x = 94
         bar_size_y = 10
 
+        # ROMANCE
         self.relation_list_elements[
             f"romantic_text{i}"
         ] = pygame_gui.elements.UITextBox(
@@ -892,7 +883,7 @@ class RelationshipScreen(Screens):
         )
         bar_count += 1
 
-        # PLATONIC
+        # LIKE
         self.relation_list_elements[
             f"platonic_text{i}"
         ] = pygame_gui.elements.UITextBox(
@@ -920,30 +911,7 @@ class RelationshipScreen(Screens):
 
         bar_count += 1
 
-        # DISLIKE
-        self.relation_list_elements[f"dislike_text{i}"] = pygame_gui.elements.UITextBox(
-            "relationships.dislike_label",
-            ui_scale(
-                pygame.Rect(
-                    (rel_pos_x, text_pos_y + (barbar * bar_count)),
-                    (text_size_x, text_size_y),
-                )
-            ),
-            object_id="#text_box_22_horizleft",
-            text_kwargs={"count": 2 if the_relationship.dislike > 49 else 1},
-        )
-        self.relation_list_elements[f"dislike_bar{i}"] = UIRelationStatusBar(
-            ui_scale(
-                pygame.Rect((rel_pos_x, bar_pos_y + (barbar * bar_count)), (94, 10))
-            ),
-            the_relationship.dislike,
-            positive_trait=False,
-            dark_mode=game.settings["dark mode"],
-        )
-
-        bar_count += 1
-
-        # ADMIRE
+        # RESPECT
         self.relation_list_elements[
             f"admiration_text{i}"
         ] = pygame_gui.elements.UITextBox(
@@ -971,7 +939,7 @@ class RelationshipScreen(Screens):
 
         bar_count += 1
 
-        # COMFORTABLE
+        # COMFORT
         self.relation_list_elements[
             f"comfortable_text{i}"
         ] = pygame_gui.elements.UITextBox(
@@ -994,32 +962,6 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.comfort,
             positive_trait=True,
-            dark_mode=game.settings["dark mode"],
-        )
-
-        bar_count += 1
-
-        # JEALOUS
-        self.relation_list_elements[f"jealous_text{i}"] = pygame_gui.elements.UITextBox(
-            "relationships.jealous_label",
-            ui_scale(
-                pygame.Rect(
-                    (rel_pos_x, text_pos_y + (barbar * bar_count)),
-                    (text_size_x, text_size_y),
-                )
-            ),
-            object_id="#text_box_22_horizleft",
-            text_kwargs={"count": 2 if the_relationship.jealousy > 49 else 1},
-        )
-        self.relation_list_elements[f"jealous_bar{i}"] = UIRelationStatusBar(
-            ui_scale(
-                pygame.Rect(
-                    (rel_pos_x, bar_pos_y + (barbar * bar_count)),
-                    (bar_size_x, bar_size_y),
-                )
-            ),
-            the_relationship.jealousy,
-            positive_trait=False,
             dark_mode=game.settings["dark mode"],
         )
 

@@ -376,7 +376,7 @@ class Relationship:
             if the event has a positive or negative impact of the relationship
 
         """
-        # base for non-existing platonic like / dislike
+        # base for non-existing like
         bool_ballot = [True, True, False]
 
         # take personality in count
@@ -548,6 +548,21 @@ class Relationship:
             self.comfort_level,
             self.respect_level,
         ]
+
+    def total_value_amount(self) -> int:
+        return self.romance + self.like + self.respect + self.comfort + self.trust
+
+    def has_extreme_negative(self) -> bool:
+        if [l for l in self.get_value_levels() if l.is_extreme_neg()]:
+            return True
+
+        return False
+
+    def has_extreme_positive(self) -> bool:
+        if [l for l in self.get_value_levels() if l.is_extreme_pos()]:
+            return True
+
+        return False
 
     @property
     def romance(self) -> int:

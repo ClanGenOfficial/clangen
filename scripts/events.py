@@ -2064,12 +2064,12 @@ class Events:
         )
 
         # Check to see if random murder is triggered.
-        # If so, we allow targets to be anyone they have even the smallest amount of dislike for
+        # If so, we allow targets to be anyone they have even the smallest amount of negativity for
         if random.getrandbits(max(1, int(random_murder_chance))) == 1:
             targets = [
                 i
                 for i in relationships
-                if i.dislike > 1
+                if i.total_value_amount() < 0
                 and not Cat.fetch_cat(i.cat_to).dead
                 and not Cat.fetch_cat(i.cat_to).outside
             ]
@@ -2105,22 +2105,14 @@ class Events:
             return
 
         # If random murder is not triggered, targets can only be those they have some dislike for
-        hate_relation = [
+        negative_relation = [
             i
             for i in relationships
-            if i.dislike > 15
+            if i.has_extreme_negative()
             and not Cat.fetch_cat(i.cat_to).dead
             and not Cat.fetch_cat(i.cat_to).outside
         ]
-        targets.extend(hate_relation)
-        resent_relation = [
-            i
-            for i in relationships
-            if i.jealousy > 15
-            and not Cat.fetch_cat(i.cat_to).dead
-            and not Cat.fetch_cat(i.cat_to).outside
-        ]
-        targets.extend(resent_relation)
+        targets.extend(negative_relation)
 
         # if we have some, then we need to decide if this cat will kill
         if targets:
@@ -2128,12 +2120,13 @@ class Events:
 
             kill_chance = game.config["death_related"]["base_murder_kill_chance"]
 
-            relation_modifier = int(
-                0.5 * int(chosen_target.dislike + chosen_target.jealousy)
-            ) - int(
-                0.5
-                * int(chosen_target.like + chosen_target.trust + chosen_target.comfort)
+            extreme_neg = len(
+                [l for l in chosen_target.get_value_levels() if l.is_extreme_neg()]
             )
+            neg = len([l for l in chosen_target.get_value_levels() if l.is_neg()])
+
+            relation_modifier = (extreme_neg * 10) + (neg * 5)
+
             kill_chance -= relation_modifier
 
             if (
