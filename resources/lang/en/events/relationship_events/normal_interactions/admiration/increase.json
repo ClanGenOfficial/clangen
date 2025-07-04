@@ -37,7 +37,7 @@
 			"m_c and r_c work together to lead a scary bug out of the camp."
 		],
 		"reaction_random_cat": {
-			"admiration": "increase"
+			"respect": "increase"
 		}
 	},
 	{
@@ -99,7 +99,7 @@
 			"m_c compliments r_c on {PRONOUN/r_c/poss} bravery today."
 		],
 		"reaction_random_cat": {
-			"admiration": "increase"
+			"respect": "increase"
 		}
 	},
 	{
@@ -354,7 +354,7 @@
 			"An injured butterfly lands in front of m_c and r_c. They take turns nurturing it for a few days until it can fly again."
 		],
 		"reaction_random_cat": {
-			"admiration": "increase"
+			"respect": "increase"
 		}
 	},
 	{
@@ -371,7 +371,7 @@
 			"admiration_30"
 		],
 		"reaction_random_cat": {
-			"admiration": "increase",
+			"respect": "increase",
 			"trust": "increase"
 		}
 	},

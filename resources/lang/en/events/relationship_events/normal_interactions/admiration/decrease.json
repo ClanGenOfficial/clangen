@@ -35,7 +35,7 @@
 			"r_c did an embarrassing prank on m_c's friend."
 		],
 		"reaction_random_cat": {
-			"admiration": "decrease"
+			"respect": "decrease"
 		}
 	},
 	{
@@ -88,7 +88,7 @@
 			"r_c panics over something that m_c finds trivial."
 		],
 		"reaction_random_cat": {
-			"admiration": "decrease"
+			"respect": "decrease"
 		}
 	},
 	{
@@ -99,7 +99,7 @@
 			"m_c and r_c were supposed to be working together today, but they can never agree long enough to accomplish anything."
 		],
 		"reaction_random_cat": {
-			"admiration": "decrease"
+			"respect": "decrease"
 		},
 		"main_status_constraint": [
 			"elder",
@@ -222,7 +222,7 @@
 			"m_c had a bad day and lashed out at r_c."
 		],
 		"reaction_random_cat": {
-			"admiration": "decrease"
+			"respect": "decrease"
 		}
 	}
 ]

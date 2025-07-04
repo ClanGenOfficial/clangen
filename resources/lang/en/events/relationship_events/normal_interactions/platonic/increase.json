@@ -351,7 +351,7 @@
 		],
 		"reaction_random_cat": {
 			"like": "increase",
-			"admiration": "increase",
+			"respect": "increase",
 			"trust": "increase",
 			"comfortable": "increase"
 		}
@@ -382,7 +382,7 @@
 		"also_influences": {
 			"trust": "increase",
 			"comfortable": "increase",
-			"admiration": "increase"
+			"respect": "increase"
 		}
 	},
 	{
@@ -612,7 +612,7 @@
 			"elder"
 		],
 		"also_influences": {
-			"admiration": "increase",
+			"respect": "increase",
 			"comfortable": "increase",
 			"trust": "increase"
 		}

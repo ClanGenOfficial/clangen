@@ -32,7 +32,7 @@
         	"r_c4_to_r_c3": {
 			"romance": "increase",
 			"dislike": "decrease",
-			"admiration": "increase",
+			"respect": "increase",
 			"comfortable": "increase",
 			"jealousy": "neutral",
 			"trust": "increase"

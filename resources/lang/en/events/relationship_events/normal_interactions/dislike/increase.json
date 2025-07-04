@@ -371,7 +371,7 @@
 		"reaction_random_cat": {
 			"like": "decrease",
 			"comfortable": "decrease",
-			"admiration": "decrease",
+			"respect": "decrease",
 			"trust": "decrease"
 		}
 	},
