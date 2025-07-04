@@ -5,10 +5,10 @@
 		"intensity": "low",
 		"interactions": ["m_c is gossiping with r_c1 about r_c2 and r_c3"],
 		"relationship_constraint": {
-			"m_c_to_r_c2": ["dislike_10"],
-			"r_c1_to_r_c2": ["dislike_10"],
-			"m_c_to_r_c3": ["dislike_10"],
-			"r_c1_to_r_c3": ["dislike_10"]
+			"m_c_to_r_c2": ["dislikes"],
+			"r_c1_to_r_c2": ["dislikes"],
+			"m_c_to_r_c3": ["dislikes"],
+			"r_c1_to_r_c3": ["dislikes"]
 		},
 		"specific_reaction":{
 			"m_c_to_r_c1": {

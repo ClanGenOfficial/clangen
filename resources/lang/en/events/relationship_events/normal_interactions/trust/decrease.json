@@ -98,7 +98,7 @@
 			"m_c is relentlessly pestering r_c."
 		],
 		"relationship_constraint": [
-			"dislike_40"
+			"hates"
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -140,7 +140,7 @@
 			"r_c blackmails m_c with one of {PRONOUN/m_c/poss} secrets."
 		],
 		"relationship_constraint": [
-			"dislike_40"
+			"hates"
 		],
 		"reaction_random_cat": {
 			"trust": "decrease"

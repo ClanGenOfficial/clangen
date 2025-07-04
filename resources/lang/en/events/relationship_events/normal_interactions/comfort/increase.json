@@ -321,7 +321,7 @@
 			"m_c and r_c have multiple inside jokes with one another."
 		],
 		"relationship_constraint": [
-			"comfortable_30"
+			"seeks_out"
 		]
 	},
 	{
@@ -335,7 +335,7 @@
 			"m_c always goes to r_c first when {PRONOUN/m_c/subject} needs advice."
 		],
 		"relationship_constraint": [
-			"comfortable_30"
+			"seeks_out"
 		],
 		"reaction_random_cat": {
 			"comfort": "increase",

@@ -5,8 +5,8 @@
 		"intensity": "low",
 		"interactions": ["m_c is gossiping with r_c1 about r_c2"],
 		"relationship_constraint": {
-			"m_c_to_r_c2": ["dislike_15"],
-			"r_c1_to_r_c2": ["dislike_15"]
+			"m_c_to_r_c2": ["dislikes"],
+			"r_c1_to_r_c2": ["dislikes"]
 		},
 		"specific_reaction":{
 			"m_c_to_r_c1": {

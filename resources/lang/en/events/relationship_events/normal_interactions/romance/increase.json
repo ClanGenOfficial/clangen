@@ -10,7 +10,7 @@
 		],
 		"relationship_constraint": [
 			"not_mates",
-			"romantic_10_lower"
+			"fancies"
 		]
 	},
 	{
@@ -103,7 +103,7 @@
 		],
 		"relationship_constraint": [
 			"not_mates",
-			"romantic_20_lower"
+			"fancies"
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
@@ -138,7 +138,7 @@
             		"m_c realizes {PRONOUN/m_c/subject} {VERB/m_c/have/has} more than just a crush on r_c."
 		],
 		"relationship_constraint": [
-			"romantic_20",
+			"fancies",
 			"not_mates"
 		]
 	},
@@ -174,7 +174,7 @@
             		"m_c can't stop purring when {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} r_c's laugh."
 		],
 		"relationship_constraint": [
-			"romantic_40",
+			"adores",
 			"not_mates"
 		]
 	},
@@ -191,7 +191,7 @@
             		"m_c had a lovely dream about r_c."
 		],
 		"relationship_constraint": [
-			"romantic_30"
+			"fancies"
 		]
 	},
 	{
@@ -298,7 +298,7 @@
 			"m_c is the only cat who can make r_c laugh."
 		],
 		"relationship_constraint": [
-			"romantic_40"
+			"adores"
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
@@ -318,7 +318,7 @@
             		"m_c promises r_c to always be there to protect {PRONOUN/r_c/object} with {PRONOUN/m_c/poss} life."
 		],
 		"relationship_constraint": [
-			"romantic_40",
+			"adores",
 			"mates"
 		],
 		"reaction_random_cat": {

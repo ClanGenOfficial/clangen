@@ -4966,7 +4966,7 @@
                 "mediator apprentice"
             ],
             "relationship_status": [
-                "dislike_20"
+                "dislikes"
             ],
             "trait": [
                 "cunning"
@@ -7243,7 +7243,7 @@
             ],
             "relationship_status": [
                 "child/parent",
-                "dislike_20"
+                "dislikes"
             ]
         },
         "r_c": {

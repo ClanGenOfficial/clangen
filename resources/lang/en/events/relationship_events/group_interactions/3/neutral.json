@@ -31,8 +31,8 @@
 			]
 		},
 		"relationship_constraint": {
-			"m_c_to_r_c1": ["trust_30"],
-			"m_c_to_r_c2": ["romantic_15","not_mates"]
+			"m_c_to_r_c1": ["favors"],
+			"m_c_to_r_c2": ["fancies","not_mates"]
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {

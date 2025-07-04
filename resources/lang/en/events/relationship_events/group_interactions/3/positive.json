@@ -11,8 +11,8 @@
 			"m_c": ["charismatic", "loyal", "charming"]
 		},
 		"relationship_constraint": {
-			"m_c_to_r_c2": ["platonic_20"],
-			"r_c1_to_r_c2": ["dislike_20"]
+			"m_c_to_r_c2": ["likes"],
+			"r_c1_to_r_c2": ["dislikes"]
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {

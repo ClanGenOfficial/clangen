@@ -20,7 +20,7 @@
 			"m_c hates the gift r_c gave {PRONOUN/m_c/object}."
 		],
 		"relationship_constraint": [
-			"romantic_40"
+			"adores"
 		]
 	},
 	{
@@ -33,8 +33,8 @@
 			"m_c tried flirting with r_c but {PRONOUN/r_c/subject} didn't have time for it and brushed m_c aside."
 		],
 		"relationship_constraint": [
-			"romantic_40",
-			"dislike_30"
+			"adores",
+			"dislikes"
 		]
 	},
 	{

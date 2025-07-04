@@ -367,7 +367,7 @@
 	{
 		"id": "dislike_effect_other1",
 		"relationship_constraint": [
-			"dislike_40"
+			"hates"
 		],
 		"interactions": [
 			"r_c is spreading a rumor about m_c.",
@@ -512,7 +512,7 @@
 		"id": "dislike_inc_high3",
 		"intensity": "high",
 		"relationship_constraint": [
-			"dislike_50"
+			"hates"
 		],
 		"interactions": [
 			"m_c shudders at the sound of r_c's voice.",
@@ -545,7 +545,7 @@
 			"m_c accuses r_c of not putting the Clan first."
 		],
 		"relationship_constraint": [
-			"dislike_50"
+			"hates"
 		],
 		"random_status_constraint": [
 			"leader"
@@ -560,7 +560,7 @@
 			"m_c says that r_c is such a bad deputy {PRONOUN/r_c/subject} should step down."
 		],
 		"relationship_constraint": [
-			"dislike_50"
+			"hates"
 		],
 		"random_status_constraint": [
 			"deputy"
@@ -604,7 +604,7 @@
 			"m_c tries to convince other cats that r_c should step down from being deputy."
 		],
 		"relationship_constraint": [
-			"dislike_40"
+			"hates"
 		],
 		"random_status_constraint": [
 			"deputy"
