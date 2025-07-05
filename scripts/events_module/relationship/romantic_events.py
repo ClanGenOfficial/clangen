@@ -172,22 +172,7 @@ class RomanticEvents:
         possible_interactions = (
             relevant_dict["positive"] if positive else relevant_dict["negative"]
         )
-        filtered_interactions = []
-
-        for interaction in possible_interactions:
-            if not event_for_location(interaction.biome):
-                continue
-
-            if not event_for_season(interaction.season):
-                continue
-
-            cat_fulfill = cats_fulfill_single_interaction_constraints(
-                cat_from, cat_to, interaction
-            )
-            if not cat_fulfill:
-                continue
-
-            filtered_interactions.append(interaction)
+        filtered_interactions = relationship.get_interactions(possible_interactions)
 
         if not filtered_interactions:
             print(

@@ -95,6 +95,8 @@ class Relationship:
             return
         if self.cat_to.dead or self.cat_to.outside or self.cat_to.exiled:
             return
+        if self.cat_from.ID == self.cat_to.ID:
+            return
 
         if self.currently_loaded_lang != i18n.config.get("locale"):
             Relationship.currently_loaded_lang = i18n.config.get("locale")
@@ -118,20 +120,12 @@ class Relationship:
         # choose any type of intensity
         intensity = random.choices(("low", "medium", "high"), weights=[4, 3, 2])[0]
 
-        # get other possible filters
-        season = str(game.clan.current_season).casefold()
-        biome = str(
-            game.clan.biome
-            if not game.clan.override_biome
-            else game.clan.override_biome
-        ).casefold()
-
         all_interactions = interactions.INTERACTION_MASTER_DICT[rel_type][
             value_change
         ].copy()
 
         possible_interactions = self.get_relevant_interactions(
-            all_interactions, intensity, biome, season
+            all_interactions, intensity
         )
 
         # return if there are no possible interactions.
@@ -253,7 +247,7 @@ class Relationship:
 
         return process_text(string, cat_dict)
 
-    def get_amount(self, value_change: str, intensity: str) -> int:
+    def get_value_change_amount(self, value_change: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
 
         Parameters
@@ -303,7 +297,7 @@ class Relationship:
         Returns
         -------
         """
-        amount = self.get_amount(value_change, intensity)
+        amount = self.get_value_change_amount(value_change, intensity)
         passive_buff = int(
             amount / game.config["relationship"]["passive_influence_div"]
         )
@@ -365,7 +359,7 @@ class Relationship:
         for key, value in dictionary.items():
             if value == "neutral":
                 continue
-            amount = self.get_amount(value, "low")
+            amount = self.get_value_change_amount(value, "low")
 
             if key == RelValue.ROMANCE:
                 self.romance += amount
@@ -481,26 +475,18 @@ class Relationship:
 
     def get_relevant_interactions(
         self,
-        interactions: list,
-        intensity: str,
-        biome: str,
-        season: str,
+        possible_interactions: list,
+        intensity: str = None,
     ) -> list:
         """
         Filter interactions based on the status and other constraints.
 
             Parameters
             ----------
-            interactions : list
+            possible_interactions : list
                 the interactions which need to be filtered
             intensity : str
                 the intensity of the interactions
-            biome : str
-                biome of the clan
-            season : str
-                current season of the clan
-            game_mode : str
-                game mode of the clan
 
             Returns
             -------
@@ -508,13 +494,11 @@ class Relationship:
                 a list of interactions, which fulfill the criteria
         """
         filtered = []
-        _season = (season, "Any", "any")
-        _biome = (biome, "Any", "any")
         # if there are no loaded interactions, return empty list
-        if not interactions:
+        if not possible_interactions:
             return filtered
 
-        for interact in interactions:
+        for interact in possible_interactions:
             if not event_for_location(interact.location):
                 continue
 
@@ -534,9 +518,7 @@ class Relationship:
 
         return filtered
 
-    def get_attr_for_value(self, value_enum: RelValue) -> int | None:
-        attributes = [attr for attr in dir(self) if isinstance(attr, int)]
-
+    def get_amount_of_value(self, value_enum: RelValue) -> int | None:
         if value_enum == RelValue.ROMANCE:
             return self.romance
         elif value_enum == RelValue.LIKE:

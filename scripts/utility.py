@@ -1130,7 +1130,7 @@ def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
             continue
 
         for value in [*RelValue]:
-            relation_dict[value].append(relation.get_attr_for_value(value) >= amount)
+            relation_dict[value].append(relation.get_amount_of_value(value) >= amount)
 
     return_dict = {v: sum(relation_dict[v]) for v in [*RelValue]}
 
@@ -1397,32 +1397,13 @@ def unpack_rel_block(
         positive = False
 
         # grabbing values
-        romance = 0
-        like = 0
-        comfort = 0
-        respect = 0
-        trust = 0
+        value_changes = {}
 
-        if RelValue.ROMANCE in values:
-            romance = amount
-            if amount > 0:
-                positive = True
-        if RelValue.LIKE in values:
-            like = amount
-            if amount > 0:
-                positive = True
-        if RelValue.COMFORT in values:
-            comfort = amount
-            if amount > 0:
-                positive = True
-        if RelValue.TRUST in values:
-            trust = amount
-            if amount > 0:
-                positive = True
-        if RelValue.RESPECT in values:
-            respect = amount
-            if amount > 0:
-                positive = True
+        for val in [*RelValue]:
+            if val in values:
+                value_changes[val] = amount
+                if amount > 0:
+                    positive = True
 
         if positive:
             effect = i18n.t("relationships.positive_postscript")
@@ -1430,63 +1411,35 @@ def unpack_rel_block(
             effect = i18n.t("relationships.negative_postscript")
 
         # Get log
-        log1 = None
-        log2 = None
-        if block.get("log"):
-            log = block.get("log")
-            if isinstance(log, str):
-                log1 = log
-            elif isinstance(log, list):
-                if len(log) >= 2:
-                    log1 = log[0]
-                    log2 = log[1]
-                elif len(log) == 1:
-                    log1 = log[0]
-            else:
-                print(f"something is wrong with relationship log: {log}")
-
-        if not log1:
-            if hasattr(event, "text"):
-                try:
-                    log1 = event.text + effect
-                except AttributeError:
-                    print(
-                        f"WARNING: event changed relationships but did not create a relationship log"
-                    )
-            else:
-                log1 = i18n.t("defaults.relationship_log") + effect
-        if not log2:
-            if hasattr(event, "text"):
-                try:
-                    log2 = event.text + effect
-                except AttributeError:
-                    print(
-                        f"WARNING: event changed relationships but did not create a relationship log"
-                    )
-            else:
-                log2 = i18n.t("defaults.relationship_log") + effect
+        to_log = None
+        from_log = None
+        if "log" in block:
+            to_log = block["log"].get("cats_to") + effect
+            from_log = block["log"].get("cats_from") + effect
+            if not to_log and not from_log:
+                print(f"something is wrong with relationship log: {block['log']}")
 
         change_relationship_values(
             cats_to_ob,
             cats_from_ob,
-            romance=romance,
-            like=like,
-            respect=respect,
-            comfort=comfort,
-            trust=trust,
-            log=log1,
+            romance=value_changes.get(RelValue.ROMANCE, 0),
+            like=value_changes.get(RelValue.LIKE, 0),
+            respect=value_changes.get(RelValue.RESPECT, 0),
+            comfort=value_changes.get(RelValue.COMFORT, 0),
+            trust=value_changes.get(RelValue.TRUST, 0),
+            log=from_log,
         )
 
         if block.get("mutual"):
             change_relationship_values(
                 cats_from_ob,
                 cats_to_ob,
-                romance=romance,
-                like=like,
-                respect=respect,
-                comfort=comfort,
-                trust=trust,
-                log=log2,
+                romance=value_changes.get(RelValue.ROMANCE, 0),
+                like=value_changes.get(RelValue.LIKE, 0),
+                respect=value_changes.get(RelValue.RESPECT, 0),
+                comfort=value_changes.get(RelValue.COMFORT, 0),
+                trust=value_changes.get(RelValue.TRUST, 0),
+                log=to_log,
             )
 
 

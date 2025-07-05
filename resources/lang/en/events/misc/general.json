@@ -8692,7 +8692,9 @@
                 "trust"
             ],
             "amount": -5,
-            "log": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            "log": {
+                "cats_from": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            }
         },
         "other_clan": {
             "changed": 2
@@ -8742,7 +8744,9 @@
                 "trust"
             ],
             "amount": -5,
-            "log": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            "log": {
+                "cats_from": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            }
         },
         "other_clan": {
             "changed": 2
