@@ -2969,7 +2969,7 @@
                             "mutual": false,
                             "values": ["like"],
                             "amount": -10
-                        }
+                        },
                         {
                             "cats_to": ["s_c"],
                             "cats_from": ["p_l"],

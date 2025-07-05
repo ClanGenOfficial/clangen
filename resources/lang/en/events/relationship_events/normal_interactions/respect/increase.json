@@ -200,7 +200,7 @@
 			"kitten"
 		],
 		"relationship_constraint": [
-			"admiration_20"
+			"respects"
 		],
 		"random_status_constraint": [
 			"elder",
@@ -232,7 +232,7 @@
 			"m_c thinks r_c has a bright future ahead of {PRONOUN/r_c/object}."
 		],
 		"relationship_constraint": [
-			"admiration_30"
+			"respects"
 		],
 		"main_status_constraint": [
 			"elder",
@@ -261,7 +261,7 @@
 			"m_c hopes to leave behind a legacy like r_c."
 		],
 		"relationship_constraint": [
-			"admiration_30"
+			"respects"
 		],
 		"main_status_constraint": [
 			"warrior",
@@ -292,7 +292,7 @@
 			"m_c feels like r_c is more accomplished than {PRONOUN/m_c/object}."
 		],
 		"relationship_constraint": [
-			"admiration_60"
+			"admires"
 		],
 		"main_status_constraint": [
 			"warrior",
@@ -368,7 +368,7 @@
 			"m_c and r_c agree with each other when no one else does."
 		],
 		"relationship_constraint": [
-			"admiration_30"
+			"respects"
 		],
 		"reaction_random_cat": {
 			"respect": "increase",

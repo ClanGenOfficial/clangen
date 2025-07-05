@@ -301,7 +301,7 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -10
-                    }
+                    },
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
@@ -1112,7 +1112,7 @@
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 30
-                    },
+                    }
                 ]
             },
             {
@@ -3507,13 +3507,6 @@
                 "weight": 10,
                 "art": "gen_med_warappmedapp_herbcontest",
                 "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": 15
-                    },
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["patrol"],

@@ -2895,7 +2895,7 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 25
-                    },
+                    }
                 ]
             }
         ],
@@ -4511,6 +4511,7 @@
                         "values": ["like", "respect"],
                         "amount": 10
                     }
+                ]
             },
             {
                 "text": "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using {PRONOUN/s_c/poss} claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. Some of the warriors are too impatient to follow {PRONOUN/s_c/poss} lead and end up suffering the taste of ragwort as the patrol brings back loads of the leaves.",

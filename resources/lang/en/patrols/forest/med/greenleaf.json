@@ -608,7 +608,7 @@
                         "cats_from": ["r_c"],
                         "mutual": true,
                         "values": ["like"],
-                        "amount":- 5
+                        "amount": -5
                     }
                 ]
             }

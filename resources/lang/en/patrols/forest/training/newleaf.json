@@ -226,13 +226,6 @@
                             "mutual": false,
                             "values": ["respect", "trust", "like"],
                             "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["jealous"],
-                            "amount": 5
                         }
                     ]
                 }

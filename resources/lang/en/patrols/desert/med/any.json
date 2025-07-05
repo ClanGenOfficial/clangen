@@ -522,7 +522,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like"],
-                        "amount": -
+                        "amount": 5
                     }
                 ]
             },

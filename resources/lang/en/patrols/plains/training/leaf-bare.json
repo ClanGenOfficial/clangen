@@ -59,13 +59,6 @@
                             "mutual": true,
                             "values": ["respect", "like", "comfort"],
                             "amount": -5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
-                            "mutual": false,
-                            "values": ["jealous"],
-                            "amount": 5
                         }
                     ]
                 },

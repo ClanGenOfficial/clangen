@@ -1357,13 +1357,6 @@
                             "values": ["respect", "like", "comfort"],
                             "amount": -5
                         }
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["s_c"],
-                            "mutual": false,
-                            "values": ["jealous"],
-                            "amount": 5
-                        }
                     ]
                 }
             ]
@@ -1422,13 +1415,6 @@
                             "mutual": true,
                             "values": ["respect"],
                             "amount": -5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": true,
-                            "values": ["jealous"],
-                            "amount": 10
                         }
                     ]
                 },

@@ -2348,8 +2348,8 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["app1"],
                         "mutual": false,
-                        "values": ["jealous"],
-                        "amount": 15
+                        "values": ["respect"],
+                        "amount": -15
                     },
                     {
                         "cats_to": ["p_l"],
@@ -3347,13 +3347,6 @@
                 "weight": 10,
                 "art": "gen_med_warappmedapp_herbcontest",
                 "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": 15
-                    },
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["patrol"],

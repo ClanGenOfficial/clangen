@@ -1199,6 +1199,7 @@
                         "values": ["like", "respect"],
                         "amount": 5
                     }
+                ]
             }
         ],
         "fail_outcomes": [

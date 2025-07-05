@@ -3447,7 +3447,7 @@
                         "mutual": false,
                         "values": ["like", "respect", "comfort", "trust"],
                         "amount": 10
-                    },
+                    }
                 ]
             }
         ],
@@ -4133,7 +4133,7 @@
                         "mutual": false,
                         "values": ["like", "respect", "comfort", "trust"],
                         "amount": 10
-                    },
+                    }
                 ]
             },
             {

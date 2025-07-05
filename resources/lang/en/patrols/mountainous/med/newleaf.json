@@ -5281,6 +5281,7 @@
                         "values": ["like", "respect"],
                         "amount": -10
                     }
+                ]
             },
             {
                 "text": "p_l wanders off to do {PRONOUN/p_l/poss} own collecting. However, leaving the apprentice alone is a mistake. It takes a <i>lot</i> of tansy to poison a cat, but app1 was trying <i>very</i> hard to collect as much as possible.",

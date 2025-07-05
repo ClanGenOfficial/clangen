@@ -1427,6 +1427,7 @@
                         "values": ["like", "respect", "comfort", "trust"],
                         "amount": 10
                     }
+                ]
             }
         ],
         "fail_outcomes": [
