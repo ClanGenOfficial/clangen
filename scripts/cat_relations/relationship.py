@@ -1,5 +1,6 @@
 import random
 from random import choice
+from typing import Optional
 
 import i18n
 
@@ -577,7 +578,7 @@ class Relationship:
         self._romance = value
 
     @property
-    def romance_level(self) -> ValueLevel | None:
+    def romance_level(self) -> Optional[ValueLevel]:
         group = self._get_level_group(self.romance)
 
         if group == "neutral":
@@ -604,7 +605,7 @@ class Relationship:
         self._like = value
 
     @property
-    def like_level(self) -> ValueLevel | None:
+    def like_level(self) -> Optional[ValueLevel]:
         group = self._get_level_group(self.like)
 
         if group == "extreme_neg":
@@ -637,7 +638,7 @@ class Relationship:
         self._respect = value
 
     @property
-    def respect_level(self) -> ValueLevel | None:
+    def respect_level(self) -> Optional[ValueLevel]:
         group = self._get_level_group(self.respect)
 
         if group == "extreme_neg":
@@ -670,7 +671,7 @@ class Relationship:
         self._comfort = value
 
     @property
-    def comfort_level(self) -> ValueLevel | None:
+    def comfort_level(self) -> Optional[ValueLevel]:
         group = self._get_level_group(self.comfort)
 
         if group == "extreme_neg":
@@ -703,7 +704,7 @@ class Relationship:
         self._trust = value
 
     @property
-    def trust_level(self) -> ValueLevel | None:
+    def trust_level(self) -> Optional[ValueLevel]:
         group = self._get_level_group(self.trust)
 
         if group == "extreme_neg":
