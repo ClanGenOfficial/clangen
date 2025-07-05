@@ -3673,7 +3673,7 @@
         "art": "gen_flower_date_warrior_warrior"
 },
         {
-            "text": "p_l and s_c corner a large prey animal, but just at the last moment, the wind changes and their prey perks up. Without hesitation, s_c bolts forward and slams a paw down on it. p_l is amazed by {PRONOUN/s_c/poss} lightning-fast reflexes and returns to camp a little hot around the ears.",
+            "text": "p_l and s_c corner a large prey animal, but the wind changes and their prey perks up at the last moment. Without hesitation, s_c bolts forward and slams a paw down on it. p_l is amazed by {PRONOUN/s_c/poss} lightning-fast reflexes and returns to camp a little hot around the ears.",
             "exp": 20,
             "weight": 30,
             "prey": ["large"],
