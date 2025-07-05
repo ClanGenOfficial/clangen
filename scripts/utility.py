@@ -1175,6 +1175,7 @@ def filter_relationship_type(
         siblings = [test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]
         if not all(siblings):
             return False
+        filter_types.remove("siblings")
 
     if "mates" in filter_types:
         # first test if more than one cat
@@ -1190,6 +1191,7 @@ def filter_relationship_type(
         for x in combinations(group, 2):
             if x[0].ID not in x[1].mate:
                 return False
+        filter_types.remove("mates")
 
     # check if all cats are mates with p_l (they do not have to be mates with each other)
     if "mates_with_pl" in filter_types:

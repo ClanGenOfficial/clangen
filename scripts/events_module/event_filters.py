@@ -281,7 +281,7 @@ def _check_cat_age(cat, ages: list) -> bool:
     """
     checks if a cat's age is within ages list
     """
-    if "any" in ages or not ages:
+    if not ages or "any" in ages:
         return True
 
     return cat.age.value in ages
@@ -291,7 +291,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
     """
     checks if cat's status is within statuses list
     """
-    if "any" in statuses or not statuses:
+    if not statuses or "any" in statuses:
         return True
 
     if cat.status in statuses:

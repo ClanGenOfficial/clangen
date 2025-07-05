@@ -172,7 +172,9 @@ class RomanticEvents:
         possible_interactions = (
             relevant_dict["positive"] if positive else relevant_dict["negative"]
         )
-        filtered_interactions = relationship.get_interactions(possible_interactions)
+        filtered_interactions = relationship.get_relevant_interactions(
+            possible_interactions
+        )
 
         if not filtered_interactions:
             print(

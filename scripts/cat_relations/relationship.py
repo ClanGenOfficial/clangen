@@ -308,11 +308,6 @@ class Relationship:
         # so a negative interaction will affect all values to a negative degree
         # and a positive interaction will affect all values to a positive degree
 
-        if rel_type != RelValue.ROMANCE:
-            self.romance += choice(buffs)
-        else:
-            self.romance += amount
-
         if rel_type != RelValue.LIKE:
             self.like += choice(buffs)
         else:
@@ -499,7 +494,7 @@ class Relationship:
             return filtered
 
         for interact in possible_interactions:
-            if not event_for_location(interact.location):
+            if not event_for_location(interact.biome):
                 continue
 
             if not event_for_season(interact.season):

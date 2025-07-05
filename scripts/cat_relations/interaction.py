@@ -28,8 +28,8 @@ class SingleInteraction:
     ):
         self.id = interact_id
         self.intensity = intensity
-        self.biome = biome if biome else ["Any"]
-        self.season = season if season else ["Any"]
+        self.biome = biome if biome else ["any"]
+        self.season = season if season else ["any"]
         self.interactions = (
             interactions
             if interactions
@@ -84,8 +84,8 @@ class GroupInteraction:
     ):
         self.id = interact_id
         self.intensity = intensity
-        self.biome = biome if biome else ["Any"]
-        self.season = season if season else ["Any"]
+        self.biome = biome if biome else ["any"]
+        self.season = season if season else ["any"]
         self.cat_amount = cat_amount
         self.interactions = (
             interactions
@@ -176,8 +176,8 @@ def create_interaction(inter_list) -> list:
         created_list.append(
             SingleInteraction(
                 interact_id=inter["id"],
-                biome=inter["biome"] if "biome" in inter else ["Any"],
-                season=inter["season"] if "season" in inter else ["Any"],
+                biome=inter["biome"] if "biome" in inter else ["any"],
+                season=inter["season"] if "season" in inter else ["any"],
                 intensity=inter["intensity"] if "intensity" in inter else "medium",
                 interactions=inter["interactions"] if "interactions" in inter else None,
                 get_injuries=inter["get_injuries"] if "get_injuries" in inter else None,
@@ -241,8 +241,8 @@ def create_group_interaction(inter_list) -> list:
         created_list.append(
             GroupInteraction(
                 interact_id=inter["id"],
-                biome=inter["biome"] if "biome" in inter else ["Any"],
-                season=inter["season"] if "season" in inter else ["Any"],
+                biome=inter["biome"] if "biome" in inter else ["any"],
+                season=inter["season"] if "season" in inter else ["any"],
                 cat_amount=inter["cat_amount"] if "cat_amount" in inter else None,
                 intensity=inter["intensity"] if "intensity" in inter else "medium",
                 interactions=inter["interactions"] if "interactions" in inter else None,

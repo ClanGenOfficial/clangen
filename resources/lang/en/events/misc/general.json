@@ -436,7 +436,7 @@
                 "any"
             ],
             "relationship_status": [
-                "favors"
+                "listens_to"
             ]
         },
         "r_c": {
