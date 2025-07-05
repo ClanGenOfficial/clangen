@@ -94,6 +94,12 @@ class ValueLevel(StrEnum):
     def is_romance_level(self):
         return self in (self.UNINTERESTED, self.FANCIES, self.ADORES, self.DELIGHTS_IN)
 
+    def is_any_neg(self):
+        return self.is_extreme_neg() or self.is_mid_neg() or self.is_low_neg()
+
+    def is_any_pos(self):
+        return self.is_extreme_pos() or self.is_mid_pos() or self.is_low_pos()
+
     def is_extreme_neg(self):
         return self in (self.ABHORS, self.RESENTS, self.DISCREDITS, self.RUNS_FROM)
 
@@ -144,3 +150,12 @@ class ValueLevel(StrEnum):
             self.RELIES_ON,
             self.DELIGHTS_IN,
         )
+
+
+value_groups = {
+    RelValue.LIKE: [l for l in [*ValueLevel] if l.is_like_level()],
+    RelValue.RESPECT: [l for l in [*ValueLevel] if l.is_respect_level()],
+    RelValue.TRUST: [l for l in [*ValueLevel] if l.is_trust_level()],
+    RelValue.COMFORT: [l for l in [*ValueLevel] if l.is_comfort_level()],
+    RelValue.ROMANCE: [l for l in [*ValueLevel] if l.is_romance_level()],
+}

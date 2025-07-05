@@ -532,7 +532,7 @@ class Relationship:
         else:
             return None
 
-    def get_value_levels(self) -> list:
+    def get_value_levels(self) -> list[ValueLevel]:
         """
         Returns a list of all current value level strings
         """

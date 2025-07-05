@@ -20,7 +20,7 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
-from scripts.cat_relations.enums import RelValue, ValueLevel
+from scripts.cat_relations.enums import RelValue, ValueLevel, value_groups
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,
@@ -1284,8 +1284,35 @@ def filter_relationship_type(
 
             # now test each list to see if the required tag is inside
             for level_list in group_levels:
-                if level not in level_list:
-                    return False
+                # if it's limited to *just* the given level
+                if "_only" in level:
+                    level.replace("_only", "")
+                    if level not in level_list:
+                        return False
+                # otherwise we allow both the given level and any greater levels
+                else:
+                    # finding the matching level enum
+                    value_level = ValueLevel(level)
+
+                    # find the matching value enum
+                    rel_value = None
+                    for value in value_groups:
+                        if value_level in value_groups[value]:
+                            rel_value = value
+                            break
+                    if not rel_value:
+                        continue
+
+                    # get the level's index within the value's list
+                    index = value_groups[rel_value].index(value_level)
+                    # if it's a pos level, we allow that index and higher
+                    if value_level.is_any_pos():
+                        if level not in value_groups[rel_value][index:-1]:
+                            return False
+                    # if it's a neg level, we allow that index and lower
+                    elif value_level.is_any_neg():
+                        if level not in value_groups[rel_value][0:index]:
+                            return False
 
     return True
 
