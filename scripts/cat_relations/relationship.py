@@ -11,6 +11,7 @@ from scripts.cat_relations.interaction import (
 )
 from scripts.cat_relations.enums import ValueLevel, RelValue
 from scripts.event_class import Single_Event
+from scripts.events_module.event_filters import event_for_location, event_for_season
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_personality_compatibility, process_text
 
@@ -124,18 +125,17 @@ class Relationship:
             if not game.clan.override_biome
             else game.clan.override_biome
         ).casefold()
-        game_mode = game.clan.game_mode
 
         all_interactions = interactions.INTERACTION_MASTER_DICT[rel_type][
             value_change
         ].copy()
 
         possible_interactions = self.get_relevant_interactions(
-            all_interactions, intensity, biome, season, game_mode
+            all_interactions, intensity, biome, season
         )
 
         # return if there are no possible interactions.
-        if len(possible_interactions) <= 0:
+        if not possible_interactions:
             print(
                 "WARNING: No interaction with this conditions.",
                 rel_type,
@@ -423,13 +423,8 @@ class Relationship:
         rel_type : string
             the relationship type which will happen
         """
-        value_weights = {
-            RelValue.TRUST: 1,
-            RelValue.COMFORT: 1,
-            RelValue.RESPECT: 1,
-            RelValue.LIKE: 1,
-            RelValue.ROMANCE: 1,
-        }
+
+        value_weights = {v: 1 for v in [*RelValue]}
 
         # change the weights according if the interaction should be positive or negative
         # existing rel values determine the weight added
@@ -520,21 +515,10 @@ class Relationship:
             return filtered
 
         for interact in interactions:
-            in_tags = list(
-                filter(
-                    lambda interact_biome: interact_biome not in _biome, interact.biome
-                )
-            )
-            if len(in_tags) > 0:
+            if not event_for_location(interact.location):
                 continue
 
-            in_tags = list(
-                filter(
-                    lambda interact_season: interact_season not in _season,
-                    interact.season,
-                )
-            )
-            if len(in_tags) > 0:
+            if not event_for_season(interact.season):
                 continue
 
             if intensity is not None and interact.intensity != intensity:
@@ -549,6 +533,22 @@ class Relationship:
             filtered.append(interact)
 
         return filtered
+
+    def get_attr_for_value(self, value_enum: RelValue) -> int | None:
+        attributes = [attr for attr in dir(self) if isinstance(attr, int)]
+
+        if value_enum == RelValue.ROMANCE:
+            return self.romance
+        elif value_enum == RelValue.LIKE:
+            return self.like
+        elif value_enum == RelValue.RESPECT:
+            return self.respect
+        elif value_enum == RelValue.COMFORT:
+            return self.comfort
+        elif value_enum == RelValue.TRUST:
+            return self.trust
+        else:
+            return None
 
     def get_value_levels(self) -> list:
         """
