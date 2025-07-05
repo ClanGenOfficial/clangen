@@ -118,14 +118,14 @@ def cats_fulfill_single_interaction_constraints(
     main_constraint_dict = {
         "status": interaction.main_status_constraint,
         "trait": interaction.main_trait_constraint,
-        "backstory": interaction.interaction.backstory_constraint["m_c"],
+        "backstory": interaction.backstory_constraint.get("m_c"),
         "skills": interaction.main_skill_constraint,
         "relationship_status": interaction.relationship_constraint,
     }
     random_constraint_dict = {
         "status": interaction.random_status_constraint,
         "trait": interaction.random_trait_constraint,
-        "backstory": interaction.random_backstory_constraint["r_c"],
+        "backstory": interaction.backstory_constraint.get("r_c"),
         "skills": interaction.random_skill_constraint,
     }
 
@@ -278,7 +278,7 @@ def create_group_interaction(inter_list) -> list:
     return created_list
 
 
-INTERACTION_MASTER_DICT = {x: {} for x in RelValue}
+INTERACTION_MASTER_DICT = {x: {} for x in [*RelValue]}
 
 relationship_lang = None
 
@@ -288,7 +288,7 @@ def rebuild_relationship_dicts():
     if relationship_lang == i18n.config.get("locale"):
         return
 
-    for rel in RelValue:
+    for rel in [*RelValue]:
         INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(
             load_lang_resource(
                 f"events/relationship_events/normal_interactions/{rel}/increase.json"

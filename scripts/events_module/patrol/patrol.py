@@ -550,16 +550,10 @@ class Patrol:
         else:
             chance_of_romance_patrol += 10
 
-        values = [
-            RelValue.ROMANCE,
-            RelValue.LIKE,
-            RelValue.RESPECT,
-            RelValue.COMFORT,
-            RelValue.TRUST,
-        ]
+        values = [*RelValue]
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
-            if value_check >= 20:
+            if value_check <= 20:
                 chance_of_romance_patrol -= 1
             elif value_check >= 20:
                 chance_of_romance_patrol += 2

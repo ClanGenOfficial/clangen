@@ -20,7 +20,7 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
-from scripts.cat_relations.enums import RelValue
+from scripts.cat_relations.enums import RelValue, ValueLevel
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,
@@ -1109,24 +1109,19 @@ def get_cats_of_romantic_interest(cat):
     return cats
 
 
-def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
+def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
     """
     Looks how many cats have the certain value
     :param cat: cat in question
-    :param value: value which has to be reached
+    :param amount: amount of relationship value which has to be reached
     :param all_cats: list of cats which has to be checked
     """
 
     # collect all true or false if the value is reached for the cat or not
     # later count or sum can be used to get the amount of cats
     # this will be handled like this, because it is easier / shorter to check
-    relation_dict = {
-        RelValue.ROMANCE: [],
-        RelValue.LIKE: [],
-        RelValue.RESPECT: [],
-        RelValue.COMFORT: [],
-        RelValue.TRUST: [],
-    }
+
+    relation_dict = {v: [] for v in [*RelValue]}
 
     for inter_cat in all_cats:
         if cat.ID in inter_cat.relationships:
@@ -1134,19 +1129,10 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
         else:
             continue
 
-        relation_dict[RelValue.ROMANCE].append(relation.romance >= value)
-        relation_dict[RelValue.LIKE].append(relation.like >= value)
-        relation_dict[RelValue.RESPECT].append(relation.respect >= value)
-        relation_dict[RelValue.COMFORT].append(relation.comfort >= value)
-        relation_dict[RelValue.TRUST].append(relation.trust >= value)
+        for value in [*RelValue]:
+            relation_dict[value].append(relation.get_attr_for_value(value) >= amount)
 
-    return_dict = {
-        RelValue.ROMANCE: sum(relation_dict[RelValue.ROMANCE]),
-        RelValue.LIKE: sum(relation_dict[RelValue.LIKE]),
-        RelValue.RESPECT: sum(relation_dict[RelValue.RESPECT]),
-        RelValue.COMFORT: sum(relation_dict[RelValue.COMFORT]),
-        RelValue.TRUST: sum(relation_dict[RelValue.TRUST]),
-    }
+    return_dict = {v: sum(relation_dict[v]) for v in [*RelValue]}
 
     return return_dict
 
@@ -1176,7 +1162,7 @@ def filter_relationship_type(
         "mentor/app",
         "app/mentor",
     ]
-    all_possible_tags = set(possible_rel_types + [v for v in ValueLevel])
+    all_possible_tags = set(possible_rel_types + [*ValueLevel])
     if not set(filter_types).issubset(all_possible_tags):
         print(
             f"WARNING: {[tag for tag in all_possible_tags if tag not in set(filter_types).intersection(all_possible_tags)]} is not a valid relationship_status tag!"
@@ -1294,7 +1280,7 @@ def filter_relationship_type(
             )
 
             # list of every cat's level list
-            group_levels = [rel.get_value_levels for rel in relevant_relationships]
+            group_levels = [rel.get_value_levels() for rel in relevant_relationships]
 
             # now test each list to see if the required tag is inside
             for level_list in group_levels:
@@ -1385,7 +1371,7 @@ def unpack_rel_block(
     :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
     """
-    possible_values = [v for v in RelValue]
+    possible_values = [*RelValue]
 
     for block in relationship_effects:
         cats_from = block.get("cats_from", [])

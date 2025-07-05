@@ -9,7 +9,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.utility import (
     get_highest_romantic_relation,
     get_personality_compatibility,
-    get_amount_of_cats_with_relation_value_towards,
+    get_num_of_cats_with_relation_amount_towards,
     get_alive_clan_queens,
 )
 
@@ -150,7 +150,7 @@ class TestCountRelation(unittest.TestCase):
         relation_4_2.jealousy += 10
 
         # then
-        relation_dict = get_amount_of_cats_with_relation_value_towards(
+        relation_dict = get_num_of_cats_with_relation_amount_towards(
             cat2, 20, [cat1, cat2, cat3, cat4]
         )
 

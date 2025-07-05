@@ -184,10 +184,10 @@ class GroupEvents:
                 continue
 
             main_constraint_dict = {
-                "status": interact.main_status_constraint["m_c"],
-                "trait": interact.main_trait_constraint["m_c"],
-                "backstory": interact.interaction.backstory_constraint["m_c"],
-                "skills": interact.main_skill_constraint["m_c"],
+                "status": interact.status_constraint.get("m_c"),
+                "trait": interact.trait_constraint.get("m_c"),
+                "backstory": interact.backstory_constraint.get("m_c"),
+                "skills": interact.skill_constraint.get("m_c"),
             }
             if not event_for_cat(main_constraint_dict, main_cat):
                 continue

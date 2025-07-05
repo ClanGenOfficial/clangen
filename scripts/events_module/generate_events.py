@@ -5,6 +5,7 @@ import random
 import i18n
 import ujson
 
+from scripts.cat_relations.enums import RelValue
 from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
