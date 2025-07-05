@@ -11,64 +11,136 @@ class RelValue(StrEnum):
 
 class ValueLevel(StrEnum):
     # like
+    ABHORS = "abhors"
     HATES = "hates"
     DISLIKES = "dislikes"
+    KNOWS_OF = "knows_of"
     LIKES = "likes"
+    ENJOYS = "enjoys"
     LOVES = "loves"
     # respect
     RESENTS = "resents"
     ENVIES = "envies"
+    BEGRUDGES = "begrudges"
+    ACKNOWLEDGES = "acknowledges"
+    PRAISES = "praises"
     RESPECTS = "respects"
     ADMIRES = "admires"
     # trust
+    DISCREDITS = "discredits"
     DISTRUSTS = "distrusts"
     DOUBTS = "doubts"
-    FAVORS = "favors"
+    OBSERVES = "observes"
+    LISTENS_TO = "listens_to"
     TRUSTS = "trusts"
+    CONFIDES_IN = "confides_in"
     # comfort
+    RUNS_FROM = "runs_from"
     FEARS = "fears"
     AVOIDS = "avoids"
+    CONSIDERS = "considers"
     SEEKS_OUT = "seeks_out"
+    PREFERS = "prefers"
     RELIES_ON = "relies_on"
     # romance
+    UNINTERESTED = "uninterested"
     FANCIES = "fancies"
     ADORES = "adores"
+    DELIGHTS_IN = "delights_in"
 
     def is_like_level(self):
-        return self in (self.HATES, self.DISLIKES, self.LIKES, self.LOVES)
+        return self in (
+            self.ABHORS,
+            self.HATES,
+            self.DISLIKES,
+            self.LIKES,
+            self.ENJOYS,
+            self.LOVES,
+        )
 
     def is_respect_level(self):
-        return self in (self.RESENTS, self.ENVIES, self.RESPECTS, self.ADMIRES)
+        return self in (
+            self.RESENTS,
+            self.ENVIES,
+            self.BEGRUDGES,
+            self.ACKNOWLEDGES,
+            self.PRAISES,
+            self.RESPECTS,
+            self.ADMIRES,
+        )
 
     def is_trust_level(self):
-        return self in (self.DISTRUSTS, self.DOUBTS, self.FAVORS, self.TRUSTS)
+        return self in (
+            self.DISCREDITS,
+            self.DISTRUSTS,
+            self.DOUBTS,
+            self.OBSERVES,
+            self.LISTENS_TO,
+            self.TRUSTS,
+            self.CONFIDES_IN,
+        )
 
     def is_comfort_level(self):
-        return self in (self.FEARS, self.AVOIDS, self.SEEKS_OUT, self.RELIES_ON)
+        return self in (
+            self.RUNS_FROM,
+            self.FEARS,
+            self.AVOIDS,
+            self.CONSIDERS,
+            self.SEEKS_OUT,
+            self.PREFERS,
+            self.RELIES_ON,
+        )
 
     def is_romance_level(self):
-        return self in (self.FANCIES, self.ADORES)
+        return self in (self.UNINTERESTED, self.FANCIES, self.ADORES, self.DELIGHTS_IN)
 
     def is_extreme_neg(self):
-        return self in (self.HATES, self.RESENTS, self.DISTRUSTS, self.FEARS)
+        return self in (self.ABHORS, self.RESENTS, self.DISCREDITS, self.RUNS_FROM)
 
-    def is_neg(self):
-        return self in (self.DISLIKES, self.ENVIES, self.DOUBTS, self.AVOIDS)
+    def is_mid_neg(self):
+        return self in (
+            self.HATES,
+            self.ENVIES,
+            self.DISLIKES,
+            self.DISTRUSTS,
+            self.FEARS,
+        )
 
-    def is_pos(self):
+    def is_low_neg(self):
+        return self in (self.DISLIKES, self.BEGRUDGES, self.DOUBTS, self.AVOIDS)
+
+    def is_neutral(self):
+        return self in (
+            self.KNOWS_OF,
+            self.ACKNOWLEDGES,
+            self.OBSERVES,
+            self.CONSIDERS,
+            self.UNINTERESTED,
+        )
+
+    def is_low_pos(self):
         return self in (
             self.LIKES,
-            self.RESPECTS,
-            self.FAVORS,
+            self.PRAISES,
+            self.LISTENS_TO,
             self.SEEKS_OUT,
             self.FANCIES,
+        )
+
+    def is_mid_pos(self):
+        return self in (
+            self.ENJOYS,
+            self.RESPECTS,
+            self.TRUSTS,
+            self.PREFERS,
+            self.ADORES,
         )
 
     def is_extreme_pos(self):
         return self in (
             self.LOVES,
             self.ADMIRES,
-            self.TRUSTS,
+            self.CONFIDES_IN,
             self.RELIES_ON,
-            self.ADORES,
+            self.DELIGHTS_IN,
         )

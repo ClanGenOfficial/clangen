@@ -858,16 +858,14 @@ class RelationshipScreen(Screens):
             if val == RelValue.ROMANCE:
                 continue
             num, level = self.get_value_attrs(val, the_relationship)
-            if not level:
-                level = "neutral"
             self.relation_list_elements[
                 f"{val}_text{i}"
             ] = pygame_gui.elements.UITextBox(
                 f"relationships.{level}",
                 ui_scale(
                     pygame.Rect(
-                        (rel_pos_x, 1),
-                        (96, 25),
+                        (rel_pos_x - 2, 0),
+                        (100, 25),
                     )
                 ),
                 object_id="#text_box_26_horizcenter",

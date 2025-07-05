@@ -2123,7 +2123,7 @@ class Events:
             extreme_neg = len(
                 [l for l in chosen_target.get_value_levels() if l.is_extreme_neg()]
             )
-            neg = len([l for l in chosen_target.get_value_levels() if l.is_neg()])
+            neg = len([l for l in chosen_target.get_value_levels() if l.is_low_neg()])
 
             relation_modifier = (extreme_neg * 10) + (neg * 5)
 

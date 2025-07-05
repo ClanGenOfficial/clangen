@@ -19,11 +19,13 @@
 			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate",
 			"influence_condition_events - how much an event with a condition can influence the relationship"
 		],
-		"value_levels": {
-			"extreme_neg": -50,
-			"neg": -5,
+		"value_intervals": {
+			"extreme_neg": -70,
+			"mid_neg": -25,
+			"low_neg": -5,
 			"neutral": 5,
-			"pos": 50,
+			"low_pos": 25,
+			"mid_pos": 70,
 			"extreme_pos": 100
 		}
 	},

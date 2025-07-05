@@ -687,14 +687,14 @@ class Cat:
                 if level.is_romance_level():
                     if level.is_extreme_pos():
                         very_high_values.append(RelValue.ROMANCE)
-                    elif level.is_pos():
+                    elif level.is_low_pos():
                         high_values.append(RelValue.ROMANCE)
                     continue
 
                 if level.is_like_level():
                     if level.is_extreme_pos():
                         very_high_values.append(RelValue.LIKE)
-                    elif level.is_pos():
+                    elif level.is_low_pos():
                         high_values.append(RelValue.LIKE)
                     elif level.is_extreme_neg():
                         very_low_values.append(RelValue.LIKE)
@@ -703,7 +703,7 @@ class Cat:
                 if level.is_respect_level():
                     if level.is_extreme_pos():
                         very_high_values.append(RelValue.RESPECT)
-                    elif level.is_pos():
+                    elif level.is_low_pos():
                         high_values.append(RelValue.RESPECT)
                     elif level.is_extreme_neg():
                         very_low_values.append(RelValue.RESPECT)
@@ -712,7 +712,7 @@ class Cat:
                 if level.is_trust_level():
                     if level.is_extreme_pos():
                         very_high_values.append(RelValue.TRUST)
-                    elif level.is_pos():
+                    elif level.is_low_pos():
                         high_values.append(RelValue.TRUST)
                     elif level.is_extreme_neg():
                         very_low_values.append(RelValue.TRUST)
@@ -721,7 +721,7 @@ class Cat:
                 if level.is_comfort_level():
                     if level.is_extreme_pos():
                         very_high_values.append(RelValue.COMFORT)
-                    elif level.is_pos():
+                    elif level.is_low_pos():
                         high_values.append(RelValue.COMFORT)
                     elif level.is_extreme_neg():
                         very_low_values.append(RelValue.COMFORT)

@@ -545,15 +545,24 @@ class Relationship:
         ]
 
     def total_value_amount(self) -> int:
+        """
+        Returns the total int of all relationship values.
+        """
         return self.romance + self.like + self.respect + self.comfort + self.trust
 
     def has_extreme_negative(self) -> bool:
+        """
+        Returns True if the relationship has an extreme negative value.
+        """
         if [l for l in self.get_value_levels() if l.is_extreme_neg()]:
             return True
 
         return False
 
     def has_extreme_positive(self) -> bool:
+        """
+        Returns True if the relationship has an extreme positive value.
+        """
         if [l for l in self.get_value_levels() if l.is_extreme_pos()]:
             return True
 
@@ -573,16 +582,17 @@ class Relationship:
         self._romance = value
 
     @property
-    def romance_level(self):
-        if not self.romance:
-            return None
-
+    def romance_level(self) -> ValueLevel | None:
         group = self._get_level_group(self.romance)
 
-        if group == "pos":
+        if group == "neutral":
+            return ValueLevel.UNINTERESTED
+        elif group == "low_pos":
             return ValueLevel.FANCIES
-        elif group == "extreme_pos":
+        elif group == "mid_pos":
             return ValueLevel.ADORES
+        elif group == "high_pos":
+            return ValueLevel.DELIGHTS_IN
         else:
             return None
 
@@ -599,18 +609,21 @@ class Relationship:
         self._like = value
 
     @property
-    def like_level(self):
-        if not self.like:
-            return None
-
+    def like_level(self) -> ValueLevel | None:
         group = self._get_level_group(self.like)
 
         if group == "extreme_neg":
+            return ValueLevel.ABHORS
+        elif group == "mid_neg":
             return ValueLevel.HATES
-        elif group == "neg":
+        elif group == "low_neg":
             return ValueLevel.DISLIKES
-        elif group == "pos":
+        elif group == "neutral":
+            return ValueLevel.KNOWS_OF
+        elif group == "low_pos":
             return ValueLevel.LIKES
+        elif group == "mid_pos":
+            return ValueLevel.ENJOYS
         elif group == "extreme_pos":
             return ValueLevel.LOVES
         else:
@@ -629,17 +642,20 @@ class Relationship:
         self._respect = value
 
     @property
-    def respect_level(self):
-        if not self.respect:
-            return None
-
+    def respect_level(self) -> ValueLevel | None:
         group = self._get_level_group(self.respect)
 
         if group == "extreme_neg":
             return ValueLevel.RESENTS
-        elif group == "neg":
+        elif group == "mid_neg":
             return ValueLevel.ENVIES
-        elif group == "pos":
+        elif group == "low_neg":
+            return ValueLevel.BEGRUDGES
+        elif group == "neutral":
+            return ValueLevel.ACKNOWLEDGES
+        elif group == "low_pos":
+            return ValueLevel.PRAISES
+        elif group == "mid_pos":
             return ValueLevel.RESPECTS
         elif group == "extreme_pos":
             return ValueLevel.ADMIRES
@@ -659,18 +675,21 @@ class Relationship:
         self._comfort = value
 
     @property
-    def comfort_level(self):
-        if not self.comfort:
-            return None
-
+    def comfort_level(self) -> ValueLevel | None:
         group = self._get_level_group(self.comfort)
 
         if group == "extreme_neg":
+            return ValueLevel.RUNS_FROM
+        elif group == "mid_neg":
             return ValueLevel.FEARS
-        elif group == "neg":
+        elif group == "low_neg":
             return ValueLevel.AVOIDS
-        elif group == "pos":
+        elif group == "neutral":
+            return ValueLevel.CONSIDERS
+        elif group == "low_pos":
             return ValueLevel.SEEKS_OUT
+        elif group == "mid_pos":
+            return ValueLevel.PREFERS
         elif group == "extreme_pos":
             return ValueLevel.RELIES_ON
         else:
@@ -689,27 +708,33 @@ class Relationship:
         self._trust = value
 
     @property
-    def trust_level(self):
-        if not self.trust:
-            return None
-
+    def trust_level(self) -> ValueLevel | None:
         group = self._get_level_group(self.trust)
 
         if group == "extreme_neg":
-            return ValueLevel.DISTRUSTS
-        elif group == "neg":
+            return ValueLevel.ABHORS
+        elif group == "mid_neg":
+            return ValueLevel.DISLIKES
+        elif group == "low_neg":
             return ValueLevel.DOUBTS
-        elif group == "pos":
-            return ValueLevel.FAVORS
-        elif group == "extreme_pos":
+        elif group == "neutral":
+            return ValueLevel.OBSERVES
+        elif group == "low_pos":
+            return ValueLevel.LISTENS_TO
+        elif group == "mid_pos":
             return ValueLevel.TRUSTS
+        elif group == "extreme_pos":
+            return ValueLevel.CONFIDES_IN
         else:
             return None
 
     @staticmethod
-    def _get_level_group(value):
+    def _get_level_group(value) -> str:
+        """
+        Returns the level group for the given value.
+        """
         found_group = None
-        for group, interval in game.config["relationship"]["value_levels"].items():
+        for group, interval in game.config["relationship"]["value_intervals"].items():
             if value <= interval:
                 found_group = group
                 break
