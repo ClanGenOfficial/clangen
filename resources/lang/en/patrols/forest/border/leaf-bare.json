@@ -2149,7 +2149,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["app1"],
                         "mutual": false,
-                        "values": ["jealous", "respect"],
+                        "values": ["respect"],
                         "amount": 15
                     },
                     {

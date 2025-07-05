@@ -41,8 +41,8 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
+                            "values": ["like"],
+                            "amount": 5
                         }
                     ]
                 }
@@ -59,13 +59,6 @@
                             "mutual": true,
                             "values": ["respect", "like", "comfort"],
                             "amount": -5
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
-                            "mutual": true,
-                            "values": ["dislike"],
-                            "amount": 5
                         },
                         {
                             "cats_to": ["p_l"],

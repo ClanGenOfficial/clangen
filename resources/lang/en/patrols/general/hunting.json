@@ -2478,7 +2478,7 @@
                     "cats_to": ["s_c"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["like", "jealous"],
+                    "values": ["like", "respect"],
                     "amount": -5
                 }
             ],

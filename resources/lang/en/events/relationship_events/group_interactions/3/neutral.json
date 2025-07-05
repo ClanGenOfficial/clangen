@@ -54,7 +54,6 @@
 		],
 		"general_reaction": {
 			"comfort": "increase",
-			"disliked": "decrease",
 			"like": "increase"
 		}
 	}

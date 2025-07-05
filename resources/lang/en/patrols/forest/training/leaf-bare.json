@@ -168,7 +168,7 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["s_c"],
                             "mutual": false,
-                            "values": ["jealous", "respect"],
+                            "values": ["respect"],
                             "amount": 10
                         }
                     ]
