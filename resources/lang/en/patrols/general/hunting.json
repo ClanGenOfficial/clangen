@@ -4127,7 +4127,7 @@
         "art": "gen_cat_looking_up1"
 },
         {
-            "text": "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c takes offense to {PRONOUN/s_c/poss} mate's implication that {PRONOUN/s_c/subject} can't hunt for {PRONOUN/s_c/self} and rejects the offer. The rest of the hunt is tense.",
+            "text": "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c takes offense at {PRONOUN/s_c/poss} mate's implication that {PRONOUN/s_c/subject} can't hunt for {PRONOUN/s_c/self} and rejects the offer. The rest of the hunt is tense.",
             "exp": 0,
             "weight": 20,
             "prey": ["very_small"],
