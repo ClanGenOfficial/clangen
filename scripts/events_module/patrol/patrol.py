@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+import logging
 import random
 from copy import deepcopy
 from itertools import repeat
@@ -28,6 +29,8 @@ from scripts.utility import (
     get_special_snippet_list,
     adjust_list_text,
 )
+
+logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -558,11 +561,11 @@ class Patrol:
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
             if (
-                val in ["romantic", "platonic", "admiration", "comfortable", "trust"]
+                val in ("romantic", "platonic", "admiration", "comfortable", "trust")
                 and value_check >= 20
             ):
                 chance_of_romance_patrol -= 1
-            elif val in ["dislike", "jealousy"] and value_check >= 20:
+            elif val in ("dislike", "jealousy") and value_check >= 20:
                 chance_of_romance_patrol += 2
         if chance_of_romance_patrol <= 0:
             chance_of_romance_patrol = 1
@@ -975,7 +978,10 @@ class Patrol:
 
             if chosen_prey_size == most_prey_size:
                 filtered_patrols.append(patrol)
-
+            elif self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                print(
+                    "DEBUG: requested patrol does not meet constraints (failed prey balancing)"
+                )
         # if the filtering results in an empty list, don't filter and return whole possible patrols
         if len(filtered_patrols) <= 0:
             print(
