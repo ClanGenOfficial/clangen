@@ -55,9 +55,9 @@ If the game immediately crashes, you can get to the default log location manuall
 === "Stable (executable)"
 | Operating System | Default Location |
 |------------------|--------------------------------------------------------------|
-| Windows | `C:\Users\[current user]\AppData\Local\ClanGen\ClanGen\logs` |
-| Mac | |
-| Linux | |
+| Windows | `C:\Users\[your user name]\AppData\Local\ClanGen\ClanGen\logs` |
+| Mac | `/Users/[your user name]/Library/Application Support/ClanGen` |
+| Linux | `` |
 !!! todo
 ...what are the default locations for other OSes?
 
@@ -67,8 +67,8 @@ Wherever the active source files are stored, inside a folder called `logs`.
 === "Development (executable)"
 | Operating System | Default Location |
 |------------------|------------------------------------------------------------------|
-| Windows | `C:\Users\[current user]\AppData\Local\ClanGen\ClanGenBeta\logs` |
-| Mac | |
+| Windows | `C:\Users\[your user name]\AppData\Local\ClanGen\ClanGenBeta\logs` |
+| Mac | `/Users/[your user name]/Library/Application Support/ClanGenBeta` |
 | Linux | |
 !!! todo
 ...what are the default locations for other OSes?
