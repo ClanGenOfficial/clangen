@@ -1210,7 +1210,7 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         elif self.scale_position < 0:
             self.scale_position = 0
 
-        pointer_size = ui_scale_dimensions((14, 10))
+        pointer_size = ui_scale_dimensions((14, 12))
         pointer_pos = (
             relative_rect.x - ui_scale_value(17) + self.scale_position,
             relative_rect.y + ui_scale_value(4),
