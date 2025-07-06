@@ -1163,7 +1163,7 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
             image_cache.load_image(path),
             (relative_rect[2], relative_rect[3]),
         )
-        if -5 < scale_position < 5:
+        if scale_position == 0:
             bar.fill((130, 117, 82))
 
         # bar element is the base of this entire element
