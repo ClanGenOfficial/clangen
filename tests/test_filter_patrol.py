@@ -314,8 +314,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
 
-        relationship1.romantic_love = 20
-        relationship2.romantic_love = 20
+        relationship1.romance = 20
+        relationship2.romance = 20
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
@@ -326,7 +326,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["romantic_10"]
+        con_patrol_event.relationship_constraints = ["fancies"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -352,7 +352,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints = ["romantic_30"]
+        con_patrol_event.relationship_constraints = ["adores"]
 
         # then
         patrol = Patrol()
@@ -382,8 +382,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
 
-        relationship1.platonic_like = 20
-        relationship2.platonic_like = 20
+        relationship1.like = 20
+        relationship2.like = 20
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
@@ -394,7 +394,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["platonic_10"]
+        con_patrol_event.relationship_constraints = ["likes"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -420,7 +420,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints = ["platonic_30"]
+        con_patrol_event.relationship_constraints = ["enjoys"]
         # then
         patrol = Patrol()
         patrol.add_patrol_cats([cat1, cat2], test_clan)
@@ -449,8 +449,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
 
-        relationship1.dislike = 20
-        relationship2.dislike = 20
+        relationship1.like = -20
+        relationship2.like = -20
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
@@ -461,7 +461,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["dislike_10"]
+        con_patrol_event.relationship_constraints = ["dislikes"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -487,7 +487,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints = ["dislike_30"]
+        con_patrol_event.relationship_constraints = ["hates"]
 
         # then
         patrol = Patrol()
@@ -509,7 +509,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             )
         )
 
-    def test_comfortable_constraint_patrol(self):
+    def test_comfort_constraint_patrol(self):
         # given
         cat1 = Cat()
         cat2 = Cat()
@@ -517,8 +517,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
 
-        relationship1.comfortable = 20
-        relationship2.comfortable = 20
+        relationship1.comfort = 20
+        relationship2.comfort = 20
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
@@ -529,7 +529,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["comfortable_10"]
+        con_patrol_event.relationship_constraints = ["seeks_out"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -555,7 +555,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints = ["comfortable_30"]
+        con_patrol_event.relationship_constraints = ["prefers"]
 
         # then
         patrol = Patrol()
@@ -585,8 +585,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
 
-        relationship1.jealousy = 20
-        relationship2.jealousy = 20
+        relationship1.respect = -20
+        relationship2.respect = -20
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
@@ -597,7 +597,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["jealousy_10"]
+        con_patrol_event.relationship_constraints = ["begrudges"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -623,7 +623,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints = ["jealousy_30"]
+        con_patrol_event.relationship_constraints = ["envies"]
 
         # then
         patrol = Patrol()
@@ -665,7 +665,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["trust_10"]
+        con_patrol_event.relationship_constraints = ["listens_to"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -691,7 +691,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints = ["trust_30"]
+        con_patrol_event.relationship_constraints = ["trust"]
 
         # then
         patrol = Patrol()
@@ -726,12 +726,12 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         relationship3_1 = Relationship(cat3, cat1)
         relationship3_2 = Relationship(cat3, cat2)
 
-        relationship1_2.romantic_love = 20
-        relationship1_3.romantic_love = 20
-        relationship2_1.romantic_love = 20
-        relationship2_3.romantic_love = 20
-        relationship3_1.romantic_love = 20
-        relationship3_2.romantic_love = 20
+        relationship1_2.romance = 20
+        relationship1_3.romance = 20
+        relationship2_1.romance = 20
+        relationship2_3.romance = 20
+        relationship3_1.romance = 20
+        relationship3_2.romance = 20
 
         relationship1_2.opposite_relationship = relationship2_1
         relationship1_3.opposite_relationship = relationship3_1
@@ -751,7 +751,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - all is correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["romantic_10"]
+        con_patrol_event.relationship_constraints = ["fancies"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -777,7 +777,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high limit
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints = ["romantic_30"]
+        con_patrol_event.relationship_constraints = ["adores"]
 
         # then
         patrol = Patrol()
@@ -800,9 +800,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         )
 
         # when - different relationship values
-        cat3.relationships[cat2.ID].romantic_love = 5
+        cat3.relationships[cat2.ID].romance = 5
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["romantic_10"]
+        con_patrol_event.relationship_constraints = ["fancies"]
 
         # then
         patrol = Patrol()
@@ -832,10 +832,10 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
 
-        relationship1.romantic_love = 20
-        relationship2.romantic_love = 20
-        relationship1.platonic_like = 20
-        relationship2.platonic_like = 20
+        relationship1.romance = 20
+        relationship2.romance = 20
+        relationship1.like = 20
+        relationship2.like = 20
 
         relationship1.opposite_relationship = relationship2
         relationship2.opposite_relationship = relationship1
@@ -846,9 +846,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["romantic_10"]
+        con_patrol_event.relationship_constraints = ["fancies"]
         con_patrol_event2 = PatrolEvent(patrol_id="test2")
-        con_patrol_event2.relationship_constraints = ["platonic_10"]
+        con_patrol_event2.relationship_constraints = ["likes"]
 
         # then
         patrol = Patrol()
@@ -871,7 +871,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         )
         # when - to high
         con_patrol_event2 = PatrolEvent(patrol_id="test2")
-        con_patrol_event2.relationship_constraints = ["platonic_30"]
+        con_patrol_event2.relationship_constraints = ["enjoys"]
 
         # then
         patrol = Patrol()

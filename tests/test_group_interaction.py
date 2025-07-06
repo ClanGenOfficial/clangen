@@ -473,28 +473,28 @@ class OtherCatsFiltering(unittest.TestCase):
             "r_c2": random2.ID,
         }
         # given - relationships
-        # order: romantic, platonic, dislike, admiration, comfortable, jealousy, trust
+        # order: romance, like, respect, trust, comfort
         main_cat.relationships[random1.ID] = Relationship(
-            main_cat, random1, False, False, 50, 50, 0, 50, 50, 0, 50
+            main_cat, random1, False, False, 50, 50, 50, 50, 50
         )
         random1.relationships[main_cat.ID] = Relationship(
-            random1, main_cat, False, False, 50, 50, 0, 50, 50, 0, 50
+            random1, main_cat, False, False, 50, 50, 50, 50, 50
         )
 
         main_cat.relationships[random2.ID] = Relationship(
-            main_cat, random2, False, True, 0, 0, 50, 0, 0, 50, 0
+            main_cat, random2, False, True, 0, -50, -50, 0, 0
         )
         random2.relationships[main_cat.ID] = Relationship(
-            random2, main_cat, False, True, 0, 0, 50, 0, 0, 50, 0
+            random2, main_cat, False, True, 0, -50, -50, 0, 0
         )
 
         random1.mate.append(random2.ID)
         random2.mate.append(random1.ID)
         random1.relationships[random2.ID] = Relationship(
-            random1, random2, True, False, 50, 50, 0, 0, 0, 0, 50
+            random1, random2, True, False, 50, 50, 0, 50, 0
         )
         random2.relationships[random1.ID] = Relationship(
-            random2, random1, True, False, 50, 50, 0, 0, 0, 0, 0
+            random2, random1, True, False, 50, 50, 0, 0, 0
         )
 
         # summary:
@@ -515,27 +515,25 @@ class OtherCatsFiltering(unittest.TestCase):
         interaction3.relationship_constraint = {"m_c_to_r_c1": ["siblings"]}
 
         interaction4 = GroupInteraction("test")
-        interaction4.relationship_constraint = {"m_c_to_r_c1": ["romantic_40"]}
+        interaction4.relationship_constraint = {"m_c_to_r_c1": ["adores"]}
 
         interaction5 = GroupInteraction("test")
-        interaction5.relationship_constraint = {"m_c_to_r_c1": ["comfortable_40"]}
+        interaction5.relationship_constraint = {"m_c_to_r_c1": ["prefers"]}
 
         interaction6 = GroupInteraction("test")
-        interaction6.relationship_constraint = {
-            "m_c_to_r_c1": ["comfortable_40", "romantic_40"]
-        }
+        interaction6.relationship_constraint = {"m_c_to_r_c1": ["prefers", "adores"]}
 
         interaction7 = GroupInteraction("test")
-        interaction7.relationship_constraint = {"m_c_to_r_c1": ["romantic_60_lower"]}
+        interaction7.relationship_constraint = {"m_c_to_r_c1": ["adores"]}
 
         interaction8 = GroupInteraction("test")
-        interaction8.relationship_constraint = {"m_c_to_r_c1": ["comfortable_60_lower"]}
+        interaction8.relationship_constraint = {"m_c_to_r_c1": ["prefers"]}
 
         interaction9 = GroupInteraction("test")
-        interaction9.relationship_constraint = {"m_c_to_r_c2": ["dislike_40"]}
+        interaction9.relationship_constraint = {"m_c_to_r_c2": ["hates"]}
 
         interaction10 = GroupInteraction("test")
-        interaction10.relationship_constraint = {"r_c2_to_m_c": ["dislike_40"]}
+        interaction10.relationship_constraint = {"r_c2_to_m_c": ["hates"]}
 
         # then
         self.assertTrue(
@@ -604,28 +602,44 @@ class OtherCatsFiltering(unittest.TestCase):
             "r_c2": random2.ID,
         }
         # given - relationships
-        # order: romantic, platonic, dislike, admiration, comfortable, jealousy, trust
+        # order: romance, like, respect, trust, comfort
         main_cat.relationships[random1.ID] = Relationship(
-            main_cat, random1, False, False, 50, 50, 0, 50, 50, 0, 50
+            main_cat, random1, False, False, 50, 50, 50, 50, 50
         )
         random1.relationships[main_cat.ID] = Relationship(
-            random1, main_cat, False, False, 50, 50, 0, 50, 50, 0, 50
+            random1, main_cat, False, False, 50, 50, 50, 50, 50
         )
 
         main_cat.relationships[random2.ID] = Relationship(
-            main_cat, random2, False, True, 0, 0, 50, 0, 0, 50, 0
+            main_cat, random2, False, True, 0, -50, -50, 50, 0
         )
         random2.relationships[main_cat.ID] = Relationship(
-            random2, main_cat, False, True, 0, 0, 50, 0, 0, 50, 0
+            random2, main_cat, False, True, 0, -50, -50, 50, 0
         )
 
         random1.mate.append(random2.ID)
         random2.mate.append(random1.ID)
         random1.relationships[random2.ID] = Relationship(
-            random1, random2, True, False, 50, 50, 0, 0, 0, 0, 50
+            random1,
+            random2,
+            True,
+            False,
+            50,
+            50,
+            0,
+            50,
+            0,
         )
         random2.relationships[random1.ID] = Relationship(
-            random2, random1, True, False, 50, 50, 0, 0, 0, 0, 0
+            random2,
+            random1,
+            True,
+            False,
+            50,
+            50,
+            0,
+            0,
+            0,
         )
 
         # summary:
@@ -637,34 +651,34 @@ class OtherCatsFiltering(unittest.TestCase):
 
         # given - interactions
         interaction1 = GroupInteraction("test")
-        interaction1.relationship_constraint = {"r_c1_to_m_c": ["dislike_40"]}
+        interaction1.relationship_constraint = {"r_c1_to_m_c": ["hates"]}
 
         interaction2 = GroupInteraction("test")
         interaction2.relationship_constraint = {"r_c1_to_r_c2": ["not_mates"]}
 
         interaction3 = GroupInteraction("test")
-        interaction3.relationship_constraint = {"r_c1_to_r_c2": ["romantic_40_lower"]}
+        interaction3.relationship_constraint = {"r_c1_to_r_c2": ["adores"]}
 
         interaction4 = GroupInteraction("test")
-        interaction4.relationship_constraint = {"r_c1_to_r_c2": ["romantic_40_lower"]}
+        interaction4.relationship_constraint = {"r_c1_to_r_c2": ["adores"]}
 
         interaction5 = GroupInteraction("test")
-        interaction5.relationship_constraint = {"r_c1_to_r_c2": ["trust_40_lower"]}
+        interaction5.relationship_constraint = {"r_c1_to_r_c2": ["distrust"]}
 
         interaction6 = GroupInteraction("test")
         interaction6.relationship_constraint = {"r_c1_to_m_c": ["mates"]}
 
         interaction7 = GroupInteraction("test")
-        interaction7.relationship_constraint = {"m_c_to_r_c1": ["comfortable_60"]}
+        interaction7.relationship_constraint = {"m_c_to_r_c1": ["prefers"]}
 
         interaction8 = GroupInteraction("test")
-        interaction8.relationship_constraint = {"m_c_to_r_c1": ["romantic_40_lower"]}
+        interaction8.relationship_constraint = {"m_c_to_r_c1": ["adores"]}
 
         interaction9 = GroupInteraction("test")
-        interaction9.relationship_constraint = {"m_c_to_r_c1": ["comfortable_40_lower"]}
+        interaction9.relationship_constraint = {"m_c_to_r_c1": ["adores"]}
 
         interaction10 = GroupInteraction("test")
-        interaction10.relationship_constraint = {"r_c2_to_r_c1": ["trust_40"]}
+        interaction10.relationship_constraint = {"r_c2_to_r_c1": ["trusts"]}
 
         # then
         self.assertFalse(
