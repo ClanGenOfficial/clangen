@@ -1450,9 +1450,13 @@ def gather_cat_objects(
         elif abbr == "app6" and len(event.patrol_apprentices) >= 6:
             out_set.add(event.patrol_apprentices[5])
         elif abbr == "clan":
-            out_set.update([x for x in Cat.all_cats_list if x.status.alive_in_player_clan()])
+            out_set.update(
+                [x for x in Cat.all_cats_list if x.status.alive_in_player_clan()]
+            )
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
-            clan_cats = [x for x in Cat.all_cats_list if x.status.alive_in_player_clan()]
+            clan_cats = [
+                x for x in Cat.all_cats_list if x.status.alive_in_player_clan()
+            ]
             out_set.update(
                 sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
             )

@@ -58,7 +58,9 @@ class Pregnancy_Events:
     def biggest_family_is_big():
         """Returns if the current biggest family is big enough to 'activates' additional inbreeding counters."""
 
-        living_cats = len([i for i in Cat.all_cats.values() if i.status.in_player_clan])
+        living_cats = len(
+            [i for i in Cat.all_cats.values() if i.status.alive_in_player_clan]
+        )
         return len(Pregnancy_Events.biggest_family) > (living_cats / 10)
 
     @staticmethod
@@ -141,7 +143,7 @@ class Pregnancy_Events:
     def handle_adoption(cat: Cat, other_cat=None, clan=game.clan):
         """Handle if the there is no pregnancy but the pair triggered kits chance."""
         if other_cat and (
-            not other_cat.status.in_player_clan() or other_cat.birth_cooldown > 0
+            not other_cat.status.alive_in_player_clan() or other_cat.birth_cooldown > 0
         ):
             return
 
@@ -207,7 +209,7 @@ class Pregnancy_Events:
     def handle_zero_moon_pregnant(cat: Cat, other_cat=None, clan=game.clan):
         """Handles if the cat is zero moons pregnant."""
         if other_cat and (
-            not other_cat.status.in_player_clan() or other_cat.birth_cooldown > 0
+            not other_cat.status.alive_in_player_clan() or other_cat.birth_cooldown > 0
         ):
             return
 
@@ -431,7 +433,7 @@ class Pregnancy_Events:
             if other_cat and not other_cat.status.is_outsider():
                 adding_text = choice(events["birth"]["outside_in_clan"])
             event_list.append(adding_text)
-        elif other_cat.ID in cat.mate and other_cat.status.in_player_clan():
+        elif other_cat.ID in cat.mate and other_cat.status.alive_in_player_clan():
             involved_cats.append(other_cat.ID)
             cat_dict["r_c"] = other_cat
             event_list.append(choice(events["birth"]["two_parents"]))
@@ -1102,7 +1104,7 @@ class Pregnancy_Events:
         # CURRENT CAT AMOUNT
         # - increase the inverse chance if the clan is bigger
         living_cats = len(
-            [i for i in Cat.all_cats.values() if i.status.in_player_clan()]
+            [i for i in Cat.all_cats.values() if i.status.alive_in_player_clan()]
         )
         if living_cats < 10:
             inverse_chance = int(inverse_chance * 0.5)

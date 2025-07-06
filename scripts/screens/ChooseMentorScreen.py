@@ -646,7 +646,8 @@ class ChooseMentorScreen(Screens):
         potential_medcat_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if cat.status.alive_in_player_clan() and cat.status.rank == CatRank.MEDICINE_CAT
+            if cat.status.alive_in_player_clan()
+            and cat.status.rank == CatRank.MEDICINE_CAT
         ]
         valid_medcat_mentors = []
         potential_mediator_mentors = [

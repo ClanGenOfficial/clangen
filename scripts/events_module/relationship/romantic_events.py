@@ -669,7 +669,10 @@ class RomanticEvents:
             return False
 
         # Moving on, not breakups, occur when one mate is dead or outside.
-        if not cat_from.status.alive_in_player_clan() or not cat_to.status.alive_in_player_clan():
+        if (
+            not cat_from.status.alive_in_player_clan()
+            or not cat_to.status.alive_in_player_clan()
+        ):
             return False
 
         chance_number = RomanticEvents.get_breakup_chance(cat_from, cat_to)

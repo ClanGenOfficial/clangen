@@ -130,7 +130,10 @@ class MediationScreen(Screens):
         # Gather the mediators:
         self.mediators = []
         for cat in Cat.all_cats_list:
-            if cat.status.rank.is_any_mediator_rank() and cat.status.alive_in_player_clan():
+            if (
+                cat.status.rank.is_any_mediator_rank()
+                and cat.status.alive_in_player_clan()
+            ):
                 self.mediators.append(cat)
 
         self.page = 1

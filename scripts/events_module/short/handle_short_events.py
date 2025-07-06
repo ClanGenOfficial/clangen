@@ -410,7 +410,7 @@ class HandleShortEvents:
                             or game.clan.clan_settings["same sex birth"]
                         )
                         and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2)
-                        and sub_sub[0].status.in_player_clan()
+                        and sub_sub[0].status.alive_in_player_clan()
                     ):
                         sub_sub[0].get_injured("recovering from birth")
                         break  # Break - only one parent ever gives birth
@@ -531,7 +531,9 @@ class HandleShortEvents:
         cats that will die are added to self.dead_cats
         """
         # gather living clan cats except leader bc leader lives would be frustrating to handle in these
-        alive_cats = [i for i in Cat.all_cats.values() if i.status.in_player_clan()]
+        alive_cats = [
+            i for i in Cat.all_cats.values() if i.status.alive_in_player_clan()
+        ]
 
         # make sure all cats in the pool fit the event requirements
         requirements = self.chosen_event.m_c

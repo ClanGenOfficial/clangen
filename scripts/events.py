@@ -274,7 +274,8 @@ class Events:
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
         else:
             has_med = any(
-                cat.status.rank.is_any_medicine_rank() and cat.status.alive_in_player_clan()
+                cat.status.rank.is_any_medicine_rank()
+                and cat.status.alive_in_player_clan()
                 for cat in Cat.all_cats.values()
             )
             if not has_med:
@@ -1991,7 +1992,8 @@ class Events:
             targets = [
                 i
                 for i in relationships
-                if i.dislike > 1 and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan()
+                if i.dislike > 1
+                and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan()
             ]
             if not targets:
                 return
@@ -2127,7 +2129,9 @@ class Events:
         # round up the living kitties
         alive_cats = list(
             filter(
-                lambda kitty: (kitty.status.alive_in_player_clan() and not kitty.is_ill()),
+                lambda kitty: (
+                    kitty.status.alive_in_player_clan() and not kitty.is_ill()
+                ),
                 Cat.all_cats.values(),
             )
         )
