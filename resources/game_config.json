@@ -22,8 +22,8 @@
 		"value_intervals": {
 			"extreme_neg": -70,
 			"mid_neg": -25,
-			"low_neg": -5,
-			"neutral": 5,
+			"low_neg": -1,
+			"neutral": 1,
 			"low_pos": 25,
 			"mid_pos": 70,
 			"extreme_pos": 100
