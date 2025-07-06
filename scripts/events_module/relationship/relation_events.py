@@ -14,6 +14,7 @@ from scripts.utility import (
     get_cats_same_age,
     get_cats_of_romantic_interest,
     get_free_possible_mates,
+    filter_relationship_type,
 )
 
 
@@ -276,41 +277,28 @@ class Relation_Events:
         cat_list.remove(main_cat)
         filtered_cat_list = []
 
+
         for inter_cat in cat_list:
+            if inter_cat.ID == main_cat.ID:
+                continue
+
             cat_from = main_cat
             cat_to = inter_cat
 
-            if inter_cat.ID == main_cat.ID:
-                continue
             if cat_to.ID not in cat_from.relationships:
                 cat_from.create_one_relationship(cat_to)
                 if cat_from.ID not in cat_to.relationships:
                     cat_to.create_one_relationship(cat_from)
                 continue
 
-            relationship = cat_from.relationships[cat_to.ID]
+            passed = filter_relationship_type(
+                group=[cat_from, cat_to],
+                filter_types=constraint
+            )
 
-            if "siblings" in constraint and not cat_from.is_sibling(cat_to):
+            if not passed:
                 continue
-
-            if "mates" in constraint and not relationship.mates:
-                continue
-
-            if "not_mates" in constraint and relationship.mates:
-                continue
-
-            if "parent/child" in constraint and not cat_from.is_parent(cat_to):
-                continue
-
-            if "child/parent" in constraint and not cat_to.is_parent(cat_from):
-                continue
-
-            cat_levels = [l for l in relationship.get_value_levels()]
-            all_levels = [l for l in ValueLevel]
-            needed = [l for l in constraint if l in all_levels]
-            if not set(needed).issubset(cat_levels):
-                continue
-
+                
             filtered_cat_list.append(inter_cat)
 
         return filtered_cat_list
