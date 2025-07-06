@@ -50,6 +50,13 @@ class HerbSupply:
         # med den log for current moon
         self.log = []
 
+        # ensures all herbs in HERBS are present as keys in self.storage and self.collected because KEYERRORS SUCK
+        for herb in self.base_herb_list:
+            if herb not in self.storage:
+                self.storage[herb] = []
+            if herb not in self.collected:
+                self.collected[herb] = 0
+
     @property
     def combined_supply_dict(self) -> dict:
         """

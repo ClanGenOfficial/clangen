@@ -684,18 +684,23 @@ class History:
         return cat.history.murder
 
     @staticmethod
-    def reveal_murder(cat, other_cat, cat_class, victim, murder_index):
+    def reveal_murder(cat, other_cat, cat_class, victim):
         """Reveals the murder properly in all associated history text.
 
         :param cat: The murderer
         :param other_cat: The cat who discovers the truth about the murder
         :param cat_class: The cat class
         :param victim: The victim whose murder is being revealed
-        :param murder_index: Index of the murder"""
+        """
 
         victim = cat_class.fetch_cat(victim)
-        murder_history = History.get_murders(cat)
-        victim_history = History.get_murders(victim)
+        murder_history = History.get_murders(cat)["is_murderer"]
+        victim_history = History.get_murders(victim)["is_victim"]
+
+        for murder in murder_history:
+            if murder["victim"] == victim.ID:
+                murder_index = murder_history.index(murder)
+                break
 
         if murder_history:
             if "is_murderer" in murder_history:

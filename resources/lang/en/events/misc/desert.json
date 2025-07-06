@@ -454,7 +454,6 @@
     "event_id": "dst_misc_any_dreaming1",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["skill_trait_required"],
     "weight": 10,
     "event_text": "m_c slips into The Dreaming, joining the spirits of land and place for one eternal brief moment. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with memory draining irrevocably from {PRONOUN/m_c/poss} tight grasp, losing everything but a glimpse of clair_list.",
     "m_c": {
@@ -467,7 +466,6 @@
     "event_id": "dst_misc_any_dreaming2",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["skill_trait_required"],
     "weight": 10,
     "event_text": "m_c's body curls in {PRONOUN/m_c/poss} nest, but {PRONOUN/m_c/poss} spirit walks in The Dreaming, calling the chorus of 'Weowie', 'Weowie', entreating the water serpent down from the mountain.",
     "m_c": {
@@ -480,7 +478,6 @@
     "event_id": "dst_misc_any_dreaming3",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["skill_trait_required"],
     "weight": 10,
     "event_text": "m_c dreams of the creation song, of the before-times, of the featureless plain that ancestral spirits molded into Country and land in The Dreaming.",
     "m_c": {
@@ -493,7 +490,6 @@
     "event_id": "dst_misc_any_dreaming4",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["skill_trait_required"],
     "weight": 20,
     "event_text": "In the twilight of the day, m_c tells the stories of The Dreaming, the ancestral spirits both good and bad who live again when their history is recited.",
     "m_c": {
@@ -520,7 +516,6 @@
     "event_id": "dst_misc_any_dreaming5",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["skill_trait_required"],
     "weight": 20,
     "event_text": "The Dreaming is past, present, future, all. It leads and warns and predicts, it guides and shares and strengthens. m_c is the voice today, but {PRONOUN/m_c/subject} {VERB/m_c/are/is} only one step in the unbroken connections to past generations.",
     "m_c": {
@@ -547,7 +542,6 @@
     "event_id": "dst_misc_any_ancestors1",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["skill_trait_required"],
     "weight": 30,
     "event_text": "m_c spotted a cat silouetted against the setting sun with the light shining partway through their semitransparent fur. Next blink, the figure is gone.",
     "m_c": {
