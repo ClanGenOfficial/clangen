@@ -490,11 +490,11 @@ class Pregnancy_Events:
 
             if cat.status.is_outsider():
                 possible_events = events["birth"]["outside_death"]
-            if game.clan.leader_lives > 1 and cat.status.rank == CatRank.LEADER:
+            if game.clan.leader_lives > 1 and cat.status.is_leader():
                 possible_events = events["birth"]["lead_death"]
             event_list.append(choice(possible_events))
 
-            if cat.status.rank == CatRank.LEADER:
+            if cat.status.is_leader():
                 clan.leader_lives -= 1
                 cat.die()
                 death_event = i18n.t("conditions.pregnancy.leader_kitting_death")
@@ -509,7 +509,7 @@ class Pregnancy_Events:
         ):  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if "blood loss" in cat.injuries:
-                if cat.status.rank == CatRank.LEADER:
+                if cat.status.is_leader():
                     death_event = i18n.t(
                         "conditions.pregnancy.leader_kitting_death_severe"
                     )

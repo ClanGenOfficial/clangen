@@ -1447,7 +1447,7 @@ class Events:
 
             # CURRENT MENTOR TAG CHECK
             if cat.mentor:
-                if Cat.fetch_cat(cat.mentor).status.rank == CatRank.LEADER:
+                if Cat.fetch_cat(cat.mentor).status.is_leader():
                     tags.append("yes_leader_mentor")
                 else:
                     tags.append("yes_mentor")
@@ -1477,7 +1477,7 @@ class Events:
             if valid_living_former_mentors:
                 #  Living Former mentors. Grab the latest living valid mentor.
                 previous_alive_mentor = Cat.fetch_cat(valid_living_former_mentors[-1])
-                if previous_alive_mentor.status.rank == CatRank.LEADER:
+                if previous_alive_mentor.status.is_leader():
                     tags.append("alive_leader_mentor")
                 else:
                     tags.append("alive_mentor")
@@ -1898,7 +1898,7 @@ class Events:
                 random.random()
                 * game.get_config_value("death_related", "leader_death_chance")
             )
-            and cat.status.rank == CatRank.LEADER
+            and cat.status.is_leader()
             and not cat.not_working()
         ):
             handle_short_events.handle_event(
@@ -2073,7 +2073,7 @@ class Events:
             # little easter egg just for fun
             if (
                 cat.personality.trait == "ambitious"
-                and Cat.fetch_cat(chosen_target.cat_to).status.rank == CatRank.LEADER
+                and Cat.fetch_cat(chosen_target.cat_to).status.is_leader()
             ):
                 kill_chance -= 10
 

@@ -579,7 +579,7 @@ class Cat:
         - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
         """
         if (
-            self.status.rank == CatRank.LEADER
+            self.status.is_leader()
             and "pregnant" in self.injuries
             and game.clan.leader_lives > 0
         ):
@@ -598,7 +598,7 @@ class Cat:
         text = ""
         darkforest = game.clan.instructor.status.group == CatGroup.DARK_FOREST
         isoutside = self.status.is_outsider()
-        if self.status.rank == CatRank.LEADER:
+        if self.status.is_leader():
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
                 death_thought = Thoughts.leader_death_thought(
@@ -1244,7 +1244,7 @@ class Cat:
             for rel in dead_relations:
                 if i == 8:
                     break
-                if rel.cat_to.status.rank == CatRank.LEADER:
+                if rel.cat_to.status.is_leader():
                     life_giving_leader = rel.cat_to
                     continue
                 life_givers.append(rel.cat_to.ID)
@@ -1303,13 +1303,9 @@ class Cat:
         ancient_leader = False
         if not life_giving_leader:
             if starclan:
-                leaders = [
-                    x for x in cats_in_starclan if x.status.rank == CatRank.LEADER
-                ]
+                leaders = [x for x in cats_in_starclan if x.status.is_leader()]
             else:
-                leaders = [
-                    x for x in cats_in_darkforest if x.status.rank == CatRank.LEADER
-                ]
+                leaders = [x for x in cats_in_darkforest if x.status.is_leader()]
 
             # choosing if the life giving leader will be the oldest leader or previous leader
             coin_flip = randint(1, 2)
@@ -1655,13 +1651,13 @@ class Cat:
         mortality = self.illnesses[illness]["mortality"]
 
         # leader should have a higher chance of death
-        if self.status.rank == CatRank.LEADER and mortality != 0:
+        if self.status.is_leader() and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status.rank == CatRank.LEADER:
+            if self.status.is_leader():
                 self.leader_death_heal = True
                 game.clan.leader_lives -= 1
 
@@ -1697,13 +1693,13 @@ class Cat:
         mortality = self.injuries[injury]["mortality"]
 
         # leader should have a higher chance of death
-        if self.status.rank == CatRank.LEADER and mortality != 0:
+        if self.status.is_leader() and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status.rank == CatRank.LEADER:
+            if self.status.is_leader():
                 game.clan.leader_lives -= 1
             self.die()
             return False
@@ -1757,13 +1753,13 @@ class Cat:
             return "reveal"
 
         # leader should have a higher chance of death
-        if self.status.rank == CatRank.LEADER and mortality != 0:
+        if self.status.is_leader() and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status.rank == CatRank.LEADER:
+            if self.status.is_leader():
                 game.clan.leader_lives -= 1
             self.die()
             return "continue"

@@ -154,7 +154,7 @@ def json_load():
                 opacity=cat["opacity"] if "opacity" in cat else 100,
             )
 
-            # Runs a bunch of appearance-related convertion of old stuff.
+            # Runs a bunch of appearance-related conversion of old stuff.
             new_cat.pelt.check_and_convert(convert)
 
             # converting old specialty saves into new scar parameter
@@ -233,7 +233,7 @@ def json_load():
             )
 
             # checking for old dead
-            if cat.get("dead"):
+            if cat.get("dead") or cat.get("df"):
                 if not new_cat.status.group or not new_cat.status.group.is_afterlife():
                     if cat.get("df"):
                         new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
@@ -244,22 +244,20 @@ def json_load():
                     else:
                         new_cat.status.send_to_afterlife(target=CatGroup.STARCLAN)
 
+                # these should properly change the cat's status to align with old bool info
+                if not new_cat.dead and cat.get("exiled"):
+                    new_cat.status.exile_from_group()
+                if (
+                    not new_cat.dead
+                    and cat.get("outside")
+                    and not new_cat.status.is_outsider()
+                ):
+                    new_cat.status.become_lost()
+
             new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]
-
-            # these should properly change the cat's status to align with old bool info
-            if cat.get("df"):
-                new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
-            if not new_cat.dead and cat.get("exiled"):
-                new_cat.status.exile_from_group()
-            if (
-                not new_cat.dead
-                and cat.get("outside")
-                and not new_cat.status.is_outsider()
-            ):
-                new_cat.status.become_lost()
 
             new_cat.faded_offspring = (
                 cat["faded_offspring"] if "faded_offspring" in cat else []
@@ -529,7 +527,7 @@ def csv_load(all_cats):
             for app_id in inter_cat.apprentice:
                 app = Cat.all_cats.get(app_id)
                 # Make sure if cat isn't an apprentice, they're a former apprentice
-                if CatRank.APPRENTICE == app.status.rank:
+                if app.status.rank == CatRank.APPRENTICE:
                     apps.append(app)
                 else:
                     former_apps.append(app)

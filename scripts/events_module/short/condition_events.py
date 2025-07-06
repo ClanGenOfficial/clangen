@@ -163,7 +163,7 @@ class Condition_Events:
         # handle death first, if percentage is 0 or lower, the cat will die
         if cat_nutrition.percentage <= 0:
             text = ""
-            if cat.status.rank == CatRank.LEADER:
+            if cat.status.is_leader():
                 game.clan.leader_lives -= 1
                 # kill and retrieve leader life text
                 text = get_leader_life_notice()
@@ -175,7 +175,7 @@ class Condition_Events:
 
             event = event_text_adjust(Cat, event.strip(), main_cat=cat)
 
-            if cat.status.rank == CatRank.LEADER:
+            if cat.status.is_leader():
                 history_event = history_event.replace("m_c ", "").replace(".", "")
                 History.add_death(
                     cat, condition="starving", death_text=history_event.strip()
@@ -187,7 +187,7 @@ class Condition_Events:
 
             # if the cat is the leader and isn't full dead
             # make them malnourished and refill nutrition slightly
-            if cat.status.rank == CatRank.LEADER and game.clan.leader_lives > 0:
+            if cat.status.is_leader() and game.clan.leader_lives > 0:
                 mal_score = (
                     nutrition_info[cat.ID].max_score / 100 * (MAL_PERCENTAGE + 1)
                 )
@@ -561,8 +561,7 @@ class Condition_Events:
 
             # death event text and break bc any other illnesses no longer matter
             if cat.dead or (
-                cat.status.rank == CatRank.LEADER
-                and starting_life_count != game.clan.leader_lives
+                cat.status.is_leader() and starting_life_count != game.clan.leader_lives
             ):
                 try:
                     possible_string_list = Condition_Events.ILLNESS_DEATH_STRINGS[
@@ -584,7 +583,7 @@ class Condition_Events:
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
 
-                if cat.status.rank == CatRank.LEADER:
+                if cat.status.is_leader():
                     event = event + " " + get_leader_life_notice()
                     history_event = history_event.replace("m_c ", "").replace(".", "")
                     History.add_death(
@@ -600,10 +599,7 @@ class Condition_Events:
                 break
 
             # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead-dead
-            if (
-                cat.status.rank == CatRank.LEADER
-                and starting_life_count != game.clan.leader_lives
-            ):
+            if cat.status.is_leader() and starting_life_count != game.clan.leader_lives:
                 break
 
             # heal the cat
@@ -672,8 +668,7 @@ class Condition_Events:
                 continue
 
             if cat.dead or (
-                cat.status.rank == CatRank.LEADER
-                and starting_life_count != game.clan.leader_lives
+                cat.status.is_leader() and starting_life_count != game.clan.leader_lives
             ):
                 triggered = True
 
@@ -697,7 +692,7 @@ class Condition_Events:
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
 
-                if cat.status.rank == CatRank.LEADER:
+                if cat.status.is_leader():
                     event = event + " " + get_leader_life_notice()
                     history_text = history_text.replace("m_c", " ").replace(".", "")
                     History.add_death(
@@ -874,7 +869,7 @@ class Condition_Events:
                 event = i18n.t(
                     "defaults.complications_death_event", condition=translated_condition
                 )
-                if cat.status.rank == CatRank.LEADER and game.clan.leader_lives >= 1:
+                if cat.status.is_leader() and game.clan.leader_lives >= 1:
                     event = i18n.t(
                         "defaults.complications_death_event_leader",
                         condition=translated_condition,

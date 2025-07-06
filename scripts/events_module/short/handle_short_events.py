@@ -524,7 +524,7 @@ class HandleShortEvents:
             if "birth_death" not in self.types:
                 self.types.append("birth_death")
 
-            if cat.status.rank == CatRank.LEADER:
+            if cat.status.is_leader():
                 if "all_lives" in self.chosen_event.tags:
                     game.clan.leader_lives -= 10
                 elif "some_lives" in self.chosen_event.tags:
@@ -609,7 +609,7 @@ class HandleShortEvents:
                 # death history
                 if self.chosen_event.m_c["dies"]:
                     # find history
-                    if self.main_cat.status.rank == CatRank.LEADER:
+                    if self.main_cat.status.is_leader():
                         death_history = history_text_adjust(
                             block.get("lead_death"),
                             self.other_clan_name,
@@ -631,7 +631,7 @@ class HandleShortEvents:
                             self.main_cat, self.random_cat, revealed, death_history
                         )
 
-                    if self.main_cat.status.rank == CatRank.LEADER:
+                    if self.main_cat.status.is_leader():
                         self.current_lives -= 1
                         if self.current_lives != game.clan.leader_lives:
                             while self.current_lives > game.clan.leader_lives:
@@ -649,7 +649,7 @@ class HandleShortEvents:
             if "r_c" in block["cats"]:
                 # death history
                 if self.chosen_event.r_c["dies"]:
-                    if self.random_cat.status.rank == CatRank.LEADER:
+                    if self.random_cat.status.is_leader():
                         death_history = history_text_adjust(
                             block.get("lead_death"),
                             self.other_clan_name,
@@ -664,7 +664,7 @@ class HandleShortEvents:
                             self.random_cat,
                         )
 
-                    if self.random_cat.status.rank == CatRank.LEADER:
+                    if self.random_cat.status.is_leader():
                         self.current_lives -= 1
                         if self.current_lives != game.clan.leader_lives:
                             while self.current_lives > game.clan.leader_lives:
@@ -681,7 +681,7 @@ class HandleShortEvents:
             # multi_cat history
             if "multi_cat" in block["cats"]:
                 for cat in self.multi_cat:
-                    if cat.status.rank == CatRank.LEADER:
+                    if cat.status.is_leader():
                         death_history = history_text_adjust(
                             block.get("lead_death"),
                             self.other_clan_name,
@@ -696,7 +696,7 @@ class HandleShortEvents:
                             self.random_cat,
                         )
 
-                    if cat.status.rank == CatRank.LEADER:
+                    if cat.status.is_leader():
                         self.current_lives -= 1
                         if self.current_lives != game.clan.leader_lives:
                             while self.current_lives > game.clan.leader_lives:
@@ -795,7 +795,7 @@ class HandleShortEvents:
                     possible_scar = history_text_adjust(
                         block["scar"], self.other_clan_name, game.clan, self.random_cat
                     )
-                    if cat.status.rank == CatRank.LEADER:
+                    if cat.status.is_leader():
                         possible_death = history_text_adjust(
                             block["lead_death"],
                             self.other_clan_name,

@@ -512,7 +512,7 @@ class PatrolOutcome:
         results = []
         catnames = []
         for _cat in cats_to_kill:
-            if _cat.status.rank == CatRank.LEADER:
+            if _cat.status.is_leader():
                 if "all_lives" in self.dead_cats:
                     game.clan.leader_lives = 0
                     results.append(
@@ -989,7 +989,7 @@ class PatrolOutcome:
             print("WARNING: Injury occured, but some death or scar history is missing.")
 
         final_death_history = None
-        if cat.status.rank == CatRank.LEADER:
+        if cat.status.is_leader():
             if self.history_leader_death:
                 final_death_history = self.history_leader_death
         else:
@@ -1031,7 +1031,7 @@ class PatrolOutcome:
             print("WARNING: Death occured, but some death history is missing.")
 
         final_death_history = None
-        if cat.status.rank == CatRank.LEADER:
+        if cat.status.is_leader():
             if self.history_leader_death:
                 final_death_history = self.history_leader_death
         else:

@@ -550,6 +550,9 @@ class Status:
             CatSocial.CLANCAT in self.all_socials and self.social != CatSocial.CLANCAT
         )
 
+    def is_leader(self) -> bool:
+        return self.rank == CatRank.LEADER
+
     def is_lost(self, group: CatGroup = None) -> bool:
         """
         Returns True if the cat is considered "lost" by a group.
