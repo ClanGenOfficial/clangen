@@ -240,7 +240,7 @@ class Name:
             # Pelt name only gets used if there's an associated suffix.
             if named_after_pelt:
                 if (
-                    pelt in ["Tortie", "Calico"]
+                    pelt in ("Tortie", "Calico")
                     and tortiepattern in self.names_dict["tortie_pelt_suffixes"]
                 ):
                     self.suffix = random.choice(

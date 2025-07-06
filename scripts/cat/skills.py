@@ -4,7 +4,7 @@ from typing import Union
 
 import i18n
 
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatRank, CatAge
 
 
 class SkillPath(Enum):
@@ -108,7 +108,7 @@ class SkillPath(Enum):
 
         uncommon_paths = [
             i
-            for i in [
+            for i in (
                 SkillPath.GHOST,
                 SkillPath.PROPHET,
                 SkillPath.CLAIRVOYANT,
@@ -117,7 +117,7 @@ class SkillPath(Enum):
                 SkillPath.STAR,
                 SkillPath.HEALER,
                 SkillPath.DARK,
-            ]
+            )
             if i not in exclude
         ]
 
@@ -500,20 +500,14 @@ class CatSkills:
                 self.primary = Skill(
                     random.choice(parental_paths),
                     points=0,
-                    interest_only=(
-                        True
-                        if the_cat.status.rank in [CatRank.APPRENTICE, CatRank.KITTEN]
-                        else False
-                    ),
+                    interest_only=the_cat.status.rank
+                    in (CatRank.APPRENTICE, CatRank.KITTEN),
                 )
             else:
                 self.primary = Skill.get_random_skill(
                     points=0,
-                    interest_only=(
-                        True
-                        if the_cat.status.rank in [CatRank.APPRENTICE, CatRank.KITTEN]
-                        else False
-                    ),
+                    interest_only=the_cat.status.rank
+                    in (CatRank.APPRENTICE, CatRank.KITTEN),
                 )
 
         if the_cat.status.is_clancat():
@@ -593,7 +587,7 @@ class CatSkills:
                         exclude=self.primary.path, point_tier=1
                     )
 
-                # There is a change for primary to condinue to improve throughout life
+                # There is a change for primary to continue to improve throughout life
                 # That chance decreases as the cat gets older.
                 # This is to simulate them reaching their "peak"
                 if not int(random.random() * int(the_cat.moons / 4)):
@@ -601,7 +595,7 @@ class CatSkills:
         else:
             # For outside cats, just check interest and flip it if needed.
             # Going on age, rather than status here.
-            if the_cat.age not in ["kitten", "adolescent"]:
+            if the_cat.age not in (CatAge.KITTEN, CatAge.ADOLESCENT):
                 self.primary.interest_only = False
                 if self.secondary:
                     self.secondary.interest_only = False

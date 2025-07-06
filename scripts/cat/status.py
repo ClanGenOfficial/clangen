@@ -479,7 +479,7 @@ class Status:
         if game.clan:
             self.add_to_group(new_group=game.clan.instructor.status.group)
         else:
-            self.add_to_group(new_group=CatGroup.STAR_CLAN)
+            self.add_to_group(new_group=CatGroup.STARCLAN)
 
     def change_rank(self, new_rank: CatRank):
         """

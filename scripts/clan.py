@@ -227,7 +227,7 @@ class Clan:
         )
 
         self.instructor = Cat(
-            status_dict={"rank": instructor_rank, "group": CatGroup.STAR_CLAN},
+            status_dict={"rank": instructor_rank, "group": CatGroup.STARCLAN},
         )
 
         self.instructor.dead = True
@@ -674,7 +674,7 @@ class Clan:
             game.clan.instructor = Cat(
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
-                    "group": CatGroup.STAR_CLAN,
+                    "group": CatGroup.STARCLAN,
                 }
             )
             # update_sprite(game.clan.instructor)
@@ -792,7 +792,7 @@ class Clan:
             game.clan.instructor = Cat(
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
-                    "group": CatGroup.STAR_CLAN,
+                    "group": CatGroup.STARCLAN,
                 }
             )
             # update_sprite(game.clan.instructor)
