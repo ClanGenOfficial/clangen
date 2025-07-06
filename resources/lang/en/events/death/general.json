@@ -61,7 +61,7 @@
                     "like"
                 ],
                 "amount": -15
-            },
+            }
         ],
         "future_event": [
             {
@@ -149,7 +149,7 @@
                     "like"
                 ],
                 "amount": -15
-            },
+            }
         ],
         "future_event": [
             {
@@ -332,7 +332,7 @@
                     "like"
                 ],
                 "amount": -15
-            },
+            }
         ],
         "future_event": [
             {
