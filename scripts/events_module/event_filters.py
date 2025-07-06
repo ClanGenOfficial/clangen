@@ -14,7 +14,7 @@ def event_for_location(locations: list) -> bool:
     """
     checks if the clan is within the given locations
     """
-    if "any" in locations:
+    if "any" in locations or not game.clan:
         return True
 
     for place in locations:
