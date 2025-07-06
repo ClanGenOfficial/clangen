@@ -126,7 +126,7 @@ def cats_fulfill_single_interaction_constraints(
         "status": interaction.random_status_constraint,
         "trait": interaction.random_trait_constraint,
         "backstory": interaction.backstory_constraint.get("r_c"),
-        "skills": interaction.random_skill_constraint,
+        "skill": interaction.random_skill_constraint,
     }
 
     main_cat_satisfied = event_for_cat(

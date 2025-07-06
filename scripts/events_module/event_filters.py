@@ -249,20 +249,20 @@ def event_for_cat(
     """
 
     func_lookup = {
-        "age": _check_cat_age(cat, cat_info.get("age", [])),
-        "status": _check_cat_status(cat, cat_info.get("status", [])),
-        "trait": _check_cat_trait(
-            cat, cat_info.get("trait", []), cat_info.get("not_trait", [])
-        ),
-        "skills": _check_cat_skills(
-            cat, cat_info.get("skill", []), cat_info.get("not_skill", [])
-        ),
-        "backstory": _check_cat_backstory(cat, cat_info.get("backstory", [])),
-        "gender": _check_cat_gender(cat, cat_info.get("gender", [])),
+        "age": _check_cat_age,
+        "status": _check_cat_status,
+        "trait": _check_cat_trait,
+        "not_trait": _check_cat_not_trait,
+        "skill": _check_cat_skills,
+        "not_skill": _check_cat_not_skills,
+        "backstory": _check_cat_backstory,
+        "gender": _check_cat_gender,
     }
 
-    for func in func_lookup:
-        if not func_lookup[func]:
+    for param, func in func_lookup.items():
+        if param not in cat_info:
+            continue
+        if not func(cat, cat_info[param]):
             return False
 
     if cat_info.get("relationship_status", []):
@@ -307,32 +307,27 @@ def _check_cat_status(cat, statuses: list) -> bool:
     return False
 
 
-def _check_cat_trait(cat, traits: list, not_traits: list) -> bool:
+def _check_cat_trait(cat, traits: list) -> bool:
     """
     checks if cat has the correct traits for traits and not_traits lists
     """
-    if not traits and not not_traits:
+    if not traits:
         return True
 
-    cat_trait = cat.personality.trait
-    allowed = False
+    return cat.personality.trait in traits
 
-    if traits and cat_trait not in traits:
-        return False
-    if not_traits and cat_trait in not_traits:
-        return False
-    return True
+def _check_cat_not_trait(cat, traits: list) -> bool:
+    if not traits:
+        return True
 
+    return not cat.personality.trait in traits
 
-def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
+def _check_cat_skills(cat, skills: list) -> bool:
     """
     checks if the cat has the correct skills for skills and not skills lists
     """
-    if not skills and not not_skills:
+    if not skills:
         return True
-
-    has_good_skill = False
-    has_bad_skill = False
 
     for _skill in skills:
         skill_info = _skill.split(",")
@@ -342,24 +337,23 @@ def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
             continue
 
         if cat.skills.meets_skill_requirement(skill_info[0], int(skill_info[1])):
-            has_good_skill = True
-            break
+            return True
 
-    for _skill in not_skills:
+    return False
+
+def _check_cat_not_skills(cat, skills: list) -> bool:
+    if not skills:
+        return True
+
+    for _skill in skills:
         skill_info = _skill.split(",")
-
         if len(skill_info) < 2:
-            print("Cat skill incorrectly formatted", _skill)
+            print("Cat not_skill incorrectly formatted", _skill)
             continue
 
         if cat.skills.meets_skill_requirement(skill_info[0], int(skill_info[1])):
-            has_bad_skill = True
-            break
-
-    if has_good_skill and not has_bad_skill:
-        return True
-
-    return False
+            return False
+    return True
 
 
 def _check_cat_backstory(cat, backstories: list) -> bool:

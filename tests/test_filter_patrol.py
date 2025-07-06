@@ -691,7 +691,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints = ["trust"]
+        con_patrol_event.relationship_constraints = ["trusts"]
 
         # then
         patrol = Patrol()

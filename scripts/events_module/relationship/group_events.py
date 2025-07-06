@@ -187,7 +187,7 @@ class GroupEvents:
                 "status": interact.status_constraint.get("m_c"),
                 "trait": interact.trait_constraint.get("m_c"),
                 "backstory": interact.backstory_constraint.get("m_c"),
-                "skills": interact.skill_constraint.get("m_c"),
+                "skill": interact.skill_constraint.get("m_c"),
             }
             if not event_for_cat(main_constraint_dict, main_cat):
                 continue
