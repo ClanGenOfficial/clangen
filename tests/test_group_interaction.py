@@ -518,7 +518,9 @@ class OtherCatsFiltering(unittest.TestCase):
         interaction4.relationship_constraint = {"m_c_to_r_c1": ["adores"]}
 
         interaction5 = GroupInteraction("test")
-        interaction5.relationship_constraint = {"m_c_to_r_c1": ["prefers", "adores"]}
+        interaction5.relationship_constraint = {
+            "m_c_to_r_c1": ["understands", "adores"]
+        }
 
         interaction6 = GroupInteraction("test")
         interaction6.relationship_constraint = {"m_c_to_r_c2": ["hates"]}

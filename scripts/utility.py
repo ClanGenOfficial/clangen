@@ -1184,6 +1184,7 @@ def filter_relationship_type(
         siblings = [test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]
         if not all(siblings):
             return False
+
         filter_types.remove("siblings")
 
     if "mates" in filter_types:

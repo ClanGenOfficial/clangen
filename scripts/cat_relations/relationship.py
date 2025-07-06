@@ -597,7 +597,7 @@ class Relationship:
         elif group == "mid_pos":
             return ValueLevel.ADORES
         elif group == "high_pos":
-            return ValueLevel.DELIGHTS_IN
+            return ValueLevel.LOVES
         else:
             return None
 
@@ -618,7 +618,7 @@ class Relationship:
         group = self._get_level_group(self.like)
 
         if group == "extreme_neg":
-            return ValueLevel.ABHORS
+            return ValueLevel.LOATHES
         elif group == "mid_neg":
             return ValueLevel.HATES
         elif group == "low_neg":
@@ -630,7 +630,7 @@ class Relationship:
         elif group == "mid_pos":
             return ValueLevel.ENJOYS
         elif group == "extreme_pos":
-            return ValueLevel.LOVES
+            return ValueLevel.CHERISHES
         else:
             return None
 
@@ -692,11 +692,11 @@ class Relationship:
         elif group == "neutral":
             return ValueLevel.CONSIDERS
         elif group == "low_pos":
-            return ValueLevel.SEEKS_OUT
+            return ValueLevel.RELATES_TO
         elif group == "mid_pos":
-            return ValueLevel.PREFERS
+            return ValueLevel.UNDERSTANDS
         elif group == "extreme_pos":
-            return ValueLevel.RELIES_ON
+            return ValueLevel.DEEPLY_KNOWS
         else:
             return None
 
@@ -717,7 +717,7 @@ class Relationship:
         group = self._get_level_group(self.trust)
 
         if group == "extreme_neg":
-            return ValueLevel.ABHORS
+            return ValueLevel.LOATHES
         elif group == "mid_neg":
             return ValueLevel.DISLIKES
         elif group == "low_neg":

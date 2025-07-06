@@ -27,6 +27,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         # when
         self.assertTrue(cat1.is_sibling(cat2))
         self.assertTrue(cat2.is_sibling(cat1))
+        self.assertFalse(cat1.is_sibling(parent))
+        self.assertFalse(cat2.is_sibling(parent))
+
         con_patrol_event = PatrolEvent(patrol_id="test1")
         con_patrol_event.relationship_constraints = ["siblings"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
@@ -529,7 +532,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - correct
         con_patrol_event = PatrolEvent(patrol_id="test1")
-        con_patrol_event.relationship_constraints = ["seeks_out"]
+        con_patrol_event.relationship_constraints = ["relates_to"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -555,7 +558,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         # when - to high
         con_patrol_event = PatrolEvent(patrol_id="test3")
-        con_patrol_event.relationship_constraints = ["prefers"]
+        con_patrol_event.relationship_constraints = ["understands"]
 
         # then
         patrol = Patrol()

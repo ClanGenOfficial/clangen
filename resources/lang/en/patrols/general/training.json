@@ -7159,7 +7159,7 @@
         "intro_text": "p_l and r_c twine around each other in camp, chirping excitedly with the anticipation of getting to go out training together - it's been forever since they've been able to hang out!",
         "decline_text": "Unfortunately, the cats just don't have time to go out training today. They headbutt softly, promising to catch up another time.",
         "chance_of_success": 60,
-        "relationship_constraint": ["loves", "not_mates"],
+        "relationship_constraint": ["cherishes", "not_mates"],
         "success_outcomes": [
             {
                 "text": "Like birds into flight, the two cats leap into training, bounding in joyful synchronicity, the strength of their friendship lending itself to fantastic risks and complete trust. Their play-battle is as much game as exercise, and they whirl round and round in wild abandon until they both lie, exhausted and content. Their purrs mingle quietly as they share tongues, exchanging secrets and dreams.",

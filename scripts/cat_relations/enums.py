@@ -11,13 +11,13 @@ class RelValue(StrEnum):
 
 class ValueLevel(StrEnum):
     # like
-    ABHORS = "abhors"
+    LOATHES = "loathes"
     HATES = "hates"
     DISLIKES = "dislikes"
     KNOWS_OF = "knows_of"
     LIKES = "likes"
     ENJOYS = "enjoys"
-    LOVES = "loves"
+    CHERISHES = "cherishes"
     # respect
     RESENTS = "resents"
     ENVIES = "envies"
@@ -39,23 +39,23 @@ class ValueLevel(StrEnum):
     FEARS = "fears"
     AVOIDS = "avoids"
     CONSIDERS = "considers"
-    SEEKS_OUT = "seeks_out"
-    PREFERS = "prefers"
-    RELIES_ON = "relies_on"
+    RELATES_TO = "relates_to"
+    UNDERSTANDS = "understands"
+    DEEPLY_KNOWS = "deeply_knows"
     # romance
     UNINTERESTED = "uninterested"
     FANCIES = "fancies"
     ADORES = "adores"
-    DELIGHTS_IN = "delights_in"
+    LOVES = "loves"
 
     def is_like_level(self):
         return self in (
-            self.ABHORS,
+            self.LOATHES,
             self.HATES,
             self.DISLIKES,
             self.LIKES,
             self.ENJOYS,
-            self.LOVES,
+            self.CHERISHES,
         )
 
     def is_respect_level(self):
@@ -86,13 +86,13 @@ class ValueLevel(StrEnum):
             self.FEARS,
             self.AVOIDS,
             self.CONSIDERS,
-            self.SEEKS_OUT,
-            self.PREFERS,
-            self.RELIES_ON,
+            self.RELATES_TO,
+            self.UNDERSTANDS,
+            self.DEEPLY_KNOWS,
         )
 
     def is_romance_level(self):
-        return self in (self.UNINTERESTED, self.FANCIES, self.ADORES, self.DELIGHTS_IN)
+        return self in (self.UNINTERESTED, self.FANCIES, self.ADORES, self.LOVES)
 
     def is_any_neg(self):
         return self.is_extreme_neg() or self.is_mid_neg() or self.is_low_neg()
@@ -101,7 +101,7 @@ class ValueLevel(StrEnum):
         return self.is_extreme_pos() or self.is_mid_pos() or self.is_low_pos()
 
     def is_extreme_neg(self):
-        return self in (self.ABHORS, self.RESENTS, self.DISCREDITS, self.RUNS_FROM)
+        return self in (self.LOATHES, self.RESENTS, self.DISCREDITS, self.RUNS_FROM)
 
     def is_mid_neg(self):
         return self in (
@@ -129,7 +129,7 @@ class ValueLevel(StrEnum):
             self.LIKES,
             self.PRAISES,
             self.LISTENS_TO,
-            self.SEEKS_OUT,
+            self.RELATES_TO,
             self.FANCIES,
         )
 
@@ -138,17 +138,17 @@ class ValueLevel(StrEnum):
             self.ENJOYS,
             self.RESPECTS,
             self.TRUSTS,
-            self.PREFERS,
+            self.UNDERSTANDS,
             self.ADORES,
         )
 
     def is_extreme_pos(self):
         return self in (
-            self.LOVES,
+            self.CHERISHES,
             self.ADMIRES,
             self.CONFIDES_IN,
-            self.RELIES_ON,
-            self.DELIGHTS_IN,
+            self.DEEPLY_KNOWS,
+            self.LOVES,
         )
 
 

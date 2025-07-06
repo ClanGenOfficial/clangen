@@ -200,7 +200,7 @@
 			"m_c always takes food to r_c."
 		],
 		"relationship_constraint": [
-			"loves"
+			"cherishes"
 		],
 		"main_status_constraint": [
 			"elder",
@@ -434,7 +434,7 @@
 			"m_c promises not to tell r_c's mentor that {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been sneaking out of camp."
 		],
 		"relationship_constraint": [
-			"loves"
+			"cherishes"
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -467,7 +467,7 @@
 			"m_c believes in r_c, and reassures r_c that {PRONOUN/r_c/subject} made the right choice by becoming a medicine cat apprentice."
 		],
 		"relationship_constraint": [
-			"loves"
+			"cherishes"
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -559,7 +559,7 @@
 			"m_c couldn't imagine how boring things would be without a friend like r_c."
 		],
 		"relationship_constraint": [
-			"loves"
+			"cherishes"
 		]
 	},
 	{
@@ -574,7 +574,7 @@
 			"m_c saved a piece of fresh-kill that {PRONOUN/m_c/subject} {VERB/m_c/know/knows} is r_c's favorite."
 		],
 		"relationship_constraint": [
-			"loves"
+			"cherishes"
 		],
 		"reaction_random_cat": {
 			"like": "increase"
@@ -595,7 +595,7 @@
 			"m_c and r_c are inseparable, and can almost always be found with each other."
 		],
 		"relationship_constraint": [
-			"loves"
+			"cherishes"
 		]
 	},
 	{
