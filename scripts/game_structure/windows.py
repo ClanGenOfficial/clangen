@@ -18,7 +18,6 @@ import ujson
 from pygame_gui.elements import UIWindow
 from pygame_gui.windows import UIMessageWindow
 
-from scripts.cat.enums import CatRank
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.game_structure import image_cache
@@ -33,8 +32,6 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
     UISurfaceImageButton,
-    UIModifiedScrollingContainer,
-    UIDropDownContainer,
     UIDropDown,
 )
 from scripts.housekeeping.datadir import (

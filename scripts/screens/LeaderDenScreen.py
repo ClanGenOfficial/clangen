@@ -150,11 +150,7 @@ class LeaderDenScreen(Screens):
         # This is here incase the leader comes back
         self.no_leader = False
 
-        if (
-            not game.clan.leader
-            or game.clan.leader.dead
-            or game.clan.leader.status.is_outsider()
-        ):
+        if not game.clan.leader or not game.clan.leader.status.alive_in_player_clan():
             self.no_leader = True
 
         # LEADER DEN BG AND LEADER SPRITE
@@ -988,7 +984,7 @@ class LeaderDenScreen(Screens):
             i
             for i in Cat.all_cats.values()
             if not i.dead
-            and i.status.is_outsider()
+            and not i.status.is_outsider()
             and i.status.is_near(CatGroup.PLAYER_CLAN)
         ]
 

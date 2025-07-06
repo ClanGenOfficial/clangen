@@ -396,12 +396,12 @@ class ClanSettingsScreen(Screens):
                 continue
 
             if cat.dead:
-                if cat.status.group == CatGroup.DARK_FOREST:
-                    df += 1
-                elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
-                    ur += 1
-                else:
+                if cat.status.group == CatGroup.STARCLAN:
                     starclan += 1
+                elif cat.status.group == CatGroup.DARK_FOREST:
+                    df += 1
+                else:
+                    ur += 1
                 continue
 
             if cat.status.is_outsider():

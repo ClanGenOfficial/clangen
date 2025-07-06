@@ -735,7 +735,11 @@ class ListScreen(Screens):
         self.death_status = "dead"
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
-            if the_cat.status.group == CatGroup.STARCLAN and not the_cat.faded:
+            if (
+                the_cat.ID != game.clan.instructor.ID
+                and the_cat.status.group == CatGroup.STARCLAN
+                and not the_cat.faded
+            ):
                 self.full_cat_list.append(the_cat)
 
     def get_df_cats(self):
@@ -747,7 +751,11 @@ class ListScreen(Screens):
         self.full_cat_list = []
 
         for the_cat in Cat.all_cats_list:
-            if the_cat.status.group == CatGroup.DARK_FOREST and not the_cat.faded:
+            if (
+                the_cat.ID != game.clan.instructor.ID
+                and the_cat.status.group == CatGroup.DARK_FOREST
+                and not the_cat.faded
+            ):
                 self.full_cat_list.append(the_cat)
 
     def get_ur_cats(self):
@@ -758,5 +766,10 @@ class ListScreen(Screens):
         self.death_status = "dead"
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
-            if the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE and not the_cat.faded:
+            if (
+                the_cat.ID != game.clan.instructor.ID
+                and the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE
+                and not the_cat.faded
+                and the_cat.status.is_near(CatGroup.PLAYER_CLAN)
+            ):
                 self.full_cat_list.append(the_cat)
