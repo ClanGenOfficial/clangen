@@ -679,7 +679,7 @@ class TestSocialAssignment(unittest.TestCase):
         )
 
         for rank in clancat_ranks:
-            with self.subTest("clancat social assignment"):
+            with self.subTest("clancat social assignment", rank=rank):
                 cat = Cat(status_dict={"rank": rank})
                 self.assertEqual(cat.status.social, CatSocial.CLANCAT)
 

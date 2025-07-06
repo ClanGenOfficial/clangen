@@ -43,7 +43,7 @@ def amount_clanmembers_covered(all_cats, amount_per_med) -> int:
             total_med_number += 2
         elif cat.skills.meets_skill_requirement(SkillPath.HEALER, 2):
             total_med_number += 1.75
-        elif cat.skills.meets_skill_requirement(SkillPath.HEALER, 2):
+        elif cat.skills.meets_skill_requirement(SkillPath.HEALER, 1):
             total_med_number += 1.5
         else:
             total_med_number += 1

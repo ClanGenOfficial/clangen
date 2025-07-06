@@ -71,7 +71,7 @@ class Screens:
             "change gender screen",
         ]:
             game.last_list_forProfile = None
-            self.current_group = "clan"
+            self.current_group = "your_clan"
             self.death_page = "living"
             self.current_page = 1
 
@@ -899,13 +899,12 @@ class Screens:
 
     def set_cat_location_bg(self, cat, bg: str = "default"):
         if cat.dead and not cat.faded:
-            blur_bg = (
-                "darkforest"
-                if cat.status.group == CatGroup.DARK_FOREST
-                else "unknown_residence"
-                if cat.status.group == CatGroup.UNKNOWN_RESIDENCE
-                else "starclan"
-            )
+            if cat.status.group == CatGroup.STARCLAN:
+                blur_bg = "starclan"
+            elif cat.status.group == CatGroup.DARK_FOREST:
+                blur_bg = "darkforest"
+            else:
+                blur_bg = "unknown_residence"
             self.set_bg(bg=bg, blur_bg=blur_bg)
         else:
             self.set_bg(bg=bg)

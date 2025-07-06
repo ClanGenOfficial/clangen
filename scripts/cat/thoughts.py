@@ -331,7 +331,7 @@ class Thoughts:
             life_dir = "dead"
 
         if main_cat.dead:
-            if main_cat.status.is_outsider():
+            if main_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                 spec_dir = "/unknownresidence"
             elif main_cat.status.group == CatGroup.DARK_FOREST:
                 spec_dir = "/darkforest"
