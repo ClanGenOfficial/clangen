@@ -6937,7 +6937,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romance", "likes"],
+                        "values": ["romance", "like"],
                         "amount": 10
                     }
                 ]
@@ -6951,7 +6951,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romance", "likes"],
+                        "values": ["romance", "like"],
                         "amount": 10
                     }
                 ]
