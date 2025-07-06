@@ -55,7 +55,7 @@ class Status:
 
         # converting all the save info into enums
         for entry in self.group_history:
-            entry["group"] = CatGroup(entry["group"])
+            entry["group"] = CatGroup(entry["group"]) if entry["group"] else None
             entry["rank"] = CatRank(entry["rank"])
 
         for entry in self.standing_history:
