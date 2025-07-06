@@ -26,7 +26,7 @@ from scripts.utility import (
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
-from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT_CONDITIONS
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
@@ -569,7 +569,7 @@ class PatrolOutcome:
             for _tag in injury:
                 if _tag in condition_lists:
                     possible_injuries.extend(condition_lists[_tag])
-                elif _tag in INJURIES or _tag in ILLNESSES or _tag in PERMANENT:
+                elif _tag in INJURIES or _tag in ILLNESSES or _tag in PERMANENT_CONDITIONS:
                     possible_injuries.append(_tag)
 
             lethal = True
@@ -608,7 +608,7 @@ class PatrolOutcome:
                     _cat.get_injured(give_injury, lethal=lethal)
                 elif give_injury in ILLNESSES:
                     _cat.get_ill(give_injury, lethal=lethal)
-                elif give_injury in PERMANENT:
+                elif give_injury in PERMANENT_CONDITIONS:
                     _cat.get_permanent_condition(give_injury)
                 else:
                     print("WARNING: No Conditions to Give")

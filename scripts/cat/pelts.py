@@ -780,6 +780,9 @@ class Pelt:
 
     @staticmethod
     def generate_new_pelt(gender: str, parents: tuple = (), age: str = "adult"):
+
+        # TODO fix parents type hinting
+
         new_pelt = Pelt()
 
         pelt_white = new_pelt.init_pattern_color(parents, gender)

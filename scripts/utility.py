@@ -2128,6 +2128,9 @@ def event_text_adjust(
     :param OtherClan other_clan: OtherClan object for other_clan (o_c_n), if present
     :param str chosen_herb: string of chosen_herb (chosen_herb), if present
     """
+
+    # TODO: fix Cat type passing from Cat instances
+
     vowels = ["A", "E", "I", "O", "U"]
 
     if not text:

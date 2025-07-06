@@ -5,6 +5,7 @@ import i18n
 
 from scripts.game_structure.localization import load_lang_resource
 
+# TODO fix method self parameter from Cat
 
 class Thoughts:
     @staticmethod
