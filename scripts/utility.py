@@ -539,7 +539,7 @@ def create_new_cat_block(
         chosen_backstory = choice(stor)
 
     # KITTEN THOUGHT
-    if rank in [CatRank.KITTEN, CatRank.NEWBORN]:
+    if rank in (CatRank.KITTEN, CatRank.NEWBORN):
         thought = i18n.t("hardcoded.thought_new_kitten")
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
@@ -598,12 +598,13 @@ def create_new_cat_block(
             if new_name:
                 name = f"{chosen_cat.name.prefix}"
                 spaces = name.count(" ")
-                if bool(getrandbits(1)) and spaces > 0:  # adding suffix to OG name
-                    # make a list of the words within the name, then add the OG name back in the list
-                    words = name.split(" ")
-                    words.append(name)
-                    new_prefix = choice(words)  # pick new prefix from that list
-                    name = new_prefix
+                if bool(getrandbits(1)):
+                    if spaces > 0:  # adding suffix to OG name
+                        # make a list of the words within the name, then add the OG name back in the list
+                        words = name.split(" ")
+                        words.append(name)
+                        new_prefix = choice(words)  # pick new prefix from that list
+                        name = new_prefix
                     chosen_cat.name.prefix = name
                     chosen_cat.name.give_suffix(
                         pelt=chosen_cat.pelt,
@@ -629,7 +630,7 @@ def create_new_cat_block(
         new_cats = create_new_cat(
             Cat,
             new_name=new_name,
-            kit=False if litter else rank in [CatRank.KITTEN, CatRank.NEWBORN],
+            kit=False if litter else rank in (CatRank.KITTEN, CatRank.NEWBORN),
             # this is for singular kits, litters need this to be false
             litter=litter,
             backstory=chosen_backstory,
@@ -825,10 +826,8 @@ def create_new_cat(
             rank = CatRank.KITTEN
         elif 6 <= moons <= 11:
             rank = CatRank.APPRENTICE
-        elif moons >= 12:
+        else:
             rank = CatRank.WARRIOR
-        elif moons >= 120:
-            rank = CatRank.ELDER
 
     # need to get actual age enum
     age = CatAge.SENIOR
@@ -870,7 +869,11 @@ def create_new_cat(
             if new_cat.status.rank != rank:
                 new_cat.status.change_rank(rank)
             # give apprentice aged cat a mentor
-            if new_cat.status.rank == CatRank.APPRENTICE:
+            if new_cat.status.rank in (
+                CatRank.APPRENTICE,
+                CatRank.MEDICINE_APPRENTICE,
+                CatRank.MEDIATOR_APPRENTICE,
+            ):
                 new_cat.update_mentor()
 
         # NAMES and accs
@@ -976,9 +979,9 @@ def create_new_cat(
                         ] = -2
 
                 # assign scars
-                if chosen_condition in ["lost a leg", "born without a leg"]:
+                if chosen_condition in ("lost a leg", "born without a leg"):
                     new_cat.pelt.scars.append("NOPAW")
-                elif chosen_condition in ["lost their tail", "born without a tail"]:
+                elif chosen_condition in ("lost their tail", "born without a tail"):
                     new_cat.pelt.scars.append("NOTAIL")
 
         # KILL >:D only if we're sposed to tho
