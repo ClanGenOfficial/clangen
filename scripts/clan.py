@@ -167,7 +167,7 @@ class Clan:
         self.all_clans = []
 
         self.starting_members = starting_members
-        if game_mode in ["expanded", "cruel season"]:
+        if game_mode in ("expanded", "cruel season"):
             self.freshkill_pile = FreshkillPile()
         else:
             self.freshkill_pile = None
@@ -475,7 +475,7 @@ class Clan:
         self.save_pregnancy(game.clan)
 
         self.save_clan_settings()
-        if game.clan.game_mode in ["expanded", "cruel season"]:
+        if game.clan.game_mode in ("expanded", "cruel season"):
             self.save_freshkill_pile(game.clan)
 
         game.safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
@@ -1232,7 +1232,7 @@ class Clan:
         all_cats = [
             i
             for i in Cat.all_cats_list
-            if i.status.rank not in [CatRank.LEADER, CatRank.DEPUTY]
+            if i.status.rank not in (CatRank.LEADER, CatRank.DEPUTY)
             and i.status.alive_in_player_clan
         ]
         leader = (
@@ -1252,7 +1252,7 @@ class Clan:
             clan_sociability = round(
                 weight
                 * statistics.mean(
-                    [i.personality.sociability for i in [leader, deputy] if i]
+                    [i.personality.sociability for i in (leader, deputy) if i]
                 )
                 + (1 - weight)
                 * statistics.median([i.personality.sociability for i in all_cats])
@@ -1260,7 +1260,7 @@ class Clan:
             clan_aggression = round(
                 weight
                 * statistics.mean(
-                    [i.personality.aggression for i in [leader, deputy] if i]
+                    [i.personality.aggression for i in (leader, deputy) if i]
                 )
                 + (1 - weight)
                 * statistics.median([i.personality.aggression for i in all_cats])
@@ -1268,12 +1268,12 @@ class Clan:
         elif leader or deputy:
             clan_sociability = round(
                 statistics.mean(
-                    [i.personality.sociability for i in [leader, deputy] if i]
+                    [i.personality.sociability for i in (leader, deputy) if i]
                 )
             )
             clan_aggression = round(
                 statistics.mean(
-                    [i.personality.aggression for i in [leader, deputy] if i]
+                    [i.personality.aggression for i in (leader, deputy) if i]
                 )
             )
         elif all_cats:

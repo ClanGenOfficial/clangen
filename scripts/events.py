@@ -96,7 +96,7 @@ class Events:
         self.check_war()
 
         if (
-            game.clan.game_mode in ["expanded", "cruel season"]
+            game.clan.game_mode in ("expanded", "cruel season")
             and game.clan.freshkill_pile
         ):
             # feed the cats and update the nutrient status
@@ -176,15 +176,12 @@ class Events:
                 )
 
                 if len(ghost_names) > 2:
-                    alive_cats = list(
-                        filter(
-                            lambda kitty: (
-                                kitty.status.rank != CatRank.LEADER
-                                and kitty.status.alive_in_player_clan
-                            ),
-                            Cat.all_cats.values(),
-                        )
-                    )
+                    alive_cats = [
+                        kitty
+                        for kitty in Cat.all_cats.values()
+                        if kitty.status.alive_in_player_clan
+                    ]
+
                     # finds a percentage of the living Clan to become shaken
 
                     if len(alive_cats) == 0:
@@ -238,7 +235,7 @@ class Events:
             Cat.dead_cats.clear()
 
         if (
-            game.clan.game_mode in ["expanded", "cruel season"]
+            game.clan.game_mode in ("expanded", "cruel season")
             and game.clan.freshkill_pile
         ):
             # make a notification if the Clan does not have enough prey
@@ -263,7 +260,7 @@ class Events:
             ),
         )
 
-        if game.clan.game_mode in ["expanded", "cruel season"]:
+        if game.clan.game_mode in ("expanded", "cruel season"):
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
             med_fulfilled = medicine_cats_can_cover_clan(
                 Cat.all_cats.values(), amount_per_med
@@ -414,7 +411,7 @@ class Events:
                 elif info_dict["interaction_type"] == "drive":
                     outsider_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN)
 
-                elif info_dict["interaction_type"] in ["invite", "search"]:
+                elif info_dict["interaction_type"] in ("invite", "search"):
                     # ADD TO CLAN AND CHECK FOR KITS
                     additional_kits = outsider_cat.add_to_clan()
 
@@ -600,27 +597,24 @@ class Events:
             return
         elif game.clan.clan_settings.get("hunting"):
             # handle warrior
-            healthy_warriors = list(
-                filter(
-                    lambda c: c.status.rank.is_any_adult_warrior_like_rank()
-                    and c.status.alive_in_player_clan
-                    and not c.not_working(),
-                    Cat.all_cats.values(),
-                )
-            )
+            healthy_warriors = [
+                cat
+                for cat in Cat.all_cats.values()
+                if cat.status.rank.is_any_adult_warrior_like_rank()
+                and cat.available_to_work()
+            ]
+
             warrior_amount = (
                 len(healthy_warriors) * game.config["focus"]["hunting"][CatRank.WARRIOR]
             )
 
             # handle apprentices
-            healthy_apprentices = list(
-                filter(
-                    lambda c: c.status.rank == CatRank.APPRENTICE
-                    and c.status.alive_in_player_clan
-                    and not c.not_working(),
-                    Cat.all_cats.values(),
-                )
-            )
+            healthy_apprentices = [
+                cat
+                for cat in Cat.all_cats.values()
+                if cat.status.rank == CatRank.APPRENTICE and cat.available_to_work()
+            ]
+
             app_amount = (
                 len(healthy_apprentices)
                 * game.config["focus"]["hunting"][CatRank.APPRENTICE]
@@ -720,7 +714,7 @@ class Events:
                     "raid other clans"
                 ) or random.getrandbits(1):
                     status_use = cat.status.rank
-                    if status_use in [CatRank.DEPUTY, CatRank.LEADER]:
+                    if status_use in (CatRank.DEPUTY, CatRank.LEADER):
                         status_use = CatRank.WARRIOR
                     chance = info_dict[f"injury_chance_{status_use}"]
                     if game.clan.clan_settings.get("raid other clans"):
@@ -948,7 +942,7 @@ class Events:
         # handle nutrition amount
         # (CARE: the cats have to be fed before this happens - should be handled in "one_moon" function)
         if (
-            game.clan.game_mode in ["expanded", "cruel season"]
+            game.clan.game_mode in ("expanded", "cruel season")
             and game.clan.freshkill_pile
         ):
             Condition_Events.handle_nutrient(
@@ -1204,7 +1198,7 @@ class Events:
             # retiring to elder den
             if (
                 not cat.no_retire
-                and cat.status.rank in [CatRank.WARRIOR, CatRank.DEPUTY]
+                and cat.status.rank in (CatRank.WARRIOR, CatRank.DEPUTY)
                 and len(cat.apprentice) < 1
                 and cat.moons > 114
             ):
@@ -1589,7 +1583,7 @@ class Events:
 
         # getting the random honor if it's needed
         random_honor = None
-        if promoted_to in [CatRank.WARRIOR, CatRank.MEDIATOR, CatRank.MEDICINE_CAT]:
+        if promoted_to in (CatRank.WARRIOR, CatRank.MEDIATOR, CatRank.MEDICINE_CAT):
             traits = load_lang_resource("events/ceremonies/ceremony_traits.json")
 
             try:
@@ -1597,7 +1591,7 @@ class Events:
             except KeyError:
                 random_honor = i18n.t("defaults.ceremony_honor")
 
-        if cat.status.rank in [CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR]:
+        if cat.status.rank in (CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR):
             History.add_app_ceremony(cat, random_honor)
 
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[
