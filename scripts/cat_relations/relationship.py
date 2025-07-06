@@ -696,7 +696,7 @@ class Relationship:
         elif group == "mid_pos":
             return ValueLevel.UNDERSTANDS
         elif group == "extreme_pos":
-            return ValueLevel.DEEPLY_KNOWS
+            return ValueLevel.KNOWS_DEEPLY
         else:
             return None
 

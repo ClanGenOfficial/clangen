@@ -32,7 +32,7 @@
         "considers": "considers",
         "relates_to": "relates to",
         "understands": "understands",
-        "deeply_knows": "deeply knows",
+        "knows_deeply": "knows deeply",
         "like": "Like (%{count})",
         "respect": "Respect (%{count})",
         "comfort": "Comfort (%{count})",

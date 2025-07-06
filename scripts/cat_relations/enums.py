@@ -41,7 +41,7 @@ class ValueLevel(StrEnum):
     CONSIDERS = "considers"
     RELATES_TO = "relates_to"
     UNDERSTANDS = "understands"
-    DEEPLY_KNOWS = "deeply_knows"
+    KNOWS_DEEPLY = "knows_deeply"
     # romance
     UNINTERESTED = "uninterested"
     FANCIES = "fancies"
@@ -88,7 +88,7 @@ class ValueLevel(StrEnum):
             self.CONSIDERS,
             self.RELATES_TO,
             self.UNDERSTANDS,
-            self.DEEPLY_KNOWS,
+            self.KNOWS_DEEPLY,
         )
 
     def is_romance_level(self):
@@ -147,7 +147,7 @@ class ValueLevel(StrEnum):
             self.CHERISHES,
             self.ADMIRES,
             self.CONFIDES_IN,
-            self.DEEPLY_KNOWS,
+            self.KNOWS_DEEPLY,
             self.LOVES,
         )
 
