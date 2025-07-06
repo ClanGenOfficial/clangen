@@ -916,22 +916,22 @@ class ChooseAdoptiveParentScreen(Screens):
         valid_parents = [
             inter_cat
             for inter_cat in Cat.all_cats_list
-            if inter_cat.status.in_player_clan()  # Adoptive parents must be part of the clan
-            and inter_cat.ID != self.the_cat.ID  # Can't be your own adoptive parent
-            and inter_cat.moons - self.the_cat.moons
-            >= 14  # Adoptive parent must be at least 14 moons older. -> own child can't adopt you
-            and inter_cat.ID
-            not in self.the_cat.mate  # Can't set your mate your adoptive parent.
-            and inter_cat.ID
-            not in self.the_cat.get_parents()  # Adoptive parents can't already be their parent
-            and self.not_related_to_mate(
+            if inter_cat.status.alive_in_player_clan()  # Adoptive parents must be part of the clan
+               and inter_cat.ID != self.the_cat.ID  # Can't be your own adoptive parent
+               and inter_cat.moons - self.the_cat.moons
+               >= 14  # Adoptive parent must be at least 14 moons older. -> own child can't adopt you
+               and inter_cat.ID
+               not in self.the_cat.mate  # Can't set your mate your adoptive parent.
+               and inter_cat.ID
+               not in self.the_cat.get_parents()  # Adoptive parents can't already be their parent
+               and self.not_related_to_mate(
                 inter_cat
             )  # quick fix TODO: change / remove later
-            and (
+               and (
                 not self.mates_current_parents
                 or self.is_parent_mate(self.the_cat, inter_cat)
             )  # Toggle for only mates of current parents
-            and (
+               and (
                 not self.unrelated_only
                 or inter_cat.ID not in self.the_cat.get_relatives()
             )

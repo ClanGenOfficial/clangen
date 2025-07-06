@@ -633,7 +633,7 @@ class Cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan and self.status.in_player_clan():
+        if game.clan and self.status.alive_in_player_clan():
             self.grief(body)
 
         # exiled cats are special, cus they get kicked out a heaven
@@ -1515,7 +1515,7 @@ class Cat:
             self.status._change_rank(CatRank.KITTEN)
         self.in_camp = 1
 
-        if not self.status.in_player_clan():
+        if not self.status.alive_in_player_clan():
             # this is handled in events.py
             self.personality.set_kit(self.age.is_baby())
             self.thoughts()
@@ -1625,7 +1625,7 @@ class Cat:
         cats_to_choose = [
             iter_cat
             for iter_cat in Cat.all_cats.values()
-            if iter_cat.ID != self.ID and iter_cat.status.in_player_clan()
+            if iter_cat.ID != self.ID and iter_cat.status.alive_in_player_clan()
         ]
         # if there are no cats to interact, stop
         if not cats_to_choose:
@@ -2169,7 +2169,7 @@ class Cat:
         return len(self.permanent_condition) > 0
 
     def available_to_work(self):
-        return not self.dead and self.status.in_player_clan() and not self.not_working()
+        return not self.dead and self.status.alive_in_player_clan() and not self.not_working()
 
     def contact_with_ill_cat(self, cat: Cat):
         """handles if one cat had contact with an ill cat"""

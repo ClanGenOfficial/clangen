@@ -330,12 +330,12 @@ class RoleScreen(Screens):
         self.update_previous_next_cat_buttons()
 
         if game.clan.leader:
-            leader_invalid = game.clan.leader.status.in_player_clan()
+            leader_invalid = game.clan.leader.status.alive_in_player_clan()
         else:
             leader_invalid = True
 
         if game.clan.deputy:
-            deputy_invalid = game.clan.deputy.status.in_player_clan()
+            deputy_invalid = game.clan.deputy.status.alive_in_player_clan()
         else:
             deputy_invalid = True
 

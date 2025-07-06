@@ -141,7 +141,7 @@ class ClanScreen(Screens):
             for i, x in enumerate(game.clan.clan_cats)
             if i < self.max_sprites_displayed
             and Cat.all_cats[x].in_camp
-            and Cat.all_cats[x].status.in_player_clan()
+            and Cat.all_cats[x].status.alive_in_player_clan()
             and (
                 Cat.all_cats[x].status.rank != CatRank.NEWBORN
                 or game.config["fun"]["all_cats_are_newborn"]
@@ -452,7 +452,7 @@ class ClanScreen(Screens):
             first_choices[x].extend(first_choices[x])
 
         for x in game.clan.clan_cats:
-            if not Cat.all_cats[x].status.in_player_clan():
+            if not Cat.all_cats[x].status.alive_in_player_clan():
                 continue
 
             base_pos = None

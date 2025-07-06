@@ -47,7 +47,7 @@ from ..ui.icon import Icon
 #               assigns backstory blurbs to the backstory                      #
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
-    if not cat.backstory and not cat.status.in_player_clan():
+    if not cat.backstory and not cat.status.alive_in_player_clan():
         return event_text_adjust(
             Cat,
             i18n.t(
@@ -297,7 +297,7 @@ class ProfileScreen(Screens):
                 KillCat(self.the_cat)
             elif event.ui_element == self.exile_cat_button:
                 # exiles a living cat
-                if self.the_cat.status.in_player_clan():
+                if self.the_cat.status.alive_in_player_clan():
                     Cat.exile(self.the_cat)
                     self.clear_profile()
                     self.build_profile()
@@ -616,7 +616,7 @@ class ProfileScreen(Screens):
             manager=MANAGER,
             starting_height=2,
         )
-        if not self.the_cat.status.in_player_clan() and (
+        if not self.the_cat.status.alive_in_player_clan() and (
             self.the_cat.status.rank.is_any_medicine_rank()
             or self.the_cat.is_ill()
             or self.the_cat.is_injured()
@@ -673,7 +673,7 @@ class ProfileScreen(Screens):
                 object_id="#mediation_button",
                 manager=MANAGER,
             )
-            if not self.the_cat.status.in_player_clan():
+            if not self.the_cat.status.alive_in_player_clan():
                 self.profile_elements["mediation"].disable()
 
     def generate_column1(self, the_cat):
@@ -904,7 +904,7 @@ class ProfileScreen(Screens):
         bs_text = "this should not appear"
         # if cat has never been part of the player clan, then they get no backstory yet
         if (
-            not the_cat.status.in_player_clan()
+            not the_cat.status.alive_in_player_clan()
             and CatGroup.PLAYER_CLAN not in the_cat.status.all_groups
         ):
             bs_text = the_cat.status.social
@@ -924,7 +924,7 @@ class ProfileScreen(Screens):
             and FRESHKILL_ACTIVE
         ):
             # Check to only show nutrition for clan cats
-            if the_cat.status.in_player_clan():
+            if the_cat.status.alive_in_player_clan():
                 nutr = None
                 if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                     nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -1208,7 +1208,7 @@ class ProfileScreen(Screens):
         else:
             text = i18n.t("cat.backstories.unknown", name=self.the_cat.name)
 
-        if self.the_cat.status.in_player_clan():
+        if self.the_cat.status.alive_in_player_clan():
             beginning = History.get_beginning(self.the_cat)
             if beginning:
                 text += " "
@@ -2101,7 +2101,7 @@ class ProfileScreen(Screens):
             if (
                 self.the_cat.age
                 not in ["young adult", "adult", "senior adult", "senior"]
-                or not self.the_cat.status.in_player_clan()
+                or not self.the_cat.status.alive_in_player_clan()
             ):
                 self.choose_mate_button.disable()
             else:
@@ -2109,13 +2109,13 @@ class ProfileScreen(Screens):
 
         # Roles Tab
         elif self.open_tab == "roles":
-            if not self.the_cat.status.in_player_clan():
+            if not self.the_cat.status.alive_in_player_clan():
                 self.manage_roles.disable()
             else:
                 self.manage_roles.enable()
             if (
                 not self.the_cat.status.rank.is_any_apprentice_rank()
-                or not self.the_cat.status.in_player_clan()
+                or not self.the_cat.status.alive_in_player_clan()
             ):
                 self.change_mentor_button.disable()
             else:
@@ -2195,7 +2195,7 @@ class ProfileScreen(Screens):
                     starting_height=2,
                 )
             self.exile_cat_button.set_text(text)
-            if not self.the_cat.status.in_player_clan():
+            if not self.the_cat.status.alive_in_player_clan():
                 self.exile_cat_button.disable()
 
             if self.the_cat.dead:

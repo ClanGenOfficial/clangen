@@ -49,7 +49,7 @@ def get_alive_clan_queens(living_cats):
     living_kits = [
         cat
         for cat in living_cats
-        if cat.status.in_player_clan() and cat.status.rank.is_baby()
+        if cat.status.alive_in_player_clan() and cat.status.rank.is_baby()
     ]
 
     queen_dict = {}
@@ -59,7 +59,7 @@ def get_alive_clan_queens(living_cats):
         parents = [
             cat.fetch_cat(i)
             for i in parents
-            if cat.fetch_cat(i) and cat.fetch_cat(i).status.in_player_clan()
+            if cat.fetch_cat(i) and cat.fetch_cat(i).status.alive_in_player_clan()
         ]
         if not parents:
             continue
@@ -103,7 +103,7 @@ def find_alive_cats_with_rank(
     alive_cats = [
         i
         for i in Cat.all_cats.values()
-        if i.status.rank in ranks and i.status.in_player_clan()
+        if i.status.rank in ranks and i.status.alive_in_player_clan()
     ]
 
     if working:
@@ -135,7 +135,7 @@ def get_living_clan_cat_count(Cat):
     """
     count = 0
     for the_cat in Cat.all_cats.values():
-        if not the_cat.status.in_player_clan():
+        if not the_cat.status.alive_in_player_clan():
             continue
         count += 1
     return count
@@ -150,7 +150,7 @@ def get_cats_same_age(Cat, cat, age_range=10):
     """
     cats = []
     for inter_cat in Cat.all_cats.values():
-        if not inter_cat.status.in_player_clan():
+        if not inter_cat.status.alive_in_player_clan():
             continue
         if inter_cat.ID == cat.ID:
             continue
@@ -174,7 +174,7 @@ def get_free_possible_mates(cat):
     """Returns a list of available cats, which are possible mates for the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
-        if not inter_cat.status.in_player_clan:
+        if not inter_cat.status.alive_in_player_clan:
             continue
         if inter_cat.ID == cat.ID:
             continue
@@ -207,7 +207,7 @@ def get_random_moon_cat(
     # grab list of possible random cats
     possible_r_c = list(
         filter(
-            lambda c: c.status.in_player_clan() and (c.ID != main_cat.ID),
+            lambda c: c.status.alive_in_player_clan() and (c.ID != main_cat.ID),
             Cat.all_cats.values(),
         )
     )
@@ -1106,7 +1106,7 @@ def get_cats_of_romantic_interest(cat):
     """Returns a list of cats, those cats are love interest of the given cat"""
     cats = []
     for inter_cat in cat.all_cats.values():
-        if not inter_cat.status.in_player_clan():
+        if not inter_cat.status.alive_in_player_clan():
             continue
         if inter_cat.ID == cat.ID:
             continue
@@ -1450,9 +1450,9 @@ def gather_cat_objects(
         elif abbr == "app6" and len(event.patrol_apprentices) >= 6:
             out_set.add(event.patrol_apprentices[5])
         elif abbr == "clan":
-            out_set.update([x for x in Cat.all_cats_list if x.status.in_player_clan()])
+            out_set.update([x for x in Cat.all_cats_list if x.status.alive_in_player_clan()])
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
-            clan_cats = [x for x in Cat.all_cats_list if x.status.in_player_clan()]
+            clan_cats = [x for x in Cat.all_cats_list if x.status.alive_in_player_clan()]
             out_set.update(
                 sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
             )

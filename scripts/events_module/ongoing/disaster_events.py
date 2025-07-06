@@ -181,9 +181,9 @@ class DisasterEvents:
         )
 
         # checking if there are cats of the specified rank
-        if leader.status.in_player_clan():
+        if leader.status.alive_in_player_clan():
             leader_exists = True
-        if deputy.status.in_player_clan():
+        if deputy.status.alive_in_player_clan():
             dep_exists = True
         if med_cats:
             med_exists = True

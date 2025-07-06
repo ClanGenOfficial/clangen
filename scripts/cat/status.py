@@ -522,7 +522,7 @@ class Status:
 
         return past_ranks[-1]
 
-    def in_player_clan(self) -> bool:
+    def alive_in_player_clan(self) -> bool:
         """
         Returns True if the cat is currently part of the player clan.
         """

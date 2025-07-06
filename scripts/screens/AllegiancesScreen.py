@@ -135,7 +135,7 @@ class AllegiancesScreen(Screens):
     def get_allegiances_text(self):
         """Determine Text. Ouputs list of tuples."""
 
-        living_cats = [i for i in Cat.all_cats.values() if i.status.in_player_clan()]
+        living_cats = [i for i in Cat.all_cats.values() if i.status.alive_in_player_clan()]
         living_meds = []
         living_mediators = []
         living_warriors = []
@@ -172,7 +172,7 @@ class AllegiancesScreen(Screens):
         # Clan Leader Box:
         # Pull the Clan leaders
         outputs = []
-        if game.clan.leader and game.clan.leader.status.in_player_clan():
+        if game.clan.leader and game.clan.leader.status.alive_in_player_clan():
             outputs.append(
                 [
                     f"<b><u>{i18n.t('general.leader', count=1).upper()}</u></b>",
@@ -181,7 +181,7 @@ class AllegiancesScreen(Screens):
             )
 
         # Deputy Box:
-        if game.clan.deputy and game.clan.deputy.status.in_player_clan():
+        if game.clan.deputy and game.clan.deputy.status.alive_in_player_clan():
             outputs.append(
                 [
                     f"<b><u>{i18n.t('general.deputy', count=1).upper()}</u></b>",
