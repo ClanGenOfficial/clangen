@@ -579,7 +579,7 @@ class Cat:
         - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
         """
         if (
-            self.status.is_leader()
+            self.status.is_leader
             and "pregnant" in self.injuries
             and game.clan.leader_lives > 0
         ):
@@ -597,8 +597,8 @@ class Cat:
         # Deal with leader death
         text = ""
         darkforest = game.clan.instructor.status.group == CatGroup.DARK_FOREST
-        isoutside = self.status.is_outsider()
-        if self.status.is_leader():
+        isoutside = self.status.is_outsider
+        if self.status.is_leader:
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
                 death_thought = Thoughts.leader_death_thought(
@@ -633,14 +633,14 @@ class Cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan and self.status.alive_in_player_clan():
+        if game.clan and self.status.alive_in_player_clan:
             self.grief(body)
 
         # exiled cats are special, cus they get kicked out a heaven
         if isoutside and self.status.is_exiled():
             self.status.add_to_group(CatGroup.UNKNOWN_RESIDENCE)
 
-        if not self.status.is_outsider() or self.status.is_former_clancat():
+        if not self.status.is_outsider or self.status.is_former_clancat:
             Cat.dead_cats.append(self)
 
         return
@@ -677,7 +677,7 @@ class Cat:
 
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
-            if cat.dead or cat.status.is_outsider() or cat.moons < 1:
+            if cat.dead or cat.status.is_outsider or cat.moons < 1:
                 continue
 
             to_self = cat.relationships.get(self.ID)
@@ -1021,7 +1021,7 @@ class Cat:
     def manage_outside_trait(self):
         """To be run every moon on outside cats
         to keep trait and skills making sense."""
-        if not self.status.is_outsider():
+        if not self.status.is_outsider:
             return
 
         self.personality.set_kit(self.age.is_baby())  # Update kit trait stuff
@@ -1244,7 +1244,7 @@ class Cat:
             for rel in dead_relations:
                 if i == 8:
                     break
-                if rel.cat_to.status.is_leader():
+                if rel.cat_to.status.is_leader:
                     life_giving_leader = rel.cat_to
                     continue
                 life_givers.append(rel.cat_to.ID)
@@ -1303,9 +1303,9 @@ class Cat:
         ancient_leader = False
         if not life_giving_leader:
             if starclan:
-                leaders = [x for x in cats_in_starclan if x.status.is_leader()]
+                leaders = [x for x in cats_in_starclan if x.status.is_leader]
             else:
-                leaders = [x for x in cats_in_darkforest if x.status.is_leader()]
+                leaders = [x for x in cats_in_darkforest if x.status.is_leader]
 
             # choosing if the life giving leader will be the oldest leader or previous leader
             coin_flip = randint(1, 2)
@@ -1511,7 +1511,7 @@ class Cat:
             self.status._change_rank(CatRank.KITTEN)
         self.in_camp = 1
 
-        if not self.status.alive_in_player_clan():
+        if not self.status.alive_in_player_clan:
             # this is handled in events.py
             self.personality.set_kit(self.age.is_baby())
             self.thoughts()
@@ -1555,7 +1555,7 @@ class Cat:
             else:
                 where_kitty = "starclan"
 
-        elif self.status.is_outsider():
+        elif self.status.is_outsider:
             where_kitty = "outside"
         else:
             where_kitty = "inside"
@@ -1621,7 +1621,7 @@ class Cat:
         cats_to_choose = [
             iter_cat
             for iter_cat in Cat.all_cats.values()
-            if iter_cat.ID != self.ID and iter_cat.status.alive_in_player_clan()
+            if iter_cat.ID != self.ID and iter_cat.status.alive_in_player_clan
         ]
         # if there are no cats to interact, stop
         if not cats_to_choose:
@@ -1651,13 +1651,13 @@ class Cat:
         mortality = self.illnesses[illness]["mortality"]
 
         # leader should have a higher chance of death
-        if self.status.is_leader() and mortality != 0:
+        if self.status.is_leader and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status.is_leader():
+            if self.status.is_leader:
                 self.leader_death_heal = True
                 game.clan.leader_lives -= 1
 
@@ -1693,13 +1693,13 @@ class Cat:
         mortality = self.injuries[injury]["mortality"]
 
         # leader should have a higher chance of death
-        if self.status.is_leader() and mortality != 0:
+        if self.status.is_leader and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status.is_leader():
+            if self.status.is_leader:
                 game.clan.leader_lives -= 1
             self.die()
             return False
@@ -1753,13 +1753,13 @@ class Cat:
             return "reveal"
 
         # leader should have a higher chance of death
-        if self.status.is_leader() and mortality != 0:
+        if self.status.is_leader and mortality != 0:
             mortality = int(mortality * 0.7)
             if mortality == 0:
                 mortality = 1
 
         if mortality and not int(random() * mortality):
-            if self.status.is_leader():
+            if self.status.is_leader:
                 game.clan.leader_lives -= 1
             self.die()
             return "continue"
@@ -2167,7 +2167,7 @@ class Cat:
     def available_to_work(self):
         return (
             not self.dead
-            and self.status.alive_in_player_clan()
+            and self.status.alive_in_player_clan
             and not self.not_working()
         )
 
@@ -2231,7 +2231,7 @@ class Cat:
         if (
             (not self.is_ill() and not self.is_injured() and not self.is_disabled())
             or self.dead
-            or self.status.is_outsider()
+            or self.status.is_outsider
         ):
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
@@ -2347,7 +2347,7 @@ class Cat:
         # Check if cat can have a mentor
         if (
             self.dead
-            or self.status.is_outsider()
+            or self.status.is_outsider
             or not self.status.rank.is_any_apprentice_rank()
         ):
             self.__remove_mentor()
@@ -2422,7 +2422,7 @@ class Cat:
             return False
 
         # check that outside status is the same
-        if self.status.is_outsider() != other_cat.status.is_outsider():
+        if self.status.is_outsider != other_cat.status.is_outsider:
             return False
 
         # check for age
@@ -3518,7 +3518,7 @@ class Cat:
             check_cat
             for check_cat in Cat.all_cats_list
             if check_cat.dead == self.dead
-            and check_cat.status.is_outsider() == self.status.is_outsider()
+            and check_cat.status.is_outsider == self.status.is_outsider
             and not check_cat.faded
         ]
 

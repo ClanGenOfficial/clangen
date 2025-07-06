@@ -404,7 +404,7 @@ class ClanSettingsScreen(Screens):
                     ur += 1
                 continue
 
-            if cat.status.is_outsider():
+            if cat.status.is_outsider:
                 cats_outside += 1
                 continue
 

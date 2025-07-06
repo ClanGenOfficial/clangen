@@ -1,3 +1,4 @@
+from collections import defaultdict
 from itertools import groupby
 from random import choice
 from typing import TypedDict, Optional, List, Dict
@@ -25,7 +26,7 @@ class Status:
         CatRank.ROGUE: CatSocial.ROGUE,
         CatRank.KITTYPET: CatSocial.KITTYPET,
     }
-    """A dict with rank as the key and it's matching social status as the value"""
+    """A dict of ranks and their corresponding social status"""
 
     def __init__(
         self,
@@ -81,30 +82,32 @@ class Status:
             self._start_standing()
 
     # SAVE/LOAD
-    def get_enums(self, group, rank, social=None, age=None):
+    def get_enums(self, group, rank=None, social=None, age=None):
         """
         this is mostly to catch the old status strings like exiled and lost
         """
-        if rank and not isinstance(rank, CatRank):
-            if rank.casefold() in ("exiled", "lost", "former clancat"):
-                if age:
-                    rank = self.get_rank_from_age(age)
-                else:  # god this should never happen, but I'm paranoid
-                    rank = CatRank.WARRIOR
-            rank = CatRank(rank)
-        if social and not isinstance(social, CatSocial):
-            if social.casefold() == "former clancat":
-                social = CatSocial.CLANCAT
-            social = CatSocial(social)
-        if group and not isinstance(group, CatGroup):
-            group = CatGroup(group)
-
-        if rank and not isinstance(rank, CatRank):
-            print(f"ERROR: {rank} is not a valid rank")
-        if social and not isinstance(social, CatSocial):
-            print(f"ERROR: {social} is not a valid social")
-        if group and not isinstance(group, CatGroup):
-            print(f"ERROR: {group} is not a valid group")
+        try:
+            if rank and not isinstance(rank, CatRank):
+                if rank.casefold() in ("exiled", "lost", "former clancat"):
+                    if age:
+                        rank = self.get_rank_from_age(age)
+                    else:  # god this should never happen, but I'm paranoid
+                        rank = CatRank.WARRIOR
+                else:
+                    rank = CatRank(rank)
+            if social and not isinstance(social, CatSocial):
+                if social.casefold() == "former clancat":
+                    social = CatSocial.CLANCAT
+                social = CatSocial(social)
+            if group and not isinstance(group, CatGroup):
+                group = CatGroup(group)
+        except TypeError:
+            if rank and not isinstance(rank, CatRank):
+                print(f"ERROR: {rank} is not a valid rank")
+            if social and not isinstance(social, CatSocial):
+                print(f"ERROR: {social} is not a valid social")
+            if group and not isinstance(group, CatGroup):
+                print(f"ERROR: {group} is not a valid group")
 
         return group, rank, social
 
@@ -164,10 +167,9 @@ class Status:
         new_history = {"group": group, "rank": rank, "moons_as": 0}
 
         if not age and not rank:
-            print(
+            raise Exception(
                 "WARNING: group history could not be made due to missing age and rank information"
             )
-            return
 
         # if no rank, we find rank according to age
         if not rank:
@@ -277,15 +279,46 @@ class Status:
         """
         Returns a dict of past held ranks. Key is rank, value is moons spent as that rank.
         """
-        history = {}
+        history = defaultdict(int)
 
         for record in self.group_history:
-            if record["rank"] not in history:
-                history[record["rank"]] = record["moons_as"]
-            else:
-                history[record["rank"]] = history[record["rank"]] + record["moons_as"]
+            history[record["rank"]] += record["moons_as"]
 
         return history
+
+    @property
+    def alive_in_player_clan(self) -> bool:
+        """
+        Returns True if the cat is currently part of the player clan.
+        """
+        return self.group == CatGroup.PLAYER_CLAN
+
+    @property
+    def is_outsider(self) -> bool:
+        """
+        Returns True if the cat isn't part of a clan.
+        """
+        return self.social != CatSocial.CLANCAT
+
+    @property
+    def is_clancat(self) -> bool:
+        """
+        Returns True if the cat is currently a clancat in any clan.
+        """
+        return self.social == CatSocial.CLANCAT
+
+    @property
+    def is_former_clancat(self) -> bool:
+        """
+        Returns True if the cat has been part of any clan in the past, but is not currently a clancat.
+        """
+        return (
+            CatSocial.CLANCAT in self.all_socials and self.social != CatSocial.CLANCAT
+        )
+
+    @property
+    def is_leader(self) -> bool:
+        return self.rank == CatRank.LEADER
 
     @staticmethod
     def get_rank_from_age(age) -> CatRank:
@@ -416,9 +449,7 @@ class Status:
         if self.group and self.group.is_afterlife():
             new_rank = self.rank
         # adding a cat who has been in a clan in the past, they will take their old rank if possible
-        elif self.is_former_clancat() and not (
-            self.group and self.group.is_afterlife()
-        ):
+        elif self.is_former_clancat and not (self.group and self.group.is_afterlife()):
             new_rank = self.find_prior_clan_rank()
             # we don't need to change leaders and deps if they're going to an afterlife
             if (
@@ -455,7 +486,7 @@ class Status:
             return
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
-        if self.is_outsider() and not self.is_former_clancat():
+        if self.is_outsider and not self.is_former_clancat:
             self.add_to_group(new_group=CatGroup.UNKNOWN_RESIDENCE)
             return
 
@@ -503,7 +534,7 @@ class Status:
 
     def find_prior_clan_rank(self, clan: CatGroup = None):
         """
-        Finds the last clan rank held of a current outsider
+        Finds the last held clan rank of a current outsider
         :param clan: pass the name of a clan to only return the cat's prior rank within that clan. Default is None, if
         None then the last rank within any Clan will be returned.
         """
@@ -522,37 +553,6 @@ class Status:
 
         return past_ranks[-1]
 
-    def alive_in_player_clan(self) -> bool:
-        """
-        Returns True if the cat is currently part of the player clan.
-        """
-        return self.group == CatGroup.PLAYER_CLAN
-
-    def is_outsider(self) -> bool:
-        """
-        Returns True if the cat isn't part of a clan.
-        """
-
-        return self.social != CatSocial.CLANCAT
-
-    def is_clancat(self) -> bool:
-        """
-        Returns True if the cat is currently a clancat in any clan.
-        """
-        return self.social == CatSocial.CLANCAT
-
-    def is_former_clancat(self) -> bool:
-        """
-        Returns True if the cat has been part of any clan in the past, but is not currently a clancat.
-        """
-
-        return (
-            CatSocial.CLANCAT in self.all_socials and self.social != CatSocial.CLANCAT
-        )
-
-    def is_leader(self) -> bool:
-        return self.rank == CatRank.LEADER
-
     def is_lost(self, group: CatGroup = None) -> bool:
         """
         Returns True if the cat is considered "lost" by a group.
@@ -568,8 +568,8 @@ class Status:
 
     def is_exiled(self, group: CatGroup = None) -> bool:
         """
-        Returns True if the cat is currently exiled from the given group. Giving no group will return True if cat is
-        exiled from any group.
+        Returns True if cat is exiled from a group.
+        :param group: Use to specify the group to check exiled status against. If no group is given, this will return True if the cat is exiled from any group.
         """
         # if no group given
         if not group:
@@ -586,6 +586,7 @@ class Status:
     def is_near(self, group: CatGroup) -> bool:
         """
         Returns True if the cat is near the specified group
+        :param group: The group the cat is or is not near
         """
         for entry in self.standing_history:
             if entry.get("group") == group and entry.get("near"):

@@ -250,7 +250,7 @@ def json_load():
                 if (
                     not new_cat.dead
                     and cat.get("outside")
-                    and not new_cat.status.is_outsider()
+                    and not new_cat.status.is_outsider
                 ):
                     new_cat.status.become_lost()
 

@@ -163,7 +163,7 @@ class Condition_Events:
         # handle death first, if percentage is 0 or lower, the cat will die
         if cat_nutrition.percentage <= 0:
             text = ""
-            if cat.status.is_leader():
+            if cat.status.is_leader:
                 game.clan.leader_lives -= 1
                 # kill and retrieve leader life text
                 text = get_leader_life_notice()
@@ -175,7 +175,7 @@ class Condition_Events:
 
             event = event_text_adjust(Cat, event.strip(), main_cat=cat)
 
-            if cat.status.is_leader():
+            if cat.status.is_leader:
                 history_event = history_event.replace("m_c ", "").replace(".", "")
                 History.add_death(
                     cat, condition="starving", death_text=history_event.strip()
@@ -187,7 +187,7 @@ class Condition_Events:
 
             # if the cat is the leader and isn't full dead
             # make them malnourished and refill nutrition slightly
-            if cat.status.is_leader() and game.clan.leader_lives > 0:
+            if cat.status.is_leader and game.clan.leader_lives > 0:
                 mal_score = (
                     nutrition_info[cat.ID].max_score / 100 * (MAL_PERCENTAGE + 1)
                 )
@@ -229,7 +229,7 @@ class Condition_Events:
 
         elif MAL_PERCENTAGE >= cat_nutrition.percentage > STARV_PERCENTAGE:
             # because of the smaller 'nutrition buffer', kitten and elder should get the starving condition.
-            if cat.status.rank in [CatRank.KITTEN, CatRank.ELDER]:
+            if cat.status.rank in (CatRank.KITTEN, CatRank.ELDER):
                 illness = "starving"
             else:
                 illness = "malnourished"
@@ -310,10 +310,10 @@ class Condition_Events:
                 cat.get_ill(chosen_illness)
 
                 # create event text
-                if i18n.config.get("locale") == "en" and chosen_illness in [
+                if i18n.config.get("locale") == "en" and chosen_illness in (
                     "running nose",
                     "stomachache",
-                ]:
+                ):
                     illness = f"a {chosen_illness}"
 
                 # try to translate the illness
@@ -380,7 +380,7 @@ class Condition_Events:
             if (
                 not triggered
                 and cat.personality.trait
-                in [
+                in (
                     "adventurous",
                     "bold",
                     "daring",
@@ -392,7 +392,7 @@ class Condition_Events:
                     "troublesome",
                     "vengeful",
                     "impulsive",
-                ]
+                )
                 and random_number <= 15
             ):
                 triggered = True
@@ -457,7 +457,7 @@ class Condition_Events:
             "HINDLEG": ["weak leg"],
         }
 
-        scarless_conditions = [
+        scarless_conditions = (
             "weak leg",
             "paralyzed",
             "raspy lungs",
@@ -472,7 +472,7 @@ class Condition_Events:
             "recurring shock",
             "lasting grief",
             "persistent headaches",
-        ]
+        )
 
         got_condition = False
         perm_condition = None
@@ -561,7 +561,7 @@ class Condition_Events:
 
             # death event text and break bc any other illnesses no longer matter
             if cat.dead or (
-                cat.status.is_leader() and starting_life_count != game.clan.leader_lives
+                cat.status.is_leader and starting_life_count != game.clan.leader_lives
             ):
                 try:
                     possible_string_list = Condition_Events.ILLNESS_DEATH_STRINGS[
@@ -583,7 +583,7 @@ class Condition_Events:
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
 
-                if cat.status.is_leader():
+                if cat.status.is_leader:
                     event = event + " " + get_leader_life_notice()
                     history_event = history_event.replace("m_c ", "").replace(".", "")
                     History.add_death(
@@ -599,7 +599,7 @@ class Condition_Events:
                 break
 
             # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead-dead
-            if cat.status.is_leader() and starting_life_count != game.clan.leader_lives:
+            if cat.status.is_leader and starting_life_count != game.clan.leader_lives:
                 break
 
             # heal the cat
@@ -618,7 +618,7 @@ class Condition_Events:
 
                 cat.illnesses.pop(illness)
                 # make sure complications get reset if infection or fester were healed
-                if illness in ["an infected wound", "a festering wound"]:
+                if illness in ("an infected wound", "a festering wound"):
                     for injury in cat.injuries:
                         keys = cat.injuries[injury].keys()
                         if "complication" in keys:
@@ -668,7 +668,7 @@ class Condition_Events:
                 continue
 
             if cat.dead or (
-                cat.status.is_leader() and starting_life_count != game.clan.leader_lives
+                cat.status.is_leader and starting_life_count != game.clan.leader_lives
             ):
                 triggered = True
 
@@ -692,7 +692,7 @@ class Condition_Events:
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
 
-                if cat.status.is_leader():
+                if cat.status.is_leader:
                     event = event + " " + get_leader_life_notice()
                     history_text = history_text.replace("m_c", " ").replace(".", "")
                     History.add_death(
@@ -869,7 +869,7 @@ class Condition_Events:
                 event = i18n.t(
                     "defaults.complications_death_event", condition=translated_condition
                 )
-                if cat.status.is_leader() and game.clan.leader_lives >= 1:
+                if cat.status.is_leader and game.clan.leader_lives >= 1:
                     event = i18n.t(
                         "defaults.complications_death_event_leader",
                         condition=translated_condition,
@@ -986,10 +986,10 @@ class Condition_Events:
             and cat.status.rank in (CatRank.APPRENTICE, CatRank.WARRIOR)
         ):
             for condition in cat.permanent_condition:
-                if cat.permanent_condition[condition]["severity"] not in [
+                if cat.permanent_condition[condition]["severity"] not in (
                     "major",
                     "severe",
-                ]:
+                ):
                     continue
 
                 if cat.permanent_condition[condition]["severity"] == "severe":
@@ -1025,7 +1025,7 @@ class Condition_Events:
                         )
                     elif game.clan.leader is not None:
                         if (
-                            game.clan.leader.status.alive_in_player_clan()
+                            game.clan.leader.status.alive_in_player_clan
                             and cat.moons < 120
                         ):
                             retire_involved.append(game.clan.leader.ID)

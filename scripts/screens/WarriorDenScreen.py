@@ -91,7 +91,7 @@ class WarriorDenScreen(Screens):
                             mediator_list = list(
                                 filter(
                                     lambda x: x.status.rank == CatRank.MEDIATOR
-                                    and x.status.alive_in_player_clan(),
+                                    and x.status.alive_in_player_clan,
                                     Cat.all_cats_list,
                                 )
                             )

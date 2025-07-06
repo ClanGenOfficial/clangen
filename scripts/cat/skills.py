@@ -510,7 +510,7 @@ class CatSkills:
                     in (CatRank.APPRENTICE, CatRank.KITTEN),
                 )
 
-        if the_cat.status.is_clancat():
+        if the_cat.status.is_clancat:
             if the_cat.status.rank == CatRank.KITTEN:
                 # Check to see if the cat gains a secondary
                 if not self.secondary and not int(random.random() * 22):

@@ -197,7 +197,7 @@ class Thoughts:
 
         if random_cat and random_cat.status.is_lost():
             outside_status = "lost"
-        elif random_cat and random_cat.status.is_outsider():
+        elif random_cat and random_cat.status.is_outsider:
             outside_status = "outside"
         else:
             outside_status = "clancat"
@@ -206,7 +206,7 @@ class Thoughts:
                 return False
         else:
             if (
-                main_cat.status.is_outsider()
+                main_cat.status.is_outsider
             ):  # makes sure that outsiders can get thoughts all the time
                 pass
             else:
@@ -337,7 +337,7 @@ class Thoughts:
                 spec_dir = "/darkforest"
             else:
                 spec_dir = "/starclan"
-        elif main_cat.status.is_outsider():
+        elif main_cat.status.is_outsider:
             spec_dir = "/alive_outside"
         else:
             spec_dir = ""

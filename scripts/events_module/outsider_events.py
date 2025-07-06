@@ -24,7 +24,7 @@ class OutsiderEvents:
                     return
 
         # killing outside cats
-        if cat.status.is_outsider():
+        if cat.status.is_outsider:
             if random.getrandbits(6) == 1 and not cat.dead:
                 death_history = "m_c died outside of the Clan."
                 if cat.status.is_exiled(CatGroup.PLAYER_CLAN):

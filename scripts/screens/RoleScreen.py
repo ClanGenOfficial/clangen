@@ -330,12 +330,12 @@ class RoleScreen(Screens):
         self.update_previous_next_cat_buttons()
 
         if game.clan.leader:
-            leader_invalid = game.clan.leader.status.alive_in_player_clan()
+            leader_invalid = game.clan.leader.status.alive_in_player_clan
         else:
             leader_invalid = True
 
         if game.clan.deputy:
-            deputy_invalid = game.clan.deputy.status.alive_in_player_clan()
+            deputy_invalid = game.clan.deputy.status.alive_in_player_clan
         else:
             deputy_invalid = True
 
@@ -476,7 +476,7 @@ class RoleScreen(Screens):
             self.switch_med_app.enable()
             self.switch_warrior_app.enable()
             self.switch_mediator_app.disable()
-        elif self.the_cat.status.is_leader():
+        elif self.the_cat.status.is_leader:
             self.promote_leader.disable()
             self.promote_deputy.disable()
 
@@ -508,7 +508,7 @@ class RoleScreen(Screens):
     def get_role_blurb(self):
         if self.the_cat.status.rank == CatRank.WARRIOR:
             output = "screens.role.blurb_warrior"
-        elif self.the_cat.status.is_leader():
+        elif self.the_cat.status.is_leader:
             output = "screens.role.blurb_leader"
         elif self.the_cat.status.rank == CatRank.DEPUTY:
             output = "screens.role.blurb_deputy"

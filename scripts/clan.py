@@ -309,7 +309,7 @@ class Clan:
         """
         if (
             cat.ID in Cat.all_cats
-            and cat.status.alive_in_player_clan()
+            and cat.status.alive_in_player_clan
             and cat.ID in Cat.outside_cats
         ):
             # The outside-value must be set to True before the cat can go to cotc
@@ -1233,7 +1233,7 @@ class Clan:
             i
             for i in Cat.all_cats_list
             if i.status.rank not in [CatRank.LEADER, CatRank.DEPUTY]
-            and i.status.alive_in_player_clan()
+            and i.status.alive_in_player_clan
         ]
         leader = (
             Cat.fetch_cat(self.leader)

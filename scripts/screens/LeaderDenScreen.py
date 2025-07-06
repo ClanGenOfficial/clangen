@@ -150,7 +150,7 @@ class LeaderDenScreen(Screens):
         # This is here incase the leader comes back
         self.no_leader = False
 
-        if not game.clan.leader or not game.clan.leader.status.alive_in_player_clan():
+        if not game.clan.leader or not game.clan.leader.status.alive_in_player_clan:
             self.no_leader = True
 
         # LEADER DEN BG AND LEADER SPRITE
@@ -218,7 +218,7 @@ class LeaderDenScreen(Screens):
                 adults = [
                     i
                     for i in Cat.all_cats.values()
-                    if i.status.alive_in_player_clan()
+                    if i.status.alive_in_player_clan
                     and i.status.rank
                     not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
                 ]
@@ -284,7 +284,7 @@ class LeaderDenScreen(Screens):
                 "screens.leader_den.no_cats_outsider"
             )
         # if leader is dead and no one new is leading, give special notice
-        elif self.no_leader or not game.clan.leader.status.alive_in_player_clan():
+        elif self.no_leader or not game.clan.leader.status.alive_in_player_clan:
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
                 "screens.leader_den.no_leader_clan"
@@ -927,7 +927,7 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        if self.focus_cat.status.is_outsider() and not self.focus_cat.status.is_lost(
+        if self.focus_cat.status.is_outsider and not self.focus_cat.status.is_lost(
             CatGroup.PLAYER_CLAN
         ):
             self.focus_button["invite"].set_text("screens.leader_den.invite")
@@ -984,7 +984,7 @@ class LeaderDenScreen(Screens):
             i
             for i in Cat.all_cats.values()
             if not i.dead
-            and not i.status.is_outsider()
+            and not i.status.is_outsider
             and i.status.is_near(CatGroup.PLAYER_CLAN)
         ]
 

@@ -92,7 +92,7 @@ class Relation_Events:
         cat_to_choose_from = []
         for inter_cat in possible_cats:
             # toss out cats who are outside
-            if inter_cat.status.is_outsider():
+            if inter_cat.status.is_outsider:
                 continue
 
             if inter_cat.ID not in cat.relationships:
@@ -128,7 +128,7 @@ class Relation_Events:
             cat_to_choose_from = [
                 cat.all_cats[mate_id]
                 for mate_id in cat.mate
-                if cat.all_cats[mate_id].status.alive_in_player_clan()
+                if cat.all_cats[mate_id].status.alive_in_player_clan
             ]
 
         if not cat_to_choose_from:
@@ -178,11 +178,11 @@ class Relation_Events:
                 types_to_choose.extend([group] * value["frequency"])
                 chosen_type = choice(list(Relation_Events.GROUP_TYPES.keys()))
 
-        if cat.status.is_leader():
+        if cat.status.is_leader:
             chosen_type = "all"
         possible_interaction_cats = list(
             filter(
-                lambda cat: (cat.status.alive_in_player_clan()),
+                lambda cat: (cat.status.alive_in_player_clan),
                 Cat.all_cats.values(),
             )
         )
@@ -227,7 +227,7 @@ class Relation_Events:
         for new_cat in new_cats:
             same_age_cats = get_cats_same_age(Cat, new_cat)
             alive_cats = [
-                i for i in new_cat.all_cats.values() if i.status.alive_in_player_clan()
+                i for i in new_cat.all_cats.values() if i.status.alive_in_player_clan
             ]
             number = game.config["new_cat"]["cat_amount_welcoming"]
 

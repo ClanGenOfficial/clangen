@@ -265,7 +265,7 @@ class Name:
         # then suffixes based on ages (fixes #2004, just trust me)
 
         # Handles suffix assignment with outside cats
-        if self.cat.status.is_former_clancat():
+        if self.cat.status.is_former_clancat:
             if self.cat.moons == 0:
                 adjusted_status = CatRank.NEWBORN
             elif self.cat.moons < 6:

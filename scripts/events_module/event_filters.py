@@ -64,7 +64,7 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
     # check leader life tags
     if hasattr(cat, "ID"):
-        if cat.status.is_leader():
+        if cat.status.is_leader:
             leader_lives = game.clan.leader_lives
 
             life_lookup = {
