@@ -1157,10 +1157,15 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         tool_tip_text: str = None,
     ):
         # creating the colored bar
+        path = "resources/images/relation_bar.png"
+        if -5 < scale_position < 5:
+            path = "resources/images/relation_bar_inactive.png"
+
         bar = pygame.transform.scale(
-            image_cache.load_image("resources/images/relation_bar.png").convert_alpha(),
+            image_cache.load_image(path),
             (relative_rect[2], relative_rect[3]),
         )
+
         # bar element is the base of this entire element
         super().__init__(
             relative_rect,

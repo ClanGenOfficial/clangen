@@ -547,8 +547,8 @@
     },
     "#relation_bar": {
         "colours": {
-            "unfilled_bar": "#2F2918",
-            "filled_bar": "#DC8F92"
+            "unfilled_bar": "#827552",
+            "filled_bar": "#DBA4B4"
         },
         "misc": {
             "shape": "rounded_rectangle",
@@ -556,7 +556,7 @@
             "border_width": "0"
         }
     },
-    "#text_box_26_horizcenter.tool_tip": {"misc": {"rect_width": "80"}},
+    "#text_box_26_horizcenter.tool_tip": {"misc": {"rect_width": "100"}},
     "#events_cat_profile_button": {
         "colours": {
             "normal_bg": "#655934",

@@ -1307,14 +1307,21 @@ def filter_relationship_type(
 
                     # get the level's index within the value's list
                     index = value_groups[rel_value].index(value_level)
+                    allowed_levels = []
                     # if it's a pos level, we allow that index and higher
                     if value_level.is_any_pos():
-                        if level not in value_groups[rel_value][index:-1]:
-                            return False
+                        allowed_levels = value_groups[rel_value][index:]
                     # if it's a neg level, we allow that index and lower
                     elif value_level.is_any_neg():
-                        if level not in value_groups[rel_value][0:index]:
-                            return False
+                        allowed_levels = value_groups[rel_value][0:index]
+
+                    discard = True
+                    for l in level_list:
+                        if l in allowed_levels:
+                            discard = False
+                            break
+                    if discard:
+                        return False
 
     return True
 

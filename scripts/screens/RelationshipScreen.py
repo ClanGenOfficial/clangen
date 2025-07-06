@@ -659,10 +659,7 @@ class RelationshipScreen(Screens):
         if not game.clan.clan_settings["show empty relation"]:
             self.filtered_cats = list(
                 filter(
-                    lambda rel: (
-                        rel.romance + rel.like + rel.respect + rel.comfort + rel.trust
-                    )
-                    > 0,
+                    lambda rel: not rel.is_empty(),
                     self.filtered_cats,
                 )
             )
@@ -860,7 +857,7 @@ class RelationshipScreen(Screens):
                 anchors={"top_target": prev_element},
             )
             self.relation_list_elements[f"{val}_text{i}"].set_tooltip(
-                f"relationships.{val}"
+                i18n.t(f"relationships.{val}", count=num)
             )
             self.relation_list_elements[f"{val}_text{i}"].tool_tip_delay = 0
             self.relation_list_elements[f"{val}_text{i}"].disable()
@@ -886,7 +883,7 @@ class RelationshipScreen(Screens):
                 line_spacing=0.95,
             )
             self.relation_list_elements[f"romance_text{i}"].set_tooltip(
-                f"relationships.romance"
+                i18n.t(f"relationships.romance", count=the_relationship.romance)
             )
             self.relation_list_elements[f"romance_text{i}"].tool_tip_delay = 0
             self.relation_list_elements[f"romance_text{i}"].disable()

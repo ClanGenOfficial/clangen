@@ -564,6 +564,15 @@ class Relationship:
 
         return False
 
+    def is_empty(self) -> bool:
+        return (
+            self.romance_level.is_neutral()
+            and self.trust_level.is_neutral()
+            and self.like_level.is_neutral()
+            and self.comfort_level.is_neutral()
+            and self.respect_level.is_neutral()
+        )
+
     @property
     def romance(self) -> int:
         """0-100 scale, 0 is no romantic interest and 100 is full romantic interest"""
