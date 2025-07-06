@@ -514,7 +514,7 @@ class Relationship:
 
         return filtered
 
-    def get_amount_of_value(self, value_enum: RelValue) -> int | None:
+    def get_amount_of_value(self, value_enum: RelValue) -> Optional[int]:
         if value_enum == RelValue.ROMANCE:
             return self.romance
         elif value_enum == RelValue.LIKE:
