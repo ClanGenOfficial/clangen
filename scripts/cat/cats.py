@@ -469,28 +469,26 @@ class Cat:
 
     @property
     def dead(self) -> bool:
-        if self.status.group and self.status.group.is_afterlife():
-            return True
-        return False
+        return self.status.group and self.status.group.is_afterlife()
 
     @dead.setter
     def dead(self, die: bool):
         if die:
             if self.status.group and self.status.group.is_afterlife():
+                print(
+                    f"WARNING: Tried to kill {self.name} ID: {self.ID} but this cat is already dead!"
+                )
                 return
             self.status.send_to_afterlife()
 
     @property
     def dead_for(self) -> int:
-        count = 0
-        for entry in self.status.group_history:
-            if entry.get("group") in (
-                CatGroup.STAR_CLAN,
-                CatGroup.UNKNOWN_RESIDENCE,
-                CatGroup.DARK_FOREST,
-            ):
-                count += entry.get("moons_as")
-        return count
+        return sum(
+            entry.get("moons_as")
+            for entry in self.status.group_history
+            if entry.get("group")
+            in (CatGroup.STAR_CLAN, CatGroup.UNKNOWN_RESIDENCE, CatGroup.DARK_FOREST)
+        )
 
     @dead_for.setter
     def dead_for(self, moons: int):
@@ -598,9 +596,7 @@ class Cat:
 
         # Deal with leader death
         text = ""
-        darkforest = (
-            True if game.clan.instructor.status.group == CatGroup.DARK_FOREST else False
-        )
+        darkforest = game.clan.instructor.status.group == CatGroup.DARK_FOREST
         isoutside = self.status.is_outsider()
         if self.status.rank == CatRank.LEADER:
             if game.clan.leader_lives > 0:
@@ -618,7 +614,7 @@ class Cat:
                 death_thought = Thoughts.leader_death_thought(self, 0, darkforest)
                 final_thought = event_text_adjust(self, death_thought, main_cat=self)
                 self.thought = final_thought
-                if darkforest is False:
+                if not darkforest:
                     text = (
                         "They've lost their last life and have travelled to StarClan."
                     )
@@ -914,11 +910,10 @@ class Cat:
 
         return ids
 
-    def rank_change(self, new_rank, resort=False):
+    def rank_change(self, new_rank: CatRank, resort=False):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
-        new_status = The new status of a cat. Can be 'apprentice', 'medicine cat apprentice', 'warrior'
-                    'medicine cat', 'elder'.
-        resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
+        :param new_rank: CatRank that the cat is becoming
+        :param resort: If sorting type is 'rank', and resort is True, it will resort the cat list. This should
                 only be true for non-timeskip status changes."""
 
         old_rank = self.status.rank
@@ -938,10 +933,12 @@ class Cat:
             game.clan.remove_med_cat(self)
 
         # updates mentors
-        if self.status.rank == CatRank.APPRENTICE:
-            pass
-
-        elif self.status.rank == CatRank.MEDICINE_APPRENTICE:
+        if self.status.rank in [
+            CatRank.APPRENTICE,
+            CatRank.MEDICINE_APPRENTICE,
+            CatRank.MEDIATOR_APPRENTICE,
+            CatRank.MEDIATOR,
+        ]:
             pass
 
         elif self.status.rank == CatRank.WARRIOR:
@@ -971,12 +968,6 @@ class Cat:
                 game.clan.deputy = None
                 game.clan.deputy_predecessors += 1
 
-        elif self.status.rank == CatRank.MEDIATOR:
-            pass
-
-        elif self.status.rank == CatRank.MEDIATOR_APPRENTICE:
-            pass
-
         # update class dictionary
         self.all_cats[self.ID] = self
 
@@ -987,11 +978,11 @@ class Cat:
     def rank_change_traits_skill(self, mentor):
         """Updates trait and skill upon ceremony"""
 
-        if self.status.rank in [
+        if self.status.rank in (
             CatRank.WARRIOR,
             CatRank.MEDICINE_CAT,
             CatRank.MEDIATOR,
-        ]:
+        ):
             # Give a couple doses of mentor influence:
             if mentor:
                 max_influence = randint(0, 2)
@@ -1259,20 +1250,24 @@ class Cat:
                 life_givers.append(rel.cat_to.ID)
                 i += 1
 
-        cats_in_starclan = [
-            self.fetch_cat(i)
-            for i in game.clan.clan_cats
-            if self.fetch_cat(i)
-            and i not in life_givers
-            and self.fetch_cat(i).status.group == CatGroup.STAR_CLAN
-        ]
-        cats_in_darkforest = [
-            self.fetch_cat(i)
-            for i in game.clan.clan_cats
-            if self.fetch_cat(i)
-            and i not in life_givers
-            and self.fetch_cat(i).status.group == CatGroup.DARK_FOREST
-        ]
+        cats_in_starclan = []
+        if starclan:
+            cats_in_starclan = [
+                self.fetch_cat(i)
+                for i in game.clan.clan_cats
+                if self.fetch_cat(i)
+                and i not in life_givers
+                and self.fetch_cat(i).status.group == CatGroup.STAR_CLAN
+            ]
+        cats_in_darkforest = []
+        if not starclan:
+            cats_in_darkforest = [
+                self.fetch_cat(i)
+                for i in game.clan.clan_cats
+                if self.fetch_cat(i)
+                and i not in life_givers
+                and self.fetch_cat(i).status.group == CatGroup.DARK_FOREST
+            ]
 
         # check amount of life givers, if we need more, then grab from the other dead cats
         if len(life_givers) < 8:
@@ -3523,7 +3518,7 @@ class Cat:
             check_cat
             for check_cat in Cat.all_cats_list
             if check_cat.dead == self.dead
-            and check_cat.status.group == self.status.group
+            and check_cat.status.is_outsider() == self.status.is_outsider()
             and not check_cat.faded
         ]
 
