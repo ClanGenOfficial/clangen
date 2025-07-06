@@ -1973,7 +1973,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["likr"],
+                        "values": ["like"],
                         "amount": -10
                     }
                 ]
