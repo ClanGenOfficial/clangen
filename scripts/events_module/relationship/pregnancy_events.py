@@ -818,7 +818,7 @@ class Pregnancy_Events:
 
                     blood_parent = create_new_cat(
                         Cat,
-                        rank=random.choice(["loner", "kittypet"]),
+                        rank=random.choice((CatRank.LONER, CatRank.KITTYPET)),
                         alive=False,
                         thought=thought,
                         moons=randint(15, 120),
@@ -1168,7 +1168,7 @@ class Pregnancy_Events:
 
         # AGE
         # - decrease the inverse chance if the whole clan is really old
-        avg_age = int(sum([cat.moons for cat in Cat.all_cats.values()]) / living_cats)
+        avg_age = int(sum((cat.moons for cat in Cat.all_cats.values())) / living_cats)
         if avg_age > 80:
             inverse_chance = int(inverse_chance * 0.8)
 
