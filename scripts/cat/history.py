@@ -42,16 +42,16 @@ class History:
         """ 
         want save to look like
         {
-        "beginning":{
-            "clan_born": bool,
-            "birth_season": season,
-            "age": age,
-            "moon": moon
+            "beginning":{
+                "clan_born": bool,
+                "birth_season": season,
+                "age": age,
+                "moon": moon
             },
         "mentor_influence":{
             "trait": {
                 "mentor_id": {
-                    "lawfulness": 0
+                    "lawfulness": 0,
                     ...
                     "strings": []
                 }
@@ -66,19 +66,19 @@ class History:
             "honor": honor,
             "graduation_age": age,
             "moon": moon
-            },
+        },
         "lead_ceremony": full ceremony text,
         "possible_history": {
             "condition name": {
                 "involved": ID
                 "death_text": text
                 "scar_text": text
-                },
+            },
             "condition name": {
                 "involved": ID
                 "death_text": text
                 "scar_text": text
-                },
+            },
             },
         "died_by": [
             {
@@ -86,40 +86,40 @@ class History:
                 "text": text,
                 "moon": moon
             }
-            ],
+        ],
         "scar_events": [
             {
-                'involved': ID,
-                'text': text,
+                "involved": ID,
+                "text": text,
                 "moon": moon
             },
             {
-                'involved': ID,
+                "involved": ID,
                 "text": text,
                 "moon": moon
             }
-            ]
+        ],
         "murder": {
-            "is_murderer": [
+                "is_murderer": [
                     {
-                    "victim": ID,
-                    "revealed": bool,
-                    "moon": moon the murder occurred
-                    "revealed_by": ID of the discoverer
-                    "revelation_moon": moon the murder was revealed
-                    "revelation_text": revealed murder history
+                        "victim": ID,
+                        "revealed": bool,
+                        "moon": moon the murder occurred,
+                        "revealed_by": ID of the discoverer,
+                        "revelation_moon": moon the murder was revealed,
+                        "revelation_text": revealed murder history
                     },
-                ]
-            "is_victim": [
+                ],
+                "is_victim": [
                     {
-                    "murderer": ID,
-                    "revealed": bool,
-                    "text": same text as the death history for this murder (revealed history)
-                    "unrevealed_text": unrevealed death history
-                    "moon": moon the murder occurred
-                    "revealed_by": ID of the discoverer
-                    "revelation_moon": moon the murder was revealed
-                    "revelation_text": revealed death history
+                        "murderer": ID,
+                        "revealed": bool,
+                        "text": same text as the death history for this murder (revealed history),
+                        "unrevealed_text": unrevealed death history,
+                        "moon": moon the murder occurred,
+                        "revealed_by": ID of the discoverer,
+                        "revelation_moon": moon the murder was revealed,
+                        "revelation_text": revealed death history
                     },
                 ]
             }
