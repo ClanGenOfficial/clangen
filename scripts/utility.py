@@ -1152,7 +1152,7 @@ def filter_relationship_type(
         return True
 
     # keeping this list here just for quick reference of what tags are handled here
-    possible_rel_types = [
+    all_possible_tags = [
         "siblings",
         "mates",
         "mates_with_pl",
@@ -1162,8 +1162,9 @@ def filter_relationship_type(
         "mentor/app",
         "app/mentor",
     ]
-    all_possible_tags = set(possible_rel_types + [*ValueLevel])
-    if not set(filter_types).issubset(all_possible_tags):
+    for level_list in value_groups.values():
+        all_possible_tags.extend(level_list)
+    if not set(filter_types).issubset(set(all_possible_tags)):
         print(
             f"WARNING: {[tag for tag in all_possible_tags if tag not in set(filter_types).intersection(all_possible_tags)]} is not a valid relationship_status tag!"
         )

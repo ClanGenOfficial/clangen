@@ -264,53 +264,54 @@ class RelationshipConstraints(unittest.TestCase):
         # then
         # pos test
         for level_list in value_groups.values():
-            for l in level_list:
+            for level in level_list:
                 # last index of the list should be the highest positive
-                if l == level_list[-1]:
+                if level == level_list[-1]:
                     self.assertTrue(
                         cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}"], "test"
+                            high_rel, [f"{level}"], "test"
                         )
                     )
                 # next is middle pos
-                elif l == level_list[-2]:
+                elif level == level_list[-2]:
                     self.assertTrue(
                         cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}"], "test"
+                            high_rel, [f"{level}"], "test"
                         )
                     )
                 # next is the lowest pos
-                elif l == level_list[-3]:
+                elif level == level_list[-3]:
                     self.assertTrue(
                         cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}"], "test"
+                            high_rel, [f"{level}"], "test"
                         )
                     )
 
         # neg test
         for level_list in value_groups.values():
-            for l in level_list:
+            for level in level_list:
                 # first index of the list should be the highest positive
-                if l == level_list[0]:
+                if level == level_list[0]:
                     self.assertTrue(
                         cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}"], "test"
+                            high_rel, [f"{level}"], "test"
                         )
                     )
                 # next is middle pos
-                elif l == level_list[1]:
+                elif level == level_list[1]:
                     self.assertTrue(
                         cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}"], "test"
+                            high_rel, [f"{level}"], "test"
                         )
                     )
                 # next is the lowest pos
-                elif l == level_list[2]:
+                elif level == level_list[2]:
                     self.assertTrue(
                         cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}"], "test"
+                            high_rel, [f"{level}"], "test"
                         )
                     )
+
 
 class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
@@ -400,36 +401,24 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # then
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                calm, troublesome, calm_to_all
-            )
+            cats_fulfill_single_interaction_constraints(calm, troublesome, calm_to_all)
         )
         self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                calm, troublesome, all_to_calm
-            )
+            cats_fulfill_single_interaction_constraints(calm, troublesome, all_to_calm)
         )
 
         self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                troublesome, calm, calm_to_all
-            )
+            cats_fulfill_single_interaction_constraints(troublesome, calm, calm_to_all)
         )
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                troublesome, calm, all_to_calm
-            )
+            cats_fulfill_single_interaction_constraints(troublesome, calm, all_to_calm)
         )
 
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                calm, calm, calm_to_all
-            )
+            cats_fulfill_single_interaction_constraints(calm, calm, calm_to_all)
         )
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                calm, calm, all_to_calm
-            )
+            cats_fulfill_single_interaction_constraints(calm, calm, all_to_calm)
         )
 
     def test_skill(self):
@@ -450,36 +439,24 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # then
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                hunter, fighter, hunter_to_all
-            )
+            cats_fulfill_single_interaction_constraints(hunter, fighter, hunter_to_all)
         )
         self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                hunter, fighter, all_to_hunter
-            )
+            cats_fulfill_single_interaction_constraints(hunter, fighter, all_to_hunter)
         )
 
         self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                fighter, hunter, hunter_to_all
-            )
+            cats_fulfill_single_interaction_constraints(fighter, hunter, hunter_to_all)
         )
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                fighter, hunter, all_to_hunter
-            )
+            cats_fulfill_single_interaction_constraints(fighter, hunter, all_to_hunter)
         )
 
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                hunter, hunter, hunter_to_all
-            )
+            cats_fulfill_single_interaction_constraints(hunter, hunter, hunter_to_all)
         )
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                hunter, hunter, all_to_hunter
-            )
+            cats_fulfill_single_interaction_constraints(hunter, hunter, all_to_hunter)
         )
 
     def test_background(self):
@@ -501,34 +478,22 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # then
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                clan, half, clan_to_all
-            )
+            cats_fulfill_single_interaction_constraints(clan, half, clan_to_all)
         )
         self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                clan, half, all_to_clan
-            )
+            cats_fulfill_single_interaction_constraints(clan, half, all_to_clan)
         )
 
         self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                half, clan, clan_to_all
-            )
+            cats_fulfill_single_interaction_constraints(half, clan, clan_to_all)
         )
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                half, clan, all_to_clan
-            )
+            cats_fulfill_single_interaction_constraints(half, clan, all_to_clan)
         )
 
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                clan, clan, clan_to_all
-            )
+            cats_fulfill_single_interaction_constraints(clan, clan, clan_to_all)
         )
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                clan, clan, all_to_clan
-            )
+            cats_fulfill_single_interaction_constraints(clan, clan, all_to_clan)
         )
