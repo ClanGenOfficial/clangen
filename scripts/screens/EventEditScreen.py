@@ -576,6 +576,10 @@ class EventEditScreen(Screens):
         self.other_clan_info = (
             event["other_clan"] if event.get("other_clan") else self.other_clan_info
         )
+        if not "current_rep" in self.other_clan_info:
+            self.other_clan_info["current_rep"] = None
+        if not "changed" in self.other_clan_info:
+            self.other_clan_info["changed"] = 0
         self.supply_block_list = event["supplies"] if event.get("supplies") else []
         self.future_block_list = (
             event["future_event"] if event.get("future_event") else []
@@ -644,27 +648,47 @@ class EventEditScreen(Screens):
             new_event["r_c"]["backstory"] = self.random_cat_info["backstory"]
         if self.random_cat_info["dies"]:
             new_event["r_c"]["dies"] = self.random_cat_info["dies"]
+        if not new_event["r_c"]:
+            new_event.pop("r_c")
 
         if self.new_cat_block_dict:
-            new_event["new_cat"] = self.new_cat_block_dict.values()
+            new_event["new_cat"] = list(self.new_cat_block_dict.values())
 
         if self.injury_block_list:
+            for block in self.injury_block_list:
+                if not block["scars"]:
+                    block.pop("scars")
             new_event["injury"] = self.injury_block_list
 
         if self.excluded_cats:
             new_event["exclude_involved"] = self.excluded_cats
 
         if self.history_block_list:
+            for block in self.history_block_list:
+                if not block["scar"]:
+                    block.pop("scar")
+                if not block["reg_death"]:
+                    block.pop("reg_death")
+                if not block["lead_death"]:
+                    block.pop("lead_death")
             new_event["history"] = self.history_block_list
 
         if self.relationships_block_list:
             new_event["relationships"] = self.relationships_block_list
 
         if self.outsider_info["current_rep"] or self.outsider_info["changed"]:
-            new_event["outsider"] = self.outsider_info
+            new_event["outsider"] = {}
+            if self.outsider_info["current_rep"]:
+                new_event["current_rep"] = self.outsider_info["current_rep"]
+            if self.outsider_info["changed"]:
+                new_event["changed"] = int(self.outsider_info["changed"])
 
-        if self.other_clan_info["current_rep"] or self.outsider_info["changed"]:
-            new_event["other_clan"] = self.other_clan_info
+        if self.other_clan_info["current_rep"] or self.other_clan_info["changed"]:
+            new_event["other_clan"] = {}
+            if self.other_clan_info["current_rep"]:
+                new_event["current_rep"] = self.other_clan_info["current_rep"]
+            if self.other_clan_info["changed"]:
+                new_event["changed"] = int(self.other_clan_info["changed"])
 
         if self.supply_block_list:
             new_event["supplies"] = self.supply_block_list
@@ -741,7 +765,8 @@ class EventEditScreen(Screens):
                     event_type=self.chosen_type, biome=self.chosen_biome
                 )
             # FUTURE EVENT IDS
-            self.handle_future_event_ids()
+            if self.current_editor_tab == "future effects":
+                self.handle_future_event_ids()
 
         # HOVER PREVIEWS
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
@@ -824,7 +849,8 @@ class EventEditScreen(Screens):
                             if ev["event_id"] == opened_event["event_id"]:
                                 self.old_event_index = old_json.index(ev)
 
-                        self.current_editor_tab = "settings"
+                        if not self.current_editor_tab:
+                            self.current_editor_tab = "settings"
                         self.clear_editor_tab()
                         if self.editor_element.get("save"):
                             self.editor_element["save"].set_text("buttons.save")
@@ -832,7 +858,7 @@ class EventEditScreen(Screens):
 
             # OPEN EDITOR
             elif event.ui_element == self.add_button:
-                self.current_editor_tab = "future effects"
+                self.current_editor_tab = "settings"
                 self.open_event = {}
                 self.old_event_index = None
                 self.clear_event_info()
@@ -923,20 +949,7 @@ class EventEditScreen(Screens):
                 else:
                     game.event_editing = False
                     self.event_text_element["event_text"].hide()
-                    text = self.event_text_element["event_text"].html_text
-
-                    test_dict = {}
-                    for abbr in self.test_cat_names:
-                        pronoun = choice(
-                            [
-                                pro
-                                for pro in self.test_pronouns
-                                if pro["conju"] == self.current_preview_state
-                            ]
-                        )
-                        test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
-
-                    text = process_text(text, test_dict)
+                    text = self.get_processed_text()
                     self.event_text_element["preview_text"].set_text(text)
                     self.event_text_element["preview_text"].show()
 
@@ -970,6 +983,10 @@ class EventEditScreen(Screens):
                 if "t_initial" in self.event_text_info:
                     self.event_text_info = ""
                     self.event_text_element["event_text"].set_text(self.event_text_info)
+                character_count = len(self.get_processed_text())
+                self.event_text_element["counter"].set_text(
+                    f"{character_count} characters after processing"
+                )
 
             # CHANGE EVENT ID
             if self.current_editor_tab == "settings":
@@ -1061,6 +1078,8 @@ class EventEditScreen(Screens):
                     self.get_selected_block_info()["moon_delay"] = [least, most]
 
     def handle_future_event_ids(self):
+        if not self.future_element.get("include_entry"):
+            return
         if self.future_element["include_entry"].is_focused:
             new_id = self.future_element["include_entry"].get_text()
             block_info = self.get_selected_block_info()["pool"]["event_id"]
@@ -1091,6 +1110,23 @@ class EventEditScreen(Screens):
             self.editor_container.on_contained_elements_changed(
                 self.future_element["exclude_display"]
             )
+
+    def get_processed_text(self):
+        text = self.event_text_element["event_text"].html_text
+        test_dict = {}
+
+        if not self.current_preview_state:
+            conju = 1
+        else:
+            conju = self.current_preview_state
+
+        for abbr in self.test_cat_names:
+            pronoun = choice(
+                [pro for pro in self.test_pronouns if pro["conju"] == conju]
+            )
+            test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
+        text = process_text(text, test_dict)
+        return text
 
     def on_use(self):
         """
@@ -1178,12 +1214,12 @@ class EventEditScreen(Screens):
         self.create_event_display()
 
         self.event_text_container = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((290, 30), (0, 0))),
+            ui_scale(pygame.Rect((290, 10), (0, 0))),
             starting_height=1,
             manager=MANAGER,
         )
         self.event_text_element["preview_button"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((-30, 10), (36, 36))),
+            ui_scale(pygame.Rect((-30, 30), (36, 36))),
             Icon.MAGNIFY,
             get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
             manager=MANAGER,
@@ -1194,13 +1230,28 @@ class EventEditScreen(Screens):
         )
 
         self.event_text_element["box"] = UIModifiedImage(
-            ui_scale(pygame.Rect((0, 0), (460, 120))),
+            ui_scale(pygame.Rect((0, 20), (460, 120))),
             get_box(BoxStyles.ROUNDED_BOX, (460, 120)),
             starting_height=1,
             manager=MANAGER,
             container=self.event_text_container,
         )
         self.event_text_element["box"].disable()
+
+        self.event_text_element["character_info"] = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((10, 5), (-1, -1))),
+            "screens.event_edit.event_text_character_count",
+            object_id=get_text_box_theme("#text_box_22_horizleft"),
+            manager=MANAGER,
+            container=self.event_text_container,
+        )
+        self.event_text_element["counter"] = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((250, 5), (200, -1))),
+            "0 characters after processing",
+            object_id=get_text_box_theme("#text_box_22_horizright"),
+            manager=MANAGER,
+            container=self.event_text_container,
+        )
 
         self.editor_element["frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((300, 140), (470, 490))),
@@ -1395,7 +1446,12 @@ class EventEditScreen(Screens):
             available = event_list.copy()
             event_list = []
             for event in available:
+                subtypes = [x for x in event.get("sub_type", [])]
                 if self.search_text in event["event_id"]:
+                    event_list.append(event)
+                elif self.search_text in event["event_text"]:
+                    event_list.append(event)
+                elif self.search_text in subtypes:
                     event_list.append(event)
             event_list = [
                 event
@@ -1464,6 +1520,13 @@ class EventEditScreen(Screens):
         """
         Clears all the saved event info, so we can start fresh.
         """
+        # resetting all tag lists
+        for tag in self.basic_tag_list:
+            tag["setting"] = False
+        for tag in self.rel_tag_list:
+            tag["setting"] = False
+        for tag in self.new_cat_bools:
+            tag["setting"] = False
         # Settings elements
         self.event_text_info = ""
         self.event_id_element = {}
@@ -1519,7 +1582,7 @@ class EventEditScreen(Screens):
             if not self.param_locks.get("main_age")
             else reference_dict["age"],
             "rel_status": []
-            if not self.param_locks.get("get_rel_status")
+            if not self.param_locks.get("main_rel_status")
             else reference_dict["rel_status"],
             "dies": False
             if not self.param_locks.get("main_dies")
@@ -1540,6 +1603,9 @@ class EventEditScreen(Screens):
             if not self.param_locks.get("main_backstory")
             else reference_dict["backstory"],
         }
+        if not self.param_locks.get("main_rel_status"):
+            for tag in self.rel_tag_list:
+                tag["setting"] = False
         reference_dict = self.random_cat_info.copy()
         self.random_cat_info = {
             "rank": []
@@ -1549,7 +1615,7 @@ class EventEditScreen(Screens):
             if not self.param_locks.get("random_age")
             else reference_dict["age"],
             "rel_status": []
-            if not self.param_locks.get("get_rel_status")
+            if not self.param_locks.get("random_rel_status")
             else reference_dict["rel_status"],
             "dies": False
             if not self.param_locks.get("random_dies")
@@ -1674,7 +1740,7 @@ class EventEditScreen(Screens):
         if not self.event_text_element.get("preview_text"):
             self.event_text_element["preview_text"] = UITextBoxTweaked(
                 "",
-                ui_scale(pygame.Rect((48, 10), (435, 100))),
+                ui_scale(pygame.Rect((48, 30), (435, 100))),
                 object_id="#text_box_26_horizleft_pad_10_14",
                 manager=MANAGER,
                 container=self.event_text_container,
@@ -1682,7 +1748,7 @@ class EventEditScreen(Screens):
             )
             self.event_text_element["preview_text"].disable()
             self.event_text_element["event_text"] = pygame_gui.elements.UITextEntryBox(
-                ui_scale(pygame.Rect((48, 10), (435, 100))),
+                ui_scale(pygame.Rect((48, 30), (435, 100))),
                 object_id="#text_box_26_horizleft_pad_10_14",
                 manager=MANAGER,
                 container=self.event_text_container,
@@ -1694,6 +1760,9 @@ class EventEditScreen(Screens):
 
         if self.event_text_info:
             self.event_text_element["event_text"].set_text(self.event_text_info)
+            self.event_text_element["counter"].set_text(
+                f"{len(self.get_processed_text())} characters after processing"
+            )
         else:
             self.event_text_element["event_text"].set_text(
                 "screens.event_edit.event_text_initial"
@@ -2139,7 +2208,8 @@ class EventEditScreen(Screens):
                 f"Event ID is either invalid or a duplicate. Pick a new ID."
             )
 
-        self.event_id_element["check_text"].set_text(text)
+        if self.event_id_element.get("check_text"):
+            self.event_id_element["check_text"].set_text(text)
 
         return valid
 
@@ -3486,7 +3556,7 @@ class EventEditScreen(Screens):
         for rank, box in self.rank_tag_checkbox.items():
             if "text" in rank:
                 continue
-            tag = f"clan:{rank}".replace(" ", "_")
+            tag = f"clan:{rank}"
             if box.checked and tag not in self.tag_info:
                 self.tag_info.append(tag)
             elif not box.checked and tag in self.tag_info:
@@ -4792,7 +4862,7 @@ class EventEditScreen(Screens):
                 "top_target": self.editor_element["outsider"],
             },
             manager=MANAGER,
-            starting_selection=self.other_clan_info["current_rep"],
+            starting_selection=self.other_clan_info.get("current_rep"),
         )
         self.other_clan_element[f"entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((10, 123), (40, 29))),
@@ -4802,7 +4872,7 @@ class EventEditScreen(Screens):
                 "left_target": self.other_clan_element["text"],
                 "top_target": self.editor_element["outsider"],
             },
-            initial_text=str(self.other_clan_info["changed"]),
+            initial_text=str(self.other_clan_info.get("changed")),
         )
         prev_element = None
         for button, icon in self.amount_buttons.items():
@@ -5014,6 +5084,7 @@ class EventEditScreen(Screens):
         if self.lock_buttons:
             for ele in self.lock_buttons.values():
                 ele.kill()
+            self.lock_buttons.clear()
         if self.open_block == "injury":
             self.create_injury_editor()
             if self.injury_block_list:
@@ -6499,7 +6570,7 @@ class EventEditScreen(Screens):
         if self.current_cat_dict != self.selected_new_cat_info:
             label = "main" if self.current_cat_dict == self.main_cat_info else "random"
             self.create_lock(
-                name=f"{label}_trait",
+                name=f"{label}_backstory",
                 top_anchor=self.backstory_element["pools"],
                 left_anchor=self.backstory_element["display"],
             )
@@ -6740,9 +6811,15 @@ class EventEditScreen(Screens):
             anchors={"top_target": editor["intro"]},
             check=self.current_cat_dict["dies"],
         )
+        # this checks if death is requried and locks out user input
         if "death" in self.type_info and self.current_editor_tab == "main cat":
             self.death_element["checkbox"].check()
             self.death_element["checkbox"].disable()
+            self.current_cat_dict["dies"] = True
+
+        # this just checks if the cat's dict says they should die
+        if self.current_cat_dict["dies"] and not self.death_element["checkbox"].checked:
+            self.death_element["checkbox"].check()
 
         self.death_element["text"] = UITextBoxTweaked(
             "screens.event_edit.death_info",
@@ -6753,12 +6830,6 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={"top_target": editor["intro"]},
         )
-        if (
-            "death" in self.type_info
-            and self.current_cat_dict == self.main_cat_info
-            and not self.current_cat_dict["dies"]
-        ):
-            self.current_cat_dict["dies"] = True
 
         self.death_element["display"] = UITextBoxTweaked(
             f"dies: {self.current_cat_dict['dies']}",
@@ -7233,7 +7304,7 @@ class EventEditScreen(Screens):
         rank_list = Cat.rank_sort_order.copy()
         rank_list.append("apps")
         for rank in rank_list:
-            if f"clan_{rank}" in self.tag_info:
+            if f"clan:{rank}" in self.tag_info:
                 setting = True
             else:
                 setting = False

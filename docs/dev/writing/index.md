@@ -256,15 +256,15 @@ When in doubt, please ask for feedback! We have multiple disabled contributors o
 - string [str] - Used to refer to a string of text.  For example, patrol events have multiple outcomes and each of those outcomes are individual strings.  Strings are encased between quotations like so `"this is a string."`.
 - list - A collection of items held within brackets like so `[item0, item1, item2, item3]`. Note that code starts counting at 0, not at 1.  Also note the comma between each item, this is *required* for the list to work properly.
 - dictionary [dict] - Used to hold keys and their values.  Dictionaries are encased by curly braces.  Think of keys as a word in a dictionary, and the value as it's definition.  For example:
-```py
+```python
 {
-"key0": "I am the key's value",
-"key1": ["Values", "can", "be", "lists", "too"],
-"key2": "don't forget that key-value pairs need commas between them!",
-"key3": {
-  "you": "can even put dictionaries",
-  "inside": "other dictionaries!"
-}
+    "key0": "I am the key's value",
+    "key1": ["Values", "can", "be", "lists", "too"],
+    "key2": "don't forget that key-value pairs need commas between them!",
+    "key3": {
+        "you": "can even put dictionaries",
+        "inside": "other dictionaries!"
+    }
 }
 ```
 - integer [int] - A number.  This cannot be a decimal.

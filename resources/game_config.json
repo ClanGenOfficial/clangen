@@ -265,7 +265,9 @@
 		]
 	},
 	"event_generation": {
-		"debug_ensure_event_id": null
+		"debug_ensure_event_id": null,
+		"debug_type_override": null,
+		"debug_override_requirements": false
 	},
 	"death_related": {
 		"leader_death_chance": 50,
@@ -292,7 +294,7 @@
 		"expanded_injury_chance": 250,
 		"cruel season_injury_chance": 150,
 		"permanent_condition_chance": 15,
-		"war_injury_modifier": 240
+		"war_injury_modifier": 225
 	},
 	"clan_creation": {
 		"rerolls": 3,

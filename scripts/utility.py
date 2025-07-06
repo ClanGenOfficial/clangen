@@ -994,8 +994,7 @@ def create_new_cat(
         # and they exist now
         created_cats.append(new_cat)
         game.clan.add_cat(new_cat)
-        history = History()
-        history.add_beginning(new_cat)
+        new_cat.history.add_beginning()
 
         # create relationships
         new_cat.create_relationships_new_cat()
@@ -2621,6 +2620,11 @@ def update_sprite(cat):
 
 
 def update_mask(cat):
+    if cat.faded or cat.dead:
+        # should never need a mask since they can't appear on the Clan screen
+        cat.sprite_mask = None
+        return
+
     val = pygame.mask.from_surface(
         pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50))), threshold=250
     )

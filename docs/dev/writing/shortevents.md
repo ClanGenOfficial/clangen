@@ -12,7 +12,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
 
 ## Event Format:
 ```json
-  {
+{
     "event_id": "",
     "location": [],
     "season": [],
@@ -22,62 +22,62 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
     "event_text": "event text here",
     "new_accessory": [],
     "m_c": {
-      "age": [],
-      "status": [],
-      "relationship_status": [],
-      "skill": [],
-      "not_skill": [],
-      "trait": [],
-      "not_trait": [],
-      "backstory": [],
-      "dies": false
+        "age": [],
+        "status": [],
+        "relationship_status": [],
+        "skill": [],
+        "not_skill": [],
+        "trait": [],
+        "not_trait": [],
+        "backstory": [],
+        "dies": false
     },
     "r_c": {
-      "age": [],
-      "status": [],
-      "relationship_status": [],
-      "skill": [],
-      "not_skill": [],
-      "trait": [],
-      "not_trait": [],
-      "backstory": [],
-      "dies": false
+        "age": [],
+        "status": [],
+        "relationship_status": [],
+        "skill": [],
+        "not_skill": [],
+        "trait": [],
+        "not_trait": [],
+        "backstory": [],
+        "dies": false
     },
     "new_cat": [
-      []
+        []
     ],
     "injury": [
-       {
-        "cats": [],
-        "injuries": [],
-        "scars": []
-       }
+        {
+            "cats": [],
+            "injuries": [],
+            "scars": []
+        }
     ],
     "exclude_involved": [],
     "history:": [
-      {
-      "cats": [],
-      "scar": "",
-      "reg_death": "",
-      "lead_death": ""
-      }
+        {
+            "cats": [],
+            "scar": "",
+            "reg_death": "",
+            "lead_death": ""
+        }
     ],
     "relationships": [
-      {
-        "cats_from": [],
-        "cats_to": [],
-        "mutual": false,
-        "values": [],
-        "amount": 0
-      }
+        {
+            "cats_from": [],
+            "cats_to": [],
+            "mutual": false,
+            "values": [],
+            "amount": 0
+        }
     ],
     "outsider": {
-      "current_rep": [],
-      "changed": 0
+        "current_rep": [],
+        "changed": 0
     },
     "other_clan": {
-      "current_rep": [],
-      "changed": 0
+        "current_rep": [],
+        "changed": 0
     },
     "supplies": [
         {
@@ -87,8 +87,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         }
     ],
     "future_event": []
-
-  }
+}
 ```
 
 ***
@@ -323,8 +322,8 @@ lowercase season names + "any"
 >
 >```
 >[
->	[cat details],
->	[cat 2 details]
+>    [cat details],
+>    [cat 2 details]
 >]
 >```
 >
@@ -410,12 +409,12 @@ lowercase season names + "any"
 >Block:
 >
 >```json
->      {
->      "cats": [],
->      "scar": "",
->      "reg_death": "",
->      "lead_death": ""
->      }
+>    {
+>        "cats": [],
+>        "scar": "",
+>        "reg_death": "",
+>        "lead_death": ""
+>    }
 >```
 
 | text_type    | "custom history message"                            |
@@ -431,11 +430,11 @@ lowercase season names + "any"
 >
 >```
 >{
->	 "cats_from": [],
->   "cats_to": [],
->	 "mutual": false
->	 "values" [],
->	 "amount": 5
+>    "cats_from": [],
+>    "cats_to": [],
+>    "mutual": false,
+>    "values" [],
+>    "amount": 5
 >}
 >```
 >
