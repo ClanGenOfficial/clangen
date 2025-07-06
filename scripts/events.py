@@ -412,8 +412,7 @@ class Events:
             # SUCCESS/FAIL
             if info_dict["success"]:
                 if info_dict["interaction_type"] == "hunt":
-                    History.add_death(
-                        outsider_cat,
+                    outsider_cat.history.add_death(
                         death_text=history_text_adjust(
                             i18n.t("hardcoded.lead_den_killed"),
                             other_clan_name=None,
@@ -1644,7 +1643,7 @@ class Events:
                 random_honor = i18n.t("defaults.ceremony_honor")
 
         if cat.status in ["warrior", "medicine cat", "mediator"]:
-            History.add_app_ceremony(cat, random_honor)
+            cat.history.add_app_ceremony(random_honor)
 
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[
             random.choice(list(possible_ceremonies))

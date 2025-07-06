@@ -1087,7 +1087,7 @@ class KillCat(UIWindow):
             object_id="#kill_cat_window",
             resizable=False,
         )
-        self.history = History()
+
         self.the_cat = cat
         self.take_all = False
         self.back_button = UIImageButton(
@@ -1166,7 +1166,7 @@ class KillCat(UIWindow):
                 container=self,
             )
 
-        elif History.get_death_or_scars(self.the_cat, death=True):
+        elif self.the_cat.history.get_death_or_scars(death=True):
             # This should only occur for retired leaders.
 
             self.prompt = process_text(i18n.t("windows.death_prompt"), cat_dict)
@@ -1250,7 +1250,7 @@ class KillCat(UIWindow):
                         game.clan.leader_lives -= 1
 
                 self.the_cat.die()
-                self.history.add_death(self.the_cat, death_message)
+                self.the_cat.history.add_death(death_message)
                 update_sprite(self.the_cat)
                 game.all_screens["profile screen"].exit_screen()
                 game.all_screens["profile screen"].screen_switches()

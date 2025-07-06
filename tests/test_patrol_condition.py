@@ -117,7 +117,7 @@ class TestCondition(unittest.TestCase):
         clan = Clan()
         patrol_cat = Cat(moons=20)
         patrol_cat.status = "warrior"
-        patrol_cat.history = History()
+        patrol_cat.history = History(cat=patrol_cat)
         patrol = Patrol()
         patrol.add_patrol_cats([patrol_cat], clan)
         patrol_event = patrol.generate_patrol_events([self.cold_patrol])

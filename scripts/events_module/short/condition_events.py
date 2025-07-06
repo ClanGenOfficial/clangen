@@ -177,11 +177,11 @@ class Condition_Events:
 
             if cat.status == "leader":
                 history_event = history_event.replace("m_c ", "").replace(".", "")
-                History.add_death(
-                    cat, condition="starving", death_text=history_event.strip()
+                cat.history.add_death(
+                    condition="starving", death_text=history_event.strip()
                 )
             else:
-                History.add_death(cat, condition="starving", death_text=history_event)
+                cat.history.add_death(condition="starving", death_text=history_event)
 
             cat.die()
 
@@ -597,11 +597,11 @@ class Condition_Events:
                 if cat.status == "leader":
                     event = event + " " + get_leader_life_notice()
                     history_event = history_event.replace("m_c ", "").replace(".", "")
-                    History.add_death(
-                        cat, condition=illness, death_text=history_event.strip()
+                    cat.history.add_death(
+                        condition=illness, death_text=history_event.strip()
                     )
                 else:
-                    History.add_death(cat, condition=illness, death_text=history_event)
+                    cat.history.add_death(condition=illness, death_text=history_event)
 
                 # clear event list to get rid of any healed or risk event texts from other illnesses
                 event_list.clear()
@@ -615,7 +615,7 @@ class Condition_Events:
 
             # heal the cat
             elif cat.healed_condition is True:
-                History.remove_possible_history(cat, illness)
+                cat.history.remove_possible_history(illness)
                 game.switches["skip_conditions"].append(illness)
                 # gather potential event strings for healed illness
                 possible_string_list = Condition_Events.ILLNESS_HEALED_STRINGS[illness]
@@ -706,12 +706,12 @@ class Condition_Events:
                 if cat.status == "leader":
                     event = event + " " + get_leader_life_notice()
                     history_text = history_text.replace("m_c", " ").replace(".", "")
-                    History.add_death(
-                        cat, condition=injury, death_text=history_text.strip()
+                    cat.history.add_death(
+                        condition=injury, death_text=history_text.strip()
                     )
 
                 else:
-                    History.add_death(cat, condition=injury, death_text=history_text)
+                    cat.history.add_death(condition=injury, death_text=history_text)
 
                 # clear event list first to make sure any heal or risk events from other injuries are not shown
                 event_list.clear()
@@ -748,7 +748,7 @@ class Condition_Events:
 
                 game.herb_events_list.append(event)
 
-                History.remove_possible_history(cat, injury)
+                cat.history.remove_possible_history(injury)
                 cat.injuries.pop(injury)
                 cat.healed_condition = False
 
@@ -885,18 +885,16 @@ class Condition_Events:
                     )
                 event_list.append(event)
 
-                if cat.status != "leader":
-                    History.add_death(
-                        cat,
-                        death_text=i18n.t("defaults.complications_death_history"),
-                        condition=translated_condition,
-                    )
-                else:
-                    History.add_death(
-                        cat,
+                if cat.status == "leader":
+                    cat.history.add_death(
                         death_text=i18n.t(
                             "defaults.complications_death_history_leader"
                         ),
+                        condition=translated_condition,
+                    )
+                else:
+                    cat.history.add_death(
+                        death_text=i18n.t("defaults.complications_death_history"),
                         condition=translated_condition,
                     )
 

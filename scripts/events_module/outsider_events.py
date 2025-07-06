@@ -45,7 +45,7 @@ class OutsiderEvents:
                         "m_c died while being lost and trying to get back to the Clan."
                     )
 
-                History.add_death(cat, death_text=death_history)
+                cat.history.add_death(death_text=death_history)
                 cat.die()
                 game.cur_events_list.append(
                     Single_Event(text, "birth_death", cat_dict={"m_c": cat})

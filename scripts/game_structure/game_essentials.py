@@ -429,7 +429,7 @@ class Game:
 
             inter_cat.save_condition()
 
-            if inter_cat.history:
+            if inter_cat._history:
                 inter_cat.save_history(directory + "/history")
                 # after saving, dump the history info
                 inter_cat.history = None

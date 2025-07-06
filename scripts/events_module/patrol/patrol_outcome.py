@@ -913,13 +913,13 @@ class PatrolOutcome:
                 )
                 affect_skills = cat.skills.mentor_influence(mentor)
                 if affect_personality:
-                    History.add_facet_mentor_influence(
-                        cat, mentor.ID, affect_personality[0], affect_personality[1]
+                    cat.history.add_facet_mentor_influence(
+                        mentor.ID, affect_personality[0], affect_personality[1]
                     )
                     print(str(cat.name), affect_personality)
                 if affect_skills:
-                    History.add_skill_mentor_influence(
-                        cat, affect_skills[0], affect_skills[1], affect_skills[2]
+                    cat.history.add_skill_mentor_influence(
+                        affect_skills[0], affect_skills[1], affect_skills[2]
                     )
                     print(str(cat.name), affect_skills)
 
@@ -972,7 +972,7 @@ class PatrolOutcome:
                 else history_text.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
             )
 
-            History.add_scar(cat, history_text)
+            cat.history.add_scar(history_text)
         else:
             print("WARNING: Scar occured, but scar history is missing")
 
@@ -1017,11 +1017,8 @@ class PatrolOutcome:
                 else history_scar.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
             )
 
-        History.add_possible_history(
-            cat,
-            condition=condition,
-            death_text=final_death_history,
-            scar_text=history_scar,
+        cat.history.add_possible_history(
+            condition=condition, death_text=final_death_history, scar_text=history_scar
         )
 
     def __handle_death_history(self, cat: Cat, patrol: "Patrol") -> None:
@@ -1045,4 +1042,4 @@ class PatrolOutcome:
                 "o_c_n", f"{str(patrol.other_clan.name)}Clan"
             )
 
-        History.add_death(cat, death_text=final_death_history)
+        cat.history.add_death(death_text=final_death_history)

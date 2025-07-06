@@ -266,8 +266,8 @@ class HandleShortEvents:
             else:
                 other_cat = self.random_cat
             History.reveal_murder(
-                cat=self.main_cat,
-                other_cat=other_cat,
+                murderer=self.main_cat,
+                discoverer=other_cat,
                 cat_class=Cat,
                 victim=self.victim_cat,
             )
@@ -638,14 +638,13 @@ class HandleShortEvents:
                         self.current_lives -= 1
                         if self.current_lives != game.clan.leader_lives:
                             while self.current_lives > game.clan.leader_lives:
-                                History.add_death(
-                                    self.main_cat,
+                                self.main_cat.history.add_death(
                                     "multi_lives",
                                     other_cat=self.random_cat,
                                 )
                                 self.current_lives -= 1
-                    History.add_death(
-                        self.main_cat, death_history, other_cat=self.random_cat
+                    self.main_cat.history.add_death(
+                        death_history, other_cat=self.random_cat
                     )
 
             # random_cat history
@@ -671,14 +670,13 @@ class HandleShortEvents:
                         self.current_lives -= 1
                         if self.current_lives != game.clan.leader_lives:
                             while self.current_lives > game.clan.leader_lives:
-                                History.add_death(
-                                    self.random_cat,
+                                self.random_cat.history.add_death(
                                     "multi_lives",
                                     other_cat=self.random_cat,
                                 )
                                 self.current_lives -= 1
-                    History.add_death(
-                        self.random_cat, death_history, other_cat=self.random_cat
+                    self.random_cat.history.add_death(
+                        death_history, other_cat=self.random_cat
                     )
 
             # multi_cat history
@@ -703,9 +701,9 @@ class HandleShortEvents:
                         self.current_lives -= 1
                         if self.current_lives != game.clan.leader_lives:
                             while self.current_lives > game.clan.leader_lives:
-                                History.add_death(cat, "multi_lives")
+                                cat.history.add_death("multi_lives")
                                 self.current_lives -= 1
-                    History.add_death(cat, death_history)
+                    cat.history.add_death(death_history)
 
             # new_cat history
             for abbr in block["cats"]:
@@ -718,8 +716,8 @@ class HandleShortEvents:
                                 game.clan,
                                 self.random_cat,
                             )
-                            History.add_death(
-                                new_cats[i], death_history, other_cat=self.random_cat
+                            new_cats[i].history.add_death(
+                                death_history, other_cat=self.random_cat
                             )
 
     def handle_injury(self):
@@ -788,7 +786,7 @@ class HandleShortEvents:
                     history_text = history_text_adjust(
                         block["scar"], self.other_clan_name, game.clan, self.random_cat
                     )
-                    History.add_scar(cat, history_text)
+                    cat.history.add_scar(history_text)
                     break
         else:
             for block in self.chosen_event.history:
@@ -813,7 +811,7 @@ class HandleShortEvents:
                             self.random_cat,
                         )
                     if possible_scar or possible_death:
-                        History.add_possible_history(
+                        cat.history.add_possible_history(
                             cat,
                             injury,
                             scar_text=possible_scar,
@@ -847,6 +845,7 @@ class HandleShortEvents:
             reduce_amount = -int(freshkill_pile.total_amount / 8)
         elif "increase" in adjustment:
             increase_amount = adjustment.split("_")[1]
+            increase_amount = int(increase_amount)
 
         if reduce_amount != 0:
             freshkill_pile.remove_freshkill(reduce_amount, take_random=True)

@@ -40,7 +40,6 @@ class Relationship:
         log=None,
     ) -> None:
         self.chosen_interaction = None
-        self.history = History()
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
@@ -204,9 +203,9 @@ class Relationship:
 
                 if possible_scar or possible_death:
                     for condition in injuries:
-                        self.history.add_possible_history(
-                            injured_cat,
+                        injured_cat.history.add_possible_history(
                             condition,
+                            status=injured_cat.status,
                             scar_text=possible_scar,
                             death_text=possible_death,
                         )

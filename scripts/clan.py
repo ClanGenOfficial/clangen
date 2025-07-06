@@ -102,7 +102,6 @@ class Clan:
         starting_season="Newleaf",
         self_run_init_functions=True,
     ):
-        self.history = History()
         if name == "":
             return
 
@@ -314,6 +313,7 @@ class Clan:
         ):
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
+            cat.pelt.rebuild_sprite = True
             if cat.ID in self.darkforest_cats:
                 self.darkforest_cats.remove(cat.ID)
             if cat.ID in self.unknown_cats:
@@ -329,6 +329,7 @@ class Clan:
         """
         if cat.ID in Cat.all_cats and cat.dead and cat.df:
             self.darkforest_cats.append(cat.ID)
+            cat.pelt.rebuild_sprite = True
             if cat.ID in self.starclan_cats:
                 self.starclan_cats.remove(cat.ID)
             if cat.ID in self.unknown_cats:
@@ -347,6 +348,7 @@ class Clan:
         """
         if cat.ID in Cat.all_cats and cat.dead and cat.outside:
             self.unknown_cats.append(cat.ID)
+            cat.pelt.rebuild_sprite = True
             if cat.ID in self.starclan_cats:
                 self.starclan_cats.remove(cat.ID)
             if cat.ID in self.darkforest_cats:
@@ -414,8 +416,9 @@ class Clan:
         """
         TODO: DOCS
         """
+
         if leader:
-            self.history.add_lead_ceremony(leader)
+            leader.history.add_lead_ceremony()
             self.leader = leader
             Cat.all_cats[leader.ID].status_change("leader")
             self.leader_predecessors += 1

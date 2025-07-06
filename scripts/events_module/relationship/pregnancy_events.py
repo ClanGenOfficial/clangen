@@ -497,7 +497,8 @@ class Pregnancy_Events:
                 death_event = i18n.t(
                     "conditions.pregnancy.kitting_death", name=cat.name
                 )
-            History.add_death(cat, death_text=death_event)
+            cat.history.add_death(death_text=death_event)
+
         elif not cat.outside:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if "blood loss" in cat.injuries:
@@ -509,7 +510,7 @@ class Pregnancy_Events:
                     death_event = i18n.t(
                         "conditions.pregnancy.kitting_death_harsh", name=cat.name
                     )
-                History.add_possible_history(cat, "blood loss", death_text=death_event)
+                cat.history.add_possible_history("blood loss", death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
                 meds = get_alive_status_cats(
@@ -904,7 +905,7 @@ class Pregnancy_Events:
             clan.add_cat(kit)
 
             #### GIVE HISTORY ######
-            History.add_beginning(kit, clan_born=bool(cat))
+            kit.history.add_beginning(clan_born=bool(cat))
 
         # check other cats of Clan for siblings
         for kitten in all_kitten:
