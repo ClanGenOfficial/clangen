@@ -565,7 +565,7 @@ class ListScreen(Screens):
             and game.clan.instructor.status.group == CatGroup.DARK_FOREST
         ) or (
             self.current_group == "starclan"
-            and game.clan.instructor.status.group == CatGroup.STAR_CLAN
+            and game.clan.instructor.status.group == CatGroup.STARCLAN
         ):
             if game.clan.instructor in self.full_cat_list:
                 self.full_cat_list.remove(game.clan.instructor)
@@ -735,7 +735,7 @@ class ListScreen(Screens):
         self.death_status = "dead"
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
-            if the_cat.status.group == CatGroup.STAR_CLAN and not the_cat.faded:
+            if the_cat.status.group == CatGroup.STARCLAN and not the_cat.faded:
                 self.full_cat_list.append(the_cat)
 
     def get_df_cats(self):

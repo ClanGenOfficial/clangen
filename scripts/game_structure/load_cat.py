@@ -242,7 +242,7 @@ def json_load():
                             target=CatGroup.UNKNOWN_RESIDENCE
                         )
                     else:
-                        new_cat.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
+                        new_cat.status.send_to_afterlife(target=CatGroup.STARCLAN)
 
             new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
@@ -488,7 +488,7 @@ def csv_load(all_cats):
                         the_cat.mate = [attr[31]]
                     if len(attr) >= 32:
                         # Is the cat dead
-                        the_cat.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
+                        the_cat.status.send_to_afterlife(target=CatGroup.STARCLAN)
                         the_cat.pelt.cat_sprites["dead"] = attr[33]
                 game.switches[
                     "error_message"

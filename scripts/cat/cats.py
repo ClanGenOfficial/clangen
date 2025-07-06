@@ -487,7 +487,7 @@ class Cat:
             entry.get("moons_as")
             for entry in self.status.group_history
             if entry.get("group")
-            in (CatGroup.STAR_CLAN, CatGroup.UNKNOWN_RESIDENCE, CatGroup.DARK_FOREST)
+            in (CatGroup.STARCLAN, CatGroup.UNKNOWN_RESIDENCE, CatGroup.DARK_FOREST)
         )
 
     @dead_for.setter
@@ -1217,7 +1217,7 @@ class Cat:
             if kitty and kitty.dead and kitty.status.rank != CatRank.NEWBORN:
                 # check where they reside
                 if starclan:
-                    if kitty.status.group != CatGroup.STAR_CLAN:
+                    if kitty.status.group != CatGroup.STARCLAN:
                         continue
                 else:
                     if kitty.status.group != CatGroup.DARK_FOREST:
@@ -1257,7 +1257,7 @@ class Cat:
                 for i in game.clan.clan_cats
                 if self.fetch_cat(i)
                 and i not in life_givers
-                and self.fetch_cat(i).status.group == CatGroup.STAR_CLAN
+                and self.fetch_cat(i).status.group == CatGroup.STARCLAN
             ]
         cats_in_darkforest = []
         if not starclan:
@@ -3200,7 +3200,7 @@ class Cat:
         if cat_info.get("df"):
             cat_ob.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
         elif isinstance(cat_info["status"], str):
-            cat_ob.status.send_to_afterlife(target=CatGroup.STAR_CLAN)
+            cat_ob.status.send_to_afterlife(target=CatGroup.STARCLAN)
 
         cat_ob.dead_for = cat_info["dead_for"] if "dead_for" in cat_info else 1
 

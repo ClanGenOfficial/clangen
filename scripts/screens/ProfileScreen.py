@@ -305,7 +305,7 @@ class ProfileScreen(Screens):
                 # if the cat is dead, moves them to the opposite afterlife
                 if self.the_cat.dead:
                     if self.the_cat.status.group == CatGroup.DARK_FOREST:
-                        self.the_cat.status.add_to_group(new_group=CatGroup.STAR_CLAN)
+                        self.the_cat.status.add_to_group(new_group=CatGroup.STARCLAN)
                         self.the_cat.thought = (
                             "Is relieved to once again hunt in StarClan"
                         )
@@ -526,7 +526,7 @@ class ProfileScreen(Screens):
         if (
             self.the_cat.dead
             and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.status.group == CatGroup.STAR_CLAN
+            and self.the_cat.status.group == CatGroup.STARCLAN
         ):
             is_sc_instructor = True
         elif (
