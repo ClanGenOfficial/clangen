@@ -277,7 +277,6 @@ class Relation_Events:
         cat_list.remove(main_cat)
         filtered_cat_list = []
 
-
         for inter_cat in cat_list:
             if inter_cat.ID == main_cat.ID:
                 continue
@@ -292,13 +291,12 @@ class Relation_Events:
                 continue
 
             passed = filter_relationship_type(
-                group=[cat_from, cat_to],
-                filter_types=constraint
+                group=[cat_from, cat_to], filter_types=constraint
             )
 
             if not passed:
                 continue
-                
+
             filtered_cat_list.append(inter_cat)
 
         return filtered_cat_list
