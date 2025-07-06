@@ -1171,6 +1171,7 @@ def filter_relationship_type(
     ]
     for level_list in value_groups.values():
         all_possible_tags.extend(level_list)
+        all_possible_tags.extend([f"{l}_only" for l in level_list])
     if not set(filter_types).issubset(set(all_possible_tags)):
         print(
             f"WARNING: {[tag for tag in filter_types if tag not in all_possible_tags]} is not a valid relationship_status tag!"
