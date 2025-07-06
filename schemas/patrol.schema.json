@@ -188,11 +188,9 @@
                 "type": "array",
                 "items": {
                   "enum": [
-                    "romantic",
-                    "platonic",
-                    "dislike",
+                    "romance",
+                    "like",
                     "comfort",
-                    "jealous",
                     "trust",
                     "respect"
                   ]
@@ -276,7 +274,7 @@
           "anyOf": [
             {
               "enum": [
-                "romantic",
+                "romance",
                 "rom_two_apps",
                 "disaster",
                 "new_cat",
@@ -371,36 +369,70 @@
                 "parent/child",
                 "child/parent",
                 "mentor/app",
-                "app/mentor"
+                "app/mentor",
+                    "fancies",
+                    "adores",
+                    "delights_in",
+                    "abhors",
+                    "hates",
+                    "dislikes",
+                    "knows_of",
+                    "likes",
+                    "enjoys",
+                    "loves",
+                    "resents",
+                    "envies",
+                    "begrudges",
+                    "acknowledges",
+                    "praises",
+                    "respects",
+                    "admires",
+                    "discredits",
+                    "distrusts",
+                    "doubts",
+                    "observes",
+                    "listens_to",
+                    "trusts",
+                    "confides_in",
+                    "runs_from",
+                    "fears",
+                    "avoids",
+                    "considers",
+                    "seeks_out",
+                    "prefers",
+                    "relies_on",
+                    "fancies_only",
+                    "adores_only",
+                    "delights_in_only",
+                    "abhors_only",
+                    "hates_only",
+                    "dislikes_only",
+                    "knows_of_only",
+                    "likes_only",
+                    "enjoys_only",
+                    "loves_only",
+                    "resents_only",
+                    "envies_only",
+                    "begrudges_only",
+                    "acknowledges_only",
+                    "praises_only",
+                    "respects_only",
+                    "admires_only",
+                    "discredits_only",
+                    "distrusts_only",
+                    "doubts_only",
+                    "observes_only",
+                    "listens_to_only",
+                    "trusts_only",
+                    "confides_in_only",
+                    "runs_from_only",
+                    "fears_only",
+                    "avoids_only",
+                    "considers_only",
+                    "seeks_out_only",
+                    "prefers_only",
+                    "relies_on_only"
               ]
-            },
-            {
-              "type": "string",
-              "pattern": "^romantic_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^platonic_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^dislike_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^comfortable_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^jealousy_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^trust_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^admiration_(0|[1-9][0-9]?|100)$"
             }
           ]
         }
