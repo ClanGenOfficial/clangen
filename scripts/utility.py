@@ -1130,11 +1130,11 @@ def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
             continue
 
         for value in [*RelValue]:
-            if value > 0:
+            if amount > 0:
                 relation_dict[value].append(
                     relation.get_amount_of_value(value) >= amount
                 )
-            elif value < 0:
+            elif amount < 0:
                 relation_dict[value].append(
                     relation.get_amount_of_value(value) <= amount
                 )
@@ -1173,7 +1173,7 @@ def filter_relationship_type(
         all_possible_tags.extend(level_list)
     if not set(filter_types).issubset(set(all_possible_tags)):
         print(
-            f"WARNING: {[tag for tag in all_possible_tags if tag not in set(filter_types).intersection(all_possible_tags)]} is not a valid relationship_status tag!"
+            f"WARNING: {[tag for tag in filter_types if tag not in all_possible_tags]} is not a valid relationship_status tag!"
         )
 
     if "siblings" in filter_types:
