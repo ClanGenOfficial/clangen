@@ -918,7 +918,7 @@ class Cat:
 
         old_rank = self.status.rank
 
-        self.status.change_rank(new_rank)
+        self.status._change_rank(new_rank)
 
         self.name.status = new_rank
 
@@ -1512,7 +1512,7 @@ class Cat:
         old_age = self.age
         self.moons += 1
         if self.moons == 1 and self.status.rank == CatRank.NEWBORN:
-            self.status.change_rank(CatRank.KITTEN)
+            self.status._change_rank(CatRank.KITTEN)
         self.in_camp = 1
 
         if not self.status.in_player_clan():

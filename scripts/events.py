@@ -446,7 +446,7 @@ class Events:
                                     "healer_backstories"
                                 ]
                             ):
-                                invited_cat.status.change_rank(CatRank.MEDICINE_CAT)
+                                invited_cat.status._change_rank(CatRank.MEDICINE_CAT)
                             # if cat is a little baby, check name
                             elif invited_cat.age in (CatAge.NEWBORN, CatAge.KITTEN):
                                 if not invited_cat.name.suffix:

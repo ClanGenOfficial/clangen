@@ -44,7 +44,7 @@ class Status:
         """
 
         self.group_history = group_history if group_history else []
-        """List of dicts containing the keys group, rank, and moons_as. A new dict is added anytime group or rank are
+        """List of dicts containing the keys group, rank, and moons_as. A new dict is added whenever group or rank are
         changed."""
 
         self.standing_history = standing_history if standing_history else []
@@ -54,27 +54,16 @@ class Status:
 
         # converting all the save info into enums
         for entry in self.group_history:
-            for enum in CatGroup:
-                if enum == entry["group"]:
-                    entry["group"] = enum
-                    break
-            for enum in CatRank:
-                if enum == entry["rank"]:
-                    entry["rank"] = enum
-                    break
+            entry["group"] = CatGroup(entry["group"])
+            entry["rank"] = CatRank(entry["rank"])
 
         for entry in self.standing_history:
-            for enum in CatGroup:
-                if enum == entry["group"]:
-                    entry["group"] = enum
-                    break
+            entry["group"] = CatGroup(entry["group"])
+
             standing_copy = entry["standing"].copy()
             entry["standing"].clear()
-            for _s in standing_copy:
-                for enum in CatStanding:
-                    if enum == _s:
-                        entry["standing"].append(enum)
-                        break
+            for standing in standing_copy:
+                entry["standing"].append(CatStanding(standing))
 
         # just some extra checks in case a str snuck in
         if group or rank or social or age:
@@ -274,17 +263,14 @@ class Status:
             if record["group"] not in groups:
                 groups.append(record["group"])
 
-        return [record["group"] for record in self.group_history]
+        return groups
 
     @property
     def rank(self) -> CatRank:
         """
         Returns the rank that a cat currently holds within their group.
         """
-        rank = [
-            rank for rank in list(CatRank) if rank == self.group_history[-1]["rank"]
-        ]
-        return rank[0]
+        return CatRank(self.group_history[-1]["rank"])
 
     @property
     def all_ranks(self) -> dict:
@@ -318,8 +304,8 @@ class Status:
                     CatRank.MEDICINE_APPRENTICE,
                 ]
             )
-        elif age in [CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT]:
-            rank = CatRank.WARRIOR
+        elif age in (CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT):
+            rank = choice([CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR])
         else:
             rank = CatRank.ELDER
 
@@ -364,7 +350,7 @@ class Status:
 
     def change_standing(self, new_standing: CatStanding, group: CatGroup = None):
         """
-        Update the given group with the given standing. If not group is given, the new standing will be added to the
+        Update the given group with the given standing. If no group is given, the new standing will be added to the
         cat's current group.
         """
         # can't change the standing if we have no group to change
@@ -373,15 +359,15 @@ class Status:
 
         if not group:
             group = self.group
-        found_record = False
+
         for record in self.standing_history:
             if record["group"] == group:
                 record["standing"].append(new_standing)
-                found_record = True
-        if not found_record:
-            self.standing_history.append(
-                {"group": group, "standing": [new_standing], "near": True}
-            )
+                return
+
+        self.standing_history.append(
+            {"group": group, "standing": [new_standing], "near": True}
+        )
 
     def become_lost(self, new_social_status: CatSocial = CatSocial.KITTYPET):
         """
@@ -389,13 +375,8 @@ class Status:
         :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by
         Twolegs and are now a kittypet)
         """
-        # fallback
-        rank = CatRank.KITTYPET
         # find matching rank enum
-        for enum in CatRank:
-            if enum == new_social_status:
-                rank = enum
-                break
+        rank = CatRank(new_social_status)
 
         self._modify_group(rank, standing_with_past_group=CatStanding.LOST)
 
@@ -444,7 +425,10 @@ class Status:
                 new_rank in [CatRank.LEADER, CatRank.DEPUTY]
                 and not new_group.is_afterlife()
             ):
-                new_rank = self.get_rank_from_age(age)
+                if age == CatAge.SENIOR:
+                    new_rank = CatRank.ELDER
+                else:
+                    new_rank = CatRank.WARRIOR
         else:
             new_rank = self.rank
 
@@ -481,7 +465,7 @@ class Status:
         else:
             self.add_to_group(new_group=CatGroup.STARCLAN)
 
-    def change_rank(self, new_rank: CatRank):
+    def _change_rank(self, new_rank: CatRank):
         """
         Changes the cats rank to the new_rank. Generally you shouldn't use just this to change a cat's rank!
         cat.rank_change() should typically be called instead, since it will handle mentor switches and other complex
@@ -503,23 +487,19 @@ class Status:
         """
         for entry in self.standing_history:
             if entry.get("group") == group:
-                if entry.get("near"):
-                    entry["near"] = False
-                else:
-                    entry["near"] = True
+                if entry["near"]:
+                    entry["near"] = not entry.get("near", False)
 
     # RETRIEVE INFO
     def get_standing_with_group(self, group: CatGroup) -> list[CatStanding]:
         """
         Returns the list of standings a cat has for the given group.
         """
-        standing_list = []
-        for entry in self.standing_history:
-            if entry["group"] == group:
-                standing_list = entry["standing"]
-                break
-
-        return standing_list
+        return [
+            entry["standing"]
+            for entry in self.standing_history
+            if entry["group"] == group
+        ]
 
     def find_prior_clan_rank(self, clan: CatGroup = None):
         """
@@ -546,20 +526,20 @@ class Status:
         """
         Returns True if the cat is currently part of the player clan.
         """
-        return True if self.group == CatGroup.PLAYER_CLAN else False
+        return self.group == CatGroup.PLAYER_CLAN
 
     def is_outsider(self) -> bool:
         """
         Returns True if the cat isn't part of a clan.
         """
 
-        return True if self.social != CatSocial.CLANCAT else False
+        return self.social != CatSocial.CLANCAT
 
     def is_clancat(self) -> bool:
         """
         Returns True if the cat is currently a clancat in any clan.
         """
-        return True if self.social == CatSocial.CLANCAT else False
+        return self.social == CatSocial.CLANCAT
 
     def is_former_clancat(self) -> bool:
         """
@@ -567,10 +547,7 @@ class Status:
         """
 
         return (
-            True
-            if CatSocial.CLANCAT in self.all_socials
-            and self.social != CatSocial.CLANCAT
-            else False
+            CatSocial.CLANCAT in self.all_socials and self.social != CatSocial.CLANCAT
         )
 
     def is_lost(self, group: CatGroup = None) -> bool:
@@ -601,10 +578,7 @@ class Status:
         # if group given
         standing = self.get_standing_with_group(group)
 
-        if standing and standing[-1] == CatStanding.EXILED:
-            return True
-
-        return False
+        return standing and standing[-1] == CatStanding.EXILED
 
     def is_near(self, group: CatGroup) -> bool:
         """

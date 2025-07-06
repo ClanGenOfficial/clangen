@@ -583,7 +583,7 @@ def create_new_cat_block(
             elif not outside:
                 chosen_cat.add_to_clan()
                 if chosen_cat.status.rank != rank:
-                    chosen_cat.status.change_rank(rank)
+                    chosen_cat.status._change_rank(rank)
             elif outside:
                 # updates so that the clan is marked as knowing of this cat
                 current_standing = chosen_cat.status.get_standing_with_group(
@@ -867,7 +867,7 @@ def create_new_cat(
             new_cat.add_to_clan()
             # check if cat is the correct rank
             if new_cat.status.rank != rank:
-                new_cat.status.change_rank(rank)
+                new_cat.status._change_rank(rank)
             # give apprentice aged cat a mentor
             if new_cat.status.rank in (
                 CatRank.APPRENTICE,
