@@ -91,14 +91,10 @@ class GroupEvents:
             inter_type
         ]
 
-        # get some filters premisses
-        biome = str(game.clan.biome).casefold()
-        season = str(game.clan.current_season).casefold()
-
         # start filter for main cat / basic checks
         # - this might reduce the amount of checks which will be needed when checking for other cats
         possibilities = GroupEvents.get_main_cat_interactions(
-            possibilities, biome, season, abbreviations_cat_id
+            possibilities, abbreviations_cat_id
         )
 
         # get possible interactions, considering the possible interacting cats
