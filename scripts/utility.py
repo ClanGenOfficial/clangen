@@ -1130,7 +1130,14 @@ def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
             continue
 
         for value in [*RelValue]:
-            relation_dict[value].append(relation.get_amount_of_value(value) >= amount)
+            if value > 0:
+                relation_dict[value].append(
+                    relation.get_amount_of_value(value) >= amount
+                )
+            elif value < 0:
+                relation_dict[value].append(
+                    relation.get_amount_of_value(value) <= amount
+                )
 
     return_dict = {v: sum(relation_dict[v]) for v in [*RelValue]}
 

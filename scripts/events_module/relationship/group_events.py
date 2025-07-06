@@ -154,7 +154,7 @@ class GroupEvents:
 
     @staticmethod
     def get_main_cat_interactions(
-        interactions: list, biome: str, season: str, abbreviations_cat_id: dict
+        interactions: list, abbreviations_cat_id: dict
     ) -> list:
         """Filter interactions for MAIN cat.
 

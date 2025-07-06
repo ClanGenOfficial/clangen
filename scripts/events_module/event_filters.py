@@ -14,8 +14,10 @@ def event_for_location(locations: list) -> bool:
     """
     checks if the clan is within the given locations
     """
-    if "any" in locations or not game.clan:
+    if "any" in locations:
         return True
+    if not game.clan:
+        return False
 
     for place in locations:
         if ":" in place:
@@ -40,7 +42,9 @@ def event_for_season(seasons: list) -> bool:
     """
     checks if the clan is within the given seasons
     """
-    if "any" in seasons or not game.clan or game.clan.current_season.lower() in seasons:
+    if not game.clan:
+        return False
+    if "any" in seasons or game.clan.current_season.lower() in seasons:
         return True
 
     return False
@@ -316,11 +320,13 @@ def _check_cat_trait(cat, traits: list) -> bool:
 
     return cat.personality.trait in traits
 
+
 def _check_cat_not_trait(cat, traits: list) -> bool:
     if not traits:
         return True
 
     return not cat.personality.trait in traits
+
 
 def _check_cat_skills(cat, skills: list) -> bool:
     """
@@ -340,6 +346,7 @@ def _check_cat_skills(cat, skills: list) -> bool:
             return True
 
     return False
+
 
 def _check_cat_not_skills(cat, skills: list) -> bool:
     if not skills:

@@ -29,7 +29,7 @@ class MainCatFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = group_events.get_main_cat_interactions(
-            all_interactions, "Any", "Any", {"m_c": main_cat.ID}
+            all_interactions, {"m_c": main_cat.ID}
         )
 
         # then
@@ -52,7 +52,7 @@ class MainCatFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = group_events.get_main_cat_interactions(
-            all_interactions, "Any", "Any", {"m_c": main_cat.ID}
+            all_interactions, {"m_c": main_cat.ID}
         )
 
         # then
@@ -76,7 +76,7 @@ class MainCatFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = group_events.get_main_cat_interactions(
-            all_interactions, "Any", "Any", {"m_c": main_cat.ID}
+            all_interactions, {"m_c": main_cat.ID}
         )
 
         # then
@@ -99,7 +99,7 @@ class MainCatFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = group_events.get_main_cat_interactions(
-            all_interactions, "Any", "Any", {"m_c": main_cat.ID}
+            all_interactions, {"m_c": main_cat.ID}
         )
 
         # then
@@ -123,7 +123,7 @@ class MainCatFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = group_events.get_main_cat_interactions(
-            all_interactions, "Any", "Any", {"m_c": main_cat.ID}
+            all_interactions, {"m_c": main_cat.ID}
         )
 
         # then
@@ -146,7 +146,7 @@ class MainCatFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = group_events.get_main_cat_interactions(
-            all_interactions, "Any", "Any", {"m_c": main_cat.ID}
+            all_interactions, {"m_c": main_cat.ID}
         )
 
         # then
@@ -170,7 +170,7 @@ class MainCatFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = group_events.get_main_cat_interactions(
-            all_interactions, "Any", "Any", {"m_c": main_cat.ID}
+            all_interactions, {"m_c": main_cat.ID}
         )
 
         # then
@@ -193,7 +193,7 @@ class MainCatFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = group_events.get_main_cat_interactions(
-            all_interactions, "Any", "Any", {"m_c": main_cat.ID}
+            all_interactions, {"m_c": main_cat.ID}
         )
 
         # then
@@ -209,7 +209,7 @@ class OtherFiltering(unittest.TestCase):
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
-        interaction1.season = ["newleaf"]
+        interaction1.season = ["any"]
 
         interaction2 = GroupInteraction("2")
         interaction2.season = ["green-leaf"]
@@ -217,7 +217,7 @@ class OtherFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = GroupEvents().get_main_cat_interactions(
-            all_interactions, "Any", "newleaf", abbreviations_cat_id
+            all_interactions, abbreviations_cat_id
         )
 
         # then
@@ -230,7 +230,7 @@ class OtherFiltering(unittest.TestCase):
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
-        interaction1.season = ["newleaf"]
+        interaction1.season = ["any"]
 
         interaction2 = GroupInteraction("2")
         interaction2.season = ["newleaf", "green-leaf"]
@@ -238,7 +238,7 @@ class OtherFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = GroupEvents().get_main_cat_interactions(
-            all_interactions, "Any", "newleaf", abbreviations_cat_id
+            all_interactions, abbreviations_cat_id
         )
 
         # then
@@ -260,7 +260,7 @@ class OtherFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = GroupEvents().get_main_cat_interactions(
-            all_interactions, "Any", "newleaf", abbreviations_cat_id
+            all_interactions, abbreviations_cat_id
         )
 
         # then
@@ -274,7 +274,7 @@ class OtherFiltering(unittest.TestCase):
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
-        interaction1.biome = ["forest"]
+        interaction1.biome = ["any"]
 
         interaction2 = GroupInteraction("2")
         interaction2.biome = ["beach"]
@@ -282,7 +282,7 @@ class OtherFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = GroupEvents().get_main_cat_interactions(
-            all_interactions, "forest", "Any", abbreviations_cat_id
+            all_interactions, abbreviations_cat_id
         )
 
         # then
@@ -295,7 +295,7 @@ class OtherFiltering(unittest.TestCase):
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
-        interaction1.biome = ["forest"]
+        interaction1.biome = ["any"]
 
         interaction2 = GroupInteraction("2")
         interaction2.biome = ["beach", "forest"]
@@ -303,7 +303,7 @@ class OtherFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = GroupEvents().get_main_cat_interactions(
-            all_interactions, "forest", "Any", abbreviations_cat_id
+            all_interactions, abbreviations_cat_id
         )
 
         # then
@@ -325,7 +325,7 @@ class OtherFiltering(unittest.TestCase):
         # when
         all_interactions = [interaction1, interaction2]
         filtered_interactions = GroupEvents().get_main_cat_interactions(
-            all_interactions, "forest", "Any", abbreviations_cat_id
+            all_interactions, abbreviations_cat_id
         )
 
         # then
@@ -494,7 +494,7 @@ class OtherCatsFiltering(unittest.TestCase):
             random1, random2, True, False, 50, 50, 0, 50, 0
         )
         random2.relationships[random1.ID] = Relationship(
-            random2, random1, True, False, 50, 50, 0, 0, 0
+            random2, random1, True, False, 50, 50, 0, -50, 0
         )
 
         # summary:
@@ -512,28 +512,19 @@ class OtherCatsFiltering(unittest.TestCase):
         interaction2.relationship_constraint = {"r_c1_to_r_c2": ["mates"]}
 
         interaction3 = GroupInteraction("test")
-        interaction3.relationship_constraint = {"m_c_to_r_c1": ["siblings"]}
+        interaction3.relationship_constraint = {"m_c_to_r_c2": ["siblings"]}
 
         interaction4 = GroupInteraction("test")
         interaction4.relationship_constraint = {"m_c_to_r_c1": ["adores"]}
 
         interaction5 = GroupInteraction("test")
-        interaction5.relationship_constraint = {"m_c_to_r_c1": ["prefers"]}
+        interaction5.relationship_constraint = {"m_c_to_r_c1": ["prefers", "adores"]}
 
         interaction6 = GroupInteraction("test")
-        interaction6.relationship_constraint = {"m_c_to_r_c1": ["prefers", "adores"]}
+        interaction6.relationship_constraint = {"m_c_to_r_c2": ["hates"]}
 
         interaction7 = GroupInteraction("test")
-        interaction7.relationship_constraint = {"m_c_to_r_c1": ["adores"]}
-
-        interaction8 = GroupInteraction("test")
-        interaction8.relationship_constraint = {"m_c_to_r_c1": ["prefers"]}
-
-        interaction9 = GroupInteraction("test")
-        interaction9.relationship_constraint = {"m_c_to_r_c2": ["hates"]}
-
-        interaction10 = GroupInteraction("test")
-        interaction10.relationship_constraint = {"r_c2_to_m_c": ["hates"]}
+        interaction7.relationship_constraint = {"r_c2_to_r_c1": ["distrusts"]}
 
         # then
         self.assertTrue(
@@ -569,21 +560,6 @@ class OtherCatsFiltering(unittest.TestCase):
         self.assertTrue(
             GroupEvents().relationship_allow_interaction(
                 interaction7, abbreviations_cat_id
-            )
-        )
-        self.assertTrue(
-            GroupEvents().relationship_allow_interaction(
-                interaction8, abbreviations_cat_id
-            )
-        )
-        self.assertTrue(
-            GroupEvents().relationship_allow_interaction(
-                interaction9, abbreviations_cat_id
-            )
-        )
-        self.assertTrue(
-            GroupEvents().relationship_allow_interaction(
-                interaction10, abbreviations_cat_id
             )
         )
 
@@ -638,7 +614,7 @@ class OtherCatsFiltering(unittest.TestCase):
             50,
             50,
             0,
-            0,
+            -50,
             0,
         )
 
@@ -657,28 +633,22 @@ class OtherCatsFiltering(unittest.TestCase):
         interaction2.relationship_constraint = {"r_c1_to_r_c2": ["not_mates"]}
 
         interaction3 = GroupInteraction("test")
-        interaction3.relationship_constraint = {"r_c1_to_r_c2": ["adores"]}
+        interaction3.relationship_constraint = {"r_c1_to_r_c2": ["fancies_only"]}
 
         interaction4 = GroupInteraction("test")
-        interaction4.relationship_constraint = {"r_c1_to_r_c2": ["adores"]}
+        interaction4.relationship_constraint = {"r_c1_to_r_c2": ["distrusts"]}
 
         interaction5 = GroupInteraction("test")
-        interaction5.relationship_constraint = {"r_c1_to_r_c2": ["distrust"]}
+        interaction5.relationship_constraint = {"r_c1_to_m_c": ["mates"]}
 
         interaction6 = GroupInteraction("test")
-        interaction6.relationship_constraint = {"r_c1_to_m_c": ["mates"]}
+        interaction6.relationship_constraint = {"m_c_to_r_c1": ["prefers_only"]}
 
         interaction7 = GroupInteraction("test")
-        interaction7.relationship_constraint = {"m_c_to_r_c1": ["prefers"]}
+        interaction7.relationship_constraint = {"m_c_to_r_c1": ["fancies_only"]}
 
         interaction8 = GroupInteraction("test")
-        interaction8.relationship_constraint = {"m_c_to_r_c1": ["adores"]}
-
-        interaction9 = GroupInteraction("test")
-        interaction9.relationship_constraint = {"m_c_to_r_c1": ["adores"]}
-
-        interaction10 = GroupInteraction("test")
-        interaction10.relationship_constraint = {"r_c2_to_r_c1": ["trusts"]}
+        interaction8.relationship_constraint = {"r_c2_to_r_c1": ["trusts"]}
 
         # then
         self.assertFalse(
@@ -719,15 +689,5 @@ class OtherCatsFiltering(unittest.TestCase):
         self.assertFalse(
             GroupEvents().relationship_allow_interaction(
                 interaction8, abbreviations_cat_id
-            )
-        )
-        self.assertFalse(
-            GroupEvents().relationship_allow_interaction(
-                interaction9, abbreviations_cat_id
-            )
-        )
-        self.assertFalse(
-            GroupEvents().relationship_allow_interaction(
-                interaction10, abbreviations_cat_id
             )
         )
