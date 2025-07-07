@@ -270,7 +270,7 @@ def event_for_cat(
     if cat_info.get("relationship_status", []):
         if not filter_relationship_type(
             group=cat_group,
-            filter_types=cat_info["relationship_status"],
+            filter_list=cat_info["relationship_status"],
             event_id=event_id,
             patrol_leader=p_l,
         ):
@@ -425,7 +425,7 @@ def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=Non
         for cat in allowed_cats.copy():
             if not filter_relationship_type(
                 group=[cat, comparison_cat],
-                filter_types=constraint_dict["relationship_status"],
+                filter_list=constraint_dict["relationship_status"],
             ):
                 allowed_cats.remove(cat)
 

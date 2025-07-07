@@ -1145,18 +1145,20 @@ def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
 
 
 def filter_relationship_type(
-    group: list, filter_types: List[str], event_id: str = None, patrol_leader=None
+    group: list, filter: List[str], event_id: str = None, patrol_leader=None
 ):
     """
     filters for specific types of relationships between groups of cat objects, returns bool
     :param group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for
     parent/child, the cat being tested as parent must be index 0)
-    :param filter_types: the relationship types to check for.
+    :param filter: the relationship types to check for.
     :param event_id: if the event has an ID, include it here
     :param patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
     """
-    if not filter_types:
+    if not filter:
         return True
+
+    filter_list = filter.copy()
 
     # keeping this list here just for quick reference of what tags are handled here
     all_possible_tags = [
@@ -1172,12 +1174,12 @@ def filter_relationship_type(
     for level_list in value_groups.values():
         all_possible_tags.extend(level_list)
         all_possible_tags.extend([f"{l}_only" for l in level_list])
-    if not set(filter_types).issubset(set(all_possible_tags)):
+    if not set(filter_list).issubset(set(all_possible_tags)):
         print(
-            f"WARNING: {[tag for tag in filter_types if tag not in all_possible_tags]} is not a valid relationship_status tag!"
+            f"WARNING: {[tag for tag in filter_list if tag not in all_possible_tags]} is not a valid relationship_status tag!"
         )
 
-    if "siblings" in filter_types:
+    if "siblings" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
@@ -1185,9 +1187,9 @@ def filter_relationship_type(
         if not all(siblings):
             return False
 
-        filter_types.remove("siblings")
+        filter_list.remove("siblings")
 
-    if "mates" in filter_types:
+    if "mates" in filter_list:
         # first test if more than one cat
         if len(group) == 1:
             return False
@@ -1201,10 +1203,10 @@ def filter_relationship_type(
         for x in combinations(group, 2):
             if x[0].ID not in x[1].mate:
                 return False
-        filter_types.remove("mates")
+        filter_list.remove("mates")
 
     # check if all cats are mates with p_l (they do not have to be mates with each other)
-    if "mates_with_pl" in filter_types:
+    if "mates_with_pl" in filter_list:
         # First test if there is more than one cat
         if len(group) == 1:
             return False
@@ -1215,18 +1217,18 @@ def filter_relationship_type(
                 continue
             if cat.ID not in patrol_leader.mate:
                 return False
-        filter_types.remove("mates_with_pl")
+        filter_list.remove("mates_with_pl")
 
     # Check if all cats are not mates
-    if "not_mates" in filter_types:
+    if "not_mates" in filter_list:
         # opposite of mate check
         for x in combinations(group, 2):
             if x[0].ID in x[1].mate:
                 return False
-        filter_types.remove("not_mates")
+        filter_list.remove("not_mates")
 
     # Check if the cats are in a parent/child relationship
-    if "parent/child" in filter_types:
+    if "parent/child" in filter_list:
         if patrol_leader:
             if patrol_leader in group:
                 group.remove(patrol_leader)
@@ -1237,9 +1239,9 @@ def filter_relationship_type(
         # test for parentage
         if not group[0].is_parent(group[1]):
             return False
-        filter_types.remove("parent/child")
+        filter_list.remove("parent/child")
 
-    if "child/parent" in filter_types:
+    if "child/parent" in filter_list:
         if patrol_leader:
             if patrol_leader in group:
                 group.remove(patrol_leader)
@@ -1250,9 +1252,9 @@ def filter_relationship_type(
         # test for parentage
         if not group[1].is_parent(group[0]):
             return False
-        filter_types.remove("child/parent")
+        filter_list.remove("child/parent")
 
-    if "mentor/app" in filter_types:
+    if "mentor/app" in filter_list:
         if patrol_leader:
             if patrol_leader in group:
                 group.remove(patrol_leader)
@@ -1263,9 +1265,9 @@ def filter_relationship_type(
         # test for parentage
         if not group[1].ID in group[0].apprentice:
             return False
-        filter_types.remove("mentor/app")
+        filter_list.remove("mentor/app")
 
-    if "app/mentor" in filter_types:
+    if "app/mentor" in filter_list:
         if patrol_leader:
             if patrol_leader in group:
                 group.remove(patrol_leader)
@@ -1276,26 +1278,29 @@ def filter_relationship_type(
         # test for parentage
         if not group[0].ID in group[1].apprentice:
             return False
-        filter_types.remove("app/mentor")
+        filter_list.remove("app/mentor")
 
     # Filtering relationship values
     # each cat has to have relationships toward each other matching every level tag
-    for level in filter_types:
+    for level in filter_list:
         for inter_cat in group:
             group_ids = [cat.ID for cat in group]
-            relevant_relationships = list(
-                filter(
-                    lambda rel: rel.cat_to.ID in group_ids
-                    and rel.cat_to.ID != inter_cat.ID,
-                    list(inter_cat.relationships.values()),
-                )
-            )
+
+            relevant_relationships = [
+                rel
+                for rel in inter_cat.relationships.values()
+                if rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID
+            ]
 
             # list of every cat's level list
             group_levels = [rel.get_value_levels() for rel in relevant_relationships]
 
             # now test each list to see if the required tag is inside
             for level_list in group_levels:
+                # just a quick check to see if we can avoid all the extra hullabaloo
+                if level in level_list:
+                    continue
+
                 # if it's limited to *just* the given level
                 if "_only" in level:
                     level.replace("_only", "")

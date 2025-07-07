@@ -803,7 +803,7 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         )
 
         # when - different relationship values
-        cat3.relationships[cat2.ID].romance = 5
+        cat3.relationships[cat2.ID].romance = 0
         con_patrol_event = PatrolEvent(patrol_id="test1")
         con_patrol_event.relationship_constraints = ["fancies"]
 
