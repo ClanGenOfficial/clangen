@@ -596,7 +596,7 @@ class Relationship:
             return ValueLevel.FANCIES
         elif group == "mid_pos":
             return ValueLevel.ADORES
-        elif group == "high_pos":
+        elif group == "extreme_pos":
             return ValueLevel.LOVES
         else:
             return None
