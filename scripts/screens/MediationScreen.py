@@ -11,7 +11,6 @@ from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
-    UIRelationStatusFillBar,
     UISurfaceImageButton,
     UIRelationDisplay,
 )
@@ -640,7 +639,7 @@ class MediationScreen(Screens):
                 # Print, just for bug checking. Again, they should not be able to get love towards their relative.
                 if the_relationship.romance and related:
                     print(
-                        f"WARNING: {self.cat.name} has {the_relationship.romance} romantic love towards their relative, {the_relationship.cat_to.name}"
+                        f"WARNING: {cat.name} has {the_relationship.romance} romantic love towards their relative, {the_relationship.cat_to.name}"
                     )
             else:
                 allow_romance = True
