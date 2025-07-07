@@ -548,7 +548,9 @@ class ProfileScreen(Screens):
                 self.the_cat.thought = i18n.t(
                     "screens.profile.guide_thought_df", clan=game.clan.name
                 )
-            elif self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:  # Unknown Residence
+            elif (
+                self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE
+            ):  # Unknown Residence
                 self.the_cat.thought = i18n.t(
                     "screens.profile.guide_thought_sc", clan=game.clan.name
                 )
