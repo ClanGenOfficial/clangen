@@ -45,7 +45,7 @@ This setting helps set a buff for interactions that increases other values other
 `"chance_for_neutral": 10`
 
 This setting sets how high the chance is to make the interaction neutral instead of negative or positive. 1/chance
-			
+
 `"chance_of_special_group": 8`
 
 Often when a group event is happening, only a special group is used, which is defined in group_types.json. 1/chance

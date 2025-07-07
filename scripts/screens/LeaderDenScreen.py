@@ -6,6 +6,7 @@ import pygame_gui
 from pygame_gui.core import UIContainer
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank, CatGroup
 from scripts.clan import OtherClan
 from scripts.clan_package.settings.clan_settings import (
     set_clan_setting,
@@ -30,7 +31,7 @@ from scripts.utility import (
     get_other_clan,
     clan_symbol_sprite,
     shorten_text_to_fit,
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     get_living_clan_cat_count,
     ui_scale_dimensions,
 )
@@ -154,7 +155,7 @@ class LeaderDenScreen(Screens):
         # This is here incase the leader comes back
         self.no_leader = False
 
-        if not game.clan.leader or game.clan.leader.dead or game.clan.leader.exiled:
+        if not game.clan.leader or not game.clan.leader.status.alive_in_player_clan:
             self.no_leader = True
 
         # LEADER DEN BG AND LEADER SPRITE
@@ -196,9 +197,9 @@ class LeaderDenScreen(Screens):
                 if not game.clan.deputy.not_working() and not game.clan.deputy.dead:
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
             if not self.helper_cat:  # if dep is sick, med cat helps
-                meds = get_alive_status_cats(
+                meds = find_alive_cats_with_rank(
                     Cat,
-                    get_status=["medicine cat", "medicine cat apprentice"],
+                    ranks=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
                     working=True,
                     sort=True,
                 )
@@ -209,10 +210,8 @@ class LeaderDenScreen(Screens):
                         i
                         for i in Cat.all_cats.values()
                         if not i.dead
-                        and not i.exiled
-                        and not i.outside
                         and not i.not_working()
-                        and i.status in ("mediator", "mediator apprentice")
+                        and i.status.rank.is_any_mediator_rank()
                     ]
                     if mediators:
                         self.helper_cat = mediators[0]
@@ -224,10 +223,9 @@ class LeaderDenScreen(Screens):
                 adults = [
                     i
                     for i in Cat.all_cats.values()
-                    if not i.dead
-                    and not i.exiled
-                    and not i.outside
-                    and i.status not in ("newborn", "kitten", "leader")
+                    if i.status.alive_in_player_clan
+                    and i.status.rank
+                    not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
                 ]
                 if adults:
                     self.helper_cat = random.choice(adults)
@@ -291,7 +289,7 @@ class LeaderDenScreen(Screens):
                 "screens.leader_den.no_cats_outsider"
             )
         # if leader is dead and no one new is leading, give special notice
-        elif self.no_leader or game.clan.leader.dead or game.clan.leader.exiled:
+        elif self.no_leader or not game.clan.leader.status.alive_in_player_clan:
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
                 "screens.leader_den.no_leader_clan"
@@ -836,7 +834,7 @@ class LeaderDenScreen(Screens):
         )
         self.focus_outsider_elements["cat_status"] = pygame_gui.elements.UILabel(
             relative_rect=ui_scale(pygame.Rect((0, 5), (218, -1))),
-            text=f"general.{self.focus_cat.status}",
+            text=f"general.{self.focus_cat.status.rank}",
             object_id="#text_box_22_horizcenter",
             container=self.focus_outsider_container,
             manager=MANAGER,
@@ -937,15 +935,12 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        if (
-            self.focus_cat.outside
-            and not self.focus_cat.exiled
-            and self.focus_cat.status
-            not in ("kittypet", "loner", "rogue", "former Clancat")
+        if self.focus_cat.status.is_outsider and not self.focus_cat.status.is_lost(
+            CatGroup.PLAYER_CLAN
         ):
-            self.focus_button["invite"].set_text("screens.leader_den.search")
-        else:
             self.focus_button["invite"].set_text("screens.leader_den.invite")
+        else:
+            self.focus_button["invite"].set_text("screens.leader_den.search")
 
         self.focus_button["invite"].show()
 
@@ -996,7 +991,9 @@ class LeaderDenScreen(Screens):
         outsiders = [
             i
             for i in Cat.all_cats.values()
-            if i.outside and not i.dead and not i.driven_out
+            if not i.dead
+            and not i.status.is_outsider
+            and i.status.is_near(CatGroup.PLAYER_CLAN)
         ]
 
         # separate them into chunks for the pages

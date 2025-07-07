@@ -27,28 +27,28 @@
 ### Format
 
 #### Outro and Intro events
-```py
+```json
     "unique ID": {
-      "tags": [],
-      "lead_trait": [],
-      "text": []
+        "tags": [],
+        "lead_trait": [],
+        "text": []
     }
 ```
 
 #### Life Giving events
 
-```py
+```json
     "unique ID": {
-      "tags": [],
-      "lead_trait": [],
-      "star_trait": [],
-      "rank": [],
-      "life_giving": [
-        {
-          "text": "",
-          "virtue": []
-        }
-      ]
+        "tags": [],
+        "lead_trait": [],
+        "star_trait": [],
+        "rank": [],
+        "life_giving": [
+            {
+                "text": "",
+                "virtue": []
+            }
+        ]
     }
 ```
 
@@ -94,9 +94,9 @@
 
 #### life_giving: list[dict{str[var]}]
 > Each dict within this list is a possible text choice for that event, only one will be chosen from this list.  The virtue list holds possible virtues to be randomly chosen from for the replacement text within that event.
-```py
+```json
         {
-          "text": "",
-          "virtue": []
+            "text": "",
+            "virtue": []
         }
 ```

@@ -23,6 +23,8 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..clan_package.settings import get_clan_setting, switch_clan_setting
+from scripts.events_module.short.condition_events import Condition_Events
+from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import ButtonStyles, get_button_dict
@@ -200,7 +202,7 @@ class ClearingScreen(Screens):
             if nutrient.percentage <= 99
         ]
         for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and not the_cat.outside:
+            if the_cat.status.alive_in_player_clan:
                 if the_cat.ID in low_nutrition_cats:
                     self.hungry_cats.append(the_cat)
                 else:
@@ -620,7 +622,7 @@ class ClearingScreen(Screens):
 
         current_prey_amount = game.clan.freshkill_pile.total_amount
         needed_amount = game.clan.freshkill_pile.amount_food_needed()
-        warrior_need = game.prey_config["prey_requirement"]["warrior"]
+        warrior_need = game.prey_config["prey_requirement"][CatRank.WARRIOR]
         warrior_amount = int(current_prey_amount / warrior_need)
         general_text = i18n.t(
             "screens.clearing.prey_amount_info", warrior_amount=warrior_amount
@@ -784,8 +786,8 @@ class ClearingScreen(Screens):
 
         prey_requirement = game.prey_config["prey_requirement"]
         feeding_order = game.prey_config["feeding_order"]
-        for status in feeding_order:
-            amount = prey_requirement[status]
+        for rank in feeding_order:
+            amount = prey_requirement[rank]
             self.additional_text[
                 f"condition_increase_{n}"
             ] = pygame_gui.elements.UITextBox(
@@ -797,8 +799,8 @@ class ClearingScreen(Screens):
                 text_kwargs={
                     "number": str(n),
                     "status": i18n.t(
-                        f"general.{status}",
-                        count=2 if status not in ("leader", "deputy") else 1,
+                        f"general.{rank}",
+                        count=2 if rank not in (CatRank.LEADER, CatRank.DEPUTY) else 1,
                     ),
                     "prey": i18n.t("screens.clearing.prey_count", count=amount),
                 },

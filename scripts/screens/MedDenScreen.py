@@ -17,12 +17,13 @@ from scripts.game_structure.ui_elements import (
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     shorten_text_to_fit,
     event_text_adjust,
     ui_scale_offset,
 )
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..conditions import get_amount_cat_for_one_medic, amount_clanmembers_covered
 from ..game_structure.game.switches import switch_set_value, Switch
 from ..game_structure.screen_settings import MANAGER
@@ -259,10 +260,8 @@ class MedDenScreen(Screens):
             self.minor_cats = []
             self.injured_and_sick_cats = []
             for the_cat in Cat.all_cats_list:
-                if (
-                    not the_cat.dead
-                    and not the_cat.outside
-                    and (the_cat.injuries or the_cat.illnesses)
+                if the_cat.status.alive_in_player_clan and (
+                    the_cat.injuries or the_cat.illnesses
                 ):
                     self.injured_and_sick_cats.append(the_cat)
             for cat in self.injured_and_sick_cats:
@@ -428,8 +427,8 @@ class MedDenScreen(Screens):
             self.med_name.kill()
 
         # get the med cats
-        self.meds = get_alive_status_cats(
-            Cat, ["medicine cat", "medicine cat apprentice"], sort=True
+        self.meds = find_alive_cats_with_rank(
+            Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
         )
 
         if not self.meds:

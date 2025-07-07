@@ -7,6 +7,7 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
+from ..cat.enums import CatGroup, CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.game_structure.game.switches import (
@@ -20,6 +21,7 @@ from scripts.game_structure import constants
 from .game_essentials import game
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills
+from ..cat.status import StatusDict
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
@@ -65,6 +67,21 @@ def json_load():
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
+            # accounting for old saves
+            # checks first if status is in the old format
+            # if it is then we use the old info to provide an initial status dict
+            if isinstance(cat["status"], str):
+                # this sucks, but we need to get the actual str age to make sure nothing goes wonky
+                age = None
+                for key_age in Cat.age_moons.keys():
+                    if cat["moons"] in range(
+                        Cat.age_moons[key_age][0], Cat.age_moons[key_age][1] + 1
+                    ):
+                        age = key_age
+                status_dict = {"rank": cat["status"], "age": age}
+            else:
+                status_dict = cat["status"]
+
             new_cat = Cat(
                 ID=cat["ID"],
                 prefix=cat["name_prefix"],
@@ -73,7 +90,7 @@ def json_load():
                     cat["specsuffix_hidden"] if "specsuffix_hidden" in cat else False
                 ),
                 gender=cat["gender"],
-                status=cat["status"],
+                status_dict=status_dict,
                 parent1=cat["parent1"],
                 parent2=cat["parent2"],
                 moons=cat["moons"],
@@ -143,7 +160,7 @@ def json_load():
                 opacity=cat["opacity"] if "opacity" in cat else 100,
             )
 
-            # Runs a bunch of apperence-related convertion of old stuff.
+            # Runs a bunch of appearance-related conversion of old stuff.
             new_cat.pelt.check_and_convert(convert)
 
             # converting old specialty saves into new scar parameter
@@ -196,7 +213,6 @@ def json_load():
             new_cat.no_kits = cat["no_kits"]
             new_cat.no_mates = cat["no_mates"] if "no_mates" in cat else False
             new_cat.no_retire = cat["no_retire"] if "no_retire" in cat else False
-            new_cat.exiled = cat["exiled"]
             new_cat.driven_out = cat["driven_out"] if "driven_out" in cat else False
 
             if "skill_dict" in cat:
@@ -212,7 +228,7 @@ def json_load():
                     else:
                         new_cat.backstory = "clanborn"
                 new_cat.skills = CatSkills.get_skills_from_old(
-                    cat["skill"], new_cat.status, new_cat.moons
+                    cat["skill"], new_cat.status.rank, new_cat.moons
                 )
 
             new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
@@ -221,14 +237,34 @@ def json_load():
             new_cat.previous_mates = (
                 cat["previous_mates"] if "previous_mates" in cat else []
             )
-            new_cat.dead = cat["dead"]
+
+            # checking for old dead
+            if cat.get("dead") or cat.get("df"):
+                if not new_cat.status.group or not new_cat.status.group.is_afterlife():
+                    if cat.get("df"):
+                        new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
+                    elif cat.get("outside"):
+                        new_cat.status.send_to_afterlife(
+                            target=CatGroup.UNKNOWN_RESIDENCE
+                        )
+                    else:
+                        new_cat.status.send_to_afterlife(target=CatGroup.STARCLAN)
+
+                # these should properly change the cat's status to align with old bool info
+                if not new_cat.dead and cat.get("exiled"):
+                    new_cat.status.exile_from_group()
+                if (
+                    not new_cat.dead
+                    and cat.get("outside")
+                    and not new_cat.status.is_outsider
+                ):
+                    new_cat.status.become_lost()
+
             new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]
-            new_cat.df = cat["df"] if "df" in cat else False
 
-            new_cat.outside = cat["outside"] if "outside" in cat else False
             new_cat.faded_offspring = (
                 cat["faded_offspring"] if "faded_offspring" in cat else []
             )
@@ -369,7 +405,7 @@ def csv_load(all_cats):
                     prefix=attr[1].split(":")[0],
                     suffix=attr[1].split(":")[1],
                     gender=attr[2],
-                    status=attr[3],
+                    status={"rank": attr[3]},
                     pelt=the_pelt,
                     parent1=attr[6],
                     parent2=attr[7],
@@ -476,7 +512,7 @@ def csv_load(all_cats):
                         the_cat.mate = [attr[31]]
                     if len(attr) >= 32:
                         # Is the cat dead
-                        the_cat.dead = attr[32]
+                        the_cat.status.send_to_afterlife(target=CatGroup.STARCLAN)
                         the_cat.pelt.cat_sprites["dead"] = attr[33]
                 switch_set_value(
                     Switch.error_message,
@@ -499,7 +535,8 @@ def csv_load(all_cats):
                 if len(attr) > 38:
                     the_cat.no_kits = bool(attr[38])
                 if len(attr) > 39:
-                    the_cat.exiled = bool(attr[39])
+                    if bool(attr[39]):
+                        the_cat.status.exile_from_group()
                 if len(attr) > 40:
                     the_cat.genderalign = attr[40]
                 if len(attr) > 41 and attr[41] is not None:  # KEEP THIS AT THE END
@@ -520,7 +557,7 @@ def csv_load(all_cats):
             for app_id in inter_cat.apprentice:
                 app = Cat.all_cats.get(app_id)
                 # Make sure if cat isn't an apprentice, they're a former apprentice
-                if "apprentice" in app.status:
+                if app.status.rank == CatRank.APPRENTICE:
                     apps.append(app)
                 else:
                     former_apps.append(app)

@@ -12,6 +12,7 @@ from scripts.clan_package.settings.clan_settings import (
 )
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
+from scripts.cat.enums import CatRank
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
@@ -20,7 +21,7 @@ from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.utility import (
     ui_scale,
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     get_text_box_theme,
     adjust_list_text,
 )
@@ -97,9 +98,8 @@ class WarriorDenScreen(Screens):
                             # only create the mediator list if needed to check
                             mediator_list = list(
                                 filter(
-                                    lambda x: x.status == "mediator"
-                                    and not x.dead
-                                    and not x.outside,
+                                    lambda x: x.status.rank == CatRank.MEDIATOR
+                                    and x.status.alive_in_player_clan,
                                     Cat.all_cats_list,
                                 )
                             )
@@ -109,8 +109,8 @@ class WarriorDenScreen(Screens):
                             "medicine cat" in description
                             and self.save_button.is_enabled
                         ):
-                            meds = get_alive_status_cats(
-                                Cat, ["medicine cat", "medicine cat apprentice"]
+                            meds = find_alive_cats_with_rank(
+                                Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE]
                             )
                             if len(meds) < 1:
                                 self.save_button.disable()
