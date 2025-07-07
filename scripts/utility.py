@@ -881,7 +881,7 @@ def create_new_cat(
         new_cat.status.change_current_moons_as(moons)
 
         # now we actually add them to the clan, if they should be joining
-        if not outside:
+        if not outside and alive:
             new_cat.add_to_clan()
             # check if cat is the correct rank
             if new_cat.status.rank != rank:
