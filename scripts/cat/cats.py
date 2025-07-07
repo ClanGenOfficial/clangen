@@ -842,9 +842,10 @@ class Cat:
                 # Generate the event:
                 possible_strings = []
                 for x in very_low_values:
+                    value = f"neg_{x}"
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(
-                            family_relation, x, cat.personality.trait, body_status
+                            family_relation, value, cat.personality.trait, body_status
                         )
                     )
 
