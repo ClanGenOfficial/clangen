@@ -502,7 +502,9 @@ class Pregnancy_Events:
                     "conditions.pregnancy.kitting_death", name=cat.name
                 )
             cat.history.add_death(death_text=death_event)
-        elif not cat.status.is_outsider:  # if cat doesn't die, give recovering from birth
+        elif (
+            not cat.status.is_outsider
+        ):  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if "blood loss" in cat.injuries:
                 if cat.status.is_leader:

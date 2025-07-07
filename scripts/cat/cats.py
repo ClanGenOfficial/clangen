@@ -653,7 +653,6 @@ class Cat:
             self.status.add_to_group(CatGroup.UNKNOWN_RESIDENCE)
 
         if not self.status.is_outsider or self.status.is_former_clancat:
-
             Cat.dead_cats.append(self)
 
         return
