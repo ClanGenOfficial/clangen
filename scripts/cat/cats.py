@@ -32,7 +32,6 @@ from scripts.conditions import (
     PermanentCondition,
     get_amount_cat_for_one_medic,
     medicine_cats_can_cover_clan,
-    amount_clanmembers_covered,
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
@@ -930,7 +929,8 @@ class Cat:
 
         old_rank = self.status.rank
 
-        self.status._change_rank(new_rank)
+        # this is a private function, but it's meant to be used here.
+        self.status._change_rank(new_rank)  # pylint: disable=protected-access
 
         self.name.status = new_rank
 
