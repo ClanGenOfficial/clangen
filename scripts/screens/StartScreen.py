@@ -206,7 +206,7 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.settings_button},
         )
-        if game.config["dev_tools"]:
+        if constants.CONFIG["dev_tools"]:
             self.event_edit = UISurfaceImageButton(
                 ui_scale(pygame.Rect((70, 15), (200, 30))),
                 "buttons.event_edit",

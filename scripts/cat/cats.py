@@ -9,7 +9,7 @@ import itertools
 import os.path
 import sys
 from random import choice, randint, sample, random, getrandbits, randrange
-from typing import Dict, List, Any, Optional, Union, Callable, Optional, TYPE_CHECKING
+from typing import Dict, List, Any, Union, Callable, Optional, TYPE_CHECKING
 
 import i18n
 import ujson  # type: ignore

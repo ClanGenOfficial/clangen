@@ -372,7 +372,7 @@ class Condition_Events:
             return triggered
 
         if (
-            game.config["event_generation"]["debug_type_override"] == "injury"
+            constants.CONFIG["event_generation"]["debug_type_override"] == "injury"
             and random_cat
         ):
             handle_short_events.handle_event(

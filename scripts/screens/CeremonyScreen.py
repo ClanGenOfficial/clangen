@@ -9,8 +9,6 @@ from scripts.game_structure.ui_elements import UISurfaceImageButton
 from scripts.utility import get_text_box_theme
 from scripts.utility import ui_scale
 from .Screens import Screens
-from ..cat.enums import CatRank
-from ..cat.history import History
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import ButtonStyles, get_button_dict

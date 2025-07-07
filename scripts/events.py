@@ -16,7 +16,6 @@ import i18n
 from scripts.cat import save_load
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
-from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
@@ -34,7 +33,6 @@ from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.game_structure import constants
-from scripts.game_structure.game.settings import game_setting_set, game_setting_get
 from scripts.game_structure.game.switches import (
     Switch,
     switch_get_value,
@@ -612,7 +610,8 @@ class Events:
             ]
 
             warrior_amount = (
-                len(healthy_warriors) * constants.CONFIG["focus"]["hunting"][CatRank.WARRIOR]
+                len(healthy_warriors)
+                * constants.CONFIG["focus"]["hunting"][CatRank.WARRIOR]
             )
 
             # handle apprentices
@@ -714,7 +713,7 @@ class Events:
                 chance -= increase * len(game.clan.clans_in_focus)
             for cat in relevant_cats:
                 # if the raid setting or 50/50 for hoarding to get to the injury part
-                if game_setting_get("raid other clans") or random.getrandbits(1):
+                if get_clan_setting("raid other clans") or random.getrandbits(1):
                     status_use = cat.status.rank
                     if status_use in (CatRank.DEPUTY, CatRank.LEADER):
                         status_use = CatRank.WARRIOR
@@ -939,8 +938,10 @@ class Events:
         # are connected to cats are located in there
         cat.one_moon()
 
-        if game.config["event_generation"]["debug_type_override"]:
-            debug_type_override = game.config["event_generation"]["debug_type_override"]
+        if constants.CONFIG["event_generation"]["debug_type_override"]:
+            debug_type_override = constants.CONFIG["event_generation"][
+                "debug_type_override"
+            ]
             if debug_type_override in ["death", "injury"]:
                 self.handle_injuries_or_general_death(cat)
             elif debug_type_override == "misc":
@@ -1865,7 +1866,7 @@ class Events:
             Cat, main_cat=cat, parent_child_modifier=True, mentor_app_modifier=True
         )
 
-        if game.config["event_generation"]["debug_type_override"] == "new_cat":
+        if constants.CONFIG["event_generation"]["debug_type_override"] == "new_cat":
             handle_short_events.handle_event(
                 event_type="new_cat",
                 main_cat=cat,
@@ -1892,7 +1893,7 @@ class Events:
         """
         TODO: DOCS
         """
-        if game.config["event_generation"]["debug_type_override"] == "misc":
+        if constants.CONFIG["event_generation"]["debug_type_override"] == "misc":
             random_cat = get_random_moon_cat(Cat, main_cat=cat)
             handle_short_events.handle_event(
                 event_type="misc",
@@ -1925,7 +1926,7 @@ class Events:
             Cat, cat, parent_child_modifier=True, mentor_app_modifier=True
         )
 
-        if game.config["event_generation"]["debug_type_override"] == "death":
+        if constants.CONFIG["event_generation"]["debug_type_override"] == "death":
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
@@ -1933,7 +1934,7 @@ class Events:
                 freshkill_pile=game.clan.freshkill_pile,
             )
             return
-        elif game.config["event_generation"]["debug_type_override"] == "injury":
+        elif constants.CONFIG["event_generation"]["debug_type_override"] == "injury":
             Condition_Events.handle_injuries(cat, random_cat)
             return
 

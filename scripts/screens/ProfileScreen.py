@@ -10,8 +10,6 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from ..cat.enums import CatAge, CatRank, CatGroup
-from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
@@ -32,8 +30,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
-from ..cat.enums import CatAge
-from ..cat.history import History
+from ..cat.enums import CatAge, CatRank, CatGroup
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.save_load import safe_save
 from ..game_structure.game.settings import game_setting_get

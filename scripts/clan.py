@@ -17,7 +17,6 @@ import ujson
 
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.enums import CatRank, CatGroup
-from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.save_load import save_cats
 from scripts.cat.sprites import sprites
@@ -25,6 +24,7 @@ from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
+from scripts.events_module.future.future_event import FutureEvent
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import safe_save, save_clanlist, read_clans
@@ -41,7 +41,6 @@ from scripts.utility import (
     clan_symbol_sprite,
     get_living_clan_cat_count,
 )  # pylint: disable=redefined-builtin
-from scripts.events_module.future.future_event import FutureEvent
 
 
 class Clan:

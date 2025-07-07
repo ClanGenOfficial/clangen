@@ -6,7 +6,6 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.events_module.short.condition_events import Condition_Events
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,

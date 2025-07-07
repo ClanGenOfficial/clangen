@@ -295,8 +295,8 @@ class GenerateEvents:
             # ensure ID and requirements override
             if (
                 event.event_id
-                == game.config["event_generation"]["debug_ensure_event_id"]
-                and game.config["event_generation"]["debug_override_requirements"]
+                == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+                and constants.CONFIG["event_generation"]["debug_override_requirements"]
             ):
                 final_events.append(event)
                 break
@@ -361,7 +361,8 @@ class GenerateEvents:
             # check that injury is possible
             if (
                 event.injury
-                and game.config["event_generation"]["debug_type_override"] != "injury"
+                and constants.CONFIG["event_generation"]["debug_type_override"]
+                != "injury"
             ):
                 # determine which injury severity list will be used
                 allowed_severity = None
@@ -486,7 +487,7 @@ class GenerateEvents:
             # ensure ID without requirements override
             if (
                 event.event_id
-                == game.config["event_generation"]["debug_ensure_event_id"]
+                == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
             ):
                 final_events.append(event)
                 break
