@@ -2180,8 +2180,7 @@ class Cat:
 
     def available_to_work(self):
         return (
-            not self.dead
-            and self.status.alive_in_player_clan
+            self.status.alive_in_player_clan
             and not self.not_working()
         )
 
