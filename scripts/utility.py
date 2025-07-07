@@ -895,14 +895,13 @@ def create_new_cat(
                 new_cat.update_mentor()
 
         # NAMES and accs
-        # past clancats and any little babies will take a clancat name, we love indoctrination
+        # clancat adults should have already generated with a clan-ish name, thus they skip all of this re-naming
+        # little babies will take a clancat name, we love indoctrination
         if (kit or litter or moons < 12) and (
             not original_group or not original_group.is_other_clan_group()
         ):
             # babies change name, in case their initial name isn't clan-ish
-            if moons < 12:
-                new_cat.change_name()
-            # clancat adults should have already generated with a clan-ish name
+            new_cat.change_name()
         else:
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:
