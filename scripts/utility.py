@@ -538,6 +538,22 @@ def create_new_cat_block(
     if bs_override:
         chosen_backstory = choice(stor)
 
+        if (
+            chosen_backstory
+            in BACKSTORIES["backstory_categories"]["baby_clancat_backstories"]
+        ):
+            cat_social = CatSocial.CLANCAT
+        elif (
+            chosen_backstory
+            in BACKSTORIES["backstory_categories"]["baby_loner_backstories"]
+        ):
+            cat_social = CatSocial.LONER
+        elif (
+            chosen_backstory
+            in BACKSTORIES["backstory_categories"]["baby_kittypet_backstories"]
+        ):
+            cat_social = CatSocial.KITTYPET
+
     # KITTEN THOUGHT
     if rank in (CatRank.KITTEN, CatRank.NEWBORN):
         thought = i18n.t("hardcoded.thought_new_kitten")
@@ -880,13 +896,14 @@ def create_new_cat(
 
         # NAMES and accs
         # past clancats and any little babies will take a clancat name, we love indoctrination
-        if (
-            not original_group
-            or not original_group.is_other_clan_group()
-            and not kit
-            and not litter
-            and not moons < 12
+        if (kit or litter or moons < 12) and (
+            not original_group or not original_group.is_other_clan_group()
         ):
+            # babies change name, in case their initial name isn't clan-ish
+            if moons < 12:
+                new_cat.change_name()
+            # clancat adults should have already generated with a clan-ish name
+        else:
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:
                 name = choice(names.names_dict["loner_names"])
