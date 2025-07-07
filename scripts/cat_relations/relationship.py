@@ -299,32 +299,36 @@ class Relationship:
         -------
         """
         amount = self.get_value_change_amount(value_change, intensity)
-        passive_buff = int(
-            amount / game.config["relationship"]["passive_influence_div"]
-        )
-        # just adding a teeny bit of variety
-        buffs = [passive_buff - 1, passive_buff, passive_buff + 1]
+
+        buffs = []
+        if intensity != "low":
+            passive_buff = int(
+                amount
+                / game.config["relationship"][f"{intensity}_passive_influence_div"]
+            )
+            # just adding a teeny bit of variety
+            buffs = [passive_buff - 1, passive_buff, passive_buff + 1]
 
         # the passive buff creates a cascade affect
         # so a negative interaction will affect all values to a negative degree
         # and a positive interaction will affect all values to a positive degree
 
-        if rel_type != RelValue.LIKE:
+        if rel_type != RelValue.LIKE and buffs:
             self.like += choice(buffs)
         else:
             self.like += amount
 
-        if rel_type != RelValue.RESPECT:
+        if rel_type != RelValue.RESPECT and buffs:
             self.respect += choice(buffs)
         else:
             self.respect += amount
 
-        if rel_type != RelValue.TRUST:
+        if rel_type != RelValue.TRUST and buffs:
             self.trust += choice(buffs)
         else:
             self.trust += amount
 
-        if rel_type != RelValue.COMFORT:
+        if rel_type != RelValue.COMFORT and buffs:
             self.comfort += choice(buffs)
         else:
             self.comfort += amount
