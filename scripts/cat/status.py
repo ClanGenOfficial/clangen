@@ -164,7 +164,7 @@ class Status:
         new_history = {"group": group, "rank": rank, "moons_as": 0}
 
         if not age and not rank:
-            raise Exception(
+            raise ValueError(
                 "WARNING: group history could not be made due to missing age and rank information"
             )
 
@@ -450,7 +450,7 @@ class Status:
             new_rank = self.find_prior_clan_rank()
             # we don't need to change leaders and deps if they're going to an afterlife
             if (
-                new_rank in [CatRank.LEADER, CatRank.DEPUTY]
+                new_rank in (CatRank.LEADER, CatRank.DEPUTY)
                 and not new_group.is_afterlife()
             ):
                 if age == CatAge.SENIOR:
@@ -516,7 +516,7 @@ class Status:
         for entry in self.standing_history:
             if entry.get("group") == group:
                 if entry["near"]:
-                    entry["near"] = not entry.get("near", False)
+                    entry["near"] = not entry["near"]
 
     # RETRIEVE INFO
     def get_standing_with_group(self, group: CatGroup) -> list[CatStanding]:
