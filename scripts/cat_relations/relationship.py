@@ -304,8 +304,7 @@ class Relationship:
         # only high intensity gives passive buffs
         if intensity == "high":
             passive_buff = int(
-                amount
-                / game.config["relationship"][f"passive_influence_div"]
+                amount / game.config["relationship"][f"passive_influence_div"]
             )
             # just adding a teeny bit of variety
             buffs = [passive_buff - 1, passive_buff, passive_buff + 1]
