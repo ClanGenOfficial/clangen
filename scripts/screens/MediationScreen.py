@@ -13,6 +13,7 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIRelationStatusFillBar,
     UISurfaceImageButton,
+    UIRelationDisplay,
 )
 from scripts.utility import (
     get_text_box_theme,
@@ -41,7 +42,7 @@ class MediationScreen(Screens):
         self.cat_buttons = []
         self.page = 1
         self.selected_cat_elements = {}
-        self.allow_romantic = True
+        self.allow_romance = True
         self.current_listed_cats = None
         self.previous_search_text = ""
 
@@ -63,11 +64,11 @@ class MediationScreen(Screens):
             elif event.ui_element == self.previous_page:
                 self.page -= 1
                 self.update_page()
-            elif event.ui_element == self.romantic_checkbox:
-                if self.allow_romantic:
-                    self.allow_romantic = False
+            elif event.ui_element == self.romance_checkbox:
+                if self.allow_romance:
+                    self.allow_romance = False
                 else:
-                    self.allow_romantic = True
+                    self.allow_romance = True
                 self.update_buttons()
             elif event.ui_element == self.deselect_1:
                 self.selected_cat_1 = None
@@ -82,7 +83,7 @@ class MediationScreen(Screens):
                     self.mediators[self.selected_mediator],
                     self.selected_cat_1,
                     self.selected_cat_2,
-                    self.allow_romantic,
+                    self.allow_romance,
                 )
                 self.results.set_text(output)
                 self.update_selected_cats()
@@ -94,7 +95,7 @@ class MediationScreen(Screens):
                     self.mediators[self.selected_mediator],
                     self.selected_cat_1,
                     self.selected_cat_2,
-                    self.allow_romantic,
+                    self.allow_romance,
                     sabotage=True,
                 )
                 self.results.set_text(output)
@@ -174,8 +175,8 @@ class MediationScreen(Screens):
         self.cat_bg.disable()
 
         # Will be overwritten
-        self.romantic_checkbox = None
-        self.romantic_checkbox_text = pygame_gui.elements.UILabel(
+        self.romance_checkbox = None
+        self.romance_checkbox_text = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((368, 325), (100, 20))),
             "screens.mediation.allow_romantic",
             object_id=get_text_box_theme("#text_box_22_horizleft"),
@@ -624,11 +625,6 @@ class MediationScreen(Screens):
             else:
                 the_relationship = cat.create_one_relationship(other_cat)
 
-            barbar = 21
-            bar_count = 0
-            y_start = 177
-            x_start = 25
-
             # ROMANTIC LOVE
             # CHECK AGE DIFFERENCE
             same_age = the_relationship.cat_to.age == cat.age
@@ -640,160 +636,23 @@ class MediationScreen(Screens):
             # If they are not both adults, or the same age, OR they are related, don't display any romantic affection,
             # even if they somehow have some. They should not be able to get any, but it never hurts to check.
             if not check_age or related:
-                display_romantic = 0
+                allow_romance = False
                 # Print, just for bug checking. Again, they should not be able to get love towards their relative.
                 if the_relationship.romance and related:
                     print(
-                        str(cat.name)
-                        + " has "
-                        + str(the_relationship.romance)
-                        + " romantic love "
-                        "towards their relative, " + str(the_relationship.cat_to.name)
+                        f"WARNING: {self.cat.name} has {the_relationship.romance} romantic love towards their relative, {the_relationship.cat_to.name}"
                     )
             else:
-                display_romantic = the_relationship.romance
+                allow_romance = True
 
-            self.selected_cat_elements[
-                f"romantic_text{tag}"
-            ] = pygame_gui.elements.UITextBox(
-                "relationships.romance_lable",
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + (barbar * bar_count) - 5),
-                        (150, 30),
-                    )
-                ),
-                text_kwargs={"count": 2 if display_romantic > 49 else 1},
-                object_id="#text_box_22_horizleft",
-            )
-            self.selected_cat_elements[f"romantic_bar{tag}"] = UIRelationStatusFillBar(
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + 15 + (barbar * bar_count)),
-                        (150, 9),
-                    )
-                ),
-                display_romantic,
-                positive_trait=True,
-                dark_mode=game.settings["dark mode"],
-            )
-            bar_count += 1
-
-            # PLATONIC
-            self.selected_cat_elements[
-                f"plantonic_text{tag}"
-            ] = pygame_gui.elements.UITextBox(
-                "relationships.like_label",
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + (barbar * bar_count) - 5),
-                        (150, 30),
-                    )
-                ),
-                text_kwargs={"count": 2 if the_relationship.like > 49 else 1},
-                object_id="#text_box_22_horizleft",
-            )
-            self.selected_cat_elements[f"platonic_bar{tag}"] = UIRelationStatusFillBar(
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + 15 + (barbar * bar_count)),
-                        (150, 9),
-                    )
-                ),
-                the_relationship.like,
-                positive_trait=True,
-                dark_mode=game.settings["dark mode"],
-            )
-
-            bar_count += 1
-
-            # ADMIRE
-            self.selected_cat_elements[
-                f"admiration_text{tag}"
-            ] = pygame_gui.elements.UITextBox(
-                "relationships.admire_label",
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + (barbar * bar_count) - 5),
-                        (150, 30),
-                    )
-                ),
-                object_id="#text_box_22_horizleft",
-                text_kwargs={"count": 2 if the_relationship.respect > 49 else 1},
-            )
-            self.selected_cat_elements[
-                f"admiration_bar{tag}"
-            ] = UIRelationStatusFillBar(
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + 15 + (barbar * bar_count)),
-                        (150, 9),
-                    )
-                ),
-                the_relationship.respect,
-                positive_trait=True,
-                dark_mode=game.settings["dark mode"],
-            )
-
-            bar_count += 1
-
-            # COMFORTABLE
-            self.selected_cat_elements[
-                f"comfortable_text{tag}"
-            ] = pygame_gui.elements.UITextBox(
-                "relationships.comfort_label",
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + (barbar * bar_count) - 5),
-                        (150, 30),
-                    )
-                ),
-                object_id="#text_box_22_horizleft",
-                text_kwargs={"count": 2 if the_relationship.comfort > 49 else 1},
-            )
-            self.selected_cat_elements[
-                f"comfortable_bar{tag}"
-            ] = UIRelationStatusFillBar(
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + 15 + (barbar * bar_count)),
-                        (150, 9),
-                    )
-                ),
-                the_relationship.comfort,
-                positive_trait=True,
-                dark_mode=game.settings["dark mode"],
-            )
-
-            bar_count += 1
-
-            # TRUST
-            if the_relationship.trust > 49:
-                text = "reliance:"
-            else:
-                text = "trust:"
-            self.selected_cat_elements[
-                f"trust_text{tag}"
-            ] = pygame_gui.elements.UITextBox(
-                text,
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + (barbar * bar_count) - 5),
-                        (150, 30),
-                    )
-                ),
-                object_id="#text_box_22_horizleft",
-            )
-            self.selected_cat_elements[f"trust_bar{tag}"] = UIRelationStatusFillBar(
-                ui_scale(
-                    pygame.Rect(
-                        (x + x_start, y + y_start + 15 + (barbar * bar_count)),
-                        (150, 9),
-                    )
-                ),
-                the_relationship.trust,
-                positive_trait=True,
-                dark_mode=game.settings["dark mode"],
+            self.selected_cat_elements[f"display{tag}"] = UIRelationDisplay(
+                position=(x + 50, 0),
+                relationship=the_relationship,
+                romance=allow_romance,
+                manager=MANAGER,
+                anchors={
+                    "top_target": self.selected_cat_elements[f"relation_heading{tag}"]
+                },
             )
 
     def selected_cat_list(self):
@@ -838,14 +697,14 @@ class MediationScreen(Screens):
             self.mediate_button.enable()
             self.sabotage_button.enable()
 
-        if self.romantic_checkbox:
-            self.romantic_checkbox.kill()
+        if self.romance_checkbox:
+            self.romance_checkbox.kill()
 
-        self.romantic_checkbox = UIImageButton(
+        self.romance_checkbox = UIImageButton(
             ui_scale(pygame.Rect((321, 317), (34, 34))),
             "",
             object_id=(
-                "@checked_checkbox" if self.allow_romantic else "@unchecked_checkbox"
+                "@checked_checkbox" if self.allow_romance else "@unchecked_checkbox"
             ),
             tool_tip_text="screens.mediation.allow_romantic_tooltip",
             manager=MANAGER,
@@ -920,11 +779,11 @@ class MediationScreen(Screens):
         del self.random1
         self.random2.kill()
         del self.random2
-        if self.romantic_checkbox:
-            self.romantic_checkbox.kill()
-            del self.romantic_checkbox
-        self.romantic_checkbox_text.kill()
-        del self.romantic_checkbox_text
+        if self.romance_checkbox:
+            self.romance_checkbox.kill()
+            del self.romance_checkbox
+        self.romance_checkbox_text.kill()
+        del self.romance_checkbox_text
         self.error.kill()
         del self.error
         self.search_bar_image.kill()

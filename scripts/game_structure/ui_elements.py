@@ -11,6 +11,7 @@ from typing import (
     Callable,
 )
 
+import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer, IContainerLikeInterface, UIElement, ObjectID
@@ -21,6 +22,7 @@ from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
 from pygame_gui.elements import UIAutoResizingContainer, UISelectionList
 
+from scripts.cat_relations.enums import RelValue
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import screen
@@ -1103,6 +1105,7 @@ class UIRelationStatusFillBar(pygame_gui.elements.UIStatusBar):
         manager=None,
         anchors=None,
         tool_tip_text: str = None,
+        container=None,
     ):
         rect = (
             (relative_rect.x + ui_scale_value(2), relative_rect.y + ui_scale_value(2)),
@@ -1116,6 +1119,7 @@ class UIRelationStatusFillBar(pygame_gui.elements.UIStatusBar):
             object_id="#relation_bar",
             manager=manager,
             anchors=anchors,
+            container=container,
         )
         self.percent_full = percent_full / 100
 
@@ -1133,6 +1137,7 @@ class UIRelationStatusFillBar(pygame_gui.elements.UIStatusBar):
             manager=manager,
             anchors=anchors,
             object_id="#relation_bar",
+            container=container,
         )
         self.overlay.set_tooltip(tool_tip_text)
         self.overlay.tool_tip_delay = 0
@@ -1233,6 +1238,108 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         self.overlay.kill()
         self.pointer.kill()
         super().kill()
+
+
+class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
+    def __init__(
+        self,
+        position: tuple,
+        relationship,
+        romance: bool = False,
+        container=None,
+        manager=None,
+        anchors=None,
+        starting_height=1,
+    ):
+        dimensions = (0, 0)
+        self.rel_elements = {}
+        bar_size = (96, 10)
+
+        super().__init__(
+            relative_rect=ui_scale(pygame.Rect(position, dimensions)),
+            container=container,
+            manager=manager,
+            anchors=anchors,
+            starting_height=starting_height,
+        )
+
+        prev_element = None
+        for val in [*RelValue]:
+            if val == RelValue.ROMANCE:
+                continue
+            num, level = self.get_value_attrs(val, relationship)
+            self.rel_elements[f"{val}_text"] = pygame_gui.elements.UITextBox(
+                f"relationships.{level}",
+                ui_scale(
+                    pygame.Rect(
+                        (0 - 2, 0),
+                        (100, 25),
+                    )
+                ),
+                object_id="#text_box_26_horizcenter",
+                container=self,
+                anchors={"top_target": prev_element} if prev_element else None,
+            )
+            self.rel_elements[f"{val}_text"].set_tooltip(
+                i18n.t(f"relationships.{val}", count=num)
+            )
+            self.rel_elements[f"{val}_text"].tool_tip_delay = 0
+            self.rel_elements[f"{val}_text"].disable()
+            self.rel_elements[f"{val}_bar"] = UIRelationStatusScaleBar(
+                ui_scale(pygame.Rect((0, -5), bar_size)),
+                anchors={"top_target": self.rel_elements[f"{val}_text"]},
+                scale_position=num,
+                container=self,
+            )
+            prev_element = self.rel_elements[f"{val}_bar"]
+
+            # ROMANCE
+        if romance:
+            self.rel_elements[f"romance_text"] = UITextBoxTweaked(
+                f"relationships.{relationship.romance_level if relationship.romance_level else 'neutral'}",
+                ui_scale(
+                    pygame.Rect(
+                        (0, 1),
+                        (96, -1),
+                    )
+                ),
+                object_id="#text_box_26_horizcenter",
+                anchors={"top_target": prev_element},
+                container=self,
+                line_spacing=0.95,
+            )
+            self.rel_elements[f"romance_text"].set_tooltip(
+                i18n.t(f"relationships.romance", count=relationship.romance)
+            )
+            self.rel_elements[f"romance_text"].tool_tip_delay = 0
+            self.rel_elements[f"romance_text"].disable()
+            self.rel_elements[f"romance_text"].disable()
+            self.rel_elements[f"romance_bar"] = UIRelationStatusFillBar(
+                ui_scale(
+                    pygame.Rect(
+                        (0, -5),
+                        bar_size,
+                    )
+                ),
+                relationship.romance,
+                container=self,
+                anchors={"top_target": self.rel_elements[f"romance_text"]},
+            )
+
+        self.romance = romance
+
+    @staticmethod
+    def get_value_attrs(value, rel):
+        if value == RelValue.ROMANCE:
+            return rel.romance, rel.romance_level
+        elif value == RelValue.LIKE:
+            return rel.like, rel.like_level
+        elif value == RelValue.RESPECT:
+            return rel.respect, rel.respect_level
+        elif value == RelValue.COMFORT:
+            return rel.comfort, rel.comfort_level
+        else:
+            return rel.trust, rel.trust_level
 
 
 class IDImageButton(UISurfaceImageButton):

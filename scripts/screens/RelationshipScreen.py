@@ -16,6 +16,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIRelationStatusScaleBar,
     UITextBoxTweaked,
+    UIRelationDisplay,
 )
 from scripts.game_structure.windows import RelationshipLog
 from scripts.utility import (
@@ -832,84 +833,13 @@ class RelationshipScreen(Screens):
         else:
             allow_romance = True
 
-        # determine placing on screen
-        rel_pos_x = pos_x + 3
-
-        bar_size = (96, 10)
-
-        prev_element = self.sprite_buttons["image" + str(i)]
-        for val in [*RelValue]:
-            if val == RelValue.ROMANCE:
-                continue
-            num, level = self.get_value_attrs(val, the_relationship)
-            self.relation_list_elements[
-                f"{val}_text{i}"
-            ] = pygame_gui.elements.UITextBox(
-                f"relationships.{level}",
-                ui_scale(
-                    pygame.Rect(
-                        (rel_pos_x - 2, 0),
-                        (100, 25),
-                    )
-                ),
-                object_id="#text_box_26_horizcenter",
-                anchors={"top_target": prev_element},
-            )
-            self.relation_list_elements[f"{val}_text{i}"].set_tooltip(
-                i18n.t(f"relationships.{val}", count=num)
-            )
-            self.relation_list_elements[f"{val}_text{i}"].tool_tip_delay = 0
-            self.relation_list_elements[f"{val}_text{i}"].disable()
-            self.relation_list_elements[f"{val}_bar{i}"] = UIRelationStatusScaleBar(
-                ui_scale(pygame.Rect((rel_pos_x, -5), bar_size)),
-                anchors={"top_target": self.relation_list_elements[f"{val}_text{i}"]},
-                scale_position=num,
-            )
-            prev_element = self.relation_list_elements[f"{val}_bar{i}"]
-
-        # ROMANCE
-        if allow_romance:
-            self.relation_list_elements[f"romance_text{i}"] = UITextBoxTweaked(
-                f"relationships.{the_relationship.romance_level if the_relationship.romance_level else 'neutral'}",
-                ui_scale(
-                    pygame.Rect(
-                        (rel_pos_x, 1),
-                        (96, -1),
-                    )
-                ),
-                object_id="#text_box_26_horizcenter",
-                anchors={"top_target": prev_element},
-                line_spacing=0.95,
-            )
-            self.relation_list_elements[f"romance_text{i}"].set_tooltip(
-                i18n.t(f"relationships.romance", count=the_relationship.romance)
-            )
-            self.relation_list_elements[f"romance_text{i}"].tool_tip_delay = 0
-            self.relation_list_elements[f"romance_text{i}"].disable()
-            self.relation_list_elements[f"romance_text{i}"].disable()
-            self.relation_list_elements[f"romance_bar{i}"] = UIRelationStatusFillBar(
-                ui_scale(
-                    pygame.Rect(
-                        (rel_pos_x, -5),
-                        bar_size,
-                    )
-                ),
-                the_relationship.romance,
-                anchors={"top_target": self.relation_list_elements[f"romance_text{i}"]},
-            )
-
-    @staticmethod
-    def get_value_attrs(value, rel):
-        if value == RelValue.ROMANCE:
-            return rel.romance, rel.romance_level
-        elif value == RelValue.LIKE:
-            return rel.like, rel.like_level
-        elif value == RelValue.RESPECT:
-            return rel.respect, rel.respect_level
-        elif value == RelValue.COMFORT:
-            return rel.comfort, rel.comfort_level
-        else:
-            return rel.trust, rel.trust_level
+        self.relation_list_elements[f"display{i}"] = UIRelationDisplay(
+            position=(pos_x + 3, 0),
+            relationship=the_relationship,
+            romance=allow_romance,
+            manager=MANAGER,
+            anchors={"top_target": self.sprite_buttons["image" + str(i)]},
+        )
 
     def on_use(self):
         super().on_use()
