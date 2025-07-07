@@ -86,28 +86,25 @@ class Status:
         """
         this is mostly to catch the old status strings like exiled and lost
         """
-        try:
-            if rank and not isinstance(rank, CatRank):
-                if rank.casefold() in ("exiled", "lost", "former clancat"):
-                    if age:
-                        rank = self.get_rank_from_age(age)
-                    else:  # god this should never happen, but I'm paranoid
-                        rank = CatRank.WARRIOR
-                else:
-                    rank = CatRank(rank)
-            if social and not isinstance(social, CatSocial):
-                if social.casefold() == "former clancat":
-                    social = CatSocial.CLANCAT
-                social = CatSocial(social)
-            if group and not isinstance(group, CatGroup):
-                group = CatGroup(group)
-        except TypeError:
-            if rank and not isinstance(rank, CatRank):
-                print(f"ERROR: {rank} is not a valid rank")
-            if social and not isinstance(social, CatSocial):
-                print(f"ERROR: {social} is not a valid social")
-            if group and not isinstance(group, CatGroup):
-                print(f"ERROR: {group} is not a valid group")
+        if rank and not isinstance(rank, CatRank):
+            if rank.casefold() in ("exiled", "lost", "former clancat"):
+                if age:
+                    rank = self.get_rank_from_age(age)
+                else:  # god this should never happen, but I'm paranoid
+                    rank = CatRank.WARRIOR
+            rank = CatRank(rank)
+        if social and not isinstance(social, CatSocial):
+            if social.casefold() == "former clancat":
+                social = CatSocial.CLANCAT
+            social = CatSocial(social)
+        if group and not isinstance(group, CatGroup):
+            group = CatGroup(group)
+        if rank and not isinstance(rank, CatRank):
+            raise TypeError("{rank} is not a valid rank")
+        if social and not isinstance(social, CatSocial):
+            raise TypeError("{social} is not a valid rank")
+        if group and not isinstance(group, CatGroup):
+            raise TypeError("{group} is not a valid rank")
 
         return group, rank, social
 

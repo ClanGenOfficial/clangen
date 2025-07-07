@@ -2179,10 +2179,7 @@ class Cat:
         return len(self.permanent_condition) > 0
 
     def available_to_work(self):
-        return (
-            self.status.alive_in_player_clan
-            and not self.not_working()
-        )
+        return self.status.alive_in_player_clan and not self.not_working()
 
     def contact_with_ill_cat(self, cat: Cat):
         """handles if one cat had contact with an ill cat"""
