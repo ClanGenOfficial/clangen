@@ -222,7 +222,7 @@ class OtherFiltering(unittest.TestCase):
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
-        interaction1.season = ["any"]
+        interaction1.season = ["newleaf"]
 
         interaction2 = GroupInteraction("2")
         interaction2.season = ["green-leaf"]
@@ -243,7 +243,7 @@ class OtherFiltering(unittest.TestCase):
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
-        interaction1.season = ["any"]
+        interaction1.season = ["newleaf"]
 
         interaction2 = GroupInteraction("2")
         interaction2.season = ["newleaf", "green-leaf"]
@@ -268,7 +268,7 @@ class OtherFiltering(unittest.TestCase):
         interaction1.season = ["newleaf"]
 
         interaction2 = GroupInteraction("2")
-        interaction2.season = ["Any"]
+        interaction2.season = ["any"]
 
         # when
         all_interactions = [interaction1, interaction2]
@@ -287,7 +287,7 @@ class OtherFiltering(unittest.TestCase):
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
-        interaction1.biome = ["any"]
+        interaction1.biome = ["forest"]
 
         interaction2 = GroupInteraction("2")
         interaction2.biome = ["beach"]
@@ -308,7 +308,7 @@ class OtherFiltering(unittest.TestCase):
         abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
-        interaction1.biome = ["any"]
+        interaction1.biome = ["forest"]
 
         interaction2 = GroupInteraction("2")
         interaction2.biome = ["beach", "forest"]
@@ -333,7 +333,7 @@ class OtherFiltering(unittest.TestCase):
         interaction1.biome = ["forest"]
 
         interaction2 = GroupInteraction("2")
-        interaction1.biome = ["Any"]
+        interaction1.biome = ["any"]
 
         # when
         all_interactions = [interaction1, interaction2]
@@ -476,9 +476,9 @@ class OtherCatsFiltering(unittest.TestCase):
         parent = Cat()
         main_cat = Cat(parent1=parent.ID)
         main_cat.status = "warrior"
-        random1 = Cat(parent1=parent.ID)
+        random1 = Cat()
         random1.status = "warrior"
-        random2 = Cat()
+        random2 = Cat(parent1=parent.ID)
         random2.status = "warrior"
         abbreviations_cat_id = {
             "m_c": main_cat.ID,

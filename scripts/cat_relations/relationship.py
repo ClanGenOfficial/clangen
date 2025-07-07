@@ -719,7 +719,7 @@ class Relationship:
         if group == "extreme_neg":
             return ValueLevel.LOATHES
         elif group == "mid_neg":
-            return ValueLevel.DISLIKES
+            return ValueLevel.DISTRUSTS
         elif group == "low_neg":
             return ValueLevel.DOUBTS
         elif group == "neutral":
