@@ -10,6 +10,8 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
+from ..cat.enums import CatAge, CatRank, CatGroup
+from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
@@ -30,7 +32,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
-from ..cat.enums import CatAgeEnum
+from ..cat.enums import CatAge
 from ..cat.history import History
 from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
@@ -45,12 +47,12 @@ from ..ui.icon import Icon
 #               assigns backstory blurbs to the backstory                      #
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
-    if cat.status in ("kittypet", "loner", "rogue", "former Clancat"):
+    if not cat.backstory and not cat.status.alive_in_player_clan:
         return event_text_adjust(
             Cat,
             i18n.t(
                 "cat.backstories.cats_outside_the_clan",
-                status=i18n.t(f"general.{cat.status}"),
+                status=i18n.t(f"general.{cat.status.rank}"),
             ),
             main_cat=cat,
         )
@@ -85,6 +87,7 @@ class ProfileScreen(Screens):
 
     df = image_cache.load_image("resources/images/buttons/exile_df.png").convert_alpha()
     sc = image_cache.load_image("resources/images/buttons/guide_sc.png").convert_alpha()
+    ur = image_cache.load_image("resources/images/buttons/send_ur.png").convert_alpha()
 
     # Keep track of current tabs open. Can be used to keep tabs open when pages are switched, and
     # helps with exiting the screen
@@ -250,12 +253,12 @@ class ProfileScreen(Screens):
             # when button is pressed...
             elif event.ui_element == self.cis_trans_button:
                 # if the cat is anything besides m/f/transm/transf then turn them back to cis
-                if self.the_cat.genderalign not in (
+                if self.the_cat.genderalign not in [
                     "female",
                     "trans female",
                     "male",
                     "trans male",
-                ):
+                ]:
                     self.the_cat.genderalign = self.the_cat.gender
                 elif (
                     self.the_cat.gender == "male"
@@ -281,7 +284,7 @@ class ProfileScreen(Screens):
                 ):
                     self.the_cat.genderalign = "trans male"
                 # if the cat is trans then set them to nonbinary
-                elif self.the_cat.genderalign in ("trans female", "trans male"):
+                elif self.the_cat.genderalign in ["trans female", "trans male"]:
                     self.the_cat.genderalign = "nonbinary"
                 self.the_cat.pronouns = get_new_pronouns(self.the_cat.genderalign)
                 self.clear_profile()
@@ -294,23 +297,31 @@ class ProfileScreen(Screens):
             if event.ui_element == self.kill_cat_button:
                 KillCat(self.the_cat)
             elif event.ui_element == self.exile_cat_button:
-                if not self.the_cat.dead and not self.the_cat.exiled:
+                # exiles a living cat
+                if self.the_cat.status.alive_in_player_clan:
                     Cat.exile(self.the_cat)
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
+                # if the cat is dead, moves them to the opposite afterlife
                 if self.the_cat.dead:
-                    if self.the_cat.df is True:
-                        self.the_cat.outside, self.the_cat.exiled = False, False
-                        self.the_cat.df = False
-                        game.clan.add_to_starclan(self.the_cat)
+                    # DF -> UR
+                    if self.the_cat.status.group == CatGroup.DARK_FOREST:
+                        self.the_cat.status.add_to_group(
+                            new_group=CatGroup.UNKNOWN_RESIDENCE
+                        )
+                        self.the_cat.thought = (
+                            "Is surprised to find themself walking among a foreign land"
+                        )
+                    # UR -> SC
+                    elif self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
+                        self.the_cat.status.add_to_group(new_group=CatGroup.STARCLAN)
                         self.the_cat.thought = (
                             "Is relieved to once again hunt in StarClan"
                         )
+                    # SC -> UR
                     else:
-                        self.the_cat.outside, self.the_cat.exiled = False, False
-                        self.the_cat.df = True
-                        game.clan.add_to_darkforest(self.the_cat)
+                        self.the_cat.status.add_to_group(new_group=CatGroup.DARK_FOREST)
                         self.the_cat.thought = (
                             "Is distraught after being sent to the Place of No Stars"
                         )
@@ -518,37 +529,31 @@ class ProfileScreen(Screens):
         or for changes in the profile."""
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
-        # use these attributes to create differing profiles for StarClan cats etc.
-        is_sc_instructor = False
-        is_df_instructor = False
         if self.the_cat is None:
             return
-        if (
-            self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.df is False
-        ):
-            is_sc_instructor = True
-        elif (
-            self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.df is True
-        ):
-            is_df_instructor = True
 
         # Info in string
         cat_name = str(self.the_cat.name)
         cat_name = shorten_text_to_fit(cat_name, 500, 20)
         if self.the_cat.dead:
             cat_name = i18n.t("general.dead_label", name=cat_name)
-        if is_sc_instructor:
-            self.the_cat.thought = i18n.t(
-                "screens.profile.guide_thought_sc", clan=game.clan.name
-            )
-        if is_df_instructor:
-            self.the_cat.thought = i18n.t(
-                "screens.profile.guide_thought_df", clan=game.clan.name
-            )
+
+        # Instructor thoughts
+        if self.the_cat.dead and game.clan.instructor is self.the_cat:
+            if not self.the_cat.status.group == CatGroup.STARCLAN:  # StarClan
+                self.the_cat.thought = i18n.t(
+                    "screens.profile.guide_thought_sc", clan=game.clan.name
+                )
+            elif self.the_cat.status.group == CatGroup.DARK_FOREST:  # Dark Forest
+                self.the_cat.thought = i18n.t(
+                    "screens.profile.guide_thought_df", clan=game.clan.name
+                )
+            elif (
+                self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE
+            ):  # Unknown Residence
+                self.the_cat.thought = i18n.t(
+                    "screens.profile.guide_thought_sc", clan=game.clan.name
+                )
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
@@ -616,8 +621,8 @@ class ProfileScreen(Screens):
             manager=MANAGER,
             starting_height=2,
         )
-        if not (self.the_cat.dead or self.the_cat.outside) and (
-            self.the_cat.status in ("medicine cat", "medicine cat apprentice")
+        if not self.the_cat.status.alive_in_player_clan and (
+            self.the_cat.status.rank.is_any_medicine_rank()
             or self.the_cat.is_ill()
             or self.the_cat.is_injured()
         ):
@@ -658,7 +663,7 @@ class ProfileScreen(Screens):
         if self.open_tab == "history" and self.open_sub_tab == "user notes":
             self.load_user_notes()
 
-        if self.the_cat.status == "leader" and not self.the_cat.dead:
+        if self.the_cat.status.is_leader and not self.the_cat.dead:
             self.profile_elements["leader_ceremony"] = UIImageButton(
                 ui_scale(pygame.Rect((383, 110), (34, 34))),
                 "",
@@ -666,14 +671,14 @@ class ProfileScreen(Screens):
                 tool_tip_text="screens.profile.leader_ceremony",
                 manager=MANAGER,
             )
-        elif self.the_cat.status in ("mediator", "mediator apprentice"):
+        elif self.the_cat.status.rank.is_any_mediator_rank():
             self.profile_elements["mediation"] = UIImageButton(
                 ui_scale(pygame.Rect((383, 110), (34, 34))),
                 "",
                 object_id="#mediation_button",
                 manager=MANAGER,
             )
-            if self.the_cat.dead or self.the_cat.outside:
+            if not self.the_cat.status.alive_in_player_clan:
                 self.profile_elements["mediation"].disable()
 
     def generate_column1(self, the_cat):
@@ -688,9 +693,9 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # AGE
-        if the_cat.age == CatAgeEnum.KITTEN:
+        if the_cat.age == CatAge.KITTEN:
             output += i18n.t("general.kitten_profile")
-        elif the_cat.age == CatAgeEnum.SENIOR:
+        elif the_cat.age == CatAge.SENIOR:
             output += i18n.t(f"general.{the_cat.age.value}", count=1)
         else:
             output += i18n.t(f"general.{the_cat.age.value}", count=1)
@@ -768,7 +773,7 @@ class ProfileScreen(Screens):
                         former_indicate = "general.mate_dead"
 
                     mate_names.append(f"{str(mate_ob.name)} {i18n.t(former_indicate)}")
-                elif mate_ob.outside != self.the_cat.outside:
+                elif mate_ob.status.group != self.the_cat.status.group:
                     mate_names.append(
                         f"{str(mate_ob.name)} {i18n.t('general.mate_away')}"
                     )
@@ -800,25 +805,28 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if (
-            the_cat.outside
-            and not the_cat.exiled
-            and the_cat.status not in ("kittypet", "loner", "rogue", "former Clancat")
-        ):
+        if the_cat.status.is_lost():
             output += f"<font color='#FF0000'>{i18n.t('general.lost', count=1)}</font>"
-        elif the_cat.exiled:
+            # NEWLINE ----------
+            output += "\n"
+        elif the_cat.status.is_exiled():
             output += (
                 f"<font color='#FF0000'>{i18n.t('general.exiled', count=1)}</font>"
             )
+            # NEWLINE ----------
+            output += "\n"
+
+        if the_cat.status.is_outsider:
+            output += i18n.t(f"general.{the_cat.status.social}", count=1)
         else:
-            output += i18n.t(f"general.{the_cat.status}", count=1)
+            output += i18n.t(f"general.{the_cat.status.rank}", count=1)
 
         # NEWLINE ----------
         output += "\n"
 
         # LEADER LIVES:
         # Optional - Only shows up for leaders
-        if not the_cat.dead and "leader" in the_cat.status:
+        if not the_cat.dead and CatRank.LEADER in the_cat.status.rank:
             output += i18n.t(
                 "screens.profile.lives_remaining_label", count=game.clan.leader_lives
             )
@@ -899,8 +907,12 @@ class ProfileScreen(Screens):
 
         # BACKSTORY
         bs_text = "this should not appear"
-        if the_cat.status in ("kittypet", "loner", "rogue", "former Clancat"):
-            bs_text = the_cat.status
+        # if cat has never been part of the player clan, then they get no backstory yet
+        if (
+            not the_cat.status.alive_in_player_clan
+            and CatGroup.PLAYER_CLAN not in the_cat.status.all_groups
+        ):
+            bs_text = the_cat.status.social
         else:
             if the_cat.backstory:
                 bs_text = backstory_text(the_cat)
@@ -912,18 +924,12 @@ class ProfileScreen(Screens):
 
         # NUTRITION INFO (if the game is in the correct mode)
         if (
-            game.clan.game_mode in ("expanded", "cruel season")
+            game.clan.game_mode in ["expanded", "cruel season"]
             and the_cat.is_alive()
             and FRESHKILL_ACTIVE
         ):
             # Check to only show nutrition for clan cats
-            if str(the_cat.status) not in (
-                "loner",
-                "kittypet",
-                "rogue",
-                "former Clancat",
-                "exiled",
-            ):
+            if the_cat.status.alive_in_player_clan:
                 nutr = None
                 if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                     nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -1184,20 +1190,21 @@ class ProfileScreen(Screens):
         """
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         bs_blurb = None
+        # if cat has a backstory prepared
         if self.the_cat.backstory:
             bs_blurb = i18n.t(f"cat.backstories.{self.the_cat.backstory}")
-        if (
-            self.the_cat.status in ("kittypet", "loner", "rogue", "former Clancat")
-            and self.the_cat.dead
-        ):
+
+        # if cat is in the unknown residence
+        if self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
             bs_blurb = i18n.t(
                 "cat.backstories.cats_outside_the_clan_dead",
-                status=i18n.t(f"general.{self.the_cat.status}", count=1),
+                status=i18n.t(f"general.{self.the_cat.status.rank}", count=1),
             )
-        elif self.the_cat.status in ("kittypet", "loner", "rogue", "former Clancat"):
+        # if cat is living outsider
+        elif self.the_cat.status.is_outsider:
             bs_blurb = i18n.t(
                 "cat.backstories.cats_outside_the_clan",
-                status=i18n.t(f"general.{self.the_cat.status}", count=1),
+                status=i18n.t(f"general.{self.the_cat.status.rank}", count=1),
             )
 
         if bs_blurb is not None:
@@ -1206,13 +1213,8 @@ class ProfileScreen(Screens):
         else:
             text = i18n.t("cat.backstories.unknown", name=self.the_cat.name)
 
-        if not self.the_cat.dead and self.the_cat.status not in (
-            "kittypet",
-            "loner",
-            "rogue",
-            "former Clancat",
-        ):
-            beginning = History.get_beginning(self.the_cat)
+        if self.the_cat.status.alive_in_player_clan:
+            beginning = self.the_cat.history.beginning
             if beginning:
                 text += " "
                 if beginning["clan_born"]:
@@ -1238,7 +1240,7 @@ class ProfileScreen(Screens):
         returns the adjusted scar text
         """
         scar_text = []
-        scar_history = History.get_death_or_scars(self.the_cat, scar=True)
+        scar_history = self.the_cat.history.get_death_or_scars(scar=True)
         if game.switches["show_history_moons"]:
             moons = True
         else:
@@ -1295,20 +1297,16 @@ class ProfileScreen(Screens):
         """
         returns adjusted apprenticeship history text (mentor influence and app ceremony)
         """
-        if self.the_cat.status in ("kittypet", "loner", "rogue", "former Clancat"):
+        if CatGroup.PLAYER_CLAN not in self.the_cat.status.all_groups:
             return ""
 
-        mentor_influence = History.get_mentor_influence(self.the_cat)
+        mentor_influence = self.the_cat.history.mentor_influence
         influence_history = ""
 
         # First, just list the mentors:
-        if self.the_cat.status in ("kitten", "newborn"):
+        if self.the_cat.status.rank.is_baby():
             influence_history = i18n.t("cat.history.training_kit")
-        elif self.the_cat.status in (
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-        ):
+        elif self.the_cat.status.rank.is_any_apprentice_rank():
             influence_history = i18n.t("cat.history.training_app")
         else:
             valid_former_mentors = [
@@ -1385,7 +1383,7 @@ class ProfileScreen(Screens):
 
             influence_history += " ".join(skill_influence)
 
-        app_ceremony = History.get_app_ceremony(self.the_cat)
+        app_ceremony = self.the_cat.history.app_ceremony
 
         graduation_history = ""
         if app_ceremony:
@@ -1478,10 +1476,8 @@ class ProfileScreen(Screens):
         returns adjusted death history text
         """
         text = None
-        death_history = self.the_cat.history.get_death_or_scars(
-            self.the_cat, death=True
-        )
-        murder_history = self.the_cat.history.get_murders(self.the_cat)
+        death_history = self.the_cat.history.get_death_or_scars(death=True)
+        murder_history = self.the_cat.history.murder
         if game.switches["show_history_moons"]:
             moons = True
         else:
@@ -1517,7 +1513,7 @@ class ProfileScreen(Screens):
                         random_cat=Cat.fetch_cat(death["involved"]),
                     )
 
-                if self.the_cat.status == "leader":
+                if self.the_cat.status.is_leader:
                     if text == "multi_lives":
                         multi_life_count += 1
                         continue
@@ -1581,7 +1577,7 @@ class ProfileScreen(Screens):
                         text += f" ({i18n.t('general.moons_date', moon=death['moon'])})"
                     all_deaths.append(text)
 
-            if self.the_cat.status == "leader" or death_number > 1:
+            if self.the_cat.status.is_leader or death_number > 1:
                 if death_number > 1:
                     deaths = str("\n" + str(self.the_cat.name) + " ").join(all_deaths)
                 else:
@@ -1605,7 +1601,7 @@ class ProfileScreen(Screens):
         returns adjusted murder history text FOR THE MURDERER
 
         """
-        murder_history = History.get_murders(self.the_cat)
+        murder_history = self.the_cat.history.murder
         victim_text = ""
 
         if game.switches["show_history_moons"]:
@@ -1742,11 +1738,11 @@ class ProfileScreen(Screens):
         # forgive me. Since I don't know how else to do this,
         # we just kind of brute-force it
         for cond in all_illness_injuries:
-            for i in (
+            for i in [
                 "conditions.injuries.",
                 "conditions.illnesses.",
                 "conditions.permanent_conditions.",
-            ):
+            ]:
                 temp = i18n.t(i + cond[0])
                 if temp != i + cond[0]:
                     cond[0] = temp
@@ -2107,9 +2103,8 @@ class ProfileScreen(Screens):
 
             if (
                 self.the_cat.age
-                not in ("young adult", "adult", "senior adult", "senior")
-                or self.the_cat.exiled
-                or self.the_cat.outside
+                not in ["young adult", "adult", "senior adult", "senior"]
+                or not self.the_cat.status.alive_in_player_clan
             ):
                 self.choose_mate_button.disable()
             else:
@@ -2117,15 +2112,13 @@ class ProfileScreen(Screens):
 
         # Roles Tab
         elif self.open_tab == "roles":
-            if self.the_cat.dead or self.the_cat.outside:
+            if not self.the_cat.status.alive_in_player_clan:
                 self.manage_roles.disable()
             else:
                 self.manage_roles.enable()
             if (
-                self.the_cat.status
-                not in ["apprentice", "medicine cat apprentice", "mediator apprentice"]
-                or self.the_cat.dead
-                or self.the_cat.outside
+                not self.the_cat.status.rank.is_any_apprentice_rank()
+                or not self.the_cat.status.alive_in_player_clan
             ):
                 self.change_mentor_button.disable()
             else:
@@ -2192,7 +2185,10 @@ class ProfileScreen(Screens):
             if self.the_cat.dead:
                 text = "screens.profile.exile_df"
                 layer = self.df
-                if self.the_cat.df:
+                if self.the_cat.status.group == CatGroup.DARK_FOREST:
+                    text = "screens.profile.send_ur"
+                    layer = self.ur
+                elif self.the_cat.status.group == CatGroup.STARCLAN:
                     text = "screens.profile.guide_sc"
                     layer = self.sc
 
@@ -2205,7 +2201,7 @@ class ProfileScreen(Screens):
                     starting_height=2,
                 )
             self.exile_cat_button.set_text(text)
-            if self.the_cat.exiled or self.the_cat.outside:
+            if not self.the_cat.status.alive_in_player_clan:
                 self.exile_cat_button.disable()
 
             if self.the_cat.dead:
@@ -2425,7 +2421,7 @@ class ProfileScreen(Screens):
         if light_dark == "light":
             offset = 80
 
-        if the_cat.df:
+        if the_cat.status.group == CatGroup.DARK_FOREST:
             biome_platforms = platformsheet.subsurface(
                 pygame.Rect(0, order.index("SC/DF") * 70, 640, 70)
             )

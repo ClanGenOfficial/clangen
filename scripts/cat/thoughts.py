@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 
 import i18n
 
+from scripts.cat.enums import CatGroup
 from scripts.game_structure.localization import load_lang_resource
 
 if TYPE_CHECKING:
@@ -99,7 +100,7 @@ class Thoughts:
         # Constraints for the status of the main cat
         if "main_status_constraint" in thought:
             if (
-                main_cat.status not in thought["main_status_constraint"]
+                main_cat.status.rank not in thought["main_status_constraint"]
                 and "any" not in thought["main_status_constraint"]
             ):
                 return False
@@ -107,7 +108,7 @@ class Thoughts:
         # Constraints for the status of the random cat
         if "random_status_constraint" in thought and random_cat:
             if (
-                random_cat.status not in thought["random_status_constraint"]
+                random_cat.status.rank not in thought["random_status_constraint"]
                 and "any" not in thought["random_status_constraint"]
             ):
                 return False
@@ -179,7 +180,7 @@ class Thoughts:
         if random_cat and "random_living_status" in thought:
             if random_cat:
                 if random_cat.dead:
-                    if random_cat.df:
+                    if random_cat.status.group == CatGroup.DARK_FOREST:
                         living_status = "darkforest"
                     else:
                         living_status = "starclan"
@@ -193,19 +194,14 @@ class Thoughts:
         # this covers if living status isn't stated
         else:
             living_status = None
-            if random_cat and not random_cat.dead and not random_cat.outside:
+            if random_cat and not random_cat.dead and not random_cat.status.is_outsider:
                 living_status = "living"
             if living_status and living_status != "living":
                 return False
 
-        if (
-            random_cat
-            and random_cat.outside
-            and random_cat.status
-            not in ("kittypet", "loner", "rogue", "former Clancat", "exiled")
-        ):
+        if random_cat and random_cat.status.is_lost():
             outside_status = "lost"
-        elif random_cat and random_cat.outside:
+        elif random_cat and random_cat.status.is_outsider:
             outside_status = "outside"
         else:
             outside_status = "clancat"
@@ -215,7 +211,7 @@ class Thoughts:
                 return False
         else:
             if (
-                main_cat.outside
+                main_cat.status.is_outsider
             ):  # makes sure that outsiders can get thoughts all the time
                 pass
             else:
@@ -340,17 +336,8 @@ class Thoughts:
 
     @staticmethod
     def load_thoughts(main_cat, other_cat, game_mode, biome, season, camp):
-        status = main_cat.status
-        status = status.replace(" ", "_")
-        # match status:
-        #     case "medicine cat apprentice":
-        #         status = "medicine_cat_apprentice"
-        #     case "mediator apprentice":
-        #         status = "mediator_apprentice"
-        #     case "medicine cat":
-        #         status = "medicine_cat"
-        #     case 'former Clancat':
-        #         status = 'former_Clancat'
+        rank = main_cat.status.rank
+        rank = rank.replace(" ", "_")
 
         if not main_cat.dead:
             life_dir = "alive"
@@ -358,13 +345,13 @@ class Thoughts:
             life_dir = "dead"
 
         if main_cat.dead:
-            if main_cat.outside:
+            if main_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                 spec_dir = "/unknownresidence"
-            elif main_cat.df:
+            elif main_cat.status.group == CatGroup.DARK_FOREST:
                 spec_dir = "/darkforest"
             else:
                 spec_dir = "/starclan"
-        elif main_cat.outside:
+        elif main_cat.status.is_outsider:
             spec_dir = "/alive_outside"
         else:
             spec_dir = ""
@@ -377,7 +364,7 @@ class Thoughts:
                 )
             else:
                 thoughts = load_lang_resource(
-                    f"thoughts/{life_dir}{spec_dir}/{status}.json"
+                    f"thoughts/{life_dir}{spec_dir}/{rank}.json"
                 )
                 genthoughts = load_lang_resource(
                     f"thoughts/{life_dir}{spec_dir}/general.json"

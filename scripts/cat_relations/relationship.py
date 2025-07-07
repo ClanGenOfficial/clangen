@@ -4,7 +4,7 @@ from typing import Optional
 
 import i18n
 
-import scripts.cat_relations.interaction as interactions
+from scripts.cat.enums import CatRank
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
     cats_fulfill_single_interaction_constraints,
@@ -15,6 +15,7 @@ from scripts.event_class import Single_Event
 from scripts.events_module.event_filters import event_for_location, event_for_season
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_personality_compatibility, process_text
+import scripts.cat_relations.interaction as interactions
 
 
 # ---------------------------------------------------------------------------- #
@@ -40,7 +41,6 @@ class Relationship:
         log: list = None,
     ) -> None:
         self.chosen_interaction = None
-        self.history = History()
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
@@ -92,9 +92,9 @@ class Relationship:
     def start_interaction(self) -> None:
         """This function handles the simple interaction of this relationship."""
         # such interactions are only allowed for living Clan members
-        if self.cat_from.dead or self.cat_from.outside or self.cat_from.exiled:
+        if not self.cat_from.status.alive_in_player_clan:
             return
-        if self.cat_to.dead or self.cat_to.outside or self.cat_to.exiled:
+        if not self.cat_to.status.alive_in_player_clan:
             return
         if self.cat_from.ID == self.cat_to.ID:
             return
@@ -190,7 +190,7 @@ class Relationship:
                     if "death_text" in injury_dict
                     else None
                 )
-                if injured_cat.status == "leader":
+                if injured_cat.status.is_leader:
                     possible_death = (
                         self.adjust_interaction_string(injury_dict["death_leader_text"])
                         if "death_leader_text" in injury_dict
@@ -199,9 +199,9 @@ class Relationship:
 
                 if possible_scar or possible_death:
                     for condition in injuries:
-                        self.history.add_possible_history(
-                            injured_cat,
+                        injured_cat.history.add_possible_history(
                             condition,
+                            status=injured_cat.status,
                             scar_text=possible_scar,
                             death_text=possible_death,
                         )

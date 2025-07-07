@@ -21,6 +21,7 @@ from scripts.utility import (
     shorten_text_to_fit,
 )
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -439,10 +440,7 @@ class ChooseMentorScreen(Screens):
             self.next_cat,
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats(
-            filter_func=(
-                lambda cat: cat.status
-                in ("apprentice", "medicine cat apprentice", "mediator apprentice")
-            )
+            filter_func=(lambda cat: cat.status.rank.is_any_apprentice_rank())
         )
 
         (
@@ -641,27 +639,25 @@ class ChooseMentorScreen(Screens):
         potential_warrior_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if not (cat.dead or cat.outside)
-            and cat.status in ("warrior", "deputy", "leader")
+            if cat.status.alive_in_player_clan
+            and cat.status.rank.is_any_adult_warrior_like_rank()
         ]
         valid_warrior_mentors = []
-        invalid_warrior_mentors = []
         potential_medcat_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if not (cat.dead or cat.outside) and cat.status == "medicine cat"
+            if cat.status.alive_in_player_clan
+            and cat.status.rank == CatRank.MEDICINE_CAT
         ]
         valid_medcat_mentors = []
-        invalid_medcat_mentors = []
         potential_mediator_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if not (cat.dead or cat.outside) and cat.status == "mediator"
+            if cat.status.alive_in_player_clan and cat.status.rank == CatRank.MEDIATOR
         ]
         valid_mediator_mentors = []
-        invalid_mediator_mentors = []
 
-        if self.the_cat.status == "apprentice":
+        if self.the_cat.status.rank == CatRank.APPRENTICE:
             for cat in potential_warrior_mentors:
                 # Assume cat is valid initially
                 is_valid = True
@@ -683,7 +679,7 @@ class ChooseMentorScreen(Screens):
 
             return valid_warrior_mentors
 
-        elif self.the_cat.status == "medicine cat apprentice":
+        elif self.the_cat.status.rank == CatRank.MEDICINE_APPRENTICE:
             for cat in potential_medcat_mentors:
                 is_valid = True
 
@@ -701,7 +697,7 @@ class ChooseMentorScreen(Screens):
 
             return valid_medcat_mentors
 
-        elif self.the_cat.status == "mediator apprentice":
+        elif self.the_cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
             for cat in potential_mediator_mentors:
                 # Assume cat is valid initially
                 is_valid = True

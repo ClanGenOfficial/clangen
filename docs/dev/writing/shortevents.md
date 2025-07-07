@@ -12,7 +12,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
 
 ## Event Format:
 ```json
-  {
+{
     "event_id": "",
     "location": [],
     "season": [],
@@ -22,62 +22,62 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
     "event_text": "event text here",
     "new_accessory": [],
     "m_c": {
-      "age": [],
-      "status": [],
-      "relationship_status": [],
-      "skill": [],
-      "not_skill": [],
-      "trait": [],
-      "not_trait": [],
-      "backstory": [],
-      "dies": false
+        "age": [],
+        "status": [],
+        "relationship_status": [],
+        "skill": [],
+        "not_skill": [],
+        "trait": [],
+        "not_trait": [],
+        "backstory": [],
+        "dies": false
     },
     "r_c": {
-      "age": [],
-      "status": [],
-      "relationship_status": [],
-      "skill": [],
-      "not_skill": [],
-      "trait": [],
-      "not_trait": [],
-      "backstory": [],
-      "dies": false
+        "age": [],
+        "status": [],
+        "relationship_status": [],
+        "skill": [],
+        "not_skill": [],
+        "trait": [],
+        "not_trait": [],
+        "backstory": [],
+        "dies": false
     },
     "new_cat": [
-      []
+        []
     ],
     "injury": [
-       {
-        "cats": [],
-        "injuries": [],
-        "scars": []
-       }
+        {
+            "cats": [],
+            "injuries": [],
+            "scars": []
+        }
     ],
     "exclude_involved": [],
     "history:": [
-      {
-      "cats": [],
-      "scar": "",
-      "reg_death": "",
-      "lead_death": ""
-      }
+        {
+            "cats": [],
+            "scar": "",
+            "reg_death": "",
+            "lead_death": ""
+        }
     ],
     "relationships": [
-      {
-        "cats_from": [],
-        "cats_to": [],
-        "mutual": false,
-        "values": [],
-        "amount": 0
-      }
+        {
+            "cats_from": [],
+            "cats_to": [],
+            "mutual": false,
+            "values": [],
+            "amount": 0
+        }
     ],
     "outsider": {
-      "current_rep": [],
-      "changed": 0
+        "current_rep": [],
+        "changed": 0
     },
     "other_clan": {
-      "current_rep": [],
-      "changed": 0
+        "current_rep": [],
+        "changed": 0
     },
     "supplies": [
         {
@@ -87,8 +87,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         }
     ],
     "future_event": []
-
-  }
+}
 ```
 
 ***
@@ -323,8 +322,8 @@ lowercase season names + "any"
 >
 >```
 >[
->	[cat details],
->	[cat 2 details]
+>    [cat details],
+>    [cat 2 details]
 >]
 >```
 >
@@ -410,12 +409,12 @@ lowercase season names + "any"
 >Block:
 >
 >```json
->      {
->      "cats": [],
->      "scar": "",
->      "reg_death": "",
->      "lead_death": ""
->      }
+>    {
+>        "cats": [],
+>        "scar": "",
+>        "reg_death": "",
+>        "lead_death": ""
+>    }
 >```
 
 | text_type    | "custom history message"                            |
@@ -431,11 +430,11 @@ lowercase season names + "any"
 >
 >```
 >{
->	 "cats_from": [],
->   "cats_to": [],
->	 "mutual": false
->	 "values" [],
->	 "amount": 5
+>    "cats_from": [],
+>    "cats_to": [],
+>    "mutual": false,
+>    "values" [],
+>    "amount": 5
 >}
 >```
 >
@@ -443,21 +442,35 @@ lowercase season names + "any"
 
 >**cats_from: List[str] :** The cat's whose relationship values are being edited. You are changing how the "cats_from" feels. 
 
-| string      |                                   |
-|-------------|-----------------------------------|
-| m_c         | main cat's feelings are affected  |
-| r_c   | other cat's feelings are affected |
-| n_c:{index} | new cat's feelings are affected   |
-| clan | the clan's feelings are affected (experimental, unsupported in old format and not sure if i can make work)   |
+| string      |                                                                                                            |
+|-------------|------------------------------------------------------------------------------------------------------------|
+| m_c         | main cat's feelings are affected                                                                           |
+| r_c         | other cat's feelings are affected                                                                          |
+| n_c:{index} | new cat's feelings are affected                                                                            |
+| clan        | the clan's feelings are affected (experimental, unsupported in old format and not sure if i can make work) |
+
 
 >**cats_to: List[str] :** The target of the relationship. You can changing how "cats_from" feel about "cats_to"
 
-| string      |                                            |
-|-------------|--------------------------------------------|
-| m_c        | feelings toward the main cat are affected  |
-| r_c   | feelings toward the other_cat are affected |
-| n_c:{index} | feelings toward the new cat are affected   |
-| clan | feelings toward the clan are affected (experimental, unsupported in old format and not sure if i can make work)   |
+| string      |                                                                                                                 |
+|-------------|-----------------------------------------------------------------------------------------------------------------|
+| m_c         | feelings toward the main cat are affected                                                                       |
+| r_c         | feelings toward the other_cat are affected                                                                      |
+| n_c:{index} | feelings toward the new cat are affected                                                                        |
+| clan        | feelings toward the clan are affected (experimental, unsupported in old format and not sure if i can make work) |
+
+> Group modifiers: These will modify the cats already being gathered according to the other strings. For example, a block with `"cats_from": ["clan", "low_lawful"]` will gather all the cats in the Clan with a 0-8 lawfulness facet.  These can be combined to get cats with specific ranges of multiple facets.
+
+| modifier     |                                                |
+|--------------|------------------------------------------------|
+| low_lawful   | cats with a 0-8 lawfulness facet are affected  |
+| high_lawful  | cats with a 9-16 lawfulness facet are affected |
+| low_social   | cats with a 0-8 sociable facet are affected    |
+| high_social  | cats with a 9-16 sociable facet are affected   |
+| low_stable   | cats with a 0-8 stability facet are affected   |
+| high_stable  | cats with a 9-16 stability facet are affected  |
+| low_aggress  | cats with a 0-8 aggression facet are affected  |
+| high_aggress | cats with a 9-16 aggression facet are affected |
 
 >**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions. 
 
@@ -519,7 +532,7 @@ lowercase season names + "any"
 
 >**type:str:** indicates the supply being affected
 
-| string                               | effect                                                                 |
+| string                               | effect                                                           |
 |--------------------------------------|------------------------------------------------------------------|
 | freshkill                            | this event affects the freshkill supply                          |
 | all_herb                             | this event affects the herb supply as a whole                    |
@@ -529,12 +542,12 @@ lowercase season names + "any"
 >**trigger:list[str]:** indicates when the event can trigger, include all possible trigger times
 
 | string   | effect                                                                                                                   |
-|----------|--------------------------------------------------------------------------------------------------------------------|
-| always   | triggers regardless of current supply amount (be careful with this, only use with "freshkill", "all_herb" and "any_herb"                                   |
-| low      | triggers when indicated supply is low (unable to support at least half of clan)                                    |
-| adequate | triggers when indicated supply is adequate (can support at least half the clan, but is not enough for a full moon) |
-| full     | triggers when indicated supply is full (able to support all of clan for 1 moon, but not multiple moons)            |
-| excess   | triggers when indicated supply is at least twice the needed supply for 1 moon                                      |
+|----------|--------------------------------------------------------------------------------------------------------------------------|
+| always   | triggers regardless of current supply amount (be careful with this, only use with "freshkill", "all_herb" and "any_herb" |
+| low      | triggers when indicated supply is low (unable to support at least half of clan)                                          |
+| adequate | triggers when indicated supply is adequate (can support at least half the clan, but is not enough for a full moon)       |
+| full     | triggers when indicated supply is full (able to support all of clan for 1 moon, but not multiple moons)                  |
+| excess   | triggers when indicated supply is at least twice the needed supply for 1 moon                                            |
 
 >**adjust:str:** indicates how the supply should be adjusted
 

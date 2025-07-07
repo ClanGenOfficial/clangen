@@ -6,6 +6,7 @@ import i18n
 import ujson
 
 from scripts.cat_relations.enums import RelValue
+from scripts.cat.enums import CatRank
 from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
@@ -315,7 +316,7 @@ class GenerateEvents:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons (or unless it's a murder)
-            if cat.status == "leader":
+            if cat.status.is_leader:
                 if "all_lives" in event.tags and "murder" not in event.sub_type:
                     if int(cat.moons) < 150 and int(random.random() * 5):
                         continue
@@ -364,14 +365,14 @@ class GenerateEvents:
                 # determine which injury severity list will be used
                 allowed_severity = None
                 discard = False
-                if cat.status in GenerateEvents.INJURY_DISTRIBUTION:
-                    minor_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status][
+                if cat.status.rank in GenerateEvents.INJURY_DISTRIBUTION:
+                    minor_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status.rank][
                         "minor"
                     ]
-                    major_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status][
+                    major_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status.rank][
                         "major"
                     ]
-                    severe_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status][
+                    severe_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status.rank][
                         "severe"
                     ]
                     severity_chosen = random.choices(

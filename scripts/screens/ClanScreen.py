@@ -23,6 +23,7 @@ from scripts.utility import (
     get_current_season,
 )
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -139,11 +140,10 @@ class ClanScreen(Screens):
             Cat.all_cats[x]
             for i, x in enumerate(game.clan.clan_cats)
             if i < self.max_sprites_displayed
-            and not Cat.all_cats[x].dead
             and Cat.all_cats[x].in_camp
-            and not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside)
+            and Cat.all_cats[x].status.alive_in_player_clan
             and (
-                Cat.all_cats[x].status != "newborn"
+                Cat.all_cats[x].status.rank != CatRank.NEWBORN
                 or game.config["fun"]["all_cats_are_newborn"]
                 or game.config["fun"]["newborns_can_roam"]
             )
@@ -452,13 +452,13 @@ class ClanScreen(Screens):
             first_choices[x].extend(first_choices[x])
 
         for x in game.clan.clan_cats:
-            if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
+            if not Cat.all_cats[x].status.alive_in_player_clan:
                 continue
 
             base_pos = None
             # Newborns are not meant to be placed. They are hiding.
             if (
-                Cat.all_cats[x].status == "newborn"
+                Cat.all_cats[x].status.rank == CatRank.NEWBORN
                 or game.config["fun"]["all_cats_are_newborn"]
             ):
                 if (
@@ -475,14 +475,17 @@ class ClanScreen(Screens):
                 else:
                     continue
 
-            if Cat.all_cats[x].status in ("apprentice", "mediator apprentice"):
+            if Cat.all_cats[x].status.rank in (
+                CatRank.APPRENTICE,
+                CatRank.MEDIATOR_APPRENTICE,
+            ):
                 [
                     Cat.all_cats[x].placement,
                     base_pos,
                 ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 50, 1, 1, 100, 100, 1]
                 )
-            elif Cat.all_cats[x].status == "deputy":
+            elif Cat.all_cats[x].status.rank == CatRank.DEPUTY:
                 [
                     Cat.all_cats[x].placement,
                     base_pos,
@@ -490,35 +493,35 @@ class ClanScreen(Screens):
                     first_choices, all_dens, [1, 50, 1, 1, 1, 50, 1]
                 )
 
-            elif Cat.all_cats[x].status == "elder":
+            elif Cat.all_cats[x].status.rank == CatRank.ELDER:
                 [
                     Cat.all_cats[x].placement,
                     base_pos,
                 ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 2000, 1, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status == "kitten":
+            elif Cat.all_cats[x].status.rank == CatRank.KITTEN:
                 [
                     Cat.all_cats[x].placement,
                     base_pos,
                 ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [60, 8, 1, 1, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ("medicine cat apprentice", "medicine cat"):
+            elif Cat.all_cats[x].status.rank.is_any_medicine_rank():
                 [
                     Cat.all_cats[x].placement,
                     base_pos,
                 ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [20, 20, 20, 400, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ("warrior", "mediator"):
+            elif Cat.all_cats[x].status.rank in (CatRank.WARRIOR, CatRank.MEDIATOR):
                 [
                     Cat.all_cats[x].placement,
                     base_pos,
                 ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 1, 1, 1, 60, 60]
                 )
-            elif Cat.all_cats[x].status == "leader":
+            elif Cat.all_cats[x].status.is_leader:
                 [
                     Cat.all_cats[x].placement,
                     base_pos,

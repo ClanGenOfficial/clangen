@@ -79,10 +79,10 @@
             "many": "pickleweeds",
             "one": "pickleweed"
         },
-        "CREEPING GOLDEN JENNY": {
-            "zero": "creeping golden jenny",
-            "many": "creeping golden jennies",
-            "one": "creeping golden jenny"
+        "GOLDEN CREEPING JENNY": {
+            "zero": "golden creeping jenny",
+            "many": "golden creeping jennies",
+            "one": "golden creeping jenny"
         },
         "DRY HERBS": {
             "zero": "herb-covered pelt",

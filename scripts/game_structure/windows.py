@@ -689,11 +689,11 @@ class ChangeCatName(UIWindow):
             container=self,
         )
 
-        if self.the_cat.status in self.the_cat.name.names_dict["special_suffixes"]:
+        if self.the_cat.status.rank in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(
                 ui_scale(pygame.Rect((159 + x_pos, 50 + y_pos), (120, 30))),
                 placeholder_text=self.the_cat.name.names_dict["special_suffixes"][
-                    self.the_cat.status
+                    self.the_cat.status.rank
                 ],
                 manager=MANAGER,
                 container=self,
@@ -744,7 +744,7 @@ class ChangeCatName(UIWindow):
                 # Suffixes can be empty, if you want. However, don't change the suffix if it's currently being hidden
                 # by a special suffix.
                 if (
-                    self.the_cat.status
+                    self.the_cat.status.rank
                     not in self.the_cat.name.names_dict["special_suffixes"]
                     or self.the_cat.name.specsuffix_hidden
                 ):
@@ -1087,7 +1087,7 @@ class KillCat(UIWindow):
             object_id="#kill_cat_window",
             resizable=False,
         )
-        self.history = History()
+
         self.the_cat = cat
         self.take_all = False
         self.back_button = UIImageButton(
@@ -1129,7 +1129,7 @@ class KillCat(UIWindow):
             container=self,
         )
 
-        if self.the_cat.status == "leader":
+        if self.the_cat.status.is_leader:
             self.done_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((347, 152), (77, 30))),
                 "buttons.done_lower",
@@ -1166,7 +1166,7 @@ class KillCat(UIWindow):
                 container=self,
             )
 
-        elif History.get_death_or_scars(self.the_cat, death=True):
+        elif self.the_cat.history.get_death_or_scars(death=True):
             # This should only occur for retired leaders.
 
             self.prompt = process_text(i18n.t("windows.death_prompt"), cat_dict)
@@ -1234,7 +1234,7 @@ class KillCat(UIWindow):
                     "",
                     self.death_entry_box.get_text(),
                 )
-                if self.the_cat.status == "leader":
+                if self.the_cat.status.is_leader:
                     if death_message.startswith("was"):
                         death_message = death_message.replace(
                             "was", "{VERB/m_c/were/was}", 1
@@ -1250,7 +1250,7 @@ class KillCat(UIWindow):
                         game.clan.leader_lives -= 1
 
                 self.the_cat.die()
-                self.history.add_death(self.the_cat, death_message)
+                self.the_cat.history.add_death(death_message)
                 update_sprite(self.the_cat)
                 game.all_screens["profile screen"].exit_screen()
                 game.all_screens["profile screen"].screen_switches()

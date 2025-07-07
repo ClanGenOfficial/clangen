@@ -3,6 +3,8 @@ import unittest
 
 from scripts.cat_relations.enums import value_groups
 
+from scripts.cat.enums import CatRank
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -316,10 +318,8 @@ class RelationshipConstraints(unittest.TestCase):
 class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
         # given
-        warrior = Cat()
-        warrior.status = "warrior"
-        medicine = Cat()
-        medicine.status = "medicine cat"
+        warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        medicine = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
 
         # when
         warrior_to_all = SingleInteraction("test")
