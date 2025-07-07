@@ -1,8 +1,6 @@
 import re
 from random import choice
 
-import ujson
-
 from scripts.cat_relations.enums import RelValue
 from scripts.cat.enums import CatRank
 from scripts.game_structure.game_essentials import game

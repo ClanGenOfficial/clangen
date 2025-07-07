@@ -5,7 +5,6 @@ from random import choice, randint
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat_relations.enums import RelValue, ValueLevel
 from scripts.cat.enums import CatRank
 from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents

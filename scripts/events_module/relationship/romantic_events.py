@@ -7,14 +7,8 @@ import i18n
 
 import scripts.cat_relations.interaction as interactions
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank
-from scripts.cat.history import History
-from scripts.cat_relations.relationship import (
-    cats_fulfill_single_interaction_constraints,
-    RelValue,
-)
+from scripts.cat_relations.relationship import RelValue
 from scripts.event_class import Single_Event
-from scripts.events_module.event_filters import event_for_season, event_for_location
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
