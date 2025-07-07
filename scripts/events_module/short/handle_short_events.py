@@ -811,7 +811,6 @@ class HandleShortEvents:
                         )
                     if possible_scar or possible_death:
                         cat.history.add_possible_history(
-                            cat,
                             injury,
                             scar_text=possible_scar,
                             death_text=possible_death,
