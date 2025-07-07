@@ -301,14 +301,14 @@ class Relationship:
         amount = self.get_value_change_amount(value_change, intensity)
 
         buffs = []
-        if intensity != "low":
+        # only high intensity gives passive buffs
+        if intensity == "high":
             passive_buff = int(
                 amount
-                / game.config["relationship"][f"{intensity}_passive_influence_div"]
+                / game.config["relationship"][f"passive_influence_div"]
             )
             # just adding a teeny bit of variety
             buffs = [passive_buff - 1, passive_buff, passive_buff + 1]
-
         # the passive buff creates a cascade affect
         # so a negative interaction will affect all values to a negative degree
         # and a positive interaction will affect all values to a positive degree
