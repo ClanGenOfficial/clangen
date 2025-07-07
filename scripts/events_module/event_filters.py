@@ -42,8 +42,6 @@ def event_for_season(seasons: list) -> bool:
     """
     checks if the clan is within the given seasons
     """
-    if not game.clan:
-        return False
     if "any" in seasons or game.clan.current_season.lower() in seasons:
         return True
 

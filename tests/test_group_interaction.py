@@ -1,6 +1,8 @@
 import os
 import unittest
 
+from scripts.clan import Clan
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -13,6 +15,17 @@ from scripts.events_module.relationship.group_events import (
 
 
 class MainCatFiltering(unittest.TestCase):
+    test_clan = Clan(
+        name="Test",
+        leader=None,
+        deputy=None,
+        medicine_cat=None,
+        biome="Forest",
+        camp_bg=None,
+        game_mode="expanded",
+        starting_season="Newleaf",
+    )
+
     def test_main_cat_status_one(self):
         # given
         group_events = GroupEvents()

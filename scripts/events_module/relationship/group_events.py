@@ -1,5 +1,7 @@
 import os
+from collections import defaultdict
 from copy import deepcopy
+from email.policy import default
 from random import choice, shuffle
 
 import i18n.config
@@ -179,12 +181,19 @@ class GroupEvents:
             if not event_for_season(interact.season):
                 continue
 
-            main_constraint_dict = {
-                "status": interact.status_constraint.get("m_c"),
-                "trait": interact.trait_constraint.get("m_c"),
-                "backstory": interact.backstory_constraint.get("m_c"),
-                "skill": interact.skill_constraint.get("m_c"),
-            }
+            main_constraint_dict = {}
+
+            if interact.status_constraint.get("m_c"):
+                main_constraint_dict["status"] = interact.status_constraint.get("m_c")
+            if interact.trait_constraint.get("m_c"):
+                main_constraint_dict["trait"] = interact.trait_constraint.get("m_c")
+            if interact.backstory_constraint.get("m_c"):
+                main_constraint_dict["backstory"] = interact.backstory_constraint.get(
+                    "m_c"
+                )
+            if interact.skill_constraint.get("m_c"):
+                main_constraint_dict["skill"] = interact.skill_constraint.get("m_c")
+
             if not event_for_cat(main_constraint_dict, main_cat):
                 continue
 
