@@ -1415,8 +1415,7 @@ def gather_cat_objects(
     """
     gathers cat objects from list of abbreviations used within an event format block
     :param Cat Cat: Cat class
-    :param list[str] abbr_list: The list of abbreviations, supports "m_c", "r_c", "p_l", "s_c", "app1" through "app6",
-    "clan", "some_clan", "patrol", "multi", "n_c{index}"
+    :param list[str] abbr_list: The list of abbreviations
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
     :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not
@@ -1424,6 +1423,8 @@ def gather_cat_objects(
     The other cat abbreviations will not work.
     :return: list of cat objects
     """
+
+    clan_cats = [x for x in Cat.all_cats_list if x.status.alive_in_player_clan]
     out_set = set()
 
     for abbr in abbr_list:
@@ -1434,6 +1435,12 @@ def gather_cat_objects(
                 out_set.add(event.main_cat)
         elif abbr == "r_c":
             out_set.add(event.random_cat)
+        elif re.match(r"n_c:[0-9]+", abbr):
+            index = re.match(r"n_c:([0-9]+)", abbr).group(1)
+            index = int(index)
+            if index < len(event.new_cats):
+                out_set.update(event.new_cats[index])
+        # PATROL SPECIFIC
         elif abbr == "p_l":
             out_set.add(event.patrol_leader)
         elif abbr == "s_c":
@@ -1450,25 +1457,36 @@ def gather_cat_objects(
             out_set.add(event.patrol_apprentices[4])
         elif abbr == "app6" and len(event.patrol_apprentices) >= 6:
             out_set.add(event.patrol_apprentices[5])
-        elif abbr == "clan":
-            out_set.update(
-                [x for x in Cat.all_cats_list if x.status.alive_in_player_clan]
-            )
-        elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
-            clan_cats = [x for x in Cat.all_cats_list if x.status.alive_in_player_clan]
-            out_set.update(
-                sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
-            )
         elif abbr == "patrol":
             out_set.update(event.patrol_cats)
         elif abbr == "multi":
             cat_num = randint(1, max(1, len(event.patrol_cats) - 1))
             out_set.update(sample(event.patrol_cats, cat_num))
-        elif re.match(r"n_c:[0-9]+", abbr):
-            index = re.match(r"n_c:([0-9]+)", abbr).group(1)
-            index = int(index)
-            if index < len(event.new_cats):
-                out_set.update(event.new_cats[index])
+        # OVERALL CLAN CATS
+        elif abbr == "clan":
+            out_set.update(clan_cats)
+        elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
+            out_set.update(
+                sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
+            )
+        # FACET CATS IN CLAN
+        elif abbr == "high_social":
+            out_set = {c for c in out_set if c.personality.sociability > 8}
+        elif abbr == "low_social":
+            out_set = {c for c in out_set if c.personality.sociability <= 8}
+        elif abbr == "high_lawful":
+            out_set = {c for c in out_set if c.personality.lawfulness > 8}
+        elif abbr == "low_lawful":
+            out_set = {c for c in out_set if c.personality.lawfulness <= 8}
+        elif abbr == "high_stable":
+            out_set = {c for c in out_set if c.personality.stability > 8}
+        elif abbr == "low_stable":
+            out_set = {c for c in out_set if c.personality.stability <= 8}
+        elif abbr == "high_aggress":
+            out_set = {c for c in out_set if c.personality.aggression > 8}
+        elif abbr == "low_aggress":
+            out_set = {c for c in out_set if c.personality.aggression <= 8}
+
         else:
             print(f"WARNING: Unsupported abbreviation {abbr}")
 

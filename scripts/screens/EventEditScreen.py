@@ -1910,7 +1910,20 @@ class EventEditScreen(Screens):
         involved_cats.extend(new_cat_list)
 
         if include_clan:
-            involved_cats.extend(["some_clan", "clan"])
+            involved_cats.extend(
+                [
+                    "some_clan",
+                    "clan",
+                    "low_lawful",
+                    "high_lawful",
+                    "low_social",
+                    "high_social",
+                    "low_stable",
+                    "high_stable",
+                    "low_aggress",
+                    "high_aggress",
+                ]
+            )
 
         return involved_cats
 

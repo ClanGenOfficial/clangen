@@ -87,6 +87,7 @@ class ProfileScreen(Screens):
 
     df = image_cache.load_image("resources/images/buttons/exile_df.png").convert_alpha()
     sc = image_cache.load_image("resources/images/buttons/guide_sc.png").convert_alpha()
+    ur = image_cache.load_image("resources/images/buttons/send_ur.png").convert_alpha()
 
     # Keep track of current tabs open. Can be used to keep tabs open when pages are switched, and
     # helps with exiting the screen
@@ -304,11 +305,21 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 # if the cat is dead, moves them to the opposite afterlife
                 if self.the_cat.dead:
+                    # DF -> UR
                     if self.the_cat.status.group == CatGroup.DARK_FOREST:
+                        self.the_cat.status.add_to_group(
+                            new_group=CatGroup.UNKNOWN_RESIDENCE
+                        )
+                        self.the_cat.thought = (
+                            "Is surprised to find themself walking among a foreign land"
+                        )
+                    # UR -> SC
+                    elif self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                         self.the_cat.status.add_to_group(new_group=CatGroup.STARCLAN)
                         self.the_cat.thought = (
                             "Is relieved to once again hunt in StarClan"
                         )
+                    # SC -> UR
                     else:
                         self.the_cat.status.add_to_group(new_group=CatGroup.DARK_FOREST)
                         self.the_cat.thought = (
@@ -518,37 +529,29 @@ class ProfileScreen(Screens):
         or for changes in the profile."""
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
-        # use these attributes to create differing profiles for StarClan cats etc.
-        is_sc_instructor = False
-        is_df_instructor = False
         if self.the_cat is None:
             return
-        if (
-            self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.status.group == CatGroup.STARCLAN
-        ):
-            is_sc_instructor = True
-        elif (
-            self.the_cat.dead
-            and game.clan.instructor.ID == self.the_cat.ID
-            and self.the_cat.status.group.DARK_FOREST
-        ):
-            is_df_instructor = True
 
         # Info in string
         cat_name = str(self.the_cat.name)
         cat_name = shorten_text_to_fit(cat_name, 500, 20)
         if self.the_cat.dead:
             cat_name = i18n.t("general.dead_label", name=cat_name)
-        if is_sc_instructor:
-            self.the_cat.thought = i18n.t(
-                "screens.profile.guide_thought_sc", clan=game.clan.name
-            )
-        if is_df_instructor:
-            self.the_cat.thought = i18n.t(
-                "screens.profile.guide_thought_df", clan=game.clan.name
-            )
+
+        # Instructor thoughts
+        if self.the_cat.dead and game.clan.instructor is self.the_cat:
+            if not self.the_cat.status.group == CatGroup.STARCLAN:  # StarClan
+                self.the_cat.thought = i18n.t(
+                    "screens.profile.guide_thought_sc", clan=game.clan.name
+                )
+            elif self.the_cat.status.group == CatGroup.DARK_FOREST:  # Dark Forest
+                self.the_cat.thought = i18n.t(
+                    "screens.profile.guide_thought_df", clan=game.clan.name
+                )
+            elif self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:  # Unknown Residence
+                self.the_cat.thought = i18n.t(
+                    "screens.profile.guide_thought_sc", clan=game.clan.name
+                )
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
@@ -2181,6 +2184,9 @@ class ProfileScreen(Screens):
                 text = "screens.profile.exile_df"
                 layer = self.df
                 if self.the_cat.status.group == CatGroup.DARK_FOREST:
+                    text = "screens.profile.send_ur"
+                    layer = self.ur
+                elif self.the_cat.status.group == CatGroup.STARCLAN:
                     text = "screens.profile.guide_sc"
                     layer = self.sc
 
