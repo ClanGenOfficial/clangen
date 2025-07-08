@@ -125,7 +125,7 @@ class FutureEvent:
         }
 
     def trigger(self):
-        GenerateEvents.find_short_event(
+        GenerateEvents.create_short_event(
             event_type=self.event_type,
             main_cat=Cat.fetch_cat(self.involved_cats.get("m_c")),
             random_cat=Cat.fetch_cat(self.involved_cats.get("r_c")),

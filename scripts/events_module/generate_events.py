@@ -5,10 +5,7 @@ import random
 import i18n
 import ujson
 
-from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank
 from scripts.clan_resources.freshkill import (
-    FreshkillPile,
     FRESHKILL_EVENT_ACTIVE,
     FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
@@ -22,7 +19,6 @@ from scripts.events_module.event_filters import (
     event_for_herb_supply,
     event_for_clan_relations,
 )
-from scripts.events_module.future.future_event import FutureEvent
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure.game_essentials import game
@@ -505,14 +501,13 @@ class GenerateEvents:
         return final_events
 
     @staticmethod
-    def find_short_event(
+    def create_short_event(
+        Cat_class,
         event_type: str,
-        main_cat: Cat,
-        random_cat: Cat,
-        freshkill_pile: FreshkillPile,
-        victim_cat: Cat = None,
+        main_cat,
+        random_cat,
+        victim_cat=None,
         sub_type: list = None,
-        ignore_subtyping: bool = False,
         future_event=None,
     ):
         """
@@ -579,10 +574,21 @@ class GenerateEvents:
                 pass
 
         try:
+            # choose an event!
             chosen_event = random.choice(final_events)
+
+            # set future event trigger status
             if future_event:
                 future_event.triggered = True
 
+            # setting event info
+            chosen_event.main_cat = main_cat
+            chosen_event.random_cat = random_cat
+            chosen_event.victim_cat = victim_cat
+            chosen_event.other_clan_name = other_clan_name
+            chosen_event.types = types
+
+            # execute the event
             chosen_event.execute_event(other_clan_name=other_clan_name, types=types)
 
             # this print is good for testing, but gets spammy in large clans
@@ -638,8 +644,8 @@ class GenerateEvents:
 
         return possible_events
 
+    @staticmethod
     def possible_lead_den_events(
-        self,
         cat,
         event_type: str,
         interaction_type: str,

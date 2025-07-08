@@ -154,10 +154,8 @@ class ShortEvent:
         self.chosen_herb = None
         self.herb_notice = None
 
-    def execute_event(self, other_clan_name: str = None, types: list = None):
+    def execute_event(self):
         self.additional_event_text = ""
-        self.other_clan_name = other_clan_name
-        self.types = types
 
         # check if another cat is present
         if self.r_c:

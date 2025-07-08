@@ -499,12 +499,12 @@ class Events:
             # 1/10 chance
             if not int(random.random() * 10):
                 random_cat = get_random_moon_cat(Cat, main_cat=cat)
-                handle_short_events.handle_event(
+                GenerateEvents.create_short_event(
+                    Cat,
                     event_type="misc",
                     main_cat=cat,
                     random_cat=random_cat,
                     sub_type=["mediator"],
-                    freshkill_pile=game.clan.freshkill_pile,
                 )
 
         if game.clan.clan_settings["become_mediator"]:
@@ -1707,12 +1707,12 @@ class Events:
             if self.ceremony_accessory:
                 sub_type.append("ceremony")
 
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="misc",
                 main_cat=cat,
                 random_cat=random_cat,
                 sub_type=sub_type,
-                freshkill_pile=game.clan.freshkill_pile,
             )
 
         self.ceremony_accessory = False
@@ -1836,11 +1836,11 @@ class Events:
         )
 
         if game.config["event_generation"]["debug_type_override"] == "new_cat":
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="new_cat",
                 main_cat=cat,
                 random_cat=random_cat,
-                freshkill_pile=game.clan.freshkill_pile,
             )
             return
 
@@ -1851,11 +1851,11 @@ class Events:
         ):
             self.new_cat_invited = True
 
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="new_cat",
                 main_cat=cat,
                 random_cat=random_cat,
-                freshkill_pile=game.clan.freshkill_pile,
             )
 
     def other_interactions(self, cat):
@@ -1864,11 +1864,11 @@ class Events:
         """
         if game.config["event_generation"]["debug_type_override"] == "misc":
             random_cat = get_random_moon_cat(Cat, main_cat=cat)
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="misc",
                 main_cat=cat,
                 random_cat=random_cat,
-                freshkill_pile=game.clan.freshkill_pile,
             )
             return
 
@@ -1878,11 +1878,11 @@ class Events:
 
         random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
-        handle_short_events.handle_event(
+        GenerateEvents.create_short_event(
+            Cat,
             event_type="misc",
             main_cat=cat,
             random_cat=random_cat,
-            freshkill_pile=game.clan.freshkill_pile,
         )
 
     def handle_injuries_or_general_death(self, cat):
@@ -1896,11 +1896,11 @@ class Events:
         )
 
         if game.config["event_generation"]["debug_type_override"] == "death":
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
-                freshkill_pile=game.clan.freshkill_pile,
             )
             return
         elif game.config["event_generation"]["debug_type_override"] == "injury":
@@ -1916,11 +1916,11 @@ class Events:
             and cat.status.is_leader
             and not cat.not_working()
         ):
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
-                freshkill_pile=game.clan.freshkill_pile,
             )
 
             return True
@@ -1932,34 +1932,34 @@ class Events:
         # made old_age_death_chance into a separate value to make testing with print statements easier
         old_age_death_chance = ((1 + death_curve_value) ** (cat.moons - age_start)) - 1
         if random.random() <= old_age_death_chance:
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
                 sub_type=["old_age"],
-                freshkill_pile=game.clan.freshkill_pile,
             )
             return True
         # max age has been indicated to be 300, so if a cat reaches that age, they die of old age
         elif cat.moons >= 300:
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
                 sub_type=["old_age"],
-                freshkill_pile=game.clan.freshkill_pile,
             )
             return True
 
         # disaster death chance
         if game.clan.clan_settings.get("disasters"):
             if not random.getrandbits(10):  # 1/1010
-                handle_short_events.handle_event(
+                GenerateEvents.create_short_event(
+                    Cat,
                     event_type="birth_death",
                     main_cat=cat,
                     random_cat=random_cat,
                     sub_type=["mass_death"],
-                    freshkill_pile=game.clan.freshkill_pile,
                 )
                 return True
 
@@ -1973,11 +1973,11 @@ class Events:
             )
             and not cat.not_working()
         ):  # 1/400
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
-                freshkill_pile=game.clan.freshkill_pile,
             )
             return True
         else:
@@ -2014,12 +2014,12 @@ class Events:
 
             chosen_target = random.choice(targets)
 
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="birth_death",
                 main_cat=Cat.fetch_cat(chosen_target.cat_to),
                 random_cat=cat,
                 sub_type=["murder"],
-                freshkill_pile=game.clan.freshkill_pile,
             )
 
             return
@@ -2099,12 +2099,12 @@ class Events:
                 )
                 print("KILL KILL KILL")
 
-                handle_short_events.handle_event(
+                GenerateEvents.create_short_event(
+                    Cat,
                     event_type="birth_death",
                     main_cat=Cat.fetch_cat(chosen_target.cat_to),
                     random_cat=cat,
                     sub_type=["murder"],
-                    freshkill_pile=game.clan.freshkill_pile,
                 )
 
     def handle_illnesses_or_illness_deaths(self, cat):
@@ -2271,12 +2271,12 @@ class Events:
 
         if not int(random.random() * chance):
             sub_type = ["transition"]
-            handle_short_events.handle_event(
+            GenerateEvents.create_short_event(
+                Cat,
                 event_type="misc",
                 main_cat=cat,
                 random_cat=random_cat,
                 sub_type=sub_type,
-                freshkill_pile=game.clan.freshkill_pile,
             )
 
         return
