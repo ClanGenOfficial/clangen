@@ -607,7 +607,9 @@ class HandleShortEvents:
                 if self.chosen_event.m_c["dies"]:
                     # handle murder
                     if "murder" in self.chosen_event.sub_type:
-                        self.random_cat.history.add_murder(murderer_id=self.random_cat.ID, victim=self.main_cat)
+                        self.random_cat.history.add_murder(
+                            murderer_id=self.random_cat.ID, victim=self.main_cat
+                        )
 
                     # find history
                     if self.main_cat.status.is_leader:
