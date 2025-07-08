@@ -22,13 +22,16 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.future.future_event import check_for_triggered_future_event
+from scripts.events_module.future.prep_and_trigger import (
+    check_for_triggered_future_event,
+)
 from scripts.events_module.generate_events import GenerateEvents, generate_events
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.events_module.short.condition_events import Condition_Events
+from scripts.events_module.short.generation import create_short_event
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.windows import SaveError
@@ -119,7 +122,7 @@ class Events:
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
 
-        check_for_triggered_future_event()
+        check_for_triggered_future_event(Cat)
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
@@ -499,7 +502,7 @@ class Events:
             # 1/10 chance
             if not int(random.random() * 10):
                 random_cat = get_random_moon_cat(Cat, main_cat=cat)
-                GenerateEvents.create_short_event(
+                create_short_event(
                     Cat,
                     event_type="misc",
                     main_cat=cat,
@@ -1707,7 +1710,7 @@ class Events:
             if self.ceremony_accessory:
                 sub_type.append("ceremony")
 
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="misc",
                 main_cat=cat,
@@ -1836,7 +1839,7 @@ class Events:
         )
 
         if game.config["event_generation"]["debug_type_override"] == "new_cat":
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="new_cat",
                 main_cat=cat,
@@ -1851,7 +1854,7 @@ class Events:
         ):
             self.new_cat_invited = True
 
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="new_cat",
                 main_cat=cat,
@@ -1864,7 +1867,7 @@ class Events:
         """
         if game.config["event_generation"]["debug_type_override"] == "misc":
             random_cat = get_random_moon_cat(Cat, main_cat=cat)
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="misc",
                 main_cat=cat,
@@ -1878,7 +1881,7 @@ class Events:
 
         random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
-        GenerateEvents.create_short_event(
+        create_short_event(
             Cat,
             event_type="misc",
             main_cat=cat,
@@ -1896,7 +1899,7 @@ class Events:
         )
 
         if game.config["event_generation"]["debug_type_override"] == "death":
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="birth_death",
                 main_cat=cat,
@@ -1916,7 +1919,7 @@ class Events:
             and cat.status.is_leader
             and not cat.not_working()
         ):
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="birth_death",
                 main_cat=cat,
@@ -1932,7 +1935,7 @@ class Events:
         # made old_age_death_chance into a separate value to make testing with print statements easier
         old_age_death_chance = ((1 + death_curve_value) ** (cat.moons - age_start)) - 1
         if random.random() <= old_age_death_chance:
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="birth_death",
                 main_cat=cat,
@@ -1942,7 +1945,7 @@ class Events:
             return True
         # max age has been indicated to be 300, so if a cat reaches that age, they die of old age
         elif cat.moons >= 300:
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="birth_death",
                 main_cat=cat,
@@ -1954,7 +1957,7 @@ class Events:
         # disaster death chance
         if game.clan.clan_settings.get("disasters"):
             if not random.getrandbits(10):  # 1/1010
-                GenerateEvents.create_short_event(
+                create_short_event(
                     Cat,
                     event_type="birth_death",
                     main_cat=cat,
@@ -1973,7 +1976,7 @@ class Events:
             )
             and not cat.not_working()
         ):  # 1/400
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="birth_death",
                 main_cat=cat,
@@ -2014,7 +2017,7 @@ class Events:
 
             chosen_target = random.choice(targets)
 
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="birth_death",
                 main_cat=Cat.fetch_cat(chosen_target.cat_to),
@@ -2099,7 +2102,7 @@ class Events:
                 )
                 print("KILL KILL KILL")
 
-                GenerateEvents.create_short_event(
+                create_short_event(
                     Cat,
                     event_type="birth_death",
                     main_cat=Cat.fetch_cat(chosen_target.cat_to),
@@ -2271,7 +2274,7 @@ class Events:
 
         if not int(random.random() * chance):
             sub_type = ["transition"]
-            GenerateEvents.create_short_event(
+            create_short_event(
                 Cat,
                 event_type="misc",
                 main_cat=cat,

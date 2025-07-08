@@ -10,13 +10,18 @@ import ujson
 from scripts.cat.cats import Cat, BACKSTORIES, create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
-from scripts.cat.skills import SkillPath, Skill
+from scripts.cat.skills import SkillPath
 from scripts.events_module.short.condition_events import Condition_Events
 
 from scripts.events_module.short.scar_events import Scar_Events
+from scripts.events_module.short.short_event import (
+    INJURY_GROUPS,
+    CONDITIONS_ALLOWED,
+    ShortEvent,
+)
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.localization import load_lang_resource, get_default_pronouns
+from scripts.game_structure.localization import get_default_pronouns
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
@@ -148,7 +153,7 @@ class EventEditScreen(Screens):
 
     all_injury_pools: dict = INJURY_GROUPS
     """Dict of all injury pools. Key is pool name, value is the injuries within the pool."""
-    all_possible_injuries: list = EVENT_ALLOWED_CONDITIONS
+    all_possible_injuries: list = CONDITIONS_ALLOWED
     """List of all possible injuries/conditions."""
     fatal_conditions: list = []
     """We need this for death history validity checking. This is a list of all conditions that can kill."""
@@ -4734,7 +4739,7 @@ class EventEditScreen(Screens):
             pygame.Rect((20, 10), (130, 30)),
             dropdown_dimensions=(130, 200),
             parent_text="types",
-            item_list=HandleShortEvents.supply_types,
+            item_list=ShortEvent.supply_types,
             multiple_choice=False,
             container=self.supply_element["constraint_container"],
             anchors={
@@ -4761,7 +4766,7 @@ class EventEditScreen(Screens):
         self.supply_element["trigger_list"] = UIDropDown(
             pygame.Rect((10, 20), (130, 30)),
             parent_text="triggers",
-            item_list=HandleShortEvents.supply_triggers,
+            item_list=ShortEvent.supply_triggers,
             multiple_choice=True,
             disable_selection=False,
             child_trigger_close=False,
@@ -4790,7 +4795,7 @@ class EventEditScreen(Screens):
         self.supply_element["adjust_list"] = UIDropDown(
             pygame.Rect((10, 10), (130, 30)),
             parent_text="adjustments",
-            item_list=HandleShortEvents.supply_adjustments,
+            item_list=ShortEvent.supply_adjustments,
             multiple_choice=False,
             disable_selection=False,
             container=self.supply_element["constraint_container"],

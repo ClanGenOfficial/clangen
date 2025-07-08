@@ -4,12 +4,12 @@ from typing import List, Optional
 import i18n
 import ujson
 
-from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
+from scripts.clan_resources.herb.herb import HERBS
 from scripts.event_class import Single_Event
-from scripts.events_module.future.future_event import prep_event
+from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure import localization
 from scripts.game_structure.game_essentials import game
@@ -32,6 +32,17 @@ class ShortEvent:
     A moon event that only affects the moon it was triggered on.  Can involve two cats directly and be restricted by various constraints.
     - full documentation available on GitHub wiki
     """
+
+    supply_types = ["fresh_kill", "all_herb", "any_herb"]
+    supply_types.extend(HERBS)
+    supply_triggers = ["always", "low", "adequate", "full", "excess"]
+    supply_adjustments = [
+        "reduce_eighth",
+        "reduce_quarter",
+        "reduce_half",
+        "reduce_full",
+        "increase_#",
+    ]
 
     def __init__(
         self,
@@ -140,9 +151,9 @@ class ShortEvent:
         self.types = []
         self.additional_event_text: str = ""
 
-        self.main_cat: Optional[Cat] = None
-        self.random_cat: Optional[Cat] = None
-        self.victim_cat: Optional[Cat] = None
+        self.main_cat = None
+        self.random_cat = None
+        self.victim_cat = None
         self.new_cat_objects: list = []
         self.multi_cat_objects: list = []
         self.dead_cat_objects = None
@@ -154,7 +165,10 @@ class ShortEvent:
         self.chosen_herb = None
         self.herb_notice = None
 
+        self.cat_class = None
+
     def execute_event(self):
+        self.cat_class = self.main_cat
         self.additional_event_text = ""
 
         # check if another cat is present
@@ -194,7 +208,7 @@ class ShortEvent:
         if self.relationships:
             # we're doing this here to make sure rel logs get adjusted text
             self.text = event_text_adjust(
-                Cat,
+                self.cat_class,
                 self.text,
                 main_cat=self.main_cat,
                 random_cat=self.random_cat,
@@ -203,13 +217,13 @@ class ShortEvent:
                 clan=game.clan,
                 other_clan=self.other_clan,
             )
-            unpack_rel_block(Cat, self.relationships, self)
+            unpack_rel_block(self.cat_class, self.relationships, self)
 
         # used in some murder events,
         # this kind of sucks tho it would be nice to change how this sort of thing is handled
         if "kit_manipulated" in self.tags:
-            kit = Cat.fetch_cat(
-                choice(find_alive_cats_with_rank(Cat, [CatRank.KITTEN]))
+            kit = self.cat_class.fetch_cat(
+                choice(find_alive_cats_with_rank(self.cat_class, [CatRank.KITTEN]))
             )
             self.all_involved_cat_objects.append(kit.ID)
             change_relationship_values(
@@ -272,7 +286,7 @@ class ShortEvent:
 
         # adjust text again to account for info that wasn't available when we do rel changes
         self.text = event_text_adjust(
-            Cat,
+            self.cat_class,
             self.text,
             main_cat=self.main_cat,
             random_cat=self.random_cat,
@@ -313,7 +327,8 @@ class ShortEvent:
         for x, newbie in enumerate(self.new_cat_objects):
             possible_cats[f"n_c:{x}"] = newbie
 
-        prep_event(
+        prep_future_event(
+            self.cat_class,
             event=self,
             event_id=self.event_id,
             possible_cats=possible_cats,
@@ -339,7 +354,7 @@ class ShortEvent:
         for i, attribute_list in enumerate(self.new_cat):
             self.new_cat_objects.append(
                 create_new_cat_block(
-                    Cat, Relationship, self, in_event_cats, i, attribute_list
+                    self.cat_class, Relationship, self, in_event_cats, i, attribute_list
                 )
             )
 
@@ -347,7 +362,9 @@ class ShortEvent:
             for cat in self.new_cat_objects[-1]:
                 if cat.dead:
                     extra_text = event_text_adjust(
-                        Cat, i18n.t("defaults.event_dead_outsider"), main_cat=cat
+                        self.cat_class,
+                        i18n.t("defaults.event_dead_outsider"),
+                        main_cat=cat,
                     )
                 elif cat.status.is_outsider:
                     n_c_index = self.new_cat_objects.index([cat])
@@ -358,7 +375,9 @@ class ShortEvent:
                         extra_text = ""
                     else:
                         extra_text = event_text_adjust(
-                            Cat, i18n.t("defaults.event_met_outsider"), main_cat=cat
+                            self.cat_class,
+                            i18n.t("defaults.event_met_outsider"),
+                            main_cat=cat,
                         )
                 else:
                     Relation_Events.welcome_new_cat_objects([cat])
@@ -503,7 +522,9 @@ class ShortEvent:
         cats that will die are added to self.dead_cats
         """
         # gather living clan cats except leader bc leader lives would be frustrating to handle in these
-        alive_cats = [i for i in Cat.all_cats.values() if i.status.alive_in_player_clan]
+        alive_cats = [
+            i for i in self.cat_class.all_cats.values() if i.status.alive_in_player_clan
+        ]
 
         # make sure all cats in the pool fit the event requirements
         requirements = self.m_c
