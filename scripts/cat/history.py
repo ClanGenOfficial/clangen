@@ -21,7 +21,7 @@ class History:
         possible_history=None,
         died_by=None,
         scar_events=None,
-        entry=None,
+        murder=None,
         cat=None,
     ):
         self.beginning = beginning if beginning else {}
@@ -33,7 +33,7 @@ class History:
         self.possible_history = possible_history if possible_history else {}
         self.died_by = died_by if died_by else []
         self.scar_events = scar_events if scar_events else []
-        self.murder = entry if entry else {}
+        self.murder = murder if murder else {}
         self.cat = cat
 
         # fix 'old' history save bugs
@@ -44,18 +44,18 @@ class History:
         if "mentor" in self.mentor_influence:
             del self.mentor_influence["mentor"]
         for entry in self.murder:
-            for murder in self.murder[entry].get("is_murderer", []):
-                if isinstance(murder["revealed"], bool):
+            for killed in self.murder[murder].get("is_murderer", []):
+                if isinstance(killed["revealed"], bool):
                     new_dict = {"to_clan": False, "aware_individuals": []}
-                    if murder["revealed"]:
+                    if killed["revealed"]:
                         new_dict["to_clan"] = True
-                    murder["revealed"] = new_dict
-            for victim in self.murder[entry].get("is_victim", []):
-                if isinstance(victim["revealed"], bool):
+                    killed["revealed"] = new_dict
+            for death in self.murder[murder].get("is_victim", []):
+                if isinstance(death["revealed"], bool):
                     new_dict = {"to_clan": False, "aware_individuals": []}
-                    if victim["revealed"]:
+                    if death["revealed"]:
                         new_dict["to_clan"] = True
-                    victim["revealed"] = new_dict
+                    death["revealed"] = new_dict
 
         """ 
         want save to look like
@@ -498,9 +498,14 @@ class History:
                     text = i18n.t("cat.history.murder_revealed_to_clan", count=1)
                 else:
                     if entry["revealed"]["aware_individuals"]:
-                        individuals = [Cat.fetch_cat(c).name for c in entry["revealed"]["aware_individuals"]]
+                        individuals = [
+                            Cat.fetch_cat(c).name
+                            for c in entry["revealed"]["aware_individuals"]
+                        ]
                         names = adjust_list_text(individuals)
-                        text = i18n.t("cat.history.murder_revealed_to_individual", name=names)
+                        text = i18n.t(
+                            "cat.history.murder_revealed_to_individual", name=names
+                        )
 
                     text += i18n.t("cat.history.murder_revealed_to_clan", count=0)
         return text
