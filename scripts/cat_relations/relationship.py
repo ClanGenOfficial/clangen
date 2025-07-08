@@ -388,15 +388,15 @@ class Relationship:
 
         # take personality in count
         comp = get_personality_compatibility(self.cat_from, self.cat_to)
-        if comp is not None:
+        if comp:
             bool_ballot.append(comp)
 
         # further influence the partition based on the relationship
         for value in (self.like, self.respect, self.comfort, self.trust):
-            # each 10th above 100 adds another True
+            # each 10th above 0 adds another True
             if value > 0:
                 bool_ballot += [True] * int(value / 10)
-            # each 10th below 100
+            # each 10th below 0
             else:
                 bool_ballot += [False] * int(abs(value) / 10)
 
