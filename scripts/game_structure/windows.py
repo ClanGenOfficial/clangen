@@ -1166,7 +1166,7 @@ class KillCat(UIWindow):
                 container=self,
             )
 
-        elif self.the_cat.history.get_death_or_scars(death=True):
+        elif self.the_cat.history.get_death():
             # This should only occur for retired leaders.
 
             self.prompt = process_text(i18n.t("windows.death_prompt"), cat_dict)

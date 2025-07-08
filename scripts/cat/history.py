@@ -177,7 +177,7 @@ class History:
         if (
             "Benevolent" or "Abrasive" or "Reserved" or "Outgoing"
         ) in self.mentor_influence["trait"]:
-            self.mentor_influence["trait"] = None
+            self.mentor_influence["trait"] = {}
             return
 
         for _ment in self.mentor_influence["trait"]:
@@ -228,8 +228,10 @@ class History:
 
         if mentor_id not in self.mentor_influence["trait"]:
             self.mentor_influence["trait"][mentor_id] = {}
+
         if facet not in self.mentor_influence["trait"][mentor_id]:
             self.mentor_influence["trait"][mentor_id][facet] = 0
+
         self.mentor_influence["trait"][mentor_id][facet] += amount
 
     def add_skill_mentor_influence(self, mentor_id, path, amount):
@@ -240,8 +242,10 @@ class History:
 
         if mentor_id not in self.mentor_influence["skill"]:
             self.mentor_influence["skill"][mentor_id] = {}
+
         if path.name not in self.mentor_influence["skill"][mentor_id]:
             self.mentor_influence["skill"][mentor_id][path.name] = 0
+
         self.mentor_influence["skill"][mentor_id][path.name] += amount
 
     def add_app_ceremony(self, honor):
@@ -302,12 +306,10 @@ class History:
         """
         use to remove possible death/scar histories
         :param condition: condition linked to the death/scar you're removing
-        # :param scar: set True if removing scar
-        # :param death: set True if removing death
         """
 
         if condition in self.possible_history:
-            self.possible_history.pop(condition)
+            self.possible_history.remove(condition)
 
     def add_death(self, death_text, condition=None, other_cat=None):
         """Adds death to cat's history. If a condition is passed, it will look into
@@ -320,6 +322,7 @@ class History:
 
         if other_cat is not None:
             other_cat = other_cat.ID
+
         if condition in self.possible_history:
             if self.possible_history[condition]["death_text"]:
                 death_text = self.possible_history[condition]["death_text"]
@@ -402,27 +405,27 @@ class History:
         Returns the requested death/scars dict, example of single event structure:
 
         {
-        "involved": ID
-        "death_text": text
-        "scar_text": text
+            "involved": ID,
+            "death_text": text,
+            "scar_text": text
         },
 
         example of multi event structure:
 
         {
-        "condition name": {
-            "involved": ID
-            "death_text": text
-            "scar_text": text
+            "condition name": {
+                "involved": ID,
+                "death_text": text,
+                "scar_text": text
             },
-        "condition name": {
-            "involved": ID
-            "death_text": text
-            "scar_text": text
-            },
+            "condition name": {
+                "involved": ID,
+                "death_text": text,
+                "scar_text": text
+            }
         },
 
-        if possible scar/death is empty, a NoneType is returned
+        if possible scar/death is empty, None is returned
         :param condition: which condition that caused the death/scar, default None
         """
 
@@ -433,37 +436,28 @@ class History:
         else:
             return self.possible_history
 
-    def get_death_or_scars(self, death=False, scar=False):
-        """
-        This returns the death/scar history list for the cat.  example of list structure:
+    """
+    example of list structure for below two functions
+    
+    [
+        {
+            "involved": ID,
+            "text": text,
+            "moon": moon
+        },
+        {
+            "involved": ID,
+            "text": text,
+            "moon": moon
+        }
+    ]
+    """
 
-        [
-            {
-                'involved': ID,
-                'text': text,
-                "moon": moon
-            },
-            {
-                'involved': ID,
-                "text": text,
-                "moon": moon
-            }
-            ]
+    def get_death(self):
+        return self.died_by
 
-        if scar/death is empty, a NoneType is returned
-        :param death: request a death, default False
-        :param scar: request scars, default False
-        """
-
-        if not death and not scar:
-            print(
-                "WARNING: event type was not specified during scar/death history retrieval, "
-                "did you remember to set scar or death as True?"
-            )
-        elif scar:
-            return self.scar_events
-        elif death:
-            return self.died_by
+    def get_scars(self):
+        return self.scar_events
 
     @staticmethod
     def reveal_murder(cat_class, murderer, discoverer, victim):
@@ -478,9 +472,11 @@ class History:
         murder_history = murderer.history.murder
         victim_history = victim.history.murder
 
-        for murder in murder_history:
-            if murder["victim"] == victim.ID:
-                murder_index = murder_history.index(murder)
+        murder_index = None
+
+        for i in murder_history:
+            if murder_history[i]["victim"] == victim.ID:
+                murder_index = i
                 break
 
         if murder_history:
