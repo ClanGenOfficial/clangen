@@ -146,13 +146,6 @@ class SkillPath(Enum):
         "ghost sight", 
         "ghost speaker"
     )
-    GHOST = ("morbid curiosity", "ghost sense", "ghost sight", "ghost speaker")
-    DARK = (
-        "interested in the Dark Forest",
-        "Dark Forest affinity",
-        "deep Dark Forest bond",
-        "unshakable Dark Forest link",
-    )
 
     @staticmethod
     def get_random(exclude: list = ()):
