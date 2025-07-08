@@ -139,9 +139,7 @@ def filter_possible_short_events(
     cat,
     random_cat,
     other_clan,
-    freshkill_active,
-    freshkill_trigger_factor,
-    sub_types=None,
+    sub_types: list = None,
     allowed_events=None,
     excluded_events=None,
     ignore_subtyping=False,
@@ -273,13 +271,13 @@ def filter_possible_short_events(
                 trigger = supply["trigger"]
                 supply_type = supply["type"]
                 if supply_type == "freshkill":
-                    if not freshkill_active:
+                    if not FRESHKILL_EVENT_ACTIVE:
                         continue
 
                     if not event_for_freshkill_supply(
                         game.clan.freshkill_pile,
                         trigger,
-                        freshkill_trigger_factor,
+                        FRESHKILL_EVENT_TRIGGER_FACTOR,
                         clan_size,
                     ):
                         discard = True
@@ -322,7 +320,7 @@ def create_short_event(
     Handles everything involved in finding an appropriate short event for the given args
     """
     types = [event_type]
-    sub_types = sub_type
+    sub_types = sub_type if sub_type else []
 
     # check for war and assign other_clan accordingly
     war_chance = 5
@@ -332,11 +330,9 @@ def create_short_event(
     if game.clan.war.get("at_war", False) and random.randint(1, war_chance) != 1:
         enemy_clan = get_warring_clan()
         other_clan = enemy_clan
-        other_clan_name = f"{other_clan.name}Clan"
         sub_types.append("war")
     else:
         other_clan = random.choice(game.clan.all_clans if game.clan.all_clans else None)
-        other_clan_name = f"{other_clan.name}Clan"
 
     # NOW find the possible events and filter
     if event_type == "birth_death":
@@ -351,8 +347,6 @@ def create_short_event(
         cat=main_cat,
         random_cat=random_cat,
         other_clan=other_clan,
-        freshkill_active=FRESHKILL_EVENT_ACTIVE,
-        freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
         sub_types=sub_types,
         allowed_events=future_event.allowed_events if future_event else None,
         excluded_events=future_event.excluded_events if future_event else None,
@@ -390,11 +384,10 @@ def create_short_event(
         chosen_event.main_cat = main_cat
         chosen_event.random_cat = random_cat
         chosen_event.victim_cat = victim_cat
-        chosen_event.other_clan_name = other_clan_name
         chosen_event.types = types
 
         # execute the event
-        chosen_event.execute_event(other_clan_name=other_clan_name, types=types)
+        chosen_event.execute_event(other_clan)
 
         # this print is good for testing, but gets spammy in large clans
         # print(f"CHOSEN: {self.chosen_event.event_id}")

@@ -164,7 +164,7 @@ class TestReset(unittest.TestCase):
         test.all_involved_cat_objects = ["cat1", "cat2"]
         test.main_cat = "main cat"
         test.random_cat = "random cat"
-        test.new_cat_objects = ["cat1", "cat2"]
+        test.new_cats = ["cat1", "cat2"]
         test.new_cats = [[Cat()]]
         test.victim_cat = "victim cat"
         test.murder_index = "murder index"
@@ -189,7 +189,7 @@ class TestReset(unittest.TestCase):
         )
         self.assertEqual(test.main_cat, default.main_cat)
         self.assertEqual(test.random_cat, default.random_cat)
-        self.assertEqual(test.new_cat_objects, default.new_cat_objects)
+        self.assertEqual(test.new_cats, default.new_cats)
         self.assertEqual(test.new_cats, default.new_cats)
         self.assertEqual(test.victim_cat, default.victim_cat)
         self.assertEqual(test.murder_index, default.murder_index)

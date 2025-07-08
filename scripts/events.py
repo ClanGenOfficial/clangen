@@ -313,7 +313,7 @@ class Events:
             random_cat=Cat.fetch_cat(event_to_trigger.involved_cats.get("r_c")),
             victim_cat=Cat.fetch_cat(event_to_trigger.involved_cats.get("mur_c")),
             sub_type=event_to_trigger.pool.get("subtype"),
-            future_event=self,
+            future_event=event_to_trigger,
         )
 
     def handle_lead_den_event(self):
