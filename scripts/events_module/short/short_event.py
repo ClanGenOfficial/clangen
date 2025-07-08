@@ -8,6 +8,7 @@ from scripts.cat.enums import CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.herb.herb import HERBS
+from scripts.clan_resources.supply import Supply
 from scripts.event_class import Single_Event
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship.relation_events import Relation_Events
@@ -35,7 +36,7 @@ class ShortEvent:
 
     supply_types = ["fresh_kill", "all_herb", "any_herb"]
     supply_types.extend(HERBS)
-    supply_triggers = ["always", "low", "adequate", "full", "excess"]
+    supply_triggers = ["always", Supply.LOW, Supply.ADEQUATE, Supply.FULL, Supply.EXCESS]
     supply_adjustments = [
         "reduce_eighth",
         "reduce_quarter",
