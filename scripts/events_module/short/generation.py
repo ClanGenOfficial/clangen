@@ -3,6 +3,11 @@ import random
 import i18n
 import ujson
 
+from scripts.cat.cats import Cat
+from scripts.clan_resources.freshkill import (
+    FRESHKILL_EVENT_ACTIVE,
+    FRESHKILL_EVENT_TRIGGER_FACTOR,
+)
 from scripts.events_module.event_filters import (
     event_for_location,
     event_for_tags,
@@ -43,6 +48,30 @@ def get_short_event_dicts(file_path):
             return None
 
     return events
+
+
+def find_possible_short_events(event_type=None):
+    event_list = []
+
+    # skip the rest of the loading if there is an unrecognised biome
+    temp_biome = (
+        game.clan.biome if not game.clan.override_biome else game.clan.override_biome
+    )
+    if temp_biome not in game.clan.BIOME_TYPES:
+        print(
+            f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
+            f"in clan.py?"
+        )
+
+    biome = temp_biome.lower()
+
+    # biome specific events
+    event_list.extend(generate_short_events(event_type, biome))
+
+    # any biome events
+    event_list.extend(generate_short_events(event_type, "general"))
+
+    return event_list
 
 
 def generate_short_events(event_triggered, biome):
@@ -105,32 +134,7 @@ def generate_short_events(event_triggered, biome):
         print(f"WARNING: {file_path} was not found, check short event generation")
 
 
-def possible_short_events(event_type=None):
-    event_list = []
-
-    # skip the rest of the loading if there is an unrecognised biome
-    temp_biome = (
-        game.clan.biome if not game.clan.override_biome else game.clan.override_biome
-    )
-    if temp_biome not in game.clan.BIOME_TYPES:
-        print(
-            f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
-            f"in clan.py?"
-        )
-
-    biome = temp_biome.lower()
-
-    # biome specific events
-    event_list.extend(generate_short_events(event_type, biome))
-
-    # any biome events
-    event_list.extend(generate_short_events(event_type, "general"))
-
-    return event_list
-
-
 def filter_possible_short_events(
-    Cat_class,
     possible_events,
     cat,
     random_cat,
@@ -263,7 +267,7 @@ def filter_possible_short_events(
             continue
 
         elif event.supplies:
-            clan_size = get_living_clan_cat_count(Cat_class)
+            clan_size = get_living_clan_cat_count(Cat)
             discard = False
             for supply in event.supplies:
                 trigger = supply["trigger"]
@@ -307,7 +311,6 @@ def filter_possible_short_events(
 
 
 def create_short_event(
-    Cat_class,
     event_type: str,
     main_cat,
     random_cat,
@@ -341,16 +344,15 @@ def create_short_event(
     elif event_type == "health":
         event_type = "injury"
 
-    events = possible_short_events(event_type)
+    events = find_possible_short_events(event_type)
 
     final_events = filter_possible_short_events(
-        Cat_class=Cat_class,
         possible_events=events,
         cat=main_cat,
         random_cat=random_cat,
         other_clan=other_clan,
-        freshkill_active=game.prey_config["activate_events"],
-        freshkill_trigger_factor=game.prey_config["base_event_trigger_factor"],
+        freshkill_active=FRESHKILL_EVENT_ACTIVE,
+        freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
         sub_types=sub_types,
         allowed_events=future_event.allowed_events if future_event else None,
         excluded_events=future_event.excluded_events if future_event else None,

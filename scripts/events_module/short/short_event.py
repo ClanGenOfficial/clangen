@@ -328,7 +328,6 @@ class ShortEvent:
             possible_cats[f"n_c:{x}"] = newbie
 
         prep_future_event(
-            self.cat_class,
             event=self,
             event_id=self.event_id,
             possible_cats=possible_cats,

@@ -122,7 +122,7 @@ class Events:
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
 
-        check_for_triggered_future_event(Cat)
+        check_for_triggered_future_event()
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
@@ -503,7 +503,6 @@ class Events:
             if not int(random.random() * 10):
                 random_cat = get_random_moon_cat(Cat, main_cat=cat)
                 create_short_event(
-                    Cat,
                     event_type="misc",
                     main_cat=cat,
                     random_cat=random_cat,
@@ -1711,7 +1710,6 @@ class Events:
                 sub_type.append("ceremony")
 
             create_short_event(
-                Cat,
                 event_type="misc",
                 main_cat=cat,
                 random_cat=random_cat,
@@ -1840,7 +1838,6 @@ class Events:
 
         if game.config["event_generation"]["debug_type_override"] == "new_cat":
             create_short_event(
-                Cat,
                 event_type="new_cat",
                 main_cat=cat,
                 random_cat=random_cat,
@@ -1855,7 +1852,6 @@ class Events:
             self.new_cat_invited = True
 
             create_short_event(
-                Cat,
                 event_type="new_cat",
                 main_cat=cat,
                 random_cat=random_cat,
@@ -1868,7 +1864,6 @@ class Events:
         if game.config["event_generation"]["debug_type_override"] == "misc":
             random_cat = get_random_moon_cat(Cat, main_cat=cat)
             create_short_event(
-                Cat,
                 event_type="misc",
                 main_cat=cat,
                 random_cat=random_cat,
@@ -1882,7 +1877,6 @@ class Events:
         random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
         create_short_event(
-            Cat,
             event_type="misc",
             main_cat=cat,
             random_cat=random_cat,
@@ -1900,7 +1894,6 @@ class Events:
 
         if game.config["event_generation"]["debug_type_override"] == "death":
             create_short_event(
-                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
@@ -1920,7 +1913,6 @@ class Events:
             and not cat.not_working()
         ):
             create_short_event(
-                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
@@ -1936,7 +1928,6 @@ class Events:
         old_age_death_chance = ((1 + death_curve_value) ** (cat.moons - age_start)) - 1
         if random.random() <= old_age_death_chance:
             create_short_event(
-                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
@@ -1946,7 +1937,6 @@ class Events:
         # max age has been indicated to be 300, so if a cat reaches that age, they die of old age
         elif cat.moons >= 300:
             create_short_event(
-                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
@@ -1958,7 +1948,6 @@ class Events:
         if game.clan.clan_settings.get("disasters"):
             if not random.getrandbits(10):  # 1/1010
                 create_short_event(
-                    Cat,
                     event_type="birth_death",
                     main_cat=cat,
                     random_cat=random_cat,
@@ -1977,7 +1966,6 @@ class Events:
             and not cat.not_working()
         ):  # 1/400
             create_short_event(
-                Cat,
                 event_type="birth_death",
                 main_cat=cat,
                 random_cat=random_cat,
@@ -2018,7 +2006,6 @@ class Events:
             chosen_target = random.choice(targets)
 
             create_short_event(
-                Cat,
                 event_type="birth_death",
                 main_cat=Cat.fetch_cat(chosen_target.cat_to),
                 random_cat=cat,
@@ -2103,7 +2090,6 @@ class Events:
                 print("KILL KILL KILL")
 
                 create_short_event(
-                    Cat,
                     event_type="birth_death",
                     main_cat=Cat.fetch_cat(chosen_target.cat_to),
                     random_cat=cat,
@@ -2275,7 +2261,6 @@ class Events:
         if not int(random.random() * chance):
             sub_type = ["transition"]
             create_short_event(
-                Cat,
                 event_type="misc",
                 main_cat=cat,
                 random_cat=random_cat,

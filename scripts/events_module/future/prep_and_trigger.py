@@ -1,11 +1,12 @@
 from random import randint
 
+from scripts.cat.cats import Cat
 from scripts.events_module.event_filters import cat_for_event
 from scripts.events_module.future.future_event import FutureEvent
 from scripts.game_structure.game_essentials import game
 
 
-def prep_future_event(Cat_class, event, event_id: str, possible_cats: dict):
+def prep_future_event(event, event_id: str, possible_cats: dict):
     """
     Checks if the given event has a future event attached, then creates the future event
     :param event: the class object for the event
@@ -17,7 +18,7 @@ def prep_future_event(Cat_class, event, event_id: str, possible_cats: dict):
         return
     for event_info in event.future_event:
         # create dict of all cats that need to be involved in future event
-        gathered_cat_dict = _collect_involved_cats(Cat_class, possible_cats, event_info)
+        gathered_cat_dict = _collect_involved_cats(possible_cats, event_info)
 
         # create future event and add it to the future event list
         game.clan.future_events.append(
@@ -33,7 +34,7 @@ def prep_future_event(Cat_class, event, event_id: str, possible_cats: dict):
         )
 
 
-def _collect_involved_cats(Cat_class, cat_dict: dict, future_info: dict) -> dict:
+def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
     """
     collects involved cats and assigns their roles for the future event, then
     returns a dict associating their new role (key) with their cat ID (value)
@@ -52,16 +53,14 @@ def _collect_involved_cats(Cat_class, cat_dict: dict, future_info: dict) -> dict
 
     # we're just keeping this to living cats within the clan for now, more complexity can come later
     possible_cats = [
-        kitty
-        for kitty in Cat_class.all_cats.values()
-        if kitty.status.alive_in_player_clan
+        kitty for kitty in Cat.all_cats.values() if kitty.status.alive_in_player_clan
     ]
 
     for new_role, cat_involved in future_info["involved_cats"].items():
         # grab any cats that need to be newly gathered
         if isinstance(cat_involved, dict):
             gathered_cat_dict[new_role] = cat_for_event(cat_involved, possible_cats)
-            possible_cats.remove(Cat_class.fetch_cat(gathered_cat_dict[new_role]))
+            possible_cats.remove(Cat.fetch_cat(gathered_cat_dict[new_role]))
             continue
 
         # otherwise, assign already involved cats to their new role within the future event
@@ -72,7 +71,7 @@ def _collect_involved_cats(Cat_class, cat_dict: dict, future_info: dict) -> dict
     return gathered_cat_dict
 
 
-def check_for_triggered_future_event(Cat_class):
+def check_for_triggered_future_event():
     """
     Handles aging future events and triggering them.
     """
@@ -85,7 +84,7 @@ def check_for_triggered_future_event(Cat_class):
             removals.append(event)
         # attempt to trigger event
         if event.moon_delay <= 0:
-            event.trigger(Cat_class)
+            event.trigger(Cat)
             if event.triggered:
                 removals.append(event)
 
