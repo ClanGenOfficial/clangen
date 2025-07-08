@@ -2117,10 +2117,9 @@ class Cat:
 
     def not_working(self):
         """returns True if the cat cannot work, False if the cat can work"""
-        for illness in self.illnesses:
-            if self.illnesses[illness]["severity"] != "minor":
-                return True
         return any(
+            self.illnesses[illness]["severity"] != "minor" for illness in self.illnesses
+        ) or any(
             self.injuries[injury]["severity"] != "minor" for injury in self.injuries
         )
 
