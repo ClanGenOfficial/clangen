@@ -601,7 +601,11 @@ class PatrolOutcome:
             for _tag in injury:
                 if _tag in condition_lists:
                     possible_injuries.extend(condition_lists[_tag])
-                elif _tag in INJURIES or _tag in ILLNESSES or _tag in PERMANENT_CONDITIONS:
+                elif (
+                    _tag in INJURIES
+                    or _tag in ILLNESSES
+                    or _tag in PERMANENT_CONDITIONS
+                ):
                     possible_injuries.append(_tag)
 
             lethal = True

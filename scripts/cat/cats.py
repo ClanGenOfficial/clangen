@@ -488,7 +488,9 @@ class Cat:
         if mentor_id is None or isinstance(mentor_id, str):
             self._mentor = mentor_id
         else:
-            raise TypeError(f"Invalid type for attribute Cat.mentor: Expected None or str, got {mentor_id} (of type {type(mentor_id)}) instead")
+            raise TypeError(
+                f"Invalid type for attribute Cat.mentor: Expected None or str, got {mentor_id} (of type {type(mentor_id)}) instead"
+            )
 
     @property
     def pronouns(self) -> List[Dict[str, Union[str, int]]]:
@@ -2916,7 +2918,7 @@ class Cat:
             personality_bonus = 2
         elif compat is False:
             personality_bonus = -2
-        else: # compat is None
+        else:  # compat is None
             personality_bonus = 0
 
         # Effects on traits
@@ -2948,10 +2950,7 @@ class Cat:
             else:
                 rand_min, rand_max = (4, 6)
 
-            if trait in (
-                "dislike",
-                "jealousy"
-            ): # negative traits
+            if trait in ("dislike", "jealousy"):  # negative traits
                 if sabotage:
                     effect1 = (randint(rand_min, rand_max) + bonus) + personality_bonus
                     effect2 = (randint(rand_min, rand_max) + bonus) + personality_bonus
@@ -3148,9 +3147,7 @@ class Cat:
     @staticmethod
     def insert_cat(c: Cat):
         if game.sort_type == "age":
-            bisect.insort(
-                Cat.all_cats_list, c, key=lambda x: Cat.get_adjusted_age(x)
-            )
+            bisect.insort(Cat.all_cats_list, c, key=lambda x: Cat.get_adjusted_age(x))
         elif game.sort_type == "reverse_age":
             bisect.insort(
                 Cat.all_cats_list, c, key=lambda x: -1 * Cat.get_adjusted_age(x)
@@ -3185,7 +3182,10 @@ class Cat:
         """Returns the moons + dead_for moons rather than the moons at death for dead cats, so dead cats are sorted by
         total age, rather than age at death"""
         if cat.dead:
-            if game.config["sorting"]["sort_rank_by_death"] and game.sort_type == "rank":
+            if (
+                game.config["sorting"]["sort_rank_by_death"]
+                and game.sort_type == "rank"
+            ):
                 return cat.dead_for
             elif game.config["sorting"]["sort_dead_by_total_age"]:
                 return cat.dead_for + cat.moons
