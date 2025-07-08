@@ -2,6 +2,7 @@ from random import randint
 
 from scripts.cat.cats import Cat
 from scripts.events_module.event_filters import cat_for_event
+from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure.game_essentials import game
 
 
@@ -71,6 +72,28 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
     return gathered_cat_dict
 
 
+def check_for_triggered_future_event():
+    """
+    Handles aging future events and triggering them.
+    """
+    removals = []
+
+    for event in game.clan.future_events:
+        event.moon_delay -= 1
+        # we give events a buffer of 12 moons to allow any season-locked events a chance to trigger, then we remove
+        if event.moon_delay <= -12:
+            removals.append(event)
+        # attempt to trigger event
+        if event.moon_delay <= 0:
+            event.trigger()
+            if event.triggered:
+                removals.append(event)
+
+    for event in removals:
+        if event in game.clan.future_events:
+            game.clan.future_events.remove(event)
+
+
 class FutureEvent:
     def __init__(
         self,
@@ -87,6 +110,11 @@ class FutureEvent:
 
         self.involved_cats = involved_cats
 
+        self.triggered = False
+        self.allowed_events = [self.pool.get("event_id")]
+        self.excluded_events = [self.pool.get("excluded_event_id")]
+        self.negate_subtyping = ("subtype" not in self.pool,)
+
     def to_dict(self):
         return {
             "parent_event": self.parent_event,
@@ -95,3 +123,14 @@ class FutureEvent:
             "moon_delay": self.moon_delay,
             "involved_cats": self.involved_cats,
         }
+
+    def trigger(self):
+        GenerateEvents.find_short_event(
+            event_type=self.event_type,
+            main_cat=Cat.fetch_cat(self.involved_cats.get("m_c")),
+            random_cat=Cat.fetch_cat(self.involved_cats.get("r_c")),
+            freshkill_pile=game.clan.freshkill_pile,
+            victim_cat=Cat.fetch_cat(self.involved_cats.get("mur_c")),
+            sub_type=self.pool.get("subtype"),
+            future_event=self,
+        )
