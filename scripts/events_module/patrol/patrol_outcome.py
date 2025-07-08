@@ -10,7 +10,6 @@ import i18n
 import pygame
 
 from scripts.events_module.future.future_event import prep_event
-from scripts.events_module.short.handle_short_events import INJURY_GROUPS
 
 if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol

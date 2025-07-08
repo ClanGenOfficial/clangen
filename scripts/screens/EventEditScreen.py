@@ -12,11 +12,7 @@ from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.events_module.short.condition_events import Condition_Events
-from scripts.events_module.short.handle_short_events import (
-    INJURY_GROUPS,
-    EVENT_ALLOWED_CONDITIONS,
-    HandleShortEvents,
-)
+
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game

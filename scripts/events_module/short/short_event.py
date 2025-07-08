@@ -487,7 +487,9 @@ class ShortEvent:
                 if "all_lives" in self.tags:
                     game.clan.leader_lives -= 10
                 elif "some_lives" in self.tags:
-                    game.clan.leader_lives -= randrange(2, self.leads_current_life_count - 1)
+                    game.clan.leader_lives -= randrange(
+                        2, self.leads_current_life_count - 1
+                    )
                 else:
                     game.clan.leader_lives -= 1
 
@@ -590,7 +592,9 @@ class ShortEvent:
                     if self.main_cat.status.is_leader:
                         self.leads_current_life_count -= 1
                         if self.leads_current_life_count != game.clan.leader_lives:
-                            while self.leads_current_life_count > game.clan.leader_lives:
+                            while (
+                                self.leads_current_life_count > game.clan.leader_lives
+                            ):
                                 self.main_cat.history.add_death(
                                     "multi_lives",
                                     other_cat=self.random_cat,
@@ -622,7 +626,9 @@ class ShortEvent:
                     if self.random_cat.status.is_leader:
                         self.leads_current_life_count -= 1
                         if self.leads_current_life_count != game.clan.leader_lives:
-                            while self.leads_current_life_count > game.clan.leader_lives:
+                            while (
+                                self.leads_current_life_count > game.clan.leader_lives
+                            ):
                                 self.random_cat.history.add_death(
                                     "multi_lives",
                                     other_cat=self.random_cat,
@@ -653,7 +659,9 @@ class ShortEvent:
                     if cat.status.is_leader:
                         self.leads_current_life_count -= 1
                         if self.leads_current_life_count != game.clan.leader_lives:
-                            while self.leads_current_life_count > game.clan.leader_lives:
+                            while (
+                                self.leads_current_life_count > game.clan.leader_lives
+                            ):
                                 cat.history.add_death("multi_lives")
                                 self.leads_current_life_count -= 1
                     cat.history.add_death(death_history)
@@ -877,9 +885,14 @@ class ShortEvent:
             )
 
 
-with open("resources/dicts/conditions/injury_groups.json", "r", encoding="utf-8") as read_file:
+with open(
+    "resources/dicts/conditions/injury_groups.json", "r", encoding="utf-8"
+) as read_file:
     INJURY_GROUPS = ujson.loads(read_file.read())
 
-with open("resources/dicts/conditions/conditions_allowed_in_events.json", "r", encoding="utf-8") as read_file:
+with open(
+    "resources/dicts/conditions/conditions_allowed_in_events.json",
+    "r",
+    encoding="utf-8",
+) as read_file:
     CONDITIONS_ALLOWED = ujson.loads(read_file.read())
-

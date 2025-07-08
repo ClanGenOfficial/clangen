@@ -18,7 +18,6 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (

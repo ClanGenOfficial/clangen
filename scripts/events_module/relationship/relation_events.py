@@ -421,6 +421,10 @@ class Relation_Events:
         """Cleans the trigger dictionary, this function should be called every new moon."""
         Relation_Events.cats_triggered_events = {}
 
+    @classmethod
+    def welcome_new_cat_objects(cls, param):
+        pass
+
 
 # ---------------------------------------------------------------------------- #
 #                                load resources                                #

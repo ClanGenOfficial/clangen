@@ -5,7 +5,13 @@ import random
 import i18n
 import ujson
 
+from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
+from scripts.clan_resources.freshkill import (
+    FreshkillPile,
+    FRESHKILL_EVENT_ACTIVE,
+    FRESHKILL_EVENT_TRIGGER_FACTOR,
+)
 from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
@@ -16,12 +22,14 @@ from scripts.events_module.event_filters import (
     event_for_herb_supply,
     event_for_clan_relations,
 )
+from scripts.events_module.future.future_event import FutureEvent
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_living_clan_cat_count,
+    get_warring_clan,
 )
 
 
@@ -495,6 +503,97 @@ class GenerateEvents:
             print(notice)
 
         return final_events
+
+    @staticmethod
+    def find_short_event(
+        event_type: str,
+        main_cat: Cat,
+        random_cat: Cat,
+        freshkill_pile: FreshkillPile,
+        victim_cat: Cat = None,
+        sub_type: list = None,
+        ignore_subtyping: bool = False,
+        future_event=None,
+    ):
+        """
+        Handles everything involved in finding an appropriate short event for the given args
+        """
+        types = [event_type]
+        sub_types = sub_type
+
+        # check for war and assign other_clan accordingly
+        war_chance = 5
+        # if the war didn't go badly, then we decrease the chance of this event being war-focused
+        if game.switches["war_rel_change_type"] != "rel_down":
+            war_chance = 2
+        if game.clan.war.get("at_war", False) and random.randint(1, war_chance) != 1:
+            enemy_clan = get_warring_clan()
+            other_clan = enemy_clan
+            other_clan_name = f"{other_clan.name}Clan"
+            sub_types.append("war")
+        else:
+            other_clan = random.choice(
+                game.clan.all_clans if game.clan.all_clans else None
+            )
+            other_clan_name = f"{other_clan.name}Clan"
+
+        # NOW find the possible events and filter
+        if event_type == "birth_death":
+            event_type = "death"
+        elif event_type == "health":
+            event_type = "injury"
+
+        possible_short_events = GenerateEvents.possible_short_events(event_type)
+
+        final_events = GenerateEvents.filter_possible_short_events(
+            Cat_class=Cat,
+            possible_events=possible_short_events,
+            cat=main_cat,
+            random_cat=random_cat,
+            other_clan=other_clan,
+            freshkill_active=FRESHKILL_EVENT_ACTIVE,
+            freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
+            sub_types=sub_types,
+            allowed_events=future_event.allowed_events if future_event else None,
+            excluded_events=future_event.excluded_events if future_event else None,
+            ignore_subtyping=future_event.negate_subtyping if future_event else None,
+        )
+        if isinstance(game.config["event_generation"]["debug_ensure_event_id"], str):
+            found = False
+            for _event in final_events:
+                if (
+                    _event.event_id
+                    == game.config["event_generation"]["debug_ensure_event_id"]
+                ):
+                    final_events = [_event]
+                    print(
+                        f"FOUND debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                        f"was set as the only event option"
+                    )
+                    found = True
+                    break
+            if not found:
+                # this print is very spammy, but can be helpful if unsure why a debug event isn't triggering
+                # print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                #      f"was not possible for {self.main_cat.name}.  {self.main_cat.name} was looking for a {event_type}: {self.sub_types} event")
+                pass
+
+        try:
+            chosen_event = random.choice(final_events)
+            if future_event:
+                future_event.triggered = True
+
+            chosen_event.execute_event(other_clan_name=other_clan_name, types=types)
+
+            # this print is good for testing, but gets spammy in large clans
+            # print(f"CHOSEN: {self.chosen_event.event_id}")
+        except IndexError:
+            # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
+            print(
+                f"WARNING: no {event_type}: {sub_types} events found for {main_cat.name} "
+                f"and {random_cat.name if random_cat else 'no random cat'}"
+            )
+            return
 
     @staticmethod
     def possible_ongoing_events(event_type=None, specific_event=None):

@@ -5,7 +5,6 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
-from scripts.events_module.short.handle_short_events import HandleShortEvents
 
 
 class TestHandleEvent(unittest.TestCase):
@@ -162,7 +161,7 @@ class TestReset(unittest.TestCase):
         test.types = ["type1", "type2"]
         test.sub_types = ["type1", "type2"]
         test.text = "text"
-        test.involved_cats = ["cat1", "cat2"]
+        test.all_involved_cat_objects = ["cat1", "cat2"]
         test.main_cat = "main cat"
         test.random_cat = "random cat"
         test.new_cat_objects = ["cat1", "cat2"]
@@ -170,7 +169,7 @@ class TestReset(unittest.TestCase):
         test.victim_cat = "victim cat"
         test.murder_index = "murder index"
         test.multi_cat = ["cat1", "cat2"]
-        test.dead_cats = ["cat1", "cat2"]
+        test.dead_cat_objects = ["cat1", "cat2"]
         test.chosen_herb = "chosen herb"
         test.other_clan = "other clan"
         test.other_clan_name = "other clan name"
@@ -185,7 +184,9 @@ class TestReset(unittest.TestCase):
         self.assertEqual(test.types, default.types)
         self.assertEqual(test.sub_types, default.sub_types)
         self.assertEqual(test.text, default.text)
-        self.assertEqual(test.involved_cats, default.involved_cats)
+        self.assertEqual(
+            test.all_involved_cat_objects, default.all_involved_cat_objects
+        )
         self.assertEqual(test.main_cat, default.main_cat)
         self.assertEqual(test.random_cat, default.random_cat)
         self.assertEqual(test.new_cat_objects, default.new_cat_objects)
@@ -193,7 +194,7 @@ class TestReset(unittest.TestCase):
         self.assertEqual(test.victim_cat, default.victim_cat)
         self.assertEqual(test.murder_index, default.murder_index)
         self.assertEqual(test.multi_cat, default.multi_cat)
-        self.assertEqual(test.dead_cats, default.dead_cats)
+        self.assertEqual(test.dead_cat_objects, default.dead_cat_objects)
         self.assertEqual(test.chosen_herb, default.chosen_herb)
         self.assertEqual(test.other_clan, default.other_clan)
         self.assertEqual(test.other_clan_name, default.other_clan_name)
