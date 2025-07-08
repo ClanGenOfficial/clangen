@@ -264,15 +264,10 @@ class HandleShortEvents:
 
         # handle murder reveals
         if "murder_reveal" in self.chosen_event.sub_type:
-            if "clan_wide" in self.chosen_event.tags:
-                other_cat = None
-            else:
-                other_cat = self.random_cat
-            History.reveal_murder(
-                murderer=self.main_cat,
-                discoverer=other_cat,
-                cat_class=Cat,
+            self.main_cat.history.reveal_murder(
                 victim=self.victim_cat,
+                clan_reveal="clan_wide" in self.chosen_event.tags,
+                individuals=[self.random_cat],
             )
 
         # change outsider rep
@@ -629,7 +624,7 @@ class HandleShortEvents:
                     # handle murder
                     if "murder" in self.chosen_event.sub_type:
                         revealed = False
-                        History.add_murders(
+                        History.add_murder(
                             self.main_cat, self.random_cat, revealed, death_history
                         )
 
