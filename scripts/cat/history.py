@@ -43,6 +43,7 @@ class History:
             self.mentor_influence["skill"] = {}
         if "mentor" in self.mentor_influence:
             del self.mentor_influence["mentor"]
+        # converting old murder saves
         if self.murder:
             for killed in self.murder.get("is_murderer", []):
                 if isinstance(killed["revealed"], bool):
@@ -121,23 +122,21 @@ class History:
             "is_murderer": [
                     {
                     "victim": ID,
-                    "revealed": bool,
                     "moon": moon the murder occurred
-                    "revealed_by": ID of the discoverer
-                    "revelation_moon": moon the murder was revealed
-                    "revelation_text": revealed murder history
+                    "revealed": {
+                        "to_clan": bool,
+                        "aware_individuals": [ID]
+                        },
                     },
                 ]
             "is_victim": [
                     {
                     "murderer": ID,
-                    "revealed": bool,
-                    "text": same text as the death history for this murder (revealed history)
-                    "unrevealed_text": unrevealed death history
                     "moon": moon the murder occurred
-                    "revealed_by": ID of the discoverer
-                    "revelation_moon": moon the murder was revealed
-                    "revelation_text": revealed death history
+                    "revealed": {
+                        "to_clan": bool,
+                        "aware_individuals": [ID]
+                        },
                     },
                 ]
             }
@@ -483,30 +482,26 @@ class History:
                 else:
                     murder["aware_individuals"].extend(individuals)
 
-    def get_murder_status_text(self, is_murderer: bool, Cat) -> str:
+    @staticmethod
+    def get_murder_status_text(murder: dict, Cat) -> str:
         """
         Returns the complete murder reveal status text for this cat.
-        :param is_murderer: True if you want the is_murderer status, False returns the is_victim status
+        :param murder: the murder history to pull status text from
         :param Cat: cat object
         """
         text = ""
-        history = "is_murderer" if is_murderer else "is_victim"
-        if history in self.murder:
-            for entry in self.murder[history]:
-                if entry["revealed"]["to_clan"]:
-                    text = i18n.t("cat.history.murder_revealed_to_clan", count=1)
-                else:
-                    if entry["revealed"]["aware_individuals"]:
-                        individuals = [
-                            Cat.fetch_cat(c).name
-                            for c in entry["revealed"]["aware_individuals"]
-                        ]
-                        names = adjust_list_text(individuals)
-                        text = i18n.t(
-                            "cat.history.murder_revealed_to_individual", name=names
-                        )
+        if murder["revealed"]["to_clan"]:
+            text = i18n.t("cat.history.murder_revealed_to_clan", count=1)
+        else:
+            if murder["revealed"]["aware_individuals"]:
+                individuals = [
+                    Cat.fetch_cat(c).name
+                    for c in murder["revealed"]["aware_individuals"]
+                ]
+                names = adjust_list_text(individuals)
+                text = i18n.t("cat.history.murder_revealed_to_individual", name=names)
 
-                    text += i18n.t("cat.history.murder_revealed_to_clan", count=0)
+            text += i18n.t("cat.history.murder_revealed_to_clan", count=0)
         return text
 
     def add_lead_ceremony(self):

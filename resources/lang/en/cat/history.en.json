@@ -49,8 +49,8 @@
         "death_cause": "%{death} when {PRONOUN/m_c/subject} %{text}.",
         "murdered": "%{name} murdered %{victims}.",
         "murder_revealed_to_clan": {
-            "zero": "The Clan does not know.",
-            "one": "The Clan is aware."
+            "zero": "The Clan is unaware.",
+            "one": "The Clan knows."
         },
         "murder_revealed_to_individual": "%{name} knows. ",
         "leader_lives_left_df": {

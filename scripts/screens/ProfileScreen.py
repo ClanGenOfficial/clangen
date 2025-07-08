@@ -1467,7 +1467,7 @@ class ProfileScreen(Screens):
                         if event["moon"] == death["moon"]:
                             # get reveal status text
                             status_text = self.the_cat.history.get_murder_status_text(
-                                is_murderer=False, Cat=Cat
+                                murder=event, Cat=Cat
                             )
                             status_text = event_text_adjust(
                                 Cat,
@@ -1585,7 +1585,7 @@ class ProfileScreen(Screens):
             text = i18n.t("cat.history.murdered", name=self.the_cat.name, victims=name)
             if moons:
                 text += f" ({i18n.t('general.moons_date', moons=victim['moon'])}) "
-            text += f" {self.the_cat.history.get_murder_status_text(is_murderer=True, Cat=Cat)}"
+            text += f" {self.the_cat.history.get_murder_status_text(murder=victim, Cat=Cat)}"
             victim_text += f"{text}<br>"
 
         return victim_text
