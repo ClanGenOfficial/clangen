@@ -437,7 +437,6 @@ class History:
         object.
         :param victim: cat object for the victim
         :param murderer_id: murderer's cat ID
-        :param death_history: event text for the victim's death (should be same as their death history)
         """
         if not game.clan:
             return

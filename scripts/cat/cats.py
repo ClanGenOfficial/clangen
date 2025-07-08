@@ -1101,6 +1101,7 @@ class Cat:
         try:
             with open(cat_history_directory, "r", encoding="utf-8") as read_file:
                 history_data = ujson.loads(read_file.read())
+
                 self._history = History(
                     beginning=(
                         history_data["beginning"] if "beginning" in history_data else {}
