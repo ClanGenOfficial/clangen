@@ -349,11 +349,13 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 ## Relationship Levels
 > These tags are used to indicate what level of a relationship value cat1 has toward cat2. Basic tags will allow the tagged level and greater levels (i.e. tagging `dislike` will allow `dislike`, `hate`, and `loathe`), while appending `_only` to the end of a tag will restrict the constraint to allow just that level (i.e. tagging `dislike_only` will allow `dislike`). You can use multiple `_only` tags to allow multiple levels (i.e. [`dislike_only`, `hate_only`] will allow `dislike` and `hate`) and you can always mix and match these as needed (i.e. [`enjoys`, `doubts_only` `considers`] checks for three different values).
 
-|         | Extreme Neg  | Mid Neg     | Low Neg     | Neutral        | Low Pos      | Mid Pos       | Extreme Pos    |
-|---------|--------------|-------------|-------------|----------------|--------------|---------------|----------------|
-| Like    | `loathe`     | `hate`      | `dislike`   | `knows_of`     | `likes`      | `enjoys`      | `cherishes`    |
-| Respect | `resents`    | `envies`    | `begrudges` | `acknowledges` | `praises`    | `respects`    | `admires`      |
-| Trust   | `discredits` | `distrusts` | `doubts`    | `observes`     | `listens_to` | `trusts`      | `confides_in`  |
-| Comfort | `runs_from`  | `fears`     | `avoids`    | `considers`    | `relates_to` | `understands` | `knows_deeply` |
-| Romance | -            | -           | -           | `uninterested` | `fancies`    | `adores`      | `loves`        |
-***
+|             | Like        | Respect        | Trust         | Comfort        | Romance        |
+|-------------|-------------|----------------|---------------|----------------|----------------|
+| Extreme Neg | `loathe`    | `resents`      | `discredits`  | `runs_from`    | -              |
+| Mid Neg     | `hates`     | `envies`       | `distrusts`   | `fears`        | -              |
+| Low Neg     | `dislikes`  | `begrudges`    | `doubts`      | `avoids`       | -              |
+| Neutral     | `knows_of`  | `acknowledges` | `observes`    | `considers`    | `uninterested` |
+| Low Pos     | `likes`     | `praises`      | `listens_to`  | `relates_to`   | `fancies`      |
+| Mid Pos     | `enjoys`    | `respects`     | `trusts`      | `understands`  | `adores`       |
+| Extreme Pos | `cherishes` | `admires`      | `confides_in` | `knows_deeply` | `fancies`      |
+
