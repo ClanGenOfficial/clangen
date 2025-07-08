@@ -122,7 +122,7 @@ class Events:
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
 
-        check_for_triggered_future_event()
+        self.trigger_future_events()
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
@@ -304,6 +304,17 @@ class Events:
                 game.save_events()
             except:
                 SaveError(traceback.format_exc())
+
+    def trigger_future_events(self):
+        event_to_trigger = check_for_triggered_future_event()
+        create_short_event(
+            event_type=event_to_trigger.event_type,
+            main_cat=Cat.fetch_cat(event_to_trigger.involved_cats.get("m_c")),
+            random_cat=Cat.fetch_cat(event_to_trigger.involved_cats.get("r_c")),
+            victim_cat=Cat.fetch_cat(event_to_trigger.involved_cats.get("mur_c")),
+            sub_type=event_to_trigger.pool.get("subtype"),
+            future_event=self,
+        )
 
     def handle_lead_den_event(self):
         """

@@ -1,5 +1,4 @@
 from scripts.cat.cats import Cat
-from scripts.events_module.short.generation import create_short_event
 
 
 class FutureEvent:
@@ -31,13 +30,3 @@ class FutureEvent:
             "moon_delay": self.moon_delay,
             "involved_cats": self.involved_cats,
         }
-
-    def trigger(self):
-        create_short_event(
-            event_type=self.event_type,
-            main_cat=Cat.fetch_cat(self.involved_cats.get("m_c")),
-            random_cat=Cat.fetch_cat(self.involved_cats.get("r_c")),
-            victim_cat=Cat.fetch_cat(self.involved_cats.get("mur_c")),
-            sub_type=self.pool.get("subtype"),
-            future_event=self,
-        )

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
-import random
 
 import i18n
 import ujson

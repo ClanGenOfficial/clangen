@@ -84,7 +84,7 @@ def check_for_triggered_future_event():
             removals.append(event)
         # attempt to trigger event
         if event.moon_delay <= 0:
-            event.trigger(Cat)
+            return event
             if event.triggered:
                 removals.append(event)
 
