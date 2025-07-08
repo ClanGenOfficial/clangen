@@ -2,6 +2,7 @@ import random
 
 from scripts.cat.skills import SkillPath
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 
 
 class History:
@@ -50,58 +51,59 @@ class History:
                 "age": age,
                 "moon": moon
             },
-        "mentor_influence": {
-            "trait": {
-                "mentor_id": {
-                    "lawfulness": 0,
-                    ...
-                    "strings": []
+            "mentor_influence": {
+                "trait": {
+                    "mentor_id": {
+                        "lawfulness": 0,
+                        ...
+                        "strings": []
+                    }
+                },
+                "skill": {
+                    "mentor_id": {
+                        "path": 0,
+                        string: []
+                    }
                 }
             },
-            "skill": {
-                "mentor_id": {
-                    "path": 0,
-                    string: []
+            "app_ceremony": {
+                "honor": honor,
+                "graduation_age": age,
+                "moon": moon
+            },
+            "lead_ceremony": full ceremony text,
+            "possible_history": {
+                "condition name": {
+                    "involved": ID
+                    "death_text": text
+                    "scar_text": text
+                },
+                "condition name": {
+                    "involved": ID
+                    "death_text": text
+                    "scar_text": text
                 }
-            }
-        "app_ceremony": {
-            "honor": honor,
-            "graduation_age": age,
-            "moon": moon
-        },
-        "lead_ceremony": full ceremony text,
-        "possible_history": {
-            "condition name": {
-                "involved": ID
-                "death_text": text
-                "scar_text": text
             },
-            "condition name": {
-                "involved": ID
-                "death_text": text
-                "scar_text": text
-            },
-        },
-        "died_by": [
-            {
-                "involved": ID,
-                "text": text,
-                "moon": moon
-            }
-        ],
-        "scar_events": [
-            {
-                "involved": ID,
-                "text": text,
-                "moon": moon
-            },
-            {
-                "involved": ID,
-                "text": text,
-                "moon": moon
-            }
-        ],
-        "murder": {
+            "died_by": [
+                {
+                    "involved": ID,
+                    "text": text,
+                    "moon": moon
+                }
+            ],
+            "scar_events": [
+                {
+                    "involved": ID,
+                    "text": text,
+                    "moon": moon
+                },
+                {
+                    "involved": ID,
+                    "text": text,
+                    "moon": moon
+                }
+            ],
+            "murder": {
                 "is_murderer": [
                     {
                         "victim": ID,
@@ -110,7 +112,7 @@ class History:
                         "revealed_by": ID of the discoverer,
                         "revelation_moon": moon the murder was revealed,
                         "revelation_text": revealed murder history
-                    },
+                    }
                 ],
                 "is_victim": [
                     {
@@ -122,7 +124,7 @@ class History:
                         "revealed_by": ID of the discoverer,
                         "revelation_moon": moon the murder was revealed,
                         "revelation_text": revealed death history
-                    },
+                    }
                 ]
             }
         }
@@ -178,60 +180,6 @@ class History:
             self.mentor_influence["trait"] = None
             return
 
-        # working under the impression that these blurbs will be preceded by "more likely to"
-        facet_influence_text = {
-            "lawfulness_raise": [
-                "follow rules",
-                "follow the status quo",
-                "heed {PRONOUN/m_c/poss} inner compass",
-                "have strong inner morals",
-            ],
-            "lawfulness_lower": [
-                "bend the rules",
-                "break away from the status quo",
-                "break rules that don't suit {PRONOUN/m_c/object}",
-                "make {PRONOUN/m_c/poss} own rules",
-            ],
-            "sociability_raise": [
-                "be friendly towards others",
-                "step out of {PRONOUN/m_c/poss} comfort zone",
-                "interact with others",
-                "put others at ease",
-            ],
-            "sociability_lower": [
-                "be cold towards others",
-                "refrain from socializing",
-                "bicker with others",
-            ],
-            "aggression_raise": [
-                "be ready for a fight",
-                "start a fight",
-                "defend {PRONOUN/m_c/poss} beliefs",
-                "use teeth and claws over words",
-                "resort to violence",
-            ],
-            "aggression_lower": [
-                "be slow to anger",
-                "avoid a fight",
-                "use words over teeth and claws",
-                "try to avoid violence",
-            ],
-            "stability_raise": [
-                "stay collected",
-                "think things through",
-                "be resilient",
-                "have a positive outlook",
-                "be consistent",
-                "adapt easily",
-            ],
-            "stability_lower": [
-                "behave erratically",
-                "make impulsive decisions",
-                "have trouble adapting",
-                "dwell on things",
-            ],
-        }
-
         for _ment in self.mentor_influence["trait"]:
             self.mentor_influence["trait"][_ment]["strings"] = []
             for _fac in self.mentor_influence["trait"][_ment]:
@@ -239,11 +187,15 @@ class History:
                 if _fac in self.cat.personality.facet_types:
                     if self.mentor_influence["trait"][_ment][_fac] > 0:
                         self.mentor_influence["trait"][_ment]["strings"].append(
-                            random.choice(facet_influence_text[_fac + "_raise"])
+                            random.choice(
+                                MENTOR_FACET_INFLUENCE_STRINGS[_fac + "_raise"]
+                            )
                         )
                     elif self.mentor_influence["trait"][_ment][_fac] < 0:
                         self.mentor_influence["trait"][_ment]["strings"].append(
-                            random.choice(facet_influence_text[_fac + "_lower"])
+                            random.choice(
+                                MENTOR_FACET_INFLUENCE_STRINGS[_fac + "_lower"]
+                            )
                         )
 
     def add_mentor_skill_influence_strings(self):
@@ -253,32 +205,6 @@ class History:
 
         if not self.mentor_influence["skill"]:
             return
-
-        # working under the impression that these blurbs will be preceded by "become better at"
-        skill_influence_text = {
-            SkillPath.TEACHER: ["teaching"],
-            SkillPath.HUNTER: ["hunting"],
-            SkillPath.FIGHTER: ["fighting"],
-            SkillPath.RUNNER: ["running"],
-            SkillPath.CLIMBER: ["climbing"],
-            SkillPath.SWIMMER: ["swimming"],
-            SkillPath.SPEAKER: ["arguing"],
-            SkillPath.MEDIATOR: ["resolving arguments"],
-            SkillPath.CLEVER: ["solving problems"],
-            SkillPath.INSIGHTFUL: ["providing insight"],
-            SkillPath.SENSE: ["noticing small details"],
-            SkillPath.KIT: ["caring for kittens"],
-            SkillPath.STORY: ["storytelling"],
-            SkillPath.LORE: ["remembering lore"],
-            SkillPath.CAMP: ["caring for camp"],
-            SkillPath.HEALER: ["healing"],
-            SkillPath.STAR: ["connecting to StarClan"],
-            SkillPath.OMEN: ["finding omens"],
-            SkillPath.DREAM: ["understanding dreams"],
-            SkillPath.CLAIRVOYANT: ["predicting the future"],
-            SkillPath.PROPHET: ["understanding prophecies"],
-            SkillPath.GHOST: ["connecting to the afterlife"],
-        }
 
         for _ment in self.mentor_influence["skill"]:
             self.mentor_influence["skill"][_ment]["strings"] = []
@@ -290,7 +216,9 @@ class History:
                 try:
                     if self.mentor_influence["skill"][_ment][_path] > 0:
                         self.mentor_influence["skill"][_ment]["strings"].append(
-                            random.choice(skill_influence_text[SkillPath[_path]])
+                            random.choice(
+                                MENTOR_SKILL_INFLUENCE_STRINGS[SkillPath[_path]]
+                            )
                         )
                 except KeyError:
                     print("issue", _path)
@@ -598,3 +526,11 @@ class History:
                 victim_history["revelation_text"] = victim_history[
                     "revelation_text"
                 ].replace("[discoverer]", discoverer_text)
+
+
+MENTOR_INFLUENCE_STRINGS: dict = load_lang_resource("cat/mentor_influence.json")
+MENTOR_FACET_INFLUENCE_STRINGS: dict[str, list[str]] = MENTOR_INFLUENCE_STRINGS["facet"]
+MENTOR_SKILL_INFLUENCE_STRINGS: dict[SkillPath, list[str]] = {
+    SkillPath[skill]: strings
+    for skill, strings in MENTOR_INFLUENCE_STRINGS["skill"].items()
+}
