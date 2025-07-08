@@ -23,7 +23,6 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_blit,
     ui_scale_offset,
-    event_text_adjust,
 )
 from .Screens import Screens
 from ..cat_relations.relationship import Relationship

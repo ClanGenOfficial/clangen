@@ -9,9 +9,9 @@ Ensure you have read and are familiarised with the writing equivalent of this pa
 
 What is `i18n`, really? Short answer: a slightly intelligent dictionary. At its most basic, `i18n.t()` finds the relevant string in the requested file for the given locale and returns it. That's it. Here's an example of that in use.
 
-```python
-print(i18n.t("docs.demo.hello_world"))
->>> hello world
+```pycon
+>>> print(i18n.t("docs.demo.hello_world"))
+hello world
 ```
 _Example usage_
 

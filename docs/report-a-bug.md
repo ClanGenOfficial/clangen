@@ -52,29 +52,22 @@ On development versions of ClanGen, the commit number is in the bottom-right of 
 
 If the game immediately crashes, you can get to the default log location manually.
 
-=== "Stable (executable)"
+=== "Source"
+If you are running a source code version of ClanGen, the log files are stored in a folder called `logs` within the folder the source files are located in.
+
+=== "Stable (standalone executable)"
 | Operating System | Default Location |
 |------------------|--------------------------------------------------------------|
-| Windows | `C:\Users\[current user]\AppData\Local\ClanGen\ClanGen\logs` |
-| Mac | |
-| Linux | |
-!!! todo
-...what are the default locations for other OSes?
+| Windows | `C:\Users\[your user name]\AppData\Local\ClanGen\ClanGen/logs` |
+| Mac | `/Users/[your user name]/Library/Application Support/ClanGen/logs` |
+| Linux | `/home/[your user name]/.local/share/ClanGen/logs` |
 
-=== "Stable (from source)"
-Wherever the active source files are stored, inside a folder called `logs`.
-
-=== "Development (executable)"
+=== "Development (standalone executable)"
 | Operating System | Default Location |
 |------------------|------------------------------------------------------------------|
-| Windows | `C:\Users\[current user]\AppData\Local\ClanGen\ClanGenBeta\logs` |
-| Mac | |
-| Linux | |
-!!! todo
-...what are the default locations for other OSes?
-
-=== "Development (from source)"
-Wherever the running source files are stored, inside a folder called `logs`.
+| Windows | `C:\Users\[your user name]\AppData\Local\ClanGen\ClanGenBeta/logs` |
+| Mac | `/Users/[your user name]/Library/Application Support/ClanGenBeta/logs` |
+| Linux | `/home/[your user name]/.local/share/ClanGenBeta/logs` |
 
 ### What's a patrol ID? Do I need it?
 

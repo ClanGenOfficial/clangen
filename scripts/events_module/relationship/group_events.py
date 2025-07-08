@@ -5,6 +5,7 @@ from random import choice, shuffle
 import i18n.config
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
     create_group_interaction,
@@ -188,7 +189,7 @@ class GroupEvents:
                 len(interact.status_constraint) >= 1
                 and "m_c" in interact.status_constraint
             ):
-                if main_cat.status not in interact.status_constraint["m_c"]:
+                if main_cat.status.rank not in interact.status_constraint["m_c"]:
                     continue
 
             if (
@@ -325,7 +326,7 @@ class GroupEvents:
                     status_ids = [
                         cat.ID
                         for cat in interact_cats
-                        if cat.status in interact.status_constraint[abbreviation]
+                        if cat.status.rank in interact.status_constraint[abbreviation]
                     ]
                 else:
                     # if there is no constraint, add all ids to the list
@@ -476,7 +477,7 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if relevant_cat.status not in constraint:
+            if relevant_cat.status.rank not in constraint:
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -688,7 +689,7 @@ class GroupEvents:
                 if "death_text" in injury_dict
                 else None
             )
-            if injured_cat.status == "leader":
+            if injured_cat.status.is_leader:
                 possible_death = (
                     GroupEvents.prepare_text(
                         injury_dict["death_leader_text"], abbreviations_cat_id

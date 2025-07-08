@@ -130,8 +130,9 @@ class MediationScreen(Screens):
         # Gather the mediators:
         self.mediators = []
         for cat in Cat.all_cats_list:
-            if cat.status in ("mediator", "mediator apprentice") and not (
-                cat.dead or cat.outside
+            if (
+                cat.status.rank.is_any_mediator_rank()
+                and cat.status.alive_in_player_clan
             ):
                 self.mediators.append(cat)
 
@@ -369,7 +370,7 @@ class MediationScreen(Screens):
             i
             for i in Cat.all_cats_list
             if (i.ID != self.mediators[self.selected_mediator].ID)
-            and not (i.dead or i.outside)
+            and i.status.alive_in_player_clan
         ]
         self.all_cats = self.chunks(self.all_cats_list, 24)
         self.current_listed_cats = self.all_cats_list
@@ -908,7 +909,7 @@ class MediationScreen(Screens):
         Cat.sort_cats(self.all_cats_list)
 
         search_text = search_text.strip()
-        if search_text not in ("",):
+        if search_text not in (""):
             for cat in self.all_cats_list:
                 if search_text.lower() in str(cat.name).lower():
                     self.current_listed_cats.append(cat)

@@ -712,7 +712,7 @@ class ChooseAdoptiveParentScreen(Screens):
         info = "\n".join(
             [
                 i18n.t("general.moons_age", count=self.the_cat.moons),
-                i18n.t(f"general.{self.the_cat.status.lower()}", count=1),
+                i18n.t(f"general.{self.the_cat.status.rank.lower()}", count=1),
                 self.the_cat.genderalign,
                 i18n.t(f"cat.personality.{self.the_cat.personality.trait}"),
             ]
@@ -894,7 +894,7 @@ class ChooseAdoptiveParentScreen(Screens):
         info = "\n".join(
             [
                 i18n.t("general.moons_age", count=self.selected_cat.moons),
-                i18n.t(f"general.{self.selected_cat.status.lower()}", count=1),
+                i18n.t(f"general.{self.selected_cat.status.rank.lower()}", count=1),
                 self.selected_cat.genderalign,
                 i18n.t(f"cat.personality.{self.selected_cat.personality.trait}"),
             ]
@@ -916,9 +916,7 @@ class ChooseAdoptiveParentScreen(Screens):
         valid_parents = [
             inter_cat
             for inter_cat in Cat.all_cats_list
-            if not (
-                inter_cat.dead or inter_cat.outside or inter_cat.exiled
-            )  # Adoptive parents cant be dead or outside
+            if inter_cat.status.alive_in_player_clan  # Adoptive parents must be part of the clan
             and inter_cat.ID != self.the_cat.ID  # Can't be your own adoptive parent
             and inter_cat.moons - self.the_cat.moons
             >= 14  # Adoptive parent must be at least 14 moons older. -> own child can't adopt you

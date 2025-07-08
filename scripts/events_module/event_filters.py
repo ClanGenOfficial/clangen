@@ -1,10 +1,13 @@
 import re
 from random import choice
 
+import ujson
+
+from scripts.cat.enums import CatRank
 from scripts.game_structure.game_essentials import game
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     filter_relationship_type,
 )
 
@@ -61,7 +64,7 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
     # check leader life tags
     if hasattr(cat, "ID"):
-        if cat.status == "leader":
+        if cat.status.is_leader:
             leader_lives = game.clan.leader_lives
 
             life_lookup = {
@@ -97,20 +100,27 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
         for rank in ranks:
             if rank == "apps":
-                if not get_alive_status_cats(
+                if not find_alive_cats_with_rank(
                     cat,
-                    ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+                    [
+                        CatRank.APPRENTICE,
+                        CatRank.MEDIATOR_APPRENTICE,
+                        CatRank.MEDICINE_APPRENTICE,
+                    ],
                 ):
                     return False
                 else:
                     continue
 
-            if rank in ["leader", "deputy"] and not get_alive_status_cats(cat, [rank]):
+            if rank in [
+                CatRank.LEADER,
+                CatRank.DEPUTY,
+            ] and not find_alive_cats_with_rank(cat, [rank]):
                 return False
 
             if (
-                rank not in ["leader", "deputy"]
-                and not len(get_alive_status_cats(cat, [rank])) >= 2
+                rank not in [CatRank.LEADER, CatRank.DEPUTY]
+                and not len(find_alive_cats_with_rank(cat, [rank])) >= 2
             ):
                 return False
 
@@ -289,14 +299,10 @@ def _check_cat_status(cat, statuses: list) -> bool:
     if "any" in statuses or not statuses:
         return True
 
-    if cat.status in statuses:
+    if cat.status.rank in statuses:
         return True
 
-    if (
-        "lost" in statuses
-        and cat.status not in ["rogue", "loner", "kittypet", "former Clancat"]
-        and cat.outside
-    ):
+    if "lost" in statuses and cat.status.is_lost():
         return True
 
     return False

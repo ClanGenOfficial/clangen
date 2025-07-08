@@ -15,43 +15,44 @@ The alive folder contains all thoughts regarding being alive (whether the thinke
 
 ## Thought Format
 
-It's essential to know how thoughts are formatted when adding or altering them so that you don't cause errors. The thought format is:
+It's essential to know how thoughts are formatted when adding or altering them so that you don't cause errors. The thought format is:
 
-      {
-        "id": " ",
-        "biome": [],
-        "season": [],
-        "camp": [],
-        "thoughts": [],
-        "has_injuries": {
-            "m_c": [],
-            "r_c": []
-        },
-        "perm_conditions": {
-            "m_c": [],
-            "r_c": [],
-            "born_with": {
-                "m_c": bool
-                "r_c": bool
-            },
-        },
-        "relationship_constraint": [],
-        "backstory_constraint": {
-            "m_c": [],
-            "r_c": []
-        },
-        "main_status_constraint": [],
-        "random_status_constraint": [],
-        "main_age_constraint": [],
-        "random_age_constraint": [],
-        "main_trait_constraint": [],
-        "random_trait_constraint": [],
-        "main_skill_constraint": [],
-        "random_skill_constraint": [],
-        "random_living_status": [],
-        "random_outside_status": []
-       }
-       
+```json
+{
+    "id": " ",
+    "biome": [],
+    "season": [],
+    "camp": [],
+    "thoughts": [],
+    "has_injuries": {
+        "m_c": [],
+        "r_c": []
+    },
+    "perm_conditions": {
+        "m_c": [],
+        "r_c": [],
+        "born_with": {
+            "m_c": bool,
+            "r_c": bool
+        }
+    },
+    "relationship_constraint": [],
+    "backstory_constraint": {
+        "m_c": [],
+        "r_c": []
+    },
+    "main_status_constraint": [],
+    "random_status_constraint": [],
+    "main_age_constraint": [],
+    "random_age_constraint": [],
+    "main_trait_constraint": [],
+    "random_trait_constraint": [],
+    "main_skill_constraint": [],
+    "random_skill_constraint": [],
+    "random_living_status": [],
+    "random_outside_status": []
+}
+```
 !!! note "Important"
     If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable.
 

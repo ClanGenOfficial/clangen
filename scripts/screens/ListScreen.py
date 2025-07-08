@@ -7,6 +7,7 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatGroup
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
 from scripts.game_structure.ui_elements import (
@@ -559,8 +560,12 @@ class ListScreen(Screens):
 
         # adding in the guide if necessary, this ensures the guide isn't affected by sorting as we always want them to
         # be the first cat on the list
-        if (self.current_group == "dark_forest" and game.clan.instructor.df) or (
-            self.current_group == "starclan" and not game.clan.instructor.df
+        if (
+            self.current_group == "dark_forest"
+            and game.clan.instructor.status.group == CatGroup.DARK_FOREST
+        ) or (
+            self.current_group == "starclan"
+            and game.clan.instructor.status.group == CatGroup.STARCLAN
         ):
             if game.clan.instructor in self.full_cat_list:
                 self.full_cat_list.remove(game.clan.instructor)
@@ -704,7 +709,7 @@ class ListScreen(Screens):
         self.current_group = "your_clan"
         self.death_status = "living"
         self.full_cat_list = [
-            cat for cat in Cat.all_cats_list if not cat.dead and not cat.outside
+            cat for cat in Cat.all_cats_list if cat.status.alive_in_player_clan
         ]
 
     def get_cotc_cats(self):
@@ -715,7 +720,11 @@ class ListScreen(Screens):
         self.death_status = "living"
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and the_cat.outside and not the_cat.driven_out:
+            if (
+                not the_cat.dead
+                and the_cat.status.is_outsider
+                and the_cat.status.is_near(CatGroup.PLAYER_CLAN)
+            ):
                 self.full_cat_list.append(the_cat)
 
     def get_sc_cats(self):
@@ -727,10 +736,8 @@ class ListScreen(Screens):
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
             if (
-                the_cat.dead
-                and the_cat.ID != game.clan.instructor.ID
-                and not the_cat.outside
-                and not the_cat.df
+                the_cat.ID != game.clan.instructor.ID
+                and the_cat.status.group == CatGroup.STARCLAN
                 and not the_cat.faded
             ):
                 self.full_cat_list.append(the_cat)
@@ -745,9 +752,8 @@ class ListScreen(Screens):
 
         for the_cat in Cat.all_cats_list:
             if (
-                the_cat.dead
-                and the_cat.ID != game.clan.instructor.ID
-                and the_cat.df
+                the_cat.ID != game.clan.instructor.ID
+                and the_cat.status.group == CatGroup.DARK_FOREST
                 and not the_cat.faded
             ):
                 self.full_cat_list.append(the_cat)
@@ -761,8 +767,9 @@ class ListScreen(Screens):
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
             if (
-                the_cat.ID in game.clan.unknown_cats
+                the_cat.ID != game.clan.instructor.ID
+                and the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE
                 and not the_cat.faded
-                and not the_cat.driven_out
+                and the_cat.status.is_near(CatGroup.PLAYER_CLAN)
             ):
                 self.full_cat_list.append(the_cat)

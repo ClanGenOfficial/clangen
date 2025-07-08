@@ -24,6 +24,7 @@ from scripts.utility import (
     ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from ..cat.enums import CatRank, CatGroup
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -395,34 +396,34 @@ class ClanSettingsScreen(Screens):
                 continue
 
             if cat.dead:
-                if cat.df:
-                    df += 1
-                elif cat.outside:
-                    ur += 1
-                else:
+                if cat.status.group == CatGroup.STARCLAN:
                     starclan += 1
+                elif cat.status.group == CatGroup.DARK_FOREST:
+                    df += 1
+                else:
+                    ur += 1
                 continue
 
-            if cat.outside:
+            if cat.status.is_outsider:
                 cats_outside += 1
                 continue
 
             living_cats += 1
-            if cat.status == "medicine cat":
+            if cat.status.rank == CatRank.MEDICINE_CAT:
                 med_cats += 1
-            elif cat.status == "medicine cat apprentice":
+            elif cat.status.rank == CatRank.MEDICINE_APPRENTICE:
                 med_cat_apprentices += 1
-            elif cat.status == "warrior":
+            elif cat.status.rank == CatRank.WARRIOR:
                 warriors += 1
-            elif cat.status == "apprentice":
+            elif cat.status.rank == CatRank.APPRENTICE:
                 warrior_apprentices += 1
-            elif cat.status == "mediator apprentice":
+            elif cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
                 mediator_apprentices += 1
-            elif cat.status == "mediator":
+            elif cat.status.rank == CatRank.MEDIATOR:
                 mediators += 1
-            elif cat.status == "elder":
+            elif cat.status.rank == CatRank.ELDER:
                 elders += 1
-            elif cat.status in ("newborn", "kitten"):
+            elif cat.status.rank.is_baby():
                 kits += 1
 
         self.checkboxes_text["stat_box"] = pygame_gui.elements.UITextBox(

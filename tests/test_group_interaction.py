@@ -1,6 +1,8 @@
 import os
 import unittest
 
+from scripts.cat.enums import CatRank
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -16,8 +18,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_status_one(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
@@ -39,8 +40,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_status_all(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
@@ -337,15 +337,11 @@ class OtherFiltering(unittest.TestCase):
 class Abbreviations(unittest.TestCase):
     def test_get_abbreviation_possibilities_all(self):
         # given
-        main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
 
-        random1 = Cat()
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
-        random3 = Cat()
-        random3.status = "warrior"
+        random1 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        random2 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        random3 = Cat(status_dict={"rank": CatRank.WARRIOR})
 
         interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"r_c1": ["warrior"]}
@@ -371,15 +367,11 @@ class Abbreviations(unittest.TestCase):
 
     def test_get_abbreviation_possibilities_not_all(self):
         # given
-        main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
 
-        random1 = Cat()
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
-        random3 = Cat()
-        random3.status = "medicine cat"
+        random1 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        random2 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        random3 = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
 
         interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"r_c1": ["warrior"]}
@@ -428,16 +420,12 @@ class Abbreviations(unittest.TestCase):
 
     def test_set_abbreviations_cats(self):
         # given
-        main_cat = Cat()
-        main_cat.status = "warrior"
+        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
         abbreviations_cat_id = {"m_c": main_cat.ID, "r_c1": None, "r_c2": None}
 
-        random1 = Cat()
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
-        random3 = Cat()
-        random3.status = "medicine cat"
+        random1 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        random2 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        random3 = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
 
         # when
         interaction_cats = [random1, random2, random3]
@@ -461,12 +449,9 @@ class OtherCatsFiltering(unittest.TestCase):
     def test_relationship_allow_true(self):
         # given
         parent = Cat()
-        main_cat = Cat(parent1=parent.ID)
-        main_cat.status = "warrior"
-        random1 = Cat(parent1=parent.ID)
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
+        main_cat = Cat(parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR})
+        random1 = Cat(parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR})
+        random2 = Cat(status_dict={"rank": CatRank.WARRIOR})
         abbreviations_cat_id = {
             "m_c": main_cat.ID,
             "r_c1": random1.ID,
@@ -592,12 +577,9 @@ class OtherCatsFiltering(unittest.TestCase):
     def test_relationship_allow_false(self):
         # given
         parent = Cat()
-        main_cat = Cat(parent1=parent.ID)
-        main_cat.status = "warrior"
-        random1 = Cat(parent1=parent.ID)
-        random1.status = "warrior"
-        random2 = Cat()
-        random2.status = "warrior"
+        main_cat = Cat(parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR})
+        random1 = Cat(parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR})
+        random2 = Cat(status_dict={"rank": CatRank.WARRIOR})
         abbreviations_cat_id = {
             "m_c": main_cat.ID,
             "r_c1": random1.ID,
