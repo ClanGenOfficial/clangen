@@ -5,8 +5,9 @@ from random import choice, randint
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank
 from scripts.events_module.relationship.group_events import GroupEvents
-from scripts.events_module.relationship.romantic_events import Romantic_Events
+from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
@@ -24,9 +25,8 @@ class Relation_Events:
 
     base_path = os.path.join("resources", "dicts", "relationship_events")
 
-    GROUP_TYPES = {}
     types_path = os.path.join(base_path, "group_interactions", "group_types.json")
-    with open(types_path, "r") as read_file:
+    with open(types_path, "r", encoding="utf-8") as read_file:
         GROUP_TYPES = ujson.load(read_file)
     del base_path
 
@@ -56,7 +56,7 @@ class Relation_Events:
         if not random.getrandbits(4):
             Relation_Events.romantic_events(cat)
 
-        Romantic_Events.handle_mating_and_breakup(cat)
+        RomanticEvents.handle_mating_and_breakup(cat)
 
     # ---------------------------------------------------------------------------- #
     #                                new event types                               #
@@ -92,7 +92,7 @@ class Relation_Events:
         cat_to_choose_from = []
         for inter_cat in possible_cats:
             # toss out cats who are outside
-            if inter_cat.outside:
+            if inter_cat.status.is_outsider:
                 continue
 
             if inter_cat.ID not in cat.relationships:
@@ -128,14 +128,14 @@ class Relation_Events:
             cat_to_choose_from = [
                 cat.all_cats[mate_id]
                 for mate_id in cat.mate
-                if not cat.all_cats[mate_id].dead and not cat.all_cats[mate_id].outside
+                if cat.all_cats[mate_id].status.alive_in_player_clan
             ]
 
         if not cat_to_choose_from:
             return
 
         other_cat = choice(cat_to_choose_from)
-        if Romantic_Events.start_interaction(cat, other_cat):
+        if RomanticEvents.start_interaction(cat, other_cat):
             Relation_Events.trigger_event(cat)
             Relation_Events.trigger_event(other_cat)
 
@@ -178,11 +178,11 @@ class Relation_Events:
                 types_to_choose.extend([group] * value["frequency"])
                 chosen_type = choice(list(Relation_Events.GROUP_TYPES.keys()))
 
-        if cat.status == "leader":
+        if cat.status.is_leader:
             chosen_type = "all"
         possible_interaction_cats = list(
             filter(
-                lambda cat: (not cat.dead and not cat.outside and not cat.exiled),
+                lambda cat: (cat.status.alive_in_player_clan),
                 Cat.all_cats.values(),
             )
         )
@@ -227,7 +227,7 @@ class Relation_Events:
         for new_cat in new_cats:
             same_age_cats = get_cats_same_age(Cat, new_cat)
             alive_cats = [
-                i for i in new_cat.all_cats.values() if not i.dead and not i.outside
+                i for i in new_cat.all_cats.values() if i.status.alive_in_player_clan
             ]
             number = game.config["new_cat"]["cat_amount_welcoming"]
 
@@ -271,7 +271,7 @@ class Relation_Events:
         """Returns a list of cats, where the relationship from main_cat towards the cat fulfill the given constraints."""
         cat_list = list(
             filter(
-                lambda cat: (not cat.dead and not cat.outside and not cat.exiled),
+                lambda cat: cat.status.alive_in_player_clan,
                 Cat.all_cats.values(),
             )
         )
@@ -399,11 +399,16 @@ class Relation_Events:
     @staticmethod
     def can_trigger_events(cat):
         """Returns if the given cat can still trigger events."""
-        special_status = ["leader", "deputy", "medicine cat", "mediator"]
+        special_ranks = [
+            CatRank.LEADER,
+            CatRank.DEPUTY,
+            CatRank.MEDICINE_CAT,
+            CatRank.MEDIATOR,
+        ]
 
         # set the threshold correctly
         threshold = game.config["relationship"]["max_interaction"]
-        if cat.status in special_status:
+        if cat.status.rank in special_ranks:
             threshold = game.config["relationship"]["max_interaction_special"]
 
         if cat.ID not in Relation_Events.cats_triggered_events:

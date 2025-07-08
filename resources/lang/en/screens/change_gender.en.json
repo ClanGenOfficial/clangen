@@ -1,0 +1,16 @@
+{
+    "en": {
+        "heading": "Change %{name}'s Gender",
+        "description": "<br>You can set this to anything! Gender identity does not affect gameplay.",
+        "add_pronouns": "Add New Pronouns",
+        "current_pronouns": "Current Pronouns",
+        "saved_pronouns": "Saved Pronouns",
+        "demo": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} a {ADJ/m_c/cat/tom/she-cat}.<br>Everyone saw {PRONOUN/m_c/object}.<br>{PRONOUN/m_c/poss/CAP} paw slipped.<br>That den is {PRONOUN/m_c/inposs}.<br>m_c hunts by {PRONOUN/m_c/self}.",
+        "identity_changed_confirmation": "Gender identity changed!",
+        "conju0": "singular",
+        "conju1": "plural",
+        "gender0": "gender-neutral",
+        "gender1": "masculine",
+        "gender2": "feminine"
+    }
+}

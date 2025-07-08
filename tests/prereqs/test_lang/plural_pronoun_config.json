@@ -1,0 +1,30 @@
+{
+    "lang": "en",
+    "pronouns": {
+        "sets": {
+            "-&-sets comment-&-": "These are used to determine what pronouns a cat is assigned when they are generated (or this language is swapped to for the first time). This allows languages with pronoun sets that don't match English 1:1 to display correctly.",
+            "nonbinary": "0",
+            "male": "1",
+            "trans male": "1",
+            "female": "2",
+            "trans female": "2",
+            "default": "0",
+            "-&-plural_comment-&-": "Used for handling gendered plurals",
+            "plural default": "0",
+            "plural male": "1",
+            "plural female": "2",
+            "plural nonbinary": "0",
+            "-&-default_comment-&-": "Default is the fallback/'what-happens-if-nothing-matches' pronoun set. Also the 'they them default' value."
+        },
+        "plural_rules": {
+            "order": {
+                "1": "plural male",
+                "2": "plural female",
+                "0": "plural nonbinary"
+            },
+            "notes": "Ensure the values exactly match the keys in the sets above, otherwise there will be errors."
+        },
+        "adj_default": "1",
+        "adj_default_comment": "This determines which section of an ADJ label is used if the matching cat is not supplied (e.g., as a general use of the word). The first supplied value is 1."
+    }
+}

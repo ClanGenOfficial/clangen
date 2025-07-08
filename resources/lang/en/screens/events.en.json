@@ -1,0 +1,19 @@
+{
+    "en": {
+        "heading": "Timeskip to progress your Clan's life.",
+        "season": "Current season: %{season}",
+        "age": {
+            "one": "Clan age: %{count} moon",
+            "many": "Clan age: %{count} moons"
+        },
+        "timeskip_button": "Timeskip One Moon",
+        "all events": "all events",
+        "ceremonies": "ceremonies",
+        "births & deaths": "births & deaths",
+        "relationships": "relationships",
+        "health": "health",
+        "other clans": "other clans",
+        "miscellaneous": "miscellaneous",
+        "no_events": "Nothing interesting happened this moon."
+    }
+}

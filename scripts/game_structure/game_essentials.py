@@ -15,6 +15,7 @@ pygame.init()
 
 # G A M E
 class Game:
+    event_editing = False
     max_name_length = 10
     # max_events_displayed = 10
     # event_scroll_ct = 0
@@ -74,6 +75,11 @@ class Game:
     patrol_cats = {}
     patrolled = []
 
+    outsider_reps = ["welcoming", "neutral", "hostile"]
+    other_clan_reps = ["ally", "neutral", "hostile"]
+
+    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
+
     # store changing parts of the game that the user can toggle with buttons
     switches = {
         "cat": None,
@@ -118,7 +124,7 @@ class Game:
         "name_cat": None,
         "biome": None,
         "camp_bg": None,
-        "language": "english",
+        "language": "en",
         "options_tab": None,
         "profile_tab_group": None,
         "sub_tab_group": None,
@@ -139,6 +145,7 @@ class Game:
         "disallowed_symbol_tags": [],
         "saved_scroll_positions": {},
         "moon&season_open": False,
+        "switch_clan": False,
     }
     all_screens = {}
     cur_events = {}
@@ -157,7 +164,7 @@ class Game:
     }
 
     # Init Settings
-    with open("resources/gamesettings.json", "r") as read_file:
+    with open("resources/gamesettings.json", "r", encoding="utf-8") as read_file:
         _settings = ujson.loads(read_file.read())
 
     for setting, values in _settings["__other"].items():
@@ -193,10 +200,10 @@ class Game:
         self.keyspressed = []
         self.switch_screens = False
 
-        with open(f"resources/game_config.json", "r") as read_file:
+        with open(f"resources/game_config.json", "r", encoding="utf-8") as read_file:
             self.config = ujson.loads(read_file.read())
 
-        with open(f"resources/prey_config.json", "r") as read_file:
+        with open(f"resources/prey_config.json", "r", encoding="utf-8") as read_file:
             self.prey_config = ujson.loads(read_file.read())
 
         if self.config["fun"]["april_fools"]:
@@ -209,7 +216,6 @@ class Game:
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
-
 
     @staticmethod
     def safe_save(path: str, write_data, check_integrity=False, max_attempts: int = 15):
@@ -235,13 +241,13 @@ class Game:
             i = 0
             while True:
                 # Attempt to write to temp file
-                with open(temp_file_path, "w") as write_file:
+                with open(temp_file_path, "w", encoding="utf-8") as write_file:
                     write_file.write(_data)
                     write_file.flush()
                     os.fsync(write_file.fileno())
 
                 # Read the entire file back in
-                with open(temp_file_path, "r") as read_file:
+                with open(temp_file_path, "r", encoding="utf-8") as read_file:
                     _read_data = read_file.read()
 
                 if _data != _read_data:
@@ -264,7 +270,7 @@ class Game:
                 return
         else:
             os.makedirs(dir_name, exist_ok=True)
-            with open(path, "w") as write_file:
+            with open(path, "w", encoding="utf-8") as write_file:
                 write_file.write(_data)
                 write_file.flush()
                 os.fsync(write_file.fileno())
@@ -298,7 +304,7 @@ class Game:
         # so we can load it automatically
 
         if os.path.exists(get_save_dir() + "/clanlist.txt"):
-            with open(get_save_dir() + "/clanlist.txt", "r") as f:
+            with open(get_save_dir() + "/clanlist.txt", "r", encoding="utf-8") as f:
                 loaded_clan = f.read().strip().splitlines()
                 if loaded_clan:
                     loaded_clan = loaded_clan[0]
@@ -308,7 +314,7 @@ class Game:
             if loaded_clan:
                 self.safe_save(get_save_dir() + "/currentclan.txt", loaded_clan)
         elif os.path.exists(get_save_dir() + "/currentclan.txt"):
-            with open(get_save_dir() + "/currentclan.txt", "r") as f:
+            with open(get_save_dir() + "/currentclan.txt", "r", encoding="utf-8") as f:
                 loaded_clan = f.read().strip()
         else:
             loaded_clan = None
@@ -323,7 +329,7 @@ class Game:
             return None
         return clan_list
 
-    def save_clanlist(self, loaded_clan=None):
+    def save_clanlist(self, loaded_clan=None, only_switch=False):
         """clans = []
         if loaded_clan:
             clans.append(f"{loaded_clan}\n")
@@ -339,7 +345,8 @@ class Game:
             if os.path.exists(get_save_dir() + "/clanlist.txt"):
                 # we don't need clanlist.txt anymore
                 os.remove(get_save_dir() + "/clanlist.txt")
-            game.safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
+            if not only_switch:
+                game.safe_save(f"{get_save_dir()}/currentclan.txt", loaded_clan)
         else:
             if os.path.exists(get_save_dir() + "/currentclan.txt"):
                 os.remove(get_save_dir() + "/currentclan.txt")
@@ -363,7 +370,9 @@ class Game:
         """Load settings that user has saved from previous use"""
 
         try:
-            with open(get_save_dir() + "/settings.json", "r") as read_file:
+            with open(
+                get_save_dir() + "/settings.json", "r", encoding="utf-8"
+            ) as read_file:
                 settings_data = ujson.loads(read_file.read())
         except FileNotFoundError:
             return
@@ -373,17 +382,6 @@ class Game:
                 self.settings[key] = value
 
         self.switches["language"] = self.settings["language"]
-        if self.settings["language"] != "english":
-            self.switch_language()
-
-    def switch_language(self):
-        # add translation information here
-        if os.path.exists("languages/" + game.settings["language"] + ".txt"):
-            with open(
-                "languages/" + game.settings["language"] + ".txt", "r"
-            ) as read_file:
-                raw_language = read_file.read()
-            game.language = literal_eval(raw_language)
 
     def switch_setting(self, setting_name):
         """Call this function to change a setting given in the parameter by one to the right on it's list"""
@@ -431,7 +429,7 @@ class Game:
 
             inter_cat.save_condition()
 
-            if inter_cat.history:
+            if inter_cat._history:
                 inter_cat.save_history(directory + "/history")
                 # after saving, dump the history info
                 inter_cat.history = None
@@ -491,7 +489,9 @@ class Game:
         # Save the copies, flush the file.
         if game.clan.clan_settings["save_faded_copy"]:
             with open(
-                get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt", "a"
+                get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
+                "a",
+                encoding="utf-8",
             ) as write_file:
                 if not os.path.exists(
                     get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt"
@@ -500,11 +500,14 @@ class Game:
                     with open(
                         get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
                         "w",
+                        encoding="utf-8",
                     ) as create_file:
                         pass
 
                 with open(
-                    get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt", "a"
+                    get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
+                    "a",
+                    encoding="utf-8",
                 ) as write_file:
                     write_file.write(copy_of_info)
 
@@ -533,6 +536,7 @@ class Game:
                 + parent
                 + ".json",
                 "r",
+                encoding="utf-8",
             ) as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
@@ -556,10 +560,10 @@ class Game:
         events_path = f"{get_save_dir()}/{clanname}/events.json"
         events_list = []
         try:
-            with open(events_path, "r") as f:
+            with open(events_path, "r", encoding="utf-8") as f:
                 events_list = ujson.loads(f.read())
             for event_dict in events_list:
-                event_obj = Single_Event.from_dict(event_dict)
+                event_obj = Single_Event.from_dict(event_dict, game.cat_class)
                 if event_obj:
                     game.cur_events_list.append(event_obj)
         except FileNotFoundError:
@@ -608,12 +612,16 @@ class Game:
 
         # Apply war if needed
         if self.clan and self.clan.war.get("at_war", False) and args in war_effected:
-            # Grabs the modifer
-            mod = self.config
-            for key in war_effected[args]:
-                mod = mod[key]
+            rel_change_type = game.switches["war_rel_change_type"]
+            # if the war was positively affected this moon, we don't apply war modifier
+            # this way we only see increased death/injury when the war is going badly or is neutral
+            if rel_change_type != "rel_up":
+                # Grabs the modifier
+                mod = self.config
+                for key in war_effected[args]:
+                    mod = mod[key]
 
-            config_value -= mod
+                config_value -= mod
 
         return config_value
 
@@ -622,7 +630,7 @@ game = Game()
 
 if not os.path.exists(get_save_dir() + "/settings.txt"):
     os.makedirs(get_save_dir(), exist_ok=True)
-    with open(get_save_dir() + "/settings.txt", "w") as write_file:
+    with open(get_save_dir() + "/settings.txt", "w", encoding="utf-8") as write_file:
         write_file.write("")
 game.load_settings()
 

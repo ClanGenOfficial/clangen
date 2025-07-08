@@ -1,6 +1,7 @@
 """
 Stores the DebugMenu class and the DebugMode class
 """
+
 import pygame
 import pygame_gui
 import html
@@ -26,7 +27,8 @@ class DebugMenu(UIWindow):
             window_display_title="Debug Console",
             object_id="#debug_console",
             resizable=False,
-            visible=0
+            always_on_top=True,
+            visible=0,
         )
         self.set_blocking(False)
         set_debug_class(self)
@@ -36,25 +38,23 @@ class DebugMenu(UIWindow):
             relative_rect=ui_scale(
                 pygame.Rect(
                     (2, 2),
-                    (self.get_container().get_size()[0]-4, self.get_container().get_size()[1]-36)
+                    (
+                        self.get_container().get_size()[0] - 4,
+                        self.get_container().get_size()[1] - 36,
+                    ),
                 )
             ),
             container=self,
             object_id="#log",
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         self.command_line = UITextEntryLine(
             relative_rect=ui_scale(
-                pygame.Rect(
-                    (2, -32),
-                    (self.get_container().get_size()[0]-4, 30)
-                )
+                pygame.Rect((2, -32), (self.get_container().get_size()[0] - 4, 30))
             ),
             container=self,
-            anchors = {
-                "top": "bottom"
-            }
+            anchors={"top": "bottom"},
         )
 
         # self.submit_command = UIButton(
@@ -103,7 +103,8 @@ class DebugMenu(UIWindow):
                 if len(args) > 0:
                     for subcommand in cmd.sub_commands:
                         if (
-                            args[0] in subcommand._aliases # pylint: disable=protected-access
+                            args[0]
+                            in subcommand._aliases  # pylint: disable=protected-access
                         ):  # pylint: disable=protected-access
                             args = args[1:]
                             cmd = subcommand
@@ -111,9 +112,7 @@ class DebugMenu(UIWindow):
                 try:
                     cmd.callback(args)
                 except Exception as e:
-                    self.push_line(
-                        f"Error while executing command {command}: {e}"
-                    )
+                    self.push_line(f"Error while executing command {command}: {e}")
                     raise e
                 break
         if command in ["self", "clear"]:
@@ -129,9 +128,7 @@ class DebugMenu(UIWindow):
             pygame.event.post(
                 pygame.Event(
                     pygame_gui.UI_CONSOLE_COMMAND_ENTERED,
-                    {
-                        "command": self.command_line.get_text()
-                    }
+                    {"command": self.command_line.get_text()},
                 )
             )
             self.command_line.clear()
@@ -139,18 +136,19 @@ class DebugMenu(UIWindow):
             self.process_command(event.command)
         return super().process_event(event)
 
-    def push_line(self, line : str):
+    def push_line(self, line: str):
         """
         Appends a string and a newline to the command log.
         """
         self.log.append_html_text(html.escape(line + "\n"))
 
-    def push_multiline(self, lines : str):
+    def push_multiline(self, lines: str):
         """
         Appends multiple lines to the command log.
         """
-        for line in lines.split('\n'):
+        for line in lines.split("\n"):
             self.push_line(line)
+
 
 class DebugMode:
     """
@@ -158,7 +156,7 @@ class DebugMode:
     UI elements.
     """
 
-    debug_menu : DebugMenu = None
+    debug_menu: DebugMenu = None
     coords_display = None
     fps_display = None
 
@@ -199,8 +197,8 @@ class DebugMode:
             pygame.Rect(
                 (0, 0),
                 (
-                    pygame.display.get_surface().get_width()/1.35,
-                    pygame.display.get_surface().get_height()/1.35,
+                    pygame.display.get_surface().get_width() / 1.35,
+                    pygame.display.get_surface().get_height() / 1.35,
                 ),
             ),
             MANAGER,
@@ -253,11 +251,12 @@ class DebugMode:
         """
         Updates *after* the UI has been drawn.
         """
+        self.debug_menu.window_stack.move_window_to_front(self.debug_menu)
         if game.debug_settings["showbounds"]:
             elements = MANAGER.ui_group.visible
             for surface in elements:
                 rect = surface[1]
-                if rect in [self.coords_display.rect, self.console.rect]:
+                if rect in [self.coords_display.rect, self.debug_menu.rect]:
                     continue
                 if rect.collidepoint(pygame.mouse.get_pos()):
                     pygame.draw.rect(screen, (0, 255, 0), rect, 1)

@@ -1,0 +1,283 @@
+{
+  "general": {
+    "body": [
+      "Perhaps {PRONOUN/r_c/poss} Clanmates expected r_c to be more mournful over m_c's passing, but r_c can't help {PRONOUN/r_c/poss} bitter sense of relief to be free of {PRONOUN/m_c/object}.",
+      "r_c avoids m_c's vigil. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} content to let {PRONOUN/r_c/poss} Clanmates think it's because {PRONOUN/r_c/subject/}{VERB/r_c/'re/'s} grieving privately.",
+      "m_c's mate is strikingly absent from the vigil. r_c doesn't want to bother pretending to grieve {PRONOUN/m_c/object}.",
+      "r_c and m_c had a difficult relationship, but now that m_c is dead, r_c attempts to look back fondly on some of the good times.",
+      "r_c studies the body of {PRONOUN/r_c/poss} mate with no emotion coloring {PRONOUN/r_c/poss} gaze. That's that, then."
+
+   ],
+   "no_body": [
+    "Perhaps {PRONOUN/r_c/poss} Clanmates expected r_c to be more mournful over m_c's passing, but r_c can't help {PRONOUN/r_c/poss} bitter sense of relief to be free of {PRONOUN/m_c/object}.",
+    "r_c avoids m_c's vigil. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} content to let {PRONOUN/r_c/poss} Clanmates think it's because {PRONOUN/r_c/subject/}{VERB/r_c/'re/'s} grieving privately.",
+    "m_c's mate is strikingly absent from the vigil. r_c doesn't want to bother pretending to grieve {PRONOUN/m_c/object}.",
+    "r_c and m_c had a difficult relationship, but now that m_c is dead, r_c attempts to look back fondly on some of the good times.",
+    "r_c wonders if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} truly free of m_c, or if the reports of {PRONOUN/r_c/poss} mate's death are exaggerated."
+   ]
+  },
+  "adventurous": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "altruistic": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "ambitious": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "bloodthirsty": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "bold": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "calm": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "careful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "charismatic": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "childish": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "cold": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "compassionate": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "confident": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "daring": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "empathetic": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "faithful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "fierce": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "insecure": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "lonesome": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "loving": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "loyal": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "nervous": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "patient": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "playful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "responsible": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "righteous": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "shameless": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "sneaky": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "strange": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "strict": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "thoughtful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "troublesome": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "vengeful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "wise": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  }
+}

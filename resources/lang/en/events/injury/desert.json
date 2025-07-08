@@ -1,0 +1,5161 @@
+[
+    {
+        "event_id": "dst_injury_bruises_kitten1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "While batting a shiny skitter-pebble around m_c misjudged a pounce and smashed {PRONOUN/m_c/poss} tiny little snout into it.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "unruly",
+                "impulsive",
+                "fearless"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_heat_anykitten2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
+        ],
+        "weight": 20,
+        "event_text": "Naive to the dangers of the sun, m_c falls asleep while sunbathing. Though {PRONOUN/m_c/subject} {VERB/m_c/are/is} retrieved promptly, the young are vulerable to the desert heat.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "hot_injury"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_bruises_kitten3",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c play-fought a bit too hard and got a little bruised up, panting in excitement and dehydration.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "unruly",
+                "bouncy",
+                "bullying",
+                "impulsive",
+                "noisy",
+                "attention-seeker"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_scrapes_kitten1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Kits are absolute thorn magnets. m_c complains loudly about {PRONOUN/m_c/poss} new scrapes.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "unruly",
+                "impulsive",
+                "fearless",
+                "noisy",
+                "attention-seeker",
+                "skittish"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_scrapes_kitten2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Not every rock wall is suited for sliding down, and now m_c is not only a little scraped up but also <i>very</i> dirty.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "impulsive",
+                "fearless",
+                "bouncy",
+                "bossy",
+                "unruly",
+                "attention-seeker"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_crackedpads_kitten3",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Not one to make a fuss or put {PRONOUN/m_c/self} forward, m_c hasn't wanted to bother anyone. But {PRONOUN/m_c/poss} dry pads are starting to get painful as they crack, and licking them is making it worse.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "quiet",
+                "shy",
+                "daydreamer",
+                "skittish",
+                "self-conscious",
+                "polite"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "cracked pads"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_sprain_anykitten1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "The dust pile is in exactly the wrong place, and m_c skids over in a pile of flailing kitten limbs. Standing back up, {PRONOUN/m_c/subject} {VERB/m_c/squawk/squawks} in pain.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sprain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_cold_anykit1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "weight": 20,
+        "event_text": "The leaf-bare rains are dangerous to the unprepared and young. m_c is found, chilled and wet to the bone, after getting lost on a midnight adventure.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "cold_injury"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_hot_anykit1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "Greenleaf is a harsh season for kithood. m_c was outside for just a little too long, and when {PRONOUN/m_c/subject} {VERB/m_c/return/returns} to the nursery, {PRONOUN/m_c/poss} little body is dangerously hot.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "hot_injury"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_bruisessore_anymultiage1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "weight": 20,
+        "event_text": "With the ground made slippery by the recent rains, water isn't the only thing falling. m_c slips over, and though {PRONOUN/m_c/poss} limp has mostly disappeared by the time {PRONOUN/m_c/subject} {VERB/m_c/get/gets} to {PRONOUN/m_c/poss} nest, the smear of mud mars {PRONOUN/m_c/poss} dignity.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises",
+                    "sore"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_dehydrated_nonleafbare_anymultiage1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall",
+            "newleaf"
+        ],
+        "weight": 20,
+        "event_text": "m_c pushes {PRONOUN/m_c/self} a little too hard and ends up dehydrated for {PRONOUN/m_c/poss} troubles.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_dehydrated_greenleaf_anymultiage1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "Sunstroke stalks c_n in greenleaf, lurking to pounce on anyone unwary or unwise. This moon it strikes m_c.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "hot_injury"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_bruisessore_clankits1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "clan:kitten"
+        ],
+        "weight": 40,
+        "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/subject} {VERB/m_c/decline/declines} giving another badger ride, ready to nap off the happy soreness that comes with being the kits' favorite chew toy at the moment.",
+        "m_c": {
+            "age": [
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "KIT,1"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises",
+                    "sore"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_to": [
+                    "r_c"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "platonic",
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_to": [
+                    "r_c"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "dislike"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_sore_camp_clankits1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "clan:kitten"
+        ],
+        "weight": 40,
+        "event_text": "m_c holds a cheerful conversation with r_c through the wall as {PRONOUN/m_c/subject} {VERB/m_c/weave/weaves} new thorns into the nursery wall. It's not the most fun job in the world, always leaving m_c sore and tired at the end of the day despite {PRONOUN/m_c/poss} skill, but the company makes the time pass easily.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "CAMP,1"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_to": [
+                    "r_c"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "platonic",
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_to": [
+                    "r_c"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "dislike"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_jointpain_anysenioradultsenior1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "weight": 20,
+        "event_text": "m_c hopes the pain in {PRONOUN/m_c/poss} joints foretells the rains that should be coming. Otherwise, this is just pain for no reason.",
+        "m_c": {
+            "age": [
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "joint pain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_jointpain_anysenioradultsenior_leafbare",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "weight": 20,
+        "event_text": "With rain has come joint pain for m_c. Stars damn it, this is why cats were made for sunny spots and clear skies. Ugh!",
+        "m_c": {
+            "age": [
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "joint pain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_jointpain_anysenioradultsenior2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c must've landed wrong after a jump or something - {PRONOUN/m_c/poss} bones are reminding {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} age. Painfully.",
+        "m_c": {
+            "age": [
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "joint pain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_jointpain_anysenioradultsenior3",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c spreads {PRONOUN/m_c/poss} limbs out in the sun, letting the desert heat bring relief to {PRONOUN/m_c/poss} old, aching joints.",
+        "m_c": {
+            "age": [
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "joint pain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_jointpain_anymultiage1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Living in the desert means heavy construction materials. m_c is left aching after a day hauling rocks around camp for various purposes.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "CAMP,1"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "joint pain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_headache_anymultiage2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "The greenleaf sun is beating down overhead, searingly hot and bright. m_c comes down with an awful headache after too much time spent outside.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "warrior",
+                "apprentice"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "severe headache"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_seeinghorrors_anymultiage1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 10,
+        "event_text": "This looks like being sunstruck, like m_c has stared at the noon sun too long. But m_c never did that. Visions of prophecy_list_sight are the last thing {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} seeing.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "OMEN,3",
+                "PROPHET,3",
+                "CLAIRVOYANT,3",
+                "DREAM,3"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "damaged eyes"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c was cursed to die from prophecy.",
+                "lead_death": "died from a prophecy"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_flame_anymultiage1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall",
+            "newleaf"
+        ],
+        "tags": [
+            "clan:kitten"
+        ],
+        "weight": 5,
+        "event_text": "A piece of stray Twoleg trash ignites in the dry heat of the sun, threatening the nursery. m_c leads the efforts to rescue the kits, and will happily trade {PRONOUN/m_c/poss} singed coat and the acrid smell of burned fur for the safety of the young ones.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "burn"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c died from wounds taken while defending the nursery from fire.",
+                "lead_death": "died from wounds taken while defending the nursery from fire"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_flame_anymultiage2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [
+            "clan:kitten"
+        ],
+        "weight": 20,
+        "event_text": "A piece of stray Twoleg trash ignites in the dry heat of the sun, threatening the nursery. m_c leads the efforts to rescue the kits, and will happily trade {PRONOUN/m_c/poss} singed coat and the acrid smell of burned fur for the safety of the young ones.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "burn"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c died from wounds taken while defending the nursery from fire.",
+                "lead_death": "died from wounds taken while defending the nursery from fire"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_agesunburn_anysenioradultsenior1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "newleaf",
+            "greenleaf",
+            "leaf-fall"
+        ],
+        "weight": 20,
+        "event_text": "The dry season between the last rains and the beginning of the next is always a vulnerable time for the elderly, but m_c didn't think {PRONOUN/m_c/subject} {VERB/m_c/were/was} <i>that</i> old yet.",
+        "m_c": {
+            "age": [
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_agesunburn_anysenioradultsenior2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "m_c has been trying to keep {PRONOUN/m_c/poss} fluids up, but staying healthy in the oppressive heat of greenleaf was definitely easier in {PRONOUN/m_c/poss} prime. Sunstroke is the result.",
+        "m_c": {
+            "age": [
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "hot_injury"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_agesunburn_anysenioradultsenior3",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf",
+            "leaf-fall",
+            "newleaf"
+        ],
+        "tags": [
+            "clan:apprentice"
+        ],
+        "weight": 20,
+        "event_text": "m_c thanks r_c for the water, squeezing the precious liquid gently out of the soaked moss the apprentice has brought. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} want {PRONOUN/m_c/poss} dehydration to get any worse.",
+        "m_c": {
+            "age": [
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "apprentice"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "platonic"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_agesunburn_anysenioradultsenior4",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "On one of the hottest days of the year r_c spends all {PRONOUN/r_c/poss} energy making sure that the older members of c_n keep drinking. Only m_c gets touched by sunstroke, and it's only a mild case of dehydration.",
+        "m_c": {
+            "age": [
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "skill": [
+                "HEALER,2"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_scorpionsting_anymultitraitmultiage2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c wakes early one morning and spots a scorpion crawling up the sleeping r_c's back! {PRONOUN/m_c/subject/CAP} helped r_c escape, but got stung {PRONOUN/m_c/self} in the process.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "warrior"
+            ],
+            "trait": [
+                "calm",
+                "compassionate",
+                "loving",
+                "careful",
+                "sincere",
+                "bold",
+                "fierce",
+                "bloodthirsty",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "warrior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ],
+                "scar": [
+                    "QUILLSIDE"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "poisoned"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred saving r_c from a scorpion.",
+                "reg_death": "m_c died from a scorpion's sting.",
+                "lead_death": "died from a scorpion's sting"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "trust",
+                    "comfort",
+                    "platonic"
+                ],
+                "amount": 20
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "dislike"
+                ],
+                "amount": -20
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_duststorm_anymultiagestatustrait1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "m_c and r_c were caught by a duststorm while off adventuring in the far reaches of c_n's territory for a dare. They both inhaled way too much sand for comfort.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "adventurous",
+                "bold",
+                "daring",
+                "fierce",
+                "troublesome",
+                "competitive",
+                "flamboyant",
+                "playful",
+                "childish"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "adventurous",
+                "bold",
+                "daring",
+                "fierce",
+                "troublesome",
+                "competitive",
+                "flamboyant",
+                "playful",
+                "childish"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "water in their lungs"
+                ]
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "water in their lungs"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c died from complications after inhaling dust from a sandstorm.",
+                "lead_death": "died after inhaling dust from a sandstorm"
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "reg_death": "m_c died from complications after inhaling dust from a sandstorm.",
+                "lead_death": "died after inhaling dust from a sandstorm"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "jealous",
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 20
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_war_clawwound_anymultitraitmultistatus2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "A skirmish with a o_c_n patrol over a water source hidden deep within a rocky refuge leaves m_c nursing a large slash across {PRONOUN/m_c/poss} side.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound"
+                ],
+                "scars": [
+                    "SIDE"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred in a fight against o_c_n.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c_n.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after a battle with o_c_n"
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "dst_injury_war_catbite_anymultitraitmultistatus1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "A border skirmish with o_c_n erupted near a shallow watering hole. m_c was left limping after a vicious bite.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "cat bite"
+                ],
+                "scars": [
+                    "SIDE"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred in a fight against o_c_n.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a battle with o_c_n.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after a battle with o_c_n"
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "dst_injury_catbite_anyotherclanhostileany1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "The desert Clans are so distant from each other that it takes real effort to start a skirmish. Real effort m_c is apparently happy to provide, although {PRONOUN/m_c/poss} bite wounds and torn up pelt might be its own lesson on the wisdom of {PRONOUN/m_c/poss} choices.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "adult",
+                "young adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "troublesome",
+                "fierce",
+                "bloodthirsty",
+                "bold",
+                "daring",
+                "playful",
+                "ambitious",
+                "confident",
+                "adventurous",
+                "shameless",
+                "vengeful",
+                "arrogant",
+                "competitive",
+                "flamboyant",
+                "rebellious"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "cat bite"
+                ],
+                "scars": [
+                    "LEGBITE"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn ear"
+                ],
+                "scars": [
+                    "RIGHTEAR"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred from starting a fight with o_c_n.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after starting a battle with o_c_n.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after starting a battle with o_c_n"
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "dst_injury_clawwound_anyclankitsmultistatus1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "subtype": [
+            "war"
+        ],
+        "tags": [
+            "clan:kitten"
+        ],
+        "weight": 20,
+        "event_text": "m_c is the only cat around when o_c_n launches a surprise kitnapping attempt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/block/blocks} the nursery entrance and {VERB/m_c/take/takes} a battering for it, but {PRONOUN/m_c/subject} {VERB/m_c/hold/holds} the o_c_n cats off until help arrives.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "elder",
+                "mediator apprentice",
+                "mediator",
+                "medicine cat apprentice",
+                "medicine cat"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound"
+                ],
+                "scars": [
+                    "HINDLEG"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "mangled tail"
+                ],
+                "scars": [
+                    "TAILSCAR"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred defending the nursery against o_c_n.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds defending the nursery from o_c_n.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after defending the nursery from o_c_n"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 15
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "dst_multi_injury_anysprain2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall",
+            "newleaf",
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "m_c slips on the dusty ground, spraining {PRONOUN/m_c/poss} paw.",
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sprain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "multi_injury_multikitsunstroke1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall",
+            "newleaf",
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "m_c sneaked out of camp and was later found wandering in the full noon sun, confused and disoriented.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ],
+            "trait": [
+                "unruly",
+                "impulsive",
+                "know-it-all",
+                "fearless"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "hot_injury"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c died after {PRONOUN/m_c/subject} sneaked out of camp and got sunstroke."
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_anykithawk1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "The cry of a red-tailed hawk echoes above camp, and m_c freezes in fear. r_c barrels in and knocks m_c aside harshly, yowling and hissing like a demon. The bird is scared off for now, and m_c is left winded and injured by r_c's ferocity in protecting {PRONOUN/m_c/object}, but at least {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} alive.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dislocated joint"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 15
+            },
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_hawk1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A hawk swoops down on m_c, intending on making {PRONOUN/m_c/object} dinner. {PRONOUN/m_c/subject/CAP} {VERB/m_c/show/shows} that cats aren't prey, but the bird still gets a nasty bite in.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "beak bite"
+                ],
+                "scars": [
+                    "BEAKSIDE"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred while persuading a hawk that cats make bad prey.",
+                "reg_death": "The wounds from a hawk attack eventually killed m_c.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after a hawk attack"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_leafbarefalling1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "weight": 20,
+        "event_text": "The rain has made the high trails on the rocks slippery and precarious. Though everyone is being cautious, m_c slips and takes a nasty fall.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "blunt_force_injury"
+                ],
+                "scars": [
+                    "SNOUT"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c slipped from a high rocky trail during the leaf-bare rains and still carries the marks of that fall on {PRONOUN/m_c/poss} pelt.",
+                "reg_death": "Slipping off a high rocky trail killed m_c.",
+                "lead_death": "had a bad fall off a high rocky trail"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_kitten_eagle1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A huge golden eagle targets m_c while {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} alone. m_c sinks {PRONOUN/m_c/poss} kitten teeth into the raptor's foot as hard as {PRONOUN/m_c/subject} can, and the eagle drops {PRONOUN/m_c/object} from many fox-lengths above the ground. All the Clan can do is pray for {PRONOUN/m_c/poss} recovery.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "blunt_force_injury"
+                ],
+                "scars": [
+                    "SNOUT"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "Not many cats can claim they fought an eagle as a kitten, but m_c's scars are proof of it.",
+                "reg_death": "Though {PRONOUN/m_c/subject} escaped an eagle attack, the consequences still took m_c's life."
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_anythorns1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Thorns are a fact of life in the desert. This moon, m_c's bearing their prickly planty predations.",
+        "m_c": {
+            "age": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut",
+                    "torn pelt",
+                    "torn ear"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_anyrainyfall",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "weight": 20,
+        "event_text": "The rains bounce off the hard-baked ground, leaving puddles and slippery mud literally everywhere. While the water is welcome, the lack of traction is not, and m_c grumbles when {PRONOUN/m_c/subject} {VERB/m_c/end/ends} up going arse over tail from a misstep.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises",
+                    "sprain",
+                    "sore"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_kittenrainyfall",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "weight": 20,
+        "event_text": "All the world is water, and m_c squeaks with all the nobility and dignity that is {PRONOUN/m_c/poss} due, once again tripped by the dreadful slipperiness.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises",
+                    "sprain",
+                    "sore"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_showoff1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Climbing the highest rock in the territory was not, in fact, a good idea. m_c doesn't know what's worse - that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} now confined to the medicine den, or that everyone {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to show off to <i>saw</i> {PRONOUN/m_c/object} fall.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "adventurous",
+                "flamboyant",
+                "bold",
+                "childish",
+                "confident",
+                "daring",
+                "playful",
+                "competitive"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "blunt_force_injury"
+                ],
+                "scars": [
+                    "MANLEG"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c isn't proud of all of {PRONOUN/m_c/poss} scars - one, for example, is from falling off the highest rock in the territory while trying to show off as an apprentice.",
+                "reg_death": "The consequences of showing off took m_c's life when {PRONOUN/m_c/subject} fell from the highest rock in the territory."
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_cliffbreak1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "broken bone"
+                ],
+                "scars": [
+                    "MANLEG"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell off a cliff.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after falling off a cliff"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_sprain_anymultiage6",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "weight": 20,
+        "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains {PRONOUN/m_c/poss} paw while trying to walk through the muck.",
+        "m_c": {},
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sprain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_headache_sandcat_speakermediatorsense1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "At the border, a tiny not-cat-but-cat respects the boundary lines, turning away peacefully. m_c calls a farewell questioningly, and it replies:<br><i> Sand upon sand, the dunes have piled,<br> Bones beneath at peace awhiled,<br>Bones above the heat will bleach,<br>The fragile beating life will leech,<br>Pad at night, deny the day,<br>The water will show the way.</i>",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "skill": [
+                "SENSE,4",
+                "SPEAKER,4",
+                "MEDIATOR,4",
+                "PROPHET,4"
+            ],
+            "trait": [
+                "charismatic",
+                "compassionate",
+                "daring",
+                "faithful",
+                "lonesome",
+                "loving",
+                "strange",
+                "sincere"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "headache"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_soredingo1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Following the sound of barking, m_c finds r_c pinned in a burrow while a dingo digs at the entrance. m_c charges in, distracting the dog for long enough to give r_c the chance to run home, though the dingo gives m_c enough of a run around that all {PRONOUN/m_c/poss} limbs ache by the time {PRONOUN/m_c/subject} {VERB/m_c/collapse/collapses} into {PRONOUN/m_c/poss} nest at sunset.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "skill": [
+                "FIGHTER,2",
+                "RUNNER,3"
+            ],
+            "trait": [
+                "compassionate",
+                "loving",
+                "responsible",
+                "loyal",
+                "adventurous",
+                "ambitious",
+                "bloodthirsty",
+                "bold",
+                "daring",
+                "fierce",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_coyote1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A coyote tries to eat r_c, but m_c is there to score the canine's nose bloody and drive it off. The direction it chooses to run in isn't ideal though, as it bowls m_c over in its haste to escape, slamming {PRONOUN/m_c/object} bodily into a nearby rock.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "skill": [
+                "FIGHTER,2"
+            ],
+            "trait": [
+                "compassionate",
+                "loving",
+                "responsible",
+                "loyal",
+                "adventurous",
+                "ambitious",
+                "bloodthirsty",
+                "bold",
+                "daring",
+                "fierce",
+                "vengeful",
+                "grumpy",
+                "righteous"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "joint pain"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_thorn_anymultiagestatustrait1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c misjudged the distance of a jump and landed in a patch of thorns. Ouch!",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "adventurous",
+                "ambitious",
+                "bold",
+                "daring",
+                "fierce",
+                "troublesome"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut",
+                    "torn pelt"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_dehydrated_anymultiagestatustrait1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c overdid it during {PRONOUN/m_c/poss} last sparring session and got dehydrated.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "adventurous",
+                "ambitious",
+                "bold",
+                "daring",
+                "fierce",
+                "troublesome"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_bitewound_anymultiagestatustraitnotfighterothercat1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c saved r_c from death after a coyote attack, using {PRONOUN/m_c/poss} talents with first aid to keep r_c from bleeding out.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "skill": [
+                "HEALER,2"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "big_bite_injury"
+                ],
+                "scars": [
+                    "LEGBITE"
+                ]
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "blood loss"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "scar": "m_c was scarred by a coyote, but {PRONOUN/m_c/poss} life was saved.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a coyote attack.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after a coyote attack"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "respect"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_cactuscoyote1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c tricked a coyote into a cluster of cacti, and though {PRONOUN/m_c/subject} got {PRONOUN/m_c/poss} own pelt torn up something fierce, the coyote was driven off of c_n lands.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "not_skill": [
+                "CLEVER,2",
+                "INSIGHTFUL,2",
+                "FIGHTER,2"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn ear"
+                ],
+                "scars": [
+                    "RIGHTEAR"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt"
+                ],
+                "scars": [
+                    "SNOUT"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ],
+                "scars": [
+                    "SNOUT"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred as the result of tricking a coyote into a cacti cluster.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after tricking a coyote into a cacti cluster.",
+                "lead_death": "died after tricking a coyote into a cacti cluster"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_dingolackfighter1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A dingo tries to take r_c for lunch. m_c rushes in to save {PRONOUN/m_c/poss} Clanmate, and though both cats come out of it injured, they're able to drive off the feral canine.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "not_skill": [
+                "FIGHTER,3"
+            ],
+            "trait": [
+                "compassionate",
+                "loving",
+                "responsible",
+                "loyal",
+                "ambitious",
+                "bloodthirsty",
+                "bold",
+                "daring",
+                "fierce",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "big_bite_injury"
+                ],
+                "scars": [
+                    "MANTAIL"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn ear"
+                ]
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "big_bite_injury"
+                ],
+                "scars": [
+                    "MANTAIL"
+                ]
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "torn ear"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred by a dingo while rescuing r_c.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after saving r_c from a dingo.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after saving r_c from a dingo"
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "scar": "m_c was scarred by a dingo.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a dingo attack.",
+                "lead_death": "died from {PRONOUN/m_c/poss} wounds after a dingo attack"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_clawwound_anymultiagestatustraitnotfighter1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "The burrowing owls really got up on the wrong side of the nest this morning, and m_c has the beak bite to show for it.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "not_skill": [
+                "FIGHTER,2"
+            ],
+            "trait": [
+                "adventurous",
+                "ambitious",
+                "bloodthirsty",
+                "bold",
+                "daring",
+                "fierce",
+                "vengeful"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "beak bite"
+                ],
+                "scars": [
+                    "BEAKLOWER"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred by a burrowing owl.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting a burrowing owl.",
+                "lead_death": "died after fighting a burrowing owl"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_clawwound_anymultiagestatustraitnotfighterothercat1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A red-tailed hawk tries to swoop down on r_c, only for m_c to intercept it, taking a claw to the flank.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "not_skill": [
+                "FIGHTER,2"
+            ],
+            "trait": [
+                "compassionate",
+                "loving",
+                "righteous",
+                "responsible",
+                "loyal",
+                "adventurous",
+                "ambitious",
+                "bloodthirsty",
+                "bold",
+                "daring",
+                "fierce",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound"
+                ],
+                "scars": [
+                    "TWO"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred by a hawk while rescuing r_c.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after saving r_c from a hawk.",
+                "lead_death": "died after protecting r_c from a hawk"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_clawwoundcatbite_anymultiagenotfighterothercatmultitrait3",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "After spotting a coyote in the territory, r_c charges it with m_c at {PRONOUN/r_c/poss} side. m_c pays a blood price for driving off the dog, but r_c maintains it was worth it.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ],
+            "not_skill": [
+                "FIGHTER,2"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "bloodthirsty",
+                "daring",
+                "strict",
+                "vengeful"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound",
+                    "big_bite_injury"
+                ],
+                "scars": [
+                    "BELLY",
+                    "CATBITE"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred from driving off a coyote with r_c.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after driving off a coyote with r_c."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": -10
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "dislike"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_dehyrated_war_anyapprentice2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "Frequent patrols on the o_c_n border left m_c dehydrated and weak.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ],
+                "scars": []
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "",
+                "reg_death": "m_c became dehydrated during greenleaf patrols and died.",
+                "lead_death": "became too dehydrated during greenleaf patrols"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_sore_war1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "Training for war in such a harsh landscape left m_c exhausted.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ],
+                "scars": []
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_mangledtail_war_anyapprenticehostile1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [
+            "clan:medicine cat"
+        ],
+        "weight": 20,
+        "event_text": "It's hard for border patrols to actually encounter each other in the desert. So o_c_n deliberately waits for a c_n patrol, each trading escalating insults until the situation explodes into violence. med_name patches up m_c and r_c afterwards, as the camp seethes with anger.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "mangled leg"
+                ],
+                "scars": [
+                    "MANLEG"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred after a fight with o_c_n cats.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after fighting with o_c_n cats."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "dst_injury_bruises_anyapprentice2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c says {PRONOUN/m_c/poss} bruises are from battle training. m_c is lying, they're actually from a misjudged pounce.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "ambitious",
+                "arrogant",
+                "charismatic",
+                "competitive",
+                "cunning",
+                "fierce",
+                "insecure",
+                "grumpy",
+                "shameless",
+                "sneaky"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_bruises_anyapprentice1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c discovers it's <i>possible</i> to climb cacti. It's not a good idea, no, but sure, it's <i>possible</i>.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "adventurous",
+                "competitive",
+                "daring",
+                "playful",
+                "rebellious",
+                "strange",
+                "troublesome"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn ear"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c personally discovered that cacti climbing is ill-advised, as proven by the scars on {PRONOUN/m_c/poss} coat."
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_crackedpadsapp1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Eager for extra tracking experience, m_c spends hours out on the sands studying footprints, long enough to leave {PRONOUN/m_c/poss} pads cracked from all the extra walking. Worth it!",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "adventurous",
+                "calm",
+                "cold",
+                "cunning",
+                "responsible",
+                "righteous",
+                "sincere",
+                "thoughtful",
+                "wise"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "cracked pads"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_scrapes_anyapprenticemultitrait1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "{PRONOUN/m_c/poss/CAP} nerves kick in and m_c screws up during battle training, resulting in a painful scrape.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "childish",
+                "nervous",
+                "careful",
+                "insecure"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_soreapp_clankits",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "clan:kitten"
+        ],
+        "weight": 20,
+        "event_text": "m_c plays with a kit after training instead of resting. It's kind of {PRONOUN/m_c/object}, but the lack of downtime leaves {PRONOUN/m_c/object} sore and aching.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "charismatic",
+                "childish",
+                "compassionate",
+                "flamboyant",
+                "loving",
+                "loyal",
+                "playful",
+                "sincere"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_damagedeyes_anyapprentice2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c snuck out of camp one night for a dare, but familiar paths loom risky in the shadows of the night, and {PRONOUN/m_c/subject} {VERB/m_c/stumble/stumbles} muzzle first into thorns.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "adventurous",
+                "arrogant",
+                "bold",
+                "childish",
+                "competitive",
+                "daring",
+                "insecure",
+                "playful",
+                "rebellious",
+                "sneaky",
+                "troublesome"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "damaged eyes"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c's eyes were scarred up by stumbling into thorns at night as a adventurous apprentice.",
+                "reg_death": "m_c died after {PRONOUN/m_c/poss} eyes were damaged by thorns.",
+                "lead_death": "after {PRONOUN/m_c/poss} eyes were damaged by thorns"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_showoffapp1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Determined to prove {PRONOUN/m_c/poss} resilience, m_c pushes too hard trying to keep up with the warriors and comes down with a touch of sunstroke.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "ambitious",
+                "arrogant",
+                "childish",
+                "competitive",
+                "confident",
+                "fierce",
+                "flamboyant",
+                "loyal",
+                "oblivious",
+                "righteous",
+                "sincere"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "hot_injury"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c died after pushing {PRONOUN/m_c/poss} limits too far in the hot sun.",
+                "lead_death": "pushing {PRONOUN/m_c/poss} limits too far in the hot sun"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_redbelliedblacksnake1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Bitten by a red bellied black snake, m_c shakes off the effects of the venom, cleaning the wound carefully.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "snake bite"
+                ],
+                "scars": [
+                    "SNAKE"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred by a snake bite.",
+                "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake.",
+                "lead_death": "after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_bruises_anymultisage2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c smacked into a rock. Ow.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bruises"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_dislocatedjoint_anymultiage2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c gets bitten by a snake, but no one saw what kind, making {PRONOUN/m_c/poss} prognosis very uncertain.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "snake bite"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "poisoned"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "A snake bite from an unknown species left a momentum on m_c's coat.",
+                "reg_death": "The bite from an unknown species of snake took m_c's life.",
+                "lead_death": "a bite from an unknown species of snake"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_spikyspinifex1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "The spiky spinifex has earned its name this moon, sharp leaf blades cutting into the velvet of m_c's nose and raising bloody lines on {PRONOUN/m_c/poss} pelt.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "Spiky spinifex is well named, and has left little scars cutting across m_c's pelt.",
+                "reg_death": "Infected cuts, even small ones, can be deadly.",
+                "lead_death": "an infected cut went bad"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_spikyspinifex2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "The spiky spinifex hummocks, coated in exuded resin, spontaneously combust. The fire doesn't spread far, hemmed in by open ground on either side, but m_c and r_c are burned while dragging branches out of its path.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "bold",
+                "careful",
+                "confident",
+                "daring",
+                "fierce",
+                "loving",
+                "loyal",
+                "nervous",
+                "responsible",
+                "righteous",
+                "sincere",
+                "thoughtful",
+                "wise"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "bold",
+                "careful",
+                "confident",
+                "daring",
+                "fierce",
+                "loving",
+                "loyal",
+                "nervous",
+                "responsible",
+                "righteous",
+                "sincere",
+                "thoughtful",
+                "wise"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "burn",
+                    "severe burn"
+                ]
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "burn",
+                    "severe burn"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "Spiky spinifex started a fire that burned m_c.",
+                "reg_death": "Infected burns can be deadly.",
+                "lead_death": "an infected burn went bad"
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "scar": "Spiky spinifex started a fire that burned m_c.",
+                "reg_death": "Infected burns can be deadly.",
+                "lead_death": "an infected burn went bad"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_camel1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A camel trod on m_c's tail as it plodded past m_c's hiding place.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "mangled tail"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "The heavy hooves of a roaming camel broke m_c's tail.",
+                "reg_death": "A camel trampled m_c, killing {PRONOUN/m_c/object}.",
+                "lead_death": "a camel trampling {PRONOUN/m_c/object}"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_thorn_anymultiagestatustrait2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c misstepped and slipped into a thorn bush, mostly harming {PRONOUN/m_c/poss} dignity, but also scratching up {PRONOUN/m_c/poss} pelt.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "The thorn bushes have marked m_c's pelt, consequence of an undignified fall."
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_deepsand1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c had to wade through some deep loose sand, putting strain on {PRONOUN/m_c/poss} joints and muscles.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "joint pain"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_dislocatedjoint_anymultiage3",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c put a paw wrong running amongst the rocks, and {PRONOUN/m_c/poss} momentum wrenched {PRONOUN/m_c/poss} shoulder out of place.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "dislocated joint"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_crackedpads_any2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c gets sand jammed right up in the crevice between one paw pad and another, and licks the paw raw trying to fix the irritation.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "not_trait": [
+                "careful",
+                "cunning",
+                "flamboyant",
+                "thoughtful",
+                "wise"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "cracked pads"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_notcampskill1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c was called in to help repair some of the dens, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not good at it and end up spaining {PRONOUN/m_c/poss} muscles moving something in a stupid way.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ],
+            "not_skill": [
+                "CAMP,2"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sprain"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_cacticactieverywhere1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Oh star's damn it. m_c wandered too close to a cactus.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "Cacti have left scars on m_c's pelt."
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_newcatthirsty1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c finds an outsider near the border, panting in the heat of the day. {PRONOUN/m_c/subject/CAP} {VERB/m_c/send/sends} the dehydrated n_c:0 onwards, but not before sharing one of c_n's water sources with {PRONOUN/n_c:0/object}.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "new_cat": [
+            [
+                "rogue",
+                "meeting",
+                "exists"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust",
+                    "platonic"
+                ],
+                "amount": 30
+            }
+        ],
+        "injury": [
+            {
+                "cats": [
+                    "n_c:0"
+                ],
+                "injuries": [
+                    "dehydrated"
+                ]
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": 3
+        }
+    },
+    {
+        "event_id": "dst_injury_mangledtail_anynotskillfighter2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c is almost killed by a roving dingo, and it's only r_c tracking skills that allow c_n to find m_c's refuge before the blood loss is too great.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ],
+            "not_skill": [
+                "FIGHTER,2"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "HUNTER,2",
+                "SENSE,2"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "big_bite_injury"
+                ],
+                "scars": [
+                    "MANTAIL"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "broken back"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "A roving dingo tried to kill m_c, and {PRONOUN/m_c/subject} still {VERB/m_c/carry/carries} the scars.",
+                "reg_death": "A roving dingo tried to kill m_c, and the wounds eventually took {PRONOUN/m_c/poss} life.",
+                "lead_death": "a roving dingo tried to kill m_c and the wounds eventually took {PRONOUN/m_c/poss} life"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 15
+            },
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "respect"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_mangledtail_anynotskillfighter1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c's tail was badly injured when {PRONOUN/m_c/subject} {VERB/m_c/were/was} almost caught by a horned owl.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "not_skill": [
+                "FIGHTER,2"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "mangled tail"
+                ],
+                "scars": [
+                    "MANTAIL"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred by a great horn owl's ambush.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hurt by a great horn owl's ambush.",
+                "lead_death": "m_c died from {PRONOUN/m_c/poss} wounds after being hurt by a great horn owl's ambush"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_thorydevil1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Unbelievably, thorny devils are devilishly thorn-covered. m_c spikes {PRONOUN/m_c/self} on the lizard's spines.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred by the spines of a thorny devil."
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_termites_anymultiage1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A settler flight of termites tries to set up near camp. m_c and r_c both fall victim to a number of painful bites as they get rid of the pest infestation.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "senior",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "tick bites"
+                ]
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "tick bites"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "Termite bites are surprisingly painful, m_c would know, see?",
+                "reg_death": "m_c died from complications from termite bites.",
+                "lead_death": "died from complications from termite bites"
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "scar": "Termite bites are surprisingly painful, m_c would know, see?",
+                "reg_death": "m_c died from complications from termite bites.",
+                "lead_death": "died from complications from termite bites"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_scorchedpads_any1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "weight": 20,
+        "event_text": "The greenleaf sun beats down, soaked up by the rocks that m_c pads on and heating them until they scorch m_c's paw pads painfully.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "cracked pads"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_waspsting_multiany3",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c loses an argument with a wasp. Does anyone ever <i>win</i> an argument with a wasp?",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bee sting"
+                ],
+                "scars": [
+                    "BRIDGE"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c, unbelievably, was scarred when {PRONOUN/m_c/subject} tried to eat a wasp.",
+                "reg_death": "m_c died from complications caused by a wasp sting.",
+                "lead_death": "died from complications caused by a wasp sting"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_o_c_n_sunstroke_anymultistatus2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c delivers a message to o_c_n's leader, but o_c_n doesn't let {PRONOUN/m_c/object} drink before {PRONOUN/m_c/poss} return journey. {PRONOUN/m_c/subject/CAP} {VERB/m_c/arrive/arrives} home with sunstroke.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "apprentice",
+                "deputy",
+                "leader",
+                "warrior",
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "hot_injury"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c died to sunstroke after o_c_n refused {PRONOUN/m_c/object} water.",
+                "lead_death": "sunstroke after o_c_n refused {PRONOUN/m_c/object} water"
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile",
+                "neutral"
+            ],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "dst_injury_tornear_anymultistatus1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "While sniffing the marks left by o_c_n on the deserted desert border, m_c tears {PRONOUN/m_c/poss} ear on a thornbush.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "apprentice",
+                "warrior",
+                "leader",
+                "deputy",
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn ear"
+                ],
+                "scars": [
+                    "RIGHTEAR"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c's ear was torn by a thorn bush on the border.",
+                "reg_death": "m_c died after an ear injury turned bad.",
+                "lead_death": "after an ear injury turned bad"
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile",
+                "neutral"
+            ],
+            "changed": 0
+        }
+    },
+    {
+        "event_id": "dst_injury_meerkatmob_anyany1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A group of meerkats mobs m_c, darting in and out of combat with {PRONOUN/m_c/object} in the same way that meerkats mob snakes.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "mediator",
+                "mediator apprentice",
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small_bite_injury"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn ear"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "A mob of meerkats attacked m_c, leaving scars.",
+                "reg_death": "While the mob of meekats didn't directly kill m_c, the wounds they left on {PRONOUN/m_c/object} eventually did.",
+                "lead_death": "couldn't survive {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked by a mob of meerkets"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_camelspider_multiany2",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c has developed a lasting fear of arthropods after being bitten by a camel spider.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "bee sting"
+                ],
+                "scars": [
+                    "QUILLCHUNK"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c, unbelievably, was scarred by the bite of a camel spider.",
+                "reg_death": "m_c died from complications caused by the bite of a camel spider."
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_funnelwebspider_multiany1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Though the Clan tries to guard against them, a funnel web spider is discovered to have set up a home in c_n's camp when it announces its presence by biting m_c.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ],
+                "scars": [
+                    "BRIDGE"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "poisoned"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "A funnel web spider set up a home near m_c's nest, and left m_c with a scar.",
+                "reg_death": "m_c died from complications caused by a funnel web spider bite.",
+                "lead_death": "died from complications caused by a funnel web spider bite"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_badsnake_anytraits1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A copperhead snake takes a chunk out of m_c, sending {PRONOUN/m_c/object} to the medicine den.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "snake bite"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "poisoned"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "A copperhead snake scarred m_c's pelt, though {PRONOUN/m_c/subject} overcame the venom.",
+                "reg_death": "The venom of a copperhead snake killed m_c.",
+                "lead_death": "the venom of a copperhead snake"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_slightbadsnake_notcautioustraits1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c, somewhat foolishly, pounced on a bandy-bandy after mistaking it for a Clanmate's tail. They might be fairly docile, but that was too much of an insult for any snake, and m_c is promptly bitten for it.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "not_trait": [
+                "calm",
+                "careful",
+                "gloomy",
+                "grumpy",
+                "nervous",
+                "strict",
+                "thoughtful",
+                "wise"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "snake bite"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "shock"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "headache"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred after pouncing on a Clanmate's tail only to discover it was a bandy-bandy snake.",
+                "reg_death": "m_c died after pouncing on a Clanmate's tail only to discover it was a bandy-bandy snake.",
+                "lead_death": "pounced on a Clanmate's tail only to discover it was a bandy-bandy snake"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_harmlesssnake_anyany1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "m_c steps on a snake. Neither of them are happy about it, but at least shovel-nosed coral snakes aren't dangerously venomous. Still sharp-toothed, though.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "snake bite"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred after stepping on an unfortunate shovel-nosed coral snake.",
+                "reg_death": "m_c died after stepping on an unfortunate shovel-nosed coral snake.",
+                "lead_death": "stepped on an unfortunate shovel-nosed coral snake"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_mangledleg_anymultistatusnotcareful1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "While patrolling the o_c_n borders, m_c is driven into a cactus corral by an o_c_n patrol. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} hundreds of tiny punctures ripped into {PRONOUN/m_c/poss} pelt as {PRONOUN/m_c/subject} {VERB/m_c/rip/rips} {PRONOUN/m_c/self} free.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "apprentice",
+                "warrior",
+                "medicine cat",
+                "medicine cat apprentice",
+                "leader",
+                "deputy"
+            ],
+            "not_trait": [
+                "careful",
+                "nervous",
+                "cunning"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt"
+                ],
+                "scars": [
+                    "QUILLSIDE"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn ear"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred after falling into a o_c_n trap.",
+                "reg_death": "m_c died after falling into a o_c_n trap.",
+                "lead_death": "died after falling into a o_c_n trap"
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -2
+        }
+    },
+    {
+        "event_id": "dst_injury_war_clawwound_anymultitraitmultistatus1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "weight": 20,
+        "event_text": "m_c and r_c make a raid into o_c_n territory - with such huge borders, no desert Clan can watch everything. But on unfamiliar ground and in the heat of the day, the two ambitious c_n warriors find only sunstroke.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "leader",
+                "deputy"
+            ],
+            "trait": [
+                "fierce",
+                "bloodthirsty",
+                "charismatic",
+                "bold",
+                "daring",
+                "ambitious",
+                "confident",
+                "adventurous",
+                "vengeful",
+                "competitive",
+                "rebellious",
+                "flamboyant"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "leader",
+                "deputy"
+            ],
+            "trait": [
+                "fierce",
+                "bloodthirsty",
+                "charismatic",
+                "bold",
+                "daring",
+                "ambitious",
+                "confident",
+                "adventurous",
+                "vengeful",
+                "competitive",
+                "rebellious",
+                "flamboyant"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c",
+                    "r_c"
+                ],
+                "injuries": [
+                    "hot_injury"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c died from sunstroke after raiding in unfamiliar ground.",
+                "lead_death": "got sunstroke after raiding in unfamiliar ground"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 15
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -2
+        }
+    },
+    {
+        "event_id": "dst_injury_freshkill_anyant1",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "Oh, <i>gross</i>, the full fresh-kill pile has attracted ants! m_c and r_c both get covered in indignant, biting soldier ants while trying to rescue as much of c_n's food stores as possible.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c",
+                    "r_c"
+                ],
+                "injuries": [
+                    "tick bites"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c",
+                    "r_c"
+                ],
+                "injuries": [
+                    "sore"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c",
+                    "r_c"
+                ],
+                "scar": "m_c was hurt while defending the fresh-kill pile from ants.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from ants.",
+                "lead_death": "{VERB/m_c/were/was} killed by ants while defending the fresh-kill pile"
+            }
+        ],
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "excess"
+                ],
+                "adjust": "reduce_eighth"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_freshkill_meerkat",
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "any"
+        ],
+        "weight": 20,
+        "event_text": "A gang of meerkats war-dances into camp, attracted by the fresh-kill pile. m_c is the warrior on guard duty and yowls loudly for help, bearing the brunt of the violence of the raid.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "warrior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "battle_injury"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was hurt while defending the fresh-kill pile from meerkats.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from meerkats.",
+                "lead_death": "{VERB/m_c/were/was} killed by meerkats while defending the fresh-kill pile"
+            }
+        ],
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "excess"
+                ],
+                "adjust": "reduce_eighth"
+            }
+        ]
+    }
+]

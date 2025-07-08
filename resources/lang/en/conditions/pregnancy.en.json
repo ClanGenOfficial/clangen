@@ -1,0 +1,17 @@
+{
+    "en": {
+        "kit_amount": {
+            "one": "single kitten",
+            "many": "litter of %{count} kits"
+        },
+        "pregnant_secret": "%{name} brought a %{insert} back to camp, but refused to talk about their origin.",
+        "leader_kitting_death": "died shortly after kitting",
+        "leader_kitting_death_severe": "died after a harsh kitting",
+        "kitting_death": "%{name} died while kitting.",
+        "kitting_death_severe": "%{name} died after a harsh kitting.",
+        "half_blood_kitting_thought": {
+            "one": "Is glad that {PRONOUN/m_c/poss} kit is safe",
+            "many": "Is glad that {PRONOUN/m_c/poss} kits are safe"
+        }
+    }
+}

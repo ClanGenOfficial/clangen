@@ -1,0 +1,108 @@
+{
+    "en": {
+        "herb_used": "m_c was given %{herb} as treatment for %{condition}. %{effect}",
+        "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
+        "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",
+        "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
+        "elder_leaves": {
+            "one": "elder leaf bundle",
+            "many": "elder leaf bundles"
+        },
+        "cobwebs": {
+            "one": "cobweb",
+            "many": "cobwebs"
+        },
+        "daisy": {
+            "one": "daisy",
+            "many": "daisies"
+        },
+        "horsetail": {
+            "one": "horsetail clump",
+            "many": "horsetail clumps"
+        },
+        "juniper": {
+            "one": "juniper bunch",
+            "many": "juniper bunches"
+        },
+        "lungwort": {
+            "one": "lungwort",
+            "many": "lungwort"
+        },
+        "mallow": {
+            "one": "mallow",
+            "many": "mallow"
+        },
+        "marigold": {
+            "one": "marigold",
+            "many": "marigold"
+        },
+        "moss": {
+            "one": "moss clump",
+            "many": "moss clumps"
+        },
+        "oak_leaves": {
+            "one": "oak leaf bundles",
+            "many": "oak leaf bundles"
+        },
+        "ragwort": {
+            "one": "ragwort",
+            "many": "ragwort"
+        },
+        "raspberry": {
+            "one": "raspberry cluster",
+            "many": "raspberry clusters"
+        },
+        "tansy": {
+            "one": "tansy",
+            "many": "tansy"
+        },
+        "thyme": {
+            "one": "thyme bundle",
+            "many": "thyme bundles"
+        },
+        "wild_garlic": {
+            "one": "wild garlic",
+            "many": "wild garlic"
+        },
+        "dandelion": {
+            "one": "dandelion",
+            "many": "dandelions"
+        },
+        "mullein": {
+            "one": "mullein",
+            "many": "mullein"
+        },
+        "rosemary": {
+            "one": "rosemary clump",
+            "many": "rosemary clumps"
+        },
+        "burdock": {
+            "one": "burdock root",
+            "many": "burdock roots"
+        },
+        "blackberry": {
+            "one": "blackberry cluster",
+            "many": "blackberry clusters"
+        },
+        "betony": {
+            "one": "betony",
+            "many": "betony"
+        },
+        "goldenrod": {
+            "one": "goldenrod",
+            "many": "goldenrod"
+        },
+        "poppy": {
+            "one": "dose of poppy seed",
+            "many": "doses of poppy seeds"
+        },
+        "plantain": {
+            "one": "plantain bundle",
+            "many": "plantain bundles"
+        },
+        "catmint": {
+            "one": "catmint pile",
+            "many": "catmint piles"
+        }
+    }
+}

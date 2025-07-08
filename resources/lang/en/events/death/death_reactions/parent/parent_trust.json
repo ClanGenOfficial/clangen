@@ -1,0 +1,218 @@
+{
+    "general": {
+        "body": [
+            "r_c knew that c_n would be in safe paws after {PRONOUN/r_c/poss} death, with cats like m_c to guide it. {PRONOUN/r_c/subject/CAP} never thought {PRONOUN/r_c/poss} kit would be taken before {PRONOUN/r_c/object}.",
+            "r_c is stunned by m_c's death. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was}n't only {PRONOUN/r_c/poss} kit, {PRONOUN/m_c/subject} {VERB/m_c/were/was} also a source of strength and inspiration to {PRONOUN/r_c/object}.",
+            "r_c stands over m_c's slumped body, unable to breathe or speak. How could {PRONOUN/r_c/poss} brilliant, capable kit be taken away so soon?",
+            "r_c speaks at m_c's vigil, choking up at the memories of caring for {PRONOUN/m_c/object}, and the ways m_c cared for {PRONOUN/r_c/object} too.",
+            "r_c nuzzles the body of m_c one last time before c_n lays {PRONOUN/m_c/object} to rest. All the memories, all of m_c's achievements and successes, flit before r_c's eyes, then vanish.",
+            "There was so much goodness, so much wisdom beyond {PRONOUN/m_c/poss} moons, in {PRONOUN/r_c/poss} beloved kit. It just isn't fair that m_c was taken so soon, and r_c is too choked up to speak at the vigil."
+        ],
+        "no_body": [
+            "r_c knew that c_n would be in safe paws after {PRONOUN/r_c/poss} death, with cats like m_c to guide it. {PRONOUN/r_c/subject/CAP} never thought {PRONOUN/r_c/poss} kit would be taken before {PRONOUN/r_c/object}.",
+            "r_c is stunned by m_c's death. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was}n't only {PRONOUN/r_c/poss} kit, {PRONOUN/m_c/subject} {VERB/m_c/were/was} also a source of strength and inspiration to {PRONOUN/r_c/object}.",
+            "r_c speaks at m_c's vigil, choking up at the memories of caring for {PRONOUN/m_c/object}, and the ways m_c cared for {PRONOUN/r_c/object} too.",
+            "There was so much goodness, so much wisdom beyond {PRONOUN/m_c/poss} moons, in {PRONOUN/r_c/poss} beloved kit. It just isn't fair that m_c was taken so soon, and r_c is too choked up to speak at the vigil.",
+            "r_c held onto hope that m_c might return against all odds, but at {PRONOUN/m_c/poss} vigil, {PRONOUN/r_c/subject} {VERB/r_c/break/breaks} down crying, realizing that {PRONOUN/r_c/poss} kit is never coming back.",
+            "r_c hopes that wherever m_c is now, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} how proud r_c is of {PRONOUN/m_c/object}, and how loved {PRONOUN/m_c/subject} {VERB/m_c/are/is}."
+        ]
+    },
+    "adventurous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "altruistic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "ambitious": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bloodthirsty": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "bold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "calm": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "careful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "charismatic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "childish": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "cold": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "compassionate": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "confident": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "daring": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "empathetic": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "faithful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "fierce": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "insecure": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "lonesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loving": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "loyal": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "nervous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "patient": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "playful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "responsible": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "righteous": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "shameless": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "sneaky": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strange": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "strict": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "thoughtful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "troublesome": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "vengeful": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    },
+    "wise": {
+        "body": [
+        ],
+        "no_body": [
+        ]
+    }
+}

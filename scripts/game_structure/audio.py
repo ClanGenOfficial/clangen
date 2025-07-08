@@ -16,18 +16,22 @@ creation_screens = ["make clan screen"]
 
 class MusicManager:
     def __init__(self):
-        self.playlists = {}
         self.current_playlist = []
         self.biome_playlist = []
         self.number_of_tracks = len(self.current_playlist)
         self.volume = game.settings["music_volume"] / 100
         self.muted = False
+        self.audio_disabled = False
         self.current_track = None
         self.queued_track = None
 
+        self.load_playlists()
+
+    def load_playlists(self):
+        self.playlists = {}
         # loading playlists
         try:
-            with open("resources/audio/music.json", "r") as f:
+            with open("resources/audio/music.json", "r", encoding="utf-8") as f:
                 music_data = ujson.load(f)
         except:
             logger.exception("Failed to load playlist index")
@@ -42,7 +46,7 @@ class MusicManager:
         """
         checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
         """
-        if self.muted:
+        if self.muted or self.audio_disabled:
             return
 
         self.biome_playlist = self.get_biome_music()
@@ -158,16 +162,30 @@ class MusicManager:
         pauses current music track
         """
         self.muted = True
-        pygame.mixer.music.pause()
+        if not self.audio_disabled:
+            pygame.mixer.music.pause()
 
     def unmute_music(self, screen):
         """
         unpauses current music track, then double checks if the track is appropriate for the screen before changing
         if necessary
         """
-        self.muted = False
+
+        if self.audio_disabled:
+            try:
+                pygame.mixer.init()
+                self.load_playlists()
+                sound_manager.load_sounds()
+                self.audio_disabled = False
+                self.muted = False
+            except pygame.error:
+                self.muted = True
+                return False
+        else:
+            self.muted = False
         pygame.mixer.music.unpause()
         self.check_music(screen)
+        return True
 
     def change_volume(self, new_volume):
         """changes the volume, int given should be between 0 and 100"""
@@ -210,13 +228,16 @@ music_manager = MusicManager()
 
 class _SoundManager:
     def __init__(self):
-        self.sounds = {}
         self.volume = game.settings["sound_volume"] / 100
         self.pressed = None
 
+        self.load_sounds()
+
+    def load_sounds(self):
+        self.sounds = {}
         # open up the sound dictionary
         try:
-            with open("resources/audio/sounds.json", "r") as f:
+            with open("resources/audio/sounds.json", "r", encoding="utf-8") as f:
                 sound_data = ujson.load(f)
         except:
             logger.exception("Failed to load sound index")
@@ -263,7 +284,7 @@ class _SoundManager:
     def play(self, sound, button=None):
         """plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
         used instead"""
-        if music_manager.muted:
+        if music_manager.muted or music_manager.audio_disabled:
             return
 
         if button and hasattr(button, "sound_id"):

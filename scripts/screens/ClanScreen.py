@@ -23,6 +23,7 @@ from scripts.utility import (
     get_current_season,
 )
 from .Screens import Screens
+from ..cat.enums import CatRank
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -34,6 +35,8 @@ class ClanScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.taken_spaces = {}
+        self.show_den_labels_text = None
         self.show_den_labels = None
         self.show_den_text = None
         self.label_toggle = None
@@ -131,95 +134,90 @@ class ClanScreen(Screens):
         # We have to convert the positions to something pygame_gui buttons will understand
         # This should be a temp solution. We should change the code that determines positions.
         i = 0
-        for x in game.clan.clan_cats:
-            if (
-                not Cat.all_cats[x].dead
-                and Cat.all_cats[x].in_camp
-                and not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside)
-                and (
-                    Cat.all_cats[x].status != "newborn"
-                    or game.config["fun"]["all_cats_are_newborn"]
-                    or game.config["fun"]["newborns_can_roam"]
+        all_positions = list(self.taken_spaces.values())
+        used_positions = all_positions.copy()
+        cat_list = [
+            Cat.all_cats[x]
+            for i, x in enumerate(game.clan.clan_cats)
+            if i < self.max_sprites_displayed
+            and Cat.all_cats[x].in_camp
+            and Cat.all_cats[x].status.alive_in_player_clan
+            and (
+                Cat.all_cats[x].status.rank != CatRank.NEWBORN
+                or game.config["fun"]["all_cats_are_newborn"]
+                or game.config["fun"]["newborns_can_roam"]
+            )
+        ]
+        layers = []
+        for x in cat_list:
+            layers.append(2)
+            place = self.taken_spaces[x.ID]
+            layers[-1] += all_positions.count(place) - used_positions.count(place)
+            used_positions.remove(place)
+
+            try:
+                image = x.sprite.convert_alpha()
+                blend_layer = (
+                    self.game_bgs[self.active_bg]
+                    .subsurface(ui_scale(pygame.Rect(tuple(x.placement), (50, 50))))
+                    .convert_alpha()
                 )
-            ):
-                i += 1
-                if i > self.max_sprites_displayed:
-                    break
+                blend_layer = pygame.transform.box_blur(
+                    blend_layer, self.layout["cat_shading"]["blur"]
+                )
 
-                try:
-                    image = Cat.all_cats[x].sprite.convert_alpha()
-                    blend_layer = (
-                        self.game_bgs[self.active_bg]
-                        .subsurface(
-                            ui_scale(
-                                pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50))
-                            )
-                        )
-                        .convert_alpha()
-                    )
-                    blend_layer = pygame.transform.box_blur(
-                        blend_layer, self.layout["cat_shading"]["blur"]
-                    )
+                sprite = image.copy()
+                sprite.fill((255, 255, 255, 255), special_flags=pygame.BLEND_RGB_MAX)
+                sprite.blit(blend_layer, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                image.set_alpha(self.layout["cat_shading"]["blend_strength"])
+                sprite.blit(image, (0, 0), special_flags=pygame.BLEND_ALPHA_SDL2)
+                sprite.set_alpha(255)
 
-                    sprite = image.copy()
-                    sprite.fill(
-                        (255, 255, 255, 255), special_flags=pygame.BLEND_RGB_MAX
+                self.cat_buttons.append(
+                    UISpriteButton(
+                        ui_scale(pygame.Rect(tuple(x.placement), (50, 50))),
+                        sprite,
+                        mask=x.sprite_mask,
+                        cat_id=x.ID,
+                        starting_height=layers[-1],
                     )
-                    sprite.blit(
-                        blend_layer, (0, 0), special_flags=pygame.BLEND_RGBA_MULT
-                    )
-                    image.set_alpha(self.layout["cat_shading"]["blend_strength"])
-                    sprite.blit(image, (0, 0), special_flags=pygame.BLEND_ALPHA_SDL2)
-                    sprite.set_alpha(255)
-
-                    self.cat_buttons.append(
-                        UISpriteButton(
-                            ui_scale(
-                                pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50))
-                            ),
-                            sprite,
-                            cat_id=x,
-                            starting_height=i,
-                        )
-                    )
-                except:
-                    print(
-                        f"ERROR: placing {Cat.all_cats[x].name}'s sprite on Clan page"
-                    )
+                )
+            except:
+                print(f"ERROR: placing {x.name}'s sprite on Clan page")
 
         # Den Labels
         # Redo the locations, so that it uses layout on the Clan page
         self.warrior_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["warrior den"], (121, 28))),
-            "warriors' den",
+            "screens.core.warriors_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (121, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
             starting_height=2,
         )
         self.leader_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["leader den"], (112, 28))),
-            "leader's den",
+            "screens.core.leader_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (112, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
             starting_height=2,
         )
         self.med_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["medicine den"], (151, 28))),
-            "medicine cat den",
+            "screens.core.medicine_cat_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
             starting_height=2,
         )
         self.elder_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["elder den"], (103, 28))),
-            "elders' den",
+            "screens.core.elders_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (103, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
         self.elder_den_label.disable()
         self.nursery_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["nursery"], (80, 28))),
-            "nursery",
+            "screens.core.nursery",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (80, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
@@ -227,7 +225,7 @@ class ClanScreen(Screens):
 
         self.clearing_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["clearing"], (81, 28))),
-            "clearing",
+            "screens.core.clearing",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
@@ -236,7 +234,7 @@ class ClanScreen(Screens):
 
         self.app_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["apprentice den"], (147, 28))),
-            "apprentices' den",
+            "screens.core.apprentices_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (147, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
@@ -249,7 +247,11 @@ class ClanScreen(Screens):
                 image_cache.load_image("resources/images/show_den_labels.png"),
                 ui_scale_dimensions((167, 34)),
             ),
-            object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
+        )
+        self.show_den_labels_text = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((60, 641), (130, 34))),
+            "screens.clan.show_dens",
+            object_id="@buttonstyles_rounded_rect",
         )
         self.show_den_labels.disable()
         self.label_toggle = UIImageButton(
@@ -258,28 +260,39 @@ class ClanScreen(Screens):
             object_id="@checked_checkbox",
         )
 
-        self.save_button = UIImageButton(
+        save_buttons = get_button_dict(ButtonStyles.SQUOVAL, (114, 30))
+        save_buttons["normal"] = image_cache.load_image(
+            "resources/images/buttons/save_clan.png"
+        )
+        self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect(((343, 643), (114, 30)))),
-            "",
-            object_id="#save_button",
+            "buttons.save_clan",
+            save_buttons,
+            object_id="@buttonstyles_squoval",
             sound_id="save",
         )
         self.save_button.enable()
-        self.save_button_saved_state = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((343, 643), (114, 30))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/save_clan_saved.png"),
-                ui_scale_dimensions((114, 30)),
-            ),
+        self.save_button_saved_state = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 643), (114, 30))),
+            "buttons.clan_saved",
+            {
+                "normal": pygame.transform.scale(
+                    image_cache.load_image("resources/images/save_clan_saved.png"),
+                    ui_scale_dimensions((114, 30)),
+                )
+            },
+            object_id="@buttonstyles_squoval",
+            anchors={"centerx": "centerx"},
         )
         self.save_button_saved_state.hide()
-        self.save_button_saving_state = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((343, 643), (114, 30))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/save_clan_saving.png"),
-                ui_scale_dimensions((114, 30)),
-            ),
+        self.save_button_saving_state = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 643), (114, 30))),
+            "buttons.saving",
+            {"normal": get_button_dict(ButtonStyles.SQUOVAL, (114, 30))["normal"]},
+            object_id="@buttonstyles_squoval",
+            anchors={"centerx": "centerx"},
         )
+        self.save_button_saving_state.disable()
         self.save_button_saving_state.hide()
 
         self.update_buttons_and_text()
@@ -315,6 +328,8 @@ class ClanScreen(Screens):
         del self.label_toggle
         self.show_den_labels.kill()
         del self.show_den_labels
+        self.show_den_labels_text.kill()
+        del self.show_den_labels_text
 
         # reset save status
         game.switches["saved_clan"] = False
@@ -398,7 +413,7 @@ class ClanScreen(Screens):
                         just_pos[0] += 15 * random.choice([-1, 1])
                     if "y" in pos[1]:
                         just_pos[1] += 15
-                return tuple(just_pos)
+                return tuple(just_pos), pos[0]
             dens.pop(chosen_index)
             weights.pop(chosen_index)
             if not dens:
@@ -437,12 +452,13 @@ class ClanScreen(Screens):
             first_choices[x].extend(first_choices[x])
 
         for x in game.clan.clan_cats:
-            if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
+            if not Cat.all_cats[x].status.alive_in_player_clan:
                 continue
 
+            base_pos = None
             # Newborns are not meant to be placed. They are hiding.
             if (
-                Cat.all_cats[x].status == "newborn"
+                Cat.all_cats[x].status.rank == CatRank.NEWBORN
                 or game.config["fun"]["all_cats_are_newborn"]
             ):
                 if (
@@ -450,41 +466,69 @@ class ClanScreen(Screens):
                     or game.config["fun"]["newborns_can_roam"]
                 ):
                     # Free them
-                    Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+                    [
+                        Cat.all_cats[x].placement,
+                        base_pos,
+                    ] = self.choose_nonoverlapping_positions(
                         first_choices, all_dens, [1, 100, 1, 1, 1, 100, 50]
                     )
                 else:
                     continue
 
-            if Cat.all_cats[x].status in ["apprentice", "mediator apprentice"]:
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+            if Cat.all_cats[x].status.rank in (
+                CatRank.APPRENTICE,
+                CatRank.MEDIATOR_APPRENTICE,
+            ):
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 50, 1, 1, 100, 100, 1]
                 )
-            elif Cat.all_cats[x].status == "deputy":
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+            elif Cat.all_cats[x].status.rank == CatRank.DEPUTY:
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 50, 1, 1, 1, 50, 1]
                 )
 
-            elif Cat.all_cats[x].status == "elder":
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+            elif Cat.all_cats[x].status.rank == CatRank.ELDER:
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 2000, 1, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status == "kitten":
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+            elif Cat.all_cats[x].status.rank == CatRank.KITTEN:
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [60, 8, 1, 1, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ["medicine cat apprentice", "medicine cat"]:
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+            elif Cat.all_cats[x].status.rank.is_any_medicine_rank():
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [20, 20, 20, 400, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status in ["warrior", "mediator"]:
-                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(
+            elif Cat.all_cats[x].status.rank in (CatRank.WARRIOR, CatRank.MEDIATOR):
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 1, 1, 1, 60, 60]
                 )
-            elif Cat.all_cats[x].status == "leader":
-                game.clan.leader.placement = self.choose_nonoverlapping_positions(
+            elif Cat.all_cats[x].status.is_leader:
+                [
+                    Cat.all_cats[x].placement,
+                    base_pos,
+                ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 200, 1, 1, 1, 1, 1]
                 )
+            self.taken_spaces[Cat.all_cats[x].ID] = base_pos
 
     def update_buttons_and_text(self):
         if game.switches["saved_clan"]:

@@ -1,0 +1,15 @@
+name: Formatter
+on: [pull_request]
+jobs:
+  formatter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: install dependencies
+        run: uv sync
+      - name: Run Formatter
+        run: uv run black --check --diff .

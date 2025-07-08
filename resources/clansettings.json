@@ -201,7 +201,7 @@
         ],
         "sabotage other clans": [
             "Sabotaging Other Clans",
-            "Your mediator and warriors work together to undermine the other Clans. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.",
+            "Your mediators and warriors work together to undermine the other Clans. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.",
             false,
             "sabotage_focus",
             "#sabotage_focus_button"

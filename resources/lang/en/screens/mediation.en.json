@@ -1,0 +1,25 @@
+{
+    "en": {
+        "allow_romantic": "Allow romantic",
+        "allow_romantic_tooltip": "Allow effects on romantic like, if possible.",
+        "mediate": "Mediate",
+        "sabotage": "Sabotage",
+        "cat_feelings": "~~%{name}'s feelings~~",
+        "cant_work": "This mediator can't work this moon. ",
+        "already_worked": "This mediator has already worked this moon. ",
+        "pair_already_mediated": "This pair has already been mediated this moon. ",
+        "sabotage_failed": "Sabotage Failed!",
+        "mediate_failed": "Mediate Failed!",
+        "romantic": "Romantic interest",
+        "platonic": "Platonic like",
+        "respect": "Respect",
+        "comfortable": "Comfort",
+        "trust": "Trust",
+        "dislike": "Dislike",
+        "jealousy": "Jealousy",
+        "output_increase": "%{trait} increased. ",
+        "output_decrease": "%{trait} decreased. ",
+        "output_sabotage_failed": "Sabotage Failed!\n",
+        "output_mediate_failed": "Mediate Failed!\n"
+    }
+}

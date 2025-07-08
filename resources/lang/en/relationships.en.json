@@ -1,0 +1,45 @@
+{
+    "en": {
+        "romantic_label": {
+            "one": "romantic like:",
+            "many": "romantic love:"
+        },
+        "platonic_label": {
+            "one": "platonic like:",
+            "many": "platonic love:"
+        },
+        "dislike_label": {
+            "one": "dislike:",
+            "many": "hate:"
+        },
+        "admire_label": {
+            "one": "respect:",
+            "many": "admiration:"
+        },
+        "comfortable_label": {
+            "one": "comfortable:",
+            "many": "security:"
+        },
+        "jealous_label": {
+            "one": "jealousy:",
+            "many": "resentment:"
+        },
+        "trust_label": {
+            "one": "trust:",
+            "many": "reliance:"
+        },
+        "positive_postscript": " (positive effect)",
+        "positive_postscript_low": " (low positive effect)",
+        "positive_postscript_medium": " (medium positive effect)",
+        "positive_postscript_high": " (high positive effect)",
+        "negative_postscript": " (negative effect)",
+        "negative_postscript_low": " (low negative effect)",
+        "negative_postscript_medium": " (medium negative effect)",
+        "negative_postscript_high": " (high negative effect)",
+        "neutral_postscript": " (neutral effect)",
+        "age_postscript": {
+            "one": "- %{name} was %{count} moon old",
+            "many": "- %{name} was %{count} moons old"
+        }
+    }
+}

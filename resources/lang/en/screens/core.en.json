@@ -1,0 +1,19 @@
+{
+    "en": {
+        "events": "Events",
+        "camp": "Camp",
+        "cat_list": "Cat List",
+        "patrol": "Patrol",
+        "allegiances": "Allegiances",
+        "settings": "Settings",
+        "dens": "Dens",
+        "warriors_den": "warriors' den",
+        "leader_den": "leader den",
+        "medicine_cat_den": "medicine cat den",
+        "elders_den": "elders' den",
+        "nursery": "nursery",
+        "clearing": "clearing",
+        "apprentices_den": "apprentices' den",
+        "dev_watermark": "Dev Build: %{ver}"
+    }
+}

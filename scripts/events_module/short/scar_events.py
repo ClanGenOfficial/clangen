@@ -1,7 +1,12 @@
 import random
 
+import i18n
+
 from scripts.cat.history import History
-from scripts.conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
+from scripts.conditions import (
+    get_amount_cat_for_one_medic,
+    medicine_cats_can_cover_clan,
+)
 from scripts.game_structure.game_essentials import game
 
 
@@ -9,65 +14,57 @@ from scripts.game_structure.game_essentials import game
 #                              Scar Event Class                                #
 # ---------------------------------------------------------------------------- #
 
-class Scar_Events():
+
+class Scar_Events:
     """All events with a connection to conditions."""
 
     # scar pools
-    bite_scars = [
-        "CATBITE", "CATBITETWO"
-    ]
-    rat_scars = [
-        "RATBITE", "TOE"
-    ]
-    beak_scars = [
-        "BEAKCHEEK", "BEAKLOWER", "BEAKSIDE"
-    ]
-    canid_scars = [
-        "LEGBITE", "NECKBITE", "TAILSCAR", "BRIGHTHEART"
-    ]
-    snake_scars = [
-        "SNAKE", "SNAKETWO"
-    ]
+    bite_scars = ["CATBITE", "CATBITETWO"]
+    rat_scars = ["RATBITE", "TOE"]
+    beak_scars = ["BEAKCHEEK", "BEAKLOWER", "BEAKSIDE"]
+    canid_scars = ["LEGBITE", "NECKBITE", "TAILSCAR", "BRIGHTHEART"]
+    snake_scars = ["SNAKE", "SNAKETWO"]
     claw_scars = [
-        "ONE", "TWO", "SNOUT", "TAILSCAR", "CHEEK",
-        "SIDE", "THROAT", "TAILBASE", "BELLY", "FACE",
-        "BRIDGE", "HINDLEG", "BACK", "SCRATCHSIDE"
+        "ONE",
+        "TWO",
+        "SNOUT",
+        "TAILSCAR",
+        "CHEEK",
+        "SIDE",
+        "THROAT",
+        "TAILBASE",
+        "BELLY",
+        "FACE",
+        "BRIDGE",
+        "HINDLEG",
+        "BACK",
+        "SCRATCHSIDE",
     ]
-    leg_scars = [
-        "NOPAW", "TOETRAP", "MANLEG", "FOUR"
-    ]
-    tail_scars = [
-        "TAILSCAR", "TAILBASE", "NOTAIL", "HALFTAIL", "MANTAIL"
-    ]
-    ear_scars = [
-        "LEFTEAR", "RIGHTEAR", 'NOLEFTEAR', 'NORIGHTEAR'
-    ]
+    leg_scars = ["NOPAW", "TOETRAP", "MANLEG", "FOUR"]
+    tail_scars = ["TAILSCAR", "TAILBASE", "NOTAIL", "HALFTAIL", "MANTAIL"]
+    ear_scars = ["LEFTEAR", "RIGHTEAR", "NOLEFTEAR", "NORIGHTEAR"]
     frostbite_scars = [
-        "HALFTAIL", "NOTAIL", "NOPAW", 'NOLEFTEAR', 'NORIGHTEAR', 'NOEAR',
-        "FROSTFACE", "FROSTTAIL", "FROSTMITT", "FROSTSOCK",
+        "HALFTAIL",
+        "NOTAIL",
+        "NOPAW",
+        "NOLEFTEAR",
+        "NORIGHTEAR",
+        "NOEAR",
+        "FROSTFACE",
+        "FROSTTAIL",
+        "FROSTMITT",
+        "FROSTSOCK",
     ]
-    eye_scars = [
-        "THREE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND"
-    ]
-    burn_scars = [
-        "BRIGHTHEART", "BURNPAWS", "BURNTAIL", "BURNBELLY", "BURNRUMP"
-    ]
-    quill_scars = [
-        "QUILLCHUNK", "QUILLSCRATCH", "QUILLSIDE"
-    ]
-    head_scars = [
-        "SNOUT", "CHEEK", "BRIDGE", "BEAKCHEEK"
-    ]
-    bone_scars = [
-        "MANLEG", "TOETRAP", "FOUR"
-    ]
-    back_scars = [
-        "TWO", "TAILBASE", "BACK"
-    ]
+    eye_scars = ["THREE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND"]
+    burn_scars = ["BRIGHTHEART", "BURNPAWS", "BURNTAIL", "BURNBELLY", "BURNRUMP"]
+    quill_scars = ["QUILLCHUNK", "QUILLSCRATCH", "QUILLSIDE"]
+    head_scars = ["SNOUT", "CHEEK", "BRIDGE", "BEAKCHEEK"]
+    bone_scars = ["MANLEG", "TOETRAP", "FOUR"]
+    back_scars = ["TWO", "TAILBASE", "BACK"]
 
     scar_allowed = {
         "bite-wound": canid_scars,
-        "cat-bite": bite_scars,
+        "cat bite": bite_scars,
         "severe burn": burn_scars,
         "rat bite": rat_scars,
         "snake bite": snake_scars,
@@ -86,7 +83,7 @@ class Scar_Events():
 
     @staticmethod
     def handle_scars(cat, injury_name):
-        """ 
+        """
         This function handles the scars
         """
 
@@ -98,46 +95,104 @@ class Scar_Events():
         chance = max(5 - moons_with, 1)
 
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
-        if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
+        if medicine_cats_can_cover_clan(
+            game.cat_class.all_cats.values(), amount_per_med
+        ):
             chance += 2
 
         if len(cat.pelt.scars) < 4 and not int(random.random() * chance):
-
             # move potential scar text into displayed scar text
 
-            scar_pool = [i for i in Scar_Events.scar_allowed[injury_name] if i not in cat.pelt.scars]
-            if 'NOPAW' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if i not in ['TOETRAP', 'RATBITE', "FROSTSOCK"]]
-            if 'NOTAIL' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if
-                             i not in ["HALFTAIL", "TAILBASE", "TAILSCAR", "MANTAIL", "BURNTAIL", "FROSTTAIL"]]
-            if 'HALFTAIL' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if i not in ["TAILSCAR", "MANTAIL", "FROSTTAIL"]]
+            scar_pool = [
+                i
+                for i in Scar_Events.scar_allowed[injury_name]
+                if i not in cat.pelt.scars
+            ]
+            if "NOPAW" in cat.pelt.scars:
+                scar_pool = [
+                    i for i in scar_pool if i not in ("TOETRAP", "RATBITE", "FROSTSOCK")
+                ]
+            if "NOTAIL" in cat.pelt.scars:
+                scar_pool = [
+                    i
+                    for i in scar_pool
+                    if i
+                    not in (
+                        "HALFTAIL",
+                        "TAILBASE",
+                        "TAILSCAR",
+                        "MANTAIL",
+                        "BURNTAIL",
+                        "FROSTTAIL",
+                    )
+                ]
+            if "HALFTAIL" in cat.pelt.scars:
+                scar_pool = [
+                    i
+                    for i in scar_pool
+                    if i not in ("TAILSCAR", "MANTAIL", "FROSTTAIL")
+                ]
             if "BRIGHTHEART" in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if i not in ["RIGHTBLIND", "BOTHBLIND"]]
-            if 'BOTHBLIND' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if
-                             i not in ["THREE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "BRIGHTHEART"]]
-            if 'NOEAR' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if
-                             i not in ["LEFTEAR", "RIGHTEAR", 'NOLEFTEAR', 'NORIGHTEAR', "FROSTFACE"]]
-            if 'MANTAIL' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if i not in ["BURNTAIL", 'FROSTTAIL']]
-            if 'BURNTAIL' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if i not in ["MANTAIL", 'FROSTTAIL']]
-            if 'FROSTTAIL' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if i not in ["MANTAIL", 'BURNTAIL']]
-            if 'NOLEFT' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if i not in ['LEFTEAR']]
-            if 'NORIGHT' in cat.pelt.scars:
-                scar_pool = [i for i in scar_pool if i not in ['RIGHTEAR']]
+                scar_pool = [
+                    i for i in scar_pool if i not in ("RIGHTBLIND", "BOTHBLIND")
+                ]
+            if "BOTHBLIND" in cat.pelt.scars:
+                scar_pool = [
+                    i
+                    for i in scar_pool
+                    if i
+                    not in (
+                        "THREE",
+                        "RIGHTBLIND",
+                        "LEFTBLIND",
+                        "BOTHBLIND",
+                        "BRIGHTHEART",
+                    )
+                ]
+            if "NOEAR" in cat.pelt.scars:
+                scar_pool = [
+                    i
+                    for i in scar_pool
+                    if i
+                    not in (
+                        "LEFTEAR",
+                        "RIGHTEAR",
+                        "NOLEFTEAR",
+                        "NORIGHTEAR",
+                        "FROSTFACE",
+                    )
+                ]
+            if "MANTAIL" in cat.pelt.scars:
+                scar_pool = [i for i in scar_pool if i not in ("BURNTAIL", "FROSTTAIL")]
+            if "BURNTAIL" in cat.pelt.scars:
+                scar_pool = [i for i in scar_pool if i not in ("MANTAIL", "FROSTTAIL")]
+            if "FROSTTAIL" in cat.pelt.scars:
+                scar_pool = [i for i in scar_pool if i not in ("MANTAIL", "BURNTAIL")]
+            if "NOLEFT" in cat.pelt.scars:
+                scar_pool = [i for i in scar_pool if i not in ("LEFTEAR",)]
+            if "NORIGHT" in cat.pelt.scars:
+                scar_pool = [i for i in scar_pool if i not in ("RIGHTEAR",)]
 
             # Extra check for disabling scars.
             if int(random.random() * 3):
                 condition_scars = {
-                    "LEGBITE", "THREE", "NOPAW", "TOETRAP", "NOTAIL", "HALFTAIL", "LEFTEAR", "RIGHTEAR",
-                    "MANLEG", "BRIGHTHEART", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "LEFTBLIND",
-                    "RIGHTBLIND", "BOTHBLIND", "RATBITE"
+                    "LEGBITE",
+                    "THREE",
+                    "NOPAW",
+                    "TOETRAP",
+                    "NOTAIL",
+                    "HALFTAIL",
+                    "LEFTEAR",
+                    "RIGHTEAR",
+                    "MANLEG",
+                    "BRIGHTHEART",
+                    "NOLEFTEAR",
+                    "NORIGHTEAR",
+                    "NOEAR",
+                    "LEFTBLIND",
+                    "RIGHTBLIND",
+                    "BOTHBLIND",
+                    "RATBITE",
                 }
 
                 scar_pool = list(set(scar_pool).difference(condition_scars))
@@ -147,37 +202,59 @@ class Scar_Events():
                 return None, None
 
             # If we've reached this point, we can move forward with giving history.
-            History.add_scar(cat,
-                             f"m_c was scarred from an injury ({injury_name}).",
-                             condition=injury_name)
+            cat.history.add_scar(
+                i18n.t(
+                    "cat.history.scar_from_injury",
+                    injury_name=i18n.t(f"conditions.injuries.{injury_name}"),
+                ),
+                condition=injury_name,
+            )
 
             specialty = random.choice(scar_pool)
             if specialty in ["NOTAIL", "HALFTAIL"]:
-                if cat.pelt.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS", "CLOVER", "DAISY"]:
-                    cat.pelt.accessory = None
+                cat.pelt.accessory = [
+                    acc
+                    for acc in cat.pelt.accessory
+                    if acc
+                    not in (
+                        "RED FEATHERS",
+                        "BLUE FEATHERS",
+                        "JAY FEATHERS",
+                        "GULL FEATHERS",
+                        "SPARROW FEATHERS",
+                        "CLOVER",
+                        "DAISY",
+                    )
+                ]
 
             # combining left/right variations into the both version
-            if "NOLEFTEAR" in cat.pelt.scars and specialty == 'NORIGHTEAR':
+            if "NOLEFTEAR" in cat.pelt.scars and specialty == "NORIGHTEAR":
                 cat.pelt.scars.remove("NOLEFTEAR")
-                specialty = 'NOEAR'
-            elif "NORIGHTEAR" in cat.pelt.scars and specialty == 'NOLEFTEAR':
+                specialty = "NOEAR"
+            elif "NORIGHTEAR" in cat.pelt.scars and specialty == "NOLEFTEAR":
                 cat.pelt.scars.remove("NORIGHTEAR")
-                specialty = 'NOEAR'
+                specialty = "NOEAR"
 
-            if 'RIGHTBLIND' in cat.pelt.scars and specialty == 'LEFTBLIND':
+            if "RIGHTBLIND" in cat.pelt.scars and specialty == "LEFTBLIND":
                 cat.pelt.scars.remove("LEFTBLIND")
-                specialty = 'BOTHBLIND'
-            elif 'LEFTBLIND' in cat.pelt.scars and specialty == 'RIGHTBLIND':
+                specialty = "BOTHBLIND"
+            elif "LEFTBLIND" in cat.pelt.scars and specialty == "RIGHTBLIND":
                 cat.pelt.scars.remove("RIGHTBLIND")
-                specialty = 'BOTHBLIND'
+                specialty = "BOTHBLIND"
 
             cat.pelt.scars.append(specialty)
 
             scar_gain_strings = [
-                f"{cat.name}'s {injury_name} has healed, but they'll always carry evidence of the incident on their pelt.",
-                f"{cat.name} healed from their {injury_name} but will forever be marked by a scar.",
-                f"{cat.name}'s {injury_name} has healed, but the injury left them scarred.",
+                "hardcoded.scar_event0",
+                "hardcoded.scar_event1",
+                "hardcoded.scar_event2",
             ]
-            return random.choice(scar_gain_strings), specialty
+            return (
+                i18n.t(
+                    random.choice(scar_gain_strings),
+                    injury=i18n.t(f"conditions.injuries.{injury_name}"),
+                ),
+                specialty,
+            )
         else:
             return None, None

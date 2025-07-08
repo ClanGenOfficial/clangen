@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-poetry install --no-root
-poetry run python main.py
+set -e # exit on failure
+
+# cd into script location
+cd "$(dirname "$0")"
+uv sync
+uv run main.py
