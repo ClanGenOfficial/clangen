@@ -43,14 +43,14 @@ class History:
             self.mentor_influence["skill"] = {}
         if "mentor" in self.mentor_influence:
             del self.mentor_influence["mentor"]
-        for entry in self.murder:
-            for killed in self.murder[murder].get("is_murderer", []):
+        if self.murder:
+            for killed in self.murder.get("is_murderer", []):
                 if isinstance(killed["revealed"], bool):
                     new_dict = {"to_clan": False, "aware_individuals": []}
                     if killed["revealed"]:
                         new_dict["to_clan"] = True
                     killed["revealed"] = new_dict
-            for death in self.murder[murder].get("is_victim", []):
+            for death in self.murder.get("is_victim", []):
                 if isinstance(death["revealed"], bool):
                     new_dict = {"to_clan": False, "aware_individuals": []}
                     if death["revealed"]:
@@ -492,7 +492,7 @@ class History:
         text = ""
         history = "is_murderer" if is_murderer else "is_victim"
         if history in self.murder:
-            for entry in self.murder:
+            for entry in self.murder[history]:
                 if entry["revealed"]["to_clan"]:
                     text = i18n.t("cat.history.murder_revealed_to_clan", count=1)
                 else:

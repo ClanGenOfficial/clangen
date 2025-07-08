@@ -30,7 +30,6 @@ from scripts.game_structure.localization import (
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache, localization
 from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatStanding
-from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
