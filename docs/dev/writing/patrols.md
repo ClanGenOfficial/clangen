@@ -808,6 +808,20 @@ What each parameter does, and what the options are for outcomes.
 | "clan"        | Feelings toward the entire clan are effected                              |
 | "n_c:{index}" | Feelings toward the new cat(s) with the index number {index} are effected |
 
+> Group modifiers: These will modify the cats already being gathered according to the other strings. For example, a block with `"cats_from": ["clan", "low_lawful"]` will gather all the cats in the Clan with a 0-8 lawfulness facet.  These can be combined to get cats with specific ranges of multiple facets.
+
+| modifier     |                                                |
+|--------------|------------------------------------------------|
+| low_lawful   | cats with a 0-8 lawfulness facet are affected  |
+| high_lawful  | cats with a 9-16 lawfulness facet are affected |
+| low_social   | cats with a 0-8 sociable facet are affected    |
+| high_social  | cats with a 9-16 sociable facet are affected   |
+| low_stable   | cats with a 0-8 stability facet are affected   |
+| high_stable  | cats with a 9-16 stability facet are affected  |
+| low_aggress  | cats with a 0-8 aggression facet are affected  |
+| high_aggress | cats with a 9-16 aggression facet are affected |
+
+
 >**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions. 
 
 | bool  |                                                                                                                                              |

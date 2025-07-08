@@ -689,11 +689,11 @@ class ChangeCatName(UIWindow):
             container=self,
         )
 
-        if self.the_cat.status in self.the_cat.name.names_dict["special_suffixes"]:
+        if self.the_cat.status.rank in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(
                 ui_scale(pygame.Rect((159 + x_pos, 50 + y_pos), (120, 30))),
                 placeholder_text=self.the_cat.name.names_dict["special_suffixes"][
-                    self.the_cat.status
+                    self.the_cat.status.rank
                 ],
                 manager=MANAGER,
                 container=self,
@@ -744,7 +744,7 @@ class ChangeCatName(UIWindow):
                 # Suffixes can be empty, if you want. However, don't change the suffix if it's currently being hidden
                 # by a special suffix.
                 if (
-                    self.the_cat.status
+                    self.the_cat.status.rank
                     not in self.the_cat.name.names_dict["special_suffixes"]
                     or self.the_cat.name.specsuffix_hidden
                 ):
@@ -1129,7 +1129,7 @@ class KillCat(UIWindow):
             container=self,
         )
 
-        if self.the_cat.status == "leader":
+        if self.the_cat.status.is_leader:
             self.done_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((347, 152), (77, 30))),
                 "buttons.done_lower",
@@ -1234,7 +1234,7 @@ class KillCat(UIWindow):
                     "",
                     self.death_entry_box.get_text(),
                 )
-                if self.the_cat.status == "leader":
+                if self.the_cat.status.is_leader:
                     if death_message.startswith("was"):
                         death_message = death_message.replace(
                             "was", "{VERB/m_c/were/was}", 1

@@ -11,7 +11,7 @@ from typing import List, Tuple, Optional, Union
 import pygame
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAgeEnum
+from scripts.cat.enums import CatAge, CatRank
 from scripts.clan import Clan
 from scripts.events_module.event_filters import event_for_tags
 from scripts.events_module.patrol.patrol_event import PatrolEvent
@@ -173,32 +173,32 @@ class Patrol:
         for cat in patrol_cats:
             self.patrol_cats.append(cat)
 
-            if cat.status == "apprentice" or cat.status == "medicine cat apprentice":
+            if cat.status.rank.is_any_apprentice_rank():
                 self.patrol_apprentices.append(cat)
 
-            self.patrol_status_list.append(cat.status)
+            self.patrol_status_list.append(cat.status.rank)
 
-            if cat.status in self.patrol_statuses:
-                self.patrol_statuses[cat.status] += 1
+            if cat.status.rank in self.patrol_statuses:
+                self.patrol_statuses[cat.status.rank] += 1
             else:
-                self.patrol_statuses[cat.status] = 1
+                self.patrol_statuses[cat.status.rank] = 1
 
             # Combined patrol_statuses categories
-            if cat.status in ("medicine cat", "medicine cat apprentice"):
+            if cat.status.rank.is_any_medicine_rank():
                 if "healer cats" in self.patrol_statuses:
                     self.patrol_statuses["healer cats"] += 1
                 else:
                     self.patrol_statuses["healer cats"] = 1
 
-            if cat.status in ("apprentice", "medicine cat apprentice"):
+            if cat.status.rank.is_any_apprentice_rank():
                 if "all apprentices" in self.patrol_statuses:
                     self.patrol_statuses["all apprentices"] += 1
                 else:
                     self.patrol_statuses["all apprentices"] = 1
 
             if (
-                cat.status in ("warrior", "deputy", "leader")
-                and cat.age != CatAgeEnum.ADOLESCENT
+                cat.status.rank.is_any_adult_warrior_like_rank()
+                and cat.age != CatAge.ADOLESCENT
             ):
                 if "normal adult" in self.patrol_statuses:
                     self.patrol_statuses["normal adult"] += 1
@@ -211,30 +211,30 @@ class Patrol:
 
         # DETERMINE PATROL LEADER
         # sets medcat as leader if they're in the patrol
-        if "medicine cat" in self.patrol_status_list:
-            index = self.patrol_status_list.index("medicine cat")
+        if CatRank.MEDICINE_CAT in self.patrol_status_list:
+            index = self.patrol_status_list.index(CatRank.MEDICINE_CAT)
             self.patrol_leader = self.patrol_cats[index]
         # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
         # This prevents warrior from being treated as medicine cats in medicine cat patrols.
-        elif "medicine cat apprentice" in self.patrol_status_list:
-            index = self.patrol_status_list.index("medicine cat apprentice")
+        elif CatRank.MEDICINE_APPRENTICE in self.patrol_status_list:
+            index = self.patrol_status_list.index(CatRank.MEDICINE_APPRENTICE)
             self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
         # sets leader as patrol leader
-        elif "leader" in self.patrol_status_list:
-            index = self.patrol_status_list.index("leader")
+        elif CatRank.LEADER in self.patrol_status_list:
+            index = self.patrol_status_list.index(CatRank.LEADER)
             self.patrol_leader = self.patrol_cats[index]
-        elif "deputy" in self.patrol_status_list:
-            index = self.patrol_status_list.index("deputy")
+        elif CatRank.DEPUTY in self.patrol_status_list:
+            index = self.patrol_status_list.index(CatRank.DEPUTY)
             self.patrol_leader = self.patrol_cats[index]
         else:
             # Get the oldest cat
             possible_leader = [
                 i
                 for i in self.patrol_cats
-                if i.status not in ("medicine cat apprentice", "apprentice")
+                if not i.status.rank.is_any_apprentice_rank()
             ]
             if possible_leader:
                 # Flip a coin to pick the most experience, or oldest.
@@ -343,7 +343,8 @@ class Patrol:
         # this next one is needed for Classic specifically
         patrol_type = (
             "med"
-            if ["medicine cat", "medicine cat apprentice"] in self.patrol_status_list
+            if [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE]
+            in self.patrol_status_list
             else patrol_type
         )
         patrol_size = len(self.patrol_cats)
@@ -435,7 +436,6 @@ class Patrol:
                 possible_patrols.extend(
                     self.generate_patrol_events(self.OTHER_CLAN_HOSTILE)
                 )
-
         patrol_ids = [patrol.patrol_id for patrol in possible_patrols]
         if self.debug_patrol and self.debug_patrol not in patrol_ids:
             print(
@@ -565,7 +565,7 @@ class Patrol:
                 and value_check >= 20
             ):
                 chance_of_romance_patrol -= 1
-            elif val in ["dislike", "jealousy"] and value_check >= 20:
+            elif val in ("dislike", "jealousy") and value_check >= 20:
                 chance_of_romance_patrol += 2
         if chance_of_romance_patrol <= 0:
             chance_of_romance_patrol = 1
@@ -982,7 +982,6 @@ class Patrol:
                 print(
                     "DEBUG: requested patrol does not meet constraints (failed prey balancing)"
                 )
-
         # if the filtering results in an empty list, don't filter and return whole possible patrols
         if len(filtered_patrols) <= 0:
             print(

@@ -28,6 +28,7 @@ from scripts.utility import (
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import (
@@ -383,21 +384,21 @@ class PatrolOutcome:
         possible_stat_cats = []
         for kitty in patrol.patrol_cats:
             # First, the blanket requirements
-            if "app" in self.can_have_stat and kitty.status not in (
-                "apprentice",
-                "medicine cat apprentice",
+            if (
+                "app" in self.can_have_stat
+                and not kitty.status.rank.is_any_apprentice_rank()
             ):
                 continue
 
-            if "adult" in self.can_have_stat and kitty.status in (
-                "apprentice",
-                "medicine cat apprentice",
+            if (
+                "adult" in self.can_have_stat
+                and kitty.status.rank.is_any_apprentice_rank()
             ):
                 continue
 
-            if "healer" in self.can_have_stat and kitty.status not in (
-                "medicine cat",
-                "medicine cat apprentice",
+            if (
+                "healer" in self.can_have_stat
+                and not kitty.status.rank.is_any_medicine_rank()
             ):
                 continue
 
@@ -478,7 +479,7 @@ class PatrolOutcome:
 
         if gained_exp or app_exp:
             for cat in patrol.patrol_cats:
-                if cat.status in ("apprentice", "medicine cat apprentice"):
+                if cat.status.rank.is_any_apprentice_rank():
                     cat.experience = cat.experience + app_exp
                 else:
                     cat.experience = cat.experience + gained_exp
@@ -511,7 +512,7 @@ class PatrolOutcome:
         results = []
         catnames = []
         for _cat in cats_to_kill:
-            if _cat.status == "leader":
+            if _cat.status.is_leader:
                 if "all_lives" in self.dead_cats:
                     game.clan.leader_lives = 0
                     results.append(
@@ -570,7 +571,7 @@ class PatrolOutcome:
             )
             return ""
 
-        [_cat.gone() for _cat in cats_to_lose]
+        [_cat.become_lost() for _cat in cats_to_lose]
 
         return i18n.t(
             "screens.patrol.lost_cats",
@@ -767,7 +768,7 @@ class PatrolOutcome:
         if not self.prey or game.clan.game_mode == "classic":
             return ""
 
-        basic_amount = PREY_REQUIREMENT["warrior"]
+        basic_amount = PREY_REQUIREMENT[CatRank.WARRIOR]
         if game.clan.game_mode == "expanded":
             basic_amount += ADDITIONAL_PREY
         prey_types = {
@@ -860,7 +861,7 @@ class PatrolOutcome:
             for cat in patrol.new_cats[-1]:
                 if cat.dead:
                     dead.append(str(cat.name))
-                elif cat.outside:
+                elif cat.status.is_outsider:
                     outside.append(str(cat.name))
                 else:
                     new.append(str(cat.name))
@@ -894,7 +895,7 @@ class PatrolOutcome:
                             or game.clan.clan_settings["same sex birth"]
                         )
                         and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2)
-                        and not (sub_sub[0].dead or sub_sub[0].outside)
+                        and not (sub_sub[0].dead or sub_sub[0].status.is_outsider)
                     ):
                         sub_sub[0].get_injured("recovering from birth")
                         break  # Break - only one parent ever gives birth
@@ -988,7 +989,7 @@ class PatrolOutcome:
             print("WARNING: Injury occured, but some death or scar history is missing.")
 
         final_death_history = None
-        if cat.status == "leader":
+        if cat.status.is_leader:
             if self.history_leader_death:
                 final_death_history = self.history_leader_death
         else:
@@ -1027,7 +1028,7 @@ class PatrolOutcome:
             print("WARNING: Death occured, but some death history is missing.")
 
         final_death_history = None
-        if cat.status == "leader":
+        if cat.status.is_leader:
             if self.history_leader_death:
                 final_death_history = self.history_leader_death
         else:

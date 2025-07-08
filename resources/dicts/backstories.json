@@ -9,6 +9,15 @@
         "outsider_roots_backstories": [
             "outsider_roots1", "outsider_roots2"
         ],
+        "baby_clancat_backstories": [
+            "halfclan1", "halfclan2", "outsider_roots1", "abandoned3"
+        ],
+        "baby_loner_backstories": [
+            "outsider_roots2", "abandoned1", "abandoned2"
+        ],
+        "baby_kittypet_backstories": [
+            "abandoned4"
+        ],
         "half_clan_backstories": [
             "halfclan1", "halfclan2"
         ],

@@ -5,6 +5,7 @@ from random import choice
 import i18n
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
@@ -41,19 +42,19 @@ class Welcoming_Events:
             Welcoming_Events.rebuild_dicts()
 
         # setup the status as "key" to use it
-        status = clan_cat.status
-        if status == "medicine cat" or status == "medicine cat apprentice":
-            status = "medicine"
+        rank = clan_cat.status.rank
+        if rank.is_any_medicine_rank():
+            rank = "medicine"
 
-        if status == "mediator apprentice":
-            status = "mediator"
+        if rank == CatRank.MEDIATOR_APPRENTICE:
+            rank = CatRank.MEDIATOR
 
         # collect all events
         possible_events = deepcopy(GENERAL_WELCOMING)
-        if status not in WELCOMING_MASTER_DICT:
-            print(f"ERROR: there is no welcoming json for the status {status}")
+        if rank not in WELCOMING_MASTER_DICT:
+            print(f"ERROR: there is no welcoming json for the rank {rank}")
         else:
-            possible_events.extend(WELCOMING_MASTER_DICT[status])
+            possible_events.extend(WELCOMING_MASTER_DICT[rank])
         filtered_events = Welcoming_Events.filter_welcome_interactions(
             possible_events, new_cat
         )
@@ -157,8 +158,8 @@ class Welcoming_Events:
         ):  # always use fallback bcs english must exist
             if "general.json" == file:
                 continue
-            status = file.split(".")[0]
-            WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
+            rank = file.split(".")[0]
+            WELCOMING_MASTER_DICT[rank] = create_welcome_interaction(
                 load_lang_resource(
                     f"events/relationship_events/welcoming_events/{file}"
                 )
