@@ -6116,8 +6116,42 @@
         }
     },
     {
-      "id": "nervous_to_alive",
-      "thoughts": [
+        "id": "seizure_prone_gen",
+        "thoughts": [
+            "Is bothered by the sunlight flickering through the trees",
+            "Makes sure to drink water before a training session",
+            "Wonders what {PRONOUN/m_c/subject} {VERB/look/looks} like during a seizure",
+            "Feels like the sun is too bright today",
+            "Feels dizzier than usual today"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "seizure prone"
+            ]
+        },
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "seizure_prone_gen_to_alive_gen",
+        "thoughts": [
+            "Tries to explain what a seizure feels like to r_c, but only confuses {PRONOUN/r_c/object} more",
+            "Stood up too quickly and nearly passed out, spooking r_c",
+            "Keeps spacing out mid-conversation"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "seizure prone"
+            ]
+        },
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "nervous_to_alive",
+        "thoughts": [
 			"Is stuttering while speaking to r_c",
 			"Overthinks something {PRONOUN/m_c/subject} said to r_c",
 			"Does something embarrassing in front of r_c...",
@@ -6203,19 +6237,6 @@
             "bloodthirsty",
             "vengeful"
         ],
-      {
-        "id": "seizure_prone_gen",
-        "thoughts": [
-            "Is bothered by the sunlight flickering through the trees",
-            "Makes sure to drink water before a training session",
-            "Wonders what {PRONOUN/m_c/subject} {VERB/look/looks} like during a seizure",
-            "Feels like the sun is too bright today",
-            "Feels dizzier than usual today"
-        ],
-        "perm_conditions": {
-            "m_c": [
-                "seizure prone"
-            ]
         "random_living_status": [
             "living"
         ]
@@ -6306,7 +6327,7 @@
     {
         "id": "gen_to_grumpy_cold",
         "thoughts": [
-			"Is amused at how r_c manages to look so grumpy all the time",
+			"Is amused with how r_c manages to look so grumpy all the time",
 			"Learns the hard way that r_c isn't the best Clanmate to go to for advice",
 			"Finds it funny how closely r_c protects {PRONOUN/r_c/poss} fresh-kill"
         ],
@@ -6314,17 +6335,6 @@
             "grumpy",
             "cold"
         ],
-      {
-        "id": "seizure_prone_gen_to_alive_gen",
-        "thoughts": [
-            "Tries to explain what a seizure feels like to r_c, but only confuses {PRONOUN/r_c/object} more",
-            "Stood up too quickly and nearly passed out, spooking r_c",
-            "Keeps spacing out mid-conversation"
-        ],
-        "perm_conditions": {
-            "m_c": [
-                "seizure prone"
-            ]
         "random_living_status": [
             "living"
         ]
