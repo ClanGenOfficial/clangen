@@ -50,6 +50,7 @@ class HandleShortEvents:
     ]
 
     def __init__(self):
+        self.future_event_failed = None
         self.current_lives = None
         self.herb_notice = None
         self.types = []
@@ -169,6 +170,8 @@ class HandleShortEvents:
         # ---------------------------------------------------------------------------- #
         try:
             self.chosen_event = choice(final_events)
+            if self.future_event_failed:
+                self.future_event_failed = False
             # this print is good for testing, but gets spammy in large clans
             # print(f"CHOSEN: {self.chosen_event.event_id}")
         except IndexError:
@@ -266,8 +269,9 @@ class HandleShortEvents:
         if "murder_reveal" in self.chosen_event.sub_type:
             self.main_cat.history.reveal_murder(
                 victim=self.victim_cat,
+                murderer_id=self.main_cat.ID,
                 clan_reveal="clan_wide" in self.chosen_event.tags,
-                individuals=[self.random_cat],
+                aware_individuals=[self.random_cat],
             )
 
         # change outsider rep
@@ -350,6 +354,7 @@ class HandleShortEvents:
         self.allowed_events = event.pool.get("event_id")
         self.excluded_events = event.pool.get("excluded_event_id")
 
+        self.future_event_failed = True
         self.handle_event(
             event_type=event.event_type,
             main_cat=Cat.fetch_cat(event.involved_cats.get("m_c")),
@@ -357,11 +362,17 @@ class HandleShortEvents:
             freshkill_pile=game.clan.freshkill_pile,
             victim_cat=Cat.fetch_cat(event.involved_cats.get("mur_c")),
             sub_type=event.pool.get("subtype"),
-            ignore_subtyping=True if "subtype" in event.pool else False,
+            ignore_subtyping="subtype" not in event.pool,
         )
 
         self.allowed_events = []
         self.excluded_events = []
+
+        if self.future_event_failed:
+            self.future_event_failed = False
+            return True
+        else:
+            return self.future_event_failed
 
     def handle_new_cats(self):
         """

@@ -460,12 +460,18 @@ class History:
             }
         )
 
-    def reveal_murder(self, victim, clan_reveal: bool = False, individuals: list = []):
+    def reveal_murder(
+        self,
+        victim,
+        murderer_id,
+        clan_reveal: bool = False,
+        aware_individuals: list = None,
+    ):
         """
         This adds reveal information to both the murderer and victim's history. This should be called from the murderer's history.
         :param victim: cat object for the victim
         :param clan_reveal: set to True if the whole Clan now knows about the murder
-        :param individuals: if only individual cats are learning about the murder, give a list of their cat objects
+        :param aware_individuals: if only individual cats are learning about the murder, give a list of their cat objects
         """
 
         for murder in self.murder["is_murderer"]:
@@ -473,14 +479,14 @@ class History:
                 if clan_reveal:
                     murder["revealed"]["to_clan"] = True
                 else:
-                    murder["aware_individuals"].extend(individuals)
+                    murder["revealed"]["aware_individuals"].extend(aware_individuals)
 
         for murder in victim.history.murder["is_victim"]:
-            if murder["victim"] == victim.ID:
+            if murder["murderer"] == murderer_id:
                 if clan_reveal:
                     murder["revealed"]["to_clan"] = True
                 else:
-                    murder["aware_individuals"].extend(individuals)
+                    murder["revealed"]["aware_individuals"].extend(aware_individuals)
 
     @staticmethod
     def get_murder_status_text(murder: dict, Cat) -> str:
