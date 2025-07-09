@@ -77,7 +77,7 @@ class GenerateEvents:
         if file_path in GenerateEvents.loaded_events:
             return GenerateEvents.loaded_events[file_path]
         else:
-            events_dict = GenerateEvents.get_short_event_dicts(file_path)
+            events_dict = GenerateEvents.get_ongoing_event_dicts(file_path)
 
             if not specific_event:
                 event_list = []
