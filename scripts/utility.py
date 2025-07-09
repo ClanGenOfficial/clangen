@@ -491,7 +491,7 @@ def create_new_cat_block(
     litter = False
     if "litter" in attribute_list:
         litter = True
-        if rank not in [CatRank.KITTEN, CatRank.NEWBORN]:
+        if rank not in (CatRank.KITTEN, CatRank.NEWBORN):
             rank = CatRank.KITTEN
 
     # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS
@@ -835,7 +835,7 @@ def create_new_cat(
             moons = randint(6, 120)
 
     # setting rank
-    if not rank:
+    if not rank and not outside:
         if moons == 0:
             rank = CatRank.NEWBORN
         elif moons < 6:
@@ -2049,6 +2049,10 @@ def event_text_adjust(
     :param str chosen_herb: string of chosen_herb (chosen_herb), if present
     """
     vowels = ["A", "E", "I", "O", "U"]
+    if not patrol_apprentices:
+        patrol_apprentices = []
+    if not new_cats:
+        new_cats = []
 
     if not text:
         text = "This should not appear, report as a bug please! Tried to adjust the text, but no text was provided."
@@ -2167,7 +2171,7 @@ def event_text_adjust(
         text = text.replace("multi_cat", list_text)
 
     # other_clan_name
-    if "o_c_n" in text:
+    if "o_c_n" in text and other_clan:
         other_clan_name = other_clan.name
         pos = 0
         for x in range(text.count("o_c_n")):
@@ -2221,23 +2225,24 @@ def event_text_adjust(
     text = adjust_prey_abbr(text)
 
     # acc_plural (only works for main_cat's acc)
-    if "acc_plural" in text:
-        text = text.replace(
-            "acc_plural",
-            i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=2),
-        )
+    if main_cat:
+        if "acc_plural" in text:
+            text = text.replace(
+                "acc_plural",
+                i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=2),
+            )
 
-    # acc_singular (only works for main_cat's acc)
-    if "acc_singular" in text:
-        text = text.replace(
-            "acc_singular",
-            i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
-        )
+        # acc_singular (only works for main_cat's acc)
+        if "acc_singular" in text:
+            text = text.replace(
+                "acc_singular",
+                i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
+            )
 
-    if "given_herb" in text:
-        text = text.replace(
-            "given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2)
-        )
+        if "given_herb" in text:
+            text = text.replace(
+                "given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2)
+            )
 
     return text
 

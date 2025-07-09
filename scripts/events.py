@@ -519,19 +519,6 @@ class Events:
 
     def mediator_events(self, cat):
         """Check for mediator events"""
-        # If the cat is a mediator, check if they visited other clans
-        if cat.status.rank.is_any_mediator_rank and not cat.not_working():
-            # 1/10 chance
-            if not int(random.random() * 10):
-                random_cat = get_random_moon_cat(Cat, main_cat=cat)
-                handle_short_events.handle_event(
-                    event_type="misc",
-                    main_cat=cat,
-                    random_cat=random_cat,
-                    sub_type=["mediator"],
-                    freshkill_pile=game.clan.freshkill_pile,
-                )
-
         if get_clan_setting("become_mediator"):
             # Note: These chances are large since it triggers every moon.
             # Checking every moon has the effect giving older cats more chances to become a mediator
