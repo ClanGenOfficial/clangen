@@ -606,6 +606,11 @@ class Sprites:
                 "ROSE MALLOW",
                 "PICKLEWEED",
                 "GOLDEN CREEPING JENNY",
+                "DESERT WILLOW",
+                "CACTUS FLOWER",
+                "PRAIRIE FIRE",
+                "VERBENA EAR",
+                "VERBENA PELT",
             ],
         ]
         dryherbs_data = [["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"]]
@@ -622,7 +627,10 @@ class Sprites:
                 "MONARCH BUTTERFLY",
                 "CICADA WINGS",
                 "BLACK CICADA",
-            ]
+            ],
+            [
+                "ROAD RUNNER FEATHER",
+            ],
         ]
 
         collars_data = [
@@ -674,7 +682,7 @@ class Sprites:
         # wild
         for row, wilds in enumerate(wild_data):
             for col, wild in enumerate(wilds):
-                self.make_group("wild", (col, 0), f"acc_wild{wild}")
+                self.make_group("wild", (col, row), f"acc_wild{wild}")
 
         # collars
         for row, collars in enumerate(collars_data):

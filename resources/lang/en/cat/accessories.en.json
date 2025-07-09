@@ -84,6 +84,31 @@
             "many": "golden creeping jennies",
             "one": "golden creeping jenny"
         },
+        "DESERT WILLOW": {
+            "zero": "desert willow",
+            "many": "desert willows",
+            "one": "desert willow"
+        },
+        "CACTUS FLOWER": {
+            "zero": "cactus flower",
+            "many": "cactus flowers",
+            "one": "cactus flower"
+        },
+        "PRAIRIE FIRE": {
+            "zero": "prairie-fire",
+            "many": "prairie-fires",
+            "one": "prairie-fire"
+        },
+        "VERBENA EAR": {
+            "zero": "verbena",
+            "many": "verbenas",
+            "one": "verbena"
+        },
+        "VERBENA PELT": {
+            "zero": "verbena-covered pelt",
+            "many": "verbenas",
+            "one": "bunch of verbenas"
+        },
         "DRY HERBS": {
             "zero": "herb-covered pelt",
             "many": "dry herbs",
@@ -263,6 +288,11 @@
             "zero": "black cicada wings",
             "many": "black cicada wings",
             "one": "black cicada"
+        },
+        "ROAD RUNNER FEATHER": {
+            "zero": "road runner feather",
+            "many": "road runner feathers",
+            "one": "road runner feather"
         },
         "CRIMSON": {
             "zero": "crimson leather collar",
