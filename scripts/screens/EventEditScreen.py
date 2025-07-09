@@ -2,6 +2,7 @@ import os
 import platform
 import subprocess
 from random import choice
+from typing import Optional
 
 import pygame
 import pygame_gui
@@ -15,6 +16,10 @@ from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.handle_short_events import HandleShortEvents
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.game_structure import image_cache, constants
+from scripts.game_structure.editor_elements import (
+    EditorTextEntryLine,
+    EditorDropDownSelection,
+)
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import get_default_pronouns
 from scripts.game_structure.screen_settings import MANAGER
@@ -76,15 +81,9 @@ class EventEditScreen(Screens):
     test_pronouns: list = list(get_default_pronouns().values())
     """Pronoun dicts to assign to our test cats."""
 
-    all_camps: dict = {
-        "Forest": ["Classic", "Gully", "Grotto", "Lakeside"],
-        "Mountainous": ["Cliff", "Cavern", "Crystal River", "Ruins"],
-        "Plains": ["Grasslands", "Tunnels", "Wastelands"],
-        "Beach": ["Tidepools", "Tidal Cave", "Shipwreck", "Fjord"],
-    }
+    all_camps: dict = constants.LOCATIONS
     """Dict with key as biome and value as camp name."""
-    # TODO: when possible, change this to pull this from a global attr
-    all_seasons: tuple = ("newleaf", "greenleaf", "leaf-fall", "leaf-bare")
+    all_seasons: list = [s.casefold() for s in constants.SEASONS]
     """Tuple of all seasons possible."""
 
     event_types: dict = TYPES
@@ -248,7 +247,7 @@ class EventEditScreen(Screens):
         self.event_text_info: str = ""
         """Loaded event text"""
 
-        self.event_id_element = {}
+        self.event_id_element: Optional[EditorTextEntryLine] = None
         self.event_id_info: str = ""
         """Loaded event_id"""
 
@@ -256,7 +255,7 @@ class EventEditScreen(Screens):
         self.location_info: list = []
         """Loaded location tags"""
 
-        self.season_element = {}
+        self.season_element: Optional[EditorDropDownSelection] = None
         self.season_info: list = []
         """Loaded season tags"""
 
@@ -985,12 +984,6 @@ class EventEditScreen(Screens):
                     f"{character_count} characters after processing"
                 )
 
-            # CHANGE EVENT ID
-            if self.current_editor_tab == "settings":
-                if event.ui_element == self.event_id_element.get("entry"):
-                    self.event_id_info = self.event_id_element["entry"].text
-                    self.valid_id()
-
             # REL VALUE CONSTRAINTS
             elif self.current_editor_tab in ["random cat", "main cat"]:
                 if event.ui_element in self.rel_value_element.values():
@@ -1532,7 +1525,7 @@ class EventEditScreen(Screens):
         self.location_element = {}
         if not self.param_locks.get("location"):
             self.location_info = []
-        self.season_element = {}
+        self.season_element = None
         if not self.param_locks.get("season"):
             self.season_info = []
         self.type_element = {}
@@ -2218,9 +2211,6 @@ class EventEditScreen(Screens):
             self.alert_text = (
                 f"Event ID is either invalid or a duplicate. Pick a new ID."
             )
-
-        if self.event_id_element.get("check_text"):
-            self.event_id_element["check_text"].set_text(text)
 
         return valid
 
@@ -3649,14 +3639,6 @@ class EventEditScreen(Screens):
             self.location_element["display"]
         )
 
-    def update_season_info(self):
-        if self.season_info:
-            self.season_element["display"].set_text(
-                f"chosen season: {self.season_info}"
-            )
-        else:
-            self.season_element["display"].set_text("chosen season: ['any']")
-
     def update_sub_info(self):
         if "accessory" not in self.sub_info:
             for group in self.acc_categories.keys():
@@ -4222,6 +4204,9 @@ class EventEditScreen(Screens):
                 self.update_backstory_info()
 
     def handle_settings_on_use(self):
+        if self.event_id_element.changed:
+            self.event_id_info = self.event_id_element.info
+
         # CHANGE TYPE
         if (
             self.type_element.get("type_dropdown")
@@ -4242,12 +4227,11 @@ class EventEditScreen(Screens):
             self.sub_info = self.type_element["subtype_dropdown"].selected_list.copy()
             self.update_sub_info()
         # CHANGE SEASONS
-        if (
-            self.season_element.get("dropdown")
-            and self.season_element["dropdown"].selected_list != self.season_info
-        ):
-            self.season_info = self.season_element["dropdown"].selected_list.copy()
-            self.update_season_info()
+        if self.season_element.changed:
+            self.season_info = self.season_element.info
+            self.season_element.displayed_info = (
+                self.season_info if self.season_info else "['any']"
+            )
 
     # FUTURE EFFECTS EDITOR
     def generate_future_tab(self):
@@ -7301,14 +7285,13 @@ class EventEditScreen(Screens):
 
         self.rank_tag_checkbox["text"] = UITextBoxTweaked(
             "screens.event_edit.rank_tags",
-            ui_scale(pygame.Rect((0, 10), (250, -1))),
+            ui_scale(pygame.Rect((10, 10), (250, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
             container=self.tag_element["collapse_container"],
             anchors={
                 "top_target": self.tag_element["basic_checkbox_container"],
-                "left_target": self.event_id_element["text"],
             },
         )
         prev_element = None
@@ -7440,19 +7423,18 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.season_element["display"]},
+            anchors={"top_target": self.season_element.bottom_element},
         )
         if not self.type_info:
             self.type_info = ["death"]
 
         self.type_element["type_dropdown"] = UIDropDown(
-            pygame.Rect((17, 17), (150, 30)),
+            pygame.Rect((27, 17), (150, 30)),
             parent_text=self.type_info[0],
             item_list=list(self.event_types.keys()),
             container=self.editor_container,
             anchors={
-                "left_target": self.event_id_element["text"],
-                "top_target": (self.season_element["display"]),
+                "top_target": self.season_element.bottom_element,
             },
             starting_height=3,
             manager=MANAGER,
@@ -7496,56 +7478,30 @@ class EventEditScreen(Screens):
             starting_height=3,
             anchors={
                 "left_target": self.type_element["type_dropdown"],
-                "top_target": self.season_element["display"],
+                "top_target": self.season_element.bottom_element,
             },
             starting_selection=self.sub_info,
         )
 
     def create_season_editor(self):
-        self.season_element["text"] = UITextBoxTweaked(
-            "screens.event_edit.season_info",
-            ui_scale(pygame.Rect((0, 10), (250, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
+        self.season_element = EditorDropDownSelection(
+            position=(0, 10),
             anchors={"top_target": self.location_element["display"]},
-        )
-
-        self.season_element["dropdown"] = UIDropDown(
-            pygame.Rect((10, 20), (150, 30)),
-            parent_text="seasons",
+            container=self.editor_container,
+            manager=MANAGER,
+            description="screens.event_edit.season_info",
             item_list=self.all_seasons,
-            container=self.editor_container,
-            manager=MANAGER,
-            multiple_choice=True,
-            disable_selection=False,
-            child_trigger_close=False,
+            dropdown_parent_text="seasons",
+            display_text="seasons: ",
             starting_selection=self.season_info,
-            starting_height=5,
-            anchors={
-                "left_target": self.season_element["text"],
-                "top_target": self.location_element["display"],
-            },
+            multiple_choice=True,
+            lock_name="season",
+            lock=True,
         )
+        if self.param_locks.get("season"):
+            self.season_element.lock.locked = True
 
-        self.season_element["display"] = UITextBoxTweaked(
-            f"chosen season: {self.season_info}",
-            ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={
-                "top_target": self.season_element["text"],
-            },
-            allow_split_dashes=False,
-        )
-        self.create_lock(
-            name="season",
-            top_anchor=self.season_element["text"],
-            left_anchor=self.season_element["display"],
-        )
-        self.create_divider(self.season_element["display"], "season")
+        self.create_divider(self.season_element.bottom_element, "season")
 
     def create_location_editor(self):
         self.location_element["text"] = UITextBoxTweaked(
@@ -7562,14 +7518,13 @@ class EventEditScreen(Screens):
         for biome in biome_list:
             y_pos = 10 if not prev_element else -2
             self.location_element[biome] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, y_pos), (150, 30))),
+                ui_scale(pygame.Rect((10, y_pos), (150, 30))),
                 biome,
                 get_button_dict(ButtonStyles.DROPDOWN, (150, 30)),
                 manager=MANAGER,
                 object_id="@buttonstyles_dropdown",
                 container=self.editor_container,
                 anchors={
-                    "left_target": self.event_id_element["text"],
                     "top_target": (
                         self.location_element["text"]
                         if not prev_element
@@ -7630,30 +7585,13 @@ class EventEditScreen(Screens):
             prev_element = self.location_element[camp]
 
     def create_event_id_editor(self):
-        self.event_id_element["text"] = UITextBoxTweaked(
-            f"<b>event_id:</b>",
-            ui_scale(pygame.Rect((0, 10), (-1, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
+        self.event_id_element = EditorTextEntryLine(
+            position=(0, 13),
+            description=f"<b>event_id:</b>",
+            entry_length=230,
+            initial_entry_text=self.event_id_info if self.event_id_info else "",
             container=self.editor_container,
-        )
-        self.event_id_element["entry"] = pygame_gui.elements.UITextEntryLine(
-            ui_scale(pygame.Rect((0, 13), (230, 29))),
             manager=MANAGER,
-            container=self.editor_container,
-            anchors={"left_target": self.event_id_element["text"]},
-            initial_text=self.event_id_info if self.event_id_info else "",
         )
 
-        self.event_id_element["check_text"] = UITextBoxTweaked(
-            "",
-            ui_scale(pygame.Rect((0, 10), (-1, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"left_target": self.event_id_element["entry"]},
-        )
-        self.valid_id()
-        self.create_divider(self.event_id_element["text"], "event_id")
+        self.create_divider(self.event_id_element.bottom_element, "event_id")

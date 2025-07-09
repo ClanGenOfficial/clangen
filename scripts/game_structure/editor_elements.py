@@ -3,13 +3,20 @@ from typing import Tuple
 import pygame
 import pygame_gui
 
-from scripts.game_structure.ui_elements import UITextBoxTweaked, UIScrollingDropDown
+from scripts.game_structure.ui_elements import (
+    UITextBoxTweaked,
+    UIScrollingDropDown,
+    UISurfaceImageButton,
+)
+from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from scripts.ui.icon import Icon
 from scripts.utility import get_text_box_theme, ui_scale
 
 
 class EditorElement:
     def __init__(self):
         self.ui_elements = []
+        self.bottom_element = None
 
     def kill(self):
         for ele in self.ui_elements:
@@ -22,6 +29,49 @@ class EditorElement:
     def show(self):
         for ele in self.ui_elements:
             ele.show()
+
+
+class EditorLock(EditorElement):
+    def __init__(
+        self,
+        name: str,
+        position: tuple,
+        manager=None,
+        container=None,
+        anchors=None,
+    ):
+        super().__init__()
+
+        self.lock = UISurfaceImageButton(
+            ui_scale(pygame.Rect(position, (36, 36))),
+            Icon.UNLOCK,
+            get_button_dict(ButtonStyles.ICON, (36, 36)),
+            manager=manager,
+            object_id="@buttonstyles_icon",
+            container=container,
+            anchors=anchors,
+            starting_height=2,
+            tool_tip_text="If locked, these parameters will be preserved when making a new event.",
+        )
+        self.ui_elements.append(self.lock)
+        self.bottom_element = self.lock
+        self.name = name
+
+    def flip_state(self):
+        """If locked, it will unlock. If unlocked, it will lock."""
+        if self.locked:
+            self.locked = False
+        else:
+            self.locked = True
+
+    @property
+    def locked(self):
+        return self.lock.text == Icon.LOCK
+
+    @locked.setter
+    def locked(self, lock: bool):
+        """Set True to lock, set False to unlock."""
+        self.lock.set_text(Icon.LOCK if lock else Icon.UNLOCK)
 
 
 class EditorTextEntryLine(EditorElement):
@@ -60,7 +110,7 @@ class EditorTextEntryLine(EditorElement):
 
         self.initial_entry_text = initial_entry_text
         self.entry = pygame_gui.elements.UITextEntryLine(
-            ui_scale(pygame.Rect((0, 13), (entry_length, 29))),
+            ui_scale(pygame.Rect((0, 16), (entry_length, 29))),
             manager=manager,
             container=container,
             anchors={"left_target": self.description},
@@ -97,12 +147,14 @@ class EditorDropDownSelection(EditorElement):
         container=None,
         description: str = None,
         item_list: list = None,
-        initial_selection: list = None,
+        starting_selection: list = None,
         dropdown_parent_text: str = None,
         multiple_choice: bool = False,
         disable_selection: bool = False,
         child_trigger_close: bool = False,
         display_text: str = None,
+        lock: bool = False,
+        lock_name: str = None,
         manager=None,
     ):
         """
@@ -124,7 +176,7 @@ class EditorDropDownSelection(EditorElement):
         dropdown_anchors = {"left_target": self.description}
         if anchors.get("top_target"):
             dropdown_anchors["top_target"] = anchors["top_target"]
-        self.selection = initial_selection
+        self.selection = starting_selection
         self.dropdown = UIScrollingDropDown(
             pygame.Rect((10, 20), (150, 30)),
             dropdown_dimensions=(150, 200),
@@ -137,13 +189,13 @@ class EditorDropDownSelection(EditorElement):
             child_trigger_close=child_trigger_close,
             starting_selection=self.selection,
             starting_height=5,
-            anchors=anchors,
+            anchors=dropdown_anchors,
         )
         self.ui_elements.append(self.dropdown)
 
         self.display_text = display_text
         self.display = UITextBoxTweaked(
-            f"{self.display_text} {initial_selection}",
+            f"{self.display_text} {starting_selection}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=manager,
@@ -153,7 +205,18 @@ class EditorDropDownSelection(EditorElement):
             },
             allow_split_dashes=False,
         )
+
+        if lock:
+            self.lock = EditorLock(
+                position=(10, 10),
+                name=lock_name,
+                anchors={"top_target": self.description, "left_target": self.display},
+                manager=manager,
+                container=container,
+            )
+
         self.ui_elements.append(self.display)
+        self.bottom_element = self.display
 
     @property
     def changed(self):
