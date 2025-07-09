@@ -12,13 +12,11 @@ from scripts.game_structure.game_essentials import (
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
-    UIRelationStatusFillBar,
     UISurfaceImageButton,
-    UIRelationStatusScaleBar,
-    UITextBoxTweaked,
     UIRelationDisplay,
 )
 from scripts.game_structure.windows import RelationshipLog
+from scripts.screens.Screens import Screens
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -27,13 +25,17 @@ from scripts.utility import (
     ui_scale_blit,
     ui_scale_offset,
 )
-from .Screens import Screens
-from scripts.cat_relations.enums import RelValue
 from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure.screen_settings import MANAGER, screen
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
+from scripts.clan_package.settings import get_clan_setting, set_clan_setting
+from scripts.game_structure.game.switches import (
+    switch_set_value,
+    Switch,
+    switch_get_value,
+)
 
 
 class RelationshipScreen(Screens):
