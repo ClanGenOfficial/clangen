@@ -8,6 +8,7 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.history import History
+from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_resources.freshkill import (
     FRESHKILL_ACTIVE,
     MAL_PERCENTAGE,
@@ -20,13 +21,20 @@ from scripts.conditions import (
 from scripts.event_class import Single_Event
 from scripts.events_module.short.generation import create_short_event
 from scripts.events_module.short.scar_events import Scar_Events
+from scripts.game_structure import constants
+from scripts.game_structure.game.switches import (
+    Switch,
+    switch_get_value,
+    switch_set_value,
+    switch_append_list_value,
+)
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     event_text_adjust,
     find_alive_cats_with_rank,
     get_leader_life_notice,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 # ---------------------------------------------------------------------------- #
@@ -286,8 +294,8 @@ class Condition_Events:
                 and not event_string
             ):
                 # CLAN FOCUS!
-                if game.clan.clan_settings.get("rest and recover"):
-                    stopping_chance = game.config["focus"]["rest and recover"][
+                if get_clan_setting("rest and recover"):
+                    stopping_chance = constants.CONFIG["focus"]["rest and recover"][
                         "illness_prevent"
                     ]
                     if not int(random.random() * stopping_chance):
@@ -364,7 +372,7 @@ class Condition_Events:
             return triggered
 
         if (
-            game.config["event_generation"]["debug_type_override"] == "injury"
+            constants.CONFIG["event_generation"]["debug_type_override"] == "injury"
             and random_cat
         ):
             create_short_event(
@@ -411,8 +419,8 @@ class Condition_Events:
 
             if triggered:
                 # CLAN FOCUS!
-                if game.clan.clan_settings.get("rest and recover"):
-                    stopping_chance = game.config["focus"]["rest and recover"][
+                if get_clan_setting("rest and recover"):
+                    stopping_chance = constants.CONFIG["focus"]["rest and recover"][
                         "injury_prevent"
                     ]
                     if not int(random.random() * stopping_chance):
@@ -502,7 +510,7 @@ class Condition_Events:
                                 possible_conditions.append(x)
                         if len(possible_conditions) > 0 and not int(
                             random.random()
-                            * game.config["condition_related"][
+                            * constants.CONFIG["condition_related"][
                                 "permanent_condition_chance"
                             ]
                         ):
@@ -558,7 +566,7 @@ class Condition_Events:
         # making a copy, so we can iterate through copy and modify the real dict at the same time
         illnesses = deepcopy(cat.illnesses)
         for illness in illnesses:
-            if illness in game.switches["skip_conditions"]:
+            if illness in switch_get_value(Switch.skip_conditions):
                 continue
 
             # moon skip to try and kill or heal cat
@@ -614,7 +622,7 @@ class Condition_Events:
             # heal the cat
             elif cat.healed_condition is True:
                 cat.history.remove_possible_history(illness)
-                game.switches["skip_conditions"].append(illness)
+                switch_append_list_value(Switch.skip_conditions, illness)
                 # gather potential event strings for healed illness
                 possible_string_list = Condition_Events.ILLNESS_HEALED_STRINGS[illness]
 
@@ -669,7 +677,7 @@ class Condition_Events:
 
         injuries = deepcopy(cat.injuries)
         for injury in injuries:
-            if injury in game.switches["skip_conditions"]:
+            if injury in switch_get_value(Switch.skip_conditions):
                 continue
 
             skipped = cat.moon_skip_injury(injury)
@@ -718,7 +726,7 @@ class Condition_Events:
                 break
 
             elif cat.healed_condition is True:
-                game.switches["skip_conditions"].append(injury)
+                switch_append_list_value(Switch.skip_conditions, injury)
                 triggered = True
 
                 # Try to give a scar, and get the event text to be displayed
@@ -982,7 +990,7 @@ class Condition_Events:
 
     @staticmethod
     def determine_retirement(cat, triggered):
-        if game.clan.clan_settings["retirement"] or cat.no_retire:
+        if get_clan_setting("retirement") or cat.no_retire:
             return
 
         if (
@@ -1180,7 +1188,7 @@ class Condition_Events:
                 event_list.append(event)
 
                 # we add the condition to this game switch, this is so we can ensure it's skipped over for this moon
-                game.switches["skip_conditions"].append(new_condition_name)
+                switch_append_list_value(Switch.skip_conditions, new_condition_name)
                 # here we give the new condition
                 if new_condition_name in Condition_Events.INJURIES:
                     cat.get_injured(new_condition_name, event_triggered=event_triggered)

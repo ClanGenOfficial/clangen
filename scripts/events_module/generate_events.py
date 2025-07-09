@@ -6,6 +6,9 @@ import ujson
 
 from scripts.events_module.event_filters import event_for_reputation, event_for_cat
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
+from scripts.events_module.short.short_event import ShortEvent
+from scripts.game_structure import constants
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 
@@ -122,7 +125,7 @@ class GenerateEvents:
     def possible_ongoing_events(event_type=None, specific_event=None):
         event_list = []
 
-        if game.clan.biome not in game.clan.BIOME_TYPES:
+        if game.clan.biome not in constants.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?"
             )

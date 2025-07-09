@@ -16,6 +16,9 @@ from scripts.utility import (
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
+from ..clan_package.settings import get_clan_setting
+from ..game_structure.game.settings import game_setting_get
+from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..cat.enums import CatGroup
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import SaveAsImage
@@ -60,13 +63,13 @@ class SpriteInspectScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switch_set_value(Switch.cat, self.next_cat)
                     self.cat_setup()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switch_set_value(Switch.cat, self.previous_cat)
                     self.cat_setup()
                 else:
                     print("invalid previous cat", self.previous_cat)
@@ -214,10 +217,7 @@ class SpriteInspectScreen(Screens):
             starting_height=2,
         )
 
-        if game.clan.clan_settings["backgrounds"]:
-            self.platform_shown = True
-        else:
-            self.platform_shown = False
+        self.platform_shown = get_clan_setting("backgrounds")
 
         self.cat_setup()
 
@@ -227,7 +227,7 @@ class SpriteInspectScreen(Screens):
             self.cat_elements[ele].kill()
         self.cat_elements = {}
 
-        self.the_cat = Cat.fetch_cat(game.switches["cat"])
+        self.the_cat = Cat.fetch_cat(switch_get_value(Switch.cat))
 
         self.cat_elements["platform"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((120, 100), (560, 490))),
@@ -460,10 +460,10 @@ class SpriteInspectScreen(Screens):
             self.previous_life_stage.enable()
 
     def get_platform(self):
-        the_cat = Cat.all_cats.get(game.switches["cat"], game.clan.instructor)
+        the_cat = Cat.all_cats.get(switch_get_value(Switch.cat), game.clan.instructor)
 
         light_dark = "light"
-        if game.settings["dark mode"]:
+        if game_setting_get("dark mode"):
             light_dark = "dark"
 
         available_biome = ["Forest", "Mountainous", "Plains", "Beach"]

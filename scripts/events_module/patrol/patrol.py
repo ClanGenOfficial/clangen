@@ -13,10 +13,12 @@ import pygame
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank
 from scripts.clan import Clan
+from scripts.clan_package.settings import get_clan_setting
 from scripts.events_module.event_filters import event_for_tags
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
-from scripts.game_structure import localization
+from scripts.game_structure import localization, constants
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
@@ -91,8 +93,8 @@ class Patrol:
         self.add_patrol_cats(patrol_cats, game.clan)
 
         self.debug_patrol = (
-            game.config["patrol_generation"]["debug_ensure_patrol_id"]
-            if game.config["patrol_generation"]["debug_ensure_patrol_id"]
+            constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]
+            if constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]
             else False
         )
 
@@ -105,7 +107,7 @@ class Patrol:
             ).casefold(),
             str(game.clan.camp_bg).casefold(),
             patrol_type,
-            game.settings.get("disasters"),
+            get_clan_setting("disasters"),
         )
 
         print(
@@ -279,7 +281,7 @@ class Patrol:
         game_setting_disaster = (
             game_setting_disaster
             if game_setting_disaster is not None
-            else game.clan.clan_settings["disasters"]
+            else get_clan_setting("disasters")
         )
         season = current_season.lower()
         leaf = f"{season}"
@@ -288,9 +290,11 @@ class Patrol:
 
         possible_patrols = []
         # This is for debugging purposes, load-in *ALL* the possible patrols when debug_override_patrol_stat_requirements is true. (May require longer loading time)
-        if game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]:
+        if constants.CONFIG["patrol_generation"][
+            "debug_override_patrol_stat_requirements"
+        ]:
             leaves = ["greenleaf", "leaf-bare", "leaf-fall", "newleaf", "any"]
-            for biome in game.clan.BIOME_TYPES:
+            for biome in constants.BIOME_TYPES:
                 for leaf in leaves:
                     biome_dir = f"{biome.lower()}/"
                     self.update_resources(biome_dir, leaf)
@@ -447,7 +451,9 @@ class Patrol:
         )
 
         # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc.
-        if game.config["patrol_generation"]["debug_override_patrol_stat_requirements"]:
+        if constants.CONFIG["patrol_generation"][
+            "debug_override_patrol_stat_requirements"
+        ]:
             final_patrols = final_romance_patrols = possible_patrols
             # Logging
             print(
@@ -463,7 +469,7 @@ class Patrol:
                     final_patrols = final_romance_patrols = [_pat]
                     print(
                         f"debug_ensure_patrol_id: "
-                        f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
+                        f'"{constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]}" '
                         f"is a possible {patrol_type} patrol, and was set as the only "
                         f"{patrol_type} patrol option"
                     )
@@ -471,7 +477,7 @@ class Patrol:
             else:
                 print(
                     f"debug_ensure_patrol_id: "
-                    f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
+                    f'"{constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]}" '
                     f"is not found. Check output for reason."
                 )
         return final_patrols, final_romance_patrols
@@ -537,7 +543,7 @@ class Patrol:
             return False
 
         print("attempted romance between:", love1.name, love2.name)
-        chance_of_romance_patrol = game.config["patrol_generation"][
+        chance_of_romance_patrol = constants.CONFIG["patrol_generation"][
             "chance_of_romance_patrol"
         ]
 
@@ -595,7 +601,7 @@ class Patrol:
             # Don't check for repeat patrols if ensure_patrol_id is being used.
             if (
                 not isinstance(
-                    game.config["patrol_generation"]["debug_ensure_patrol_id"], str
+                    constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"], str
                 )
                 and patrol.patrol_id in self.used_patrols
             ):
@@ -818,7 +824,7 @@ class Patrol:
 
         patrol_size = len(self.patrol_cats)
         total_exp = sum([x.experience for x in self.patrol_cats])
-        gm_modifier = game.config["patrol_generation"][
+        gm_modifier = constants.CONFIG["patrol_generation"][
             f"{game.clan.game_mode}_difficulty_modifier"
         ]
 
@@ -842,21 +848,21 @@ class Patrol:
         for kitty in self.patrol_cats:
             hits = kitty.skills.check_skill_requirement_list(success_outcome.stat_skill)
             success_chance += (
-                hits * game.config["patrol_generation"]["win_stat_cat_modifier"]
+                hits * constants.CONFIG["patrol_generation"]["win_stat_cat_modifier"]
             )
 
             hits = kitty.skills.check_skill_requirement_list(fail_outcome.stat_skill)
             success_chance -= (
-                hits * game.config["patrol_generation"]["fail_stat_cat_modifier"]
+                hits * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
             )
 
             if kitty.personality.trait in success_outcome.stat_trait:
-                success_chance += game.config["patrol_generation"][
+                success_chance += constants.CONFIG["patrol_generation"][
                     "win_stat_cat_modifier"
                 ]
 
             if kitty.personality.trait in fail_outcome.stat_trait:
-                success_chance += game.config["patrol_generation"][
+                success_chance += constants.CONFIG["patrol_generation"][
                     "fail_stat_cat_modifier"
                 ]
 
@@ -872,9 +878,11 @@ class Patrol:
 
         # This is a debug option, this will forcefully change the outcome of a patrol
         if isinstance(
-            game.config["patrol_generation"]["debug_ensure_patrol_outcome"], bool
+            constants.CONFIG["patrol_generation"]["debug_ensure_patrol_outcome"], bool
         ):
-            success = game.config["patrol_generation"]["debug_ensure_patrol_outcome"]
+            success = constants.CONFIG["patrol_generation"][
+                "debug_ensure_patrol_outcome"
+            ]
             # Logging
             print(
                 f"The outcome of {self.patrol_event.patrol_id} was altered to {success}"
@@ -997,7 +1005,7 @@ class Patrol:
 
         root_dir = "resources/images/patrol_art/"
 
-        if game.settings.get("gore") and self.patrol_event.patrol_art_clean:
+        if game_setting_get("gore") and self.patrol_event.patrol_art_clean:
             file_name = self.patrol_event.patrol_art_clean
         else:
             file_name = self.patrol_event.patrol_art

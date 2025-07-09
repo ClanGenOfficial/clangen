@@ -933,3 +933,6 @@ with open(
     encoding="utf-8",
 ) as read_file:
     CONDITIONS_ALLOWED = ujson.loads(read_file.read())
+
+    def __repr__(self):
+        return f"{self.event_id} ({self.sub_type})"

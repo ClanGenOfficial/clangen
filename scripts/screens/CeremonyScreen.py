@@ -4,13 +4,12 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.ui_elements import UISurfaceImageButton
 from scripts.utility import get_text_box_theme
 from scripts.utility import ui_scale
 from .Screens import Screens
-from ..cat.enums import CatRank
-from ..cat.history import History
+from ..game_structure.game.settings import game_setting_get
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
@@ -30,7 +29,7 @@ class CeremonyScreen(Screens):
         self.hide_menu_buttons()
         self.show_mute_buttons()
 
-        self.the_cat = Cat.all_cats.get(game.switches["cat"])
+        self.the_cat = Cat.all_cats.get(switch_get_value(Switch.cat), "")
 
         if self.the_cat.status.is_leader:
             self.header = pygame_gui.elements.UITextBox(
@@ -101,7 +100,7 @@ class CeremonyScreen(Screens):
             else:
                 self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("profile screen")
         return
