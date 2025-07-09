@@ -37,7 +37,7 @@ def get_short_event_dicts(file_path):
             get_resource_directory() + file_path, "r", encoding="utf-8"
         ) as read_file:
             events = ujson.loads(read_file.read())
-    except:
+    except ValueError:
         try:
             with open(
                 get_resource_directory(fallback=True) + file_path,
@@ -45,7 +45,7 @@ def get_short_event_dicts(file_path):
                 encoding="utf-8",
             ) as read_file:
                 events = ujson.loads(read_file.read())
-        except:
+        except ValueError:
             print(f"ERROR: Unable to load {file_path}.")
             return None
 
@@ -132,7 +132,7 @@ def generate_short_events(event_triggered, biome):
             # Add to loaded events.
             loaded_events[file_path] = event_list
             return event_list
-    except:
+    except ValueError:
         print(f"WARNING: {file_path} was not found, check short event generation")
 
 
