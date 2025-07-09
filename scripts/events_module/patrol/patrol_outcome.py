@@ -313,7 +313,6 @@ class PatrolOutcome:
             possible_cats[f"n_c:{x}"] = newbie
 
         prep_future_event(
-            Cat,
             event=self,
             event_id=patrol.patrol_event.patrol_id,
             possible_cats=possible_cats,
