@@ -161,7 +161,7 @@ class TestReset(unittest.TestCase):
         test.types = ["type1", "type2"]
         test.sub_types = ["type1", "type2"]
         test.text = "text"
-        test.all_involved_cat_objects = ["cat1", "cat2"]
+        test.all_involved_cat_ids = ["cat1", "cat2"]
         test.main_cat = "main cat"
         test.random_cat = "random cat"
         test.new_cats = ["cat1", "cat2"]
@@ -184,9 +184,7 @@ class TestReset(unittest.TestCase):
         self.assertEqual(test.types, default.types)
         self.assertEqual(test.sub_types, default.sub_types)
         self.assertEqual(test.text, default.text)
-        self.assertEqual(
-            test.all_involved_cat_objects, default.all_involved_cat_objects
-        )
+        self.assertEqual(test.all_involved_cat_ids, default.all_involved_cat_ids)
         self.assertEqual(test.main_cat, default.main_cat)
         self.assertEqual(test.random_cat, default.random_cat)
         self.assertEqual(test.new_cats, default.new_cats)
