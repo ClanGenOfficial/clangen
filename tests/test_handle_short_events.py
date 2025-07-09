@@ -1,10 +1,13 @@
 import os
 import unittest
 
+from scripts.events_module.short.short_event import ShortEvent
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
+from scripts.cat.pelts import Pelt
 
 
 class TestHandleEvent(unittest.TestCase):
@@ -16,28 +19,10 @@ class TestHandleNewCats(unittest.TestCase):
 
 
 class TestHandleAccessories(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        # Mock classes
-        cls.event_class = type("EventClass", (), dict(new_accessory=[]))
-        cls.pelt_class = type(
-            "PeltClass",
-            (),
-            dict(
-                wild_accessories=["WILD1", "WILD2"],
-                plant_accessories=["PLANT1", "PLANT2"],
-                collars=["COLLAR1", "COLLAR2"],
-                head_accessories=["HEAD1", "HEAD2"],
-                body_accessories=["BODY1", "BODY2"],
-                tail_accessories=["TAIL1", "TAIL2"],
-            ),
-        )
-
     def setUp(self):
-        self.test = HandleShortEvents()
-        self.test.chosen_event = self.event_class()
-        self.test.main_cat = Cat()
-        self.pelts = self.pelt_class()
+        self.chosen_event = ShortEvent(event_id="test", new_accessory=["TEST"])
+        self.chosen_event.main_cat = Cat()
+        self.pelts = Pelt
 
     def assert_intersection(self, a, b):
         """assert that the intersection of iterables a and b is non-empty"""
@@ -45,52 +30,69 @@ class TestHandleAccessories(unittest.TestCase):
         self.assertTrue(set(a) & set(b))
 
     def test_misc_appended_to_types(self):
-        self.test.types = []
+        self.chosen_event.types = []
 
-        self.test.handle_accessories()
-        self.assertIn("misc", self.test.types)
+        self.chosen_event.execute_event()
+        self.assertIn("misc", self.chosen_event.types)
 
     def test_cat_gets_test_accessory(self):
-        self.test.chosen_event.new_accessory = ["TEST"]
-
-        self.test.handle_accessories()
-        self.assertEqual(self.test.main_cat.pelt.accessory, ["TEST"])
+        self.chosen_event.execute_event()
+        self.assertEqual(self.chosen_event.main_cat.pelt.accessory, ["TEST"])
 
     def test_cat_gets_random_wild_accessory(self):
-        self.test.chosen_event.new_accessory = ["WILD"]
+        self.chosen_event.new_accessory = ["WILD"]
 
-        self.test.handle_accessories(pelts=self.pelt_class)
+        self.chosen_event.execute_event()
         self.assert_intersection(
-            self.test.main_cat.pelt.accessory, self.pelts.wild_accessories
+            self.chosen_event.main_cat.pelt.accessory, self.pelts.wild_accessories
         )
 
     def test_cat_gets_random_plant_accessory(self):
-        self.test.chosen_event.new_accessory = ["PLANT"]
+        self.chosen_event.new_accessory = ["PLANT"]
 
-        self.test.handle_accessories(pelts=self.pelt_class)
+        self.chosen_event.execute_event()
         self.assert_intersection(
-            self.test.main_cat.pelt.accessory, self.pelts.plant_accessories
+            self.chosen_event.main_cat.pelt.accessory, self.pelts.plant_accessories
         )
 
     def test_cat_gets_random_collar_accessory(self):
-        self.test.chosen_event.new_accessory = ["COLLAR"]
+        self.chosen_event.new_accessory = ["COLLAR"]
 
-        self.test.handle_accessories(pelts=self.pelt_class)
-        self.assert_intersection(self.test.main_cat.pelt.accessory, self.pelts.collars)
+        self.chosen_event.execute_event()
+        self.assert_intersection(
+            self.chosen_event.main_cat.pelt.accessory, self.pelts.collars
+        )
 
     def test_notail_cats_do_not_get_tail_accessories(self):
-        self.test.chosen_event.new_accessory = self.pelts.tail_accessories
-        self.test.main_cat.pelt.scars = "NOTAIL"
+        self.chosen_event.new_accessory = self.pelts.tail_accessories
+        self.chosen_event.main_cat.pelt.scars = "NOTAIL"
 
-        self.test.handle_accessories(pelts=self.pelt_class)
-        self.assertFalse(self.test.main_cat.pelt.accessory)
+        self.chosen_event.execute_event()
+        self.assertFalse(self.chosen_event.main_cat.pelt.accessory)
 
     def test_halftail_cats_do_not_get_tail_accessories(self):
-        self.test.chosen_event.new_accessory = self.pelts.tail_accessories
-        self.test.main_cat.pelt.scars = "HALFTAIL"
+        self.chosen_event.new_accessory = self.pelts.tail_accessories
+        self.chosen_event.main_cat.pelt.scars = "HALFTAIL"
 
-        self.test.handle_accessories(pelts=self.pelt_class)
-        self.assertFalse(self.test.main_cat.pelt.accessory)
+        self.chosen_event.execute_event()
+        self.assertFalse(self.chosen_event.main_cat.pelt.accessory)
+
+
+class TestHandleTransition(unittest.TestCase):
+    def setUp(self):
+        self.chosen_event = ShortEvent(
+            event_id="test",
+            sub_type=["transition"],
+            new_gender=["trans male", "nonbinary"],
+        )
+        self.chosen_event.main_cat = Cat(gender="female")
+
+    def test_cat_transitions(self):
+        self.chosen_event.execute_event()
+
+        self.assertTrue(
+            self.chosen_event.main_cat.genderalign != self.chosen_event.main_cat.gender
+        )
 
 
 class TestHandleDeath(unittest.TestCase):
@@ -106,7 +108,39 @@ class TestHandleDeathHistory(unittest.TestCase):
 
 
 class TestHandleInjury(unittest.TestCase):
-    pass
+    def setUp(self):
+        self.chosen_event = ShortEvent(
+            event_id="test",
+            r_c={"age": "any"},
+            injury=[{"cats": ["m_c"], "injuries": ["scrapes"]}],
+        )
+        self.chosen_event.main_cat = Cat()
+        self.chosen_event.random_cat = Cat()
+
+    def test_types(self):
+        self.chosen_event.execute_event()
+
+        self.assertTrue("health" in self.chosen_event.types)
+
+    def test_mc_injured(self):
+        self.chosen_event.execute_event()
+
+        self.assertTrue("scrapes" in self.chosen_event.main_cat.injuries)
+        self.assertFalse("scrapes" in self.chosen_event.random_cat.injuries)
+
+    def test_rc_injured(self):
+        self.chosen_event.injury[0]["cats"] = ["r_c"]
+        self.chosen_event.execute_event()
+
+        self.assertTrue("scrapes" in self.chosen_event.random_cat.injuries)
+        self.assertFalse("scrapes" in self.chosen_event.main_cat.injuries)
+
+    def test_both_injured(self):
+        self.chosen_event.injury[0]["cats"].append("r_c")
+        self.chosen_event.execute_event()
+
+        self.assertTrue("scrapes" in self.chosen_event.random_cat.injuries)
+        self.assertTrue("scrapes" in self.chosen_event.main_cat.injuries)
 
 
 class TestHandleInjuryHistory(unittest.TestCase):
@@ -119,82 +153,3 @@ class TestHandleFreshkillSupply(unittest.TestCase):
 
 class TestHandleHerbSupply(unittest.TestCase):
     pass
-
-
-class TestReset(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        # Mock class
-        cls.handle = type(
-            "HandleShortEventsClass",
-            (),
-            dict(
-                herb_notice=None,
-                types=[],
-                sub_types=[],
-                text=None,
-                involved_cats=[],
-                main_cat=None,
-                random_cat=None,
-                new_cat_objects=[],
-                new_cats=[],
-                victim_cat=None,
-                murder_index=None,
-                multi_cat=[],
-                dead_cats=[],
-                chosen_herb=None,
-                other_clan=None,
-                other_clan_name=None,
-                chosen_event=None,
-                additional_event_text="",
-            ),
-        )
-
-    def test_reset_resets_all_attributes_to_default_values(self):
-        default = self.handle()
-        test = self.handle()
-        # Check these are 2 separate instances
-        self.assertNotEqual(test, default)
-
-        # Given
-        test.herb_notice = "herb notice"
-        test.types = ["type1", "type2"]
-        test.sub_types = ["type1", "type2"]
-        test.text = "text"
-        test.all_involved_cat_ids = ["cat1", "cat2"]
-        test.main_cat = "main cat"
-        test.random_cat = "random cat"
-        test.new_cats = ["cat1", "cat2"]
-        test.new_cats = [[Cat()]]
-        test.victim_cat = "victim cat"
-        test.murder_index = "murder index"
-        test.multi_cat = ["cat1", "cat2"]
-        test.dead_cat_objects = ["cat1", "cat2"]
-        test.chosen_herb = "chosen herb"
-        test.other_clan = "other clan"
-        test.other_clan_name = "other clan name"
-        test.chosen_event = "chosen event"
-        test.additional_event_text = "additional event text"
-
-        # When
-        HandleShortEvents.reset(test)
-
-        # Then
-        self.assertEqual(test.herb_notice, default.herb_notice)
-        self.assertEqual(test.types, default.types)
-        self.assertEqual(test.sub_types, default.sub_types)
-        self.assertEqual(test.text, default.text)
-        self.assertEqual(test.all_involved_cat_ids, default.all_involved_cat_ids)
-        self.assertEqual(test.main_cat, default.main_cat)
-        self.assertEqual(test.random_cat, default.random_cat)
-        self.assertEqual(test.new_cats, default.new_cats)
-        self.assertEqual(test.new_cats, default.new_cats)
-        self.assertEqual(test.victim_cat, default.victim_cat)
-        self.assertEqual(test.murder_index, default.murder_index)
-        self.assertEqual(test.multi_cat, default.multi_cat)
-        self.assertEqual(test.dead_cat_objects, default.dead_cat_objects)
-        self.assertEqual(test.chosen_herb, default.chosen_herb)
-        self.assertEqual(test.other_clan, default.other_clan)
-        self.assertEqual(test.other_clan_name, default.other_clan_name)
-        self.assertEqual(test.chosen_event, default.chosen_event)
-        self.assertEqual(test.additional_event_text, default.additional_event_text)

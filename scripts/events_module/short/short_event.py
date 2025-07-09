@@ -162,7 +162,10 @@ class ShortEvent:
         self.main_cat: Optional[Cat] = None
         self.random_cat: Optional[Cat] = None
         self.victim_cat: Optional[Cat] = None
-        self.new_cats: list[Optional[Cat]] = []
+        self.new_cats: list[list[Optional[Cat]]] = []
+        """
+        Because litters are generated as a "single" new cat, this list contains lists of cat objects. These lists will have a single object inside unless it was the result of a litter generation.
+        """
         self.multi_cat_objects: list[Optional[Cat]] = []
         self.dead_cat_objects: list[Optional[Cat]] = []
 
@@ -173,9 +176,14 @@ class ShortEvent:
         self.chosen_herb: str = ""
         self.herb_notice: str = ""
 
-    def execute_event(self, other_clan):
+    def execute_event(self, other_clan=None):
+        """
+        Handles the execution of this event.
+        :param other_clan: the object for the other clan involved in this event
+        """
         self.additional_event_text = ""
-        self.other_clan_name = f"{other_clan.name}Clan"
+        if other_clan:
+            self.other_clan_name = f"{other_clan.name}Clan"
 
         self.all_involved_cat_ids.append(self.main_cat.ID)
         if self.random_cat:
@@ -189,7 +197,7 @@ class ShortEvent:
 
         # checking if a mass death should happen, happens here so that we can toss the event if needed
         if "mass_death" in self.sub_type:
-            if not game.clan.clan_settings["disasters"]:
+            if game.clan and not game.clan.clan_settings["disasters"]:
                 return
             self.handle_mass_death()
             if len(self.multi_cat_objects) <= 2:
@@ -206,7 +214,7 @@ class ShortEvent:
 
         for index, n_c in enumerate(self.new_cats):
             if f"n_c:{index}" in self.exclude_involved:
-                self.all_involved_cat_ids.remove(n_c.ID)
+                self.all_involved_cat_ids.remove(n_c[0].ID)
 
         # give accessory
         if self.new_accessory:
@@ -333,7 +341,7 @@ class ShortEvent:
         }
 
         for x, newbie in enumerate(self.new_cats):
-            possible_cats[f"n_c:{x}"] = newbie
+            possible_cats[f"n_c:{x}"] = newbie[0]
 
         prep_future_event(
             event=self,
@@ -366,14 +374,14 @@ class ShortEvent:
             )
 
             # check if we want to add some extra info to the event text and if we need to welcome
-            for cat in self.new_cats[-1]:
-                if cat.dead:
+            for cat in self.new_cats:
+                if cat[0].dead:
                     extra_text = event_text_adjust(
                         Cat,
                         i18n.t("defaults.event_dead_outsider"),
-                        main_cat=cat,
+                        main_cat=cat[0],
                     )
-                elif cat.status.is_outsider:
+                elif cat[0].status.is_outsider:
                     n_c_index = self.new_cats.index(cat)
                     if (
                         f"n_c:{n_c_index}" in self.exclude_involved
@@ -384,32 +392,39 @@ class ShortEvent:
                         extra_text = event_text_adjust(
                             Cat,
                             i18n.t("defaults.event_met_outsider"),
-                            main_cat=cat,
+                            main_cat=cat[0],
                         )
                 else:
-                    Relation_Events.welcome_new_cat_objects([cat])
-                self.all_involved_cat_ids.append(cat.ID)
+                    Relation_Events.welcome_new_cat_objects([cat[0]])
+                self.all_involved_cat_ids.append(cat[0].ID)
                 self.new_cats.append(cat)
 
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed and give the condition
         for possible_kitten in self.new_cats:
-            if possible_kitten.moons < 3:
+            if possible_kitten[0].moons < 3:
                 # search for parent
                 for possible_parent in self.new_cats:
-                    if possible_parent == possible_kitten:
+                    if possible_parent[0] == possible_kitten[0]:
                         continue
-                    if not possible_parent.gender == "female" and not game.clan.clan_settings["same sex birth"]:
+                    if (
+                        not possible_parent[0].gender == "female"
+                        and not game.clan.clan_settings["same sex birth"]
+                    ):
                         continue
-                    if possible_parent in (possible_kitten.parent1, possible_kitten.parent2) and possible_parent.status.alive_in_player_clan:
-                        possible_parent.get_injured("recovering from birth")
+                    if (
+                        possible_parent[0]
+                        in (possible_kitten[0].parent1, possible_kitten[0].parent2)
+                        and possible_parent[0].status.alive_in_player_clan
+                    ):
+                        possible_parent[0].get_injured("recovering from birth")
                         # only one parent gives birth, so we break
                         break
 
         if extra_text and extra_text not in self.text:
             self.text = self.text + " " + extra_text
 
-    def handle_accessories(self, pelts=Pelt):
+    def handle_accessories(self):
         """
         handles giving accessories to the main_cat
         """
@@ -418,11 +433,11 @@ class ShortEvent:
         acc_list = []
         possible_accs = getattr(self, "new_accessory", [])
         if "WILD" in possible_accs:
-            acc_list.extend(pelts.wild_accessories)
+            acc_list.extend(Pelt.wild_accessories)
         if "PLANT" in possible_accs:
-            acc_list.extend(pelts.plant_accessories)
+            acc_list.extend(Pelt.plant_accessories)
         if "COLLAR" in possible_accs:
-            acc_list.extend(pelts.collars)
+            acc_list.extend(Pelt.collars)
 
         for acc in possible_accs:
             if acc not in ("WILD", "PLANT", "COLLAR"):
@@ -433,15 +448,15 @@ class ShortEvent:
                 "NOTAIL" in self.main_cat.pelt.scars
                 or "HALFTAIL" in self.main_cat.pelt.scars
             ):
-                for acc in pelts.tail_accessories:
+                for acc in Pelt.tail_accessories:
                     if acc in acc_list:
                         acc_list.remove(acc)
 
         accessory_groups = [
-            pelts.collars,
-            pelts.head_accessories,
-            pelts.tail_accessories,
-            pelts.body_accessories,
+            Pelt.collars,
+            Pelt.head_accessories,
+            Pelt.tail_accessories,
+            Pelt.body_accessories,
         ]
         if self.main_cat.pelt.accessory:
             for acc in self.main_cat.pelt.accessory:
@@ -480,6 +495,10 @@ class ShortEvent:
         """
         handles killing/murdering cats
         """
+        if not game.clan:
+            # test catch
+            return
+
         dead_list = self.dead_cat_objects if self.dead_cat_objects else []
         self.leads_current_life_count = int(game.clan.leader_lives)
 
