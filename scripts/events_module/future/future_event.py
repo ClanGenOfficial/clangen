@@ -1,6 +1,3 @@
-from scripts.cat.cats import Cat
-
-
 class FutureEvent:
     def __init__(
         self,

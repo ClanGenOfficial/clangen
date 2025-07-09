@@ -19,6 +19,8 @@ from scripts.events_module.event_filters import (
     event_for_season,
 )
 from scripts.events_module.short.short_event import ShortEvent
+from scripts.game_structure import constants
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_living_clan_cat_count, get_warring_clan
 
@@ -57,7 +59,7 @@ def find_possible_short_events(event_type=None):
     temp_biome = (
         game.clan.biome if not game.clan.override_biome else game.clan.override_biome
     )
-    if temp_biome not in game.clan.BIOME_TYPES:
+    if temp_biome not in constants.BIOME_TYPES:
         print(
             f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
             f"in clan.py?"
@@ -175,8 +177,9 @@ def filter_possible_short_events(
 
         # ensure ID and requirements override
         if (
-            event.event_id == game.config["event_generation"]["debug_ensure_event_id"]
-            and game.config["event_generation"]["debug_override_requirements"]
+            event.event_id
+            == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+            and constants.CONFIG["event_generation"]["debug_override_requirements"]
         ):
             final_events.append(event)
             break
@@ -205,13 +208,13 @@ def filter_possible_short_events(
         # check for old age
         if (
             "old_age" in event.sub_type
-            and cat.moons < game.config["death_related"]["old_age_death_start"]
+            and cat.moons < constants.CONFIG["death_related"]["old_age_death_start"]
         ):
             continue
         # remove some non-old age events to encourage elders to die of old age more often
         if (
             "old_age" not in event.sub_type
-            and cat.moons > game.config["death_related"]["old_age_death_start"]
+            and cat.moons > constants.CONFIG["death_related"]["old_age_death_start"]
             and int(random.random() * 3)
         ):
             continue
@@ -256,7 +259,7 @@ def filter_possible_short_events(
             # during a war we want to encourage the clans to have positive events
             # when the overall war notice was positive
             if "war" in event.sub_type:
-                rel_change_type = game.switches["war_rel_change_type"]
+                rel_change_type = switch_get_value(Switch.war_rel_change_type)
                 if event.other_clan["changed"] < 0 and rel_change_type != "rel_down":
                     continue
 
@@ -296,7 +299,10 @@ def filter_possible_short_events(
                 continue
 
         # ensure ID without requirements override
-        if event.event_id == game.config["event_generation"]["debug_ensure_event_id"]:
+        if (
+            event.event_id
+            == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+        ):
             final_events.append(event)
             break
 
@@ -325,7 +331,7 @@ def create_short_event(
     # check for war and assign other_clan accordingly
     war_chance = 5
     # if the war didn't go badly, then we decrease the chance of this event being war-focused
-    if game.switches["war_rel_change_type"] != "rel_down":
+    if switch_get_value(Switch.war_rel_change_type) != "rel_down":
         war_chance = 2
     if game.clan.war.get("at_war", False) and random.randint(1, war_chance) != 1:
         enemy_clan = get_warring_clan()
@@ -352,24 +358,24 @@ def create_short_event(
         excluded_events=future_event.excluded_events if future_event else None,
         ignore_subtyping=future_event.negate_subtyping if future_event else None,
     )
-    if isinstance(game.config["event_generation"]["debug_ensure_event_id"], str):
+    if isinstance(constants.CONFIG["event_generation"]["debug_ensure_event_id"], str):
         found = False
         for _event in final_events:
             if (
                 _event.event_id
-                == game.config["event_generation"]["debug_ensure_event_id"]
+                == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
             ):
                 final_events = [_event]
                 print(
-                    f"FOUND debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                    f"FOUND debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
                     f"was set as the only event option"
                 )
                 found = True
                 break
         if not found:
             # this print is very spammy, but can be helpful if unsure why a debug event isn't triggering
-            # print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
-            #      f"was not possible for {self.main_cat.name}.  {self.main_cat.name} was looking for a {event_type}: {self.sub_types} event")
+            # print(f"debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
+            #      f"was not possible for {main_cat.name}.  {main_cat.name} was looking for a {event_type}: {sub_types} event")
             pass
 
     try:
@@ -390,7 +396,7 @@ def create_short_event(
         chosen_event.execute_event(other_clan)
 
         # this print is good for testing, but gets spammy in large clans
-        # print(f"CHOSEN: {self.chosen_event.event_id}")
+        # print(f"CHOSEN: {chosen_event.event_id}")
     except IndexError:
         # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
         print(

@@ -14,12 +14,7 @@ from scripts.cat.skills import SkillPath
 from scripts.events_module.short.condition_events import Condition_Events
 
 from scripts.events_module.short.scar_events import Scar_Events
-from scripts.events_module.short.short_event import (
-    INJURY_GROUPS,
-    CONDITIONS_ALLOWED,
-    ShortEvent,
-)
-from scripts.game_structure import image_cache
+from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import get_default_pronouns
@@ -154,7 +149,7 @@ class EventEditScreen(Screens):
 
     all_injury_pools: dict = constants.INJURY_GROUPS
     """Dict of all injury pools. Key is pool name, value is the injuries within the pool."""
-    all_possible_injuries: list =  constants.EVENT_ALLOWED_CONDITIONS
+    all_possible_injuries: list = constants.EVENT_ALLOWED_CONDITIONS
     """List of all possible injuries/conditions."""
     fatal_conditions: list = []
     """We need this for death history validity checking. This is a list of all conditions that can kill."""

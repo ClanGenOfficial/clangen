@@ -8,12 +8,13 @@ from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
+from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_resources.herb.herb import HERBS
 from scripts.clan_resources.supply import Supply
 from scripts.event_class import Single_Event
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship.relation_events import Relation_Events
-from scripts.game_structure import localization
+from scripts.game_structure import localization, constants
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     create_new_cat_block,
@@ -194,7 +195,7 @@ class ShortEvent:
             self.all_involved_cat_ids.append(self.victim_cat.ID)
         # checking if a mass death should happen, happens here so that we can toss the event if needed
         if "mass_death" in self.sub_type:
-            if game.clan and not game.clan.clan_settings["disasters"]:
+            if game.clan and not get_clan_setting("disasters"):
                 return
             self.handle_mass_death()
             if len(self.multi_cat_objects) <= 2:
@@ -404,10 +405,9 @@ class ShortEvent:
                 for possible_parent in self.new_cats:
                     if possible_parent[0] == possible_kitten[0]:
                         continue
-                    if (
-                        not possible_parent[0].gender == "female"
-                        and not game.clan.clan_settings["same sex birth"]
-                    ):
+                    if not possible_parent[
+                        0
+                    ].gender == "female" and not get_clan_setting("same sex birth"):
                         continue
                     if (
                         possible_parent[0]
@@ -738,8 +738,8 @@ class ShortEvent:
             # find all possible injuries
             possible_injuries = []
             for injury in block["injuries"]:
-                if injury in INJURY_GROUPS:
-                    possible_injuries.extend(INJURY_GROUPS[injury])
+                if injury in constants.INJURY_GROUPS:
+                    possible_injuries.extend(constants.INJURY_GROUPS[injury])
                 else:
                     possible_injuries.append(injury)
 
@@ -920,19 +920,6 @@ class ShortEvent:
             self.herb_notice = i18n.t(
                 "screens.med_den.gain_event", herbs=adjust_list_text(herb_list)
             )
-
-
-with open(
-    "resources/dicts/conditions/injury_groups.json", "r", encoding="utf-8"
-) as read_file:
-    INJURY_GROUPS = ujson.loads(read_file.read())
-
-with open(
-    "resources/dicts/conditions/conditions_allowed_in_events.json",
-    "r",
-    encoding="utf-8",
-) as read_file:
-    CONDITIONS_ALLOWED = ujson.loads(read_file.read())
 
     def __repr__(self):
         return f"{self.event_id} ({self.sub_type})"

@@ -6,9 +6,7 @@ import ujson
 
 from scripts.events_module.event_filters import event_for_reputation, event_for_cat
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
-from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants
-from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 
