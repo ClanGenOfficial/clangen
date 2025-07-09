@@ -193,6 +193,7 @@ class ShortEvent:
             self.all_involved_cat_ids.append(self.random_cat.ID)
         if self.victim_cat:
             self.all_involved_cat_ids.append(self.victim_cat.ID)
+            
         # checking if a mass death should happen, happens here so that we can toss the event if needed
         if "mass_death" in self.sub_type:
             if game.clan and not get_clan_setting("disasters"):
@@ -373,13 +374,14 @@ class ShortEvent:
 
             # check if we want to add some extra info to the event text and if we need to welcome
             for cat in self.new_cats:
-                if cat[0].dead:
+                first_cat = cat[0]
+                if first_cat.dead:
                     extra_text = event_text_adjust(
                         Cat,
                         i18n.t("defaults.event_dead_outsider"),
-                        main_cat=cat[0],
+                        main_cat=first_cat,
                     )
-                elif cat[0].status.is_outsider:
+                elif first_cat.status.is_outsider:
                     n_c_index = self.new_cats.index(cat)
                     if (
                         f"n_c:{n_c_index}" in self.exclude_involved
@@ -390,31 +392,32 @@ class ShortEvent:
                         extra_text = event_text_adjust(
                             Cat,
                             i18n.t("defaults.event_met_outsider"),
-                            main_cat=cat[0],
+                            main_cat=first_cat,
                         )
                 else:
-                    Relation_Events.welcome_new_cat_objects([cat[0]])
-                self.all_involved_cat_ids.append(cat[0].ID)
+                    Relation_Events.welcome_new_cat_objects([first_cat])
+                self.all_involved_cat_ids.extend(cat)
                 self.new_cats.append(cat)
 
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed and give the condition
-        for possible_kitten in self.new_cats:
-            if possible_kitten[0].moons < 3:
+        for possible_kittens in self.new_cats:
+            first_kit = possible_kittens[0]
+            if first_kit.moons < 3:
                 # search for parent
                 for possible_parent in self.new_cats:
-                    if possible_parent[0] == possible_kitten[0]:
+                    first_cat = possible_parent[0]
+                    if first_cat == first_kit:
                         continue
-                    if not possible_parent[
-                        0
-                    ].gender == "female" and not get_clan_setting("same sex birth"):
+                    if not first_cat.gender == "female" and not get_clan_setting("same sex birth"):
                         continue
                     if (
-                        possible_parent[0]
-                        in (possible_kitten[0].parent1, possible_kitten[0].parent2)
-                        and possible_parent[0].status.alive_in_player_clan
+                        first_cat
+                        in (first_kit.parent1, first_kit.parent2)
+                        and not first_cat.dead
+                        and not "recovering from birth" in first_cat.injuries
                     ):
-                        possible_parent[0].get_injured("recovering from birth")
+                        first_cat.get_injured("recovering from birth")
                         # only one parent gives birth, so we break
                         break
 
