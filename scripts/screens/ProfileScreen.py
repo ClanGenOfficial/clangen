@@ -1438,7 +1438,7 @@ class ProfileScreen(Screens):
     def get_text_for_murder_event(self, event, death):
         """Returns the adjusted murder history text for the victim"""
 
-        if game.switches["show_history_moons"]:
+        if switch_get_value("show_history_moons"):
             moons = True
         else:
             moons = False
