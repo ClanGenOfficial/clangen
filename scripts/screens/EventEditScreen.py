@@ -1476,6 +1476,7 @@ class EventEditScreen(Screens):
                 )
                 test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
             preview = process_text(event["event_text"], test_dict)
+            game.event_editing = True
             self.event_buttons[index] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, -2 if index > 0 else 0), (234, 36))),
                 event["event_id"],
