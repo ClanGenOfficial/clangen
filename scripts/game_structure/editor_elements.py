@@ -60,13 +60,15 @@ class EditorTextEntryLine(EditorElement):
 
         self.initial_entry_text = initial_entry_text
         self.entry = pygame_gui.elements.UITextEntryLine(
-            ui_scale(pygame.Rect((0, 13), (230, 29))),
+            ui_scale(pygame.Rect((0, 13), (entry_length, 29))),
             manager=manager,
             container=container,
             anchors={"left_target": self.description},
             initial_text=self.initial_entry_text,
         )
         self.ui_elements.append(self.entry)
+
+        self.bottom_element = self.description
 
     @property
     def changed(self) -> bool:
@@ -78,3 +80,11 @@ class EditorTextEntryLine(EditorElement):
             self.initial_entry_text = self.entry.text
             return True
         return False
+
+    @property
+    def info(self) -> str:
+        """
+        Returns the currently entered text
+        """
+        return self.entry.text
+
