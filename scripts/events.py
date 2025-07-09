@@ -313,6 +313,9 @@ class Events:
 
     @staticmethod
     def trigger_future_events():
+        """
+        Handles aging and triggering future events.
+        """
         removals = []
 
         for event in game.clan.future_events:

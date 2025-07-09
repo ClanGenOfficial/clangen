@@ -26,6 +26,7 @@ from scripts.utility import get_living_clan_cat_count, get_warring_clan
 
 loaded_events = {}
 
+
 def get_resource_directory(fallback=False):
     return f"resources/lang/{i18n.config.get('locale') if not fallback else i18n.config.get('fallback')}/events/"
 
@@ -437,4 +438,3 @@ def filter_events(
         print(notice)
 
     return final_events
-
