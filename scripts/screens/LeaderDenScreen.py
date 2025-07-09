@@ -745,12 +745,12 @@ class LeaderDenScreen(Screens):
                 other_index = temper_dict[row].index(self.focus_clan.temperament)
                 other_social = row
 
-        # checks social distance between tempers and adds modifiers appropriately
+        # checks sociability distance between tempers and adds modifiers appropriately
         if clan_social != other_social:
             fail_chance += 0.05
-            if clan_social == "low social" and other_social == "high_social":
+            if clan_social == "low sociability" and other_social == "high_social":
                 fail_chance += 0.1
-            elif other_social == "low social" and clan_social == "high_social":
+            elif other_social == "low sociability" and clan_social == "high_social":
                 fail_chance += 0.1
 
         # checks aggression distance between tempers and adds modifiers appropriately
@@ -769,7 +769,7 @@ class LeaderDenScreen(Screens):
     @staticmethod
     def _find_temper_int(temper: str) -> int:
         """
-        returns int value (social rank + aggression rank) of given temperament
+        returns int value (sociability rank + aggression rank) of given temperament
         """
         temper_dict = game.clan.temperament_dict
         temper_int = 0

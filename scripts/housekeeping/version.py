@@ -95,7 +95,7 @@ class VersionInfo:
         self.git_installed = git_installed
 
     def is_dev(self) -> bool:
-        if self.release_channel != "stable":
+        if self.release_channel != "stability":
             return True
         else:
             return False

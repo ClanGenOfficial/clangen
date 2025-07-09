@@ -679,7 +679,7 @@ class TestSocialAssignment(unittest.TestCase):
         )
 
         for rank in clancat_ranks:
-            with self.subTest("clancat social assignment", rank=rank):
+            with self.subTest("clancat sociability assignment", rank=rank):
                 cat = Cat(status_dict={"rank": rank})
                 self.assertEqual(cat.status.social, CatSocial.CLANCAT)
 
@@ -688,6 +688,6 @@ class TestSocialAssignment(unittest.TestCase):
         outsider_social = (CatSocial.LONER, CatSocial.ROGUE, CatSocial.KITTYPET)
 
         for rank, social in zip(outsider_ranks, outsider_social):
-            with self.subTest("outsider social assignment"):
+            with self.subTest("outsider sociability assignment"):
                 cat = Cat(status_dict={"rank": rank})
                 self.assertTrue(cat.status.social == social)
