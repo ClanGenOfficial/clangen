@@ -273,7 +273,7 @@ class EventEditScreen(Screens):
         self.tag_info: list = []
         """Loaded tags"""
 
-        self.weight_element = {}
+        self.weight_element: Optional[EditorTextEntryLine] = None
         self.weight_info: int = 20
         """Loaded weight"""
 
@@ -1538,7 +1538,7 @@ class EventEditScreen(Screens):
         self.rank_tag_checkbox = {}
         if not self.param_locks.get("tag"):
             self.tag_info = []
-        self.weight_element = {}
+        self.weight_element = None
         if not self.param_locks.get("weight"):
             self.weight_info = 20
         self.acc_element = {}
@@ -4204,8 +4204,13 @@ class EventEditScreen(Screens):
                 self.update_backstory_info()
 
     def handle_settings_on_use(self):
+        # CHANGE ID
         if self.event_id_element.changed:
             self.event_id_info = self.event_id_element.info
+
+        # CHANGE WEIGHT
+        if self.weight_element.changed:
+            self.weight_info = int(self.weight_element.info)
 
         # CHANGE TYPE
         if (
@@ -7130,7 +7135,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.weight_element["text"]},
+            anchors={"top_target": self.weight_element.bottom_element},
         )
         prev_element = None
         for group in self.acc_categories.keys():
@@ -7232,32 +7237,20 @@ class EventEditScreen(Screens):
         )
 
     def create_weight_editor(self):
-        self.weight_element["text"] = UITextBoxTweaked(
-            "<b>* weight:</b>",
-            ui_scale(pygame.Rect((0, 15), (-1, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
+        self.weight_element = EditorTextEntryLine(
+            position=(0, 15),
+            description=f"<b>weight:</b>",
+            entry_length=50,
+            initial_entry_text=str(self.weight_info) if self.weight_info else "",
             container=self.editor_container,
+            manager=MANAGER,
             anchors={"top_target": self.editor_element["tag"]},
+            lock=True,
+            lock_name="weight",
         )
-        self.weight_element["entry"] = pygame_gui.elements.UITextEntryLine(
-            ui_scale(pygame.Rect((0, 18), (50, 29))),
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={
-                "top_target": self.editor_element["tag"],
-                "left_target": self.weight_element["text"],
-            },
-            initial_text=f"{self.weight_info}",
-        )
-        self.create_lock(
-            name="weight",
-            top_anchor=self.editor_element["tag"],
-            left_anchor=self.weight_element["entry"],
-            x_offset=268,
-        )
-        self.create_divider(self.weight_element["entry"], "weight", -10)
+        if self.param_locks.get("weight"):
+            self.weight_element.lock.locked = True
+        self.create_divider(self.weight_element.bottom_element, "weight", -10)
 
     def create_tag_editor(self):
         self.tag_element["collapse_container"] = UICollapsibleContainer(

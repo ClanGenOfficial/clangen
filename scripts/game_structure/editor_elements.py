@@ -7,7 +7,10 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UIScrollingDropDown,
     UISurfaceImageButton,
+    UIScrollingButtonList,
+    UIModifiedImage,
 )
+from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import get_text_box_theme, ui_scale
@@ -84,6 +87,8 @@ class EditorTextEntryLine(EditorElement):
         entry_length: int = None,
         initial_entry_text: str = "",
         manager=None,
+        lock: bool = False,
+        lock_name: str = None,
     ):
         """
         Creates descriptive text and an associated entry line.
@@ -107,16 +112,31 @@ class EditorTextEntryLine(EditorElement):
             anchors=anchors,
         )
         self.ui_elements.append(self.description)
-
+        entry_anchors = {"left_target": self.description}
+        if anchors and "top_target" in anchors:
+            entry_anchors["top_target"] = anchors["top_target"]
         self.initial_entry_text = initial_entry_text
         self.entry = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((0, 16), (entry_length, 29))),
             manager=manager,
             container=container,
-            anchors={"left_target": self.description},
+            anchors=entry_anchors,
             initial_text=self.initial_entry_text,
         )
         self.ui_elements.append(self.entry)
+
+        if lock:
+            lock_anchors = None
+            if anchors and "top_target" in anchors:
+                lock_anchors = {"top_target": anchors["top_target"]}
+            self.lock = EditorLock(
+                position=(400, 10),
+                name=lock_name,
+                anchors=lock_anchors,
+                manager=manager,
+                container=container,
+            )
+            self.ui_elements.append(self.lock)
 
         self.bottom_element = self.description
 
@@ -205,6 +225,7 @@ class EditorDropDownSelection(EditorElement):
             },
             allow_split_dashes=False,
         )
+        self.ui_elements.append(self.display)
 
         if lock:
             self.lock = EditorLock(
@@ -214,8 +235,8 @@ class EditorDropDownSelection(EditorElement):
                 manager=manager,
                 container=container,
             )
+            self.ui_elements.append(self.lock)
 
-        self.ui_elements.append(self.display)
         self.bottom_element = self.display
 
     @property
@@ -245,10 +266,12 @@ class EditorTwoStepSelection(EditorElement):
         anchors: dict = None,
         container=None,
         description: str = None,
-        first_list_items: list = None,
-        second_list_items: list = None,
-        first_initial_selection: list = None,
-        second_initial_selection: list = None,
+        item_dict: dict = None,
+        key_selection: list = None,
+        value_selection: list = None,
+        display_text: str = None,
+        lock: bool = False,
+        lock_name: str = None,
         manager=None,
     ):
         """
@@ -260,3 +283,111 @@ class EditorTwoStepSelection(EditorElement):
         :param manager: The element's manager
         """
         super().__init__()
+
+        self.item_dict = item_dict
+
+        self.description = UITextBoxTweaked(
+            description,
+            ui_scale(pygame.Rect(position, (420, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=manager,
+            container=container,
+            anchors=anchors,
+        )
+        self.ui_elements.append(self.description)
+
+        self.keys = UIScrollingButtonList(
+            pygame.Rect((25, 20), (200, 198)),
+            item_list=list(item_dict.keys()),
+            button_dimensions=(200, 30),
+            multiple_choice=False,
+            starting_selection=key_selection,
+            container=container,
+            anchors={"top_target": self.description},
+            manager=manager,
+        )
+        self.ui_elements.append(self.keys)
+        self.key_selection = key_selection
+
+        self.frame = UIModifiedImage(
+            ui_scale(pygame.Rect((-20, 30), (180, 170))),
+            get_box(BoxStyles.ROUNDED_BOX, (180, 170)),
+            manager=manager,
+            container=container,
+            anchors={
+                "top_target": self.description,
+                "left_target": self.keys,
+            },
+        )
+        self.frame.disable()
+        self.ui_elements.append(self.frame)
+        self.values = UIScrollingButtonList(
+            pygame.Rect((-4, 38), (156, 152)),
+            item_list=list(item_dict.values()),
+            button_dimensions=(156, 30),
+            starting_selection=value_selection,
+            container=container,
+            anchors={
+                "top_target": self.description,
+                "left_target": self.keys,
+            },
+            manager=manager,
+        )
+        self.ui_elements.append(self.values)
+        self.value_selection = value_selection
+
+        self.display_text = display_text
+        self.display = UITextBoxTweaked(
+            f"{display_text} {value_selection}",
+            ui_scale(pygame.Rect((10, 10), (380, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            manager=manager,
+            container=container,
+            anchors={
+                "top_target": self.keys,
+            },
+            allow_split_dashes=False,
+        )
+        self.ui_elements.append(self.display)
+
+        if lock:
+            self.lock = EditorLock(
+                position=(10, 10),
+                name=lock_name,
+                anchors={"top_target": self.keys, "left_target": self.display},
+                manager=manager,
+                container=container,
+            )
+        self.ui_elements.append(self.lock)
+        self.bottom_element = self.display
+
+    @property
+    def changed(self):
+        if self.key_selection != self.keys.selected_list:
+            self.key_selection = self.keys.selected_list.copy()
+            self.update_values()
+            return True
+        elif self.value_selection != self.values.selected_list:
+            self.value_selection = self.values.selected_list.copy()
+            return True
+        return False
+
+    @property
+    def info(self) -> dict:
+        current_info: dict = {self.key_selection[0]: self.value_selection}
+        return current_info
+
+    @property
+    def displayed_info(self) -> str:
+        return self.display.html_text
+
+    @displayed_info.setter
+    def displayed_info(self, new_text):
+        self.display.set_text(f"{self.display_text} {new_text}")
+
+    def update_values(self):
+        """
+        Updates the value list to match the current selected key
+        """
+        self.values.new_item_list(self.item_dict[self.key_selection[0]])
