@@ -6,13 +6,13 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
+from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
     UISurfaceImageButton,
 )
-from scripts.events_module.patrol.patrol import Patrol
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -20,8 +20,10 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..clan_package.settings import get_clan_setting
+from ..game_structure import image_cache, constants
+from ..game_structure.game.settings import game_setting_get
 from ..cat.enums import CatRank
-from ..game_structure import image_cache
 from ..game_structure.propagating_thread import PropagatingThread
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
@@ -86,7 +88,7 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
             self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_LEFT:
                 self.change_screen("list screen")
             # elif event.key == pygame.K_RIGHT:
@@ -125,7 +127,7 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements["add_one"]:
             if len(self.current_patrol) < 6:
-                if not game.clan.clan_settings["random med cat"]:
+                if not get_clan_setting("random med cat"):
                     able_no_med = [
                         cat
                         for cat in self.able_cats
@@ -147,7 +149,7 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements["add_three"]:
             if len(self.current_patrol) <= 3:
-                if not game.clan.clan_settings["random med cat"]:
+                if not get_clan_setting("random med cat"):
                     able_no_med = [
                         cat
                         for cat in self.able_cats
@@ -162,7 +164,7 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements["add_six"]:
             if len(self.current_patrol) == 0:
-                if not game.clan.clan_settings["random med cat"]:
+                if not get_clan_setting("random med cat"):
                     able_no_med = [
                         cat
                         for cat in self.able_cats
@@ -464,7 +466,7 @@ class PatrolScreen(Screens):
                 for cat in self.able_cats
                 if not cat.status.rank.is_any_medicine_rank()
             ]
-            if game.clan.clan_settings["random med cat"]:
+            if get_clan_setting("random med cat"):
                 able_no_med = self.able_cats
             if len(able_no_med) == 0:
                 able_no_med = self.able_cats
@@ -817,7 +819,7 @@ class PatrolScreen(Screens):
                     self.patrol_obj.get_patrol_art().premul_alpha(),
                     ui_scale_dimensions((300, 300)),
                 )
-                if game.settings["no sprite antialiasing"]
+                if game_setting_get("no sprite antialiasing")
                 else pygame.transform.smoothscale(
                     self.patrol_obj.get_patrol_art().premul_alpha(),
                     ui_scale_dimensions((300, 300)),
@@ -995,9 +997,9 @@ class PatrolScreen(Screens):
             ):
                 if (
                     the_cat.status.rank == CatRank.NEWBORN
-                    or game.config["fun"]["all_cats_are_newborn"]
+                    or constants.CONFIG["fun"]["all_cats_are_newborn"]
                 ):
-                    if game.config["fun"]["newborns_can_patrol"]:
+                    if constants.CONFIG["fun"]["newborns_can_patrol"]:
                         self.able_cats.append(the_cat)
                 else:
                     self.able_cats.append(the_cat)
@@ -1035,7 +1037,7 @@ class PatrolScreen(Screens):
         pos_x = 50
         i = 0
         for cat in display_cats:
-            if game.clan.clan_settings["show fav"] and cat.favourite:
+            if get_clan_setting("show fav") and cat.favourite:
                 self.fav[str(i)] = pygame_gui.elements.UIImage(
                     ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                     pygame.transform.scale(
@@ -1050,7 +1052,7 @@ class PatrolScreen(Screens):
                 ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 (
                     pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50)))
-                    if game.settings["no sprite antialiasing"]
+                    if game_setting_get("no sprite antialiasing")
                     else pygame.transform.smoothscale(
                         cat.sprite, ui_scale_dimensions((50, 50))
                     )
@@ -1078,7 +1080,7 @@ class PatrolScreen(Screens):
                         pygame.transform.scale(
                             cat.sprite, ui_scale_dimensions((50, 50))
                         )
-                        if game.settings["no sprite antialiasing"]
+                        if game_setting_get("no sprite antialiasing")
                         else pygame.transform.smoothscale(
                             cat.sprite, ui_scale_dimensions((50, 50))
                         )

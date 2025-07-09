@@ -11,6 +11,15 @@ import pygame_gui
 import ujson
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
+from scripts.game_structure.game.settings import (
+    game_settings_save,
+    game_setting_toggle,
+    game_setting_get,
+    game_setting_set,
+)
+
+# please don't do this. we have to.
+import scripts.game_structure.game.settings.settings as all_settings
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -103,7 +112,7 @@ class SettingsScreen(Screens):
     def __init__(self, name="settings_screen"):
         super().__init__(name)
         self.prev_setting = None
-        self.toggled_theme = "dark" if game.settings["dark mode"] else "light"
+        self.toggled_theme = "dark" if game_setting_get("dark mode") else "light"
 
     def handle_event(self, event):
         """
@@ -136,18 +145,18 @@ class SettingsScreen(Screens):
                 self.change_screen("start screen")
                 return
             if event.ui_element == self.fullscreen_toggle:
-                game.switch_setting("fullscreen")
+                game_setting_toggle("fullscreen")
                 self.save_settings()
-                game.save_settings(self)
+                game_settings_save(self)
                 set_display_mode(
-                    fullscreen=game.settings["fullscreen"], source_screen=self
+                    fullscreen=game_setting_get("fullscreen"), source_screen=self
                 )
             elif event.ui_element == self.open_data_directory_button:
                 open_data_dir()
                 return
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
-                game.save_settings(self)
+                game_settings_save(self)
                 self.settings_changed = False
                 self.update_save_button()
                 return
@@ -164,7 +173,7 @@ class SettingsScreen(Screens):
             if self.sub_menu in ("general", "relation", "language"):
                 self.handle_checkbox_events(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("start screen")
             elif event.key == pygame.K_RIGHT:
@@ -190,12 +199,12 @@ class SettingsScreen(Screens):
                         MANAGER.set_locale(key)
                         i18n.config.set("locale", key)
                         self.checkboxes[key].disable()
-                        game.settings["language"] = key
+                        game_setting_set("language", key)
                     else:
-                        game.switch_setting(key)
+                        game_setting_toggle(key)
                         value.change_object_id(
                             "@checked_checkbox"
-                            if game.settings[key]
+                            if game_setting_get(key)
                             else "@unchecked_checkbox"
                         )
                     self.settings_changed = True
@@ -219,7 +228,7 @@ class SettingsScreen(Screens):
                         self.sub_menu == "general"
                         and event.ui_element is self.checkboxes["discord"]
                     ):
-                        if game.settings["discord"]:
+                        if game_setting_get("discord"):
                             print("Starting Discord RPC")
                             game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
                             game.rpc.start()
@@ -285,12 +294,12 @@ class SettingsScreen(Screens):
             manager=MANAGER,
             tool_tip_text=(
                 "buttons.toggle_fullscreen_windowed"
-                if game.settings["fullscreen"]
+                if game_setting_get("fullscreen")
                 else "buttons.toggle_fullscreen_fullscreen"
             ),
             tool_tip_text_kwargs={
                 "screentext": (
-                    "windowed" if game.settings["fullscreen"] else "fullscreen"
+                    "windowed" if game_setting_get("fullscreen") else "fullscreen"
                 )
             },
         )
@@ -321,7 +330,9 @@ class SettingsScreen(Screens):
 
         self.set_bg("default", "mainmenu_bg")
 
-        self.settings_at_open = game.settings.copy()
+        self.settings_at_open = (
+            all_settings.settings
+        )  # please don't do this anywhere else.
 
         self.refresh_checkboxes()
 
@@ -356,12 +367,12 @@ class SettingsScreen(Screens):
         self.open_data_directory_button.kill()
         del self.open_data_directory_button
 
-        self.settings_at_open = game.settings
-        self.toggled_theme = "dark" if game.settings["dark mode"] else "light"
+        self.settings_at_open = all_settings.settings
+        self.toggled_theme = "dark" if game_setting_get("dark mode") else "light"
 
     def save_settings(self):
         """Saves the settings, ensuring that they will be retained when the screen changes."""
-        self.settings_at_open = game.settings.copy()
+        self.settings_at_open = all_settings.settings.copy()
 
     def open_general_settings(self):
         """Opens and draws general_settings"""
@@ -775,7 +786,7 @@ class SettingsScreen(Screens):
 
         else:
             for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):
-                if game.settings[code]:
+                if game_setting_get(code):
                     box_type = "@checked_checkbox"
                 else:
                     box_type = "@unchecked_checkbox"

@@ -7,7 +7,8 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, constants
+from scripts.game_structure.game.settings import game_settings_save, game_setting_get
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -23,6 +24,10 @@ from scripts.utility import (
     get_current_season,
 )
 from .Screens import Screens
+from ..cat.save_load import save_cats
+from ..clan_package.settings import get_clan_setting
+from ..clan_package.settings.clan_settings import set_clan_setting
+from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..cat.enums import CatRank
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
@@ -50,7 +55,7 @@ class ClanScreen(Screens):
         self.layout = None
 
     def on_use(self):
-        if not game.clan.clan_settings["backgrounds"]:
+        if not get_clan_setting("backgrounds"):
             self.set_bg(None)
         super().on_use()
 
@@ -61,24 +66,21 @@ class ClanScreen(Screens):
                 try:
                     self.save_button_saving_state.show()
                     self.save_button.disable()
-                    game.save_cats()
+                    save_cats(switch_get_value(Switch.clan_name), Cat, game)
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
-                    game.save_settings(self)
-                    game.switches["saved_clan"] = True
+                    game_settings_save(self)
+                    switch_set_value(Switch.saved_clan, True)
                     self.update_buttons_and_text()
                 except RuntimeError:
                     SaveError(traceback.format_exc())
                     self.change_screen("start screen")
             if event.ui_element in self.cat_buttons:
-                game.switches["cat"] = event.ui_element.return_cat_id()
+                switch_set_value(Switch.cat, event.ui_element.return_cat_id())
                 self.change_screen("profile screen")
             if event.ui_element == self.label_toggle:
-                if game.clan.clan_settings["den labels"]:
-                    game.clan.clan_settings["den labels"] = False
-                else:
-                    game.clan.clan_settings["den labels"] = True
+                set_clan_setting("den labels", not get_clan_setting("den_labels"))
                 self.update_buttons_and_text()
             if event.ui_element == self.med_den_label:
                 self.change_screen("med den screen")
@@ -93,7 +95,7 @@ class ClanScreen(Screens):
             if event.ui_element == self.leader_den_label:
                 self.change_screen("leader den screen")
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_RIGHT:
                 self.change_screen("list screen")
             elif event.key == pygame.K_LEFT:
@@ -101,26 +103,26 @@ class ClanScreen(Screens):
             elif event.key == pygame.K_SPACE:
                 self.save_button_saving_state.show()
                 self.save_button.disable()
-                game.save_cats()
+                save_cats(switch_get_value(Switch.clan_name), Cat, game)
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
                 game.save_events()
-                game.save_settings(self)
-                game.switches["saved_clan"] = True
+                game_settings_save(self)
+                switch_set_value(Switch.saved_clan, True)
                 self.update_buttons_and_text()
 
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
         self.update_camp_bg()
-        game.switches["cat"] = None
-        if game.clan.biome + game.clan.camp_bg in game.clan.layouts:
-            self.layout = game.clan.layouts[game.clan.biome + game.clan.camp_bg]
+        switch_set_value(Switch.cat, None)
+        if game.clan.biome + game.clan.camp_bg in constants.LAYOUTS:
+            self.layout = constants.LAYOUTS[game.clan.biome + game.clan.camp_bg]
         else:
-            self.layout = game.clan.layouts["default"]
+            self.layout = constants.LAYOUTS["default"]
 
         if "cat_shading" not in self.layout:
-            self.layout["cat_shading"] = game.clan.layouts["default"]["cat_shading"]
+            self.layout["cat_shading"] = constants.LAYOUTS["default"]["cat_shading"]
 
         self.choose_cat_positions()
 
@@ -144,8 +146,8 @@ class ClanScreen(Screens):
             and Cat.all_cats[x].status.alive_in_player_clan
             and (
                 Cat.all_cats[x].status.rank != CatRank.NEWBORN
-                or game.config["fun"]["all_cats_are_newborn"]
-                or game.config["fun"]["newborns_can_roam"]
+                or constants.CONFIG["fun"]["all_cats_are_newborn"]
+                or constants.CONFIG["fun"]["newborns_can_roam"]
             )
         ]
         layers = []
@@ -332,10 +334,10 @@ class ClanScreen(Screens):
         del self.show_den_labels_text
 
         # reset save status
-        game.switches["saved_clan"] = False
+        switch_set_value(Switch.saved_clan, False)
 
     def update_camp_bg(self):
-        light_dark = "dark" if game.settings["dark mode"] else "light"
+        light_dark = "dark" if game_setting_get("dark mode") else "light"
 
         camp_bg_base_dir = "resources/images/camp_bg/"
         leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]
@@ -459,11 +461,11 @@ class ClanScreen(Screens):
             # Newborns are not meant to be placed. They are hiding.
             if (
                 Cat.all_cats[x].status.rank == CatRank.NEWBORN
-                or game.config["fun"]["all_cats_are_newborn"]
+                or constants.CONFIG["fun"]["all_cats_are_newborn"]
             ):
                 if (
-                    game.config["fun"]["all_cats_are_newborn"]
-                    or game.config["fun"]["newborns_can_roam"]
+                    constants.CONFIG["fun"]["all_cats_are_newborn"]
+                    or constants.CONFIG["fun"]["newborns_can_roam"]
                 ):
                     # Free them
                     [
@@ -531,7 +533,7 @@ class ClanScreen(Screens):
             self.taken_spaces[Cat.all_cats[x].ID] = base_pos
 
     def update_buttons_and_text(self):
-        if game.switches["saved_clan"]:
+        if switch_get_value(Switch.saved_clan):
             self.save_button_saving_state.hide()
             self.save_button_saved_state.show()
             self.save_button.disable()
@@ -539,7 +541,7 @@ class ClanScreen(Screens):
             self.save_button.enable()
 
         self.label_toggle.kill()
-        if game.clan.clan_settings["den labels"]:
+        if get_clan_setting("den labels"):
             self.label_toggle = UIImageButton(
                 ui_scale(pygame.Rect((25, 641), (34, 34))),
                 "",

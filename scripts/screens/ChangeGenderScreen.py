@@ -10,6 +10,7 @@ from pygame_gui.core import ObjectID, UIContainer
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     CatButton,
@@ -22,10 +23,10 @@ from scripts.utility import (
     ui_scale_value,
     ui_scale_offset,
 )
-from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure import localization as pronouns
+from ..game_structure.game.switches import switch_get_value, switch_set_value, Switch
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import PronounCreation
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -71,11 +72,11 @@ class ChangeGenderScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switch_set_value(Switch.cat, self.next_cat)
                     self.update_selected_cat()
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switch_set_value(Switch.cat, self.previous_cat)
                     self.update_selected_cat()
             elif event.ui_element == self.buttons["save"]:
                 if self.are_boxes_full():
@@ -205,7 +206,7 @@ class ChangeGenderScreen(Screens):
     def update_selected_cat(self):
         self.reset_buttons_and_boxes()
 
-        self.the_cat = Cat.fetch_cat(game.switches["cat"])
+        self.the_cat = Cat.all_cats[switch_get_value(Switch.cat)]
         if not self.the_cat:
             return
 

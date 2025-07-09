@@ -9,9 +9,12 @@ from scripts.cat.enums import CatAge, CatGroup, CatRank
 from scripts.cat.history import History
 from scripts.cat.names import names, Name
 from scripts.cat_relations.relationship import Relationship
+from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
+from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     create_new_cat,
     get_highest_romantic_relation,
@@ -21,7 +24,6 @@ from scripts.utility import (
     find_alive_cats_with_rank,
     adjust_list_text,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 class Pregnancy_Events:
@@ -99,7 +101,7 @@ class Pregnancy_Events:
 
         # Check if they can have kits.
         can_have_kits = Pregnancy_Events.check_if_can_have_kits(
-            cat, clan.clan_settings["single parentage"], clan.clan_settings["affair"]
+            cat, get_clan_setting("single parentage"), get_clan_setting("affair")
         )
         if not can_have_kits:
             return
@@ -112,16 +114,16 @@ class Pregnancy_Events:
         can_have_kits, kits_are_adopted = Pregnancy_Events.check_second_parent(
             cat,
             second_parent,
-            clan.clan_settings["single parentage"],
-            clan.clan_settings["affair"],
-            clan.clan_settings["same sex birth"],
-            clan.clan_settings["same sex adoption"],
+            get_clan_setting("single parentage"),
+            get_clan_setting("affair"),
+            get_clan_setting("same sex birth"),
+            get_clan_setting("same sex adoption"),
         )
         if second_parent:
             if not can_have_kits:
                 return
         else:
-            if not game.clan.clan_settings["single parentage"]:
+            if not get_clan_setting("single parentage"):
                 return
 
         chance = Pregnancy_Events.get_balanced_kit_chance(
@@ -199,7 +201,7 @@ class Pregnancy_Events:
         # kits chance. We will only apply it to "cat" in this case
         # which is enough to stop the couple from adopting about within
         # the window.
-        cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+        cat.birth_cooldown = constants.CONFIG["pregnancy"]["birth_cooldown"]
 
         game.cur_events_list.append(
             Single_Event(print_event, "birth_death", cat_dict=cats_involved)
@@ -225,7 +227,7 @@ class Pregnancy_Events:
 
         Pregnancy_Events.rebuild_strings()
 
-        if clan.clan_settings["same sex birth"]:
+        if get_clan_setting("same sex birth"):
             # 50/50 for single cats to get pregnant or just bring a litter back
             if not other_cat and random.randint(0, 1):
                 amount = Pregnancy_Events.get_amount_of_kits(cat)
@@ -418,7 +420,7 @@ class Pregnancy_Events:
         insert = i18n.t("conditions.pregnancy.kit_amount", count=kits_amount)
 
         # Since cat has given birth, apply the birth cooldown.
-        cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+        cat.birth_cooldown = constants.CONFIG["pregnancy"]["birth_cooldown"]
 
         # choose event string
         # TODO: currently they don't choose which 'mate' is the 'blood' parent or not
@@ -633,8 +635,8 @@ class Pregnancy_Events:
         Return the second parent of a cat, which will have kits.
         Also returns a bool that is true if an affair was triggered.
         """
-        samesex = clan.clan_settings["same sex birth"]
-        allow_affair = clan.clan_settings["affair"]
+        samesex = get_clan_setting("same sex birth")
+        allow_affair = get_clan_setting("affair")
         mate = None
 
         # randomly select a mate of given cat
@@ -672,12 +674,12 @@ class Pregnancy_Events:
             return affair_partner, True
 
         # RANDOM AFFAIR
-        chance = game.config["pregnancy"]["random_affair_chance"]
+        chance = constants.CONFIG["pregnancy"]["random_affair_chance"]
         special_affair = False
         if len(cat.mate) <= 0:
             # Special random affair check only for unmated cats. For this check, only
             # other unmated cats can be the affair partner.
-            chance = game.config["pregnancy"]["unmated_random_affair_chance"]
+            chance = constants.CONFIG["pregnancy"]["unmated_random_affair_chance"]
             special_affair = True
 
         # 'buff' affairs if the current biggest family is big + this cat doesn't belong there
@@ -854,7 +856,7 @@ class Pregnancy_Events:
             # don't delete the game.clan condition, this is needed for a test
             if game.clan and not int(
                 random.random()
-                * game.config["cat_generation"]["base_permanent_condition"]
+                * constants.CONFIG["cat_generation"]["base_permanent_condition"]
             ):
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
@@ -872,7 +874,7 @@ class Pregnancy_Events:
                 if the_cat.dead or the_cat.status.is_outsider:
                     continue
                 if the_cat.ID in kit.get_parents():
-                    parent_to_kit = game.config["new_cat"]["parent_buff"][
+                    parent_to_kit = constants.CONFIG["new_cat"]["parent_buff"][
                         "parent_to_kit"
                     ]
                     y = random.randrange(0, 15)
@@ -883,7 +885,7 @@ class Pregnancy_Events:
                     start_relation.trust = parent_to_kit["trust"] + y
                     the_cat.relationships[kit.ID] = start_relation
 
-                    kit_to_parent = game.config["new_cat"]["parent_buff"][
+                    kit_to_parent = constants.CONFIG["new_cat"]["parent_buff"][
                         "kit_to_parent"
                     ]
                     y = random.randrange(0, 15)
@@ -934,10 +936,10 @@ class Pregnancy_Events:
             for parent_id in final_adoptive_parents:
                 parent = Cat.fetch_cat(parent_id)
                 if parent:
-                    kit_to_parent = game.config["new_cat"]["parent_buff"][
+                    kit_to_parent = constants.CONFIG["new_cat"]["parent_buff"][
                         "kit_to_parent"
                     ]
-                    parent_to_kit = game.config["new_cat"]["parent_buff"][
+                    parent_to_kit = constants.CONFIG["new_cat"]["parent_buff"][
                         "parent_to_kit"
                     ]
                     change_relationship_values(
@@ -966,25 +968,25 @@ class Pregnancy_Events:
     @staticmethod
     def get_amount_of_kits(cat):
         """Get the amount of kits which will be born."""
-        min_kits = game.config["pregnancy"]["min_kits"]
-        min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][
+        min_kits = constants.CONFIG["pregnancy"]["min_kits"]
+        min_kit = [min_kits] * constants.CONFIG["pregnancy"]["one_kit_possibility"][
             cat.age.value
         ]
-        two_kits = [min_kits + 1] * game.config["pregnancy"]["two_kit_possibility"][
-            cat.age.value
-        ]
-        three_kits = [min_kits + 2] * game.config["pregnancy"]["three_kit_possibility"][
-            cat.age.value
-        ]
-        four_kits = [min_kits + 3] * game.config["pregnancy"]["four_kit_possibility"][
-            cat.age.value
-        ]
-        five_kits = [min_kits + 4] * game.config["pregnancy"]["five_kit_possibility"][
-            cat.age.value
-        ]
-        max_kits = [game.config["pregnancy"]["max_kits"]] * game.config["pregnancy"][
-            "max_kit_possibility"
+        two_kits = [min_kits + 1] * constants.CONFIG["pregnancy"][
+            "two_kit_possibility"
         ][cat.age.value]
+        three_kits = [min_kits + 2] * constants.CONFIG["pregnancy"][
+            "three_kit_possibility"
+        ][cat.age.value]
+        four_kits = [min_kits + 3] * constants.CONFIG["pregnancy"][
+            "four_kit_possibility"
+        ][cat.age.value]
+        five_kits = [min_kits + 4] * constants.CONFIG["pregnancy"][
+            "five_kit_possibility"
+        ][cat.age.value]
+        max_kits = [constants.CONFIG["pregnancy"]["max_kits"]] * constants.CONFIG[
+            "pregnancy"
+        ]["max_kit_possibility"][cat.age.value]
         amount = choice(
             min_kit + two_kits + three_kits + four_kits + five_kits + max_kits
         )
@@ -1086,17 +1088,17 @@ class Pregnancy_Events:
         """Returns a chance based on different values."""
         # Now that the second parent is determined, we can calculate the balanced chance for kits
         # get the chance for pregnancy
-        inverse_chance = game.config["pregnancy"]["primary_chance_unmated"]
+        inverse_chance = constants.CONFIG["pregnancy"]["primary_chance_unmated"]
         if len(first_parent.mate) > 0 and not affair:
-            inverse_chance = game.config["pregnancy"]["primary_chance_mated"]
+            inverse_chance = constants.CONFIG["pregnancy"]["primary_chance_mated"]
 
         # SETTINGS
         # - decrease inverse chance if only mated pairs can have kits
-        if not clan.clan_settings["single parentage"]:
+        if not get_clan_setting("single parentage"):
             inverse_chance = int(inverse_chance * 0.7)
 
         # - decrease inverse chance if affairs are not allowed
-        if not clan.clan_settings["affair"]:
+        if not get_clan_setting("affair"):
             inverse_chance = int(inverse_chance * 0.7)
 
         # CURRENT CAT AMOUNT
@@ -1185,15 +1187,13 @@ class Pregnancy_Events:
             inverse_chance = int(inverse_chance * 1.7)
 
         # - decrease inverse chance if the current family is small
-        if len(first_parent.get_relatives(clan.clan_settings["first cousin mates"])) < (
+        if len(first_parent.get_relatives(get_clan_setting("first cousin mates"))) < (
             living_cats / 15
         ):
             inverse_chance = int(inverse_chance * 0.7)
 
         # - decrease inverse chance single parents if settings allow an biggest family is huge
-        settings_allow = (
-            not second_parent and not clan.clan_settings["single parentage"]
-        )
+        settings_allow = not second_parent and not get_clan_setting("single parentage")
         if settings_allow and Pregnancy_Events.biggest_family_is_big():
             inverse_chance = int(inverse_chance * 0.9)
 

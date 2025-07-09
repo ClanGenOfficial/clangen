@@ -110,3 +110,6 @@ class ShortEvent:
         self.supplies = supplies if supplies else []
         self.new_gender = new_gender
         self.future_event = future_event if future_event else {}
+
+    def __repr__(self):
+        return f"{self.event_id} ({self.sub_type})"
