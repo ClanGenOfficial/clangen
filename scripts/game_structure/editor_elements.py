@@ -31,9 +31,20 @@ class EditorTextEntryLine(EditorElement):
         anchors: dict = None,
         container=None,
         description: str = None,
+        entry_length: int = None,
         initial_entry_text: str = "",
         manager=None,
     ):
+        """
+        Creates descriptive text and an associated entry line.
+        :param position: The element's position
+        :param anchors: The element's anchors
+        :param container: The element's container
+        :param description: The descriptive text to precede the entry line
+        :param entry_length: The entry line length
+        :param initial_entry_text: The initial entry text
+        :param manager: The element's manager
+        """
         super().__init__()
 
         self.description = UITextBoxTweaked(
@@ -58,7 +69,10 @@ class EditorTextEntryLine(EditorElement):
         self.ui_elements.append(self.entry)
 
     @property
-    def changed(self):
+    def changed(self) -> bool:
+        """
+        Returns true if the entry text has changed since last checked.
+        """
         if self.entry.text != self.initial_entry_text:
             # save new text state to compare when next changed
             self.initial_entry_text = self.entry.text
