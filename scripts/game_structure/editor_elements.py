@@ -3,7 +3,7 @@ from typing import Tuple
 import pygame
 import pygame_gui
 
-from scripts.game_structure.ui_elements import UITextBoxTweaked
+from scripts.game_structure.ui_elements import UITextBoxTweaked, UIScrollingDropDown
 from scripts.utility import get_text_box_theme, ui_scale
 
 
@@ -172,3 +172,25 @@ class EditorDropDownSelection(EditorElement):
     def displayed_info(self, new_text):
         self.display.set_text(f"{self.display_text} {new_text}")
 
+class EditorTwoStepSelection(EditorElement):
+    def __init__(
+        self,
+        position: Tuple[int, int],
+        anchors: dict = None,
+        container=None,
+        description: str = None,
+        first_list_items: list = None,
+        second_list_items: list = None,
+        first_initial_selection: list = None,
+        second_initial_selection: list = None,
+        manager=None,
+    ):
+        """
+        Creates descriptive text and an associated entry line.
+        :param position: The element's position
+        :param anchors: The element's anchors
+        :param container: The element's container
+        :param description: The descriptive text to precede the entry line
+        :param manager: The element's manager
+        """
+        super().__init__()
