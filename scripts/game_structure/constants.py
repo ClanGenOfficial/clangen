@@ -1,8 +1,15 @@
 import ujson
 
-BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
-SEASONS = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
+LOCATIONS: dict = {
+    "Forest": ["Classic", "Gully", "Grotto", "Lakeside"],
+    "Mountainous": ["Cliff", "Cavern", "Crystal River", "Ruins"],
+    "Plains": ["Grasslands", "Tunnels", "Wastelands"],
+    "Beach": ["Tidepools", "Tidal Cave", "Shipwreck", "Fjord"],
+}
+
+BIOME_TYPES = [biome for biome in LOCATIONS.keys()]
+
 SEASON_CALENDAR = [
     "Newleaf",
     "Newleaf",
@@ -17,6 +24,8 @@ SEASON_CALENDAR = [
     "Leaf-bare",
     "Leaf-bare",
 ]
+
+SEASONS: list = list(set(SEASON_CALENDAR))
 
 TEMPERAMENT_DICT = {
     "low_social": ["cunning", "proud", "bloodthirsty"],
