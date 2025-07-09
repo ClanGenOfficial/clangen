@@ -26,33 +26,113 @@ from scripts.utility import get_living_clan_cat_count, get_warring_clan
 
 loaded_events = {}
 
-
 def get_resource_directory(fallback=False):
     return f"resources/lang/{i18n.config.get('locale') if not fallback else i18n.config.get('fallback')}/events/"
 
 
-def get_short_event_dicts(file_path):
+def create_short_event(
+    event_type: str,
+    main_cat,
+    random_cat,
+    victim_cat=None,
+    sub_type: list = None,
+    future_event=None,
+):
+    """
+    Handles everything involved in finding and executing an appropriate short event for the given args.
+    :param event_type: The type of event to find.
+    :param main_cat: The cat object that will take the role of m_c.
+    :param random_cat: The cat object that will take the role of r_c.
+    :param victim_cat: The cat object that will take the role of mur_c.
+    :param sub_type: The required subtypes for this event.
+    :param future_event: If this is being triggered by a future event, pass the future event object here.
+    """
+    types = [event_type]
+    sub_types = sub_type if sub_type else []
+
+    # check for war and assign other_clan accordingly
+    war_chance = 5
+    # if the war didn't go badly, then we decrease the chance of this event being war-focused
+    if switch_get_value(Switch.war_rel_change_type) != "rel_down":
+        war_chance = 2
+    if game.clan.war.get("at_war", False) and random.randint(1, war_chance) != 1:
+        enemy_clan = get_warring_clan()
+        other_clan = enemy_clan
+        sub_types.append("war")
+    else:
+        other_clan = random.choice(game.clan.all_clans if game.clan.all_clans else None)
+
+    # NOW find the possible events and filter
+    if event_type == "birth_death":
+        event_type = "death"
+    elif event_type == "health":
+        event_type = "injury"
+
+    events = find_needed_events(event_type)
+
+    final_events = filter_events(
+        possible_events=events,
+        main_cat=main_cat,
+        random_cat=random_cat,
+        other_clan=other_clan,
+        sub_types=sub_types,
+        allowed_events=future_event.allowed_events if future_event else None,
+        excluded_events=future_event.excluded_events if future_event else None,
+        ignore_subtyping=future_event.negate_subtyping if future_event else None,
+    )
+    if isinstance(constants.CONFIG["event_generation"]["debug_ensure_event_id"], str):
+        found = False
+        for _event in final_events:
+            if (
+                _event.event_id
+                == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+            ):
+                final_events = [_event]
+                print(
+                    f"FOUND debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
+                    f"was set as the only event option"
+                )
+                found = True
+                break
+        if not found:
+            # this print is very spammy, but can be helpful if unsure why a debug event isn't triggering
+            # print(f"debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
+            #      f"was not possible for {main_cat.name}.  {main_cat.name} was looking for a {event_type}: {sub_types} event")
+            pass
+
     try:
-        with open(
-            get_resource_directory() + file_path, "r", encoding="utf-8"
-        ) as read_file:
-            events = ujson.loads(read_file.read())
-    except ValueError:
-        try:
-            with open(
-                get_resource_directory(fallback=True) + file_path,
-                "r",
-                encoding="utf-8",
-            ) as read_file:
-                events = ujson.loads(read_file.read())
-        except ValueError:
-            print(f"ERROR: Unable to load {file_path}.")
-            return None
+        # choose an event!
+        chosen_event = random.choice(final_events)
 
-    return events
+        # set future event trigger status
+        if future_event:
+            future_event.triggered = True
+
+        # setting event info
+        chosen_event.main_cat = main_cat
+        chosen_event.random_cat = random_cat
+        chosen_event.victim_cat = victim_cat
+        chosen_event.types = types
+
+        # execute the event
+        chosen_event.execute_event(other_clan)
+
+        # this print is good for testing, but gets spammy in large clans
+        # print(f"CHOSEN: {chosen_event.event_id}")
+    except IndexError:
+        # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
+        print(
+            f"WARNING: no {event_type}: {sub_types} events found for {main_cat.name} "
+            f"and {random_cat.name if random_cat else 'no random cat'}"
+        )
+        return
 
 
-def find_possible_short_events(event_type=None):
+def find_needed_events(event_type=None) -> list:
+    """
+    Handles detecting the biome and collecting all events possible for biome and type
+    :param event_type: The type of event to pull
+    """
     event_list = []
 
     # skip the rest of the loading if there is an unrecognised biome
@@ -68,22 +148,52 @@ def find_possible_short_events(event_type=None):
     biome = temp_biome.lower()
 
     # biome specific events
-    event_list.extend(generate_short_events(event_type, biome))
+    event_list.extend(generate_event_objects(event_type, biome))
 
     # any biome events
-    event_list.extend(generate_short_events(event_type, "general"))
+    event_list.extend(generate_event_objects(event_type, "general"))
 
     return event_list
 
 
-def generate_short_events(event_triggered, biome):
+def get_event_dicts(file_path) -> list:
+    """
+    Opens and loads .json for the given file path.
+    :param file_path: The file path to open
+    """
+    try:
+        with open(
+            get_resource_directory() + file_path, "r", encoding="utf-8"
+        ) as read_file:
+            events = ujson.loads(read_file.read())
+    except ValueError:
+        try:
+            with open(
+                get_resource_directory(fallback=True) + file_path,
+                "r",
+                encoding="utf-8",
+            ) as read_file:
+                events = ujson.loads(read_file.read())
+        except ValueError:
+            print(f"ERROR: Unable to load {file_path}.")
+            return []
+
+    return events
+
+
+def generate_event_objects(event_triggered, biome) -> list:
+    """
+    Gets the event dicts for the given args and creates the short event objects for each entry in the dict.
+    :param event_triggered: The type of event triggered
+    :param biome: The biome to pull events for
+    """
     file_path = f"{event_triggered}/{biome}.json"
 
     try:
         if file_path in loaded_events:
             return loaded_events[file_path]
         else:
-            events_dict = get_short_event_dicts(file_path)
+            events_dict = get_event_dicts(file_path)
 
             event_list = []
             if not events_dict:
@@ -132,20 +242,33 @@ def generate_short_events(event_triggered, biome):
             # Add to loaded events.
             loaded_events[file_path] = event_list
             return event_list
+
     except ValueError:
         print(f"WARNING: {file_path} was not found, check short event generation")
+        return []
 
 
-def filter_possible_short_events(
+def filter_events(
     possible_events,
-    cat,
+    main_cat,
     random_cat,
     other_clan,
     sub_types: list = None,
     allowed_events=None,
     excluded_events=None,
     ignore_subtyping=False,
-):
+) -> list:
+    """
+    Filters possible events to find an event that fits the given requirements
+    :param possible_events: list of possible events
+    :param main_cat: main cat for this event
+    :param random_cat: random cat for this event
+    :param other_clan: other clan for this event
+    :param sub_types: subtypes for this event
+    :param allowed_events: list of allowed event IDs
+    :param excluded_events: list of excluded event IDs
+    :param ignore_subtyping: ignores subtyping entirely
+    """
     final_events = []
     incorrect_format = []
 
@@ -196,38 +319,40 @@ def filter_possible_short_events(
             continue
 
         # check tags
-        if not event_for_tags(event.tags, cat, random_cat):
+        if not event_for_tags(event.tags, main_cat, random_cat):
             continue
 
         # make complete leader death less likely until the leader is over 150 moons (or unless it's a murder)
-        if cat.status.is_leader:
+        if main_cat.status.is_leader:
             if "all_lives" in event.tags and "murder" not in event.sub_type:
-                if int(cat.moons) < 150 and int(random.random() * 5):
+                if int(main_cat.moons) < 150 and int(random.random() * 5):
                     continue
 
         # check for old age
         if (
             "old_age" in event.sub_type
-            and cat.moons < constants.CONFIG["death_related"]["old_age_death_start"]
+            and main_cat.moons
+            < constants.CONFIG["death_related"]["old_age_death_start"]
         ):
             continue
         # remove some non-old age events to encourage elders to die of old age more often
         if (
             "old_age" not in event.sub_type
-            and cat.moons > constants.CONFIG["death_related"]["old_age_death_start"]
+            and main_cat.moons
+            > constants.CONFIG["death_related"]["old_age_death_start"]
             and int(random.random() * 3)
         ):
             continue
 
         # check if already trans
-        if "transition" in event.sub_type and cat.gender != cat.genderalign:
+        if "transition" in event.sub_type and main_cat.gender != main_cat.genderalign:
             continue
 
         if event.m_c:
             if not event_for_cat(
                 cat_info=event.m_c,
-                cat=cat,
-                cat_group=[cat, random_cat] if random_cat else None,
+                cat=main_cat,
+                cat_group=[main_cat, random_cat] if random_cat else None,
                 event_id=event.event_id,
             ):
                 continue
@@ -236,7 +361,7 @@ def filter_possible_short_events(
             if not event_for_cat(
                 cat_info=event.r_c,
                 cat=random_cat,
-                cat_group=[random_cat, cat],
+                cat_group=[random_cat, main_cat],
                 event_id=event.event_id,
             ):
                 continue
@@ -313,94 +438,3 @@ def filter_possible_short_events(
 
     return final_events
 
-
-def create_short_event(
-    event_type: str,
-    main_cat,
-    random_cat,
-    victim_cat=None,
-    sub_type: list = None,
-    future_event=None,
-):
-    """
-    Handles everything involved in finding an appropriate short event for the given args
-    """
-    types = [event_type]
-    sub_types = sub_type if sub_type else []
-
-    # check for war and assign other_clan accordingly
-    war_chance = 5
-    # if the war didn't go badly, then we decrease the chance of this event being war-focused
-    if switch_get_value(Switch.war_rel_change_type) != "rel_down":
-        war_chance = 2
-    if game.clan.war.get("at_war", False) and random.randint(1, war_chance) != 1:
-        enemy_clan = get_warring_clan()
-        other_clan = enemy_clan
-        sub_types.append("war")
-    else:
-        other_clan = random.choice(game.clan.all_clans if game.clan.all_clans else None)
-
-    # NOW find the possible events and filter
-    if event_type == "birth_death":
-        event_type = "death"
-    elif event_type == "health":
-        event_type = "injury"
-
-    events = find_possible_short_events(event_type)
-
-    final_events = filter_possible_short_events(
-        possible_events=events,
-        cat=main_cat,
-        random_cat=random_cat,
-        other_clan=other_clan,
-        sub_types=sub_types,
-        allowed_events=future_event.allowed_events if future_event else None,
-        excluded_events=future_event.excluded_events if future_event else None,
-        ignore_subtyping=future_event.negate_subtyping if future_event else None,
-    )
-    if isinstance(constants.CONFIG["event_generation"]["debug_ensure_event_id"], str):
-        found = False
-        for _event in final_events:
-            if (
-                _event.event_id
-                == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
-            ):
-                final_events = [_event]
-                print(
-                    f"FOUND debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
-                    f"was set as the only event option"
-                )
-                found = True
-                break
-        if not found:
-            # this print is very spammy, but can be helpful if unsure why a debug event isn't triggering
-            # print(f"debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
-            #      f"was not possible for {main_cat.name}.  {main_cat.name} was looking for a {event_type}: {sub_types} event")
-            pass
-
-    try:
-        # choose an event!
-        chosen_event = random.choice(final_events)
-
-        # set future event trigger status
-        if future_event:
-            future_event.triggered = True
-
-        # setting event info
-        chosen_event.main_cat = main_cat
-        chosen_event.random_cat = random_cat
-        chosen_event.victim_cat = victim_cat
-        chosen_event.types = types
-
-        # execute the event
-        chosen_event.execute_event(other_clan)
-
-        # this print is good for testing, but gets spammy in large clans
-        # print(f"CHOSEN: {chosen_event.event_id}")
-    except IndexError:
-        # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
-        print(
-            f"WARNING: no {event_type}: {sub_types} events found for {main_cat.name} "
-            f"and {random_cat.name if random_cat else 'no random cat'}"
-        )
-        return
