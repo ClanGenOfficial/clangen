@@ -1,6 +1,7 @@
 import os
 import unittest
 
+from scripts.cat.enums import CatSocial
 from scripts.events_module.short.short_event import ShortEvent
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
@@ -11,7 +12,49 @@ from scripts.cat.pelts import Pelt
 
 
 class TestHandleEvent(unittest.TestCase):
-    pass
+    def setUp(self):
+        self.chosen_event = ShortEvent(event_id="test")
+        self.chosen_event.main_cat = Cat()
+        self.chosen_event.random_cat = Cat()
+        self.pelts = Pelt
+
+    def test_mc_presence(self):
+        # event should always use m_c by default
+        self.chosen_event.execute_event()
+        self.assertTrue(
+            self.chosen_event.main_cat.ID in self.chosen_event.all_involved_cat_ids
+        )
+
+    def test_mc_exclusion(self):
+        # remove if excluded
+        self.chosen_event.exclude_involved = ["m_c"]
+        self.chosen_event.execute_event()
+        self.assertFalse(
+            self.chosen_event.main_cat.ID in self.chosen_event.all_involved_cat_ids
+        )
+
+    def test_rc_presence(self):
+        # no r_c specified
+        self.chosen_event.execute_event()
+        self.assertFalse(
+            self.chosen_event.random_cat.ID in self.chosen_event.all_involved_cat_ids
+        )
+
+        # r_c specified
+        self.chosen_event.r_c = {"age": "any"}
+        self.chosen_event.execute_event()
+        self.assertTrue(
+            self.chosen_event.random_cat.ID in self.chosen_event.all_involved_cat_ids
+        )
+
+    def test_rc_exclusion(self):
+        # remove if excluded
+        self.chosen_event.r_c = {"age": "any"}
+        self.chosen_event.exclude_involved = ["r_c"]
+        self.chosen_event.execute_event()
+        self.assertFalse(
+            self.chosen_event.random_cat.ID in self.chosen_event.all_involved_cat_ids
+        )
 
 
 class TestHandleNewCats(unittest.TestCase):

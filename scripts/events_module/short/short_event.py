@@ -186,15 +186,12 @@ class ShortEvent:
             self.other_clan_name = f"{other_clan.name}Clan"
 
         self.all_involved_cat_ids.append(self.main_cat.ID)
-        if self.random_cat:
-            self.all_involved_cat_ids.append(self.random_cat.ID)
-        if self.victim_cat:
-            self.all_involved_cat_ids.append(self.victim_cat.ID)
 
         # check if another cat is present
         if self.r_c:
             self.all_involved_cat_ids.append(self.random_cat.ID)
-
+        if self.victim_cat:
+            self.all_involved_cat_ids.append(self.victim_cat.ID)
         # checking if a mass death should happen, happens here so that we can toss the event if needed
         if "mass_death" in self.sub_type:
             if game.clan and not game.clan.clan_settings["disasters"]:
