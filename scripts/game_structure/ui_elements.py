@@ -20,12 +20,14 @@ from pygame_gui.core.interfaces import IUIManagerInterface, IUIElementInterface
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
-from pygame_gui.elements import UIAutoResizingContainer, UISelectionList
+from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.cat_relations.enums import RelValue
+from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import screen
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import (
@@ -872,7 +874,7 @@ class UISpriteButton:
                     relative_rect.height <= ui_scale_value(sprite.get_height())
                     or relative_rect.width <= ui_scale_value(sprite.get_height())
                 )
-                and not game.settings["no sprite antialiasing"]
+                and not game_setting_get("no sprite antialiasing")
             )
             else pygame.transform.scale(input_sprite, relative_rect.size)
         )
@@ -1622,7 +1624,7 @@ class UICatListDisplay(UIContainer):
             pygame.image.load(f"resources/images/fav_marker.png").convert_alpha(),
             ui_scale_dimensions((50, 50)),
         )
-        if game.settings["dark mode"]:
+        if game_setting_get("dark mode"):
             self._favor_circle.set_alpha(150)
 
         self.generate_grid()
@@ -1726,7 +1728,7 @@ class UICatListDisplay(UIContainer):
         [name.kill() for name in self.cat_names.values()]
         [favor.kill() for favor in self.favor_indicator.values()]
 
-        show_fav = game.clan.clan_settings["show fav"]
+        show_fav = get_clan_setting("show fav")
 
         # FAVOURITE ICON
         if show_fav:
@@ -2089,7 +2091,6 @@ class UIScrollingButtonList(UIModifiedScrollingContainer):
                 else:
                     self.selected_list.clear()
                     self.selected_list.append(name)
-
                 if self.disable_selection:
                     for other_button in self.buttons.values():
                         other_button.enable()
@@ -2212,6 +2213,7 @@ class UIDropDown(UIDropDownContainer):
                 manager=manager,
                 object_id=f"@buttonstyles_{parent_style.value}",
                 container=self,
+                anchors=anchors,
             )
         else:
             self.parent_button = parent_override

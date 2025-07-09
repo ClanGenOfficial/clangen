@@ -21,6 +21,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from ..clan_package.settings import get_clan_setting, switch_clan_setting
 from scripts.events_module.short.condition_events import Condition_Events
 from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER
@@ -507,7 +508,7 @@ class ClearingScreen(Screens):
                 "screens.clearing.nutrition_text",
                 nutrition_text=nutrition_info[self.focus_cat_object.ID].nutrition_text,
             )
-            if game.clan.clan_settings["showxp"]:
+            if get_clan_setting("showxp"):
                 nutrition_text += f" ({str(int(nutrition_info[self.focus_cat_object.ID].percentage))})"
             info_list.append(nutrition_text)
         work_status = i18n.t("general.can_work")
@@ -573,7 +574,7 @@ class ClearingScreen(Screens):
                         "screens.clearing.nutrition_text",
                         nutrition_text=nutrition_info[cat.ID].nutrition_text,
                     )
-                    if game.clan.clan_settings["showxp"]:
+                    if get_clan_setting("showxp"):
                         full_text += f" ({str(int(nutrition_info[cat.ID].percentage))})"
                     condition_list.append(full_text)
             conditions = (
@@ -845,7 +846,7 @@ class ClearingScreen(Screens):
         for code, desc in settings_dict["freshkill_tactics"].items():
             if code == "ration prey":
                 continue
-            if game.clan.clan_settings[code]:
+            if get_clan_setting(code):
                 box_type = "@checked_checkbox"
             else:
                 box_type = "@unchecked_checkbox"
@@ -856,8 +857,7 @@ class ClearingScreen(Screens):
             if len(desc) == 4 and isinstance(desc[3], list):
                 x_val += 25
                 disabled = (
-                    game.clan.clan_settings.get(desc[3][0], not desc[3][1])
-                    != desc[3][1]
+                    get_clan_setting(desc[3][0], default=not desc[3][1]) != desc[3][1]
                 )
 
             self.tactic_boxes[code] = UIImageButton(
@@ -880,7 +880,7 @@ class ClearingScreen(Screens):
         n = 0
         for code, desc in settings_dict["freshkill_tactics"].items():
             if code == "ration prey":
-                if game.clan.clan_settings[code]:
+                if get_clan_setting(code):
                     box_type = "@checked_checkbox"
                 else:
                     box_type = "@unchecked_checkbox"
@@ -891,7 +891,7 @@ class ClearingScreen(Screens):
                 if len(desc) == 4 and isinstance(desc[3], list):
                     x_val += 50
                     disabled = (
-                        game.clan.clan_settings.get(desc[3][0], not desc[3][1])
+                        get_clan_setting(desc[3][0], default=not desc[3][1])
                         != desc[3][1]
                     )
 
@@ -918,7 +918,7 @@ class ClearingScreen(Screens):
                     value == event.ui_element
                     and value.object_ids[1] == "@unchecked_checkbox"
                 ):
-                    game.clan.switch_setting(key)
+                    switch_clan_setting(key)
                     active_key = key
                     self.settings_changed = True
                     self.create_checkboxes()
@@ -931,7 +931,7 @@ class ClearingScreen(Screens):
                     and key != active_key
                     and value.object_ids[1] == "@checked_checkbox"
                 ):
-                    game.clan.switch_setting(key)
+                    switch_clan_setting(key)
                     self.settings_changed = True
                     self.create_checkboxes()
                     break
@@ -939,7 +939,7 @@ class ClearingScreen(Screens):
         if event.ui_element in self.checkboxes.values():
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
-                    game.clan.switch_setting(key)
+                    switch_clan_setting(key)
                     active_key = key
                     self.settings_changed = True
                     self.create_checkboxes()

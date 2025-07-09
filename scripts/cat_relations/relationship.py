@@ -4,8 +4,8 @@ from typing import Optional
 
 import i18n
 
+from scripts.game_structure import constants
 from scripts.cat.enums import CatRank
-from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
     cats_fulfill_single_interaction_constraints,
     rebuild_relationship_dicts,
@@ -264,7 +264,7 @@ class Relationship:
             the amount (negative or positive) for the given parameter
         """
         # get the normal amount
-        amount = game.config["relationship"]["value_change_amount"][intensity]
+        amount = constants.CONFIG["relationship"]["value_change_amount"][intensity]
         if value_change == "decrease":
             amount = amount * -1
 
@@ -275,10 +275,10 @@ class Relationship:
             amount = amount
         elif compatibility:
             # positive compatibility
-            amount += game.config["relationship"]["compatibility_effect"]
+            amount += constants.CONFIG["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
-            amount -= game.config["relationship"]["compatibility_effect"]
+            amount -= constants.CONFIG["relationship"]["compatibility_effect"]
         return amount
 
     def interaction_affect_relationships(
@@ -304,7 +304,7 @@ class Relationship:
         # only high intensity gives passive buffs
         if intensity == "high":
             passive_buff = int(
-                amount / game.config["relationship"][f"passive_influence_div"]
+                amount / constants.CONFIG["relationship"][f"passive_influence_div"]
             )
             # just adding a teeny bit of variety
             buffs = [passive_buff - 1, passive_buff, passive_buff + 1]

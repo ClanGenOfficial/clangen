@@ -18,6 +18,8 @@ from scripts.events_module.event_filters import (
 )
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
+from scripts.game_structure import constants
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
@@ -228,7 +230,7 @@ class GenerateEvents:
             if not game.clan.override_biome
             else game.clan.override_biome
         )
-        if temp_biome not in game.clan.BIOME_TYPES:
+        if temp_biome not in constants.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
                 f"in clan.py?"
@@ -293,8 +295,8 @@ class GenerateEvents:
             # ensure ID and requirements override
             if (
                 event.event_id
-                == game.config["event_generation"]["debug_ensure_event_id"]
-                and game.config["event_generation"]["debug_override_requirements"]
+                == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+                and constants.CONFIG["event_generation"]["debug_override_requirements"]
             ):
                 final_events.append(event)
                 break
@@ -323,13 +325,13 @@ class GenerateEvents:
             # check for old age
             if (
                 "old_age" in event.sub_type
-                and cat.moons < game.config["death_related"]["old_age_death_start"]
+                and cat.moons < constants.CONFIG["death_related"]["old_age_death_start"]
             ):
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
             if (
                 "old_age" not in event.sub_type
-                and cat.moons > game.config["death_related"]["old_age_death_start"]
+                and cat.moons > constants.CONFIG["death_related"]["old_age_death_start"]
                 and int(random.random() * 3)
             ):
                 continue
@@ -359,7 +361,8 @@ class GenerateEvents:
             # check that injury is possible
             if (
                 event.injury
-                and game.config["event_generation"]["debug_type_override"] != "injury"
+                and constants.CONFIG["event_generation"]["debug_type_override"]
+                != "injury"
             ):
                 # determine which injury severity list will be used
                 allowed_severity = None
@@ -439,7 +442,7 @@ class GenerateEvents:
                 # during a war we want to encourage the clans to have positive events
                 # when the overall war notice was positive
                 if "war" in event.sub_type:
-                    rel_change_type = game.switches["war_rel_change_type"]
+                    rel_change_type = switch_get_value(Switch.war_rel_change_type)
                     if (
                         event.other_clan["changed"] < 0
                         and rel_change_type != "rel_down"
@@ -484,7 +487,7 @@ class GenerateEvents:
             # ensure ID without requirements override
             if (
                 event.event_id
-                == game.config["event_generation"]["debug_ensure_event_id"]
+                == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
             ):
                 final_events.append(event)
                 break
@@ -500,7 +503,7 @@ class GenerateEvents:
     def possible_ongoing_events(event_type=None, specific_event=None):
         event_list = []
 
-        if game.clan.biome not in game.clan.BIOME_TYPES:
+        if game.clan.biome not in constants.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?"
             )
