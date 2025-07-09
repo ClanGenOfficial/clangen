@@ -25,9 +25,7 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.future.prep_and_trigger import (
-    check_for_triggered_future_event,
-)
+
 from scripts.events_module.generate_events import GenerateEvents, generate_events
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.events_module.patrol.patrol import Patrol
@@ -313,16 +311,34 @@ class Events:
             except:
                 SaveError(traceback.format_exc())
 
-    def trigger_future_events(self):
-        event_to_trigger = check_for_triggered_future_event()
-        create_short_event(
-            event_type=event_to_trigger.event_type,
-            main_cat=Cat.fetch_cat(event_to_trigger.involved_cats.get("m_c")),
-            random_cat=Cat.fetch_cat(event_to_trigger.involved_cats.get("r_c")),
-            victim_cat=Cat.fetch_cat(event_to_trigger.involved_cats.get("mur_c")),
-            sub_type=event_to_trigger.pool.get("subtype"),
-            future_event=event_to_trigger,
-        )
+    @staticmethod
+    def trigger_future_events():
+        removals = []
+
+        for event in game.clan.future_events:
+            event.moon_delay -= 1
+            # we give events a buffer of 12 moons to allow any season-locked events a chance to trigger, then we remove
+            if event.moon_delay <= -12:
+                removals.append(event)
+                continue
+            # attempt to trigger event
+            if event.moon_delay <= 0:
+                create_short_event(
+                    event_type=event.event_type,
+                    main_cat=Cat.fetch_cat(event.involved_cats.get("m_c")),
+                    random_cat=Cat.fetch_cat(event.involved_cats.get("r_c")),
+                    victim_cat=Cat.fetch_cat(
+                        event.involved_cats.get("mur_c")
+                    ),
+                    sub_type=event.pool.get("subtype"),
+                    future_event=event,
+                )
+                if event.triggered:
+                    removals.append(event)
+
+        for event in removals:
+            if event in game.clan.future_events:
+                game.clan.future_events.remove(event)
 
     def handle_lead_den_event(self):
         """

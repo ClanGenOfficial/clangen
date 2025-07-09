@@ -193,7 +193,7 @@ class ShortEvent:
             self.all_involved_cat_ids.append(self.random_cat.ID)
         if self.victim_cat:
             self.all_involved_cat_ids.append(self.victim_cat.ID)
-            
+
         # checking if a mass death should happen, happens here so that we can toss the event if needed
         if "mass_death" in self.sub_type:
             if game.clan and not get_clan_setting("disasters"):
@@ -409,11 +409,12 @@ class ShortEvent:
                     first_cat = possible_parent[0]
                     if first_cat == first_kit:
                         continue
-                    if not first_cat.gender == "female" and not get_clan_setting("same sex birth"):
+                    if not first_cat.gender == "female" and not get_clan_setting(
+                        "same sex birth"
+                    ):
                         continue
                     if (
-                        first_cat
-                        in (first_kit.parent1, first_kit.parent2)
+                        first_cat in (first_kit.parent1, first_kit.parent2)
                         and not first_cat.dead
                         and not "recovering from birth" in first_cat.injuries
                     ):

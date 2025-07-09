@@ -70,24 +70,3 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
 
     return gathered_cat_dict
 
-
-def check_for_triggered_future_event():
-    """
-    Handles aging future events and triggering them.
-    """
-    removals = []
-
-    for event in game.clan.future_events:
-        event.moon_delay -= 1
-        # we give events a buffer of 12 moons to allow any season-locked events a chance to trigger, then we remove
-        if event.moon_delay <= -12:
-            removals.append(event)
-        # attempt to trigger event
-        if event.moon_delay <= 0:
-            return event
-            if event.triggered:
-                removals.append(event)
-
-    for event in removals:
-        if event in game.clan.future_events:
-            game.clan.future_events.remove(event)
