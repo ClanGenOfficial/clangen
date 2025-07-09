@@ -2357,23 +2357,24 @@ def event_text_adjust(
     text = adjust_prey_abbr(text)
 
     # acc_plural (only works for main_cat's acc)
-    if "acc_plural" in text:
-        text = text.replace(
-            "acc_plural",
-            i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=2),
-        )
+    if main_cat:
+        if "acc_plural" in text:
+            text = text.replace(
+                "acc_plural",
+                i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=2),
+            )
 
-    # acc_singular (only works for main_cat's acc)
-    if "acc_singular" in text:
-        text = text.replace(
-            "acc_singular",
-            i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
-        )
+        # acc_singular (only works for main_cat's acc)
+        if "acc_singular" in text:
+            text = text.replace(
+                "acc_singular",
+                i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
+            )
 
-    if "given_herb" in text:
-        text = text.replace(
-            "given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2)
-        )
+        if "given_herb" in text:
+            text = text.replace(
+                "given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2)
+            )
 
     return text
 
