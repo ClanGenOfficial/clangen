@@ -2181,6 +2181,10 @@ def event_text_adjust(
     :param str chosen_herb: string of chosen_herb (chosen_herb), if present
     """
     vowels = ["A", "E", "I", "O", "U"]
+    if not patrol_apprentices:
+        patrol_apprentices = []
+    if not new_cats:
+        new_cats = []
 
     if not text:
         text = "This should not appear, report as a bug please! Tried to adjust the text, but no text was provided."
@@ -2299,7 +2303,7 @@ def event_text_adjust(
         text = text.replace("multi_cat", list_text)
 
     # other_clan_name
-    if "o_c_n" in text:
+    if "o_c_n" in text and other_clan:
         other_clan_name = other_clan.name
         pos = 0
         for x in range(text.count("o_c_n")):
