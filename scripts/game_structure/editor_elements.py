@@ -90,7 +90,6 @@ class EditorTextEntryLine(EditorElement):
 
 
 class EditorDropDownSelection(EditorElement):
-
     def __init__(
         self,
         position: Tuple[int, int],
@@ -106,6 +105,9 @@ class EditorDropDownSelection(EditorElement):
         display_text: str = None,
         manager=None,
     ):
+        """
+        Creates descriptive text and an associated scrolling dropdown.
+        """
         super().__init__()
 
         self.description = UITextBoxTweaked(
@@ -172,6 +174,7 @@ class EditorDropDownSelection(EditorElement):
     def displayed_info(self, new_text):
         self.display.set_text(f"{self.display_text} {new_text}")
 
+
 class EditorTwoStepSelection(EditorElement):
     def __init__(
         self,
@@ -186,7 +189,7 @@ class EditorTwoStepSelection(EditorElement):
         manager=None,
     ):
         """
-        Creates descriptive text and an associated entry line.
+        Creates descriptive text and an associated two-step selection element. The two-step selection element is a list of broader categories that allows the user to open each category and select from it's held options.
         :param position: The element's position
         :param anchors: The element's anchors
         :param container: The element's container
