@@ -938,43 +938,43 @@ class Pelt:
     def pattern_color_inheritance(self, parents: tuple = (), gender="female"):
         # setting parent pelt categories
         # We are using a set, since we don't need this to be ordered, and sets deal with removing duplicates.
-        par_peltlength = set()
-        par_peltcolours = set()
-        par_peltnames = set()
-        par_pelts = []
-        par_white = []
-        for p in parents:
-            if p:
+        parent_peltlengths = set()
+        parent_peltcolours = set()
+        parent_peltnames = set()
+        parent_pelts = []
+        parent_white = []
+        for parent in parents:
+            if parent:
                 # Gather pelt color.
-                par_peltcolours.add(p.pelt.colour)
+                parent_peltcolours.add(parent.pelt.colour)
 
                 # Gather pelt length
-                par_peltlength.add(p.pelt.length)
+                parent_peltlengths.add(parent.pelt.length)
 
                 # Gather pelt name
-                if p.pelt.name in Pelt.torties:
-                    par_peltnames.add(p.pelt.tortiebase.capitalize())
+                if parent.pelt.name in Pelt.torties:
+                    parent_peltnames.add(parent.pelt.tortiebase.capitalize())
                 else:
-                    par_peltnames.add(p.pelt.name)
+                    parent_peltnames.add(parent.pelt.name)
 
                 # Gather exact pelts, for direct inheritance.
-                par_pelts.append(p.pelt)
+                parent_pelts.append(parent.pelt)
 
                 # Gather if they have white in their pelt.
-                par_white.append(p.pelt.white)
+                parent_white.append(parent.pelt.white)
             else:
                 # If order for white patches to work correctly, we also want to randomly generate a "pelt_white"
                 # for each "None" parent (missing or unknown parent)
-                par_white.append(bool(random.getrandbits(1)))
+                parent_white.append(bool(random.getrandbits(1)))
 
                 # Append None
                 # Gather pelt color.
-                par_peltcolours.add(None)
-                par_peltlength.add(None)
-                par_peltnames.add(None)
+                parent_peltcolours.add(None)
+                parent_peltlengths.add(None)
+                parent_peltnames.add(None)
 
         # If this list is empty, something went wrong.
-        if not par_peltcolours:
+        if not parent_peltcolours:
             print("Warning - no parents: pelt randomized")
             return self.randomize_pattern_color(gender)
 
@@ -982,7 +982,7 @@ class Pelt:
         if not random.randint(
             0, game.config["cat_generation"]["direct_inheritance"]
         ):  # 1/10 chance
-            selected = choice(par_pelts)
+            selected = choice(parent_pelts)
             self.name = selected.name
             self.length = selected.length
             self.colour = selected.colour
@@ -994,23 +994,24 @@ class Pelt:
         # ------------------------------------------------------------------------------------------------------------#
 
         # Determine pelt.
+        # Weights for each pelt group. It goes: (tabbies, spotted, plain, exotic)
         weights = [
             0,
             0,
             0,
             0,
-        ]  # Weights for each pelt group. It goes: (tabbies, spotted, plain, exotic)
-        for p_ in par_peltnames:
-            if p_ in Pelt.tabbies:
+        ]
+        for peltname in parent_peltnames:
+            if peltname in Pelt.tabbies:
                 add_weight = (50, 10, 5, 7)
-            elif p_ in Pelt.spotted:
+            elif peltname in Pelt.spotted:
                 add_weight = (10, 50, 5, 5)
-            elif p_ in Pelt.plain:
+            elif peltname in Pelt.plain:
                 add_weight = (5, 5, 50, 0)
-            elif p_ in Pelt.exotic:
+            elif peltname in Pelt.exotic:
                 add_weight = (15, 15, 1, 45)
             elif (
-                p_ is None
+                peltname is None
             ):  # If there is at least one unknown parent, a None will be added to the set.
                 add_weight = (35, 20, 30, 15)
             else:
@@ -1033,8 +1034,8 @@ class Pelt:
             "base_female_tortie"
         ]  # There is a default chance for female tortie
         tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
-        for p_ in par_pelts:
-            if p_.name in Pelt.torties:
+        for parent_pelt in parent_pelts:
+            if parent_pelt.name in Pelt.torties:
                 tortie_chance_f = int(tortie_chance_f / 2)
                 tortie_chance_m = tortie_chance_m - 1
                 break
@@ -1059,16 +1060,16 @@ class Pelt:
         # ------------------------------------------------------------------------------------------------------------#
         # Weights for each colour group. It goes: (ginger_colours, black_colours, white_colours, brown_colours)
         weights = [0, 0, 0, 0]
-        for p_ in par_peltcolours:
-            if p_ in Pelt.ginger_colours:
+        for color in parent_peltcolours:
+            if color in Pelt.ginger_colours:
                 add_weight = (40, 0, 0, 10)
-            elif p_ in Pelt.black_colours:
+            elif color in Pelt.black_colours:
                 add_weight = (0, 40, 2, 5)
-            elif p_ in Pelt.white_colours:
+            elif color in Pelt.white_colours:
                 add_weight = (0, 5, 40, 0)
-            elif p_ in Pelt.brown_colours:
+            elif color in Pelt.brown_colours:
                 add_weight = (10, 5, 0, 35)
-            elif p_ is None:
+            elif color is None:
                 add_weight = (40, 40, 40, 40)
             else:
                 add_weight = (0, 0, 0, 0)
@@ -1089,14 +1090,14 @@ class Pelt:
         # ------------------------------------------------------------------------------------------------------------#
 
         weights = [0, 0, 0]  # Weights for each length. It goes (short, medium, long)
-        for p_ in par_peltlength:
-            if p_ == "short":
+        for length in parent_peltlengths:
+            if length == "short":
                 add_weight = (50, 10, 2)
-            elif p_ == "medium":
+            elif length == "medium":
                 add_weight = (25, 50, 25)
-            elif p_ == "long":
+            elif length == "long":
                 add_weight = (2, 10, 50)
-            elif p_ is None:
+            elif length is None:
                 add_weight = (10, 10, 10)
             else:
                 add_weight = (0, 0, 0)
@@ -1117,10 +1118,10 @@ class Pelt:
         # There are 94 percentage points that can be added by
         # parents having white. If we have more than two, this
         # will keep that the same.
-        percentage_add_per_parent = int(94 / len(par_white))
+        percentage_add_per_parent = int(94 / len(parent_white))
         chance = 3
-        for p_ in par_white:
-            if p_:
+        for white in parent_white:
+            if white:
                 chance += percentage_add_per_parent
 
         chosen_white = random.randint(1, 100) <= chance
@@ -1172,22 +1173,8 @@ class Pelt:
             chosen_tortie_base = chosen_tortie_base.lower()
             chosen_pelt = random.choice(Pelt.torties)
 
-        # ------------------------------------------------------------------------------------------------------------#
-        #   PELT COLOUR
-        # ------------------------------------------------------------------------------------------------------------#
-
         chosen_pelt_color = choice(random.choices(Pelt.colour_categories, k=1)[0])
-
-        # ------------------------------------------------------------------------------------------------------------#
-        #   PELT LENGTH
-        # ------------------------------------------------------------------------------------------------------------#
-
         chosen_pelt_length = random.choice(Pelt.pelt_length)
-
-        # ------------------------------------------------------------------------------------------------------------#
-        #   PELT WHITE
-        # ------------------------------------------------------------------------------------------------------------#
-
         chosen_white = random.randint(1, 100) <= 40
 
         # Adjustments to pelt chosen based on if the pelt has white in it or not.
@@ -1211,9 +1198,8 @@ class Pelt:
     def init_pattern_color(self, parents, gender) -> bool:
         """Inits self.name, self.colour, self.length,
         self.tortiebase and determines if the cat
-        will have white patche or not.
-        Return TRUE is the cat should have white patches,
-        false is not."""
+        will have white patches or not.
+        Returns True if the cat should have white patches, otherwise False"""
 
         if parents:
             # If the cat has parents, use inheritance to decide pelt.
@@ -1572,11 +1558,6 @@ class Pelt:
     def white(self):
         return self.white_patches or self.points
 
-    @white.setter
-    def white(self, val):
-        print("Can't set pelt.white")
-        return
-
     def describe_eyes(self):
         return (
             adjust_list_text(
@@ -1681,7 +1662,7 @@ def _describe_pattern(cat, short=False):
     return pelt_name, color_name
 
 
-def _describe_torties(cat, color_name, short=False) -> [str, str]:
+def _describe_torties(cat, color_name, short=False) -> tuple[str, str]:
     # Calicos and Torties need their own desciptions
     if short:
         # If using short, don't describe the colors of calicos and torties.

@@ -110,7 +110,7 @@
             "tortie_pattern": "tortietabby",
             "pattern": "PALEFOUR"
         }
-},
+    },
     "old_tortie_patches": {
         "PALEONE": ["PALEGINGER", "ONE"],
         "PALETWO": ["PALEGINGER", "TWO"],
@@ -132,7 +132,7 @@
         "CREAMTWO": ["CREAM", "TWO"],
         "CREAMTHREE": ["CREAM", "THREE"],
         "CREAMFOUR": ["CREAM", "FOUR"]
-},
+    },
     "old_creamy_patches": {
         "COLOURPOINTCREAMY": "COLOURPOINT",
         "ANYCREAMY": "ANY",
@@ -140,5 +140,5 @@
         "LITTLECREAMY": "LITTLE",
         "VANCREAMY": "VAN",
         "TUXEDOCREAMY": "TUXEDO"
-}
+    }
 }
