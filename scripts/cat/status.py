@@ -26,7 +26,7 @@ class Status:
         CatRank.ROGUE: CatSocial.ROGUE,
         CatRank.KITTYPET: CatSocial.KITTYPET,
     }
-    """A dict of ranks and their corresponding sociability status"""
+    """A dict of ranks and their corresponding social status"""
 
     def __init__(
         self,
@@ -40,7 +40,7 @@ class Status:
         """
         Saved cats should only be passing their saved group_history and standing into this class.
         Cats that are being newly generated will default to the player clan and a rank appropriate for age.  If you'd
-        like to have more control, use the sociability, group, and rank params. If you don't know the rank, include age, or
+        like to have more control, use the social, group, and rank params. If you don't know the rank, include age, or
         vice versa
         """
 
@@ -102,7 +102,7 @@ class Status:
         if rank and not isinstance(rank, CatRank):
             raise TypeError("{rank} is not a valid rank")
         if social and not isinstance(social, CatSocial):
-            raise TypeError("{sociability} is not a valid rank")
+            raise TypeError("{social} is not a valid rank")
         if group and not isinstance(group, CatGroup):
             raise TypeError("{group} is not a valid rank")
 
@@ -129,10 +129,10 @@ class Status:
         """
         Starts a group history and standing history for a newly generated cat. You MUST include either age or rank.
         :param age: The age the cat currently is.
-        :param social: The sociability group the cat will be (rogue, clancat, loner, kittypet)
-        :param group: The group the cat will be part of, default is None. If sociability is set to clancat and group is None,
+        :param social: The social group the cat will be (rogue, clancat, loner, kittypet)
+        :param group: The group the cat will be part of, default is None. If social is set to clancat and group is None,
          group will default to player clan.
-        :param rank: The rank the cat holds within a group. If they have no group, then this matches their sociability.
+        :param rank: The rank the cat holds within a group. If they have no group, then this matches their social.
         """
         # just some extra checks in case a str snuck in
         group, rank, social = self.get_enums(group, rank, social, age)
@@ -157,9 +157,9 @@ class Status:
         Generates initial group history for a cat
         You HAVE to include either an age or a rank for this to work correctly
         :param age: The age of the cat.
-        :param social: The sociability standing of the cat (rogue, loner, clancat, ect.)
+        :param social: The social standing of the cat (rogue, loner, clancat, ect.)
         :param group: The group this cat belongs to
-        :param rank: This cat's rank. If the cat is outside the Clan, this will match it's sociability.
+        :param rank: This cat's rank. If the cat is outside the Clan, this will match it's social.
         """
         new_history = {"group": group, "rank": rank, "moons_as": 0}
 
@@ -181,22 +181,22 @@ class Status:
                 rank = self.get_rank_from_age(age)
                 new_history["rank"] = rank
 
-        # if not sociability, then sociability category is found via the rank
+        # if not social, then social category is found via the rank
         if not social:
             if rank and rank.is_any_clancat_rank():
                 social = CatSocial.CLANCAT
             else:
                 social = CatSocial(rank)
 
-        # group assignment via sociability
+        # group assignment via social
         # we assume a clancat is the player's as default
         # otherwise if the cat isn't a clancat, then we assume no group
         if social == CatSocial.CLANCAT and not group:
             new_history["group"] = CatGroup.PLAYER_CLAN
 
-        # next, we double-check that the rank is appropriate for the sociability, this is mostly for loner/rogue/kittypet
+        # next, we double-check that the rank is appropriate for the social, this is mostly for loner/rogue/kittypet
         if social != self.social_lookup[rank]:
-            # getting ranks according to sociability category
+            # getting ranks according to social category
             possible_ranks = [
                 rank
                 for rank in self.social_lookup.keys()
@@ -229,14 +229,14 @@ class Status:
     @property
     def social(self) -> CatSocial:
         """
-        Returns the cat's current sociability category, aka what the cat is considered by other cats within the world
+        Returns the cat's current social category, aka what the cat is considered by other cats within the world
         """
         return self.all_socials[-1]
 
     @property
     def all_socials(self) -> list:
         """
-        Returns a list of all sociability classes the cat has been part of or is currently part of.
+        Returns a list of all social classes the cat has been part of or is currently part of.
         """
         social_history_dupes = [
             self.social_lookup[record["rank"]] for record in self.group_history
@@ -366,7 +366,7 @@ class Status:
         Changes group status for a cat. They can be entering, leaving, or switching their group.
         :param new_group: the name of the new group they will be joining, default None
         :param new_rank: Indicate what rank the cat should take, if they aren't joining a new group then this should
-        match their sociability.
+        match their social.
         :param standing_with_past_group: Indicate what standing the cat should have with their old group, leave None if
         they didn't have a group
         """
@@ -402,7 +402,7 @@ class Status:
     def become_lost(self, new_social_status: CatSocial = CatSocial.KITTYPET):
         """
         Removes from previous group and sets standing with that group to Lost.
-        :param new_social_status: Indicates what sociability category the cat now belongs to (i.e. they've been taken by
+        :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by
         Twolegs and are now a kittypet)
         """
         # find matching rank enum
@@ -598,7 +598,7 @@ class StatusDict(TypedDict, total=False):
 
     "group_history": list[dict],
     "standing_history": list[dict],
-    "sociability": CatSocial,
+    "social": CatSocial,
     "group": CatGroup
     "rank": CatRank
     "age": CatAge

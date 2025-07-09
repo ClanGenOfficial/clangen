@@ -778,7 +778,7 @@ def create_new_cat(
     :param bool litter: set True if a litter of kittens needs to be generated - default: False
     :param bool backstory: a list of possible backstories.json for the new cat(s) - default: None
     :param rank: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
-    :param original_social: set as the cat's old sociability - default: None (cat will not be given any past sociability, it will
+    :param original_social: set as the cat's old social - default: None (cat will not be given any past social, it will
     appear that they have always been a clancat)
     :param original_group: set as the cat's old group - default: None (cat will not be given any past group)
     :param bool outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
@@ -866,7 +866,7 @@ def create_new_cat(
         new_cat = Cat(
             moons=moons,
             status_dict={
-                "sociability": original_social,
+                "social": original_social,
                 "age": age,
                 "rank": rank,
                 "group": original_group,

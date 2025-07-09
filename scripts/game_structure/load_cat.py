@@ -187,10 +187,10 @@ def json_load():
                 new_cat.personality = Personality(
                     trait=cat["trait"],
                     kit_trait=new_cat.age in ["newborn", "kitten"],
-                    lawfulness=facets[0],
-                    sociability=facets[1],
-                    aggression=facets[2],
-                    stability=facets[3],
+                    lawful=facets[0],
+                    social=facets[1],
+                    aggress=facets[2],
+                    stable=facets[3],
                 )
             else:
                 new_cat.personality = Personality(
