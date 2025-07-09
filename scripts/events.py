@@ -327,9 +327,7 @@ class Events:
                     event_type=event.event_type,
                     main_cat=Cat.fetch_cat(event.involved_cats.get("m_c")),
                     random_cat=Cat.fetch_cat(event.involved_cats.get("r_c")),
-                    victim_cat=Cat.fetch_cat(
-                        event.involved_cats.get("mur_c")
-                    ),
+                    victim_cat=Cat.fetch_cat(event.involved_cats.get("mur_c")),
                     sub_type=event.pool.get("subtype"),
                     future_event=event,
                 )

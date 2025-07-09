@@ -69,4 +69,3 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
             possible_cats.remove(cat_dict[cat_involved])
 
     return gathered_cat_dict
-
