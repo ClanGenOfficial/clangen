@@ -2,7 +2,6 @@ from random import choice, randrange, choices, sample
 from typing import List, Optional
 
 import i18n
-import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
@@ -395,7 +394,7 @@ class ShortEvent:
                             main_cat=first_cat,
                         )
                 else:
-                    Relation_Events.welcome_new_cat_objects([first_cat])
+                    Relation_Events.welcome_new_cats([first_cat])
                 self.all_involved_cat_ids.extend(cat)
                 self.new_cats.append(cat)
 
