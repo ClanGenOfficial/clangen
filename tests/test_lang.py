@@ -1,4 +1,5 @@
 # Tests for localization
+import os
 import unittest
 
 import i18n
@@ -58,7 +59,10 @@ class TestLocalisation(unittest.TestCase):
         Test whether getting the plural pronoun set is working as expected
         :return:
         """
-        set_lang_config_directory("tests/prereqs/test_lang/plural_pronoun_config.json")
+        path = os.path.join(
+            "tests", "prereqs", "test_lang", "plural_pronoun_config.json"
+        )
+        set_lang_config_directory(path)
 
         for key, value in self.cat_combos_two.items():
             input = []
