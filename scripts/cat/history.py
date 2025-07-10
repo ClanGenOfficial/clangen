@@ -440,7 +440,9 @@ class History:
         if "is_victim" not in victim.history.murder:
             victim.history.murder["is_victim"] = []
         else:
-            print(f"WARNING: victim cat: {victim.ID} already has a murder history - as the victim!")
+            print(
+                f"WARNING: victim cat: {victim.ID} already has a murder history - as the victim!"
+            )
 
         self.murder["is_murderer"].append(
             {
