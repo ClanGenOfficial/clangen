@@ -9,7 +9,7 @@ from pygame_gui.core import ObjectID
 
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import create_example_cats, create_cat, Cat
-from scripts.cat.names import names
+from scripts.cat.names import Name
 from scripts.clan import Clan
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
@@ -1291,7 +1291,7 @@ class MakeClanScreen(Screens):
 
     def random_clan_name(self):
         clan_names = (
-            names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
+            Name.names_dict["normal_prefixes"] + Name.names_dict["clan_prefixes"]
         )
         while True:
             chosen_name = choice(clan_names)

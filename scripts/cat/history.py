@@ -307,7 +307,7 @@ class History:
         """
 
         if condition in self.possible_history:
-            self.possible_history.remove(condition)
+            self.possible_history.pop(condition)
 
     def add_death(self, death_text, condition=None, other_cat=None):
         """Adds death to cat's history. If a condition is passed, it will look into

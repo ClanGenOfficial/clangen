@@ -689,10 +689,10 @@ class ChangeCatName(UIWindow):
             container=self,
         )
 
-        if self.the_cat.status.rank in self.the_cat.name.names_dict["special_suffixes"]:
+        if self.the_cat.status.rank in self.the_cat.Name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(
                 ui_scale(pygame.Rect((159 + x_pos, 50 + y_pos), (120, 30))),
-                placeholder_text=self.the_cat.name.names_dict["special_suffixes"][
+                placeholder_text=self.the_cat.Name.names_dict["special_suffixes"][
                     self.the_cat.status.rank
                 ],
                 manager=MANAGER,
@@ -745,7 +745,7 @@ class ChangeCatName(UIWindow):
                 # by a special suffix.
                 if (
                     self.the_cat.status.rank
-                    not in self.the_cat.name.names_dict["special_suffixes"]
+                    not in self.the_cat.Name.names_dict["special_suffixes"]
                     or self.the_cat.name.specsuffix_hidden
                 ):
                     self.the_cat.name.suffix = sub(

@@ -7,7 +7,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatGroup, CatRank
 from scripts.cat.history import History
-from scripts.cat.names import names, Name
+from scripts.cat.names import Name
 from scripts.cat_relations.relationship import Relationship
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
@@ -402,7 +402,7 @@ class Pregnancy_Events:
                 kit.backstory = "outsider1"
 
                 if cat.status.is_exiled(CatGroup.PLAYER_CLAN):
-                    name = choice(names.names_dict["normal_prefixes"])
+                    name = choice(Name.names_dict["normal_prefixes"])
                     kit.name = Name(prefix=name, suffix="", cat=kit)
 
                 if other_cat and not other_cat.status.is_outsider:

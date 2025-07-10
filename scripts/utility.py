@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache, localization
 from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatStanding
 from scripts.cat.history import History
-from scripts.cat.names import names
+from scripts.cat.names import Name
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
@@ -905,7 +905,7 @@ def create_new_cat(
         else:
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:
-                name = choice(names.names_dict["loner_names"])
+                name = choice(Name.names_dict["loner_names"])
                 # check if the kittypets come with a pretty acc
                 if bool(getrandbits(1)):
                     # TODO: refactor this entire function to remove this call amongst other things
@@ -917,10 +917,10 @@ def create_new_cat(
             elif original_social in (CatSocial.LONER, CatSocial.ROGUE) and bool(
                 getrandbits(1)
             ):
-                name = choice(names.names_dict["loner_names"])
+                name = choice(Name.names_dict["loner_names"])
             # otherwise give name from prefix list (more nature-y names)
             else:
-                name = choice(names.names_dict["normal_prefixes"])
+                name = choice(Name.names_dict["normal_prefixes"])
 
                 # now, if this cat should take a new clan name, we give them such
             if new_name:

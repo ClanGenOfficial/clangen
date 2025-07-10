@@ -3282,7 +3282,7 @@ class Cat:
         elif patrol:
             return "<br>".join(
                 (
-                    i18n.t(f"general.{self.status.lower()}", count=1),
+                    i18n.t(f"general.{self.status.rank.lower()}", count=1),
                     i18n.t(f"cat.personality.{self.personality.trait}"),
                     self.skills.skill_string(short=True),
                     i18n.t(f"cat.skills.{self.experience_level}")
