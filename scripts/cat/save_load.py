@@ -12,11 +12,11 @@ if TYPE_CHECKING:
     from scripts.cat.cats import Cat
     from scripts.game_structure.game_essentials import Game
 
-faded_ids = []
 """List of IDs of faded cats"""
+faded_ids = []
 
-cat_to_fade = []
 """Cats who have been faded since the last save"""
+cat_to_fade = []
 
 
 def save_cats(clanname, cat_class: Type["Cat"], game: "Game"):
@@ -110,6 +110,7 @@ def save_faded_cats(clanname, cat_class: Type["Cat"], game: "Game"):
         faded_info_copy_path = (
             Path(get_save_dir()) / clanname / "faded_cats_info_copy.txt"
         )
+
         if not faded_info_copy_path.exists():
             # Create the file if it doesn't exist
             with open(
