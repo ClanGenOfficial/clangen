@@ -66,6 +66,7 @@ from scripts.utility import (
     process_text,
     ui_scale_dimensions,
     ui_scale_offset,
+    shorten_text_to_fit,
 )
 
 if TYPE_CHECKING:
@@ -629,11 +630,11 @@ class ChangeCatName(UIWindow):
 
         self.heading = pygame_gui.elements.UITextBox(
             "windows.change_name_title",
-            ui_scale(pygame.Rect((0, 10), (200, 40))),
+            ui_scale(pygame.Rect((0, 10), (340, -1))),
             object_id="#text_box_30_horizcenter",
             manager=MANAGER,
             container=self,
-            text_kwargs={"name": self.the_cat.name},
+            text_kwargs={"name": shorten_text_to_fit(str(self.the_cat.name), 150)},
             anchors={"centerx": "centerx"},
         )
 

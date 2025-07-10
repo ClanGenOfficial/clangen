@@ -551,6 +551,19 @@ class Status:
 
         return past_ranks[-1]
 
+    def get_last_living_group(self) -> Optional[CatGroup]:
+        """
+        Returns the last group this cat belonged to before death. If the cat had no group before dying, this will return None.
+        """
+        history = self.group_history
+        history.reverse()
+
+        for entry in history:
+            if not entry["group"] or not entry["group"].is_afterlife():
+                return entry["group"]
+
+        return None
+
     def is_lost(self, group: CatGroup = None) -> bool:
         """
         Returns True if the cat is considered "lost" by a group.

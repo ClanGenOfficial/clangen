@@ -646,7 +646,9 @@ class Cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan and self.status.alive_in_player_clan:
+        # handle grief
+        # since we just yeeted them to their afterlife, we gotta check their previous group affiliation, not current
+        if game.clan and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN:
             self.grief(body)
 
         # mark the sprite as outdated
