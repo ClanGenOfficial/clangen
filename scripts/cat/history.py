@@ -47,15 +47,11 @@ class History:
         if self.murder:
             for killed in self.murder.get("is_murderer", []):
                 if isinstance(killed["revealed"], bool):
-                    new_dict = {"to_clan": False, "aware_individuals": []}
-                    if killed["revealed"]:
-                        new_dict["to_clan"] = True
+                    new_dict = {"to_clan": killed["revealed"], "aware_individuals": []}
                     killed["revealed"] = new_dict
             for death in self.murder.get("is_victim", []):
                 if isinstance(death["revealed"], bool):
-                    new_dict = {"to_clan": False, "aware_individuals": []}
-                    if death["revealed"]:
-                        new_dict["to_clan"] = True
+                    new_dict = {"to_clan": death["revealed"], "aware_individuals": []}
                     death["revealed"] = new_dict
 
         """ 

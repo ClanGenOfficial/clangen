@@ -376,8 +376,7 @@ class HandleShortEvents:
         if self.future_event_failed:
             self.future_event_failed = False
             return True
-        else:
-            return self.future_event_failed
+        return False
 
     def handle_new_cats(self):
         """
