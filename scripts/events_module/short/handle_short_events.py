@@ -175,8 +175,7 @@ class HandleShortEvents:
         # ---------------------------------------------------------------------------- #
         try:
             self.chosen_event = choice(final_events)
-            if self.future_event_failed:
-                self.future_event_failed = False
+            self.future_event_failed = False
             # this print is good for testing, but gets spammy in large clans
             # print(f"CHOSEN: {self.chosen_event.event_id}")
         except IndexError:
