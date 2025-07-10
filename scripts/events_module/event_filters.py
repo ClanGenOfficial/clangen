@@ -3,7 +3,7 @@ from random import choice
 
 import ujson
 
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatRank, CatAge
 from scripts.game_structure.game_essentials import game
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (
@@ -286,6 +286,10 @@ def _check_cat_age(cat, ages: list) -> bool:
     """
     checks if a cat's age is within ages list
     """
+    # we only allow newborns if they are explicitly stated
+    if cat.age == CatAge.NEWBORN and (not ages or CatAge.NEWBORN not in ages):
+        return False
+
     if "any" in ages or not ages:
         return True
 
@@ -296,6 +300,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
     """
     checks if cat's status is within statuses list
     """
+
     if "any" in statuses or not statuses:
         return True
 

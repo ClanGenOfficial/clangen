@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 import i18n
 
 from scripts.cat.enums import CatGroup
+from scripts.events_module.event_filters import event_for_cat
 from scripts.game_structure.localization import load_lang_resource
 
 if TYPE_CHECKING:
@@ -97,83 +98,47 @@ class Thoughts:
             ):
                 return False
 
+        main_info_dict = {}
+        random_info_dict = {}
+
         # Constraints for the status of the main cat
         if "main_status_constraint" in thought:
-            if (
-                main_cat.status.rank not in thought["main_status_constraint"]
-                and "any" not in thought["main_status_constraint"]
-            ):
-                return False
+            main_info_dict["status"] = thought["main_status_constraint"]
 
         # Constraints for the status of the random cat
         if "random_status_constraint" in thought and random_cat:
-            if (
-                random_cat.status.rank not in thought["random_status_constraint"]
-                and "any" not in thought["random_status_constraint"]
-            ):
-                return False
-        elif "random_status_constraint" in thought and not random_cat:
-            pass
+            random_info_dict["status"] = thought["random_status_constraint"]
 
         # main cat age constraint
         if "main_age_constraint" in thought:
-            if main_cat.age not in thought["main_age_constraint"]:
-                return False
+            main_info_dict["age"] = thought["main_age_constraint"]
 
         if "random_age_constraint" in thought and random_cat:
-            if random_cat.age not in thought["random_age_constraint"]:
-                return False
+            random_info_dict["age"] = thought["random_age_constraint"]
 
         if "main_trait_constraint" in thought:
-            if main_cat.personality.trait not in thought["main_trait_constraint"]:
-                return False
+            main_info_dict["trait"] = thought["main_trait_constraint"]
 
         if "random_trait_constraint" in thought and random_cat:
-            if random_cat.personality.trait not in thought["random_trait_constraint"]:
-                return False
+            random_info_dict["trait"] = thought["random_trait_constraint"]
 
         if "main_skill_constraint" in thought:
-            _flag = False
-            for _skill in thought["main_skill_constraint"]:
-                spli = _skill.split(",")
-
-                if len(spli) != 2:
-                    print("Throught constraint not properly formated", _skill)
-                    continue
-
-                if main_cat.skills.meets_skill_requirement(spli[0], int(spli[1])):
-                    _flag = True
-                    break
-
-            if not _flag:
-                return False
+            main_info_dict["skill"] = thought["main_skill_constraint"]
 
         if "random_skill_constraint" in thought and random_cat:
-            _flag = False
-            for _skill in thought["random_skill_constraint"]:
-                spli = _skill.split(",")
-
-                if len(spli) != 2:
-                    print("Throught constraint not properly formated", _skill)
-                    continue
-
-                if random_cat.skills.meets_skill_requirement(spli[0], spli[1]):
-                    _flag = True
-                    break
-
-            if not _flag:
-                return False
+            random_info_dict["skill"] = thought["random_skill_constraint"]
 
         if "main_backstory_constraint" in thought:
-            if main_cat.backstory not in thought["main_backstory_constraint"]:
-                return False
+            main_info_dict["backstory"] = thought["main_backstory_constraint"]
 
         if "random_backstory_constraint" in thought:
-            if (
-                random_cat
-                and random_cat.backstory not in thought["random_backstory_constraint"]
-            ):
-                return False
+            random_info_dict["backstory"] = thought["random_backstory_constraint"]
+
+        if not event_for_cat(main_info_dict, main_cat):
+            return False
+
+        if random_cat and not event_for_cat(random_info_dict, random_cat):
+            return False
 
         # Filter for the living status of the random cat. The living status of the main cat
         # is taken into account in the thought loading process.
