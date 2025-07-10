@@ -249,11 +249,6 @@ class Skill:
         """Skill property"""
         return self.path.value[self.tier]
 
-    @skill.setter
-    def skill(self):
-        """Can't set the skill directly with this setter"""
-        print("Can't set skill directly")
-
     @property
     def tier(self):
         """Returns the tier level of the skill"""
@@ -264,10 +259,6 @@ class Skill:
                 return i
 
         return 1
-
-    @tier.setter
-    def tier(self):
-        print("Can't set tier directly")
 
     def set_points_to_tier(self, tier: int):
         """This is seperate from the tier setter, since it will booonly allow you
@@ -434,7 +425,7 @@ class CatSkills:
         """
 
         if not mentor:
-            return
+            return None
 
         # Determine if any skills can be effected
         mentor_tags = (
@@ -456,7 +447,7 @@ class CatSkills:
 
         # If nothing can be effected, just return as well.
         if not (can_primary or can_secondary):
-            return
+            return None
 
         amount_effect = random.randint(1, 4)
 
@@ -642,7 +633,6 @@ class CatSkills:
         restrictions. Returns an integer value of how many skills requirements are met.
         """
         skills_meet = 0
-        min_tier = 0
         for _skill in skill_list:
             spl = _skill.split(",")
 
