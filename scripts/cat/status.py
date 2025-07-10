@@ -179,7 +179,8 @@ class Status:
                     rank = CatRank.KITTYPET
             else:
                 rank = self.get_rank_from_age(age)
-                new_history["rank"] = rank
+
+            new_history["rank"] = rank
 
         # if not social, then social category is found via the rank
         if not social:

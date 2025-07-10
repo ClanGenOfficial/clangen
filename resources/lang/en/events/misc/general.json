@@ -8377,9 +8377,6 @@
         "season": [
             "any"
         ],
-        "sub_type": [
-            "mediator"
-        ],
         "weight": 40,
         "event_text": "m_c travels to o_c_n to resolve some recent border disputes.",
         "m_c": {
@@ -8405,9 +8402,6 @@
         ],
         "season": [
             "any"
-        ],
-        "sub_type": [
-            "mediator"
         ],
         "weight": 20,
         "event_text": "m_c travels to o_c_n to resolve some recent border disputes. The meeting goes better than expected, and m_c returns with a plan to solve the issue for good.",
@@ -8435,9 +8429,6 @@
         "season": [
             "any"
         ],
-        "sub_type": [
-            "mediator"
-        ],
         "weight": 10,
         "event_text": "m_c travels to o_c_n to resolve some recent border disputes. However, no progress was made.",
         "m_c": {
@@ -8463,9 +8454,6 @@
         ],
         "season": [
             "any"
-        ],
-        "sub_type": [
-            "mediator"
         ],
         "weight": 20,
         "event_text": "m_c travels to o_c_n to resolve some recent border disputes. However, it seems m_c only made o_c_n more upset.",
@@ -8493,9 +8481,6 @@
         "season": [
             "any"
         ],
-        "sub_type": [
-            "mediator"
-        ],
         "weight": 40,
         "event_text": "m_c travels to o_c_n to resolve some recent hunting disputes.",
         "m_c": {
@@ -8521,9 +8506,6 @@
         ],
         "season": [
             "any"
-        ],
-        "sub_type": [
-            "mediator"
         ],
         "weight": 20,
         "event_text": "m_c travels to o_c_n to resolve some recent hunting disputes. The meeting goes better than expected, and m_c returns with a plan to solve the issue for good.",
@@ -8551,9 +8533,6 @@
         "season": [
             "any"
         ],
-        "sub_type": [
-            "mediator"
-        ],
         "weight": 10,
         "event_text": "m_c travels to o_c_n to resolve some recent hunting disputes. However, no progress was made.",
         "m_c": {
@@ -8579,9 +8558,6 @@
         ],
         "season": [
             "any"
-        ],
-        "sub_type": [
-            "mediator"
         ],
         "weight": 20,
         "event_text": "m_c travels to o_c_n to resolve some recent hunting disputes. However, it seems m_c only made o_c_n more upset.",
@@ -8609,9 +8585,6 @@
         "season": [
             "any"
         ],
-        "sub_type": [
-            "mediator"
-        ],
         "weight": 40,
         "event_text": "m_c travels to o_c_n to resolve some recent herb-gathering disputes.",
         "m_c": {
@@ -8637,9 +8610,6 @@
         ],
         "season": [
             "any"
-        ],
-        "sub_type": [
-            "mediator"
         ],
         "weight": 20,
         "event_text": "m_c travels to o_c_n to resolve some recent herb-gathering disputes. The meeting goes better than expected, and m_c returns with a plan to solve the issue for good.",
@@ -8667,9 +8637,6 @@
         "season": [
             "any"
         ],
-        "sub_type": [
-            "mediator"
-        ],
         "weight": 10,
         "event_text": "m_c travels to o_c_n to resolve some recent herb-gathering disputes. However, no progress was made.",
         "m_c": {
@@ -8695,9 +8662,6 @@
         ],
         "season": [
             "any"
-        ],
-        "sub_type": [
-            "mediator"
         ],
         "weight": 20,
         "event_text": "m_c travels to o_c_n to resolve some recent herb-gathering disputes. However, it seems m_c only made o_c_n more upset.",
@@ -8725,9 +8689,6 @@
         "season": [
             "any"
         ],
-        "sub_type": [
-            "mediator"
-        ],
         "weight": 40,
         "event_text": "m_c travels to o_c_n to resolve some recent personal disputes.",
         "m_c": {
@@ -8753,9 +8714,6 @@
         ],
         "season": [
             "any"
-        ],
-        "sub_type": [
-            "mediator"
         ],
         "weight": 20,
         "event_text": "m_c travels to o_c_n to resolve some recent personal disputes. The meeting goes better than expected, and m_c returns with a plan to solve the issue for good.",
@@ -8783,9 +8741,6 @@
         "season": [
             "any"
         ],
-        "sub_type": [
-            "mediator"
-        ],
         "weight": 10,
         "event_text": "m_c travels to o_c_n to resolve some recent personal disputes. However, no progress was made.",
         "m_c": {
@@ -8811,9 +8766,6 @@
         ],
         "season": [
             "any"
-        ],
-        "sub_type": [
-            "mediator"
         ],
         "weight": 20,
         "event_text": "m_c travels to o_c_n to resolve some recent personal disputes. However, it seems m_c only made o_c_n more upset.",

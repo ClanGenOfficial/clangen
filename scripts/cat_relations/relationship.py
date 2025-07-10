@@ -3,8 +3,8 @@ from random import choice
 
 import i18n
 
+from scripts.game_structure import constants
 from scripts.cat.enums import CatRank
-from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
@@ -104,7 +104,7 @@ class Relationship:
         if rel_type in ("jealousy", "dislike"):
             in_de_crease = "decrease" if positive else "increase"
 
-        chance = game.config["relationship"]["chance_for_neutral"]
+        chance = constants.CONFIG["relationship"]["chance_for_neutral"]
         if chance == 1:
             in_de_crease = "neutral"
         elif chance > 1 and random.randint(1, chance) == 1:
@@ -271,7 +271,7 @@ class Relationship:
         if in_de_crease == "neutral":
             return 0
         # get the normal amount
-        amount = game.config["relationship"]["in_decrease_value"][intensity]
+        amount = constants.CONFIG["relationship"]["in_decrease_value"][intensity]
         if in_de_crease == "decrease":
             amount = amount * -1
 
@@ -282,10 +282,10 @@ class Relationship:
             amount = amount
         elif compatibility:
             # positive compatibility
-            amount += game.config["relationship"]["compatibility_effect"]
+            amount += constants.CONFIG["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
-            amount -= game.config["relationship"]["compatibility_effect"]
+            amount -= constants.CONFIG["relationship"]["compatibility_effect"]
         return amount
 
     def interaction_affect_relationships(
@@ -307,7 +307,7 @@ class Relationship:
         """
         amount = self.get_amount(in_de_crease, intensity)
         passive_buff = int(
-            abs(amount / game.config["relationship"]["passive_influence_div"])
+            abs(amount / constants.CONFIG["relationship"]["passive_influence_div"])
         )
 
         # influence the own relationship

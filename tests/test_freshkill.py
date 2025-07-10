@@ -22,6 +22,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.amount = self.prey_config["start_amount"]
         self.prey_requirement = self.prey_config["prey_requirement"]
         self.condition_increase = self.prey_config["condition_increase"]
+        Cat.all_cats = {}
 
     def test_add_freshkill(self) -> None:
         # given

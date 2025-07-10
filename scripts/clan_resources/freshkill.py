@@ -7,6 +7,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
+from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_alive_clan_queens
 
@@ -216,17 +217,17 @@ class FreshkillPile:
             return
 
         # NOTE: the tactics should have their own function for testing purposes
-        if game.clan.clan_settings["younger first"]:
+        if get_clan_setting("younger first"):
             self.tactic_younger_first(living_cats, additional_food_round)
-        elif game.clan.clan_settings["less nutrition first"]:
+        elif get_clan_setting("less nutrition first"):
             self.tactic_less_nutrition_first(living_cats, additional_food_round)
-        elif game.clan.clan_settings["more experience first"]:
+        elif get_clan_setting("more experience first"):
             self.tactic_more_experience_first(living_cats, additional_food_round)
-        elif game.clan.clan_settings["hunter first"]:
+        elif get_clan_setting("hunter first"):
             self.tactic_hunter_first(living_cats, additional_food_round)
-        elif game.clan.clan_settings["sick/injured first"]:
+        elif get_clan_setting("sick/injured first"):
             self.tactic_sick_injured_first(living_cats, additional_food_round)
-        elif game.clan.clan_settings["by-status"]:
+        elif get_clan_setting("by-status"):
             self.tactic_status(living_cats, additional_food_round)
         else:
             self.tactic_status(living_cats, additional_food_round)
@@ -355,7 +356,7 @@ class FreshkillPile:
         ]
 
         # first split nutrition information into low nutrition and satisfied
-        ration_prey = game.clan.clan_settings["ration prey"] if game.clan else False
+        ration_prey = get_clan_setting("ration prey")
 
         low_nutrition = {}
         satisfied = {}
@@ -494,7 +495,7 @@ class FreshkillPile:
             return
 
         # first split nutrition information into low nutrition and satisfied
-        ration_prey = game.clan.clan_settings["ration prey"] if game.clan else False
+        ration_prey = get_clan_setting("ration prey")
 
         # first feed the cats with the lowest nutrition
         for cat in group:
@@ -558,7 +559,7 @@ class FreshkillPile:
             actual_needed : int|float
                 the amount the cat actually needs for the moon
         """
-        ration = game.clan.clan_settings["ration prey"] if game.clan else False
+        ration = get_clan_setting("ration prey")
         remaining_amount = amount
         amount_difference = actual_needed - amount
         order = ["expires_in_1", "expires_in_2", "expires_in_3", "expires_in_4"]

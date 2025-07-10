@@ -11,6 +11,7 @@ from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
+from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_resources.freshkill import (
     FreshkillPile,
     FRESHKILL_EVENT_ACTIVE,
@@ -19,6 +20,8 @@ from scripts.clan_resources.freshkill import (
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.relation_events import Relation_Events
+from scripts.game_structure import localization, constants
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     event_text_adjust,
@@ -111,7 +114,7 @@ class HandleShortEvents:
         # check for war and assign self.other_clan accordingly
         war_chance = 5
         # if the war didn't go badly, then we decrease the chance of this event being war-focused
-        if game.switches["war_rel_change_type"] != "rel_down":
+        if switch_get_value(Switch.war_rel_change_type) != "rel_down":
             war_chance = 2
         if game.clan.war.get("at_war", False) and randint(1, war_chance) != 1:
             enemy_clan = get_warring_clan()
@@ -145,23 +148,25 @@ class HandleShortEvents:
             ignore_subtyping=ignore_subtyping,
         )
 
-        if isinstance(game.config["event_generation"]["debug_ensure_event_id"], str):
+        if isinstance(
+            constants.CONFIG["event_generation"]["debug_ensure_event_id"], str
+        ):
             found = False
             for _event in final_events:
                 if (
                     _event.event_id
-                    == game.config["event_generation"]["debug_ensure_event_id"]
+                    == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
                 ):
                     final_events = [_event]
                     print(
-                        f"FOUND debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                        f"FOUND debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
                         f"was set as the only event option"
                     )
                     found = True
                     break
             if not found:
                 # this print is very spammy, but can be helpful if unsure why a debug event isn't triggering
-                # print(f"debug_ensure_event_id: {game.config['event_generation']['debug_ensure_event_id']} "
+                # print(f"debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
                 #      f"was not possible for {self.main_cat.name}.  {self.main_cat.name} was looking for a {event_type}: {self.sub_types} event")
                 pass
         # ---------------------------------------------------------------------------- #
@@ -189,7 +194,7 @@ class HandleShortEvents:
 
         # checking if a mass death should happen, happens here so that we can toss the event if needed
         if "mass_death" in self.chosen_event.sub_type:
-            if not game.clan.clan_settings["disasters"]:
+            if not get_clan_setting("disasters"):
                 return
             self.handle_mass_death()
             if len(self.multi_cat) <= 2:
@@ -424,7 +429,7 @@ class HandleShortEvents:
                         sub_sub[0] != sub[0]
                         and (
                             sub_sub[0].gender == "female"
-                            or game.clan.clan_settings["same sex birth"]
+                            or get_clan_setting("same sex birth")
                         )
                         and sub_sub[0].ID in (sub[0].parent1, sub[0].parent2)
                         and sub_sub[0].status.alive_in_player_clan
@@ -569,7 +574,7 @@ class HandleShortEvents:
         # if there's enough eligible cats, then we KILL
         if alive_count > 15:
             max_deaths = int(alive_count / 2)  # 1/2 of alive cats
-            if max_deaths > 10:  # make this into a game config setting?
+            if max_deaths > 10:  # make this into a constants.CONFIG setting?
                 max_deaths = 10  # we don't want to have massive events with a wall of names to read
             weights = []
             population = []
@@ -739,8 +744,8 @@ class HandleShortEvents:
             # find all possible injuries
             possible_injuries = []
             for injury in block["injuries"]:
-                if injury in INJURY_GROUPS:
-                    possible_injuries.extend(INJURY_GROUPS[injury])
+                if injury in constants.INJURY_GROUPS:
+                    possible_injuries.extend(constants.INJURY_GROUPS[injury])
                 else:
                     possible_injuries.append(injury)
 
@@ -951,84 +956,3 @@ class HandleShortEvents:
 
 
 handle_short_events = HandleShortEvents()
-
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-EVENT_ALLOWED_CONDITIONS = [
-    "tick bites",
-    "claw-wound",
-    "bite-wound",
-    "cat bite",
-    "beak bite",
-    "snake bite",
-    "quilled by a porcupine",
-    "rat bite",
-    "mangled leg",
-    "mangled tail",
-    "broken jaw",
-    "broken bone",
-    "sore",
-    "bruises",
-    "scrapes",
-    "cracked pads",
-    "small cut",
-    "sprain",
-    "bee sting",
-    "joint pain",
-    "dislocated joint",
-    "torn pelt",
-    "torn ear",
-    "water in their lungs",
-    "shivering",
-    "frostbite",
-    "burn",
-    "severe burn",
-    "shock",
-    "dehydrated",
-    "head damage",
-    "damaged eyes",
-    "broken back",
-    "poisoned",
-    "headache",
-    "severe headache",
-    "fleas",
-    "seizure",
-    "diarrhea",
-    "running nose",
-    "kittencough",
-    "whitecough",
-    "greencough",
-    "yellowcough",
-    "redcough",
-    "carrionplace disease",
-    "heat stroke",
-    "heat exhaustion",
-    "stomachache",
-    "constant nightmares",
-]
-
-INJURY_GROUPS = {
-    "battle_injury": [
-        "claw-wound",
-        "mangled leg",
-        "mangled tail",
-        "torn pelt",
-        "cat bite",
-    ],
-    "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
-    "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
-    "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
-    "cold_injury": ["shivering", "frostbite"],
-    "big_bite_injury": [
-        "bite-wound",
-        "broken bone",
-        "torn pelt",
-        "mangled leg",
-        "mangled tail",
-    ],
-    "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
-    "beak_bite": ["beak bite", "torn ear", "scrapes"],
-    "rat_bite": ["rat bite", "torn ear", "torn pelt"],
-    "sickness": ["greencough", "redcough", "whitecough", "yellowcough"],
-}
