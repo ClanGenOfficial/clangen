@@ -501,5 +501,5 @@
 			}
 		}
 	},
-	"dev_tools": false
+	"dev_tools": true
 }

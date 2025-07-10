@@ -97,7 +97,7 @@ class EventEditScreen(Screens):
     rel_value_types: list = RelationshipScreen.rel_value_names
     """List of all relationship values."""
 
-    all_ranks: list = Cat.rank_sort_order.copy()
+    all_ranks: list = [str(rank) for rank in Cat.rank_sort_order.copy()]
     """List of all possible ranks from highest to lowest."""
     all_ranks.reverse()
 
@@ -289,8 +289,8 @@ class EventEditScreen(Screens):
         self.random_cat_editor = {}
 
         self.death_element = {}
-        self.rank_element = {}
-        self.age_element = {}
+        self.rank_element: Optional[EditorDropDownSelection] = None
+        self.age_element: Optional[EditorDropDownSelection] = None
 
         self.rel_status_element = {}
         self.rel_status_checkbox = {}
@@ -362,10 +362,10 @@ class EventEditScreen(Screens):
         self.new_cat_editor = {}
         self.new_cat_element = {}
         self.new_cat_checkbox = {}
-        self.cat_story_element = {}
-        self.new_status_element = {}
-        self.new_age_element = {}
-        self.new_gender_element = {}
+        self.new_cat_social_element: Optional[EditorDropDownSelection] = None
+        self.new_cat_rank_element: Optional[EditorDropDownSelection] = None
+        self.new_cat_age_element: Optional[EditorDropDownSelection] = None
+        self.new_gender_element: Optional[EditorDropDownSelection] = None
         self.connections_element = {}
 
         self.open_connection: str = "parent"
@@ -1550,8 +1550,8 @@ class EventEditScreen(Screens):
         self.main_cat_editor = {}
         self.random_cat_editor = {}
         self.death_element = {}
-        self.rank_element = {}
-        self.age_element = {}
+        self.rank_element = None
+        self.age_element = None
         self.rel_status_element = {}
         self.rel_status_checkbox = {}
         self.rel_value_element = {}
@@ -1641,10 +1641,10 @@ class EventEditScreen(Screens):
             self.new_cat_block_dict = {}
         self.selected_new_cat = None
         self.new_cat_checkbox = {}
-        self.cat_story_element = {}
-        self.new_status_element = {}
-        self.new_age_element = {}
-        self.new_gender_element = {}
+        self.new_cat_social_element = None
+        self.new_cat_rank_element = None
+        self.new_cat_age_element = None
+        self.new_gender_element = None
         self.connections_element = {}
         self.open_connection = "parent"
         self.exclusion_element = {}
@@ -3253,12 +3253,12 @@ class EventEditScreen(Screens):
             elif "mate" in tag:
                 mate = tag.replace("mate:", "").split(",")
 
-        self.cat_story_element["list"].set_selected_list(cat_type)
+        self.new_cat_social_element.info = cat_type
         self.backstory_element["pools"].set_selected_list(pool)
         self.backstory_element["list"].set_selected_list(stories)
-        self.new_status_element["list"].set_selected_list(rank)
-        self.new_age_element["list"].set_selected_list(age)
-        self.new_gender_element["list"].set_selected_list(gender)
+        self.new_cat_rank_element.info = rank
+        self.new_cat_age_element.info = age
+        self.new_gender_element.info = gender
         if self.open_connection == "parent":
             self.connections_element["cat_list"].set_selected_list(parent)
         elif self.open_connection == "adoptive":
@@ -3280,17 +3280,15 @@ class EventEditScreen(Screens):
                 selected_cat_info.remove(bool["tag"])
 
         # CAT TYPES
-        selected_type = (
-            self.cat_story_element["list"].selected_list[0]
-            if self.cat_story_element["list"].selected_list
-            else None
-        )
+        if self.new_cat_social_element.changed:
+            selected_type = self.new_cat_social_element.info
+            self.new_cat_social_element.displayed_info = selected_type
 
-        for cat_type in self.new_cat_types:
-            if cat_type == selected_type and cat_type not in selected_cat_info:
-                selected_cat_info.append(selected_type)
-            if cat_type != selected_type and cat_type in selected_cat_info:
-                selected_cat_info.remove(cat_type)
+            for cat_type in self.new_cat_types:
+                if cat_type == selected_type and cat_type not in selected_cat_info:
+                    selected_cat_info.append(selected_type)
+                if cat_type != selected_type and cat_type in selected_cat_info:
+                    selected_cat_info.remove(cat_type)
 
         # BACKSTORIES
         possible_stories = list(self.all_backstories.keys()) + self.individual_stories
@@ -3317,8 +3315,9 @@ class EventEditScreen(Screens):
             selected_cat_info.append(new_story_tag)
 
         # RANK
-        if self.new_status_element["list"].selected_list:
-            rank = self.new_status_element["list"].selected_list[0]
+        if self.new_cat_rank_element.changed:
+            rank = self.new_cat_rank_element.info
+            self.new_cat_rank_element.displayed_info = rank
         else:
             rank = None
 
@@ -3339,8 +3338,9 @@ class EventEditScreen(Screens):
             selected_cat_info.append(new_rank_tag)
 
         # AGE
-        if self.new_age_element["list"].selected_list:
-            age = self.new_age_element["list"].selected_list[0]
+        if self.new_cat_age_element.changed:
+            age = self.new_cat_age_element.info
+            self.new_cat_age_element.displayed_info = age
         else:
             age = None
 
@@ -3361,8 +3361,9 @@ class EventEditScreen(Screens):
             selected_cat_info.append(new_age_tag)
 
         # GENDER
-        if self.new_gender_element["list"].selected_list:
-            gender = self.new_gender_element["list"].selected_list[0]
+        if self.new_gender_element.changed:
+            gender = self.new_gender_element.info
+            self.new_gender_element.displayed_info = gender
         else:
             gender = None
 
@@ -4105,37 +4106,28 @@ class EventEditScreen(Screens):
 
     def handle_main_and_random_cat_on_use(self):
         # RANKS
-        if self.rank_element.get("dropdown") and self.rank_element[
-            "dropdown"
-        ].selected_list != self.current_cat_dict.get("rank"):
-            self.current_cat_dict["rank"] = self.rank_element[
-                "dropdown"
-            ].selected_list.copy()
-            if self.current_cat_dict["rank"]:
-                self.rank_element["display"].set_text(
-                    f"chosen rank: {self.current_cat_dict['rank']}"
-                )
-            else:
-                self.rank_element["display"].set_text(f"chosen rank: ['any']")
+        if self.rank_element and self.rank_element.changed:
+            self.current_cat_dict["rank"] = self.rank_element.info
+            self.rank_element.displayed_info = (
+                f"{self.current_cat_dict['rank']}"
+                if self.current_cat_dict["rank"]
+                else "['any']"
+            )
+
             self.editor_container.on_contained_elements_changed(
-                self.rank_element["display"]
+                self.rank_element.bottom_element
             )
         # AGES
-        if self.age_element.get("dropdown") and self.age_element[
-            "dropdown"
-        ].selected_list != self.current_cat_dict.get("age"):
-            self.current_cat_dict["age"] = self.age_element[
-                "dropdown"
-            ].selected_list.copy()
+        if self.age_element and self.age_element.changed:
+            self.current_cat_dict["age"] = self.age_element.info
+            self.age_element.displayed_info = (
+                f"{self.current_cat_dict['age']}"
+                if self.current_cat_dict["age"]
+                else "['any']"
+            )
 
-            if self.current_cat_dict["age"]:
-                self.age_element["display"].set_text(
-                    f"chosen age: {self.current_cat_dict['age']}"
-                )
-            else:
-                self.age_element["display"].set_text(f"chosen age: ['any']")
             self.editor_container.on_contained_elements_changed(
-                self.age_element["display"]
+                self.age_element.bottom_element
             )
         # SKILLS
         if self.skill_element.get("paths"):
@@ -6160,10 +6152,10 @@ class EventEditScreen(Screens):
         self.create_bool_editor()
 
         # BACKSTORY
-        self.create_story_editor()
+        self.create_social_editor()
 
         # STATUS
-        self.create_new_cat_status_editor()
+        self.create_new_cat_rank_editor()
 
         # AGE
         self.create_new_cat_age_editor()
@@ -6258,144 +6250,90 @@ class EventEditScreen(Screens):
         self.create_divider(self.connections_element["frame"], "connections")
 
     def create_new_cat_gender_editor(self):
-        self.new_gender_element["text"] = UITextBoxTweaked(
-            "screens.event_edit.new_cat_gender_info",
-            ui_scale(pygame.Rect((0, 14), (290, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.editor_element["age"]},
-        )
-
         chosen_gender = []
         for tag in self.new_cat_block_dict[self.selected_new_cat]:
             if tag in self.new_cat_genders:
                 chosen_gender = [tag]
 
-        self.new_gender_element["list"] = UIDropDown(
-            ui_scale(pygame.Rect((0, 26), (130, 30))),
-            parent_text="options",
-            item_list=self.new_cat_genders,
-            disable_selection=False,
+        self.new_gender_element = EditorDropDownSelection(
+            position=(0, 10),
+            anchors={"top_target": self.editor_element["age"]},
             container=self.editor_container,
-            child_trigger_close=True,
-            parent_reflect_selection=True,
-            anchors={
-                "top_target": self.editor_element["age"],
-                "left_target": self.new_gender_element["text"],
-            },
             manager=MANAGER,
+            description="screens.event_edit.new_cat_gender_info",
+            item_list=self.new_cat_genders,
+            dropdown_parent_text="genders",
+            display_text="chosen gender: ",
             starting_selection=chosen_gender,
+            child_trigger_close=True,
         )
-        self.new_gender_element["list"].child_button_dicts["can_birth"].set_tooltip(
+
+        self.new_gender_element.dropdown.child_button_dicts["can_birth"].set_tooltip(
             "screens.event_edit.can_birth"
         )
 
-        self.create_divider(self.new_gender_element["text"], "gender")
+        self.create_divider(self.new_gender_element.bottom_element, "gender")
 
     def create_new_cat_age_editor(self):
-        self.new_age_element["text"] = UITextBoxTweaked(
-            "screens.event_edit.new_cat_age_info",
-            ui_scale(pygame.Rect((0, 14), (290, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.editor_element["rank"]},
-        )
-
         chosen_age = []
         for tag in self.new_cat_block_dict[self.selected_new_cat]:
             if tag in self.new_cat_ages:
                 chosen_age = [tag]
                 break
-
-        self.new_age_element["list"] = UIDropDown(
-            ui_scale(pygame.Rect((0, 26), (130, 30))),
-            parent_text="ages",
+        self.new_cat_age_element = EditorDropDownSelection(
+            position=(0, 10),
+            anchors={"top_target": self.editor_element["rank"]},
+            container=self.editor_container,
+            manager=MANAGER,
+            description="screens.event_edit.new_cat_age_info",
             item_list=self.new_cat_ages,
-            disable_selection=False,
-            container=self.editor_container,
-            child_trigger_close=True,
-            parent_reflect_selection=True,
-            anchors={
-                "top_target": self.editor_element["rank"],
-                "left_target": self.new_age_element["text"],
-            },
-            manager=MANAGER,
+            dropdown_parent_text="ages",
+            display_text="chosen age: ",
             starting_selection=chosen_age,
+            child_trigger_close=True,
         )
-        self.new_age_element["list"].child_button_dicts["mate"].set_tooltip(
-            "screens.event_edit.mate"
-        )
-        self.new_age_element["list"].child_button_dicts["has_kits"].set_tooltip(
-            "screens.event_edit.has_kits"
-        )
-        self.create_divider(self.new_age_element["text"], "age")
+        self.create_divider(self.new_cat_age_element.bottom_element, "age")
 
-    def create_new_cat_status_editor(self):
-        self.new_status_element["text"] = UITextBoxTweaked(
-            "screens.event_edit.new_cat_rank_info",
-            ui_scale(pygame.Rect((0, 14), (260, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.editor_element["backstory"]},
-        )
+    def create_new_cat_rank_editor(self):
         chosen_status = []
         for tag in self.new_cat_block_dict[self.selected_new_cat]:
             if tag in self.new_cat_ranks:
                 chosen_status = [tag]
-        self.new_status_element["list"] = UIDropDown(
-            ui_scale(pygame.Rect((0, 26), (180, 30))),
-            parent_text="ranks",
-            item_list=self.new_cat_ranks,
-            disable_selection=False,
-            container=self.editor_container,
-            child_trigger_close=True,
-            parent_reflect_selection=True,
-            anchors={
-                "top_target": self.editor_element["backstory"],
-                "left_target": self.new_status_element["text"],
-            },
-            manager=MANAGER,
-            starting_selection=chosen_status,
-        )
-        self.create_divider(self.new_status_element["text"], "rank")
 
-    def create_story_editor(self):
-        self.cat_story_element["text"] = UITextBoxTweaked(
-            "screens.event_edit.cat_type_info",
-            ui_scale(pygame.Rect((0, 14), (310, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
+        self.new_cat_rank_element = EditorDropDownSelection(
+            position=(0, 10),
+            anchors={"top_target": self.editor_element["backstory"]},
             container=self.editor_container,
-            anchors={"top_target": self.editor_element["bools"]},
+            manager=MANAGER,
+            description="screens.event_edit.new_cat_rank_info",
+            item_list=self.new_cat_ranks,
+            dropdown_parent_text="ranks",
+            display_text="chosen rank: ",
+            starting_selection=chosen_status,
+            child_trigger_close=True,
         )
+
+        self.create_divider(self.new_cat_rank_element.bottom_element, "rank")
+
+    def create_social_editor(self):
         chosen_type = []
         for tag in self.new_cat_block_dict[self.selected_new_cat]:
             if tag in self.new_cat_types:
                 chosen_type = [tag]
-
-        self.cat_story_element["list"] = UIDropDown(
-            ui_scale(pygame.Rect((10, 26), (100, 30))),
-            parent_text="types",
-            item_list=self.new_cat_types,
-            disable_selection=False,
+        self.new_cat_social_element = EditorDropDownSelection(
+            position=(0, 10),
+            anchors={"top_target": self.editor_element["bools"]},
             container=self.editor_container,
-            child_trigger_close=True,
-            parent_reflect_selection=True,
-            anchors={
-                "top_target": self.editor_element["bools"],
-                "left_target": self.cat_story_element["text"],
-            },
             manager=MANAGER,
+            description="screens.event_edit.cat_type_info",
+            item_list=self.new_cat_types,
+            dropdown_parent_text="types",
+            display_text="chosen type: ",
             starting_selection=chosen_type,
+            child_trigger_close=True,
         )
-        self.create_backstory_editor(self.cat_story_element["text"])
+
+        self.create_backstory_editor(self.new_cat_social_element.bottom_element)
         self.create_divider(self.backstory_element["display"], "backstory")
 
     def create_bool_editor(self):
@@ -7025,90 +6963,50 @@ class EventEditScreen(Screens):
         self.create_divider(self.rel_status_element["display"], "rel_status")
 
     def create_age_editor(self):
-        self.age_element["text"] = UITextBoxTweaked(
-            "screens.event_edit.age_info",
-            ui_scale(pygame.Rect((0, 6), (220, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.editor_element["rank"]},
-        )
-        self.age_element["dropdown"] = UIScrollingDropDown(
-            pygame.Rect((0, 16), (200, 30)),
-            manager=MANAGER,
-            container=self.editor_container,
-            parent_text="ages",
-            item_list=self.all_ages,
-            dropdown_dimensions=(200, 198),
-            anchors={
-                "top_target": self.editor_element["rank"],
-                "left_target": self.age_element["text"],
-            },
-            starting_height=1,
-            starting_selection=self.current_cat_dict["age"],
-        )
-        self.age_element["display"] = UITextBoxTweaked(
-            f"chosen age: {self.current_cat_dict['age']}",
-            ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.age_element["text"]},
-        )
         label = "main" if self.current_cat_dict == self.main_cat_info else "random"
-        self.create_lock(
-            name=f"{label}_age",
-            top_anchor=self.age_element["text"],
-            left_anchor=self.age_element["display"],
+        self.age_element = EditorDropDownSelection(
+            position=(0, 10),
+            anchors={"top_target": self.editor_element["rank"]},
+            container=self.editor_container,
+            manager=MANAGER,
+            description="screens.event_edit.age_info",
+            item_list=self.all_ages,
+            dropdown_parent_text="ages",
+            display_text="chosen age: ",
+            starting_selection=self.current_cat_dict["age"],
+            multiple_choice=True,
+            lock_name=f"{label}_age",
+            lock=True,
         )
-        self.create_divider(self.age_element["display"], "age")
+        if self.param_locks.get(f"{label}_age"):
+            self.age_element.lock.locked = True
+
+        self.create_divider(self.age_element.bottom_element, "age")
 
     def create_rank_editor(self, prev_element=None):
-        self.rank_element["text"] = UITextBoxTweaked(
-            "screens.event_edit.rank_info",
-            ui_scale(pygame.Rect((0, 10), (220, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
+        label = "main" if self.current_cat_dict == self.main_cat_info else "random"
+        self.rank_element = EditorDropDownSelection(
+            position=(0, 10),
             anchors={
                 "top_target": self.editor_element["dies"]
                 if not prev_element
                 else prev_element
             },
-        )
-        self.rank_element["dropdown"] = UIScrollingDropDown(
-            pygame.Rect((0, 28), (200, 30)),
-            manager=MANAGER,
             container=self.editor_container,
-            parent_text="ranks",
+            manager=MANAGER,
+            description="screens.event_edit.rank_info",
             item_list=self.all_ranks,
-            dropdown_dimensions=(200, 310),
-            starting_height=2,
-            anchors={
-                "top_target": self.death_element["display"],
-                "left_target": self.rank_element["text"],
-            },
+            dropdown_parent_text="ranks",
+            display_text="chosen rank: ",
             starting_selection=self.current_cat_dict["rank"],
+            multiple_choice=True,
+            lock_name=f"{label}_rank",
+            lock=True,
         )
-        self.rank_element["display"] = UITextBoxTweaked(
-            f"chosen rank: {self.current_cat_dict['rank']}",
-            ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.rank_element["text"]},
-        )
-        label = "main" if self.current_cat_dict == self.main_cat_info else "random"
-        self.create_lock(
-            name=f"{label}_rank",
-            top_anchor=self.rank_element["text"],
-            left_anchor=self.rank_element["display"],
-        )
-        self.create_divider(self.rank_element["display"], "rank")
+        if self.param_locks.get(f"{label}_rank"):
+            self.rank_element.lock.locked = True
+
+        self.create_divider(self.rank_element.bottom_element, "rank")
 
     # SETTINGS EDITOR
     def generate_settings_tab(self):

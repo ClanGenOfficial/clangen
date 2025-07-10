@@ -184,7 +184,7 @@ class EditorDropDownSelection(EditorElement):
 
         self.description = UITextBoxTweaked(
             description,
-            ui_scale(pygame.Rect(position, (250, -1))),
+            ui_scale(pygame.Rect(position, (230, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=manager,
@@ -198,8 +198,8 @@ class EditorDropDownSelection(EditorElement):
             dropdown_anchors["top_target"] = anchors["top_target"]
         self.selection = starting_selection
         self.dropdown = UIScrollingDropDown(
-            pygame.Rect((10, 20), (150, 30)),
-            dropdown_dimensions=(150, 200),
+            pygame.Rect((0, 20), (180, 30)),
+            dropdown_dimensions=(180, 200),
             parent_text=dropdown_parent_text,
             item_list=item_list,
             container=container,
@@ -249,6 +249,10 @@ class EditorDropDownSelection(EditorElement):
     @property
     def info(self):
         return self.dropdown.selected_list.copy()
+
+    @info.setter
+    def info(self, new_list):
+        self.dropdown.set_selected_list(new_list)
 
     @property
     def displayed_info(self):
