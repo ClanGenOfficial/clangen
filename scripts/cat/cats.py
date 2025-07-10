@@ -1023,7 +1023,7 @@ class Cat:
         if not self.status.is_outsider:
             return
 
-        self.personality.set_kit(self.age.is_baby())  # Update kit trait stuff
+        self.personality.kit = self.age.is_baby()  # Update kit trait stuff
 
     def describe_cat(self, short=False):
         """Generates a string describing the cat's appearance and gender.
@@ -1509,7 +1509,7 @@ class Cat:
 
         if not self.status.alive_in_player_clan:
             # this is handled in events.py
-            self.personality.set_kit(self.age.is_baby())
+            self.personality.kit = self.age.is_baby()
             self.thoughts()
             return
 
@@ -1523,7 +1523,7 @@ class Cat:
             self.pelt.rebuild_sprite = True
 
         # Set personality to correct type
-        self.personality.set_kit(self.age.is_baby())
+        self.personality.kit = self.age.is_baby()
         # Upon age-change
 
         if self.status.rank.is_any_apprentice_rank():

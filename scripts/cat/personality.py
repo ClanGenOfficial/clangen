@@ -4,6 +4,8 @@ from random import randint, choice, choices
 
 import ujson
 
+from scripts.utility import clamp
+
 
 class Personality:
     """Hold personality information for a cat, and functions to deal with it"""
@@ -35,7 +37,7 @@ class Personality:
         self._aggress = 0
         self._stable = 0
         self.trait = None
-        self.kit = kit_trait  # If true, use kit trait. If False, use normal traits.
+        self._kit = kit_trait  # If true, use kit trait. If False, use normal traits.
 
         if self.kit:
             trait_type_dict = Personality.trait_ranges["kit_traits"]
@@ -163,6 +165,17 @@ class Personality:
         if not self.is_trait_valid():
             self.choose_trait()
 
+    @property
+    def kit(self) -> bool:
+        return self._kit
+
+    @kit.setter
+    def kit(self, kit: bool):
+        """Switch the trait-type. True for kit, False for normal"""
+        self.kit = kit
+        if not self.is_trait_valid():
+            self.choose_trait()
+
     # ---------------------------------------------------------------------------- #
     #                               METHODS                                        #
     # ---------------------------------------------------------------------------- #
@@ -171,18 +184,7 @@ class Personality:
     def adjust_to_range(val: int) -> int:
         """Take an integer and adjust it to be in the trait-range"""
 
-        if val < Personality.facet_range[0]:
-            val = Personality.facet_range[0]
-        elif val > Personality.facet_range[1]:
-            val = Personality.facet_range[1]
-
-        return val
-
-    def set_kit(self, kit: bool):
-        """Switch the trait-type. True for kit, False for normal"""
-        self.kit = kit
-        if not self.is_trait_valid():
-            self.choose_trait()
+        return clamp(val, Personality.facet_range[0], Personality.facet_range[1])
 
     def is_trait_valid(self) -> bool:
         """Return True if the current facets fit the trait ranges, false
@@ -232,14 +234,14 @@ class Personality:
             trait_type_dict = Personality.trait_ranges["normal_traits"]
 
         possible_traits = []
-        for trait, fac in trait_type_dict.items():
-            if not (fac["lawfulness"][0] <= self.lawfulness <= fac["lawfulness"][1]):
+        for trait, facets in trait_type_dict.items():
+            if not (facets["lawfulness"][0] <= self.lawfulness <= facets["lawfulness"][1]):
                 continue
-            if not (fac["sociability"][0] <= self.sociability <= fac["sociability"][1]):
+            if not (facets["sociability"][0] <= self.sociability <= facets["sociability"][1]):
                 continue
-            if not (fac["aggression"][0] <= self.aggression <= fac["aggression"][1]):
+            if not (facets["aggression"][0] <= self.aggression <= facets["aggression"][1]):
                 continue
-            if not (fac["stability"][0] <= self.stability <= fac["stability"][1]):
+            if not (facets["stability"][0] <= self.stability <= facets["stability"][1]):
                 continue
 
             possible_traits.append(trait)
