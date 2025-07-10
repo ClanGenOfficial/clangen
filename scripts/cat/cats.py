@@ -648,7 +648,7 @@ class Cat:
 
         # handle grief
         # since we just yeeted them to their afterlife, we gotta check their previous group affiliation, not current
-        if game.clan and self.status.group_history[-2]["group"] == CatGroup.PLAYER_CLAN:
+        if game.clan and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN:
             self.grief(body)
 
         # mark the sprite as outdated
