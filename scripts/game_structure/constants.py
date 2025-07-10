@@ -119,3 +119,9 @@ with open(f"resources/game_config.json", "r", encoding="utf-8") as read_file:
 
 with open("resources/placements.json", "r", encoding="utf-8") as read_file:
     LAYOUTS = ujson.loads(read_file.read())
+
+with open("resources/dicts/events/tags.json", "r", encoding="utf-8") as read_file:
+    EVENT_TAGS = ujson.loads(read_file.read())
+
+with open("resources/dicts/events/types.json", "r", encoding="utf-8") as read_file:
+    EVENT_TYPES = ujson.loads(read_file.read())

@@ -17,7 +17,6 @@ from scripts.events_module.short.handle_short_events import HandleShortEvents
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.editor_elements import (
-    EditorTextEntryLine,
     EditorDropDownSelection,
 )
 from scripts.game_structure.game_essentials import game
@@ -37,6 +36,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.game_structure.windows import EditorSaveCheck, EditorMissingInfo
 from scripts.screens.RelationshipScreen import RelationshipScreen
 from scripts.screens.Screens import Screens
+from scripts.screens.event_editor.settings_tab import SettingsTab
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
@@ -53,12 +53,6 @@ class EventEditScreen(Screens):
     """
     This screen provides an interface to allow devs to edit and create events.
     """
-
-    with open("resources/dicts/events/tags.json", "r", encoding="utf-8") as read_file:
-        TAGS = ujson.loads(read_file.read())
-
-    with open("resources/dicts/events/types.json", "r", encoding="utf-8") as read_file:
-        TYPES = ujson.loads(read_file.read())
 
     test_cat_names: dict = {
         "m_c": "MainCat",
@@ -81,18 +75,7 @@ class EventEditScreen(Screens):
     test_pronouns: list = list(get_default_pronouns().values())
     """Pronoun dicts to assign to our test cats."""
 
-    all_camps: dict = constants.LOCATIONS
-    """Dict with key as biome and value as camp name."""
-    all_seasons: list = [s.casefold() for s in constants.SEASONS]
-    """Tuple of all seasons possible."""
-
-    event_types: dict = TYPES
-    """Dict with key as event type and value as allowed subtypes for that type."""
-
-    basic_tag_list: list = TAGS["settings"]
-    """List of dicts for all basic event tags. Each dict holds tag name, conflicts, setting, and type required."""
-
-    rel_tag_list: list = TAGS["relationship"]
+    rel_tag_list: list = constants.EVENT_TAGS["relationship"]
     """List of dicts for relationship_values. Each dict holds tag name, conflicts, and setting."""
     rel_value_types: list = RelationshipScreen.rel_value_names
     """List of all relationship values."""
@@ -127,22 +110,22 @@ class EventEditScreen(Screens):
     for pool in all_backstories:
         individual_stories.extend(all_backstories[pool])
 
-    new_cat_types: list = TAGS["new_cat"]["types"]
+    new_cat_types: list = constants.EVENT_TAGS["new_cat"]["types"]
     """All possible cat types."""
 
-    new_cat_bools: list = TAGS["new_cat"]["bool_settings"]
+    new_cat_bools: list = constants.EVENT_TAGS["new_cat"]["bool_settings"]
     """New cat tag list. Holds tag name, setting, and conflicts."""
 
     new_cat_ranks: list = all_ranks.copy()
     """All ranks available to new cats."""
-    for rank in TAGS["new_cat"]["disallowed_ranks"]:
+    for rank in constants.EVENT_TAGS["new_cat"]["disallowed_ranks"]:
         new_cat_ranks.remove(rank)
 
     new_cat_ages: list = all_ages.copy()
     """List of all age tags available to new cats."""
-    new_cat_ages.extend(TAGS["new_cat"]["special_ages"])
+    new_cat_ages.extend(constants.EVENT_TAGS["new_cat"]["special_ages"])
 
-    new_cat_genders: list = TAGS["new_cat"]["genders"]
+    new_cat_genders: list = constants.EVENT_TAGS["new_cat"]["genders"]
     """List of all gender tags available to new cats"""
 
     all_injury_pools: dict = constants.INJURY_GROUPS
@@ -247,43 +230,7 @@ class EventEditScreen(Screens):
         self.event_text_info: str = ""
         """Loaded event text"""
 
-        self.event_id_element: Optional[EditorTextEntryLine] = None
-        self.event_id_info: str = ""
-        """Loaded event_id"""
-
-        self.location_element = {}
-        self.location_info: list = []
-        """Loaded location tags"""
-
-        self.season_element: Optional[EditorDropDownSelection] = None
-        self.season_info: list = []
-        """Loaded season tags"""
-
-        self.type_element = {}
-        self.type_info: list = ["death"]
-        """Loaded type, kept in a list for ease of use with it's dropdown, but there should only ever be one type"""
-
-        self.sub_element = {}
-        self.sub_info: list = []
-        """Loaded subtypes"""
-
-        self.tag_element = {}
-        self.basic_tag_checkbox = {}
-        self.rank_tag_checkbox = {}
-        self.tag_info: list = []
-        """Loaded tags"""
-
-        self.weight_element: Optional[EditorTextEntryLine] = None
-        self.weight_info: int = 20
-        """Loaded weight"""
-
-        self.acc_element = {}
-        self.acc_button = {}
-        self.acc_info: list = []
-        """Loaded accessory tags"""
-        self.acc_categories = Pelt.acc_categories
-        self.open_category: str = ""
-        """Currently open acc category (wild, collar, ect.)"""
+        self.settings_tab = SettingsTab(self.editor_container)
 
         self.main_cat_editor = {}
         self.random_cat_editor = {}
@@ -478,26 +425,26 @@ class EventEditScreen(Screens):
             biome = matching_biomes[0] if matching_biomes else "general"
 
         if not self.chosen_type:
-            for name in self.event_types.keys():
+            for name in self.settings_tab.event_types.keys():
                 if name in event["event_id"]:
                     self.chosen_type = name
         self.old_event_path = (
             f"resources/lang/en/events/{self.chosen_type}/{biome.casefold()}.json"
         )
 
-        self.type_info = [self.chosen_type]
-        self.event_id_info = event["event_id"]
-        self.location_info = event["location"] if event.get("location") else []
-        if self.location_info == ["any"]:
-            self.location_info = []
-        self.season_info = event["season"] if event.get("season") else []
-        if self.season_info == ["any"]:
-            self.season_info = []
-        self.sub_info = event["sub_type"] if event.get("sub_type") else []
-        self.tag_info = event["tags"] if event.get("tags") else []
-        self.weight_info = event["weight"]
+        self.settings_tab.type_info = [self.chosen_type]
+        self.settings_tab.event_id_info = event["event_id"]
+        self.settings_tab.location_info = event["location"] if event.get("location") else []
+        if self.settings_tab.location_info == ["any"]:
+            self.settings_tab.location_info = []
+        self.settings_tab.season_info = event["season"] if event.get("season") else []
+        if self.settings_tab.season_info == ["any"]:
+            self.settings_tab.season_info = []
+        self.settings_tab.sub_info = event["sub_type"] if event.get("sub_type") else []
+        self.settings_tab.tag_info = event["tags"] if event.get("tags") else []
+        self.settings_tab.weight_info = event["weight"]
         self.event_text_info = event["event_text"]
-        self.acc_info = event["new_accessory"] if event.get("new_accessory") else []
+        self.settings_tab.acc_info = event["new_accessory"] if event.get("new_accessory") else []
         if event.get("m_c"):
             self.main_cat_info = {
                 "rank": event["m_c"]["status"] if event["m_c"].get("status") else [],
@@ -585,25 +532,25 @@ class EventEditScreen(Screens):
         """
         Compiles all information for created/edited event into an event dict to return.
         """
-        new_event = {"event_id": self.event_id_info}
-        if self.location_info:
-            new_event["location"] = self.location_info
+        new_event = {"event_id": self.settings_tab.event_id_info}
+        if self.settings_tab.location_info:
+            new_event["location"] = self.settings_tab.location_info
         else:
             new_event["location"] = ["any"]
-        if self.season_info:
-            new_event["season"] = self.season_info
+        if self.settings_tab.season_info:
+            new_event["season"] = self.settings_tab.season_info
         else:
             new_event["season"] = ["any"]
-        if self.sub_info:
-            new_event["sub_type"] = self.sub_info
-        if self.tag_info:
-            new_event["tags"] = self.tag_info
+        if self.settings_tab.sub_info:
+            new_event["sub_type"] = self.settings_tab.sub_info
+        if self.settings_tab.tag_info:
+            new_event["tags"] = self.settings_tab.tag_info
 
-        new_event["weight"] = self.weight_info
+        new_event["weight"] = self.settings_tab.weight_info
         new_event["event_text"] = self.event_text_info
 
-        if self.acc_info:
-            new_event["new_accessory"] = self.acc_info
+        if self.settings_tab.acc_info:
+            new_event["new_accessory"] = self.settings_tab.acc_info
 
         new_event["m_c"] = {}
         if self.main_cat_info["age"]:
@@ -701,10 +648,10 @@ class EventEditScreen(Screens):
     def find_event_path(self) -> str:
         """Finds and returns the best file path based off of current editor info."""
 
-        type = self.type_info[0]
+        type = self.settings_tab.type_info[0]
         biomes = []
         biome_path = "general"
-        for locale in self.location_info:
+        for locale in self.settings_tab.location_info:
             biome = locale.split("_")[0]
             if biome.capitalize() in constants.BIOME_TYPES:
                 biomes.append(biome)
@@ -778,13 +725,13 @@ class EventEditScreen(Screens):
                         )
                         break
             if (
-                self.acc_element.get("list")
-                and event.ui_element in self.acc_element["list"].buttons.values()
+                self.settings_tab.acc_element.get("list")
+                and event.ui_element in self.settings_tab.acc_element["list"].buttons.values()
             ):
-                for name, button in self.acc_element["list"].buttons.items():
+                for name, button in self.settings_tab.acc_element["list"].buttons.items():
                     if button == event.ui_element:
-                        self.acc_element["preview"].set_image(
-                            self.get_acc_example(name)
+                        self.settings_tab.acc_element["preview"].set_image(
+                            self.settings_tab.get_acc_example(name)
                         )
                         break
 
@@ -881,8 +828,8 @@ class EventEditScreen(Screens):
                     # check validity of event first
                     if (
                         not self.event_text_info
-                        or not self.weight_info
-                        or not self.type_info
+                        or not self.settings_tab.weight_info
+                        or not self.settings_tab.type_info
                         or not self.valid_id()
                         or not self.valid_injury()
                         or not self.valid_history()
@@ -951,7 +898,7 @@ class EventEditScreen(Screens):
 
             # SETTINGS TAB EVENTS
             elif self.current_editor_tab == "settings":
-                self.handle_settings_events(event)
+                self.settings_tab.handle_settings_events(event)
 
             # MAIN/RANDOM CAT TAB EVENTS
             elif self.current_editor_tab in ["main cat", "random cat"]:
@@ -1125,7 +1072,7 @@ class EventEditScreen(Screens):
         """
 
         if self.current_editor_tab == "settings":
-            self.handle_settings_on_use()
+            self.settings_tab.handle_settings_on_use()
 
         elif self.current_editor_tab in ["main cat", "random cat"]:
             self.handle_main_and_random_cat_on_use()
@@ -1408,7 +1355,7 @@ class EventEditScreen(Screens):
             self.editor_element["intro_text"].set_text("screens.event_edit.intro_text")
 
         path = "resources/lang/en/events"
-        type_list = list(self.event_types.keys())
+        type_list = list(self.settings_tab.event_types.keys())
         all_biomes = constants.BIOME_TYPES.copy()
         all_biomes.append("general")
 
@@ -1512,7 +1459,7 @@ class EventEditScreen(Screens):
         Clears all the saved event info, so we can start fresh.
         """
         # resetting all tag lists
-        for tag in self.basic_tag_list:
+        for tag in self.settings_tab.basic_tag_list:
             tag["setting"] = False
         for tag in self.rel_tag_list:
             tag["setting"] = False
@@ -1520,33 +1467,33 @@ class EventEditScreen(Screens):
             tag["setting"] = False
         # Settings elements
         self.event_text_info = ""
-        self.event_id_element = {}
-        self.event_id_info = ""
-        self.location_element = {}
+        self.settings_tab.event_id_element = None
+        self.settings_tab.event_id_info = ""
+        self.settings_tab.location_element = {}
         if not self.param_locks.get("location"):
-            self.location_info = []
-        self.season_element = None
+            self.settings_tab.location_info = []
+        self.settings_tab.season_element = None
         if not self.param_locks.get("season"):
-            self.season_info = []
-        self.type_element = {}
-        self.sub_element = {}
+            self.settings_tab.season_info = []
+        self.settings_tab.type_element = {}
+        self.settings_tab.sub_element = {}
         if not self.param_locks.get("subtypes"):
-            self.type_info = ["death"]
-            self.sub_info = []
-        self.tag_element = {}
-        self.basic_tag_checkbox = {}
-        self.rank_tag_checkbox = {}
+            self.settings_tab.type_info = ["death"]
+            self.settings_tab.sub_info = []
+        self.settings_tab.tag_element = {}
+        self.settings_tab.basic_tag_checkbox = {}
+        self.settings_tab.rank_tag_checkbox = {}
         if not self.param_locks.get("tag"):
-            self.tag_info = []
-        self.weight_element = None
+            self.settings_tab.tag_info = []
+        self.settings_tab.weight_element = None
         if not self.param_locks.get("weight"):
-            self.weight_info = 20
-        self.acc_element = {}
+            self.settings_tab.weight_info = 20
+        self.settings_tab.acc_element = {}
         if not self.param_locks.get("acc"):
-            self.acc_info = []
-        self.acc_categories = Pelt.acc_categories
-        self.open_category = None
-        self.acc_button = {}
+            self.settings_tab.acc_info = []
+        self.settings_tab.acc_categories = Pelt.acc_categories
+        self.settings_tab.open_category = ""
+        self.settings_tab.acc_button = {}
         self.main_cat_editor = {}
         self.random_cat_editor = {}
         self.death_element = {}
@@ -1803,7 +1750,7 @@ class EventEditScreen(Screens):
             )
 
         if self.current_editor_tab == "settings":
-            self.generate_settings_tab()
+            self.settings_tab.generate_settings_tab()
         elif self.current_editor_tab == "main cat":
             self.current_cat_dict = self.main_cat_info
             self.generate_main_cat_tab()
@@ -2197,16 +2144,13 @@ class EventEditScreen(Screens):
         """
         valid = True
         if (
-            self.event_id_info in self.all_event_ids
-            and self.event_id_info != self.open_event.get("event_id")
+            self.settings_tab.event_id_info in self.all_event_ids
+            and self.settings_tab.event_id_info != self.open_event.get("event_id")
         ):
-            text = "screens.event_edit.dupe_id"
             valid = False
-        elif not self.event_id_info or self.event_id_info.isspace():
-            text = "screens.event_edit.invalid_id"
+        elif not self.settings_tab.event_id_info or self.settings_tab.event_id_info.isspace():
             valid = False
-        else:
-            text = "screens.event_edit.valid_id"
+            
         if not valid:
             self.alert_text = (
                 f"Event ID is either invalid or a duplicate. Pick a new ID."
@@ -2808,96 +2752,6 @@ class EventEditScreen(Screens):
                         chosen_stories.remove(self.open_pool)
                 self.update_backstory_info()
                 break
-
-    def handle_settings_events(self, event):
-        # CHANGE LOCATION LIST
-        if event.ui_element in self.location_element.values():
-            biome_list = constants.BIOME_TYPES
-            for biome in biome_list:
-                if event.ui_element == self.location_element[biome]:
-                    self.update_location_info(biome=biome)
-                    break
-            for camp in [camp for biome in self.all_camps.values() for camp in biome]:
-                if event.ui_element == self.location_element.get(camp):
-                    self.update_location_info(camp=camp)
-                    break
-
-        # CHANGE BASIC TAGS
-        elif event.ui_element in self.basic_tag_checkbox.values():
-            event.ui_element.uncheck() if event.ui_element.checked else event.ui_element.check()
-            for info in self.basic_tag_list:
-                if event.ui_element == self.basic_tag_checkbox.get(info["tag"]):
-                    index = self.basic_tag_list.index(info)
-                    self.basic_tag_list[index] = {
-                        "tag": info["tag"],
-                        "setting": False if info["setting"] else True,
-                        "required_type": info["required_type"],
-                        "conflict": info["conflict"],
-                    }
-
-                    # flip the setting of any conflicting tags
-                    if info["conflict"]:
-                        for tag in info["conflict"]:
-                            conflict_info = [
-                                block
-                                for block in self.basic_tag_list
-                                if tag == block["tag"]
-                            ][0]
-                            conflict_index = self.basic_tag_list.index(conflict_info)
-                            if not info[
-                                "setting"
-                            ]:  # unchecks if conflicted setting is checked
-                                self.basic_tag_checkbox[tag].uncheck()
-                            self.basic_tag_list[conflict_index] = {
-                                "tag": conflict_info["tag"],
-                                "setting": False,
-                                "required_type": conflict_info["required_type"],
-                                "conflict": conflict_info["conflict"],
-                            }
-
-                    self.update_tag_info()
-                    break
-
-        # CHANGE RANK TAGS
-        elif event.ui_element in self.rank_tag_checkbox.values():
-            event.ui_element.uncheck() if event.ui_element.checked else event.ui_element.check()
-            self.update_tag_info()
-
-        # CHANGE ACC CATEGORY
-        # individual accs
-        elif (
-            self.acc_element.get("list")
-            and event.ui_element in self.acc_element["list"].buttons.values()
-        ):
-            for acc, button in self.acc_element["list"].buttons.items():
-                if event.ui_element != button:
-                    continue
-                if acc in self.acc_info:
-                    self.acc_info.remove(acc)
-                else:
-                    self.acc_info.append(acc)
-                break
-            self.update_acc_info()
-        # greater categories
-        elif event.ui_element in self.acc_element.values():
-            for group, button in self.acc_element.items():
-                if event.ui_element != button:
-                    continue
-                if group != self.open_category:
-                    self.open_category = group
-                    self.update_acc_list()
-                    if group not in self.acc_info:
-                        self.acc_info.append(group)
-                        self.replace_accs_with_group(group)
-                else:
-                    if group in self.acc_info:
-                        self.acc_info.remove(group)
-                        self.open_category = None
-                        self.update_acc_list()
-                    else:
-                        self.replace_accs_with_group(group)
-                break
-            self.update_acc_info()
 
     # INFO DISPLAY UPDATES
     def update_block_info(self):
@@ -3521,143 +3375,6 @@ class EventEditScreen(Screens):
                 self.rel_status_element["display"]
             )
 
-    def replace_accs_with_group(self, group):
-        for category_name, accs in self.acc_categories.items():
-            if group == category_name:
-                for acc in set(self.acc_info).intersection(set(accs)):
-                    self.acc_info.remove(acc)
-                break
-
-        if group not in self.acc_info:
-            self.acc_info.append(group)
-
-    def update_acc_info(self):
-        if self.acc_info:
-            for (
-                category_name,
-                accs,
-            ) in self.acc_categories.items():
-                if category_name in self.acc_info and set(self.acc_info).intersection(
-                    set(accs)
-                ):
-                    self.acc_info.remove(category_name)
-                    break
-            self.acc_element["display"].set_text(f"chosen accessories: {self.acc_info}")
-        else:
-            self.acc_element["display"].set_text(f"chosen accessories: []")
-
-        self.editor_container.on_contained_elements_changed(self.acc_element["display"])
-
-    def update_tag_info(self):
-        for info in self.basic_tag_list:
-            if info["tag"] not in self.tag_info and info["setting"]:
-                self.tag_info.append(info["tag"])
-            elif info["tag"] in self.tag_info and not info["setting"]:
-                self.tag_info.remove(info["tag"])
-
-        for rank, box in self.rank_tag_checkbox.items():
-            if "text" in rank:
-                continue
-            tag = f"clan:{rank}"
-            if box.checked and tag not in self.tag_info:
-                self.tag_info.append(tag)
-            elif not box.checked and tag in self.tag_info:
-                self.tag_info.remove(tag)
-
-        if self.tag_element.get("display"):
-            self.tag_element["display"].set_text(f"chosen tags: {self.tag_info}")
-            self.editor_container.on_contained_elements_changed(
-                self.tag_element["display"]
-            )
-
-    def update_location_info(self, biome=None, camp=None):
-        if biome:
-            biome = biome.casefold()
-            present = False
-            for location in self.location_info:
-                if biome in location:
-                    present = True
-                    break
-            if not present:
-                self.location_info.append(biome)
-                self.update_camp_list(biome.capitalize())
-
-            else:
-                for location in self.location_info:
-                    if biome in location:
-                        self.location_info.remove(location)
-                        self.update_camp_list(None)
-                        break
-
-        if camp:
-            present = True
-            parent_biome = None
-            camp_index = 0
-            old_location_tag = None
-            new_string = None
-
-            for camp_biome in self.all_camps.keys():
-                if camp in self.all_camps[camp_biome]:
-                    parent_biome = camp_biome
-                    camp_index = self.all_camps[camp_biome].index(camp) + 1
-                    break
-
-            for location in self.location_info:
-                if parent_biome.casefold() in location:
-                    if f"camp{camp_index}" in location:
-                        break
-                    else:
-                        new_string = f"{location}_camp{camp_index}"
-                        selected_camps = [
-                            camp for camp in new_string.split("_") if "camp" in camp
-                        ]
-                        available_camps = len(self.all_camps[parent_biome])
-                        if len(selected_camps) == available_camps:
-                            new_string = f"{parent_biome.casefold()}"
-                        present = False
-                        old_location_tag = location
-                        break
-            if not present:
-                self.location_info.remove(old_location_tag)
-                self.location_info.append(new_string.casefold())
-            else:
-                for location in self.location_info:
-                    if parent_biome.casefold() in location:
-                        old_location_tag = location
-                        new_string = location.replace(f"_camp{camp_index}", "")
-                        break
-                self.location_info.remove(old_location_tag)
-                self.location_info.append(new_string)
-
-        self.location_element["display"].set_text(
-            (
-                f"chosen location: {str(self.location_info)}"
-                if self.location_info
-                else "chosen location: ['any']"
-            )
-        )
-        self.editor_container.on_contained_elements_changed(
-            self.location_element["display"]
-        )
-
-    def update_sub_info(self):
-        if "accessory" not in self.sub_info:
-            for group in self.acc_categories.keys():
-                self.acc_element[group].disable()
-                if self.acc_element.get("list"):
-                    self.acc_element["list"].kill()
-                self.acc_info.clear()
-                self.update_acc_info()
-
-        if self.sub_info:
-            if "accessory" in self.sub_info:
-                for group in self.acc_categories.keys():
-                    self.acc_element[group].enable()
-
-            self.type_element["display"].set_text(f"chosen subtypes: {self.sub_info}")
-        else:
-            self.type_element["display"].set_text("chosen subtypes: []")
-
     # ON USE FUNCS
     def handle_future_on_use(self):
         # FUTURE CONSTRAINT DISPLAY
@@ -3698,7 +3415,7 @@ class EventEditScreen(Screens):
             # update available subtypes
             self.future_element["sub_dropdown"].set_selected_list([])
             self.future_element["sub_dropdown"].new_item_list(
-                self.event_types[block_info["event_type"]]
+                self.settings_tab.event_types[block_info["event_type"]]
             )
             block_info["pool"]["subtype"] = []
 
@@ -4195,41 +3912,6 @@ class EventEditScreen(Screens):
                 self.backstory_element["list"].new_item_list([])
                 self.update_backstory_info()
 
-    def handle_settings_on_use(self):
-        # CHANGE ID
-        if self.event_id_element.changed:
-            self.event_id_info = self.event_id_element.info
-
-        # CHANGE WEIGHT
-        if self.weight_element.changed:
-            self.weight_info = int(self.weight_element.info)
-
-        # CHANGE TYPE
-        if (
-            self.type_element.get("type_dropdown")
-            and self.type_element["type_dropdown"].selected_list != self.type_info
-        ):
-            new_type = self.type_element["type_dropdown"].selected_list[0]
-            self.type_element["type_dropdown"].parent_button.set_text(new_type)
-            self.type_info = [new_type]
-            self.sub_info.clear()
-            self.update_sub_info()
-            self.update_sub_buttons(self.event_types.get(new_type))
-            self.update_basic_checkboxes()
-        # CHANGE SUBTYPES
-        if (
-            self.type_element.get("subtype_dropdown")
-            and self.type_element["subtype_dropdown"].selected_list != self.sub_info
-        ):
-            self.sub_info = self.type_element["subtype_dropdown"].selected_list.copy()
-            self.update_sub_info()
-        # CHANGE SEASONS
-        if self.season_element.changed:
-            self.season_info = self.season_element.info
-            self.season_element.displayed_info = (
-                self.season_info if self.season_info else "['any']"
-            )
-
     # FUTURE EFFECTS EDITOR
     def generate_future_tab(self):
         self.open_block = "future"
@@ -4341,7 +4023,7 @@ class EventEditScreen(Screens):
         self.future_element["type_dropdown"] = UIDropDown(
             pygame.Rect((17, 17), (150, 30)),
             parent_text="types",
-            item_list=list(self.event_types.keys()),
+            item_list=list(self.settings_tab.event_types.keys()),
             container=self.editor_container,
             anchors={
                 "top_target": self.editor_element["future_start"],
@@ -4370,7 +4052,7 @@ class EventEditScreen(Screens):
         self.future_element["sub_dropdown"] = UIDropDown(
             pygame.Rect((10, 17), (150, 30)),
             parent_text="subtypes",
-            item_list=self.event_types[
+            item_list=self.settings_tab.event_types[
                 self.future_element["type_dropdown"].selected_list[0]
             ],
             container=self.editor_container,
@@ -7007,482 +6689,3 @@ class EventEditScreen(Screens):
             self.rank_element.lock.locked = True
 
         self.create_divider(self.rank_element.bottom_element, "rank")
-
-    # SETTINGS EDITOR
-    def generate_settings_tab(self):
-        # EVENT ID
-        self.create_event_id_editor()
-        # LOCATION
-        self.create_location_editor()
-        # SEASON
-        self.create_season_editor()
-        # TYPE AND SUBTYPES
-        self.create_type_editor()
-        # TAGS
-        self.create_tag_editor()
-        # WEIGHT
-        self.create_weight_editor()
-        # ACC
-        self.create_acc_editor()
-
-    def create_acc_editor(self):
-        self.acc_element["text"] = UITextBoxTweaked(
-            "screens.event_edit.acc_info",
-            ui_scale(pygame.Rect((0, 15), (450, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.weight_element.bottom_element},
-        )
-        prev_element = None
-        for group in self.acc_categories.keys():
-            self.acc_element[group] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((40, 15), (150, 30))),
-                group,
-                get_button_dict(ButtonStyles.DROPDOWN, (150, 30)),
-                manager=MANAGER,
-                object_id="@buttonstyles_dropdown",
-                container=self.editor_container,
-                anchors={
-                    "top_target": (
-                        prev_element if prev_element else self.acc_element["text"]
-                    )
-                },
-            )
-            prev_element = self.acc_element[group]
-            if "accessory" not in self.sub_info:
-                self.acc_element[group].disable()
-
-        self.acc_element["frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((-8, 0), (210, 250))),
-            get_box(BoxStyles.FRAME, (210, 250)),
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={
-                "top_target": self.acc_element["text"],
-                "left_target": prev_element,
-            },
-        )
-
-        self.acc_element["display"] = UITextBoxTweaked(
-            f"chosen accessories: {self.acc_info}",
-            ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={
-                "top_target": self.acc_element["frame"],
-            },
-            allow_split_dashes=False,
-        )
-
-        self.create_lock(
-            name="acc",
-            top_anchor=self.acc_element["frame"],
-            left_anchor=self.acc_element["display"],
-        )
-        self.create_divider(self.acc_element["display"], "acc")
-
-    def update_acc_list(self):
-        # kill old buttons
-        if self.acc_element.get("list"):
-            self.acc_element["list"].kill()
-
-        if not self.open_category:
-            # if no category, we kill buttons and return
-            return
-
-        category = None
-        for category_name, accs in self.acc_categories.items():
-            if self.open_category == category_name:
-                category = accs
-                break
-
-        self.acc_element["list"] = UIScrollingButtonList(
-            ui_scale(pygame.Rect((2, 10), (196, 230))),
-            item_list=category,
-            button_dimensions=(190, 30),
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={
-                "top_target": self.acc_element["text"],
-                "left_target": self.acc_element["WILD"],
-            },
-            starting_selection=self.acc_info,
-        )
-        if not self.acc_element.get("preview"):
-            self.acc_element["preview"] = UIModifiedImage(
-                ui_scale(pygame.Rect((80, 0), (100, 100))),
-                image_surface=self.get_acc_example(
-                    acc=self.acc_info[0] if self.acc_info else category[0]
-                ),
-                manager=MANAGER,
-                container=self.editor_container,
-                anchors={
-                    "top_target": self.acc_element[list(self.acc_categories.keys())[-1]]
-                },
-            )
-
-    @staticmethod
-    def get_acc_example(acc):
-        """
-        Returns the example sprite image for the given acc.
-        """
-        return pygame.transform.scale(
-            generate_sprite(create_option_preview_cat(acc=acc)),
-            ui_scale_dimensions((100, 100)),
-        )
-
-    def create_weight_editor(self):
-        self.weight_element = EditorTextEntryLine(
-            position=(0, 15),
-            description=f"<b>weight:</b>",
-            entry_length=50,
-            initial_entry_text=str(self.weight_info) if self.weight_info else "",
-            container=self.editor_container,
-            manager=MANAGER,
-            anchors={"top_target": self.editor_element["tag"]},
-            lock=True,
-            lock_name="weight",
-        )
-        if self.param_locks.get("weight"):
-            self.weight_element.lock.locked = True
-        self.create_divider(self.weight_element.bottom_element, "weight", -10)
-
-    def create_tag_editor(self):
-        self.tag_element["collapse_container"] = UICollapsibleContainer(
-            ui_scale(pygame.Rect((0, 0), (440, 0))),
-            top_button_oriented_left=False,
-            title_text="<b>Tags:</b>",
-            bottom_button=False,
-            resize_right=False,
-            scrolling_container_to_reset=self.editor_container,
-            manager=MANAGER,
-            container=self.editor_container,
-            title_object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            anchors={"top_target": self.type_element["display"]},
-        )
-        self.tag_element[
-            "basic_checkbox_container"
-        ] = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((48, 0), (0, 0))),
-            container=self.tag_element["collapse_container"],
-            manager=MANAGER,
-            anchors={"top_target": self.tag_element["collapse_container"].top_button},
-        )
-
-        self.update_basic_checkboxes()
-
-        self.rank_tag_checkbox["text"] = UITextBoxTweaked(
-            "screens.event_edit.rank_tags",
-            ui_scale(pygame.Rect((10, 10), (250, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.tag_element["collapse_container"],
-            anchors={
-                "top_target": self.tag_element["basic_checkbox_container"],
-            },
-        )
-        prev_element = None
-        rank_list = Cat.rank_sort_order.copy()
-        rank_list.append("apps")
-        for rank in rank_list:
-            if f"clan:{rank}" in self.tag_info:
-                setting = True
-            else:
-                setting = False
-
-            self.rank_tag_checkbox[rank] = UICheckbox(
-                position=(400, 10),
-                container=self.tag_element["collapse_container"],
-                manager=MANAGER,
-                check=setting,
-                anchors={
-                    "top_target": (
-                        prev_element if prev_element else self.rank_tag_checkbox["text"]
-                    ),
-                },
-            )
-
-            check_box_rect = pygame.Rect((0, 10), (350, -1))
-            check_box_rect.right = -70
-            if rank == "apps":
-                rank_string = f"two of any apprentice type"
-            else:
-                rank_string = (
-                    f"two {rank}s" if rank not in ("deputy", "leader") else rank
-                )
-            self.rank_tag_checkbox[f"{rank}_text"] = UITextBoxTweaked(
-                rank_string,
-                ui_scale(check_box_rect),
-                object_id="#text_box_30_horizright_pad_10_10",
-                line_spacing=1,
-                manager=MANAGER,
-                container=self.tag_element["collapse_container"],
-                anchors={
-                    "top_target": (
-                        prev_element if prev_element else self.rank_tag_checkbox["text"]
-                    ),
-                    "right": "right",
-                },
-            )
-
-            prev_element = self.rank_tag_checkbox[f"{rank}_text"]
-
-        self.tag_element["display"] = UITextBoxTweaked(
-            f"chosen tags: {self.tag_info}",
-            ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={
-                "top_target": self.tag_element["collapse_container"],
-            },
-            allow_split_dashes=False,
-        )
-
-        self.tag_element["collapse_container"].close()
-
-        self.create_lock(
-            name="tag",
-            top_anchor=self.tag_element["collapse_container"],
-            left_anchor=self.tag_element["display"],
-        )
-        self.create_divider(self.tag_element["display"], "tag")
-
-    def update_basic_checkboxes(self):
-        prev_element = None
-
-        # clear old elements
-        if self.basic_tag_checkbox:
-            for info in self.basic_tag_list:
-                if self.basic_tag_checkbox.get(f"{info['tag']}_text"):
-                    self.basic_tag_checkbox[f"{info['tag']}_text"].kill()
-                if self.basic_tag_checkbox.get(info["tag"]):
-                    self.basic_tag_checkbox[info["tag"]].kill()
-            self.basic_tag_checkbox.clear()
-
-        # make new ones!
-        for info in self.basic_tag_list:
-            if info["tag"] in self.tag_info and not info["setting"]:
-                info["setting"] = True
-            # first reset the values
-            if info.get("required_type") and info["required_type"] != self.type_info[0]:
-                # this is to change the setting to false
-                index = self.basic_tag_list.index(info)
-                self.basic_tag_list[index] = {
-                    "tag": info["tag"],
-                    "setting": False,
-                    "required_type": info["required_type"],
-                    "conflict": info["conflict"],
-                }
-                continue
-
-            self.basic_tag_checkbox[f"{info['tag']}_text"] = UITextBoxTweaked(
-                f"screens.event_edit.{info['tag']}",
-                ui_scale(pygame.Rect((0, 10), (350, -1))),
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-                line_spacing=1,
-                manager=MANAGER,
-                container=self.tag_element["basic_checkbox_container"],
-                anchors={
-                    "top_target": prev_element,
-                }
-                if prev_element
-                else None,
-            )
-
-            self.basic_tag_checkbox[info["tag"]] = UICheckbox(
-                position=(350, 10),
-                container=self.tag_element["basic_checkbox_container"],
-                manager=MANAGER,
-                check=info["setting"],
-                anchors={"top_target": prev_element} if prev_element else None,
-            )
-
-            prev_element = self.basic_tag_checkbox[f"{info['tag']}_text"]
-
-        self.update_tag_info()
-
-    def create_type_editor(self):
-        self.type_element["text"] = UITextBoxTweaked(
-            "<b>sub/type:</b>",
-            ui_scale(pygame.Rect((0, 14), (-1, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.season_element.bottom_element},
-        )
-        if not self.type_info:
-            self.type_info = ["death"]
-
-        self.type_element["type_dropdown"] = UIDropDown(
-            pygame.Rect((27, 17), (150, 30)),
-            parent_text=self.type_info[0],
-            item_list=list(self.event_types.keys()),
-            container=self.editor_container,
-            anchors={
-                "top_target": self.season_element.bottom_element,
-            },
-            starting_height=3,
-            manager=MANAGER,
-            child_trigger_close=True,
-            starting_selection=self.type_info,
-        )
-
-        self.update_sub_buttons(self.event_types[self.type_info[0]])
-
-        self.type_element["display"] = UITextBoxTweaked(
-            f"chosen subtypes: {self.sub_info}",
-            ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={
-                "top_target": self.type_element["text"],
-            },
-            allow_split_dashes=False,
-        )
-        self.create_lock(
-            name="subtypes",
-            top_anchor=self.type_element["text"],
-            left_anchor=self.type_element["display"],
-        )
-        self.create_divider(self.type_element["display"], "type")
-
-    def update_sub_buttons(self, type_list):
-        if self.type_element.get("subtype_dropdown"):
-            self.type_element["subtype_dropdown"].kill()
-
-        self.type_element["subtype_dropdown"] = UIDropDown(
-            pygame.Rect((0, 17), (150, 30)),
-            parent_text="pick subtypes",
-            item_list=type_list,
-            manager=MANAGER,
-            container=self.editor_container,
-            multiple_choice=True,
-            disable_selection=False,
-            child_trigger_close=False,
-            starting_height=3,
-            anchors={
-                "left_target": self.type_element["type_dropdown"],
-                "top_target": self.season_element.bottom_element,
-            },
-            starting_selection=self.sub_info,
-        )
-
-    def create_season_editor(self):
-        self.season_element = EditorDropDownSelection(
-            position=(0, 10),
-            anchors={"top_target": self.location_element["display"]},
-            container=self.editor_container,
-            manager=MANAGER,
-            description="screens.event_edit.season_info",
-            item_list=self.all_seasons,
-            dropdown_parent_text="seasons",
-            display_text="seasons: ",
-            starting_selection=self.season_info,
-            multiple_choice=True,
-            lock_name="season",
-            lock=True,
-        )
-        if self.param_locks.get("season"):
-            self.season_element.lock.locked = True
-
-        self.create_divider(self.season_element.bottom_element, "season")
-
-    def create_location_editor(self):
-        self.location_element["text"] = UITextBoxTweaked(
-            "screens.event_edit.location_info",
-            ui_scale(pygame.Rect((0, 10), (450, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            line_spacing=1,
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.editor_element["event_id"]},
-        )
-        biome_list = constants.BIOME_TYPES
-        prev_element = None
-        for biome in biome_list:
-            y_pos = 10 if not prev_element else -2
-            self.location_element[biome] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((10, y_pos), (150, 30))),
-                biome,
-                get_button_dict(ButtonStyles.DROPDOWN, (150, 30)),
-                manager=MANAGER,
-                object_id="@buttonstyles_dropdown",
-                container=self.editor_container,
-                anchors={
-                    "top_target": (
-                        self.location_element["text"]
-                        if not prev_element
-                        else prev_element
-                    ),
-                },
-            )
-            prev_element = self.location_element[biome]
-
-        self.location_element["display"] = UITextBoxTweaked(
-            f"chosen location: {self.location_info}",
-            ui_scale(pygame.Rect((10, 10), (380, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            manager=MANAGER,
-            container=self.editor_container,
-            anchors={"top_target": self.location_element[biome_list[-1]]},
-            allow_split_dashes=False,
-        )
-
-        self.create_lock(
-            name="location",
-            top_anchor=self.location_element[biome_list[-1]],
-            left_anchor=self.location_element["display"],
-        )
-
-        self.create_divider(self.location_element["display"], "location")
-
-    def update_camp_list(self, chosen_biome):
-        for biome in self.all_camps:
-            for camp in self.all_camps[biome]:
-                if self.location_element.get(camp):
-                    self.location_element[camp].kill()
-
-        camp_list = self.all_camps.get(chosen_biome)
-
-        if not camp_list:
-            return
-
-        prev_element = None
-        for camp in camp_list:
-            y_pos = 10 if not prev_element else -2
-            self.location_element[camp] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((20, y_pos), (150, 30))),
-                camp,
-                get_button_dict(ButtonStyles.DROPDOWN, (150, 30)),
-                manager=MANAGER,
-                object_id="@buttonstyles_dropdown",
-                container=self.editor_container,
-                anchors={
-                    "left_target": self.location_element[chosen_biome],
-                    "top_target": (
-                        self.location_element["text"]
-                        if not prev_element
-                        else prev_element
-                    ),
-                },
-            )
-            prev_element = self.location_element[camp]
-
-    def create_event_id_editor(self):
-        self.event_id_element = EditorTextEntryLine(
-            position=(0, 13),
-            description=f"<b>event_id:</b>",
-            entry_length=230,
-            initial_entry_text=self.event_id_info if self.event_id_info else "",
-            container=self.editor_container,
-            manager=MANAGER,
-        )
-
-        self.create_divider(self.event_id_element.bottom_element, "event_id")
