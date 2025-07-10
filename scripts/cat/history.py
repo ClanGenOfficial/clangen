@@ -497,17 +497,15 @@ class History:
         """
         text = ""
         if murder["revealed"]["to_clan"]:
-            text = i18n.t("cat.history.murder_revealed_to_clan")
-        else:
-            if murder["revealed"]["aware_individuals"]:
-                individuals = [
-                    Cat.fetch_cat(c).name
-                    for c in murder["revealed"]["aware_individuals"]
-                ]
-                names = adjust_list_text(individuals)
-                text = f"{i18n.t('cat.history.murder_revealed_to_individual', name=names)} "
+            return i18n.t("cat.history.murder_revealed_to_clan")
+        if murder["revealed"]["aware_individuals"]:
+            individuals = [
+                Cat.fetch_cat(c).name for c in murder["revealed"]["aware_individuals"]
+            ]
+            names = adjust_list_text(individuals)
+            text = f"{i18n.t('cat.history.murder_revealed_to_individual', name=names)} "
 
-            text += i18n.t("cat.history.murder_not_revealed_to_clan")
+        text += i18n.t("cat.history.murder_not_revealed_to_clan")
         return text
 
     def add_lead_ceremony(self):
