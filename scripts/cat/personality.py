@@ -22,20 +22,20 @@ class Personality:
         self,
         trait: str = None,
         kit_trait: bool = False,
-        lawful: int = None,
-        social: int = None,
-        aggress: int = None,
-        stable: int = None,
+        lawfulness: int = None,
+        sociability: int = None,
+        aggression: int = None,
+        stability: int = None,
     ):
         """If trait is given, it will randomize facets within the range of the trait. It will ignore any facets given.
         If facets are given and no trait, it will find a trait that matches the facets. NOTE: you can give
         only some facets: It will randomize any you don't specify.
         If both facets and trait are given, it will use the trait if it matched the facets. Otherwise, it will
         find a new trait."""
-        self._law = 0
-        self._social = 0
-        self._aggress = 0
-        self._stable = 0
+        self._lawfulness = 0
+        self._sociability = 0
+        self._aggression = 0
+        self._stability = 0
         self.trait = None
         self._kit = kit_trait  # If true, use kit trait. If False, use normal traits.
 
@@ -55,37 +55,39 @@ class Personality:
         # (1) Given value, from parameter.
         # (2) If a trait range is assigned, pick from trait range
         # (3) Totally random.
-        if lawful is not None:
-            self._law = Personality.adjust_to_range(lawful)
+        if lawfulness is not None:
+            self._lawfulness = Personality.adjust_to_range(lawfulness)
         elif _tr:
-            self._law = randint(_tr["lawfulness"][0], _tr["lawfulness"][1])
+            self._lawfulness = randint(_tr["lawfulness"][0], _tr["lawfulness"][1])
         else:
-            self._law = randint(Personality.facet_range[0], Personality.facet_range[1])
-
-        if social is not None:
-            self._social = Personality.adjust_to_range(social)
-        elif _tr:
-            self._social = randint(_tr["sociability"][0], _tr["sociability"][1])
-        else:
-            self._social = randint(
+            self._lawfulness = randint(
                 Personality.facet_range[0], Personality.facet_range[1]
             )
 
-        if aggress is not None:
-            self._aggress = Personality.adjust_to_range(aggress)
+        if sociability is not None:
+            self._sociability = Personality.adjust_to_range(sociability)
         elif _tr:
-            self._aggress = randint(_tr["aggression"][0], _tr["aggression"][1])
+            self._sociability = randint(_tr["sociability"][0], _tr["sociability"][1])
         else:
-            self._aggress = randint(
+            self._sociability = randint(
                 Personality.facet_range[0], Personality.facet_range[1]
             )
 
-        if stable is not None:
-            self._stable = Personality.adjust_to_range(stable)
+        if aggression is not None:
+            self._aggression = Personality.adjust_to_range(aggression)
         elif _tr:
-            self._stable = randint(_tr["stability"][0], _tr["stability"][1])
+            self._aggression = randint(_tr["aggression"][0], _tr["aggression"][1])
         else:
-            self._stable = randint(
+            self._aggression = randint(
+                Personality.facet_range[0], Personality.facet_range[1]
+            )
+
+        if stability is not None:
+            self._stability = Personality.adjust_to_range(stability)
+        elif _tr:
+            self._stability = randint(_tr["stability"][0], _tr["stability"][1])
+        else:
+            self._stability = randint(
                 Personality.facet_range[0], Personality.facet_range[1]
             )
 
@@ -123,45 +125,45 @@ class Personality:
 
     @property
     def lawfulness(self):
-        return self._law
+        return self._lawfulness
 
     @lawfulness.setter
     def lawfulness(self, new_val):
         """Do not use property in init"""
-        self._law = Personality.adjust_to_range(new_val)
+        self._lawfulness = Personality.adjust_to_range(new_val)
         if not self.is_trait_valid():
             self.choose_trait()
 
     @property
     def sociability(self):
-        return self._social
+        return self._sociability
 
     @sociability.setter
     def sociability(self, new_val):
         """Do not use property in init"""
-        self._social = Personality.adjust_to_range(new_val)
+        self._sociability = Personality.adjust_to_range(new_val)
         if not self.is_trait_valid():
             self.choose_trait()
 
     @property
     def aggression(self):
-        return self._aggress
+        return self._aggression
 
     @aggression.setter
     def aggression(self, new_val):
         """Do not use property in init"""
-        self._aggress = Personality.adjust_to_range(new_val)
+        self._aggression = Personality.adjust_to_range(new_val)
         if not self.is_trait_valid():
             self.choose_trait()
 
     @property
     def stability(self):
-        return self._stable
+        return self._stability
 
     @stability.setter
     def stability(self, new_val):
         """Do not use property in init"""
-        self._stable = Personality.adjust_to_range(new_val)
+        self._stability = Personality.adjust_to_range(new_val)
         if not self.is_trait_valid():
             self.choose_trait()
 
@@ -235,11 +237,17 @@ class Personality:
 
         possible_traits = []
         for trait, facets in trait_type_dict.items():
-            if not (facets["lawfulness"][0] <= self.lawfulness <= facets["lawfulness"][1]):
+            if not (
+                facets["lawfulness"][0] <= self.lawfulness <= facets["lawfulness"][1]
+            ):
                 continue
-            if not (facets["sociability"][0] <= self.sociability <= facets["sociability"][1]):
+            if not (
+                facets["sociability"][0] <= self.sociability <= facets["sociability"][1]
+            ):
                 continue
-            if not (facets["aggression"][0] <= self.aggression <= facets["aggression"][1]):
+            if not (
+                facets["aggression"][0] <= self.aggression <= facets["aggression"][1]
+            ):
                 continue
             if not (facets["stability"][0] <= self.stability <= facets["stability"][1]):
                 continue
