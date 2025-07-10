@@ -4,7 +4,7 @@ Cat status is primarily composed of three properties and their associated enums:
 
 | Property | Enum        | Use                                                                                                                                                                                                                                    |
 |----------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `social` | `CatSocial` | This is the cat's current social caste. For example, if a cat is part of a Clan, they are a `CLANCAT`. If a cat is owned by Twolegs, they are a `KITTYPET`                                                                             |
+| `social` | `CatSocial` | This is the cat's current social caste. For example, if a cat is part of a Clan, they are a `CLANCAT`. If a cat is owned by Twolegs, they are a `KITTYPET`.                                                                            |
 | `group`  | `CatGroup`  | This is the group a cat is currently affiliated with. If they have no group, this will be `None`. Note that all three afterlives are considered their own `CatGroup`s.                                                                 |
 | `rank`   | `CatRank`   | This is the rank a cat currently holds, typically within a group. For now, only `CLANCAT`s have ranks. `CatSocial`s without any ranks will take a matching `CatRank`. For example, a `CatSocial.LONER` will also be a `CatRank.LONER`. |
 
