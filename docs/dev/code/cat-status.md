@@ -8,7 +8,7 @@ Cat status is primarily composed of three properties and their associated enums:
 | `group`  | `CatGroup`  | This is the group a cat is currently affiliated with. If they have no group, this will be `None`. Note that all three afterlives are considered their own `CatGroup`s.                                                                 |
 | `rank`   | `CatRank`   | This is the rank a cat currently holds, typically within a group. For now, only `CLANCAT`s have ranks. `CatSocial`s without any ranks will take a matching `CatRank`. For example, a `CatSocial.LONER` will also be a `CatRank.LONER`. |
 
-We also utilize one more enum: `CatStanding`. This is, essentially, what a group thinks of a cat. For example, a member of a group will have the standing `MEMBER`, while a cat who was exiled from the group would have the standing `EXILED`. You can use the func `get_standing_with_group()` to retrieve a cat's currently standing with a group.
+We also utilize one more enum: `CatStanding`. This is, essentially, what a group thinks of a cat. For example, a member of a group will have the standing `MEMBER`, while a cat who was exiled from the group would have the standing `EXILED`. You can use the func `get_standing_with_group()` to retrieve a cat's currently standing with a group. The functions `is_lost()` and `is_exiled()` can assist in quickly finding `standing` status.
 
 !!! Important
     All of this information is stored within two attributes: `group_history` and `standing_history`. These preserve all past information as well as current information. We can retrieve the number of moons a cat has held a rank, we can pull a cat's entire `standing` history with a certain group, we can see all the `social`s a cat has held in their life. The majority of this information can be retrieved through properties and funcs already made in `status.py`.
@@ -35,3 +35,5 @@ Cats of all social castes can join the player Clan. When they do, their `social`
 
 ### Near vs. Far
 `standing_history` doesn't just track the cat's `standing` with a group, it also tracks their `near` attribute with that group. `near` is a bool. `True` means a cat is close enough with that group to interact with it. `False` means they are too far away from that group to interact with it.
+
+For now, this value only changes when cats are driven away via the Leader's Den. This replaces the old `driven_out` cat attribute.
