@@ -26,16 +26,6 @@ import time
 from importlib import reload
 from importlib.util import find_spec
 
-from scripts.clan import clan_class
-from scripts.game_structure import constants
-from scripts.game_structure.game.save_load import read_clans
-from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure.game.switches import (
-    switch_get_value,
-    switch_set_value,
-    Switch,
-)
-
 if not getattr(sys, "frozen", False):
     requiredModules = [
         "ujson",
@@ -191,11 +181,20 @@ for module_name, module in list(sys.modules.items()):
             reload(module)
 
 # Load game
+from scripts.clan import clan_class
 from scripts.game_structure.audio import sound_manager, music_manager
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure import constants
+from scripts.game_structure.game.save_load import read_clans
+from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure.game.switches import (
+    switch_get_value,
+    switch_set_value,
+    Switch,
+)
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.utility import (
