@@ -17,4 +17,4 @@ jobs:
       - name: install dependencies
         run: uv sync --group test
       - name: Run Pylint
-        run: uv run pylint --ignore='.venv' --recursive=y --errors-only "$PWD"
+        run: uv run pylint --recursive=y --errors-only --jobs=0 "$PWD"
