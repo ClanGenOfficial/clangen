@@ -436,9 +436,3 @@ def rebuild_relationship_dicts():
                 f"events/relationship_events/normal_interactions/{rel}/decrease.json"
             )
         )
-
-    NEUTRAL_INTERACTIONS = create_interaction(
-        load_lang_resource(
-            f"events/relationship_events/normal_interactions/neutral.json"
-        )
-    )
