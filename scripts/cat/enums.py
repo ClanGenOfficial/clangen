@@ -65,7 +65,7 @@ class CatRank(StrEnum):
         return self in (self.WARRIOR, self.DEPUTY, self.LEADER)
 
     def is_allowed_to_patrol(self) -> bool:
-        # newborn is not included in this because the game.config["fun"] needs extra checks
+        # newborn is not included in this because the constants.CONFIG["fun"] needs extra checks
         if self.is_any_clancat_rank() and self not in (
             self.ELDER,
             self.KITTEN,

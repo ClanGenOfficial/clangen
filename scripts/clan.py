@@ -17,12 +17,22 @@ import ujson
 
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.enums import CatRank, CatGroup
-from scripts.cat.history import History
 from scripts.cat.names import names
+from scripts.cat.save_load import save_cats
 from scripts.cat.sprites import sprites
+from scripts.clan_package.settings import save_clan_settings, load_clan_settings
+from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
+from scripts.events_module.future.future_event import FutureEvent
 from scripts.events_module.generate_events import OngoingEvent
+from scripts.game_structure import constants
+from scripts.game_structure.game.save_load import safe_save, save_clanlist, read_clans
+from scripts.game_structure.game.switches import (
+    switch_set_value,
+    switch_get_value,
+    Switch,
+)
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
@@ -31,7 +41,6 @@ from scripts.utility import (
     clan_symbol_sprite,
     get_living_clan_cat_count,
 )  # pylint: disable=redefined-builtin
-from scripts.events_module.future.future_event import FutureEvent
 
 
 class Clan:
@@ -41,46 +50,8 @@ class Clan:
 
     """
 
-    BIOME_TYPES = game.BIOME_TYPES
-
-    CAT_TYPES = [
-        "newborn",
-        "kitten",
-        "apprentice",
-        "warrior",
-        "medicine",
-        "deputy",
-        "leader",
-        "elder",
-        "mediator",
-        "general",
-    ]
-
     leader_lives = 0
     clan_cats = []
-    seasons = [
-        "Newleaf",
-        "Newleaf",
-        "Newleaf",
-        "Greenleaf",
-        "Greenleaf",
-        "Greenleaf",
-        "Leaf-fall",
-        "Leaf-fall",
-        "Leaf-fall",
-        "Leaf-bare",
-        "Leaf-bare",
-        "Leaf-bare",
-    ]
-
-    temperament_dict = {
-        "low_social": ["cunning", "proud", "bloodthirsty"],
-        "mid_social": ["amiable", "stoic", "wary"],
-        "high_social": ["gracious", "mellow", "logical"],
-    }
-
-    with open("resources/placements.json", "r", encoding="utf-8") as read_file:
-        layouts = ujson.loads(read_file.read())
 
     age = 0
     current_season = "Newleaf"
@@ -136,27 +107,9 @@ class Clan:
         self.inheritance = {}
         self.custom_pronouns = {}
 
-        # Init Settings
-        self.clan_settings = {}
-        self.setting_lists = {}
-        with open("resources/clansettings.json", "r", encoding="utf-8") as read_file:
-            _settings = ujson.loads(read_file.read())
-
-        for setting, values in _settings["__other"].items():
-            self.clan_settings[setting] = values[0]
-            self.setting_lists[setting] = values
-
-        all_settings = []
-        all_settings.append(_settings["general"])
-        all_settings.append(_settings["role"])
-        all_settings.append(_settings["relation"])
-        all_settings.append(_settings["freshkill_tactics"])
-        all_settings.append(_settings["clan_focus"])
-
-        for setting in all_settings:  # Add all the settings to the settings dictionary
-            for setting_name, inf in setting.items():
-                self.clan_settings[setting_name] = inf[2]
-                self.setting_lists[setting_name] = [inf[2], not inf[2]]
+        switch_set_value(Switch.biome, biome)
+        switch_set_value(Switch.camp_bg, camp_bg)
+        switch_set_value(Switch.game_mode, game_mode)
 
         # Reputation is for loners/kittypets/outsiders in general that wish to join the clan.
         # it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
@@ -182,9 +135,9 @@ class Clan:
         self.last_focus_change = None
         self.clans_in_focus = []
 
-        self.faded_ids = (
-            []
-        )  # Stores ID's of faded cats, to ensure these IDs aren't reused.
+        self.faded_ids = []
+        """Stores ID's of faded cats, to ensure these IDs aren't reused."""
+
         if self_run_init_functions:
             self.post_initialization_functions()
 
@@ -205,12 +158,29 @@ class Clan:
             if self.medicine_cat.status.rank != CatRank.MEDICINE_CAT:
                 Cat.all_cats[self.medicine_cat.ID].rank_change(CatRank.MEDICINE_CAT)
 
+    @property
+    def settings(self):
+        """DEPRECATED: use get_clan_setting() and set_clan_setting() instead.
+        WILL CRASH if you try and use this anyway."""
+        import warnings
+
+        warnings.warn(
+            "Use get_clan_setting() and set_clan_setting() instead. WILL CRASH if you try and use this anyway.",
+            DeprecationWarning,
+            2,
+        )
+        raise Exception(
+            "clan.settings has been deprecated, use get_clan_setting() and set_clan_setting() instead. Unrecoverable."
+        )
+
     def create_clan(self):
         """
         This function is only called once a new clan is
         created in the 'clan created' screen, not every time
         the program starts
         """
+        switch_set_value(Switch.clan_name, self.name)
+        reset_loaded_clan_settings()
         instructor_rank = choice(
             (
                 CatRank.APPRENTICE,
@@ -260,7 +230,7 @@ class Clan:
                 Cat.all_cats.get(cat_id).rank_change(CatRank.APPRENTICE)
             Cat.all_cats.get(cat_id).thoughts()
 
-        game.save_cats()
+        save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
             other_clan_names = [str(i.name) for i in self.all_clans] + [game.clan.name]
@@ -275,27 +245,23 @@ class Clan:
             other_clan = OtherClan(name=other_clan_name)
             self.all_clans.append(other_clan)
         self.save_clan()
-        game.save_clanlist(self.name)
-        game.switches["clan_list"] = game.read_clans()
-        # if map_available:
-        #    save_map(game.map_info, game.clan.name)
+        save_clanlist(self.name)
+        switch_set_value(Switch.clan_list, read_clans())
 
         # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
-        if game.switches["camp_bg"] is None:
+        if switch_get_value(Switch.camp_bg) is None:
             random_camp_options = ["camp1", "camp2"]
             random_camp = choice(random_camp_options)
-            game.switches["camp_bg"] = random_camp
+            switch_set_value(Switch.camp_bg, random_camp)
 
         # if no game mode chosen, set to Classic
-        if game.switches["game_mode"] is None:
-            game.switches["game_mode"] = "classic"
+        if switch_get_value(Switch.game_mode) == "":
+            switch_set_value(Switch.game_mode, "classic")
             self.game_mode = "classic"
-        # if game.switches['game_mode'] == 'cruel_season':
-        #    game.settings['disasters'] = True
 
         # set the starting season
-        season_index = self.seasons.index(self.starting_season)
-        self.current_season = self.seasons[season_index]
+        season_index = constants.SEASON_CALENDAR.index(self.starting_season)
+        self.current_season = constants.SEASON_CALENDAR[season_index]
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """Adds cat into the list of clan cats"""
@@ -352,7 +318,9 @@ class Clan:
             Cat.all_cats[leader.ID].rank_change(CatRank.LEADER)
             self.leader_predecessors += 1
             self.leader_lives = 9
-        game.switches["new_leader"] = None
+
+        # todo: this leads nowhere, can it be deleted?
+        switch_set_value(Switch.new_leader, None)
 
     def new_deputy(self, deputy):
         """
@@ -400,10 +368,10 @@ class Clan:
         TODO: DOCS
         """
         if save:
-            game.save_clanlist(clan, True)
+            save_clanlist(clan, True)
         else:
-            game.save_clanlist(clan)
-        game.switches["switch_clan"] = True
+            save_clanlist(clan)
+        switch_set_value(Switch.switch_clan, True)
         # quit(savesettings=False, clearevents=True)
 
     def save_clan(self):
@@ -474,40 +442,16 @@ class Clan:
         self.save_future_events(game.clan)
         self.save_pregnancy(game.clan)
 
-        self.save_clan_settings()
+        save_clan_settings()
         if game.clan.game_mode in ("expanded", "cruel season"):
             self.save_freshkill_pile(game.clan)
 
-        game.safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
+        safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
 
         if os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (
             self.name != "current"
         ):
             os.remove(get_save_dir() + f"/{self.name}clan.txt")
-
-    def switch_setting(self, setting_name):
-        """Call this function to change a setting given in the parameter by one to the right on it's list"""
-        self.settings_changed = True
-
-        # Give the index that the list is currently at
-        list_index = self.setting_lists[setting_name].index(
-            self.clan_settings[setting_name]
-        )
-
-        if (
-            list_index == len(self.setting_lists[setting_name]) - 1
-        ):  # The option is at the list's end, go back to 0
-            self.clan_settings[setting_name] = self.setting_lists[setting_name][0]
-        else:
-            # Else move on to the next item on the list
-            self.clan_settings[setting_name] = self.setting_lists[setting_name][
-                list_index + 1
-            ]
-
-    def save_clan_settings(self):
-        game.safe_save(
-            get_save_dir() + f"/{self.name}/clan_settings.json", self.clan_settings
-        )
 
     def load_clan(self):
         """
@@ -516,17 +460,19 @@ class Clan:
 
         version_info = None
         if os.path.exists(
-            get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.json"
+            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json"
         ):
             version_info = self.load_clan_json()
         elif os.path.exists(
-            get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.txt"
+            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.txt"
         ):
             self.load_clan_txt()
         else:
-            game.switches["error_message"] = "There was an error loading the clan.json"
+            switch_set_value(
+                Switch.error_message, "There was an error loading the clan.json"
+            )
 
-        game.clan.load_clan_settings()
+        load_clan_settings()
 
         return version_info
 
@@ -535,19 +481,21 @@ class Clan:
         TODO: DOCS
         """
 
-        if game.switches["clan_list"] == "":
+        if not switch_get_value(Switch.clan_list):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        if game.switches["clan_list"][0].strip() == "":
+        if switch_get_value(Switch.clan_list)[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        game.switches["error_message"] = "There was an error loading the clan.txt"
+        switch_set_value(
+            Switch.error_message, "There was an error loading the clan.txt"
+        )
         with open(
-            get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.txt",
+            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.txt",
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
@@ -652,8 +600,8 @@ class Clan:
             )
             game.clan.post_initialization_functions()
         game.clan.age = int(general[1])
-        if not game.config["lock_season"]:
-            game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+        if not constants.CONFIG["lock_season"]:
+            game.clan.current_season = constants.SEASON_CALENDAR[game.clan.age % 12]
         else:
             game.clan.current_season = game.clan.starting_season
         game.clan.leader_lives, game.clan.leader_predecessors = int(
@@ -704,27 +652,29 @@ class Clan:
         # assigning a symbol, since this save would be too old to have a chosen symbol
         game.clan.chosen_symbol = clan_symbol_sprite(game.clan, return_string=True)
 
-        game.switches["error_message"] = ""
+        switch_set_value(Switch.error_message, "")
 
     def load_clan_json(self):
         """
         TODO: DOCS
         """
         other_clans = []
-        if game.switches["clan_list"] == "":
+        if not switch_get_value(Switch.clan_list):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        if game.switches["clan_list"][0].strip() == "":
+        if switch_get_value(Switch.clan_list)[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
 
-        game.switches["error_message"] = "There was an error loading the clan.json"
+        switch_set_value(
+            Switch.error_message, "There was an error loading the clan.json"
+        )
         with open(
-            get_save_dir() + "/" + game.switches["clan_list"][0] + "clan.json",
+            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json",
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
@@ -876,7 +826,7 @@ class Clan:
         self.load_disaster(game.clan)
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
-        game.switches["error_message"] = ""
+        switch_set_value(Switch.error_message, "")
 
         # Return Version Info.
         return {
@@ -884,23 +834,6 @@ class Clan:
             "version_commit": clan_data.get("version_commit"),
             "source_build": clan_data.get("source_build"),
         }
-
-    def load_clan_settings(self):
-        if os.path.exists(
-            get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json'
-        ):
-            with open(
-                get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json',
-                "r",
-                encoding="utf-8",
-            ) as write_file:
-                _load_settings = ujson.loads(write_file.read())
-
-            for key, value in _load_settings.items():
-                if key in self.clan_settings:
-                    self.clan_settings[key] = value
-
-        # if settings files does not exist, default has been loaded by __init__
 
     def load_pregnancy(self, clan):
         """
@@ -924,7 +857,7 @@ class Clan:
         if not game.clan.name:
             return
 
-        game.safe_save(
+        safe_save(
             f"{get_save_dir()}/{game.clan.name}/pregnancy.json", clan.pregnancy_data
         )
 
@@ -1024,7 +957,7 @@ class Clan:
         else:
             disaster = {}
 
-        game.safe_save(f"{get_save_dir()}/{clan.name}/disasters/primary.json", disaster)
+        safe_save(f"{get_save_dir()}/{clan.name}/disasters/primary.json", disaster)
 
         if clan.secondary_disaster:
             disaster = {
@@ -1041,9 +974,7 @@ class Clan:
         else:
             disaster = {}
 
-        game.safe_save(
-            f"{get_save_dir()}/{clan.name}/disasters/secondary.json", disaster
-        )
+        safe_save(f"{get_save_dir()}/{clan.name}/disasters/secondary.json", disaster)
 
     def load_future_events(self, clan):
         """
@@ -1086,9 +1017,7 @@ class Clan:
         for event in game.clan.future_events:
             save_list.append(event.to_dict())
 
-        game.safe_save(
-            f"{get_save_dir()}/{game.clan.name}/future_events.json", save_list
-        )
+        safe_save(f"{get_save_dir()}/{game.clan.name}/future_events.json", save_list)
 
     def load_herb_supply(self, clan):
         """
@@ -1132,7 +1061,6 @@ class Clan:
             return
 
         combined_supply_dict = clan.herb_supply.combined_supply_dict
-
         combined_supply_dict = {
             "storage": {
                 herb: [int(i) for i in amounts]
@@ -1144,7 +1072,7 @@ class Clan:
             },
         }
 
-        game.safe_save(
+        safe_save(
             f"{get_save_dir()}/{game.clan.name}/herb_supply.json",
             combined_supply_dict,
         )
@@ -1193,7 +1121,7 @@ class Clan:
         if clan.game_mode == "classic" or not clan.freshkill_pile:
             return
 
-        game.safe_save(
+        safe_save(
             f"{get_save_dir()}/{game.clan.name}/freshkill_pile.json",
             clan.freshkill_pile.pile,
         )
@@ -1206,7 +1134,7 @@ class Clan:
                 "percentage": nutr.percentage,
             }
 
-        game.safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
+        safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
 
     ## Properties
 
@@ -1289,11 +1217,11 @@ class Clan:
 
         # _temperament = ['low_aggression', 'med_aggression', 'high_aggression', ]
         if 11 <= clan_sociability:
-            _temperament = self.temperament_dict["high_social"]
+            _temperament = constants.TEMPERAMENT_DICT["high_social"]
         elif 7 <= clan_sociability:
-            _temperament = self.temperament_dict["mid_social"]
+            _temperament = constants.TEMPERAMENT_DICT["mid_social"]
         else:
-            _temperament = self.temperament_dict["low_social"]
+            _temperament = constants.TEMPERAMENT_DICT["low_social"]
 
         if 11 <= clan_aggression:
             _temperament = _temperament[2]

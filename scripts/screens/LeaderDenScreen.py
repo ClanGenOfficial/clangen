@@ -8,6 +8,11 @@ from pygame_gui.core import UIContainer
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatGroup
 from scripts.clan import OtherClan
+from scripts.clan_package.settings.clan_settings import (
+    set_clan_setting,
+    get_clan_setting,
+)
+from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
@@ -122,12 +127,12 @@ class LeaderDenScreen(Screens):
         """
         super().screen_switches()
         # just making sure these are set up ahead of time
-        if "lead_den_interaction" not in game.clan.clan_settings:
-            game.clan.clan_settings["lead_den_interaction"] = False
-        if "lead_den_clan_event" not in game.clan.clan_settings:
-            game.clan.clan_settings["lead_den_clan_event"] = {}
-        if "lead_den_outsider_event" not in game.clan.clan_settings:
-            game.clan.clan_settings["lead_den_outsider_event"] = {}
+        if get_clan_setting("lead_den_clan_interaction") is None:
+            set_clan_setting("lead_den_interaction", False)
+        if get_clan_setting("lead_den_clan_event") is None:
+            set_clan_setting("lead_den_clan_event", {})
+        if get_clan_setting("lead_den_clan_event") is None:
+            set_clan_setting("lead_den_outsider_event", {})
 
         # no menu header allowed
         self.hide_menu_buttons()
@@ -337,8 +342,8 @@ class LeaderDenScreen(Screens):
         )
 
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
-        if game.clan.clan_settings["lead_den_clan_event"]:
-            current_setting = game.clan.clan_settings["lead_den_clan_event"]
+        if get_clan_setting("lead_den_clan_event"):
+            current_setting = get_clan_setting("lead_den_clan_event")
             self.focus_clan = get_other_clan(current_setting["other_clan"])
             self.update_other_clan_focus()
             self.update_clan_interaction_choice(current_setting["interaction_type"])
@@ -570,8 +575,8 @@ class LeaderDenScreen(Screens):
         self.focus_frame_elements["outsiders_tab"].disable()
         self.focus_frame_elements["clans_tab"].enable()
 
-        if game.clan.clan_settings["lead_den_outsider_event"]:
-            current_setting = game.clan.clan_settings["lead_den_outsider_event"]
+        if get_clan_setting("lead_den_outsider_event"):
+            current_setting = get_clan_setting("lead_den_outsider_event")
             self.focus_cat = Cat.fetch_cat(current_setting["cat_ID"])
             self.update_outsider_focus()
             self.update_outsider_interaction_choice(current_setting["interaction_type"])
@@ -700,7 +705,7 @@ class LeaderDenScreen(Screens):
         self.handle_other_clan_interaction(interaction)
 
     def handle_other_clan_interaction(self, interaction_type: str):
-        game.clan.clan_settings["lead_den_interaction"] = True
+        set_clan_setting("lead_den_interaction", True)
 
         gathering_cat = game.clan.leader if not self.helper_cat else self.helper_cat
 
@@ -716,13 +721,16 @@ class LeaderDenScreen(Screens):
         if random.random() >= fail_chance:
             success = True
 
-        game.clan.clan_settings["lead_den_clan_event"] = {
-            "cat_ID": gathering_cat.ID,
-            "other_clan": self.focus_clan.name,
-            "player_clan_temper": self.clan_temper,
-            "interaction_type": interaction_type,
-            "success": success,
-        }
+        set_clan_setting(
+            "lead_den_clan_event",
+            {
+                "cat_ID": gathering_cat.ID,
+                "other_clan": self.focus_clan.name,
+                "player_clan_temper": self.clan_temper,
+                "interaction_type": interaction_type,
+                "success": success,
+            },
+        )
 
     def _compare_temper(self, player_temper_int, other_temper_int) -> float:
         """
@@ -732,7 +740,7 @@ class LeaderDenScreen(Screens):
         # base equation for fail chance (temper_int - temper_int) / 10
         fail_chance = (abs(int(player_temper_int - other_temper_int))) / 10
 
-        temper_dict = game.clan.temperament_dict
+        temper_dict = constants.TEMPERAMENT_DICT
         clan_index = 0
         clan_social = None
         other_index = 0
@@ -771,7 +779,7 @@ class LeaderDenScreen(Screens):
         """
         returns int value (social rank + aggression rank) of given temperament
         """
-        temper_dict = game.clan.temperament_dict
+        temper_dict = constants.TEMPERAMENT_DICT
         temper_int = 0
 
         if temper in temper_dict["low_social"]:
@@ -1074,7 +1082,7 @@ class LeaderDenScreen(Screens):
         handles determining the outcome of an outsider interaction, returns result text
         :param action: the object id of the interaction button pressed
         """
-        game.clan.clan_settings["lead_den_interaction"] = True
+        set_clan_setting("lead_den_interaction", True)
 
         # percentage of success
         success_chance = (int(game.clan.reputation) / 100) / 1.5
@@ -1092,11 +1100,14 @@ class LeaderDenScreen(Screens):
         else:
             success = False
 
-        game.clan.clan_settings["lead_den_outsider_event"] = {
-            "cat_ID": self.focus_cat.ID,
-            "interaction_type": action,
-            "success": success,
-        }
+        set_clan_setting(
+            "lead_den_outsider_event",
+            {
+                "cat_ID": self.focus_cat.ID,
+                "interaction_type": action,
+                "success": success,
+            },
+        )
 
     def chunks(self, L, n):
         return [L[x : x + n] for x in range(0, len(L), n)]

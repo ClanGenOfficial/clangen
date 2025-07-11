@@ -840,7 +840,7 @@
             "Wishes r_c could be a bit more understanding",
             "Feels like r_c doesn't like {PRONOUN/m_c/object}",
             "Is surprised when r_c gives {PRONOUN/m_c/object} the day off on a hard day",
-            "Gets a lecture on being more confident when {PRONOUN/m_c/subject} {VERB/m_c/complain/complains} about never succeeding with a particular move",
+            "Complained about never succeeding with a particular move and was lectured on being more confident",
             "Knows r_c is trying {PRONOUN/r_c/poss} best to help {PRONOUN/m_c/object}",
             "Is found crying in {PRONOUN/m_c/poss} nest by r_c, and is comforted",
             "Is surprised when {PRONOUN/m_c/poss} mentor brings {PRONOUN/m_c/object} {PRONOUN/m_c/poss} favorite prey",
@@ -878,7 +878,7 @@
             "Hides behind r_c during the Gathering",
             "Wonders how r_c can speak with others so easily",
             "Tries out some suggestions r_c gave {PRONOUN/m_c/object} to be able to be more outgoing",
-            "Hides away from {PRONOUN/m_c/poss} mentor when {PRONOUN/m_c/subject} {VERB/m_c/learn/learns} {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to take them to the far edges of the territory today"
+            "Hid from {PRONOUN/m_c/poss} mentor when {PRONOUN/m_c/subject} learned {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to take {PRONOUN/m_c/object} to the far edges of the territory today"
         ],
         "main_trait_constraint": [
             "insecure",

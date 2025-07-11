@@ -70,7 +70,18 @@
 			"r_c doesn't judge m_c for being anxious about a bad dream.",
 			"When m_c gets hurt, r_c is the first to ask if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} okay.",
 			"An issue becomes benign when m_c remembers r_c's advice."
-		]
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_inc_med2",
@@ -154,7 +165,29 @@
 		],
 		"random_trait_constraint": [
 			"thoughtful"
-		]
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_inc_med6",
@@ -175,15 +208,37 @@
 		"id": "comfort_inc_med7",
 		"interactions": [
 			"m_c is watching the shooting stars with r_c.",
-			"r_c calmly explains hunting techniques to m_c again for the fourth time today.",
 			"r_c lets m_c cry on {PRONOUN/r_c/subject} for a while.",
 			"r_c stays with m_c until {PRONOUN/m_c/subject} fall asleep.",
-			"As m_c tells r_c a long story, {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} interesting, engaged questions.",
-			"r_c helps m_c with a tedious task and it makes the whole day a lot easier."
+			"As m_c tells r_c a long story, {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} interesting, engaged questions."
 		],
 		"random_trait_constraint": [
 			"calm"
 		]
+	},
+	{
+		"id": "comfort_inc_med8",
+		"interactions": [
+			"r_c calmly explains hunting techniques to m_c again for the fourth time today.",
+			"r_c helps m_c with a tedious task and it makes the whole day a lot easier."
+		],
+		"random_trait_constraint": [
+			"calm"
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfortable_kit_inc_med1",
@@ -194,7 +249,18 @@
 		],
 		"main_status_constraint": [
 			"kitten"
-		]
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfortable_kit_inc_med2",
@@ -208,6 +274,17 @@
 		"main_status_constraint": [
 			"kitten"
 		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
 		"reaction_random_cat": {
 			"platonic": "increase"
 		}
@@ -265,6 +342,17 @@
 			"m_c lets r_c vent to {PRONOUN/m_c/object} about the difficulties as a healer.",
 			"After a rough storm gets into the medicine den, m_c helps r_c pick up herbs."
 		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
 		"random_status_constraint": [
 			"medicine cat",
 			"medicine cat apprentice"

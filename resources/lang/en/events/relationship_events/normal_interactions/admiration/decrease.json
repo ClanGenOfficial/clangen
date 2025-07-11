@@ -16,7 +16,6 @@
 			"r_c tells m_c to smile more.",
 			"m_c had a funny dream about r_c and can't take {PRONOUN/r_c/object} seriously now.",
 			"r_c is talking to m_c, but {PRONOUN/m_c/subject} can't stop noticing the mud on r_c's pelt."
-
 		]
 	},
 	{
@@ -89,7 +88,29 @@
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
-		}
+		},
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "admire_de_medium3",
@@ -200,7 +221,18 @@
 			"m_c overhears r_c say something awful about a dead Clanmate.",
 			"m_c thinks r_c keeps getting in the way instead of helping others.",
 			"m_c knows that r_c fake-laughed at {PRONOUN/m_c/poss} joke."
-		]
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "admire_de_high2",
@@ -223,6 +255,28 @@
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
-		}
+		},
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	}
 ]

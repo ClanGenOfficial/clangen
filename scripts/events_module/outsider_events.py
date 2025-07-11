@@ -1,11 +1,14 @@
 import random
 
-from scripts.cat.cats import Cat
+from typing import TYPE_CHECKING
+
 from scripts.cat.enums import CatGroup
-from scripts.cat.history import History
+from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 # ---------------------------------------------------------------------------- #
 #                               New Cat Event Class                              #
@@ -16,12 +19,11 @@ class OutsiderEvents:
     """All events with a connection to outsiders."""
 
     @staticmethod
-    def killing_outsiders(cat: Cat):
-        if "lead_den_outsider_event" in game.clan.clan_settings:
-            if game.clan.clan_settings["lead_den_outsider_event"]:
-                info_dict = game.clan.clan_settings["lead_den_outsider_event"]
-                if cat.ID == info_dict["cat_ID"]:
-                    return
+    def killing_outsiders(cat: "Cat"):
+        if get_clan_setting("lead_den_outsider_event"):
+            info_dict = get_clan_setting("lead_den_outsider_event")
+            if cat.ID == info_dict["cat_ID"]:
+                return
 
         # killing outside cats
         if cat.status.is_outsider:

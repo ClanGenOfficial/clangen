@@ -179,7 +179,8 @@ class Status:
                     rank = CatRank.KITTYPET
             else:
                 rank = self.get_rank_from_age(age)
-                new_history["rank"] = rank
+
+            new_history["rank"] = rank
 
         # if not social, then social category is found via the rank
         if not social:
@@ -549,6 +550,19 @@ class Status:
             ]
 
         return past_ranks[-1]
+
+    def get_last_living_group(self) -> Optional[CatGroup]:
+        """
+        Returns the last group this cat belonged to before death. If the cat had no group before dying, this will return None.
+        """
+        history = self.group_history.copy()
+        history.reverse()
+
+        for entry in history:
+            if not entry["group"] or not entry["group"].is_afterlife():
+                return entry["group"]
+
+        return None
 
     def is_lost(self, group: CatGroup = None) -> bool:
         """

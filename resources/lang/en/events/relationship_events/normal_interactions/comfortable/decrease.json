@@ -105,7 +105,7 @@
 		],
 		"random_trait_constraint": [
 			"strange"
-		]
+		] 
 	},
 	{
 		"id": "comfort_de_med4",
@@ -118,7 +118,18 @@
 		],
 		"random_trait_constraint": [
 			"bloodthirsty"
-		]
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_med5",
@@ -185,7 +196,29 @@
 		],
 		"reaction_random_cat": {
 			"comfortable": "decrease"
-		}
+		},
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_high3",
@@ -207,7 +240,18 @@
 			"bloodthirsty",
 			"cold",
 			"vengeful"
-		]
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_high4",
@@ -225,6 +269,17 @@
 			"cold",
 			"vengeful"
 		],
+		"main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
 		"random_status_constraint": [
 			"leader",
 			"deputy"
