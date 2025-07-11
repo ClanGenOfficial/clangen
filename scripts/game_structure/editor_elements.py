@@ -77,14 +77,9 @@ class EditorLock(EditorElement):
         """Set True to lock, set False to unlock."""
         self.lock.set_text(Icon.LOCK if lock else Icon.UNLOCK)
 
-class EditorDivider(EditorElement):
 
-    def __init__(self,
-                 top_anchor,
-                 container,
-                 off_set: int = -12,
-                 manager = None
-                 ):
+class EditorDivider(EditorElement):
+    def __init__(self, top_anchor, container, off_set: int = -12, manager=None):
         super().__init__()
 
         self.divider = pygame_gui.elements.UIImage(
@@ -98,6 +93,7 @@ class EditorDivider(EditorElement):
             anchors={"top_target": top_anchor},
         )
         self.ui_elements = self.divider
+
 
 class EditorTextEntryLine(EditorElement):
     def __init__(

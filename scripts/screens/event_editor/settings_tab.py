@@ -47,7 +47,6 @@ class SettingsTab:
         self.editor_container = editor_container
         self.editor_element = editor_elements
 
-
         self.event_id_element: Optional[EditorTextEntryLine] = None
         self.event_id_info: str = ""
         """Loaded event_id"""
@@ -490,8 +489,8 @@ class SettingsTab:
 
         self.editor_element["weight"] = EditorDivider(
             top_anchor=self.weight_element.bottom_element,
-            container = self.editor_container,
-            manager=MANAGER
+            container=self.editor_container,
+            manager=MANAGER,
         )
 
     def create_tag_editor(self):
@@ -596,8 +595,8 @@ class SettingsTab:
         )
         self.editor_element["tag"] = EditorDivider(
             top_anchor=self.tag_element["display"],
-            container = self.editor_container,
-            manager=MANAGER
+            container=self.editor_container,
+            manager=MANAGER,
         )
 
     def update_basic_checkboxes(self):
@@ -702,9 +701,10 @@ class SettingsTab:
 
         self.editor_element["type"] = EditorDivider(
             top_anchor=self.type_element["display"],
-            container = self.editor_container,
-            manager=MANAGER
+            container=self.editor_container,
+            manager=MANAGER,
         )
+
     def update_sub_buttons(self, type_list):
         if self.type_element.get("subtype_dropdown"):
             self.type_element["subtype_dropdown"].kill()
@@ -746,8 +746,8 @@ class SettingsTab:
 
         self.editor_element["season"] = EditorDivider(
             top_anchor=self.season_element.bottom_element,
-            container = self.editor_container,
-            manager=MANAGER
+            container=self.editor_container,
+            manager=MANAGER,
         )
 
     def create_location_editor(self):
@@ -798,8 +798,8 @@ class SettingsTab:
         )
         self.editor_element["location"] = EditorDivider(
             top_anchor=self.location_element["display"],
-            container = self.editor_container,
-            manager=MANAGER
+            container=self.editor_container,
+            manager=MANAGER,
         )
 
     def update_camp_list(self, chosen_biome):
@@ -846,6 +846,6 @@ class SettingsTab:
 
         self.editor_element["event_id"] = EditorDivider(
             top_anchor=self.event_id_element.bottom_element,
-            container = self.editor_container,
-            manager=MANAGER
+            container=self.editor_container,
+            manager=MANAGER,
         )
