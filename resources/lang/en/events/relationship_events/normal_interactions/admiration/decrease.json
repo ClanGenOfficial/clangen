@@ -41,7 +41,6 @@
             "leader",
             "elder"
         ]
-    },
 	},
 	{
 		"id": "admire_de_low2",
@@ -364,7 +363,7 @@
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
-		}
+		},
 		"main_status_constraint": [
 	    "apprentice",
             "medicine cat apprentice",
