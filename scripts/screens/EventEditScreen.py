@@ -434,7 +434,9 @@ class EventEditScreen(Screens):
 
         self.settings_tab.type_info = [self.chosen_type]
         self.settings_tab.event_id_info = event["event_id"]
-        self.settings_tab.location_info = event["location"] if event.get("location") else []
+        self.settings_tab.location_info = (
+            event["location"] if event.get("location") else []
+        )
         if self.settings_tab.location_info == ["any"]:
             self.settings_tab.location_info = []
         self.settings_tab.season_info = event["season"] if event.get("season") else []
@@ -444,7 +446,9 @@ class EventEditScreen(Screens):
         self.settings_tab.tag_info = event["tags"] if event.get("tags") else []
         self.settings_tab.weight_info = event["weight"]
         self.event_text_info = event["event_text"]
-        self.settings_tab.acc_info = event["new_accessory"] if event.get("new_accessory") else []
+        self.settings_tab.acc_info = (
+            event["new_accessory"] if event.get("new_accessory") else []
+        )
         if event.get("m_c"):
             self.main_cat_info = {
                 "rank": event["m_c"]["status"] if event["m_c"].get("status") else [],
@@ -726,9 +730,12 @@ class EventEditScreen(Screens):
                         break
             if (
                 self.settings_tab.acc_element.get("list")
-                and event.ui_element in self.settings_tab.acc_element["list"].buttons.values()
+                and event.ui_element
+                in self.settings_tab.acc_element["list"].buttons.values()
             ):
-                for name, button in self.settings_tab.acc_element["list"].buttons.items():
+                for name, button in self.settings_tab.acc_element[
+                    "list"
+                ].buttons.items():
                     if button == event.ui_element:
                         self.settings_tab.acc_element["preview"].set_image(
                             self.settings_tab.get_acc_example(name)
@@ -2148,9 +2155,12 @@ class EventEditScreen(Screens):
             and self.settings_tab.event_id_info != self.open_event.get("event_id")
         ):
             valid = False
-        elif not self.settings_tab.event_id_info or self.settings_tab.event_id_info.isspace():
+        elif (
+            not self.settings_tab.event_id_info
+            or self.settings_tab.event_id_info.isspace()
+        ):
             valid = False
-            
+
         if not valid:
             self.alert_text = (
                 f"Event ID is either invalid or a duplicate. Pick a new ID."
