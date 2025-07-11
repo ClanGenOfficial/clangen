@@ -131,10 +131,10 @@ class Events:
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
-            if cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
-                self.one_moon_cat(cat)
-            else:
+            if not cat.status.group:
                 self.one_moon_outside_cat(cat)
+            elif cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
+                self.one_moon_cat(cat)
 
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
