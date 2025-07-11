@@ -33,6 +33,7 @@ from scripts.utility import (
     ui_scale_blit,
     get_current_season,
 )
+from scripts.game_structure import game
 
 
 class Screens:

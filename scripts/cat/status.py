@@ -4,7 +4,7 @@ from random import choice
 from typing import TypedDict, Optional, List, Dict
 
 from scripts.cat.enums import CatRank, CatSocial, CatStanding, CatAge, CatGroup
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 
 class Status:

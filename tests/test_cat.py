@@ -2,7 +2,7 @@ import os
 import unittest
 from copy import deepcopy
 
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
