@@ -230,7 +230,7 @@ class EventEditScreen(Screens):
         self.event_text_info: str = ""
         """Loaded event text"""
 
-        self.settings_tab = SettingsTab(self.editor_container)
+        self.settings_tab = SettingsTab(self.editor_container, self.editor_element)
 
         self.main_cat_editor = {}
         self.random_cat_editor = {}

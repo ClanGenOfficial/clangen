@@ -9,6 +9,7 @@ from scripts.game_structure import constants
 from scripts.game_structure.editor_elements import (
     EditorTextEntryLine,
     EditorDropDownSelection,
+    EditorDivider,
 )
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
@@ -42,8 +43,10 @@ class SettingsTab:
     basic_tag_list: list = constants.EVENT_TAGS["settings"]
     """List of dicts for all basic event tags. Each dict holds tag name, conflicts, setting, and type required."""
 
-    def __init__(self, editor_container):
+    def __init__(self, editor_container, editor_elements):
         self.editor_container = editor_container
+        self.editor_element = editor_elements
+
 
         self.event_id_element: Optional[EditorTextEntryLine] = None
         self.event_id_info: str = ""
@@ -404,7 +407,7 @@ class SettingsTab:
 
         self.acc_element["display"] = UITextBoxTweaked(
             f"chosen accessories: {self.acc_info}",
-            ui_scale(pygame.Rect((10, 10), (380, -1))),
+            ui_scale(pygame.Rect((10, 10), (380, 70))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             manager=MANAGER,
             container=self.editor_container,
@@ -419,7 +422,6 @@ class SettingsTab:
             top_anchor=self.acc_element["frame"],
             left_anchor=self.acc_element["display"],
         )
-        self.create_divider(self.acc_element["display"], "acc")
 
     def update_acc_list(self):
         # kill old buttons
@@ -485,7 +487,12 @@ class SettingsTab:
         )
         if self.param_locks.get("weight"):
             self.weight_element.lock.locked = True
-        self.create_divider(self.weight_element.bottom_element, "weight", -10)
+
+        self.editor_element["weight"] = EditorDivider(
+            top_anchor=self.weight_element.bottom_element,
+            container = self.editor_container,
+            manager=MANAGER
+        )
 
     def create_tag_editor(self):
         self.tag_element["collapse_container"] = UICollapsibleContainer(
@@ -587,7 +594,11 @@ class SettingsTab:
             top_anchor=self.tag_element["collapse_container"],
             left_anchor=self.tag_element["display"],
         )
-        self.create_divider(self.tag_element["display"], "tag")
+        self.editor_element["tag"] = EditorDivider(
+            top_anchor=self.tag_element["display"],
+            container = self.editor_container,
+            manager=MANAGER
+        )
 
     def update_basic_checkboxes(self):
         prev_element = None
@@ -688,8 +699,12 @@ class SettingsTab:
             top_anchor=self.type_element["text"],
             left_anchor=self.type_element["display"],
         )
-        self.create_divider(self.type_element["display"], "type")
 
+        self.editor_element["type"] = EditorDivider(
+            top_anchor=self.type_element["display"],
+            container = self.editor_container,
+            manager=MANAGER
+        )
     def update_sub_buttons(self, type_list):
         if self.type_element.get("subtype_dropdown"):
             self.type_element["subtype_dropdown"].kill()
@@ -729,7 +744,11 @@ class SettingsTab:
         if self.param_locks.get("season"):
             self.season_element.lock.locked = True
 
-        self.create_divider(self.season_element.bottom_element, "season")
+        self.editor_element["season"] = EditorDivider(
+            top_anchor=self.season_element.bottom_element,
+            container = self.editor_container,
+            manager=MANAGER
+        )
 
     def create_location_editor(self):
         self.location_element["text"] = UITextBoxTweaked(
@@ -777,8 +796,11 @@ class SettingsTab:
             top_anchor=self.location_element[biome_list[-1]],
             left_anchor=self.location_element["display"],
         )
-
-        self.create_divider(self.location_element["display"], "location")
+        self.editor_element["location"] = EditorDivider(
+            top_anchor=self.location_element["display"],
+            container = self.editor_container,
+            manager=MANAGER
+        )
 
     def update_camp_list(self, chosen_biome):
         for biome in self.all_camps:
@@ -822,4 +844,8 @@ class SettingsTab:
             manager=MANAGER,
         )
 
-        self.create_divider(self.event_id_element.bottom_element, "event_id")
+        self.editor_element["event_id"] = EditorDivider(
+            top_anchor=self.event_id_element.bottom_element,
+            container = self.editor_container,
+            manager=MANAGER
+        )

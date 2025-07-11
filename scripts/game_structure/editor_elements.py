@@ -3,6 +3,7 @@ from typing import Tuple
 import pygame
 import pygame_gui
 
+from scripts.game_structure import image_cache
 from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UIScrollingDropDown,
@@ -13,7 +14,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import get_text_box_theme, ui_scale
+from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 
 
 class EditorElement:
@@ -76,6 +77,27 @@ class EditorLock(EditorElement):
         """Set True to lock, set False to unlock."""
         self.lock.set_text(Icon.LOCK if lock else Icon.UNLOCK)
 
+class EditorDivider(EditorElement):
+
+    def __init__(self,
+                 top_anchor,
+                 container,
+                 off_set: int = -12,
+                 manager = None
+                 ):
+        super().__init__()
+
+        self.divider = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((0, off_set), (524, 24))),
+            pygame.transform.scale(
+                image_cache.load_image("resources/images/spacer.png").convert_alpha(),
+                ui_scale_dimensions((524, 24)),
+            ),
+            container=container,
+            manager=manager,
+            anchors={"top_target": top_anchor},
+        )
+        self.ui_elements = self.divider
 
 class EditorTextEntryLine(EditorElement):
     def __init__(
