@@ -393,6 +393,10 @@ class Status:
 
         for record in self.standing_history:
             if record["group"] == group:
+                duplicates = record["standing"].count(new_standing)
+                if duplicates > 1:
+                    removed_index = record["standing"].index(new_standing)
+                    record["standing"].pop(removed_index)
                 record["standing"].append(new_standing)
                 return
 
