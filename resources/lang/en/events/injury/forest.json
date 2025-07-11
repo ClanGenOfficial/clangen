@@ -1,132 +1,222 @@
 [
     {
-        "event_id": "fst_injury_sprain_anyapprentice1",
-        "location": ["forest"],
-        "season": ["any"],
+        "event_id": "fst_injury_broken_anyapprentice1",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 30,
-        "event_text": "m_c was running around excitedly on patrol when {PRONOUN/m_c/poss} paw landed right in a rabbit hole, twisting uncomfortably. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
+        "event_text": "m_c was practicing {PRONOUN/m_c/poss} tree climbing skills when {PRONOUN/m_c/subject} slipped from a branch. {PRONOUN/m_c/subject/CAP}'{VERB/m_c/re/s} brought home badly injured.",
         "m_c": {
-            "status": ["apprentice"],
-            "trait": ["adventurous", "bold", "daring", "playful", "childish"]
+            "status": [
+                "apprentice"
+            ]
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["sprain"]
-            }
-        ]
-    },
-    {
-        "event_id": "fst_injury_brokenbone_anyapprentice1",
-        "location": ["forest"],
-        "season": ["any"],
-        "weight": 30,
-        "event_text": "m_c was practicing {PRONOUN/m_c/poss} tree climbing skills when {PRONOUN/m_c/subject} slipped from a branch! Thankfully {PRONOUN/m_c/subject} survived, though badly injured.",
-        "m_c": {
-            "status": ["apprentice"]
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["broken bone"],
-                "scars": ["SIDE"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "broken bone",
+                    "broken jaw",
+                    "broken back",
+                    "head damage"
+                ],
+                "scars": []
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "scar": "m_c was scarred after falling from a tree.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tree."
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tree.",
+                "lead_death": ""
             }
         ]
     },
     {
         "event_id": "fst_injury_clawwound_anymultistatus1",
-        "location": ["forest"],
-        "season": ["any"],
-        "tags": [],
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 30,
-        "event_text": "m_c was hunting on a night patrol and nearly got carried off by an owl! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} alive, but with many a scratch as proof of {PRONOUN/m_c/poss} adventure.",
+        "event_text": "m_c was hunting on a night patrol and was nearly carried off by an owl. {PRONOUN/m_c/subject/CAP}'{VERB/m_c/re/s} left badly scratched.",
         "m_c": {
             "status": [
-                "apprentice"]
+                "apprentice"
+            ]
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["claw-wound"],
-                "scars": ["TWO"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound",
+                    "mangled leg",
+                    "mangled tail"
+                ],
+                "scars": []
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "scar": "m_c was scarred after an owl tried to carry {PRONOUN/m_c/object} off.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off."
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off.",
+                "lead_death": ""
             }
         ]
     },
     {
-        "event_id": "fst_injury_brokenback_anyapprentice1",
-        "location": ["forest"],
-        "season": ["any"],
+        "event_id": "fst_injury_broken_anyapprentice2",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 30,
-        "event_text": "r_c dares m_c to climb one of the tallest trees in the territory. m_c gets pretty high, but a branch breaks and it's a long way to the ground. r_c goes sprinting for camp to get help.",
+        "event_text": "r_c dared m_c to climb one of the tallest trees in the territory. The dare left m_c tumbling to the ground and r_c sprinting home for help. ",
         "m_c": {
-            "status": ["apprentice"]
+            "status": [
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator apprentice"
+            ]
         },
         "r_c": {
-            "status": ["apprentice"],
-            "trait": ["adventurous", "bold", "daring", "troublesome"]
+            "status": [
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator apprentice"
+            ],
+            "trait": [
+                "adventurous",
+                "bold",
+                "daring",
+                "troublesome",
+                "fierce",
+                "bloodthirsty",
+                "childish",
+                "playful",
+                "insecure",
+                "ambitious",
+                "confident",
+                "arrogant",
+                "competitive"
+            ]
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["broken back"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "broken back",
+                    "broken jaw",
+                    "broken bone",
+                    "head damage"
+                ],
+                "scars": []
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree and breaking {PRONOUN/m_c/poss} back."
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree and breaking {PRONOUN/m_c/poss} back.",
+                "scar": "",
+                "lead_death": ""
             }
         ],
         "relationships": [
             {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "values": ["dislike"],
-                "amount": 10
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "dislike"
+                ],
+                "amount": 10,
+                "mutual": false
             },
             {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "values": ["platonic", "comfort", "trust"],
-                "amount": -5
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust"
+                ],
+                "amount": -5,
+                "mutual": false
             }
         ]
     },
     {
-        "event_id": "fst_injury_tornpelt_anyany1",
-        "location": ["forest"],
-        "season": ["any"],
+        "event_id": "fst_injury_tornpelt_any1",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "greenleaf"
+        ],
         "weight": 30,
-        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at {PRONOUN/m_c/poss} pelt.",
+        "event_text": "m_c was left scratched and scraped after pushing through the thick underbrush.",
         "m_c": {
-            "age": ["any"],
-            "status": ["any"]
+            "age": [
+                "any",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["torn pelt", "scrapes", "small cut"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt",
+                    "scrapes",
+                    "small cut"
+                ],
+                "scars": []
             }
         ]
     },
     {
         "event_id": "fst_injury_mangledtail_anyany1",
-        "location": ["forest"],
-        "season": ["any"],
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 30,
         "event_text": "m_c's tail was badly injured by a falling tree.",
         "m_c": {
@@ -140,14 +230,22 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["mangled tail"],
-                "scars": ["MANTAIL"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "mangled tail"
+                ],
+                "scars": [
+                    "MANTAIL"
+                ]
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "scar": "m_c was scarred by a falling tree.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}.",
                 "lead_death": "died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}"
@@ -156,10 +254,14 @@
     },
     {
         "event_id": "fst_injury_burn_greenleafany1",
-        "location": ["forest"],
-        "season": ["greenleaf"],
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "greenleaf"
+        ],
         "weight": 30,
-        "event_text": "A fire rages through the forest. m_c manages to escape, though not unscathed by the experience.",
+        "event_text": "A fire rages through the forest. m_c manages to escape, though not without burns.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -171,45 +273,98 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["burn"],
-                "scars": ["BURNRUMP", "BURNTAIL"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "burn",
+                    "severe burn"
+                ],
+                "scars": [
+                    "BURNRUMP",
+                    "BURNTAIL",
+                    "BURNBELLY",
+                    "BURNPAWS"
+                ]
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "scar": "m_c's pelt was burned by a forest fire.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire.",
                 "lead_death": "died from {PRONOUN/m_c/poss} burns after a forest fire"
-
             }
         ]
     },
     {
         "event_id": "fst_injury_burn_greenleafmultiage1",
-        "location": ["forest"],
-        "season": ["greenleaf"],
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "greenleaf"
+        ],
         "weight": 30,
-        "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside! m_c dives into the den and makes it out, burnt, but with r_c safely swinging in {PRONOUN/m_c/poss} grasp.",
+        "event_text": "The dry greenleaf weather led to a fire starting in camp. m_c dove into the nursery to save r_c and was burnt in the process.",
         "m_c": {
-            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-            "trait": [ "ambitious", "bold", "daring", "fierce", "responsible" ]
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "trait": [
+                "ambitious",
+                "bold",
+                "daring",
+                "fierce",
+                "righteous",
+                "strict",
+                "compassionate",
+                "confident",
+                "calm",
+                "loyal",
+                "loving",
+                "responsible",
+                "arrogant",
+                "competitive"
+            ]
         },
         "r_c": {
-            "age": ["kitten"],
-            "status": ["kitten"]
+            "age": [
+                "kitten",
+                "newborn"
+            ],
+            "status": [
+                "kitten",
+                "newborn"
+            ]
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["severe burn"],
-                "scars": ["BURNPAWS", "BURNBELLY"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "severe burn"
+                ],
+                "scars": [
+                    "BURNPAWS",
+                    "BURNBELLY",
+                    "BURNTAIL",
+                    "BURNRUMP"
+                ]
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "scar": "m_c's pelt was burned by a forest fire.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire.",
                 "lead_death": "died from {PRONOUN/m_c/poss} burns after a forest fire"
@@ -217,71 +372,202 @@
         ],
         "relationships": [
             {
-                "cats_from": ["r_c"],
-                "cats_to": ["m_c"],
-                "values": [ "platonic", "comfort", "trust", "respect"],
-                "amount": 30
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "platonic",
+                    "comfort",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 30,
+                "mutual": false
             },
             {
-                "cats_from": ["r_c"],
-                "cats_to": ["m_c"],
-                "values": [ "dislike"],
-                "amount": -30
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "dislike"
+                ],
+                "amount": -30,
+                "mutual": false
             }
         ]
     },
     {
         "event_id": "fst_injury_shivering_multiapprentice1",
-        "location": ["forest"],
-        "season": [ "newleaf", "leaf-bare" ],
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
         "weight": 30,
-        "event_text": "m_c and r_c talked each other into walking onto the ice of the frozen pond that lay not far from camp. It was a dare at first, but when m_c didn't immediately fall in, r_c joined {PRONOUN/m_c/object}. The two cats playfully slipped around for a bit before the minute cracks reached their ears. r_c fell in first, and, without thinking, m_c leaped in after {PRONOUN/r_c/object}. m_c was able to drag r_c out of the water and the two leaned on each other on the way back to camp.",
+        "event_text": "m_c and r_c played on the ice-covered pond near camp. They weren't quick enough to react to the sound of cracking beneath them, but m_c managed to drag r_c out of the freezing water.",
         "m_c": {
-            "status": ["apprentice"],
-            "skill": ["SWIMMER,3"],
-            "trait": ["daring", "adventurous", "oblivious", "bold", "childish"]
+            "status": [
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator apprentice"
+            ],
+            "relationship_status": [
+                "platonic_10"
+            ],
+            "trait": [
+                "daring",
+                "adventurous",
+                "oblivious",
+                "bold",
+                "competitive",
+                "arrogant",
+                "confident",
+                "ambitious",
+                "playful"
+            ]
         },
         "r_c": {
-            "status": ["apprentice"],
-            "trait": [ "daring", "adventurous", "oblivious", "bold", "childish" ]
+            "status": [
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator apprentice"
+            ],
+            "not_skill": [
+                "SWIMMER,1"
+            ],
+            "trait": [
+                "daring",
+                "adventurous",
+                "oblivious",
+                "bold",
+                "playful",
+                "childish",
+                "ambitious",
+                "confident",
+                "arrogant",
+                "competitive"
+            ]
         },
         "injury": [
             {
-                "cats": [ "m_c", "r_c"], 
-                "injuries": [ "shivering" ],
-                "scars": ["FROSTMITT", "FROSTSOCK"]
+                "cats": [
+                    "m_c",
+                    "r_c"
+                ],
+                "injuries": [
+                    "cold_injury"
+                ],
+                "scars": []
             }
         ],
         "history": [
             {
-                "cats": ["m_c", "r_c"],
+                "cats": [
+                    "m_c",
+                    "r_c"
+                ],
                 "scar": "m_c got frostbitten after falling into a frozen pond.",
-                "reg_death": "m_c died from the cold after falling into a frozen pond."
+                "reg_death": "m_c died from the cold after falling into a frozen pond.",
+                "lead_death": ""
             }
         ],
         "relationships": [
             {
-                "cats_from": [ "r_c" ], 
-                "cats_to": [ "m_c" ],
-                "values": [ "platonic", "comfort", "trust", "respect", "dislike" ],
-                "amount": -5
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 5,
+                "mutual": false
             }
         ]
     },
     {
         "event_id": "fst_injury_headache_anymultitraitmultistatus1",
-        "location": ["forest"],
-        "season": [ "any" ],
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 30,
-        "event_text": "Chasing a mouse through a dense area, m_c accidentally collides with a low-hanging branch, leaving {PRONOUN/m_c/object} to return to camp empty-pawed and with splitting head pain.",
+        "event_text": "m_c ran into a branch while following a scent trail. {PRONOUN/m_c/subject/CAP} returned home with an aching head.",
         "m_c": {
-            "status": ["apprentice", "warrior", "deputy", "leader"],
-            "trait": [ "ambitious", "childish", "playful", "bold", "daring", "confident", "adventurous", "competitive", "oblivious" ]
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "ambitious",
+                "childish",
+                "playful",
+                "bold",
+                "daring",
+                "confident",
+                "adventurous",
+                "competitive",
+                "oblivious"
+            ]
         },
         "injury": [
             {
-                "cats": [ "m_c" ], 
-                "injuries": [ "headache" ]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "headache"
+                ],
+                "scars": []
+            }
+        ]
+    },
+    {
+        "event_id": "fst_injury_tornpelt_any2",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "leaf-bare",
+            "leaf-fall"
+        ],
+        "weight": 20,
+        "event_text": "m_c was left scratched and scraped after pushing through thorny, bare undergrowth.",
+        "m_c": {
+            "age": [
+                "any",
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "torn pelt",
+                    "scrapes",
+                    "small cut"
+                ],
+                "scars": []
             }
         ]
     }

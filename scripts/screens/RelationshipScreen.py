@@ -5,7 +5,8 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache, game
+from scripts.game_structure import image_cache, constants
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
@@ -20,10 +21,13 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_blit,
     ui_scale_offset,
-    event_text_adjust,
 )
 from .Screens import Screens
 from ..cat_relations.relationship import Relationship
+from ..clan_package.settings import get_clan_setting
+from ..clan_package.settings.clan_settings import set_clan_setting
+from ..game_structure.game.settings import game_setting_get
+from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER, screen
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -41,6 +45,20 @@ class RelationshipScreen(Screens):
     current_page = 1
 
     inspect_cat: Optional[Cat] = None
+
+    # this isn't actually used here (thought likely could, if anyone is looking to refactor a bit
+    # rather this is used for the event editor, if changes are made to what each value is referred to in the code,
+    # this should also change to reflect it so that the editor changes alongside it.
+    # if you modify this, also add a matching string to resources/lang/en/screens/event_edit.en.json
+    rel_value_names = (
+        "romantic",
+        "platonic",
+        "dislike",
+        "comfort",
+        "jealousy",
+        "respect",
+        "trust",
+    )
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -75,20 +93,20 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.back_button:
                 self.change_screen("profile screen")
             elif event.ui_element == self.switch_focus_button:
-                game.switches["cat"] = self.inspect_cat.ID
+                switch_set_value(Switch.cat, self.inspect_cat.ID)
                 self.update_focus_cat()
             elif event.ui_element == self.view_profile_button:
-                game.switches["cat"] = self.inspect_cat.ID
+                switch_set_value(Switch.cat, self.inspect_cat.ID)
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switch_set_value(Switch.cat, self.next_cat)
                     self.update_focus_cat()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switch_set_value(Switch.cat, self.previous_cat)
                     self.update_focus_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
@@ -177,16 +195,16 @@ class RelationshipScreen(Screens):
                         ],
                     )
             elif event.ui_element == self.checkboxes["show_dead"]:
-                game.clan.clan_settings[
-                    "show dead relation"
-                ] = not game.clan.clan_settings["show dead relation"]
+                set_clan_setting(
+                    "show dead relation", not get_clan_setting("show dead relation")
+                )
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()
             elif event.ui_element == self.checkboxes["show_empty"]:
-                game.clan.clan_settings[
-                    "show empty relation"
-                ] = not game.clan.clan_settings["show empty relation"]
+                set_clan_setting(
+                    "show empty relation", not get_clan_setting("show empty relation")
+                )
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()
@@ -375,17 +393,21 @@ class RelationshipScreen(Screens):
         self.checkboxes["show_dead"] = UIImageButton(
             ui_scale(pygame.Rect((78, 505), (34, 34))),
             "",
-            object_id="@checked_checkbox"
-            if game.clan.clan_settings["show dead relation"]
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox"
+                if get_clan_setting("show dead relation")
+                else "@unchecked_checkbox"
+            ),
         )
 
         self.checkboxes["show_empty"] = UIImageButton(
             ui_scale(pygame.Rect((78, 550), (34, 34))),
             "",
-            object_id="@checked_checkbox"
-            if game.clan.clan_settings["show empty relation"]
-            else "@unchecked_checkbox",
+            object_id=(
+                "@checked_checkbox"
+                if get_clan_setting("show empty relation")
+                else "@unchecked_checkbox"
+            ),
         )
 
     def update_focus_cat(self):
@@ -393,13 +415,15 @@ class RelationshipScreen(Screens):
             self.focus_cat_elements[ele].kill()
         self.focus_cat_elements = {}
 
-        self.the_cat = Cat.all_cats.get(game.switches["cat"], game.clan.instructor)
+        self.the_cat = Cat.all_cats.get(
+            switch_get_value(Switch.cat), game.clan.instructor
+        )
 
         self.current_page = 1
         self.inspect_cat = None
 
         # Keep a list of all the relations
-        if game.config["sorting"]["sort_by_rel_total"]:
+        if constants.CONFIG["sorting"]["sort_by_rel_total"]:
             self.all_relations = sorted(
                 self.the_cat.relationships.values(),
                 key=lambda x: sum(
@@ -441,8 +465,16 @@ class RelationshipScreen(Screens):
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats()
 
-        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
-        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
+        (
+            self.next_cat_button.disable()
+            if self.next_cat == 0
+            else self.next_cat_button.enable()
+        )
+        (
+            self.previous_cat_button.disable()
+            if self.previous_cat == 0
+            else self.previous_cat_button.enable()
+        )
 
         self.apply_cat_filter(self.search_bar.get_text())
         self.update_inspected_relation()
@@ -491,7 +523,7 @@ class RelationshipScreen(Screens):
             else:
                 # Family Dot
                 related = self.the_cat.is_related(
-                    self.inspect_cat, game.clan.clan_settings["first cousin mates"]
+                    self.inspect_cat, get_clan_setting("first cousin mates")
                 )
                 if related:
                     self.inspect_cat_elements["family"] = pygame_gui.elements.UIImage(
@@ -597,9 +629,9 @@ class RelationshipScreen(Screens):
                         relation = "general.sibling_littermate"
                     else:
                         relation = "general.sibling"
-                elif not game.clan.clan_settings[
+                elif not get_clan_setting(
                     "first cousin mates"
-                ] and self.inspect_cat.is_cousin(self.the_cat):
+                ) and self.inspect_cat.is_cousin(self.the_cat):
                     relation = "general.cousin"
                 col2.append(i18n.t("general.related_label", relation=i18n.t(relation)))
 
@@ -632,12 +664,12 @@ class RelationshipScreen(Screens):
     def apply_cat_filter(self, search_text=""):
         # Filter for dead or empty cats
         self.filtered_cats = self.all_relations.copy()
-        if not game.clan.clan_settings["show dead relation"]:
+        if not get_clan_setting("show dead relation"):
             self.filtered_cats = list(
                 filter(lambda rel: not rel.cat_to.dead, self.filtered_cats)
             )
 
-        if not game.clan.clan_settings["show empty relation"]:
+        if not get_clan_setting("show empty relation"):
             self.filtered_cats = list(
                 filter(
                     lambda rel: (
@@ -774,7 +806,7 @@ class RelationshipScreen(Screens):
         else:
             # FAMILY DOT
             # Only show family dot on cousins if first cousin mates are disabled.
-            if game.clan.clan_settings["first cousin mates"]:
+            if get_clan_setting("first cousin mates"):
                 check_cousins = False
             else:
                 check_cousins = the_relationship.cat_to.is_cousin(self.the_cat)
@@ -859,7 +891,7 @@ class RelationshipScreen(Screens):
             ),
             display_romantic,
             positive_trait=True,
-            dark_mode=game.settings["dark mode"],
+            dark_mode=game_setting_get("dark mode"),
         )
         bar_count += 1
 
@@ -886,7 +918,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.platonic_like,
             positive_trait=True,
-            dark_mode=game.settings["dark mode"],
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -909,7 +941,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.dislike,
             positive_trait=False,
-            dark_mode=game.settings["dark mode"],
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -937,7 +969,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.admiration,
             positive_trait=True,
-            dark_mode=game.settings["dark mode"],
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -965,7 +997,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.comfortable,
             positive_trait=True,
-            dark_mode=game.settings["dark mode"],
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -991,7 +1023,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.jealousy,
             positive_trait=False,
-            dark_mode=game.settings["dark mode"],
+            dark_mode=game_setting_get("dark mode"),
         )
 
         bar_count += 1
@@ -1017,7 +1049,7 @@ class RelationshipScreen(Screens):
             ),
             the_relationship.trust,
             positive_trait=True,
-            dark_mode=game.settings["dark mode"],
+            dark_mode=game_setting_get("dark mode"),
         )
 
     def on_use(self):

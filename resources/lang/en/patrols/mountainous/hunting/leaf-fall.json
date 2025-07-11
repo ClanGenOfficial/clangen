@@ -1391,9 +1391,9 @@
                     }
                 ],
                 "history": [
-                    { "reg_death": "m_c succumbed to a broken bone after falling out of a tree."},
-                    { "lead_death": "fell out of a tree and died of a broken bone"},
-                    { "scar": "m_c carries a scar after falling out of a tree and breaking a bone."}
+                    {"reg_death": "m_c succumbed to a broken bone after falling out of a tree."},
+                    {"lead_death": "fell out of a tree and died of a broken bone"},
+                    {"scar": "m_c carries a scar after falling out of a tree and breaking a bone."}
                 ],
                 "relationships": [
                     {
@@ -3723,7 +3723,7 @@
     	"biome": ["mountainous"],
     	"season": ["leaf-fall"],
     	"types": ["hunting"],
-    	"tags": ["halloween", "romantic"],
+        "tags": ["halloween", "romantic"],
     	"patrol_art": "pipbats_INTRO",
     	"min_cats": 3,
     	"max_cats": 6,

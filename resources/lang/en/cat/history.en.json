@@ -14,6 +14,8 @@
         "graduation_normal": "{PRONOUN/m_c/subject/CAP} graduated at %{age} moons old.",
         "graduation_late": "{PRONOUN/m_c/subject/CAP} graduated late at %{age} moons old.",
         "mentored": "{PRONOUN/m_c/subject/CAP} mentored %{apprentices}.",
+
+         "comment": "Leader live strings for history text or text where m_c is included in the area its being called to",
         "leader_death_final": "lost {PRONOUN/m_c/poss} final life",
         "leader_death_all": "lost all of {PRONOUN/m_c/poss} lives",
         "leader_death_remaining": "lost the rest of {PRONOUN/m_c/poss} lives",
@@ -24,12 +26,31 @@
         "leader_death_retired": "lost {PRONOUN/m_c/poss} last remaining life",
         "leader_death_default": "lost a life",
         "leader_lost_lives": {
+            "one": "lost a life.",
+            "many": "lost %{count} lives."
+        },
+
+        "comment_two": "Leader live strings for text where m_c is not included where its being called to, ie patrol outcome text",
+        "n_leader_death_final": "m_c lost {PRONOUN/m_c/poss} final life",
+        "n_leader_death_all": "m_c lost all of {PRONOUN/m_c/poss} lives",
+        "n_leader_death_remaining": "m_c lost the rest of {PRONOUN/m_c/poss} lives",
+        "n_leader_death_cardinal": {
+            "one": "m_c lost {PRONOUN/m_c/poss} %{cardinal} life",
+            "many": "m_c lost {PRONOUN/m_c/poss} %{cardinal} lives"
+        },
+        "n_leader_death_retired": "m_c lost {PRONOUN/m_c/poss} last remaining life",
+        "n_leader_death_default": "m_c lost a life",
+        "n_leader_lost_lives": {
             "one": "m_c lost a life.",
             "many": "m_c lost %{count} lives."
         },
+        
         "regular_death": "%{cats} died.",
         "death_cause": "%{death} when {PRONOUN/m_c/subject} %{text}.",
         "murdered": "%{name} murdered %{victims}.",
+        "murder_revealed_to_clan": "The Clan knows.",
+        "murder_not_revealed_to_clan": "The Clan is unaware.",
+        "murder_revealed_to_individual": "%{name} knows. ",
         "leader_lives_left_df": {
             "zero": "The leader has no lives left and has travelled to the Dark Forest.",
             "one": "The leader has one life left.",

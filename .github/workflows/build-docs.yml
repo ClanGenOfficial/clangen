@@ -10,7 +10,7 @@ on:
       - "docs-resources/**"
       - "mkdocs.yml"
       - "pyproject.toml"
-      - "poetry.lock"
+      - "uv.lock"
 
 jobs:
   build:

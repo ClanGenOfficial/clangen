@@ -704,5 +704,323 @@
             "current_rep": ["any"],
             "changed": -1
         }
+    },
+    {
+        "event_id": "gen_new_cat_war_queen_with_litter",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 10,
+        "event_text": "A desperate queen from o_c_n slinks into c_n's territory, {PRONOUN/n_c:0/poss} newborn kits mewling fearfully. After a private discussion, both {PRONOUN/n_c:0/subject} and {PRONOUN/n_c:0/poss} kits are welcomed to the Clan.",
+        "new_cat": [
+            [
+                "new_name",
+                "can_birth",
+                "backstory:otherclan1",
+                "age:has_kits"
+            ],
+            [
+                "litter",
+                "parent:0",
+                "backstory:abandoned2",
+                "age:newborn"
+            ]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_new_cat_war_stolenkits1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "weight": 10,
+        "event_text": "m_c slinks into o_c_n's nursery in the dead of night, making off with an entire litter of their kits. Rumour has it that their parent abandoned their Clan to try and track down the kits - even better for c_n!",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "medicine cat",
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator",
+                "mediator apprentice"
+            ]
+        },
+        "new_cat": [
+            [
+                "can_birth",
+                "age:has_kits",
+                "rogue",
+                "meeting",
+                "new_name"
+            ],
+            [
+                "litter",
+                "new_name",
+                "backstory:stolenkit1",
+                "age:newborn"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 10
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -5
+        }
+    },
+    {
+        "event_id": "gen_new_cat_war_stolenkits2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war", "adoption"],
+        "weight": 10,
+        "event_text": "During a raid on the o_c_n camp, m_c finds {PRONOUN/m_c/self} in their nursery. Whilst the goal had simply been to sow chaos and discontent, picking up a helpless ball of fluff in {PRONOUN/m_c/poss} jaws and sprinting back to c_n certainly does that. The kit is so helpless and pathetic, so unlike the strong c_n kittens. m_c will just have to keep {PRONOUN/n_c:0/object}.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior"
+            ],
+            "age": ["young adult", "adult", "senior adult"]
+        },
+        "new_cat": [
+            [
+                "new_name",
+                "backstory:stolenkit1",
+                "age:newborn"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 50
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": -5
+        }
+    },
+    {
+        "event_id": "gen_new_cat_war_lonergift_herbs1",
+        "location": ["any"],
+        "season": ["any"],
+        "tags": ["clan_wide"],
+        "sub_type": ["war"],
+        "weight": 20,
+        "event_text": "Word of c_n's war with o_c_n has spread throughout the area, with one particular loner deciding to share a few of {PRONOUN/n_c:0/poss} herbs with c_n.",
+        "new_cat": [
+            [
+                "loner",
+                "meeting",
+                "exists",
+                "backstory:wandering_healer1,wandering_healer2"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan"],
+                "cats_to": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 5
+            }
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"]
+        },
+        "supplies": [
+            {
+                "type": "any_herb",
+                "trigger": [
+                    "low",
+                    "adequate"
+                ],
+                "adjust": "increase_5"
+            }
+        ]
+    },
+    {
+        "event_id": "gen_new_cat_war_lonergift_herbs2",
+        "location": ["any"],
+        "season": ["any"],
+        "tags": ["clan_wide"],
+        "sub_type": ["war"],
+        "weight": 10,
+        "event_text": "Word of c_n's war with o_c_n has spread throughout the area, with several loners pooling herbs together to give to c_n.",
+        "new_cat": [
+            [
+                "loner",
+                "meeting",
+                "exists",
+                "backstory:wandering_healer1,wandering_healer2"
+            ],
+            [
+                "loner",
+                "meeting",
+                "exists",
+                "backstory:wandering_healer1,wandering_healer2"
+            ],
+            [
+                "loner",
+                "meeting",
+                "exists",
+                "backstory:wandering_healer1,wandering_healer2"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan"],
+                "cats_to": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["clan"],
+                "cats_to": ["n_c:1"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["clan"],
+                "cats_to": ["n_c:2"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 5
+            }
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"]
+        },
+        "supplies": [
+            {
+                "type": "any_herb",
+                "trigger": [
+                    "low",
+                    "adequate"
+                ],
+                "adjust": "increase_15"
+            }
+        ]
+    },
+    {
+        "event_id": "gen_new_cat_war_lonergift_freshkill1",
+        "location": ["any"],
+        "season": ["any"],
+        "tags": ["clan_wide"],
+        "sub_type": ["war"],
+        "weight": 20,
+        "event_text": "Word of c_n's war with o_c_n has spread throughout the area, with one particular loner deciding to share some of {PRONOUN/n_c:0/poss} fresh-kill with c_n.",
+        "new_cat": [
+            [
+                "loner",
+                "meeting",
+                "exists",
+                "backstory:loner1,loner2,loner3"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan"],
+                "cats_to": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 5
+            }
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"]
+        },
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "low",
+                    "adequate"
+                ],
+                "adjust": "increase_10"
+            }
+        ]
+    },
+    {
+        "event_id": "gen_new_cat_war_lonergift_freshkill2",
+        "location": ["any"],
+        "season": ["any"],
+        "tags": ["clan_wide"],
+        "sub_type": ["war"],
+        "weight": 10,
+        "event_text": "Word of c_n's war with o_c_n has spread throughout the area, with several loners deciding to share their fresh-kill with c_n.",
+        "new_cat": [
+            [
+                "loner",
+                "meeting",
+                "exists",
+                "backstory:loner1,loner2,loner3"
+            ],
+            [
+                "loner",
+                "meeting",
+                "exists",
+                "backstory:loner1,loner2,loner3"
+            ],
+            [
+                "loner",
+                "meeting",
+                "exists",
+                "backstory:loner1,loner2,loner3"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan"],
+                "cats_to": ["n_c:0"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["clan"],
+                "cats_to": ["n_c:1"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["clan"],
+                "cats_to": ["n_c:2"],
+                "mutual": true,
+                "values": ["trust", "platonic"],
+                "amount": 5
+            }
+        ],
+        "outsider": {
+            "current_rep": ["welcoming"]
+        },
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "low",
+                    "adequate"
+                ],
+                "adjust": "increase_30"
+            }
+        ]
     }
 ]

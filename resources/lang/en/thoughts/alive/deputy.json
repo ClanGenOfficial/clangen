@@ -51,7 +51,7 @@
         ]
     },
     {
-      "id": "ambitious_teacher_deputy_to_leader",
+        "id": "ambitious_teacher_deputy_to_leader",
         "thoughts": [
             "Is planning a new training curriculum to impress the leader"
         ],
@@ -156,7 +156,7 @@
         ]
     },
     {
-      "id": "playful_deputy_to_younger",
+        "id": "playful_deputy_to_younger",
         "thoughts": [
             "Is amused by the antics of the younger cats"
         ],
@@ -178,7 +178,7 @@
         ]
     },
     {
-      "id": "rebellious_deputy_to_leader",
+        "id": "rebellious_deputy_to_leader",
         "thoughts": [
             "Feels an urge to challenge the leader's decision for the betterment of the Clan",
             "Decides to change patrol routes on {PRONOUN/m_c/poss} own, hoping the leader will see the benefits"
@@ -329,7 +329,7 @@
         ]
     },
     {
-      "id": "teacher_deputy_to_apprentice",
+        "id": "teacher_deputy_to_apprentice",
         "thoughts": [
             "Feels satisfaction watching an apprentice master a lesson",
             "Guides an apprentice through {PRONOUN/m_c/poss} hunting assessment"

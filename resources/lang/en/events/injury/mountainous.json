@@ -1,12 +1,16 @@
 [
     {
         "event_id": "mtn_injury_brokenbone_multiany1",
-        "location": ["mountainous"],
-        "season": ["leaf-fall", "leaf-bare"],
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
         "weight": 20,
         "event_text": "m_c thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking on a snowdrift until it gave way and {PRONOUN/m_c/subject} fell down the mountain, breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
-
             "age": [
                 "adolescent",
                 "young adult",
@@ -17,14 +21,22 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["broken bone"],
-                "scars": ["SIDE"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "broken bone"
+                ],
+                "scars": [
+                    "SIDE"
+                ]
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell through a snowdrift and down the mountain.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain.",
                 "lead_death": "died after falling down the mountain"
@@ -33,8 +45,12 @@
     },
     {
         "event_id": "mtn_injury_brokenbone_anyany1",
-        "location": ["mountainous"],
-        "season": ["any"],
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 20,
         "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
@@ -48,14 +64,22 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["broken bone"],
-                "scars": ["MANLEG"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "broken bone"
+                ],
+                "scars": [
+                    "MANLEG"
+                ]
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell off a cliff.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff.",
                 "lead_death": "died after falling off a cliff"
@@ -64,8 +88,12 @@
     },
     {
         "event_id": "mtn_injury_mangledtail_anyany1",
-        "location": ["mountainous"],
-        "season": ["any"],
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 20,
         "event_text": "m_c's tail was badly injured by falling rocks.",
         "m_c": {
@@ -79,14 +107,22 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["mangled tail"],
-                "scars": ["MANTAIL"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "mangled tail"
+                ],
+                "scars": [
+                    "MANTAIL"
+                ]
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "scar": "m_c was scarred by falling rocks.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after rocks fell on {PRONOUN/m_c/object}.",
                 "lead_death": "died from {PRONOUN/m_c/poss} wounds after rocks fell on {PRONOUN/m_c/object}"
@@ -95,27 +131,50 @@
     },
     {
         "event_id": "mtn_injury_brokenbone_anyapprentice1",
-        "location": ["mountainous"],
-        "season": ["any"],
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "any"
+        ],
         "weight": 20,
         "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} slipped and plummeted to the ground.",
         "m_c": {
-            "status": ["apprentice"],
-            "trait": ["adventurous", "ambitious", "bold", "childish", "confident", "daring", "playful", "troublesome"]
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "adventurous",
+                "ambitious",
+                "bold",
+                "childish",
+                "confident",
+                "daring",
+                "playful",
+                "troublesome"
+            ]
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["broken bone"],
-                "scars": ["FACE"]
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "broken bone"
+                ],
+                "scars": [
+                    "FACE"
+                ]
             }
         ],
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "scar": "m_c was scarred after falling from a tall cliff.",
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall cliff."
-        }
+            }
         ]
-    }    
+    }
 ]

@@ -52,8 +52,8 @@ def all_patrol_files():
     ]
 
     yield from (
-        file for file in
-        RESOURCES_DIR.glob("lang/*/patrols/**/*.json")
+        file
+        for file in RESOURCES_DIR.glob("lang/*/patrols/**/*.json")
         if file.name not in EXCLUSIONS
     )
 
@@ -66,8 +66,7 @@ def all_shortevent_files():
     INCLUSION_GLOBS = ["death/*.json", "injury/*.json", "misc/*.json", "new_cat/*.json"]
 
     yield from chain.from_iterable(
-        RESOURCES_DIR.glob("lang/*/events/" + glob)
-        for glob in INCLUSION_GLOBS
+        RESOURCES_DIR.glob("lang/*/events/" + glob) for glob in INCLUSION_GLOBS
     )
 
 
@@ -87,6 +86,7 @@ def test_patrols_schema():
         jsonschema.validate(
             data, PATROL_SCHEMA, cls=jsonschema.Draft7Validator, registry=registry
         )
+
 
 def test_shortevent_schema():
     """Tests that all shortevent JSONs are correct according to the JSON schema"""

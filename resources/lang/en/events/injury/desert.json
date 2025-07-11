@@ -36,7 +36,9 @@
             "desert"
         ],
         "season": [
-            "greenleaf", "newleaf", "leaf-fall"
+            "greenleaf",
+            "newleaf",
+            "leaf-fall"
         ],
         "weight": 20,
         "event_text": "Naive to the dangers of the sun, m_c falls asleep while sunbathing. Though {PRONOUN/m_c/subject} {VERB/m_c/are/is} retrieved promptly, the young are vulerable to the desert heat.",
@@ -318,7 +320,8 @@
             "desert"
         ],
         "season": [
-            "leaf-fall", "newleaf"
+            "leaf-fall",
+            "newleaf"
         ],
         "weight": 20,
         "event_text": "m_c pushes {PRONOUN/m_c/self} a little too hard and ends up dehydrated for {PRONOUN/m_c/poss} troubles.",
@@ -687,7 +690,7 @@
                 "senior"
             ],
             "status": [
-                "warrior", 
+                "warrior",
                 "apprentice"
             ]
         },
@@ -764,7 +767,8 @@
             "desert"
         ],
         "season": [
-            "leaf-fall", "newleaf"
+            "leaf-fall",
+            "newleaf"
         ],
         "tags": [
             "clan:kitten"
@@ -938,7 +942,9 @@
             "desert"
         ],
         "season": [
-            "newleaf", "greenleaf", "leaf-fall"
+            "newleaf",
+            "greenleaf",
+            "leaf-fall"
         ],
         "weight": 20,
         "event_text": "The dry season between the last rains and the beginning of the next is always a vulnerable time for the elderly, but m_c didn't think {PRONOUN/m_c/subject} {VERB/m_c/were/was} <i>that</i> old yet.",
@@ -1001,7 +1007,9 @@
             "desert"
         ],
         "season": [
-            "greenleaf", "leaf-fall", "newleaf"
+            "greenleaf",
+            "leaf-fall",
+            "newleaf"
         ],
         "tags": [
             "clan:apprentice"
@@ -1386,7 +1394,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -3
+            "changed": -1
         }
     },
     {
@@ -1401,7 +1409,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "A border skirmish with o_c_n erupts near a shallow watering hole. m_c is left limping after a vicious bite.",
+        "event_text": "A border skirmish with o_c_n erupted near a shallow watering hole. m_c was left limping after a vicious bite.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -1437,7 +1445,7 @@
             "current_rep": [
                 "hostile"
             ],
-            "changed": -3
+            "changed": -1
         }
     },
     {
@@ -1649,7 +1657,9 @@
             "desert"
         ],
         "season": [
-            "leaf-fall", "newleaf", "greenleaf"
+            "leaf-fall",
+            "newleaf",
+            "greenleaf"
         ],
         "weight": 20,
         "event_text": "m_c slips on the dusty ground, spraining {PRONOUN/m_c/poss} paw.",
@@ -1670,10 +1680,12 @@
             "desert"
         ],
         "season": [
-            "leaf-fall", "newleaf", "greenleaf"
+            "leaf-fall",
+            "newleaf",
+            "greenleaf"
         ],
         "weight": 20,
-        "event_text": "m_c sneaked out of camp and was found, confused and disoriented, in the full noon sun.",
+        "event_text": "m_c sneaked out of camp and was later found wandering in the full noon sun, confused and disoriented.",
         "m_c": {
             "status": [
                 "kitten"
@@ -1954,7 +1966,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "small cut", "torn pelt", "torn ear"
+                    "small cut",
+                    "torn pelt",
+                    "torn ear"
                 ]
             }
         ]
@@ -1984,7 +1998,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "bruises", "sprain", "sore"
+                    "bruises",
+                    "sprain",
+                    "sore"
                 ]
             }
         ]
@@ -2010,7 +2026,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "bruises", "sprain", "sore"
+                    "bruises",
+                    "sprain",
+                    "sore"
                 ]
             }
         ]
@@ -2374,7 +2392,8 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "small cut", "torn pelt"
+                    "small cut",
+                    "torn pelt"
                 ]
             }
         ]
@@ -2966,18 +2985,18 @@
         ]
     },
     {
-        "event_id": "dst_injury_sore_war_anyapprentice2",
+        "event_id": "dst_injury_dehyrated_war_anyapprentice2",
         "location": [
             "desert"
         ],
         "season": [
-            "any"
+            "greenleaf"
         ],
         "sub_type": [
             "war"
         ],
         "weight": 20,
-        "event_text": "The border patrols are intensified as the war with o_c_n rages. m_c does {PRONOUN/m_c/poss} part, but gets dehydrated after going out on a patrol with more experienced warriors.",
+        "event_text": "Frequent patrols on the o_c_n border left m_c dehydrated and weak.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -2990,12 +3009,23 @@
                 ],
                 "injuries": [
                     "dehydrated"
-                ]
+                ],
+                "scars": []
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "",
+                "reg_death": "m_c became dehydrated during greenleaf patrols and died.",
+                "lead_death": "became too dehydrated during greenleaf patrols"
             }
         ]
     },
     {
-        "event_id": "dst_injury_trackingtrainingwar1",
+        "event_id": "dst_injury_sore_war1",
         "location": [
             "desert"
         ],
@@ -3006,7 +3036,7 @@
             "war"
         ],
         "weight": 20,
-        "event_text": "m_c is put through a day long tracking training session that leaves {PRONOUN/m_c/object} collapsed in exhaustion into {PRONOUN/m_c/poss} nest at sunset. It's important to get {PRONOUN/m_c/object} up to speed quickly, as due to the war with o_c_n, tracking incursions along the long border is a priority.",
+        "event_text": "Training for war in such a harsh landscape left m_c exhausted.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -3019,7 +3049,8 @@
                 ],
                 "injuries": [
                     "sore"
-                ]
+                ],
+                "scars": []
             }
         ]
     },
@@ -3391,7 +3422,7 @@
                 "fierce",
                 "flamboyant",
                 "loyal",
-                "oblivious", 
+                "oblivious",
                 "righteous",
                 "sincere"
             ]
@@ -3627,7 +3658,7 @@
                 "loving",
                 "loyal",
                 "nervous",
-                "responsible", 
+                "responsible",
                 "righteous",
                 "sincere",
                 "thoughtful",
@@ -3654,7 +3685,7 @@
                 "loving",
                 "loyal",
                 "nervous",
-                "responsible", 
+                "responsible",
                 "righteous",
                 "sincere",
                 "thoughtful",
@@ -3906,7 +3937,7 @@
             "not_trait": [
                 "careful",
                 "cunning",
-                "flamboyant", 
+                "flamboyant",
                 "thoughtful",
                 "wise"
             ]

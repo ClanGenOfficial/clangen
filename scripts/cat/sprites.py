@@ -5,8 +5,9 @@ from copy import copy
 import pygame
 import ujson
 
+from scripts.game_structure import constants
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.special_dates import SpecialDate, is_today
-from scripts.game_structure import game
 
 logger = logging.getLogger(__name__)
 
@@ -162,7 +163,10 @@ class Sprites:
             "fadedarkforest",
             "symbols",
         ):
-            if "lineart" in x and (game.config["fun"]["april_fools"] or is_today(SpecialDate.APRIL_FOOLS)):
+            if "lineart" in x and (
+                constants.CONFIG["fun"]["april_fools"]
+                or is_today(SpecialDate.APRIL_FOOLS)
+            ):
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
@@ -602,6 +606,11 @@ class Sprites:
                 "ROSE MALLOW",
                 "PICKLEWEED",
                 "GOLDEN CREEPING JENNY",
+                "DESERT WILLOW",
+                "CACTUS FLOWER",
+                "PRAIRIE FIRE",
+                "VERBENA EAR",
+                "VERBENA PELT",
             ],
         ]
         dryherbs_data = [["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"]]
@@ -618,7 +627,10 @@ class Sprites:
                 "MONARCH BUTTERFLY",
                 "CICADA WINGS",
                 "BLACK CICADA",
-            ]
+            ],
+            [
+                "ROAD RUNNER FEATHER",
+            ],
         ]
 
         collars_data = [
@@ -670,7 +682,7 @@ class Sprites:
         # wild
         for row, wilds in enumerate(wild_data):
             for col, wild in enumerate(wilds):
-                self.make_group("wild", (col, 0), f"acc_wild{wild}")
+                self.make_group("wild", (col, row), f"acc_wild{wild}")
 
         # collars
         for row, collars in enumerate(collars_data):
@@ -778,9 +790,11 @@ class Sprites:
         var = pygame.PixelArray(recolored_symbol)
         var.replace(
             (87, 76, 45),
-            pygame.Color(game.config["theme"]["dark_mode_clan_symbols"])
-            if not force_light and game.settings["dark mode"]
-            else pygame.Color(game.config["theme"]["light_mode_clan_symbols"]),
+            (
+                pygame.Color(constants.CONFIG["theme"]["dark_mode_clan_symbols"])
+                if not force_light and game_setting_get("dark mode")
+                else pygame.Color(constants.CONFIG["theme"]["light_mode_clan_symbols"])
+            ),
             distance=0,
         )
         del var

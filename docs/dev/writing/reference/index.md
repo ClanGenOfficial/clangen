@@ -64,9 +64,9 @@ Cats receive history text to go with each scar-able injury as well as possibly-f
 **Example of acceptable histories**
 ```json
 {
-  "scar": "m_c gained a scar from a fox.",
-  "reg_death": "m_c died from a fox bite.",
-  "lead_death": "died from a fox bite"
+    "scar": "m_c gained a scar from a fox.",
+    "reg_death": "m_c died from a fox bite.",
+    "lead_death": "died from a fox bite"
 }
 ```
 
@@ -76,7 +76,7 @@ Our events generally require writers to "tag" certain attributes.  These "tags" 
 ### Conditions and Scars
 
 === "Taggable Injury Pools"
-    
+
     > | **INJURY POOL NAME** | **INJURIES**                                                            |
     |----------------------|-------------------------------------------------------------------------|
     | `battle_injury`      | `claw-wound`, `cat bite`, `mangled leg`, `mangled tail`, `torn pelt`    |

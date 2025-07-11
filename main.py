@@ -26,6 +26,16 @@ import time
 from importlib import reload
 from importlib.util import find_spec
 
+from scripts.clan import clan_class
+from scripts.game_structure import constants
+from scripts.game_structure.game.save_load import read_clans
+from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure.game.switches import (
+    switch_get_value,
+    switch_set_value,
+    Switch,
+)
+
 if not getattr(sys, "frozen", False):
     requiredModules = [
         "ujson",
@@ -188,7 +198,6 @@ from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
 from scripts.game_structure import game
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
-from scripts.clan import clan_class
 from scripts.utility import (
     quit,
 )  # pylint: disable=redefined-builtin
@@ -219,9 +228,10 @@ def load_data():
     # load in the spritesheets
     sprites.load_all()
 
-    clan_list = game.read_clans()
+    clan_list = read_clans()
     if clan_list:
-        game.switches["clan_list"] = clan_list
+        switch_set_value(Switch.clan_list, clan_list)
+        switch_set_value(Switch.clan_name, clan_list[0])
         try:
             load_cats()
             version_info = clan_class.load_clan()
@@ -230,36 +240,37 @@ def load_data():
             scripts.screens.screens_core.screens_core.rebuild_core()
         except Exception as e:
             logging.exception("File failed to load")
-            if not game.switches["error_message"]:
-                game.switches[
-                    "error_message"
-                ] = "There was an error loading the cats file!"
-                game.switches["traceback"] = e
+            if switch_get_value(Switch.error_message) is None:
+                switch_set_value(
+                    Switch.error_message, "There was an error loading the cats file!"
+                )
+                switch_set_value(Switch.traceback, e)
 
     finished_loading = True
 
 
-def loading_animation(scale: float = 1):
-    global finished_loading
+images = []
 
+
+def loading_animation(scale: float = 1):
     # Load images, adjust color
     color = pygame.Surface((200 * scale, 210 * scale))
-    if game.settings["dark mode"]:
-        color.fill(game.config["theme"]["light_mode_background"])
+    if game_setting_get("dark mode"):
+        color.fill(constants.CONFIG["theme"]["light_mode_background"])
     else:
-        color.fill(game.config["theme"]["dark_mode_background"])
+        color.fill(constants.CONFIG["theme"]["dark_mode_background"])
 
-    images = []
-    for i in range(1, 11):
-        im = pygame.transform.scale_by(
-            pygame.image.load(f"resources/images/loading_animate/startup/{i}.png"),
-            screen_scale,
-        )
-        im.blit(color, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-        images.append(im)
+    if len(images) == 0:
+        for i in range(1, 11):
+            im = pygame.transform.scale_by(
+                pygame.image.load(f"resources/images/loading_animate/startup/{i}.png"),
+                screen_scale,
+            )
+            im.blit(color, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+            images.append(im)
+        del im
 
     # Cleanup
-    del im
     del color
 
     x = screen.get_width() / 2
@@ -270,10 +281,10 @@ def loading_animation(scale: float = 1):
     while not finished_loading:
         clock.tick(8)  # Loading screen is 8FPS
 
-        if game.settings["dark mode"]:
-            screen.fill(game.config["theme"]["dark_mode_background"])
+        if game_setting_get("dark mode"):
+            screen.fill(constants.CONFIG["theme"]["dark_mode_background"])
         else:
-            screen.fill(game.config["theme"]["light_mode_background"])
+            screen.fill(constants.CONFIG["theme"]["light_mode_background"])
 
         screen.blit(
             images[i], (x - images[i].get_width() / 2, y - images[i].get_height() / 2)
@@ -290,18 +301,34 @@ def loading_animation(scale: float = 1):
         pygame.display.update()
 
 
-loading_thread = threading.Thread(target=load_data)
-loading_thread.start()
+def load_game():
+    """
+    Performs the functions needed to load the game.
 
-loading_animation(screen_scale)
+    This function is ran when the game loads and whenever the player
+    switches clans.
+    """
+    global finished_loading
 
-# The loading thread should be done by now. This line
-# is just for safety. Plus some cleanup.
-loading_thread.join()
-del loading_thread
-del finished_loading
-del loading_animation
-del load_data
+    game.cur_events_list.clear()
+    game.patrol_cats.clear()
+    game.patrolled.clear()
+    game.clan = None
+    switch_set_value(Switch.switch_clan, False)
+
+    finished_loading = False
+    loading_thread = threading.Thread(target=load_data)
+    loading_thread.start()
+    loading_animation(screen_scale)
+
+    # loading thread should be done by now, so just join it for safety.
+    loading_thread.join()
+    del loading_thread
+
+
+# load spritesheets
+sprites.load_all()
+load_game()
 
 pygame.mixer.pre_init(buffer=44100)
 try:
@@ -317,15 +344,20 @@ AllScreens.start_screen.screen_switches()
 cursor_img = pygame.image.load("resources/images/cursor.png").convert_alpha()
 cursor = pygame.cursors.Cursor((9, 0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
-
+fps = switch_get_value(Switch.fps)
+music_manager.check_music("start screen")
 while 1:
-    time_delta = clock.tick(game.switches["fps"]) / 1000.0
+    time_delta = clock.tick(fps) / 1000.0
 
-    if game.settings["custom cursor"]:
+    if game_setting_get("custom cursor"):
         if pygame.mouse.get_cursor() == disabled_cursor:
             pygame.mouse.set_cursor(cursor)
     elif pygame.mouse.get_cursor() == cursor:
         pygame.mouse.set_cursor(disabled_cursor)
+
+    if switch_get_value(Switch.switch_clan):
+        load_game()
+
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
     game.all_screens[game.current_screen].on_use()
@@ -333,18 +365,22 @@ while 1:
     for event in pygame.event.get():
         if (
             event.type == pygame.KEYDOWN
-            and game.settings["keybinds"]
+            and game_setting_get("keybinds")
             and debug_mode.debug_menu.visible
         ):
             pass
         else:
-            game.all_screens[game.current_screen].handle_event(event)
-            sound_manager.handle_sound_events(event)
+            # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
+            getattr(AllScreens, game.current_screen.replace(" ", "_")).handle_event(
+                event
+            )
+
+        sound_manager.handle_sound_events(event)
 
         if event.type == pygame.QUIT:
             # Don't display if on the start screen or there is no clan.
             if (
-                game.switches["cur_screen"]
+                switch_get_value(Switch.cur_screen)
                 in (
                     "start screen",
                     "switch clan screen",
@@ -356,7 +392,7 @@ while 1:
             ):
                 quit(savesettings=False)
             else:
-                SaveCheck(game.switches["cur_screen"], False, None)
+                SaveCheck(switch_get_value(Switch.cur_screen), False, None)
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -364,7 +400,7 @@ while 1:
 
             if MANAGER.visual_debug_active:
                 _ = pygame.mouse.get_pos()
-                if game.settings["fullscreen"]:
+                if game_setting_get("fullscreen"):
                     print(f"(x: {_[0]}, y: {_[1]})")
                 else:
                     print(f"(x: {_[0] * screen_scale}, y: {_[1] * screen_scale})")
@@ -380,7 +416,8 @@ while 1:
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
                     source_screen=getattr(
-                        AllScreens, game.switches["cur_screen"].replace(" ", "_")
+                        AllScreens,
+                        switch_get_value(Switch.cur_screen).replace(" ", "_"),
                     ),
                     show_confirm_dialog=False,
                 )
@@ -392,8 +429,8 @@ while 1:
     # update
     game.update_game()
     if game.switch_screens:
-        game.all_screens[game.last_screen_forupdate].exit_screen()
-        game.all_screens[game.current_screen].screen_switches()
+        getattr(AllScreens, game.last_screen_forupdate.replace(" ", "_")).exit_screen()
+        getattr(AllScreens, game.current_screen.replace(" ", "_")).screen_switches()
         game.switch_screens = False
     if (
         not music_manager.audio_disabled
