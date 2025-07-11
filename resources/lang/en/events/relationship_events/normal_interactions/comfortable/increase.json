@@ -440,7 +440,7 @@
             "deputy",
             "leader",
             "elder"
-        ]
+        ],
 		"reaction_random_cat": {
 			"platonic": "increase"
 		}
@@ -494,7 +494,7 @@
             "deputy",
             "leader",
             "elder"
-        ]
+        ],
 		"reaction_random_cat": {
 			"dislike": "increase:",
 			"comfortable": "decrease"
