@@ -16,31 +16,7 @@
 			"r_c tells m_c to smile more.",
 			"m_c had a funny dream about r_c and can't take {PRONOUN/r_c/object} seriously now.",
 			"r_c is talking to m_c, but {PRONOUN/m_c/subject} can't stop noticing the mud on r_c's pelt."
-		],
-	"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-		"random_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]
+		]
 	},
 	{
 		"id": "admire_de_low2",
@@ -59,31 +35,7 @@
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
-		},
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-		"random_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]
+		}
 	},
 	{
 		"id": "admire_de_low3",
@@ -91,30 +43,6 @@
 			"m_c and r_c disagree on something that should have an obvious answer.",
 			"r_c tells m_c to be happier. m_c explains it's not that simple."
 		],
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-		"random_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
 		"main_trait_constraint": [
 			"gloomy",
 			"grumpy"
@@ -141,31 +69,7 @@
 			"m_c wishes r_c would act more maturely.",
 			"r_c said something about a Clanmate that concerned m_c.",
 			"r_c kept getting distracted while helping m_c and nearly got {PRONOUN/m_c/object} hurt."
-		],
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-		"random_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]
+		]
 	},
 	{
 		"id": "admire_de_medium2",
@@ -318,18 +222,6 @@
 			"m_c thinks r_c keeps getting in the way instead of helping others.",
 			"m_c knows that r_c fake-laughed at {PRONOUN/m_c/poss} joke."
 		],
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
 		"random_status_constraint": [
 	    "apprentice",
             "medicine cat apprentice",
