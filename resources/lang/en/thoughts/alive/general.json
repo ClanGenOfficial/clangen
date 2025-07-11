@@ -95,7 +95,11 @@
             "Saw a Twoleg kit playing with a kittypet",
             "Saw a kittypet rolling around a Twoleg garden",
             "Purrs whenever the sun hits {PRONOUN/m_c/object} just right",
-            "Sprawls out in a warm patch of sunlight"
+            "Sprawls out in a warm patch of sunlight",
+			"Notices a cloud is shaped like a star",
+			"Notices a cloud is shaped like a mouse",
+			"Notices a cloud is shaped like a bird",
+			"Startles at a clap of thunder"
         ]
     },
     {
@@ -113,7 +117,39 @@
             "Wonders how r_c is doing",
             "Is giving some advice to r_c",
             "Wonders what r_c is up to",
-            "Is playing a prank on r_c"
+            "Is playing a prank on r_c",
+			"Saw r_c the other day, but didn't get a chance to meow hello",
+			"Bickered about something trivial with r_c",
+			"Nods politely as r_c passes by",
+			"Trips over the same twig that r_c just tripped over",
+			"Watches r_c wind up for a sneeze, but it never happens",
+			"Asks r_c if {PRONOUN/m_c/poss} fur looks clean",
+			"Points out a constellation to r_c",
+			"Keep trying to figure out what a bad smell in camp is with r_c",
+			"Poses a crazy theory to r_c",
+			"Asks r_c if there's something in {PRONOUN/m_c/poss} teeth",
+			"Points out a nice rock for r_c to sharpen {PRONOUN/r_c/poss} claws on",
+			"Helps r_c fill a puddle in the camp with sand",
+			"Notices some of r_c's fur on {PRONOUN/m_c/poss} fresh-kill",
+			"Pretends not to see r_c cough up a hairball",
+			"Is assigned the same task as r_c",
+			"Accidentally startles r_c",
+			"Is accidentally startled by r_c",
+			"Runs into r_c at the medicine den",
+			"Gets {PRONOUN/m_c/poss} fur stuck to r_c's with some sap",
+			"Smacks a spider off of r_c",
+			"Has to help r_c stop choking on a huge bone",
+			"Chats idly with r_c about the latest meeting",
+			"Keeps making r_c yawn",
+			"A big bug keeps buzzing around m_c and r_c",
+			"Apologizes to r_c, but r_c doesn't know why",
+			"Tries to say tongue twisters with r_c",
+			"Watches drama unfold in camp with r_c",
+			"Helps r_c break up a fight between their Clanmates",
+			"Gags with r_c at the scent of stinky herbs",
+			"Works with r_c to make sense of something a Clanmate said",
+			"Realizes {PRONOUN/m_c/subject} and r_c were the only ones that saw a shooting star",
+			"Acknowledges r_c with a twitch of {PRONOUN/m_c/poss} whiskers"
         ],
         "random_living_status": [
             "living"
@@ -6338,6 +6374,55 @@
         "random_trait_constraint": [
             "grumpy",
             "cold"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "med_leadership_to_gen",
+        "thoughts": [
+			"Gives r_c a task",
+			"Asks r_c to remind {PRONOUN/m_c/object} of who's already gone on patrol today",
+			"Asks r_c about a certain rule of the Warrior Code that {PRONOUN/m_c/subject} forgot",
+			"Watches r_c training for something and nods approvingly at {PRONOUN/r_c/poss} progress",
+			"Is checking on r_c"
+        ],
+        "main_status_constraint": [
+            "leader",
+            "deputy",
+            "medicine cat"
+        ],
+		"random_status_constraint": [
+			"kitten",
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator"
+		],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_to_med_leadership",
+        "thoughts": [
+			"Asks r_c about {PRONOUN/r_c/poss} duties",
+			"Reports to r_c after completing a chore"
+        ],
+		"main_status_constraint": [
+			"kitten",
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator"
+		],
+        "random_status_constraint": [
+            "leader",
+            "deputy",
+            "medicine cat"
         ],
         "random_living_status": [
             "living"
