@@ -12,31 +12,7 @@
 			"r_c's good morning to m_c meant a lot to {PRONOUN/m_c/object}.",
 			"m_c can tell how brave r_c is being about something important.",
 			"m_c thinks r_c is a good singer."
-		],
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-		"random_status_constraint": [
-	    "kitten",
-	    "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]
+		]
 	},
 	{
 		"id": "admire_inc_low2",
@@ -90,31 +66,7 @@
 		],
 		"reaction_random_cat": {
 			"admiration": "increase"
-		},
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-		"random_status_constraint": [
-	    "kitten",
-	    "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]
+		}
 	},
 	{
 		"id": "admire_inc_low4",
@@ -159,19 +111,7 @@
 			"m_c didn't know that r_c was so talented.",
 			"m_c thinks that r_c is very creative.",
 			"m_c is told about r_c's bravery during a recent time of struggle."
-		],
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
+		]
 		"random_status_constraint": [
 	    "apprentice",
             "medicine cat apprentice",
@@ -240,19 +180,7 @@
 			"r_c soothes m_c about a bad dream {PRONOUN/m_c/subject} had.",
 			"Despite m_c being a bit dramatic about the thorn in {PRONOUN/m_c/poss} paw, r_c treats {PRONOUN/m_c/object} gently.",
 			"m_c went to r_c for advice about a dream {PRONOUN/m_c/subject} had."
-		],
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
+		]
 		"random_status_constraint": [
 			"medicine cat",
 			"medicine cat apprentice"
@@ -460,18 +388,6 @@
 			"m_c is proud to be in the same Clan as r_c.",
 			"m_c can't believe how talented r_c is!"
 		],
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
 		"random_status_constraint": [
 			"warrior",
 			"apprentice",
@@ -541,31 +457,7 @@
 		"reaction_random_cat": {
 			"admiration": "increase",
 			"trust": "increase"
-		},
-		"main_status_constraint": [
-	    "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-		"random_status_constraint": [
-	    "kitten",
-	    "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]
+		}
 	},
 	{
 		"id": "admire_kit_inc_high1",
