@@ -17,7 +17,31 @@
 			"m_c sees r_c staring off into the distance. It's kind of creepy.",
 			"r_c doesn't say sorry when bumping into m_c.",
 			"m_c sees the blood of fresh-kill on r_c's paws and feels a prickle of discomfort."
-		]
+		],
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "kitten",
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_low2",
@@ -39,7 +63,31 @@
 		],
 		"reaction_random_cat": {
 			"comfortable": "decrease"
-		}
+		},
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "kitten",
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_med1",
@@ -57,7 +105,31 @@
 			"The moon casts a shadow on r_c's face in a way that makes m_c uneasy.",
 			"For a moment, m_c thought r_c sounded like someone else.",
 			"After r_c finished {PRONOUN/r_c/poss} food, m_c noticed {PRONOUN/r_c/subject} made a mess."
-		]
+		],
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "kitten",
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_kit_de_med1",
@@ -90,7 +162,31 @@
 		],
 		"reaction_random_cat": {
 			"comfortable": "decrease"
-		}
+		},
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "kitten",
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_med3",
@@ -105,7 +201,31 @@
 		],
 		"random_trait_constraint": [
 			"strange"
-		]
+		],
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "kitten",
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_med4",
@@ -118,7 +238,30 @@
 		],
 		"random_trait_constraint": [
 			"bloodthirsty"
-		]
+		],
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_med5",
@@ -133,7 +276,31 @@
 		],
 		"random_trait_constraint": [
 			"cold"
-		]
+		],
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "kitten",
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_med6",
@@ -147,7 +314,31 @@
 		"random_trait_constraint": [
 			"bold",
 			"oblivious"
-		]
+		],
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "kitten",
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_high1",
@@ -165,7 +356,31 @@
 			"m_c is discomforted by r_c's muttering.",
 			"m_c feels extremely unsettled when r_c looks at {PRONOUN/m_c/object}.",
 			"m_c can't stop thinking about the way r_c glared at {PRONOUN/r_c/object} Clanmate."
-		]
+		],
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "kitten",
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_high2",
@@ -185,7 +400,29 @@
 		],
 		"reaction_random_cat": {
 			"comfortable": "decrease"
-		}
+		},
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_high3",
@@ -207,7 +444,30 @@
 			"bloodthirsty",
 			"cold",
 			"vengeful"
-		]
+		],
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "comfort_de_high4",
@@ -225,6 +485,17 @@
 			"cold",
 			"vengeful"
 		],
+		"main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
 		"random_status_constraint": [
 			"leader",
 			"deputy"
@@ -247,6 +518,18 @@
 			"cold",
 			"vengeful"
 		],
+		"main_status_constraint": [
+	    "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
 		"random_status_constraint": [
 			"medicine cat",
 			"medicine cat apprentice"
