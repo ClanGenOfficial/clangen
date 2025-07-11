@@ -111,7 +111,7 @@
 			"m_c didn't know that r_c was so talented.",
 			"m_c thinks that r_c is very creative.",
 			"m_c is told about r_c's bravery during a recent time of struggle."
-		]
+		],
 		"random_status_constraint": [
 	    "apprentice",
             "medicine cat apprentice",
@@ -180,7 +180,7 @@
 			"r_c soothes m_c about a bad dream {PRONOUN/m_c/subject} had.",
 			"Despite m_c being a bit dramatic about the thorn in {PRONOUN/m_c/poss} paw, r_c treats {PRONOUN/m_c/object} gently.",
 			"m_c went to r_c for advice about a dream {PRONOUN/m_c/subject} had."
-		]
+		],
 		"random_status_constraint": [
 			"medicine cat",
 			"medicine cat apprentice"
