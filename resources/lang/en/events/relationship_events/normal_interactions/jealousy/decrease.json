@@ -3,16 +3,33 @@
 		"id": "jel_de_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c thinks r_c is very helpful!",
 			"m_c notices r_c doing something generous.",
 			"r_c gives m_c a big piece of fresh-kill.",
 			"r_c says {PRONOUN/r_c/subject} {VERB/r_c/hope/hopes} m_c has a nice day.",
 			"m_c sees r_c be kind to one of m_c's friends.",
 			"m_c thinks r_c is very polite.",
 			"m_c hears r_c laugh at a Clanmate's joke even though it was lame.",
-			"r_c gets a bug off of m_c's pelt and takes it out of camp.",
 			"m_c thinks r_c is a very good listener."
 		]
+	},
+	{
+		"id": "jel_de_low2",
+		"intensity": "low",
+		"interactions": [
+			"m_c thinks r_c is very helpful!",
+			"r_c gets a bug off of m_c's pelt and takes it out of camp."
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "jel_de_med1",
@@ -22,7 +39,18 @@
 			"r_c brings m_c herbs from the medicine den for a headache.",
 			"r_c tells a Clanmate that m_c did a great job today.",
 			"m_c is grateful for something r_c did."
-		]
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "jel_de_med2",
@@ -43,7 +71,7 @@
 	{
 		"id": "jel_de_med3",
 		"interactions": [
-			"m_c always thought r_c had it all figured out, so {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} surprised when r_c asks for help.",
+			"m_c always thought r_c had it all figured out, so {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} surprised when {PRONOUN/m_c/subject} see r_c ask a Clanmate for help.",
 			"r_c is embarrassed about something that m_c finds really cool!",
 			"m_c is flattered when r_c asks for {PRONOUN/m_c/object} advice.",
 			"r_c tells m_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} talented for {PRONOUN/m_c/poss} age.",
@@ -129,8 +157,32 @@
 			"m_c hears r_c crying over something everyone downplayed the severity of.",
 			"m_c realizes that r_c would put {PRONOUN/r_c/poss} life on the line for a Clanmate.",
 			"m_c learns how much effort r_c put into learning something.",
-			"m_c can hear the truth in r_c's words when {PRONOUN/r_c/subject} {VERB/r_c/talk/talks} about protecting others."
-		]
+			"m_c can hear the truth in r_c's words when {PRONOUN/r_c/subject} {VERB/r_c/talk/talks} about protecting others.",
+			"m_c and r_c learn a skill from each other that they've been envious about.",
+			"m_c learns some pelt-grooming techniques from r_c, and tells r_c some of {PRONOUN/m_c/poss} own."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "jel_de_high2",
@@ -140,9 +192,7 @@
 			"m_c and r_c find out they're both bringing flowers to the same Clanmate's grave.",
 			"m_c and r_c share stories of a Clanmate they didn't realize they both miss.",
 			"Both m_c and r_c enthusiastically congratulate another Clanmate on something.",
-			"When m_c and r_c realize they've been grooming their pelts the same way, they laugh about it.",
-			"m_c and r_c learn a skill from each other that they've been envious about.",
-			"m_c learns some pelt-grooming techniques from r_c, and tells r_c some of {PRONOUN/m_c/poss} own."
+			"When m_c and r_c realize they've been grooming their pelts the same way, they laugh about it."
 		],
 		"reaction_random_cat": {
 			"jealousy": "decrease"
