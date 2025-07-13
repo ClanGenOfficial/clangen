@@ -1879,7 +1879,7 @@ class Events:
         TODO: DOCS
         """
         if constants.CONFIG["event_generation"]["debug_type_override"] == "misc":
-            create_short_event.handle_event(
+            create_short_event(
                 event_type="misc",
                 main_cat=cat,
             )
@@ -1889,7 +1889,7 @@ class Events:
         if hit:
             return
 
-        create_short_event.handle_event(
+        create_short_event(
             event_type="misc",
             main_cat=cat,
         )
