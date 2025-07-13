@@ -162,9 +162,6 @@
 		"id": "jel_inc_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c is complaining that r_c never does anything helpful.",
-			"m_c doesn't get why r_c gets more praise for doing the same thing everyone else does.",
-			"m_c can't stand hearing about how helpful r_c is.",
 			"m_c gets hit with waves of envy whenever r_c is laughing with friends.",
 			"m_c can't understand why Clanmates like r_c so much.",
 			"m_c notices that r_c always gets better fresh-kill to eat.",
@@ -194,5 +191,25 @@
 		"random_status_constraint": [
 			"elder"
 		]
+	},
+	{
+		"id": "jel_inc_high4",
+		"intensity": "high",
+		"interactions": [
+			"m_c is complaining that r_c never does anything helpful.",
+			"m_c doesn't get why r_c gets more praise for doing the same thing everyone else does.",
+			"m_c can't stand hearing about how helpful r_c is."
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	}
 ]
