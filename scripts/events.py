@@ -1176,7 +1176,6 @@ class Events:
                 game.cur_events_list.append(
                     Single_Event(text, "ceremony", game.clan.deputy.ID)
                 )
-                cat.generate_lead_ceremony()
                 self.ceremony_accessory = True
                 self.gain_accessories(cat)
                 game.clan.deputy = None
