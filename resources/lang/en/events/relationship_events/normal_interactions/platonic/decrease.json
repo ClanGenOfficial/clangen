@@ -11,8 +11,7 @@
 			"r_c didn't put a lot of thought into an answer for m_c's question.",
 			"m_c doesn't see why r_c is upset about something trivial.",
 			"r_c yawns while m_c is trying to tell {PRONOUN/r_c/object} something.",
-			"m_c asks for the last of r_c's fresh-kill, but r_c says no.",
-			"r_c won't help m_c fix {PRONOUN/m_c/poss} nest."
+			"m_c asks for the last of r_c's fresh-kill, but r_c says no."
 		]
 	},
 	{
@@ -20,7 +19,6 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c and r_c have an argument about who should get a pretty feather, and end up destroying it in their fight.",
-			"m_c has drawn the ire of r_c by deliberately taking the last of {PRONOUN/r_c/poss} favorite nesting materials for {PRONOUN/m_c/self}.",
 			"m_c and r_c keep talking over each other on accident.",
 			"After m_c tidies up an area, r_c accidentally messes it up again.",
 			"m_c confesses something to r_c, but realizes {PRONOUN/r_c/subject} can't relate at all.",
@@ -33,6 +31,36 @@
 		"reaction_random_cat": {
 			"platonic": "decrease"
 		}
+	},
+	{
+		"id": "platonic_de_low3",
+		"intensity": "low",
+		"interactions": [
+			"m_c has drawn the ire of r_c by deliberately taking the last of {PRONOUN/r_c/poss} favorite nesting materials for {PRONOUN/m_c/self}.",
+			"r_c won't help m_c fix {PRONOUN/m_c/poss} nest."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "platonic_de_med1",
@@ -216,6 +244,17 @@
 		],
 		"reaction_random_cat": {
 			"platonic": "decrease"
-		}
+		},
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	}
 ]
