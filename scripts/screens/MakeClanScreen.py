@@ -2178,7 +2178,6 @@ class MakeClanScreen(Screens):
             starting_members=self.members,
             starting_season=self.selected_season,
         )
-        game.clan.leader.generate_lead_ceremony()
         game.clan.create_clan()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
