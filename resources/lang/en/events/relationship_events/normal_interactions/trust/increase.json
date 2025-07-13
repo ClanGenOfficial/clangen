@@ -57,15 +57,12 @@
 	{
 		"id": "trust_inc_med1",
 		"interactions": [
-			"m_c thinks about how r_c is always reliable.",
-			"m_c notices how r_c is being helpful around camp.",
 			"m_c has faith in r_c.",
 			"m_c is grateful that r_c has kept a secret of {PRONOUN/m_c/inposs}.",
 			"r_c seems respectful of m_c's boundaries as of late.",
-			"r_c explained something in detail to m_c that others wouldn't explain to {PRONOUN/m_c/object}.",
+			"r_c skips eating a meal so m_c can have food.",
 			"m_c overhears r_c dispelling a false rumor about a Clanmate.",
-			"r_c helps m_c fix a matted piece of fur on {PRONOUN/m_c/poss} back.",
-			"m_c notices how r_c is being helpful around camp."
+			"r_c helps m_c fix a matted piece of fur on {PRONOUN/m_c/poss} back."
 		]
 	},
 	{
@@ -81,6 +78,37 @@
 		"reaction_random_cat": {
 			"trust": "increase"
 		}
+	},
+	{
+		"id": "trust_inc_med3",
+		"interactions": [
+			"m_c thinks about how r_c is always reliable.",
+			"m_c notices how r_c is being helpful around camp.",
+			"r_c explained something in detail to m_c that others wouldn't explain to {PRONOUN/m_c/object}.",
+			"m_c notices how r_c is being helpful around camp."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "trust_inc_medpat",
@@ -111,7 +139,7 @@
 	{
 		"id": "trust_inc_med3",
 		"interactions": [
-			"r_c is telling m_c in great detail how {PRONOUN/r_c/subject} would protect {PRONOUN/m_c/object} from any danger.",
+			"r_c is telling m_c how {PRONOUN/r_c/subject} would protect {PRONOUN/m_c/object} from any danger.",
 			"r_c gets riled up on m_c's behalf during a debate.",
 			"r_c snaps at a Clanmate for disagreeing with m_c."
 		],
@@ -133,7 +161,6 @@
 		"id": "trust_inc_med5",
 		"interactions": [
 			"r_c let m_c lean on {PRONOUN/r_c/poss} shoulder after a recent injury.",
-			"r_c skips eating a meal so m_c can have food.",
 			"r_c offers to take the blame for something that m_c did.",
 			"r_c is poised to help train m_c."
 		],
@@ -141,7 +168,18 @@
 			"loving",
 			"thoughtful",
 			"compassionate"
-		]
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "trust_de_med3",
@@ -230,9 +268,7 @@
 			"r_c won't back down when defending m_c on something.",
 			"r_c calls out the Clan for targeting m_c.",
 			"m_c feels comfortable challenging r_c on something {PRONOUN/r_c/subject} said.",
-			"m_c isn't afraid to ask r_c a difficult question.",
-			"m_c doesn't shy away from r_c's presence.",
-			"m_c knows that the advice r_c gave {PRONOUN/m_c/object} will be helpful."
+			"m_c doesn't shy away from r_c's presence."
 		]
 	},
 	{
@@ -268,20 +304,14 @@
 		"main_status_constraint": [
 			"apprentice",
 			"warrior",
-			"mediator",
-			"medicine cat",
 			"deputy",
-			"medicine cat apprentice",
 			"leader"
 		],
 		"random_status_constraint": [
 			"apprentice",
 			"warrior",
-			"mediator",
-			"medicine cat",
 			"deputy",
-			"leader",
-			"medicine cat apprentice"
+			"leader"
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -321,6 +351,36 @@
 		]
 	},
 	{
+		"id": "trust_inc_high5",
+		"intensity": "high",
+		"interactions": [
+			"m_c isn't afraid to ask r_c a difficult question.",
+			"m_c knows that the advice r_c gave {PRONOUN/m_c/object} will be helpful."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+	},
+	{
 		"id": "trust_star_inc_high1",
 		"intensity": "high",
 		"interactions": [
@@ -358,12 +418,14 @@
 			"trust_50"
 		],
 		"main_status_constraint": [
-			"leader"
+			"leader",
+			"deputy"
 		],
 		"random_status_constraint": [
 			"deputy",
 			"elder",
-			"medicine cat"
+			"medicine cat",
+			"warrior"
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
