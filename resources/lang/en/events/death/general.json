@@ -7192,7 +7192,7 @@
         ]
     },
     {
-        "event_id": "gen_death_mouse_anykit1",
+        "event_id": "gen_death_rat_anykit1",
         "location": [
             "forest",
             "plains",
@@ -7221,7 +7221,7 @@
         ]
     },
     {
-        "event_id": "gen_death_shrew_anykit",
+        "event_id": "gen_death_raccoon_anykit",
         "location": [
             "forest",
             "plains",

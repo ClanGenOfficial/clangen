@@ -1482,30 +1482,28 @@ class ProfileScreen(Screens):
             death_number = len(death_history)
             multi_life_count = 0
             for index, death in enumerate(death_history):
-                found_murder = (
-                    False  # Add this line to track if a matching murder event is found
+                text = event_text_adjust(
+                    Cat,
+                    death["text"],
+                    main_cat=self.the_cat,
+                    random_cat=Cat.fetch_cat(death["involved"]),
                 )
                 if "is_victim" in murder_history:
                     for event in murder_history["is_victim"]:
-                        text = self.get_text_for_murder_event(event, death)
-                        if text is not None:
-                            found_murder = True  # Update the flag if a matching murder event is found
-                            break
-
-                        if found_murder and text is not None and not event["revealed"]:
-                            text = event_text_adjust(
+                        # check if we match moon counts
+                        if event["moon"] == death["moon"]:
+                            # get reveal status text
+                            status_text = self.the_cat.history.get_murder_status_text(
+                                murder=event, Cat=Cat
+                            )
+                            status_text = event_text_adjust(
                                 Cat,
-                                event["text"],
+                                status_text,
                                 main_cat=self.the_cat,
                                 random_cat=Cat.fetch_cat(death["involved"]),
                             )
-                if not found_murder:
-                    text = event_text_adjust(
-                        Cat,
-                        death["text"],
-                        main_cat=self.the_cat,
-                        random_cat=Cat.fetch_cat(death["involved"]),
-                    )
+                            text += f" ({status_text}) "
+                            break
 
                 if self.the_cat.status.is_leader:
                     if text == "multi_lives":
@@ -1568,7 +1566,7 @@ class ProfileScreen(Screens):
                         text = text
 
                     if moons:
-                        text += f" ({i18n.t('general.moons_date', moon=death['moon'])})"
+                        text += f" ({i18n.t('general.moon_date', moon=death['moon'])})"
                     all_deaths.append(text)
 
             if self.the_cat.status.is_leader or death_number > 1:
@@ -1600,49 +1598,19 @@ class ProfileScreen(Screens):
 
         moons = switch_get_value(Switch.show_history_moons)
         victims = []
-        if murder_history:
-            if "is_murderer" in murder_history:
-                victims = murder_history["is_murderer"]
+        if murder_history and "is_murderer" in murder_history:
+            victims = murder_history["is_murderer"]
 
-        if len(victims) > 0:
-            victim_names = {}
-            name_list = []
-            reveal_text = None
+        for victim in victims:
+            if not Cat.fetch_cat(victim["victim"]):
+                continue
+            name = str(Cat.fetch_cat(victim["victim"]).name)
 
-            for victim in victims:
-                if not Cat.fetch_cat(victim["victim"]):
-                    continue
-                name = str(Cat.fetch_cat(victim["victim"]).name)
-
-                if victim["revealed"]:
-                    victim_names[name] = []
-                    if victim.get("revelation_text"):
-                        reveal_text = victim["revelation_text"]
-                    if moons:
-                        victim_names[name].append(victim["moon"])
-                        if victim.get("revelation_moon"):
-                            reveal_text = f"{reveal_text} ({i18n.t('general.moons_date', moons=victim['revelation_moon'])})"
-
-            if victim_names:
-                for name in victim_names:
-                    if not moons:
-                        name_list.append(name)
-                    else:
-                        name_list.append(
-                            f"{name} ({i18n.t('general.moons_date', moons=victim_names[name][0])})"
-                        )
-
-                victim_text = i18n.t(
-                    "cat.history.murdered",
-                    name=self.the_cat.name,
-                    victims=adjust_list_text(name_list),
-                )
-
-            if reveal_text:
-                cat_dict = {
-                    "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
-                }
-                victim_text = f"{victim_text} {process_text(reveal_text, cat_dict)}"
+            text = i18n.t("cat.history.murdered", name=self.the_cat.name, victims=name)
+            if moons:
+                text += f" ({i18n.t('general.moon_date', moon=victim['moon'])}) "
+            text += f" {self.the_cat.history.get_murder_status_text(murder=victim, Cat=Cat)}"
+            victim_text += f"{text}<br>"
 
         return victim_text
 

@@ -2,7 +2,8 @@ import re
 from random import choice
 
 from scripts.cat_relations.enums import RelValue
-from scripts.cat.enums import CatRank
+
+from scripts.cat.enums import CatRank, CatAge
 from scripts.game_structure.game_essentials import game
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (
@@ -291,6 +292,10 @@ def _check_cat_age(cat, ages: list) -> bool:
     """
     checks if a cat's age is within ages list
     """
+    # we only allow newborns if they are explicitly stated
+    if cat.age == CatAge.NEWBORN and (not ages or CatAge.NEWBORN not in ages):
+        return False
+
     if not ages or "any" in ages:
         return True
 
