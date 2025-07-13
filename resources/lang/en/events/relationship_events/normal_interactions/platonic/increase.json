@@ -45,6 +45,7 @@
 			"m_c thinks r_c has interesting things to talk about.",
 			"m_c is fascinated by one of r_c's stories.",
 			"m_c likes the way r_c laughs.",
+			"m_c plays moss-ball with r_c.",
 			"m_c is impressed by some of r_c's advice.",
 			"r_c reminds m_c to grab something from the fresh-kill pile if {PRONOUN/r_c/subject} {VERB/r_c/have/has}n't already."
 		]
@@ -129,7 +130,8 @@
 			"r_c challenges m_c to a race."
 		],
 		"random_trait_constraint": [
-			"daring"
+			"daring",
+			"playful"
 		]
 	},
 	{
@@ -242,18 +244,6 @@
 		"reaction_random_cat": {
 			"platonic": "increase"
 		}
-	},
-	{
-		"id": "platonic_kit_inc_med1",
-		"interactions": [
-			"m_c plays moss-ball with r_c."
-		],
-		"reaction_random_cat": {
-			"platonic": "increase"
-		},
-		"main_status_constraint": [
-			"kitten"
-		]
 	},
 	{
 		"id": "platonic_kit_inc_med3",
