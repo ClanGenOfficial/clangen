@@ -8,15 +8,43 @@
 			"m_c didn't expect r_c to be so amicable today.",
 			"m_c realizes that {PRONOUN/m_c/subject} misunderstood something r_c said.",
 			"m_c stops and thinks before assuming the worst of r_c.",
-			"When getting something to eat, m_c sees r_c allow someone else to take {PRONOUN/r_c/poss} favorite prey.",
 			"m_c sees r_c being gentle with an injured bug.",
 			"m_c thinks that r_c looks nice today.",
-			"m_c thinks that r_c smells nice today.",
-			"m_c is able to work together with r_c."
+			"m_c thinks that r_c smells nice today."
 		]
 	},
 	{
 		"id": "dislike_de_low2",
+		"intensity": "low",
+		"interactions": [
+			"When getting something to eat, m_c sees r_c allow someone else to take {PRONOUN/r_c/poss} favorite prey.",
+			"m_c is able to work together with r_c."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+	},
+	{
+		"id": "dislike_de_low3",
 		"intensity": "low",
 		"interactions": [
 			"m_c apologized to r_c for being rude the other day.",
@@ -46,8 +74,7 @@
 			"Though m_c has been unhappy with r_c, m_c helps {PRONOUN/r_c/object} with something.",
 			"m_c tries to find r_c to apologize for something, but finds {PRONOUN/r_c/object} playing with a Clanmate.",
 			"r_c does something endearing, which surprises m_c.",
-			"m_c stumbles upon r_c looking at the stars with wonder in {PRONOUN/r_c/poss} eyes.",
-			"m_c is rethinking how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} about r_c and gives {PRONOUN/r_c/object} another chance."
+			"m_c stumbles upon r_c looking at the stars with wonder in {PRONOUN/r_c/poss} eyes."
 		]
 	},
 	{
@@ -64,7 +91,8 @@
 			"When explaining something, m_c is surprised that r_c understands.",
 			"m_c hesitantly asks to exchange fresh-kill with r_c. r_c agrees, since m_c's is {PRONOUN/r_c/poss} favorite kind, anyways.",
 			"The Clan is surprised to see m_c and r_c chatting casually over a meal.",
-			"m_c cheers r_c up after a small disagreement."
+			"m_c cheers r_c up after a small disagreement.",
+			"r_c is rethinking how {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} about m_c and gives {PRONOUN/m_c/object} another chance."
 		],
 		"reaction_random_cat": {
 			"dislike": "decrease"
@@ -96,7 +124,6 @@
 			"A Clanmate claims that m_c and r_c were sharing tongues.",
 			"m_c and r_c sincerely apologize to one another.",
 			"r_c admits that m_c did something clever.",
-			"m_c and r_c fight over a piece of prey, but soon decide to share it instead.",
 			"The Clan has noticed m_c and r_c are smiling at each other more today.",
 			"m_c and r_c realize they have more in common than previously thought.",
 			"r_c thinks that m_c isn't so bad after all."
@@ -109,6 +136,7 @@
 		"id": "dislike_de_high3",
 		"intensity": "high",
 		"interactions": [
+			"m_c and r_c fight over a piece of prey, but soon decide to share it instead.",
 			"m_c and r_c heckled another Clan at the Gathering together.",
 			"m_c and r_c worked well together on a patrol.",
 			"When they return from a patrol, m_c and r_c seem more at peace with each other than usual.",
@@ -119,15 +147,15 @@
 			"dislike": "decrease"
 		},
 		"main_status_constraint": [
-			"elder",
 			"apprentice",
-			"warrior",
-			"mediator apprentice",
-			"mediator",
-			"medicine cat apprentice",
-			"medicine cat",
-			"deputy",
-			"leader"
+            		"medicine cat apprentice",
+            		"mediator apprentice",
+            		"warrior",
+            		"medicine cat",
+            		"mediator",
+            		"deputy",
+            		"leader",
+            		"elder"
 		],
 		"random_status_constraint": [
 			"elder",
