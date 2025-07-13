@@ -62,9 +62,7 @@ class ShortEvent:
     )
     num_of_skills = len(SkillPath)
 
-    num_of_ages = len(
-        CatAge
-    )  # can't pull this from the Cat file bc of circular imports
+    num_of_ages = len(CatAge)
 
     num_of_ranks = CatRank.get_num_of_clan_ranks()
 

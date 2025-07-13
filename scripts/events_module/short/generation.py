@@ -1,4 +1,5 @@
 import random
+from typing import Optional
 
 import i18n
 import ujson
@@ -17,6 +18,7 @@ from scripts.events_module.event_filters import (
     event_for_freshkill_supply,
     event_for_herb_supply,
     event_for_season,
+    cat_for_event,
 )
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants
@@ -33,9 +35,9 @@ def get_resource_directory(fallback=False):
 
 def create_short_event(
     event_type: str,
-    main_cat,
-    random_cat,
-    victim_cat=None,
+    main_cat: Cat,
+    random_cat: Cat = None,
+    victim_cat: Cat = None,
     sub_type: list = None,
     future_event=None,
 ):
@@ -69,42 +71,40 @@ def create_short_event(
     elif event_type == "health":
         event_type = "injury"
 
-    events = find_needed_events(event_type)
+    # choosing frequency
+    # think of it as "in a span of 10 moons, in how many moons should this sort of event appear?"
+    frequency_roll = random.randint(1, 10)
+    if frequency_roll <= 4:
+        frequency = 4
+    elif frequency_roll <= 7:
+        frequency = 3
+    elif frequency_roll <= 9:
+        frequency = 2
+    else:
+        frequency = 1
 
-    final_events = filter_events(
-        possible_events=events,
-        main_cat=main_cat,
-        random_cat=random_cat,
-        other_clan=other_clan,
-        sub_types=sub_types,
-        allowed_events=future_event.allowed_events if future_event else None,
-        excluded_events=future_event.excluded_events if future_event else None,
-        ignore_subtyping=future_event.negate_subtyping if future_event else None,
-    )
-    if isinstance(constants.CONFIG["event_generation"]["debug_ensure_event_id"], str):
-        found = False
-        for _event in final_events:
-            if (
-                _event.event_id
-                == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
-            ):
-                final_events = [_event]
-                print(
-                    f"FOUND debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
-                    f"was set as the only event option"
-                )
-                found = True
-                break
-        if not found:
-            # this print is very spammy, but can be helpful if unsure why a debug event isn't triggering
-            # print(f"debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
-            #      f"was not possible for {main_cat.name}.  {main_cat.name} was looking for a {event_type}: {sub_types} event")
-            pass
+    chosen_event = None
+    while not chosen_event and frequency < 5:
+        events = find_needed_events(
+            frequency,
+            event_type,
+        )
 
-    try:
-        # choose an event!
-        chosen_event = random.choice(final_events)
+        chosen_event, random_cat = filter_events(
+            possible_events=events,
+            main_cat=main_cat,
+            random_cat=random_cat,
+            other_clan=other_clan,
+            sub_types=sub_types,
+            allowed_events=future_event.allowed_events if future_event else None,
+            excluded_events=future_event.excluded_events if future_event else None,
+            ignore_subtyping=future_event.negate_subtyping if future_event else None,
+        )
+        if not chosen_event:
+            # we'll see if any more common events are available
+            frequency += 1
 
+    if chosen_event:
         # set future event trigger status
         if future_event:
             future_event.triggered = True
@@ -118,20 +118,16 @@ def create_short_event(
         # execute the event
         chosen_event.execute_event(other_clan)
 
-        # this print is good for testing, but gets spammy in large clans
-        # print(f"CHOSEN: {chosen_event.event_id}")
-    except IndexError:
+    else:
         # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
-        print(
-            f"WARNING: no {event_type}: {sub_types} events found for {main_cat.name} "
-            f"and {random_cat.name if random_cat else 'no random cat'}"
-        )
+        print(f"WARNING: no {event_type}: {sub_types} events found for {main_cat.name}")
         return
 
 
-def find_needed_events(event_type=None) -> list:
+def find_needed_events(frequency, event_type=None) -> list:
     """
     Handles detecting the biome and collecting all events possible for biome and type
+    :param frequency: The event frequency to look for
     :param event_type: The type of event to pull
     """
     event_list = []
@@ -149,10 +145,10 @@ def find_needed_events(event_type=None) -> list:
     biome = temp_biome.lower()
 
     # biome specific events
-    event_list.extend(generate_event_objects(event_type, biome))
+    event_list.extend(generate_event_objects(event_type, biome, frequency))
 
     # any biome events
-    event_list.extend(generate_event_objects(event_type, "general"))
+    event_list.extend(generate_event_objects(event_type, "general", frequency))
 
     return event_list
 
@@ -182,17 +178,21 @@ def get_event_dicts(file_path) -> list:
     return events
 
 
-def generate_event_objects(event_triggered, biome) -> list:
+def generate_event_objects(event_triggered, biome, frequency) -> list:
     """
     Gets the event dicts for the given args and creates the short event objects for each entry in the dict.
     :param event_triggered: The type of event triggered
     :param biome: The biome to pull events for
+    :param frequency: The frequency to pull events for
     """
     file_path = f"{event_triggered}/{biome}.json"
+    load_name = f"{file_path}_{frequency}"
 
     try:
         if file_path in loaded_events:
             return loaded_events[file_path]
+        if load_name in loaded_events:
+            return loaded_events[load_name]
         else:
             events_dict = get_event_dicts(file_path)
 
@@ -201,6 +201,8 @@ def generate_event_objects(event_triggered, biome) -> list:
                 return event_list
             for event in events_dict:
                 event_text = event["event_text"] if "event_text" in event else None
+                event_frequency = event["frequency"] if "frequency" in event else 4
+
                 if not event_text:
                     event_text = event["death_text"] if "death_text" in event else None
 
@@ -208,13 +210,15 @@ def generate_event_objects(event_triggered, biome) -> list:
                     print(
                         f"WARNING: some events resources which are used in generate_events have no 'event_text'."
                     )
+                if frequency != event_frequency:
+                    continue
+
                 event = ShortEvent(
                     event_id=event["event_id"] if "event_id" in event else "",
                     location=event["location"] if "location" in event else ["any"],
                     season=event["season"] if "season" in event else ["any"],
                     sub_type=event["sub_type"] if "sub_type" in event else [],
                     tags=event["tags"] if "tags" in event else [],
-                    weight=event["weight"] if "weight" in event else 20,
                     text=event_text,
                     new_accessory=(
                         event["new_accessory"] if "new_accessory" in event else []
@@ -241,7 +245,7 @@ def generate_event_objects(event_triggered, biome) -> list:
                 event_list.append(event)
 
             # Add to loaded events.
-            loaded_events[file_path] = event_list
+            loaded_events[load_name] = event_list
             return event_list
 
     except ValueError:
@@ -258,7 +262,7 @@ def filter_events(
     allowed_events=None,
     excluded_events=None,
     ignore_subtyping=False,
-) -> list:
+) -> (Optional[ShortEvent], Optional[Cat]):
     """
     Filters possible events to find an event that fits the given requirements
     :param possible_events: list of possible events
@@ -300,13 +304,9 @@ def filter_events(
             continue
 
         # ensure ID and requirements override
-        if (
-            event.event_id
-            == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
-            and constants.CONFIG["event_generation"]["debug_override_requirements"]
-        ):
+        if constants.CONFIG["event_generation"]["debug_override_requirements"]:
             final_events.append(event)
-            break
+            continue
 
         # check for event sub_type
         if not ignore_subtyping:
@@ -349,6 +349,19 @@ def filter_events(
         if "transition" in event.sub_type and main_cat.gender != main_cat.genderalign:
             continue
 
+        m_c_injuries = []
+        r_c_injuries = []
+        discard = False
+        for block in event.injury:
+            for injury in block["injuries"]:
+                if "m_c" in block["cats"]:
+                    m_c_injuries.append(injury)
+                if "r_c" in block["cats"]:
+                    r_c_injuries.append(injury)
+            if discard:
+                continue
+
+        # check if m_c is allowed this event
         if event.m_c:
             if not event_for_cat(
                 cat_info=event.m_c,
@@ -358,7 +371,8 @@ def filter_events(
             ):
                 continue
 
-        if event.r_c and random_cat:
+        # if a random cat was pre-chosen, then we check if the event will be suitable for them
+        if random_cat:
             if not event_for_cat(
                 cat_info=event.r_c,
                 cat=random_cat,
@@ -424,17 +438,86 @@ def filter_events(
             if discard:
                 continue
 
-        # ensure ID without requirements override
-        if (
-            event.event_id
-            == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
-        ):
-            final_events.append(event)
-            break
-
         final_events.extend([event] * event.weight)
 
-    for notice in incorrect_format:
-        print(notice)
+        if not final_events:
+            return None, None
 
-    return final_events
+        cat_list = [
+            c
+            for c in Cat.all_cats.values()
+            if c.status.alive_in_player_clan and c != main_cat
+        ]
+        chosen_cat = None
+        chosen_event = None
+
+        if random_cat:
+            chosen_cat = random_cat
+            # if we've got our random cat already, then check if we have to find an ensured event
+            if constants.CONFIG["event_generation"]["debug_ensure_event_id"]:
+                for possible_event in final_events:
+                    if (
+                        possible_event.event_id
+                        == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+                    ):
+                        chosen_event = possible_event
+                        break
+            # else, pick a random one from the available events
+            else:
+                chosen_event = random.choice(final_events)
+
+        failed_ids = []
+        while final_events and not chosen_cat and not chosen_event:
+            chosen_event = random.choice(final_events)
+            if chosen_event.event_id in failed_ids:
+                final_events.remove(chosen_event)
+                chosen_event = None
+                continue
+
+            if (
+                constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+                and constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+                != chosen_event.event_id
+            ):
+                final_events.remove(chosen_event)
+                chosen_event = None
+                continue
+
+            # if this doesn't need a random cat, we stop here and run with it
+            if not chosen_event.r_c:
+                break
+
+            # if we're overriding requirements, don't bother looking for an appropriate cat
+            if constants.CONFIG["event_generation"]["debug_override_requirements"]:
+                chosen_cat = random.choice(cat_list)
+                continue
+
+            # gotta gather injuries so we can check if the cat can get them
+            r_c_injuries = []
+            for block in chosen_event.injury:
+                r_c_injuries.extend(block["injuries"] if "r_c" in block["cats"] else [])
+
+            chosen_cat = cat_for_event(
+                constraint_dict=chosen_event.r_c,
+                possible_cats=cat_list,
+                comparison_cat=main_cat,
+                comparison_cat_rel_status=chosen_event.m_c.get(
+                    "relationship_status", []
+                ),
+                injuries=r_c_injuries,
+                return_id=False,
+            )
+
+            if not chosen_cat:
+                failed_ids.append(chosen_event.event_id)
+                final_events.remove(chosen_event)
+                chosen_event = None
+            else:
+                break
+
+        for notice in incorrect_format:
+            print(notice)
+
+        return chosen_event, chosen_cat
+
+    return None, None
