@@ -84,16 +84,6 @@
             "Is waiting to watch the sunrise",
             "Is waiting to watch the sunset",
             "Is grooming, grooming, grooming away...",
-            "Saw a pair of Twolegs near camp today!",
-            "Saw a Twoleg petting a loner",
-            "Saw a kittypet with no fur at all!",
-            "Saw some kittypets playing with colorful moss balls",
-            "Saw a kittypet sitting calmly next to a dog!",
-            "Almost got lost near some Twoleg nests",
-            "Saw some wandering Twolegs today",
-            "Saw a Twoleg kit playing with a dog",
-            "Saw a Twoleg kit playing with a kittypet",
-            "Saw a kittypet rolling around a Twoleg garden",
             "Purrs whenever the sun hits {PRONOUN/m_c/object} just right",
             "Sprawls out in a warm patch of sunlight"
         ]
@@ -114,9 +104,6 @@
             "Is giving some advice to r_c",
             "Wonders what r_c is up to",
             "Is playing a prank on r_c"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -139,7 +126,17 @@
             "Saw a kittypet with the fluffiest fur imaginable today",
             "Saw a big scary dog today",
             "Is drinking water from a nearby stream",
-            "Thought {PRONOUN/m_c/subject} saw a cat, but it was just a Twoleg object that looks like one"
+            "Thought {PRONOUN/m_c/subject} saw a cat, but it was just a Twoleg object that looks like one",
+            "Saw a pair of Twolegs near camp today!",
+            "Saw a Twoleg petting a loner",
+            "Saw a kittypet with no fur at all!",
+            "Saw some kittypets playing with colorful moss balls",
+            "Saw a kittypet sitting calmly next to a dog!",
+            "Almost got lost near some Twoleg nests",
+            "Saw some wandering Twolegs today",
+            "Saw a Twoleg kit playing with a dog",
+            "Saw a Twoleg kit playing with a kittypet",
+            "Saw a kittypet rolling around a Twoleg garden"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -228,9 +225,6 @@
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -243,9 +237,6 @@
         ],
         "random_status_constraint": [
             "medicine cat"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -269,9 +260,6 @@
         ],
         "random_status_constraint": [
             "leader"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -295,9 +283,6 @@
         ],
         "random_status_constraint": [
             "elder"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -321,9 +306,6 @@
         ],
         "random_status_constraint": [
             "mediator"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -346,9 +328,6 @@
         ],
         "random_status_constraint": [
             "mediator apprentice"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
