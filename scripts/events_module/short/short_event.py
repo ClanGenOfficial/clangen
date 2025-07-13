@@ -4,16 +4,13 @@ from typing import List, Optional
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import get_clan_setting
-from scripts.clan_resources.herb.herb import HERBS
-from scripts.clan_resources.supply import Supply
 from scripts.event_class import Single_Event
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship.relation_events import Relation_Events
-from scripts.game_structure import localization, constants
+from scripts.game_structure import localization
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     create_new_cat_block,
@@ -39,23 +36,6 @@ class ShortEvent:
     A moon event that only affects the moon it was triggered on.  Can involve two cats directly and be restricted by various constraints.
     - full documentation available on GitHub wiki
     """
-
-    supply_types = ["fresh_kill", "all_herb", "any_herb"]
-    supply_types.extend(HERBS)
-    supply_triggers = [
-        "always",
-        Supply.LOW,
-        Supply.ADEQUATE,
-        Supply.FULL,
-        Supply.EXCESS,
-    ]
-    supply_adjustments = [
-        "reduce_eighth",
-        "reduce_quarter",
-        "reduce_half",
-        "reduce_full",
-        "increase_#",
-    ]
 
     num_of_traits = len(Personality.trait_ranges["normal_traits"].keys()) + len(
         Personality.trait_ranges["kit_traits"].keys()

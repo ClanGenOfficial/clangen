@@ -1,5 +1,8 @@
 import ujson
 
+from scripts.clan_resources.herb.herb import HERBS
+from scripts.clan_resources.supply import Supply
+
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
 SEASONS = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
@@ -103,6 +106,19 @@ EVENT_ALLOWED_CONDITIONS = [
     "heat exhaustion",
     "stomachache",
     "constant nightmares",
+]
+
+SUPPLY_TYPES = ["fresh_kill", "all_herb", "any_herb"]
+SUPPLY_TYPES.extend(HERBS)
+
+SUPPLY_TRIGGERS = ["always", *Supply]
+
+SUPPLY_ADJUSTMENTS = [
+    "reduce_eighth",
+    "reduce_quarter",
+    "reduce_half",
+    "reduce_full",
+    "increase_#",
 ]
 
 with open(f"resources/game_config.json", "r", encoding="utf-8") as read_file:
