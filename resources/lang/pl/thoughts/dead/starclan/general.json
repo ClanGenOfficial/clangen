@@ -1,0 +1,518 @@
+[
+    {
+        "id": "general_dead_thoughts",
+        "thoughts": [
+            "Is feeling quite lazy",
+            "Is spending a considerable amount of time grooming",
+            "Is looking forward to today",
+            "Is feeling down...",
+            "Is feeling happy!",
+            "Is curious about other Clans",
+            "Is feeling sassy today",
+            "Is thinking about a message to send",
+            "Wishes {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} still alive",
+            "Is admiring StarClan territory",
+            "Is thinking about {PRONOUN\/m_c\/poss} life",
+            "Is missing a loved one",
+            "Is hoping to meet with a medicine cat soon",
+            "Is admiring the stars in {PRONOUN\/m_c\/poss} fur",
+            "Is watching over a Clan ceremony",
+            "Is hoping to give a life to a new leader",
+            "Is hoping {PRONOUN\/m_c\/subject} will be remembered",
+            "Is watching over the Clan",
+            "Is worried about the Clan",
+            "Is relaxing in the sun",
+            "Is wondering about Twolegs",
+            "Is thinking about {PRONOUN\/m_c\/poss} ancient ancestors",
+            "Is worried about the cats in the Dark Forest",
+            "Is thinking of advice to give to a medicine cat",
+            "Is exploring StarClan",
+            "Is sad seeing how the Clan has changed",
+            "Wishes {PRONOUN\/m_c\/subject} could speak to old friends",
+            "Is sneezing on stardust",
+            "Is comforting another StarClan cat",
+            "Is exploring StarClan's hunting grounds",
+            "Is hunting mice in StarClan",
+            "Is chattering at the birds in StarClan",
+            "Is chasing rabbits in StarClan",
+            "Can feel some cat forgetting {PRONOUN\/m_c\/object}...",
+            "Is judging a codebreaker"
+        ],
+        "random_living_status": [
+            "living",
+            "starclan",
+            "darkforest",
+            "unknownresidence"
+        ]
+    },
+    {
+        "id": "general_dead_to_dead_other",
+        "thoughts": [
+            "Is sharing tongues with r_c",
+            "Has been spending time with r_c lately",
+            "Is acting huffy at r_c",
+            "Is sharing fresh-kill with r_c",
+            "Is curious about r_c",
+            "Is talking with r_c",
+            "Doesn't want to talk to r_c",
+            "Is having a serious fight with r_c",
+            "Wants to spend more time with r_c",
+            "Is thinking about future prophecies with r_c",
+            "Is watching over the Clan with r_c",
+            "Is listening to long-forgotten stories about the Clan",
+            "Is gossiping with r_c"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "founder_dead_to_dead_other",
+        "thoughts": [
+            "Is speaking with r_c about how c_n came to be",
+            "Is telling other StarClan cats stories of c_n's beginning",
+            "Is telling other StarClan cats about the ambitions, hopes, and dreams {PRONOUN\/m_c\/subject} had for c_n"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": [
+            "clan_founder"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "founder_dead_to_dead_other_founder",
+        "thoughts": [
+            "Is reminiscing with r_c about how c_n came to be",
+            "Is speaking with r_c about how the Clan they founded has changed"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": [
+            "clan_founder"
+        ],
+        "random_backstory_constraint": [
+            "clan_founder"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "general_dead_to_alive_other",
+        "thoughts": [
+            "Is watching over r_c",
+            "Is curious about what r_c is doing",
+            "Wants to send a message to r_c",
+            "Is currently walking in the dreams of r_c",
+            "Is proud of r_c",
+            "Is disappointed in r_c",
+            "Wants to warn r_c",
+            "Has been following the growth of r_c",
+            "Has seen r_c's future demise",
+            "Is looking to visit r_c in a dream soon",
+            "Accidentally found {PRONOUN\/m_c\/self} in r_c's dreams the other night",
+            "Knows what r_c's secret is and wants to tell some cat",
+            "Is judging r_c"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "general_dead_to_alive_df",
+        "thoughts": [
+            "Has a bad feeling about r_c...",
+            "Is wondering if r_c will go to StarClan or the Dark Forest...",
+            "Is disappointed in r_c",
+            "Is judging r_c"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_trait_constraint": [
+            "arrogant",
+            "cold",
+            "bloodthirsty",
+            "fierce",
+            "sneaky",
+            "vengeful",
+            "strange",
+            "rebellious"
+        ]
+    },
+    {
+        "id": "founder_dead_to_alive_kit",
+        "thoughts": [
+            "Is watching over the newest additions to {PRONOUN\/m_c\/poss} Clan"
+        ],
+        "main_age_constraint": [
+            "adolescent",
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": [
+            "clan_founder"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_dead_med_cat",
+        "thoughts": [
+            "Regrets leaving the Clan one medicine cat short",
+            "Is worried about the Clan's ability to survive the latest illness",
+            "Looks after the newborns in StarClan",
+            "Is watching c_n, ready to send an omen"
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ]
+    },
+    {
+        "id": "dead_med_cat_to_alive_med_cat",
+        "thoughts": [
+            "Has an important message for r_c",
+            "Is distraught that {PRONOUN\/m_c\/subject} can't help r_c take care of the Clan",
+            "Sends an omen of things to come to r_c",
+            "Is excited that {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} able to help c_n by sharing a new prophecy",
+            "Whispers useful suggestions in r_c's ears",
+            "Sends a vision of an undiscovered herb patch to r_c",
+            "Lets {PRONOUN\/m_c\/poss} scent linger near r_c, if only for a moment",
+            "Led r_c to a hidden patch of herbs the Clan is running low on"
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "dead_med_cat_to_alive_other",
+        "thoughts": [
+            "Sends an omen of things to come to r_c"
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "dead_med_cat_to_dead_other",
+        "thoughts": [
+            "Shares {PRONOUN\/m_c\/poss} knowledge with r_c",
+            "Is discussing Clan matters with r_c"
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "dead_med_cat_to_dead_newborn",
+        "thoughts": [
+            "Softly describes the stars to r_c",
+            "Hums calming melodies to soothe r_c"
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "starclan"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ]
+    },
+    {
+        "id": "dead_parent_to_alive_child1",
+        "thoughts": [
+            "Can't stop fretting over r_c, even though there's nothing {PRONOUN\/m_c\/subject} can do",
+            "Is talking the ears off any cat willing to listen to {PRONOUN\/m_c\/object} go on and on and on about r_c",
+            "Is feeling guilty watching r_c miss {PRONOUN\/m_c\/object}",
+            "Deeply regrets leaving r_c without {PRONOUN\/m_c\/object}"
+        ],
+        "random_living_status": [
+            "starclan",
+            "darkforest",
+            "unknownresidence"
+        ],
+        "relationship_constraint": [
+            "parent\/child"
+        ],
+        "main_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "dead_parent_to_alive_child2",
+        "thoughts": [
+            "Snuck into r_c's dream to comfort {PRONOUN\/r_c\/object} after a hard day",
+            "Visited r_c's dream to tell {PRONOUN\/r_c\/object} just how immensely proud {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} of {PRONOUN\/r_c\/object}"
+        ],
+        "random_living_status": [
+            "starclan",
+            "darkforest",
+            "unknownresidence"
+        ],
+        "main_skill_constrict": [
+            "STAR,1",
+            "DREAM,1"
+        ],
+        "relationship_constraint": [
+            "parent\/child"
+        ],
+        "main_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "dead_outsider_parent_to_alive_child",
+        "thoughts": [
+            "Regrets not joining a Clan if it meant being able to raise r_c",
+            "Still doesn't trust Clan cats, but is happy r_c is safe",
+            "Is just glad r_c was saved from meeting the same fate {PRONOUN\/m_c\/subject} did",
+            "Is so grateful to c_n for saving r_c"
+        ],
+        "random_backstory_constraint": [
+            "orphaned1",
+            "orphaned2",
+            "orphaned4",
+            "orphaned5"
+        ],
+        "main_living_status": [
+            "unknownresidence"
+        ],
+        "relationship_constraint": [
+            "parent\/child"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "dead_child_to_alive_child_sibling1",
+        "thoughts": [
+            "Wants to let r_c know {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} okay",
+            "Wishes {PRONOUN\/m_c\/subject} could play with r_c",
+            "Is watching r_c play",
+            "Is watching over r_c, reminiscing over the short time they had together"
+        ],
+        "main_age_constraint": [
+            "newborn",
+            "kitten"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_age_constraint": [
+            "newborn",
+            "kitten"
+        ]
+    },
+    {
+        "id": "dead_child_to_alive_child_sibling2",
+        "thoughts": [
+            "Snuck into r_c's dreams to play with {PRONOUN\/r_c\/object} one last time",
+            "Visits r_c in {PRONOUN\/r_c\/poss} dream to tell {PRONOUN\/r_c\/object} to live for the both of them"
+        ],
+        "main_age_constraint": [
+            "newborn",
+            "kitten"
+        ],
+        "main_skill_constraint": [
+            "DREAM,1",
+            "STAR,1"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_age_constraint": [
+            "newborn",
+            "kitten"
+        ]
+    },
+    {
+        "id": "gen_dead_app",
+        "thoughts": [
+            "Wants to use {PRONOUN\/m_c\/poss} training to help StarClan",
+            "Is sad {PRONOUN\/m_c\/subject} couldn't complete {PRONOUN\/m_c\/poss} training",
+            "Tries to continue {PRONOUN\/m_c\/poss} training on {PRONOUN\/m_c\/poss} own",
+            "Is listening intently to other StarClan cats' stories"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ]
+    },
+    {
+        "id": "dead_app_to_dead_other",
+        "thoughts": [
+            "Is asking r_c questions about {PRONOUN\/r_c\/poss} life",
+            "Is listening to r_c's stories",
+            "Wants to show r_c a new skill {PRONOUN\/m_c\/subject} learned"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "dead_app_to_alive_app_sibling",
+        "thoughts": [
+            "Can't wait to find out r_c's new name",
+            "Wishes {PRONOUN\/m_c\/subject} could train with r_c"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ]
+    },
+    {
+        "id": "dead_app_to_alive_mentor",
+        "thoughts": [
+            "Hopes {PRONOUN\/m_c\/subject} made r_c proud"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "relationship_constraint": [
+            "app\/mentor"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "dead_mentor_to_alive_app",
+        "thoughts": [
+            "Hopes {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has} been a good mentor to r_c",
+            "Wishes {PRONOUN\/m_c\/subject} could have finished training r_c",
+            "Hopes r_c is training well under {PRONOUN\/r_c\/poss} new mentor"
+        ],
+        "relationship_constraint": [
+            "mentor\/app"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_dead_to_alive_sibling1",
+        "thoughts": [
+            "Watches r_c grow and live the life {PRONOUN\/m_c\/subject} could never have",
+            "Wishes {PRONOUN\/m_c\/subject} could tell r_c how proud {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} of {PRONOUN\/r_c\/object}",
+            "Celebrates r_c's successes with {PRONOUN\/r_c\/object}",
+            "Is proud of who r_c has become",
+            "Wants to visit r_c in {PRONOUN\/r_c\/poss} dreams",
+            "Misses being with r_c so much",
+            "Cheered when r_c finally perfected a move {PRONOUN\/r_c\/subject} practiced for moons"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_dead_to_alive_sibling2",
+        "thoughts": [
+            "Visited r_c's dreams recently and is still buzzing about it"
+        ],
+        "main_skill_constraint": [
+            "STAR,1",
+            "DREAM,1"
+        ],
+        "relationship_constraint": [
+            "siblings"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_dead_mediator",
+        "thoughts": [
+            "Is trying to mediate StarClan cats' squabbles",
+            "Wishes {PRONOUN\/m_c\/subject} could help resolve the Clan's issues",
+            "Is watching the Clans for any signs of discord"
+        ],
+        "main_status_constraint": [
+            "mediator",
+            "mediator apprentice"
+        ]
+    },
+    {
+        "id": "dead_refugee_thoughts",
+        "thoughts": [
+            "Is happy to hear {PRONOUN\/m_c\/poss} old leader is in the Dark Forest",
+            "Is so happy to reconnect with the cats from {PRONOUN\/m_c\/poss} old Clan"
+        ],
+        "main_backstory_constraint": [
+            "refugee1"
+        ]
+    }
+]
