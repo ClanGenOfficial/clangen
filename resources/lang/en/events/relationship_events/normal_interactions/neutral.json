@@ -20,24 +20,51 @@
 			"m_c notices some of r_c's fur on {PRONOUN/m_c/poss} fresh-kill.",
 			"Both m_c and r_c startle at a clap of thunder.",
 			"m_c pretends not to see r_c cough up a hairball.",
-			"m_c and r_c are assigned the same task.",
 			"m_c and r_c accidentally startle one another.",
 			"m_c runs into r_c at the medicine den. They both have a tummy ache from two halves of the same prey.",
 			"m_c and r_c get their fur stuck together with some sap.",
 			"r_c smacks a spider off of m_c.",
-			"r_c has to help m_c stop choking on a huge bone.",
-			"m_c and r_c chat idly about the latest meeting.",
 			"m_c and r_c keep making each other yawn.",
 			"A big bug keeps buzzing around m_c and r_c.",
 			"m_c apologizes to r_c, but r_c doesn't know why.",
 			"m_c and r_c try to say tongue twisters.",
 			"m_c and r_c watch drama unfold in camp.",
-			"m_c and r_c have to break up a fight between their Clanmates.",
 			"When a Clanmate passes by holding stinking herbs, both m_c and r_c gag.",
 			"m_c and r_c work together to make sense of something a Clanmate said.",
 			"m_c and r_c realize they were the only ones that saw a shooting star.",
 			"m_c acknowledges r_c with a twitch of {PRONOUN/m_c/poss} whiskers."
 		]
+	},
+	{
+		"id": "neutral_interaction1_b",
+		"interactions": [
+			"m_c and r_c are assigned the same task.",
+			"r_c has to help m_c stop choking on a huge bone.",
+			"m_c and r_c chat idly about the latest meeting.",
+			"m_c and r_c have to break up a fight between their Clanmates."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "neutral_interaction2",
@@ -56,7 +83,6 @@
 			"leader"
 		],
 		"random_status_constraint": [
-			"kitten",
 			"apprentice",
 			"mediator apprentice",
 			"medicine cat apprentice",
@@ -107,7 +133,18 @@
 		],
 		"main_trait_constraint": [
 			"bold"
-		]
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "neutral_interaction6",
@@ -129,11 +166,9 @@
 	{
 		"id": "neutral_interaction7",
 		"interactions": [
-			"m_c doesn't notice r_c leaving camp.",
 			"r_c told a really funny joke, but m_c just looked confused.",
 			"m_c accidentally brings r_c fresh-kill twice.",
 			"r_c has to tell m_c to stop staring at the sun.",
-			"m_c asks r_c what the Warrior Code is again.",
 			"m_c forgets r_c's name.",
 			"m_c can't tell r_c is upset with {PRONOUN/m_c/object}.",
 			"m_c guesses r_c's age, but is wayyyy off.",
@@ -142,6 +177,27 @@
 		"main_trait_constraint": [
 			"oblivious"
 		]
+	},
+	{
+		"id": "neutral_interaction7_b",
+		"interactions": [
+			"m_c doesn't notice r_c leaving camp.",
+			"m_c asks r_c what the Warrior Code is again."
+		],
+		"main_trait_constraint": [
+			"oblivious"
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "neutral_interaction8",
