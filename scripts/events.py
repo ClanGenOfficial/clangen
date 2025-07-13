@@ -1176,6 +1176,7 @@ class Events:
                 game.cur_events_list.append(
                     Single_Event(text, "ceremony", game.clan.deputy.ID)
                 )
+                cat.generate_lead_ceremony()
                 self.ceremony_accessory = True
                 self.gain_accessories(cat)
                 game.clan.deputy = None
@@ -2280,7 +2281,7 @@ class Events:
         if leader_invalid:
             self.perform_ceremonies(
                 game.clan.leader
-            )  # This is where the deputy will be make leader
+            )  # This is where the deputy will be made leader
 
             if game.clan.leader:
                 leader_dead = game.clan.leader.dead
