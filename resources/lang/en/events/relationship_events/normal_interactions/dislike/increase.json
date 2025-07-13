@@ -3,30 +3,56 @@
 		"id": "dislike_inc_low1",
 		"intensity": "low",
 		"interactions": [
+			"m_c and r_c argued about something trivial and neither of them apologized.",
 			"r_c bumped into m_c and didn't even apologize!",
 			"r_c stepped on m_c's paw and pretended not to notice.",
 			"m_c is grossed out by something r_c did.",
 			"m_c doesn't like the way r_c interacts with a Clanmate.",
 			"r_c says something in passing that m_c keeps getting worked up about.",
 			"m_c tried to explain something to r_c, but {PRONOUN/r_c/subject} just didn't understand.",
-			"r_c hit m_c on the face with {PRONOUN/r_c/poss} tail while passing by.",
-			"m_c doesn't think the object that r_c asked {PRONOUN/m_c/object} to find is real.",
-			"m_c got tricked into doing one of r_c's chores.",
 			"When m_c approached r_c, {PRONOUN/r_c/subject} made a weird face.",
-			"Something good happens to m_c and most Clanmates congratulate {PRONOUN/m_c/object}, but r_c doesn't say anything at all."
+			"Something good happened to m_c and while most of {PRONOUN/m_c/poss} Clanmates congratulated {PRONOUN/m_c/object}, r_c said nothing at all."
 		]
 	},
 	{
 		"id": "dislike_inc_low2",
 		"intensity": "low",
 		"interactions": [
-			"m_c had a disagreement with r_c about something or other.",
-			"m_c and r_c argued about something trivial and neither of them apologized.",
-			"m_c said something really rude to r_c.",
 			"m_c and r_c are arguing about who should take the blame for something trivial.",
+			"r_c hit m_c on the face with {PRONOUN/r_c/poss} tail while passing by.",
+			"m_c got tricked into doing one of r_c's chores."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+	},
+	{
+		"id": "dislike_inc_low3",
+		"intensity": "low",
+		"interactions": [
+			"m_c had a disagreement with r_c about something or other.",
+			"m_c said something really rude to r_c.",
 			"m_c didn't tell r_c about the feather stuck to {PRONOUN/r_c/poss} face, so r_c spent the whole day looking silly.",
 			"When m_c tells r_c about a goal {PRONOUN/m_c/subject} {VERB/m_c/have/has}, r_c snickers at it.",
-			"r_c and m_c have a misunderstanding that makes them grumpy for the rest of the day.",
 			"r_c takes the sunny spot that m_c was about to lay in.",
 			"m_c and r_c splash each other in a puddle, but it doesn't look playful...",
 			"m_c's feelings are hurt by something r_c said, but r_c's apology is half-hearted.",
@@ -48,7 +74,7 @@
 			"m_c is tired of interacting with r_c lately.",
 			"After sharing tongues, m_c washed off r_c's scent from {PRONOUN/m_c/poss} pelt.",
 			"A Clanmate notices m_c mocking r_c behind {PRONOUN/r_c/poss} back.",
-			"When m_c needs someone to do {PRONOUN/m_c/object} a favor, {PRONOUN/m_c/subject} never {VERB/m_c/ask/asks} r_c first."
+			"m_c thinks r_c is annoying."
 		]
 	},
 	{
@@ -146,6 +172,34 @@
 		]
 	},
 	{
+		"id": "dislike_inc_med_7",
+		"intensity": [
+			"When m_c needs someone to do {PRONOUN/m_c/object} a favor, {PRONOUN/m_c/subject} never {VERB/m_c/ask/asks} r_c first."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+	},
+	{
 		"id": "dislike_effect_other1",
 		"relationship_constraint": [
 			"dislike_40"
@@ -221,7 +275,8 @@
 			"m_c threatens r_c with never passing {PRONOUN/r_c/poss} assessment!",
 			"m_c tells other cats that r_c is not doing well in {PRONOUN/r_c/poss} training.",
 			"m_c scolds r_c like a kit for something trivial.",
-			"m_c says r_c sets a bad example of a warrior."
+			"m_c says r_c sets a bad example of an apprentice.",
+			"m_c says r_c doesn't deserve to be made a warrior."
 		],
 		"main_status_constraint": [
 			"deputy",
@@ -257,13 +312,9 @@
 		"id": "dislike_inc_high1",
 		"intensity": "high",
 		"interactions": [
-			"m_c thinks r_c is annoying.",
 			"m_c can't stand being around r_c.",
-			"m_c daydreams about r_c being exiled.",
-			"m_c thinks about telling others that r_c broke the code.",
 			"m_c finds fault in everything r_c does.",
 			"m_c always assumes the worst of r_c.",
-			"A Clanmate claims that m_c wants r_c dead.",
 			"The Clan is very uncomfortable whenever m_c talks about r_c.",
 			"m_c makes all kinds of faces whenever r_c is brought up in conversation.",
 			"m_c sighs at the mere mention of r_c."
@@ -275,7 +326,6 @@
 		"interactions": [
 			"m_c had a fight with r_c.",
 			"m_c had a heated argument with r_c and said some very hurtful things.",
-			"m_c and r_c nearly got in a bloody fight if it weren't for the intervention of a Clanmate.",
 			"m_c and r_c are always backtalking to each other.",
 			"m_c and r_c snarl at one another over something trivial.",
 			"r_c told all of m_c's friends something embarrassing about {PRONOUN/m_c/object}.",
@@ -354,13 +404,31 @@
 		"id": "dislike_inc_high6",
 		"intensity": "high",
 		"interactions": [
+			"m_c threatens to give r_c a terrible name."
+		],
+		"main_status_constraint": [
+			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+		"reaction_random_cat": {
+			"platonic": "decrease",
+			"comfortable": "decrease",
+			"admiration": "decrease",
+			"trust": "decrease"
+		}
+	},
+	{
+		"id": "dislike_inc_high7",
+		"intensity": "high",
+		"interactions": [
 			"m_c is scolding r_c.",
 			"m_c is bossing r_c around.",
 			"m_c calls r_c a threat to the safety of the Clan.",
-			"m_c and r_c are arguing about something important and risking the Clan's safety.",
-			"m_c threatens r_c with exile.",
-			"m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor.",
-			"m_c threatens to give r_c a terrible name.",
 			"m_c claims {PRONOUN/m_c/subject} spoke with StarClan and heard bad things about r_c."
 		],
 		"main_status_constraint": [
@@ -376,7 +444,38 @@
 		}
 	},
 	{
-		"id": "dislike_inc_high7",
+		"id": "dislike_inc_high8",
+		"intensity": "high",
+		"interactions": [
+			"m_c and r_c are arguing about something important and risking the Clan's safety.",
+			"m_c threatens r_c with exile.",
+			"m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor."
+		],
+		"main_status_constraint": [
+			"medicine cat",
+			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+		"reaction_random_cat": {
+			"platonic": "decrease",
+			"comfortable": "decrease",
+			"admiration": "decrease",
+			"trust": "decrease"
+		}
+	},
+	{
+		"id": "dislike_inc_high9",
 		"intensity": "high",
 		"interactions": [
 			"m_c thinks {PRONOUN/m_c/subject} should be deputy instead of r_c.",
@@ -397,6 +496,38 @@
 		"also_influences": {
 			"jealousy": "increase"
 		}
+	},
+	{
+		"id": "dislike_inc_high10",
+		"intensity": "high",
+		"interactions": [
+			"m_c daydreams about r_c being exiled.",
+			"m_c thinks about telling others that r_c broke the code.",
+			"A Clanmate claims that m_c wants r_c dead.",
+			"m_c and r_c nearly got in a bloody fight if it weren't for the intervention of a Clanmate."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "dislike_kit_de_med1",
