@@ -466,7 +466,7 @@
             "deputy",
             "leader",
             "elder"
-        ]
+        ],
 		"reaction_random_cat": {
 			"platonic": "decrease",
 			"comfortable": "decrease",
