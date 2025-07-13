@@ -4,7 +4,17 @@
 import i18n
 import ujson
 
-from scripts.events_module.event_filters import event_for_reputation, event_for_cat
+from scripts.cat.enums import CatRank
+from scripts.events_module.event_filters import (
+    event_for_location,
+    event_for_season,
+    event_for_tags,
+    event_for_reputation,
+    event_for_cat,
+    event_for_freshkill_supply,
+    event_for_herb_supply,
+    event_for_clan_relations,
+)
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
@@ -22,13 +32,6 @@ def get_resource_directory(fallback=False):
 
 class GenerateEvents:
     loaded_events = {}
-
-    with open(
-        f"resources/dicts/conditions/event_injuries_distribution.json",
-        "r",
-        encoding="utf-8",
-    ) as read_file:
-        INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
     with open(
         f"resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
@@ -69,6 +72,70 @@ class GenerateEvents:
     @staticmethod
     def clear_loaded_events():
         GenerateEvents.loaded_events = {}
+
+    @staticmethod
+    def generate_short_events(event_triggered, biome):
+        file_path = f"{event_triggered}/{biome}.json"
+
+        try:
+            if file_path in GenerateEvents.loaded_events:
+                return GenerateEvents.loaded_events[file_path]
+            else:
+                events_dict = GenerateEvents.get_short_event_dicts(file_path)
+
+                event_list = []
+                if not events_dict:
+                    return event_list
+                for event in events_dict:
+                    event_text = event["event_text"] if "event_text" in event else None
+                    if not event_text:
+                        event_text = (
+                            event["death_text"] if "death_text" in event else None
+                        )
+
+                    if not event_text:
+                        print(
+                            f"WARNING: some events resources which are used in generate_events have no 'event_text'."
+                        )
+                    event = ShortEvent(
+                        event_id=event["event_id"] if "event_id" in event else "",
+                        location=event["location"] if "location" in event else ["any"],
+                        season=event["season"] if "season" in event else ["any"],
+                        sub_type=event["sub_type"] if "sub_type" in event else [],
+                        tags=event["tags"] if "tags" in event else [],
+                        weight=event["weight"] if "weight" in event else 20,
+                        text=event_text,
+                        new_accessory=(
+                            event["new_accessory"] if "new_accessory" in event else []
+                        ),
+                        m_c=event["m_c"] if "m_c" in event else {},
+                        r_c=event["r_c"] if "r_c" in event else {},
+                        new_cat=event["new_cat"] if "new_cat" in event else [],
+                        injury=event["injury"] if "injury" in event else [],
+                        exclude_involved=(
+                            event["exclude_involved"]
+                            if "exclude_involved" in event
+                            else []
+                        ),
+                        history=event["history"] if "history" in event else [],
+                        relationships=(
+                            event["relationships"] if "relationships" in event else []
+                        ),
+                        outsider=event["outsider"] if "outsider" in event else {},
+                        other_clan=event["other_clan"] if "other_clan" in event else {},
+                        supplies=event["supplies"] if "supplies" in event else [],
+                        new_gender=event["new_gender"] if "new_gender" in event else [],
+                        future_event=event["future_event"]
+                        if "future_event" in event
+                        else {},
+                    )
+                    event_list.append(event)
+
+                # Add to loaded events.
+                GenerateEvents.loaded_events[file_path] = event_list
+                return event_list
+        except:
+            print(f"WARNING: {file_path} was not found, check short event generation")
 
     @staticmethod
     def generate_ongoing_events(event_type, biome, specific_event=None):

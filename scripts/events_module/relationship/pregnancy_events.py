@@ -5,7 +5,7 @@ from typing import Dict, List, Union, Optional
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatGroup, CatRank
+from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial
 from scripts.cat.history import History
 from scripts.cat.names import names, Name
 from scripts.cat_relations.relationship import Relationship
@@ -814,13 +814,15 @@ class Pregnancy_Events:
                 if not blood_parent:
                     # Generate a blood parent if we haven't already.
                     thought = i18n.t(
-                        "conditions.pregnancy.halfblood_kitting_thought",
+                        "conditions.pregnancy.half_blood_kitting_thought",
                         count=kits_amount,
                     )
 
                     blood_parent = create_new_cat(
                         Cat,
-                        rank=random.choice((CatRank.LONER, CatRank.KITTYPET)),
+                        original_social=random.choice(
+                            (CatSocial.LONER, CatSocial.KITTYPET)
+                        ),
                         alive=False,
                         thought=thought,
                         moons=randint(15, 120),

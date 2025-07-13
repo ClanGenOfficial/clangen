@@ -7,7 +7,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 2,
         "event_text": "m_c was practicing {PRONOUN/m_c/poss} tree climbing skills when {PRONOUN/m_c/subject} slipped from a branch. {PRONOUN/m_c/subject/CAP}'{VERB/m_c/re/s} brought home badly injured.",
         "m_c": {
             "status": [
@@ -47,7 +47,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 1,
         "event_text": "m_c was hunting on a night patrol and was nearly carried off by an owl. {PRONOUN/m_c/subject/CAP}'{VERB/m_c/re/s} left badly scratched.",
         "m_c": {
             "status": [
@@ -86,7 +86,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 2,
         "event_text": "r_c dared m_c to climb one of the tallest trees in the territory. The dare left m_c tumbling to the ground and r_c sprinting home for help. ",
         "m_c": {
             "status": [
@@ -180,7 +180,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 30,
+        "frequency": 3,
         "event_text": "m_c was left scratched and scraped after pushing through the thick underbrush.",
         "m_c": {
             "age": [
@@ -217,7 +217,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 1,
         "event_text": "m_c's tail was badly injured by a falling tree.",
         "m_c": {
             "age": [
@@ -260,7 +260,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 30,
+        "frequency": 1,
         "event_text": "A fire rages through the forest. m_c manages to escape, though not without burns.",
         "m_c": {
             "age": [
@@ -307,7 +307,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 30,
+        "frequency": 1,
         "event_text": "The dry greenleaf weather led to a fire starting in camp. m_c dove into the nursery to save r_c and was burnt in the process.",
         "m_c": {
             "age": [
@@ -410,7 +410,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 30,
+        "frequency": 2,
         "event_text": "m_c and r_c played on the ice-covered pond near camp. They weren't quick enough to react to the sound of cracking beneath them, but m_c managed to drag r_c out of the freezing water.",
         "m_c": {
             "status": [
@@ -503,7 +503,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c ran into a branch while following a scent trail. {PRONOUN/m_c/subject/CAP} returned home with an aching head.",
         "m_c": {
             "status": [
@@ -545,7 +545,7 @@
             "leaf-bare",
             "leaf-fall"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was left scratched and scraped after pushing through thorny, bare undergrowth.",
         "m_c": {
             "age": [

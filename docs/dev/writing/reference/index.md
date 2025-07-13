@@ -229,6 +229,9 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
     * `senior adult`
     * `senior`
 
+!!! important
+    Newborns will only be allowed in an event if they are explicitly included in the event as an allowed age. 
+
 === "Basic Statuses"
 
     > * `newborn`

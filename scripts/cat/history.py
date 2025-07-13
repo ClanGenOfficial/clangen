@@ -47,15 +47,11 @@ class History:
         if self.murder:
             for killed in self.murder.get("is_murderer", []):
                 if isinstance(killed["revealed"], bool):
-                    new_dict = {"to_clan": False, "aware_individuals": []}
-                    if killed["revealed"]:
-                        new_dict["to_clan"] = True
+                    new_dict = {"to_clan": killed["revealed"], "aware_individuals": []}
                     killed["revealed"] = new_dict
             for death in self.murder.get("is_victim", []):
                 if isinstance(death["revealed"], bool):
-                    new_dict = {"to_clan": False, "aware_individuals": []}
-                    if death["revealed"]:
-                        new_dict["to_clan"] = True
+                    new_dict = {"to_clan": death["revealed"], "aware_individuals": []}
                     death["revealed"] = new_dict
 
         """ 
@@ -443,6 +439,10 @@ class History:
             self.murder["is_murderer"] = []
         if "is_victim" not in victim.history.murder:
             victim.history.murder["is_victim"] = []
+        else:
+            print(
+                f"WARNING: victim cat: {victim.ID} already has a murder history - as the victim!"
+            )
 
         self.murder["is_murderer"].append(
             {
@@ -473,6 +473,8 @@ class History:
         :param clan_reveal: set to True if the whole Clan now knows about the murder
         :param aware_individuals: if only individual cats are learning about the murder, give a list of their cat objects
         """
+        if aware_individuals is None:
+            aware_individuals = []
 
         for murder in self.murder["is_murderer"]:
             if murder["victim"] == victim.ID:
@@ -497,17 +499,15 @@ class History:
         """
         text = ""
         if murder["revealed"]["to_clan"]:
-            text = i18n.t("cat.history.murder_revealed_to_clan", count=1)
-        else:
-            if murder["revealed"]["aware_individuals"]:
-                individuals = [
-                    Cat.fetch_cat(c).name
-                    for c in murder["revealed"]["aware_individuals"]
-                ]
-                names = adjust_list_text(individuals)
-                text = i18n.t("cat.history.murder_revealed_to_individual", name=names)
+            return i18n.t("cat.history.murder_revealed_to_clan")
+        if murder["revealed"]["aware_individuals"]:
+            individuals = [
+                Cat.fetch_cat(c).name for c in murder["revealed"]["aware_individuals"]
+            ]
+            names = adjust_list_text(individuals)
+            text = f"{i18n.t('cat.history.murder_revealed_to_individual', name=names)} "
 
-            text += i18n.t("cat.history.murder_revealed_to_clan", count=0)
+        text += i18n.t("cat.history.murder_not_revealed_to_clan")
         return text
 
     def add_lead_ceremony(self):

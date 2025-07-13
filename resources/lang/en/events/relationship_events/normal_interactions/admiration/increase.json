@@ -7,20 +7,48 @@
 			"m_c noticed r_c is doing {PRONOUN/r_c/poss} best today.",
 			"m_c appreciates r_c's helpful attitude.",
 			"m_c was flattered by r_c's politeness this morning.",
-			"m_c is impressed by r_c helping others today.",
-			"m_c sees r_c help a Clanmate get unstuck from some brambles.",
-			"m_c notices that r_c is fixing a damaged part of the camp without being asked.",
 			"m_c sees a glimmer of determination in r_c's eyes.",
 			"m_c is motivated by r_c's big smile.",
 			"r_c's good morning to m_c meant a lot to {PRONOUN/m_c/object}.",
-			"When tucking in for the night, m_c saw that r_c fixed {PRONOUN/m_c/poss} nest.",
-			"After the Gathering, m_c notices that r_c is making sure everyone got home.",
 			"m_c can tell how brave r_c is being about something important.",
 			"m_c thinks r_c is a good singer."
 		]
 	},
 	{
 		"id": "admire_inc_low2",
+		"intensity": "low",
+		"interactions": [
+			"m_c is impressed by r_c helping others today.",
+			"m_c sees r_c help a Clanmate get unstuck from some brambles.",
+			"m_c notices that r_c is fixing a damaged part of the camp without being asked.",
+			"When tucking in for the night, m_c saw that r_c fixed {PRONOUN/m_c/poss} nest.",
+			"After the Gathering, m_c notices that r_c is making sure everyone got home."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+	},
+	{
+		"id": "admire_inc_low3",
 		"intensity": "low",
 		"interactions": [
 			"m_c mews congratulations to r_c for a job well done.",
@@ -41,7 +69,7 @@
 		}
 	},
 	{
-		"id": "admire_inc_low3",
+		"id": "admire_inc_low4",
 		"intensity": "low",
 		"interactions": [
 			"m_c wants to be just like r_c someday.",
@@ -55,6 +83,7 @@
 			"m_c daydreams about sharing a suffix with r_c."
 		],
 		"main_status_constraint": [
+			"kitten",
 			"apprentice",
 			"mediator apprentice",
 			"medicine cat apprentice"
@@ -82,7 +111,18 @@
 			"m_c didn't know that r_c was so talented.",
 			"m_c thinks that r_c is very creative.",
 			"m_c is told about r_c's bravery during a recent time of struggle."
-		]
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "admire_inc_medium2",
@@ -100,7 +140,29 @@
 		],
 		"reaction_random_cat": {
 			"admiration": "increase"
-		}
+		},
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "admire_med_inc_medium1",
@@ -355,7 +417,29 @@
 		],
 		"reaction_random_cat": {
 			"admiration": "increase"
-		}
+		},
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "admire_inc_high3",

@@ -646,7 +646,9 @@ class Cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
 
-        if game.clan and self.status.alive_in_player_clan:
+        # handle grief
+        # since we just yeeted them to their afterlife, we gotta check their previous group affiliation, not current
+        if game.clan and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN:
             self.grief(body)
 
         # mark the sprite as outdated
@@ -1260,77 +1262,50 @@ class Cat:
 
         # if we have relations, then make sure we only take the top 8
         if dead_relations:
-            i = 0
-            for rel in dead_relations:
+            for i, rel in enumerate(dead_relations):
                 if i == 8:
                     break
                 if rel.cat_to.status.is_leader:
                     life_giving_leader = rel.cat_to
                     continue
                 life_givers.append(rel.cat_to.ID)
-                i += 1
 
-        cats_in_starclan = []
-        if starclan:
-            cats_in_starclan = [
-                self.fetch_cat(i)
-                for i in game.clan.clan_cats
-                if self.fetch_cat(i)
-                and i not in life_givers
-                and self.fetch_cat(i).status.group == CatGroup.STARCLAN
-            ]
-        cats_in_darkforest = []
-        if not starclan:
-            cats_in_darkforest = [
-                self.fetch_cat(i)
-                for i in game.clan.clan_cats
-                if self.fetch_cat(i)
-                and i not in life_givers
-                and self.fetch_cat(i).status.group == CatGroup.DARK_FOREST
-            ]
+        cats_in_afterlife = [
+            self.fetch_cat(i)
+            for i in game.clan.clan_cats
+            if self.fetch_cat(i)
+            and i not in life_givers
+            and self.fetch_cat(i).status.group
+            == (CatGroup.STARCLAN if starclan else CatGroup.DARK_FOREST)
+        ]
 
         # check amount of life givers, if we need more, then grab from the other dead cats
         if len(life_givers) < 8:
             amount = 8 - len(life_givers)
 
-            if starclan:
-                possible_sc_cats = [
-                    i
-                    for i in cats_in_starclan
-                    if i.status.rank not in (CatRank.LEADER, CatRank.NEWBORN)
-                ]
-                # this part just checks how many SC cats are available, if there aren't enough to fill all the slots,
-                # then we just take however many are available
+            possible_dead_cats = [
+                i
+                for i in cats_in_afterlife
+                if i.status.rank not in (CatRank.LEADER, CatRank.NEWBORN)
+            ]
+            # this part just checks how many cats are available, if there aren't enough to fill all the slots,
+            # then we just take however many are available
 
-                if len(possible_sc_cats) - 1 < amount:
-                    extra_givers = possible_sc_cats
-                else:
-                    extra_givers = sample(possible_sc_cats, k=amount)
+            if len(possible_dead_cats) - 1 < amount:
+                extra_givers = possible_dead_cats
             else:
-                possible_df_cats = [
-                    i
-                    for i in cats_in_darkforest
-                    if i.status.rank not in (CatRank.LEADER, CatRank.NEWBORN)
-                ]
-                if len(possible_df_cats) - 1 < amount:
-                    extra_givers = possible_df_cats
-                else:
-                    extra_givers = sample(possible_df_cats, k=amount)
+                extra_givers = sample(possible_dead_cats, k=amount)
 
             life_givers.extend(extra_givers)
 
         # making sure we have a leader at the end
         ancient_leader = False
-        if not life_giving_leader:
-            if starclan:
-                leaders = [x for x in cats_in_starclan if x.status.is_leader]
-            else:
-                leaders = [x for x in cats_in_darkforest if x.status.is_leader]
-
+        leaders = [x for x in cats_in_afterlife if x.status.is_leader]
+        if not life_giving_leader and leaders:
             # choosing if the life giving leader will be the oldest leader or previous leader
             coin_flip = randint(1, 2)
             if coin_flip == 1:
-                # pick the oldest leader in SC
+                # pick the oldest leader
                 leaders.sort(key=lambda x: -1 * int(x.dead_for))
                 ancient_leader = True
                 life_giving_leader = leaders[0]

@@ -7,7 +7,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 1,
         "event_text": "The desert is a deadly place for a lone wanderer. n_c:0 readily accepts m_c's offer to join c_n.",
         "m_c": {
             "age": [
@@ -45,7 +45,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 1,
         "event_text": "m_c finds a wandering loner while on patrol. Though c_n may not be fond of outsiders, no cat can deny new blood is hard to come by and inevitably needed. n_c:0 is allowed to join the Clan.",
         "m_c": {
             "age": [
@@ -74,7 +74,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 1,
         "event_text": "m_c finds a wandering loner while on patrol. New blood is hard to come by in the desert, and n_c:0 is readily accepted into the Clan.",
         "m_c": {
             "age": [
@@ -103,7 +103,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 1,
         "event_text": "m_c finds an abandoned litter while on patrol and rushes them back to camp. Such young cats were lucky to have survived under the hot desert sun.",
         "m_c": {
             "age": [

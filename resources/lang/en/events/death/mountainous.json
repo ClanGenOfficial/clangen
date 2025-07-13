@@ -7,7 +7,7 @@
             "leaf-bare"
         ],
         "tags": ["all_lives", "no_body"],
-        "weight": 20,
+        "frequency": 1,
         "event_text": "m_c was buried alive when an avalanche hit the camp.",
         "m_c": {
             "dies": true
@@ -26,7 +26,7 @@
         "season": ["any"],
         "sub_type": [],
         "tags": ["clan:kitten"],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c snuck out of camp and was lost to the strange, angular tunnels, nothing left to find but blood and weasel-scent.",
         "m_c": {
             "age": ["kitten"],

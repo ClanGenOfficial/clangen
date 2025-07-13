@@ -47,7 +47,6 @@ from scripts.utility import (
     change_clan_reputation,
     find_alive_cats_with_rank,
     get_living_clan_cat_count,
-    get_random_moon_cat,
     ceremony_text_adjust,
     get_current_season,
     adjust_list_text,
@@ -132,10 +131,10 @@ class Events:
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
-            if cat.status.alive_in_player_clan:
-                self.one_moon_cat(cat)
-            else:
+            if not cat.status.group:
                 self.one_moon_outside_cat(cat)
+            elif cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
+                self.one_moon_cat(cat)
 
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
@@ -1688,9 +1687,6 @@ class Events:
             self.ceremony_accessory = False
             return
 
-        # find random_cat
-        random_cat = get_random_moon_cat(Cat, main_cat=cat)
-
         # chance to gain acc
         acc_chances = constants.CONFIG["accessory_generation"]
         chance = acc_chances["base_acc_chance"]
@@ -1741,7 +1737,6 @@ class Events:
             create_short_event(
                 event_type="misc",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=sub_type,
             )
 
@@ -1860,16 +1855,10 @@ class Events:
 
         chance = max(chance, 1)
 
-        # choose other cat
-        random_cat = get_random_moon_cat(
-            Cat, main_cat=cat, parent_child_modifier=True, mentor_app_modifier=True
-        )
-
         if constants.CONFIG["event_generation"]["debug_type_override"] == "new_cat":
             create_short_event(
                 event_type="new_cat",
                 main_cat=cat,
-                random_cat=random_cat,
             )
             return
 
@@ -1883,7 +1872,6 @@ class Events:
             create_short_event(
                 event_type="new_cat",
                 main_cat=cat,
-                random_cat=random_cat,
             )
 
     def other_interactions(self, cat):
@@ -1891,11 +1879,9 @@ class Events:
         TODO: DOCS
         """
         if constants.CONFIG["event_generation"]["debug_type_override"] == "misc":
-            random_cat = get_random_moon_cat(Cat, main_cat=cat)
-            create_short_event(
+            create_short_event.handle_event(
                 event_type="misc",
                 main_cat=cat,
-                random_cat=random_cat,
             )
             return
 
@@ -1903,12 +1889,9 @@ class Events:
         if hit:
             return
 
-        random_cat = get_random_moon_cat(Cat, main_cat=cat)
-
-        create_short_event(
+        create_short_event.handle_event(
             event_type="misc",
             main_cat=cat,
-            random_cat=random_cat,
         )
 
     def handle_injuries_or_general_death(self, cat):
@@ -1916,20 +1899,14 @@ class Events:
         decide if cat dies
         """
 
-        # try to get the random_cat
-        random_cat = get_random_moon_cat(
-            Cat, cat, parent_child_modifier=True, mentor_app_modifier=True
-        )
-
         if constants.CONFIG["event_generation"]["debug_type_override"] == "death":
             create_short_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
             )
             return
         elif constants.CONFIG["event_generation"]["debug_type_override"] == "injury":
-            Condition_Events.handle_injuries(cat, random_cat)
+            Condition_Events.handle_injuries(cat)
             return
 
         # chance to kill leader: 1/50 by default
@@ -1944,7 +1921,6 @@ class Events:
             create_short_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
             )
 
             return True
@@ -1959,7 +1935,6 @@ class Events:
             create_short_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=["old_age"],
             )
             return True
@@ -1968,7 +1943,6 @@ class Events:
             create_short_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=["old_age"],
             )
             return True
@@ -1979,7 +1953,6 @@ class Events:
                 create_short_event(
                     event_type="birth_death",
                     main_cat=cat,
-                    random_cat=random_cat,
                     sub_type=["mass_death"],
                 )
                 return True
@@ -1997,11 +1970,10 @@ class Events:
             create_short_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
             )
             return True
         else:
-            triggered_death = Condition_Events.handle_injuries(cat, random_cat)
+            triggered_death = Condition_Events.handle_injuries(cat)
 
             return triggered_death
 
@@ -2278,8 +2250,6 @@ class Events:
         if cat.age.is_baby():
             return
 
-        random_cat = get_random_moon_cat(Cat, main_cat=cat)
-
         transing_chance = constants.CONFIG["transition_related"]
         chance = transing_chance["base_trans_chance"]
         if cat.age in [CatAge.ADOLESCENT]:
@@ -2292,7 +2262,6 @@ class Events:
             create_short_event(
                 event_type="misc",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=sub_type,
             )
 
