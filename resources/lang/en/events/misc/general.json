@@ -425,7 +425,7 @@
             {
                 "event_type": "death",
                 "pool": {
-                    "subtype": [
+                    "sub_type": [
                         "murder"
                     ],
                     "event_id": [],
@@ -981,6 +981,9 @@
         "sub_type": [
             "hidden_murder_reveal"
         ],
+        "tags": [
+            "clan_wide"
+        ],
         "frequency": 4,
         "event_text": "r_c announces that mur_c's death was no accident. m_c confesses there and then, detailing the act as if mur_c was a piece of fresh-kill.",
         "m_c": {
@@ -1121,7 +1124,7 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "m_c unexpectedly breaks mid-conversation, confessing in a rush that {PRONOUN/m_c/subject} could have saved mur_c... but {PRONOUN/m_c/subject} panicked. In that way, m_c believes, {PRONOUN/m_c/subject} murdered mur_c.",
         "m_c": {
             "age": [
@@ -1232,15 +1235,10 @@
     {
         "event_id": "gen_misc_hiddenmurderreveal_simple1",
         "location": [
-            "plains",
-            "mountainous",
-            "beach",
-            "forest_camp4"
+            "any"
         ],
         "season": [
-            "newleaf",
-            "greenleaf",
-            "leaf-fall"
+            "any"
         ],
         "sub_type": [
             "hidden_murder_reveal"
@@ -1310,6 +1308,9 @@
         "sub_type": [
             "hidden_murder_reveal"
         ],
+        "tags": [
+            "clan_wide"
+        ],
         "frequency": 3,
         "event_text": "r_c tells m_c that mur_c forgives {PRONOUN/m_c/object}. m_c's tearful admission of guilt finally makes the vision from StarClan make sense.",
         "m_c": {
@@ -1351,8 +1352,10 @@
             "any"
         ],
         "sub_type": [
-            "murder_reveal",
             "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
         ],
         "frequency": 3,
         "event_text": "r_c yowls in shock, stammering that mur_c just appeared to {PRONOUN/r_c/object} and said {PRONOUN/mur_c/subject} {VERB/mur_c/were/was} murdered by m_c!",
@@ -7568,7 +7571,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7602,7 +7605,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7636,7 +7639,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -8689,7 +8692,7 @@
             "newleaf",
             "greenleaf"
         ],
-        "subtype": [
+        "sub_type": [
             "accessory"
         ],
         "tags": [
