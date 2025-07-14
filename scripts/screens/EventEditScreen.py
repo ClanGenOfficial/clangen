@@ -2983,7 +2983,10 @@ class EventEditScreen(Screens):
 
         # INVOLVED CATS
         if (
-            "murder_reveal" in pool["subtype"]
+            (
+                "murder_reveal" in pool["subtype"]
+                or "hidden_murder_reveal" in pool["subtype"]
+            )
             or (selected_constraints["event_type"] == "misc" and not pool["subtype"])
             and "mur_c" not in selected_constraints["involved_cats"]
         ):
@@ -3734,7 +3737,10 @@ class EventEditScreen(Screens):
                 f"subtype:{block_info['pool']['subtype']}"
             )
 
-            if "murder_reveal" in block_info["pool"]["subtype"]:
+            if (
+                "murder_reveal" in block_info["pool"]["subtype"]
+                or "hidden_murder_reveal" in block_info["pool"]["subtype"]
+            ):
                 block_info["involved_cats"] = {
                     "m_c": "r_c",
                     "mur_c": "m_c",
