@@ -242,7 +242,12 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
 
 
 def event_for_cat(
-    cat_info: dict, cat, cat_group: list = None, event_id: str = None, p_l=None
+    cat_info: dict,
+    cat,
+    cat_group: list = None,
+    event_id: str = None,
+    p_l=None,
+    injuries: list = None,
 ) -> bool:
     """
     checks if a cat is suitable for the event
@@ -251,6 +256,7 @@ def event_for_cat(
     :param cat_group: the group of cats being included within the event
     :param event_id: if event comes with an id, include it here
     :param p_l: if event is a patrol, include patrol leader object here
+    :param injuries: list of injuries that the event may give this cat
     """
 
     func_lookup = {
@@ -270,8 +276,35 @@ def event_for_cat(
         if not func_lookup[func]:
             return False
 
+    # checking injuries
+    if injuries:
+        if "mangled tail" in injuries and (
+            "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars
+        ):
+            return False
+        if "torn ear" in injuries and "NOEAR" in cat.pelt.scars:
+            return False
+
+    # checking relationships
     if cat_info.get("relationship_status", []):
-        if not filter_relationship_type(
+        for status in cat_info.get("relationship_status", []):
+            # just some preliminary checks to see if any of these are impossible for this cat
+            if status == "siblings" and not cat.get_siblings():
+                return False
+            elif status == "mates" and not cat.mate:
+                return False
+            elif status == "mates_with_pl" and p_l.ID not in cat.mate:
+                return False
+            elif status == "parent/child" and not cat.get_children():
+                return False
+            elif status == "child/parent" and not cat.get_parents():
+                return False
+            elif status == "mentor/app" and not cat.apprentice:
+                return False
+            elif status == "app/mentor" and not cat.mentor:
+                return False
+
+        if cat_group and not filter_relationship_type(
             group=cat_group,
             filter_types=cat_info["relationship_status"],
             event_id=event_id,
@@ -394,14 +427,24 @@ def _check_cat_gender(cat, genders: list) -> bool:
     return False
 
 
-def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=None):
+def cat_for_event(
+    constraint_dict: dict,
+    possible_cats: list,
+    comparison_cat=None,
+    comparison_cat_rel_status: list = None,
+    injuries: list = None,
+    return_id: bool = True,
+):
     """
     Checks the given cat list against constraint_dict to find any eligible cats.
     Returns a single cat ID chosen from eligible cats.
-    :param constraint_dict: Can include age, status, skill, trait, and backstory lists
+    :param constraint_dict: Can include age, status, skill, not_skill, trait, not_trait, relationship_status, and backstory lists
     :param possible_cats: List of possible cat objects
     :param comparison_cat: If you need to search for cats with a specific relationship status, then include a comparison
      cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
+    :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
+    :param injuries: List of injuries a cat may get from the event
+    :param return_id: If true, return cat ID instead of object
     """
     # gather funcs to use
     func_dict = {
@@ -415,31 +458,92 @@ def cat_for_event(constraint_dict: dict, possible_cats: list, comparison_cat=Non
     }
 
     # run funcs
-    allowed_cats = []
+    allowed_cats = possible_cats
     for param in func_dict:
         if param not in constraint_dict:
             continue
-        allowed_cats = func_dict[param](
-            possible_cats, tuple(constraint_dict.get(param))
-        )
+        allowed_cats = func_dict[param](allowed_cats, tuple(constraint_dict.get(param)))
 
-        # if the list is emptied, break
+        # if the list is emptied, return
         if not allowed_cats:
-            break
+            return None
 
-    # rel status check
-    if comparison_cat and constraint_dict.get("relationship_status", []):
+    # find cats that can get the injuries that will be given
+    if injuries:
         for cat in allowed_cats.copy():
-            if not filter_relationship_type(
-                group=[cat, comparison_cat],
-                filter_types=constraint_dict["relationship_status"],
+            if "mangled tail" in injuries and (
+                "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars
             ):
                 allowed_cats.remove(cat)
+            if "torn ear" in injuries and "NOEAR" in cat.pelt.scars:
+                allowed_cats.remove(cat)
+
+        # if the list is emptied, return
+        if not allowed_cats:
+            return None
+
+    # rel status check
+    if comparison_cat_rel_status or constraint_dict.get("relationship_status"):
+        # preliminary check to see if we can just skip to gathering certain rel groups
+        allowed_cats, comparison_cat_rel_status = _get_cats_with_rel_status(
+            allowed_cats, comparison_cat, comparison_cat_rel_status
+        )
+
+        for cat in allowed_cats.copy():
+            # checking comparison cat's rel values toward cat
+            if comparison_cat_rel_status:
+                if not filter_relationship_type(
+                    group=[comparison_cat, cat], filter_types=comparison_cat_rel_status
+                ):
+                    allowed_cats.remove(cat)
+                    continue
+
+            # now we can check cat's rel toward comparison_cat
+            if constraint_dict.get("relationship_status"):
+                if not filter_relationship_type(
+                    group=[cat, comparison_cat],
+                    filter_types=constraint_dict["relationship_status"],
+                ):
+                    allowed_cats.remove(cat)
+                    continue
 
     if not allowed_cats:
         return None
 
-    return choice(allowed_cats).ID
+    cat = choice(allowed_cats)
+
+    if return_id:
+        return cat.ID
+    else:
+        return cat
+
+
+def _get_cats_with_rel_status(cat_list: list, cat, rel_status_list: list) -> list:
+    # theoretically none of these should ever be used together
+    if "siblings" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.get_siblings()]
+        rel_status_list.remove("siblings")
+    elif "mates" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.mate]
+        rel_status_list.remove("mates")
+    elif "not_mates" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID not in cat.mate]
+        rel_status_list.remove("not_mates")
+    elif "parent/child" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.get_children()]
+        rel_status_list.remove("parent/child")
+    elif "child/parent" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.get_parents()]
+        rel_status_list.remove("child/parent")
+    # but these could be used alongside the above tags, so they get their own if/elif
+    if "mentor/app" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.apprentice]
+        rel_status_list.remove("mentor/app")
+    elif "app/mentor" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.mentor]
+        rel_status_list.remove("app/mentor")
+
+    return cat_list, rel_status_list
 
 
 def _get_cats_with_age(cat_list: list, ages: tuple) -> list:
@@ -520,7 +624,7 @@ def _get_cats_with_trait(cat_list: list, traits: tuple) -> list:
     if not traits:
         return cat_list
 
-    return [kitty for kitty in cat_list if kitty.trait in traits]
+    return [kitty for kitty in cat_list if kitty.personality.trait in traits]
 
 
 def _get_cats_without_trait(cat_list: list, traits: tuple) -> list:
@@ -530,7 +634,7 @@ def _get_cats_without_trait(cat_list: list, traits: tuple) -> list:
     if not traits:
         return cat_list
 
-    return [kitty for kitty in cat_list if kitty.trait not in traits]
+    return [kitty for kitty in cat_list if kitty.personality.trait not in traits]
 
 
 def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:

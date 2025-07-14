@@ -11,7 +11,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was murdered. The culprit is unknown.",
         "m_c": {
             "status": [
@@ -111,7 +111,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was murdered. r_c stands over {PRONOUN/m_c/object}, blood dripping from {PRONOUN/r_c/poss} pelt.",
         "m_c": {
             "age": [
@@ -211,7 +211,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was murdered by r_c in cold blood.",
         "m_c": {
             "age": [
@@ -314,7 +314,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was murdered by r_c in cold blood. r_c has made the death look accidental.",
         "m_c": {
             "status": [
@@ -418,7 +418,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} deathberries.",
         "m_c": {
             "status": [
@@ -517,7 +517,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} foxglove seeds.",
         "m_c": {
             "age": [
@@ -619,7 +619,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} nightshade berries.",
         "m_c": {
             "age": [
@@ -723,7 +723,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "r_c killed m_c by feeding {PRONOUN/m_c/object} water hemlock.",
         "m_c": {
             "age": [
@@ -825,7 +825,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "r_c killed m_c by consciously giving {PRONOUN/m_c/object} the wrong herbs.",
         "m_c": {
             "age": [
@@ -924,7 +924,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c was found dead near a fox den.",
         "m_c": {
             "age": [
@@ -966,7 +966,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c was bitten by a snake and succumbed to the venom.",
         "m_c": {
             "age": [
@@ -995,7 +995,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c saved r_c from a snake but was bitten in the process. The venom killed {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
@@ -1053,7 +1053,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c went missing and was found dead out in the territory.",
         "m_c": {
             "dies": true
@@ -1079,7 +1079,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was found dead near the o_c_n border.",
         "m_c": {
             "not_skill": [
@@ -1114,7 +1114,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "o_c_n attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
         "m_c": {
             "dies": true
@@ -1149,7 +1149,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "o_c_n attempted to break into the camp. m_c died defending the nursery, r_c huddled beneath {PRONOUN/m_c/poss} cooling body.",
         "m_c": {
             "age": [
@@ -1247,7 +1247,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was burnt alive while trying to save r_c from a fire.",
         "m_c": {
             "age": [
@@ -1331,7 +1331,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died after catching greencough.",
         "m_c": {
             "dies": true
@@ -1357,7 +1357,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died from infected wounds.",
         "m_c": {
             "age": [
@@ -1389,7 +1389,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c and r_c die from eating tainted prey.",
         "m_c": {
             "age": [
@@ -1430,7 +1430,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c fell into the river. r_c drowned alongside m_c while trying to rescue {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
@@ -1487,7 +1487,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c and r_c are killed by a gang of rogues.",
         "m_c": {
             "age": [
@@ -1533,7 +1533,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "r_c and m_c die of greencough.",
         "m_c": {
             "age": [
@@ -1575,7 +1575,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "r_c and m_c die of yellowcough.",
         "m_c": {
             "age": [
@@ -1617,7 +1617,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A bad case of greencough strikes the Clan, taking r_c and m_c's lives.",
         "m_c": {
             "age": [
@@ -1657,7 +1657,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c sneaked out of camp, intending to discover more about {PRONOUN/m_c/poss} origins. After a long morning search, c_n found {PRONOUN/m_c/poss} cooling body.",
         "m_c": {
             "age": [
@@ -1701,7 +1701,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c sacrificed {PRONOUN/m_c/self} for r_c in a battle with o_c_n.",
         "m_c": {
             "status": [
@@ -1776,7 +1776,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c threw {PRONOUN/m_c/self} in front of an oncoming attack meant for r_c, taking the deadly blow instead.",
         "m_c": {
             "status": [
@@ -1851,7 +1851,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c stayed behind and fought a losing battle to give r_c time to escape.",
         "m_c": {
             "status": [
@@ -1926,7 +1926,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c used {PRONOUN/m_c/poss} own body to shield r_c from a surprise o_c_n ambush, even though it meant certain death.",
         "m_c": {
             "status": [
@@ -2004,7 +2004,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed while investigating enemy territory.",
         "m_c": {
             "status": [
@@ -2042,7 +2042,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c drowned in a river while trying to escape from a sudden o_c_n attack.",
         "m_c": {
             "status": [
@@ -2083,7 +2083,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c fell into a pit trap set by o_c_n's warriors.",
         "m_c": {
             "age": [
@@ -2122,7 +2122,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c was hit by a monster while escaping across a Thunderpath from o_c_n warriors.",
         "m_c": {
             "status": [
@@ -2164,7 +2164,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c wandered out into the territory and was later found dead, a peaceful expression on {PRONOUN/m_c/poss} face.",
         "m_c": {
             "age": [
@@ -2196,7 +2196,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was found stiff and curled up in {PRONOUN/m_c/poss} nest. It seems {PRONOUN/m_c/subject} died in {PRONOUN/m_c/poss} sleep.",
         "m_c": {
             "age": [
@@ -2228,7 +2228,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c faded more and more as the days went by, until one day, {PRONOUN/m_c/subject} {VERB/m_c/were/was} found dead in {PRONOUN/m_c/poss} nest.",
         "m_c": {
             "age": [
@@ -2258,7 +2258,7 @@
             "old_age"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c is suddenly struck by a sharp pain in {PRONOUN/m_c/poss} chest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} found later that day, cold.",
         "m_c": {
             "age": [
@@ -2294,7 +2294,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n found their bodies still wrapped around each other in the morning.",
         "m_c": {
             "age": [
@@ -2340,7 +2340,7 @@
             "no_body",
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c met their end to the long claws of a predator. Later, c_n found only {PRONOUN/m_c/poss} blood and a foul smell.",
         "m_c": {
             "age": [
@@ -2373,7 +2373,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c was murdered by r_c in cold blood in the hope of taking {PRONOUN/m_c/poss} place.",
         "m_c": {
             "status": [
@@ -2476,7 +2476,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident and hopes to take {PRONOUN/m_c/poss} place.",
         "m_c": {
             "status": [
@@ -2581,7 +2581,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Lured by trickery and deceptive words, m_c was shoved into a ravine by r_c, killing {PRONOUN/m_c/object}.",
         "m_c": {
             "status": [
@@ -2674,7 +2674,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "r_c tricked m_c into playing on thin ice. {PRONOUN/r_c/subject/CAP} watched closely as m_c disappeared beneath the surface.",
         "m_c": {
             "age": [
@@ -2782,7 +2782,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "Last c_n heard, m_c and r_c were going out to play. They don't return, and the ice on a nearby pond is cracked.",
         "m_c": {
             "age": [
@@ -2852,7 +2852,7 @@
             "no_body",
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c fell into a sinkhole and was never seen again.",
         "m_c": {
             "age": [
@@ -2887,7 +2887,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c fell into a hidden burrow and was buried alive.",
         "m_c": {
             "dies": true
@@ -2915,7 +2915,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c was buried alive when a burrow collapsed on {PRONOUN/m_c/object}.",
         "m_c": {
             "dies": true
@@ -2941,7 +2941,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died from dehydration and heat stroke.",
         "m_c": {
             "age": [
@@ -2975,7 +2975,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c froze to death during a harsh snowstorm.",
         "m_c": {
             "dies": true
@@ -3001,7 +3001,7 @@
             "leaf-bare"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was found dead and cold in the snow.",
         "m_c": {
             "dies": true
@@ -3027,7 +3027,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was walking on the ice, when it cracked and {PRONOUN/m_c/subject} fell in.",
         "m_c": {
             "age": [
@@ -3065,7 +3065,7 @@
             "no_body",
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c was buried alive in a cramped rabbit burrow by o_c_n warriors.",
         "m_c": {
             "age": [
@@ -3105,7 +3105,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died in a border skirmish against o_c_n.",
         "m_c": {
             "status": [
@@ -3147,7 +3147,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "Blinded by blood in the midst of battle, r_c fatally mistakes m_c for a foe.",
         "m_c": {
             "status": [
@@ -3228,7 +3228,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed while trying to save the medicine cat of o_c_n.",
         "m_c": {
             "status": [
@@ -3284,7 +3284,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed by the deputy of o_c_n.",
         "m_c": {
             "status": [
@@ -3323,7 +3323,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed while trying to save the deputy of o_c_n.",
         "m_c": {
             "status": [
@@ -3378,7 +3378,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed by the leader of o_c_n.",
         "m_c": {
             "status": [
@@ -3417,7 +3417,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed while trying to save the leader of o_c_n.",
         "m_c": {
             "status": [
@@ -3472,7 +3472,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c and r_c are killed in a border skirmish against o_c_n.",
         "m_c": {
             "status": [
@@ -3530,7 +3530,7 @@
             "all_lives",
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was buried alive in an avalanche.",
         "m_c": {
             "age": [
@@ -3569,7 +3569,7 @@
             "all_lives",
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was buried alive in a landslide.",
         "m_c": {
             "age": [
@@ -3601,7 +3601,7 @@
             "newleaf"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was buried alive in a mudslide.",
         "m_c": {
             "age": [
@@ -3637,7 +3637,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c slipped off a cliff onto the sharp rocks at the bottom.",
         "m_c": {
             "age": [
@@ -3678,7 +3678,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c slipped off a cliff onto the sharp rocks at the bottom and couldn't recover.",
         "m_c": {
             "status": [
@@ -3709,7 +3709,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom.",
         "m_c": {
             "status": [
@@ -3816,7 +3816,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was killed by a falling boulder that o_c_n warriors pushed from a cliff above {PRONOUN/m_c/object}.",
         "m_c": {
             "status": [
@@ -3858,7 +3858,7 @@
         "tags": [
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "r_c yowled a warning as {PRONOUN/r_c/subject} saw a circling shadow, right above m_c. r_c couldn't get there before m_c was carried high into the sky.",
         "m_c": {
             "age": [
@@ -3904,7 +3904,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was killed defending r_c from a hawk.",
         "m_c": {
             "age": [
@@ -3992,7 +3992,7 @@
         "tags": [
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was carried off by an eagle, never to be seen again.",
         "m_c": {
             "age": [
@@ -4027,7 +4027,7 @@
             "all_lives",
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c fell into a river and was swept away by the current, never to be seen again.",
         "m_c": {
             "age": [
@@ -4059,7 +4059,7 @@
         "tags": [
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was taken by a hawk, never to be seen again.",
         "m_c": {
             "age": [
@@ -4089,7 +4089,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 30,
+        "frequency": 3,
         "event_text": "m_c grew weak as the days passed and now walks the stars of Silverpelt.",
         "m_c": {
             "age": [
@@ -4122,7 +4122,7 @@
             "greenleaf"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fell into a river and drowned.",
         "m_c": {
             "age": [
@@ -4156,7 +4156,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed when {PRONOUN/m_c/subject} snuck out of camp.",
         "m_c": {
             "age": [
@@ -4191,7 +4191,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c died after getting into the herb stores and accidentally eating deathberries.",
         "m_c": {
             "age": [
@@ -4225,7 +4225,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c was killed in {PRONOUN/m_c/poss} sleep by a snake that had snuck into camp.",
         "m_c": {
             "age": [
@@ -4257,7 +4257,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died of kittencough.",
         "m_c": {
             "age": [
@@ -4285,7 +4285,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "r_c and m_c die from a bout of kittencough.",
         "m_c": {
             "age": [
@@ -4323,7 +4323,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Greencough reaches the nursery. r_c and m_c die.",
         "m_c": {
             "age": [
@@ -4362,7 +4362,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "r_c invited m_c to private battle training. When m_c slipped and hit {PRONOUN/m_c/poss} head, {PRONOUN/m_c/subject} never woke back up.",
         "m_c": {
             "age": [
@@ -4459,7 +4459,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "r_c suggested m_c try some shiny red berries. m_c's excitement faded with {PRONOUN/m_c/poss} life.",
         "m_c": {
             "age": [
@@ -4555,7 +4555,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c sneaked out of camp and misjudged the jump across a stream. r_c watched without concern as {PRONOUN/m_c/subject} disappeared under the water.",
         "m_c": {
             "age": [
@@ -4648,7 +4648,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "o_c_n warriors broke into the camp and killed m_c after damaging the herb stores.",
         "m_c": {
             "age": [
@@ -4705,7 +4705,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "o_c_n warriors broke into the camp and killed m_c after damaging the stockpiled prey.",
         "m_c": {
             "age": [
@@ -4754,7 +4754,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed by a o_c_n warrior while pulling an injured r_c away from battle.",
         "m_c": {
             "status": [
@@ -4837,7 +4837,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c caught greencough while caring for {PRONOUN/m_c/poss} patients and couldn't manage to fight it off.",
         "m_c": {
             "status": [
@@ -4874,7 +4874,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c wandered out into the territory and was later found dead.",
         "m_c": {
             "age": [
@@ -4906,7 +4906,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was having a peaceful stroll outside of camp, when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a fox.",
         "m_c": {
             "age": [
@@ -4940,7 +4940,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was having a peaceful stroll outside of camp, when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a badger.",
         "m_c": {
             "age": [
@@ -4974,7 +4974,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was having a peaceful stroll outside of camp, when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a dog.",
         "m_c": {
             "age": [
@@ -5010,7 +5010,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c, already feeling weak, couldn't make it through a case of whitecough.",
         "m_c": {
             "dies": true
@@ -5036,7 +5036,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was too weak to recover from an illness and passed away.",
         "m_c": {
             "dies": true
@@ -5062,7 +5062,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was taken quickly by a case of greencough.",
         "m_c": {
             "dies": true
@@ -5089,7 +5089,7 @@
             "war"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c suffered a heart attack due to the stress of the ongoing war.",
         "m_c": {
             "age": [
@@ -5121,7 +5121,7 @@
             "leaf-fall"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Lightning struck in camp, killing m_c.",
         "m_c": {
             "age": [
@@ -5158,7 +5158,7 @@
             "newleaf"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was swept away by a flood.",
         "m_c": {
             "age": [
@@ -5191,7 +5191,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fell from the top branches of a tree.",
         "m_c": {
             "age": [
@@ -5222,7 +5222,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died in a fight with a dog.",
         "m_c": {
             "status": [
@@ -5255,7 +5255,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died in a fight with a badger.",
         "m_c": {
             "status": [
@@ -5288,7 +5288,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died in a fight with a rogue.",
         "m_c": {
             "status": [
@@ -5321,7 +5321,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was bitten by a venomous spider.",
         "m_c": {
             "dies": true
@@ -5345,7 +5345,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c ate tainted fresh-kill and died.",
         "m_c": {
             "dies": true
@@ -5369,7 +5369,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c failed to interpret a warning sign from StarClan and couldn't foresee the circumstances of {PRONOUN/m_c/poss} death.",
         "m_c": {
             "status": [
@@ -5399,7 +5399,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed defending r_c from a dog.",
         "m_c": {
             "age": [
@@ -5483,7 +5483,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed defending r_c from a badger.",
         "m_c": {
             "age": [
@@ -5567,7 +5567,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed defending r_c from a fox.",
         "m_c": {
             "age": [
@@ -5652,7 +5652,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died while saving r_c from drowning.",
         "m_c": {
             "age": [
@@ -5731,7 +5731,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c saved r_c from a monster but was run over in the process.",
         "m_c": {
             "age": [
@@ -5810,7 +5810,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c saved r_c from a snake and was bitten in the process. The venom killed {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
@@ -5890,7 +5890,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed defending the kits during a o_c_n raid.",
         "m_c": {
             "age": [
@@ -5945,7 +5945,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed defending r_c from o_c_n warriors.",
         "m_c": {
             "age": [
@@ -6045,7 +6045,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed by an apprentice from o_c_n.",
         "m_c": {
             "age": [
@@ -6086,7 +6086,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died trying to save a o_c_n apprentice.",
         "m_c": {
             "age": [
@@ -6142,7 +6142,7 @@
         "tags": [
             "some_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c lost some lives to {PRONOUN/m_c/poss} old age.",
         "m_c": {
             "age": [
@@ -6176,7 +6176,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c has lost all of {PRONOUN/m_c/poss} remaining lives to old age.",
         "m_c": {
             "age": [
@@ -6207,7 +6207,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was brutally attacked by a rogue, and lost all of {PRONOUN/m_c/poss} lives.",
         "m_c": {
             "status": [
@@ -6238,7 +6238,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was mauled by dogs and lost all of {PRONOUN/m_c/poss} lives.",
         "m_c": {
             "status": [
@@ -6270,7 +6270,7 @@
             "all_lives",
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was burnt alive while trying to save {PRONOUN/m_c/poss} Clanmates from a fire.",
         "m_c": {
             "status": [
@@ -6312,7 +6312,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was brutally murdered by a warrior from o_c_n, who cruelly took all {PRONOUN/m_c/poss} lives.",
         "m_c": {
             "status": [
@@ -6352,7 +6352,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was brutally murdered by the leader of o_c_n, who cruelly took all {PRONOUN/m_c/poss} lives.",
         "m_c": {
             "status": [
@@ -6392,7 +6392,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was brutally murdered by the deputy of o_c_n, who cruelly took all {PRONOUN/m_c/poss} lives.",
         "m_c": {
             "status": [
@@ -6431,7 +6431,7 @@
             "classic",
             "some_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c caught greencough and died more than once, despite the efforts of StarClan.",
         "m_c": {
             "status": [
@@ -6461,7 +6461,7 @@
             "classic",
             "some_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c caught whitecough and died more than once, despite the efforts of StarClan.",
         "m_c": {
             "status": [
@@ -6491,7 +6491,7 @@
             "classic",
             "some_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c caught yellowcough and died more than once, despite the efforts of StarClan.",
         "m_c": {
             "status": [
@@ -6522,7 +6522,7 @@
         "tags": [
             "some_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c lost lives to old age, {PRONOUN/m_c/poss} body slowly becoming more and more frail.",
         "m_c": {
             "age": [
@@ -6556,7 +6556,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c collapsed in the midst of camp, losing {PRONOUN/m_c/poss} remaining lives to old age.",
         "m_c": {
             "age": [
@@ -6588,7 +6588,7 @@
             "old_age"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "One day, the deputy found m_c dead in the leader's den, a life lost to old age.",
         "m_c": {
             "age": [
@@ -6622,7 +6622,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "One day, m_c is found dead in the leader's den, never to rise again.",
         "m_c": {
             "age": [
@@ -6656,7 +6656,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c's remaining lives were taken by old age.",
         "m_c": {
             "age": [
@@ -6690,7 +6690,7 @@
         "tags": [
             "low_lives"
         ],
-        "weight": 15,
+        "frequency": 3,
         "event_text": "m_c was pushed under a monster by r_c.",
         "m_c": {
             "status": [
@@ -6792,7 +6792,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was murdered by r_c in cold blood in order to take {PRONOUN/m_c/poss} place.",
         "m_c": {
             "status": [
@@ -6881,7 +6881,7 @@
             "some_lives",
             "mid_lives"
         ],
-        "weight": 40,
+        "frequency": 4,
         "event_text": "r_c attempted to murder m_c, but miscalculated how many lives {PRONOUN/m_c/subject} had. m_c retaliated with a killing blow.",
         "m_c": {
             "status": [
@@ -6991,7 +6991,7 @@
         "tags": [
             "all_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c and r_c were ambushed by a pack of dogs, but r_c was nowhere to be found when m_c looked for help.",
         "m_c": {
             "status": [
@@ -7092,7 +7092,7 @@
             "lives_remain",
             "kit_manipulated"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterwards, but no one notices.",
         "m_c": {
             "age": [
@@ -7188,7 +7188,7 @@
         "tags": [
             "some_lives"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c snuck out of camp to investigate {PRONOUN/m_c/poss} origins. {PRONOUN/m_c/subject/CAP} returned in the morning, haggard and haunted.",
         "m_c": {
             "age": [
@@ -7224,7 +7224,7 @@
         "tags": [
             "lives_remain"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "o_c_n attempted to break into the camp. m_c died defending the nursery. r_c remained hidden beneath {PRONOUN/m_c/poss} body as StarClan brought m_c back to life.",
         "m_c": {
             "age": [
@@ -7284,7 +7284,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died in a training accident.",
         "m_c": {
             "status": [
@@ -7310,7 +7310,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed by o_c_n warriors when {PRONOUN/m_c/subject} accidentally wandered over the border.",
         "m_c": {
             "status": [
@@ -7352,7 +7352,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed by o_c_n warriors after deliberately crossing the border.",
         "m_c": {
             "status": [
@@ -7403,7 +7403,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c died during battle training with r_c. {PRONOUN/r_c/subject/CAP} exclaimed that it was all an accident.",
         "m_c": {
             "age": [
@@ -7496,7 +7496,7 @@
             "leaf-bare"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c disappeared from the nursery and was later found dead, not far from camp.",
         "m_c": {
             "status": [
@@ -7532,7 +7532,7 @@
             "leaf-bare"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was playing on the ice when it cracked and {PRONOUN/m_c/subject} fell in.",
         "m_c": {
             "status": [
@@ -7566,7 +7566,7 @@
         "tags": [
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c wandered away from camp in the night, never to be seen again.",
         "m_c": {
             "status": [
@@ -7594,7 +7594,7 @@
         "tags": [
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c vanished from camp after sneaking out. The search parties find nothing but blood.",
         "m_c": {
             "status": [
@@ -7623,7 +7623,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was found within a few fox-lengths of camp after sneaking out, cold and covered in bite-marks. The scent of rat hung heavy in the air.",
         "m_c": {
             "status": [
@@ -7654,7 +7654,7 @@
         "tags": [
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c boasted about how ready {PRONOUN/m_c/subject} {VERB/m_c/were/was} for apprentice-ship. {PRONOUN/m_c/subject/CAP} snuck away to prove it and the Clan finds only blood and raccoon-scent in the morning.",
         "m_c": {
             "status": [
@@ -7685,7 +7685,7 @@
             "mass_death"
         ],
         "tags": [],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat drown after the camp becomes flooded.",
         "history": [
             {
@@ -7712,7 +7712,7 @@
             "mass_death"
         ],
         "tags": [],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat are killed after a fire rages through the camp.",
         "history": [
             {
@@ -7736,7 +7736,7 @@
             "mass_death"
         ],
         "tags": [],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat are killed in an ambush by a group of rogues.",
         "m_c": {
             "status": [
@@ -7768,7 +7768,7 @@
             "mass_death"
         ],
         "tags": [],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat are killed in a badger attack.",
         "m_c": {
             "status": [
@@ -7800,7 +7800,7 @@
             "mass_death"
         ],
         "tags": [],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat freeze during a snowstorm.",
         "history": [
             {
@@ -7824,7 +7824,7 @@
             "mass_death"
         ],
         "tags": [],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat die after the water dries up from a drought.",
         "history": [
             {
@@ -7850,7 +7850,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat die to a greencough outbreak.",
         "history": [
             {
@@ -7876,7 +7876,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat starve when no prey can be found.",
         "history": [
             {
@@ -7902,7 +7902,7 @@
         "tags": [
             "classic"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat eat tainted fresh-kill and die.",
         "history": [
             {
@@ -7928,7 +7928,7 @@
         "tags": [
             "lost"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "multi_cat are taken away by Twolegs.",
         "m_c": {
             "age": [
@@ -7947,7 +7947,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed when a fox followed fresh-kill scent into camp. Not even the fresh-kill pile was left untouched.",
         "m_c": {
             "status": [
@@ -7982,7 +7982,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c found a horde of rats lured by the fresh-kill pile. r_c helped {PRONOUN/m_c/object} fight, but m_c did not survive.",
         "m_c": {
             "age": [
@@ -8046,7 +8046,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "r_c claimed the haze of battle and blood lust were the reason {PRONOUN/r_c/subject} killed m_c.",
         "m_c": {
             "status": [
@@ -8149,7 +8149,7 @@
             "murder"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "r_c stood back and watched as the o_c_n deputy killed m_c.",
         "m_c": {
             "status": [
@@ -8225,7 +8225,7 @@
             "all_lives",
             "low_lives"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "r_c watched as m_c struggled in a Twoleg trap, waiting till {PRONOUN/m_c/subject} stopped moving before leaving the area.",
         "m_c": {
             "age": [
@@ -8306,7 +8306,7 @@
             "all_lives",
             "low_lives"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "r_c hissed {PRONOUN/r_c/poss} grievances into m_c's ear as {PRONOUN/r_c/subject} killed {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
@@ -8381,7 +8381,7 @@
         "tags": [
             "lives_remain"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "A warning from StarClan gave m_c enough knowledge to survive r_c's attack. r_c could not say the same.",
         "m_c": {
             "status": [

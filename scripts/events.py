@@ -46,7 +46,6 @@ from scripts.utility import (
     change_clan_reputation,
     find_alive_cats_with_rank,
     get_living_clan_cat_count,
-    get_random_moon_cat,
     ceremony_text_adjust,
     get_current_season,
     adjust_list_text,
@@ -1676,9 +1675,6 @@ class Events:
             self.ceremony_accessory = False
             return
 
-        # find random_cat
-        random_cat = get_random_moon_cat(Cat, main_cat=cat)
-
         # chance to gain acc
         acc_chances = constants.CONFIG["accessory_generation"]
         chance = acc_chances["base_acc_chance"]
@@ -1729,7 +1725,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="misc",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=sub_type,
                 freshkill_pile=game.clan.freshkill_pile,
             )
@@ -1849,16 +1844,10 @@ class Events:
 
         chance = max(chance, 1)
 
-        # choose other cat
-        random_cat = get_random_moon_cat(
-            Cat, main_cat=cat, parent_child_modifier=True, mentor_app_modifier=True
-        )
-
         if constants.CONFIG["event_generation"]["debug_type_override"] == "new_cat":
             handle_short_events.handle_event(
                 event_type="new_cat",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
             return
@@ -1873,7 +1862,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="new_cat",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
 
@@ -1882,11 +1870,9 @@ class Events:
         TODO: DOCS
         """
         if constants.CONFIG["event_generation"]["debug_type_override"] == "misc":
-            random_cat = get_random_moon_cat(Cat, main_cat=cat)
             handle_short_events.handle_event(
                 event_type="misc",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
             return
@@ -1895,12 +1881,9 @@ class Events:
         if hit:
             return
 
-        random_cat = get_random_moon_cat(Cat, main_cat=cat)
-
         handle_short_events.handle_event(
             event_type="misc",
             main_cat=cat,
-            random_cat=random_cat,
             freshkill_pile=game.clan.freshkill_pile,
         )
 
@@ -1909,21 +1892,15 @@ class Events:
         decide if cat dies
         """
 
-        # try to get the random_cat
-        random_cat = get_random_moon_cat(
-            Cat, cat, parent_child_modifier=True, mentor_app_modifier=True
-        )
-
         if constants.CONFIG["event_generation"]["debug_type_override"] == "death":
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
             return
         elif constants.CONFIG["event_generation"]["debug_type_override"] == "injury":
-            Condition_Events.handle_injuries(cat, random_cat)
+            Condition_Events.handle_injuries(cat)
             return
 
         # chance to kill leader: 1/50 by default
@@ -1938,7 +1915,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
 
@@ -1954,7 +1930,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=["old_age"],
                 freshkill_pile=game.clan.freshkill_pile,
             )
@@ -1964,7 +1939,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=["old_age"],
                 freshkill_pile=game.clan.freshkill_pile,
             )
@@ -1976,7 +1950,6 @@ class Events:
                 handle_short_events.handle_event(
                     event_type="birth_death",
                     main_cat=cat,
-                    random_cat=random_cat,
                     sub_type=["mass_death"],
                     freshkill_pile=game.clan.freshkill_pile,
                 )
@@ -1995,12 +1968,11 @@ class Events:
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
             return True
         else:
-            triggered_death = Condition_Events.handle_injuries(cat, random_cat)
+            triggered_death = Condition_Events.handle_injuries(cat)
 
             return triggered_death
 
@@ -2279,8 +2251,6 @@ class Events:
         if cat.age.is_baby():
             return
 
-        random_cat = get_random_moon_cat(Cat, main_cat=cat)
-
         transing_chance = constants.CONFIG["transition_related"]
         chance = transing_chance["base_trans_chance"]
         if cat.age in [CatAge.ADOLESCENT]:
@@ -2293,7 +2263,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="misc",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=sub_type,
                 freshkill_pile=game.clan.freshkill_pile,
             )
@@ -2311,7 +2280,7 @@ class Events:
         if leader_invalid:
             self.perform_ceremonies(
                 game.clan.leader
-            )  # This is where the deputy will be make leader
+            )  # This is where the deputy will be made leader
 
             if game.clan.leader:
                 leader_dead = game.clan.leader.dead

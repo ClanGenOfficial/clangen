@@ -393,6 +393,10 @@ class Status:
 
         for record in self.standing_history:
             if record["group"] == group:
+                duplicates = record["standing"].count(new_standing)
+                if duplicates > 1:
+                    removed_index = record["standing"].index(new_standing)
+                    record["standing"].pop(removed_index)
                 record["standing"].append(new_standing)
                 return
 
@@ -503,6 +507,10 @@ class Status:
         # checks that we don't add a duplicate group/rank pairing
         if self.group_history:
             last_entry = self.group_history[-1]
+            # remove 0 moons history to avoid save bloat
+            if len(self.group_history) > 1 and last_entry["moons_as"] == 0:
+                self.group_history.remove(last_entry)
+                last_entry = self.group_history[-1]
             if last_entry["group"] == self.group and last_entry["rank"] == new_rank:
                 return
 

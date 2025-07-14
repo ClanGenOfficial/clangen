@@ -7,7 +7,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 3,
         "event_text": "r_c had to rescue m_c from drowning after the apprentice headed out to practice alone.",
         "m_c": {
             "status": [
@@ -95,7 +95,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c's paw pads have become cracked and sore from walking through salty water.",
         "m_c": {
             "status": [
@@ -121,7 +121,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c was dashing around the apprentice rock, when {PRONOUN/m_c/subject} slipped and fell into the high tide waters of the cave. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} alright, though a bit bruised and embarrassed.",
         "m_c": {
             "status": [
@@ -157,7 +157,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c was messing around in the tide pools of the camp clearing, when {PRONOUN/m_c/poss} paw slipped and {PRONOUN/m_c/subject} fell in face first. {PRONOUN/m_c/poss/CAP} pride is wounded, but otherwise {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only bruised.",
         "m_c": {
             "age": [
@@ -195,7 +195,7 @@
             "leaf-fall",
             "leaf-bare"
         ],
-        "weight": 30,
+        "frequency": 3,
         "event_text": "m_c unwisely decided to go out swimming alone after r_c dared {PRONOUN/m_c/object} to. {PRONOUN/m_c/subject/CAP} made it back, but ended up drenched and shivering violently in the cold air.",
         "m_c": {
             "status": [
@@ -260,7 +260,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 3,
         "event_text": "m_c rarely pays attention when r_c talks about proper ocean safety, and it shows when m_c gets thirsty on patrol and drinks salt water. {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} back to camp severely dehydrated.",
         "m_c": {
             "status": [
@@ -336,7 +336,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 1,
         "event_text": "m_c was grabbed by a seagull, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
         "m_c": {
             "status": [
@@ -414,7 +414,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 1,
         "event_text": "m_c was grabbed by a pelican, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
         "m_c": {
             "status": [
@@ -496,7 +496,7 @@
         "tags": [
             "clan:warrior"
         ],
-        "weight": 30,
+        "frequency": 2,
         "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it far, however, before {PRONOUN/m_c/poss} meager swimming skills fail {PRONOUN/m_c/object} and {PRONOUN/m_c/subject} nearly {VERB/m_c/drown/drowns} before an adult spots {PRONOUN/m_c/object} and comes to the rescue.",
         "m_c": {
             "status": [
@@ -565,7 +565,7 @@
         "tags": [
             "clan:warrior"
         ],
-        "weight": 30,
+        "frequency": 2,
         "event_text": "r_c dares m_c to try and swim out of camp. m_c can't possibly refuse the challenge, but the water is freezing when {PRONOUN/m_c/subject} {VERB/m_c/jump/jumps} in. Though an adult quickly notices and scoops {PRONOUN/m_c/object} out, m_c is still shivering violently from the cold.",
         "m_c": {
             "status": [
@@ -632,7 +632,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c is hopping around in the tide pools when {PRONOUN/m_c/subject} {VERB/m_c/trip/trips} and {VERB/m_c/fall/falls} onto the rocks. Thankfully, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only a bit bruised.",
         "m_c": {
             "status": [
@@ -662,7 +662,7 @@
             "leaf-fall",
             "leaf-bare"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
         "m_c": {
             "status": [
@@ -698,7 +698,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} and {VERB/m_c/fall/falls}. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still sporting some new bruises.",
         "m_c": {
             "status": [
@@ -734,7 +734,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "weight": 30,
+        "frequency": 3,
         "event_text": "m_c found a hole in the rocks and, curious as all kits are, stuck {PRONOUN/m_c/poss} paw inside. The whole camp comes running when {PRONOUN/m_c/subject} {VERB/m_c/screech/screeches} in pain. It seems a snake was living in that hole.",
         "m_c": {
             "status": [
@@ -779,7 +779,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c stepped on some sharp stones while walking along the shoreline.",
         "m_c": {
             "age": [
@@ -808,7 +808,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 3,
         "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
         "m_c": {
             "age": [
@@ -849,7 +849,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "A o_c_n warrior was nearly swept away by a wave during a shoreside battle. m_c dove in to pull {PRONOUN/m_c/poss} enemy back to the beach, despite {PRONOUN/m_c/poss} own injuries.",
         "m_c": {
             "status": [

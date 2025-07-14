@@ -7,7 +7,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "While batting a shiny skitter-pebble around m_c misjudged a pounce and smashed {PRONOUN/m_c/poss} tiny little snout into it.",
         "m_c": {
             "status": [
@@ -40,7 +40,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "Naive to the dangers of the sun, m_c falls asleep while sunbathing. Though {PRONOUN/m_c/subject} {VERB/m_c/are/is} retrieved promptly, the young are vulerable to the desert heat.",
         "m_c": {
             "status": [
@@ -69,7 +69,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c play-fought a bit too hard and got a little bruised up, panting in excitement and dehydration.",
         "m_c": {
             "status": [
@@ -111,7 +111,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Kits are absolute thorn magnets. m_c complains loudly about {PRONOUN/m_c/poss} new scrapes.",
         "m_c": {
             "status": [
@@ -145,7 +145,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Not every rock wall is suited for sliding down, and now m_c is not only a little scraped up but also <i>very</i> dirty.",
         "m_c": {
             "status": [
@@ -179,7 +179,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Not one to make a fuss or put {PRONOUN/m_c/self} forward, m_c hasn't wanted to bother anyone. But {PRONOUN/m_c/poss} dry pads are starting to get painful as they crack, and licking them is making it worse.",
         "m_c": {
             "status": [
@@ -213,7 +213,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The dust pile is in exactly the wrong place, and m_c skids over in a pile of flailing kitten limbs. Standing back up, {PRONOUN/m_c/subject} {VERB/m_c/squawk/squawks} in pain.",
         "m_c": {
             "status": [
@@ -239,7 +239,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "The leaf-bare rains are dangerous to the unprepared and young. m_c is found, chilled and wet to the bone, after getting lost on a midnight adventure.",
         "m_c": {
             "status": [
@@ -265,7 +265,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "Greenleaf is a harsh season for kithood. m_c was outside for just a little too long, and when {PRONOUN/m_c/subject} {VERB/m_c/return/returns} to the nursery, {PRONOUN/m_c/poss} little body is dangerously hot.",
         "m_c": {
             "status": [
@@ -291,7 +291,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "With the ground made slippery by the recent rains, water isn't the only thing falling. m_c slips over, and though {PRONOUN/m_c/poss} limp has mostly disappeared by the time {PRONOUN/m_c/subject} {VERB/m_c/get/gets} to {PRONOUN/m_c/poss} nest, the smear of mud mars {PRONOUN/m_c/poss} dignity.",
         "m_c": {
             "age": [
@@ -323,7 +323,7 @@
             "leaf-fall",
             "newleaf"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c pushes {PRONOUN/m_c/self} a little too hard and ends up dehydrated for {PRONOUN/m_c/poss} troubles.",
         "m_c": {
             "age": [
@@ -353,7 +353,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "Sunstroke stalks c_n in greenleaf, lurking to pounce on anyone unwary or unwise. This moon it strikes m_c.",
         "m_c": {
             "age": [
@@ -386,7 +386,7 @@
         "tags": [
             "clan:kitten"
         ],
-        "weight": 40,
+        "frequency": 4,
         "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/subject} {VERB/m_c/decline/declines} giving another badger ride, ready to nap off the happy soreness that comes with being the kits' favorite chew toy at the moment.",
         "m_c": {
             "age": [
@@ -458,7 +458,7 @@
         "tags": [
             "clan:kitten"
         ],
-        "weight": 40,
+        "frequency": 4,
         "event_text": "m_c holds a cheerful conversation with r_c through the wall as {PRONOUN/m_c/subject} {VERB/m_c/weave/weaves} new thorns into the nursery wall. It's not the most fun job in the world, always leaving m_c sore and tired at the end of the day despite {PRONOUN/m_c/poss} skill, but the company makes the time pass easily.",
         "m_c": {
             "age": [
@@ -529,7 +529,7 @@
         "season": [
             "leaf-fall"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c hopes the pain in {PRONOUN/m_c/poss} joints foretells the rains that should be coming. Otherwise, this is just pain for no reason.",
         "m_c": {
             "age": [
@@ -556,7 +556,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "With rain has come joint pain for m_c. Stars damn it, this is why cats were made for sunny spots and clear skies. Ugh!",
         "m_c": {
             "age": [
@@ -583,7 +583,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c must've landed wrong after a jump or something - {PRONOUN/m_c/poss} bones are reminding {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} age. Painfully.",
         "m_c": {
             "age": [
@@ -613,7 +613,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c spreads {PRONOUN/m_c/poss} limbs out in the sun, letting the desert heat bring relief to {PRONOUN/m_c/poss} old, aching joints.",
         "m_c": {
             "age": [
@@ -643,7 +643,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Living in the desert means heavy construction materials. m_c is left aching after a day hauling rocks around camp for various purposes.",
         "m_c": {
             "age": [
@@ -679,7 +679,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "The greenleaf sun is beating down overhead, searingly hot and bright. m_c comes down with an awful headache after too much time spent outside.",
         "m_c": {
             "age": [
@@ -721,7 +721,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "This looks like being sunstruck, like m_c has stared at the noon sun too long. But m_c never did that. Visions of prophecy_list_sight are the last thing {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} seeing.",
         "m_c": {
             "age": [
@@ -773,7 +773,7 @@
         "tags": [
             "clan:kitten"
         ],
-        "weight": 5,
+        "frequency": 1,
         "event_text": "A piece of stray Twoleg trash ignites in the dry heat of the sun, threatening the nursery. m_c leads the efforts to rescue the kits, and will happily trade {PRONOUN/m_c/poss} singed coat and the acrid smell of burned fur for the safety of the young ones.",
         "m_c": {
             "age": [
@@ -860,7 +860,7 @@
         "tags": [
             "clan:kitten"
         ],
-        "weight": 20,
+        "frequency": 1,
         "event_text": "A piece of stray Twoleg trash ignites in the dry heat of the sun, threatening the nursery. m_c leads the efforts to rescue the kits, and will happily trade {PRONOUN/m_c/poss} singed coat and the acrid smell of burned fur for the safety of the young ones.",
         "m_c": {
             "age": [
@@ -946,7 +946,7 @@
             "greenleaf",
             "leaf-fall"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "The dry season between the last rains and the beginning of the next is always a vulnerable time for the elderly, but m_c didn't think {PRONOUN/m_c/subject} {VERB/m_c/were/was} <i>that</i> old yet.",
         "m_c": {
             "age": [
@@ -976,7 +976,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c has been trying to keep {PRONOUN/m_c/poss} fluids up, but staying healthy in the oppressive heat of greenleaf was definitely easier in {PRONOUN/m_c/poss} prime. Sunstroke is the result.",
         "m_c": {
             "age": [
@@ -1014,7 +1014,7 @@
         "tags": [
             "clan:apprentice"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c thanks r_c for the water, squeezing the precious liquid gently out of the soaked moss the apprentice has brought. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} want {PRONOUN/m_c/poss} dehydration to get any worse.",
         "m_c": {
             "age": [
@@ -1082,7 +1082,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "On one of the hottest days of the year r_c spends all {PRONOUN/r_c/poss} energy making sure that the older members of c_n keep drinking. Only m_c gets touched by sunstroke, and it's only a mild case of dehydration.",
         "m_c": {
             "age": [
@@ -1146,7 +1146,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c wakes early one morning and spots a scorpion crawling up the sleeping r_c's back! {PRONOUN/m_c/subject/CAP} helped r_c escape, but got stung {PRONOUN/m_c/self} in the process.",
         "m_c": {
             "age": [
@@ -1254,7 +1254,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c and r_c were caught by a duststorm while off adventuring in the far reaches of c_n's territory for a dare. They both inhaled way too much sand for comfort.",
         "m_c": {
             "status": [
@@ -1357,7 +1357,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A skirmish with a o_c_n patrol over a water source hidden deep within a rocky refuge leaves m_c nursing a large slash across {PRONOUN/m_c/poss} side.",
         "m_c": {
             "status": [
@@ -1408,7 +1408,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A border skirmish with o_c_n erupted near a shallow watering hole. m_c was left limping after a vicious bite.",
         "m_c": {
             "status": [
@@ -1456,7 +1456,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The desert Clans are so distant from each other that it takes real effort to start a skirmish. Real effort m_c is apparently happy to provide, although {PRONOUN/m_c/poss} bite wounds and torn up pelt might be its own lesson on the wisdom of {PRONOUN/m_c/poss} choices.",
         "m_c": {
             "age": [
@@ -1553,7 +1553,7 @@
         "tags": [
             "clan:kitten"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c is the only cat around when o_c_n launches a surprise kitnapping attempt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/block/blocks} the nursery entrance and {VERB/m_c/take/takes} a battering for it, but {PRONOUN/m_c/subject} {VERB/m_c/hold/holds} the o_c_n cats off until help arrives.",
         "m_c": {
             "age": [
@@ -1661,7 +1661,7 @@
             "newleaf",
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c slips on the dusty ground, spraining {PRONOUN/m_c/poss} paw.",
         "injury": [
             {
@@ -1684,7 +1684,7 @@
             "newleaf",
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c sneaked out of camp and was later found wandering in the full noon sun, confused and disoriented.",
         "m_c": {
             "status": [
@@ -1724,7 +1724,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The cry of a red-tailed hawk echoes above camp, and m_c freezes in fear. r_c barrels in and knocks m_c aside harshly, yowling and hissing like a demon. The bird is scared off for now, and m_c is left winded and injured by r_c's ferocity in protecting {PRONOUN/m_c/object}, but at least {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} alive.",
         "m_c": {
             "status": [
@@ -1805,7 +1805,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A hawk swoops down on m_c, intending on making {PRONOUN/m_c/object} dinner. {PRONOUN/m_c/subject/CAP} {VERB/m_c/show/shows} that cats aren't prey, but the bird still gets a nasty bite in.",
         "m_c": {
             "age": [
@@ -1848,7 +1848,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The rain has made the high trails on the rocks slippery and precarious. Though everyone is being cautious, m_c slips and takes a nasty fall.",
         "m_c": {
             "age": [
@@ -1891,7 +1891,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A huge golden eagle targets m_c while {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} alone. m_c sinks {PRONOUN/m_c/poss} kitten teeth into the raptor's foot as hard as {PRONOUN/m_c/subject} can, and the eagle drops {PRONOUN/m_c/object} from many fox-lengths above the ground. All the Clan can do is pray for {PRONOUN/m_c/poss} recovery.",
         "m_c": {
             "status": [
@@ -1953,7 +1953,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Thorns are a fact of life in the desert. This moon, m_c's bearing their prickly planty predations.",
         "m_c": {
             "age": [
@@ -1981,7 +1981,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The rains bounce off the hard-baked ground, leaving puddles and slippery mud literally everywhere. While the water is welcome, the lack of traction is not, and m_c grumbles when {PRONOUN/m_c/subject} {VERB/m_c/end/ends} up going arse over tail from a misstep.",
         "m_c": {
             "age": [
@@ -2013,7 +2013,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "All the world is water, and m_c squeaks with all the nobility and dignity that is {PRONOUN/m_c/poss} due, once again tripped by the dreadful slipperiness.",
         "m_c": {
             "age": [
@@ -2041,7 +2041,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Climbing the highest rock in the territory was not, in fact, a good idea. m_c doesn't know what's worse - that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} now confined to the medicine den, or that everyone {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to show off to <i>saw</i> {PRONOUN/m_c/object} fall.",
         "m_c": {
             "status": [
@@ -2097,7 +2097,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
@@ -2143,7 +2143,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains {PRONOUN/m_c/poss} paw while trying to walk through the muck.",
         "m_c": {},
         "injury": [
@@ -2165,7 +2165,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "At the border, a tiny not-cat-but-cat respects the boundary lines, turning away peacefully. m_c calls a farewell questioningly, and it replies:<br><i> Sand upon sand, the dunes have piled,<br> Bones beneath at peace awhiled,<br>Bones above the heat will bleach,<br>The fragile beating life will leech,<br>Pad at night, deny the day,<br>The water will show the way.</i>",
         "m_c": {
             "status": [
@@ -2210,7 +2210,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Following the sound of barking, m_c finds r_c pinned in a burrow while a dingo digs at the entrance. m_c charges in, distracting the dog for long enough to give r_c the chance to run home, though the dingo gives m_c enough of a run around that all {PRONOUN/m_c/poss} limbs ache by the time {PRONOUN/m_c/subject} {VERB/m_c/collapse/collapses} into {PRONOUN/m_c/poss} nest at sunset.",
         "m_c": {
             "status": [
@@ -2285,7 +2285,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A coyote tries to eat r_c, but m_c is there to score the canine's nose bloody and drive it off. The direction it chooses to run in isn't ideal though, as it bowls m_c over in its haste to escape, slamming {PRONOUN/m_c/object} bodily into a nearby rock.",
         "m_c": {
             "status": [
@@ -2368,7 +2368,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c misjudged the distance of a jump and landed in a patch of thorns. Ouch!",
         "m_c": {
             "status": [
@@ -2406,7 +2406,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c overdid it during {PRONOUN/m_c/poss} last sparring session and got dehydrated.",
         "m_c": {
             "status": [
@@ -2443,7 +2443,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c saved r_c from death after a coyote attack, using {PRONOUN/m_c/poss} talents with first aid to keep r_c from bleeding out.",
         "m_c": {
             "status": [
@@ -2537,7 +2537,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c tricked a coyote into a cluster of cacti, and though {PRONOUN/m_c/subject} got {PRONOUN/m_c/poss} own pelt torn up something fierce, the coyote was driven off of c_n lands.",
         "m_c": {
             "status": [
@@ -2629,7 +2629,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A dingo tries to take r_c for lunch. m_c rushes in to save {PRONOUN/m_c/poss} Clanmate, and though both cats come out of it injured, they're able to drive off the feral canine.",
         "m_c": {
             "status": [
@@ -2769,7 +2769,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The burrowing owls really got up on the wrong side of the nest this morning, and m_c has the beak bite to show for it.",
         "m_c": {
             "status": [
@@ -2823,7 +2823,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A red-tailed hawk tries to swoop down on r_c, only for m_c to intercept it, taking a claw to the flank.",
         "m_c": {
             "status": [
@@ -2907,7 +2907,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "After spotting a coyote in the territory, r_c charges it with m_c at {PRONOUN/r_c/poss} side. m_c pays a blood price for driving off the dog, but r_c maintains it was worth it.",
         "m_c": {
             "status": [
@@ -2995,7 +2995,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Frequent patrols on the o_c_n border left m_c dehydrated and weak.",
         "m_c": {
             "status": [
@@ -3035,7 +3035,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Training for war in such a harsh landscape left m_c exhausted.",
         "m_c": {
             "status": [
@@ -3068,7 +3068,7 @@
         "tags": [
             "clan:medicine cat"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "It's hard for border patrols to actually encounter each other in the desert. So o_c_n deliberately waits for a c_n patrol, each trading escalating insults until the situation explodes into violence. med_name patches up m_c and r_c afterwards, as the camp seethes with anger.",
         "m_c": {
             "status": [
@@ -3121,7 +3121,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c says {PRONOUN/m_c/poss} bruises are from battle training. m_c is lying, they're actually from a misjudged pounce.",
         "m_c": {
             "status": [
@@ -3159,7 +3159,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c discovers it's <i>possible</i> to climb cacti. It's not a good idea, no, but sure, it's <i>possible</i>.",
         "m_c": {
             "status": [
@@ -3250,7 +3250,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Eager for extra tracking experience, m_c spends hours out on the sands studying footprints, long enough to leave {PRONOUN/m_c/poss} pads cracked from all the extra walking. Worth it!",
         "m_c": {
             "status": [
@@ -3287,7 +3287,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "{PRONOUN/m_c/poss/CAP} nerves kick in and m_c screws up during battle training, resulting in a painful scrape.",
         "m_c": {
             "status": [
@@ -3322,7 +3322,7 @@
         "tags": [
             "clan:kitten"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c plays with a kit after training instead of resting. It's kind of {PRONOUN/m_c/object}, but the lack of downtime leaves {PRONOUN/m_c/object} sore and aching.",
         "m_c": {
             "status": [
@@ -3358,7 +3358,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c snuck out of camp one night for a dare, but familiar paths loom risky in the shadows of the night, and {PRONOUN/m_c/subject} {VERB/m_c/stumble/stumbles} muzzle first into thorns.",
         "m_c": {
             "status": [
@@ -3407,7 +3407,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Determined to prove {PRONOUN/m_c/poss} resilience, m_c pushes too hard trying to keep up with the warriors and comes down with a touch of sunstroke.",
         "m_c": {
             "status": [
@@ -3455,7 +3455,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Bitten by a red bellied black snake, m_c shakes off the effects of the venom, cleaning the wound carefully.",
         "m_c": {
             "age": [
@@ -3501,7 +3501,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c smacked into a rock. Ow.",
         "m_c": {
             "age": [
@@ -3534,7 +3534,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c gets bitten by a snake, but no one saw what kind, making {PRONOUN/m_c/poss} prognosis very uncertain.",
         "m_c": {
             "age": [
@@ -3585,7 +3585,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The spiky spinifex has earned its name this moon, sharp leaf blades cutting into the velvet of m_c's nose and raising bloody lines on {PRONOUN/m_c/poss} pelt.",
         "m_c": {
             "age": [
@@ -3636,7 +3636,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The spiky spinifex hummocks, coated in exuded resin, spontaneously combust. The fire doesn't spread far, hemmed in by open ground on either side, but m_c and r_c are burned while dragging branches out of its path.",
         "m_c": {
             "age": [
@@ -3767,7 +3767,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A camel trod on m_c's tail as it plodded past m_c's hiding place.",
         "m_c": {
             "age": [
@@ -3810,7 +3810,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c misstepped and slipped into a thorn bush, mostly harming {PRONOUN/m_c/poss} dignity, but also scratching up {PRONOUN/m_c/poss} pelt.",
         "m_c": {
             "age": [
@@ -3851,7 +3851,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c had to wade through some deep loose sand, putting strain on {PRONOUN/m_c/poss} joints and muscles.",
         "m_c": {
             "age": [
@@ -3892,7 +3892,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c put a paw wrong running amongst the rocks, and {PRONOUN/m_c/poss} momentum wrenched {PRONOUN/m_c/poss} shoulder out of place.",
         "m_c": {
             "age": [
@@ -3925,7 +3925,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c gets sand jammed right up in the crevice between one paw pad and another, and licks the paw raw trying to fix the irritation.",
         "m_c": {
             "age": [
@@ -3961,7 +3961,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was called in to help repair some of the dens, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not good at it and end up spaining {PRONOUN/m_c/poss} muscles moving something in a stupid way.",
         "m_c": {
             "age": [
@@ -4005,7 +4005,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Oh star's damn it. m_c wandered too close to a cactus.",
         "m_c": {
             "age": [
@@ -4046,7 +4046,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c finds an outsider near the border, panting in the heat of the day. {PRONOUN/m_c/subject/CAP} {VERB/m_c/send/sends} the dehydrated n_c:0 onwards, but not before sharing one of c_n's water sources with {PRONOUN/n_c:0/object}.",
         "m_c": {
             "age": [
@@ -4110,7 +4110,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c is almost killed by a roving dingo, and it's only r_c tracking skills that allow c_n to find m_c's refuge before the blood loss is too great.",
         "m_c": {
             "age": [
@@ -4211,7 +4211,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c's tail was badly injured when {PRONOUN/m_c/subject} {VERB/m_c/were/was} almost caught by a horned owl.",
         "m_c": {
             "age": [
@@ -4257,7 +4257,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Unbelievably, thorny devils are devilishly thorn-covered. m_c spikes {PRONOUN/m_c/self} on the lizard's spines.",
         "m_c": {
             "age": [
@@ -4295,7 +4295,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A settler flight of termites tries to set up near camp. m_c and r_c both fall victim to a number of painful bites as they get rid of the pest infestation.",
         "m_c": {
             "age": [
@@ -4366,7 +4366,7 @@
         "season": [
             "greenleaf"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The greenleaf sun beats down, soaked up by the rocks that m_c pads on and heating them until they scorch m_c's paw pads painfully.",
         "m_c": {
             "age": [
@@ -4395,7 +4395,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c loses an argument with a wasp. Does anyone ever <i>win</i> an argument with a wasp?",
         "m_c": {
             "age": [
@@ -4437,7 +4437,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c delivers a message to o_c_n's leader, but o_c_n doesn't let {PRONOUN/m_c/object} drink before {PRONOUN/m_c/poss} return journey. {PRONOUN/m_c/subject/CAP} {VERB/m_c/arrive/arrives} home with sunstroke.",
         "m_c": {
             "age": [
@@ -4487,7 +4487,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "While sniffing the marks left by o_c_n on the deserted desert border, m_c tears {PRONOUN/m_c/poss} ear on a thornbush.",
         "m_c": {
             "age": [
@@ -4541,7 +4541,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A group of meerkats mobs m_c, darting in and out of combat with {PRONOUN/m_c/object} in the same way that meerkats mob snakes.",
         "m_c": {
             "status": [
@@ -4598,7 +4598,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c has developed a lasting fear of arthropods after being bitten by a camel spider.",
         "m_c": {
             "age": [
@@ -4636,7 +4636,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Though the Clan tries to guard against them, a funnel web spider is discovered to have set up a home in c_n's camp when it announces its presence by biting m_c.",
         "m_c": {
             "age": [
@@ -4686,7 +4686,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A copperhead snake takes a chunk out of m_c, sending {PRONOUN/m_c/object} to the medicine den.",
         "m_c": {
             "age": [
@@ -4733,7 +4733,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c, somewhat foolishly, pounced on a bandy-bandy after mistaking it for a Clanmate's tail. They might be fairly docile, but that was too much of an insult for any snake, and m_c is promptly bitten for it.",
         "m_c": {
             "age": [
@@ -4798,7 +4798,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c steps on a snake. Neither of them are happy about it, but at least shovel-nosed coral snakes aren't dangerously venomous. Still sharp-toothed, though.",
         "m_c": {
             "age": [
@@ -4840,7 +4840,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "While patrolling the o_c_n borders, m_c is driven into a cactus corral by an o_c_n patrol. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} hundreds of tiny punctures ripped into {PRONOUN/m_c/poss} pelt as {PRONOUN/m_c/subject} {VERB/m_c/rip/rips} {PRONOUN/m_c/self} free.",
         "m_c": {
             "age": [
@@ -4949,7 +4949,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c and r_c make a raid into o_c_n territory - with such huge borders, no desert Clan can watch everything. But on unfamiliar ground and in the heat of the day, the two ambitious c_n warriors find only sunstroke.",
         "m_c": {
             "status": [
@@ -5046,7 +5046,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Oh, <i>gross</i>, the full fresh-kill pile has attracted ants! m_c and r_c both get covered in indignant, biting soldier ants while trying to rescue as much of c_n's food stores as possible.",
         "m_c": {
             "age": [
@@ -5114,7 +5114,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A gang of meerkats war-dances into camp, attracted by the fresh-kill pile. m_c is the warrior on guard duty and yowls loudly for help, bearing the brunt of the violence of the raid.",
         "m_c": {
             "age": [
