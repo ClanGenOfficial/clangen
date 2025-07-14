@@ -4215,7 +4215,7 @@
                 }
             }
         ],
-
+        "exclude_involved": ["r_c"]
     },
     {
         "event_id": "gen_death_sneak_any1",
@@ -5023,7 +5023,8 @@
                     }
                 }
             }
-        ]
+        ],
+        "exclude_involved": ["r_c"]
     },
     {
         "event_id": "gen_death_fox_any2",
