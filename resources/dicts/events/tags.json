@@ -79,14 +79,16 @@
             "tag": "siblings",
             "setting": false,
             "conflict": ["mates",
-                         "not_mates",
-                         "parent/child",
-                         "child/parent"]
+                        "not_siblings",
+                        "not_mates",
+                        "parent/child",
+                        "child/parent"]
         },
         {
             "tag": "not_siblings",
             "setting": false,
             "conflict": ["siblings",
+                        "littermates",
                         "parent/child",
                         "child/parent",
                         "mates",
@@ -142,6 +144,7 @@
             "tag": "parent/child",
             "setting": false,
             "conflict": ["siblings",
+                         "not_parent",
                          "mates",
                          "not_mates",
                          "child/parent",
@@ -161,10 +164,11 @@
             "tag": "child/parent",
             "setting": false,
             "conflict": ["siblings",
-                         "mates",
-                         "not_mates",
-                         "parent/child",
-                         "mentor/app"]
+                        "not_child",
+                        "mates",
+                        "not_mates",
+                        "parent/child",
+                        "mentor/app"]
         },
         {
             "tag": "not_child",
@@ -180,6 +184,8 @@
             "tag": "app/mentor",
             "setting": false,
             "conflict": ["mates",
+                         "not_app",
+                         "not_mentor",
                          "not_mates",
                          "parent/child",
                          "mentor/app"]
@@ -197,7 +203,9 @@
             "tag": "mentor/app",
             "setting": false,
             "conflict": ["mates",
+                         "not_mentor",
                          "not_mates",
+                         "not_app",
                          "child/parent",
                          "app/mentor"]
         },
@@ -205,6 +213,7 @@
             "tag": "not_mentor",
             "setting": false,
             "conflict": ["mates",
+                         "mentor/app",
                          "littermates",
                          "child/parent",
                          "app/mentor"]
