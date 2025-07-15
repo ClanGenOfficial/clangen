@@ -7,7 +7,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 1,
         "event_text": "m_c returned to camp carrying a litter of kittens, explaining that {PRONOUN/m_c/subject} found them mewling in a patch of grass, near the cooling body of a loner.",
         "m_c": {
             "age": [
@@ -53,7 +53,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 1,
         "event_text": "m_c rescued a kittypet hopelessly lost in some tunnels, who is so impressed, {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join the Clan!",
         "m_c": {
             "age": [

@@ -85,8 +85,8 @@ class HandleShortEvents:
         self,
         event_type: str,
         main_cat: Cat,
-        random_cat: Cat,
         freshkill_pile: FreshkillPile,
+        random_cat: Cat = None,
         victim_cat: Cat = None,
         sub_type: list = None,
         ignore_subtyping: bool = False,
@@ -133,56 +133,54 @@ class HandleShortEvents:
             event_type = "death"
         elif event_type == "health":
             event_type = "injury"
-        possible_short_events = GenerateEvents.possible_short_events(event_type)
 
-        final_events = GenerateEvents.filter_possible_short_events(
-            Cat_class=Cat,
-            possible_events=possible_short_events,
-            cat=self.main_cat,
-            random_cat=self.random_cat,
-            other_clan=self.other_clan,
-            freshkill_active=FRESHKILL_EVENT_ACTIVE,
-            freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
-            sub_types=self.sub_types,
-            allowed_events=self.allowed_events,
-            excluded_events=self.excluded_events,
-            ignore_subtyping=ignore_subtyping,
-        )
+        # choosing frequency
+        # think of it as "in a span of 10 moons, in how many moons should this sort of event appear?"
+        frequency_roll = randint(1, 10)
+        if frequency_roll <= 4:
+            frequency = 4
+        elif frequency_roll <= 7:
+            frequency = 3
+        elif frequency_roll <= 9:
+            frequency = 2
+        else:
+            frequency = 1
 
-        if isinstance(
-            constants.CONFIG["event_generation"]["debug_ensure_event_id"], str
-        ):
-            found = False
-            for _event in final_events:
-                if (
-                    _event.event_id
-                    == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
-                ):
-                    final_events = [_event]
-                    print(
-                        f"FOUND debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
-                        f"was set as the only event option"
-                    )
-                    found = True
-                    break
-            if not found:
-                # this print is very spammy, but can be helpful if unsure why a debug event isn't triggering
-                # print(f"debug_ensure_event_id: {constants.CONFIG['event_generation']['debug_ensure_event_id']} "
-                #      f"was not possible for {self.main_cat.name}.  {self.main_cat.name} was looking for a {event_type}: {self.sub_types} event")
-                pass
+        chosen_event = None
+        while not chosen_event and frequency < 5:
+            possible_short_events = GenerateEvents.possible_short_events(
+                frequency,
+                event_type,
+            )
+
+            chosen_event, random_cat = GenerateEvents.filter_possible_short_events(
+                Cat_class=Cat,
+                possible_events=possible_short_events,
+                cat=self.main_cat,
+                random_cat=self.random_cat,
+                other_clan=self.other_clan,
+                freshkill_active=FRESHKILL_EVENT_ACTIVE,
+                freshkill_trigger_factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
+                sub_types=self.sub_types,
+                allowed_events=self.allowed_events,
+                excluded_events=self.excluded_events,
+                ignore_subtyping=ignore_subtyping,
+            )
+            if not chosen_event:
+                # we'll see if any more common events are available
+                frequency += 1
+
         # ---------------------------------------------------------------------------- #
         #                               do the event                                   #
         # ---------------------------------------------------------------------------- #
-        try:
-            self.chosen_event = choice(final_events)
+        if chosen_event:
+            self.chosen_event = chosen_event
+            self.random_cat = random_cat
             self.future_event_failed = False
-            # this print is good for testing, but gets spammy in large clans
-            # print(f"CHOSEN: {self.chosen_event.event_id}")
-        except IndexError:
+        else:
             # this doesn't necessarily mean there's a problem, but can be helpful for narrowing down possibilities
             print(
-                f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name} "
-                f"and {self.random_cat.name if self.random_cat else 'no random cat'}"
+                f"WARNING: no {event_type}: {self.sub_types} events found for {self.main_cat.name}"
             )
             return
 
@@ -191,7 +189,7 @@ class HandleShortEvents:
         self.additional_event_text = ""
 
         # check if another cat is present
-        if self.chosen_event.r_c:
+        if self.random_cat:
             self.involved_cats.append(self.random_cat.ID)
 
         # checking if a mass death should happen, happens here so that we can toss the event if needed
@@ -205,8 +203,8 @@ class HandleShortEvents:
         # create new cats (must happen here so that new cats can be included in further changes)
         self.handle_new_cats()
 
-        # remove cats from involved_cats if theyre supposed to be
-        if self.chosen_event.r_c and "r_c" in self.chosen_event.exclude_involved:
+        # remove cats from involved_cats if they're supposed to be
+        if self.random_cat and "r_c" in self.chosen_event.exclude_involved:
             self.involved_cats.remove(self.random_cat.ID)
         if "m_c" in self.chosen_event.exclude_involved:
             self.involved_cats.remove(self.main_cat.ID)

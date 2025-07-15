@@ -20,11 +20,10 @@
             "refugee2",
             "tragedy_survivor4",
             "guided3",
-            "refugee5",
             "wandering_healer2"
         ],
         "rogue_backstories": [
-            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2", "refugee5", "wandering_healer1"
+            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2", "wandering_healer1"
         ],
         "kittypet_backstories": [
             "kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1", "refugee6"

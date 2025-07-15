@@ -7,7 +7,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 2,
         "event_text": "m_c wandered out of camp, only to come back with a stranger. After explaining how m_c saved {PRONOUN/n_c:0/poss} life, the new cat introduces {PRONOUN/n_c:0/self} as n_c:0, and asks to join c_n.",
         "m_c": {
             "age": [
@@ -59,7 +59,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 2,
         "event_text": "m_c comes back to camp with a sodden kit in {PRONOUN/m_c/poss} jaws, explaining that {PRONOUN/m_c/subject} spotted {PRONOUN/n_c:0/object} floundering in the water - no parents in sight - and couldn't just leave the little scrap to die.",
         "m_c": {
             "age": [
@@ -103,7 +103,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 2,
         "event_text": "After going for a walk, m_c returns to camp with a small kitten, explaining that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} abandoned, tucked away under a rocky ledge.",
         "m_c": {
             "age": [

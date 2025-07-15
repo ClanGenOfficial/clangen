@@ -72,8 +72,8 @@
           ]
         }
       },
-      "weight": {
-        "description": "Controls how common an event is. A \"normal\" event would be ~20. A lower number makes the event less common, and a higher number makes the event more common.",
+      "frequency": {
+        "description": "Controls how common an event is. 4 == Common, 3 == Uncommon, 2 == Rare, 3 == Very Rare. Consider this in the terms of 'If an event of this type happened every moon for 10 moons, on how many of those moons should this sort of event appear?'",
         "type": "integer"
       },
       "event_text": {

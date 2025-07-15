@@ -504,19 +504,20 @@ class Status:
         cat.rank_change() should typically be called instead, since it will handle mentor switches and other complex
         changes.
         """
+        saved_group = None
         # checks that we don't add a duplicate group/rank pairing
         if self.group_history:
             last_entry = self.group_history[-1]
             # remove 0 moons history to avoid save bloat
             if len(self.group_history) > 1 and last_entry["moons_as"] == 0:
+                if self.group == last_entry["group"]:
+                    saved_group = last_entry["group"]
                 self.group_history.remove(last_entry)
                 last_entry = self.group_history[-1]
             if last_entry["group"] == self.group and last_entry["rank"] == new_rank:
                 return
-
-        self.group_history.append(
-            {"group": self.group, "rank": new_rank, "moons_as": 0}
-        )
+        group = self.group if not saved_group else saved_group
+        self.group_history.append({"group": group, "rank": new_rank, "moons_as": 0})
 
     def change_group_nearness(self, group: CatGroup):
         """

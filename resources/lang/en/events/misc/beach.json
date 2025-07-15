@@ -13,7 +13,7 @@
         "tags": [
             "clan:apprentice"
         ],
-        "weight": 15,
+        "frequency": 3,
         "event_text": "The apprentices are learning how to disguise their scents from enemies with kelp and seawater.",
         "m_c": {
             "status": [
@@ -29,7 +29,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "As a storm rages across the beach and waves crash upon the shore, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
         "m_c": {
             "status": [
@@ -49,7 +49,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The things {PRONOUN/m_c/subject} saw today: omen_list_sight/m_c... m_c dips a paw in a rockpool, watching the tiny, crawling life inside, and considering what the omens foretell.",
         "m_c": {
             "status": [
@@ -72,7 +72,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 15,
+        "frequency": 3,
         "event_text": "m_c sat by the water, wondering why times are not as peaceful as the tides.",
         "m_c": {
             "status": [
@@ -104,7 +104,7 @@
         "tags": [
             "clan_wide"
         ],
-        "weight": 1,
+        "frequency": 1,
         "event_text": "A huge wave crashes into camp, leaving everyone soaked and the herb stores quite damaged.",
         "supplies": [
             {
@@ -127,7 +127,7 @@
         "sub_type": [
             "accessory"
         ],
-        "weight": 5,
+        "frequency": 1,
         "event_text": "m_c finds an old seagull nest while out hunting. It seems to be long abandoned, but some pretty feathers have remained intact! m_c decides to take some with {PRONOUN/m_c/object}.",
         "new_accessory": [
             "GULL FEATHERS"
