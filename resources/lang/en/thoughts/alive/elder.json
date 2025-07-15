@@ -1134,6 +1134,21 @@
         ]
     },
     {
+        "id": "elder_to_newborn",
+        "thoughts": [
+            "Thinks of all the stories {PRONOUN/m_c/subject} will share with r_c",
+            "Hopes to live to see r_c made a warrior",
+            "Feels content knowing c_n's legacy will continue through r_c",
+            "Feels sentimental at the arrival of a new litter"
+        ],
+        "main_age_constraint": [
+            "senior"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ]
+    },
+    {
         "id": "gen_retired_disabled_thoughts",
         "thoughts": [
             "Wants everyone to stop pitying {PRONOUN/m_c/object}, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fine!",
