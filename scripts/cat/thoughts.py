@@ -404,23 +404,28 @@ class Thoughts:
             chosen_thought = i18n.t("defaults.thought")
             return chosen_thought
 
-    def new_death_thought(self, darkforest, isoutside):
-        base_path = f"resources/lang/{i18n.config.get('locale')}/thoughts/ondeath"
-        fallback_path = f"resources/lang/{i18n.config.get('fallback')}/thoughts/ondeath"
-
-        if isoutside:
-            spec_dir = "/unknownresidence"
-        elif darkforest is False:
-            spec_dir = "/starclan"
-        else:
-            spec_dir = "/darkforest"
+    @staticmethod
+    def new_death_thought(
+        main_cat, other_cat, game_mode, biome, season, camp, afterlife, lives_left
+    ):
         THOUGHTS: []
         try:
-            loaded_thoughts = load_lang_resource(
-                f"thoughts/ondeath{spec_dir}/general.json"
-            )
+            if main_cat.status.is_leader and lives_left > 0:
+                loaded_thoughts = load_lang_resource(
+                    f"thoughts/on_death/{afterlife}/leader_life.json"
+                )
+            elif main_cat.status.is_leader and lives_left == 0:
+                loaded_thoughts = load_lang_resource(
+                    f"thoughts/on_death/{afterlife}/leader_death.json"
+                )
+            else:
+                loaded_thoughts = load_lang_resource(
+                    f"thoughts/on_death/{afterlife}/general.json"
+                )
             thought_group = choice(
-                Thoughts.create_death_thoughts(self, loaded_thoughts)
+                Thoughts.create_thoughts(
+                    loaded_thoughts, main_cat, other_cat, game_mode, biome, season, camp
+                )
             )
             chosen_thought = choice(thought_group["thoughts"])
             return chosen_thought
