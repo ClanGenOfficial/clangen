@@ -562,7 +562,7 @@ class ProfileScreen(Screens):
 
         # Instructor thoughts
         if self.the_cat.dead and game.clan.instructor is self.the_cat:
-            if not self.the_cat.status.group == CatGroup.STARCLAN:  # StarClan
+            if self.the_cat.status.group == CatGroup.STARCLAN:  # StarClan
                 self.the_cat.thought = i18n.t(
                     "screens.profile.guide_thought_sc", clan=game.clan.name
                 )
