@@ -9,6 +9,7 @@ TODO: Docs
 import logging
 import os
 import re
+from copy import copy
 from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
@@ -2695,6 +2696,8 @@ def generate_sprite(
         dead = cat.dead
 
     # setting the cat_sprite (bc this makes things much easier)
+
+    # sick sprites
     if (
         not disable_sick_sprite
         and cat.not_working()
@@ -2705,6 +2708,8 @@ def generate_sprite(
             cat_sprite = str(19)
         else:
             cat_sprite = str(18)
+
+    # paralyzed sprites
     elif cat.pelt.paralyzed and age != "newborn":
         if age in ["kitten", "adolescent"]:
             cat_sprite = str(17)
@@ -2713,6 +2718,8 @@ def generate_sprite(
                 cat_sprite = str(16)
             else:
                 cat_sprite = str(15)
+
+    # default sprites
     else:
         if age == "elder" and not constants.CONFIG["fun"]["all_cats_are_newborn"]:
             age = "senior"
@@ -2847,6 +2854,28 @@ def generate_sprite(
                         sprites.sprites["scars" + scar + cat_sprite], (0, 0)
                     )
 
+        # setting the lineart color to override on accessories & missing bits
+        lineart_color = pygame.Color(
+            constants.CONFIG["cat_sprites"]["lineart_color_df"]
+            if cat.status.group == CatGroup.DARK_FOREST
+            else constants.CONFIG["cat_sprites"]["lineart_color_sc"]
+        )
+
+        def _recolor_lineart(sprite, color) -> pygame.Surface:
+            """
+            Helper function to set the appropriate lineart color for the living status of the cat
+            :param sprite: lineart to recolor
+            :param color: color to apply
+            :return:
+            """
+            if not dead:
+                return sprite
+            out = sprite.copy()
+            pixel_array = pygame.PixelArray(out)
+            pixel_array.replace((0, 0, 0), color, distance=0)
+            del pixel_array
+            return out
+
         # draw line art
         if game_setting_get("shaders") and not dead:
             new_sprite.blit(
@@ -2870,7 +2899,9 @@ def generate_sprite(
             for scar in cat.pelt.scars:
                 if scar in cat.pelt.scars2:
                     new_sprite.blit(
-                        sprites.sprites["scars" + scar + cat_sprite],
+                        _recolor_lineart(
+                            sprites.sprites["scars" + scar + cat_sprite], lineart_color
+                        ),
                         (0, 0),
                         special_flags=blendmode,
                     )
@@ -2891,19 +2922,39 @@ def generate_sprite(
                     if accessory in getattr(Pelt, category):
                         if accessory in cat.pelt.plant_accessories:
                             new_sprite.blit(
-                                sprites.sprites["acc_herbs" + accessory + cat_sprite],
+                                _recolor_lineart(
+                                    sprites.sprites[
+                                        "acc_herbs" + accessory + cat_sprite
+                                    ],
+                                    lineart_color,
+                                ),
                                 (0, 0),
                             )
                         elif accessory in cat.pelt.wild_accessories:
                             new_sprite.blit(
-                                sprites.sprites["acc_wild" + accessory + cat_sprite],
+                                _recolor_lineart(
+                                    sprites.sprites[
+                                        "acc_wild" + accessory + cat_sprite
+                                    ],
+                                    lineart_color,
+                                ),
                                 (0, 0),
                             )
                         elif accessory in cat.pelt.collars:
                             new_sprite.blit(
-                                sprites.sprites["collars" + accessory + cat_sprite],
+                                _recolor_lineart(
+                                    sprites.sprites["collars" + accessory + cat_sprite],
+                                    lineart_color,
+                                ),
                                 (0, 0),
                             )
+
+        # apply experimental sparkle layer
+        if dead and cat.status.group == CatGroup.STARCLAN:
+            new_sprite.blit(
+                sprites.sprites["sc_overlay" + cat_sprite],
+                (0, 0),
+            )
 
         # Apply fading fog
         if (
@@ -2948,15 +2999,6 @@ def generate_sprite(
         ).convert_alpha()
 
     return new_sprite
-
-
-def apply_opacity(surface, opacity):
-    for x in range(surface.get_width()):
-        for y in range(surface.get_height()):
-            pixel = list(surface.get_at((x, y)))
-            pixel[3] = int(pixel[3] * opacity / 100)
-            surface.set_at((x, y), tuple(pixel))
-    return surface
 
 
 # ---------------------------------------------------------------------------- #

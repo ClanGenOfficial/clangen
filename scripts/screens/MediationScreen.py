@@ -570,34 +570,71 @@ class MediationScreen(Screens):
         # Relation info:
         if related and other_cat and not mates:
             col2 += "\n"
-            if other_cat.is_uncle_aunt(cat):
-                if cat.genderalign in ("female", "trans female"):
-                    col2 += i18n.t("general.niece")
-                elif cat.genderalign in ("male", "trans male"):
-                    col2 += i18n.t("general.nephew")
+            relation = ""
+            if cat.is_uncle_aunt(other_cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.niece"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.nephew"
                 else:
-                    col2 += i18n.t("general.siblings_child")
-            elif cat.is_uncle_aunt(other_cat):
-                if cat.genderalign in ("female", "trans female"):
-                    col2 += i18n.t("general.aunt")
-                elif cat.genderalign in ("male", "trans male"):
-                    col2 += i18n.t("general.uncle")
+                    relation = "general.siblings_child"
+            elif other_cat.is_uncle_aunt(cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.aunt"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.uncle"
                 else:
-                    col2 += i18n.t("general.parents_sibling")
-            elif cat.is_grandparent(other_cat):
-                col2 += i18n.t("general.grandparent")
+                    relation = "general.parents_sibling"
             elif other_cat.is_grandparent(cat):
-                col2 += i18n.t("general.grandchild")
-            elif cat.is_parent(other_cat):
-                col2 += i18n.t("general.parent")
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.grandmother"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.grandfather"
+                else:
+                    relation = "general.grandparent"
+            elif cat.is_grandparent(other_cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.granddaughter"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.grandson"
+                else:
+                    relation = "general.grandchild"
             elif other_cat.is_parent(cat):
-                col2 += i18n.t("general.child")
-            elif cat.is_sibling(other_cat) or other_cat.is_sibling(cat):
-                col2 += i18n.t("general.sibling")
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.mother"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.father"
+                else:
+                    relation = "general.parent"
+            elif cat.is_parent(other_cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.daughter"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.son"
+                else:
+                    relation = "general.child"
+            elif other_cat.is_sibling(cat) or cat.is_sibling(other_cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.sister"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.brother"
+                else:
+                    relation = "general.sibling"
+
+                if other_cat.is_littermate(cat) or cat.is_littermate(other_cat):
+                    relation = i18n.t(
+                        "general.sibling_littermate", relation=i18n.t(relation)
+                    )
             elif not get_clan_setting("first cousin mates") and other_cat.is_cousin(
                 cat
             ):
-                col2 += i18n.t("general.cousin")
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.cousin_female"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.cousin_male"
+                else:
+                    relation = "general.cousin_nb"
+            col2.append(i18n.t("general.related_label", relation=i18n.t(relation)))
 
         self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(
             col2,

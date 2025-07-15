@@ -245,7 +245,10 @@
 	},
     "cat_sprites": {
         "sick_sprites": true,
-        "comment": "Set this to false to disable sick sprites."
+        "comment": "Set this to false to disable sick sprites.",
+		"lineart_color_sc": [47, 51, 64],
+		"lineart_color_df": [30, 8, 11],
+		"lineart_color_comment": "This is used to recolor lineart to blend better in death"
     },
 	"patrol_generation": {
 		"classic_difficulty_modifier": 1,
