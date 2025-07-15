@@ -320,7 +320,7 @@ class ProfileScreen(Screens):
                         self.the_cat.thought = (
                             "Is relieved to once again hunt in StarClan"
                         )
-                    # SC -> UR
+                    # SC -> DF
                     else:
                         self.the_cat.status.add_to_group(new_group=CatGroup.DARK_FOREST)
                         self.the_cat.thought = (
@@ -2148,7 +2148,7 @@ class ProfileScreen(Screens):
                 if self.the_cat.status.group == CatGroup.DARK_FOREST:
                     text = "screens.profile.send_ur"
                     layer = self.ur
-                elif self.the_cat.status.group == CatGroup.STARCLAN:
+                elif self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                     text = "screens.profile.guide_sc"
                     layer = self.sc
 
