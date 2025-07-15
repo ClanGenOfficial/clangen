@@ -1578,7 +1578,11 @@ class Cat:
 
         # get chosen thought
         if just_died:
-            afterlife = self.status.group
+            afterlife = (
+                self.status.group
+                if self.status.group and self.status.group.is_afterlife()
+                else game.clan.instructor.status.group
+            )
             chosen_thought = Thoughts.new_death_thought(
                 self, other_cat, game_mode, biome, season, camp, afterlife, lives_left
             )
