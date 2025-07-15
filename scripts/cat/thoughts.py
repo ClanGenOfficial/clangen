@@ -137,7 +137,7 @@ class Thoughts:
         if not event_for_cat(main_info_dict, main_cat):
             return False
 
-        if random_cat and not event_for_cat(random_info_dict, random_cat):
+        if r_c_in and not event_for_cat(random_info_dict, random_cat):
             return False
 
         # Filter for the living status of the random cat. The living status of the main cat
