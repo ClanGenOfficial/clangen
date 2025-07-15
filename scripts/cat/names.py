@@ -266,7 +266,7 @@ class Name:
 
         # Handles suffix assignment with outside cats
         if self.cat.status.is_former_clancat:
-            old_rank = self.cat.status.find_prior_clan_rank(CatGroup.PLAYER_CLAN)
+            old_rank = self.cat.status.find_prior_clan_rank()
 
             if (
                 old_rank in self.names_dict["special_suffixes"]
