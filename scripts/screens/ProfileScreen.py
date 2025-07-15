@@ -306,6 +306,18 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 # if the cat is dead, moves them to the opposite afterlife
                 if self.the_cat.dead:
+                    if self.the_cat == game.clan.instructor:
+                        # DF -> SC
+                        if self.the_cat.status.group == CatGroup.DARK_FOREST:
+                            self.the_cat.status.add_to_group(
+                                new_group=CatGroup.STARCLAN
+                            )
+                        # SC -> DF
+                        else:
+                            self.the_cat.status.add_to_group(
+                                new_group=CatGroup.DARK_FOREST
+                            )
+                        self.the_cat.pelt.rebuild_sprite = True
                     # DF -> UR
                     if self.the_cat.status.group == CatGroup.DARK_FOREST:
                         self.the_cat.status.add_to_group(
