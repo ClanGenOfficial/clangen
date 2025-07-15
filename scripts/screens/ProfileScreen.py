@@ -313,15 +313,16 @@ class ProfileScreen(Screens):
                                 new_group=CatGroup.STARCLAN
                             )
                             self.the_cat.thought = i18n.t(
-                                "screens.profile.guide_thought_df", clan=game.clan.name
+                                "screens.profile.guide_thought_sc", clan=game.clan.name
                             )
                         # SC -> DF
                         else:
                             self.the_cat.status.add_to_group(
                                 new_group=CatGroup.DARK_FOREST
                             )
+
                             self.the_cat.thought = i18n.t(
-                                "screens.profile.guide_thought_sc", clan=game.clan.name
+                                "screens.profile.guide_thought_df", clan=game.clan.name
                             )
                         self.the_cat.pelt.rebuild_sprite = True
                     else:
