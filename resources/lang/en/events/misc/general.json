@@ -2257,7 +2257,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c gives r_c a acc_singular to make up for a bad fight between them.",
+        "event_text": "r_c gives m_c a acc_singular to make up for a bad fight between them.",
         "new_accessory": [
             "WILD",
             "PLANT"
