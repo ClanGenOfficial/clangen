@@ -2156,14 +2156,21 @@ class ProfileScreen(Screens):
             )
             text = "screens.profile.exile"
             if self.the_cat.dead:
-                text = "screens.profile.exile_df"
-                layer = self.df
-                if self.the_cat.status.group == CatGroup.DARK_FOREST:
-                    text = "screens.profile.send_ur"
-                    layer = self.ur
-                elif self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
-                    text = "screens.profile.guide_sc"
-                    layer = self.sc
+                if self.the_cat == game.clan.instructor:
+                    text = "screens.profile.exile_df"
+                    layer = self.df
+                    if self.the_cat.status.group == CatGroup.DARK_FOREST:
+                        text = "screens.profile.guide_sc"
+                        layer = self.sc
+                else:
+                    text = "screens.profile.exile_df"
+                    layer = self.df
+                    if self.the_cat.status.group == CatGroup.DARK_FOREST:
+                        text = "screens.profile.send_ur"
+                        layer = self.ur
+                    elif self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
+                        text = "screens.profile.guide_sc"
+                        layer = self.sc
 
                 self.exile_layer = pygame_gui.elements.UIImage(
                     ui_scale(pygame.Rect((578, 450), (172, 46))),
