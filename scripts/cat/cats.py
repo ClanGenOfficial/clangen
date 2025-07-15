@@ -610,7 +610,9 @@ class Cat:
         # Deal with leader death
         text = ""
         darkforest = game.clan.instructor.status.group == CatGroup.DARK_FOREST
-        isoutside = self.status.is_outsider
+        isoutside = self.status.is_outsider and not self.status.is_lost(
+            CatGroup.PLAYER_CLAN
+        )
         if self.status.is_leader:
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
