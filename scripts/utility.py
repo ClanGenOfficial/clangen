@@ -1260,6 +1260,11 @@ def filter_relationship_type(
             return False
 
     if "not_parent" in filter_types:
+        if patrol_leader:
+            if patrol_leader in group:
+                group.remove(patrol_leader)
+            group.insert(0, patrol_leader)
+
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
@@ -1279,6 +1284,11 @@ def filter_relationship_type(
             return False
 
     if "not_child" in filter_types:
+        if patrol_leader:
+            if patrol_leader in group:
+                group.remove(patrol_leader)
+            group.insert(0, patrol_leader)
+
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
@@ -1298,6 +1308,11 @@ def filter_relationship_type(
             return False
 
     if "not_mentor" in filter_types:
+        if patrol_leader:
+            if patrol_leader in group:
+                group.remove(patrol_leader)
+            group.insert(0, patrol_leader)
+
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
@@ -1317,6 +1332,11 @@ def filter_relationship_type(
             return False
 
     if "not_app" in filter_types:
+        if patrol_leader:
+            if patrol_leader in group:
+                group.remove(patrol_leader)
+            group.insert(0, patrol_leader)
+            
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
