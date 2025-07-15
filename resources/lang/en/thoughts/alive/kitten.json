@@ -827,5 +827,35 @@
                 "pregnant"
             ]
         }
+    },
+    {
+        "id": "kit_to_newborn",
+        "thoughts": [
+            "Asks when r_c will be big enough to play with",
+            "Tries to give r_c a juicy piece of prey",
+            "Gives r_c {PRONOUN/m_c/poss} favorite feather",
+            "Gives r_c {PRONOUN/m_c/poss} favorite petal",
+            "Gives r_c {PRONOUN/m_c/poss} favorite rock",
+            "Gives r_c {PRONOUN/m_c/poss} favorite stick",
+            "Says r_c is too small to share toys with",
+            "Can't wait for r_c to grow up",
+            "Teases r_c for being so small",
+            "Isn't allowed to wrestle r_c",
+            "Advises r_c on the best parts of the nursery",
+            "Refuses to believe {PRONOUN/m_c/subject} {VERB/m_c/were/was} ever as small as r_c",
+            "Asks when r_c will start eating solid prey",
+            "Wonders what kind of Clanmate r_c will become",
+            "Wants r_c to be {PRONOUN/m_c/poss} apprentice",
+            "Was sent out of the nursery for being too rowdy around the new litter"
+        ],
+        "main_status_constraint": [
+            "kitten"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     }
 ]

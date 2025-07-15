@@ -420,6 +420,29 @@
                 ],
                 "amount": -30
             }
+        ],
+        "future_event": [
+            {
+                "event_type": "death",
+                "pool": {
+                    "subtype": [
+                        "murder"
+                    ],
+                    "event_id": [],
+                    "excluded_event_id": [
+                        "gen_death_murder_anydep1",
+                        "gen_death_murder_anydep2"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    10
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "r_c": "m_c"
+                }
+            }
         ]
     },
     {

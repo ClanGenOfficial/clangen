@@ -363,6 +363,14 @@
         ]
     },
     {
+        "id": "gen_dead_to_newborn",
+        "thoughts": [
+            "Is glad to see new life in c_n",
+            "Watches over the new litter"
+        ],
+        "random_age_constraint": ["newborn"]
+    },
+    {
         "id": "gen_dead_app",
         "thoughts": [
             "Wants to use {PRONOUN/m_c/poss} training to help StarClan",

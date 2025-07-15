@@ -1492,7 +1492,7 @@ class Cat:
             outro = "this should not appear"
 
         full_ceremony = "<br><br>".join([intro, all_lives, outro])
-        return full_ceremony
+        self.history.lead_ceremony = full_ceremony
 
     # ---------------------------------------------------------------------------- #
     #                              moon skip functions                             #
