@@ -365,13 +365,6 @@ class Thoughts:
 
         return chosen_thought
 
-    def create_death_thoughts(self, inter_list) -> list:
-        # helper function for death thoughts
-        created_list = []
-        for inter in inter_list:
-            created_list.append(inter)
-        return created_list
-
     @staticmethod
     def new_death_thought(
         main_cat, other_cat, game_mode, biome, season, camp, afterlife, lives_left
@@ -397,7 +390,7 @@ class Thoughts:
             )
             chosen_thought = choice(thought_group["thoughts"])
             return chosen_thought
-        
+
         except Exception:
             traceback.print_exc()
             return i18n.t("defaults.thought")
