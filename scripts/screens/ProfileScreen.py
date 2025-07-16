@@ -1489,22 +1489,6 @@ class ProfileScreen(Screens):
                     main_cat=self.the_cat,
                     random_cat=Cat.fetch_cat(death["involved"]),
                 )
-                if "is_victim" in murder_history:
-                    for event in murder_history["is_victim"]:
-                        # check if we match moon counts
-                        if event["moon"] == death["moon"]:
-                            # get reveal status text
-                            status_text = self.the_cat.history.get_murder_status_text(
-                                murder=event, Cat=Cat
-                            )
-                            status_text = event_text_adjust(
-                                Cat,
-                                status_text,
-                                main_cat=self.the_cat,
-                                random_cat=Cat.fetch_cat(death["involved"]),
-                            )
-                            text += f" ({status_text}) "
-                            break
 
                 if self.the_cat.status.is_leader:
                     if text == "multi_lives":
@@ -1569,6 +1553,23 @@ class ProfileScreen(Screens):
                     if moons:
                         text += f" ({i18n.t('general.moon_date', moon=death['moon'])})"
                     all_deaths.append(text)
+
+            if "is_victim" in murder_history:
+                for event in murder_history["is_victim"]:
+                    # check if we match moon counts
+                    if event["moon"] == death["moon"]:
+                        # get reveal status text
+                        status_text = self.the_cat.history.get_murder_status_text(
+                            murder=event, Cat=Cat
+                        )
+                        status_text = event_text_adjust(
+                            Cat,
+                            status_text,
+                            main_cat=self.the_cat,
+                            random_cat=Cat.fetch_cat(death["involved"]),
+                        )
+                        text += f" ({status_text}) "
+                        break
 
             if self.the_cat.status.is_leader or death_number > 1:
                 if death_number > 1:
