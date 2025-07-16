@@ -123,8 +123,7 @@ class Events:
 
         # checking if a lost cat returns on their own
         rejoin_upperbound = constants.CONFIG["lost_cat"]["rejoin_chance"]
-        if random.randint(1, rejoin_upperbound) == 1:
-            self.handle_lost_cats_return()
+        self.handle_lost_cats_return()
 
         self.handle_future_events()
 
@@ -772,17 +771,11 @@ class Events:
             cat_IDs = predetermined_cat_IDs
 
         if not predetermined_cat_IDs:
-            eligible_cats = []
-            for cat in Cat.all_cats.values():
-                if not cat.status.is_outsider and not cat.dead:
-                    continue
-                if cat.ID not in Cat.outside_cats:
-                    # The outside-value must be set to True before the cat can go to cotc
-                    Cat.outside_cats.update({cat.ID: cat})
-
-                if cat.status.is_lost(CatGroup.PLAYER_CLAN):
-                    eligible_cats.append(cat)
-
+            eligible_cats = [
+                cat
+                for cat in Cat.all_cats.values()
+                if not cat.dead and cat.status.is_lost(CatGroup.PLAYER_CLAN)
+            ]
             if not eligible_cats:
                 return
 
