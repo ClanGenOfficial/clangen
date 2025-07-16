@@ -772,16 +772,11 @@ class Events:
             cat_IDs = predetermined_cat_IDs
 
         if not predetermined_cat_IDs:
-            eligible_cats = []
-            for cat in Cat.all_cats.values():
-                if not cat.status.is_outsider and not cat.dead:
-                    continue
-                if cat.ID not in Cat.outside_cats:
-                    # The outside-value must be set to True before the cat can go to cotc
-                    Cat.outside_cats.update({cat.ID: cat})
-
-                if cat.status.is_lost(CatGroup.PLAYER_CLAN):
-                    eligible_cats.append(cat)
+            eligible_cats = [
+                cat
+                for cat in Cat.all_cats.values()
+                if not cat.dead and cat.status.is_lost(CatGroup.PLAYER_CLAN)
+            ]
 
             if not eligible_cats:
                 return
