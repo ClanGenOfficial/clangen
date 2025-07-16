@@ -8819,7 +8819,7 @@
         "sub_type": [
             "transition"
         ],
-        "frequency": 2,
+        "frequency": 4,
         "event_text": "m_c has realized that she-cat doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore.",
         "m_c": {
             "gender": [
@@ -8842,7 +8842,7 @@
         "sub_type": [
             "transition"
         ],
-        "frequency": 2,
+        "frequency": 4,
         "event_text": "m_c has realized that tom doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore.",
         "m_c": {
             "gender": [
