@@ -46,11 +46,11 @@
         },
         
         "regular_death": "%{cats} died.",
-        "death_cause": "%{death} when {PRONOUN/m_c/subject} %{text}.",
+        "death_cause": "%{death} when {PRONOUN/m_c/subject} %{text}",
         "murdered": "%{name} murdered %{victims}.",
         "murder_revealed_to_clan": "The Clan knows.",
         "murder_not_revealed_to_clan": "The Clan is unaware.",
-        "murder_revealed_to_individual": "%{name} knows. ",
+        "murder_revealed_to_individual": "%{name} knows.",
         "leader_lives_left_df": {
             "zero": "The leader has no lives left and has travelled to the Dark Forest.",
             "one": "The leader has one life left.",
