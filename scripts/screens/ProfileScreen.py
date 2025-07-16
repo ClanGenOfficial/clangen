@@ -705,9 +705,12 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # EYE COLOR
-        output += i18n.t(
-            "screens.profile.eyes_label", eyes=the_cat.pelt.describe_eyes()
-        )
+        if the_cat.age == CatAge.NEWBORN:
+            output += "???"
+        else:
+            output += i18n.t(
+                "screens.profile.eyes_label", eyes=the_cat.pelt.describe_eyes()
+            )
         # NEWLINE ----------
         output += "\n"
 
