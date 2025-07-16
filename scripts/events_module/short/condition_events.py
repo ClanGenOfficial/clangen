@@ -876,7 +876,7 @@ class Condition_Events:
                 triggered = True
                 event_types.append("birth_death")
                 translated_condition = i18n.t(
-                    f"conditions.permanent_condition.{condition}"
+                    f"conditions.permanent_conditions.{condition}"
                 )
                 event = i18n.t(
                     "defaults.complications_death_event", condition=translated_condition
