@@ -5,10 +5,8 @@ import i18n
 
 from scripts.clan_resources.herb.herb import HERBS
 from scripts.events_module.future.future_event import prep_event
-from scripts.game_structure import localization
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatRank
-from scripts.cat.history import History
+from scripts.cat.enums import CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import get_clan_setting
