@@ -538,7 +538,7 @@ class Status:
         for entry in self.standing_history:
             if entry["group"] == group:
                 return entry["standing"]
-        return None
+        return []
 
     def find_prior_clan_rank(self, clan: CatGroup = None):
         """
