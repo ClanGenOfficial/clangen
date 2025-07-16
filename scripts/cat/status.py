@@ -488,8 +488,7 @@ class Status:
             return
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
-        if (self.is_outsider and not self.is_former_clancat) or (
-            self.is_outsider and self.is_exiled(CatGroup.PLAYER_CLAN)
+        if self.is_outsider and (self.is_exiled(CatGroup.PLAYER_CLAN) or not self.is_former_clancat
         ):
             self.add_to_group(new_group=CatGroup.UNKNOWN_RESIDENCE)
             return
