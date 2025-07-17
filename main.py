@@ -26,8 +26,6 @@ import time
 from importlib import reload
 from importlib.util import find_spec
 
-from scripts.game_structure.audio.ambiance_manager import ambiance_manager
-
 if not getattr(sys, "frozen", False):
     requiredModules = [
         "ujson",
@@ -183,10 +181,6 @@ for module_name, module in list(sys.modules.items()):
             reload(module)
 
 # Load game
-from scripts.game_structure.audio.sound_manager import sound_manager
-from scripts.game_structure.audio.audio_manager import audio_manager
-from scripts.game_structure.audio.ambiance_manager import ambiance_manager
-from scripts.game_structure.audio.music_manager import music_manager
 from scripts.clan import clan_class
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
@@ -213,6 +207,7 @@ import pygame
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import AllScreens
 import scripts.game_structure.screen_settings
+from scripts.game_structure.audio.audio_manager import AudioManager
 
 # P Y G A M E
 clock = pygame.time.Clock()
@@ -333,14 +328,15 @@ def load_game():
 # load spritesheets
 sprites.load_all()
 load_game()
+game.audio = AudioManager()
 
 pygame.mixer.pre_init(buffer=44100)
 try:
     pygame.mixer.init()
 except pygame.error:
     print("Failed to initialize sound. Sound will be disabled.")
-    audio_manager.disabled = True
-    audio_manager.muted = True
+    game.audio.disabled = True
+    game.audio.muted = True
 AllScreens.start_screen.screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
@@ -349,7 +345,7 @@ cursor_img = pygame.image.load("resources/images/cursor.png").convert_alpha()
 cursor = pygame.cursors.Cursor((9, 0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 fps = switch_get_value(Switch.fps)
-music_manager.check_music("start screen")
+game.audio.music.check_music("start screen")
 while 1:
     time_delta = clock.tick(fps) / 1000.0
 
@@ -379,7 +375,7 @@ while 1:
                 event
             )
 
-        sound_manager.handle_sound_events(event)
+        game.audio.sound.handle_sound_events(event)
 
         if event.type == pygame.QUIT:
             # Don't display if on the start screen or there is no clan.
@@ -436,8 +432,8 @@ while 1:
         getattr(AllScreens, game.last_screen_forupdate.replace(" ", "_")).exit_screen()
         getattr(AllScreens, game.current_screen.replace(" ", "_")).screen_switches()
         game.switch_screens = False
-    if not audio_manager.disabled and not audio_manager.muted:
-        audio_manager.start()
+    if not game.audio.disabled and not game.audio.muted:
+        game.audio.start()
 
     debug_mode.pre_update(clock)
     # END FRAME

@@ -5,7 +5,6 @@ import ujson
 
 from scripts.event_class import Single_Event
 from scripts.game_structure import constants
-from scripts.game_structure.audio.audio_manager import AudioManager
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
@@ -69,13 +68,6 @@ class Game:
     patrol_cats = {}
     patrolled = []
 
-    outsider_reps = ["welcoming", "neutral", "hostile"]
-    other_clan_reps = ["ally", "neutral", "hostile"]
-
-    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
-
-    # store changing parts of the game that the user can toggle with buttons
-
     all_screens = {}
 
     debug_settings = {
@@ -102,7 +94,7 @@ class Game:
 
         self.clan: Optional["Clan"] = None
 
-        self.audio = AudioManager()
+        self.audio = None
 
         with open(f"resources/prey_config.json", "r", encoding="utf-8") as read_file:
             self.prey_config = ujson.loads(read_file.read())
