@@ -114,8 +114,7 @@ The additional constraint `born_with` allows you to constrain whether this thoug
     Be careful when specifying `born_with`. If you force a condition to be congenital when it can never generate as such, the thought will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
 
 **RELATIONSHIP_CONSTRAINT:**
-Constrains the thought to only occur if m_c and r_c fulfill the tags requirements: for the "parent/child" tag, the thinker is the parent, and whoever it's directed towards the child (vise versa with "child/parent"), and the same goes for the "app/mentor" and "mentor/app."
-> "siblings", "littermates", "mates", "not_mates", "parent/child", "child/parent",  "app/mentor", "mentor/app", "stranger",
+Constrains the thought to only occur if m_c and r_c fulfill the tags requirements. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
 
 
 BACKSTORY_CONSTRAINT:

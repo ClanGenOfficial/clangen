@@ -257,26 +257,7 @@ lowercase season names + "any"
 
     However, remember the wide range of ages and statuses we have and how they can overlap with each other.  It's possible to have warriors who graduate early and are still adolescent age.  It's also possible for apps to train longer than usual and become young adults without becoming warriors.  Elders, likewise, can be both young and old cats as it's possible for cats to retire to the elder den at any age.
 
->**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event.
-
-| string                |                                                                                              |
-|-----------------------|----------------------------------------------------------------------------------------------|
-| siblings              | m_c and r_c are siblings                                                                     |
-| not_siblings          | m_c and r_c are not siblings                                                                 |
-| littermates           | m_c and r_c are littermates                                                                  |
-| not_littermates       | m_c and r_c are not littermates                                                              |
-| mates                 | m_c and r_c are mates                                                                        |
-| not_mates             | m_c and r_c are NOT mates                                                                    |
-| parent/child          | m_c is the parent of r_c                                                                     |
-| not_parent            | m_c is not r_c's parent                                                                      |
-| child/parent          | m_c is the child of r_c                                                                      |
-| not_child             | m_c is not the child of r_c                                                                  |
-| app/mentor            | m_c is the apprentice of r_c                                                                 |
-| not_app               | m_c is not the apprentice of r_c                                                             |
-| mentor/app            | r_c is the mentor of m_c                                                                     |
-| not_mentor            | r_c is not the mentor of m_c                                                                 |
-
-> You can also include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels)
+>**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
 
 >**skill[list]** : m_c must possess at least one skill from this list. if they can be anything, use "any"
 >
@@ -301,10 +282,8 @@ lowercase season names + "any"
 >
 >**status:[list]** : a list of statuses r_c can be. if they can be anything, use "any"
 >
->**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c.  Note that this is not identical to the tag list from the m_c cat block.  If you wish to dictate relationships like "siblings", "mates", ect. then you must do so within the m_c block, not the r_c block.
-
-> You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels)
-
+>**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels).
+> 
 >**skill[list]** : r_c must possess at least one skill from this list. if they can be anything, remove parameter or leave list empty.
 >
 >**not_skill[list]** : r_c cannot possess any of the skills on this list

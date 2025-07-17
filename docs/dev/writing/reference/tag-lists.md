@@ -359,3 +359,27 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 | Mid Pos     | `enjoys`    | `respects`     | `trusts`      | `understands`  | `adores`       |
 | Extreme Pos | `cherishes` | `admires`      | `confides_in` | `knows_deeply` | `fancies`      |
 
+***
+
+## Relationship Types
+> These tags are used to indicate a type of relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat.
+
+| string            |                                    | Patrol Use Specifics                   |
+|-------------------|------------------------------------|----------------------------------------|
+| `siblings`        | cat1 and cat2 are siblings         | all cats are siblings                  |
+| `not_siblings`    | cat1 and cat2 are not siblings     | all cats are not siblings              |
+| `littermates`     | cat1 and cat2 are littermates      | all cats are littermates               |
+| `not_littermates` | cat1 and cat2 are not littermates  | all cats are not littermates           |
+| `mates`           | cat1 and cat2 are mates            | all cats are mates                     |
+| `not_mates`       | cat1 and cat2 are NOT mates        | all cats are not mates                 |
+| `parent/child`    | cat1 is the parent of cat2         | only for use in 2-cat patrols          |
+| `not_parent`      | cat1 is not cat2's parent          | none of the cats are p_l's parents     |
+| `child/parent`    | cat1 is the child of cat2          | only for use in 2-cat patrols          |
+| `not_child`       | cat1 is not the child of cat2      | none of the cats are p_l's children    |
+| `app/mentor`      | cat1 is the apprentice of cat2     | only for use in 2-cat patrols          |
+| `not_app`         | cat1 is not the apprentice of cat2 | none of the cats are p_l's apprentices |
+| `mentor/app`      | cat1 is the mentor of cat2         | only for use in 2-cat patrols          |
+| `not_mentor`      | cat1 is not the mentor of cat2     | none of the cats are p_l's mentor      |
+
+!!! warning
+    Within ShortEvents, these should only be used in m_c's relationship constraints.

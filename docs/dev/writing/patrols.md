@@ -510,16 +510,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 ***
 
 #### relationship_constraint: List[str]
->Optional. Only allows the patrol if the cats meet relationship constraints
-
-| relationship          |                                                                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| "siblings"            | All cats on the patrol must be siblings                                                                                           |
-| "mates"               | All cats on the patrol must be mates with each-other                                                                              |
-| "mates_with_pl"       | All cats on the patrol must be mates with p_l, but don't necessarily have to be mates with each-other.                            |
-| "parent/child"        | p_l must be the parent of r_c                                                                                                     |
-| "child/parent"        | r_c must be the parent of p_l                                                                                                     |
-> You can also include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels)
+>Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
 
 ***
 
