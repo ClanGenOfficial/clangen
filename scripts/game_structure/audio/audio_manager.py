@@ -18,6 +18,7 @@ class AudioManager:
     """
     This class allows control over audio as a whole.
     """
+
     def __init__(self):
         self.audio_disabled = False
         self.muted = False
@@ -34,7 +35,8 @@ class AudioManager:
             music_manager.choose_music()
             music_manager.play_music()
 
-    def check_background_audio(self, screen):
+    @staticmethod
+    def check_background_audio(screen):
         """
         Checks that background audio is appropriate for the given screen
         """
@@ -67,7 +69,6 @@ class AudioManager:
             except pygame.error:
                 self.muted = True
                 self.audio_disabled = True
-                return False
         else:
             self.muted = False
 

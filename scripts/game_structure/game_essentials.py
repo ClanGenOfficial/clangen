@@ -46,10 +46,6 @@ class Game:
     last_screen_forProfile = "list screen"
     last_list_forProfile = None
 
-    # this is just to make referencing main menu screens as a whole easier,
-    # note that the clan creation screen is included and the clan settings screen is excluded
-    main_menu_screens = ["settings screen", "start screen", "switch clan screen", "make clan screen"]
-
     # PYGAME CUSTOM EVENTS
     music_ended = pygame.USEREVENT + 4
     music_timer = pygame.USEREVENT + 3

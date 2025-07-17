@@ -5,6 +5,9 @@ import ujson
 import logging
 import pygame
 
+from scripts.game_structure import constants
+from scripts.game_structure.game.settings import game_setting_get, game_setting_set
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
@@ -22,6 +25,8 @@ class MusicManager:
 
         self.channel = None
 
+        self.menu_music_playing = False
+        self.current_playlist = []
         self.current_track_name = None
         self.last_track_name = None
 
@@ -29,7 +34,7 @@ class MusicManager:
 
         self.available_music: dict = {}
 
-        self.volume = game.settings["music_volume"] / 100
+        self.volume = game_setting_get("music_volume") / 100
 
         self.load_possible_tracks()
 
@@ -62,9 +67,7 @@ class MusicManager:
             try:
                 self.available_music[tracks] = []
                 for path in music_data[tracks]:
-                    self.available_music[tracks].append(
-                        "resources/audio/music/" + path
-                    )
+                    self.available_music[tracks].append("resources/audio/music/" + path)
             except:
                 logger.exception("Failed to load music lists")
 
@@ -95,12 +98,14 @@ class MusicManager:
         chooses music from the appropriate playlists and sends it to be loaded
         """
         self.live = True
-        playlist = []
+        self.current_playlist = []
 
-        if screen in game.main_menu_screens:
-            playlist = self.available_music.get("menu_playlist")
+        if screen in constants.MAIN_MENU_SCREENS:
+            self.current_playlist = self.available_music.get("menu_playlist")
+            self.menu_music_playing = True
         else:
-            playlist.extend(self.available_music.get("general_playlist"))
+            self.menu_music_playing = False
+            self.current_playlist.extend(self.available_music.get("general_playlist"))
 
             try:
                 biome = game.clan.biome
@@ -112,20 +117,28 @@ class MusicManager:
             except AttributeError:
                 season = "Newleaf"
 
-            if self.available_music.get(f"{season.casefold().replace('-', '')}_playlist"):
-                playlist.extend(self.available_music.get(f"{season.casefold().replace('-', '')}_playlist"))
+            if self.available_music.get(
+                f"{season.casefold().replace('-', '')}_playlist"
+            ):
+                self.current_playlist.extend(
+                    self.available_music.get(
+                        f"{season.casefold().replace('-', '')}_playlist"
+                    )
+                )
             if self.available_music.get(f"{biome.casefold()}_playlist"):
-                playlist.extend(self.available_music.get(f"{biome.casefold()}_playlist"))
+                self.current_playlist.extend(
+                    self.available_music.get(f"{biome.casefold()}_playlist")
+                )
 
-        if not playlist:
+        if not self.current_playlist:
             logger.error("Music track list is empty, check the music.json!")
             chosen_track = "resources/audio/music/Generations.mp3"  # making this default just in case
-        elif len(playlist) == 1:
-            chosen_track = playlist[0]
+        elif len(self.current_playlist) == 1:
+            chosen_track = self.current_playlist[0]
         else:
-            if self.last_track_name in playlist:
-                playlist.remove(self.last_track_name)
-            chosen_track = choice(playlist)
+            if self.last_track_name in self.current_playlist:
+                self.current_playlist.remove(self.last_track_name)
+            chosen_track = choice(self.current_playlist)
 
         self.load_music(chosen_track)
 
@@ -137,13 +150,13 @@ class MusicManager:
             return
 
         if (
-                screen in game.main_menu_screens
-                and self.current_track_name not in self.available_music["menu_playlist"]
+            screen in constants.MAIN_MENU_SCREENS
+            and self.current_track_name not in self.available_music["menu_playlist"]
         ):
             self.fade_out_music(delay=2)
         elif (
-                screen not in game.main_menu_screens
-                and self.current_track_name in self.available_music["menu_playlist"]
+            screen not in constants.MAIN_MENU_SCREENS
+            and self.current_track_name in self.available_music["menu_playlist"]
         ):
             self.fade_out_music()
 
@@ -207,14 +220,16 @@ class MusicManager:
             new_volume = 0
 
         self.volume = new_volume / 100
-        game.settings["music_volume"] = new_volume
+        game_setting_set("music_volume", new_volume)
         self.loaded_track.set_volume(self.volume)
 
     def start_music_timer(self):
         """
         sets a timer for the length of the track.  When the timer ends, silence timer is activated.
         """
-        self.music_timer = Timer(self.loaded_track.get_length(), self.start_silence_timer)
+        self.music_timer = Timer(
+            self.loaded_track.get_length(), self.start_silence_timer
+        )
         self.music_timer.daemon = True
         self.music_timer.start()
 
@@ -224,12 +239,17 @@ class MusicManager:
         """
         # waiting should already be true, but we'll just make certain
         self.del_music()
-        self.silence_timer = Timer(duration, self.reset_music)
-        self.silence_timer.daemon = True
-        self.silence_timer.start()
+        # main menus get constant music, no silence
+        if self.menu_music_playing:
+            self.reset_music()
+        # all other screens, silence interval
+        else:
+            self.silence_timer = Timer(duration, self.reset_music)
+            self.silence_timer.daemon = True
+            self.silence_timer.start()
 
     def reset_music(self):
-        self.choose_music(game.switches["cur_screen"])
+        self.choose_music(switch_get_value(Switch.cur_screen))
         self.play_music()
 
 

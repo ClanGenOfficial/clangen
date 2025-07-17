@@ -294,7 +294,7 @@ class Screens:
             Screens.show_mute_buttons()
             return True
         elif event.ui_element == Screens.menu_buttons["unmute_button"]:
-            audio_manager.unmute_audio(game.switches["cur_screen"])
+            audio_manager.unmute_audio(switch_get_value(Switch.cur_screen))
             Screens.show_mute_buttons()
             return True
         else:

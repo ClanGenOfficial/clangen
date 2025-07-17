@@ -5,7 +5,7 @@ import pygame
 import pygame_gui
 import ujson
 
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure.ui_elements import CatButton, UISpriteButton
 
 logger = logging.getLogger(__name__)
@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 class _SoundManager:
     def __init__(self):
-        self.volume = game.settings["sound_volume"] / 100
+        self.volume = game_setting_get("sound_volume") / 100
         self.pressed = None
         self.muted = False
 
@@ -97,7 +97,7 @@ class _SoundManager:
 
         # convert to a float and change volume accordingly
         self.volume = new_volume / 100
-        game.settings["sound_volume"] = new_volume
+        game_setting_set("sound_volume", new_volume)
         for sound in self.sounds:
             for each in self.sounds[sound]:
                 each.set_volume(self.volume)

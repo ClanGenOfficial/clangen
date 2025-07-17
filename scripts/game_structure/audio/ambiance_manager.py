@@ -4,6 +4,8 @@ import random
 import pygame
 import ujson
 
+from scripts.game_structure import constants
+from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
@@ -11,11 +13,10 @@ logger = logging.getLogger(__name__)
 
 class AmbianceManager:
     def __init__(self):
-
         self.current_playlist = []
         self.biome_playlist = []
         self.number_of_tracks = len(self.current_playlist)
-        self.volume = game.settings["ambiance_volume"] / 100
+        self.volume = game_setting_get("ambiance_volume") / 100
         self.current_track = None
         self.queued_track = None
 
@@ -34,9 +35,7 @@ class AmbianceManager:
             try:
                 self.playlists[playlist] = []
                 for path in audio_data[playlist]:
-                    self.playlists[playlist].append(
-                        "resources/audio/ambiance/" + path
-                    )
+                    self.playlists[playlist].append("resources/audio/ambiance/" + path)
             except:
                 logger.exception("Failed to load ambiance playlist")
 
@@ -49,16 +48,16 @@ class AmbianceManager:
 
         # menu screen
         if (
-                screen in game.main_menu_screens
-                and self.current_playlist != self.playlists["menu_playlist"]
+            screen in constants.MAIN_MENU_SCREENS
+            and self.current_playlist != self.playlists["menu_playlist"]
         ):
             self.fade_out_ambiance()
             self.play_playlist(self.playlists["menu_playlist"])
 
         # other screens
         elif (
-                screen not in game.main_menu_screens
-                and self.current_playlist != self.biome_playlist
+            screen not in constants.MAIN_MENU_SCREENS
+            and self.current_playlist != self.biome_playlist
         ):
             self.fade_out_ambiance()
             self.play_playlist(self.biome_playlist)
@@ -157,7 +156,7 @@ class AmbianceManager:
 
         # convert to a float and change volume accordingly
         self.volume = new_volume / 100
-        game.settings["ambiance_volume"] = new_volume
+        game_setting_set("ambiance_volume", new_volume)
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
 
@@ -178,7 +177,9 @@ class AmbianceManager:
         new_playlist = self.playlists["general_playlist"].copy()
         new_playlist.extend(self.playlists[f"{biome.casefold()}_playlist"])
 
-        new_playlist.extend(self.playlists.get(f"{season.lower().replace('-', '')}_playlist", []))
+        new_playlist.extend(
+            self.playlists.get(f"{season.lower().replace('-', '')}_playlist", [])
+        )
 
         return new_playlist
 
