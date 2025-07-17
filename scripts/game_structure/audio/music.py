@@ -13,7 +13,7 @@ from scripts.game_structure.game_essentials import game
 logger = logging.getLogger(__name__)
 
 
-class MusicManager:
+class Music:
     def __init__(self):
         # live is used to denote that the music manager is working in some respect. Even if music is not currently
         # playing, the manager is stilled considered live as long as the silence timer is running.
@@ -253,4 +253,4 @@ class MusicManager:
         self.play_music()
 
 
-music_manager = MusicManager()
+music_manager = Music()

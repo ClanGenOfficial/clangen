@@ -11,16 +11,16 @@ from scripts.game_structure.ui_elements import CatButton, UISpriteButton
 logger = logging.getLogger(__name__)
 
 
-class _SoundManager:
+class Sound:
     def __init__(self):
         self.volume = game_setting_get("sound_volume") / 100
         self.pressed = None
         self.muted = False
 
+        self.sound_dict = {}
         self.load_sounds()
 
     def load_sounds(self):
-        self.sounds = {}
         # open up the sound dictionary
         try:
             with open("resources/audio/sounds.json", "r", encoding="utf-8") as f:
@@ -30,13 +30,13 @@ class _SoundManager:
             return
         for sound in sound_data:
             try:
-                self.sounds[sound] = []
+                self.sound_dict[sound] = []
                 for path in sound_data[sound]:
-                    self.sounds[sound].append(
+                    self.sound_dict[sound].append(
                         pygame.mixer.Sound("resources/audio/sounds/" + path)
                     )
 
-                for each in self.sounds[sound]:
+                for each in self.sound_dict[sound]:
                     each.set_volume(self.volume)
             except:
                 logger.exception("Failed to load sound")
@@ -82,7 +82,7 @@ class _SoundManager:
 
         try:
             if pygame.mixer.find_channel():
-                chosen = random.choice(self.sounds[sound])
+                chosen = random.choice(self.sound_dict[sound])
                 chosen.play()
         except KeyError:
             logger.exception(f"Could not find sound {sound}")
@@ -98,9 +98,9 @@ class _SoundManager:
         # convert to a float and change volume accordingly
         self.volume = new_volume / 100
         game_setting_set("sound_volume", new_volume)
-        for sound in self.sounds:
-            for each in self.sounds[sound]:
+        for sound in self.sound_dict:
+            for each in self.sound_dict[sound]:
                 each.set_volume(self.volume)
 
 
-sound_manager = _SoundManager()
+sound_manager = Sound()

@@ -11,7 +11,7 @@ from scripts.game_structure.game_essentials import game
 logger = logging.getLogger(__name__)
 
 
-class AmbianceManager:
+class Ambiance:
     def __init__(self):
         self.current_playlist = []
         self.biome_playlist = []
@@ -184,4 +184,4 @@ class AmbianceManager:
         return new_playlist
 
 
-ambiance_manager = AmbianceManager()
+ambiance_manager = Ambiance()

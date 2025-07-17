@@ -1,8 +1,8 @@
 import pygame.mixer
 
-from scripts.game_structure.audio.sound_manager import sound_manager
-from scripts.game_structure.audio.ambiance_manager import ambiance_manager
-from scripts.game_structure.audio.music_manager import music_manager
+from scripts.game_structure.audio.ambiance import Ambiance
+from scripts.game_structure.audio.music import Music
+from scripts.game_structure.audio.sound import Sound
 
 """
 I need this to be capable of controlling all the audio aspects within the game.
@@ -20,28 +20,29 @@ class AudioManager:
     """
 
     def __init__(self):
+        self.ambiance = Ambiance()
+        self.sound = Sound()
+        self.music = Music()
         self.audio_disabled = False
         self.muted = False
 
-    @staticmethod
-    def start_background_audio():
+    def start_background_audio(self):
         """
         Begins background audio playback if necessary.
         """
         if not pygame.mixer.music.get_busy():
-            ambiance_manager.play_queued()
+            self.ambiance.play_queued()
 
-        if not music_manager.get_busy() and not music_manager.live:
-            music_manager.choose_music()
-            music_manager.play_music()
+        if not self.music.get_busy() and not self.music.live:
+            self.music.choose_music()
+            self.music.play_music()
 
-    @staticmethod
-    def check_background_audio(screen):
+    def check_background_audio(self, screen):
         """
         Checks that background audio is appropriate for the given screen
         """
-        music_manager.check_music(screen)
-        ambiance_manager.check_ambiance(screen)
+        self.music.check_music(screen)
+        self.ambiance.check_ambiance(screen)
 
     def mute_audio(self):
         """
@@ -49,9 +50,9 @@ class AudioManager:
         """
         self.muted = True
         if not self.audio_disabled:
-            ambiance_manager.mute_ambiance()
-            music_manager.mute_music()
-            sound_manager.muted = True
+            self.ambiance.mute_ambiance()
+            self.music.mute_music()
+            self.sound.muted = True
 
     def unmute_audio(self, screen):
         """
@@ -61,9 +62,9 @@ class AudioManager:
         if self.audio_disabled:
             try:
                 pygame.mixer.init()
-                ambiance_manager.load_playlists()
-                sound_manager.load_sounds()
-                music_manager.load_possible_tracks()
+                self.ambiance.load_playlists()
+                self.sound.load_sounds()
+                self.music.load_possible_tracks()
                 self.audio_disabled = False
                 self.muted = False
             except pygame.error:
@@ -72,9 +73,9 @@ class AudioManager:
         else:
             self.muted = False
 
-        ambiance_manager.unmute_ambiance(screen)
-        music_manager.unmute_music(screen)
-        sound_manager.muted = False
+        self.ambiance.unmute_ambiance(screen)
+        self.music.unmute_music(screen)
+        self.sound.muted = False
 
 
 audio_manager = AudioManager()
