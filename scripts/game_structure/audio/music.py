@@ -251,6 +251,3 @@ class Music:
     def reset_music(self):
         self.choose_music(switch_get_value(Switch.cur_screen))
         self.play_music()
-
-
-music_manager = Music()

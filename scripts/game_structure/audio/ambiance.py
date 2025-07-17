@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class Ambiance:
     def __init__(self):
+        self.playlist_dict = {}
         self.current_playlist = []
         self.biome_playlist = []
         self.number_of_tracks = len(self.current_playlist)
@@ -23,19 +24,21 @@ class Ambiance:
         self.load_playlists()
 
     def load_playlists(self):
-        self.playlists = {}
         # loading playlists
         try:
             with open("resources/audio/ambiance.json", "r", encoding="utf-8") as f:
                 audio_data = ujson.load(f)
         except:
-            logger.exception("Failed to load playlist index")
+            logger.exception("Failed to load ambiance data")
             return
+
         for playlist in audio_data:
             try:
-                self.playlists[playlist] = []
+                self.playlist_dict[playlist] = []
                 for path in audio_data[playlist]:
-                    self.playlists[playlist].append("resources/audio/ambiance/" + path)
+                    self.playlist_dict[playlist].append(
+                        "resources/audio/ambiance/" + path
+                    )
             except:
                 logger.exception("Failed to load ambiance playlist")
 
@@ -49,10 +52,10 @@ class Ambiance:
         # menu screen
         if (
             screen in constants.MAIN_MENU_SCREENS
-            and self.current_playlist != self.playlists["menu_playlist"]
+            and self.current_playlist != self.playlist_dict["menu_playlist"]
         ):
             self.fade_out_ambiance()
-            self.play_playlist(self.playlists["menu_playlist"])
+            self.play_playlist(self.playlist_dict["menu_playlist"])
 
         # other screens
         elif (
@@ -174,14 +177,11 @@ class Ambiance:
         except AttributeError:
             season = "Newleaf"
 
-        new_playlist = self.playlists["general_playlist"].copy()
-        new_playlist.extend(self.playlists[f"{biome.casefold()}_playlist"])
+        new_playlist = self.playlist_dict["general_playlist"].copy()
+        new_playlist.extend(self.playlist_dict[f"{biome.casefold()}_playlist"])
 
         new_playlist.extend(
-            self.playlists.get(f"{season.lower().replace('-', '')}_playlist", [])
+            self.playlist_dict.get(f"{season.lower().replace('-', '')}_playlist", [])
         )
 
         return new_playlist
-
-
-ambiance_manager = Ambiance()

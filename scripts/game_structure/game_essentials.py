@@ -5,6 +5,7 @@ import ujson
 
 from scripts.event_class import Single_Event
 from scripts.game_structure import constants
+from scripts.game_structure.audio.audio_manager import AudioManager
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
@@ -100,6 +101,8 @@ class Game:
         self.switch_screens = False
 
         self.clan: Optional["Clan"] = None
+
+        self.audio = AudioManager()
 
         with open(f"resources/prey_config.json", "r", encoding="utf-8") as read_file:
             self.prey_config = ujson.loads(read_file.read())

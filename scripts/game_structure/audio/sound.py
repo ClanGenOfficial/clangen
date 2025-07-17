@@ -101,6 +101,3 @@ class Sound:
         for sound in self.sound_dict:
             for each in self.sound_dict[sound]:
                 each.set_volume(self.volume)
-
-
-sound_manager = Sound()

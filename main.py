@@ -339,7 +339,7 @@ try:
     pygame.mixer.init()
 except pygame.error:
     print("Failed to initialize sound. Sound will be disabled.")
-    audio_manager.audio_disabled = True
+    audio_manager.disabled = True
     audio_manager.muted = True
 AllScreens.start_screen.screen_switches()
 
@@ -436,12 +436,8 @@ while 1:
         getattr(AllScreens, game.last_screen_forupdate.replace(" ", "_")).exit_screen()
         getattr(AllScreens, game.current_screen.replace(" ", "_")).screen_switches()
         game.switch_screens = False
-    if (
-        not audio_manager.audio_disabled
-        and not audio_manager.muted
-    ):
-        audio_manager.start_background_audio()
-
+    if not audio_manager.disabled and not audio_manager.muted:
+        audio_manager.start()
 
     debug_mode.pre_update(clock)
     # END FRAME

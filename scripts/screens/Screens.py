@@ -9,9 +9,6 @@ from pygame_gui.core import ObjectID
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
-from scripts.game_structure.audio.ambiance_manager import ambiance_manager
-from scripts.game_structure.audio.audio_manager import audio_manager
-from scripts.game_structure.audio.music_manager import music_manager
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache, constants
 from scripts.cat.enums import CatGroup
@@ -57,7 +54,7 @@ class Screens:
         It will handle keeping track of the last screen and cur screen.
         Last screen must be tracked to ensure a clear transition between screens."""
 
-        audio_manager.check_background_audio(new_screen)
+        game.audio.check(new_screen)
         # self.exit_screen()
         game.last_screen_forupdate = self.name
 
@@ -279,7 +276,7 @@ class Screens:
     def show_mute_buttons(cls):
         """This shows all mute buttons, and makes them interact-able."""
 
-        if audio_manager.muted or audio_manager.audio_disabled:
+        if game.audio.muted or game.audio.disabled:
             cls.menu_buttons["unmute_button"].show()
             cls.menu_buttons["mute_button"].hide()
         else:
@@ -290,11 +287,11 @@ class Screens:
         """This is a short-up to deal with mute button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
         if event.ui_element == Screens.menu_buttons["mute_button"]:
-            audio_manager.mute_audio()
+            game.audio.mute()
             Screens.show_mute_buttons()
             return True
         elif event.ui_element == Screens.menu_buttons["unmute_button"]:
-            audio_manager.unmute_audio(switch_get_value(Switch.cur_screen))
+            game.audio.unmute(switch_get_value(Switch.cur_screen))
             Screens.show_mute_buttons()
             return True
         else:
