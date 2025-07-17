@@ -7,8 +7,8 @@
             "one": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by %{mentors}.",
             "many": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by %{mentors}."
         },
-        "training_mentor_trait_influence": "r_c influenced {PRONOUN/m_c/object} to be more likely to %{influence}.",
-        "training_mentor_skill_influence": "r_c helped {PRONOUN/m_c/object} become better at %{influence}.",
+        "training_mentor_trait_influence": "%{mentor} influenced {PRONOUN/m_c/object} to be more likely to %{influence}.",
+        "training_mentor_skill_influence": "%{mentor} helped {PRONOUN/m_c/object} become better at %{influence}.",
         "graduation_honor": "When {PRONOUN/m_c/subject} graduated, {PRONOUN/m_c/subject} {VERB/m_c/were/was} honored for {PRONOUN/m_c/poss} %{honor}.",
         "graduation_early": "{PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at %{age} moons old.",
         "graduation_normal": "{PRONOUN/m_c/subject/CAP} graduated at %{age} moons old.",
@@ -46,11 +46,11 @@
         },
         
         "regular_death": "%{cats} died.",
-        "death_cause": "%{death} when {PRONOUN/m_c/subject} %{text}.",
+        "death_cause": "%{death} when {PRONOUN/m_c/subject} %{text}",
         "murdered": "%{name} murdered %{victims}.",
         "murder_revealed_to_clan": "The Clan knows.",
         "murder_not_revealed_to_clan": "The Clan is unaware.",
-        "murder_revealed_to_individual": "%{name} knows. ",
+        "murder_revealed_to_individual": "%{name} knows.",
         "leader_lives_left_df": {
             "zero": "The leader has no lives left and has travelled to the Dark Forest.",
             "one": "The leader has one life left.",
