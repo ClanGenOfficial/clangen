@@ -23,7 +23,7 @@ class Thoughts:
 
         if not filter_relationship_type(
             group=[main_cat, random_cat],
-            filter_types=constraint,
+            filter=constraint,
         ):
             return False
 
