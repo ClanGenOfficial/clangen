@@ -1175,29 +1175,32 @@ def filter_relationship_type(
 
         if not all([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("siblings")
 
-    if "not_siblings" in filter_types:
+    if "not_siblings" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if any([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_siblings")
 
-    if "littermates" in filter_types:
+    if "littermates" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if not all([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("littermates")
 
-    if "not_littermates" in filter_types:
+    if "not_littermates" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if any([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             return False
 
-        filter_list.remove("siblings")
+        filter_list.remove("not_littermates")
 
     if "mates" in filter_list:
         # first test if more than one cat
@@ -1239,10 +1242,6 @@ def filter_relationship_type(
 
     # Check if the cats are in a parent/child relationship
     if "parent/child" in filter_list:
-        if patrol_leader:
-            if patrol_leader in group:
-                group.remove(patrol_leader)
-            group.insert(0, patrol_leader)
         # It should be exactly two cats for a "parent/child" event
         if len(group) != 2:
             return False
@@ -1257,6 +1256,7 @@ def filter_relationship_type(
 
         if any([test_cat.is_parent(inter_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_parent")
 
     if "child/parent" in filter_list:
         # It should be exactly two cats for a "child/parent" event
@@ -1273,6 +1273,7 @@ def filter_relationship_type(
 
         if any([inter_cat.is_parent(test_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_child")
 
     if "mentor/app" in filter_list:
         # It should be exactly two cats for a "mentor/app" event
@@ -1289,6 +1290,7 @@ def filter_relationship_type(
 
         if any([inter_cat in test_cat.apprentice for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_mentor")
 
     if "app/mentor" in filter_list:
         # It should be exactly two cats for a "app/mentor" event
@@ -1305,6 +1307,7 @@ def filter_relationship_type(
 
         if any([inter_cat in test_cat.mentor for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_app")
 
     # Filtering relationship values
     # each cat has to have relationships toward each other matching every level tag
