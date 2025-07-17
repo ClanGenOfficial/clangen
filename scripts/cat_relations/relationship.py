@@ -741,7 +741,9 @@ class Relationship:
         Returns the level group for the given value.
         """
         found_group = None
-        for group, interval in constants.CONFIG["relationship"]["value_intervals"].items():
+        for group, interval in constants.CONFIG["relationship"][
+            "value_intervals"
+        ].items():
             if value <= interval:
                 found_group = group
                 break
