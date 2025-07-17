@@ -710,7 +710,8 @@
         "decline_text": "The patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
         "success_outcomes": [
-            {                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating, the patrol is able to at least drag some of the intestines home to camp.",
+            {
+                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating, the patrol is able to at least drag some of the intestines home to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -956,7 +957,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "s_c slowly walks over the burrow, testing {PRONOUN/s_c/poss} steps before stopping at what {PRONOUN/s_c/subject} {VERB/s_c/guess/guesses} to be the mid-point. {PRONOUN/s_c/subject/CAP} {VERB/s_c/rear/rears} up on {PRONOUN/s_c/poss} hind legs and {VERB/s_c/slam/slams} down onto the ground, resulting in an outraged shrieking and scrabbling from within. Quickly hopping back to the entrance, {PRONOUN/s_c/subject} {VERB/s_c/wait/waits} overtop to swipe the escaping squirrel up and kill it.",
+                "text": "s_c slowly walks over the burrow, testing {PRONOUN/s_c/poss} steps before stopping at what {PRONOUN/s_c/subject} {VERB/s_c/guess/guesses} to be the midpoint. {PRONOUN/s_c/subject/CAP} {VERB/s_c/rear/rears} up on {PRONOUN/s_c/poss} hind legs and {VERB/s_c/slam/slams} down onto the ground, resulting in an outraged shrieking and scrabbling from within. Quickly hopping back to the entrance, {PRONOUN/s_c/subject} {VERB/s_c/wait/waits} overtop to swipe the escaping squirrel up and kill it.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
@@ -1313,7 +1314,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "Hold on - the mouse must be under the snow, not on top of it. app1 patiently waits for a sound, listening to the near silence of a snow-covered world under something starts to skitter close by. Pouncing blindly forward, {PRONOUN/app1/subject} {VERB/app1/sink/sinks} into the snow well over {PRONOUN/app1/poss} head - but {PRONOUN/app1/subject} can feel prey in {PRONOUN/app1/poss} paws!",
+                "text": "Hold on - the mouse must be under the snow, not on top of it. app1 patiently waits for a sound, listening to the near silence of a snow-covered world, however something underpaw starts to skitter close by. Pouncing blindly forward, {PRONOUN/app1/subject} {VERB/app1/sink/sinks} into the snow well over {PRONOUN/app1/poss} head - but {PRONOUN/app1/subject} can feel prey in {PRONOUN/app1/poss} paws!",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["medium"]
@@ -2664,7 +2665,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -2868,7 +2869,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -3816,8 +3817,8 @@
         "intro_text": "Leaf-bare is taking its toll. The patrol is cold, frustrated, and most of all, hungry. p_l notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?",
         "decline_text": "First the cold, and the snow, and now a fox? This is too much for one day, p_l decides. Back to camp, another patrol can try again later.",
         "success_outcomes": [
-            { 
-        "text": "s_c watches, copying how the fox walks close to the snow, ears down, imagining what it might be listening for until- that's it! s_c leaps into the air, diving headfirst into the snow. The patrol snickers as {PRONOUN/s_c/poss} rear flails above the snow, but that snickering turns to praise when s_c pops back up with a fat mouse hanging from {PRONOUN/s_c/poss} jaws.",
+            {
+                "text": "s_c watches, copying how the fox walks close to the snow, ears down, imagining what it might be listening for until- that's it! s_c leaps into the air, diving headfirst into the snow. The patrol snickers as {PRONOUN/s_c/poss} rear flails above the snow, but that snickering turns to praise when s_c pops back up with a fat mouse hanging from {PRONOUN/s_c/poss} jaws.",
         "exp": 25,
         "weight": 20, 
         "prey": ["medium"],
@@ -3831,7 +3832,7 @@
                 "amount": 5
             } ] }, 
         {
-            "text": "The whole patrol stares at the sight of a fox, something cats fear, stuck upside with its whole rump flailing up and undignified. r_c can't stop {PRONOUN/r_c/self} from snorting at the sight. Then the whole patrol is laughing. For this one moment, the cats forget about the cold in the fur and hunger in their bellies to enjoy a moment with their friends.",
+            "text": "The whole patrol stares at the sight of a fox, something cats fear, stuck upside down with its whole rump flailing up and undignified. r_c can't stop {PRONOUN/r_c/self} from snorting at the sight. Then the whole patrol is laughing. For this one moment, the cats forget about the cold in the fur and hunger in their bellies to enjoy a moment with their friends.",
                 "exp": 5,
                 "weight": 20, 
                 "prey": ["small"],
@@ -3846,10 +3847,11 @@
         ]  }
     ], 
         "fail_outcomes": [
-            {"text": "r_c snarls. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} too cold and too hungry to watch a stupid fox. This will be a hard hunt, r_c snaps, and if the others can't focus, then they should go huddle with the kits at camp.",
+            {
+                "text": "r_c snarls. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} too cold and too hungry to watch a stupid fox. This will be a hard hunt, r_c snaps, and if the others can't focus, then they should go huddle with the kits at camp.",
             "exp": 0,
-            "weight": 15, 
-            "prey": ["very_small"],
+            "weight": 15,
+                "prey": ["very_small"],
             "relationships": [
                 {
                     "cats_to": ["r_c"],

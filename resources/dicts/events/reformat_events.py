@@ -7,24 +7,32 @@ death_forest = []
 death_general = []
 death_mountainous = []
 death_plains = []
+death_wetlands = []
+death_desert = []
 
 injury_beach = []
 injury_forest = []
 injury_general = []
 injury_mountainous = []
 injury_plains = []
+injury_wetlands = []
+injury_desert = []
 
 new_beach = []
 new_forest = []
 new_general = []
 new_mountainous = []
 new_plains = []
+new_wetlands = []
+new_desert = []
 
 misc_beach = []
 misc_forest = []
 misc_general = []
 misc_mountainous = []
 misc_plains = []
+misc_wetlands = []
+misc_desert = []
 
 
 def reformat(path):
@@ -45,6 +53,8 @@ def reformat(path):
         "new_general.json",
         "mountainous.json",
         "plains.json",
+        "wetlands.json",
+        "desert.json",
     ]
     for item in not_allowed:
         if item in path:
@@ -87,6 +97,10 @@ def reformat(path):
                 new_format["biome"].append("mountainous")
             if "plains" in path:
                 new_format["biome"].append("plains")
+            if "wetlands" in path:
+                new_format["biome"].append("wetlands")
+            if "desert" in path:
+                new_format["biome"].append("desert")
 
         if "camp" in event:
             new_format["camp"] = []
@@ -752,6 +766,10 @@ def reformat(path):
                 injury_mountainous.append(dict_text)
             if "plains" in path:
                 injury_plains.append(dict_text)
+            if "wetlands" in path:
+                injury_wetlands.append(dict_text)
+            if "desert" in path:
+                injury_desert.append(dict_text)
 
     if injury_beach:
         string = ""
@@ -782,6 +800,18 @@ def reformat(path):
         for event in injury_plains:
             string = string + event
         with open("injury/plains.json", "w") as write_file:
+            write_file.write(string)
+    if injury_wetlands:
+        string = ""
+        for event in injury_wetlands:
+            string = string + event
+        with open("injury/wetlands.json", "w") as write_file:
+            write_file.write(string)
+    if injury_desert:
+        string = ""
+        for event in injury_desert:
+            string = string + event
+        with open("injury/desert.json", "w") as write_file:
             write_file.write(string)
 
 

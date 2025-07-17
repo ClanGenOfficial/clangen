@@ -6,9 +6,6 @@ import pygame_gui.elements
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import (
-    game,
-)
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -22,6 +19,7 @@ from scripts.utility import (
     ui_scale_offset,
 )
 from .Screens import Screens
+from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -111,13 +109,13 @@ class ChooseAdoptiveParentScreen(Screens):
 
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switch_set_value(Switch.cat, self.previous_cat)
                     self.update_current_cat_info()
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switch_set_value(Switch.cat, self.next_cat)
                     self.update_current_cat_info()
                 else:
                     print("invalid next cat", self.next_cat)
@@ -160,7 +158,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.selected_cat = event.ui_element.cat_object
                 self.update_selected_cat()
             elif event.ui_element in self.birth_parents_buttons.values():
-                game.switches["cat"] = event.ui_element.cat_object.ID
+                switch_set_value(Switch.cat, event.ui_element.cat_object.ID)
                 self.change_screen("profile screen")
 
     def screen_switches(self):
@@ -376,7 +374,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
         birth_parents = [
             Cat.fetch_cat(i)
-            for i in [self.the_cat.parent1, self.the_cat.parent2]
+            for i in (self.the_cat.parent1, self.the_cat.parent2)
             if isinstance(Cat.fetch_cat(i), Cat)
         ]
 
@@ -660,15 +658,23 @@ class ChooseAdoptiveParentScreen(Screens):
     def update_current_cat_info(self, reset_selected_cat=True):
         """Updates all elements with the current cat, as well as the selected cat.
         Called when the screen switched, and whenever the focused cat is switched"""
-        self.the_cat = Cat.all_cats[game.switches["cat"]]
+        self.the_cat = Cat.all_cats[switch_get_value(Switch.cat)]
 
         (
             self.next_cat,
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats()
 
-        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
-        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
+        (
+            self.next_cat_button.disable()
+            if self.next_cat == 0
+            else self.next_cat_button.enable()
+        )
+        (
+            self.previous_cat_button.disable()
+            if self.previous_cat == 0
+            else self.previous_cat_button.enable()
+        )
 
         for ele in self.current_cat_elements:
             self.current_cat_elements[ele].kill()
@@ -704,7 +710,7 @@ class ChooseAdoptiveParentScreen(Screens):
         info = "\n".join(
             [
                 i18n.t("general.moons_age", count=self.the_cat.moons),
-                i18n.t(f"general.{self.the_cat.status.lower()}", count=1),
+                i18n.t(f"general.{self.the_cat.status.rank.lower()}", count=1),
                 self.the_cat.genderalign,
                 i18n.t(f"cat.personality.{self.the_cat.personality.trait}"),
             ]
@@ -777,9 +783,11 @@ class ChooseAdoptiveParentScreen(Screens):
                 anchors={
                     "bottom": "bottom",
                     "bottom_target": self.list_frame,
-                    "left_target": self.tab_buttons["adoptive"]
-                    if adoptive_parents_shown
-                    else self.tab_buttons["potential"],
+                    "left_target": (
+                        self.tab_buttons["adoptive"]
+                        if adoptive_parents_shown
+                        else self.tab_buttons["potential"]
+                    ),
                 },
             )
             birth_parents_shown = True
@@ -884,7 +892,7 @@ class ChooseAdoptiveParentScreen(Screens):
         info = "\n".join(
             [
                 i18n.t("general.moons_age", count=self.selected_cat.moons),
-                i18n.t(f"general.{self.selected_cat.status.lower()}", count=1),
+                i18n.t(f"general.{self.selected_cat.status.rank.lower()}", count=1),
                 self.selected_cat.genderalign,
                 i18n.t(f"cat.personality.{self.selected_cat.personality.trait}"),
             ]
@@ -906,9 +914,7 @@ class ChooseAdoptiveParentScreen(Screens):
         valid_parents = [
             inter_cat
             for inter_cat in Cat.all_cats_list
-            if not (
-                inter_cat.dead or inter_cat.outside or inter_cat.exiled
-            )  # Adoptive parents cant be dead or outside
+            if inter_cat.status.alive_in_player_clan  # Adoptive parents must be part of the clan
             and inter_cat.ID != self.the_cat.ID  # Can't be your own adoptive parent
             and inter_cat.moons - self.the_cat.moons
             >= 14  # Adoptive parent must be at least 14 moons older. -> own child can't adopt you

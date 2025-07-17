@@ -440,7 +440,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["clan:deputy"],
         "patrol_art": "gen_hunt_sneakprey",
         "min_cats": 2,
         "max_cats": 6,
@@ -550,7 +550,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["clan:deputy"],
         "patrol_art": "gen_hunt_sneakprey",
         "min_cats": 2,
         "max_cats": 6,
@@ -640,7 +640,7 @@
                         "cats_to": ["clan", "patrol"],
                         "cats_from": ["app1"],
                         "mutual": false,
-                        "values": ["jealous"    ],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ],
@@ -961,7 +961,7 @@
             "prey": ["medium"]
         },
         {
-            "text": "The effort p_l puts in to climbing up to the outlook pays off when {PRONOUN/p_l/poss} ascent reveals an old animal on its last legs. The end of its life will feed c_n well.",
+            "text": "The effort p_l puts into climbing up to the outlook pays off when {PRONOUN/p_l/poss} ascent reveals an old animal on its last legs. The end of its life will feed c_n well.",
             "exp": 20,
             "weight": 20,
             "stat_skill": ["CLIMBER,0"],
@@ -3517,7 +3517,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "s_c rolls {PRONOUN/s_c/poss} eyes, callously dissmissing the idea as a game for immature apprentices. Cheeks burning, r_c ducks {PRONOUN/r_c/poss} head, continuing the patrol in silence.",
+            "text": "s_c rolls {PRONOUN/s_c/poss} eyes, callously dismissing the idea as a game for immature apprentices. Cheeks burning, r_c ducks {PRONOUN/r_c/poss} head, continuing the patrol in silence.",
             "exp": 5,
 	    "prey": ["small"],
             "weight": 20,

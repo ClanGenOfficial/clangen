@@ -118,7 +118,7 @@
 			"r_c wonders when m_c learned so much about cat anatomy.",
 			"r_c has to snap m_c out of staring darkly at another Clanmate.",
 			"r_c sees m_c using a small animal bone to pick food from {PRONOUN/m_c/poss} teeth.",
-			"r_c wonders why m_c knows so much about a Clanmate {PRONOUN/m_c/subject} {VERB/m_c/don't/doesnt} like.",
+			"r_c wonders why m_c knows so much about a Clanmate {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like.",
 			"m_c asks r_c to compare the size and sharpness of their claws together."
 		],
 		"main_trait_constraint": [

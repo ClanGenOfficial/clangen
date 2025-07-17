@@ -4,7 +4,9 @@ from re import sub
 
 import i18n
 
+import scripts.game_structure.screen_settings
 from scripts.cat.sprites import sprites
+from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import get_lang_config
 from scripts.utility import adjust_list_text
@@ -177,7 +179,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
-        "ORANGE"
+        "ORANGE",
     ]
     yellow_eyes = [
         "YELLOW",
@@ -188,7 +190,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
-        "ORANGE"
+        "ORANGE",
     ]
     blue_eyes = [
         "BLUE",
@@ -270,6 +272,7 @@ class Pelt:
     ]
 
     # make sure to add plural and singular forms of new accs to acc_display.json so that they will display nicely
+
     plant_accessories = [
         "MAPLE LEAF",
         "HOLLY",
@@ -308,6 +311,15 @@ class Pelt:
         "DRY CATMINT",
         "DRY NETTLES",
         "DRY LAURELS",
+        "WISTERIA",
+        "ROSE MALLOW",
+        "PICKLEWEED",
+        "GOLDEN CREEPING JENNY",
+        "DESERT WILLOW",
+        "CACTUS FLOWER",
+        "PRAIRIE FIRE",
+        "VERBENA EAR",
+        "VERBENA PELT",
     ]
     wild_accessories = [
         "RED FEATHERS",
@@ -321,16 +333,7 @@ class Pelt:
         "MONARCH BUTTERFLY",
         "CICADA WINGS",
         "BLACK CICADA",
-    ]
-
-    tail_accessories = [
-        "RED FEATHERS",
-        "BLUE FEATHERS",
-        "JAY FEATHERS",
-        "GULL FEATHERS",
-        "SPARROW FEATHERS",
-        "CLOVER",
-        "DAISY",
+        "ROAD RUNNER FEATHER",
     ]
     collars = [
         "CRIMSON",
@@ -395,6 +398,26 @@ class Pelt:
         "INDIGONYLON",
     ]
 
+    # this is used for acc-giving events, only change if you're adding a new category tag to the event filter
+    # adding a category here will automatically update the event editor's options
+    acc_categories = {
+        "PLANT": plant_accessories,
+        "WILD": wild_accessories,
+        "COLLAR": collars,
+    }
+
+    tail_accessories = [
+        "RED FEATHERS",
+        "BLUE FEATHERS",
+        "JAY FEATHERS",
+        "GULL FEATHERS",
+        "SPARROW FEATHERS",
+        "CLOVER",
+        "DAISY",
+        "WISTERIA",
+        "GOLDEN CREEPING JENNY",
+    ]
+
     head_accessories = [
         "MOTH WINGS",
         "ROSY MOTH WINGS",
@@ -434,12 +457,20 @@ class Pelt:
         "DRY CATMINT",
         "DRY NETTLES",
         "DRY LAURELS",
+        "ROSE MALLOW",
+        "PICKLEWEED",
+        "DESERT WILLOW",
+        "CACTUS FLOWER",
+        "PRAIRIE FIRE",
+        "VERBENA EAR",
     ]
 
     body_accessories = [
         "HERBS",
         "PETALS",
-        "DRY HERBS"
+        "DRY HERBS",
+        "VERBENA PELT",
+        "ROAD RUNNER FEATHER",
     ]
 
     tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
@@ -507,7 +538,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
-        "ORANGE"
+        "ORANGE",
     ]
     little_white = [
         "LITTLE",
@@ -717,12 +748,14 @@ class Pelt:
         self.vitiligo = vitiligo
         self.length = length
         self.points = points
-        self.accessory = accessory
-        self.paralyzed = paralyzed
+        self.rebuild_sprite = True
+        self._accessory = accessory
+        self._paralyzed = paralyzed
         self.opacity = opacity
         self.scars = scars if isinstance(scars, list) else []
         self.tint = tint
         self.white_patches_tint = white_patches_tint
+        self.screen_scale = scripts.game_structure.screen_settings.screen_scale
         self.cat_sprites = {
             "kitten": kitten_sprite if kitten_sprite is not None else 0,
             "adolescent": adol_sprite if adol_sprite is not None else 0,
@@ -739,6 +772,24 @@ class Pelt:
 
         self.reverse = reverse
         self.skin = skin
+
+    @property
+    def accessory(self):
+        return self._accessory
+
+    @accessory.setter
+    def accessory(self, val):
+        self.rebuild_sprite = True
+        self._accessory = val
+
+    @property
+    def paralyzed(self):
+        return self._paralyzed
+
+    @paralyzed.setter
+    def paralyzed(self, val):
+        self.rebuild_sprite = True
+        self._paralyzed = val
 
     @staticmethod
     def generate_new_pelt(gender: str, parents: tuple = (), age: str = "adult"):
@@ -788,7 +839,7 @@ class Pelt:
         if self.white_patches in convert_dict["old_creamy_patches"]:
             self.white_patches = convert_dict["old_creamy_patches"][self.white_patches]
             self.white_patches_tint = "darkcream"
-        elif self.white_patches in ["SEPIAPOINT", "MINKPOINT", "SEALPOINT"]:
+        elif self.white_patches in ("SEPIAPOINT", "MINKPOINT", "SEALPOINT"):
             self.white_patches_tint = "none"
 
         # Eye Color Convert Stuff
@@ -797,7 +848,7 @@ class Pelt:
         if self.eye_colour2 == "BLUE2":
             self.eye_colour2 = "COBALT"
 
-        if self.eye_colour in ["BLUEYELLOW", "BLUEGREEN"]:
+        if self.eye_colour in ("BLUEYELLOW", "BLUEGREEN"):
             if self.eye_colour == "BLUEYELLOW":
                 self.eye_colour2 = "YELLOW"
             elif self.eye_colour == "BLUEGREEN":
@@ -805,7 +856,7 @@ class Pelt:
             self.eye_colour = "BLUE"
 
         if self.length == "long":
-            if self.cat_sprites["adult"] not in [9, 10, 11]:
+            if self.cat_sprites["adult"] not in (9, 10, 11):
                 if self.cat_sprites["adult"] == 0:
                     self.cat_sprites["adult"] = 9
                 elif self.cat_sprites["adult"] == 1:
@@ -817,14 +868,13 @@ class Pelt:
                 self.cat_sprites["para_adult"] = 16
         else:
             self.cat_sprites["para_adult"] = 15
-        if self.cat_sprites["senior"] not in [12, 13, 14]:
+        if self.cat_sprites["senior"] not in (12, 13, 14):
             if self.cat_sprites["senior"] == 3:
                 self.cat_sprites["senior"] = 12
             elif self.cat_sprites["senior"] == 4:
                 self.cat_sprites["senior"] = 13
             elif self.cat_sprites["senior"] == 5:
                 self.cat_sprites["senior"] = 14
-
         if self.pattern in convert_dict["old_tortie_patches"]:
             old_pattern = self.pattern
             self.pattern = convert_dict["old_tortie_patches"][old_pattern][1]
@@ -845,11 +895,20 @@ class Pelt:
         elif self.pattern == "MINIMAL4":
             self.pattern = "MINIMALFOUR"
 
-        if isinstance(self.accessory, str):
+        if self.accessory is None:
+            self.accessory = []
+        elif isinstance(self.accessory, str):
             self.accessory = [self.accessory]
 
-
     def init_eyes(self, parents):
+        """Sets eye color for this cat's pelt. Takes parents' eye colors into account.
+        Heterochromia is possible based on the white-ness of the pelt, so the pelt color and white_patches must be
+        set before this function is called.
+
+        :param parents: List[Cat] representing this cat's parents
+
+        :return: None
+        """
         if not parents:
             self.eye_colour = choice(Pelt.eye_colours)
         else:
@@ -858,9 +917,11 @@ class Pelt:
             )
 
         # White patches must be initalized before eye color.
-        num = game.config["cat_generation"]["base_heterochromia"]
+        num = constants.CONFIG["cat_generation"]["base_heterochromia"]
         if (
-            self.white_patches in [Pelt.high_white, Pelt.mostly_white, "FULLWHITE"]
+            self.white_patches in Pelt.high_white
+            or self.white_patches in Pelt.mostly_white
+            or self.white_patches == "FULLWHITE"
             or self.colour == "WHITE"
         ):
             num = num - 90
@@ -930,7 +991,7 @@ class Pelt:
 
         # There is a 1/10 chance for kits to have the exact same pelt as one of their parents
         if not random.randint(
-            0, game.config["cat_generation"]["direct_inheritance"]
+            0, constants.CONFIG["cat_generation"]["direct_inheritance"]
         ):  # 1/10 chance
             selected = choice(par_pelts)
             self.name = selected.name
@@ -979,10 +1040,10 @@ class Pelt:
         )
 
         # Tortie chance
-        tortie_chance_f = game.config["cat_generation"][
+        tortie_chance_f = constants.CONFIG["cat_generation"][
             "base_female_tortie"
         ]  # There is a default chance for female tortie
-        tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
+        tortie_chance_m = constants.CONFIG["cat_generation"]["base_male_tortie"]
         for p_ in par_pelts:
             if p_.name in Pelt.torties:
                 tortie_chance_f = int(tortie_chance_f / 2)
@@ -999,7 +1060,7 @@ class Pelt:
         if torbie:
             # If it is tortie, the chosen pelt above becomes the base pelt.
             chosen_tortie_base = chosen_pelt
-            if chosen_tortie_base in ["TwoColour", "SingleColour"]:
+            if chosen_tortie_base in ("TwoColour", "SingleColour"):
                 chosen_tortie_base = "Single"
             chosen_tortie_base = chosen_tortie_base.lower()
             chosen_pelt = random.choice(Pelt.torties)
@@ -1076,7 +1137,7 @@ class Pelt:
         chosen_white = random.randint(1, 100) <= chance
 
         # Adjustments to pelt chosen based on if the pelt has white in it or not.
-        if chosen_pelt in ["TwoColour", "SingleColour"]:
+        if chosen_pelt in ("TwoColour", "SingleColour"):
             if chosen_white:
                 chosen_pelt = "TwoColour"
             else:
@@ -1106,8 +1167,8 @@ class Pelt:
 
         # Tortie chance
         # There is a default chance for female tortie, slightly increased for completely random generation.
-        tortie_chance_f = game.config["cat_generation"]["base_female_tortie"] - 1
-        tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
+        tortie_chance_f = constants.CONFIG["cat_generation"]["base_female_tortie"] - 1
+        tortie_chance_m = constants.CONFIG["cat_generation"]["base_male_tortie"]
         if gender == "female":
             torbie = random.getrandbits(tortie_chance_f) == 1
         else:
@@ -1117,7 +1178,7 @@ class Pelt:
         if torbie:
             # If it is tortie, the chosen pelt above becomes the base pelt.
             chosen_tortie_base = chosen_pelt
-            if chosen_tortie_base in ["TwoColour", "SingleColour"]:
+            if chosen_tortie_base in ("TwoColour", "SingleColour"):
                 chosen_tortie_base = "Single"
             chosen_tortie_base = chosen_tortie_base.lower()
             chosen_pelt = random.choice(Pelt.torties)
@@ -1141,7 +1202,7 @@ class Pelt:
         chosen_white = random.randint(1, 100) <= 40
 
         # Adjustments to pelt chosen based on if the pelt has white in it or not.
-        if chosen_pelt in ["TwoColour", "SingleColour"]:
+        if chosen_pelt in ("TwoColour", "SingleColour"):
             if chosen_white:
                 chosen_pelt = "TwoColour"
             else:
@@ -1199,9 +1260,9 @@ class Pelt:
         if age == "newborn":
             return
 
-        if age in ["kitten", "adolescent"]:
+        if age in ("kitten", "adolescent"):
             scar_choice = random.randint(0, 50)  # 2%
-        elif age in ["young adult", "adult"]:
+        elif age in ("young adult", "adult"):
             scar_choice = random.randint(0, 20)  # 5%
         else:
             scar_choice = random.randint(0, 15)  # 6.67%
@@ -1218,15 +1279,15 @@ class Pelt:
             return
 
         acc_display_choice = random.randint(0, 80)
-        if age in ["kitten", "adolescent"]:
+        if age in ("kitten", "adolescent"):
             acc_display_choice = random.randint(0, 180)
-        elif age in ["young adult", "adult"]:
+        elif age in ("young adult", "adult"):
             acc_display_choice = random.randint(0, 100)
 
         if acc_display_choice == 1:
-            self.accessory = [choice(
-                [choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)]
-            )]
+            self.accessory = [
+                choice([choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)])
+            ]
         else:
             self.accessory = []
 
@@ -1237,7 +1298,7 @@ class Pelt:
             if not self.pattern:
                 self.pattern = choice(Pelt.tortiepatterns)
 
-            wildcard_chance = game.config["cat_generation"]["wildcard_tortie"]
+            wildcard_chance = constants.CONFIG["cat_generation"]["wildcard_tortie"]
             if self.colour:
                 # The "not wildcard_chance" allows users to set wildcard_tortie to 0
                 # and always get wildcard torties.
@@ -1256,7 +1317,7 @@ class Pelt:
 
                 else:
                     # Normal generation
-                    if self.tortiebase in ["singlestripe", "smoke", "single"]:
+                    if self.tortiebase in ("singlestripe", "smoke", "single"):
                         self.tortiepattern = choice(
                             [
                                 "tabby",
@@ -1324,7 +1385,7 @@ class Pelt:
 
         # Direct inheritance. Will only work if at least one parent has white patches, otherwise continue on.
         if par_whitepatches and not random.randint(
-            0, game.config["cat_generation"]["direct_inheritance"]
+            0, constants.CONFIG["cat_generation"]["direct_inheritance"]
         ):
             # This ensures Torties and Calicos won't get direct inheritance of incorrect white patch types
             _temp = par_whitepatches.copy()
@@ -1415,17 +1476,17 @@ class Pelt:
         )
 
         self.white_patches = chosen_white_patches
-        if self.points and self.white_patches in [
+        if self.points and self.white_patches in (
             Pelt.high_white,
             Pelt.mostly_white,
             "FULLWHITE",
-        ]:
+        ):
             self.points = None
 
     def randomize_white_patches(self):
         # Points determination. Tortie can't be pointed
         if self.name != "Tortie" and not random.getrandbits(
-            game.config["cat_generation"]["random_point_chance"]
+            constants.CONFIG["cat_generation"]["random_point_chance"]
         ):
             # Cat has colorpoint!
             self.points = choice(Pelt.point_markings)
@@ -1452,11 +1513,11 @@ class Pelt:
         )
 
         self.white_patches = chosen_white_patches
-        if self.points and self.white_patches in [
+        if self.points and self.white_patches in (
             Pelt.high_white,
             Pelt.mostly_white,
             "FULLWHITE",
-        ]:
+        ):
             self.points = None
 
     def init_white_patches(self, pelt_white, parents: tuple):
@@ -1467,7 +1528,9 @@ class Pelt:
                 if p.pelt.vitiligo:
                     par_vit.append(p.pelt.vitiligo)
 
-        vit_chance = max(game.config["cat_generation"]["vit_chance"] - len(par_vit), 0)
+        vit_chance = max(
+            constants.CONFIG["cat_generation"]["vit_chance"] - len(par_vit), 0
+        )
         if not random.getrandbits(vit_chance):
             self.vitiligo = choice(Pelt.vit)
 
@@ -1659,12 +1722,12 @@ def _describe_torties(cat, color_name, short=False) -> [str, str]:
     ):
         return "cat.pelts.mottled_long", color_name
     else:
-        if base in [tabby.lower() for tabby in Pelt.tabbies] + [
+        if base in tuple(tabby.lower() for tabby in Pelt.tabbies) + (
             "bengal",
             "rosette",
             "speckled",
-        ]:
-            base = f"cat.pelts.{base}_long"  # the extra space is intentional
+        ):
+            base = f"cat.pelts.{cat.pelt.tortiebase.capitalize()}_long"  # the extra space is intentional
         else:
             base = ""
         return base, color_name
@@ -1692,9 +1755,9 @@ def unpack_appearance_ruleset(cat, rule, short, pelt, color):
     elif rule == "color":
         return color
     elif rule == "cat":
-        if cat.genderalign in ["female", "trans female"]:
+        if cat.genderalign in ("female", "trans female"):
             return "general.she-cat"
-        elif cat.genderalign in ["male", "trans male"]:
+        elif cat.genderalign in ("male", "trans male"):
             return "general.tom"
         else:
             return "general.cat"
@@ -1707,7 +1770,9 @@ def unpack_appearance_ruleset(cat, rule, short, pelt, color):
             for scar in cat.pelt.scars:
                 if scar in _scar_details:
                     scarlist.append(i18n.t(f"cat.pelts.{scar}"))
-            return adjust_list_text(list(set(scarlist))) if len(scarlist) > 0 else "" # note: this doesn't preserve order!
+            return (
+                adjust_list_text(list(set(scarlist))) if len(scarlist) > 0 else ""
+            )  # note: this doesn't preserve order!
     else:
         raise Exception(f"Unmatched ruleset item {rule} in describe_appearance!")
     return ""

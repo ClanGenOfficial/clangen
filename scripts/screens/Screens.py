@@ -9,10 +9,18 @@ from pygame_gui.core import ObjectID
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
 from scripts.game_structure.audio.ambiance_manager import ambiance_manager
 from scripts.game_structure.audio.audio_manager import audio_manager
 from scripts.game_structure.audio.music_manager import music_manager
+from scripts.clan_package.settings import get_clan_setting
+from scripts.game_structure import image_cache, constants
+from scripts.cat.enums import CatGroup
+from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure.game.switches import (
+    switch_set_value,
+    switch_get_value,
+    Switch,
+)
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
@@ -57,7 +65,6 @@ class Screens:
         if self.name in ["camp screen", "list screen", "events screen"]:
             game.last_screen_forProfile = self.name
 
-
         if new_screen not in [
             "list screen",
             "profile screen",
@@ -70,21 +77,21 @@ class Screens:
             "relationship screen",
             "see kits screen",
             "mediation screen",
-            "change gender screen"
-            ]:
+            "change gender screen",
+        ]:
             game.last_list_forProfile = None
-            self.current_group = "clan"
-            self.death_status = "living"
+            self.current_group = "your_clan"
+            self.death_page = "living"
             self.current_page = 1
 
-        game.switches["cur_screen"] = new_screen
+        switch_set_value(Switch.cur_screen, new_screen)
         game.switch_screens = True
         game.rpc.update_rpc.set()
         if game.clan:
-            if game.clan.clan_settings["moons and seasons"]:
+            if get_clan_setting("moons and seasons"):
                 x_shift = 1358
                 y_shift = 70
-                if new_screen == 'events screen':
+                if new_screen == "events screen":
                     x_shift = 0
                     y_shift = 0
             else:
@@ -93,7 +100,7 @@ class Screens:
         else:
             x_shift = 0
             y_shift = 0
-        
+
         Screens.mns_ui_offset(x_shift, y_shift)
 
     def __init__(self, name=None):
@@ -112,11 +119,11 @@ class Screens:
         self.work_done = {}
 
         bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
-        bg.fill(game.config["theme"]["light_mode_background"])
+        bg.fill(constants.CONFIG["theme"]["light_mode_background"])
         bg_dark = pygame.Surface(
             scripts.game_structure.screen_settings.game_screen_size
         )
-        bg_dark.fill(game.config["theme"]["dark_mode_background"])
+        bg_dark.fill(constants.CONFIG["theme"]["dark_mode_background"])
 
         self.game_bgs = {}
         self.fullscreen_bgs = {}
@@ -232,15 +239,15 @@ class Screens:
         # Check if the setting for moons and seasons UI is on so stats button can be moved
         cls.update_moon_and_season()
         for name, button in cls.menu_buttons.items():
-            if name == 'dens':
+            if name == "dens":
                 if (
-                    game.clan.clan_settings["moons and seasons"]
-                    and game.switches["cur_screen"] == "events screen"
+                    get_clan_setting("moons and seasons")
+                    and switch_get_value(Switch.cur_screen) == "events screen"
                 ):
                     button.show()
                 elif (
-                    not game.clan.clan_settings["moons and seasons"]
-                    and game.switches["cur_screen"] != "camp screen"
+                    not get_clan_setting("moons and seasons")
+                    and switch_get_value(Switch.cur_screen) != "camp screen"
                 ):
                     button.show()
                 button.hide()
@@ -316,17 +323,19 @@ class Screens:
             self.change_screen("patrol screen")
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
             SaveCheck(
-                game.switches["cur_screen"], True, Screens.menu_buttons["main_menu"]
+                switch_get_value(Switch.cur_screen),
+                True,
+                Screens.menu_buttons["main_menu"],
             )
         elif event.ui_element == Screens.menu_buttons["allegiances"]:
             self.change_screen("allegiances screen")
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
             self.change_screen("clan settings screen")
         elif event.ui_element == Screens.menu_buttons["moons_n_seasons_arrow"]:
-            if game.switches["moon&season_open"]:
-                game.switches["moon&season_open"] = False
-            else:
-                game.switches["moon&season_open"] = True
+            switch_set_value(
+                Switch.moon_and_seasons_open,
+                not switch_get_value(Switch.moon_and_seasons_open),
+            )
             self.update_moon_and_season()
         elif event.ui_element == Screens.menu_buttons["dens"]:
             self.update_dens()
@@ -342,13 +351,7 @@ class Screens:
 
     @classmethod
     def update_dens(cls):
-        dens = [
-            "dens_bar",
-            "lead_den",
-            "med_cat_den",
-            "warrior_den",
-            "clearing"
-        ]
+        dens = ["dens_bar", "lead_den", "med_cat_den", "warrior_den", "clearing"]
         for den in dens:
             # if dropdown is visible, hide
             if cls.menu_buttons[den].visible:
@@ -392,7 +395,6 @@ class Screens:
 
         # Update if moons and seasons UI is on
 
-
     @classmethod
     def mns_ui_offset(cls, x_shift, y_shift):
         """shifts the dens UI by the given amount - needed for positioning around the MnS widget"""
@@ -418,122 +420,167 @@ class Screens:
             pass
         if y_shift != 0:
             cls.menu_buttons.update(
-                {"dens_bar": pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((142 + x_shift, 120 + y_shift), (20, 320))),
-                    pygame.transform.scale(
-                        image_cache.load_image(
-                            "resources/images/vertical_bar.png").convert_alpha(),
-                        (380, 70)),
-                    visible=False,
-                    starting_height=5,
-                    manager=MANAGER)
-                })
+                {
+                    "dens_bar": pygame_gui.elements.UIImage(
+                        ui_scale(
+                            pygame.Rect((142 + x_shift, 120 + y_shift), (20, 320))
+                        ),
+                        pygame.transform.scale(
+                            image_cache.load_image(
+                                "resources/images/vertical_bar.png"
+                            ).convert_alpha(),
+                            (380, 70),
+                        ),
+                        visible=False,
+                        starting_height=5,
+                        manager=MANAGER,
+                    )
+                }
+            )
             cls.menu_buttons.update(
-                {"lead_den": UIImageButton(
-                    ui_scale(pygame.Rect((-12 + x_shift, 200 + y_shift), (224, 56))),
-                    "",
-                    visible=False,
-                    manager=MANAGER,
-                    object_id="#lead_den_button",
-                    starting_height=6)
-                })
+                {
+                    "lead_den": UIImageButton(
+                        ui_scale(
+                            pygame.Rect((-12 + x_shift, 200 + y_shift), (224, 56))
+                        ),
+                        "",
+                        visible=False,
+                        manager=MANAGER,
+                        object_id="#lead_den_button",
+                        starting_height=6,
+                    )
+                }
+            )
             cls.menu_buttons.update(
-                {"med_cat_den": UIImageButton(
-                    ui_scale(pygame.Rect((-90 + x_shift, 280 + y_shift), (302, 56))),
-                    "",
-                    visible=False,
-                    manager=MANAGER,
-                    object_id="#med_den_button",
-                    starting_height=6)
-                })
+                {
+                    "med_cat_den": UIImageButton(
+                        ui_scale(
+                            pygame.Rect((-90 + x_shift, 280 + y_shift), (302, 56))
+                        ),
+                        "",
+                        visible=False,
+                        manager=MANAGER,
+                        object_id="#med_den_button",
+                        starting_height=6,
+                    )
+                }
+            )
             cls.menu_buttons.update(
-                {"warrior_den": UIImageButton(
-                    ui_scale(pygame.Rect((-30 + x_shift, 360 + y_shift), (242, 56))),
-                    "",
-                    visible=False,
-                    manager=MANAGER,
-                    object_id="#warrior_den_button",
-                    starting_height=6)
-                })
+                {
+                    "warrior_den": UIImageButton(
+                        ui_scale(
+                            pygame.Rect((-30 + x_shift, 360 + y_shift), (242, 56))
+                        ),
+                        "",
+                        visible=False,
+                        manager=MANAGER,
+                        object_id="#warrior_den_button",
+                        starting_height=6,
+                    )
+                }
+            )
             cls.menu_buttons.update(
-                    {"clearing": UIImageButton(
-                    ui_scale(pygame.Rect((50 + x_shift, 440 + y_shift), (162, 56))),
-                    "",
-                    visible=False,
-                    manager=MANAGER,
-                    object_id="#clearing_button",
-                    starting_height=6)
-                    })
+                {
+                    "clearing": UIImageButton(
+                        ui_scale(pygame.Rect((50 + x_shift, 440 + y_shift), (162, 56))),
+                        "",
+                        visible=False,
+                        manager=MANAGER,
+                        object_id="#clearing_button",
+                        starting_height=6,
+                    )
+                }
+            )
         else:
             cls.menu_buttons.update(
-                {"dens_bar": pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((80 + x_shift, 120 + y_shift), (20, 320))),
-                    pygame.transform.scale(
-                        image_cache.load_image(
-                            "resources/images/vertical_bar.png").convert_alpha(),
-                        (380, 70)),
-                    visible=False,
-                    starting_height=5,
-                    manager=MANAGER)
-                })
+                {
+                    "dens_bar": pygame_gui.elements.UIImage(
+                        ui_scale(pygame.Rect((80 + x_shift, 120 + y_shift), (20, 320))),
+                        pygame.transform.scale(
+                            image_cache.load_image(
+                                "resources/images/vertical_bar.png"
+                            ).convert_alpha(),
+                            (380, 70),
+                        ),
+                        visible=False,
+                        starting_height=5,
+                        manager=MANAGER,
+                    )
+                }
+            )
             cls.menu_buttons.update(
-                {"lead_den": UIImageButton(
-                    ui_scale(pygame.Rect((50 + x_shift, 200 + y_shift), (224, 56))),
-                    "",
-                    visible=False,
-                    manager=MANAGER,
-                    object_id="#lead_den_button",
-                    starting_height=6)
-                })
+                {
+                    "lead_den": UIImageButton(
+                        ui_scale(pygame.Rect((50 + x_shift, 200 + y_shift), (224, 56))),
+                        "",
+                        visible=False,
+                        manager=MANAGER,
+                        object_id="#lead_den_button",
+                        starting_height=6,
+                    )
+                }
+            )
             cls.menu_buttons.update(
-                {"med_cat_den": UIImageButton(
-                    ui_scale(pygame.Rect((50 + x_shift, 280 + y_shift), (302, 56))),
-                    "",
-                    visible=False,
-                    manager=MANAGER,
-                    object_id="#med_den_button",
-                    starting_height=6)
-                })
+                {
+                    "med_cat_den": UIImageButton(
+                        ui_scale(pygame.Rect((50 + x_shift, 280 + y_shift), (302, 56))),
+                        "",
+                        visible=False,
+                        manager=MANAGER,
+                        object_id="#med_den_button",
+                        starting_height=6,
+                    )
+                }
+            )
             cls.menu_buttons.update(
-                {"warrior_den": UIImageButton(
-                    ui_scale(pygame.Rect((50 + x_shift, 360 + y_shift), (242, 56))),
-                    "",
-                    visible=False,
-                    manager=MANAGER,
-                    object_id="#warrior_den_button",
-                    starting_height=6)
-                })
+                {
+                    "warrior_den": UIImageButton(
+                        ui_scale(pygame.Rect((50 + x_shift, 360 + y_shift), (242, 56))),
+                        "",
+                        visible=False,
+                        manager=MANAGER,
+                        object_id="#warrior_den_button",
+                        starting_height=6,
+                    )
+                }
+            )
             cls.menu_buttons.update(
-                    {"clearing": UIImageButton(
-                    ui_scale(pygame.Rect((50 + x_shift, 440 + y_shift), (162, 56))),
-                    "",
-                    visible=False,
-                    manager=MANAGER,
-                    object_id="#clearing_button",
-                    starting_height=6)
-                    })
-            
-        if game.switches['cur_screen'] != 'camp screen':
-            cls.menu_buttons.update(
-                        {"dens": UIImageButton(
-                            ui_scale(pygame.Rect((50 + x_shift, 120 + y_shift), (142, 60))),
-                            "",
-                            visible=False,
-                            manager=MANAGER,
-                            object_id="#dens_button",
-                            starting_height=6)})
+                {
+                    "clearing": UIImageButton(
+                        ui_scale(pygame.Rect((50 + x_shift, 440 + y_shift), (162, 56))),
+                        "",
+                        visible=False,
+                        manager=MANAGER,
+                        object_id="#clearing_button",
+                        starting_height=6,
+                    )
+                }
+            )
 
+        if switch_get_value(Switch.cur_screen) != "camp screen":
+            cls.menu_buttons.update(
+                {
+                    "dens": UIImageButton(
+                        ui_scale(pygame.Rect((50 + x_shift, 120 + y_shift), (142, 60))),
+                        "",
+                        visible=False,
+                        manager=MANAGER,
+                        object_id="#dens_button",
+                        starting_height=6,
+                    )
+                }
+            )
 
     @classmethod
     def update_moon_and_season(cls):
         """Updates the moons and seasons widget."""
         if (
-            game.clan.clan_settings["moons and seasons"]
-            and game.switches["cur_screen"] != "events screen"
+            get_clan_setting("moons and seasons")
+            and switch_get_value(Switch.cur_screen) != "events screen"
         ):
             cls.menu_buttons["moons_n_seasons_arrow"].kill()
             cls.menu_buttons["moons_n_seasons"].kill()
-            if game.switches["moon&season_open"]:
+            if switch_get_value(Switch.moon_and_seasons_open):
                 if cls.name == "events screen":
                     cls.close_moon_and_season()
                 else:
@@ -602,7 +649,7 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
         cls.moons_n_seasons_text2 = pygame_gui.elements.UITextBox(
-            f"general.{game.clan.current_season.lower()}".capitalize(),
+            f"general.{game.clan.current_season}",
             ui_scale(pygame.Rect((42, 36), (100, 30))),
             container=cls.menu_buttons["moons_n_seasons"],
             manager=MANAGER,
@@ -688,8 +735,8 @@ class Screens:
         # intialise the vignette strength
         vignette = scripts.screens.screens_core.screens_core.vignette
         if vignette_alpha is None:
-            vignette_alpha = game.config["theme"]["fullscreen_background"][
-                "dark" if game.settings["dark mode"] else "light"
+            vignette_alpha = constants.CONFIG["theme"]["fullscreen_background"][
+                "dark" if game_setting_get("dark mode") else "light"
             ]["vignette_alpha"]
         if not (0 <= vignette_alpha <= 255):
             raise Exception("Vignette alpha out of range. Permitted values: 0-255.")
@@ -863,13 +910,12 @@ class Screens:
 
     def set_cat_location_bg(self, cat, bg: str = "default"):
         if cat.dead and not cat.faded:
-            blur_bg = (
-                "darkforest"
-                if cat.df
-                else "unknown_residence"
-                if cat.ID in game.clan.unknown_cats
-                else "starclan"
-            )
+            if cat.status.group == CatGroup.STARCLAN:
+                blur_bg = "starclan"
+            elif cat.status.group == CatGroup.DARK_FOREST:
+                blur_bg = "darkforest"
+            else:
+                blur_bg = "unknown_residence"
             self.set_bg(bg=bg, blur_bg=blur_bg)
         else:
             self.set_bg(bg=bg)
@@ -900,7 +946,7 @@ class Screens:
     @property
     def theme(self) -> str:
         try:
-            return "dark" if game.settings["dark mode"] else "light"
+            return "dark" if game_setting_get("dark mode") else "light"
         except AttributeError:
             with open(
                 "resources/gamesettings.json", "r", encoding="utf-8"
@@ -908,12 +954,24 @@ class Screens:
                 _settings = ujson.loads(read_file.read())
                 return "dark" if _settings["dark mode"] else "light"
 
+    # pragma pylint: disable=no-member
+    # noinspection PyUnresolvedReferences
     def update_previous_next_cat_buttons(self):
         """Updates disabled status of previous and next cat buttons. Does nothing if the screen does not have both previous and next cat buttons."""
-        if not hasattr(self, "previous_cat_button") or not hasattr(self, "next_cat_button"):
+        if not hasattr(self, "previous_cat_button") or not hasattr(
+            self, "next_cat_button"
+        ):
             return
-        self.previous_cat_button.enable() if hasattr(self, "previous_cat") and self.previous_cat else self.previous_cat_button.disable() # pylint: disable=no-member
-        self.next_cat_button.enable() if hasattr(self, "next_cat") and self.next_cat else self.next_cat_button.disable() # pylint: disable=no-member
+
+        self.previous_cat_button.enable() if hasattr(
+            self, "previous_cat"
+        ) and self.previous_cat else self.previous_cat_button.disable()
+
+        self.next_cat_button.enable() if hasattr(
+            self, "next_cat"
+        ) and self.next_cat else self.next_cat_button.disable()
+
+    # pragma pylint: enable=no-member
 
 
 # CAT PROFILES

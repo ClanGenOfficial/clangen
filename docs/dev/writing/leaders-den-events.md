@@ -15,20 +15,20 @@ These should be flavored as occurring during the Gathering and should specify as
     Clan tempers play a large role in the chance of success for these events.  The temper charts shown later on this page are a good way to visualize this.  The further away from each other two tempers are, the less likely an interaction between them is to succeed.
 
 ### Event Format
-```py
-  {
-    "interaction_type": "",
-    "event_text": "",
-    "rel_change": 0,
-    "m_c": {
-      "status": [],
-      "age": [],
-      "trait": [],
-      "skill": []
-    },
-    "player_clan_temper": [],
-    "other_clan_temper": []
-  }
+```json
+    {
+        "interaction_type": "",
+        "event_text": "",
+        "rel_change": 0,
+        "m_c": {
+            "status": [],
+            "age": [],
+            "trait": [],
+            "skill": []
+        },
+        "player_clan_temper": [],
+        "other_clan_temper": []
+    }
 ```
 
 ***
@@ -65,12 +65,12 @@ These should be flavored as occurring during the Gathering and should specify as
 
 #### m_c: dict[various]
 > Dictates what cats are allowed to use this event.  If a parameter is not used, delete it.  The only thing that must be kept is the `"m_c": {}`.
-```py
+```json
     "m_c": {
-      "status": [],
-      "age": [],
-      "trait": [],
-      "skill": []
+        "status": [],
+        "age": [],
+        "trait": [],
+        "skill": []
     }
 ```
 > **status: list[str]** - [status list](reference/index.md#__tabbed_2_1)  In addition to leader, the following statuses can be sent to the Gathering in the leader's stead: ["leader", "deputy", "medicine cat", "medicine cat apprentice"]
@@ -110,28 +110,29 @@ These should be flavored as occurring during the Gathering and should specify as
 These events are flavored as the Clan going out to deliberately interact with the chosen Outside, whether by killing, inviting, searching for, ect.  You could also flavor the event as the chosen Outsider doing something in response to what the Clan is trying to do to them (i.e. leaving the area after hearing the Clan's intentions, joining the Clan after hearing the Clan wants them, journeying closer after hearing reports from other Outsiders, ect.)
 
 ### Event Format
-```py
-  {
+```json
+{
     "interaction_type": "",
     "event_text": "",
     "reputation": [],
     "rep_change": 0,
     "m_c": {
-      "status": [],
-      "age": [],
-      "trait": [],
-      "skill": [],
-      "new_thought": "",
-      "relationships": [
-        {
-          "cats_from": [],
-          "cats_to": [],
-          "mutual": false,
-          "values": [],
-          "amount": 0
-        }
-      ]
+        "status": [],
+        "age": [],
+        "trait": [],
+        "skill": [],
+        "new_thought": "",
+        "relationships": [
+            {
+            "cats_from": [],
+            "cats_to": [],
+            "mutual": false,
+            "values": [],
+            "amount": 0
+            }
+        ]
     }
+}
 ```
 
 ***
@@ -168,23 +169,23 @@ These events are flavored as the Clan going out to deliberately interact with th
 #### m_c: dict{var}
 > `m_c` in this event is the chosen Outsider cat.  This dict will provide constraints for which Outsiders can access this event as well as information for how the Outsider changes afterwards.  If a parameter is not used, delete it.  The only thing that must be kept is the `"m_c": {}`.
 
-```
+```json
     "m_c": {
-      "status": [],
-      "age": [],
-      "trait": [],
-      "skill": [],
-      "new_thought": "",
-      "kit_thought": "",
-      "relationships": [
-        {
-          "cats_from": [],
-          "cats_to": [],
-          "mutual": false,
-          "values": [],
-          "amount": 0
-        }
-      ]
+    "status": [],
+    "age": [],
+    "trait": [],
+    "skill": [],
+    "new_thought": "",
+    "kit_thought": "",
+        "relationships": [
+            {
+            "cats_from": [],
+            "cats_to": [],
+            "mutual": false,
+            "values": [],
+            "amount": 0
+            }
+        ]
     }
 ```
 > **status: list[str]** - list of statuses allowed: ["loner", "rogue", "kittypet", "exiled", "lost", "former clancat"].  Remember, "exiled" and "lost" cats were previously part of the Clan.

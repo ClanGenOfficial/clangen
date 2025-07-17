@@ -19,6 +19,7 @@
 5. Create branches of your own and other people's forks
     - A branch represents a lineage of changes. You should make a new branch to track the changes you make from the base game (the "remote"). You branch _from_ forks, either your own or someone else's. 
     - [This is how you make a branch.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
+    - If you are fixing a bug that is also present in the latest release branch (check before you fix the bug), please branch from the latest release branch when fixing your bug. The release branches are named like `release-x.y.z` or `release_x.y.z`, where `x.y.z` are numbers. The latest release is the one where the numbers are the highest. 
 
 When working on multiple projects(or if you already have made a personal fork of clangen), sometimes it is required to work on multiple forks and branches from different developers (we'll refer to them as "sister forks"). Unfortunately, there is no way to do this directly through github desktop, but there is a work around. Branching from someone else's fork lets you PR to their fork, rather than the main Clangen repository, which is very helpful for large milestone development.
 
@@ -29,7 +30,7 @@ You can add multiple "sister forks" upstream of your branches, to say have one b
 > You can check if you have git installed by entering the command git --version in terminal
 2. Open up the Windows command line (or the mac/Linux equivalent). Ensure that the current working directory is the folder where you cloned your Clangen fork. 
 3. Run this command with the remote url you need for the specific new remote. Here, this example is the git url to add the Lifegen development version as an upstream remote:
-```py 
+```shell
 git remote add Lifegen_dev https://github.com/sedgestripe/clangen.git
 ``` 
 You can find this url here on the github page for a fork:

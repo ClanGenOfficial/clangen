@@ -273,15 +273,23 @@
         "description": "Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.",
         "type": "array",
         "items": {
-          "enum": [
-            "romantic",
-            "rom_two_apps",
-            "disaster",
-            "new_cat",
-            "halloween",
-            "april_fools",
-            "new_years",
-            "cruel_season"
+          "anyOf": [
+            {
+              "enum": [
+                "romantic",
+                "rom_two_apps",
+                "disaster",
+                "new_cat",
+                "halloween",
+                "april_fools",
+                "new_years",
+                "cruel_season"
+              ]
+            },
+            {
+              "type": "string",
+              "pattern": "^clan:(.+)$"
+            }
           ]
         }
       },
@@ -357,13 +365,20 @@
             {
               "enum": [
                 "siblings",
+                "not_siblings",
+                "littermates",
+                "not_littermates",
                 "mates",
-                "not_mates",
                 "mates_with_pl",
+                "not_mates",
                 "parent/child",
+                "not_parent",
                 "child/parent",
+                "not_child",
                 "mentor/app",
-                "app/mentor"
+                "not_mentor",
+                "app/mentor",
+                "not_app"
               ]
             },
             {

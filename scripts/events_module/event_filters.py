@@ -1,12 +1,16 @@
 import re
+from random import choice
 
 import ujson
 
+from scripts.cat.enums import CatRank, CatAge
 from scripts.game_structure.game_essentials import game
+from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (
-    get_alive_status_cats,
+    find_alive_cats_with_rank,
     filter_relationship_type,
 )
+
 
 def event_for_location(locations: list) -> bool:
     """
@@ -24,7 +28,11 @@ def event_for_location(locations: list) -> bool:
             req_biome = place
             req_camps = ["any"]
 
-        if req_biome == game.clan.biome.lower():
+        if game.clan.override_biome:
+            if req_biome == game.clan.override_biome:
+                if "any" in req_camps or game.clan.camp_bg in req_camps:
+                    return True
+        elif req_biome == game.clan.biome.lower():
             if "any" in req_camps or game.clan.camp_bg in req_camps:
                 return True
         return False
@@ -32,8 +40,8 @@ def event_for_location(locations: list) -> bool:
 
 def event_for_season(seasons: list) -> bool:
     """
-        checks if the clan is within the given seasons
-        """
+    checks if the clan is within the given seasons
+    """
     if "any" in seasons or game.clan.current_season.lower() in seasons:
         return True
 
@@ -42,8 +50,8 @@ def event_for_season(seasons: list) -> bool:
 
 def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     """
-        checks if current tags disqualify the event
-        """
+    checks if current tags disqualify the event
+    """
     if not tags:
         return True
 
@@ -55,20 +63,33 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             return False
 
     # check leader life tags
-    if cat.status == "leader":
-        leader_lives = game.clan.leader_lives
+    if hasattr(cat, "ID"):
+        if cat.status.is_leader:
+            leader_lives = game.clan.leader_lives
 
-        life_lookup = {
-            "some_lives": 4,
-            "lives_remain": 2,
-            "high_lives": 7,
-            "mid_lives": 4,
-            "low_lives": 1
-        }
+            life_lookup = {
+                "some_lives": 4,
+                "lives_remain": 2,
+                "high_lives": 7,
+                "mid_lives": 4,
+                "low_lives": 1,
+            }
 
-        for _con, _val in life_lookup.items():
-            if _con in tags and leader_lives < _val:
+            for _con, _val in life_lookup.items():
+                if _con in tags and leader_lives < _val:
+                    return False
+
+        # check if main cat will allow for adoption
+        if "adoption" in tags:
+            if cat.no_kits:
                 return False
+            if cat.moons <= 14 + cat.age_moons["kitten"][1]:
+                return False
+            if any(cat.fetch_cat(i).no_kits for i in cat.mate):
+                return False
+
+        if other_cat and "romantic" in tags and not other_cat.is_potential_mate(cat):
+            return False
 
     # check for required ranks within the clan
     for _tag in tags:
@@ -79,38 +100,43 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
         for rank in ranks:
             if rank == "apps":
-                if not get_alive_status_cats(
-                        cat,
-                        ["apprentice", "medicine cat apprentice", "mediator apprentice"]):
+                if not find_alive_cats_with_rank(
+                    cat,
+                    [
+                        CatRank.APPRENTICE,
+                        CatRank.MEDIATOR_APPRENTICE,
+                        CatRank.MEDICINE_APPRENTICE,
+                    ],
+                ):
                     return False
                 else:
                     continue
 
-            if rank in ["leader", "deputy"] and not get_alive_status_cats(cat, [rank]):
+            if rank in [
+                CatRank.LEADER,
+                CatRank.DEPUTY,
+            ] and not find_alive_cats_with_rank(cat, [rank]):
                 return False
 
-            if not len(get_alive_status_cats(cat, [rank])) >= 2:
+            if (
+                rank not in [CatRank.LEADER, CatRank.DEPUTY]
+                and not len(find_alive_cats_with_rank(cat, [rank])) >= 2
+            ):
                 return False
 
-    # check if main cat will allow for adoption
-    if "adoption" in tags:
-        if cat.no_kits:
+    special_date = get_special_date()
+    # filtering for dates
+    if contains_special_date_tag(tags):
+        if not special_date or special_date.patrol_tag not in tags:
             return False
-        if cat.moons <= 14 + cat.age_moons["kitten"][1]:
-            return False
-        if any(cat.fetch_cat(i).no_kits for i in cat.mate):
-            return False
-
-    if other_cat and "romantic" in tags and not other_cat.is_potential_mate(cat):
-        return False
 
     return True
 
 
 def event_for_reputation(required_rep: list) -> bool:
     """
-        checks if the clan has reputation matching required_rep
-        """
+    checks if the clan has reputation matching required_rep
+    """
     if "any" in required_rep:
         return True
 
@@ -128,8 +154,8 @@ def event_for_reputation(required_rep: list) -> bool:
 
 def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     """
-        checks if the clan has clan relations matching required_rel
-        """
+    checks if the clan has clan relations matching required_rel
+    """
     if "any" in required_rel:
         return True
 
@@ -147,8 +173,8 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
 
 def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
     """
-        checks if clan has the correct amount of freshkill for event
-        """
+    checks if clan has the correct amount of freshkill for event
+    """
     if game.clan.game_mode == "classic":
         return False
 
@@ -166,9 +192,7 @@ def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
     # find how much is too much freshkill
     # it would probably be good to move this section of finding trigger_value to the freshkill class
     divider = 35 if game.clan.game_mode == "expanded" else 20
-    factor = factor - round(
-        pow((clan_size / divider), 2)
-    )
+    factor = factor - round(pow((clan_size / divider), 2))
     if factor < 2 and game.clan.game_mode == "expanded":
         factor = 2
 
@@ -217,35 +241,74 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
         return False
 
 
-def event_for_cat(cat_info: dict, cat, cat_group: list = None, event_id: str = None, p_l=None) -> bool:
+def event_for_cat(
+    cat_info: dict,
+    cat,
+    cat_group: list = None,
+    event_id: str = None,
+    p_l=None,
+    injuries: list = None,
+) -> bool:
     """
-        checks if a cat is suitable for the event
-        :param cat_info: cat's dict of constraints
-        :param cat: the cat object of the cat being checked
-        :param cat_group: the group of cats being included within the event
-        :param event_id: if event comes with an id, include it here
-        :param p_l: if event is a patrol, include patrol leader object here
-        """
+    checks if a cat is suitable for the event
+    :param cat_info: cat's dict of constraints
+    :param cat: the cat object of the cat being checked
+    :param cat_group: the group of cats being included within the event
+    :param event_id: if event comes with an id, include it here
+    :param p_l: if event is a patrol, include patrol leader object here
+    :param injuries: list of injuries that the event may give this cat
+    """
 
     func_lookup = {
         "age": _check_cat_age(cat, cat_info.get("age", [])),
         "status": _check_cat_status(cat, cat_info.get("status", [])),
-        "trait": _check_cat_trait(cat, cat_info.get("trait", []), cat_info.get("not_trait", [])),
-        "skills": _check_cat_skills(cat, cat_info.get("skill", []), cat_info.get("not_skill", [])),
+        "trait": _check_cat_trait(
+            cat, cat_info.get("trait", []), cat_info.get("not_trait", [])
+        ),
+        "skills": _check_cat_skills(
+            cat, cat_info.get("skill", []), cat_info.get("not_skill", [])
+        ),
         "backstory": _check_cat_backstory(cat, cat_info.get("backstory", [])),
-        "gender": _check_cat_gender(cat, cat_info.get("gender", []))
+        "gender": _check_cat_gender(cat, cat_info.get("gender", [])),
     }
 
     for func in func_lookup:
         if not func_lookup[func]:
             return False
 
+    # checking injuries
+    if injuries:
+        if "mangled tail" in injuries and (
+            "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars
+        ):
+            return False
+        if "torn ear" in injuries and "NOEAR" in cat.pelt.scars:
+            return False
+
+    # checking relationships
     if cat_info.get("relationship_status", []):
-        if not filter_relationship_type(
-                group=cat_group,
-                filter_types=cat_info["relationship_status"],
-                event_id=event_id,
-                patrol_leader=p_l
+        for status in cat_info.get("relationship_status", []):
+            # just some preliminary checks to see if any of these are impossible for this cat
+            if status == "siblings" and not cat.get_siblings():
+                return False
+            elif status == "mates" and not cat.mate:
+                return False
+            elif status == "mates_with_pl" and p_l.ID not in cat.mate:
+                return False
+            elif status == "parent/child" and not cat.get_children():
+                return False
+            elif status == "child/parent" and not cat.get_parents():
+                return False
+            elif status == "mentor/app" and not cat.apprentice:
+                return False
+            elif status == "app/mentor" and not cat.mentor:
+                return False
+
+        if cat_group and not filter_relationship_type(
+            group=cat_group,
+            filter_types=cat_info["relationship_status"],
+            event_id=event_id,
+            patrol_leader=p_l,
         ):
             return False
 
@@ -254,8 +317,12 @@ def event_for_cat(cat_info: dict, cat, cat_group: list = None, event_id: str = N
 
 def _check_cat_age(cat, ages: list) -> bool:
     """
-        checks if a cat's age is within ages list
-        """
+    checks if a cat's age is within ages list
+    """
+    # we only allow newborns if they are explicitly stated
+    if cat.age == CatAge.NEWBORN and (not ages or CatAge.NEWBORN not in ages):
+        return False
+
     if "any" in ages or not ages:
         return True
 
@@ -264,12 +331,16 @@ def _check_cat_age(cat, ages: list) -> bool:
 
 def _check_cat_status(cat, statuses: list) -> bool:
     """
-        checks if cat's status is within statuses list
-        """
+    checks if cat's status is within statuses list
+    """
+
     if "any" in statuses or not statuses:
         return True
 
-    if cat.status in statuses:
+    if cat.status.rank in statuses:
+        return True
+
+    if "lost" in statuses and cat.status.is_lost():
         return True
 
     return False
@@ -294,8 +365,8 @@ def _check_cat_trait(cat, traits: list, not_traits: list) -> bool:
 
 def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
     """
-        checks if the cat has the correct skills for skills and not skills lists
-        """
+    checks if the cat has the correct skills for skills and not skills lists
+    """
     if not skills and not not_skills:
         return True
 
@@ -309,9 +380,7 @@ def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
             print("Cat skill incorrectly formatted", _skill)
             continue
 
-        if cat.skills.meets_skill_requirement(
-                skill_info[0], int(skill_info[1])
-        ):
+        if cat.skills.meets_skill_requirement(skill_info[0], int(skill_info[1])):
             has_good_skill = True
             break
 
@@ -322,9 +391,7 @@ def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
             print("Cat skill incorrectly formatted", _skill)
             continue
 
-        if cat.skills.meets_skill_requirement(
-                skill_info[0], int(skill_info[1])
-        ):
+        if cat.skills.meets_skill_requirement(skill_info[0], int(skill_info[1])):
             has_bad_skill = True
             break
 
@@ -336,8 +403,8 @@ def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
 
 def _check_cat_backstory(cat, backstories: list) -> bool:
     """
-        checks if cat has the correct backstory
-        """
+    checks if cat has the correct backstory
+    """
     if not backstories:
         return True
 
@@ -349,8 +416,8 @@ def _check_cat_backstory(cat, backstories: list) -> bool:
 
 def _check_cat_gender(cat, genders: list) -> bool:
     """
-        checks if cat has the correct gender
-        """
+    checks if cat has the correct gender
+    """
     if not genders:
         return True
 
@@ -358,3 +425,223 @@ def _check_cat_gender(cat, genders: list) -> bool:
         return True
 
     return False
+
+
+def cat_for_event(
+    constraint_dict: dict,
+    possible_cats: list,
+    comparison_cat=None,
+    comparison_cat_rel_status: list = None,
+    injuries: list = None,
+    return_id: bool = True,
+):
+    """
+    Checks the given cat list against constraint_dict to find any eligible cats.
+    Returns a single cat ID chosen from eligible cats.
+    :param constraint_dict: Can include age, status, skill, not_skill, trait, not_trait, relationship_status, and backstory lists
+    :param possible_cats: List of possible cat objects
+    :param comparison_cat: If you need to search for cats with a specific relationship status, then include a comparison
+     cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
+    :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
+    :param injuries: List of injuries a cat may get from the event
+    :param return_id: If true, return cat ID instead of object
+    """
+    # gather funcs to use
+    func_dict = {
+        "age": _get_cats_with_age,
+        "status": _get_cats_with_status,
+        "skill": _get_cats_without_skill,
+        "not_skill": _get_cats_without_skill,
+        "trait": _get_cats_with_trait,
+        "not_trait": _get_cats_without_trait,
+        "backstory": _get_cats_with_backstory,
+    }
+
+    # run funcs
+    allowed_cats = possible_cats
+    for param in func_dict:
+        if param not in constraint_dict:
+            continue
+        allowed_cats = func_dict[param](allowed_cats, tuple(constraint_dict.get(param)))
+
+        # if the list is emptied, return
+        if not allowed_cats:
+            return None
+
+    # find cats that can get the injuries that will be given
+    if injuries:
+        for cat in allowed_cats.copy():
+            if "mangled tail" in injuries and (
+                "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars
+            ):
+                allowed_cats.remove(cat)
+            if "torn ear" in injuries and "NOEAR" in cat.pelt.scars:
+                allowed_cats.remove(cat)
+
+        # if the list is emptied, return
+        if not allowed_cats:
+            return None
+
+    # rel status check
+    if comparison_cat_rel_status or constraint_dict.get("relationship_status"):
+        # preliminary check to see if we can just skip to gathering certain rel groups
+        allowed_cats, comparison_cat_rel_status = _get_cats_with_rel_status(
+            allowed_cats, comparison_cat, comparison_cat_rel_status
+        )
+
+        for cat in allowed_cats.copy():
+            # checking comparison cat's rel values toward cat
+            if comparison_cat_rel_status:
+                if not filter_relationship_type(
+                    group=[comparison_cat, cat], filter_types=comparison_cat_rel_status
+                ):
+                    allowed_cats.remove(cat)
+                    continue
+
+            # now we can check cat's rel toward comparison_cat
+            if constraint_dict.get("relationship_status"):
+                if not filter_relationship_type(
+                    group=[cat, comparison_cat],
+                    filter_types=constraint_dict["relationship_status"],
+                ):
+                    allowed_cats.remove(cat)
+                    continue
+
+    if not allowed_cats:
+        return None
+
+    cat = choice(allowed_cats)
+
+    if return_id:
+        return cat.ID
+    else:
+        return cat
+
+
+def _get_cats_with_rel_status(cat_list: list, cat, rel_status_list: list) -> list:
+    # theoretically none of these should ever be used together
+    if "siblings" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.get_siblings()]
+        rel_status_list.remove("siblings")
+    elif "mates" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.mate]
+        rel_status_list.remove("mates")
+    elif "not_mates" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID not in cat.mate]
+        rel_status_list.remove("not_mates")
+    elif "parent/child" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.get_children()]
+        rel_status_list.remove("parent/child")
+    elif "child/parent" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.get_parents()]
+        rel_status_list.remove("child/parent")
+    # but these could be used alongside the above tags, so they get their own if/elif
+    if "mentor/app" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.apprentice]
+        rel_status_list.remove("mentor/app")
+    elif "app/mentor" in rel_status_list:
+        cat_list = [c for c in cat_list if c.ID in cat.mentor]
+        rel_status_list.remove("app/mentor")
+
+    return cat_list, rel_status_list
+
+
+def _get_cats_with_age(cat_list: list, ages: tuple) -> list:
+    """
+    checks cat_list against required ages and returns qualifying cats
+    """
+    if not ages or "any" in ages:
+        return cat_list
+
+    return [kitty for kitty in cat_list if kitty.age in ages]
+
+
+def _get_cats_with_status(cat_list: list, statuses: tuple) -> list:
+    """
+    checks cat_list against required statuses and returns qualifying cats
+    """
+    if not statuses or "any" in statuses:
+        return cat_list
+
+    return [kitty for kitty in cat_list if kitty.status in statuses]
+
+
+def _get_cats_with_skill(cat_list: list, skills: tuple) -> list:
+    """
+    checks cat_list against required skills and returns qualifying cats
+    """
+    if not skills:
+        return cat_list
+
+    for kitty in cat_list.copy():
+        has_skill = False
+        for _skill in skills:
+            split_skill = _skill.split(",")
+
+            if len(split_skill) < 2:
+                print("Cat skill incorrectly formatted", _skill)
+                continue
+
+            if kitty.skills.meets_skill_requirement(
+                split_skill[0], int(split_skill[1])
+            ):
+                has_skill = True
+
+        if not has_skill:
+            cat_list.remove(kitty)
+
+    return cat_list
+
+
+def _get_cats_without_skill(cat_list: list, skills: tuple) -> list:
+    """
+    checks cat_list against disallowed skills and returns qualifying cats
+    """
+    if not skills:
+        return cat_list
+
+    for kitty in cat_list.copy():
+        for _skill in skills:
+            split_skill = _skill.split(",")
+
+            if len(split_skill) < 2:
+                print("Cat skill incorrectly formatted", _skill)
+                continue
+
+            if kitty.skills.meets_skill_requirement(
+                split_skill[0], int(split_skill[1])
+            ):
+                cat_list.remove(kitty)
+                break
+
+    return cat_list
+
+
+def _get_cats_with_trait(cat_list: list, traits: tuple) -> list:
+    """
+    checks cat_list against required traits and returns qualifying cats
+    """
+    if not traits:
+        return cat_list
+
+    return [kitty for kitty in cat_list if kitty.personality.trait in traits]
+
+
+def _get_cats_without_trait(cat_list: list, traits: tuple) -> list:
+    """
+    checks cat_list against disallowed traits and returns qualifying cats
+    """
+    if not traits:
+        return cat_list
+
+    return [kitty for kitty in cat_list if kitty.personality.trait not in traits]
+
+
+def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:
+    """
+    checks cat_list against required backstories and returns qualifying cats
+    """
+    if not backstories:
+        return cat_list
+
+    return [kitty for kitty in cat_list if kitty.backstory in backstories]

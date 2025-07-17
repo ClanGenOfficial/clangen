@@ -128,7 +128,7 @@
                 ]
             },
             {
-                "text": "Before they reach the far border itself, p_l spots s_c limping. It's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enoguh to escape. <i>Should.</i>",
+                "text": "Before they reach the far border itself, p_l spots s_c limping. It's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enough to escape. <i>Should.</i>",
                 "exp": 0,
                 "weight": 20,
                 "art": "running_two_warriors",
@@ -148,7 +148,7 @@
                 }
             },
             {
-                "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achivement when they come back into camp after dark, panting, but everyone who went out in the snow is more tired than they should be, and some have clearly gotten frostbite.",
+                "text": "p_l really pushes them to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achievement when they come back into camp after dark, panting, but everyone who went out in the snow is more tired than they should be, and some have clearly gotten frostbite.",
                 "exp": 0,
                 "weight": 20,
                 "injury": [
@@ -187,7 +187,7 @@
                 ]
             },
             {
-                "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. But s_c brings everything to a halt, spotting that some of the patrol are beginning to feel the effects of the cold, and insisting they return home. It saves anyone else from being harmed by the cold.",
+                "text": "p_l really pushes them to be able to patrol all the far border in a single patrol. But s_c brings everything to a halt, spotting that some of the patrol are beginning to feel the effects of the cold, and insisting they return home. It saves anyone else from being harmed by the cold.",
                 "exp": 0,
                 "weight": 20,
                 "can_have_stat": ["not_pl_rc"],
@@ -244,7 +244,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l is out at night, enjoying peaceful silence of the snowy grasslands, when {PRONOUN/p_l/subject} come across the fresh scent of a coyote. Dangerous - not just to p_l, but to all of c_n.",
+        "intro_text": "p_l is out at night, enjoying the peaceful silence of the snowy grasslands, when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across the fresh scent of a coyote. Dangerous - not just to p_l, but to all of c_n.",
         "decline_text": "p_l decides not to pursue such a dangerous creature, especially with the knowledge that coyotes often  feast on cats.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -475,7 +475,7 @@
                 "stat_trait": ["nervous", "insecure"],
                 "dead_cats": ["s_c"],
                 "history_text": {
-                    "reg_death": "This cat died by the jaws of coyote after freezing up.",
+                    "reg_death": "This cat died by the jaws of a coyote after freezing up.",
 	                "lead_death": "died by the jaws of a coyote after freezing up."
                 }
             },
@@ -510,7 +510,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay - c_n really doesn't need a breeding pair setting up near them, they need to report this back straight away.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay - c_n really doesn't need a breeding pair setting up near them, they need to report this back straight away.",
                 "exp": 60,
                 "weight": 20,
                 "art": "running_two_warriors",
@@ -625,7 +625,7 @@
                 ]
             },
             {
-                "text": "That isn't just the sound of a coyote, that's the sound of coyote calling for a mate, s_c hisses. It's not good, it means there'll be males atttracted in by that female, and the cats return home quickly and silently. c_n needs to know about the danger in the borderlands.",
+                "text": "That isn't just the sound of a coyote, that's the sound of a coyote calling for a mate, s_c hisses. It's not good, it means there'll be males attracted in by that female, and the cats return home quickly and silently. c_n needs to know about the danger in the borderlands.",
                 "exp": 50,
                 "weight": 20,
                 "art": "gen_coyote2",
@@ -931,7 +931,7 @@
                 ]
             },
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol. They report back to camp instead.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol. They report back to camp instead.",
                 "exp": 70,
                 "weight": 20,
                 "art": "running_two_warriors",
@@ -953,7 +953,7 @@
                 ]
             },
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads them to attack anyway, and miraculously, the cats drive the pack away from c_n.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads them to attack anyway, and miraculously, the cats drive the pack away from c_n.",
                 "exp": 90,
                 "weight": 10,
                 "art": "gen_coyote1",
@@ -1000,7 +1000,7 @@
                 ]
             },
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay. It's only because s_c is with them, sprinting as fast as the wind in the worse of the life threatening relay race, that they're able to lead the stinking pack away.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. It's only because s_c is with them, sprinting as fast as the wind in the worse of the life threatening relay race, that they're able to lead the stinking pack away.",
                 "exp": 70,
                 "weight": 20,
                 "art": "running_warrior",
@@ -1233,7 +1233,7 @@
                 ]
             },
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads them to attack anyway. It is a mistake.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads them to attack anyway. It is a mistake.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_coyote_danger1",
@@ -1284,7 +1284,7 @@
                 ]
             },
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay. The patrol tries to lead the pack away with a relay of cats distracting them, but r_c gets caught by a male's jaws, and it's only s_c's first aid that saves {PRONOUN/r_c/object} from dying in the snow.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. The patrol tries to lead the pack away with a relay of cats distracting them, but r_c gets caught by a male's jaws, and it's only s_c's first aid that saves {PRONOUN/r_c/object} from dying in the snow.",
                 "exp": 0,
                 "weight": 40,
                 "art": "fst_hunt_howl",
@@ -1494,7 +1494,7 @@
                 ]
             },
             {
-                "text": "It's important not to panic. s_c takes one deep breath. Two. By {PRONOUN/s_c/poss} third, {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} remembered the route to the nearest set of known, safe tunnels. The rest of the patrol is snappish and impatient, but they all apologise later, packed snugly and safely into an old bager sett as the storm rages outside.",
+                "text": "It's important not to panic. s_c takes one deep breath. Two. By {PRONOUN/s_c/poss} third, {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} remembered the route to the nearest set of known, safe tunnels. The rest of the patrol is snappish and impatient, but they all apologise later, packed snugly and safely into an old badger sett as the storm rages outside.",
                 "exp": 30,
                 "weight": 30,
                 "can_have_stat": ["any"],
@@ -1613,7 +1613,7 @@
                 ]
             },
             {
-                "text": "s_c spots a rabbit bolting for home. You know what? That's good enough. Calling the patrol in, s_c tracks it to it's burrow, and the cats cram themselves in, one at a time and completely squished, to wait out the storm. It's not comfortable, but it works.",
+                "text": "s_c spots a rabbit bolting for home. You know what? That's good enough. Calling the patrol in, s_c tracks it to its burrow, and the cats cram themselves in, one at a time and completely squished, to wait out the storm. It's not comfortable, but it works.",
                 "exp": 30,
                 "weight": 30,
                 "can_have_stat": ["any"],
@@ -1883,7 +1883,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "This could be a burrow, r_c agrees. But digging it out to check will chill their paws, and possibly disturb a hibernating occupant, if they're unlocky. Reporting it back at camp is worth doing, but let's not poke at half buried snow mounds, yes?",
+                "text": "This could be a burrow, r_c agrees. But digging it out to check will chill their paws, and possibly disturb a hibernating occupant, if they're unlucky. Reporting it back at camp is worth doing, but let's not poke at half buried snow mounds, yes?",
                 "exp": 25,
                 "weight": 30,
                 "art": "gen_train_talkingWW",
@@ -1920,7 +1920,7 @@
                 ]
             },
             {
-                "text": "No, these aren't new... but the smell of badger on them is. Something's very odd here. No badger, no matter the species, shoudl be moving into new tunnels during leaf-bare. Maybe it's injured, or sick, maybe it was driven out of its cete, but they should report this to the rest of c_n.",
+                "text": "No, these aren't new... but the smell of badger on them is. Something's very odd here. No badger, no matter the species, should be moving into new tunnels during leaf-bare. Maybe it's injured, or sick, maybe it was driven out of its cete, but they should report this to the rest of c_n.",
                 "exp": 30,
                 "weight": 20,
                 "art": "fst_bord_sett",
@@ -1942,7 +1942,7 @@
                 ]
             },
             {
-                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. s_c devises a plan to block the entrance with snow, to mark the place for another, bigger border patrol to deal with.",
+                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. s_c devises a plan to block the entrance with snow, to mark the place for another, bigger border patrol to deal with.",
                 "exp": 30,
                 "weight": 20,
                 "art": "fst_bord_sett",
@@ -2027,7 +2027,7 @@
                 }
             },
             {
-                "text": "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. They nearly fall on the young coyote sheltering inside the shallow hole, and there's a shcoked, violent scramble as every animal involved lashes out and retreats, everyone coming out worse for wear.",
+                "text": "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. They nearly fall on the young coyote sheltering inside the shallow hole, and there's a shocked, violent scramble as every animal involved lashes out and retreats, everyone coming out worse for wear.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_coyote1",
@@ -2628,7 +2628,7 @@
                 "dead_cats": ["app1"],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed saving an older warrior froma badger as an apprentice.",
+                    "reg_death": "This cat was killed saving an older warrior from a badger as an apprentice.",
                     "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
                 }
             },
@@ -2665,12 +2665,12 @@
             "normal adult":[1, 1]
         },
         "weight": 20,
-        "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border - after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird spash of shadows in the white of the snow-dabbed fields. Is that a burrow entrance?",
+        "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border - after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in the white of the snow-dabbed fields. Is that a burrow entrance?",
         "decline_text": "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "While p_l notes the possible-tunnel's location, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} leave the safe-ish tracked path of the border. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} know if snow has built up in that dip in the landscape, if the tunnel is inhabited, if the soil is stable, and alone and vulerable is not the time to investigate.",
+                "text": "While p_l notes the possible-tunnel's location, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} leave the safe-ish tracked path of the border. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} know if snow has built up in that dip in the landscape, if the tunnel is inhabited, if the soil is stable, and alone and vulnerable is not the time to investigate.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_hunt_strange"
@@ -2857,7 +2857,7 @@
                 "art": "pln_hunt_gonetwolegtrap1"
             },
             {
-                "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, a steam of warm air escapes the unknown tunnel entrance. That can't be good, something's breathing in there. app1 has had enough adventure for one day, and goes back to camp.",
+                "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, a stream of warm air escapes the unknown tunnel entrance. That can't be good, something's breathing in there. app1 has had enough adventure for one day, and goes back to camp.",
                 "exp": 20,
                 "weight": 30,
                 "art": "gen_hunt_huntassessment"
@@ -2901,7 +2901,7 @@
                 ]
             },
             {
-                "text": "app1 carefully explores the tunnel {PRONOUN/app1/subject} spotted, seeing how a bush noramlly conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/app1/subject} {VERB/app1/know/knows} about is incredibly appealing.",
+                "text": "app1 carefully explores the tunnel {PRONOUN/app1/subject} spotted, seeing how a bush normally conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/app1/subject} {VERB/app1/know/knows} about is incredibly appealing.",
                 "exp": 20,
                 "weight": 10,
                 "art": "gen_train_patrolapprenticesessionsuccess",
@@ -2941,7 +2941,7 @@
                 ]
             },
             {
-                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collpased roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
+                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionsuccess",
@@ -2973,7 +2973,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, a steam of warm air escapes the unknown tunnel entrance. It's warm in there! {PRONOUN/app1/subject/CAP} {VERB/app1/bound/bounds} forward, but the tunnel is warm because it's inhabitated.",
+                "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, a stream of warm air escapes the unknown tunnel entrance. It's warm in there! {PRONOUN/app1/subject/CAP} {VERB/app1/bound/bounds} forward, but the tunnel is warm because it's inhabited.",
                 "exp": 0,
                 "weight": 30,
                 "art": "gen_dead_cat_app_EXPLICIT",
@@ -3015,7 +3015,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c went out on a border patorl alone as an apprentice during leaf-bare, and still bears the marks of that lesson.",
+                    "scar": "m_c went out on a border patrol alone as an apprentice during leaf-bare, and still bears the marks of that lesson.",
                     "reg_death": "This cat was killed after a leaf-bare storm caught {PRONOUN/s_c/object} on patrol as an apprentice.",
                     "lead_death": "a leaf-bare storm caught {PRONOUN/s_c/object} on patrol as an apprentice"
                 }
@@ -3155,7 +3155,7 @@
             "normal adult":[-1, -1]
         },
         "weight": 20,
-        "intro_text": "The apprentices are at the border - not exaclty a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Not a patrol <i>anyone</i> is supposed to do with a storm rolling in. Anyway, is that a tunnel entrance over there?",
+        "intro_text": "The apprentices are at the border - not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Not a patrol <i>anyone</i> is supposed to do with a storm rolling in. Anyway, is that a tunnel entrance over there?",
         "decline_text": "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -3203,7 +3203,7 @@
                 ]
             },
             {
-                "text": "app1 has found a wonderful set of tunnels, and just in time. Everyone cowers low to the ground as thunder sweeps the plains, sending the apprentices scurrying undergorund and impressing on them how crucial safe refuge is while sleet pelts down outside.",
+                "text": "app1 has found a wonderful set of tunnels, and just in time. Everyone cowers low to the ground as thunder sweeps the plains, sending the apprentices scurrying underground and impressing on them how crucial safe refuge is while sleet pelts down outside.",
                 "exp": 20,
                 "weight": 10,
                 "art": "gen_bord_flashflood",
@@ -3299,7 +3299,7 @@
                 ]
             },
             {
-                "text": "The apprentices huddle around the burrow entrance cautiously. But as thunder rolls in over the flat horizon, sending the world into almost night levels of dark, s_c convinces them to go in - they need shelter, they need the protection of walls around them. They have each other, they're going to be fine.",
+                "text": "The apprentices huddle around the burrow entrance cautiously. But as thunder rolls in over the flat horizon, sending the world into almost night levels of darkness, s_c convinces them to go in - they need shelter, they need the protection of walls around them. They have each other, they're going to be fine.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_bord_flashflood",
@@ -3457,7 +3457,7 @@
                 }
             },
             {
-                "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shirek, and something pulls {PRONOUN/s_c/subject} in.",
+                "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shriek, and something pulls {PRONOUN/s_c/subject} in.",
                 "exp": 0,
                 "weight": 5,
                 "art": "gen_train_patrolapprenticesessionsuccess",
@@ -3511,7 +3511,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c went out with a gorup of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
+                    "scar": "m_c went out with a group of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
                     "reg_death": "This cat was killed as an apprentice, after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm.",
                     "lead_death": "went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm"
                 }
@@ -3523,7 +3523,7 @@
                 "art": "gen_bord_flashflood",
                 "dead_cats": ["patrol"],
                 "history_text": {
-                    "scar": "m_c went out with a gorup of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
+                    "scar": "m_c went out with a group of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
                     "reg_death": "This cat was killed as an apprentice, after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm.",
                     "lead_death": "went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm"
                 }

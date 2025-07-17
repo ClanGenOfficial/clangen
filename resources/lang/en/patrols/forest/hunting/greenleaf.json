@@ -611,7 +611,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As p_l searches for prey to hunt, {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a raven pecking in the dirt.",
-        "decline_text": "Corvid meat is tough and stringy, and the birds too clever to make easy prey. p_l decides to hunt juicier, dumber prey today.",
+        "decline_text": "Corvid meat is tough and stringy, and the birds are too clever to make easy prey. p_l decides to hunt juicier, dumber prey today.",
         "chance_of_success": 45,
         "success_outcomes": [
             {
@@ -762,7 +762,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "p_l, leading the search for r_c, hears a yowl in distance. It's r_c, drenched and mud-soaked at the bottom of a steep embankment. The patrol works to rescue {PRONOUN/r_c/object}, calling off their hunt.",
+                "text": "p_l, leading the search for r_c, hears a yowl in the distance. It's r_c, drenched and mud-soaked at the bottom of a steep embankment. The patrol works to rescue {PRONOUN/r_c/object}, calling off their hunt.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2281,7 +2281,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -2447,7 +2447,7 @@
         "patrol_id": "fst_hunt_redvixen4",
         "biome": ["forest"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -2641,7 +2641,7 @@
         "patrol_id": "fst_hunt_redvixen5",
         "biome": ["forest"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -2812,7 +2812,7 @@
         "patrol_id": "fst_hunt_redvixen6",
         "biome": ["forest"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -2958,7 +2958,7 @@
         "patrol_id": "fst_hunt_grayvixen4",
         "biome": ["forest"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -3119,7 +3119,7 @@
         "patrol_id": "fst_hunt_grayvixen5",
         "biome": ["forest"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -3279,7 +3279,7 @@
         "patrol_id": "fst_hunt_grayvixen6",
         "biome": ["forest"],
         "season": ["greenleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -5083,7 +5083,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -5287,7 +5287,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of atheticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -5818,7 +5818,8 @@
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
-            {                "text": "A f_mp_s, three f_tp_p, and a couple f_mp_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either; in the chewing on tails, whiny, petty, immature way. Ugh.",
+            {
+                "text": "A f_mp_s, three f_tp_p, and a couple f_mp_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either; in the chewing on tails, whiny, petty, immature way. Ugh.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],

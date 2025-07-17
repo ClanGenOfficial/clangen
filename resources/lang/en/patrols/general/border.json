@@ -15,7 +15,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l sucessfully marks c_n's borders.",
+                "text": "p_l successfully marks c_n's borders.",
                 "exp": 5,
                 "weight": 20,
                 "art": "gen_otherclan_mates_date"
@@ -36,7 +36,7 @@
                 "weight": 20
             },
             {
-                "text": "p_l wishs for something interesting to happen, but no, there was nothing to ease p_l's boredom as {PRONOUN/p_l/subject} mark the borders.",
+                "text": "p_l wishes for something interesting to happen, but no, there was nothing to ease p_l's boredom as {PRONOUN/p_l/subject} mark the borders.",
                 "exp": 5,
                 "weight": 20
             },
@@ -95,7 +95,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l identifys the scent as prey. Nothing to be concerned over.",
+                "text": "p_l identifies the scent as prey. Nothing to be concerned over.",
                 "exp": 5,
                 "weight": 20
             },
@@ -111,7 +111,7 @@
                 "herbs": ["tansy"]
             },
             {
-                "text": "p_l detects the scent of a fellow clanmate, possibly on a solo patrol of their own, but it was nothing to worry about.",
+                "text": "p_l detects the scent of a fellow Clanmate, possibly on a solo patrol of their own, but it was nothing to worry about.",
                 "exp": 5,
                 "weight": 20
             }
@@ -160,7 +160,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l identifys the tracks as belonging to some prey.",
+                "text": "p_l identifies the tracks as belonging to some prey.",
                 "exp": 5,
                 "weight": 20
             },
@@ -170,7 +170,7 @@
                 "weight": 20
             },
             {
-                "text": "p_l identifies the tracks as belonging to a fellow clanmate.",
+                "text": "p_l identifies the tracks as belonging to a fellow Clanmate.",
                 "exp": 5,
                 "weight": 20
             },
@@ -219,7 +219,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Upon closer inspection, it was just remarking from a clannmate.",
+                "text": "Upon closer inspection, it was just remarking from a Clanmate.",
                 "exp": 0,
                 "weight": 20
             },
@@ -487,7 +487,7 @@
         "patrol_id": "gen_bord_dislike",
         "biome": ["any"],
         "season": ["any"],
-        "types": [],
+        "types": ["border"],
         "tags": [],
         "patrol_art": "gen_train_argueWW",
         "min_cats": 2,
@@ -563,7 +563,7 @@
                 ]
             },
             {
-                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an imprompto contest to see who can catch the most bugs.",
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an impromptu contest to see who can catch the most bugs.",
                 "exp": 10,
                 "weight": 10,
                 "art": "fst_hunt_fun3",
@@ -607,7 +607,7 @@
                 ]
             },
             {
-                "text": "As the duo are patroling, they are ambushed by a rogue! r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
+                "text": "As the duo are patrolling, they are ambushed by a rogue! r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
                 "exp": 0,
                 "weight": 5,
                 "art": "gen_dead_cat",
@@ -641,7 +641,7 @@
                 ]
             },
             {
-                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to prove anything to s_c.",
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to prove anything to s_c.",
                 "exp": 0,
                 "weight": 10,
                 "can_have_stat": ["p_l"],

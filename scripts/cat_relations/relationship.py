@@ -3,16 +3,16 @@ from random import choice
 
 import i18n
 
-from scripts.cat.history import History
+from scripts.game_structure import constants
 from scripts.cat_relations.interaction import (
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
     rebuild_relationship_dicts,
 )
-import scripts.cat_relations.interaction as interactions
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_personality_compatibility, process_text
+import scripts.cat_relations.interaction as interactions
 
 
 # ---------------------------------------------------------------------------- #
@@ -40,7 +40,6 @@ class Relationship:
         log=None,
     ) -> None:
         self.chosen_interaction = None
-        self.history = History()
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
@@ -77,9 +76,9 @@ class Relationship:
     def start_interaction(self) -> None:
         """This function handles the simple interaction of this relationship."""
         # such interactions are only allowed for living Clan members
-        if self.cat_from.dead or self.cat_from.outside or self.cat_from.exiled:
+        if not self.cat_from.status.alive_in_player_clan:
             return
-        if self.cat_to.dead or self.cat_to.outside or self.cat_to.exiled:
+        if not self.cat_to.status.alive_in_player_clan:
             return
 
         if self.currently_loaded_lang != i18n.config.get("locale"):
@@ -101,10 +100,10 @@ class Relationship:
         # check if an increase interaction or a decrease interaction
         in_de_crease = "increase" if positive else "decrease"
         # if the type is jealousy or dislike, then increase and decrease has to be turned around
-        if rel_type in ["jealousy", "dislike"]:
+        if rel_type in ("jealousy", "dislike"):
             in_de_crease = "decrease" if positive else "increase"
 
-        chance = game.config["relationship"]["chance_for_neutral"]
+        chance = constants.CONFIG["relationship"]["chance_for_neutral"]
         if chance == 1:
             in_de_crease = "neutral"
         elif chance > 1 and random.randint(1, chance) == 1:
@@ -115,7 +114,11 @@ class Relationship:
 
         # get other possible filters
         season = str(game.clan.current_season).casefold()
-        biome = str(game.clan.biome).casefold()
+        biome = str(
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        ).casefold()
         game_mode = game.clan.game_mode
 
         all_interactions = interactions.NEUTRAL_INTERACTIONS.copy()
@@ -191,7 +194,7 @@ class Relationship:
                     if "death_text" in injury_dict
                     else None
                 )
-                if injured_cat.status == "leader":
+                if injured_cat.status.is_leader:
                     possible_death = (
                         self.adjust_interaction_string(injury_dict["death_leader_text"])
                         if "death_leader_text" in injury_dict
@@ -200,9 +203,9 @@ class Relationship:
 
                 if possible_scar or possible_death:
                     for condition in injuries:
-                        self.history.add_possible_history(
-                            injured_cat,
+                        injured_cat.history.add_possible_history(
                             condition,
+                            status=injured_cat.status,
                             scar_text=possible_scar,
                             death_text=possible_death,
                         )
@@ -267,7 +270,7 @@ class Relationship:
         if in_de_crease == "neutral":
             return 0
         # get the normal amount
-        amount = game.config["relationship"]["in_decrease_value"][intensity]
+        amount = constants.CONFIG["relationship"]["in_decrease_value"][intensity]
         if in_de_crease == "decrease":
             amount = amount * -1
 
@@ -278,10 +281,10 @@ class Relationship:
             amount = amount
         elif compatibility:
             # positive compatibility
-            amount += game.config["relationship"]["compatibility_effect"]
+            amount += constants.CONFIG["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
-            amount -= game.config["relationship"]["compatibility_effect"]
+            amount -= constants.CONFIG["relationship"]["compatibility_effect"]
         return amount
 
     def interaction_affect_relationships(
@@ -303,7 +306,7 @@ class Relationship:
         """
         amount = self.get_amount(in_de_crease, intensity)
         passive_buff = int(
-            abs(amount / game.config["relationship"]["passive_influence_div"])
+            abs(amount / constants.CONFIG["relationship"]["passive_influence_div"])
         )
 
         # influence the own relationship

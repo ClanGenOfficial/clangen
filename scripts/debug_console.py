@@ -1,6 +1,7 @@
 """
 Stores the DebugMenu class and the DebugMode class
 """
+
 import pygame
 import pygame_gui
 import html
@@ -26,6 +27,7 @@ class DebugMenu(UIWindow):
             window_display_title="Debug Console",
             object_id="#debug_console",
             resizable=False,
+            always_on_top=True,
             visible=0,
         )
         self.set_blocking(False)
@@ -207,9 +209,6 @@ class DebugMode:
         Updates *before* the UI has been drawn.
         """
 
-        self.debug_menu.always_on_top = False
-        self.debug_menu.always_on_top = True # Force window to render on top, if there's another option, please change this.
-
         # Showcoords
         if game.debug_settings["showcoords"]:
             if self.coords_display.visible == 0:
@@ -252,6 +251,7 @@ class DebugMode:
         """
         Updates *after* the UI has been drawn.
         """
+        self.debug_menu.window_stack.move_window_to_front(self.debug_menu)
         if game.debug_settings["showbounds"]:
             elements = MANAGER.ui_group.visible
             for surface in elements:

@@ -4,7 +4,9 @@ from random import choice, shuffle
 
 import i18n.config
 
+from scripts.game_structure import constants
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import (
     create_group_interaction,
@@ -39,7 +41,7 @@ class GroupEvents:
             if cat_amount == "group_types.json":
                 continue
             cls.GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
-            for file in ["neutral.json", "positive.json", "negative.json"]:
+            for file in ("neutral.json", "positive.json", "negative.json"):
                 cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
                     file[:-5]
                 ] = create_group_interaction(
@@ -111,7 +113,7 @@ class GroupEvents:
 
         # TRIGGER ALL NEEDED FUNCTIONS TO REFLECT THE INTERACTION
         GroupEvents.injuring_cats(chosen_interaction, abbreviations_cat_id)
-        amount = game.config["relationship"]["in_decrease_value"][
+        amount = constants.CONFIG["relationship"]["in_decrease_value"][
             chosen_interaction.intensity
         ]
 
@@ -133,7 +135,7 @@ class GroupEvents:
         # TODO: add the interaction to the relationship log?
 
         interaction_str = interaction_str + i18n.t(
-            f"screens.relationships.{inter_type}_postscript"
+            f"relationships.{inter_type}_postscript"
         )
         ids = list(abbreviations_cat_id.values())
         relevant_event_tabs = ["relation", "interaction"]
@@ -188,7 +190,7 @@ class GroupEvents:
                 len(interact.status_constraint) >= 1
                 and "m_c" in interact.status_constraint
             ):
-                if main_cat.status not in interact.status_constraint["m_c"]:
+                if main_cat.status.rank not in interact.status_constraint["m_c"]:
                     continue
 
             if (
@@ -325,7 +327,7 @@ class GroupEvents:
                     status_ids = [
                         cat.ID
                         for cat in interact_cats
-                        if cat.status in interact.status_constraint[abbreviation]
+                        if cat.status.rank in interact.status_constraint[abbreviation]
                     ]
                 else:
                     # if there is no constraint, add all ids to the list
@@ -352,7 +354,7 @@ class GroupEvents:
                     trait_ids = [cat.ID for cat in interact_cats]
 
                 # only add the id if it is in all other lists
-                for cat_id in [cat.ID for cat in interact_cats]:
+                for cat_id in (cat.ID for cat in interact_cats):
                     if (
                         cat_id in status_ids
                         and cat_id in skill_ids
@@ -476,7 +478,7 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if relevant_cat.status not in constraint:
+            if relevant_cat.status.rank not in constraint:
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -688,7 +690,7 @@ class GroupEvents:
                 if "death_text" in injury_dict
                 else None
             )
-            if injured_cat.status == "leader":
+            if injured_cat.status.is_leader:
                 possible_death = (
                     GroupEvents.prepare_text(
                         injury_dict["death_leader_text"], abbreviations_cat_id
@@ -699,11 +701,8 @@ class GroupEvents:
 
             if possible_death or possible_scar:
                 for condition in injuries:
-                    History.add_possible_history(
-                        injured_cat,
-                        condition,
-                        death_text=possible_death,
-                        scar_text=possible_scar,
+                    injured_cat.history.add_possible_history(
+                        condition, death_text=possible_death, scar_text=possible_scar
                     )
 
     @staticmethod

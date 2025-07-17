@@ -1,23 +1,23 @@
-
 class OngoingEvent:
     """
     Moon events meant to be spread across multiple moons in a preset order.
     """
+
     def __init__(
-            self,
-            event=None,
-            camp=None,
-            season=None,
-            tags=None,
-            priority: str = "secondary",
-            duration=None,
-            current_duration: int = 0,
-            rarity: int = 0,
-            trigger_events=None,
-            progress_events=None,
-            conclusion_events=None,
-            secondary_disasters=None,
-            collateral_damage=None,
+        self,
+        event=None,
+        camp=None,
+        season=None,
+        tags=None,
+        priority: str = "secondary",
+        duration=None,
+        current_duration: int = 0,
+        rarity: int = 0,
+        trigger_events=None,
+        progress_events=None,
+        conclusion_events=None,
+        secondary_disasters=None,
+        collateral_damage=None,
     ):
         self.event = event
         self.camp = camp

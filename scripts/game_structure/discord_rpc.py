@@ -11,6 +11,8 @@ import asyncio
 import threading
 from time import time
 
+from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 
 status_dict = {
@@ -51,7 +53,7 @@ class _DiscordRPC(threading.Thread):
 
     def get_rpc(self):
         # Check if pypresence is available.
-        if not game.settings["discord"]:
+        if not game_setting_get("discord"):
             return
         try:
             # raise ImportError # uncomment this line to disable rpc without uninstalling pypresence
@@ -91,17 +93,21 @@ class _DiscordRPC(threading.Thread):
     def update(self):
         if self._connected:
             try:
-                state_text = status_dict[game.switches["cur_screen"]]
+                state_text = status_dict[switch_get_value(Switch.cur_screen)]
             except KeyError:
                 state_text = "Leading the Clan"
 
             try:
-                img_str = (f"{game.clan.biome}_{game.clan.current_season.replace('-', '')}_"
-                           f"{game.clan.camp_bg}_{'dark' if game.settings['dark mode'] else 'light'}")
+                img_str = (
+                    f"{game.clan.biome}_{game.clan.current_season.replace('-', '')}_"
+                    f"{game.clan.camp_bg}_{'dark' if game_setting_get('dark mode') else 'light'}"
+                )
                 img_text = game.clan.biome
             except AttributeError:
-                print("Failed to get image string, game may not be fully loaded yet. "
-                      "Don't worry, it will fix itself. Hopefully.")
+                print(
+                    "Failed to get image string, game may not be fully loaded yet. "
+                    "Don't worry, it will fix itself. Hopefully."
+                )
                 img_str = "discord"  # fallback incase the game isn't loaded yet
                 img_text = "Clangen!!"
 

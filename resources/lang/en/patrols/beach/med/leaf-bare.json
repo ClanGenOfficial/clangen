@@ -251,7 +251,7 @@
                 "weight": 5,
                 "dead_cats": ["p_l"],
                 "history_text": {
-                   "reg_death": "m_c froze to death after getting stuck in a snowbank."
+                    "reg_death": "m_c froze to death after getting stuck in a snowbank."
                 }
             },
             {
@@ -882,7 +882,7 @@
                 "text": "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. p_l in particular is shivering and chilled to the bone by the time {PRONOUN/p_l/subject} and app1 return to camp, empty-pawed and miserable.",
                 "exp": 0,
                 "weight": 10,
-				"injury": [
+                "injury": [
                     {
                         "cats": ["p_l"],
                         "injuries": ["cold_injury"],

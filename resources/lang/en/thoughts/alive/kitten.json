@@ -38,7 +38,7 @@
             "Wants to be big someday",
             "Wants to have fun",
             "Is playing pretend",
-            "Is going through an angsty phase, much to {PRONOUN/m_c/poss} Clanmates chagrin",
+            "Is going through an angsty phase, much to {PRONOUN/m_c/poss} Clanmates' chagrin",
             "Is fighting sleep... and failing",
             "Knocked {PRONOUN/m_c/self} over with a sneeze",
             "Wants a badger ride",
@@ -70,7 +70,7 @@
         "main_status_constraint": [
             "kitten"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "kitten"
         ],
         "random_living_status": [
@@ -141,7 +141,7 @@
         "id": "gen_greenleaf_kit",
         "thoughts": [
             "Is whining about the heat",
-            "Is buzzing after swallowing a cicada" 
+            "Is buzzing after swallowing a cicada"
         ],
         "season": [
             "Greenleaf"
@@ -188,10 +188,10 @@
     {
         "id": "guarding_kit",
         "thoughts": [
-            "Has taken up the role of guarding the fresh-kill pile from cats wanting an extra piece and is taking {PRONOUN/m_c/poss} job very seriously",
-            "Is trying to force {PRONOUN/m_c/poss} way into being allowed to guard camp",
+            "Guards the fresh-kill pile to make sure each Clanmate only takes one piece",
+            "Demands to be allowed to guard camp",
             "Wants to guard the nursery"
-	],
+        ],
         "main_trait_constraint": [
             "attention-seeker",
             "bossy",
@@ -230,7 +230,7 @@
         "thoughts": [
             "Can't wait to be deputy so {PRONOUN/m_c/subject} can assign patrols",
             "Tells r_c to catch {PRONOUN/m_c/object} some fresh prey",
-            "Wants to be leader so everycat will have to listen to {PRONOUN/m_c/object} all the time",
+            "Wants to be leader so everyone will have to listen to {PRONOUN/m_c/object} all the time",
             "Tells r_c to change the bedding in the nursery",
             "Tells r_c to play with {PRONOUN/m_c/object}",
             "Is mad no one will listen to {PRONOUN/m_c/object}",
@@ -314,7 +314,7 @@
         "main_trait_constraint": [
             "bullying"
         ],
-        "random_status_constraint":[
+        "random_status_constraint": [
             "kitten"
         ],
         "random_living_status": [
@@ -453,7 +453,7 @@
             "Is zooming around",
             "Pounced on r_c",
             "Is practicing {PRONOUN/m_c/poss} pounce on r_c's tail",
-            "Is complaining of a tummyache after sneaking into the medicine cat den's herb storage and eating something {PRONOUN/m_c/subject} shouldn't have",
+            "Is complaining of a tummyache after sneaking into the medicine cat's herb storage and eating some burdock",
             "Picked up something nobody else got a good look at and is now running from several cats",
             "Is pretending to be a mouse and trying to get others to chase {PRONOUN/m_c/object}",
             "Nips at r_c and runs away giggling",
@@ -590,7 +590,7 @@
             "Is too shy to go to the fresh-kill pile alone",
             "Hides sheepishly behind r_c",
             "Is afraid other cats will think {PRONOUN/m_c/subject} {VERB/m_c/are/is} silly",
-            "Doesn't want to be an apprentice because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} afraid of disappointing the Clan",
+            "Doesn't want to be an apprentice for fear of disappointing the Clan",
             "Hates making mistakes",
             "Is afraid of being in the way",
             "Stays at the edges of camp to avoid getting taken by a hawk",
@@ -797,6 +797,65 @@
         ],
         "random_living_status": [
             "starclan"
+        ]
+    },
+    {
+        "id": "kittencough_gen",
+        "thoughts": [
+            "Wants to play but can't stop coughing",
+            "Is unusually willing to nap",
+            "Is trembling after a coughing fit",
+            "Is rattling when breathing",
+            "Just wants to stay in {PRONOUN/m_c/poss} nest"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "kittencough"
+            ]
+        }
+    },
+    {
+        "id": "kit_to_pregnant_cat",
+        "thoughts": [
+            "Wants r_c to let {PRONOUN/m_c/object} name one of the kits",
+            "Can't wait for r_c's kits to be here so they can play together",
+            "Is asking r_c question after question about being pregnant",
+            "Asks r_c if {PRONOUN/r_c/subject}'ll have twelve kits since {PRONOUN/r_c/poss} belly is so big"
+        ],
+        "has_injuries": {
+            "r_c": [
+                "pregnant"
+            ]
+        }
+    },
+    {
+        "id": "kit_to_newborn",
+        "thoughts": [
+            "Asks when r_c will be big enough to play with",
+            "Tries to give r_c a juicy piece of prey",
+            "Gives r_c {PRONOUN/m_c/poss} favorite feather",
+            "Gives r_c {PRONOUN/m_c/poss} favorite petal",
+            "Gives r_c {PRONOUN/m_c/poss} favorite rock",
+            "Gives r_c {PRONOUN/m_c/poss} favorite stick",
+            "Says r_c is too small to share toys with",
+            "Can't wait for r_c to grow up",
+            "Teases r_c for being so small",
+            "Isn't allowed to wrestle r_c",
+            "Advises r_c on the best parts of the nursery",
+            "Refuses to believe {PRONOUN/m_c/subject} {VERB/m_c/were/was} ever as small as r_c",
+            "Asks when r_c will start eating solid prey",
+            "Wonders what kind of Clanmate r_c will become",
+            "Wants r_c to be {PRONOUN/m_c/poss} apprentice",
+            "Was sent out of the nursery for being too rowdy around the new litter"
+        ],
+        "main_status_constraint": [
+            "kitten"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ],
+        "random_living_status": [
+            "living"
         ]
     }
 ]

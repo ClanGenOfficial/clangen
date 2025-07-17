@@ -2578,7 +2578,7 @@
                 ]
             },
             {
-                "text": "When p_l stops the patrol at the entrance to a abandoned badger sett and asks if the apprentices know why c_n values every safe burrow and underground haven, s_c pipes up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/know/knows}! It's because these are the places c_n retreat to in times of danger!",
+                "text": "When p_l stops the patrol at the entrance to an abandoned badger sett and asks if the apprentices know why c_n values every safe burrow and underground haven, s_c pipes up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/know/knows}! It's because these are the places c_n retreat to in times of danger!",
                 "exp": 40,
                 "weight": 30,
                 "can_have_stat": ["any", "app"],
@@ -2676,7 +2676,7 @@
                 ]
             },
             {
-                "text": "s_c carefully shows the apprentices three examples of safe refuge tunnels. The first is huge, big enough for all the patrol to fit into, but shallow, made by the large badgers. The next is cramped, a burrow rather than a tunnel, first dug out be rabbits. The last is the most valuable, a huge badger sett dug by the smaller badger species, sprawling out with multiple entrances and spacious chambers.",
+                "text": "s_c carefully shows the apprentices three examples of safe refuge tunnels. The first is huge, big enough for all the patrol to fit into, but shallow, made by the large badgers. The next is cramped, a burrow rather than a tunnel, first dug out by rabbits. The last is the most valuable, a huge badger sett dug by the smaller badger species, sprawling out with multiple entrances and spacious chambers.",
                 "exp": 40,
                 "weight": 40,
                 "can_have_stat": ["any", "adult"],
@@ -2750,7 +2750,7 @@
                 ]
             },
             {
-                "text": "As the patrol impacts the importance of knowing where the tunnel refuges are placed in c_n's territory, s_c tells of how, without any shelter or tunnels to find safety in, some cats because stronger, bigger, and their prides began to move constantly. They because lions, mighty and great - but not warriors anymore, not Clancats.",
+                "text": "As the patrol impacts the importance of knowing where the tunnel refuges are placed in c_n's territory, s_c tells of how, without any shelter or tunnels to find safety in, some cats became stronger, bigger, and their prides began to move constantly. They became lions, mighty and great - but not warriors anymore, not Clancats.",
                 "exp": 40,
                 "weight": 40,
                 "can_have_stat": ["any", "adult"],
@@ -2833,7 +2833,7 @@
                 ]
             },
             {
-                "text": "s_c doesn't need to know where the Clan's refuges are, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} going to be far too good of a warrior to ever need them!<br>p_l doens't look so convinced.",
+                "text": "s_c doesn't need to know where the Clan's refuges are, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} going to be far too good of a warrior to ever need them!<br>p_l doesn't look so convinced.",
                 "exp": 0,
                 "weight": 20,
                 "can_have_stat": ["any", "app"],
@@ -2893,7 +2893,7 @@
         "biome": ["plains"],
         "season": ["any"],
         "tags": [],
-        "types": [],
+        "types": ["training"],
         "patrol_art": "pln_train_session1",
         "min_cats": 3,
         "max_cats": 6,
@@ -3201,7 +3201,7 @@
                         }
                     ],
                     "history_text": {
-                        "scar":"m_c was scarred from being dragged away from a Thunderpath {PRONOUN/m_c/subject} got too close to as a curious apprentice.",
+                        "scar": "m_c was scarred from being dragged away from a Thunderpath {PRONOUN/m_c/subject} got too close to as a curious apprentice.",
                         "reg_death": "Being hauled away from the Thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death for m_c",
                         "lead_death": "being hauled away from the Thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death"
                     }

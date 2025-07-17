@@ -240,7 +240,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received an prophecy. m_c proposes an extremely literal interpretation, at which the medicine cats sigh and assure m_c they had already considered it.",
+    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received a prophecy. m_c proposes an extremely literal interpretation, at which the medicine cats sigh and assure m_c they had already considered it.",
     "rel_change": -3,
     "m_c": {
       "trait": ["childish", "oblivious"],
@@ -521,7 +521,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "During the Gathering, m_c points out that o_c_n's leader has separated toes that would terrible for swimming. o_c_n's leader politely replies that they'd never thought much about their own toes. m_c is too embarrassed at the failed insult to talk much the rest of the night.",
+    "event_text": "During the Gathering, m_c points out that o_c_n's leader has separated toes that would be terrible for swimming. o_c_n's leader politely replies that they'd never thought much about their own toes. m_c is too embarrassed at the failed insult to talk much the rest of the night.",
     "rel_change": 0,
     "m_c": {
       "skill": [ "SWIMMER,1" ],

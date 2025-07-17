@@ -11,12 +11,23 @@ import pygame_gui
 import ujson
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
+from scripts.game_structure.game.settings import (
+    game_settings_save,
+    game_setting_toggle,
+    game_setting_get,
+    game_setting_set,
+)
+
+# please don't do this. we have to.
+import scripts.game_structure.game.settings.settings as all_settings
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
     UIImageHorizontalSlider,
+    UIModifiedScrollingContainer,
 )
+from scripts.housekeeping.datadir import open_data_dir
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from scripts.game_structure.audio.ambiance_manager import ambiance_manager
@@ -26,7 +37,6 @@ from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
 )
-from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
@@ -104,7 +114,7 @@ class SettingsScreen(Screens):
     def __init__(self, name="settings_screen"):
         super().__init__(name)
         self.prev_setting = None
-        self.toggled_theme = "dark" if game.settings["dark mode"] else "light"
+        self.toggled_theme = "dark" if game_setting_get("dark mode") else "light"
 
     def handle_event(self, event):
         """
@@ -142,26 +152,18 @@ class SettingsScreen(Screens):
                 self.change_screen("start screen")
                 return
             if event.ui_element == self.fullscreen_toggle:
-                game.switch_setting("fullscreen")
+                game_setting_toggle("fullscreen")
                 self.save_settings()
-                game.save_settings(self)
+                game_settings_save(self)
                 set_display_mode(
-                    fullscreen=game.settings["fullscreen"], source_screen=self
+                    fullscreen=game_setting_get("fullscreen"), source_screen=self
                 )
             elif event.ui_element == self.open_data_directory_button:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", "-R", get_data_dir()])
-                elif platform.system() == "Windows":
-                    os.startfile(get_data_dir())  # pylint: disable=no-member
-                elif platform.system() == "Linux":
-                    try:
-                        subprocess.Popen(["xdg-open", get_data_dir()])
-                    except OSError:
-                        logger.exception("Failed to call to xdg-open.")
+                open_data_dir()
                 return
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
-                game.save_settings(self)
+                game_settings_save(self)
                 self.settings_changed = False
                 self.update_save_button()
                 return
@@ -175,10 +177,10 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.language_button:
                 self.open_lang_settings()
-            if self.sub_menu in ["general", "relation", "language"]:
+            if self.sub_menu in ("general", "relation", "language"):
                 self.handle_checkbox_events(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("start screen")
             elif event.key == pygame.K_RIGHT:
@@ -204,12 +206,12 @@ class SettingsScreen(Screens):
                         MANAGER.set_locale(key)
                         i18n.config.set("locale", key)
                         self.checkboxes[key].disable()
-                        game.settings["language"] = key
+                        game_setting_set("language", key)
                     else:
-                        game.switch_setting(key)
+                        game_setting_toggle(key)
                         value.change_object_id(
                             "@checked_checkbox"
-                            if game.settings[key]
+                            if game_setting_get(key)
                             else "@unchecked_checkbox"
                         )
                     self.settings_changed = True
@@ -233,7 +235,7 @@ class SettingsScreen(Screens):
                         self.sub_menu == "general"
                         and event.ui_element is self.checkboxes["discord"]
                     ):
-                        if game.settings["discord"]:
+                        if game_setting_get("discord"):
                             print("Starting Discord RPC")
                             game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
                             game.rpc.start()
@@ -297,11 +299,15 @@ class SettingsScreen(Screens):
             "buttons.toggle_fullscreen",
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
-            tool_tip_text="buttons.toggle_fullscreen_tooltip",
+            tool_tip_text=(
+                "buttons.toggle_fullscreen_windowed"
+                if game_setting_get("fullscreen")
+                else "buttons.toggle_fullscreen_fullscreen"
+            ),
             tool_tip_text_kwargs={
-                "screentext": "windowed"
-                if game.settings["fullscreen"]
-                else "fullscreen"
+                "screentext": (
+                    "windowed" if game_setting_get("fullscreen") else "fullscreen"
+                )
             },
         )
 
@@ -331,7 +337,9 @@ class SettingsScreen(Screens):
 
         self.set_bg("default", "mainmenu_bg")
 
-        self.settings_at_open = game.settings.copy()
+        self.settings_at_open = (
+            all_settings.settings
+        )  # please don't do this anywhere else.
 
         self.refresh_checkboxes()
 
@@ -366,12 +374,12 @@ class SettingsScreen(Screens):
         self.open_data_directory_button.kill()
         del self.open_data_directory_button
 
-        self.settings_at_open = game.settings
-        self.toggled_theme = "dark" if game.settings["dark mode"] else "light"
+        self.settings_at_open = all_settings.settings
+        self.toggled_theme = "dark" if game_setting_get("dark mode") else "light"
 
     def save_settings(self):
         """Saves the settings, ensuring that they will be retained when the screen changes."""
-        self.settings_at_open = game.settings.copy()
+        self.settings_at_open = all_settings.settings.copy()
 
     def open_general_settings(self):
         """Opens and draws general_settings"""
@@ -381,11 +389,10 @@ class SettingsScreen(Screens):
         self.sub_menu = "general"
         self.save_settings_button.show()
 
-        self.checkboxes_text[
-            "container_general"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["container_general"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((0, 220), (700, 300))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 
@@ -396,11 +403,11 @@ class SettingsScreen(Screens):
                 container=self.checkboxes_text["container_general"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_vertcenter"),
                 manager=MANAGER,
-                anchors={
-                    "top_target": self.checkboxes_text[list(self.checkboxes_text)[-1]]
-                }
-                if i > 0
-                else None,
+                anchors=(
+                    {"top_target": self.checkboxes_text[list(self.checkboxes_text)[-1]]}
+                    if i > 0
+                    else None
+                ),
             )
             self.checkboxes_text[code].disable()
 
@@ -546,11 +553,10 @@ class SettingsScreen(Screens):
         self.sub_menu = "info"
         self.save_settings_button.hide()
 
-        self.checkboxes_text[
-            "info_container"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.checkboxes_text["info_container"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((0, 150), (600, 500))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
             anchors={"centerx": "centerx"},
         )
@@ -611,23 +617,31 @@ class SettingsScreen(Screens):
             # determine position
             if contributors_block:
                 position = (
-                    0
-                    if final_row_contribs == 1 and i == len(self.tooltip_text) - 1
-                    else rows[contributors_index % 3],
+                    (
+                        0
+                        if final_row_contribs == 1 and i == len(self.tooltip_text) - 1
+                        else rows[contributors_index % 3]
+                    ),
                     # y-axis
-                    10
-                    if contributors_index
-                    < 3  # first rows have a bit of space below the header
-                    else 0,
+                    (
+                        10
+                        if contributors_index
+                        < 3  # first rows have a bit of space below the header
+                        else 0
+                    ),
                 )
             else:
                 position = (
-                    0
-                    if final_row_seniors == 1 and (i == self.contributors_start - 1)
-                    else rows[i % 3],
-                    10
-                    if i < 3  # first rows have a bit of space below the header
-                    else 0,
+                    (
+                        0
+                        if final_row_seniors == 1 and (i == self.contributors_start - 1)
+                        else rows[i % 3]
+                    ),
+                    (
+                        10
+                        if i < 3  # first rows have a bit of space below the header
+                        else 0
+                    ),
                 )
             self.tooltip[f"tip{i}"] = UIImageButton(
                 ui_scale(
@@ -637,9 +651,11 @@ class SettingsScreen(Screens):
                     )
                 ),
                 self.info_text["contribs"][i],
-                object_id="#blank_button_dark"
-                if self.toggled_theme == "dark"
-                else "#blank_button",
+                object_id=(
+                    "#blank_button_dark"
+                    if self.toggled_theme == "dark"
+                    else "#blank_button"
+                ),
                 container=self.checkboxes_text["info_container"],
                 manager=MANAGER,
                 tool_tip_text=tooltip if tooltip else None,
@@ -647,20 +663,24 @@ class SettingsScreen(Screens):
                 sound_id=None,
                 anchors={
                     "centerx": "centerx",
-                    "top_target": self.checkboxes_text[
-                        "info_text_seniors"
-                    ]  # seniors first row
-                    if i < 3
-                    else self.tooltip[
-                        f"tip{(floor(i / 3) * 3) - 1}"
-                    ]  # seniors other rows
-                    if not contributors_block
-                    # contributor block
-                    else self.checkboxes_text[
-                        "info_text_contributors"
-                    ]  # contributors first row
-                    if contributors_index < 3
-                    else self.tooltip[f"tip{i - 3}"],  # contributors other rows
+                    "top_target": (
+                        self.checkboxes_text["info_text_seniors"]  # seniors first row
+                        if i < 3
+                        else (
+                            self.tooltip[
+                                f"tip{(floor(i / 3) * 3) - 1}"
+                            ]  # seniors other rows
+                            if not contributors_block
+                            # contributor block
+                            else (
+                                self.checkboxes_text[
+                                    "info_text_contributors"
+                                ]  # contributors first row
+                                if contributors_index < 3
+                                else self.tooltip[f"tip{i - 3}"]
+                            )
+                        )
+                    ),  # contributors other rows
                 },
             )
 
@@ -808,7 +828,7 @@ class SettingsScreen(Screens):
 
         else:
             for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):
-                if game.settings[code]:
+                if game_setting_get(code):
                     box_type = "@checked_checkbox"
                 else:
                     box_type = "@unchecked_checkbox"
@@ -818,11 +838,11 @@ class SettingsScreen(Screens):
                     object_id=box_type,
                     container=self.checkboxes_text["container_" + self.sub_menu],
                     tool_tip_text=f"settings.{code}_tooltip",
-                    anchors={
-                        "top_target": self.checkboxes_text[list(self.checkboxes)[-1]]
-                    }
-                    if i > 0
-                    else None,
+                    anchors=(
+                        {"top_target": self.checkboxes_text[list(self.checkboxes)[-1]]}
+                        if i > 0
+                        else None
+                    ),
                 )
 
     def clear_sub_settings_buttons_and_text(self):

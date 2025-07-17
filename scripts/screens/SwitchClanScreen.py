@@ -21,6 +21,8 @@ from scripts.utility import (
     ui_scale_offset,
 )
 from .Screens import Screens
+from ..game_structure.game.save_load import read_clans
+from ..game_structure.game.settings import game_setting_get
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
@@ -60,11 +62,13 @@ class SwitchClanScreen(Screens):
 
                 for page in self.clan_buttons:
                     if event.ui_element in page:
+                        self.change_screen("start screen")
                         Clan.switch_clans(
-                            self.clan_name[self.page][page.index(event.ui_element)]
+                            self.clan_name[self.page][page.index(event.ui_element)],
+                            False,
                         )
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("start screen")
 
@@ -74,8 +78,6 @@ class SwitchClanScreen(Screens):
         """
         self.main_menu.kill()
         del self.main_menu
-        self.info.kill()
-        del self.info
         self.current_clan.kill()
         del self.current_clan
 
@@ -125,14 +127,6 @@ class SwitchClanScreen(Screens):
             starting_height=1,
         )
 
-        self.info = pygame_gui.elements.UITextBox(
-            "screens.switch_clan.info",
-            # pylint: disable=line-too-long
-            ui_scale(pygame.Rect((100, 600), (600, 70))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
-            manager=MANAGER,
-        )
-
         self.current_clan = pygame_gui.elements.UITextBox(
             "screens.switch_clan.current_clan",
             ui_scale(pygame.Rect((0, 100), (600, 40))),
@@ -144,7 +138,7 @@ class SwitchClanScreen(Screens):
                 "count": 1 if game.clan else 0,
             },
         )
-        self.clan_list = game.read_clans()
+        self.clan_list = read_clans()
 
         self.clan_buttons = [[]]
         self.clan_name = [[]]
@@ -191,12 +185,14 @@ class SwitchClanScreen(Screens):
                     ),
                     object_id=ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
                     manager=MANAGER,
-                    anchors={
-                        "centerx": "centerx",
-                        "top_target": self.clan_buttons[-1][-1],
-                    }
-                    if len(self.clan_buttons[-1]) % 8 != 0
-                    else {"centerx": "centerx"},
+                    anchors=(
+                        {
+                            "centerx": "centerx",
+                            "top_target": self.clan_buttons[-1][-1],
+                        }
+                        if len(self.clan_buttons[-1]) % 8 != 0
+                        else {"centerx": "centerx"}
+                    ),
                 )
             )
 

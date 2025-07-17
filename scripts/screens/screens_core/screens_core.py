@@ -4,7 +4,8 @@ import pygame
 import pygame_gui
 
 import scripts.game_structure.screen_settings
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, constants
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UISurfaceImageButton, UIImageButton
@@ -273,7 +274,7 @@ def rebuild_mute(location: str):
 
     mute_pos = ui_scale(pygame.Rect((0, 0), (34, 34)))
 
-    if location in ["bottomright", "default"]:
+    if location in ("bottomright", "default"):
         mute_pos.bottomright = ui_scale_offset((-25, -25))
         anchors = {"bottom": "bottom", "right": "right"}
     elif location == "topright":
@@ -353,9 +354,9 @@ def rebuild_bgs():
         del game_box
 
     bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
-    bg.fill(game.config["theme"]["light_mode_background"])
+    bg.fill(constants.CONFIG["theme"]["light_mode_background"])
     bg_dark = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
-    bg_dark.fill(game.config["theme"]["dark_mode_background"])
+    bg_dark.fill(constants.CONFIG["theme"]["dark_mode_background"])
 
     default_game_bgs = {
         "light": {"default": bg},
@@ -405,15 +406,15 @@ def rebuild_bgs():
         },
     }
 
-    for theme in ["light", "dark"]:
+    for theme in ("light", "dark"):
         for name, bg in default_fullscreen_bgs[theme].items():
-            if name not in [
+            if name not in (
                 "default",
                 "mainmenu_bg",
                 "darkforest",
                 "unknown_residence",
                 "starclan",
-            ]:
+            ):
                 default_fullscreen_bgs[theme][name] = process_blur_bg(
                     default_fullscreen_bgs[theme][name], theme=theme
                 )
@@ -424,7 +425,7 @@ def rebuild_bgs():
                     vignette_strength=0,
                     fade_color=None,
                 )
-            elif name in ["mainmenu_bg", "darkforest", "unknown_residence"]:
+            elif name in ("mainmenu_bg", "darkforest", "unknown_residence"):
                 default_fullscreen_bgs[theme][name] = process_blur_bg(
                     default_fullscreen_bgs[theme][name], theme=theme, blur_radius=10
                 )
@@ -435,7 +436,7 @@ def rebuild_bgs():
 
     camp_bgs = get_camp_bgs()
 
-    for theme in ["light", "dark"]:
+    for theme in ("light", "dark"):
         for name, camp_bg in camp_bgs[theme].items():
             default_fullscreen_bgs[theme][name] = process_blur_bg(camp_bg, theme=theme)
 
@@ -453,7 +454,7 @@ def get_camp_bgs():
         biome = available_biome[0]
 
     all_backgrounds = []
-    for light_dark in ["light", "dark"]:
+    for light_dark in ("light", "dark"):
         for leaf in leaves:
             platform_dir = (
                 f"{camp_bg_base_dir}/{biome}/{leaf}_{camp_nr}_{light_dark}.png"
@@ -511,14 +512,14 @@ def process_blur_bg(
     global fade
     global dropshadow
     if theme is None:
-        theme = "dark" if game.settings["dark mode"] else "light"
+        theme = "dark" if game_setting_get("dark mode") else "light"
 
-    fade.fill(game.config["theme"]["fullscreen_background"][theme]["fade_color"])
+    fade.fill(constants.CONFIG["theme"]["fullscreen_background"][theme]["fade_color"])
     vignette.set_alpha(
-        game.config["theme"]["fullscreen_background"][theme]["vignette_alpha"]
+        constants.CONFIG["theme"]["fullscreen_background"][theme]["vignette_alpha"]
     )
     dropshadow.set_alpha(
-        game.config["theme"]["fullscreen_background"][theme]["dropshadow_alpha"]
+        constants.CONFIG["theme"]["fullscreen_background"][theme]["dropshadow_alpha"]
     )
 
     if vignette_strength is not None:

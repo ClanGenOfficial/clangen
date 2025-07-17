@@ -6,9 +6,6 @@ import pygame_gui.elements
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import (
-    game,
-)
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
@@ -21,6 +18,8 @@ from scripts.utility import (
     shorten_text_to_fit,
 )
 from .Screens import Screens
+from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
+from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -85,7 +84,7 @@ class ChooseMentorScreen(Screens):
                 self.change_screen("profile screen")
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
-                    game.switches["cat"] = self.next_cat
+                    switch_set_value(Switch.cat, self.next_cat)
                     self.update_apprentice()
                     self.update_cat_list()
                     self.update_selected_cat()
@@ -94,7 +93,7 @@ class ChooseMentorScreen(Screens):
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
-                    game.switches["cat"] = self.previous_cat
+                    switch_set_value(Switch.cat, self.previous_cat)
                     self.update_apprentice()
                     self.update_cat_list()
                     self.update_selected_cat()
@@ -123,7 +122,7 @@ class ChooseMentorScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
-        self.the_cat = Cat.all_cats[game.switches["cat"]]
+        self.the_cat = Cat.all_cats[switch_get_value(Switch.cat)]
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 
         self.heading = pygame_gui.elements.UITextBox(
@@ -392,7 +391,7 @@ class ChooseMentorScreen(Screens):
             self.apprentice_details[ele].kill()
         self.apprentice_details = {}
 
-        self.the_cat = Cat.all_cats[game.switches["cat"]]
+        self.the_cat = Cat.all_cats[switch_get_value(Switch.cat)]
         self.current_page = 1
         self.selected_mentor = Cat.fetch_cat(self.the_cat.mentor)
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
@@ -439,11 +438,19 @@ class ChooseMentorScreen(Screens):
             self.next_cat,
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats(
-            filter_func = (lambda cat: cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"])
+            filter_func=(lambda cat: cat.status.rank.is_any_apprentice_rank())
         )
 
-        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
-        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
+        (
+            self.next_cat_button.disable()
+            if self.next_cat == 0
+            else self.next_cat_button.enable()
+        )
+        (
+            self.previous_cat_button.disable()
+            if self.previous_cat == 0
+            else self.previous_cat_button.enable()
+        )
 
     def change_mentor(self, new_mentor=None):
         old_mentor = Cat.fetch_cat(self.the_cat.mentor)
@@ -630,27 +637,25 @@ class ChooseMentorScreen(Screens):
         potential_warrior_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if not (cat.dead or cat.outside)
-            and cat.status in ["warrior", "deputy", "leader"]
+            if cat.status.alive_in_player_clan
+            and cat.status.rank.is_any_adult_warrior_like_rank()
         ]
         valid_warrior_mentors = []
-        invalid_warrior_mentors = []
         potential_medcat_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if not (cat.dead or cat.outside) and cat.status == "medicine cat"
+            if cat.status.alive_in_player_clan
+            and cat.status.rank == CatRank.MEDICINE_CAT
         ]
         valid_medcat_mentors = []
-        invalid_medcat_mentors = []
         potential_mediator_mentors = [
             cat
             for cat in Cat.all_cats_list
-            if not (cat.dead or cat.outside) and cat.status == "mediator"
+            if cat.status.alive_in_player_clan and cat.status.rank == CatRank.MEDIATOR
         ]
         valid_mediator_mentors = []
-        invalid_mediator_mentors = []
 
-        if self.the_cat.status == "apprentice":
+        if self.the_cat.status.rank == CatRank.APPRENTICE:
             for cat in potential_warrior_mentors:
                 # Assume cat is valid initially
                 is_valid = True
@@ -672,7 +677,7 @@ class ChooseMentorScreen(Screens):
 
             return valid_warrior_mentors
 
-        elif self.the_cat.status == "medicine cat apprentice":
+        elif self.the_cat.status.rank == CatRank.MEDICINE_APPRENTICE:
             for cat in potential_medcat_mentors:
                 is_valid = True
 
@@ -690,7 +695,7 @@ class ChooseMentorScreen(Screens):
 
             return valid_medcat_mentors
 
-        elif self.the_cat.status == "mediator apprentice":
+        elif self.the_cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
             for cat in potential_mediator_mentors:
                 # Assume cat is valid initially
                 is_valid = True

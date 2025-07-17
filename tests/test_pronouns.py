@@ -23,7 +23,7 @@ from scripts.game_structure.localization import get_new_pronouns
 from scripts.utility import process_text
 
 
-def test():
+def _test():
     """Iterate through all files in 'resources'
     and verify that any detected pronoun tags are
     formatted correctly."""
@@ -71,14 +71,14 @@ def test():
 
     for root, _, files in os.walk("resources"):
         for file in files:
-            if file.endswith(".json") and file not in [
+            if file.endswith(".json") and file not in (
                 "credits_text.json",
                 "clansettings.json",
                 "gamesettings.json",
-            ]:
+            ):
                 path = os.path.join(root, file)
 
-                if not test_replacement_failure(path, replacement_dict):
+                if not _test_replacement_failure(path, replacement_dict):
                     failed = True
                     failed_files.append(path)
 
@@ -94,7 +94,7 @@ def test():
         sys.exit(0)
 
 
-def test_replacement_failure(path: str, repl_dict: dict) -> bool:
+def _test_replacement_failure(path: str, repl_dict: dict) -> bool:
     """Reads in a file, and finds strings, and runs pronoun replacment on those strings.
     Returns False if there were any issues with the pronoun replacement, or if the
     json is incorrectly formatted."""
@@ -168,5 +168,5 @@ class TestPronouns(unittest.TestCase):
     def test_pronouns(self):
         """Test that all files are ascii decodable."""
         with self.assertRaises(SystemExit) as cm:
-            test()
+            _test()
         self.assertEqual(cm.exception.code, 0)

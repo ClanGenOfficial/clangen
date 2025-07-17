@@ -1149,7 +1149,7 @@
                         "scars": []
                     }
                 ],
-                "history_text": { 
+                "history_text": {
                     "scar": "m_c was scarred after stepping on a thorn.",
                     "reg_death": "m_c died after a small cut progressed to something worse.",
                     "lead_death": "died after a small cut progressed to something worse."
@@ -1161,7 +1161,7 @@
         "patrol_id": "bch_med_discussion1",
         "biome": ["beach"],
         "season": ["any"],
-        "types": [],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_discussion",
         "min_cats": 2,
@@ -1229,7 +1229,7 @@
         "patrol_id": "bch_med_dwindleherbsgathering1",
         "biome": ["beach"],
         "season": ["any"],
-        "types": [],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,

@@ -340,7 +340,7 @@
         "patrol_id": "bch_hunt_redvixen1",
         "biome": ["beach"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -572,7 +572,7 @@
         "patrol_id": "bch_hunt_redvixen2",
         "biome": ["beach"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -773,7 +773,7 @@
         "patrol_id": "bch_hunt_redvixen3",
         "biome": ["beach"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -921,7 +921,7 @@
         "patrol_id": "bch_hunt_grayvixen1",
         "biome": ["beach"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
@@ -933,7 +933,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of it muscle, they meet her eyes squarely and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
+                "text": "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of its muscle, they meet her eyes squarely and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -1126,7 +1126,7 @@
         "patrol_id": "bch_hunt_grayvixen2",
         "biome": ["beach"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
@@ -1138,7 +1138,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of it muscle, they meet her eyes squarely and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
+                "text": "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of its muscle, they meet her eyes squarely and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -1331,7 +1331,7 @@
         "patrol_id": "bch_hunt_grayvixen3",
         "biome": ["beach"],
         "season": ["newleaf"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
@@ -1343,7 +1343,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The stocky gray vixen {PRONOUN/r_c/subject} {VERB/r_c/track/tracks} down smells of milk, and though she's near double r_c's weight and all of it muscle, {PRONOUN/r_c/subject} {VERB/r_c/meet/meets} her eyes squarely and {VERB/r_c/leap/leaps} to attack. c_n does not tolerate sharing their territory with foxes.",
+                "text": "The stocky gray vixen {PRONOUN/r_c/subject} {VERB/r_c/track/tracks} down smells of milk, and though she's near double r_c's weight and all of its muscle, {PRONOUN/r_c/subject} {VERB/r_c/meet/meets} her eyes squarely and {VERB/r_c/leap/leaps} to attack. c_n does not tolerate sharing their territory with foxes.",
                 "exp": 50,
                 "weight": 20,
                 "relationships": [
