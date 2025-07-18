@@ -1,8 +1,8 @@
 {
-  "menu_playlist": ["Generations.mp3", "Dawn_Patrol.mp3", "Leafbare.mp3", "Newleaf_levelmatched_v1.mp3", "Moonstone_levelmatched_v1.mp3"],
+  "menu_playlist": ["Generations.mp3", "Dawn_Patrol.mp3", "Leafbare.mp3", "Newleaf.mp3", "Moonstone.mp3"],
 
   "general_playlist": ["Dawn_Patrol.mp3"],
   "leafbare_playlist": ["Leafbare.mp3"],
-  "newleaf_playlist": ["Newleaf_levelmatched_v1.mp3"]
+  "newleaf_playlist": ["Newleaf.mp3"]
 
 }
