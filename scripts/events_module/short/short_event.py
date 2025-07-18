@@ -304,7 +304,7 @@ class ShortEvent:
                 victim=self.victim_cat,
                 murderer_id=self.main_cat.ID,
                 clan_reveal="clan_wide" in self.tags,
-                aware_individuals=[self.random_cat],
+                aware_individuals=[self.random_cat.ID],
             )
 
         # change outsider rep

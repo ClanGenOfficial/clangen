@@ -50,6 +50,15 @@ def create_short_event(
     :param sub_type: The required subtypes for this event.
     :param future_event: If this is being triggered by a future event, pass the future event object here.
     """
+    if future_event and (
+        not main_cat.status.alive_in_player_clan
+        or (random_cat and not random_cat.status.alive_in_player_clan)
+    ):
+        # we set this to true because we want it to be considered triggered and thus removed
+        # however we aren't removing because it was triggered, we're removing because none of the involved cats are eligible
+        future_event.triggered = True
+        return
+
     types = [event_type]
     sub_types = sub_type if sub_type else []
 
