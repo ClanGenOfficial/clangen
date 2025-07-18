@@ -64,6 +64,13 @@ class Game:
     patrol_cats = {}
     patrolled = []
 
+    outsider_reps = ["welcoming", "neutral", "hostile"]
+    other_clan_reps = ["ally", "neutral", "hostile"]
+
+    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
+
+    # store changing parts of the game that the user can toggle with buttons
+
     all_screens = {}
 
     debug_settings = {
