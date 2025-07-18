@@ -79,7 +79,7 @@ class Music:
         except:
             logger.exception("Failed to load music")
 
-    def clear(self):
+    def _clear(self):
         """
         removes music from memory to avoid excessive memory use, this should be done before new music
         is loaded
@@ -139,13 +139,16 @@ class Music:
             self.channel = self.loaded_track.play(fade_ms=3000)
         else:
             self.channel.play(self.loaded_track, fade_ms=3000)
-        self.start_music_timer()
+        self._start_music_timer()
 
     def stop(self):
+        """
+        Stops music entirely
+        """
         self.channel.fadeout(3000)
         self.channel = None
-        self.clear()
-        self.stop_timers()
+        self._clear()
+        self._stop_timers()
 
     def mute(self):
         """
@@ -169,8 +172,8 @@ class Music:
         if self.loaded_track:
             self.channel.unpause()
             # making sure all timers are cleared first
-            self.stop_timers()
-            self.start_music_timer(self.remaining_time_of_paused_track)
+            self._stop_timers()
+            self._start_music_timer(self.remaining_time_of_paused_track)
 
     def fade_out(self, fadeout=2000):
         """
@@ -179,7 +182,7 @@ class Music:
         """
         if self.channel and self.channel.get_busy():
             self.channel.fadeout(fadeout)
-            self.start_silence_timer()
+            self._start_silence_timer()
             self.music_timer.cancel()
 
     def change_volume(self, new_volume):
@@ -195,27 +198,27 @@ class Music:
         game_setting_set("music_volume", new_volume)
         self.loaded_track.set_volume(self.volume)
 
-    def start_music_timer(self, duration=None):
+    def _start_music_timer(self, duration=None):
         """
         sets a timer for the length of the track.  When the timer ends, silence timer is activated.
         """
         if not duration:
             duration = self.loaded_track.get_length()
-        self.music_timer = AudioTimer(duration, self.start_silence_timer)
+        self.music_timer = AudioTimer(duration, self._start_silence_timer)
         self.music_timer.daemon = True
         self.music_timer.start()
 
-    def start_silence_timer(self, duration=2):
+    def _start_silence_timer(self, duration=2):
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
         """
         # waiting should already be true, but we'll just make certain
-        self.clear()
-        self.silence_timer = AudioTimer(duration, self.reset)
+        self._clear()
+        self.silence_timer = AudioTimer(duration, self._reset)
         self.silence_timer.daemon = True
         self.silence_timer.start()
 
-    def stop_timers(self):
+    def _stop_timers(self):
         """
         Stops any alive timer thread
         """
@@ -224,6 +227,6 @@ class Music:
         if self.silence_timer and self.silence_timer.is_alive():
             self.silence_timer.cancel()
 
-    def reset(self):
+    def _reset(self):
         self.choose()
         self.play()
