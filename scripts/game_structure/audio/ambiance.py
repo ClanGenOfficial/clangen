@@ -53,7 +53,8 @@ class Ambiance:
         if screen in constants.MENU_SCREENS:
             if self.current_playlist != self.playlist_dict["menu_playlist"]:
                 self.ready_playlist(self.playlist_dict["menu_playlist"])
-            self.play_queued()
+            if not self.get_busy():
+                self.play_queued()
 
         # other screens
         elif screen not in constants.MENU_SCREENS and self.get_busy():
