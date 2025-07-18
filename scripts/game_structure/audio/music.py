@@ -15,9 +15,6 @@ logger = logging.getLogger(__name__)
 
 class Music:
     def __init__(self):
-        # live is used to denote that the music manager is working in some respect. Even if music is not currently
-        # playing, the manager is stilled considered live as long as the silence timer is running.
-        # essentially, the only time the manager shouldn't be live, is when the program first starts up.
         self.remaining_time_of_paused_track = None
         self.live = False
 
