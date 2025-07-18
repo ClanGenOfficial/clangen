@@ -84,16 +84,6 @@
             "Is waiting to watch the sunrise",
             "Is waiting to watch the sunset",
             "Is grooming, grooming, grooming away...",
-            "Saw a pair of Twolegs near camp today!",
-            "Saw a Twoleg petting a loner",
-            "Saw a kittypet with no fur at all!",
-            "Saw some kittypets playing with colorful moss balls",
-            "Saw a kittypet sitting calmly next to a dog!",
-            "Almost got lost near some Twoleg nests",
-            "Saw some wandering Twolegs today",
-            "Saw a Twoleg kit playing with a dog",
-            "Saw a Twoleg kit playing with a kittypet",
-            "Saw a kittypet rolling around a Twoleg garden",
             "Purrs whenever the sun hits {PRONOUN/m_c/object} just right",
             "Sprawls out in a warm patch of sunlight"
         ]
@@ -114,9 +104,6 @@
             "Is giving some advice to r_c",
             "Wonders what r_c is up to",
             "Is playing a prank on r_c"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -139,7 +126,17 @@
             "Saw a kittypet with the fluffiest fur imaginable today",
             "Saw a big scary dog today",
             "Is drinking water from a nearby stream",
-            "Thought {PRONOUN/m_c/subject} saw a cat, but it was just a Twoleg object that looks like one"
+            "Thought {PRONOUN/m_c/subject} saw a cat, but it was just a Twoleg object that looks like one",
+            "Saw a pair of Twolegs near camp today!",
+            "Saw a Twoleg petting a loner",
+            "Saw a kittypet with no fur at all!",
+            "Saw some kittypets playing with colorful moss balls",
+            "Saw a kittypet sitting calmly next to a dog!",
+            "Almost got lost near some Twoleg nests",
+            "Saw some wandering Twolegs today",
+            "Saw a Twoleg kit playing with a dog",
+            "Saw a Twoleg kit playing with a kittypet",
+            "Saw a kittypet rolling around a Twoleg garden"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -191,6 +188,74 @@
         ]
     },
     {
+        "id": "gen_to_newborn",
+        "thoughts": [
+            "Wants to meet r_c",
+            "Hears about the new birth",
+            "Considers new life in the Clan a good omen",
+            "Hopes r_c is tucked safe and cozy in the nursery",
+            "Reinforces the nursery to protect the new litter",
+            "Drops by the nursery to meet r_c",
+            "Judges the naming of the new litter",
+            "Approves of the naming of the new litter"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ],
+        "relationship_constraint": ["not_parent"]
+    },
+    {
+        "id": "gen_apprentice_to_newborn",
+        "thoughts": [
+            "Wants to train r_c one day",
+            "Shudders at the thought of taking care of kits",
+            "Can't wait to have kits as cute as r_c",
+            "Peeks at the new litter",
+            "Expects more chores now that the new litter is here"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ]
+    },
+    {
+        "id": "gen_parent_to_newborn",
+        "thoughts": [
+            "Can't believe the new litter is finally here",
+            "Stops r_c from falling out of the nest",
+            "Makes sure r_c has fed enough",
+            "Grooms the new litter",
+            "Hasn't stopped purring since the litter arrived",
+            "Hasn't left the nursery since the litter arrived",
+            "Hissed at a Clanmate who got too close to r_c",
+            "Won't let anyone look at the new litter just yet",
+            "Wants to show every cat the new litter",
+            "Is still indecisive on names",
+            "Considers renaming r_c",
+            "Fondly remembers sleeping through the night",
+            "Hopes the new litter's crying isn't keeping everyone up",
+            "Is proud of r_c for sleeping through the night",
+            "Has never been so exhausted in all {PRONOUN/m_c/poss} life"
+        ],
+        "random_age_constraint": ["newborn"],
+        "relationship_constraint": ["parent/child"]
+    },
+    {
         "id": "gen_to_deputy",
         "thoughts": [
             "Thinks r_c is doing a great job as deputy",
@@ -228,9 +293,6 @@
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -243,9 +305,6 @@
         ],
         "random_status_constraint": [
             "medicine cat"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -269,9 +328,6 @@
         ],
         "random_status_constraint": [
             "leader"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -295,9 +351,6 @@
         ],
         "random_status_constraint": [
             "elder"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -321,9 +374,6 @@
         ],
         "random_status_constraint": [
             "mediator"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -346,9 +396,6 @@
         ],
         "random_status_constraint": [
             "mediator apprentice"
-        ],
-        "random_living_status": [
-            "living"
         ]
     },
     {
@@ -5310,7 +5357,7 @@
             "Tries to make a new leg out of a stick {PRONOUN/m_c/subject} found",
             "Shows {PRONOUN/m_c/subject} can still run and jump around like any other cat!",
             "Groans when someone says how sad {PRONOUN/m_c/subject} must be to have three legs",
-            "Points out to r_c that {PRONOUN/m_c/subject} can't get injured on a leg {PRONOUN/m_c/subject} {VERB/do/does}n't have"
+            "Points out to r_c that {PRONOUN/m_c/subject} can't get injured on a leg {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have"
         ],
         "perm_conditions": {
             "m_c": [
@@ -6124,7 +6171,7 @@
         "thoughts": [
             "Is bothered by the sunlight flickering through the trees",
             "Makes sure to drink water before a training session",
-            "Wonders what {PRONOUN/m_c/subject} {VERB/look/looks} like during a seizure",
+            "Wonders what {PRONOUN/m_c/subject} {VERB/m_c/look/looks} like during a seizure",
             "Feels like the sun is too bright today",
             "Feels dizzier than usual today"
         ],

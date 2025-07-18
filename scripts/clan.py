@@ -244,6 +244,10 @@ class Clan:
                 )
             other_clan = OtherClan(name=other_clan_name)
             self.all_clans.append(other_clan)
+
+        # create leader's ceremony
+        self.leader.generate_lead_ceremony()
+
         self.save_clan()
         save_clanlist(self.name)
         switch_set_value(Switch.clan_list, read_clans())
@@ -313,7 +317,7 @@ class Clan:
         """
 
         if leader:
-            leader.history.add_lead_ceremony()
+            leader.generate_lead_ceremony()
             self.leader = leader
             Cat.all_cats[leader.ID].rank_change(CatRank.LEADER)
             self.leader_predecessors += 1
@@ -1009,9 +1013,6 @@ class Clan:
         """
         saves the Clan's current future events
         """
-        if not clan.future_events:
-            return
-
         save_list = []
 
         for event in game.clan.future_events:

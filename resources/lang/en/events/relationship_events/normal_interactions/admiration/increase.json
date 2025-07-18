@@ -52,8 +52,6 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c mews congratulations to r_c for a job well done.",
-			"m_c thinks r_c is being thoughtful of others.",
-			"m_c approves of r_c's recent efforts.",
 			"r_c motivated m_c to get out of {PRONOUN/m_c/poss} nest this morning.",
 			"m_c and r_c spend the morning telling interesting stories.",
 			"r_c draws a pretty symbol in the sand that m_c makes sure not to mess up.",
@@ -97,6 +95,19 @@
 		]
 	},
 	{
+		"id": "admire_inc_medium0",
+		"interactions": [
+			"m_c cant help but appreciate r_c being who {PRONOUN/r_c/subject} {VERB/r_c/are/is}.",
+			"m_c thinks r_c is being thoughtful of others.",
+			"m_c admits {PRONOUN/m_c/subject} really {VERB/m_c/admire/admires} r_c's recent efforts.",
+			"m_c is inspired by r_c's passion.",
+			"m_c didn't know that r_c was so talented.",
+			"m_c thinks that r_c is very creative.",
+			"After a discussion with r_c over favorite prey, they both have a new appreciation over each others' tastes",
+			"m_c can't help but admire how well r_c gets along with the rest of the Clan."
+		]
+	},
+	{
 		"id": "admire_inc_medium1",
 		"interactions": [
 			"m_c admires how brave r_c is.",
@@ -107,9 +118,6 @@
 			"Some things have been rough for r_c lately, but m_c admires {PRONOUN/r_c/poss} willingness to go on.",
 			"During rough weather, r_c helps m_c get safely to {PRONOUN/m_c/poss} den.",
 			"m_c wasn't going to help a Clanmate, but realized that r_c would do it in a heartbeat.",
-			"m_c is inspired by r_c's passion.",
-			"m_c didn't know that r_c was so talented.",
-			"m_c thinks that r_c is very creative.",
 			"m_c is told about r_c's bravery during a recent time of struggle."
 		],
 		"random_status_constraint": [
@@ -344,7 +352,7 @@
 		}
 	},
 	{
-		"id": "admire_adult_odd_med1",
+		"id": "admire_adult_odd_med2",
 		"interactions": [
 			"m_c thinks r_c is so much braver than {PRONOUN/m_c/object}.",
 			"If it were a life-or-death situation, m_c thinks that r_c should be saved first.",
@@ -376,6 +384,18 @@
 		}
 	},
 	{
+		"id": "admire_inc_high0",
+		"intensity": "high",
+		"interactions": [
+			"m_c thinks the Clan's ancestors smile upon r_c.",
+			"m_c is proud to be in the same Clan as r_c.",
+			"m_c can't believe how talented r_c is!",
+			"m_c truly believes r_c has endless potential {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} surpassing every day.",
+			"m_c is truly deeply touched hearing just how much r_c actually remembers about {PRONOUN/m_c/object}.",
+			"m_c asked r_c for {PRONOUN/r_c/poss} opinion on a topic and had a surprisingly insightful conversation."
+		]
+	},
+	{
 		"id": "admire_inc_high1",
 		"intensity": "high",
 		"interactions": [
@@ -383,10 +403,7 @@
 			"m_c is wowed by how bravely r_c fought the other day.",
 			"m_c is impressed by r_c's competence in any situation.",
 			"m_c is amazed at how skilled r_c really is.",
-			"m_c overhears r_c educating Clanmates about their fallen ancestors.",
-			"m_c thinks the Clan's ancestors smile upon r_c.",
-			"m_c is proud to be in the same Clan as r_c.",
-			"m_c can't believe how talented r_c is!"
+			"m_c overhears r_c educating Clanmates about their fallen ancestors."
 		],
 		"random_status_constraint": [
 			"warrior",

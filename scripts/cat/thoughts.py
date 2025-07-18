@@ -7,6 +7,7 @@ import i18n
 from scripts.cat.enums import CatGroup
 from scripts.events_module.event_filters import event_for_cat
 from scripts.game_structure.localization import load_lang_resource
+from scripts.utility import filter_relationship_type
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -20,34 +21,16 @@ class Thoughts:
         if not random_cat:
             return False
 
+        if not filter_relationship_type(
+            group=[main_cat, random_cat],
+            filter_types=constraint,
+        ):
+            return False
+
         # No current relationship-value bases tags, so this is commented out.
         relationship = None
         if random_cat.ID in main_cat.relationships:
             relationship = main_cat.relationships[random_cat.ID]
-
-        if "siblings" in constraint and not main_cat.is_sibling(random_cat):
-            return False
-
-        if "littermates" in constraint and not main_cat.is_littermate(random_cat):
-            return False
-
-        if "mates" in constraint and random_cat.ID not in main_cat.mate:
-            return False
-
-        if "not_mates" in constraint and random_cat.ID in main_cat.mate:
-            return False
-
-        if "parent/child" in constraint and not main_cat.is_parent(random_cat):
-            return False
-
-        if "child/parent" in constraint and not random_cat.is_parent(main_cat):
-            return False
-
-        if "mentor/app" in constraint and random_cat not in main_cat.apprentice:
-            return False
-
-        if "app/mentor" in constraint and random_cat.ID != main_cat.mentor:
-            return False
 
         if (
             "strangers" in constraint
@@ -137,7 +120,7 @@ class Thoughts:
         if not event_for_cat(main_info_dict, main_cat):
             return False
 
-        if random_cat and not event_for_cat(random_info_dict, random_cat):
+        if r_c_in and not event_for_cat(random_info_dict, random_cat):
             return False
 
         # Filter for the living status of the random cat. The living status of the main cat
@@ -365,65 +348,32 @@ class Thoughts:
 
         return chosen_thought
 
-    def create_death_thoughts(self, inter_list) -> list:
-        # helper function for death thoughts
-        created_list = []
-        for inter in inter_list:
-            created_list.append(inter)
-        return created_list
-
-    def leader_death_thought(self, lives_left, darkforest):
-        """
-        Load the special leader death thoughts, since they function differently than regular ones
-        :param lives_left: How many lives the leader has left - used to determine if they actually die or not
-        :param darkforest: Whether or not dead cats go to StarClan (false) or the DF (true)
-        """
-        base_path = f"resources/lang/{i18n.config.get('locale')}/thoughts/ondeath"
-        fallback_path = f"resources/lang/{i18n.config.get('fallback')}/thoughts/ondeath"
-        if darkforest:
-            spec_dir = "/darkforest"
-        else:
-            spec_dir = "/starclan"
+    @staticmethod
+    def new_death_thought(
+        main_cat, other_cat, game_mode, biome, season, camp, afterlife, lives_left
+    ):
         THOUGHTS: []
         try:
-            if lives_left > 0:
+            if main_cat.status.is_leader and lives_left > 0:
                 loaded_thoughts = load_lang_resource(
-                    f"thoughts/ondeath{spec_dir}/leader_life.json"
+                    f"thoughts/on_death/{afterlife}/leader_life.json"
+                )
+            elif main_cat.status.is_leader and lives_left == 0:
+                loaded_thoughts = load_lang_resource(
+                    f"thoughts/on_death/{afterlife}/leader_death.json"
                 )
             else:
                 loaded_thoughts = load_lang_resource(
-                    f"thoughts/ondeath{spec_dir}/leader_death.json"
+                    f"thoughts/on_death/{afterlife}/general.json"
                 )
             thought_group = choice(
-                Thoughts.create_death_thoughts(self, loaded_thoughts)
+                Thoughts.create_thoughts(
+                    loaded_thoughts, main_cat, other_cat, game_mode, biome, season, camp
+                )
             )
             chosen_thought = choice(thought_group["thoughts"])
             return chosen_thought
-        except Exception:
-            traceback.print_exc()
-            chosen_thought = i18n.t("defaults.thought")
-            return chosen_thought
 
-    def new_death_thought(self, darkforest, isoutside):
-        base_path = f"resources/lang/{i18n.config.get('locale')}/thoughts/ondeath"
-        fallback_path = f"resources/lang/{i18n.config.get('fallback')}/thoughts/ondeath"
-
-        if isoutside:
-            spec_dir = "/unknownresidence"
-        elif darkforest is False:
-            spec_dir = "/starclan"
-        else:
-            spec_dir = "/darkforest"
-        THOUGHTS: []
-        try:
-            loaded_thoughts = load_lang_resource(
-                f"thoughts/ondeath{spec_dir}/general.json"
-            )
-            thought_group = choice(
-                Thoughts.create_death_thoughts(self, loaded_thoughts)
-            )
-            chosen_thought = choice(thought_group["thoughts"])
-            return chosen_thought
         except Exception:
             traceback.print_exc()
             return i18n.t("defaults.thought")

@@ -9,5 +9,14 @@
             "Is overwhelmed after meeting so many starry cats",
             "Is regretting leaving {PRONOUN/m_c/poss} Clan without {PRONOUN/m_c/object}" 
         ]
+    },
+    {
+        "id": "parent_death_to_newborn",
+        "thoughts": [
+            "Clings to the warmth of {PRONOUN/m_c/poss} litter",
+            "Doesn't want to leave {PRONOUN/m_c/poss} litter behind"
+        ],
+        "random_age_constraint": ["newborn"],
+        "relationship_constraint": ["parent/child"]
     }
 ]

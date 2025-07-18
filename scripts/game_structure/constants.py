@@ -1,3 +1,4 @@
+from pygame import Cursor, image, SYSTEM_CURSOR_ARROW
 import ujson
 
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
@@ -110,3 +111,6 @@ with open(f"resources/game_config.json", "r", encoding="utf-8") as read_file:
 
 with open("resources/placements.json", "r", encoding="utf-8") as read_file:
     LAYOUTS = ujson.loads(read_file.read())
+
+CUSTOM_CURSOR = Cursor((9, 0), image.load("resources/images/cursor.png"))
+DEFAULT_CURSOR = Cursor(SYSTEM_CURSOR_ARROW)

@@ -7717,7 +7717,7 @@
         "history": [
             {
                 "cats": [
-                    "all"
+                    "multi_cat"
                 ],
                 "reg_death": "m_c died in a fire that raged through camp.",
                 "lead_death": "died during a fire"
