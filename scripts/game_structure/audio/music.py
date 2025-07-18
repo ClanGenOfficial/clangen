@@ -171,10 +171,9 @@ class Music:
 
         if self.loaded_track:
             self.channel.unpause()
-            # just ensuring we don't end up with two silence timers running
-            if self.silence_timer and self.silence_timer.is_alive():
-                self.silence_timer.cancel()
-            self.start_silence_timer(self.remaining_time_of_paused_track)
+            # making sure all timers are cleared first
+            self.stop_timers()
+            self.start_music_timer(self.remaining_time_of_paused_track)
 
     def fade_out(self, fadeout=2000):
         """
@@ -199,13 +198,13 @@ class Music:
         game_setting_set("music_volume", new_volume)
         self.loaded_track.set_volume(self.volume)
 
-    def start_music_timer(self):
+    def start_music_timer(self, duration=None):
         """
         sets a timer for the length of the track.  When the timer ends, silence timer is activated.
         """
-        self.music_timer = AudioTimer(
-            self.loaded_track.get_length(), self.start_silence_timer
-        )
+        if not duration:
+            duration = self.loaded_track.get_length()
+        self.music_timer = AudioTimer(duration, self.start_silence_timer)
         self.music_timer.daemon = True
         self.music_timer.start()
 

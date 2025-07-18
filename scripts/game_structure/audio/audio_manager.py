@@ -21,6 +21,9 @@ class AudioManager:
         """
         Begins background audio playback if necessary.
         """
+        if self.muted:
+            return
+
         if not self.ambiance.get_busy():
             self.ambiance.check()
 
@@ -31,6 +34,9 @@ class AudioManager:
         """
         Checks that background audio is appropriate for the current screen
         """
+        if self.muted:
+            return
+
         self.music.check()
         self.ambiance.check()
 
