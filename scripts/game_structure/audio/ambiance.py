@@ -6,6 +6,7 @@ import ujson
 
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
@@ -42,12 +43,13 @@ class Ambiance:
             except:
                 logger.exception("Failed to load ambiance playlist")
 
-    def check_ambiance(self, screen):
+    def check(self):
         """
         checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
         """
 
         self.biome_playlist = self.get_world_ambiance()
+        screen = switch_get_value(Switch.cur_screen)
 
         # menu screen
         if (
@@ -65,7 +67,7 @@ class Ambiance:
             self.fade_out_ambiance()
             self.play_playlist(self.biome_playlist)
 
-    def play_playlist(self, playlist):
+    def ready_playlist(self, playlist):
         """
         loads and plays random file from playlist, queues up next track
         set loops to -1 to loop the chosen file
@@ -79,9 +81,9 @@ class Ambiance:
 
         self.number_of_tracks = len(self.current_playlist)
 
-        self.queue_ambiance()
+        self.set_queued()
 
-    def play_ambiance(self, track, loops=0, fade_ms=1000):
+    def play(self, track, loops=0, fade_ms=1000):
         """
         plays the given track and sets volume
         set loops to -1 to loop the chosen file
@@ -92,7 +94,7 @@ class Ambiance:
         pygame.mixer.music.set_volume(self.volume)
         pygame.mixer.music.play(loops, fade_ms=fade_ms)
 
-    def queue_ambiance(self):
+    def set_queued(self):
         """
         queues up the next ambiance track, this track is chosen randomly from self.current_playlist but WILL NOT be the
         current track
@@ -125,29 +127,31 @@ class Ambiance:
         if not self.queued_track:
             return
 
-        self.play_ambiance(self.queued_track, fade_ms=3000)
-        self.queue_ambiance()
+        self.play(self.queued_track, fade_ms=3000)
+        self.set_queued()
 
-    def fade_out_ambiance(self, fadeout=2000):
+    @staticmethod
+    def fade_out(fadeout=2000):
         """
         fades the ambiance out, by default the fade is 2 seconds
         """
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.fadeout(fadeout)
 
-    def mute_ambiance(self):
+    @staticmethod
+    def mute():
         """
         pauses current ambiance track
         """
         pygame.mixer.music.pause()
 
-    def unmute_ambiance(self, screen):
+    def unmute(self):
         """
         unpauses current ambiance track, then double checks if the track is appropriate for the screen before changing
         if necessary
         """
         pygame.mixer.music.unpause()
-        self.check_ambiance(screen)
+        self.check()
 
     def change_volume(self, new_volume):
         """changes the volume, int given should be between 0 and 100"""
@@ -163,7 +167,7 @@ class Ambiance:
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
 
-    def get_world_ambiance(self):
+    def _get_world_ambiance(self) -> list:
         """
         Finds the clan's biome and returns the appropriate playlist
         """
@@ -185,3 +189,7 @@ class Ambiance:
         )
 
         return new_playlist
+
+    @staticmethod
+    def get_busy() -> bool:
+        return pygame.mixer.music.get_busy()

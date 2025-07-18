@@ -342,7 +342,8 @@ AllScreens.start_screen.screen_switches()
 # dev screen info now lives in scripts/screens/screens_core
 
 fps = switch_get_value(Switch.fps)
-game.audio.music.check_music("start screen")
+game.audio.music.check()
+
 if game_setting_get("custom cursor"):
     MANAGER.set_active_cursor(constants.CUSTOM_CURSOR)
 else:
