@@ -608,39 +608,20 @@ class Cat:
             self.illnesses.clear()
 
         # Deal with leader death
-        text = ""
-        darkforest = game.clan.instructor.status.group == CatGroup.DARK_FOREST
-        isoutside = self.status.is_outsider and not self.status.is_lost(
-            CatGroup.PLAYER_CLAN
-        )
         if self.status.is_leader:
             if game.clan.leader_lives > 0:
                 lives_left = game.clan.leader_lives
-                death_thought = Thoughts.leader_death_thought(
-                    self, lives_left, darkforest
-                )
-                final_thought = event_text_adjust(self, death_thought, main_cat=self)
-                self.thought = final_thought
-                return ""
+                self.thoughts(just_died=True, lives_left=lives_left)
+                return
             elif game.clan.leader_lives <= 0:
                 self.dead = True
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
-                death_thought = Thoughts.leader_death_thought(self, 0, darkforest)
-                final_thought = event_text_adjust(self, death_thought, main_cat=self)
-                self.thought = final_thought
-                if not darkforest:
-                    text = (
-                        "They've lost their last life and have travelled to StarClan."
-                    )
-                else:
-                    text = "They've lost their last life and have travelled to the Dark Forest."
+                self.thoughts(just_died=True, lives_left=0)
         else:
             self.dead = True
             game.just_died.append(self.ID)
-            death_thought = Thoughts.new_death_thought(self, darkforest, isoutside)
-            final_thought = event_text_adjust(self, death_thought, main_cat=self)
-            self.thought = final_thought
+            self.thoughts(just_died=True)
 
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
@@ -656,14 +637,8 @@ class Cat:
         # mark the sprite as outdated
         self.pelt.rebuild_sprite = True
 
-        # exiled cats are special, cus they get kicked out a heaven
-        if isoutside and self.status.is_exiled():
-            self.status.add_to_group(CatGroup.UNKNOWN_RESIDENCE)
-
         if not self.status.is_outsider or self.status.is_former_clancat:
             Cat.dead_cats.append(self)
-
-        return
 
     def exile(self):
         """This is used to send a cat into exile."""
@@ -1530,8 +1505,12 @@ class Cat:
         if self.status.rank.is_any_apprentice_rank():
             self.update_mentor()
 
-    def thoughts(self):
-        """Generates a thought for the cat, which displays on their profile."""
+    def thoughts(self, just_died=False, lives_left: int = 0):
+        """
+        Generates a thought for the cat, which displays on their profile.
+        :param just_died: Set True if the cat is generating a death thought
+        :param lives_left: If a leader is generating a death thought, include their lives left here
+        """
         all_cats = self.all_cats
         other_cat = choice(list(all_cats.keys()))
         game_mode = switch_get_value(Switch.game_mode)
@@ -1598,9 +1577,19 @@ class Cat:
         other_cat = all_cats.get(other_cat)
 
         # get chosen thought
-        chosen_thought = Thoughts.get_chosen_thought(
-            self, other_cat, game_mode, biome, season, camp
-        )
+        if just_died:
+            afterlife = (
+                self.status.group
+                if self.status.group and self.status.group.is_afterlife()
+                else game.clan.instructor.status.group
+            )
+            chosen_thought = Thoughts.new_death_thought(
+                self, other_cat, game_mode, biome, season, camp, afterlife, lives_left
+            )
+        else:
+            chosen_thought = Thoughts.get_chosen_thought(
+                self, other_cat, game_mode, biome, season, camp
+            )
 
         chosen_thought = event_text_adjust(
             self.__class__,

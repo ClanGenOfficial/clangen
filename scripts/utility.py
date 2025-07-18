@@ -1776,9 +1776,15 @@ def get_other_clan_relation(relation):
 
 
 def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
-    """Helper function for add_pronouns. If raise_exception is
-    False, any error in pronoun formatting will not raise an
-    exception, and will use a simple replacement "error" """
+    """
+    Helper function for add_pronouns.
+    :param m: Snippet to pronounify
+    :param cat_pronouns_dict: Cats to pronounify
+    :param raise_exception: If True, will raise an exception if a mistake is found. Necessary for tests!
+    :return: Appropriate pronoun/verb/adjective
+    :raises KeyError: if cat doesn't have requested pronoun
+    :raises IndexError: if cat doesn't have requested pronoun
+    """
 
     # Add protection about the "insert" sometimes used
     if m.group(0) == "{insert}":
@@ -1794,14 +1800,19 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
             for cat in inner_details[1].split("+"):
                 try:
                     catlist.append(cat_pronouns_dict[cat][1])
-                except KeyError:
+                except KeyError as e:
                     print(f"Missing pronouns for {cat}")
+                    if raise_exception:
+                        raise e
                     continue
             d = determine_plural_pronouns(catlist)
         else:
             try:
                 d = cat_pronouns_dict[inner_details[1]][1]
-            except KeyError:
+            except KeyError as e:
+                if raise_exception:
+                    raise e
+
                 if inner_details[0].upper() == "ADJ":
                     # find the default - this is a semi-expected behaviour for the adj tag as it may be called when
                     # there is no relevant cat

@@ -783,7 +783,8 @@
         "event_id": "gen_new_cat_war_stolenkits2",
         "location": ["any"],
         "season": ["any"],
-        "sub_type": ["war", "adoption"],
+        "tags": ["adoption"],
+        "sub_type": ["war"],
         "frequency": 2,
         "event_text": "During a raid on the o_c_n camp, m_c finds {PRONOUN/m_c/self} in their nursery. Whilst the goal had simply been to sow chaos and discontent, picking up a helpless ball of fluff in {PRONOUN/m_c/poss} jaws and sprinting back to c_n certainly does that. The kit is so helpless and pathetic, so unlike the strong c_n kittens. m_c will just have to keep {PRONOUN/n_c:0/object}.",
         "m_c": {

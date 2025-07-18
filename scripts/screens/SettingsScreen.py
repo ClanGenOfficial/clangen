@@ -36,6 +36,7 @@ from scripts.game_structure.screen_settings import (
 )
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from ..game_structure import constants
 
 logger = logging.getLogger(__name__)
 with open("resources/gamesettings.json", "r", encoding="utf-8") as f:
@@ -377,6 +378,11 @@ class SettingsScreen(Screens):
     def save_settings(self):
         """Saves the settings, ensuring that they will be retained when the screen changes."""
         self.settings_at_open = all_settings.settings.copy()
+        MANAGER.set_active_cursor(
+            constants.CUSTOM_CURSOR
+            if game_setting_get("custom cursor")
+            else constants.DEFAULT_CURSOR
+        )
 
     def open_general_settings(self):
         """Opens and draws general_settings"""
