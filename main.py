@@ -345,7 +345,7 @@ cursor_img = pygame.image.load("resources/images/cursor.png").convert_alpha()
 cursor = pygame.cursors.Cursor((9, 0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 fps = switch_get_value(Switch.fps)
-game.audio.music.check_music("start screen")
+game.audio.music.check()
 while 1:
     time_delta = clock.tick(fps) / 1000.0
 

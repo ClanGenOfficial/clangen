@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import choice
 from threading import Timer
 
 import ujson
@@ -8,7 +8,6 @@ import pygame
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
 
@@ -71,7 +70,7 @@ class Music:
             except:
                 logger.exception("Failed to load music lists")
 
-    def load_music(self, track):
+    def load(self, track):
         """
         loads the given track into memory for playing
         """
@@ -81,7 +80,7 @@ class Music:
         except:
             logger.exception("Failed to load music")
 
-    def del_music(self):
+    def clear(self):
         """
         removes music from memory to avoid excessive memory use, this should be done before new music
         is loaded
@@ -93,74 +92,47 @@ class Music:
 
         self.loaded_track = None
 
-    def choose_music(self, screen="start screen"):
+    def choose(self, screen="start screen"):
         """
         chooses music from the appropriate playlists and sends it to be loaded
         """
         self.live = True
         self.current_playlist = []
 
-        if screen in constants.MAIN_MENU_SCREENS:
+        if screen in constants.MENU_SCREENS:
             self.current_playlist = self.available_music.get("menu_playlist")
             self.menu_music_playing = True
-        else:
-            self.menu_music_playing = False
-            self.current_playlist.extend(self.available_music.get("general_playlist"))
 
-            try:
-                biome = game.clan.biome
-            except AttributeError:
-                biome = "Forest"
+            if not self.current_playlist:
+                logger.error("Music track list is empty, check the music.json!")
+                chosen_track = "resources/audio/music/Generations.mp3"  # making this default just in case
+            elif len(self.current_playlist) == 1:
+                chosen_track = self.current_playlist[0]
+            else:
+                if self.last_track_name in self.current_playlist:
+                    self.current_playlist.remove(self.last_track_name)
+                chosen_track = choice(self.current_playlist)
 
-            try:
-                season = game.clan.current_season
-            except AttributeError:
-                season = "Newleaf"
+            self.load(chosen_track)
 
-            if self.available_music.get(
-                f"{season.casefold().replace('-', '')}_playlist"
-            ):
-                self.current_playlist.extend(
-                    self.available_music.get(
-                        f"{season.casefold().replace('-', '')}_playlist"
-                    )
-                )
-            if self.available_music.get(f"{biome.casefold()}_playlist"):
-                self.current_playlist.extend(
-                    self.available_music.get(f"{biome.casefold()}_playlist")
-                )
-
-        if not self.current_playlist:
-            logger.error("Music track list is empty, check the music.json!")
-            chosen_track = "resources/audio/music/Generations.mp3"  # making this default just in case
-        elif len(self.current_playlist) == 1:
-            chosen_track = self.current_playlist[0]
-        else:
-            if self.last_track_name in self.current_playlist:
-                self.current_playlist.remove(self.last_track_name)
-            chosen_track = choice(self.current_playlist)
-
-        self.load_music(chosen_track)
-
-    def check_music(self, screen):
+    def check(self):
         """
         checks if loaded music is appropriate for the given screen and stops playback if needed
         """
-        if not self.channel:
-            return
-
+        screen = switch_get_value(Switch.cur_screen)
+        # starts music when we return to main menu
         if (
-            screen in constants.MAIN_MENU_SCREENS
-            and self.current_track_name not in self.available_music["menu_playlist"]
+            screen in constants.MENU_SCREENS
+            and self.current_track_name not in self.current_playlist
         ):
-            self.fade_out_music(delay=2)
-        elif (
-            screen not in constants.MAIN_MENU_SCREENS
-            and self.current_track_name in self.available_music["menu_playlist"]
-        ):
-            self.fade_out_music()
+            self.choose(screen)
+            self.play()
 
-    def play_music(self):
+        # ends music when we leave main menu
+        elif screen not in constants.MENU_SCREENS and self.channel:
+            self.stop()
+
+    def play(self):
         """plays the loaded track"""
         self.loaded_track.set_volume(self.volume)
         if not self.channel:
@@ -169,24 +141,26 @@ class Music:
             self.channel.play(self.loaded_track, fade_ms=3000)
         self.start_music_timer()
 
-    def mute_music(self):
+    def stop(self):
+        self.channel.fadeout(3000)
+        self.channel = None
+        self.clear()
+        self.stop_timers()
+
+    def mute(self):
         """
         pauses the playing track
         """
         self.channel.pause()
-        if self.music_timer.is_alive():
-            self.music_timer.cancel()
-        elif self.silence_timer and self.silence_timer.is_alive():
-            self.silence_timer.cancel()
+        self.stop_timers()
 
-    def unmute_music(self, screen):
+    def unmute(self):
         """
         unpauses the current music track
-        :param screen: the screen that the player is currently viewing
         """
         # this just acts a bit weird on consecutive mutes/unmutes, not sure why, but if players aren't spam clicking
         # the mute button it likely won't be noticeable
-        self.check_music(screen)
+        self.check()
 
         if self.loaded_track:
             self.channel.unpause()
@@ -197,17 +171,14 @@ class Music:
                 self.silence_timer.cancel()
             self.start_silence_timer()
 
-    def fade_out_music(self, fadeout=2000, delay=randint(120, 300)):
+    def fade_out(self, fadeout=2000):
         """
         fades the music out, default fade is 2 seconds
         :param fadeout: length of fadeout in milliseconds
-        :param delay: this is used to dictate the length of the silence timer that begins when the music starts to fade.
-        If a new music track is going to play immediately after the initial track fades, then you need a small delay
-        between the two, otherwise the fade will get cut off or weird duplication will occur.
         """
         if self.channel and self.channel.get_busy():
             self.channel.fadeout(fadeout)
-            self.start_silence_timer(delay)
+            self.start_silence_timer()
             self.music_timer.cancel()
 
     def change_volume(self, new_volume):
@@ -232,22 +203,28 @@ class Music:
         )
         self.music_timer.daemon = True
         self.music_timer.start()
+        print(f"music timer started for {self.loaded_track.get_length()} seconds")
 
-    def start_silence_timer(self, duration=randint(120, 300)):
+    def start_silence_timer(self):
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
         """
         # waiting should already be true, but we'll just make certain
-        self.del_music()
-        # main menus get constant music, no silence
-        if self.menu_music_playing:
-            self.reset_music()
-        # all other screens, silence interval
-        else:
-            self.silence_timer = Timer(duration, self.reset_music)
-            self.silence_timer.daemon = True
-            self.silence_timer.start()
+        self.clear()
+        self.silence_timer = Timer(2, self.reset)
+        self.silence_timer.daemon = True
+        self.silence_timer.start()
 
-    def reset_music(self):
-        self.choose_music(switch_get_value(Switch.cur_screen))
-        self.play_music()
+    def stop_timers(self):
+        """
+        Stops any alive timer thread
+        """
+        if self.music_timer and self.music_timer.is_alive():
+            self.music_timer.cancel()
+        if self.silence_timer and self.silence_timer.is_alive():
+            self.silence_timer.cancel()
+        print(f"timers stopped")
+
+    def reset(self):
+        self.choose(switch_get_value(Switch.cur_screen))
+        self.play()

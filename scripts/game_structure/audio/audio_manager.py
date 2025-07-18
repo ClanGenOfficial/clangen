@@ -21,19 +21,18 @@ class AudioManager:
         """
         Begins background audio playback if necessary.
         """
-        if not pygame.mixer.music.get_busy():
-            self.ambiance.play_queued()
+        if not self.ambiance.get_busy():
+            self.ambiance.check()
 
         if not self.music.get_busy() and not self.music.live:
-            self.music.choose_music()
-            self.music.play_music()
+            self.music.check()
 
-    def check(self, screen):
+    def check(self):
         """
-        Checks that background audio is appropriate for the given screen
+        Checks that background audio is appropriate for the current screen
         """
-        self.music.check_music(screen)
-        self.ambiance.check_ambiance(screen)
+        self.music.check()
+        self.ambiance.check()
 
     def mute(self):
         """
@@ -41,11 +40,11 @@ class AudioManager:
         """
         self.muted = True
         if not self.disabled:
-            self.ambiance.mute_ambiance()
-            self.music.mute_music()
+            self.ambiance.mute()
+            self.music.mute()
             self.sound.muted = True
 
-    def unmute(self, screen):
+    def unmute(self):
         """
         Unpauses background audio tracks and unmutes sound effects. This will also check if the current background
         tracks are appropriate for the current screen.
@@ -64,6 +63,6 @@ class AudioManager:
         else:
             self.muted = False
 
-        self.ambiance.unmute_ambiance(screen)
-        self.music.unmute_music(screen)
+        self.ambiance.unmute()
+        self.music.unmute()
         self.sound.muted = False

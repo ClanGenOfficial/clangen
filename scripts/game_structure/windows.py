@@ -332,7 +332,7 @@ class SaveCheck(UIWindow):
                     self.mm_btn.enable()
                     game.last_screen_forupdate = switch_get_value(Switch.cur_screen)
                     switch_set_value(Switch.cur_screen, "start screen")
-                    game.audio.check("start screen")
+                    game.audio.check()
                     game.switch_screens = True
                     self.kill()
                 else:

@@ -54,7 +54,6 @@ class Screens:
         It will handle keeping track of the last screen and cur screen.
         Last screen must be tracked to ensure a clear transition between screens."""
 
-        game.audio.check(new_screen)
         # self.exit_screen()
         game.last_screen_forupdate = self.name
 
@@ -82,6 +81,7 @@ class Screens:
             self.current_page = 1
 
         switch_set_value(Switch.cur_screen, new_screen)
+        game.audio.check()
         game.switch_screens = True
         game.rpc.update_rpc.set()
         if game.clan:
@@ -291,7 +291,7 @@ class Screens:
             Screens.show_mute_buttons()
             return True
         elif event.ui_element == Screens.menu_buttons["unmute_button"]:
-            game.audio.unmute(switch_get_value(Switch.cur_screen))
+            game.audio.unmute()
             Screens.show_mute_buttons()
             return True
         else:
