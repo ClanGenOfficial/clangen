@@ -6,6 +6,7 @@ import logging
 import pygame
 
 from scripts.game_structure import constants
+from scripts.game_structure.audio.timer import AudioTimer
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure.game.switches import switch_get_value, Switch
 
@@ -17,6 +18,7 @@ class Music:
         # live is used to denote that the music manager is working in some respect. Even if music is not currently
         # playing, the manager is stilled considered live as long as the silence timer is running.
         # essentially, the only time the manager shouldn't be live, is when the program first starts up.
+        self.remaining_time_of_paused_track = None
         self.live = False
 
         self.music_timer = None
@@ -149,18 +151,29 @@ class Music:
 
     def mute(self):
         """
-        pauses then stops the music entirely
+        pauses the playing track
         """
         self.channel.pause()
-        self.stop()
+        if self.music_timer.is_alive():
+            self.remaining_time_of_paused_track = self.music_timer.remaining()
+            self.music_timer.cancel()
+        elif self.silence_timer and self.silence_timer.is_alive():
+            self.silence_timer.cancel()
 
     def unmute(self):
         """
-        begins playing music again
+        unpauses the current music track
         """
-        # I don't love how the mute and unmute work, since it doesn't pause the music, just stops and then has to start
-        # a new one. but this is the simplest way to do it at the moment
+        # this just acts a bit weird on consecutive mutes/unmutes, not sure why, but if players aren't spam clicking
+        # the mute button it likely won't be noticeable
         self.check()
+
+        if self.loaded_track:
+            self.channel.unpause()
+            # just ensuring we don't end up with two silence timers running
+            if self.silence_timer and self.silence_timer.is_alive():
+                self.silence_timer.cancel()
+            self.start_silence_timer(self.remaining_time_of_paused_track)
 
     def fade_out(self, fadeout=2000):
         """
@@ -189,20 +202,20 @@ class Music:
         """
         sets a timer for the length of the track.  When the timer ends, silence timer is activated.
         """
-        self.music_timer = Timer(
+        self.music_timer = AudioTimer(
             self.loaded_track.get_length(), self.start_silence_timer
         )
         self.music_timer.daemon = True
         self.music_timer.start()
         print(f"music timer started for {self.loaded_track.get_length()} seconds")
 
-    def start_silence_timer(self):
+    def start_silence_timer(self, duration=2):
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
         """
         # waiting should already be true, but we'll just make certain
         self.clear()
-        self.silence_timer = Timer(2, self.reset)
+        self.silence_timer = AudioTimer(duration, self.reset)
         self.silence_timer.daemon = True
         self.silence_timer.start()
 
