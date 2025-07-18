@@ -23,7 +23,6 @@ class Music:
 
         self.channel = None
 
-        self.menu_music_playing = False
         self.current_playlist = []
         self.current_track_name = None
         self.last_track_name = None
@@ -101,7 +100,6 @@ class Music:
 
         if screen in constants.MENU_SCREENS:
             self.current_playlist = self.available_music.get("menu_playlist")
-            self.menu_music_playing = True
 
             if not self.current_playlist:
                 logger.error("Music track list is empty, check the music.json!")
@@ -112,6 +110,7 @@ class Music:
                 if self.last_track_name in self.current_playlist:
                     self.current_playlist.remove(self.last_track_name)
                 chosen_track = choice(self.current_playlist)
+                print(chosen_track)
 
             self.load(chosen_track)
 
