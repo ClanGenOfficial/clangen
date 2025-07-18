@@ -46,10 +46,6 @@ class Game:
     last_screen_forProfile = "list screen"
     last_list_forProfile = None
 
-    # PYGAME CUSTOM EVENTS
-    music_ended = pygame.USEREVENT + 4
-    music_timer = pygame.USEREVENT + 3
-
     choose_cats = {}
     """cat_buttons = {
         'cat0': None,
