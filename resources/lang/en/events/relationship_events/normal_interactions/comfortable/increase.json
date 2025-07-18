@@ -70,18 +70,7 @@
 			"r_c doesn't judge m_c for being anxious about a bad dream.",
 			"When m_c gets hurt, r_c is the first to ask if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} okay.",
 			"An issue becomes benign when m_c remembers r_c's advice."
-		],
-		"random_status_constraint": [
-	    "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]
+		]
 	},
 	{
 		"id": "comfort_inc_med2",

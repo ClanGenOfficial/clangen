@@ -527,25 +527,6 @@ class TestNameRepr(unittest.TestCase):
             {"rank": CatRank.ROGUE},
             {"rank": CatRank.KITTYPET},
         ]
-        former_clancat_status = {
-            "group_history": [
-                {"group": CatGroup.OTHER_CLAN1, "rank": CatRank.WARRIOR, "moons_as": 1},
-                {"group": None, "rank": CatRank.LONER, "moons_as": 1},
-            ],
-            "standing_history": [
-                {"group": CatGroup.OTHER_CLAN1, "standing": ["member", "known"]}
-            ],
-        }
-        exiled_status = {
-            "group_history": [
-                {"group": CatGroup.PLAYER_CLAN, "rank": CatRank.WARRIOR, "moons_as": 1},
-                {"group": None, "rank": CatRank.LONER, "moons_as": 1},
-            ],
-            "standing_history": [
-                {"group": CatGroup.PLAYER_CLAN, "standing": ["member", "exiled"]}
-            ],
-        }
-        ex_clancat_statuses = [former_clancat_status, exiled_status]
 
         age_suffix = [[0, "kit"], [1, "kit"], [6, "paw"], [14, "test"]]
 
@@ -555,11 +536,51 @@ class TestNameRepr(unittest.TestCase):
                     cat = Cat(status_dict=status, moons=moons, suffix="test")
                     self.assertTrue(str(cat.name).endswith("test"))
 
-        for status in ex_clancat_statuses:
-            for moons, suffix in age_suffix:
-                with self.subTest("Clan-like names", status_dict=status, moons=moons):
-                    cat = Cat(status_dict=status, moons=moons, suffix="test")
-                    self.assertTrue(str(cat.name).endswith(suffix))
+        exiled_kit = {
+            "group_history": [
+                {
+                    "group": CatGroup.PLAYER_CLAN,
+                    "rank": CatRank.KITTEN,
+                    "moons_as": 1,
+                },
+                {"group": None, "rank": CatRank.LONER, "moons_as": 20},
+            ],
+            "standing_history": [
+                {"group": CatGroup.PLAYER_CLAN, "standing": ["member", "exiled"]}
+            ],
+        }
+        exiled_app = {
+            "group_history": [
+                {
+                    "group": CatGroup.PLAYER_CLAN,
+                    "rank": CatRank.APPRENTICE,
+                    "moons_as": 1,
+                },
+                {"group": None, "rank": CatRank.LONER, "moons_as": 20},
+            ],
+            "standing_history": [
+                {"group": CatGroup.PLAYER_CLAN, "standing": ["member", "exiled"]}
+            ],
+        }
+        exiled_warrior = {
+            "group_history": [
+                {"group": CatGroup.PLAYER_CLAN, "rank": CatRank.WARRIOR, "moons_as": 1},
+                {"group": None, "rank": CatRank.LONER, "moons_as": 1},
+            ],
+            "standing_history": [
+                {"group": CatGroup.PLAYER_CLAN, "standing": ["member", "exiled"]}
+            ],
+        }
+        ex_clancat_statuses = [
+            [exiled_kit, "kit"],
+            [exiled_app, "paw"],
+            [exiled_warrior, "test"],
+        ]
+
+        for status, suffix in ex_clancat_statuses:
+            with self.subTest("Exiled cat names", status_dict=status, suffix=suffix):
+                cat = Cat(status_dict=status, moons=20, suffix="test")
+                self.assertTrue(str(cat.name).endswith(suffix))
 
     def test_specsuffix_outsiders(self):
         """

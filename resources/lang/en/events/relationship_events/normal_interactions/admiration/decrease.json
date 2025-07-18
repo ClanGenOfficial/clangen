@@ -68,7 +68,8 @@
 			"m_c saw r_c ignore someone.",
 			"m_c wishes r_c would act more maturely.",
 			"r_c said something about a Clanmate that concerned m_c.",
-			"r_c kept getting distracted while helping m_c and nearly got {PRONOUN/m_c/object} hurt."
+			"m_c and r_c argue over a piece of fresh-kill.",
+			"r_c panics over something that m_c finds trivial."
 		]
 	},
 	{
@@ -83,8 +84,7 @@
 			"m_c and r_c talk about a Clanmate and realize they have very different opinions on them.",
 			"r_c tripped m_c. m_c doubts it was an accident.",
 			"m_c scolds r_c for something trivial.",
-			"m_c and r_c argue over a piece of fresh-kill.",
-			"r_c panics over something that m_c finds trivial."
+			"r_c kept getting distracted while helping m_c and nearly got {PRONOUN/m_c/object} hurt."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
@@ -221,18 +221,7 @@
 			"m_c overhears r_c say something awful about a dead Clanmate.",
 			"m_c thinks r_c keeps getting in the way instead of helping others.",
 			"m_c knows that r_c fake-laughed at {PRONOUN/m_c/poss} joke."
-		],
-		"random_status_constraint": [
-	    "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]
+		]
 	},
 	{
 		"id": "admire_de_high2",
