@@ -161,7 +161,7 @@ class Ambiance:
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
 
-    def get_world_ambiance(self) -> list:
+    def _get_world_ambiance(self) -> list:
         """
         Finds the clan's biome and returns the appropriate playlist
         """
