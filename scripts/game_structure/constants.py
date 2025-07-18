@@ -1,8 +1,9 @@
+from pygame import Cursor, image, SYSTEM_CURSOR_ARROW
 import ujson
 
 # this is just to make referencing main menu screens as a whole easier,
 # note that the clan creation screen is included and the clan settings screen is excluded. this is intended.
-MAIN_MENU_SCREENS = [
+MENU_SCREENS = [
     "settings screen",
     "start screen",
     "switch clan screen",
@@ -119,3 +120,6 @@ with open(f"resources/game_config.json", "r", encoding="utf-8") as read_file:
 
 with open("resources/placements.json", "r", encoding="utf-8") as read_file:
     LAYOUTS = ujson.loads(read_file.read())
+
+CUSTOM_CURSOR = Cursor((9, 0), image.load("resources/images/cursor.png"))
+DEFAULT_CURSOR = Cursor(SYSTEM_CURSOR_ARROW)

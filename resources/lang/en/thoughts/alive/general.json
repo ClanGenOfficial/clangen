@@ -5357,7 +5357,7 @@
             "Tries to make a new leg out of a stick {PRONOUN/m_c/subject} found",
             "Shows {PRONOUN/m_c/subject} can still run and jump around like any other cat!",
             "Groans when someone says how sad {PRONOUN/m_c/subject} must be to have three legs",
-            "Points out to r_c that {PRONOUN/m_c/subject} can't get injured on a leg {PRONOUN/m_c/subject} {VERB/do/does}n't have"
+            "Points out to r_c that {PRONOUN/m_c/subject} can't get injured on a leg {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have"
         ],
         "perm_conditions": {
             "m_c": [
@@ -6171,7 +6171,7 @@
         "thoughts": [
             "Is bothered by the sunlight flickering through the trees",
             "Makes sure to drink water before a training session",
-            "Wonders what {PRONOUN/m_c/subject} {VERB/look/looks} like during a seizure",
+            "Wonders what {PRONOUN/m_c/subject} {VERB/m_c/look/looks} like during a seizure",
             "Feels like the sun is too bright today",
             "Feels dizzier than usual today"
         ],

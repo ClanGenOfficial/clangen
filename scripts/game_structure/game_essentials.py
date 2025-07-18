@@ -46,10 +46,6 @@ class Game:
     last_screen_forProfile = "list screen"
     last_list_forProfile = None
 
-    # PYGAME CUSTOM EVENTS
-    music_ended = pygame.USEREVENT + 4
-    music_timer = pygame.USEREVENT + 3
-
     choose_cats = {}
     """cat_buttons = {
         'cat0': None,
@@ -67,6 +63,13 @@ class Game:
     }"""
     patrol_cats = {}
     patrolled = []
+
+    outsider_reps = ["welcoming", "neutral", "hostile"]
+    other_clan_reps = ["ally", "neutral", "hostile"]
+
+    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
+
+    # store changing parts of the game that the user can toggle with buttons
 
     all_screens = {}
 

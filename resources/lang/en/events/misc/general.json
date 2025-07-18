@@ -13,7 +13,7 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 1,
+        "frequency": 4,
         "event_text": "m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept; {PRONOUN/m_c/subject} killed mur_c.",
         "m_c": {
             "age": [
@@ -73,7 +73,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "r_c is stunned when {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} m_c carelessly bragging about killing mur_c to a wandering loner.",
         "m_c": {
             "age": [
@@ -115,7 +115,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "m_c is truthful when r_c questions {PRONOUN/m_c/object} about mur_c's strange death. m_c claims that mur_c deserved to die after what {PRONOUN/mur_c/subject} did to m_c.",
         "m_c": {
             "age": [
@@ -161,7 +161,7 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 1,
+        "frequency": 4,
         "event_text": "m_c boldly confesses to the entire Clan that {PRONOUN/m_c/subject} killed mur_c. m_c claims that mur_c deserved to pay for what {PRONOUN/mur_c/subject} did.",
         "m_c": {
             "age": [
@@ -226,7 +226,7 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "m_c's cold eyes don't blink when {PRONOUN/m_c/subject} {VERB/m_c/are/is} accused of murdering mur_c, and only simply states that the Clan is better off without mur_c anyways.",
         "m_c": {
             "age": [
@@ -297,7 +297,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "r_c avoids m_c at all costs after accidentally witnessing mur_c's murder. r_c knows {PRONOUN/r_c/subject} can't keep it a secret but is terrified of what m_c might do.",
         "m_c": {
             "age": [
@@ -456,7 +456,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "m_c laughs menacingly as r_c accuses {PRONOUN/m_c/object} of murdering mur_c. So what if {PRONOUN/m_c/subject} did? What is r_c going to do about it?",
         "m_c": {
             "age": [
@@ -553,7 +553,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death.",
         "m_c": {
             "age": [
@@ -676,6 +676,7 @@
         "sub_type": [
             "murder_reveal"
         ],
+        "tags": ["clan_wide"],
         "frequency": 3,
         "event_text": "c_n is surprised when m_c gathers everyone to say something important. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} decided it's time to make something clear: {PRONOUN/m_c/subject} killed mur_c, but not for the reasons they might think. m_c knew mur_c was planning to do something that would've damaged c_n greatly, and {PRONOUN/m_c/subject} needed to act quickly before it was too late.",
         "m_c": {
@@ -4171,7 +4172,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c found the scent of a stranger near the border, though the cat {PRONOUN/nc:0/self} is long gone. Smells like Twolegs.",
+        "event_text": "m_c found the scent of a stranger near the border, though the cat {PRONOUN/n_c:0/self} is long gone. Smells like Twolegs.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -8819,7 +8820,7 @@
         "sub_type": [
             "transition"
         ],
-        "frequency": 2,
+        "frequency": 4,
         "event_text": "m_c has realized that she-cat doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore.",
         "m_c": {
             "gender": [
@@ -8842,7 +8843,7 @@
         "sub_type": [
             "transition"
         ],
-        "frequency": 2,
+        "frequency": 4,
         "event_text": "m_c has realized that tom doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore.",
         "m_c": {
             "gender": [

@@ -45,9 +45,6 @@ BUTTONS:
     ~Generally, the vertical gap between buttons should be 5px
 """
 
-# this is just to make referencing main menu screens as a whole easier, note that the clan creation screen is included
-# and the clan settings screen is excluded
-main_menu_screens = ["settings screen", "start screen", "switch clan screen", "make clan screen"]
 
 class AllScreens:
     screens = Screens()
