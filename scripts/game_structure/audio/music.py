@@ -149,27 +149,18 @@ class Music:
 
     def mute(self):
         """
-        pauses the playing track
+        pauses then stops the music entirely
         """
         self.channel.pause()
-        self.stop_timers()
+        self.stop()
 
     def unmute(self):
         """
-        unpauses the current music track
+        begins playing music again
         """
-        # this just acts a bit weird on consecutive mutes/unmutes, not sure why, but if players aren't spam clicking
-        # the mute button it likely won't be noticeable
+        # I don't love how the mute and unmute work, since it doesn't pause the music, just stops and then has to start
+        # a new one. but this is the simplest way to do it at the moment
         self.check()
-
-        if self.loaded_track:
-            self.channel.unpause()
-            # a weird one here, we couldn't preserve the progress of the music timer
-            # so instead, we start the silence timer and pray
-            # the silence timer should always be longer than all possible music tracks, so this *should* be fine
-            if self.silence_timer and self.silence_timer.is_alive():
-                self.silence_timer.cancel()
-            self.start_silence_timer()
 
     def fade_out(self, fadeout=2000):
         """
