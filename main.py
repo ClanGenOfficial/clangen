@@ -343,6 +343,11 @@ AllScreens.start_screen.screen_switches()
 
 fps = switch_get_value(Switch.fps)
 game.audio.music.check_music("start screen")
+if game_setting_get("custom cursor"):
+    MANAGER.set_active_cursor(constants.CUSTOM_CURSOR)
+else:
+    MANAGER.set_active_cursor(constants.DEFAULT_CURSOR)
+
 while 1:
     time_delta = clock.tick(fps) / 1000.0
 
