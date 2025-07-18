@@ -99,13 +99,13 @@
             true
         ],
         "music_volume": [
-            100
+            50
         ],
         "ambiance_volume": [
-            100
+            50
         ],
         "sound_volume": [
-            100
+            50
         ],
         "audio_mute": [
             false,
