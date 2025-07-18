@@ -36,7 +36,7 @@ from scripts.game_structure.screen_settings import (
 )
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from ..game_structure import constants
+from scripts.game_structure import constants
 
 logger = logging.getLogger(__name__)
 with open("resources/gamesettings.json", "r", encoding="utf-8") as f:
