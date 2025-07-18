@@ -94,10 +94,11 @@ class Music:
 
         self.loaded_track = None
 
-    def choose(self, screen="start screen"):
+    def choose(self):
         """
         chooses music from the appropriate playlists and sends it to be loaded
         """
+        screen = switch_get_value(Switch.cur_screen)
         self.live = True
         self.current_playlist = []
 
@@ -127,7 +128,7 @@ class Music:
             screen in constants.MENU_SCREENS
             and self.current_track_name not in self.current_playlist
         ):
-            self.choose(screen)
+            self.choose()
             self.play()
 
         # ends music when we leave main menu
@@ -207,7 +208,6 @@ class Music:
         )
         self.music_timer.daemon = True
         self.music_timer.start()
-        print(f"music timer started for {self.loaded_track.get_length()} seconds")
 
     def start_silence_timer(self, duration=2):
         """
@@ -227,8 +227,7 @@ class Music:
             self.music_timer.cancel()
         if self.silence_timer and self.silence_timer.is_alive():
             self.silence_timer.cancel()
-        print(f"timers stopped")
 
     def reset(self):
-        self.choose(switch_get_value(Switch.cur_screen))
+        self.choose()
         self.play()

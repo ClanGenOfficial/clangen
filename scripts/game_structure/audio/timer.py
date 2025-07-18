@@ -6,6 +6,7 @@ class AudioTimer(Timer):
     """
     A subclass of python's threading timer that includes new methods for finding elapsed and remaining time
     """
+
     started_at = None
 
     def start(self):
