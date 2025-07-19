@@ -31,6 +31,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..cat.enums import CatAge, CatRank, CatGroup
+from ..cat.sprites import sprites
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.save_load import safe_save
 from ..game_structure.game.settings import game_setting_get
@@ -612,7 +613,16 @@ class ProfileScreen(Screens):
             self.profile_elements["backgrounds"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((55, 200), (240, 210))),
                 pygame.transform.scale(
-                    self.get_platform(), ui_scale_dimensions((240, 210))
+                    sprites.get_platform(
+                        biome=game.clan.override_biome
+                        if game.clan.override_biome
+                        else game.clan.biome,
+                        season=game.clan.current_season,
+                        show_nest=self.the_cat.age == "newborn"
+                        or self.the_cat.not_working(),
+                        group=self.the_cat.status.group,
+                    ),
+                    ui_scale_dimensions((240, 210)),
                 ),
                 manager=MANAGER,
             )

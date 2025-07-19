@@ -16,6 +16,7 @@ from scripts.utility import (
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
+from ..cat.sprites import sprites
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
@@ -232,7 +233,16 @@ class SpriteInspectScreen(Screens):
         self.cat_elements["platform"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((120, 100), (560, 490))),
             pygame.transform.scale(
-                self.get_platform(), ui_scale_dimensions((560, 350))
+                sprites.get_platform(
+                    biome=game.clan.override_biome
+                    if game.clan.override_biome
+                    else game.clan.biome,
+                    season=game.clan.current_season,
+                    show_nest=self.the_cat.age == "newborn"
+                    or self.the_cat.not_working(),
+                    group=self.the_cat.status.group,
+                ),
+                ui_scale_dimensions((560, 350)),
             ),
             manager=MANAGER,
         )
@@ -459,73 +469,17 @@ class SpriteInspectScreen(Screens):
         else:
             self.previous_life_stage.enable()
 
-    def get_platform(self):
-        the_cat = Cat.all_cats.get(switch_get_value(Switch.cat), game.clan.instructor)
-
-        light_dark = "light"
-        if game_setting_get("dark mode"):
-            light_dark = "dark"
-
-        available_biome = ["Forest", "Mountainous", "Plains", "Beach"]
-        biome = (
-            game.clan.biome
-            if not game.clan.override_biome
-            else game.clan.override_biome
-        )
-
-        if biome not in available_biome:
-            biome = available_biome[0]
-        if the_cat.age == "newborn" or the_cat.not_working():
-            biome = "nest"
-
-        biome = biome.lower()
-
-        platformsheet = pygame.image.load(
-            "resources/images/platforms.png"
-        ).convert_alpha()
-
-        order = ["beach", "forest", "mountainous", "nest", "plains", "SC/DF"]
-
-        offset = 0
-        if light_dark == "light":
-            offset = 80
-
-        if the_cat.status.group == CatGroup.DARK_FOREST:
-            biome_platforms = platformsheet.subsurface(
-                pygame.Rect(0, order.index("SC/DF") * 70, 640, 70)
-            )
-            return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70))
-        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
-            biome_platforms = platformsheet.subsurface(
-                pygame.Rect(0, order.index("SC/DF") * 70, 640, 70)
-            )
-            return biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70))
-        else:
-            biome_platforms = platformsheet.subsurface(
-                pygame.Rect(0, order.index(biome) * 70, 640, 70)
-            ).convert_alpha()
-            season_x = {
-                "greenleaf": 0 + offset,
-                "leafbare": 160 + offset,
-                "leaffall": 320 + offset,
-                "newleaf": 480 + offset,
-            }
-
-            return biome_platforms.subsurface(
-                pygame.Rect(
-                    season_x.get(
-                        game.clan.current_season.lower(), season_x["greenleaf"]
-                    ),
-                    0,
-                    80,
-                    70,
-                )
-            )
-
     def generate_image_to_save(self):
         """Generates the image to save, with platform if needed."""
         if self.platform_shown:
-            full_image = self.get_platform()
+            full_image = sprites.get_platform(
+                biome=game.clan.override_biome
+                if game.clan.override_biome
+                else game.clan.biome,
+                season=game.clan.current_season,
+                show_nest=self.the_cat.age == "newborn" or self.the_cat.not_working(),
+                group=self.the_cat.status.group,
+            )
             full_image.blit(self.cat_image, (15, 0))
             return full_image
         else:

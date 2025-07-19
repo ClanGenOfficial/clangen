@@ -5,7 +5,8 @@ from copy import copy
 import pygame
 import ujson
 
-from scripts.game_structure import constants
+from scripts.cat.enums import CatGroup
+from scripts.game_structure import constants, image_cache
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.special_dates import SpecialDate, is_today
 
@@ -129,7 +130,11 @@ class Sprites:
             "lineart",
             "lineartdf",
             "lineartdead",
+            "lineartur",
             "line_sc_overlay",
+            "line_ur_underlay",
+            "line_ur_overlay",
+            "gradient_ur",
             "eyes",
             "eyes2",
             "skin",
@@ -164,9 +169,13 @@ class Sprites:
             "fadedarkforest",
             "symbols",
         ):
-            if "lineart" in x and (
-                constants.CONFIG["fun"]["april_fools"]
-                or is_today(SpecialDate.APRIL_FOOLS)
+            if (
+                "lineart" in x
+                and (
+                    constants.CONFIG["fun"]["april_fools"]
+                    or is_today(SpecialDate.APRIL_FOOLS)
+                )
+                and x != "lineartur"
             ):
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
@@ -179,7 +188,11 @@ class Sprites:
 
         self.make_group("lineartdead", (0, 0), "lineartdead")
         self.make_group("lineartdf", (0, 0), "lineartdf")
+        self.make_group("lineartur", (0, 0), "lineartur")
         self.make_group("line_sc_overlay", (0, 0), "sc_overlay")
+        self.make_group("line_ur_underlay", (0, 0), "ur_underlay")
+        self.make_group("line_ur_overlay", (0, 0), "ur_overlay")
+        self.make_group("gradient_ur", (0, 0), "gradient_ur")
 
         # Fading Fog
         for i in range(0, 3):
@@ -802,6 +815,69 @@ class Sprites:
         del var
 
         return recolored_symbol
+
+    @staticmethod
+    def get_platform(biome, season, show_nest, group: CatGroup) -> pygame.Surface:
+        """
+        Returns the relevant platform
+        :param biome: The current game biome
+        :param season: The current game season
+        :param show_nest: If true, displays the nest
+        :param group: Used to determine appropriate afterlife platform
+        :return: pygame.Surface containing the desired platform
+        """
+        offset = 0 if game_setting_get("dark mode") else 80
+        """Used to choose the dark mode version of platforms"""
+
+        available_biome = ["Forest", "Mountainous", "Plains", "Beach"]
+
+        if biome not in available_biome:
+            biome = available_biome[0]
+        if show_nest:
+            biome = "nest"
+
+        biome = biome.lower()
+
+        platformsheet = image_cache.load_image(
+            "resources/images/platforms.png"
+        ).convert_alpha()
+
+        order = ["beach", "forest", "mountainous", "nest", "plains", "dead"]
+
+        if not group.is_afterlife():
+            biome_platforms = platformsheet.subsurface(
+                pygame.Rect(0, order.index(biome) * 70, 640, 70)
+            ).convert_alpha()
+            season_x = {
+                "greenleaf": 0 + offset,
+                "leafbare": 160 + offset,
+                "leaffall": 320 + offset,
+                "newleaf": 480 + offset,
+            }
+
+            return biome_platforms.subsurface(
+                pygame.Rect(
+                    season_x[season.lower()],
+                    0,
+                    80,
+                    70,
+                )
+            )
+
+        biome_platforms = platformsheet.subsurface(
+            pygame.Rect(0, order.index("dead") * 70, 640, 70)
+        )
+
+        if group == CatGroup.DARK_FOREST:
+            return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70))
+        elif group == CatGroup.STARCLAN:
+            return biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70))
+        elif group == CatGroup.UNKNOWN_RESIDENCE:
+            return biome_platforms.subsurface(pygame.Rect(320 + offset, 0, 80, 70))
+
+        raise RuntimeError(
+            "Should have created a platform, but we had Schroedinger's cat..."
+        )
 
 
 # CREATE INSTANCE
