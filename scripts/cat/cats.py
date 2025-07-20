@@ -639,7 +639,6 @@ class Cat:
         # mark the sprite as outdated
         self.pelt.rebuild_sprite = True
 
-
     def exile(self):
         """This is used to send a cat into exile."""
 
