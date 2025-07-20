@@ -54,7 +54,7 @@ def reformat(path):
         "mountainous.json",
         "plains.json",
         "wetlands.json",
-        "desert.json"
+        "desert.json",
     ]
     for item in not_allowed:
         if item in path:

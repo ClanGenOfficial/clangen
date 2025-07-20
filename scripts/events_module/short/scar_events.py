@@ -202,8 +202,7 @@ class Scar_Events:
                 return None, None
 
             # If we've reached this point, we can move forward with giving history.
-            History.add_scar(
-                cat,
+            cat.history.add_scar(
                 i18n.t(
                     "cat.history.scar_from_injury",
                     injury_name=i18n.t(f"conditions.injuries.{injury_name}"),
@@ -214,15 +213,17 @@ class Scar_Events:
             specialty = random.choice(scar_pool)
             if specialty in ["NOTAIL", "HALFTAIL"]:
                 cat.pelt.accessory = [
-                    acc for acc in cat.pelt.accessory
-                    if acc not in (
+                    acc
+                    for acc in cat.pelt.accessory
+                    if acc
+                    not in (
                         "RED FEATHERS",
                         "BLUE FEATHERS",
                         "JAY FEATHERS",
                         "GULL FEATHERS",
                         "SPARROW FEATHERS",
                         "CLOVER",
-                        "DAISY"
+                        "DAISY",
                     )
                 ]
 

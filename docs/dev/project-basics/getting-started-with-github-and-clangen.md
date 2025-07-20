@@ -30,7 +30,7 @@ You can add multiple "sister forks" upstream of your branches, to say have one b
 > You can check if you have git installed by entering the command git --version in terminal
 2. Open up the Windows command line (or the mac/Linux equivalent). Ensure that the current working directory is the folder where you cloned your Clangen fork. 
 3. Run this command with the remote url you need for the specific new remote. Here, this example is the git url to add the Lifegen development version as an upstream remote:
-```py 
+```shell
 git remote add Lifegen_dev https://github.com/sedgestripe/clangen.git
 ``` 
 You can find this url here on the github page for a fork:
