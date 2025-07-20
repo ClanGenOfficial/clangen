@@ -416,7 +416,7 @@ class EditorSaveCheck(UIWindow):
     def modify_file(self, event_list, path):
         event_json = ujson.dumps(event_list, indent=4)
         event_json = event_json.replace(
-            "\/", "/"
+            "\\/", "/"
         )  # ujson tries to escape "/", but doesn't end up doing a good job.
 
         try:
