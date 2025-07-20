@@ -634,12 +634,10 @@ class Cat:
         # since we just yeeted them to their afterlife, we gotta check their previous group affiliation, not current
         if game.clan and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN:
             self.grief(body)
+            Cat.dead_cats.append(self)
 
         # mark the sprite as outdated
         self.pelt.rebuild_sprite = True
-
-        if not self.status.is_outsider or self.status.is_former_clancat:
-            Cat.dead_cats.append(self)
 
     def exile(self):
         """This is used to send a cat into exile."""
