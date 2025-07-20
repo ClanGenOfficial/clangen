@@ -13,6 +13,9 @@
             "Is clouded in confusion and fear",
             "Feels trapped in the sticky mud",
             "Is feeling incredibly lonely"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     },
     {
@@ -27,6 +30,9 @@
         ],
         "random_living_status": [
             "living"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     }
 ]
