@@ -4,11 +4,12 @@ from random import choice, randint
 
 import ujson
 
+from scripts.game_structure import constants
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank
 from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
-from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     get_cats_same_age,
     get_cats_of_romantic_interest,
@@ -91,7 +92,7 @@ class Relation_Events:
         cat_to_choose_from = []
         for inter_cat in possible_cats:
             # toss out cats who are outside
-            if inter_cat.outside:
+            if inter_cat.status.is_outsider:
                 continue
 
             if inter_cat.ID not in cat.relationships:
@@ -114,7 +115,7 @@ class Relation_Events:
         # that the cat interacts romantic with ANOTHER cat than their mate
         use_mate = False
         if cat.mate:
-            chance_number = game.config["relationship"]["chance_romantic_not_mate"]
+            chance_number = constants.CONFIG["relationship"]["chance_romantic_not_mate"]
 
             # the more mates the cat has, the less likely it will be that they interact with another cat romantically
             for mate_id in cat.mate:
@@ -127,7 +128,7 @@ class Relation_Events:
             cat_to_choose_from = [
                 cat.all_cats[mate_id]
                 for mate_id in cat.mate
-                if not cat.all_cats[mate_id].dead and not cat.all_cats[mate_id].outside
+                if cat.all_cats[mate_id].status.alive_in_player_clan
             ]
 
         if not cat_to_choose_from:
@@ -147,7 +148,9 @@ class Relation_Events:
         if not Relation_Events.can_trigger_events(cat):
             return
 
-        same_age_cats = get_cats_same_age(Cat, cat, game.config["mates"]["age_range"])
+        same_age_cats = get_cats_same_age(
+            Cat, cat, constants.CONFIG["mates"]["age_range"]
+        )
         if len(same_age_cats) > 0:
             random_cat = choice(same_age_cats)
             if (
@@ -170,22 +173,21 @@ class Relation_Events:
 
         chosen_type = "all"
         if len(Relation_Events.GROUP_TYPES) > 0 and randint(
-            0, game.config["relationship"]["chance_of_special_group"]
+            0, constants.CONFIG["relationship"]["chance_of_special_group"]
         ):
             types_to_choose = []
             for group, value in Relation_Events.GROUP_TYPES.items():
                 types_to_choose.extend([group] * value["frequency"])
                 chosen_type = choice(list(Relation_Events.GROUP_TYPES.keys()))
 
-        if cat.status == "leader":
+        if cat.status.is_leader:
             chosen_type = "all"
-
-        possible_interaction_cats = [
-            cat
-            for cat in Cat.all_cats.values()
-            if not cat.dead and not cat.outside and not cat.exiled
-        ]
-
+        possible_interaction_cats = list(
+            filter(
+                lambda cat: (cat.status.alive_in_player_clan),
+                Cat.all_cats.values(),
+            )
+        )
         if cat in possible_interaction_cats:
             possible_interaction_cats.remove(cat)
 
@@ -227,9 +229,9 @@ class Relation_Events:
         for new_cat in new_cats:
             same_age_cats = get_cats_same_age(Cat, new_cat)
             alive_cats = [
-                i for i in new_cat.all_cats.values() if not i.dead and not i.outside
+                i for i in new_cat.all_cats.values() if i.status.alive_in_player_clan
             ]
-            number = game.config["new_cat"]["cat_amount_welcoming"]
+            number = constants.CONFIG["new_cat"]["cat_amount_welcoming"]
 
             if len(alive_cats) == 0:
                 return
@@ -269,11 +271,12 @@ class Relation_Events:
     @staticmethod
     def cats_with_relationship_constraints(main_cat, constraint):
         """Returns a list of cats, where the relationship from main_cat towards the cat fulfill the given constraints."""
-        cat_list = [
-            cat
-            for cat in Cat.all_cats.values()
-            if not cat.dead and not cat.outside and not cat.exiled
-        ]
+        cat_list = list(
+            filter(
+                lambda cat: cat.status.alive_in_player_clan,
+                Cat.all_cats.values(),
+            )
+        )
         cat_list.remove(main_cat)
         filtered_cat_list = []
 
@@ -398,12 +401,17 @@ class Relation_Events:
     @staticmethod
     def can_trigger_events(cat):
         """Returns if the given cat can still trigger events."""
-        special_status = ["leader", "deputy", "medicine cat", "mediator"]
+        special_ranks = [
+            CatRank.LEADER,
+            CatRank.DEPUTY,
+            CatRank.MEDICINE_CAT,
+            CatRank.MEDIATOR,
+        ]
 
         # set the threshold correctly
-        threshold = game.config["relationship"]["max_interaction"]
-        if cat.status in special_status:
-            threshold = game.config["relationship"]["max_interaction_special"]
+        threshold = constants.CONFIG["relationship"]["max_interaction"]
+        if cat.status.rank in special_ranks:
+            threshold = constants.CONFIG["relationship"]["max_interaction_special"]
 
         if cat.ID not in Relation_Events.cats_triggered_events:
             return True

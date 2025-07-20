@@ -230,7 +230,7 @@
         "thoughts": [
             "Can't wait to be deputy so {PRONOUN/m_c/subject} can assign patrols",
             "Tells r_c to catch {PRONOUN/m_c/object} some fresh prey",
-            "Wants to be leader so everycat will have to listen to {PRONOUN/m_c/object} all the time",
+            "Wants to be leader so everyone will have to listen to {PRONOUN/m_c/object} all the time",
             "Tells r_c to change the bedding in the nursery",
             "Tells r_c to play with {PRONOUN/m_c/object}",
             "Is mad no one will listen to {PRONOUN/m_c/object}",
@@ -453,7 +453,7 @@
             "Is zooming around",
             "Pounced on r_c",
             "Is practicing {PRONOUN/m_c/poss} pounce on r_c's tail",
-            "Is complaining of a tummyache after sneaking into the medicine cat den's herb storage and eating something {PRONOUN/m_c/subject} shouldn't have",
+            "Is complaining of a tummyache after sneaking into the medicine cat's herb storage and eating some burdock",
             "Picked up something nobody else got a good look at and is now running from several cats",
             "Is pretending to be a mouse and trying to get others to chase {PRONOUN/m_c/object}",
             "Nips at r_c and runs away giggling",
@@ -590,7 +590,7 @@
             "Is too shy to go to the fresh-kill pile alone",
             "Hides sheepishly behind r_c",
             "Is afraid other cats will think {PRONOUN/m_c/subject} {VERB/m_c/are/is} silly",
-            "Doesn't want to be an apprentice because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} afraid of disappointing the Clan",
+            "Doesn't want to be an apprentice for fear of disappointing the Clan",
             "Hates making mistakes",
             "Is afraid of being in the way",
             "Stays at the edges of camp to avoid getting taken by a hawk",
@@ -827,5 +827,35 @@
                 "pregnant"
             ]
         }
+    },
+    {
+        "id": "kit_to_newborn",
+        "thoughts": [
+            "Asks when r_c will be big enough to play with",
+            "Tries to give r_c a juicy piece of prey",
+            "Gives r_c {PRONOUN/m_c/poss} favorite feather",
+            "Gives r_c {PRONOUN/m_c/poss} favorite petal",
+            "Gives r_c {PRONOUN/m_c/poss} favorite rock",
+            "Gives r_c {PRONOUN/m_c/poss} favorite stick",
+            "Says r_c is too small to share toys with",
+            "Can't wait for r_c to grow up",
+            "Teases r_c for being so small",
+            "Isn't allowed to wrestle r_c",
+            "Advises r_c on the best parts of the nursery",
+            "Refuses to believe {PRONOUN/m_c/subject} {VERB/m_c/were/was} ever as small as r_c",
+            "Asks when r_c will start eating solid prey",
+            "Wonders what kind of Clanmate r_c will become",
+            "Wants r_c to be {PRONOUN/m_c/poss} apprentice",
+            "Was sent out of the nursery for being too rowdy around the new litter"
+        ],
+        "main_status_constraint": [
+            "kitten"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     }
 ]

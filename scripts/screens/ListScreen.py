@@ -1,12 +1,22 @@
 from math import ceil
-from typing import Union, Dict, Optional
+from typing import Union, Dict
 
-import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
+from scripts.clan_package.settings.clan_settings import (
+    set_clan_setting,
+    get_clan_setting,
+)
+from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure.game.switches import (
+    switch_set_value,
+    switch_get_value,
+    Switch,
+)
+from scripts.cat.enums import CatGroup
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
 from scripts.game_structure.ui_elements import (
@@ -135,11 +145,11 @@ class ListScreen(Screens):
                 if "#fav_cat_toggle_on" in event.ui_element.get_object_ids():
                     element.change_object_id("#fav_cat_toggle_off")
                     element.set_tooltip("screens.list.favorite_show_tooltip")
-                    game.clan.clan_settings["show fav"] = False
+                    set_clan_setting("show fav", False)
                 else:
                     element.change_object_id("#fav_cat_toggle_on")
                     element.set_tooltip("screens.list.favorite_hide_tooltip")
-                    game.clan.clan_settings["show fav"] = True
+                    set_clan_setting("show fav", True)
                 self.update_cat_list(
                     self.cat_list_bar_elements["search_bar_entry"].get_text()
                 )
@@ -154,7 +164,7 @@ class ListScreen(Screens):
                     self.choose_group_dropdown.set_selected_list(["general.starclan"])
                     self.sort_by_dropdown.new_item_list(self.dead_filter_names)
                     self.sort_by_dropdown.disable_child(
-                        f"screens.list.filter_{game.sort_type}"
+                        f"screens.list.filter_{switch_get_value(Switch.sort_type)}"
                     )
 
                     # switch button text
@@ -167,13 +177,13 @@ class ListScreen(Screens):
                     self.choose_group_dropdown.new_item_list(self.living_group_names)
                     self.choose_group_dropdown.set_selected_list(["general.your_clan"])
                     self.sort_by_dropdown.new_item_list(self.dead_filter_names)
-                    if game.sort_type == "death":
-                        game.sort_type = "rank"
+                    if switch_get_value(Switch.sort_type) == "death":
+                        switch_set_value(Switch.sort_type, "rank")
                     self.sort_by_dropdown.disable_child(
-                        f"screens.list.filter_{game.sort_type}"
+                        f"screens.list.filter_{switch_get_value(Switch.sort_type)}"
                     )
                     self.sort_by_dropdown.parent_button.set_text(
-                        f"screens.list.filter_{game.sort_type}"
+                        f"screens.list.filter_{switch_get_value(Switch.sort_type)}"
                     )
 
                     # switch button text
@@ -212,7 +222,7 @@ class ListScreen(Screens):
 
             # CAT SPRITES
             elif element in self.cat_display.cat_sprites.values():
-                game.switches["cat"] = element.return_cat_id()
+                switch_set_value(Switch.cat, element.return_cat_id())
                 game.last_list_forProfile = self.current_group
                 self.change_screen("profile screen")
 
@@ -221,7 +231,7 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
                 self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return
             if event.key == pygame.K_LEFT:
@@ -264,13 +274,13 @@ class ListScreen(Screens):
             "",
             object_id=(
                 "#fav_cat_toggle_on"
-                if game.clan.clan_settings["show fav"]
+                if get_clan_setting("show fav")
                 else "#fav_cat_toggle_off"
             ),
             container=self.cat_list_bar,
             tool_tip_text=(
                 "screens.list.favorite_hide_tooltip"
-                if game.clan.clan_settings["show fav"]
+                if get_clan_setting("show fav")
                 else "screens.list.favorite_show_tooltip"
             ),
             starting_height=1,
@@ -316,8 +326,11 @@ class ListScreen(Screens):
             starting_height=1,
         )
 
-        if self.death_status != "dead" and game.sort_type == "death":
-            game.sort_type = "rank"
+        if (
+            self.death_status != "dead"
+            and switch_get_value(Switch.sort_type) == "death"
+        ):
+            switch_set_value(Switch.sort_type, "rank")
 
         # CHOOSE GROUP DROPDOWN
         self.choose_group_dropdown = UIDropDown(
@@ -350,7 +363,7 @@ class ListScreen(Screens):
 
         self.cat_list_bar_elements["sort_by_button"] = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (63, 34))),
-            f"screens.list.filter_{game.sort_type}",
+            f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
             object_id=ObjectID("#filter_by_button", "@buttonstyles_dropdown"),
             container=self.cat_list_bar,
             starting_height=1,
@@ -360,7 +373,7 @@ class ListScreen(Screens):
 
         self.sort_by_dropdown = UIDropDown(
             pygame.Rect((-2, 0), (63, 34)),
-            f"screens.list.filter_{game.sort_type}",
+            f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
             item_list=self.living_filter_names,
             manager=MANAGER,
             container=self.cat_list_bar,
@@ -529,19 +542,15 @@ class ListScreen(Screens):
             )
 
         # SORT BY DROPDOWN
-        if (
-            self.sort_by_dropdown
-            and self.sort_by_dropdown.selected_list[0].replace(
-                "screens.list.filter_", ""
-            )
-            != game.sort_type
-        ):
+        if self.sort_by_dropdown and self.sort_by_dropdown.selected_list[0].replace(
+            "screens.list.filter_", ""
+        ) != switch_get_value(Switch.sort_type):
             sort_type = self.sort_by_dropdown.selected_list[0].replace(
                 "screens.list.filter_", ""
             )
-            game.sort_type = sort_type
+            switch_set_value(Switch.sort_type, sort_type)
             self.sort_by_dropdown.parent_button.set_text(
-                f"screens.list.filter_{sort_type}"
+                f"screens.list.filter_{switch_get_value(Switch.sort_type)}"
             )
             self.update_cat_list(
                 self.cat_list_bar_elements["search_bar_entry"].get_text()
@@ -559,8 +568,12 @@ class ListScreen(Screens):
 
         # adding in the guide if necessary, this ensures the guide isn't affected by sorting as we always want them to
         # be the first cat on the list
-        if (self.current_group == "dark_forest" and game.clan.instructor.df) or (
-            self.current_group == "starclan" and not game.clan.instructor.df
+        if (
+            self.current_group == "dark_forest"
+            and game.clan.instructor.status.group == CatGroup.DARK_FOREST
+        ) or (
+            self.current_group == "starclan"
+            and game.clan.instructor.status.group == CatGroup.STARCLAN
         ):
             if game.clan.instructor in self.full_cat_list:
                 self.full_cat_list.remove(game.clan.instructor)
@@ -704,7 +717,7 @@ class ListScreen(Screens):
         self.current_group = "your_clan"
         self.death_status = "living"
         self.full_cat_list = [
-            cat for cat in Cat.all_cats_list if not cat.dead and not cat.outside
+            cat for cat in Cat.all_cats_list if cat.status.alive_in_player_clan
         ]
 
     def get_cotc_cats(self):
@@ -715,7 +728,11 @@ class ListScreen(Screens):
         self.death_status = "living"
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and the_cat.outside and not the_cat.driven_out:
+            if (
+                not the_cat.dead
+                and the_cat.status.is_outsider
+                and the_cat.status.is_near(CatGroup.PLAYER_CLAN)
+            ):
                 self.full_cat_list.append(the_cat)
 
     def get_sc_cats(self):
@@ -727,10 +744,8 @@ class ListScreen(Screens):
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
             if (
-                the_cat.dead
-                and the_cat.ID != game.clan.instructor.ID
-                and not the_cat.outside
-                and not the_cat.df
+                the_cat.ID != game.clan.instructor.ID
+                and the_cat.status.group == CatGroup.STARCLAN
                 and not the_cat.faded
             ):
                 self.full_cat_list.append(the_cat)
@@ -745,9 +760,8 @@ class ListScreen(Screens):
 
         for the_cat in Cat.all_cats_list:
             if (
-                the_cat.dead
-                and the_cat.ID != game.clan.instructor.ID
-                and the_cat.df
+                the_cat.ID != game.clan.instructor.ID
+                and the_cat.status.group == CatGroup.DARK_FOREST
                 and not the_cat.faded
             ):
                 self.full_cat_list.append(the_cat)
@@ -761,8 +775,9 @@ class ListScreen(Screens):
         self.full_cat_list = []
         for the_cat in Cat.all_cats_list:
             if (
-                the_cat.ID in game.clan.unknown_cats
+                the_cat.ID != game.clan.instructor.ID
+                and the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE
                 and not the_cat.faded
-                and not the_cat.driven_out
+                and the_cat.status.is_near(CatGroup.PLAYER_CLAN)
             ):
                 self.full_cat_list.append(the_cat)

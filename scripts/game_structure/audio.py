@@ -5,6 +5,7 @@ import pygame
 import pygame_gui
 import ujson
 
+from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import CatButton, UISpriteButton
 
@@ -19,7 +20,7 @@ class MusicManager:
         self.current_playlist = []
         self.biome_playlist = []
         self.number_of_tracks = len(self.current_playlist)
-        self.volume = game.settings["music_volume"] / 100
+        self.volume = game_setting_get("music_volume") / 100
         self.muted = False
         self.audio_disabled = False
         self.current_track = None
@@ -197,7 +198,7 @@ class MusicManager:
 
         # convert to a float and change volume accordingly
         self.volume = new_volume / 100
-        game.settings["music_volume"] = new_volume
+        game_setting_set("music_volume", new_volume)
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
 
@@ -228,7 +229,7 @@ music_manager = MusicManager()
 
 class _SoundManager:
     def __init__(self):
-        self.volume = game.settings["sound_volume"] / 100
+        self.volume = game_setting_get("sound_volume") / 100
         self.pressed = None
 
         self.load_sounds()
@@ -309,7 +310,7 @@ class _SoundManager:
 
         # convert to a float and change volume accordingly
         self.volume = new_volume / 100
-        game.settings["sound_volume"] = new_volume
+        game_setting_set("sound_volume", new_volume)
         for sound in self.sounds:
             for each in self.sounds[sound]:
                 pygame.mixer.Sound.set_volume(each, self.volume)

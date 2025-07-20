@@ -19,11 +19,13 @@ from pygame_gui.core.interfaces import IUIManagerInterface, IUIElementInterface
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
-from pygame_gui.elements import UIAutoResizingContainer, UISelectionList
+from pygame_gui.elements import UIAutoResizingContainer
 
+from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import screen
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import (
@@ -169,8 +171,14 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
             self.join_focus_sets(self.text_layer)
             self.text_layer.disable()
 
+            # Override the text layer hover check so that it doesn't block anything below it
+            self.text_layer.check_hover = self.__text_layer_check_hover
+
             if self._is_tab:
                 self.find_text_layer_pos()
+
+    def __text_layer_check_hover(self, time_delta: float, hovered_higher_element: bool):
+        return False
 
     def find_text_layer_pos(self):
         if self.text_layer.rect.height >= self.relative_rect[3]:
@@ -216,7 +224,8 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
 
     def on_hovered(self):
         if self._is_tab and self.tab_movement["hovered"]:
-            self.find_text_layer_pos()
+            if self._is_bottom_tab:
+                self.find_text_layer_pos()
             self.text_layer.set_position(self.text_layer_active_offset)
         super().on_hovered()
 
@@ -863,7 +872,7 @@ class UISpriteButton:
                     relative_rect.height <= ui_scale_value(sprite.get_height())
                     or relative_rect.width <= ui_scale_value(sprite.get_height())
                 )
-                and not game.settings["no sprite antialiasing"]
+                and not game_setting_get("no sprite antialiasing")
             )
             else pygame.transform.scale(input_sprite, relative_rect.size)
         )
@@ -879,6 +888,10 @@ class UISpriteButton:
         )
         del input_sprite
         self.button.join_focus_sets(self.image)
+        self.image.check_hover = self.__image_check_hover
+
+    def __image_check_hover(self, time_delta: float, hovered_higher_element: bool):
+        return False
 
     def return_cat_id(self):
         return self.button.return_cat_id()
@@ -1420,7 +1433,7 @@ class UICatListDisplay(UIContainer):
             pygame.image.load(f"resources/images/fav_marker.png").convert_alpha(),
             ui_scale_dimensions((50, 50)),
         )
-        if game.settings["dark mode"]:
+        if game_setting_get("dark mode"):
             self._favor_circle.set_alpha(150)
 
         self.generate_grid()
@@ -1524,7 +1537,7 @@ class UICatListDisplay(UIContainer):
         [name.kill() for name in self.cat_names.values()]
         [favor.kill() for favor in self.favor_indicator.values()]
 
-        show_fav = game.clan.clan_settings["show fav"]
+        show_fav = get_clan_setting("show fav")
 
         # FAVOURITE ICON
         if show_fav:
@@ -1887,7 +1900,6 @@ class UIScrollingButtonList(UIModifiedScrollingContainer):
                 else:
                     self.selected_list.clear()
                     self.selected_list.append(name)
-
                 if self.disable_selection:
                     for other_button in self.buttons.values():
                         other_button.enable()
@@ -2010,6 +2022,7 @@ class UIDropDown(UIDropDownContainer):
                 manager=manager,
                 object_id=f"@buttonstyles_{parent_style.value}",
                 container=self,
+                anchors=anchors,
             )
         else:
             self.parent_button = parent_override

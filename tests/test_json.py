@@ -15,7 +15,7 @@ import unittest
 import ujson
 
 
-def test():
+def _test():
     """Iterate through all files in 'resources'
     and verify all json files are valid"""
     failed = False
@@ -53,9 +53,9 @@ class TestJsonValidity(unittest.TestCase):
     def test_encoding(self):
         """Test that all files are json decodable."""
         with self.assertRaises(SystemExit) as cm:
-            test()
+            _test()
         self.assertEqual(cm.exception.code, 0)
 
 
 if __name__ == "__main__":
-    test()
+    _test()

@@ -15,39 +15,44 @@ The alive folder contains all thoughts regarding being alive (whether the thinke
 
 ## Thought Format
 
-It's essential to know how thoughts are formatted when adding or altering them so that you don't cause errors. The thought format is:
+It's essential to know how thoughts are formatted when adding or altering them so that you don't cause errors. The thought format is:
 
-      {
-        "id": " ",
-        "biome": [],
-        "season": [],
-        "camp": [],
-        "thoughts": [],
-        "has_injuries": {
-            "m_c": [],
-            "r_c": []
-        },
-        "perm_conditions": {
-            "m_c": [],
-            "r_c": []
-        },
-        "relationship_constraint": [],
-        "backstory_constraint": {
-            "m_c": [],
-            "r_c": []
-        },
-        "main_status_constraint": [],
-        "random_status_constraint": [],
-        "main_age_constraint": [],
-        "random_age_constraint": [],
-        "main_trait_constraint": [],
-        "random_trait_constraint": [],
-        "main_skill_constraint": [],
-        "random_skill_constraint": [],
-        "random_living_status": [],
-        "random_outside_status": []
-       }
-       
+```json
+{
+    "id": " ",
+    "biome": [],
+    "season": [],
+    "camp": [],
+    "thoughts": [],
+    "has_injuries": {
+        "m_c": [],
+        "r_c": []
+    },
+    "perm_conditions": {
+        "m_c": [],
+        "r_c": [],
+        "born_with": {
+            "m_c": bool,
+            "r_c": bool
+        }
+    },
+    "relationship_constraint": [],
+    "backstory_constraint": {
+        "m_c": [],
+        "r_c": []
+    },
+    "main_status_constraint": [],
+    "random_status_constraint": [],
+    "main_age_constraint": [],
+    "random_age_constraint": [],
+    "main_trait_constraint": [],
+    "random_trait_constraint": [],
+    "main_skill_constraint": [],
+    "random_skill_constraint": [],
+    "random_living_status": [],
+    "random_outside_status": []
+}
+```
 !!! note "Important"
     If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable.
 
@@ -97,11 +102,16 @@ You can additionally use the tag "any" to allow the thought to occur if the cat 
 
 
 **PERM_CONDITIONS:**
-Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition. 
+Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition. 
 
 > [Permanent Conditions Tag List](reference/index.md#__tabbed_1_4)
 >
 > You can additionally use the tag "any" to allow the thought to occur if the cat is experiencing any permanent condition.
+
+The additional constraint `born_with` allows you to constrain whether this thought appears for cats born with a condition (congenital) or not. Not providing the constraint is the same as saying either is acceptable.
+
+!!! note Important
+    Be careful when specifying `born_with`. If you force a condition to be congenital when it can never generate as such, the thought will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
 
 **RELATIONSHIP_CONSTRAINT:**
 Constrains the thought to only occur if m_c and r_c fulfill the tags requirements: for the "parent/child" tag, the thinker is the parent, and whoever it's directed towards the child (vise versa with "child/parent"), and the same goes for the "app/mentor" and "mentor/app."

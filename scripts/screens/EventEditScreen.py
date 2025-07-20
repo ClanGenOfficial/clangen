@@ -1,26 +1,22 @@
+import os
+import platform
+import subprocess
 from random import choice
 
 import pygame
 import pygame_gui
-import os
-import platform
-import subprocess
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES, create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
-from scripts.cat.skills import SkillPath, Skill
+from scripts.cat.skills import SkillPath
 from scripts.events_module.short.condition_events import Condition_Events
-from scripts.events_module.short.handle_short_events import (
-    INJURY_GROUPS,
-    EVENT_ALLOWED_CONDITIONS,
-    HandleShortEvents,
-)
+from scripts.events_module.short.handle_short_events import HandleShortEvents
 from scripts.events_module.short.scar_events import Scar_Events
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.localization import load_lang_resource, get_default_pronouns
+from scripts.game_structure.localization import get_default_pronouns
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
@@ -150,9 +146,9 @@ class EventEditScreen(Screens):
     new_cat_genders: list = TAGS["new_cat"]["genders"]
     """List of all gender tags available to new cats"""
 
-    all_injury_pools: dict = INJURY_GROUPS
+    all_injury_pools: dict = constants.INJURY_GROUPS
     """Dict of all injury pools. Key is pool name, value is the injuries within the pool."""
-    all_possible_injuries: list = EVENT_ALLOWED_CONDITIONS
+    all_possible_injuries: list = constants.EVENT_ALLOWED_CONDITIONS
     """List of all possible injuries/conditions."""
     fatal_conditions: list = []
     """We need this for death history validity checking. This is a list of all conditions that can kill."""
@@ -175,10 +171,11 @@ class EventEditScreen(Screens):
     all_scars: list = Pelt.scars1 + Pelt.scars2 + Pelt.scars3
     """List of all possible scars"""
 
-    all_outsider_reps: list = game.outsider_reps.copy()
+    all_outsider_reps: list = list(constants.OUTSIDER_REPS)
     """List of all possible outsider reputation levels."""
     all_outsider_reps.append("any")
-    all_other_clan_reps: list = game.other_clan_reps.copy()
+
+    all_other_clan_reps: list = list(constants.OTHER_CLAN_REPS)
     """List of all possible other clan relationship levels."""
     all_other_clan_reps.append("any")
 
@@ -189,6 +186,7 @@ class EventEditScreen(Screens):
         "new cats": Icon.CAT_HEAD,
         "personal consequences": Icon.SCRATCHES,
         "outside consequences": Icon.CLAN_UNKNOWN,
+        "future effects": Icon.NOTEPAD,
     }
     """Dict for section tab info. Key is the name of the tab, value is the icon assigned."""
 
@@ -231,7 +229,7 @@ class EventEditScreen(Screens):
         """If currently open event is an existing event, this holds its original index within its file"""
 
         self.current_editor_tab: str = ""
-        """The currenlty viewed editor tab."""
+        """The currently viewed editor tab."""
 
         self.type_tab_buttons = {}
         self.biome_tab_buttons = {}
@@ -246,12 +244,10 @@ class EventEditScreen(Screens):
         self.current_preview_state: int = self.preview_states[0]
         """The currently used preview state. This can be 0 (preview off), 1 (plural), or 2 (singular)"""
 
-        # Event text display
         self.event_text_element = {}
         self.event_text_info: str = ""
         """Loaded event text"""
 
-        # Settings elements
         self.event_id_element = {}
         self.event_id_info: str = ""
         """Loaded event_id"""
@@ -278,9 +274,9 @@ class EventEditScreen(Screens):
         self.tag_info: list = []
         """Loaded tags"""
 
-        self.weight_element = {}
-        self.weight_info: int = 20
-        """Loaded weight"""
+        self.frequency_element = {}
+        self.frequency_info: int = 4
+        """Loaded frequency"""
 
         self.acc_element = {}
         self.acc_button = {}
@@ -423,9 +419,11 @@ class EventEditScreen(Screens):
         self.outsider_element = {}
         self.outsider_info: dict = {"current_rep": [], "changed": 0}
         """The currently loaded outsider info"""
+
         self.other_clan_element = {}
         self.other_clan_info: dict = {"current_rep": [], "changed": 0}
         """The currently loaded other clan info"""
+
         self.supply_element = {}
         self.supply_block_list: list = []
         """The list of the currently loaded supply blocks"""
@@ -434,6 +432,35 @@ class EventEditScreen(Screens):
              as the text for its button."""
         self.supply_info: dict = {"type": "", "trigger": [], "adjust": ""}
         """The info for the currently viewed supply block"""
+
+        self.future_element = {}
+        self.future_block_list: list = []
+        """The list of currently loaded future blocks"""
+        self.selected_future_block_index: str = ""
+        """The list index for the future block currently viewed by the user. This is kept as a string due to it doubling
+             as the text for its button."""
+        self.future_template: dict = {
+            "event_type": "death",
+            "pool": {
+                "subtype": [],
+                "event_id": [],
+                "excluded_event_id": [],
+            },
+            "moon_delay": [1, 1],
+            "involved_cats": {"m_c": None, "r_c": None},
+        }
+        """The template for the future block info"""
+        self.future_cat_info_template: dict = {
+            "rank": [],
+            "age": [],
+            "skill": [],
+            "not_skill": [],
+            "trait": [],
+            "not_trait": [],
+        }
+        """The template for an uninvolved cat's info."""
+        self.available_cats: list = []
+        """List of cats who are available to be in the future event."""
 
     # EVENT JSON PROCESSING
     def unpack_existing_event(self, event: dict):
@@ -445,7 +472,7 @@ class EventEditScreen(Screens):
         biome = "general"
         matching_biomes = []
         for location in event.get("location"):
-            for biome in game.BIOME_TYPES:
+            for biome in constants.BIOME_TYPES:
                 if biome.casefold() in location:
                     matching_biomes.append(biome)
         if len(matching_biomes) <= 1:
@@ -469,7 +496,7 @@ class EventEditScreen(Screens):
             self.season_info = []
         self.sub_info = event["sub_type"] if event.get("sub_type") else []
         self.tag_info = event["tags"] if event.get("tags") else []
-        self.weight_info = event["weight"]
+        self.frequency_info = event["frequency"]
         self.event_text_info = event["event_text"]
         self.acc_info = event["new_accessory"] if event.get("new_accessory") else []
         if event.get("m_c"):
@@ -546,7 +573,14 @@ class EventEditScreen(Screens):
         self.other_clan_info = (
             event["other_clan"] if event.get("other_clan") else self.other_clan_info
         )
+        if not "current_rep" in self.other_clan_info:
+            self.other_clan_info["current_rep"] = None
+        if not "changed" in self.other_clan_info:
+            self.other_clan_info["changed"] = 0
         self.supply_block_list = event["supplies"] if event.get("supplies") else []
+        self.future_block_list = (
+            event["future_event"] if event.get("future_event") else []
+        )
 
     def compile_new_event(self) -> dict:
         """
@@ -566,7 +600,7 @@ class EventEditScreen(Screens):
         if self.tag_info:
             new_event["tags"] = self.tag_info
 
-        new_event["weight"] = self.weight_info
+        new_event["frequency"] = self.frequency_info
         new_event["event_text"] = self.event_text_info
 
         if self.acc_info:
@@ -611,30 +645,57 @@ class EventEditScreen(Screens):
             new_event["r_c"]["backstory"] = self.random_cat_info["backstory"]
         if self.random_cat_info["dies"]:
             new_event["r_c"]["dies"] = self.random_cat_info["dies"]
+        if not new_event["r_c"]:
+            new_event.pop("r_c")
 
         if self.new_cat_block_dict:
-            new_event["new_cat"] = self.new_cat_block_dict.values()
+            new_event["new_cat"] = list(self.new_cat_block_dict.values())
 
         if self.injury_block_list:
+            for block in self.injury_block_list:
+                if not block["scars"]:
+                    block.pop("scars")
             new_event["injury"] = self.injury_block_list
 
         if self.excluded_cats:
             new_event["exclude_involved"] = self.excluded_cats
 
         if self.history_block_list:
+            for block in self.history_block_list:
+                if not block["scar"]:
+                    block.pop("scar")
+                if not block["reg_death"]:
+                    block.pop("reg_death")
+                if not block["lead_death"]:
+                    block.pop("lead_death")
             new_event["history"] = self.history_block_list
 
         if self.relationships_block_list:
             new_event["relationships"] = self.relationships_block_list
 
         if self.outsider_info["current_rep"] or self.outsider_info["changed"]:
-            new_event["outsider"] = self.outsider_info
+            new_event["outsider"] = {}
+            if self.outsider_info["current_rep"]:
+                new_event["current_rep"] = self.outsider_info["current_rep"]
+            if self.outsider_info["changed"]:
+                new_event["changed"] = int(self.outsider_info["changed"])
 
-        if self.other_clan_info["current_rep"] or self.outsider_info["changed"]:
-            new_event["other_clan"] = self.other_clan_info
+        if self.other_clan_info["current_rep"] or self.other_clan_info["changed"]:
+            new_event["other_clan"] = {}
+            if self.other_clan_info["current_rep"]:
+                new_event["current_rep"] = self.other_clan_info["current_rep"]
+            if self.other_clan_info["changed"]:
+                new_event["changed"] = int(self.other_clan_info["changed"])
 
         if self.supply_block_list:
             new_event["supplies"] = self.supply_block_list
+
+        if self.future_block_list:
+            new_event["future_event"] = self.future_block_list
+            for block in self.future_block_list:
+                for cat in block["involved_cats"]:
+                    if block["involved_cats"][cat] == "new random cat":
+                        block["involved_cats"][cat] = None
 
         return new_event
 
@@ -646,7 +707,7 @@ class EventEditScreen(Screens):
         biome_path = "general"
         for locale in self.location_info:
             biome = locale.split("_")[0]
-            if biome.capitalize() in game.BIOME_TYPES:
+            if biome.capitalize() in constants.BIOME_TYPES:
                 biomes.append(biome)
         if len(biomes) == 1 and "any" not in biomes:
             biome_path = biomes[0]
@@ -693,12 +754,16 @@ class EventEditScreen(Screens):
             elif platform.system() == "Linux":
                 subprocess.Popen(["xdg-open", event.link_target])
 
-        # SEARCHING
         if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
-            self.search_text = self.event_search.get_text()
-            self.create_event_display(
-                event_type=self.chosen_type, biome=self.chosen_biome
-            )
+            # SEARCHING
+            if self.event_search.is_focused:
+                self.search_text = self.event_search.get_text()
+                self.create_event_display(
+                    event_type=self.chosen_type, biome=self.chosen_biome
+                )
+            # FUTURE EVENT IDS
+            if self.current_editor_tab == "future effects":
+                self.handle_future_event_ids()
 
         # HOVER PREVIEWS
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
@@ -781,7 +846,8 @@ class EventEditScreen(Screens):
                             if ev["event_id"] == opened_event["event_id"]:
                                 self.old_event_index = old_json.index(ev)
 
-                        self.current_editor_tab = "settings"
+                        if not self.current_editor_tab:
+                            self.current_editor_tab = "settings"
                         self.clear_editor_tab()
                         if self.editor_element.get("save"):
                             self.editor_element["save"].set_text("buttons.save")
@@ -813,16 +879,17 @@ class EventEditScreen(Screens):
                     self.event_text_info = self.event_text_element[
                         "event_text"
                     ].html_text
-                    # check validity of save first
+                    # check validity of event first
                     if (
                         not self.event_text_info
-                        or not self.weight_info
+                        or not self.frequency_info
                         or not self.type_info
                         or not self.valid_id()
                         or not self.valid_injury()
                         or not self.valid_history()
                         or not self.valid_relationships()
                         or not self.valid_supply()
+                        or not self.valid_future()
                     ):
                         EditorMissingInfo(self.alert_text)
                     # if it's all good, SAVE!
@@ -859,15 +926,13 @@ class EventEditScreen(Screens):
                             and name != self.current_editor_tab
                         ):
                             self.current_editor_tab = name
-                            if self.event_text_element["event_text"].html_text:
-                                self.event_text_info = self.event_text_element[
-                                    "event_text"
-                                ].html_text
                             self.clear_editor_tab()
                             break
 
             # TEXT PREVIEW
-            if event.ui_element == self.event_text_element["preview_button"]:
+            if event.ui_element == self.event_text_element[
+                "preview_button"
+            ] and self.event_text_element.get("event_text"):
                 # finds what the new preview state should be
                 index = self.preview_states.index(self.current_preview_state)
                 new_index = (index + 1) % 3
@@ -881,20 +946,7 @@ class EventEditScreen(Screens):
                 else:
                     game.event_editing = False
                     self.event_text_element["event_text"].hide()
-                    text = self.event_text_element["event_text"].html_text
-
-                    test_dict = {}
-                    for abbr in self.test_cat_names:
-                        pronoun = choice(
-                            [
-                                pro
-                                for pro in self.test_pronouns
-                                if pro["conju"] == self.current_preview_state
-                            ]
-                        )
-                        test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
-
-                    text = process_text(text, test_dict)
+                    text = self.get_processed_text()
                     self.event_text_element["preview_text"].set_text(text)
                     self.event_text_element["preview_text"].show()
 
@@ -914,10 +966,25 @@ class EventEditScreen(Screens):
             elif self.current_editor_tab == "personal consequences":
                 self.handle_personal_events(event)
 
+            # OUTSIDE CONSEQUENCES TAB EVENTS
             elif self.current_editor_tab == "outside consequences":
                 self.handle_outside_events(event)
 
+            # FUTURE EFFECTS TAB EVENTS
+            elif self.current_editor_tab == "future effects":
+                self.handle_future_events(event)
+
         elif event.type == pygame_gui.UI_TEXT_ENTRY_CHANGED:
+            if self.event_text_element.get("event_text") == event.ui_element:
+                self.event_text_info = self.event_text_element["event_text"].html_text
+                if "t_initial" in self.event_text_info:
+                    self.event_text_info = ""
+                    self.event_text_element["event_text"].set_text(self.event_text_info)
+                character_count = len(self.get_processed_text())
+                self.event_text_element["counter"].set_text(
+                    f"{character_count} characters after processing"
+                )
+
             # CHANGE EVENT ID
             if self.current_editor_tab == "settings":
                 if event.ui_element == self.event_id_element.get("entry"):
@@ -992,6 +1059,71 @@ class EventEditScreen(Screens):
                             "adjust"
                         ] = f"increase_{self.supply_element['increase_entry'].text}"
                         self.update_block_info()
+            elif self.current_editor_tab == "future effects":
+                if event.ui_element == self.future_element.get(
+                    "least_entry"
+                ) or event.ui_element == self.future_element.get("most_entry"):
+                    if self.future_element["least_entry"].text:
+                        least = int(self.future_element["least_entry"].text)
+                    else:
+                        least = 1
+                    if self.future_element["most_entry"].text:
+                        most = int(self.future_element["most_entry"].text)
+                    else:
+                        most = 1
+
+                    self.get_selected_block_info()["moon_delay"] = [least, most]
+
+    def handle_future_event_ids(self):
+        if not self.future_element.get("include_entry"):
+            return
+        if self.future_element["include_entry"].is_focused:
+            new_id = self.future_element["include_entry"].get_text()
+            block_info = self.get_selected_block_info()["pool"]["event_id"]
+            if new_id not in block_info:
+                block_info.append(new_id)
+            else:
+                block_info.remove(new_id)
+            text = ""
+            for id in block_info:
+                text += f"'{id}'<br>"
+            self.future_element["include_display"].set_text(text)
+            self.future_element["include_entry"].set_text("")
+            self.editor_container.on_contained_elements_changed(
+                self.future_element["include_display"]
+            )
+        elif self.future_element["exclude_entry"].is_focused:
+            new_id = self.future_element["exclude_entry"].get_text()
+            block_info = self.get_selected_block_info()["pool"]["excluded_event_id"]
+            if new_id not in block_info:
+                block_info.append(new_id)
+            else:
+                block_info.remove(new_id)
+            text = ""
+            for id in block_info:
+                text += f"'{id}'<br>"
+            self.future_element["exclude_display"].set_text(text)
+            self.future_element["exclude_entry"].set_text("")
+            self.editor_container.on_contained_elements_changed(
+                self.future_element["exclude_display"]
+            )
+
+    def get_processed_text(self):
+        text = self.event_text_element["event_text"].html_text
+        test_dict = {}
+
+        if not self.current_preview_state:
+            conju = 1
+        else:
+            conju = self.current_preview_state
+
+        for abbr in self.test_cat_names:
+            pronoun = choice(
+                [pro for pro in self.test_pronouns if pro["conju"] == conju]
+            )
+            test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
+        text = process_text(text, test_dict)
+        return text
 
     def on_use(self):
         """
@@ -1013,6 +1145,9 @@ class EventEditScreen(Screens):
 
         elif self.current_editor_tab == "outside consequences":
             self.handle_outside_on_use()
+
+        elif self.current_editor_tab == "future effects":
+            self.handle_future_on_use()
 
         super().on_use()
 
@@ -1076,12 +1211,12 @@ class EventEditScreen(Screens):
         self.create_event_display()
 
         self.event_text_container = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((290, 30), (0, 0))),
+            ui_scale(pygame.Rect((290, 10), (0, 0))),
             starting_height=1,
             manager=MANAGER,
         )
         self.event_text_element["preview_button"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((-30, 10), (36, 36))),
+            ui_scale(pygame.Rect((-30, 30), (36, 36))),
             Icon.MAGNIFY,
             get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
             manager=MANAGER,
@@ -1092,13 +1227,28 @@ class EventEditScreen(Screens):
         )
 
         self.event_text_element["box"] = UIModifiedImage(
-            ui_scale(pygame.Rect((0, 0), (460, 120))),
+            ui_scale(pygame.Rect((0, 20), (460, 120))),
             get_box(BoxStyles.ROUNDED_BOX, (460, 120)),
             starting_height=1,
             manager=MANAGER,
             container=self.event_text_container,
         )
         self.event_text_element["box"].disable()
+
+        self.event_text_element["character_info"] = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((10, 5), (-1, -1))),
+            "screens.event_edit.event_text_character_count",
+            object_id=get_text_box_theme("#text_box_22_horizleft"),
+            manager=MANAGER,
+            container=self.event_text_container,
+        )
+        self.event_text_element["counter"] = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((250, 5), (200, -1))),
+            "0 characters after processing",
+            object_id=get_text_box_theme("#text_box_22_horizright"),
+            manager=MANAGER,
+            container=self.event_text_container,
+        )
 
         self.editor_element["frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((300, 140), (470, 490))),
@@ -1266,7 +1416,7 @@ class EventEditScreen(Screens):
 
         path = "resources/lang/en/events"
         type_list = list(self.event_types.keys())
-        all_biomes = game.BIOME_TYPES.copy()
+        all_biomes = constants.BIOME_TYPES.copy()
         all_biomes.append("general")
 
         if not event_type:
@@ -1293,7 +1443,12 @@ class EventEditScreen(Screens):
             available = event_list.copy()
             event_list = []
             for event in available:
+                subtypes = [x for x in event.get("sub_type", [])]
                 if self.search_text in event["event_id"]:
+                    event_list.append(event)
+                elif self.search_text in event["event_text"]:
+                    event_list.append(event)
+                elif self.search_text in subtypes:
                     event_list.append(event)
             event_list = [
                 event
@@ -1321,6 +1476,7 @@ class EventEditScreen(Screens):
                 )
                 test_dict[abbr] = (self.test_cat_names[abbr], pronoun)
             preview = process_text(event["event_text"], test_dict)
+            game.event_editing = True
             self.event_buttons[index] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, -2 if index > 0 else 0), (234, 36))),
                 event["event_id"],
@@ -1332,7 +1488,7 @@ class EventEditScreen(Screens):
                 if self.event_buttons.get(index - 1)
                 else None,
                 container=self.event_list_container,
-                tool_tip_text=preview,
+                tool_tip_text=f"{event['event_id']}<br>{preview}",
             )
 
         if not self.event_search:
@@ -1362,6 +1518,13 @@ class EventEditScreen(Screens):
         """
         Clears all the saved event info, so we can start fresh.
         """
+        # resetting all tag lists
+        for tag in self.basic_tag_list:
+            tag["setting"] = False
+        for tag in self.rel_tag_list:
+            tag["setting"] = False
+        for tag in self.new_cat_bools:
+            tag["setting"] = False
         # Settings elements
         self.event_text_info = ""
         self.event_id_element = {}
@@ -1382,9 +1545,9 @@ class EventEditScreen(Screens):
         self.rank_tag_checkbox = {}
         if not self.param_locks.get("tag"):
             self.tag_info = []
-        self.weight_element = {}
-        if not self.param_locks.get("weight"):
-            self.weight_info = 20
+        self.frequency_element = {}
+        if not self.param_locks.get("frequency"):
+            self.frequency_info = 4
         self.acc_element = {}
         if not self.param_locks.get("acc"):
             self.acc_info = []
@@ -1417,7 +1580,7 @@ class EventEditScreen(Screens):
             if not self.param_locks.get("main_age")
             else reference_dict["age"],
             "rel_status": []
-            if not self.param_locks.get("get_rel_status")
+            if not self.param_locks.get("main_rel_status")
             else reference_dict["rel_status"],
             "dies": False
             if not self.param_locks.get("main_dies")
@@ -1438,6 +1601,9 @@ class EventEditScreen(Screens):
             if not self.param_locks.get("main_backstory")
             else reference_dict["backstory"],
         }
+        if not self.param_locks.get("main_rel_status"):
+            for tag in self.rel_tag_list:
+                tag["setting"] = False
         reference_dict = self.random_cat_info.copy()
         self.random_cat_info = {
             "rank": []
@@ -1447,7 +1613,7 @@ class EventEditScreen(Screens):
             if not self.param_locks.get("random_age")
             else reference_dict["age"],
             "rel_status": []
-            if not self.param_locks.get("get_rel_status")
+            if not self.param_locks.get("random_rel_status")
             else reference_dict["rel_status"],
             "dies": False
             if not self.param_locks.get("random_dies")
@@ -1530,6 +1696,20 @@ class EventEditScreen(Screens):
             self.selected_supply_block_index: str = ""
         self.supply_info = {"type": "", "trigger": [], "adjust": ""}
         self.current_preview_state = self.preview_states[0]
+        self.future_element = {}
+        if not self.param_locks.get("future"):
+            self.future_block_list = []
+            self.selected_future_block_index: str = ""
+        self.future_template = {
+            "event_type": "death",
+            "pool": {
+                "subtype": [],
+                "event_id": [],
+                "excluded_event_id": [],
+            },
+            "moon_delay": [1, 1],
+            "involved_cats": {"m_c": None, "r_c": None},
+        }
 
     def create_editor_display(self):
         self.editor_container = UIModifiedScrollingContainer(
@@ -1558,7 +1738,7 @@ class EventEditScreen(Screens):
         if not self.event_text_element.get("preview_text"):
             self.event_text_element["preview_text"] = UITextBoxTweaked(
                 "",
-                ui_scale(pygame.Rect((48, 10), (435, 100))),
+                ui_scale(pygame.Rect((48, 30), (435, 100))),
                 object_id="#text_box_26_horizleft_pad_10_14",
                 manager=MANAGER,
                 container=self.event_text_container,
@@ -1566,7 +1746,7 @@ class EventEditScreen(Screens):
             )
             self.event_text_element["preview_text"].disable()
             self.event_text_element["event_text"] = pygame_gui.elements.UITextEntryBox(
-                ui_scale(pygame.Rect((48, 10), (435, 100))),
+                ui_scale(pygame.Rect((48, 30), (435, 100))),
                 object_id="#text_box_26_horizleft_pad_10_14",
                 manager=MANAGER,
                 container=self.event_text_container,
@@ -1578,6 +1758,9 @@ class EventEditScreen(Screens):
 
         if self.event_text_info:
             self.event_text_element["event_text"].set_text(self.event_text_info)
+            self.event_text_element["counter"].set_text(
+                f"{len(self.get_processed_text())} characters after processing"
+            )
         else:
             self.event_text_element["event_text"].set_text(
                 "screens.event_edit.event_text_initial"
@@ -1611,7 +1794,7 @@ class EventEditScreen(Screens):
 
         if not self.editor_element.get("save"):
             self.editor_element["save"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((320, -8), (80, 36))),
+                ui_scale(pygame.Rect((340, -8), (80, 36))),
                 "buttons.save",
                 get_button_dict(ButtonStyles.HORIZONTAL_TAB_MIRRORED, (80, 36)),
                 manager=MANAGER,
@@ -1640,6 +1823,8 @@ class EventEditScreen(Screens):
             self.generate_personal_tab()
         elif self.current_editor_tab == "outside consequences":
             self.generate_outside_tab()
+        elif self.current_editor_tab == "future effects":
+            self.generate_future_tab()
 
     def create_lock(
         self,
@@ -1723,7 +1908,20 @@ class EventEditScreen(Screens):
         involved_cats.extend(new_cat_list)
 
         if include_clan:
-            involved_cats.extend(["some_clan", "clan"])
+            involved_cats.extend(
+                [
+                    "some_clan",
+                    "clan",
+                    "low_lawful",
+                    "high_lawful",
+                    "low_social",
+                    "high_social",
+                    "low_stable",
+                    "high_stable",
+                    "low_aggress",
+                    "high_aggress",
+                ]
+            )
 
         return involved_cats
 
@@ -1737,6 +1935,7 @@ class EventEditScreen(Screens):
             self.history_element.get("add"),
             self.relationships_element.get("add"),
             self.supply_element.get("add"),
+            self.future_element.get("add"),
         ]:
             return
 
@@ -1759,6 +1958,10 @@ class EventEditScreen(Screens):
         elif self.open_block == "supply":
             self.selected_supply_block_index = attr["selected"]
             self.update_supply_block_options()
+        elif self.open_block == "future":
+            self.selected_future_block_index = attr["selected"]
+            self.display_future_constraints()
+            self.update_future_block_options()
         else:
             self.selected_relationships_block_index = attr["selected"]
             self.update_relationships_block_options()
@@ -1776,6 +1979,7 @@ class EventEditScreen(Screens):
             self.history_element.get("delete"),
             self.relationships_element.get("delete"),
             self.supply_element.get("delete"),
+            self.future_element.get("delete"),
         ]:
             return
 
@@ -1804,6 +2008,11 @@ class EventEditScreen(Screens):
             if not attr["selected"]:
                 self.clear_supply_constraints()
             self.update_supply_block_options()
+        elif self.open_block == "future":
+            self.selected_future_block_index = attr["selected"]
+            if not attr["selected"]:
+                self.clear_future_constraints()
+            self.update_future_block_options()
         else:
             self.selected_relationships_block_index = attr["selected"]
             if not attr["selected"]:
@@ -1851,6 +2060,17 @@ class EventEditScreen(Screens):
                 else None
             )
             display = self.supply_element["display"]
+        elif self.open_block == "future":
+            element = self.future_element
+            view = self.future_element["block_list"]
+            block_list = self.future_block_list
+            info_dict = self.future_template.copy()
+            selected = (
+                self.selected_future_block_index
+                if self.selected_future_block_index
+                else None
+            )
+            display = None
         else:
             element = self.relationships_element
             view = self.relationships_element["block_list"]
@@ -1901,6 +2121,12 @@ class EventEditScreen(Screens):
                 self.supply_block_list[int(self.selected_supply_block_index)]
                 if self.selected_supply_block_index
                 else self.supply_info
+            )
+        elif self.open_block == "future":
+            return (
+                self.future_block_list[int(self.selected_future_block_index)]
+                if self.selected_future_block_index
+                else self.future_template.copy()
             )
 
     def new_cat_select(self):
@@ -1993,7 +2219,8 @@ class EventEditScreen(Screens):
                 f"Event ID is either invalid or a duplicate. Pick a new ID."
             )
 
-        self.event_id_element["check_text"].set_text(text)
+        if self.event_id_element.get("check_text"):
+            self.event_id_element["check_text"].set_text(text)
 
         return valid
 
@@ -2116,7 +2343,38 @@ class EventEditScreen(Screens):
 
         return valid
 
+    def valid_future(self):
+        """
+        Checks if future blocks have all required info
+        """
+        valid = True
+        for block in self.future_block_list:
+            pool = block["pool"]
+            if not block["event_type"]:
+                valid = False
+                self.alert_text = (
+                    "A Future Event block has no type. A type must be chosen!"
+                )
+            elif (
+                not pool.get("subtype")
+                and not pool.get("event_id")
+                and not pool.get("excluded_event_id")
+            ):
+                valid = False
+                self.alert_text = "A Future Event block has no subtype, event_id, or excluded_event_id given. Event pool is too broad, you must use at least one of these constraints!"
+            elif block["moon_delay"][0] > block["moon_delay"][1]:
+                valid = False
+                self.alert_text = "A Future Event block has an invalid moon delay. The second moon delay number should be equal to or larger than the first!"
+
+        return valid
+
     # HANDLE EVENT FUNCS
+    def handle_future_events(self, event):
+        # ADD BLOCK
+        self.add_block(event.ui_element)
+        # REMOVE BLOCK
+        self.delete_block(event.ui_element)
+
     def handle_outside_events(self, event):
         # AMOUNT CHANGES
         amount = None
@@ -2564,7 +2822,7 @@ class EventEditScreen(Screens):
     def handle_settings_events(self, event):
         # CHANGE LOCATION LIST
         if event.ui_element in self.location_element.values():
-            biome_list = game.clan.BIOME_TYPES
+            biome_list = constants.BIOME_TYPES
             for biome in biome_list:
                 if event.ui_element == self.location_element[biome]:
                     self.update_location_info(biome=biome)
@@ -2651,377 +2909,12 @@ class EventEditScreen(Screens):
                 break
             self.update_acc_info()
 
-    def handle_outside_on_use(self):
-        # SUPPLY CONSTRAINT DISPLAY
-        if self.selected_supply_block_index and not self.supply_element.get(
-            "constraint_container"
-        ):
-            self.display_supply_constraints()
-        elif not self.selected_supply_block_index:
-            self.clear_supply_constraints()
-        # SELECT NEW SUPPLY BLOCK
-        if self.supply_element.get(
-            "block_list"
-        ).selected_list and not self.supply_element.get("adjust_list"):
-            self.display_supply_constraints()
-        if self.supply_element.get("adjust_list"):
-            selected_block = (
-                [str(self.selected_supply_block_index)]
-                if self.selected_supply_block_index
-                else []
-            )
-            if self.supply_element["block_list"].selected_list != selected_block:
-                self.update_supply_block_options()
-        # OUTSIDER
-        if self.outsider_element.get("list"):
-            if (
-                self.outsider_element["list"].selected_list
-                != self.outsider_info["current_rep"]
-            ):
-                self.outsider_info["current_rep"] = self.outsider_element[
-                    "list"
-                ].selected_list.copy()
-                self.outsider_element["display"].set_text(f"{self.outsider_info}")
-        # OTHER CLAN
-        if self.other_clan_element.get("list"):
-            if (
-                self.other_clan_element["list"].selected_list
-                != self.other_clan_info["current_rep"]
-            ):
-                self.other_clan_info["current_rep"] = self.other_clan_element[
-                    "list"
-                ].selected_list.copy()
-                self.other_clan_element["display"].set_text(f"{self.other_clan_info}")
-        # SUPPLY TYPE
-        changed = False
-        selected_info = self.get_selected_block_info()
-        if self.supply_element.get("adjust_list"):
-            new_type = [selected_info["type"]] if selected_info["type"] else []
-            new_adjust = [selected_info["adjust"]] if selected_info["adjust"] else []
-
-            # TYPE
-            if self.supply_element["type_list"].selected_list != new_type:
-                selected_info["type"] = (
-                    self.supply_element["type_list"].selected_list[0]
-                    if self.supply_element["type_list"].selected_list
-                    else ""
-                )
-                changed = True
-
-            # TRIGGER
-            elif (
-                self.supply_element["trigger_list"].selected_list
-                != selected_info["trigger"]
-            ):
-                selected_info["trigger"] = self.supply_element[
-                    "trigger_list"
-                ].selected_list.copy()
-                changed = True
-
-            # ADJUST
-            elif self.supply_element["adjust_list"].selected_list != new_adjust:
-                # gotta be a little careful here, since the "increase" tag changes upon user input
-                new_tag = (
-                    self.supply_element["adjust_list"].selected_list.copy()[0]
-                    if self.supply_element["adjust_list"].selected_list
-                    else ""
-                )
-                tag_change = True
-                if "increase_" in new_tag and "increase_" in selected_info["adjust"]:
-                    tag_change = False
-
-                if tag_change:
-                    selected_info["adjust"] = new_tag
-
-                self.create_supply_increase_editor()
-                changed = True
-        if changed:
-            self.update_block_info()
-
-    def handle_personal_on_use(self):
-        # EXCLUDE
-        if self.exclusion_element.get("cat_list"):
-            if self.exclusion_element["cat_list"].selected_list != self.excluded_cats:
-                self.excluded_cats = self.exclusion_element[
-                    "cat_list"
-                ].selected_list.copy()
-                self.exclusion_element["display"].set_text(
-                    f"exclude_involved: {self.excluded_cats}"
-                )
-
-        changed = False
-
-        if self.open_block == "injury":
-            # CONSTRAINT DISPLAY
-            if self.selected_injury_block and not self.injury_element.get(
-                "constraint_container"
-            ):
-                self.display_injury_constraints()
-            elif not self.selected_injury_block:
-                self.clear_injury_constraints()
-
-            # SELECT NEW BLOCK
-            if self.injury_element.get("scar_list"):
-                selected_injury = (
-                    [str(self.selected_injury_block)]
-                    if self.selected_injury_block
-                    else []
-                )
-                if self.injury_element["block_list"].selected_list != selected_injury:
-                    self.update_injury_block_options()
-
-            # CAT LIST
-            if self.injury_element.get("cats_list"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    self.injury_element["cats_list"].selected_list
-                    != selected_info["cats"]
-                ):
-                    selected_info["cats"] = self.injury_element[
-                        "cats_list"
-                    ].selected_list.copy()
-                    self.injury_element["cats_info"].set_text(
-                        f"cats: {selected_info['cats']}"
-                    )
-                    self.injury_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(self.injury_element["cats_info"])
-                    changed = True
-
-            # INJURY LIST
-            if self.injury_element.get("individual_injuries"):
-                full_selection = (
-                    self.injury_element["injury_pools"].selected_list
-                    + self.injury_element["individual_injuries"].selected_list
-                )
-                selected_info = self.get_selected_block_info()
-                if full_selection != selected_info["injuries"]:
-                    selected_info["injuries"] = full_selection
-                    self.injury_element["injury_info"].set_text(
-                        f"injuries: {full_selection}"
-                    )
-                    self.injury_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(self.injury_element["injury_info"])
-                    changed = True
-
-            # SCAR LIST
-            if self.injury_element.get("scar_list"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    self.injury_element["scar_list"].selected_list
-                    != selected_info["injuries"]
-                ):
-                    selected_info["scars"] = self.injury_element[
-                        "scar_list"
-                    ].selected_list.copy()
-                    self.injury_element["scar_info"].set_text(
-                        f"scars: {selected_info['scars']}"
-                    )
-                    self.injury_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(self.injury_element["scar_info"])
-                    changed = True
-
-        elif self.open_block == "history":
-            # CONSTRAINT DISPLAY
-            if self.selected_history_block_index and not self.history_element.get(
-                "constraint_container"
-            ):
-                self.display_history_constraints()
-            elif not self.selected_history_block_index:
-                self.clear_history_constraints()
-
-            # SELECT NEW BLOCK
-            if self.history_element.get("lead_history_input"):
-                selected_history = (
-                    [str(self.selected_history_block_index)]
-                    if self.selected_history_block_index
-                    else []
-                )
-                if self.history_element["block_list"].selected_list != selected_history:
-                    self.update_history_block_options()
-
-            # CAT LIST
-            if self.history_element.get("cats_list"):
-                selected_info = self.get_selected_block_info()
-                used_cats = []
-                for block in self.history_block_list:
-                    used_cats.extend(block["cats"])
-                if (
-                    self.history_element["cats_list"].selected_list
-                    != selected_info["cats"]
-                ):
-                    selected_info["cats"] = self.history_element[
-                        "cats_list"
-                    ].selected_list.copy()
-                    self.history_element["cats_info"].set_text(
-                        f"cats: {selected_info['cats']}"
-                    )
-                    self.history_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(self.history_element["cats_info"])
-                    changed = True
-
-                for name, button in self.history_element["cats_list"].buttons.items():
-                    if name in used_cats and name not in selected_info["cats"]:
-                        button.disable()
-                    else:
-                        button.enable()
-
-            # TEXT ENTRY
-            if self.history_element.get("scar_history_input"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    selected_info["scar"]
-                    != self.history_element["scar_history_input"].get_text()
-                ):
-                    selected_info["scar"] = self.history_element[
-                        "scar_history_input"
-                    ].get_text()
-                    changed = True
-            if self.history_element.get("reg_history_input"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    selected_info["reg_death"]
-                    != self.history_element["reg_history_input"].get_text()
-                ):
-                    selected_info["reg_death"] = self.history_element[
-                        "reg_history_input"
-                    ].get_text()
-                    changed = True
-            if self.history_element.get("lead_history_input"):
-                selected_info = self.get_selected_block_info()
-                if (
-                    selected_info["lead_death"]
-                    != self.history_element["lead_history_input"].get_text()
-                ):
-                    selected_info["lead_death"] = self.history_element[
-                        "lead_history_input"
-                    ].get_text()
-                    changed = True
-
-        elif self.open_block == "relationships":
-            # CONSTRAINT DISPLAY
-            if (
-                self.selected_relationships_block_index
-                and not self.relationships_element.get("constraint_container")
-            ):
-                self.display_relationships_constraints()
-            elif not self.selected_relationships_block_index:
-                self.clear_relationships_constraints()
-
-            if self.relationships_element.get("amount_down_high_button"):
-                selected_relationship = (
-                    [str(self.selected_relationships_block_index)]
-                    if self.selected_relationships_block_index
-                    else []
-                )
-                selected_info = self.get_selected_block_info()
-
-                # SELECT NEW BLOCK
-                if (
-                    self.relationships_element["block_list"].selected_list
-                    != selected_relationship
-                ):
-                    self.update_relationships_block_options()
-
-                # CAT LIST
-                elif (
-                    self.relationships_element["cats_from_list"].selected_list
-                    != selected_info["cats_from"]
-                ):
-                    selected_info["cats_from"] = self.relationships_element[
-                        "cats_from_list"
-                    ].selected_list.copy()
-                    for name, button in self.relationships_element[
-                        "cats_to_list"
-                    ].buttons.items():
-                        if name in selected_info["cats_from"]:
-                            button.disable()
-                        else:
-                            button.enable()
-                    self.relationships_element["cats_from_info"].set_text(
-                        f"cats: {selected_info['cats_from']}"
-                    )
-                    self.relationships_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(
-                        self.relationships_element["cats_from_info"]
-                    )
-                    changed = True
-                elif (
-                    self.relationships_element["cats_to_list"].selected_list
-                    != selected_info["cats_to"]
-                ):
-                    selected_info["cats_to"] = self.relationships_element[
-                        "cats_to_list"
-                    ].selected_list.copy()
-                    for name, button in self.relationships_element[
-                        "cats_from_list"
-                    ].buttons.items():
-                        if name in selected_info["cats_to"]:
-                            button.disable()
-                        else:
-                            button.enable()
-                    self.relationships_element["cats_to_info"].set_text(
-                        f"cats: {selected_info['cats_to']}"
-                    )
-                    self.relationships_element[
-                        "constraint_container"
-                    ].on_contained_elements_changed(
-                        self.relationships_element["cats_to_info"]
-                    )
-                    changed = True
-
-                # VALUES
-                elif (
-                    self.relationships_element["values_list"].selected_list
-                    != selected_info["values"]
-                ):
-                    selected_info["values"] = self.relationships_element[
-                        "values_list"
-                    ].selected_list.copy()
-                    self.relationships_element["values_info"].set_text(
-                        f"values: {selected_info['values']}"
-                    )
-                    changed = True
-
-        if changed:
-            self.update_block_info()
-
-    def handle_new_cat_on_use(self):
-        # NEW CAT CONSTRAINT DISPLAY
-        if self.selected_new_cat and not self.new_cat_element.get("checkbox_container"):
-            self.display_new_cat_constraints()
-
-        elif not self.selected_new_cat and self.new_cat_element.get(
-            "checkbox_container"
-        ):
-            self.clear_new_cat_constraints()
-        # CHANGE SELECTED CAT
-        if self.new_cat_editor.get("cat_list"):
-            self.new_cat_select()
-        # CAT CONNECTIONS
-        if self.connections_element.get("cat_list"):
-            new_selection = (
-                self.connections_element["cat_list"].selected_list.copy()
-                if self.connections_element["cat_list"].selected_list
-                else []
-            )
-            if self.selected_new_cat_info[self.open_connection] != new_selection:
-                self.selected_new_cat_info[self.open_connection] = new_selection
-                self.connections_element["display"].set_text(
-                    f"chosen cats: {new_selection}"
-                )
-        self.handle_main_and_random_cat_on_use()
-        self.update_new_cat_tags()
-
     # INFO DISPLAY UPDATES
     def update_block_info(self):
         """
         Update the block's full text display
         """
+
         attr = self.get_block_attributes()
         if attr["selected"]:
             text = "<br>".join(
@@ -3032,11 +2925,81 @@ class EventEditScreen(Screens):
             )
         else:
             text = "No block selected"
+
+        if not attr.get("display"):
+            return
+
         attr["display"].set_text(text)
 
-        self.editor_container.on_contained_elements_changed(
-            self.editor_element[f"{self.open_block}_start"]
+        if self.editor_element.get(f"{self.open_block}_start"):
+            self.editor_container.on_contained_elements_changed(
+                self.editor_element[f"{self.open_block}_start"]
+            )
+
+    def update_future_block_options(self):
+        if not self.future_element.get("sub_dropdown"):
+            return
+
+        self.selected_future_block_index = (
+            self.future_element["block_list"].selected_list.copy()[0]
+            if self.future_element["block_list"].selected_list
+            else ""
         )
+        if self.selected_future_block_index:
+            selected_constraints = self.future_block_list[
+                int(self.selected_future_block_index)
+            ]
+        else:
+            selected_constraints = self.future_template.copy()
+
+        # TYPE
+        self.future_element["type_dropdown"].set_selected_list(
+            [selected_constraints["event_type"]]
+        )
+
+        # POOL
+        pool = selected_constraints["pool"]
+        self.future_element["sub_dropdown"].set_selected_list(pool["subtype"].copy())
+        self.future_element["sub_display"].set_text(f"subtype: {pool['subtype']}")
+
+        if pool.get("event_id"):
+            text = ""
+            for event_id in pool["event_id"]:
+                text += f"'{event_id}'<br>"
+            self.future_element["include_display"].set_text(text)
+        if pool.get("excluded_event_id"):
+            text = ""
+            for event_id in pool.get("excluded_event_id"):
+                text += f"'{event_id}'<br>"
+            self.future_element["exclude_display"].set_text(text)
+
+        # DELAY
+        self.future_element["least_entry"].set_text(
+            str(selected_constraints["moon_delay"][0])
+        )
+        self.future_element["most_entry"].set_text(
+            str(selected_constraints["moon_delay"][1])
+        )
+
+        # INVOLVED CATS
+        if (
+            "murder_reveal" in pool["subtype"]
+            or (selected_constraints["event_type"] == "misc" and not pool["subtype"])
+            and "mur_c" not in selected_constraints["involved_cats"]
+        ):
+            selected_constraints["involved_cats"] = {
+                "m_c": "r_c",
+                "mur_c": "m_c",
+                "r_c": None,
+            }
+
+        self.available_cats = self.get_involved_cats(include_clan=False)
+        if "new random cat" not in self.available_cats:
+            self.available_cats.append("new random cat")
+
+        self.create_involved_cats_editor(selected_constraints)
+
+        self.update_block_info()
 
     def update_supply_block_options(self):
         if not self.supply_element.get("adjust_list"):
@@ -3604,7 +3567,7 @@ class EventEditScreen(Screens):
         for rank, box in self.rank_tag_checkbox.items():
             if "text" in rank:
                 continue
-            tag = f"clan:{rank}".replace(" ", "_")
+            tag = f"clan:{rank}"
             if box.checked and tag not in self.tag_info:
                 self.tag_info.append(tag)
             elif not box.checked and tag in self.tag_info:
@@ -3713,6 +3676,451 @@ class EventEditScreen(Screens):
             self.type_element["display"].set_text("chosen subtypes: []")
 
     # ON USE FUNCS
+    def handle_future_on_use(self):
+        # FUTURE CONSTRAINT DISPLAY
+        if self.selected_future_block_index and not self.future_element.get(
+            "m_c_involved_dropdown"
+        ):
+            self.display_future_constraints()
+        elif not self.selected_future_block_index:
+            self.clear_future_constraints()
+        # SELECT NEW FUTURE BLOCK
+        if self.future_element.get(
+            "block_list"
+        ).selected_list and not self.future_element.get("m_c_involved_dropdown"):
+            self.display_future_constraints()
+        if self.future_element.get("m_c_involved_dropdown"):
+            selected_block = (
+                [str(self.selected_future_block_index)]
+                if self.selected_future_block_index
+                else []
+            )
+            if self.future_element["block_list"].selected_list != selected_block:
+                self.update_future_block_options()
+
+        if not self.future_element.get("m_c_involved_dropdown"):
+            return
+        block_info = self.get_selected_block_info()
+
+        # TYPE CHANGE
+        if (
+            self.future_element.get("type_dropdown")
+            and self.future_element["type_dropdown"].selected_list[0]
+            != block_info["event_type"]
+        ):
+            # update block info
+            block_info["event_type"] = self.future_element[
+                "type_dropdown"
+            ].selected_list.copy()[0]
+            # update available subtypes
+            self.future_element["sub_dropdown"].set_selected_list([])
+            self.future_element["sub_dropdown"].new_item_list(
+                self.event_types[block_info["event_type"]]
+            )
+            block_info["pool"]["subtype"] = []
+
+        # SUB CHANGE
+        elif (
+            self.future_element.get("sub_dropdown")
+            and self.future_element["sub_dropdown"].selected_list
+            != block_info["pool"]["subtype"]
+        ):
+            # update block info
+            block_info["pool"]["subtype"] = self.future_element[
+                "sub_dropdown"
+            ].selected_list.copy()
+            # update display
+            self.future_element["sub_display"].set_text(
+                f"subtype:{block_info['pool']['subtype']}"
+            )
+
+            if "murder_reveal" in block_info["pool"]["subtype"]:
+                block_info["involved_cats"] = {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": None,
+                }
+            else:
+                block_info["involved_cats"] = {"m_c": None, "r_c": None}
+            self.create_involved_cats_editor()
+
+        # INVOLVED CATS
+        else:
+            for cat in block_info["involved_cats"]:
+                if (
+                    self.future_element[f"{cat}_involved_dropdown"].selected_list
+                    != block_info["involved_cats"][cat]
+                ):
+                    block_info["involved_cats"][cat] = self.future_element[
+                        f"{cat}_involved_dropdown"
+                    ].selected_list.copy()[0]
+
+    def handle_outside_on_use(self):
+        # SUPPLY CONSTRAINT DISPLAY
+        if self.selected_supply_block_index and not self.supply_element.get(
+            "constraint_container"
+        ):
+            self.display_supply_constraints()
+        elif not self.selected_supply_block_index:
+            self.clear_supply_constraints()
+        # SELECT NEW SUPPLY BLOCK
+        if self.supply_element.get(
+            "block_list"
+        ).selected_list and not self.supply_element.get("adjust_list"):
+            self.display_supply_constraints()
+        if self.supply_element.get("adjust_list"):
+            selected_block = (
+                [str(self.selected_supply_block_index)]
+                if self.selected_supply_block_index
+                else []
+            )
+            if self.supply_element["block_list"].selected_list != selected_block:
+                self.update_supply_block_options()
+        # OUTSIDER
+        if self.outsider_element.get("list"):
+            if (
+                self.outsider_element["list"].selected_list
+                != self.outsider_info["current_rep"]
+            ):
+                self.outsider_info["current_rep"] = self.outsider_element[
+                    "list"
+                ].selected_list.copy()
+                self.outsider_element["display"].set_text(f"{self.outsider_info}")
+        # OTHER CLAN
+        if self.other_clan_element.get("list"):
+            if (
+                self.other_clan_element["list"].selected_list
+                != self.other_clan_info["current_rep"]
+            ):
+                self.other_clan_info["current_rep"] = self.other_clan_element[
+                    "list"
+                ].selected_list.copy()
+                self.other_clan_element["display"].set_text(f"{self.other_clan_info}")
+        # SUPPLY TYPE
+        changed = False
+        selected_info = self.get_selected_block_info()
+        if self.supply_element.get("adjust_list"):
+            new_type = [selected_info["type"]] if selected_info["type"] else []
+            new_adjust = [selected_info["adjust"]] if selected_info["adjust"] else []
+
+            # TYPE
+            if self.supply_element["type_list"].selected_list != new_type:
+                selected_info["type"] = (
+                    self.supply_element["type_list"].selected_list[0]
+                    if self.supply_element["type_list"].selected_list
+                    else ""
+                )
+                changed = True
+
+            # TRIGGER
+            elif (
+                self.supply_element["trigger_list"].selected_list
+                != selected_info["trigger"]
+            ):
+                selected_info["trigger"] = self.supply_element[
+                    "trigger_list"
+                ].selected_list.copy()
+                changed = True
+
+            # ADJUST
+            elif self.supply_element["adjust_list"].selected_list != new_adjust:
+                # gotta be a little careful here, since the "increase" tag changes upon user input
+                new_tag = (
+                    self.supply_element["adjust_list"].selected_list.copy()[0]
+                    if self.supply_element["adjust_list"].selected_list
+                    else ""
+                )
+                tag_change = True
+                if "increase_" in new_tag and "increase_" in selected_info["adjust"]:
+                    tag_change = False
+
+                if tag_change:
+                    selected_info["adjust"] = new_tag
+
+                self.create_supply_increase_editor()
+                changed = True
+        if changed:
+            self.update_block_info()
+
+    def handle_personal_on_use(self):
+        # EXCLUDE
+        if self.exclusion_element.get("cat_list"):
+            if self.exclusion_element["cat_list"].selected_list != self.excluded_cats:
+                self.excluded_cats = self.exclusion_element[
+                    "cat_list"
+                ].selected_list.copy()
+                self.exclusion_element["display"].set_text(
+                    f"exclude_involved: {self.excluded_cats}"
+                )
+
+        changed = False
+
+        if self.open_block == "injury":
+            # CONSTRAINT DISPLAY
+            if self.selected_injury_block and not self.injury_element.get(
+                "constraint_container"
+            ):
+                self.display_injury_constraints()
+            elif not self.selected_injury_block:
+                self.clear_injury_constraints()
+
+            # SELECT NEW BLOCK
+            if self.injury_element.get("scar_list"):
+                selected_injury = (
+                    [str(self.selected_injury_block)]
+                    if self.selected_injury_block
+                    else []
+                )
+                if self.injury_element["block_list"].selected_list != selected_injury:
+                    self.update_injury_block_options()
+
+            # CAT LIST
+            if self.injury_element.get("cats_list"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    self.injury_element["cats_list"].selected_list
+                    != selected_info["cats"]
+                ):
+                    selected_info["cats"] = self.injury_element[
+                        "cats_list"
+                    ].selected_list.copy()
+                    self.injury_element["cats_info"].set_text(
+                        f"cats: {selected_info['cats']}"
+                    )
+                    self.injury_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.injury_element["cats_info"])
+                    changed = True
+
+            # INJURY LIST
+            if self.injury_element.get("individual_injuries"):
+                full_selection = (
+                    self.injury_element["injury_pools"].selected_list
+                    + self.injury_element["individual_injuries"].selected_list
+                )
+                selected_info = self.get_selected_block_info()
+                if full_selection != selected_info["injuries"]:
+                    selected_info["injuries"] = full_selection
+                    self.injury_element["injury_info"].set_text(
+                        f"injuries: {full_selection}"
+                    )
+                    self.injury_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.injury_element["injury_info"])
+                    changed = True
+
+            # SCAR LIST
+            if self.injury_element.get("scar_list"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    self.injury_element["scar_list"].selected_list
+                    != selected_info["injuries"]
+                ):
+                    selected_info["scars"] = self.injury_element[
+                        "scar_list"
+                    ].selected_list.copy()
+                    self.injury_element["scar_info"].set_text(
+                        f"scars: {selected_info['scars']}"
+                    )
+                    self.injury_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.injury_element["scar_info"])
+                    changed = True
+
+        elif self.open_block == "history":
+            # CONSTRAINT DISPLAY
+            if self.selected_history_block_index and not self.history_element.get(
+                "constraint_container"
+            ):
+                self.display_history_constraints()
+            elif not self.selected_history_block_index:
+                self.clear_history_constraints()
+
+            # SELECT NEW BLOCK
+            if self.history_element.get("lead_history_input"):
+                selected_history = (
+                    [str(self.selected_history_block_index)]
+                    if self.selected_history_block_index
+                    else []
+                )
+                if self.history_element["block_list"].selected_list != selected_history:
+                    self.update_history_block_options()
+
+            # CAT LIST
+            if self.history_element.get("cats_list"):
+                selected_info = self.get_selected_block_info()
+                used_cats = []
+                for block in self.history_block_list:
+                    used_cats.extend(block["cats"])
+                if (
+                    self.history_element["cats_list"].selected_list
+                    != selected_info["cats"]
+                ):
+                    selected_info["cats"] = self.history_element[
+                        "cats_list"
+                    ].selected_list.copy()
+                    self.history_element["cats_info"].set_text(
+                        f"cats: {selected_info['cats']}"
+                    )
+                    self.history_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(self.history_element["cats_info"])
+                    changed = True
+
+                for name, button in self.history_element["cats_list"].buttons.items():
+                    if name in used_cats and name not in selected_info["cats"]:
+                        button.disable()
+                    else:
+                        button.enable()
+
+            # TEXT ENTRY
+            if self.history_element.get("scar_history_input"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    selected_info["scar"]
+                    != self.history_element["scar_history_input"].get_text()
+                ):
+                    selected_info["scar"] = self.history_element[
+                        "scar_history_input"
+                    ].get_text()
+                    changed = True
+            if self.history_element.get("reg_history_input"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    selected_info["reg_death"]
+                    != self.history_element["reg_history_input"].get_text()
+                ):
+                    selected_info["reg_death"] = self.history_element[
+                        "reg_history_input"
+                    ].get_text()
+                    changed = True
+            if self.history_element.get("lead_history_input"):
+                selected_info = self.get_selected_block_info()
+                if (
+                    selected_info["lead_death"]
+                    != self.history_element["lead_history_input"].get_text()
+                ):
+                    selected_info["lead_death"] = self.history_element[
+                        "lead_history_input"
+                    ].get_text()
+                    changed = True
+
+        elif self.open_block == "relationships":
+            # CONSTRAINT DISPLAY
+            if (
+                self.selected_relationships_block_index
+                and not self.relationships_element.get("constraint_container")
+            ):
+                self.display_relationships_constraints()
+            elif not self.selected_relationships_block_index:
+                self.clear_relationships_constraints()
+
+            if self.relationships_element.get("amount_down_high_button"):
+                selected_relationship = (
+                    [str(self.selected_relationships_block_index)]
+                    if self.selected_relationships_block_index
+                    else []
+                )
+                selected_info = self.get_selected_block_info()
+
+                # SELECT NEW BLOCK
+                if (
+                    self.relationships_element["block_list"].selected_list
+                    != selected_relationship
+                ):
+                    self.update_relationships_block_options()
+
+                # CAT LIST
+                elif (
+                    self.relationships_element["cats_from_list"].selected_list
+                    != selected_info["cats_from"]
+                ):
+                    selected_info["cats_from"] = self.relationships_element[
+                        "cats_from_list"
+                    ].selected_list.copy()
+                    for name, button in self.relationships_element[
+                        "cats_to_list"
+                    ].buttons.items():
+                        if name in selected_info["cats_from"]:
+                            button.disable()
+                        else:
+                            button.enable()
+                    self.relationships_element["cats_from_info"].set_text(
+                        f"cats: {selected_info['cats_from']}"
+                    )
+                    self.relationships_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(
+                        self.relationships_element["cats_from_info"]
+                    )
+                    changed = True
+                elif (
+                    self.relationships_element["cats_to_list"].selected_list
+                    != selected_info["cats_to"]
+                ):
+                    selected_info["cats_to"] = self.relationships_element[
+                        "cats_to_list"
+                    ].selected_list.copy()
+                    for name, button in self.relationships_element[
+                        "cats_from_list"
+                    ].buttons.items():
+                        if name in selected_info["cats_to"]:
+                            button.disable()
+                        else:
+                            button.enable()
+                    self.relationships_element["cats_to_info"].set_text(
+                        f"cats: {selected_info['cats_to']}"
+                    )
+                    self.relationships_element[
+                        "constraint_container"
+                    ].on_contained_elements_changed(
+                        self.relationships_element["cats_to_info"]
+                    )
+                    changed = True
+
+                # VALUES
+                elif (
+                    self.relationships_element["values_list"].selected_list
+                    != selected_info["values"]
+                ):
+                    selected_info["values"] = self.relationships_element[
+                        "values_list"
+                    ].selected_list.copy()
+                    self.relationships_element["values_info"].set_text(
+                        f"values: {selected_info['values']}"
+                    )
+                    changed = True
+
+        if changed:
+            self.update_block_info()
+
+    def handle_new_cat_on_use(self):
+        # NEW CAT CONSTRAINT DISPLAY
+        if self.selected_new_cat and not self.new_cat_element.get("checkbox_container"):
+            self.display_new_cat_constraints()
+
+        elif not self.selected_new_cat and self.new_cat_element.get(
+            "checkbox_container"
+        ):
+            self.clear_new_cat_constraints()
+        # CHANGE SELECTED CAT
+        if self.new_cat_editor.get("cat_list"):
+            self.new_cat_select()
+        # CAT CONNECTIONS
+        if self.connections_element.get("cat_list"):
+            new_selection = (
+                self.connections_element["cat_list"].selected_list.copy()
+                if self.connections_element["cat_list"].selected_list
+                else []
+            )
+            if self.selected_new_cat_info[self.open_connection] != new_selection:
+                self.selected_new_cat_info[self.open_connection] = new_selection
+                self.connections_element["display"].set_text(
+                    f"chosen cats: {new_selection}"
+                )
+        self.handle_main_and_random_cat_on_use()
+        self.update_new_cat_tags()
+
     def handle_main_and_random_cat_on_use(self):
         # RANKS
         if self.rank_element.get("dropdown") and self.rank_element[
@@ -3841,7 +4249,345 @@ class EventEditScreen(Screens):
             self.season_info = self.season_element["dropdown"].selected_list.copy()
             self.update_season_info()
 
-    # EDITOR GENERATION
+    # FUTURE EFFECTS EDITOR
+    def generate_future_tab(self):
+        self.open_block = "future"
+
+        self.future_element["text"] = UITextBoxTweaked(
+            "screens.event_edit.future_info",
+            ui_scale(pygame.Rect((0, 10), (295, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+        )
+
+        self.future_element["frame"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((12, 20), (112, 186))),
+            get_box(BoxStyles.FRAME, (112, 186)),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"left_target": self.future_element["text"]},
+        )
+
+        self.future_element["block_list"] = UIScrollingButtonList(
+            pygame.Rect((20, 28), (100, 168)),
+            item_list=(
+                [str(index) for index in range(len(self.future_block_list))]
+                if self.future_block_list
+                else []
+            ),
+            button_dimensions=(96, 30),
+            multiple_choice=False,
+            disable_selection=True,
+            container=self.editor_container,
+            manager=MANAGER,
+            anchors={"left_target": self.future_element["text"]},
+        )
+
+        self.future_element["add"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((30, 4), (36, 36))),
+            "+",
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            manager=MANAGER,
+            object_id="@buttonstyles_icon_tab_bottom",
+            container=self.editor_container,
+            anchors={
+                "top_target": self.future_element["block_list"],
+                "left_target": self.future_element["text"],
+            },
+            tool_tip_text="add a new block",
+        )
+
+        self.future_element["delete"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((5, 4), (36, 36))),
+            "-",
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            manager=MANAGER,
+            object_id="@buttonstyles_icon_tab_bottom",
+            container=self.editor_container,
+            anchors={
+                "top_target": self.future_element["block_list"],
+                "left_target": self.future_element["add"],
+            },
+            tool_tip_text="delete selected block",
+        )
+
+        self.create_lock(
+            name=f"future", top_anchor=self.future_element["text"], x_offset=260
+        )
+        self.create_divider(self.future_element["delete"], "future_start")
+
+        if self.future_block_list and not self.selected_future_block_index:
+            self.selected_future_block_index = "0"
+            self.future_element["block_list"].set_selected_list(
+                [self.selected_future_block_index]
+            )
+            self.display_future_constraints()
+
+    def clear_future_constraints(self):
+        for name in self.future_element.copy().keys():
+            if name in [
+                "text",
+                "display",
+                "frame",
+                "block_list",
+                "add",
+                "delete",
+            ]:
+                continue
+            self.future_element[name].kill()
+            self.future_element.pop(name)
+        for name in self.editor_element.copy().keys():
+            if name in ["future_type", "future_pool", "future_delay"]:
+                self.editor_element[name].kill()
+                self.editor_element.pop(name)
+
+    def display_future_constraints(self):
+        self.clear_future_constraints()
+        block_info = self.get_selected_block_info()
+        # TYPE
+        self.future_element["type_text"] = UITextBoxTweaked(
+            "<b>event_type:</b>",
+            ui_scale(pygame.Rect((0, 10), (-1, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            anchors={"top_target": self.editor_element["future_start"]},
+            container=self.editor_container,
+        )
+
+        self.future_element["type_dropdown"] = UIDropDown(
+            pygame.Rect((17, 17), (150, 30)),
+            parent_text="types",
+            item_list=list(self.event_types.keys()),
+            container=self.editor_container,
+            anchors={
+                "top_target": self.editor_element["future_start"],
+                "left_target": self.future_element["type_text"],
+            },
+            starting_height=3,
+            manager=MANAGER,
+            child_trigger_close=True,
+            parent_reflect_selection=True,
+            disable_selection=True,
+            starting_selection=[block_info["event_type"]],
+        )
+
+        self.create_divider(self.future_element["type_text"], "future_type", off_set=-2)
+
+        # POOL
+        self.future_element["pool_text"] = UITextBoxTweaked(
+            "screens.event_edit.pool_info",
+            ui_scale(pygame.Rect((0, 0), (400, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"top_target": self.editor_element["future_type"]},
+        )
+        self.future_element["sub_dropdown"] = UIDropDown(
+            pygame.Rect((10, 17), (150, 30)),
+            parent_text="subtypes",
+            item_list=self.event_types[
+                self.future_element["type_dropdown"].selected_list[0]
+            ],
+            container=self.editor_container,
+            anchors={
+                "top_target": self.future_element["pool_text"],
+            },
+            starting_height=3,
+            manager=MANAGER,
+            child_trigger_close=False,
+            multiple_choice=True,
+            disable_selection=False,
+            starting_selection=block_info["pool"]["subtype"].copy(),
+        )
+        self.future_element["sub_display"] = UITextBoxTweaked(
+            f"subtype:{block_info['pool']['subtype']}",
+            ui_scale(pygame.Rect((10, 60), (420, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"top_target": self.future_element["pool_text"]},
+        )
+        self.future_element["include_text"] = UITextBoxTweaked(
+            "event_id:",
+            ui_scale(pygame.Rect((10, 0), (-1, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"top_target": self.future_element["sub_display"]},
+        )
+        self.future_element["include_entry"] = pygame_gui.elements.UITextEntryLine(
+            ui_scale(pygame.Rect((0, 3), (260, 29))),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={
+                "top_target": self.future_element["sub_display"],
+                "left_target": self.future_element["include_text"],
+            },
+        )
+        self.future_element["include_display"] = UITextBoxTweaked(
+            f"{block_info['pool']['event_id'] if block_info['pool'].get('event_id') else''}",
+            ui_scale(pygame.Rect((10, 0), (-1, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"top_target": self.future_element["include_text"]},
+        )
+        self.future_element["exclude_text"] = UITextBoxTweaked(
+            "excluded_event_id:",
+            ui_scale(pygame.Rect((10, 0), (-1, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"top_target": self.future_element["include_display"]},
+        )
+        self.future_element["exclude_entry"] = pygame_gui.elements.UITextEntryLine(
+            ui_scale(pygame.Rect((0, 3), (200, 29))),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={
+                "top_target": self.future_element["include_display"],
+                "left_target": self.future_element["exclude_text"],
+            },
+        )
+        self.future_element["exclude_display"] = UITextBoxTweaked(
+            f"{block_info['pool']['excluded_event_id'] if block_info['pool'].get('excluded_event_id') else ''}",
+            ui_scale(pygame.Rect((10, 0), (-1, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"top_target": self.future_element["exclude_text"]},
+        )
+
+        self.create_divider(self.future_element["exclude_display"], "future_pool")
+
+        # DELAY
+        self.future_element["delay_text"] = UITextBoxTweaked(
+            "<b>moon_delay:</b>",
+            ui_scale(pygame.Rect((0, 10), (-1, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={"top_target": self.editor_element["future_pool"]},
+        )
+        self.future_element["least_entry"] = pygame_gui.elements.UITextEntryLine(
+            ui_scale(pygame.Rect((0, 13), (50, 29))),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={
+                "top_target": self.editor_element["future_pool"],
+                "left_target": self.future_element["delay_text"],
+            },
+            initial_text=str(block_info["moon_delay"][0]),
+        )
+        self.future_element["range_text"] = UITextBoxTweaked(
+            "-",
+            ui_scale(pygame.Rect((0, 10), (-1, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+            line_spacing=1,
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={
+                "top_target": self.editor_element["future_pool"],
+                "left_target": self.future_element["least_entry"],
+            },
+        )
+        self.future_element["most_entry"] = pygame_gui.elements.UITextEntryLine(
+            ui_scale(pygame.Rect((0, 13), (50, 29))),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={
+                "top_target": self.editor_element["future_pool"],
+                "left_target": self.future_element["range_text"],
+            },
+            initial_text=str(block_info["moon_delay"][1]),
+        )
+
+        self.create_divider(
+            self.future_element["most_entry"], "future_delay", off_set=-2
+        )
+        self.create_involved_cats_editor()
+        # we redefine this here because somehow subtypes were fucking it up. i've searched for a couple hours and found
+        # no discernable reason, but this fixes it.
+        self.future_template = {
+            "event_type": "death",
+            "pool": {
+                "subtype": [],
+                "event_id": [],
+                "excluded_event_id": [],
+            },
+            "moon_delay": [1, 1],
+            "involved_cats": {"m_c": None, "r_c": None},
+        }
+
+    def create_involved_cats_editor(self, selected_constraints=None):
+        # clear old ones
+        for name, ele in self.future_element.copy().items():
+            if "_involved_" in name:
+                ele.kill()
+                self.future_element.pop(name)
+
+        future_cats = self.get_selected_block_info()["involved_cats"]
+
+        if not self.available_cats:
+            self.available_cats = self.get_involved_cats(include_clan=False)
+        if "new random cat" not in self.available_cats:
+            self.available_cats.append("new random cat")
+
+        # make new ones
+        prev_element = None
+        for cat in future_cats:
+            # find what cat has been picked
+            selection = future_cats.get(cat)
+            if isinstance(selection, dict):
+                selection = "new random cat"
+
+            self.future_element[f"{cat}_involved_text"] = UITextBoxTweaked(
+                f"The future event's {self.test_cat_names[cat]} should be played by: ",
+                ui_scale(pygame.Rect((0, 10), (260, -1))),
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+                line_spacing=1,
+                manager=MANAGER,
+                container=self.editor_container,
+                anchors={
+                    "top_target": (
+                        self.editor_element["future_delay"]
+                        if not prev_element
+                        else prev_element
+                    )
+                },
+            )
+
+            self.future_element[f"{cat}_involved_dropdown"] = UIDropDown(
+                pygame.Rect((0, 20), (150, 30)),
+                parent_text="available cats",
+                item_list=self.available_cats,
+                container=self.editor_container,
+                anchors={
+                    "left_target": self.future_element[f"{cat}_involved_text"],
+                    "top_target": (
+                        self.editor_element["future_delay"]
+                        if not prev_element
+                        else prev_element
+                    ),
+                },
+                manager=MANAGER,
+                child_trigger_close=True,
+                parent_reflect_selection=True,
+                starting_selection=[selection] if selection else ["new random cat"],
+            )
+            prev_element = self.future_element[f"{cat}_involved_text"]
+
+    # OUTSIDE CONSEQUENCES EDITOR
     def generate_outside_tab(self):
         # OUTSIDER
         self.create_outsider_editor()
@@ -3851,8 +4597,6 @@ class EventEditScreen(Screens):
 
         # SUPPLY
         self.create_supply_editor()
-
-    # OUTSIDE CONSEQUENCES EDITOR
 
     def create_supply_editor(self):
         # INTRO
@@ -4129,7 +4873,7 @@ class EventEditScreen(Screens):
                 "top_target": self.editor_element["outsider"],
             },
             manager=MANAGER,
-            starting_selection=self.other_clan_info["current_rep"],
+            starting_selection=self.other_clan_info.get("current_rep"),
         )
         self.other_clan_element[f"entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((10, 123), (40, 29))),
@@ -4139,7 +4883,7 @@ class EventEditScreen(Screens):
                 "left_target": self.other_clan_element["text"],
                 "top_target": self.editor_element["outsider"],
             },
-            initial_text=str(self.other_clan_info["changed"]),
+            initial_text=str(self.other_clan_info.get("changed")),
         )
         prev_element = None
         for button, icon in self.amount_buttons.items():
@@ -4351,6 +5095,7 @@ class EventEditScreen(Screens):
         if self.lock_buttons:
             for ele in self.lock_buttons.values():
                 ele.kill()
+            self.lock_buttons.clear()
         if self.open_block == "injury":
             self.create_injury_editor()
             if self.injury_block_list:
@@ -5836,7 +6581,7 @@ class EventEditScreen(Screens):
         if self.current_cat_dict != self.selected_new_cat_info:
             label = "main" if self.current_cat_dict == self.main_cat_info else "random"
             self.create_lock(
-                name=f"{label}_trait",
+                name=f"{label}_backstory",
                 top_anchor=self.backstory_element["pools"],
                 left_anchor=self.backstory_element["display"],
             )
@@ -5940,7 +6685,7 @@ class EventEditScreen(Screens):
         )
         self.create_divider(self.trait_element["exclude_info"], "traits")
 
-    def create_skill_editor(self):
+    def create_skill_editor(self, prev_element=None):
         self.skill_element["text"] = UITextBoxTweaked(
             "screens.event_edit.skill_info",
             ui_scale(pygame.Rect((0, 14), (440, -1))),
@@ -5948,7 +6693,11 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.editor_element["rel_status"]},
+            anchors={
+                "top_target": self.editor_element["rel_status"]
+                if not prev_element
+                else prev_element
+            },
         )
         self.skill_element["paths"] = UIScrollingButtonList(
             pygame.Rect((30, 20), (140, 198)),
@@ -6073,9 +6822,15 @@ class EventEditScreen(Screens):
             anchors={"top_target": editor["intro"]},
             check=self.current_cat_dict["dies"],
         )
+        # this checks if death is requried and locks out user input
         if "death" in self.type_info and self.current_editor_tab == "main cat":
             self.death_element["checkbox"].check()
             self.death_element["checkbox"].disable()
+            self.current_cat_dict["dies"] = True
+
+        # this just checks if the cat's dict says they should die
+        if self.current_cat_dict["dies"] and not self.death_element["checkbox"].checked:
+            self.death_element["checkbox"].check()
 
         self.death_element["text"] = UITextBoxTweaked(
             "screens.event_edit.death_info",
@@ -6086,12 +6841,6 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={"top_target": editor["intro"]},
         )
-        if (
-            "death" in self.type_info
-            and self.current_cat_dict == self.main_cat_info
-            and not self.current_cat_dict["dies"]
-        ):
-            self.current_cat_dict["dies"] = True
 
         self.death_element["display"] = UITextBoxTweaked(
             f"dies: {self.current_cat_dict['dies']}",
@@ -6327,7 +7076,7 @@ class EventEditScreen(Screens):
         )
         self.create_divider(self.age_element["display"], "age")
 
-    def create_rank_editor(self):
+    def create_rank_editor(self, prev_element=None):
         self.rank_element["text"] = UITextBoxTweaked(
             "screens.event_edit.rank_info",
             ui_scale(pygame.Rect((0, 10), (220, -1))),
@@ -6335,7 +7084,11 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.editor_element["dies"]},
+            anchors={
+                "top_target": self.editor_element["dies"]
+                if not prev_element
+                else prev_element
+            },
         )
         self.rank_element["dropdown"] = UIScrollingDropDown(
             pygame.Rect((0, 28), (200, 30)),
@@ -6381,7 +7134,7 @@ class EventEditScreen(Screens):
         # TAGS
         self.create_tag_editor()
         # WEIGHT
-        self.create_weight_editor()
+        self.create_frequency_editor()
         # ACC
         self.create_acc_editor()
 
@@ -6393,7 +7146,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.weight_element["text"]},
+            anchors={"top_target": self.frequency_element["text"]},
         )
         prev_element = None
         for group in self.acc_categories.keys():
@@ -6494,9 +7247,9 @@ class EventEditScreen(Screens):
             ui_scale_dimensions((100, 100)),
         )
 
-    def create_weight_editor(self):
-        self.weight_element["text"] = UITextBoxTweaked(
-            "<b>* weight:</b>",
+    def create_frequency_editor(self):
+        self.frequency_element["text"] = UITextBoxTweaked(
+            "<b>frequency:</b>",
             ui_scale(pygame.Rect((0, 15), (-1, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
@@ -6504,23 +7257,23 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={"top_target": self.editor_element["tag"]},
         )
-        self.weight_element["entry"] = pygame_gui.elements.UITextEntryLine(
+        self.frequency_element["entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((0, 18), (50, 29))),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
                 "top_target": self.editor_element["tag"],
-                "left_target": self.weight_element["text"],
+                "left_target": self.frequency_element["text"],
             },
-            initial_text=f"{self.weight_info}",
+            initial_text=f"{self.frequency_info}",
         )
         self.create_lock(
-            name="weight",
+            name="frequency",
             top_anchor=self.editor_element["tag"],
-            left_anchor=self.weight_element["entry"],
+            left_anchor=self.frequency_element["entry"],
             x_offset=268,
         )
-        self.create_divider(self.weight_element["entry"], "weight", -10)
+        self.create_divider(self.frequency_element["entry"], "frequency", -10)
 
     def create_tag_editor(self):
         self.tag_element["collapse_container"] = UICollapsibleContainer(
@@ -6562,7 +7315,7 @@ class EventEditScreen(Screens):
         rank_list = Cat.rank_sort_order.copy()
         rank_list.append("apps")
         for rank in rank_list:
-            if f"clan_{rank}" in self.tag_info:
+            if f"clan:{rank}" in self.tag_info:
                 setting = True
             else:
                 setting = False
@@ -6804,7 +7557,7 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={"top_target": self.editor_element["event_id"]},
         )
-        biome_list = game.clan.BIOME_TYPES
+        biome_list = constants.BIOME_TYPES
         prev_element = None
         for biome in biome_list:
             y_pos = 10 if not prev_element else -2

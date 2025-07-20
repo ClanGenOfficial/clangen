@@ -9,8 +9,16 @@ from pygame_gui.core import ObjectID
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.clan_package.settings import get_clan_setting
+from scripts.game_structure import image_cache, constants
+from scripts.cat.enums import CatGroup
 from scripts.game_structure.audio import music_manager
+from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure.game.switches import (
+    switch_set_value,
+    switch_get_value,
+    Switch,
+)
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
@@ -52,10 +60,10 @@ class Screens:
         game.last_screen_forupdate = self.name
 
         # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in ("camp screen", "list screen", "events screen"):
+        if self.name in ["camp screen", "list screen", "events screen"]:
             game.last_screen_forProfile = self.name
 
-        if new_screen not in (
+        if new_screen not in [
             "list screen",
             "profile screen",
             "sprite inspect screen",
@@ -68,17 +76,17 @@ class Screens:
             "see kits screen",
             "mediation screen",
             "change gender screen",
-        ):
+        ]:
             game.last_list_forProfile = None
             self.current_group = "your_clan"
-            self.death_status = "living"
+            self.death_page = "living"
             self.current_page = 1
 
-        game.switches["cur_screen"] = new_screen
+        switch_set_value(Switch.cur_screen, new_screen)
         game.switch_screens = True
         game.rpc.update_rpc.set()
         if game.clan:
-            if game.clan.clan_settings["moons and seasons"]:
+            if get_clan_setting("moons and seasons"):
                 x_shift = 1358
                 y_shift = 70
                 if new_screen == "events screen":
@@ -109,11 +117,11 @@ class Screens:
         self.work_done = {}
 
         bg = pygame.Surface(scripts.game_structure.screen_settings.game_screen_size)
-        bg.fill(game.config["theme"]["light_mode_background"])
+        bg.fill(constants.CONFIG["theme"]["light_mode_background"])
         bg_dark = pygame.Surface(
             scripts.game_structure.screen_settings.game_screen_size
         )
-        bg_dark.fill(game.config["theme"]["dark_mode_background"])
+        bg_dark.fill(constants.CONFIG["theme"]["dark_mode_background"])
 
         self.game_bgs = {}
         self.fullscreen_bgs = {}
@@ -231,17 +239,17 @@ class Screens:
         for name, button in cls.menu_buttons.items():
             if name == "dens":
                 if (
-                    game.clan.clan_settings["moons and seasons"]
-                    and game.switches["cur_screen"] == "events screen"
+                    get_clan_setting("moons and seasons")
+                    and switch_get_value(Switch.cur_screen) == "events screen"
                 ):
                     button.show()
                 elif (
-                    not game.clan.clan_settings["moons and seasons"]
-                    and game.switches["cur_screen"] != "camp screen"
+                    not get_clan_setting("moons and seasons")
+                    and switch_get_value(Switch.cur_screen) != "camp screen"
                 ):
                     button.show()
                 button.hide()
-            if name in (
+            if name in [
                 "moons_n_seasons",
                 "moons_n_seasons_arrow",
                 "dens",
@@ -252,7 +260,7 @@ class Screens:
                 "dens_bar",
                 "mute_button",
                 "unmute_button",
-            ):
+            ]:
                 continue
             else:
                 button.show()
@@ -313,17 +321,19 @@ class Screens:
             self.change_screen("patrol screen")
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
             SaveCheck(
-                game.switches["cur_screen"], True, Screens.menu_buttons["main_menu"]
+                switch_get_value(Switch.cur_screen),
+                True,
+                Screens.menu_buttons["main_menu"],
             )
         elif event.ui_element == Screens.menu_buttons["allegiances"]:
             self.change_screen("allegiances screen")
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
             self.change_screen("clan settings screen")
         elif event.ui_element == Screens.menu_buttons["moons_n_seasons_arrow"]:
-            if game.switches["moon&season_open"]:
-                game.switches["moon&season_open"] = False
-            else:
-                game.switches["moon&season_open"] = True
+            switch_set_value(
+                Switch.moon_and_seasons_open,
+                not switch_get_value(Switch.moon_and_seasons_open),
+            )
             self.update_moon_and_season()
         elif event.ui_element == Screens.menu_buttons["dens"]:
             self.update_dens()
@@ -545,7 +555,7 @@ class Screens:
                 }
             )
 
-        if game.switches["cur_screen"] != "camp screen":
+        if switch_get_value(Switch.cur_screen) != "camp screen":
             cls.menu_buttons.update(
                 {
                     "dens": UIImageButton(
@@ -563,12 +573,12 @@ class Screens:
     def update_moon_and_season(cls):
         """Updates the moons and seasons widget."""
         if (
-            game.clan.clan_settings["moons and seasons"]
-            and game.switches["cur_screen"] != "events screen"
+            get_clan_setting("moons and seasons")
+            and switch_get_value(Switch.cur_screen) != "events screen"
         ):
             cls.menu_buttons["moons_n_seasons_arrow"].kill()
             cls.menu_buttons["moons_n_seasons"].kill()
-            if game.switches["moon&season_open"]:
+            if switch_get_value(Switch.moon_and_seasons_open):
                 if cls.name == "events screen":
                     cls.close_moon_and_season()
                 else:
@@ -723,8 +733,8 @@ class Screens:
         # intialise the vignette strength
         vignette = scripts.screens.screens_core.screens_core.vignette
         if vignette_alpha is None:
-            vignette_alpha = game.config["theme"]["fullscreen_background"][
-                "dark" if game.settings["dark mode"] else "light"
+            vignette_alpha = constants.CONFIG["theme"]["fullscreen_background"][
+                "dark" if game_setting_get("dark mode") else "light"
             ]["vignette_alpha"]
         if not (0 <= vignette_alpha <= 255):
             raise Exception("Vignette alpha out of range. Permitted values: 0-255.")
@@ -839,11 +849,11 @@ class Screens:
 
         if self.active_blur_bg == "default" or self.active_blur_bg == season:
             blur_bg = season_bg
-        elif self.name in (
+        elif self.name in [
             "start screen",
             "settings screen",
             "switch clan screen",
-        ):
+        ]:
             # if we're in the main menu levels, display the main menu bg
             blur_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[
                 theme
@@ -898,15 +908,12 @@ class Screens:
 
     def set_cat_location_bg(self, cat, bg: str = "default"):
         if cat.dead and not cat.faded:
-            blur_bg = (
-                "darkforest"
-                if cat.df
-                else (
-                    "unknown_residence"
-                    if cat.ID in game.clan.unknown_cats
-                    else "starclan"
-                )
-            )
+            if cat.status.group == CatGroup.STARCLAN:
+                blur_bg = "starclan"
+            elif cat.status.group == CatGroup.DARK_FOREST:
+                blur_bg = "darkforest"
+            else:
+                blur_bg = "unknown_residence"
             self.set_bg(bg=bg, blur_bg=blur_bg)
         else:
             self.set_bg(bg=bg)
@@ -937,7 +944,7 @@ class Screens:
     @property
     def theme(self) -> str:
         try:
-            return "dark" if game.settings["dark mode"] else "light"
+            return "dark" if game_setting_get("dark mode") else "light"
         except AttributeError:
             with open(
                 "resources/gamesettings.json", "r", encoding="utf-8"
@@ -953,16 +960,14 @@ class Screens:
             self, "next_cat_button"
         ):
             return
-        (
-            self.previous_cat_button.enable()
-            if hasattr(self, "previous_cat") and self.previous_cat
-            else self.previous_cat_button.disable()
-        )
-        (
-            self.next_cat_button.enable()
-            if hasattr(self, "next_cat") and self.next_cat
-            else self.next_cat_button.disable()
-        )
+
+        self.previous_cat_button.enable() if hasattr(
+            self, "previous_cat"
+        ) and self.previous_cat else self.previous_cat_button.disable()
+
+        self.next_cat_button.enable() if hasattr(
+            self, "next_cat"
+        ) and self.next_cat else self.next_cat_button.disable()
 
     # pragma pylint: enable=no-member
 

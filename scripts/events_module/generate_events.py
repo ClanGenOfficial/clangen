@@ -14,14 +14,17 @@ from scripts.events_module.event_filters import (
     event_for_freshkill_supply,
     event_for_herb_supply,
     event_for_clan_relations,
+    cat_for_event,
 )
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
+from scripts.game_structure import constants
+from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_living_clan_cat_count,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 def get_resource_directory(fallback=False):
@@ -36,15 +39,6 @@ def get_resource_directory(fallback=False):
 class GenerateEvents:
     loaded_events = {}
 
-    INJURY_DISTRIBUTION = None
-    with open(
-        f"resources/dicts/conditions/event_injuries_distribution.json",
-        "r",
-        encoding="utf-8",
-    ) as read_file:
-        INJURY_DISTRIBUTION = ujson.loads(read_file.read())
-
-    INJURIES = None
     with open(
         f"resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
     ) as read_file:
@@ -107,12 +101,13 @@ class GenerateEvents:
         GenerateEvents.loaded_events = {}
 
     @staticmethod
-    def generate_short_events(event_triggered, biome):
+    def generate_short_events(event_triggered, biome, frequency):
         file_path = f"{event_triggered}/{biome}.json"
+        load_name = f"{file_path}_{frequency}"
 
         try:
-            if file_path in GenerateEvents.loaded_events:
-                return GenerateEvents.loaded_events[file_path]
+            if load_name in GenerateEvents.loaded_events:
+                return GenerateEvents.loaded_events[load_name]
             else:
                 events_dict = GenerateEvents.get_short_event_dicts(file_path)
 
@@ -121,6 +116,7 @@ class GenerateEvents:
                     return event_list
                 for event in events_dict:
                     event_text = event["event_text"] if "event_text" in event else None
+                    event_frequency = event["frequency"] if "frequency" in event else 4
                     if not event_text:
                         event_text = (
                             event["death_text"] if "death_text" in event else None
@@ -130,13 +126,16 @@ class GenerateEvents:
                         print(
                             f"WARNING: some events resources which are used in generate_events have no 'event_text'."
                         )
+
+                    if frequency != event_frequency:
+                        continue
+
                     event = ShortEvent(
                         event_id=event["event_id"] if "event_id" in event else "",
                         location=event["location"] if "location" in event else ["any"],
                         season=event["season"] if "season" in event else ["any"],
                         sub_type=event["sub_type"] if "sub_type" in event else [],
                         tags=event["tags"] if "tags" in event else [],
-                        weight=event["weight"] if "weight" in event else 20,
                         text=event_text,
                         new_accessory=(
                             event["new_accessory"] if "new_accessory" in event else []
@@ -158,11 +157,14 @@ class GenerateEvents:
                         other_clan=event["other_clan"] if "other_clan" in event else {},
                         supplies=event["supplies"] if "supplies" in event else [],
                         new_gender=event["new_gender"] if "new_gender" in event else [],
+                        future_event=event["future_event"]
+                        if "future_event" in event
+                        else {},
                     )
                     event_list.append(event)
 
                 # Add to loaded events.
-                GenerateEvents.loaded_events[file_path] = event_list
+                GenerateEvents.loaded_events[load_name] = event_list
                 return event_list
         except:
             print(f"WARNING: {file_path} was not found, check short event generation")
@@ -217,23 +219,35 @@ class GenerateEvents:
                 return event
 
     @staticmethod
-    def possible_short_events(event_type=None):
+    def possible_short_events(
+        frequency,
+        event_type=None,
+    ):
         event_list = []
 
         # skip the rest of the loading if there is an unrecognised biome
-        if game.clan.biome not in game.clan.BIOME_TYPES:
+        temp_biome = (
+            game.clan.biome
+            if not game.clan.override_biome
+            else game.clan.override_biome
+        )
+        if temp_biome not in constants.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
                 f"in clan.py?"
             )
 
-        biome = game.clan.biome.lower()
+        biome = temp_biome.lower()
 
         # biome specific events
-        event_list.extend(GenerateEvents.generate_short_events(event_type, biome))
+        event_list.extend(
+            GenerateEvents.generate_short_events(event_type, biome, frequency)
+        )
 
         # any biome events
-        event_list.extend(GenerateEvents.generate_short_events(event_type, "general"))
+        event_list.extend(
+            GenerateEvents.generate_short_events(event_type, "general", frequency)
+        )
 
         return event_list
 
@@ -242,11 +256,14 @@ class GenerateEvents:
         Cat_class,
         possible_events,
         cat,
-        random_cat,
         other_clan,
         freshkill_active,
         freshkill_trigger_factor,
+        random_cat=None,
         sub_types=None,
+        allowed_events=None,
+        excluded_events=None,
+        ignore_subtyping=False,
     ):
         final_events = []
         incorrect_format = []
@@ -274,9 +291,21 @@ class GenerateEvents:
                             f"{event.event_id} injury formatted incorrectly"
                         )
 
-            # check for event sub_type
-            if set(event.sub_type) != set(sub_types):
+            # check if event is in allowed or excluded
+            if allowed_events and event.event_id not in allowed_events:
                 continue
+            if excluded_events and event.event_id in excluded_events:
+                continue
+
+            # if requirements are overridden, allow event through
+            if constants.CONFIG["event_generation"]["debug_override_requirements"]:
+                final_events.append(event)
+                continue
+
+            # check for event sub_type
+            if not ignore_subtyping:
+                if set(event.sub_type) != set(sub_types):
+                    continue
 
             if not event_for_location(event.location):
                 continue
@@ -288,11 +317,8 @@ class GenerateEvents:
             if not event_for_tags(event.tags, cat, random_cat):
                 continue
 
-            # TODO: just remove this tag man its not a useful feature
-            prevent_bypass = "skill_trait_required" in event.tags
-
             # make complete leader death less likely until the leader is over 150 moons (or unless it's a murder)
-            if cat.status == "leader":
+            if cat.status.is_leader:
                 if "all_lives" in event.tags and "murder" not in event.sub_type:
                     if int(cat.moons) < 150 and int(random.random() * 5):
                         continue
@@ -300,13 +326,13 @@ class GenerateEvents:
             # check for old age
             if (
                 "old_age" in event.sub_type
-                and cat.moons < game.config["death_related"]["old_age_death_start"]
+                and cat.moons < constants.CONFIG["death_related"]["old_age_death_start"]
             ):
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
             if (
                 "old_age" not in event.sub_type
-                and cat.moons > game.config["death_related"]["old_age_death_start"]
+                and cat.moons > constants.CONFIG["death_related"]["old_age_death_start"]
                 and int(random.random() * 3)
             ):
                 continue
@@ -315,84 +341,37 @@ class GenerateEvents:
             if "transition" in event.sub_type and cat.gender != cat.genderalign:
                 continue
 
+            m_c_injuries = []
+            r_c_injuries = []
+            discard = False
+            for block in event.injury:
+                for injury in block["injuries"]:
+                    if "m_c" in block["cats"]:
+                        m_c_injuries.append(injury)
+                    if "r_c" in block["cats"]:
+                        r_c_injuries.append(injury)
+                if discard:
+                    continue
+
+            # check if m_c is allowed this event
             if event.m_c:
                 if not event_for_cat(
                     cat_info=event.m_c,
                     cat=cat,
                     cat_group=[cat, random_cat] if random_cat else None,
                     event_id=event.event_id,
+                    injuries=m_c_injuries,
                 ):
                     continue
-
-            if event.r_c and random_cat:
+            # if a random cat was pre-chosen, then we check if the event will be suitable for them
+            if random_cat:
                 if not event_for_cat(
                     cat_info=event.r_c,
                     cat=random_cat,
                     cat_group=[random_cat, cat],
                     event_id=event.event_id,
+                    injuries=r_c_injuries,
                 ):
-                    continue
-
-            # check that injury is possible
-            if event.injury:
-                # determine which injury severity list will be used
-                allowed_severity = None
-                discard = False
-                if cat.status in GenerateEvents.INJURY_DISTRIBUTION:
-                    minor_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status][
-                        "minor"
-                    ]
-                    major_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status][
-                        "major"
-                    ]
-                    severe_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status][
-                        "severe"
-                    ]
-                    severity_chosen = random.choices(
-                        ["minor", "major", "severe"],
-                        [minor_chance, major_chance, severe_chance],
-                        k=1,
-                    )
-                    if severity_chosen[0] == "minor":
-                        allowed_severity = "minor"
-                    elif severity_chosen[0] == "major":
-                        allowed_severity = "major"
-                    else:
-                        allowed_severity = "severe"
-
-                for block in event.injury:
-                    for injury in block["injuries"]:
-                        if injury in GenerateEvents.INJURIES:
-                            if (
-                                GenerateEvents.INJURIES[injury]["severity"]
-                                != allowed_severity
-                            ):
-                                discard = True
-                                break
-
-                            if "m_c" in block["cats"]:
-                                if injury == "mangled tail" and (
-                                    "NOTAIL" in cat.pelt.scars
-                                    or "HALFTAIL" in cat.pelt.scars
-                                ):
-                                    continue
-
-                                if injury == "torn ear" and "NOEAR" in cat.pelt.scars:
-                                    continue
-                            if "r_c" in block["cats"]:
-                                if injury == "mangled tail" and (
-                                    "NOTAIL" in random_cat.pelt.scars
-                                    or "HALFTAIL" in random_cat.pelt.scars
-                                ):
-                                    continue
-
-                                if (
-                                    injury == "torn ear"
-                                    and "NOEAR" in random_cat.pelt.scars
-                                ):
-                                    continue
-
-                if discard:
                     continue
 
             # check if outsider event is allowed
@@ -413,7 +392,7 @@ class GenerateEvents:
                 # during a war we want to encourage the clans to have positive events
                 # when the overall war notice was positive
                 if "war" in event.sub_type:
-                    rel_change_type = game.switches["war_rel_change_type"]
+                    rel_change_type = switch_get_value(Switch.war_rel_change_type)
                     if (
                         event.other_clan["changed"] < 0
                         and rel_change_type != "rel_down"
@@ -456,17 +435,89 @@ class GenerateEvents:
                     continue
 
             final_events.extend([event] * event.weight)
+        if not final_events:
+            return None, None
+
+        cat_list = [
+            c for c in Cat_class.all_cats.values() if c.status.alive_in_player_clan
+        ]
+        chosen_cat = None
+        chosen_event = None
+
+        if random_cat:
+            chosen_cat = random_cat
+            # if we've got our random cat already, then check if we have to find an ensured event
+            if constants.CONFIG["event_generation"]["debug_ensure_event_id"]:
+                for event in final_events:
+                    if (
+                        event.event_id
+                        == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+                    ):
+                        chosen_event = event
+                        break
+            # else, pick a random one from the available events
+            elif not chosen_event:
+                chosen_event = random.choice(final_events)
+
+        failed_ids = []
+        while final_events and not chosen_cat and not chosen_event:
+            chosen_event = random.choice(final_events)
+            if chosen_event.event_id in failed_ids:
+                final_events.remove(chosen_event)
+                chosen_event = None
+                continue
+
+            # if we have an ensured id, only allow that event past
+            if (
+                constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+                and constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+                != chosen_event.event_id
+            ):
+                final_events.remove(chosen_event)
+                chosen_event = None
+                continue
+
+            if not chosen_event.r_c:
+                break
+
+            # if we're overriding requirements, don't bother looking for an appropriate cat
+            if constants.CONFIG["event_generation"]["debug_override_requirements"]:
+                chosen_cat = random.choice(cat_list)
+                continue
+
+            # gotta gather injuries so we can check if the cat can get them
+            r_c_injuries = []
+            for block in chosen_event.injury:
+                r_c_injuries.extend(block["injuries"] if "r_c" in block["cats"] else [])
+
+            chosen_cat = cat_for_event(
+                constraint_dict=chosen_event.r_c,
+                possible_cats=cat_list,
+                comparison_cat=cat,
+                comparison_cat_rel_status=chosen_event.m_c.get(
+                    "relationship_status", []
+                ),
+                injuries=r_c_injuries,
+                return_id=False,
+            )
+
+            if not chosen_cat:
+                failed_ids.append(chosen_event.event_id)
+                final_events.remove(chosen_event)
+                chosen_event = None
+            else:
+                break
 
         for notice in incorrect_format:
             print(notice)
 
-        return final_events
+        return chosen_event, chosen_cat
 
     @staticmethod
     def possible_ongoing_events(event_type=None, specific_event=None):
         event_list = []
 
-        if game.clan.biome not in game.clan.BIOME_TYPES:
+        if game.clan.biome not in constants.BIOME_TYPES:
             print(
                 f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?"
             )

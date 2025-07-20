@@ -3,7 +3,7 @@
         "event_id": "pln_injury_bruisessprain_anyany1",
         "location": ["plains"],
         "season": ["any"],
-        "weight": 30,
+        "frequency": 3,
         "event_text": "m_c was running over the hills, when {PRONOUN/m_c/subject} tripped over {PRONOUN/m_c/poss} own legs and hit the ground hard.",
         "m_c": {
             "age": ["any"],
@@ -20,7 +20,7 @@
         "event_id": "pln_injury_sprain_anyany1",
         "location": ["plains"],
         "season": ["any"],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains {PRONOUN/m_c/poss} paw while trying to walk through the muck.",
         "m_c": {
             "age": ["any"],
@@ -37,7 +37,7 @@
         "event_id": "pln_injury_sore_anyany1",
         "location": ["plains"],
         "season": ["any"],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c is feeling extremely sore from the long distances {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} run lately.",
         "m_c": {
             "age": [
@@ -61,7 +61,7 @@
         "season": ["greenleaf", "newleaf", "leaf-fall"],
         "sub_type": [],
         "tags": [],
-        "weight": 30,
+        "frequency": 1,
         "event_text": "Playfully following a butterfly outside the camp, m_c accidentally steps into a rabbit burrow, severely injuring {PRONOUN/m_c/poss} leg and letting out a yelp of pain.",
         "m_c": {
             "age": ["any"],
@@ -88,7 +88,7 @@
         "event_id": "pln_injury_sprain_anymultitraitapprentice1",
         "location": ["plains"],
         "season": ["any"],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c was running around excitedly on patrol, when {PRONOUN/m_c/poss} paw landed right in a rabbit hole, twisting uncomfortably. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
         "m_c": {
             "age": ["adolescent"],

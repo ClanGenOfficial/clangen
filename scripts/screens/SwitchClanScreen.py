@@ -21,6 +21,8 @@ from scripts.utility import (
     ui_scale_offset,
 )
 from .Screens import Screens
+from ..game_structure.game.save_load import read_clans
+from ..game_structure.game.settings import game_setting_get
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
@@ -66,7 +68,7 @@ class SwitchClanScreen(Screens):
                             False,
                         )
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen("start screen")
 
@@ -136,7 +138,7 @@ class SwitchClanScreen(Screens):
                 "count": 1 if game.clan else 0,
             },
         )
-        self.clan_list = game.read_clans()
+        self.clan_list = read_clans()
 
         self.clan_buttons = [[]]
         self.clan_name = [[]]
