@@ -213,7 +213,6 @@ def json_load():
             new_cat.no_kits = cat["no_kits"]
             new_cat.no_mates = cat["no_mates"] if "no_mates" in cat else False
             new_cat.no_retire = cat["no_retire"] if "no_retire" in cat else False
-            new_cat.driven_out = cat["driven_out"] if "driven_out" in cat else False
 
             if "skill_dict" in cat:
                 new_cat.skills = CatSkills(cat["skill_dict"])
@@ -239,7 +238,7 @@ def json_load():
             )
 
             # checking for old dead
-            if cat.get("dead") or cat.get("df"):
+            if cat.get("dead") or cat.get("df") or cat.get("driven_out"):
                 if not new_cat.status.group or not new_cat.status.group.is_afterlife():
                     if cat.get("df"):
                         new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
@@ -259,6 +258,9 @@ def json_load():
                     and not new_cat.status.is_outsider
                 ):
                     new_cat.status.become_lost()
+
+                if cat.get("driven_out"):
+                    new_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN)
 
             new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]

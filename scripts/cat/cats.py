@@ -3468,7 +3468,6 @@ class Cat:
                 "patrol_with_mentor": (self.patrol_with_mentor or 0),
                 "mate": self.mate,
                 "previous_mates": self.previous_mates,
-                "dead": self.dead,
                 "paralyzed": self.pelt.paralyzed,
                 "no_kits": self.no_kits,
                 "no_retire": self.no_retire,
