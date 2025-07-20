@@ -41,6 +41,7 @@ class ClanScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.cats_in_camp = []
         self.taken_spaces = {}
         self.show_den_labels_text = None
         self.show_den_labels = None
@@ -139,20 +140,9 @@ class ClanScreen(Screens):
         i = 0
         all_positions = list(self.taken_spaces.values())
         used_positions = all_positions.copy()
-        cat_list = [
-            Cat.all_cats[x]
-            for i, x in enumerate(game.clan.clan_cats)
-            if i < self.max_sprites_displayed
-            and Cat.all_cats[x].in_camp
-            and Cat.all_cats[x].status.alive_in_player_clan
-            and (
-                Cat.all_cats[x].status.rank != CatRank.NEWBORN
-                or constants.CONFIG["fun"]["all_cats_are_newborn"]
-                or constants.CONFIG["fun"]["newborns_can_roam"]
-            )
-        ]
+
         layers = []
-        for x in cat_list:
+        for x in self.cats_in_camp:
             layers.append(2)
             place = self.taken_spaces[x.ID]
             layers[-1] += all_positions.count(place) - used_positions.count(place)
@@ -207,6 +197,7 @@ class ClanScreen(Screens):
                     )
                 )
             except:
+                traceback.print_exc()
                 print(f"ERROR: placing {x.name}'s sprite on Clan page")
 
         # Den Labels
@@ -327,6 +318,9 @@ class ClanScreen(Screens):
             button.kill()
         self.cat_buttons = []
 
+        self.taken_spaces.clear()
+        self.cats_in_camp.clear()
+
         # Kill all other elements, and destroy the reference so they aren't hanging around
         self.save_button.kill()
         del self.save_button
@@ -445,15 +439,7 @@ class ClanScreen(Screens):
             # Put finding the next index after the break condition, so it won't be done unless needed
             chosen_index = random.choices(range(0, len(dens)), weights=weights, k=1)[0]
 
-        # If this code is reached, all position are filled.  Choose any position in the first den
-        # checked, apply offsets.
-        pos = random.choice(self.layout[first_chosen_den])
-        just_pos = pos[0].copy()
-        if "x" in pos[1] and random.getrandbits(1):
-            just_pos[0] += 15 * random.choice([-1, 1])
-        if "y" in pos[1]:
-            just_pos[1] += 15
-        return tuple(just_pos)
+        return None, None
 
     def choose_cat_positions(self):
         """Determines the positions of cat on the clan screen."""
@@ -552,7 +538,12 @@ class ClanScreen(Screens):
                 ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 200, 1, 1, 1, 1, 1]
                 )
+            if not Cat.all_cats[x].placement:
+                # if a cat wasn't placed, it's because no spots remain
+                break
+
             self.taken_spaces[Cat.all_cats[x].ID] = base_pos
+            self.cats_in_camp.append(Cat.all_cats[x])
 
     def update_buttons_and_text(self):
         if switch_get_value(Switch.saved_clan):
