@@ -14,7 +14,7 @@ from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
-from typing import List, Tuple, TYPE_CHECKING, Type, Union
+from typing import List, Tuple, TYPE_CHECKING, Type, Union, Optional
 
 import i18n
 import pygame
@@ -264,7 +264,12 @@ def change_clan_relations(other_clan, difference):
 
 
 def create_new_cat_block(
-    Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]
+    Cat: Optional["Cat"],
+    Relationship,
+    event,
+    in_event_cats: dict,
+    i: int,
+    attribute_list: List[str],
 ) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
@@ -522,7 +527,7 @@ def create_new_cat_block(
         thought = i18n.t("hardcoded.thought_new_dead")
 
     # check if we can use an existing cat here
-    chosen_cat = None
+    chosen_cat: Optional["Cat"] = None
     if "exists" in attribute_list:
         existing_outsiders = [
             i for i in Cat.all_cats.values() if i.status.is_outsider and not i.dead
