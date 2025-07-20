@@ -591,6 +591,7 @@ class PatrolOutcome:
 
         for block in self.injury:
             cats = gather_cat_objects(Cat, block.get("cats", ()), patrol, self.stat_cat)
+            cats = [c for c in cats if not c.dead]
             injury = block.get("injuries", ())
             scars = block.get("scars", ())
 
