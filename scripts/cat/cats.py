@@ -1844,6 +1844,8 @@ class Cat:
         :param lethal: Allow lethality, default `True` (bool)
         :param severity: Override severity, default `'default'` (str, accepted values `'minor'`, `'major'`, `'severe'`)
         """
+        if self.dead:
+            return
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
@@ -1912,6 +1914,9 @@ class Cat:
         :param severity: _description_, defaults to 'default'
         :type severity: str, optional
         """
+        if self.dead:
+            return
+
         if name not in INJURIES:
             print(f"WARNING: {name} is not in the injuries collection.")
             return
@@ -2022,6 +2027,8 @@ class Cat:
         self.get_permanent_condition(new_condition, born_with=True)
 
     def get_permanent_condition(self, name, born_with=False, event_triggered=False):
+        if self.dead:
+            return
         if name not in PERMANENT:
             print(
                 self.name,
