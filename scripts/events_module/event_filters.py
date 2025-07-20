@@ -1,7 +1,6 @@
 import re
 from random import choice
-
-import ujson
+from typing import Optional
 
 from scripts.cat.enums import CatRank, CatAge
 from scripts.game_structure.game_essentials import game
@@ -12,7 +11,7 @@ from scripts.utility import (
 )
 
 
-def event_for_location(locations: list) -> bool:
+def event_for_location(locations: list) -> Optional[bool]:
     """
     checks if the clan is within the given locations
     """
@@ -518,7 +517,9 @@ def cat_for_event(
         return cat
 
 
-def _get_cats_with_rel_status(cat_list: list, cat, rel_status_list: list) -> list:
+def _get_cats_with_rel_status(
+    cat_list: list, cat, rel_status_list: list
+) -> tuple[list, list]:
     # theoretically none of these should ever be used together
     if "siblings" in rel_status_list:
         cat_list = [c for c in cat_list if c.ID in cat.get_siblings()]

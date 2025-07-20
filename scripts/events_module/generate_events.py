@@ -496,7 +496,7 @@ class GenerateEvents:
                 comparison_cat=cat,
                 comparison_cat_rel_status=chosen_event.m_c.get(
                     "relationship_status", []
-                ),
+                ).copy(),
                 injuries=r_c_injuries,
                 return_id=False,
             )
