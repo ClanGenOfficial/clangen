@@ -11,9 +11,13 @@ TODO: Docs
 import os
 import statistics
 from random import choice, randint
+import logging
+
+logger = logging.getLogger(__name__)
 
 import pygame
 import ujson
+
 
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.enums import CatRank, CatGroup
@@ -44,7 +48,6 @@ from scripts.utility import (
     get_current_season,
     clan_symbol_sprite,
     get_living_clan_cat_count,
-    logger,
 )  # pylint: disable=redefined-builtin
 
 
