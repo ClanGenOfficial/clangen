@@ -261,7 +261,7 @@ def json_load():
                     # these should properly change the cat's status to align with old bool info
                     if cat.get("exiled"):
                         new_cat.status.exile_from_group()
-                    if cat.get("outside") and not new_cat.status.is_outsider:
+                    elif cat.get("outside") and not new_cat.status.is_outsider:
                         new_cat.status.become_lost()
 
                     if cat.get("driven_out"):
