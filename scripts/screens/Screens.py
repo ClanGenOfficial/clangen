@@ -81,7 +81,7 @@ class Screens:
         ]:
             game.last_list_forProfile = None
             self.current_group = "your_clan"
-            self.death_page = "living"
+            self.death_status = "living"
             self.current_page = 1
 
         switch_set_value(Switch.cur_screen, new_screen)
