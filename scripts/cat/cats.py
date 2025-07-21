@@ -1510,7 +1510,8 @@ class Cat:
         :param just_died: Set True if the cat is generating a death thought
         :param lives_left: If a leader is generating a death thought, include their lives left here
         """
-        all_cats = self.all_cats
+        all_cats = self.all_cats.copy()
+        all_cats.pop(self.ID)
         other_cat = choice(list(all_cats.keys()))
         game_mode = switch_get_value(Switch.game_mode)
         biome = switch_get_value(Switch.biome)
