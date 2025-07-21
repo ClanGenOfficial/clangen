@@ -269,10 +269,6 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
                 self.elements["error"].show()
                 return
-            if self._clan_name_exists(new_name):
-                self.elements["error"].set_text("A Clan with that name already exists.")
-                self.elements["error"].show()
-                return
             self.clan_name = new_name
             self.open_choose_leader()
         elif event.ui_element == self.elements["previous_step"]:
@@ -295,12 +291,6 @@ class MakeClanScreen(Screens):
                     self.elements["error"].set_text("Your Clan's name cannot be empty")
                     self.elements["error"].show()
                     return
-                if self._clan_name_exists(new_name):
-                    self.elements["error"].set_text(
-                        "A Clan with that name already exists."
-                    )
-                    self.elements["error"].show()
-                    return
                 self.clan_name = new_name
                 self.open_choose_leader()
         elif event.key == pygame.K_RETURN:
@@ -309,10 +299,6 @@ class MakeClanScreen(Screens):
             ).strip()
             if not new_name:
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
-                self.elements["error"].show()
-                return
-            if self._clan_name_exists(new_name):
-                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
@@ -578,12 +564,6 @@ class MakeClanScreen(Screens):
             elif self.elements["name_entry"].get_text().startswith(" "):
                 self.elements["error"].set_text(
                     "screens.make_clan.error_clan_name_space"
-                )
-                self.elements["error"].show()
-                self.elements["next_step"].disable()
-            elif self._clan_name_exists(self.elements["name_entry"].get_text()):
-                self.elements["error"].set_text(
-                    "screens.make_clan.error_clan_name_duplicate"
                 )
                 self.elements["error"].show()
                 self.elements["next_step"].disable()
@@ -2158,8 +2138,15 @@ class MakeClanScreen(Screens):
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
         convert_camp = {1: "camp1", 2: "camp2", 3: "camp3", 4: "camp4"}
+        displayname = self.clan_name
+        if self._clan_name_exists(self.clan_name):
+            clan_name = self.clan_name
+        else:
+            clan_name = self.clan_name
+
         game.clan = Clan(
-            name=self.clan_name,
+            name=clan_name,
+            displayname=displayname,
             leader=self.leader,
             deputy=self.deputy,
             medicine_cat=self.med_cat,
