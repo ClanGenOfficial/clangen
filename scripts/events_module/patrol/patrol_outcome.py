@@ -335,13 +335,19 @@ class PatrolOutcome:
                 return False
             return True
 
-        # Code to allow anyone but p_l to be selected as stat cat
-        if not allowed_specific or "not_pl" in allowed_specific:
+        # allow anyone but p_l to be selected as stat cat
+        if "not_pl" in allowed_specific:
             if kitty is patrol.patrol_leader:
                 return False
             return True
 
-        # Otherwise, check to see if the cat matched any of the specfic cats
+        # allow anyone but r_c to be selected
+        if "not_rc" in allowed_specific:
+            if kitty is patrol.random_cat:
+                return False
+            return True
+
+        # Otherwise, check to see if the cat matched any of the specific cats
         if "p_l" in allowed_specific and kitty == patrol.patrol_leader:
             return True
         if "r_c" in allowed_specific and kitty == patrol.random_cat:
@@ -370,11 +376,12 @@ class PatrolOutcome:
         )
         print(f"Can Have Stat: {self.can_have_stat}")
 
-        # Grab any specfic stat cat requirements:
+        # Grab any specific stat cat requirements:
         allowed_specific = [
             x
             for x in self.can_have_stat
-            if x in ("r_c", "p_l", "app1", "app2", "any", "not_pl_rc", "not_pl")
+            if x
+            in ("r_c", "p_l", "app1", "app2", "any", "not_pl_rc", "not_pl", "not_rc")
         ]
 
         # Special default behavior for patrols less than two cats.
