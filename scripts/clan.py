@@ -241,7 +241,7 @@ class Clan:
         save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
-            other_clan_names = [str(i.name) for i in self.all_clans] + [game.clan.name]
+            other_clan_names = [str(i.name) for i in self.all_clans] + [game.clan.displayname]
             other_clan_name = choice(
                 names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
             )

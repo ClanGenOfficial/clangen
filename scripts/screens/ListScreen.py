@@ -242,7 +242,7 @@ class ListScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
-        self.clan_name = game.clan.name + "Clan"
+        self.clan_name = game.clan.displayname + "Clan"
 
         self.set_disabled_menu_buttons(["catlist_screen"])
         self.show_menu_buttons()

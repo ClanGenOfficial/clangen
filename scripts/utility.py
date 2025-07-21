@@ -2416,7 +2416,7 @@ def leader_ceremony_text_adjust(
     if extra_lives:
         text = text.replace("[life_num]", str(extra_lives))
 
-    text = text.replace("c_n", str(game.clan.name) + "Clan")
+    text = text.replace("c_n", str(game.clan.displayname) + "Clan")
 
     return text
 
