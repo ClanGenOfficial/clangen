@@ -145,15 +145,15 @@ class Clan:
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
     def post_initialization_functions(self):
-        if self.deputy is not None:
+        if self.deputy and self.deputy.status.alive_in_player_clan:
             self.deputy.rank_change(CatRank.DEPUTY)
             self.clan_cats.append(self.deputy.ID)
 
-        if self.leader:
+        if self.leader and self.leader.status.alive_in_player_clan:
             self.leader.rank_change(CatRank.LEADER)
             self.clan_cats.append(self.leader.ID)
 
-        if self.medicine_cat is not None:
+        if self.medicine_cat and self.medicine_cat.status.alive_in_player_clan:
             self.clan_cats.append(self.medicine_cat.ID)
             self.med_cat_list.append(self.medicine_cat.ID)
             if self.medicine_cat.status.rank != CatRank.MEDICINE_CAT:
