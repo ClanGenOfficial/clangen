@@ -76,6 +76,7 @@ class Clan:
         starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
+        displayname=""
     ):
         if name == "":
             return
@@ -83,7 +84,13 @@ class Clan:
         if starting_members is None:
             starting_members = []
 
+        # name is the unique id of the clan. i'm sorry if this is confusing...
         self.name = name
+        # displayname is the name you should use whenever displaying the clan name in UI
+        if not displayname:
+            self.displayname = name
+        else:
+            self.displayname = displayname
         self.leader = leader
         self.leader_lives = 9
         self.leader_predecessors = 0
@@ -385,6 +392,7 @@ class Clan:
 
         clan_data = {
             "clanname": self.name,
+            "displayname": self.displayname,
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
@@ -701,8 +709,14 @@ class Clan:
         else:
             med_cat = None
 
+        if "displayname" in clan_data:
+            displayname = clan_data["displayname"]
+        else:
+            displayname = clan_data["clanname"]
+
         game.clan = Clan(
             name=clan_data["clanname"],
+            displayname=displayname,
             leader=leader,
             deputy=deputy,
             medicine_cat=med_cat,
