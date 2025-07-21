@@ -333,13 +333,16 @@ class ListScreen(Screens):
             switch_set_value(Switch.sort_type, "rank")
 
         # CHOOSE GROUP DROPDOWN
+        starting_select = f"general.{self.current_group}"
         self.choose_group_dropdown = UIDropDown(
             pygame.Rect((-2, 0), (190, 34)),
             parent_text="screens.list.choose_group",
-            item_list=self.living_group_names,
+            item_list=self.living_group_names
+            if self.death_status == "living"
+            else self.dead_group_names,
             manager=MANAGER,
             container=self.cat_list_bar,
-            starting_selection=["general.your_clan"],
+            starting_selection=[starting_select],
             anchors={"left_target": self.cat_list_bar_elements["view_button"]},
         )
 
@@ -473,9 +476,6 @@ class ListScreen(Screens):
         # Determine the starting list of cats.
         self.get_cat_list()
         self.update_cat_list()
-        game.last_list_forProfile = (
-            "your_clan"  # wipe the saved last_list to avoid inconsistencies
-        )
 
     def display_change_save(self) -> Dict:
         variable_dict = super().display_change_save()
