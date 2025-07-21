@@ -86,16 +86,14 @@ class ClanScreen(Screens):
                 self.update_buttons_and_text()
             if event.ui_element == self.med_den_label:
                 self.change_screen("med den screen")
-            else:
-                self.menu_button_pressed(event)
             if event.ui_element == self.clearing_label:
                 self.change_screen("clearing screen")
-            else:
-                self.menu_button_pressed(event)
             if event.ui_element == self.warrior_den_label:
                 self.change_screen("warrior den screen")
             if event.ui_element == self.leader_den_label:
                 self.change_screen("leader den screen")
+            else:
+                self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_RIGHT:
