@@ -11,7 +11,7 @@ from scripts.utility import (
 )
 
 
-def event_for_location(locations: list) -> Optional[bool]:
+def event_for_location(locations: list) -> bool:
     """
     checks if the clan is within the given locations
     """
@@ -34,7 +34,7 @@ def event_for_location(locations: list) -> Optional[bool]:
         elif req_biome == game.clan.biome.lower():
             if "any" in req_camps or game.clan.camp_bg in req_camps:
                 return True
-        return False
+    return False
 
 
 def event_for_season(seasons: list) -> bool:
