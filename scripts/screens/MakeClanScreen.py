@@ -2140,7 +2140,7 @@ class MakeClanScreen(Screens):
         convert_camp = {1: "camp1", 2: "camp2", 3: "camp3", 4: "camp4"}
         displayname = self.clan_name
         if self._clan_name_exists(self.clan_name):
-            clan_name = self.clan_name
+            clan_name = self._generate_unique_clan_name(self.clan_name)
         else:
             clan_name = self.clan_name
 
@@ -2221,6 +2221,15 @@ class MakeClanScreen(Screens):
         return new_clan_name.casefold() in (
                 clan.casefold() for clan in switch_get_value(Switch.clan_list)
             )
+    
+    def _generate_unique_clan_name(self, new_clan_name: str):
+        existing_clan_names = (clan.casefold() for clan in switch_get_value(Switch.clan_list))
+        i = 0
+        new_unique_clan_name = f"{new_clan_name}_{i}"
+        while new_unique_clan_name.casefold() in existing_clan_names:
+            i += 1
+            new_unique_clan_name = f"{new_clan_name}_{i}"
+        return new_unique_clan_name
 
 
 make_clan_screen = MakeClanScreen()
