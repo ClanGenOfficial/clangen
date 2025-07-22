@@ -496,6 +496,8 @@ class HandleShortEvents:
         else:
             self.main_cat.pelt.accessory = [choice(acc_list)]
 
+        self.main_cat.pelt.rebuild_sprite = True
+
     def handle_transition(self):
         """
         handles updating gender_align and pronouns
