@@ -371,11 +371,15 @@ class CatSkills:
             pass
         elif rank == CatRank.KITTEN or CatAge.KITTEN:
             new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
-        elif rank in [
-            CatRank.APPRENTICE,
-            CatRank.MEDICINE_APPRENTICE,
-            CatRank.MEDIATOR_APPRENTICE,
-        ] or CatAge.ADOLESCENT:
+        elif (
+            rank
+            in [
+                CatRank.APPRENTICE,
+                CatRank.MEDICINE_APPRENTICE,
+                CatRank.MEDIATOR_APPRENTICE,
+            ]
+            or CatAge.ADOLESCENT
+        ):
             new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)
             if random.randint(1, 3) == 1:
                 new_skill.secondary = Skill.get_random_skill(
