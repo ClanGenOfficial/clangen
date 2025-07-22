@@ -89,9 +89,14 @@ class Screens:
         game.rpc.update_rpc.set()
 
         if game.last_screen_forupdate == "start screen":
+            if game.clan:
+                game_mode = game.clan.game_mode
+            else:
+                game_mode = None
+                
             rebuild_den_dropdown(
                 left_align=not get_clan_setting("moons and seasons"),
-                game_mode=game.clan.game_mode,
+                game_mode=game_mode,
             )
 
     def __init__(self, name=None):
