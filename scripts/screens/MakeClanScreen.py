@@ -1,6 +1,7 @@
 from random import choice, randrange
 from re import sub
 from typing import Optional
+from uuid import uuid4
 
 import i18n
 import pygame
@@ -2223,13 +2224,7 @@ class MakeClanScreen(Screens):
             )
     
     def _generate_unique_clan_name(self, new_clan_name: str):
-        existing_clan_names = (clan.casefold() for clan in switch_get_value(Switch.clan_list))
-        i = 0
-        new_unique_clan_name = f"{new_clan_name}_{i}"
-        while new_unique_clan_name.casefold() in existing_clan_names:
-            i += 1
-            new_unique_clan_name = f"{new_clan_name}_{i}"
-        return new_unique_clan_name
+        return f"{new_clan_name}_{uuid4()}"
 
 
 make_clan_screen = MakeClanScreen()
