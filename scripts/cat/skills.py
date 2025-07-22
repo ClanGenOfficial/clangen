@@ -361,7 +361,9 @@ class CatSkills:
         return f"<CatSkills: Primary: |{self.primary}|, Secondary: |{self.secondary}|, Hidden: |{self.hidden}|>"
 
     @staticmethod
-    def generate_new_catskills(rank: CatRank, age: CatAge, hidden_skill: HiddenSkillEnum = None):
+    def generate_new_catskills(
+        rank: CatRank, age: CatAge, hidden_skill: HiddenSkillEnum = None
+    ):
         """Generates a new skill"""
         new_skill = CatSkills()
 
@@ -388,15 +390,18 @@ class CatSkills:
         else:
             primary_tier = 1
             secondary_tier = 1
-            if age < 50:
+            if age == CatAge.YOUNG_ADULT:
                 primary_tier += random.randint(0, 1)
                 secondary_tier += random.randint(0, 1)
-            elif age < 100:
+            elif age == CatAge.ADULT:
                 primary_tier += random.randint(0, 2)
                 secondary_tier += random.randint(0, 1)
-            elif age < 150:
+            elif age == CatAge.SENIOR_ADULT:
                 primary_tier += random.randint(1, 2)
                 secondary_tier += random.randint(0, 1)
+            elif age == CatAge.SENIOR:
+                primary_tier -= random.randint(0, 1),
+
             new_skill.primary = Skill.get_random_skill(point_tier=primary_tier)
             if random.randint(1, 2) == 1:
                 new_skill.secondary = Skill.get_random_skill(
