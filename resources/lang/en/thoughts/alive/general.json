@@ -6221,7 +6221,7 @@
         ]
     },
     {
-        "id": "confident_bold_to_alive",
+        "id": "confident_bold_attention-seeker_to_alive",
         "thoughts": [
 			"Stands tall when r_c walks by",
 			"Tells r_c something that probably could've been kept private",
@@ -6231,7 +6231,8 @@
         ],
         "main_trait_constraint": [
             "confident",
-            "bold"
+            "bold",
+            "attention-seeker"
         ],
         "random_living_status": [
             "living"
