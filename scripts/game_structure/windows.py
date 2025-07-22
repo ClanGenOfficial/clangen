@@ -41,6 +41,7 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
     UIDropDown,
+    UIModifiedScrollingContainer,
 )
 from scripts.housekeeping.datadir import (
     get_save_dir,
@@ -76,7 +77,7 @@ if TYPE_CHECKING:
 class SymbolFilterWindow(UIWindow):
     def __init__(self):
         super().__init__(
-            ui_scale(pygame.Rect((250, 175), (300, 450))),
+            ui_scale(pygame.Rect((250, 125), (300, 450))),
             window_display_title="windows.symbol_filters",
             object_id="#filter_window",
         )
@@ -104,12 +105,12 @@ class SymbolFilterWindow(UIWindow):
             object_id="#text_box_40",
             container=self,
         )
-        self.filter_container = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((5, 45), (285, 310))),
+        self.filter_container = UIModifiedScrollingContainer(
+            ui_scale(pygame.Rect((5, 45), (285, 400))),
             manager=MANAGER,
             starting_height=1,
-            object_id="#filter_container",
             allow_scroll_x=False,
+            allow_scroll_y=True,
             container=self,
         )
         self.checkbox = {}

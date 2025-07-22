@@ -19,7 +19,6 @@ from scripts.utility import (
     get_text_box_theme,
     ui_scale,
     shorten_text_to_fit,
-    ui_scale_dimensions,
 )
 from .Screens import Screens
 from ..clan_package.settings import get_clan_setting, switch_clan_setting
