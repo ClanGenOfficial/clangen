@@ -838,12 +838,12 @@ def create_new_cat(
             if new_cat.status.rank != rank:
                 new_cat.status._change_rank(CatRank(rank))
             # give apprentice aged cat a mentor
-            if new_cat.status.rank in (
-                CatRank.APPRENTICE,
-                CatRank.MEDICINE_APPRENTICE,
-                CatRank.MEDIATOR_APPRENTICE,
-            ):
+            if new_cat.status.rank.is_any_apprentice_rank():
                 new_cat.update_mentor()
+                # ensuring that any cats joining as an apprentice will display the correct skills
+                new_cat.skills.primary.interest_only = True
+                if new_cat.skills.secondary:
+                    new_cat.skills.secondary.interest_only = True
 
         # NAMES and accs
         # clancat adults should have already generated with a clan-ish name, thus they skip all of this re-naming
