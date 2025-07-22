@@ -2244,7 +2244,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             ui_scale_offset((0, 22)),
             (
                 self.get_container().get_size()[0],
-                self.get_container().get_size()[1] - button_vertical_space,
+                -1,
             ),
         )
         self.text_block = pygame_gui.elements.UITextBox(
@@ -2261,6 +2261,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             },
             text_kwargs={"count": 10},
         )
+        self.text_block.disable()
         self.text_block.rebuild_from_changed_theme_data()
 
         # make a timeout that will call in 10 seconds - if this window isn't closed,
