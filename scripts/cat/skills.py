@@ -392,7 +392,7 @@ class CatSkills:
                 primary_tier += random.randint(1, 2)
                 secondary_tier += random.randint(0, 1)
             elif age == CatAge.SENIOR:
-                primary_tier -= random.randint(0, 1),
+                primary_tier -= random.randint(0, 1)
 
             new_skill.primary = Skill.get_random_skill(point_tier=primary_tier)
             if random.randint(1, 2) == 1:
