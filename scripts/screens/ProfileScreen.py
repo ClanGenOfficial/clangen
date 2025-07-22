@@ -1595,7 +1595,6 @@ class ProfileScreen(Screens):
                         text += f" ({i18n.t('general.moon_date', moon=death['moon'])})"
                     all_deaths.append(text)
 
-
             if (
                 self.the_cat.status.is_leader
                 or CatRank.LEADER in self.the_cat.status.all_ranks
