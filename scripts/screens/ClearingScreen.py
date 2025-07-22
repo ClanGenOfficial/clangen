@@ -13,6 +13,7 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
     UIModifiedImage,
+    UIModifiedScrollingContainer,
 )
 from scripts.utility import (
     get_text_box_theme,
@@ -720,11 +721,10 @@ class ClearingScreen(Screens):
     def create_checkboxes(self):
         self.delete_checkboxes()
 
-        self.tactic_text[
-            "container_general"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.tactic_text["container_general"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((140, 450), (230, 175))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 
@@ -745,15 +745,10 @@ class ClearingScreen(Screens):
             )
             n += 1
 
-        self.tactic_text["container_general"].set_scrollable_area_dimensions(
-            ui_scale_dimensions((200, (n * 30 + x_val + 20)))
-        )
-
-        self.additional_text[
-            "container_general"
-        ] = pygame_gui.elements.UIScrollingContainer(
+        self.additional_text["container_general"] = UIModifiedScrollingContainer(
             ui_scale(pygame.Rect((360, 450), (327, 175))),
             allow_scroll_x=False,
+            allow_scroll_y=True,
             manager=MANAGER,
         )
 
@@ -812,10 +807,6 @@ class ClearingScreen(Screens):
                 },
             )
             n += 1
-
-        self.additional_text["container_general"].set_scrollable_area_dimensions(
-            ui_scale_dimensions((305, (n * 30)))
-        )
 
         self.refresh_checkboxes("general")
 
