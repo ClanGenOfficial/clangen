@@ -125,7 +125,7 @@
 			"Watches r_c wind up for a sneeze, but it never happens",
 			"Asks r_c if {PRONOUN/m_c/poss} fur looks clean",
 			"Points out a constellation to r_c",
-			"Keeps trying to figure out what a bad smell in camp is with r_c",
+			"Is trying to figure out where a bad smell is coming from with r_c",
 			"Poses a crazy theory to r_c",
 			"Asks r_c if there's something in {PRONOUN/m_c/poss} teeth",
 			"Points out a nice rock for r_c to sharpen {PRONOUN/r_c/poss} claws on",
@@ -6318,8 +6318,8 @@
     {
         "id": "gen_to_oblivious",
         "thoughts": [
-			"Told a really funny joke, but m_c just looked confused",
-			"Has to tell m_c to stop staring at the sun"
+			"Told a really funny joke, but r_c just looked confused",
+			"Has to tell r_c to stop staring at the sun"
         ],
         "random_trait_constraint": [
             "oblivious"
@@ -6394,7 +6394,6 @@
             "medicine cat"
         ],
 		"random_status_constraint": [
-			"kitten",
 			"apprentice",
 			"mediator apprentice",
 			"medicine cat apprentice",
