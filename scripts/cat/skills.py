@@ -361,7 +361,7 @@ class CatSkills:
         return f"<CatSkills: Primary: |{self.primary}|, Secondary: |{self.secondary}|, Hidden: |{self.hidden}|>"
 
     @staticmethod
-    def generate_new_catskills(rank, age, hidden_skill: HiddenSkillEnum = None):
+    def generate_new_catskills(rank: CatRank, age: CatAge, hidden_skill: HiddenSkillEnum = None):
         """Generates a new skill"""
         new_skill = CatSkills()
 
@@ -665,7 +665,7 @@ class CatSkills:
         return skills_meet
 
     @staticmethod
-    def get_skills_from_old(old_skill, rank, moons):
+    def get_skills_from_old(old_skill, rank: CatRank, age: CatAge):
         """Generates a CatSkill object"""
         new_skill = CatSkills()
         conversion = {
@@ -715,6 +715,6 @@ class CatSkills:
             new_skill.primary = Skill(conversion[old_skill][0])
             new_skill.primary.set_points_to_tier(conversion[old_skill][1])
         else:
-            new_skill = CatSkills.generate_new_catskills(rank, moons)
+            new_skill = CatSkills.generate_new_catskills(rank, age)
 
         return new_skill
