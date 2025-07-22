@@ -2,6 +2,15 @@ from pygame import Cursor, image, SYSTEM_CURSOR_ARROW
 import ujson
 import tomllib
 
+# this is just to make referencing main menu screens as a whole easier,
+# note that the clan creation screen is included and the clan settings screen is excluded. this is intended.
+MENU_SCREENS = [
+    "settings screen",
+    "start screen",
+    "switch clan screen",
+    "make clan screen",
+]
+
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
 SEASONS = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
