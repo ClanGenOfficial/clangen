@@ -710,7 +710,8 @@
         "decline_text": "The patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
         "success_outcomes": [
-            {                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating, the patrol is able to at least drag some of the intestines home to camp.",
+            {
+                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating, the patrol is able to at least drag some of the intestines home to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"],
@@ -3816,8 +3817,8 @@
         "intro_text": "Leaf-bare is taking its toll. The patrol is cold, frustrated, and most of all, hungry. p_l notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?",
         "decline_text": "First the cold, and the snow, and now a fox? This is too much for one day, p_l decides. Back to camp, another patrol can try again later.",
         "success_outcomes": [
-            { 
-        "text": "s_c watches, copying how the fox walks close to the snow, ears down, imagining what it might be listening for until- that's it! s_c leaps into the air, diving headfirst into the snow. The patrol snickers as {PRONOUN/s_c/poss} rear flails above the snow, but that snickering turns to praise when s_c pops back up with a fat mouse hanging from {PRONOUN/s_c/poss} jaws.",
+            {
+                "text": "s_c watches, copying how the fox walks close to the snow, ears down, imagining what it might be listening for until- that's it! s_c leaps into the air, diving headfirst into the snow. The patrol snickers as {PRONOUN/s_c/poss} rear flails above the snow, but that snickering turns to praise when s_c pops back up with a fat mouse hanging from {PRONOUN/s_c/poss} jaws.",
         "exp": 25,
         "weight": 20, 
         "prey": ["medium"],
@@ -3846,10 +3847,11 @@
         ]  }
     ], 
         "fail_outcomes": [
-            {"text": "r_c snarls. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} too cold and too hungry to watch a stupid fox. This will be a hard hunt, r_c snaps, and if the others can't focus, then they should go huddle with the kits at camp.",
+            {
+                "text": "r_c snarls. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} too cold and too hungry to watch a stupid fox. This will be a hard hunt, r_c snaps, and if the others can't focus, then they should go huddle with the kits at camp.",
             "exp": 0,
-            "weight": 15, 
-            "prey": ["very_small"],
+            "weight": 15,
+                "prey": ["very_small"],
             "relationships": [
                 {
                     "cats_to": ["r_c"],

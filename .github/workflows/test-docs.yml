@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v3
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          poetry-version: latest
+          enable-cache: true
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'   
       - name: Install docs dependencies
-        run: poetry install --no-root --only docs
+        run: uv sync --no-default-groups --group docs
       - name: Build documentation
-        run: poetry run mkdocs build --strict
+        run: uv run mkdocs build --strict

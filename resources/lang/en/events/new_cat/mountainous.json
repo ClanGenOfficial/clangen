@@ -7,7 +7,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 2,
         "event_text": "m_c found an injured loner while out on a walk - clearly, {PRONOUN/n_c:0/subject}'d been attacked by an eagle. {PRONOUN/m_c/subject/CAP} rushes {PRONOUN/n_c:0/object} back to camp to be treated.",
         "m_c": {
             "age": [
@@ -80,7 +80,7 @@
         "season": [
             "any"
         ],
-        "weight": 5,
+        "frequency": 1,
         "event_text": "m_c finds a dead loner at the bottom of a cliff, near a litter of kittens. {PRONOUN/m_c/subject/CAP} {VERB/m_c/take/takes} the poor kittens back to camp, where they're offered a place in the Clan.",
         "m_c": {
             "age": [

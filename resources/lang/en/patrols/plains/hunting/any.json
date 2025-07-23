@@ -3773,7 +3773,7 @@
         "patrol_id": "pln_hunt_wareprey_lorelocked1",
         "biome": ["plains"],
         "season": ["any"],
-        "types": [],
+        "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_hare",
         "min_cats": 3,

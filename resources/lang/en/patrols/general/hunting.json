@@ -271,7 +271,7 @@
                 "prey": ["large"]
             },
             {
-                "text": "As {PRONOUN/s_c/subject} {VERB/s_c/hunt/hunts}, s_c's eyes are caught by omen_list, and {PRONOUN/s_c/poss} dream snaps into clarity. It draws the hunt short, but that's not important right now.",
+                "text": "As {PRONOUN/s_c/subject} {VERB/s_c/hunt/hunts}, s_c's eyes are caught by omen_list/s_c, and {PRONOUN/s_c/poss} dream snaps into clarity. It draws the hunt short, but that's not important right now.",
                 "exp": 20,
                 "can_have_stat": ["any"],
                 "stat_skill": ["OMEN,1"],
@@ -295,7 +295,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The clair_list r_c remembers from {PRONOUN/r_c/poss} dream doesn't exactly feel like <i>StarClan's</i> type of message.",
+                "text": "The clair_list/r_c r_c remembers from {PRONOUN/r_c/poss} dream doesn't exactly feel like <i>StarClan's</i> type of message.",
                 "exp": 0,
                 "can_have_stat": ["any"],
                 "stat_skill": ["DARK,1"],

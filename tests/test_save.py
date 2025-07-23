@@ -2,6 +2,8 @@ import os
 import shutil
 import unittest
 
+from scripts.game_structure.game.save_load import read_clans
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -24,7 +26,6 @@ else:
     "https://github.com/ImLvna/clangen-unittest-saves into tests/testSaves to run unittest",
 )
 class LoadSave(unittest.TestCase):
-
     def setUp(self):
         if os.path.exists(get_save_dir()):
             shutil.move(get_save_dir(), "saves_backup")
@@ -49,7 +50,7 @@ class LoadSave(unittest.TestCase):
             return None
 
     def new_implimentation(self):
-        return Game().read_clans()
+        return read_clans()
 
     def example_save(self, id):
         if os.path.exists(get_save_dir()):
@@ -77,7 +78,6 @@ class LoadSave(unittest.TestCase):
                 )
 
     def test_check_clan_list(self):
-
         for i in range(1, num_example_saves + 1):
             with self.subTest(i=i):
                 print("Checking clan list for save " + str(i))
@@ -118,7 +118,6 @@ class MigrateSave(unittest.TestCase):
         shutil.copytree("tests/testSaves/save" + str(id), get_save_dir())
 
     def test_migrate_save_onread(self):
-
         for i in range(1, num_example_saves + 1):
             with self.subTest(i=i):
                 print("Checking migration for save " + str(i))
@@ -130,7 +129,7 @@ class MigrateSave(unittest.TestCase):
                 with open(get_save_dir() + "/clanlist.txt", "r") as read_file:
                     clan_name = read_file.read().strip().splitlines()[0]
 
-                Game().read_clans()  # the load save function should migrate the save
+                read_clans()  # the load save function should migrate the save
 
                 file_list = os.listdir(get_save_dir())
                 self.assertIn(

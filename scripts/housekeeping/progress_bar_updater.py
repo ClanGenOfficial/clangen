@@ -19,16 +19,22 @@ class UIUpdateProgressBar(UIStatusBar):
     display_percent: bool
     unit: str
 
-    def __init__(self,
-                 relative_rect: pygame.Rect,
-                 step_label: UITextBoxTweaked = None,
-                 manager: Optional[IUIManagerInterface] = None,
-                 container: Optional[IContainerLikeInterface] = None,
-                 parent_element: Optional[UIElement] = None,
-                 object_id: Optional[Union[ObjectID, str, ]] = None,
-                 anchors: Optional[Dict[str, Union[str, UIElement]]] = None,
-                 visible: int = 1):
-
+    def __init__(
+        self,
+        relative_rect: pygame.Rect,
+        step_label: UITextBoxTweaked = None,
+        manager: Optional[IUIManagerInterface] = None,
+        container: Optional[IContainerLikeInterface] = None,
+        parent_element: Optional[UIElement] = None,
+        object_id: Optional[
+            Union[
+                ObjectID,
+                str,
+            ]
+        ] = None,
+        anchors: Optional[Dict[str, Union[str, UIElement]]] = None,
+        visible: int = 1,
+    ):
         self.step_label = step_label
         self.maximum_progress = 100
         self.steps_taken = 0
@@ -38,15 +44,24 @@ class UIUpdateProgressBar(UIStatusBar):
         self.display_percent = True
         self.unit = ""
 
-        super().__init__(relative_rect=relative_rect,
-                         manager=manager,
-                         container=container,
-                         parent_element=parent_element,
-                         object_id=object_id,
-                         anchors=anchors,
-                         visible=visible)
+        super().__init__(
+            relative_rect=relative_rect,
+            manager=manager,
+            container=container,
+            parent_element=parent_element,
+            object_id=object_id,
+            anchors=anchors,
+            visible=visible,
+        )
 
-    def set_steps(self, step_count: int, step_text: str, display_percent: bool = True, unit: str = "", scaling_factor: float = 0):
+    def set_steps(
+        self,
+        step_count: int,
+        step_text: str,
+        display_percent: bool = True,
+        unit: str = "",
+        scaling_factor: float = 0,
+    ):
         self.step_count = step_count
         self.step_value = 100 / self.step_count / 100
         self.steps_taken = 0
@@ -62,12 +77,24 @@ class UIUpdateProgressBar(UIStatusBar):
         else:
             if self.step_count:
                 if self.scaling_factor:
-                    current_value = '{:.2f}'.format(round(self.maximum_progress / self.step_count * self.steps_taken * self.scaling_factor, 2))
-                    maximum_value = '{:.2f}'.format(round(self.maximum_progress * self.scaling_factor, 2))
+                    current_value = "{:.2f}".format(
+                        round(
+                            self.maximum_progress
+                            / self.step_count
+                            * self.steps_taken
+                            * self.scaling_factor,
+                            2,
+                        )
+                    )
+                    maximum_value = "{:.2f}".format(
+                        round(self.maximum_progress * self.scaling_factor, 2)
+                    )
 
                     return f"{current_value}{self.unit} / {maximum_value}{self.unit}"
                 else:
-                    current_value = round(self.maximum_progress / self.step_count * self.steps_taken, 2)
+                    current_value = round(
+                        self.maximum_progress / self.step_count * self.steps_taken, 2
+                    )
                     maximum_value = round(self.maximum_progress, 2)
 
                     return f"{current_value}{self.unit} / {maximum_value}{self.unit}"

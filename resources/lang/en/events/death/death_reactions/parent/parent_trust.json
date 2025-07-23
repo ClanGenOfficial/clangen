@@ -1,19 +1,20 @@
 {
     "general": {
         "body": [
-            "r_c nuzzles against the fur of {PRONOUN/r_c/poss} dead child, {PRONOUN/r_c/poss} kit, {PRONOUN/r_c/poss} m_c, and feels as though the world has ended.",
-            "No parent wants to outlive their child, and r_c wails over m_c's body.",
-            "r_c lays next to m_c's body, numb to the world around {PRONOUN/r_c/object}.",
-            "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
-            "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-            "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
-            "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
+            "r_c knew that c_n would be in safe paws after {PRONOUN/r_c/poss} death, with cats like m_c to guide it. {PRONOUN/r_c/subject/CAP} never thought {PRONOUN/r_c/poss} kit would be taken before {PRONOUN/r_c/object}.",
+            "r_c is stunned by m_c's death. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was}n't only {PRONOUN/r_c/poss} kit, {PRONOUN/m_c/subject} {VERB/m_c/were/was} also a source of strength and inspiration to {PRONOUN/r_c/object}.",
+            "r_c stands over m_c's slumped body, unable to breathe or speak. How could {PRONOUN/r_c/poss} brilliant, capable kit be taken away so soon?",
+            "r_c speaks at m_c's vigil, choking up at the memories of caring for {PRONOUN/m_c/object}, and the ways m_c cared for {PRONOUN/r_c/object} too.",
+            "r_c nuzzles the body of m_c one last time before c_n lays {PRONOUN/m_c/object} to rest. All the memories, all of m_c's achievements and successes, flit before r_c's eyes, then vanish.",
+            "There was so much goodness, so much wisdom beyond {PRONOUN/m_c/poss} moons, in {PRONOUN/r_c/poss} beloved kit. It just isn't fair that m_c was taken so soon, and r_c is too choked up to speak at the vigil."
         ],
         "no_body": [
-            "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} living through a nightmare. m_c, {PRONOUN/r_c/poss} kit, can't really be dead.",
-            "When r_c hears the news of m_c's death, {PRONOUN/r_c/subject} {VERB/r_c/collapse/collapses} and {VERB/r_c/wail/wails} as though {PRONOUN/r_c/poss} own life was ending.",
-            "m_c had such a bright future ahead of {PRONOUN/m_c/object}. r_c can still hear {PRONOUN/m_c/object} talking about {PRONOUN/m_c/poss} dreams, can still picture {PRONOUN/m_c/object} running through c_n's territory, and to know that m_c will never get the chance to fulfill that...",
-            "r_c chokes back wails and tears, trying to get to the end of the story {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been telling about m_c's days in the nursery. {PRONOUN/r_c/subject/CAP} can do this, {PRONOUN/r_c/subject} can make sure m_c is honored at {PRONOUN/m_c/poss} vigil, even if r_c can't do anything else for {PRONOUN/m_c/object}."
+            "r_c knew that c_n would be in safe paws after {PRONOUN/r_c/poss} death, with cats like m_c to guide it. {PRONOUN/r_c/subject/CAP} never thought {PRONOUN/r_c/poss} kit would be taken before {PRONOUN/r_c/object}.",
+            "r_c is stunned by m_c's death. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was}n't only {PRONOUN/r_c/poss} kit, {PRONOUN/m_c/subject} {VERB/m_c/were/was} also a source of strength and inspiration to {PRONOUN/r_c/object}.",
+            "r_c speaks at m_c's vigil, choking up at the memories of caring for {PRONOUN/m_c/object}, and the ways m_c cared for {PRONOUN/r_c/object} too.",
+            "There was so much goodness, so much wisdom beyond {PRONOUN/m_c/poss} moons, in {PRONOUN/r_c/poss} beloved kit. It just isn't fair that m_c was taken so soon, and r_c is too choked up to speak at the vigil.",
+            "r_c held onto hope that m_c might return against all odds, but at {PRONOUN/m_c/poss} vigil, {PRONOUN/r_c/subject} {VERB/r_c/break/breaks} down crying, realizing that {PRONOUN/r_c/poss} kit is never coming back.",
+            "r_c hopes that wherever m_c is now, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} how proud r_c is of {PRONOUN/m_c/object}, and how loved {PRONOUN/m_c/subject} {VERB/m_c/are/is}."
         ]
     },
     "adventurous": {

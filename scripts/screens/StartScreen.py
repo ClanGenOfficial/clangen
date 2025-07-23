@@ -18,23 +18,25 @@ import subprocess
 import traceback
 from html import escape
 
-import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
 from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, constants
 from scripts.game_structure.audio import music_manager
+from scripts.game_structure.game.settings import game_settings_load, game_setting_get
 from scripts.game_structure.game_essentials import (
     game,
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
+from scripts.housekeeping.datadir import open_data_dir, open_url
 from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
+from ..game_structure.game.switches import switch_get_value, Switch
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
@@ -57,6 +59,7 @@ class StartScreen(Screens):
         self.social_buttons = {}
 
         self.error_open = False
+        self.event_edit = None
 
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
@@ -79,12 +82,7 @@ class StartScreen(Screens):
             if event.ui_element in screens and not self.error_open:
                 self.change_screen(screens[event.ui_element])
             elif event.ui_element == self.open_data_directory_button:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", "-R", get_data_dir()])
-                elif platform.system() == "Windows":
-                    os.startfile(get_data_dir())  # pylint: disable=no-member
-                elif platform.system() == "Linux":
-                    subprocess.Popen(["xdg-open", get_data_dir()])
+                open_data_dir()
                 return
             elif event.ui_element == self.closebtn:
                 self.error_box.kill()
@@ -93,42 +91,19 @@ class StartScreen(Screens):
                 self.closebtn.kill()
                 self.open_data_directory_button.kill()
                 self.error_open = False
-                # game.switches['error_message'] = ''
-                # game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
-                UpdateAvailablePopup(game.switches["last_screen"])
+                UpdateAvailablePopup()
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
+            elif event.ui_element == self.event_edit:
+                self.change_screen("event edit screen")
             elif event.ui_element == self.social_buttons["discord_button"]:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", "-u", "https://discord.gg/clangen"])
-                elif platform.system() == "Windows":
-                    os.system(f"start \"\" {'https://discord.gg/clangen'}")
-                elif platform.system() == "Linux":
-                    subprocess.Popen(["xdg-open", "https://discord.gg/clangen"])
+                open_url("https://discord.gg/clangen")
             elif event.ui_element == self.social_buttons["tumblr_button"]:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(
-                        ["open", "-u", "https://officialclangen.tumblr.com/"]
-                    )
-                elif platform.system() == "Windows":
-                    os.system(f"start \"\" {'https://officialclangen.tumblr.com/'}")
-                elif platform.system() == "Linux":
-                    subprocess.Popen(
-                        ["xdg-open", "https://officialclangen.tumblr.com/"]
-                    )
+                open_url("https://officialclangen.tumblr.com/")
             elif event.ui_element == self.social_buttons["twitter_button"]:
-                if platform.system() == "Darwin":
-                    subprocess.Popen(
-                        ["open", "-u", "https://twitter.com/OfficialClangen"]
-                    )
-                elif platform.system() == "Windows":
-                    os.system(f"start \"\" {'https://twitter.com/OfficialClangen'}")
-                elif platform.system() == "Linux":
-                    subprocess.Popen(
-                        ["xdg-open", "https://twitter.com/OfficialClangen"]
-                    )
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+                open_url("https://twitter.com/OfficialClangen")
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if (
                 event.key == pygame.K_RETURN or event.key == pygame.K_SPACE
             ) and self.continue_button.is_enabled:
@@ -153,6 +128,8 @@ class StartScreen(Screens):
         self.warning_label.kill()
         self.update_button.kill()
         self.quit.kill()
+        if self.event_edit:
+            self.event_edit.kill()
         self.closebtn.kill()
         for btn in self.social_buttons:
             self.social_buttons[btn].kill()
@@ -163,15 +140,19 @@ class StartScreen(Screens):
         """
 
         super().screen_switches()
+        if game.event_editing:
+            game.event_editing = False
 
         # start menu music if it isn't already playing
         # this is the only screen that has to check its own music, other screens handle that in the screen change
         music_manager.check_music("start screen")
 
         bg = pygame.image.load("resources/images/menu.png").convert()
-        if game.settings["dark mode"]:
+        if game_setting_get("dark mode"):
             bg.fill(
-                game.config["theme"]["fullscreen_background"]["dark"]["mainmenu_tint"],
+                constants.CONFIG["theme"]["fullscreen_background"]["dark"][
+                    "mainmenu_tint"
+                ],
                 bg.get_rect(),
                 pygame.BLEND_MULT,
             )
@@ -225,6 +206,15 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.settings_button},
         )
+        if constants.CONFIG["dev_tools"]:
+            self.event_edit = UISurfaceImageButton(
+                ui_scale(pygame.Rect((70, 15), (200, 30))),
+                "buttons.event_edit",
+                image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
+                object_id="@buttonstyles_mainmenu",
+                manager=MANAGER,
+                anchors={"top_target": self.quit},
+            )
 
         self.social_buttons["twitter_button"] = UIImageButton(
             ui_scale(pygame.Rect((12, 647), (40, 40))),
@@ -321,7 +311,7 @@ class StartScreen(Screens):
                 and not get_version_info().is_itch
                 and get_version_info().upstream.lower()
                 == "ClanGenOfficial/clangen".lower()
-                and game.settings["check_for_updates"]
+                and game_setting_get("check_for_updates")
                 and not has_checked_for_update
             ):
                 if has_update(UpdateChannel(get_version_info().release_channel)):
@@ -337,9 +327,7 @@ class StartScreen(Screens):
                                 show_popup = False
 
                     if show_popup:
-                        UpdateAvailablePopup(
-                            game.switches["last_screen"], show_checkbox=True
-                        )
+                        UpdateAvailablePopup(show_checkbox=True)
 
                 has_checked_for_update = True
 
@@ -349,7 +337,7 @@ class StartScreen(Screens):
             logger.exception("Failed to check for update")
             has_checked_for_update = True
 
-        if game.settings["show_changelog"]:
+        if game_setting_get("show_changelog"):
             show_changelog = True
             lastCommit = "0000000000000000000000000000000000000000"
             if os.path.exists(f"{get_cache_dir()}/changelog_popup_shown"):
@@ -361,7 +349,7 @@ class StartScreen(Screens):
                         show_changelog = False
 
             if show_changelog:
-                ChangelogPopup(game.switches["last_screen"])
+                ChangelogPopup()
                 with open(
                     f"{get_cache_dir()}/changelog_popup_shown", "w", encoding="utf-8"
                 ) as write_file:
@@ -380,36 +368,36 @@ class StartScreen(Screens):
         self.warning_label.text_horiz_alignment = "center"
         self.warning_label.rebuild()
 
-        if game.clan is not None and game.switches["error_message"] == "":
+        if game.clan is not None and switch_get_value(Switch.error_message) == "":
             self.continue_button.enable()
         else:
             self.continue_button.disable()
 
-        if len(game.switches["clan_list"]) > 1:
+        if len(switch_get_value(Switch.clan_list)) > 1:
             self.switch_clan_button.enable()
         else:
             self.switch_clan_button.disable()
 
-        if game.switches["error_message"]:
+        if switch_get_value(Switch.error_message):
             error_text = "screens.start.error_text"
             traceback_text = ""
-            if game.switches["traceback"]:
+            if switch_get_value(Switch.traceback):
                 print("Traceback:")
-                print(game.switches["traceback"])
+                print(switch_get_value(Switch.traceback))
                 traceback_text = "<br><br>" + escape(
                     "".join(
                         traceback.format_exception(
-                            game.switches["traceback"],
-                            game.switches["traceback"],
-                            game.switches["traceback"].__traceback__,
+                            switch_get_value(Switch.traceback),
+                            switch_get_value(Switch.traceback),
+                            switch_get_value(Switch.traceback).__traceback__,
                         )
                     )
                 )  # pylint: disable=line-too-long
             self.error_label.set_text(
                 error_text,
                 text_kwargs={
-                    "error": str(game.switches["error_message"]),
-                    "traceback": traceback_text,
+                    "error": str(switch_get_value(Switch.error_message)),
+                    Switch.traceback: traceback_text,
                 },
             )
             self.error_box.show()
@@ -431,4 +419,4 @@ class StartScreen(Screens):
                     game.clan.remove_cat(x)
 
         # LOAD settings
-        game.load_settings()
+        game_settings_load()

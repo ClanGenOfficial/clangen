@@ -97,7 +97,7 @@
         "patrol_id": "gen_bord_asyoulikeit2",
         "biome": [ "beach", "forest", "plains", "wetlands"],
         "season": [ "any" ],
-        "types": [],
+        "types": ["border"],
         "tags": [],
         "patrol_art": "cat_running_two",
         "min_cats": 2,

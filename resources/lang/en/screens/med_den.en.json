@@ -9,7 +9,7 @@
         "out_den": "out of den",
         "minor": "minor",
         "meds_cover": {
-            "one": "m_c can care for a Clan of up to %{clansize} members, including {PRONOUN/med_name/self}.",
+            "one": "m_c can care for a Clan of up to %{clansize} members, including {PRONOUN/m_c/self}.",
             "many": "c_n's medicine cats can care for a Clan of up to %{clansize} members, including themselves."
         },
         "expiration": "It was discovered that some stores of %{herbs} were too old to be of use anymore.",
@@ -22,7 +22,7 @@
         "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
         "focus": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}.",
         "blood_loss": "Herbs were used to stop blood loss for %{name}.",
-        "loss_event": "Lost %{herbs} during this moon.",
-        "gain_event": "Gained %{herbs} during this moon."
+        "loss_event": "The Clan lost %{herbs}.",
+        "gain_event": "The Clan gained %{herbs}."
     }
 }

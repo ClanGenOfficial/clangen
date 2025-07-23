@@ -455,7 +455,7 @@
         "biome": ["beach"],
         "season": ["greenleaf"],
         "tags": [],
-        "types": [],
+        "types": ["training"],
         "patrol_art": "gen_bord_story",
         "min_cats": 3,
         "max_cats": 6,
