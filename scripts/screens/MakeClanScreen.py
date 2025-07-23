@@ -2220,9 +2220,9 @@ class MakeClanScreen(Screens):
 
     def _clan_name_exists(self, new_clan_name: str):
         return new_clan_name.casefold() in (
-                clan.casefold() for clan in switch_get_value(Switch.clan_list)
-            )
-    
+            clan.casefold() for clan in switch_get_value(Switch.clan_list)
+        )
+
     def _generate_unique_clan_name(self, new_clan_name: str):
         return f"{new_clan_name}_{uuid4()}"
 

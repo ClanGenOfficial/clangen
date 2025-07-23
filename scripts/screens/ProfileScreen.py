@@ -313,7 +313,8 @@ class ProfileScreen(Screens):
                                 new_group=CatGroup.STARCLAN
                             )
                             self.the_cat.thought = i18n.t(
-                                "screens.profile.guide_thought_sc", clan=game.clan.displayname
+                                "screens.profile.guide_thought_sc",
+                                clan=game.clan.displayname,
                             )
                         # SC -> DF
                         else:
@@ -322,7 +323,8 @@ class ProfileScreen(Screens):
                             )
 
                             self.the_cat.thought = i18n.t(
-                                "screens.profile.guide_thought_df", clan=game.clan.displayname
+                                "screens.profile.guide_thought_df",
+                                clan=game.clan.displayname,
                             )
                         self.the_cat.pelt.rebuild_sprite = True
                     else:
