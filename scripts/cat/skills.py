@@ -369,11 +369,11 @@ class CatSkills:
 
         new_skill.hidden = hidden_skill
 
-        if rank == CatRank.NEWBORN or CatAge.NEWBORN:
+        if rank == CatRank.NEWBORN or age == CatAge.NEWBORN:
             pass
-        elif rank == CatRank.KITTEN or CatAge.KITTEN:
+        elif rank == CatRank.KITTEN or age == CatAge.KITTEN:
             new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
-        elif rank.is_any_apprentice_rank() or CatAge.ADOLESCENT:
+        elif rank.is_any_apprentice_rank() or age == CatAge.ADOLESCENT:
             new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)
             if random.randint(1, 3) == 1:
                 new_skill.secondary = Skill.get_random_skill(
