@@ -317,9 +317,14 @@ class Status:
 
     @property
     def is_other_clancat(self) -> bool:
-        return (
-            self.social == CatSocial.CLANCAT and not self.group == CatGroup.PLAYER_CLAN
+        dead_player_clan = (
+            self.group
+            and self.group.is_afterlife()
+            and self.get_last_living_group() == CatGroup.PLAYER_CLAN
         )
+        living_player_clan = self.alive_in_player_clan
+
+        return not dead_player_clan and not living_player_clan
 
     @property
     def is_leader(self) -> bool:
