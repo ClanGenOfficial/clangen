@@ -324,7 +324,7 @@ class Status:
         )
         living_player_clan = self.alive_in_player_clan
 
-        return not dead_player_clan and not living_player_clan
+        return not dead_player_clan and not living_player_clan and self.is_clancat
 
     @property
     def is_leader(self) -> bool:
