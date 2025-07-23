@@ -6,6 +6,7 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
+from scripts.clan_package.settings import switch_clan_setting
 from scripts.clan_package.settings.clan_settings import (
     set_clan_setting,
     get_clan_setting,
@@ -142,14 +143,13 @@ class ListScreen(Screens):
 
             # FAV TOGGLE
             if element == self.cat_list_bar_elements["fav_toggle"]:
+                switch_clan_setting("show fav")
                 if "#fav_cat_toggle_on" in event.ui_element.get_object_ids():
                     element.change_object_id("#fav_cat_toggle_off")
                     element.set_tooltip("screens.list.favorite_show_tooltip")
-                    set_clan_setting("show fav", False)
                 else:
                     element.change_object_id("#fav_cat_toggle_on")
                     element.set_tooltip("screens.list.favorite_hide_tooltip")
-                    set_clan_setting("show fav", True)
                 self.update_cat_list(
                     self.cat_list_bar_elements["search_bar_entry"].get_text()
                 )
