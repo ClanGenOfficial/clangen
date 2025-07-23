@@ -1544,7 +1544,7 @@ class Cat:
                     or other_cat.ID not in self.relationships
                 ):
                     all_cats.remove(other_cat)
-                    
+
                     if not all_cats or i > 100:
                         other_cat = None
                         break
