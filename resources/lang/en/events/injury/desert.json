@@ -722,7 +722,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "This looks like being sunstruck, like m_c has stared at the noon sun too long. But m_c never did that. Visions of prophecy_list_sight are the last thing {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} seeing.",
+        "event_text": "This looks like being sunstruck, like m_c has stared at the noon sun too long. But m_c never did that. Visions of prophecy_list_sight/m_c are the last thing {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} seeing.",
         "m_c": {
             "age": [
                 "adolescent",

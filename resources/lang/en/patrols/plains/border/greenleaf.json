@@ -1862,7 +1862,7 @@
                 ]
             },
             {
-                "text": "s_c shivers, levering {PRONOUN/s_c/self} out of the burrow entrance {PRONOUN/s_c/subject} tripped into. p_l asks if {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to explore it, but s_c shakes {PRONOUN/s_c/poss} head no. {PRONOUN/s_c/subject/CAP} can't explain it, but the tunnel gives {PRONOUN/s_c/object} flashes of clair_list.",
+                "text": "s_c shivers, levering {PRONOUN/s_c/self} out of the burrow entrance {PRONOUN/s_c/subject} tripped into. p_l asks if {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to explore it, but s_c shakes {PRONOUN/s_c/poss} head no. {PRONOUN/s_c/subject/CAP} can't explain it, but the tunnel gives {PRONOUN/s_c/object} flashes of clair_list/s_c.",
                 "exp": 40,
                 "weight": 30,
                 "art": "gen_train_patrolapprenticesessionfail",

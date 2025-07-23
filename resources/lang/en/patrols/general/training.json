@@ -572,7 +572,7 @@
                 ]
             },
             {
-                "text": "No one means to, but... well... the pair drifts off into a nap, lured by the sun. Untethered by normal limitations, s_c's spirit wanders from {PRONOUN/s_c/poss} own mindscape, picking up dream_list from {PRONOUN/s_c/poss} sleeping training partner like burrs on a pelt.",
+                "text": "No one means to, but... well... the pair drifts off into a nap, lured by the sun. Untethered by normal limitations, s_c's spirit wanders from {PRONOUN/s_c/poss} own mindscape, picking up dream_list/s_c from {PRONOUN/s_c/poss} sleeping training partner like burrs on a pelt.",
                 "exp": 30,
                 "weight": 40,
                 "can_have_stat": ["any"],

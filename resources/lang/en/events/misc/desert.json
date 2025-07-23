@@ -455,7 +455,7 @@
     "location": ["desert"],
     "season": ["any"],
     "frequency": 2,
-    "event_text": "m_c slips into The Dreaming, joining the spirits of land and place for one eternal brief moment. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with memory draining irrevocably from {PRONOUN/m_c/poss} tight grasp, losing everything but a glimpse of clair_list.",
+    "event_text": "m_c slips into The Dreaming, joining the spirits of land and place for one eternal brief moment. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with memory draining irrevocably from {PRONOUN/m_c/poss} tight grasp, losing everything but a glimpse of clair_list/m_c.",
     "m_c": {
       "age": ["any"],
       "status": ["any"],
