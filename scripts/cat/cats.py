@@ -1544,16 +1544,14 @@ class Cat:
                     or other_cat.ID not in self.relationships
                 ):
                     all_cats.remove(other_cat)
-                    if not all_cats:
+                    
+                    if not all_cats or i > 100:
                         other_cat = None
                         break
 
                     other_cat = choice(all_cats)
 
                     i += 1
-                    if i > 100:
-                        other_cat = None
-                        break
 
             # for dead cats, they can think about whoever they want
             elif self.status.group and self.status.group.is_afterlife():
@@ -1562,7 +1560,7 @@ class Cat:
             # for cats currently outside
             # it appears as for now, kittypets and loners can only think about outsider cats
             elif self.status.is_outsider:
-                while len(all_cats) > 1 or (other_cat not in self.relationships):
+                while all_cats and (other_cat not in self.relationships):
                     all_cats.remove(other_cat)
                     if not all_cats:
                         other_cat = None
