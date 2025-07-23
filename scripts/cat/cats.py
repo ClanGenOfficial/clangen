@@ -1538,10 +1538,9 @@ class Cat:
             # for cats inside the clan
             if self.status.is_clancat:
                 # we want to limit how often dead cats are thought about
-                thinking_of_dead_cat = getrandbits(4) != 1
-                while (
-                    len(all_cats) > 1
-                    or (other_cat.dead and thinking_of_dead_cat)
+                thinking_of_dead_cat = getrandbits(4) == 1
+                while all_cats and (
+                    (other_cat.dead and thinking_of_dead_cat)
                     or other_cat.ID not in self.relationships
                 ):
                     all_cats.remove(other_cat)
