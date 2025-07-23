@@ -1540,7 +1540,7 @@ class Cat:
                 # we want to limit how often dead cats are thought about
                 thinking_of_dead_cat = getrandbits(4) == 1
                 while all_cats and (
-                    (other_cat.dead and thinking_of_dead_cat)
+                    (other_cat.dead and not thinking_of_dead_cat)
                     or other_cat.ID not in self.relationships
                 ):
                     all_cats.remove(other_cat)
