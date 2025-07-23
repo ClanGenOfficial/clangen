@@ -1,0 +1,17 @@
+{
+    "loner": [
+        "Rumors reach the Clan that the loner m_c has died recently."
+    ],
+    "rogue": [
+        "Rumors reach the Clan that the rogue m_c has died recently."
+    ],
+    "kittypet": [
+        "Rumors reach the Clan that the kittypet m_c has died recently."
+    ],
+    "exiled": [
+        "Rumors reach the Clan that m_c has died in exile."
+    ],
+    "lost": [
+        "Will {PRONOUN/m_c/subject} reach StarClan, even so far away? m_c isn't sure, but as {PRONOUN/m_c/subject} {VERB/m_c/drift/drifts} away, {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} to see familiar starry fur on the other side."
+    ]
+}

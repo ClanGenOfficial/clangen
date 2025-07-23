@@ -2,10 +2,13 @@ import random
 
 from typing import TYPE_CHECKING
 
-from scripts.cat.enums import CatGroup
+import i18n
+
+from scripts.cat.enums import CatGroup, CatStanding, CatRank
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -20,33 +23,26 @@ class OutsiderEvents:
 
     @staticmethod
     def killing_outsiders(cat: "Cat"):
-        if get_clan_setting("lead_den_outsider_event"):
-            info_dict = get_clan_setting("lead_den_outsider_event")
+        if info_dict := get_clan_setting("lead_den_outsider_event"):
             if cat.ID == info_dict["cat_ID"]:
                 return
+
+        deaths = load_lang_resource("events/death/outsider_deaths/outsider_deaths.json")
 
         # killing outside cats
         if cat.status.is_outsider:
             if random.getrandbits(6) == 1 and not cat.dead:
-                death_history = "m_c died outside of the Clan."
+                death_history = "events.death.outsider_deaths.history.default"
                 if cat.status.is_exiled(CatGroup.PLAYER_CLAN):
-                    text = f"Rumors reach your Clan that the exiled {cat.name} has died recently."
+                    text = random.choice(deaths["exiled"])
                 elif cat.status.is_lost():
-                    text = (
-                        f"Will they reach StarClan, even so far away? {cat.name} isn't sure, "
-                        f"but as they drift away, they hope to see "
-                        f"familiar starry fur on the other side."
-                    )
-                    death_history = (
-                        "m_c died while being lost and trying to get back to the Clan."
-                    )
+                    text = random.choice(deaths["lost"])
+                    death_history = "events.death.outsider_deaths.history.lost"
                 else:
-                    text = (
-                        f"Rumors reach your Clan that the {cat.status.social.replace('_', ' ')} "
-                        f"{cat.name} has died recently."
-                    )
-                    death_history = "m_c died while roaming around."
+                    text = random.choice(deaths[cat.status.social.value])
+                    death_history = f"events.death.outsider_deaths.history.{cat.status.social.value}"
 
+                death_history = i18n.t(death_history)
                 cat.history.add_death(death_text=death_history)
                 cat.die()
                 game.cur_events_list.append(
