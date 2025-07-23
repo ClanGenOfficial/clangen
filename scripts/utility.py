@@ -14,7 +14,7 @@ from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
-from typing import List, Tuple, TYPE_CHECKING, Type, Union
+from typing import List, Tuple, TYPE_CHECKING, Type, Union, Optional
 
 import i18n
 import pygame
@@ -264,7 +264,12 @@ def change_clan_relations(other_clan, difference):
 
 
 def create_new_cat_block(
-    Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]
+    Cat: Optional["Cat"],
+    Relationship,
+    event,
+    in_event_cats: dict,
+    i: int,
+    attribute_list: List[str],
 ) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
@@ -522,7 +527,7 @@ def create_new_cat_block(
         thought = i18n.t("hardcoded.thought_new_dead")
 
     # check if we can use an existing cat here
-    chosen_cat = None
+    chosen_cat: Optional["Cat"] = None
     if "exists" in attribute_list:
         existing_outsiders = [
             i for i in Cat.all_cats.values() if i.status.is_outsider and not i.dead
@@ -546,7 +551,7 @@ def create_new_cat_block(
             elif not outside:
                 chosen_cat.add_to_clan()
                 if chosen_cat.status.rank != rank:
-                    chosen_cat.rank_change(resort=True)
+                    chosen_cat.rank_change(new_rank=CatRank(rank), resort=True)
             elif outside:
                 # updates so that the clan is marked as knowing of this cat
                 current_standing = chosen_cat.status.get_standing_with_group(
@@ -1651,9 +1656,15 @@ def get_other_clan_relation(relation):
 
 
 def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
-    """Helper function for add_pronouns. If raise_exception is
-    False, any error in pronoun formatting will not raise an
-    exception, and will use a simple replacement "error" """
+    """
+    Helper function for add_pronouns.
+    :param m: Snippet to pronounify
+    :param cat_pronouns_dict: Cats to pronounify
+    :param raise_exception: If True, will raise an exception if a mistake is found. Necessary for tests!
+    :return: Appropriate pronoun/verb/adjective
+    :raises KeyError: if cat doesn't have requested pronoun
+    :raises IndexError: if cat doesn't have requested pronoun
+    """
 
     # Add protection about the "insert" sometimes used
     if m.group(0) == "{insert}":
@@ -1669,14 +1680,19 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
             for cat in inner_details[1].split("+"):
                 try:
                     catlist.append(cat_pronouns_dict[cat][1])
-                except KeyError:
+                except KeyError as e:
                     print(f"Missing pronouns for {cat}")
+                    if raise_exception:
+                        raise e
                     continue
             d = determine_plural_pronouns(catlist)
         else:
             try:
                 d = cat_pronouns_dict[inner_details[1]][1]
-            except KeyError:
+            except KeyError as e:
+                if raise_exception:
+                    raise e
+
                 if inner_details[0].upper() == "ADJ":
                     # find the default - this is a semi-expected behaviour for the adj tag as it may be called when
                     # there is no relevant cat
@@ -1867,7 +1883,6 @@ def find_special_list_types(text):
     """
     senses = []
     list_text = None
-    list_type = None
     words = text.split(" ")
     for bit in words:
         if "_list" in bit:

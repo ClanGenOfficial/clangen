@@ -17,7 +17,7 @@ from scripts.cat import save_load
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
 from scripts.cat.names import Name
-from scripts.cat.save_load import save_cats
+from scripts.cat.save_load import save_cats, add_cat_to_fade_id
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
@@ -870,7 +870,7 @@ class Events:
                         else:
                             game.clan.medicine_cat = None
 
-                save_load.cat_to_fade.append(cat.ID)
+                add_cat_to_fade_id(cat.ID)
                 cat.set_faded()
 
     def one_moon_outside_cat(self, cat):

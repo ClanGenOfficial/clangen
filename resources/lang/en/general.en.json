@@ -128,6 +128,7 @@
         "relation_NOT_BLOOD": "not blood related",
         "relation_RELATED": "blood related",
         "related_label": "related: %{relation}",
+        "related_text": "related",
         "niece": "niece",
         "nephew": "nephew",
         "siblings_child": "sibling's child",

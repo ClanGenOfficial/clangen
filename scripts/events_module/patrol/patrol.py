@@ -591,9 +591,7 @@ class Patrol:
 
             # Don't check for repeat patrols if ensure_patrol_id is being used.
             if (
-                not isinstance(
-                    constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"], str
-                )
+                constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"] == ""
                 and patrol.patrol_id in self.used_patrols
             ):
                 continue
@@ -1032,6 +1030,15 @@ class Patrol:
             ),
         }
 
+        text, senses, list_type, cat_tag = find_special_list_types(text)
+        if list_type:
+            sign_list = get_special_snippet_list(
+                list_type, amount=randint(1, 3), sense_groups=senses
+            )
+            text = text.replace(list_type, str(sign_list))
+            if cat_tag:
+                text = text.replace("cat_tag", cat_tag)
+
         other_cats = [
             i
             for i in self.patrol_cats
@@ -1149,13 +1156,6 @@ class Patrol:
                         break
 
         text = text.replace("c_n", str(game.clan.name) + "Clan")
-
-        text, senses, list_type, _ = find_special_list_types(text)
-        if list_type:
-            sign_list = get_special_snippet_list(
-                list_type, amount=randint(1, 3), sense_groups=senses
-            )
-            text = text.replace(list_type, str(sign_list))
 
         # TODO: check if this can be handled in event_text_adjust
         return text

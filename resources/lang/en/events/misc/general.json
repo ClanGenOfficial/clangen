@@ -4030,7 +4030,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c found the scent of a stranger near the border, though the cat {PRONOUN/nc:0/self} is long gone. Smells like Twolegs.",
+        "event_text": "m_c found the scent of a stranger near the border, though the cat {PRONOUN/n_c:0/self} is long gone. Smells like Twolegs.",
         "m_c": {
             "age": [
                 "adolescent",

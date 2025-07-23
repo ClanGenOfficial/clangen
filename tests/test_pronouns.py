@@ -110,7 +110,9 @@ def _test_replacement_failure(path: str, repl_dict: dict) -> bool:
 
     for _str in get_all_strings(contents):
         try:
-            processed = process_text(_str, repl_dict, True)
+            processed = process_text(
+                text=_str, cat_dict=repl_dict, raise_exception=True
+            )
         except (KeyError, IndexError) as _e:
             print(
                 f'::error file={path}: "{_str}" contains invalid pronoun or verb tags.'

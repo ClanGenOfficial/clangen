@@ -15,6 +15,7 @@ import i18n
 import ujson  # type: ignore
 
 import scripts.game_structure.localization as pronouns
+from scripts.cat import save_load
 from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -228,7 +229,7 @@ class Cat:
             potential_id = str(next(Cat.id_iter))
 
             if game.clan:
-                faded_cats = game.clan.faded_ids
+                faded_cats = save_load.get_faded_ids()
             else:
                 faded_cats = []
 
@@ -634,12 +635,10 @@ class Cat:
         # since we just yeeted them to their afterlife, we gotta check their previous group affiliation, not current
         if game.clan and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN:
             self.grief(body)
+            Cat.dead_cats.append(self)
 
         # mark the sprite as outdated
         self.pelt.rebuild_sprite = True
-
-        if not self.status.is_outsider or self.status.is_former_clancat:
-            Cat.dead_cats.append(self)
 
     def exile(self):
         """This is used to send a cat into exile."""
@@ -1527,7 +1526,8 @@ class Cat:
         :param just_died: Set True if the cat is generating a death thought
         :param lives_left: If a leader is generating a death thought, include their lives left here
         """
-        all_cats = self.all_cats
+        all_cats = self.all_cats.copy()
+        all_cats.pop(self.ID)
         other_cat = choice(list(all_cats.keys()))
         game_mode = switch_get_value(Switch.game_mode)
         biome = switch_get_value(Switch.biome)
@@ -1860,6 +1860,8 @@ class Cat:
         :param lethal: Allow lethality, default `True` (bool)
         :param severity: Override severity, default `'default'` (str, accepted values `'minor'`, `'major'`, `'severe'`)
         """
+        if self.dead:
+            return
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
@@ -1928,6 +1930,9 @@ class Cat:
         :param severity: _description_, defaults to 'default'
         :type severity: str, optional
         """
+        if self.dead:
+            return
+
         if name not in INJURIES:
             print(f"WARNING: {name} is not in the injuries collection.")
             return
@@ -2038,6 +2043,8 @@ class Cat:
         self.get_permanent_condition(new_condition, born_with=True)
 
     def get_permanent_condition(self, name, born_with=False, event_triggered=False):
+        if self.dead:
+            return
         if name not in PERMANENT:
             print(
                 self.name,
@@ -3438,7 +3445,6 @@ class Cat:
                 "patrol_with_mentor": (self.patrol_with_mentor or 0),
                 "mate": self.mate,
                 "previous_mates": self.previous_mates,
-                "dead": self.dead,
                 "paralyzed": self.pelt.paralyzed,
                 "no_kits": self.no_kits,
                 "no_retire": self.no_retire,

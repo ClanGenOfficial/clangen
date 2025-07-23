@@ -1507,7 +1507,10 @@ class ProfileScreen(Screens):
                     random_cat=Cat.fetch_cat(death["involved"]),
                 )
 
-                if self.the_cat.status.is_leader:
+                if (
+                    self.the_cat.status.is_leader
+                    or CatRank.LEADER in self.the_cat.status.all_ranks.keys()
+                ):
                     if text == "multi_lives":
                         multi_life_count += 1
                         continue
@@ -1592,7 +1595,11 @@ class ProfileScreen(Screens):
                         text += f" ({i18n.t('general.moon_date', moon=death['moon'])})"
                     all_deaths.append(text)
 
-            if self.the_cat.status.is_leader or death_number > 1:
+            if (
+                self.the_cat.status.is_leader
+                or CatRank.LEADER in self.the_cat.status.all_ranks
+                or death_number > 1
+            ):
                 if death_number > 1:
                     deaths = str("\n" + str(self.the_cat.name) + " ").join(all_deaths)
                 else:
