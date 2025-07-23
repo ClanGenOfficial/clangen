@@ -1324,7 +1324,7 @@
         },
         "r_c": {
             "age": ["any"],
-            "skill": ["STARCLAN,1", "PROPHET,1"]
+            "skill": ["STAR,1", "PROPHET,1"]
         },
         "relationships": [
             {
