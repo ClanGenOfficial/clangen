@@ -3026,7 +3026,7 @@
                 "art": "pln_hunt_gonetwolegtrap1"
             },
             {
-                "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
+                "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
                 "exp": 20,
                 "weight": 20,
                 "art": "pln_hunt_gonetwolegtrap1",
@@ -3042,7 +3042,7 @@
                 ]
             },
             {
-                "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around each other rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
+                "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around each other rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_scared_cat_app",

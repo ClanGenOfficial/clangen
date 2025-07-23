@@ -2404,7 +2404,7 @@
         "thoughts": [
             "Is telling stories to a very interested bunch of apprentices",
             "Instills {PRONOUN/m_c/poss} wisdom into some rowdy apprentices",
-            "Reminds r_c that life is long, and {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't need to do everything at once"
+            "Reminds r_c that life is long, and {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} need to do everything at once"
         ],
         "random_status_constraint": [
             "apprentice",

@@ -173,7 +173,7 @@
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject} {VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject} {VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs"]

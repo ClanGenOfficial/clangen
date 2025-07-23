@@ -2270,7 +2270,7 @@
                 ]
             },
             {
-                "text": "p_l sits down and motions for app1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/app1/object} inquisitively. app1 studiously looks at {PRONOUN/app1/poss} paws, tail curled around {PRONOUN/app1/poss} leg in shame, and mutters that {PRONOUN/app1/subject} {VERB/app1/do/does}n't want to talk about it. p_l gently reassures {PRONOUN/app1/object} that it's okay to ask questions, and though app1 doesn't ask, {PRONOUN/app1/subject} {VERB/app1/seem/seems} more chipper... and {PRONOUN/app1/subject}{VERB/app1/'re/'s} a big help anyways.",
+                "text": "p_l sits down and motions for app1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/app1/object} inquisitively. app1 studiously looks at {PRONOUN/app1/poss} paws, tail curled around {PRONOUN/app1/poss} leg in shame, and mutters that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} want to talk about it. p_l gently reassures {PRONOUN/app1/object} that it's okay to ask questions, and though app1 doesn't ask, {PRONOUN/app1/subject} {VERB/app1/seem/seems} more chipper... and {PRONOUN/app1/subject}{VERB/app1/'re/'s} a big help anyways.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["random_herbs"],
@@ -2398,7 +2398,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l sits down and motions for app1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/app1/object} inquisitively. app1 studiously looks at {PRONOUN/app1/poss} paws, tail curled around {PRONOUN/app1/poss} leg in shame, and mutters that {PRONOUN/app1/subject} {VERB/app1/do/does}n't want to talk about it. The apprentice unfortunately isn't much help from then on, and the patrol returns home empty-pawed.",
+                "text": "p_l sits down and motions for app1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/app1/object} inquisitively. app1 studiously looks at {PRONOUN/app1/poss} paws, tail curled around {PRONOUN/app1/poss} leg in shame, and mutters that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} want to talk about it. The apprentice unfortunately isn't much help from then on, and the patrol returns home empty-pawed.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3633,7 +3633,7 @@
             "medicine cat": [1, 1]
         },
         "weight": 20,
-        "intro_text": "While out collecting herbs, p_l notices how quiet and dejected app1 is acting. After p_l asks {PRONOUN/app1/object} what's wrong, app1 admits {PRONOUN/app1/subject} {VERB/app1/do/does}n't feel cut out to be a medicine cat.",
+        "intro_text": "While out collecting herbs, p_l notices how quiet and dejected app1 is acting. After p_l asks {PRONOUN/app1/object} what's wrong, app1 admits {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} feel cut out to be a medicine cat.",
 	    "decline_text": "Unsure of what to say, p_l continues the herb patrol as usual, leaving app1 to {PRONOUN/app1/poss} sour mood.",
         "chance_of_success": 60,
         "success_outcomes": [

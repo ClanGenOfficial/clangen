@@ -1305,7 +1305,7 @@
         "apprentice": [1, 1]
     },
     "weight": 1,
-    "intro_text": "app1 is tired of being treated like {PRONOUN/app1/subject} {VERB/app1/do/does}n't know anything - {PRONOUN/app1/subject} {VERB/app1/stalk/stalks} off to hunt alone.",
+    "intro_text": "app1 is tired of being treated like {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} know anything - {PRONOUN/app1/subject} {VERB/app1/stalk/stalks} off to hunt alone.",
     "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
     "chance_of_success": 50,
     "success_outcomes": [
@@ -1337,7 +1337,7 @@
             "weight": 20
         },
         {
-            "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't manage a single kill. Instead, app1 pretends {PRONOUN/app1/subject} {VERB/app1/were/was} just out in the dirtplace for a really, <i>really</i> long time when {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back into camp.",
+            "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} manage a single kill. Instead, app1 pretends {PRONOUN/app1/subject} {VERB/app1/were/was} just out in the dirtplace for a really, <i>really</i> long time when {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back into camp.",
             "exp": 0,
             "weight": 20
         },
@@ -1407,7 +1407,7 @@
             "weight": 20
         },
         {
-            "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't manage a single kill. Instead, app1 pretends {PRONOUN/app1/subject} {VERB/app1/were/was} just out in the dirtplace for a really, <i>really</i> long time when {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back into camp.",
+            "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} manage a single kill. Instead, app1 pretends {PRONOUN/app1/subject} {VERB/app1/were/was} just out in the dirtplace for a really, <i>really</i> long time when {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back into camp.",
             "exp": 0,
             "weight": 20
         },
