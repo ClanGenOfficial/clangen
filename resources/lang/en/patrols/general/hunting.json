@@ -4016,7 +4016,7 @@
 ],
         "art": "gen_mates_headbump"
 },        {
-            "text": "No matter where they look, the territory is utterly devoid of prey scents. Privately, r_c thinks p_l could have done a better job of leading this patrol, but {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't share that feedback with {PRONOUN/r_c/poss} mate.",
+            "text": "No matter where they look, the territory is utterly devoid of prey scents. Privately, r_c thinks p_l could have done a better job of leading this patrol, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} share that feedback with {PRONOUN/r_c/poss} mate.",
             "exp": 0,
             "weight": 10,
             "relationships": [
