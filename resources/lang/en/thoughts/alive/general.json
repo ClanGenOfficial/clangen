@@ -85,7 +85,8 @@
             "Is waiting to watch the sunset",
             "Is grooming, grooming, grooming away...",
             "Purrs whenever the sun hits {PRONOUN/m_c/object} just right",
-            "Sprawls out in a warm patch of sunlight"
+            "Sprawls out in a warm patch of sunlight",
+            "Meows"
         ]
     },
     {
@@ -3267,7 +3268,7 @@
     {
         "id": "apprentices_thoughts",
         "thoughts": [
-            "Gossips",
+            "Is gossiping",
             "Acts angsty",
             "Dreads {PRONOUN/m_c/poss} apprentice duties",
             "Fell into the nearby creek yesterday and is still feeling damp",
@@ -5470,7 +5471,8 @@
             "Can't be free of {PRONOUN/m_c/poss} own thoughts",
             "Drowns in memories",
             "Needs some time alone with {PRONOUN/m_c/poss} grief",
-            "Remembers things that used to bring {PRONOUN/m_c/object} joy"
+            "Remembers things that used to bring {PRONOUN/m_c/object} joy",
+            "Sat and stared at nothing the entire day"
         ],
         "perm_conditions": {
             "m_c": [
@@ -5499,15 +5501,12 @@
             "Visits the medicine cat den for thyme",
             "Wakes up screaming after a nightmare",
             "Panics after hearing a noise",
-            "Is seen trembling and looking around nervously",
+            "Felt alright for a while before being engulfed in panic",
             "Snaps at r_c before profusely apologizing",
             "Is comforted by r_c after a flashback",
-            "Is the only cat awake at moonhigh",
             "Doesn't seem to enjoy hunting anymore",
             "Is avoiding {PRONOUN/m_c/poss} Clanmates",
-            "Is startled after r_c snuck up behind {PRONOUN/m_c/object}",
-            "Can't catch {PRONOUN/m_c/poss} breath",
-            "Didn't sleep at all last night"
+            "Is startled after r_c snuck up behind {PRONOUN/m_c/object}"
         ],
         "perm_conditions": {
             "m_c": [
@@ -5519,6 +5518,40 @@
         ]
     },
     {
+        "id": "all_shock",
+        "thoughts": [
+            "Keeps reliving what happened",
+            "Sleeps only in fits and starts",
+            "Can't catch {PRONOUN/m_c/poss} breath",
+            "Panicked at something that reminded {PRONOUN/m_c/object} of what happened to {PRONOUN/m_c/object}",
+            "Has been trying {PRONOUN/m_c/poss} best to avoid reminders of the event",
+            "Feels {PRONOUN/m_c/poss} heart racing",
+            "Didn't sleep at all last night",
+            "Is seen trembling and looking around nervously",
+            "Can't stop panicking",
+            "Woke up thinking the Clan was in danger but it was just a storm",
+            "Woke up in the middle of the night shouting about an emergency {PRONOUN/m_c/subject} only dreamed of",
+            "Is exhausted from being on edge all the time",
+            "Is the only cat awake at moonhigh",
+            "Attempted to face the source of {PRONOUN/m_c/poss} shock, but couldn't do it",
+            "Has been extra paranoid lately",
+            "Has been extra jumpy lately",
+            "Has been extra on edge as of late",
+            "Feels like a failure for not being able to move on",
+            "Wants to run away from the memories",
+            "Feels worn down from the shock",
+            "Keeps asking {PRONOUN/m_c/self} why {PRONOUN/m_c/subject} didn't do things differently",
+            "Feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} drowning in {PRONOUN/m_c/poss} memories",
+            "Keeps thinking of what {PRONOUN/m_c/subject} could have done differently..."
+        ],
+        "has_injuries": {
+            "m_c": [
+                "shock",
+                "lingering shock"
+            ]
+        }
+    },
+    {
         "id": "blood_loss_gen",
         "thoughts": [
             "Is feeling lightheaded",
@@ -5527,7 +5560,8 @@
             "Is fighting for each breath",
             "Is barely responsive",
             "Struggles to stand up from {PRONOUN/m_c/poss} nest",
-            "Sees black spots dancing in {PRONOUN/m_c/poss} vision"
+            "Sees black spots dancing in {PRONOUN/m_c/poss} vision",
+            "Stood up too fast and nearly collapsed"
         ],
         "has_injuries": {
             "m_c": [
@@ -5797,10 +5831,17 @@
             "Is feeling unnaturally cold",
             "Is breathing rapidly",
             "Can't stop shivering",
-            "Feels {PRONOUN/m_c/poss} heart racing",
+            "Sleeps only in fits and starts",
+            "Can't catch {PRONOUN/m_c/poss} breath",
             "Is reeling with dizziness",
-            "Keeps reliving what happened",
-            "Sleeps only in fits and starts"
+            "Can't relax",
+            "Is too scared to leave the medicine cat den",
+            "Has been too shaky to even walk",
+            "Has been trying to ignore the flashbacks",
+            "Keeps trying to push past the incident to no avail",
+            "Trembles at the idea of leaving camp ever again",
+            "Keeps glancing around fearfully",
+            "Is too scared to sleep"
         ],
         "has_injuries": {
             "m_c": [
@@ -5814,7 +5855,8 @@
             "Is staring into the distance",
             "Didn't notice a nearby noise",
             "Is feeling confused",
-            "Is feeling stiff"
+            "Is feeling stiff",
+            "Wonders why there's a gap in {PRONOUN/m_c/poss} memory"
         ],
         "has_injuries": {
             "m_c": [
@@ -5844,7 +5886,9 @@
             "Is scratching furiously",
             "Feels like {PRONOUN/m_c/poss} whole pelt is crawling",
             "Is biting at another itch",
-            "Is biting tufts of fur out while trying to reach an itch"
+            "Is biting tufts of fur out while trying to reach an itch",
+            "Wishes {PRONOUN/m_c/subject} could just remove {PRONOUN/m_c/poss} skin",
+            "Went swimming in an attempt to drown all the fleas"
         ],
         "has_injuries": {
             "m_c": [
@@ -5891,7 +5935,9 @@
             "Doesn't seem to be aware of things around {PRONOUN/m_c/object}",
             "Is talking about something that doesn't make any sense",
             "Isn't sure whether {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} dreaming or not",
-            "Is grateful for any pain-free moment"
+            "Is grateful for any pain-free moment",
+            "Can't stop wondering if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to die",
+            "Has been panicking realizing the treatment isn't working"
         ],
         "has_injuries": {
             "m_c": [
@@ -5934,7 +5980,8 @@
             "Is curled up in {PRONOUN/m_c/poss} nest with pain",
             "Feels like {PRONOUN/m_c/poss} stomach is twisting",
             "Asks a Clanmate to press on {PRONOUN/m_c/poss} stomach",
-            "Chews on grass in hopes of throwing up whatever made {PRONOUN/m_c/object} sick"
+            "Chews on grass in hopes of throwing up whatever made {PRONOUN/m_c/object} sick",
+            "Keeps visiting the dirtplace hoping it'd fix {PRONOUN/m_c/poss} stomachache"
         ],
         "has_injuries": {
             "m_c": [
@@ -5951,7 +5998,13 @@
             "Jolts awake, panting",
             "Yowls in {PRONOUN/m_c/poss} sleep",
             "Paces the camp at moon-high, avoiding {PRONOUN/m_c/poss} nest",
-            "Feels so exhausted {PRONOUN/m_c/poss} paws might drop off"
+            "Feels so exhausted {PRONOUN/m_c/poss} paws might drop off",
+            "Is terrified of {PRONOUN/m_c/poss} own nest",
+            "Keeps anxiously glancing at where the sun is at in the sky",
+            "Has been terrified of something {PRONOUN/m_c/subject} dreamed of",
+            "Woke up thinking the Clan was in danger but it was just a storm",
+            "Woke up in the middle of the night shouting about an emergency {PRONOUN/m_c/subject} dreamed of",
+            "Has been fighting sleep for days now"
         ],
         "has_injuries": {
             "m_c": [
@@ -5969,7 +6022,8 @@
             "Would give anything to have them back",
             "Doesn't see the point in moving on without them",
             "Feels {PRONOUN/m_c/poss} loss like a physical presence",
-            "Stares blankly into the shadows"
+            "Stares blankly into the shadows",
+            "Broke into tears out of nowhere"
         ],
         "has_injuries": {
             "m_c": [
@@ -5998,7 +6052,9 @@
             "Can barely stand up",
             "Is groaning with hunger pains",
             "Isn't sure if {PRONOUN/m_c/subject} {VERB/m_c/have/has} the strength to hunt despite the hunger",
-            "Doesn't even feel the hunger anymore, only the pain"
+            "Doesn't even feel the hunger anymore, only the pain",
+            "Has been eating grass and leaves to try to make the pain go away",
+            "Snapped at a Clanmate coming back from a patrol with no prey"
         ],
         "has_injuries": {
             "m_c": [
@@ -6012,7 +6068,8 @@
             "Is constantly sniffling",
             "Tries to be careful about sneezing around other cats",
             "Hopes to have a clear nose again soon",
-            "Dabs at {PRONOUN/m_c/poss} nose with moss"
+            "Dabs at {PRONOUN/m_c/poss} nose with moss",
+            "Is sleeping with a ball of moss pressed to {PRONOUN/m_c/poss} nose"
         ],
         "has_injuries": {
             "m_c": [
@@ -6081,7 +6138,12 @@
             "Finds blood in {PRONOUN/m_c/poss} moss again",
             "Feels death gazing at {PRONOUN/m_c/object}",
             "Wonders how many days {PRONOUN/m_c/subject} {VERB/m_c/have/has} left",
-            "Reminds {PRONOUN/m_c/poss} loved ones of how much {PRONOUN/m_c/subject} {VERB/m_c/care/cares} for them"
+            "Reminds {PRONOUN/m_c/poss} loved ones of how much {PRONOUN/m_c/subject} {VERB/m_c/care/cares} for them",
+            "Has been coming to terms with {PRONOUN/m_c/poss} fate",
+            "Can't come to terms with {PRONOUN/m_c/poss} fate",
+            "Is terrified of dying",
+            "Doesn't want to die... not yet...",
+            "Has been thinking of the life {PRONOUN/m_c/subject} will never get to live..."
         ],
         "has_injuries": {
             "m_c": [

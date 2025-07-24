@@ -1703,7 +1703,7 @@ class EventEditScreen(Screens):
         self.future_template = {
             "event_type": "death",
             "pool": {
-                "subtype": [],
+                "sub_type": [],
                 "event_id": [],
                 "excluded_event_id": [],
             },
@@ -2356,12 +2356,12 @@ class EventEditScreen(Screens):
                     "A Future Event block has no type. A type must be chosen!"
                 )
             elif (
-                not pool.get("subtype")
+                not pool.get("sub_type")
                 and not pool.get("event_id")
                 and not pool.get("excluded_event_id")
             ):
                 valid = False
-                self.alert_text = "A Future Event block has no subtype, event_id, or excluded_event_id given. Event pool is too broad, you must use at least one of these constraints!"
+                self.alert_text = "A Future Event block has no sub_type, event_id, or excluded_event_id given. Event pool is too broad, you must use at least one of these constraints!"
             elif block["moon_delay"][0] > block["moon_delay"][1]:
                 valid = False
                 self.alert_text = "A Future Event block has an invalid moon delay. The second moon delay number should be equal to or larger than the first!"
@@ -2959,8 +2959,8 @@ class EventEditScreen(Screens):
 
         # POOL
         pool = selected_constraints["pool"]
-        self.future_element["sub_dropdown"].set_selected_list(pool["subtype"].copy())
-        self.future_element["sub_display"].set_text(f"subtype: {pool['subtype']}")
+        self.future_element["sub_dropdown"].set_selected_list(pool["sub_type"].copy())
+        self.future_element["sub_display"].set_text(f"subtype: {pool['sub_type']}")
 
         if pool.get("event_id"):
             text = ""
@@ -2983,8 +2983,11 @@ class EventEditScreen(Screens):
 
         # INVOLVED CATS
         if (
-            "murder_reveal" in pool["subtype"]
-            or (selected_constraints["event_type"] == "misc" and not pool["subtype"])
+            (
+                "murder_reveal" in pool["sub_type"]
+                or "hidden_murder_reveal" in pool["sub_type"]
+            )
+            or (selected_constraints["event_type"] == "misc" and not pool["sub_type"])
             and "mur_c" not in selected_constraints["involved_cats"]
         ):
             selected_constraints["involved_cats"] = {
@@ -3717,7 +3720,7 @@ class EventEditScreen(Screens):
             self.future_element["sub_dropdown"].new_item_list(
                 self.event_types[block_info["event_type"]]
             )
-            block_info["pool"]["subtype"] = []
+            block_info["pool"]["sub_type"] = []
 
         # SUB CHANGE
         elif (
@@ -3734,7 +3737,10 @@ class EventEditScreen(Screens):
                 f"subtype:{block_info['pool']['subtype']}"
             )
 
-            if "murder_reveal" in block_info["pool"]["subtype"]:
+            if (
+                "murder_reveal" in block_info["pool"]["subtype"]
+                or "hidden_murder_reveal" in block_info["pool"]["subtype"]
+            ):
                 block_info["involved_cats"] = {
                     "m_c": "r_c",
                     "mur_c": "m_c",

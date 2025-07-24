@@ -442,7 +442,7 @@
                 ]
             },
             {
-                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's experience as they discuss r_c's vision, which contained clair_list. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's experience as they discuss r_c's vision, which contained clair_list/r_c. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -464,7 +464,7 @@
                 ]
             },
             {
-                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list. p_l reassures r_c, but inwardly was left worried over what it could mean.",
+                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list/r_c. p_l reassures r_c, but inwardly was left worried over what it could mean.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -3273,7 +3273,7 @@
                 "herbs": ["many_herbs", "catmint"]
             },
             {
-                "text": "Sensing the black cat's strong aura, s_c urges it to speak, and listens carefully as it imparts a bone-chilling omen, omen_list.",
+                "text": "Sensing the black cat's strong aura, s_c urges it to speak, and listens carefully as it imparts a bone-chilling omen, omen_list/s_c.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": [
@@ -4763,7 +4763,7 @@
                 "art": "gen_bump_heads_apps"
             },
             {
-                "text": "As they gather herbs, s_c suddenly stops and calls app2 over to show {PRONOUN/app2/object} omen_list_sight. The apprentices discuss what it might mean on their way back to camp.",
+                "text": "As they gather herbs, s_c suddenly stops and calls app2 over to show {PRONOUN/app2/object} omen_list_sight/s_c. The apprentices discuss what it might mean on their way back to camp.",
                 "exp": 30,
                 "weight": 30,
                 "stat_skill": [ "OMEN,1"],
@@ -4781,7 +4781,7 @@
                 "art": "gen_app_crouching_perplexed"
             },
             {
-                "text": "app2 scents juniper off to {PRONOUN/app2/poss} left. s_c scents clair_list_smell to the right. No matter how carefully {PRONOUN/app2/subject} {VERB/app2/scent/scents} the air, app2 can't catch that scent and suggests it might be a sign. They discuss it while herb-gathering.",
+                "text": "app2 scents juniper off to {PRONOUN/app2/poss} left. s_c scents clair_list_smell/s_c to the right. No matter how carefully {PRONOUN/app2/subject} {VERB/app2/scent/scents} the air, app2 can't catch that scent and suggests it might be a sign. They discuss it while herb-gathering.",
                 "exp": 30,
                 "weight": 30,
                 "stat_skill": [ "CLAIRVOYANT,1"],
@@ -4799,7 +4799,7 @@
                 "art": "gen_apprentice_found_scent_clanmate"
             },
             {
-                "text": "As the apprentices gather herbs, app2 brushes {PRONOUN/app2/poss} pelt against s_c's. s_c is filled with prophecy_list_emotion. {PRONOUN/s_c/subject/CAP} {VERB/s_c/share/shares} this with app2, wondering if it might be a sign.",
+                "text": "As the apprentices gather herbs, app2 brushes {PRONOUN/app2/poss} pelt against s_c's. s_c is filled with prophecy_list_emotion/s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/share/shares} this with app2, wondering if it might be a sign.",
                 "exp": 30,
                 "weight": 30,
                 "stat_skill": [ "PROPHET,1"],
@@ -5365,7 +5365,7 @@
                 "art": "gen_bump_heads_apps"
             },
             {
-                "text": "As they gather herbs, s_c suddenly stops and calls the other apprentices over to show them omen_list_sight. The apprentices discuss what it might mean on their way back to camp.",
+                "text": "As they gather herbs, s_c suddenly stops and calls the other apprentices over to show them omen_list_sight/s_c. The apprentices discuss what it might mean on their way back to camp.",
                 "exp": 30,
                 "weight": 30,
                 "stat_skill": [ "OMEN,1"],
@@ -5383,7 +5383,7 @@
                 "art": "gen_app_crouching_perplexed"
             },
             {
-                "text": "app2 scents juniper off to {PRONOUN/app2/poss} left. s_c scents clair_list_smell to the right. No matter how carefully the others scent the air, they can't catch the scent s_c describes. Perhaps it's a sign? They discuss it while herb-gathering",
+                "text": "app2 scents juniper off to {PRONOUN/app2/poss} left. s_c scents clair_list_smell/s_c to the right. No matter how carefully the others scent the air, they can't catch the scent s_c describes. Perhaps it's a sign? They discuss it while herb-gathering",
                 "exp": 30,
                 "weight": 30,
                 "stat_skill": [ "CLAIRVOYANT,1"],
