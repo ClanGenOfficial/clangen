@@ -67,15 +67,15 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             leader_lives = game.clan.leader_lives
 
             life_lookup = {
-                "some_lives": 4,
-                "lives_remain": 2,
-                "high_lives": 7,
-                "mid_lives": 4,
-                "low_lives": 1,
+                "some_lives": (3, 9),
+                "lives_remain": (2, 9),
+                "high_lives": (7, 9),
+                "mid_lives": (4, 6),
+                "low_lives": (1, 3),
             }
 
             for _con, _val in life_lookup.items():
-                if _con in tags and leader_lives < _val:
+                if _con in tags and not (_val[0] <= leader_lives <= _val[1]):
                     return False
 
         # check if main cat will allow for adoption
