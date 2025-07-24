@@ -21,7 +21,7 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
-from scripts.cat_relations.enums import RelValue, ValueLevel, value_groups
+from scripts.cat_relations.enums import RelType, RelTier, value_groups
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure.game.settings import game_settings_save, game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
@@ -1014,15 +1014,15 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     else:
         relationship = cat_from.create_one_relationship(cat_to)
 
-    if rel_value == RelValue.ROMANCE:
+    if rel_value == RelType.ROMANCE:
         return relationship.romance
-    elif rel_value == RelValue.LIKE:
+    elif rel_value == RelType.LIKE:
         return relationship.like
-    elif rel_value == RelValue.RESPECT:
+    elif rel_value == RelType.RESPECT:
         return relationship.respect
-    elif rel_value == RelValue.COMFORT:
+    elif rel_value == RelType.COMFORT:
         return relationship.comfort
-    elif rel_value == RelValue.TRUST:
+    elif rel_value == RelType.TRUST:
         return relationship.trust
 
     return None
@@ -1104,7 +1104,7 @@ def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
     # later count or sum can be used to get the amount of cats
     # this will be handled like this, because it is easier / shorter to check
 
-    relation_dict = {v: [] for v in [*RelValue]}
+    relation_dict = {v: [] for v in [*RelType]}
 
     for inter_cat in all_cats:
         if cat.ID in inter_cat.relationships:
@@ -1112,17 +1112,17 @@ def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
         else:
             continue
 
-        for value in [*RelValue]:
+        for value in [*RelType]:
             if amount > 0:
                 relation_dict[value].append(
-                    relation.get_amount_of_value(value) >= amount
+                    relation.get_amount_of_type(value) >= amount
                 )
             elif amount < 0:
                 relation_dict[value].append(
-                    relation.get_amount_of_value(value) <= amount
+                    relation.get_amount_of_type(value) <= amount
                 )
 
-    return_dict = {v: sum(relation_dict[v]) for v in [*RelValue]}
+    return_dict = {v: sum(relation_dict[v]) for v in [*RelType]}
 
     return return_dict
 
@@ -1331,7 +1331,7 @@ def filter_relationship_type(
             ]
 
             # list of every cat's level list
-            group_levels = [rel.get_value_levels() for rel in relevant_relationships]
+            group_levels = [rel.get_reltype_tiers() for rel in relevant_relationships]
 
             # now test each list to see if the required tag is inside
             for level_list in group_levels:
@@ -1347,7 +1347,7 @@ def filter_relationship_type(
                 # otherwise we allow both the given level and any greater levels
                 else:
                     # finding the matching level enum
-                    value_level = ValueLevel(level)
+                    value_level = RelTier(level)
 
                     # find the matching value enum
                     rel_value = None
@@ -1476,7 +1476,7 @@ def unpack_rel_block(
     :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
     """
-    possible_values = [*RelValue]
+    possible_values = [*RelType]
 
     for block in relationship_effects:
         cats_from = block.get("cats_from", [])
@@ -1504,7 +1504,7 @@ def unpack_rel_block(
         # grabbing values
         value_changes = {}
 
-        for val in [*RelValue]:
+        for val in [*RelType]:
             if val in values:
                 value_changes[val] = amount
                 if amount > 0:
@@ -1527,11 +1527,11 @@ def unpack_rel_block(
         change_relationship_values(
             cats_to_ob,
             cats_from_ob,
-            romance=value_changes.get(RelValue.ROMANCE, 0),
-            like=value_changes.get(RelValue.LIKE, 0),
-            respect=value_changes.get(RelValue.RESPECT, 0),
-            comfort=value_changes.get(RelValue.COMFORT, 0),
-            trust=value_changes.get(RelValue.TRUST, 0),
+            romance=value_changes.get(RelType.ROMANCE, 0),
+            like=value_changes.get(RelType.LIKE, 0),
+            respect=value_changes.get(RelType.RESPECT, 0),
+            comfort=value_changes.get(RelType.COMFORT, 0),
+            trust=value_changes.get(RelType.TRUST, 0),
             log=from_log,
         )
 
@@ -1539,11 +1539,11 @@ def unpack_rel_block(
             change_relationship_values(
                 cats_from_ob,
                 cats_to_ob,
-                romance=value_changes.get(RelValue.ROMANCE, 0),
-                like=value_changes.get(RelValue.LIKE, 0),
-                respect=value_changes.get(RelValue.RESPECT, 0),
-                comfort=value_changes.get(RelValue.COMFORT, 0),
-                trust=value_changes.get(RelValue.TRUST, 0),
+                romance=value_changes.get(RelType.ROMANCE, 0),
+                like=value_changes.get(RelType.LIKE, 0),
+                respect=value_changes.get(RelType.RESPECT, 0),
+                comfort=value_changes.get(RelType.COMFORT, 0),
+                trust=value_changes.get(RelType.TRUST, 0),
                 log=to_log,
             )
 

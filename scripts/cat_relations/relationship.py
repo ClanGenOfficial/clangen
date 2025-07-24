@@ -1,6 +1,7 @@
 import random
 from random import choice
 from typing import Optional
+from xml.sax.handler import property_encoding
 
 import i18n
 
@@ -9,7 +10,7 @@ from scripts.cat_relations.interaction import (
     cats_fulfill_single_interaction_constraints,
     rebuild_relationship_dicts,
 )
-from scripts.cat_relations.enums import ValueLevel, RelValue
+from scripts.cat_relations.enums import RelTier, RelType
 from scripts.event_class import Single_Event
 from scripts.events_module.event_filters import event_for_location, event_for_season
 from scripts.game_structure.game_essentials import game
@@ -114,14 +115,11 @@ class Relationship:
         positive = self.positive_interaction()
         rel_type = self.get_interaction_type(positive)
 
-        # check if an increase interaction or a decrease interaction
-        value_change = "increase" if positive else "decrease"
-
         # choose any type of intensity
         intensity = random.choices(("low", "medium", "high"), weights=[4, 3, 2])[0]
 
         all_interactions = interactions.INTERACTION_MASTER_DICT[rel_type][
-            value_change
+            "increase" if positive else "decrease"
         ].copy()
 
         possible_interactions = self.get_relevant_interactions(
@@ -133,7 +131,7 @@ class Relationship:
             print(
                 "WARNING: No interaction with this conditions.",
                 rel_type,
-                value_change,
+                positive,
                 intensity,
             )
             return
@@ -155,7 +153,7 @@ class Relationship:
         self.chosen_interaction = chosen_interaction
         self.used_interaction_ids.append(self.chosen_interaction.id)
 
-        self.interaction_affect_relationships(value_change, intensity, rel_type)
+        self.interaction_affect_relationships(positive, intensity, rel_type)
         # give cats injuries
         # TODO: the moment we can include more than 3 cats in a short event, this should get removed
         # it only exists for one rel event, iirc, and that event is far more suited to being an injury short event
@@ -212,9 +210,9 @@ class Relationship:
         interaction_str = self.adjust_interaction_string(interaction_str)
 
         effect = ""
-        if value_change == "increase":
+        if positive:
             effect = i18n.t(f"relationships.positive_postscript_{intensity}")
-        elif value_change == "decrease":
+        elif not positive:
             effect = i18n.t(f"relationships.negative_postscript_{intensity}")
 
         interaction_str = interaction_str + effect
@@ -247,13 +245,13 @@ class Relationship:
 
         return process_text(string, cat_dict)
 
-    def get_value_change_amount(self, value_change: str, intensity: str) -> int:
-        """Calculates the amount of such an interaction.
+    def get_value_change_amount(self, value_change: bool, intensity: str) -> int:
+        """Finds and returns the int amount that the relationship type will change by according to given intensity and additional modifiers
 
         Parameters
         ----------
-        value_change : str
-            if the relationship value is increasing or decreasing the value
+        value_change : bool
+            True if the relationship value is positive, False if negative.
         intensity : str
             the intensity of the affect
 
@@ -281,14 +279,14 @@ class Relationship:
         return amount
 
     def interaction_affect_relationships(
-        self, value_change: str, intensity: str, rel_type: str
+        self, value_change: bool, intensity: str, rel_type: str
     ) -> None:
         """Affects the relationship according to the chosen types.
 
         Parameters
         ----------
         value_change : str
-            if the relationship value is increasing or decreasing the value
+            if the relationship value is positive
         intensity : str
             the intensity of the affect
         rel_type : str
@@ -307,29 +305,12 @@ class Relationship:
             )
             # just adding a teeny bit of variety
             buffs = [passive_buff - 1, passive_buff, passive_buff + 1]
-        # the passive buff creates a cascade affect
+        # the passive buff creates a cascade effect
         # so a negative interaction will affect all values to a negative degree
         # and a positive interaction will affect all values to a positive degree
 
-        if rel_type != RelValue.LIKE and buffs:
-            self.like += choice(buffs)
-        else:
-            self.like += amount
-
-        if rel_type != RelValue.RESPECT and buffs:
-            self.respect += choice(buffs)
-        else:
-            self.respect += amount
-
-        if rel_type != RelValue.TRUST and buffs:
-            self.trust += choice(buffs)
-        else:
-            self.trust += amount
-
-        if rel_type != RelValue.COMFORT and buffs:
-            self.comfort += choice(buffs)
-        else:
-            self.comfort += amount
+        for rel_out in (RelType.LIKE, RelType.RESPECT, RelType.TRUST, RelType.COMFORT):
+            setattr(self, rel_out, choice(buffs) if rel_type != rel_out else amount)
 
         # influence the opposite relationship
         if self.opposite_relationship is None:
@@ -359,16 +340,7 @@ class Relationship:
                 continue
             amount = self.get_value_change_amount(value, "low")
 
-            if key == RelValue.ROMANCE:
-                self.romance += amount
-            elif key == RelValue.LIKE:
-                self.like += amount
-            elif key == RelValue.RESPECT:
-                self.respect += amount
-            elif key == RelValue.COMFORT:
-                self.comfort += amount
-            elif key == RelValue.TRUST:
-                self.trust += amount
+            setattr(self, key, getattr(self, key) + amount)
 
     def positive_interaction(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
@@ -416,36 +388,25 @@ class Relationship:
             the relationship type which will happen
         """
 
-        value_weights = {v: 1 for v in [*RelValue]}
+        value_weights = {v: 1 for v in [*RelType]}
 
         # change the weights according if the interaction should be positive or negative
         # existing rel values determine the weight added
-        if positive:
-            if self.like > 0:
-                value_weights[RelValue.LIKE] += int(self.like / 10)
-            if self.respect > 0:
-                value_weights[RelValue.RESPECT] += int(self.respect / 10)
-            if self.comfort > 0:
-                value_weights[RelValue.COMFORT] += int(self.comfort / 10)
-            if self.trust > 0:
-                value_weights[RelValue.TRUST] += int(self.trust / 10)
-            if self.romance > 0:
-                value_weights[RelValue.ROMANCE] += int(self.romance / 10)
-        else:
-            if self.like < 0:
-                value_weights[RelValue.LIKE] += int(abs(self.like) / 10)
-            if self.respect < 0:
-                value_weights[RelValue.RESPECT] += int(abs(self.respect) / 10)
-            if self.comfort < 0:
-                value_weights[RelValue.COMFORT] += int(abs(self.comfort) / 10)
-            if self.trust < 0:
-                value_weights[RelValue.TRUST] += int(abs(self.trust) / 10)
+        for attr, rel_type in zip([getattr(self, r) for r in [*RelType]], [*RelType]):
+            if positive:
+                if attr > 0:
+                    value_weights[attr] = int(attr / 10)
+            else:
+                if attr == self.romance:
+                    continue
+                if attr > 0:
+                    value_weights[attr] = int(abs(attr / 10))
 
         # increase the chance of a romance interaction if they are already mates
         if self.mates:
-            value_weights[RelValue.ROMANCE] += 1
+            value_weights[RelType.ROMANCE] += 1
 
-        # if a romance relationship is not possible, remove this type, mut only if there are no mates
+        # if a romance relationship is not possible, remove this type, but only if there are no mates
         # if there already mates (set up by the user for example), don't remove this type
         mate_from_to = self.cat_from.is_potential_mate(
             self.cat_to, for_love_interest=True
@@ -454,16 +415,16 @@ class Relationship:
             self.cat_from, for_love_interest=True
         )
         if (not mate_from_to or not mate_to_from) and not self.mates:
-            while RelValue.ROMANCE in value_weights:
-                value_weights.pop(RelValue.ROMANCE)
+            while RelType.ROMANCE in value_weights:
+                value_weights.pop(RelType.ROMANCE)
 
         # if cats have no romance relationship already, don't allow romance decrease
         if (
             not positive
-            and RelValue.ROMANCE in value_weights
+            and RelType.ROMANCE in value_weights
             and not self.cat_from.relationships[self.cat_to.ID].romance
         ):
-            value_weights.pop(RelValue.ROMANCE)
+            value_weights.pop(RelType.ROMANCE)
 
         chosen_type = random.choices(
             [value for value in value_weights.keys()],
@@ -492,9 +453,11 @@ class Relationship:
                 a list of interactions, which fulfill the criteria
         """
         filtered = []
-        # if there are no loaded interactions, return empty list
+        # if there are no loaded interactions, raise error!
         if not possible_interactions:
-            return filtered
+            raise IndexError(
+                f"No possible relationship interactions found for cat_from: {self.cat_from.ID} and cat_to: {self.cat_to.ID}"
+            )
 
         for interact in possible_interactions:
             if not event_for_location(interact.biome):
@@ -516,63 +479,50 @@ class Relationship:
 
         return filtered
 
-    def get_amount_of_value(self, value_enum: RelValue) -> Optional[int]:
-        if value_enum == RelValue.ROMANCE:
-            return self.romance
-        elif value_enum == RelValue.LIKE:
-            return self.like
-        elif value_enum == RelValue.RESPECT:
-            return self.respect
-        elif value_enum == RelValue.COMFORT:
-            return self.comfort
-        elif value_enum == RelValue.TRUST:
-            return self.trust
-        else:
-            return None
+    def get_amount_of_type(self, value_enum: RelType) -> Optional[int]:
+        return getattr(self, value_enum) if hasattr(self, value_enum) else None
 
-    def get_value_levels(self) -> list[ValueLevel]:
+    def get_reltype_tiers(self) -> list[RelTier]:
         """
-        Returns a list of all current value level strings
+        Returns a list of all current rel_type tier strings
         """
         return [
-            self.romance_level,
-            self.like_level,
-            self.trust_level,
-            self.comfort_level,
-            self.respect_level,
+            self.romance_tier,
+            self.like_tier,
+            self.trust_tier,
+            self.comfort_tier,
+            self.respect_tier,
         ]
 
-    def total_value_amount(self) -> int:
+    @property
+    def total_relationship_value(self) -> int:
         """
-        Returns the total int of all relationship values.
+        Returns the total int of all relationship types.
         """
         return self.romance + self.like + self.respect + self.comfort + self.trust
 
+    @property
     def has_extreme_negative(self) -> bool:
         """
         Returns True if the relationship has an extreme negative value.
         """
-        if [l for l in self.get_value_levels() if l.is_extreme_neg()]:
-            return True
+        return any(tier for tier in self.get_reltype_tiers() if tier.is_extreme_neg)
 
-        return False
-
+    @property
     def has_extreme_positive(self) -> bool:
         """
         Returns True if the relationship has an extreme positive value.
         """
-        if [l for l in self.get_value_levels() if l.is_extreme_pos()]:
-            return True
+        return any(tier for tier in self.get_reltype_tiers() if tier.is_extreme_pos)
 
-        return False
-
+    @property
     def is_empty(self) -> bool:
         return (
-            self.romance_level.is_neutral()
-            and self.trust_level.is_neutral()
-            and self.like_level.is_neutral()
-            and self.comfort_level.is_neutral()
-            and self.respect_level.is_neutral()
+            self.romance_tier.is_neutral()
+            and self.trust_tier.is_neutral()
+            and self.like_tier.is_neutral()
+            and self.comfort_tier.is_neutral()
+            and self.respect_tier.is_neutral()
         )
 
     @property
@@ -584,24 +534,22 @@ class Relationship:
     def romance(self, value):
         if value > 100:
             value = 100
-        if value < 0:
+        elif value < 0:
             value = 0
         self._romance = value
 
     @property
-    def romance_level(self) -> Optional[ValueLevel]:
-        group = self._get_level_group(self.romance)
+    def romance_tier(self) -> Optional[RelTier]:
+        group = self._get_tier_group(self.romance)
 
         if group == "neutral":
-            return ValueLevel.UNINTERESTED
+            return RelTier.UNINTERESTED
         elif group == "low_pos":
-            return ValueLevel.FANCIES
+            return RelTier.FANCIES
         elif group == "mid_pos":
-            return ValueLevel.ADORES
-        elif group == "extreme_pos":
-            return ValueLevel.LOVES
+            return RelTier.ADORES
         else:
-            return None
+            return RelTier.LOVES
 
     @property
     def like(self) -> int:
@@ -611,30 +559,28 @@ class Relationship:
     def like(self, value):
         if value > 100:
             value = 100
-        if value < -100:
+        elif value < -100:
             value = -100
         self._like = value
 
     @property
-    def like_level(self) -> Optional[ValueLevel]:
-        group = self._get_level_group(self.like)
+    def like_tier(self) -> Optional[RelTier]:
+        group = self._get_tier_group(self.like)
 
         if group == "extreme_neg":
-            return ValueLevel.LOATHES
+            return RelTier.LOATHES
         elif group == "mid_neg":
-            return ValueLevel.HATES
+            return RelTier.HATES
         elif group == "low_neg":
-            return ValueLevel.DISLIKES
+            return RelTier.DISLIKES
         elif group == "neutral":
-            return ValueLevel.KNOWS_OF
+            return RelTier.KNOWS_OF
         elif group == "low_pos":
-            return ValueLevel.LIKES
+            return RelTier.LIKES
         elif group == "mid_pos":
-            return ValueLevel.ENJOYS
-        elif group == "extreme_pos":
-            return ValueLevel.CHERISHES
+            return RelTier.ENJOYS
         else:
-            return None
+            return RelTier.CHERISHES
 
     @property
     def respect(self) -> int:
@@ -644,30 +590,28 @@ class Relationship:
     def respect(self, value):
         if value > 100:
             value = 100
-        if value < -100:
+        elif value < -100:
             value = -100
         self._respect = value
 
     @property
-    def respect_level(self) -> Optional[ValueLevel]:
-        group = self._get_level_group(self.respect)
+    def respect_tier(self) -> Optional[RelTier]:
+        group = self._get_tier_group(self.respect)
 
         if group == "extreme_neg":
-            return ValueLevel.RESENTS
+            return RelTier.RESENTS
         elif group == "mid_neg":
-            return ValueLevel.ENVIES
+            return RelTier.ENVIES
         elif group == "low_neg":
-            return ValueLevel.BEGRUDGES
+            return RelTier.BEGRUDGES
         elif group == "neutral":
-            return ValueLevel.ACKNOWLEDGES
+            return RelTier.ACKNOWLEDGES
         elif group == "low_pos":
-            return ValueLevel.PRAISES
+            return RelTier.PRAISES
         elif group == "mid_pos":
-            return ValueLevel.RESPECTS
-        elif group == "extreme_pos":
-            return ValueLevel.ADMIRES
+            return RelTier.RESPECTS
         else:
-            return None
+            return RelTier.ADMIRES
 
     @property
     def comfort(self) -> int:
@@ -677,30 +621,28 @@ class Relationship:
     def comfort(self, value):
         if value > 100:
             value = 100
-        if value < -100:
+        elif value < -100:
             value = -100
         self._comfort = value
 
     @property
-    def comfort_level(self) -> Optional[ValueLevel]:
-        group = self._get_level_group(self.comfort)
+    def comfort_tier(self) -> Optional[RelTier]:
+        group = self._get_tier_group(self.comfort)
 
         if group == "extreme_neg":
-            return ValueLevel.RUNS_FROM
+            return RelTier.RUNS_FROM
         elif group == "mid_neg":
-            return ValueLevel.FEARS
+            return RelTier.FEARS
         elif group == "low_neg":
-            return ValueLevel.AVOIDS
+            return RelTier.AVOIDS
         elif group == "neutral":
-            return ValueLevel.CONSIDERS
+            return RelTier.CONSIDERS
         elif group == "low_pos":
-            return ValueLevel.RELATES_TO
+            return RelTier.RELATES_TO
         elif group == "mid_pos":
-            return ValueLevel.UNDERSTANDS
-        elif group == "extreme_pos":
-            return ValueLevel.KNOWS_DEEPLY
+            return RelTier.UNDERSTANDS
         else:
-            return None
+            return RelTier.KNOWS_DEEPLY
 
     @property
     def trust(self) -> int:
@@ -710,41 +652,38 @@ class Relationship:
     def trust(self, value):
         if value > 100:
             value = 100
-        if value < -100:
+        elif value < -100:
             value = -100
         self._trust = value
 
     @property
-    def trust_level(self) -> Optional[ValueLevel]:
-        group = self._get_level_group(self.trust)
+    def trust_tier(self) -> Optional[RelTier]:
+        group = self._get_tier_group(self.trust)
 
         if group == "extreme_neg":
-            return ValueLevel.LOATHES
+            return RelTier.LOATHES
         elif group == "mid_neg":
-            return ValueLevel.DISTRUSTS
+            return RelTier.DISTRUSTS
         elif group == "low_neg":
-            return ValueLevel.DOUBTS
+            return RelTier.DOUBTS
         elif group == "neutral":
-            return ValueLevel.OBSERVES
+            return RelTier.OBSERVES
         elif group == "low_pos":
-            return ValueLevel.LISTENS_TO
+            return RelTier.LISTENS_TO
         elif group == "mid_pos":
-            return ValueLevel.TRUSTS
-        elif group == "extreme_pos":
-            return ValueLevel.CONFIDES_IN
+            return RelTier.TRUSTS
         else:
-            return None
+            return RelTier.CONFIDES_IN
 
     @staticmethod
-    def _get_level_group(value) -> str:
+    def _get_tier_group(rel_type) -> Optional[str]:
         """
-        Returns the level group for the given value.
+        Returns the tier group for the given value.
         """
-        found_group = None
         for group, interval in constants.CONFIG["relationship"][
             "value_intervals"
         ].items():
-            if value <= interval:
-                found_group = group
-                break
-        return found_group
+            if rel_type <= interval:
+                return group
+
+        return None

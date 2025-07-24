@@ -1993,7 +1993,7 @@ class Events:
             targets = [
                 i
                 for i in relationships
-                if i.total_value_amount() < 0
+                if i.total_relationship_value() < 0
                 and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
             ]
             if not targets:
@@ -2043,9 +2043,9 @@ class Events:
             kill_chance = constants.CONFIG["death_related"]["base_murder_kill_chance"]
 
             extreme_neg = len(
-                [l for l in chosen_target.get_value_levels() if l.is_extreme_neg()]
+                [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg()]
             )
-            neg = len([l for l in chosen_target.get_value_levels() if l.is_low_neg()])
+            neg = len([l for l in chosen_target.get_reltype_tiers() if l.is_low_neg()])
 
             relation_modifier = (extreme_neg * 10) + (neg * 5)
 

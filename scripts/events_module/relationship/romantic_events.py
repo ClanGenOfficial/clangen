@@ -7,7 +7,7 @@ import i18n
 
 import scripts.cat_relations.interaction as interactions
 from scripts.cat.cats import Cat
-from scripts.cat_relations.relationship import RelValue
+from scripts.cat_relations.relationship import RelType
 from scripts.event_class import Single_Event
 from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
@@ -112,7 +112,7 @@ class RomanticEvents:
             cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type] = {}
 
             # if it's the romance interaction type add all interactions
-            if val_type == RelValue.ROMANCE:
+            if val_type == RelType.ROMANCE:
                 cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type]["increase"] = dictionary[
                     "increase"
                 ]
@@ -124,14 +124,14 @@ class RomanticEvents:
                     interaction
                     for interaction in dictionary["decrease"]
                     for tag in interaction.relationship_constraint
-                    if RelValue.ROMANCE in tag
+                    if RelType.ROMANCE in tag
                 ]
 
                 cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type]["decrease"] = [
                     interaction
                     for interaction in dictionary["decrease"]
                     for tag in interaction.relationship_constraint
-                    if RelValue.ROMANCE in tag
+                    if RelType.ROMANCE in tag
                 ]
 
         # resort the first generated overview dictionary to only "positive" and "negative" interactions
@@ -200,7 +200,7 @@ class RomanticEvents:
 
         # affect relationship - it should always be in a romance way
         value_change = "increase" if positive else "decrease"
-        rel_type = RelValue.ROMANCE
+        rel_type = RelType.ROMANCE
         relationship.chosen_interaction = chosen_interaction
         relationship.interaction_affect_relationships(
             value_change, chosen_interaction.intensity, rel_type
@@ -563,10 +563,10 @@ class RomanticEvents:
             )
         # second acceptance chance if the romantic is high enough
         elif (
-            RelValue.ROMANCE in condition
-            and condition[RelValue.ROMANCE] != 0
-            and condition[RelValue.ROMANCE] > 0
-            and rel_to_check.romance >= condition[RelValue.ROMANCE] * 1.5
+            RelType.ROMANCE in condition
+            and condition[RelType.ROMANCE] != 0
+            and condition[RelType.ROMANCE] > 0
+            and rel_to_check.romance >= condition[RelType.ROMANCE] * 1.5
         ):
             become_mate = True
             mate_string = RomanticEvents.get_mate_string(
@@ -736,58 +736,58 @@ class RomanticEvents:
         if not relationship:
             return False
 
-        if RelValue.ROMANCE in condition and condition[RelValue.ROMANCE] != 0:
+        if RelType.ROMANCE in condition and condition[RelType.ROMANCE] != 0:
             if (
-                condition[RelValue.ROMANCE] > 0
-                and relationship.romance < condition[RelValue.ROMANCE]
+                condition[RelType.ROMANCE] > 0
+                and relationship.romance < condition[RelType.ROMANCE]
             ):
                 return False
-            if condition[RelValue.ROMANCE] < 0 and relationship.romance > abs(
-                condition[RelValue.ROMANCE]
+            if condition[RelType.ROMANCE] < 0 and relationship.romance > abs(
+                condition[RelType.ROMANCE]
             ):
                 return False
 
-        if RelValue.LIKE in condition and condition[RelValue.LIKE] != 0:
+        if RelType.LIKE in condition and condition[RelType.LIKE] != 0:
             if (
-                condition[RelValue.LIKE] > 0
-                and relationship.like < condition[RelValue.LIKE]
+                condition[RelType.LIKE] > 0
+                and relationship.like < condition[RelType.LIKE]
             ):
                 return False
-            if condition[RelValue.LIKE] < 0 and relationship.like > abs(
-                condition[RelValue.LIKE]
+            if condition[RelType.LIKE] < 0 and relationship.like > abs(
+                condition[RelType.LIKE]
             ):
                 return False
 
-        if RelValue.RESPECT in condition and condition[RelValue.RESPECT] != 0:
+        if RelType.RESPECT in condition and condition[RelType.RESPECT] != 0:
             if (
-                condition[RelValue.RESPECT] > 0
-                and relationship.respect < condition[RelValue.RESPECT]
+                condition[RelType.RESPECT] > 0
+                and relationship.respect < condition[RelType.RESPECT]
             ):
                 return False
-            if condition[RelValue.RESPECT] < 0 and relationship.respect > abs(
-                condition[RelValue.RESPECT]
+            if condition[RelType.RESPECT] < 0 and relationship.respect > abs(
+                condition[RelType.RESPECT]
             ):
                 return False
 
-        if RelValue.COMFORT in condition and condition[RelValue.COMFORT] != 0:
+        if RelType.COMFORT in condition and condition[RelType.COMFORT] != 0:
             if (
-                condition[RelValue.COMFORT] > 0
-                and relationship.comfort < condition[RelValue.COMFORT]
+                condition[RelType.COMFORT] > 0
+                and relationship.comfort < condition[RelType.COMFORT]
             ):
                 return False
-            if condition[RelValue.COMFORT] < 0 and relationship.comfort > abs(
-                condition[RelValue.COMFORT]
+            if condition[RelType.COMFORT] < 0 and relationship.comfort > abs(
+                condition[RelType.COMFORT]
             ):
                 return False
 
-        if RelValue.TRUST in condition and condition[RelValue.TRUST] != 0:
+        if RelType.TRUST in condition and condition[RelType.TRUST] != 0:
             if (
-                condition[RelValue.TRUST] > 0
-                and relationship.trust < condition[RelValue.TRUST]
+                condition[RelType.TRUST] > 0
+                and relationship.trust < condition[RelType.TRUST]
             ):
                 return False
-            if condition[RelValue.TRUST] < 0 and relationship.trust > abs(
-                condition[RelValue.TRUST]
+            if condition[RelType.TRUST] < 0 and relationship.trust > abs(
+                condition[RelType.TRUST]
             ):
                 return False
 

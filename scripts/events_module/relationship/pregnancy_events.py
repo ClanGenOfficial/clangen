@@ -7,7 +7,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial
 from scripts.cat.names import names, Name
-from scripts.cat_relations.relationship import Relationship, RelValue
+from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
@@ -714,7 +714,7 @@ class Pregnancy_Events:
                         if not p_rel.opposite_relationship:
                             p_rel.link_relationship()
                         p_rel_opp = p_rel.opposite_relationship
-                        if p_rel_opp.like < 20:
+                        if p_rel_opp.like < -20 and p_rel.like < -20:
                             p_affairs.append(p_affair)
             possible_affair_partners = p_affairs
 
@@ -880,10 +880,10 @@ class Pregnancy_Events:
                     ]
                     y = random.randrange(0, 15)
                     start_relation = Relationship(the_cat, kit, False, True)
-                    start_relation.like += parent_to_kit[RelValue.LIKE] + y
-                    start_relation.comfort = parent_to_kit[RelValue.COMFORT] + y
-                    start_relation.respect = parent_to_kit[RelValue.RESPECT] + y
-                    start_relation.trust = parent_to_kit[RelValue.TRUST] + y
+                    start_relation.like = parent_to_kit[RelType.LIKE] + y
+                    start_relation.comfort = parent_to_kit[RelType.COMFORT] + y
+                    start_relation.respect = parent_to_kit[RelType.RESPECT] + y
+                    start_relation.trust = parent_to_kit[RelType.TRUST] + y
                     the_cat.relationships[kit.ID] = start_relation
 
                     kit_to_parent = constants.CONFIG["new_cat"]["parent_buff"][
@@ -891,10 +891,10 @@ class Pregnancy_Events:
                     ]
                     y = random.randrange(0, 15)
                     start_relation = Relationship(kit, the_cat, False, True)
-                    start_relation.like += kit_to_parent[RelValue.LIKE] + y
-                    start_relation.comfort = kit_to_parent[RelValue.COMFORT] + y
-                    start_relation.respect = kit_to_parent[RelValue.RESPECT] + y
-                    start_relation.trust = kit_to_parent[RelValue.TRUST] + y
+                    start_relation.like += kit_to_parent[RelType.LIKE] + y
+                    start_relation.comfort = kit_to_parent[RelType.COMFORT] + y
+                    start_relation.respect = kit_to_parent[RelType.RESPECT] + y
+                    start_relation.trust = kit_to_parent[RelType.TRUST] + y
                     kit.relationships[the_cat.ID] = start_relation
                 else:
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
@@ -946,18 +946,12 @@ class Pregnancy_Events:
                     change_relationship_values(
                         cats_from=[kit],
                         cats_to=[parent],
-                        like=kit_to_parent[RelValue.LIKE],
-                        respect=kit_to_parent[RelValue.RESPECT],
-                        comfort=kit_to_parent[RelValue.COMFORT],
-                        trust=kit_to_parent[RelValue.TRUST],
+                        **kit_to_parent,
                     )
                     change_relationship_values(
                         cats_from=[parent],
                         cats_to=[kit],
-                        like=parent_to_kit[RelValue.LIKE],
-                        respect=parent_to_kit[RelValue.RESPECT],
-                        comfort=parent_to_kit[RelValue.COMFORT],
-                        trust=parent_to_kit[RelValue.TRUST],
+                        **parent_to_kit,
                     )
 
         return all_kitten

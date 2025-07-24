@@ -6,7 +6,7 @@ import i18n
 
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
-from scripts.cat_relations.enums import RelValue
+from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatRank
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
@@ -76,20 +76,20 @@ class Welcoming_Events:
         change_relationship_values(
             cats_to=[clan_cat],
             cats_from=[new_cat],
-            romance=new_to_clan_cat[RelValue.ROMANCE],
-            like=new_to_clan_cat[RelValue.LIKE],
-            respect=new_to_clan_cat[RelValue.RESPECT],
-            comfort=new_to_clan_cat[RelValue.COMFORT],
-            trust=new_to_clan_cat[RelValue.TRUST],
+            romance=new_to_clan_cat[RelType.ROMANCE],
+            like=new_to_clan_cat[RelType.LIKE],
+            respect=new_to_clan_cat[RelType.RESPECT],
+            comfort=new_to_clan_cat[RelType.COMFORT],
+            trust=new_to_clan_cat[RelType.TRUST],
         )
         change_relationship_values(
             cats_to=[new_cat],
             cats_from=[clan_cat],
-            romance=clan_cat_to_new[RelValue.ROMANCE],
-            like=clan_cat_to_new[RelValue.LIKE],
-            respect=clan_cat_to_new[RelValue.RESPECT],
-            comfort=clan_cat_to_new[RelValue.COMFORT],
-            trust=clan_cat_to_new[RelValue.TRUST],
+            romance=clan_cat_to_new[RelType.ROMANCE],
+            like=clan_cat_to_new[RelType.LIKE],
+            respect=clan_cat_to_new[RelType.RESPECT],
+            comfort=clan_cat_to_new[RelType.COMFORT],
+            trust=clan_cat_to_new[RelType.TRUST],
         )
 
         # add it to the event list
@@ -104,11 +104,11 @@ class Welcoming_Events:
 
         # the effect is set through the settings, therefore a rough assumption has to be made
         if (
-            clan_cat_to_new[RelValue.ROMANCE] > 0
-            or clan_cat_to_new[RelValue.LIKE] > 0
-            or clan_cat_to_new[RelValue.RESPECT] > 0
-            or new_to_clan_cat[RelValue.COMFORT] > 0
-            or clan_cat_to_new[RelValue.TRUST] > 0
+            clan_cat_to_new[RelType.ROMANCE] > 0
+            or clan_cat_to_new[RelType.LIKE] > 0
+            or clan_cat_to_new[RelType.RESPECT] > 0
+            or new_to_clan_cat[RelType.COMFORT] > 0
+            or clan_cat_to_new[RelType.TRUST] > 0
         ):
             effect = " (positive effect)"
         else:

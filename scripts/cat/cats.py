@@ -26,7 +26,7 @@ from scripts.cat.status import Status, StatusDict
 from scripts.cat.thoughts import Thoughts
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.cat_relations.relationship import Relationship
-from scripts.cat_relations.enums import RelValue
+from scripts.cat_relations.enums import RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.conditions import (
     Illness,
@@ -685,50 +685,15 @@ class Cat:
             very_low_values = []
 
             # find what level of rel they had for each value
-            levels = rel_with_dead.get_value_levels()
+            levels = rel_with_dead.get_reltype_tiers()
             for level in levels:
-                if level.is_romance_level():
-                    if level.is_extreme_pos():
-                        very_high_values.append(RelValue.ROMANCE)
-                    elif level.is_low_pos():
-                        high_values.append(RelValue.ROMANCE)
-                    continue
-
-                if level.is_like_level():
-                    if level.is_extreme_pos():
-                        very_high_values.append(RelValue.LIKE)
-                    elif level.is_low_pos():
-                        high_values.append(RelValue.LIKE)
-                    elif level.is_extreme_neg():
-                        very_low_values.append(RelValue.LIKE)
-                    continue
-
-                if level.is_respect_level():
-                    if level.is_extreme_pos():
-                        very_high_values.append(RelValue.RESPECT)
-                    elif level.is_low_pos():
-                        high_values.append(RelValue.RESPECT)
-                    elif level.is_extreme_neg():
-                        very_low_values.append(RelValue.RESPECT)
-                    continue
-
-                if level.is_trust_level():
-                    if level.is_extreme_pos():
-                        very_high_values.append(RelValue.TRUST)
-                    elif level.is_low_pos():
-                        high_values.append(RelValue.TRUST)
-                    elif level.is_extreme_neg():
-                        very_low_values.append(RelValue.TRUST)
-                    continue
-
-                if level.is_comfort_level():
-                    if level.is_extreme_pos():
-                        very_high_values.append(RelValue.COMFORT)
-                    elif level.is_low_pos():
-                        high_values.append(RelValue.COMFORT)
-                    elif level.is_extreme_neg():
-                        very_low_values.append(RelValue.COMFORT)
-                    continue
+                if level.is_extreme_pos():
+                    very_high_values.append(level.get_rel_value)
+                elif level.is_low_pos():
+                    high_values.append(level.get_rel_value)
+                elif level.is_extrem_neg():
+                    very_low_values.append(level.get_rel_value)
+                continue
 
             major_chance = 0
             if very_high_values:
@@ -2886,11 +2851,9 @@ class Cat:
         # Are they mates?
         mates = rel1.cat_from.ID in rel1.cat_to.mate
 
-        rel_values = [v for v in RelValue]
+        rel_values = [v for v in [*RelType] if v != RelType.ROMANCE]
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
-            rel_values.append(RelValue.ROMANCE)
-        else:
-            rel_values.remove(RelValue.ROMANCE)
+            rel_values.append(RelType.ROMANCE)
 
         # Determine the number of positive traits to effect, and choose the traits
         chosen_pos = sample(rel_values, k=randint(2, len(rel_values)))
@@ -2930,133 +2893,21 @@ class Cat:
             if sabotage or value in chosen_neg:
                 decrease = True
             else:
-                decrease = False
+                decrease = sabotage or value in chosen_neg
 
-            if value == RelValue.ROMANCE:
-                if mates:
-                    ran = (5, 10)
-                else:
-                    ran = (4, 6)
+            ran = (5, 10) if value == RelType.ROMANCE and mates else (4, 6)
 
-                if sabotage:
-                    rel1.romance = Cat.effect_relation(
-                        rel1.romance,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.romance = Cat.effect_relation(
-                        rel2.romance,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.romance = Cat.effect_relation(
-                        rel1.romance,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.romance = Cat.effect_relation(
-                        rel2.romance,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
+            change = ((randint(ran[0], ran[1]) + bonus) + personality_bonus) * (
+                -1 if sabotage else 1
+            )
 
-            elif value == RelValue.LIKE:
-                ran = (4, 6)
+            setattr(rel1, value, Cat.effect_relation(getattr(rel1, value), change))
+            setattr(rel2, value, Cat.effect_relation(getattr(rel2, value), change))
 
-                if sabotage or value in chosen_neg:
-                    rel1.like = Cat.effect_relation(
-                        rel1.like,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.like = Cat.effect_relation(
-                        rel2.like,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.like = Cat.effect_relation(
-                        rel1.like,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.like = Cat.effect_relation(
-                        rel2.like,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-
-            elif value == RelValue.RESPECT:
-                ran = (4, 6)
-
-                if sabotage or value in chosen_neg:
-                    rel1.respect = Cat.effect_relation(
-                        rel1.respect,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.respect = Cat.effect_relation(
-                        rel2.respect,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.respect = Cat.effect_relation(
-                        rel1.respect,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.respect = Cat.effect_relation(
-                        rel2.respect,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-
-            elif value == RelValue.COMFORT:
-                ran = (4, 6)
-
-                if sabotage or value in chosen_neg:
-                    rel1.comfort = Cat.effect_relation(
-                        rel1.comfort,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.comfort = Cat.effect_relation(
-                        rel2.comfort,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.comfort = Cat.effect_relation(
-                        rel1.comfort,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.comfort = Cat.effect_relation(
-                        rel2.comfort,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-
-            elif value == RelValue.TRUST:
-                ran = (4, 6)
-
-                if sabotage or value in chosen_neg:
-                    rel1.trust = Cat.effect_relation(
-                        rel1.trust,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.trust = Cat.effect_relation(
-                        rel2.trust,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.trust = Cat.effect_relation(
-                        rel1.trust,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.trust = Cat.effect_relation(
-                        rel2.trust,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-
-                decrease = not decrease
-
-            if decrease:
-                output += i18n.t(
-                    "screens.mediation.output_decrease",
-                    trait=i18n.t(f"screens.mediation.{value}"),
-                )
-            else:
-                output += i18n.t(
-                    "screens.mediation.output_increase",
-                    trait=i18n.t(f"screens.mediation.{value}"),
-                )
+            output += i18n.t(
+                f"screens.mediation.output_{'decrease' if decrease else 'increase'}",
+                trait=i18n.t(f"screens.mediation.{value}"),
+            )
 
         return output
 

@@ -11,7 +11,7 @@ from typing import List, Tuple, Optional, Union
 import pygame
 
 from scripts.cat.cats import Cat
-from scripts.cat_relations.enums import RelValue
+from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank
 from scripts.clan import Clan
 from scripts.clan_package.settings import get_clan_setting
@@ -556,12 +556,12 @@ class Patrol:
         else:
             chance_of_romance_patrol += 10
 
-        values = [*RelValue]
+        values = [*RelType]
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
-            if value_check <= 20:
+            if value_check < 0:
                 chance_of_romance_patrol -= 1
-            elif value_check >= 20:
+            elif value_check > 0:
                 chance_of_romance_patrol += 2
 
         if chance_of_romance_patrol <= 0:
@@ -662,7 +662,7 @@ class Patrol:
                     )
                 continue
 
-            if RelValue.ROMANCE in patrol.tags:
+            if "romance" in patrol.tags:
                 romantic_patrols.append(patrol)
             else:
                 filtered_patrols.append(patrol)

@@ -1,7 +1,7 @@
 from strenum import StrEnum
 
 
-class RelValue(StrEnum):
+class RelType(StrEnum):
     ROMANCE = "romance"
     LIKE = "like"
     RESPECT = "respect"
@@ -9,7 +9,7 @@ class RelValue(StrEnum):
     COMFORT = "comfort"
 
 
-class ValueLevel(StrEnum):
+class RelTier(StrEnum):
     # like
     LOATHES = "loathes"
     HATES = "hates"
@@ -48,16 +48,19 @@ class ValueLevel(StrEnum):
     ADORES = "adores"
     LOVES = "loves"
 
+    @property
     def is_like_level(self):
         return self in (
             self.LOATHES,
             self.HATES,
             self.DISLIKES,
+            self.KNOWS_OF,
             self.LIKES,
             self.ENJOYS,
             self.CHERISHES,
         )
 
+    @property
     def is_respect_level(self):
         return self in (
             self.RESENTS,
@@ -69,6 +72,7 @@ class ValueLevel(StrEnum):
             self.ADMIRES,
         )
 
+    @property
     def is_trust_level(self):
         return self in (
             self.DISCREDITS,
@@ -80,6 +84,7 @@ class ValueLevel(StrEnum):
             self.CONFIDES_IN,
         )
 
+    @property
     def is_comfort_level(self):
         return self in (
             self.RUNS_FROM,
@@ -91,30 +96,37 @@ class ValueLevel(StrEnum):
             self.KNOWS_DEEPLY,
         )
 
+    @property
     def is_romance_level(self):
         return self in (self.UNINTERESTED, self.FANCIES, self.ADORES, self.LOVES)
 
+    @property
     def is_any_neg(self):
-        return self.is_extreme_neg() or self.is_mid_neg() or self.is_low_neg()
+        return self.is_extreme_neg or self.is_mid_neg or self.is_low_neg
 
+    @property
     def is_any_pos(self):
-        return self.is_extreme_pos() or self.is_mid_pos() or self.is_low_pos()
+        return self.is_extreme_pos or self.is_mid_pos or self.is_low_pos
 
+    @property
     def is_extreme_neg(self):
         return self in (self.LOATHES, self.RESENTS, self.DISCREDITS, self.RUNS_FROM)
 
+    @property
     def is_mid_neg(self):
         return self in (
             self.HATES,
             self.ENVIES,
-            self.DISLIKES,
+            self.HATES,
             self.DISTRUSTS,
             self.FEARS,
         )
 
+    @property
     def is_low_neg(self):
         return self in (self.DISLIKES, self.BEGRUDGES, self.DOUBTS, self.AVOIDS)
 
+    @property
     def is_neutral(self):
         return self in (
             self.KNOWS_OF,
@@ -124,6 +136,7 @@ class ValueLevel(StrEnum):
             self.UNINTERESTED,
         )
 
+    @property
     def is_low_pos(self):
         return self in (
             self.LIKES,
@@ -133,6 +146,7 @@ class ValueLevel(StrEnum):
             self.FANCIES,
         )
 
+    @property
     def is_mid_pos(self):
         return self in (
             self.ENJOYS,
@@ -142,6 +156,7 @@ class ValueLevel(StrEnum):
             self.ADORES,
         )
 
+    @property
     def is_extreme_pos(self):
         return self in (
             self.CHERISHES,
@@ -153,9 +168,9 @@ class ValueLevel(StrEnum):
 
 
 value_groups = {
-    RelValue.LIKE: [l for l in [*ValueLevel] if l.is_like_level()],
-    RelValue.RESPECT: [l for l in [*ValueLevel] if l.is_respect_level()],
-    RelValue.TRUST: [l for l in [*ValueLevel] if l.is_trust_level()],
-    RelValue.COMFORT: [l for l in [*ValueLevel] if l.is_comfort_level()],
-    RelValue.ROMANCE: [l for l in [*ValueLevel] if l.is_romance_level()],
+    RelType.LIKE: [l for l in [*RelTier] if l.is_like_level()],
+    RelType.RESPECT: [l for l in [*RelTier] if l.is_respect_level()],
+    RelType.TRUST: [l for l in [*RelTier] if l.is_trust_level()],
+    RelType.COMFORT: [l for l in [*RelTier] if l.is_comfort_level()],
+    RelType.ROMANCE: [l for l in [*RelTier] if l.is_romance_level()],
 }

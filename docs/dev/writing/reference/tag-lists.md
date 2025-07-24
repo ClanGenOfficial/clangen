@@ -94,35 +94,88 @@ Our events generally require writers to "tag" certain attributes.  These "tags" 
 ===  "Permanent Conditions"
 
     > !!! important
-        Generally we want to avoid giving a permanent condition to a cat, instead we should give them a condition that can lead to permanence (i.e. give 'broken back' instead of 'paralyzed')
-
-    > * `crooked jaw`
-    * `lost a leg`
-    * `born without a leg`
-    * `weak leg`
-    * `twisted leg`
-    * `lost their tail`
-    * `born without a tail`
-    * `paralyzed`
-    * `raspy lungs`
-    * `wasting disease`
-    * `blind`
-    * `one bad eye`
-    * `failing eyesight`
-    * `partial hearing loss`
-    * `deaf`
-    * `constant joint pain`
-    * `seizure prone`
-    * `allergies`
-    * `constantly dizzy`
-    * `recurring shock`
-    * `lasting grief`
-    * `persistent headaches`
+        Generally we want to avoid giving a permanent condition to a cat. Instead, you should give them a condition that can lead to permanence (e.g. give 'broken back' instead of 'paralyzed')
+    > | crooked jaw          |
+    |----------------------|
+    | lost a leg           |
+    | born without a leg   |
+    | weak leg             |
+    | twisted leg          |
+    | lost their tail      |
+    | born without a tail  |
+    | paralyzed            |
+    | raspy lungs          |
+    | wasting disease      |
+    | blind                |
+    | one bad eye          |
+    | failing eyesight     |
+    | partial hearing loss |
+    | deaf                 |
+    | constant joint pain  |
+    | seizure prone        |
+    | allergies            |
+    | constantly dizzy     |
+    | recurring shock      |
+    | lasting grief        |
+    | persistent headaches |
     
 
 === "Scars"
 
-    >`ONE`, `TWO`, `THREE`, `TAILSCAR`, `SNOUT`, `CHEEK`, `SIDE`, `THROAT`, `TAILBASE`, `BELLY`, `LEGBITE`, `NECKBITE`, `FACE`, `MANLEG`, `BRIGHTHEART`, `MANTAIL`, `BRIDGE`, `RIGHTBLIND`, `LEFTBLIND`, `BOTHBLIND`, `BEAKCHEEK`, `BEAKLOWER`, `CATBITE`, `RATBITE`, `QUILLCHUNK`, `QUILLSCRATCH`, `HINDLEG`, `BACK`, `QUILLSIDE`, `SCRATCHSIDE`, `BEAKSIDE`, `CATBITETWO`, `FOUR`, `LEFTEAR`, `RIGHTEAR`, `NOTAIL`, `HALFTAIL`, `NOPAW`, `NOLEFTEAR`, `NORIGHTEAR`, `NOEAR`, `SNAKE`, `TOETRAP`, `BURNPAWS`, `BURNTAIL`, `BURNBELLY`, `BURNRUMP`, `FROSTFACE`, `FROSTTAIL`, `FROSTMITT`, `FROSTSOCK`, `TOE`, `SNAKETWO`
+    >| `ONE`          |
+    |----------------|
+    | `TWO`          |
+    | `THREE`        |
+    | `TAILSCAR`     |
+    | `SNOUT`        |
+    | `CHEEK`        |
+    | `SIDE`         |
+    | `THROAT`       |
+    | `TAILBASE`     |
+    | `BELLY`        |
+    | `LEGBITE`      |
+    | `NECKBITE`     |
+    | `FACE`         |
+    | `MANLEG`       |
+    | `BRIGHTHEART`  |
+    | `MANTAIL`      |
+    | `BRIDGE`       |
+    | `RIGHTBLIND`   |
+    | `LEFTBLIND`    |
+    | `BOTHBLIND`    |
+    | `BEAKCHEEK`    |
+    | `BEAKLOWER`    |
+    | `CATBITE`      |
+    | `RATBITE`      |
+    | `QUILLCHUNK`   |
+    | `QUILLSCRATCH` |
+    | `HINDLEG`      |
+    | `BACK`         |
+    | `QUILLSIDE`    |
+    | `SCRATCHSIDE`  |
+    | `BEAKSIDE`     |
+    | `CATBITETWO`   |
+    | `FOUR`         |
+    | `LEFTEAR`      |
+    | `RIGHTEAR`     |
+    | `NOTAIL`       |
+    | `HALFTAIL`     |
+    | `NOPAW`        |
+    | `NOLEFTEAR`    |
+    | `NORIGHTEAR`   |
+    | `NOEAR`        |
+    | `SNAKE`        |
+    | `TOETRAP`      |
+    | `BURNPAWS`     |
+    | `BURNTAIL`     |
+    | `BURNBELLY`    |
+    | `BURNRUMP`     |
+    | `FROSTFACE`    |
+    | `FROSTTAIL`    |
+    | `FROSTMITT`    |
+    | `FROSTSOCK`    |
+    | `TOE`          |
+    | `SNAKETWO`     |
 
     > !!! tip
         If you would like a visual reference for how each scar appears on the sprite, please check the [Scar Visual Guide](https://docs.google.com/spreadsheets/d/18T-VPGo4GJP35ECYnkzqKZThd6t8j7TwN97QspXtXY0/edit#gid=1080597059).

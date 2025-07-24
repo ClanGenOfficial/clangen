@@ -22,7 +22,7 @@ from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
 from pygame_gui.elements import UIAutoResizingContainer
 
-from scripts.cat_relations.enums import RelValue
+from scripts.cat_relations.enums import RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
@@ -1266,8 +1266,8 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
         )
 
         prev_element = None
-        for val in [*RelValue]:
-            if val == RelValue.ROMANCE:
+        for val in [*RelType]:
+            if val == RelType.ROMANCE:
                 continue
             num, level = self.get_value_attrs(val, relationship)
             self.rel_elements[f"{val}_text"] = pygame_gui.elements.UITextBox(
@@ -1298,7 +1298,7 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
             # ROMANCE
         if romance:
             self.rel_elements[f"romance_text"] = UITextBoxTweaked(
-                f"relationships.{relationship.romance_level if relationship.romance_level else 'neutral'}",
+                f"relationships.{relationship.romance_tier if relationship.romance_tier else 'neutral'}",
                 ui_scale(
                     pygame.Rect(
                         (0, 1),
@@ -1332,16 +1332,16 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
 
     @staticmethod
     def get_value_attrs(value, rel):
-        if value == RelValue.ROMANCE:
-            return rel.romance, rel.romance_level
-        elif value == RelValue.LIKE:
-            return rel.like, rel.like_level
-        elif value == RelValue.RESPECT:
-            return rel.respect, rel.respect_level
-        elif value == RelValue.COMFORT:
-            return rel.comfort, rel.comfort_level
+        if value == RelType.ROMANCE:
+            return rel.romance, rel.romance_tier
+        elif value == RelType.LIKE:
+            return rel.like, rel.like_tier
+        elif value == RelType.RESPECT:
+            return rel.respect, rel.respect_tier
+        elif value == RelType.COMFORT:
+            return rel.comfort, rel.comfort_tier
         else:
-            return rel.trust, rel.trust_level
+            return rel.trust, rel.trust_tier
 
 
 class IDImageButton(UISurfaceImageButton):

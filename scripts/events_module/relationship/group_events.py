@@ -11,7 +11,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.history import History
 from scripts.cat_relations.interaction import create_group_interaction, GroupInteraction
-from scripts.cat_relations.enums import RelValue
+from scripts.cat_relations.enums import RelType
 from scripts.event_class import Single_Event
 from scripts.events_module.event_filters import (
     event_for_location,
@@ -532,29 +532,18 @@ class GroupEvents:
         """
         dictionary = chosen_interaction.general_reaction
 
-        # set the amount
-        romance = 0
-        like = 0
-        respect = 0
-        trust = 0
-        comfort = 0
-
-        if RelValue.ROMANCE in dictionary:
-            romance = (
-                amount if dictionary[RelValue.ROMANCE] == "increase" else amount * -1
-            )
-        if RelValue.LIKE in dictionary:
-            like = amount if dictionary[RelValue.LIKE] == "increase" else amount * -1
-        if RelValue.RESPECT in dictionary:
-            respect = (
-                amount if dictionary[RelValue.RESPECT] == "increase" else amount * -1
-            )
-        if RelValue.TRUST in dictionary:
-            trust = amount if dictionary[RelValue.TRUST] == "increase" else amount * -1
-        if RelValue.COMFORT in dictionary:
-            comfort = (
-                amount if dictionary[RelValue.COMFORT] == "increase" else amount * -1
-            )
+        amount_dict = {
+            RelType.ROMANCE: 0,
+            RelType.LIKE: 0,
+            RelType.RESPECT: 0,
+            RelType.TRUST: 0,
+            RelType.COMFORT: 0,
+        }
+        for key in amount_dict.keys():
+            if key in dictionary:
+                amount_dict[key] = (
+                    amount if dictionary[key] == "increase" else amount * -1
+                )
 
         abbreviations_cat = []
 
@@ -564,11 +553,7 @@ class GroupEvents:
             change_relationship_values(
                 cats_from=[inter_cat],
                 cats_to=list(abbreviations_cat),
-                romance=romance,
-                like=like,
-                respect=respect,
-                trust=trust,
-                comfort=comfort,
+                **amount_dict,
             )
 
     @staticmethod
@@ -590,53 +575,21 @@ class GroupEvents:
             cat_from = Cat.all_cats[cat_from_id]
             cat_to = Cat.all_cats[cat_to_id]
 
-            # set all values to influence the relationship
-            # set the amount
-            romance = 0
-            like = 0
-            respect = 0
-            trust = 0
-            comfort = 0
-
-            if RelValue.ROMANCE in dictionary:
-                romance = (
-                    amount
-                    if dictionary[RelValue.ROMANCE] == "increase"
-                    else amount * -1
-                )
-
-            if RelValue.LIKE in dictionary:
-                like = (
-                    amount if dictionary[RelValue.LIKE] == "increase" else amount * -1
-                )
-
-            if RelValue.RESPECT in dictionary:
-                respect = (
-                    amount
-                    if dictionary[RelValue.RESPECT] == "increase"
-                    else amount * -1
-                )
-
-            if RelValue.TRUST in dictionary:
-                trust = (
-                    amount if dictionary[RelValue.TRUST] == "increase" else amount * -1
-                )
-
-            if RelValue.COMFORT in dictionary:
-                comfort = (
-                    amount
-                    if dictionary[RelValue.COMFORT] == "increase"
-                    else amount * -1
-                )
+            amount_dict = {
+                RelType.ROMANCE: 0,
+                RelType.LIKE: 0,
+                RelType.RESPECT: 0,
+                RelType.TRUST: 0,
+                RelType.COMFORT: 0,
+            }
+            for key in amount_dict.keys():
+                if key in dictionary:
+                    amount_dict[key] = (
+                        amount if dictionary[key] == "increase" else amount * -1
+                    )
 
             change_relationship_values(
-                cats_from=[cat_from],
-                cats_to=[cat_to],
-                romance=romance,
-                like=like,
-                respect=respect,
-                trust=trust,
-                comfort=comfort,
+                cats_from=[cat_from], cats_to=[cat_to], **amount_dict
             )
 
     @staticmethod

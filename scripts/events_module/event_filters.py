@@ -1,7 +1,7 @@
 import re
 from random import choice
 
-from scripts.cat_relations.enums import RelValue
+from scripts.cat_relations.enums import RelType
 
 from scripts.cat.enums import CatRank, CatAge
 from scripts.game_structure.game_essentials import game
@@ -92,7 +92,7 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
         if (
             other_cat
-            and RelValue.ROMANCE in tags
+            and RelType.ROMANCE in tags
             and not other_cat.is_potential_mate(cat)
         ):
             return False

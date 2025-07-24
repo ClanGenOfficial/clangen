@@ -28,15 +28,14 @@ class Thoughts:
             return False
 
         # No current relationship-value bases tags, so this is commented out.
-        relationship = None
-        if random_cat.ID in main_cat.relationships:
-            relationship = main_cat.relationships[random_cat.ID]
-
+        relationship = False
         if (
-            "strangers" in constraint
-            and relationship
-            and (relationship.like < 1 or relationship.romance < 1)
+            random_cat.ID in main_cat.relationships
+            and main_cat.ID in random_cat.relationships
         ):
+            relationship = True
+
+        if "strangers" in constraint and relationship:
             return False
 
         return True
