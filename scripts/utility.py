@@ -9,7 +9,6 @@ TODO: Docs
 import logging
 import os
 import re
-from copy import copy
 from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
@@ -21,7 +20,7 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
-from scripts.cat_relations.enums import RelType, RelTier, value_groups
+from scripts.cat_relations.enums import RelType, RelTier, rel_type_tiers
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure.game.settings import game_settings_save, game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
@@ -1128,20 +1127,20 @@ def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
 
 
 def filter_relationship_type(
-    group: list, filter: List[str], event_id: str = None, patrol_leader=None
+    group: list, filter_types: List[str], event_id: str = None, patrol_leader=None
 ):
     """
     filters for specific types of relationships between groups of cat objects, returns bool
     :param group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for
     parent/child, the cat being tested as parent must be index 0)
-    :param filter: the relationship types to check for.
+    :param filter_types: the relationship types to check for.
     :param event_id: if the event has an ID, include it here
     :param patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
     """
-    if not filter:
+    if not filter_types:
         return True
 
-    filter_list = filter.copy()
+    filter_list = filter_types.copy()
 
     # keeping this list here just for quick reference of what tags are handled here
     all_possible_tags = [
@@ -1161,9 +1160,9 @@ def filter_relationship_type(
         "app/mentor",
         "not_app",
     ]
-    for level_list in value_groups.values():
-        all_possible_tags.extend(level_list)
-        all_possible_tags.extend([f"{l}_only" for l in level_list])
+    for tier_list in rel_type_tiers.values():
+        all_possible_tags.extend(tier_list)
+        all_possible_tags.extend([f"{l}_only" for l in tier_list])
     if not set(filter_list).issubset(set(all_possible_tags)):
         print(
             f"WARNING: {[tag for tag in filter_list if tag not in all_possible_tags]} is not a valid relationship_status tag!"
@@ -1316,7 +1315,7 @@ def filter_relationship_type(
 
     # Filtering relationship values
     # each cat has to have relationships toward each other matching every level tag
-    for level in filter_list:
+    for tier in filter_list:
         for inter_cat in group:
             if len(group) == 2 and inter_cat == group[1]:
                 # if this is a two cat group, then we only look for the first cat's rel toward the second cat.
@@ -1330,46 +1329,48 @@ def filter_relationship_type(
                 if rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID
             ]
 
-            # list of every cat's level list
-            group_levels = [rel.get_reltype_tiers() for rel in relevant_relationships]
+            # list of every cat's tier list
+            group_lists: list[RelTier] = [
+                rel.get_reltype_tiers() for rel in relevant_relationships
+            ]
 
             # now test each list to see if the required tag is inside
-            for level_list in group_levels:
+            for tier_list in group_lists:
                 # just a quick check to see if we can avoid all the extra hullabaloo
-                if level in level_list:
+                if tier in tier_list:
                     continue
 
-                # if it's limited to *just* the given level
-                if "_only" in level:
-                    level.replace("_only", "")
-                    if level not in level_list:
+                # if it's limited to *just* the given tier
+                if "_only" in tier:
+                    tier.replace("_only", "")
+                    if tier not in tier_list:
                         return False
-                # otherwise we allow both the given level and any greater levels
+                # otherwise we allow both the given tier and any greater tiers
                 else:
-                    # finding the matching level enum
-                    value_level = RelTier(level)
+                    # finding the matching tier enum
+                    rel_tier: RelTier = RelTier(tier)
 
-                    # find the matching value enum
-                    rel_value = None
-                    for value in value_groups:
-                        if value_level in value_groups[value]:
-                            rel_value = value
+                    # find the matching rel_type enum
+                    rel_type: Optional[RelType] = None
+                    for rel_type in rel_type_tiers:
+                        if rel_tier in rel_type_tiers[rel_type]:
+                            rel_type = rel_type
                             break
-                    if not rel_value:
+                    if not rel_type:
                         continue
 
-                    # get the level's index within the value's list
-                    index = value_groups[rel_value].index(value_level)
+                    # get the tier's index within the rel_types's list
+                    index = rel_type_tiers[rel_type].index(rel_tier)
                     allowed_levels = []
-                    # if it's a pos level, we allow that index and higher
-                    if value_level.is_any_pos():
-                        allowed_levels = value_groups[rel_value][index:]
-                    # if it's a neg level, we allow that index and lower
-                    elif value_level.is_any_neg():
-                        allowed_levels = value_groups[rel_value][0:index]
+                    # if it's a pos tier, we allow that index and higher
+                    if rel_tier.is_any_pos:
+                        allowed_levels = rel_type_tiers[rel_type][index:]
+                    # if it's a neg tier, we allow that index and lower
+                    elif rel_tier.is_any_neg:
+                        allowed_levels = rel_type_tiers[rel_type][0:index]
 
                     discard = True
-                    for l in level_list:
+                    for l in tier_list:
                         if l in allowed_levels:
                             discard = False
                             break

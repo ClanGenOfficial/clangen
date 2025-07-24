@@ -293,7 +293,7 @@ class Relation_Events:
                 continue
 
             passed = filter_relationship_type(
-                group=[cat_from, cat_to], filter=constraint
+                group=[cat_from, cat_to], filter_types=constraint
             )
 
             if not passed:

@@ -486,7 +486,7 @@ class Patrol:
     def _check_constraints(self, patrol: PatrolEvent) -> bool:
         if not filter_relationship_type(
             group=self.patrol_cats,
-            filter=patrol.relationship_constraints,
+            filter_types=patrol.relationship_constraints,
             event_id=patrol.patrol_id,
             patrol_leader=self.patrol_leader,
         ):

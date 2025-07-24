@@ -11,7 +11,7 @@ from scripts.cat.cats import Cat, BACKSTORIES, create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
-from scripts.cat_relations.enums import value_groups
+from scripts.cat_relations.enums import rel_type_tiers
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.handle_short_events import HandleShortEvents
 from scripts.events_module.short.scar_events import Scar_Events
@@ -97,7 +97,7 @@ class EventEditScreen(Screens):
     rel_tag_list: list = TAGS["relationship"]
     """List of dicts for relationship_values. Each dict holds tag name, conflicts, and setting."""
     rel_tag_names: list = [tag["tag"] for tag in rel_tag_list]
-    rel_value_types: dict = value_groups
+    rel_value_types: dict = rel_type_tiers
     """Dict of all relationship values and associated levels."""
 
     all_ranks: list = Cat.rank_sort_order.copy()

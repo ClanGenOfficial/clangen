@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from scripts.cat_relations.enums import value_groups
+from scripts.cat_relations.enums import rel_type_tiers
 
 from scripts.cat.enums import CatRank
 
@@ -107,7 +107,7 @@ class RelationshipConstraints(unittest.TestCase):
         high_rel.trust = 90
         high_rel.respect = 90
         # then
-        for level_list in value_groups.values():
+        for level_list in rel_type_tiers.values():
             for l in level_list:
                 # last index of the list should be the highest positive
                 if l == level_list[-1]:
@@ -187,7 +187,7 @@ class RelationshipConstraints(unittest.TestCase):
         high_rel.comfort = -90
         high_rel.trust = -90
 
-        for level_list in value_groups.values():
+        for level_list in rel_type_tiers.values():
             for l in level_list:
                 # first index of the list should be the highest negative
                 if l == level_list[0]:
@@ -265,7 +265,7 @@ class RelationshipConstraints(unittest.TestCase):
 
         # then
         # pos test
-        for level_list in value_groups.values():
+        for level_list in rel_type_tiers.values():
             for level in level_list:
                 # last index of the list should be the highest positive
                 if level == level_list[-1]:
@@ -290,7 +290,7 @@ class RelationshipConstraints(unittest.TestCase):
                     )
 
         # neg test
-        for level_list in value_groups.values():
+        for level_list in rel_type_tiers.values():
             for level in level_list:
                 # first index of the list should be the highest positive
                 if level == level_list[0]:

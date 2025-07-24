@@ -167,7 +167,7 @@ class RelTier(StrEnum):
         )
 
 
-value_groups = {
+rel_type_tiers: dict = {
     RelType.LIKE: [l for l in [*RelTier] if l.is_like_level],
     RelType.RESPECT: [l for l in [*RelTier] if l.is_respect_level],
     RelType.TRUST: [l for l in [*RelTier] if l.is_trust_level],
