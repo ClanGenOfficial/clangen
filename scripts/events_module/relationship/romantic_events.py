@@ -736,62 +736,10 @@ class RomanticEvents:
         if not relationship:
             return False
 
-        if RelType.ROMANCE in condition and condition[RelType.ROMANCE] != 0:
-            if (
-                condition[RelType.ROMANCE] > 0
-                and relationship.romance < condition[RelType.ROMANCE]
-            ):
-                return False
-            if condition[RelType.ROMANCE] < 0 and relationship.romance > abs(
-                condition[RelType.ROMANCE]
-            ):
-                return False
-
-        if RelType.LIKE in condition and condition[RelType.LIKE] != 0:
-            if (
-                condition[RelType.LIKE] > 0
-                and relationship.like < condition[RelType.LIKE]
-            ):
-                return False
-            if condition[RelType.LIKE] < 0 and relationship.like > abs(
-                condition[RelType.LIKE]
-            ):
-                return False
-
-        if RelType.RESPECT in condition and condition[RelType.RESPECT] != 0:
-            if (
-                condition[RelType.RESPECT] > 0
-                and relationship.respect < condition[RelType.RESPECT]
-            ):
-                return False
-            if condition[RelType.RESPECT] < 0 and relationship.respect > abs(
-                condition[RelType.RESPECT]
-            ):
-                return False
-
-        if RelType.COMFORT in condition and condition[RelType.COMFORT] != 0:
-            if (
-                condition[RelType.COMFORT] > 0
-                and relationship.comfort < condition[RelType.COMFORT]
-            ):
-                return False
-            if condition[RelType.COMFORT] < 0 and relationship.comfort > abs(
-                condition[RelType.COMFORT]
-            ):
-                return False
-
-        if RelType.TRUST in condition and condition[RelType.TRUST] != 0:
-            if (
-                condition[RelType.TRUST] > 0
-                and relationship.trust < condition[RelType.TRUST]
-            ):
-                return False
-            if condition[RelType.TRUST] < 0 and relationship.trust > abs(
-                condition[RelType.TRUST]
-            ):
-                return False
-
-        return True
+        if relationship.relationship_qualifies(condition):
+            return True
+        else:
+            return False
 
     @staticmethod
     def current_mates_allow_new_mate(cat_from, cat_to) -> bool:
@@ -1000,7 +948,7 @@ class RomanticEvents:
 
         chance_number = 30
         chance_number += int(relationship_from.romance / 20)
-        chance_number += int(relationship_from.romance / 20)
+        chance_number += int(relationship_to.romance / 20)
         chance_number += int(relationship_from.like / 20)
         chance_number += int(relationship_to.like / 20)
         chance_number += int(relationship_from.respect / 20)

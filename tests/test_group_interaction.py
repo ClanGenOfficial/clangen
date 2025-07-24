@@ -341,26 +341,74 @@ class OtherCatsFiltering(unittest.TestCase):
         # given - relationships
         # order: romance, like, respect, trust, comfort
         main_cat.relationships[random1.ID] = Relationship(
-            main_cat, random1, False, False, 50, 50, 50, 50, 50
+            cat_from=main_cat,
+            cat_to=random1,
+            mates=False,
+            family=False,
+            romance=50,
+            like=50,
+            respect=50,
+            trust=50,
+            comfort=50,
         )
         random1.relationships[main_cat.ID] = Relationship(
-            random1, main_cat, False, False, 50, 50, 50, 50, 50
+            cat_from=random1,
+            cat_to=main_cat,
+            mates=False,
+            family=False,
+            romance=50,
+            like=50,
+            respect=50,
+            trust=50,
+            comfort=50,
         )
 
         main_cat.relationships[random2.ID] = Relationship(
-            main_cat, random2, False, True, 0, -50, -50, 0, 0
+            cat_from=main_cat,
+            cat_to=random2,
+            mates=False,
+            family=True,
+            romance=0,
+            like=-50,
+            respect=-50,
+            trust=0,
+            comfort=0,
         )
         random2.relationships[main_cat.ID] = Relationship(
-            random2, main_cat, False, True, 0, -50, -50, 0, 0
+            cat_from=random2,
+            cat_to=main_cat,
+            mates=False,
+            family=True,
+            romance=0,
+            like=-50,
+            respect=-50,
+            trust=0,
+            comfort=0,
         )
 
         random1.mate.append(random2.ID)
         random2.mate.append(random1.ID)
         random1.relationships[random2.ID] = Relationship(
-            random1, random2, True, False, 50, 50, 0, 50, 0
+            cat_from=random1,
+            cat_to=random2,
+            mates=True,
+            family=False,
+            romance=50,
+            like=50,
+            respect=0,
+            trust=50,
+            comfort=0,
         )
         random2.relationships[random1.ID] = Relationship(
-            random2, random1, True, False, 50, 50, 0, -50, 0
+            cat_from=random2,
+            cat_to=random1,
+            mates=True,
+            family=False,
+            romance=50,
+            like=50,
+            respect=0,
+            trust=-50,
+            comfort=0,
         )
 
         # summary:
@@ -443,44 +491,75 @@ class OtherCatsFiltering(unittest.TestCase):
             "r_c2": random2.ID,
         }
         # given - relationships
-        # order: romance, like, respect, trust, comfort
         main_cat.relationships[random1.ID] = Relationship(
-            main_cat, random1, False, False, 50, 50, 50, 50, 50
+            cat_from=main_cat,
+            cat_to=random1,
+            mates=False,
+            family=False,
+            romance=50,
+            like=50,
+            respect=50,
+            trust=50,
+            comfort=50,
         )
         random1.relationships[main_cat.ID] = Relationship(
-            random1, main_cat, False, False, 50, 50, 50, 50, 50
+            cat_from=random1,
+            cat_to=main_cat,
+            mates=False,
+            family=False,
+            romance=50,
+            like=50,
+            respect=50,
+            trust=50,
+            comfort=50,
         )
 
         main_cat.relationships[random2.ID] = Relationship(
-            main_cat, random2, False, True, 0, -50, -50, 50, 0
+            cat_from=main_cat,
+            cat_to=random2,
+            mates=False,
+            family=True,
+            romance=0,
+            like=-50,
+            respect=-50,
+            trust=50,
+            comfort=0,
         )
         random2.relationships[main_cat.ID] = Relationship(
-            random2, main_cat, False, True, 0, -50, -50, 50, 0
+            cat_from=random2,
+            cat_to=main_cat,
+            mates=False,
+            family=True,
+            romance=0,
+            like=-50,
+            respect=-50,
+            trust=50,
+            comfort=0,
         )
 
         random1.mate.append(random2.ID)
         random2.mate.append(random1.ID)
         random1.relationships[random2.ID] = Relationship(
-            random1,
-            random2,
-            True,
-            False,
-            50,
-            50,
-            0,
-            50,
-            0,
+            cat_from=random1,
+            cat_to=random2,
+            mates=True,
+            family=False,
+            romance=50,
+            like=50,
+            respect=0,
+            trust=50,
+            comfort=0,
         )
         random2.relationships[random1.ID] = Relationship(
-            random2,
-            random1,
-            True,
-            False,
-            50,
-            50,
-            0,
-            -50,
-            0,
+            cat_from=random2,
+            cat_to=random1,
+            mates=True,
+            family=False,
+            romance=50,
+            like=50,
+            respect=0,
+            trust=-50,
+            comfort=0,
         )
 
         # summary:

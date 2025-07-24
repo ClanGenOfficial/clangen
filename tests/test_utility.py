@@ -147,9 +147,9 @@ class TestCountRelation(unittest.TestCase):
         relation_4_2.link_relationship()
 
         # when
-        relation_1_2.respect += -20
-        relation_3_2.respect += -20
-        relation_4_2.respect += -10
+        relation_1_2.respect -= 20
+        relation_3_2.respect -= 20
+        relation_4_2.respect -= 10
 
         # then
         relation_dict = get_num_of_cats_with_relation_amount_towards(

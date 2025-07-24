@@ -479,6 +479,20 @@ class Relationship:
 
         return filtered
 
+    def relationship_qualifies(self, qualifying_values: dict) -> bool:
+        """
+        Returns True if this relationship's rel_types are within the given value and the maximum possible values (-100 for negative values, 100 for positive values)
+        :param qualifying_values: Dict of the needed values. Key should be the rel_type name and value should be the lowest required int (i.e. if you give a value of -40, the associated rel_type must be between -100 and -40. If you give a value of 40, the associated rel_type must be between 40 and 100.)
+        """
+        for rel_type, value in qualifying_values.items():
+            if value == 0:
+                continue
+            if value > 0 and getattr(self, rel_type) < value:
+                return False
+            elif value < 0 and getattr(self, rel_type) > value:
+                return False
+        return True
+
     def get_amount_of_type(self, value_enum: RelType) -> Optional[int]:
         return getattr(self, value_enum) if hasattr(self, value_enum) else None
 

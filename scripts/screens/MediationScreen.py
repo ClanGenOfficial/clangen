@@ -67,10 +67,7 @@ class MediationScreen(Screens):
                 self.page -= 1
                 self.update_page()
             elif event.ui_element == self.romance_checkbox:
-                if self.allow_romance:
-                    self.allow_romance = False
-                else:
-                    self.allow_romance = True
+                self.allow_romance = not self.allow_romance
                 self.update_buttons()
             elif event.ui_element == self.deselect_1:
                 self.selected_cat_1 = None

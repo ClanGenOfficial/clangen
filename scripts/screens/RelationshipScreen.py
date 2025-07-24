@@ -416,18 +416,7 @@ class RelationshipScreen(Screens):
         if constants.CONFIG["sorting"]["sort_by_rel_total"]:
             self.all_relations = sorted(
                 self.the_cat.relationships.values(),
-                key=lambda x: sum(
-                    map(
-                        abs,
-                        [
-                            x.romance,
-                            x.like,
-                            x.respect,
-                            x.comfort,
-                            x.trust,
-                        ],
-                    )
-                ),
+                key=lambda x: x.total_relationship_value,
                 reverse=True,
             )
         else:

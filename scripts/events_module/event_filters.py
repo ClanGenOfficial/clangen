@@ -277,9 +277,7 @@ def event_for_cat(
     }
 
     for param, func in func_lookup.items():
-        if param not in cat_info:
-            continue
-        if not func(cat, cat_info[param]):
+        if param in cat_info and not func(cat, cat_info[param]):
             return False
 
     # checking injuries
@@ -353,7 +351,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
 
 def _check_cat_trait(cat, traits: list) -> bool:
     """
-    checks if cat has the correct traits for traits and not_traits lists
+    checks if cat has the correct traits for traits
     """
     if not traits:
         return True
@@ -362,6 +360,9 @@ def _check_cat_trait(cat, traits: list) -> bool:
 
 
 def _check_cat_not_trait(cat, traits: list) -> bool:
+    """
+    checks if cat has the excluded traits
+    """
     if not traits:
         return True
 
@@ -370,7 +371,7 @@ def _check_cat_not_trait(cat, traits: list) -> bool:
 
 def _check_cat_skills(cat, skills: list) -> bool:
     """
-    checks if the cat has the correct skills for skills and not skills lists
+    checks if the cat has the correct skills for skills
     """
     if not skills:
         return True
@@ -389,6 +390,9 @@ def _check_cat_skills(cat, skills: list) -> bool:
 
 
 def _check_cat_not_skills(cat, skills: list) -> bool:
+    """
+    checks if the cat has the excluded skills
+    """
     if not skills:
         return True
 
