@@ -50,14 +50,14 @@ class Ambiance:
         screen = switch_get_value(Switch.cur_screen)
 
         # menu screen
-        if screen in constants.MENU_SCREENS:
+        if screen in constants.MAIN_MENU_SCREENS:
             if self.current_playlist != self.playlist_dict["menu_playlist"]:
                 self.ready_playlist(self.playlist_dict["menu_playlist"])
             if not self.get_busy():
                 self.play_queued()
 
         # other screens
-        elif screen not in constants.MENU_SCREENS and self.get_busy():
+        elif screen not in constants.MAIN_MENU_SCREENS and self.get_busy():
             self.current_playlist = None
             self.fade_out()
 

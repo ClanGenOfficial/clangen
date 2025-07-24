@@ -89,7 +89,7 @@ class Screens:
 
         if (
             game.last_screen_forupdate == "start screen"
-            and switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
+            and switch_get_value(Switch.cur_screen) not in constants.MAIN_MENU_SCREENS
         ):
             rebuild_den_dropdown(
                 left_align=not get_clan_setting("moons and seasons"),

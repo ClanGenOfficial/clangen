@@ -98,7 +98,7 @@ class Music:
         self.live = True
         self.current_playlist = []
 
-        if screen in constants.MENU_SCREENS:
+        if screen in constants.MAIN_MENU_SCREENS:
             self.current_playlist = self.available_music.get("menu_playlist")
 
             if not self.current_playlist:
@@ -121,14 +121,14 @@ class Music:
         screen = switch_get_value(Switch.cur_screen)
         # starts music when we return to main menu
         if (
-            screen in constants.MENU_SCREENS
+            screen in constants.MAIN_MENU_SCREENS
             and self.current_track_name not in self.current_playlist
         ):
             self.choose()
             self.play()
 
         # ends music when we leave main menu
-        elif screen not in constants.MENU_SCREENS and self.channel:
+        elif screen not in constants.MAIN_MENU_SCREENS and self.channel:
             self.stop()
 
     def play(self):
