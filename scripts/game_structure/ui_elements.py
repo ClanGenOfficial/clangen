@@ -817,7 +817,7 @@ class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
 
         self.button_width = ui_scale_value(15)
         self.arrow_button_width = self.button_width
-        self.sliding_button.change_layer(starting_height)
+        self.sliding_button.change_layer(starting_height + 1)
 
         self.rebuild()
 
