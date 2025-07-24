@@ -174,10 +174,10 @@ class Music:
             self._stop_timers()
             self._start_music_timer(self.remaining_time_of_paused_track)
 
-    def fade_out(self, fadeout=2000):
+    def fade_out(self, fadeout: int = 2000):
         """
-        fades the music out, default fade is 2 seconds
-        :param fadeout: length of fadeout in milliseconds
+        Fades out the music
+        :param fadeout: length of fadeout in milliseconds, by default this is 2 seconds
         """
         if self.channel and self.channel.get_busy():
             self.channel.fadeout(fadeout)
@@ -186,7 +186,8 @@ class Music:
 
     def change_volume(self, new_volume):
         """
-        changes the voume, int given should be between 0 and 100
+        changes the volume
+        :param new_volume: integer between 0 and 100
         """
         if new_volume > 100:
             new_volume = 100

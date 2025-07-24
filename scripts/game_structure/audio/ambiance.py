@@ -61,11 +61,10 @@ class Ambiance:
             self.current_playlist = None
             self.fade_out()
 
-    def ready_playlist(self, playlist):
+    def ready_playlist(self, playlist: list[str]):
         """
-        loads and plays random file from playlist, queues up next track
-        set loops to -1 to loop the chosen file
-        setting loops to number above zero will play the track that number of times before playing the queued track
+        Sets up the playlist and queue
+        :param playlist: list of paths for ambiance files
         """
         self.current_playlist = playlist
         self.queued_track = None  # clear queue
@@ -77,11 +76,12 @@ class Ambiance:
 
         self.set_queued()
 
-    def play(self, track, loops=0, fade_ms=1000):
+    def play(self, track, loops: int = 0, fade_ms: int = 1000):
         """
-        plays the given track and sets volume
-        set loops to -1 to loop the chosen file
-        setting loops to number above zero will play the track that number of times before playing the queued track
+        Plays the given track.
+        :param track: The file path of the ambiance track to play
+        :param loops: Number of times to loop the track before playing the queued track
+        :param fade_ms: Amount of milliseconds to fade in the track
         """
         self.current_track = track
         pygame.mixer.music.load(self.current_track)
@@ -147,8 +147,10 @@ class Ambiance:
         pygame.mixer.music.unpause()
         self.check()
 
-    def change_volume(self, new_volume):
-        """changes the volume, int given should be between 0 and 100"""
+    def change_volume(self, new_volume: int):
+        """Changes the ambiance volume
+        :param new_volume: integer between 0 and 100
+        """
         # make sure given volume is between 0 and 100
         if new_volume > 100:
             new_volume = 100
@@ -186,4 +188,7 @@ class Ambiance:
 
     @staticmethod
     def get_busy() -> bool:
+        """
+        Returns True if ambiance is currently playing
+        """
         return pygame.mixer.music.get_busy()

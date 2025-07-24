@@ -22,12 +22,8 @@ class Sound:
 
     def load_sounds(self):
         # open up the sound dictionary
-        try:
-            with open("resources/audio/sounds.json", "r", encoding="utf-8") as f:
-                sound_data = ujson.load(f)
-        except:
-            logger.exception("Failed to load sound index")
-            return
+        with open("resources/audio/sounds.json", "r", encoding="utf-8") as f:
+            sound_data = ujson.load(f)
         for sound in sound_data:
             try:
                 self.sound_dict[sound] = []
@@ -58,7 +54,7 @@ class Sound:
         except:
             pass
 
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if event.type == pygame_gui.UI_BUTTON_PRESSED:
             self.pressed = event.ui_element
             self.play("button_press", event.ui_element)
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
@@ -67,9 +63,12 @@ class Sound:
                     self.play("button_hover")
             self.pressed = None
 
-    def play(self, sound, button=None):
+    def play(self, sound: str, button=None):
         """plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
-        used instead"""
+        used instead
+        :param sound: The name of the sound to play
+        :param button: The button that triggered the sound
+        """
         if self.muted:
             return
 
@@ -88,7 +87,8 @@ class Sound:
             logger.exception(f"Could not find sound {sound}")
 
     def change_volume(self, new_volume):
-        """changes the volume, int given should be between 0 and 100"""
+        """changes the volume
+        :param new_volume: integer between 0 and 100"""
         # make sure given volume is between 0 and 100
         if new_volume > 100:
             new_volume = 100
