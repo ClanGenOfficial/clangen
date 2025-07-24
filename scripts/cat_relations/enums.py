@@ -168,9 +168,9 @@ class RelTier(StrEnum):
 
 
 value_groups = {
-    RelType.LIKE: [l for l in [*RelTier] if l.is_like_level()],
-    RelType.RESPECT: [l for l in [*RelTier] if l.is_respect_level()],
-    RelType.TRUST: [l for l in [*RelTier] if l.is_trust_level()],
-    RelType.COMFORT: [l for l in [*RelTier] if l.is_comfort_level()],
-    RelType.ROMANCE: [l for l in [*RelTier] if l.is_romance_level()],
+    RelType.LIKE: [l for l in [*RelTier] if l.is_like_level],
+    RelType.RESPECT: [l for l in [*RelTier] if l.is_respect_level],
+    RelType.TRUST: [l for l in [*RelTier] if l.is_trust_level],
+    RelType.COMFORT: [l for l in [*RelTier] if l.is_comfort_level],
+    RelType.ROMANCE: [l for l in [*RelTier] if l.is_romance_level],
 }
