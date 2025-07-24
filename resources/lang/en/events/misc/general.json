@@ -184,7 +184,7 @@
                     "comfort",
                     "like"
                 ],
-                "amount": -30
+                "amount": -15
             },
             {
                 "cats_from": [
@@ -695,8 +695,7 @@
                 "values": [
                     "trust",
                     "respect",
-                    "comfort",
-                    "like"
+                    "comfort"
                 ],
                 "amount": -20
             }
@@ -813,7 +812,7 @@
                 "cats_to": [
                     "m_c"
                 ],
-                "mutual": false,
+                "mutual": true,
                 "values": [
                     "trust",
                     "respect",
@@ -7483,6 +7482,19 @@
                     "trust"
                 ],
                 "amount": 5
+            },
+            {
+                "cats_to": [
+                    "m_c"
+                ],
+                "cats_from": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "like"
+                ],
+                "amount": 10
             }
         ]
     },
@@ -8857,10 +8869,7 @@
                 "like",
                 "trust"
             ],
-            "amount": -5,
-            "log": {
-                "cats_from": "Was upset when m_c defied the Clan and maintained a friendship during war."
-            }
+            "amount": -5
         },
         "other_clan": {
             "changed": 2

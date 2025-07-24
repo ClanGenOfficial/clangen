@@ -121,7 +121,7 @@
           "cats_to": ["clan"],
           "mutual": false,
           "values": ["like"],
-          "amount": -5
+          "amount": -20
         }
       ]
     }

@@ -297,7 +297,8 @@
                 ],
                 "values": [
                     "trust",
-                    "respect"
+                    "respect",
+                    "like"
                 ],
                 "amount": -5
             }
@@ -361,11 +362,22 @@
                     "r_c"
                 ],
                 "values": [
-                    "like",
                     "comfort",
                     "respect"
                 ],
                 "amount": 15
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "like"
+                ],
+                "amount": 5
             }
         ]
     },
@@ -427,11 +439,22 @@
                     "r_c"
                 ],
                 "values": [
-                    "like",
                     "comfort",
                     "respect"
                 ],
                 "amount": 15
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "like"
+                ],
+                "amount": 5
             }
         ]
     },

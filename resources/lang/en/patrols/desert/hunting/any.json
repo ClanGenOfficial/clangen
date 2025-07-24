@@ -2370,6 +2370,13 @@
                             "mutual": false,
                             "values": ["like"],
                             "amount": -10
+                        },
+                        {
+                            "cats_to": ["p_l"],
+                            "cats_from": ["patrol"],
+                            "mutual": false,
+                            "values": ["like"],
+                            "amount": 10
                         }
                     ]
                 }

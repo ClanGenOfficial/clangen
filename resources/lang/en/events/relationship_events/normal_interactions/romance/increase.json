@@ -10,7 +10,7 @@
 		],
 		"relationship_constraint": [
 			"not_mates",
-			"fancies"
+			"fancies_only"
 		]
 	},
 	{
@@ -103,7 +103,7 @@
 		],
 		"relationship_constraint": [
 			"not_mates",
-			"fancies"
+			"fancies_only"
 		],
 		"reaction_random_cat": {
 			"romance": "increase",

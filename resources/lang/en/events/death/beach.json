@@ -448,7 +448,7 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": false,
+                "mutual": true,
                 "values": [
                     "trust",
                     "like"
@@ -556,7 +556,7 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": false,
+                "mutual": true,
                 "values": [
                     "trust",
                     "like"
@@ -651,7 +651,7 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": false,
+                "mutual": true,
                 "values": [
                     "trust",
                     "like"
