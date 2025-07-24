@@ -399,8 +399,8 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
 ***
 
-## Relationship Levels
-> These tags are used to indicate what level of a relationship value cat1 has toward cat2. Basic tags will allow the tagged level and greater levels (i.e. tagging `dislike` will allow `dislike`, `hate`, and `loathe`), while appending `_only` to the end of a tag will restrict the constraint to allow just that level (i.e. tagging `dislike_only` will allow `dislike`). You can use multiple `_only` tags to allow multiple levels (i.e. [`dislike_only`, `hate_only`] will allow `dislike` and `hate`) and you can always mix and match these as needed (i.e. [`enjoys`, `doubts_only` `considers`] checks for three different values).
+## Relationship Tiers
+> These tags are used to indicate what tier of a relationship type cat1 has toward cat2. Basic tags will allow the tagged tier and greater tiers (i.e. tagging `dislike` will allow `dislike`, `hate`, and `loathe`), while appending `_only` to the end of a tag will restrict the constraint to allow just that tier (i.e. tagging `dislike_only` will allow `dislike`). You can use multiple `_only` tags to allow multiple tiers (i.e. [`dislike_only`, `hate_only`] will allow `dislike` and `hate`) and you can always mix and match these as needed (i.e. [`enjoys`, `doubts_only` `considers`] checks for three different types).
 
 |             | Like        | Respect        | Trust         | Comfort        | Romance        |
 |-------------|-------------|----------------|---------------|----------------|----------------|
@@ -414,8 +414,8 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
 ***
 
-## Relationship Types
-> These tags are used to indicate a type of relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat.
+## Interpersonal Relationships
+> These tags are used to indicate a type of Interpersonal relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat.
 
 | string            |                                    | Patrol Use Specifics                   |
 |-------------------|------------------------------------|----------------------------------------|
