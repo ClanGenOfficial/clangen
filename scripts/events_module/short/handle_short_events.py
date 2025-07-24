@@ -282,7 +282,10 @@ class HandleShortEvents:
         self.handle_injury()
 
         # handle murder reveals
-        if "murder_reveal" in self.chosen_event.sub_type:
+        if (
+            "murder_reveal" in self.chosen_event.sub_type
+            or "hidden_murder_reveal" in self.chosen_event.sub_type
+        ):
             self.main_cat.history.reveal_murder(
                 victim=self.victim_cat,
                 murderer_id=self.main_cat.ID,
@@ -377,8 +380,8 @@ class HandleShortEvents:
             random_cat=Cat.fetch_cat(event.involved_cats.get("r_c")),
             freshkill_pile=game.clan.freshkill_pile,
             victim_cat=Cat.fetch_cat(event.involved_cats.get("mur_c")),
-            sub_type=event.pool.get("subtype"),
-            ignore_subtyping="subtype" not in event.pool,
+            sub_type=event.pool.get("sub_type"),
+            ignore_subtyping="sub_type" not in event.pool,
         )
 
         self.allowed_events = []
@@ -409,7 +412,13 @@ class HandleShortEvents:
         for i, attribute_list in enumerate(self.chosen_event.new_cat):
             self.new_cats.append(
                 create_new_cat_block(
-                    Cat, Relationship, self, in_event_cats, i, attribute_list
+                    Cat,
+                    Relationship,
+                    self,
+                    in_event_cats,
+                    i,
+                    attribute_list,
+                    other_clan=self.other_clan,
                 )
             )
 
@@ -506,6 +515,8 @@ class HandleShortEvents:
             self.main_cat.pelt.accessory.append(choice(acc_list))
         else:
             self.main_cat.pelt.accessory = [choice(acc_list)]
+
+        self.main_cat.pelt.rebuild_sprite = True
 
     def handle_transition(self):
         """

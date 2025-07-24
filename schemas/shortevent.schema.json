@@ -32,6 +32,7 @@
             "old_age",
             "mass_death",
             "murder_reveal",
+            "hidden_murder_reveal",
             "accessory",
             "ceremony",
             "transition",

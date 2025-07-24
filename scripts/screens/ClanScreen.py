@@ -274,8 +274,9 @@ class ClanScreen(Screens):
         )
 
         save_buttons = get_button_dict(ButtonStyles.SQUOVAL, (114, 30))
-        save_buttons["normal"] = image_cache.load_image(
-            "resources/images/buttons/save_clan.png"
+        save_buttons["normal"] = pygame.transform.scale(
+            image_cache.load_image("resources/images/buttons/save_clan.png"),
+            ui_scale_dimensions((114, 30)),
         )
         self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect(((343, 643), (114, 30)))),

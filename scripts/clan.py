@@ -1287,6 +1287,7 @@ class OtherClan:
         # assigns next un-used enum
         for enum in self.other_clan_enums:
             if enum not in game.clan.other_clans:
+                self.enum = enum
                 game.clan.other_clans.append(enum)
                 break
 

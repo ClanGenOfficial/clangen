@@ -91,9 +91,13 @@
             "one": "former Clancat",
             "many": "former Clancats"
         },
+        "clancat": {
+            "one": "Clancat",
+            "many": "Clancats"
+        },
         "exiled": {
-            "one": "exiled",
-            "many": "exiled"
+            "one": "exiled from",
+            "many": "exiled from"
         },
         "lost": "lost",
         "mate": {
@@ -154,6 +158,7 @@
         "cousin_male": "cousin",
         "cousin_female": "cousin",
         "cousin_nb": "cousin",
+        "clan": "%{name}Clan",
         "starclan": "StarClan",
         "dark_forest": "Dark Forest",
         "unknown_residence": "Unknown Residence",
