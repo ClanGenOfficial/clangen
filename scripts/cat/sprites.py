@@ -167,6 +167,7 @@ class Sprites:
             "fademask",
             "fadestarclan",
             "fadedarkforest",
+            "fadeunknownresidence"
             "symbols",
         ):
             if (
@@ -199,6 +200,7 @@ class Sprites:
             self.make_group("fademask", (i, 0), f"fademask{i}")
             self.make_group("fadestarclan", (i, 0), f"fadestarclan{i}")
             self.make_group("fadedarkforest", (i, 0), f"fadedf{i}")
+            self.make_group("fadeunknownresidence", (i, 0), f"fadeur{i}")
 
         # Define eye colors
         eye_colors = [

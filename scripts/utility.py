@@ -3059,12 +3059,16 @@ def generate_sprite(
                 special_flags=pygame.BLEND_RGBA_MULT,
             )
 
-            if cat.status.group == CatGroup.DARK_FOREST:
-                temp = sprites.sprites["fadedf" + stage + cat_sprite].copy()
+            if cat.status.group == CatGroup.STARCLAN:
+                temp = sprites.sprites["fadestarclan" + stage + cat_sprite].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+            elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
+                temp = sprites.sprites["fadeur" + stage + cat_sprite].copy()
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
             else:
-                temp = sprites.sprites["fadestarclan" + stage + cat_sprite].copy()
+                temp = sprites.sprites["fadedf" + stage + cat_sprite].copy()
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
 
