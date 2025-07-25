@@ -57,6 +57,11 @@ class Sprites:
     ) as read_file:
         PELT_DATA = ujson.loads(read_file.read())
 
+    with open(
+        "resources/dicts/sprites/eye_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        EYE_DATA = ujson.loads(read_file.read())
+
     def __init__(self):
         """Class that handles and hold all spritesheets.
         Size is normally automatically determined by the size
@@ -226,31 +231,31 @@ class Sprites:
             "lineartdead",
             "line_sc_overlay",
             "eyes",
-            "eyes2",
+            "eyes_right",
             "skin",
             "scars",
-            "missingscars",
-            "medcatherbs",
+            "scars_missing_part",
+            "plant",
             "wild",
             "collars",
-            "singlecolours",
-            "speckledcolours",
-            "tabbycolours",
-            "bengalcolours",
-            "marbledcolours",
-            "rosettecolours",
-            "smokecolours",
-            "tickedcolours",
-            "mackerelcolours",
-            "classiccolours",
-            "sokokecolours",
-            "agouticolours",
-            "singlestripecolours",
-            "maskedcolours",
+            "colours_single",
+            "colours_tabby",
+            "colours_speckled",
+            "colours_bengal",
+            "colours_marbled",
+            "colours_rosette",
+            "colours_smoke",
+            "colours_ticked",
+            "colours_mackerel",
+            "colours_classic",
+            "colours_sokoke",
+            "colours_agouti",
+            "colours_singlestripe",
+            "colours_masked",
             "shadersnewwhite",
             "lightingnew",
             "whitepatches",
-            "tortiepatchesmasks",
+            "tortie_patches",
             "fademask",
             "fadestarclan",
             "fadedarkforest",
@@ -279,40 +284,9 @@ class Sprites:
             self.make_group("fadestarclan", (i, 0), f"fadestarclan{i}")
             self.make_group("fadedarkforest", (i, 0), f"fadedf{i}")
 
-        # Define eye colors
-        eye_colors = [
-            [
-                "YELLOW",
-                "AMBER",
-                "HAZEL",
-                "PALEGREEN",
-                "GREEN",
-                "BLUE",
-                "DARKBLUE",
-                "GREY",
-                "CYAN",
-                "EMERALD",
-                "HEATHERBLUE",
-                "SUNLITICE",
-            ],
-            [
-                "COPPER",
-                "SAGE",
-                "COBALT",
-                "PALEBLUE",
-                "BRONZE",
-                "SILVER",
-                "PALEYELLOW",
-                "GOLD",
-                "GREENYELLOW",
-                "ORANGE",
-            ],
-        ]
-
-        for row, colors in enumerate(eye_colors):
-            for col, color in enumerate(colors):
-                self.make_group("eyes", (col, row), f"eyes{color}")
-                self.make_group("eyes2", (col, row), f"eyes2{color}")
+        # eye colours
+        for spritesheet in self.EYE_DATA["spritesheets"]:
+            self.load_sheet(spritesheet, self.EYE_DATA["sprite_list"])
 
         # Define white patches
         white_patches = [

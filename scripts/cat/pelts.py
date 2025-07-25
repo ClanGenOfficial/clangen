@@ -21,15 +21,15 @@ class Pelt:
 
     for sprite_list in sprites.PELT_DATA["sprite_list"]:
         all_pelt_colours.extend(sprite_list.keys())
-        for color in sprite_list:
-            if sprite_list[color] == "white":
-                white_colours.append(color)
-            elif sprite_list[color] == "black":
-                black_colours.append(color)
-            elif sprite_list[color] == "ginger":
-                ginger_colours.append(color)
-            elif sprite_list[color] == "brown":
-                brown_colours.append(color)
+        for colour in sprite_list:
+            if sprite_list[colour] == "white":
+                white_colours.append(colour)
+            elif sprite_list[colour] == "black":
+                black_colours.append(colour)
+            elif sprite_list[colour] == "ginger":
+                ginger_colours.append(colour)
+            elif sprite_list[colour] == "brown":
+                brown_colours.append(colour)
 
     colour_categories: list[list] = [
         ginger_colours,
@@ -71,79 +71,22 @@ class Pelt:
         tortie_patterns.extend(sprite_list)
 
     pelt_length = ["short", "medium", "long"]
-    eye_colours = [
-        "YELLOW",
-        "AMBER",
-        "HAZEL",
-        "PALEGREEN",
-        "GREEN",
-        "BLUE",
-        "DARKBLUE",
-        "GREY",
-        "CYAN",
-        "EMERALD",
-        "PALEBLUE",
-        "PALEYELLOW",
-        "GOLD",
-        "HEATHERBLUE",
-        "COPPER",
-        "SAGE",
-        "COBALT",
-        "SUNLITICE",
-        "GREENYELLOW",
-        "BRONZE",
-        "SILVER",
-        "ORANGE",
-    ]
-    yellow_eyes = [
-        "YELLOW",
-        "AMBER",
-        "PALEYELLOW",
-        "GOLD",
-        "COPPER",
-        "GREENYELLOW",
-        "BRONZE",
-        "SILVER",
-        "ORANGE",
-    ]
-    blue_eyes = [
-        "BLUE",
-        "DARKBLUE",
-        "CYAN",
-        "PALEBLUE",
-        "HEATHERBLUE",
-        "COBALT",
-        "SUNLITICE",
-        "GREY",
-    ]
 
-    green_eyes = ["PALEGREEN", "GREEN", "EMERALD", "SAGE", "HAZEL"]
-    eye_sprites = [
-        "YELLOW",
-        "AMBER",
-        "HAZEL",
-        "PALEGREEN",
-        "GREEN",
-        "BLUE",
-        "DARKBLUE",
-        "BLUEYELLOW",
-        "BLUEGREEN",
-        "GREY",
-        "CYAN",
-        "EMERALD",
-        "PALEBLUE",
-        "PALEYELLOW",
-        "GOLD",
-        "HEATHERBLUE",
-        "COPPER",
-        "SAGE",
-        "COBALT",
-        "SUNLITICE",
-        "GREENYELLOW",
-        "BRONZE",
-        "SILVER",
-        "ORANGE",
-    ]
+    # eyes
+    all_eye_colours: list = []
+    yellow_eyes: list = []
+    green_eyes: list = []
+    blue_eyes: list = []
+    for sprite_list in sprites.EYE_DATA["sprite_list"]:
+        all_eye_colours.extend(sprite_list.keys())
+        for colour in sprite_list:
+            if sprite_list[colour] == "yellow":
+                yellow_eyes.append(colour)
+            elif sprite_list[colour] == "green":
+                green_eyes.append(colour)
+            elif sprite_list[colour] == "blue":
+                blue_eyes.append(colour)
+
     little_white = [
         "LITTLE",
         "LIGHTTUXEDO",
@@ -338,8 +281,8 @@ class Pelt:
     for style_type in sprites.COLLAR_DATA["style_data"]:
         for style, color_list in style_type.items():
             collar_styles.append(style)
-            for color in color_list:
-                collar_accessories.append(f"{style}_{color}")
+            for colour in color_list:
+                collar_accessories.append(f"{style}_{colour}")
 
     # make sure to add plural and singular forms of new accs to accessories.en.json so that they will display nicely
 
@@ -563,10 +506,10 @@ class Pelt:
         :return: None
         """
         if not parents:
-            self.eye_colour = choice(Pelt.eye_colours)
+            self.eye_colour = choice(Pelt.all_eye_colours)
         else:
             self.eye_colour = choice(
-                [i.pelt.eye_colour for i in parents] + [choice(Pelt.eye_colours)]
+                [i.pelt.eye_colour for i in parents] + [choice(Pelt.all_eye_colours)]
             )
 
         # White patches must be initalized before eye color.
