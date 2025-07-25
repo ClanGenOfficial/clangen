@@ -473,26 +473,9 @@ class Pelt:
         "FULLWHITE",
     ]
 
-    skin_sprites = [
-        "BLACK",
-        "PINK",
-        "DARKBROWN",
-        "BROWN",
-        "LIGHTBROWN",
-        "DARK",
-        "DARKGREY",
-        "GREY",
-        "DARKSALMON",
-        "SALMON",
-        "PEACH",
-        "DARKMARBLED",
-        "MARBLED",
-        "LIGHTMARBLED",
-        "DARKBLUE",
-        "BLUE",
-        "LIGHTBLUE",
-        "RED",
-    ]
+    skin_sprites = []
+    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
+        skin_sprites.extend(sprite_list)
 
     """Holds all appearance information for a cat. """
 

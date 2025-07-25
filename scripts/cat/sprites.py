@@ -42,6 +42,11 @@ class Sprites:
     ) as read_file:
         SCAR_MISSING_PART_DATA = ujson.loads(read_file.read())
 
+    with open(
+        "resources/dicts/sprites/scar_missing_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        SKIN_DATA = ujson.loads(read_file.read())
+
     def __init__(self):
         """Class that handles and hold all spritesheets.
         Size is normally automatically determined by the size
@@ -539,15 +544,7 @@ class Sprites:
                 self.make_group("tortiepatchesmasks", (col, row), f"tortiemask{mask}")
 
         # Define skin colors
-        skin_colors = [
-            ["BLACK", "RED", "PINK", "DARKBROWN", "BROWN", "LIGHTBROWN"],
-            ["DARK", "DARKGREY", "GREY", "DARKSALMON", "SALMON", "PEACH"],
-            ["DARKMARBLED", "MARBLED", "LIGHTMARBLED", "DARKBLUE", "BLUE", "LIGHTBLUE"],
-        ]
-
-        for row, colors in enumerate(skin_colors):
-            for col, color in enumerate(colors):
-                self.make_group("skin", (col, row), f"skin{color}")
+        self.load_sheet(self.SKIN_DATA)
 
         # scars
         self.load_sheet(self.SCAR_DATA)
