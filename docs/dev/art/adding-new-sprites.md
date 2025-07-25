@@ -14,7 +14,7 @@ New sprite sets can be added to the spritesheets by simply adding the new set to
 
 _You should always keep to the left side of the canvas._
 
-These must be properly spaced on the 50x50 grid to line up with the other sprite sets on the sheet. Spritesheets can be resized if needed to add a new set, generally if the sheet is becoming overly-wide you should add more space to the bottom of the sheet and begin a new row. The majority of our sheets already have multiple rows, and so you should add new rows rather than altering the width.
+These must be properly spaced on the 50x50 grid to line up with the other sprite sets on the sheet. Spritesheets can be resized if needed to add a new set, generally if the sheet is becoming overly-wide you should add more space to the bottom of the sheet and begin a new row. 
 
 ## Adding Sprites to their DATA Sheet
 Once you've completed your changes to the spritesheet, the matching `DATA` sheet will need to be altered. This is the last step! Once the `DATA` sheet is altered, the new sprites should appear in game.
