@@ -685,7 +685,7 @@ class RelationshipScreen(Screens):
         if not get_clan_setting("show empty relation"):
             self.filtered_cats = list(
                 filter(
-                    lambda rel: not rel.is_empty(),
+                    lambda rel: not rel.is_empty,
                     self.filtered_cats,
                 )
             )

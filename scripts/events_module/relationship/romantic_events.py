@@ -187,7 +187,11 @@ class RomanticEvents:
             and len(id_check_list) > 2
         ):
             id_check_list.remove(chosen_interaction)
-            chosen_interaction = choice(id_check_list)
+            # pick a new one if any are still available
+            if id_check_list:
+                chosen_interaction = choice(id_check_list)
+            else:
+                chosen_interaction = None
 
         # if we couldn't find a non-duplicate, we just pick any of them
         if not chosen_interaction:
@@ -198,7 +202,7 @@ class RomanticEvents:
             relationship.used_interaction_ids = []
         relationship.used_interaction_ids.append(chosen_interaction.id)
 
-        # affect relationship - it should always be in a romance way
+        # affect relationship - it should always be in a romantic way
         value_change = "increase" if positive else "decrease"
         rel_type = RelType.ROMANCE
         relationship.chosen_interaction = chosen_interaction

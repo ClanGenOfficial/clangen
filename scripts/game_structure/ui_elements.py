@@ -1268,12 +1268,12 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
         )
 
         prev_element = None
-        for val in [*RelType]:
-            if val == RelType.ROMANCE:
+        for rel_type in [*RelType]:
+            if rel_type == RelType.ROMANCE:
                 continue
-            num, level = self.get_value_attrs(val, relationship)
-            self.rel_elements[f"{val}_text"] = pygame_gui.elements.UITextBox(
-                f"relationships.{level}",
+            num, tier = relationship.get_rel_type_attributes(rel_type)
+            self.rel_elements[f"{rel_type}_text"] = pygame_gui.elements.UITextBox(
+                f"relationships.{tier}",
                 ui_scale(
                     pygame.Rect(
                         (0 - 2, 0),
@@ -1284,18 +1284,18 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
                 container=self,
                 anchors={"top_target": prev_element} if prev_element else None,
             )
-            self.rel_elements[f"{val}_text"].set_tooltip(
-                i18n.t(f"relationships.{val}", count=num)
+            self.rel_elements[f"{rel_type}_text"].set_tooltip(
+                i18n.t(f"relationships.{rel_type}", count=num)
             )
-            self.rel_elements[f"{val}_text"].tool_tip_delay = 0
-            self.rel_elements[f"{val}_text"].disable()
-            self.rel_elements[f"{val}_bar"] = UIRelationStatusScaleBar(
+            self.rel_elements[f"{rel_type}_text"].tool_tip_delay = 0
+            self.rel_elements[f"{rel_type}_text"].disable()
+            self.rel_elements[f"{rel_type}_bar"] = UIRelationStatusScaleBar(
                 ui_scale(pygame.Rect((0, -5), bar_size)),
-                anchors={"top_target": self.rel_elements[f"{val}_text"]},
+                anchors={"top_target": self.rel_elements[f"{rel_type}_text"]},
                 scale_position=num,
                 container=self,
             )
-            prev_element = self.rel_elements[f"{val}_bar"]
+            prev_element = self.rel_elements[f"{rel_type}_bar"]
 
             # ROMANCE
         if romance:
@@ -1331,19 +1331,6 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
             )
 
         self.romance = romance
-
-    @staticmethod
-    def get_value_attrs(value, rel):
-        if value == RelType.ROMANCE:
-            return rel.romance, rel.romance_tier
-        elif value == RelType.LIKE:
-            return rel.like, rel.like_tier
-        elif value == RelType.RESPECT:
-            return rel.respect, rel.respect_tier
-        elif value == RelType.COMFORT:
-            return rel.comfort, rel.comfort_tier
-        else:
-            return rel.trust, rel.trust_tier
 
 
 class IDImageButton(UISurfaceImageButton):

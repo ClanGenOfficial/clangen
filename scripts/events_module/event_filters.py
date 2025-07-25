@@ -351,7 +351,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
 
 def _check_cat_trait(cat, traits: list) -> bool:
     """
-    checks if cat has the correct traits for traits
+    checks if cat has required trait
     """
     if not traits:
         return True
@@ -371,7 +371,7 @@ def _check_cat_not_trait(cat, traits: list) -> bool:
 
 def _check_cat_skills(cat, skills: list) -> bool:
     """
-    checks if the cat has the correct skills for skills
+    checks if the cat has all required skills
     """
     if not skills:
         return True
@@ -391,7 +391,7 @@ def _check_cat_skills(cat, skills: list) -> bool:
 
 def _check_cat_not_skills(cat, skills: list) -> bool:
     """
-    checks if the cat has the excluded skills
+    checks if the cat has a forbidden skill
     """
     if not skills:
         return True

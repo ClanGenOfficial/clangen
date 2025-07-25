@@ -356,6 +356,13 @@
         "description": "Controls chance to succeed. Higher number is higher chance to succeed.",
         "type": "integer"
       },
+      "relationship_status": {
+      "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/definitions/relationship_status"
+      }
+    },
       "pl_skill_constraint": {
         "description": "Only allow this patrol if the patrol leader (p_l) meets at least one of these skill requirements.",
         "type": "array",

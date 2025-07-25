@@ -1531,11 +1531,7 @@ def unpack_rel_block(
         change_relationship_values(
             cats_to_ob,
             cats_from_ob,
-            romance=value_changes.get(RelType.ROMANCE, 0),
-            like=value_changes.get(RelType.LIKE, 0),
-            respect=value_changes.get(RelType.RESPECT, 0),
-            comfort=value_changes.get(RelType.COMFORT, 0),
-            trust=value_changes.get(RelType.TRUST, 0),
+            **value_changes,
             log=from_log,
         )
 
@@ -1543,11 +1539,7 @@ def unpack_rel_block(
             change_relationship_values(
                 cats_from_ob,
                 cats_to_ob,
-                romance=value_changes.get(RelType.ROMANCE, 0),
-                like=value_changes.get(RelType.LIKE, 0),
-                respect=value_changes.get(RelType.RESPECT, 0),
-                comfort=value_changes.get(RelType.COMFORT, 0),
-                trust=value_changes.get(RelType.TRUST, 0),
+                **value_changes,
                 log=to_log,
             )
 

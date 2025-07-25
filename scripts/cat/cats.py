@@ -2868,7 +2868,7 @@ class Cat:
             personality_bonus = 0
 
         # Effects on traits
-        for value in chosen_pos + chosen_neg:
+        for rel_type in chosen_pos + chosen_neg:
             # The EX bonus in not applied upon a fail.
             if apply_bonus:
                 if mediator.experience_level == "very low":
@@ -2887,30 +2887,26 @@ class Cat:
             else:
                 bonus = 0
 
-            if sabotage or value in chosen_neg:
+            if sabotage or rel_type in chosen_neg:
                 decrease = True
             else:
-                decrease = sabotage or value in chosen_neg
+                decrease = sabotage or rel_type in chosen_neg
 
-            ran = (5, 10) if value == RelType.ROMANCE and mates else (4, 6)
+            ran = (5, 10) if rel_type == RelType.ROMANCE and mates else (4, 6)
 
-            change = ((randint(ran[0], ran[1]) + bonus) + personality_bonus) * (
+            amount = ((randint(ran[0], ran[1]) + bonus) + personality_bonus) * (
                 -1 if sabotage else 1
             )
 
-            setattr(rel1, value, Cat.effect_relation(getattr(rel1, value), change))
-            setattr(rel2, value, Cat.effect_relation(getattr(rel2, value), change))
+            setattr(rel1, rel_type, amount)
+            setattr(rel2, rel_type, amount)
 
             output += i18n.t(
                 f"screens.mediation.output_{'decrease' if decrease else 'increase'}",
-                trait=i18n.t(f"screens.mediation.{value}"),
+                trait=i18n.t(f"screens.mediation.{rel_type}"),
             )
 
         return output
-
-    @staticmethod
-    def effect_relation(current_value, effect):
-        return clamp(current_value + effect, 0, 100)
 
     def set_faded(self):
         """This function is for cats that are faded. It will set the sprite and the faded tag"""

@@ -1,7 +1,6 @@
 import random
 from random import choice
 from typing import Optional
-from xml.sax.handler import property_encoding
 
 import i18n
 
@@ -508,6 +507,12 @@ class Relationship:
             self.respect_tier,
         ]
 
+    def get_rel_type_attributes(self, rel_type) -> (int, RelTier):
+        """
+        Returns a tuple of rel_type integer and tier
+        """
+        return getattr(self, rel_type), getattr(self, f"{rel_type}_tier")
+
     @property
     def total_relationship_value(self) -> int:
         """
@@ -532,11 +537,11 @@ class Relationship:
     @property
     def is_empty(self) -> bool:
         return (
-            self.romance_tier.is_neutral()
-            and self.trust_tier.is_neutral()
-            and self.like_tier.is_neutral()
-            and self.comfort_tier.is_neutral()
-            and self.respect_tier.is_neutral()
+            self.romance_tier.is_neutral
+            and self.trust_tier.is_neutral
+            and self.like_tier.is_neutral
+            and self.comfort_tier.is_neutral
+            and self.respect_tier.is_neutral
         )
 
     @property

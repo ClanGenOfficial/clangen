@@ -417,12 +417,9 @@
       ]
     },
     "relationship_status": {
-      "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "enum": [
+      "anyOf": [
+        {
+          "enum": [
               "siblings",
               "not_siblings",
               "littermates",
@@ -500,10 +497,9 @@
               "seeks_out_only",
               "prefers_only",
               "relies_on_only"
-            ]
-          }
         ]
-      }
+        }
+      ]
     },
     "gather_cat": {
       "anyOf": [
