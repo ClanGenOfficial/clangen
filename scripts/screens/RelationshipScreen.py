@@ -30,7 +30,11 @@ from scripts.game_structure.screen_settings import MANAGER, screen
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.clan_package.settings import get_clan_setting, set_clan_setting
+from scripts.clan_package.settings import (
+    get_clan_setting,
+    set_clan_setting,
+    switch_clan_setting,
+)
 from scripts.game_structure.game.switches import (
     switch_set_value,
     Switch,
@@ -652,7 +656,7 @@ class RelationshipScreen(Screens):
                 manager=MANAGER,
                 container=self.selected_cat_container,
                 anchors={"right": "right", "top": "top"},
-                text_kwargs={"m_c": self.inspect_cat},
+                text_kwargs={"m_c": self.inspect_cat.name},
             )
             del col2_rect
             self.inspect_cat_elements["col2"].disable()

@@ -304,12 +304,17 @@ class Relationship:
             )
             # just adding a teeny bit of variety
             buffs = [passive_buff - 1, passive_buff, passive_buff + 1]
-        # the passive buff creates a cascade effect
-        # so a negative interaction will affect all values to a negative degree
-        # and a positive interaction will affect all values to a positive degree
+            # the passive buff creates a cascade effect
+            # so a negative interaction will affect all values to a negative degree
+            # and a positive interaction will affect all values to a positive degree
 
-        for rel_out in (RelType.LIKE, RelType.RESPECT, RelType.TRUST, RelType.COMFORT):
-            setattr(self, rel_out, choice(buffs) if rel_type != rel_out else amount)
+            for rel_out in (
+                RelType.LIKE,
+                RelType.RESPECT,
+                RelType.TRUST,
+                RelType.COMFORT,
+            ):
+                setattr(self, rel_out, choice(buffs) if rel_type != rel_out else amount)
 
         # influence the opposite relationship
         if self.opposite_relationship is None:
@@ -394,12 +399,12 @@ class Relationship:
         for attr, rel_type in zip([getattr(self, r) for r in [*RelType]], [*RelType]):
             if positive:
                 if attr > 0:
-                    value_weights[attr] = int(attr / 10)
+                    value_weights[rel_type] += int(attr / 10)
             else:
-                if attr == self.romance:
+                if rel_type == RelType.ROMANCE:
                     continue
                 if attr > 0:
-                    value_weights[attr] = int(abs(attr / 10))
+                    value_weights[rel_type] += int(abs(attr / 10))
 
         # increase the chance of a romance interaction if they are already mates
         if self.mates:

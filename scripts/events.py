@@ -2032,7 +2032,7 @@ class Events:
         negative_relation = [
             i
             for i in relationships
-            if i.has_extreme_negative()
+            if i.has_extreme_negative
             and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
         ]
         targets.extend(negative_relation)

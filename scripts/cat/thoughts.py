@@ -21,12 +21,7 @@ class Thoughts:
         if not random_cat:
             return False
 
-        if not filter_relationship_type(
-            group=[main_cat, random_cat],
-            filter_types=constraint,
-        ):
-            return False
-
+        constraint = constraint.copy()
         # No current relationship-value bases tags, so this is commented out.
         relationship = False
         if (
@@ -36,6 +31,15 @@ class Thoughts:
             relationship = True
 
         if "strangers" in constraint and relationship:
+            return False
+        elif "strangers" in constraint:
+            # we remove before further filtering so that filter_relationship_type doesn't scream
+            constraint.remove("strangers")
+
+        if not filter_relationship_type(
+            group=[main_cat, random_cat],
+            filter_types=constraint,
+        ):
             return False
 
         return True
