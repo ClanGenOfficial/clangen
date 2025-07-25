@@ -524,10 +524,13 @@ class Pelt:
         if all([x == 0 for x in weights]):
             weights = [1, 1, 1, 1]
 
-        # Now, choose the pelt category and pelt. The extra 0 is for the tortie pelts,
+        # Now, choose the pelt category and pelt
+        possible_pelts = [
+            Pelt.pelt_categories[x] for x in Pelt.pelt_categories if x != "torties"
+        ]
         chosen_pelt = choice(
-            random.choices(Pelt.pelt_categories, weights=weights + [0], k=1)[0]
-        ).values()
+            random.choices(possible_pelts, weights=(35, 20, 30, 15), k=1)[0]
+        )
 
         # Tortie chance
         tortie_chance_f = constants.CONFIG["cat_generation"][
@@ -866,8 +869,8 @@ class Pelt:
         par_points = []
         for p in parents:
             if p:
-                if p.pelt.white_patches_sprites:
-                    par_whitepatches.add(p.pelt.white_patches_sprites)
+                if p.pelt.white_patches:
+                    par_whitepatches.add(p.pelt.white_patches)
                 if p.pelt.points:
                     par_points.append(p.pelt.points)
 
