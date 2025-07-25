@@ -43,14 +43,19 @@ class Sprites:
         SCAR_MISSING_PART_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/scar_missing_sprite_data.json", "r", encoding="utf-8"
+        "resources/dicts/sprites/skin_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         SKIN_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/scar_missing_sprite_data.json", "r", encoding="utf-8"
+        "resources/dicts/sprites/tortie_patches_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         TORTIE_DATA = ujson.loads(read_file.read())
+
+    with open(
+        "resources/dicts/sprites/pelt_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        PELT_DATA = ujson.loads(read_file.read())
 
     def __init__(self):
         """Class that handles and hold all spritesheets.
@@ -462,52 +467,32 @@ class Sprites:
             for col, patch in enumerate(patches):
                 self.make_group("whitepatches", (col, row), f"white{patch}")
 
-        # Define colors and categories
-        color_categories = [
-            ["WHITE", "PALEGREY", "SILVER", "GREY", "DARKGREY", "GHOST", "BLACK"],
-            ["CREAM", "PALEGINGER", "GOLDEN", "GINGER", "DARKGINGER", "SIENNA"],
-            ["LIGHTBROWN", "LILAC", "BROWN", "GOLDEN-BROWN", "DARKBROWN", "CHOCOLATE"],
-        ]
-
-        color_types = [
-            "singlecolours",
-            "tabbycolours",
-            "marbledcolours",
-            "rosettecolours",
-            "smokecolours",
-            "tickedcolours",
-            "speckledcolours",
-            "bengalcolours",
-            "mackerelcolours",
-            "classiccolours",
-            "sokokecolours",
-            "agouticolours",
-            "singlestripecolours",
-            "maskedcolours",
-        ]
-
-        for row, colors in enumerate(color_categories):
-            for col, color in enumerate(colors):
-                for color_type in color_types:
-                    self.make_group(color_type, (col, row), f"{color_type[:-7]}{color}")
+        # pelts
+        for spritesheet in self.PELT_DATA["spritesheets"]:
+            self.load_sheet(spritesheet, self.PELT_DATA["sprite_list"])
 
         # tortie patches
-        self.load_sheet(self.TORTIE_DATA)
+        self.load_sheet(
+            self.TORTIE_DATA["spritesheet"], self.TORTIE_DATA["sprite_list"]
+        )
 
         # skin colors
-        self.load_sheet(self.SKIN_DATA)
+        self.load_sheet(self.SKIN_DATA["spritesheet"], self.SKIN_DATA["sprite_list"])
 
         # scars
-        self.load_sheet(self.SCAR_DATA)
+        self.load_sheet(self.SCAR_DATA["spritesheet"], self.SCAR_DATA["sprite_list"])
 
         # missing parts
-        self.load_sheet(self.SCAR_MISSING_PART_DATA)
+        self.load_sheet(
+            self.SCAR_MISSING_PART_DATA["spritesheet"],
+            self.SCAR_MISSING_PART_DATA["sprite_list"],
+        )
 
         # plant accs
-        self.load_sheet(self.PLANT_DATA)
+        self.load_sheet(self.PLANT_DATA["spritesheet"], self.PLANT_DATA["sprite_list"])
 
         # wild accs
-        self.load_sheet(self.WILD_DATA)
+        self.load_sheet(self.WILD_DATA["spritesheet"], self.WILD_DATA["sprite_list"])
 
         # collar accs
         # this guy is special since it uses palette mapping
@@ -523,14 +508,14 @@ class Sprites:
 
         self.load_symbols()
 
-    def load_sheet(self, data):
+    def load_sheet(self, spritesheet: str, sprite_names: list[list[str]]):
         """
         Loads sheet data and creates sprite groups.
-        :param data: the json file for this spritesheet
+        :param spritesheet: name of the spritesheet
+        :param sprite_names: list containing lists of sprite names for this spritesheet, each list is a single row of the sheet
         """
-        spritesheet = data["spritesheet"]
-        for row, sprite_list in enumerate(data["sprite_list"]):
-            for col, sprite in enumerate(sprite_list):
+        for row, sprite_names in enumerate(sprite_names):
+            for col, sprite in enumerate(sprite_names):
                 self.make_group(
                     spritesheet=spritesheet,
                     pos=(col, row),

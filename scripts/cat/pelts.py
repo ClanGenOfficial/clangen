@@ -12,107 +12,63 @@ from scripts.utility import adjust_list_text
 
 
 class Pelt:
-    sprites_names = {
-        "SingleColour": "single",
-        "TwoColour": "single",
-        "Tabby": "tabby",
-        "Marbled": "marbled",
-        "Rosette": "rosette",
-        "Smoke": "smoke",
-        "Ticked": "ticked",
-        "Speckled": "speckled",
-        "Bengal": "bengal",
-        "Mackerel": "mackerel",
-        "Classic": "classic",
-        "Sokoke": "sokoke",
-        "Agouti": "agouti",
-        "Singlestripe": "singlestripe",
-        "Masked": "masked",
-        "Tortie": None,
-        "Calico": None,
+    # pelt colours
+    all_pelt_colours: list = []
+    ginger_colours: list = []
+    black_colours: list = []
+    white_colours: list = []
+    brown_colours: list = []
+
+    for sprite_list in sprites.PELT_DATA["sprite_list"]:
+        all_pelt_colours.extend(sprite_list.keys())
+        for color in sprite_list:
+            if sprite_list[color] == "white":
+                white_colours.append(color)
+            elif sprite_list[color] == "black":
+                black_colours.append(color)
+            elif sprite_list[color] == "ginger":
+                ginger_colours.append(color)
+            elif sprite_list[color] == "brown":
+                brown_colours.append(color)
+
+    colour_categories: list[list] = [
+        ginger_colours,
+        black_colours,
+        white_colours,
+        brown_colours,
+    ]
+
+    # pelt patterns
+    pelt_patterns: list = []
+    for sprite_list in sprites.PELT_DATA["pattern_names"]:
+        pelt_patterns.extend(sprite_list)
+
+    # pattern categories
+    pelt_categories: dict = sprites.PELT_DATA["pattern_categories"]
+
+    # individual pattern categories
+    tabbies: list = pelt_categories["tabbies"]
+    spotted: list = pelt_categories["spotted"]
+    plain: list = pelt_categories["plain"]
+    exotic: list = pelt_categories["exotic"]
+    torties: list = pelt_categories["torties"]
+
+    # SPRITE NAMES
+    # pelt name used in save files: pelt's spritesheet
+    pattern_sprite_names: dict = {
+        name: sheet for sheet, name in sprites.PELT_DATA["spritesheets"]
     }
+    pattern_sprite_names.update(
+        {
+            "Tortie": None,
+            "Calico": None,
+        }
+    )
 
-    # ATTRIBUTES, including non-pelt related
-    pelt_colours = [
-        "WHITE",
-        "PALEGREY",
-        "SILVER",
-        "GREY",
-        "DARKGREY",
-        "GHOST",
-        "BLACK",
-        "CREAM",
-        "PALEGINGER",
-        "GOLDEN",
-        "GINGER",
-        "DARKGINGER",
-        "SIENNA",
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
-    pelt_c_no_white = [
-        "PALEGREY",
-        "SILVER",
-        "GREY",
-        "DARKGREY",
-        "GHOST",
-        "BLACK",
-        "CREAM",
-        "PALEGINGER",
-        "GOLDEN",
-        "GINGER",
-        "DARKGINGER",
-        "SIENNA",
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
-    pelt_c_no_bw = [
-        "PALEGREY",
-        "SILVER",
-        "GREY",
-        "DARKGREY",
-        "CREAM",
-        "PALEGINGER",
-        "GOLDEN",
-        "GINGER",
-        "DARKGINGER",
-        "SIENNA",
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
-
-    tortie_patterns = []
-    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
+    # tortie patches
+    tortie_patterns: list = []
+    for sprite_list in sprites.TORTIE_DATA["sprite_list"]:
         tortie_patterns.extend(sprite_list)
-        
-    tortiebases = [
-        "single",
-        "tabby",
-        "bengal",
-        "marbled",
-        "ticked",
-        "smoke",
-        "rosette",
-        "speckled",
-        "mackerel",
-        "classic",
-        "sokoke",
-        "agouti",
-        "singlestripe",
-        "masked",
-    ]
 
     pelt_length = ["short", "medium", "long"]
     eye_colours = [
@@ -160,107 +116,8 @@ class Pelt:
         "SUNLITICE",
         "GREY",
     ]
+
     green_eyes = ["PALEGREEN", "GREEN", "EMERALD", "SAGE", "HAZEL"]
-
-    # bite scars by @wood pank on discord
-    general_scars = []
-    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
-        general_scars.extend(sprite_list)
-
-    missing_part_scars = []
-    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
-        missing_part_scars.extend(sprite_list)
-
-    all_scars = general_scars + missing_part_scars
-
-    # all acc sprites are labeled as occupying a specific part of the cat sprite and then appended into these three lists
-    # collar_accessories are presumed to all occupy the neck area and are treated as the fourth of these lists
-    tail_accessories = []
-    body_accessories = []
-    head_accessories = []
-
-    # here we create the master lists of each accessory type
-    plant_accessories = []
-    for sprite_list in sprites.PLANT_DATA["sprite_list"]:
-        plant_accessories.extend(sprite_list)
-        for sprite in sprite_list:
-            if sprite_list[sprite] == "tail":
-                tail_accessories.append(sprite)
-            elif sprite_list[sprite] == "body":
-                body_accessories.append(sprite)
-            elif sprite_list[sprite] == "head":
-                body_accessories.append(sprite)
-
-    wild_accessories = []
-    for sprite_list in sprites.WILD_DATA["sprite_list"]:
-        wild_accessories.extend(sprite_list)
-        for sprite in sprite_list:
-            if sprite_list[sprite] == "tail":
-                tail_accessories.append(sprite)
-            elif sprite_list[sprite] == "body":
-                body_accessories.append(sprite)
-            elif sprite_list[sprite] == "head":
-                body_accessories.append(sprite)
-
-    collar_accessories = []
-    collar_styles = []
-    for style_type in sprites.COLLAR_DATA["style_data"]:
-        for style, color_list in style_type.items():
-            collar_styles.append(style)
-            for color in color_list:
-                collar_accessories.append(f"{style}_{color}")
-
-    # make sure to add plural and singular forms of new accs to accessories.en.json so that they will display nicely
-
-    # this is used for acc-giving events, only change if you're adding a new category tag to the event filter
-    # adding a category here will automatically update the event editor's options
-    acc_categories = {
-        "PLANT": plant_accessories,
-        "WILD": wild_accessories,
-        "COLLAR": collar_accessories,
-    }
-
-    tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
-    spotted = ["Speckled", "Rosette"]
-    plain = ["SingleColour", "TwoColour", "Smoke", "Singlestripe"]
-    exotic = ["Bengal", "Marbled", "Masked"]
-    torties = ["Tortie", "Calico"]
-    pelt_categories = [tabbies, spotted, plain, exotic, torties]
-
-    # SPRITE NAMES
-    single_colours = [
-        "WHITE",
-        "PALEGREY",
-        "SILVER",
-        "GREY",
-        "DARKGREY",
-        "GHOST",
-        "BLACK",
-        "CREAM",
-        "PALEGINGER",
-        "GOLDEN",
-        "GINGER",
-        "DARKGINGER",
-        "SIENNA",
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
-    ginger_colours = ["CREAM", "PALEGINGER", "GOLDEN", "GINGER", "DARKGINGER", "SIENNA"]
-    black_colours = ["GREY", "DARKGREY", "GHOST", "BLACK"]
-    white_colours = ["WHITE", "PALEGREY", "SILVER"]
-    brown_colours = [
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
-    colour_categories = [ginger_colours, black_colours, white_colours, brown_colours]
     eye_sprites = [
         "YELLOW",
         "AMBER",
@@ -435,6 +292,64 @@ class Pelt:
     skin_sprites = []
     for sprite_list in sprites.SCAR_DATA["sprite_list"]:
         skin_sprites.extend(sprite_list)
+
+    # bite scars by @wood pank on discord
+    general_scars = []
+    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
+        general_scars.extend(sprite_list)
+
+    missing_part_scars = []
+    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
+        missing_part_scars.extend(sprite_list)
+
+    all_scars = general_scars + missing_part_scars
+
+    # all acc sprites are labeled as occupying a specific part of the cat sprite and then appended into these three lists
+    # collar_accessories are presumed to all occupy the neck area and are treated as the fourth of these lists
+    tail_accessories = []
+    body_accessories = []
+    head_accessories = []
+
+    # here we create the master lists of each accessory type
+    plant_accessories = []
+    for sprite_list in sprites.PLANT_DATA["sprite_list"]:
+        plant_accessories.extend(sprite_list)
+        for sprite in sprite_list:
+            if sprite_list[sprite] == "tail":
+                tail_accessories.append(sprite)
+            elif sprite_list[sprite] == "body":
+                body_accessories.append(sprite)
+            elif sprite_list[sprite] == "head":
+                body_accessories.append(sprite)
+
+    wild_accessories = []
+    for sprite_list in sprites.WILD_DATA["sprite_list"]:
+        wild_accessories.extend(sprite_list)
+        for sprite in sprite_list:
+            if sprite_list[sprite] == "tail":
+                tail_accessories.append(sprite)
+            elif sprite_list[sprite] == "body":
+                body_accessories.append(sprite)
+            elif sprite_list[sprite] == "head":
+                body_accessories.append(sprite)
+
+    collar_accessories = []
+    collar_styles = []
+    for style_type in sprites.COLLAR_DATA["style_data"]:
+        for style, color_list in style_type.items():
+            collar_styles.append(style)
+            for color in color_list:
+                collar_accessories.append(f"{style}_{color}")
+
+    # make sure to add plural and singular forms of new accs to accessories.en.json so that they will display nicely
+
+    # this is used for acc-giving events, only change if you're adding a new category tag to the event filter
+    # adding a category here will automatically update the event editor's options
+    acc_categories = {
+        "PLANT": plant_accessories,
+        "WILD": wild_accessories,
+        "COLLAR": collar_accessories,
+    }
 
     """Holds all appearance information for a cat. """
 
@@ -775,7 +690,7 @@ class Pelt:
         # Now, choose the pelt category and pelt. The extra 0 is for the tortie pelts,
         chosen_pelt = choice(
             random.choices(Pelt.pelt_categories, weights=weights + [0], k=1)[0]
-        )
+        ).values()
 
         # Tortie chance
         tortie_chance_f = constants.CONFIG["cat_generation"][
@@ -901,7 +816,7 @@ class Pelt:
         # Determine pelt.
         chosen_pelt = choice(
             random.choices(Pelt.pelt_categories, weights=(35, 20, 30, 15, 0), k=1)[0]
-        )
+        ).values()
 
         # Tortie chance
         # There is a default chance for female tortie, slightly increased for completely random generation.
@@ -1032,9 +947,9 @@ class Pelt:
     def init_pattern(self):
         if self.name in Pelt.torties:
             if not self.tortiebase:
-                self.tortiebase = choice(Pelt.tortiebases)
+                self.tortiebase = choice(Pelt.pelt_patterns)
             if not self.pattern:
-                self.pattern = choice(Pelt.tortiepatterns)
+                self.pattern = choice(Pelt.pelt_patterns)
 
             wildcard_chance = constants.CONFIG["cat_generation"]["wildcard_tortie"]
             if self.colour:
@@ -1046,10 +961,10 @@ class Pelt:
                     print("Wildcard tortie!")
 
                     # Allow any pattern:
-                    self.tortiepattern = choice(Pelt.tortiebases)
+                    self.tortiepattern = choice(Pelt.tortie_bases)
 
                     # Allow any colors that aren't the base color.
-                    possible_colors = Pelt.pelt_colours.copy()
+                    possible_colors = Pelt.all_pelt_colours.copy()
                     possible_colors.remove(self.colour)
                     self.tortiecolour = choice(possible_colors)
 
@@ -1397,7 +1312,7 @@ class Pelt:
         return "".join(groups)
 
     def get_sprites_name(self):
-        return Pelt.sprites_names[self.name]
+        return Pelt.pattern_sprite_names[self.name]
 
 
 def _describe_pattern(cat, short=False):
