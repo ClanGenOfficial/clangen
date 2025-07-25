@@ -2907,11 +2907,7 @@ def generate_sprite(
 
         if not scars_hidden:
             for scar in cat.pelt.scars:
-                if scar in cat.pelt.scars1:
-                    new_sprite.blit(
-                        sprites.sprites["scars" + scar + cat_sprite], (0, 0)
-                    )
-                if scar in cat.pelt.scars3:
+                if scar in cat.pelt.general_scars:
                     new_sprite.blit(
                         sprites.sprites["scars" + scar + cat_sprite], (0, 0)
                     )
@@ -2959,7 +2955,7 @@ def generate_sprite(
 
         if not scars_hidden:
             for scar in cat.pelt.scars:
-                if scar in cat.pelt.scars2:
+                if scar in cat.pelt.missing_part_scars:
                     new_sprite.blit(
                         _recolor_lineart(
                             sprites.sprites["scars" + scar + cat_sprite], lineart_color

@@ -168,7 +168,7 @@ class EventEditScreen(Screens):
                 else:
                     break
 
-    all_scars: list = Pelt.scars1 + Pelt.scars2 + Pelt.scars3
+    all_scars: list = Pelt.all_scars
     """List of all possible scars"""
 
     all_outsider_reps: list = list(constants.OUTSIDER_REPS)
