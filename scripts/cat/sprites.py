@@ -568,7 +568,9 @@ class Sprites:
 
         # missing parts
         spritesheet = self.SCAR_MISSING_PART_DATA["spritesheet"]
-        for row, missing_part_list in enumerate(self.SCAR_MISSING_PART_DATA["sprite_list"]):
+        for row, missing_part_list in enumerate(
+            self.SCAR_MISSING_PART_DATA["sprite_list"]
+        ):
             for col, missing_part in enumerate(missing_part_list):
                 self.make_group(
                     spritesheet=spritesheet,

@@ -271,13 +271,35 @@ class Pelt:
     ]
 
     # make sure to add plural and singular forms of new accs to acc_display.json so that they will display nicely
+
+    # all acc sprites are labeled as occupying a specific part of the cat sprite and then appended into these three lists
+    # collar_accessories are presumed to all occupy the neck area and are treated as the fourth of these lists
+    tail_accessories = []
+    body_accessories = []
+    head_accessories = []
+
+    # here we create the master lists of each accessory type
     plant_accessories = []
     for sprite_list in sprites.PLANT_DATA["sprite_list"]:
         plant_accessories.extend(sprite_list)
+        for sprite in sprite_list:
+            if sprite_list[sprite] == "tail":
+                tail_accessories.append(sprite)
+            elif sprite_list[sprite] == "body":
+                body_accessories.append(sprite)
+            elif sprite_list[sprite] == "head":
+                body_accessories.append(sprite)
 
     wild_accessories = []
     for sprite_list in sprites.WILD_DATA["sprite_list"]:
         wild_accessories.extend(sprite_list)
+        for sprite in sprite_list:
+            if sprite_list[sprite] == "tail":
+                tail_accessories.append(sprite)
+            elif sprite_list[sprite] == "body":
+                body_accessories.append(sprite)
+            elif sprite_list[sprite] == "head":
+                body_accessories.append(sprite)
 
     collar_accessories = []
     collar_styles = []
