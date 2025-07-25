@@ -10,7 +10,7 @@ Spritesheets can be found in the `sprites` folder and their matching `DATA` can 
 ## Adding to the Spritesheet
 New sprite sets can be added to the spritesheets by simply adding the new set to the end of a row or beginning a new row. 
 
-![image](img\spritesheet_editing_example1.png)
+![image](img/spritesheet_editing_example1.png)
 
 _You should always keep to the left side of the canvas._
 
