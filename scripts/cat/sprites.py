@@ -18,52 +18,52 @@ class Sprites:
     clan_symbols = []
 
     with open(
-        "resources/dicts/sprites/collar_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/collar_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         COLLAR_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/wild_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/wild_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         WILD_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/plant_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/plant_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         PLANT_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/scar_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/scar_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         SCAR_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/scar_missing_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/scar_missing_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         SCAR_MISSING_PART_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/skin_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/skin_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         SKIN_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/tortie_patches_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/tortie_patches_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         TORTIE_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/pelt_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/pelt_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         PELT_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/eye_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/eye_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         EYE_DATA = ujson.loads(read_file.read())
 
     with open(
-        "resources/dicts/sprites/white_patches_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/white_patches_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         WHITE_DATA = ujson.loads(read_file.read())
 

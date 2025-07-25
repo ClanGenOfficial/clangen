@@ -12,7 +12,7 @@ Within the `sprites` folder, you'll find the `acc_collars.png` spritesheet and t
 
 `palette` files are named as such: `acc_collars{STYLE_TYPE}_palette`. Some `style_type` will include multiple descriptors separated by `_`, such as: `LEATHER_BELL_GRADIENT`. Every `style_type` should begin with it's `style` (i.e. `LEATHER` is the style of `LEATHER_BELL_GRADIENT`.)
 
-We also utilize the `collar_sprite_data.json` file in `resources/dict/sprites`. This holds our `style_data`, essentially an array of our `style`, `style_type` and color palettes. This is where all sprite name information is pulled from.
+We also utilize the `collar_sprite_data.json` file in `sprites/dicts`. This holds our `style_data`, essentially an array of our `style`, `style_type` and color palettes. This is where all sprite name information is pulled from.
 
 ## Utilizing the Spritesheets and Palettes
 Upon viewing the spritesheet, you'll notice that the sprites are mostly greyscale, with some pops of color. The colors used here will not be seen in-game, rather they are a "map" used to tell the code where our palette colors should go. 
