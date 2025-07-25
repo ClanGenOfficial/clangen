@@ -22,6 +22,16 @@ class Sprites:
     ) as read_file:
         COLLAR_DATA = ujson.loads(read_file.read())
 
+    with open(
+        "resources/dicts/sprites/wild_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        WILD_DATA = ujson.loads(read_file.read())
+
+    with open(
+        "resources/dicts/sprites/plant_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        PLANT_DATA = ujson.loads(read_file.read())
+
     def __init__(self):
         """Class that handles and hold all spritesheets.
         Size is normally automatically determined by the size
@@ -620,101 +630,32 @@ class Sprites:
                 self.make_group("missingscars", (col, row), f"scars{missing_part}")
 
     def load_accs(self):
-        # accessories
-        # to my beloved modders, im very sorry for reordering everything <333 -clay
-        medcatherbs_data = [
-            [
-                "MAPLE LEAF",
-                "HOLLY",
-                "BLUE BERRIES",
-                "FORGET ME NOTS",
-                "RYE STALK",
-                "CATTAIL",
-                "POPPY",
-                "ORANGE POPPY",
-                "CYAN POPPY",
-                "WHITE POPPY",
-                "PINK POPPY",
-            ],
-            [
-                "BLUEBELLS",
-                "LILY OF THE VALLEY",
-                "SNAPDRAGON",
-                "HERBS",
-                "PETALS",
-                "NETTLE",
-                "HEATHER",
-                "GORSE",
-                "JUNIPER",
-                "RASPBERRY",
-                "LAVENDER",
-            ],
-            [
-                "OAK LEAVES",
-                "CATMINT",
-                "MAPLE SEED",
-                "LAUREL",
-                "BULB WHITE",
-                "BULB YELLOW",
-                "BULB ORANGE",
-                "BULB PINK",
-                "BULB BLUE",
-                "CLOVER",
-                "DAISY",
-            ],
-            [
-                "WISTERIA",
-                "ROSE MALLOW",
-                "PICKLEWEED",
-                "GOLDEN CREEPING JENNY",
-                "DESERT WILLOW",
-                "CACTUS FLOWER",
-                "PRAIRIE FIRE",
-                "VERBENA EAR",
-                "VERBENA PELT",
-            ],
-        ]
-        dryherbs_data = [["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"]]
-        wild_data = [
-            [
-                "RED FEATHERS",
-                "BLUE FEATHERS",
-                "JAY FEATHERS",
-                "GULL FEATHERS",
-                "SPARROW FEATHERS",
-                "MOTH WINGS",
-                "ROSY MOTH WINGS",
-                "MORPHO BUTTERFLY",
-                "MONARCH BUTTERFLY",
-                "CICADA WINGS",
-                "BLACK CICADA",
-            ],
-            [
-                "ROAD RUNNER FEATHER",
-            ],
-        ]
+        # plant
+        spritesheet = self.PLANT_DATA["spritesheet"]
+        for row, plant_list in enumerate(self.PLANT_DATA["sprite_list"]):
+            for col, plant in enumerate(plant_list):
+                self.make_group(
+                    spritesheet=spritesheet,
+                    pos=(col, row),
+                    name=f"{spritesheet}{plant}",
+                )
 
-        # medcatherbs
-        for row, herbs in enumerate(medcatherbs_data):
-            for col, herb in enumerate(herbs):
-                self.make_group("medcatherbs", (col, row), f"acc_herbs{herb}")
-        # dryherbs
-        for row, dry in enumerate(dryherbs_data):
-            for col, dryherbs in enumerate(dry):
-                self.make_group("medcatherbs", (col, 4), f"acc_herbs{dryherbs}")
         # wild
-        for row, wilds in enumerate(wild_data):
+        spritesheet = self.WILD_DATA["prefix"]
+        for row, wilds in enumerate(self.WILD_DATA["sprite_list"]):
             for col, wild in enumerate(wilds):
-                self.make_group("wild", (col, row), f"acc_wild{wild}")
+                self.make_group(
+                    spritesheet=spritesheet, pos=(col, row), name=f"{spritesheet}{wild}"
+                )
 
-        # collars
-        prefix = self.COLLAR_DATA["prefix"]
+        # collar
+        spritesheet = self.COLLAR_DATA["prefix"]
         for row, style_type in enumerate(self.COLLAR_DATA["style_data"]):
             for col, style in enumerate(style_type):
                 self.make_group(
-                    "collars",
-                    (col, row),
-                    f"{prefix}{style}",
+                    spritesheet=spritesheet,
+                    pos=(col, row),
+                    name=f"{spritesheet}{style}",
                     palettes=style_type[style],
                 )
 

@@ -1,0 +1,21 @@
+{
+    "prefix": "acc_wilds",
+    "sprite_list": [
+        [
+            "RED FEATHERS",
+            "BLUE FEATHERS",
+            "JAY FEATHERS",
+            "GULL FEATHERS",
+            "SPARROW FEATHERS",
+            "MOTH WINGS",
+            "ROSY MOTH WINGS",
+            "MORPHO BUTTERFLY",
+            "MONARCH BUTTERFLY",
+            "CICADA WINGS",
+            "BLACK CICADA"
+        ],
+        [
+            "ROAD RUNNER FEATHER"
+        ]
+    ]
+}
