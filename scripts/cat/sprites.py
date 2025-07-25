@@ -240,9 +240,9 @@ class Sprites:
             "skin",
             "scars",
             "scars_missing_part",
-            "plant",
-            "wild",
-            "collars",
+            "acc_plants",
+            "acc_wilds",
+            "acc_collars",
             "colours_single",
             "colours_tabby",
             "colours_speckled",
@@ -325,7 +325,7 @@ class Sprites:
 
         # collar accs
         # this guy is special since it uses palette mapping
-        spritesheet = self.COLLAR_DATA["prefix"]
+        spritesheet = self.COLLAR_DATA["spritesheet"]
         for row, style_type in enumerate(self.COLLAR_DATA["style_data"]):
             for col, style in enumerate(style_type):
                 self.make_group(

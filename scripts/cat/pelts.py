@@ -59,9 +59,10 @@ class Pelt:
 
     # PELT SPRITE NAMES
     # pelt name used in save files: pelt's spritesheet
-    pattern_sprite_names: dict = {
-        name: sheet for sheet, name in sprites.PELT_DATA["spritesheets"]
-    }
+    pattern_sprite_names: dict = {}
+    for sheet, names in sprites.PELT_DATA["spritesheets"].items():
+        for name in names:
+            pattern_sprite_names.update({name: sheet})
     pattern_sprite_names.update(
         {
             "Tortie": None,
@@ -650,9 +651,12 @@ class Pelt:
         # ------------------------------------------------------------------------------------------------------------#
 
         # Determine pelt.
+        possible_pelts = [
+            Pelt.pelt_categories[x] for x in Pelt.pelt_categories if x != "torties"
+        ]
         chosen_pelt = choice(
-            random.choices(Pelt.pelt_categories, weights=(35, 20, 30, 15, 0), k=1)[0]
-        ).values()
+            random.choices(possible_pelts, weights=(35, 20, 30, 15), k=1)[0]
+        )
 
         # Tortie chance
         # There is a default chance for female tortie, slightly increased for completely random generation.
