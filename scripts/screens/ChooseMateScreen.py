@@ -1184,7 +1184,7 @@ class ChooseMateScreen(Screens):
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""
 
-        # Behold! The uglest list comprehension ever created!
+        # Behold! The ugliest list comprehension ever created!
         valid_mates = [
             i
             for i in Cat.all_cats_list
@@ -1193,6 +1193,7 @@ class ChooseMateScreen(Screens):
                 i, for_love_interest=False, age_restriction=False, ignore_no_mates=True
             )
             and i.status.is_outsider == self.the_cat.status.is_outsider
+            and i.status.group == self.the_cat.status.group
             and i.ID not in self.the_cat.mate
             and (not self.single_only or not i.mate)
             and (

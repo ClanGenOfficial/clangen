@@ -159,7 +159,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject} {VERB/app1/are/is} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment, suddenly grateful {PRONOUN/app1/subject} {VERB/app1/are/is} alone. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20
             },
@@ -352,7 +352,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Fewer eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't don't want to look dumb in front of other cats.",
+                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment, suddenly grateful that {PRONOUN/app1/poss} patrol is so small. Fewer eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} don't want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -566,7 +566,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't want to look dumb in front of other cats.",
+                "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

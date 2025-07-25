@@ -185,16 +185,12 @@ class RelationshipScreen(Screens):
                         ],
                     )
             elif event.ui_element == self.checkboxes["show_dead"]:
-                set_clan_setting(
-                    "show dead relation", not get_clan_setting("show dead relation")
-                )
+                switch_clan_setting("show dead relation")
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()
             elif event.ui_element == self.checkboxes["show_empty"]:
-                set_clan_setting(
-                    "show empty relation", not get_clan_setting("show empty relation")
-                )
+                switch_clan_setting("show dead relation")
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()

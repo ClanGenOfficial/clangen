@@ -1328,7 +1328,7 @@
         },
         "weight": 20,
         "intro_text": "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, just awakening from its leaf-bare hibernation.",
-        "decline_text": "Though {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} pleased to know the squirrels are waking up, {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't pursue this one. It hasn't properly eaten in moons; better to let it wake up and get fatter before bringing it home.",
+        "decline_text": "Though {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} pleased to know the squirrels are waking up, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} pursue this one. It hasn't properly eaten in moons; better to let it wake up and get fatter before bringing it home.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -1374,7 +1374,7 @@
         },
         "weight": 20,
         "intro_text": "app1 has snuck out of camp alone, hoping to be able to bring back one of the first squirrels of newleaf. Running through everything {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been taught in {PRONOUN/app1/poss} head, {PRONOUN/app1/subject} carefully {VERB/app1/scent/scents} the air and {VERB/app1/strain/strains} {PRONOUN/app1/poss} ears, hoping for any hint of the burrowing critters.",
-        "decline_text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} focusing so hard, {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice a Clanmate is standing silently behind {PRONOUN/app1/object}, waiting for {PRONOUN/app1/object} to notice that {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been caught red-pawed. Oops!",
+        "decline_text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} focusing so hard, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice a Clanmate is standing silently behind {PRONOUN/app1/object}, waiting for {PRONOUN/app1/object} to notice that {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been caught red-pawed. Oops!",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1392,7 +1392,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, {PRONOUN/app1/subject} {VERB/app1/do/does}n't end up finding anything, and {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back to camp empty-pawed.",
+                "text": "Unfortunately, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} end up finding anything, and {PRONOUN/app1/subject} {VERB/app1/slink/slinks} back to camp empty-pawed.",
                 "exp": 0,
                 "weight": 20
             }

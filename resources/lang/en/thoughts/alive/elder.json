@@ -264,7 +264,7 @@
         "id": "childish_elder",
         "thoughts": [
             "Whines about {PRONOUN/m_c/poss} nest being too rough",
-            "Is happy {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't have to patrol anymore",
+            "Is happy {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have to patrol anymore",
             "Bats a moss ball around the elder's den"
         ],
         "main_age_constraint": [
@@ -384,7 +384,7 @@
     {
         "id": "daring_elder",
         "thoughts": [
-            "Is stubbornly refusing the medicine cat's herbs, claiming {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't need them",
+            "Is stubbornly refusing the medicine cat's herbs, claiming {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need them",
             "Is telling exciting tales from {PRONOUN/m_c/poss} youth",
             "Insists {PRONOUN/m_c/subject} can race just as well as the warriors"
         ],
