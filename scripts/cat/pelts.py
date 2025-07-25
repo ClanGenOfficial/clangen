@@ -12,7 +12,10 @@ from scripts.utility import adjust_list_text
 
 
 class Pelt:
-    # pelt colours
+    # PELT LENGTH
+    pelt_length = ["short", "medium", "long"]
+
+    # PELT COLOURS
     all_pelt_colours: list = []
     ginger_colours: list = []
     black_colours: list = []
@@ -31,6 +34,7 @@ class Pelt:
             elif sprite_list[colour] == "brown":
                 brown_colours.append(colour)
 
+    # colour categories
     colour_categories: list[list] = [
         ginger_colours,
         black_colours,
@@ -38,7 +42,7 @@ class Pelt:
         brown_colours,
     ]
 
-    # pelt patterns
+    # PELT PATTERNS
     pelt_patterns: list = []
     for sprite_list in sprites.PELT_DATA["pattern_names"]:
         pelt_patterns.extend(sprite_list)
@@ -53,7 +57,7 @@ class Pelt:
     exotic: list = pelt_categories["exotic"]
     torties: list = pelt_categories["torties"]
 
-    # SPRITE NAMES
+    # PELT SPRITE NAMES
     # pelt name used in save files: pelt's spritesheet
     pattern_sprite_names: dict = {
         name: sheet for sheet, name in sprites.PELT_DATA["spritesheets"]
@@ -65,14 +69,45 @@ class Pelt:
         }
     )
 
-    # tortie patches
+    # TORTIE PATCHES
     tortie_patches: list = []
     for sprite_list in sprites.TORTIE_DATA["sprite_list"]:
         tortie_patches.extend(sprite_list)
 
-    pelt_length = ["short", "medium", "long"]
+    # WHITE MARKINGS
+    little_white: list = []
+    mid_white: list = []
+    high_white: list = []
+    mostly_white: list = []
+    vitiligo_markings: list = []
+    point_markings: list = []
 
-    # eyes
+    for sprite_list in sprites.WHITE_DATA["sprite_list"]:
+        for patch_type in sprite_list:
+            if sprite_list[patch_type] == "little":
+                little_white.append(patch_type)
+            elif sprite_list[patch_type] == "mid":
+                mid_white.append(patch_type)
+            elif sprite_list[patch_type] == "high":
+                high_white.append(patch_type)
+            elif sprite_list[patch_type] == "mostly":
+                mostly_white.append(patch_type)
+            elif sprite_list[patch_type] == "vitiligo":
+                vitiligo_markings.append(patch_type)
+            elif sprite_list[patch_type] == "point":
+                point_markings.append(patch_type)
+
+    white_patches_sprites: list[list] = [
+        little_white,
+        mid_white,
+        high_white,
+        mostly_white,
+        point_markings,
+        vitiligo_markings,
+        "FULLWHITE",
+    ]
+
+    # EYES
     all_eye_colours: list = []
     yellow_eyes: list = []
     green_eyes: list = []
@@ -87,53 +122,25 @@ class Pelt:
             elif sprite_list[colour] == "blue":
                 blue_eyes.append(colour)
 
-    # white markings
-    little_white: list = []
-    mid_white: list = []
-    high_white: list = []
-    mostly_white: list = []
-    vitiligo: list = []
-    point_markings: list = []
-
-    for sprite_list in sprites.WHITE_DATA["sprite_list"]:
-        for patch_type in sprite_list:
-            if sprite_list[patch_type] == "little":
-                little_white.append(patch_type)
-            elif sprite_list[patch_type] == "mid":
-                mid_white.append(patch_type)
-            elif sprite_list[patch_type] == "high":
-                high_white.append(patch_type)
-            elif sprite_list[patch_type] == "mostly":
-                mostly_white.append(patch_type)
-            elif sprite_list[patch_type] == "vitiligo":
-                vitiligo.append(patch_type)
-            elif sprite_list[patch_type] == "point":
-                point_markings.append(patch_type)
-
-    white_patches = [
-        little_white,
-        mid_white,
-        high_white,
-        mostly_white,
-        point_markings,
-        vitiligo,
-        "FULLWHITE",
-    ]
-
-    skin_sprites = []
-    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
+    # SKIN
+    skin_sprites: list = []
+    for sprite_list in sprites.SKIN_DATA["sprite_list"]:
         skin_sprites.extend(sprite_list)
 
+    # SCARS
     # bite scars by @wood pank on discord
     general_scars = []
     for sprite_list in sprites.SCAR_DATA["sprite_list"]:
         general_scars.extend(sprite_list)
 
     missing_part_scars = []
-    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
+    for sprite_list in sprites.SCAR_MISSING_PART_DATA["sprite_list"]:
         missing_part_scars.extend(sprite_list)
 
     all_scars = general_scars + missing_part_scars
+
+    # ACCESSORIES
+    # make sure to add plural and singular forms of new accs to accessories.en.json so that they will display nicely
 
     # all acc sprites are labeled as occupying a specific part of the cat sprite and then appended into these three lists
     # collar_accessories are presumed to all occupy the neck area and are treated as the fourth of these lists
@@ -171,8 +178,6 @@ class Pelt:
             collar_styles.append(style)
             for colour in color_list:
                 collar_accessories.append(f"{style}_{colour}")
-
-    # make sure to add plural and singular forms of new accs to accessories.en.json so that they will display nicely
 
     # this is used for acc-giving events, only change if you're adding a new category tag to the event filter
     # adding a category here will automatically update the event editor's options
@@ -300,7 +305,7 @@ class Pelt:
             self.vitiligo = "VITILIGOTWO"
 
         # Move white_patches that should be in vit or points.
-        if self.white_patches in Pelt.vitiligo:
+        if self.white_patches in Pelt.vitiligo_markings:
             self.vitiligo = self.white_patches
             self.white_patches = None
         elif self.white_patches in Pelt.point_markings:
@@ -400,7 +405,7 @@ class Pelt:
                 [i.pelt.eye_colour for i in parents] + [choice(Pelt.all_eye_colours)]
             )
 
-        # White patches must be initalized before eye color.
+        # White patches must be initialized before eye color.
         num = constants.CONFIG["cat_generation"]["base_heterochromia"]
         if (
             self.white_patches in Pelt.high_white
@@ -704,7 +709,7 @@ class Pelt:
         return chosen_white
 
     def init_pattern_color(self, parents, gender) -> bool:
-        """Inits self.name, self.colour, self.length,
+        """Initializes self.name, self.colour, self.length,
         self.tortiebase and determines if the cat
         will have white patche or not.
         Return TRUE is the cat should have white patches,
@@ -792,7 +797,7 @@ class Pelt:
                     print("Wildcard tortie!")
 
                     # Allow any pattern:
-                    self.tortiepattern = choice(Pelt.tortie_bases)
+                    self.tortiepattern = choice(Pelt.pelt_patterns)
 
                     # Allow any colors that aren't the base color.
                     possible_colors = Pelt.all_pelt_colours.copy()
@@ -857,8 +862,8 @@ class Pelt:
         par_points = []
         for p in parents:
             if p:
-                if p.pelt.white_patches:
-                    par_whitepatches.add(p.pelt.white_patches)
+                if p.pelt.white_patches_sprites:
+                    par_whitepatches.add(p.pelt.white_patches_sprites)
                 if p.pelt.points:
                     par_points.append(p.pelt.points)
 
@@ -1016,7 +1021,7 @@ class Pelt:
             constants.CONFIG["cat_generation"]["vit_chance"] - len(par_vit), 0
         )
         if not random.getrandbits(vit_chance):
-            self.vitiligo = choice(Pelt.vitiligo)
+            self.vitiligo = choice(Pelt.vitiligo_markings)
 
         # If the cat was rolled previously to have white patches, then determine the patch they will have
         # these functions also handle points.
@@ -1031,7 +1036,6 @@ class Pelt:
 
     def init_tint(self):
         """Sets tint for pelt and white patches"""
-
         # PELT TINT
         # Basic tints as possible for all colors.
         base_tints = sprites.cat_tints["possible_tints"]["basic"]
@@ -1071,8 +1075,9 @@ class Pelt:
 
     @white.setter
     def white(self, val):
-        print("Can't set pelt.white")
-        return
+        raise Exception(
+            f"Attempted to set cat's white patches to {val}, but pelt.white cannot be used to set a white patches"
+        )
 
     def describe_eyes(self):
         return (
@@ -1107,15 +1112,15 @@ class Pelt:
                 continue
 
             # handle args
-            argpool = {
+            arg_pool = {
                 arg: unpack_appearance_ruleset(
                     cat, arg, short, pelt_pattern, pelt_color
                 )
                 for arg in args
             }
-            argpool["key"] = temp
-            argpool["count"] = 1 if short else 2
-            output.append(i18n.t(**argpool))
+            arg_pool["key"] = temp
+            arg_pool["count"] = 1 if short else 2
+            output.append(i18n.t(**arg_pool))
 
         # don't forget the count argument!
         groups = []
@@ -1178,8 +1183,8 @@ def _describe_pattern(cat, short=False):
     return pelt_name, color_name
 
 
-def _describe_torties(cat, color_name, short=False) -> [str, str]:
-    # Calicos and Torties need their own desciptions
+def _describe_torties(cat, color_name, short=False) -> (str, str):
+    # Calicos and Torties need their own descriptions
     if short:
         # If using short, don't describe the colors of calicos and torties.
         # Just call them calico, tortie, or mottled
