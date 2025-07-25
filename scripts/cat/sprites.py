@@ -32,6 +32,16 @@ class Sprites:
     ) as read_file:
         PLANT_DATA = ujson.loads(read_file.read())
 
+    with open(
+        "resources/dicts/sprites/scar_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        SCAR_DATA = ujson.loads(read_file.read())
+
+    with open(
+        "resources/dicts/sprites/scar_missing_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        SCAR_MISSING_PART_DATA = ujson.loads(read_file.read())
+
     def __init__(self):
         """Class that handles and hold all spritesheets.
         Size is normally automatically determined by the size
@@ -548,86 +558,23 @@ class Sprites:
         Loads scar sprites and puts them into groups.
         """
 
-        # Define scars
-        scars_data = [
-            [
-                "ONE",
-                "TWO",
-                "THREE",
-                "MANLEG",
-                "BRIGHTHEART",
-                "MANTAIL",
-                "BRIDGE",
-                "RIGHTBLIND",
-                "LEFTBLIND",
-                "BOTHBLIND",
-                "BURNPAWS",
-                "BURNTAIL",
-            ],
-            [
-                "BURNBELLY",
-                "BEAKCHEEK",
-                "BEAKLOWER",
-                "BURNRUMP",
-                "CATBITE",
-                "RATBITE",
-                "FROSTFACE",
-                "FROSTTAIL",
-                "FROSTMITT",
-                "FROSTSOCK",
-                "QUILLCHUNK",
-                "QUILLSCRATCH",
-            ],
-            [
-                "TAILSCAR",
-                "SNOUT",
-                "CHEEK",
-                "SIDE",
-                "THROAT",
-                "TAILBASE",
-                "BELLY",
-                "TOETRAP",
-                "SNAKE",
-                "LEGBITE",
-                "NECKBITE",
-                "FACE",
-            ],
-            [
-                "HINDLEG",
-                "BACK",
-                "QUILLSIDE",
-                "SCRATCHSIDE",
-                "TOE",
-                "BEAKSIDE",
-                "CATBITETWO",
-                "SNAKETWO",
-                "FOUR",
-            ],
-        ]
-
-        # define missing parts
-        missing_parts_data = [
-            [
-                "LEFTEAR",
-                "RIGHTEAR",
-                "NOTAIL",
-                "NOLEFTEAR",
-                "NORIGHTEAR",
-                "NOEAR",
-                "HALFTAIL",
-                "NOPAW",
-            ]
-        ]
-
         # scars
-        for row, scars in enumerate(scars_data):
-            for col, scar in enumerate(scars):
-                self.make_group("scars", (col, row), f"scars{scar}")
+        spritesheet = self.SCAR_DATA["spritesheet"]
+        for row, scar_list in enumerate(self.SCAR_DATA["sprite_list"]):
+            for col, scar in enumerate(scar_list):
+                self.make_group(
+                    spritesheet=spritesheet, pos=(col, row), name=f"{spritesheet}{scar}"
+                )
 
         # missing parts
-        for row, missing_parts in enumerate(missing_parts_data):
-            for col, missing_part in enumerate(missing_parts):
-                self.make_group("missingscars", (col, row), f"scars{missing_part}")
+        spritesheet = self.SCAR_MISSING_PART_DATA["spritesheet"]
+        for row, missing_part_list in enumerate(self.SCAR_MISSING_PART_DATA["sprite_list"]):
+            for col, missing_part in enumerate(missing_part_list):
+                self.make_group(
+                    spritesheet=spritesheet,
+                    pos=(col, row),
+                    name=f"{spritesheet}{missing_part}",
+                )
 
     def load_accs(self):
         # plant
