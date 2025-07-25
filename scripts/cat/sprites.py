@@ -47,6 +47,11 @@ class Sprites:
     ) as read_file:
         SKIN_DATA = ujson.loads(read_file.read())
 
+    with open(
+        "resources/dicts/sprites/scar_missing_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        TORTIE_DATA = ujson.loads(read_file.read())
+
     def __init__(self):
         """Class that handles and hold all spritesheets.
         Size is normally automatically determined by the size
@@ -486,64 +491,10 @@ class Sprites:
                 for color_type in color_types:
                     self.make_group(color_type, (col, row), f"{color_type[:-7]}{color}")
 
-        # tortiepatchesmasks
-        tortiepatchesmasks = [
-            [
-                "ONE",
-                "TWO",
-                "THREE",
-                "FOUR",
-                "REDTAIL",
-                "DELILAH",
-                "HALF",
-                "STREAK",
-                "MASK",
-                "SMOKE",
-            ],
-            [
-                "MINIMALONE",
-                "MINIMALTWO",
-                "MINIMALTHREE",
-                "MINIMALFOUR",
-                "OREO",
-                "SWOOP",
-                "CHIMERA",
-                "CHEST",
-                "ARMTAIL",
-                "GRUMPYFACE",
-            ],
-            [
-                "MOTTLED",
-                "SIDEMASK",
-                "EYEDOT",
-                "BANDANA",
-                "PACMAN",
-                "STREAMSTRIKE",
-                "SMUDGED",
-                "DAUB",
-                "EMBER",
-                "BRIE",
-            ],
-            [
-                "ORIOLE",
-                "ROBIN",
-                "BRINDLE",
-                "PAIGE",
-                "ROSETAIL",
-                "SAFI",
-                "DAPPLENIGHT",
-                "BLANKET",
-                "BELOVED",
-                "BODY",
-            ],
-            ["SHILOH", "FRECKLED", "HEARTBEAT"],
-        ]
+        # tortie patches
+        self.load_sheet(self.TORTIE_DATA)
 
-        for row, masks in enumerate(tortiepatchesmasks):
-            for col, mask in enumerate(masks):
-                self.make_group("tortiepatchesmasks", (col, row), f"tortiemask{mask}")
-
-        # Define skin colors
+        # skin colors
         self.load_sheet(self.SKIN_DATA)
 
         # scars
@@ -552,13 +503,13 @@ class Sprites:
         # missing parts
         self.load_sheet(self.SCAR_MISSING_PART_DATA)
 
-        # plant
+        # plant accs
         self.load_sheet(self.PLANT_DATA)
 
-        # wild
+        # wild accs
         self.load_sheet(self.WILD_DATA)
 
-        # collar
+        # collar accs
         # this guy is special since it uses palette mapping
         spritesheet = self.COLLAR_DATA["prefix"]
         for row, style_type in enumerate(self.COLLAR_DATA["style_data"]):
