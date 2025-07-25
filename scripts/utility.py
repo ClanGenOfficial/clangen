@@ -2806,9 +2806,9 @@ def generate_sprite(
             )
         else:
             # Base Coat
-            coat_name = f"colours_{cat.pelt.tortiebase}{cat.pelt.colour}{cat_sprite}"
+            sprite_name = f"colours_{cat.pelt.tortiebase}{cat.pelt.colour}{cat_sprite}"
             new_sprite.blit(
-                sprites.sprites[coat_name],
+                sprites.sprites[sprite_name],
                 (0, 0),
             )
 
@@ -2818,14 +2818,13 @@ def generate_sprite(
             else:
                 tortie_pattern = cat.pelt.tortiepattern
 
-            patches_name = (
-                f"colours_{tortie_pattern}{cat.pelt.tortiecolour}{cat_sprite}"
+            sprite_name = f"colours_{tortie_pattern}{cat.pelt.tortiecolour}{cat_sprite}"
+            patches = sprites.sprites[sprite_name].copy()
+            sprite_name = (
+                f"{sprites.TORTIE_DATA['spritesheet']}{cat.pelt.pattern}{cat_sprite}"
             )
-            patches = sprites.sprites[patches_name].copy()
             patches.blit(
-                sprites.sprites[
-                    sprites.TORTIE_DATA["spritesheet"] + cat.pelt.pattern + cat_sprite
-                ],
+                sprites.sprites[sprite_name],
                 (0, 0),
                 special_flags=pygame.BLEND_RGBA_MULT,
             )
@@ -2854,9 +2853,8 @@ def generate_sprite(
 
         # draw white patches
         if cat.pelt.white_patches is not None:
-            white_patches = sprites.sprites[
-                sprites.WHITE_DATA["spritesheet"] + cat.pelt.white_patches + cat_sprite
-            ].copy()
+            sprite_name = f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.white_patches}{cat_sprite}"
+            white_patches = sprites.sprites[sprite_name].copy()
 
             # Apply tint to white patches.
             if (
@@ -2879,9 +2877,11 @@ def generate_sprite(
         # draw vit & points
 
         if cat.pelt.points:
-            points = sprites.sprites[
-                sprites.WHITE_DATA["spritesheet"] + cat.pelt.points + cat_sprite
-            ].copy()
+            sprite_name = (
+                f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.points}{cat_sprite}"
+            )
+
+            points = sprites.sprites[sprite_name].copy()
             if (
                 cat.pelt.white_patches_tint != "none"
                 and cat.pelt.white_patches_tint
@@ -2899,16 +2899,24 @@ def generate_sprite(
             new_sprite.blit(points, (0, 0))
 
         if cat.pelt.vitiligo:
+            sprite_name = (
+                f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.vitiligo}{cat_sprite}"
+            )
+
             new_sprite.blit(
-                sprites.sprites[sprites.WHITE_DATA["spritesheet"] + cat.pelt.vitiligo + cat_sprite],
+                sprites.sprites[sprite_name],
                 (0, 0),
             )
 
         # draw eyes & scars1
-        eyes = sprites.sprites[sprites.EYE_DATA["spritesheet"][0] + cat.pelt.eye_colour + cat_sprite].copy()
+        sprite_name = (
+            f"{sprites.EYE_DATA['spritesheets'][0]}{cat.pelt.eye_colour}{cat_sprite}"
+        )
+        eyes = sprites.sprites[sprite_name].copy()
         if cat.pelt.eye_colour2 != None:
+            sprite_name = f"{sprites.EYE_DATA['spritesheets'][1]}{cat.pelt.eye_colour2}{cat_sprite}"
             eyes.blit(
-                sprites.sprites[sprites.EYE_DATA["spritesheet"][1] + cat.pelt.eye_colour2 + cat_sprite],
+                sprites.sprites[sprite_name],
                 (0, 0),
             )
         new_sprite.blit(eyes, (0, 0))
@@ -2916,8 +2924,12 @@ def generate_sprite(
         if not scars_hidden:
             for scar in cat.pelt.scars:
                 if scar in cat.pelt.general_scars:
+                    sprite_name = (
+                        f"{sprites.SCAR_DATA['spritesheet']}{scar}{cat_sprite}"
+                    )
                     new_sprite.blit(
-                        sprites.sprites[sprites.SCAR_DATA["spritesheet"] + scar + cat_sprite], (0, 0)
+                        sprites.sprites[sprite_name],
+                        (0, 0),
                     )
 
         # setting the lineart color to override on accessories & missing bits
@@ -2959,14 +2971,19 @@ def generate_sprite(
             new_sprite.blit(sprites.sprites["lineartdead" + cat_sprite], (0, 0))
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
-        new_sprite.blit(sprites.sprites[sprites.SKIN_DATA["spritesheet"] + cat.pelt.skin + cat_sprite], (0, 0))
+        sprite_name = f"{sprites.SKIN_DATA['spritesheet']}{cat.pelt.skin}{cat_sprite}"
+        new_sprite.blit(
+            sprites.sprites[sprite_name],
+            (0, 0),
+        )
 
         if not scars_hidden:
             for scar in cat.pelt.scars:
                 if scar in cat.pelt.missing_part_scars:
+                    sprite_name = f"{sprites.SCAR_MISSING_PART_DATA['spritesheet']}{scar}{cat_sprite}"
                     new_sprite.blit(
                         _recolor_lineart(
-                            sprites.sprites[sprites.SCAR_MISSING_PART_DATA["spritesheet"] + scar + cat_sprite],
+                            sprites.sprites[sprite_name],
                             lineart_color,
                         ),
                         (0, 0),
@@ -2988,31 +3005,28 @@ def generate_sprite(
                 for accessory in cat_accessories:
                     if accessory in getattr(Pelt, category):
                         if accessory in cat.pelt.plant_accessories:
+                            sprite_name = f"{sprites.PLANT_DATA['spritesheet']}{accessory}{cat_sprite}"
                             new_sprite.blit(
                                 _recolor_lineart(
-                                    sprites.sprites[
-                                        sprites.PLANT_DATA["spritesheet"] + accessory + cat_sprite
-                                    ],
+                                    sprites.sprites[sprite_name],
                                     lineart_color,
                                 ),
                                 (0, 0),
                             )
                         elif accessory in cat.pelt.wild_accessories:
+                            sprite_name = f"{sprites.WILD_DATA['spritesheet']}{accessory}{cat_sprite}"
                             new_sprite.blit(
                                 _recolor_lineart(
-                                    sprites.sprites[
-                                        sprites.WILD_DATA["spritesheet"] + accessory + cat_sprite
-                                    ],
+                                    sprites.sprites[sprite_name],
                                     lineart_color,
                                 ),
                                 (0, 0),
                             )
                         elif accessory in cat.pelt.collar_accessories:
+                            sprite_name = f"{sprites.COLLAR_DATA['spritesheet']}{accessory}{cat_sprite}"
                             new_sprite.blit(
                                 _recolor_lineart(
-                                    sprites.sprites[
-                                        sprites.COLLAR_DATA["spritesheet"] + accessory + cat_sprite
-                                    ],
+                                    sprites.sprites[sprite_name],
                                     lineart_color,
                                 ),
                                 (0, 0),
