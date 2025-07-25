@@ -3404,7 +3404,7 @@
     "biome": ["any"],
     "season": ["any"],
     "types": ["hunting"],
-    "tags": ["romantic"],
+    "tags": ["romance"],
     "patrol_art": "cat_running_two",
     "min_cats": 2,
     "max_cats": 2,
@@ -3427,7 +3427,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3445,7 +3445,7 @@
             "cats_to": ["r_c"],
             "cats_from": ["p_l"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 10
 }
 ],
@@ -3463,14 +3463,14 @@
             "cats_to": ["r_c"],
             "cats_from": ["p_l"],
             "mutual": false,
-            "values": ["respect", "romantic", "platonic"],
+            "values": ["respect", "romance", "like"],
             "amount": 5
 },  
 {
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["respect", "trust", "romantic", "platonic"],
+            "values": ["respect", "trust", "romance", "like"],
             "amount": 5
         }
 ],
@@ -3488,7 +3488,7 @@
             "cats_to": ["r_c"],
             "cats_from": ["p_l"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust"],
+            "values": ["romance", "like", "trust"],
             "amount": 10
 }
 ],
@@ -3506,7 +3506,7 @@
             "cats_to": ["s_c"],
             "cats_from": ["p_l"],
             "mutual": false,
-            "values": ["romantic", "platonic"],
+            "values": ["romance", "like"],
             "amount": 5
 }
 ],
@@ -3522,14 +3522,14 @@
             "cats_to": ["r_c"],
             "cats_from": ["p_l"],
             "mutual": false,
-            "values": ["romantic", "platonic"],
+            "values": ["romance", "like"],
             "amount": 5
 },
 {
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": false,
-            "values": ["romantic", "platonic", "comfort"],
+            "values": ["romance", "like", "comfort"],
             "amount": -8
 }
 ],
@@ -3569,7 +3569,7 @@
             "cats_to": ["r_c"],
             "cats_from": ["p_l"],
             "mutual": true,
-            "values": ["comfort", "respect", "platonic", "romantic"],
+            "values": ["comfort", "respect", "like", "romance"],
             "amount": -5
 }
 ],
@@ -3584,7 +3584,7 @@
             "cats_to": ["r_c"],
             "cats_from": ["p_l"],
             "mutual": true,
-            "values": ["comfort", "respect", "platonic", "romantic"],
+            "values": ["comfort", "respect", "like", "romance"],
             "amount": -10
 }
 ],
@@ -3620,7 +3620,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3638,7 +3638,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3656,7 +3656,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3674,7 +3674,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3692,7 +3692,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3710,7 +3710,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3728,7 +3728,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3746,7 +3746,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3764,7 +3764,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": 5
 }
 ],
@@ -3821,7 +3821,7 @@
             "cats_to": ["r_c"],
             "cats_from": ["p_l"],
             "mutual": true,
-            "values": ["comfort", "trust", "platonic", "romantic"],
+            "values": ["comfort", "trust", "like", "romance"],
             "amount": -5
 }
 ],
@@ -3839,7 +3839,7 @@
             "cats_to": ["r_c"],
             "cats_from": ["p_l"],
             "mutual": true,
-            "values": ["comfort", "trust", "platonic", "romantic"],
+            "values": ["comfort", "trust", "like", "romance"],
             "amount": -5
 }
 ],
@@ -3857,7 +3857,7 @@
             "cats_to": ["r_c"],
             "cats_from": ["p_l"],
             "mutual": true,
-            "values": ["comfort", "trust", "platonic", "romantic"],
+            "values": ["comfort", "trust", "like", "romance"],
             "amount": -8
 }
 ],
@@ -3874,7 +3874,7 @@
             "cats_to": ["s_c"],
             "cats_from": ["p_l"],
             "mutual": true,
-            "values": ["comfort", "trust", "platonic", "romantic"],
+            "values": ["comfort", "trust", "like", "romance"],
             "amount": 10
 }
         ],
@@ -3892,7 +3892,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["s_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust", "respect"],
+            "values": ["romance", "like", "trust", "respect"],
             "amount": -5
 },
 {
@@ -3917,7 +3917,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["s_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "trust"],
+            "values": ["romance", "like", "trust"],
             "amount": -5
 },
 {
@@ -3942,7 +3942,7 @@
             "cats_to": ["p_l"],
             "cats_from": ["s_c"],
             "mutual": true,
-            "values": ["romantic", "platonic", "comfort"],
+            "values": ["romance", "like", "comfort"],
             "amount": 10
         }
     ],

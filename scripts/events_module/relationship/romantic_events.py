@@ -740,10 +740,7 @@ class RomanticEvents:
         if not relationship:
             return False
 
-        if relationship.relationship_qualifies(condition):
-            return True
-        else:
-            return False
+        return relationship.relationship_qualifies(condition)
 
     @staticmethod
     def current_mates_allow_new_mate(cat_from, cat_to) -> bool:

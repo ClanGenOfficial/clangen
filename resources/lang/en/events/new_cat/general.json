@@ -837,7 +837,7 @@
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             }
         ],
@@ -888,21 +888,21 @@
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             },
             {
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:1"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             },
             {
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:2"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             }
         ],
@@ -941,7 +941,7 @@
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             }
         ],
@@ -992,21 +992,21 @@
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             },
             {
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:1"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             },
             {
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:2"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             }
         ],
