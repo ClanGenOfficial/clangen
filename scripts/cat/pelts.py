@@ -66,9 +66,9 @@ class Pelt:
     )
 
     # tortie patches
-    tortie_patterns: list = []
+    tortie_patches: list = []
     for sprite_list in sprites.TORTIE_DATA["sprite_list"]:
-        tortie_patterns.extend(sprite_list)
+        tortie_patches.extend(sprite_list)
 
     pelt_length = ["short", "medium", "long"]
 
@@ -87,148 +87,36 @@ class Pelt:
             elif sprite_list[colour] == "blue":
                 blue_eyes.append(colour)
 
-    little_white = [
-        "LITTLE",
-        "LIGHTTUXEDO",
-        "BUZZARDFANG",
-        "TIP",
-        "BLAZE",
-        "BIB",
-        "VEE",
-        "PAWS",
-        "BELLY",
-        "TAILTIP",
-        "TOES",
-        "BROKENBLAZE",
-        "LILTWO",
-        "SCOURGE",
-        "TOESTAIL",
-        "RAVENPAW",
-        "HONEY",
-        "LUNA",
-        "EXTRA",
-        "MUSTACHE",
-        "REVERSEHEART",
-        "SPARKLE",
-        "RIGHTEAR",
-        "LEFTEAR",
-        "ESTRELLA",
-        "REVERSEEYE",
-        "BACKSPOT",
-        "EYEBAGS",
-        "LOCKET",
-        "BLAZEMASK",
-        "TEARS",
-    ]
-    mid_white = [
-        "TUXEDO",
-        "FANCY",
-        "UNDERS",
-        "DAMIEN",
-        "SKUNK",
-        "MITAINE",
-        "SQUEAKS",
-        "STAR",
-        "WINGS",
-        "DIVA",
-        "SAVANNAH",
-        "FADESPOTS",
-        "BEARD",
-        "DAPPLEPAW",
-        "TOPCOVER",
-        "WOODPECKER",
-        "MISS",
-        "BOWTIE",
-        "VEST",
-        "FADEBELLY",
-        "DIGIT",
-        "FCTWO",
-        "FCONE",
-        "MIA",
-        "ROSINA",
-        "PRINCESS",
-        "DOUGIE",
-    ]
-    high_white = [
-        "ANY",
-        "ANYTWO",
-        "BROKEN",
-        "FRECKLES",
-        "RINGTAIL",
-        "HALFFACE",
-        "PANTSTWO",
-        "GOATEE",
-        "PRINCE",
-        "FAROFA",
-        "MISTER",
-        "PANTS",
-        "REVERSEPANTS",
-        "HALFWHITE",
-        "APPALOOSA",
-        "PIEBALD",
-        "CURVED",
-        "GLASS",
-        "MASKMANTLE",
-        "MAO",
-        "PAINTED",
-        "SHIBAINU",
-        "OWL",
-        "BUB",
-        "SPARROW",
-        "TRIXIE",
-        "SAMMY",
-        "FRONT",
-        "BLOSSOMSTEP",
-        "BULLSEYE",
-        "FINN",
-        "SCAR",
-        "BUSTER",
-        "HAWKBLAZE",
-        "CAKE",
-    ]
-    mostly_white = [
-        "VAN",
-        "ONEEAR",
-        "LIGHTSONG",
-        "TAIL",
-        "HEART",
-        "MOORISH",
-        "APRON",
-        "CAPSADDLE",
-        "CHESTSPECK",
-        "BLACKSTAR",
-        "PETAL",
-        "HEARTTWO",
-        "PEBBLESHINE",
-        "BOOTS",
-        "COW",
-        "COWTWO",
-        "LOVEBUG",
-        "SHOOTINGSTAR",
-        "EYESPOT",
-        "PEBBLE",
-        "TAILTWO",
-        "BUDDY",
-        "KROPKA",
-    ]
-    point_markings = ["COLOURPOINT", "RAGDOLL", "SEPIAPOINT", "MINKPOINT", "SEALPOINT"]
-    vit = [
-        "VITILIGO",
-        "VITILIGOTWO",
-        "MOON",
-        "PHANTOM",
-        "KARPATI",
-        "POWDER",
-        "BLEACHED",
-        "SMOKEY",
-    ]
-    white_sprites = [
+    # white markings
+    little_white: list = []
+    mid_white: list = []
+    high_white: list = []
+    mostly_white: list = []
+    vitiligo: list = []
+    point_markings: list = []
+
+    for sprite_list in sprites.WHITE_DATA["sprite_list"]:
+        for patch_type in sprite_list:
+            if sprite_list[patch_type] == "little":
+                little_white.append(patch_type)
+            elif sprite_list[patch_type] == "mid":
+                mid_white.append(patch_type)
+            elif sprite_list[patch_type] == "high":
+                high_white.append(patch_type)
+            elif sprite_list[patch_type] == "mostly":
+                mostly_white.append(patch_type)
+            elif sprite_list[patch_type] == "vitiligo":
+                vitiligo.append(patch_type)
+            elif sprite_list[patch_type] == "point":
+                point_markings.append(patch_type)
+
+    white_patches = [
         little_white,
         mid_white,
         high_white,
         mostly_white,
         point_markings,
-        vit,
+        vitiligo,
         "FULLWHITE",
     ]
 
@@ -412,7 +300,7 @@ class Pelt:
             self.vitiligo = "VITILIGOTWO"
 
         # Move white_patches that should be in vit or points.
-        if self.white_patches in Pelt.vit:
+        if self.white_patches in Pelt.vitiligo:
             self.vitiligo = self.white_patches
             self.white_patches = None
         elif self.white_patches in Pelt.point_markings:
@@ -1128,7 +1016,7 @@ class Pelt:
             constants.CONFIG["cat_generation"]["vit_chance"] - len(par_vit), 0
         )
         if not random.getrandbits(vit_chance):
-            self.vitiligo = choice(Pelt.vit)
+            self.vitiligo = choice(Pelt.vitiligo)
 
         # If the cat was rolled previously to have white patches, then determine the patch they will have
         # these functions also handle points.

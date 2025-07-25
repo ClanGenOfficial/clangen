@@ -62,6 +62,11 @@ class Sprites:
     ) as read_file:
         EYE_DATA = ujson.loads(read_file.read())
 
+    with open(
+        "resources/dicts/sprites/white_patches_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        WHITE_DATA = ujson.loads(read_file.read())
+
     def __init__(self):
         """Class that handles and hold all spritesheets.
         Size is normally automatically determined by the size
@@ -254,8 +259,8 @@ class Sprites:
             "colours_masked",
             "shadersnewwhite",
             "lightingnew",
-            "whitepatches",
-            "tortie_patches",
+            "patches_white",
+            "patches_tortie",
             "fademask",
             "fadestarclan",
             "fadedarkforest",
@@ -289,157 +294,7 @@ class Sprites:
             self.load_sheet(spritesheet, self.EYE_DATA["sprite_list"])
 
         # Define white patches
-        white_patches = [
-            [
-                "FULLWHITE",
-                "ANY",
-                "TUXEDO",
-                "LITTLE",
-                "COLOURPOINT",
-                "VAN",
-                "ANYTWO",
-                "MOON",
-                "PHANTOM",
-                "POWDER",
-                "BLEACHED",
-                "SAVANNAH",
-                "FADESPOTS",
-                "PEBBLESHINE",
-            ],
-            [
-                "EXTRA",
-                "ONEEAR",
-                "BROKEN",
-                "LIGHTTUXEDO",
-                "BUZZARDFANG",
-                "RAGDOLL",
-                "LIGHTSONG",
-                "VITILIGO",
-                "BLACKSTAR",
-                "PIEBALD",
-                "CURVED",
-                "PETAL",
-                "SHIBAINU",
-                "OWL",
-            ],
-            [
-                "TIP",
-                "FANCY",
-                "FRECKLES",
-                "RINGTAIL",
-                "HALFFACE",
-                "PANTSTWO",
-                "GOATEE",
-                "VITILIGOTWO",
-                "PAWS",
-                "MITAINE",
-                "BROKENBLAZE",
-                "SCOURGE",
-                "DIVA",
-                "BEARD",
-            ],
-            [
-                "TAIL",
-                "BLAZE",
-                "PRINCE",
-                "BIB",
-                "VEE",
-                "UNDERS",
-                "HONEY",
-                "FAROFA",
-                "DAMIEN",
-                "MISTER",
-                "BELLY",
-                "TAILTIP",
-                "TOES",
-                "TOPCOVER",
-            ],
-            [
-                "APRON",
-                "CAPSADDLE",
-                "MASKMANTLE",
-                "SQUEAKS",
-                "STAR",
-                "TOESTAIL",
-                "RAVENPAW",
-                "PANTS",
-                "REVERSEPANTS",
-                "SKUNK",
-                "KARPATI",
-                "HALFWHITE",
-                "APPALOOSA",
-                "DAPPLEPAW",
-            ],
-            [
-                "HEART",
-                "LILTWO",
-                "GLASS",
-                "MOORISH",
-                "SEPIAPOINT",
-                "MINKPOINT",
-                "SEALPOINT",
-                "MAO",
-                "LUNA",
-                "CHESTSPECK",
-                "WINGS",
-                "PAINTED",
-                "HEARTTWO",
-                "WOODPECKER",
-            ],
-            [
-                "BOOTS",
-                "MISS",
-                "COW",
-                "COWTWO",
-                "BUB",
-                "BOWTIE",
-                "MUSTACHE",
-                "REVERSEHEART",
-                "SPARROW",
-                "VEST",
-                "LOVEBUG",
-                "TRIXIE",
-                "SAMMY",
-                "SPARKLE",
-            ],
-            [
-                "RIGHTEAR",
-                "LEFTEAR",
-                "ESTRELLA",
-                "SHOOTINGSTAR",
-                "EYESPOT",
-                "REVERSEEYE",
-                "FADEBELLY",
-                "FRONT",
-                "BLOSSOMSTEP",
-                "PEBBLE",
-                "TAILTWO",
-                "BUDDY",
-                "BACKSPOT",
-                "EYEBAGS",
-            ],
-            [
-                "BULLSEYE",
-                "FINN",
-                "DIGIT",
-                "KROPKA",
-                "FCTWO",
-                "FCONE",
-                "MIA",
-                "SCAR",
-                "BUSTER",
-                "SMOKEY",
-                "HAWKBLAZE",
-                "CAKE",
-                "ROSINA",
-                "PRINCESS",
-            ],
-            ["LOCKET", "BLAZEMASK", "TEARS", "DOUGIE"],
-        ]
-
-        for row, patches in enumerate(white_patches):
-            for col, patch in enumerate(patches):
-                self.make_group("whitepatches", (col, row), f"white{patch}")
+        self.load_sheet(self.WHITE_DATA["spritesheet"], self.WHITE_DATA["sprite_list"])
 
         # pelts
         for spritesheet in self.PELT_DATA["spritesheets"]:
