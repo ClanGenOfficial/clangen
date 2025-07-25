@@ -549,55 +549,20 @@ class Sprites:
             for col, color in enumerate(colors):
                 self.make_group("skin", (col, row), f"skin{color}")
 
-        self.load_scars()
-        self.load_accs()
-        self.load_symbols()
-
-    def load_scars(self):
-        """
-        Loads scar sprites and puts them into groups.
-        """
-
         # scars
-        spritesheet = self.SCAR_DATA["spritesheet"]
-        for row, scar_list in enumerate(self.SCAR_DATA["sprite_list"]):
-            for col, scar in enumerate(scar_list):
-                self.make_group(
-                    spritesheet=spritesheet, pos=(col, row), name=f"{spritesheet}{scar}"
-                )
+        self.load_sheet(self.SCAR_DATA)
 
         # missing parts
-        spritesheet = self.SCAR_MISSING_PART_DATA["spritesheet"]
-        for row, missing_part_list in enumerate(
-            self.SCAR_MISSING_PART_DATA["sprite_list"]
-        ):
-            for col, missing_part in enumerate(missing_part_list):
-                self.make_group(
-                    spritesheet=spritesheet,
-                    pos=(col, row),
-                    name=f"{spritesheet}{missing_part}",
-                )
+        self.load_sheet(self.SCAR_MISSING_PART_DATA)
 
-    def load_accs(self):
         # plant
-        spritesheet = self.PLANT_DATA["spritesheet"]
-        for row, plant_list in enumerate(self.PLANT_DATA["sprite_list"]):
-            for col, plant in enumerate(plant_list):
-                self.make_group(
-                    spritesheet=spritesheet,
-                    pos=(col, row),
-                    name=f"{spritesheet}{plant}",
-                )
+        self.load_sheet(self.PLANT_DATA)
 
         # wild
-        spritesheet = self.WILD_DATA["prefix"]
-        for row, wilds in enumerate(self.WILD_DATA["sprite_list"]):
-            for col, wild in enumerate(wilds):
-                self.make_group(
-                    spritesheet=spritesheet, pos=(col, row), name=f"{spritesheet}{wild}"
-                )
+        self.load_sheet(self.WILD_DATA)
 
         # collar
+        # this guy is special since it uses palette mapping
         spritesheet = self.COLLAR_DATA["prefix"]
         for row, style_type in enumerate(self.COLLAR_DATA["style_data"]):
             for col, style in enumerate(style_type):
@@ -606,6 +571,22 @@ class Sprites:
                     pos=(col, row),
                     name=f"{spritesheet}{style}",
                     palettes=style_type[style],
+                )
+
+        self.load_symbols()
+
+    def load_sheet(self, data):
+        """
+        Loads sheet data and creates sprite groups.
+        :param data: the json file for this spritesheet
+        """
+        spritesheet = data["spritesheet"]
+        for row, sprite_list in enumerate(data["sprite_list"]):
+            for col, sprite in enumerate(sprite_list):
+                self.make_group(
+                    spritesheet=spritesheet,
+                    pos=(col, row),
+                    name=f"{spritesheet}{sprite}",
                 )
 
     def load_symbols(self):
