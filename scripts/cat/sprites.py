@@ -57,9 +57,7 @@ class Sprites:
     ) as read_file:
         PELT_DATA = ujson.loads(read_file.read())
 
-    with open(
-        "sprites/dicts/eye_sprite_data.json", "r", encoding="utf-8"
-    ) as read_file:
+    with open("sprites/dicts/eye_sprite_data.json", "r", encoding="utf-8") as read_file:
         EYE_DATA = ujson.loads(read_file.read())
 
     with open(
