@@ -40,13 +40,9 @@ class Music:
         """
         checks if music is currently playing
         """
-        if not self.music_timer or not self.music_timer.is_alive():
-            return False
-
-        elif self.silence_timer and self.silence_timer.is_alive():
-            return False
-
-        return True
+        if self.music_timer or self.silence_timer:
+            return True
+        return False
 
     def load_possible_tracks(self):
         """
@@ -84,9 +80,24 @@ class Music:
         """
         chooses music from the appropriate playlists and sends it to be loaded
         """
+        self.find_playlist()
+
+        if not self.current_playlist:
+            logger.error("Music track list is empty, check the music.json!")
+            chosen_track = "resources/audio/music/Generations.mp3"  # making this default just in case
+        elif len(self.current_playlist) == 1:
+            chosen_track = self.current_playlist[0]
+        else:
+            if self.last_track_name in self.current_playlist:
+                self.current_playlist.remove(self.last_track_name)
+            chosen_track = choice(self.current_playlist)
+
+        self.loaded_track = pygame.mixer.Sound(chosen_track)
+        self.current_track_name = chosen_track
+
+    def find_playlist(self):
         screen = switch_get_value(Switch.cur_screen)
         self.current_playlist = []
-
         if screen in constants.MENU_SCREENS:
             self.current_playlist = self.available_music.get("menu_playlist")
         else:
@@ -115,25 +126,15 @@ class Music:
                     self.available_music.get(f"{biome.casefold()}_playlist")
                 )
 
-        if not self.current_playlist:
-            logger.error("Music track list is empty, check the music.json!")
-            chosen_track = "resources/audio/music/Generations.mp3"  # making this default just in case
-        elif len(self.current_playlist) == 1:
-            chosen_track = self.current_playlist[0]
-        else:
-            if self.last_track_name in self.current_playlist:
-                self.current_playlist.remove(self.last_track_name)
-            chosen_track = choice(self.current_playlist)
-
-        self.loaded_track = pygame.mixer.Sound(chosen_track)
-        self.current_track_name = chosen_track
-
-    def check(self):
+    def check(self, fade_out: bool = False):
         """
         checks if loaded music is appropriate for the given screen and stops playback if needed
         """
         screen = switch_get_value(Switch.cur_screen)
+        # updates our current playlist
+        self.find_playlist()
 
+        # sees if the currently playing track is part of our current playlist, and changes it if not!
         if (
             screen in constants.MENU_SCREENS
             and self.current_track_name not in self.available_music["menu_playlist"]
@@ -141,8 +142,12 @@ class Music:
             self.play()
         elif (
             screen not in constants.MENU_SCREENS
-            and self.current_track_name in self.available_music["menu_playlist"]
+            and self.current_track_name not in self.current_playlist
         ):
+            self._stop_timers()
+            self.fade_out()
+
+        elif fade_out:
             self._stop_timers()
             self.fade_out()
 

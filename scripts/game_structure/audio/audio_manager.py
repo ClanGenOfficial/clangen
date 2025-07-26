@@ -31,14 +31,14 @@ class AudioManager:
         if not self.music.get_busy():
             self.music.check()
 
-    def check(self):
+    def check(self, fade_out: bool = False):
         """
         Checks that background audio is appropriate for the current screen
         """
         if self.muted:
             return
 
-        self.music.check()
+        self.music.check(fade_out)
         self.ambiance.check()
 
     def mute(self):

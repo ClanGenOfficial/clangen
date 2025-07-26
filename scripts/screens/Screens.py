@@ -83,7 +83,14 @@ class Screens:
             self.current_page = 1
 
         switch_set_value(Switch.cur_screen, new_screen)
-        game.audio.check()
+        if (
+            game.last_screen_forupdate in ("start screen", "events screen")
+            or switch_get_value(Switch.cur_screen) == "start screen"
+        ):
+            game.audio.check(
+                fade_out=game.last_screen_forupdate == "start screen"
+                and switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
+            )
         game.switch_screens = True
         game.rpc.update_rpc.set()
 
