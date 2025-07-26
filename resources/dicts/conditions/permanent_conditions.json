@@ -1,7 +1,7 @@
 {
     "crooked jaw": {
         "severity": "major",
-        "congenital": "never",
+        "congenital": "sometimes",
         "moons_until": 0,
         "mortality": {
             "newborn": 0,
@@ -58,7 +58,9 @@
             "marigold",
             "ragwort"
         ],
-            "2": [],
+            "2": [
+                "poppy"
+            ],
             "3": []
         }
     },
@@ -131,7 +133,9 @@
             "ragwort"
         ],
             "2": [],
-            "3": []
+            "3": [
+                "poppy"
+            ]
         }
     },
     "twisted leg": {
@@ -167,7 +171,9 @@
             "ragwort"
         ],
             "2": [],
-            "3": []
+            "3": [
+                "poppy"
+            ]
         }
     },
     "lost their tail": {
@@ -201,7 +207,9 @@
             "ragwort"
         ],
             "2": [],
-            "3": []
+            "3": [
+                "poppy"
+            ]
         }
     },
     "born without a tail": {
@@ -268,7 +276,9 @@
             "marigold"
         ],
             "2": [],
-            "3": []
+            "3": [
+                "poppy"
+            ]
         }
     },
     "raspy lungs": {
@@ -355,6 +365,58 @@
             "3": []
         }
     },
+    "strange lump": {
+        "severity": "major",
+        "congenital": "never",
+        "moons_until": 5,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 10,
+            "adolescent": 15,
+            "young adult": 35,
+            "adult": 55,
+            "senior adult": 65,
+            "senior": 75
+        },
+        "illness_infectiousness": [
+
+            {
+                "name": "whitecough",
+                "chance": 3
+            },
+            {
+                "name": "greencough",
+                "chance": 5
+            },
+            {
+                "name": "yellowcough",
+                "chance": 4
+            }
+        ],
+        "risks": [
+            {
+                "name": "seizure",
+                "chance": 10
+            },
+            {
+                "name": "paralyzed",
+                "chance": 50
+            },
+            {
+                "name": "redcough",
+                "chance": 60
+            }
+        ],
+        "herbs": {
+            "1": [
+            "juniper",
+            "ragwort",
+            "poppy"
+        ],
+            "2": [],
+            "3": []
+        }
+    },
     "blind": {
         "severity": "major",
         "congenital": "sometimes",
@@ -371,6 +433,36 @@
         "illness_infectiousness": [
         ],
         "risks": [
+        ],
+        "herbs": {
+            "1": [],
+            "2": [],
+            "3": []
+        }
+    },
+    "absent": {
+        "severity": "major",
+        "congenital": "never",
+        "moons_until": 95,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "joint pain",
+                "chance": 10
+            },
+            {
+                "name": "torn pelt",
+                "chance": 50
+            }
         ],
         "herbs": {
             "1": [],

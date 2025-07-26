@@ -23,7 +23,11 @@
         "duration": 1,
         "medicine_duration": 1,
         "infectiousness": 0,
-        "risks": [
+        "risks": [ 
+            {
+            "name": "severe headache",
+            "chance": 50
+            }
 
         ],
         "herbs": {
@@ -60,7 +64,12 @@
         "duration": 2,
         "medicine_duration": 2,
         "infectiousness": 0,
-        "risks": [],
+        "risks": [
+            {
+            "name": "dehydrated",
+            "chance": 30
+            }
+        ],
         "herbs": {
             "1": [
                 "betony",
@@ -452,7 +461,12 @@
         "duration": 3,
         "medicine_duration": 2,
         "infectiousness": 0,
-        "risks": [],
+        "risks": [
+            {
+                "name": "strange lump",
+                "chance": 80
+            }
+        ],
         "herbs": {
             "1": ["marigold",
                 "burdock",
@@ -716,6 +730,40 @@
         "herbs": {
             "1": [
                 "thyme"
+            ],
+            "2": [],
+            "3": []
+        }
+    },
+    "tick illness": {
+        "severity": "major",
+        "mortality": {
+            "newborn": 40,
+            "kitten": 30,
+            "adolescent": 30,
+            "young adult": 20,
+            "adult": 20,
+            "senior adult": 30,
+            "senior": 50
+        },
+        "medicine_mortality": {
+            "newborn": 20,
+            "kitten": 15,
+            "adolescent": 15,
+            "young adult": 10,
+            "adult": 10,
+            "senior adult": 15,
+            "senior": 25
+        },
+        "duration": 100,
+        "medicine_duration": 100,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": {
+            "1": [
+            "thyme",
+            "moss",
+            "plantain"
             ],
             "2": [],
             "3": []
