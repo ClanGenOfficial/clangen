@@ -714,7 +714,7 @@ def create_new_cat(
     kit: bool = False,
     litter: bool = False,
     backstory: bool = None,
-    rank: CatRank = None,
+    rank: Optional[CatRank] = None,
     original_social: CatSocial = CatSocial.CLANCAT,
     original_group: CatGroup = None,
     moons: int = None,
@@ -760,8 +760,8 @@ def create_new_cat(
             BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
             + BACKSTORIES["backstory_categories"]["baby_clancat_backstories"]
         )
-        and not original_group
-    ):
+        or original_social == "former Clancat"
+    ) and not original_group:
         original_group = choice(game.clan.other_clans)
 
     created_cats = []
