@@ -69,16 +69,6 @@ class Music:
             except:
                 logger.exception("Failed to load music lists")
 
-    def load(self, track):
-        """
-        loads the given track into memory for playing
-        """
-        try:
-            self.loaded_track = pygame.mixer.Sound(track)
-            self.current_track_name = track
-        except:
-            logger.exception("Failed to load music")
-
     def _clear(self):
         """
         removes music from memory to avoid excessive memory use, this should be done before new music
@@ -88,7 +78,6 @@ class Music:
         self.current_track_name = None
 
         del self.loaded_track
-
         self.loaded_track = None
 
     def choose(self):
@@ -96,14 +85,11 @@ class Music:
         chooses music from the appropriate playlists and sends it to be loaded
         """
         screen = switch_get_value(Switch.cur_screen)
-        self.live = True
         self.current_playlist = []
 
         if screen in constants.MENU_SCREENS:
             self.current_playlist = self.available_music.get("menu_playlist")
-            self.menu_music_playing = True
         else:
-            self.menu_music_playing = False
             self.current_playlist.extend(self.available_music.get("general_playlist"))
 
             try:
@@ -139,7 +125,8 @@ class Music:
                 self.current_playlist.remove(self.last_track_name)
             chosen_track = choice(self.current_playlist)
 
-            self.load(chosen_track)
+        self.loaded_track = pygame.mixer.Sound(chosen_track)
+        self.current_track_name = chosen_track
 
     def check(self):
         """
@@ -150,17 +137,19 @@ class Music:
         if (
             screen in constants.MENU_SCREENS
             and self.current_track_name not in self.available_music["menu_playlist"]
+            and self.current_track_name not in self.available_music["menu_playlist"]
         ):
-            self.choose()
             self.play()
         elif (
             screen not in constants.MENU_SCREENS
             and self.current_track_name in self.available_music["menu_playlist"]
         ):
+            self._stop_timers()
             self.fade_out()
 
     def play(self):
         """plays the loaded track"""
+        self.choose()
         self.loaded_track.set_volume(self.volume)
         if not self.channel:
             self.channel = self.loaded_track.play(fade_ms=3000)
@@ -242,9 +231,8 @@ class Music:
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
         """
-        # waiting should already be true, but we'll just make certain
         self._clear()
-        self.silence_timer = AudioTimer(duration, self._reset)
+        self.silence_timer = AudioTimer(10, self._reset)
         self.silence_timer.daemon = True
         self.silence_timer.start()
 
@@ -258,5 +246,4 @@ class Music:
             self.silence_timer.cancel()
 
     def _reset(self):
-        self.choose()
         self.play()
