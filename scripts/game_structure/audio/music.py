@@ -137,7 +137,6 @@ class Music:
         if (
             screen in constants.MENU_SCREENS
             and self.current_track_name not in self.available_music["menu_playlist"]
-            and self.current_track_name not in self.available_music["menu_playlist"]
         ):
             self.play()
         elif (
@@ -193,7 +192,7 @@ class Music:
 
     def fade_out(self, fadeout=2000, delay=randint(120, 300)):
         """
-        fades the music out, default fade is 2 seconds
+        fades the music out and begins the silence timer to count down to next track play
         :param fadeout: length of fadeout in milliseconds
         :param delay: this is used to dictate the length of the silence timer that begins when the music starts to fade.
         If a new music track is going to play immediately after the initial track fades, then you need a small delay
@@ -230,9 +229,10 @@ class Music:
     def _start_silence_timer(self, duration=randint(120, 300)):
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
+        :param duration: length of silence in seconds, by default this is a random duration between 120 and 300 seconds
         """
         self._clear()
-        self.silence_timer = AudioTimer(10, self._reset)
+        self.silence_timer = AudioTimer(duration, self.play)
         self.silence_timer.daemon = True
         self.silence_timer.start()
 
@@ -244,6 +244,3 @@ class Music:
             self.music_timer.cancel()
         if self.silence_timer and self.silence_timer.is_alive():
             self.silence_timer.cancel()
-
-    def _reset(self):
-        self.play()

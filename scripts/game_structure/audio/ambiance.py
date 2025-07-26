@@ -5,6 +5,7 @@ import pygame
 import ujson
 
 from scripts.game_structure import constants
+from scripts.game_structure.audio.timer import AudioTimer
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.game_essentials import game
@@ -14,15 +15,20 @@ logger = logging.getLogger(__name__)
 
 class Ambiance:
     def __init__(self):
+        self.camp_playing = None
+        self.season_playing = None
         self.playlist_dict = {}
+
         self.current_playlist = []
+
         self.biome_playlist = []
-        self.number_of_tracks = len(self.current_playlist)
+        self.season_overlay_playlist = []
+        self.camp_overlay_playlist = []
+
         self.volume = game_setting_get("ambiance_volume") / 100
+        self.number_of_tracks = len(self.current_playlist)
         self.current_track = None
         self.queued_track = None
-
-        self.changed: bool = False
 
         self.load_playlists()
 
@@ -30,27 +36,21 @@ class Ambiance:
         # loading playlists
         try:
             with open("resources/audio/ambiance.json", "r", encoding="utf-8") as f:
-                audio_data = ujson.load(f)
+                self.playlist_dict = ujson.load(f)
         except ValueError:
             logger.exception("Failed to load ambiance data")
             return
 
-        for playlist in audio_data:
-            try:
-                self.playlist_dict[playlist] = []
-                for path in audio_data[playlist]:
-                    self.playlist_dict[playlist].append(
-                        "resources/audio/ambiance/" + path
-                    )
-            except KeyError:
-                logger.exception("Failed to load ambiance playlist")
+        self.playlist_dict["menu_playlist"] = [
+            "resources/audio/ambiance/" + track
+            for track in self.playlist_dict["menu_playlist"]
+        ]
 
     def check(self):
         """
         checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
         """
-
-        self.biome_playlist = self._get_world_ambiance()
+        self._find_ambiance()
         screen = switch_get_value(Switch.cur_screen)
         # default to menu playlist
         playlist = self.playlist_dict["menu_playlist"]
@@ -71,6 +71,7 @@ class Ambiance:
         ):
             playlist = self.biome_playlist
             changed = True
+            self.start_overlay()
 
         if changed:
             self.ready_playlist(playlist)
@@ -89,6 +90,15 @@ class Ambiance:
         self.number_of_tracks = len(self.current_playlist)
 
         self.set_queued()
+
+    def start_overlay(self):
+        """
+        Starts randomized countdowns and begins playing the overlays at the end of the countdown.
+        """
+        if self.camp_overlay_playlist:
+            self._start_camp_overlay_silence_timer()
+        if self.season_overlay_playlist:
+            self._start_season_overlay_silence_timer()
 
     def play(self, track, fade_ms=1000):
         """
@@ -172,7 +182,7 @@ class Ambiance:
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
 
-    def _get_world_ambiance(self) -> list:
+    def _find_ambiance(self):
         """
         Finds the clan's biome and returns the appropriate playlist
         """
@@ -182,19 +192,99 @@ class Ambiance:
             biome = "Forest"
 
         try:
+            camp: str = game.clan.camp_bg
+            index = int([x for x in camp if x.isdigit()][0]) - 1
+            camp = constants.CAMPS[biome][index]
+        except AttributeError:
+            camp = constants.CAMPS[biome][0]
+
+        try:
             season = game.clan.current_season
         except AttributeError:
             season = "Newleaf"
 
-        new_playlist = self.playlist_dict["general_playlist"].copy()
-        new_playlist.extend(self.playlist_dict[f"{biome.casefold()}_playlist"])
+        self.biome_playlist = [
+            "resources/audio/ambiance/" + track
+            for track in self.playlist_dict[biome.casefold()]["base"]
+        ]
 
-        new_playlist.extend(
-            self.playlist_dict.get(f"{season.lower().replace('-', '')}_playlist", [])
-        )
+        # find if we have any camp specific sounds
+        if not self.camp_overlay_playlist or camp != self.camp_playing:
+            self.camp_playing = camp
+            if self.playlist_dict[f"{biome.casefold()}"].get(camp.casefold()):
+                for path in self.playlist_dict[biome.casefold()][camp.casefold()]:
+                    self.camp_overlay_playlist.append(
+                        pygame.mixer.Sound(f"resources/audio/ambiance/" + path)
+                    )
 
-        return new_playlist
+                for each in self.camp_overlay_playlist:
+                    each.set_volume(self.volume)
+
+        # then grab season specific sounds
+        if not self.season_overlay_playlist or season != self.season_playing:
+            self.season_playing = season
+            self.season_overlay_playlist = []
+            for path in self.playlist_dict["seasonal"][f"{season.casefold()}"]:
+                self.season_overlay_playlist.append(
+                    pygame.mixer.Sound("resources/audio/ambiance/" + path)
+                )
 
     @staticmethod
     def get_busy() -> bool:
         return pygame.mixer.music.get_busy()
+
+    @property
+    def overlay_volume(self):
+        return int((self.volume * 100) / 2.5) / 100
+
+    def _start_season_overlay_timer(self, duration):
+        """
+        Starts a timer thread for the given duration. When the thread finishes, the silence timer will begin.
+        :param duration: This should be the duration of the currently playing season overlay sound
+        """
+        self.season_timer = AudioTimer(
+            duration, self._start_season_overlay_silence_timer
+        )
+        self.season_timer.daemon = True
+        self.season_timer.start()
+
+    def _start_season_overlay_silence_timer(self):
+        """
+        Starts a timer thread for a random amount of silence. When thread finishes, a new season overlay sound will play.
+        """
+        self.season_silence_timer = AudioTimer(
+            random.randint(20, 50), self.play_season_overlay
+        )
+        self.season_silence_timer.daemon = True
+        self.season_silence_timer.start()
+
+    def play_season_overlay(self):
+        track = random.choice(self.season_overlay_playlist)
+        track.set_volume(self.overlay_volume)
+        if pygame.mixer.find_channel():
+            print("played season overlay")
+            track.play(fade_ms=4000)
+            self._start_season_overlay_timer(track.get_length())
+        # TODO: what happens if no channel found?
+
+    def _start_camp_overlay_timer(self, duration):
+        # get length of sound
+        self.camp_timer = AudioTimer(duration, self._start_camp_overlay_silence_timer)
+        self.camp_timer.daemon = True
+        self.camp_timer.start()
+
+    def _start_camp_overlay_silence_timer(self):
+        self.camp_silence_timer = AudioTimer(
+            random.randint(20, 50), self.play_camp_overlay
+        )
+        self.camp_silence_timer.daemon = True
+        self.camp_silence_timer.start()
+
+    def play_camp_overlay(self):
+        track = random.choice(self.camp_overlay_playlist)
+        track.set_volume(self.overlay_volume)
+        if pygame.mixer.find_channel():
+            print("played camp overlay")
+            track.play(fade_ms=4000)
+            self._start_camp_overlay_timer(track.get_length())
+        # TODO: what happens if no channel found?
