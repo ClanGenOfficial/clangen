@@ -372,6 +372,9 @@ class Status:
         """
         self.group_history[-1]["moons_as"] += 1 if not self.died_this_moon else 0
 
+        # now set this back to false so that we'll increment next time
+        self.died_this_moon = False
+
     def _modify_group(
         self,
         new_rank: CatRank,

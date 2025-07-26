@@ -908,10 +908,7 @@ class Events:
             return
 
         # this will also handle increasing dead_for!
-        if not cat.status.died_this_moon:
-            cat.status.increase_current_moons_as()
-        else:
-            cat.status.died_this_moon = False
+        cat.status.increase_current_moons_as()
 
         if cat.dead:
             cat.thoughts()
