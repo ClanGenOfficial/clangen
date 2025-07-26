@@ -4995,8 +4995,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died while wandering the territory.",
-                "lead_death": "died while wandering the territory"
+                "reg_death": "m_c was killed by r_c while wandering the territory.",
+                "lead_death": "was killed by r_c while wandering the territory"
             }
         ],
         "future_event": [
