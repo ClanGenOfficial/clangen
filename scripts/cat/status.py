@@ -317,6 +317,9 @@ class Status:
 
     @property
     def is_other_clancat(self) -> bool:
+        """
+        Returns True if the cat is a clancat but isn't part of the player_clan. If the cat is a dead clancat, returns True if their last living Clan wasn't the player_clan.
+        """
         dead_player_clan = (
             self.group
             and self.group.is_afterlife()
@@ -581,7 +584,7 @@ class Status:
         history.reverse()
 
         for entry in history:
-            if not entry["group"] or not entry["group"].is_afterlife():
+            if entry["group"] and not entry["group"].is_afterlife():
                 return entry["group"]
 
         return None

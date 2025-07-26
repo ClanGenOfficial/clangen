@@ -13,6 +13,9 @@
             "many": "%{count} moons (in life)"
         },
         "moon_date": "moon %{moon}",
+        "guide": "guiding ghost",
+        "past_no_group": "past",
+        "past_group": "past %{group}",
         "leader": {
             "one": "leader",
             "many": "leaders"
