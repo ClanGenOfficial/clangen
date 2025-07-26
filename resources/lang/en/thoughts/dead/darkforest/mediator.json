@@ -1,3 +1,14 @@
 [
-    
+    {
+        "id": "df_mediator",
+        "thoughts": [
+            "Skillfully talked {PRONOUN/m_c/poss} way out of a confrontation",
+            "Convinced a shadowy cat to do {PRONOUN/m_c/poss} bidding",
+            "Resolved a conflict between two shadowy cats with words instead of claws"
+        ],
+        "main_status_constraint": [
+            "mediator apprentice",
+            "mediator"
+        ]
+    }
 ]

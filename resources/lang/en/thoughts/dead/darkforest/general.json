@@ -37,7 +37,17 @@
             "Misses the feeling of a warm nest",
             "Feels a sharp pang of hunger",
             "Wonders why StarClan abandoned {PRONOUN/m_c/object}",
-            "Is cursing StarClan for sending {PRONOUN/m_c/object} here"
+            "Is cursing StarClan for sending {PRONOUN/m_c/object} here",
+            "Regrets tasting the muck",
+            "Is so... so hungry...",
+            "Won against a shadowy attacker",
+            "Is floundering in the muck",
+            "Was nearly drowned in the muck by an attacker",
+            "Barely survived an attack from a shadowy cat",
+            "Is commiserating with a cat {PRONOUN/m_c/subject} recognized from when they were alive",
+            "Was betrayed by a cat {PRONOUN/m_c/subject} started to trust",
+            "Will never get used to the intense hunger gnawing at {PRONOUN/m_c/poss} core",
+            "Has been looking back on the cat {PRONOUN/m_c/subject} {VERB/m_c/were/was} in life"
         ]
     },
     {
@@ -105,7 +115,12 @@
             "Wants to lure new cats to train here",
             "Is cleaning the blood from {PRONOUN/m_c/poss} claws",
             "Is the first to volunteer for training",
-            "Is trying to lure living cats to train in the Dark Forest"
+            "Is trying to lure living cats to train in the Dark Forest",
+            "Is itching to dig {PRONOUN/m_c/poss} claws into the first cat {PRONOUN/m_c/object} sees",
+            "Has taken a living visitor under {PRONOUN/m_c/poss} wing",
+            "Has begun to grow quite fond of the muck",
+            "Has allied {PRONOUN/m_c/self} with the strongest cats {PRONOUN/m_c/object} could find",
+            "Befriended a weaker cat only to happily betray them when they needed {PRONOUN/m_c/object} most"
         ],
         "main_trait_constraint": [
             "arrogant",

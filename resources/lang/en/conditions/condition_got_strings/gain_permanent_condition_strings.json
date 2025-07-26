@@ -149,7 +149,7 @@
     "damaged eyes": {
         "blind": [
             "When r_c tells {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} vision will never return, m_c wants to wail. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to hold it in until {PRONOUN/m_c/subject} {VERB/m_c/have/has} a moment alone and away from {PRONOUN/m_c/poss} Clanmates though.",
-            "m_c had been expecting it, but {PRONOUN/m_c/subject} still {VERB/m_c/feel/feels} disappointed when r_c tells {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} vision is permanently gone. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't want to let this hold {PRONOUN/m_c/object} back, though. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} plans and {PRONOUN/m_c/subject} will see those plans through.",
+            "m_c had been expecting it, but {PRONOUN/m_c/subject} still {VERB/m_c/feel/feels} disappointed when r_c tells {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} vision is permanently gone. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} want to let this hold {PRONOUN/m_c/object} back, though. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} plans and {PRONOUN/m_c/subject} will see those plans through.",
             "Eventually, m_c just accepts the truth that has made itself apparent. {PRONOUN/m_c/poss/CAP} vision will never come back. This is life now, this fog of shadows and shapes."
         ],
         "one bad eye": [

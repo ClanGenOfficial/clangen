@@ -401,7 +401,7 @@
         },
         "weight": 20,
         "intro_text": "app1 nearly thinks {PRONOUN/app1/subject}'ll have to come home empty-pawed when a rustling in the grass alerts {PRONOUN/app1/object} to prey. {PRONOUN/app1/subject/CAP} {VERB/app1/drop/drops} down into a crouch, scenting bird on the air...",
-        "decline_text": "...but app1 stands up again just as quickly. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} never hunted bird before, and {VERB/app1/do/does}n't feel like walking back to camp with a mouthful of feathers. {PRONOUN/app1/subject/CAP}'ll find easier prey if {PRONOUN/app1/subject} just {VERB/app1/keep/keeps} walking, {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure of it.",
+        "decline_text": "...but app1 stands up again just as quickly. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} never hunted bird before, and {VERB/app1/don't/doesn't} feel like walking back to camp with a mouthful of feathers. {PRONOUN/app1/subject/CAP}'ll find easier prey if {PRONOUN/app1/subject} just {VERB/app1/keep/keeps} walking, {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure of it.",
         "chance_of_success": 65,
         "success_outcomes": [
             {
@@ -1183,7 +1183,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 pounces on the little creature and misses, but {PRONOUN/app1/subject} {VERB/app1/do/does}n't seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
+                "text": "app1 pounces on the little creature and misses, but {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -3775,7 +3775,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "The light drizzle falling on {PRONOUN/r_c/poss} whiskers is refreshing, after so many days of warmth. r_c wanders out to hunt, making the most of the drop in temperature so {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to stalk in the full heat of greenleaf.",
+        "intro_text": "The light drizzle falling on {PRONOUN/r_c/poss} whiskers is refreshing, after so many days of warmth. r_c wanders out to hunt, making the most of the drop in temperature so {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have to stalk in the full heat of greenleaf.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was}n't dead set on hunting, and r_c allows {PRONOUN/r_c/self} to be distracted by one of {PRONOUN/r_c/poss} Clanmates instead.",
         "chance_of_success": 60,
         "success_outcomes": [

@@ -128,4 +128,4 @@ class CatGroup(StrEnum):
         )
 
     def is_other_clan_group(self) -> bool:
-        return True if self.is_any_clan_group() and not self.PLAYER_CLAN else False
+        return self.is_any_clan_group() and self != self.PLAYER_CLAN

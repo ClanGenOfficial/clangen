@@ -1,7 +1,6 @@
 import re
 from random import choice
-
-import ujson
+from typing import Optional
 
 from scripts.cat.enums import CatRank, CatAge
 from scripts.game_structure.game_essentials import game
@@ -35,7 +34,7 @@ def event_for_location(locations: list) -> bool:
         elif req_biome == game.clan.biome.lower():
             if "any" in req_camps or game.clan.camp_bg in req_camps:
                 return True
-        return False
+    return False
 
 
 def event_for_season(seasons: list) -> bool:
@@ -518,7 +517,9 @@ def cat_for_event(
         return cat
 
 
-def _get_cats_with_rel_status(cat_list: list, cat, rel_status_list: list) -> list:
+def _get_cats_with_rel_status(
+    cat_list: list, cat, rel_status_list: list
+) -> tuple[list, list]:
     # theoretically none of these should ever be used together
     if "siblings" in rel_status_list:
         cat_list = [c for c in cat_list if c.ID in cat.get_siblings()]
