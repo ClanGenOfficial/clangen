@@ -195,5 +195,32 @@
             "m_c tries to keep the disappointment down. Logically, {PRONOUN/m_c/subject} knew this was inevitable. Emotionally, {PRONOUN/m_c/subject} just can't accept that {PRONOUN/m_c/subject}'ll never walk again.",
             "m_c continues to do {PRONOUN/m_c/poss} exercises dutifully, hoping beyond hope that someday it will pay off. For now though, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} this paralysis is {PRONOUN/m_c/poss} new reality."
         ]
+    },
+    "head damage": {
+        "absent": [
+            "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, worried about {PRONOUN/m_c/poss} head injury.",
+            "m_c has trouble remembering where {PRONOUNS/m_c/poss} nest is. r_c takes note- m_c has been fading fast since the head injury.",
+            "m_c got lost in the camp too many times. r_c wants to keep {PRONOUN/m_c/object} at camp for much longer."
+        ]
+    },
+    "severe headache": {
+        "absent": [
+            "r_c isn't sure why m_c suddenly took such a downward turn, but {PRONOUN/m_c/subject} did- and r_c isn't sure it can be fixed.",
+            "m_c has found it harder and harder to remember what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing. r_c suspects the worst.",
+            "m_c's headaches have been getting worse. {PRONOUN/m_c/subject} can't even think."
+        ]
+    },
+    "lingering shock": {
+        "absent": [
+            "m_c never really came around again after going into shock.",
+            "m_c fails to respond to r_c yet again, leading {PRONOUN/r_c/subject} to accept m_c is never really coming back."
+        ]
+    },
+    "a festering wound": {
+        "strange lump": [
+            "r_c isn't sure where this lump came from, but m_c isn't sure it's good news.",
+            "m_c complains about being unable to sleep properly, leading r_c to find a strange lump.",
+            "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
+        ]
     }
 }
