@@ -429,8 +429,6 @@ while 1:
         getattr(AllScreens, game.last_screen_forupdate.replace(" ", "_")).exit_screen()
         getattr(AllScreens, game.current_screen.replace(" ", "_")).screen_switches()
         game.switch_screens = False
-    if not game.audio.disabled and not game.audio.muted:
-        game.audio.start()
 
     debug_mode.pre_update(clock)
     # END FRAME
@@ -440,3 +438,6 @@ while 1:
     debug_mode.post_update(screen)
 
     pygame.display.update()
+
+    if not game.audio.disabled and not game.audio.muted:
+        game.audio.start()

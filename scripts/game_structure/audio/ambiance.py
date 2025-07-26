@@ -22,6 +22,8 @@ class Ambiance:
         self.current_track = None
         self.queued_track = None
 
+        self.changed: bool = False
+
         self.load_playlists()
 
     def load_playlists(self):
@@ -29,7 +31,7 @@ class Ambiance:
         try:
             with open("resources/audio/ambiance.json", "r", encoding="utf-8") as f:
                 audio_data = ujson.load(f)
-        except:
+        except ValueError:
             logger.exception("Failed to load ambiance data")
             return
 
@@ -40,7 +42,7 @@ class Ambiance:
                     self.playlist_dict[playlist].append(
                         "resources/audio/ambiance/" + path
                     )
-            except:
+            except KeyError:
                 logger.exception("Failed to load ambiance playlist")
 
     def check(self):
@@ -48,30 +50,35 @@ class Ambiance:
         checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
         """
 
-        self.biome_playlist = self.get_world_ambiance()
+        self.biome_playlist = self._get_world_ambiance()
         screen = switch_get_value(Switch.cur_screen)
+        # default to menu playlist
+        playlist = self.playlist_dict["menu_playlist"]
+        changed = False
 
         # menu screen
         if (
-            screen in constants.MAIN_MENU_SCREENS
+            screen in constants.MENU_SCREENS
             and self.current_playlist != self.playlist_dict["menu_playlist"]
         ):
-            self.fade_out_ambiance()
-            self.play_playlist(self.playlist_dict["menu_playlist"])
+            playlist = self.playlist_dict["menu_playlist"]
+            changed = True
 
         # other screens
         elif (
-            screen not in constants.MAIN_MENU_SCREENS
+            screen not in constants.MENU_SCREENS
             and self.current_playlist != self.biome_playlist
         ):
-            self.fade_out_ambiance()
-            self.play_playlist(self.biome_playlist)
+            playlist = self.biome_playlist
+            changed = True
+
+        if changed:
+            self.ready_playlist(playlist)
+            game.audio.ambiance.fade_out()
 
     def ready_playlist(self, playlist):
         """
         loads and plays random file from playlist, queues up next track
-        set loops to -1 to loop the chosen file
-        setting loops to number above zero will play the track that number of times before playing the queued track
         """
         self.current_playlist = playlist
         self.queued_track = None  # clear queue
@@ -83,16 +90,14 @@ class Ambiance:
 
         self.set_queued()
 
-    def play(self, track, loops=0, fade_ms=1000):
+    def play(self, track, fade_ms=1000):
         """
         plays the given track and sets volume
-        set loops to -1 to loop the chosen file
-        setting loops to number above zero will play the track that number of times before playing the queued track
         """
         self.current_track = track
         pygame.mixer.music.load(self.current_track)
         pygame.mixer.music.set_volume(self.volume)
-        pygame.mixer.music.play(loops, fade_ms=fade_ms)
+        pygame.mixer.music.play(fade_ms=fade_ms)
 
     def set_queued(self):
         """

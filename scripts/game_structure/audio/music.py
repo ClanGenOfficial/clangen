@@ -9,6 +9,7 @@ from scripts.game_structure import constants
 from scripts.game_structure.audio.timer import AudioTimer
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure.game.switches import switch_get_value, Switch
+from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
 
@@ -144,19 +145,19 @@ class Music:
         """
         checks if loaded music is appropriate for the given screen and stops playback if needed
         """
-        if not self.channel:
-            return
+        screen = switch_get_value(Switch.cur_screen)
 
         if (
-            screen in constants.MAIN_MENU_SCREENS
+            screen in constants.MENU_SCREENS
             and self.current_track_name not in self.available_music["menu_playlist"]
         ):
-            self.fade_out_music(delay=2)
+            self.choose()
+            self.play()
         elif (
-            screen not in constants.MAIN_MENU_SCREENS
+            screen not in constants.MENU_SCREENS
             and self.current_track_name in self.available_music["menu_playlist"]
         ):
-            self.fade_out_music()
+            self.fade_out()
 
     def play(self):
         """plays the loaded track"""
@@ -190,7 +191,6 @@ class Music:
     def unmute(self):
         """
         unpauses the current music track
-        :param screen: the screen that the player is currently viewing
         """
         # this just acts a bit weird on consecutive mutes/unmutes, not sure why, but if players aren't spam clicking
         # the mute button it likely won't be noticeable
@@ -202,14 +202,17 @@ class Music:
             self._stop_timers()
             self._start_music_timer(self.remaining_time_of_paused_track)
 
-    def fade_out(self, fadeout=2000):
+    def fade_out(self, fadeout=2000, delay=randint(120, 300)):
         """
         fades the music out, default fade is 2 seconds
         :param fadeout: length of fadeout in milliseconds
+        :param delay: this is used to dictate the length of the silence timer that begins when the music starts to fade.
+        If a new music track is going to play immediately after the initial track fades, then you need a small delay
+        between the two, otherwise the fade will get cut off or weird duplication will occur.
         """
         if self.channel and self.channel.get_busy():
             self.channel.fadeout(fadeout)
-            self._start_silence_timer()
+            self._start_silence_timer(delay)
             self.music_timer.cancel()
 
     def change_volume(self, new_volume):
@@ -235,7 +238,7 @@ class Music:
         self.music_timer.daemon = True
         self.music_timer.start()
 
-    def _start_silence_timer(self, duration=2):
+    def _start_silence_timer(self, duration=randint(120, 300)):
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
         """

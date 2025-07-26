@@ -26,6 +26,7 @@ class AudioManager:
 
         if not self.ambiance.get_busy():
             self.ambiance.check()
+            self.ambiance.play_queued()
 
         if not self.music.get_busy() and not self.music.live:
             self.music.check()
