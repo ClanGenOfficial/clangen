@@ -53,7 +53,7 @@
         ],
         "phantom pain": [
             "r_c can't give m_c answers - {PRONOUN/m_c/poss} tail is gone, and yet the pain in it remains.",
-            "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving {PRONOUN/m_c/ect} insane."
+            "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving {PRONOUN/m_c/object} insane."
         ]
     },
     "paralyzed": {
