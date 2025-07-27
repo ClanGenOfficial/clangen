@@ -32,13 +32,13 @@
             "m_c's bad leg is feeling particularly sore this moon."
         ],
         "joint pain": [
-            "m_c comes to r_c feeling like {PRONOUN/m_c/poss} weak leg is going to collapse under {PRONOUN/m_c/object} from the pain in its joints.",
+            "m_c comes to r_c feeling like {PRONOUN/m_c/poss} weak leg is going to collapse under {PRONOUN/m_c/ect} from the pain in its joints.",
             "{PRONOUN/m_c/subject/CAP} must have put a foot wrong or something - the joints in m_c's weak leg feel inflamed and painful."
         ]
     },
     "twisted leg": {
         "sore": [
-            "Seeing how m_c is slow to get up in the morning, r_c brings {PRONOUN/m_c/object} pain-relieving herbs for {PRONOUN/m_c/poss} twisted leg.",
+            "Seeing how m_c is slow to get up in the morning, r_c brings {PRONOUN/m_c/ect} pain-relieving herbs for {PRONOUN/m_c/poss} twisted leg.",
             "m_c is finding it hard to be cheerful with how sore {PRONOUN/m_c/poss} twisted leg is."
         ],
         "joint pain": [
@@ -53,12 +53,12 @@
         ],
         "phantom pain": [
             "r_c can't give m_c answers - {PRONOUN/m_c/poss} tail is gone, and yet the pain in it remains.",
-            "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving {PRONOUN/m_c/object} insane."
+            "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving {PRONOUN/m_c/ect} insane."
         ]
     },
     "paralyzed": {
         "an infected wound": [
-            "r_c brings m_c into the medicine cat den and starts searching - the sick stink of infection is coming from {PRONOUN/m_c/object}, but m_c hasn't noticed anything that could cause it.",
+            "r_c brings m_c into the medicine cat den and starts searching - the sick stink of infection is coming from {PRONOUN/m_c/ect}, but m_c hasn't noticed anything that could cause it.",
             "It seems that m_c got a scratch on a part of {PRONOUN/m_c/poss} body {PRONOUN/m_c/subject} can't feel. The wound went unnoticed until the stench of infection began to waft from it."
         ],
         "joint pain": [
@@ -77,7 +77,7 @@
     "raspy lungs": {
         "whitecough": [
             "r_c worst fears are realized as whitecough has infected m_c thanks to {PRONOUN/m_c/poss} weakened lungs.",
-            "m_c's weak lungs have left {PRONOUN/m_c/object} coughing and wheezing this moon, unable to resist potential sickness."
+            "m_c's weak lungs have left {PRONOUN/m_c/ect} coughing and wheezing this moon, unable to resist potential sickness."
         ]
     },
     "wasting disease": {
@@ -96,20 +96,20 @@
     },
     "one bad eye": {
         "failing eyesight": [
-            "m_c wanders directly into a rock on {PRONOUN/m_c/poss} bad side. r_c takes {PRONOUN/m_c/object} aside. Softly, {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} m_c {PRONOUN/m_c/poss} bad vision is worsening.",
+            "m_c wanders directly into a rock on {PRONOUN/m_c/poss} bad side. r_c takes {PRONOUN/m_c/ect} aside. Softly, {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} m_c {PRONOUN/m_c/poss} bad vision is worsening.",
             "m_c has noticed {PRONOUN/m_c/poss} vision growing blurrier and blurrier."
         ]
     },
     "failing eyesight": {
         "blind": [
-            "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c can do to help {PRONOUN/m_c/object}.",
+            "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c can do to help {PRONOUN/m_c/ect}.",
             "m_c's eyesight had only been getting worse. Now, it seems to have finally left altogether."
         ]
     },
     "partial hearing loss": {
         "deaf": [
             "r_c listens as m_c explains that it doesn't seem like {PRONOUN/m_c/subject} can hear the details of the world anymore.",
-            "m_c realizes one day that the noises around {PRONOUN/m_c/object} are no longer just quiet, but functionally silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost too much of {PRONOUN/m_c/poss} hearing."
+            "m_c realizes one day that the noises around {PRONOUN/m_c/ect} are no longer just quiet, but functionally silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost too much of {PRONOUN/m_c/poss} hearing."
         ]
     },
     "constant joint pain": {
@@ -130,7 +130,7 @@
     },
     "allergies": {
         "running nose": [
-            "r_c sighs to see m_c headed towards {PRONOUN/r_c/object} and goes to fix up {PRONOUN/r_c/poss} normal herbal mix, hoping that the allergic reaction m_c keeps having fades soon.",
+            "r_c sighs to see m_c headed towards {PRONOUN/r_c/ect} and goes to fix up {PRONOUN/r_c/poss} normal herbal mix, hoping that the allergic reaction m_c keeps having fades soon.",
             "Seems it's allergy season! m_c has been sneezing and sniffling all moon."
         ]
     },
@@ -165,7 +165,7 @@
         ],
         "torn pelt": [ 
             "m_c has no idea where these scratches came from, but they're certainly there.",
-            "m_c accidentally tore {PRONOUN/m_c/poss} pelt when {PRONOUN/m_c/obj} {VERB/m_c/were/was} wandering the territory."
+            "m_c accidentally tore {PRONOUN/m_c/poss} pelt when {PRONOUN/m_c/object} {VERB/m_c/were/was} wandering the territory."
         ]
     },
     "strange lump": {
@@ -174,7 +174,7 @@
             "Nobody expected m_c to have a seizure out of the blue like that. r_c worries it's due to {PRONOUN/m_c/poss} lump."
         ],
         "paralysis": [
-            "m_c woke up and realized {PRONOUN/m_c/obj} can't move {PRONOUN/m_c/poss} legs anymore...",
+            "m_c woke up and realized {PRONOUN/m_c/object} can't move {PRONOUN/m_c/poss} legs anymore...",
             "m_c reports a strange buzzing and severe weakness of {PRONOUN/m_c/poss}} legs."
         ],
         "redcough": [
