@@ -58,7 +58,7 @@
     },
     "paralyzed": {
         "an infected wound": [
-            "r_c brings m_c into the medicine cat den and starts searching - the sick stink of infection is coming from {PRONOUN/m_c/ect}, but m_c hasn't noticed anything that could cause it.",
+            "r_c brings m_c into the medicine cat den and starts searching - the sick stink of infection is coming from {PRONOUN/m_c/object}, but m_c hasn't noticed anything that could cause it.",
             "It seems that m_c got a scratch on a part of {PRONOUN/m_c/poss} body {PRONOUN/m_c/subject} can't feel. The wound went unnoticed until the stench of infection began to waft from it."
         ],
         "joint pain": [
