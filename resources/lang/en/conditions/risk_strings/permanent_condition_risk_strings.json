@@ -175,7 +175,7 @@
         ],
         "paralysis": [
             "m_c woke up and realized {PRONOUN/m_c/object} can't move {PRONOUN/m_c/poss} legs anymore...",
-            "m_c reports a strange buzzing and severe weakness of {PRONOUN/m_c/poss}} legs."
+            "m_c reports a strange buzzing and severe weakness of {PRONOUN/m_c/poss} legs."
         ],
         "redcough": [
             "m_c has finally started coughing up blood. The Clan has seen this before- that lump was poison.",
