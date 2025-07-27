@@ -85,6 +85,7 @@ class Clan:
             starting_members = []
 
         # name is the unique id of the clan. i'm sorry if this is confusing...
+        # TODO: change to better name like clan_id
         self.name = name
         # displayname is the name you should use whenever displaying the clan name in UI
         if not displayname:
