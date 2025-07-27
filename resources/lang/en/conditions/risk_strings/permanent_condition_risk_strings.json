@@ -32,7 +32,7 @@
             "m_c's bad leg is feeling particularly sore this moon."
         ],
         "joint pain": [
-            "m_c comes to r_c feeling like {PRONOUN/m_c/poss} weak leg is going to collapse under {PRONOUN/m_c/ect} from the pain in its joints.",
+            "m_c comes to r_c feeling like {PRONOUN/m_c/poss} weak leg is going to collapse beneath {PRONOUN/m_c/object} from the pain in its joints.",
             "{PRONOUN/m_c/subject/CAP} must have put a foot wrong or something - the joints in m_c's weak leg feel inflamed and painful."
         ]
     },
