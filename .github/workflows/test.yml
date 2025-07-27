@@ -56,7 +56,7 @@ jobs:
       - name: install dependencies
         run: uv sync --group test
       - name: Check json validity
-        run: uv run tests/test_json.py
+        run: uv run python -m test.test_json
       - name: Check json schemas
         run: uv run tests/test_json_schemas.py
   pronoun_test:
