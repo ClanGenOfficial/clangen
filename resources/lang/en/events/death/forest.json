@@ -1,34 +1,47 @@
 [
     {
         "event_id": "fst_death_war_any1",
-        "location": ["forest"],
+        "location": [
+            "forest"
+        ],
         "season": [
             "any"
         ],
-        "sub_type": [ "war" ],
-        "tags": [],
-        "weight": 20,
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
         "event_text": "m_c was killed by a falling branch during a battle in a heavily wooded area of the forest.",
         "m_c": {
-            "status": [ "apprentice", "warrior", "deputy", "leader"],
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
             "dies": true
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "reg_death": "m_c was crushed by a falling branch.",
-            "lead_death": "{VERB/m_c/were/was} crushed by a falling branch."
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c was crushed by a falling branch.",
+                "lead_death": "{VERB/m_c/were/was} crushed by a falling branch.",
+                "scar": ""
             }
         ]
     },
     {
         "event_id": "fst_death_dog_any1",
-        "location": ["forest"],
+        "location": [
+            "forest"
+        ],
         "season": [
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around {PRONOUN/m_c/object}.",
         "m_c": {
             "not_skill": [
@@ -44,7 +57,9 @@
         },
         "history": [
             {
-                "cats": ["m_c"],
+                "cats": [
+                    "m_c"
+                ],
                 "reg_death": "m_c fell out of a tree while trying to escape from a dog.",
                 "lead_death": "fell out of a tree while trying to escape a dog"
             }
@@ -52,70 +67,100 @@
     },
     {
         "event_id": "fst_death_tree_any1",
-        "location": ["forest"],
+        "location": [
+            "forest"
+        ],
         "season": [
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 1,
         "event_text": "m_c was crushed when a tree fell into camp.",
         "m_c": {
             "dies": true
         },
         "history": [
             {
-            "cats": ["m_c"],
-            "reg_death": "m_c was crushed by a falling tree.",
-            "lead_death": "{VERB/m_c/were/was} crushed by a falling tree"
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c was crushed by a falling tree.",
+                "lead_death": "{VERB/m_c/were/was} crushed by a falling tree"
             }
         ]
     },
     {
         "event_id": "gen_death_owl_anylead3",
-        "location": ["forest:camp1_camp2_camp4"],
+        "location": [
+            "forest:camp1_camp2_camp4"
+        ],
         "season": [
             "any"
         ],
         "tags": [
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was carried off by an owl, never to be seen again.",
         "m_c": {
             "age": [
-                "kitten", "adolescent"
+                "kitten",
+                "adolescent"
             ],
             "dies": true
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was carried away by an owl."
-        }]
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c was carried away by an owl."
+            }
+        ]
     },
     {
         "event_id": "gen_death_owl_any1",
-        "location": ["forest:camp1_camp2_camp4"],
+        "location": [
+            "forest:camp1_camp2_camp4"
+        ],
         "season": [
             "any"
         ],
-        "tags": ["no_body"],
-        "weight": 20,
-        "event_text": "r_c spotted a circling shadow and yowled a warning to m_c. {PRONOUN/r_c/subject/CAP} {VERB/m_c/were/was}n't fast enough to save m_c from the owl.",
+        "tags": [
+            "no_body"
+        ],
+        "frequency": 2,
+        "event_text": "r_c spotted a circling shadow and yowled a warning to m_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was}n't fast enough to save m_c from the owl.",
         "m_c": {
-            "age": [ "kitten", "adolescent"],
-            "status": [ "any" ],
+            "age": [
+                "kitten",
+                "adolescent"
+            ],
+            "status": [
+                "any"
+            ],
             "dies": true
         },
         "r_c": {
-            "age": ["any"],
-            "status": ["apprentice", "warrior", "deputy"],
+            "age": [
+                "any"
+            ],
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ],
             "not_skill": [
                 "RUNNER,2"
             ]
         },
-        "history": [{
-            "cats": ["m_c"],
-            "reg_death": "m_c was grabbed by an owl, never to be seen again."
-        }]
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "reg_death": "m_c was grabbed by an owl, never to be seen again."
+            }
+        ]
     }
 ]

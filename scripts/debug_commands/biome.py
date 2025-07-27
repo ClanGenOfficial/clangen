@@ -2,6 +2,7 @@ from typing import List
 
 from scripts.debug_commands import Command
 from scripts.debug_commands.utils import add_output_line_to_log
+from scripts.game_structure import constants
 from scripts.game_structure.game_essentials import game
 
 
@@ -21,7 +22,7 @@ class SetBiomeCommand(Command):
             return
 
         biome = args[0].casefold()
-        possible_biomes = [b.casefold() for b in game.clan.BIOME_TYPES]
+        possible_biomes = [b.casefold() for b in constants.BIOME_TYPES]
         if biome not in possible_biomes:
             text_biomes = ", ".join(["'" + b + "'" for b in possible_biomes])
             add_output_line_to_log(

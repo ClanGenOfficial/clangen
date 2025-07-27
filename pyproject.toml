@@ -17,13 +17,14 @@ requires-python = ">=3.10"
 dependencies = [
     "black~=23.0",
     "cryptography~=42.0",
+    "orjson~=3.10",
     "pgpy~=0.6",
     "platformdirs~=3.3",
     "pygame-ce~=2.2",
     "pygame-gui~=0.6",
     "requests~=2.28",
     "strenum~=0.4",
-    "orjson~=3.10",
+    "tomli>=2.2.1",
 ]
 
 [dependency-groups]

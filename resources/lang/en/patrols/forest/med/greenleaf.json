@@ -739,7 +739,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Tansy isn't mallow or dandelion, to be played with by kits. In high concentrations or potency, it can kill the elderly, pregnant, or compromised, and it will <i>definitely</i> make app1 sick if {PRONOUN/app1/subject} {VERB/app1/do/does}n't respect it.",
+                "text": "Tansy isn't mallow or dandelion, to be played with by kits. In high concentrations or potency, it can kill the elderly, pregnant, or compromised, and it will <i>definitely</i> make app1 sick if {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} respect it.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["tansy"],
@@ -920,7 +920,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Uh. Does p_l realize where it landed? r_c stifles a laugh, choking it into a purr as {PRONOUN/r_c/subject} {VERB/r_c/help/helps} p_l escape {PRONOUN/p_l/poss} inappropriately placed unwanted passenger, gently batting the butterfly off {PRONOUN/p_l/object}. p_l should take it as a compliment, {PRONOUN/r_c/subject} {VERB/r_c/suggest/suggests}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/does}n't blame the butterfly for mistaking p_l for a beautiful flower.",
+                "text": "Uh. Does p_l realize where it landed? r_c stifles a laugh, choking it into a purr as {PRONOUN/r_c/subject} {VERB/r_c/help/helps} p_l escape {PRONOUN/p_l/poss} inappropriately placed unwanted passenger, gently batting the butterfly off {PRONOUN/p_l/object}. p_l should take it as a compliment, {PRONOUN/r_c/subject} {VERB/r_c/suggest/suggests}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} blame the butterfly for mistaking p_l for a beautiful flower.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -2937,7 +2937,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20
             },
@@ -3047,7 +3047,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3186,7 +3186,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want to use these tattered, diseased-looking leaves.",
+                "text": "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} want to use these tattered, diseased-looking leaves.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -6459,7 +6459,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Thankfully, {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have to go far, and being among thyme's calming scent makes gathering it quite pleasant.",
+                "text": "Thankfully, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have to go far, and being among thyme's calming scent makes gathering it quite pleasant.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["thyme"]
@@ -6508,7 +6508,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Thankfully, {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have to go far, and being among thyme's calming scent makes gathering it quite pleasant. Both app1 and p_l enjoy the chance for a peaceful afternoon.",
+                "text": "Thankfully, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have to go far, and being among thyme's calming scent makes gathering it quite pleasant. Both app1 and p_l enjoy the chance for a peaceful afternoon.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["thyme"],
@@ -6619,7 +6619,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Thankfully, {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have to go far, and being among thyme's calming scent makes gathering it quite pleasant as the patrol settles in to nip off its leaves.",
+                "text": "Thankfully, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have to go far, and being among thyme's calming scent makes gathering it quite pleasant as the patrol settles in to nip off its leaves.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["thyme"],

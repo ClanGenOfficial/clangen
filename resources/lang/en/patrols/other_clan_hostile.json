@@ -788,7 +788,7 @@
                 ]
             },
             {
-                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to prove anything to s_c.",
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have to prove anything to s_c.",
                 "exp": 0,
                 "weight": 10,
                 "can_have_stat": ["p_l"],

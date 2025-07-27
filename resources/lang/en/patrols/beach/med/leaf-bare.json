@@ -2366,7 +2366,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "At least {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join {PRONOUN/p_l/object} up there, but eventually overcomes {PRONOUN/app1/poss} fear to leaf gather on a lower branch... <i>very</i> carefully.",
+                "text": "At least {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join {PRONOUN/p_l/object} up there, but eventually overcomes {PRONOUN/app1/poss} fear to leaf gather on a lower branch... <i>very</i> carefully.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["juniper"],
@@ -2592,7 +2592,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "At least {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins {PRONOUN/p_l/object}, tense and focused, and it's a weary group that returns back to camp as the sun dips toward the horizon, exhausted - but successful.",
+                "text": "At least {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins {PRONOUN/p_l/object}, tense and focused, and it's a weary group that returns back to camp as the sun dips toward the horizon, exhausted - but successful.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["juniper"],

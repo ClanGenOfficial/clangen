@@ -53,7 +53,7 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
 
     # we're just keeping this to living cats within the clan for now, more complexity can come later
     possible_cats = [
-        kitty for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside
+        kitty for kitty in Cat.all_cats.values() if kitty.status.alive_in_player_clan
     ]
 
     for new_role, cat_involved in future_info["involved_cats"].items():

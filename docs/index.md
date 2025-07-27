@@ -17,7 +17,3 @@ This wiki is intended to document the intended behavior of implemented systems a
 !!! important
     User guides are contributed by volunteers within the community and are not created directly by the ClanGen development team, nor are they maintained by the ClanGen development team.
 
-
-
-
-
