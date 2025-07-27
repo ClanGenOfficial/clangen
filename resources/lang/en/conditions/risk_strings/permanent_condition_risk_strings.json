@@ -38,7 +38,7 @@
     },
     "twisted leg": {
         "sore": [
-            "Seeing how m_c is slow to get up in the morning, r_c brings {PRONOUN/m_c/ect} pain-relieving herbs for {PRONOUN/m_c/poss} twisted leg.",
+            "Seeing how m_c is slow to get up in the morning, r_c brings {PRONOUN/m_c/object} pain-relieving herbs for {PRONOUN/m_c/poss} twisted leg.",
             "m_c is finding it hard to be cheerful with how sore {PRONOUN/m_c/poss} twisted leg is."
         ],
         "joint pain": [
