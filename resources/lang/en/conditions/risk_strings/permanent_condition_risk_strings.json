@@ -96,7 +96,7 @@
     },
     "one bad eye": {
         "failing eyesight": [
-            "m_c wanders directly into a rock on {PRONOUN/m_c/poss} bad side. r_c takes {PRONOUN/m_c/ect} aside. Softly, {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} m_c {PRONOUN/m_c/poss} bad vision is worsening.",
+            "m_c wanders directly into a rock on {PRONOUN/m_c/poss} bad side. r_c takes {PRONOUN/m_c/object} aside. Softly, {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} m_c {PRONOUN/m_c/poss} bad vision is worsening.",
             "m_c has noticed {PRONOUN/m_c/poss} vision growing blurrier and blurrier."
         ]
     },
