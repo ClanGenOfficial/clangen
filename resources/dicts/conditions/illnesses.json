@@ -738,13 +738,13 @@
     "tick illness": {
         "severity": "major",
         "mortality": {
-            "newborn": 40,
-            "kitten": 30,
+            "newborn": 80,
+            "kitten": 40,
             "adolescent": 30,
             "young adult": 20,
-            "adult": 20,
-            "senior adult": 30,
-            "senior": 50
+            "adult": 40,
+            "senior adult": 60,
+            "senior": 80
         },
         "medicine_mortality": {
             "newborn": 20,
@@ -755,8 +755,8 @@
             "senior adult": 15,
             "senior": 25
         },
-        "duration": 100,
-        "medicine_duration": 100,
+        "duration": 5,
+        "medicine_duration": 3,
         "infectiousness": 0,
         "risks": [],
         "herbs": {
