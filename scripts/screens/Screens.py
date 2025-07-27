@@ -83,14 +83,7 @@ class Screens:
             self.current_page = 1
 
         switch_set_value(Switch.cur_screen, new_screen)
-        if (
-            game.last_screen_forupdate in ("start screen", "events screen")
-            or switch_get_value(Switch.cur_screen) == "start screen"
-        ):
-            game.audio.check(
-                fade_out=game.last_screen_forupdate == "start screen"
-                and switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
-            )
+
         game.switch_screens = True
         game.rpc.update_rpc.set()
 
@@ -198,6 +191,15 @@ class Screens:
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
+        if (
+            game.last_screen_forupdate in ("start screen", "events screen")
+            or switch_get_value(Switch.cur_screen) == "start screen"
+        ):
+            game.audio.check(
+                fade_out=game.last_screen_forupdate == "start screen"
+                and switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
+            )
+
         Screens.hide_mute_buttons()
         Screens.hide_menu_buttons()
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons

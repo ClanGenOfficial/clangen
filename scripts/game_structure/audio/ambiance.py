@@ -1,5 +1,6 @@
 import logging
 import random
+from typing import Optional
 
 import pygame
 import ujson
@@ -15,18 +16,28 @@ logger = logging.getLogger(__name__)
 
 class Ambiance:
     def __init__(self):
-        self.camp_playing = None
-        self.season_playing = None
-        self.playlist_dict = {}
+        self.camp_playing: Optional[str] = None
+        """The camp that determined the current sounds"""
+        self.season_playing: Optional[str] = None
+        """The season that determined the current sounds"""
+        self.season_sound: Optional[pygame.Sound] = None
+        self.camp_sound: Optional[pygame.Sound] = None
 
-        self.current_playlist = []
+        self.camp_timer: Optional[AudioTimer] = None
+        self.season_timer: Optional[AudioTimer] = None
+        self.camp_silence_timer: Optional[AudioTimer] = None
+        self.season_silence_timer: Optional[AudioTimer] = None
 
-        self.biome_playlist = []
-        self.season_overlay_playlist = []
-        self.camp_overlay_playlist = []
+        self.playlist_dict: dict = {}
 
-        self.volume = game_setting_get("ambiance_volume") / 100
-        self.number_of_tracks = len(self.current_playlist)
+        self.current_playlist: list = []
+
+        self.biome_playlist: list = []
+        self.season_overlay_playlist: list = []
+        self.camp_overlay_playlist: list = []
+
+        self.volume: int = game_setting_get("ambiance_volume") / 100
+        self.number_of_tracks: int = len(self.current_playlist)
         self.current_track = None
         self.queued_track = None
 
@@ -62,6 +73,7 @@ class Ambiance:
             and self.current_playlist != self.playlist_dict["menu_playlist"]
         ):
             playlist = self.playlist_dict["menu_playlist"]
+            self.stop_overlay()
             changed = True
 
         # other screens
@@ -75,7 +87,7 @@ class Ambiance:
 
         if changed:
             self.ready_playlist(playlist)
-            game.audio.ambiance.fade_out()
+            self.fade_out()
 
     def ready_playlist(self, playlist):
         """
@@ -99,6 +111,18 @@ class Ambiance:
             self._start_camp_overlay_silence_timer()
         if self.season_overlay_playlist:
             self._start_season_overlay_silence_timer()
+
+    def stop_overlay(self):
+        if self.camp_timer and self.camp_timer.is_alive():
+            self.camp_sound.fadeout(300)
+            self.camp_timer.cancel()
+        elif self.camp_silence_timer:
+            self.camp_silence_timer.cancel()
+        if self.season_timer and self.season_timer.is_alive():
+            self.season_sound.fadeout(300)
+            self.season_timer.cancel()
+        elif self.camp_silence_timer:
+            self.season_silence_timer.cancel()
 
     def play(self, track, fade_ms=1000):
         """
@@ -211,8 +235,9 @@ class Ambiance:
         # find if we have any camp specific sounds
         if not self.camp_overlay_playlist or camp != self.camp_playing:
             self.camp_playing = camp
-            if self.playlist_dict[f"{biome.casefold()}"].get(camp.casefold()):
-                for path in self.playlist_dict[biome.casefold()][camp.casefold()]:
+            camp_name = camp.casefold().replace(" ", "_")
+            if self.playlist_dict[f"{biome.casefold()}"].get(camp_name):
+                for path in self.playlist_dict[biome.casefold()][camp_name]:
                     self.camp_overlay_playlist.append(
                         pygame.mixer.Sound(f"resources/audio/ambiance/" + path)
                     )
@@ -242,6 +267,8 @@ class Ambiance:
         Starts a timer thread for the given duration. When the thread finishes, the silence timer will begin.
         :param duration: This should be the duration of the currently playing season overlay sound
         """
+        if self.season_timer and self.season_timer.is_alive():
+            return
         self.season_timer = AudioTimer(
             duration, self._start_season_overlay_silence_timer
         )
@@ -252,6 +279,8 @@ class Ambiance:
         """
         Starts a timer thread for a random amount of silence. When thread finishes, a new season overlay sound will play.
         """
+        if self.season_silence_timer and self.season_silence_timer.is_alive():
+            return
         self.season_silence_timer = AudioTimer(
             random.randint(20, 50), self.play_season_overlay
         )
@@ -259,21 +288,24 @@ class Ambiance:
         self.season_silence_timer.start()
 
     def play_season_overlay(self):
-        track = random.choice(self.season_overlay_playlist)
-        track.set_volume(self.overlay_volume)
+        self.season_sound = random.choice(self.season_overlay_playlist)
+        self.season_sound.set_volume(self.overlay_volume)
         if pygame.mixer.find_channel():
             print("played season overlay")
-            track.play(fade_ms=4000)
-            self._start_season_overlay_timer(track.get_length())
+            self.season_sound.play(fade_ms=4000)
+            self._start_season_overlay_timer(self.season_sound.get_length())
         # TODO: what happens if no channel found?
 
     def _start_camp_overlay_timer(self, duration):
-        # get length of sound
+        if self.camp_timer and self.camp_timer.is_alive():
+            return
         self.camp_timer = AudioTimer(duration, self._start_camp_overlay_silence_timer)
         self.camp_timer.daemon = True
         self.camp_timer.start()
 
     def _start_camp_overlay_silence_timer(self):
+        if self.camp_silence_timer and self.camp_silence_timer.is_alive():
+            return
         self.camp_silence_timer = AudioTimer(
             random.randint(20, 50), self.play_camp_overlay
         )
@@ -281,10 +313,10 @@ class Ambiance:
         self.camp_silence_timer.start()
 
     def play_camp_overlay(self):
-        track = random.choice(self.camp_overlay_playlist)
-        track.set_volume(self.overlay_volume)
+        self.camp_sound = random.choice(self.camp_overlay_playlist)
+        self.camp_sound.set_volume(self.overlay_volume)
         if pygame.mixer.find_channel():
             print("played camp overlay")
-            track.play(fade_ms=4000)
-            self._start_camp_overlay_timer(track.get_length())
+            self.camp_sound.play(fade_ms=4000)
+            self._start_camp_overlay_timer(self.camp_sound.get_length())
         # TODO: what happens if no channel found?

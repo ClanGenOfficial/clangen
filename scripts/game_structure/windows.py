@@ -328,7 +328,7 @@ class SaveCheck(UIWindow):
         self.set_blocking(True)
 
     def process_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if event.type == pygame_gui.UI_BUTTON_PRESSED:
             if event.ui_element == self.main_menu_button:
                 if self.isMainMenu:
                     game.is_close_menu_open = False

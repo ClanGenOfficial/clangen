@@ -225,6 +225,8 @@ class Music:
         """
         sets a timer for the length of the track.  When the timer ends, silence timer is activated.
         """
+        if self.music_timer and self.music_timer.is_alive():
+            return
         if not duration:
             duration = self.loaded_track.get_length()
         self.music_timer = AudioTimer(duration, self._start_silence_timer)
@@ -236,6 +238,8 @@ class Music:
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
         :param duration: length of silence in seconds, by default this is a random duration between 120 and 300 seconds
         """
+        if self.silence_timer and self.silence_timer.is_alive():
+            return
         self._clear()
         self.silence_timer = AudioTimer(duration, self.play)
         self.silence_timer.daemon = True
