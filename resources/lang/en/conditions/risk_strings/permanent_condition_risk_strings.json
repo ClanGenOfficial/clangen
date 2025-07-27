@@ -102,7 +102,7 @@
     },
     "failing eyesight": {
         "blind": [
-            "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c can do to help {PRONOUN/m_c/ect}.",
+            "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c can do to help {PRONOUN/m_c/object}.",
             "m_c's eyesight had only been getting worse. Now, it seems to have finally left altogether."
         ]
     },
