@@ -112,14 +112,22 @@ class Ambiance:
         if self.season_overlay_playlist:
             self._start_season_overlay_silence_timer()
 
-    def stop_overlay(self):
+    def stop_overlay(self, fadeout: bool = True):
+        """
+        Stops any overlay sounds from playing
+        :param fadeout: set True if playing sounds should fade, False if they should stop immediately
+        """
+        if fadeout:
+            fade = 300
+        else:
+            fade = 0
         if self.camp_timer and self.camp_timer.is_alive():
-            self.camp_sound.fadeout(300)
+            self.camp_sound.fadeout(fade)
             self.camp_timer.cancel()
         elif self.camp_silence_timer:
             self.camp_silence_timer.cancel()
         if self.season_timer and self.season_timer.is_alive():
-            self.season_sound.fadeout(300)
+            self.season_sound.fadeout(fade)
             self.season_timer.cancel()
         elif self.camp_silence_timer:
             self.season_silence_timer.cancel()
@@ -177,12 +185,12 @@ class Ambiance:
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.fadeout(fadeout)
 
-    @staticmethod
-    def mute():
+    def mute(self):
         """
         pauses current ambiance track
         """
         pygame.mixer.music.pause()
+        self.stop_overlay(fadeout=False)
 
     def unmute(self):
         """
@@ -205,6 +213,10 @@ class Ambiance:
         game_setting_set("ambiance_volume", new_volume)
         if pygame.mixer.music.get_busy():
             pygame.mixer.music.set_volume(self.volume)
+        if self.season_sound:
+            self.season_sound.set_volume(self.overlay_volume)
+        if self.camp_sound:
+            self.camp_sound.set_volume(self.overlay_volume)
 
     def _find_ambiance(self):
         """
