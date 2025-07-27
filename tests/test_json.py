@@ -7,12 +7,13 @@
 HOWEVER,
  Please keep the raw python script, so it can be run by the tests/encoding_test GitHub action.
 
+ Run with: `python3 -m test.test_json` or else the json shim import won't work
 """
 import os
 import sys
 import unittest
 
-import json as ujson
+import scripts.json_shim as ujson
 
 
 def test():
