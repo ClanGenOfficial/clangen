@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-import ujson
+import scripts.json_shim as ujson
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.switches import Switch, switch_get_value

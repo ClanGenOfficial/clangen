@@ -3,7 +3,7 @@ from pathlib import Path
 from shutil import move as shutil_move
 from typing import Union, List
 
-import ujson
+import scripts.json_shim as ujson
 
 from scripts.housekeeping.datadir import get_temp_dir, get_save_dir
 

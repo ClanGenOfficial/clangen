@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from typing import TYPE_CHECKING, Type, List
 
-import ujson
+import scripts.json_shim as ujson
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.settings.settings import game_setting_get

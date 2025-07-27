@@ -1,5 +1,5 @@
 from pygame import Cursor, image, SYSTEM_CURSOR_ARROW
-import ujson
+import scripts.json_shim as ujson
 import tomllib
 
 # this is just to make referencing main menu screens as a whole easier,

@@ -2,7 +2,7 @@ import traceback
 from pathlib import Path
 from typing import Any, Tuple, Generator
 
-import ujson
+import scripts.json_shim as ujson
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.housekeeping.datadir import get_save_dir
