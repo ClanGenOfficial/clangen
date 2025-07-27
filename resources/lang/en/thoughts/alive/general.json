@@ -4942,7 +4942,7 @@
         "id": "partial_hearing_loss_gen_to_alive_gen",
         "thoughts": [
             "Happily teaches r_c how to read whisker twitches",
-            "Is grateful r_c always makes sure to involve {PRONOUN/m_c/subject} in conversation",
+            "Is grateful r_c always makes sure to involve {PRONOUN/m_c/object} in conversation",
             "Gives up on understanding r_c today"
         ],
         "random_living_status": ["living"],

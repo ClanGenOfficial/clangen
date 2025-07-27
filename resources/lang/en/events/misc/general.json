@@ -4724,7 +4724,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "Someone has been hunting in c_n territory, a stranger without a Clan scent. c_n doesn't know their face, but they memorise their smell.",
+        "event_text": "Someone has been hunting in c_n territory, a stranger without a Clan scent. c_n doesn't know {PRONOUN/n_c:0/poss} face, but they memorize {PRONOUN/n_c:0/poss} smell.",
         "m_c": {
             "age": [
                 "adolescent",

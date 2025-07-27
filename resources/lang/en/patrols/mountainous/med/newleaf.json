@@ -3119,7 +3119,7 @@
                 ]
             },
             {
-                "text": "While the mallow shrubs are soft in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. Newleaf not only brings mallow, but betony, too - the herb store wouldn't suffer from another pawful of it. {PRONOUN/p_l/subject/CAP} test app1 on {PRONOUN/app1/poss} knowledge as they work, and the apprentice passes with flying colors.",
+                "text": "While the mallow shrubs are soft in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. Newleaf not only brings mallow, but betony, too - the herb store wouldn't suffer from another pawful of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/test/tests} app1 on {PRONOUN/app1/poss} knowledge as they work, and the apprentice passes with flying colors.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "mallow", "betony"],
