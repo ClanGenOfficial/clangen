@@ -56,11 +56,10 @@
             "daisy",
             "juniper",
             "marigold",
-            "ragwort"
+            "ragwort",
+            "poppy"
         ],
-            "2": [
-                "poppy"
-            ],
+            "2": [],
             "3": []
         }
     },
@@ -130,12 +129,11 @@
             "daisy",
             "juniper",
             "marigold",
-            "ragwort"
+            "ragwort",
+            "poppy"
         ],
             "2": [],
-            "3": [
-                "poppy"
-            ]
+            "3": []
         }
     },
     "twisted leg": {
@@ -168,12 +166,11 @@
             "daisy",
             "juniper",
             "marigold",
-            "ragwort"
+            "ragwort",
+            "poppy"
         ],
             "2": [],
-            "3": [
-                "poppy"
-            ]
+            "3": []
         }
     },
     "lost their tail": {
@@ -204,12 +201,11 @@
         "herbs": {
             "1": [
             "juniper",
-            "ragwort"
+            "ragwort",
+            "poppy"
         ],
             "2": [],
-            "3": [
-                "poppy"
-            ]
+            "3": []
         }
     },
     "born without a tail": {
@@ -273,12 +269,11 @@
             "daisy",
             "juniper",
             "ragwort",
-            "marigold"
+            "marigold",
+            "poppy"
         ],
             "2": [],
-            "3": [
-                "poppy"
-            ]
+            "3": []
         }
     },
     "raspy lungs": {
@@ -745,8 +740,7 @@
         "herbs": {
             "1": [
             "thyme",
-            "juniper",
-            "poppy"
+            "juniper"
         ],
             "2": [],
             "3": []
