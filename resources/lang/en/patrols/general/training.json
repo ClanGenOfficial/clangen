@@ -10902,7 +10902,7 @@
                 "stat_trait": ["ambitious", "loyal", "responsible", "righteous", "wise"],
                 "relationships": [
                     {
-                        "cats_to": ["app2"],
+                        "cats_to": ["app1"],
                         "cats_from": ["p_l"],
 			"mutual": true,
                         "values": ["respect", "comfort", "trust"],
