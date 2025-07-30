@@ -1247,23 +1247,24 @@ class Events:
                     # assign chance to become med app depending on current med cat and traits
                     chance = constants.CONFIG["roles"]["base_medicine_app_chance"]
                     print(f"Medcat app {cat.name} starting chance: {chance}")
-                    if has_elder_med == med_cat_list:
-                        # These chances apply if all the current medicine cats are elders.
-                        if has_med:
-                            chance = int(chance / 2.22)
-                            print(f"Senior medicine cat")
-                            print(f"Chance updated to {chance}")
-                        else:
-                            chance = int(chance / 13.67)
-                            print(f"Senior medicine cat")
-                            print (f"Not enough healthy medicine cats")
-                            print(f"Chance updated to {chance}")
-                            if has_med_app:
-                                chance = int(chance * 3.5)
-                                print(f"There is a medicine cat apprentice")
+                    if not very_old_med:
+                        if has_elder_med == med_cat_list:
+                            # These chances apply if all the current medicine cats are elders.
+                            if has_med:
+                                chance = int(chance / 2.22)
+                                print(f"Senior medicine cat")
                                 print(f"Chance updated to {chance}")
+                            else:
+                                chance = int(chance / 13.67)
+                                print(f"Senior medicine cat")
+                                print (f"Not enough healthy medicine cats")
+                                print(f"Chance updated to {chance}")
+                                if has_med_app:
+                                    chance = int(chance * 3.5)
+                                    print(f"There is a medicine cat apprentice")
+                                    print(f"Chance updated to {chance}")
 
-                    elif very_old_med == med_cat_list:
+                    if very_old_med == med_cat_list:
                         # These chances apply is all the current medicine cats are very old.
                         if has_med:
                             chance = int(chance / 3)
