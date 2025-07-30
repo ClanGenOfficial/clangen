@@ -845,7 +845,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 pounces on the little creature and misses, but {PRONOUN/app1/subject} {VERB/app1/do/does}n't seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
+                "text": "app1 pounces on the little creature and misses, but {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -3118,7 +3118,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "app1 doesn't want to go far with bad weather incoming - but {PRONOUN/app1/subject} {VERB/app1/do/does}n't have to. Only a dozen fox-lengths from camp, an oak tree is shedding acorns like raindrops. {PRONOUN/app1/subject/CAP} {VERB/app1/wait/waits} there, alert and patient, ambushing three f_tp_p before heading home to a warm dry nest and an impressed mentor.",
+                "text": "app1 doesn't want to go far with bad weather incoming - but {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} have to. Only a dozen fox-lengths from camp, an oak tree is shedding acorns like raindrops. {PRONOUN/app1/subject/CAP} {VERB/app1/wait/waits} there, alert and patient, ambushing three f_tp_p before heading home to a warm dry nest and an impressed mentor.",
                 "exp": 25,
                 "weight": 20,
                 "stat_trait": ["calm", "careful", "nervous", "thoughtful"],

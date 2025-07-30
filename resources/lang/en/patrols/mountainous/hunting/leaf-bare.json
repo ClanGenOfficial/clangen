@@ -1938,7 +1938,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Drat! p_l hesitated too long and the bird flew off! {PRONOUN/p_l/subject/CAP} still {VERB/p_l/do/does}n't know if {PRONOUN/p_l/subject} could have caught it!",
+                "text": "Drat! p_l hesitated too long and the bird flew off! {PRONOUN/p_l/subject/CAP} still {VERB/p_l/don't/doesn't} know if {PRONOUN/p_l/subject} could have caught it!",
                 "exp": 0,
                 "weight": 20
             },
@@ -4595,7 +4595,7 @@
                 ]
             },
             {
-                "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} been tracking a kea's night nest, app1 explains, and - look could p_l just help {PRONOUN/app1/object}? Which is how p_l finds {PRONOUN/p_l/self} setting up an ambush for the kea at midnight, like a hare-brain. Even worse, it <i>works,</i> both deeply impressing and worrying p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/do/does}n't want app1 encouraged to attempt these adventures.",
+                "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} been tracking a kea's night nest, app1 explains, and - look could p_l just help {PRONOUN/app1/object}? Which is how p_l finds {PRONOUN/p_l/self} setting up an ambush for the kea at midnight, like a hare-brain. Even worse, it <i>works,</i> both deeply impressing and worrying p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want app1 encouraged to attempt these adventures.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"],

@@ -190,7 +190,7 @@
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject} {VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
+                "text": "app1 goes to an herb patch {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure {PRONOUN/app1/subject} {VERB/app1/know/knows}, only to find the plants withered and dead. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} {VERB/app1/find/finds} a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs"]
@@ -2440,7 +2440,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} a bit stiff, sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} a bit stiff, sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2529,7 +2529,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} a bit stiff, sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} a bit stiff, sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2707,7 +2707,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} a bit stiff, sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} a bit stiff, sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],
@@ -2884,7 +2884,7 @@
                 ]
             },
             {
-                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} a bit stiff, sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
+                "text": "p_l is determined to prove {PRONOUN/p_l/self} to the other apprentices, and fortunately {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} push it too far. Despite {PRONOUN/p_l/poss} enthusiasm, {PRONOUN/p_l/subject} {VERB/p_l/avoid/avoids} bossing everyone around, and instead {VERB/p_l/encourage/encourages} the patrol in their duties. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} a bit stiff, sure, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not unlikeable!",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "moss"],

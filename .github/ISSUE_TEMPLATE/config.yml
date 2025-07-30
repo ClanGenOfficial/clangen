@@ -3,3 +3,6 @@ contact_links:
   - name: Bug - Typo (misspellings/improper grammar)
     url: https://github.com/ClanGenOfficial/clangen/issues/1818
     about: Report an issue with text itself (spelling, punctuation, and grammar).
+  - name: Bug - Event Too Frequent/Infrequent
+    url: https://github.com/ClanGenOfficial/clangen/issues/3896
+    about: Report feedback on specific events being too frequent or infrequent.

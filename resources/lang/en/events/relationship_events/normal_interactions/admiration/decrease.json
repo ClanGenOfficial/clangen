@@ -16,7 +16,6 @@
 			"r_c tells m_c to smile more.",
 			"m_c had a funny dream about r_c and can't take {PRONOUN/r_c/object} seriously now.",
 			"r_c is talking to m_c, but {PRONOUN/m_c/subject} can't stop noticing the mud on r_c's pelt."
-
 		]
 	},
 	{
@@ -69,7 +68,8 @@
 			"m_c saw r_c ignore someone.",
 			"m_c wishes r_c would act more maturely.",
 			"r_c said something about a Clanmate that concerned m_c.",
-			"r_c kept getting distracted while helping m_c and nearly got {PRONOUN/m_c/object} hurt."
+			"m_c and r_c argue over a piece of fresh-kill.",
+			"r_c panics over something that m_c finds trivial."
 		]
 	},
 	{
@@ -84,12 +84,33 @@
 			"m_c and r_c talk about a Clanmate and realize they have very different opinions on them.",
 			"r_c tripped m_c. m_c doubts it was an accident.",
 			"m_c scolds r_c for something trivial.",
-			"m_c and r_c argue over a piece of fresh-kill.",
-			"r_c panics over something that m_c finds trivial."
+			"r_c kept getting distracted while helping m_c and nearly got {PRONOUN/m_c/object} hurt."
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
-		}
+		},
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	},
 	{
 		"id": "admire_de_medium3",
@@ -223,6 +244,28 @@
 		],
 		"reaction_random_cat": {
 			"admiration": "decrease"
-		}
+		},
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
 	}
 ]
