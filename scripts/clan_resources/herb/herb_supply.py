@@ -118,7 +118,7 @@ class HerbSupply:
         """
         returns the lowest qualifier for a low supply
         """
-        return 1
+        return 0
 
     @property
     def adequate_qualifier(self) -> int:
@@ -286,7 +286,7 @@ class HerbSupply:
             self.total_of_herb(lowest_herb) + self.total_of_herb(highest_herb)
         ) / 2
 
-        if self.low_qualifier <= average_count <= self.adequate_qualifier:
+        if self.low_qualifier < average_count <= self.adequate_qualifier:
             return Supply.LOW
         if self.adequate_qualifier < average_count <= self.full_qualifier:
             return Supply.ADEQUATE
@@ -335,9 +335,10 @@ class HerbSupply:
         """
         returns int total supply of given herb
         """
-        return sum(
-            [stock for stock in self.storage.get(herb, [0])]
-        ) + self.collected.get(herb, 0)
+        return int(
+            sum([stock for stock in self.storage.get(herb, [0])])
+            + self.collected.get(herb, 0)
+        )
 
     def get_highest_herb_in_group(self, group) -> str:
         """
@@ -369,7 +370,7 @@ class HerbSupply:
         :param herb: herb to remove
         :param num_removed: POSITIVE number of herbs to remove
         """
-        surplus = self._remove_from_storage(herb, num_removed)
+        surplus = self._remove_from_storage(herb, int(num_removed))
 
         if surplus and self.collected.get(herb, []):
             self.collected[herb] -= surplus

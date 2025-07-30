@@ -1,14 +1,14 @@
 {
   "general": {
     "body": [
-        "m_c's vigil is doubly hard for r_c, who took such comfort in {PRONOUN/r_c/poss} mate's steady presence that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't know how {PRONOUN/r_c/subject}'ll face this loss without {PRONOUN/m_c/object}.",
+        "m_c's vigil is doubly hard for r_c, who took such comfort in {PRONOUN/r_c/poss} mate's steady presence that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} know how {PRONOUN/r_c/subject}'ll face this loss without {PRONOUN/m_c/object}.",
         "Who can r_c turn to for comfort in the wake of m_c's death? {PRONOUN/r_c/subject/CAP} relied on m_c more than any other cat, but now m_c is gone.",
         "r_c is inconsolable in the wake of m_c's death. {PRONOUN/r_c/poss/CAP} mate was such a source of strength and peace. What will r_c do without {PRONOUN/m_c/object}?",
         "r_c would give anything to press {PRONOUN/r_c/poss} muzzle against m_c's one last time and breathe in {PRONOUN/m_c/poss} sweet scent. Now, the only scent on m_c is that of death.",
         "r_c tries to take comfort in {PRONOUN/r_c/poss} Clanmates during m_c's vigil, but it just isn't the same as {PRONOUN/r_c/poss} mate."
     ],
     "no_body": [
-      "m_c's vigil is doubly hard for r_c, who took such comfort in {PRONOUN/r_c/poss} mate's steady presence that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't know how {PRONOUN/r_c/subject}'ll face this loss without {PRONOUN/m_c/object}.",
+      "m_c's vigil is doubly hard for r_c, who took such comfort in {PRONOUN/r_c/poss} mate's steady presence that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} know how {PRONOUN/r_c/subject}'ll face this loss without {PRONOUN/m_c/object}.",
       "Who can r_c turn to for comfort in the wake of m_c's death? {PRONOUN/r_c/subject/CAP} relied on m_c more than any other cat, but now m_c is gone.",
       "r_c is inconsolable in the wake of m_c's death. {PRONOUN/r_c/poss/CAP} mate was such a source of strength and peace. What will r_c do without {PRONOUN/m_c/object}?",
       "r_c would give anything to press {PRONOUN/r_c/poss} muzzle against m_c's one last time and breathe in {PRONOUN/m_c/poss} sweet scent, but there is no body to bury.",

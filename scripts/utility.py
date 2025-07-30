@@ -14,7 +14,7 @@ from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
-from typing import List, Tuple, TYPE_CHECKING, Type, Union
+from typing import List, Tuple, TYPE_CHECKING, Type, Union, Optional
 
 import i18n
 import pygame
@@ -24,7 +24,6 @@ from pygame_gui.core import ObjectID
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure.game.settings import game_settings_save, game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.cat.status import StatusDict
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,
@@ -264,7 +263,13 @@ def change_clan_relations(other_clan, difference):
 
 
 def create_new_cat_block(
-    Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]
+    Cat: Optional["Cat"],
+    Relationship,
+    event,
+    in_event_cats: dict,
+    i: int,
+    attribute_list: List[str],
+    other_clan=None,
 ) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
@@ -380,9 +385,6 @@ def create_new_cat_block(
             rank = match.group(1)
             break
 
-    # GROUP - # for now, this just gets set to None. event formats don't yet pass group info
-    cat_group = None
-
     # SET AGE
     age = None
     for _tag in attribute_list:
@@ -422,6 +424,8 @@ def create_new_cat_block(
         elif rank == CatRank.ELDER:
             age = randint(Cat.age_moons["senior"][0], Cat.age_moons["senior"][1])
 
+    cat_group = None
+
     if "kittypet" in attribute_list:
         cat_social = CatSocial.KITTYPET
     elif "rogue" in attribute_list:
@@ -430,7 +434,10 @@ def create_new_cat_block(
         cat_social = CatSocial.LONER
     elif "clancat" in attribute_list or "former Clancat" in attribute_list:
         cat_social = CatSocial.CLANCAT
-        cat_group = choice(game.clan.other_clans)
+        if other_clan:
+            cat_group = other_clan.enum
+        else:
+            cat_group = choice(game.clan.other_clans)
     else:
         cat_social = choice([CatSocial.KITTYPET, CatSocial.LONER, "former Clancat"])
 
@@ -522,7 +529,7 @@ def create_new_cat_block(
         thought = i18n.t("hardcoded.thought_new_dead")
 
     # check if we can use an existing cat here
-    chosen_cat = None
+    chosen_cat: Optional["Cat"] = None
     if "exists" in attribute_list:
         existing_outsiders = [
             i for i in Cat.all_cats.values() if i.status.is_outsider and not i.dead
@@ -546,7 +553,7 @@ def create_new_cat_block(
             elif not outside:
                 chosen_cat.add_to_clan()
                 if chosen_cat.status.rank != rank:
-                    chosen_cat.rank_change(resort=True)
+                    chosen_cat.rank_change(new_rank=CatRank(rank), resort=True)
             elif outside:
                 # updates so that the clan is marked as knowing of this cat
                 current_standing = chosen_cat.status.get_standing_with_group(
@@ -833,12 +840,12 @@ def create_new_cat(
             if new_cat.status.rank != rank:
                 new_cat.status._change_rank(CatRank(rank))
             # give apprentice aged cat a mentor
-            if new_cat.status.rank in (
-                CatRank.APPRENTICE,
-                CatRank.MEDICINE_APPRENTICE,
-                CatRank.MEDIATOR_APPRENTICE,
-            ):
+            if new_cat.status.rank.is_any_apprentice_rank():
                 new_cat.update_mentor()
+                # ensuring that any cats joining as an apprentice will display the correct skills
+                new_cat.skills.primary.interest_only = True
+                if new_cat.skills.secondary:
+                    new_cat.skills.secondary.interest_only = True
 
         # NAMES and accs
         # clancat adults should have already generated with a clan-ish name, thus they skip all of this re-naming
@@ -848,7 +855,7 @@ def create_new_cat(
         ):
             # babies change name, in case their initial name isn't clan-ish
             new_cat.change_name()
-        else:
+        elif not original_group or not original_group.is_other_clan_group():
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:
                 name = choice(names.names_dict["loner_names"])
@@ -1776,9 +1783,15 @@ def get_other_clan_relation(relation):
 
 
 def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
-    """Helper function for add_pronouns. If raise_exception is
-    False, any error in pronoun formatting will not raise an
-    exception, and will use a simple replacement "error" """
+    """
+    Helper function for add_pronouns.
+    :param m: Snippet to pronounify
+    :param cat_pronouns_dict: Cats to pronounify
+    :param raise_exception: If True, will raise an exception if a mistake is found. Necessary for tests!
+    :return: Appropriate pronoun/verb/adjective
+    :raises KeyError: if cat doesn't have requested pronoun
+    :raises IndexError: if cat doesn't have requested pronoun
+    """
 
     # Add protection about the "insert" sometimes used
     if m.group(0) == "{insert}":
@@ -1794,14 +1807,19 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
             for cat in inner_details[1].split("+"):
                 try:
                     catlist.append(cat_pronouns_dict[cat][1])
-                except KeyError:
+                except KeyError as e:
                     print(f"Missing pronouns for {cat}")
+                    if raise_exception:
+                        raise e
                     continue
             d = determine_plural_pronouns(catlist)
         else:
             try:
                 d = cat_pronouns_dict[inner_details[1]][1]
-            except KeyError:
+            except KeyError as e:
+                if raise_exception:
+                    raise e
+
                 if inner_details[0].upper() == "ADJ":
                     # find the default - this is a semi-expected behaviour for the adj tag as it may be called when
                     # there is no relevant cat
@@ -1992,7 +2010,6 @@ def find_special_list_types(text):
     """
     senses = []
     list_text = None
-    list_type = None
     words = text.split(" ")
     for bit in words:
         if "_list" in bit:

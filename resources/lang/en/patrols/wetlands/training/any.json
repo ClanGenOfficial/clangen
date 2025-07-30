@@ -931,7 +931,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back. {PRONOUN/s_c/subject/CAP} {VERB/s_c/watch/watches} the insect scurry from one paw to the other, so entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice {PRONOUN/app1/poss} own skill in catching and keeping the bug.",
+                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back. {PRONOUN/s_c/subject/CAP} {VERB/s_c/watch/watches} the insect scurry from one paw to the other, so entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice {PRONOUN/app1/poss} own skill in catching and keeping the bug.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"]
@@ -1092,7 +1092,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "p_l tries to share the long ago history of the safe refuge the swamps offered - but app1 throws back {PRONOUN/app1/poss} head and yowls. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't <i>care</i> what some ancient cat did; {PRONOUN/app1/subject} <i>{VERB/app1/hate/hates}</i> this. Water is awful!",
+                    "text": "p_l tries to share the long ago history of the safe refuge the swamps offered - but app1 throws back {PRONOUN/app1/poss} head and yowls. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} <i>care</i> what some ancient cat did; {PRONOUN/app1/subject} <i>{VERB/app1/hate/hates}</i> this. Water is awful!",
                     "exp": 0,
                     "weight": 20,
                     "art": "gen_train_argue",

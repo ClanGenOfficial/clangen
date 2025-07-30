@@ -502,6 +502,8 @@ class UIModifiedScrollingContainer(
         should_grow_automatically=True,
         anchors=None,
     ):
+        self.scroll_bar_starting_height = 1
+
         super().__init__(
             relative_rect=relative_rect,
             manager=manager,
@@ -514,7 +516,7 @@ class UIModifiedScrollingContainer(
             should_grow_automatically=should_grow_automatically,
             anchors=anchors,
         )
-
+        self.scroll_bar_starting_height = self.get_top_layer()
         if self.allow_scroll_y:
             self.vert_scroll_bar.kill()
             self.vert_scroll_bar = None
@@ -533,7 +535,7 @@ class UIModifiedScrollingContainer(
                 manager=self.ui_manager,
                 container=self._root_container,
                 parent_element=self,
-                starting_height=10,
+                starting_height=self.scroll_bar_starting_height,
                 anchors={
                     "left": "right",
                     "right": "right",
@@ -573,7 +575,7 @@ class UIModifiedScrollingContainer(
                     "bottom": "bottom",
                 },
                 visible=True,
-                starting_height=10,
+                starting_height=self.scroll_bar_starting_height,
             )
             self.horiz_scroll_bar.set_dimensions((self.relative_rect.width, 0))
             self.horiz_scroll_bar.set_relative_position((0, 0))
@@ -607,11 +609,11 @@ class UIModifiedScrollingContainer(
         super()._sort_out_element_container_scroll_bars()
 
         if self.vert_scroll_bar:
-            self.vert_scroll_bar.change_layer(9)
+            self.vert_scroll_bar.change_layer(self.scroll_bar_starting_height)
             self.vert_scroll_bar.show()
 
         if self.horiz_scroll_bar:
-            self.horiz_scroll_bar.change_layer(9)
+            self.horiz_scroll_bar.change_layer(self.scroll_bar_starting_height)
             self.horiz_scroll_bar.show()
 
     def _check_scroll_bars(self) -> Tuple[bool, bool]:

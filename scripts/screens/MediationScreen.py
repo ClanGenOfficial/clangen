@@ -556,6 +556,7 @@ class MediationScreen(Screens):
             object_id="#text_box_22_horizleft_spacing_95",
             manager=MANAGER,
         )
+        self.selected_cat_elements["col1" + tag].disable()
 
         mates = False
         if len(cat.mate) > 0:
@@ -567,9 +568,16 @@ class MediationScreen(Screens):
         else:
             col2 = i18n.t("general.mate_none")
 
+        self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(
+            col2,
+            ui_scale(pygame.Rect((x + 110, y + 126), (80, -1))),
+            object_id="#text_box_22_horizleft_spacing_95",
+            manager=MANAGER,
+        )
+        self.selected_cat_elements["col2" + tag].disable()
+
         # Relation info:
         if related and other_cat and not mates:
-            col2 += "\n"
             relation = ""
             if cat.is_uncle_aunt(other_cat):
                 if other_cat.genderalign in ("female", "trans female"):
@@ -634,14 +642,22 @@ class MediationScreen(Screens):
                     relation = "general.cousin_male"
                 else:
                     relation = "general.cousin_nb"
-            col2.append(i18n.t("general.related_label", relation=i18n.t(relation)))
 
-        self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(
-            col2,
-            ui_scale(pygame.Rect((x + 110, y + 126), (80, -1))),
-            object_id="#text_box_22_horizleft_spacing_95",
-            manager=MANAGER,
-        )
+            self.selected_cat_elements[
+                "col2_relation" + tag
+            ] = pygame_gui.elements.UITextBox(
+                i18n.t("general.related_text"),
+                ui_scale(pygame.Rect((x + 110, -15), (80, -1))),
+                starting_height=3,
+                object_id="#text_box_22_horizleft_spacing_95",
+                manager=MANAGER,
+                anchors={"top_target": self.selected_cat_elements["col2" + tag]},
+            )
+            self.selected_cat_elements["col2_relation" + tag].set_tooltip(
+                text=i18n.t(relation)
+            )
+            self.selected_cat_elements["col2_relation" + tag].tool_tip_delay = 0
+            self.selected_cat_elements["col2_relation" + tag].disable()
 
         # ------------------------------------------------------------------------------------------------------------ #
         # RELATION BARS

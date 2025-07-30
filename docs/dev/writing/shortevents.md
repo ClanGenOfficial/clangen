@@ -170,13 +170,14 @@ lowercase season names + "any"
 |------------------------|------------------------------------------|
 | war                    | marks event as only occurring during war |
 
-| misc event subtypes | use                                                               |
-|---------------------|-------------------------------------------------------------------|
-| war                 | marks event as only occurring during war                          |
-| murder_reveal       | marks event as being the reveal of a murder                       |
-| accessory           | marks event as giving an accessory to m_c                         |
-| ceremony            | marks event as being the gifting of an accessory after a ceremony |
-| transition          | marks event as being a cat transitioning their gender             |
+| misc event subtypes  | use                                                                               |
+|----------------------|-----------------------------------------------------------------------------------|
+| war                  | marks event as only occurring during war                                          |
+| murder_reveal        | marks event as being the reveal of a murder                                       |
+| hidden_murder_reveal | marks event as being the reveal of a murder that was disguised as a regular death |
+| accessory            | marks event as giving an accessory to m_c                                         |
+| ceremony             | marks event as being the gifting of an accessory after a ceremony                 |
+| transition           | marks event as being a cat transitioning their gender                             |
 
 ***
 

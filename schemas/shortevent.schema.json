@@ -24,15 +24,15 @@
         }
       },
       "sub_type": {
-        "description": "List of subtypes for this event.",
+        "description": "List of sub_types for this event.",
         "items": {
           "enum": [
             "war",
             "murder",
             "old_age",
             "mass_death",
-            "adoption",
             "murder_reveal",
+            "hidden_murder_reveal",
             "accessory",
             "ceremony",
             "transition",

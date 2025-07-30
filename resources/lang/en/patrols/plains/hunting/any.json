@@ -2888,7 +2888,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Terror gives app1 strength, and {PRONOUN/app1/subject} {VERB/app1/do/does}n't stop running until {PRONOUN/app1/subject}{VERB/app1/'re/'s} back in camp, gasping about the grassland monster {PRONOUN/app1/subject} saw.",
+                "text": "Terror gives app1 strength, and {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} stop running until {PRONOUN/app1/subject}{VERB/app1/'re/'s} back in camp, gasping about the grassland monster {PRONOUN/app1/subject} saw.",
                 "exp": 0,
                 "weight": 20
             },
