@@ -1257,7 +1257,7 @@ class Events:
                             else:
                                 chance = int(chance / 13.67)
                                 print(f"Senior medicine cat")
-                                print (f"Not enough healthy medicine cats")
+                                print(f"Not enough healthy medicine cats")
                                 print(f"Chance updated to {chance}")
                                 if has_med_app:
                                     chance = int(chance * 3.5)
@@ -1268,12 +1268,12 @@ class Events:
                         # These chances apply is all the current medicine cats are very old.
                         if has_med:
                             chance = int(chance / 3)
-                            print (f"Very old medicine cat")
+                            print(f"Very old medicine cat")
                             print(f"Chance updated to {chance}")
                         else:
                             chance = int(chance / 14)
-                            print (f"Very old medicine cat")
-                            print (f"Not enough healthy medicine cats")
+                            print(f"Very old medicine cat")
+                            print(f"Not enough healthy medicine cats")
                             print(f"Chance updated to {chance}")
                             if has_med_app:
                                 chance = int(chance * 3.5)
@@ -1284,7 +1284,7 @@ class Events:
                     # Clan has at least one non-elder medicine cat.
                     elif not has_med:
                         chance = int(chance / 7.125)
-                        print (f"Not enough healthy medicine cats")
+                        print(f"Not enough healthy medicine cats")
                         print(f"Chance updated to {chance}")
                         if has_med_app:
                             chance = int(chance * 3.5)
@@ -1296,36 +1296,72 @@ class Events:
                         print(f"Chance updated to {chance}")
 
                     if cat.skills.primary.path in [
-                        SkillPath.HUNTER, SkillPath.FIGHTER, SkillPath.RUNNER, SkillPath.SWIMMER, SkillPath.DARK
-                        ]:
+                        SkillPath.HUNTER,
+                        SkillPath.FIGHTER,
+                        SkillPath.RUNNER,
+                        SkillPath.SWIMMER,
+                        SkillPath.DARK,
+                    ]:
                         chance = int(chance * 1.5)
                         print(f"{cat.name} {cat.skills.primary.skill}")
                         print(f"Chance updated to {chance}")
-                        
+
                     if cat.personality.trait in [
-                        'adventurous', 'arrogant', 'bold', 'bloodthirsty', 'cold', 'fierce', 'rebellious', 'troublesome', 'sneaky', 'vengeful'
-                        ]:
+                        "adventurous",
+                        "arrogant",
+                        "bold",
+                        "bloodthirsty",
+                        "cold",
+                        "fierce",
+                        "rebellious",
+                        "troublesome",
+                        "sneaky",
+                        "vengeful",
+                    ]:
                         chance = int(chance * 2)
                         print(f"{cat.name} {cat.personality.trait}")
                         print(f"Chance updated to {chance}")
 
                     if cat.personality.trait in [
-                        'ambitious', 'compassionate', 'grumpy', 'gloomy', 'lonesome', 'loving', 'responsible', 'righteous', 'thoughtful', 'wise'
-                        ]:
+                        "ambitious",
+                        "compassionate",
+                        "grumpy",
+                        "gloomy",
+                        "lonesome",
+                        "loving",
+                        "responsible",
+                        "righteous",
+                        "thoughtful",
+                        "wise",
+                    ]:
                         chance = int(chance / 2)
                         print(f"{cat.name} {cat.personality.trait}")
                         print(f"Chance updated to {chance}")
 
                     if cat.skills.secondary and cat.skills.secondary.path in [
-                        SkillPath.OMEN, SkillPath.PROPHET, SkillPath.HEALER, SkillPath.STAR, SkillPath.DREAM, SkillPath.CLAIRVOYANT, SkillPath.GHOST, SkillPath.CAMP
-                        ]:
+                        SkillPath.OMEN,
+                        SkillPath.PROPHET,
+                        SkillPath.HEALER,
+                        SkillPath.STAR,
+                        SkillPath.DREAM,
+                        SkillPath.CLAIRVOYANT,
+                        SkillPath.GHOST,
+                        SkillPath.CAMP,
+                    ]:
                         chance = int(chance / 2)
                         print(f"{cat.name} {cat.skills.secondary.skill}")
                         print(f"Chance updated to {chance}")
 
                     if cat.skills.primary.path in [
-                        SkillPath.OMEN, SkillPath.PROPHET, SkillPath.HEALER, SkillPath.STAR, SkillPath.DREAM, SkillPath.CLAIRVOYANT, SkillPath.GHOST, SkillPath.CAMP
-                        ]:
+                        SkillPath.OMEN,
+                        SkillPath.PROPHET,
+                        SkillPath.HEALER,
+                        SkillPath.STAR,
+                        SkillPath.DREAM,
+                        SkillPath.CLAIRVOYANT,
+                        SkillPath.GHOST,
+                        SkillPath.CAMP,
+                    ]:
                         chance = int(chance / 2)
                         print(f"{cat.name} {cat.skills.primary.skill}")
                         print(f"Chance updated to {chance}")
@@ -1333,7 +1369,7 @@ class Events:
                     if cat.is_disabled():
                         chance = int(chance / 1.3)
                         print(f"{cat.name} is disabled")
-                        print (f"Chance updated to {chance}")
+                        print(f"Chance updated to {chance}")
 
                     if chance == 0:
                         chance = 1
@@ -1368,42 +1404,70 @@ class Events:
                             self.ceremony(cat, "apprentice")
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
-                            print (f"No mediators")
+                            print(f"No mediators")
                             print(f"Made {cat.name} warrior apprentice")
-                            
+
                         else:
                             print(f"Mediator app {cat.name} starting chance: {chance}")
 
                             if cat.personality.trait in [
-                                'ambitious', 'adventurous', 'arrogant', 'bold', 'bloodthirsty', 'cold', 'competitive', 'grumpy', 'insecure', 'oblivious'
+                                "ambitious",
+                                "adventurous",
+                                "arrogant",
+                                "bold",
+                                "bloodthirsty",
+                                "cold",
+                                "competitive",
+                                "grumpy",
+                                "insecure",
+                                "oblivious",
                             ]:
-                                chance = int (chance * 2)
+                                chance = int(chance * 2)
                                 print(f"{cat.name} {cat.personality.trait}")
                                 print(f"Chance updated to {chance}")
 
                             if cat.skills.primary.path in [
-                                SkillPath.HUNTER, SkillPath.FIGHTER, SkillPath.CLIMBER, SkillPath.SWIMMER, SkillPath.DARK
+                                SkillPath.HUNTER,
+                                SkillPath.FIGHTER,
+                                SkillPath.CLIMBER,
+                                SkillPath.SWIMMER,
+                                SkillPath.DARK,
                             ]:
-                                chance = int (chance * 1.5)
+                                chance = int(chance * 1.5)
                                 print(f"{cat.name} {cat.skills.primary.skill}")
                                 print(f"Chance updated to {chance}")
 
                             if cat.personality.trait in [
-                                'calm', 'charismatic', 'flamboyant', 'nervous', 'playful', 'thoughtful', 'sincere', 'wise'
+                                "calm",
+                                "charismatic",
+                                "flamboyant",
+                                "nervous",
+                                "playful",
+                                "thoughtful",
+                                "sincere",
+                                "wise",
                             ]:
-                                chance = int (chance / 1.5)
+                                chance = int(chance / 1.5)
                                 print(f"{cat.name} {cat.personality.trait}")
                                 print(f"Chance updated to {chance}")
 
                             if cat.skills.secondary and cat.skills.secondary.path in [
-                                SkillPath.MEDIATOR, SkillPath.SPEAKER, SkillPath.INSIGHTFUL, SkillPath.CLAIRVOYANT, SkillPath.LORE
+                                SkillPath.MEDIATOR,
+                                SkillPath.SPEAKER,
+                                SkillPath.INSIGHTFUL,
+                                SkillPath.CLAIRVOYANT,
+                                SkillPath.LORE,
                             ]:
                                 chance = int(chance / 1.5)
                                 print(f"{cat.name} {cat.skills.secondary.skill}")
                                 print(f"Chance updated to {chance}")
 
                             if cat.skills.primary.path in [
-                                SkillPath.MEDIATOR, SkillPath.SPEAKER, SkillPath.INSIGHTFUL, SkillPath.CLAIRVOYANT, SkillPath.LORE
+                                SkillPath.MEDIATOR,
+                                SkillPath.SPEAKER,
+                                SkillPath.INSIGHTFUL,
+                                SkillPath.CLAIRVOYANT,
+                                SkillPath.LORE,
                             ]:
                                 chance = int(chance / 2)
                                 print(f"{cat.name} {cat.skills.primary.skill}")
@@ -1412,15 +1476,14 @@ class Events:
                             if cat.is_disabled():
                                 chance = int(chance / 1.3)
                                 print(f"{cat.name} is disabled")
-                                print (f"Chance updated to {chance}")
+                                print(f"Chance updated to {chance}")
 
                             if chance == 0:
                                 chance = 1
                             print(f"Final mediator app chance {cat.name}: {chance}")
 
                             # Only become a mediator if there is already one in the clan.
-                            if mediator_list and \
-                                    not int(random.random() * chance):
+                            if mediator_list and not int(random.random() * chance):
                                 self.ceremony(cat, CatRank.MEDIATOR_APPRENTICE)
                                 self.ceremony_accessory = True
                                 self.gain_accessories(cat)

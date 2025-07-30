@@ -8,18 +8,8 @@ from scripts.cat.enums import CatRank, CatAge
 
 
 class SkillPath(Enum):
-    TEACHER = (
-        "quick to help", 
-        "good teacher", 
-        "great teacher", 
-        "excellent teacher"
-    )
-    HUNTER = (
-        "moss ball hunter", 
-        "good hunter", 
-        "great hunter", 
-        "renowned hunter"
-    )
+    TEACHER = ("quick to help", "good teacher", "great teacher", "excellent teacher")
+    HUNTER = ("moss ball hunter", "good hunter", "great hunter", "renowned hunter")
     FIGHTER = (
         "avid play-fighter",
         "good fighter",
@@ -56,24 +46,14 @@ class SkillPath(Enum):
         "great mediator",
         "skilled mediator",
     )
-    CLEVER = (
-        "quick witted", 
-        "clever", 
-        "very clever", 
-        "incredibly clever"
-    )
+    CLEVER = ("quick witted", "clever", "very clever", "incredibly clever")
     INSIGHTFUL = (
         "careful listener",
         "helpful insight",
         "valuable insight",
         "trusted advisor",
     )
-    SENSE = (
-        "oddly observant", 
-        "natural intuition", 
-        "keen eye", 
-        "unnatural senses"
-    )
+    SENSE = ("oddly observant", "natural intuition", "keen eye", "unnatural senses")
     KIT = (
         "active imagination",
         "good kitsitter",
@@ -92,18 +72,8 @@ class SkillPath(Enum):
         "lore keeper",
         "lore master",
     )
-    CAMP = (
-        "picky nest builder", 
-        "steady paws", 
-        "den builder", 
-        "camp keeper"
-    )
-    HEALER = (
-        "interested in herbs", 
-        "good healer", 
-        "great healer", 
-        "fantastic healer"
-    )
+    CAMP = ("picky nest builder", "steady paws", "den builder", "camp keeper")
+    HEALER = ("interested in herbs", "good healer", "great healer", "fantastic healer")
     STAR = (
         "curious about StarClan",
         "connection to StarClan",
@@ -116,18 +86,8 @@ class SkillPath(Enum):
         "deep Dark Forest bond",
         "unshakable Dark Forest link",
     )
-    OMEN = (
-        "interested in oddities", 
-        "omen seeker", 
-        "omen sense", 
-        "omen sight"
-    )
-    DREAM = (
-        "restless sleeper", 
-        "strange dreamer", 
-        "dream walker", 
-        "dream shaper"
-    )
+    OMEN = ("interested in oddities", "omen seeker", "omen sense", "omen sight")
+    DREAM = ("restless sleeper", "strange dreamer", "dream walker", "dream shaper")
     CLAIRVOYANT = (
         "oddly insightful",
         "somewhat clairvoyant",
@@ -140,12 +100,7 @@ class SkillPath(Enum):
         "prophecy interpreter",
         "prophet",
     )
-    GHOST = (
-        "morbid curiosity", 
-        "ghost sense", 
-        "ghost sight", 
-        "ghost speaker"
-    )
+    GHOST = ("morbid curiosity", "ghost sense", "ghost sight", "ghost speaker")
 
     @staticmethod
     def get_random(exclude: list = ()):
