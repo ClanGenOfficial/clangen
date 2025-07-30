@@ -163,7 +163,7 @@
   "normal_prefixes": [
     "Adder", "Alder", "Ant", "Antler", "Aphid", "Apple", "Apricot", "Arch", "Aspen", "Aster", 
     "Barley", "Basil", "Bass", "Bay", "Beam", "Bear", "Beaver", "Bee", "Beech", "Beetle", "Berry", "Big", "Billow", "Birch", 
-    "Bird", "Bite", "Bitter", "Bittern", "Blazing", "Bliss", "Bloom", "Blossom", "Blotch", "Bluebell", "Bluff", "Bog", "Borage", 
+    "Bird", "Bite", "Bitter", "Bittern", "Bliss", "Bloom", "Blossom", "Blotch", "Bluebell", "Bluff", "Bog", "Borage", 
     "Bough", "Boulder", "Bounce", "Brave", "Breeze", "Briar", "Bright", "Bristle", "Broken", "Brook", 
     "Brush", "Bubbling", "Bud", "Bug", "Bumble", "Burdock", "Burr", "Burrow", "Bush", "Butterfly", "Buzzard", 
     "Carnation", "Carp", "Cave", "Cedar", "Chaffinch", "Chasing", "Cherry", "Chervil", "Chestnut", "Chirp", "Chive",
@@ -248,22 +248,22 @@
     "GOLDEN": [
     "Gold", "Gold", "Golden", "Yellow", "Sun", "Sunny", "Light", "Lightning", "Thunder", "Day", "Fig",
     "Honey", "Tawny", "Lion", "Dandelion", "Marigold", "Warm", "Amber", "Canary", "Daffodil", "Saffron",
-    "Buttercup", "Straw", "Glint", "Auburn"
+    "Buttercup", "Straw", "Glint", "Auburn", "Blazing"
     ],
     "GINGER": [
     "Ginger", "Ginger", "Red", "Fire", "Rust", "Flame", "Ember", "Sun", "Sunny", "Light", "Primrose", "Rose",
     "Rowan", "Fox", "Tawny", "Plum", "Orange", "Warm", "Burn", "Burnt", "Robin", "Amber", "Larkspur", "Straw", "Lyre",
-    "Flare", "Blaze", "Ochre", "Auburn", "Pumpkin", "Cedar"
+    "Flare", "Blaze", "Ochre", "Auburn", "Pumpkin", "Cedar", "Blazing"
     ],
     "DARKGINGER": [
     "Ginger", "Ginger", "Red", "Red", "Fire", "Flame", "Ember", "Oak", "Shade", "Russet", "Fuchsia", "Hollyhock",
     "Rowan", "Fox", "Orange", "Copper", "Cinnamon", "Burn", "Burnt", "Robin", "Oleander", "Scarlet", "Rust", "Lyre",
-    "Robin", "Berry", "Ochre", "Auburn", "Pumpkin", "Burnet", "Cedar"
+    "Robin", "Berry", "Ochre", "Auburn", "Pumpkin", "Burnet", "Cedar", "Blazing"
     ],
     "SIENNA": [
     "Ginger", "Ginger", "Red", "Red", "Fire", "Flame", "Ember", "Oak", "Shade", "Russet", "Fuchsia", "Hollyhock",
     "Rowan", "Fox", "Orange", "Copper", "Cinnamon", "Burn", "Burnt", "Robin", "Oleander", "Scarlet", "Rust", "Lyre",
-    "Robin", "Berry", "Ochre", "Auburn", "Burnet", "Maple", "Tawny", "Cedar"
+    "Robin", "Berry", "Ochre", "Auburn", "Burnet", "Maple", "Tawny", "Cedar", "Blazing"
     ],
     "CREAM": [
     "Sand", "Sandy", "Yellow", "Pale", "Cream", "Cream", "Light", "Milk", "Fawn", "Morel", "Jasmine", "Veil", "Cougar",
@@ -442,10 +442,10 @@
 
   "eye_prefixes": {
     "YELLOW": [
-	    "Yellow", "Daisy", "Honey", "Light", "Sun", "Lemon", "Lightning", "Bee", "Wasp", "Bright", "Marigold", "Canary"
+	    "Yellow", "Daisy", "Honey", "Light", "Sun", "Lemon", "Lightning", "Bee", "Wasp", "Bright", "Marigold", "Canary", "Blazing"
     ],
     "AMBER": [
-	    "Amber", "Sun", "Fire", "Gold", "Honey", "Scorch", "Flame", "Blaze", "Pumpkin", "Rust", "Fox", "Robin", "Sap"
+	    "Amber", "Sun", "Fire", "Gold", "Honey", "Scorch", "Flame", "Blaze", "Pumpkin", "Rust", "Fox", "Robin", "Sap", "Blazing"
     ],
     "HAZEL": [
 	    "Hazel", "Tawny", "Hazel", "Gold", "Daisy", "Sand", "Almond", "Lichen", "Moss", "Mossy", "Ivy", "Sprout", "Seed", 
@@ -481,13 +481,13 @@
 	    "Pale", "Yellow", "Sun", "Gold", "Light", "Daisy", "Bee", "Wasp", "Canary"
     ],
     "GOLD": [
-	    "Gold", "Golden", "Sun", "Amber", "Sap", "Honey", "Yellow", "Bee", "Wasp", "Sap", "Canary"
+	    "Gold", "Golden", "Sun", "Amber", "Sap", "Honey", "Yellow", "Bee", "Wasp", "Sap", "Canary", "Blazing"
     ],
     "HEATHERBLUE": [
 	    "Heather", "Blue", "Lilac", "Rosemary", "Lavender", "Wisteria", "Dew", "Iris", "Dawn", "Jay", "Splash"
     ],
     "COPPER": [
-	    "Copper", "Red", "Amber", "Brown", "Fire", "Cinnamon", "Fox", "Rust", "Robin", "Marigold"
+	    "Copper", "Red", "Amber", "Brown", "Fire", "Cinnamon", "Fox", "Rust", "Robin", "Marigold", "Blazing"
     ],
     "SAGE": [
 	    "Sage", "Leaf", "Olive", "Bush", "Clove", "Green", "Weed", "Lichen", "Clover", "Glade", "Moss", "Mossy", "Ivy", "Sprout", "Seed",
@@ -507,10 +507,10 @@
 	    "Gray", "Stone", "Silver", "Silver", "Moon", "Rain", "Storm", "Pale", "Light", "Minnow", "Cold"
     ],
     "ORANGE": [
-	    "Amber", "Sun", "Fire", "Honey", "Flame", "Blaze", "Pumpkin", "Red", "Ember", "Orange", "Fox", "Rust", "Marigold"
+	    "Amber", "Sun", "Fire", "Honey", "Flame", "Blaze", "Pumpkin", "Red", "Ember", "Orange", "Fox", "Rust", "Marigold", "Blazing"
     ],
     "BRONZE": [
-	    "Amber", "Sun", "Fire", "Flame", "Blaze", "Pumpkin", "Red", "Ember", "Orange", "Fox", "Rust", "Robin", "Marigold"
+	    "Amber", "Sun", "Fire", "Flame", "Blaze", "Pumpkin", "Red", "Ember", "Orange", "Fox", "Rust", "Robin", "Marigold", "Blazing"
     ]
   },
 
