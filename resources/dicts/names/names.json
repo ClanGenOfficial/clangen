@@ -25,7 +25,7 @@
     "fuzz", "frill", "gale", "gaze", "ghost", "glare", "gleam", "glade", "glide", "glint", "glow", "goose", "gorse", "grass", "growl", "hail", "hare", 
     "haven", "hawk", "haze", "heather", "hiss", "hollow", "holly", "honey", "hope", "howl", "husk", "ice", "iris", "ivy", "jaw", 
     "jay", "joy", "jumble", "jump", "kestrel", "kick", "kite", "knoll", "lake", "larch", "laurel", "leaf", "leap", "leg", 
-    "light", "lightning", "lilac", "lily", "lion", "lotus", "mallow", "mane", "mark", "meadow", "mimic", "minnow", "mist", 
+    "light", "lilac", "lily", "lion", "lotus", "mallow", "mane", "mark", "meadow", "mimic", "minnow", "mist", 
     "moon", "moor", "moss", "moth", "mouse", "munch", "murk", "muzzle", "needle", "nest", "nettle", "newt", "nibble", "nip", 
     "noise", "nose", "nudge", "nut", "pad", "patch", "path", "peak", "petal", "plume", "pond", "pool", "poppy", "pounce", "prance", 
     "prickle", "puddle", "purr", "quill", "quiver", "rain", "rapid", "reed", "rip", "ripple", "rise", "rise", "river", 
@@ -459,7 +459,7 @@
 	    "Green", "Green", "Fern", "Weed", "Holly", "Clover", "Olive", "Jade", "Tree", "Algae", "Aloe", "Glade", "Moss", "Mossy",
 	    "Ivy", "Sprout", "Willow"
     ],
-    "BLUE": 
+    "BLUE": [
 	  "Blue", "Blue", "Ice", "Sky", "Lake", "Frost", "Water", "Icicle", "Frosty", "Cold", "Rime", "Dew", "Jay", "Splash"
 	  ],
     "DARKBLUE": [
@@ -516,7 +516,7 @@
 
 "eye_suffixes": {
     "YELLOW": [
-    "blaze", "shine", "sun", "bee", "wasp", "honey"
+    "blaze", "shine", "sun", "bee", "wasp", "honey", "lightning"
     ],
     "AMBER": [
     "blaze", "shine", "fire", "poppy", "rose", "flame", "flare", "ember", "fox"
@@ -549,10 +549,10 @@
     "frost", "sky", "pool", "lake", "freeze", "pond", "dew", "brook", "bubble", "chill", "creek", "dew", "hail", "ice", "splash"
     ],
     "PALEYELLOW": [
-    "shine", "bee", "beam", "wasp", "honey"
+    "shine", "bee", "beam", "wasp", "honey", "lightning"
     ],
     "GOLD": [
-    "blaze", "shine", "sun", "bee", "wasp", "honey"
+    "blaze", "shine", "sun", "bee", "wasp", "honey", "lightning"
     ],
     "HEATHERBLUE": [
     "frost", "fog", "sky", "dawn", "dream", "dew", "freeze", "chill", "hail", "jay", "splash"
