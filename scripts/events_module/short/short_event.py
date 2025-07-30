@@ -299,7 +299,7 @@ class ShortEvent:
         self.handle_injury()
 
         # handle murder reveals
-        if "murder_reveal" in self.sub_type:
+        if "murder_reveal" in self.sub_type or "hidden_murder_reveal" in self.sub_type:
             self.main_cat.history.reveal_murder(
                 victim=self.victim_cat,
                 murderer_id=self.main_cat.ID,
