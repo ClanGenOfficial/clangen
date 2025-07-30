@@ -19,8 +19,8 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.short.generation import create_short_event
 from scripts.events_module.short.scar_events import Scar_Events
+from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.game_structure import constants
 from scripts.game_structure.game.switches import (
     Switch,

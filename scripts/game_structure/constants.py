@@ -1,3 +1,5 @@
+import tomllib
+
 from pygame import Cursor, image, SYSTEM_CURSOR_ARROW
 import ujson
 
@@ -131,8 +133,8 @@ SUPPLY_ADJUSTMENTS = [
     "increase_#",
 ]
 
-with open(f"resources/game_config.json", "r", encoding="utf-8") as read_file:
-    CONFIG = ujson.loads(read_file.read())
+with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
+    CONFIG = tomllib.loads(read_file.read())
 
 with open("resources/placements.json", "r", encoding="utf-8") as read_file:
     LAYOUTS = ujson.loads(read_file.read())
