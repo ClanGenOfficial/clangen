@@ -634,13 +634,15 @@ What each parameter does, and what the options are for outcomes.
 
 >To override default behavior:
 
-| string         | new behavior                                                                                                                                                                                                                                                 |
+| string      | new behavior                                                                                                                                                                                                                                                 |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | "p_l"       | Patrol leader (p_l) can be stat cat                                                                                                                                                                                                                          |
 | "r_c"       | Random cat can be stat cat                                                                                                                                                                                                                                   |
 | "app1"      | app1 (the first apprentice) can be stat cat                                                                                                                                                                                                                  |
 | "app2"      | app2 (the second apprentice) can be stat cat                                                                                                                                                                                                                 |
 | "not_pl_rc" | Any cat but p_l or r_c can be stat_cat. This is the default behavior for 3 + cat patrols. This allows that requirement to be applied to 2 and 1 cat patrols. Note that, with this constraint, no cats will be allowed to be stat_cat on 1 and 2 cat patrols. |
+| "not_pl"    | Any cat but p_l can be stat cat                                                                                                                                                                                                                              |
+| "not_rc"    | Any cat but r_c can be stat cat                                                                                                                                                                                                                              |
 | "any"       | Any cat can be stat_cat. Still subject to the additional requirement tags below, if present. Be careful with using s_c's name when this is used - it might lead to self-interaction                                                                          |
 
 >To add additional requirements to stat_cat:

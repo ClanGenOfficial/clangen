@@ -24,15 +24,15 @@
         }
       },
       "sub_type": {
-        "description": "List of subtypes for this event.",
+        "description": "List of sub_types for this event.",
         "items": {
           "enum": [
             "war",
             "murder",
             "old_age",
             "mass_death",
-            "adoption",
             "murder_reveal",
+            "hidden_murder_reveal",
             "accessory",
             "ceremony",
             "transition",
@@ -72,8 +72,8 @@
           ]
         }
       },
-      "weight": {
-        "description": "Controls how common an event is. A \"normal\" event would be ~20. A lower number makes the event less common, and a higher number makes the event more common.",
+      "frequency": {
+        "description": "Controls how common an event is. 4 == Common, 3 == Uncommon, 2 == Rare, 3 == Very Rare. Consider this in the terms of 'If an event of this type happened every moon for 10 moons, on how many of those moons should this sort of event appear?'",
         "type": "integer"
       },
       "event_text": {
@@ -127,12 +127,20 @@
                 {
                   "enum": [
                     "siblings",
+                    "not_siblings",
+                    "littermates",
+                    "not_littermates",
                     "mates",
+                    "mates_with_pl",
                     "not_mates",
                     "parent/child",
+                    "not_parent",
                     "child/parent",
+                    "not_child",
+                    "mentor/app",
+                    "not_mentor",
                     "app/mentor",
-                    "mentor/app"
+                    "not_app"
                   ]
                 },
                 {

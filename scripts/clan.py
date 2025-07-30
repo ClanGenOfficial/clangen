@@ -18,7 +18,11 @@ import ujson
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.enums import CatRank, CatGroup
 from scripts.cat.names import names
-from scripts.cat.save_load import save_cats
+from scripts.cat.save_load import (
+    save_cats,
+    get_faded_ids,
+    load_faded_cat_ids,
+)
 from scripts.cat.sprites import sprites
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
@@ -135,24 +139,21 @@ class Clan:
         self.last_focus_change = None
         self.clans_in_focus = []
 
-        self.faded_ids = []
-        """Stores ID's of faded cats, to ensure these IDs aren't reused."""
-
         if self_run_init_functions:
             self.post_initialization_functions()
 
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
     def post_initialization_functions(self):
-        if self.deputy is not None:
+        if self.deputy and self.deputy.status.alive_in_player_clan:
             self.deputy.rank_change(CatRank.DEPUTY)
             self.clan_cats.append(self.deputy.ID)
 
-        if self.leader:
+        if self.leader and self.leader.status.alive_in_player_clan:
             self.leader.rank_change(CatRank.LEADER)
             self.clan_cats.append(self.leader.ID)
 
-        if self.medicine_cat is not None:
+        if self.medicine_cat and self.medicine_cat.status.alive_in_player_clan:
             self.clan_cats.append(self.medicine_cat.ID)
             self.med_cat_list.append(self.medicine_cat.ID)
             if self.medicine_cat.status.rank != CatRank.MEDICINE_CAT:
@@ -244,6 +245,10 @@ class Clan:
                 )
             other_clan = OtherClan(name=other_clan_name)
             self.all_clans.append(other_clan)
+
+        # create leader's ceremony
+        self.leader.generate_lead_ceremony()
+
         self.save_clan()
         save_clanlist(self.name)
         switch_set_value(Switch.clan_list, read_clans())
@@ -313,7 +318,7 @@ class Clan:
         """
 
         if leader:
-            leader.history.add_lead_ceremony()
+            leader.generate_lead_ceremony()
             self.leader = leader
             Cat.all_cats[leader.ID].rank_change(CatRank.LEADER)
             self.leader_predecessors += 1
@@ -372,7 +377,6 @@ class Clan:
         else:
             save_clanlist(clan)
         switch_set_value(Switch.switch_clan, True)
-        # quit(savesettings=False, clearevents=True)
 
     def save_clan(self):
         """
@@ -427,7 +431,7 @@ class Clan:
         # LIST OF CLAN CATS
         clan_data["clan_cats"] = ",".join([str(i) for i in self.clan_cats])
 
-        clan_data["faded_cats"] = ",".join([str(i) for i in self.faded_ids])
+        clan_data["faded_cats"] = ",".join([str(i) for i in get_faded_ids()])
 
         # Patrolled cats
         clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
@@ -801,10 +805,7 @@ class Clan:
         if "war" in clan_data:
             game.clan.war = clan_data["war"]
 
-        if "faded_cats" in clan_data:
-            if clan_data["faded_cats"].strip():  # Check for empty string
-                for cat in clan_data["faded_cats"].split(","):
-                    game.clan.faded_ids.append(cat)
+        load_faded_cat_ids(clan_data["clanname"])
 
         game.clan.last_focus_change = clan_data.get("last_focus_change")
         game.clan.clans_in_focus = clan_data.get("clans_in_focus", [])
@@ -1009,9 +1010,6 @@ class Clan:
         """
         saves the Clan's current future events
         """
-        if not clan.future_events:
-            return
-
         save_list = []
 
         for event in game.clan.future_events:
@@ -1289,6 +1287,7 @@ class OtherClan:
         # assigns next un-used enum
         for enum in self.other_clan_enums:
             if enum not in game.clan.other_clans:
+                self.enum = enum
                 game.clan.other_clans.append(enum)
                 break
 

@@ -69,13 +69,6 @@ class Condition_Events:
     ) as read_file:
         ILLNESSES_SEASON_LIST = ujson.loads(read_file.read())
 
-    with open(
-        "resources/dicts/conditions/event_injuries_distribution.json",
-        "r",
-        encoding="utf-8",
-    ) as read_file:
-        INJURY_DISTRIBUTION = ujson.loads(read_file.read())
-
     # ---------------------------------------------------------------------------- #
     #                                   STRINGS                                    #
     # ---------------------------------------------------------------------------- #
@@ -883,7 +876,7 @@ class Condition_Events:
                 triggered = True
                 event_types.append("birth_death")
                 translated_condition = i18n.t(
-                    f"conditions.permanent_condition.{condition}"
+                    f"conditions.permanent_conditions.{condition}"
                 )
                 event = i18n.t(
                     "defaults.complications_death_event", condition=translated_condition

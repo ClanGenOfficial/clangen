@@ -556,6 +556,7 @@ class MediationScreen(Screens):
             object_id="#text_box_22_horizleft_spacing_95",
             manager=MANAGER,
         )
+        self.selected_cat_elements["col1" + tag].disable()
 
         mates = False
         if len(cat.mate) > 0:
@@ -567,44 +568,96 @@ class MediationScreen(Screens):
         else:
             col2 = i18n.t("general.mate_none")
 
-        # Relation info:
-        if related and other_cat and not mates:
-            col2 += "\n"
-            if other_cat.is_uncle_aunt(cat):
-                if cat.genderalign in ("female", "trans female"):
-                    col2 += i18n.t("general.niece")
-                elif cat.genderalign in ("male", "trans male"):
-                    col2 += i18n.t("general.nephew")
-                else:
-                    col2 += i18n.t("general.siblings_child")
-            elif cat.is_uncle_aunt(other_cat):
-                if cat.genderalign in ("female", "trans female"):
-                    col2 += i18n.t("general.aunt")
-                elif cat.genderalign in ("male", "trans male"):
-                    col2 += i18n.t("general.uncle")
-                else:
-                    col2 += i18n.t("general.parents_sibling")
-            elif cat.is_grandparent(other_cat):
-                col2 += i18n.t("general.grandparent")
-            elif other_cat.is_grandparent(cat):
-                col2 += i18n.t("general.grandchild")
-            elif cat.is_parent(other_cat):
-                col2 += i18n.t("general.parent")
-            elif other_cat.is_parent(cat):
-                col2 += i18n.t("general.child")
-            elif cat.is_sibling(other_cat) or other_cat.is_sibling(cat):
-                col2 += i18n.t("general.sibling")
-            elif not get_clan_setting("first cousin mates") and other_cat.is_cousin(
-                cat
-            ):
-                col2 += i18n.t("general.cousin")
-
         self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(
             col2,
             ui_scale(pygame.Rect((x + 110, y + 126), (80, -1))),
             object_id="#text_box_22_horizleft_spacing_95",
             manager=MANAGER,
         )
+        self.selected_cat_elements["col2" + tag].disable()
+
+        # Relation info:
+        if related and other_cat and not mates:
+            relation = ""
+            if cat.is_uncle_aunt(other_cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.niece"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.nephew"
+                else:
+                    relation = "general.siblings_child"
+            elif other_cat.is_uncle_aunt(cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.aunt"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.uncle"
+                else:
+                    relation = "general.parents_sibling"
+            elif other_cat.is_grandparent(cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.grandmother"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.grandfather"
+                else:
+                    relation = "general.grandparent"
+            elif cat.is_grandparent(other_cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.granddaughter"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.grandson"
+                else:
+                    relation = "general.grandchild"
+            elif other_cat.is_parent(cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.mother"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.father"
+                else:
+                    relation = "general.parent"
+            elif cat.is_parent(other_cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.daughter"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.son"
+                else:
+                    relation = "general.child"
+            elif other_cat.is_sibling(cat) or cat.is_sibling(other_cat):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.sister"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.brother"
+                else:
+                    relation = "general.sibling"
+
+                if other_cat.is_littermate(cat) or cat.is_littermate(other_cat):
+                    relation = i18n.t(
+                        "general.sibling_littermate", relation=i18n.t(relation)
+                    )
+            elif not get_clan_setting("first cousin mates") and other_cat.is_cousin(
+                cat
+            ):
+                if other_cat.genderalign in ("female", "trans female"):
+                    relation = "general.cousin_female"
+                elif other_cat.genderalign in ("male", "trans male"):
+                    relation = "general.cousin_male"
+                else:
+                    relation = "general.cousin_nb"
+
+            self.selected_cat_elements[
+                "col2_relation" + tag
+            ] = pygame_gui.elements.UITextBox(
+                i18n.t("general.related_text"),
+                ui_scale(pygame.Rect((x + 110, -15), (80, -1))),
+                starting_height=3,
+                object_id="#text_box_22_horizleft_spacing_95",
+                manager=MANAGER,
+                anchors={"top_target": self.selected_cat_elements["col2" + tag]},
+            )
+            self.selected_cat_elements["col2_relation" + tag].set_tooltip(
+                text=i18n.t(relation)
+            )
+            self.selected_cat_elements["col2_relation" + tag].tool_tip_delay = 0
+            self.selected_cat_elements["col2_relation" + tag].disable()
 
         # ------------------------------------------------------------------------------------------------------------ #
         # RELATION BARS

@@ -653,7 +653,7 @@
                 "text": "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon r_c. r_c is killed before they can run.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c", "some_lives"],
+                "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
                     "reg_death": "m_c followed the scent of a trespassing cat and was killed by a dog.",

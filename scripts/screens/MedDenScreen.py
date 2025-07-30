@@ -660,7 +660,7 @@ class MedDenScreen(Screens):
             if count <= 0:
                 continue
             if herb == "cobwebs":
-                self.herbs["cobweb1"] = pygame_gui.elements.UIImage(
+                self.herbs["cobweb1"] = UIModifiedImage(
                     ui_scale(pygame.Rect((108, 95), (396, 224))),
                     pygame.transform.scale(
                         pygame.image.load(
@@ -670,8 +670,9 @@ class MedDenScreen(Screens):
                     ),
                     manager=MANAGER,
                 )
+                self.herbs["cobweb1"].disable()
                 if count > 1:
-                    self.herbs["cobweb2"] = pygame_gui.elements.UIImage(
+                    self.herbs["cobweb2"] = UIModifiedImage(
                         ui_scale(pygame.Rect((108, 95), (396, 224))),
                         pygame.transform.scale(
                             pygame.image.load(
@@ -681,8 +682,9 @@ class MedDenScreen(Screens):
                         ),
                         manager=MANAGER,
                     )
+                    self.herbs["cobweb2"].disable()
                 continue
-            self.herbs[herb] = pygame_gui.elements.UIImage(
+            self.herbs[herb] = UIModifiedImage(
                 ui_scale(pygame.Rect((108, 95), (396, 224))),
                 pygame.transform.scale(
                     pygame.image.load(
@@ -692,6 +694,7 @@ class MedDenScreen(Screens):
                 ),
                 manager=MANAGER,
             )
+            self.herbs[herb].disable()
 
     def exit_screen(self):
         self.meds_messages.kill()

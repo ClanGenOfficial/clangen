@@ -9,7 +9,7 @@ import random
 import ujson
 
 from scripts.game_structure import constants
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatRank, CatGroup
 from scripts.housekeeping.datadir import get_save_dir
 
 
@@ -266,19 +266,14 @@ class Name:
 
         # Handles suffix assignment with outside cats
         if self.cat.status.is_former_clancat:
-            if self.cat.moons == 0:
-                adjusted_status = CatRank.NEWBORN
-            elif self.cat.moons < 6:
-                adjusted_status = CatRank.KITTEN
-            elif self.cat.moons < 12:
-                adjusted_status = CatRank.APPRENTICE
-            else:
-                adjusted_status = CatRank.WARRIOR
+            old_rank = self.cat.status.find_prior_clan_rank()
 
-            if adjusted_status != CatRank.WARRIOR and not self.specsuffix_hidden:
-                return (
-                    self.prefix + self.names_dict["special_suffixes"][adjusted_status]
-                )
+            if (
+                old_rank in self.names_dict["special_suffixes"]
+                and not self.specsuffix_hidden
+            ):
+                return self.prefix + self.names_dict["special_suffixes"][old_rank]
+
         if (
             self.cat.status.rank in self.names_dict["special_suffixes"]
             and not self.specsuffix_hidden

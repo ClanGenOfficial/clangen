@@ -274,9 +274,9 @@ class EventEditScreen(Screens):
         self.tag_info: list = []
         """Loaded tags"""
 
-        self.weight_element = {}
-        self.weight_info: int = 20
-        """Loaded weight"""
+        self.frequency_element = {}
+        self.frequency_info: int = 4
+        """Loaded frequency"""
 
         self.acc_element = {}
         self.acc_button = {}
@@ -496,7 +496,7 @@ class EventEditScreen(Screens):
             self.season_info = []
         self.sub_info = event["sub_type"] if event.get("sub_type") else []
         self.tag_info = event["tags"] if event.get("tags") else []
-        self.weight_info = event["weight"]
+        self.frequency_info = event["frequency"]
         self.event_text_info = event["event_text"]
         self.acc_info = event["new_accessory"] if event.get("new_accessory") else []
         if event.get("m_c"):
@@ -600,7 +600,7 @@ class EventEditScreen(Screens):
         if self.tag_info:
             new_event["tags"] = self.tag_info
 
-        new_event["weight"] = self.weight_info
+        new_event["frequency"] = self.frequency_info
         new_event["event_text"] = self.event_text_info
 
         if self.acc_info:
@@ -882,7 +882,7 @@ class EventEditScreen(Screens):
                     # check validity of event first
                     if (
                         not self.event_text_info
-                        or not self.weight_info
+                        or not self.frequency_info
                         or not self.type_info
                         or not self.valid_id()
                         or not self.valid_injury()
@@ -1545,9 +1545,9 @@ class EventEditScreen(Screens):
         self.rank_tag_checkbox = {}
         if not self.param_locks.get("tag"):
             self.tag_info = []
-        self.weight_element = {}
-        if not self.param_locks.get("weight"):
-            self.weight_info = 20
+        self.frequency_element = {}
+        if not self.param_locks.get("frequency"):
+            self.frequency_info = 4
         self.acc_element = {}
         if not self.param_locks.get("acc"):
             self.acc_info = []
@@ -1703,7 +1703,7 @@ class EventEditScreen(Screens):
         self.future_template = {
             "event_type": "death",
             "pool": {
-                "subtype": [],
+                "sub_type": [],
                 "event_id": [],
                 "excluded_event_id": [],
             },
@@ -2356,12 +2356,12 @@ class EventEditScreen(Screens):
                     "A Future Event block has no type. A type must be chosen!"
                 )
             elif (
-                not pool.get("subtype")
+                not pool.get("sub_type")
                 and not pool.get("event_id")
                 and not pool.get("excluded_event_id")
             ):
                 valid = False
-                self.alert_text = "A Future Event block has no subtype, event_id, or excluded_event_id given. Event pool is too broad, you must use at least one of these constraints!"
+                self.alert_text = "A Future Event block has no sub_type, event_id, or excluded_event_id given. Event pool is too broad, you must use at least one of these constraints!"
             elif block["moon_delay"][0] > block["moon_delay"][1]:
                 valid = False
                 self.alert_text = "A Future Event block has an invalid moon delay. The second moon delay number should be equal to or larger than the first!"
@@ -2959,8 +2959,8 @@ class EventEditScreen(Screens):
 
         # POOL
         pool = selected_constraints["pool"]
-        self.future_element["sub_dropdown"].set_selected_list(pool["subtype"].copy())
-        self.future_element["sub_display"].set_text(f"subtype: {pool['subtype']}")
+        self.future_element["sub_dropdown"].set_selected_list(pool["sub_type"].copy())
+        self.future_element["sub_display"].set_text(f"subtype: {pool['sub_type']}")
 
         if pool.get("event_id"):
             text = ""
@@ -2983,8 +2983,11 @@ class EventEditScreen(Screens):
 
         # INVOLVED CATS
         if (
-            "murder_reveal" in pool["subtype"]
-            or (selected_constraints["event_type"] == "misc" and not pool["subtype"])
+            (
+                "murder_reveal" in pool["sub_type"]
+                or "hidden_murder_reveal" in pool["sub_type"]
+            )
+            or (selected_constraints["event_type"] == "misc" and not pool["sub_type"])
             and "mur_c" not in selected_constraints["involved_cats"]
         ):
             selected_constraints["involved_cats"] = {
@@ -3717,7 +3720,7 @@ class EventEditScreen(Screens):
             self.future_element["sub_dropdown"].new_item_list(
                 self.event_types[block_info["event_type"]]
             )
-            block_info["pool"]["subtype"] = []
+            block_info["pool"]["sub_type"] = []
 
         # SUB CHANGE
         elif (
@@ -3734,7 +3737,10 @@ class EventEditScreen(Screens):
                 f"subtype:{block_info['pool']['subtype']}"
             )
 
-            if "murder_reveal" in block_info["pool"]["subtype"]:
+            if (
+                "murder_reveal" in block_info["pool"]["subtype"]
+                or "hidden_murder_reveal" in block_info["pool"]["subtype"]
+            ):
                 block_info["involved_cats"] = {
                     "m_c": "r_c",
                     "mur_c": "m_c",
@@ -7134,7 +7140,7 @@ class EventEditScreen(Screens):
         # TAGS
         self.create_tag_editor()
         # WEIGHT
-        self.create_weight_editor()
+        self.create_frequency_editor()
         # ACC
         self.create_acc_editor()
 
@@ -7146,7 +7152,7 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.weight_element["text"]},
+            anchors={"top_target": self.frequency_element["text"]},
         )
         prev_element = None
         for group in self.acc_categories.keys():
@@ -7247,9 +7253,9 @@ class EventEditScreen(Screens):
             ui_scale_dimensions((100, 100)),
         )
 
-    def create_weight_editor(self):
-        self.weight_element["text"] = UITextBoxTweaked(
-            "<b>* weight:</b>",
+    def create_frequency_editor(self):
+        self.frequency_element["text"] = UITextBoxTweaked(
+            "<b>frequency:</b>",
             ui_scale(pygame.Rect((0, 15), (-1, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
@@ -7257,23 +7263,23 @@ class EventEditScreen(Screens):
             container=self.editor_container,
             anchors={"top_target": self.editor_element["tag"]},
         )
-        self.weight_element["entry"] = pygame_gui.elements.UITextEntryLine(
+        self.frequency_element["entry"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((0, 18), (50, 29))),
             manager=MANAGER,
             container=self.editor_container,
             anchors={
                 "top_target": self.editor_element["tag"],
-                "left_target": self.weight_element["text"],
+                "left_target": self.frequency_element["text"],
             },
-            initial_text=f"{self.weight_info}",
+            initial_text=f"{self.frequency_info}",
         )
         self.create_lock(
-            name="weight",
+            name="frequency",
             top_anchor=self.editor_element["tag"],
-            left_anchor=self.weight_element["entry"],
+            left_anchor=self.frequency_element["entry"],
             x_offset=268,
         )
-        self.create_divider(self.weight_element["entry"], "weight", -10)
+        self.create_divider(self.frequency_element["entry"], "frequency", -10)
 
     def create_tag_editor(self):
         self.tag_element["collapse_container"] = UICollapsibleContainer(

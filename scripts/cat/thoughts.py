@@ -5,7 +5,9 @@ from typing import TYPE_CHECKING
 import i18n
 
 from scripts.cat.enums import CatGroup
+from scripts.events_module.event_filters import event_for_cat
 from scripts.game_structure.localization import load_lang_resource
+from scripts.utility import filter_relationship_type
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -19,34 +21,16 @@ class Thoughts:
         if not random_cat:
             return False
 
+        if not filter_relationship_type(
+            group=[main_cat, random_cat],
+            filter_types=constraint,
+        ):
+            return False
+
         # No current relationship-value bases tags, so this is commented out.
         relationship = None
         if random_cat.ID in main_cat.relationships:
             relationship = main_cat.relationships[random_cat.ID]
-
-        if "siblings" in constraint and not main_cat.is_sibling(random_cat):
-            return False
-
-        if "littermates" in constraint and not main_cat.is_littermate(random_cat):
-            return False
-
-        if "mates" in constraint and random_cat.ID not in main_cat.mate:
-            return False
-
-        if "not_mates" in constraint and random_cat.ID in main_cat.mate:
-            return False
-
-        if "parent/child" in constraint and not main_cat.is_parent(random_cat):
-            return False
-
-        if "child/parent" in constraint and not random_cat.is_parent(main_cat):
-            return False
-
-        if "mentor/app" in constraint and random_cat not in main_cat.apprentice:
-            return False
-
-        if "app/mentor" in constraint and random_cat.ID != main_cat.mentor:
-            return False
 
         if (
             "strangers" in constraint
@@ -97,83 +81,47 @@ class Thoughts:
             ):
                 return False
 
+        main_info_dict = {}
+        random_info_dict = {}
+
         # Constraints for the status of the main cat
         if "main_status_constraint" in thought:
-            if (
-                main_cat.status.rank not in thought["main_status_constraint"]
-                and "any" not in thought["main_status_constraint"]
-            ):
-                return False
+            main_info_dict["status"] = thought["main_status_constraint"]
 
         # Constraints for the status of the random cat
         if "random_status_constraint" in thought and random_cat:
-            if (
-                random_cat.status.rank not in thought["random_status_constraint"]
-                and "any" not in thought["random_status_constraint"]
-            ):
-                return False
-        elif "random_status_constraint" in thought and not random_cat:
-            pass
+            random_info_dict["status"] = thought["random_status_constraint"]
 
         # main cat age constraint
         if "main_age_constraint" in thought:
-            if main_cat.age not in thought["main_age_constraint"]:
-                return False
+            main_info_dict["age"] = thought["main_age_constraint"]
 
         if "random_age_constraint" in thought and random_cat:
-            if random_cat.age not in thought["random_age_constraint"]:
-                return False
+            random_info_dict["age"] = thought["random_age_constraint"]
 
         if "main_trait_constraint" in thought:
-            if main_cat.personality.trait not in thought["main_trait_constraint"]:
-                return False
+            main_info_dict["trait"] = thought["main_trait_constraint"]
 
         if "random_trait_constraint" in thought and random_cat:
-            if random_cat.personality.trait not in thought["random_trait_constraint"]:
-                return False
+            random_info_dict["trait"] = thought["random_trait_constraint"]
 
         if "main_skill_constraint" in thought:
-            _flag = False
-            for _skill in thought["main_skill_constraint"]:
-                spli = _skill.split(",")
-
-                if len(spli) != 2:
-                    print("Throught constraint not properly formated", _skill)
-                    continue
-
-                if main_cat.skills.meets_skill_requirement(spli[0], int(spli[1])):
-                    _flag = True
-                    break
-
-            if not _flag:
-                return False
+            main_info_dict["skill"] = thought["main_skill_constraint"]
 
         if "random_skill_constraint" in thought and random_cat:
-            _flag = False
-            for _skill in thought["random_skill_constraint"]:
-                spli = _skill.split(",")
-
-                if len(spli) != 2:
-                    print("Throught constraint not properly formated", _skill)
-                    continue
-
-                if random_cat.skills.meets_skill_requirement(spli[0], spli[1]):
-                    _flag = True
-                    break
-
-            if not _flag:
-                return False
+            random_info_dict["skill"] = thought["random_skill_constraint"]
 
         if "main_backstory_constraint" in thought:
-            if main_cat.backstory not in thought["main_backstory_constraint"]:
-                return False
+            main_info_dict["backstory"] = thought["main_backstory_constraint"]
 
         if "random_backstory_constraint" in thought:
-            if (
-                random_cat
-                and random_cat.backstory not in thought["random_backstory_constraint"]
-            ):
-                return False
+            random_info_dict["backstory"] = thought["random_backstory_constraint"]
+
+        if not event_for_cat(main_info_dict, main_cat):
+            return False
+
+        if r_c_in and not event_for_cat(random_info_dict, random_cat):
+            return False
 
         # Filter for the living status of the random cat. The living status of the main cat
         # is taken into account in the thought loading process.
@@ -400,65 +348,32 @@ class Thoughts:
 
         return chosen_thought
 
-    def create_death_thoughts(self, inter_list) -> list:
-        # helper function for death thoughts
-        created_list = []
-        for inter in inter_list:
-            created_list.append(inter)
-        return created_list
-
-    def leader_death_thought(self, lives_left, darkforest):
-        """
-        Load the special leader death thoughts, since they function differently than regular ones
-        :param lives_left: How many lives the leader has left - used to determine if they actually die or not
-        :param darkforest: Whether or not dead cats go to StarClan (false) or the DF (true)
-        """
-        base_path = f"resources/lang/{i18n.config.get('locale')}/thoughts/ondeath"
-        fallback_path = f"resources/lang/{i18n.config.get('fallback')}/thoughts/ondeath"
-        if darkforest:
-            spec_dir = "/darkforest"
-        else:
-            spec_dir = "/starclan"
+    @staticmethod
+    def new_death_thought(
+        main_cat, other_cat, game_mode, biome, season, camp, afterlife, lives_left
+    ):
         THOUGHTS: []
         try:
-            if lives_left > 0:
+            if main_cat.status.is_leader and lives_left > 0:
                 loaded_thoughts = load_lang_resource(
-                    f"thoughts/ondeath{spec_dir}/leader_life.json"
+                    f"thoughts/on_death/{afterlife}/leader_life.json"
+                )
+            elif main_cat.status.is_leader and lives_left == 0:
+                loaded_thoughts = load_lang_resource(
+                    f"thoughts/on_death/{afterlife}/leader_death.json"
                 )
             else:
                 loaded_thoughts = load_lang_resource(
-                    f"thoughts/ondeath{spec_dir}/leader_death.json"
+                    f"thoughts/on_death/{afterlife}/general.json"
                 )
             thought_group = choice(
-                Thoughts.create_death_thoughts(self, loaded_thoughts)
+                Thoughts.create_thoughts(
+                    loaded_thoughts, main_cat, other_cat, game_mode, biome, season, camp
+                )
             )
             chosen_thought = choice(thought_group["thoughts"])
             return chosen_thought
-        except Exception:
-            traceback.print_exc()
-            chosen_thought = i18n.t("defaults.thought")
-            return chosen_thought
 
-    def new_death_thought(self, darkforest, isoutside):
-        base_path = f"resources/lang/{i18n.config.get('locale')}/thoughts/ondeath"
-        fallback_path = f"resources/lang/{i18n.config.get('fallback')}/thoughts/ondeath"
-
-        if isoutside:
-            spec_dir = "/unknownresidence"
-        elif darkforest is False:
-            spec_dir = "/starclan"
-        else:
-            spec_dir = "/darkforest"
-        THOUGHTS: []
-        try:
-            loaded_thoughts = load_lang_resource(
-                f"thoughts/ondeath{spec_dir}/general.json"
-            )
-            thought_group = choice(
-                Thoughts.create_death_thoughts(self, loaded_thoughts)
-            )
-            chosen_thought = choice(thought_group["thoughts"])
-            return chosen_thought
         except Exception:
             traceback.print_exc()
             return i18n.t("defaults.thought")
