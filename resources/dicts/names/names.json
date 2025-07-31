@@ -26,7 +26,7 @@
     "haven", "hawk", "haze", "heather", "hiss", "hollow", "holly", "honey", "hope", "howl", "husk", "ice", "iris", "ivy", "jaw", 
     "joy", "jumble", "jump", "kestrel", "kick", "kite", "knoll", "lake", "larch", "laurel", "leaf", "leap", "leg", 
     "light", "lilac", "lily", "lion", "lotus", "mallow", "mane", "mark", "meadow", "mimic", "minnow", "mist", 
-    "moor", "moss", "moth", "mouse", "munch", "murk", "muzzle", "needle", "nest", "nettle", "newt", "nibble", "nip", 
+    "moor", "moss", "moth", "mouse", "munch", "murk", "muzzle", "needle", "nest", "newt", "nibble", "nip", 
     "noise", "nose", "nudge", "nut", "pad", "patch", "path", "peak", "petal", "plume", "pond", "pool", "poppy", "pounce", "prance", 
     "prickle", "puddle", "purr", "quill", "quiver", "rain", "rapid", "reed", "rip", "ripple", "rise", "rise", "river", 
     "roach", "roar", "rock", "root", "rose", "rumble", "rump", "run", "runner", "rush", "rustle", "scar", "scratch", "screech", 
@@ -98,10 +98,11 @@
     "patch", "spot", "splash", "patch", "spots", "swan", "dove", "storm"
     ],
     "Tabby": [
-    "tiger", "stripe", "feather", "leaf", "stripe", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch"
+    "tiger", "stripe", "feather", "leaf", "stripe", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", "nettle"
     ],
     "Marbled": [
-    "tiger", "stripe", "feather", "leaf", "stripe", "swirl", "thorn", "thistle", "shard", "whirl", "ripple", "bee", "bumble", "streak"
+    "tiger", "stripe", "feather", "leaf", "stripe", "swirl", "thorn", "thistle", "shard", "whirl", "ripple", "bee", "bumble", 
+    "streak", "nettle"
     ],
     "Speckled": [
     "leopard", "dapple", "speckle", "spot", "speck", "freckle", "fleck", "thrush", "swarm"
@@ -119,10 +120,12 @@
     "spots", "pelt", "speckle", "freckle", "flake", "fleck", "thrush", "swarm"
     ],
     "Mackerel": [
-    "tiger", "stripe", "feather", "leaf", "stripe", "fern", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch"
+    "tiger", "stripe", "feather", "leaf", "stripe", "fern", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch",
+    "nettle"
     ],
     "Classic": [
-    "tiger", "stripe", "feather", "leaf", "stripe", "fern", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch"
+    "tiger", "stripe", "feather", "leaf", "stripe", "fern", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak", 
+    "scratch", "nettle"
     ],
     "Sokoke": [
     "tiger", "stripe", "feather", "leaf", "stripe", "fern", "swirl", "shard", "whirl", "bee", "bumble", "streak", "scratch"
@@ -145,8 +148,8 @@
   },
   "tortie_pelt_suffixes": {
     "single": ["dapple", "spots", "splash", "patch"],
-    "tabby": ["stripe", "feather", "leaf", "stripe", "shade", "fern", "tiger", "thorn", "thistle", "bee", "bumble", "streak", "scratch"],
-    "marbled": ["stripe", "feather", "leaf", "stripe", "shade", "fern", "tiger", "swirl", "thorn", "thistle", "shard", "whirl", "ripple", "bee", "bumble", "streak"],
+    "tabby": ["stripe", "feather", "leaf", "stripe", "shade", "fern", "tiger", "thorn", "thistle", "bee", "bumble", "streak", "scratch", "nettle"],
+    "marbled": ["stripe", "feather", "leaf", "stripe", "shade", "fern", "tiger", "swirl", "thorn", "thistle", "shard", "whirl", "ripple", "bee", "bumble", "streak", "nettle"],
     "speckled": ["dapple", "speckle", "spot", "speck", "freckle", "leopard", "fleck", "thrush", "swarm"],
     "bengal": ["dapple", "speckle", "spots", "speck", "fern", "freckle", "leopard", "fleck", "blotch"],
     "rosette": ["dapple", "speckle", "spots", "dapple", "fern", "freckle", "leopard", "fleck", "blotch"],
@@ -182,7 +185,7 @@
     "Lily", "Little", "Lizard", "Locust", "Long", "Log", "Lotus", "Loud", "Low", "Luck", "Lupine", "Lynx", "Mallow", "Mantis", 
     "Maple", "Marigold", "Marsh", "Meadow", "Mellow", "Midge", "Milkweed", "Mink", "Minnow", "Mistle", "Mite", "Mole",
     "Moor", "Morning", "Moss", "Mossy", "Moth", "Mouse", "Mumble", "Myrtle", "Nectar", "Needle",
-    "Nettle", "Newt", "Nightingale", "Nimble", "Nut", "Oat", "Odd", "One", "Oriole", "Osprey", "Pansy", "Parsley",
+    "Newt", "Nightingale", "Nimble", "Nut", "Oat", "Odd", "One", "Oriole", "Osprey", "Pansy", "Parsley",
     "Partridge", "Patch", "Patchouli", "Peak", "Pear", "Peat", "Perch", "Petal", "Petunia", "Pheasant", "Pigeon", "Pike", "Pine",
     "Piper", "Plover", "Plum", "Pod", "Pond", "Pool", "Pop", "Poppy", "Posy", "Pounce", "Prance", "Prickle", "Prim", "Primrose",
     "Puddle", "Quail", "Quick", "Quiet", "Quill", "Quiver", "Rabbit", "Ragged", "Rain", "Rainbow", "Rat",
