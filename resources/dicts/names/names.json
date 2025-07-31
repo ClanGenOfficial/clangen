@@ -147,7 +147,7 @@
     ]
   },
   "tortie_pelt_suffixes": {
-    "single": ["dapple", "spots", "splash", "patch"],
+    "single": ["dapple", "spots", "splash", "patch", "swan", "dove", "storm"],
     "tabby": ["stripe", "feather", "leaf", "stripe", "shade", "fern", "tiger", "thorn", "thistle", "bee", "bumble", "streak", "scratch", "nettle"],
     "marbled": ["stripe", "feather", "leaf", "stripe", "shade", "fern", "tiger", "swirl", "thorn", "thistle", "shard", "whirl", "ripple", "bee", "bumble", "streak", "nettle"],
     "speckled": ["dapple", "speckle", "spot", "speck", "freckle", "leopard", "fleck", "thrush", "swarm"],
@@ -210,7 +210,7 @@
     "Mist", "Morel", "Mulberry", "Night", "Oleander", "Orchid", "Otter", "Owl", "Pebble", "Phlox", "Pipit", "Plume",
     "Privet", "Rime", "Rock", "Rue", "Saffron", "Scale", "Scrub", "Shade", "Shadow", "Shatter", "Smoke", "Snapdragon",
     "Snow", "Snowy", "Soot", "Spindle", "Stag", "Stone", "Storm", "Sun", "Swan", "Teasel", "Tree", "Twig", "Twilight",
-    "Verbena", "Vervain", "Violet", "Vole", "Warbler", "Wisp", "Roaring", "Leaping", "Rushing", "Rush"
+    "Verbena", "Vervain", "Violet", "Vole", "Warbler", "Wisp", "Roaring", "Leaping", "Rushing", "Rush", "Screech"
   ],
 
   "colour_prefixes": {
