@@ -5355,7 +5355,6 @@
     {
         "id": "missing_leg_gen_to_alive_gen",
         "thoughts": [
-            "Tries to make a new leg out of a stick {PRONOUN/m_c/subject} found",
             "Shows {PRONOUN/m_c/subject} can still run and jump around like any other cat!",
             "Groans when someone says how sad {PRONOUN/m_c/subject} must be to have three legs",
             "Points out to r_c that {PRONOUN/m_c/subject} can't get injured on a leg {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have"
