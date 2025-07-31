@@ -6174,7 +6174,7 @@
                 "weight": 20
             },
             {
-                "text": "{PRONOUN/p_l/subject/CAP} find mallow... but r_c ends up eating it instead of carrying it back, resulting in the herbs being ruined.",
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} mallow... but r_c ends up eating it instead of carrying it back, resulting in the herbs being ruined.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [

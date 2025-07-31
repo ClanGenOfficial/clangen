@@ -27,7 +27,7 @@
 			"m_c didn't expect an apology from r_c, but accepted it regardless.",
 			"m_c has been a little kinder to r_c today.",
 			"m_c and r_c bond over something small.",
-			"m_c helps r_c with something {PRONOUN/r_c/poss} were struggling with.",
+			"m_c helps r_c with something {PRONOUN/r_c/subject} {VERB/r_c/were/was} struggling with.",
 			"m_c clears up a misunderstanding with r_c."
 		],
 		"reaction_random_cat": {
