@@ -66,11 +66,11 @@
     ],
     "Mackerel": [
 	    "Tiger", "Thistle", "Bramble", "Nettle", "Thorn", "Bee", "Bumble", "Twig", "Branch", "Bracken", "Brindle", 
-	    "Needle", "Scratch", "Bristle", "Stripe", "Streak", "Strike", "Briar"
+	    "Scratch", "Bristle", "Stripe", "Streak", "Strike", "Briar"
     ],
     "Classic": [
 	    "Tiger", "Thistle", "Bramble", "Nettle", "Thorn", "Bee", "Bumble", "Twig", "Branch", "Bracken", "Brindle", 
-	    "Needle", "Scratch", "Bristle", "Stripe", "Streak", "Strike", "Briar"
+	    "Scratch", "Bristle", "Stripe", "Streak", "Strike", "Briar"
     ],
     "Sokoke": [
 	    "Tiger", "Thistle", "Bramble", "Nettle", "Feather", "Thorn", "Bee", "Bumble", "Twig", "Branch", "Brindle", "Bristle", "Twist", 
@@ -90,7 +90,7 @@
 	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Maple"
     ],
     "Calico": [
-	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled"
+	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Rainbow"
     ]
   },
   "pelt_suffixes": {
@@ -419,7 +419,7 @@
     "Yucca", "Salt", "Dingo", "Mirage", "Cobra", "Cheetah", "Caracal", "Scorpion", "Lion", "Antelope", "Gazelle", "Oryx",
     "Camel", "Meerkat", "Skull", "Rye", "Jackrabbit", "Needle", "Aloe", "Acacia", "Viper", "Lizard",
     "Snake", "Poison", "Venom", "Tiapan", "Fang", "Blister", "Blaze", "Burn", "Scorch", "Smolder", "Jerboa", "Fennec", "Mamba", "Coati",
-    "Addax", "Emu", "Hyena", "Ostrich", "Scarab", "Hare", "Thorn", "Needle"
+    "Addax", "Emu", "Hyena", "Ostrich", "Scarab", "Hare", "Thorn", "Needle", "Scale", "Scaly"
     ]
   },
 
@@ -448,7 +448,7 @@
     ],
     "Desert": [
     "prickle", "dune", "sand", "canyon", "rattle", "wind", "dust", "sun", "fly", "scorpion", "snake", "needle", "fang", "tooth", "bite",
-    "aloe", "thorn", "needle"
+    "aloe", "thorn", "needle", "scale"
     ]
   },
 
@@ -552,7 +552,7 @@
     "blaze", "shine", "fire", "poppy", "rose", "flame", "flare", "ember", "fox", "rose"
     ],
     "HAZEL": [
-    "moss", "leaf", "sprout", "seed", "clover", "fern", "ivy", "willow"
+    "moss", "leaf", "sprout", "seed", "clover", "fern", "ivy", "willow", "meadow"
     ],
     "PALEGREEN": [
     "leaf", "sprout", "seed", "clover", "fern", "ivy", "glade", "meadow", "moss", "willow"
