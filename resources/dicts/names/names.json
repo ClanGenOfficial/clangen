@@ -49,10 +49,10 @@
 	    "Spotted", "Speckle", "Dapple", "Fleck", "Speckled", "Spot", "Swarm", "Flea", "Tick", "Thrush", "Birch", "Lynx", "Dappled", "Freckle"
     ],
     "Bengal": [
-	    "Python", "Leopard", "Blossom", "Bloom", "Blooming", "Dapple", "Dappled", "Spotted", "Mottle", "Mottled"
+	    "Python", "Leopard", "Blossom", "Bloom", "Blooming", "Dapple", "Dappled", "Spotted", "Mottle", "Mottled", "Bite", "Flower"
     ],
     "Rosette": [
-	    "Python", "Leopard", "Spotted", "Dapple", "Dappled", "Blossom", "Bloom", "Blooming", "Mottle", "Mottled"
+	    "Python", "Leopard", "Spotted", "Dapple", "Dappled", "Blossom", "Bloom", "Blooming", "Mottle", "Mottled", "Bite", "Flower"
     ],
     "Smoke": [
 	    "Fog", "Smoke", "Mist", "Misty", "Blurry", "Blur", "Foggy", "Hazy", "Haze", "Daze"
@@ -62,31 +62,32 @@
     ],
     "Mackerel": [
 	    "Tiger", "Thistle", "Bramble", "Nettle", "Thorn", "Bee", "Bumble", "Twig", "Branch", "Bracken", "Brindle", 
-	    "Scratch", "Bristle", "Stripe", "Streak", "Strike", "Briar", "Feather"
+	    "Scratch", "Bristle", "Stripe", "Streak", "Strike", "Briar", "Feather", "Needle"
     ],
     "Classic": [
 	    "Tiger", "Thistle", "Bramble", "Nettle", "Thorn", "Bee", "Bumble", "Twig", "Branch", "Bracken", "Brindle", 
-	    "Scratch", "Bristle", "Stripe", "Streak", "Strike", "Briar", "Feather"
+	    "Scratch", "Bristle", "Stripe", "Streak", "Strike", "Briar", "Feather", "Needle"
     ],
     "Sokoke": [
 	    "Tiger", "Thistle", "Bramble", "Nettle", "Feather", "Thorn", "Bee", "Bumble", "Twig", "Branch", "Brindle", "Bristle", "Twist", 
-	    "Stripe", "Streak", "Strike", "River", "Feather"
+	    "Stripe", "Streak", "Strike", "River", "Feather", "Needle"
     ],
     "Agouti": [
-	    "Speckle", "Freckle", "Spotted", "Fleck", "Scratch", "Stripe", "Spot", "Briar"
+	    "Speckle", "Freckle", "Spotted", "Fleck", "Scratch", "Stripe", "Spot", "Briar", "Needle", "Swarm", "Flea", "Tick"
     ],
     "Singlestripe": [
-	    "Ridge", "Streak", "Skunk", "Tadpole", "Trail", "Long", "Stripe", "Streak", "Strike", "Snake", "Rindle", "Runnel", "Serpent", "Lion"
+	    "Ridge", "Streak", "Skunk", "Tadpole", "Trail", "Long", "Stripe", "Streak", "Strike", "Snake", "Rindle", "Runnel", "Serpent", 
+	    "Lion", "Needle"
     ],
     "Masked": [
 	    "Badger", "Raccoon", "Tiger", "Bee", "Bumble", "Thistle", "Bramble", "Nettle", "Thorn", "Twig", "Branch", "Bristle", 
-	    "Stripe", "Streak", "Strike", "Scratch"
+	    "Stripe", "Streak", "Strike", "Scratch", "Needle"
     ],
     "Tortie": [
-	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Maple", "Leaf", "Wild", "Bright", "Broken"
+	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Maple", "Leaf", "Wild", "Bright", "Broken", "Shard"
     ],
     "Calico": [
-	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Rainbow", "Leaf", "Wild", "Bright", "Broken"
+	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Rainbow", "Leaf", "Wild", "Bright", "Broken", "Shard"
     ]
   },
   "pelt_suffixes": {
@@ -95,7 +96,7 @@
     ],
     "Tabby": [
     "tiger", "stripe", "feather", "leaf", "stripe", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", "nettle", 
-    "feather"
+    "feather", "needle"
     ],
     "Marbled": [
     "tiger", "stripe", "feather", "leaf", "stripe", "swirl", "thorn", "thistle", "shard", "whirl", "ripple", "bee", "bumble", 
@@ -105,10 +106,10 @@
     "leopard", "dapple", "speckle", "spot", "speck", "freckle", "fleck", "thrush", "swarm", "flake", "spots"
     ],
     "Bengal": [
-    "leopard", "dapple", "speckle", "spots", "speck", "freckle", "fleck", "blotch", "bloom", "flower", "spot"
+    "leopard", "dapple", "speckle", "spots", "speck", "freckle", "fleck", "blotch", "bloom", "flower", "spot", "bite", "flower", "blossom"
     ],
     "Rosette": [
-    "leopard", "dapple", "speckle", "spots", "dapple", "freckle", "fleck", "blotch", "flower", "bloom"
+    "leopard", "dapple", "speckle", "spots", "dapple", "freckle", "fleck", "blotch", "flower", "bloom", "bite", "flower", "blossom"
     ],
     "Smoke": [
     "fade", "dusk", "dawn", "smoke", "cloud", "dust", "mist", "storm", "fog", "blur", "haze", "daze"
@@ -118,62 +119,65 @@
     ],
     "Mackerel": [
     "tiger", "stripe", "feather", "leaf", "stripe", "fern", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch",
-    "nettle"
+    "nettle", "needle"
     ],
     "Classic": [
     "tiger", "stripe", "feather", "leaf", "stripe", "fern", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak", 
-    "scratch", "nettle"
+    "scratch", "nettle", "needle"
     ],
     "Sokoke": [
-    "tiger", "stripe", "feather", "leaf", "stripe", "fern", "swirl", "shard", "whirl", "bee", "bumble", "streak", "scratch", "feather"
+    "tiger", "stripe", "feather", "leaf", "stripe", "fern", "swirl", "shard", "whirl", "bee", "bumble", "streak", "scratch", "feather",
+    "needle"
     ],
     "Agouti": [
-    "back", "pelt", "fur", "tail", "flake", "fleck", "freckle", "streak", "scratch", "stripe", "speck", "speckle"
+    "back", "pelt", "fur", "tail", "flake", "fleck", "freckle", "streak", "scratch", "stripe", "speck", "speckle", "needle", "thrush", "swarm"
     ],
     "Singlestripe": [
-    "stripe", "stripe", "streak", "back", "back", "shade", "stem", "shadow", "tail", "tail", "arch", "scratch", "ridge", "lion"
+    "stripe", "stripe", "streak", "back", "back", "shade", "stem", "shadow", "tail", "tail", "arch", "scratch", "ridge", "lion", "needle"
     ],
     "Masked": [
-    "tiger", "stripe", "mask", "mask", "shade", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", "badger", "raccoon"
+    "tiger", "stripe", "mask", "mask", "shade", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", "badger", "raccoon",
+    "needle"
     ],
     "Tortie": [
-    "dapple", "speckle", "spot", "dapple", "shard", "bloom", "blossom", "blotch", "burst", "patch", "leaf"
+    "dapple", "speckle", "spot", "dapple", "shard", "bloom", "blossom", "blotch", "burst", "patch", "leaf", "shard"
     ],
     "Calico": [
-    "stripe", "dapple", "patch", "patch", "shard", "bloom", "blossom", "blotch", "burst", "leaf"
+    "stripe", "dapple", "patch", "patch", "shard", "bloom", "blossom", "blotch", "burst", "leaf", "shard"
     ]
   },
   "tortie_pelt_suffixes": {
     "single": [
 	    "dapple", "spots", "splash", "patch", "swan", "dove", "storm"],
     "tabby": [
-	    "stripe", "feather", "leaf", "stripe", "shade", "fern", "tiger", "thorn", "thistle", "bee", "bumble", "streak", "scratch", "nettle"],
+	    "stripe", "feather", "leaf", "stripe", "shade", "fern", "tiger", "thorn", "thistle", "bee", "bumble", "streak", "scratch", 
+	    "nettle", "needle"],
     "marbled": [
 	    "stripe", "feather", "leaf", "stripe", "shade", "fern", "tiger", "swirl", "thorn", "thistle", "shard", "whirl", "ripple", "bee", 
 	    "bumble", "streak", "nettle", "frill"],
     "speckled": [
 	    "dapple", "speckle", "spot", "speck", "freckle", "leopard", "fleck", "thrush", "swarm"],
     "bengal": [
-	    "dapple", "speckle", "spots", "speck", "fern", "freckle", "leopard", "fleck", "blotch"],
+	    "dapple", "speckle", "spots", "speck", "fern", "freckle", "leopard", "fleck", "blotch", "bite", "flower", "blossom", "bloom"],
     "rosette": [
-	    "dapple", "speckle", "spots", "dapple", "fern", "freckle", "leopard", "fleck", "blotch"],
+	    "dapple", "speckle", "spots", "dapple", "fern", "freckle", "leopard", "fleck", "blotch", "bite", "flower", "blossom", "bloom"],
     "smoke": [
 	    "fade", "dusk", "dawn", "smoke", "blur", "cloud", "dust", "mist", "storm", "fog", "haze", "daze"],
     "ticked": [
 	    "spots", "pelt", "speckle", "freckle", "flake", "fleck", "thrush", "swarm"],
     "mackerel": [
-	    "stripe", "feather", "fern", "tiger", "leaf", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch"],
+	    "stripe", "feather", "fern", "tiger", "leaf", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", "needle"],
     "classic": [
-	    "stripe", "feather", "fern", "tiger", "leaf", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch"],
+	    "stripe", "feather", "fern", "tiger", "leaf", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", "needle"],
     "sokoke": [
-	    "stripe", "feather", "fern", "tiger", "leaf", "stripe", "swirl", "shard", "whirl", "bee", "bumble", "streak", "scratch"],
+	    "stripe", "feather", "fern", "tiger", "leaf", "stripe", "swirl", "shard", "whirl", "bee", "bumble", "streak", "scratch", "needle"],
     "agouti": [
-	    "back", "pelt", "fur", "dapple", "flake", "fleck", "freckle", "streak", "scratch", "stripe"],
+	    "back", "pelt", "fur", "dapple", "flake", "fleck", "freckle", "streak", "scratch", "stripe", "needle"],
     "singlestripe": [
 	    "stripe", "back", "shade", "stem", "patch", "streak", "stripe", "back", "shadow", "arch", "ridge"],
     "masked": [
 	    "stripe", "dapple", "mask", "mask", "shade", "tiger", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", 
-	    "badger", "raccoon"]
+	    "badger", "raccoon", "needle"]
   },
 
   "normal_prefixes": [
