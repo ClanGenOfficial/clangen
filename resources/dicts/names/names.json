@@ -241,7 +241,7 @@
     "SILVER": [
     "Gray", "Silver", "Silver", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Gravel", "Flax", "Cold",
     "River", "Blizzard", "Flurry", "Bone", "Bleak", "Stone", "Pebble", "Heather", "Scale", "Crocus", "Pigeon", "Stone", "Rock", "Pebble",
-    "Rue", "Fringe", "Glint", "Mistle", "Shatter", "Gossamer", "Air", "Pale", "Ermine", "Stoat", "Gull", "Vine", "Lilac", "Rime", "Bluebell",
+    "Rue", "Fringe", "Glint", "Mistle", "Shatter", "Gossamer", "Air", "Pale", "Ermine", "Stoat", "Gull", "Lilac", "Rime", "Bluebell",
     "Wolf", "Lynx", "Shiver"
     ],
     "GREY": [
@@ -505,7 +505,7 @@
     ],
     "GREY": [
 	    "Gray", "Stone", "Silver", "Ripple", "Moon", "Rain", "Storm", "Heather", "Dew", "Thunder", "Pale", "Minnow", "Cold", "Hemlock",
-	    "Ice", "Flax", "Frost", "Shimmer", "Shiver", "Cloud"
+	    "Ice", "Flax", "Frost", "Shimmer", "Shiver", "Cloud", "Soot", "Ash"
     ],
     "CYAN": [
 	    "Sky", "Blue", "River", "Rapid", "Ice", "Frost", "Cold", "Rime", "Dew", "Bright", "Splash", "Bluebell", "Robin", "Egg", 
@@ -556,7 +556,7 @@
     ],
     "SILVER": [
 	    "Gray", "Stone", "Silver", "Silver", "Moon", "Rain", "Storm", "Pale", "Light", "Minnow", "Cold", "Hemlock", "Ice", 
-	    "Flax", "Frost", "Shimmer", "Shiver", "Cloud"
+	    "Flax", "Frost", "Shimmer", "Shiver", "Cloud", "Soot", "Ash"
     ],
     "ORANGE": [
 	    "Amber", "Sun", "Fire", "Honey", "Flame", "Blaze", "Pumpkin", "Red", "Ember", "Orange", "Fox", "Rust", "Marigold", 
