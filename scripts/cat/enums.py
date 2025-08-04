@@ -139,8 +139,7 @@ class CatThought(StrEnum):
     ON_DEATH = auto()
     ON_BIRTH = auto()
     ON_MEETING = auto()
-    ON_JOIN  = auto()
+    ON_JOIN = auto()
     ON_EXILE = auto()
-    ON_LOST =  auto()
+    ON_LOST = auto()
     ON_AFTERLIFE_CHANGE = auto()
-
