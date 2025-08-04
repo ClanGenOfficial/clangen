@@ -151,7 +151,7 @@
         ],
         "absent": [
             "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, worried about {PRONOUN/m_c/poss} head injury.",
-            "m_c has trouble remembering where {PRONOUNS/m_c/poss} nest is. r_c takes note- m_c has been fading fast since the head injury.",
+            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note- m_c has been fading fast since the head injury.",
             "m_c got lost in the camp too many times. r_c wants to keep {PRONOUN/m_c/object} at camp for much longer."
         ]
     },
