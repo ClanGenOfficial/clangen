@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from enum import auto
+
 from strenum import StrEnum
 
 
@@ -129,3 +131,16 @@ class CatGroup(StrEnum):
 
     def is_other_clan_group(self) -> bool:
         return self.is_any_clan_group() and self != self.PLAYER_CLAN
+
+
+class CatThought(StrEnum):
+    NORMAL = auto()
+    GUIDE = auto()
+    ON_DEATH = auto()
+    ON_BIRTH = auto()
+    ON_MEETING = auto()
+    ON_JOIN  = auto()
+    ON_EXILE = auto()
+    ON_LOST =  auto()
+    ON_AFTERLIFE_CHANGE = auto()
+
