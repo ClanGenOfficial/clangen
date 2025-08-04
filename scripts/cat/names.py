@@ -247,7 +247,7 @@ class Name:
                     pelt in ("Tortie", "Calico")
                     and tortiepattern in self.names_dict["tortie_pelt_suffixes"]
                 ):
-                    if constants.CONFIG["cat_name_controls"]["allow_eye_names"] and eyes in self.names_dict["eye_prefixes"]:
+                    if constants.CONFIG["cat_name_controls"]["allow_eye_names"] and eyes in self.names_constants.suffixes"]:
                         self.suffix = random.choice(
                             self.names_dict["tortie_pelt_suffixes"][tortiepattern] + self.names_dict["eye_suffixes"][eyes]
                         )
@@ -256,7 +256,7 @@ class Name:
                             self.names_dict["tortie_pelt_suffixes"][tortiepattern]
                         )
                 elif pelt in self.names_dict["pelt_suffixes"]:
-                    if constants.CONFIG["cat_name_controls"]["allow_eye_names"] and eyes in self.names_dict["eye_prefixes"]:
+                    if constants.CONFIG["cat_name_controls"]["allow_eye_names"] and eyes in self.names_dict["eye_suffixes"]:
                         self.suffix = random.choice(self.names_dict["pelt_suffixes"][pelt] + self.names_dict["colour_suffixes"][colour] + self.names_dict["eye_suffixes"][eyes])
                     else:
                         self.suffix = random.choice(self.names_dict["pelt_suffixes"][pelt] + self.names_dict["colour_suffixes"][colour])
