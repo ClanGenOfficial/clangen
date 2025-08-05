@@ -215,7 +215,7 @@
     },
     "a festering wound": {
         "strange lump": [
-            "r_c isn't sure where this lump came from, but m_c isn't sure it's good news.",
+            "A lump has appeared under m_c's wound. {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} sure that's a good sign.",
             "m_c complains about being unable to sleep properly, leading r_c to find a strange lump under the wound.",
             "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
         ]
