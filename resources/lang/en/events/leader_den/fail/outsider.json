@@ -357,7 +357,7 @@
   },
   {
     "interaction_type": "invite",
-    "event_text": "A c_n patrol approaches m_c with an offer, but {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't seem receptive.",
+    "event_text": "A c_n patrol approaches m_c with an offer, but {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} seem receptive.",
     "reputation": ["any"],
     "rep_change": 0,
     "m_c": {

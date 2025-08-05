@@ -5,10 +5,8 @@ import i18n
 
 from scripts.clan_resources.herb.herb import HERBS
 from scripts.events_module.future.future_event import prep_event
-from scripts.game_structure import localization
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatRank
-from scripts.cat.history import History
+from scripts.cat.enums import CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import get_clan_setting
@@ -105,6 +103,11 @@ class HandleShortEvents:
         if sub_type:
             self.sub_types.extend(sub_type)
 
+        if not main_cat.status.alive_in_player_clan or (
+            random_cat and not random_cat.status.alive_in_player_clan
+        ):
+            self.future_event_failed = True
+            return
         self.main_cat = main_cat
         self.random_cat = random_cat
         self.victim_cat = victim_cat
@@ -268,12 +271,15 @@ class HandleShortEvents:
         self.handle_injury()
 
         # handle murder reveals
-        if "murder_reveal" in self.chosen_event.sub_type:
+        if (
+            "murder_reveal" in self.chosen_event.sub_type
+            or "hidden_murder_reveal" in self.chosen_event.sub_type
+        ):
             self.main_cat.history.reveal_murder(
                 victim=self.victim_cat,
                 murderer_id=self.main_cat.ID,
                 clan_reveal="clan_wide" in self.chosen_event.tags,
-                aware_individuals=[self.random_cat],
+                aware_individuals=[self.random_cat.ID],
             )
 
         # change outsider rep
@@ -318,7 +324,7 @@ class HandleShortEvents:
         )
 
         if self.chosen_herb:
-            game.herb_events_list.append(f"{self.chosen_event} {self.herb_notice}.")
+            game.herb_events_list.append(f"{self.text} {self.herb_notice}")
 
         self.gather_future_event()
 
@@ -363,8 +369,8 @@ class HandleShortEvents:
             random_cat=Cat.fetch_cat(event.involved_cats.get("r_c")),
             freshkill_pile=game.clan.freshkill_pile,
             victim_cat=Cat.fetch_cat(event.involved_cats.get("mur_c")),
-            sub_type=event.pool.get("subtype"),
-            ignore_subtyping="subtype" not in event.pool,
+            sub_type=event.pool.get("sub_type"),
+            ignore_subtyping="sub_type" not in event.pool,
         )
 
         self.allowed_events = []
@@ -395,7 +401,13 @@ class HandleShortEvents:
         for i, attribute_list in enumerate(self.chosen_event.new_cat):
             self.new_cats.append(
                 create_new_cat_block(
-                    Cat, Relationship, self, in_event_cats, i, attribute_list
+                    Cat,
+                    Relationship,
+                    self,
+                    in_event_cats,
+                    i,
+                    attribute_list,
+                    other_clan=self.other_clan,
                 )
             )
 
@@ -492,6 +504,8 @@ class HandleShortEvents:
             self.main_cat.pelt.accessory.append(choice(acc_list))
         else:
             self.main_cat.pelt.accessory = [choice(acc_list)]
+
+        self.main_cat.pelt.rebuild_sprite = True
 
     def handle_transition(self):
         """

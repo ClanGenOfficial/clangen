@@ -23,7 +23,7 @@
             "selected_border": "#776045",
             "active_border": "#776045"
         },
-        "misc": {"border_width": "12", "shadow_width": "0"}
+        "misc": {"border_width": "12", "shadow_width": "0", "tool_tip_delay":  "0"}
     },
     "@image_button": {
         "colours": {

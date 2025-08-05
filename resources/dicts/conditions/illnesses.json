@@ -23,7 +23,11 @@
         "duration": 1,
         "medicine_duration": 1,
         "infectiousness": 0,
-        "risks": [
+        "risks": [ 
+            {
+            "name": "severe headache",
+            "chance": 50
+            }
 
         ],
         "herbs": {
@@ -60,7 +64,12 @@
         "duration": 2,
         "medicine_duration": 2,
         "infectiousness": 0,
-        "risks": [],
+        "risks": [
+            {
+            "name": "dehydrated",
+            "chance": 30
+            }
+        ],
         "herbs": {
             "1": [
                 "betony",
@@ -452,7 +461,12 @@
         "duration": 3,
         "medicine_duration": 2,
         "infectiousness": 0,
-        "risks": [],
+        "risks": [
+            {
+                "name": "strange lump",
+                "chance": 80
+            }
+        ],
         "herbs": {
             "1": ["marigold",
                 "burdock",
@@ -719,6 +733,39 @@
             ],
             "2": [],
             "3": []
+        }
+    },
+    "tick illness": {
+        "severity": "major",
+        "mortality": {
+            "newborn": 5,
+            "kitten": 10,
+            "adolescent": 15,
+            "young adult": 25,
+            "adult": 20,
+            "senior adult": 15,
+            "senior": 10
+        },
+        "medicine_mortality": {
+            "newborn": 50,
+            "kitten": 60,
+            "adolescent": 80,
+            "young adult": 80,
+            "adult": 70,
+            "senior adult": 60,
+            "senior": 60
+        },
+        "duration": 5,
+        "medicine_duration": 3,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": {
+            "1": [
+            "moss",
+            "plantain"
+            ],
+            "2": ["dandelion"],
+            "3": ["goldenrod"]
         }
     }
 }

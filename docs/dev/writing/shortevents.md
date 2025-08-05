@@ -170,13 +170,14 @@ lowercase season names + "any"
 |------------------------|------------------------------------------|
 | war                    | marks event as only occurring during war |
 
-| misc event subtypes | use                                                               |
-|---------------------|-------------------------------------------------------------------|
-| war                 | marks event as only occurring during war                          |
-| murder_reveal       | marks event as being the reveal of a murder                       |
-| accessory           | marks event as giving an accessory to m_c                         |
-| ceremony            | marks event as being the gifting of an accessory after a ceremony |
-| transition          | marks event as being a cat transitioning their gender             |
+| misc event subtypes  | use                                                                               |
+|----------------------|-----------------------------------------------------------------------------------|
+| war                  | marks event as only occurring during war                                          |
+| murder_reveal        | marks event as being the reveal of a murder                                       |
+| hidden_murder_reveal | marks event as being the reveal of a murder that was disguised as a regular death |
+| accessory            | marks event as giving an accessory to m_c                                         |
+| ceremony             | marks event as being the gifting of an accessory after a ceremony                 |
+| transition           | marks event as being a cat transitioning their gender                             |
 
 ***
 
@@ -262,12 +263,19 @@ lowercase season names + "any"
 | string                |                                                                                              |
 |-----------------------|----------------------------------------------------------------------------------------------|
 | siblings              | m_c and r_c are siblings                                                                     |
+| not_siblings          | m_c and r_c are not siblings                                                                 |
+| littermates           | m_c and r_c are littermates                                                                  |
+| not_littermates       | m_c and r_c are not littermates                                                              |
 | mates                 | m_c and r_c are mates                                                                        |
 | not_mates             | m_c and r_c are NOT mates                                                                    |
 | parent/child          | m_c is the parent of r_c                                                                     |
+| not_parent            | m_c is not r_c's parent                                                                      |
 | child/parent          | m_c is the child of r_c                                                                      |
+| not_child             | m_c is not the child of r_c                                                                  |
 | app/mentor            | m_c is the apprentice of r_c                                                                 |
+| not_app               | m_c is not the apprentice of r_c                                                             |
 | mentor/app            | r_c is the mentor of m_c                                                                     |
+| not_mentor            | r_c is not the mentor of m_c                                                                 |
 | "romantic_{value}"    | Value is an integer between 0 and 100. m_c must have more than {value} romantic-like to r_c. |
 | "platonic_{value}"    | Value is an integer between 0 and 100. m_c must have more than {value} platonic-like to r_c. |
 | "dislike_{value}"     | Value is an integer between 0 and 100. m_c must have more than {value} dislike to r_c.       |

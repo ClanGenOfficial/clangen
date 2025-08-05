@@ -17,7 +17,7 @@ from scripts.cat import save_load
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
 from scripts.cat.names import Name
-from scripts.cat.save_load import save_cats
+from scripts.cat.save_load import save_cats, add_cat_to_fade_id
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
@@ -129,9 +129,10 @@ class Events:
         self.handle_future_events()
 
         # Calling of "one_moon" functions.
-        for cat in Cat.all_cats.copy().values():
-            if not cat.status.group:
-                self.one_moon_outside_cat(cat)
+        other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
+        for cat in Cat.all_cats_list.copy():
+            if not cat.status.group or cat.status.is_other_clancat:
+                self.one_moon_outside_cat(cat, other_clan_cats)
             elif cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
                 self.one_moon_cat(cat)
 
@@ -772,16 +773,11 @@ class Events:
             cat_IDs = predetermined_cat_IDs
 
         if not predetermined_cat_IDs:
-            eligible_cats = []
-            for cat in Cat.all_cats.values():
-                if not cat.status.is_outsider and not cat.dead:
-                    continue
-                if cat.ID not in Cat.outside_cats:
-                    # The outside-value must be set to True before the cat can go to cotc
-                    Cat.outside_cats.update({cat.ID: cat})
-
-                if cat.status.is_lost(CatGroup.PLAYER_CLAN):
-                    eligible_cats.append(cat)
+            eligible_cats = [
+                cat
+                for cat in Cat.all_cats.values()
+                if not cat.dead and cat.status.is_lost(CatGroup.PLAYER_CLAN)
+            ]
 
             if not eligible_cats:
                 return
@@ -875,15 +871,15 @@ class Events:
                         else:
                             game.clan.medicine_cat = None
 
-                save_load.cat_to_fade.append(cat.ID)
+                add_cat_to_fade_id(cat.ID)
                 cat.set_faded()
 
-    def one_moon_outside_cat(self, cat):
+    def one_moon_outside_cat(self, cat, other_clan_cats: list = None):
         """
         exiled cat events
         """
         # aging the cat
-        cat.one_moon()
+        cat.one_moon(other_clan_cats)
         cat.manage_outside_trait()
 
         self.handle_outside_EX(cat)
@@ -1736,7 +1732,7 @@ class Events:
     # This gives outsiders exp. There may be a better spot for it to go,
     # but I put it here to keep the exp functions together
     def handle_outside_EX(self, cat):
-        if cat.status.is_outsider:
+        if cat.status.is_outsider or cat.status.is_other_clancat:
             if cat.not_working() and int(random.random() * 3):
                 return
 
@@ -2248,7 +2244,7 @@ class Events:
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
 
-        if cat.age.is_baby():
+        if cat.age.is_baby() or cat.gender != cat.genderalign:
             return
 
         transing_chance = constants.CONFIG["transition_related"]

@@ -13,7 +13,7 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 1,
+        "frequency": 4,
         "event_text": "m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept; {PRONOUN/m_c/subject} killed mur_c.",
         "m_c": {
             "age": [
@@ -73,7 +73,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "r_c is stunned when {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} m_c carelessly bragging about killing mur_c to a wandering loner.",
         "m_c": {
             "age": [
@@ -115,7 +115,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "m_c is truthful when r_c questions {PRONOUN/m_c/object} about mur_c's strange death. m_c claims that mur_c deserved to die after what {PRONOUN/mur_c/subject} did to m_c.",
         "m_c": {
             "age": [
@@ -161,7 +161,7 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 1,
+        "frequency": 4,
         "event_text": "m_c boldly confesses to the entire Clan that {PRONOUN/m_c/subject} killed mur_c. m_c claims that mur_c deserved to pay for what {PRONOUN/mur_c/subject} did.",
         "m_c": {
             "age": [
@@ -226,7 +226,7 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "m_c's cold eyes don't blink when {PRONOUN/m_c/subject} {VERB/m_c/are/is} accused of murdering mur_c, and only simply states that the Clan is better off without mur_c anyways.",
         "m_c": {
             "age": [
@@ -297,7 +297,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "r_c avoids m_c at all costs after accidentally witnessing mur_c's murder. r_c knows {PRONOUN/r_c/subject} can't keep it a secret but is terrified of what m_c might do.",
         "m_c": {
             "age": [
@@ -425,7 +425,7 @@
             {
                 "event_type": "death",
                 "pool": {
-                    "subtype": [
+                    "sub_type": [
                         "murder"
                     ],
                     "event_id": [],
@@ -456,7 +456,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "m_c laughs menacingly as r_c accuses {PRONOUN/m_c/object} of murdering mur_c. So what if {PRONOUN/m_c/subject} did? What is r_c going to do about it?",
         "m_c": {
             "age": [
@@ -553,7 +553,7 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death.",
         "m_c": {
             "age": [
@@ -676,6 +676,7 @@
         "sub_type": [
             "murder_reveal"
         ],
+        "tags": ["clan_wide"],
         "frequency": 3,
         "event_text": "c_n is surprised when m_c gathers everyone to say something important. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} decided it's time to make something clear: {PRONOUN/m_c/subject} killed mur_c, but not for the reasons they might think. m_c knew mur_c was planning to do something that would've damaged c_n greatly, and {PRONOUN/m_c/subject} needed to act quickly before it was too late.",
         "m_c": {
@@ -971,6 +972,310 @@
         ]
     },
     {
+        "event_id": "gen_misc_hiddenmurderreveal_medcat1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 4,
+        "event_text": "r_c announces that mur_c's death was no accident. m_c confesses there and then, detailing the act as if mur_c was a piece of fresh-kill.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "trait": [
+                "arrogant",
+                "ambitious",
+                "bloodthirsty",
+                "bold",
+                "childish",
+                "confident",
+                "cunning",
+                "daring",
+                "fierce",
+                "flamboyant",
+                "oblivious",
+                "rebellious",
+                "shameless",
+                "strange",
+                "troublesome",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "dislike"
+                ],
+                "amount": 30
+            },
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -30
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_remorse1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "m_c admits quietly to r_c that {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} temper on that terrible, fateful day... r_c's death was at {PRONOUN/m_c/poss} paws.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "careful",
+                "childish",
+                "compassionate",
+                "competitive",
+                "confident",
+                "faithful",
+                "nervous"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_accidentmurderreveal_failuretoact",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "m_c unexpectedly breaks mid-conversation, confessing in a rush that {PRONOUN/m_c/subject} could have saved mur_c... but {PRONOUN/m_c/subject} panicked. In that way, m_c believes, {PRONOUN/m_c/subject} murdered mur_c.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "careful",
+                "childish",
+                "cold",
+                "compassionate",
+                "competitive",
+                "confident",
+                "faithful",
+                "insecure",
+                "lonesome",
+                "loving",
+                "loyal",
+                "nervous",
+                "oblivious",
+                "playful",
+                "rebellious",
+                "responsible",
+                "righteous",
+                "sincere",
+                "strange",
+                "strict",
+                "thoughtful",
+                "wise"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_remorse2",
+        "location": [
+            "plains",
+            "mountainous",
+            "beach",
+            "forest_camp4"
+        ],
+        "season": [
+            "newleaf",
+            "greenleaf",
+            "leaf-fall"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 2,
+        "event_text": "m_c stands in the water for hours on end, but the flow cannot wash away mur_c's blood, nor the guilt coiled heavy in {PRONOUN/m_c/poss} chest.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "careful",
+                "childish",
+                "compassionate",
+                "competitive",
+                "confident",
+                "faithful",
+                "nervous"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_simple1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 4,
+        "event_text": "Previously believed to be a natural course of events, mur_c's death is now known for what it was: a murder at the paws of m_c.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            }
+        ]
+    },
+    {
         "event_id": "gen_misc_any_misc2",
         "location": [
             "any"
@@ -992,6 +1297,129 @@
                 "any"
             ]
         }
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_sc_forgives",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "r_c tells m_c that mur_c forgives {PRONOUN/m_c/object}. m_c's tearful admission of guilt finally makes the vision from StarClan make sense.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "age": ["any"],
+            "skill": ["STAR,1", "PROPHET,1"]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_murderreveal_ghostgossip1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "r_c yowls in shock, stammering that mur_c just appeared to {PRONOUN/r_c/object} and said {PRONOUN/mur_c/subject} {VERB/mur_c/were/was} murdered by m_c!",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "age": ["any"],
+            "skill": ["GHOST,1"]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "some_clan"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": -5,
+                "log": [
+                    "m_c was discomforted by a reminder of r_c's unnatural powers."
+                ]
+            }
+        ]
     },
     {
         "event_id": "multi_misc_any_collar_accessory1",
@@ -2257,7 +2685,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c gives r_c a acc_singular to make up for a bad fight between them.",
+        "event_text": "r_c gives m_c a acc_singular to make up for a bad fight between them.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -4171,7 +4599,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c found the scent of a stranger near the border, though the cat {PRONOUN/nc:0/self} is long gone. Smells like Twolegs.",
+        "event_text": "m_c found the scent of a stranger near the border, though the cat {PRONOUN/n_c:0/self} is long gone. Smells like Twolegs.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -4296,7 +4724,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "Someone has been hunting in c_n territory, a stranger without a Clan scent. c_n doesn't know their face, but they memorise their smell.",
+        "event_text": "Someone has been hunting in c_n territory, a stranger without a Clan scent. c_n doesn't know {PRONOUN/n_c:0/poss} face, but they memorize {PRONOUN/n_c:0/poss} smell.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -7144,7 +7572,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7178,7 +7606,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7212,7 +7640,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -8265,7 +8693,7 @@
             "newleaf",
             "greenleaf"
         ],
-        "subtype": [
+        "sub_type": [
             "accessory"
         ],
         "tags": [
@@ -8819,7 +9247,7 @@
         "sub_type": [
             "transition"
         ],
-        "frequency": 2,
+        "frequency": 4,
         "event_text": "m_c has realized that she-cat doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore.",
         "m_c": {
             "gender": [
@@ -8842,7 +9270,7 @@
         "sub_type": [
             "transition"
         ],
-        "frequency": 2,
+        "frequency": 4,
         "event_text": "m_c has realized that tom doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore.",
         "m_c": {
             "gender": [

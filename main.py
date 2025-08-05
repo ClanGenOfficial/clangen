@@ -340,19 +340,16 @@ AllScreens.start_screen.screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
 
-cursor_img = pygame.image.load("resources/images/cursor.png").convert_alpha()
-cursor = pygame.cursors.Cursor((9, 0), cursor_img)
-disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 fps = switch_get_value(Switch.fps)
 music_manager.check_music("start screen")
+
+if game_setting_get("custom cursor"):
+    MANAGER.set_active_cursor(constants.CUSTOM_CURSOR)
+else:
+    MANAGER.set_active_cursor(constants.DEFAULT_CURSOR)
+
 while 1:
     time_delta = clock.tick(fps) / 1000.0
-
-    if game_setting_get("custom cursor"):
-        if pygame.mouse.get_cursor() == disabled_cursor:
-            pygame.mouse.set_cursor(cursor)
-    elif pygame.mouse.get_cursor() == cursor:
-        pygame.mouse.set_cursor(disabled_cursor)
 
     if switch_get_value(Switch.switch_clan):
         load_game()

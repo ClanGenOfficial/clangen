@@ -656,5 +656,35 @@
                 "pregnant"
             ]
         }
+    },
+    {
+        "id": "med_cat_to_newborn",
+        "thoughts": [
+            "Checks over r_c",
+            "Checks on the new litter",
+            "Brings soaked moss to the nursery for the new litter"
+        ],
+        "main_status_constraint": [
+            "medicine cat"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ]
+    },
+    {
+        "id": "med_cat_to_new_parent",
+        "thoughts": [
+            "Checks in on r_c",
+            "Brings r_c raspberry to help {PRONOUN/r_c/poss} recovery",
+            "Sleeps in the nursery after the birth",
+            "Reassures r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing a fine job"
+        ],
+        "main_status_constraint": [
+            "medicine cat"
+        ],
+        "has_injuries": {
+            "r_c": ["recovering from birth"]
+        }
     }
+
 ]

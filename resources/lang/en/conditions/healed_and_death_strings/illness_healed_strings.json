@@ -87,5 +87,9 @@
     "starving": [
         "m_c's paws no longer feel quite so heavy. {PRONOUN/m_c/subject/CAP} can tell that {PRONOUN/m_c/subject} still {VERB/m_c/need/needs} to eat more, but at least the situation isn't as dire.",
         "m_c still feels the rumbles of hunger in {PRONOUN/m_c/poss} belly, but it's nothing compared to the emptiness {PRONOUN/m_c/subject}'d so recently experienced."
+    ],
+    "tick illness": [
+        "m_c sighs in relief as the rashes fade, promising StarClan to check TWICE for ticks next time.",
+        "r_c purrs as m_c starts asking to get back to {PRONOUN/m_c/poss} duties. Tick illness can be so touch-and-go, but m_c pulled through!"
     ]
 }

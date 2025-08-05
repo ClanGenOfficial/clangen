@@ -2117,7 +2117,7 @@
         "relationship_constraint": [],
         "pl_skill_constraint": [],
         "intro_text": "app1 gathers {PRONOUN/app1/poss} strength, butt wiggling with excitement, legs tense, and throws {PRONOUN/app1/self} upward, twisting in the air in a massive pounce that surely would bring down the mightiest prey! <i>OoOooo,</i> a voice says mockingly.",
-        "decline_text": "What was that?! StarClan?! app1 is going home, {PRONOUN/app1/subject} {VERB/app1/do/does}n't like this!",
+        "decline_text": "What was that?! StarClan?! app1 is going home, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} like this!",
         "success_outcomes": [
             {
                 "text": "Well it's not like they can do better, app1 shouts back at the crows! Humph. Birdbrains.",
