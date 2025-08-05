@@ -362,8 +362,8 @@
     },
     "strange lump": {
         "severity": "major",
-        "congenital": "never",
-        "moons_until": 5,
+        "congenital": "sometimes",
+        "moons_until": 40,
         "mortality": {
             "newborn": 0,
             "kitten": 10,
@@ -391,15 +391,15 @@
         "risks": [
             {
                 "name": "seizure",
-                "chance": 10
+                "chance": 20
             },
             {
                 "name": "paralyzed",
-                "chance": 50
+                "chance": 10
             },
             {
                 "name": "redcough",
-                "chance": 60
+                "chance": 30
             }
         ],
         "herbs": {
@@ -436,8 +436,8 @@
         }
     },
     "absent": {
-        "severity": "major",
-        "congenital": "never",
+        "severity": "severe",
+        "congenital": "sometimes",
         "moons_until": 95,
         "mortality": {
             "newborn": 0,
@@ -452,11 +452,11 @@
         "risks": [
             {
                 "name": "joint pain",
-                "chance": 10
+                "chance": 50
             },
             {
                 "name": "torn pelt",
-                "chance": 50
+                "chance": 70
             }
         ],
         "herbs": {
@@ -735,6 +735,10 @@
             {
                 "name": "grief stricken",
                 "chance": 50
+            },
+            {
+                "name": "absent",
+                "chance": 70
             }
         ],
         "herbs": {

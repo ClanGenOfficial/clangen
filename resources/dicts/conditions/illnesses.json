@@ -735,7 +735,7 @@
             "3": []
         }
     },
-    "tick illness": {
+    "tick fever": {
         "severity": "major",
         "mortality": {
             "newborn": 5,
