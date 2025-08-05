@@ -377,29 +377,29 @@
 
             {
                 "name": "whitecough",
-                "chance": 3
+                "chance": 10
             },
             {
                 "name": "greencough",
-                "chance": 5
+                "chance": 15
             },
             {
                 "name": "yellowcough",
-                "chance": 4
+                "chance": 13
             }
         ],
         "risks": [
             {
                 "name": "seizure",
-                "chance": 20
+                "chance": 30
             },
             {
                 "name": "paralyzed",
-                "chance": 10
+                "chance": 60
             },
             {
                 "name": "redcough",
-                "chance": 30
+                "chance": 50
             }
         ],
         "herbs": {
@@ -452,11 +452,11 @@
         "risks": [
             {
                 "name": "joint pain",
-                "chance": 50
+                "chance": 30
             },
             {
                 "name": "torn pelt",
-                "chance": 70
+                "chance": 40
             }
         ],
         "herbs": {
@@ -738,7 +738,7 @@
             },
             {
                 "name": "absent",
-                "chance": 70
+                "chance": 50
             }
         ],
         "herbs": {
