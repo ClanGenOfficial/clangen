@@ -89,7 +89,7 @@
 			"Notices a cloud is shaped like a star",
 			"Notices a cloud is shaped like a mouse",
 			"Notices a cloud is shaped like a bird",
-			"Startles at a clap of thunder"
+			"Startles at a clap of thunder",
             "Meows"
         ]
     },
@@ -140,7 +140,7 @@
 			"Gags with r_c at the scent of stinky herbs",
 			"Works with r_c to make sense of something a Clanmate said",
 			"Realizes {PRONOUN/m_c/subject} and r_c were the only ones that saw a shooting star",
-			"Acknowledges r_c with a twitch of {PRONOUN/m_c/poss} whiskers"
+			"Acknowledges r_c with a twitch of {PRONOUN/m_c/poss} whiskers",
             "Is playing a prank on r_c"
         ],
         "random_living_status": [
