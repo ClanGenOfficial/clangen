@@ -69,6 +69,7 @@
         "m_c has always had trouble suckling, but the reason why is only now starting to be really apparent."
     ],
     "strange lump": [
+            "m_c developed a new lump on {PRONOUN/m_c/poss} body. It doesn't look good.",
             "r_c isn't sure where this lump on {PRONOUN/m_c/poss} body came from, but m_c isn't sure it's good news.",
             "m_c complains about being unable to sleep properly, leading r_c to find a strange lump on {PRONOUN/m_c/object}. It's not good news.",
             "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
