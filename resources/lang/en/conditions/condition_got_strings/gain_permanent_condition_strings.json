@@ -150,7 +150,7 @@
             "m_c begrudgingly accepts that the horrible headaches {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been having might be a permanent side effect of {PRONOUN/m_c/poss} head damage."
         ],
         "absent": [
-            "m_c hasn't been the same since the head injury. {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} like {PRONOUN/m_c/subect}{VERB/m_c/'re/'s} living in a daze.",
+            "m_c hasn't been the same since the head injury. {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} living in a daze.",
             "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, worried about {PRONOUN/m_c/poss} head injury.",
             "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note- m_c has been fading fast since the head injury.",
             "m_c got lost in the camp too many times. r_c wants to keep {PRONOUN/m_c/object} at camp for much longer."
