@@ -270,7 +270,7 @@ class Status:
         return group
 
     @property
-    def group_ID(self) -> int:
+    def group_ID(self) -> str:
         return self.group_history[-1]["group"]
 
     @property
@@ -574,7 +574,7 @@ class Status:
                 return entry["standing"]
         return []
 
-    def find_prior_clan_rank(self, clan_ID: str = None):
+    def find_prior_clan_rank(self, clan_ID: str = None) -> CatRank:
         """
         Finds the last held clan rank of a current outsider
         :param clan_ID: pass the ID of a clan to only return the cat's prior rank within that clan. Default is None, if

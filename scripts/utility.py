@@ -198,7 +198,7 @@ def get_warring_clan():
     """
     enemy_clan = None
     if game.clan.war.get("at_war", False):
-        for other_clan in game.clan.all_clans:
+        for other_clan in game.clan.all_other_clans:
             if other_clan.name == game.clan.war["enemy"]:
                 enemy_clan = other_clan
 
@@ -249,8 +249,8 @@ def change_clan_relations(other_clan, difference):
     # grab the clan that has been indicated
     other_clan = other_clan
     # grab the relation value for that clan
-    y = game.clan.all_clans.index(other_clan)
-    clan_relations = int(game.clan.all_clans[y].relations)
+    y = game.clan.all_other_clans.index(other_clan)
+    clan_relations = int(game.clan.all_other_clans[y].relations)
     # change the value
     clan_relations += difference
     # making sure it doesn't exceed the bounds
@@ -259,7 +259,7 @@ def change_clan_relations(other_clan, difference):
     elif clan_relations < 0:
         clan_relations = 0
     # setting it in the Clan save
-    game.clan.all_clans[y].relations = clan_relations
+    game.clan.all_other_clans[y].relations = clan_relations
 
 
 def create_new_cat_block(
@@ -700,7 +700,7 @@ def get_other_clan(clan_name):
     """
     returns the clan object of given clan name
     """
-    for clan in game.clan.all_clans:
+    for clan in game.clan.all_other_clans:
         if clan.name == clan_name:
             return clan
 

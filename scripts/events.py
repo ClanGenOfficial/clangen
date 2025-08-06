@@ -655,7 +655,9 @@ class Events:
             if get_clan_setting("sabotage other clans"):
                 amount = amount * -1
             for name in game.clan.clans_in_focus:
-                clan = [clan for clan in game.clan.all_clans if clan.name == name][0]
+                clan = [
+                    clan for clan in game.clan.all_other_clans if clan.name == name
+                ][0]
                 change_clan_relations(clan, amount)
             focus_text = None
 
@@ -735,9 +737,9 @@ class Events:
             # if it is raiding, lower the relation to other clans
             if get_clan_setting("raid other clans"):
                 for name in game.clan.clans_in_focus:
-                    clan = [clan for clan in game.clan.all_clans if clan.name == name][
-                        0
-                    ]
+                    clan = [
+                        clan for clan in game.clan.all_other_clans if clan.name == name
+                    ][0]
                     amount = -constants.CONFIG["focus"]["raid other clans"]["relation"]
                     change_clan_relations(clan, amount)
 
@@ -1037,7 +1039,7 @@ class Events:
         interactions with other clans
         """
         # if there are somehow no other clans, don't proceed
-        if not game.clan.all_clans:
+        if not game.clan.all_other_clans:
             return
 
         # Prevent wars from starting super early in the game.
@@ -1057,7 +1059,7 @@ class Events:
         enemy_clan = None
         if game.clan.war["at_war"]:
             # Grab the enemy clan object
-            for other_clan in game.clan.all_clans:
+            for other_clan in game.clan.all_other_clans:
                 if other_clan.name == game.clan.war["enemy"]:
                     enemy_clan = other_clan
                     break
@@ -1092,7 +1094,7 @@ class Events:
                     enemy_clan.relations -= 1
 
         else:  # try to start a war if no war in progress
-            for other_clan in game.clan.all_clans:
+            for other_clan in game.clan.all_other_clans:
                 threshold = 5
                 if other_clan.temperament == "bloodthirsty":
                     threshold = 10

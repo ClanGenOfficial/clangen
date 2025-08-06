@@ -96,7 +96,7 @@ class LeaderDenScreen(Screens):
                         event.ui_element
                         == self.other_clan_selection_elements[f"button{i}"]
                     ):
-                        self.focus_clan = game.clan.all_clans[i]
+                        self.focus_clan = game.clan.all_other_clans[i]
                         self.update_other_clan_focus()
             elif event.ui_element == self.focus_frame_elements["negative_interaction"]:
                 text = self.focus_frame_elements["negative_interaction"].text.replace(
@@ -348,7 +348,7 @@ class LeaderDenScreen(Screens):
             self.update_other_clan_focus()
             self.update_clan_interaction_choice(current_setting["interaction_type"])
         else:
-            self.focus_clan = game.clan.all_clans[0]
+            self.focus_clan = game.clan.all_other_clans[0]
             self.update_other_clan_focus()
 
     def exit_screen(self):
@@ -431,7 +431,7 @@ class LeaderDenScreen(Screens):
             starting_height=1,
             manager=MANAGER,
         )
-        for i, other_clan in enumerate(game.clan.all_clans):
+        for i, other_clan in enumerate(game.clan.all_other_clans):
             if other_clan.name == game.clan.name:
                 continue
             x_pos = 128

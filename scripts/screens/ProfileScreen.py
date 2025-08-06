@@ -833,7 +833,7 @@ class ProfileScreen(Screens):
             elif old_clan:
                 name = [
                     c
-                    for c in game.clan.all_clans
+                    for c in game.clan.all_other_clans
                     if c.group_ID == the_cat.status.get_last_living_group()
                 ][0].name
             # otherwise they had no clan
@@ -843,7 +843,9 @@ class ProfileScreen(Screens):
         # if cat is alive and in another clan, find that clan's name
         elif the_cat.status.is_other_clancat:
             name = [
-                c for c in game.clan.all_clans if c.group_ID == the_cat.status.group_ID
+                c
+                for c in game.clan.all_other_clans
+                if c.group_ID == the_cat.status.group_ID
             ][0].name
         # otherwise, assume the cat takes the player clan's name
         # it's okay if this is an outsider, if they don't actually have a group to refer to then they won't use this variable
@@ -854,8 +856,8 @@ class ProfileScreen(Screens):
             if not name:
                 name = [
                     c
-                    for c in game.clan.all_clans
-                    if c.enum == the_cat.status.get_last_living_group()
+                    for c in game.clan.all_other_clans
+                    if c.group_ID == the_cat.status.get_last_living_group()
                 ]
             if not name:
                 name = game.clan.name
@@ -1270,7 +1272,7 @@ class ProfileScreen(Screens):
         elif self.the_cat.status.is_other_clancat:
             clan = [
                 clan
-                for clan in game.clan.all_clans
+                for clan in game.clan.all_other_clans
                 if clan.group_ID == self.the_cat.status.group
             ]
             bs_blurb = i18n.t("cat.backstories.other_clan_cat", clan=clan[0])

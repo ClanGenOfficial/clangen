@@ -59,7 +59,7 @@ class Clan:
 
     age = 0
     current_season = "Newleaf"
-    all_clans = []
+    all_other_clans = []
 
     def __init__(
         self,
@@ -118,7 +118,7 @@ class Clan:
         # and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
         self._reputation = 80
 
-        self.all_clans = []
+        self.all_other_clans = []
 
         self.starting_members = starting_members
         if game_mode in ("expanded", "cruel season"):
@@ -201,7 +201,7 @@ class Clan:
         self.instructor.dead = True
         self.instructor.dead_for = randint(20, 200)
         self.add_cat(self.instructor)
-        self.all_clans = []
+        self.all_other_clans = []
 
         key_copy = tuple(Cat.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
@@ -232,7 +232,9 @@ class Clan:
         save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
-            other_clan_names = [str(i.name) for i in self.all_clans] + [game.clan.name]
+            other_clan_names = [str(i.name) for i in self.all_other_clans] + [
+                game.clan.name
+            ]
             other_clan_name = choice(
                 names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
             )
@@ -242,7 +244,7 @@ class Clan:
                     + names.names_dict["clan_prefixes"]
                 )
             other_clan = OtherClan(name=other_clan_name)
-            self.all_clans.append(other_clan)
+            self.all_other_clans.append(other_clan)
 
         # create leader's ceremony
         self.leader.generate_lead_ceremony()
@@ -436,7 +438,7 @@ class Clan:
         clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
 
         # OTHER CLANS
-        clan_data["other_clans"] = [vars(i) for i in self.all_clans]
+        clan_data["other_clans"] = [vars(i) for i in self.all_other_clans]
 
         clan_data["war"] = self.war
 
@@ -487,12 +489,12 @@ class Clan:
         if not switch_get_value(Switch.clan_list):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
             return
         if switch_get_value(Switch.clan_list)[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
             return
         switch_set_value(
             Switch.error_message, "There was an error loading the clan.txt"
@@ -634,7 +636,7 @@ class Clan:
         if other_clans != [""]:
             for other_clan in other_clans:
                 other_clan_info = other_clan.split(";")
-                self.all_clans.append(
+                self.all_other_clans.append(
                     OtherClan(
                         other_clan_info[0], int(other_clan_info[1]), other_clan_info[2]
                     )
@@ -643,7 +645,7 @@ class Clan:
         else:
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
 
         for cat in members:
             if cat in Cat.all_cats:
@@ -664,12 +666,12 @@ class Clan:
         if not switch_get_value(Switch.clan_list):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
             return
         if switch_get_value(Switch.clan_list)[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
             return
 
         switch_set_value(
@@ -766,7 +768,7 @@ class Clan:
                     ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
                 else:
                     ID = other_clan["ID"]
-                game.clan.all_clans.append(
+                game.clan.all_other_clans.append(
                     OtherClan(
                         name=other_clan["name"],
                         relations=int(other_clan["relations"]),
@@ -782,7 +784,9 @@ class Clan:
                     clan_data["other_clans_relations"].split(","),
                     clan_data["other_clan_temperament"].split(","),
                 ):
-                    game.clan.all_clans.append(OtherClan(name, int(relation), temper))
+                    game.clan.all_other_clans.append(
+                        OtherClan(name, int(relation), temper)
+                    )
             else:
                 for name, relation, temper, symbol, enum in zip(
                     clan_data["other_clans_names"].split(","),
@@ -790,7 +794,7 @@ class Clan:
                     clan_data["other_clan_temperament"].split(","),
                     clan_data["other_clan_chosen_symbol"].split(","),
                 ):
-                    game.clan.all_clans.append(
+                    game.clan.all_other_clans.append(
                         OtherClan(name, int(relation), temper, symbol)
                     )
 
