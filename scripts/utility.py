@@ -9,7 +9,6 @@ TODO: Docs
 import logging
 import os
 import re
-from copy import copy
 from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
@@ -435,9 +434,9 @@ def create_new_cat_block(
     elif "clancat" in attribute_list or "former Clancat" in attribute_list:
         cat_social = CatSocial.CLANCAT
         if other_clan:
-            cat_group = other_clan.enum
+            cat_group = other_clan.group_ID
         else:
-            cat_group = choice(game.clan.other_clans)
+            cat_group = choice([x.group_ID for x in game.clan.all_other_clans])
     else:
         cat_social = choice([CatSocial.KITTYPET, CatSocial.LONER, "former Clancat"])
 
