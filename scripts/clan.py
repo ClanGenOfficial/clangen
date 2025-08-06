@@ -760,7 +760,7 @@ class Clan:
         if "other_clans" in clan_data:
             for other_clan in clan_data["other_clans"]:
                 if not other_clan.get("ID"):
-                    ID = game.get_free_group_ID()
+                    ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
                 else:
                     ID = other_clan["ID"]
                 game.clan.all_clans.append(
@@ -1257,7 +1257,7 @@ class OtherClan:
     ):
         self.ID = ID
         if not self.ID:
-            self.ID = game.get_free_group_ID()
+            self.ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
 
         clan_names = names.names_dict["normal_prefixes"]
         clan_names.extend(names.names_dict["clan_prefixes"])

@@ -3,6 +3,7 @@ from typing import Optional, TYPE_CHECKING
 import pygame
 import ujson
 
+from scripts.cat.enums import CatGroup
 from scripts.event_class import Single_Event
 from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import safe_save
@@ -64,8 +65,13 @@ class Game:
     patrol_cats = {}
     patrolled = []
 
-    used_group_IDs = [1, 2, 3, 4]
-    """Int IDs already in use. 1 is always PLAYER_CLAN, 2 is always STARCLAN, 3 is always UNKNOWN RESIDENCE, and 4 is always DARK_FOREST. """
+    used_group_IDs: dict = {
+        1: CatGroup.PLAYER_CLAN,
+        2: CatGroup.STARCLAN,
+        3: CatGroup.UNKNOWN_RESIDENCE,
+        4: CatGroup.DARK_FOREST,
+    }
+    """Int IDs already in use. Key is the group ID, value is the group type."""
 
     outsider_reps = ["welcoming", "neutral", "hostile"]
     other_clan_reps = ["ally", "neutral", "hostile"]
@@ -257,12 +263,13 @@ class Game:
 
         return config_value
 
-    def get_free_group_ID(self) -> int:
+    def get_free_group_ID(self, group_type: CatGroup) -> int:
         """
-        Find the next free group ID, appends it onto the used_group_IDs list, then returns the new ID.
+        Find the next free group ID, adds it to the used_group_ID dict, and then returns the ID.
+        :param group_type: The CatGroup that the new group will be considered.
         """
-        new_ID = self.used_group_IDs[-1] + 1
-        self.used_group_IDs.append(new_ID)
+        new_ID = list(self.used_group_IDs.keys())[-1] + 1
+        self.used_group_IDs.update({new_ID: group_type})
         return new_ID
 
 
