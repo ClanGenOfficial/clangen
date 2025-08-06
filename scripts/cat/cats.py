@@ -472,12 +472,12 @@ class Cat:
 
     @property
     def dead(self) -> bool:
-        return bool(self.status.group and self.status.group.is_afterlife())
+        return bool(self.status.group.is_afterlife())
 
     @dead.setter
     def dead(self, die: bool):
         if die:
-            if self.status.group and self.status.group.is_afterlife():
+            if self.status.group.is_afterlife():
                 print(
                     f"WARNING: Tried to kill {self.name} ID: {self.ID} but this cat is already dead!"
                 )
@@ -490,7 +490,11 @@ class Cat:
             entry.get("moons_as")
             for entry in self.status.group_history
             if entry.get("group")
-            in (CatGroup.STARCLAN, CatGroup.UNKNOWN_RESIDENCE, CatGroup.DARK_FOREST)
+            in (
+                CatGroup.STARCLAN_ID,
+                CatGroup.UNKNOWN_RESIDENCE_ID,
+                CatGroup.DARK_FOREST_ID,
+            )
         )
 
     @dead_for.setter
@@ -880,10 +884,10 @@ class Cat:
         """Makes an "outside cat" a Clan cat. Returns a list of IDs for any additional cats that
         are coming with them."""
 
-        if not self.status.is_exiled(CatGroup.PLAYER_CLAN):
+        if not self.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
             self.history.add_beginning()
 
-        self.status.add_to_group(new_group=CatGroup.PLAYER_CLAN, age=self.age)
+        self.status.add_to_group(new_group_ID=CatGroup.PLAYER_CLAN_ID, age=self.age)
 
         game.clan.add_to_clan(self)
 
@@ -894,10 +898,12 @@ class Cat:
             child = Cat.all_cats[child_id]
             if (
                 not child.dead
-                and not child.status.is_exiled(CatGroup.PLAYER_CLAN)
+                and not child.status.is_exiled(CatGroup.PLAYER_CLAN_ID)
                 and child.moons < 12
             ):
-                child.status.add_to_group(new_group=CatGroup.PLAYER_CLAN, age=self.age)
+                child.status.add_to_group(
+                    new_group_ID=CatGroup.PLAYER_CLAN_ID, age=self.age
+                )
                 child.add_to_clan()
                 child.history.add_beginning()
                 ids.append(child_id)
@@ -1554,7 +1560,7 @@ class Cat:
                     i += 1
 
             # for dead cats, they can think about whoever they want
-            elif self.status.group and self.status.group.is_afterlife():
+            elif self.status.group.is_afterlife():
                 other_cat = choice(all_cats)
 
             # for cats currently outside
@@ -1577,7 +1583,7 @@ class Cat:
         if just_died:
             afterlife = (
                 self.status.group
-                if self.status.group and self.status.group.is_afterlife()
+                if self.status.group.is_afterlife()
                 else game.clan.instructor.status.group
             )
             chosen_thought = Thoughts.new_death_thought(
@@ -2277,7 +2283,7 @@ class Cat:
             return False
 
         # App and mentor must be members of the same clan
-        if self.status.group != potential_mentor.status.group:
+        if self.status.group_ID != potential_mentor.status.group_ID:
             return False
 
         # Match jobs
@@ -2624,8 +2630,8 @@ class Cat:
             # if they dead (dead cats have no relationships)
             if self.dead or inter_cat.dead:
                 continue
-            # if they are not outside of the Clan at the same time
-            if self.status.group != inter_cat.status.group:
+            # if they are not within the same group
+            if self.status.group_ID != inter_cat.status.group_ID:
                 continue
             inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
             self.relationships[inter_cat.ID] = Relationship(self, inter_cat)
@@ -3190,9 +3196,9 @@ class Cat:
         cat_ob.faded = True
 
         if cat_info.get("df"):
-            cat_ob.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
+            cat_ob.status.send_to_afterlife(target_ID=CatGroup.DARK_FOREST_ID)
         elif isinstance(cat_info["status"], str):
-            cat_ob.status.send_to_afterlife(target=CatGroup.STARCLAN)
+            cat_ob.status.send_to_afterlife(target_ID=CatGroup.STARCLAN_ID)
 
         cat_ob.dead_for = cat_info["dead_for"] if "dead_for" in cat_info else 1
 
@@ -3526,7 +3532,7 @@ class Cat:
             sorted_specific_list = [
                 check_cat
                 for check_cat in sorted_specific_list
-                if check_cat.status.group == self.status.group
+                if check_cat.status.group_ID == self.status.group_ID
             ]
 
         if filter_func is not None:

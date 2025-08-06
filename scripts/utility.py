@@ -557,7 +557,7 @@ def create_new_cat_block(
             elif outside:
                 # updates so that the clan is marked as knowing of this cat
                 current_standing = chosen_cat.status.get_standing_with_group(
-                    CatGroup.PLAYER_CLAN
+                    CatGroup.PLAYER_CLAN_ID
                 )
                 if (
                     CatStanding.KNOWN not in current_standing

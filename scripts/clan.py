@@ -388,6 +388,7 @@ class Clan:
             "camp_bg": self.camp_bg,
             "clan_symbol": self.chosen_symbol,
             "gamemode": self.game_mode,
+            "used_group_IDs": game.used_group_IDs,
             "last_focus_change": self.last_focus_change,
             "clans_in_focus": self.clans_in_focus,
             "instructor": self.instructor.ID,
@@ -660,7 +661,6 @@ class Clan:
         """
         TODO: DOCS
         """
-        other_clans = []
         if not switch_get_value(Switch.clan_list):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
@@ -710,6 +710,9 @@ class Clan:
             self_run_init_functions=False,
         )
         game.clan.post_initialization_functions()
+
+        if clan_data.get("used_group_IDs"):
+            game.used_group_IDs = clan_data["used_group_IDs"]
 
         game.clan.reputation = max(0, min(100, int(clan_data["reputation"])))
 
@@ -1255,9 +1258,9 @@ class OtherClan:
     def __init__(
         self, name="", relations=0, temperament="", chosen_symbol="", ID: int = 0
     ):
-        self.ID = ID
-        if not self.ID:
-            self.ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
+        self.group_ID = ID
+        if not self.group_ID:
+            self.group_ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
 
         clan_names = names.names_dict["normal_prefixes"]
         clan_names.extend(names.names_dict["clan_prefixes"])

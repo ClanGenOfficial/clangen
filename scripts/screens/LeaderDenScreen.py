@@ -936,7 +936,7 @@ class LeaderDenScreen(Screens):
         )
 
         if self.focus_cat.status.is_outsider and not self.focus_cat.status.is_lost(
-            CatGroup.PLAYER_CLAN
+            CatGroup.PLAYER_CLAN_ID
         ):
             self.focus_button["invite"].set_text("screens.leader_den.invite")
         else:
@@ -993,7 +993,7 @@ class LeaderDenScreen(Screens):
             for i in Cat.all_cats.values()
             if not i.dead
             and i.status.is_outsider
-            and i.status.is_near(CatGroup.PLAYER_CLAN)
+            and i.status.is_near(CatGroup.PLAYER_CLAN_ID)
         ]
 
         # separate them into chunks for the pages

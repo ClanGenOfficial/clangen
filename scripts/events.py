@@ -416,7 +416,7 @@ class Events:
                     outsider_cat.die()
 
                 elif info_dict["interaction_type"] == "drive":
-                    outsider_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN)
+                    outsider_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN_ID)
 
                 elif info_dict["interaction_type"] in ("invite", "search"):
                     # ADD TO CLAN AND CHECK FOR KITS
@@ -438,7 +438,7 @@ class Events:
                         if (
                             CatStanding.EXILED
                             not in invited_cat.status.get_standing_with_group(
-                                CatGroup.PLAYER_CLAN
+                                CatGroup.PLAYER_CLAN_ID
                             )
                         ):
                             # reset to make sure backstory makes sense
@@ -776,7 +776,7 @@ class Events:
             eligible_cats = [
                 cat
                 for cat in Cat.all_cats.values()
-                if not cat.dead and cat.status.is_lost(CatGroup.PLAYER_CLAN)
+                if not cat.dead and cat.status.is_lost(CatGroup.PLAYER_CLAN_ID)
             ]
 
             if not eligible_cats:

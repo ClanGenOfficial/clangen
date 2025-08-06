@@ -104,14 +104,30 @@ class CatStanding(StrEnum):
 
 
 class CatGroup(StrEnum):
-    PLAYER_CLAN = auto()
-    OTHER_CLAN = auto()
+    PLAYER_CLAN = "player_clan"
+    OTHER_CLAN = "other_clan"
 
-    DARK_FOREST = auto()
-    STARCLAN = auto()
-    UNKNOWN_RESIDENCE = auto()
+    DARK_FOREST = "dark_forest"
+    STARCLAN = "starclan"
+    UNKNOWN_RESIDENCE = "unknown_residence"
 
-    NONE = auto()
+    NONE = ""
+
+    @property
+    def PLAYER_CLAN_ID(self) -> int:
+        return 1
+
+    @property
+    def STARCLAN_ID(self) -> int:
+        return 2
+
+    @property
+    def UNKNOWN_RESIDENCE_ID(self) -> int:
+        return 3
+
+    @property
+    def DARK_FOREST_ID(self) -> int:
+        return 4
 
     def is_afterlife(self) -> bool:
         return self in (self.DARK_FOREST, self.STARCLAN, self.UNKNOWN_RESIDENCE)
