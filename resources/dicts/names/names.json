@@ -35,18 +35,18 @@
   ],
 "pelt_prefixes": {
     "TwoColour": [
-	    "Patch", "Bright", "Half", "Arch", "Spot", "Lion"
+	    "Patch", "Bright", "Half", "Arch", "Spot", "Lion", "Dove", "Swan"
     ],
     "Tabby": [
 	    "Tiger", "Thistle", "Bramble", "Nettle", "Thorn", "Bee", "Bumble", "Twig", "Branch", "Bracken", "Brindle", "Needle", 
-	    "Scratch", "Bristle", "Stripe", "Streak", "Strike", "River", "Briar", "Feather"
+	    "Scratch", "Bristle", "Stripe", "Streak", "Strike", "Briar", "Feather"
     ],
     "Marbled": [
 	    "Python", "Tiger", "Thistle", "Bramble", "Nettle", "Feather", "Thorn", "Bee", "Bumble", "Twig", "Branch", "Bracken", "Brindle", "Mottle", "Mottled",
 	    "Blossom", "Bloom", "Blooming", "Scratch", "Bristle", "Ripple", "Swirl", "Whirl", "Briar", "Frilled", "Frill" 
     ],
     "Speckled": [
-	    "Spotted", "Speckle", "Dapple", "Fleck", "Speckled", "Spot", "Swarm", "Flea", "Tick", "Thrush", "Birch", "Lynx", "Dappled", "Freckle"
+	    "Spotted", "Speckle", "Dapple", "Fleck", "Speckled", "Spot", "Swarm", "Flea", "Tick", "Thrush", "Birch", "Dappled", "Freckle"
     ],
     "Bengal": [
 	    "Python", "Leopard", "Blossom", "Bloom", "Blooming", "Dapple", "Dappled", "Spotted", "Mottle", "Mottled", "Bite", "Flower"
@@ -55,7 +55,7 @@
 	    "Python", "Leopard", "Spotted", "Dapple", "Dappled", "Blossom", "Bloom", "Blooming", "Mottle", "Mottled", "Bite", "Flower"
     ],
     "Smoke": [
-	    "Fog", "Smoke", "Mist", "Misty", "Blurry", "Blur", "Foggy", "Hazy", "Haze", "Daze"
+	    "Fog", "Smoke", "Mist", "Misty", "Blurry", "Blur", "Foggy", "Hazy", "Haze", "Daze", "Soft"
     ],
     "Ticked": [
 	    "Spotted", "Speckle", "Speckled", "Fleck", "Spot", "Freckle", "Swarm", "Flea", "Tick", "Thrush", "Birch", "Lynx"
@@ -73,21 +73,20 @@
 	    "Stripe", "Streak", "Strike", "River", "Feather", "Needle"
     ],
     "Agouti": [
-	    "Speckle", "Freckle", "Spotted", "Fleck", "Scratch", "Stripe", "Spot", "Briar", "Needle", "Swarm", "Flea", "Tick"
+	    "Speckle", "Freckle", "Spotted", "Fleck", "Scratch", "Stripe", "Spot", "Briar", "Needle", "Swarm", "Flea", "Tick", "Lynx"
     ],
     "Singlestripe": [
-	    "Ridge", "Streak", "Skunk", "Tadpole", "Trail", "Long", "Stripe", "Streak", "Strike", "Snake", "Rindle", "Runnel", "Serpent", 
-	    "Lion", "Needle"
+	    "Ridge", "Streak", "Skunk", "Tadpole", "Trail", "Long", "Stripe", "Streak", "Strike", "Snake", "Serpent", "Lion"
     ],
     "Masked": [
 	    "Badger", "Raccoon", "Tiger", "Bee", "Bumble", "Thistle", "Bramble", "Nettle", "Thorn", "Twig", "Branch", "Bristle", 
 	    "Stripe", "Streak", "Strike", "Scratch", "Needle"
     ],
     "Tortie": [
-	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Maple", "Leaf", "Wild", "Bright", "Broken", "Shard", "Turtle"
+	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Maple", "Leaf", "Wild", "Bright", "Shard", "Patch", "Turtle"
     ],
     "Calico": [
-	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Rainbow", "Leaf", "Wild", "Bright", "Broken", "Shard"
+	    "Blotch", "Blooming", "Bloom", "Dapple", "Mottle", "Mottled", "Leaf", "Wild", "Bright", "Shard", "Patch"
     ]
   },
   "pelt_suffixes": {
@@ -453,12 +452,12 @@
     "Plains": [
     "field", "meadow", "wool", "oat", "elk", "flutter", "pollen", "bull", "bee", "swish", "breeze", "runner", "dart", "dash",
     "tunnel", "horse", "sheep", "burrow", "brush", "wind", "wing", "flight", "sky", "soar", "bird", "chase", "chaser", "feather", "glade",
-    "leap", "run", "rush", "wisp", "hare", "rabbit", "badger", "mound", "talon"
+    "leap", "run", "rush", "wisp", "hare", "rabbit", "badger", "mound", "talon", "hill"
     ],
     "Mountainous": [
     "cave", "caw", "cliff", "crag", "cricket", "drop", "eagle", "echo", "fall", "frost", "goat", "horn", "lichen", "talon", "feather",
     "mound", "peak", "point", "ram", "shatter", "shard", "stone", "steep", "summit", "quake", "whisper", "slope",
-    "whistle", "ridge", "rubble", "mallow", "sky", "flight", "soar", "chasm", "valley", "wing", "slide"
+    "whistle", "ridge", "rubble", "mallow", "sky", "flight", "soar", "chasm", "valley", "wing", "slide", "hill"
     ],
     "Wetlands": [
     "flood", "swamp", "splash", "croak", "duck", "bog", "mud", "skipper", "wade", "lily", "moss", "root", "song", "bug", "glow",
@@ -472,7 +471,7 @@
 
   "eye_prefixes": {
     "YELLOW": [
-	    "Yellow", "Daisy", "Honey", "Light", "Sun", "Lemon", "Lightning", "Bee", "Wasp", "Bright", "Marigold", "Canary", "Blazing",
+	    "Yellow", "Daisy", "Honey", "Light", "Sun", "Sunny", "Lemon", "Lightning", "Bee", "Wasp", "Bright", "Marigold", "Canary", "Blazing",
 	    "Tansy", "Furze", "Gorse", "Dandelion", "Oriole", "Gold", "Spark"
     ],
     "AMBER": [
@@ -501,7 +500,7 @@
     ],
     "DARKBLUE": [
 	    "Dark", "Blue", "Blue", "Sky", "Lake", "Berry", "Water", "Deep", "Cobalt", "River", "Night", "Rain", "Flood", "Jay", "Bluebell",
-	    "Dusk", "Storm"
+	    "Dusk", "Storm", "Mulberry", "Twilight"
     ],
     "GREY": [
 	    "Gray", "Stone", "Silver", "Ripple", "Moon", "Rain", "Storm", "Heather", "Dew", "Thunder", "Pale", "Minnow", "Cold", "Hemlock",
@@ -509,7 +508,7 @@
     ],
     "CYAN": [
 	    "Sky", "Blue", "River", "Rapid", "Ice", "Frost", "Cold", "Rime", "Dew", "Bright", "Splash", "Bluebell", "Robin", "Egg", 
-	    "Rain", "Bright", "Shiver"
+	    "Rain", "Bright", "Shiver", "Jay"
     ],
     "EMERALD": [
 	    "Emerald", "Green", "Shine", "Green", "Pine", "Weed", "Clover", "Glade", "Lichen", "Moss", "Mossy", "Ivy", "Sprout", "Willow",
@@ -517,15 +516,15 @@
     ],
     "PALEBLUE": [
 	    "Pale", "Blue", "Blue", "Sky", "River", "Ripple", "Day", "Cloud", "Rime", "Dew", "Splash", "Bluebell", "Robin", "Egg", 
-	    "Rain", "Flax", "Bright", "Shiver"
+	    "Rain", "Flax", "Bright", "Shiver", "Jay"
     ],
     "PALEYELLOW": [
 	    "Pale", "Yellow", "Sun", "Gold", "Light", "Daisy", "Bee", "Wasp", "Canary", "Tansy", "Furze", "Gorse", "Dandelion", "Lightning",
-	    "Bright", "Honey", "Oriole", "Spark"
+	    "Bright", "Honey", "Oriole", "Spark", "Sunny"
     ],
     "GOLD": [
-	    "Gold", "Golden", "Sun", "Amber", "Sap", "Honey", "Yellow", "Bee", "Wasp", "Canary", "Blazing", "Milkweed", "Furze", 
-	    "Tansy", "Gorse", "Dandelion", "Lightning", "Bright", "Oriole", "Spark"
+	    "Gold", "Golden", "Sun", "Amber", "Sap", "Honey", "Yellow", "Bee", "Wasp", "Canary", "Blazing", "Furze", 
+	    "Tansy", "Gorse", "Dandelion", "Lightning", "Bright", "Oriole", "Spark", "Sunny"
     ],
     "HEATHERBLUE": [
 	    "Heather", "Blue", "Lilac", "Rosemary", "Lavender", "Wisteria", "Dew", "Iris", "Dawn", "Jay", "Splash", "Bluebell", "River",
@@ -543,11 +542,11 @@
     ],
     "COBALT": [
 	    "Blue", "Blue", "Ice", "Icy", "Sky", "Lake", "Water", "Rime", "Flood", "Jay", "Splash", "Bluebell", "Dusk",
-	    "Night", "Deep", "Dark", "Cobalt", "River", "Rain", "Storm"
+	    "Night", "Deep", "Dark", "Cobalt", "River", "Rain", "Storm", "Mulberry", "Twilight"
     ],
     "SUNLITICE": [
 	    "Sun", "Ice", "Icy", "Frost", "Dawn", "Dusk", "Odd", "Glow", "Shimmer", "Bright", "Splash", "Cold", "Bluebell", 
-	    "River", "Robin", "Egg", "Morning", "Light", "Oriole", "Spark", "Shiver"
+	    "River", "Canary", "Egg", "Morning", "Light", "Oriole", "Spark", "Shiver", "Sunny"
     ],
     "GREENYELLOW": [
 	    "Green", "Yellow", "Hazel", "Gold", "Daisy", "Sand", "Sandy", "Weed", "Lichen", "Clover", "Moss", "Mossy", "Ivy",
