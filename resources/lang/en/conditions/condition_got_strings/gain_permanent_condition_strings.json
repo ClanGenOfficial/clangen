@@ -115,6 +115,10 @@
             "m_c demands to know when {PRONOUN/m_c/subject}'ll stop freezing in fear at what {PRONOUN/m_c/subject} {VERB/m_c/know/knows} are just memories. r_c doesn't have answers but {PRONOUN/r_c/subject} {VERB/r_c/comfort/comforts} {PRONOUN/r_c/poss} Clanmate, saying that forcing {PRONOUN/m_c/self} to be okay is just hurting {PRONOUN/m_c/object}.",
             "r_c tells m_c that {PRONOUN/r_c/subject} {VERB/r_c/have/has} no way to stop dreams or memories, only poppy seeds to help r_c sleep. Perhaps the memories will fade with time.",
             "m_c jumps, then realizes that it was just a leaf blowing in the wind. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} exhausted, {PRONOUN/m_c/poss} memories like a trap that rears up to bite {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/relax/relaxes}."
+        ],
+        "absent": [
+            "m_c never really came around again after going into shock.",
+            "m_c fails to respond to r_c yet again, leading {PRONOUN/r_c/subject} to accept m_c is never really coming back."
         ]
     },
     "head damage": {
@@ -144,6 +148,11 @@
         "persistent headaches": [
             "m_c complains to r_c that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been plagued with horrible headaches since {PRONOUN/m_c/subject} hurt {PRONOUN/m_c/poss} head. r_c sadly admits that the headaches may always be a problem.",
             "m_c begrudgingly accepts that the horrible headaches {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been having might be a permanent side effect of {PRONOUN/m_c/poss} head damage."
+        ],
+        "absent": [
+            "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, worried about {PRONOUN/m_c/poss} head injury.",
+            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note- m_c has been fading fast since the head injury.",
+            "m_c got lost in the camp too many times. r_c wants to keep {PRONOUN/m_c/object} at camp for much longer."
         ]
     },
     "damaged eyes": {
@@ -194,6 +203,20 @@
             "r_c is gentle when {PRONOUN/r_c/subject} {VERB/r_c/break/breaks} the news, but m_c had already expected it. {PRONOUN/m_c/subject/CAP} will never walk again.",
             "m_c tries to keep the disappointment down. Logically, {PRONOUN/m_c/subject} knew this was inevitable. Emotionally, {PRONOUN/m_c/subject} just can't accept that {PRONOUN/m_c/subject}'ll never walk again.",
             "m_c continues to do {PRONOUN/m_c/poss} exercises dutifully, hoping beyond hope that someday it will pay off. For now though, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} this paralysis is {PRONOUN/m_c/poss} new reality."
+        ]
+    },
+    "severe headache": {
+        "absent": [
+            "r_c isn't sure why m_c suddenly took such a downward turn, but {PRONOUN/m_c/subject} did- and r_c isn't sure it can be fixed.",
+            "m_c has found it harder and harder to remember what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing. r_c suspects the worst.",
+            "m_c's headaches have been getting worse. {PRONOUN/m_c/subject/CAP} can't even think."
+        ]
+    },
+    "a festering wound": {
+        "strange lump": [
+            "r_c isn't sure where this lump came from, but m_c isn't sure it's good news.",
+            "m_c complains about being unable to sleep properly, leading r_c to find a strange lump.",
+            "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
         ]
     }
 }

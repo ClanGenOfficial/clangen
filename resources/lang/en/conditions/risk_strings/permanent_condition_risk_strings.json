@@ -32,7 +32,7 @@
             "m_c's bad leg is feeling particularly sore this moon."
         ],
         "joint pain": [
-            "m_c comes to r_c feeling like {PRONOUN/m_c/poss} weak leg is going to collapse under {PRONOUN/m_c/object} from the pain in its joints.",
+            "m_c comes to r_c feeling like {PRONOUN/m_c/poss} weak leg is going to collapse beneath {PRONOUN/m_c/object} from the pain in its joints.",
             "{PRONOUN/m_c/subject/CAP} must have put a foot wrong or something - the joints in m_c's weak leg feel inflamed and painful."
         ]
     },
@@ -122,6 +122,10 @@
         "seizure": [
             "r_c spots the seizure coming, bringing m_c to {PRONOUN/m_c/poss} nest where it's always a little less upsetting to wake up.",
             "m_c is exhausted and stressed, both the cause and consequence of {PRONOUN/m_c/poss} seizure."
+        ],
+        "severe headache": [
+            "m_c's seizures have been leaving behind awful headaches lately.",
+            "m_c's last seizure left a mark- {PRONOUN/m_c/poss} head is pounding."
         ]
     },
     "allergies": {
@@ -152,6 +156,30 @@
         "severe headache": [
             "r_c sees m_c headed towards the medicine cat den, wincing with every step. {PRONOUN/r_c/subject/CAP} {VERB/r_c/duck/ducks} inside to prepare a nest for {PRONOUN/m_c/object} in the darkest, quietest corner possible.",
             "m_c wakes up with pounding head pain and horrible light sensitivity. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly as {PRONOUN/m_c/subject} can in {PRONOUN/m_c/poss} nest, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject} can work today."
+        ]
+    },
+    "absent": {
+        "joint pain": [
+            "m_c's joints hurt lately. {PRONOUN/m_c/object/CAP} must have been walking around more than {PRONOUN/m_c/object} thought.",
+            "m_c isn't moving as much today, mumbling about being sore."
+        ],
+        "torn pelt": [ 
+            "m_c has no idea where these scratches came from, but they're certainly there.",
+            "m_c accidentally tore {PRONOUN/m_c/poss} pelt when {PRONOUN/m_c/object} {VERB/m_c/were/was} wandering the territory."
+        ]
+    },
+    "strange lump": {
+        "seizure": [
+            "m_c had a seizure recently. r_c says the lump looks different.",
+            "Nobody expected m_c to have a seizure out of the blue like that. r_c worries it's due to {PRONOUN/m_c/poss} lump."
+        ],
+        "paralysis": [
+            "m_c woke up and realized {PRONOUN/m_c/object} can't move {PRONOUN/m_c/poss} legs anymore...",
+            "m_c reports a strange buzzing and severe weakness of {PRONOUN/m_c/poss} legs."
+        ],
+        "redcough": [
+            "m_c has finally started coughing up blood. The Clan has seen this before- that lump was poison.",
+            "r_c braces for the inevitable when m_c finally contracts redcough. It's just a matter of moons now."
         ]
     }
 }
