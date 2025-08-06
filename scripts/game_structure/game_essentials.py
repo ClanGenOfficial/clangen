@@ -66,10 +66,10 @@ class Game:
     patrolled = []
 
     used_group_IDs: dict = {
-        1: CatGroup.PLAYER_CLAN,
-        2: CatGroup.STARCLAN,
-        3: CatGroup.UNKNOWN_RESIDENCE,
-        4: CatGroup.DARK_FOREST,
+        CatGroup.PLAYER_CLAN_ID: CatGroup.PLAYER_CLAN,
+        CatGroup.STARCLAN_ID: CatGroup.STARCLAN,
+        CatGroup.UNKNOWN_RESIDENCE_ID: CatGroup.UNKNOWN_RESIDENCE,
+        CatGroup.DARK_FOREST_ID: CatGroup.DARK_FOREST,
     }
     """Int IDs already in use. Key is the group ID, value is the group type."""
 
@@ -263,12 +263,12 @@ class Game:
 
         return config_value
 
-    def get_free_group_ID(self, group_type: CatGroup) -> int:
+    def get_free_group_ID(self, group_type: CatGroup) -> str:
         """
         Find the next free group ID, adds it to the used_group_ID dict, and then returns the ID.
         :param group_type: The CatGroup that the new group will be considered.
         """
-        new_ID = list(self.used_group_IDs.keys())[-1] + 1
+        new_ID = str(int(list(self.used_group_IDs.keys())[-1]) + 1)
         self.used_group_IDs.update({new_ID: group_type})
         return new_ID
 

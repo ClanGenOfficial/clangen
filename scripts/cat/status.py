@@ -87,16 +87,19 @@ class Status:
     @staticmethod
     def _convert_old_group_saves(entry):
         # converting older standing_histories to the new group_IDs
-        if isinstance(entry["group"], str):
+        if not entry["group"]:
+            entry["group"] = None
+            return
+        if not entry["group"].isdigit():
             for ID, group_type in game.used_group_IDs.items():
                 if entry["group"] == group_type:
                     entry["group"] = ID
                     break
             # since we actually can't access other_clan IDs until after cats are loaded, we'll extrapolate the *probable* ID based off the old enum.
             # this is close enough, and frankly save conversion accuracy here isn't a priority
-            if isinstance(entry["group"], str):
+            if not entry["group"].isdigit():
                 old_enum_number = [x for x in entry["group"] if x.isdigit()][0]
-                entry["group"] = int(old_enum_number) + 4
+                entry["group"] = str(int(old_enum_number) + 4)
 
     def get_enums(self, rank=None, social=None, age=None) -> tuple[CatRank, CatSocial]:
         """
@@ -135,7 +138,7 @@ class Status:
         self,
         age: CatAge = None,
         social: CatSocial = None,
-        group_ID: int = None,
+        group_ID: str = None,
         rank: CatRank = None,
     ):
         """
@@ -159,7 +162,7 @@ class Status:
         self,
         age: CatAge = None,
         social: CatSocial = None,
-        group_ID: int = None,
+        group_ID: str = None,
         rank: CatRank = None,
     ):
         """
@@ -347,7 +350,7 @@ class Status:
         return self.rank == CatRank.LEADER
 
     @staticmethod
-    def get_rank_from_age(age) -> CatRank:
+    def get_rank_from_age(age: CatAge) -> CatRank:
         """
         Returns clan rank according to given age
         """
@@ -389,7 +392,7 @@ class Status:
         self,
         new_rank: CatRank,
         standing_with_past_group: CatStanding = None,
-        new_group_ID: int = None,
+        new_group_ID: str = None,
     ):
         """
         Changes group status for a cat. They can be entering, leaving, or switching their group.
@@ -409,7 +412,7 @@ class Status:
         # add member standing for new group
         self.change_standing(CatStanding.MEMBER)
 
-    def change_standing(self, new_standing: CatStanding, group_ID: int = None):
+    def change_standing(self, new_standing: CatStanding, group_ID: str = None):
         """
         Update the given group with the given standing. If no group is given, the new standing will be added to the
         cat's current group.
@@ -457,8 +460,8 @@ class Status:
 
     def add_to_group(
         self,
-        new_group_ID: int,
-        age=None,
+        new_group_ID: str,
+        age: CatAge = None,
         standing_with_past_group: CatStanding = CatStanding.KNOWN,
     ):
         """
@@ -505,7 +508,7 @@ class Status:
             new_group_ID=new_group_ID,
         )
 
-    def send_to_afterlife(self, target_ID: int = None):
+    def send_to_afterlife(self, target_ID: str = None):
         """
         Changes a cat's group into the appropriate afterlife
         :param target_ID: Use this to specify a certain afterlife, if unused a clancat (or a former clancat) will match
@@ -552,7 +555,7 @@ class Status:
         group_ID = self.group_ID if not saved_group else saved_group
         self.group_history.append({"group": group_ID, "rank": new_rank, "moons_as": 0})
 
-    def change_group_nearness(self, group_ID: int):
+    def change_group_nearness(self, group_ID: str):
         """
         Flips the "near" bool of the given group.
         """
@@ -562,7 +565,7 @@ class Status:
                     entry["near"] = not entry["near"]
 
     # RETRIEVE INFO
-    def get_standing_with_group(self, group_ID: int) -> Optional[list[CatStanding]]:
+    def get_standing_with_group(self, group_ID: str) -> Optional[list[CatStanding]]:
         """
         Returns the list of standings a cat has for the given group.
         """
@@ -571,7 +574,7 @@ class Status:
                 return entry["standing"]
         return []
 
-    def find_prior_clan_rank(self, clan_ID: CatGroup = None):
+    def find_prior_clan_rank(self, clan_ID: str = None):
         """
         Finds the last held clan rank of a current outsider
         :param clan_ID: pass the ID of a clan to only return the cat's prior rank within that clan. Default is None, if
@@ -592,7 +595,7 @@ class Status:
 
         return past_ranks[-1]
 
-    def get_last_living_group(self) -> CatGroup:
+    def get_last_living_group(self) -> Optional[str]:
         """
         Returns the last group this cat belonged to before death. If the cat had no group before dying, this will return None.
         """
@@ -604,9 +607,9 @@ class Status:
             if group_type and not group_type.is_afterlife():
                 return entry["group"]
 
-        return CatGroup.NONE
+        return None
 
-    def is_lost(self, group_ID: int = None) -> bool:
+    def is_lost(self, group_ID: str = None) -> bool:
         """
         Returns True if the cat is considered "lost" by a group.
         :param group_ID: use this to specify a certain group to check lost status against
@@ -619,7 +622,7 @@ class Status:
 
         return False
 
-    def is_exiled(self, group_ID: int = None) -> bool:
+    def is_exiled(self, group_ID: str = None) -> bool:
         """
         Returns True if cat is exiled from a group.
         :param group_ID: Use to specify the group to check exiled status against. If no group is given, this will return True if the cat is exiled from any group.
@@ -636,7 +639,7 @@ class Status:
 
         return standing and standing[-1] == CatStanding.EXILED
 
-    def is_near(self, group_ID: int) -> bool:
+    def is_near(self, group_ID: str) -> bool:
         """
         Returns True if the cat is near the specified group
         :param group_ID: The group the cat is or is not near
@@ -665,7 +668,6 @@ class StatusDict(TypedDict, total=False):
     group_history: Optional[List[Dict]]
     standing_history: Optional[List[Dict]]
     social: Optional[CatSocial]
-    group: Optional[CatGroup]
-    group_ID: Optional[int]
+    group_ID: Optional[str]
     rank: Optional[CatRank]
     age: Optional[CatAge]

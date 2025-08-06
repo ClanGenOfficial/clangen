@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import enum
 from enum import auto
 
 from strenum import StrEnum
@@ -113,21 +114,10 @@ class CatGroup(StrEnum):
 
     NONE = ""
 
-    @property
-    def PLAYER_CLAN_ID(self) -> int:
-        return 1
-
-    @property
-    def STARCLAN_ID(self) -> int:
-        return 2
-
-    @property
-    def UNKNOWN_RESIDENCE_ID(self) -> int:
-        return 3
-
-    @property
-    def DARK_FOREST_ID(self) -> int:
-        return 4
+    PLAYER_CLAN_ID = "1"
+    STARCLAN_ID = "2"
+    UNKNOWN_RESIDENCE_ID = "3"
+    DARK_FOREST_ID = "4"
 
     def is_afterlife(self) -> bool:
         return self in (self.DARK_FOREST, self.STARCLAN, self.UNKNOWN_RESIDENCE)

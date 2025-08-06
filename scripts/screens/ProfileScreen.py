@@ -827,14 +827,14 @@ class ProfileScreen(Screens):
         # if cat is dead, we find their old clan name
         if the_cat.dead:
             old_clan = the_cat.status.get_last_living_group()
-            if old_clan == CatGroup.PLAYER_CLAN:
+            if old_clan == CatGroup.PLAYER_CLAN_ID:
                 name = game.clan.name
             # if they had an old clan that wasn't the player's, find it!
             elif old_clan:
                 name = [
                     c
                     for c in game.clan.all_clans
-                    if c.enum == the_cat.status.get_last_living_group()
+                    if c.group_ID == the_cat.status.get_last_living_group()
                 ][0].name
             # otherwise they had no clan
             else:
@@ -842,9 +842,9 @@ class ProfileScreen(Screens):
 
         # if cat is alive and in another clan, find that clan's name
         elif the_cat.status.is_other_clancat:
-            name = [c for c in game.clan.all_clans if c.group_ID == the_cat.status.group_ID][
-                0
-            ].name
+            name = [
+                c for c in game.clan.all_clans if c.group_ID == the_cat.status.group_ID
+            ][0].name
         # otherwise, assume the cat takes the player clan's name
         # it's okay if this is an outsider, if they don't actually have a group to refer to then they won't use this variable
         else:
