@@ -60,8 +60,6 @@ class Clan:
     age = 0
     current_season = "Newleaf"
     all_clans = []
-    other_clans: list[CatGroup] = []
-    """List of other_clan enums currently in use."""
 
     def __init__(
         self,
@@ -759,21 +757,19 @@ class Clan:
         else:
             game.clan.chosen_symbol = clan_symbol_sprite(game.clan, return_string=True)
 
-        other_clan_enums = (
-            CatGroup.OTHER_CLAN1,
-            CatGroup.OTHER_CLAN2,
-            CatGroup.OTHER_CLAN3,
-            CatGroup.OTHER_CLAN4,
-            CatGroup.OTHER_CLAN5,
-        )
         if "other_clans" in clan_data:
-            for other_clan, enum in zip(clan_data["other_clans"], other_clan_enums):
+            for other_clan in clan_data["other_clans"]:
+                if not other_clan.get("ID"):
+                    ID = game.get_free_group_ID()
+                else:
+                    ID = other_clan["ID"]
                 game.clan.all_clans.append(
                     OtherClan(
-                        other_clan["name"],
-                        int(other_clan["relations"]),
-                        other_clan["temperament"],
-                        other_clan["chosen_symbol"],
+                        name=other_clan["name"],
+                        relations=int(other_clan["relations"]),
+                        temperament=other_clan["temperament"],
+                        chosen_symbol=other_clan["chosen_symbol"],
+                        ID=ID,
                     )
                 )
         else:
@@ -782,7 +778,6 @@ class Clan:
                     clan_data["other_clans_names"].split(","),
                     clan_data["other_clans_relations"].split(","),
                     clan_data["other_clan_temperament"].split(","),
-                    other_clan_enums,
                 ):
                     game.clan.all_clans.append(OtherClan(name, int(relation), temper))
             else:
@@ -791,7 +786,6 @@ class Clan:
                     clan_data["other_clans_relations"].split(","),
                     clan_data["other_clan_temperament"].split(","),
                     clan_data["other_clan_chosen_symbol"].split(","),
-                    other_clan_enums,
                 ):
                     game.clan.all_clans.append(
                         OtherClan(name, int(relation), temper, symbol)
@@ -1258,15 +1252,13 @@ class OtherClan:
         "gracious",
     ]
 
-    other_clan_enums = (
-        CatGroup.OTHER_CLAN1,
-        CatGroup.OTHER_CLAN2,
-        CatGroup.OTHER_CLAN3,
-        CatGroup.OTHER_CLAN4,
-        CatGroup.OTHER_CLAN5,
-    )
+    def __init__(
+        self, name="", relations=0, temperament="", chosen_symbol="", ID: int = 0
+    ):
+        self.ID = ID
+        if not self.ID:
+            self.ID = game.get_free_group_ID()
 
-    def __init__(self, name="", relations=0, temperament="", chosen_symbol=""):
         clan_names = names.names_dict["normal_prefixes"]
         clan_names.extend(names.names_dict["clan_prefixes"])
         self.name = name or choice(clan_names)
@@ -1283,13 +1275,6 @@ class OtherClan:
             if chosen_symbol
             else clan_symbol_sprite(self, return_string=True)
         )
-
-        # assigns next un-used enum
-        for enum in self.other_clan_enums:
-            if enum not in game.clan.other_clans:
-                self.enum = enum
-                game.clan.other_clans.append(enum)
-                break
 
     def __repr__(self):
         return f"{self.name}Clan"

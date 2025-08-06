@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from enum import auto
+
 from strenum import StrEnum
 
 
@@ -102,17 +104,14 @@ class CatStanding(StrEnum):
 
 
 class CatGroup(StrEnum):
-    PLAYER_CLAN = "player_clan"
+    PLAYER_CLAN = auto()
+    OTHER_CLAN = auto()
 
-    OTHER_CLAN1 = "other_clan1"
-    OTHER_CLAN2 = "other_clan2"
-    OTHER_CLAN3 = "other_clan3"
-    OTHER_CLAN4 = "other_clan4"
-    OTHER_CLAN5 = "other_clan5"
+    DARK_FOREST = auto()
+    STARCLAN = auto()
+    UNKNOWN_RESIDENCE = auto()
 
-    DARK_FOREST = "dark_forest"
-    STARCLAN = "starclan"
-    UNKNOWN_RESIDENCE = "unknown_residence"
+    NONE = auto()
 
     def is_afterlife(self) -> bool:
         return self in (self.DARK_FOREST, self.STARCLAN, self.UNKNOWN_RESIDENCE)
@@ -120,12 +119,5 @@ class CatGroup(StrEnum):
     def is_any_clan_group(self) -> bool:
         return self in (
             self.PLAYER_CLAN,
-            self.OTHER_CLAN1,
-            self.OTHER_CLAN2,
-            self.OTHER_CLAN3,
-            self.OTHER_CLAN4,
-            self.OTHER_CLAN5,
+            self.OTHER_CLAN,
         )
-
-    def is_other_clan_group(self) -> bool:
-        return self.is_any_clan_group() and self != self.PLAYER_CLAN

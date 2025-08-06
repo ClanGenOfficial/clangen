@@ -64,6 +64,9 @@ class Game:
     patrol_cats = {}
     patrolled = []
 
+    used_group_IDs = [1, 2, 3, 4]
+    """Int IDs already in use. 1 is always PLAYER_CLAN, 2 is always STARCLAN, 3 is always UNKNOWN RESIDENCE, and 4 is always DARK_FOREST. """
+
     outsider_reps = ["welcoming", "neutral", "hostile"]
     other_clan_reps = ["ally", "neutral", "hostile"]
 
@@ -253,6 +256,14 @@ class Game:
                 config_value -= mod
 
         return config_value
+
+    def get_free_group_ID(self) -> int:
+        """
+        Find the next free group ID, appends it onto the used_group_IDs list, then returns the new ID.
+        """
+        new_ID = self.used_group_IDs[-1] + 1
+        self.used_group_IDs.append(new_ID)
+        return new_ID
 
 
 game: Game = Game()
