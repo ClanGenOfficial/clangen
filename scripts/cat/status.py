@@ -339,7 +339,7 @@ class Status:
         dead_player_clan = (
             self.group
             and self.group.is_afterlife()
-            and self.get_last_living_group() == CatGroup.PLAYER_CLAN
+            and self.get_last_living_group() == CatGroup.PLAYER_CLAN_ID
         )
         living_player_clan = self.alive_in_player_clan
 
