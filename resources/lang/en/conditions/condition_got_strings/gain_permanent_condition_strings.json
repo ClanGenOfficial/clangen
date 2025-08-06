@@ -150,6 +150,7 @@
             "m_c begrudgingly accepts that the horrible headaches {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been having might be a permanent side effect of {PRONOUN/m_c/poss} head damage."
         ],
         "absent": [
+            "m_c hasn't been the same since the head injury. {PRONOUN/m_c/subject/CAP} {VERB/m_c/seem/seems} like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} living in a daze.",
             "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, worried about {PRONOUN/m_c/poss} head injury.",
             "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note- m_c has been fading fast since the head injury.",
             "m_c got lost in the camp too many times. r_c wants to keep {PRONOUN/m_c/object} at camp for much longer."
@@ -207,15 +208,15 @@
     },
     "severe headache": {
         "absent": [
+            "m_c's headaches have been getting worse. {PRONOUN/m_c/subject/CAP} can hardly even think.",
             "r_c isn't sure why m_c suddenly took such a downward turn, but {PRONOUN/m_c/subject} did- and r_c isn't sure it can be fixed.",
-            "m_c has found it harder and harder to remember what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing. r_c suspects the worst.",
-            "m_c's headaches have been getting worse. {PRONOUN/m_c/subject/CAP} can't even think."
+            "m_c has found it harder and harder to remember what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing. r_c suspects the worst."
         ]
     },
     "a festering wound": {
         "strange lump": [
-            "r_c isn't sure where this lump came from, but m_c isn't sure it's good news.",
-            "m_c complains about being unable to sleep properly, leading r_c to find a strange lump.",
+            "A lump has appeared under m_c's wound. {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} sure that's a good sign.",
+            "m_c complains about being unable to sleep properly, leading r_c to find a strange lump under the wound.",
             "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
         ]
     }
