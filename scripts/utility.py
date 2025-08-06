@@ -758,7 +758,7 @@ def create_new_cat(
         )
         and not original_group
     ):
-        original_group = choice(game.clan.other_clans)
+        original_group = choice([x.group_ID for x in game.clan.all_other_clans])
 
     created_cats = []
 
