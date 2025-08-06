@@ -271,6 +271,9 @@ class Status:
 
     @property
     def group_ID(self) -> str:
+        """
+        Return the ID of the group this cat belongs to.
+        """
         return self.group_history[-1]["group"]
 
     @property
