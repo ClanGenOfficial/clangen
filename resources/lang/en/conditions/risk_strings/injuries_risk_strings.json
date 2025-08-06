@@ -43,7 +43,12 @@
         "an infected wound": [
             "r_c sighs and tries to gently extract the head of the tick that was left behind when the insect was plucked off of m_c. With that contaminant, the little tick bite has become infected.",
             "The tick on m_c was left for far too long. The area is now swollen and warm - definite signs of infection."
-        ]
+        ],
+        "tick fever": [
+        "r_c worries over m_c, looking for any tick-heads an apprentice might have left, but {PRONOUN/r_c/subject} can only find a distinctive rash. m_c knows what it means- tick fever.",
+        "m_c's heart sinks as {PRONOUN/m_c/poss} fur starts falling out. The apprentices must have missed a tick- r_c confirms it's tick fever.",
+        "m_c complains about a new rash, going silent when r_c finds a tick-head. {PRONOUN/m_c/subject/CAP} has tick fever."
+    ]
     },
     "broken jaw": {
         "an infected wound": [

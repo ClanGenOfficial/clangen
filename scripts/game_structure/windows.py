@@ -562,7 +562,7 @@ class GameOver(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        self.clan_name = str(game.clan.name + "Clan")
+        self.clan_name = str(game.clan.displayname + "Clan")
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
             "windows.game_over_message",

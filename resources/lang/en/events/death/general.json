@@ -2144,7 +2144,7 @@
                     "r_c"
                 ],
                 "reg_death": "This cat died from old age.",
-                "lead_death": "lost all remaining lives from old age."
+                "lead_death": "died from old age."
             }
         ]
     },
@@ -4707,8 +4707,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died while wandering the territory.",
-                "lead_death": "died while wandering the territory"
+                "reg_death": "m_c was lead out into the territory and killed by r_c.",
+                "lead_death": "were lead away from camp by r_c and killed"
             }
         ],
         "future_event": [
