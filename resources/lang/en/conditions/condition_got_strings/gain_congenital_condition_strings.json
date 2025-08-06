@@ -67,5 +67,16 @@
     "crooked jaw": [
         "m_c's jaw never seemed to close quite right, and {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} definitely not growing out of it.",
         "m_c has always had trouble suckling, but the reason why is only now starting to be really apparent."
-    ]
+    ],
+    "strange lump": [
+            "m_c developed a new lump on {PRONOUN/m_c/poss} body. It doesn't look good.",
+            "r_c isn't sure where this lump on {PRONOUN/m_c/poss} body came from, but m_c isn't sure it's good news.",
+            "m_c complains about being unable to sleep properly, leading r_c to find a strange lump on {PRONOUN/m_c/object}. It's not good news.",
+            "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
+        ],
+    "absent": [
+            "m_c has been getting more and more forgetful lately. {PRONOUN/m_c/subject/CAP} is starting to fade.",
+            "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, quietly concerned about how long it takes {PRONOUN/m_c/object} to respond.",
+            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note- m_c has been fading fast."
+        ]
 }
