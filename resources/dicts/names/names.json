@@ -14,14 +14,14 @@
     "tail", "tail", "tail", "tail", "tail", "tail", "tail", "claw", "claw", "claw", "claw", "claw", "claw",
     "foot", "foot", "foot", "foot", "foot", "whisker", "whisker", "whisker", "whisker", "whisker", "whisker",
     "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart",
-    "arch", "aster", "back", "badger", "bark", "bat", "beak", "beam", "bee", "beetle", "bellow", "belly", "berry", "billow", "bird", "bite", 
+    "arch", "aster", "back", "badger", "bark", "bat", "beak", "beam", "bee", "beetle", "bellow", "belly", "berry", "billow", "bird", "bite",
     "blaze", "blink", "bloom", "blossom", "blur", "bone", "bounce", "break", "breeze", "briar", "bright", "brook", "brush", "bubble", "bud", 
     "bumble", "burr", "burst", "bush", "buzz", "call", "catcher", "chase", "chaser", "chasm", "chest", "chill", "chirp", "chomp", 
     "clash", "cloud", "clover", "crackle", "crash", "crawl", "creek", "crest", "cry", "curl", "current", "daisy", "dance", "dart", "dash", "dawn", 
     "daze", "dazzle", "dew", "dream", "drift", "drizzle", "drop", "dusk", "dust", "eagle", "ear", "ears", "echo", "egg", "eye", "eyes", "face", 
     "falcon", "fall", "fang", "feather", "fern", "fin", "fish", "flake", "flash", "flick", "flicker", "flight", "flip", "flit", "flood", "flow", 
     "flower", "fluff", "fox", "freeze", "frost", "fruit", "fuzz", "frill", "gale", "gaze", "glare", "gleam", "glade", "glide", "glint", "glow", 
-    "goose", "gorse", "grass", "growl", "hail", "hare", "haven", "hawk", "haze", "heather", "herb", "hiss", "hollow", "holly", "honey", "hope", 
+    "goose", "gorse", "grass", "growl", "hail", "hare", "haven", "hawk", "haze", "heather", "hiss", "hollow", "holly", "honey", "hope", 
     "howl", "husk", "ice", "iris", "ivy", "jaw", "joy", "jumble", "jump", "kestrel", "kick", "kite", "knoll", "lake", "larch", "laurel", "leaf", 
     "leap", "leg", "light", "lilac", "lily", "lotus", "mallow", "mane", "mark", "meadow", "mimic", "minnow", "mist", "moor", "moss", "moth", 
     "mouse", "munch", "murk", "muzzle", "needle", "nest", "newt", "nibble", "nip", "noise", "nose", "nudge", "nut", "pad", "patch", "path", 
@@ -191,8 +191,8 @@
     "Falcon", "Fallen", "Falling", "Fallow", "Feather", "Fennel", "Fern", "Ferret", "Fickle", "Fidget", "Fierce", "Fin", "Finch", "Fir", "Fish", 
     "Flail", "Flash", "Flax", "Flea", "Fleet", "Flicker", "Flight", "Flip", "Flit", "Float", "Flood", "Flower", "Fluff", "Fluffy", "Flurry", "Flutter", 
     "Fly", "Frill", "Frilled", "Fringe", "Frog", "Frond", "Fruit", "Fumble", "Furled", "Furze", "Fuzz", "Fuzzy", "Gale", "Gander", "Gardenia", 
-    "Garlic", "Gentle", "Gill", "Glade", "Goose", "Gorge", "Gorse", "Grass", "Grouse", "Gull", "Guppy", "Gust", "Hail", "Half", "Hare", "Hatch", 
-    "Haven", "Hawk", "Hay", "Hazy", "Heart", "Heath", "Heavy", "Hemlock", "Heron", "Hill", "Hollow", "Holly", "Honey", "Hoot", "Hop", "Hope",
+    "Garlic", "Gentle", "Gill", "Goose", "Gorge", "Gorse", "Grass", "Grouse", "Gull", "Guppy", "Gust", "Hail", "Half", "Hare", "Hatch", 
+    "Haven", "Hawk", "Hay", "Heart", "Heath", "Heavy", "Hemlock", "Heron", "Hill", "Hollow", "Holly", "Honey", "Hoot", "Hop", "Hope",
     "Hornet", "Hound", "Howl", "Humming", "Hush", "Hyacinth", "Iris", "Ivy", "Jackdaw", "Jagged", "Jumble", "Jump", "Junco", "Juniper", 
     "Kestrel", "Kink", "Kite", "Lake", "Larch", "Lark", "Laurel", "Lavender", "Leaf", "Leap", "Leaping", "Lichen", "Light", "Lightning", 
     "Lilac", "Lily", "Little", "Lizard", "Locust", "Long", "Log", "Lotus", "Loud", "Low", "Luck", "Lupine", "Lynx", "Mallow", "Mantis", 
@@ -201,12 +201,12 @@
     "One", "Oriole", "Osprey", "Pansy", "Parsley", "Partridge", "Patch", "Patchouli", "Peak", "Pear", "Peat", "Perch", "Petal", "Petunia", 
     "Pheasant", "Pigeon", "Pike", "Pine", "Piper", "Plover", "Plum", "Pod", "Pond", "Pool", "Pop", "Poppy", "Posy", "Pounce", "Prance", 
     "Prickle", "Prim", "Primrose", "Puddle", "Quail", "Quick", "Quiet", "Quill", "Quiver", "Rabbit", "Ragged", "Rain", "Rainbow", "Rat", 
-    "Rattle", "Reed", "Ridge", "Rift", "Rindle", "Ripple", "River", "Roach", "Roar", "Roaring", "Rook", "Root", "Rose", "Rosy", "Rowan", 
-    "Rubble", "Runnel", "Running", "Rush", "Rushing", "Rustle", "Rye", "Sable", "Sapling", "Scratch", "Seed", "Serpent", "Shard", "Sharp", 
+    "Rattle", "Reed", "Ridge", "Rift", "Rindle", "Ripple", "River", "Roach", "Roar", "Rook", "Root", "Rose", "Rosy", "Rowan", 
+    "Rubble", "Runnel", "Running", "Rush", "Rustle", "Rye", "Sable", "Sapling", "Scratch", "Seed", "Serpent", "Shard", "Sharp", 
     "Shell", "Shimmer", "Shine", "Shining", "Shivering", "Short", "Shrew", "Shrub", "Shy", "Silent", "Silk", "Silky", "Silt", "Skulk",
     "Skip", "Sky", "Slate", "Sleek", "Sleepy", "Sleet", "Slight", "Slip", "Sloe", "Slope", "Slumber", "Small", "Snail", "Snake", "Snap", 
     "Sneeze", "Snow", "Snowy", "Snip", "Soft", "Song", "Sorrel", "Spark", "Sparrow", "Spider", "Spike", "Splash", "Splinter", "Spore", "Spring", 
-    "Spruce", "Squirrel", "Starling", "Stem", "Stoat", "Stork", "Stretch", "Stump", "Sun", "Sunny", "Swallow", "Swan", "Swamp", "Swarm", "Sweet", 
+    "Spruce", "Squirrel", "Starling", "Stem", "Stoat", "Stork", "Stretch", "Stumpy", "Sun", "Sunny", "Swallow", "Swan", "Swamp", "Swarm", "Sweet", 
     "Swift", "Sycamore", "Tadpole", "Tall", "Talon", "Tangle", "Tansy", "Tempest", "Termite", "Thorn", "Thrift", "Thrush", "Thunder", 
     "Thyme", "Timber", "Tiny", "Toad", "Torn", "Tremble", "Trickle", "Trout", "Tuft", "Tulip", "Tumble", "Turtle", "Valley", "Vine", 
     "Wasp", "Weasel", "Weaver", "Web", "Weed", "Weevil", "Wet", "Wheat", "Whimsy", "Whirl", "Whisker", "Whisper", "Whispering", 
@@ -222,7 +222,7 @@
     "Mist", "Morel", "Mulberry", "Night", "Oleander", "Orchid", "Otter", "Owl", "Pebble", "Phlox", "Pipit", "Plume",
     "Privet", "Rime", "Rock", "Rue", "Saffron", "Scale", "Scrub", "Shade", "Shadow", "Shatter", "Smoke", "Snapdragon",
     "Snow", "Snowy", "Soot", "Spindle", "Stag", "Stone", "Storm", "Sun", "Swan", "Teasel", "Tree", "Twig", "Twilight",
-    "Verbena", "Vervain", "Violet", "Vole", "Warbler", "Wisp", "Roaring", "Leaping", "Rushing", "Rush", "Screech"
+    "Verbena", "Vervain", "Violet", "Vole", "Warbler", "Wisp"
   ],
 
   "colour_prefixes": {
@@ -241,12 +241,12 @@
     "Gray", "Silver", "Silver", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Gravel", "Flax", "Cold",
     "River", "Blizzard", "Flurry", "Bone", "Bleak", "Stone", "Pebble", "Heather", "Scale", "Crocus", "Pigeon", "Stone", "Rock", "Pebble",
     "Rue", "Fringe", "Glint", "Mistle", "Shatter", "Gossamer", "Air", "Pale", "Ermine", "Stoat", "Gull", "Lilac", "Rime", "Bluebell",
-    "Wolf", "Lynx", "Shiver"
+    "Wolf", "Shiver"
     ],
     "GREY": [
     "Gray", "Gray", "Ash", "Ashen", "Cinder", "Rock", "Stone", "Shade", "Mouse", "Smoke", "Smoky", "Shadow", "Fog", "Bone",
     "Bleak", "Rain", "Storm", "Soot", "Pebble", "Mist", "Misty", "Heather", "Trout", "Shrike", "Plume", "Teasel", "Wolf", "Raccoon",
-    "Lyre", "Rat", "Gull", "Pigeon", "Rime", "Thunder", "Shale", "Pebble", "Bluebell", "Flint", "Gravel", "Birch", "Lynx", "Badger"
+    "Lyre", "Rat", "Gull", "Pigeon", "Rime", "Thunder", "Shale", "Pebble", "Bluebell", "Flint", "Gravel", "Birch", "Badger"
     ],
     "DARKGREY": [
     "Gray", "Gray", "Shade", "Raven", "Crow", "Stone", "Dark", "Dark", "Night", "Cinder", "Ash", "Ashen", "Twilight", "Panther", "Bat",
@@ -294,19 +294,19 @@
     "Thrush", "Log"
     ],
     "LILAC": [
-    "Pale", "Light", "Mouse", "Dust", "Dusty", "Sand", "Sandy", "Bright", "Mud", "Scrub", "Velvet", "Fallow", "Thrush", "Lynx",
+    "Pale", "Light", "Mouse", "Dust", "Dusty", "Sand", "Sandy", "Bright", "Mud", "Scrub", "Velvet", "Fallow", "Thrush", 
     "Hazel", "Vole", "Branch", "Warm", "Robin", "Lilac", "Lavender", "Heather", "Fawn", "Tawny", "Seed", "Nut", "Wisteria", "Wolf",
     "Log"
     ],
     "BROWN": [
     "Brown", "Brown", "Oak", "Mouse", "Dark", "Shade", "Russet", "Dust", "Dusty", "Mud", "Deer", "Fawn", "Doe", "Stag", "Bark", "Tawny",
     "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Umber", "Tree", "Root", "Shadow", "Ochre", "Auburn", "Burnet",
-    "Moth", "Elm", "Nut", "Cypress", "Wolf", "Lynx"
+    "Moth", "Elm", "Nut", "Cypress", "Wolf"
     ],
     "GOLDEN-BROWN": [
     "Brown", "Brown", "Oak", "Mouse", "Dark", "Shade", "Russet", "Dust", "Dusty", "Mud", "Deer", "Fawn", "Doe", "Stag",
     "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Umber", "Tree", "Root", "Shadow", "Ochre", "Auburn", "Burnet",
-    "Thrasher", "Thrush", "Bark", "Maple", "Tawny", "Moth", "Nut", "Cypress", "Fir", "Wolf", "Lynx"
+    "Thrasher", "Thrush", "Bark", "Maple", "Tawny", "Moth", "Nut", "Cypress", "Fir", "Wolf"
     ],
     "DARKBROWN": [
     "Brown", "Brown", "Dark", "Dark", "Shade", "Night", "Russet", "Rowan", "Mud", "Oak", "Twig", "Loach", "Shadow", "Tawny", "Moth",
@@ -350,10 +350,10 @@
 	"shadow", "shade", "dusk", "coal", "ink", "bat", "cinder", "ghost", "night", "raven", "crow", "burn", "badger", "raccoon"
     ],
     "PALEGINGER": [
-	"sun", "beam", "shine", "spark", "shell", "honey", "flash", "lion", "cougar", "hive"
+	"sun", "beam", "shine", "spark", "shell", "honey", "flash", "lion", "cougar"
     ],
     "GOLDEN": [
-	"sun", "beam", "shine", "spark", "blaze", "honey", "flash", "bee", "hive"
+	"sun", "beam", "shine", "spark", "blaze", "honey", "flash", "bee", "lion", "cougar"
     ],
     "GINGER": [
 	"burn", "sun", "beam", "shine", "spark", "blaze", "flame", "flare", "ember", "fox", "vixen"
@@ -365,13 +365,13 @@
 	"burn", "blaze", "flame", "flare", "ember", "fox", "vixen"
     ],
     "CREAM": [
-	"sun", "beam", "shine", "spark", "shell", "honey", "flash", "lion", "cougar", "hive"
+	"sun", "beam", "shine", "spark", "shell", "honey", "flash", "lion", "cougar"
     ],
     "LIGHTBROWN": [
-	"root", "owl", "twig", "wood", "moth", "lion", "cougar", "hive"
+	"root", "owl", "twig", "wood", "moth", "lion", "cougar"
     ],
     "LILAC": [
-	"flower", "heather", "dream", "dust", "lion", "cougar", "hive"
+	"flower", "heather", "dream", "dust", "lion", "cougar"
     ],
     "BROWN": [
 	"root", "owl", "twig", "wood", "moth", "bark", "branch", "burr"
@@ -405,13 +405,13 @@
     "Pearly", "Pelican", "Pool", "Pool", "Prawn", "Ripple", "Ripple", "Remora", "Reef", "Sago", "Salmon", "Salt", "Sand", "Sand", "Sardine", "Scale", "Scale", "Sea",
     "Nacre", "Ocean", "Octopus", "Oyster", "Palm", "Pearl", "Pearl", "Seabass", "Seagull", "Shark", "Shell", "Shimmer", "Shrimp", "Shimmer", "Shore", "Slug", 
     "Snail", "Snook", "Splash", "Squid", "Sturgeon", "Tide", "Tidal", "Torrent", "Tuna", "Wave", "Wave", "Whale", "Coati", "Minnow", "Storm", "Hibiscus",
-    "Piper", "Plover", "Dune", "Islet", "Cay", "Wet"
+    "Piper", "Plover", "Wet"
     ],
     "Plains": [
     "Anise", "Barley", "Barley", "Baobab", "Bison", "Breeze", "Breeze", "Burrow", "Butterfly", "Cow", "Cow", "Dandelion", "Elk", "Ewe", "Field", "Field",
     "Flutter", "Gopher", "Grass", "Grass", "Grouse", "Hare", "Heather", "Heather", "Horse", "Meadow", "Oat", "Plover", "Pig", "Feather", "Talon",
     "Poppy", "Poppy", "Pollen", "Prairie", "Pronghorn", "Roan", "Rustle", "Rye", "Rye", "Sage", "Sedge", "Sheep", "Swish", "Tunnel", "Tarantula",
-    "Wheat", "Wheat", "Willow", "Willow", "Wool", "Wooly", "Coati", "Rabbit", "Swift", "Running", "Wind", "Bird", "Hill", "Badger", "Mound", "Oak",
+    "Wheat", "Wheat", "Willow", "Willow", "Wool", "Wooly", "Coati", "Rabbit", "Swift", "Running", "Wind", "Bird", "Badger", "Oak",
     "Elm", "Aspen", "Milkweed"
     ],
     "Mountainous": [
@@ -419,7 +419,7 @@
     "Eagle", "Eagle", "Edelweiss", "Echo", "Echo", "Flint", "Fallen", "Goat", "Granite", "Gravel", "High", "Ibex", "Lichen", "Lynx",
     "Mountain", "Peak", "Pebble", "Pika", "Pinnacle", "Rock", "Rocky", "Ram", "Jasper", "Salt", "Shale", "Shard", "Spire", "Stone", "Steppe",
     "Summit", "Volcano", "Ash", "Yak", "Yucca", "Whistle", "Whisper", "Whisper", "Mica", "Frigid", "Abyss", "Rubble", "Ridge", "Tall", "Bear",
-    "Fall", "Falling", "Hill", "Steep", "Ravine", "Sky", "Wind", "Valley", "Talon", "Wing", "Slope", "Larch", "Conifer", "Fir", "Spruce", "Pine"
+    "Fall", "Falling", "Sky", "Wind", "Talon", "Wing", "Slope", "Larch", "Conifer", "Fir", "Spruce", "Pine"
     ],
     "Wetlands": [
     "Willow", "Marsh", "Bog", "Lotus", "Reed", "Frog", "Toad", "Stork", "Civet", "Crane", "Duck", "Heron", "Ibis", "Mangrove",
@@ -433,10 +433,10 @@
     "Desert": [
     "Cactus", "Dune", "Coyote", "Vulture", "Condor", "Canyon", "Prickle", "Pear", "Agave", "Jackal", "Dry", "Drought",
     "Rattle", "Desert", "Brittle", "Mesa", "Barren", "Oasis", "Dust", "Dusty", "Arid", "Buzzard", "Fly", "Scrub", "Gully", "Wax",
-    "Yucca", "Salt", "Dingo", "Mirage", "Cobra", "Cheetah", "Caracal", "Scorpion", "Lion", "Antelope", "Gazelle", "Oryx", "Dune",
+    "Yucca", "Salt", "Dingo", "Mirage", "Cobra", "Cheetah", "Caracal", "Scorpion", "Lion", "Antelope", "Gazelle", "Oryx",
     "Camel", "Meerkat", "Skull", "Rye", "Jackrabbit", "Needle", "Aloe", "Acacia", "Viper", "Lizard", "Sand", "Sand", "Sandy",
     "Snake", "Poison", "Venom", "Tiapan", "Fang", "Blister", "Blaze", "Burn", "Scorch", "Smolder", "Jerboa", "Fennec", "Mamba", "Coati",
-    "Addax", "Emu", "Hyena", "Ostrich", "Scarab", "Hare", "Thorn", "Needle", "Scale", "Scaly", "Barbed", "Barb", "Bone", "Tumble"
+    "Addax", "Emu", "Hyena", "Ostrich", "Scarab", "Hare", "Thorn", "Needle", "Scale", "Bone", "Tumble"
     ]
   },
 
@@ -447,12 +447,12 @@
     ],
     "Beach": [
     "current", "shell", "tide", "sand", "wave", "flood", "shore", "coast", "fin", "splash", "surf", "squid", "coral", "pearl",
-    "pool", "ripple", "drip", "drop", "shine", "shimmer", "foam", "sea", "ocean", "torrent", "tide", "gill", "cove", "dune"
+    "pool", "ripple", "drip", "drop", "shine", "shimmer", "foam", "sea", "ocean", "torrent", "tide", "gill", "cove"
     ],
     "Plains": [
     "field", "meadow", "wool", "oat", "elk", "flutter", "pollen", "bull", "bee", "swish", "breeze", "runner", "dart", "dash",
-    "tunnel", "horse", "sheep", "burrow", "brush", "wind", "wing", "flight", "sky", "soar", "bird", "chase", "chaser", "feather", "glade",
-    "leap", "run", "rush", "wisp", "hare", "rabbit", "badger", "mound", "talon", "hill"
+    "tunnel", "horse", "sheep", "burrow", "brush", "wind", "wing", "flight", "sky", "soar", "bird", "chase", "chaser", "feather", 
+    "leap", "run", "rush", "wisp", "hare", "rabbit", "badger", "talon"
     ],
     "Mountainous": [
     "cave", "caw", "cliff", "crag", "cricket", "drop", "eagle", "echo", "fall", "frost", "goat", "horn", "lichen", "talon", "feather",
