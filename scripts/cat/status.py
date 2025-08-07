@@ -86,7 +86,7 @@ class Status:
     # SAVE/LOAD
     @staticmethod
     def _convert_old_group_saves(entry):
-        # converting older standing_histories to the new group_IDs
+        # converting older group saves to the new group_IDs
         if not entry["group"]:
             entry["group"] = None
             return
