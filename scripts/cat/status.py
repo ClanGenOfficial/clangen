@@ -117,9 +117,9 @@ class Status:
                 social = CatSocial.CLANCAT
             social = CatSocial(social)
         if rank and not isinstance(rank, CatRank):
-            raise TypeError("{rank} is not a valid rank")
+            raise TypeError(f"{rank} is not a valid rank")
         if social and not isinstance(social, CatSocial):
-            raise TypeError("{social} is not a valid social")
+            raise TypeError(f"{social} is not a valid social")
 
         return rank, social
 
