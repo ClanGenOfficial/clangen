@@ -131,7 +131,7 @@ class Events:
         # Calling of "one_moon" functions.
         other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
         for cat in Cat.all_cats_list.copy():
-            if not cat.status.group or cat.status.is_other_clancat:
+            if not cat.status.group_ID or cat.status.is_other_clancat:
                 self.one_moon_outside_cat(cat, other_clan_cats)
             elif cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
                 self.one_moon_cat(cat)
