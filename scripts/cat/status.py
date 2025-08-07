@@ -33,7 +33,7 @@ class Status:
         group_history: list = None,
         standing_history: list = None,
         social: CatSocial = None,
-        group_ID: int = None,
+        group_ID: str = None,
         rank: CatRank = None,
         age: CatAge = None,
     ):
