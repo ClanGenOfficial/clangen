@@ -1,8 +1,5 @@
 from __future__ import annotations
 
-import enum
-from enum import auto
-
 from strenum import StrEnum
 
 

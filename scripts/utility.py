@@ -821,7 +821,7 @@ def create_new_cat(
             status_dict={
                 "social": original_social,
                 "age": age,
-                "group": original_group,
+                "group_ID": original_group,
             },
             gender=_gender,
             backstory=backstory,
