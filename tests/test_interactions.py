@@ -1,6 +1,8 @@
 import os
 import unittest
 
+from scripts.cat_relations.enums import rel_type_tiers
+
 from scripts.cat.enums import CatRank
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
@@ -10,7 +12,6 @@ from scripts.cat.cats import Cat, Relationship
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat_relations.interaction import (
     SingleInteraction,
-    rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
 )
 
@@ -24,8 +25,12 @@ class RelationshipConstraints(unittest.TestCase):
         rel = Relationship(cat_from, cat_to, False, True)
 
         # then
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["sibling"], "test"))
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["not_mates"], "test"))
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(rel, ["sibling"], "test")
+        )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(rel, ["not_mates"], "test")
+        )
 
     def test_mates(self):
         # given
@@ -36,8 +41,12 @@ class RelationshipConstraints(unittest.TestCase):
         rel = Relationship(cat_from, cat_to, True, False)
 
         # then
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["mates"], "test"))
-        self.assertFalse(rel_fulfill_rel_constraints(rel, ["not_mates"], "test"))
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(rel, ["mates"], "test")
+        )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(rel, ["not_mates"], "test")
+        )
 
     def test_parent_child_combo(self):
         # given
@@ -49,75 +58,261 @@ class RelationshipConstraints(unittest.TestCase):
 
         # then
         self.assertTrue(
-            rel_fulfill_rel_constraints(child_parent_rel, ["child/parent"], "test")
+            cats_fulfill_single_interaction_constraints(
+                child_parent_rel, ["child/parent"], "test"
+            )
         )
         self.assertFalse(
-            rel_fulfill_rel_constraints(child_parent_rel, ["parent/child"], "test")
+            cats_fulfill_single_interaction_constraints(
+                child_parent_rel, ["parent/child"], "test"
+            )
         )
         self.assertTrue(
-            rel_fulfill_rel_constraints(parent_child_rel, ["parent/child"], "test")
+            cats_fulfill_single_interaction_constraints(
+                parent_child_rel, ["parent/child"], "test"
+            )
         )
         self.assertFalse(
-            rel_fulfill_rel_constraints(parent_child_rel, ["child/parent"], "test")
+            cats_fulfill_single_interaction_constraints(
+                parent_child_rel, ["child/parent"], "test"
+            )
         )
 
-    def test_rel_values_above(self):
+    def test_rel_values_only_constraint_pos(self):
         # given
-        cat_from = Cat()
-        cat_to = Cat()
-        rel = Relationship(cat_from, cat_to)
-        rel.romantic_love = 50
-        rel.platonic_like = 50
-        rel.dislike = 50
-        rel.comfortable = 50
-        rel.jealousy = 50
-        rel.trust = 50
+        cat_from1 = Cat()
+        cat_to1 = Cat()
+        low_rel = Relationship(cat_from1, cat_to1)
+        low_rel.romance = 10
+        low_rel.like = 10
+        low_rel.comfort = 10
+        low_rel.trust = 10
+        low_rel.respect = 10
+
+        cat_from2 = Cat()
+        cat_to2 = Cat()
+        mid_rel = Relationship(cat_from2, cat_to2)
+        mid_rel.romance = 50
+        mid_rel.like = 50
+        mid_rel.comfort = 50
+        mid_rel.trust = 50
+        mid_rel.respect = 50
+
+        cat_from3 = Cat()
+        cat_to3 = Cat()
+        high_rel = Relationship(cat_from3, cat_to3)
+        high_rel.romance = 90
+        high_rel.like = 90
+        high_rel.comfort = 90
+        high_rel.trust = 90
+        high_rel.respect = 90
+        # then
+        for level_list in rel_type_tiers.values():
+            for l in level_list:
+                # last index of the list should be the highest positive
+                if l == level_list[-1]:
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            mid_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            low_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                # next is middle pos
+                elif l == level_list[-2]:
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            mid_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            low_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                # next is the lowest pos
+                elif l == level_list[-3]:
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            mid_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            low_rel, [f"{l}_only"], "test"
+                        )
+                    )
+
+    def test_rel_values_only_constraint_neg(self):
+        # given
+        cat_from1 = Cat()
+        cat_to1 = Cat()
+        mid_rel = Relationship(cat_from1, cat_to1)
+        mid_rel.romance = -50
+        mid_rel.like = -50
+        mid_rel.comfort = -50
+        mid_rel.trust = -50
+
+        cat_from2 = Cat()
+        cat_to2 = Cat()
+        low_rel = Relationship(cat_from2, cat_to2)
+        low_rel.romance = -10
+        low_rel.like = -10
+        low_rel.comfort = -10
+        low_rel.trust = -10
+
+        cat_from3 = Cat()
+        cat_to3 = Cat()
+        high_rel = Relationship(cat_from3, cat_to3)
+        high_rel.romance = -90
+        high_rel.like = -90
+        high_rel.comfort = -90
+        high_rel.trust = -90
+
+        for level_list in rel_type_tiers.values():
+            for l in level_list:
+                # first index of the list should be the highest negative
+                if l == level_list[0]:
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            mid_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            low_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                # next is middle negative
+                elif l == level_list[1]:
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            mid_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            low_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                # next is the lowest neg
+                elif l == level_list[2]:
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertFalse(
+                        cats_fulfill_single_interaction_constraints(
+                            mid_rel, [f"{l}_only"], "test"
+                        )
+                    )
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            low_rel, [f"{l}_only"], "test"
+                        )
+                    )
+
+    def test_rel_values_ranged_constraint(self):
+        # given
+        # pos side
+        cat_from1 = Cat()
+        cat_to1 = Cat()
+        high_rel = Relationship(cat_from1, cat_to1)
+        high_rel.romance = 90
+        high_rel.like = 90
+        high_rel.comfort = 90
+        high_rel.trust = 90
+        high_rel.respect = 90
+
+        # neg side
+        cat_from1 = Cat()
+        cat_to1 = Cat()
+        high_rel = Relationship(cat_from1, cat_to1)
+        high_rel.romance = -90
+        high_rel.like = -90
+        high_rel.comfort = -90
+        high_rel.trust = -90
+        high_rel.respect = -90
 
         # then
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["romantic_50"], "test"))
-        self.assertFalse(rel_fulfill_rel_constraints(rel, ["romantic_60"], "test"))
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["platonic_50"], "test"))
-        self.assertFalse(rel_fulfill_rel_constraints(rel, ["platonic_60"], "test"))
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["comfortable_50"], "test"))
-        self.assertFalse(rel_fulfill_rel_constraints(rel, ["comfortable_60"], "test"))
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["jealousy_50"], "test"))
-        self.assertFalse(rel_fulfill_rel_constraints(rel, ["jealousy_60"], "test"))
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["trust_50"], "test"))
-        self.assertFalse(rel_fulfill_rel_constraints(rel, ["trust_60"], "test"))
+        # pos test
+        for level_list in rel_type_tiers.values():
+            for level in level_list:
+                # last index of the list should be the highest positive
+                if level == level_list[-1]:
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{level}"], "test"
+                        )
+                    )
+                # next is middle pos
+                elif level == level_list[-2]:
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{level}"], "test"
+                        )
+                    )
+                # next is the lowest pos
+                elif level == level_list[-3]:
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{level}"], "test"
+                        )
+                    )
 
-    def test_rel_values_under(self):
-        # given
-        cat_from = Cat()
-        cat_to = Cat()
-        rel = Relationship(cat_from, cat_to)
-        rel.romantic_love = 50
-        rel.platonic_like = 50
-        rel.dislike = 50
-        rel.comfortable = 50
-        rel.jealousy = 50
-        rel.trust = 50
-
-        # then
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["romantic_50_lower"], "test"))
-        self.assertFalse(
-            rel_fulfill_rel_constraints(rel, ["romantic_30_lower"], "test")
-        )
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["platonic_50_lower"], "test"))
-        self.assertFalse(
-            rel_fulfill_rel_constraints(rel, ["platonic_30_lower"], "test")
-        )
-        self.assertTrue(
-            rel_fulfill_rel_constraints(rel, ["comfortable_50_lower"], "test")
-        )
-        self.assertFalse(
-            rel_fulfill_rel_constraints(rel, ["comfortable_30_lower"], "test")
-        )
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["jealousy_50_lower"], "test"))
-        self.assertFalse(
-            rel_fulfill_rel_constraints(rel, ["jealousy_30_lower"], "test")
-        )
-        self.assertTrue(rel_fulfill_rel_constraints(rel, ["trust_50_lower"], "test"))
-        self.assertFalse(rel_fulfill_rel_constraints(rel, ["trust_30_lower"], "test"))
+        # neg test
+        for level_list in rel_type_tiers.values():
+            for level in level_list:
+                # first index of the list should be the highest positive
+                if level == level_list[0]:
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{level}"], "test"
+                        )
+                    )
+                # next is middle pos
+                elif level == level_list[1]:
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{level}"], "test"
+                        )
+                    )
+                # next is the lowest pos
+                elif level == level_list[2]:
+                    self.assertTrue(
+                        cats_fulfill_single_interaction_constraints(
+                            high_rel, [f"{level}"], "test"
+                        )
+                    )
 
 
 class SingleInteractionCatConstraints(unittest.TestCase):
@@ -140,54 +335,53 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         medicine_to_warrior.random_status_constraint = ["warrior"]
 
         # then
-        for game_mode in ("classic", "expanded", "cruel season"):
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    warrior, warrior, warrior_to_all, game_mode
-                )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(
+                warrior, warrior, warrior_to_all
             )
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    warrior, warrior, warrior_to_warrior, game_mode
-                )
+        )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(
+                warrior, warrior, warrior_to_warrior
             )
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    warrior, warrior, medicine_to_warrior, game_mode
-                )
+        )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(
+                warrior, warrior, medicine_to_warrior
             )
+        )
 
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    warrior, medicine, warrior_to_all, game_mode
-                )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(
+                warrior, medicine, warrior_to_all
             )
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    warrior, medicine, warrior_to_warrior, game_mode
-                )
+        )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(
+                warrior, medicine, warrior_to_warrior
             )
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    warrior, medicine, medicine_to_warrior, game_mode
-                )
+        )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(
+                warrior, medicine, medicine_to_warrior
             )
+        )
 
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    medicine, warrior, warrior_to_all, game_mode
-                )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(
+                medicine, warrior, warrior_to_all
             )
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    medicine, warrior, warrior_to_warrior, game_mode
-                )
+        )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(
+                medicine, warrior, warrior_to_warrior
             )
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    medicine, warrior, medicine_to_warrior, game_mode
-                )
+        )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(
+                medicine, warrior, medicine_to_warrior
             )
+        )
 
     def test_trait(self):
         # given
@@ -206,39 +400,26 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         all_to_calm.random_trait_constraint = ["calm"]
 
         # then
-        for game_mode in ("classic", "expanded", "cruel season"):
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    calm, troublesome, calm_to_all, game_mode
-                )
-            )
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    calm, troublesome, all_to_calm, game_mode
-                )
-            )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(calm, troublesome, calm_to_all)
+        )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(calm, troublesome, all_to_calm)
+        )
 
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    troublesome, calm, calm_to_all, game_mode
-                )
-            )
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    troublesome, calm, all_to_calm, game_mode
-                )
-            )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(troublesome, calm, calm_to_all)
+        )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(troublesome, calm, all_to_calm)
+        )
 
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    calm, calm, calm_to_all, game_mode
-                )
-            )
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    calm, calm, all_to_calm, game_mode
-                )
-            )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(calm, calm, calm_to_all)
+        )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(calm, calm, all_to_calm)
+        )
 
     def test_skill(self):
         # given
@@ -257,39 +438,26 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         all_to_hunter.random_skill_constraint = ["good hunter"]
 
         # then
-        for game_mode in ("classic", "expanded", "cruel season"):
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    hunter, fighter, hunter_to_all, game_mode
-                )
-            )
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    hunter, fighter, all_to_hunter, game_mode
-                )
-            )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(hunter, fighter, hunter_to_all)
+        )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(hunter, fighter, all_to_hunter)
+        )
 
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    fighter, hunter, hunter_to_all, game_mode
-                )
-            )
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    fighter, hunter, all_to_hunter, game_mode
-                )
-            )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(fighter, hunter, hunter_to_all)
+        )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(fighter, hunter, all_to_hunter)
+        )
 
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    hunter, hunter, hunter_to_all, game_mode
-                )
-            )
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    hunter, hunter, all_to_hunter, game_mode
-                )
-            )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(hunter, hunter, hunter_to_all)
+        )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(hunter, hunter, all_to_hunter)
+        )
 
     def test_background(self):
         # given
@@ -309,36 +477,23 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         }
 
         # then
-        for game_mode in ("classic", "expanded", "cruel season"):
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    clan, half, clan_to_all, game_mode
-                )
-            )
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    clan, half, all_to_clan, game_mode
-                )
-            )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(clan, half, clan_to_all)
+        )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(clan, half, all_to_clan)
+        )
 
-            self.assertFalse(
-                cats_fulfill_single_interaction_constraints(
-                    half, clan, clan_to_all, game_mode
-                )
-            )
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    half, clan, all_to_clan, game_mode
-                )
-            )
+        self.assertFalse(
+            cats_fulfill_single_interaction_constraints(half, clan, clan_to_all)
+        )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(half, clan, all_to_clan)
+        )
 
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    clan, clan, clan_to_all, game_mode
-                )
-            )
-            self.assertTrue(
-                cats_fulfill_single_interaction_constraints(
-                    clan, clan, all_to_clan, game_mode
-                )
-            )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(clan, clan, clan_to_all)
+        )
+        self.assertTrue(
+            cats_fulfill_single_interaction_constraints(clan, clan, all_to_clan)
+        )

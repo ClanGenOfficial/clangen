@@ -237,6 +237,19 @@ class HandleShortEvents:
                 clan=game.clan,
                 other_clan=self.other_clan,
             )
+            if "log" in self.chosen_event.relationships:
+                for group in self.chosen_event.relationships["log"]:
+                    self.chosen_event.relationships["log"][group] = event_text_adjust(
+                        Cat,
+                        group,
+                        main_cat=self.main_cat,
+                        random_cat=self.random_cat,
+                        victim_cat=self.victim_cat,
+                        new_cats=self.new_cat_objects,
+                        clan=game.clan,
+                        other_clan=self.other_clan,
+                    )
+
             unpack_rel_block(Cat, self.chosen_event.relationships, self)
 
         # used in some murder events,
@@ -249,11 +262,9 @@ class HandleShortEvents:
             change_relationship_values(
                 [self.random_cat],
                 [kit],
-                platonic_like=-20,
-                dislike=40,
-                admiration=-30,
-                comfortable=-30,
-                jealousy=0,
+                like=-20,
+                respect=-30,
+                comfort=-30,
                 trust=-30,
             )
 

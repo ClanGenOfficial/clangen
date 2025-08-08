@@ -8,39 +8,48 @@ dev_tools = false
 # settings regarding relationship events, also called "interactions"
 [relationship]
   # sets the max amount of interactions a cat can have each moon
-  max_interaction = 5
+  max_interaction = 4
 
   # sets the max amount of interactions a cat with a special role (leader, deputy, medicine cat, or mediator) can have each moon
-  max_interaction_special = 8
+  max_interaction_special = 6
 
   # sets the positive or negative effect that interactions will have on other cats based on personality compatibility
   compatibility_effect = 5
 
-  # Helps set a buff for interactions that increases other values other than the main value.
-  # For example, if a cat has a positive romantic interaction with another cat,
-  # their platonic like and comfort levels will also increase,
-  # and their dislike will decrease. Increasing this setting's value will decrease the buff
-  passive_influence_div = 1.5
+  # Adds a passive buff to relationship events. We divide the value change by passive_influence_div and apply it to all other relationship values.
+  passive_influence_div = 3
 
   # 1/chance an interaction is 'neutral' instead of negative or positive
   chance_for_neutral = 10
 
   # 1/chance that a group event will be a "special group event"
   # special groups are defined in group_types.json
-  chance_of_special_group = 8
+  chance_of_special_group = 9
 
-  # base 1/chance of a romantic interaction with another cat, when a cat has a mate
-  chance_romantic_not_mate = 15
+  # base 1/chance of a romance interaction with another cat, when a cat has a mate
+  chance_romance_not_mate = 15
 
   # how much an event with a condition can influence the relationship
   # NOTE: doesn't currently do anything
   influence_condition_events = 20
 
-  [relationship.in_decrease_value]
+  [relationship.value_change_amount]
     # amount a relationship changes for "high", "medium", and "low" effects for interactions
     low = 8
     medium = 12
     high = 16
+
+  [relationship.value_intervals]
+    # The cut-off for each value level. This starts at -100 with each int marking the end of that level. 
+    # For example, extreme_neg ends at -70, making its full range -100 to -70. mid_neg starts from -69 and continues till -25.
+    # NOTE: increasing extreme_pos past 100 or decreasing extreme_neg below -100 will probably break things
+      extreme_neg = -70
+      mid_neg = -25
+      low_neg = -1
+      neutral = 1
+      low_pos = 24
+      mid_pos = 69
+      extreme_pos = 100
 
 [mates]
   # maximum age difference allowed for cats to be romantic with each other
@@ -61,65 +70,53 @@ dev_tools = false
   #  negative number: value has to be lower than number
 
   [mates.confession]
-    # if one cat has these feelings for another, they confess (if there are more, the highest romantic will be chosen)
+    # if one cat has these feelings for another, they confess (if there are more, the highest romance will be chosen)
     [mates.confession.make_confession]
-    romantic = 30
-    platonic = 15
-    dislike = -15
-    admiration = 0
-    comfortable = 10
-    jealousy = 0
+    romance = 30
+    like = 15
+    respect = 0
+    comfort = 10
     trust = 0
 
     # if these conditions are fulfilled by the opposite cat, they accept, otherwise, they reject
     [mates.confession.accept_confession]
-    romantic = 17
-    platonic = 15
-    dislike = -10
-    admiration = 0
-    comfortable = 10
-    jealousy = 0
+    romance = 17
+    like = 15
+    respect = 0
+    comfort = 10
     trust = 0
 
   # both relationships have to fulfill this condition to become mates
   [mates.mate_condition]
-    romantic = 20
-    platonic = 30
-    dislike = -10
-    admiration = 0
-    comfortable = 20
-    jealousy = 0
+    romance = 20
+    like = 30
+    respect = 0
+    comfort = 20
     trust = 0
 
-  # requirements for a platonic relationship to become romantic
-  [mates.platonic_to_romantic]
-    romantic = 0
-    platonic = 30
-    dislike = -15
-    admiration = 0
-    comfortable = 20
-    jealousy = 0
+  # requirements for a like relationship to become romance
+  [mates.like_to_romance]
+    romance = 0
+    like = 30
+    respect = 0
+    comfort = 20
     trust = 0
 
   [mates.poly]
-    # which conditions all current mate relationships has to have towards the main cat + vise versa
+    # which conditions all current mate relationships has to have towards the main cat + vice versa
     [mates.poly.current_mate_condition]
-      romantic = 30
-      platonic = 0
-      dislike = 0
-      admiration = 0
-      comfortable = 15
-      jealousy = -15
+      romance = 30
+      like = 0
+      respect = 0
+      comfort = 15
       trust = 25
 
     # which conditions all current mate relationships has to have towards the new possible mate + vise versa
     [mates.poly.mates_to_each_other]
-      romantic = 0
-      platonic = 15
-      dislike = -10
-      admiration = 0
-      comfortable = 15
-      jealousy = -15
+      romance = 0
+      like = 15
+      respect = 0
+      comfort = 15
       trust = 20
 
 [new_cat]
@@ -132,64 +129,52 @@ dev_tools = false
   [new_cat.parent_buff]
     # default relationships buff for a kit's relationships to their parents
     [new_cat.parent_buff.kit_to_parent]
-      romantic = 0
-      platonic = 40
-      dislike = 0
-      admiration = 30
-      comfortable = 40
-      jealousy = 0
-      trust = 50
+      romance = 0
+      like = 40
+      respect = 30
+      comfort = 70
+      trust = 60
 
     # default relationships buff for a parent's relationships to their kits
     [new_cat.parent_buff.parent_to_kit]
-      romantic = 0
-      platonic = 40
-      dislike = 0
-      admiration = 30
-      comfortable = 40
-      jealousy = 0
-      trust = 30
+      romance = 0
+      like = 60
+      respect = 30
+      comfort = 70
+      trust = 60
 
   [new_cat.sib_buff]
     # default relationships buff for siblings' relationships in one direction
     [new_cat.sib_buff.cat1_to_cat2]
-      romantic = 0
-      platonic = 40
-      dislike = 0
-      admiration = 10
-      comfortable = 40
-      jealousy = 0
+      romance = 0
+      like = 40
+      respect = 10
+      comfort = 40
       trust = 30
 
     # default relationships buff for siblings' relationships in the other direction
     [new_cat.sib_buff.cat2_to_cat1]
-      romantic = 0
-      platonic = 40
-      dislike = 0
-      admiration = 10
-      comfortable = 40
-      jealousy = 0
+      romance = 0
+      like = 40
+      respect = 10
+      comfort = 40
       trust = 30
 
   [new_cat.rel_buff]
     # default relationships buff for new cats relationships to other cats in the clan
     [new_cat.rel_buff.new_to_clan_cat]
-      romantic = 0
-      platonic = 15
-      dislike = 0
-      admiration = 10
-      comfortable = 15
-      jealousy = 0
+      romance = 0
+      like = 15
+      respect = 10
+      comfort = 15
       trust = 15
 
     # default relationships buff for clan cats' relationships to new cats in the clan
     [new_cat.rel_buff.clan_cat_to_new]
-      romantic = 0
-      platonic = 15
-      dislike = 0
-      admiration = 5
-      comfortable = 10
-      jealousy = 0
+      romance = 0
+      like = 15
+      respect = 5
+      comfort = 10
       trust = 10
 
 [pregnancy]
@@ -389,7 +374,7 @@ dev_tools = false
   best_stat_modifier = 10
   fail_stat_cat_modifier = -15
 
-  # base 1/chance for a romantic patrol. gets modified further in code
+  # base 1/chance for a romance patrol. gets modified further in code
   chance_of_romance_patrol = 16
 
   # forces patrol with this id to occur, assuming it's possible by constraints

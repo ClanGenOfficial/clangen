@@ -127,7 +127,7 @@ class ClanScreen(Screens):
         self.choose_cat_positions()
 
         self.set_disabled_menu_buttons(["camp_screen"])
-        self.update_heading_text(f"{game.clan.name}Clan")
+        self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_menu_buttons()
 
         # Creates and places the cat sprites.

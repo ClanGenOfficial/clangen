@@ -11,7 +11,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.utility import (
     get_highest_romantic_relation,
     get_personality_compatibility,
-    get_amount_of_cats_with_relation_value_towards,
+    get_num_of_cats_with_relation_amount_towards,
     get_alive_clan_queens,
 )
 
@@ -147,21 +147,19 @@ class TestCountRelation(unittest.TestCase):
         relation_4_2.link_relationship()
 
         # when
-        relation_1_2.jealousy += 20
-        relation_3_2.jealousy += 20
-        relation_4_2.jealousy += 10
+        relation_1_2.respect -= 20
+        relation_3_2.respect -= 20
+        relation_4_2.respect -= 10
 
         # then
-        relation_dict = get_amount_of_cats_with_relation_value_towards(
-            cat2, 20, [cat1, cat2, cat3, cat4]
+        relation_dict = get_num_of_cats_with_relation_amount_towards(
+            cat2, -20, [cat1, cat2, cat3, cat4]
         )
 
-        self.assertEqual(relation_dict["romantic_love"], 0)
-        self.assertEqual(relation_dict["platonic_like"], 0)
-        self.assertEqual(relation_dict["dislike"], 0)
-        self.assertEqual(relation_dict["admiration"], 0)
-        self.assertEqual(relation_dict["comfortable"], 0)
-        self.assertEqual(relation_dict["jealousy"], 2)
+        self.assertEqual(relation_dict["romance"], 0)
+        self.assertEqual(relation_dict["like"], 0)
+        self.assertEqual(relation_dict["respect"], 2)
+        self.assertEqual(relation_dict["comfort"], 0)
         self.assertEqual(relation_dict["trust"], 0)
 
 
@@ -179,9 +177,9 @@ class TestHighestRomance(unittest.TestCase):
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)
-        relation_1_2.romantic_love = 60
-        relation_1_3.romantic_love = 50
-        relation_1_4.romantic_love = 40
+        relation_1_2.romance = 60
+        relation_1_3.romance = 50
+        relation_1_4.romance = 40
 
         relations = [relation_1_2, relation_1_3, relation_1_4]
 
@@ -209,9 +207,9 @@ class TestHighestRomance(unittest.TestCase):
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)
-        relation_1_2.romantic_love = 60
-        relation_1_3.romantic_love = 50
-        relation_1_4.romantic_love = 40
+        relation_1_2.romance = 60
+        relation_1_3.romance = 50
+        relation_1_4.romance = 40
 
         relations = [relation_1_2, relation_1_3, relation_1_4]
 
