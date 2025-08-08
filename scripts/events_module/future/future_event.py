@@ -15,8 +15,8 @@ class FutureEvent:
         self.involved_cats = involved_cats
 
         self.triggered = False
-        self.allowed_events = [self.pool.get("event_id")]
-        self.excluded_events = [self.pool.get("excluded_event_id")]
+        self.allowed_events = self.pool.get("event_id")
+        self.excluded_events = self.pool.get("excluded_event_id")
         self.negate_subtyping = "sub_type" not in self.pool
 
     def to_dict(self):

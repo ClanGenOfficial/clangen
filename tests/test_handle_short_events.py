@@ -16,7 +16,6 @@ class TestHandleEvent(unittest.TestCase):
         self.chosen_event = ShortEvent(event_id="test")
         self.chosen_event.main_cat = Cat()
         self.chosen_event.random_cat = Cat()
-        self.pelts = Pelt
 
     def test_mc_presence(self):
         # event should always use m_c by default
