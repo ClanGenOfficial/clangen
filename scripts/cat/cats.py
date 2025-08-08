@@ -687,11 +687,11 @@ class Cat:
             # find what level of rel they had for each value
             levels = rel_with_dead.get_reltype_tiers()
             for level in levels:
-                if level.is_extreme_pos():
+                if level.is_extreme_pos:
                     very_high_values.append(level.get_rel_value)
-                elif level.is_low_pos():
+                elif level.is_low_pos:
                     high_values.append(level.get_rel_value)
-                elif level.is_extrem_neg():
+                elif level.is_extrem_neg:
                     very_low_values.append(level.get_rel_value)
                 continue
 
