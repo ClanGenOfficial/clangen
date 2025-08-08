@@ -656,7 +656,7 @@ class RelationshipScreen(Screens):
                 manager=MANAGER,
                 container=self.selected_cat_container,
                 anchors={"right": "right", "top": "top"},
-                text_kwargs={"m_c": self.inspect_cat.name},
+                text_kwargs={"m_c": self.inspect_cat},
             )
             del col2_rect
             self.inspect_cat_elements["col2"].disable()
