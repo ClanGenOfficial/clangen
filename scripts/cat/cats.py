@@ -26,7 +26,7 @@ from scripts.cat.status import Status, StatusDict
 from scripts.cat.thoughts import Thoughts
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.cat_relations.relationship import Relationship
-from scripts.cat_relations.enums import RelType
+from scripts.cat_relations.enums import RelType, RelTier, rel_type_tiers
 from scripts.clan_package.settings import get_clan_setting
 from scripts.conditions import (
     Illness,
@@ -680,23 +680,24 @@ class Cat:
                 continue
 
             family_relation = self.familial_grief(living_cat=cat)
-            very_high_values = []
-            high_values = []
-            very_low_values = []
+            very_high_types = []
+            high_types = []
+            very_low_types = []
 
-            # find what level of rel they had for each value
-            levels = rel_with_dead.get_reltype_tiers()
-            for level in levels:
-                if level.is_extreme_pos:
-                    very_high_values.append(level.get_rel_value)
-                elif level.is_low_pos:
-                    high_values.append(level.get_rel_value)
-                elif level.is_extrem_neg:
-                    very_low_values.append(level.get_rel_value)
+            # find what tier of rel they had for each type
+            tiers: list[RelTier] = rel_with_dead.get_reltype_tiers()
+            for tier in tiers:
+                rel_type = [k for k in rel_type_tiers if tier in k]
+                if tier.is_extreme_pos:
+                    very_high_types.extend(rel_type)
+                elif tier.is_low_pos:
+                    high_types.extend(rel_type)
+                elif tier.is_extreme_neg:
+                    very_low_types.extend(rel_type)
                 continue
 
             major_chance = 0
-            if very_high_values:
+            if very_high_types:
                 # major grief eligible cats.
 
                 major_chance = 3
@@ -724,7 +725,7 @@ class Cat:
                 grief_type = "major"
 
                 possible_strings = []
-                for x in very_high_values:
+                for x in very_high_types:
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(
                             family_relation, x, cat.personality.trait, body_status
@@ -743,7 +744,7 @@ class Cat:
 
             # If major grief fails, but there are still very_high or high values,
             # it can fail to to minor grief. If they have a family relation, bypass the roll.
-            elif (very_high_values or high_values) and (
+            elif (very_high_types or high_types) and (
                 family_relation != "general" or not int(random() * 5)
             ):
                 grief_type = "minor"
@@ -806,10 +807,10 @@ class Cat:
                 continue
 
             # Negative "grief" messages are just for flavor.
-            if very_low_values:
+            if very_low_types:
                 # Generate the event:
                 possible_strings = []
-                for x in very_low_values:
+                for x in very_low_types:
                     value = f"neg_{x}"
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(
