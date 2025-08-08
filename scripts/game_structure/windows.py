@@ -1667,10 +1667,16 @@ class RelationshipLog(UIWindow):
             relationship.opposite_relationship
             and len(relationship.opposite_relationship.log) > 0
         ):
-            opposite_log_string = f"{f'<br>-----------------------------<br>'.join(relationship.opposite_relationship.log)}<br>"
+            opposite_log = relationship.opposite_relationship.log.copy()
+            opposite_log.reverse()
+            opposite_log_string = (
+                f"{f'<br>-----------------------------<br>'.join(opposite_log)}<br>"
+            )
 
+        log = relationship.log.copy()
+        log.reverse()
         log_string = (
-            f"{f'<br>-----------------------------<br>'.join(relationship.log)}<br>"
+            f"{f'<br>-----------------------------<br>'.join(log)}<br>"
             if len(relationship.log) > 0
             else i18n.t("windows.no_relation_logs")
         )

@@ -86,6 +86,10 @@
             "Is grooming, grooming, grooming away...",
             "Purrs whenever the sun hits {PRONOUN/m_c/object} just right",
             "Sprawls out in a warm patch of sunlight",
+			"Notices a cloud is shaped like a star",
+			"Notices a cloud is shaped like a mouse",
+			"Notices a cloud is shaped like a bird",
+			"Startles at a clap of thunder",
             "Meows"
         ]
     },
@@ -104,7 +108,43 @@
             "Wonders how r_c is doing",
             "Is giving some advice to r_c",
             "Wonders what r_c is up to",
+            "Is playing a prank on r_c",
+			"Saw r_c the other day, but didn't get a chance to meow hello",
+			"Bickered about something trivial with r_c",
+			"Nods politely as r_c passes by",
+			"Trips over the same twig that r_c just tripped over",
+			"Watches r_c wind up for a sneeze, but it never happens",
+			"Asks r_c if {PRONOUN/m_c/poss} fur looks clean",
+			"Points out a constellation to r_c",
+			"Is trying to figure out where a bad smell is coming from with r_c",
+			"Poses a crazy theory to r_c",
+			"Asks r_c if there's something in {PRONOUN/m_c/poss} teeth",
+			"Points out a nice rock for r_c to sharpen {PRONOUN/r_c/poss} claws on",
+			"Helps r_c fill a puddle in the camp with sand",
+			"Notices some of r_c's fur on {PRONOUN/m_c/poss} fresh-kill",
+			"Pretends not to see r_c cough up a hairball",
+			"Is assigned the same task as r_c",
+			"Accidentally startles r_c",
+			"Is accidentally startled by r_c",
+			"Runs into r_c at the medicine den",
+			"Gets {PRONOUN/m_c/poss} fur stuck to r_c's with some sap",
+			"Smacks a spider off of r_c",
+			"Has to help r_c stop choking on a huge bone",
+			"Chats idly with r_c about the latest meeting",
+			"Keeps making r_c yawn",
+			"Watches a big bug that won't stop buzzing around {PRONOUN/m_c/object} and r_c",
+			"Apologizes to r_c, but r_c doesn't know why",
+			"Tries to say tongue twisters with r_c",
+			"Watches drama unfold in camp with r_c",
+			"Helps r_c break up a fight between their Clanmates",
+			"Gags with r_c at the scent of stinky herbs",
+			"Works with r_c to make sense of something a Clanmate said",
+			"Realizes {PRONOUN/m_c/subject} and r_c were the only ones that saw a shooting star",
+			"Acknowledges r_c with a twitch of {PRONOUN/m_c/poss} whiskers",
             "Is playing a prank on r_c"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -6260,6 +6300,244 @@
         "random_living_status": [
             "living"
         ]
+    },
+    {
+        "id": "nervous_to_alive",
+        "thoughts": [
+			"Is stuttering while speaking to r_c",
+			"Overthinks something {PRONOUN/m_c/subject} said to r_c",
+			"Does something embarrassing in front of r_c...",
+			"Hypes {PRONOUN/m_c/self} up to have a conversation with r_c",
+			"Struggles to get a word in during a conversation with r_c",
+			"Hides from r_c to avoid an awkward interaction",
+			"Agrees with everything that r_c says to avoid an argument"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_to_nervous",
+        "thoughts": [
+			"Asks r_c to speak up",
+			"Reassures r_c after {PRONOUN/r_c/subject} {VERB/r_c/do/does} something embarrassing"
+        ],
+        "random_trait_constraint": [
+            "nervous"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "confident_bold_attention-seeker_to_alive",
+        "thoughts": [
+			"Stands tall when r_c walks by",
+			"Tells r_c something that probably could've been kept private",
+			"Puffs out {PRONOUN/m_c/poss} chest when r_c approaches",
+			"Falls flat on {PRONOUN/m_c/poss} face in front of r_c, but just gets right back up and keeps walking",
+			"Lifts {PRONOUN/m_c/poss} chin while passing by r_c"
+        ],
+        "main_trait_constraint": [
+            "confident",
+            "bold",
+            "attention-seeker"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_to_confident_bold",
+        "thoughts": [
+			"Watches r_c try and fail at something after claiming to be an expert",
+			"Listens to r_c wax about how brave {PRONOUN/r_c/subject} {VERB/r_c/are/is}",
+			"Is starting to doubt the truth behind r_c's epic story",
+			"Doesn't bother to correct the blatantly wrong thing r_c said",
+			"Does not take r_c's correction on something {PRONOUN/r_c/subject} said very well"
+        ],
+        "random_trait_constraint": [
+            "confident",
+            "bold"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "bold_to_alive",
+        "thoughts": [
+			"Challenges r_c to spar with {PRONOUN/m_c/object}",
+			"Asks r_c a bold question"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "bloodthirsty_vengeful_to_alive",
+        "thoughts": [
+			"Sharpens {PRONOUN/m_c/poss} claws near r_c",
+			"Asks r_c to compare the size and sharpness of their claws together"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty",
+            "vengeful"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_to_bloodthirsty_vengeful",
+        "thoughts": [
+			"Seems to be oblivious to m_c glaring from across camp",
+			"Wonders when m_c learned so much about cat anatomy",
+			"Has to snap m_c out of staring darkly at a Clanmate",
+			"Wonders why m_c knows so much about a Clanmate {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} like"
+        ],
+        "random_trait_constraint": [
+            "bloodthirsty",
+            "vengeful"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "oblivious_to_alive",
+        "thoughts": [
+			"Doesn't notice r_c leaving camp",
+			"Accidentally brings r_c fresh-kill twice",
+			"Asks r_c what the Warrior Code is again",
+			"Has forgotten r_c's name...",
+			"Can't tell r_c is upset with {PRONOUN/m_c/object}",
+			"Guesses r_c's age, but is wayyyy off",
+			"Doesn't notice r_c twitching {PRONOUN/r_c/poss} whiskers at {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "oblivious"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_to_oblivious",
+        "thoughts": [
+			"Told a really funny joke, but r_c just looked confused",
+			"Has to tell r_c to stop staring at the sun"
+        ],
+        "random_trait_constraint": [
+            "oblivious"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_to_gloomy_lonesome",
+        "thoughts": [
+			"Notices r_c sulking around camp again",
+			"Doesn't bother to ask why r_c is crying again",
+			"Tries to comfort r_c, but has no idea what happened",
+			"Gives up on trying to reassure r_c",
+			"Asks how r_c's day is, but r_c's reply is kind of a bummer",
+			"Meows hello to r_c, though {PRONOUN/r_c/subject} {VERB/r_c/look/looks} pretty glum still"
+        ],
+        "random_trait_constraint": [
+            "gloomy",
+            "lonesome"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "grumpy_cold_to_alive",
+        "thoughts": [
+			"Always seems to avoid r_c's attempts at small talk",
+			"Avoids running into any cat... until r_c shows up",
+			"Stares at r_c with an unreadable expression",
+			"Tells a depressing anti-joke to r_c",
+			"Walks by r_c with a sour expression, mumbling something about a Clanmate",
+			"Tries to say something rude, but r_c just laughs it off"
+        ],
+        "main_trait_constraint": [
+            "grumpy",
+            "cold"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_to_grumpy_cold",
+        "thoughts": [
+			"Is amused with how r_c manages to look so grumpy all the time",
+			"Learns the hard way that r_c isn't the best Clanmate to go to for advice",
+			"Finds it funny how closely r_c protects {PRONOUN/r_c/poss} fresh-kill"
+        ],
+        "random_trait_constraint": [
+            "grumpy",
+            "cold"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "med_leadership_to_gen",
+        "thoughts": [
+			"Gives r_c a task",
+			"Asks r_c to remind {PRONOUN/m_c/object} of who's already gone on patrol today",
+			"Asks r_c about a certain rule of the Warrior Code that {PRONOUN/m_c/subject} forgot",
+			"Watches r_c training for something and nods approvingly at {PRONOUN/r_c/poss} progress",
+			"Is checking on r_c"
+        ],
+        "main_status_constraint": [
+            "leader",
+            "deputy",
+            "medicine cat"
+        ],
+		"random_status_constraint": [
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator"
+		],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_to_med_leadership",
+        "thoughts": [
+			"Asks r_c about {PRONOUN/r_c/poss} duties",
+			"Reports to r_c after completing a chore"
+        ],
+		"main_status_constraint": [
+			"kitten",
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator"
+		],
+        "random_status_constraint": [
+            "leader",
+            "deputy",
+            "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     }
-
 ]

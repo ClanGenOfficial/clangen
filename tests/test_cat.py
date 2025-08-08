@@ -338,21 +338,17 @@ class TestMateFunctions(unittest.TestCase):
 
         # then
         # TODO: maybe not correct check
-        self.assertLess(old_relation1.romantic_love, relation1.romantic_love)
-        self.assertLessEqual(old_relation1.platonic_like, relation1.platonic_like)
-        self.assertLessEqual(old_relation1.dislike, relation1.dislike)
-        self.assertLess(old_relation1.comfortable, relation1.comfortable)
+        self.assertLess(old_relation1.romance, relation1.romance)
+        self.assertLessEqual(old_relation1.like, relation1.like)
+        self.assertLess(old_relation1.comfort, relation1.comfort)
         self.assertLess(old_relation1.trust, relation1.trust)
-        self.assertLessEqual(old_relation1.admiration, relation1.admiration)
-        self.assertLessEqual(old_relation1.jealousy, relation1.jealousy)
+        self.assertLessEqual(old_relation1.respect, relation1.respect)
 
-        self.assertLess(old_relation2.romantic_love, relation2.romantic_love)
-        self.assertLessEqual(old_relation2.platonic_like, relation2.platonic_like)
-        self.assertLessEqual(old_relation2.dislike, relation2.dislike)
-        self.assertLess(old_relation2.comfortable, relation2.comfortable)
+        self.assertLess(old_relation2.romance, relation2.romance)
+        self.assertLessEqual(old_relation2.like, relation2.like)
+        self.assertLess(old_relation2.comfort, relation2.comfort)
         self.assertLess(old_relation2.trust, relation2.trust)
-        self.assertLessEqual(old_relation2.admiration, relation2.admiration)
-        self.assertLessEqual(old_relation2.jealousy, relation2.jealousy)
+        self.assertLessEqual(old_relation2.respect, relation2.respect)
 
     # test for relationship comparisons for cats that are broken up
     def test_unset_mate_relationship(self):
@@ -364,13 +360,11 @@ class TestMateFunctions(unittest.TestCase):
             cat2,
             family=False,
             mates=True,
-            romantic_love=40,
-            platonic_like=40,
-            dislike=0,
-            comfortable=40,
+            romance=40,
+            like=40,
+            comfort=40,
             trust=20,
-            admiration=20,
-            jealousy=20,
+            respect=20,
         )
         old_relation1 = deepcopy(relation1)
         relation2 = Relationship(
@@ -378,13 +372,11 @@ class TestMateFunctions(unittest.TestCase):
             cat1,
             family=False,
             mates=True,
-            romantic_love=40,
-            platonic_like=40,
-            dislike=0,
-            comfortable=40,
+            romance=40,
+            like=40,
+            comfort=40,
             trust=20,
-            admiration=20,
-            jealousy=20,
+            respect=20,
         )
         old_relation2 = deepcopy(relation2)
         cat1.mate.append(cat2.ID)
@@ -398,21 +390,17 @@ class TestMateFunctions(unittest.TestCase):
 
         # then
         # TODO: maybe not correct check
-        self.assertGreater(old_relation1.romantic_love, relation1.romantic_love)
-        self.assertGreaterEqual(old_relation1.platonic_like, relation1.platonic_like)
-        self.assertGreaterEqual(old_relation1.dislike, relation1.dislike)
-        self.assertGreater(old_relation1.comfortable, relation1.comfortable)
+        self.assertGreater(old_relation1.romance, relation1.romance)
+        self.assertGreaterEqual(old_relation1.like, relation1.like)
+        self.assertGreater(old_relation1.comfort, relation1.comfort)
         self.assertGreater(old_relation1.trust, relation1.trust)
-        self.assertGreaterEqual(old_relation1.admiration, relation1.admiration)
-        self.assertGreaterEqual(old_relation1.jealousy, relation1.jealousy)
+        self.assertGreaterEqual(old_relation1.respect, relation1.respect)
 
-        self.assertGreater(old_relation2.romantic_love, relation2.romantic_love)
-        self.assertGreaterEqual(old_relation2.platonic_like, relation2.platonic_like)
-        self.assertGreaterEqual(old_relation2.dislike, relation2.dislike)
-        self.assertGreater(old_relation2.comfortable, relation2.comfortable)
+        self.assertGreater(old_relation2.romance, relation2.romance)
+        self.assertGreaterEqual(old_relation2.like, relation2.like)
+        self.assertGreater(old_relation2.comfort, relation2.comfort)
         self.assertGreater(old_relation2.trust, relation2.trust)
-        self.assertGreaterEqual(old_relation2.admiration, relation2.admiration)
-        self.assertGreaterEqual(old_relation2.jealousy, relation2.jealousy)
+        self.assertGreaterEqual(old_relation2.respect, relation2.respect)
 
 
 class TestUpdateMentor(unittest.TestCase):

@@ -510,22 +510,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 ***
 
 #### relationship_constraint: List[str]
->Optional. Only allows the patrol if the cats meet relationship constraints
-
-| relationship          |                                                                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| "siblings"            | All cats on the patrol must be siblings                                                                                           |
-| "mates"               | All cats on the patrol must be mates with each-other                                                                              |
-| "mates_with_pl"       | All cats on the patrol must be mates with p_l, but don't necessarily have to be mates with each-other.                            |
-| "parent/child"        | p_l must be the parent of r_c                                                                                                     |
-| "child/parent"        | r_c must be the parent of p_l                                                                                                     |
-| "romantic_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} romantic-like to all other patrol members. |
-| "platonic_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} platonic-like to all other patrol members. |
-| "dislike_{value}"     | Value is an integer between 0 and 100. Every patrol member must have more than {value} dislike to all other patrol members.       |
-| "comfortable_{value}" | Value is an integer between 0 and 100. Every patrol member must have more than {value} comfort to all other patrol members.       |
-| "jealousy_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} jealousy to all other patrol members.      |
-| "trust_{value}"       | Value is an integer between 0 and 100. Every patrol member must have more than {value} trust to all other patrol members.         |
-
+>Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
 
 ***
 
@@ -729,14 +714,14 @@ What each parameter does, and what the options are for outcomes.
 
 >**injuries: List[str]:** Pool of injures to draw from
 >
->[Injury List](reference/index.md#__tabbed_1_1)
+>[Injury List](reference/tag-lists.md#__tabbed_1_1)
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
 >Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
 >
->[Scar List](reference/index.md#__tabbed_1_5)
+>[Scar List](reference/tag-lists.md#__tabbed_1_5)
 
 >**no_results: bool:** 
 >Optional. Controls if the injury "got" message shows up in patrol results, as well as potential history text.

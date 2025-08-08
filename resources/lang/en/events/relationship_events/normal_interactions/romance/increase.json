@@ -10,7 +10,7 @@
 		],
 		"relationship_constraint": [
 			"not_mates",
-			"romantic_10_lower"
+			"fancies_only"
 		]
 	},
 	{
@@ -33,7 +33,7 @@
 			"m_c is prancing around in front of r_c."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase"
+			"romance": "increase"
 		}
 	},
 	{
@@ -70,9 +70,8 @@
 			"m_c nuzzles against r_c and purrs."
 		],
 		"reaction_random_cat": {
-			"dislike": "decrease",
-			"platonic": "increase",
-			"comfortable": "increase"
+			"like": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -89,9 +88,9 @@
             		"charismatic"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -104,11 +103,11 @@
 		],
 		"relationship_constraint": [
 			"not_mates",
-			"romantic_20_lower"
+			"fancies_only"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
+			"romance": "increase",
+			"like": "increase",
 			"admirable": "increase"
 		}
 	},
@@ -139,7 +138,7 @@
             		"m_c realizes {PRONOUN/m_c/subject} {VERB/m_c/have/has} more than just a crush on r_c."
 		],
 		"relationship_constraint": [
-			"romantic_20",
+			"fancies",
 			"not_mates"
 		]
 	},
@@ -154,9 +153,9 @@
 			"m_c overhears r_c tell another cat {PRONOUN/r_c/subject} kind of {VERB/r_c/like/likes} m_c."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -175,7 +174,7 @@
             		"m_c can't stop purring when {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} r_c's laugh."
 		],
 		"relationship_constraint": [
-			"romantic_40",
+			"adores",
 			"not_mates"
 		]
 	},
@@ -192,7 +191,7 @@
             		"m_c had a lovely dream about r_c."
 		],
 		"relationship_constraint": [
-			"romantic_30"
+			"fancies"
 		]
 	},
 	{
@@ -217,14 +216,14 @@
             		"troublesome"
 		],
         	"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		},
 		"reaction_main_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -236,12 +235,12 @@
             		"m_c and r_c got so into playing around that they got separated from the rest of the patrol, earning themselves an earful back at camp."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"platonic": "increase"
+			"romance": "increase",
+			"like": "increase"
             },
 		"reaction_main_cat": {
-			"romantic": "increase",
-			"platonic": "increase"
+			"romance": "increase",
+			"like": "increase"
 		}
 	},
 	{
@@ -264,10 +263,9 @@
 			"m_c compliments r_c on {PRONOUN/r_c/poss} catch during a hunting patrol, which causes {PRONOUN/r_c/object} to purr."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"platonic": "increase",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -285,10 +283,9 @@
 			"m_c gave r_c a sprig of catmint {PRONOUN/m_c/subject} found."
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"platonic": "increase",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -301,13 +298,12 @@
 			"m_c is the only cat who can make r_c laugh."
 		],
 		"relationship_constraint": [
-			"romantic_40"
+			"adores"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"platonic": "increase",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -322,14 +318,13 @@
             		"m_c promises r_c to always be there to protect {PRONOUN/r_c/object} with {PRONOUN/m_c/poss} life."
 		],
 		"relationship_constraint": [
-			"romantic_40",
+			"adores",
 			"mates"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"platonic": "increase",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -345,10 +340,9 @@
 			"mates"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"platonic": "increase",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -362,10 +356,9 @@
 			"STORY,3"
 		],
 		"reaction_random_cat": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"platonic": "increase",
-			"comfortable": "increase"
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
 		}
 	}
 ]

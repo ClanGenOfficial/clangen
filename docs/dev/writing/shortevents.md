@@ -247,9 +247,9 @@ lowercase season names + "any"
 ### m_c:dict[str, various]
 >Specifies the requirements for the main cat (m_c) of the event. 
 >
->**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](reference/index.md#__tabbed_2_1)
+>**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](reference/tag-lists.md#__tabbed_2_1)
 >
->**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](reference/index.md#__tabbed_2_2)
+>**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](reference/tag-lists.md#__tabbed_2_2)
 
 !!! tip
     Keep in mind that the status and ages you input can limit each other! For example, if you add "kitten" to `age`, remember that kitten age cats can only ever have the kitten status.  This means that you *could* leave `status` as "any" and be secure in the knowledge that kitten status cats will be the only ones chosen.  
@@ -258,31 +258,7 @@ lowercase season names + "any"
 
     However, remember the wide range of ages and statuses we have and how they can overlap with each other.  It's possible to have warriors who graduate early and are still adolescent age.  It's also possible for apps to train longer than usual and become young adults without becoming warriors.  Elders, likewise, can be both young and old cats as it's possible for cats to retire to the elder den at any age.
 
->**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event.
-
-| string                |                                                                                              |
-|-----------------------|----------------------------------------------------------------------------------------------|
-| siblings              | m_c and r_c are siblings                                                                     |
-| not_siblings          | m_c and r_c are not siblings                                                                 |
-| littermates           | m_c and r_c are littermates                                                                  |
-| not_littermates       | m_c and r_c are not littermates                                                              |
-| mates                 | m_c and r_c are mates                                                                        |
-| not_mates             | m_c and r_c are NOT mates                                                                    |
-| parent/child          | m_c is the parent of r_c                                                                     |
-| not_parent            | m_c is not r_c's parent                                                                      |
-| child/parent          | m_c is the child of r_c                                                                      |
-| not_child             | m_c is not the child of r_c                                                                  |
-| app/mentor            | m_c is the apprentice of r_c                                                                 |
-| not_app               | m_c is not the apprentice of r_c                                                             |
-| mentor/app            | r_c is the mentor of m_c                                                                     |
-| not_mentor            | r_c is not the mentor of m_c                                                                 |
-| "romantic_{value}"    | Value is an integer between 0 and 100. m_c must have more than {value} romantic-like to r_c. |
-| "platonic_{value}"    | Value is an integer between 0 and 100. m_c must have more than {value} platonic-like to r_c. |
-| "dislike_{value}"     | Value is an integer between 0 and 100. m_c must have more than {value} dislike to r_c.       |
-| "comfortable_{value}" | Value is an integer between 0 and 100. m_c must have more than {value} comfortable to r_c.   |
-| "jealousy_{value}"    | Value is an integer between 0 and 100. m_c must have more than {value} jealousy to r_c.      |
-| "admiration_{value}"  | Value is an integer between 0 and 100. m_c must have more than {value} admiration to r_c.    |
-| "trust_{value}"       | Value is an integer between 0 and 100. m_c must have more than {value} trust to r_c.         |
+>**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
 
 >**skill[list]** : m_c must possess at least one skill from this list. if they can be anything, use "any"
 >
@@ -307,18 +283,8 @@ lowercase season names + "any"
 >
 >**status:[list]** : a list of statuses r_c can be. if they can be anything, use "any"
 >
->**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c.  Note that this is not identical to the tag list from the cat block.  If you wish to dictate relationships like "siblings", "mates", ect. then you must do so within the m_c block, not the r_c block.
-
-| string                |                                                                                              |
-|-----------------------|----------------------------------------------------------------------------------------------|
-| "romantic_{value}"    | Value is an integer between 0 and 100. r_c must have more than {value} romantic-like to m_c. |
-| "platonic_{value}"    | Value is an integer between 0 and 100. r_c must have more than {value} platonic-like to m_c. |
-| "dislike_{value}"     | Value is an integer between 0 and 100. r_c must have more than {value} dislike to m_c.       |
-| "comfortable_{value}" | Value is an integer between 0 and 100. r_c must have more than {value} comfortable to m_c.   |
-| "jealousy_{value}"    | Value is an integer between 0 and 100. r_c must have more than {value} jealousy to m_c.      |
-| "admiration_{value}"  | Value is an integer between 0 and 100. m_c must have more than {value} admiration to r_c.    |
-| "trust_{value}"       | Value is an integer between 0 and 100. r_c must have more than {value} trust to m_c.         |
-
+>**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels).
+> 
 >**skill[list]** : r_c must possess at least one skill from this list. if they can be anything, remove parameter or leave list empty.
 >
 >**not_skill[list]** : r_c cannot possess any of the skills on this list
@@ -404,14 +370,14 @@ lowercase season names + "any"
 
 >**injuries: List[str]:** Pool of injures to draw from
 >
->[Injury List](reference/index.md#__tabbed_1_1)
+>[Injury List](reference/tag-lists.md#__tabbed_1_1)
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
 >Optional. A scar is chosen from this pool to possibly be given upon healing their injury.
 >
->[Scar List](reference/index.md#__tabbed_1_5)
+>[Scar List](reference/tag-lists.md#__tabbed_1_5)
 
 ### exclude_involved: List[str]:
 >Optional. Excludes certain cats from showing up in the "involved cats" list of the event, meaning their button will not be present on the events screen. Cats listed here will still be a part of the event and can be affected by other parameters like injuries, accessories, relationships, and death, if they're written to.

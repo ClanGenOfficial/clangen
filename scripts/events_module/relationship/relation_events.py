@@ -14,6 +14,7 @@ from scripts.utility import (
     get_cats_same_age,
     get_cats_of_romantic_interest,
     get_free_possible_mates,
+    filter_relationship_type,
 )
 
 
@@ -76,13 +77,11 @@ class Relation_Events:
         if not Relation_Events.can_trigger_events(cat):
             return
 
-        other_cat = None
-
         # get the cats which are relevant for romantic interactions
         free_possible_mates = get_free_possible_mates(cat)
         other_love_interest = get_cats_of_romantic_interest(cat)
         possible_cats = free_possible_mates
-        if len(other_love_interest) > 0 and len(other_love_interest) < 3:
+        if 0 < len(other_love_interest) < 3:
             possible_cats.extend(other_love_interest)
             possible_cats.extend(other_love_interest)
         elif len(other_love_interest) >= 3:
@@ -101,12 +100,12 @@ class Relation_Events:
                 inter_cat.create_one_relationship(cat)
 
             cat_to_inter = (
-                cat.relationships[inter_cat.ID].platonic_like > 10
-                or cat.relationships[inter_cat.ID].comfortable > 10
+                cat.relationships[inter_cat.ID].like > 10
+                or cat.relationships[inter_cat.ID].comfort > 10
             )
             inter_to_cat = (
-                inter_cat.relationships[cat.ID].platonic_like > 10
-                or inter_cat.relationships[cat.ID].comfortable > 10
+                inter_cat.relationships[cat.ID].like > 10
+                or inter_cat.relationships[cat.ID].comfort > 10
             )
             if cat_to_inter and inter_to_cat:
                 cat_to_choose_from.append(inter_cat)
@@ -119,7 +118,7 @@ class Relation_Events:
 
             # the more mates the cat has, the less likely it will be that they interact with another cat romantically
             for mate_id in cat.mate:
-                chance_number -= int(cat.relationships[mate_id].romantic_love / 20)
+                chance_number -= int(cat.relationships[mate_id].romance / 20)
             use_mate = int(random.random() * chance_number)
 
         # If use_mate is falsey, or if the cat has been marked as "no_mates", only allow romantic
@@ -281,114 +280,27 @@ class Relation_Events:
         filtered_cat_list = []
 
         for inter_cat in cat_list:
+            if inter_cat.ID == main_cat.ID:
+                continue
+
             cat_from = main_cat
             cat_to = inter_cat
 
-            if inter_cat.ID == main_cat.ID:
-                continue
             if cat_to.ID not in cat_from.relationships:
                 cat_from.create_one_relationship(cat_to)
                 if cat_from.ID not in cat_to.relationships:
                     cat_to.create_one_relationship(cat_from)
                 continue
 
-            relationship = cat_from.relationships[cat_to.ID]
+            passed = filter_relationship_type(
+                group=[cat_from, cat_to], filter_types=constraint
+            )
 
-            if "siblings" in constraint and not cat_from.is_sibling(cat_to):
-                continue
-
-            if "mates" in constraint and not relationship.mates:
-                continue
-
-            if "not_mates" in constraint and relationship.mates:
-                continue
-
-            if "parent/child" in constraint and not cat_from.is_parent(cat_to):
-                continue
-
-            if "child/parent" in constraint and not cat_to.is_parent(cat_from):
-                continue
-
-            value_types = [
-                "romantic",
-                "platonic",
-                "dislike",
-                "admiration",
-                "comfortable",
-                "jealousy",
-                "trust",
-            ]
-            fulfilled = True
-            for v_type in value_types:
-                tags = [i for i in constraint if v_type in i]
-                if len(tags) < 1:
-                    continue
-                threshold = 0
-                lower_than = False
-                # try to extract the value/threshold from the text
-                try:
-                    splitted = tags[0].split("_")
-                    threshold = int(splitted[1])
-                    if len(splitted) > 3:
-                        lower_than = True
-                except:
-                    print(
-                        f"ERROR: while creating a cat group, the relationship constraint for the value {v_type} follows not the formatting guidelines."
-                    )
-                    break
-
-                if threshold > 100:
-                    print(
-                        f"ERROR: while creating a cat group, the relationship constraints for the value {v_type}, which is higher than the max value of a relationship."
-                    )
-                    break
-
-                if threshold <= 0:
-                    print(
-                        f"ERROR: while creating a cat group, the relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0."
-                    )
-                    break
-
-                threshold_fulfilled = False
-                if v_type == "romantic":
-                    if not lower_than and relationship.romantic_love >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.romantic_love <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "platonic":
-                    if not lower_than and relationship.platonic_like >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.platonic_like <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "dislike":
-                    if not lower_than and relationship.dislike >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.dislike <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "comfortable":
-                    if not lower_than and relationship.comfortable >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.comfortable <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "jealousy":
-                    if not lower_than and relationship.jealousy >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.jealousy <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "trust":
-                    if not lower_than and relationship.trust >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.trust <= threshold:
-                        threshold_fulfilled = True
-
-                if not threshold_fulfilled:
-                    fulfilled = False
-                    continue
-
-            if not fulfilled:
+            if not passed:
                 continue
 
             filtered_cat_list.append(inter_cat)
+
         return filtered_cat_list
 
     @staticmethod
