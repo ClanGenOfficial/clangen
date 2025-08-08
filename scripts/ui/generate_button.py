@@ -12,7 +12,7 @@ from scripts.utility import ui_scale_dimensions
 
 class ButtonStyles(Enum):
     MAINMENU = "mainmenu"
-    CLAN_NAME = "clan_name"
+    CLAN_HEADER = "clan_header"
     SQUOVAL = "squoval"
     MENU_LEFT = "menu_left"
     MENU_MIDDLE = "menu_middle"
@@ -53,7 +53,7 @@ buttonstyles = {
         "ninetile": False,
         "scale_only": False,
     },
-    "clan_name": {
+    "clan_header": {
         "normal": pygame.image.load(
             "resources/images/generated_buttons/clan_header_normal.png"
         ).convert_alpha(),

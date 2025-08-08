@@ -171,6 +171,13 @@
             "disabled_text": "#EFE5CE"
         }
     },
+        "@buttonstyles_clan_header": {
+        "prototype": "@buttonstyles_mainmenu",
+        "misc": {
+            "text_vert_alignment": "bottom",
+            "text_vert_alignment_padding": "2"
+        }
+    },
     "@buttonstyles_rounded_rect": {"prototype": "buttonstyles_prototype"},
     "@buttonstyles_icon": {
         "prototype": "@buttonstyles_rounded_rect",

@@ -125,34 +125,15 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     del scale_rect
 
-    heading_rect = ui_scale(pygame.Rect((0, 0), (190, 35)))
-    heading_rect.bottomleft = ui_scale_dimensions((0, 0))
-    menu_buttons["name_background"] = pygame_gui.elements.UIImage(
+    heading_rect = ui_scale(pygame.Rect((0, 0), (210, 35)))
+    heading_rect.bottomleft = ui_scale_offset((0, 0))  # yes, this is intentional.
+    menu_buttons["heading"] = UISurfaceImageButton(
         heading_rect,
-        pygame.transform.scale(
-            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(),
-            ui_scale_dimensions((190, 35)),
-        ),
-        visible=False,
-        manager=MANAGER,
-        starting_height=5,
-        anchors={
-            "bottom": "bottom",
-            "bottom_target": menu_buttons["camp_screen"],
-            "centerx": "centerx",
-        },
-    )
-    # it has to be at least 193 to make "cats outside the clan" fit
-    heading_rect = ui_scale(pygame.Rect((0, 0), (193, 35)))
-    heading_rect.bottomleft = ui_scale_offset((0, 1))  # yes, this is intentional.
-    menu_buttons["heading"] = pygame_gui.elements.UITextBox(
         "",
-        heading_rect,
+        get_button_dict(ButtonStyles.CLAN_HEADER, (210, 35)),
         visible=False,
         manager=MANAGER,
-        object_id=pygame_gui.core.ObjectID(
-            "#text_box_34_horizcenter_vertcenter", "#dark"
-        ),
+        object_id="@buttonstyles_clan_header",
         starting_height=5,
         anchors={
             "bottom": "bottom",
