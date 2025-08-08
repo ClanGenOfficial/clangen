@@ -14,8 +14,9 @@
         },
         "moon_date": "moon %{moon}",
         "guide": "guiding ghost",
-        "past_no_group": "past",
-        "past_group": "past %{group}",
+        "living_group": "%{group} %{rank}",
+        "past_no_group": "past %{rank}",
+        "past_group": "past %{group} %{rank}",
         "leader": {
             "one": "leader",
             "many": "leaders"

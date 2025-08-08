@@ -875,28 +875,26 @@ class ProfileScreen(Screens):
             output += i18n.t(f"general.guide")
             output += "\n"
 
-        # add group name
-        if the_cat.dead and (
-            the_cat.status.is_clancat or the_cat.status.is_former_clancat
-        ):
-            if the_cat == game.clan.instructor:
-                # these guys are special, we won't name a group for them
-                output += f"{i18n.t(f'general.past_no_group')} "
+        if the_cat.dead:
+            if the_cat == game.clan.instructor or the_cat.status.is_outsider:
+                output += i18n.t(
+                    f"general.past_no_group",
+                    rank=i18n.t(f"general.{the_cat.status.rank}", count=1),
+                )
             else:
-                output += f"{i18n.t(f'general.past_group', group=cat_clan)} "
-        elif the_cat.status.is_clancat:
-            output += f"{cat_clan} "
-
-        if the_cat.status.is_outsider:
-            if the_cat.dead:
-                output += f"{i18n.t(f'general.past_no_group')} "
-            output += i18n.t(f"general.{the_cat.status.social}", count=1)
-        elif the_cat.status.is_other_clancat:
-            if name:
-                # add rank
-                output += i18n.t(f"general.{the_cat.status.rank}", count=1)
-        else:
+                output += i18n.t(
+                    "general.past_group",
+                    group=cat_clan,
+                    rank=i18n.t(f"general.{the_cat.status.rank}", count=1),
+                )
+        elif the_cat.status.is_outsider:
             output += i18n.t(f"general.{the_cat.status.rank}", count=1)
+        else:
+            output += i18n.t(
+                "general.living_group",
+                group=cat_clan,
+                rank=i18n.t(f"general.{the_cat.status.rank}", count=1),
+            )
 
         # NEWLINE ----------
         output += "\n"
