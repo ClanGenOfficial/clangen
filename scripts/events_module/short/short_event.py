@@ -265,6 +265,17 @@ class ShortEvent:
                 new_cats=self.new_cats,
                 clan=game.clan,
             )
+            for change in self.relationships:
+                for group in change.get("log", []):
+                    change["log"][group] = event_text_adjust(
+                        Cat,
+                        group,
+                        main_cat=self.main_cat,
+                        random_cat=self.random_cat,
+                        victim_cat=self.victim_cat,
+                        new_cats=self.new_cats,
+                    )
+
             unpack_rel_block(Cat, self.relationships, self)
 
         # used in some murder events,
@@ -277,11 +288,9 @@ class ShortEvent:
             change_relationship_values(
                 [self.random_cat],
                 [kit],
-                platonic_like=-20,
-                dislike=40,
-                admiration=-30,
-                comfortable=-30,
-                jealousy=0,
+                like=-20,
+                respect=-30,
+                comfort=-30,
                 trust=-30,
             )
 
