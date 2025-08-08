@@ -8,7 +8,11 @@ from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import UISurfaceImageButton, UIImageButton
+from scripts.game_structure.ui_elements import (
+    UISurfaceImageButton,
+    UIImageButton,
+    UIDropDown,
+)
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -57,20 +61,29 @@ def rebuild_core(*, should_rebuild_bgs=True):
         object_id=pygame_gui.core.ObjectID("#events_button", "@buttonstyles_menu_left"),
         starting_height=5,
     )
-    menu_buttons["supply_button"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((0, 60), (88, 30))),
-        "screens.core.supplies",
-        get_button_dict(ButtonStyles.MENU_MIDDLE, (88, 30)),
+    menu_buttons["supply_button"] = UIDropDown(
+        relative_rect=ui_scale(pygame.Rect((0, 60), (88, 30))),
+        parent_text="screens.core.supplies",
+        item_list=["screens.core.freshkill", "screens.core.herbs"],
+        parent_style=ButtonStyles.MENU_MIDDLE,
+        disable_selection=False,
         visible=False,
         manager=MANAGER,
-        object_id="@buttonstyles_menu_middle",
         starting_height=5,
         anchors={"left": "left", "left_target": menu_buttons["events_screen"]},
     )
-    menu_buttons["den_button"] = UISurfaceImageButton(
+    menu_buttons["den_button"] = UIDropDown(
         ui_scale(pygame.Rect((0, 60), (58, 30))),
         "screens.core.dens",
-        get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
+        item_list=[
+            "screens.core.leader_den",
+            "screens.core.medicine_cat_den",
+            "screens.core.warriors_den",
+            "screens.core.clearing",
+        ],
+        child_dimensions=(150, 30),
+        center_children=True,
+        parent_style=ButtonStyles.MENU_MIDDLE,
         visible=False,
         manager=MANAGER,
         object_id="@buttonstyles_menu_middle",
@@ -78,7 +91,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         anchors={"left": "left", "left_target": menu_buttons["supply_button"]},
     )
     menu_buttons["catlist_screen"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((0, 60), (58, 30))),
+        ui_scale(pygame.Rect((-46, 60), (58, 30))),
         "screens.core.cat_list",
         get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
         visible=False,
@@ -116,12 +129,12 @@ def rebuild_core(*, should_rebuild_bgs=True):
         starting_height=5,
     )
     # used so we can anchor to the right with numbers that make sense
-    scale_rect = ui_scale(pygame.Rect((0, 0), (118, 30)))
+    scale_rect = ui_scale(pygame.Rect((0, 0), (148, 30)))
     scale_rect.topright = ui_scale_offset((-25, 25))
     menu_buttons["allegiances"] = UISurfaceImageButton(
         scale_rect,
         "screens.core.allegiances",
-        get_button_dict(ButtonStyles.SQUOVAL, (118, 30)),
+        get_button_dict(ButtonStyles.SQUOVAL, (148, 30)),
         visible=False,
         manager=MANAGER,
         object_id=pygame_gui.core.ObjectID(class_id="@image_button", object_id=None),
@@ -130,12 +143,12 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
 
     # used so we can anchor to the right with numbers that make sense
-    scale_rect = ui_scale(pygame.Rect((0, 0), (85, 30)))
+    scale_rect = ui_scale(pygame.Rect((0, 0), (125, 30)))
     scale_rect.topright = ui_scale_offset((-25, 5))
     menu_buttons["clan_settings"] = UISurfaceImageButton(
         scale_rect,
-        "screens.core.settings",
-        get_button_dict(ButtonStyles.SQUOVAL, (85, 30)),
+        "screens.core.clan_settings",
+        get_button_dict(ButtonStyles.SQUOVAL, (125, 30)),
         visible=False,
         manager=MANAGER,
         object_id=pygame_gui.core.ObjectID(class_id="@image_button", object_id=None),

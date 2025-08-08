@@ -1957,6 +1957,7 @@ class UIDropDown(UIDropDownContainer):
         manager: IUIManagerInterface,
         container: UIContainer = None,
         child_dimensions: tuple = None,
+        center_children: bool = False,
         parent_style: ButtonStyles = ButtonStyles.DROPDOWN,
         parent_override=None,
         parent_reflect_selection=False,
@@ -1980,6 +1981,7 @@ class UIDropDown(UIDropDownContainer):
         :param item_list: The list of options that will become child buttons.
         :param child_dimensions: This overrides the relative_rect dimensions for the child buttons, allowing you to create
         parent and child buttons with differing dimensions
+        :param center_children: Set True if child buttons should be centered beneath the parent button, rather than anchored to the parent's left side. Only useful if child dimensions are larger than the parent's. Defaults to False.
         :param parent_style: The button style to use for the parent button, defaults to DROPDOWN
         :param parent_override: This isn't best practice to use, but it's an exception added for the filter dropdown
         :param parent_reflect_selection: When a selection is made, the parent text changes to reflect the selection.
@@ -2029,7 +2031,11 @@ class UIDropDown(UIDropDownContainer):
         else:
             self.parent_button = parent_override
 
-        dropdown_rect = ((relative_rect.x, 0), (0, 0))
+        if center_children:
+            x_pos = -int(child_dimensions[0] / 2 - relative_rect.width / 2)
+        else:
+            x_pos = relative_rect.x
+        dropdown_rect = ((x_pos, 0), (0, 0))
 
         self.child_button_container = UIAutoResizingContainer(
             ui_scale(pygame.Rect(dropdown_rect)),
