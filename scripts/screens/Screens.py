@@ -278,13 +278,61 @@ class Screens:
     def menu_button_pressed(self, event):
         """This is a short-up to deal with menu button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
-        if event.ui_element == Screens.menu_buttons["events_screen"]:
+        if event.ui_element == Screens.menu_buttons["events"]:
             self.change_screen("events screen")
-        elif event.ui_element == Screens.menu_buttons["camp_screen"]:
+        # supply dropdown
+        elif (
+            event.ui_element
+            == Screens.menu_buttons["supplies"].child_button_dicts[
+                "screens.core.freshkill"
+            ]
+        ):
+            Screens.menu_buttons["supplies"].close()
+            # freshkill popup
+            pass
+        elif (
+            event.ui_element
+            == Screens.menu_buttons["supplies"].child_button_dicts["screens.core.herbs"]
+        ):
+            Screens.menu_buttons["supplies"].close()
+            # herb popup
+            pass
+        # den dropdown
+        elif (
+            event.ui_element
+            == Screens.menu_buttons["dens"].child_button_dicts[
+                "screens.core.leader_den"
+            ]
+        ):
+            Screens.menu_buttons["dens"].close()
+            self.change_screen("leader den screen")
+        elif (
+            event.ui_element
+            == Screens.menu_buttons["dens"].child_button_dicts[
+                "screens.core.medicine_cat_den"
+            ]
+        ):
+            Screens.menu_buttons["dens"].close()
+            self.change_screen("med den screen")
+        elif (
+            event.ui_element
+            == Screens.menu_buttons["dens"].child_button_dicts[
+                "screens.core.warriors_den"
+            ]
+        ):
+            Screens.menu_buttons["dens"].close()
+            self.change_screen("warrior den screen")
+        elif (
+            event.ui_element
+            == Screens.menu_buttons["dens"].child_button_dicts["screens.core.clearing"]
+        ):
+            Screens.menu_buttons["dens"].close()
+            self.change_screen("clearing screen")
+        elif event.ui_element == Screens.menu_buttons["camp"]:
             self.change_screen("camp screen")
-        elif event.ui_element == Screens.menu_buttons["catlist_screen"]:
+        elif event.ui_element == Screens.menu_buttons["cats"]:
             self.change_screen("list screen")
-        elif event.ui_element == Screens.menu_buttons["patrol_screen"]:
+        elif event.ui_element == Screens.menu_buttons["patrols"]:
             self.change_screen("patrol screen")
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
             SaveCheck(

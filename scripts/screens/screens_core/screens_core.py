@@ -52,7 +52,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     menu_buttons = dict()
 
     # they have to be added individually as some of them rely on others in anchors
-    menu_buttons["events_screen"] = UISurfaceImageButton(
+    menu_buttons["events"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((217, 60), (82, 30))),
         "screens.core.events",
         get_button_dict(ButtonStyles.MENU_LEFT, (82, 30)),
@@ -61,7 +61,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         object_id=pygame_gui.core.ObjectID("#events_button", "@buttonstyles_menu_left"),
         starting_height=5,
     )
-    menu_buttons["supply_button"] = UIDropDown(
+    menu_buttons["supplies"] = UIDropDown(
         relative_rect=ui_scale(pygame.Rect((0, 60), (88, 30))),
         parent_text="screens.core.supplies",
         item_list=["screens.core.freshkill", "screens.core.herbs"],
@@ -70,9 +70,9 @@ def rebuild_core(*, should_rebuild_bgs=True):
         visible=False,
         manager=MANAGER,
         starting_height=5,
-        anchors={"left": "left", "left_target": menu_buttons["events_screen"]},
+        anchors={"left": "left", "left_target": menu_buttons["events"]},
     )
-    menu_buttons["den_button"] = UIDropDown(
+    menu_buttons["dens"] = UIDropDown(
         ui_scale(pygame.Rect((0, 60), (58, 30))),
         "screens.core.dens",
         item_list=[
@@ -88,18 +88,18 @@ def rebuild_core(*, should_rebuild_bgs=True):
         manager=MANAGER,
         object_id="@buttonstyles_menu_middle",
         starting_height=5,
-        anchors={"left": "left", "left_target": menu_buttons["supply_button"]},
+        anchors={"left": "left", "left_target": menu_buttons["supplies"]},
     )
-    menu_buttons["catlist_screen"] = UISurfaceImageButton(
+    menu_buttons["cats"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((-46, 60), (58, 30))),
         "screens.core.cat_list",
         get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
         visible=False,
         object_id="@buttonstyles_menu_middle",
         starting_height=5,
-        anchors={"left": "left", "left_target": menu_buttons["den_button"]},
+        anchors={"left": "left", "left_target": menu_buttons["dens"]},
     )
-    menu_buttons["patrol_screen"] = UISurfaceImageButton(
+    menu_buttons["patrols"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (80, 30))),
         "screens.core.patrol",
         get_button_dict(ButtonStyles.MENU_RIGHT, (80, 30)),
@@ -107,7 +107,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         manager=MANAGER,
         object_id="#patrol_button",
         starting_height=5,
-        anchors={"left": "left", "left_target": menu_buttons["catlist_screen"]},
+        anchors={"left": "left", "left_target": menu_buttons["cats"]},
     )
     menu_buttons["main_menu"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 25), (153, 30))),
@@ -118,7 +118,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         object_id="@buttonstyles_squoval",
         starting_height=5,
     )
-    menu_buttons["camp_screen"] = UISurfaceImageButton(
+    menu_buttons["camp"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 5), (123, 30))),
         "screens.core.camp",
         get_button_dict(ButtonStyles.SQUOVAL, (123, 30)),
@@ -169,7 +169,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         starting_height=5,
         anchors={
             "bottom": "bottom",
-            "bottom_target": menu_buttons["camp_screen"],
+            "bottom_target": menu_buttons["camp"],
             "centerx": "centerx",
         },
     )
