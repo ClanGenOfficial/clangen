@@ -10,7 +10,7 @@ import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
-from scripts.game_structure import image_cache, constants
+from scripts.game_structure import constants
 from scripts.cat.enums import CatGroup
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game.settings import game_setting_get
@@ -27,7 +27,6 @@ from scripts.game_structure.screen_settings import (
 )
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import SaveCheck, EventLoading
-from scripts.screens.screens_core.screens_core import rebuild_den_dropdown
 from scripts.utility import (
     update_sprite,
     ui_scale,
@@ -47,8 +46,6 @@ class Screens:
 
     menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
     game_frame = scripts.screens.screens_core.screens_core.game_frame
-
-    dens = ["dens_bar", "lead_den", "med_cat_den", "warrior_den", "clearing"]
 
     active_bg: Optional[str] = None
 
@@ -87,15 +84,6 @@ class Screens:
         switch_set_value(Switch.cur_screen, new_screen)
         game.switch_screens = True
         game.rpc.update_rpc.set()
-
-        if (
-            game.last_screen_forupdate == "start screen"
-            and switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
-        ):
-            rebuild_den_dropdown(
-                left_align=not get_clan_setting("moons and seasons"),
-                game_mode=game.clan.game_mode,
-            )
 
     def __init__(self, name=None):
         self.active_blur_bg = None
@@ -237,11 +225,6 @@ class Screens:
             if name in [
                 "moons_n_seasons",
                 "moons_n_seasons_arrow",
-                "med_cat_den",
-                "lead_den",
-                "clearing",
-                "warrior_den",
-                "dens_bar",
                 "mute_button",
                 "unmute_button",
             ]:
@@ -319,26 +302,6 @@ class Screens:
                 not switch_get_value(Switch.moon_and_seasons_open),
             )
             self.update_moon_and_season()
-        elif event.ui_element == Screens.menu_buttons["dens"]:
-            self.update_dens()
-
-        elif event.ui_element == Screens.menu_buttons["lead_den"]:
-            self.change_screen("leader den screen")
-        elif event.ui_element == Screens.menu_buttons["clearing"]:
-            self.change_screen("clearing screen")
-        elif event.ui_element == Screens.menu_buttons["med_cat_den"]:
-            self.change_screen("med den screen")
-        elif event.ui_element == Screens.menu_buttons["warrior_den"]:
-            self.change_screen("warrior den screen")
-
-    @classmethod
-    def update_dens(cls):
-        for den in cls.dens:
-            # if dropdown is visible, hide
-            if cls.menu_buttons[den].visible:
-                cls.menu_buttons[den].hide()
-            else:
-                cls.menu_buttons[den].show()
 
     @classmethod
     def update_heading_text(cls, text, text_kwargs=None):

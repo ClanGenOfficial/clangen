@@ -49,7 +49,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
 
     # they have to be added individually as some of them rely on others in anchors
     menu_buttons["events_screen"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((246, 60), (82, 30))),
+        ui_scale(pygame.Rect((217, 60), (82, 30))),
         "screens.core.events",
         get_button_dict(ButtonStyles.MENU_LEFT, (82, 30)),
         visible=False,
@@ -57,24 +57,34 @@ def rebuild_core(*, should_rebuild_bgs=True):
         object_id=pygame_gui.core.ObjectID("#events_button", "@buttonstyles_menu_left"),
         starting_height=5,
     )
-    menu_buttons["camp_screen"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((0, 60), (58, 30))),
-        "screens.core.camp",
-        get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
+    menu_buttons["supply_button"] = UISurfaceImageButton(
+        ui_scale(pygame.Rect((0, 60), (88, 30))),
+        "screens.core.supplies",
+        get_button_dict(ButtonStyles.MENU_MIDDLE, (88, 30)),
         visible=False,
         manager=MANAGER,
         object_id="@buttonstyles_menu_middle",
         starting_height=5,
         anchors={"left": "left", "left_target": menu_buttons["events_screen"]},
     )
+    menu_buttons["den_button"] = UISurfaceImageButton(
+        ui_scale(pygame.Rect((0, 60), (58, 30))),
+        "screens.core.dens",
+        get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
+        visible=False,
+        manager=MANAGER,
+        object_id="@buttonstyles_menu_middle",
+        starting_height=5,
+        anchors={"left": "left", "left_target": menu_buttons["supply_button"]},
+    )
     menu_buttons["catlist_screen"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((0, 60), (88, 30))),
+        ui_scale(pygame.Rect((0, 60), (58, 30))),
         "screens.core.cat_list",
-        get_button_dict(ButtonStyles.MENU_MIDDLE, (88, 30)),
+        get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
         visible=False,
         object_id="@buttonstyles_menu_middle",
         starting_height=5,
-        anchors={"left": "left", "left_target": menu_buttons["camp_screen"]},
+        anchors={"left": "left", "left_target": menu_buttons["den_button"]},
     )
     menu_buttons["patrol_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (80, 30))),
@@ -95,7 +105,16 @@ def rebuild_core(*, should_rebuild_bgs=True):
         object_id="@buttonstyles_squoval",
         starting_height=5,
     )
-
+    menu_buttons["camp_screen"] = UISurfaceImageButton(
+        ui_scale(pygame.Rect((25, 5), (123, 30))),
+        "screens.core.camp",
+        get_button_dict(ButtonStyles.SQUOVAL, (123, 30)),
+        visible=False,
+        manager=MANAGER,
+        object_id="@buttonstyles_squoval",
+        anchors={"top_target": menu_buttons["main_menu"]},
+        starting_height=5,
+    )
     # used so we can anchor to the right with numbers that make sense
     scale_rect = ui_scale(pygame.Rect((0, 0), (118, 30)))
     scale_rect.topright = ui_scale_offset((-25, 25))
@@ -159,8 +178,6 @@ def rebuild_core(*, should_rebuild_bgs=True):
         starting_height=5,
     )
 
-    rebuild_den_dropdown()
-
     rebuild_mute("default")
 
     version_number = pygame_gui.elements.UILabel(
@@ -191,142 +208,6 @@ def rebuild_core(*, should_rebuild_bgs=True):
 
     if should_rebuild_bgs:
         rebuild_bgs()
-
-
-def rebuild_den_dropdown(left_align: bool = True, game_mode: str = "expanded"):
-    """
-    Rebuild the den dropdown
-    :param left_align: Set True if the buttons should be on the left-hand side of the screen, False if they should be on the right-hand side
-    """
-
-    if "dens_bar" in menu_buttons:
-        menu_buttons["dens_bar"].kill()
-
-    x_pos = 40
-    if not left_align:
-        x_pos = 755
-
-    if game_mode != "classic":
-        menu_buttons["dens_bar"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((x_pos, 5), (10, 170))),
-            pygame.transform.scale(
-                image_cache.load_image(
-                    "resources/images/vertical_bar.png"
-                ).convert_alpha(),
-                ui_scale_dimensions((10, 160)),
-            ),
-            visible=False,
-            starting_height=5,
-            manager=MANAGER,
-            anchors={
-                "top_target": menu_buttons["main_menu"]
-                if left_align
-                else menu_buttons["clan_settings"]
-            },
-        )
-    else:
-        menu_buttons["dens_bar"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((x_pos, 5), (10, 140))),
-            pygame.transform.scale(
-                image_cache.load_image(
-                    "resources/images/vertical_bar.png"
-                ).convert_alpha(),
-                ui_scale_dimensions((10, 160)),
-            ),
-            visible=False,
-            starting_height=5,
-            manager=MANAGER,
-            anchors={
-                "top_target": menu_buttons["main_menu"]
-                if left_align
-                else menu_buttons["clan_settings"]
-            },
-        )
-
-    x_pos = 25
-    if not left_align:
-        x_pos = 704
-
-    if "dens" in menu_buttons:
-        menu_buttons["dens"].kill()
-    menu_buttons["dens"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((x_pos, 5), (71, 30))),
-        "screens.core.dens",
-        get_button_dict(ButtonStyles.SQUOVAL, (71, 30)),
-        visible=False,
-        manager=MANAGER,
-        object_id="@buttonstyles_squoval",
-        starting_height=6,
-        anchors={
-            "top_target": menu_buttons["main_menu"]
-            if left_align
-            else menu_buttons["clan_settings"]
-        },
-    )
-
-    if not left_align:
-        x_pos = 663
-    if "lead_den" in menu_buttons:
-        menu_buttons["lead_den"].kill()
-    menu_buttons["lead_den"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((x_pos, 10), (112, 28))),
-        "screens.core.leader_den",
-        get_button_dict(ButtonStyles.ROUNDED_RECT, (112, 28)),
-        visible=False,
-        manager=MANAGER,
-        object_id="@buttonstyles_rounded_rect",
-        starting_height=6,
-        anchors={
-            "top_target": menu_buttons["dens"],
-        },
-    )
-
-    if not left_align:
-        x_pos = 625
-    if "med_cat_den" in menu_buttons:
-        menu_buttons["med_cat_den"].kill()
-    menu_buttons["med_cat_den"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((x_pos, 10), (151, 28))),
-        "screens.core.medicine_cat_den",
-        get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
-        object_id="@buttonstyles_rounded_rect",
-        visible=False,
-        manager=MANAGER,
-        starting_height=6,
-        anchors={"top_target": menu_buttons["lead_den"]},
-    )
-
-    if not left_align:
-        x_pos = 654
-    if "warrior_den" in menu_buttons:
-        menu_buttons["warrior_den"].kill()
-    menu_buttons["warrior_den"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((x_pos, 10), (121, 28))),
-        "screens.core.warriors_den",
-        get_button_dict(ButtonStyles.ROUNDED_RECT, (121, 28)),
-        object_id="@buttonstyles_rounded_rect",
-        visible=False,
-        manager=MANAGER,
-        starting_height=6,
-        anchors={"top_target": menu_buttons["med_cat_den"]},
-    )
-
-    if "clearing" in menu_buttons:
-        menu_buttons["clearing"].kill()
-
-    if game_mode != "classic":
-        if not left_align:
-            x_pos = 694
-        menu_buttons["clearing"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((x_pos, 10), (81, 28))),
-            "screens.core.clearing",
-            get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
-            visible=False,
-            manager=MANAGER,
-            object_id="@buttonstyles_rounded_rect",
-            starting_height=6,
-            anchors={"top_target": menu_buttons["warrior_den"]},
-        )
 
 
 def rebuild_mute(location: str):

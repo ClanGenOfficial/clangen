@@ -1,11 +1,12 @@
 {
     "en": {
         "events": "Events",
-        "camp": "Camp",
-        "cat_list": "Cat List",
-        "patrol": "Patrol",
+        "camp": "⬅┐ To Camp",
+        "cat_list": "Cats",
+        "patrol": "Patrols",
         "allegiances": "Allegiances",
         "settings": "Settings",
+        "supplies": "Supplies",
         "dens": "Dens",
         "warriors_den": "warriors' den",
         "leader_den": "leader den",
