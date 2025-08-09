@@ -30,6 +30,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
+from .enums import GameScreen
 from ..cat.enums import CatAge, CatRank, CatGroup
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.save_load import safe_save
@@ -37,7 +38,9 @@ from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
+from ..ui.windows.change_cat_name import ChangeCatName
+from ..ui.windows.kill_cat import KillCat
+from ..ui.windows.change_cat_toggles import ChangeCatToggles
 from ..housekeeping.datadir import get_save_dir
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
@@ -164,7 +167,7 @@ class ProfileScreen(Screens):
                     print("invalid next cat", self.previous_cat)
             elif event.ui_element == self.inspect_button:
                 self.close_current_tab()
-                self.change_screen("sprite inspect screen")
+                self.change_screen(GameScreen.SPRITE_INSPECT)
             elif event.ui_element == self.relations_tab_button:
                 self.toggle_relations_tab()
             elif event.ui_element == self.roles_tab_button:
@@ -187,14 +190,14 @@ class ProfileScreen(Screens):
                 "leader_ceremony" in self.profile_elements
                 and event.ui_element == self.profile_elements["leader_ceremony"]
             ):
-                self.change_screen("ceremony screen")
+                self.change_screen(GameScreen.CEREMONY)
             elif event.ui_element == self.profile_elements["med_den"]:
-                self.change_screen("med den screen")
+                self.change_screen(GameScreen.MED_DEN)
             elif (
                 "mediation" in self.profile_elements
                 and event.ui_element == self.profile_elements["mediation"]
             ):
-                self.change_screen("mediation screen")
+                self.change_screen(GameScreen.MEDIATION)
             elif event.ui_element == self.profile_elements["favourite_button"]:
                 self.the_cat.favourite = not self.the_cat.favourite
                 self.profile_elements["favourite_button"].change_object_id(
@@ -231,26 +234,26 @@ class ProfileScreen(Screens):
         # Relations Tab
         if self.open_tab == "relations":
             if event.ui_element == self.family_tree_button:
-                self.change_screen("family tree screen")
+                self.change_screen(GameScreen.FAMILY_TREE)
             elif event.ui_element == self.see_relationships_button:
-                self.change_screen("relationship screen")
+                self.change_screen(GameScreen.RELATIONSHIP)
             elif event.ui_element == self.choose_mate_button:
-                self.change_screen("choose mate screen")
+                self.change_screen(GameScreen.CHOOSE_MATE)
             elif event.ui_element == self.change_adoptive_parent_button:
-                self.change_screen("choose adoptive parent screen")
+                self.change_screen(GameScreen.CHOOSE_ADOPTIVE_PARENT)
 
         # Roles Tab
         elif self.open_tab == "roles":
             if event.ui_element == self.manage_roles:
-                self.change_screen("role screen")
+                self.change_screen(GameScreen.CHANGE_ROLE)
             elif event.ui_element == self.change_mentor_button:
-                self.change_screen("choose mentor screen")
+                self.change_screen(GameScreen.CHOOSE_MENTOR)
         # Personal Tab
         elif self.open_tab == "personal":
             if event.ui_element == self.change_name_button:
                 ChangeCatName(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
-                self.change_screen("change gender screen")
+                self.change_screen(GameScreen.CHANGE_GENDER)
             # when button is pressed...
             elif event.ui_element == self.cis_trans_button:
                 # if the cat is anything besides m/f/transm/transf then turn them back to cis
@@ -514,7 +517,7 @@ class ProfileScreen(Screens):
 
         self.hide_mute_buttons()  # no space for mute button on this screen
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
-        if game.last_screen_forProfile == "med den screen":
+        if game.last_screen_forProfile == GameScreen.MED_DEN:
             self.toggle_conditions_tab()
 
         self.set_cat_location_bg(self.the_cat)

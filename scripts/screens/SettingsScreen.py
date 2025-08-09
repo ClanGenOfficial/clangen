@@ -30,6 +30,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.housekeeping.datadir import open_data_dir
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
+from .enums import GameScreen
 from ..game_structure import constants
 from ..game_structure.audio import music_manager, sound_manager
 from ..game_structure.screen_settings import (
@@ -143,7 +144,7 @@ class SettingsScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.main_menu_button:
-                self.change_screen("start screen")
+                self.change_screen(GameScreen.START)
                 return
             if event.ui_element == self.fullscreen_toggle:
                 game_setting_toggle("fullscreen")
@@ -176,7 +177,7 @@ class SettingsScreen(Screens):
 
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
-                self.change_screen("start screen")
+                self.change_screen(GameScreen.START)
             elif event.key == pygame.K_RIGHT:
                 if self.sub_menu == "general":
                     self.open_info_screen()

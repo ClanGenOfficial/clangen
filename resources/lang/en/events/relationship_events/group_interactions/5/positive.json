@@ -14,51 +14,50 @@
 		"r_c2": ["warrior", "elder", "mediator"]
 	},
 	"relationship_constraint": {
-		"m_c_to_r_c3": ["platonic_40"],
-        "m_c_to_r_c4": ["platonic_40"],
-        "r_c1_to_r_c3": ["platonic_40"],
-        "r_c1_to_r_c4": ["platonic_40"],
-        "r_c2_to_r_c3": ["platonic_40"],
-        "r_c2_to_r_c4": ["platonic_40"],
-		"r_c3_to_r_c4": ["not_mates", "romantic_1"]
+		"m_c_to_r_c3": ["enjoys"],
+        "m_c_to_r_c4": ["enjoys"],
+        "r_c1_to_r_c3": ["enjoys"],
+        "r_c1_to_r_c4": ["enjoys"],
+        "r_c2_to_r_c3": ["enjoys"],
+        "r_c2_to_r_c4": ["enjoys"],
+		"r_c3_to_r_c4": ["not_mates", "fancies"]
 	},
 	"specific_reaction": {
 		"r_c3_to_r_c4": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"comfortable": "increase",
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         	"r_c4_to_r_c3": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"admiration": "increase",
-			"comfortable": "increase",
-			"jealousy": "neutral",
+			"romance": "increase",
+			"like": "increase",
+			"respect": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "m_c_to_r_c1": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "m_c_to_r_c2": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
 		"r_c1_to_r_c2": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "r_c1_to_m_c": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "r_c2_to_m_c": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "r_c2_to_r_c1": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		}
         

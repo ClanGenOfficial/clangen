@@ -26,6 +26,9 @@ import time
 from importlib import reload
 from importlib.util import find_spec
 
+from scripts.screens.enums import GameScreen
+from scripts.ui.windows.save_check import SaveCheck
+
 if not getattr(sys, "frozen", False):
     requiredModules = [
         "ujson",
@@ -184,7 +187,6 @@ for module_name, module in list(sys.modules.items()):
 from scripts.clan import clan_class
 from scripts.game_structure.audio import sound_manager, music_manager
 from scripts.game_structure.load_cat import load_cats, version_convert
-from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure import constants
@@ -341,7 +343,7 @@ AllScreens.start_screen.screen_switches()
 # dev screen info now lives in scripts/screens/screens_core
 
 fps = switch_get_value(Switch.fps)
-music_manager.check_music("start screen")
+music_manager.check_music(GameScreen.START)
 
 if game_setting_get("custom cursor"):
     MANAGER.set_active_cursor(constants.CUSTOM_CURSOR)
@@ -378,11 +380,10 @@ while 1:
             if (
                 switch_get_value(Switch.cur_screen)
                 in (
-                    "start screen",
-                    "switch clan screen",
-                    "settings screen",
-                    "info screen",
-                    "make clan screen",
+                    GameScreen.START,
+                    GameScreen.SWITCH_CLAN,
+                    GameScreen.SETTINGS,
+                    GameScreen.MAKE_CLAN,
                 )
                 or not game.clan
             ):

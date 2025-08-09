@@ -21,6 +21,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
+from .enums import GameScreen
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..cat.enums import CatRank
@@ -41,7 +42,7 @@ class RoleScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     switch_set_value(Switch.cat, self.next_cat)
@@ -91,7 +92,7 @@ class RoleScreen(Screens):
 
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.key == pygame.K_RIGHT:
                 switch_set_value(Switch.cat, self.next_cat)
                 self.update_selected_cat()

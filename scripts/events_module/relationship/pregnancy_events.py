@@ -6,9 +6,8 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial
-from scripts.cat.history import History
 from scripts.cat.names import names, Name
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
@@ -715,7 +714,7 @@ class Pregnancy_Events:
                         if not p_rel.opposite_relationship:
                             p_rel.link_relationship()
                         p_rel_opp = p_rel.opposite_relationship
-                        if p_rel.dislike < 20 and p_rel_opp.dislike < 20:
+                        if p_rel_opp.like < -20 and p_rel.like < -20:
                             p_affairs.append(p_affair)
             possible_affair_partners = p_affairs
 
@@ -881,10 +880,10 @@ class Pregnancy_Events:
                     ]
                     y = random.randrange(0, 15)
                     start_relation = Relationship(the_cat, kit, False, True)
-                    start_relation.platonic_like += parent_to_kit["platonic"] + y
-                    start_relation.comfortable = parent_to_kit["comfortable"] + y
-                    start_relation.admiration = parent_to_kit["admiration"] + y
-                    start_relation.trust = parent_to_kit["trust"] + y
+                    start_relation.like = parent_to_kit[RelType.LIKE] + y
+                    start_relation.comfort = parent_to_kit[RelType.COMFORT] + y
+                    start_relation.respect = parent_to_kit[RelType.RESPECT] + y
+                    start_relation.trust = parent_to_kit[RelType.TRUST] + y
                     the_cat.relationships[kit.ID] = start_relation
 
                     kit_to_parent = constants.CONFIG["new_cat"]["parent_buff"][
@@ -892,10 +891,10 @@ class Pregnancy_Events:
                     ]
                     y = random.randrange(0, 15)
                     start_relation = Relationship(kit, the_cat, False, True)
-                    start_relation.platonic_like += kit_to_parent["platonic"] + y
-                    start_relation.comfortable = kit_to_parent["comfortable"] + y
-                    start_relation.admiration = kit_to_parent["admiration"] + y
-                    start_relation.trust = kit_to_parent["trust"] + y
+                    start_relation.like += kit_to_parent[RelType.LIKE] + y
+                    start_relation.comfort = kit_to_parent[RelType.COMFORT] + y
+                    start_relation.respect = kit_to_parent[RelType.RESPECT] + y
+                    start_relation.trust = kit_to_parent[RelType.TRUST] + y
                     kit.relationships[the_cat.ID] = start_relation
                 else:
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
@@ -915,8 +914,8 @@ class Pregnancy_Events:
                 y = random.randrange(0, 10)
                 if second_kitten.ID == kitten.ID:
                     continue
-                kitten.relationships[second_kitten.ID].platonic_like += 20 + y
-                kitten.relationships[second_kitten.ID].comfortable += 10 + y
+                kitten.relationships[second_kitten.ID].like += 20 + y
+                kitten.relationships[second_kitten.ID].comfort += 10 + y
                 kitten.relationships[second_kitten.ID].trust += 10 + y
 
             kitten.create_inheritance_new_cat()  # Calculate inheritance.
@@ -947,22 +946,12 @@ class Pregnancy_Events:
                     change_relationship_values(
                         cats_from=[kit],
                         cats_to=[parent],
-                        platonic_like=kit_to_parent["platonic"],
-                        dislike=kit_to_parent["dislike"],
-                        admiration=kit_to_parent["admiration"],
-                        comfortable=kit_to_parent["comfortable"],
-                        jealousy=kit_to_parent["jealousy"],
-                        trust=kit_to_parent["trust"],
+                        **kit_to_parent,
                     )
                     change_relationship_values(
                         cats_from=[parent],
                         cats_to=[kit],
-                        platonic_like=parent_to_kit["platonic"],
-                        dislike=parent_to_kit["dislike"],
-                        admiration=parent_to_kit["admiration"],
-                        comfortable=parent_to_kit["comfortable"],
-                        jealousy=parent_to_kit["jealousy"],
-                        trust=parent_to_kit["trust"],
+                        **parent_to_kit,
                     )
 
         return all_kitten
@@ -1017,12 +1006,10 @@ class Pregnancy_Events:
             affair_relation.link_relationship()
 
         average_mate_love = (
-            mate_relation.romantic_love
-            + mate_relation.opposite_relationship.romantic_love
+            mate_relation.romance + mate_relation.opposite_relationship.romance
         ) / 2
         average_affair_love = (
-            affair_relation.romantic_love
-            + affair_relation.opposite_relationship.romantic_love
+            affair_relation.romance + affair_relation.opposite_relationship.romance
         ) / 2
 
         difference = average_mate_love - average_affair_love
@@ -1069,7 +1056,7 @@ class Pregnancy_Events:
 
         affair_chance = 15
         average_romantic_love = (
-            relation.romantic_love + relation.opposite_relationship.romantic_love
+            relation.romance + relation.opposite_relationship.romance
         ) / 2
 
         if average_romantic_love > 50:
@@ -1137,12 +1124,12 @@ class Pregnancy_Events:
                 )
 
             average_romantic_love = (
-                second_parent_relation.romantic_love
-                + second_parent_relation.opposite_relationship.romantic_love
+                second_parent_relation.romance
+                + second_parent_relation.opposite_relationship.romance
             ) / 2
             average_comfort = (
-                second_parent_relation.comfortable
-                + second_parent_relation.opposite_relationship.comfortable
+                second_parent_relation.comfort
+                + second_parent_relation.opposite_relationship.comfort
             ) / 2
             average_trust = (
                 second_parent_relation.trust

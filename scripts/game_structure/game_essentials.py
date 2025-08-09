@@ -10,6 +10,7 @@ from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir
+from scripts.screens.enums import GameScreen
 
 pygame.init()
 
@@ -42,8 +43,8 @@ class Game:
     freshkill_event_list = []
 
     # Keeping track of various last screen for various purposes
-    last_screen_forupdate = "start screen"
-    last_screen_forProfile = "list screen"
+    last_screen_forupdate = GameScreen.START
+    last_screen_forProfile = GameScreen.LIST
     last_list_forProfile = None
 
     choose_cats = {}
@@ -89,7 +90,7 @@ class Game:
 
     is_close_menu_open = False
 
-    def __init__(self, current_screen="start screen"):
+    def __init__(self, current_screen=GameScreen.START):
         self.current_screen = current_screen
         self.clicked = False
         self.keyspressed = []

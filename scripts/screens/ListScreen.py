@@ -27,6 +27,7 @@ from scripts.game_structure.ui_elements import (
     UIDropDown,
 )
 from scripts.screens.Screens import Screens
+from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
 from scripts.utility import ui_scale, get_text_box_theme, ui_scale_value
@@ -224,7 +225,7 @@ class ListScreen(Screens):
             elif element in self.cat_display.cat_sprites.values():
                 switch_set_value(Switch.cat, element.return_cat_id())
                 game.last_list_forProfile = self.current_group
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
 
             # MENU BUTTONS
             else:
@@ -235,9 +236,9 @@ class ListScreen(Screens):
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return
             if event.key == pygame.K_LEFT:
-                self.change_screen("camp screen")
+                self.change_screen(GameScreen.CAMP)
             elif event.key == pygame.K_RIGHT:
-                self.change_screen("patrol screen")
+                self.change_screen(GameScreen.PATROL)
 
     def screen_switches(self):
         super().screen_switches()

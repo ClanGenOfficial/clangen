@@ -19,6 +19,7 @@ from scripts.utility import (
     ui_scale_offset,
 )
 from .Screens import Screens
+from .enums import GameScreen
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
@@ -99,7 +100,7 @@ class ChooseAdoptiveParentScreen(Screens):
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.toggle_adoptive_parent:
                 if self.work_thread is not None and self.work_thread.is_alive():
                     return
@@ -159,7 +160,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element in self.birth_parents_buttons.values():
                 switch_set_value(Switch.cat, event.ui_element.cat_object.ID)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""

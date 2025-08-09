@@ -20,6 +20,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
 from ..game_structure import image_cache, constants
 from ..game_structure.game.settings import game_setting_get
@@ -90,7 +91,7 @@ class PatrolScreen(Screens):
 
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_LEFT:
-                self.change_screen("list screen")
+                self.change_screen(GameScreen.LIST)
             # elif event.key == pygame.K_RIGHT:
             # self.change_screen('list screen')
 
@@ -292,7 +293,7 @@ class PatrolScreen(Screens):
             self.open_choose_cats_screen()
         elif event.ui_element == self.elements["clan_return"]:
             self.in_progress_data = None
-            self.change_screen("camp screen")
+            self.change_screen(GameScreen.CAMP)
 
     def screen_switches(self):
         super().screen_switches()
@@ -789,7 +790,7 @@ class PatrolScreen(Screens):
 
         if self.display_text is None:
             # No patrol events were found.
-            self.change_screen("camp screen")
+            self.change_screen(GameScreen.CAMP)
             return
 
         # Layout images
