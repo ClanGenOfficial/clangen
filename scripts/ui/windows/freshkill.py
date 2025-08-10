@@ -8,7 +8,6 @@ import pygame_gui.elements
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import (
     get_clan_setting,
-    set_clan_setting,
     switch_clan_setting,
 )
 from scripts.game_structure.game_essentials import game
@@ -49,30 +48,13 @@ class FreshkillManagement(GameWindow):
             "hungriest_first",
             "experience_first",
         ]
-        help_output = i18n.t("screens.clearing.help_tooltip")
-        help_output += f"<br>"
-        for rank in self.feeding_order:
-            amount = self.prey_requirement[rank]
-            count = 1
-            if amount > 1:
-                count = 2
-
-            amount = Fraction(amount)
-            if amount.numerator > amount.denominator:
-                if amount.denominator == 1:
-                    amount = amount.numerator
-                else:
-                    start_int = amount.numerator - amount.denominator
-                    amount = f"{start_int} {start_int}/{amount.denominator}"
-
-            help_output += f"<br><b>{rank}:</b> {i18n.t('screens.clearing.prey_count', count=count, amount=amount)}"
 
         self.help_button = UIImageButton(
             ui_scale(pygame.Rect((18, 18), (34, 34))),
             "",
             object_id="#help_button",
             manager=MANAGER,
-            tool_tip_text=help_output,
+            tool_tip_text=self.get_help_tooltip(),
             container=self,
         )
 
@@ -110,7 +92,33 @@ class FreshkillManagement(GameWindow):
         self.current_page = 1
         self.create_feed_view()
 
+    def get_help_tooltip(self) -> str:
+        """
+        Returns the compiled help tooltip.
+        """
+        help_output = i18n.t("screens.clearing.help_tooltip")
+        help_output += f"<br>"
+        for rank in self.feeding_order:
+            amount = self.prey_requirement[rank]
+            count = 1
+            if amount > 1:
+                count = 2
+
+            amount = Fraction(amount)
+            if amount.numerator > amount.denominator:
+                if amount.denominator == 1:
+                    amount = amount.numerator
+                else:
+                    start_int = amount.numerator - amount.denominator
+                    amount = f"{start_int} {start_int}/{amount.denominator}"
+
+            help_output += f"<br><b>{rank}:</b> {i18n.t('screens.clearing.prey_count', count=count, amount=amount)}"
+        return help_output
+
     def create_feed_view(self):
+        """
+        Creates the feed view elements.
+        """
         self.feed_cats.disable()
         self.change_tactics.enable()
         self.open_log.enable()
@@ -207,11 +215,10 @@ class FreshkillManagement(GameWindow):
             manager=MANAGER,
         )
 
-    def close_feed_view(self):
-        for ele in self.feed_view_elements.values():
-            ele.kill()
-
     def update_cats_list(self):
+        """
+        Updates the cat list display.
+        """
         self.low_nutrition_cats = [
             Cat.fetch_cat(cat_id)
             for cat_id, nutrient in game.clan.freshkill_pile.nutrition_info.items()
@@ -267,6 +274,9 @@ class FreshkillManagement(GameWindow):
         )
 
     def create_log_view(self):
+        """
+        Creates the log view elements.
+        """
         self.feed_cats.enable()
         self.change_tactics.enable()
         self.open_log.disable()
@@ -284,11 +294,10 @@ class FreshkillManagement(GameWindow):
             anchors={"top_target": self.feed_cats, "centerx": "centerx"},
         )
 
-    def close_log_view(self):
-        if self.log:
-            self.log.kill()
-
     def create_tactic_view(self):
+        """
+        Creates the tactic view elements.
+        """
         self.feed_cats.enable()
         self.change_tactics.disable()
         self.open_log.enable()
@@ -370,14 +379,16 @@ class FreshkillManagement(GameWindow):
             )
             prev_element = self.tactic_view_elements[priority]
 
-    def close_tactic_view(self):
+    def close_views(self):
+        """
+        Clears all view elements. Should always be used before switching the view.
+        """
+        if self.log:
+            self.log.kill()
+        for ele in self.feed_view_elements.values():
+            ele.kill()
         for ele in self.tactic_view_elements.values():
             ele.kill()
-
-    def close_views(self):
-        self.close_log_view()
-        self.close_feed_view()
-        self.close_tactic_view()
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
@@ -389,73 +400,86 @@ class FreshkillManagement(GameWindow):
                 self.close_views()
                 self.create_log_view()
             elif event.ui_element == self.change_tactics:
-                self.close_log_view()
                 self.close_views()
                 self.create_tactic_view()
 
             # FEEDING
             if self.open_view == "feed":
-                if event.ui_element == self.feed_view_elements.get("feed_all"):
-                    game.clan.freshkill_pile.already_fed = []
-                    game.clan.freshkill_pile.feed_cats(self.low_nutrition_cats, True)
-                    game.clan.freshkill_pile.already_fed = []
-                    self.update_cats_list()
-                elif event.ui_element == self.feed_view_elements.get("feed_selected"):
-                    game.clan.freshkill_pile.already_fed = []
-                    cats_to_feed = [
-                        Cat.fetch_cat(i)
-                        for i in self.feed_view_elements["cat_list"].selected
-                    ]
-                    game.clan.freshkill_pile.feed_cats(cats_to_feed, True)
-                    game.clan.freshkill_pile.already_fed = []
-                    self.feed_view_elements["cat_list"].reset_selection()
-                    self.update_cats_list()
-                # RATION AND AUTOFEED
-                elif event.ui_element == self.feed_view_elements.get("ration_prey"):
-                    self.setting_switch(
-                        self.feed_view_elements.get("ration_prey"), "ration_prey"
-                    )
-                elif event.ui_element == self.feed_view_elements.get("auto_feed"):
-                    self.setting_switch(
-                        self.feed_view_elements.get("auto_feed"), "auto_feed"
-                    )
+                self.handle_feed_events(event)
 
             # CHANGE TACTICS
             elif self.open_view == "tactic":
-                for order in self.possible_orders:
-                    if event.ui_element == self.tactic_view_elements[order]:
-                        switch_clan_setting(order)
-                        self.tactic_view_elements[order].disable()
-                        # enable all other buttons, since only one of these can be chosen at a time
-                        for other_order in self.possible_orders:
-                            if order == other_order:
-                                continue
-                            if get_clan_setting(other_order):
-                                switch_clan_setting(other_order)
-                                self.tactic_view_elements[other_order].enable()
-                                break
+                self.handle_tactic_events(event)
+
+    def handle_tactic_events(self, event):
+        """
+        Handles events that occur on the tactic view.
+        """
+        for order in self.possible_orders:
+            if event.ui_element == self.tactic_view_elements[order]:
+                switch_clan_setting(order)
+                self.tactic_view_elements[order].disable()
+                # enable all other buttons, since only one of these can be chosen at a time
+                for other_order in self.possible_orders:
+                    if order == other_order:
+                        continue
+                    if get_clan_setting(other_order):
+                        switch_clan_setting(other_order)
+                        self.tactic_view_elements[other_order].enable()
                         break
-                for priority in self.possible_priorities:
-                    if event.ui_element == self.tactic_view_elements[priority]:
+                break
+        for priority in self.possible_priorities:
+            if event.ui_element == self.tactic_view_elements[priority]:
+                self.setting_switch(self.tactic_view_elements[priority], priority)
+                # next we need to run through the other settings to uncheck them, cus only one of these can be checked at a time.
+                for other_priority in self.possible_priorities:
+                    if other_priority == priority:
+                        continue
+                    if self.tactic_view_elements[other_priority].checked:
                         self.setting_switch(
-                            self.tactic_view_elements[priority], priority
+                            self.tactic_view_elements[other_priority],
+                            other_priority,
                         )
-                        # next we need to run through the other settings to uncheck them, cus only one of these can be checked at a time.
-                        for other_priority in self.possible_priorities:
-                            if other_priority == priority:
-                                continue
-                            if self.tactic_view_elements[other_priority].checked:
-                                self.setting_switch(
-                                    self.tactic_view_elements[other_priority],
-                                    other_priority,
-                                )
-                                break
                         break
+                break
+
+    def handle_feed_events(self, event):
+        """
+        Handles events that occur on the feed view.
+        """
+        if event.ui_element == self.feed_view_elements.get("feed_all"):
+            self.handle_feeding(self.low_nutrition_cats)
+            self.update_cats_list()
+        elif event.ui_element == self.feed_view_elements.get("feed_selected"):
+            self.handle_feeding(
+                [Cat.fetch_cat(i) for i in self.feed_view_elements["cat_list"].selected]
+            )
+            self.feed_view_elements["cat_list"].reset_selection()
+            self.update_cats_list()
+        # RATION AND AUTOFEED
+        elif event.ui_element == self.feed_view_elements.get("ration_prey"):
+            self.setting_switch(
+                self.feed_view_elements.get("ration_prey"), "ration_prey"
+            )
+        elif event.ui_element == self.feed_view_elements.get("auto_feed"):
+            self.setting_switch(self.feed_view_elements.get("auto_feed"), "auto_feed")
+
+    @staticmethod
+    def handle_feeding(cats_to_feed):
+        """
+        Feeds the given cats.
+        :param cats_to_feed: list of cats to feed
+        """
+        game.clan.freshkill_pile.already_fed = []
+        game.clan.freshkill_pile.feed_cats(cats_to_feed, True)
+        game.clan.freshkill_pile.already_fed = []
 
     @staticmethod
     def setting_switch(button, setting):
-        if button.checked:
-            button.uncheck()
-        else:
-            button.check()
+        """
+        Switches the given clan setting and updates the checkbox's state.
+        :param button: the checkbox element
+        :param setting: the clan setting
+        """
+        button.uncheck() if button.checked else button.check()
         switch_clan_setting(setting)
