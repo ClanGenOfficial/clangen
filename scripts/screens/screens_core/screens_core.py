@@ -155,6 +155,7 @@ def rebuild_top_menu_buttons():
         object_id="@buttonstyles_menu_middle",
         starting_height=5,
         anchors={"left": "left", "left_target": prev_element},
+        disable_selection=False,
     )
     menu_buttons["events"].change_layer(menu_buttons["dens"].get_starting_height() + 5)
     menu_buttons["cats"] = UISurfaceImageButton(
