@@ -48,7 +48,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     global version_number
     global dev_watermark
 
-    rebuild_menu_buttons()
+    rebuild_top_menu_buttons()
 
     rebuild_mute("default")
 
@@ -82,13 +82,29 @@ def rebuild_core(*, should_rebuild_bgs=True):
         rebuild_bgs()
 
 
-def rebuild_menu_buttons():
+def rebuild_top_menu_buttons():
     global menu_buttons
 
     if game.clan:
         mode = game.clan.game_mode
     else:
         mode = None
+
+    button_names = [
+        "events",
+        "supplies",
+        "dens",
+        "cats",
+        "patrols",
+        "main_menu",
+        "camp",
+        "allegiances",
+        "clan_settings",
+        "heading",
+    ]
+    for name in button_names:
+        if menu_buttons.get(name):
+            menu_buttons[name].kill()
 
     # menu buttons are used very often, so they are generated here.
     menu_buttons = dict()
@@ -140,6 +156,7 @@ def rebuild_menu_buttons():
         starting_height=5,
         anchors={"left": "left", "left_target": prev_element},
     )
+    menu_buttons["events"].change_layer(menu_buttons["dens"].get_starting_height() + 5)
     menu_buttons["cats"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((-46, 60), (58, 30))),
         "screens.core.cat_list",
@@ -222,17 +239,27 @@ def rebuild_menu_buttons():
         },
     )
     del heading_rect
+    rebuild_moons_n_seasons()
+
+
+def rebuild_moons_n_seasons(visible=False):
+    global menu_buttons
+    names = ["moons_n_seasons", "moons_n_seasons_arrow"]
+    for name in names:
+        if menu_buttons.get(name):
+            menu_buttons[name].kill()
+
     menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
-        ui_scale(pygame.Rect((25, 60), (153, 75))),
-        visible=False,
+        ui_scale(pygame.Rect((25, 95), (153, 75))),
+        visible=visible,
         allow_scroll_x=False,
         manager=MANAGER,
         starting_height=5,
     )
     menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
-        ui_scale(pygame.Rect((174, 80), (22, 34))),
+        ui_scale(pygame.Rect((71, 115), (22, 34))),
         "",
-        visible=False,
+        visible=visible,
         manager=MANAGER,
         object_id="#arrow_mns_button",
         starting_height=5,

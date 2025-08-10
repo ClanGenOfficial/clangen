@@ -40,7 +40,7 @@ from scripts.game_structure.game.switches import (
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
-from scripts.screens.screens_core.screens_core import rebuild_menu_buttons
+from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 from scripts.utility import (
     get_current_season,
     clan_symbol_sprite,
@@ -151,7 +151,7 @@ class Clan:
         if self_run_init_functions:
             self.post_initialization_functions()
 
-        rebuild_menu_buttons()
+        rebuild_top_menu_buttons()
 
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"

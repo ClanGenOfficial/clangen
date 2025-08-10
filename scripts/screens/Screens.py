@@ -27,6 +27,10 @@ from scripts.game_structure.screen_settings import (
     screen,
 )
 from scripts.game_structure.ui_elements import UIImageButton
+from scripts.screens.screens_core.screens_core import (
+    rebuild_moons_n_seasons,
+    menu_buttons,
+)
 from scripts.ui.windows.freshkill import FreshkillManagement
 from scripts.ui.windows.save_check import SaveCheck
 from scripts.ui.windows.event_loading import EventLoading
@@ -282,6 +286,7 @@ class Screens:
         """This is a short-up to deal with menu button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
         if event.ui_element == Screens.menu_buttons["events"]:
+            self.top_bar_button_flip_enable(Screens.menu_buttons["events"])
             self.change_screen(GameScreen.EVENTS)
         # supply dropdown
         # freshkill popup
@@ -334,8 +339,10 @@ class Screens:
         elif event.ui_element == Screens.menu_buttons["camp"]:
             self.change_screen(GameScreen.CAMP)
         elif event.ui_element == Screens.menu_buttons["cats"]:
+            self.top_bar_button_flip_enable(Screens.menu_buttons["cats"])
             self.change_screen(GameScreen.LIST)
         elif event.ui_element == Screens.menu_buttons["patrols"]:
+            self.top_bar_button_flip_enable(Screens.menu_buttons["patrols"])
             self.change_screen(GameScreen.PATROL)
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
             SaveCheck(
@@ -353,6 +360,15 @@ class Screens:
                 not switch_get_value(Switch.moon_and_seasons_open),
             )
             self.update_moon_and_season()
+
+    @staticmethod
+    def top_bar_button_flip_enable(disable):
+        top_bar = ["events", "cats", "patrols"]
+        for name in top_bar:
+            if disable == Screens.menu_buttons[name]:
+                Screens.menu_buttons[name].disable()
+            else:
+                Screens.menu_buttons[name].enable()
 
     @classmethod
     def update_heading_text(cls, text, text_kwargs=None):
@@ -385,17 +401,8 @@ class Screens:
     @classmethod
     def open_moon_and_season(cls):
         """Opens the moons and seasons widget."""
-        cls.menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
-            ui_scale(pygame.Rect((174, 80), (22, 34))),
-            "",
-            manager=MANAGER,
-            object_id="#arrow_mns_button",
-        )
-        cls.menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((25, 60), (153, 75))),
-            allow_scroll_x=False,
-            manager=MANAGER,
-        )
+        rebuild_moons_n_seasons(visible=True)
+
         cls.moons_n_seasons_bg = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (153, 75))),
             "",
@@ -450,19 +457,7 @@ class Screens:
     @classmethod
     def close_moon_and_season(cls):
         """Closes the moons and seasons widget."""
-        cls.menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
-            ui_scale(pygame.Rect((71, 80), (22, 34))),
-            "",
-            object_id="#arrow_mns_closed_button",
-        )
-        if cls.name == GameScreen.EVENTS:
-            cls.menu_buttons["moons_n_seasons_arrow"].kill()
-
-        cls.menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((25, 60), (50, 75))),
-            allow_scroll_x=False,
-            manager=MANAGER,
-        )
+        rebuild_moons_n_seasons(visible=True)
         cls.moons_n_seasons_bg = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (50, 75))),
             "",
@@ -718,7 +713,7 @@ class Screens:
         return {
             "heading": scripts.screens.screens_core.screens_core.menu_buttons[
                 "heading"
-            ].html_text
+            ].text
         }
 
     def display_change_load(self, variable_dict: Dict):
