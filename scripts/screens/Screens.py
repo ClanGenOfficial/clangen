@@ -10,6 +10,7 @@ import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
+from scripts.clan_resources.freshkill import FreshkillPile
 from scripts.game_structure import constants
 from scripts.cat.enums import CatGroup
 from scripts.game_structure.audio import music_manager
@@ -26,6 +27,7 @@ from scripts.game_structure.screen_settings import (
     screen,
 )
 from scripts.game_structure.ui_elements import UIImageButton
+from scripts.ui.windows.freshkill import FreshkillManagement
 from scripts.ui.windows.save_check import SaveCheck
 from scripts.ui.windows.event_loading import EventLoading
 from scripts.screens.enums import GameScreen
@@ -282,6 +284,7 @@ class Screens:
         if event.ui_element == Screens.menu_buttons["events"]:
             self.change_screen(GameScreen.EVENTS)
         # supply dropdown
+        # freshkill popup
         elif (
             event.ui_element
             == Screens.menu_buttons["supplies"].child_button_dicts[
@@ -289,14 +292,13 @@ class Screens:
             ]
         ):
             Screens.menu_buttons["supplies"].close()
-            # freshkill popup
-            pass
+            FreshkillManagement()
+        # herb popup
         elif (
             event.ui_element
             == Screens.menu_buttons["supplies"].child_button_dicts["screens.core.herbs"]
         ):
             Screens.menu_buttons["supplies"].close()
-            # herb popup
             pass
         # den dropdown
         elif (

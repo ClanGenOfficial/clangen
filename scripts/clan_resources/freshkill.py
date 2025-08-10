@@ -193,9 +193,10 @@ class FreshkillPile:
                 event_list.append(i18n.t("hardcoded.expired_prey", count=amount))
         self.total_amount = sum(self.pile.values())
         value_diff = self.total_amount
-        self.already_fed = []
-        self.feed_cats(living_cats)
-        self.already_fed = []
+        if get_clan_setting("auto_feed"):
+            self.already_fed = []
+            self.feed_cats(living_cats)
+            self.already_fed = []
         value_diff -= sum(self.pile.values())
         event_list.append(i18n.t("hardcoded.consumed_prey", count=value_diff))
         self._update_needed_food(living_cats)
@@ -625,16 +626,23 @@ class FreshkillPile:
             living_cats : list
                 the list of the current living cats, where the nutrition should be stored
         """
-        old_nutrition_info = deepcopy(self.nutrition_info)
-        self.nutrition_info = {}
         queen_dict, kits = get_alive_clan_queens(self.living_cats)
 
+        # removing unnecessary cats
+        remove = []
+        for cat_id in self.nutrition_info:
+            if not Cat.fetch_cat(cat_id).status.alive_in_player_clan:
+                remove.append(cat_id)
+
+        for cat_id in remove:
+            self.nutrition_info.pop(cat_id)
+
+        # update remaining cat's max scores
         for cat in living_cats:
             if str(cat.status.rank) not in PREY_REQUIREMENT:
                 continue
             # update the nutrition_info
-            if cat.ID in old_nutrition_info:
-                self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID]
+            if cat.ID in self.nutrition_info:
                 factor = 3
                 status_ = str(cat.status.rank)
                 if cat.status.rank.is_baby() or (

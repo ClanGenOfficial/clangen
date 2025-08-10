@@ -22,9 +22,19 @@ def load_clan_settings():
         ) as write_file:
             _load_settings = ujson.loads(write_file.read())
 
+        # creating a copy that we can iterate through while modifying the original dict
+        _load_copy = _load_settings.copy()
+        for key, value in _load_copy.items():
+            # modifying outdated keys to utilize updated keys
+            if key in _old_save_conversion:
+                _load_settings[_old_save_conversion[key]] = value
+                _load_settings.pop(key)
+
+        # loading settings from converted dict
         for key, value in _load_settings.items():
             if key in clan_settings:
                 clan_settings[key] = value
+
     # if settings files does not exist, default has been loaded by __init__
 
 
@@ -75,6 +85,9 @@ def reset_loaded_clan_settings():
 clan_settings = {}
 with open("resources/clansettings.json", "r", encoding="utf-8") as read_file:
     _settings = ujson.loads(read_file.read())
+
+with open("resources/clansettings_conversion.json", "r", encoding="utf-8") as read_file:
+    _old_save_conversion = ujson.loads(read_file.read())
 
 all_settings = [
     _settings["general"],

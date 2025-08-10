@@ -1,0 +1,9 @@
+{
+    "by-status": "low_rank",
+    "younger first": "youngest_first",
+    "less nutrition first": "hungriest_first",
+    "hunter first": "hunter_first",
+    "sick/injured first": "sick_injured_first",
+    "more experience first": "experienced_first",
+    "ration prey": "ration_prey"
+}

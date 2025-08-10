@@ -164,7 +164,6 @@ class MakeClanScreen(Screens):
             starting_height=1,
         )
         create_example_cats()
-        # self.worldseed = randrange(10000)
         self.open_game_mode()
 
     def handle_event(self, event):
