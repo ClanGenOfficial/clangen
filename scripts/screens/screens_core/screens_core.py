@@ -48,12 +48,57 @@ def rebuild_core(*, should_rebuild_bgs=True):
     global version_number
     global dev_watermark
 
+    rebuild_menu_buttons()
+
+    rebuild_mute("default")
+
+    version_number = pygame_gui.elements.UILabel(
+        ui_scale(pygame.Rect((50, 50), (-1, -1))),
+        get_version_info().version_number[0:8],
+        object_id=get_text_box_theme(),
+        anchors={"bottom": "bottom", "right": "right"},
+    )
+    # Adjust position
+    version_number.set_relative_position(
+        ui_scale_offset(
+            (
+                800 - version_number.get_relative_rect()[2],
+                700 - version_number.get_relative_rect()[3],
+            )
+        )
+    )
+
+    if get_version_info().is_source_build or get_version_info().is_dev():
+        dev_watermark = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((525, 660), (300, 50))),
+            "screens.core.dev_watermark",
+            object_id="#dev_watermark",
+            text_kwargs={"ver": version_number.text},
+        )
+        version_number.kill()
+        version_number = None
+
+    if should_rebuild_bgs:
+        rebuild_bgs()
+
+
+def rebuild_menu_buttons():
+    global menu_buttons
+
+    if game.clan:
+        mode = game.clan.game_mode
+    else:
+        mode = None
+
     # menu buttons are used very often, so they are generated here.
     menu_buttons = dict()
-
     # they have to be added individually as some of them rely on others in anchors
+    if mode != "classic":
+        x_pos = 217
+    else:
+        x_pos = 261
     menu_buttons["events"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((217, 60), (82, 30))),
+        ui_scale(pygame.Rect((x_pos, 60), (82, 30))),
         "screens.core.events",
         get_button_dict(ButtonStyles.MENU_LEFT, (82, 30)),
         visible=False,
@@ -61,17 +106,22 @@ def rebuild_core(*, should_rebuild_bgs=True):
         object_id=pygame_gui.core.ObjectID("#events_button", "@buttonstyles_menu_left"),
         starting_height=5,
     )
-    menu_buttons["supplies"] = UIDropDown(
-        relative_rect=ui_scale(pygame.Rect((0, 60), (88, 30))),
-        parent_text="screens.core.supplies",
-        item_list=["screens.core.freshkill", "screens.core.herbs"],
-        parent_style=ButtonStyles.MENU_MIDDLE,
-        disable_selection=False,
-        visible=False,
-        manager=MANAGER,
-        starting_height=5,
-        anchors={"left": "left", "left_target": menu_buttons["events"]},
-    )
+    if mode != "classic":
+        menu_buttons["supplies"] = UIDropDown(
+            relative_rect=ui_scale(pygame.Rect((0, 60), (88, 30))),
+            parent_text="screens.core.supplies",
+            item_list=["screens.core.freshkill", "screens.core.herbs"],
+            parent_style=ButtonStyles.MENU_MIDDLE,
+            disable_selection=False,
+            visible=False,
+            manager=MANAGER,
+            starting_height=5,
+            anchors={"left": "left", "left_target": menu_buttons["events"]},
+        )
+        prev_element = menu_buttons["supplies"]
+    else:
+        prev_element = menu_buttons["events"]
+
     menu_buttons["dens"] = UIDropDown(
         ui_scale(pygame.Rect((0, 60), (58, 30))),
         "screens.core.dens",
@@ -88,7 +138,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         manager=MANAGER,
         object_id="@buttonstyles_menu_middle",
         starting_height=5,
-        anchors={"left": "left", "left_target": menu_buttons["supplies"]},
+        anchors={"left": "left", "left_target": prev_element},
     )
     menu_buttons["cats"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((-46, 60), (58, 30))),
@@ -141,7 +191,6 @@ def rebuild_core(*, should_rebuild_bgs=True):
         starting_height=5,
         anchors={"top": "top", "right": "right"},
     )
-
     # used so we can anchor to the right with numbers that make sense
     scale_rect = ui_scale(pygame.Rect((0, 0), (125, 30)))
     scale_rect.topright = ui_scale_offset((-25, 5))
@@ -156,7 +205,6 @@ def rebuild_core(*, should_rebuild_bgs=True):
         anchors={"top_target": menu_buttons["allegiances"], "right": "right"},
     )
     del scale_rect
-
     heading_rect = ui_scale(pygame.Rect((0, 0), (210, 35)))
     heading_rect.bottomleft = ui_scale_offset((0, 0))  # yes, this is intentional.
     menu_buttons["heading"] = UISurfaceImageButton(
@@ -174,7 +222,6 @@ def rebuild_core(*, should_rebuild_bgs=True):
         },
     )
     del heading_rect
-
     menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
         ui_scale(pygame.Rect((25, 60), (153, 75))),
         visible=False,
@@ -190,37 +237,6 @@ def rebuild_core(*, should_rebuild_bgs=True):
         object_id="#arrow_mns_button",
         starting_height=5,
     )
-
-    rebuild_mute("default")
-
-    version_number = pygame_gui.elements.UILabel(
-        ui_scale(pygame.Rect((50, 50), (-1, -1))),
-        get_version_info().version_number[0:8],
-        object_id=get_text_box_theme(),
-        anchors={"bottom": "bottom", "right": "right"},
-    )
-    # Adjust position
-    version_number.set_relative_position(
-        ui_scale_offset(
-            (
-                800 - version_number.get_relative_rect()[2],
-                700 - version_number.get_relative_rect()[3],
-            )
-        )
-    )
-
-    if get_version_info().is_source_build or get_version_info().is_dev():
-        dev_watermark = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((525, 660), (300, 50))),
-            "screens.core.dev_watermark",
-            object_id="#dev_watermark",
-            text_kwargs={"ver": version_number.text},
-        )
-        version_number.kill()
-        version_number = None
-
-    if should_rebuild_bgs:
-        rebuild_bgs()
 
 
 def rebuild_mute(location: str):
