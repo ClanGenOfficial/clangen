@@ -291,14 +291,12 @@ class Screens:
                 "screens.core.freshkill"
             ]
         ):
-            Screens.menu_buttons["supplies"].close()
             FreshkillManagement()
         # herb popup
         elif (
             event.ui_element
             == Screens.menu_buttons["supplies"].child_button_dicts["screens.core.herbs"]
         ):
-            Screens.menu_buttons["supplies"].close()
             pass
         # den dropdown
         elif (

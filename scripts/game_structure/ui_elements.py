@@ -1646,6 +1646,13 @@ class UICatListDisplay(UIContainer):
             box.set_container(self)
             box.rebuild()
 
+    def clear_cache(self):
+        """
+        Clears the cached grid. This is only necessary for cat lists being displayed on popup windows. I'm not sure *why*, but the cache starts causing crashes. I recommend that we try to keep cat list displays on popup windows to a minimum to avoid lag and, when possible, hide & show the list instead of killing and recreating.
+        """
+
+        self._generate_grid_cached.cache_clear()
+
     @staticmethod
     @lru_cache(maxsize=5)
     def _generate_grid_cached(cell_width, cell_height, rows, columns, manager):
@@ -1875,6 +1882,15 @@ class UICatListDisplay(UIContainer):
         for box in self.selection_boxes.values():
             box.hide()
         self.selected.clear()
+
+    def show(self):
+        super().show()
+
+        if self.allow_selection:
+            for sprite, button in self.cat_sprites.items():
+                cat_id = button.return_cat_id()
+                if cat_id not in self.selected:
+                    self.selection_boxes[sprite].hide()
 
 
 class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):

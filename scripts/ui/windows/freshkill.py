@@ -125,26 +125,32 @@ class FreshkillManagement(GameWindow):
         self.open_view = "feed"
 
         # CAT LIST
-        self.feed_view_elements["previous_page_button"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((20, 160), (34, 34))),
-            Icon.ARROW_LEFT,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
-            container=self,
-            manager=MANAGER,
-        )
-        scale_rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
-        scale_rect.topright = ui_scale_offset((-20, 160))
-        self.feed_view_elements["next_page_button"] = UISurfaceImageButton(
-            scale_rect,
-            Icon.ARROW_RIGHT,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
-            anchors={"top": "top", "right": "right"},
-            container=self,
-            manager=MANAGER,
-        )
-        self.update_cats_list()
+        if self.feed_view_elements.get("cat_list"):
+            self.feed_view_elements["cat_list"].show()
+            self.feed_view_elements["previous_page_button"].show()
+            self.feed_view_elements["next_page_button"].show()
+            self.feed_view_elements["status_text"].show()
+        else:
+            self.feed_view_elements["previous_page_button"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((20, 160), (34, 34))),
+                Icon.ARROW_LEFT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
+                container=self,
+                manager=MANAGER,
+            )
+            scale_rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
+            scale_rect.topright = ui_scale_offset((-20, 160))
+            self.feed_view_elements["next_page_button"] = UISurfaceImageButton(
+                scale_rect,
+                Icon.ARROW_RIGHT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
+                anchors={"top": "top", "right": "right"},
+                container=self,
+                manager=MANAGER,
+            )
+            self.update_cats_list()
 
         # BOTTOM BUTTONS
         scale_rect = ui_scale(pygame.Rect((0, 0), (85, 30)))
@@ -314,6 +320,8 @@ class FreshkillManagement(GameWindow):
             container=self,
             manager=MANAGER,
         )
+        self.tactic_view_elements["feeding_order_text"].disable()
+
         scale_rect = ui_scale(pygame.Rect((0, 0), (225, -1)))
         scale_rect.topright = ui_scale_offset((-25, 15))
         self.tactic_view_elements["priority_text"] = UITextBoxTweaked(
@@ -324,6 +332,7 @@ class FreshkillManagement(GameWindow):
             container=self,
             manager=MANAGER,
         )
+        self.tactic_view_elements["priority_text"].disable()
 
         prev_element = self.tactic_view_elements["feeding_order_text"]
         for order in self.possible_orders:
@@ -385,8 +394,19 @@ class FreshkillManagement(GameWindow):
         """
         if self.log:
             self.log.kill()
-        for ele in self.feed_view_elements.values():
-            ele.kill()
+        for name, ele in self.feed_view_elements.items():
+            if name in [
+                "cat_list",
+                "previous_page_button",
+                "next_page_button",
+                "status_text",
+            ]:
+                self.feed_view_elements["cat_list"].hide()
+                self.feed_view_elements["previous_page_button"].hide()
+                self.feed_view_elements["next_page_button"].hide()
+                self.feed_view_elements["status_text"].hide()
+            else:
+                ele.kill()
         for ele in self.tactic_view_elements.values():
             ele.kill()
 
@@ -410,6 +430,8 @@ class FreshkillManagement(GameWindow):
             # CHANGE TACTICS
             elif self.open_view == "tactic":
                 self.handle_tactic_events(event)
+
+        super().process_event(event)
 
     def handle_tactic_events(self, event):
         """
@@ -449,12 +471,13 @@ class FreshkillManagement(GameWindow):
         """
         if event.ui_element == self.feed_view_elements.get("feed_all"):
             self.handle_feeding(self.low_nutrition_cats)
+            self.feed_view_elements["cat_list"].clear_cache()
             self.update_cats_list()
         elif event.ui_element == self.feed_view_elements.get("feed_selected"):
             self.handle_feeding(
                 [Cat.fetch_cat(i) for i in self.feed_view_elements["cat_list"].selected]
             )
-            self.feed_view_elements["cat_list"].reset_selection()
+            self.feed_view_elements["cat_list"].clear_cache()
             self.update_cats_list()
         # RATION AND AUTOFEED
         elif event.ui_element == self.feed_view_elements.get("ration_prey"):
@@ -483,3 +506,7 @@ class FreshkillManagement(GameWindow):
         """
         button.uncheck() if button.checked else button.check()
         switch_clan_setting(setting)
+
+    def kill(self):
+        self.feed_view_elements["cat_list"].clear_cache()
+        super().kill()
