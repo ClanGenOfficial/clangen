@@ -135,7 +135,7 @@ class FreshkillPileTest(unittest.TestCase):
         )
 
         # when
-        freshkill_pile.tactic_younger_first(
+        freshkill_pile.tactic_youngest_first(
             [oldest_warrior, middle_warrior, youngest_warrior]
         )
 
@@ -187,7 +187,7 @@ class FreshkillPileTest(unittest.TestCase):
         # when
         living_cats = [highest_warrior, middle_warrior, lowest_warrior]
         freshkill_pile.living_cats = living_cats
-        freshkill_pile.tactic_less_nutrition_first(living_cats)
+        freshkill_pile.tactic_hungry_first(living_cats)
 
         # then
         self.assertEqual(freshkill_pile.total_amount, 0)
@@ -224,7 +224,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
 
         # when
-        freshkill_pile.tactic_sick_injured_first([healthy_cat, sick_cat, injured_cat])
+        freshkill_pile.priority_sick_injured_first([healthy_cat, sick_cat, injured_cat])
 
         # then
         self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
@@ -259,7 +259,7 @@ class FreshkillPileTest(unittest.TestCase):
         )
 
         # when
-        freshkill_pile.tactic_more_experience_first(
+        freshkill_pile.tactic_experience_first(
             [lowest_warrior, middle_warrior, highest_warrior]
         )
 
@@ -305,7 +305,7 @@ class FreshkillPileTest(unittest.TestCase):
 
         # when
         living_cats = [hunter_warrior, no_hunter_warrior, best_hunter_warrior]
-        freshkill_pile.tactic_hunter_first(living_cats)
+        freshkill_pile.priority_hunter_first(living_cats)
 
         # then
         # this hunter should be fed completely
@@ -358,7 +358,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(
             [mother.ID], list(get_alive_clan_queens(living_cats)[0].keys())
         )
-        freshkill_pile.tactic_status(living_cats)
+        freshkill_pile.tactic_low_rank(living_cats)
 
         # then
         self.assertEqual(freshkill_pile.nutrition_info[kid.ID].percentage, 100)
@@ -419,7 +419,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
 
         # when
-        freshkill_pile.tactic_sick_injured_first([sick_cat, injured_cat, healthy_cat])
+        freshkill_pile.priority_sick_injured_first([sick_cat, injured_cat, healthy_cat])
 
         # then
         self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
