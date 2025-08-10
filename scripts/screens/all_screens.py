@@ -6,7 +6,6 @@ from .ChooseMateScreen import ChooseMateScreen
 from .ChooseMentorScreen import ChooseMentorScreen
 from .ClanScreen import ClanScreen
 from .ClanSettingsScreen import ClanSettingsScreen
-from .ClearingScreen import ClearingScreen
 from .EventEditScreen import EventEditScreen
 from .EventsScreen import EventsScreen
 from .FamilyTreeScreen import FamilyTreeScreen
@@ -60,7 +59,6 @@ class AllScreens:
     camp_screen = ClanScreen(GameScreen.CAMP)
     list_screen = ListScreen(GameScreen.LIST)
     med_den_screen = MedDenScreen(GameScreen.MED_DEN)
-    clearing_screen = ClearingScreen(GameScreen.CLEARING)
     warrior_den_screen = WarriorDenScreen(GameScreen.WARRIOR_DEN)
     leader_den_screen = LeaderDenScreen(GameScreen.LEADER_DEN)
 
@@ -98,7 +96,6 @@ class AllScreens:
         cls.camp_screen = ClanScreen(GameScreen.CAMP)
         cls.list_screen = ListScreen(GameScreen.LIST)
         cls.med_den_screen = MedDenScreen(GameScreen.MED_DEN)
-        cls.clearing_screen = ClearingScreen(GameScreen.CLEARING)
         cls.warrior_den_screen = WarriorDenScreen(GameScreen.WARRIOR_DEN)
         cls.leader_den_screen = LeaderDenScreen(GameScreen.LEADER_DEN)
 

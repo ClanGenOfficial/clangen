@@ -61,7 +61,7 @@ class FreshkillManagement(GameWindow):
         # TOP BUTTONS
         self.feed_cats = UISurfaceImageButton(
             ui_scale(pygame.Rect((121, 20), (105, 30))),
-            "screens.clearing.feed_cats",
+            "windows.feed_cats",
             get_button_dict(ButtonStyles.PROFILE_LEFT, (105, 30)),
             object_id="@buttonstyles_profile_left",
             manager=MANAGER,
@@ -69,7 +69,7 @@ class FreshkillManagement(GameWindow):
         )
         self.open_log = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 20), (65, 30))),
-            "screens.clearing.log",
+            "windows.log",
             get_button_dict(ButtonStyles.PROFILE_MIDDLE, (65, 30)),
             object_id="@buttonstyles_profile_middle",
             anchors={"left_target": self.feed_cats},
@@ -78,7 +78,7 @@ class FreshkillManagement(GameWindow):
         )
         self.change_tactics = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 20), (140, 30))),
-            "screens.clearing.change_tactics",
+            "windows.change_tactics",
             get_button_dict(ButtonStyles.PROFILE_RIGHT, (140, 30)),
             object_id="@buttonstyles_profile_right",
             manager=MANAGER,
@@ -96,7 +96,7 @@ class FreshkillManagement(GameWindow):
         """
         Returns the compiled help tooltip.
         """
-        help_output = i18n.t("screens.clearing.help_tooltip")
+        help_output = i18n.t("windows.help_tooltip")
         help_output += f"<br>"
         for rank in self.feeding_order:
             amount = self.prey_requirement[rank]
@@ -112,7 +112,7 @@ class FreshkillManagement(GameWindow):
                     start_int = amount.numerator - amount.denominator
                     amount = f"{start_int} {start_int}/{amount.denominator}"
 
-            help_output += f"<br><b>{rank}:</b> {i18n.t('screens.clearing.prey_count', count=count, amount=amount)}"
+            help_output += f"<br><b>{rank}:</b> {i18n.t('windows.prey_count', count=count, amount=amount)}"
         return help_output
 
     def create_feed_view(self):
@@ -157,7 +157,7 @@ class FreshkillManagement(GameWindow):
         scale_rect.bottomleft = ui_scale_offset((35, -20))
         self.feed_view_elements["feed_all"] = UISurfaceImageButton(
             scale_rect,
-            "screens.clearing.feed_all",
+            "windows.feed_all",
             get_button_dict(ButtonStyles.SQUOVAL, (85, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -168,7 +168,7 @@ class FreshkillManagement(GameWindow):
         scale_rect.bottomleft = ui_scale_offset((20, -20))
         self.feed_view_elements["feed_selected"] = UISurfaceImageButton(
             scale_rect,
-            "screens.clearing.feed_selected",
+            "windows.feed_selected",
             get_button_dict(ButtonStyles.SQUOVAL, (125, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -267,7 +267,7 @@ class FreshkillManagement(GameWindow):
         scale_rect.bottomleft = ui_scale_offset((0, -100))
         self.feed_view_elements["status_text"] = UITextBoxTweaked(
             i18n.t(
-                "screens.clearing.freshkill_pile_tooltip",
+                "windows.freshkill_pile_tooltip",
                 current_prey_amount=current_prey_amount,
                 needed_amount=needed_amount,
             ),
@@ -290,7 +290,7 @@ class FreshkillManagement(GameWindow):
 
         log_text = game.freshkill_event_list.copy()
         if not log_text:
-            log_text = [i18n.t("screens.clearing.log_empty")]
+            log_text = [i18n.t("windows.log_empty")]
         self.log = UITextBoxTweaked(
             f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
             ui_scale(pygame.Rect((25, 25), (500, 320))),
@@ -312,7 +312,7 @@ class FreshkillManagement(GameWindow):
         # TOP TEXT
         self.tactic_view_elements["feeding_order_text"] = UITextBoxTweaked(
             relative_rect=ui_scale(pygame.Rect((25, 15), (225, -1))),
-            html_text="screens.clearing.feeding_order",
+            html_text="windows.feeding_order",
             object_id="#text_box_30_horizcenter",
             anchors={
                 "top_target": self.feed_cats,
@@ -326,7 +326,7 @@ class FreshkillManagement(GameWindow):
         scale_rect.topright = ui_scale_offset((-25, 15))
         self.tactic_view_elements["priority_text"] = UITextBoxTweaked(
             relative_rect=scale_rect,
-            html_text="screens.clearing.priority",
+            html_text="windows.priority",
             object_id="#text_box_30_horizcenter",
             anchors={"top_target": self.feed_cats, "right": "right"},
             container=self,

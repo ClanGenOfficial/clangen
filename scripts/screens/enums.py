@@ -21,7 +21,6 @@ class GameScreen(StrEnum):
     LEADER_DEN = "leader_den_screen"
     MED_DEN = "med_den_screen"
     WARRIOR_DEN = "warrior_den_screen"
-    CLEARING = "clearing_screen"
     MEDIATION = "mediation_screen"
 
     PROFILE = "profile_screen"

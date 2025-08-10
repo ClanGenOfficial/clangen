@@ -286,7 +286,8 @@ class Screens:
         # supply dropdown
         # freshkill popup
         elif (
-            event.ui_element
+            Screens.menu_buttons.get("supplies")
+            and event.ui_element
             == Screens.menu_buttons["supplies"].child_button_dicts[
                 "screens.core.freshkill"
             ]
@@ -294,7 +295,8 @@ class Screens:
             FreshkillManagement()
         # herb popup
         elif (
-            event.ui_element
+            Screens.menu_buttons.get("supplies")
+            and event.ui_element
             == Screens.menu_buttons["supplies"].child_button_dicts["screens.core.herbs"]
         ):
             pass
