@@ -353,7 +353,7 @@ class EventsScreen(Screens):
         self.update_events_display()
 
         # Draw and disable the correct menu buttons.
-        self.set_disabled_menu_buttons(["events_screen"])
+        self.set_disabled_menu_buttons(["events"])
         self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_menu_buttons()
 

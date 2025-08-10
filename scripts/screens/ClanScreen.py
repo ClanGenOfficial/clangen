@@ -127,6 +127,7 @@ class ClanScreen(Screens):
 
         self.choose_cat_positions()
 
+        Screens.menu_buttons["camp"].hide()
         self.set_disabled_menu_buttons(["camp_screen"])
         self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_menu_buttons()
@@ -243,8 +244,7 @@ class ClanScreen(Screens):
             get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
-        if game.clan.game_mode == "classic":
-            self.clearing_label.disable()
+        self.clearing_label.disable()
 
         self.app_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["apprentice den"], (147, 28))),
@@ -351,6 +351,7 @@ class ClanScreen(Screens):
 
         # reset save status
         switch_set_value(Switch.saved_clan, False)
+        Screens.menu_buttons["camp"].show()
 
     def update_camp_bg(self):
         light_dark = "dark" if game_setting_get("dark mode") else "light"

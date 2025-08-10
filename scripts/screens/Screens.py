@@ -286,9 +286,14 @@ class Screens:
         """This is a short-up to deal with menu button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
         if event.ui_element == Screens.menu_buttons["events"]:
-            self.top_bar_button_flip_enable(Screens.menu_buttons["events"])
             self.change_screen(GameScreen.EVENTS)
         # supply dropdown
+        elif (
+            Screens.menu_buttons.get("supplies")
+            and event.ui_element == Screens.menu_buttons["supplies"].parent_button
+        ):
+            if Screens.menu_buttons["dens"].is_open:
+                Screens.menu_buttons["dens"].close()
         # freshkill popup
         elif (
             Screens.menu_buttons.get("supplies")
@@ -307,13 +312,19 @@ class Screens:
             pass
         # den dropdown
         elif (
+            Screens.menu_buttons.get("supplies")
+            and event.ui_element == Screens.menu_buttons["dens"].parent_button
+        ):
+            if Screens.menu_buttons["supplies"].is_open:
+                Screens.menu_buttons["supplies"].close()
+        elif (
             event.ui_element
             == Screens.menu_buttons["dens"].child_button_dicts[
                 "screens.core.leader_den"
             ]
         ):
             Screens.menu_buttons["dens"].close()
-            self.change_screen("leader den screen")
+            self.change_screen(GameScreen.LEADER_DEN)
         elif (
             event.ui_element
             == Screens.menu_buttons["dens"].child_button_dicts[
@@ -321,7 +332,7 @@ class Screens:
             ]
         ):
             Screens.menu_buttons["dens"].close()
-            self.change_screen("med den screen")
+            self.change_screen(GameScreen.MED_DEN)
         elif (
             event.ui_element
             == Screens.menu_buttons["dens"].child_button_dicts[
@@ -329,20 +340,12 @@ class Screens:
             ]
         ):
             Screens.menu_buttons["dens"].close()
-            self.change_screen("warrior den screen")
-        elif (
-            event.ui_element
-            == Screens.menu_buttons["dens"].child_button_dicts["screens.core.clearing"]
-        ):
-            Screens.menu_buttons["dens"].close()
-            self.change_screen("clearing screen")
+            self.change_screen(GameScreen.WARRIOR_DEN)
         elif event.ui_element == Screens.menu_buttons["camp"]:
             self.change_screen(GameScreen.CAMP)
         elif event.ui_element == Screens.menu_buttons["cats"]:
-            self.top_bar_button_flip_enable(Screens.menu_buttons["cats"])
             self.change_screen(GameScreen.LIST)
         elif event.ui_element == Screens.menu_buttons["patrols"]:
-            self.top_bar_button_flip_enable(Screens.menu_buttons["patrols"])
             self.change_screen(GameScreen.PATROL)
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
             SaveCheck(
@@ -360,15 +363,6 @@ class Screens:
                 not switch_get_value(Switch.moon_and_seasons_open),
             )
             self.update_moon_and_season()
-
-    @staticmethod
-    def top_bar_button_flip_enable(disable):
-        top_bar = ["events", "cats", "patrols"]
-        for name in top_bar:
-            if disable == Screens.menu_buttons[name]:
-                Screens.menu_buttons[name].disable()
-            else:
-                Screens.menu_buttons[name].enable()
 
     @classmethod
     def update_heading_text(cls, text, text_kwargs=None):
