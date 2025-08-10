@@ -32,6 +32,7 @@ from scripts.screens.screens_core.screens_core import (
     menu_buttons,
 )
 from scripts.ui.windows.freshkill import FreshkillManagement
+from scripts.ui.windows.herbs import HerbManagement
 from scripts.ui.windows.save_check import SaveCheck
 from scripts.ui.windows.event_loading import EventLoading
 from scripts.screens.enums import GameScreen
@@ -309,7 +310,7 @@ class Screens:
             and event.ui_element
             == Screens.menu_buttons["supplies"].child_button_dicts["screens.core.herbs"]
         ):
-            pass
+            HerbManagement()
         # den dropdown
         elif (
             Screens.menu_buttons.get("supplies")
@@ -395,7 +396,11 @@ class Screens:
     @classmethod
     def open_moon_and_season(cls):
         """Opens the moons and seasons widget."""
-        rebuild_moons_n_seasons(visible=True)
+        rebuild_moons_n_seasons(
+            visible=True,
+            open=True,
+            on_camp=switch_get_value(Switch.cur_screen) == GameScreen.CAMP,
+        )
 
         cls.moons_n_seasons_bg = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (153, 75))),
@@ -451,7 +456,10 @@ class Screens:
     @classmethod
     def close_moon_and_season(cls):
         """Closes the moons and seasons widget."""
-        rebuild_moons_n_seasons(visible=True)
+        rebuild_moons_n_seasons(
+            visible=True, on_camp=switch_get_value(Switch.cur_screen) == GameScreen.CAMP
+        )
+
         cls.moons_n_seasons_bg = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (50, 75))),
             "",

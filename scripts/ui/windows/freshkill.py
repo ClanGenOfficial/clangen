@@ -96,7 +96,7 @@ class FreshkillManagement(GameWindow):
         """
         Returns the compiled help tooltip.
         """
-        help_output = i18n.t("windows.help_tooltip")
+        help_output = i18n.t("windows.freshkill_help_tooltip")
         help_output += f"<br>"
         for rank in self.feeding_order:
             amount = self.prey_requirement[rank]

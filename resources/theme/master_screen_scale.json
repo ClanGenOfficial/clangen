@@ -264,6 +264,7 @@
     "#kill_cat_window": {"prototype": "#window_base_theme"},
     "#confirm_display_changes_window": {"prototype": "#window_base_theme"},
     "#freshkill_management_window": {"prototype": "#window_base_theme"},
+    "#herb_management_window": {"prototype": "#window_base_theme"},
     "text_entry_line": {
         "font": {"size": "15", "name": "notosans"},
         "colours": {

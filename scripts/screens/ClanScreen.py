@@ -26,6 +26,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from .enums import GameScreen
+from .screens_core.screens_core import rebuild_moons_n_seasons
 from ..cat.save_load import save_cats
 from ..clan_package.settings import get_clan_setting
 from ..clan_package.settings.clan_settings import switch_clan_setting
@@ -127,10 +128,10 @@ class ClanScreen(Screens):
 
         self.choose_cat_positions()
 
-        Screens.menu_buttons["camp"].hide()
         self.set_disabled_menu_buttons(["camp_screen"])
         self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_menu_buttons()
+        Screens.menu_buttons["camp"].hide()
 
         # Creates and places the cat sprites.
         self.cat_buttons = []  # To contain all the buttons.
@@ -352,6 +353,8 @@ class ClanScreen(Screens):
         # reset save status
         switch_set_value(Switch.saved_clan, False)
         Screens.menu_buttons["camp"].show()
+        if get_clan_setting("moons_n_seasons"):
+            rebuild_moons_n_seasons(visible=True, on_camp=False)
 
     def update_camp_bg(self):
         light_dark = "dark" if game_setting_get("dark mode") else "light"

@@ -241,26 +241,41 @@ def rebuild_top_menu_buttons():
     rebuild_moons_n_seasons()
 
 
-def rebuild_moons_n_seasons(visible=False):
+def rebuild_moons_n_seasons(visible=False, on_camp=False, open=False):
     global menu_buttons
     names = ["moons_n_seasons", "moons_n_seasons_arrow"]
     for name in names:
         if menu_buttons.get(name):
             menu_buttons[name].kill()
 
+    if on_camp:
+        y_pos = 60
+        arrow_y_pos = 80
+    else:
+        y_pos = 95
+        arrow_y_pos = 115
+
     menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
-        ui_scale(pygame.Rect((25, 95), (153, 75))),
+        ui_scale(pygame.Rect((25, y_pos), (153, 75))),
         visible=visible,
         allow_scroll_x=False,
         manager=MANAGER,
         starting_height=5,
     )
+
+    if open:
+        arrow_x_pos = 174
+        button_id = "#arrow_mns_button"
+    else:
+        arrow_x_pos = 71
+        button_id = "#arrow_mns_closed_button"
+
     menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
-        ui_scale(pygame.Rect((71, 115), (22, 34))),
+        ui_scale(pygame.Rect((arrow_x_pos, arrow_y_pos), (22, 34))),
         "",
         visible=visible,
         manager=MANAGER,
-        object_id="#arrow_mns_button",
+        object_id=button_id,
         starting_height=5,
     )
 
