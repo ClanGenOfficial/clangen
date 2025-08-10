@@ -89,7 +89,7 @@ class ClanScreen(Screens):
             if event.ui_element == self.med_den_label:
                 self.change_screen(GameScreen.MED_DEN)
             if event.ui_element == self.clearing_label:
-                self.change_screen(GameScreen.CLEARING)
+                self.change_screen(GameScreen.MEDIATION)
             if event.ui_element == self.warrior_den_label:
                 self.change_screen(GameScreen.WARRIOR_DEN)
             if event.ui_element == self.leader_den_label:
@@ -245,7 +245,6 @@ class ClanScreen(Screens):
             get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
-        self.clearing_label.disable()
 
         self.app_den_label = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["apprentice den"], (147, 28))),

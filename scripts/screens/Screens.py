@@ -342,6 +342,12 @@ class Screens:
         ):
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.WARRIOR_DEN)
+        elif (
+            event.ui_element
+            == Screens.menu_buttons["dens"].child_button_dicts["screens.core.clearing"]
+        ):
+            Screens.menu_buttons["dens"].close()
+            self.change_screen(GameScreen.MEDIATION)
         elif event.ui_element == Screens.menu_buttons["camp"]:
             self.change_screen(GameScreen.CAMP)
         elif event.ui_element == Screens.menu_buttons["cats"]:

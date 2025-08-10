@@ -54,7 +54,7 @@ class MediationScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen(GameScreen.PROFILE)
+                self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.last_med:
                 self.selected_mediator -= 1
                 self.update_mediator_info()
@@ -140,7 +140,9 @@ class MediationScreen(Screens):
         self.page = 1
 
         if self.mediators:
-            if Cat.fetch_cat(switch_get_value(Switch.cat)) in self.mediators:
+            if not switch_get_value(Switch.cat):
+                self.selected_mediator = 0
+            elif Cat.fetch_cat(switch_get_value(Switch.cat)) in self.mediators:
                 self.selected_mediator = self.mediators.index(
                     Cat.fetch_cat(switch_get_value(Switch.cat))
                 )
@@ -285,7 +287,8 @@ class MediationScreen(Screens):
         )
 
         self.update_buttons()
-        self.update_mediator_info()
+        if self.mediators:
+            self.update_mediator_info()
 
     def random_cat(self):
         if self.selected_cat_list():
