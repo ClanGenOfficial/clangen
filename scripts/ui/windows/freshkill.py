@@ -410,7 +410,7 @@ class FreshkillManagement(GameWindow):
         for ele in self.tactic_view_elements.values():
             ele.kill()
 
-    def process_event(self, event):
+    def process_event(self, event) -> bool:
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             # NAVIGATION
             if event.ui_element == self.feed_cats:

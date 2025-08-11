@@ -76,7 +76,7 @@ class HerbManagement(GameWindow):
             anchors={"bottom": "bottom", "centerx": "centerx"},
         )
 
-    def process_event(self, event):
+    def process_event(self, event) -> bool:
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             # NAVIGATION
             if event.ui_element == self.med_den_button:

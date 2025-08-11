@@ -49,22 +49,11 @@ class GameWindow(UIWindow):
         elif event.type == pygame.MOUSEBUTTONDOWN and not self.are_contents_hovered():
             self.kill()
 
-        if (
-            self.is_blocking
-            and event.type
-            in [
-                pygame_gui.UI_BUTTON_PRESSED,
-                pygame_gui.UI_BUTTON_START_PRESS,
-            ]
-            and event.ui_element not in self.window_element_container.elements
-        ):
-            return True
-
         return super().process_event(event)
 
     def are_contents_hovered(self) -> bool:
         any_hovered = super().are_contents_hovered()
-        if not any_hovered and not self.hovered:
+        if not any_hovered and not self.window_element_container.hovered:
             return any_hovered
         else:
             any_hovered = True
