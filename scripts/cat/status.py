@@ -217,7 +217,8 @@ class Status:
             self.standing_history = [
                 {"group": self.group, "standing": [CatStanding.MEMBER], "near": True}
             ]
-        else:
+
+        if not self.get_standing_with_group(CatGroup.PLAYER_CLAN):
             self.standing_history = [
                 {
                     "group": CatGroup.PLAYER_CLAN,
@@ -313,6 +314,20 @@ class Status:
         return (
             CatSocial.CLANCAT in self.all_socials and self.social != CatSocial.CLANCAT
         )
+
+    @property
+    def is_other_clancat(self) -> bool:
+        """
+        Returns True if the cat is a clancat but isn't part of the player_clan. If the cat is a dead clancat, returns True if their last living Clan wasn't the player_clan.
+        """
+        dead_player_clan = (
+            self.group
+            and self.group.is_afterlife()
+            and self.get_last_living_group() == CatGroup.PLAYER_CLAN
+        )
+        living_player_clan = self.alive_in_player_clan
+
+        return not dead_player_clan and not living_player_clan and self.is_clancat
 
     @property
     def is_leader(self) -> bool:
@@ -569,7 +584,7 @@ class Status:
         history.reverse()
 
         for entry in history:
-            if not entry["group"] or not entry["group"].is_afterlife():
+            if entry["group"] and not entry["group"].is_afterlife():
                 return entry["group"]
 
         return None

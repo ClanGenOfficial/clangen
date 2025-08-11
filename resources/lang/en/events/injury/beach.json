@@ -65,25 +65,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -10
             }
         ]
     },
@@ -310,21 +297,10 @@
                 ],
                 "values": [
                     "trust",
-                    "respect"
+                    "respect",
+                    "like"
                 ],
                 "amount": -5
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 5
             }
         ]
     },
@@ -386,7 +362,6 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
                     "comfort",
                     "respect"
                 ],
@@ -400,9 +375,9 @@
                     "r_c"
                 ],
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": -5
+                "amount": 5
             }
         ]
     },
@@ -464,7 +439,6 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
                     "comfort",
                     "respect"
                 ],
@@ -478,9 +452,9 @@
                     "r_c"
                 ],
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": -5
+                "amount": 5
             }
         ]
     },
@@ -497,7 +471,7 @@
             "clan:warrior"
         ],
         "frequency": 2,
-        "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it far, however, before {PRONOUN/m_c/poss} meager swimming skills fail {PRONOUN/m_c/object} and {PRONOUN/m_c/subject} nearly {VERB/m_c/drown/drowns} before an adult spots {PRONOUN/m_c/object} and comes to the rescue.",
+        "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} make it far, however, before {PRONOUN/m_c/poss} meager swimming skills fail {PRONOUN/m_c/object} and {PRONOUN/m_c/subject} nearly {VERB/m_c/drown/drowns} before an adult spots {PRONOUN/m_c/object} and comes to the rescue.",
         "m_c": {
             "status": [
                 "kitten"

@@ -23,6 +23,7 @@ nav:
         - Reference:
           - dev/writing/reference/index.md
           - dev/writing/reference/trait-dictionary.md
+          - dev/writing/reference/tag-lists.md
         - dev/writing/patrols.md
         - dev/writing/shortevents.md
         - dev/writing/future.md

@@ -1046,7 +1046,7 @@ class Condition_Events:
                     if cat.age == CatAge.ADOLESCENT:
                         event += i18n.t(
                             "hardcoded.condition_retire_adolescent_ceremony",
-                            clan=game.clan.name,
+                            clan=game.clan.displayname,
                             newname=cat.name.prefix + cat.name.suffix,
                         )
 

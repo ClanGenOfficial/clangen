@@ -41,22 +41,10 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "clan"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             }
@@ -191,9 +179,12 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
+                    "trust",
+                    "respect",
+                    "comfort",
+                    "like"
                 ],
-                "amount": 30
+                "amount": -15
             },
             {
                 "cats_from": [
@@ -206,7 +197,8 @@
                 "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             }
@@ -333,22 +325,10 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             }
@@ -401,22 +381,10 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             }
@@ -425,7 +393,7 @@
             {
                 "event_type": "death",
                 "pool": {
-                    "subtype": [
+                    "sub_type": [
                         "murder"
                     ],
                     "event_id": [],
@@ -509,7 +477,7 @@
                 "any"
             ],
             "relationship_status": [
-                "trust_20"
+                "listens_to"
             ]
         },
         "r_c": {
@@ -644,22 +612,10 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 15
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -15
             }
@@ -709,9 +665,9 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 20
+                "amount": -20
             },
             {
                 "cats_from": [
@@ -797,22 +753,10 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             }
@@ -870,22 +814,10 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             },
@@ -950,13 +882,81 @@
                 ],
                 "mutual": false,
                 "values": [
+                    "trust",
+                    "respect",
+                    "comfort",
+                    "like"
+                ],
+                "amount": -30
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_medcat1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 4,
+        "event_text": "r_c announces that mur_c's death was no accident. m_c confesses there and then, detailing the act as if mur_c was a piece of fresh-kill.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "trait": [
+                "arrogant",
+                "ambitious",
+                "bloodthirsty",
+                "bold",
+                "childish",
+                "confident",
+                "cunning",
+                "daring",
+                "fierce",
+                "flamboyant",
+                "oblivious",
+                "rebellious",
+                "shameless",
+                "strange",
+                "troublesome",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
                     "dislike"
                 ],
                 "amount": 30
             },
             {
                 "cats_from": [
-                    "r_c"
+                    "clan"
                 ],
                 "cats_to": [
                     "m_c"
@@ -968,6 +968,230 @@
                     "comfort"
                 ],
                 "amount": -30
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_remorse1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "m_c admits quietly to r_c that {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} temper on that terrible, fateful day... r_c's death was at {PRONOUN/m_c/poss} paws.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "careful",
+                "childish",
+                "compassionate",
+                "competitive",
+                "confident",
+                "faithful",
+                "nervous"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_accidentmurderreveal_failuretoact",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "m_c unexpectedly breaks mid-conversation, confessing in a rush that {PRONOUN/m_c/subject} could have saved mur_c... but {PRONOUN/m_c/subject} panicked. In that way, m_c believes, {PRONOUN/m_c/subject} murdered mur_c.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "careful",
+                "childish",
+                "cold",
+                "compassionate",
+                "competitive",
+                "confident",
+                "faithful",
+                "insecure",
+                "lonesome",
+                "loving",
+                "loyal",
+                "nervous",
+                "oblivious",
+                "playful",
+                "rebellious",
+                "responsible",
+                "righteous",
+                "sincere",
+                "strange",
+                "strict",
+                "thoughtful",
+                "wise"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_remorse2",
+        "location": [
+            "plains",
+            "mountainous",
+            "beach",
+            "forest_camp4"
+        ],
+        "season": [
+            "newleaf",
+            "greenleaf",
+            "leaf-fall"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 2,
+        "event_text": "m_c stands in the water for hours on end, but the flow cannot wash away mur_c's blood, nor the guilt coiled heavy in {PRONOUN/m_c/poss} chest.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "careful",
+                "childish",
+                "compassionate",
+                "competitive",
+                "confident",
+                "faithful",
+                "nervous"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_simple1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 4,
+        "event_text": "Previously believed to be a natural course of events, mur_c's death is now known for what it was: a murder at the paws of m_c.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
             }
         ]
     },
@@ -993,6 +1217,129 @@
                 "any"
             ]
         }
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_sc_forgives",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "r_c tells m_c that mur_c forgives {PRONOUN/m_c/object}. m_c's tearful admission of guilt finally makes the vision from StarClan make sense.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "age": ["any"],
+            "skill": ["STAR,1", "PROPHET,1"]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_murderreveal_ghostgossip1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "r_c yowls in shock, stammering that mur_c just appeared to {PRONOUN/r_c/object} and said {PRONOUN/mur_c/subject} {VERB/mur_c/were/was} murdered by m_c!",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "age": ["any"],
+            "skill": ["GHOST,1"]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "some_clan"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": -5,
+                "log": [
+                    "m_c was discomforted by a reminder of r_c's unnatural powers."
+                ]
+            }
+        ]
     },
     {
         "event_id": "multi_misc_any_collar_accessory1",
@@ -1303,7 +1650,7 @@
                 "mutual": false,
                 "values": [
                     "respect",
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -1491,24 +1838,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
-                    "trust"
+                    "trust",
+                    "like"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -1641,24 +1976,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
-                    "trust"
+                    "trust",
+                    "like"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -1732,7 +2055,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "respect"
                 ],
@@ -1783,7 +2106,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 5
@@ -1861,23 +2184,10 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -1954,7 +2264,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2004,8 +2314,8 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
-                    "platonic",
+                    "romance",
+                    "like",
                     "trust"
                 ],
                 "amount": 10
@@ -2117,7 +2427,7 @@
             "any"
         ],
         "tags": [
-            "romantic"
+            "romance"
         ],
         "frequency": 3,
         "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
@@ -2145,7 +2455,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2192,7 +2502,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 10
@@ -2238,7 +2548,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2292,7 +2602,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2346,7 +2656,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2404,7 +2714,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2458,7 +2768,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2559,7 +2869,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 20
             }
@@ -2599,7 +2909,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2640,7 +2950,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2683,7 +2993,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -2723,7 +3033,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2762,7 +3072,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2805,7 +3115,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -3033,7 +3343,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -3079,24 +3389,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -10
             }
         ]
     },
@@ -3142,24 +3439,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike",
-                    "jealousy"
+                    "like",
+                    "comfort",
+                    "respect"
                 ],
-                "amount": 20
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "platonic",
-                    "comfort"
-                ],
-                "amount": -5
+                "amount": -15
             }
         ]
     },
@@ -3293,7 +3577,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "respect",
                     "trust"
@@ -3333,7 +3617,7 @@
                 "mutual": true,
                 "values": [
                     "trust",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             }
@@ -3369,7 +3653,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -3407,7 +3691,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -3451,7 +3735,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3492,7 +3776,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3535,7 +3819,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3574,7 +3858,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3613,7 +3897,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3638,7 +3922,7 @@
             "accessory"
         ],
         "tags": [
-            "romantic"
+            "romance"
         ],
         "frequency": 4,
         "event_text": "m_c and r_c were chatting about their day and the chores when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
@@ -3673,7 +3957,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust",
                     "respect"
@@ -3778,7 +4062,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 20
@@ -3878,7 +4162,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             },
@@ -3943,7 +4227,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             },
@@ -4009,7 +4293,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             },
@@ -4075,9 +4359,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 10
+                "amount": -10
             }
         ],
         "outsider": {
@@ -4297,7 +4581,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "Someone has been hunting in c_n territory, a stranger without a Clan scent. c_n doesn't know their face, but they memorise their smell.",
+        "event_text": "Someone has been hunting in c_n territory, a stranger without a Clan scent. c_n doesn't know {PRONOUN/n_c:0/poss} face, but they memorize {PRONOUN/n_c:0/poss} smell.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -4759,9 +5043,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 15
+                "amount": -15
             }
         ],
         "outsider": {
@@ -4809,7 +5093,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             },
@@ -4963,7 +5247,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             },
@@ -5025,7 +5309,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             },
@@ -5104,9 +5388,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 10
+                "amount": -10
             }
         ]
     },
@@ -5261,22 +5545,10 @@
                 "mutual": false,
                 "values": [
                     "comfort",
-                    "trust"
+                    "trust",
+                    "like"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -5311,23 +5583,10 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -5350,7 +5609,7 @@
                 "mediator apprentice"
             ],
             "relationship_status": [
-                "dislike_20"
+                "dislikes"
             ],
             "trait": [
                 "cunning"
@@ -5388,21 +5647,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 10
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
                     "trust",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -10
             }
@@ -5631,24 +5878,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -5866,7 +6100,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -6030,9 +6264,9 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 10
+                "amount": -10
             }
         ]
     },
@@ -6404,7 +6638,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "respect",
                     "trust"
                 ],
@@ -7145,7 +7379,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7179,7 +7413,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7213,7 +7447,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7522,7 +7756,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7571,7 +7805,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7620,7 +7854,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7652,7 +7886,7 @@
             ],
             "relationship_status": [
                 "child/parent",
-                "dislike_20"
+                "dislikes"
             ]
         },
         "r_c": {
@@ -7670,7 +7904,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7683,11 +7917,11 @@
                 "cats_from": [
                     "r_c"
                 ],
-                "mutual": false,
+                "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": -10
+                "amount": 10
             }
         ]
     },
@@ -7731,7 +7965,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 10
@@ -7778,7 +8012,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 10
@@ -7830,7 +8064,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7845,7 +8079,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7900,7 +8134,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7944,7 +8178,7 @@
             ],
             "relationship_status": [
                 "siblings",
-                "platonic_50"
+                "cherishes"
             ]
         },
         "r_c": {
@@ -7952,7 +8186,7 @@
                 "warrior"
             ],
             "relationship_status": [
-                "platonic_50"
+                "cherishes"
             ]
         },
         "relationships": [
@@ -7965,7 +8199,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -8023,7 +8257,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -8038,7 +8272,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -8090,7 +8324,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -8105,7 +8339,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -8164,21 +8398,9 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 5
-            },
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -5
             },
@@ -8191,7 +8413,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -8266,11 +8488,11 @@
             "newleaf",
             "greenleaf"
         ],
-        "subtype": [
+        "sub_type": [
             "accessory"
         ],
         "tags": [
-            "romantic"
+            "romance"
         ],
         "frequency": 2,
         "event_text": "Flowers can be so pretty, even before they bloom, just like m_c. r_c blushes as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} m_c wear the acc_singular {PRONOUN/r_c/subject} got {PRONOUN/m_c/object}.",
@@ -8305,7 +8527,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -8354,9 +8576,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 20
+                "amount": -20
             }
         ]
     },
@@ -9071,11 +9293,10 @@
             ],
             "mutual": false,
             "values": [
-                "platonic",
+                "like",
                 "trust"
             ],
-            "amount": -5,
-            "log": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            "amount": -5
         },
         "other_clan": {
             "changed": 2
@@ -9121,11 +9342,13 @@
             ],
             "mutual": false,
             "values": [
-                "platonic",
+                "like",
                 "trust"
             ],
             "amount": -5,
-            "log": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            "log": {
+                "cats_from": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            }
         },
         "other_clan": {
             "changed": 2
