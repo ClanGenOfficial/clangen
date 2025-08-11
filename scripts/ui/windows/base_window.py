@@ -46,4 +46,7 @@ class GameWindow(UIWindow):
             if event.ui_element == self.back_button:
                 self.kill()
 
+        elif event.type == pygame.MOUSEBUTTONDOWN and not self.are_contents_hovered():
+            self.kill()
+
         return super().process_event(event)
