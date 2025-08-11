@@ -136,7 +136,6 @@ class Events:
             elif not cat.status.group or cat.status.is_other_clancat:
                 self.one_moon_outside_cat(cat, other_clan_cats)
 
-
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
 
