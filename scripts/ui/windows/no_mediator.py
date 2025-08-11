@@ -53,6 +53,5 @@ class NoMediators(GameWindow):
                 game.last_screen_forupdate = GameScreen.MEDIATION
                 game.switch_screens = True
                 self.kill()
-                self.fade.kill()
 
         return super().process_event(event)

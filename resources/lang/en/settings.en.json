@@ -79,7 +79,7 @@
         "sick_injured_first": "sick and injured first",
         "sick_injured_first_tooltip": "Any injured or sick (this includes starving and malnourished) cats are fed first to help them regain their strength, then the rest are fed according to chosen order.",
         "ration_prey": "ration prey",
-        "ration_prey_tooltip": "Healthy warriors will only eat half the food they need, even if there is enough for the Clan.",
+        "ration_prey_tooltip": "Healthy warriors will only eat half the food they need, even if there is enough for the Clan. This applies to automatic timeskip feedings and to manually feeding via this window.",
         "auto_feed": "auto feed",
         "auto_feed_tooltip": "Cats are automatically fed during timeskip in the order chosen via Tactics.",
         "business as usual": "Business as Usual",
