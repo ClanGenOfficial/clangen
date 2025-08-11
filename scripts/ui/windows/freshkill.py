@@ -110,7 +110,7 @@ class FreshkillManagement(GameWindow):
                     amount = amount.numerator
                 else:
                     start_int = amount.numerator - amount.denominator
-                    amount = f"{start_int} {start_int}/{amount.denominator}"
+                    amount = f"{start_int} & {start_int}/{amount.denominator}"
 
             help_output += f"<br><b>{rank}:</b> {i18n.t('windows.prey_count', count=count, amount=amount)}"
         return help_output
