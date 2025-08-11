@@ -2932,7 +2932,8 @@ def generate_sprite(
             """
             Helper function to set the appropriate lineart color for the living status of the cat
             :param sprite: lineart to recolor
-            :param color: color to apply
+            :param color: color to apply to all pixels
+            :param source: source surface of same size as sprite to use instead of color
             :return:
             """
             if not dead:

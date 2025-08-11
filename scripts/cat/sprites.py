@@ -167,8 +167,7 @@ class Sprites:
             "fademask",
             "fadestarclan",
             "fadedarkforest",
-            "fadeunknownresidence"
-            "symbols",
+            "fadeunknownresidence" "symbols",
         ):
             if (
                 "lineart" in x
@@ -846,39 +845,35 @@ class Sprites:
 
         order = ["beach", "forest", "mountainous", "nest", "plains", "dead"]
 
-        if not group.is_afterlife():
+        if group and group.is_afterlife():
             biome_platforms = platformsheet.subsurface(
-                pygame.Rect(0, order.index(biome) * 70, 640, 70)
-            ).convert_alpha()
-            season_x = {
-                "greenleaf": 0 + offset,
-                "leafbare": 160 + offset,
-                "leaffall": 320 + offset,
-                "newleaf": 480 + offset,
-            }
-
-            return biome_platforms.subsurface(
-                pygame.Rect(
-                    season_x[season.lower()],
-                    0,
-                    80,
-                    70,
-                )
+                pygame.Rect(0, order.index("dead") * 70, 640, 70)
             )
 
+            if group == CatGroup.DARK_FOREST:
+                return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70))
+            elif group == CatGroup.STARCLAN:
+                return biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70))
+            elif group == CatGroup.UNKNOWN_RESIDENCE:
+                return biome_platforms.subsurface(pygame.Rect(320 + offset, 0, 80, 70))
+
         biome_platforms = platformsheet.subsurface(
-            pygame.Rect(0, order.index("dead") * 70, 640, 70)
-        )
+            pygame.Rect(0, order.index(biome) * 70, 640, 70)
+        ).convert_alpha()
+        season_x = {
+            "greenleaf": 0 + offset,
+            "leafbare": 160 + offset,
+            "leaffall": 320 + offset,
+            "newleaf": 480 + offset,
+        }
 
-        if group == CatGroup.DARK_FOREST:
-            return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70))
-        elif group == CatGroup.STARCLAN:
-            return biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70))
-        elif group == CatGroup.UNKNOWN_RESIDENCE:
-            return biome_platforms.subsurface(pygame.Rect(320 + offset, 0, 80, 70))
-
-        raise RuntimeError(
-            "Should have created a platform, but we had Schroedinger's cat..."
+        return biome_platforms.subsurface(
+            pygame.Rect(
+                season_x[season.lower()],
+                0,
+                80,
+                70,
+            )
         )
 
 
