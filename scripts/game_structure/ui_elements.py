@@ -22,7 +22,7 @@ from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
 from pygame_gui.elements import UIAutoResizingContainer
 
-from scripts.cat_relations.enums import RelType
+from scripts.cat_relations.enums import RelType, RelTier
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
@@ -1158,6 +1158,7 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
     def __init__(
         self,
         relative_rect,
+        tier: RelTier,
         container=None,
         manager=None,
         anchors: dict = None,
@@ -1172,8 +1173,20 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
             image_cache.load_image(path),
             (relative_rect[2], relative_rect[3]),
         )
-        if scale_position == 0:
+        if tier.is_neutral:
             bar.fill((130, 117, 82))
+        elif tier.is_low_pos:
+            bar.fill((182, 174, 51))
+        elif tier.is_mid_pos:
+            bar.fill((150, 195, 49))
+        elif tier.is_extreme_pos:
+            bar.fill((154, 241, 32))
+        elif tier.is_low_neg:
+            bar.fill((186, 128, 60))
+        elif tier.is_mid_neg:
+            bar.fill((214, 90, 53))
+        elif tier.is_extreme_neg:
+            bar.fill((233, 38, 30))
 
         # bar element is the base of this entire element
         super().__init__(
@@ -1220,10 +1233,14 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
             self.scale_position = 0
 
         pointer_size = ui_scale_dimensions((14, 12))
+        x_pos = relative_rect.x - ui_scale_value(17) + self.scale_position
+        if x_pos < relative_rect.x:
+            x_pos = relative_rect.x
         pointer_pos = (
-            relative_rect.x - ui_scale_value(17) + self.scale_position,
+            x_pos,
             relative_rect.y + ui_scale_value(4),
         )
+
         pointer = pygame.transform.scale(
             image_cache.load_image("resources/images/rel_pointer.png").convert_alpha(),
             pointer_size,
@@ -1291,6 +1308,7 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
             self.rel_elements[f"{rel_type}_text"].disable()
             self.rel_elements[f"{rel_type}_bar"] = UIRelationStatusScaleBar(
                 ui_scale(pygame.Rect((0, -5), bar_size)),
+                tier,
                 anchors={"top_target": self.rel_elements[f"{rel_type}_text"]},
                 scale_position=num,
                 container=self,
