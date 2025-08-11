@@ -45,15 +45,15 @@ def get_new_pronouns(genderalign: str) -> List[Dict[str, Union[str, int]]]:
 def determine_plural_pronouns(cat_list: List[Dict[str, Union[str, int]]]):
     """
     Returns the correct plural pronoun for the provided list
-    :param cat_list: The cats in question (or their *pronoun* genders)
+    :param cat_list: The pronouns for every cat in the plural
     :return: the correct plural pronoun
     """
 
     genders = [str(pronoun["gender"]) for pronoun in cat_list]
 
     config = get_lang_config()["pronouns"]
-    for order, group in config["plural_rules"]["order"].items():
-        if order in genders:
+    for gender_code, group in config["plural_rules"]["order"].items():
+        if gender_code in genders:
             return get_new_pronouns(group)[0]
     return get_new_pronouns("plural default")[0]
 
