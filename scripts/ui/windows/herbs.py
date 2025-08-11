@@ -85,4 +85,4 @@ class HerbManagement(GameWindow):
                 game.switch_screens = True
                 self.kill()
 
-        super().process_event(event)
+        return super().process_event(event)

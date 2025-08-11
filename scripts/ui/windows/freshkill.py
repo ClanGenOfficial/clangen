@@ -431,7 +431,7 @@ class FreshkillManagement(GameWindow):
             elif self.open_view == "tactic":
                 self.handle_tactic_events(event)
 
-        super().process_event(event)
+        return super().process_event(event)
 
     def handle_tactic_events(self, event):
         """
