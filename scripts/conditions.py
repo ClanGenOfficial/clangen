@@ -60,7 +60,7 @@ def medicine_cats_can_cover_clan(all_cats, amount_per_med) -> bool:
     whether the player has enough meds for the whole clan
     """
     relevant_cats = [c for c in all_cats if c.status.alive_in_player_clan]
-    return amount_clanmembers_covered(all_cats, amount_per_med) > len(relevant_cats)
+    return amount_clanmembers_covered(all_cats, amount_per_med) >= len(relevant_cats)
 
 
 def get_amount_cat_for_one_medic(clan):

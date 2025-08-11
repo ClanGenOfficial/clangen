@@ -15,49 +15,49 @@ from scripts.cat_relations.relationship import Relationship
 class TestCreationAge(unittest.TestCase):
     # test that a cat with 1-5 moons has the age of a kitten
     def test_kitten(self):
-        test_cat = Cat(moons=5)
+        test_cat = Cat(moons=5, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.KITTEN)
 
     # test that a cat with 6-11 moons has the age of an adolescent
     def test_adolescent(self):
-        test_cat = Cat(moons=6)
+        test_cat = Cat(moons=6, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.ADOLESCENT)
 
     # test that a cat with 12-47 moons has the age of a young adult
     def test_young_adult(self):
-        test_cat = Cat(moons=12)
+        test_cat = Cat(moons=12, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.YOUNG_ADULT)
 
     # test that a cat with 48-95 moons has the age of an adult
     def test_adult(self):
-        test_cat = Cat(moons=48)
+        test_cat = Cat(moons=48, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.ADULT)
 
     # test that a cat with 96-119 moons has the age of a senior adult
     def test_senior_adult(self):
-        test_cat = Cat(moons=96)
+        test_cat = Cat(moons=96, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.SENIOR_ADULT)
 
     # test that a cat with 120-300 moons has the age of a senior
     def test_elder(self):
-        test_cat = Cat(moons=120)
+        test_cat = Cat(moons=120, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.SENIOR)
 
 
 class TestRelativesFunction(unittest.TestCase):
     # test that is_parent returns True for a parent1-cat relationship and False otherwise
     def test_is_parent(self):
-        parent = Cat()
-        kit = Cat(parent1=parent.ID)
+        parent = Cat(disable_random=True)
+        kit = Cat(parent1=parent.ID, disable_random=True)
         self.assertFalse(kit.is_parent(kit))
         self.assertFalse(kit.is_parent(parent))
         self.assertTrue(parent.is_parent(kit))
 
     # test that is_sibling returns True for cats with a shared parent1 and False otherwise
     def test_is_sibling(self):
-        parent = Cat()
-        kit1 = Cat(parent1=parent.ID)
-        kit2 = Cat(parent1=parent.ID)
+        parent = Cat(disable_random=True)
+        kit1 = Cat(parent1=parent.ID, disable_random=True)
+        kit2 = Cat(parent1=parent.ID, disable_random=True)
         self.assertFalse(parent.is_sibling(kit1))
         self.assertFalse(kit1.is_sibling(parent))
         self.assertTrue(kit2.is_sibling(kit1))
@@ -65,10 +65,10 @@ class TestRelativesFunction(unittest.TestCase):
 
     # test that is_uncle_aunt returns True for a uncle/aunt-cat relationship and False otherwise
     def test_is_uncle_aunt(self):
-        grand_parent = Cat()
-        sibling1 = Cat(parent1=grand_parent.ID)
-        sibling2 = Cat(parent1=grand_parent.ID)
-        kit = Cat(parent1=sibling1.ID)
+        grand_parent = Cat(disable_random=True)
+        sibling1 = Cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = Cat(parent1=grand_parent.ID, disable_random=True)
+        kit = Cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(sibling1.is_uncle_aunt(kit))
         self.assertFalse(sibling1.is_uncle_aunt(sibling2))
         self.assertFalse(kit.is_uncle_aunt(sibling2))
@@ -76,10 +76,10 @@ class TestRelativesFunction(unittest.TestCase):
 
     # test that is_grandparent returns True for a grandparent-cat relationship and False otherwise
     def test_is_grandparent(self):
-        grand_parent = Cat()
-        sibling1 = Cat(parent1=grand_parent.ID)
-        sibling2 = Cat(parent1=grand_parent.ID)
-        kit = Cat(parent1=sibling1.ID)
+        grand_parent = Cat(disable_random=True)
+        sibling1 = Cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = Cat(parent1=grand_parent.ID, disable_random=True)
+        kit = Cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(sibling1.is_grandparent(kit))
         self.assertFalse(sibling1.is_grandparent(sibling2))
         self.assertFalse(kit.is_grandparent(sibling2))
@@ -91,10 +91,10 @@ class TestRelativesFunction(unittest.TestCase):
 class TestPossibleMateFunction(unittest.TestCase):
     # test that is_potential_mate returns False for cats that are related to each other
     def test_relation(self):
-        grand_parent = Cat()
-        sibling1 = Cat(parent1=grand_parent.ID)
-        sibling2 = Cat(parent1=grand_parent.ID)
-        kit = Cat(parent1=sibling1.ID)
+        grand_parent = Cat(disable_random=True)
+        sibling1 = Cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = Cat(parent1=grand_parent.ID, disable_random=True)
+        kit = Cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(kit.is_potential_mate(grand_parent))
         self.assertFalse(kit.is_potential_mate(sibling1))
         self.assertFalse(kit.is_potential_mate(sibling2))
@@ -106,10 +106,10 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     # test that is_potential_mate returns False for cats that are related to each other even if for_love_interest is True
     def test_relation_love_interest(self):
-        grand_parent = Cat()
-        sibling1 = Cat(parent1=grand_parent.ID)
-        sibling2 = Cat(parent1=grand_parent.ID)
-        kit = Cat(parent1=sibling1.ID)
+        grand_parent = Cat(disable_random=True)
+        sibling1 = Cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = Cat(parent1=grand_parent.ID, disable_random=True)
+        kit = Cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(kit.is_potential_mate(grand_parent, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling1, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling2, for_love_interest=True))
@@ -124,22 +124,22 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     # test is_potential_mate for age checks
     def test_age_mating(self):
-        kitten_cat2 = Cat(moons=1)
-        kitten_cat1 = Cat(moons=1)
-        adolescent_cat1 = Cat(moons=6)
-        adolescent_cat2 = Cat(moons=6)
-        too_young_adult_cat1 = Cat(moons=12)
-        too_young_adult_cat2 = Cat(moons=12)
-        young_adult_cat1 = Cat(moons=20)
-        young_adult_cat2 = Cat(moons=20)
-        adult_cat_in_range1 = Cat(moons=60)
-        adult_cat_in_range2 = Cat(moons=60)
-        adult_cat_out_range1 = Cat(moons=65)
-        adult_cat_out_range2 = Cat(moons=65)
-        senior_adult_cat1 = Cat(moons=96)
-        senior_adult_cat2 = Cat(moons=96)
-        elder_cat1 = Cat(moons=120)
-        elder_cat2 = Cat(moons=120)
+        kitten_cat2 = Cat(moons=1, disable_random=True)
+        kitten_cat1 = Cat(moons=1, disable_random=True)
+        adolescent_cat1 = Cat(moons=6, disable_random=True)
+        adolescent_cat2 = Cat(moons=6, disable_random=True)
+        too_young_adult_cat1 = Cat(moons=12, disable_random=True)
+        too_young_adult_cat2 = Cat(moons=12, disable_random=True)
+        young_adult_cat1 = Cat(moons=20, disable_random=True)
+        young_adult_cat2 = Cat(moons=20, disable_random=True)
+        adult_cat_in_range1 = Cat(moons=60, disable_random=True)
+        adult_cat_in_range2 = Cat(moons=60, disable_random=True)
+        adult_cat_out_range1 = Cat(moons=65, disable_random=True)
+        adult_cat_out_range2 = Cat(moons=65, disable_random=True)
+        senior_adult_cat1 = Cat(moons=96, disable_random=True)
+        senior_adult_cat2 = Cat(moons=96, disable_random=True)
+        elder_cat1 = Cat(moons=120, disable_random=True)
+        elder_cat2 = Cat(moons=120, disable_random=True)
 
         # check for cat mating with itself
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat1))
@@ -205,20 +205,20 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     # test is_potential_mate for age checks with for_love_interest set to True
     def test_age_love_interest(self):
-        kitten_cat2 = Cat(moons=1)
-        kitten_cat1 = Cat(moons=1)
-        adolescent_cat1 = Cat(moons=6)
-        adolescent_cat2 = Cat(moons=6)
-        young_adult_cat1 = Cat(moons=12)
-        young_adult_cat2 = Cat(moons=12)
-        adult_cat_in_range1 = Cat(moons=52)
-        adult_cat_in_range2 = Cat(moons=52)
-        adult_cat_out_range1 = Cat(moons=65)
-        adult_cat_out_range2 = Cat(moons=65)
-        senior_adult_cat1 = Cat(moons=96)
-        senior_adult_cat2 = Cat(moons=96)
-        elder_cat1 = Cat(moons=120)
-        elder_cat2 = Cat(moons=120)
+        kitten_cat2 = Cat(moons=1, disable_random=True)
+        kitten_cat1 = Cat(moons=1, disable_random=True)
+        adolescent_cat1 = Cat(moons=6, disable_random=True)
+        adolescent_cat2 = Cat(moons=6, disable_random=True)
+        young_adult_cat1 = Cat(moons=12, disable_random=True)
+        young_adult_cat2 = Cat(moons=12, disable_random=True)
+        adult_cat_in_range1 = Cat(moons=52, disable_random=True)
+        adult_cat_in_range2 = Cat(moons=52, disable_random=True)
+        adult_cat_out_range1 = Cat(moons=65, disable_random=True)
+        adult_cat_out_range2 = Cat(moons=65, disable_random=True)
+        senior_adult_cat1 = Cat(moons=96, disable_random=True)
+        senior_adult_cat2 = Cat(moons=96, disable_random=True)
+        elder_cat1 = Cat(moons=120, disable_random=True)
+        elder_cat2 = Cat(moons=120, disable_random=True)
 
         # check for cat mating with itself
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat1, True))
@@ -275,11 +275,11 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     # test that is_potential_mate returns False for exiled or dead cats
     def test_dead_exiled(self):
-        exiled_cat = Cat()
+        exiled_cat = Cat(disable_random=True)
         exiled_cat.status.exile_from_group()
-        dead_cat = Cat()
+        dead_cat = Cat(disable_random=True)
         dead_cat.dead = True
-        normal_cat = Cat()
+        normal_cat = Cat(disable_random=True)
         self.assertFalse(exiled_cat.is_potential_mate(normal_cat))
         self.assertFalse(normal_cat.is_potential_mate(exiled_cat))
         self.assertFalse(dead_cat.is_potential_mate(normal_cat))
@@ -290,8 +290,8 @@ class TestMateFunctions(unittest.TestCase):
     # test that set_mate adds the mate's ID to the cat's mate list
     def test_set_mate(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
 
         # when
         cat1.set_mate(cat2)
@@ -304,8 +304,8 @@ class TestMateFunctions(unittest.TestCase):
     # test that unset_mate removes the mate's ID from the cat's mate list
     def test_unset_mate(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
 
@@ -322,8 +322,8 @@ class TestMateFunctions(unittest.TestCase):
     # test for relationship comparisons
     def test_set_mate_relationship(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
         relation1 = Relationship(cat1, cat2)
         old_relation1 = deepcopy(relation1)
         relation2 = Relationship(cat2, cat1)
@@ -353,8 +353,8 @@ class TestMateFunctions(unittest.TestCase):
     # test for relationship comparisons for cats that are broken up
     def test_unset_mate_relationship(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
         relation1 = Relationship(
             cat1,
             cat2,
@@ -408,8 +408,12 @@ class TestUpdateMentor(unittest.TestCase):
     def test_exile_apprentice(self):
         # given
 
-        app = Cat(moons=7, status_dict={"rank": CatRank.APPRENTICE})
-        mentor = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR})
+        app = Cat(
+            moons=7, status_dict={"rank": CatRank.APPRENTICE}, disable_random=True
+        )
+        mentor = Cat(
+            moons=20, status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        )
         app.update_mentor(mentor.ID)
 
         # when
@@ -521,7 +525,12 @@ class TestNameRepr(unittest.TestCase):
         for status in outsider_statuses:
             for moons, suffix in age_suffix:
                 with self.subTest("outsiders", status_dict=status, moons=moons):
-                    cat = Cat(status_dict=status, moons=moons, suffix="test")
+                    cat = Cat(
+                        status_dict=status,
+                        moons=moons,
+                        suffix="test",
+                        disable_random=True,
+                    )
                     self.assertTrue(str(cat.name).endswith("test"))
 
         exiled_kit = {
@@ -567,7 +576,9 @@ class TestNameRepr(unittest.TestCase):
 
         for status, suffix in ex_clancat_statuses:
             with self.subTest("Exiled cat names", status_dict=status, suffix=suffix):
-                cat = Cat(status_dict=status, moons=20, suffix="test")
+                cat = Cat(
+                    status_dict=status, moons=20, suffix="test", disable_random=True
+                )
                 self.assertTrue(str(cat.name).endswith(suffix))
 
     def test_specsuffix_outsiders(self):
@@ -605,7 +616,12 @@ class TestNameRepr(unittest.TestCase):
         for status in outsider_statuses:
             for moons, suffix in age_suffix:
                 with self.subTest("outsiders", status_dict=status, moons=moons):
-                    cat = Cat(status_dict=status, moons=moons, suffix="test")
+                    cat = Cat(
+                        status_dict=status,
+                        moons=moons,
+                        suffix="test",
+                        disable_random=True,
+                    )
                     cat.outside = True
                     cat.name.specsuffix_hidden = True
                     self.assertTrue(str(cat.name).endswith("test"))
@@ -613,7 +629,12 @@ class TestNameRepr(unittest.TestCase):
         for status in ex_clancat_statuses:
             for moons, suffix in age_suffix:
                 with self.subTest("Clan-like names", status_dict=status, moons=moons):
-                    cat = Cat(status_dict=status, moons=moons, suffix="test")
+                    cat = Cat(
+                        status_dict=status,
+                        moons=moons,
+                        suffix="test",
+                        disable_random=True,
+                    )
                     cat.name.specsuffix_hidden = True
                     self.assertTrue(str(cat.name).endswith("test"))
 
@@ -630,7 +651,9 @@ class TestNameRepr(unittest.TestCase):
         ]
         for status, moons, suffix in statuses:
             with self.subTest("lost clancats", moons=moons):
-                cat = Cat(status_dict=status, moons=moons, suffix="test")
+                cat = Cat(
+                    status_dict=status, moons=moons, suffix="test", disable_random=True
+                )
                 cat.become_lost()
                 self.assertTrue(str(cat.name).endswith(suffix))
 
@@ -647,7 +670,9 @@ class TestNameRepr(unittest.TestCase):
         ]
         for status, moons, suffix in statuses:
             with self.subTest("lost clancats", status_dict=status):
-                cat = Cat(status_dict=status, moons=moons, suffix="test")
+                cat = Cat(
+                    status_dict=status, moons=moons, suffix="test", disable_random=True
+                )
                 cat.status.become_lost()
                 cat.name.specsuffix_hidden = True
                 self.assertTrue(str(cat.name).endswith("test"))
@@ -670,7 +695,7 @@ class TestSocialAssignment(unittest.TestCase):
 
         for rank in clancat_ranks:
             with self.subTest("clancat social assignment", rank=rank):
-                cat = Cat(status_dict={"rank": rank})
+                cat = Cat(status_dict={"rank": rank}, disable_random=True)
                 self.assertEqual(cat.status.social, CatSocial.CLANCAT)
 
     def test_outsider_social(self):
@@ -679,5 +704,5 @@ class TestSocialAssignment(unittest.TestCase):
 
         for rank, social in zip(outsider_ranks, outsider_social):
             with self.subTest("outsider social assignment"):
-                cat = Cat(status_dict={"rank": rank})
+                cat = Cat(status_dict={"rank": rank}, disable_random=True)
                 self.assertTrue(cat.status.social == social)

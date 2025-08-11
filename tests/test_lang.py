@@ -77,7 +77,6 @@ class TestLocalisation(unittest.TestCase):
                     value[1],
                 )
 
-
     def test_insert_singular_pronouns(self):
         male_cat = Cat(gender="male", disable_random=True)
         male_cat.genderalign = "male"
