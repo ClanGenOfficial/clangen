@@ -223,12 +223,12 @@ def rebuild_top_menu_buttons():
         anchors={"top_target": menu_buttons["allegiances"], "right": "right"},
     )
     del scale_rect
-    heading_rect = ui_scale(pygame.Rect((0, 0), (210, 35)))
+    heading_rect = ui_scale(pygame.Rect((0, 0), (220, 35)))
     heading_rect.bottomleft = ui_scale_offset((0, 0))  # yes, this is intentional.
     menu_buttons["heading"] = UISurfaceImageButton(
         heading_rect,
         "",
-        get_button_dict(ButtonStyles.CLAN_HEADER, (210, 35)),
+        get_button_dict(ButtonStyles.CLAN_HEADER, (220, 35)),
         visible=False,
         manager=MANAGER,
         object_id="@buttonstyles_clan_header",
