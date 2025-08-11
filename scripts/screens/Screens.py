@@ -348,7 +348,7 @@ class Screens:
         ):
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.MEDIATION)
-        elif event.ui_element == Screens.menu_buttons["camp"]:
+        elif event.ui_element in (Screens.menu_buttons["camp"], Screens.menu_buttons["heading"]):
             self.change_screen(GameScreen.CAMP)
         elif event.ui_element == Screens.menu_buttons["cats"]:
             self.change_screen(GameScreen.LIST)
