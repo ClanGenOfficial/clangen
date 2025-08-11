@@ -167,7 +167,8 @@ class Sprites:
             "fademask",
             "fadestarclan",
             "fadedarkforest",
-            "fadeunknownresidence" "symbols",
+            "fadeunknownresidence",
+            "symbols",
         ):
             if (
                 "lineart" in x
