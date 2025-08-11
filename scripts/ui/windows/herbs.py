@@ -52,7 +52,10 @@ class HerbManagement(GameWindow):
         else:
             log_text = []
 
-        log_text.extend(game.herb_events_list.copy())
+        if not game.herb_events_list:
+            log_text.append(i18n.t("windows.log_empty"))
+        else:
+            log_text.extend(game.herb_events_list.copy())
 
         self.log = UITextBoxTweaked(
             f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
