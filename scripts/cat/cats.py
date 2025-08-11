@@ -244,11 +244,8 @@ class Cat:
 
         # age and status
         if status_dict is None and moons is None:
-            if disable_random:
-                self.age = CatAge.NEWBORN
-                self.status.generate_new_status(age=self.age)
-            self.age = choice([*CatAge])
-            self.status.generate_new_status(age=self.age)
+            self.age = CatAge.NEWBORN if disable_random else choice([*CatAge])
+            self.status.generate_new_status(age=self.age, disable_random=disable_random)
         elif moons is not None:
             self.moons = moons
             if moons > 300:
@@ -264,7 +261,9 @@ class Cat:
                     ):
                         self.age = key_age
             if status_dict is None:
-                self.status.generate_new_status(age=self.age)
+                self.status.generate_new_status(
+                    age=self.age, disable_random=disable_random
+                )
         else:
             if disable_random or self.status.rank == CatRank.NEWBORN:
                 self.age = CatAge.NEWBORN
