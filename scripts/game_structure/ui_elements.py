@@ -1784,7 +1784,7 @@ class UICatListDisplay(UIContainer):
             nutrition_info = game.clan.freshkill_pile.nutrition_info
             if kitty.ID in nutrition_info:
                 full_text = i18n.t(
-                    "screens.clearing.nutrition_text",
+                    "screens.profile.nutrition_text",
                     nutrition_text=nutrition_info[kitty.ID].nutrition_text,
                 )
                 if get_clan_setting("showxp"):

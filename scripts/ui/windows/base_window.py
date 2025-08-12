@@ -70,12 +70,14 @@ class GameWindow(UIWindow):
             (relative_rect[2] + dim_offset, relative_rect[3] + dim_offset),
         )
 
-        self.box = pygame_gui.elements.UIImage(
-            scale_rect,
-            get_box(BoxStyles.ROUNDED_BOX, scale_rect.size),
-            starting_height=self.layer,
-            manager=MANAGER,
-        )
+        self.box = None
+        if object_id != "#loading_window":
+            self.box = pygame_gui.elements.UIImage(
+                scale_rect,
+                get_box(BoxStyles.ROUNDED_BOX, scale_rect.size),
+                starting_height=self.layer,
+                manager=MANAGER,
+            )
 
         if back_button:
             scale_rect = ui_scale(pygame.Rect((0, 0), (22, 22)))
@@ -113,5 +115,6 @@ class GameWindow(UIWindow):
 
     def kill(self):
         self.fade.kill()
-        self.box.kill()
+        if self.box:
+            self.box.kill()
         super().kill()

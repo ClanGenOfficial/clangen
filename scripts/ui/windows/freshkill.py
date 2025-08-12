@@ -65,6 +65,7 @@ class FreshkillManagement(GameWindow):
             object_id="@buttonstyles_profile_left",
             manager=MANAGER,
             container=self,
+            starting_height=2,
         )
         self.open_log = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 20), (65, 30))),
@@ -74,6 +75,7 @@ class FreshkillManagement(GameWindow):
             anchors={"left_target": self.feed_cats},
             manager=MANAGER,
             container=self,
+            starting_height=2,
         )
         self.change_tactics = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 20), (140, 30))),
@@ -83,6 +85,7 @@ class FreshkillManagement(GameWindow):
             manager=MANAGER,
             anchors={"left_target": self.open_log},
             container=self,
+            starting_height=2,
         )
 
         self.tactic_view_elements = {}
@@ -436,6 +439,11 @@ class FreshkillManagement(GameWindow):
         """
         Handles events that occur on the tactic view.
         """
+
+        if event.ui_element == self.feed_view_elements.get("auto_feed"):
+            self.setting_switch(self.feed_view_elements.get("auto_feed"), "auto_feed")
+            return
+
         for order in self.possible_orders:
             if event.ui_element == self.tactic_view_elements[order]:
                 switch_clan_setting(order)
@@ -448,7 +456,7 @@ class FreshkillManagement(GameWindow):
                         switch_clan_setting(other_order)
                         self.tactic_view_elements[other_order].enable()
                         break
-                break
+                return
         for priority in self.possible_priorities:
             if event.ui_element == self.tactic_view_elements[priority]:
                 self.setting_switch(self.tactic_view_elements[priority], priority)
@@ -462,7 +470,7 @@ class FreshkillManagement(GameWindow):
                             other_priority,
                         )
                         break
-                break
+                return
 
     def handle_feed_events(self, event):
         """
@@ -483,8 +491,6 @@ class FreshkillManagement(GameWindow):
             self.setting_switch(
                 self.feed_view_elements.get("ration_prey"), "ration_prey"
             )
-        elif event.ui_element == self.feed_view_elements.get("auto_feed"):
-            self.setting_switch(self.feed_view_elements.get("auto_feed"), "auto_feed")
 
     @staticmethod
     def handle_feeding(cats_to_feed):

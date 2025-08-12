@@ -193,10 +193,11 @@ class FreshkillPile:
                 event_list.append(i18n.t("hardcoded.expired_prey", count=amount))
         self.total_amount = sum(self.pile.values())
         value_diff = self.total_amount
-        if get_clan_setting("auto_feed"):
-            self.already_fed = []
-            self.feed_cats(living_cats)
-            self.already_fed = []
+        self.timeskip_feed = True
+        self.already_fed = []
+        self.feed_cats(living_cats)
+        self.already_fed = []
+        self.timeskip_feed = False
         value_diff -= sum(self.pile.values())
         event_list.append(i18n.t("hardcoded.consumed_prey", count=value_diff))
         self._update_needed_food(living_cats)
@@ -614,6 +615,7 @@ class FreshkillPile:
                 the amount the cat actually needs for the moon
         """
         ration = get_clan_setting("ration prey")
+
         remaining_amount = amount
         amount_difference = actual_needed - amount
         order = ["expires_in_1", "expires_in_2", "expires_in_3", "expires_in_4"]
@@ -649,6 +651,9 @@ class FreshkillPile:
             remaining_amount : int|float
                 the amount which could not be consumed from the given pile group
         """
+        if self.timeskip_feed and not get_clan_setting("auto_feed"):
+            return given_amount
+
         if given_amount == 0:
             return given_amount
 
