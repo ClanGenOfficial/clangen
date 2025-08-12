@@ -3280,7 +3280,7 @@
         "location": ["desert"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c dashes off from {PRONOUN/m_c/poss} mentor and tumbles face first into a cactus, thankfully r_c is able to remove the spines with little difficulty.",
+        "event_text": "m_c dashes off from {PRONOUN/m_c/poss} mentor and tumbles face first into a cactus! Thankfully r_c is able to remove the spines with little difficulty.",
         "m_c": {
             "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
             "trait": ["adventurous", "arrogant", "bold", "childish", "confident", "daring", "oblivious", "playful", "rebellious", "shameless", "troublesome"],
