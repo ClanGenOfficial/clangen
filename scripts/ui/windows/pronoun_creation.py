@@ -29,7 +29,6 @@ class PronounCreation(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((80, 150), (650, 450))),
             window_display_title="Create Cat Pronouns",
-            object_id="#change_cat_gender_window",
         )
         self.dropdowns = {}
         self.the_cat = cat

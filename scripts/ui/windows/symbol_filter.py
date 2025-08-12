@@ -21,7 +21,6 @@ class SymbolFilterWindow(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((250, 125), (300, 450))),
             window_display_title="windows.symbol_filters",
-            object_id="#filter_window",
         )
 
         self.possible_tags = {

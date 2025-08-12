@@ -245,22 +245,6 @@
         },
         "colours": {"normal_border": "#00000000", "dark_bg": "#00000000"}
     },
-    "#game_over_window": {"prototype": "#window_base_theme"},
-    "#save_check_window": {"prototype": "#window_base_theme"},
-    "#editor_save_check_window": {"prototype": "#window_base_theme"},
-    "#editor_missing_info_window": {"prototype": "#window_base_theme"},
-    "#notif_window": {"prototype": "#window_base_theme"},
-    "#filter_window": {"prototype": "#window_base_theme"},
-    "#delete_check_window": {"prototype": "#window_base_theme"},
-    "#change_cat_name_window": {"prototype": "#window_base_theme"},
-    "#change_cat_gender_window": {"prototype": "#window_base_theme"},
-    "#change_cat_pronouns_window": {"prototype": "#window_base_theme"},
-    "#test_pronouns_window": {"prototype": "#window_base_theme"},
-    "#relationship_log_window": {"prototype": "#window_base_theme"},
-    "#kill_cat_window": {"prototype": "#window_base_theme"},
-    "#confirm_display_changes_window": {"prototype": "#window_base_theme"},
-    "#freshkill_management_window": {"prototype": "#window_base_theme"},
-    "#herb_management_window": {"prototype": "#window_base_theme"},
     "text_entry_line": {
         "font": {"size": "15", "name": "notosans"},
         "colours": {

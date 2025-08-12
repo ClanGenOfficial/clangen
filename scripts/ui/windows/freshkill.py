@@ -31,7 +31,6 @@ class FreshkillManagement(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((125, 150), (550, 400))),
             window_display_title="Freshkill Management",
-            object_id="#freshkill_management_window",
         )
 
         self.open_view = None

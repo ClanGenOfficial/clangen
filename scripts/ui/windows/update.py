@@ -18,7 +18,6 @@ class UpdateWindow(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 160))),
             window_display_title="Game Over",
-            object_id="#game_over_window",
         )
         self.last_screen = last_screen
         self.update_message = pygame_gui.elements.UITextBox(

@@ -9,7 +9,6 @@ class EditorMissingInfo(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 200))),
             window_display_title="Info Missing",
-            object_id="#editor_missing_info_window",
         )
 
         text = "windows.editor_missing_info" if not alert_text else alert_text

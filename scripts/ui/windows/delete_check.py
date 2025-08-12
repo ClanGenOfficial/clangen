@@ -20,7 +20,6 @@ class DeleteCheck(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 180))),
             window_display_title="Delete Check",
-            object_id="#delete_check_window",
         )
         self.clan_name = clan_name
         self.reloadscreen = reloadscreen

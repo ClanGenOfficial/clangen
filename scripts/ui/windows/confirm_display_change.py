@@ -17,7 +17,6 @@ class ConfirmDisplayChanges(GameWindow):
     def __init__(self, source_screen: "Screens"):
         super().__init__(
             ui_scale(pygame.Rect((275, 270), (250, 160))),
-            object_id="#confirm_display_changes_window",
         )
         button_spacing = 10
 

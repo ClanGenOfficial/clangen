@@ -22,7 +22,6 @@ class GameOver(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 180))),
             window_display_title="Game Over",
-            object_id="#game_over_window",
         )
         self.clan_name = str(game.clan.displayname + "Clan")
         self.last_screen = last_screen

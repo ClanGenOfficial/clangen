@@ -27,7 +27,6 @@ class UpdateAvailablePopup(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 230))),
             window_display_title="Update available",
-            object_id="#game_over_window",
         )
 
         self.begin_update_title = UIImageButton(

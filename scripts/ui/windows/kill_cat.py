@@ -24,7 +24,6 @@ class KillCat(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((300, 200), (450, 200))),
             window_display_title="Kill Cat",
-            object_id="#kill_cat_window",
         )
 
         self.the_cat = cat

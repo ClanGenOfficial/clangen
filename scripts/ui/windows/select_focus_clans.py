@@ -19,7 +19,6 @@ class SelectFocusClans(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((250, 120), (300, 225))),
             window_display_title="Change Cat Name",
-            object_id="#change_cat_name_window",
         )
         self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((80, 180), (139, 30))),

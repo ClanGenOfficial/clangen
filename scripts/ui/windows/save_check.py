@@ -30,7 +30,6 @@ class SaveCheck(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 200))),
             window_display_title="Save Check",
-            object_id="#save_check_window",
         )
 
         self.clan_name = "UndefinedClan"

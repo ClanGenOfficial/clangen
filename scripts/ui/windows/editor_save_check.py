@@ -16,7 +16,6 @@ class EditorSaveCheck(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 200))),
             window_display_title="Editor Save Check",
-            object_id="#editor_save_check_window",
         )
         self.path = path
         self.old_path = old_path

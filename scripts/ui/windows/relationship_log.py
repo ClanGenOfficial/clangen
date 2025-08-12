@@ -19,7 +19,6 @@ class RelationshipLog(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((273, 122), (505, 550))),
             window_display_title="Relationship Log",
-            object_id="#relationship_log_window",
         )
         self.set_blocking(False)
         self.hide_button_list = hide_button_list

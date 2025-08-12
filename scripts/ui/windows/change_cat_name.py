@@ -23,7 +23,6 @@ class ChangeCatName(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((300, 215), (400, 185))),
             window_display_title="Change Cat Name",
-            object_id="#change_cat_name_window",
         )
         self.the_cat = cat
 

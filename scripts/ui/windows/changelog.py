@@ -14,7 +14,6 @@ class ChangelogPopup(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((150, 150), (500, 400))),
             window_display_title="Changelog",
-            object_id="#game_over_window",
         )
 
         self.changelog_popup_title = UITextBoxTweaked(

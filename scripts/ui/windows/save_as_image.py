@@ -17,7 +17,6 @@ class SaveAsImage(GameWindow):
     def __init__(self, image_to_save, file_name):
         super().__init__(
             ui_scale(pygame.Rect((200, 175), (400, 250))),
-            object_id="#game_over_window",
         )
 
         self.image_to_save = image_to_save

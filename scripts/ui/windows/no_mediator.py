@@ -20,7 +20,6 @@ class NoMediators(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((300, 200), (200, 150))),
             window_display_title="No Mediators",
-            object_id="#window_base_theme",
             click_outside_to_close=False,
         )
 
