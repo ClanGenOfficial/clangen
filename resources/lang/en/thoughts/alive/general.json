@@ -5578,13 +5578,30 @@
             ]
         }
     },
+	{
+        "id": "allergies_gen_to_anycough",
+        "thoughts": [
+            "Is nervous to be around r_c incase {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick too",
+            "Is comforting r_c about the annoyances of {PRONOUN/r_c/poss} symptoms",
+            "Is sharing stories of {PRONOUN/m_c/poss} own experiences to comfort r_c"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "has_injuries": {
+            "r_c": [
+                "whitecough",
+				"greencough",
+				"yellowcough"
+            ]
+        }
+    },
     {
         "id": "allergies_gen_to_whitecough",
         "thoughts": [
-            "Is giving r_c advice for handling some of the symptoms of whitecough",
-            "Is nervous to be around r_c, just in case {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick, too",
-            "Is comforting r_c about the annoyances of {PRONOUN/r_c/poss} symptoms",
-            "Is sharing stories of {PRONOUN/m_c/poss} own experiences to comfort r_c"
+            "Is giving r_c advice for handling some of the symptoms of whitecough"
         ],
         "perm_conditions": {
             "m_c": [
@@ -5601,9 +5618,6 @@
         "id": "allergies_gen_to_greencough",
         "thoughts": [
             "Is giving r_c advice for handling some of the symptoms of greencough",
-            "Is nervous to be around r_c, just in case {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick, too",
-            "Is comforting r_c about the annoyances of {PRONOUN/r_c/poss} symptoms",
-            "Is sharing stories of {PRONOUN/m_c/poss} own experiences to comfort r_c",
             "Watches r_c with sorrow, knowing what it's like to be coughing and sneezing constantly"
         ],
         "perm_conditions": {
@@ -5621,9 +5635,6 @@
         "id": "allergies_gen_to_yellowcough",
         "thoughts": [
             "Is giving to give r_c advice for managing some of the symptoms of yellowcough",
-            "Is nervous to be around r_c incase {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick too",
-            "Is comforting r_c about the annoyances of {PRONOUN/r_c/poss} symptoms",
-            "Is sharing stories of {PRONOUN/m_c/poss} own experiences to comfort r_c",
             "Watches r_c with worry wondering if {PRONOUN/m_c/subject} sounds like that"
         ],
         "perm_conditions": {
@@ -5677,8 +5688,8 @@
             "medicine cat apprentice"
         ]
     },
-    {
-        "id": "allergies_greenleaf",
+	{
+        "id": "allergies_warm_seasons",
         "thoughts": [
             "Is smelling the flowers despite sneezing afterwards",
             "Is unamused about {PRONOUN/m_c/poss} allergies getting worse this season",
@@ -5693,30 +5704,12 @@
             ]
         },
         "season": [
-            "Greenleaf"
+            "Greenleaf",
+			"Newleaf"
         ]
     },
     {
-        "id": "allergies_newleaf",
-        "thoughts": [
-            "Is smelling the flowers despite sneezing afterwards",
-            "Is unamused about {PRONOUN/m_c/poss} allergies getting worse this season",
-            "Accidentally sneezes on a bee when smelling the flowers",
-            "Found a flower that causes {PRONOUN/m_c/poss} allergies to get worse",
-            "Found a flower that doesn't affect {PRONOUN/m_c/poss} allergies",
-            "Is both happy about the warmer season, and unamused about {PRONOUN/m_c/poss} allergies inevitably getting worse"
-        ],
-        "perm_conditions": {
-            "m_c": [
-                "allergies"
-            ]
-        },
-        "season": [
-            "Newleaf"
-        ]
-    },
-    {
-        "id": "allergies_leafbare",
+        "id": "allergies_cold_seasons",
         "thoughts": [
             "Is happy about {PRONOUN/m_c/poss} allergies calming down this season",
             "Feels a sense of relief at seeing the lack of greenery",
@@ -5728,11 +5721,12 @@
             ]
         },
         "season": [
-            "Leaf-bare"
+            "Leaf-bare",
+			"Leaf-fall"
         ]
     },
     {
-        "id": "allergies_leafbare_to_alive_gen",
+        "id": "allergies_cold_season_to_alive_gen",
         "thoughts": [
             "Startles r_c with how quiet {PRONOUN/m_c/subject} is now"
         ],
@@ -5742,26 +5736,11 @@
             ]
         },
         "season": [
-            "Leaf-bare"
+            "Leaf-bare",
+			"Leaf-fall"
         ],
         "random_living_status": [
             "living"
-        ]
-    },
-    {
-        "id": "allergies_leaffall",
-        "thoughts": [
-            "Is happy about {PRONOUN/m_c/poss} allergies starting to calm down",
-            "Feels a sense of relief at seeing the fading greenery",
-            "Is able to breathe deeply without coughing"
-        ],
-        "perm_conditions": {
-            "m_c": [
-                "allergies"
-            ]
-        },
-        "season": [
-            "Leaf-fall"
         ]
     },
     {
