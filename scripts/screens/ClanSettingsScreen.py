@@ -25,6 +25,8 @@ from scripts.utility import (
     ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from .screens_core.screens_core import rebuild_den_dropdown
+from ..cat import save_load
 from ..clan_package.settings import get_clan_setting, switch_clan_setting
 from ..cat.enums import CatRank, CatGroup
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
@@ -229,6 +231,10 @@ class ClanSettingsScreen(Screens):
         """
         TODO: DOCS
         """
+        rebuild_den_dropdown(
+            left_align=not get_clan_setting("moons and seasons"),
+            game_mode=game.clan.game_mode,
+        )
         self.clear_sub_settings_buttons_and_text()
         self.general_settings_button.kill()
         del self.general_settings_button
@@ -377,7 +383,7 @@ class ClanSettingsScreen(Screens):
         self.sub_menu = "stats"
 
         # Stats determination time.
-        faded_cats = len(game.clan.faded_ids)
+        faded_cats = len(save_load.get_faded_ids())
         living_cats = 0
         med_cats = 0
         warriors = 0

@@ -27,7 +27,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
+                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"]
@@ -58,7 +58,7 @@
         "biome": ["plains"],
         "season": ["newleaf"],
         "types": ["training"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "pln_train_newleaf_3mates_cloverfield1",
         "min_cats": 3,
         "max_cats": 3,
@@ -80,15 +80,8 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "comfort"],
+                        "values": ["romance", "comfort"],
                         "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
                     }
                 ]
             },
@@ -101,15 +94,8 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "comfort"],
+                        "values": ["romance", "comfort"],
                         "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
                     }
                 ]
             },
@@ -123,15 +109,8 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "comfort"],
+                        "values": ["romance", "comfort"],
                         "amount": 10
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
                     }
                 ]
             }
@@ -187,7 +166,7 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         }
                     ]
@@ -211,7 +190,7 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         }
                     ]

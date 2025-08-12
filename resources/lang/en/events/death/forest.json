@@ -10,7 +10,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 1,
         "event_text": "m_c was killed by a falling branch during a battle in a heavily wooded area of the forest.",
         "m_c": {
             "status": [
@@ -41,7 +41,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around {PRONOUN/m_c/object}.",
         "m_c": {
             "not_skill": [
@@ -74,7 +74,7 @@
             "any"
         ],
         "tags": [],
-        "weight": 20,
+        "frequency": 1,
         "event_text": "m_c was crushed when a tree fell into camp.",
         "m_c": {
             "dies": true
@@ -100,7 +100,7 @@
         "tags": [
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was carried off by an owl, never to be seen again.",
         "m_c": {
             "age": [
@@ -129,7 +129,7 @@
         "tags": [
             "no_body"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "r_c spotted a circling shadow and yowled a warning to m_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was}n't fast enough to save m_c from the owl.",
         "m_c": {
             "age": [

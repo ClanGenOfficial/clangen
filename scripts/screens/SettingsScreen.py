@@ -30,6 +30,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.housekeeping.datadir import open_data_dir
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
+from ..game_structure import constants
 from ..game_structure.audio import music_manager, sound_manager
 from ..game_structure.screen_settings import (
     MANAGER,
@@ -373,6 +374,11 @@ class SettingsScreen(Screens):
     def save_settings(self):
         """Saves the settings, ensuring that they will be retained when the screen changes."""
         self.settings_at_open = all_settings.settings.copy()
+        MANAGER.set_active_cursor(
+            constants.CUSTOM_CURSOR
+            if game_setting_get("custom cursor")
+            else constants.DEFAULT_CURSOR
+        )
 
     def open_general_settings(self):
         """Opens and draws general_settings"""

@@ -5,7 +5,8 @@ from copy import copy
 import pygame
 import ujson
 
-from scripts.game_structure import constants
+from scripts.cat.enums import CatGroup
+from scripts.game_structure import constants, image_cache
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.special_dates import SpecialDate, is_today
 
@@ -129,6 +130,11 @@ class Sprites:
             "lineart",
             "lineartdf",
             "lineartdead",
+            "lineartur",
+            "line_sc_overlay",
+            "line_ur_underlay",
+            "line_ur_overlay",
+            "gradient_ur",
             "eyes",
             "eyes2",
             "skin",
@@ -161,11 +167,16 @@ class Sprites:
             "fademask",
             "fadestarclan",
             "fadedarkforest",
+            "fadeunknownresidence",
             "symbols",
         ):
-            if "lineart" in x and (
-                constants.CONFIG["fun"]["april_fools"]
-                or is_today(SpecialDate.APRIL_FOOLS)
+            if (
+                "lineart" in x
+                and (
+                    constants.CONFIG["fun"]["april_fools"]
+                    or is_today(SpecialDate.APRIL_FOOLS)
+                )
+                and x != "lineartur"
             ):
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
@@ -178,12 +189,18 @@ class Sprites:
 
         self.make_group("lineartdead", (0, 0), "lineartdead")
         self.make_group("lineartdf", (0, 0), "lineartdf")
+        self.make_group("lineartur", (0, 0), "lineartur")
+        self.make_group("line_sc_overlay", (0, 0), "sc_overlay")
+        self.make_group("line_ur_underlay", (0, 0), "ur_underlay")
+        self.make_group("line_ur_overlay", (0, 0), "ur_overlay")
+        self.make_group("gradient_ur", (0, 0), "gradient_ur")
 
         # Fading Fog
         for i in range(0, 3):
             self.make_group("fademask", (i, 0), f"fademask{i}")
             self.make_group("fadestarclan", (i, 0), f"fadestarclan{i}")
             self.make_group("fadedarkforest", (i, 0), f"fadedf{i}")
+            self.make_group("fadeunknownresidence", (i, 0), f"fadeur{i}")
 
         # Define eye colors
         eye_colors = [
@@ -801,6 +818,130 @@ class Sprites:
 
         return recolored_symbol
 
+    @staticmethod
+    def get_platform(biome, season, show_nest, group: CatGroup) -> pygame.Surface:
+        """
+        Returns the relevant platform
+        :param biome: The current game biome
+        :param season: The current game season
+        :param show_nest: If true, displays the nest
+        :param group: Used to determine appropriate afterlife platform
+        :return: pygame.Surface containing the desired platform
+        """
+        offset = 0 if game_setting_get("dark mode") else 80
+        """Used to choose the dark mode version of platforms"""
+
+        available_biome = ["Forest", "Mountainous", "Plains", "Beach"]
+
+        if biome not in available_biome:
+            biome = available_biome[0]
+        if show_nest:
+            biome = "nest"
+
+        biome = biome.lower()
+
+        platformsheet = image_cache.load_image(
+            "resources/images/platforms.png"
+        ).convert_alpha()
+
+        order = ["beach", "forest", "mountainous", "nest", "plains", "dead"]
+
+        if group and group.is_afterlife():
+            biome_platforms = platformsheet.subsurface(
+                pygame.Rect(0, order.index("dead") * 70, 640, 70)
+            )
+
+            if group == CatGroup.DARK_FOREST:
+                return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70))
+            elif group == CatGroup.STARCLAN:
+                return biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70))
+            elif group == CatGroup.UNKNOWN_RESIDENCE:
+                return biome_platforms.subsurface(pygame.Rect(320 + offset, 0, 80, 70))
+
+        biome_platforms = platformsheet.subsurface(
+            pygame.Rect(0, order.index(biome) * 70, 640, 70)
+        ).convert_alpha()
+        season_x = {
+            "greenleaf": 0 + offset,
+            "leaf-bare": 160 + offset,
+            "leaf-fall": 320 + offset,
+            "newleaf": 480 + offset,
+        }
+
+        return biome_platforms.subsurface(
+            pygame.Rect(
+                season_x[season.lower()],
+                0,
+                80,
+                70,
+            )
+        )
+
 
 # CREATE INSTANCE
 sprites = Sprites()
+
+
+def subtract_lineart(surface, mask_surf, bg_color):
+    """
+    Though I doubt there will be a use-case for this in the future, this is a helper function I wrote to extract the
+    semitransparent layer of sparkles from our original StarClan sprites. It requires a mask to work but could probably
+    be altered to remove the need. honestly, I just want this in here so that we have it in at least one commit if
+    we turn out to need something like this again lol it was AWFUL to figure out
+    """
+    width, height = surface.get_size()
+    overlay = pygame.Surface((width, height), pygame.SRCALPHA)
+
+    bg_r, bg_g, bg_b = bg_color.r, bg_color.g, bg_color.b
+
+    surface.lock()
+    overlay.lock()
+
+    for y in range(height):
+        for x in range(width):
+            r, g, b, a = surface.get_at((x, y))
+
+            # If fully transparent, skip
+            if a == 0 or mask_surf.get_at((x, y)).a < 120:
+                overlay.set_at((x, y), (r, g, b, a))
+                continue
+
+            best_error = float("inf")
+            best_color = (0, 0, 0)
+            best_alpha = 0
+
+            alpha_steps = 255
+            # do a heinous process where we eyeball the alpha
+            for step in range(1, alpha_steps + 1):
+                alpha = step / alpha_steps
+
+                try:
+                    # Recover overlay color for this alpha
+                    o_r = (r - (1 - alpha) * bg_r) / alpha
+                    o_g = (g - (1 - alpha) * bg_g) / alpha
+                    o_b = (b - (1 - alpha) * bg_b) / alpha
+                except ZeroDivisionError:
+                    continue
+
+                # if it makes no sense, skip
+                if not (0 <= o_r <= 255 and 0 <= o_g <= 255 and 0 <= o_b <= 255):
+                    continue
+
+                # Simulate the blend & compare
+                sim_r = o_r * alpha + bg_r * (1 - alpha)
+                sim_g = o_g * alpha + bg_g * (1 - alpha)
+                sim_b = o_b * alpha + bg_b * (1 - alpha)
+
+                error = abs(sim_r - r) + abs(sim_g - g) + abs(sim_b - b)
+
+                if error < best_error:
+                    best_error = error
+                    best_color = (int(round(o_r)), int(round(o_g)), int(round(o_b)))
+                    best_alpha = int(round(alpha * 255))
+
+            # Set recovered overlay color
+            overlay.set_at((x, y), (*best_color, best_alpha))
+
+    surface.unlock()
+    overlay.unlock()
+    return overlay

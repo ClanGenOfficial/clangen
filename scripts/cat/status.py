@@ -217,7 +217,8 @@ class Status:
             self.standing_history = [
                 {"group": self.group, "standing": [CatStanding.MEMBER], "near": True}
             ]
-        else:
+
+        if not self.get_standing_with_group(CatGroup.PLAYER_CLAN):
             self.standing_history = [
                 {
                     "group": CatGroup.PLAYER_CLAN,
@@ -315,6 +316,20 @@ class Status:
         )
 
     @property
+    def is_other_clancat(self) -> bool:
+        """
+        Returns True if the cat is a clancat but isn't part of the player_clan. If the cat is a dead clancat, returns True if their last living Clan wasn't the player_clan.
+        """
+        dead_player_clan = (
+            self.group
+            and self.group.is_afterlife()
+            and self.get_last_living_group() == CatGroup.PLAYER_CLAN
+        )
+        living_player_clan = self.alive_in_player_clan
+
+        return not dead_player_clan and not living_player_clan and self.is_clancat
+
+    @property
     def is_leader(self) -> bool:
         return self.rank == CatRank.LEADER
 
@@ -393,6 +408,10 @@ class Status:
 
         for record in self.standing_history:
             if record["group"] == group:
+                duplicates = record["standing"].count(new_standing)
+                if duplicates > 1:
+                    removed_index = record["standing"].index(new_standing)
+                    record["standing"].pop(removed_index)
                 record["standing"].append(new_standing)
                 return
 
@@ -484,7 +503,9 @@ class Status:
             return
 
         # if we have an outsider who has never been a clancat, they go to the unknown residence
-        if self.is_outsider and not self.is_former_clancat:
+        if self.is_outsider and (
+            self.is_exiled(CatGroup.PLAYER_CLAN) or not self.is_former_clancat
+        ):
             self.add_to_group(new_group=CatGroup.UNKNOWN_RESIDENCE)
             return
 
@@ -500,15 +521,20 @@ class Status:
         cat.rank_change() should typically be called instead, since it will handle mentor switches and other complex
         changes.
         """
+        saved_group = None
         # checks that we don't add a duplicate group/rank pairing
         if self.group_history:
             last_entry = self.group_history[-1]
+            # remove 0 moons history to avoid save bloat
+            if len(self.group_history) > 1 and last_entry["moons_as"] == 0:
+                if self.group == last_entry["group"]:
+                    saved_group = last_entry["group"]
+                self.group_history.remove(last_entry)
+                last_entry = self.group_history[-1]
             if last_entry["group"] == self.group and last_entry["rank"] == new_rank:
                 return
-
-        self.group_history.append(
-            {"group": self.group, "rank": new_rank, "moons_as": 0}
-        )
+        group = self.group if not saved_group else saved_group
+        self.group_history.append({"group": group, "rank": new_rank, "moons_as": 0})
 
     def change_group_nearness(self, group: CatGroup):
         """
@@ -520,15 +546,14 @@ class Status:
                     entry["near"] = not entry["near"]
 
     # RETRIEVE INFO
-    def get_standing_with_group(self, group: CatGroup) -> list[CatStanding]:
+    def get_standing_with_group(self, group: CatGroup) -> Optional[list[CatStanding]]:
         """
         Returns the list of standings a cat has for the given group.
         """
-        return [
-            entry["standing"]
-            for entry in self.standing_history
-            if entry["group"] == group
-        ]
+        for entry in self.standing_history:
+            if entry["group"] == group:
+                return entry["standing"]
+        return []
 
     def find_prior_clan_rank(self, clan: CatGroup = None):
         """
@@ -555,11 +580,11 @@ class Status:
         """
         Returns the last group this cat belonged to before death. If the cat had no group before dying, this will return None.
         """
-        history = self.group_history
+        history = self.group_history.copy()
         history.reverse()
 
         for entry in history:
-            if not entry["group"] or not entry["group"].is_afterlife():
+            if entry["group"] and not entry["group"].is_afterlife():
                 return entry["group"]
 
         return None

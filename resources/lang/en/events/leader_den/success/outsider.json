@@ -34,8 +34,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -61,8 +61,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -88,8 +88,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -119,8 +119,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -218,8 +218,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["clan"],
@@ -281,8 +281,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -377,8 +377,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
+          "values": ["like"],
+          "amount": 5
         },
         {
           "cats_from": ["m_c"],
@@ -405,8 +405,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -638,7 +638,7 @@
   },
   {
     "interaction_type": "drive",
-    "event_text": "c_n finds m_c and drives {PRONOUN/m_c/object} far beyond c_n's borders. For all m_c's training, {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't stand a chance against a whole patrol.",
+    "event_text": "c_n finds m_c and drives {PRONOUN/m_c/object} far beyond c_n's borders. For all m_c's training, {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} stand a chance against a whole patrol.",
     "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
@@ -648,7 +648,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "c_n finds m_c and leaps on {PRONOUN/m_c/object}. m_c puts up a good fight, drawing on all {PRONOUN/m_c/poss} training, but {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't stand a chance against a whole patrol.",
+    "event_text": "c_n finds m_c and leaps on {PRONOUN/m_c/object}. m_c puts up a good fight, drawing on all {PRONOUN/m_c/poss} training, but {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} stand a chance against a whole patrol.",
     "reputation": ["any"],
     "rep_change": -3,
     "m_c": {

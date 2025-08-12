@@ -335,6 +335,8 @@ class Inheritance:
         """Create a grandparent relationship."""
         for parent_id, value in self.parents.items():
             parent_cat = self.cat.fetch_cat(parent_id)
+            if parent_cat is None:
+                continue
             grandparents = self.get_parents(parent_cat)
             for grand_id in grandparents:
                 if grand_id in self.parents.keys():

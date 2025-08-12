@@ -8,7 +8,7 @@
             "leaf-fall",
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking on a snowdrift until it gave way and {PRONOUN/m_c/subject} fell down the mountain, breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
@@ -44,49 +44,6 @@
         ]
     },
     {
-        "event_id": "mtn_injury_brokenbone_anyany1",
-        "location": [
-            "mountainous"
-        ],
-        "season": [
-            "any"
-        ],
-        "weight": 20,
-        "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
-        "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "broken bone"
-                ],
-                "scars": [
-                    "MANLEG"
-                ]
-            }
-        ],
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell off a cliff.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling off a cliff.",
-                "lead_death": "died after falling off a cliff"
-            }
-        ]
-    },
-    {
         "event_id": "mtn_injury_mangledtail_anyany1",
         "location": [
             "mountainous"
@@ -94,7 +51,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 1,
         "event_text": "m_c's tail was badly injured by falling rocks.",
         "m_c": {
             "age": [
@@ -137,7 +94,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} slipped and plummeted to the ground.",
         "m_c": {
             "status": [

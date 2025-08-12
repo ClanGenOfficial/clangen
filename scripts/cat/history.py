@@ -527,7 +527,7 @@ class History:
         """
 
         if not self.lead_ceremony:
-            self.add_lead_ceremony()
+            self.cat.generate_lead_ceremony()
         return str(self.lead_ceremony)
 
     def get_possible_history(self, condition=None):

@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from typing import TYPE_CHECKING, Type
+from typing import TYPE_CHECKING, Type, List
 
 import ujson
 
@@ -156,3 +156,21 @@ def add_faded_offspring_to_faded_cat(clanname, parent: str, offspring: str):
     safe_save(faded_parent_path, cat_info)
 
     return True
+
+
+def add_cat_to_fade_id(cat_id):
+    cat_to_fade.append(cat_id)
+
+
+def get_faded_ids():
+    return faded_ids + cat_to_fade
+
+
+def load_faded_cat_ids(clanname):
+    global faded_ids
+    fade_cat_dir = Path(get_save_dir()) / clanname / "faded_cats"
+    if not fade_cat_dir.exists():
+        faded_ids = []
+        return
+    faded_ids = [f.stem for f in fade_cat_dir.glob("*.json")]
+    return

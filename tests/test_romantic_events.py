@@ -15,22 +15,19 @@ class RelationshipConditions(unittest.TestCase):
         cat2 = Cat()
 
         condition = {
-            "romantic": 0,
-            "platonic": 0,
-            "dislike": 0,
-            "admiration": 0,
-            "comfortable": 15,
-            "jealousy": -10,
+            "romance": 0,
+            "like": 0,
+            "respect": 0,
+            "comfort": 15,
             "trust": 20,
         }
 
         # when
         rel_fulfill = Relationship(cat1, cat2)
-        rel_fulfill.romantic_love = 50
-        rel_fulfill.platonic_like = 50
-        rel_fulfill.dislike = 50
-        rel_fulfill.comfortable = 50
-        rel_fulfill.jealousy = 0
+        rel_fulfill.romance = 50
+        rel_fulfill.like = 50
+        rel_fulfill.comfort = 50
+        rel_fulfill.respect = 50
         rel_fulfill.trust = 50
 
         # then
