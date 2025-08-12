@@ -5641,7 +5641,7 @@
         "id": "allergies_gen_to_redcough",
         "thoughts": [
             "Winces at hearing r_c cough, wondering if {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like that during bad days",
-            "Is attemting to comfort r_c but knows {PRONOUN/m_c/poss} experiences can't compare to redcough"
+            "Is attempting to comfort r_c, but knows {PRONOUN/m_c/poss} experiences can't compare to redcough"
         ],
         "perm_conditions": {
             "m_c": [
