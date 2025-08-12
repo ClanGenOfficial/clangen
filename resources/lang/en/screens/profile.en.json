@@ -53,6 +53,7 @@
         "change_gender_cis": "change to\ncisgender",
         "change_gender_transmale": "change to trans\nmale",
         "change_gender_transfemale": "change to trans\nfemale",
-        "change_gender_nonbinary": "change to\nnonbinary"
+        "change_gender_nonbinary": "change to\nnonbinary",
+        "nutrition_text": "nutrition: %{nutrition_text}"
     }
 }

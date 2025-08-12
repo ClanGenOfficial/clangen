@@ -17,7 +17,7 @@ from scripts.cat import save_load
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
 from scripts.cat.names import Name
-from scripts.cat.save_load import save_cats
+from scripts.cat.save_load import save_cats, add_cat_to_fade_id
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
@@ -40,13 +40,12 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.game_structure.windows import SaveError
+from scripts.ui.windows.save_error import SaveError
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
     find_alive_cats_with_rank,
     get_living_clan_cat_count,
-    get_random_moon_cat,
     ceremony_text_adjust,
     get_current_season,
     adjust_list_text,
@@ -130,11 +129,14 @@ class Events:
         self.handle_future_events()
 
         # Calling of "one_moon" functions.
-        for cat in Cat.all_cats.copy().values():
-            if cat.status.alive_in_player_clan:
+        other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
+        for cat in Cat.all_cats_list.copy():
+            if cat.status.alive_in_player_clan or (
+                cat.status.group and cat.status.group.is_afterlife()
+            ):
                 self.one_moon_cat(cat)
-            else:
-                self.one_moon_outside_cat(cat)
+            elif not cat.status.group or cat.status.is_other_clancat:
+                self.one_moon_outside_cat(cat, other_clan_cats)
 
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
@@ -322,7 +324,8 @@ class Events:
             if event.moon_delay <= -12:
                 removals.append(event)
             if event.moon_delay <= 0:
-                handle_short_events.trigger_future_event(event)
+                if not handle_short_events.trigger_future_event(event):
+                    removals.append(event)
 
         for event in removals:
             if event in game.clan.future_events:
@@ -772,16 +775,11 @@ class Events:
             cat_IDs = predetermined_cat_IDs
 
         if not predetermined_cat_IDs:
-            eligible_cats = []
-            for cat in Cat.all_cats.values():
-                if not cat.status.is_outsider and not cat.dead:
-                    continue
-                if cat.ID not in Cat.outside_cats:
-                    # The outside-value must be set to True before the cat can go to cotc
-                    Cat.outside_cats.update({cat.ID: cat})
-
-                if cat.status.is_lost(CatGroup.PLAYER_CLAN):
-                    eligible_cats.append(cat)
+            eligible_cats = [
+                cat
+                for cat in Cat.all_cats.values()
+                if not cat.dead and cat.status.is_lost(CatGroup.PLAYER_CLAN)
+            ]
 
             if not eligible_cats:
                 return
@@ -875,15 +873,15 @@ class Events:
                         else:
                             game.clan.medicine_cat = None
 
-                save_load.cat_to_fade.append(cat.ID)
+                add_cat_to_fade_id(cat.ID)
                 cat.set_faded()
 
-    def one_moon_outside_cat(self, cat):
+    def one_moon_outside_cat(self, cat, other_clan_cats: list = None):
         """
         exiled cat events
         """
         # aging the cat
-        cat.one_moon()
+        cat.one_moon(other_clan_cats)
         cat.manage_outside_trait()
 
         self.handle_outside_EX(cat)
@@ -1675,9 +1673,6 @@ class Events:
             self.ceremony_accessory = False
             return
 
-        # find random_cat
-        random_cat = get_random_moon_cat(Cat, main_cat=cat)
-
         # chance to gain acc
         acc_chances = constants.CONFIG["accessory_generation"]
         chance = acc_chances["base_acc_chance"]
@@ -1728,7 +1723,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="misc",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=sub_type,
                 freshkill_pile=game.clan.freshkill_pile,
             )
@@ -1740,7 +1734,7 @@ class Events:
     # This gives outsiders exp. There may be a better spot for it to go,
     # but I put it here to keep the exp functions together
     def handle_outside_EX(self, cat):
-        if cat.status.is_outsider:
+        if cat.status.is_outsider or cat.status.is_other_clancat:
             if cat.not_working() and int(random.random() * 3):
                 return
 
@@ -1848,16 +1842,10 @@ class Events:
 
         chance = max(chance, 1)
 
-        # choose other cat
-        random_cat = get_random_moon_cat(
-            Cat, main_cat=cat, parent_child_modifier=True, mentor_app_modifier=True
-        )
-
         if constants.CONFIG["event_generation"]["debug_type_override"] == "new_cat":
             handle_short_events.handle_event(
                 event_type="new_cat",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
             return
@@ -1872,7 +1860,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="new_cat",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
 
@@ -1881,11 +1868,9 @@ class Events:
         TODO: DOCS
         """
         if constants.CONFIG["event_generation"]["debug_type_override"] == "misc":
-            random_cat = get_random_moon_cat(Cat, main_cat=cat)
             handle_short_events.handle_event(
                 event_type="misc",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
             return
@@ -1894,12 +1879,9 @@ class Events:
         if hit:
             return
 
-        random_cat = get_random_moon_cat(Cat, main_cat=cat)
-
         handle_short_events.handle_event(
             event_type="misc",
             main_cat=cat,
-            random_cat=random_cat,
             freshkill_pile=game.clan.freshkill_pile,
         )
 
@@ -1908,21 +1890,15 @@ class Events:
         decide if cat dies
         """
 
-        # try to get the random_cat
-        random_cat = get_random_moon_cat(
-            Cat, cat, parent_child_modifier=True, mentor_app_modifier=True
-        )
-
         if constants.CONFIG["event_generation"]["debug_type_override"] == "death":
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
             return
         elif constants.CONFIG["event_generation"]["debug_type_override"] == "injury":
-            Condition_Events.handle_injuries(cat, random_cat)
+            Condition_Events.handle_injuries(cat)
             return
 
         # chance to kill leader: 1/50 by default
@@ -1937,7 +1913,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
 
@@ -1953,7 +1928,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=["old_age"],
                 freshkill_pile=game.clan.freshkill_pile,
             )
@@ -1963,7 +1937,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=["old_age"],
                 freshkill_pile=game.clan.freshkill_pile,
             )
@@ -1975,7 +1948,6 @@ class Events:
                 handle_short_events.handle_event(
                     event_type="birth_death",
                     main_cat=cat,
-                    random_cat=random_cat,
                     sub_type=["mass_death"],
                     freshkill_pile=game.clan.freshkill_pile,
                 )
@@ -1994,12 +1966,11 @@ class Events:
             handle_short_events.handle_event(
                 event_type="birth_death",
                 main_cat=cat,
-                random_cat=random_cat,
                 freshkill_pile=game.clan.freshkill_pile,
             )
             return True
         else:
-            triggered_death = Condition_Events.handle_injuries(cat, random_cat)
+            triggered_death = Condition_Events.handle_injuries(cat)
 
             return triggered_death
 
@@ -2020,12 +1991,13 @@ class Events:
         )
 
         # Check to see if random murder is triggered.
-        # If so, we allow targets to be anyone they have even the smallest amount of dislike for
+        # If so, we allow targets to be anyone they have even the smallest amount of negativity for
         if random.getrandbits(max(1, int(random_murder_chance))) == 1:
             targets = [
                 i
                 for i in relationships
-                if i.dislike > 1 and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
+                if i.total_relationship_value() < 0
+                and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
             ]
             if not targets:
                 return
@@ -2059,18 +2031,13 @@ class Events:
             return
 
         # If random murder is not triggered, targets can only be those they have some dislike for
-        hate_relation = [
+        negative_relation = [
             i
             for i in relationships
-            if i.dislike > 15 and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
+            if i.has_extreme_negative
+            and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
         ]
-        targets.extend(hate_relation)
-        resent_relation = [
-            i
-            for i in relationships
-            if i.jealousy > 15 and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
-        ]
-        targets.extend(resent_relation)
+        targets.extend(negative_relation)
 
         # if we have some, then we need to decide if this cat will kill
         if targets:
@@ -2078,16 +2045,13 @@ class Events:
 
             kill_chance = constants.CONFIG["death_related"]["base_murder_kill_chance"]
 
-            relation_modifier = int(
-                0.5 * int(chosen_target.dislike + chosen_target.jealousy)
-            ) - int(
-                0.5
-                * int(
-                    chosen_target.platonic_like
-                    + chosen_target.trust
-                    + chosen_target.comfortable
-                )
+            extreme_neg = len(
+                [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg]
             )
+            neg = len([l for l in chosen_target.get_reltype_tiers() if l.is_low_neg])
+
+            relation_modifier = (extreme_neg * 10) + (neg * 5)
+
             kill_chance -= relation_modifier
 
             if (
@@ -2275,10 +2239,8 @@ class Events:
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
 
-        if cat.age.is_baby():
+        if cat.age.is_baby() or cat.gender != cat.genderalign:
             return
-
-        random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
         transing_chance = constants.CONFIG["transition_related"]
         chance = transing_chance["base_trans_chance"]
@@ -2292,7 +2254,6 @@ class Events:
             handle_short_events.handle_event(
                 event_type="misc",
                 main_cat=cat,
-                random_cat=random_cat,
                 sub_type=sub_type,
                 freshkill_pile=game.clan.freshkill_pile,
             )
@@ -2310,7 +2271,7 @@ class Events:
         if leader_invalid:
             self.perform_ceremonies(
                 game.clan.leader
-            )  # This is where the deputy will be make leader
+            )  # This is where the deputy will be made leader
 
             if game.clan.leader:
                 leader_dead = game.clan.leader.dead

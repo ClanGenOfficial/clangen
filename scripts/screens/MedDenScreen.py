@@ -23,6 +23,7 @@ from scripts.utility import (
     ui_scale_offset,
 )
 from .Screens import Screens
+from .enums import GameScreen
 from ..cat.enums import CatRank
 from ..conditions import get_amount_cat_for_one_medic, amount_clanmembers_covered
 from ..game_structure.game.switches import switch_set_value, Switch
@@ -114,11 +115,11 @@ class MedDenScreen(Screens):
             elif event.ui_element in self.cat_buttons.values():
                 cat = event.ui_element.return_cat_object()
                 switch_set_value(Switch.cat, cat.ID)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.med_cat:
                 cat = event.ui_element.return_cat_object()
                 switch_set_value(Switch.cat, cat.ID)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.cats_tab:
                 self.open_tab = "cats"
                 self.cats_tab.disable()
@@ -660,7 +661,7 @@ class MedDenScreen(Screens):
             if count <= 0:
                 continue
             if herb == "cobwebs":
-                self.herbs["cobweb1"] = pygame_gui.elements.UIImage(
+                self.herbs["cobweb1"] = UIModifiedImage(
                     ui_scale(pygame.Rect((108, 95), (396, 224))),
                     pygame.transform.scale(
                         pygame.image.load(
@@ -670,8 +671,9 @@ class MedDenScreen(Screens):
                     ),
                     manager=MANAGER,
                 )
+                self.herbs["cobweb1"].disable()
                 if count > 1:
-                    self.herbs["cobweb2"] = pygame_gui.elements.UIImage(
+                    self.herbs["cobweb2"] = UIModifiedImage(
                         ui_scale(pygame.Rect((108, 95), (396, 224))),
                         pygame.transform.scale(
                             pygame.image.load(
@@ -681,8 +683,9 @@ class MedDenScreen(Screens):
                         ),
                         manager=MANAGER,
                     )
+                    self.herbs["cobweb2"].disable()
                 continue
-            self.herbs[herb] = pygame_gui.elements.UIImage(
+            self.herbs[herb] = UIModifiedImage(
                 ui_scale(pygame.Rect((108, 95), (396, 224))),
                 pygame.transform.scale(
                     pygame.image.load(
@@ -692,6 +695,7 @@ class MedDenScreen(Screens):
                 ),
                 manager=MANAGER,
             )
+            self.herbs[herb].disable()
 
     def exit_screen(self):
         self.meds_messages.kill()

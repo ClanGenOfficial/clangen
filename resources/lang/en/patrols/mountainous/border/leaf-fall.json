@@ -22,7 +22,7 @@
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["platonic"],
+                    "values": ["like"],
                     "amount": 5
                 }
             ]
@@ -36,7 +36,7 @@
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["platonic"],
+                    "values": ["like"],
                     "amount": 3
                 }
             ]
@@ -50,7 +50,7 @@
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["platonic"],
+                    "values": ["like"],
                     "amount": 7
                 }
             ]

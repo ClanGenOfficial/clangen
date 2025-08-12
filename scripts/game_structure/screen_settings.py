@@ -207,7 +207,7 @@ def set_display_mode(
 
     display_change_in_progress = False
     if source_screen is not None and show_confirm_dialog:
-        from scripts.game_structure.windows import ConfirmDisplayChanges
+        from scripts.ui.windows.confirm_display_change import ConfirmDisplayChanges
 
         ConfirmDisplayChanges(source_screen=source_screen)
 

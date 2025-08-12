@@ -11,6 +11,7 @@ from typing import (
     Callable,
 )
 
+import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer, IContainerLikeInterface, UIElement, ObjectID
@@ -21,11 +22,13 @@ from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
 from pygame_gui.elements import UIAutoResizingContainer
 
+from scripts.cat_relations.enums import RelType, RelTier
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.screen_settings import screen
+from scripts.game_structure.screen_settings import screen, MANAGER
 from scripts.game_structure.game.settings import game_setting_get
+from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import (
@@ -502,6 +505,8 @@ class UIModifiedScrollingContainer(
         should_grow_automatically=True,
         anchors=None,
     ):
+        self.scroll_bar_starting_height = 1
+
         super().__init__(
             relative_rect=relative_rect,
             manager=manager,
@@ -514,7 +519,7 @@ class UIModifiedScrollingContainer(
             should_grow_automatically=should_grow_automatically,
             anchors=anchors,
         )
-
+        self.scroll_bar_starting_height = self.get_top_layer()
         if self.allow_scroll_y:
             self.vert_scroll_bar.kill()
             self.vert_scroll_bar = None
@@ -533,7 +538,7 @@ class UIModifiedScrollingContainer(
                 manager=self.ui_manager,
                 container=self._root_container,
                 parent_element=self,
-                starting_height=10,
+                starting_height=self.scroll_bar_starting_height,
                 anchors={
                     "left": "right",
                     "right": "right",
@@ -573,7 +578,7 @@ class UIModifiedScrollingContainer(
                     "bottom": "bottom",
                 },
                 visible=True,
-                starting_height=10,
+                starting_height=self.scroll_bar_starting_height,
             )
             self.horiz_scroll_bar.set_dimensions((self.relative_rect.width, 0))
             self.horiz_scroll_bar.set_relative_position((0, 0))
@@ -607,11 +612,11 @@ class UIModifiedScrollingContainer(
         super()._sort_out_element_container_scroll_bars()
 
         if self.vert_scroll_bar:
-            self.vert_scroll_bar.change_layer(9)
+            self.vert_scroll_bar.change_layer(self.scroll_bar_starting_height)
             self.vert_scroll_bar.show()
 
         if self.horiz_scroll_bar:
-            self.horiz_scroll_bar.change_layer(9)
+            self.horiz_scroll_bar.change_layer(self.scroll_bar_starting_height)
             self.horiz_scroll_bar.show()
 
     def _check_scroll_bars(self) -> Tuple[bool, bool]:
@@ -815,7 +820,7 @@ class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
 
         self.button_width = ui_scale_value(15)
         self.arrow_button_width = self.button_width
-        self.sliding_button.change_layer(starting_height)
+        self.sliding_button.change_layer(starting_height + 1)
 
         self.rebuild()
 
@@ -1095,62 +1100,256 @@ class UITextBoxTweaked(pygame_gui.elements.UITextBox):
         self.text_box_layout.finalise_to_new()
 
 
-class UIRelationStatusBar:
+class UIRelationStatusFillBar(pygame_gui.elements.UIStatusBar):
     """Wraps together a status bar"""
 
     def __init__(
         self,
         relative_rect,
         percent_full=0,
-        positive_trait=True,
-        dark_mode=False,
         manager=None,
-        style="bars",
+        anchors=None,
+        tool_tip_text: str = None,
+        container=None,
     ):
-        # Change the color of the bar depending on the value and if it's a negative or positive trait
-        if percent_full > 49:
-            if positive_trait:
-                theme = "#relation_bar_pos"
-            else:
-                theme = "#relation_bar_neg"
-        else:
-            theme = "#relation_bar"
-
-        # Determine dark mode or light mode
-        if dark_mode:
-            theme += "_dark"
-
-        self.status_bar = pygame_gui.elements.UIStatusBar(
-            relative_rect, object_id=theme, manager=manager
+        rect = (
+            (relative_rect.x + ui_scale_value(2), relative_rect.y + ui_scale_value(2)),
+            (
+                relative_rect.width - ui_scale_value(4),
+                relative_rect.height - ui_scale_value(4),
+            ),
         )
-        self.status_bar.percent_full = percent_full / 100
+        super().__init__(
+            rect,
+            object_id="#relation_bar",
+            manager=manager,
+            anchors=anchors,
+            container=container,
+        )
+        self.percent_full = percent_full / 100
 
         # Now to make the overlay
-        overlay_path = "resources/images/"
-        if style == "bars":
-            if dark_mode:
-                overlay_path += "relations_border_bars_dark.png"
-            else:
-                overlay_path += "relations_border_bars.png"
-        elif style == "dots":
-            if dark_mode:
-                overlay_path += "relations_border_dots_dark.png"
-            else:
-                overlay_path += "relations_border_dots.png"
-
         image = pygame.transform.scale(
-            image_cache.load_image(overlay_path).convert_alpha(),
+            image_cache.load_image(
+                "resources/images/relations_border_bars.png"
+            ).convert_alpha(),
             (relative_rect[2], relative_rect[3]),
         )
 
         self.overlay = pygame_gui.elements.UIImage(
-            relative_rect, image, manager=manager
+            relative_rect,
+            image,
+            manager=manager,
+            anchors=anchors,
+            object_id="#relation_bar",
+            container=container,
         )
+        self.overlay.set_tooltip(tool_tip_text)
+        self.overlay.tool_tip_delay = 0
+        self.join_focus_sets(self.overlay)
 
     def kill(self):
-        self.status_bar.kill()
         self.overlay.kill()
-        del self
+        super().kill()
+
+
+class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
+    """Wraps together a status bar"""
+
+    def __init__(
+        self,
+        relative_rect,
+        tier: RelTier,
+        container=None,
+        manager=None,
+        anchors: dict = None,
+        starting_height: int = 1,
+        scale_position: int = 0,
+        tool_tip_text: str = None,
+    ):
+        # creating the colored bar
+        path = "resources/images/relation_bar.png"
+
+        bar = pygame.transform.scale(
+            image_cache.load_image(path),
+            (relative_rect[2], relative_rect[3]),
+        )
+        if tier.is_neutral:
+            bar.fill((130, 117, 82))
+        elif tier.is_low_pos:
+            bar.fill((182, 174, 51))
+        elif tier.is_mid_pos:
+            bar.fill((150, 195, 49))
+        elif tier.is_extreme_pos:
+            bar.fill((154, 241, 32))
+        elif tier.is_low_neg:
+            bar.fill((186, 128, 60))
+        elif tier.is_mid_neg:
+            bar.fill((214, 90, 53))
+        elif tier.is_extreme_neg:
+            bar.fill((233, 38, 30))
+
+        # bar element is the base of this entire element
+        super().__init__(
+            relative_rect,
+            bar,
+            container=container,
+            manager=manager,
+            starting_height=starting_height,
+            anchors=anchors,
+        )
+
+        # Now to make the overlay
+        image = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/relations_border_bars.png"
+            ).convert_alpha(),
+            (relative_rect[2], relative_rect[3]),
+        )
+
+        # overlay element
+        self.overlay = UIModifiedImage(
+            relative_rect,
+            image,
+            manager=manager,
+            container=container,
+            anchors=anchors,
+            starting_height=starting_height,
+            object_id="#relation_bar",
+        )
+        self.join_focus_sets(self.overlay)
+        self.overlay.set_tooltip(tool_tip_text)
+        self.overlay.tool_tip_delay = 0
+
+        # pointer element
+        max_width = relative_rect.width - 10
+        scale_position = int((scale_position + 100) / 2)
+        percentage = ui_scale_value(scale_position) / max_width
+        self.scale_position = ui_scale_value(int(percentage * 100))
+
+        offset = ui_scale_value(14)
+        if self.scale_position > max_width + offset:
+            self.scale_position = max_width + offset
+        elif self.scale_position < 0:
+            self.scale_position = 0
+
+        pointer_size = ui_scale_dimensions((14, 12))
+        x_pos = relative_rect.x - ui_scale_value(17) + self.scale_position
+        if x_pos < relative_rect.x:
+            x_pos = relative_rect.x
+        pointer_pos = (
+            x_pos,
+            relative_rect.y + ui_scale_value(4),
+        )
+
+        pointer = pygame.transform.scale(
+            image_cache.load_image("resources/images/rel_pointer.png").convert_alpha(),
+            pointer_size,
+        )
+        self.pointer = pygame_gui.elements.UIImage(
+            pygame.Rect(pointer_pos, pointer_size),
+            pointer,
+            manager=manager,
+            container=container,
+            anchors=anchors,
+            starting_height=starting_height,
+        )
+        self.join_focus_sets(self.pointer)
+
+    def kill(self):
+        self.overlay.kill()
+        self.pointer.kill()
+        super().kill()
+
+
+class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
+    def __init__(
+        self,
+        position: tuple,
+        relationship,
+        romance: bool = False,
+        container=None,
+        manager=None,
+        anchors=None,
+        starting_height=1,
+    ):
+        dimensions = (0, 0)
+        self.rel_elements = {}
+        bar_size = (96, 10)
+
+        super().__init__(
+            relative_rect=ui_scale(pygame.Rect(position, dimensions)),
+            container=container,
+            manager=manager,
+            anchors=anchors,
+            starting_height=starting_height,
+        )
+
+        prev_element = None
+        for rel_type in [*RelType]:
+            if rel_type == RelType.ROMANCE:
+                continue
+            num, tier = relationship.get_rel_type_attributes(rel_type)
+            self.rel_elements[f"{rel_type}_text"] = pygame_gui.elements.UITextBox(
+                f"relationships.{tier}",
+                ui_scale(
+                    pygame.Rect(
+                        (0 - 2, 0),
+                        (100, 25),
+                    )
+                ),
+                object_id="#text_box_26_horizcenter",
+                container=self,
+                anchors={"top_target": prev_element} if prev_element else None,
+            )
+            self.rel_elements[f"{rel_type}_text"].set_tooltip(
+                i18n.t(f"relationships.{rel_type}", count=num)
+            )
+            self.rel_elements[f"{rel_type}_text"].tool_tip_delay = 0
+            self.rel_elements[f"{rel_type}_text"].disable()
+            self.rel_elements[f"{rel_type}_bar"] = UIRelationStatusScaleBar(
+                ui_scale(pygame.Rect((0, -5), bar_size)),
+                tier,
+                anchors={"top_target": self.rel_elements[f"{rel_type}_text"]},
+                scale_position=num,
+                container=self,
+            )
+            prev_element = self.rel_elements[f"{rel_type}_bar"]
+
+            # ROMANCE
+        if romance:
+            self.rel_elements[f"romance_text"] = UITextBoxTweaked(
+                f"relationships.{relationship.romance_tier if relationship.romance_tier else 'neutral'}",
+                ui_scale(
+                    pygame.Rect(
+                        (0, 1),
+                        (96, -1),
+                    )
+                ),
+                object_id="#text_box_26_horizcenter",
+                anchors={"top_target": prev_element},
+                container=self,
+                line_spacing=0.95,
+            )
+            self.rel_elements[f"romance_text"].set_tooltip(
+                i18n.t(f"relationships.romance", count=relationship.romance)
+            )
+            self.rel_elements[f"romance_text"].tool_tip_delay = 0
+            self.rel_elements[f"romance_text"].disable()
+            self.rel_elements[f"romance_text"].disable()
+            self.rel_elements[f"romance_bar"] = UIRelationStatusFillBar(
+                ui_scale(
+                    pygame.Rect(
+                        (0, -5),
+                        bar_size,
+                    )
+                ),
+                relationship.romance,
+                container=self,
+                anchors={"top_target": self.rel_elements[f"romance_text"]},
+            )
+
+        self.romance = romance
 
 
 class IDImageButton(UISurfaceImageButton):
@@ -1354,7 +1553,6 @@ class UICatListDisplay(UIContainer):
         relative_rect: RectLike,
         container: UIContainer,
         starting_height: int,
-        object_id: str,
         manager,
         cat_list: list,
         cats_displayed: int,
@@ -1363,15 +1561,18 @@ class UICatListDisplay(UIContainer):
         current_page: int,
         next_button: UIImageButton,
         prev_button: UIImageButton,
+        object_id: str = None,
         first_button: UIImageButton = None,
         last_button: UIImageButton = None,
         anchors: Optional[dict] = None,
         rows: int = None,
         show_names: bool = False,
         tool_tip_name: bool = False,
+        tool_tip_nutrition: bool = False,
         visible: bool = True,
         text_theme="#cat_list_text",
         y_px_between: int = None,
+        allow_selection: bool = False,
     ):
         """
         Creates and displays a list of click-able cat sprites.
@@ -1392,8 +1593,10 @@ class UICatListDisplay(UIContainer):
         :param prev_button: the prev_button ui_element
         :param current_page: the currently displayed page of the cat list
         :param tool_tip_name: should a tooltip displaying the cat's name be added to each cat sprite, default False
+        :param tool_tip_nutrition: should a tooltip displaying the cat's nutrition status be added to each cat sprite, default False
         :param visible: Whether the element is visible by default. Warning - container visibility
                         may override this.
+        :param allow_selection: Whether cats should be selectable.
         """
 
         super().__init__(
@@ -1418,7 +1621,9 @@ class UICatListDisplay(UIContainer):
         self.first_button = first_button
         self.last_button = last_button
         self.tool_tip_name = tool_tip_name
+        self.tool_tip_nutrition = tool_tip_nutrition
         self.text_theme = text_theme
+        self.allow_selection = allow_selection
 
         self.total_pages: int = 0
         self.favor_indicator = {}
@@ -1426,6 +1631,8 @@ class UICatListDisplay(UIContainer):
         self.cat_names = {}
         self.cat_chunks = []
         self.boxes = []
+        self.selection_boxes = {}
+        self.selected = []
 
         self.show_names = show_names
 
@@ -1456,6 +1663,13 @@ class UICatListDisplay(UIContainer):
         for box in self.boxes:
             box.set_container(self)
             box.rebuild()
+
+    def clear_cache(self):
+        """
+        Clears the cached grid. This is only necessary for cat lists being displayed on popup windows. I'm not sure *why*, but the cache starts causing crashes. I recommend that we try to keep cat list displays on popup windows to a minimum to avoid lag and, when possible, hide & show the list instead of killing and recreating.
+        """
+
+        self._generate_grid_cached.cache_clear()
 
     @staticmethod
     @lru_cache(maxsize=5)
@@ -1560,6 +1774,39 @@ class UICatListDisplay(UIContainer):
             ]
 
     def create_cat_button(self, i, kitty, container):
+        if self.tool_tip_nutrition:
+            condition_list = []
+            if kitty.illnesses:
+                if "starving" in kitty.illnesses.keys():
+                    condition_list.append("starving")
+                elif "malnourished" in kitty.illnesses.keys():
+                    condition_list.append("malnourished")
+            nutrition_info = game.clan.freshkill_pile.nutrition_info
+            if kitty.ID in nutrition_info:
+                full_text = i18n.t(
+                    "screens.profile.nutrition_text",
+                    nutrition_text=nutrition_info[kitty.ID].nutrition_text,
+                )
+                if get_clan_setting("showxp"):
+                    full_text += f" ({str(int(nutrition_info[kitty.ID].percentage))})"
+                condition_list.append(full_text)
+            tooltip_text = (
+                "<br>".join(condition_list) if len(condition_list) > 0 else None
+            )
+        elif self.tool_tip_name:
+            tooltip_text = str(kitty.name)
+        else:
+            tooltip_text = None
+        if self.allow_selection:
+            self.selection_boxes[f"sprite{i}"] = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((0, 15), (56, 56))),
+                get_box(BoxStyles.SELECTION_BOX, (60, 60)),
+                container=container,
+                starting_height=1,
+                manager=MANAGER,
+                visible=False,
+                anchors={"centerx": "centerx"},
+            )
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
             ui_scale(pygame.Rect((0, 15), (50, 50))),
             kitty.sprite,
@@ -1568,7 +1815,7 @@ class UICatListDisplay(UIContainer):
             mask=None,
             container=container,
             object_id=f"#sprite{str(i)}",
-            tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
+            tool_tip_text=tooltip_text,
             starting_height=1,
             anchors={"centerx": "centerx"},
         )
@@ -1623,6 +1870,45 @@ class UICatListDisplay(UIContainer):
             if self.first_button:
                 self.first_button.enable()
                 self.last_button.enable()
+
+    def process_event(self, event: pygame.event.Event) -> bool:
+        if self.allow_selection:
+            for sprite, button in self.cat_sprites.items():
+                cat_id = button.return_cat_id()
+                if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+                    if button != event.ui_element:
+                        continue
+                    self.selection_boxes[sprite].show()
+                elif (
+                    event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED
+                    and cat_id not in self.selected
+                ):
+                    if button != event.ui_element:
+                        continue
+                    self.selection_boxes[sprite].hide()
+                elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+                    if button != event.ui_element:
+                        continue
+                    if cat_id in self.selected:
+                        self.selected.remove(cat_id)
+                    else:
+                        self.selected.append(cat_id)
+
+        return super().process_event(event)
+
+    def reset_selection(self):
+        for box in self.selection_boxes.values():
+            box.hide()
+        self.selected.clear()
+
+    def show(self):
+        super().show()
+
+        if self.allow_selection:
+            for sprite, button in self.cat_sprites.items():
+                cat_id = button.return_cat_id()
+                if cat_id not in self.selected:
+                    self.selection_boxes[sprite].hide()
 
 
 class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):
@@ -1955,6 +2241,7 @@ class UIDropDown(UIDropDownContainer):
         manager: IUIManagerInterface,
         container: UIContainer = None,
         child_dimensions: tuple = None,
+        center_children: bool = False,
         parent_style: ButtonStyles = ButtonStyles.DROPDOWN,
         parent_override=None,
         parent_reflect_selection=False,
@@ -1978,6 +2265,7 @@ class UIDropDown(UIDropDownContainer):
         :param item_list: The list of options that will become child buttons.
         :param child_dimensions: This overrides the relative_rect dimensions for the child buttons, allowing you to create
         parent and child buttons with differing dimensions
+        :param center_children: Set True if child buttons should be centered beneath the parent button, rather than anchored to the parent's left side. Only useful if child dimensions are larger than the parent's. Defaults to False.
         :param parent_style: The button style to use for the parent button, defaults to DROPDOWN
         :param parent_override: This isn't best practice to use, but it's an exception added for the filter dropdown
         :param parent_reflect_selection: When a selection is made, the parent text changes to reflect the selection.
@@ -2027,7 +2315,11 @@ class UIDropDown(UIDropDownContainer):
         else:
             self.parent_button = parent_override
 
-        dropdown_rect = ((relative_rect.x, 0), (0, 0))
+        if center_children:
+            x_pos = -int(child_dimensions[0] / 2 - relative_rect.width / 2)
+        else:
+            x_pos = relative_rect.x
+        dropdown_rect = ((x_pos, 0), (0, 0))
 
         self.child_button_container = UIAutoResizingContainer(
             ui_scale(pygame.Rect(dropdown_rect)),

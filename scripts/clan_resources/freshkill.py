@@ -193,9 +193,11 @@ class FreshkillPile:
                 event_list.append(i18n.t("hardcoded.expired_prey", count=amount))
         self.total_amount = sum(self.pile.values())
         value_diff = self.total_amount
+        self.timeskip_feed = True
         self.already_fed = []
         self.feed_cats(living_cats)
         self.already_fed = []
+        self.timeskip_feed = False
         value_diff -= sum(self.pile.values())
         event_list.append(i18n.t("hardcoded.consumed_prey", count=value_diff))
         self._update_needed_food(living_cats)
@@ -213,24 +215,24 @@ class FreshkillPile:
         self.update_nutrition(living_cats)
         # NOTE: this is for testing purposes
         if not game.clan:
-            self.tactic_status(living_cats, additional_food_round)
+            self.tactic_low_rank(living_cats, additional_food_round)
             return
 
+        # PRIORITIES
+        if get_clan_setting("sick_injured_first"):
+            self.priority_sick_injured_first(living_cats, additional_food_round)
+        elif get_clan_setting("hunter_first"):
+            self.priority_hunter_first(living_cats, additional_food_round)
+
         # NOTE: the tactics should have their own function for testing purposes
-        if get_clan_setting("younger first"):
-            self.tactic_younger_first(living_cats, additional_food_round)
-        elif get_clan_setting("less nutrition first"):
-            self.tactic_less_nutrition_first(living_cats, additional_food_round)
-        elif get_clan_setting("more experience first"):
-            self.tactic_more_experience_first(living_cats, additional_food_round)
-        elif get_clan_setting("hunter first"):
-            self.tactic_hunter_first(living_cats, additional_food_round)
-        elif get_clan_setting("sick/injured first"):
-            self.tactic_sick_injured_first(living_cats, additional_food_round)
-        elif get_clan_setting("by-status"):
-            self.tactic_status(living_cats, additional_food_round)
-        else:
-            self.tactic_status(living_cats, additional_food_round)
+        if get_clan_setting("youngest_first"):
+            self.tactic_youngest_first(living_cats, additional_food_round)
+        elif get_clan_setting("hungriest_first"):
+            self.tactic_hungry_first(living_cats, additional_food_round)
+        elif get_clan_setting("experience_first"):
+            self.tactic_experience_first(living_cats, additional_food_round)
+        else:  # only remaining tactic is low_rank, this is our default!
+            self.tactic_low_rank(living_cats, additional_food_round)
 
     def amount_food_needed(self):
         """Get the amount of freshkill the clan needs.
@@ -254,13 +256,10 @@ class FreshkillPile:
     #                                    tactics                                   #
     # ---------------------------------------------------------------------------- #
 
-    def tactic_status(
-        self, living_cats: List[Cat], additional_food_round=False
-    ) -> None:
-        """Feed cats in order of status, resolving ties with age.
-
-        :param list living_cats: Cats to feed
-        :param bool additional_food_round: Determines if not player-initiated, default False
+    @staticmethod
+    def evaluate_queen_kit_pregnant(living_cats) -> tuple[list, list, list]:
+        """
+        Helper to find queens, fed kittens, and pregnant cats.
         """
         queen_dict, kits = get_alive_clan_queens(living_cats)
         fed_kits = []
@@ -272,12 +271,24 @@ class FreshkillPile:
             if len(young_kits) > 0:
                 fed_kits.extend(young_kits)
                 relevant_queens.append(queen)
-
         pregnant_cats = [
             cat
             for cat in living_cats
             if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()
         ]
+        return fed_kits, pregnant_cats, relevant_queens
+
+    def tactic_low_rank(
+        self, living_cats: List[Cat], additional_food_round=False
+    ) -> None:
+        """Feed cats in order of low rank to high, resolving ties with age.
+
+        :param list living_cats: Cats to feed
+        :param bool additional_food_round: Determines if not player-initiated, default False
+        """
+        fed_kits, pregnant_cats, relevant_queens = self.evaluate_queen_kit_pregnant(
+            living_cats
+        )
 
         for feeding_status in FEEDING_ORDER:
             if feeding_status == CatRank.NEWBORN:
@@ -316,7 +327,56 @@ class FreshkillPile:
             else:
                 self.feed_group(sorted_group, additional_food_round)
 
-    def tactic_younger_first(
+    def tactic_high_rank(
+        self, living_cats: List[Cat], additional_food_round=False
+    ) -> None:
+        """Feed cats in order of high rank to low, resolving ties with age.
+
+        :param list living_cats: Cats to feed
+        :param bool additional_food_round: Determines if not player-initiated, default False
+        """
+        fed_kits, pregnant_cats, relevant_queens = self.evaluate_queen_kit_pregnant(
+            living_cats
+        )
+
+        for feeding_status in FEEDING_ORDER.reverse():
+            if feeding_status == CatRank.NEWBORN:
+                relevant_group = [
+                    cat
+                    for cat in living_cats
+                    if cat.status.rank == CatRank.NEWBORN and cat not in fed_kits
+                ]
+            elif feeding_status == CatRank.KITTEN:
+                relevant_group = [
+                    cat
+                    for cat in living_cats
+                    if cat.status.rank == CatRank.KITTEN and cat not in fed_kits
+                ]
+            elif feeding_status == "queen/pregnant":
+                relevant_group = relevant_queens + pregnant_cats
+            else:
+                relevant_group = [
+                    cat for cat in living_cats if str(cat.status.rank) == feeding_status
+                ]
+                # remove all cats, which are also queens / pregnant
+                relevant_group = [
+                    cat
+                    for cat in relevant_group
+                    if cat not in relevant_queens and cat not in pregnant_cats
+                ]
+
+            if len(relevant_group) == 0:
+                continue
+
+            sorted_group = sorted(relevant_group, key=lambda x: x.moons)
+            if feeding_status == "queen/pregnant":
+                self.feed_group(sorted_group, additional_food_round, True)
+            elif feeding_status in [CatRank.NEWBORN, CatRank.KITTEN]:
+                self.feed_group(sorted_group, additional_food_round, False, fed_kits)
+            else:
+                self.feed_group(sorted_group, additional_food_round)
+
+    def tactic_youngest_first(
         self, living_cats: List[Cat], additional_food_round=False
     ) -> None:
         """Feed cats in order of age, youngest first.
@@ -327,7 +387,18 @@ class FreshkillPile:
         sorted_cats = sorted(living_cats, key=lambda x: x.moons)
         self.feed_group(sorted_cats, additional_food_round)
 
-    def tactic_less_nutrition_first(
+    def tactic_oldest_first(
+        self, living_cats: List[Cat], additional_food_round=False
+    ) -> None:
+        """Feed cats in order of age, oldest first.
+
+        :param list living_cats: Cats to feed
+        :param bool additional_food_round: Determines if not player-initiated, default False
+        """
+        sorted_cats = sorted(living_cats, key=lambda x: x.moons, reverse=True)
+        self.feed_group(sorted_cats, additional_food_round)
+
+    def tactic_hungry_first(
         self, living_cats: List[Cat], additional_food_round=False
     ) -> None:
         """Feed cats in order of nutrition, lowest first.
@@ -340,20 +411,9 @@ class FreshkillPile:
 
         # first get special groups, which need to be looked out for when feeding
         queen_dict, kits = get_alive_clan_queens(living_cats)
-        fed_kits = []
-        relevant_queens = []
-        # kits under 3 months are feed by the queen
-        for queen_id, their_kits in queen_dict.items():
-            queen = Cat.fetch_cat(queen_id)
-            young_kits = [kit for kit in their_kits if kit.moons < 3]
-            if len(young_kits) > 0:
-                fed_kits.extend(young_kits)
-                relevant_queens.append(queen)
-        pregnant_cats = [
-            cat
-            for cat in living_cats
-            if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()
-        ]
+        fed_kits, pregnant_cats, relevant_queens = self.evaluate_queen_kit_pregnant(
+            living_cats
+        )
 
         # first split nutrition information into low nutrition and satisfied
         ration_prey = get_clan_setting("ration prey")
@@ -367,7 +427,7 @@ class FreshkillPile:
                 satisfied[cat.ID] = self.nutrition_info[cat.ID]
         # if there are no low nutrition cats, go back to status tactic
         if len(low_nutrition) == 0:
-            self.tactic_status(living_cats)
+            self.tactic_low_rank(living_cats)
 
         # sort the nutrition after amount
         sorted_nutrition = dict(
@@ -418,9 +478,9 @@ class FreshkillPile:
 
         # feed the rest according to their status
         remaining_cats = [fetch_cat.fetch_cat(info[0]) for info in satisfied.items()]
-        self.tactic_status(remaining_cats, additional_food_round)
+        self.tactic_low_rank(remaining_cats, additional_food_round)
 
-    def tactic_more_experience_first(
+    def tactic_experience_first(
         self, living_cats: List[Cat], additional_food_round=False
     ) -> None:
         """Feed cats in order of experience, highest first.
@@ -431,10 +491,10 @@ class FreshkillPile:
         sorted_cats = sorted(living_cats, key=lambda x: x.experience, reverse=True)
         self.feed_group(sorted_cats, additional_food_round)
 
-    def tactic_hunter_first(
+    def priority_hunter_first(
         self, living_cats: List[Cat], additional_food_round=False
     ) -> None:
-        """Feed cats with the hunter skill first, then everyone else according to status.
+        """Feed cats with the hunter skill.
 
         :param list living_cats: Cats to feed
         :param bool additional_food_round: Determines if not player-initiated, default False
@@ -460,22 +520,17 @@ class FreshkillPile:
                     living_cats.remove(cat)
 
         self.feed_group(best_hunter, additional_food_round)
-        self.tactic_status(living_cats, additional_food_round)
 
-    def tactic_sick_injured_first(
+    def priority_sick_injured_first(
         self, living_cats: List[Cat], additional_food_round=False
     ) -> None:
-        """Feed cats in order of health, with sick/injured first.
+        """Feed injured cats.
 
         :param list living_cats: Cats to feed
         :param bool additional_food_round: Determines if not player-initiated, default False
         """
         sick_cats = [cat for cat in living_cats if cat.is_ill() or cat.is_injured()]
-        healthy_cats = [
-            cat for cat in living_cats if not cat.is_ill() and not cat.is_injured()
-        ]
         self.feed_group(sick_cats, additional_food_round)
-        self.tactic_status(healthy_cats, additional_food_round)
 
     # ---------------------------------------------------------------------------- #
     #                               helper functions                               #
@@ -560,6 +615,7 @@ class FreshkillPile:
                 the amount the cat actually needs for the moon
         """
         ration = get_clan_setting("ration prey")
+
         remaining_amount = amount
         amount_difference = actual_needed - amount
         order = ["expires_in_1", "expires_in_2", "expires_in_3", "expires_in_4"]
@@ -595,6 +651,9 @@ class FreshkillPile:
             remaining_amount : int|float
                 the amount which could not be consumed from the given pile group
         """
+        if self.timeskip_feed and not get_clan_setting("auto_feed"):
+            return given_amount
+
         if given_amount == 0:
             return given_amount
 
@@ -625,16 +684,23 @@ class FreshkillPile:
             living_cats : list
                 the list of the current living cats, where the nutrition should be stored
         """
-        old_nutrition_info = deepcopy(self.nutrition_info)
-        self.nutrition_info = {}
         queen_dict, kits = get_alive_clan_queens(self.living_cats)
 
+        # removing unnecessary cats
+        remove = []
+        for cat_id in self.nutrition_info:
+            if not Cat.fetch_cat(cat_id).status.alive_in_player_clan:
+                remove.append(cat_id)
+
+        for cat_id in remove:
+            self.nutrition_info.pop(cat_id)
+
+        # update remaining cat's max scores
         for cat in living_cats:
             if str(cat.status.rank) not in PREY_REQUIREMENT:
                 continue
             # update the nutrition_info
-            if cat.ID in old_nutrition_info:
-                self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID]
+            if cat.ID in self.nutrition_info:
                 factor = 3
                 status_ = str(cat.status.rank)
                 if cat.status.rank.is_baby() or (

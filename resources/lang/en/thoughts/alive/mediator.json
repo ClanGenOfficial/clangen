@@ -192,5 +192,13 @@
         "random_living_status": [
             "starclan"
         ]
+    },
+    {
+        "id": "mediator_to_newborn",
+        "thoughts": [
+            "Readies {PRONOUN/m_c/self} for the emotions a new birth might provoke"
+        ],
+        "main_status_constraint": [ "mediator"],
+        "random_status_constraint": [ "newborn"]
     }
 ]

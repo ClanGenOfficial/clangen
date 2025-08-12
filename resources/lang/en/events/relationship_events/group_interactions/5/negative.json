@@ -13,20 +13,20 @@
 	},
 	"specific_reaction": {
 		"r_c1_to_m_c": {
-			"romantic": "increase",
-			"dislike": "decrease",
-			"comfortable": "increase",
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         	"r_c2_to_m_c": {
-			"dislike": "increase"
+			"like": "decrease"
 		},
         "r_c3_to_m_c": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		},
         "r_c4_to_m_c": {
-			"comfortable": "increase",
+			"comfort": "increase",
 			"trust": "increase"
 		}   
 	}

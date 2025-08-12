@@ -23,7 +23,7 @@
             "selected_border": "#776045",
             "active_border": "#776045"
         },
-        "misc": {"border_width": "12", "shadow_width": "0"}
+        "misc": {"border_width": "12", "shadow_width": "0", "tool_tip_delay":  "0"}
     },
     "@image_button": {
         "colours": {
@@ -92,6 +92,8 @@
     "@checked_checkbox_smalltooltip.tool_tip": {"misc": {"rect_width": "100"}},
     "@unchecked_checkbox_smalltooltip.tool_tip": {"misc": {"rect_width": "100"}},
     "#clan_screen_cat_tooltip": {"misc": {"rect_width": "120", "text_horiz_alignment": "center"}},
+    "#moon_indicator.tool_tip": {"misc": {"rect_width": "120"}},
+    "#moon_indicator.tool_tip.text_box": {"misc": {"text_horiz_alignment": "center"}},
     "#clan_screen_cat_tooltip.text_box": {"misc": {"text_horiz_alignment": "center"}},
     "@checked_checkbox.tool_tip": {"misc": {"rect_width": "200"}},
     "@unchecked_checkbox.tool_tip": {"misc": {"rect_width": "200"}},
@@ -171,6 +173,13 @@
             "disabled_text": "#EFE5CE"
         }
     },
+        "@buttonstyles_clan_header": {
+        "prototype": "@buttonstyles_mainmenu",
+        "misc": {
+            "text_vert_alignment": "bottom",
+            "text_vert_alignment_padding": "2"
+        }
+    },
     "@buttonstyles_rounded_rect": {"prototype": "buttonstyles_prototype"},
     "@buttonstyles_icon": {
         "prototype": "@buttonstyles_rounded_rect",
@@ -184,7 +193,7 @@
     "@buttonstyles_menu_right": {"prototype": "buttonstyles_prototype"},
     "#patrol_button": {
         "prototype": "@buttonstyles_menu_right",
-        "misc": {"text_horiz_alignment": "right", "text_horiz_alignment_padding": "8"}
+        "misc": {"text_horiz_alignment": "right", "text_horiz_alignment_padding": "18"}
     },
     "@buttonstyles_menu_middle": {"prototype": "buttonstyles_prototype"},
     "@buttonstyles_menu_left": {"prototype": "buttonstyles_prototype"},
@@ -234,28 +243,10 @@
     "@buttonstyles_ladder_multiline": {"prototype": "buttonstyles_prototype", "misc": {"padding": "7, 9", "text_vert_alignment": "center"}},
     "#window_base_theme": {
         "misc": {
-            "shape": "rounded_rectangle",
-            "shape_corner_radius": "8",
-            "border_width": "3",
-            "shadow_width": "0",
             "enable_title_bar": "0"
         },
-        "colours": {"normal_border": "#2F2918", "dark_bg": "#AC9D72"}
+        "colours": {"normal_border": "#00000000", "dark_bg": "#00000000"}
     },
-    "#game_over_window": {"prototype": "#window_base_theme"},
-    "#save_check_window": {"prototype": "#window_base_theme"},
-    "#editor_save_check_window": {"prototype": "#window_base_theme"},
-    "#editor_missing_info_window": {"prototype": "#window_base_theme"},
-    "#notif_window": {"prototype": "#window_base_theme"},
-    "#filter_window": {"prototype": "#window_base_theme"},
-    "#delete_check_window": {"prototype": "#window_base_theme"},
-    "#change_cat_name_window": {"prototype": "#window_base_theme"},
-    "#change_cat_gender_window": {"prototype": "#window_base_theme"},
-    "#change_cat_pronouns_window": {"prototype": "#window_base_theme"},
-    "#test_pronouns_window": {"prototype": "#window_base_theme"},
-    "#relationship_log_window": {"prototype": "#window_base_theme"},
-    "#kill_cat_window": {"prototype": "#window_base_theme"},
-    "#confirm_display_changes_window": {"prototype": "#window_base_theme"},
     "text_entry_line": {
         "font": {"size": "15", "name": "notosans"},
         "colours": {
@@ -330,6 +321,11 @@
     "#text_box_22_horizleft_vertbottom": {
         "prototype": "#text_box_22",
         "misc": {"text_horiz_alignment": "left", "text_vert_alignment": "bottom"}
+    },
+    "#text_box_24_horizcenter": {
+        "prototype": "#text_box",
+        "font": {"size": "12", "name": "notosans"},
+        "misc": {"text_horiz_alignment": "center"}
     },
     "#text_box_26": {"prototype": "text_box", "font": {"size": "13", "name": "notosans"}},
     "#text_box_26_horizcenter": {
@@ -542,37 +538,16 @@
     },
     "#relation_bar": {
         "colours": {
-            "normal_border": "#CEC2A8",
-            "filled_bar": "#796045",
-            "unfilled_bar": "#CEC2A8"
+            "unfilled_bar": "#827552",
+            "filled_bar": "#DBA4B4"
         },
         "misc": {
             "shape": "rounded_rectangle",
-            "shape_corner_radius": "3",
-            "border_width": "2",
-            "shadow_width": "0"
+            "shadow_width": "0",
+            "border_width": "0"
         }
     },
-    "#relation_bar_neg": {
-        "prototype": "#relation_bar",
-        "colours": {"filled_bar": "#E67161"}
-    },
-    "#relation_bar_pos": {
-        "prototype": "#relation_bar",
-        "colours": {"filled_bar": "#8CB250"}
-    },
-    "#relation_bar_dark": {
-        "prototype": "#relation_bar",
-        "colours": {"normal_border": "#2F2918", "unfilled_bar": "#2F2918"}
-    },
-    "#relation_bar_neg_dark": {
-        "prototype": "#relation_bar_dark",
-        "colours": {"filled_bar": "#E67161"}
-    },
-    "#relation_bar_pos_dark": {
-        "prototype": "#relation_bar_dark",
-        "colours": {"filled_bar": "#8CB250"}
-    },
+    "#text_box_26_horizcenter.tool_tip": {"misc": {"rect_width": "100"}},
     "#events_cat_profile_button": {
         "colours": {
             "normal_bg": "#655934",
@@ -598,11 +573,15 @@
         "misc": {"border_width": "0", "shadow_width": "0"}
     },
     "#debug_console": {
-        "prototype": "#window_base_theme", 
         "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "8",
+            "border_width": "3",
+            "shadow_width": "0",
             "enable_title_bar": "1",
             "enable_close_button": "0"
-        }
+        },
+        "colours": {"normal_border": "#2F2918", "dark_bg": "#AC9D72"}
     },
     "window.#title_bar": {
         "colours": {
@@ -1405,122 +1384,6 @@
             "disabled_image": {
                 "path": "resources\/images\/buttons\/patrol_again_unavailable.png"
             }
-        }
-    },
-    "#arrow_mns_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/arrow_mns.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/arrow_mns.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_unavailable.png"
-            }
-        }
-    },
-    "#arrow_mns_closed_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_closed.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_closed_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_closed.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_closed_unavailable.png"
-            }
-        }
-    },
-    "#mns_bg": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/moons_n_seasons.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/moons_n_seasons.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/moons_n_seasons.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/moons_n_seasons.png"
-            }
-        }
-    },
-    "#mns_bg_closed": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/moons_n_seasons_closed.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/moons_n_seasons_closed.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/moons_n_seasons_closed.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/moons_n_seasons_closed.png"
-            }
-        }
-    },
-    "#mns_image_moon": {
-        "images": {
-            "normal_image": {"path": "resources\/images\/icon_moon.png"},
-            "hovered_image": {"path": "resources\/images\/icon_moon.png"},
-            "selected_image": {"path": "resources\/images\/icon_moon.png"},
-            "disabled_image": {"path": "resources\/images\/icon_moon.png"}
-        }
-    },
-    "#mns_image_newleaf": {
-        "images": {
-            "normal_image": {"path": "resources\/images\/icon_newleaf.png"},
-            "hovered_image": {"path": "resources\/images\/icon_newleaf.png"},
-            "selected_image": {"path": "resources\/images\/icon_newleaf.png"},
-            "disabled_image": {"path": "resources\/images\/icon_newleaf.png"}
-        }
-    },
-    "#mns_image_greenleaf": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/icon_greenleaf.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/icon_greenleaf.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/icon_greenleaf.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/icon_greenleaf.png"
-            }
-        }
-    },
-    "#mns_image_leafbare": {
-        "images": {
-            "normal_image": {"path": "resources\/images\/icon_leafbare.png"},
-            "hovered_image": {"path": "resources\/images\/icon_leafbare.png"},
-            "selected_image": {
-                "path": "resources\/images\/icon_leafbare.png"
-            },
-            "disabled_image": {"path": "resources\/images\/icon_leafbare.png"}
-        }
-    },
-    "#mns_image_leaffall": {
-        "images": {
-            "normal_image": {"path": "resources\/images\/icon_leaffall.png"},
-            "hovered_image": {"path": "resources\/images\/icon_leaffall.png"},
-            "selected_image": {
-                "path": "resources\/images\/icon_leaffall.png"
-            },
-            "disabled_image": {"path": "resources\/images\/icon_leaffall.png"}
         }
     },
     "#new_update_button": {

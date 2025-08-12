@@ -11,7 +11,6 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
@@ -25,6 +24,7 @@ from scripts.utility import (
     ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from ..cat import save_load
 from ..clan_package.settings import get_clan_setting, switch_clan_setting
 from ..cat.enums import CatRank, CatGroup
 from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
@@ -377,7 +377,7 @@ class ClanSettingsScreen(Screens):
         self.sub_menu = "stats"
 
         # Stats determination time.
-        faded_cats = len(game.clan.faded_ids)
+        faded_cats = len(save_load.get_faded_ids())
         living_cats = 0
         med_cats = 0
         warriors = 0

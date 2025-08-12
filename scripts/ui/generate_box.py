@@ -20,12 +20,20 @@ class BoxData:
 class BoxStyles(Enum):
     FRAME = "frame"
     ROUNDED_BOX = "rounded_box"
+    SELECTION_BOX = "selection_box"
 
 
 boxstyles = {
     "frame": BoxData(
         "frame",
         pygame.image.load("resources/images/generated_boxes/frame.png").convert_alpha(),
+        (3, 3),
+    ),
+    "selection_box": BoxData(
+        "selection_box",
+        pygame.image.load(
+            "resources/images/generated_boxes/selection_box.png"
+        ).convert_alpha(),
         (3, 3),
     ),
     "rounded_box": BoxData(

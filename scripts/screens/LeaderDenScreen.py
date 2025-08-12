@@ -337,7 +337,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
             text_kwargs={
                 "temper": i18n.t(f"screens.leader_den.{self.clan_temper}"),
-                "clan": game.clan.name,
+                "clan": game.clan.displayname,
             },
         )
 
@@ -432,7 +432,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
         )
         for i, other_clan in enumerate(game.clan.all_clans):
-            if other_clan.name == game.clan.name:
+            if other_clan.name == game.clan.displayname:
                 continue
             x_pos = 128
             self.other_clan_selection_elements[f"container{i}"] = UIContainer(

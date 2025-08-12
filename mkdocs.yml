@@ -15,6 +15,7 @@ nav:
         - dev/project-basics/getting-started-with-github-and-clangen.md
     - Code:
         - dev/code/index.md
+        - dev/code/cat-status.md
         - dev/code/content-adding.md
         - dev/code/localization.md
     - Writing:
@@ -22,6 +23,7 @@ nav:
         - Reference:
           - dev/writing/reference/index.md
           - dev/writing/reference/trait-dictionary.md
+          - dev/writing/reference/tag-lists.md
         - dev/writing/patrols.md
         - dev/writing/shortevents.md
         - dev/writing/future.md

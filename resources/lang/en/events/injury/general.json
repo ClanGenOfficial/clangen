@@ -7,7 +7,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c tried to sneak out of the camp, but fell and got a bruise before {PRONOUN/m_c/subject} even left the safety of the camp walls.",
         "m_c": {
             "status": [
@@ -38,7 +38,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c snuck out of camp and returned a bit bruised, but brimming with pride despite the scolding {PRONOUN/m_c/subject} {VERB/m_c/were/was} given.",
         "m_c": {
             "status": [
@@ -69,7 +69,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c play-fought a bit too hard and got a little bruised.",
         "m_c": {
             "status": [
@@ -103,7 +103,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c tried to sneak out of the camp, but fell and scraped {PRONOUN/m_c/poss} paw before {PRONOUN/m_c/subject} even left the safety of the camp walls.",
         "m_c": {
             "status": [
@@ -134,7 +134,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c snuck out of camp and returned scraped up, but brimming with pride despite the scolding {PRONOUN/m_c/subject} {VERB/m_c/were/was} given.",
         "m_c": {
             "status": [
@@ -165,7 +165,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c play-fought a bit too hard and scraped {PRONOUN/m_c/self} up.",
         "m_c": {
             "status": [
@@ -199,7 +199,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c woke up with a mild headache, but got up to play anyways, trying to ignore the nagging pain.",
         "m_c": {
             "status": [
@@ -225,7 +225,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c woke up with a splitting headache, and couldn't get out of {PRONOUN/m_c/poss} nest. {PRONOUN/m_c/subject/CAP} spent the entire day curled up in the nursery, trying to avoid light and noise so that the throbbing pain could subside.",
         "m_c": {
             "status": [
@@ -251,7 +251,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c had a bad fall while taking a walk through the territory, returning to camp sore and bruised.",
         "m_c": {
             "age": [
@@ -285,7 +285,7 @@
         "tags": [
             "clan:kitten"
         ],
-        "weight": 40,
+        "frequency": 4,
         "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. {PRONOUN/m_c/subject/CAP}'ll be sore for the next few days.",
         "m_c": {
             "age": [
@@ -328,24 +328,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -357,7 +344,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The weather has been bad lately, and m_c can feel it in {PRONOUN/m_c/poss} bones.",
         "m_c": {
             "age": [
@@ -384,7 +371,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c can feel {PRONOUN/m_c/poss} bones and joints aching. Bad weather must be on its way.",
         "m_c": {
             "age": [
@@ -414,7 +401,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/poss} aching joints are making that extremely clear.",
         "m_c": {
             "age": [
@@ -444,7 +431,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c spent the day tending to the dens, and might have worked a bit too hard - {PRONOUN/m_c/poss} joints are now quite sore.",
         "m_c": {
             "age": [
@@ -480,7 +467,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c had a bad fall while taking a walk through the territory and, once found, has to be carried back home.",
         "m_c": {
             "age": [
@@ -526,7 +513,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c has collected quite a lot of ticks in {PRONOUN/m_c/poss} pelt, and grumbles about the itchy bites dotted throughout.",
         "m_c": {
             "age": [
@@ -556,7 +543,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c has been yowling about {PRONOUN/m_c/poss} ticks for the better part of the day, the itchy bites maddening to {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
@@ -598,7 +585,7 @@
         "tags": [
             "clan:apprentice"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c keeps pointedly reminding other cats that {PRONOUN/m_c/poss} ticks haven't been seen to yet, clearly uncomfortable with the itchy bites dotting {PRONOUN/m_c/poss} pelt.",
         "m_c": {
             "age": [
@@ -640,7 +627,7 @@
         "tags": [
             "clan:warrior"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c has been getting more and more frustrated by the number of ticks {PRONOUN/m_c/subject} {VERB/m_c/have/has}, but doesn't want to bother anyone with {PRONOUN/m_c/poss} troubles. Regardless, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} found out when someone spots {PRONOUN/m_c/object} scratching at the bites.",
         "m_c": {
             "age": [
@@ -681,7 +668,7 @@
         "tags": [
             "clan:warrior"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates, but r_c retaliated at the interruption. m_c limps away, fresh clawmarks scored through {PRONOUN/m_c/poss} pelt.",
         "m_c": {
             "age": [
@@ -723,7 +710,7 @@
                 "vengeful"
             ],
             "relationship_status": [
-                "dislike_25"
+                "dislikes"
             ]
         },
         "injury": [
@@ -759,22 +746,9 @@
                     "respect",
                     "trust",
                     "comfort",
-                    "platonic"
+                    "like"
                 ],
                 "amount": -20
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "dislike"
-                ],
-                "amount": 20
             }
         ]
     },
@@ -786,7 +760,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 1,
         "event_text": "m_c was on a walk when {PRONOUN/m_c/subject} saw r_c being attacked by a rogue! {PRONOUN/m_c/subject/CAP} helped r_c escape, but not before gaining a few wounds.",
         "m_c": {
             "age": [
@@ -855,22 +829,9 @@
                     "respect",
                     "trust",
                     "comfort",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 20
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -20
             },
             {
                 "cats_from": [
@@ -882,9 +843,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 10
+                "amount": -10
             }
         ],
         "new_cat": [
@@ -902,7 +863,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c was on a walk when {PRONOUN/m_c/subject} saw r_c being attacked by a dog! {PRONOUN/m_c/subject/CAP} helped r_c escape, but not before gaining a few wounds.",
         "m_c": {
             "age": [
@@ -974,22 +935,9 @@
                     "respect",
                     "trust",
                     "comfort",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 20
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -20
             }
         ]
     },
@@ -1001,7 +949,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c overdid {PRONOUN/m_c/poss} last sparring session, and has been wincing all day. Seems {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a bit bruised.",
         "m_c": {
             "status": [
@@ -1041,7 +989,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A brutal battle against o_c_n leaves m_c injured.",
         "m_c": {
             "status": [
@@ -1092,7 +1040,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c came out worse for wear after a border skirmish with o_c_n.",
         "m_c": {
             "status": [
@@ -1140,7 +1088,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "On a border patrol near the o_c_n border, m_c could no longer take o_c_n's jeers and smirks. {PRONOUN/m_c/subject/CAP} lashed out at the first jeering cat {PRONOUN/m_c/subject} saw, although the hotheaded move wasn't smart as m_c couldn't escape the skirmish without injury.",
         "m_c": {
             "age": [
@@ -1207,13 +1155,13 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
             "clan:kitten"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "While o_c_n attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery. However, it didn't end with m_c unscathed.",
         "m_c": {
             "age": [
@@ -1263,7 +1211,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c trips over an unseen rabbit hole, spraining {PRONOUN/m_c/poss} paw.",
         "injury": [
             {
@@ -1287,7 +1235,7 @@
             "leaf-fall",
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at {PRONOUN/m_c/poss} paws.",
         "m_c": {
             "status": [
@@ -1332,7 +1280,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was grabbed by a hawk, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
         "m_c": {
             "status": [
@@ -1384,7 +1332,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -1405,7 +1353,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
         "m_c": {
             "age": [
@@ -1445,7 +1393,7 @@
             "leaf-fall",
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
         "m_c": {
             "age": [
@@ -1490,7 +1438,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 3,
         "event_text": "m_c went out for a walk, but slipped on the ice and broke a bone.",
         "m_c": {
             "age": [
@@ -1530,7 +1478,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c was grabbed and dropped by an eagle, but {PRONOUN/m_c/subject} somehow survived.",
         "m_c": {
             "status": [
@@ -1566,7 +1514,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was climbing a tree and got a splinter from one of the branches.",
         "m_c": {
             "age": [
@@ -1594,7 +1542,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was climbing a tree when {PRONOUN/m_c/subject} fell. Luckily, {PRONOUN/m_c/subject} {VERB/m_c/were/was} only bruised by the incident.",
         "m_c": {
             "age": [
@@ -1622,7 +1570,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c couldn't help but try to show off by climbing the tallest tree {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} fell out of the tree.",
         "m_c": {
             "age": [
@@ -1669,7 +1617,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c had a bad fall while taking a walk through the territory, and comes back to camp quite sore.",
         "m_c": {
             "age": [
@@ -1704,7 +1652,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
@@ -1750,7 +1698,7 @@
         "season": [
             "any"
         ],
-        "weight": 0,
+        "frequency": 1,
         "event_text": "m_c survived a vicious eagle attack - with the claw marks to prove it!",
         "m_c": {
             "status": [
@@ -1790,7 +1738,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was moving some branches out of the way when {PRONOUN/m_c/subject} got a splinter.",
         "m_c": {
             "age": [
@@ -1822,7 +1770,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The ground inside the camp has turned into a muddy mess from the rain. m_c sprains {PRONOUN/m_c/poss} paw while trying to walk through the muck.",
         "m_c": {},
         "injury": [
@@ -1844,7 +1792,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a rogue, but was barely even hurt! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} a bit bruised, but bruises are better than clawmarks.",
         "m_c": {
             "status": [
@@ -1893,9 +1841,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 5
+                "amount": -5
             }
         ]
     },
@@ -1907,7 +1855,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a fox, but was barely even hurt! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} a bit bruised, but bruises are better than clawmarks.",
         "m_c": {
             "status": [
@@ -1948,7 +1896,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a dog, but was barely even hurt! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} a bit bruised, but bruises are better than clawmarks.",
         "m_c": {
             "status": [
@@ -1989,7 +1937,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c saved r_c from an enemy warrior, both making it out with hardly even a scratch.",
         "m_c": {
             "status": [
@@ -2047,7 +1995,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2065,7 +2013,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c saved r_c from a dog, and was barely even hurt! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} a bit bruised, but bruises are better than clawmarks.",
         "m_c": {
             "status": [
@@ -2121,7 +2069,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2138,7 +2086,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c overdid {PRONOUN/m_c/poss} last sparring session, and has been wincing all day. Seems {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a bit scraped up.",
         "m_c": {
             "status": [
@@ -2175,7 +2123,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a rogue, but was barely even hurt! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} a bit scraped up, but a few scrapes are better than clawmarks.",
         "m_c": {
             "status": [
@@ -2223,9 +2171,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 5
+                "amount": -5
             }
         ]
     },
@@ -2237,7 +2185,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a fox, but was barely even hurt! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} a bit scraped up, but a few scrapes are better than clawmarks.",
         "m_c": {
             "status": [
@@ -2278,7 +2226,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c saved r_c from a fox, and was barely even hurt! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} a bit scraped up, but a few scrapes are better than clawmarks.",
         "m_c": {
             "status": [
@@ -2334,7 +2282,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2351,7 +2299,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c overdid {PRONOUN/m_c/poss} last sparring session and sprained a paw.",
         "m_c": {
             "status": [
@@ -2388,7 +2336,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a dog and got hurt.",
         "m_c": {
             "status": [
@@ -2442,7 +2390,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c saved r_c from a fox, but was hurt.",
         "m_c": {
             "status": [
@@ -2512,7 +2460,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2529,7 +2477,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was hurt while protecting r_c, the leader, from a fox.",
         "m_c": {
             "status": [
@@ -2591,7 +2539,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2608,7 +2556,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a rogue and got hurt.",
         "m_c": {
             "status": [
@@ -2670,9 +2618,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 10
+                "amount": -10
             }
         ]
     },
@@ -2684,7 +2632,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a big dog and was badly injured.",
         "m_c": {
             "status": [
@@ -2738,7 +2686,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c saved r_c from a big dog, but was badly injured.",
         "m_c": {
             "status": [
@@ -2811,7 +2759,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2828,7 +2776,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a hawk and got hurt.",
         "m_c": {
             "status": [
@@ -2882,7 +2830,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c saved r_c from a hawk, but was hurt.",
         "m_c": {
             "status": [
@@ -2948,7 +2896,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2965,7 +2913,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was hurt while protecting the leader, r_c, from a rogue.",
         "m_c": {
             "status": [
@@ -3025,24 +2973,12 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": -10
             },
             {
                 "cats_from": [
@@ -3054,9 +2990,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 5
+                "amount": -5
             }
         ],
         "new_cat": [
@@ -3074,7 +3010,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was wounded during a harsh training exercise lead by r_c.",
         "m_c": {
             "status": [
@@ -3130,24 +3066,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -3159,7 +3083,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was hurt by o_c_n warriors after being ordered by r_c to go over the border.",
         "m_c": {
             "status": [
@@ -3184,7 +3108,7 @@
                 "vengeful"
             ],
             "relationship_status": [
-                "dislike_25"
+                "dislikes"
             ]
         },
         "injury": [
@@ -3220,24 +3144,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -15
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 15
             }
         ],
         "other_clan": {
@@ -3256,7 +3168,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was injured after a fight with a Clanmate that r_c encouraged.",
         "m_c": {
             "age": [
@@ -3325,24 +3237,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -3354,7 +3254,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c's tail was badly hurt by a fox while {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to follow r_c's orders.",
         "m_c": {
             "age": [
@@ -3420,24 +3320,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -3449,7 +3337,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c's leg was badly injured after r_c forced {PRONOUN/m_c/object} to fight a big dog.",
         "m_c": {
             "status": [
@@ -3479,7 +3367,7 @@
                 "vengeful"
             ],
             "relationship_status": [
-                "dislike_25"
+                "dislikes"
             ]
         },
         "injury": [
@@ -3513,24 +3401,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -3542,7 +3418,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c mistook a hare for a rabbit while hunting and {PRONOUN/m_c/poss} eyes were scratched, a valuable lesson learnt.",
         "m_c": {
             "status": [
@@ -3583,7 +3459,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Heightened battle training has left m_c sore and tired.",
         "m_c": {
             "status": [
@@ -3612,7 +3488,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A harsh sparring session has left m_c bruised. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that {PRONOUN/m_c/subject} will do badly in a real fight against o_c_n.",
         "m_c": {
             "status": [
@@ -3641,7 +3517,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A horrible battle occurred between c_n and o_c_n patrols after the two patrols traded insults at the border. m_c and r_c were left badly injured.",
         "m_c": {
             "status": [
@@ -3697,7 +3573,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was injured recklessly fighting a rogue that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
         "m_c": {
             "status": [
@@ -3762,24 +3638,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -5
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 5
             },
             {
                 "cats_from": [
@@ -3791,9 +3655,9 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 15
+                "amount": -15
             }
         ],
         "new_cat": [
@@ -3812,7 +3676,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was injured recklessly fighting an enemy warrior that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
         "m_c": {
             "status": [
@@ -3878,24 +3742,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -5
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 5
             }
         ],
         "other_clan": {
@@ -3913,7 +3765,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was injured recklessly fighting a dog that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
         "m_c": {
             "status": [
@@ -3979,24 +3831,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -5
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 5
             }
         ]
     },
@@ -4008,7 +3848,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was injured recklessly fighting a fox that {PRONOUN/m_c/poss} mentor, r_c, encouraged {PRONOUN/m_c/object} to attack.",
         "m_c": {
             "status": [
@@ -4074,24 +3914,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -5
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 5
             }
         ]
     },
@@ -4103,7 +3931,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c could not handle r_c's harsh training, and was injured as a result.",
         "m_c": {
             "status": [
@@ -4176,8 +4004,7 @@
                     "r_c"
                 ],
                 "values": [
-                    "dislike",
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -4194,7 +4021,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, r_c, but was a bit too rough with {PRONOUN/m_c/poss} body, and has the bruises to show it.",
         "m_c": {
             "status": [
@@ -4237,7 +4064,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c took a tumble off a rock while practicing {PRONOUN/m_c/poss} battle moves. {PRONOUN/m_c/subject/CAP}'ll be a bit tender for the next few days.",
         "m_c": {
             "age": [
@@ -4266,7 +4093,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was practicing {PRONOUN/m_c/poss} hunting pounce when {PRONOUN/m_c/subject} pounced right into a rock! Ow! {PRONOUN/m_c/subject/CAP} might be sore for a while.",
         "m_c": {
             "status": [
@@ -4292,7 +4119,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c overdid {PRONOUN/m_c/poss} last battle training session, and has been wincing all day. Seems {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a bit bruised.",
         "m_c": {
             "status": [
@@ -4326,7 +4153,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c overdid {PRONOUN/m_c/poss} last battle training session, and has been wincing all day. Seems {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a bit scraped up.",
         "m_c": {
             "status": [
@@ -4360,7 +4187,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, r_c, but twisted {PRONOUN/m_c/poss} paw at an awkward angle.",
         "m_c": {
             "status": [
@@ -4403,7 +4230,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was rushing around the camp in excitement for a patrol when {PRONOUN/m_c/poss} paw landed wrong on a rock! {PRONOUN/m_c/subject/CAP} took a tumble, and can't help limping the rest of the day.",
         "m_c": {
             "status": [
@@ -4436,7 +4263,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c snuck out at night on a dare, but soon came hobbling back to camp, head lowered in embarrassment. Seems like {PRONOUN/m_c/poss} paw got caught on something in the dark and caused {PRONOUN/m_c/object} to trip!",
         "m_c": {
             "status": [
@@ -4475,7 +4302,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c overdid {PRONOUN/m_c/poss} last battle training session and sprained a paw.",
         "m_c": {
             "status": [
@@ -4509,7 +4336,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, r_c, but now finds {PRONOUN/m_c/poss} paws to be sore and bleeding.",
         "m_c": {
             "status": [
@@ -4552,7 +4379,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c trained extra hard to impress {PRONOUN/m_c/poss} mentor, r_c, but is extremely sore when {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes} up the next morning.",
         "m_c": {
             "status": [
@@ -4595,7 +4422,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c was hurt by r_c for not defending the territory well enough.",
         "m_c": {
             "status": [
@@ -4662,24 +4489,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -15
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 15
             }
         ]
     },
@@ -4691,7 +4506,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for accidentally wandering over the border.",
         "m_c": {
             "status": [
@@ -4752,24 +4567,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -4781,7 +4584,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for messing with a Twoleg object.",
         "m_c": {
             "age": [
@@ -4854,24 +4657,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -4883,7 +4674,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c and r_c were practicing battle moves. r_c insisted they keep their claws out, and m_c got hurt.",
         "m_c": {
             "status": [
@@ -4949,24 +4740,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -4978,7 +4757,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c was hurt by {PRONOUN/m_c/poss} mentor, r_c, as a punishment for disobeying {PRONOUN/r_c/object}.",
         "m_c": {
             "status": [
@@ -5046,24 +4825,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -5075,7 +4842,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c fought with {PRONOUN/m_c/poss} mentor, r_c, and was injured.",
         "m_c": {
             "status": [
@@ -5141,24 +4908,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -5170,7 +4925,7 @@
         "season": [
             "any"
         ],
-        "weight": 15,
+        "frequency": 3,
         "event_text": "m_c could not handle {PRONOUN/m_c/poss} mentor's, r_c, harsh training, and was injured as a result.",
         "m_c": {
             "status": [
@@ -5243,24 +4998,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -5272,7 +5015,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c's leg was badly hurt after r_c, {PRONOUN/m_c/poss} mentor, used a Twoleg trap during a training exercise.",
         "m_c": {
             "status": [
@@ -5332,24 +5075,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -5361,7 +5092,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c stepped on some sharp stones while walking along the shoreline.",
         "m_c": {
             "age": [
@@ -5394,7 +5125,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was bitten by a snake, and miraculously survived!",
         "m_c": {
             "age": [
@@ -5440,7 +5171,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, gaining a few bruises.",
         "m_c": {
             "age": [
@@ -5473,7 +5204,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c misstepped and slipped from a rock, dislocating a joint.",
         "m_c": {
             "age": [
@@ -5506,7 +5237,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c slipped on some rocks and dislocated {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
@@ -5539,7 +5270,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c slipped on some rocks and twisted {PRONOUN/m_c/poss} paw.",
         "m_c": {
             "age": [
@@ -5572,7 +5303,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c leapt from a rock, but {PRONOUN/m_c/subject} didn't land quite right.",
         "m_c": {
             "age": [
@@ -5605,7 +5336,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c misstepped and slipped from a rock, spraining {PRONOUN/m_c/poss} paw.",
         "m_c": {
             "age": [
@@ -5638,7 +5369,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, spraining {PRONOUN/m_c/poss} paw.",
         "m_c": {
             "age": [
@@ -5671,7 +5402,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c got {PRONOUN/m_c/poss} paw stuck in a Twoleg trap, but luckily escaped with only a sprain.",
         "m_c": {
             "age": [
@@ -5704,7 +5435,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c ran too fast over harsh ground and hurt {PRONOUN/m_c/poss} paws.",
         "m_c": {
             "age": [
@@ -5733,7 +5464,7 @@
         "season": [
             "leaf-bare"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The weather has been cold and dry, and m_c's paw pads have cracked as a result.",
         "m_c": {
             "age": [
@@ -5762,7 +5493,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c helped to strengthen the camp walls, but scraped up {PRONOUN/m_c/poss} paw pads in the process.",
         "m_c": {
             "age": [
@@ -5806,7 +5537,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c overexerted {PRONOUN/m_c/self}, and is feeling extremely sore.",
         "m_c": {
             "age": [
@@ -5839,7 +5570,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was out on a walk alone when {PRONOUN/m_c/subject} heard a dog approaching! {PRONOUN/m_c/subject/CAP} crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
         "m_c": {
             "age": [
@@ -5886,7 +5617,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was out on a walk alone when {PRONOUN/m_c/subject} heard a fox approaching! {PRONOUN/m_c/subject/CAP} crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
         "m_c": {
             "age": [
@@ -5933,7 +5664,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c fought a rogue and, while {PRONOUN/m_c/subject} drove the trespasser away, {PRONOUN/m_c/subject} needed to be rushed to the medicine cat den afterwards.",
         "m_c": {
             "age": [
@@ -5964,9 +5695,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 30
+                "amount": -30
             }
         ],
         "injury": [
@@ -6001,7 +5732,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c got {PRONOUN/m_c/poss} paw stuck in a Twoleg trap, and while {PRONOUN/m_c/subject} eventually escaped, {PRONOUN/m_c/poss} leg is heavily injured.",
         "m_c": {
             "age": [
@@ -6047,7 +5778,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c was maimed by r_c for questioning {PRONOUN/r_c/poss} leadership.",
         "m_c": {
             "age": [
@@ -6115,24 +5846,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -15
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 15
             }
         ]
     },
@@ -6144,7 +5863,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c's tail was badly injured by a dog.",
         "m_c": {
             "age": [
@@ -6193,7 +5912,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c's tail was badly injured by a fox.",
         "m_c": {
             "age": [
@@ -6239,7 +5958,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "m_c": {
             "status": [
@@ -6303,25 +6022,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -15
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": 15
             }
         ]
     },
@@ -6333,7 +6039,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 1,
         "event_text": "m_c was hurt by r_c for speaking out against {PRONOUN/r_c/object}.",
         "m_c": {
             "status": [
@@ -6396,25 +6102,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -15
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": 15
             }
         ]
     },
@@ -6426,7 +6119,7 @@
         "season": [
             "any"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
@@ -6487,25 +6180,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -20
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": 20
             }
         ]
     },
@@ -6517,7 +6197,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was helping reinforce the camp walls when {PRONOUN/m_c/subject} got a thorn stuck in {PRONOUN/m_c/poss} paw.",
         "m_c": {
             "age": [
@@ -6550,7 +6230,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was trying to fluff up {PRONOUN/m_c/poss} nest when {PRONOUN/m_c/subject} discovered that {PRONOUN/m_c/subject} {VERB/m_c/were/was} the victim of a prank. Fox-dung! There's now a sharp thorn embedded in {PRONOUN/m_c/poss} paw.",
         "m_c": {
             "age": [
@@ -6580,7 +6260,7 @@
             "greenleaf",
             "newleaf"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} {VERB/m_c/bend/bends} down and {VERB/m_c/take/takes} a big bite-- Yowch! A bee! {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} home with a swollen face...",
         "m_c": {
             "age": [
@@ -6622,7 +6302,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c accidentally crossed the border on patrol and got {PRONOUN/m_c/poss} ear torn by an enemy warrior.",
         "m_c": {
             "age": [
@@ -6676,7 +6356,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c caught a cat from another Clan trespassing on their territory and {PRONOUN/m_c/poss} ear was torn in the ensuing scuffle.",
         "m_c": {
             "age": [
@@ -6730,7 +6410,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was attacked by a group of rats! {PRONOUN/m_c/subject/CAP} managed to fight them off, but didn't escape unscathed.",
         "m_c": {
             "status": [
@@ -6775,7 +6455,7 @@
             "greenleaf",
             "newleaf"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "The day is so nice out today that m_c decided to sneak out of camp and go play in the flowers without anyone noticing. {PRONOUN/m_c/subject/CAP} come back with a swollen paw, having stepped on a bee.",
         "m_c": {
             "age": [
@@ -6814,7 +6494,7 @@
             "greenleaf",
             "newleaf"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Camp was supposed to be safe, but m_c found bees trying to form a hive in a corner of camp. Annoyed by their buzzing, m_c attacked them, and got swarmed by bees.",
         "m_c": {
             "age": [
@@ -6856,7 +6536,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c woke up with a mild headache, but went about {PRONOUN/m_c/poss} day anyway, trying to ignore the nagging pain.",
         "m_c": {
             "age": [
@@ -6885,7 +6565,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c woke up with a splitting headache, and couldn't get out of {PRONOUN/m_c/poss} nest. {PRONOUN/m_c/subject/CAP} spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
         "m_c": {
             "age": [
@@ -6917,7 +6597,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 2,
         "event_text": "While patrolling the o_c_n borders, m_c stepped on a concealed pit trap set by what seemed to be o_c_n warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap. The other cats on the patrol flank {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/limp/limps} back to the camp.",
         "m_c": {
             "age": [
@@ -6973,7 +6653,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "During a skirmish with o_c_n, m_c took a blow meant for r_c.",
         "m_c": {
             "status": [
@@ -7057,7 +6737,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was taking some prey from the fresh-kill pile only to find a horde of rats! {PRONOUN/m_c/subject/CAP} called to r_c for help and together they fought off the rats, but not before being injured.",
         "m_c": {
             "age": [
@@ -7116,7 +6796,7 @@
         "season": [
             "any"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was taking some prey from the fresh-kill pile only to find a horde of rats! While m_c managed to fight off every last rat, {PRONOUN/m_c/subject} got injured in the process.",
         "m_c": {
             "age": [
@@ -7171,7 +6851,7 @@
         "tags": [
             "clan:medicine cat"
         ],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c was left badly hurt during a battle with o_c_n. Surprisingly, the o_c_n medicine cat cares for {PRONOUN/m_c/object} until {PRONOUN/m_c/poss} Clanmates get there.",
         "m_c": {
             "status": [
@@ -7229,7 +6909,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Having heard that o_c_n was running low on vital emergency herbs, m_c gathers up some excess stock and makes the trek. However, with a mouth full of leaves, m_c takes a claw to the face before {PRONOUN/m_c/subject} can explain {PRONOUN/m_c/poss} intentions.",
         "m_c": {
             "status": [
@@ -7289,7 +6969,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "Despite the Clan's alarmingly low stock of herbs, m_c brings what scant amount they have to o_c_n, having heard of their crisis. However, with a full mouth, m_c takes a claw to the face before {PRONOUN/m_c/subject} can explain {PRONOUN/m_c/poss} intentions.",
         "m_c": {
             "status": [
@@ -7349,7 +7029,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c gazes fearfully up at the o_c_n warrior, whose teeth are bared and ready to deliver the killing blow. Something in {PRONOUN/m_c/poss} eyes must have shaken them, however, as they bound away without finishing the job.",
         "m_c": {
             "status": [
@@ -7399,7 +7079,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c acts without thinking, saving the life of a o_c_n warrior by chasing off the predator attempting to make them their lunch.",
         "m_c": {
             "status": [
@@ -7453,7 +7133,7 @@
         "season": [
             "any"
         ],
-        "weight": 30,
+        "frequency": 4,
         "event_text": "m_c was running around on patrol when {PRONOUN/m_c/poss} paw landed right in a rabbit hole. {PRONOUN/m_c/subject/CAP} limped the whole way home.",
         "m_c": {
             "status": [
@@ -7497,7 +7177,7 @@
         "sub_type": [
             "war"
         ],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A o_c_n warrior nearly fell from a cliff during a border skirmish. m_c pulled {PRONOUN/m_c/poss} enemy back up from certain death, despite {PRONOUN/m_c/poss} battle injuries.",
         "m_c": {
             "status": [

@@ -88,6 +88,10 @@ class CatRank(StrEnum):
     def is_any_clancat_rank(self) -> bool:
         return self not in (self.ROGUE, self.LONER, self.KITTYPET)
 
+    @staticmethod
+    def get_num_of_clan_ranks() -> int:
+        return len([enum for enum in CatRank if enum.is_any_clancat_rank()])
+
 
 class CatStanding(StrEnum):
     MEMBER = "member"
@@ -124,4 +128,4 @@ class CatGroup(StrEnum):
         )
 
     def is_other_clan_group(self) -> bool:
-        return True if self.is_any_clan_group() and not self.PLAYER_CLAN else False
+        return self.is_any_clan_group() and self != self.PLAYER_CLAN
