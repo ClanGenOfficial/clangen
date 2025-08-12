@@ -11,7 +11,7 @@ MkDocs utilizes Markdown, a simple text formatting language. Many resources exis
 Markdown tables can be a bit of hassle to create manually, but a handy tool is available to help: [Tables Generator](https://www.tablesgenerator.com/markdown_tables#).
 
 ## Enabled Features
-Material provides a wide range of built-in features that we can enabled or disable as needed. Below is a list of the currently enabled features and accompanying information.
+Material provides a wide range of built-in features that we can enable or disable as needed. Below is a list of the currently enabled features and accompanying information.
 
 | Feature                                                                                                                                           | Use                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

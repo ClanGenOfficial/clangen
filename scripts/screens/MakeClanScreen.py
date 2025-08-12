@@ -1,6 +1,7 @@
 from random import choice, randrange
 from re import sub
 from typing import Optional
+from uuid import uuid4
 
 import i18n
 import pygame
@@ -11,7 +12,8 @@ import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import create_example_cats, create_cat, Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
-from scripts.game_structure import image_cache
+from scripts.events_module.patrol.patrol import Patrol
+from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game_essentials import (
     game,
 )
@@ -20,11 +22,16 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UISurfaceImageButton,
 )
-from scripts.events_module.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
 from scripts.utility import ui_scale_dimensions
 from .Screens import Screens
+from .screens_core.screens_core import rebuild_den_dropdown
+from ..cat import save_load
+from ..cat.enums import CatRank
 from ..cat.sprites import sprites
+from ..clan_package.settings import get_clan_setting
+from ..game_structure.game.settings import game_setting_set, game_setting_get
+from ..game_structure.game.switches import switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER, screen
 from ..game_structure.windows import SymbolFilterWindow
 from ..ui.generate_box import get_box, BoxStyles
@@ -96,7 +103,7 @@ class MakeClanScreen(Screens):
         # current page for symbol choosing
         self.current_page = 1
 
-        self.rolls_left = game.config["clan_creation"]["rerolls"]
+        self.rolls_left = constants.CONFIG["clan_creation"]["rerolls"]
         self.menu_warning = None
 
     def screen_switches(self):
@@ -187,7 +194,7 @@ class MakeClanScreen(Screens):
             elif self.sub_screen == "saved screen":
                 self.handle_saved_clan_event(event)
 
-        elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if self.sub_screen == "game mode":
                 self.handle_game_mode_key(event)
             elif self.sub_screen == "name clan":
@@ -214,7 +221,7 @@ class MakeClanScreen(Screens):
 
         # Logic for when to quick-start clan
         elif event.ui_element == self.elements["next_step"]:
-            game.settings["game_mode"] = self.game_mode
+            game_setting_set("game_mode", self.game_mode)
             if "@checked_checkbox" in self.elements["random_clan_checkbox"].object_ids:
                 self.random_quick_start()
                 self.save_clan()
@@ -249,7 +256,7 @@ class MakeClanScreen(Screens):
 
         elif event.key == pygame.K_RIGHT or event.key == pygame.K_RETURN:
             if self.elements["next_step"].is_enabled:
-                game.settings["game_mode"] = self.game_mode
+                game_setting_set("game_mode", self.game_mode)
                 self.open_name_clan()
 
     def handle_name_clan_event(self, event):
@@ -263,12 +270,6 @@ class MakeClanScreen(Screens):
             ).strip()
             if not new_name:
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
-                self.elements["error"].show()
-                return
-            if new_name.casefold() in (
-                clan.casefold() for clan in game.switches["clan_list"]
-            ):
-                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
@@ -293,14 +294,6 @@ class MakeClanScreen(Screens):
                     self.elements["error"].set_text("Your Clan's name cannot be empty")
                     self.elements["error"].show()
                     return
-                if new_name.casefold() in (
-                    clan.casefold() for clan in game.switches["clan_list"]
-                ):
-                    self.elements["error"].set_text(
-                        "A Clan with that name already exists."
-                    )
-                    self.elements["error"].show()
-                    return
                 self.clan_name = new_name
                 self.open_choose_leader()
         elif event.key == pygame.K_RETURN:
@@ -309,12 +302,6 @@ class MakeClanScreen(Screens):
             ).strip()
             if not new_name:
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
-                self.elements["error"].show()
-                return
-            if new_name.casefold() in (
-                clan.casefold() for clan in game.switches["clan_list"]
-            ):
-                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
@@ -332,11 +319,11 @@ class MakeClanScreen(Screens):
             self.selected_cat = (
                 None  # Your selected cat now no longer exists. Sad. They go away.
             )
-            if self.elements["error_message"]:
-                self.elements["error_message"].hide()
+            if self.elements[Switch.error_message]:
+                self.elements[Switch.error_message].hide()
             self.refresh_cat_images_and_info()  # Refresh all the images.
             self.rolls_left -= 1
-            if game.config["clan_creation"]["rerolls"] == 3:
+            if constants.CONFIG["clan_creation"]["rerolls"] == 3:
                 event.ui_element.disable()
             else:
                 self.elements["reroll_count"].set_text(str(self.rolls_left))
@@ -564,7 +551,7 @@ class MakeClanScreen(Screens):
         self.main_menu.kill()
         self.menu_warning.kill()
         self.clear_all_page()
-        self.rolls_left = game.config["clan_creation"]["rerolls"]
+        self.rolls_left = constants.CONFIG["clan_creation"]["rerolls"]
         self.fullscreen_bgs = {}
         self.game_bgs = {}
         self.set_mute_button_position("bottomright")
@@ -583,14 +570,6 @@ class MakeClanScreen(Screens):
                 )
                 self.elements["error"].show()
                 self.elements["next_step"].disable()
-            elif self.elements["name_entry"].get_text().casefold() in (
-                clan.casefold() for clan in game.switches["clan_list"]
-            ):
-                self.elements["error"].set_text(
-                    "screens.make_clan.error_clan_name_duplicate"
-                )
-                self.elements["error"].show()
-                self.elements["next_step"].disable()
             else:
                 self.elements["error"].hide()
                 self.elements["next_step"].enable()
@@ -601,8 +580,11 @@ class MakeClanScreen(Screens):
         # refreshes symbol list when filters are changed
         # - done here bc refresh_symbol_list cannot be called from windows.py
         if self.sub_screen == "choose symbol":
-            if len(game.switches["disallowed_symbol_tags"]) != self.tag_list_len:
-                self.tag_list_len = len(game.switches["disallowed_symbol_tags"])
+            if (
+                len(switch_get_value(Switch.disallowed_symbol_tags))
+                != self.tag_list_len
+            ):
+                self.tag_list_len = len(switch_get_value(Switch.disallowed_symbol_tags))
                 self.refresh_symbol_list()
 
     def clear_all_page(self):
@@ -663,14 +645,14 @@ class MakeClanScreen(Screens):
         elif self.sub_screen in ("choose leader", "choose deputy", "choose med cat"):
             if self.selected_cat.age in ("newborn", "kitten", "adolescent"):
                 self.elements["select_cat"].hide()
-                self.elements["error_message"].set_text(
-                    self.elements["error_message"].html_text,
+                self.elements[Switch.error_message].set_text(
+                    self.elements[Switch.error_message].html_text,
                     text_kwargs={"m_c": self.selected_cat},
                 )
-                self.elements["error_message"].show()
+                self.elements[Switch.error_message].show()
             else:
                 self.elements["select_cat"].show()
-                self.elements["error_message"].hide()
+                self.elements[Switch.error_message].hide()
         # Refresh the choose-members background to match number of cat's chosen.
         elif self.sub_screen == "choose members":
             if len(self.members) == 0:
@@ -1201,7 +1183,7 @@ class MakeClanScreen(Screens):
             name = symbol.strip("symbol1234567890")
             tags = symbol_attributes[name.capitalize()][f"tags{index}"]
             for tag in tags:
-                if tag in game.switches["disallowed_symbol_tags"]:
+                if tag in switch_get_value(Switch.disallowed_symbol_tags):
                     if symbol in symbol_list:
                         symbol_list.remove(symbol)
 
@@ -1273,14 +1255,20 @@ class MakeClanScreen(Screens):
             self.symbol_selected = f"symbol{self.clan_name.upper()}0"
         else:
             self.symbol_selected = choice(sprites.clan_symbols)
-        self.leader = create_cat(status="warrior")
-        self.deputy = create_cat(status="warrior")
-        self.med_cat = create_cat(status="warrior")
+        self.leader = create_cat(rank=CatRank.WARRIOR)
+        self.deputy = create_cat(rank=CatRank.WARRIOR)
+        self.med_cat = create_cat(rank=CatRank.WARRIOR)
         for _ in range(randrange(4, 8)):
-            random_status = choice(
-                ["kitten", "apprentice", "warrior", "warrior", "elder"]
+            random_rank = choice(
+                [
+                    CatRank.KITTEN,
+                    CatRank.APPRENTICE,
+                    CatRank.WARRIOR,
+                    CatRank.WARRIOR,
+                    CatRank.ELDER,
+                ]
             )
-            self.members.append(create_cat(status=random_status))
+            self.members.append(create_cat(rank=random_rank))
 
     def random_clan_name(self):
         clan_names = (
@@ -1289,7 +1277,7 @@ class MakeClanScreen(Screens):
         while True:
             chosen_name = choice(clan_names)
             if chosen_name.casefold() not in (
-                clan.casefold() for clan in game.switches["clan_list"]
+                clan.casefold() for clan in switch_get_value(Switch.clan_list)
             ):
                 return chosen_name
             print("Generated clan name was already in use! Rerolling...")
@@ -1563,7 +1551,7 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
 
-        if game.config["clan_creation"]["rerolls"] == 3:
+        if constants.CONFIG["clan_creation"]["rerolls"] == 3:
             if self.rolls_left <= 2:
                 self.elements["roll1"].disable()
             if self.rolls_left <= 1:
@@ -1593,7 +1581,7 @@ class MakeClanScreen(Screens):
             text_kwargs={"m_c": self.selected_cat},
         )
         # Error message, to appear if you can't choose that cat.
-        self.elements["error_message"] = pygame_gui.elements.UITextBox(
+        self.elements[Switch.error_message] = pygame_gui.elements.UITextBox(
             "screens.make_clan.error_too_young_leader",
             ui_scale(pygame.Rect((150, 353), (500, 55))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
@@ -1654,7 +1642,7 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
         # Error message, to appear if you can't choose that cat.
-        self.elements["error_message"] = pygame_gui.elements.UITextBox(
+        self.elements[Switch.error_message] = pygame_gui.elements.UITextBox(
             "screens.make_clan.error_too_young_deputy",
             ui_scale(pygame.Rect((150, 353), (500, 55))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
@@ -1714,7 +1702,7 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
         # Error message, to appear if you can't choose that cat.
-        self.elements["error_message"] = pygame_gui.elements.UITextBox(
+        self.elements[Switch.error_message] = pygame_gui.elements.UITextBox(
             "screens.make_clan.error_too_young_medcat",
             ui_scale(pygame.Rect((150, 353), (500, 55))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
@@ -2149,12 +2137,19 @@ class MakeClanScreen(Screens):
     def save_clan(self):
         game.mediated.clear()
         game.patrolled.clear()
-        game.cat_to_fade.clear()
+        save_load.faded_ids.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
         convert_camp = {1: "camp1", 2: "camp2", 3: "camp3", 4: "camp4"}
+        displayname = self.clan_name
+        if self._clan_name_exists(self.clan_name):
+            clan_name = self._generate_unique_clan_name(self.clan_name)
+        else:
+            clan_name = self.clan_name
+
         game.clan = Clan(
-            name=self.clan_name,
+            name=clan_name,
+            displayname=displayname,
             leader=self.leader,
             deputy=self.deputy,
             medicine_cat=self.med_cat,
@@ -2166,13 +2161,17 @@ class MakeClanScreen(Screens):
             starting_season=self.selected_season,
         )
         game.clan.create_clan()
-        # game.clan.starclan_cats.clear()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
         game.clan.herb_supply.start_storage(len(self.members))
         game.clan.save_herb_supply(game.clan)
         Cat.grief_strings.clear()
         Cat.sort_cats()
+
+        rebuild_den_dropdown(
+            left_align=not get_clan_setting("moons and seasons"),
+            game_mode=game.clan.game_mode,
+        )
 
     def get_camp_art_path(self, campnum) -> Optional[str]:
         if not campnum:
@@ -2182,7 +2181,7 @@ class MakeClanScreen(Screens):
 
         camp_bg_base_dir = "resources/images/camp_bg/"
         start_leave = leaf.casefold()
-        light_dark = "dark" if game.settings["dark mode"] else "light"
+        light_dark = "dark" if game_setting_get("dark mode") else "light"
 
         biome = self.biome_selected.lower()
 
@@ -2225,6 +2224,14 @@ class MakeClanScreen(Screens):
             object_id=get_text_box_theme("#text_box_26_horizcenter"),
             manager=MANAGER,
         )
+
+    def _clan_name_exists(self, new_clan_name: str):
+        return new_clan_name.casefold() in (
+            clan.casefold() for clan in switch_get_value(Switch.clan_list)
+        )
+
+    def _generate_unique_clan_name(self, new_clan_name: str):
+        return f"{new_clan_name}_{uuid4()}"
 
 
 make_clan_screen = MakeClanScreen()

@@ -321,5 +321,17 @@
         "main_status_constraint": [
             "leader"
         ]
+    },
+    {
+        "id": "leader_to_newborn",
+        "thoughts": [
+            "Believes c_n is thriving with the birth of the new litter",
+            "Feels more pressure to protect c_n after meeting the new litter",
+            "Welcomes the new litter to the Clan",
+            "Calls a Clan meeting to announce the new litter",
+            "Already considers who could mentor r_c"
+        ],
+        "main_status_constraint": ["leader"],
+        "random_age_constraint": ["newborn"]
     }
 ]

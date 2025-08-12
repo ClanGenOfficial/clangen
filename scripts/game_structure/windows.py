@@ -4,7 +4,6 @@ import subprocess
 import threading
 import time
 from collections import namedtuple
-from copy import deepcopy
 from platform import system
 from random import choice
 from re import search as re_search
@@ -18,9 +17,18 @@ import ujson
 from pygame_gui.elements import UIWindow
 from pygame_gui.windows import UIMessageWindow
 
+from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat.names import Name
+from scripts.cat.save_load import save_cats
 from scripts.game_structure import image_cache
+from scripts.game_structure.game.switches import (
+    Switch,
+    switch_get_value,
+    switch_set_value,
+    switch_append_list_value,
+    switch_remove_list_value,
+)
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import (
     get_lang_config,
@@ -33,6 +41,7 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
     UIDropDown,
+    UIModifiedScrollingContainer,
 )
 from scripts.housekeeping.datadir import (
     get_save_dir,
@@ -58,6 +67,7 @@ from scripts.utility import (
     process_text,
     ui_scale_dimensions,
     ui_scale_offset,
+    shorten_text_to_fit,
 )
 
 if TYPE_CHECKING:
@@ -67,7 +77,7 @@ if TYPE_CHECKING:
 class SymbolFilterWindow(UIWindow):
     def __init__(self):
         super().__init__(
-            ui_scale(pygame.Rect((250, 175), (300, 450))),
+            ui_scale(pygame.Rect((250, 125), (300, 450))),
             window_display_title="windows.symbol_filters",
             object_id="#filter_window",
         )
@@ -95,12 +105,12 @@ class SymbolFilterWindow(UIWindow):
             object_id="#text_box_40",
             container=self,
         )
-        self.filter_container = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((5, 45), (285, 310))),
+        self.filter_container = UIModifiedScrollingContainer(
+            ui_scale(pygame.Rect((5, 45), (285, 400))),
             manager=MANAGER,
             starting_height=1,
-            object_id="#filter_container",
             allow_scroll_x=False,
+            allow_scroll_y=True,
             container=self,
         )
         self.checkbox = {}
@@ -116,7 +126,7 @@ class SymbolFilterWindow(UIWindow):
                 starting_height=2,
                 manager=MANAGER,
             )
-            if tag in game.switches["disallowed_symbol_tags"]:
+            if tag in switch_get_value(Switch.disallowed_symbol_tags):
                 self.checkbox[tag].change_object_id("@unchecked_checkbox")
 
             self.checkbox_text[tag] = pygame_gui.elements.UILabel(
@@ -139,9 +149,9 @@ class SymbolFilterWindow(UIWindow):
                         manager=MANAGER,
                     )
 
-                    if tag in game.switches["disallowed_symbol_tags"]:
+                    if tag in switch_get_value(Switch.disallowed_symbol_tags):
                         self.checkbox[s_tag].disable()
-                    if s_tag in game.switches["disallowed_symbol_tags"]:
+                    if s_tag in switch_get_value(Switch.disallowed_symbol_tags):
                         self.checkbox[s_tag].change_object_id("@unchecked_checkbox")
 
                     self.checkbox_text[s_tag] = pygame_gui.elements.UILabel(
@@ -169,8 +179,12 @@ class SymbolFilterWindow(UIWindow):
                         if "@checked_checkbox" in object_ids:
                             self.checkbox[tag].change_object_id("@unchecked_checkbox")
                             # add tag to disallowed list
-                            if tag not in game.switches["disallowed_symbol_tags"]:
-                                game.switches["disallowed_symbol_tags"].append(tag)
+                            if tag not in switch_get_value(
+                                Switch.disallowed_symbol_tags
+                            ):
+                                switch_append_list_value(
+                                    Switch.disallowed_symbol_tags, tag
+                                )
                             # if tag had subtags, also add those subtags
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
@@ -178,20 +192,21 @@ class SymbolFilterWindow(UIWindow):
                                         "@unchecked_checkbox"
                                     )
                                     self.checkbox[s_tag].disable()
-                                    if (
-                                        s_tag
-                                        not in game.switches["disallowed_symbol_tags"]
+                                    if s_tag not in switch_get_value(
+                                        Switch.disallowed_symbol_tags
                                     ):
-                                        game.switches["disallowed_symbol_tags"].append(
-                                            s_tag
+                                        switch_append_list_value(
+                                            Switch.disallowed_symbol_tags, tag
                                         )
 
                         # handle unchecked checkboxes becoming checked
                         elif "@unchecked_checkbox" in object_ids:
                             self.checkbox[tag].change_object_id("@checked_checkbox")
                             # remove tag from disallowed list
-                            if tag in game.switches["disallowed_symbol_tags"]:
-                                game.switches["disallowed_symbol_tags"].remove(tag)
+                            if tag in switch_get_value(Switch.disallowed_symbol_tags):
+                                switch_remove_list_value(
+                                    Switch.disallowed_symbol_tags, tag
+                                )
                             # if tag had subtags, also add those subtags
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
@@ -199,9 +214,11 @@ class SymbolFilterWindow(UIWindow):
                                         "@checked_checkbox"
                                     )
                                     self.checkbox[s_tag].enable()
-                                    if s_tag in game.switches["disallowed_symbol_tags"]:
-                                        game.switches["disallowed_symbol_tags"].remove(
-                                            s_tag
+                                    if tag in switch_get_value(
+                                        Switch.disallowed_symbol_tags
+                                    ):
+                                        switch_remove_list_value(
+                                            Switch.disallowed_symbol_tags, tag
                                         )
         return super().process_event(event)
 
@@ -259,9 +276,11 @@ class SaveCheck(UIWindow):
             container=self,
         )
         save_buttons = get_button_dict(ButtonStyles.SQUOVAL, (114, 30))
-        save_buttons["normal"] = image_cache.load_image(
-            "resources/images/buttons/save_clan.png"
+        save_buttons["normal"] = pygame.transform.scale(
+            image_cache.load_image("resources/images/buttons/save_clan.png"),
+            ui_scale_dimensions((114, 30)),
         )
+
         self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 115), (114, 30))),
             "buttons.save_clan",
@@ -317,8 +336,8 @@ class SaveCheck(UIWindow):
                 if self.isMainMenu:
                     game.is_close_menu_open = False
                     self.mm_btn.enable()
-                    game.last_screen_forupdate = game.switches["cur_screen"]
-                    game.switches["cur_screen"] = "start screen"
+                    game.last_screen_forupdate = switch_get_value(Switch.cur_screen)
+                    switch_set_value(Switch.cur_screen, "start screen")
                     game.switch_screens = True
                     self.kill()
                 else:
@@ -328,7 +347,7 @@ class SaveCheck(UIWindow):
                 if game.clan is not None:
                     self.save_button_saving_state.show()
                     self.save_button.disable()
-                    game.save_cats()
+                    save_cats(switch_get_value(Switch.clan_name), Cat, game)
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
@@ -400,7 +419,7 @@ class EditorSaveCheck(UIWindow):
     def modify_file(self, event_list, path):
         event_json = ujson.dumps(event_list, indent=4)
         event_json = event_json.replace(
-            "\/", "/"
+            "\\/", "/"
         )  # ujson tries to escape "/", but doesn't end up doing a good job.
 
         try:
@@ -543,7 +562,7 @@ class GameOver(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        self.clan_name = str(game.clan.name + "Clan")
+        self.clan_name = str(game.clan.displayname + "Clan")
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
             "windows.game_over_message",
@@ -583,8 +602,8 @@ class GameOver(UIWindow):
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = game.switches["cur_screen"]
-                game.switches["cur_screen"] = "start screen"
+                game.last_screen_forupdate = switch_get_value(Switch.cur_screen)
+                switch_set_value(Switch.cur_screen, "start screen")
                 game.switch_screens = True
                 self.kill()
             elif event.ui_element == self.not_yet_button:
@@ -614,11 +633,12 @@ class ChangeCatName(UIWindow):
 
         self.heading = pygame_gui.elements.UITextBox(
             "windows.change_name_title",
-            ui_scale(pygame.Rect((0, 10), (400, 40))),
+            ui_scale(pygame.Rect((0, 10), (340, -1))),
             object_id="#text_box_30_horizcenter",
             manager=MANAGER,
             container=self,
-            text_kwargs={"name": self.the_cat.name},
+            text_kwargs={"name": shorten_text_to_fit(str(self.the_cat.name), 150)},
+            anchors={"centerx": "centerx"},
         )
 
         self.name_changed = pygame_gui.elements.UITextBox(
@@ -688,11 +708,11 @@ class ChangeCatName(UIWindow):
             container=self,
         )
 
-        if self.the_cat.status in self.the_cat.name.names_dict["special_suffixes"]:
+        if self.the_cat.status.rank in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(
                 ui_scale(pygame.Rect((159 + x_pos, 50 + y_pos), (120, 30))),
                 placeholder_text=self.the_cat.name.names_dict["special_suffixes"][
-                    self.the_cat.status
+                    self.the_cat.status.rank
                 ],
                 manager=MANAGER,
                 container=self,
@@ -743,7 +763,7 @@ class ChangeCatName(UIWindow):
                 # Suffixes can be empty, if you want. However, don't change the suffix if it's currently being hidden
                 # by a special suffix.
                 if (
-                    self.the_cat.status
+                    self.the_cat.status.rank
                     not in self.the_cat.name.names_dict["special_suffixes"]
                     or self.the_cat.name.specsuffix_hidden
                 ):
@@ -1086,7 +1106,7 @@ class KillCat(UIWindow):
             object_id="#kill_cat_window",
             resizable=False,
         )
-        self.history = History()
+
         self.the_cat = cat
         self.take_all = False
         self.back_button = UIImageButton(
@@ -1098,10 +1118,11 @@ class KillCat(UIWindow):
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         self.heading = pygame_gui.elements.UITextBox(
             "windows.kill_cat_method",
-            ui_scale(pygame.Rect((10, 10), (430, 75))),
+            ui_scale(pygame.Rect((10, 10), (300, -1))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
             container=self,
+            anchors={"centerx": "centerx"},
         )
 
         self.one_life_check = UIImageButton(
@@ -1127,7 +1148,7 @@ class KillCat(UIWindow):
             container=self,
         )
 
-        if self.the_cat.status == "leader":
+        if self.the_cat.status.is_leader:
             self.done_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((347, 152), (77, 30))),
                 "buttons.done_lower",
@@ -1143,7 +1164,7 @@ class KillCat(UIWindow):
             self.all_lives_check.hide()
             self.life_text = pygame_gui.elements.UITextBox(
                 "windows.all_lives_leader",
-                ui_scale(pygame.Rect((60, 147), (450, 40))),
+                ui_scale(pygame.Rect((60, 147), (130, -1))),
                 object_id="#text_box_30_horizleft",
                 manager=MANAGER,
                 container=self,
@@ -1164,7 +1185,7 @@ class KillCat(UIWindow):
                 container=self,
             )
 
-        elif History.get_death_or_scars(self.the_cat, death=True):
+        elif self.the_cat.history.get_death_or_scars(death=True):
             # This should only occur for retired leaders.
 
             self.prompt = process_text(i18n.t("windows.death_prompt"), cat_dict)
@@ -1176,7 +1197,7 @@ class KillCat(UIWindow):
 
             self.beginning_prompt = pygame_gui.elements.UITextBox(
                 self.prompt,
-                ui_scale(pygame.Rect((25, 30), (450, 40))),
+                ui_scale(pygame.Rect((25, 30), (200, -1))),
                 object_id="#text_box_30_horizleft",
                 manager=MANAGER,
                 container=self,
@@ -1232,7 +1253,7 @@ class KillCat(UIWindow):
                     "",
                     self.death_entry_box.get_text(),
                 )
-                if self.the_cat.status == "leader":
+                if self.the_cat.status.is_leader:
                     if death_message.startswith("was"):
                         death_message = death_message.replace(
                             "was", "{VERB/m_c/were/was}", 1
@@ -1248,7 +1269,7 @@ class KillCat(UIWindow):
                         game.clan.leader_lives -= 1
 
                 self.the_cat.die()
-                self.history.add_death(self.the_cat, death_message)
+                self.the_cat.history.add_death(death_message)
                 update_sprite(self.the_cat)
                 game.all_screens["profile screen"].exit_screen()
                 game.all_screens["profile screen"].screen_switches()
@@ -1360,7 +1381,7 @@ class AnnounceRestart(UIWindow):
 
 
 class UpdateAvailablePopup(UIWindow):
-    def __init__(self, last_screen, show_checkbox: bool = False):
+    def __init__(self, show_checkbox: bool = False):
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 230))),
             window_display_title="Update available",
@@ -1368,7 +1389,6 @@ class UpdateAvailablePopup(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        self.last_screen = last_screen
 
         self.begin_update_title = UIImageButton(
             ui_scale(pygame.Rect((97, 15), (200, 40))),
@@ -1465,7 +1485,7 @@ class UpdateAvailablePopup(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.continue_button:
                 self.x = UpdateWindow(
-                    game.switches["cur_screen"], self.announce_restart_callback
+                    switch_get_value(Switch.cur_screen), self.announce_restart_callback
                 )
                 self.kill()
             elif (
@@ -1493,12 +1513,12 @@ class UpdateAvailablePopup(UIWindow):
 
     def announce_restart_callback(self):
         self.x.kill()
-        y = AnnounceRestart(game.switches["cur_screen"])
+        y = AnnounceRestart(switch_get_value(Switch.cur_screen))
         y.update(1)
 
 
 class ChangelogPopup(UIWindow):
-    def __init__(self, last_screen):
+    def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((150, 150), (500, 400))),
             window_display_title="Changelog",
@@ -1507,7 +1527,6 @@ class ChangelogPopup(UIWindow):
         )
         self.set_blocking(True)
 
-        self.last_screen = last_screen
         self.changelog_popup_title = UITextBoxTweaked(
             "windows.whats_new",
             ui_scale(pygame.Rect((0, 10), (500, -1))),
@@ -1648,10 +1667,16 @@ class RelationshipLog(UIWindow):
             relationship.opposite_relationship
             and len(relationship.opposite_relationship.log) > 0
         ):
-            opposite_log_string = f"{f'<br>-----------------------------<br>'.join(relationship.opposite_relationship.log)}<br>"
+            opposite_log = relationship.opposite_relationship.log.copy()
+            opposite_log.reverse()
+            opposite_log_string = (
+                f"{f'<br>-----------------------------<br>'.join(opposite_log)}<br>"
+            )
 
+        log = relationship.log.copy()
+        log.reverse()
         log_string = (
-            f"{f'<br>-----------------------------<br>'.join(relationship.log)}<br>"
+            f"{f'<br>-----------------------------<br>'.join(log)}<br>"
             if len(relationship.log) > 0
             else i18n.t("windows.no_relation_logs")
         )
@@ -2228,7 +2253,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             ui_scale_offset((0, 22)),
             (
                 self.get_container().get_size()[0],
-                self.get_container().get_size()[1] - button_vertical_space,
+                -1,
             ),
         )
         self.text_block = pygame_gui.elements.UITextBox(
@@ -2245,6 +2270,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             },
             text_kwargs={"count": 10},
         )
+        self.text_block.disable()
         self.text_block.rebuild_from_changed_theme_data()
 
         # make a timeout that will call in 10 seconds - if this window isn't closed,
