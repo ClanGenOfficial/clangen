@@ -5504,7 +5504,8 @@
             "Is laughing about sounding like an elder",
             "Is especially annoyed with {PRONOUN/m_c/poss} allergies today",
             "Is questioning why StarClan won't cure {PRONOUN/m_c/poss} allergies",
-            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if {PRONOUN/m_c/poss} allergies are especially bad today"
+            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if {PRONOUN/m_c/poss} allergies are especially bad today",
+			"Is struggling to smell something",
         ],
         "perm_conditions": {
             "m_c": [
@@ -5564,7 +5565,7 @@
             "Is chuckling when r_c complains to {PRONOUN/m_c/object} about {PRONOUN/r_c/poss} running nose",
             "Sadly laughs when r_c asks if having a running nose constantly is what {PRONOUN/m_c/poss} allergies are like",
             "Is giving advice to r_c for managing {PRONOUN/r_c/poss} running nose",
-            "Quietly snickers after seeing r_c growl at having a sneezing fit",
+            "Quietly snickers after seeing r_c growl at having a sneezing fit"
         ],
         "perm_conditions": {
             "m_c": [
