@@ -5582,7 +5582,7 @@
         "id": "allergies_gen_to_whitecough",
         "thoughts": [
             "Is giving r_c advice for handling some of the symptoms of whitecough",
-            "Is nervous to be around r_c incase {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick too",
+            "Is nervous to be around r_c, just in case {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick, too",
             "Is comforting r_c about the annoyances of {PRONOUN/r_c/poss} symptoms",
             "Is sharing stories of {PRONOUN/m_c/poss} own experiences to comfort r_c"
         ],
