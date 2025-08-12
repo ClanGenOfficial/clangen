@@ -139,7 +139,7 @@ class EventsScreen(Screens):
                 self.events_thread = self.loading_screen_start_work(
                     events_class.one_moon
                 )
-                rebuild_moon_n_season_indicator(change_moon=True)
+                rebuild_moon_n_season_indicator(change_moon=True, visible=True)
             elif element in self.involved_cat_buttons:
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons:

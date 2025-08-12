@@ -248,7 +248,7 @@ def rebuild_top_menu_buttons():
     rebuild_moon_n_season_indicator()
 
 
-def rebuild_moon_n_season_indicator(change_moon: bool = False):
+def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = False):
     if game.clan:
         season = game.clan.current_season.casefold().replace("-", "")
         clan_age = game.clan.age
@@ -256,39 +256,34 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False):
         season = "greenleaf"
         clan_age = 0
 
-    moon_image = None
     scale_rect = ui_scale(pygame.Rect((0, 0), (22, 26)))
     scale_rect.bottomright = ui_scale_offset((0, 2))
 
-    if "moon_indicator" in menu_buttons:
-        if not change_moon:
-            moon_image = menu_buttons["moon_indicator"].original_image
+    if "moon_indicator" in menu_buttons and change_moon:
         menu_buttons["moon_indicator"].kill()
     if "season_indicator" in menu_buttons:
         menu_buttons["season_indicator"].kill()
 
-    if not moon_image:
-        moon_image = pygame.transform.scale(
-            pygame.image.load(
-                f"resources/images/moon_phase{randint(1, 8)}.png"
-            ).convert_alpha(),
-            (22, 26),
+    if change_moon or "moon_indicator" not in menu_buttons:
+        menu_buttons["moon_indicator"] = pygame_gui.elements.UIImage(
+            scale_rect,
+            pygame.transform.scale(
+                pygame.image.load(
+                    f"resources/images/moon_phase{randint(1, 8)}.png"
+                ).convert_alpha(),
+                (22, 26),
+            ),
+            visible=visible,
+            manager=MANAGER,
+            starting_height=4,
+            anchors={
+                "right_target": menu_buttons["heading"],
+                "right": "right",
+                "bottom_target": menu_buttons["events"],
+                "bottom": "bottom",
+            },
+            object_id="#moon_indicator",
         )
-
-    menu_buttons["moon_indicator"] = pygame_gui.elements.UIImage(
-        scale_rect,
-        moon_image,
-        visible=False,
-        manager=MANAGER,
-        starting_height=4,
-        anchors={
-            "right_target": menu_buttons["heading"],
-            "right": "right",
-            "bottom_target": menu_buttons["events"],
-            "bottom": "bottom",
-        },
-        object_id="#moon_indicator",
-    )
 
     menu_buttons["moon_indicator"].set_tooltip(
         i18n.t("general.moon_date", moon=clan_age)
@@ -301,7 +296,7 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False):
             pygame.image.load(f"resources/images/season_{season}.png").convert_alpha(),
             (144, 67),
         ),
-        visible=False,
+        visible=visible,
         manager=MANAGER,
         starting_height=5,
     )
