@@ -3,7 +3,7 @@ from typing import Optional
 import pygame
 import pygame_gui
 
-from scripts.cat.cats import create_option_preview_cat, Cat
+from scripts.cat.cats import create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.game_structure import constants
 from scripts.game_structure.editor_elements import (
@@ -18,8 +18,6 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIScrollingButtonList,
     UIModifiedImage,
-    UICollapsibleContainer,
-    UICheckbox,
     UIDropDown,
 )
 from scripts.ui.generate_box import BoxStyles, get_box
