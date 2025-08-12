@@ -4,13 +4,10 @@ from typing import Dict, Optional, Union
 import pygame
 import pygame_gui
 import ujson
-from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
-from scripts.clan_package.settings import get_clan_setting
-from scripts.clan_resources.freshkill import FreshkillPile
 from scripts.game_structure import constants
 from scripts.cat.enums import CatGroup
 from scripts.game_structure.audio import music_manager
@@ -23,14 +20,9 @@ from scripts.game_structure.game.switches import (
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
-    MANAGER,
     screen,
 )
-from scripts.game_structure.ui_elements import UIImageButton
-from scripts.screens.screens_core.screens_core import (
-    rebuild_moons_n_seasons,
-    menu_buttons,
-)
+from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
 from scripts.ui.windows.freshkill import FreshkillManagement
 from scripts.ui.windows.herbs import HerbManagement
 from scripts.ui.windows.save_check import SaveCheck
@@ -38,7 +30,6 @@ from scripts.ui.windows.event_loading import EventLoading
 from scripts.screens.enums import GameScreen
 from scripts.utility import (
     update_sprite,
-    ui_scale,
     ui_scale_blit,
     get_current_season,
 )
@@ -226,13 +217,10 @@ class Screens:
     @classmethod
     def show_menu_buttons(cls):
         """This shows all menu buttons, and makes them interact-able."""
-        # Check if the setting for moons and seasons UI is on so stats button can be moved
-        cls.update_moon_and_season()
+        rebuild_moon_n_season_indicator()
 
         for name, button in cls.menu_buttons.items():
             if name in [
-                "moons_n_seasons",
-                "moons_n_seasons_arrow",
                 "mute_button",
                 "unmute_button",
             ]:
@@ -281,7 +269,7 @@ class Screens:
     def set_disabled_menu_buttons(cls, disabled_buttons=()):
         """This sets all menu buttons as interact-able, except buttons listed in disabled_buttons."""
         for name, button in cls.menu_buttons.items():
-            button.disable() if name in disabled_buttons else button.enable()
+            button.disable() if name in disabled_buttons or name == "season_indicator" else button.enable()
 
     def menu_button_pressed(self, event):
         """This is a short-up to deal with menu button presses.
@@ -367,147 +355,11 @@ class Screens:
             self.change_screen(GameScreen.ALLEGIANCES)
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
             self.change_screen(GameScreen.CLAN_SETTINGS)
-        elif event.ui_element == Screens.menu_buttons["moons_n_seasons_arrow"]:
-            switch_set_value(
-                Switch.moon_and_seasons_open,
-                not switch_get_value(Switch.moon_and_seasons_open),
-            )
-            self.update_moon_and_season()
 
     @classmethod
     def update_heading_text(cls, text, text_kwargs=None):
         """Updates the menu heading text"""
         cls.menu_buttons["heading"].set_text(text, text_kwargs=text_kwargs)
-
-        # Update if moons and seasons UI is on
-
-    @classmethod
-    def update_moon_and_season(cls):
-        """Updates the moons and seasons widget."""
-        if (
-            get_clan_setting("moons and seasons")
-            and switch_get_value(Switch.cur_screen) != GameScreen.EVENTS
-        ):
-            cls.menu_buttons["moons_n_seasons_arrow"].kill()
-            cls.menu_buttons["moons_n_seasons"].kill()
-            if switch_get_value(Switch.moon_and_seasons_open):
-                if cls.name == GameScreen.EVENTS:
-                    cls.close_moon_and_season()
-                else:
-                    cls.open_moon_and_season()
-            else:
-                cls.close_moon_and_season()
-        else:
-            cls.menu_buttons["moons_n_seasons"].hide()
-            cls.menu_buttons["moons_n_seasons_arrow"].hide()
-
-    # Maximize moons and seasons widget
-    @classmethod
-    def open_moon_and_season(cls):
-        """Opens the moons and seasons widget."""
-        rebuild_moons_n_seasons(
-            visible=True,
-            open=True,
-            on_camp=switch_get_value(Switch.cur_screen) == GameScreen.CAMP,
-        )
-
-        cls.moons_n_seasons_bg = UIImageButton(
-            ui_scale(pygame.Rect((0, 0), (153, 75))),
-            "",
-            manager=MANAGER,
-            object_id="#mns_bg",
-            container=cls.menu_buttons["moons_n_seasons"],
-        )
-
-        cls.moons_n_seasons_moon = UIImageButton(
-            ui_scale(pygame.Rect((14, 10), (24, 24))),
-            "",
-            manager=MANAGER,
-            object_id="#mns_image_moon",
-            container=cls.menu_buttons["moons_n_seasons"],
-        )
-        cls.moons_n_seasons_text = pygame_gui.elements.UITextBox(
-            "general.moons_age",
-            ui_scale(pygame.Rect((42, 6), (100, 30))),
-            container=cls.menu_buttons["moons_n_seasons"],
-            manager=MANAGER,
-            object_id="#text_box_30_horizleft_light",
-            text_kwargs={"count": game.clan.age},
-        )
-
-        if game.clan.current_season == "Newleaf":
-            season_image_id = "#mns_image_newleaf"
-        elif game.clan.current_season == "Greenleaf":
-            season_image_id = "#mns_image_greenleaf"
-        elif game.clan.current_season == "Leaf-bare":
-            season_image_id = "#mns_image_leafbare"
-        elif game.clan.current_season == "Leaf-fall":
-            season_image_id = "#mns_image_leaffall"
-        else:
-            season_image_id = MANAGER.get_universal_empty_surface()
-
-        cls.moons_n_seasons_season = UIImageButton(
-            ui_scale(pygame.Rect((14, 41), (24, 24))),
-            "",
-            manager=MANAGER,
-            object_id=season_image_id,
-            container=cls.menu_buttons["moons_n_seasons"],
-        )
-        cls.moons_n_seasons_text2 = pygame_gui.elements.UITextBox(
-            f"general.{game.clan.current_season}",
-            ui_scale(pygame.Rect((42, 36), (100, 30))),
-            container=cls.menu_buttons["moons_n_seasons"],
-            manager=MANAGER,
-            object_id=ObjectID("#text_box_30_horizleft", "#dark"),
-        )
-
-    # Minimize moons and seasons widget
-    @classmethod
-    def close_moon_and_season(cls):
-        """Closes the moons and seasons widget."""
-        rebuild_moons_n_seasons(
-            visible=True, on_camp=switch_get_value(Switch.cur_screen) == GameScreen.CAMP
-        )
-
-        cls.moons_n_seasons_bg = UIImageButton(
-            ui_scale(pygame.Rect((0, 0), (50, 75))),
-            "",
-            manager=MANAGER,
-            object_id="#mns_bg_closed",
-            container=cls.menu_buttons["moons_n_seasons"],
-        )
-
-        cls.moons_n_seasons_moon = UIImageButton(
-            ui_scale(pygame.Rect((14, 10), (24, 24))),
-            "",
-            manager=MANAGER,
-            object_id="#mns_image_moon",
-            container=cls.menu_buttons["moons_n_seasons"],
-            starting_height=2,
-            tool_tip_text=f"general.moons_age",
-            tool_tip_text_kwargs={"count": game.clan.age},
-        )
-
-        if game.clan.current_season == "Newleaf":
-            season_image_id = "#mns_image_newleaf"
-        elif game.clan.current_season == "Greenleaf":
-            season_image_id = "#mns_image_greenleaf"
-        elif game.clan.current_season == "Leaf-bare":
-            season_image_id = "#mns_image_leafbare"
-        elif game.clan.current_season == "Leaf-fall":
-            season_image_id = "#mns_image_leaffall"
-        else:
-            season_image_id = MANAGER.get_universal_empty_surface()
-
-        cls.moons_n_seasons_season = UIImageButton(
-            ui_scale(pygame.Rect((14, 41), (24, 24))),
-            "",
-            manager=MANAGER,
-            object_id=season_image_id,
-            container=cls.menu_buttons["moons_n_seasons"],
-            starting_height=2,
-            tool_tip_text=f"{game.clan.current_season}",
-        )
 
     def add_bgs(
         self,

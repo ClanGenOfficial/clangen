@@ -23,6 +23,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     CatButton,
 )
+from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
 from scripts.ui.windows.game_over import GameOver
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
@@ -138,6 +139,7 @@ class EventsScreen(Screens):
                 self.events_thread = self.loading_screen_start_work(
                     events_class.one_moon
                 )
+                rebuild_moon_n_season_indicator(change_moon=True)
             elif element in self.involved_cat_buttons:
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons:

@@ -1,5 +1,7 @@
+from random import randint
 from typing import Optional, Tuple
 
+import i18n
 import pygame
 import pygame_gui
 
@@ -12,6 +14,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIImageButton,
     UIDropDown,
+    UIModifiedImage,
 )
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_box import get_box, BoxStyles
@@ -120,7 +123,7 @@ def rebuild_top_menu_buttons():
         visible=False,
         manager=MANAGER,
         object_id=pygame_gui.core.ObjectID("#events_button", "@buttonstyles_menu_left"),
-        starting_height=5,
+        starting_height=6,
     )
     if mode != "classic":
         menu_buttons["supplies"] = UIDropDown(
@@ -131,7 +134,7 @@ def rebuild_top_menu_buttons():
             disable_selection=False,
             visible=False,
             manager=MANAGER,
-            starting_height=5,
+            starting_height=6,
             anchors={"left": "left", "left_target": menu_buttons["events"]},
         )
         prev_element = menu_buttons["supplies"]
@@ -153,7 +156,7 @@ def rebuild_top_menu_buttons():
         visible=False,
         manager=MANAGER,
         object_id="@buttonstyles_menu_middle",
-        starting_height=5,
+        starting_height=6,
         anchors={"left": "left", "left_target": prev_element},
         disable_selection=False,
     )
@@ -164,7 +167,7 @@ def rebuild_top_menu_buttons():
         get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
         visible=False,
         object_id="@buttonstyles_menu_middle",
-        starting_height=5,
+        starting_height=6,
         anchors={"left": "left", "left_target": menu_buttons["dens"]},
     )
     menu_buttons["patrols"] = UISurfaceImageButton(
@@ -174,7 +177,7 @@ def rebuild_top_menu_buttons():
         visible=False,
         manager=MANAGER,
         object_id="#patrol_button",
-        starting_height=5,
+        starting_height=6,
         anchors={"left": "left", "left_target": menu_buttons["cats"]},
     )
     menu_buttons["main_menu"] = UISurfaceImageButton(
@@ -223,6 +226,7 @@ def rebuild_top_menu_buttons():
         anchors={"top_target": menu_buttons["allegiances"], "right": "right"},
     )
     del scale_rect
+
     heading_rect = ui_scale(pygame.Rect((0, 0), (220, 35)))
     heading_rect.bottomleft = ui_scale_offset((0, 0))  # yes, this is intentional.
     menu_buttons["heading"] = UISurfaceImageButton(
@@ -240,46 +244,68 @@ def rebuild_top_menu_buttons():
         },
     )
     del heading_rect
-    rebuild_moons_n_seasons()
+
+    rebuild_moon_n_season_indicator()
 
 
-def rebuild_moons_n_seasons(visible=False, on_camp=False, open=False):
-    global menu_buttons
-    names = ["moons_n_seasons", "moons_n_seasons_arrow"]
-    for name in names:
-        if menu_buttons.get(name):
-            menu_buttons[name].kill()
-
-    if on_camp:
-        y_pos = 60
-        arrow_y_pos = 80
+def rebuild_moon_n_season_indicator(change_moon: bool = False):
+    if game.clan:
+        season = game.clan.current_season.casefold().replace("-", "")
+        clan_age = game.clan.age
     else:
-        y_pos = 95
-        arrow_y_pos = 115
+        season = "greenleaf"
+        clan_age = 0
 
-    menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
-        ui_scale(pygame.Rect((25, y_pos), (153, 75))),
-        visible=visible,
-        allow_scroll_x=False,
+    moon_image = None
+    scale_rect = ui_scale(pygame.Rect((0, 0), (22, 26)))
+    scale_rect.bottomright = ui_scale_offset((0, 2))
+
+    if "moon_indicator" in menu_buttons:
+        if not change_moon:
+            moon_image = menu_buttons["moon_indicator"].original_image
+        menu_buttons["moon_indicator"].kill()
+    if "season_indicator" in menu_buttons:
+        menu_buttons["season_indicator"].kill()
+
+    if not moon_image:
+        moon_image = pygame.transform.scale(
+            pygame.image.load(
+                f"resources/images/moon_phase{randint(1, 8)}.png"
+            ).convert_alpha(),
+            (22, 26),
+        )
+
+    menu_buttons["moon_indicator"] = pygame_gui.elements.UIImage(
+        scale_rect,
+        moon_image,
+        visible=False,
+        manager=MANAGER,
+        starting_height=4,
+        anchors={
+            "right_target": menu_buttons["heading"],
+            "right": "right",
+            "bottom_target": menu_buttons["events"],
+            "bottom": "bottom",
+        },
+        object_id="#moon_indicator",
+    )
+
+    menu_buttons["moon_indicator"].set_tooltip(
+        i18n.t("general.moon_date", moon=clan_age)
+    )
+    menu_buttons["moon_indicator"].tool_tip_delay = 0
+
+    menu_buttons["season_indicator"] = UIModifiedImage(
+        ui_scale(pygame.Rect((404, 3), (144, 67))),
+        pygame.transform.scale(
+            pygame.image.load(f"resources/images/season_{season}.png").convert_alpha(),
+            (144, 67),
+        ),
+        visible=False,
         manager=MANAGER,
         starting_height=5,
     )
-
-    if open:
-        arrow_x_pos = 174
-        button_id = "#arrow_mns_button"
-    else:
-        arrow_x_pos = 71
-        button_id = "#arrow_mns_closed_button"
-
-    menu_buttons["moons_n_seasons_arrow"] = UIImageButton(
-        ui_scale(pygame.Rect((arrow_x_pos, arrow_y_pos), (22, 34))),
-        "",
-        visible=visible,
-        manager=MANAGER,
-        object_id=button_id,
-        starting_height=5,
-    )
+    menu_buttons["season_indicator"].disable()
 
 
 def rebuild_mute(location: str):
