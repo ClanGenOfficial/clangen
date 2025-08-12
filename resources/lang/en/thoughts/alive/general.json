@@ -5604,7 +5604,7 @@
             "Is nervous to be around r_c, just in case {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick, too",
             "Is comforting r_c about the annoyances of {PRONOUN/r_c/poss} symptoms",
             "Is sharing stories of {PRONOUN/m_c/poss} own experiences to comfort r_c",
-            "Watches r_c with sorrow knowing what it's like to be coughing and sneezing constantly"
+            "Watches r_c with sorrow, knowing what it's like to be coughing and sneezing constantly"
         ],
         "perm_conditions": {
             "m_c": [
