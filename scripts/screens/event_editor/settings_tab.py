@@ -24,6 +24,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
+from scripts.ui.windows.event_editor_settings_tags import EditorSettingTags
 from scripts.utility import (
     ui_scale,
     get_text_box_theme,
@@ -102,45 +103,14 @@ class SettingsTab:
                     break
 
         # CHANGE BASIC TAGS
-        elif event.ui_element in self.basic_tag_checkbox.values():
-            event.ui_element.uncheck() if event.ui_element.checked else event.ui_element.check()
-            for info in self.basic_tag_list:
-                if event.ui_element == self.basic_tag_checkbox.get(info["tag"]):
-                    index = self.basic_tag_list.index(info)
-                    self.basic_tag_list[index] = {
-                        "tag": info["tag"],
-                        "setting": False if info["setting"] else True,
-                        "required_type": info["required_type"],
-                        "conflict": info["conflict"],
-                    }
-
-                    # flip the setting of any conflicting tags
-                    if info["conflict"]:
-                        for tag in info["conflict"]:
-                            conflict_info = [
-                                block
-                                for block in self.basic_tag_list
-                                if tag == block["tag"]
-                            ][0]
-                            conflict_index = self.basic_tag_list.index(conflict_info)
-                            if not info[
-                                "setting"
-                            ]:  # unchecks if conflicted setting is checked
-                                self.basic_tag_checkbox[tag].uncheck()
-                            self.basic_tag_list[conflict_index] = {
-                                "tag": conflict_info["tag"],
-                                "setting": False,
-                                "required_type": conflict_info["required_type"],
-                                "conflict": conflict_info["conflict"],
-                            }
-
-                    self.update_tag_info()
-                    break
-
-        # CHANGE RANK TAGS
-        elif event.ui_element in self.rank_tag_checkbox.values():
-            event.ui_element.uncheck() if event.ui_element.checked else event.ui_element.check()
-            self.update_tag_info()
+        elif event.ui_element == self.tag_element["edit"]:
+            EditorSettingTags(
+                self.tag_info,
+                self.basic_tag_list,
+                self.type_info,
+                self.tag_element,
+                self.editor_container,
+            )
 
         # CHANGE ACC CATEGORY
         # individual accs
@@ -198,7 +168,6 @@ class SettingsTab:
             self.sub_info.clear()
             self.update_sub_info()
             self.update_sub_buttons(self.event_types.get(new_type))
-            self.update_basic_checkboxes()
         # CHANGE SUBTYPES
         if (
             self.type_element.get("subtype_dropdown")
@@ -239,28 +208,6 @@ class SettingsTab:
             self.acc_element["display"].set_text(f"chosen accessories: []")
 
         self.editor_container.on_contained_elements_changed(self.acc_element["display"])
-
-    def update_tag_info(self):
-        for info in self.basic_tag_list:
-            if info["tag"] not in self.tag_info and info["setting"]:
-                self.tag_info.append(info["tag"])
-            elif info["tag"] in self.tag_info and not info["setting"]:
-                self.tag_info.remove(info["tag"])
-
-        for rank, box in self.rank_tag_checkbox.items():
-            if "text" in rank:
-                continue
-            tag = f"clan:{rank}"
-            if box.checked and tag not in self.tag_info:
-                self.tag_info.append(tag)
-            elif not box.checked and tag in self.tag_info:
-                self.tag_info.remove(tag)
-
-        if self.tag_element.get("display"):
-            self.tag_element["display"].set_text(f"chosen tags: {self.tag_info}")
-            self.editor_container.on_contained_elements_changed(
-                self.tag_element["display"]
-            )
 
     def update_location_info(self, biome=None, camp=None):
         if biome:
@@ -505,86 +452,27 @@ class SettingsTab:
         )
 
     def create_tag_editor(self):
-        self.tag_element["collapse_container"] = UICollapsibleContainer(
-            ui_scale(pygame.Rect((0, 0), (440, 0))),
-            top_button_oriented_left=False,
-            title_text="<b>tags:</b>",
-            bottom_button=False,
-            resize_right=False,
-            scrolling_container_to_reset=self.editor_container,
-            manager=MANAGER,
-            container=self.editor_container,
-            title_object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            anchors={"top_target": self.type_element["display"]},
-        )
-        self.tag_element[
-            "basic_checkbox_container"
-        ] = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((48, 0), (0, 0))),
-            container=self.tag_element["collapse_container"],
-            manager=MANAGER,
-            anchors={"top_target": self.tag_element["collapse_container"].top_button},
-        )
-
-        self.update_basic_checkboxes()
-
-        self.rank_tag_checkbox["text"] = UITextBoxTweaked(
-            "screens.event_edit.rank_tags",
-            ui_scale(pygame.Rect((10, 10), (250, -1))),
+        self.tag_element["text"] = UITextBoxTweaked(
+            "<b>tags:</b>",
+            ui_scale(pygame.Rect((0, 14), (-1, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
             manager=MANAGER,
-            container=self.tag_element["collapse_container"],
+            container=self.editor_container,
+            anchors={"top_target": self.editor_element["type"]},
+        )
+        self.tag_element["edit"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((10, 17), (100, 30))),
+            "screens.event_edit.tag_edit",
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (100, 30)),
+            object_id="@buttonstyles_rounded_rect",
+            container=self.editor_container,
+            manager=MANAGER,
             anchors={
-                "top_target": self.tag_element["basic_checkbox_container"],
+                "top_target": self.editor_element["type"],
+                "left_target": self.tag_element["text"],
             },
         )
-        prev_element = None
-        rank_list = Cat.rank_sort_order.copy()
-        rank_list.append("apps")
-        for rank in rank_list:
-            if f"clan:{rank}" in self.tag_info:
-                setting = True
-            else:
-                setting = False
-
-            self.rank_tag_checkbox[rank] = UICheckbox(
-                position=(400, 10),
-                container=self.tag_element["collapse_container"],
-                manager=MANAGER,
-                check=setting,
-                anchors={
-                    "top_target": (
-                        prev_element if prev_element else self.rank_tag_checkbox["text"]
-                    ),
-                },
-            )
-
-            check_box_rect = pygame.Rect((0, 10), (350, -1))
-            check_box_rect.right = -70
-            if rank == "apps":
-                rank_string = f"two of any apprentice type"
-            else:
-                rank_string = (
-                    f"two {rank}s" if rank not in ("deputy", "leader") else rank
-                )
-            self.rank_tag_checkbox[f"{rank}_text"] = UITextBoxTweaked(
-                rank_string,
-                ui_scale(check_box_rect),
-                object_id="#text_box_30_horizright_pad_10_10",
-                line_spacing=1,
-                manager=MANAGER,
-                container=self.tag_element["collapse_container"],
-                anchors={
-                    "top_target": (
-                        prev_element if prev_element else self.rank_tag_checkbox["text"]
-                    ),
-                    "right": "right",
-                },
-            )
-
-            prev_element = self.rank_tag_checkbox[f"{rank}_text"]
-
         self.tag_element["display"] = UITextBoxTweaked(
             f"chosen tags: {self.tag_info}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
@@ -592,12 +480,10 @@ class SettingsTab:
             manager=MANAGER,
             container=self.editor_container,
             anchors={
-                "top_target": self.tag_element["collapse_container"],
+                "top_target": self.tag_element["edit"],
             },
             allow_split_dashes=False,
         )
-
-        self.tag_element["collapse_container"].close()
 
         self.tag_element["lock"] = EditorLock(
             name="tag",
@@ -605,7 +491,7 @@ class SettingsTab:
             manager=MANAGER,
             container=self.editor_container,
             anchors={
-                "top_target": self.tag_element["collapse_container"],
+                "top_target": self.tag_element["edit"],
                 "left_target": self.tag_element["display"],
             },
         )
@@ -616,60 +502,6 @@ class SettingsTab:
             container=self.editor_container,
             manager=MANAGER,
         )
-
-    def update_basic_checkboxes(self):
-        prev_element = None
-
-        # clear old elements
-        if self.basic_tag_checkbox:
-            for info in self.basic_tag_list:
-                if self.basic_tag_checkbox.get(f"{info['tag']}_text"):
-                    self.basic_tag_checkbox[f"{info['tag']}_text"].kill()
-                if self.basic_tag_checkbox.get(info["tag"]):
-                    self.basic_tag_checkbox[info["tag"]].kill()
-            self.basic_tag_checkbox.clear()
-
-        # make new ones!
-        for info in self.basic_tag_list:
-            if info["tag"] in self.tag_info and not info["setting"]:
-                info["setting"] = True
-            # first reset the values
-            if info.get("required_type") and info["required_type"] != self.type_info[0]:
-                # this is to change the setting to false
-                index = self.basic_tag_list.index(info)
-                self.basic_tag_list[index] = {
-                    "tag": info["tag"],
-                    "setting": False,
-                    "required_type": info["required_type"],
-                    "conflict": info["conflict"],
-                }
-                continue
-
-            self.basic_tag_checkbox[f"{info['tag']}_text"] = UITextBoxTweaked(
-                f"screens.event_edit.{info['tag']}",
-                ui_scale(pygame.Rect((0, 10), (350, -1))),
-                object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-                line_spacing=1,
-                manager=MANAGER,
-                container=self.tag_element["basic_checkbox_container"],
-                anchors={
-                    "top_target": prev_element,
-                }
-                if prev_element
-                else None,
-            )
-
-            self.basic_tag_checkbox[info["tag"]] = UICheckbox(
-                position=(350, 10),
-                container=self.tag_element["basic_checkbox_container"],
-                manager=MANAGER,
-                check=info["setting"],
-                anchors={"top_target": prev_element} if prev_element else None,
-            )
-
-            prev_element = self.basic_tag_checkbox[f"{info['tag']}_text"]
-
-        self.update_tag_info()
 
     def create_type_editor(self):
         self.type_element["text"] = UITextBoxTweaked(

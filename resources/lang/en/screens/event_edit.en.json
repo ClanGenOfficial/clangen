@@ -57,6 +57,7 @@
         "pool_info": "<b>pool:</b> If multiple subtypes are chosen, only events with all subtypes will be included in the pool. To add or remove event_ids, type them into the appropriate entry box and hit enter.",
         "moon_delay_info": "<b>moon_delay:</b> The future event will occur after a number of moons chosen from the given range.",
         "involved_cats_info": "<b>involved_cats:</b> Which cats from this event will also appear in the future event? What roles will they fill?",
+        "tag_edit": "edit tags",
         "classic": "Is this limited to classic mode?",
         "cruel_season": "Is this limited to cruel season?",
         "no_body": "Is the dead cat's body irretrievable?",
