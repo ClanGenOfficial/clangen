@@ -36,7 +36,6 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.ui.windows.editor_save_check import EditorSaveCheck
 from scripts.ui.windows.editor_missing_info import EditorMissingInfo
-from scripts.screens.RelationshipScreen import RelationshipScreen
 from scripts.screens.Screens import Screens
 from scripts.screens.event_editor.settings_tab import SettingsTab
 from scripts.screens.enums import GameScreen
@@ -234,7 +233,7 @@ class EventEditScreen(Screens):
         self.event_text_info: str = ""
         """Loaded event text"""
 
-        self.settings_tab = SettingsTab(self.editor_container, self.editor_element)
+        self.settings_tab = SettingsTab()
 
         self.main_cat_editor = {}
         self.random_cat_editor = {}
@@ -909,7 +908,7 @@ class EventEditScreen(Screens):
 
             # SETTINGS TAB EVENTS
             elif self.current_editor_tab == "settings":
-                self.settings_tab.handle_settings_events(event)
+                self.settings_tab.handle_events(event)
 
             # MAIN/RANDOM CAT TAB EVENTS
             elif self.current_editor_tab in ["main cat", "random cat"]:
@@ -941,12 +940,6 @@ class EventEditScreen(Screens):
                 self.event_text_element["counter"].set_text(
                     f"{character_count} characters after processing"
                 )
-
-            # CHANGE EVENT ID
-            if self.current_editor_tab == "settings":
-                if event.ui_element == self.event_id_element.get("entry"):
-                    self.event_id_info = self.event_id_element["entry"].text
-                    self.valid_id()
 
             # REL VALUE CONSTRAINTS
             elif self.current_editor_tab in ["random cat", "main cat"]:
@@ -1502,7 +1495,7 @@ class EventEditScreen(Screens):
         self.settings_tab.rank_tag_checkbox = {}
         if not self.param_locks.get("tag"):
             self.settings_tab.tag_info = []
-        self.settings_tab.frequency_element = {}
+        self.settings_tab.frequency_element = None
         if not self.param_locks.get("frequency"):
             self.settings_tab.frequency_info = 4
         self.settings_tab.acc_element = {}
@@ -1767,7 +1760,9 @@ class EventEditScreen(Screens):
             )
 
         if self.current_editor_tab == "settings":
-            self.settings_tab.generate_settings_tab()
+            self.settings_tab.generate_settings_tab(
+                self.editor_container, self.editor_element
+            )
         elif self.current_editor_tab == "main cat":
             self.current_cat_dict = self.main_cat_info
             self.generate_main_cat_tab()
@@ -6091,7 +6086,7 @@ class EventEditScreen(Screens):
     def generate_main_cat_tab(self):
         self.main_cat_editor["intro"] = UITextBoxTweaked(
             "screens.event_edit.mass_death_info"
-            if "mass_death" in self.sub_info
+            if "mass_death" in self.settings_tab.sub_info
             else "screens.event_edit.m_c_info",
             ui_scale(pygame.Rect((0, 10), (440, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
@@ -6464,7 +6459,10 @@ class EventEditScreen(Screens):
             check=self.current_cat_dict["dies"],
         )
         # this checks if death is requried and locks out user input
-        if "death" in self.type_info and self.current_editor_tab == "main cat":
+        if (
+            "death" in self.settings_tab.type_info
+            and self.current_editor_tab == "main cat"
+        ):
             self.death_element["checkbox"].check()
             self.death_element["checkbox"].disable()
             self.current_cat_dict["dies"] = True

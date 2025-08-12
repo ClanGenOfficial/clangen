@@ -10,6 +10,7 @@ from scripts.game_structure.editor_elements import (
     EditorTextEntryLine,
     EditorDropDownSelection,
     EditorDivider,
+    EditorLock,
 )
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
@@ -43,9 +44,11 @@ class SettingsTab:
     basic_tag_list: list = constants.EVENT_TAGS["settings"]
     """List of dicts for all basic event tags. Each dict holds tag name, conflicts, setting, and type required."""
 
-    def __init__(self, editor_container, editor_elements):
-        self.editor_container = editor_container
-        self.editor_element = editor_elements
+    def __init__(self):
+        self.param_locks: dict = {}
+
+        self.editor_container = None
+        self.editor_element = None
 
         self.event_id_element: Optional[EditorTextEntryLine] = None
         self.event_id_info: str = ""
@@ -73,9 +76,9 @@ class SettingsTab:
         self.tag_info: list = []
         """Loaded tags"""
 
-        self.weight_element: Optional[EditorTextEntryLine] = None
-        self.weight_info: int = 20
-        """Loaded weight"""
+        self.frequency_element: Optional[EditorTextEntryLine] = None
+        self.frequency_info: int = 4
+        """Loaded frequency"""
 
         self.acc_element = {}
         self.acc_button = {}
@@ -85,7 +88,7 @@ class SettingsTab:
         self.open_category: str = ""
         """Currently open acc category (wild, collar, ect.)"""
 
-    def handle_settings_events(self, event):
+    def handle_events(self, event):
         # CHANGE LOCATION LIST
         if event.ui_element in self.location_element.values():
             biome_list = constants.BIOME_TYPES
@@ -181,8 +184,8 @@ class SettingsTab:
             self.event_id_info = self.event_id_element.info
 
         # CHANGE WEIGHT
-        if self.weight_element.changed:
-            self.weight_info = int(self.weight_element.info)
+        if self.frequency_element.changed:
+            self.frequency_info = int(self.frequency_element.info)
 
         # CHANGE TYPE
         if (
@@ -348,7 +351,9 @@ class SettingsTab:
             self.type_element["display"].set_text("chosen subtypes: []")
 
     # SETTINGS EDITOR
-    def generate_settings_tab(self):
+    def generate_settings_tab(self, editor_container, editor_element):
+        self.editor_container = editor_container
+        self.editor_element = editor_element
         # EVENT ID
         self.create_event_id_editor()
         # LOCATION
@@ -360,7 +365,7 @@ class SettingsTab:
         # TAGS
         self.create_tag_editor()
         # WEIGHT
-        self.create_weight_editor()
+        self.create_frequency_editor()
         # ACC
         self.create_acc_editor()
 
@@ -372,7 +377,7 @@ class SettingsTab:
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.weight_element.bottom_element},
+            anchors={"top_target": self.frequency_element.bottom_element},
         )
         prev_element = None
         for group in self.acc_categories.keys():
@@ -416,11 +421,17 @@ class SettingsTab:
             allow_split_dashes=False,
         )
 
-        self.create_lock(
+        self.acc_element["lock"] = EditorLock(
             name="acc",
-            top_anchor=self.acc_element["frame"],
-            left_anchor=self.acc_element["display"],
+            position=(10, 10),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={
+                "top_target": self.acc_element["frame"],
+                "left_target": self.acc_element["display"],
+            },
         )
+        self.param_locks["tag"] = self.acc_element["lock"].locked
 
     def update_acc_list(self):
         # kill old buttons
@@ -472,23 +483,23 @@ class SettingsTab:
             ui_scale_dimensions((100, 100)),
         )
 
-    def create_weight_editor(self):
-        self.weight_element = EditorTextEntryLine(
+    def create_frequency_editor(self):
+        self.frequency_element = EditorTextEntryLine(
             position=(0, 15),
-            description=f"<b>weight:</b>",
+            description=f"<b>frequency:</b>",
             entry_length=50,
-            initial_entry_text=str(self.weight_info) if self.weight_info else "",
+            initial_entry_text=str(self.frequency_info) if self.frequency_info else "",
             container=self.editor_container,
             manager=MANAGER,
             anchors={"top_target": self.editor_element["tag"]},
             lock=True,
-            lock_name="weight",
+            lock_name="frequency",
         )
-        if self.param_locks.get("weight"):
-            self.weight_element.lock.locked = True
+        if self.param_locks.get("frequency"):
+            self.frequency_element.lock.locked = True
 
         self.editor_element["weight"] = EditorDivider(
-            top_anchor=self.weight_element.bottom_element,
+            top_anchor=self.frequency_element.bottom_element,
             container=self.editor_container,
             manager=MANAGER,
         )
@@ -497,7 +508,7 @@ class SettingsTab:
         self.tag_element["collapse_container"] = UICollapsibleContainer(
             ui_scale(pygame.Rect((0, 0), (440, 0))),
             top_button_oriented_left=False,
-            title_text="<b>Tags:</b>",
+            title_text="<b>tags:</b>",
             bottom_button=False,
             resize_right=False,
             scrolling_container_to_reset=self.editor_container,
@@ -588,11 +599,18 @@ class SettingsTab:
 
         self.tag_element["collapse_container"].close()
 
-        self.create_lock(
+        self.tag_element["lock"] = EditorLock(
             name="tag",
-            top_anchor=self.tag_element["collapse_container"],
-            left_anchor=self.tag_element["display"],
+            position=(10, 10),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={
+                "top_target": self.tag_element["collapse_container"],
+                "left_target": self.tag_element["display"],
+            },
         )
+        self.param_locks["tag"] = self.tag_element["lock"].locked
+
         self.editor_element["tag"] = EditorDivider(
             top_anchor=self.tag_element["display"],
             container=self.editor_container,
@@ -667,12 +685,12 @@ class SettingsTab:
             self.type_info = ["death"]
 
         self.type_element["type_dropdown"] = UIDropDown(
-            pygame.Rect((27, 17), (150, 30)),
+            pygame.Rect((50, 10), (150, 30)),
             parent_text=self.type_info[0],
             item_list=list(self.event_types.keys()),
             container=self.editor_container,
             anchors={
-                "top_target": self.season_element.bottom_element,
+                "top_target": self.editor_element["season"],
             },
             starting_height=3,
             manager=MANAGER,
@@ -693,11 +711,18 @@ class SettingsTab:
             },
             allow_split_dashes=False,
         )
-        self.create_lock(
+
+        self.type_element["lock"] = EditorLock(
             name="subtypes",
-            top_anchor=self.type_element["text"],
-            left_anchor=self.type_element["display"],
+            position=(10, 10),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={
+                "top_target": self.type_element["text"],
+                "left_target": self.type_element["display"],
+            },
         )
+        self.param_locks["subtypes"] = self.type_element["lock"].locked
 
         self.editor_element["type"] = EditorDivider(
             top_anchor=self.type_element["display"],
@@ -710,7 +735,7 @@ class SettingsTab:
             self.type_element["subtype_dropdown"].kill()
 
         self.type_element["subtype_dropdown"] = UIDropDown(
-            pygame.Rect((0, 17), (150, 30)),
+            pygame.Rect((0, 10), (150, 30)),
             parent_text="pick subtypes",
             item_list=type_list,
             manager=MANAGER,
@@ -721,7 +746,7 @@ class SettingsTab:
             starting_height=3,
             anchors={
                 "left_target": self.type_element["type_dropdown"],
-                "top_target": self.season_element.bottom_element,
+                "top_target": self.editor_element["season"],
             },
             starting_selection=self.sub_info,
         )
@@ -791,11 +816,18 @@ class SettingsTab:
             allow_split_dashes=False,
         )
 
-        self.create_lock(
+        self.location_element["lock"] = EditorLock(
             name="location",
-            top_anchor=self.location_element[biome_list[-1]],
-            left_anchor=self.location_element["display"],
+            position=(10, 10),
+            manager=MANAGER,
+            container=self.editor_container,
+            anchors={
+                "top_target": self.location_element[biome_list[-1]],
+                "left_target": self.location_element["display"],
+            },
         )
+        self.param_locks["location"] = self.location_element["lock"].locked
+
         self.editor_element["location"] = EditorDivider(
             top_anchor=self.location_element["display"],
             container=self.editor_container,

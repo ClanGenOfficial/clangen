@@ -78,11 +78,9 @@ class EditorLock(EditorElement):
         self.lock.set_text(Icon.LOCK if lock else Icon.UNLOCK)
 
 
-class EditorDivider(EditorElement):
+class EditorDivider(pygame_gui.elements.UIImage):
     def __init__(self, top_anchor, container, off_set: int = -12, manager=None):
-        super().__init__()
-
-        self.divider = pygame_gui.elements.UIImage(
+        super().__init__(
             ui_scale(pygame.Rect((0, off_set), (524, 24))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/spacer.png").convert_alpha(),
@@ -92,7 +90,6 @@ class EditorDivider(EditorElement):
             manager=manager,
             anchors={"top_target": top_anchor},
         )
-        self.ui_elements = self.divider
 
 
 class EditorTextEntryLine(EditorElement):

@@ -2286,7 +2286,7 @@ class UIDropDown(UIDropDownContainer):
         self.parent_reflect_selection = parent_reflect_selection
 
         super().__init__(
-            relative_rect=ui_scale(relative_rect.copy()),
+            relative_rect=ui_scale(relative_rect),
             container=container,
             manager=manager,
             starting_height=starting_height,
@@ -2297,14 +2297,10 @@ class UIDropDown(UIDropDownContainer):
             starting_selection=starting_selection,
         )
 
-        rect = pygame.Rect(
-            (relative_rect.x, 0), (relative_rect.width, relative_rect.height)
-        )
-
         # create parent button
         if not parent_override:
             self.parent_button = UISurfaceImageButton(
-                ui_scale(rect),
+                ui_scale(relative_rect),
                 parent_text,
                 get_button_dict(parent_style, relative_rect.size),
                 manager=manager,
