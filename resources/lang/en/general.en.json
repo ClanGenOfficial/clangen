@@ -13,6 +13,10 @@
             "many": "%{count} moons (in life)"
         },
         "moon_date": "moon %{moon}",
+        "guide": "guiding ghost",
+        "living_group": "%{group} %{rank}",
+        "past_no_group": "past %{rank}",
+        "past_group": "past %{group} %{rank}",
         "leader": {
             "one": "leader",
             "many": "leaders"
@@ -91,9 +95,13 @@
             "one": "former Clancat",
             "many": "former Clancats"
         },
+        "clancat": {
+            "one": "Clancat",
+            "many": "Clancats"
+        },
         "exiled": {
-            "one": "exiled",
-            "many": "exiled"
+            "one": "exiled from",
+            "many": "exiled from"
         },
         "lost": "lost",
         "mate": {
@@ -128,6 +136,7 @@
         "relation_NOT_BLOOD": "not blood related",
         "relation_RELATED": "blood related",
         "related_label": "related: %{relation}",
+        "related_text": "related",
         "niece": "niece",
         "nephew": "nephew",
         "siblings_child": "sibling's child",
@@ -153,6 +162,7 @@
         "cousin_male": "cousin",
         "cousin_female": "cousin",
         "cousin_nb": "cousin",
+        "clan": "%{name}Clan",
         "starclan": "StarClan",
         "dark_forest": "Dark Forest",
         "unknown_residence": "Unknown Residence",

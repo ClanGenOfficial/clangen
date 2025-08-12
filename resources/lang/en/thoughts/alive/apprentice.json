@@ -469,7 +469,7 @@
             "Asks if {PRONOUN/m_c/subject} can chase pretty bugs instead of prey",
             "Isn't paying attention to the lesson... again",
             "Overslept and missed the dawn patrol",
-            "Says {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't want to do anything today",
+            "Says {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} want to do anything today",
             "Is not allowed to leave camp without asking first"
         ],
         "main_trait_constraint": [

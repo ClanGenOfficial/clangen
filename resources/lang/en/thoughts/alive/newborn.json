@@ -11,7 +11,9 @@
             "Tried suckling on a piece of bedding",
             "Is squealing loudly",
             "Mewls at someone nudging {PRONOUN/m_c/object}",
-            "Hisses at all the strange new smells"
+            "Hisses at all the strange new smells",
+            "Mewls for attention",
+            "Puffs {PRONOUN/m_c/poss} fur out at a new smell"
         ],
         "main_age_constraint": [
             "newborn"
@@ -25,7 +27,9 @@
             "Mews at r_c as {PRONOUN/r_c/subject} {VERB/r_c/shift/shifts} in the nest",
             "Squeaks pitifully as r_c checks on {PRONOUN/m_c/object}",
             "Nuzzles up to r_c with a purr",
-            "Squeaks pitifully as r_c grooms {PRONOUN/m_c/object}"
+            "Squeaks pitifully as r_c grooms {PRONOUN/m_c/object}",
+            "Purrs while suckling milk",
+            "Squeals when r_c gets out of the nest"
         ],
         "main_age_constraint": [
             "newborn"

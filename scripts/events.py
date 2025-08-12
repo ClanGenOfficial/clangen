@@ -17,7 +17,7 @@ from scripts.cat import save_load
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
 from scripts.cat.names import Name
-from scripts.cat.save_load import save_cats
+from scripts.cat.save_load import save_cats, add_cat_to_fade_id
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
@@ -38,7 +38,7 @@ from scripts.game_structure.game.switches import (
     switch_get_value,
     switch_set_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.windows import SaveError
 from scripts.utility import (
@@ -129,11 +129,14 @@ class Events:
         self.handle_future_events()
 
         # Calling of "one_moon" functions.
-        for cat in Cat.all_cats.copy().values():
-            if not cat.status.group:
-                self.one_moon_outside_cat(cat)
-            elif cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
+        other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
+        for cat in Cat.all_cats_list.copy():
+            if cat.status.alive_in_player_clan or (
+                cat.status.group and cat.status.group.is_afterlife()
+            ):
                 self.one_moon_cat(cat)
+            elif not cat.status.group or cat.status.is_other_clancat:
+                self.one_moon_outside_cat(cat, other_clan_cats)
 
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
@@ -870,15 +873,15 @@ class Events:
                         else:
                             game.clan.medicine_cat = None
 
-                save_load.cat_to_fade.append(cat.ID)
+                add_cat_to_fade_id(cat.ID)
                 cat.set_faded()
 
-    def one_moon_outside_cat(self, cat):
+    def one_moon_outside_cat(self, cat, other_clan_cats: list = None):
         """
         exiled cat events
         """
         # aging the cat
-        cat.one_moon()
+        cat.one_moon(other_clan_cats)
         cat.manage_outside_trait()
 
         self.handle_outside_EX(cat)
@@ -1731,7 +1734,7 @@ class Events:
     # This gives outsiders exp. There may be a better spot for it to go,
     # but I put it here to keep the exp functions together
     def handle_outside_EX(self, cat):
-        if cat.status.is_outsider:
+        if cat.status.is_outsider or cat.status.is_other_clancat:
             if cat.not_working() and int(random.random() * 3):
                 return
 
@@ -1988,12 +1991,13 @@ class Events:
         )
 
         # Check to see if random murder is triggered.
-        # If so, we allow targets to be anyone they have even the smallest amount of dislike for
+        # If so, we allow targets to be anyone they have even the smallest amount of negativity for
         if random.getrandbits(max(1, int(random_murder_chance))) == 1:
             targets = [
                 i
                 for i in relationships
-                if i.dislike > 1 and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
+                if i.total_relationship_value() < 0
+                and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
             ]
             if not targets:
                 return
@@ -2027,18 +2031,13 @@ class Events:
             return
 
         # If random murder is not triggered, targets can only be those they have some dislike for
-        hate_relation = [
+        negative_relation = [
             i
             for i in relationships
-            if i.dislike > 15 and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
+            if i.has_extreme_negative
+            and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
         ]
-        targets.extend(hate_relation)
-        resent_relation = [
-            i
-            for i in relationships
-            if i.jealousy > 15 and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
-        ]
-        targets.extend(resent_relation)
+        targets.extend(negative_relation)
 
         # if we have some, then we need to decide if this cat will kill
         if targets:
@@ -2046,16 +2045,13 @@ class Events:
 
             kill_chance = constants.CONFIG["death_related"]["base_murder_kill_chance"]
 
-            relation_modifier = int(
-                0.5 * int(chosen_target.dislike + chosen_target.jealousy)
-            ) - int(
-                0.5
-                * int(
-                    chosen_target.platonic_like
-                    + chosen_target.trust
-                    + chosen_target.comfortable
-                )
+            extreme_neg = len(
+                [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg()]
             )
+            neg = len([l for l in chosen_target.get_reltype_tiers() if l.is_low_neg()])
+
+            relation_modifier = (extreme_neg * 10) + (neg * 5)
+
             kill_chance -= relation_modifier
 
             if (

@@ -8,9 +8,7 @@ from pygame_gui.elements import UIImage
 
 import scripts.game_structure.screen_settings
 from scripts.clan import Clan
-from scripts.game_structure.game_essentials import (
-    game,
-)
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import DeleteCheck
 from scripts.utility import (
@@ -129,12 +127,13 @@ class SwitchClanScreen(Screens):
 
         self.current_clan = pygame_gui.elements.UITextBox(
             "screens.switch_clan.current_clan",
-            ui_scale(pygame.Rect((0, 100), (600, 40))),
+            ui_scale(pygame.Rect((0, 90), (600, 80))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
             anchors={"centerx": "centerx"},
             text_kwargs={
-                "clan": game.clan.name if game.clan else "",
+                "clan": game.clan.displayname if game.clan else "",
+                "clan_id": game.clan.name if game.clan else "",
                 "count": 1 if game.clan else 0,
             },
         )

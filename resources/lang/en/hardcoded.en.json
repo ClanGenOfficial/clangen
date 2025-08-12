@@ -91,6 +91,7 @@
             "one": "Kittencough has spread around the nursery. %{kits} is affected.",
             "many": "Kittencough has spread around the nursery. %{kits} are affected."},
         "flea_spread": {
+            "one": "Fleas have been hopping from pelt to pelt and now %{cats} is infested.",
             "two": "Fleas have been hopping from pelt to pelt and now %{cats} are both infested.",
             "many": "Fleas have been hopping from pelt to pelt and now %{cats} are all infested."
         },

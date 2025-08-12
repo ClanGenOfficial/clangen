@@ -29,7 +29,7 @@ from scripts.game_structure.game.switches import (
     switch_append_list_value,
     switch_remove_list_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import (
     get_lang_config,
     get_custom_pronouns,
@@ -41,6 +41,7 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
     UIDropDown,
+    UIModifiedScrollingContainer,
 )
 from scripts.housekeeping.datadir import (
     get_save_dir,
@@ -76,7 +77,7 @@ if TYPE_CHECKING:
 class SymbolFilterWindow(UIWindow):
     def __init__(self):
         super().__init__(
-            ui_scale(pygame.Rect((250, 175), (300, 450))),
+            ui_scale(pygame.Rect((250, 125), (300, 450))),
             window_display_title="windows.symbol_filters",
             object_id="#filter_window",
         )
@@ -104,12 +105,12 @@ class SymbolFilterWindow(UIWindow):
             object_id="#text_box_40",
             container=self,
         )
-        self.filter_container = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((5, 45), (285, 310))),
+        self.filter_container = UIModifiedScrollingContainer(
+            ui_scale(pygame.Rect((5, 45), (285, 400))),
             manager=MANAGER,
             starting_height=1,
-            object_id="#filter_container",
             allow_scroll_x=False,
+            allow_scroll_y=True,
             container=self,
         )
         self.checkbox = {}
@@ -275,9 +276,11 @@ class SaveCheck(UIWindow):
             container=self,
         )
         save_buttons = get_button_dict(ButtonStyles.SQUOVAL, (114, 30))
-        save_buttons["normal"] = image_cache.load_image(
-            "resources/images/buttons/save_clan.png"
+        save_buttons["normal"] = pygame.transform.scale(
+            image_cache.load_image("resources/images/buttons/save_clan.png"),
+            ui_scale_dimensions((114, 30)),
         )
+
         self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 115), (114, 30))),
             "buttons.save_clan",
@@ -416,7 +419,7 @@ class EditorSaveCheck(UIWindow):
     def modify_file(self, event_list, path):
         event_json = ujson.dumps(event_list, indent=4)
         event_json = event_json.replace(
-            "\/", "/"
+            "\\/", "/"
         )  # ujson tries to escape "/", but doesn't end up doing a good job.
 
         try:
@@ -559,7 +562,7 @@ class GameOver(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        self.clan_name = str(game.clan.name + "Clan")
+        self.clan_name = str(game.clan.displayname + "Clan")
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
             "windows.game_over_message",
@@ -1664,10 +1667,16 @@ class RelationshipLog(UIWindow):
             relationship.opposite_relationship
             and len(relationship.opposite_relationship.log) > 0
         ):
-            opposite_log_string = f"{f'<br>-----------------------------<br>'.join(relationship.opposite_relationship.log)}<br>"
+            opposite_log = relationship.opposite_relationship.log.copy()
+            opposite_log.reverse()
+            opposite_log_string = (
+                f"{f'<br>-----------------------------<br>'.join(opposite_log)}<br>"
+            )
 
+        log = relationship.log.copy()
+        log.reverse()
         log_string = (
-            f"{f'<br>-----------------------------<br>'.join(relationship.log)}<br>"
+            f"{f'<br>-----------------------------<br>'.join(log)}<br>"
             if len(relationship.log) > 0
             else i18n.t("windows.no_relation_logs")
         )
@@ -2244,7 +2253,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             ui_scale_offset((0, 22)),
             (
                 self.get_container().get_size()[0],
-                self.get_container().get_size()[1] - button_vertical_space,
+                -1,
             ),
         )
         self.text_block = pygame_gui.elements.UITextBox(
@@ -2261,6 +2270,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             },
             text_kwargs={"count": 10},
         )
+        self.text_block.disable()
         self.text_block.rebuild_from_changed_theme_data()
 
         # make a timeout that will call in 10 seconds - if this window isn't closed,

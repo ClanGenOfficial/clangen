@@ -7,8 +7,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import image_cache, game
 from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
@@ -533,7 +532,7 @@ class RoleScreen(Screens):
         else:
             output = "screens.role.blurb_unknown"
 
-        return i18n.t(output, name=self.the_cat.name, clan=game.clan.name)
+        return i18n.t(output, name=self.the_cat.name, clan=game.clan.displayname)
 
     def exit_screen(self):
         self.back_button.kill()
