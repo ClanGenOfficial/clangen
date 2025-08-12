@@ -5529,7 +5529,7 @@
             "Is sharing a funny story with r_c about something {PRONOUN/m_c/poss} allergies caused",
             "Is answering r_c's question about {PRONOUN/m_c/poss} allergies",
             "Is explaining to r_c what seasons make {PRONOUN/m_c/poss} allergies worse",
-            "Is assuring r_c that {PRONOUN/m_c/subject} {VERB/m_c/aren/isn}'t sick, its just alleriges",
+            "Is assuring r_c that {PRONOUN/m_c/subject} {VERB/m_c/aren/isn}'t sick, it's just allergies",
             "Is unsure if {PRONOUN/m_c/subject} should apologize when r_c complains about {PRONOUN/m_c/poss} allergies",
             "Is rolling {PRONOUN/m_c/poss} eyes when r_c insists {PRONOUN/m_c/subject} should talk to the medicine cat",
             "Playfully swats r_c when {PRONOUN/r_c/subject} {VERB/r_c/say/says} {PRONOUN/m_c/subject} sounds like an elder"
