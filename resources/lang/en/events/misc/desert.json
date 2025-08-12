@@ -1006,7 +1006,6 @@
     },
     "new_gender": ["trans female", "nonbinary"]
   },
-  [
   {
     "event_id": "dst_misc_any_angrylizard",
     "location": ["desert"],
