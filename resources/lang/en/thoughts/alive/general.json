@@ -5635,7 +5635,7 @@
         "id": "allergies_gen_to_yellowcough",
         "thoughts": [
             "Is giving to give r_c advice for managing some of the symptoms of yellowcough",
-            "Watches r_c with worry wondering if {PRONOUN/m_c/subject} sounds like that"
+            "Watches r_c with worry, wondering if {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like that"
         ],
         "perm_conditions": {
             "m_c": [
