@@ -5548,7 +5548,7 @@
         "thoughts": [
             "Purrs when r_c takes care to bring {PRONOUN/m_c/object} flowers that don't trigger {PRONOUN/m_c/poss} allergies",
             "Answers all the questions r_c has about {PRONOUN/m_c/poss} allergies",
-            "Is playing a game with r_c trying to find what flowers makes {PRONOUN/m_c/poss} sneeze the hardest"
+            "Is playing a game with r_c where they try to find what flowers make {PRONOUN/m_c/poss} sneeze the hardest"
         ],
         "perm_conditions": {
             "m_c": [
