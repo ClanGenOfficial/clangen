@@ -5658,7 +5658,7 @@
         "id": "allergies_gen_to_med",
         "thoughts": [
             "Is asking r_c if there are herbs to help {PRONOUN/m_c/poss} allergies",
-            "Asks r_c to check if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if its just {PRONOUN/m_c/poss} allergies",
+            "Asks r_c to check if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if it's just {PRONOUN/m_c/poss} allergies",
             "Is reassuring r_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fine and it's just {PRONOUN/m_c/poss} allergies being especially bad today",
             "Is working with r_c to try and find something to relieve {PRONOUN/m_c/poss} allergies",
             "Ignores r_c's worried look when {PRONOUN/m_c/subject} devolves into a sneezing fit",
