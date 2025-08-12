@@ -5505,7 +5505,7 @@
             "Is especially annoyed with {PRONOUN/m_c/poss} allergies today",
             "Is questioning why StarClan won't cure {PRONOUN/m_c/poss} allergies",
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if {PRONOUN/m_c/poss} allergies are especially bad today",
-			"Is struggling to smell something",
+			      "Is struggling to smell something"
         ],
         "perm_conditions": {
             "m_c": [
@@ -5685,7 +5685,7 @@
             "Accidentally sneezes on a bee when smelling the flowers",
             "Is watching a cloud of pollen in horror",
             "Found a flower that causes {PRONOUN/m_c/poss} allergies to get worse",
-            "Found a flower that doesn't affect {PRONOUN/m_c/poss} allergies",
+            "Found a flower that doesn't affect {PRONOUN/m_c/poss} allergies"
         ],
         "perm_conditions": {
             "m_c": [
@@ -5704,7 +5704,7 @@
             "Accidentally sneezes on a bee when smelling the flowers",
             "Found a flower that causes {PRONOUN/m_c/poss} allergies to get worse",
             "Found a flower that doesn't affect {PRONOUN/m_c/poss} allergies",
-            "Is both happy about the warmer season, and unamused about {PRONOUN/m_c/poss} allergies inevitably getting worse",
+            "Is both happy about the warmer season, and unamused about {PRONOUN/m_c/poss} allergies inevitably getting worse"
         ],
         "perm_conditions": {
             "m_c": [
@@ -5787,7 +5787,7 @@
             "m_c": [
                 "lasting grief"
             ]
-        },
+        }
     },
     {
         "id": "lasting_grief_gen_to_alive_gen",
