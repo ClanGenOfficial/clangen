@@ -24,12 +24,6 @@ if TYPE_CHECKING:
 
 event_editing = False
 max_name_length = 10
-# max_events_displayed = 10
-# event_scroll_ct = 0
-# max_allegiance_displayed = 17
-# allegiance_scroll_ct = 0
-# max_relation_events_displayed = 10
-# relation_scroll_ct = 0
 
 mediated = []  # Keep track of which couples have been mediated this moon.
 just_died = []  # keeps track of which cats died this moon via die()
@@ -68,11 +62,6 @@ choose_cats = {}
 
 patrol_cats = {}
 patrolled = []
-
-outsider_reps = ["welcoming", "neutral", "hostile"]
-other_clan_reps = ["ally", "neutral", "hostile"]
-
-BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
 # store changing parts of the game that the user can toggle with buttons
 
@@ -179,9 +168,11 @@ def add_faded_offspring_to_faded_cat(parent, offspring):
 
     global clan
 
+    path = f"{get_save_dir()}/{clan.name}/faded_cats/{parent}.json"
+
     try:
         with open(
-            get_save_dir() + "/" + clan.name + "/faded_cats/" + parent + ".json",
+            path,
             "r",
             encoding="utf-8",
         ) as read_file:
@@ -192,7 +183,7 @@ def add_faded_offspring_to_faded_cat(parent, offspring):
 
     cat_info["faded_offspring"].append(offspring)
 
-    safe_save(f"{get_save_dir()}/{clan.name}/faded_cats/{parent}.json", cat_info)
+    safe_save(path, cat_info)
 
     return True
 
