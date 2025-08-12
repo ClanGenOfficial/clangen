@@ -153,7 +153,7 @@ class FreshkillManagement(GameWindow):
 
         # BOTTOM BUTTONS
         scale_rect = ui_scale(pygame.Rect((0, 0), (85, 30)))
-        scale_rect.bottomleft = ui_scale_offset((35, -20))
+        scale_rect.bottomleft = ui_scale_offset((95, -20))
         self.feed_view_elements["feed_all"] = UISurfaceImageButton(
             scale_rect,
             "windows.feed_all",
@@ -194,27 +194,6 @@ class FreshkillManagement(GameWindow):
             anchors={
                 "bottom": "bottom",
                 "left_target": self.feed_view_elements["ration_prey"],
-            },
-            container=self,
-            manager=MANAGER,
-        )
-        self.feed_view_elements["auto_feed"] = UICheckbox(
-            (15, 345),
-            container=self,
-            manager=MANAGER,
-            check=get_clan_setting("auto_feed"),
-            anchors={"left_target": self.feed_view_elements["ration_prey_text"]},
-            tool_tip_text="settings.auto_feed_tooltip",
-        )
-        scale_rect = ui_scale(pygame.Rect((0, 0), (-1, -1)))
-        scale_rect.bottomleft = ui_scale_offset((0, -47))
-        self.feed_view_elements["auto_feed_text"] = pygame_gui.elements.UILabel(
-            relative_rect=scale_rect,
-            text="settings.auto_feed",
-            object_id="#text_box_30_horizleft",
-            anchors={
-                "bottom": "bottom",
-                "left_target": self.feed_view_elements["auto_feed"],
             },
             container=self,
             manager=MANAGER,
@@ -386,6 +365,27 @@ class FreshkillManagement(GameWindow):
                 manager=MANAGER,
             )
             prev_element = self.tactic_view_elements[priority]
+
+        self.feed_view_elements["auto_feed"] = UICheckbox(
+            (80, 345),
+            container=self,
+            manager=MANAGER,
+            check=get_clan_setting("auto_feed"),
+            tool_tip_text="settings.auto_feed_tooltip",
+        )
+        scale_rect = ui_scale(pygame.Rect((0, 0), (-1, -1)))
+        scale_rect.bottomleft = ui_scale_offset((0, -47))
+        self.feed_view_elements["auto_feed_text"] = pygame_gui.elements.UILabel(
+            relative_rect=scale_rect,
+            text="settings.auto_feed",
+            object_id="#text_box_30_horizleft",
+            anchors={
+                "bottom": "bottom",
+                "left_target": self.feed_view_elements["auto_feed"],
+            },
+            container=self,
+            manager=MANAGER,
+        )
 
     def close_views(self):
         """
