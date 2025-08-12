@@ -2853,13 +2853,8 @@ class Cat:
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
             rel_values.append(RelType.ROMANCE)
 
-        # Determine the number of positive traits to effect, and choose the traits
-        chosen_pos = sample(rel_values, k=randint(2, len(rel_values)))
-
-        # Determine negative trains effected
-        chosen_neg = sample(
-            [v for v in rel_values if v not in chosen_pos], k=randint(1, 2)
-        )
+        # Determine the number of traits to effect, and choose the traits
+        chosen_rel = sample(rel_values, k=randint(2, len(rel_values)))
 
         if compat is True:
             personality_bonus = 2
@@ -2869,7 +2864,7 @@ class Cat:
             personality_bonus = 0
 
         # Effects on traits
-        for rel_type in chosen_pos + chosen_neg:
+        for rel_type in chosen_rel:
             # The EX bonus in not applied upon a fail.
             if apply_bonus:
                 if mediator.experience_level == "very low":
@@ -2888,10 +2883,7 @@ class Cat:
             else:
                 bonus = 0
 
-            if sabotage or rel_type in chosen_neg:
-                decrease = True
-            else:
-                decrease = sabotage or rel_type in chosen_neg
+            decrease = sabotage
 
             ran = (5, 10) if rel_type == RelType.ROMANCE and mates else (4, 6)
 
@@ -2899,8 +2891,21 @@ class Cat:
                 -1 if sabotage else 1
             )
 
-            setattr(rel1, rel_type, amount)
-            setattr(rel2, rel_type, amount)
+            if rel_type == RelType.ROMANCE:
+                setattr(rel1, "romance", rel1.romance + amount)
+                setattr(rel2, "romance", rel2.romance + amount)
+            if rel_type == RelType.LIKE:
+                setattr(rel1, "like", rel1.like + amount)
+                setattr(rel2, "like", rel2.like + amount)
+            if rel_type == RelType.RESPECT:
+                setattr(rel1, "respect", rel1.respect + amount)
+                setattr(rel2, "respect", rel2.respect + amount)
+            if rel_type == RelType.COMFORT:
+                setattr(rel1, "comfort", rel1.comfort + amount)
+                setattr(rel2, "comfort", rel2.comfort + amount)
+            if rel_type == RelType.TRUST:
+                setattr(rel1, "trust", rel1.trust + amount)
+                setattr(rel2, "trust", rel2.trust + amount)
 
             output += i18n.t(
                 f"screens.mediation.output_{'decrease' if decrease else 'increase'}",
