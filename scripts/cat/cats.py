@@ -2883,32 +2883,17 @@ class Cat:
             else:
                 bonus = 0
 
-            decrease = sabotage
-
             ran = (5, 10) if rel_type == RelType.ROMANCE and mates else (4, 6)
 
             amount = ((randint(ran[0], ran[1]) + bonus) + personality_bonus) * (
                 -1 if sabotage else 1
             )
 
-            if rel_type == RelType.ROMANCE:
-                setattr(rel1, "romance", rel1.romance + amount)
-                setattr(rel2, "romance", rel2.romance + amount)
-            if rel_type == RelType.LIKE:
-                setattr(rel1, "like", rel1.like + amount)
-                setattr(rel2, "like", rel2.like + amount)
-            if rel_type == RelType.RESPECT:
-                setattr(rel1, "respect", rel1.respect + amount)
-                setattr(rel2, "respect", rel2.respect + amount)
-            if rel_type == RelType.COMFORT:
-                setattr(rel1, "comfort", rel1.comfort + amount)
-                setattr(rel2, "comfort", rel2.comfort + amount)
-            if rel_type == RelType.TRUST:
-                setattr(rel1, "trust", rel1.trust + amount)
-                setattr(rel2, "trust", rel2.trust + amount)
+            setattr(rel1, rel_type, getattr(rel1, rel_type) + amount)
+            setattr(rel2, rel_type, getattr(rel2, rel_type) + amount)
 
             output += i18n.t(
-                f"screens.mediation.output_{'decrease' if decrease else 'increase'}",
+                f"screens.mediation.output_{'decrease' if sabotage else 'increase'}",
                 trait=i18n.t(f"screens.mediation.{rel_type}"),
             )
 
