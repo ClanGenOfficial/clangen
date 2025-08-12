@@ -3864,7 +3864,7 @@
         "id": "compassionate_apprentices_to_mentor",
         "thoughts": [
             "Is thinking of giving {PRONOUN/m_c/poss} mentor a gift for {PRONOUN/m_c/poss} hard work",
-            "Made a suggestion to {PRONOUN/m_c/poss} mentor",
+            "Made a suggestion to {PRONOUN/m_c/poss} mentor"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -4330,6 +4330,7 @@
         "main_trait_constraint": [
             "strange"
         ]
+	},
     {
         "id": "strange_apprentices_to_mentor",
         "thoughts": [
