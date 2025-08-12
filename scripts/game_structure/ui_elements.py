@@ -25,7 +25,7 @@ from pygame_gui.elements import UIAutoResizingContainer
 from scripts.cat_relations.enums import RelType, RelTier
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import screen
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.ui.generate_button import get_button_dict, ButtonStyles

@@ -423,9 +423,9 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
     def test_skill(self):
         # given
-        hunter = Cat()
+        hunter = Cat(disable_random=True)
         hunter.skills.primary = Skill(SkillPath.HUNTER, points=9)
-        fighter = Cat()
+        fighter = Cat(disable_random=True)
         fighter.skills.primary = Skill(SkillPath.FIGHTER, points=9)
 
         # when

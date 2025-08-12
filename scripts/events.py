@@ -38,7 +38,7 @@ from scripts.game_structure.game.switches import (
     switch_get_value,
     switch_set_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.windows import SaveError
 from scripts.utility import (
@@ -468,7 +468,7 @@ class Events:
                                         biome=game.clan.biome
                                         if not game.clan.override_biome
                                         else game.clan.override_biome,
-                                        tortiepattern=None,
+                                        tortie_pattern=None,
                                     )
                                     invited_cat.specsuffix_hidden = False
                             # if cat is an apprentice, make sure they get a mentor!
