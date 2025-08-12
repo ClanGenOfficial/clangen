@@ -33,6 +33,7 @@ from scripts.utility import (
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.enums import CatAge, CatRank, CatGroup
+from ..cat.sprites import sprites
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.save_load import safe_save
 from ..game_structure.game.settings import game_setting_get
@@ -618,7 +619,16 @@ class ProfileScreen(Screens):
             self.profile_elements["backgrounds"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((55, 200), (240, 210))),
                 pygame.transform.scale(
-                    self.get_platform(), ui_scale_dimensions((240, 210))
+                    sprites.get_platform(
+                        biome=game.clan.override_biome
+                        if game.clan.override_biome
+                        else game.clan.biome,
+                        season=game.clan.current_season,
+                        show_nest=self.the_cat.age == "newborn"
+                        or self.the_cat.not_working(),
+                        group=self.the_cat.status.group,
+                    ),
+                    ui_scale_dimensions((240, 210)),
                 ),
                 manager=MANAGER,
             )
@@ -882,13 +892,30 @@ class ProfileScreen(Screens):
             # NEWLINE ----------
             output += "\n"
 
-        if the_cat.status.is_other_clancat:
-            output += f"{cat_clan} "
+        if the_cat == game.clan.instructor:
+            output += i18n.t(f"general.guide")
+            output += "\n"
 
-        if the_cat.status.is_outsider:
-            output += i18n.t(f"general.{the_cat.status.social}", count=1)
-        else:
+        if the_cat.dead:
+            if the_cat == game.clan.instructor or the_cat.status.is_outsider:
+                output += i18n.t(
+                    f"general.past_no_group",
+                    rank=i18n.t(f"general.{the_cat.status.rank}", count=1),
+                )
+            else:
+                output += i18n.t(
+                    "general.past_group",
+                    group=cat_clan,
+                    rank=i18n.t(f"general.{the_cat.status.rank}", count=1),
+                )
+        elif the_cat.status.is_outsider:
             output += i18n.t(f"general.{the_cat.status.rank}", count=1)
+        else:
+            output += i18n.t(
+                "general.living_group",
+                group=cat_clan,
+                rank=i18n.t(f"general.{the_cat.status.rank}", count=1),
+            )
 
         # NEWLINE ----------
         output += "\n"

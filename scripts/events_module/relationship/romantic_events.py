@@ -693,15 +693,15 @@ class RomanticEvents:
         if (
             not random_hit
             and RomanticEvents.relationship_fulfill_condition(
-                relationship_from, constants.CONFIG["mates"]["platonic_to_romantic"]
+                relationship_from, constants.CONFIG["mates"]["like_to_romance"]
             )
             and RomanticEvents.relationship_fulfill_condition(
-                relationship_to, constants.CONFIG["mates"]["platonic_to_romantic"]
+                relationship_to, constants.CONFIG["mates"]["like_to_romance"]
             )
         ):
             become_mates = True
             mate_string = RomanticEvents.get_mate_string(
-                "platonic_to_romantic", poly, cat_from, cat_to
+                "like_to_romance", poly, cat_from, cat_to
             )
 
         if not become_mates:
