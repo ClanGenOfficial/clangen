@@ -10,7 +10,6 @@ import logging
 import os
 import re
 import traceback
-from copy import copy
 from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
