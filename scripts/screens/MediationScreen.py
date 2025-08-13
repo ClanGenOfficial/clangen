@@ -6,8 +6,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import image_cache, game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,

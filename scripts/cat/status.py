@@ -4,7 +4,7 @@ from random import choice
 from typing import TypedDict, Optional, List, Dict
 
 from scripts.cat.enums import CatRank, CatSocial, CatStanding, CatAge, CatGroup
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 
 class Status:
@@ -125,6 +125,7 @@ class Status:
         social: CatSocial = None,
         group: CatGroup = None,
         rank: CatRank = None,
+        disable_random=False,
     ):
         """
         Starts a group history and standing history for a newly generated cat. You MUST include either age or rank.
@@ -133,16 +134,12 @@ class Status:
         :param group: The group the cat will be part of, default is None. If social is set to clancat and group is None,
          group will default to player clan.
         :param rank: The rank the cat holds within a group. If they have no group, then this matches their social.
+        :param disable_random: Removes randomness and ensures repeatable results for each age group.
         """
         # just some extra checks in case a str snuck in
         group, rank, social = self.get_enums(group, rank, social, age)
 
-        self._start_group_history(
-            age,
-            social,
-            group,
-            rank,
-        )
+        self._start_group_history(age, social, group, rank, disable_random)
 
         self._start_standing()
 
@@ -152,6 +149,7 @@ class Status:
         social: CatSocial = None,
         group: CatGroup = None,
         rank: CatRank = None,
+        disable_random=False,
     ):
         """
         Generates initial group history for a cat
@@ -160,6 +158,7 @@ class Status:
         :param social: The social standing of the cat (rogue, loner, clancat, ect.)
         :param group: The group this cat belongs to
         :param rank: This cat's rank. If the cat is outside the Clan, this will match it's social.
+        :param disable_random: If true, will provide deterministic outputs
         """
         new_history = {"group": group, "rank": rank, "moons_as": 0}
 
@@ -178,7 +177,7 @@ class Status:
                 elif social == CatSocial.KITTYPET:
                     rank = CatRank.KITTYPET
             else:
-                rank = self.get_rank_from_age(age)
+                rank = self.get_rank_from_age(age, disable_random)
 
             new_history["rank"] = rank
 
@@ -204,7 +203,10 @@ class Status:
                 if self.social_lookup.get(rank) == social
             ]
 
-            new_history["rank"] = choice(possible_ranks)
+            if disable_random and social == CatSocial.CLANCAT:
+                new_history["rank"] = CatRank.WARRIOR
+            else:
+                new_history["rank"] = choice(possible_ranks)
 
         self.group_history = [new_history]
 
@@ -317,6 +319,9 @@ class Status:
 
     @property
     def is_other_clancat(self) -> bool:
+        """
+        Returns True if the cat is a clancat but isn't part of the player_clan. If the cat is a dead clancat, returns True if their last living Clan wasn't the player_clan.
+        """
         dead_player_clan = (
             self.group
             and self.group.is_afterlife()
@@ -331,28 +336,36 @@ class Status:
         return self.rank == CatRank.LEADER
 
     @staticmethod
-    def get_rank_from_age(age) -> CatRank:
+    def get_rank_from_age(age, disable_random=False) -> CatRank:
         """
         Returns clan rank according to given age
+        :param age: Desired age
+        :param disable_random: If true, defaults to apprentice and warrior instead of choices
         """
         if age == CatAge.NEWBORN:
-            rank = CatRank.NEWBORN
+            return CatRank.NEWBORN
         elif age == CatAge.KITTEN:
-            rank = CatRank.KITTEN
+            return CatRank.KITTEN
         elif age == CatAge.ADOLESCENT:
-            rank = choice(
-                [
-                    CatRank.APPRENTICE,
-                    CatRank.MEDIATOR_APPRENTICE,
-                    CatRank.MEDICINE_APPRENTICE,
-                ]
+            return (
+                CatRank.APPRENTICE
+                if disable_random
+                else choice(
+                    [
+                        CatRank.APPRENTICE,
+                        CatRank.MEDIATOR_APPRENTICE,
+                        CatRank.MEDICINE_APPRENTICE,
+                    ]
+                )
             )
         elif age in (CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT):
-            rank = choice([CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR])
+            return (
+                CatRank.WARRIOR
+                if disable_random
+                else choice([CatRank.WARRIOR, CatRank.MEDICINE_CAT, CatRank.MEDIATOR])
+            )
         else:
-            rank = CatRank.ELDER
-
-        return rank
+            return CatRank.ELDER
 
     # MODIFY INFO
     def change_current_moons_as(self, new_moons_as: int):
@@ -581,7 +594,7 @@ class Status:
         history.reverse()
 
         for entry in history:
-            if not entry["group"] or not entry["group"].is_afterlife():
+            if entry["group"] and not entry["group"].is_afterlife():
                 return entry["group"]
 
         return None

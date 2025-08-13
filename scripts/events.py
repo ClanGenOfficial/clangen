@@ -38,7 +38,7 @@ from scripts.game_structure.game.switches import (
     switch_get_value,
     switch_set_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.windows import SaveError
 from scripts.utility import (
@@ -131,10 +131,12 @@ class Events:
         # Calling of "one_moon" functions.
         other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
         for cat in Cat.all_cats_list.copy():
-            if not cat.status.group or cat.status.is_other_clancat:
-                self.one_moon_outside_cat(cat, other_clan_cats)
-            elif cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
+            if cat.status.alive_in_player_clan or (
+                cat.status.group and cat.status.group.is_afterlife()
+            ):
                 self.one_moon_cat(cat)
+            elif not cat.status.group or cat.status.is_other_clancat:
+                self.one_moon_outside_cat(cat, other_clan_cats)
 
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
@@ -466,7 +468,7 @@ class Events:
                                         biome=game.clan.biome
                                         if not game.clan.override_biome
                                         else game.clan.override_biome,
-                                        tortiepattern=None,
+                                        tortie_pattern=None,
                                     )
                                     invited_cat.specsuffix_hidden = False
                             # if cat is an apprentice, make sure they get a mentor!

@@ -26,7 +26,7 @@ from scripts.cat.status import Status, StatusDict
 from scripts.cat.thoughts import Thoughts
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.cat_relations.relationship import Relationship
-from scripts.cat_relations.enums import RelType
+from scripts.cat_relations.enums import RelType, RelTier, rel_type_tiers
 from scripts.clan_package.settings import get_clan_setting
 from scripts.conditions import (
     Illness,
@@ -37,11 +37,10 @@ from scripts.conditions import (
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.game_structure import image_cache, constants
+from scripts.game_structure import image_cache, constants, game
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
@@ -134,6 +133,8 @@ class Cat:
         skill_dict=None,
         pelt: Pelt = None,
         loading_cat=False,  # Set to true if you are loading a cat at start-up.
+        *,
+        disable_random=False,
         **kwargs,
     ):
         """Initialise the cat.
@@ -153,6 +154,7 @@ class Cat:
         :param skill_dict: TODO find a good definition for this
         :param pelt: Body details, default None
         :param loading_cat: If loading a cat rather than generating a new one, default False
+        :param disable_random: If True, disables as much random generation junk as possible
         :param kwargs: TODO what are the possible args here? ["biome", ]
         """
 
@@ -175,7 +177,7 @@ class Cat:
         self.gender = gender
         self.status: Status = Status(**status_dict) if status_dict else Status()
         self.backstory = backstory
-        self.age = None
+        self.age: Optional[CatAge] = None
         self.skills = CatSkills(skill_dict=skill_dict)
         self.personality = Personality(
             trait="troublesome", lawful=0, aggress=0, stable=0, social=0
@@ -241,8 +243,8 @@ class Cat:
 
         # age and status
         if status_dict is None and moons is None:
-            self.age = choice(list(CatAge))
-            self.status.generate_new_status(age=self.age)
+            self.age = CatAge.NEWBORN if disable_random else choice([*CatAge])
+            self.status.generate_new_status(age=self.age, disable_random=disable_random)
         elif moons is not None:
             self.moons = moons
             if moons > 300:
@@ -258,9 +260,11 @@ class Cat:
                     ):
                         self.age = key_age
             if status_dict is None:
-                self.status.generate_new_status(age=self.age)
+                self.status.generate_new_status(
+                    age=self.age, disable_random=disable_random
+                )
         else:
-            if self.status.rank == CatRank.NEWBORN:
+            if disable_random or self.status.rank == CatRank.NEWBORN:
                 self.age = CatAge.NEWBORN
             elif self.status.rank == CatRank.KITTEN:
                 self.age = CatAge.KITTEN
@@ -278,26 +282,29 @@ class Cat:
                     ]
                 )
         if moons is None:
-            self.moons = randint(
-                self.age_moons[self.age][0], self.age_moons[self.age][1]
-            )
+            if disable_random:
+                self.moons = 0
+            else:
+                self.moons = randint(
+                    self.age_moons[self.age][0], self.age_moons[self.age][1]
+                )
 
         # backstory
         if self.backstory is None:
             self.backstory = "clanborn"
         else:
-            self.backstory = self.backstory
+            self.backstory = self.backstory  # fixme why does this exist
 
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
-            self.gender = choice(["female", "male"])
+            self.gender = "female" if disable_random else choice(["female", "male"])
 
         """if self.genderalign == "":
             self.genderalign = self.gender"""
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            self.init_generate_cat(skill_dict)
+            self.init_generate_cat(skill_dict, disable_random)
 
         # In camp status
         self.in_camp = 1
@@ -392,10 +399,11 @@ class Cat:
                 ):
                     self.age = key_age
 
-    def init_generate_cat(self, skill_dict):
+    def init_generate_cat(self, skill_dict, disable_random):
         """
         Used to roll a new cat
         :param skill_dict: TODO what is a skill dict exactly
+        :param disable_random: If true, disable randomisation code
         :return: None
         """
         # trans cat chances
@@ -404,7 +412,7 @@ class Cat:
         nb_chance = randint(0, 75)
 
         # GENDER IDENTITY
-        if self.age.is_baby():
+        if self.age.is_baby() or disable_random:
             # newborns can't be trans, sorry babies
             pass
         elif nb_chance == 1:
@@ -425,10 +433,15 @@ class Cat:
         )
 
         # Personality
-        self.personality = Personality(kit_trait=self.age.is_baby())
+        if disable_random:
+            self.personality = Personality(
+                lawful=8, social=8, aggress=8, stable=8, kit_trait=self.age.is_baby()
+            )
+        else:
+            self.personality = Personality(kit_trait=self.age.is_baby())
 
         # experience and current patrol status
-        if self.age.is_baby():
+        if self.age.is_baby() or disable_random:
             self.experience = 0
         elif self.age == CatAge.ADOLESCENT:
             m = self.moons
@@ -680,23 +693,24 @@ class Cat:
                 continue
 
             family_relation = self.familial_grief(living_cat=cat)
-            very_high_values = []
-            high_values = []
-            very_low_values = []
+            very_high_types = []
+            high_types = []
+            very_low_types = []
 
-            # find what level of rel they had for each value
-            levels = rel_with_dead.get_reltype_tiers()
-            for level in levels:
-                if level.is_extreme_pos():
-                    very_high_values.append(level.get_rel_value)
-                elif level.is_low_pos():
-                    high_values.append(level.get_rel_value)
-                elif level.is_extrem_neg():
-                    very_low_values.append(level.get_rel_value)
+            # find what tier of rel they had for each type
+            tiers: list[RelTier] = rel_with_dead.get_reltype_tiers()
+            for tier in tiers:
+                rel_type = [k for k in rel_type_tiers if tier in k]
+                if tier.is_extreme_pos:
+                    very_high_types.extend(rel_type)
+                elif tier.is_low_pos:
+                    high_types.extend(rel_type)
+                elif tier.is_extreme_neg:
+                    very_low_types.extend(rel_type)
                 continue
 
             major_chance = 0
-            if very_high_values:
+            if very_high_types:
                 # major grief eligible cats.
 
                 major_chance = 3
@@ -724,7 +738,7 @@ class Cat:
                 grief_type = "major"
 
                 possible_strings = []
-                for x in very_high_values:
+                for x in very_high_types:
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(
                             family_relation, x, cat.personality.trait, body_status
@@ -743,7 +757,7 @@ class Cat:
 
             # If major grief fails, but there are still very_high or high values,
             # it can fail to to minor grief. If they have a family relation, bypass the roll.
-            elif (very_high_values or high_values) and (
+            elif (very_high_types or high_types) and (
                 family_relation != "general" or not int(random() * 5)
             ):
                 grief_type = "minor"
@@ -806,10 +820,10 @@ class Cat:
                 continue
 
             # Negative "grief" messages are just for flavor.
-            if very_low_values:
+            if very_low_types:
                 # Generate the event:
                 possible_strings = []
-                for x in very_low_values:
+                for x in very_low_types:
                     value = f"neg_{x}"
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(
@@ -2852,13 +2866,8 @@ class Cat:
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
             rel_values.append(RelType.ROMANCE)
 
-        # Determine the number of positive traits to effect, and choose the traits
-        chosen_pos = sample(rel_values, k=randint(2, len(rel_values)))
-
-        # Determine negative trains effected
-        chosen_neg = sample(
-            [v for v in rel_values if v not in chosen_pos], k=randint(1, 2)
-        )
+        # Determine the number of traits to effect, and choose the traits
+        chosen_rel = sample(rel_values, k=randint(2, len(rel_values)))
 
         if compat is True:
             personality_bonus = 2
@@ -2868,7 +2877,7 @@ class Cat:
             personality_bonus = 0
 
         # Effects on traits
-        for rel_type in chosen_pos + chosen_neg:
+        for rel_type in chosen_rel:
             # The EX bonus in not applied upon a fail.
             if apply_bonus:
                 if mediator.experience_level == "very low":
@@ -2887,22 +2896,17 @@ class Cat:
             else:
                 bonus = 0
 
-            if sabotage or rel_type in chosen_neg:
-                decrease = True
-            else:
-                decrease = sabotage or rel_type in chosen_neg
-
             ran = (5, 10) if rel_type == RelType.ROMANCE and mates else (4, 6)
 
             amount = ((randint(ran[0], ran[1]) + bonus) + personality_bonus) * (
                 -1 if sabotage else 1
             )
 
-            setattr(rel1, rel_type, amount)
-            setattr(rel2, rel_type, amount)
+            setattr(rel1, rel_type, getattr(rel1, rel_type) + amount)
+            setattr(rel2, rel_type, getattr(rel2, rel_type) + amount)
 
             output += i18n.t(
-                f"screens.mediation.output_{'decrease' if decrease else 'increase'}",
+                f"screens.mediation.output_{'decrease' if sabotage else 'increase'}",
                 trait=i18n.t(f"screens.mediation.{rel_type}"),
             )
 
@@ -2930,6 +2934,8 @@ class Cat:
 
         if self.status.group == CatGroup.DARK_FOREST:
             file_name += "_df"
+        elif self.status.group == CatGroup.UNKNOWN_RESIDENCE:
+            file_name += "_ur"
 
         file_name += ".png"
 
@@ -3308,10 +3314,10 @@ class Cat:
                 "vitiligo": self.pelt.vitiligo,
                 "points": self.pelt.points,
                 "white_patches_tint": self.pelt.white_patches_tint,
-                "pattern": self.pelt.pattern,
-                "tortie_base": self.pelt.tortiebase,
-                "tortie_color": self.pelt.tortiecolour,
-                "tortie_pattern": self.pelt.tortiepattern,
+                "tortie_marking": self.pelt.tortie_marking,
+                "tortie_base": self.pelt.tortie_base,
+                "tortie_color": self.pelt.tortie_colour,
+                "tortie_pattern": self.pelt.tortie_pattern,
                 "skin": self.pelt.skin,
                 "tint": self.pelt.tint,
                 "skill_dict": self.skills.get_skill_dict(),
@@ -3451,10 +3457,10 @@ def create_option_preview_cat(scar: str = None, acc: str = None):
             white_patches=None,
             vitiligo=None,
             points=None,
-            pattern=None,
-            tortiebase=None,
-            tortiepattern=None,
-            tortiecolour=None,
+            tortie_marking=None,
+            tortie_base=None,
+            tortie_pattern=None,
+            tortie_colour=None,
             tint="gray",
             skin="BLUE",
             scars=[scar] if scar else [],

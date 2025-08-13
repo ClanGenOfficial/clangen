@@ -12,8 +12,8 @@ from scripts.cat.thoughts import Thoughts
 
 class TestNotWorkingThoughts(unittest.TestCase):
     def setUp(self):
-        self.main = Cat(status_dict={"rank": CatRank.WARRIOR})
-        self.other = Cat(status_dict={"rank": CatRank.WARRIOR})
+        self.main = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        self.other = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
         self.biome = "Forest"
         self.season = "Newleaf"
         self.camp = "camp2"
@@ -118,7 +118,7 @@ class TestsGetStatusThought(unittest.TestCase):
                 {"group": CatGroup.PLAYER_CLAN, "standing": ["member", "exiled"]}
             ],
         }
-        cat = Cat(status_dict=exiled_status, moons=40)
+        cat = Cat(status_dict=exiled_status, moons=40, disable_random=True)
         biome = "Forest"
         season = "Newleaf"
         camp = "camp2"
@@ -128,7 +128,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
     def test_lost_thoughts(self):
         # given
-        cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=40)
+        cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=40, disable_random=True)
         cat.status.become_lost()
         biome = "Forest"
         season = "Newleaf"
@@ -141,8 +141,8 @@ class TestsGetStatusThought(unittest.TestCase):
 class TestFamilyThoughts(unittest.TestCase):
     def test_family_thought_young_children(self):
         # given
-        parent = Cat(moons=40)
-        kit = Cat(parent1=parent.ID, moons=4)
+        parent = Cat(moons=40, disable_random=True)
+        kit = Cat(parent1=parent.ID, moons=4, disable_random=True)
         biome = "Forest"
         season = "Newleaf"
         camp = "camp2"
@@ -164,8 +164,8 @@ class TestFamilyThoughts(unittest.TestCase):
 
     def test_family_thought_unrelated(self):
         # given
-        cat1 = Cat(moons=40)
-        cat2 = Cat(moons=40)
+        cat1 = Cat(moons=40, disable_random=True)
+        cat2 = Cat(moons=40, disable_random=True)
 
         # when
 

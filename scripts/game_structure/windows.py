@@ -29,7 +29,7 @@ from scripts.game_structure.game.switches import (
     switch_append_list_value,
     switch_remove_list_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import (
     get_lang_config,
     get_custom_pronouns,

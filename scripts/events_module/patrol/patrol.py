@@ -20,7 +20,7 @@ from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 from scripts.game_structure import localization, constants
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_personality_compatibility,

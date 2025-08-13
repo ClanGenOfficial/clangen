@@ -7,7 +7,7 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.events_module.patrol.patrol import Patrol
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,

@@ -24,12 +24,9 @@ from pygame_gui.core import ObjectID
 from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache, constants
+from scripts.game_structure import image_cache, game, constants
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game.settings import game_settings_load, game_setting_get
-from scripts.game_structure.game_essentials import (
-    game,
-)
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
 from scripts.housekeeping.datadir import open_data_dir, open_url
