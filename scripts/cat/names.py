@@ -89,12 +89,12 @@ class Name:
             color = cat.pelt.colour
             eyes = cat.pelt.eye_colour
             pelt = cat.pelt.name
-            tortiepattern = cat.pelt.tortiepattern
+            tortie_pattern = cat.pelt.tortie_pattern
         except AttributeError:
             color = None
             eyes = None
             pelt = None
-            tortiepattern = None
+            tortie_pattern = None
 
         name_fixpref = False
         # Set prefix
@@ -105,7 +105,7 @@ class Name:
 
         # Set suffix
         if self.suffix is None:
-            self.give_suffix(pelt, biome, tortiepattern)
+            self.give_suffix(pelt, biome, tortie_pattern)
             if name_fixpref and self.prefix is None:
                 # needed for random dice when we're changing the Prefix
                 name_fixpref = False
@@ -150,7 +150,7 @@ class Name:
                 if name_fixpref:
                     self.give_prefix(eyes, color, biome)
                 else:
-                    self.give_suffix(pelt, biome, tortiepattern)
+                    self.give_suffix(pelt, biome, tortie_pattern)
 
                 nono_name = self.prefix + self.suffix
                 possible_three_letter = (
@@ -230,7 +230,7 @@ class Name:
                 names.prefix_history.pop(0)
 
     # Generate possible suffix
-    def give_suffix(self, pelt, biome, tortiepattern):
+    def give_suffix(self, pelt, biome, tortie_pattern):
         """Generate possible suffix."""
         if pelt is None or pelt == "SingleColour":
             self.suffix = random.choice(self.names_dict["normal_suffixes"])
@@ -241,10 +241,10 @@ class Name:
             if named_after_pelt:
                 if (
                     pelt in ("Tortie", "Calico")
-                    and tortiepattern in self.names_dict["tortie_pelt_suffixes"]
+                    and tortie_pattern in self.names_dict["tortie_pelt_suffixes"]
                 ):
                     self.suffix = random.choice(
-                        self.names_dict["tortie_pelt_suffixes"][tortiepattern]
+                        self.names_dict["tortie_pelt_suffixes"][tortie_pattern]
                     )
                 elif pelt in self.names_dict["pelt_suffixes"]:
                     self.suffix = random.choice(self.names_dict["pelt_suffixes"][pelt])

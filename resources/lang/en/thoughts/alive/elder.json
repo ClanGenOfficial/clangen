@@ -636,7 +636,7 @@
     {
         "id": "nervous_elder",
         "thoughts": [
-            "Worries that {PRONOUN/m_c/subject} would be defenceless in battle",
+            "Worries that {PRONOUN/m_c/subject} would be defenseless in battle",
             "Frets that a fox might break into the elder's den"
         ],
         "main_age_constraint": [

@@ -8,12 +8,12 @@ from pygame_gui.core import UIContainer
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatGroup
 from scripts.clan import OtherClan
+from scripts.game_structure import game
 from scripts.clan_package.settings.clan_settings import (
     set_clan_setting,
     get_clan_setting,
 )
 from scripts.game_structure import constants
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -337,7 +337,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
             text_kwargs={
                 "temper": i18n.t(f"screens.leader_den.{self.clan_temper}"),
-                "clan": game.clan.name,
+                "clan": game.clan.displayname,
             },
         )
 
@@ -432,7 +432,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
         )
         for i, other_clan in enumerate(game.clan.all_clans):
-            if other_clan.name == game.clan.name:
+            if other_clan.name == game.clan.displayname:
                 continue
             x_pos = 128
             self.other_clan_selection_elements[f"container{i}"] = UIContainer(

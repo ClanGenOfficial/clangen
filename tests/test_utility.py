@@ -11,7 +11,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.utility import (
     get_highest_romantic_relation,
     get_personality_compatibility,
-    get_amount_of_cats_with_relation_value_towards,
+    get_num_of_cats_with_relation_amount_towards,
     get_alive_clan_queens,
 )
 
@@ -120,8 +120,8 @@ class TestPersonalityCompatibility(unittest.TestCase):
     # self.assertFalse(get_personality_compatibility(cat2,cat1))
 
     def test_false_trait(self):
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
         cat1.personality.trait = None
         cat2.personality.trait = None
         self.assertIsNone(get_personality_compatibility(cat1, cat2))
@@ -131,10 +131,10 @@ class TestPersonalityCompatibility(unittest.TestCase):
 class TestCountRelation(unittest.TestCase):
     def test_2_cats_jealousy(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
-        cat3 = Cat()
-        cat4 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
+        cat3 = Cat(disable_random=True)
+        cat4 = Cat(disable_random=True)
 
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2)
         relation_3_2 = Relationship(cat_from=cat3, cat_to=cat2)
@@ -147,31 +147,29 @@ class TestCountRelation(unittest.TestCase):
         relation_4_2.link_relationship()
 
         # when
-        relation_1_2.jealousy += 20
-        relation_3_2.jealousy += 20
-        relation_4_2.jealousy += 10
+        relation_1_2.respect -= 20
+        relation_3_2.respect -= 20
+        relation_4_2.respect -= 10
 
         # then
-        relation_dict = get_amount_of_cats_with_relation_value_towards(
-            cat2, 20, [cat1, cat2, cat3, cat4]
+        relation_dict = get_num_of_cats_with_relation_amount_towards(
+            cat2, -20, [cat1, cat2, cat3, cat4]
         )
 
-        self.assertEqual(relation_dict["romantic_love"], 0)
-        self.assertEqual(relation_dict["platonic_like"], 0)
-        self.assertEqual(relation_dict["dislike"], 0)
-        self.assertEqual(relation_dict["admiration"], 0)
-        self.assertEqual(relation_dict["comfortable"], 0)
-        self.assertEqual(relation_dict["jealousy"], 2)
+        self.assertEqual(relation_dict["romance"], 0)
+        self.assertEqual(relation_dict["like"], 0)
+        self.assertEqual(relation_dict["respect"], 2)
+        self.assertEqual(relation_dict["comfort"], 0)
         self.assertEqual(relation_dict["trust"], 0)
 
 
 class TestHighestRomance(unittest.TestCase):
     def test_exclude_mate(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
-        cat3 = Cat()
-        cat4 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
+        cat3 = Cat(disable_random=True)
+        cat4 = Cat(disable_random=True)
 
         # when
         cat1.mate.append(cat2.ID)
@@ -179,9 +177,9 @@ class TestHighestRomance(unittest.TestCase):
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)
-        relation_1_2.romantic_love = 60
-        relation_1_3.romantic_love = 50
-        relation_1_4.romantic_love = 40
+        relation_1_2.romance = 60
+        relation_1_3.romance = 50
+        relation_1_4.romance = 40
 
         relations = [relation_1_2, relation_1_3, relation_1_4]
 
@@ -198,10 +196,10 @@ class TestHighestRomance(unittest.TestCase):
 
     def test_include_mate(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
-        cat3 = Cat()
-        cat4 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
+        cat3 = Cat(disable_random=True)
+        cat4 = Cat(disable_random=True)
 
         # when
         cat1.mate.append(cat2.ID)
@@ -209,9 +207,9 @@ class TestHighestRomance(unittest.TestCase):
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)
-        relation_1_2.romantic_love = 60
-        relation_1_3.romantic_love = 50
-        relation_1_4.romantic_love = 40
+        relation_1_2.romance = 60
+        relation_1_3.romance = 50
+        relation_1_4.romance = 40
 
         relations = [relation_1_2, relation_1_3, relation_1_4]
 
@@ -229,12 +227,12 @@ class TestHighestRomance(unittest.TestCase):
 
 class TestGetQueens(unittest.TestCase):
     def setUp(self) -> None:
-        self.test_cat1 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        self.test_cat2 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        self.test_cat3 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        self.test_cat4 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        self.test_cat5 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        self.test_cat6 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        self.test_cat1 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        self.test_cat2 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        self.test_cat3 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        self.test_cat4 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        self.test_cat5 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        self.test_cat6 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
 
     def tearDown(self) -> None:
         del self.test_cat1

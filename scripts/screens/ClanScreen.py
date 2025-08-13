@@ -9,9 +9,7 @@ from pygame_gui.core import ObjectID
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_settings_save, game_setting_get
-from scripts.game_structure.game_essentials import (
-    game,
-)
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
@@ -127,7 +125,7 @@ class ClanScreen(Screens):
         self.choose_cat_positions()
 
         self.set_disabled_menu_buttons(["camp_screen"])
-        self.update_heading_text(f"{game.clan.name}Clan")
+        self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_menu_buttons()
 
         # Creates and places the cat sprites.

@@ -1815,7 +1815,7 @@
         "biome": ["forest"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "gen_hunt_twolegdencatdare",
         "min_cats": 2,
         "max_cats": 2,
@@ -1837,7 +1837,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": 5
                     }
                 ]
@@ -1852,7 +1852,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": 5
                     }
                 ]
@@ -1868,7 +1868,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": 5
                     }
                 ]
@@ -1893,7 +1893,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": 5
                     }
                 ]
@@ -1909,7 +1909,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": -5
                     }
                 ]
@@ -1931,7 +1931,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": -5
                     }
                 ],
@@ -1947,7 +1947,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": -5
                     }
                 ]
@@ -1959,7 +1959,7 @@
         "biome": ["forest"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["rom_two_apps", "romantic"],
+        "tags": ["rom_two_apps", "romance"],
         "patrol_art": "gen_hunt_twolegdenappdare",
         "min_cats": 2,
         "max_cats": 2,
@@ -1982,7 +1982,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": 5
                     }
                 ]
@@ -1997,7 +1997,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": 5
                     }
                 ]
@@ -2024,7 +2024,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": 5
                     }
                 ]
@@ -2040,7 +2040,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": -5
                     }
                 ]
@@ -2063,7 +2063,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": -5
                     }
                 ]
@@ -2078,7 +2078,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["romantic", "platonic"],
+                        "values": ["romance", "like"],
                         "amount": -5
                     }
                 ]
@@ -2642,7 +2642,7 @@
         "biome": ["forest"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "fst_hunt_fun3",
         "min_cats": 2,
         "max_cats": 2,
@@ -2664,7 +2664,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": ["romance", "like", "respect"],
                         "amount": 5
                     }
                 ]
@@ -2679,7 +2679,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": ["romance", "like", "respect"],
                         "amount": 5
                     }
                 ]
@@ -2696,7 +2696,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": ["romance", "like", "respect"],
                         "amount": 5
                     }
                 ]
@@ -2712,7 +2712,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": ["romance", "like", "respect"],
                         "amount": -5
                     }
                 ],
@@ -2725,7 +2725,7 @@
         "biome": ["forest"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "fst_hunt_fun4",
         "min_cats": 2,
         "max_cats": 2,
@@ -2748,7 +2748,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": ["romance", "like", "respect"],
                         "amount": 5
                     }
                 ]
@@ -2763,7 +2763,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": ["romance", "like", "respect"],
                         "amount": 5
                     }
                 ]
@@ -2779,7 +2779,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "respect"],
+                        "values": ["romance", "like", "respect"],
                         "amount": -5
                     }
                 ],
@@ -2812,7 +2812,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -2827,7 +2827,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -2843,7 +2843,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -2859,7 +2859,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": -5
                     }
                 ],
@@ -2874,7 +2874,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": -5
                     }
                 ],
@@ -2887,7 +2887,7 @@
         "biome": ["forest"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["rom_two_apps", "romantic"],
+        "tags": ["rom_two_apps", "romance"],
         "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
         "max_cats": 2,
@@ -2910,7 +2910,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -2925,7 +2925,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -2941,7 +2941,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": -5
                     }
                 ],
@@ -3515,13 +3515,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": -5
                     }
                 ]
             }
@@ -3595,13 +3588,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -3617,13 +3603,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             }
@@ -3640,13 +3619,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     }
                 ]
             }
@@ -3702,15 +3674,8 @@
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["app1"],
-                            "mutual": false,
-                            "values": ["jealous", "dislike"],
-                            "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["app1"],
                             "mutual": true,
-                            "values": ["comfort", "trust"],
+                            "values": ["comfort", "trust", "respect", "like"],
                             "amount": -10
                         }
                     ]

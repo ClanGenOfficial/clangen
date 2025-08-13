@@ -5,26 +5,24 @@
 		"intensity": "low",
 		"interactions": ["m_c is gossiping with r_c1 about r_c2"],
 		"relationship_constraint": {
-			"m_c_to_r_c2": ["dislike_15"],
-			"r_c1_to_r_c2": ["dislike_15"]
+			"m_c_to_r_c2": ["dislikes"],
+			"r_c1_to_r_c2": ["dislikes"]
 		},
 		"specific_reaction":{
 			"m_c_to_r_c1": {
-				"comfortable": "increase"
+				"comfort": "increase"
 			},
 			"m_c_to_r_c2": {
-				"platonic": "decrease",
-				"dislike": "increase"
+				"like": "decrease"
 			},
 			"r_c1_to_r_c2": {
-				"platonic": "decrease",
-				"dislike": "increase"
+				"like": "decrease"
 			},
 			"r_c2_to_m_c":{
-				"dislike": "increase"
+				"like": "decrease"
 			},
 			"r_c2_to_r_c1":{
-				"dislike": "increase"
+				"like": "decrease"
 			}
 		}
 	},	
@@ -38,7 +36,7 @@
 			"m_c": ["troublesome"]
 		},
 		"general_reaction": {
-			"comfortable": "decrease"
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -86,31 +84,28 @@
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"dislike": "decrease",
-				"comfortable": "increase",
+				"like": "increase",
+				"comfort": "increase",
 				"trust": "increase"
 			},
 			"r_c1_to_m_c": {
-				"dislike": "increase",
-				"comfortable": "decrease",
+				"like": "decrease",
+				"comfort": "decrease",
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
-				"platonic": "decrease",
-				"dislike": "increase",
-				"comfortable": "decrease",
+				"like": "decrease",
+				"comfort": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_r_c1": {
-				"platonic": "decrease",
-				"dislike": "increase",
-				"comfortable": "decrease",
+				"like": "decrease",
+				"comfort": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_m_c": {
-				"platonic": "decrease",
-				"dislike": "increase",
-				"comfortable": "decrease",
+				"like": "decrease",
+				"comfort": "decrease",
 				"trust": "decrease"
 			}
 		}
@@ -136,31 +131,28 @@
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"dislike": "decrease",
-				"comfortable": "increase",
+				"like": "decrease",
+				"comfort": "increase",
 				"trust": "increase"
 			},
 			"r_c1_to_m_c": {
-				"dislike": "decrease",
-				"comfortable": "decrease",
+				"like": "increase",
+				"comfort": "decrease",
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
-				"platonic": "decrease",
-				"dislike": "increase",
-				"comfortable": "decrease",
+				"like": "decrease",
+				"comfort": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_r_c1": {
-				"platonic": "decrease",
-				"dislike": "increase",
-				"comfortable": "decrease",
+				"like": "decrease",
+				"comfort": "decrease",
 				"trust": "decrease"
 			},
 			"r_c2_to_m_c": {
-				"platonic": "decrease",
-				"dislike": "increase",
-				"comfortable": "decrease",
+				"like": "decrease",
+				"comfort": "decrease",
 				"trust": "decrease"
 			}
 		}

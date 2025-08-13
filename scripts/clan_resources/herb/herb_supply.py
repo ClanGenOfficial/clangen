@@ -8,7 +8,7 @@ from scripts.clan_resources.herb.herb import Herb, HERBS
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.game_structure import constants
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     adjust_list_text,

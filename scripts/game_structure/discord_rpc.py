@@ -13,7 +13,7 @@ from time import time
 
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 status_dict = {
     "start screen": "At the start screen",
@@ -114,7 +114,7 @@ class _DiscordRPC(threading.Thread):
             # Example: beach_greenleaf_camp1_dark
 
             if game.clan:
-                clan_name = f"{game.clan.name}Clan"
+                clan_name = f"{game.clan.displayname}Clan"
                 cats_amount = len(game.clan.clan_cats)
                 clan_age = game.clan.age
             else:
