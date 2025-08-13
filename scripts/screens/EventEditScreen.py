@@ -34,8 +34,8 @@ from scripts.game_structure.ui_elements import (
     UICollapsibleContainer,
     UIScrollingDropDown,
 )
-from scripts.ui.windows.editor_save_check import EditorSaveCheck
-from scripts.ui.windows.editor_missing_info import EditorMissingInfo
+from scripts.ui.windows.editor_windows.editor_save_check import EditorSaveCheck
+from scripts.ui.windows.editor_windows.editor_missing_info import EditorMissingInfo
 from scripts.screens.Screens import Screens
 from scripts.screens.event_editor.settings_tab import SettingsTab
 from scripts.screens.enums import GameScreen

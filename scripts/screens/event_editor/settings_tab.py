@@ -22,7 +22,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
-from scripts.ui.windows.event_editor_settings_tags import EditorSettingTags
+from scripts.ui.windows.editor_windows.event_editor_settings_tags import EditorSettingTags
 from scripts.utility import (
     ui_scale,
     get_text_box_theme,
