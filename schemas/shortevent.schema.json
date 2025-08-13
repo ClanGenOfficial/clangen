@@ -61,7 +61,7 @@
                 "clan:apps",
                 "lost",
                 "kit_manipulated",
-                "romantic",
+                "romance",
                 "adoption"
               ]
             },
@@ -123,55 +123,7 @@
             "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
             "type": "array",
             "items": {
-              "anyOf": [
-                {
-                  "enum": [
-                    "siblings",
-                    "not_siblings",
-                    "littermates",
-                    "not_littermates",
-                    "mates",
-                    "mates_with_pl",
-                    "not_mates",
-                    "parent/child",
-                    "not_parent",
-                    "child/parent",
-                    "not_child",
-                    "mentor/app",
-                    "not_mentor",
-                    "app/mentor",
-                    "not_app"
-                  ]
-                },
-                {
-                  "type": "string",
-                  "pattern": "^romantic_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^platonic_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^dislike_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^comfortable_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^jealousy_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^admiration_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^trust_(0|[1-9][0-9]?|100)$"
-                }
-              ]
+              "$ref": "common.schema.json#/definitions/relationship_status"
             }
           },
           "skill": {
@@ -268,32 +220,70 @@
             "items": {
               "anyOf": [
                 {
-                  "type": "string",
-                  "pattern": "^romantic_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^platonic_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^dislike_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^comfortable_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^jealousy_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^admiration_(0|[1-9][0-9]?|100)$"
-                },
-                {
-                  "type": "string",
-                  "pattern": "^trust_(0|[1-9][0-9]?|100)$"
+                  "enum": [
+                    "fancies",
+                    "adores",
+                    "loves",
+                    "loathes",
+                    "hates",
+                    "dislikes",
+                    "knows_of",
+                    "likes",
+                    "enjoys",
+                    "cherishes",
+                    "resents",
+                    "envies",
+                    "begrudges",
+                    "acknowledges",
+                    "praises",
+                    "respects",
+                    "admires",
+                    "discredits",
+                    "distrusts",
+                    "doubts",
+                    "observes",
+                    "listens_to",
+                    "trusts",
+                    "confides_in",
+                    "runs_from",
+                    "fears",
+                    "avoids",
+                    "considers",
+                    "relates_to",
+                    "understands",
+                    "knows_deeply",
+                    "fancies_only",
+                    "adores_only",
+                    "delights_in_only",
+                    "abhors_only",
+                    "hates_only",
+                    "dislikes_only",
+                    "knows_of_only",
+                    "likes_only",
+                    "enjoys_only",
+                    "loves_only",
+                    "resents_only",
+                    "envies_only",
+                    "begrudges_only",
+                    "acknowledges_only",
+                    "praises_only",
+                    "respects_only",
+                    "admires_only",
+                    "discredits_only",
+                    "distrusts_only",
+                    "doubts_only",
+                    "observes_only",
+                    "listens_to_only",
+                    "trusts_only",
+                    "confides_in_only",
+                    "runs_from_only",
+                    "fears_only",
+                    "avoids_only",
+                    "considers_only",
+                    "seeks_out_only",
+                    "prefers_only",
+                    "relies_on_only"
+                  ]
                 }
               ]
             }

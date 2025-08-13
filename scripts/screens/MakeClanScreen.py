@@ -1,6 +1,7 @@
 from random import choice, randrange
 from re import sub
 from typing import Optional
+from uuid import uuid4
 
 import i18n
 import pygame
@@ -13,9 +14,7 @@ from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import image_cache, constants
-from scripts.game_structure.game_essentials import (
-    game,
-)
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
@@ -271,12 +270,6 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
                 self.elements["error"].show()
                 return
-            if new_name.casefold() in (
-                clan.casefold() for clan in switch_get_value(Switch.clan_list)
-            ):
-                self.elements["error"].set_text("A Clan with that name already exists.")
-                self.elements["error"].show()
-                return
             self.clan_name = new_name
             self.open_choose_leader()
         elif event.ui_element == self.elements["previous_step"]:
@@ -299,14 +292,6 @@ class MakeClanScreen(Screens):
                     self.elements["error"].set_text("Your Clan's name cannot be empty")
                     self.elements["error"].show()
                     return
-                if new_name.casefold() in (
-                    clan.casefold() for clan in switch_get_value(Switch.clan_list)
-                ):
-                    self.elements["error"].set_text(
-                        "A Clan with that name already exists."
-                    )
-                    self.elements["error"].show()
-                    return
                 self.clan_name = new_name
                 self.open_choose_leader()
         elif event.key == pygame.K_RETURN:
@@ -315,12 +300,6 @@ class MakeClanScreen(Screens):
             ).strip()
             if not new_name:
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
-                self.elements["error"].show()
-                return
-            if new_name.casefold() in (
-                clan.casefold() for clan in switch_get_value(Switch.clan_list)
-            ):
-                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
@@ -586,14 +565,6 @@ class MakeClanScreen(Screens):
             elif self.elements["name_entry"].get_text().startswith(" "):
                 self.elements["error"].set_text(
                     "screens.make_clan.error_clan_name_space"
-                )
-                self.elements["error"].show()
-                self.elements["next_step"].disable()
-            elif self.elements["name_entry"].get_text().casefold() in (
-                clan.casefold() for clan in switch_get_value(Switch.clan_list)
-            ):
-                self.elements["error"].set_text(
-                    "screens.make_clan.error_clan_name_duplicate"
                 )
                 self.elements["error"].show()
                 self.elements["next_step"].disable()
@@ -2168,8 +2139,15 @@ class MakeClanScreen(Screens):
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
         convert_camp = {1: "camp1", 2: "camp2", 3: "camp3", 4: "camp4"}
+        displayname = self.clan_name
+        if self._clan_name_exists(self.clan_name):
+            clan_name = self._generate_unique_clan_name(self.clan_name)
+        else:
+            clan_name = self.clan_name
+
         game.clan = Clan(
-            name=self.clan_name,
+            name=clan_name,
+            displayname=displayname,
             leader=self.leader,
             deputy=self.deputy,
             medicine_cat=self.med_cat,
@@ -2244,6 +2222,14 @@ class MakeClanScreen(Screens):
             object_id=get_text_box_theme("#text_box_26_horizcenter"),
             manager=MANAGER,
         )
+
+    def _clan_name_exists(self, new_clan_name: str):
+        return new_clan_name.casefold() in (
+            clan.casefold() for clan in switch_get_value(Switch.clan_list)
+        )
+
+    def _generate_unique_clan_name(self, new_clan_name: str):
+        return f"{new_clan_name}_{uuid4()}"
 
 
 make_clan_screen = MakeClanScreen()
