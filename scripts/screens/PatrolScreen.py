@@ -7,7 +7,7 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.events_module.patrol.patrol import Patrol
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
@@ -297,7 +297,7 @@ class PatrolScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.set_disabled_menu_buttons(["patrol_screen"])
-        self.update_heading_text(f"{game.clan.name}Clan")
+        self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_mute_buttons()
         self.show_menu_buttons()
 

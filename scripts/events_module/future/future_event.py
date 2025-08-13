@@ -2,7 +2,7 @@ from random import randint
 
 from scripts.cat.cats import Cat
 from scripts.events_module.event_filters import cat_for_event
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 
 def prep_event(event, event_id: str, possible_cats: dict):

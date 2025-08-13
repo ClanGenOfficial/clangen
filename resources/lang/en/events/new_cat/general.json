@@ -235,7 +235,7 @@
         "event_id": "gen_new_cat_anypolymate1",
         "location": ["any"],
         "season": ["any"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "frequency": 1,
         "event_text": "m_c and r_c, in the early hours of the day, informed whoever else was awake that they had to handle something and ventured out of camp. Hours later, m_c, r_c, and another cat confidently strode into camp, tails entwined with each other. m_c introduced n_c:0 to the Clan, stating that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} staying.",
         "m_c": {
@@ -260,7 +260,7 @@
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
             "mutual": true,
-              "values": ["romantic", "trust"],
+              "values": ["romance", "trust"],
             "amount": 55
           },
           {
@@ -274,7 +274,7 @@
             "cats_from": ["r_c"],
             "cats_to": ["n_c:0"],
             "mutual": true,
-              "values": ["romantic", "trust"],
+              "values": ["romance", "trust"],
             "amount": 55
           },
           {
@@ -770,7 +770,7 @@
                 "cats_from": ["m_c"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 10
             }
         ],
@@ -807,7 +807,7 @@
                 "cats_from": ["m_c"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 50
             }
         ],
@@ -837,7 +837,7 @@
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             }
         ],
@@ -888,21 +888,21 @@
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             },
             {
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:1"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             },
             {
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:2"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             }
         ],
@@ -941,7 +941,7 @@
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             }
         ],
@@ -992,21 +992,21 @@
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             },
             {
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:1"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             },
             {
                 "cats_from": ["clan"],
                 "cats_to": ["n_c:2"],
                 "mutual": true,
-                "values": ["trust", "platonic"],
+                "values": ["trust", "like"],
                 "amount": 5
             }
         ],
