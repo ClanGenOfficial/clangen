@@ -28,7 +28,7 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
     switch_append_list_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     event_text_adjust,

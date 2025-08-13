@@ -13,12 +13,12 @@ from scripts.cat.history import History
 from scripts.cat_relations.interaction import create_group_interaction, GroupInteraction
 from scripts.cat_relations.enums import RelType
 from scripts.event_class import Single_Event
+from scripts.game_structure import game
 from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
     event_for_cat,
 )
-from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     change_relationship_values,
     process_text,

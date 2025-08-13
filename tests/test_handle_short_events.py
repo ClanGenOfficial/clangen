@@ -63,7 +63,7 @@ class TestHandleNewCats(unittest.TestCase):
 class TestHandleAccessories(unittest.TestCase):
     def setUp(self):
         self.chosen_event = ShortEvent(event_id="test", new_accessory=["TEST"])
-        self.chosen_event.main_cat = Cat()
+        self.chosen_event.main_cat = Cat(disable_random=True)
         self.pelts = Pelt
 
     def assert_intersection(self, a, b):
@@ -127,7 +127,7 @@ class TestHandleTransition(unittest.TestCase):
             sub_type=["transition"],
             new_gender=["trans male", "nonbinary"],
         )
-        self.chosen_event.main_cat = Cat(gender="female")
+        self.chosen_event.main_cat = Cat(gender="female", disable_random=True)
 
     def test_cat_transitions(self):
         self.chosen_event.execute_event()
