@@ -22,7 +22,9 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
-from scripts.ui.windows.editor_windows.event_editor_settings_tags import EditorSettingTags
+from scripts.ui.windows.editor_windows.event_editor_settings_tags import (
+    EditorSettingTags,
+)
 from scripts.utility import (
     ui_scale,
     get_text_box_theme,
@@ -44,8 +46,9 @@ class SettingsTab:
     """List of dicts for all basic event tags. Each dict holds tag name, conflicts, setting, and type required."""
 
     def __init__(self):
-        self.param_locks: dict = {}
+        self.lock_buttons: dict = {}
 
+        self.param_locks = None
         self.editor_container = None
         self.editor_element = None
 
@@ -146,7 +149,18 @@ class SettingsTab:
                 break
             self.update_acc_info()
 
-    def handle_settings_on_use(self):
+        # PARAM LOCKS
+        elif event.ui_element in self.lock_buttons.values():
+            for name, button in self.lock_buttons.items():
+                if button != event.ui_element:
+                    continue
+                button.flip_state()
+                if button.locked:
+                    self.param_locks[name] = True
+                else:
+                    self.param_locks[name] = False
+
+    def on_use(self):
         # CHANGE ID
         if self.event_id_element.changed:
             self.event_id_info = self.event_id_element.info
@@ -296,9 +310,11 @@ class SettingsTab:
             self.type_element["display"].set_text("chosen subtypes: []")
 
     # SETTINGS EDITOR
-    def generate_settings_tab(self, editor_container, editor_element):
+    def generate_settings_tab(self, editor_container, editor_element, param_locks):
         self.editor_container = editor_container
         self.editor_element = editor_element
+        self.param_locks = param_locks
+
         # EVENT ID
         self.create_event_id_editor()
         # LOCATION
@@ -366,7 +382,7 @@ class SettingsTab:
             allow_split_dashes=False,
         )
 
-        self.acc_element["lock"] = EditorLock(
+        self.lock_buttons["acc"] = EditorLock(
             name="acc",
             position=(10, 10),
             manager=MANAGER,
@@ -376,7 +392,7 @@ class SettingsTab:
                 "left_target": self.acc_element["display"],
             },
         )
-        self.param_locks["tag"] = self.acc_element["lock"].locked
+        self.param_locks["tag"] = self.lock_buttons["acc"].locked
 
     def update_acc_list(self):
         # kill old buttons
@@ -483,7 +499,7 @@ class SettingsTab:
             allow_split_dashes=False,
         )
 
-        self.tag_element["lock"] = EditorLock(
+        self.lock_buttons["tag"] = EditorLock(
             name="tag",
             position=(10, 10),
             manager=MANAGER,
@@ -493,7 +509,7 @@ class SettingsTab:
                 "left_target": self.tag_element["display"],
             },
         )
-        self.param_locks["tag"] = self.tag_element["lock"].locked
+        self.param_locks["tag"] = self.lock_buttons["tag"].locked
 
         self.editor_element["tag"] = EditorDivider(
             top_anchor=self.tag_element["display"],
@@ -542,7 +558,7 @@ class SettingsTab:
             allow_split_dashes=False,
         )
 
-        self.type_element["lock"] = EditorLock(
+        self.lock_buttons["subtypes"] = EditorLock(
             name="subtypes",
             position=(10, 10),
             manager=MANAGER,
@@ -552,7 +568,7 @@ class SettingsTab:
                 "left_target": self.type_element["display"],
             },
         )
-        self.param_locks["subtypes"] = self.type_element["lock"].locked
+        self.param_locks["subtypes"] = self.lock_buttons["subtypes"].locked
 
         self.editor_element["type"] = EditorDivider(
             top_anchor=self.type_element["display"],
@@ -646,7 +662,7 @@ class SettingsTab:
             allow_split_dashes=False,
         )
 
-        self.location_element["lock"] = EditorLock(
+        self.lock_buttons["location"] = EditorLock(
             name="location",
             position=(10, 10),
             manager=MANAGER,
@@ -656,7 +672,7 @@ class SettingsTab:
                 "left_target": self.location_element["display"],
             },
         )
-        self.param_locks["location"] = self.location_element["lock"].locked
+        self.param_locks["location"] = self.lock_buttons["location"].locked
 
         self.editor_element["location"] = EditorDivider(
             top_anchor=self.location_element["display"],

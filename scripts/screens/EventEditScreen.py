@@ -447,7 +447,7 @@ class EventEditScreen(Screens):
             self.settings_tab.season_info = []
         self.settings_tab.sub_info = event["sub_type"] if event.get("sub_type") else []
         self.settings_tab.tag_info = event["tags"] if event.get("tags") else []
-        self.settings_tab.frequency_info = event["frequency_info"]
+        self.settings_tab.frequency_info = event["frequency"]
         self.event_text_info = event["event_text"]
         self.settings_tab.acc_info = (
             event["new_accessory"] if event.get("new_accessory") else []
@@ -1082,7 +1082,7 @@ class EventEditScreen(Screens):
         """
 
         if self.current_editor_tab == "settings":
-            self.settings_tab.handle_settings_on_use()
+            self.settings_tab.on_use()
 
         elif self.current_editor_tab in ["main cat", "random cat"]:
             self.handle_main_and_random_cat_on_use()
@@ -1761,7 +1761,7 @@ class EventEditScreen(Screens):
 
         if self.current_editor_tab == "settings":
             self.settings_tab.generate_settings_tab(
-                self.editor_container, self.editor_element
+                self.editor_container, self.editor_element, self.param_locks
             )
         elif self.current_editor_tab == "main cat":
             self.current_cat_dict = self.main_cat_info

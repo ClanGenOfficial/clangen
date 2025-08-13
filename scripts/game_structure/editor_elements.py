@@ -35,7 +35,7 @@ class EditorElement:
             ele.show()
 
 
-class EditorLock(EditorElement):
+class EditorLock(UISurfaceImageButton):
     def __init__(
         self,
         name: str,
@@ -44,9 +44,7 @@ class EditorLock(EditorElement):
         container=None,
         anchors=None,
     ):
-        super().__init__()
-
-        self.lock = UISurfaceImageButton(
+        super().__init__(
             ui_scale(pygame.Rect(position, (36, 36))),
             Icon.UNLOCK,
             get_button_dict(ButtonStyles.ICON, (36, 36)),
@@ -57,8 +55,7 @@ class EditorLock(EditorElement):
             starting_height=2,
             tool_tip_text="If locked, these parameters will be preserved when making a new event.",
         )
-        self.ui_elements.append(self.lock)
-        self.bottom_element = self.lock
+
         self.name = name
 
     def flip_state(self):
@@ -70,12 +67,12 @@ class EditorLock(EditorElement):
 
     @property
     def locked(self):
-        return self.lock.text == Icon.LOCK
+        return self.text == Icon.LOCK
 
     @locked.setter
     def locked(self, lock: bool):
         """Set True to lock, set False to unlock."""
-        self.lock.set_text(Icon.LOCK if lock else Icon.UNLOCK)
+        self.set_text(Icon.LOCK if lock else Icon.UNLOCK)
 
 
 class EditorDivider(pygame_gui.elements.UIImage):
