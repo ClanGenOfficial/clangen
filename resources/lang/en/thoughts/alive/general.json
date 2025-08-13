@@ -6034,7 +6034,15 @@
             "Drowns in memories",
             "Needs some time alone with {PRONOUN/m_c/poss} grief",
             "Remembers things that used to bring {PRONOUN/m_c/object} joy",
-            "Sat and stared at nothing the entire day"
+            "Sat and stared at nothing the entire day",
+			"Wonders if {PRONOUN/m_c/subject} will ever feel okay again",
+			"Stares off emptily into the distance",
+			"Is trying to smile despite feeling empty",
+			"Feels like {PRONOUN/m_c/poss} limbs are weighing {PRONOUN/m_c/object} down",
+			"Mindlessly cleans {PRONOUN/m_c/poss} nest, trying to find the energy to do something else",
+			"Sobs at feeling so helpless to {PRONOUN/m_c/poss} seemingly endless grief",
+			"Buries {PRONOUN/m_c/poss} face in moss, trying to hold back tears",
+			"Holds back tears when thinking back on the past"
         ],
         "perm_conditions": {
             "m_c": [
@@ -6046,7 +6054,10 @@
         "id": "lasting_grief_gen_to_alive_gen",
         "thoughts": [
             "Worries about losing r_c too",
-            "Puts on a smile for r_c"
+            "Puts on a smile for r_c",
+			"Lies to r_c about how much {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} slept",
+			"Repeatedly reminds r_c to stay safe",
+			"Tells r_c {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} okay"
         ],
         "perm_conditions": {
             "m_c": [
@@ -6068,7 +6079,25 @@
             "Is comforted by r_c after a flashback",
             "Doesn't seem to enjoy hunting anymore",
             "Is avoiding {PRONOUN/m_c/poss} Clanmates",
-            "Is startled after r_c snuck up behind {PRONOUN/m_c/object}"
+            "Is startled after r_c snuck up behind {PRONOUN/m_c/object}",
+			"Is worried about having a flashback during a patrol",
+			"Is desperately trying to not make a noise despite panicking",
+			"Is attempting to do breathing exercises on {PRONOUN/m_c/inposs} own",
+			"Is purring to {PRONOUN/m_c/self} to try and calm down after a flashback",
+			"Is feeling relieved to have gone a moon without a flashback",
+			"Is proud of {PRONOUN/m_c/self} for calming down on {PRONOUN/m_c/poss} own",
+			"Doesn't seem to want to go near a certain area in the territory",
+			"Is keeping {PRONOUN/m_c/self} very occupied",
+			"Freezes up after hearing a familiar noise",
+			"Apologises to r_c for leaving abruptly",
+			"Is unsure what is causing {PRONOUN/m_c/object} to feel on edge",
+			"Is asking r_c what happened before {PRONOUN/m_c/subject} had a flashback",
+			"Unsheathes {PRONOUN/m_c/poss} claws when r_c asks what {PRONOUN/m_c/subject} saw in a flashback",
+			"Checks the camp entrance once, twice, thrice... just to be safe",
+			"Is almost sent into a panic at r_c scaring the life out of {PRONOUN/m_c/object}",
+			"Jumps to {PRONOUN/m_c/poss} paws at the sound of a playfight in camp",
+			"Questions if Starclan cursed {PRONOUN/m_c/object} to relive that moment so vividly",
+			"Wonders if the Dark Forest is why {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} getting flashbacks"
         ],
         "perm_conditions": {
             "m_c": [
@@ -6104,7 +6133,10 @@
             "Feels worn down from the shock",
             "Keeps asking {PRONOUN/m_c/self} why {PRONOUN/m_c/subject} didn't do things differently",
             "Feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} drowning in {PRONOUN/m_c/poss} memories",
-            "Keeps thinking of what {PRONOUN/m_c/subject} could have done differently..."
+            "Keeps thinking of what {PRONOUN/m_c/subject} could have done differently...",
+			"Is unable to sleep in fear of being forced to relive what happened",
+			"Takes note of all the escape routes in camp",
+			"Has to remind {PRONOUN/m_c/self} that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} safe now"
         ],
         "has_injuries": {
             "m_c": [
@@ -6154,7 +6186,8 @@
             "Is keeping {PRONOUN/m_c/poss} mangled limb as still as possible",
             "Is avoiding looking at {PRONOUN/m_c/poss} wounds",
             "Just wants {PRONOUN/m_c/poss} wounds to be healed already",
-            "Is relieved {PRONOUN/m_c/poss} wound is covered in cobwebs"
+            "Is relieved {PRONOUN/m_c/poss} wound is covered in cobwebs",
+			"Desperately wants to walk again"
         ],
         "has_injuries": {
             "m_c": [
@@ -6168,7 +6201,18 @@
         "thoughts": [
             "Doesn't understand how something that isn't there can hurt so much",
             "Wishes {PRONOUN/m_c/poss} missing limb was back so {PRONOUN/m_c/subject} could soothe its pain",
-            "Needs to itch {PRONOUN/m_c/poss} missing limb"
+            "Needs to itch {PRONOUN/m_c/poss} missing limb",
+			"Wishes {PRONOUN/m_c/poss} missing limb didnt feel so uncomfortable",
+			"Wonders how a limb thats not there is cramping",
+			"Finds a numb spell of {PRONOUN/m_c/poss} missing limb unsettling",
+			"Is irritated at the amount of pain {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in from a limb thats gone",
+			"Lets out a groan at the throbbing pain in {PRONOUN/m_c/poss} missing limb",
+			"Hisses sharply at feeling a stabbing pain in {PRONOUN/m_c/poss} missing limb",
+			"Dislikes how {PRONOUN/m_c/poss} missing limb somehow feels smaller than it actually was",
+			"Dislikes how {PRONOUN/m_c/poss} missing limb somehow feels larger than it actually was",
+			"Winces at {PRONOUN/m_c/poss} missing limb feeling like its on fire",
+			"Feels like claws are digging into {PRONOUN/m_c/poss} missing limb",
+			"Flinches at an especially painful cramp in {PRONOUN/m_c/poss} missing limb"
         ],
         "has_injuries": {
             "m_c": [
@@ -6183,7 +6227,8 @@
             "Is shaking uncontrollably",
             "Would do anything to be warm again",
             "Can't feel {PRONOUN/m_c/poss} toes",
-            "Curls tight in {PRONOUN/m_c/poss} nest, still shivering"
+            "Curls tight in {PRONOUN/m_c/poss} nest, still shivering",
+			"Asks for more moss despite drowning in it"
         ],
         "has_injuries": {
             "m_c": [
@@ -6199,7 +6244,14 @@
             "Is feeling a bit sore today",
             "Wants to take a light walk around camp",
             "Feels exhausted by simple tasks",
-            "Readjusts to {PRONOUN/m_c/poss} body after the pregnancy"
+            "Readjusts to {PRONOUN/m_c/poss} body after the pregnancy",
+			"Tries to walk but winces in pain at every step",
+			"Flops down in {PRONOUN/m_c/poss} nest at sun-high, exhausted",
+			"Doesn't want to get up",
+			"Is grumbling about {PRONOUN/m_c/poss} soreness",
+			"Purrs happily when laying down sprawled out",
+			"Avoids sitting down, opting to lay down instead",
+			"Moves slowly and methodically to avoid pain"
         ],
         "has_injuries": {
             "m_c": [
@@ -6214,7 +6266,23 @@
             "Is having sharp chest pains",
             "Is coughing up a storm",
             "Can't seem to get a deep breath in",
-            "Is anxious about breathing enough while {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}"
+            "Is anxious about breathing enough while {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}",
+			"Feels out of breath",
+			"Hisses at an especially painful ache in {PRONOUN/m_c/poss} chest",
+			"Feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} constantly coughing up hairballs",
+			"Winces at how sore {PRONOUN/m_c/poss} throat is from coughing so much",
+			"Sounds hoarse from coughing",
+			"Has to lay uncomfortably to avoid coughing",
+			"Groans at being unable to lay down without chest pain",
+			"Wants to stop coughing",
+			"Struggles to breathe after a coughing fit",
+			"Wheezes after a coughing fit",
+			"Feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/s} drowning in air",
+			"Worries that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} coughing up some blood",
+			"Wants to be able to breathe normally again",
+			"Avoids breathing too deeply",
+			"Is shaking after a coughing fit",
+			"Feels winded just eating prey"
         ],
         "has_injuries": {
             "m_c": [
@@ -6228,7 +6296,15 @@
             "Can't believe a burn could hurt so much",
             "Feels like {PRONOUN/m_c/subject} {VERB/m_c/are/is} touching flames",
             "Can't get comfortable in {PRONOUN/m_c/poss} nest",
-            "Whimpers to {PRONOUN/m_c/self}"
+            "Whimpers to {PRONOUN/m_c/self}",
+			"Dislikes how warm {PRONOUN/m_c/poss} burn is",
+			"Hisses after grooming too close to {PRONOUN/m_c/poss} burn",
+			"Wants to claw {PRONOUN/m_c/poss} fur off at how painful {PRONOUN/m_c/poss} burn is",
+			"Is resting {PRONOUN/m_c/poss} head against the medicine den wall, hoping the pain stops soon",
+			"Feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still getting burned",
+			"Shifts endlessly in {PRONOUN/m_c/poss} nest, trying to get comfortable",
+			"Groans at how uncomfortable {PRONOUN/m_c/subject} {VERB/m_c/are/is",
+			
         ],
         "has_injuries": {
             "m_c": [
@@ -6245,7 +6321,14 @@
             "Feels like {PRONOUN/m_c/poss} mouth is made of sand",
             "Is so tired {PRONOUN/m_c/subject} can barely stay awake",
             "Is too dizzy to sit up",
-            "Feels exhausted and irritable"
+            "Feels exhausted and irritable",
+			"Wants to drink an entire river",
+			"Has to sit down at how dazed {PRONOUN/m_c/subject} {VERB/m_c/feel/feels}",
+			"Feels a slight throbbing in {PRONOUN/m_c/poss} head from how dry {PRONOUN/m_c/poss} mouth is",
+			"Desperately wants water",
+			"Briefly feels disoriented",
+			"Struggles to walk straight from how dizzy {PRONOUN/m_c/subject} {VERB/m_c/feel/feels}",
+			"Finds grooming painful with how dry {PRONOUN/m_c/poss} tongue is"
         ],
         "has_injuries": {
             "m_c": [
@@ -6262,7 +6345,15 @@
             "Can't remember what happened today",
             "Is hiding from sunlight",
             "Can't get the pain in {PRONOUN/m_c/poss} head to stop",
-            "Can't sleep with the pounding in {PRONOUN/m_c/poss} head"
+            "Can't sleep with the pounding in {PRONOUN/m_c/poss} head",
+			"Hisses after stepping out into the sunlight",
+			"Hears a slight ringing in {PRONOUN/m_c/poss} ears",
+			"Forgets what {PRONOUN/m_c/subject} {VERB/m_c/were/was} only a few seconds after starting",
+			"Feels like {PRONOUN/m_c/poss} thoughts are running away from {PRONOUN/m_c/object}",
+			"Wants to sleep for a moon straight",
+			"Tightly closes {PRONOOUN/m_c/poss} eyes from a severe dizzy spell",
+			"Struggles to remember how {PRONOUN/m_c/subject} got injured",
+			"Squints when looking outside of the medicine den"
         ],
         "has_injuries": {
             "m_c": [
@@ -6277,7 +6368,14 @@
             "Is avoiding sunlight",
             "Hopes the swelling in {PRONOUN/m_c/poss} eye goes down soon",
             "Is trying to avoid squinting in pain",
-            "Panics at the thought of permanent blindness"
+            "Panics at the thought of permanent blindness",
+			"Feels like something is in {PRONOUN/m_c/poss} eyes even though there isnt",
+			"Grumbles at how badly {PRONOUN/m_c/poss} eyes hurt",
+			"Refuses to go outside during the day because of how bright it is",
+			"Hisses at the sunlight",
+			"Hopes that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} lose {PRONOUN/m_c/poss} vision",
+			"Avoids pawing at {PRONOUN/m_c/poss} eyes",
+			"Wants to be able to go out in the sunlight without pain"
         ],
         "has_injuries": {
             "m_c": [
