@@ -4,7 +4,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["training"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "gen_flower_date_warrior_warrior",
         "min_cats": 2,
         "max_cats": 2,
@@ -15,7 +15,7 @@
         "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
-        "relationship_constraint": ["romantic_20", "not_mates"],
+        "relationship_constraint": ["fancies", "not_mates"],
         "success_outcomes": [
             {
                 "text": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together, the call of courting birds a somewhat embarrassingly apt background music to their date.",
@@ -26,15 +26,8 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -5
                     }
                 ]
             },
@@ -47,15 +40,8 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -5
                     }
                 ]
             },
@@ -69,15 +55,8 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": -5
                     }
                 ]
             }
@@ -92,15 +71,8 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike", "jealous"],
-                        "amount": 5
                     }
                 ]
             }
@@ -111,7 +83,7 @@
         "biome": ["forest"],
         "season": ["newleaf"],
         "types": ["training"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "fst_train_newleafmatesonadates_70locked1",
         "min_cats": 2,
         "max_cats": 2,
@@ -122,7 +94,7 @@
         "intro_text": "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c want to come out with {PRONOUN/p_l/object}? {PRONOUN/p_l/subject/CAP} {VERB/p_l/lean/leans} in close - there's a special spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been meaning to show {PRONOUN/r_c/object}.",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before either cat can head out of camp.",
         "chance_of_success": 80,
-        "relationship_constraint": ["romantic_70", "mates"],
+        "relationship_constraint": ["adores", "mates"],
         "success_outcomes": [
             {
                 "text": "This is p_l's absolute favorite spot in the territory in newleaf, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN/p_l/subject} thought it'd be good for r_c to take some time just to breathe, just to relax, just to get to be {PRONOUN/r_c/self}. All the more special for being there together.",
@@ -133,7 +105,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "comfort"],
+                        "values": ["romance", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -147,7 +119,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "comfort"],
+                        "values": ["romance", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -163,7 +135,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "comfort"],
+                        "values": ["romance", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -252,15 +224,8 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["respect", "trust", "platonic"],
+                            "values": ["respect", "trust", "like"],
                             "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["patrol"],
-                            "mutual": false,
-                            "values": ["jealous"],
-                            "amount": 5
                         }
                     ]
                 }
@@ -275,7 +240,7 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["respect", "trust", "platonic"],
+                            "values": ["respect", "trust", "like"],
                             "amount": -10
                         }
                     ]
@@ -308,7 +273,7 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": true,
-                            "values": ["comfort", "platonic"],
+                            "values": ["comfort", "like"],
                             "amount": 5
                         },
                         {
@@ -333,13 +298,6 @@
                             "mutual": false,
                             "values": ["respect"],
                             "amount": -10
-                        },
-                        {
-                            "cats_to": ["patrol"],
-                            "cats_from": ["p_l"],
-                            "mutual": false,
-                            "values": ["dislike"],
-                            "amount": 3
                         }
                     ]
                 }

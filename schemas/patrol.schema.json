@@ -189,11 +189,9 @@
                 "type": "array",
                 "items": {
                   "enum": [
-                    "romantic",
-                    "platonic",
-                    "dislike",
+                    "romance",
+                    "like",
                     "comfort",
-                    "jealous",
                     "trust",
                     "respect"
                   ]
@@ -277,7 +275,7 @@
           "anyOf": [
             {
               "enum": [
-                "romantic",
+                "romance",
                 "rom_two_apps",
                 "disaster",
                 "new_cat",
@@ -358,61 +356,13 @@
         "description": "Controls chance to succeed. Higher number is higher chance to succeed.",
         "type": "integer"
       },
-      "relationship_constraint": {
-        "description": "Only allows patrol if cats meet relationship constraint.",
-        "type": "array",
-        "items": {
-          "anyOf": [
-            {
-              "enum": [
-                "siblings",
-                "not_siblings",
-                "littermates",
-                "not_littermates",
-                "mates",
-                "mates_with_pl",
-                "not_mates",
-                "parent/child",
-                "not_parent",
-                "child/parent",
-                "not_child",
-                "mentor/app",
-                "not_mentor",
-                "app/mentor",
-                "not_app"
-              ]
-            },
-            {
-              "type": "string",
-              "pattern": "^romantic_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^platonic_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^dislike_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^comfortable_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^jealousy_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^trust_(0|[1-9][0-9]?|100)$"
-            },
-            {
-              "type": "string",
-              "pattern": "^admiration_(0|[1-9][0-9]?|100)$"
-            }
-          ]
-        }
-      },
+      "relationship_status": {
+      "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/definitions/relationship_status"
+      }
+    },
       "pl_skill_constraint": {
         "description": "Only allow this patrol if the patrol leader (p_l) meets at least one of these skill requirements.",
         "type": "array",

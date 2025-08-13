@@ -7,7 +7,7 @@ from scripts.game_structure.game.save_load import read_clans
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.game_structure.game_essentials import Game
+from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
 
 if not os.path.exists("tests/testSaves"):

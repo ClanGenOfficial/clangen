@@ -186,7 +186,7 @@ from scripts.game_structure.audio import sound_manager, music_manager
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import read_clans
 from scripts.game_structure.game.settings import game_setting_get

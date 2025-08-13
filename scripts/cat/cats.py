@@ -26,6 +26,7 @@ from scripts.cat.status import Status, StatusDict
 from scripts.cat.thoughts import Thoughts
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.enums import RelType, RelTier, rel_type_tiers
 from scripts.clan_package.settings import get_clan_setting
 from scripts.conditions import (
     Illness,
@@ -36,11 +37,10 @@ from scripts.conditions import (
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.game_structure import image_cache, constants
+from scripts.game_structure import image_cache, constants, game
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
@@ -133,6 +133,8 @@ class Cat:
         skill_dict=None,
         pelt: Pelt = None,
         loading_cat=False,  # Set to true if you are loading a cat at start-up.
+        *,
+        disable_random=False,
         **kwargs,
     ):
         """Initialise the cat.
@@ -152,6 +154,7 @@ class Cat:
         :param skill_dict: TODO find a good definition for this
         :param pelt: Body details, default None
         :param loading_cat: If loading a cat rather than generating a new one, default False
+        :param disable_random: If True, disables as much random generation junk as possible
         :param kwargs: TODO what are the possible args here? ["biome", ]
         """
 
@@ -174,7 +177,7 @@ class Cat:
         self.gender = gender
         self.status: Status = Status(**status_dict) if status_dict else Status()
         self.backstory = backstory
-        self.age = None
+        self.age: Optional[CatAge] = None
         self.skills = CatSkills(skill_dict=skill_dict)
         self.personality = Personality(
             trait="troublesome", lawful=0, aggress=0, stable=0, social=0
@@ -240,8 +243,8 @@ class Cat:
 
         # age and status
         if status_dict is None and moons is None:
-            self.age = choice(list(CatAge))
-            self.status.generate_new_status(age=self.age)
+            self.age = CatAge.NEWBORN if disable_random else choice([*CatAge])
+            self.status.generate_new_status(age=self.age, disable_random=disable_random)
         elif moons is not None:
             self.moons = moons
             if moons > 300:
@@ -257,9 +260,11 @@ class Cat:
                     ):
                         self.age = key_age
             if status_dict is None:
-                self.status.generate_new_status(age=self.age)
+                self.status.generate_new_status(
+                    age=self.age, disable_random=disable_random
+                )
         else:
-            if self.status.rank == CatRank.NEWBORN:
+            if disable_random or self.status.rank == CatRank.NEWBORN:
                 self.age = CatAge.NEWBORN
             elif self.status.rank == CatRank.KITTEN:
                 self.age = CatAge.KITTEN
@@ -277,26 +282,29 @@ class Cat:
                     ]
                 )
         if moons is None:
-            self.moons = randint(
-                self.age_moons[self.age][0], self.age_moons[self.age][1]
-            )
+            if disable_random:
+                self.moons = 0
+            else:
+                self.moons = randint(
+                    self.age_moons[self.age][0], self.age_moons[self.age][1]
+                )
 
         # backstory
         if self.backstory is None:
             self.backstory = "clanborn"
         else:
-            self.backstory = self.backstory
+            self.backstory = self.backstory  # fixme why does this exist
 
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
-            self.gender = choice(["female", "male"])
+            self.gender = "female" if disable_random else choice(["female", "male"])
 
         """if self.genderalign == "":
             self.genderalign = self.gender"""
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            self.init_generate_cat(skill_dict)
+            self.init_generate_cat(skill_dict, disable_random)
 
         # In camp status
         self.in_camp = 1
@@ -391,10 +399,11 @@ class Cat:
                 ):
                     self.age = key_age
 
-    def init_generate_cat(self, skill_dict):
+    def init_generate_cat(self, skill_dict, disable_random):
         """
         Used to roll a new cat
         :param skill_dict: TODO what is a skill dict exactly
+        :param disable_random: If true, disable randomisation code
         :return: None
         """
         # trans cat chances
@@ -403,7 +412,7 @@ class Cat:
         nb_chance = randint(0, 75)
 
         # GENDER IDENTITY
-        if self.age.is_baby():
+        if self.age.is_baby() or disable_random:
             # newborns can't be trans, sorry babies
             pass
         elif nb_chance == 1:
@@ -424,10 +433,15 @@ class Cat:
         )
 
         # Personality
-        self.personality = Personality(kit_trait=self.age.is_baby())
+        if disable_random:
+            self.personality = Personality(
+                lawful=8, social=8, aggress=8, stable=8, kit_trait=self.age.is_baby()
+            )
+        else:
+            self.personality = Personality(kit_trait=self.age.is_baby())
 
         # experience and current patrol status
-        if self.age.is_baby():
+        if self.age.is_baby() or disable_random:
             self.experience = 0
         elif self.age == CatAge.ADOLESCENT:
             m = self.moons
@@ -674,41 +688,29 @@ class Cat:
             if cat.dead or cat.status.is_outsider or cat.moons < 1:
                 continue
 
-            to_self = cat.relationships.get(self.ID)
-            if not isinstance(to_self, Relationship):
+            rel_with_dead = cat.relationships.get(self.ID)
+            if not isinstance(rel_with_dead, Relationship):
                 continue
 
             family_relation = self.familial_grief(living_cat=cat)
-            very_high_values = []
-            high_values = []
+            very_high_types = []
+            high_types = []
+            very_low_types = []
 
-            if to_self.romantic_love > 55:
-                very_high_values.append("romantic")
-            if to_self.romantic_love > 40:
-                high_values.append("romantic")
-
-            if to_self.platonic_like > 50:
-                very_high_values.append("platonic")
-            if to_self.platonic_like > 30:
-                high_values.append("platonic")
-
-            if to_self.admiration > 70:
-                very_high_values.append("admiration")
-            if to_self.admiration > 50:
-                high_values.append("admiration")
-
-            if to_self.comfortable > 60:
-                very_high_values.append("comfort")
-            if to_self.comfortable > 40:
-                high_values.append("comfort")
-
-            if to_self.trust > 70:
-                very_high_values.append("trust")
-            if to_self.trust > 50:
-                high_values.append("trust")
+            # find what tier of rel they had for each type
+            tiers: list[RelTier] = rel_with_dead.get_reltype_tiers()
+            for tier in tiers:
+                rel_type = [k for k in rel_type_tiers if tier in k]
+                if tier.is_extreme_pos:
+                    very_high_types.extend(rel_type)
+                elif tier.is_low_pos:
+                    high_types.extend(rel_type)
+                elif tier.is_extreme_neg:
+                    very_low_types.extend(rel_type)
+                continue
 
             major_chance = 0
-            if very_high_values:
+            if very_high_types:
                 # major grief eligible cats.
 
                 major_chance = 3
@@ -736,7 +738,7 @@ class Cat:
                 grief_type = "major"
 
                 possible_strings = []
-                for x in very_high_values:
+                for x in very_high_types:
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(
                             family_relation, x, cat.personality.trait, body_status
@@ -755,7 +757,7 @@ class Cat:
 
             # If major grief fails, but there are still very_high or high values,
             # it can fail to to minor grief. If they have a family relation, bypass the roll.
-            elif (very_high_values or high_values) and (
+            elif (very_high_types or high_types) and (
                 family_relation != "general" or not int(random() * 5)
             ):
                 grief_type = "minor"
@@ -818,21 +820,14 @@ class Cat:
                 continue
 
             # Negative "grief" messages are just for flavor.
-            high_values = []
-            very_high_values = []
-            if to_self.dislike > 50:
-                high_values.append("dislike")
-
-            if to_self.jealousy > 50:
-                high_values.append("jealousy")
-
-            if high_values:
+            if very_low_types:
                 # Generate the event:
                 possible_strings = []
-                for x in high_values:
+                for x in very_low_types:
+                    value = f"neg_{x}"
                     possible_strings.extend(
                         self.generate_events.possible_death_reactions(
-                            family_relation, x, cat.personality.trait, body_status
+                            family_relation, value, cat.personality.trait, body_status
                         )
                     )
 
@@ -1228,10 +1223,10 @@ class Cat:
 
         # sort relations by the strength of their relationship
         dead_relations.sort(
-            key=lambda rel: rel.romantic_love
-            + rel.platonic_like
-            + rel.admiration
-            + rel.comfortable
+            key=lambda rel: rel.romance
+            + rel.like
+            + rel.respect
+            + rel.comfort
             + rel.trust,
             reverse=True,
         )
@@ -2476,26 +2471,26 @@ class Cat:
                     self.create_one_relationship(other_cat)
                     self.relationships[other_cat.ID].mates = True
                 self_relationship = self.relationships[other_cat.ID]
-                self_relationship.romantic_love -= randint(20, 60)
-                self_relationship.comfortable -= randint(10, 30)
+                self_relationship.romance -= randint(20, 60)
+                self_relationship.comfort -= randint(10, 30)
                 self_relationship.trust -= randint(5, 15)
                 self_relationship.mates = False
                 if fight:
-                    self_relationship.romantic_love -= randint(10, 30)
-                    self_relationship.platonic_like -= randint(15, 45)
+                    self_relationship.romance -= randint(10, 30)
+                    self_relationship.like -= randint(15, 45)
 
             if not other_cat.dead:
                 if self.ID not in other_cat.relationships:
                     other_cat.create_one_relationship(self)
                     other_cat.relationships[self.ID].mates = True
                 other_relationship = other_cat.relationships[self.ID]
-                other_relationship.romantic_love -= 40
-                other_relationship.comfortable -= 20
+                other_relationship.romance -= 40
+                other_relationship.comfort -= 20
                 other_relationship.trust -= 10
                 other_relationship.mates = False
                 if fight:
-                    self_relationship.romantic_love -= 20
-                    other_relationship.platonic_like -= 30
+                    self_relationship.romance -= 20
+                    other_relationship.like -= 30
 
         self.mate.remove(other_cat.ID)
         other_cat.mate.remove(self.ID)
@@ -2535,8 +2530,8 @@ class Cat:
                 self.create_one_relationship(other_cat)
                 self.relationships[other_cat.ID].mates = True
             self_relationship = self.relationships[other_cat.ID]
-            self_relationship.romantic_love += 20
-            self_relationship.comfortable += 20
+            self_relationship.romance += 20
+            self_relationship.comfort += 20
             self_relationship.trust += 10
             self_relationship.mates = True
 
@@ -2545,8 +2540,8 @@ class Cat:
                 other_cat.create_one_relationship(self)
                 other_cat.relationships[self.ID].mates = True
             other_relationship = other_cat.relationships[self.ID]
-            other_relationship.romantic_love += 20
-            other_relationship.comfortable += 20
+            other_relationship.romance += 20
+            other_relationship.comfort += 20
             other_relationship.trust += 10
             other_relationship.mates = True
 
@@ -2559,16 +2554,16 @@ class Cat:
             if other_cat.ID not in self.relationships:
                 self.create_one_relationship(other_cat)
             self_relationship = self.relationships[other_cat.ID]
-            self_relationship.platonic_like -= randint(10, 30)
-            self_relationship.comfortable -= randint(10, 30)
+            self_relationship.like -= randint(10, 30)
+            self_relationship.comfort -= randint(10, 30)
             self_relationship.trust -= randint(5, 15)
 
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
                 other_cat.create_one_relationship(self)
             other_relationship = other_cat.relationships[self.ID]
-            other_relationship.platonic_like -= 20
-            other_relationship.comfortable -= 20
+            other_relationship.like -= 20
+            other_relationship.comfort -= 20
             other_relationship.trust -= 10
 
     def set_adoptive_parent(self, other_cat: Cat):
@@ -2581,16 +2576,16 @@ class Cat:
             if other_cat.ID not in self.relationships:
                 self.create_one_relationship(other_cat)
             self_relationship = self.relationships[other_cat.ID]
-            self_relationship.platonic_like += 20
-            self_relationship.comfortable += 20
+            self_relationship.like += 20
+            self_relationship.comfort += 20
             self_relationship.trust += 10
 
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
                 other_cat.create_one_relationship(self)
             other_relationship = other_cat.relationships[self.ID]
-            other_relationship.platonic_like += 20
-            other_relationship.comfortable += 20
+            other_relationship.like += 20
+            other_relationship.comfort += 20
             other_relationship.trust += 10
 
     def create_inheritance_new_cat(self):
@@ -2659,12 +2654,10 @@ class Cat:
                 related = parents or siblings
 
                 # set the different stats
-                romantic_love = 0
+                romance = 0
                 like = 0
-                dislike = 0
-                admiration = 0
-                comfortable = 0
-                jealousy = 0
+                respect = 0
+                comfort = 0
                 trust = 0
                 if game_setting_get("random relation"):
                     if (
@@ -2673,24 +2666,24 @@ class Cat:
                         and game.clan.instructor.dead_for >= self.moons
                     ):
                         pass
-                    elif randint(1, 20) == 1 and romantic_love < 1:
-                        dislike = randint(10, 25)
-                        jealousy = randint(5, 15)
-                        if randint(1, 30) == 1:
-                            trust = randint(1, 10)
+                    elif randint(1, 20) == 1 and romance < 1:
+                        like += randint(-25, 5)
+                        respect += randint(-10, 15)
+                        trust += randint(-15, 5)
+                        comfort += randint(-15, 10)
                     else:
-                        like = randint(0, 35)
-                        comfortable = randint(0, 25)
-                        trust = randint(0, 15)
-                        admiration = randint(0, 20)
+                        like += randint(-10, 35)
+                        respect += randint(-10, 25)
+                        trust += randint(-5, 15)
+                        comfort += randint(-5, 15)
                         if (
                             randint(1, 100 - like) == 1
                             and self.moons > 11
                             and the_cat.moons > 11
                             and self.age == the_cat.age
                         ):
-                            romantic_love = randint(15, 30)
-                            comfortable = int(comfortable * 1.3)
+                            romance += randint(15, 30)
+                            comfort = int(comfort * 1.3)
                             trust = int(trust * 1.2)
 
                 if are_parents and like < 60:
@@ -2703,12 +2696,10 @@ class Cat:
                     cat_to=the_cat,
                     mates=mates,
                     family=related,
-                    romantic_love=romantic_love,
-                    platonic_like=like,
-                    dislike=dislike,
-                    admiration=admiration,
-                    comfortable=comfortable,
-                    jealousy=jealousy,
+                    romance=romance,
+                    like=like,
+                    respect=respect,
+                    comfort=comfort,
                     trust=trust,
                 )
                 self.relationships[the_cat.ID] = rel
@@ -2718,21 +2709,7 @@ class Cat:
 
         rel = []
         for r in self.relationships.values():
-            r_data = {
-                "cat_from_id": r.cat_from.ID,
-                "cat_to_id": r.cat_to.ID,
-                "mates": r.mates,
-                "family": r.family,
-                "romantic_love": r.romantic_love,
-                "platonic_like": r.platonic_like,
-                "dislike": r.dislike,
-                "admiration": r.admiration,
-                "comfortable": r.comfortable,
-                "jealousy": r.jealousy,
-                "trust": r.trust,
-                "log": r.log,
-            }
-            rel.append(r_data)
+            rel.append(r.to_dict())
 
         safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
@@ -2755,26 +2732,46 @@ class Cat:
             try:
                 with open(relation_cat_directory, "r", encoding="utf-8") as read_file:
                     rel_data = ujson.loads(read_file.read())
+
                     for rel in rel_data:
+                        # checking validity
                         cat_to = self.all_cats.get(rel["cat_to_id"])
                         if cat_to is None or rel["cat_to_id"] == self.ID:
                             continue
+
+                        # converting old saves
+                        if "platonic_like" in rel:
+                            # romance
+                            rel["romance"] = rel["romantic_love"]
+                            rel.pop("romantic_love")
+                            # like
+                            rel["like"] = rel["platonic_like"] - rel["dislike"]
+                            rel.pop("platonic_like")
+                            rel.pop("dislike")
+                            # respect
+                            rel["respect"] = rel["admiration"] - rel["jealousy"]
+                            rel.pop("admiration")
+                            rel.pop("jealousy")
+                            # comfort
+                            rel["comfort"] = rel["comfortable"]
+                            rel.pop("comfortable")
+
+                        # create relationship
                         new_rel = Relationship(
                             cat_from=self,
                             cat_to=cat_to,
                             mates=rel["mates"] or False,
                             family=rel["family"] or False,
-                            romantic_love=(rel["romantic_love"] or 0),
-                            platonic_like=(rel["platonic_like"] or 0),
-                            dislike=rel["dislike"] or 0,
-                            admiration=rel["admiration"] or 0,
-                            comfortable=rel["comfortable"] or 0,
-                            jealousy=rel["jealousy"] or 0,
+                            romance=(rel["romance"] or 0),
+                            like=(rel["like"] or 0),
+                            respect=rel["respect"] or 0,
+                            comfort=rel["comfort"] or 0,
                             trust=rel["trust"] or 0,
                             log=rel["log"],
                         )
                         self.relationships[rel["cat_to_id"]] = new_rel
-            except:
+
+            except KeyError:
                 print(
                     f"WARNING: There was an error reading the relationship file of cat #{self}."
                 )
@@ -2865,17 +2862,12 @@ class Cat:
         # Are they mates?
         mates = rel1.cat_from.ID in rel1.cat_to.mate
 
-        pos_traits = ["platonic", "respect", "comfortable", "trust"]
+        rel_values = [v for v in [*RelType] if v != RelType.ROMANCE]
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
-            pos_traits.append("romantic")
+            rel_values.append(RelType.ROMANCE)
 
-        neg_traits = ["dislike", "jealousy"]
-
-        # Determine the number of positive traits to effect, and choose the traits
-        chosen_pos = sample(pos_traits, k=randint(2, len(pos_traits)))
-
-        # Determine negative trains effected
-        neg_traits = sample(neg_traits, k=randint(1, 2))
+        # Determine the number of traits to effect, and choose the traits
+        chosen_rel = sample(rel_values, k=randint(2, len(rel_values)))
 
         if compat is True:
             personality_bonus = 2
@@ -2885,7 +2877,7 @@ class Cat:
             personality_bonus = 0
 
         # Effects on traits
-        for trait in chosen_pos + neg_traits:
+        for rel_type in chosen_rel:
             # The EX bonus in not applied upon a fail.
             if apply_bonus:
                 if mediator.experience_level == "very low":
@@ -2904,184 +2896,21 @@ class Cat:
             else:
                 bonus = 0
 
-            decrease: bool = sabotage
+            ran = (5, 10) if rel_type == RelType.ROMANCE and mates else (4, 6)
 
-            if trait == "romantic":
-                if mates:
-                    ran = (5, 10)
-                else:
-                    ran = (4, 6)
+            amount = ((randint(ran[0], ran[1]) + bonus) + personality_bonus) * (
+                -1 if sabotage else 1
+            )
 
-                if sabotage:
-                    rel1.romantic_love = Cat.effect_relation(
-                        rel1.romantic_love,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.romantic_love = Cat.effect_relation(
-                        rel2.romantic_love,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.romantic_love = Cat.effect_relation(
-                        rel1.romantic_love,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.romantic_love = Cat.effect_relation(
-                        rel2.romantic_love,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
+            setattr(rel1, rel_type, getattr(rel1, rel_type) + amount)
+            setattr(rel2, rel_type, getattr(rel2, rel_type) + amount)
 
-            elif trait == "platonic":
-                ran = (4, 6)
-
-                if sabotage:
-                    rel1.platonic_like = Cat.effect_relation(
-                        rel1.platonic_like,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.platonic_like = Cat.effect_relation(
-                        rel2.platonic_like,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.platonic_like = Cat.effect_relation(
-                        rel1.platonic_like,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.platonic_like = Cat.effect_relation(
-                        rel2.platonic_like,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-
-            elif trait == "respect":
-                ran = (4, 6)
-
-                if sabotage:
-                    rel1.admiration = Cat.effect_relation(
-                        rel1.admiration,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.admiration = Cat.effect_relation(
-                        rel2.admiration,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.admiration = Cat.effect_relation(
-                        rel1.admiration,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.admiration = Cat.effect_relation(
-                        rel2.admiration,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-
-            elif trait == "comfortable":
-                ran = (4, 6)
-
-                if sabotage:
-                    rel1.comfortable = Cat.effect_relation(
-                        rel1.comfortable,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.comfortable = Cat.effect_relation(
-                        rel2.comfortable,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.comfortable = Cat.effect_relation(
-                        rel1.comfortable,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.comfortable = Cat.effect_relation(
-                        rel2.comfortable,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-
-            elif trait == "trust":
-                ran = (4, 6)
-
-                if sabotage:
-                    rel1.trust = Cat.effect_relation(
-                        rel1.trust,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.trust = Cat.effect_relation(
-                        rel2.trust,
-                        -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                else:
-                    rel1.trust = Cat.effect_relation(
-                        rel1.trust,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-                    rel2.trust = Cat.effect_relation(
-                        rel2.trust,
-                        (randint(ran[0], ran[1]) + bonus) + personality_bonus,
-                    )
-
-            elif trait == "dislike":
-                ran = (4, 9)
-                if sabotage:
-                    rel1.dislike = Cat.effect_relation(
-                        rel1.dislike,
-                        (randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                    rel2.dislike = Cat.effect_relation(
-                        rel2.dislike,
-                        (randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                else:
-                    rel1.dislike = Cat.effect_relation(
-                        rel1.dislike,
-                        -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                    rel2.dislike = Cat.effect_relation(
-                        rel2.dislike,
-                        -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-
-                decrease = not decrease
-
-            elif trait == "jealousy":
-                ran = (4, 6)
-
-                if sabotage:
-                    rel1.jealousy = Cat.effect_relation(
-                        rel1.jealousy,
-                        (randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                    rel2.jealousy = Cat.effect_relation(
-                        rel2.jealousy,
-                        (randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                else:
-                    rel1.jealousy = Cat.effect_relation(
-                        rel1.jealousy,
-                        -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-                    rel2.jealousy = Cat.effect_relation(
-                        rel2.jealousy,
-                        -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
-                    )
-
-                decrease = not decrease
-
-            if decrease:
-                output += i18n.t(
-                    "screens.mediation.output_decrease",
-                    trait=i18n.t(f"screens.mediation.{trait}"),
-                )
-            else:
-                output += i18n.t(
-                    "screens.mediation.output_increase",
-                    trait=i18n.t(f"screens.mediation.{trait}"),
-                )
+            output += i18n.t(
+                f"screens.mediation.output_{'decrease' if sabotage else 'increase'}",
+                trait=i18n.t(f"screens.mediation.{rel_type}"),
+            )
 
         return output
-
-    @staticmethod
-    def effect_relation(current_value, effect):
-        return clamp(current_value + effect, 0, 100)
 
     def set_faded(self):
         """This function is for cats that are faded. It will set the sprite and the faded tag"""
@@ -3105,6 +2934,8 @@ class Cat:
 
         if self.status.group == CatGroup.DARK_FOREST:
             file_name += "_df"
+        elif self.status.group == CatGroup.UNKNOWN_RESIDENCE:
+            file_name += "_ur"
 
         file_name += ".png"
 
@@ -3483,10 +3314,10 @@ class Cat:
                 "vitiligo": self.pelt.vitiligo,
                 "points": self.pelt.points,
                 "white_patches_tint": self.pelt.white_patches_tint,
-                "pattern": self.pelt.pattern,
-                "tortie_base": self.pelt.tortiebase,
-                "tortie_color": self.pelt.tortiecolour,
-                "tortie_pattern": self.pelt.tortiepattern,
+                "tortie_marking": self.pelt.tortie_marking,
+                "tortie_base": self.pelt.tortie_base,
+                "tortie_color": self.pelt.tortie_colour,
+                "tortie_pattern": self.pelt.tortie_pattern,
                 "skin": self.pelt.skin,
                 "tint": self.pelt.tint,
                 "skill_dict": self.skills.get_skill_dict(),
@@ -3626,10 +3457,10 @@ def create_option_preview_cat(scar: str = None, acc: str = None):
             white_patches=None,
             vitiligo=None,
             points=None,
-            pattern=None,
-            tortiebase=None,
-            tortiepattern=None,
-            tortiecolour=None,
+            tortie_marking=None,
+            tortie_base=None,
+            tortie_pattern=None,
+            tortie_colour=None,
             tint="gray",
             skin="BLUE",
             scars=[scar] if scar else [],

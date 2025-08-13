@@ -18,7 +18,7 @@ from scripts.game_structure.game.switches import (
     Switch,
 )
 from scripts.cat.enums import CatGroup
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
 from scripts.game_structure.ui_elements import (
     UIImageButton,
@@ -242,7 +242,7 @@ class ListScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
-        self.clan_name = game.clan.name + "Clan"
+        self.clan_name = game.clan.displayname + "Clan"
 
         self.set_disabled_menu_buttons(["catlist_screen"])
         self.show_menu_buttons()

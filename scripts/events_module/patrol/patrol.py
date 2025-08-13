@@ -11,6 +11,7 @@ from typing import List, Tuple, Optional, Union
 import pygame
 
 from scripts.cat.cats import Cat
+from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank
 from scripts.clan import Clan
 from scripts.clan_package.settings import get_clan_setting
@@ -19,7 +20,7 @@ from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 from scripts.game_structure import localization, constants
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_personality_compatibility,
@@ -555,24 +556,14 @@ class Patrol:
         else:
             chance_of_romance_patrol += 10
 
-        values = [
-            "romantic",
-            "platonic",
-            "dislike",
-            "admiration",
-            "comfortable",
-            "jealousy",
-            "trust",
-        ]
+        values = [*RelType]
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
-            if (
-                val in ("romantic", "platonic", "admiration", "comfortable", "trust")
-                and value_check >= 20
-            ):
+            if value_check < 0:
                 chance_of_romance_patrol -= 1
-            elif val in ("dislike", "jealousy") and value_check >= 20:
+            elif value_check > 0:
                 chance_of_romance_patrol += 2
+
         if chance_of_romance_patrol <= 0:
             chance_of_romance_patrol = 1
         print("final romance chance:", chance_of_romance_patrol)
@@ -671,7 +662,7 @@ class Patrol:
                     )
                 continue
 
-            if "romantic" in patrol.tags:
+            if "romance" in patrol.tags:
                 romantic_patrols.append(patrol)
             else:
                 filtered_patrols.append(patrol)
@@ -1144,7 +1135,7 @@ class Patrol:
 
         text = text.replace("o_c_n", str(other_clan_name) + "Clan")
 
-        clan_name = game.clan.name
+        clan_name = game.clan.displayname
         s = 0
         pos = 0
         for x in range(text.count("c_n")):
@@ -1164,7 +1155,7 @@ class Patrol:
                         text = " ".join(modify)
                         break
 
-        text = text.replace("c_n", str(game.clan.name) + "Clan")
+        text = text.replace("c_n", str(game.clan.displayname) + "Clan")
 
         # TODO: check if this can be handled in event_text_adjust
         return text

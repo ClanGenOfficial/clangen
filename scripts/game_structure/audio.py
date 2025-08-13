@@ -6,7 +6,7 @@ import pygame_gui
 import ujson
 
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import CatButton, UISpriteButton
 
 logger = logging.getLogger(__name__)

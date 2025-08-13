@@ -65,25 +65,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -10
             }
         ]
     },
@@ -310,21 +297,10 @@
                 ],
                 "values": [
                     "trust",
-                    "respect"
+                    "respect",
+                    "like"
                 ],
                 "amount": -5
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 5
             }
         ]
     },
@@ -386,7 +362,6 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
                     "comfort",
                     "respect"
                 ],
@@ -400,9 +375,9 @@
                     "r_c"
                 ],
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": -5
+                "amount": 5
             }
         ]
     },
@@ -464,7 +439,6 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
                     "comfort",
                     "respect"
                 ],
@@ -478,9 +452,9 @@
                     "r_c"
                 ],
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": -5
+                "amount": 5
             }
         ]
     },
