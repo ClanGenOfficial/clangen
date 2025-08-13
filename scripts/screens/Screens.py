@@ -19,7 +19,6 @@ from scripts.game_structure.game.switches import (
     switch_get_value,
     Switch,
 )
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
     MANAGER,
@@ -34,6 +33,7 @@ from scripts.utility import (
     ui_scale_blit,
     get_current_season,
 )
+from scripts.game_structure import game
 
 
 class Screens:
@@ -197,7 +197,7 @@ class Screens:
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         try:
-            Screens.update_heading_text(game.clan.name + "Clan")
+            Screens.update_heading_text(game.clan.displayname + "Clan")
         except AttributeError:
             Screens.update_heading_text("DebugClan")
         if self.active_bg is None or "default" in self.active_bg:

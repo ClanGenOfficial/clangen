@@ -31,7 +31,7 @@
                 "cats_from": ["m_c"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["comfort", "platonic"],
+                "values": ["comfort", "like"],
                 "amount": 10
             }
         ],
@@ -75,14 +75,8 @@
                 "cats_from": ["m_c"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["comfort", "platonic"],
+                "values": ["comfort", "like"],
                 "amount": 10
-            },
-            {
-                "cats_from": ["clan"],
-                "cats_to": ["m_c", "n_c:0"],
-                "values": ["dislike"],
-                "amount": 5
             }
         ],
         "outsider": {

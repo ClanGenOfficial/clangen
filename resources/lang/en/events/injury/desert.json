@@ -426,24 +426,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -10
             }
         ]
     },
@@ -500,24 +487,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -10
             }
         ]
     },
@@ -1054,7 +1028,7 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             },
@@ -1227,22 +1201,9 @@
                     "respect",
                     "trust",
                     "comfort",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 20
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -20
             }
         ]
     },
@@ -1338,7 +1299,6 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "jealous",
                     "trust",
                     "comfort"
                 ],
@@ -2268,7 +2228,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2351,7 +2311,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2508,7 +2468,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2752,7 +2712,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2890,7 +2850,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2963,24 +2923,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -4080,7 +4028,7 @@
                 "mutual": true,
                 "values": [
                     "trust",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 30
             }
