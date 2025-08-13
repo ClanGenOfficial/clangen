@@ -275,6 +275,7 @@ def get_config_value(*args):
 
     return config_value
 
+
 def get_free_group_ID(group_type: CatGroup) -> str:
     """
     Find the next free group ID, adds it to the used_group_ID dict, and then returns the ID.
@@ -283,6 +284,7 @@ def get_free_group_ID(group_type: CatGroup) -> str:
     new_ID = str(int(list(used_group_IDs.keys())[-1]) + 1)
     used_group_IDs.update({new_ID: group_type})
     return new_ID
+
 
 pygame.display.set_caption("Clan Generator")
 

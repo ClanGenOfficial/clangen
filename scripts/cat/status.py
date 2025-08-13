@@ -151,13 +151,7 @@ class Status:
         :param rank: The rank the cat holds within a group. If they have no group, then this matches their social.
         :param disable_random: Removes randomness and ensures repeatable results for each age group.
         """
-        self._start_group_history(
-            age,
-            social,
-            group_ID,
-            rank,
-            disable_random
-        )
+        self._start_group_history(age, social, group_ID, rank, disable_random)
 
         self._start_standing()
 
