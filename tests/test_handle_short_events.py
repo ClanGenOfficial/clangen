@@ -1,7 +1,6 @@
 import os
 import unittest
 
-from scripts.cat.enums import CatSocial
 from scripts.events_module.short.short_event import ShortEvent
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"

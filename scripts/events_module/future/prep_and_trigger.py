@@ -3,7 +3,7 @@ from random import randint
 from scripts.cat.cats import Cat
 from scripts.events_module.event_filters import cat_for_event
 from scripts.events_module.future.future_event import FutureEvent
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 
 def prep_future_event(event, event_id: str, possible_cats: dict):

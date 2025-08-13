@@ -10,8 +10,7 @@ from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship.relation_events import Relation_Events
-from scripts.game_structure import localization
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import localization, game
 from scripts.utility import (
     create_new_cat_block,
     event_text_adjust,
