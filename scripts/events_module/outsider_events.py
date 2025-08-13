@@ -7,7 +7,7 @@ import i18n
 from scripts.cat.enums import CatGroup, CatSocial
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat

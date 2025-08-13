@@ -37,7 +37,7 @@ from scripts.game_structure.game.switches import (
     switch_get_value,
     Switch,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import (

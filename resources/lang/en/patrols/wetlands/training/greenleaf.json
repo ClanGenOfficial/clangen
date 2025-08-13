@@ -4,7 +4,7 @@
         "biome": ["wetlands"],
         "season": ["greenleaf"],
         "types": ["training"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "fst_hunt_heat",
         "min_cats": 4,
         "max_cats": 6,
@@ -27,15 +27,15 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic", "comfort"],
+                            "values": ["like", "comfort"],
                             "amount": 10
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["r_c"],
                             "mutual": true,
-                            "values": ["dislike"],
-                            "amount": -5
+                            "values": ["like"],
+                            "amount": 5
                         }
                     ]
                 },
@@ -49,15 +49,8 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["r_c"],
                             "mutual": true,
-                            "values": ["platonic", "comfort", "romantic"],
+                            "values": ["like", "comfort", "romance"],
                             "amount": 10
-                        },
-                        {
-                            "cats_to": ["p_l"],
-                            "cats_from": ["r_c"],
-                            "mutual": true,
-                            "values": ["dislike"],
-                            "amount": -5
                         }
                     ]
                 }

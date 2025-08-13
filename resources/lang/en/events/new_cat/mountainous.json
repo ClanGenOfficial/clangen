@@ -46,7 +46,7 @@
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
             "mutual": true,
-            "values": ["comfort", "platonic"],
+            "values": ["comfort", "like"],
             "amount": 5
           },
           {
@@ -54,16 +54,7 @@
             "cats_to": ["m_c"],
             "values": ["trust"],
             "amount": 10
-          },
-	  {
-            "cats_from": ["n_c:0"],
-            "cats_to": ["m_c"],
-	    "mutual": true,
-            "values": ["dislike"],
-            "amount": -10
           }
-
-
         ],
         "outsider": {
             "current_rep": [
@@ -107,7 +98,7 @@
             "cats_from": ["m_c"],
             "cats_to": ["n_c:1"],
             "mutual": true,
-            "values": ["comfort", "platonic"],
+            "values": ["comfort", "like"],
             "amount": 5
           }
         ],

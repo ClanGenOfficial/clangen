@@ -13,7 +13,7 @@ from scripts.game_structure.game.switches import (
     Switch,
 )
 from scripts.game_structure.game.switches import switch_generator
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 
 class ToggleCommand(Command):

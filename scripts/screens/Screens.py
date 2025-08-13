@@ -19,7 +19,6 @@ from scripts.game_structure.game.switches import (
     switch_get_value,
     Switch,
 )
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
     MANAGER,
@@ -34,6 +33,7 @@ from scripts.utility import (
     ui_scale_blit,
     get_current_season,
 )
+from scripts.game_structure import game
 
 
 class Screens:

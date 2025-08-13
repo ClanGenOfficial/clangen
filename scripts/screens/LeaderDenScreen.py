@@ -8,12 +8,12 @@ from pygame_gui.core import UIContainer
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatGroup
 from scripts.clan import OtherClan
+from scripts.game_structure import game
 from scripts.clan_package.settings.clan_settings import (
     set_clan_setting,
     get_clan_setting,
 )
 from scripts.game_structure import constants
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UIImageButton,
