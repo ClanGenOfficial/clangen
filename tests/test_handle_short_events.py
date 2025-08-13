@@ -106,14 +106,14 @@ class TestHandleAccessories(unittest.TestCase):
 
     def test_notail_cats_do_not_get_tail_accessories(self):
         self.chosen_event.new_accessory = self.pelts.tail_accessories
-        self.chosen_event.main_cat.pelt.scars = "NOTAIL"
+        self.chosen_event.main_cat.pelt.scars = ["NOTAIL"]
 
         self.chosen_event.execute_event()
         self.assertFalse(self.chosen_event.main_cat.pelt.accessory)
 
     def test_halftail_cats_do_not_get_tail_accessories(self):
         self.chosen_event.new_accessory = self.pelts.tail_accessories
-        self.chosen_event.main_cat.pelt.scars = "HALFTAIL"
+        self.chosen_event.main_cat.pelt.scars = ["HALFTAIL"]
 
         self.chosen_event.execute_event()
         self.assertFalse(self.chosen_event.main_cat.pelt.accessory)
