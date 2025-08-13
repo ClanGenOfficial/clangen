@@ -5495,6 +5495,255 @@
         ]
     },
     {
+        "id": "allergies_gen",
+        "thoughts": [
+            "Is having a sneezing fit",
+            "Is having an extra sniffily day",
+            "Is having a no-sniffles day",
+            "Sounds like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} hacking up a hairball",
+            "Laughs about sounding like an elder",
+            "Is especially annoyed with {PRONOUN/m_c/poss} allergies today",
+            "Is questioning why StarClan won't cure {PRONOUN/m_c/poss} allergies",
+            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if {PRONOUN/m_c/poss} allergies are especially bad today",
+			      "Is struggling to smell something"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        }
+    },
+    {
+        "id": "allergies_gen_to_alive_gen",
+        "thoughts": [
+            "Apologizes after sneezing on r_c",
+            "Accidentally woke up r_c with {PRONOUN/m_c/poss} coughing",
+            "Accidentally woke up r_c with {PRONOUN/m_c/poss} sneezing",
+            "Is joking around with r_c about sounding like an elder",
+            "Is giving r_c some advice for when {PRONOUN/r_c/subject} {VERB/r_c/get/gets} sick",
+            "Laughs at r_c complaining about sneezing",
+            "Is relieved to know that r_c doesn't mind {PRONOUN/m_c/poss} sneezing",
+            "Is relieved to know that r_c doesn't mind {PRONOUN/m_c/poss} coughing",
+            "Is relieved to know that r_c doesn't mind {PRONOUN/m_c/poss} sniffling",
+            "Is silently laughing at r_c complaining about a sneezing fit",
+            "Is sharing a funny story with r_c about something {PRONOUN/m_c/poss} allergies caused",
+            "Is answering r_c's question about {PRONOUN/m_c/poss} allergies",
+            "Is explaining to r_c what seasons make {PRONOUN/m_c/poss} allergies worse",
+            "Is assuring r_c that {PRONOUN/m_c/subject} {VERB/m_c/aren/isn}'t sick, it's just allergies",
+            "Is unsure if {PRONOUN/m_c/subject} should apologize when r_c complains about {PRONOUN/m_c/poss} allergies",
+            "Is rolling {PRONOUN/m_c/poss} eyes when r_c insists {PRONOUN/m_c/subject} should talk to the medicine cat",
+            "Playfully swats r_c when {PRONOUN/r_c/subject} {VERB/r_c/say/says} {PRONOUN/m_c/subject} sounds like an elder"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "allergies_gen_to_kit",
+        "thoughts": [
+            "Purrs when r_c takes care to bring {PRONOUN/m_c/object} flowers that don't trigger {PRONOUN/m_c/poss} allergies",
+            "Answers all the questions r_c has about {PRONOUN/m_c/poss} allergies",
+            "Is playing a game with r_c where they try to find what flowers make {PRONOUN/m_c/poss} sneeze the hardest"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "allergies_gen_to_running_nose",
+        "thoughts": [
+            "Is chuckling when r_c complains to {PRONOUN/m_c/object} about {PRONOUN/r_c/poss} running nose",
+            "Sadly laughs when r_c asks if having a running nose constantly is what {PRONOUN/m_c/poss} allergies are like",
+            "Is giving advice to r_c for managing {PRONOUN/r_c/poss} running nose",
+            "Quietly snickers after seeing r_c growl at having a sneezing fit"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "has_injuries": {
+            "r_c": [
+                "running nose"
+            ]
+        }
+    },
+	{
+        "id": "allergies_gen_to_anycough",
+        "thoughts": [
+            "Is nervous to be around r_c incase {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick too",
+            "Is comforting r_c about the annoyances of {PRONOUN/r_c/poss} symptoms",
+            "Is sharing stories of {PRONOUN/m_c/poss} own experiences to comfort r_c"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "has_injuries": {
+            "r_c": [
+                "whitecough",
+				"greencough",
+				"yellowcough"
+            ]
+        }
+    },
+    {
+        "id": "allergies_gen_to_whitecough",
+        "thoughts": [
+            "Is giving r_c advice for handling some of the symptoms of whitecough"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "has_injuries": {
+            "r_c": [
+                "whitecough"
+            ]
+        }
+    },
+    {
+        "id": "allergies_gen_to_greencough",
+        "thoughts": [
+            "Is giving r_c advice for handling some of the symptoms of greencough",
+            "Watches r_c with sorrow, knowing what it's like to be coughing and sneezing constantly"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "has_injuries": {
+            "r_c": [
+                "greencough"
+            ]
+        }
+    },
+    {
+        "id": "allergies_gen_to_yellowcough",
+        "thoughts": [
+            "Is giving to give r_c advice for managing some of the symptoms of yellowcough",
+            "Watches r_c with worry, wondering if {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like that"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "has_injuries": {
+            "r_c": [
+                "yellowcough"
+            ]
+        }
+    },
+    {
+        "id": "allergies_gen_to_redcough",
+        "thoughts": [
+            "Winces at hearing r_c cough, wondering if {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like that during bad days",
+            "Is attempting to comfort r_c, but knows {PRONOUN/m_c/poss} experiences can't compare to redcough"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "has_injuries": {
+            "r_c": [
+                "redcough"
+            ]
+        }
+    },
+    {
+        "id": "allergies_gen_to_med",
+        "thoughts": [
+            "Is asking r_c if there are herbs to help {PRONOUN/m_c/poss} allergies",
+            "Asks r_c to check if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if it's just {PRONOUN/m_c/poss} allergies",
+            "Is reassuring r_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fine and it's just {PRONOUN/m_c/poss} allergies being especially bad today",
+            "Is working with r_c to try and find something to relieve {PRONOUN/m_c/poss} allergies",
+            "Ignores r_c's worried look when {PRONOUN/m_c/subject} devolves into a sneezing fit",
+            "Is joking with r_c about how {PRONOUN/r_c/subject} herby scent is why {PRONOUN/m_c/object} is so sneezy",
+            "Is hiding {PRONOUN/m_c/poss} sorrow at knowing r_c can't do anything to truly fix {PRONOUN/m_c/poss} allergies",
+            "Is wishing StarClan could give r_c herbs to help {PRONOUN/m_c/poss} allergies",
+            "Laughs about being a regular visitor for r_c"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "random_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ]
+    },
+	{
+        "id": "allergies_warm_seasons",
+        "thoughts": [
+            "Is smelling the flowers despite sneezing afterwards",
+            "Is unamused about {PRONOUN/m_c/poss} allergies getting worse this season",
+            "Accidentally sneezes on a bee when smelling the flowers",
+            "Is watching a cloud of pollen in horror",
+            "Found a flower that causes {PRONOUN/m_c/poss} allergies to get worse",
+            "Found a flower that doesn't affect {PRONOUN/m_c/poss} allergies"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "season": [
+            "Greenleaf",
+			"Newleaf"
+        ]
+    },
+    {
+        "id": "allergies_cold_seasons",
+        "thoughts": [
+            "Is happy about {PRONOUN/m_c/poss} allergies calming down this season",
+            "Feels a sense of relief at seeing the lack of greenery",
+            "Is able to breathe clearly"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "season": [
+            "Leaf-bare",
+			"Leaf-fall"
+        ]
+    },
+    {
+        "id": "allergies_cold_season_to_alive_gen",
+        "thoughts": [
+            "Startles r_c with how quiet {PRONOUN/m_c/subject} is now"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "allergies"
+            ]
+        },
+        "season": [
+            "Leaf-bare",
+			"Leaf-fall"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "lasting_grief_gen",
         "thoughts": [
             "Cannot find the energy to get out of {PRONOUN/m_c/poss} nest today",

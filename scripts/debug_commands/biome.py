@@ -3,7 +3,7 @@ from typing import List
 from scripts.debug_commands import Command
 from scripts.debug_commands.utils import add_output_line_to_log
 from scripts.game_structure import constants
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 
 class SetBiomeCommand(Command):

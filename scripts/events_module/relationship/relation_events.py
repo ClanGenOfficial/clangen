@@ -114,7 +114,7 @@ class Relation_Events:
         # that the cat interacts romantic with ANOTHER cat than their mate
         use_mate = False
         if cat.mate:
-            chance_number = constants.CONFIG["relationship"]["chance_romantic_not_mate"]
+            chance_number = constants.CONFIG["relationship"]["chance_romance_not_mate"]
 
             # the more mates the cat has, the less likely it will be that they interact with another cat romantically
             for mate_id in cat.mate:

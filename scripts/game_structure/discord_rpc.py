@@ -13,7 +13,7 @@ from time import time
 
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 status_dict = {
     "start screen": "At the start screen",

@@ -18,9 +18,9 @@ from scripts.utility import filter_relationship_type
 class TestRelationshipConstraintPatrols(unittest.TestCase):
     def test_sibling_patrol(self):
         # given
-        parent = Cat()
-        cat1 = Cat(parent1=parent.ID)
-        cat2 = Cat(parent1=parent.ID)
+        parent = Cat(disable_random=True)
+        cat1 = Cat(parent1=parent.ID, disable_random=True)
+        cat2 = Cat(parent1=parent.ID, disable_random=True)
         cat1.create_inheritance_new_cat()
         cat2.create_inheritance_new_cat()
 
@@ -78,9 +78,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_mates_patrol(self):
         # given
-        mate1 = Cat()
-        mate2 = Cat()
-        cat1 = Cat()
+        mate1 = Cat(disable_random=True)
+        mate2 = Cat(disable_random=True)
+        cat1 = Cat(disable_random=True)
 
         mate1.mate.append(mate2.ID)
         mate2.mate.append(mate1.ID)
@@ -153,9 +153,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_parent_child_patrol(self):
         # given
-        parent = Cat()
-        cat1 = Cat(parent1=parent.ID)
-        cat2 = Cat(parent1=parent.ID)
+        parent = Cat(disable_random=True)
+        cat1 = Cat(parent1=parent.ID, disable_random=True)
+        cat2 = Cat(parent1=parent.ID, disable_random=True)
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
@@ -232,9 +232,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_child_parent_patrol(self):
         # given
-        parent = Cat()
-        cat1 = Cat(parent1=parent.ID)
-        cat2 = Cat(parent1=parent.ID)
+        parent = Cat(disable_random=True)
+        cat1 = Cat(parent1=parent.ID, disable_random=True)
+        cat2 = Cat(parent1=parent.ID, disable_random=True)
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
@@ -311,8 +311,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_romantic_constraint_patrol(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
@@ -379,8 +379,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_platonic_constraint_patrol(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
@@ -446,8 +446,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_dislike_constraint_patrol(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
@@ -514,8 +514,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_comfort_constraint_patrol(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
@@ -582,8 +582,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_jealousy_patrol(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
@@ -650,8 +650,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_trust_patrol(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
@@ -718,9 +718,9 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_multiple_romantic_patrol(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
-        cat3 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
+        cat3 = Cat(disable_random=True)
 
         relationship1_2 = Relationship(cat1, cat2)
         relationship1_3 = Relationship(cat1, cat3)
@@ -829,8 +829,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
     def test_multiple_constraint_patrol(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
