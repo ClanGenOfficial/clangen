@@ -2689,11 +2689,11 @@ def generate_sprite(
             else:
                 tortie_pattern = cat.pelt.tortie_pattern
 
-            sprite_name = f"colours_{tortie_pattern}{cat.pelt.tortie_colour}{cat_sprite}"
-            patches = sprites.sprites[sprite_name].copy()
             sprite_name = (
-                f"{sprites.TORTIE_DATA['spritesheet']}{cat.pelt.tortie_marking}{cat_sprite}"
+                f"colours_{tortie_pattern}{cat.pelt.tortie_colour}{cat_sprite}"
             )
+            patches = sprites.sprites[sprite_name].copy()
+            sprite_name = f"{sprites.TORTIE_DATA['spritesheet']}{cat.pelt.tortie_marking}{cat_sprite}"
             patches.blit(
                 sprites.sprites[sprite_name],
                 (0, 0),
@@ -2886,7 +2886,7 @@ def generate_sprite(
                         _recolor_lineart(
                             sprites.sprites[sprite_name],
                             lineart_color,
-                            gradient_surface
+                            gradient_surface,
                         ),
                         (0, 0),
                         special_flags=blendmode,
