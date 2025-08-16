@@ -6746,7 +6746,8 @@
             "Is wheezing loudly",
             "Is coughing up white sludge",
             "Tries not to cough near anyone",
-            "Worries about greencough"
+            "Worries about greencough",
+			"Isn't feeling as hungry as normal"
         ],
         "has_injuries": {
             "m_c": [
@@ -6761,7 +6762,11 @@
             "Is rattling with every breath",
             "Is too weak to leave {PRONOUN/m_c/poss} nest",
             "Is coughing up green sludge",
-            "Fears spreading {PRONOUN/m_c/poss} sickness to Clanmates"
+            "Fears spreading {PRONOUN/m_c/poss} sickness to Clanmates",
+			"Is struggling to swallow down food without hissing in pain",
+			"Has lost {PRONOUN/m_c/poss} appetite",
+			"Is forcing {PRONOUN/m_c/self} to eat something",
+			"Is trying to not irritate {PRONOUN/m_c/poss} throat anymore than it already is"
         ],
         "has_injuries": {
             "m_c": [
@@ -6778,7 +6783,10 @@
             "Can barely catch {PRONOUN/m_c/poss} breath",
             "Is staring intently at something that isn't there",
             "Is coughing up yellow sludge",
-            "Fears spreading {PRONOUN/m_c/poss} sickness to Clanmates"
+            "Fears spreading {PRONOUN/m_c/poss} sickness to Clanmates",
+			"Is feeling slightly lightheaded",
+			"Desperately wants to sleep this illness away",
+			"Sounds more raspy than normal"
         ],
         "has_injuries": {
             "m_c": [
@@ -6811,6 +6819,40 @@
             ]
         }
     },
+	{
+        "id": "cracked_pads_gen",
+        "thoughts": [
+            "Is wincing when having to walk",
+			"Is walking a little funny to avoid pain",
+			"Tries sticking {PRONOUN/m_c/poss} paws in a nearby puddle to ease the pain",
+			"Winces when stretching {PRONOUN/m_c/poss} paws",
+			"Is aggressively cleaning {PRONOUN/m_c/poss} paws",
+			"Accidentally makes {PRONOUN/m_c/poss} paw bleed from cleaning too much",
+			"Hisses after walking on a rock",
+			"Is trying to stay off of {PRONOUN/m_c/poss} paws"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "cracked pads"
+            ]
+        }
+    },
+	{
+        "id": "cracked_pads_to_alive_gen",
+        "thoughts": [
+            "Is being pestered by r_c to go to the medicine den for {PRONOUN/m_c/poss} paws",
+			"Has to reassure r_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fine, {PRONOUN/m_c/poss} paws are just cracked",
+			"Is bothered by r_c as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} tracking a bit of blood around camp"
+        ],
+        "has_injuries": {
+            "m_c": [
+                "cracked pads"
+            ]
+        },
+		"random_living_status": [
+            "living"
+        ]
+    },
     {
         "id": "mild_injury_gen",
         "thoughts": [
@@ -6819,7 +6861,8 @@
             "Is mildly annoyed at {PRONOUN/m_c/poss} injury",
             "Is handling the minor pain without issue",
             "Ignores {PRONOUN/m_c/poss} injury",
-            "Takes advantage of {PRONOUN/m_c/poss} injury to spend the whole day in {PRONOUN/m_c/poss} nest"
+            "Takes advantage of {PRONOUN/m_c/poss} injury to spend the whole day in {PRONOUN/m_c/poss} nest",
+			"Is trying to ignore {PRONOUN/m_c/poss} injury"
         ],
         "has_injuries": {
             "m_c": [
