@@ -238,7 +238,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
-        "tags": [],
+        "tags": ["app1_mentored"],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,

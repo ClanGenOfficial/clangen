@@ -2776,7 +2776,7 @@
         "biome": ["plains"],
         "season": ["leaf-bare"],
         "types": ["border"],
-        "tags": [],
+        "tags": ["app1_mentored"],
         "patrol_art": "pln_bord_tunnel",
         "min_cats": 1,
         "max_cats": 1,
