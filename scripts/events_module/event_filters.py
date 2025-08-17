@@ -50,7 +50,7 @@ def event_for_season(seasons: list) -> bool:
     return False
 
 
-def event_for_tags(tags: list, cat, other_cat=None) -> bool:
+def event_for_tags(tags: list, cat, other_cat=None, has_mentor=None) -> bool:
     """
     checks if current tags disqualify the event
     """
@@ -134,6 +134,16 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     # filtering for dates
     if contains_special_date_tag(tags):
         if not special_date or special_date.patrol_tag not in tags:
+            return False
+
+    for _tag in tags:
+        is_app_mentored = re.match(r"app[1-6]_mentored", _tag)
+        if (
+            "all_mentored" in tags and 
+            not has_mentor.get("general", False)
+        ):
+            return False
+        if(is_app_mentored and not has_mentor.get(_tag, False)):
             return False
 
     return True
