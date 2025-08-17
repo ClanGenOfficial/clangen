@@ -10140,7 +10140,7 @@
            {
                "text": "Maintaining {PRONOUN/s_c/poss} serious expression, s_c explains that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to get big and strong so {PRONOUN/s_c/subject} can give the best badger rides ever! p_l purrs and agrees to practice some advanced moves with {PRONOUN/s_c/object}.",
                "exp": 10,
-               "can_have_stat": ["p_l"],
+               "can_have_stat": ["app1"],
                 "stat_trait": [ "childish", "playful" ],
                "relationships": [
                    {
