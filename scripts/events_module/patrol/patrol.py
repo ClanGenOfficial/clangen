@@ -584,7 +584,22 @@ class Patrol:
         if patrol_type == "general":
             patrol_type = random.choice(["hunting", "border", "training"])
 
-        # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
+        app_number_mentor_checks = {}
+        for i in range(1, 7):
+            app_number_mentor_checks[f"app{i}_mentored"] = (
+                len(self.patrol_apprentices) >= i and
+                self.patrol_apprentices[i - 1].mentor is not None
+            )
+        if self.patrol_apprentices:
+            general_mentor_checks = all(app.mentor for app in self.patrol_apprentices)
+        else:
+            general_mentor_checks = False
+        has_mentor = {
+            "general": general_mentor_checks, 
+            **app_number_mentor_checks
+        }
+
+         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
             if not self._check_constraints(patrol):
                 continue
@@ -619,7 +634,7 @@ class Patrol:
                     )
                 continue
 
-            if not event_for_tags(patrol.tags, Cat):
+            if not event_for_tags(patrol.tags, Cat, has_mentor=has_mentor):
                 if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
                     print("DEBUG: requested patrol does not meet constraints (tags)")
                 continue
