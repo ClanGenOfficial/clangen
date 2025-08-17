@@ -210,7 +210,7 @@
         "biome": ["mountainous"],
         "season": ["any"],
         "types": ["herb_gathering"],
-        "tags": [],
+        "tags": ["app1_mentored"],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,

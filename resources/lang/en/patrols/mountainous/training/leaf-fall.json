@@ -4,7 +4,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-fall"],
         "types": ["training"],
-        "tags": ["rom_two_apps", "romance"],
+        "tags": ["rom_two_apps", "romance", "all_mentored"],
         "patrol_art": "mtn_train_snowcrunching",
         "min_cats": 2,
         "max_cats": 2,
