@@ -138,12 +138,9 @@ def event_for_tags(tags: list, cat, other_cat=None, has_mentor=None) -> bool:
 
     for _tag in tags:
         is_app_mentored = re.match(r"app[1-6]_mentored", _tag)
-        if (
-            "all_mentored" in tags and 
-            not has_mentor.get("general", False)
-        ):
+        if "all_mentored" in tags and not has_mentor.get("general", False):
             return False
-        if(is_app_mentored and not has_mentor.get(_tag, False)):
+        if is_app_mentored and not has_mentor.get(_tag, False):
             return False
 
     return True

@@ -587,19 +587,16 @@ class Patrol:
         app_number_mentor_checks = {}
         for i in range(1, 7):
             app_number_mentor_checks[f"app{i}_mentored"] = (
-                len(self.patrol_apprentices) >= i and
-                self.patrol_apprentices[i - 1].mentor is not None
+                len(self.patrol_apprentices) >= i
+                and self.patrol_apprentices[i - 1].mentor is not None
             )
         if self.patrol_apprentices:
             general_mentor_checks = all(app.mentor for app in self.patrol_apprentices)
         else:
             general_mentor_checks = False
-        has_mentor = {
-            "general": general_mentor_checks, 
-            **app_number_mentor_checks
-        }
+        has_mentor = {"general": general_mentor_checks, **app_number_mentor_checks}
 
-         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
+        # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
             if not self._check_constraints(patrol):
                 continue
