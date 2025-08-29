@@ -72,7 +72,11 @@
     {
         "id": "mediator_to_alive_elder",
         "thoughts": [
-            "Had to fix an argument between the elders... again"
+            "Had to fix an argument between the elders... again",
+            "Has to remind another warrior about r_c being slower now",
+            "Wants to yowl into {PRONOUN/m_c/poss} nest after having to explain something to r_c at least 12 times",
+            "Purrs at finally having some peace to listen to r_c's stories",
+            "Has to settle down a crowd after one of r_c's darker stories"
         ],
         "random_status_constraint": [
             "elder"
@@ -83,7 +87,12 @@
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} should sabotage a relationship that is going a bit too well",
             "Wishes to break up a sickeningly lovey-dovey couple",
-            "Chuckles to {PRONOUN/m_c/self} after sabotaging another relationship"
+            "Chuckles to {PRONOUN/m_c/self} after sabotaging another relationship",
+            "'Accidentally' gives the wrong advice to somecat",
+            "Subtly starts an argument between two cats",
+            "Desperately wants to solve an argument with claws instead of words",
+            "Decides to watch an argument for entertainment",
+            "Makes an argument worse"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -94,7 +103,11 @@
         "thoughts": [
             "Is judging two Clanmates for their foolish argument",
             "Wishes to break up a sickeningly lovey-dovey couple",
-            "Is sitting back and watching an argument take place"
+            "Is sitting back and watching an argument take place",
+            "Coldly tells two clanmates to stop fighting",
+            "Snaps at somecat after a rough argument",
+            "Growls an insult under {PRONOUN/m_c/poss} breath whilst solving a fight",
+            "Questions the intellegence of {PRONOUN/m_c/poss} fellow clanmates after solving a mouse-brained argument"
         ],
         "main_trait_constraint": [
             "cold"
@@ -104,7 +117,11 @@
         "id": "compassionate_mediator",
         "thoughts": [
             "Feels bad for a parent who can't seem to get along with their child",
-            "Wonders why everyone can't just get along"
+            "Wonders why everyone can't just get along",
+            "Can see {PRONOUN/m_c/self} in a clanmate whilst solving an argument",
+            "Comforts a clanmate after an especially rough day",
+            "Feels proud after a moon with little fighting",
+            "Wishes that other cats would be more empathetic"
         ],
         "main_trait_constraint": [
             "compassionate"
@@ -114,7 +131,10 @@
         "id": "fierce_mediator",
         "thoughts": [
             "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong",
-            "Is fighting the urge to shake some sense into a Clanmate"
+            "Is fighting the urge to shake some sense into a Clanmate",
+            "Is biting {PRONOUN/m_c/poss} tongue after a clanmate brings a mouse-brained problem to {PRONOUN/m_c/object}",
+            "Defends a clanmate after seeing them struggle in a similar way to {PRONOUN/m_c/self}",
+            "Has to keep {PRONOUN/m_c/poss} claws sheathed after a clanmate made an awful comment to another cat"
         ],
         "main_trait_constraint": [
             "fierce"
@@ -124,7 +144,11 @@
         "id": "insecure_mediator",
         "thoughts": [
             "Finds mediating emotionally draining",
-            "Is worried {PRONOUN/m_c/subject} may have made things worse"
+            "Is worried {PRONOUN/m_c/subject} may have made things worse",
+            "Wonders if the clan deserves a better mediator than {PRONOUN/m_c/object}",
+            "Is surprised when a clanmate thanks {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} help",
+            "Overthinks something that {PRONOUN/m_c/subject} said when solving a fight",
+            "Struggles to get a word in when solving a heated fight"
         ],
         "main_trait_constraint": [
             "insecure"
@@ -134,7 +158,12 @@
         "id": "loving_mediator",
         "thoughts": [
             "Wonders why everyone can't just get along",
-            "Sees all sides of the argument"
+            "Sees all sides of the argument",
+            "Reassures clanmates anytime they seem down",
+            "Offers all cats a safe place to talk",
+            "Purrs at being able to comfort a clanmate",
+            "Wishes that cats would be less cruel during disagreements",
+            "Feels hurt after a clanmate denies {PRONOUN/m_c/poss} help"
         ],
         "main_trait_constraint": [
             "loving"
@@ -144,7 +173,11 @@
         "id": "nervous_mediator",
         "thoughts": [
             "Finds mediating emotionally draining",
-            "Is feeling worried with all the high tension lately"
+            "Is feeling worried with all the high tension lately",
+            "Stumbles over {PRONOUN/m_c/poss} words when defusing a fight",
+            "Hopes that {PRONOUN/m_c/poss} nerves don't show when solving disputes",
+            "Is able to give personal experience to a clanmate who is struggling to stay calm",
+            "Has to take a walk after solving a tense fight"
         ],
         "main_trait_constraint": [
             "nervous"
@@ -153,7 +186,10 @@
     {
         "id": "righteous_mediator",
         "thoughts": [
-            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong"
+            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong",
+            "Subtly glares at a cat causing trouble around camp",
+            "Wishes that everycat would follow the rules when disputing",
+            "Emphasises the warrior code during a talk with a clanmate"
         ],
         "main_trait_constraint": [
             "righteous"
@@ -163,7 +199,11 @@
         "id": "troublesome_mediator",
         "thoughts": [
             "Is looking for a pair to sabotage, out of boredom",
-            "Solves problems by starting them"
+            "Solves problems by starting them",
+            "Provokes a fight between two clanmates for the fun of it",
+            "Solves a fight, but makes sure to leave enough fuel for it to start up again",
+            "Makes up an argument to solve between two very confused clanmates",
+            "Feels bored after a relatively quiet moon"
         ],
         "main_trait_constraint": [
             "troublesome"
@@ -174,7 +214,9 @@
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} should sabotage a relationship that is going a bit too well",
             "Wishes to break up a sickeningly lovey-dovey couple",
-            "Is sitting back and watching an argument take place"
+            "Is sitting back and watching an argument take place",
+            "Intentionally avoids helping a rude clanmate",
+            "Decides to sabatoge a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like"
         ],
         "main_trait_constraint": [
             "vengeful"
@@ -184,7 +226,8 @@
         "id": "mediator_to_dead_mediator",
         "thoughts": [
             "Wishes {PRONOUN/m_c/subject} could ask r_c for advice",
-            "Wonders how r_c would have handled c_n's most recent conflict"
+            "Wonders how r_c would have handled c_n's most recent conflict",
+            "Wonders if r_c would say {PRONOUN/m_c/subject} {VERB/m_c/are/is} doing a good job"
         ],
         "random_status_constraint": [
             "mediator"
@@ -196,7 +239,9 @@
     {
         "id": "mediator_to_newborn",
         "thoughts": [
-            "Readies {PRONOUN/m_c/self} for the emotions a new birth might provoke"
+            "Readies {PRONOUN/m_c/self} for the emotions a new birth might provoke",
+            "Is asked to solve a dispute between two newborns... somehow",
+            "Is told to lecture r_c about manners, even though {PRONOUN/r_c/subject} {VERB/r_c/were/was} just born"
         ],
         "main_status_constraint": [ "mediator"],
         "random_status_constraint": [ "newborn"]
