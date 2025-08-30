@@ -203,7 +203,7 @@ class Clan:
         )
 
         self.instructor = Cat(
-            status_dict={"rank": instructor_rank, "group": CatGroup.STARCLAN},
+            status_dict={"rank": instructor_rank, "group_ID": CatGroup.STARCLAN_ID},
         )
 
         self.instructor.dead = True
