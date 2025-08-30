@@ -412,77 +412,7 @@ lowercase season names + "any"
 ***
 
 ### relationships:list[dict[str, various]]
->Optional. Indicates effect on cat relationships. You can include as many of the following blocks as you want, in a list
->
->```
->{
->    "cats_from": [],
->    "cats_to": [],
->    "mutual": false,
->    "values" [],
->    "amount": 5
->}
->```
->
->Parameter for each:
-
->**cats_from: List[str] :** The cat's whose relationship values are being edited. You are changing how the "cats_from" feels. 
-
-| string      |                                                                                                            |
-|-------------|------------------------------------------------------------------------------------------------------------|
-| m_c         | main cat's feelings are affected                                                                           |
-| r_c         | other cat's feelings are affected                                                                          |
-| n_c:{index} | new cat's feelings are affected                                                                            |
-| clan        | the clan's feelings are affected (experimental, unsupported in old format and not sure if i can make work) |
-
-
->**cats_to: List[str] :** The target of the relationship. You can changing how "cats_from" feel about "cats_to"
-
-| string      |                                                                                                                 |
-|-------------|-----------------------------------------------------------------------------------------------------------------|
-| m_c         | feelings toward the main cat are affected                                                                       |
-| r_c         | feelings toward the other_cat are affected                                                                      |
-| n_c:{index} | feelings toward the new cat are affected                                                                        |
-| clan        | feelings toward the clan are affected (experimental, unsupported in old format and not sure if i can make work) |
-
-> Group modifiers: These will modify the cats already being gathered according to the other strings. For example, a block with `"cats_from": ["clan", "low_lawful"]` will gather all the cats in the Clan with a 0-8 lawfulness facet.  These can be combined to get cats with specific ranges of multiple facets.
-
-| modifier     |                                                |
-|--------------|------------------------------------------------|
-| low_lawful   | cats with a 0-8 lawfulness facet are affected  |
-| high_lawful  | cats with a 9-16 lawfulness facet are affected |
-| low_social   | cats with a 0-8 sociable facet are affected    |
-| high_social  | cats with a 9-16 sociable facet are affected   |
-| low_stable   | cats with a 0-8 stability facet are affected   |
-| high_stable  | cats with a 9-16 stability facet are affected  |
-| low_aggress  | cats with a 0-8 aggression facet are affected  |
-| high_aggress | cats with a 9-16 aggression facet are affected |
-
->**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions. 
-
-| bool  |                                                                                                                                              |
-|-------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| true  | Relationship effects will be applied in both directions. Equivalent to repeating the relation block with "cats_from" and "cats_to" swapped.  |
-| false | Default. Relationship effects will be applied in a single direction.                                                                         |
-
->**values: bool :** Controls which relationship values are affected.
-
-| string     |                                                                                                                                                                                                                            |
-|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "romantic" | Romantic-like is affected. Be careful with this one! There is no automatic check to ensure the cats are potential mates. See "tags" and ensure that the correct tags are added, and "cats_to" and "cats_from" are correct. |
-| "platonic" | Platonic like is effected                                                                                                                                                                                                  |
-| "dislike"  | Dislike (hate) is effected                                                                                                                                                                                                 |
-| "comfort"  | Comfort (comfortable) is effected                                                                                                                                                                                          |
-| "jealous"  | Jealousy is effected                                                                                                                                                                                                       |
-| "trust"    | Trust (reliance) is effected                                                                                                                                                                                               |
-| "respect"  | Respect (admiration) is affected.                                                                                                                                                                                          |
-
->**amount: int :** Exact amount the relationship value will be affected. Can be positive or negative. 
-
-| int           |                                                                                                                                |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------|
-| {any integer} | The amount the relationship will be affected. 5 is a normal amount, and 15 is a large amount. Try to stay within those bounds. |
-
+>Optional. Indicates effect on cat relationships. Check [Writing Relationship Changes](reference/index.md#writing-relationship-changes) for full parameters.
 ***
 
 ### outsider:dict[str, various]

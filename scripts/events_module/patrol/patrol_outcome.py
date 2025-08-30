@@ -247,7 +247,7 @@ class PatrolOutcome:
                 for group in block["log"]:
                     block["log"][group] = event_text_adjust(
                         Cat,
-                        group,
+                        block["log"][group],
                         patrol_leader=patrol.patrol_leader,
                         random_cat=patrol.random_cat,
                         stat_cat=self.stat_cat,

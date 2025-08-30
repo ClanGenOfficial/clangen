@@ -69,3 +69,85 @@ Cats receive history text to go with each scar-able injury as well as possibly-f
     "lead_death": "died from a fox bite"
 }
 ```
+
+## Writing Relationship Changes
+These blocks indicate a change in the involved cats' relationships. You can include multiple blocks within the list to change a variety of relationships.
+
+```json
+{
+    "cats_from": [],
+    "cats_to": [],
+    "mutual": false,
+    "values": [],
+    "amount": 5,
+    "log": {}
+}
+```
+
+### cats_from:list[str]
+A list of the cats whose relationship values are being changed. You are changing how these cats feel towards the cats_to group.
+
+### cats_to:list[str]
+A list of the cats who are the target of cats_from's feelings. 
+
+**Possible Abbreviations:**
+For `cats_from` and `cats_to` you may use any of cat abbreviations already utilized within the event format you are adding to, in addition to the following:
+
+| string       |                                                                            |
+|--------------|----------------------------------------------------------------------------|
+| clan         | The entire Clan's feelings are affected                                    |
+| patrol       | If this is a patrol, you can use this to affect all cats within the patrol |
+| some_clan    | This will affect a random set of cats equalling 1/8th of the Clan          |
+| low_lawful   | cats with a 0-8 lawfulness facet are affected                              |
+| high_lawful  | cats with a 9-16 lawfulness facet are affected                             |
+| low_social   | cats with a 0-8 sociable facet are affected                                |
+| high_social  | cats with a 9-16 sociable facet are affected                               |
+| low_stable   | cats with a 0-8 stability facet are affected                               |
+| high_stable  | cats with a 9-16 stability facet are affected                              |
+| low_aggress  | cats with a 0-8 aggression facet are affected                              |
+| high_aggress | cats with a 9-16 aggression facet are affected                             |
+
+### mutual:bool
+Optional. Controls if the relation effect will be applied in both directions. Defaults to False.
+
+| bool  |                                                                                                                                              |
+|-------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| true  | Relationship effects will be applied in both directions. Equivalent to repeating the relation block with "cats_from" and "cats_to" swapped.  |
+| false | Default. Relationship effects will be applied in a single direction.                                                                         |
+
+### values:list[str]
+The relationship types that will be changed.
+
+| string  | effect                                                                                                                                                                                                               |
+|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| romance | Romance is affected. Be careful with this one! There is no automatic check to ensure the cats are potential mates. See "tags" and ensure that the correct tags are added, and "cats_to" and "cats_from" are correct. |
+| like    | Like is affected                                                                                                                                                                                                     |
+| comfort | Comfort is affected                                                                                                                                                                                                  |
+| trust   | Trust is affected                                                                                                                                                                                                    |
+| respect | Respect is affected.                                                                                                                                                                                                 |
+
+### amount:int
+The amount that the chosen relationship types will change by. 8 is a low amount, 16 is a high amount.
+
+### log:list[dict[str]]
+The string that will display within the relationship logs. A string can be specified for both the `cats_from` and `cats_to` groups. 
+
+!!! tip "Writing Logs"
+    When writing a log string, you should utilize the same abbreviations that you have already used within the event format. If you indicated that the relationship change should occur across a group abbreviation, then use vague terms such as "This cat" in place of a names.
+
+```json
+"log": {
+    "cats_from": "",
+    "cats_to": ""
+}
+```
+
+**cats_from**: This string will be added to the relationship logs of all cats in cats_from.
+**cats_to**: This string will be added to the relationship logs of all cats in cats_to.
+
+!!! warning "If the change is mutual..."
+    The `cats_to` log will only be used if the relationship change is `mutual`. If the relationship change is `mutual`, but no `cats_to` log was specified, then all involved cats will use the given `cats_from` log.
+
+!!! warning "If no logs are given..."
+    If no logs are provided at all, then the event's text will be used. In the case of patrols, a default "These cats interacted" string will be used.
+
