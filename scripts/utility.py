@@ -1612,7 +1612,8 @@ def change_relationship_values(
                   " /Respect: " + str(respect) +
                   " /Comfort: " + str(comfort) +
                   " /Trust: " + str(trust)) if changed else print("No relationship change")"""
-
+            if not log:
+                log = "relationships.relationship_log"
             if log and isinstance(log, str):
                 log_text = log + i18n.t(
                     "relationships.age_postscript",

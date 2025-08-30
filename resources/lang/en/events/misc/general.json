@@ -1335,9 +1335,9 @@
                     "comfort"
                 ],
                 "amount": -5,
-                "log": [
-                    "m_c was discomforted by a reminder of r_c's unnatural powers."
-                ]
+                "log": {
+                    "cats_from": "m_c was discomforted by a reminder of r_c's unnatural powers."
+                }
             }
         ]
     },

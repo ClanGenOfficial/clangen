@@ -50,6 +50,7 @@
         "age_postscript": {
             "one": "- %{name} was %{count} moon old",
             "many": "- %{name} was %{count} moons old"
-        }
+        },
+        "relationship_log": "These cats recently interacted."
     }
 }
