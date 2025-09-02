@@ -435,7 +435,7 @@
         "id": "elder_dead_deputy",
         "thoughts": [
             "Wonders where r_c might've enjoyed walking in the territory",
-            "Feels like {PRONOUN/m_c/subect} saw the ghost of r_c sleeping somewhere in the territory",
+            "Feels like {PRONOUN/m_c/subject} saw the ghost of r_c sleeping somewhere in the territory",
             "Wonders what r_c thinks of the clan's patrols today"
         ],
         "random_status_constraint": [
