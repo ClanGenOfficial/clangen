@@ -1545,12 +1545,11 @@ def unpack_rel_block(
 
         if block.get("mutual"):
             # we'll default to the other log if no unique log was written
-            log = to_log if to_log else from_log
             change_relationship_values(
                 cats_from_ob,
                 cats_to_ob,
                 **value_changes,
-                log=log,
+                log=to_log if to_log else from_log,
             )
 
 
@@ -1625,6 +1624,20 @@ def change_relationship_values(
             if not log:
                 log = i18n.t("relationships.relationship_log")
             if log and isinstance(log, str):
+                replace_dict = {}
+                if "from_cat" in log:
+                    replace_dict["from_cat"] = (
+                        str(single_cat_from.name),
+                        choice(single_cat_from.pronouns),
+                    )
+                if "to_cat" in log:
+                    replace_dict["to_cat"] = (
+                        str(single_cat_to.name),
+                        choice(single_cat_to.pronouns),
+                    )
+                if replace_dict:
+                    log = process_text(log, replace_dict)
+
                 log_text = log + i18n.t(
                     "relationships.age_postscript",
                     name=str(single_cat_to.name),
