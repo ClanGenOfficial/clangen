@@ -129,7 +129,7 @@ The relationship types that will be changed.
 ### amount:int
 The amount that the chosen relationship types will change by. 8 is a low amount, 16 is a high amount.
 
-### log:list[dict[str]]
+### log:dict[str]
 The string that will display within the relationship logs. A string can be specified for both the `cats_from` and `cats_to` groups. 
 
 !!! tip "Writing Logs"
