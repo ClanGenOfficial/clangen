@@ -143,6 +143,7 @@ The string that will display within the relationship logs. A string can be speci
 ```
 
 **cats_from**: This string will be added to the relationship logs of all cats in cats_from.
+
 **cats_to**: This string will be added to the relationship logs of all cats in cats_to.
 
 !!! warning "If the change is mutual..."
