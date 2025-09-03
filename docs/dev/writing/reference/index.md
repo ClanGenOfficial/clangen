@@ -95,17 +95,17 @@ For `cats_from` and `cats_to` you may use any of cat abbreviations already utili
 
 | string       |                                                                            |
 |--------------|----------------------------------------------------------------------------|
-| clan         | The entire Clan's feelings are affected                                    |
 | patrol       | If this is a patrol, you can use this to affect all cats within the patrol |
-| some_clan    | This will affect a random set of cats equalling 1/8th of the Clan          |
-| low_lawful   | cats with a 0-8 lawfulness facet are affected                              |
-| high_lawful  | cats with a 9-16 lawfulness facet are affected                             |
-| low_social   | cats with a 0-8 sociable facet are affected                                |
-| high_social  | cats with a 9-16 sociable facet are affected                               |
-| low_stable   | cats with a 0-8 stability facet are affected                               |
-| high_stable  | cats with a 9-16 stability facet are affected                              |
-| low_aggress  | cats with a 0-8 aggression facet are affected                              |
-| high_aggress | cats with a 9-16 aggression facet are affected                             |
+| clan         | The entire player Clan's feelings are affected                             |
+| some_clan    | This will affect a random set of cats equalling 1/8th of the player Clan   |
+| low_lawful   | All player Clan cats with a 0-8 lawfulness facet are affected              |
+| high_lawful  | All player Clan cats with a 9-16 lawfulness facet are affected             |
+| low_social   | All player Clan cats with a 0-8 sociable facet are affected                |
+| high_social  | All player Clan cats with a 9-16 sociable facet are affected               |
+| low_stable   | All player Clan cats with a 0-8 stability facet are affected               |
+| high_stable  | All player Clan cats with a 9-16 stability facet are affected              |
+| low_aggress  | All player Clan cats with a 0-8 aggression facet are affected              |
+| high_aggress | All player Clan cats with a 9-16 aggression facet are affected             |
 
 ### mutual:bool
 Optional. Controls if the relation effect will be applied in both directions. Defaults to False.
