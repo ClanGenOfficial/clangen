@@ -133,7 +133,7 @@ The amount that the chosen relationship types will change by. 8 is a low amount,
 The string that will display within the relationship logs. A string can be specified for both the `cats_from` and `cats_to` groups. 
 
 !!! tip "Writing Logs"
-    When writing a log string, you should utilize the same abbreviations that you have already used within the event format. If you indicated that the relationship change should occur across a group abbreviation, you can use the abbreviation `from_cat` and `to_cat` to utilize names and pronouns for individual cats within those groups. For example: "to_cat was part of the patrol that invited n_c:0 to c_n." would appear in the log as "PatrolCat was part of the patrol that invited NewCat to ExampleClan."
+    When writing a log string, you can utilize the same abbreviations that you have already used within the event format. You can also use the abbreviations `from_cat` and `to_cat` to utilize names and pronouns for individual cats within their respective groups, which is handy when you've indicated a change should occur across multiple cats. For example: "to_cat was part of the patrol that invited n_c:0 to c_n." would appear in the log as "PatrolCat was part of the patrol that invited NewCat to ExampleClan."
 
 ```json
 "log": {
