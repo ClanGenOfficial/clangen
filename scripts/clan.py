@@ -15,7 +15,7 @@ from random import choice, randint
 import pygame
 import ujson
 
-from scripts.cat.cats import Cat, cat_class
+from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatRank, CatGroup
 from scripts.cat.names import names
 from scripts.cat.save_load import (
@@ -204,6 +204,9 @@ class Clan:
 
         self.instructor = Cat(
             status_dict={"rank": instructor_rank, "group_ID": CatGroup.STARCLAN_ID},
+            backstory=choice(
+                BACKSTORIES["backstory_categories"]["clan_guide_backstories"]
+            ),
         )
 
         self.instructor.dead = True
