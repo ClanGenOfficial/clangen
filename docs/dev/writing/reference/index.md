@@ -93,38 +93,38 @@ A list of the cats who are the target of cats_from's feelings.
 **Possible Abbreviations:**
 For `cats_from` and `cats_to` you may use any of cat abbreviations already utilized within the event format you are adding to, in addition to the following:
 
-| string       |                                                                            |
-|--------------|----------------------------------------------------------------------------|
-| patrol       | If this is a patrol, you can use this to affect all cats within the patrol |
-| clan         | The entire player Clan's feelings are affected                             |
-| some_clan    | This will affect a random set of cats equalling 1/8th of the player Clan   |
-| low_lawful   | All player Clan cats with a 0-8 lawfulness facet are affected              |
-| high_lawful  | All player Clan cats with a 9-16 lawfulness facet are affected             |
-| low_social   | All player Clan cats with a 0-8 sociable facet are affected                |
-| high_social  | All player Clan cats with a 9-16 sociable facet are affected               |
-| low_stable   | All player Clan cats with a 0-8 stability facet are affected               |
-| high_stable  | All player Clan cats with a 9-16 stability facet are affected              |
-| low_aggress  | All player Clan cats with a 0-8 aggression facet are affected              |
-| high_aggress | All player Clan cats with a 9-16 aggression facet are affected             |
+| string         |                                                                            |
+|----------------|----------------------------------------------------------------------------|
+| `patrol`       | If this is a patrol, you can use this to affect all cats within the patrol |
+| `clan`         | The entire player Clan's feelings are affected                             |
+| `some_clan`    | This will affect a random set of cats equalling 1/8th of the player Clan   |
+| `low_lawful`   | All player Clan cats with a 0-8 lawfulness facet are affected              |
+| `high_lawful`  | All player Clan cats with a 9-16 lawfulness facet are affected             |
+| `low_social`   | All player Clan cats with a 0-8 sociable facet are affected                |
+| `high_social`  | All player Clan cats with a 9-16 sociable facet are affected               |
+| `low_stable`   | All player Clan cats with a 0-8 stability facet are affected               |
+| `high_stable`  | All player Clan cats with a 9-16 stability facet are affected              |
+| `low_aggress`  | All player Clan cats with a 0-8 aggression facet are affected              |
+| `high_aggress` | All player Clan cats with a 9-16 aggression facet are affected             |
 
 ### mutual:bool
 Optional. Controls if the relation effect will be applied in both directions. Defaults to False.
 
-| bool  |                                                                                                                                              |
-|-------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| true  | Relationship effects will be applied in both directions. Equivalent to repeating the relation block with "cats_from" and "cats_to" swapped.  |
-| false | Default. Relationship effects will be applied in a single direction.                                                                         |
+| bool    |                                                                                                                                             |
+|---------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `true`  | Relationship effects will be applied in both directions. Equivalent to repeating the relation block with "cats_from" and "cats_to" swapped. |
+| `false` | Default. Relationship effects will be applied in a single direction.                                                                        |
 
 ### values:list[str]
 The relationship types that will be changed.
 
-| string  | effect                                                                                                                                                                                                               |
-|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| romance | Romance is affected. Be careful with this one! There is no automatic check to ensure the cats are potential mates. See "tags" and ensure that the correct tags are added, and "cats_to" and "cats_from" are correct. |
-| like    | Like is affected                                                                                                                                                                                                     |
-| comfort | Comfort is affected                                                                                                                                                                                                  |
-| trust   | Trust is affected                                                                                                                                                                                                    |
-| respect | Respect is affected.                                                                                                                                                                                                 |
+| string    | effect                                                                                                                                                                                                               |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `romance` | Romance is affected. Be careful with this one! There is no automatic check to ensure the cats are potential mates. See "tags" and ensure that the correct tags are added, and "cats_to" and "cats_from" are correct. |
+| `like`    | Like is affected                                                                                                                                                                                                     |
+| `comfort` | Comfort is affected                                                                                                                                                                                                  |
+| `trust`   | Trust is affected                                                                                                                                                                                                    |
+| `respect` | Respect is affected.                                                                                                                                                                                                 |
 
 ### amount:int
 The amount that the chosen relationship types will change by. 8 is a low amount, 16 is a high amount.
