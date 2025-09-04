@@ -36,7 +36,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_value,
-    clamp
+    clamp,
 )
 
 
@@ -1182,14 +1182,16 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         bar_width = sub_bar_width * num_sub_bars
 
         if scale_position < 0:
-            short_bar = pygame.Rect(bar_center_offset - bar_width, 0, bar_width, bar.height)
+            short_bar = pygame.Rect(
+                bar_center_offset - bar_width, 0, bar_width, bar.height
+            )
         else:
             short_bar = pygame.Rect(bar_center_offset, 0, bar_width, bar.height)
-        
+
         surf = pygame.Surface((short_bar.width, short_bar.height))
-        
+
         bar.fill((130, 117, 82))
-    
+
         bar_colour = (130, 117, 82)
         if tier.is_low_pos:
             bar_colour = (182, 174, 51)
@@ -1246,8 +1248,10 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         pointer_offset = int(scale_position / 200 * bar.width)
         # -15 so it doesn't go past the end of the bar
         pointer_final_position = (
-            clamp(pointer_offset + pointer_origin[0], 0, bar.width - ui_scale_value(15)),
-            pointer_origin[1]
+            clamp(
+                pointer_offset + pointer_origin[0], 0, bar.width - ui_scale_value(15)
+            ),
+            pointer_origin[1],
         )
         pointer_size = ui_scale_dimensions((14, 12))
 
