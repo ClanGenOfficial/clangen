@@ -1,4 +1,5 @@
 import html
+import math
 from functools import lru_cache
 from math import ceil
 from typing import (
@@ -1173,20 +1174,37 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
             image_cache.load_image(path),
             (relative_rect[2], relative_rect[3]),
         )
-        if tier.is_neutral:
-            bar.fill((130, 117, 82))
-        elif tier.is_low_pos:
-            bar.fill((182, 174, 51))
+
+        bar_center_offset = int(bar.width / 2)
+        num_sub_bars = math.ceil((abs(scale_position)) / 25)
+        sub_bar_width = bar.width // 8
+        bar_width = sub_bar_width * num_sub_bars
+
+        if scale_position < 0:
+            short_bar = pygame.Rect(bar_center_offset - bar_width, 0, bar_width, bar.height)
+        else:
+            short_bar = pygame.Rect(bar_center_offset, 0, bar_width, bar.height)
+        
+        surf = pygame.Surface((short_bar.width, short_bar.height))
+        
+        bar.fill((130, 117, 82))
+    
+        bar_colour = (130, 117, 82)
+        if tier.is_low_pos:
+            bar_colour = (182, 174, 51)
         elif tier.is_mid_pos:
-            bar.fill((150, 195, 49))
+            bar_colour = (150, 195, 49)
         elif tier.is_extreme_pos:
-            bar.fill((154, 241, 32))
+            bar_colour = (154, 241, 32)
         elif tier.is_low_neg:
-            bar.fill((186, 128, 60))
+            bar_colour = (186, 128, 60)
         elif tier.is_mid_neg:
-            bar.fill((214, 90, 53))
+            bar_colour = (214, 90, 53)
         elif tier.is_extreme_neg:
-            bar.fill((233, 38, 30))
+            bar_colour = (233, 38, 30)
+
+        surf.fill(bar_colour)
+        bar.blit(surf, (short_bar.left, short_bar.top))
 
         # bar element is the base of this entire element
         super().__init__(
@@ -1227,6 +1245,7 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         self.scale_position = ui_scale_value(int(percentage * 100))
 
         offset = ui_scale_value(14)
+        #clamp(self.scale_position, 0, max_width + offset)
         if self.scale_position > max_width + offset:
             self.scale_position = max_width + offset
         elif self.scale_position < 0:
