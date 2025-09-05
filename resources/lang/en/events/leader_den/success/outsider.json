@@ -76,7 +76,7 @@
   },
   {
     "interaction_type": "search",
-    "event_text": "m_c was found and brought back to the safety of the Clan",
+    "event_text": "m_c was found and brought back to the safety of the Clan.",
     "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
