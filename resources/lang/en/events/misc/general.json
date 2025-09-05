@@ -2568,7 +2568,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "r_c gives m_c a acc_singular to make up for a bad fight between them.",
+        "event_text": "r_c finds some acc_plural, and gives m_c one to make up for a bad fight between them.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -2622,7 +2622,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c gifts {PRONOUN/r_c/poss} beloved m_c with a acc_singular to wear in {PRONOUN/m_c/poss} pelt.",
+        "event_text": "r_c finds some acc_plural and gifts {PRONOUN/r_c/poss} beloved m_c to wear some in {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "WILD",
             "PLANT"
