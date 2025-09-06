@@ -296,7 +296,6 @@ class Relationship:
         """
         amount = self.get_value_change_amount(value_change, intensity)
 
-        buffs = []
         # only high intensity gives passive buffs
         if intensity == "high":
             passive_buff = int(
@@ -320,9 +319,8 @@ class Relationship:
                 setattr(
                     self,
                     rel_out,
-                    getattr(self, rel_out) + choice(buffs)
-                    if rel_type != rel_out
-                    else amount,
+                    getattr(self, rel_out)
+                    + (choice(buffs) if rel_type != rel_out else amount),
                 )
         else:
             setattr(self, rel_type, getattr(self, rel_type) + amount)
