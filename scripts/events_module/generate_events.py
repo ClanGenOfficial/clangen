@@ -430,8 +430,7 @@ class GenerateEvents:
                         # +1 bc primary paths should have a little bit larger influence
                         avoidance_chance += c.skills.primary.tier + 1
                     elif (
-                            c.skills.secondary
-                            and c.skills.secondary.path == SkillPath.CAMP
+                        c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP
                     ):
                         avoidance_chance += c.skills.secondary.tier
 
@@ -440,8 +439,7 @@ class GenerateEvents:
                     trigger = supply["trigger"]
                     supply_type = supply["type"]
 
-                    if supply["adjust"] in ["reduce_half", "reduce_full"] and camp_cats:
-                        if random.randint(1, avoidance_chance) != 1:
+                    if supply["adjust"] in ["reduce_half", "reduce_full"] and random.randint(1, avoidance_chance) != 1:
                             continue
 
                     if supply_type == "freshkill":
