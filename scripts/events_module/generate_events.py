@@ -5,6 +5,7 @@ import random
 import i18n
 import ujson
 
+from scripts.cat.skills import CatSkills, SkillPath
 from scripts.cat_relations.enums import RelType
 from scripts.events_module.event_filters import (
     event_for_location,
@@ -406,10 +407,39 @@ class GenerateEvents:
 
             elif event.supplies:
                 clan_size = get_living_clan_cat_count(Cat_class)
+                camp_cats = [
+                    c
+                    for c in Cat_class.all_cats_list
+                    if c.status.alive_in_player_clan
+                    and (
+                        (c.skills.primary and c.skills.primary.path == SkillPath.CAMP)
+                        or (
+                            c.skills.secondary
+                            and c.skills.secondary.path == SkillPath.CAMP
+                        )
+                    )
+                ]
                 discard = False
                 for supply in event.supplies:
                     trigger = supply["trigger"]
                     supply_type = supply["type"]
+
+                    if supply["adjust"] in ["reduce_half", "reduce_full"] and camp_cats:
+                        # each camp cat will increase the chance that significant reduction events do not occur
+                        chance = 1
+                        for c in camp_cats:
+                            # tiers are added in order to make the chance num, this means the higher tiers have greater influence
+                            if c.skills.primary.path == SkillPath.CAMP:
+                                # +1 bc primary paths should have a little bit larger influence
+                                chance += c.skills.primary.tier + 1
+                            elif (
+                                c.skills.secondary
+                                and c.skills.secondary.path == SkillPath.CAMP
+                            ):
+                                chance += c.skills.secondary.tier
+                        if random.randint(1, chance) != 1:
+                            continue
+
                     if supply_type == "freshkill":
                         if not freshkill_active:
                             continue
@@ -419,6 +449,7 @@ class GenerateEvents:
                             trigger,
                             freshkill_trigger_factor,
                             clan_size,
+                            camp_cats,
                         ):
                             discard = True
                             break
