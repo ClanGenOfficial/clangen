@@ -454,7 +454,6 @@ class GenerateEvents:
                             trigger,
                             freshkill_trigger_factor,
                             clan_size,
-                            camp_cats,
                         ):
                             discard = True
                             break
