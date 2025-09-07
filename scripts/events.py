@@ -1987,7 +1987,7 @@ class Events:
             constants.CONFIG["death_related"]["base_random_murder_chance"]
         )
         random_murder_chance -= 0.5 * (
-            (cat.personality.aggression) + (16 - cat.personality.stability)
+            cat.personality.aggression + (16 - cat.personality.stability)
         )
 
         # Check to see if random murder is triggered.
@@ -2031,6 +2031,7 @@ class Events:
             return
 
         # If random murder is not triggered, targets can only be those they have some dislike for
+        # If random murder is not triggered, targets can only be those they have extreme negativity for
         negative_relation = [
             i
             for i in relationships
@@ -2046,9 +2047,15 @@ class Events:
             kill_chance = constants.CONFIG["death_related"]["base_murder_kill_chance"]
 
             extreme_neg = len(
-                [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg()]
+                [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg]
             )
-            neg = len([l for l in chosen_target.get_reltype_tiers() if l.is_low_neg()])
+            neg = len(
+                [
+                    l
+                    for l in chosen_target.get_reltype_tiers()
+                    if (l.is_low_neg or l.is_mid_neg)
+                ]
+            )
 
             relation_modifier = (extreme_neg * 10) + (neg * 5)
 
