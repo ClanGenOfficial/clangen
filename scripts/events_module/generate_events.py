@@ -5,7 +5,7 @@ import random
 import i18n
 import ujson
 
-from scripts.cat.skills import CatSkills, SkillPath
+from scripts.cat.skills import SkillPath
 from scripts.cat_relations.enums import RelType
 from scripts.events_module.event_filters import (
     event_for_location,
