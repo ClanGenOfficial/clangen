@@ -234,11 +234,13 @@ class Clan:
 
         # give thoughts,actions and relationships to cats
         for cat_id in Cat.all_cats:
-            Cat.all_cats.get(cat_id).init_all_relationships()
-            Cat.all_cats.get(cat_id).backstory = "clan_founder"
-            if Cat.all_cats.get(cat_id).status.rank == CatRank.APPRENTICE:
-                Cat.all_cats.get(cat_id).rank_change(CatRank.APPRENTICE)
-            Cat.all_cats.get(cat_id).thoughts()
+            the_cat = Cat.all_cats.get(cat_id)
+            the_cat.init_all_relationships()
+            if the_cat != self.instructor:
+                the_cat.backstory = "clan_founder"
+            if the_cat.status.rank == CatRank.APPRENTICE:
+                the_cat.rank_change(CatRank.APPRENTICE)
+            the_cat.thoughts()
 
         save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
