@@ -498,22 +498,35 @@ class Cat:
                     f"WARNING: Tried to kill {self.name} ID: {self.ID} but this cat is already dead!"
                 )
                 return
-            
-            if game.clan.instructor.status.group == CatGroup.STARCLAN:
+
+            # kits are auto-accepted
+            if self.age in (CatAge.KITTEN, CatAge.NEWBORN):
+                self.history.add_afterlife_acceptance(
+                    game.clan.instructor.status.group,
+                    is_kit=True,
+                )
+            elif game.clan.instructor.status.group == CatGroup.STARCLAN:
                 # starclan does not like this cat
                 if self.starclan_affinity < 0:
                     # might send them to the dark forest instead
                     if random() < abs(self.starclan_affinity / 100):
+                        self.history.add_afterlife_acceptance("starclan", rejected=True)
                         self.status.send_to_afterlife(CatGroup.DARK_FOREST_ID)
                         return
+                    self.history.add_afterlife_acceptance("starclan", contentious=True)
+                else:
+                    self.history.add_afterlife_acceptance("starclan")
             elif game.clan.instructor.status.group == CatGroup.DARK_FOREST:
                 # dark forest does not like this cat
                 if self.dark_forest_affinity < 0:
                     # might send them to starclan instead
                     if random() < abs(self.dark_forest_affinity / 100):
+                        self.history.add_afterlife_acceptance("dark_forest", rejected=True)
                         self.status.send_to_afterlife(CatGroup.STARCLAN_ID)
                         return
-            # nevermind, they're cool
+                    self.history.add_afterlife_acceptance("dark_forest", contentious=True)
+                else:
+                    self.history.add_afterlife_acceptance("dark_forest")
             self.status.send_to_afterlife()
 
     @property
