@@ -249,8 +249,8 @@ class Patrol:
             else:
                 self.patrol_leader = choice(self.patrol_cats)
 
-        if clan.all_clans and len(clan.all_clans) > 0:
-            self.other_clan = choice(clan.all_clans)
+        if clan.all_other_clans and len(clan.all_other_clans) > 0:
+            self.other_clan = choice(clan.all_other_clans)
         else:
             self.other_clan = None
 

@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "event_id": "wtlnd_misc_any_stingingnettleboop",
+    "location": ["wetlands"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "Whilst m_c was poking around in the undergrowth, {PRONOUN/m_c/subject} ran nose first into a stinging nettle plant - Ouch!",
+    "m_c": {
+      "status": ["apprentice", "warrior", "elder", "kitten"]
+    }
+  },
+  {
+    "event_id": "wtlnd_misc_multiprophecymedcatprophet1",
+    "location": ["wetlands"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "m_c keeps seeing prophecy_list_sight/m_c in the water underpaw... {PRONOUN/m_c/subject/CAP} continues wading forward with {PRONOUN/m_c/poss} mission, debating the vision.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"],
+      "skill": ["PROPHET,2"]
+    }
+  },
+  {
+    "event_id": "wtlnd_misc_multiomenmedcatomen1",
+    "location": ["wetlands"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "The things m_c saw in the ripples of the marsh today, omen_list_sight/m_c... {PRONOUN/m_c/subject/CAP} {VERB/m_c/consider/considers} what these omens may foretell.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"],
+      "skill": ["OMEN,2"]
+    }
+  },
+  {
+    "event_id": "wtlnd_misc_multiage_blueheron",
+    "location": ["wetlands"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 10,
+    "event_text": "m_c took a walk out in the territory and saw a large blue heron fly close overhead! How lucky!",
+    "m_c": {
+      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+    }
+  }
+]
