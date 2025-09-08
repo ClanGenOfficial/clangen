@@ -131,9 +131,7 @@ class Events:
         # Calling of "one_moon" functions.
         other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
         for cat in Cat.all_cats_list.copy():
-            if cat.status.alive_in_player_clan or (
-                cat.status.group and cat.status.group.is_afterlife()
-            ):
+            if cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
                 self.one_moon_cat(cat)
             elif not cat.status.group or cat.status.is_other_clancat:
                 self.one_moon_outside_cat(cat, other_clan_cats)
@@ -418,7 +416,7 @@ class Events:
                     outsider_cat.die()
 
                 elif info_dict["interaction_type"] == "drive":
-                    outsider_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN)
+                    outsider_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN_ID)
 
                 elif info_dict["interaction_type"] in ("invite", "search"):
                     # ADD TO CLAN AND CHECK FOR KITS
@@ -440,7 +438,7 @@ class Events:
                         if (
                             CatStanding.EXILED
                             not in invited_cat.status.get_standing_with_group(
-                                CatGroup.PLAYER_CLAN
+                                CatGroup.PLAYER_CLAN_ID
                             )
                         ):
                             # reset to make sure backstory makes sense
@@ -657,7 +655,9 @@ class Events:
             if get_clan_setting("sabotage other clans"):
                 amount = amount * -1
             for name in game.clan.clans_in_focus:
-                clan = [clan for clan in game.clan.all_clans if clan.name == name][0]
+                clan = [
+                    clan for clan in game.clan.all_other_clans if clan.name == name
+                ][0]
                 change_clan_relations(clan, amount)
             focus_text = None
 
@@ -737,9 +737,9 @@ class Events:
             # if it is raiding, lower the relation to other clans
             if get_clan_setting("raid other clans"):
                 for name in game.clan.clans_in_focus:
-                    clan = [clan for clan in game.clan.all_clans if clan.name == name][
-                        0
-                    ]
+                    clan = [
+                        clan for clan in game.clan.all_other_clans if clan.name == name
+                    ][0]
                     amount = -constants.CONFIG["focus"]["raid other clans"]["relation"]
                     change_clan_relations(clan, amount)
 
@@ -778,7 +778,7 @@ class Events:
             eligible_cats = [
                 cat
                 for cat in Cat.all_cats.values()
-                if not cat.dead and cat.status.is_lost(CatGroup.PLAYER_CLAN)
+                if not cat.dead and cat.status.is_lost(CatGroup.PLAYER_CLAN_ID)
             ]
 
             if not eligible_cats:
@@ -1039,7 +1039,7 @@ class Events:
         interactions with other clans
         """
         # if there are somehow no other clans, don't proceed
-        if not game.clan.all_clans:
+        if not game.clan.all_other_clans:
             return
 
         # Prevent wars from starting super early in the game.
@@ -1059,7 +1059,7 @@ class Events:
         enemy_clan = None
         if game.clan.war["at_war"]:
             # Grab the enemy clan object
-            for other_clan in game.clan.all_clans:
+            for other_clan in game.clan.all_other_clans:
                 if other_clan.name == game.clan.war["enemy"]:
                     enemy_clan = other_clan
                     break
@@ -1094,7 +1094,7 @@ class Events:
                     enemy_clan.relations -= 1
 
         else:  # try to start a war if no war in progress
-            for other_clan in game.clan.all_clans:
+            for other_clan in game.clan.all_other_clans:
                 threshold = 5
                 if other_clan.temperament == "bloodthirsty":
                     threshold = 10
@@ -1987,7 +1987,7 @@ class Events:
             constants.CONFIG["death_related"]["base_random_murder_chance"]
         )
         random_murder_chance -= 0.5 * (
-            (cat.personality.aggression) + (16 - cat.personality.stability)
+            cat.personality.aggression + (16 - cat.personality.stability)
         )
 
         # Check to see if random murder is triggered.
@@ -1996,7 +1996,7 @@ class Events:
             targets = [
                 i
                 for i in relationships
-                if i.total_relationship_value() < 0
+                if i.total_relationship_value < 0
                 and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
             ]
             if not targets:
@@ -2031,6 +2031,7 @@ class Events:
             return
 
         # If random murder is not triggered, targets can only be those they have some dislike for
+        # If random murder is not triggered, targets can only be those they have extreme negativity for
         negative_relation = [
             i
             for i in relationships
@@ -2046,9 +2047,15 @@ class Events:
             kill_chance = constants.CONFIG["death_related"]["base_murder_kill_chance"]
 
             extreme_neg = len(
-                [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg()]
+                [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg]
             )
-            neg = len([l for l in chosen_target.get_reltype_tiers() if l.is_low_neg()])
+            neg = len(
+                [
+                    l
+                    for l in chosen_target.get_reltype_tiers()
+                    if (l.is_low_neg or l.is_mid_neg)
+                ]
+            )
 
             relation_modifier = (extreme_neg * 10) + (neg * 5)
 

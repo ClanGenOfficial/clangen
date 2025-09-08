@@ -30,7 +30,7 @@ class OutsiderEvents:
         # killing outside cats
         if random.getrandbits(6) == 1 and not cat.dead:
             death_history = "m_c died outside of the Clan."
-            if cat.status.is_exiled(CatGroup.PLAYER_CLAN):
+            if cat.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
                 text = f"Rumors reach your Clan that the exiled {cat.name} has died recently."
             elif cat.status.is_lost():
                 text = (

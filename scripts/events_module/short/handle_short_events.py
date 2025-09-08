@@ -127,7 +127,7 @@ class HandleShortEvents:
             self.sub_types.append("war")
         else:
             self.other_clan = choice(
-                game.clan.all_clans if game.clan.all_clans else None
+                game.clan.all_other_clans if game.clan.all_other_clans else None
             )
             self.other_clan_name = f"{self.other_clan.name}Clan"
 
