@@ -1,1 +1,70 @@
-[]
+[
+  {
+        "event_id": "wtlnd_injury_sore_anymultiage1",
+        "location": ["wetlands"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c woke up sore after walking through an especially muddy and dense part of the territory.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["sore"]
+            }
+        ]
+    },
+  {
+        "event_id": "wtlnd_injury_poisoned_app1",
+        "location": ["wetlands"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c ate some red berries out in the territory and was rushed back to camp by r_c.",
+        "m_c": {
+            "age": ["adolescent"],
+            "not_skill": ["HEALER,1"]
+        },
+        "r_c": {
+          "age": ["young adult", "adult", "senior adult"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["poisoned"]
+            }
+        ]
+    },
+  {
+        "event_id": "wtlnd_injury_smallcut_anymultiage1",
+        "location": ["wetlands"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c nicked {PRONOUN/m_c/self} on the low branches of a spiky tree.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["small cut"]
+            }
+        ]
+    },
+  {
+        "event_id": "wtlnd_injury_snakebite_anymultiage1",
+        "location": ["wetlands"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c was bitten by a hidden snake whilst hunting in the marsh.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["snake bite"]
+            }
+        ]
+    }
+]

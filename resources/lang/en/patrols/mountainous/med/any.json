@@ -222,7 +222,7 @@
         },
         "weight": 20,
         "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of {PRONOUN/app1/poss} mentor. The wind is whistling through the hills as {PRONOUN/app1/subject} {VERB/app1/pad/pads} along.",
-        "decline_text": "Before they get more than a few pawsteps away, {PRONOUN/app1/poss} mentor calls them back. Apparently, something more pressing has come up.",
+        "decline_text": "Before {PRONOUN/app1/subject} {VERB/app1/get/gets} more than a few pawsteps away, {PRONOUN/app1/poss} mentor calls {PRONOUN/app1/object} back. Apparently, something more pressing has come up.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
