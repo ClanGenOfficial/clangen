@@ -3591,12 +3591,10 @@
     {
         "id": "ambitious_apprentices",
         "thoughts": [
-            "Has been asking {PRONOUN/m_c/poss} mentor for more training",
             "Is feeling proud of {PRONOUN/m_c/self}",
             "Makes sure to wake up early to train",
             "Daydreams about a Clan celebration in {PRONOUN/m_c/poss} honor",
             "Asks the Clan leader how {PRONOUN/m_c/subject} can help out around camp",
-            "Has been asking {PRONOUN/m_c/poss} mentor for more training",
             "Tries to put on a brave face for {PRONOUN/m_c/poss} fellow apprentices",
             "Seems to be ordering {PRONOUN/m_c/poss} fellow apprentices around",
             "Hopes to graduate earlier than expected",
@@ -3611,13 +3609,27 @@
             "ambitious"
         ]
     },
+	{
+        "id": "ambitious_apprentices_to_mentor",
+        "thoughts": [
+            "Has been asking {PRONOUN/m_c/poss} mentor for more training"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
     {
         "id": "bloodthirsty_apprentices",
         "thoughts": [
             "Starts a fight with another apprentice",
-            "Unnerves {PRONOUN/m_c/poss} mentor with {PRONOUN/m_c/poss} intensity during battle training",
-            "Tries to sneak out of camp to fight a badger but is caught by {PRONOUN/m_c/poss} mentor",
-            "Tries to sneak out of camp to fight a fox but is caught by {PRONOUN/m_c/poss} mentor",
             "Can't convince the other apprentices to spar with {PRONOUN/m_c/object}"
         ],
         "main_status_constraint": [
@@ -3629,13 +3641,30 @@
             "bloodthirsty"
         ]
     },
+	{
+        "id": "bloodthirsty_apprentices_to_mentor",
+        "thoughts": [
+            "Unnerves {PRONOUN/m_c/poss} mentor with {PRONOUN/m_c/poss} intensity during battle training",
+            "Tries to sneak out of camp to fight a badger but is caught by {PRONOUN/m_c/poss} mentor",
+            "Tries to sneak out of camp to fight a fox but is caught by {PRONOUN/m_c/poss} mentor"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
     {
         "id": "bold_apprentices",
         "thoughts": [
             "Winked cheekily at another apprentice",
-            "Criticizes {PRONOUN/m_c/poss} mentor",
             "Demands to lead a patrol",
-            "Tells {PRONOUN/m_c/poss} mentor to challenge {PRONOUN/m_c/object}",
             "Declares {PRONOUN/m_c/poss} intentions for the future",
             "Decides on a full name for {PRONOUN/m_c/self}"
         ],
@@ -3646,6 +3675,24 @@
         ],
         "main_trait_constraint": [
             "bold"
+        ]
+    },
+	{
+        "id": "bold_apprentices_to_mentor",
+        "thoughts": [
+            "Criticizes {PRONOUN/m_c/poss} mentor",
+            "Tells {PRONOUN/m_c/poss} mentor to challenge {PRONOUN/m_c/object}"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -3701,7 +3748,6 @@
         "thoughts": [
             "Is asking if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} more training",
             "Never forgets to remind {PRONOUN/m_c/poss} Clanmates of things they might have forgotten about",
-            "Double-checks with {PRONOUN/m_c/poss} mentor about training",
             "Goes easy on {PRONOUN/m_c/poss} partner when sparring"
         ],
         "main_status_constraint": [
@@ -3711,6 +3757,23 @@
         ],
         "main_trait_constraint": [
             "careful"
+        ]
+    },
+	{
+        "id": "careful_apprentices_to_mentor",
+        "thoughts": [
+            "Double-checks with {PRONOUN/m_c/poss} mentor about training"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -3785,8 +3848,6 @@
     {
         "id": "compassionate_apprentices",
         "thoughts": [
-            "Is thinking of giving {PRONOUN/m_c/poss} mentor a gift for {PRONOUN/m_c/poss} hard work",
-            "Made a suggestion to {PRONOUN/m_c/poss} mentor",
             "Is doing extra apprentice tasks around camp, to help lighten the load",
             "Hopes the skills {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} learning will help others"
         ],
@@ -3797,6 +3858,24 @@
         ],
         "main_trait_constraint": [
             "compassionate"
+        ]
+    },
+	{
+        "id": "compassionate_apprentices_to_mentor",
+        "thoughts": [
+            "Is thinking of giving {PRONOUN/m_c/poss} mentor a gift for {PRONOUN/m_c/poss} hard work",
+            "Made a suggestion to {PRONOUN/m_c/poss} mentor"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -3830,7 +3909,6 @@
         "thoughts": [
             "Is itching to go and train",
             "Explores beyond Clan territory alone",
-            "Is being scolded by {PRONOUN/m_c/poss} mentor for reckless behavior while training",
             "Was chastised yesterday for sticking {PRONOUN/m_c/poss} head in an unknown burrow",
             "Climbs a tree and gets stuck",
             "Is confined to camp again today",
@@ -3845,18 +3923,48 @@
             "daring"
         ]
     },
-    {
+	{
+        "id": "daring_apprentices_to_mentor",
+        "thoughts": [
+            "Is being scolded by {PRONOUN/m_c/poss} mentor for reckless behavior while training"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "daring"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+	{
         "id": "insecure_apprentices",
         "thoughts": [
-            "Doesn't think that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been performing up to {PRONOUN/m_c/poss} mentor's standards lately",
             "Thinks that today is going to be a better day than the last",
             "Is making {PRONOUN/m_c/poss} friends laugh at {PRONOUN/m_c/poss} own expense",
-            "Finds that {PRONOUN/m_c/subject} {VERB/m_c/are/is} really good at making {PRONOUN/m_c/poss} mentor laugh",
             "Is complimenting another apprentice on their hunting crouch",
             "Is unsure that this is what {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to do",
             "Trains alone long after {PRONOUN/m_c/poss} Clanmates fall asleep",
             "Gets r_c to quiz {PRONOUN/m_c/object} before {PRONOUN/m_c/poss} assessment",
-            "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} made a mistake",
+            "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} made a mistake"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
+        "id": "insecure_apprentices_to_mentor",
+        "thoughts": [
+            "Doesn't think that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been performing up to {PRONOUN/m_c/poss} mentor's standards lately",
+            "Finds that {PRONOUN/m_c/subject} {VERB/m_c/are/is} really good at making {PRONOUN/m_c/poss} mentor laugh",
             "Remembers giving the wrong answer to {PRONOUN/m_c/poss} mentor's question"
         ],
         "main_status_constraint": [
@@ -3866,6 +3974,9 @@
         ],
         "main_trait_constraint": [
             "insecure"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -3886,7 +3997,6 @@
     {
         "id": "lonesome_apprentices",
         "thoughts": [
-            "Doesn't think that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been performing up to {PRONOUN/m_c/poss} mentor's standards lately",
             "Is feeling cramped in the apprentices' den",
             "Managed to perform a difficult task on {PRONOUN/m_c/poss} own",
             "Feels awkward around {PRONOUN/m_c/poss} peers",
@@ -3902,6 +4012,23 @@
         ],
         "main_trait_constraint": [
             "lonesome"
+        ]
+    },
+	{
+        "id": "lonesome_apprentices_to_mentor",
+        "thoughts": [
+            "Doesn't think that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been performing up to {PRONOUN/m_c/poss} mentor's standards lately"
+		],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "lonesome"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -3932,10 +4059,7 @@
     {
         "id": "loyal_apprentices",
         "thoughts": [
-            "Is listening to {PRONOUN/m_c/poss} mentor intently",
-            "Proclaimed {PRONOUN/m_c/poss} unwavering loyalty to {PRONOUN/m_c/poss} mentor",
             "Takes pride in learning to serve c_n",
-            "Won't let {PRONOUN/m_c/poss} mentor down",
             "Backs up r_c in a scary situation",
             "Wants to hurry up and graduate to better serve c_n"
         ],
@@ -3948,6 +4072,25 @@
             "loyal"
         ]
     },
+	{
+        "id": "loyal_apprentices_to_mentor",
+        "thoughts": [
+            "Is listening to {PRONOUN/m_c/poss} mentor intently",
+            "Proclaimed {PRONOUN/m_c/poss} unwavering loyalty to {PRONOUN/m_c/poss} mentor",
+            "Won't let {PRONOUN/m_c/poss} mentor down"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "loyal"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
     {
         "id": "nervous_apprentices",
         "thoughts": [
@@ -3956,7 +4099,6 @@
             "Hopes {PRONOUN/m_c/subject} won't be a disappointment to {PRONOUN/m_c/poss} Clan",
             "Hopes peace will endure between the Clans",
             "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} back in the nursery",
-            "Agrees to {PRONOUN/m_c/poss} mentor's orders, despite {PRONOUN/m_c/poss} own doubts",
             "Overcomes a difficult task, despite feeling nervous",
             "Is spooked by the beady eyes of prey during a hunting patrol",
             "Was startled by a squirrel while training",
@@ -3974,11 +4116,26 @@
             "nervous"
         ]
     },
+	{
+        "id": "nervous_apprentices_to_mentor",
+        "thoughts": [
+            "Agrees to {PRONOUN/m_c/poss} mentor's orders, despite {PRONOUN/m_c/poss} own doubts"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
     {
         "id": "playful_apprentices",
         "thoughts": [
-            "Won't stop making funny faces when {PRONOUN/m_c/poss} mentor's back is turned",
-            "Annoyed {PRONOUN/m_c/poss} mentor by accident the other day",
             "Successfully lightened a dreary mood while training",
             "Entertains r_c with {PRONOUN/m_c/poss} antics in training",
             "Goofs off during training",
@@ -3994,19 +4151,34 @@
             "playful"
         ]
     },
+	{
+        "id": "playful_apprentices_to_mentor",
+        "thoughts": [
+            "Won't stop making funny faces when {PRONOUN/m_c/poss} mentor's back is turned",
+            "Annoyed {PRONOUN/m_c/poss} mentor by accident the other day"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "playful"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
     {
         "id": "responsible_apprentices",
         "thoughts": [
-            "Is licking {PRONOUN/m_c/poss} chest in embarrassment after being praised by {PRONOUN/m_c/poss} mentor",
             "Gently reminds a Clanmate of something they forgot to do",
             "Never forgets to thank StarClan for the fresh-kill",
             "Volunteers to watch the kits",
             "Offers to help everyone {PRONOUN/m_c/subject} {VERB/m_c/come/comes} across",
-            "Is asking {PRONOUN/m_c/poss} mentor what {PRONOUN/m_c/subject} can do to be helpful around camp today",
             "Is the first to offer to freshen the elders' bedding",
             "Doesn't complain about {PRONOUN/m_c/poss} chores",
-            "Shows up early to train",
-            "Is awake and bright-eyed when {PRONOUN/m_c/poss} mentor comes looking for {PRONOUN/m_c/object}"
+            "Shows up early to train"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -4017,10 +4189,28 @@
             "responsible"
         ]
     },
+	{
+        "id": "responsible_apprentices_to_mentor",
+        "thoughts": [
+            "Is licking {PRONOUN/m_c/poss} chest in embarrassment after being praised by {PRONOUN/m_c/poss} mentor",
+            "Is asking {PRONOUN/m_c/poss} mentor what {PRONOUN/m_c/subject} can do to be helpful around camp today",
+            "Is awake and bright-eyed when {PRONOUN/m_c/poss} mentor comes looking for {PRONOUN/m_c/object}"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "responsible"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
     {
         "id": "righteous_apprentices",
         "thoughts": [
-            "Refused to follow {PRONOUN/m_c/poss} mentor's recent orders due to {PRONOUN/m_c/poss} own morals",
             "Dutifully follows the Warrior Code",
             "Recites the Warrior Code to {PRONOUN/m_c/self} before bed"
         ],
@@ -4033,12 +4223,42 @@
             "righteous"
         ]
     },
+	{
+        "id": "righteous_apprentices_to_mentor",
+        "thoughts": [
+            "Refused to follow {PRONOUN/m_c/poss} mentor's recent orders due to {PRONOUN/m_c/poss} own morals"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "righteous"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
     {
         "id": "shameless_apprentices",
         "thoughts": [
             "Was found napping in the warriors' den!",
+            "Sleeps in 'til sun-high"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "shameless"
+        ]
+    },
+	{
+        "id": "shameless_apprentices_to_mentor",
+        "thoughts": [
             "Ignores {PRONOUN/m_c/poss} mentor",
-            "Sleeps in 'til sun-high",
             "Contradicts {PRONOUN/m_c/poss} mentor",
             "Won't back down from an argument with {PRONOUN/m_c/poss} mentor",
             "Gives an incorrect answer in training, just to annoy {PRONOUN/m_c/poss} mentor",
@@ -4051,6 +4271,9 @@
         ],
         "main_trait_constraint": [
             "shameless"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -4062,7 +4285,6 @@
             "Is wondering if {PRONOUN/m_c/subject} can talk {PRONOUN/m_c/poss} way out of morning duties",
             "Was assigned to the dawn patrol but is nowhere to be found",
             "Joined the Gathering patrol despite not being officially included",
-            "Comes back to camp without {PRONOUN/m_c/poss} mentor",
             "Explains that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} officially exempt from chores for a moon"
         ],
         "main_status_constraint": [
@@ -4074,16 +4296,29 @@
             "sneaky"
         ]
     },
-    {
+	{
+        "id": "sneaky_apprentices_to_mentor",
+        "thoughts": [
+            "Comes back to camp without {PRONOUN/m_c/poss} mentor"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "sneaky"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+	{
         "id": "strange_apprentices",
         "thoughts": [
-            "Decides to stare at {PRONOUN/m_c/poss} mentor without blinking",
             "Has found an unorthodox way out of camp",
-            "Is asking {PRONOUN/m_c/poss} mentor why things are the way they are",
-            "Asks {PRONOUN/m_c/poss} mentor why snakes don't have legs",
             "Wonders how foxes train apprentices",
             "Pretends to be a trout during training",
-            "Doesn't answer {PRONOUN/m_c/poss} mentor's questions out of respect for the grass",
             "Winks with both eyes",
             "Asks the crescent moon for hunting tips"
         ],
@@ -4094,6 +4329,26 @@
         ],
         "main_trait_constraint": [
             "strange"
+        ]
+	},
+    {
+        "id": "strange_apprentices_to_mentor",
+        "thoughts": [
+            "Decides to stare at {PRONOUN/m_c/poss} mentor without blinking",
+            "Is asking {PRONOUN/m_c/poss} mentor why things are the way they are",
+            "Asks {PRONOUN/m_c/poss} mentor why snakes don't have legs",
+            "Doesn't answer {PRONOUN/m_c/poss} mentor's questions out of respect for the grass"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "strange"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
         ]
     },
     {
@@ -4112,11 +4367,27 @@
             "strict"
         ]
     },
-    {
+	{
         "id": "troublesome_apprentices",
         "thoughts": [
+            "Got in trouble for shirking {PRONOUN/m_c/poss} training the other day"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
+        ]
+    },
+    {
+        "id": "troublesome_apprentices_to_mentor",
+        "thoughts": [
             "Is ignoring {PRONOUN/m_c/poss} mentor's orders",
-            "Got in trouble for shirking {PRONOUN/m_c/poss} training the other day",
             "Is talking back to {PRONOUN/m_c/poss} mentor",
             "Was told off by {PRONOUN/m_c/poss} mentor for not taking {PRONOUN/m_c/poss} training seriously enough",
             "Spreads rumors about {PRONOUN/m_c/poss} mentor",
@@ -4129,6 +4400,9 @@
         ],
         "main_trait_constraint": [
             "troublesome"
+        ],
+		"relationship_constraint": [
+            "app/mentor"
         ]
     },
     {

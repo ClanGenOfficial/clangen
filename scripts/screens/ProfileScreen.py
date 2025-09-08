@@ -311,7 +311,7 @@ class ProfileScreen(Screens):
                         # DF -> SC
                         if self.the_cat.status.group == CatGroup.DARK_FOREST:
                             self.the_cat.status.add_to_group(
-                                new_group=CatGroup.STARCLAN
+                                new_group_ID=CatGroup.STARCLAN_ID
                             )
                             self.the_cat.thought = i18n.t(
                                 "screens.profile.guide_thought_sc",
@@ -320,7 +320,7 @@ class ProfileScreen(Screens):
                         # SC -> DF
                         else:
                             self.the_cat.status.add_to_group(
-                                new_group=CatGroup.DARK_FOREST
+                                new_group_ID=CatGroup.DARK_FOREST_ID
                             )
 
                             self.the_cat.thought = i18n.t(
@@ -332,13 +332,13 @@ class ProfileScreen(Screens):
                         # DF -> UR
                         if self.the_cat.status.group == CatGroup.DARK_FOREST:
                             self.the_cat.status.add_to_group(
-                                new_group=CatGroup.UNKNOWN_RESIDENCE
+                                new_group_ID=CatGroup.UNKNOWN_RESIDENCE_ID
                             )
                             self.the_cat.thought = "Is surprised to find themself walking among a foreign land"
                         # UR -> SC
                         elif self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                             self.the_cat.status.add_to_group(
-                                new_group=CatGroup.STARCLAN
+                                new_group_ID=CatGroup.STARCLAN_ID
                             )
                             self.the_cat.thought = (
                                 "Is relieved to once again hunt in StarClan"
@@ -346,7 +346,7 @@ class ProfileScreen(Screens):
                         # SC -> DF
                         else:
                             self.the_cat.status.add_to_group(
-                                new_group=CatGroup.DARK_FOREST
+                                new_group_ID=CatGroup.DARK_FOREST_ID
                             )
                             self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
                         self.the_cat.pelt.rebuild_sprite = True
@@ -818,7 +818,7 @@ class ProfileScreen(Screens):
                         former_indicate = "general.mate_dead"
 
                     mate_names.append(f"{str(mate_ob.name)} {i18n.t(former_indicate)}")
-                elif mate_ob.status.group != self.the_cat.status.group:
+                elif mate_ob.status.group_ID != self.the_cat.status.group_ID:
                     mate_names.append(
                         f"{str(mate_ob.name)} {i18n.t('general.mate_away')}"
                     )
@@ -853,14 +853,14 @@ class ProfileScreen(Screens):
         # if cat is dead, we find their old clan name
         if the_cat.dead:
             old_clan = the_cat.status.get_last_living_group()
-            if old_clan == CatGroup.PLAYER_CLAN:
+            if old_clan == CatGroup.PLAYER_CLAN_ID:
                 name = game.clan.name
             # if they had an old clan that wasn't the player's, find it!
             elif old_clan:
                 name = [
                     c
-                    for c in game.clan.all_clans
-                    if c.enum == the_cat.status.get_last_living_group()
+                    for c in game.clan.all_other_clans
+                    if c.group_ID == the_cat.status.get_last_living_group()
                 ][0].name
             # otherwise they had no clan
             else:
@@ -868,9 +868,11 @@ class ProfileScreen(Screens):
 
         # if cat is alive and in another clan, find that clan's name
         elif the_cat.status.is_other_clancat:
-            name = [c for c in game.clan.all_clans if c.enum == the_cat.status.group][
-                0
-            ].name
+            name = [
+                c
+                for c in game.clan.all_other_clans
+                if c.group_ID == the_cat.status.group_ID
+            ][0].name
         # otherwise, assume the cat takes the player clan's name
         # it's okay if this is an outsider, if they don't actually have a group to refer to then they won't use this variable
         else:
@@ -880,8 +882,8 @@ class ProfileScreen(Screens):
             if not name:
                 name = [
                     c
-                    for c in game.clan.all_clans
-                    if c.enum == the_cat.status.get_last_living_group()
+                    for c in game.clan.all_other_clans
+                    if c.group_ID == the_cat.status.get_last_living_group()
                 ]
             if not name:
                 name = game.clan.name
@@ -1310,11 +1312,14 @@ class ProfileScreen(Screens):
                 "cat.backstories.cats_outside_the_clan",
                 status=i18n.t(f"general.{self.the_cat.status.rank}", count=1),
             )
-        elif self.the_cat.status.is_other_clancat:
+        elif (
+            self.the_cat.status.is_other_clancat
+            and self.the_cat != game.clan.instructor
+        ):
             clan = [
                 clan
-                for clan in game.clan.all_clans
-                if clan.enum == self.the_cat.status.group
+                for clan in game.clan.all_other_clans
+                if clan.group_ID == self.the_cat.status.group
             ]
             bs_blurb = i18n.t("cat.backstories.other_clan_cat", clan=clan[0])
         if bs_blurb is not None:
