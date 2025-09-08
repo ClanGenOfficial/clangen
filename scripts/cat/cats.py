@@ -3305,6 +3305,8 @@ class Cat:
                 ),
                 "birth_cooldown": self.birth_cooldown,
                 "status": self.status.get_status_dict(),
+                "dark_forest_affinity": self.dark_forest_affinity,
+                "starclan_affinity": self.starclan_affinity,
                 "backstory": self.backstory or None,
                 "moons": self.moons,
                 "trait": self.personality.trait,
