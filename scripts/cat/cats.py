@@ -1137,6 +1137,11 @@ class Cat:
                         else []
                     ),
                     murder=history_data["murder"] if "murder" in history_data else {},
+                    afterlife_acceptance=(
+                        history_data["afterlife_acceptance"]
+                        if "afterlife_acceptance" in history_data
+                        else None
+                    ),
                     cat=self,
                 )
         except Exception:

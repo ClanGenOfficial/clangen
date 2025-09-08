@@ -1,6 +1,7 @@
 import random
 
 import i18n
+from typing import Literal
 
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import game
@@ -23,6 +24,7 @@ class History:
         scar_events=None,
         murder=None,
         cat=None,
+        afterlife_acceptance=None,
     ):
         self.beginning = beginning if beginning else {}
         self.mentor_influence = (
@@ -35,6 +37,7 @@ class History:
         self.scar_events = scar_events if scar_events else []
         self.murder = murder if murder else {}
         self.cat = cat
+        self.afterlife_acceptance = afterlife_acceptance if afterlife_acceptance else None
 
         # fix 'old' history save bugs
         if self.mentor_influence["trait"] is None:
@@ -149,6 +152,7 @@ class History:
             "mentor_influence": self.mentor_influence,
             "app_ceremony": self.app_ceremony,
             "lead_ceremony": self.lead_ceremony,
+            "afterlife_acceptance": self.afterlife_acceptance,
             "possible_history": self.possible_history,
             "died_by": self.died_by,
             "scar_events": self.scar_events,
@@ -409,6 +413,107 @@ class History:
         self.died_by.append(
             {"involved": other_cat, "text": death_text, "moon": game.clan.age}
         )
+
+    def add_afterlife_acceptance(self, afterlife: Literal["starclan", "dark_forest"], is_kit=False, contentious=False, rejected=False):
+        """
+        Adds afterlife acceptance text to the cat's history. If using an optional parameter, should set only one out of
+        `is_kit`, `contentious`, and `rejected` to `True`, since the rest will be ignored.
+
+        :param afterlife: The afterlife of the guide.
+        :param is_kit: `True` if the cat is a kit. Gives kinder acceptance text referring to kits.
+        :param contentious: `True` if the acceptance is supposed to be contentious. Afterlife will seem iffy about the cat.
+        :param rejected: `True` if cat is rejected from `afterlife`. They will go to the opposite one instead.
+        """
+
+        starclan_default_text = [
+            "m_c breathed in deep, {PRONOUN/m_c/poss} spirit settled as {PRONOUN/m_c/subject} finally joined the home waiting for {PRONOUN/m_c/object} in the stars.",
+            "The life m_c lived led to the stars, inevitably.",
+            "m_c joined the ancestors of c_n in the stars, ready to watch over those who lived on.",
+            "There was little fuss or debate. m_c's place in the stars was assured.",
+            "At the close of m_c's life, a new star burned in the night sky and a new spirit padded in StarClan.",
+            "Welcomed into StarClan, m_c took {PRONOUN/m_c/poss} place among the ancestors of the Clans.",
+            "m_c's spirits was bathed in starlight, gently cradled away from the struggles of the living and into the resting place of the spirits.",
+            "StarClan leapt to offer m_c a place among them.",
+            "After a lifetime of service, m_c was welcomed into StarClan for the rest {PRONOUN/m_c/poss} soul needs.",
+        ]
+        starclan_rejected_text = [
+            "No matter how far m_c chased the light, all {PRONOUN/m_c/subject} found was darkness.",
+            "m_c knew where {PRONOUN/m_c/subject} {VERB/m_c/were/was} headed when {PRONOUN/m_c/poss} eyes closed for the final time, yet the darkness still frightened {PRONOUN/m_c/object}.",
+            "m_c wonders if {PRONOUN/m_c/subject}'ll see {PRONOUN/m_c/poss} kin again as {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes} in the Dark Forest, pondering if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the only one there.",
+            "StarClan turned their nose up regarding m_c. They had no desire to allow {PRONOUN/m_c/object} into their ranks.",
+            "StarClan knew where m_c's morality lies. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does} not belong among the stars.",
+        ]
+        starclan_contentious_text = [
+            "m_c was untrusting of the stars, but quickly learned to accept {PRONOUN/m_c/poss} hesitant welcoming.",
+            "As m_c approached the stars in skepticism, the stars were just as wary, though they did not refuse {PRONOUN/m_c/object}.",
+            "Though m_c was accepted among the stars, {PRONOUN/m_c/subject} soon found that the judgement of their ancestors is hard to bear.",
+            "Despite some very passionate protests, m_c is accepted into StarClan."
+        ]
+        starclan_kit_text = [
+            "m_c was guided into StarClan, where the life denied to {PRONOUN/m_c/object} by the real world can be played out in paradise as much as possible.",
+            "m_c's life was too short. It's not fair, but StarClan will make up for the lack as much as they can.",
+            "StarClan will shelter m_c, and {PRONOUN/m_c/subject} will see {PRONOUN/m_c/poss} family again one day.",
+            "StarClan welcomed m_c not with debate, but with the sorrow of a life taken before it could fully flower.",
+            "m_c will never grow old in the real world, but in the fields of StarClan {PRONOUN/m_c/subject} can act out the shadows of who {PRONOUN/m_c/subject} could have been.",
+            "StarClan welcomed m_c, though they did not want to welcome {PRONOUN/m_c/object} so soon.",
+            "The stars reassured m_c that {PRONOUN/m_c/subject} will be cared for.",
+            "m_c had no deeds to note, no legacy to leave behind, but StarClan welcomed {PRONOUN/m_c/object} to their ranks.",
+        ]
+
+        dark_forest_default_text = [
+            "Power and authority, confidence and excitement - it called to m_c, pulled {PRONOUN/m_c/object} like magnets in {PRONOUN/m_c/poss} blood. Now {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} the dark forest, raising {PRONOUN/m_c/poss} voice to call to others in turn.",
+            "m_c's spirit lies in the endless solitude of the deep woods, {PRONOUN/m_c/poss} soul watching the stars in envy.",
+            "The shadows of the deeps woods hide nothing from m_c, who stepped down the path to the dark forest with eyes open and tail held high.",
+            "m_c's spirit waked in the dark forest upon death.",
+            "The gnarled branches, the thick silence, the shadowed murk - it suits m_c far better than starlight ever could.",
+            "m_c slipped into the dark forest the way a stream joined a river, seamlessly and completely.",
+            "The stories told, the legacy made, the legend they left behind - all of that matters to m_c far more than the dark forest that greets {PRONOUN/m_c/poss} spirit at death.",
+            "The earthly loam of the forest floor filled m_c's nose upon waking. Even before opening {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} knew where {PRONOUN/m_c/poss} affinity has led {PRONOUN/m_c/poss} soul.",
+        ]
+        dark_forest_rejected_text = [
+            "m_c was not worth investing in. The dark forest turned away from {PRONOUN/m_c/poss} spirit, leaving the weakling to be scavenged by StarClan.",
+            "Power and authority, confidence and excitement - none of that came to mind when presented with m_c. Better for the stars to take the leftovers that the forest does not value.",
+            "m_c's spirit slipped from the grasping claws of the dark forest, rising to StarClan.",
+            "There was nothing in the dark forest that could tempt m_c, and {PRONOUN/m_c/subject} became a star instead.",
+            "There is worth in scorn, and m_c was proud to be rejected by these ancestors. {PRONOUN/m_c/poss/CAP} path lies in starlight, not darkness.",
+            "As the life of the living ends, the life of the next world begins - and m_c began {PRONOUN/m_c/inposs} by fleeing, escaping the forest to rise in starlight.",
+            "Not all see the value in the strength of the deep woods. It is difficult to say - did m_c escape to StarClan, or did the forest let {PRONOUN/m_c/object} go?",
+            "If the denizens of the dark forest catch m_c, they will kill {PRONOUN/m_c/object}. But first, they have to catch {PRONOUN/m_c/object} - and m_c has already escaped to the stars.",
+        ]
+        dark_forest_contentious_text = [
+            "The forest's souls whisper with uncertainty, like wind brushing gently through branches. But m_c is welcomed into the deep woods nonetheless.",
+            "m_c's spirit twangs, a note out of tune with the whole. Yet in such a silent world as is held in the deep worlds, there is room for such spirits.",
+            "Though there is the quiver of uncertainty in their soul, exposed and easy to see, m_c still covets what the forest offers, and steps into its depths.",
+            "There is something in m_c worth the trouble {PRONOUN/m_c/poss} spirit is sure to bring with {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} welcomed into the dark forest.",
+            "The dark forest called to m_c. Not overwhelmingly, not drowning out all others - but it called nonetheless, and m_c's spirit answered.",
+            "The path to the dark forest is imprinted with the pawprints of m_c's good intentions.",
+        ]
+        dark_forest_kit_text = [
+            "m_c followed the well-worn paths into the darkened woods around {PRONOUN/m_c/object} without question.",
+            "m_c reached a shadowed hollow, still and quiet. {PRONOUN/m_c/subject/CAP} hadn't seen any cat, and didn't know how {PRONOUN/m_c/subject} got so far from camp.",
+            "The wind rustled through the trees, shadowed tangled on the ground, and m_c stepped into an afterlife peaceful, still, and quiet.",
+            "This new world is damp and dark, but not unwelcoming to m_c.",
+            "m_c wanders the dark forest, a little confused, but mostly curious.",
+        ]
+
+        if afterlife == "starclan":
+            if is_kit:
+                self.afterlife_acceptance = random.choice(starclan_kit_text)
+            elif contentious:
+                self.afterlife_acceptance = random.choice(starclan_contentious_text)
+            elif rejected:
+                self.afterlife_acceptance = random.choice(starclan_rejected_text)
+            else:
+                self.afterlife_acceptance = random.choice(starclan_default_text)
+        elif afterlife == "dark_forest":
+            if is_kit:
+                self.afterlife_acceptance = random.choice(dark_forest_kit_text)
+            elif contentious:
+                self.afterlife_acceptance = random.choice(dark_forest_contentious_text)
+            elif rejected:
+                self.afterlife_acceptance = random.choice(dark_forest_rejected_text)
+            else:
+                self.afterlife_acceptance = random.choice(dark_forest_default_text)
 
     def add_scar(self, scar_text, condition=None, other_cat=None):
         if not game.clan:
