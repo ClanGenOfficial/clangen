@@ -997,7 +997,7 @@ class ProfileScreen(Screens):
         # if cat has never been part of the player clan, then they get no backstory yet
         if (
             not the_cat.status.alive_in_player_clan
-            and CatGroup.PLAYER_CLAN not in the_cat.status.all_groups
+            and CatGroup.PLAYER_CLAN_ID not in the_cat.status.all_groups
         ):
             bs_text = the_cat.status.social
         else:
@@ -1404,7 +1404,7 @@ class ProfileScreen(Screens):
         """
         returns adjusted apprenticeship history text (mentor influence and app ceremony)
         """
-        if CatGroup.PLAYER_CLAN not in self.the_cat.status.all_groups:
+        if CatGroup.PLAYER_CLAN_ID not in self.the_cat.status.all_groups:
             return ""
 
         mentor_influence = self.the_cat.history.mentor_influence
