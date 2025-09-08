@@ -731,7 +731,7 @@ class ListScreen(Screens):
             if (
                 not the_cat.dead
                 and (the_cat.status.is_outsider or the_cat.status.is_other_clancat)
-                and the_cat.status.is_near(CatGroup.PLAYER_CLAN)
+                and the_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
             ):
                 self.full_cat_list.append(the_cat)
 
@@ -778,6 +778,6 @@ class ListScreen(Screens):
                 the_cat.ID != game.clan.instructor.ID
                 and the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE
                 and not the_cat.faded
-                and the_cat.status.is_near(CatGroup.PLAYER_CLAN)
+                and the_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
             ):
                 self.full_cat_list.append(the_cat)
