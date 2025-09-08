@@ -13,14 +13,6 @@ jobs:
           - python-version: '3.11'
     steps:
       - uses: actions/checkout@v4
-      - name: Download the test saves
-        run: wget https://github.com/ImLvna/clangen-unittest-saves/archive/refs/heads/main.zip -O tests/saves.zip
-      - name: Unzip
-        run: unzip tests/saves.zip
-      - name: Move the folder
-        run: mv clangen-unittest-saves-main tests/testSaves
-      - name: Remove the zip
-        run: rm tests/saves.zip
       - name: Install uv
         uses: astral-sh/setup-uv@v5
         with:
