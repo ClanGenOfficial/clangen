@@ -206,6 +206,8 @@ class Cat:
         self.also_got = False
         self.permanent_condition = {}
         self.experience_level = None
+        self.dark_forest_affinity = 0
+        self.starclan_affinity = 0
 
         # Various behavior toggles
         self.no_kits = False
@@ -496,6 +498,22 @@ class Cat:
                     f"WARNING: Tried to kill {self.name} ID: {self.ID} but this cat is already dead!"
                 )
                 return
+            
+            if game.clan.instructor.status.group == CatGroup.STARCLAN:
+                # starclan does not like this cat
+                if self.starclan_affinity < 0:
+                    # might send them to the dark forest instead
+                    if random() < abs(self.starclan_affinity / 100):
+                        self.status.send_to_afterlife(CatGroup.DARK_FOREST_ID)
+                        return
+            elif game.clan.instructor.status.group == CatGroup.DARK_FOREST:
+                # dark forest does not like this cat
+                if self.dark_forest_affinity < 0:
+                    # might send them to starclan instead
+                    if random() < abs(self.dark_forest_affinity / 100):
+                        self.status.send_to_afterlife(CatGroup.STARCLAN_ID)
+                        return
+            # nevermind, they're cool
             self.status.send_to_afterlife()
 
     @property
