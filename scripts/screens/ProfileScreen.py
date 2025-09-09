@@ -1281,8 +1281,8 @@ class ProfileScreen(Screens):
         """
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         if self.the_cat.history.afterlife_acceptance:
-            adjusted_text = process_text(self.the_cat.history.afterlife_acceptance,
-                                         cat_dict=cat_dict)
+            text = i18n.t(f"cat.afterlife.{self.the_cat.history.afterlife_acceptance}")
+            adjusted_text = process_text(text, cat_dict=cat_dict)
             return adjusted_text
         return None
 
