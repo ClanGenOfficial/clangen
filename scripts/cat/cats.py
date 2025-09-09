@@ -515,9 +515,11 @@ class Cat:
                         )
                         self.status.send_to_afterlife(CatGroup.DARK_FOREST_ID)
                         return
+                    # fine, they can go to starclan, but some cats don't like it
                     self.history.add_afterlife_acceptance(
                         CatGroup.STARCLAN, contentious=True
                     )
+                # starclan thinks this cat is ok
                 else:
                     self.history.add_afterlife_acceptance(CatGroup.STARCLAN)
             elif game.clan.instructor.status.group == CatGroup.DARK_FOREST:
@@ -530,9 +532,11 @@ class Cat:
                         )
                         self.status.send_to_afterlife(CatGroup.STARCLAN_ID)
                         return
+                    # fine, they can go to the dark forest, but some cats don't like it
                     self.history.add_afterlife_acceptance(
                         CatGroup.DARK_FOREST, contentious=True
                     )
+                # dark forest thinks this cat is ok
                 else:
                     self.history.add_afterlife_acceptance(CatGroup.DARK_FOREST)
             self.status.send_to_afterlife()
