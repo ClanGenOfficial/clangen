@@ -38,7 +38,9 @@ class History:
         self.scar_events = scar_events if scar_events else []
         self.murder = murder if murder else {}
         self.cat = cat
-        self.afterlife_acceptance = afterlife_acceptance if afterlife_acceptance else None
+        self.afterlife_acceptance = (
+            afterlife_acceptance if afterlife_acceptance else None
+        )
 
         # fix 'old' history save bugs
         if self.mentor_influence["trait"] is None:
@@ -415,7 +417,9 @@ class History:
             {"involved": other_cat, "text": death_text, "moon": game.clan.age}
         )
 
-    def add_afterlife_acceptance(self, afterlife: CatGroup, is_kit=False, contentious=False, rejected=False):
+    def add_afterlife_acceptance(
+        self, afterlife: CatGroup, is_kit=False, contentious=False, rejected=False
+    ):
         """
         Adds afterlife acceptance text to the cat's history. If using an optional parameter, should set only one out of
         `is_kit`, `contentious`, and `rejected` to `True`, since the rest will be ignored.

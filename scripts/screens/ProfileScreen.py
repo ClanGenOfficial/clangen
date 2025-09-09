@@ -1274,7 +1274,7 @@ class ProfileScreen(Screens):
             # join together history list with line breaks
             output = "\n\n".join(life_history)
         return output
-    
+
     def get_afterlife_acceptance_text(self):
         """
         Returns adjusted afterlife acceptance blurb.

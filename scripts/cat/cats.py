@@ -510,10 +510,14 @@ class Cat:
                 if self.starclan_affinity < 0:
                     # might send them to the dark forest instead
                     if random() < abs(self.starclan_affinity / 100):
-                        self.history.add_afterlife_acceptance(CatGroup.STARCLAN, rejected=True)
+                        self.history.add_afterlife_acceptance(
+                            CatGroup.STARCLAN, rejected=True
+                        )
                         self.status.send_to_afterlife(CatGroup.DARK_FOREST_ID)
                         return
-                    self.history.add_afterlife_acceptance(CatGroup.STARCLAN, contentious=True)
+                    self.history.add_afterlife_acceptance(
+                        CatGroup.STARCLAN, contentious=True
+                    )
                 else:
                     self.history.add_afterlife_acceptance(CatGroup.STARCLAN)
             elif game.clan.instructor.status.group == CatGroup.DARK_FOREST:
@@ -521,10 +525,14 @@ class Cat:
                 if self.dark_forest_affinity < 0:
                     # might send them to starclan instead
                     if random() < abs(self.dark_forest_affinity / 100):
-                        self.history.add_afterlife_acceptance(CatGroup.DARK_FOREST, rejected=True)
+                        self.history.add_afterlife_acceptance(
+                            CatGroup.DARK_FOREST, rejected=True
+                        )
                         self.status.send_to_afterlife(CatGroup.STARCLAN_ID)
                         return
-                    self.history.add_afterlife_acceptance(CatGroup.DARK_FOREST, contentious=True)
+                    self.history.add_afterlife_acceptance(
+                        CatGroup.DARK_FOREST, contentious=True
+                    )
                 else:
                     self.history.add_afterlife_acceptance(CatGroup.DARK_FOREST)
             self.status.send_to_afterlife()
