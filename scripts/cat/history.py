@@ -3,6 +3,7 @@ import random
 import i18n
 from typing import Literal
 
+from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import game
 from scripts.utility import adjust_list_text
@@ -414,7 +415,7 @@ class History:
             {"involved": other_cat, "text": death_text, "moon": game.clan.age}
         )
 
-    def add_afterlife_acceptance(self, afterlife: Literal["starclan", "dark_forest"], is_kit=False, contentious=False, rejected=False):
+    def add_afterlife_acceptance(self, afterlife: CatGroup, is_kit=False, contentious=False, rejected=False):
         """
         Adds afterlife acceptance text to the cat's history. If using an optional parameter, should set only one out of
         `is_kit`, `contentious`, and `rejected` to `True`, since the rest will be ignored.
@@ -496,7 +497,7 @@ class History:
             "m_c wanders the dark forest, a little confused, but mostly curious.",
         ]
 
-        if afterlife == "starclan":
+        if afterlife == CatGroup.STARCLAN:
             if is_kit:
                 self.afterlife_acceptance = random.choice(starclan_kit_text)
             elif contentious:
@@ -505,7 +506,7 @@ class History:
                 self.afterlife_acceptance = random.choice(starclan_rejected_text)
             else:
                 self.afterlife_acceptance = random.choice(starclan_default_text)
-        elif afterlife == "dark_forest":
+        elif afterlife == CatGroup.DARK_FOREST:
             if is_kit:
                 self.afterlife_acceptance = random.choice(dark_forest_kit_text)
             elif contentious:
