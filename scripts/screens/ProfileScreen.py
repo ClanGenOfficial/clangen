@@ -1267,15 +1267,24 @@ class ProfileScreen(Screens):
             if murder:
                 life_history.append(murder)
 
-            if self.the_cat.history.afterlife_acceptance:
-                cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
-                adjusted_text = process_text(self.the_cat.history.afterlife_acceptance,
-                                             cat_dict=cat_dict)
-                life_history.append(adjusted_text)
+            afterlife_acceptance = self.get_afterlife_acceptance_text()
+            if afterlife_acceptance:
+                life_history.append(afterlife_acceptance)
 
             # join together history list with line breaks
             output = "\n\n".join(life_history)
         return output
+    
+    def get_afterlife_acceptance_text(self):
+        """
+        Returns adjusted afterlife acceptance blurb.
+        """
+        cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
+        if self.the_cat.history.afterlife_acceptance:
+            adjusted_text = process_text(self.the_cat.history.afterlife_acceptance,
+                                         cat_dict=cat_dict)
+            return adjusted_text
+        return None
 
     def get_backstory_text(self):
         """
