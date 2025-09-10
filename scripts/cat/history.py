@@ -1,7 +1,6 @@
 import random
 
 import i18n
-from typing import Literal
 
 from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
