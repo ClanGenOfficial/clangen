@@ -8508,6 +8508,9 @@
                 "young adult",
                 "adult",
                 "senior adult"
+            ],
+            "relationship_status": [
+                "mates"
             ]
         },
         "r_c": {

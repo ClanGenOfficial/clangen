@@ -398,11 +398,11 @@ class Pregnancy_Events:
         if cat.status.is_outsider:
             for kit in kits:
                 kit.status.generate_new_status(
-                    age=kit.age, social=cat.status.social, group=cat.status.group
+                    age=kit.age, social=cat.status.social, group_ID=cat.status.group_ID
                 )
                 kit.backstory = "outsider1"
 
-                if cat.status.is_exiled(CatGroup.PLAYER_CLAN):
+                if cat.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
                     name = choice(names.names_dict["normal_prefixes"])
                     kit.name = Name(prefix=name, suffix="", cat=kit)
 
@@ -410,7 +410,7 @@ class Pregnancy_Events:
                     kit.backstory = "outsider2"
 
                 if cat.status.is_outsider and not cat.status.is_exiled(
-                    CatGroup.PLAYER_CLAN
+                    CatGroup.PLAYER_CLAN_ID
                 ):
                     kit.backstory = "outsider3"
                 kit.relationships = {}
@@ -714,7 +714,7 @@ class Pregnancy_Events:
                         if not p_rel.opposite_relationship:
                             p_rel.link_relationship()
                         p_rel_opp = p_rel.opposite_relationship
-                        if p_rel_opp.like < -20 and p_rel.like < -20:
+                        if p_rel_opp.like > -20 and p_rel.like > -20:
                             p_affairs.append(p_affair)
             possible_affair_partners = p_affairs
 
