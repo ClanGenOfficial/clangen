@@ -505,6 +505,7 @@ class Cat:
                     game.clan.instructor.status.group,
                     is_kit=True,
                 )
+            else:
                 if game.clan.instructor.status.group == CatGroup.STARCLAN:
                     affinity = self.starclan_affinity
                     afterlife_group = CatGroup.STARCLAN
