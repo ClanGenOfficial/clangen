@@ -514,7 +514,7 @@ class Cat:
                     affinity = self.dark_forest_affinity
                     afterlife_group = CatGroup.DARK_FOREST
                     rejected_ID = CatGroup.STARCLAN_ID
-                    
+
                 # afterlife does not like this cat
                 if affinity < 0:
                     # might send them to the opposite afterlife instead

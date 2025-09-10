@@ -443,15 +443,25 @@ class History:
             afterlife = "dark_forest"
 
         if afterlife:
-            afterlife_acceptance_options = History.history_options["afterlife_acceptance_options"]
+            afterlife_acceptance_options = History.history_options[
+                "afterlife_acceptance_options"
+            ]
             if is_kit:
-                self.afterlife_acceptance = random.choice(afterlife_acceptance_options[f"{afterlife}_kit"])
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_kit"]
+                )
             elif contentious:
-                self.afterlife_acceptance = random.choice(afterlife_acceptance_options[f"{afterlife}_contentious"])
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_contentious"]
+                )
             elif rejected:
-                self.afterlife_acceptance = random.choice(afterlife_acceptance_options[f"{afterlife}_rejected"])
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_rejected"]
+                )
             else:
-                self.afterlife_acceptance = random.choice(afterlife_acceptance_options[f"{afterlife}_default"])
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_default"]
+                )
 
     def add_scar(self, scar_text, condition=None, other_cat=None):
         if not game.clan:
