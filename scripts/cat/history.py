@@ -1,6 +1,8 @@
 import random
 
 import i18n
+import os
+import ujson
 
 from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
@@ -12,6 +14,11 @@ class History:
     """
     this class handles the cat's history!
     """
+
+    history_options = {}
+    if os.path.exists("resources/dicts/history_options.json"):
+        with open("resources/dicts/history_options.json", encoding="utf-8") as f:
+            history_options = ujson.load(f)
 
     def __init__(
         self,
@@ -429,95 +436,22 @@ class History:
         :param rejected: `True` if cat is rejected from `guide_afterlife`. They will go to the opposite one instead.
         """
 
-        starclan_default_text = [
-            "starclan_default_0",
-            "starclan_default_1",
-            "starclan_default_2",
-            "starclan_default_3",
-            "starclan_default_4",
-            "starclan_default_5",
-            "starclan_default_6",
-            "starclan_default_7",
-            "starclan_default_8",
-        ]
-        starclan_rejected_text = [
-            "starclan_rejected_0",
-            "starclan_rejected_1",
-            "starclan_rejected_2",
-            "starclan_rejected_3",
-            "starclan_rejected_4",
-        ]
-        starclan_contentious_text = [
-            "starclan_contentious_0",
-            "starclan_contentious_1",
-            "starclan_contentious_2",
-            "starclan_contentious_3",
-        ]
-        starclan_kit_text = [
-            "starclan_kit_0",
-            "starclan_kit_1",
-            "starclan_kit_2",
-            "starclan_kit_3",
-            "starclan_kit_4",
-            "starclan_kit_5",
-            "starclan_kit_6",
-            "starclan_kit_7",
-        ]
-
-        dark_forest_default_text = [
-            "dark_forest_default_0",
-            "dark_forest_default_1",
-            "dark_forest_default_2",
-            "dark_forest_default_3",
-            "dark_forest_default_4",
-            "dark_forest_default_5",
-            "dark_forest_default_6",
-            "dark_forest_default_7",
-        ]
-        dark_forest_rejected_text = [
-            "dark_forest_rejected_0",
-            "dark_forest_rejected_1",
-            "dark_forest_rejected_2",
-            "dark_forest_rejected_3",
-            "dark_forest_rejected_4",
-            "dark_forest_rejected_5",
-            "dark_forest_rejected_6",
-            "dark_forest_rejected_7",
-        ]
-        dark_forest_contentious_text = [
-            "dark_forest_contentious_0",
-            "dark_forest_contentious_1",
-            "dark_forest_contentious_2",
-            "dark_forest_contentious_3",
-            "dark_forest_contentious_4",
-            "dark_forest_contentious_5",
-        ]
-        dark_forest_kit_text = [
-            "dark_forest_kit_0",
-            "dark_forest_kit_1",
-            "dark_forest_kit_2",
-            "dark_forest_kit_3",
-            "dark_forest_kit_4",
-        ]
-
+        afterlife = None
         if guide_afterlife == CatGroup.STARCLAN:
-            if is_kit:
-                self.afterlife_acceptance = random.choice(starclan_kit_text)
-            elif contentious:
-                self.afterlife_acceptance = random.choice(starclan_contentious_text)
-            elif rejected:
-                self.afterlife_acceptance = random.choice(starclan_rejected_text)
-            else:
-                self.afterlife_acceptance = random.choice(starclan_default_text)
+            afterlife = "starclan"
         elif guide_afterlife == CatGroup.DARK_FOREST:
+            afterlife = "dark_forest"
+
+        if afterlife:
+            afterlife_acceptance_options = History.history_options["afterlife_acceptance_options"]
             if is_kit:
-                self.afterlife_acceptance = random.choice(dark_forest_kit_text)
+                self.afterlife_acceptance = random.choice(afterlife_acceptance_options[f"{afterlife}_kit"])
             elif contentious:
-                self.afterlife_acceptance = random.choice(dark_forest_contentious_text)
+                self.afterlife_acceptance = random.choice(afterlife_acceptance_options[f"{afterlife}_contentious"])
             elif rejected:
-                self.afterlife_acceptance = random.choice(dark_forest_rejected_text)
+                self.afterlife_acceptance = random.choice(afterlife_acceptance_options[f"{afterlife}_rejected"])
             else:
-                self.afterlife_acceptance = random.choice(dark_forest_default_text)
+                self.afterlife_acceptance = random.choice(afterlife_acceptance_options[f"{afterlife}_default"])
 
     def add_scar(self, scar_text, condition=None, other_cat=None):
         if not game.clan:
