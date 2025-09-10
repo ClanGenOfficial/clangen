@@ -424,7 +424,7 @@ class History:
         Adds afterlife acceptance text to the cat's history. If using an optional parameter, should set only one out of
         `is_kit`, `contentious`, and `rejected` to `True`, since the rest will be ignored.
 
-        :param afterlife: The afterlife of the guide.
+        :param afterlife: The afterlife of the guide. Do NOT set to the opposite afterlife if rejected is `True`.
         :param is_kit: `True` if the cat is a kit. Gives kinder acceptance text referring to kits.
         :param contentious: `True` if the acceptance is supposed to be contentious. Afterlife will seem iffy about the cat.
         :param rejected: `True` if cat is rejected from `afterlife`. They will go to the opposite one instead.
