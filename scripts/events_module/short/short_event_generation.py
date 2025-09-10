@@ -71,7 +71,7 @@ def create_short_event(
         other_clan = enemy_clan
         sub_types.append("war")
     else:
-        other_clan = random.choice(game.clan.all_clans if game.clan.all_clans else None)
+        other_clan = random.choice(game.clan.all_other_clans if game.clan.all_other_clans else None)
 
     # NOW find the possible events and filter
     if event_type == "birth_death":
