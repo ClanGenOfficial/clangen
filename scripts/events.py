@@ -918,7 +918,6 @@ class Events:
             self.handle_fading(cat)  # Deal with fading.
             return
 
-        # this will also handle increasing dead_for!
         cat.status.increase_current_moons_as()
 
         # all actions, which do not trigger an event display and
