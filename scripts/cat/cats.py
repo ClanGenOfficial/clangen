@@ -505,40 +505,33 @@ class Cat:
                     game.clan.instructor.status.group,
                     is_kit=True,
                 )
-            elif game.clan.instructor.status.group == CatGroup.STARCLAN:
-                # starclan does not like this cat
-                if self.starclan_affinity < 0:
-                    # might send them to the dark forest instead
-                    if random() < abs(self.starclan_affinity / 100):
-                        self.history.add_afterlife_acceptance(
-                            CatGroup.STARCLAN, rejected=True
-                        )
-                        self.status.send_to_afterlife(CatGroup.DARK_FOREST_ID)
-                        return
-                    # fine, they can go to starclan, but some cats don't like it
-                    self.history.add_afterlife_acceptance(
-                        CatGroup.STARCLAN, contentious=True
-                    )
-                # starclan thinks this cat is ok
+                if game.clan.instructor.status.group == CatGroup.STARCLAN:
+                    affinity = self.starclan_affinity
+                    accepted_group = CatGroup.STARCLAN
+                    rejected_group = CatGroup.DARK_FOREST
+                    rejected_ID = CatGroup.DARK_FOREST_ID
                 else:
-                    self.history.add_afterlife_acceptance(CatGroup.STARCLAN)
-            elif game.clan.instructor.status.group == CatGroup.DARK_FOREST:
-                # dark forest does not like this cat
-                if self.dark_forest_affinity < 0:
-                    # might send them to starclan instead
-                    if random() < abs(self.dark_forest_affinity / 100):
+                    affinity = self.dark_forest_affinity
+                    accepted_group = CatGroup.DARK_FOREST
+                    rejected_group = CatGroup.STARCLAN
+                    rejected_ID = CatGroup.STARCLAN_ID
+                    
+                # afterlife does not like this cat
+                if affinity < 0:
+                    # might send them to the opposite afterlife instead
+                    if random() < abs(affinity / 100):
                         self.history.add_afterlife_acceptance(
-                            CatGroup.DARK_FOREST, rejected=True
+                            rejected_group, rejected=True
                         )
-                        self.status.send_to_afterlife(CatGroup.STARCLAN_ID)
+                        self.status.send_to_afterlife(rejected_ID)
                         return
-                    # fine, they can go to the dark forest, but some cats don't like it
+                    # fine, they can go to afterlife, but some cats don't like it
                     self.history.add_afterlife_acceptance(
-                        CatGroup.DARK_FOREST, contentious=True
+                        accepted_group, contentious=True
                     )
-                # dark forest thinks this cat is ok
+                # afterlife thinks this cat is ok
                 else:
-                    self.history.add_afterlife_acceptance(CatGroup.DARK_FOREST)
+                    self.history.add_afterlife_acceptance(accepted_group)
             self.status.send_to_afterlife()
 
     @property
