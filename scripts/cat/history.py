@@ -417,16 +417,16 @@ class History:
         )
 
     def add_afterlife_acceptance(
-        self, afterlife: CatGroup, is_kit=False, contentious=False, rejected=False
+        self, guide_afterlife: CatGroup, is_kit=False, contentious=False, rejected=False
     ):
         """
         Adds afterlife acceptance text to the cat's history. If using an optional parameter, should set only one out of
         `is_kit`, `contentious`, and `rejected` to `True`, since the rest will be ignored.
 
-        :param afterlife: The afterlife of the guide. Do NOT set to the opposite afterlife if rejected is `True`.
+        :param guide_afterlife: The afterlife of the guide. Do NOT set to the opposite afterlife if rejected is `True`.
         :param is_kit: `True` if the cat is a kit. Gives kinder acceptance text referring to kits.
         :param contentious: `True` if the acceptance is supposed to be contentious. Afterlife will seem iffy about the cat.
-        :param rejected: `True` if cat is rejected from `afterlife`. They will go to the opposite one instead.
+        :param rejected: `True` if cat is rejected from `guide_afterlife`. They will go to the opposite one instead.
         """
 
         starclan_default_text = [
@@ -500,7 +500,7 @@ class History:
             "dark_forest_kit_4",
         ]
 
-        if afterlife == CatGroup.STARCLAN:
+        if guide_afterlife == CatGroup.STARCLAN:
             if is_kit:
                 self.afterlife_acceptance = random.choice(starclan_kit_text)
             elif contentious:
@@ -509,7 +509,7 @@ class History:
                 self.afterlife_acceptance = random.choice(starclan_rejected_text)
             else:
                 self.afterlife_acceptance = random.choice(starclan_default_text)
-        elif afterlife == CatGroup.DARK_FOREST:
+        elif guide_afterlife == CatGroup.DARK_FOREST:
             if is_kit:
                 self.afterlife_acceptance = random.choice(dark_forest_kit_text)
             elif contentious:
