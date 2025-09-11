@@ -410,7 +410,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 | Neutral     | `knows_of`  | `acknowledges` | `observes`    | `considers`    | `uninterested` |
 | Low Pos     | `likes`     | `praises`      | `listens_to`  | `relates_to`   | `fancies`      |
 | Mid Pos     | `enjoys`    | `respects`     | `trusts`      | `understands`  | `adores`       |
-| Extreme Pos | `cherishes` | `admires`      | `confides_in` | `knows_deeply` | `fancies`      |
+| Extreme Pos | `cherishes` | `admires`      | `confides_in` | `knows_deeply` | `loves`        |
 
 ***
 
