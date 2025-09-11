@@ -56,8 +56,7 @@ class TestEvents(unittest.TestCase):
         set_clan_setting("hunting", True)
 
         with self.subTest(
-            "Expanded Timeskip Failed",
+            "Timeskip Failed",
         ):
             for _ in range(1000):
                 events_class.one_moon()
-
