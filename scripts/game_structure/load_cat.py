@@ -297,6 +297,9 @@ def json_load():
                     cat["scar_event"] if "scar_event" in cat else [],
                 )
 
+            new_cat.starclan_affinity = cat.get("starclan_affinity", 0)
+            new_cat.dark_forest_affinity = cat.get("dark_forest_affinity", 0)
+
             all_cats.append(new_cat)
 
         except KeyError as e:
