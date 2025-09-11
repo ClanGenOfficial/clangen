@@ -1353,7 +1353,7 @@
             "newleaf",
             "leaf-fall"
         ],
-        "frequency": 3,
+        "frequency": 2,
         "event_text": "m_c fell into a river, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
         "m_c": {
             "age": [
@@ -1652,7 +1652,7 @@
         "season": [
             "any"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
@@ -6597,7 +6597,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "While patrolling the o_c_n borders, m_c stepped on a concealed pit trap set by what seemed to be o_c_n warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap. The other cats on the patrol flank {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/limp/limps} back to the camp.",
         "m_c": {
             "age": [
@@ -7079,7 +7079,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 4,
+        "frequency": 2,
         "event_text": "m_c acts without thinking, saving the life of a o_c_n warrior by chasing off the predator attempting to make them their lunch.",
         "m_c": {
             "status": [
