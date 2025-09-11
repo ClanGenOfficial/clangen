@@ -407,15 +407,17 @@ class ShortEvent:
         if self.random_cat:
             in_event_cats["r_c"] = self.random_cat
         for i, attribute_list in enumerate(self.new_cat_attributes):
-            self.new_cats.extend(
+            self.new_cats.append(
                 create_new_cat_block(
                     Cat, Relationship, self, in_event_cats, i, attribute_list
                 )
             )
 
             # check if we want to add some extra info to the event text and if we need to welcome
-            for cat in self.new_cats:
-                first_cat = cat[0]
+            for _c in self.new_cats:
+                if not isinstance(_c, list):
+                    continue
+                first_cat = _c[0]
                 if first_cat.dead:
                     extra_text = event_text_adjust(
                         Cat,
@@ -423,7 +425,7 @@ class ShortEvent:
                         main_cat=first_cat,
                     )
                 elif first_cat.status.is_outsider:
-                    n_c_index = self.new_cats.index(cat)
+                    n_c_index = self.new_cats.index(_c)
                     if (
                         f"n_c:{n_c_index}" in self.exclude_involved
                         or "unknown" in attribute_list
@@ -437,8 +439,7 @@ class ShortEvent:
                         )
                 else:
                     Relation_Events.welcome_new_cats([first_cat])
-                self.all_involved_cat_ids.extend(cat)
-                self.new_cats.append(cat)
+                self.all_involved_cat_ids.extend(_c)
 
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed and give the condition
