@@ -6,6 +6,7 @@ from scripts.cat.cats import create_cat, Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites import sprites
 from scripts.clan import Clan
+from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
 from scripts.events import events_class
 from scripts.game_structure import game
 
@@ -49,6 +50,8 @@ class TestEvents(unittest.TestCase):
         game.clan.save_herb_supply(game.clan)
         Cat.grief_strings.clear()
         Cat.sort_cats()
+        # prevent them from just dying of starvation
+        set_clan_setting("hunting", True)
 
         with self.subTest(
             "Timeskip Failed",
