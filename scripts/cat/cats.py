@@ -747,7 +747,7 @@ class Cat:
                     if randint(1, 2) == 1:
                         very_high_types.extend(rel_type)
                     else:
-                        very_low_types.extend(rel_type)
+                        high_types.extend(rel_type)
                 elif tier.is_low_pos:
                     high_types.extend(rel_type)
                 elif tier.is_extreme_neg or tier.is_mid_neg:
