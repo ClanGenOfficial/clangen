@@ -2232,10 +2232,10 @@ class Events:
                 else:
                     event = i18n.t(
                         "hardcoded.illness_spread",
-                        illness=str(illness),
+                        illness=str(illness).capitalize(),
                         cats=adjust_list_text(infected_names),
                         count=len(infected_names),
-                    ).capitalize()
+                    )
 
                 game.cur_events_list.append(
                     Single_Event(event, "health", involved_cats)
