@@ -26,6 +26,7 @@ from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.utility import get_living_clan_cat_count, get_warring_clan
 
 loaded_events = {}
+used_events = set()
 
 
 def get_resource_directory(fallback=False):
@@ -113,8 +114,14 @@ def create_short_event(
         if not chosen_event:
             # we'll see if any more common events are available
             frequency += 1
+            # if we've hit 5 frequency, then we've probably used all the events.
+            # so we'll reset the used_events list and look for 4 frequency events again
+            if used_events and frequency == 5:
+                used_events.clear()
+                frequency = 4
 
     if chosen_event:
+        used_events.add(chosen_event.event_id)
         # set future event trigger status
         if future_event:
             future_event.triggered = True
@@ -311,6 +318,10 @@ def filter_events(
         if allowed_events and event.event_id not in allowed_events:
             continue
         if excluded_events and event.event_id in excluded_events:
+            continue
+
+        # check if event has already been used
+        if event.event_id in used_events:
             continue
 
         # ensure ID and requirements override
