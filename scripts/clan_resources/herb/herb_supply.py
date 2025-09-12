@@ -810,7 +810,7 @@ class HerbSupply:
     @staticmethod
     def __apply_lack_of_herb(treatment_cat, condition: str, effect):
         """
-        if the condition is a perm condition, give some consequence for not treated it
+        if the condition is a perm condition or redcough, give some consequence for not treated it
         """
         # TODO: this kinda feels like something that should happen within a theoretical condition class...
 
@@ -821,7 +821,10 @@ class HerbSupply:
             return
 
         # grab the correct condition dict so that we can modify it
-        con_info = treatment_cat.permanent_condition[condition]
+        if condition == "redcough":
+            con_info = treatment_cat.illnesses[condition]
+        else:
+            con_info = treatment_cat.permanent_condition[condition]
 
         if effect == HerbEffect.RISK:
             for risk in con_info[effect]:
