@@ -1560,39 +1560,6 @@ class ProfileScreen(Screens):
 
         return text
 
-    def get_text_for_murder_event(self, event, death):
-        """Returns the adjusted murder history text for the victim"""
-
-        if switch_get_value(Switch.show_history_moons):
-            moons = True
-        else:
-            moons = False
-
-        if event["text"] == death["text"] and event["moon"] == death["moon"]:
-            if event["revealed"] is True:
-                final_text = event_text_adjust(
-                    Cat,
-                    event["text"],
-                    main_cat=self.the_cat,
-                    random_cat=Cat.fetch_cat(death["involved"]),
-                )
-
-                if event.get("revelation_text"):
-                    final_text = f"{final_text} {event['revelation_text']}"
-                if moons:
-                    if event.get("revelation_moon"):
-                        final_text = f"{final_text} (Moon {event['revelation_moon']})."
-                return final_text
-            else:
-                return event_text_adjust(
-                    Cat,
-                    event["text"],
-                    main_cat=self.the_cat,
-                    random_cat=Cat.fetch_cat(death["involved"]),
-                )
-
-        return None
-
     def get_death_text(self):
         """
         returns adjusted death history text
