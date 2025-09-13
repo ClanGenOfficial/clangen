@@ -256,17 +256,17 @@ def json_load():
                 or cat.get("exiled")
                 or cat.get("outside")
             ):
-                if cat.get("dead") and (
-                    not new_cat.status.group or not new_cat.status.group.is_afterlife()
-                ):
+                if cat.get("dead") and not new_cat.status.group.is_afterlife():
                     if cat.get("df"):
-                        new_cat.status.send_to_afterlife(target=CatGroup.DARK_FOREST)
+                        new_cat.status.send_to_afterlife(
+                            target_ID=CatGroup.DARK_FOREST_ID
+                        )
                     elif cat.get("outside"):
                         new_cat.status.send_to_afterlife(
-                            target=CatGroup.UNKNOWN_RESIDENCE
+                            target_ID=CatGroup.UNKNOWN_RESIDENCE_ID
                         )
                     else:
-                        new_cat.status.send_to_afterlife(target=CatGroup.STARCLAN)
+                        new_cat.status.send_to_afterlife(target_ID=CatGroup.STARCLAN_ID)
 
                 else:
                     # these should properly change the cat's status to align with old bool info
@@ -276,7 +276,7 @@ def json_load():
                         new_cat.status.become_lost()
 
                     if cat.get("driven_out"):
-                        new_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN)
+                        new_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN_ID)
 
             new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
@@ -296,6 +296,9 @@ def json_load():
                     cat["died_by"] if "died_by" in cat else [],
                     cat["scar_event"] if "scar_event" in cat else [],
                 )
+
+            new_cat.starclan_affinity = cat.get("starclan_affinity", 0)
+            new_cat.dark_forest_affinity = cat.get("dark_forest_affinity", 0)
 
             all_cats.append(new_cat)
 
@@ -531,7 +534,7 @@ def csv_load(all_cats):
                         the_cat.mate = [attr[31]]
                     if len(attr) >= 32:
                         # Is the cat dead
-                        the_cat.status.send_to_afterlife(target=CatGroup.STARCLAN)
+                        the_cat.status.send_to_afterlife(target_ID=CatGroup.STARCLAN_ID)
                         the_cat.pelt.cat_sprites["dead"] = attr[33]
                 switch_set_value(
                     Switch.error_message,
