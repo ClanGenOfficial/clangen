@@ -1,5 +1,6 @@
 import os
 import unittest
+from unittest.mock import patch
 from copy import deepcopy
 
 from scripts.game_structure import game
@@ -274,10 +275,15 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertTrue(elder_cat1.is_potential_mate(elder_cat2, True))
 
     # test that is_potential_mate returns False for exiled or dead cats
-    def test_dead_exiled(self):
+
+    @patch("scripts.cat.status.Status.add_to_group")
+    @patch("scripts.game_structure.game.clan")
+    @patch("scripts.cat.history.History")
+    def test_dead_exiled(self, mock_history, _, __):
         exiled_cat = Cat(disable_random=True)
         exiled_cat.status.exile_from_group()
         dead_cat = Cat(disable_random=True)
+        dead_cat.history = mock_history()
         dead_cat.dead = True
         normal_cat = Cat(disable_random=True)
         self.assertFalse(exiled_cat.is_potential_mate(normal_cat))
