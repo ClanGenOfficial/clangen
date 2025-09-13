@@ -6303,7 +6303,7 @@
 			"Is resting {PRONOUN/m_c/poss} head against the medicine den wall, hoping the pain stops soon",
 			"Feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still getting burned",
 			"Shifts endlessly in {PRONOUN/m_c/poss} nest, trying to get comfortable",
-			"Groans at how uncomfortable {PRONOUN/m_c/subject} {VERB/m_c/are/is"
+			"Groans at how uncomfortable {PRONOUN/m_c/subject} {VERB/m_c/are/is}"
         ],
         "has_injuries": {
             "m_c": [
