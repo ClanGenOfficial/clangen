@@ -766,9 +766,9 @@ class Pelt:
             "senior": senior_sprite if senior_sprite is not None else 0,
             "para_adult": para_adult_sprite if para_adult_sprite is not None else 0,
             "newborn": newborn_sprite if newborn_sprite is not None else 0,
-            "para_young": 17,
-            "sick_adult": 18,
-            "sick_young": 19,
+            "para_young": 20,
+            "sick_adult": 21,
+            "sick_young": 22,
         }
 
         self.reverse = reverse
@@ -1238,23 +1238,23 @@ class Pelt:
 
     def init_sprite(self):
         self.cat_sprites = {
-            "newborn": random.randint(20, 22),
-            "kitten": random.randint(0, 2),
-            "adolescent": random.randint(3, 5),
-            "senior": random.randint(12, 14),
-            "sick_young": 19,
-            "sick_adult": 18,
+            "newborn": random.randint(0, 2),
+            "kitten": random.randint(3, 5),
+            "adolescent": random.randint(6, 8),
+            "senior": random.randint(15, 17),
+            "sick_young": 22,
+            "sick_adult": 21,
         }
         self.reverse = bool(random.getrandbits(1))
         # skin chances
         self.skin = choice(Pelt.skin_sprites)
 
         if self.length != "long":
-            self.cat_sprites["adult"] = random.randint(6, 8)
-            self.cat_sprites["para_adult"] = 16
-        else:
             self.cat_sprites["adult"] = random.randint(9, 11)
-            self.cat_sprites["para_adult"] = 15
+            self.cat_sprites["para_adult"] = 18
+        else:
+            self.cat_sprites["adult"] = random.randint(12, 14)
+            self.cat_sprites["para_adult"] = 19
         self.cat_sprites["young adult"] = self.cat_sprites["adult"]
         self.cat_sprites["senior adult"] = self.cat_sprites["adult"]
 
