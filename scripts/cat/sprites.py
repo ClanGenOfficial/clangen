@@ -60,7 +60,7 @@ class Sprites:
         self.spritesheets[name] = pygame.image.load(a_file).convert_alpha()
 
     def make_group(
-        self, spritesheet, pos, name, sprites_x=3, sprites_y=7, no_index=False
+        self, spritesheet, pos, name, sprites_x=3, sprites_y=8, no_index=False
     ):  # pos = ex. (2, 3), no single pixels
         """
         Divide sprites on a spritesheet into groups of sprites that are easily accessible
@@ -114,14 +114,14 @@ class Sprites:
         # if anyone changes lineart for whatever reason update this
         if isinstance(self.size, int):
             pass
-        elif width / 3 == height / 7:
+        elif width / 3 == height / 8:
             self.size = width / 3
         else:
             self.size = 50  # default, what base clangen uses
-            print(f"lineart.png is not 3x7, falling back to {self.size}")
+            print(f"lineart.png is not 3x8, falling back to {self.size}")
             print(
                 f"if you are a modder, please update scripts/cat/sprites.py and "
-                f"do a search for 'if width / 3 == height / 7:'"
+                f"do a search for 'if width / 3 == height / 8:'"
             )
 
         del width, height  # unneeded

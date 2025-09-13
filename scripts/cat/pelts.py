@@ -729,6 +729,7 @@ class Pelt:
         tint: str = "none",
         skin: str = "BLACK",
         white_patches_tint: str = "none",
+        newborn_sprite: int = None,
         kitten_sprite: int = None,
         adol_sprite: int = None,
         adult_sprite: int = None,
@@ -764,7 +765,7 @@ class Pelt:
             "senior adult": adult_sprite if adult_sprite is not None else 0,
             "senior": senior_sprite if senior_sprite is not None else 0,
             "para_adult": para_adult_sprite if para_adult_sprite is not None else 0,
-            "newborn": 20,
+            "newborn": newborn_sprite if newborn_sprite is not None else 0,
             "para_young": 17,
             "sick_adult": 18,
             "sick_young": 19,
@@ -1237,7 +1238,7 @@ class Pelt:
 
     def init_sprite(self):
         self.cat_sprites = {
-            "newborn": 20,
+            "newborn": random.randint(20, 22),
             "kitten": random.randint(0, 2),
             "adolescent": random.randint(3, 5),
             "senior": random.randint(12, 14),
