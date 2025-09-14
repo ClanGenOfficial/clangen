@@ -378,10 +378,10 @@ dev_tools = false
   chance_of_romance_patrol = 16
 
   # forces patrol with this id to occur, assuming it's possible by constraints
-  debug_ensure_patrol_id = "bch_hunt_foxgray_scavenge3"
+  debug_ensure_patrol_id = ""
 
   # set to true to remove all constraints for patrols regarding location, session, biomes, etc.
-  debug_override_patrol_stat_requirements = true
+  debug_override_patrol_stat_requirements = false
 
   # set to true (NO QUOTES) to ensure the debug patrol succeeds
   # set to false (NO QUOTES) to ensure the debug patrol fails
