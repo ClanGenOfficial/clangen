@@ -2635,19 +2635,19 @@ def generate_sprite(
         and constants.CONFIG["cat_sprites"]["sick_sprites"]
     ):
         if age in ["kitten", "adolescent"]:
-            cat_sprite = str(19)
+            cat_sprite = str(22)
         else:
-            cat_sprite = str(18)
+            cat_sprite = str(21)
 
     # paralyzed sprites
     elif cat.pelt.paralyzed and age != "newborn":
         if age in ["kitten", "adolescent"]:
-            cat_sprite = str(17)
+            cat_sprite = str(20)
         else:
             if cat.pelt.length == "long":
-                cat_sprite = str(16)
+                cat_sprite = str(19)
             else:
-                cat_sprite = str(15)
+                cat_sprite = str(18)
 
     # default sprites
     else:
