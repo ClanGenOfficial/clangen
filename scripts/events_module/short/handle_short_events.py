@@ -564,7 +564,7 @@ class HandleShortEvents:
                 if "all_lives" in self.chosen_event.tags:
                     game.clan.leader_lives -= 10
                 elif "some_lives" in self.chosen_event.tags:
-                    game.clan.leader_lives -= randrange(2, self.current_lives - 1)
+                    game.clan.leader_lives -= randrange(2, self.current_lives)
                 else:
                     game.clan.leader_lives -= 1
 
