@@ -856,26 +856,45 @@ class Pelt:
                 self.eye_colour2 = "GREEN"
             self.eye_colour = "BLUE"
 
+        # converting from old separated sprite sheets into current combined sheet
         if self.length == "long":
             if self.cat_sprites["adult"] not in (12, 13, 14):
-                if self.cat_sprites["adult"] == 0:
+                if self.cat_sprites["adult"] in (0, 9):
                     self.cat_sprites["adult"] = 12
-                elif self.cat_sprites["adult"] == 1:
+                elif self.cat_sprites["adult"] in (1, 10):
                     self.cat_sprites["adult"] = 13
-                elif self.cat_sprites["adult"] == 2:
+                elif self.cat_sprites["adult"] in (2, 11):
                     self.cat_sprites["adult"] = 14
                 self.cat_sprites["young adult"] = self.cat_sprites["adult"]
                 self.cat_sprites["senior adult"] = self.cat_sprites["adult"]
                 self.cat_sprites["para_adult"] = 19
         else:
             self.cat_sprites["para_adult"] = 18
+
         if self.cat_sprites["senior"] not in (15, 16, 17):
-            if self.cat_sprites["senior"] == 3:
+            if self.cat_sprites["senior"] in (3, 12):
                 self.cat_sprites["senior"] = 15
-            elif self.cat_sprites["senior"] == 4:
+            elif self.cat_sprites["senior"] in (4, 13):
                 self.cat_sprites["senior"] = 16
-            elif self.cat_sprites["senior"] == 5:
+            elif self.cat_sprites["senior"] in (5, 14):
                 self.cat_sprites["senior"] = 17
+
+        # converting pre-multi newborn saves to correct pose nums
+        for sprite, num in self.cat_sprites.items():
+            if sprite == "kitten" and num not in (3, 4, 5):
+                self.cat_sprites[sprite] = num + 3
+            if sprite == "adolescent" and num not in (6, 7, 8):
+                self.cat_sprites[sprite] = num + 3
+            if sprite in ("young adult", "adult", "senior adult") and num not in (
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+            ):
+                self.cat_sprites[sprite] = num + 3
+            # seniors are converted right before this for block
 
         if self.tortie_marking in convert_dict["old_tortie_patches"]:
             old_pattern = self.tortie_marking
