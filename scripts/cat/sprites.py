@@ -241,7 +241,9 @@ class Sprites:
             self.WILD_DATA,
             self.COLLAR_DATA,
         )
-        multi_sheet_data = (self.EYE_DATA, self.PELT_DATA)
+        multi_sheet_data = [
+            x for x in data_jsons if isinstance(x["spritesheet"], (list, dict))
+        ]
 
         spritesheets = [
             "lineart",
@@ -313,7 +315,6 @@ class Sprites:
                             palettes=style_type[style],
                         )
 
-            # eye colours and pelts
             # these have multiple sprite sheets, so are handled differently from the others
             elif data in multi_sheet_data:
                 for spritesheet in data["spritesheet"]:
