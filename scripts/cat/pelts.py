@@ -60,7 +60,7 @@ class Pelt:
     # PELT SPRITE NAMES
     # pelt name used in save files: pelt's spritesheet
     pattern_sprite_names: dict = {}
-    for sheet, names in sprites.PELT_DATA["spritesheets"].items():
+    for sheet, names in sprites.PELT_DATA["spritesheet"].items():
         for name in names:
             pattern_sprite_names.update({name: sheet})
     pattern_sprite_names.update(

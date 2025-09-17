@@ -2779,11 +2779,11 @@ def generate_sprite(
 
         # draw eyes & scars1
         sprite_name = (
-            f"{sprites.EYE_DATA['spritesheets'][0]}{cat.pelt.eye_colour}{cat_sprite}"
+            f"{sprites.EYE_DATA['spritesheet'][0]}{cat.pelt.eye_colour}{cat_sprite}"
         )
         eyes = sprites.sprites[sprite_name].copy()
         if cat.pelt.eye_colour2 != None:
-            sprite_name = f"{sprites.EYE_DATA['spritesheets'][1]}{cat.pelt.eye_colour2}{cat_sprite}"
+            sprite_name = f"{sprites.EYE_DATA['spritesheet'][1]}{cat.pelt.eye_colour2}{cat_sprite}"
             eyes.blit(
                 sprites.sprites[sprite_name],
                 (0, 0),

@@ -229,7 +229,21 @@ class Sprites:
 
         del width, height  # unneeded
 
-        for x in (
+        data_jsons = (
+            self.EYE_DATA,
+            self.PELT_DATA,
+            self.WHITE_DATA,
+            self.TORTIE_DATA,
+            self.SKIN_DATA,
+            self.SCAR_DATA,
+            self.SCAR_MISSING_PART_DATA,
+            self.PLANT_DATA,
+            self.WILD_DATA,
+            self.COLLAR_DATA,
+        )
+        multi_sheet_data = (self.EYE_DATA, self.PELT_DATA)
+
+        spritesheets = [
             "lineart",
             "lineartdf",
             "lineartdead",
@@ -238,38 +252,21 @@ class Sprites:
             "line_ur_underlay",
             "line_ur_overlay",
             "gradient_ur",
-            "eyes",
-            "eyes_right",
-            "skin",
-            "scars",
-            "scars_missing_part",
-            "acc_plants",
-            "acc_wilds",
-            "acc_collars",
-            "colours_single",
-            "colours_tabby",
-            "colours_speckled",
-            "colours_bengal",
-            "colours_marbled",
-            "colours_rosette",
-            "colours_smoke",
-            "colours_ticked",
-            "colours_mackerel",
-            "colours_classic",
-            "colours_sokoke",
-            "colours_agouti",
-            "colours_singlestripe",
-            "colours_masked",
             "shadersnewwhite",
             "lightingnew",
-            "patches_white",
-            "patches_tortie",
             "fademask",
             "fadestarclan",
             "fadedarkforest",
             "fadeunknownresidence",
             "symbols",
-        ):
+        ]
+        for data in data_jsons:
+            if data in multi_sheet_data:
+                spritesheets.extend(data["spritesheet"])
+            else:
+                spritesheets.append(data["spritesheet"])
+
+        for x in spritesheets:
             if (
                 "lineart" in x
                 and (
@@ -302,51 +299,29 @@ class Sprites:
             self.make_group("fadedarkforest", (i, 0), f"fadedf{i}")
             self.make_group("fadeunknownresidence", (i, 0), f"fadeur{i}")
 
-        # eye colours
-        for spritesheet in self.EYE_DATA["spritesheet"]:
-            self.load_sheet(spritesheet, self.EYE_DATA["sprite_list"])
+        for data in data_jsons:
+            # collar accs
+            # this guy is special since it uses palette mapping
+            if data == self.COLLAR_DATA:
+                spritesheet = self.COLLAR_DATA["spritesheet"]
+                for row, style_type in enumerate(self.COLLAR_DATA["style_data"]):
+                    for col, style in enumerate(style_type):
+                        self.make_group(
+                            spritesheet=spritesheet,
+                            pos=(col, row),
+                            name=f"{spritesheet}{style}",
+                            palettes=style_type[style],
+                        )
 
-        # Define white patches
-        self.load_sheet(self.WHITE_DATA["spritesheet"], self.WHITE_DATA["sprite_list"])
+            # eye colours and pelts
+            # these have multiple sprite sheets, so are handled differently from the others
+            elif data in multi_sheet_data:
+                for spritesheet in data["spritesheet"]:
+                    self.load_sheet(spritesheet, data["sprite_list"])
 
-        # pelts
-        for spritesheet in self.PELT_DATA["spritesheet"]:
-            self.load_sheet(spritesheet, self.PELT_DATA["sprite_list"])
-
-        # tortie patches
-        self.load_sheet(
-            self.TORTIE_DATA["spritesheet"], self.TORTIE_DATA["sprite_list"]
-        )
-
-        # skin colors
-        self.load_sheet(self.SKIN_DATA["spritesheet"], self.SKIN_DATA["sprite_list"])
-
-        # scars
-        self.load_sheet(self.SCAR_DATA["spritesheet"], self.SCAR_DATA["sprite_list"])
-
-        # missing parts
-        self.load_sheet(
-            self.SCAR_MISSING_PART_DATA["spritesheet"],
-            self.SCAR_MISSING_PART_DATA["sprite_list"],
-        )
-
-        # plant accs
-        self.load_sheet(self.PLANT_DATA["spritesheet"], self.PLANT_DATA["sprite_list"])
-
-        # wild accs
-        self.load_sheet(self.WILD_DATA["spritesheet"], self.WILD_DATA["sprite_list"])
-
-        # collar accs
-        # this guy is special since it uses palette mapping
-        spritesheet = self.COLLAR_DATA["spritesheet"]
-        for row, style_type in enumerate(self.COLLAR_DATA["style_data"]):
-            for col, style in enumerate(style_type):
-                self.make_group(
-                    spritesheet=spritesheet,
-                    pos=(col, row),
-                    name=f"{spritesheet}{style}",
-                    palettes=style_type[style],
-                )
+            # everything else
+            else:
+                self.load_sheet(data["spritesheet"], data["sprite_list"])
 
         self.load_symbols()
 
