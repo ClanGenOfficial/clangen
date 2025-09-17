@@ -279,9 +279,9 @@ class Status:
         return self.group_history[-1]["group"]
 
     @property
-    def all_groups(self) -> list:
+    def all_groups(self) -> list[str]:
         """
-        Returns a list of all groups the cat has been a part of or is currently a part of.
+        Returns a list of IDs for all groups the cat has been a part of or is currently a part of.
         """
         groups = []
         for record in self.group_history:

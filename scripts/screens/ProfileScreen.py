@@ -1012,7 +1012,7 @@ class ProfileScreen(Screens):
         # if cat has never been part of the player clan, then they get no backstory yet
         if (
             not the_cat.status.alive_in_player_clan
-            and CatGroup.PLAYER_CLAN not in the_cat.status.all_groups
+            and CatGroup.PLAYER_CLAN_ID not in the_cat.status.all_groups
         ):
             bs_text = the_cat.status.social
         else:
@@ -1282,9 +1282,24 @@ class ProfileScreen(Screens):
             if murder:
                 life_history.append(murder)
 
+            afterlife_acceptance = self.get_afterlife_acceptance_text()
+            if afterlife_acceptance:
+                life_history.append(afterlife_acceptance)
+
             # join together history list with line breaks
             output = "\n\n".join(life_history)
         return output
+
+    def get_afterlife_acceptance_text(self):
+        """
+        Returns adjusted afterlife acceptance blurb.
+        """
+        cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
+        if self.the_cat.history.afterlife_acceptance:
+            text = i18n.t(f"cat.afterlife.{self.the_cat.history.afterlife_acceptance}")
+            adjusted_text = process_text(text, cat_dict=cat_dict)
+            return adjusted_text
+        return None
 
     def get_backstory_text(self):
         """
@@ -1419,7 +1434,7 @@ class ProfileScreen(Screens):
         """
         returns adjusted apprenticeship history text (mentor influence and app ceremony)
         """
-        if CatGroup.PLAYER_CLAN not in self.the_cat.status.all_groups:
+        if CatGroup.PLAYER_CLAN_ID not in self.the_cat.status.all_groups:
             return ""
 
         mentor_influence = self.the_cat.history.mentor_influence
@@ -1559,39 +1574,6 @@ class ProfileScreen(Screens):
             text = process_text(text, cat_dict)
 
         return text
-
-    def get_text_for_murder_event(self, event, death):
-        """Returns the adjusted murder history text for the victim"""
-
-        if switch_get_value(Switch.show_history_moons):
-            moons = True
-        else:
-            moons = False
-
-        if event["text"] == death["text"] and event["moon"] == death["moon"]:
-            if event["revealed"] is True:
-                final_text = event_text_adjust(
-                    Cat,
-                    event["text"],
-                    main_cat=self.the_cat,
-                    random_cat=Cat.fetch_cat(death["involved"]),
-                )
-
-                if event.get("revelation_text"):
-                    final_text = f"{final_text} {event['revelation_text']}"
-                if moons:
-                    if event.get("revelation_moon"):
-                        final_text = f"{final_text} (Moon {event['revelation_moon']})."
-                return final_text
-            else:
-                return event_text_adjust(
-                    Cat,
-                    event["text"],
-                    main_cat=self.the_cat,
-                    random_cat=Cat.fetch_cat(death["involved"]),
-                )
-
-        return None
 
     def get_death_text(self):
         """

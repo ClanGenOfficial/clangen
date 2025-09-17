@@ -909,15 +909,16 @@ class Events:
         if cat.faded:
             return
 
-        # this will also handle increasing dead_for!
-        cat.status.increase_current_moons_as()
-
         if cat.dead:
             cat.thoughts()
             if cat.ID in game.just_died:
                 cat.moons += 1
+            else:
+                cat.status.increase_current_moons_as()
             self.handle_fading(cat)  # Deal with fading.
             return
+
+        cat.status.increase_current_moons_as()
 
         # all actions, which do not trigger an event display and
         # are connected to cats are located in there

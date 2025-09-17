@@ -56,7 +56,7 @@ You'll also need to do some additional work to ensure the `style` name displays 
 
 `"zero"` is the profile display name while `"many"` and `"one"` are the plural and singular forms used when referencing this accessory in event text.
 
-## Adding a New Style_type
+## Adding a New `style_type`
 If you would like to add a new `style_type` entirely, you'll need to add a new row to the bottom of the spritesheet. Then, create whatever `style` sprites you desire in that row!
 
 Once you've edited the spritesheet and added the palette `png` files, you'll add the new `style_type` to the `collar_sprite_data_json`. The new `style_type` should be added as a new dict at the end of the `style_data` list.

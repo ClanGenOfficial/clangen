@@ -3,6 +3,9 @@
         "clan_founder_backstories": [
             "clan_founder"
         ],
+        "clan_guide_backstories": [
+            "clan_guide1", "clan_guide2", "clan_guide3", "clan_guide4", "clan_guide5", "clan_guide6", "clan_guide7"
+        ],
         "clanborn_backstories": [
             "clanborn"
         ],

@@ -206,6 +206,8 @@ class Cat:
         self.also_got = False
         self.permanent_condition = {}
         self.experience_level = None
+        self.dark_forest_affinity = 0
+        self.starclan_affinity = 0
 
         # Various behavior toggles
         self.no_kits = False
@@ -496,6 +498,39 @@ class Cat:
                     f"WARNING: Tried to kill {self.name} ID: {self.ID} but this cat is already dead!"
                 )
                 return
+
+            # kits are auto-accepted
+            if self.age in (CatAge.KITTEN, CatAge.NEWBORN):
+                self.history.add_afterlife_acceptance(
+                    game.clan.instructor.status.group,
+                    is_kit=True,
+                )
+            else:
+                if game.clan.instructor.status.group == CatGroup.STARCLAN:
+                    affinity = self.starclan_affinity
+                    afterlife_group = CatGroup.STARCLAN
+                    rejected_ID = CatGroup.DARK_FOREST_ID
+                else:
+                    affinity = self.dark_forest_affinity
+                    afterlife_group = CatGroup.DARK_FOREST
+                    rejected_ID = CatGroup.STARCLAN_ID
+
+                # afterlife does not like this cat
+                if affinity < 0:
+                    # might send them to the opposite afterlife instead
+                    if random() < abs(affinity / 100):
+                        self.history.add_afterlife_acceptance(
+                            afterlife_group, rejected=True
+                        )
+                        self.status.send_to_afterlife(rejected_ID)
+                        return
+                    # fine, they can go to afterlife, but some cats don't like it
+                    self.history.add_afterlife_acceptance(
+                        afterlife_group, contentious=True
+                    )
+                # afterlife thinks this cat is ok
+                else:
+                    self.history.add_afterlife_acceptance(afterlife_group)
             self.status.send_to_afterlife()
 
     @property
@@ -704,12 +739,18 @@ class Cat:
             # find what tier of rel they had for each type
             tiers: list[RelTier] = rel_with_dead.get_reltype_tiers()
             for tier in tiers:
-                rel_type = [k for k in rel_type_tiers if tier in k]
+                rel_type = [k for k in rel_type_tiers if tier in rel_type_tiers[k]]
                 if tier.is_extreme_pos:
                     very_high_types.extend(rel_type)
+                elif tier.is_mid_pos:
+                    # 50/50 if this will cause major grief
+                    if randint(1, 2) == 1:
+                        very_high_types.extend(rel_type)
+                    else:
+                        high_types.extend(rel_type)
                 elif tier.is_low_pos:
                     high_types.extend(rel_type)
-                elif tier.is_extreme_neg:
+                elif tier.is_extreme_neg or tier.is_mid_neg:
                     very_low_types.extend(rel_type)
                 continue
 
@@ -734,7 +775,7 @@ class Cat:
                     )
 
                 if body_treated:
-                    major_chance -= 1
+                    major_chance += 1
 
             # If major_chance is not 0, there is a chance for major grief
             grief_type = None
@@ -1119,6 +1160,11 @@ class Cat:
                         else []
                     ),
                     murder=history_data["murder"] if "murder" in history_data else {},
+                    afterlife_acceptance=(
+                        history_data["afterlife_acceptance"]
+                        if "afterlife_acceptance" in history_data
+                        else None
+                    ),
                     cat=self,
                 )
         except Exception:
@@ -3287,6 +3333,8 @@ class Cat:
                 ),
                 "birth_cooldown": self.birth_cooldown,
                 "status": self.status.get_status_dict(),
+                "dark_forest_affinity": self.dark_forest_affinity,
+                "starclan_affinity": self.starclan_affinity,
                 "backstory": self.backstory or None,
                 "moons": self.moons,
                 "trait": self.personality.trait,
