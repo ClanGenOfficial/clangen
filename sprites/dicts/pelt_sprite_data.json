@@ -1,5 +1,5 @@
 {
-    "spritesheets": {
+    "spritesheet": {
         "colours_single": ["SingleColour", "TwoColour"],
         "colours_tabby": ["Tabby"],
         "colours_marbled": ["Marbled"],

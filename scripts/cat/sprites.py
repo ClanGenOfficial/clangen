@@ -303,14 +303,14 @@ class Sprites:
             self.make_group("fadeunknownresidence", (i, 0), f"fadeur{i}")
 
         # eye colours
-        for spritesheet in self.EYE_DATA["spritesheets"]:
+        for spritesheet in self.EYE_DATA["spritesheet"]:
             self.load_sheet(spritesheet, self.EYE_DATA["sprite_list"])
 
         # Define white patches
         self.load_sheet(self.WHITE_DATA["spritesheet"], self.WHITE_DATA["sprite_list"])
 
         # pelts
-        for spritesheet in self.PELT_DATA["spritesheets"]:
+        for spritesheet in self.PELT_DATA["spritesheet"]:
             self.load_sheet(spritesheet, self.PELT_DATA["sprite_list"])
 
         # tortie patches
