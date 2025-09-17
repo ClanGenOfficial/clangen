@@ -1,5 +1,5 @@
 # Adding Sprites
-If you would like to add new collars, head to [Pallete Maps](pallete-maps.md) for more information.
+If you would like to add new collars, head to [Palette Maps](pallete-maps.md) for more information.
 
 !!! important
     This page **does not cover** adding new clan symbols, cat poses or spritesheets.
