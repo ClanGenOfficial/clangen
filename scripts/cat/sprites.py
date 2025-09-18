@@ -275,7 +275,7 @@ class Sprites:
                 constants.CONFIG["fun"]["april_fools"]
                 or is_today(SpecialDate.APRIL_FOOLS)
             ):
-                self.spritesheet(f"sprites/aprilfools{x}.png", x)
+                self.spritesheet(f"sprites/{x}_aprilfools.png", x)
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
 
