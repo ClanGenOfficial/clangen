@@ -776,8 +776,6 @@ class Pelt:
             "kitten": random.choice(self.kitten_poses),
             "adolescent": random.choice(self.adolescent_poses),
             "senior": random.choice(self.senior_poses),
-            "sick_young": "sick_young0",
-            "sick_adult": "sick_adult0",
             "para_young": "para_young0",
         }
         self.reverse = bool(random.getrandbits(1))
