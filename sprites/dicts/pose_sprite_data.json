@@ -11,7 +11,8 @@
         "shader_lighting",
         "shader_mask"
     ],
-    "pose_dict": {
+    "sheet_layout": [3, 7],
+    "poses": {
         "kitten0": "0",
         "kitten1": "1",
         "kitten2": "2",

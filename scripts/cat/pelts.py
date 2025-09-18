@@ -14,7 +14,7 @@ from scripts.utility import adjust_list_text
 
 class Pelt:
     # POSES
-    all_poses = list(sprites.POSE_DATA["pose_dict"].keys())
+    all_poses = list(sprites.POSE_DATA["poses"].keys())
     newborn_poses = [x for x in all_poses if "newborn" in x]
     kitten_poses = [x for x in all_poses if "kitten" in x]
     adolescent_poses = [x for x in all_poses if "adolescent" in x]

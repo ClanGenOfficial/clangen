@@ -26,7 +26,7 @@ These sprites should generally be a clearly defined grayscale with important fea
 
 Each palette `png` can be viewed as rows. The top row is our "base" color palette, aka the color palette already utilized in our spritesheet. Each following row is a new color palette with the color in each column being associated with the top "base" color. This is how we tell the code which color goes where.
 
-![color_palette_example1.png](img/color_palette_example1.png)
+![color_palette_example1.png](../img/color_palette_example1.png)
 
 ## Adding a New Color
 If you would like to add a new color palette to a `style_type`, it's as simple as opening the associated palette `png` and adding a new row at the bottom of the `png.` 

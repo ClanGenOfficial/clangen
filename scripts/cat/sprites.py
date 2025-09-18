@@ -87,6 +87,8 @@ class Sprites:
 
         self.load_tints()
 
+        self.sheet_layout = self.POSE_DATA["sheet_layout"]
+
     def load_tints(self):
         try:
             with open("sprites/dicts/tint.json", "r", encoding="utf-8") as read_file:
@@ -117,8 +119,8 @@ class Sprites:
         spritesheet,
         pos,
         name,
-        sprites_x=3,
-        sprites_y=7,
+        sprites_x=None,
+        sprites_y=None,
         no_index=False,
         palettes: list = None,
     ):  # pos = ex. (2, 3), no single pixels
@@ -128,10 +130,15 @@ class Sprites:
         :param pos: (x,y) tuple of offsets. NOT pixel offset, but offset of other sprites
         :param name: Name of group being made
         :param sprites_x: default 3, number of sprites horizontally
-        :param sprites_y: default 3, number of sprites vertically
+        :param sprites_y: default 7, number of sprites vertically
         :param no_index: default False, set True if sprite name does not require cat pose index:
         :param palettes: list of palette names
         """
+        # pulls the defaults from the pose_sprite_data.json file
+        if not sprites_x:
+            sprites_x = self.sheet_layout[0]
+        if not sprites_y:
+            sprites_y = self.sheet_layout[1]
 
         group_x_ofs = pos[0] * sprites_x * self.size
         group_y_ofs = pos[1] * sprites_y * self.size

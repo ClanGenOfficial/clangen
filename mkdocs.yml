@@ -33,10 +33,11 @@ nav:
         - dev/writing/localization.md
         - dev/writing/advanced-documentation.md
     - Art:
+        - Cat Sprites:
+            - dev/art/cat-sprites/cat-sprites.md
+            - dev/art/cat-sprites/adding-new-sprites.md
+            - dev/art/cat-sprites/palette-maps.md
         - dev/art/index.md
-        - dev/art/cat-sprites.md
-        - dev/art/adding-new-sprites.md
-        - dev/art/palette-maps.md
         - dev/art/patrol-sprites.md
         - dev/art/clan-symbols.md
         - dev/art/camp-backgrounds.md

@@ -2,7 +2,7 @@
 If you would like to add new collars, head to [Palette Maps](palette-maps.md) for more information.
 
 !!! important
-    This page **does not cover** adding new clan symbols, cat poses or spritesheets.
+    This page **does not cover** adding new clan symbols or spritesheets.
 
 ## Navigating the Files
 Spritesheets can be found in the `sprites` folder and their matching `DATA` can be found in `sprites/dicts`.  The `DATA` is how we control the creation of individual sprites off of the spritesheet. The `sprites` and `pelts` scripts pull all of their information from the `DATA` file.
@@ -10,11 +10,14 @@ Spritesheets can be found in the `sprites` folder and their matching `DATA` can 
 ## Adding to the Spritesheet
 New sprite sets can be added to the spritesheets by simply adding the new set to the end of a row or beginning a new row. 
 
-![image](img/spritesheet_editing_example1.png)
+![image](../img/spritesheet_editing_example1.png)
 
 _You should always keep to the left side of the canvas._
 
 These must be properly spaced on the 50x50 grid to line up with the other sprite sets on the sheet. Spritesheets can be resized if needed to add a new set, generally if the sheet is becoming overly-wide you should add more space to the bottom of the sheet and begin a new row. 
+
+!!! tip "When adding a new pose..."
+    New poses can be added to the end of the sheet or inserted at the start or middle! Width or height can be increased in increments of 50 px. Be sure to adjust the `sheet_layout` information in the `pose_sprite_data.json` file. This informs the code of how many columns and rows of sprites it should expect to find. The first number is the number of columns and second number is the rows. 
 
 ## Adding Sprites to their DATA Sheet
 Once you've completed your changes to the spritesheet, the matching `DATA` sheet will need to be altered. This is the last step! Once the `DATA` sheet is altered, the new sprites should appear in game.
@@ -47,3 +50,14 @@ The pelt `DATA` sheet is particularly complex due to how integral it is to the m
 | `sprite_list`        | List of dicts containing key:value pairs for `"NAME": "color category"`. Possible color categories are: `white`, `black`, `ginger`, and `brown`.                 |
 | `pattern_names`      | List of all pattern names.                                                                                                                                       |
 | `pattern_categories` | Dict containing key:value pairs for `"category name": [save file name for all patterns within the category]`. You generally should not be adding new categories. |
+
+The pose `DATA` sheet is also unique.
+
+| `spritesheet`                                                                                | `sheet_layout`                                                         | `poses`                                                                                                                                                                                                  |
+|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| List of all lineart-related spritesheets, such as lineart, gradients, overlays, and shaders. | List containing the columns and rows of sprites expected on the sheet. | Dicts containing key:value pairs for `"pose save name": "pose index on the spritesheets"`. Pose index is counted starting from the top left corner of the sheet and moving left-to-right, top-to-bottom. |
+
+
+
+!!! tip "Adding New Pose Names"
+    Pose save names should not be changed unless you are prepared to handle the conversion of old saves. New poses should be added following the name convention (i.e. if you are adding a new kitten pose, call it `"kitten3"`.  Poses are automatically compiled into lists based off the portion of their name preceding the number. So if `"kitten3"` was added, it would automatically be made a pose option for all kittens being generated without any extra coding work being required.
