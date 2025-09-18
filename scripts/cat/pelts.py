@@ -262,8 +262,6 @@ class Pelt:
             else "para_adult_short0",
             "newborn": "newborn0",
             "para_young": "para_young0",
-            "sick_adult": "sick_adult0",
-            "sick_young": "sick_young0",
         }
 
         self.reverse = reverse
