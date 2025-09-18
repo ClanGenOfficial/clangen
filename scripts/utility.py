@@ -2615,11 +2615,12 @@ def generate_sprite(
     :param disable_sick_sprite: If true, never use the not_working lineart.
                     If false, use the cat.not_working() to determine the no_working art.
     """
+    sprite_poses = sprites.POSE_DATA["pose_dict"]
 
     if life_state is not None:
         age = life_state
     else:
-        age = cat.age.value
+        age = cat.age
 
     if always_living:
         dead = False
@@ -2632,33 +2633,27 @@ def generate_sprite(
     if (
         not disable_sick_sprite
         and cat.not_working()
-        and age != "newborn"
+        and age != CatAge.NEWBORN
         and constants.CONFIG["cat_sprites"]["sick_sprites"]
     ):
-        if age in ["kitten", "adolescent"]:
-            cat_sprite = str(19)
+        if age in (CatAge.KITTEN, CatAge.ADOLESCENT):
+            cat_sprite = sprite_poses["sick_young0"]
         else:
-            cat_sprite = str(18)
+            cat_sprite = sprite_poses["sick_adult0"]
 
     # paralyzed sprites
-    elif cat.pelt.paralyzed and age != "newborn":
-        if age in ["kitten", "adolescent"]:
-            cat_sprite = str(17)
+    elif cat.pelt.paralyzed and age != CatAge.NEWBORN:
+        if age in (CatAge.KITTEN, CatAge.ADOLESCENT):
+            cat_sprite = sprite_poses[cat.pelt.cat_sprites["para_young"]]
         else:
-            if cat.pelt.length == "long":
-                cat_sprite = str(16)
-            else:
-                cat_sprite = str(15)
+            cat_sprite = sprite_poses[cat.pelt.cat_sprites["para_adult"]]
 
     # default sprites
     else:
-        if age == "elder" and not constants.CONFIG["fun"]["all_cats_are_newborn"]:
-            age = "senior"
-
         if constants.CONFIG["fun"]["all_cats_are_newborn"]:
-            cat_sprite = str(cat.pelt.cat_sprites["newborn"])
+            cat_sprite = sprite_poses[cat.pelt.cat_sprites["newborn"]]
         else:
-            cat_sprite = str(cat.pelt.cat_sprites[age])
+            cat_sprite = sprite_poses[cat.pelt.cat_sprites[age]]
 
     new_sprite = pygame.Surface(
         (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA
@@ -2813,7 +2808,7 @@ def generate_sprite(
         )
 
         gradient_surface = (
-            sprites.sprites["gradient_ur" + cat_sprite]
+            sprites.sprites["line_ur_gradient" + cat_sprite]
             if dead and cat.status.group == CatGroup.UNKNOWN_RESIDENCE
             else None
         )
@@ -2854,20 +2849,20 @@ def generate_sprite(
         # draw line art
         if game_setting_get("shaders") and not dead:
             new_sprite.blit(
-                sprites.sprites["shaders" + cat_sprite],
+                sprites.sprites["shader_mask" + cat_sprite],
                 (0, 0),
                 special_flags=pygame.BLEND_RGB_MULT,
             )
-            new_sprite.blit(sprites.sprites["lighting" + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites["shader_lighting" + cat_sprite], (0, 0))
 
         if not dead:
-            new_sprite.blit(sprites.sprites["lines" + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites["lineart" + cat_sprite], (0, 0))
         elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
-            new_sprite.blit(sprites.sprites["lineartur" + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites["lineart_ur" + cat_sprite], (0, 0))
         elif cat.status.group == CatGroup.DARK_FOREST:
-            new_sprite.blit(sprites.sprites["lineartdf" + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites["lineart_df" + cat_sprite], (0, 0))
         elif dead:
-            new_sprite.blit(sprites.sprites["lineartdead" + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites["lineart_sc" + cat_sprite], (0, 0))
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
         sprite_name = f"{sprites.SKIN_DATA['spritesheet']}{cat.pelt.skin}{cat_sprite}"
@@ -2983,13 +2978,13 @@ def generate_sprite(
 
                 # overlay
                 temp_sprite.blit(
-                    sprites.sprites["sc_overlay" + cat_sprite],
+                    sprites.sprites["line_sc_overlay" + cat_sprite],
                     (0, 0),
                 )
             elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                 # underlay
                 temp_sprite.blit(
-                    sprites.sprites["ur_underlay" + cat_sprite],
+                    sprites.sprites["line_ur_overlay" + cat_sprite],
                     (0, 0),
                 )
 
@@ -2998,7 +2993,7 @@ def generate_sprite(
 
                 # overlay
                 temp_sprite.blit(
-                    sprites.sprites["ur_overlay" + cat_sprite],
+                    sprites.sprites["line_ur_overlay" + cat_sprite],
                     (0, 0),
                 )
             elif cat.status.group == CatGroup.DARK_FOREST:

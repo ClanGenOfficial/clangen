@@ -19,6 +19,11 @@ class Sprites:
     clan_symbols = []
 
     with open(
+        "sprites/dicts/pose_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        POSE_DATA = ujson.loads(read_file.read())
+
+    with open(
         "sprites/dicts/collar_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         COLLAR_DATA = ujson.loads(read_file.read())
@@ -241,27 +246,24 @@ class Sprites:
             self.WILD_DATA,
             self.COLLAR_DATA,
         )
+
+        # data jsons that have multiple associated spritesheets
         multi_sheet_data = [
             x for x in data_jsons if isinstance(x["spritesheet"], (list, dict))
         ]
 
+        # COMPILING SPRITESHEETS
         spritesheets = [
-            "lineart",
-            "lineartdf",
-            "lineartdead",
-            "lineartur",
-            "line_sc_overlay",
-            "line_ur_underlay",
-            "line_ur_overlay",
-            "gradient_ur",
-            "shadersnewwhite",
-            "lightingnew",
             "fademask",
             "fadestarclan",
             "fadedarkforest",
             "fadeunknownresidence",
             "symbols",
         ]
+
+        # separate from data_json list bc we need to handle it differently later
+        spritesheets.extend(self.POSE_DATA["spritesheet"])
+
         for data in data_jsons:
             if data in multi_sheet_data:
                 spritesheets.extend(data["spritesheet"])
@@ -269,30 +271,17 @@ class Sprites:
                 spritesheets.append(data["spritesheet"])
 
         for x in spritesheets:
-            if (
-                "lineart" in x
-                and (
-                    constants.CONFIG["fun"]["april_fools"]
-                    or is_today(SpecialDate.APRIL_FOOLS)
-                )
-                and x != "lineartur"
+            if "lineart" in x and (
+                constants.CONFIG["fun"]["april_fools"]
+                or is_today(SpecialDate.APRIL_FOOLS)
             ):
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
             else:
                 self.spritesheet(f"sprites/{x}.png", x)
 
         # Line art
-        self.make_group("lineart", (0, 0), "lines")
-        self.make_group("shadersnewwhite", (0, 0), "shaders")
-        self.make_group("lightingnew", (0, 0), "lighting")
-
-        self.make_group("lineartdead", (0, 0), "lineartdead")
-        self.make_group("lineartdf", (0, 0), "lineartdf")
-        self.make_group("lineartur", (0, 0), "lineartur")
-        self.make_group("line_sc_overlay", (0, 0), "sc_overlay")
-        self.make_group("line_ur_underlay", (0, 0), "ur_underlay")
-        self.make_group("line_ur_overlay", (0, 0), "ur_overlay")
-        self.make_group("gradient_ur", (0, 0), "gradient_ur")
+        for sheet in self.POSE_DATA["spritesheet"]:
+            self.make_group(sheet, (0, 0), sheet)
 
         # Fading Fog
         for i in range(0, 3):
