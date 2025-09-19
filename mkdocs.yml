@@ -45,6 +45,7 @@ nav:
         - dev/audio/index.md
   - User Guides:
     - user-guides/index.md
+    - user-guides/removing-palette-maps.md
   - Contributing to the Wiki:
       - contributing/index.md
       - contributing/documentation-resources.md
