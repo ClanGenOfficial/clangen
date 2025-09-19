@@ -53,9 +53,7 @@ class Pelt:
     ]
 
     # PELT PATTERNS
-    pelt_patterns: list = []
-    for sprite_list in sprites.PELT_DATA["pattern_names"]:
-        pelt_patterns.extend(sprite_list)
+    pelt_patterns: list = sprites.PELT_DATA["pattern_names"]
 
     # pattern categories
     pelt_categories: dict = sprites.PELT_DATA["pattern_categories"]
@@ -851,7 +849,7 @@ class Pelt:
             if not self.tortie_base:
                 self.tortie_base = choice(Pelt.pelt_patterns)
             if not self.tortie_marking:
-                self.tortie_marking = choice(Pelt.pelt_patterns)
+                self.tortie_marking = choice(Pelt.tortie_patches)
 
             wildcard_chance = constants.CONFIG["cat_generation"]["wildcard_tortie"]
             if self.colour:
