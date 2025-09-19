@@ -300,7 +300,7 @@ class Sprites:
         for data in data_jsons:
             # collar accs
             # this guy is special since it uses palette mapping
-            if data == self.COLLAR_DATA:
+            if data == self.COLLAR_DATA and self.COLLAR_DATA["palette_map"]:
                 spritesheet = self.COLLAR_DATA["spritesheet"]
                 for row, style_type in enumerate(self.COLLAR_DATA["style_data"]):
                     for col, style in enumerate(style_type):

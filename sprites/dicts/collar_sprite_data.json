@@ -1,5 +1,6 @@
 {
     "spritesheet": "acc_collars",
+    "palette_map": true,
     "style_data": [
         {
             "BOW": [
