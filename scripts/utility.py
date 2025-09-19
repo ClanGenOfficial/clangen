@@ -509,7 +509,7 @@ def create_new_cat_block(
         elif (
             chosen_backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]
         ):
-            cat_social = CatSocial.KITTYPET
+            cat_social = CatSocial.ROGUE
 
     # KITTEN THOUGHT
     if rank in (CatRank.KITTEN, CatRank.NEWBORN):
