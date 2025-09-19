@@ -248,15 +248,30 @@ class Pelt:
         self.tint = tint
         self.white_patches_tint = white_patches_tint
         self.screen_scale = scripts.game_structure.screen_settings.screen_scale
-        self.cat_sprites = {
-            "kitten": kitten_sprite if kitten_sprite is not None else "kitten0",
-            "adolescent": adol_sprite if adol_sprite is not None else "adolescent0",
-            "young adult": adult_sprite if adult_sprite is not None else "adult_short0",
-            "adult": adult_sprite if adult_sprite is not None else "adult_short0",
-            "senior adult": adult_sprite
+
+        adult_sprite = (
+            adult_sprite
             if adult_sprite is not None
-            else "adult_short0",
-            "senior": senior_sprite if senior_sprite is not None else "senior0",
+            and (
+                adult_sprite in self.adult_short_poses
+                or adult_sprite in self.adult_long_poses
+            )
+            else "adult_short0"
+        )
+
+        self.cat_sprites = {
+            "kitten": kitten_sprite
+            if kitten_sprite is not None and kitten_sprite in self.kitten_poses
+            else "kitten0",
+            "adolescent": adol_sprite
+            if adol_sprite is not None and adol_sprite in self.adolescent_poses
+            else "adolescent0",
+            "young adult": adult_sprite,
+            "adult": adult_sprite,
+            "senior adult": adult_sprite,
+            "senior": senior_sprite
+            if senior_sprite is not None and senior_sprite in self.senior_poses
+            else "senior0",
             "para_adult": para_adult_sprite
             if para_adult_sprite is not None
             else "para_adult_short0",
