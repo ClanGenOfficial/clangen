@@ -261,6 +261,9 @@ class Pelt:
         )
 
         self.cat_sprites = {
+            "newborn": newborn_sprite
+            if newborn_sprite is not None and newborn_sprite in self.newborn_poses
+            else "newborn0",
             "kitten": kitten_sprite
             if kitten_sprite is not None and kitten_sprite in self.kitten_poses
             else "kitten0",
@@ -276,7 +279,6 @@ class Pelt:
             "para_adult": para_adult_sprite
             if para_adult_sprite is not None
             else "para_adult_short0",
-            "newborn": "newborn0",
             "para_young": "para_young0",
         }
 
