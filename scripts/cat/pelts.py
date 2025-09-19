@@ -18,8 +18,8 @@ class Pelt:
     newborn_poses = [x for x in all_poses if "newborn" in x]
     kitten_poses = [x for x in all_poses if "kitten" in x]
     adolescent_poses = [x for x in all_poses if "adolescent" in x]
-    adult_short_poses = [x for x in all_poses if "adult_short" in x]
-    adult_long_poses = [x for x in all_poses if "adult_long" in x]
+    adult_short_poses = [x for x in all_poses if "adult_short" in x and "para" not in x]
+    adult_long_poses = [x for x in all_poses if "adult_long" in x and "para" not in x]
     senior_poses = [x for x in all_poses if "senior" in x]
 
     # PELT LENGTH
