@@ -219,11 +219,11 @@ class Pelt:
         tint: str = "none",
         skin: str = "BLACK",
         white_patches_tint: str = "none",
-        kitten_sprite: int = None,
-        adol_sprite: int = None,
-        adult_sprite: int = None,
-        senior_sprite: int = None,
-        para_adult_sprite: int = None,
+        kitten_sprite: str = None,
+        adol_sprite: str = None,
+        adult_sprite: str = None,
+        senior_sprite: str = None,
+        para_adult_sprite: str = None,
         reverse: bool = False,
     ) -> None:
         self.name = name
@@ -247,35 +247,96 @@ class Pelt:
         self.white_patches_tint = white_patches_tint
         self.screen_scale = scripts.game_structure.screen_settings.screen_scale
 
-        adult_sprite = (
-            adult_sprite
-            if adult_sprite is not None
-            and (
-                adult_sprite in self.adult_short_poses
-                or adult_sprite in self.adult_long_poses
-            )
-            else "adult_short0"
-        )
+        # converting old pose numbers into names
+        if isinstance(adol_sprite, int):
+            self.cat_sprites = {
+                "kitten": kitten_sprite if kitten_sprite is not None else 0,
+                "adolescent": adol_sprite if adol_sprite is not None else 3,
+                "young adult": adult_sprite if adult_sprite is not None else 6,
+                "adult": adult_sprite if adult_sprite is not None else 6,
+                "senior adult": adult_sprite if adult_sprite is not None else 6,
+                "senior": senior_sprite if senior_sprite is not None else 12,
+                "para_adult": para_adult_sprite,
+                "newborn": 20,
+            }
+            for age, pose in self.cat_sprites.items():
+                # we only need to convert if it's using the old sprite pose numbers
+                if not isinstance(pose, int):
+                    break
 
-        self.cat_sprites = {
-            "kitten": kitten_sprite
-            if kitten_sprite is not None and kitten_sprite in self.kitten_poses
-            else "kitten0",
-            "adolescent": adol_sprite
-            if adol_sprite is not None and adol_sprite in self.adolescent_poses
-            else "adolescent0",
-            "young adult": adult_sprite,
-            "adult": adult_sprite,
-            "senior adult": adult_sprite,
-            "senior": senior_sprite
-            if senior_sprite is not None and senior_sprite in self.senior_poses
-            else "senior0",
-            "para_adult": para_adult_sprite
-            if para_adult_sprite is not None
-            else "para_adult_short0",
-            "newborn": "newborn0",
-            "para_young": "para_young0",
-        }
+                # convert paras
+                if self.length == "long":
+                    self.cat_sprites["para_adult"] = "para_adult_long0"
+                else:
+                    self.cat_sprites["para_adult"] = "para_adult_short0"
+
+                if age == CatAge.NEWBORN:
+                    self.cat_sprites[age] = "newborn0"
+                    continue
+                if age == CatAge.KITTEN:
+                    # since these were at the top of the sheet, the pose nums were 0, 1, 2. thus they'll naturally match this fstring
+                    self.cat_sprites[age] = f"kitten{pose}"
+                    continue
+                if age == CatAge.ADOLESCENT:
+                    if pose == 3:
+                        self.cat_sprites[age] = "adolescent0"
+                    elif pose == 4:
+                        self.cat_sprites[age] = "adolescent1"
+                    elif pose == 5:
+                        self.cat_sprites[age] = "adolescent2"
+                    continue
+                if age in (CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT):
+                    if pose in (0, 9):
+                        self.cat_sprites[age] = "adult_long0"
+                    elif pose in (1, 10):
+                        self.cat_sprites[age] = "adult_long1"
+                    elif pose in (2, 11):
+                        self.cat_sprites[age] = "adult_long2"
+                    elif pose == 6:
+                        self.cat_sprites[age] = "adult_short0"
+                    elif pose == 7:
+                        self.cat_sprites[age] = "adult_short1"
+                    elif pose == 8:
+                        self.cat_sprites[age] = "adult_short2"
+                if age == CatAge.SENIOR:
+                    if pose in (3, 12):
+                        self.cat_sprites[age] = "senior0"
+                    elif pose in (4, 13):
+                        self.cat_sprites[age] = "senior1"
+                    elif pose in (5, 14):
+                        self.cat_sprites[age] = "senior2"
+
+        # now for the updating handling of pose name strings
+        else:
+            adult_sprite = (
+                adult_sprite
+                if adult_sprite is not None
+                and (
+                    adult_sprite in self.adult_short_poses
+                    or adult_sprite in self.adult_long_poses
+                )
+                else "adult_short0"
+            )
+
+            self.cat_sprites = {
+                "kitten": kitten_sprite
+                if kitten_sprite is not None and kitten_sprite in self.kitten_poses
+                else "kitten0",
+                "adolescent": adol_sprite
+                if adol_sprite is not None and adol_sprite in self.adolescent_poses
+                else "adolescent0",
+                "young adult": adult_sprite,
+                "adult": adult_sprite,
+                "senior adult": adult_sprite,
+                "senior": senior_sprite
+                if senior_sprite is not None and senior_sprite in self.senior_poses
+                else "senior0",
+                "para_adult": para_adult_sprite
+                if para_adult_sprite is not None
+                else "para_adult_short0",
+                "newborn": "newborn0",
+                "para_young": "para_young0",
+            }
 
         self.reverse = reverse
         self.skin = skin
@@ -361,54 +422,6 @@ class Pelt:
             elif self.eye_colour == "BLUEGREEN":
                 self.eye_colour2 = "GREEN"
             self.eye_colour = "BLUE"
-
-        # converting pose numbers into names
-        for age, pose in self.cat_sprites.items():
-            # we only need to convert if it's using the old sprite pose numbers
-            if not isinstance(pose, int):
-                break
-
-            # convert paras
-            if self.length == "long":
-                self.cat_sprites["para_adult"] = "para_adult_long0"
-            else:
-                self.cat_sprites["para_adult"] = "para_adult_short0"
-
-            if age == CatAge.NEWBORN:
-                self.cat_sprites[age] = "newborn0"
-                continue
-            if age == CatAge.KITTEN:
-                # since these were at the top of the sheet, the pose nums were 0, 1, 2. thus they'll naturally match this fstring
-                self.cat_sprites[age] = f"kitten{pose}"
-                continue
-            if age == CatAge.ADOLESCENT:
-                if pose == 3:
-                    self.cat_sprites[age] = "adolescent0"
-                elif pose == 4:
-                    self.cat_sprites[age] = "adolescent1"
-                elif pose == 5:
-                    self.cat_sprites[age] = "adolescent2"
-                continue
-            if age in (CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT):
-                if pose in (0, 9):
-                    self.cat_sprites[age] = "adult_long0"
-                elif pose in (1, 10):
-                    self.cat_sprites[age] = "adult_long1"
-                elif pose in (2, 11):
-                    self.cat_sprites[age] = "adult_long2"
-                elif pose == 6:
-                    self.cat_sprites[age] = "adult_short0"
-                elif pose == 7:
-                    self.cat_sprites[age] = "adult_short1"
-                elif pose == 8:
-                    self.cat_sprites[age] = "adult_short2"
-            if age == CatAge.SENIOR:
-                if pose in (3, 12):
-                    self.cat_sprites[age] = "senior0"
-                elif pose in (4, 13):
-                    self.cat_sprites[age] = "senior1"
-                elif pose in (5, 14):
-                    self.cat_sprites[age] = "senior2"
 
         if self.tortie_marking in convert_dict["old_tortie_patches"]:
             old_pattern = self.tortie_marking
