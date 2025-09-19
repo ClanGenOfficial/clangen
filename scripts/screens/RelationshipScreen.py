@@ -15,6 +15,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.game_structure.windows import RelationshipLog
 from scripts.screens.Screens import Screens
+from scripts.screens.enums import GameScreen
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -83,13 +84,13 @@ class RelationshipScreen(Screens):
                 self.inspect_cat = event.ui_element.return_cat_object()
                 self.update_inspected_relation()
             elif event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.switch_focus_button:
                 switch_set_value(Switch.cat, self.inspect_cat.ID)
                 self.update_focus_cat()
             elif event.ui_element == self.view_profile_button:
                 switch_set_value(Switch.cat, self.inspect_cat.ID)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     switch_set_value(Switch.cat, self.next_cat)

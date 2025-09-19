@@ -14,17 +14,16 @@ from time import time
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure import game
+from scripts.screens.enums import GameScreen
 
 status_dict = {
-    "start screen": "At the start screen",
-    "make clan screen": "Making a Clan",
-    "mediation screen": "Mediating a dispute",
-    "patrol screen": "On a patrol",
-    "profile screen": "Viewing a cat's profile",
-    "ceremony screen": "Holding a ceremony",
-    "starclan screen": "Viewing StarClan",
-    "dark forest screen": "Viewing the Dark Forest",
-    "med den screen": "In the medicine den",
+    GameScreen.START: "At the start screen",
+    GameScreen.MAKE_CLAN: "Making a Clan",
+    GameScreen.MEDIATION: "Mediating a dispute",
+    GameScreen.PATROL: "On a patrol",
+    GameScreen.PROFILE: "Viewing a cat's profile",
+    GameScreen.CEREMONY: "Holding a ceremony",
+    GameScreen.MED_DEN: "In the medicine den",
 }
 
 

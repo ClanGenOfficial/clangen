@@ -8,11 +8,12 @@ import ujson
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure import game
 from scripts.game_structure.ui_elements import CatButton, UISpriteButton
+from scripts.screens.enums import GameScreen
 
 logger = logging.getLogger(__name__)
 
-menu_screens = ["settings screen", "start screen", "switch clan screen"]
-creation_screens = ["make clan screen"]
+menu_screens = [GameScreen.SETTINGS, GameScreen.START, GameScreen.SWITCH_CLAN]
+creation_screens = [GameScreen.MAKE_CLAN]
 
 
 class MusicManager:
