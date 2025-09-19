@@ -798,7 +798,11 @@ class Pelt:
         self.skin = choice(Pelt.skin_sprites)
 
         if self.length == "long":
-            self.cat_sprites["adult"] = random.choice(self.adult_long_poses)
+            self.cat_sprites["adult"] = random.choice(
+                self.adult_long_poses
+                if self.adult_long_poses
+                else self.adult_short_poses
+            )
             self.cat_sprites["para_adult"] = "para_adult_long0"
         else:
             self.cat_sprites["adult"] = random.choice(self.adult_short_poses)
