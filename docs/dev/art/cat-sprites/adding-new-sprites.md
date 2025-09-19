@@ -27,7 +27,7 @@ Once you've completed your changes to the spritesheet, the matching `DATA` sheet
 
 Not all `DATA` sheets hold the same information, but they will all at least contain a `spritesheet` or `spritesheets` key and a `sprite_list` key. Adding a new sprite set typically only requires the alteration of the `sprite_list`. 
 
-The `sprite_list` will be a list containing multiple lists or dicts. Each list/dict represents a single row of the spritesheet, starting at the top and going down. These hold the names of each sprite set within that row, the list/dict will begin at the left side of its row and continue to the right.
+The `sprite_list` will be a list containing multiple lists or dicts. Each list/dict represents a single row of the spritesheet, starting at the top and going down. These hold the names of each sprite set within that row, the list/dict will begin on the left side of its row and continue to the right.
 
 If you have added your new sprite set to the end of a row, then you will locate that row's list/dict and add the name of the new set to the end. If you have created a new row, then you will need to add a new list/dict to the end of the `sprite_list`.
 
