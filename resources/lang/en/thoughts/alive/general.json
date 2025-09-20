@@ -6094,7 +6094,7 @@
 			"Is asking r_c what happened before {PRONOUN/m_c/subject} had a flashback",
 			"Unsheathes {PRONOUN/m_c/poss} claws when r_c asks what {PRONOUN/m_c/subject} saw in a flashback",
 			"Checks the camp entrance once, twice, thrice... just to be safe",
-			"Is almost sent into a panic at r_c scaring the life out of {PRONOUN/m_c/object}",
+			"Is almost sent into a panic when r_c startles {PRONOUN/m_c/object}",
 			"Jumps to {PRONOUN/m_c/poss} paws at the sound of a playfight in camp",
 			"Questions if Starclan cursed {PRONOUN/m_c/object} to relive that moment so vividly",
 			"Wonders if the Dark Forest is why {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} getting flashbacks"
