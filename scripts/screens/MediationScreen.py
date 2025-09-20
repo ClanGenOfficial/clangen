@@ -20,6 +20,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
+from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_get_value, Switch
@@ -52,7 +53,7 @@ class MediationScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.last_med:
                 self.selected_mediator -= 1
                 self.update_mediator_info()

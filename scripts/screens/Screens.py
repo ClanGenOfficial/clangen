@@ -26,6 +26,7 @@ from scripts.game_structure.screen_settings import (
 )
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.game_structure.windows import SaveCheck, EventLoading
+from scripts.screens.enums import GameScreen
 from scripts.screens.screens_core.screens_core import rebuild_den_dropdown
 from scripts.utility import (
     update_sprite,
@@ -62,22 +63,22 @@ class Screens:
         game.last_screen_forupdate = self.name
 
         # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in ["camp screen", "list screen", "events screen"]:
+        if self.name in [GameScreen.CAMP, GameScreen.LIST, GameScreen.EVENTS]:
             game.last_screen_forProfile = self.name
 
         if new_screen not in [
-            "list screen",
-            "profile screen",
-            "sprite inspect screen",
-            "ceremony screen",
-            "role screen",
-            "choose mate screen",
-            "choose mentor screen",
-            "choose adoptive parent screen",
-            "relationship screen",
-            "see kits screen",
-            "mediation screen",
-            "change gender screen",
+            GameScreen.LIST,
+            GameScreen.PROFILE,
+            GameScreen.SPRITE_INSPECT,
+            GameScreen.CEREMONY,
+            GameScreen.CHANGE_ROLE,
+            GameScreen.CHOOSE_MATE,
+            GameScreen.CHOOSE_MENTOR,
+            GameScreen.CHOOSE_ADOPTIVE_PARENT,
+            GameScreen.RELATIONSHIP,
+            GameScreen.MEDIATION,
+            GameScreen.CHANGE_GENDER,
+            GameScreen.FAMILY_TREE,
         ]:
             game.last_list_forProfile = None
             self.current_group = "your_clan"
@@ -89,7 +90,7 @@ class Screens:
         game.rpc.update_rpc.set()
 
         if (
-            game.last_screen_forupdate == "start screen"
+            game.last_screen_forupdate == GameScreen.START
             and switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
         ):
             rebuild_den_dropdown(
@@ -296,13 +297,13 @@ class Screens:
         """This is a short-up to deal with menu button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
         if event.ui_element == Screens.menu_buttons["events_screen"]:
-            self.change_screen("events screen")
+            self.change_screen(GameScreen.EVENTS)
         elif event.ui_element == Screens.menu_buttons["camp_screen"]:
-            self.change_screen("camp screen")
+            self.change_screen(GameScreen.CAMP)
         elif event.ui_element == Screens.menu_buttons["catlist_screen"]:
-            self.change_screen("list screen")
+            self.change_screen(GameScreen.LIST)
         elif event.ui_element == Screens.menu_buttons["patrol_screen"]:
-            self.change_screen("patrol screen")
+            self.change_screen(GameScreen.PATROL)
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
             SaveCheck(
                 switch_get_value(Switch.cur_screen),
@@ -310,9 +311,9 @@ class Screens:
                 Screens.menu_buttons["main_menu"],
             )
         elif event.ui_element == Screens.menu_buttons["allegiances"]:
-            self.change_screen("allegiances screen")
+            self.change_screen(GameScreen.ALLEGIANCES)
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
-            self.change_screen("clan settings screen")
+            self.change_screen(GameScreen.CLAN_SETTINGS)
         elif event.ui_element == Screens.menu_buttons["moons_n_seasons_arrow"]:
             switch_set_value(
                 Switch.moon_and_seasons_open,
@@ -323,13 +324,13 @@ class Screens:
             self.update_dens()
 
         elif event.ui_element == Screens.menu_buttons["lead_den"]:
-            self.change_screen("leader den screen")
+            self.change_screen(GameScreen.LEADER_DEN)
         elif event.ui_element == Screens.menu_buttons["clearing"]:
-            self.change_screen("clearing screen")
+            self.change_screen(GameScreen.CLEARING)
         elif event.ui_element == Screens.menu_buttons["med_cat_den"]:
-            self.change_screen("med den screen")
+            self.change_screen(GameScreen.MED_DEN)
         elif event.ui_element == Screens.menu_buttons["warrior_den"]:
-            self.change_screen("warrior den screen")
+            self.change_screen(GameScreen.WARRIOR_DEN)
 
     @classmethod
     def update_dens(cls):
@@ -352,12 +353,12 @@ class Screens:
         """Updates the moons and seasons widget."""
         if (
             get_clan_setting("moons and seasons")
-            and switch_get_value(Switch.cur_screen) != "events screen"
+            and switch_get_value(Switch.cur_screen) != GameScreen.EVENTS
         ):
             cls.menu_buttons["moons_n_seasons_arrow"].kill()
             cls.menu_buttons["moons_n_seasons"].kill()
             if switch_get_value(Switch.moon_and_seasons_open):
-                if cls.name == "events screen":
+                if cls.name == GameScreen.EVENTS:
                     cls.close_moon_and_season()
                 else:
                     cls.open_moon_and_season()
@@ -441,7 +442,7 @@ class Screens:
             "",
             object_id="#arrow_mns_closed_button",
         )
-        if cls.name == "events screen":
+        if cls.name == GameScreen.EVENTS:
             cls.menu_buttons["moons_n_seasons_arrow"].kill()
 
         cls.menu_buttons["moons_n_seasons"] = pygame_gui.elements.UIScrollingContainer(
@@ -628,9 +629,9 @@ class Screens:
         if self.active_blur_bg == "default" or self.active_blur_bg == season:
             blur_bg = season_bg
         elif self.name in [
-            "start screen",
-            "settings screen",
-            "switch clan screen",
+            GameScreen.START,
+            GameScreen.SETTINGS,
+            GameScreen.SWITCH_CLAN,
         ]:
             # if we're in the main menu levels, display the main menu bg
             blur_bg = scripts.screens.screens_core.screens_core.default_fullscreen_bgs[

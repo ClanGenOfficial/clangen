@@ -1,0 +1,21 @@
+{
+    "spritesheet": "acc_wilds",
+    "sprite_list": [
+        {
+            "RED FEATHERS": "tail",
+            "BLUE FEATHERS": "tail",
+            "JAY FEATHERS": "tail",
+            "GULL FEATHERS": "tail",
+            "SPARROW FEATHERS": "tail",
+            "MOTH WINGS": "head",
+            "ROSY MOTH WINGS": "head",
+            "MORPHO BUTTERFLY": "head",
+            "MONARCH BUTTERFLY": "head",
+            "CICADA WINGS": "head",
+            "BLACK CICADA": "head"
+        },
+        {
+            "ROAD RUNNER FEATHER": "body"
+        }
+    ]
+}

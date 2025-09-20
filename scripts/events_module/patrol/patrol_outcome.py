@@ -956,9 +956,7 @@ class PatrolOutcome:
             return None
 
         scar_list = [
-            x
-            for x in scar_list
-            if x in Pelt.scars1 + Pelt.scars2 + Pelt.scars3 and x not in cat.pelt.scars
+            x for x in scar_list if x in Pelt.all_scars and x not in cat.pelt.scars
         ]
 
         if not scar_list:

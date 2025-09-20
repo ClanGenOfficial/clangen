@@ -1,0 +1,34 @@
+{
+    "spritesheet": [
+        "eyes",
+        "eyes_right"
+    ],
+    "sprite_list": [
+        {
+            "YELLOW": "yellow",
+            "AMBER": "yellow",
+            "HAZEL": "green",
+            "PALEGREEN": "green",
+            "GREEN": "green",
+            "BLUE": "blue",
+            "DARKBLUE": "blue",
+            "GREY": "blue",
+            "CYAN": "blue",
+            "EMERALD": "green",
+            "HEATHERBLUE": "blue",
+            "SUNLITICE": "blue"
+        },
+        {
+            "COPPER": "yellow",
+            "SAGE": "green",
+            "COBALT": "blue",
+            "PALEBLUE": "blue",
+            "BRONZE": "yellow",
+            "SILVER": "yellow",
+            "PALEYELLOW": "yellow",
+            "GOLD": "yellow",
+            "GREENYELLOW": "yellow",
+            "ORANGE": "yellow"
+        }
+    ]
+}
