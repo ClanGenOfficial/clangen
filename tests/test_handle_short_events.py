@@ -101,7 +101,7 @@ class TestHandleAccessories(unittest.TestCase):
 
         self.chosen_event.execute_event()
         self.assert_intersection(
-            self.chosen_event.main_cat.pelt.accessory, self.pelts.collars
+            self.chosen_event.main_cat.pelt.accessory, self.pelts.collar_accessories
         )
 
     def test_notail_cats_do_not_get_tail_accessories(self):
