@@ -25,6 +25,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.game_structure.windows import GameOver
 from scripts.screens.Screens import Screens
+from scripts.screens.enums import GameScreen
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
@@ -142,7 +143,7 @@ class EventsScreen(Screens):
             elif element in self.cat_profile_buttons:
                 self.save_scroll_position()
                 switch_set_value(Switch.cat, element.cat_id)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             else:
                 self.save_scroll_position()
                 self.menu_button_pressed(event)
@@ -153,10 +154,10 @@ class EventsScreen(Screens):
             if event.type == pygame.KEYDOWN:
                 # LEFT ARROW
                 if event.key == pygame.K_LEFT:
-                    self.change_screen("patrol screen")
+                    self.change_screen(GameScreen.PATROL)
                 # RIGHT ARROW
                 elif event.key == pygame.K_RIGHT:
-                    self.change_screen("camp screen")
+                    self.change_screen(GameScreen.CAMP)
                 # DOWN AND UP ARROW
                 elif event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                     self.handle_tab_select(event.key)
@@ -734,7 +735,7 @@ class EventsScreen(Screens):
         switch_set_value(Switch.saved_scroll_positions, {})
 
         if get_living_clan_cat_count(Cat) == 0:
-            GameOver("events screen")
+            GameOver(GameScreen.EVENTS)
 
         self.update_display_events_lists()
 

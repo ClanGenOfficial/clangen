@@ -19,6 +19,7 @@ from scripts.utility import (
     adjust_list_text,
 )
 from .Screens import Screens
+from .enums import GameScreen
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
@@ -92,7 +93,7 @@ class FamilyTreeScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
                 switch_set_value(Switch.root_cat, None)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
@@ -161,7 +162,7 @@ class FamilyTreeScreen(Screens):
                 self.group_page_number += 1
                 self.handle_relation_groups()
             elif event.ui_element == self.cat_elements["center_cat_image"]:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
                 switch_set_value(Switch.root_cat, None)
             elif (
                 event.ui_element in self.relation_elements.values()
@@ -175,7 +176,7 @@ class FamilyTreeScreen(Screens):
                 except AttributeError:
                     return
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
-                    self.change_screen("profile screen")
+                    self.change_screen(GameScreen.PROFILE)
                     switch_set_value(Switch.root_cat, None)
                 else:
                     self.exit_screen()

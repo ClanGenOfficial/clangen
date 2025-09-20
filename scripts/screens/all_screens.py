@@ -25,6 +25,7 @@ from .SpriteInspectScreen import SpriteInspectScreen
 from .StartScreen import StartScreen
 from .SwitchClanScreen import SwitchClanScreen
 from .WarriorDenScreen import WarriorDenScreen
+from .enums import GameScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -48,75 +49,74 @@ BUTTONS:
 
 class AllScreens:
     screens = Screens()
+    profile_screen = ProfileScreen(GameScreen.PROFILE)
+    ceremony_screen = CeremonyScreen(GameScreen.CEREMONY)
+    role_screen = RoleScreen(GameScreen.CHANGE_ROLE)
+    sprite_inspect_screen = SpriteInspectScreen(GameScreen.SPRITE_INSPECT)
 
-    profile_screen = ProfileScreen("profile screen")
-    ceremony_screen = CeremonyScreen("ceremony screen")
-    role_screen = RoleScreen("role screen")
-    sprite_inspect_screen = SpriteInspectScreen("sprite inspect screen")
+    make_clan_screen = MakeClanScreen(GameScreen.MAKE_CLAN)
 
-    make_clan_screen = MakeClanScreen("make clan screen")
+    allegiances_screen = AllegiancesScreen(GameScreen.ALLEGIANCES)
+    camp_screen = ClanScreen(GameScreen.CAMP)
+    list_screen = ListScreen(GameScreen.LIST)
+    med_den_screen = MedDenScreen(GameScreen.MED_DEN)
+    clearing_screen = ClearingScreen(GameScreen.CLEARING)
+    warrior_den_screen = WarriorDenScreen(GameScreen.WARRIOR_DEN)
+    leader_den_screen = LeaderDenScreen(GameScreen.LEADER_DEN)
 
-    allegiances_screen = AllegiancesScreen("allegiances screen")
-    camp_screen = ClanScreen("camp screen")
-    list_screen = ListScreen("list screen")
-    med_den_screen = MedDenScreen("med den screen")
-    clearing_screen = ClearingScreen("clearing screen")
-    warrior_den_screen = WarriorDenScreen("warrior den screen")
-    leader_den_screen = LeaderDenScreen("leader den screen")
+    events_screen = EventsScreen(GameScreen.EVENTS)
 
-    events_screen = EventsScreen("events screen")
+    settings_screen = SettingsScreen(GameScreen.SETTINGS)
+    clan_settings_screen = ClanSettingsScreen(GameScreen.CLAN_SETTINGS)
+    start_screen = StartScreen(GameScreen.START)
+    event_edit_screen = EventEditScreen(GameScreen.EVENT_EDIT)
+    switch_clan_screen = SwitchClanScreen(GameScreen.SWITCH_CLAN)
 
-    settings_screen = SettingsScreen("settings screen")
-    clan_settings_screen = ClanSettingsScreen("clan settings screen")
-    start_screen = StartScreen("start screen")
-    event_edit_screen = EventEditScreen("event edit screen")
-    switch_clan_screen = SwitchClanScreen("switch clan screen")
+    patrol_screen = PatrolScreen(GameScreen.PATROL)
 
-    patrol_screen = PatrolScreen("patrol screen")
-
-    choose_mate_screen = ChooseMateScreen("choose mate screen")
-    choose_mentor_screen = ChooseMentorScreen("choose mentor screen")
+    choose_mate_screen = ChooseMateScreen(GameScreen.CHOOSE_MATE)
+    choose_mentor_screen = ChooseMentorScreen(GameScreen.CHOOSE_MENTOR)
     choose_adoptive_parent_screen = ChooseAdoptiveParentScreen(
-        "choose adoptive parent screen"
+        GameScreen.CHOOSE_ADOPTIVE_PARENT
     )
-    relationship_screen = RelationshipScreen("relationship screen")
-    family_tree_screen = FamilyTreeScreen("family tree screen")
-    mediation_screen = MediationScreen("mediation screen")
-    change_gender_screen = ChangeGenderScreen("change gender screen")
+    relationship_screen = RelationshipScreen(GameScreen.RELATIONSHIP)
+    family_tree_screen = FamilyTreeScreen(GameScreen.FAMILY_TREE)
+    mediation_screen = MediationScreen(GameScreen.MEDIATION)
+    change_gender_screen = ChangeGenderScreen(GameScreen.CHANGE_GENDER)
 
     @classmethod
     def rebuild_all_screens(cls):
         cls.screens = Screens()
-        cls.profile_screen = ProfileScreen("profile screen")
-        cls.ceremony_screen = CeremonyScreen("ceremony screen")
-        cls.role_screen = RoleScreen("role screen")
-        cls.sprite_inspect_screen = SpriteInspectScreen("sprite inspect screen")
+        cls.profile_screen = ProfileScreen(GameScreen.PROFILE)
+        cls.ceremony_screen = CeremonyScreen(GameScreen.CEREMONY)
+        cls.role_screen = RoleScreen(GameScreen.CHANGE_ROLE)
+        cls.sprite_inspect_screen = SpriteInspectScreen(GameScreen.SPRITE_INSPECT)
 
-        cls.make_clan_screen = MakeClanScreen("make clan screen")
+        cls.make_clan_screen = MakeClanScreen(GameScreen.MAKE_CLAN)
 
-        cls.allegiances_screen = AllegiancesScreen("allegiances screen")
-        cls.camp_screen = ClanScreen("camp screen")
-        cls.list_screen = ListScreen("list screen")
-        cls.med_den_screen = MedDenScreen("med den screen")
-        cls.clearing_screen = ClearingScreen("clearing screen")
-        cls.warrior_den_screen = WarriorDenScreen("warrior den screen")
-        cls.leader_den_screen = LeaderDenScreen("leader den screen")
+        cls.allegiances_screen = AllegiancesScreen(GameScreen.ALLEGIANCES)
+        cls.camp_screen = ClanScreen(GameScreen.CAMP)
+        cls.list_screen = ListScreen(GameScreen.LIST)
+        cls.med_den_screen = MedDenScreen(GameScreen.MED_DEN)
+        cls.clearing_screen = ClearingScreen(GameScreen.CLEARING)
+        cls.warrior_den_screen = WarriorDenScreen(GameScreen.WARRIOR_DEN)
+        cls.leader_den_screen = LeaderDenScreen(GameScreen.LEADER_DEN)
 
-        cls.events_screen = EventsScreen("events screen")
+        cls.events_screen = EventsScreen(GameScreen.EVENTS)
 
-        cls.settings_screen = SettingsScreen("settings screen")
-        cls.clan_settings_screen = ClanSettingsScreen("clan settings screen")
-        cls.start_screen = StartScreen("start screen")
-        cls.switch_clan_screen = SwitchClanScreen("switch clan screen")
+        cls.settings_screen = SettingsScreen(GameScreen.SETTINGS)
+        cls.clan_settings_screen = ClanSettingsScreen(GameScreen.CLAN_SETTINGS)
+        cls.start_screen = StartScreen(GameScreen.START)
+        cls.switch_clan_screen = SwitchClanScreen(GameScreen.SWITCH_CLAN)
 
-        cls.patrol_screen = PatrolScreen("patrol screen")
+        cls.patrol_screen = PatrolScreen(GameScreen.PATROL)
 
-        cls.choose_mate_screen = ChooseMateScreen("choose mate screen")
-        cls.choose_mentor_screen = ChooseMentorScreen("choose mentor screen")
+        cls.choose_mate_screen = ChooseMateScreen(GameScreen.CHOOSE_MATE)
+        cls.choose_mentor_screen = ChooseMentorScreen(GameScreen.CHOOSE_MENTOR)
         cls.choose_adoptive_parent_screen = ChooseAdoptiveParentScreen(
-            "choose adoptive parent screen"
+            GameScreen.CHOOSE_ADOPTIVE_PARENT
         )
-        cls.relationship_screen = RelationshipScreen("relationship screen")
-        cls.family_tree_screen = FamilyTreeScreen("family tree screen")
-        cls.mediation_screen = MediationScreen("mediation screen")
-        cls.change_gender_screen = ChangeGenderScreen("change gender screen")
+        cls.relationship_screen = RelationshipScreen(GameScreen.RELATIONSHIP)
+        cls.family_tree_screen = FamilyTreeScreen(GameScreen.FAMILY_TREE)
+        cls.mediation_screen = MediationScreen(GameScreen.MEDIATION)
+        cls.change_gender_screen = ChangeGenderScreen(GameScreen.CHANGE_GENDER)

@@ -4702,6 +4702,17 @@
             "status": [],
             "dies": true
         },
+        "r_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
         "history": [
             {
                 "cats": [
@@ -7039,6 +7050,17 @@
                 "apprentice"
             ],
             "dies": true
+        },
+        "r_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
         },
         "history": [
             {

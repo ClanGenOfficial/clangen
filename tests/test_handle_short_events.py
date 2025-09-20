@@ -27,7 +27,7 @@ class TestHandleAccessories(unittest.TestCase):
             dict(
                 wild_accessories=["WILD1", "WILD2"],
                 plant_accessories=["PLANT1", "PLANT2"],
-                collars=["COLLAR1", "COLLAR2"],
+                collar_accessories=["COLLAR1", "COLLAR2"],
                 head_accessories=["HEAD1", "HEAD2"],
                 body_accessories=["BODY1", "BODY2"],
                 tail_accessories=["TAIL1", "TAIL2"],
@@ -77,7 +77,9 @@ class TestHandleAccessories(unittest.TestCase):
         self.test.chosen_event.new_accessory = ["COLLAR"]
 
         self.test.handle_accessories(pelts=self.pelt_class)
-        self.assert_intersection(self.test.main_cat.pelt.accessory, self.pelts.collars)
+        self.assert_intersection(
+            self.test.main_cat.pelt.accessory, self.pelts.collar_accessories
+        )
 
     def test_notail_cats_do_not_get_tail_accessories(self):
         self.test.chosen_event.new_accessory = self.pelts.tail_accessories
