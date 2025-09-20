@@ -480,7 +480,7 @@ class ShortEvent:
         if "PLANT" in possible_accs:
             acc_list.extend(Pelt.plant_accessories)
         if "COLLAR" in possible_accs:
-            acc_list.extend(Pelt.collars)
+            acc_list.extend(Pelt.collar_accessories)
 
         for acc in possible_accs:
             if acc not in ("WILD", "PLANT", "COLLAR"):
@@ -496,7 +496,7 @@ class ShortEvent:
                         acc_list.remove(acc)
 
         accessory_groups = [
-            Pelt.collars,
+            Pelt.collar_accessories,
             Pelt.head_accessories,
             Pelt.tail_accessories,
             Pelt.body_accessories,
