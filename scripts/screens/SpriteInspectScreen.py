@@ -16,11 +16,10 @@ from scripts.utility import (
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
+from .enums import GameScreen
 from ..cat.sprites import sprites
 from ..clan_package.settings import get_clan_setting
-from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
-from ..cat.enums import CatGroup
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import SaveAsImage
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -61,7 +60,7 @@ class SpriteInspectScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     switch_set_value(Switch.cat, self.next_cat)

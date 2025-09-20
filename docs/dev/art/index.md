@@ -4,7 +4,7 @@
 
 [:clangen-leaf: Camp Backgrounds](camp-backgrounds.md){.md-button .md-button--primary }
 
-[:clangen-cat-head: Cat Sprites](cat-sprites.md){.md-button .md-button--primary }
+[:clangen-cat-head: Cat Sprites](cat-sprites/cat-sprites.md){.md-button .md-button--primary }
 
 [:clangen-clan-question: Clan Symbols](clan-symbols.md){.md-button .md-button--primary }
 

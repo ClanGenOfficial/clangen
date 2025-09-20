@@ -7,13 +7,15 @@ import ujson
 from scripts.clan_resources.herb.herb import HERBS
 from scripts.clan_resources.supply import Supply
 
+from scripts.screens.enums import GameScreen
+
 # this is just to make referencing main menu screens as a whole easier,
 # note that the clan creation screen is included and the clan settings screen is excluded. this is intended.
 MENU_SCREENS = [
-    "settings screen",
-    "start screen",
-    "switch clan screen",
-    "make clan screen",
+    GameScreen.SETTINGS,
+    GameScreen.START,
+    GameScreen.SWITCH_CLAN,
+    GameScreen.MAKE_CLAN,
 ]
 
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
