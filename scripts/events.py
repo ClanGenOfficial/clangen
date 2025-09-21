@@ -103,6 +103,16 @@ class Events:
         for c in game.updated_afterlife_cats:
             if not c.status.newly_joined_group:
                 continue
+            if (
+                not c.status.rank
+                in (
+                    CatRank.LEADER,
+                    CatRank.MEDICINE_CAT,
+                    CatRank.DEPUTY,
+                )
+                and not game.clan.instructor
+            ):
+                continue
 
             # first change facets of the group they joined
             if c.status.group == CatGroup.STARCLAN:
