@@ -61,7 +61,7 @@ choose_cats = {}
 }"""
 
 patrol_cats = {}
-updated_afterlife_cats = []
+updated_afterlife_cats = set()
 patrolled = []
 
 used_group_IDs: dict = {

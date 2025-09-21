@@ -120,6 +120,7 @@ class Events:
                 game.starclan.change_facets(c, removal=True)
             elif prior_group == CatGroup.DARK_FOREST_ID:
                 game.dark_forest.change_facets(c, removal=True)
+        game.updated_afterlife_cats.clear()
 
         Pregnancy_Events.handle_pregnancy_age(game.clan)
         self.check_war()

@@ -308,7 +308,7 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 # if the cat is dead, moves them to the opposite afterlife
                 if self.the_cat.dead:
-                    game.updated_afterlife_cats.append(self.the_cat)
+                    game.updated_afterlife_cats.add(self.the_cat)
 
                     if self.the_cat == game.clan.instructor:
                         # DF -> SC
