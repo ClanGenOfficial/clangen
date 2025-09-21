@@ -2030,8 +2030,8 @@ class Cat:
             ):
                 clan_herbs = {
                     herb
-                    for herb, herb_count in game.clan.herb_supply.entire_supply.items()
-                    if herb_count > 0
+                    for herb, clan_has_herb in game.clan.herb_supply.entire_supply.items()
+                    if clan_has_herb
                 }
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 usable_herbs = list(needed_herbs.intersection(clan_herbs))
