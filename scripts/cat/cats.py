@@ -766,7 +766,7 @@ class Cat:
                 if (
                     body
                     and not body_treated
-                    and game.clan.herb_supply.entire_supply["rosemary"] > 0
+                    and game.clan.herb_supply.entire_supply["rosemary"]
                 ):
                     body_treated = True
                     game.clan.herb_supply.remove_herb("rosemary", -1)
