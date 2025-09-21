@@ -253,7 +253,20 @@ class Pelt:
         self.screen_scale = scripts.game_structure.screen_settings.screen_scale
 
         # converting old pose numbers into names
-        if isinstance(adol_sprite, int):
+        if any(
+            [
+                True
+                for x in [
+                    newborn_sprite,
+                    kitten_sprite,
+                    adol_sprite,
+                    adult_sprite,
+                    senior_sprite,
+                    para_adult_sprite,
+                ]
+                if isinstance(x, int)
+            ]
+        ):
             self.cat_sprites = {
                 "kitten": kitten_sprite if kitten_sprite is not None else 0,
                 "adolescent": adol_sprite if adol_sprite is not None else 3,
