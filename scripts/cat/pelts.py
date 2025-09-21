@@ -278,7 +278,7 @@ class Pelt:
                     continue
 
                 if age == CatAge.NEWBORN:
-                    self.cat_sprites[age] = "newborn2"
+                    self.cat_sprites[age] = "newborn2" if "newborn2" in self.newborn_poses else "newborn0"
                     continue
                 if age == CatAge.KITTEN:
                     # since these were at the top of the sheet, the pose nums were 0, 1, 2. thus they'll naturally match this fstring
