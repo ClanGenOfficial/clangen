@@ -11,6 +11,7 @@ TODO: Docs
 import os
 import statistics
 from random import choice, randint
+from typing import Optional
 
 import pygame
 import ujson
@@ -490,6 +491,13 @@ class Clan:
             switch_set_value(
                 Switch.error_message, "There was an error loading the clan.json"
             )
+
+        # doing this here so that it doesn't have to be duplicated across both load funcs
+        # this can't go in the post-initialization func bc when we run that func we haven't made the instructor yet
+        if game.clan.instructor.status.group == CatGroup.STARCLAN:
+            game.starclan.change_facets(game.clan.instructor)
+        elif game.clan.instructor.status.group == CatGroup.DARK_FOREST:
+            game.dark_forest.change_facets(game.clan.instructor)
 
         load_clan_settings()
 
@@ -1236,22 +1244,7 @@ class Clan:
             print("returned default temper: stoic")
             return "stoic"
 
-        # _temperament = ['low_aggression', 'med_aggression', 'high_aggression', ]
-        if 11 <= clan_sociability:
-            _temperament = constants.TEMPERAMENT_DICT["high_social"]
-        elif 7 <= clan_sociability:
-            _temperament = constants.TEMPERAMENT_DICT["mid_social"]
-        else:
-            _temperament = constants.TEMPERAMENT_DICT["low_social"]
-
-        if 11 <= clan_aggression:
-            _temperament = _temperament[2]
-        elif 7 <= clan_aggression:
-            _temperament = _temperament[1]
-        else:
-            _temperament = _temperament[0]
-
-        return _temperament
+        return get_temper_alignment(clan_sociability, clan_aggression)
 
     @temperament.setter
     def temperament(self, val):
@@ -1309,41 +1302,117 @@ class OtherClan:
         return f"{self.name}Clan"
 
 
-class StarClan:
+class Afterlife:
     """
-    TODO: DOCS
+    Currently just used for tracking temperament & facets. All facets default to 8 if size is 0.
     """
-
-    forgotten_stages = {
-        0: [0, 100],
-        10: [101, 200],
-        30: [201, 300],
-        60: [301, 400],
-        90: [401, 500],
-        100: [501, 502],
-    }  # Tells how faded the cat will be in StarClan by months spent
-    dead_cats = {}
 
     def __init__(self):
-        """
-        TODO: DOCS
-        """
-        self.instructor = None
+        self.size: int = 0
 
-    def fade(self, cat):
-        """
-        TODO: DOCS
-        """
-        white = pygame.Surface((sprites.size, sprites.size))
-        fade_level = 0
-        if cat.dead:
-            for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items
-                if cat.dead_for in range(
-                    self.forgotten_stages[f][0], self.forgotten_stages[f][1]
-                ):
-                    fade_level = f
-        white.fill((255, 255, 255, fade_level))
-        return white
+        self._law: int = 0
+        self._social: int = 0
+        self._aggress: int = 0
+        self._stable: int = 0
+
+    @property
+    def aggression(self) -> int:
+        if not self.size:
+            return 8
+        else:
+            return self._aggress
+
+    @aggression.setter
+    def aggression(self, val):
+        self._aggress = val
+
+    @property
+    def sociability(self) -> int:
+        if not self.size:
+            return 8
+        else:
+            return self._social
+
+    @sociability.setter
+    def sociability(self, val):
+        self._social = val
+
+    @property
+    def lawfulness(self) -> int:
+        if not self.size:
+            return 8
+        else:
+            return self._law
+
+    @lawfulness.setter
+    def lawfulness(self, val):
+        self._law = val
+
+    @property
+    def stability(self) -> int:
+        if not self.size:
+            return 8
+        else:
+            return self._stable
+
+    @stability.setter
+    def stability(self, val):
+        self._stable = val
+
+    @property
+    def temperament(self) -> str:
+        return get_temper_alignment(self.sociability, self.aggression)
+
+    def change_facets(self, cat: Cat, removal: bool = False):
+        if removal:
+            self.size -= 1
+        else:
+            self.size += 1
+
+        for _int, name in zip(
+            [
+                self.lawfulness,
+                self.sociability,
+                self.aggression,
+                self.stability,
+            ],
+            constants.facet_types,
+        ):
+            setattr(
+                self,
+                name,
+                self.new_average(_int, getattr(cat.personality, name), removal=removal),
+            )
+
+    def new_average(self, old_avg: int, new_value: int, removal: bool) -> int:
+        if removal:
+            old_size = self.size + 1
+            new_value = -new_value
+        else:
+            old_size = self.size - 1
+
+        return int(((old_avg * old_size) + new_value) / self.size)
+
+
+def get_temper_alignment(sociability: int, aggression: int) -> str:
+    """
+    Returns the temperament string associated with given social and aggression values
+    """
+    if 11 <= sociability:
+        _temperament = constants.TEMPERAMENT_DICT["high_social"]
+    elif 7 <= sociability:
+        _temperament = constants.TEMPERAMENT_DICT["mid_social"]
+    else:
+        _temperament = constants.TEMPERAMENT_DICT["low_social"]
+
+    if 11 <= aggression:
+        _temperament = _temperament[2]
+    elif 7 <= aggression:
+        _temperament = _temperament[1]
+    else:
+        _temperament = _temperament[0]
+
+    return _temperament
 
 
 clan_class = Clan()

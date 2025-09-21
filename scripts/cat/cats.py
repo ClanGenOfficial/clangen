@@ -499,6 +499,8 @@ class Cat:
                 )
                 return
 
+            game.updated_afterlife_cats.append(self)
+
             # kits are auto-accepted
             if self.age in (CatAge.KITTEN, CatAge.NEWBORN):
                 self.history.add_afterlife_acceptance(

@@ -13,7 +13,6 @@ import traceback
 
 import i18n
 
-from scripts.cat import save_load
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
 from scripts.cat.names import Name
@@ -99,6 +98,29 @@ class Events:
         # age up the clan, set current season
         game.clan.age += 1
         get_current_season()
+
+        # update afterlife tempers
+        for c in game.updated_afterlife_cats:
+            if not c.status.newly_joined_group:
+                continue
+
+            # first change facets of the group they joined
+            if c.status.group == CatGroup.STARCLAN:
+                game.starclan.change_facets(c)
+            elif c.status.group == CatGroup.DARK_FOREST:
+                game.dark_forest.change_facets(c)
+
+            if c.status.group_history[-2]["moons_as"] == 0:
+                # this cat never had their facets added to this group, so we won't try to remove them
+                continue
+
+            prior_group = c.status.group_history[-2]["group"]
+
+            if prior_group == CatGroup.STARCLAN_ID:
+                game.starclan.change_facets(c, removal=True)
+            elif prior_group == CatGroup.DARK_FOREST_ID:
+                game.dark_forest.change_facets(c, removal=True)
+
         Pregnancy_Events.handle_pregnancy_age(game.clan)
         self.check_war()
 
