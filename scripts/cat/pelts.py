@@ -270,13 +270,15 @@ class Pelt:
                     break
 
                 # convert paras
-                if self.length == "long":
-                    self.cat_sprites["para_adult"] = "para_adult_long0"
-                else:
-                    self.cat_sprites["para_adult"] = "para_adult_short0"
+                if age == "para_adult":
+                    if self.length == "long":
+                        self.cat_sprites["para_adult"] = "para_adult_long0"
+                    else:
+                        self.cat_sprites["para_adult"] = "para_adult_short0"
+                    continue
 
                 if age == CatAge.NEWBORN:
-                    self.cat_sprites[age] = "newborn0"
+                    self.cat_sprites[age] = "newborn2"
                     continue
                 if age == CatAge.KITTEN:
                     # since these were at the top of the sheet, the pose nums were 0, 1, 2. thus they'll naturally match this fstring
