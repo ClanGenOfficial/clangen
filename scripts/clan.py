@@ -1398,7 +1398,7 @@ class Afterlife:
         else:
             old_size = self.size - 1
 
-        return int(((old_avg * old_size) + new_value) / self.size)
+        return ((old_avg * old_size) + new_value) // self.size
 
 
 def get_temper_alignment(sociability: int, aggression: int) -> str:
