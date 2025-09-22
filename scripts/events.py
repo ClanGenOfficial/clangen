@@ -116,9 +116,9 @@ class Events:
 
             # first change facets of the group they joined
             if c.status.group == CatGroup.STARCLAN:
-                game.starclan.change_facets(c)
+                game.starclan.adjust_facets_by_cat(c)
             elif c.status.group == CatGroup.DARK_FOREST:
-                game.dark_forest.change_facets(c)
+                game.dark_forest.adjust_facets_by_cat(c)
 
             if len(c.status.group_history) == 1:
                 continue
@@ -130,9 +130,9 @@ class Events:
             prior_group = c.status.group_history[-2]["group"]
 
             if prior_group == CatGroup.STARCLAN_ID:
-                game.starclan.change_facets(c, removal=True)
+                game.starclan.adjust_facets_by_cat(c, is_removal=True)
             elif prior_group == CatGroup.DARK_FOREST_ID:
-                game.dark_forest.change_facets(c, removal=True)
+                game.dark_forest.adjust_facets_by_cat(c, is_removal=True)
         game.updated_afterlife_cats.clear()
 
         Pregnancy_Events.handle_pregnancy_age(game.clan)

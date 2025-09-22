@@ -1356,8 +1356,13 @@ class Afterlife:
     def temperament(self) -> str:
         return get_temper_alignment(self.sociability, self.aggression)
 
-    def change_facets(self, cat: Cat, removal: bool = False):
-        if removal:
+    def adjust_facets_by_cat(self, cat: Cat, is_removal: bool = False):
+        """
+        Adjusts the afterlife's facet averages according to the facets of the given cat
+        :param cat: The cat object adjust facets by
+        :param is_removal: Set True if the cat's facets are being removed from the afterlife's
+        """
+        if is_removal:
             self.size -= 1
         else:
             self.size += 1
@@ -1374,11 +1379,20 @@ class Afterlife:
             setattr(
                 self,
                 name,
-                self.new_average(_int, getattr(cat.personality, name), removal=removal),
+                self._adjust_average(
+                    _int, getattr(cat.personality, name), is_removal=is_removal
+                ),
             )
 
-    def new_average(self, old_avg: int, new_value: int, removal: bool) -> int:
-        if removal:
+    def _adjust_average(self, old_avg: int, new_value: int, is_removal: bool) -> int:
+        """
+        Handles the math for adjust averages.
+        :param old_avg: The old average
+        :param new_value: The new value to change the average by
+        :param is_removal: Set True if the new_value is being removed from the old_average instead of added
+        :return: The adjusted average
+        """
+        if is_removal:
             old_size = self.size + 1
             new_value = -new_value
         else:

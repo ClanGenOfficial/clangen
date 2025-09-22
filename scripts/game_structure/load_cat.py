@@ -318,9 +318,9 @@ def json_load():
     for cat in all_cats:
         if cat.status.rank in (CatRank.LEADER, CatRank.DEPUTY, CatRank.MEDICINE_CAT):
             if cat.status.group == CatGroup.STARCLAN:
-                game.starclan.change_facets(cat)
+                game.starclan.adjust_facets_by_cat(cat)
             elif cat.status.group == CatGroup.DARK_FOREST:
-                game.dark_forest.change_facets(cat)
+                game.dark_forest.adjust_facets_by_cat(cat)
 
         cat.load_conditions()
 
