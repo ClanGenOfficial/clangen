@@ -492,13 +492,6 @@ class Clan:
                 Switch.error_message, "There was an error loading the clan.json"
             )
 
-        # doing this here so that it doesn't have to be duplicated across both load funcs
-        # this can't go in the post-initialization func bc when we run that func we haven't made the instructor yet
-        if game.clan.instructor.status.group == CatGroup.STARCLAN:
-            game.starclan.change_facets(game.clan.instructor)
-        elif game.clan.instructor.status.group == CatGroup.DARK_FOREST:
-            game.dark_forest.change_facets(game.clan.instructor)
-
         load_clan_settings()
 
         return version_info
