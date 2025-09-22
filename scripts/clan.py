@@ -1367,22 +1367,10 @@ class Afterlife:
         else:
             self.size += 1
 
-        for _int, name in zip(
-            [
-                self.lawfulness,
-                self.sociability,
-                self.aggression,
-                self.stability,
-            ],
-            constants.facet_types,
-        ):
-            setattr(
-                self,
-                name,
-                self._adjust_average(
-                    _int, getattr(cat.personality, name), is_removal=is_removal
-                ),
-            )
+        self.lawfulness = self._adjust_average(self.lawfulness, cat.personality.lawfulness, is_removal=is_removal)
+        self.sociability = self._adjust_average(self.sociability, cat.personality.sociability, is_removal=is_removal)
+        self.aggression = self._adjust_average(self.aggression, cat.personality.aggression, is_removal=is_removal)
+        self.stability = self._adjust_average(self.stability, cat.personality.stability, is_removal=is_removal)
 
     def _adjust_average(self, old_avg: int, new_value: int, is_removal: bool) -> int:
         """
