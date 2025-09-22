@@ -120,7 +120,10 @@ class Events:
             elif c.status.group == CatGroup.DARK_FOREST:
                 game.dark_forest.change_facets(c)
 
-            if c.status.group_history[-2]["moons_as"] == 0:
+            if (
+                len(c.status.group_history) > 1
+                and c.status.group_history[-2]["moons_as"] == 0
+            ):
                 # this cat never had their facets added to this group, so we won't try to remove them
                 continue
 
