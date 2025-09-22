@@ -270,6 +270,29 @@ class GenerateEvents:
         final_events = []
         incorrect_format = []
 
+        clan_size = get_living_clan_cat_count(Cat_class)
+
+        # finding cats with the CAMP skill
+        camp_cats = [
+            c
+            for c in Cat_class.all_cats_list
+            if c.status.alive_in_player_clan
+            and (
+                (c.skills.primary and c.skills.primary.path == SkillPath.CAMP)
+                or (c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP)
+            )
+        ]
+
+        avoidance_chance = 1
+        # each camp cat will increase the chance that significant reduction events do not occur
+        for c in camp_cats:
+            # tiers are added in order to make the chance num, this means the higher tiers have greater influence
+            if c.skills.primary.path == SkillPath.CAMP:
+                # +1 bc primary paths should have a little bit larger influence
+                avoidance_chance += c.skills.primary.tier + 1
+            elif c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP:
+                avoidance_chance += c.skills.secondary.tier
+
         for event in possible_events:
             if event.history:
                 if (
@@ -406,34 +429,6 @@ class GenerateEvents:
                 continue
 
             elif event.supplies:
-                clan_size = get_living_clan_cat_count(Cat_class)
-
-                # finding cats with the CAMP skill
-                camp_cats = [
-                    c
-                    for c in Cat_class.all_cats_list
-                    if c.status.alive_in_player_clan
-                    and (
-                        (c.skills.primary and c.skills.primary.path == SkillPath.CAMP)
-                        or (
-                            c.skills.secondary
-                            and c.skills.secondary.path == SkillPath.CAMP
-                        )
-                    )
-                ]
-
-                avoidance_chance = 1
-                # each camp cat will increase the chance that significant reduction events do not occur
-                for c in camp_cats:
-                    # tiers are added in order to make the chance num, this means the higher tiers have greater influence
-                    if c.skills.primary.path == SkillPath.CAMP:
-                        # +1 bc primary paths should have a little bit larger influence
-                        avoidance_chance += c.skills.primary.tier + 1
-                    elif (
-                        c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP
-                    ):
-                        avoidance_chance += c.skills.secondary.tier
-
                 discard = False
                 for supply in event.supplies:
                     trigger = supply["trigger"]
