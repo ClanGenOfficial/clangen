@@ -326,8 +326,6 @@ def load_game():
     loading_thread.join()
     del loading_thread
 
-
-# load spritesheets
 load_game()
 
 pygame.mixer.pre_init(buffer=44100)
