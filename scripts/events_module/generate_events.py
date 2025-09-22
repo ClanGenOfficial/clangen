@@ -439,6 +439,13 @@ class GenerateEvents:
                     trigger = supply["trigger"]
                     supply_type = supply["type"]
 
+                    if (
+                        supply["adjust"] in ["reduce_half", "reduce_full"]
+                        and random.randint(1, avoidance_chance) != 1
+                    ):
+                        discard = True
+                        break
+
                     if supply_type == "freshkill":
                         if not freshkill_active:
                             continue
@@ -460,13 +467,6 @@ class GenerateEvents:
                             break
                         else:
                             discard = False
-
-                    if (
-                        supply["adjust"] in ["reduce_half", "reduce_full"]
-                        and random.randint(1, avoidance_chance) != 1
-                    ):
-                        discard = True
-                        break
 
                 if discard:
                     continue
