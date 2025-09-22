@@ -172,7 +172,7 @@ class TestReset(unittest.TestCase):
         test.victim_cat = "victim cat"
         test.murder_index = "murder index"
         test.multi_cat = ["cat1", "cat2"]
-        test.influencing_cats = ["cat1", "cat2"]
+        test.dead_cats = ["cat1", "cat2"]
         test.chosen_herb = "chosen herb"
         test.other_clan = "other clan"
         test.other_clan_name = "other clan name"
@@ -195,7 +195,7 @@ class TestReset(unittest.TestCase):
         self.assertEqual(test.victim_cat, default.victim_cat)
         self.assertEqual(test.murder_index, default.murder_index)
         self.assertEqual(test.multi_cat, default.multi_cat)
-        self.assertEqual(test.influencing_cats, default.influencing_cats)
+        self.assertEqual(test.dead_cats, default.dead_cats)
         self.assertEqual(test.chosen_herb, default.chosen_herb)
         self.assertEqual(test.other_clan, default.other_clan)
         self.assertEqual(test.other_clan_name, default.other_clan_name)
