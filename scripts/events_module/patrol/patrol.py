@@ -590,10 +590,7 @@ class Patrol:
                 len(self.patrol_apprentices) >= i
                 and self.patrol_apprentices[i - 1].mentor is not None
             )
-        if self.patrol_apprentices:
-            general_mentor_checks = all(app.mentor for app in self.patrol_apprentices)
-        else:
-            general_mentor_checks = False
+        general_mentor_checks = all(app.mentor for app in self.patrol_apprentices) if self.patrol_apprentices else False
         has_mentor = {"general": general_mentor_checks, **app_number_mentor_checks}
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats

@@ -136,11 +136,10 @@ def event_for_tags(tags: list, cat, other_cat=None, has_mentor=None) -> bool:
         if not special_date or special_date.patrol_tag not in tags:
             return False
 
+    if "all_mentored" in tags:
+        return has_mentor.get("general", False)
     for _tag in tags:
-        is_app_mentored = re.match(r"app[1-6]_mentored", _tag)
-        if "all_mentored" in tags and not has_mentor.get("general", False):
-            return False
-        if is_app_mentored and not has_mentor.get(_tag, False):
+        if re.match(r"app[1-6]_mentored", _tag) and not has_mentor.get(_tag, False):
             return False
 
     return True
