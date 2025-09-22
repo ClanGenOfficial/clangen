@@ -328,7 +328,6 @@ def load_game():
 
 
 # load spritesheets
-sprites.load_all()
 load_game()
 
 pygame.mixer.pre_init(buffer=44100)
