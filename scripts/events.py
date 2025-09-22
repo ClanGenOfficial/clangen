@@ -101,11 +101,13 @@ class Events:
 
         # update afterlife tempers
         for c in game.updated_afterlife_cats:
-            if not c.status.newly_joined_group:
+            if not c.status.joined_group_this_moon:
                 continue
+
+            # only high ranks and guides can influence
             if (
-                not c.status.rank
-                in (
+                c.status.rank
+                not in (
                     CatRank.LEADER,
                     CatRank.MEDICINE_CAT,
                     CatRank.DEPUTY,
@@ -115,24 +117,24 @@ class Events:
                 continue
 
             # first change facets of the group they joined
-            if c.status.group == CatGroup.STARCLAN:
+            if (
+                c.status.group == CatGroup.STARCLAN
+                and c.ID not in game.starclan.influencing_cats
+            ):
                 game.starclan.adjust_facets_by_cat(c)
-            elif c.status.group == CatGroup.DARK_FOREST:
+                # then remove them from other afterlife, if they were there
+                if c.ID in game.dark_forest.influencing_cats:
+                    game.dark_forest.adjust_facets_by_cat(c, is_removal=True)
+
+            # now do same for DF
+            elif (
+                c.status.group == CatGroup.DARK_FOREST
+                and c.ID not in game.dark_forest.influencing_cats
+            ):
                 game.dark_forest.adjust_facets_by_cat(c)
+                if c.ID in game.starclan.influencing_cats:
+                    game.starclan.adjust_facets_by_cat(c, is_removal=True)
 
-            if len(c.status.group_history) == 1:
-                continue
-
-            if c.status.group_history[-2]["moons_as"] == 0:
-                # this cat never had their facets added to this group, so we won't try to remove them
-                continue
-
-            prior_group = c.status.group_history[-2]["group"]
-
-            if prior_group == CatGroup.STARCLAN_ID:
-                game.starclan.adjust_facets_by_cat(c, is_removal=True)
-            elif prior_group == CatGroup.DARK_FOREST_ID:
-                game.dark_forest.adjust_facets_by_cat(c, is_removal=True)
         game.updated_afterlife_cats.clear()
 
         Pregnancy_Events.handle_pregnancy_age(game.clan)

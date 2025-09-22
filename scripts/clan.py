@@ -1297,11 +1297,11 @@ class OtherClan:
 
 class Afterlife:
     """
-    Currently just used for tracking temperament & facets. All facets default to 8 if size is 0.
+    Currently just used for tracking temperament & facets. All facets default to 8 if dead_cats is empty.
     """
 
     def __init__(self):
-        self.size: int = 0
+        self.influencing_cats: set[str] = set()
 
         self._law: int = 0
         self._social: int = 0
@@ -1310,7 +1310,7 @@ class Afterlife:
 
     @property
     def aggression(self) -> int:
-        if not self.size:
+        if not self.influencing_cats:
             return 8
         else:
             return self._aggress
@@ -1321,7 +1321,7 @@ class Afterlife:
 
     @property
     def sociability(self) -> int:
-        if not self.size:
+        if not self.influencing_cats:
             return 8
         else:
             return self._social
@@ -1332,7 +1332,7 @@ class Afterlife:
 
     @property
     def lawfulness(self) -> int:
-        if not self.size:
+        if not self.influencing_cats:
             return 8
         else:
             return self._law
@@ -1343,7 +1343,7 @@ class Afterlife:
 
     @property
     def stability(self) -> int:
-        if not self.size:
+        if not self.influencing_cats:
             return 8
         else:
             return self._stable
@@ -1362,36 +1362,66 @@ class Afterlife:
         :param cat: The cat object adjust facets by
         :param is_removal: Set True if the cat's facets are being removed from the afterlife's
         """
+        old_size = len(self.influencing_cats)
+
         if is_removal:
-            self.size -= 1
+            self.influencing_cats.remove(cat.ID)
         else:
-            self.size += 1
+            self.influencing_cats.add(cat.ID)
 
-        self.lawfulness = self._adjust_average(self.lawfulness, cat.personality.lawfulness, is_removal=is_removal)
-        self.sociability = self._adjust_average(self.sociability, cat.personality.sociability, is_removal=is_removal)
-        self.aggression = self._adjust_average(self.aggression, cat.personality.aggression, is_removal=is_removal)
-        self.stability = self._adjust_average(self.stability, cat.personality.stability, is_removal=is_removal)
+        new_size = len(self.influencing_cats)
 
-    def _adjust_average(self, old_avg: int, new_value: int, is_removal: bool) -> int:
+        self.lawfulness = self._adjust_average(
+            self.lawfulness,
+            cat.personality.lawfulness,
+            new_size,
+            old_size,
+            is_removal=is_removal,
+        )
+        self.sociability = self._adjust_average(
+            self.sociability,
+            cat.personality.sociability,
+            new_size,
+            old_size,
+            is_removal=is_removal,
+        )
+        self.aggression = self._adjust_average(
+            self.aggression,
+            cat.personality.aggression,
+            new_size,
+            old_size,
+            is_removal=is_removal,
+        )
+        self.stability = self._adjust_average(
+            self.stability,
+            cat.personality.stability,
+            new_size,
+            old_size,
+            is_removal=is_removal,
+        )
+
+    @staticmethod
+    def _adjust_average(
+        old_avg: int, new_value: int, new_size: int, old_size: int, is_removal: bool
+    ) -> int:
         """
         Handles the math for adjust averages.
         :param old_avg: The old average
         :param new_value: The new value to change the average by
+        :param new_size: The number of cats influencing the average
+        :param old_size: The number of cats who influenced the previous average
         :param is_removal: Set True if the new_value is being removed from the old_average instead of added
         :return: The adjusted average
         """
         if is_removal:
-            old_size = self.size + 1
             new_value = -new_value
-        else:
-            old_size = self.size - 1
 
-        return ((old_avg * old_size) + new_value) // self.size
+        return ((old_avg * old_size) + new_value) // new_size
 
 
 def get_temper_alignment(sociability: int, aggression: int) -> str:
     """
-    Returns the temperament string associated with given social and aggression values
+    Returns the temperament string associated with given sociability and aggression values
     """
     if 11 <= sociability:
         _temperament = constants.TEMPERAMENT_DICT["high_social"]

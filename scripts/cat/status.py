@@ -358,7 +358,7 @@ class Status:
         return self.rank == CatRank.LEADER
 
     @property
-    def newly_joined_group(self) -> bool:
+    def joined_group_this_moon(self) -> bool:
         """
         Returns True if newest group_history entry has a moons_as of 0
         """
