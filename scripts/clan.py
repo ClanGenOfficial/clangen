@@ -492,9 +492,20 @@ class Clan:
                 Switch.error_message, "There was an error loading the clan.json"
             )
 
+        self.load_guide_influence()
         load_clan_settings()
 
         return version_info
+
+    @staticmethod
+    def load_guide_influence():
+        """
+        Adds guide's facet influences to their current afterlife
+        """
+        if game.clan.instructor.status.group == CatGroup.STARCLAN:
+            game.starclan.adjust_facets_by_cat(game.clan.instructor)
+        elif game.clan.instructor.status.group == CatGroup.DARK_FOREST:
+            game.dark_forest.adjust_facets_by_cat(game.clan.instructor)
 
     def load_clan_txt(self):
         """
