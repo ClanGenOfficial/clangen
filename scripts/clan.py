@@ -492,6 +492,7 @@ class Clan:
                 Switch.error_message, "There was an error loading the clan.json"
             )
 
+        # can't put this in post initialization bc guide isn't made before that func
         self.load_guide_influence()
         load_clan_settings()
 
