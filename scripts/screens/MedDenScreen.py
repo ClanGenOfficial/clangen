@@ -593,7 +593,7 @@ class MedDenScreen(Screens):
         herb_list = []
         herb_supply = game.clan.herb_supply
 
-        if not herb_supply.total:
+        if herb_supply.total <= 0:
             herb_list = ["Empty"]
 
         elif game.clan.game_mode != "classic":
