@@ -132,7 +132,7 @@ def create_short_event(
             allowed_events=future_event.allowed_events if future_event else None,
             excluded_events=future_event.excluded_events if future_event else None,
             ignore_subtyping=future_event.negate_subtyping if future_event else None,
-            reduction_avoidance_chance=avoidance_chance
+            reduction_avoidance_chance=avoidance_chance,
         )
         if not chosen_event:
             # we'll see if any more common events are available
@@ -299,10 +299,10 @@ def filter_events(
     random_cat,
     other_clan,
     sub_types: list = None,
-    allowed_events: list=None,
-    excluded_events: list=None,
-    ignore_subtyping: bool=False,
-    reduction_avoidance_chance: int=1
+    allowed_events: list = None,
+    excluded_events: list = None,
+    ignore_subtyping: bool = False,
+    reduction_avoidance_chance: int = 1,
 ) -> (Optional[ShortEvent], Optional[Cat]):
     """
     Filters possible events to find an event that fits the given requirements
