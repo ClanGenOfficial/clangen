@@ -77,6 +77,27 @@ def create_short_event(
             game.clan.all_other_clans if game.clan.all_other_clans else None
         )
 
+    # collecting CAMP skill cats for reduction events
+    camp_cats = [
+        c
+        for c in Cat.all_cats_list
+        if c.status.alive_in_player_clan
+        and (
+            (c.skills.primary and c.skills.primary.path == SkillPath.CAMP)
+            or (c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP)
+        )
+    ]
+
+    avoidance_chance = 1
+    # each camp cat will increase the chance that significant reduction events do not occur
+    for c in camp_cats:
+        # tiers are added in order to make the chance num, this means the higher tiers have greater influence
+        if c.skills.primary.path == SkillPath.CAMP:
+            # +1 bc primary paths should have a little bit larger influence
+            avoidance_chance += c.skills.primary.tier + 1
+        elif c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP:
+            avoidance_chance += c.skills.secondary.tier
+
     # NOW find the possible events and filter
     if event_type == "birth_death":
         event_type = "death"
@@ -111,6 +132,7 @@ def create_short_event(
             allowed_events=future_event.allowed_events if future_event else None,
             excluded_events=future_event.excluded_events if future_event else None,
             ignore_subtyping=future_event.negate_subtyping if future_event else None,
+            reduction_avoidance_chance=avoidance_chance
         )
         if not chosen_event:
             # we'll see if any more common events are available
@@ -277,9 +299,10 @@ def filter_events(
     random_cat,
     other_clan,
     sub_types: list = None,
-    allowed_events=None,
-    excluded_events=None,
-    ignore_subtyping=False,
+    allowed_events: list=None,
+    excluded_events: list=None,
+    ignore_subtyping: bool=False,
+    reduction_avoidance_chance: int=1
 ) -> (Optional[ShortEvent], Optional[Cat]):
     """
     Filters possible events to find an event that fits the given requirements
@@ -291,6 +314,7 @@ def filter_events(
     :param allowed_events: list of allowed event IDs
     :param excluded_events: list of excluded event IDs
     :param ignore_subtyping: ignores subtyping entirely
+    :param reduction_avoidance_chance: chance to avoid events that reduce supplies
     """
     final_events = []
     incorrect_format = []
@@ -444,16 +468,6 @@ def filter_events(
                 )
             ]
 
-            avoidance_chance = 1
-            # each camp cat will increase the chance that significant reduction events do not occur
-            for c in camp_cats:
-                # tiers are added in order to make the chance num, this means the higher tiers have greater influence
-                if c.skills.primary.path == SkillPath.CAMP:
-                    # +1 bc primary paths should have a little bit larger influence
-                    avoidance_chance += c.skills.primary.tier + 1
-                elif c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP:
-                    avoidance_chance += c.skills.secondary.tier
-
             discard = False
             for supply in event.supplies:
                 trigger = supply["trigger"]
@@ -461,9 +475,10 @@ def filter_events(
 
                 if (
                     supply["adjust"] in ["reduce_half", "reduce_full"]
-                    and random.randint(1, avoidance_chance) != 1
+                    and random.randint(1, reduction_avoidance_chance) != 1
                 ):
-                    continue
+                    discard = True
+                    break
 
                 if supply_type == "freshkill":
                     if not FRESHKILL_EVENT_ACTIVE:
