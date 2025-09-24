@@ -1309,7 +1309,7 @@ class OtherClan:
 
 class Afterlife:
     """
-    Currently just used for tracking temperament & facets. All facets default to 8 if dead_cats is empty.
+    Currently just used for tracking temperament & facets. All facets default to 8 if influencing_cats is empty.
     """
 
     def __init__(self):
