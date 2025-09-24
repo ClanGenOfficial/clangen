@@ -2062,13 +2062,13 @@ class Events:
                 len(chosen_target.log) > 0
                 and "(high negative effect)" in chosen_target.log[-1]
             ):
-                kill_chance -= 30
+                kill_chance -= 20
 
             if (
                 len(chosen_target.log) > 0
                 and "(medium negative effect)" in chosen_target.log[-1]
             ):
-                kill_chance -= 20
+                kill_chance -= 10
 
             # little easter egg just for fun
             if (

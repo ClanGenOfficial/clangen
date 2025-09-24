@@ -9783,6 +9783,33 @@
         "exclude_involved": ["m_c"]
     },
     {
+        "event_id": "gen_misc_failedmurder_deathberry1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "tags": ["clan:medicine cat"],
+        "frequency": 4,
+        "event_text": "med_name was sure they had more deathberries than that... they must have been thrown out in the previous herb cleaning.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice",
+                "mediator",
+                "mediator apprentice"
+            ],
+            "skill": ["CLEVER,1"]
+        },
+        "exclude_involved": ["m_c", "r_c"]
+    },
+    {
         "event_id": "gen_misc_failedmurder_message1",
         "location": [
             "any"
