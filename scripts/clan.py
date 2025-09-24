@@ -1320,6 +1320,11 @@ class Afterlife:
         self._aggress: int = 0
         self._stable: int = 0
 
+        self.total_aggression: int = 0
+        self.total_lawfulness: int = 0
+        self.total_sociability: int = 0
+        self.total_stability: int = 0
+
     @property
     def aggression(self) -> int:
         if not self.influencing_cats:
@@ -1374,61 +1379,57 @@ class Afterlife:
         :param cat: The cat object adjust facets by
         :param is_removal: Set True if the cat's facets are being removed from the afterlife's
         """
-        old_size = len(self.influencing_cats)
 
         if is_removal:
             self.influencing_cats.remove(cat.ID)
         else:
             self.influencing_cats.add(cat.ID)
 
-        new_size = len(self.influencing_cats)
+        num_of_influencers = len(self.influencing_cats)
+
+        if is_removal:
+            self.total_lawfulness -= cat.personality.lawfulness
+            self.total_sociability -= cat.personality.sociability
+            self.total_aggression -= cat.personality.aggression
+            self.total_stability -= cat.personality.stability
+        else:
+            self.total_lawfulness += cat.personality.lawfulness
+            self.total_sociability += cat.personality.sociability
+            self.total_aggression += cat.personality.aggression
+            self.total_stability += cat.personality.stability
 
         self.lawfulness = self._adjust_average(
-            self.lawfulness,
-            cat.personality.lawfulness,
-            new_size,
-            old_size,
-            is_removal=is_removal,
+            self.total_lawfulness,
+            num_of_influencers,
         )
+
         self.sociability = self._adjust_average(
-            self.sociability,
-            cat.personality.sociability,
-            new_size,
-            old_size,
-            is_removal=is_removal,
+            self.total_sociability,
+            num_of_influencers,
         )
+
         self.aggression = self._adjust_average(
-            self.aggression,
-            cat.personality.aggression,
-            new_size,
-            old_size,
-            is_removal=is_removal,
+            self.total_aggression,
+            num_of_influencers,
         )
+
         self.stability = self._adjust_average(
-            self.stability,
-            cat.personality.stability,
-            new_size,
-            old_size,
-            is_removal=is_removal,
+            self.total_stability,
+            num_of_influencers,
         )
 
     @staticmethod
     def _adjust_average(
-        old_avg: int, new_value: int, new_size: int, old_size: int, is_removal: bool
+        total: int,
+        num_of_influencers: int,
     ) -> int:
         """
         Handles the math for adjust averages.
-        :param old_avg: The old average
-        :param new_value: The new value to change the average by
-        :param new_size: The number of cats influencing the average
-        :param old_size: The number of cats who influenced the previous average
-        :param is_removal: Set True if the new_value is being removed from the old_average instead of added
+        :param total: The facet's total value derived from all influencing cats
+        :param num_of_influencers: The number of cats influencing the average
         :return: The adjusted average
         """
-        if is_removal:
-            new_value = -new_value
-
-        return ((old_avg * old_size) + new_value) // new_size
+        return total // num_of_influencers
 
 
 def get_temper_alignment(sociability: int, aggression: int) -> str:
