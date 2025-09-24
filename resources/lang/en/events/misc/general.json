@@ -632,7 +632,9 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "tags": ["clan_wide"],
+        "tags": [
+            "clan_wide"
+        ],
         "frequency": 3,
         "event_text": "c_n is surprised when m_c gathers everyone to say something important. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} decided it's time to make something clear: {PRONOUN/m_c/subject} killed mur_c, but not for the reasons they might think. m_c knew mur_c was planning to do something that would've damaged c_n greatly, and {PRONOUN/m_c/subject} needed to act quickly before it was too late.",
         "m_c": {
@@ -1243,8 +1245,13 @@
             ]
         },
         "r_c": {
-            "age": ["any"],
-            "skill": ["STAR,1", "PROPHET,1"]
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "STAR,1",
+                "PROPHET,1"
+            ]
         },
         "relationships": [
             {
@@ -1289,8 +1296,12 @@
             ]
         },
         "r_c": {
-            "age": ["any"],
-            "skill": ["GHOST,1"]
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "GHOST,1"
+            ]
         },
         "relationships": [
             {
@@ -9547,5 +9558,164 @@
             ],
             "changed": 1
         }
+    },
+    {
+        "event_id": "gen_misc_failedmurder1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c seemed to be watching r_c closely this moon.",
+        "m_c": {}
+    },
+    {
+        "event_id": "gen_misc_failedmurder2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c couldn't help but feel uneasy around m_c this moon.",
+        "m_c": {},
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurder3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} being followed.",
+        "m_c": {},
+        "exclude_involved": ["m_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder4",
+        "location": [
+            "forest",
+            "mountainous",
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c nearly fell from a cliff and could have <i>sworn</i> another cat pushed {PRONOUN/r_c/object}.",
+        "m_c": {},
+        "r_c": {
+            "age": [
+                "senior",
+                "senior adult",
+                "adult",
+                "young adult",
+                "adolescent"
+            ]
+        },
+        "exclude_involved": ["m_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder5",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c took a moonhigh stroll, but returned to camp when {PRONOUN/r_c/subject} couldn't shake the feeling of someone watching {PRONOUN/r_c/object}.",
+        "m_c": {},
+        "r_c": {
+            "age": [
+                "senior",
+                "senior adult",
+                "adult",
+                "young adult"
+            ]
+        },
+        "exclude_involved": ["m_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder6",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c felt like StarClan was trying to warn {PRONOUN/r_c/object} of something this moon.",
+        "m_c": {},
+        "r_c": {
+            "skill": [
+                "STAR,1"
+            ]
+        },
+        "exclude_involved": ["m_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder7",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c was on a stroll when {PRONOUN/r_c/subject} realized m_c was following {PRONOUN/r_c/object}. m_c denied the accusation when r_c questioned {PRONOUN/m_c/object}.",
+        "m_c": {},
+        "r_c": {
+            "age": [
+                "senior",
+                "senior adult",
+                "adult",
+                "young adult"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -15
+            }
+        ]
     }
 ]

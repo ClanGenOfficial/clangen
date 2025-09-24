@@ -2096,6 +2096,14 @@ class Events:
                     sub_type=["murder"],
                     freshkill_pile=game.clan.freshkill_pile,
                 )
+            elif kill_chance <= 20:
+                handle_short_events.handle_event(
+                    event_type="misc",
+                    main_cat=cat,
+                    random_cat=Cat.fetch_cat(chosen_target.cat_to),
+                    sub_type=["failed_murder"],
+                    freshkill_pile=game.clan.freshkill_pile,
+                )
 
     def handle_illnesses_or_illness_deaths(self, cat):
         """
