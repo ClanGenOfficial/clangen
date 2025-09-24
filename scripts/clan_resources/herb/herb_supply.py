@@ -277,7 +277,7 @@ class HerbSupply:
         """
         returns the rating of given supply, aka how "full" the supply is compared to clan size
         """
-        if not self.entire_supply:
+        if self.total <= 0:
             return Supply.EMPTY
 
         lowest_herb = self.sorted_by_lowest[0]
