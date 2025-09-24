@@ -447,7 +447,7 @@ dev_tools = false
 
 [clan_creation]
   # Set this to -1 for it to be infinite
-  rerolls = 3
+  rerolls = -1
 
 [graduation]
   # base possible experience gain for apprentices
