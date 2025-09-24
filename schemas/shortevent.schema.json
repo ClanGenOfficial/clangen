@@ -36,7 +36,8 @@
             "accessory",
             "ceremony",
             "transition",
-            "mediator"
+            "mediator",
+            "failed_murder"
           ]  
         }
       },
