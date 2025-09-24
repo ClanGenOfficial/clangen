@@ -632,7 +632,7 @@ class Patrol:
                     )
                 continue
 
-            if not event_for_tags(patrol.tags, Cat, has_mentor=has_mentor):
+            if not event_for_tags(patrol.tags, Cat, mentor_tags_fulfilled=has_mentor):
                 if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
                     print("DEBUG: requested patrol does not meet constraints (tags)")
                 continue
