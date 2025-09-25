@@ -254,17 +254,14 @@ class Pelt:
 
         # converting old pose numbers into names
         if any(
-            [
-                True
-                for x in [
-                    newborn_sprite,
-                    kitten_sprite,
-                    adol_sprite,
-                    adult_sprite,
-                    senior_sprite,
-                    para_adult_sprite,
-                ]
-                if isinstance(x, int)
+            isinstance(x, int) or x is None
+            for x in [
+                newborn_sprite,
+                kitten_sprite,
+                adol_sprite,
+                adult_sprite,
+                senior_sprite,
+                para_adult_sprite,
             ]
         ):
             self.cat_sprites = {
@@ -280,14 +277,14 @@ class Pelt:
             for age, pose in self.cat_sprites.items():
                 # we only need to convert if it's using the old sprite pose numbers
                 if not isinstance(pose, int):
-                    break
+                    continue
 
                 # convert paras
                 if age == "para_adult":
                     if self.length == "long":
-                        self.cat_sprites["para_adult"] = "para_adult_long0"
+                        self.cat_sprites[age] = "para_adult_long0"
                     else:
-                        self.cat_sprites["para_adult"] = "para_adult_short0"
+                        self.cat_sprites[age] = "para_adult_short0"
                     continue
 
                 if age == CatAge.NEWBORN:
