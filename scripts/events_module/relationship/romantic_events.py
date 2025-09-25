@@ -203,7 +203,7 @@ class RomanticEvents:
         relationship.used_interaction_ids.append(chosen_interaction.id)
 
         # affect relationship - it should always be in a romantic way
-        value_change = "increase" if positive else "decrease"
+        value_change = True if positive else False
         rel_type = RelType.ROMANCE
         relationship.chosen_interaction = chosen_interaction
         relationship.interaction_affect_relationships(
