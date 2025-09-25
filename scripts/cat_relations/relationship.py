@@ -284,7 +284,7 @@ class Relationship:
 
         Parameters
         ----------
-        is_positive : str
+        is_positive : bool
             if the relationship value is positive
         intensity : str
             the intensity of the affect
@@ -352,7 +352,7 @@ class Relationship:
                 continue
 
             amount = self.get_value_change_amount(
-                is_positive=True if value == "positive" else False, intensity="low"
+                is_positive=value == "positive", intensity="low"
             )
 
             setattr(self, key, getattr(self, key) + amount)
