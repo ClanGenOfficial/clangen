@@ -222,7 +222,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
 
     herb_supply = game.clan.herb_supply
 
-    if not herb_supply.entire_supply and "empty" in trigger:
+    if herb_supply.total <= 0 and "empty" in trigger:
         return True
 
     if supply_type == "all_herb":
