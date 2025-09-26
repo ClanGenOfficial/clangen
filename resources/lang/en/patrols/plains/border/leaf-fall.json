@@ -2970,7 +2970,7 @@
     "biome": ["plains"],
     "season": ["leaf-fall"],
     "types": ["border"],
-    "tags": [],
+    "tags": ["app1_mentored"],
     "patrol_art": "fst_hunt_fun2",
     "min_cats": 1,
     "max_cats": 1,

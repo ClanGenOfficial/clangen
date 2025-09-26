@@ -238,7 +238,7 @@
         "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["all_mentored"],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,

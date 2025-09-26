@@ -207,7 +207,7 @@ class RomanticEvents:
         rel_type = RelType.ROMANCE
         relationship.chosen_interaction = chosen_interaction
         relationship.interaction_affect_relationships(
-            value_change, chosen_interaction.intensity, rel_type
+            positive, chosen_interaction.intensity, rel_type
         )
 
         # give cats injuries
