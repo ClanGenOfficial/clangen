@@ -336,17 +336,6 @@ def create_new_cat_block(
 
                 give_mates.append(in_event_cats[index])
 
-            try:
-                index = int(index)
-            except ValueError:
-                print(f"mate-index not correct: {index}")
-                continue
-
-            if index >= i:
-                continue
-
-            give_mates.extend(event.new_cats[index])
-
     # determine gender
     if "male" in attribute_list:
         gender = "male"
