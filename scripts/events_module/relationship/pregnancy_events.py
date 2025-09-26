@@ -1125,15 +1125,27 @@ class Pregnancy_Events:
 
             average_romantic_love = (
                 second_parent_relation.romance
-                + (second_parent_relation.opposite_relationship.romance if second_parent_relation.opposite_relationship else 0)
+                + (
+                    second_parent_relation.opposite_relationship.romance
+                    if second_parent_relation.opposite_relationship
+                    else 0
+                )
             ) / 2
             average_comfort = (
                 second_parent_relation.comfort
-                + (second_parent_relation.opposite_relationship.comfort if second_parent_relation.opposite_relationship else 0)
+                + (
+                    second_parent_relation.opposite_relationship.comfort
+                    if second_parent_relation.opposite_relationship
+                    else 0
+                )
             ) / 2
             average_trust = (
                 second_parent_relation.trust
-                + (second_parent_relation.opposite_relationship.trust if second_parent_relation.opposite_relationship else 0)
+                + (
+                    second_parent_relation.opposite_relationship.trust
+                    if second_parent_relation.opposite_relationship
+                    else 0
+                )
             ) / 2
 
             if average_romantic_love >= 85:
