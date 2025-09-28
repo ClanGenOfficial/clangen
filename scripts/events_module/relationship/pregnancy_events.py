@@ -1119,33 +1119,20 @@ class Pregnancy_Events:
                 if not second_parent_relation.opposite_relationship:
                     second_parent_relation.link_relationship()
             else:
-                second_parent_relation = first_parent.create_one_relationship(
-                    second_parent
-                )
-
+                second_parent_relation = first_parent.create_one_relationship(second_parent)
+                if not second_parent_relation.opposite_relationship:
+                    second_parent_relation.link_relationship()
             average_romantic_love = (
                 second_parent_relation.romance
-                + (
-                    second_parent_relation.opposite_relationship.romance
-                    if second_parent_relation.opposite_relationship
-                    else 0
-                )
+                + second_parent_relation.opposite_relationship.romance
             ) / 2
             average_comfort = (
                 second_parent_relation.comfort
-                + (
-                    second_parent_relation.opposite_relationship.comfort
-                    if second_parent_relation.opposite_relationship
-                    else 0
-                )
+                + second_parent_relation.opposite_relationship.comfort
             ) / 2
             average_trust = (
                 second_parent_relation.trust
-                + (
-                    second_parent_relation.opposite_relationship.trust
-                    if second_parent_relation.opposite_relationship
-                    else 0
-                )
+                + second_parent_relation.opposite_relationship.trust
             ) / 2
 
             if average_romantic_love >= 85:
