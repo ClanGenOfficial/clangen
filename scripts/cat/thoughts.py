@@ -184,8 +184,34 @@ class Thoughts:
                         and "any" not in thought["has_injuries"]["m_c"]
                     ):
                         return False
-                else:
-                    return False
+                    if [
+                        i
+                        for i in injuries_and_illnesses
+                        if f"not_{i}" in thought["has_injuries"]["m_c"]
+                        or (
+                            "not_any" in thought["has_injuries"]["m_c"]
+                            and injuries_and_illnesses
+                        )
+                    ]:
+                        return False
+
+                    for severity in ["minor", "major", "severe"]:
+                        if f"not_{severity}" in thought["has_injuries"]["m_c"]:
+                            if [
+                                i
+                                for i in injuries_and_illnesses
+                                if (
+                                    i in main_cat.injuries
+                                    and main_cat.injuries[i]["severity"] == severity
+                                )
+                                or (
+                                    i in main_cat.illnesses
+                                    and main_cat.illnesses[i]["severity"] == severity
+                                )
+                            ]:
+                                return False
+            else:
+                return False
 
             if "r_c" in thought["has_injuries"] and random_cat:
                 if random_cat.injuries or random_cat.illnesses:
@@ -201,6 +227,32 @@ class Thoughts:
                         and "any" not in thought["has_injuries"]["r_c"]
                     ):
                         return False
+                    if [
+                        i
+                        for i in injuries_and_illnesses
+                        if f"not_{i}" in thought["has_injuries"]["r_c"]
+                        or (
+                            "not_any" in thought["has_injuries"]["r_c"]
+                            and injuries_and_illnesses
+                        )
+                    ]:
+                        return False
+
+                    for severity in ["minor", "major", "severe"]:
+                        if f"not_{severity}" in thought["has_injuries"]["r_c"]:
+                            if [
+                                i
+                                for i in injuries_and_illnesses
+                                if (
+                                    i in random_cat.injuries
+                                    and random_cat.injuries[i]["severity"] == severity
+                                )
+                                or (
+                                    i in random_cat.illnesses
+                                    and random_cat.illnesses[i]["severity"] == severity
+                                )
+                            ]:
+                                return False
                 else:
                     return False
 
