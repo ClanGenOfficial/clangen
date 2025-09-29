@@ -39,7 +39,6 @@
             "Insists on sharpening {PRONOUN/m_c/poss} claws on a specific surface",
             "Is jumpy after battle practice",
             "Whirls around and bares {PRONOUN/m_c/poss} fangs, only to realize training is over",
-            "Was overzealous during battle training and got a stern lecture",
             "Hopes {PRONOUN/m_c/subject}'ll be remembered as a mighty warrior",
             "Wonders if there would ever be a story about {PRONOUN/m_c/poss} deeds",
             "Puffs out {PRONOUN/m_c/poss} chest after hearing someone praise {PRONOUN/m_c/object}",
@@ -70,6 +69,15 @@
             "Is struggling to come to terms with what 'being a warrior' entails",
             "Feels {PRONOUN/m_c/poss} kithood admiration of warriors waning"
         ]
+    },
+    {
+        "id": "working_apprentice_gen",
+        "thoughts": [
+            "Was overzealous during battle training and got a stern lecture"
+        ],
+        "has_injuries": {
+            "m_c": ["not_major", "not_severe"]
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_leader_or_deputy",

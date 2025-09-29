@@ -330,6 +330,9 @@
         "thoughts": [
             "Ate a mouse while out on patrol"
         ],
+        "has_injuries": {
+            "m_c": ["not_major", "not_severe"]
+        },
         "main_trait_constraint": [
             "troublesome"
         ]

@@ -1604,6 +1604,9 @@
             "Went out to hunt by {PRONOUN/m_c/self}",
             "Is feeling a bit anxious after having been around so many cats at the last Gathering"
         ],
+        "has_injuries": {
+            "m_c": ["not_severe", "not_major"]
+        },
         "main_status_constraint": [
             "apprentice",
             "warrior",
@@ -1791,6 +1794,9 @@
             "Acted bravely on a recent patrol, despite {PRONOUN/m_c/poss} anxieties",
             "Got scared by a mouse while hunting"
         ],
+        "has_injuries": {
+            "m_c": ["not_severe", "not_major"]
+        },
         "main_status_constraint": [
             "apprentice",
             "warrior",
@@ -2289,6 +2295,9 @@
             "Spends some time helping out the medicine cat today",
             "Tidies the area in front of the medicine cat den"
         ],
+        "has_injuries": {
+            "m_c": ["not_severe", "not_major"]
+        },
         "main_status_constraint": [
             "warrior",
             "deputy",
@@ -3148,6 +3157,9 @@
             "Found something odd on patrol",
             "Is smug after a spectacular catch on patrol"
         ],
+        "has_injuries": {
+            "m_c": ["not_severe", "not_major"]
+        },
         "main_status_constraint": [
             "apprentice",
             "warrior",
