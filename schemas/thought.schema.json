@@ -16,14 +16,30 @@
     },
     "illness_injury_any": {
       "anyOf": [
-        {
-          "$ref": "common.schema.json#/definitions/illness"
+        { 
+          "$ref": "common.schema.json#/definitions/illness" 
+        },
+        { 
+          "$ref": "common.schema.json#/definitions/injury" 
+        },
+        { 
+          "const": "any" 
+        },
+        { 
+          "const": "not_minor" 
+        },
+        { 
+          "const": "not_major" 
+        },
+        { 
+          "const": "not_severe" 
+        },
+        { 
+          "const": "not_any" 
         },
         {
-          "$ref": "common.schema.json#/definitions/injury"
-        },
-        {
-          "const": "any"
+          "type": "string",
+          "pattern": "^not_[a-zA-Z0-9_]+$"
         }
       ]
     },
