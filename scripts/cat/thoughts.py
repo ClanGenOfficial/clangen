@@ -210,8 +210,8 @@ class Thoughts:
                                 )
                             ]:
                                 return False
-            else:
-                return False
+                else:
+                    return False
 
             if "r_c" in thought["has_injuries"] and random_cat:
                 if random_cat.injuries or random_cat.illnesses:
