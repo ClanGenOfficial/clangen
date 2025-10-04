@@ -19,6 +19,7 @@ dependencies = [
     "cryptography~=42.0",
     "pgpy~=0.6",
     "platformdirs~=3.3",
+    "pydantic>=2.11.10",
     "pygame-ce~=2.2",
     "pygame-gui~=0.6",
     "requests~=2.28",
