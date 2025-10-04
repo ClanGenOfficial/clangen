@@ -555,7 +555,7 @@ class Status:
             )
             return
 
-        self.add_to_group(self.get_default_afterlife_id())
+        self.add_to_group(new_group_ID=self.get_default_afterlife_id())
 
     def _change_rank(self, new_rank: CatRank):
         """
