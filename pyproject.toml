@@ -36,6 +36,7 @@ build = [
     "wheel~=0.40",
 ]
 dev = [
+    "hatchling>=1.27.0",
     "pytest~=8.2",
 ]
 docs = [
@@ -57,3 +58,13 @@ discord = [
 pythonpath = [
   "."
 ]
+
+[project.scripts]
+dump_model_schemas = "scripts.dump_model_schemas:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts/"]
