@@ -4,7 +4,6 @@ import os
 import platform
 import subprocess
 from math import floor
-from itertools import islice
 
 import i18n
 import pygame
@@ -768,21 +767,37 @@ class SettingsScreen(Screens):
                 object_id="#english_lang_button",
                 manager=MANAGER,
             )
+            # dict insertion order is guaranteed in python 3.7+
             additional_langs = {
                 "es": "español",
                 "de": "deustch",
             }
             prev_lang_checkbox = self.checkboxes["en"]
-            for i, (lang, native_name) in enumerate(additional_langs.items()):
+
+            # sorry I don't know of a better way to implement this
+            if len(additional_langs) > 0:
+                *languages, last_lang = additional_langs.items()
+                for lang, native_name in languages:
+                    self.checkboxes[lang] = UISurfaceImageButton(
+                        ui_scale(pygame.Rect((310, 0), (180, 37))),
+                        native_name,
+                        get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
+                        object_id="@buttonstyles_ladder_middle",
+                        manager=MANAGER,
+                        anchors={"top_target": prev_lang_checkbox},
+                    )
+                    prev_lang_checkbox = self.checkboxes[lang]
+
+                lang, native_name = last_lang
                 self.checkboxes[lang] = UISurfaceImageButton(
                     ui_scale(pygame.Rect((310, 0), (180, 37))),
                     native_name,
-                    get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
-                    object_id="@buttonstyles_ladder_bottom" if i == len(additional_langs) - 1 else "@buttonstyles_ladder_middle",
+                    get_button_dict(ButtonStyles.LADDER_BOTTOM, (180, 37)),
+                    object_id="@buttonstyles_ladder_bottom",
                     manager=MANAGER,
                     anchors={"top_target": prev_lang_checkbox},
                 )
-                prev_lang_checkbox = self.checkboxes[lang]
+
             language = MANAGER.get_locale()
             if language in self.checkboxes:
                 self.checkboxes[language].disable()
