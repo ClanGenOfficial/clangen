@@ -45,7 +45,6 @@ docs = [
     "mkdocs-material>=9.5.49",
 ]
 test = [
-    "jsonschema>=4.23.0",
     "pylint>=2.17.3",
 ]
 
