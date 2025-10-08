@@ -1,6 +1,18 @@
 {
   "$defs": {
-    "Age": {
+    "Cat": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CatEnum"
+        },
+        {
+          "pattern": "^n_c:[0-9]+$",
+          "type": "string"
+        }
+      ],
+      "title": "Cat"
+    },
+    "CatAge": {
       "enum": [
         "newborn",
         "kitten",
@@ -10,91 +22,18 @@
         "senior adult",
         "senior"
       ],
-      "title": "Age",
+      "title": "CatAge",
       "type": "string"
     },
-    "AllTrait": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/Trait"
-        },
-        {
-          "$ref": "#/$defs/KitTrait"
-        }
-      ],
-      "title": "AllTrait"
-    },
-    "Backstory": {
-      "enum": [
-        "clan_founder",
-        "clanborn",
-        "outsider_roots1",
-        "outsider_roots2",
-        "halfclan1",
-        "halfclan2",
-        "loner1",
-        "loner2",
-        "loner3",
-        "loner4",
-        "refugee2",
-        "tragedy_survivor4",
-        "guided3",
-        "refugee5",
-        "wandering_healer2",
-        "rogue1",
-        "rogue2",
-        "rogue3",
-        "refugee4",
-        "tragedy_survivor2",
-        "guided2",
-        "wandering_healer1",
-        "kittypet1",
-        "kittypet2",
-        "kittypet3",
-        "kittypet4",
-        "refugee3",
-        "tragedy_survivor3",
-        "guided1",
-        "refugee6",
-        "otherclan1",
-        "otherclan2",
-        "otherclan3",
-        "otherclan4",
-        "ostracized_warrior",
-        "disgraced1",
-        "disgraced2",
-        "disgraced3",
-        "retired_leader",
-        "refugee1",
-        "tragedy_survivor1",
-        "medicine_cat",
-        "guided4",
-        "orphaned1",
-        "orphaned2",
-        "orphaned3",
-        "orphaned4",
-        "orphaned5",
-        "orphaned6",
-        "abandoned1",
-        "abandoned2",
-        "abandoned3",
-        "abandoned4",
-        "outsider1",
-        "outsider2",
-        "outsider3"
-      ],
-      "title": "Backstory",
-      "type": "string"
-    },
-    "Cats": {
+    "CatEnum": {
       "enum": [
         "m_c",
         "r_c"
       ],
-      "title": "Cats",
+      "title": "CatEnum",
       "type": "string"
     },
-    "EventSubTypeEnum": {
+    "EventSubtype": {
       "enum": [
         "war",
         "murder",
@@ -107,10 +46,10 @@
         "transition",
         "mediator"
       ],
-      "title": "EventSubTypeEnum",
+      "title": "EventSubtype",
       "type": "string"
     },
-    "EventTriggerEnum": {
+    "EventTrigger": {
       "enum": [
         "always",
         "low",
@@ -118,741 +57,335 @@
         "full",
         "excess"
       ],
-      "title": "EventTriggerEnum",
-      "type": "string"
-    },
-    "Herb": {
-      "enum": [
-        "elder_leaves",
-        "cobwebs",
-        "daisy",
-        "horsetail",
-        "juniper",
-        "lungwort",
-        "mallow",
-        "marigold",
-        "moss",
-        "oak_leaves",
-        "ragwort",
-        "raspberry",
-        "tansy",
-        "thyme",
-        "wild_garlic",
-        "dandelion",
-        "mullein",
-        "rosemary",
-        "burdock",
-        "blackberry",
-        "betony",
-        "goldenrod",
-        "poppy",
-        "plantain",
-        "catmint"
-      ],
-      "title": "Herb",
+      "title": "EventTrigger",
       "type": "string"
     },
     "HistoryText": {
       "properties": {
         "cats": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/Cats"
-                  },
-                  {
-                    "pattern": "^n_c:[0-9]+$",
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "List of cats for whom the history will be assigned.",
-          "title": "Cats"
+          "items": {
+            "$ref": "#/$defs/Cat"
+          },
+          "title": "Cats",
+          "type": "array"
         },
         "reg_death": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Death history text for non-leaders. Whole sentence. Must be included if the cat is dead or injured.",
-          "title": "Reg Death"
+          "title": "Reg Death",
+          "type": "string"
         },
         "lead_death": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Death history text for leaders. Sentence fragment. Must be included if the dead or injured cat could be the leader.",
-          "title": "Lead Death"
+          "title": "Lead Death",
+          "type": "string"
         },
         "scar": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Scar history. Whole sentence. Must be included if cat gets injured.",
-          "title": "Scar"
+          "title": "Scar",
+          "type": "string"
         }
       },
       "title": "HistoryText",
       "type": "object"
     },
-    "Injury": {
-      "enum": [
-        "claw-wound",
-        "bite-wound",
-        "cat bite",
-        "beak bite",
-        "snake bite",
-        "rat bite",
-        "tick bites",
-        "blood loss",
-        "broken jaw",
-        "broken bone",
-        "mangled leg",
-        "dislocated joint",
-        "joint pain",
-        "sprain",
-        "mangled tail",
-        "bruises",
-        "cracked pads",
-        "sore",
-        "phantom pain",
-        "scrapes",
-        "small cut",
-        "torn pelt",
-        "torn ear",
-        "frostbite",
-        "recovering from birth",
-        "water in their lungs",
-        "burn",
-        "severe burn",
-        "shock",
-        "lingering shock",
-        "shivering",
-        "dehydrated",
-        "head damage",
-        "damaged eyes",
-        "quilled by a porcupine",
-        "broken back",
-        "poisoned",
-        "bee sting",
-        "headache",
-        "severe headache",
-        "pregnant",
-        "battle_injury",
-        "minor_injury",
-        "blunt_force_injury",
-        "hot_injury",
-        "cold_injury",
-        "big_bite_injury",
-        "small_bite_injury",
-        "beak_bite",
-        "rat_bite",
-        "sickness"
-      ],
-      "title": "Injury",
-      "type": "string"
-    },
     "InjuryItem": {
       "properties": {
         "cats": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/Cats"
-                  },
-                  {
-                    "pattern": "^n_c:[0-9]+$",
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Which cats are injured.",
-          "title": "Cats"
+          "items": {
+            "$ref": "#/$defs/Cat"
+          },
+          "title": "Cats",
+          "type": "array"
         },
         "injuries": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Injury"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Pool of injuries to draw from.",
-          "title": "Injuries"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Injury"
+          },
+          "title": "Injuries",
+          "type": "array"
         },
         "scars": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Scar"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Pool of scars to draw from. If in classic mode, a scar is chosen from this pool to be given instead of an injury. If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.",
-          "title": "Scars"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Scar"
+          },
+          "title": "Scars",
+          "type": "array"
         }
       },
       "title": "InjuryItem",
       "type": "object"
     },
-    "KitTrait": {
-      "enum": [
-        "bouncy",
-        "unruly",
-        "shy",
-        "impulsive",
-        "bullying",
-        "attention-seeker",
-        "daydreamer",
-        "charming",
-        "fearless",
-        "skittish",
-        "quiet",
-        "self-conscious",
-        "know-it-all",
-        "sweet",
-        "polite",
-        "bossy",
-        "noisy"
-      ],
-      "title": "KitTrait",
-      "type": "string"
-    },
     "MC": {
       "properties": {
         "age": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/Age"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "List of ages m_c can be. If they can be anything, use \"any\".",
-          "title": "Age"
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/CatAge"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Age",
+          "type": "array"
         },
         "status": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/Status"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "List of statuses m_c can be. If they can be anything, use \"any\".",
-          "title": "Status"
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/Status"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Status",
+          "type": "array"
         },
         "relationship_status": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/RelationshipStatus"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
-          "title": "Relationship Status"
+          "items": {
+            "$ref": "common.schema.json#/$defs/RelationshipStatus"
+          },
+          "title": "Relationship Status",
+          "type": "array"
         },
         "skill": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/Skill"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "m_c must possess at least one skill from this list. If they can be anything, use \"any\".",
-          "title": "Skill"
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/Skill"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Skill",
+          "type": "array"
         },
         "not_skill": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Skill"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "m_c cannot possess any of the skills on this list.",
-          "title": "Not Skill"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Skill"
+          },
+          "title": "Not Skill",
+          "type": "array"
         },
         "trait": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/AllTrait"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "m_c must possess at least one trait from this list. If they can be anything, use \"any\".",
-          "title": "Trait"
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/AllTrait"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Trait",
+          "type": "array"
         },
         "not_trait": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/AllTrait"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "m_c cannot possess any of the traits on this list.",
-          "title": "Not Trait"
+          "items": {
+            "$ref": "common.schema.json#/$defs/AllTrait"
+          },
+          "title": "Not Trait",
+          "type": "array"
         },
         "backstory": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Backstory"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "m_c must possess a backstory from this list.",
-          "title": "Backstory"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Backstory"
+          },
+          "title": "Backstory",
+          "type": "array"
         },
         "dies": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": false,
           "description": "m_c will die due to this event. Default is False.",
-          "title": "Dies"
+          "title": "Dies",
+          "type": "boolean"
         }
       },
       "title": "MC",
       "type": "object"
     },
-    "NewCat": {
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "#/$defs/NewCatTag"
-          },
-          {
-            "pattern": "^status:(.+)$",
-            "type": "string"
-          },
-          {
-            "pattern": "^age:(.+)$",
-            "type": "string"
-          },
-          {
-            "pattern": "^backstory:(.+)$",
-            "type": "string"
-          },
-          {
-            "pattern": "^parent:([,0-9]+)$",
-            "type": "string"
-          },
-          {
-            "pattern": "^adoptive:([_,0-9a-zA-Z]+)$",
-            "type": "string"
-          },
-          {
-            "pattern": "^mate:([_,0-9a-zA-Z]+)$",
-            "type": "string"
-          }
-        ]
-      },
-      "title": "NewCat",
-      "type": "array"
-    },
-    "NewCatTag": {
-      "enum": [
-        "male",
-        "female",
-        "can_birth",
-        "new_name",
-        "old_name",
-        "kittypet",
-        "loner",
-        "rogue",
-        "clancat",
-        "meeting",
-        "exists",
-        "unknown",
-        "litter",
-        "dead"
-      ],
-      "title": "NewCatTag",
-      "type": "string"
-    },
     "OtherClan": {
       "properties": {
         "current_rep": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/OtherClanRepEnum"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "The reputation the Clan must have in order for this event to be possible.",
-          "title": "Current Rep"
+          "items": {
+            "$ref": "#/$defs/OtherClanRep"
+          },
+          "title": "Current Rep",
+          "type": "array"
         },
         "changed": {
-          "anyOf": [
-            {
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "How the reputation of the Clan changes as a result of this event",
-          "title": "Changed"
+          "title": "Changed",
+          "type": "integer"
         }
       },
       "title": "OtherClan",
       "type": "object"
     },
-    "OtherClanRepEnum": {
+    "OtherClanRep": {
       "enum": [
         "hostile",
         "neutral",
         "ally",
         "any"
       ],
-      "title": "OtherClanRepEnum",
+      "title": "OtherClanRep",
       "type": "string"
     },
     "Outsider": {
       "properties": {
         "current_rep": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/OutsiderRepEnum"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "The reputation the Clan must have in order for this event to be possible.",
-          "title": "Current Rep"
+          "items": {
+            "$ref": "#/$defs/OutsiderRep"
+          },
+          "title": "Current Rep",
+          "type": "array"
         },
         "changed": {
-          "anyOf": [
-            {
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "How the reputation of the Clan changes as a result of this event",
-          "title": "Changed"
+          "title": "Changed",
+          "type": "integer"
         }
       },
       "title": "Outsider",
       "type": "object"
     },
-    "OutsiderRepEnum": {
+    "OutsiderRep": {
       "enum": [
         "hostile",
         "neutral",
         "welcoming",
         "any"
       ],
-      "title": "OutsiderRepEnum",
+      "title": "OutsiderRep",
       "type": "string"
     },
     "RC": {
       "properties": {
         "age": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/Age"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "List of ages r_c can be. If they can be anything, use \"any\".",
-          "title": "Age"
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/CatAge"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Age",
+          "type": "array"
         },
         "status": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/Status"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "List of statuses r_c can be. If they can be anything, use \"any\".",
-          "title": "Status"
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/Status"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Status",
+          "type": "array"
         },
         "relationship_status": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/RcRelationshipStatus"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Dictates what relationships r_c must have towards m_c.",
-          "title": "Relationship Status"
+          "items": {
+            "$ref": "#/$defs/RcRelationshipStatus"
+          },
+          "title": "Relationship Status",
+          "type": "array"
         },
         "skill": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/Skill"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "r_c must possess at least one skill from this list. If they can be anything, use \"any\".",
-          "title": "Skill"
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/Skill"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Skill",
+          "type": "array"
         },
         "not_skill": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Skill"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "r_c cannot possess any of the skills on this list.",
-          "title": "Not Skill"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Skill"
+          },
+          "title": "Not Skill",
+          "type": "array"
         },
         "trait": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/AllTrait"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "r_c must possess at least one trait from this list. If they can be anything, use \"any\".",
-          "title": "Trait"
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/AllTrait"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Trait",
+          "type": "array"
         },
         "not_trait": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/AllTrait"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "r_c cannot possess any of the traits on this list.",
-          "title": "Not Trait"
+          "items": {
+            "$ref": "common.schema.json#/$defs/AllTrait"
+          },
+          "title": "Not Trait",
+          "type": "array"
         },
         "backstory": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Backstory"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "r_c must possess a backstory from this list.",
-          "title": "Backstory"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Backstory"
+          },
+          "title": "Backstory",
+          "type": "array"
         },
         "dies": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": false,
           "description": "r_c will die due to this event. Default is False.",
-          "title": "Dies"
+          "title": "Dies",
+          "type": "boolean"
         }
       },
       "title": "RC",
@@ -926,484 +459,136 @@
       "title": "RcRelationshipStatus",
       "type": "string"
     },
-    "RelationshipStatus": {
-      "$ref": "#/$defs/RelationshipStatusEnum",
-      "title": "RelationshipStatus"
-    },
-    "RelationshipStatusEnum": {
-      "enum": [
-        "siblings",
-        "not_siblings",
-        "littermates",
-        "not_littermates",
-        "mates",
-        "mates_with_pl",
-        "not_mates",
-        "parent/child",
-        "not_parent",
-        "child/parent",
-        "not_child",
-        "mentor/app",
-        "not_mentor",
-        "app/mentor",
-        "not_app",
-        "fancies",
-        "adores",
-        "loves",
-        "loathes",
-        "hates",
-        "dislikes",
-        "knows_of",
-        "likes",
-        "enjoys",
-        "cherishes",
-        "resents",
-        "envies",
-        "begrudges",
-        "acknowledges",
-        "praises",
-        "respects",
-        "admires",
-        "discredits",
-        "distrusts",
-        "doubts",
-        "observes",
-        "listens_to",
-        "trusts",
-        "confides_in",
-        "runs_from",
-        "fears",
-        "avoids",
-        "considers",
-        "relates_to",
-        "understands",
-        "knows_deeply",
-        "fancies_only",
-        "adores_only",
-        "delights_in_only",
-        "abhors_only",
-        "hates_only",
-        "dislikes_only",
-        "knows_of_only",
-        "likes_only",
-        "enjoys_only",
-        "loves_only",
-        "resents_only",
-        "envies_only",
-        "begrudges_only",
-        "acknowledges_only",
-        "praises_only",
-        "respects_only",
-        "admires_only",
-        "discredits_only",
-        "distrusts_only",
-        "doubts_only",
-        "observes_only",
-        "listens_to_only",
-        "trusts_only",
-        "confides_in_only",
-        "runs_from_only",
-        "fears_only",
-        "avoids_only",
-        "considers_only",
-        "seeks_out_only",
-        "prefers_only",
-        "relies_on_only"
-      ],
-      "title": "RelationshipStatusEnum",
-      "type": "string"
-    },
-    "Scar": {
-      "enum": [
-        "ONE",
-        "TWO",
-        "THREE",
-        "TAILSCAR",
-        "SNOUT",
-        "CHEEK",
-        "SIDE",
-        "THROAT",
-        "TAILBASE",
-        "BELLY",
-        "LEGBITE",
-        "NECKBITE",
-        "FACE",
-        "MANLEG",
-        "BRIGHTHEART",
-        "MANTAIL",
-        "BRIDGE",
-        "RIGHTBLIND",
-        "LEFTBLIND",
-        "BOTHBLIND",
-        "BEAKCHEEK",
-        "BEAKLOWER",
-        "CATBITE",
-        "RATBITE",
-        "QUILLCHUNK",
-        "QUILLSCRATCH",
-        "HINDLEG",
-        "BACK",
-        "QUILLSIDE",
-        "SCRATCHSIDE",
-        "BEAKSIDE",
-        "CATBITETWO",
-        "FOUR",
-        "LEFTEAR",
-        "RIGHTEAR",
-        "NOTAIL",
-        "HALFTAIL",
-        "NOPAW",
-        "NOLEFTEAR",
-        "NORIGHTEAR",
-        "NOEAR",
-        "SNAKE",
-        "TOETRAP",
-        "BURNPAWS",
-        "BURNTAIL",
-        "BURNBELLY",
-        "BURNRUMP",
-        "FROSTFACE",
-        "FROSTTAIL",
-        "FROSTMITT",
-        "FROSTSOCK",
-        "TOE",
-        "SNAKETWO"
-      ],
-      "title": "Scar",
-      "type": "string"
-    },
-    "SeasonEnum": {
-      "enum": [
-        "greenleaf",
-        "leaf-fall",
-        "leaf-bare",
-        "newleaf",
-        "any"
-      ],
-      "title": "SeasonEnum",
-      "type": "string"
-    },
     "ShortEventSchemaItem": {
       "properties": {
         "event_id": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Unique string used to identify the event.",
-          "title": "Event Id"
+          "title": "Event Id",
+          "type": "string"
         },
         "location": {
-          "anyOf": [
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Controls the biome and camp the event appears in.",
-          "title": "Location"
+          "items": {
+            "type": "string"
+          },
+          "title": "Location",
+          "type": "array"
         },
         "season": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/SeasonEnum"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "List of seasons in which the event may occur.",
-          "title": "Season"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Season"
+          },
+          "title": "Season",
+          "type": "array"
         },
         "sub_type": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/EventSubTypeEnum"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "List of sub_types for this event.",
-          "title": "Sub Type"
+          "items": {
+            "$ref": "#/$defs/EventSubtype"
+          },
+          "title": "Sub Type",
+          "type": "array"
         },
         "tags": {
-          "anyOf": [
-            {
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "#/$defs/Tags"
-                  },
-                  {
-                    "pattern": "^clan:(.+)$",
-                    "type": "string"
-                  }
-                ]
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Used for some filtering purposes",
-          "title": "Tags"
+          "items": {
+            "$ref": "#/$defs/Tag"
+          },
+          "title": "Tags",
+          "type": "array"
         },
         "frequency": {
-          "anyOf": [
-            {
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Controls how common an event is. 4 == Common, 3 == Uncommon, 2 == Rare, 3 == Very Rare. Consider this in the terms of 'If an event of this type happened every moon for 10 moons, on how many of those moons should this sort of event appear?'",
-          "title": "Frequency"
+          "title": "Frequency",
+          "type": "integer"
         },
         "event_text": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Text that appears within the event list when the event occurs.",
-          "title": "Event Text"
+          "title": "Event Text",
+          "type": "string"
         },
         "new_accessory": {
-          "anyOf": [
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "If the event gives a new accessory, list possible new accessories here (one will be chosen from the list)",
-          "title": "New Accessory"
+          "items": {
+            "type": "string"
+          },
+          "title": "New Accessory",
+          "type": "array"
         },
         "m_c": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/MC"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Specifies the requirements for the main cat (m_c) of the event."
+          "$ref": "#/$defs/MC",
+          "description": "Specifies the requirements for the main cat (m_c) of the event.",
+          "title": "M C"
         },
         "r_c": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/RC"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Specifies the requirements for the random cat (r_c) of the event."
+          "$ref": "#/$defs/RC",
+          "description": "Specifies the requirements for the random cat (r_c) of the event.",
+          "title": "R C"
         },
         "new_cat": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/NewCat"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Adds a new cat.",
-          "title": "New Cat"
+          "items": {
+            "$ref": "common.schema.json#/$defs/NewCat"
+          },
+          "title": "New Cat",
+          "type": "array"
         },
         "injury": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/InjuryItem"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Injury"
+          "items": {
+            "$ref": "#/$defs/InjuryItem"
+          },
+          "title": "Injury",
+          "type": "array"
         },
         "history_text": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/HistoryText"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null
+          "$ref": "#/$defs/HistoryText",
+          "title": "History Text"
         },
         "outsider": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/Outsider"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
+          "$ref": "#/$defs/Outsider",
           "description": "Dictates what reputation the clan is required to have with outsiders as well as how that reputation changes due to the event."
         },
         "other_clan": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/OtherClan"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Dictates what reputation the clan is required to have with the other clan as well as how that reputation changes due to the event."
+          "$ref": "#/$defs/OtherClan",
+          "description": "Dictates what reputation the clan is required to have with the other clan as well as how that reputation changes due to the event.",
+          "title": "Other Clan"
         },
         "supplies": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Supply"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Supplies"
+          "items": {
+            "$ref": "#/$defs/Supply"
+          },
+          "title": "Supplies",
+          "type": "array"
         }
       },
       "title": "ShortEventSchemaItem",
       "type": "object"
-    },
-    "Skill": {
-      "pattern": "^[A-Z]+,\\s*[0-4]$",
-      "title": "Skill",
-      "type": "string"
-    },
-    "Status": {
-      "enum": [
-        "newborn",
-        "kitten",
-        "apprentice",
-        "mediator apprentice",
-        "medicine cat apprentice",
-        "warrior",
-        "mediator",
-        "medicine cat",
-        "deputy",
-        "leader",
-        "elder",
-        "any",
-        "living",
-        "starclan",
-        "darkforest",
-        "unknownresidence",
-        "kittypet",
-        "loner",
-        "rogue",
-        "former Clancat",
-        "exiled",
-        "lost",
-        "outside cat",
-        "clancat"
-      ],
-      "title": "Status",
-      "type": "string"
     },
     "Supply": {
       "properties": {
         "type": {
           "anyOf": [
             {
-              "$ref": "#/$defs/Herb"
+              "$ref": "common.schema.json#/$defs/Herb"
             },
             {
               "$ref": "#/$defs/SupplyType"
-            },
-            {
-              "type": "null"
             }
           ],
-          "default": null,
           "description": "Indicates the supply being affected.",
           "title": "Type"
         },
         "trigger": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/EventTriggerEnum"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Indicates when the event can trigger. Must include all possible trigger times.",
-          "title": "Trigger"
+          "items": {
+            "$ref": "#/$defs/EventTrigger"
+          },
+          "title": "Trigger",
+          "type": "array"
         },
         "adjust": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/SupplyAdjust"
-            },
-            {
-              "pattern": "^increase_[0-9]+$",
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
+          "$ref": "#/$defs/SupplyAdjust",
           "description": "Indicates how the supply should be adjusted.",
           "title": "Adjust"
         }
@@ -1412,6 +597,18 @@
       "type": "object"
     },
     "SupplyAdjust": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SupplyAdjustEnum"
+        },
+        {
+          "pattern": "^increase_[0-9]+$",
+          "type": "string"
+        }
+      ],
+      "title": "SupplyAdjust"
+    },
+    "SupplyAdjustEnum": {
       "enum": [
         "reduce_eighth",
         "reduce_quarter",
@@ -1419,7 +616,7 @@
         "reduce_full",
         ""
       ],
-      "title": "SupplyAdjust",
+      "title": "SupplyAdjustEnum",
       "type": "string"
     },
     "SupplyType": {
@@ -1431,7 +628,19 @@
       "title": "SupplyType",
       "type": "string"
     },
-    "Tags": {
+    "Tag": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TagEnum"
+        },
+        {
+          "pattern": "^clan:(.+)$",
+          "type": "string"
+        }
+      ],
+      "title": "Tag"
+    },
+    "TagEnum": {
       "enum": [
         "classic",
         "cruel_season",
@@ -1450,52 +659,7 @@
         "romance",
         "adoption"
       ],
-      "title": "Tags",
-      "type": "string"
-    },
-    "Trait": {
-      "enum": [
-        "troublesome",
-        "lonesome",
-        "fierce",
-        "bloodthirsty",
-        "cold",
-        "childish",
-        "playful",
-        "charismatic",
-        "bold",
-        "daring",
-        "nervous",
-        "righteous",
-        "insecure",
-        "strict",
-        "compassionate",
-        "thoughtful",
-        "ambitious",
-        "confident",
-        "adventurous",
-        "calm",
-        "careful",
-        "faithful",
-        "loving",
-        "loyal",
-        "responsible",
-        "shameless",
-        "sneaky",
-        "strange",
-        "vengeful",
-        "wise",
-        "arrogant",
-        "competitive",
-        "grumpy",
-        "cunning",
-        "oblivious",
-        "gloomy",
-        "sincere",
-        "flamboyant",
-        "rebellious"
-      ],
-      "title": "Trait",
+      "title": "TagEnum",
       "type": "string"
     }
   },

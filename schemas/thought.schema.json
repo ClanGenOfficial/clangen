@@ -1,6 +1,42 @@
 {
   "$defs": {
-    "Age": {
+    "Biome": {
+      "enum": [
+        "mountainous",
+        "plains",
+        "forest",
+        "beach",
+        "wetlands",
+        "desert"
+      ],
+      "title": "Biome",
+      "type": "string"
+    },
+    "BornWith": {
+      "properties": {
+        "m_c": {
+          "title": "M C",
+          "type": "boolean"
+        },
+        "r_c": {
+          "title": "R C",
+          "type": "boolean"
+        }
+      },
+      "title": "BornWith",
+      "type": "object"
+    },
+    "Camp": {
+      "enum": [
+        "camp1",
+        "camp2",
+        "camp3",
+        "camp4"
+      ],
+      "title": "Camp",
+      "type": "string"
+    },
+    "CatAge": {
       "enum": [
         "newborn",
         "kitten",
@@ -10,323 +46,51 @@
         "senior adult",
         "senior"
       ],
-      "title": "Age",
-      "type": "string"
-    },
-    "AllTrait": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/Trait"
-        },
-        {
-          "$ref": "#/$defs/KitTrait"
-        }
-      ],
-      "title": "AllTrait"
-    },
-    "Backstory": {
-      "enum": [
-        "clan_founder",
-        "clanborn",
-        "outsider_roots1",
-        "outsider_roots2",
-        "halfclan1",
-        "halfclan2",
-        "loner1",
-        "loner2",
-        "loner3",
-        "loner4",
-        "refugee2",
-        "tragedy_survivor4",
-        "guided3",
-        "refugee5",
-        "wandering_healer2",
-        "rogue1",
-        "rogue2",
-        "rogue3",
-        "refugee4",
-        "tragedy_survivor2",
-        "guided2",
-        "wandering_healer1",
-        "kittypet1",
-        "kittypet2",
-        "kittypet3",
-        "kittypet4",
-        "refugee3",
-        "tragedy_survivor3",
-        "guided1",
-        "refugee6",
-        "otherclan1",
-        "otherclan2",
-        "otherclan3",
-        "otherclan4",
-        "ostracized_warrior",
-        "disgraced1",
-        "disgraced2",
-        "disgraced3",
-        "retired_leader",
-        "refugee1",
-        "tragedy_survivor1",
-        "medicine_cat",
-        "guided4",
-        "orphaned1",
-        "orphaned2",
-        "orphaned3",
-        "orphaned4",
-        "orphaned5",
-        "orphaned6",
-        "abandoned1",
-        "abandoned2",
-        "abandoned3",
-        "abandoned4",
-        "outsider1",
-        "outsider2",
-        "outsider3"
-      ],
-      "title": "Backstory",
-      "type": "string"
-    },
-    "BiomeEnum": {
-      "enum": [
-        "mountainous",
-        "plains",
-        "forest",
-        "beach",
-        "wetlands",
-        "desert"
-      ],
-      "title": "BiomeEnum",
-      "type": "string"
-    },
-    "BornWith": {
-      "properties": {
-        "m_c": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "M C"
-        },
-        "r_c": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "R C"
-        }
-      },
-      "title": "BornWith",
-      "type": "object"
-    },
-    "CampEnum": {
-      "enum": [
-        "camp1",
-        "camp2",
-        "camp3",
-        "camp4"
-      ],
-      "title": "CampEnum",
+      "title": "CatAge",
       "type": "string"
     },
     "HasInjuries": {
       "properties": {
         "m_c": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/IllnessInjuryAny"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "M C"
+          "items": {
+            "$ref": "#/$defs/IllnessInjuryAny"
+          },
+          "title": "M C",
+          "type": "array"
         },
         "r_c": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/IllnessInjuryAny"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "R C"
+          "items": {
+            "$ref": "#/$defs/IllnessInjuryAny"
+          },
+          "title": "R C",
+          "type": "array"
         }
       },
       "title": "HasInjuries",
       "type": "object"
     },
-    "Illness": {
-      "enum": [
-        "seizure",
-        "diarrhea",
-        "fleas",
-        "greencough",
-        "kittencough",
-        "an infected wound",
-        "carrionplace disease",
-        "redcough",
-        "running nose",
-        "whitecough",
-        "yellowcough",
-        "a festering wound",
-        "heat stroke",
-        "heat exhaustion",
-        "stomachache",
-        "constant nightmares",
-        "grief stricken",
-        "malnourished",
-        "starving"
-      ],
-      "title": "Illness",
-      "type": "string"
-    },
     "IllnessInjuryAny": {
       "anyOf": [
         {
-          "$ref": "#/$defs/Illness"
+          "$ref": "common.schema.json#/$defs/Illness"
         },
         {
-          "$ref": "#/$defs/Injury"
+          "$ref": "common.schema.json#/$defs/Injury"
         },
         {
+          "const": "any",
           "type": "string"
         }
       ],
       "title": "IllnessInjuryAny"
     },
-    "Injury": {
-      "enum": [
-        "claw-wound",
-        "bite-wound",
-        "cat bite",
-        "beak bite",
-        "snake bite",
-        "rat bite",
-        "tick bites",
-        "blood loss",
-        "broken jaw",
-        "broken bone",
-        "mangled leg",
-        "dislocated joint",
-        "joint pain",
-        "sprain",
-        "mangled tail",
-        "bruises",
-        "cracked pads",
-        "sore",
-        "phantom pain",
-        "scrapes",
-        "small cut",
-        "torn pelt",
-        "torn ear",
-        "frostbite",
-        "recovering from birth",
-        "water in their lungs",
-        "burn",
-        "severe burn",
-        "shock",
-        "lingering shock",
-        "shivering",
-        "dehydrated",
-        "head damage",
-        "damaged eyes",
-        "quilled by a porcupine",
-        "broken back",
-        "poisoned",
-        "bee sting",
-        "headache",
-        "severe headache",
-        "pregnant",
-        "battle_injury",
-        "minor_injury",
-        "blunt_force_injury",
-        "hot_injury",
-        "cold_injury",
-        "big_bite_injury",
-        "small_bite_injury",
-        "beak_bite",
-        "rat_bite",
-        "sickness"
-      ],
-      "title": "Injury",
-      "type": "string"
-    },
-    "KitTrait": {
-      "enum": [
-        "bouncy",
-        "unruly",
-        "shy",
-        "impulsive",
-        "bullying",
-        "attention-seeker",
-        "daydreamer",
-        "charming",
-        "fearless",
-        "skittish",
-        "quiet",
-        "self-conscious",
-        "know-it-all",
-        "sweet",
-        "polite",
-        "bossy",
-        "noisy"
-      ],
-      "title": "KitTrait",
-      "type": "string"
-    },
-    "PermCondition": {
-      "enum": [
-        "crooked jaw",
-        "lost a leg",
-        "born without a leg",
-        "weak leg",
-        "twisted leg",
-        "lost their tail",
-        "born without a tail",
-        "paralyzed",
-        "raspy lungs",
-        "wasting disease",
-        "blind",
-        "one bad eye",
-        "failing eyesight",
-        "partial hearing loss",
-        "deaf",
-        "constant joint pain",
-        "seizure prone",
-        "allergies",
-        "constantly dizzy",
-        "recurring shock",
-        "lasting grief",
-        "persistent headaches"
-      ],
-      "title": "PermCondition",
-      "type": "string"
-    },
     "PermConditionAny": {
       "anyOf": [
         {
-          "$ref": "#/$defs/PermCondition"
+          "$ref": "common.schema.json#/$defs/PermCondition"
         },
         {
+          "const": "any",
           "type": "string"
         }
       ],
@@ -335,46 +99,23 @@
     "PermConditions": {
       "properties": {
         "m_c": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/PermConditionAny"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "M C"
+          "items": {
+            "$ref": "#/$defs/PermConditionAny"
+          },
+          "title": "M C",
+          "type": "array"
         },
         "r_c": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/PermConditionAny"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "R C"
+          "items": {
+            "$ref": "#/$defs/PermConditionAny"
+          },
+          "title": "R C",
+          "type": "array"
         },
         "born_with": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/BornWith"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Used to determine whether or not the given cat has this condition from birth. Only use if the cat must have it from birth, or must not have it from birth (omit value if either is suitable)."
+          "$ref": "#/$defs/BornWith",
+          "description": "Used to determine whether or not the given cat has this condition from birth. Only use if the cat must have it from birth, or must not have it from birth (omit value if either is suitable).",
+          "title": "Born With"
         }
       },
       "title": "PermConditions",
@@ -399,7 +140,7 @@
       "title": "RandomOutsideStatus",
       "type": "string"
     },
-    "RelationshipConstraintEnum": {
+    "RelationshipConstraint": {
       "enum": [
         "siblings",
         "not_siblings",
@@ -418,60 +159,16 @@
         "not_app",
         "strangers"
       ],
-      "title": "RelationshipConstraintEnum",
-      "type": "string"
-    },
-    "SeasonEnum": {
-      "enum": [
-        "Greenleaf",
-        "Leaf-fall",
-        "Leaf-bare",
-        "Newleaf"
-      ],
-      "title": "SeasonEnum",
-      "type": "string"
-    },
-    "Skill": {
-      "pattern": "^[A-Z]+,\\s*[0-4]$",
-      "title": "Skill",
-      "type": "string"
-    },
-    "Status": {
-      "enum": [
-        "newborn",
-        "kitten",
-        "apprentice",
-        "mediator apprentice",
-        "medicine cat apprentice",
-        "warrior",
-        "mediator",
-        "medicine cat",
-        "deputy",
-        "leader",
-        "elder",
-        "any",
-        "living",
-        "starclan",
-        "darkforest",
-        "unknownresidence",
-        "kittypet",
-        "loner",
-        "rogue",
-        "former Clancat",
-        "exiled",
-        "lost",
-        "outside cat",
-        "clancat"
-      ],
-      "title": "Status",
+      "title": "RelationshipConstraint",
       "type": "string"
     },
     "StatusAny": {
       "anyOf": [
         {
-          "$ref": "#/$defs/Status"
+          "$ref": "common.schema.json#/$defs/Status"
         },
         {
+          "const": "any",
           "type": "string"
         }
       ],
@@ -485,52 +182,28 @@
           "type": "string"
         },
         "biome": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/BiomeEnum"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only occur if a player chooses a specific biome.",
-          "title": "Biome"
+          "items": {
+            "$ref": "#/$defs/Biome"
+          },
+          "title": "Biome",
+          "type": "array"
         },
         "season": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/SeasonEnum"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only occur once the Clan is in a specific season.",
-          "title": "Season"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Season"
+          },
+          "title": "Season",
+          "type": "array"
         },
         "camp": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/CampEnum"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only occur if a specific camp type is chosen.",
-          "title": "Camp"
+          "items": {
+            "$ref": "#/$defs/Camp"
+          },
+          "title": "Camp",
+          "type": "array"
         },
         "thoughts": {
           "description": "List of the text that will be displayed in-game as thoughts.",
@@ -541,236 +214,118 @@
           "type": "array"
         },
         "has_injuries": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/HasInjuries"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury). Can also use \"any\" to allow the thought to occur if the cat has any illness or injury."
+          "$ref": "#/$defs/HasInjuries",
+          "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury). Can also use \"any\" to allow the thought to occur if the cat has any illness or injury.",
+          "title": "Has Injuries"
         },
         "perm_conditions": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/PermConditions"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain permanent condition. Can also use \"any\" to allow the thought to occur if the cat has any permanent condition."
+          "$ref": "#/$defs/PermConditions",
+          "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain permanent condition. Can also use \"any\" to allow the thought to occur if the cat has any permanent condition.",
+          "title": "Perm Conditions"
         },
         "relationship_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/RelationshipConstraintEnum"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only occur if m_c and r_c fulfill the tag requirements.",
-          "title": "Relationship Constraint"
+          "items": {
+            "$ref": "#/$defs/RelationshipConstraint"
+          },
+          "title": "Relationship Constraint",
+          "type": "array"
         },
         "main_backstory_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Backstory"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only occur if m_c has a certain backstory.",
-          "title": "Main Backstory Constraint"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Backstory"
+          },
+          "title": "Main Backstory Constraint",
+          "type": "array"
         },
         "random_backstory_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Backstory"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only occur if r_c has a certain backstory.",
-          "title": "Random Backstory Constraint"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Backstory"
+          },
+          "title": "Random Backstory Constraint",
+          "type": "array"
         },
         "main_status_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/StatusAny"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only happen if m_c is in a certain role.",
-          "title": "Main Status Constraint"
+          "items": {
+            "$ref": "#/$defs/StatusAny"
+          },
+          "title": "Main Status Constraint",
+          "type": "array"
         },
         "random_status_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/StatusAny"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only happen if r_c is in a certain role.",
-          "title": "Random Status Constraint"
+          "items": {
+            "$ref": "#/$defs/StatusAny"
+          },
+          "title": "Random Status Constraint",
+          "type": "array"
         },
         "main_age_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Age"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only happen if m_c is within a certain age group.",
-          "title": "Main Age Constraint"
+          "items": {
+            "$ref": "#/$defs/CatAge"
+          },
+          "title": "Main Age Constraint",
+          "type": "array"
         },
         "random_age_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Age"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only happen if r_c is within a certain age group.",
-          "title": "Random Age Constraint"
+          "items": {
+            "$ref": "#/$defs/CatAge"
+          },
+          "title": "Random Age Constraint",
+          "type": "array"
         },
         "main_trait_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/AllTrait"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only happen if m_c has a specific trait.",
-          "title": "Main Trait Constraint"
+          "items": {
+            "$ref": "common.schema.json#/$defs/AllTrait"
+          },
+          "title": "Main Trait Constraint",
+          "type": "array"
         },
         "random_trait_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/AllTrait"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only happen if r_c has a specific trait.",
-          "title": "Random Trait Constraint"
+          "items": {
+            "$ref": "common.schema.json#/$defs/AllTrait"
+          },
+          "title": "Random Trait Constraint",
+          "type": "array"
         },
         "main_skill_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Skill"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only happen if m_c has a specific skill.",
-          "title": "Main Skill Constraint"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Skill"
+          },
+          "title": "Main Skill Constraint",
+          "type": "array"
         },
         "random_skill_constraint": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/Skill"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought to only happen if r_c has a specific skill.",
-          "title": "Random Skill Constraint"
+          "items": {
+            "$ref": "common.schema.json#/$defs/Skill"
+          },
+          "title": "Random Skill Constraint",
+          "type": "array"
         },
         "random_living_status": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/RandomLivingStatus"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought if r_c has a specific place of death.",
-          "title": "Random Living Status"
+          "items": {
+            "$ref": "#/$defs/RandomLivingStatus"
+          },
+          "title": "Random Living Status",
+          "type": "array"
         },
         "random_outside_status": {
-          "anyOf": [
-            {
-              "items": {
-                "$ref": "#/$defs/RandomOutsideStatus"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
           "description": "Constrains the thought if r_c has a specific outside role.",
-          "title": "Random Outside Status"
+          "items": {
+            "$ref": "#/$defs/RandomOutsideStatus"
+          },
+          "title": "Random Outside Status",
+          "type": "array"
         }
       },
       "required": [
@@ -779,51 +334,6 @@
       ],
       "title": "ThoughtSchemaItem",
       "type": "object"
-    },
-    "Trait": {
-      "enum": [
-        "troublesome",
-        "lonesome",
-        "fierce",
-        "bloodthirsty",
-        "cold",
-        "childish",
-        "playful",
-        "charismatic",
-        "bold",
-        "daring",
-        "nervous",
-        "righteous",
-        "insecure",
-        "strict",
-        "compassionate",
-        "thoughtful",
-        "ambitious",
-        "confident",
-        "adventurous",
-        "calm",
-        "careful",
-        "faithful",
-        "loving",
-        "loyal",
-        "responsible",
-        "shameless",
-        "sneaky",
-        "strange",
-        "vengeful",
-        "wise",
-        "arrogant",
-        "competitive",
-        "grumpy",
-        "cunning",
-        "oblivious",
-        "gloomy",
-        "sincere",
-        "flamboyant",
-        "rebellious"
-      ],
-      "title": "Trait",
-      "type": "string"
     }
   },
   "description": "Thoughts in Clan Generator.",
