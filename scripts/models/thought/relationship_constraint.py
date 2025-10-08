@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 
 
-class RelationshipConstraintEnum(Enum):
+class RelationshipConstraint(Enum):
     siblings = "siblings"
     not_siblings = "not_siblings"
     littermates = "littermates"

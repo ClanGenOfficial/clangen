@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 
 
-class BiomeEnum(Enum):
+class Biome(Enum):
     mountainous = "mountainous"
     plains = "plains"
     forest = "forest"

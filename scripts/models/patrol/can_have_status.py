@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 
 
-class CanHaveStatEnum(Enum):
+class CanHaveStat(Enum):
     p_l = "p_l"
     r_c = "r_c"
     app1 = "app1"

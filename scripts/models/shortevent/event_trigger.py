@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 
 
-class EventTriggerEnum(Enum):
+class EventTrigger(Enum):
     always = "always"
     low = "low"
     adequate = "adequate"

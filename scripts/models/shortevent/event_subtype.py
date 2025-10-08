@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 
 
-class EventSubTypeEnum(Enum):
+class EventSubtype(Enum):
     war = "war"
     murder = "murder"
     old_age = "old_age"

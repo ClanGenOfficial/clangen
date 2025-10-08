@@ -1,26 +1,40 @@
 from __future__ import annotations
 
-from typing import List, Union, Optional, Dict, Annotated
+from enum import Enum
+from typing import List, Union, Optional, Dict, Annotated, Literal
 
-from pydantic import BaseModel, Field, StringConstraints
+from pydantic import BaseModel, Field, StringConstraints, RootModel
+from pydantic_core import MISSING
 
+from scripts.models.common.biome import Biome
 from scripts.models.common.relationship_status import RelationshipStatus
 from scripts.models.common.skill import Skill
-from scripts.models.patrol.biome import BiomeEnum
 from scripts.models.patrol.outcome import Outcome
 from scripts.models.patrol.patrol_tag import PatrolTag
 from scripts.models.patrol.patrol_type import PatrolType
-from scripts.models.common.season import SeasonEnum
+from scripts.models.common.season import Season
+
+
+class MinMaxStatusDictKey(Enum):
+    medicine_cat = "medicine cat"
+    warrior = "warrior"
+    leader = "leader"
+    deputy = "deputy"
+    apprentice = "apprentice"
+    medicine_cat_apprentice = "medicine cat apprentice"
+    healer_cats = "healer cats"
+    normal_adult = "normal adult"
+    all_apprentices = "all apprentices"
 
 
 class PatrolSchemaItem(BaseModel):
     patrol_id: str = Field(
         ..., description="Unique string used to identify the patrol."
     )
-    biome: List[BiomeEnum] = Field(
+    biome: List[Biome | Literal["any"]] = Field(
         ..., description="Controls the biome(s) the patrol appears in"
     )
-    season: List[SeasonEnum] = Field(
+    season: List[Season] = Field(
         ..., description="Controls the season(s) the patrol appears in."
     )
     types: List[PatrolType] = Field(..., description="Controls the type of patrol.")
@@ -44,24 +58,27 @@ class PatrolSchemaItem(BaseModel):
     max_cats: int = Field(
         ..., description="Maximum total number of cats for this patrol"
     )
-    min_max_status: Optional[Dict[str, List[int]]] = Field(
-        None,
+    min_max_status: Dict[MinMaxStatusDictKey, tuple[int, int]] | MISSING = Field(
+        MISSING,
         description="Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
     )
     weight: int = Field(
         ...,
         description="Controls how common a patrol is. Normal patrols would be around 20. Lower numbers are less common and higher numbers are more common.",
+        json_schema_extra={
+            "default": 20
+        },  # Necessary so that JSON Schema still shows a default without making the field optional
     )
     chance_of_success: int = Field(
         ...,
         description="Controls chance to succeed. Higher number is higher chance to succeed.",
     )
-    relationship_status: Optional[List[RelationshipStatus]] = Field(
-        None,
+    relationship_status: List[RelationshipStatus] | MISSING = Field(
+        MISSING,
         description="Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
     )
-    pl_skill_constraint: Optional[List[Skill]] = Field(
-        None,
+    pl_skill_constraint: List[Skill] | MISSING = Field(
+        MISSING,
         description="Only allow this patrol if the patrol leader (p_l) meets at least one of these skill requirements.",
     )
     intro_text: str = Field(
@@ -73,5 +90,5 @@ class PatrolSchemaItem(BaseModel):
     )
     success_outcomes: List[Outcome]
     fail_outcomes: List[Outcome]
-    antag_success_outcomes: Optional[List[Outcome]] = None
-    antag_fail_outcomes: Optional[List[Outcome]] = None
+    antag_success_outcomes: List[Outcome] | MISSING = MISSING
+    antag_fail_outcomes: List[Outcome] = MISSING

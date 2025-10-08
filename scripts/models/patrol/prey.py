@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 
 
-class PreyEnum(Enum):
+class Prey(Enum):
     very_small = "very_small"
     small = "small"
     medium = "medium"

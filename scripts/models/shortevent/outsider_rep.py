@@ -3,8 +3,8 @@ from __future__ import annotations
 from enum import Enum
 
 
-class OtherClanRepEnum(Enum):
+class OutsiderRep(Enum):
     hostile = "hostile"
     neutral = "neutral"
-    ally = "ally"
+    welcoming = "welcoming"
     any = "any"

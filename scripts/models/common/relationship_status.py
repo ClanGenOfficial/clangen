@@ -1,9 +1,7 @@
 from enum import Enum
 
-from pydantic import RootModel
 
-
-class RelationshipStatusEnum(Enum):
+class RelationshipStatus(Enum):
     siblings = "siblings"
     not_siblings = "not_siblings"
     littermates = "littermates"
@@ -81,7 +79,3 @@ class RelationshipStatusEnum(Enum):
     seeks_out_only = "seeks_out_only"
     prefers_only = "prefers_only"
     relies_on_only = "relies_on_only"
-
-
-class RelationshipStatus(RootModel):
-    root: RelationshipStatusEnum

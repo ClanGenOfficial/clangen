@@ -1,77 +1,86 @@
 from __future__ import annotations
 
-from typing import Optional, List, Union
+from typing import Optional, List, Union, Annotated
 
 from pydantic import BaseModel, Field
+from pydantic_core import MISSING
 
 from scripts.models.common.gather_cat import GatherCat
-from scripts.models.common.herb import Herb as CommonHerb
+from scripts.models.common.herb import Herb
 from scripts.models.common.new_cat import NewCat
 from scripts.models.common.skill import Skill
 from scripts.models.common.trait import Trait
-from scripts.models.patrol.can_have_status import CanHaveStatEnum
-from scripts.models.patrol.dead_cat import DeadCats
-from scripts.models.patrol.herb import Herb as PatrolHerb
+from scripts.models.patrol.can_have_status import CanHaveStat
+from scripts.models.patrol.dead_cat import DeadCat
+from scripts.models.patrol.patrol_herb import PatrolHerb
 from scripts.models.patrol.history_text import HistoryText
 from scripts.models.patrol.injury_item import InjuryItem
-from scripts.models.patrol.prey import PreyEnum
+from scripts.models.patrol.prey import Prey
 from scripts.models.patrol.relationship import Relationship
 
 
 class Outcome(BaseModel):
     text: str = Field(..., description="Displayed outcome text.")
-    weight: int = Field(..., description="Controls how common an outcome is.")
+    weight: Annotated[
+        int,
+        Field(
+            description="Controls how common an outcome is.",
+            json_schema_extra={
+                "default": 20
+            },  # Necessary so that JSON Schema still shows a default without making the field optional
+        ),
+    ]
     exp: int = Field(..., description="Base exp gain.")
-    stat_skill: Optional[List[Skill]] = Field(
-        None,
+    stat_skill: List[Skill] | MISSING = Field(
+        MISSING,
         description="Makes this a stat outcome which can occur if a stat cat can be found.",
     )
-    stat_trait: Optional[List[Trait]] = Field(
-        None,
+    stat_trait: List[Trait] | MISSING = Field(
+        MISSING,
         description="Makes this a stat outcome which can occur if a stat cat can be found.",
     )
-    can_have_stat: Optional[List[CanHaveStatEnum]] = Field(
-        None,
+    can_have_stat: List[CanHaveStat] | MISSING = Field(
+        MISSING,
         description="Overrides default behavior or adds additional requirements for stat_cat picking.",
     )
-    prey: Optional[List[PreyEnum]] = Field(
-        None, description="Indicates how much prey each cat brings back."
+    prey: List[Prey] | MISSING = Field(
+        MISSING, description="Indicates how much prey each cat brings back."
     )
-    herbs: Optional[List[Union[CommonHerb, PatrolHerb]]] = Field(
-        None, description="Indicates which herbs will be given."
+    herbs: List[Union[Herb, PatrolHerb]] | MISSING = Field(
+        MISSING, description="Indicates which herbs will be given."
     )
-    lost_cats: Optional[List[GatherCat]] = Field(
-        None, description="Indicates which cats will become lost."
+    lost_cats: List[GatherCat] | MISSING = Field(
+        MISSING, description="Indicates which cats will become lost."
     )
-    dead_cats: Optional[List[Union[GatherCat, DeadCats]]] = Field(
-        None, description="Indicates which cats will die."
+    dead_cats: List[Union[GatherCat, DeadCat]] | MISSING = Field(
+        MISSING, description="Indicates which cats will die."
     )
-    injury: Optional[List[InjuryItem]] = Field(
-        None, description="Indicates which cats get injured and how."
+    injury: List[InjuryItem] | MISSING = Field(
+        MISSING, description="Indicates which cats get injured and how."
     )
-    history_text: Optional[HistoryText] = Field(
-        None, description="Controls the history-text for scars and death."
+    history_text: HistoryText | MISSING = Field(
+        MISSING, description="Controls the history-text for scars and death."
     )
-    relationships: Optional[List[Relationship]] = Field(
-        None, description="Indicates effect on cat relationships."
+    relationships: List[Relationship] | MISSING = Field(
+        MISSING, description="Indicates effect on cat relationships."
     )
-    new_cat: Optional[List[NewCat]] = Field(
-        None,
+    new_cat: List[NewCat] | MISSING = Field(
+        MISSING,
         description="Adds new cat(s), either joining the clan or as outside cats. The {index} value corresponds to their index value on this list (e.g. n_c:0 refers to the first cat in this list).",
     )
-    art: Optional[str] = Field(
-        None,
+    art: str | MISSING = Field(
+        MISSING,
         description="Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used.",
     )
-    art_clean: Optional[str] = Field(
-        None,
+    art_clean: str | MISSING = Field(
+        MISSING,
         description="Name of non-gore outcome-specific art, without file extension (no .png). Adding a clean version of the art marks the normal version as containing gore.",
     )
-    outsider_rep: Optional[int] = Field(
-        None,
+    outsider_rep: int | MISSING = Field(
+        MISSING,
         description="How much outsider reputation will change. Can be positive or negative.",
     )
-    other_clan_rep: Optional[int] = Field(
-        None,
+    other_clan_rep: int | MISSING = Field(
+        MISSING,
         description="How much reputation with other Clan will change. Can be positive or negative.",
     )

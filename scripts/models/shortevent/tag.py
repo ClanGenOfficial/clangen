@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 
 
-class Tags(Enum):
+class Tag(Enum):
     classic = "classic"
     cruel_season = "cruel_season"
     no_body = "no_body"

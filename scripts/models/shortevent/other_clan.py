@@ -3,16 +3,17 @@ from __future__ import annotations
 from typing import Optional, List
 
 from pydantic import BaseModel, Field
+from pydantic_core import MISSING
 
-from scripts.models.shortevent.other_clan_rep_enum import OtherClanRepEnum
+from scripts.models.shortevent.other_clan_rep import OtherClanRep
 
 
 class OtherClan(BaseModel):
-    current_rep: Optional[List[OtherClanRepEnum]] = Field(
-        None,
+    current_rep: List[OtherClanRep] | MISSING = Field(
+        MISSING,
         description="The reputation the Clan must have in order for this event to be possible.",
     )
-    changed: Optional[int] = Field(
-        None,
+    changed: int | MISSING = Field(
+        MISSING,
         description="How the reputation of the Clan changes as a result of this event",
     )
