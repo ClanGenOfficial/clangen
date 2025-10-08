@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import List, Union, Optional, Dict, Annotated, Literal
+from typing import List, Union, Optional, Dict, Literal
 
-from pydantic import BaseModel, Field, StringConstraints
+from pydantic import BaseModel, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.biome import Biome
@@ -38,9 +38,7 @@ class PatrolSchemaItem(BaseModel):
         ..., description="Controls the season(s) the patrol appears in."
     )
     types: List[PatrolType] = Field(..., description="Controls the type of patrol.")
-    tags: List[
-        Union[PatrolTag, Annotated[str, StringConstraints(pattern=r"^clan:(.+)$")]]
-    ] = Field(
+    tags: List[PatrolTag] = Field(
         ...,
         description="Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.",
     )

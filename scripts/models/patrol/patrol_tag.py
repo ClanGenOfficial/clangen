@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 from enum import Enum
+from typing import Union, Annotated
+
+from pydantic import RootModel, StringConstraints
 
 
-class PatrolTag(Enum):
+class PatrolTagEnum(Enum):
     romance = "romance"
     rom_two_apps = "rom_two_apps"
     disaster = "disaster"
@@ -19,3 +22,9 @@ class PatrolTag(Enum):
     app4_mentored = "app4_mentored"
     app5_mentored = "app5_mentored"
     app6_mentored = "app6_mentored"
+
+
+class PatrolTag(RootModel):
+    root: Union[
+        PatrolTagEnum, Annotated[str, StringConstraints(pattern=r"^clan:(.+)$")]
+    ]

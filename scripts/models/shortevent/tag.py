@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 from enum import Enum
+from typing import Union, Annotated
+
+from pydantic import RootModel, StringConstraints
 
 
-class Tag(Enum):
+class TagEnum(Enum):
     classic = "classic"
     cruel_season = "cruel_season"
     no_body = "no_body"
@@ -20,3 +23,7 @@ class Tag(Enum):
     kit_manipulated = "kit_manipulated"
     romance = "romance"
     adoption = "adoption"
+
+
+class Tag(RootModel):
+    root: Union[TagEnum, Annotated[str, StringConstraints(pattern=r"^clan:(.+)$")]]

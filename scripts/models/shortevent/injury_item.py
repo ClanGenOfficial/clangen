@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from typing import List, Union, Annotated
+from typing import List, Union
 
-from pydantic import BaseModel, Field, StringConstraints
+from pydantic import BaseModel, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.injury import Injury
@@ -12,7 +12,7 @@ from scripts.models.shortevent.cat import Cat
 
 class InjuryItem(BaseModel):
     cats: Union[
-        List[Union[Cat, Annotated[str, StringConstraints(pattern=r"^n_c:[0-9]+$")]]],
+        List[Cat],
         MISSING,
     ] = Field(MISSING, description="Which cats are injured.")
     injuries: Union[List[Injury], MISSING] = Field(

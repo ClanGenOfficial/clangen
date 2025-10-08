@@ -11,9 +11,9 @@ from scripts.models.common.new_cat import NewCat
 from scripts.models.common.skill import Skill
 from scripts.models.common.trait import Trait
 from scripts.models.patrol.can_have_status import CanHaveStat
-from scripts.models.patrol.dead_cat import DeadCat
 from scripts.models.patrol.history_text import HistoryText
 from scripts.models.patrol.injury_item import InjuryItem
+from scripts.models.patrol.leader_lives_lost import LeaderLivesLost
 from scripts.models.patrol.patrol_herb import PatrolHerb
 from scripts.models.patrol.prey import Prey
 from scripts.models.patrol.relationship import Relationship
@@ -52,7 +52,7 @@ class Outcome(BaseModel):
     lost_cats: Union[List[GatherCat], MISSING] = Field(
         MISSING, description="Indicates which cats will become lost."
     )
-    dead_cats: Union[List[Union[GatherCat, DeadCat]], MISSING] = Field(
+    dead_cats: Union[List[Union[GatherCat, LeaderLivesLost]], MISSING] = Field(
         MISSING, description="Indicates which cats will die."
     )
     injury: Union[List[InjuryItem], MISSING] = Field(
