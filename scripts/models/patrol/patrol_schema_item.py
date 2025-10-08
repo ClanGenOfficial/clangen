@@ -3,16 +3,16 @@ from __future__ import annotations
 from enum import Enum
 from typing import List, Union, Optional, Dict, Annotated, Literal
 
-from pydantic import BaseModel, Field, StringConstraints, RootModel
+from pydantic import BaseModel, Field, StringConstraints
 from pydantic_core import MISSING
 
 from scripts.models.common.biome import Biome
 from scripts.models.common.relationship_status import RelationshipStatus
+from scripts.models.common.season import Season
 from scripts.models.common.skill import Skill
 from scripts.models.patrol.outcome import Outcome
 from scripts.models.patrol.patrol_tag import PatrolTag
 from scripts.models.patrol.patrol_type import PatrolType
-from scripts.models.common.season import Season
 
 
 class MinMaxStatusDictKey(Enum):
@@ -31,7 +31,7 @@ class PatrolSchemaItem(BaseModel):
     patrol_id: str = Field(
         ..., description="Unique string used to identify the patrol."
     )
-    biome: List[Biome | Literal["any"]] = Field(
+    biome: List[Union[Biome, Literal["any"]]] = Field(
         ..., description="Controls the biome(s) the patrol appears in"
     )
     season: List[Season] = Field(
@@ -58,7 +58,7 @@ class PatrolSchemaItem(BaseModel):
     max_cats: int = Field(
         ..., description="Maximum total number of cats for this patrol"
     )
-    min_max_status: Dict[MinMaxStatusDictKey, tuple[int, int]] | MISSING = Field(
+    min_max_status: Union[Dict[MinMaxStatusDictKey, tuple[int, int]], MISSING] = Field(
         MISSING,
         description="Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
     )
@@ -73,11 +73,11 @@ class PatrolSchemaItem(BaseModel):
         ...,
         description="Controls chance to succeed. Higher number is higher chance to succeed.",
     )
-    relationship_status: List[RelationshipStatus] | MISSING = Field(
+    relationship_status: Union[List[RelationshipStatus], MISSING] = Field(
         MISSING,
         description="Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
     )
-    pl_skill_constraint: List[Skill] | MISSING = Field(
+    pl_skill_constraint: Union[List[Skill], MISSING] = Field(
         MISSING,
         description="Only allow this patrol if the patrol leader (p_l) meets at least one of these skill requirements.",
     )
@@ -90,5 +90,5 @@ class PatrolSchemaItem(BaseModel):
     )
     success_outcomes: List[Outcome]
     fail_outcomes: List[Outcome]
-    antag_success_outcomes: List[Outcome] | MISSING = MISSING
+    antag_success_outcomes: Union[List[Outcome], MISSING] = MISSING
     antag_fail_outcomes: List[Outcome] = MISSING
