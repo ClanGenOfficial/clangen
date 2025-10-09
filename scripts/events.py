@@ -2407,5 +2407,3 @@ def check_and_promote_deputy():
 
 load_ceremonies()
 load_war_resources()
-
-events_class = __import__(__name__)

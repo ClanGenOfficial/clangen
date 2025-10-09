@@ -7,7 +7,7 @@ from scripts.cat.enums import CatRank
 from scripts.cat.sprites import sprites
 from scripts.clan import Clan
 from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
-from scripts.events import events_class
+from scripts import events
 from scripts.game_structure import game
 from scripts.utility import get_living_cat_count
 
@@ -59,6 +59,6 @@ class TestEvents(unittest.TestCase):
             "Timeskip Failed",
         ):
             for _ in range(500):
-                events_class.one_moon()
+                events.one_moon()
                 if not _ % 100:
                     print(f"CATS ALIVE: {get_living_cat_count(Cat)}")

@@ -5,8 +5,8 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.event_class import Single_Event
-from scripts.events import events_class
+from scripts import events
+from scripts.events import Single_Event
 from scripts.game_structure import image_cache
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import (
@@ -136,7 +136,7 @@ class EventsScreen(Screens):
                     return
                 self.timeskip_button.disable()
                 self.events_thread = self.loading_screen_start_work(
-                    events_class.one_moon
+                    events.one_moon
                 )
             elif element in self.involved_cat_buttons:
                 self.make_cat_buttons(element)
