@@ -585,4 +585,7 @@ def filter_events(
     for notice in incorrect_format:
         print(notice)
 
+    if not final_events:
+        return None, None
+
     return chosen_event, chosen_cat
