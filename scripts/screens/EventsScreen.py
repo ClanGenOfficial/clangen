@@ -135,9 +135,7 @@ class EventsScreen(Screens):
                 if self.events_thread is not None and self.events_thread.is_alive():
                     return
                 self.timeskip_button.disable()
-                self.events_thread = self.loading_screen_start_work(
-                    events.one_moon
-                )
+                self.events_thread = self.loading_screen_start_work(events.one_moon)
             elif element in self.involved_cat_buttons:
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons:
