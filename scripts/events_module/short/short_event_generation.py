@@ -568,9 +568,7 @@ def filter_events(
             constraint_dict=chosen_event.r_c,
             possible_cats=cat_list,
             comparison_cat=main_cat,
-            comparison_cat_rel_status=chosen_event.m_c.get(
-                "relationship_status", []
-            ),
+            comparison_cat_rel_status=chosen_event.m_c.get("relationship_status", []),
             injuries=r_c_injuries,
             return_id=False,
         )
