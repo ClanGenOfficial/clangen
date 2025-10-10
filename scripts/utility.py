@@ -2235,9 +2235,18 @@ def event_text_adjust(
 
         # acc_singular (only works for main_cat's acc)
         if "acc_singular" in text:
+            accessory_name = main_cat.pelt.accessory[-1]
+            if sprites.COLLAR_DATA["palette_map"]:
+                potential_collar = "".join(
+                    [x for x in accessory_name if not x.islower()]
+                ).strip("_")
+                for style in main_cat.pelt.collar_styles:
+                    if style == potential_collar:
+                        accessory_name = potential_collar
+                        break
             text = text.replace(
                 "acc_singular",
-                i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
+                i18n.t(f"cat.accessories.{accessory_name}", count=1),
             )
 
         if "given_herb" in text:
