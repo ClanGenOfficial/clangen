@@ -64,6 +64,7 @@ CEREMONY_TXT = None
 WAR_TXT = None
 ceremony_lang = None
 war_lang = None
+ceremony_id_by_tag = {}
 
 def one_moon():
     """
@@ -1816,6 +1817,9 @@ def invite_new_cats(cat):
     """
     new cats
     """
+
+    global new_cat_invited
+
     chance = 200
 
     alive_cats = list(
