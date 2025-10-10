@@ -84,6 +84,7 @@ class ShortEvent:
         self.sub_type = sub_type if sub_type else []
         self.tags = tags if tags else []
         self.text = text
+        self.text_template = text
         self.new_accessory = new_accessory if new_accessory else []
         self.m_c = m_c if m_c else {"age": ["any"]}
         if self.m_c:
@@ -215,6 +216,12 @@ class ShortEvent:
         :param other_clan: the object for the other clan involved in this event
         """
         self.additional_event_text = ""
+        self.text = self.text_template
+        self.all_involved_cat_ids: list[int] = []
+        self.new_cats = []
+        self.multi_cat_objects = []
+        self.dead_cat_objects = []
+        
         if other_clan:
             self.other_clan_name = f"{other_clan.name}Clan"
 
