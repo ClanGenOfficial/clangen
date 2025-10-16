@@ -217,10 +217,10 @@ class ShortEvent:
         """
         self.additional_event_text = ""
         self.text = self.text_template
-        self.all_involved_cat_ids: list[int] = []
-        self.new_cats = []
-        self.multi_cat_objects = []
-        self.dead_cat_objects = []
+        self.all_involved_cat_ids.clear()
+        self.new_cats.clear()
+        self.multi_cat_objects.clear()
+        self.dead_cat_objects.clear()
 
         if other_clan:
             self.other_clan_name = f"{other_clan.name}Clan"
