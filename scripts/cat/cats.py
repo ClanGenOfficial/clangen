@@ -499,14 +499,17 @@ class Cat:
                 )
                 return
 
+            cat_default_afterlife_id = self.status.get_default_afterlife_id()
+            if cat_default_afterlife_id == CatGroup.UNKNOWN_RESIDENCE_ID:
+                pass
             # kits are auto-accepted
-            if self.age in (CatAge.KITTEN, CatAge.NEWBORN):
+            elif self.age in (CatAge.KITTEN, CatAge.NEWBORN):
                 self.history.add_afterlife_acceptance(
                     game.clan.instructor.status.group,
                     is_kit=True,
                 )
             else:
-                if game.clan.instructor.status.group == CatGroup.STARCLAN:
+                if cat_default_afterlife_id == CatGroup.STARCLAN_ID:
                     affinity = self.starclan_affinity
                     afterlife_group = CatGroup.STARCLAN
                     rejected_ID = CatGroup.DARK_FOREST_ID
