@@ -50,7 +50,7 @@ def event_for_season(seasons: list) -> bool:
     return False
 
 
-def event_for_tags(tags: list, cat, other_cat=None) -> bool:
+def event_for_tags(tags: list, cat, other_cat=None, mentor_tags_fulfilled=None) -> bool:
     """
     checks if current tags disqualify the event
     """
@@ -134,6 +134,14 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     # filtering for dates
     if contains_special_date_tag(tags):
         if not special_date or special_date.patrol_tag not in tags:
+            return False
+
+    if "all_mentored" in tags:
+        return mentor_tags_fulfilled.get("general", False)
+    for _tag in tags:
+        if re.match(r"app[1-6]_mentored", _tag) and not mentor_tags_fulfilled.get(
+            _tag, False
+        ):
             return False
 
     return True
@@ -222,7 +230,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
 
     herb_supply = game.clan.herb_supply
 
-    if not herb_supply.entire_supply and "empty" in trigger:
+    if herb_supply.total <= 0 and "empty" in trigger:
         return True
 
     if supply_type == "all_herb":

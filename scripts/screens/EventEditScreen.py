@@ -13,8 +13,9 @@ from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
 from scripts.cat_relations.enums import rel_type_tiers
 from scripts.events_module.short.condition_events import Condition_Events
-from scripts.events_module.short.handle_short_events import HandleShortEvents
+
 from scripts.events_module.short.scar_events import Scar_Events
+from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import get_default_pronouns
@@ -4729,7 +4730,7 @@ class EventEditScreen(Screens):
             pygame.Rect((20, 10), (130, 30)),
             dropdown_dimensions=(130, 200),
             parent_text="types",
-            item_list=HandleShortEvents.supply_types,
+            item_list=constants.SUPPLY_TYPES,
             multiple_choice=False,
             container=self.supply_element["constraint_container"],
             anchors={
@@ -4756,7 +4757,7 @@ class EventEditScreen(Screens):
         self.supply_element["trigger_list"] = UIDropDown(
             pygame.Rect((10, 20), (130, 30)),
             parent_text="triggers",
-            item_list=HandleShortEvents.supply_triggers,
+            item_list=constants.SUPPLY_TRIGGERS,
             multiple_choice=True,
             disable_selection=False,
             child_trigger_close=False,
@@ -4785,7 +4786,7 @@ class EventEditScreen(Screens):
         self.supply_element["adjust_list"] = UIDropDown(
             pygame.Rect((10, 10), (130, 30)),
             parent_text="adjustments",
-            item_list=HandleShortEvents.supply_adjustments,
+            item_list=constants.SUPPLY_ADJUSTMENTS,
             multiple_choice=False,
             disable_selection=False,
             container=self.supply_element["constraint_container"],

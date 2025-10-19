@@ -178,7 +178,7 @@
         "biome": ["forest"],
         "season": ["any"],
         "types": ["herb_gathering"],
-        "tags": [],
+        "tags": ["all_mentored"],
         "patrol_art": "fst_med_herblocation2",
         "min_cats": 1,
         "max_cats": 1,

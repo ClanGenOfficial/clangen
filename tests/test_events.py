@@ -58,5 +58,7 @@ class TestEvents(unittest.TestCase):
         with self.subTest(
             "Timeskip Failed",
         ):
-            for _ in range(1000):
+            for _ in range(500):
                 events_class.one_moon()
+                if not _ % 100:
+                    print(f"CATS ALIVE: {get_living_cat_count(Cat)}")

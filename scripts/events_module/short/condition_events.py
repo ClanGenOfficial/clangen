@@ -19,8 +19,8 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.events_module.short.scar_events import Scar_Events
+from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.game_structure import constants
 from scripts.game_structure.game.switches import (
     Switch,
@@ -368,11 +368,10 @@ class Condition_Events:
             constants.CONFIG["event_generation"]["debug_type_override"] == "injury"
             and random_cat
         ):
-            handle_short_events.handle_event(
+            create_short_event(
                 event_type="health",
                 main_cat=cat,
                 random_cat=random_cat,
-                freshkill_pile=game.clan.freshkill_pile,
             )
 
         # handle if the current cat is already injured
@@ -420,11 +419,10 @@ class Condition_Events:
                     if not int(random.random() * stopping_chance):
                         return False
 
-                handle_short_events.handle_event(
+                create_short_event(
                     event_type="health",
                     main_cat=cat,
                     random_cat=random_cat,
-                    freshkill_pile=game.clan.freshkill_pile,
                 )
 
         # just double-checking that trigger is only returned True if the cat is dead

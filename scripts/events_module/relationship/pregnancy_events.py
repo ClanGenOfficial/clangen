@@ -1122,7 +1122,8 @@ class Pregnancy_Events:
                 second_parent_relation = first_parent.create_one_relationship(
                     second_parent
                 )
-
+                if not second_parent_relation.opposite_relationship:
+                    second_parent_relation.link_relationship()
             average_romantic_love = (
                 second_parent_relation.romance
                 + second_parent_relation.opposite_relationship.romance
