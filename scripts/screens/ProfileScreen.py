@@ -1522,6 +1522,8 @@ class ProfileScreen(Screens):
                         )
                     )
 
+            if skill_influence and trait_influence:
+                influence_history += " "
             influence_history += " ".join(skill_influence)
 
         app_ceremony = self.the_cat.history.app_ceremony
