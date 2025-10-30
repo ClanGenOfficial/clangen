@@ -547,6 +547,7 @@ def filter_events(
             != chosen_event.event_id
         ):
             final_events.remove(chosen_event)
+            failed_ids.append(chosen_event.event_id)
             chosen_event = None
             continue
 
