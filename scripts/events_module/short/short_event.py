@@ -446,7 +446,7 @@ class ShortEvent:
                         )
                 else:
                     Relation_Events.welcome_new_cats([first_cat])
-                self.all_involved_cat_ids.extend(_c)
+                self.all_involved_cat_ids.extend([cat.ID for cat in _c])
 
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed and give the condition
