@@ -498,8 +498,6 @@ def cat_for_event(
 
     # rel status check
     if comparison_cat_rel_status or constraint_dict.get("relationship_status"):
-        # copying this so that we don't modify the original list
-        comparison_cat_rel_status = comparison_cat_rel_status.copy()
         # preliminary check to see if we can just skip to gathering certain rel groups
         allowed_cats, comparison_cat_rel_status = _get_cats_with_rel_status(
             allowed_cats, comparison_cat, comparison_cat_rel_status

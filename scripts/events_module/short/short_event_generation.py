@@ -566,10 +566,12 @@ def filter_events(
             r_c_injuries.extend(block["injuries"] if "r_c" in block["cats"] else [])
 
         chosen_cat = cat_for_event(
-            constraint_dict=chosen_event.r_c,
+            constraint_dict=chosen_event.r_c.copy(),
             possible_cats=cat_list,
             comparison_cat=main_cat,
-            comparison_cat_rel_status=chosen_event.m_c.get("relationship_status", []),
+            comparison_cat_rel_status=chosen_event.m_c.get(
+                "relationship_status", []
+            ).copy(),
             injuries=r_c_injuries,
             return_id=False,
         )
