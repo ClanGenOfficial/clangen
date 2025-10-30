@@ -828,11 +828,11 @@ class HerbSupply:
 
         if effect == HerbEffect.RISK:
             for risk in con_info[effect]:
-                risk["chance"] -= randint(2, 4)
+                risk["chance"] -= randint(1, 3)
                 if risk["chance"] <= 1:
                     risk["chance"] = 2
         elif effect == HerbEffect.MORTALITY:
-            con_info[effect] -= randint(2, 4)
+            con_info[effect] -= randint(1, 3)
             if con_info[effect] <= 1:
                 con_info[effect] = 2
 
