@@ -752,6 +752,8 @@ class HerbSupply:
             con_info = treated_cat.injuries[condition]
         else:
             con_info = treated_cat.permanent_condition[condition]
+            if con_info["moons_until"] != -1:
+                return
 
         amt_modifier = amount_used
 
