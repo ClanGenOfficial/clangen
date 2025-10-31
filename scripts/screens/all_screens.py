@@ -47,42 +47,6 @@ BUTTONS:
 """
 
 
-screens = Screens()
-profile_screen = ProfileScreen(GameScreen.PROFILE)
-ceremony_screen = CeremonyScreen(GameScreen.CEREMONY)
-role_screen = RoleScreen(GameScreen.CHANGE_ROLE)
-sprite_inspect_screen = SpriteInspectScreen(GameScreen.SPRITE_INSPECT)
-
-make_clan_screen = MakeClanScreen(GameScreen.MAKE_CLAN)
-
-allegiances_screen = AllegiancesScreen(GameScreen.ALLEGIANCES)
-camp_screen = ClanScreen(GameScreen.CAMP)
-list_screen = ListScreen(GameScreen.LIST)
-med_den_screen = MedDenScreen(GameScreen.MED_DEN)
-clearing_screen = ClearingScreen(GameScreen.CLEARING)
-warrior_den_screen = WarriorDenScreen(GameScreen.WARRIOR_DEN)
-leader_den_screen = LeaderDenScreen(GameScreen.LEADER_DEN)
-
-events_screen = EventsScreen(GameScreen.EVENTS)
-
-settings_screen = SettingsScreen(GameScreen.SETTINGS)
-clan_settings_screen = ClanSettingsScreen(GameScreen.CLAN_SETTINGS)
-start_screen = StartScreen(GameScreen.START)
-event_edit_screen = EventEditScreen(GameScreen.EVENT_EDIT)
-switch_clan_screen = SwitchClanScreen(GameScreen.SWITCH_CLAN)
-
-patrol_screen = PatrolScreen(GameScreen.PATROL)
-
-choose_mate_screen = ChooseMateScreen(GameScreen.CHOOSE_MATE)
-choose_mentor_screen = ChooseMentorScreen(GameScreen.CHOOSE_MENTOR)
-choose_adoptive_parent_screen = ChooseAdoptiveParentScreen(
-    GameScreen.CHOOSE_ADOPTIVE_PARENT
-)
-relationship_screen = RelationshipScreen(GameScreen.RELATIONSHIP)
-family_tree_screen = FamilyTreeScreen(GameScreen.FAMILY_TREE)
-mediation_screen = MediationScreen(GameScreen.MEDIATION)
-change_gender_screen = ChangeGenderScreen(GameScreen.CHANGE_GENDER)
-
 def rebuild_all_screens():
     global screens, profile_screen, ceremony_screen, role_screen, sprite_inspect_screen, make_clan_screen, allegiances_screen, camp_screen, list_screen, med_den_screen, clearing_screen, warrior_den_screen, leader_den_screen, events_screen, settings_screen, clan_settings_screen, start_screen, switch_clan_screen, patrol_screen, choose_mate_screen, choose_mentor_screen, choose_adoptive_parent_screen, relationship_screen, family_tree_screen, mediation_screen, change_gender_screen
     screens = Screens()
@@ -117,5 +81,7 @@ def rebuild_all_screens():
     family_tree_screen = FamilyTreeScreen(GameScreen.FAMILY_TREE)
     mediation_screen = MediationScreen(GameScreen.MEDIATION)
     change_gender_screen = ChangeGenderScreen(GameScreen.CHANGE_GENDER)
+
+rebuild_all_screens()
 
 AllScreens = __import__(__name__) # temporary
