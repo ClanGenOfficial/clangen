@@ -76,12 +76,15 @@ def rebuild_all_screens():
 
     choose_mate_screen = ChooseMateScreen(GameScreen.CHOOSE_MATE)
     choose_mentor_screen = ChooseMentorScreen(GameScreen.CHOOSE_MENTOR)
-    choose_adoptive_parent_screen = ChooseAdoptiveParentScreen(GameScreen.CHOOSE_ADOPTIVE_PARENT)
+    choose_adoptive_parent_screen = ChooseAdoptiveParentScreen(
+        GameScreen.CHOOSE_ADOPTIVE_PARENT
+    )
     relationship_screen = RelationshipScreen(GameScreen.RELATIONSHIP)
     family_tree_screen = FamilyTreeScreen(GameScreen.FAMILY_TREE)
     mediation_screen = MediationScreen(GameScreen.MEDIATION)
     change_gender_screen = ChangeGenderScreen(GameScreen.CHANGE_GENDER)
 
+
 rebuild_all_screens()
 
-AllScreens = __import__(__name__) # temporary
+AllScreens = __import__(__name__)  # temporary
