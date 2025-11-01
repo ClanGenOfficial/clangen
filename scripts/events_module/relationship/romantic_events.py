@@ -726,10 +726,20 @@ class RomanticEvents:
                 relationship_to, constants.CONFIG["mates"]["like_to_romance"]
             )
         ):
-            become_mates = True
-            mate_string = RomanticEvents.get_mate_string(
-                "like_to_romance", poly, cat_from, cat_to
-            )
+            # had to reuse the low_romantic_makeup thing for here just in case we have a scenario  
+            # where mates break up and both cats have no pink in their romance bar for each other 
+            # anymore, but get back together only because of the like_to_romance chance, plus I'd 
+            # imagine the conversations would go about the same if they do make up because of this
+            if cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates:
+                become_mate = True
+                mate_string = RomanticEvents.get_mate_string(
+                    "low_romantic_makeup", poly, cat_from, cat_to
+            ) 
+            else:
+                become_mates = True
+                mate_string = RomanticEvents.get_mate_string(
+                    "like_to_romance", poly, cat_from, cat_to
+                )
 
         if not become_mates:
             return False, None
