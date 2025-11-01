@@ -336,7 +336,7 @@ except pygame.error:
     print("Failed to initialize sound. Sound will be disabled.")
     music_manager.audio_disabled = True
     music_manager.muted = True
-all_screens.start_screen.screen_switches()
+all_screens.get_screen(GameScreen.START).screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
 
