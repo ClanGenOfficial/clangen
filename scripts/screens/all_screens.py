@@ -46,9 +46,8 @@ BUTTONS:
     ~Generally, the vertical gap between buttons should be 5px
 """
 
-
 def rebuild_all_screens():
-    global screens, profile_screen, ceremony_screen, role_screen, sprite_inspect_screen, make_clan_screen, allegiances_screen, camp_screen, list_screen, med_den_screen, clearing_screen, warrior_den_screen, leader_den_screen, events_screen, settings_screen, clan_settings_screen, start_screen, switch_clan_screen, patrol_screen, choose_mate_screen, choose_mentor_screen, choose_adoptive_parent_screen, relationship_screen, family_tree_screen, mediation_screen, change_gender_screen
+    global screens, profile_screen, ceremony_screen, role_screen, sprite_inspect_screen, make_clan_screen, allegiances_screen, camp_screen, list_screen, med_den_screen, clearing_screen, warrior_den_screen, leader_den_screen, events_screen, settings_screen, clan_settings_screen, start_screen, switch_clan_screen, patrol_screen, choose_mate_screen, choose_mentor_screen, choose_adoptive_parent_screen, relationship_screen, family_tree_screen, mediation_screen, change_gender_screen, event_edit_screen
     screens = Screens()
     profile_screen = ProfileScreen(GameScreen.PROFILE)
     ceremony_screen = CeremonyScreen(GameScreen.CEREMONY)
@@ -84,7 +83,6 @@ def rebuild_all_screens():
     mediation_screen = MediationScreen(GameScreen.MEDIATION)
     change_gender_screen = ChangeGenderScreen(GameScreen.CHANGE_GENDER)
 
+    event_edit_screen = EventEditScreen(GameScreen.EVENT_EDIT)
 
 rebuild_all_screens()
-
-AllScreens = __import__(__name__)  # temporary
