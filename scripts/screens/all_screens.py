@@ -1,3 +1,5 @@
+import warnings
+
 from .AllegiancesScreen import AllegiancesScreen
 from .CeremonyScreen import CeremonyScreen
 from .ChangeGenderScreen import ChangeGenderScreen
@@ -87,11 +89,8 @@ def rebuild_all_screens():
         screen_dict[enum] = classobj(enum)
 
 
-def __getattr__(name):
-    if name in screen_dict:
-        return screen_dict[GameScreen(name)]
-    else:
-        raise AttributeError()  # Will be handled by Python
+def get_screen(screen: GameScreen):
+    return screen_dict[screen]
 
 
 rebuild_all_screens()

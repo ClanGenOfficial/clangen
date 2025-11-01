@@ -2287,7 +2287,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
 
         toggle_fullscreen(
             None,
-            source_screen=getattr(all_screens, self.source_screen_name),
+            source_screen=all_screens.get_screen(self.source_screen_name),
             show_confirm_dialog=False,
         )
 

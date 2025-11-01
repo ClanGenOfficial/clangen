@@ -367,7 +367,7 @@ while 1:
             pass
         else:
             # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
-            getattr(all_screens, game.current_screen.replace(" ", "_")).handle_event(
+            all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
                 event
             )
 
@@ -424,8 +424,10 @@ while 1:
     # update
     game.update_game()
     if game.switch_screens:
-        getattr(all_screens, game.last_screen_forupdate.replace(" ", "_")).exit_screen()
-        getattr(all_screens, game.current_screen.replace(" ", "_")).screen_switches()
+        all_screens.get_screen(
+            game.last_screen_forupdate.replace(" ", "_")
+        ).exit_screen()
+        all_screens.get_screen(game.current_screen.replace(" ", "_")).screen_switches()
         game.switch_screens = False
     if (
         not music_manager.audio_disabled
