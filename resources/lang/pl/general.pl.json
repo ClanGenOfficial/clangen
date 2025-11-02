@@ -2,15 +2,15 @@
     "pl": {
         "moons_age": {
             "one": "1 księżyc",
-            "many": "%{count} księżycy"
+            "many": "%{count} księżyców"
         },
         "moons_age_in_death": {
             "one": "1 księżyc (w śmierci)",
-            "many": "%{count} księżycy (w śmierci)"
+            "many": "%{count} księżyców (w śmierci)"
         },
         "moons_age_in_life": {
             "one": "1 księżyc (w życiu)",
-            "many": "%{count} księżycy (w życiu)"
+            "many": "%{count} księżyców (w życiu)"
         },
         "moon_date": "księżyc %{moon}",
         "leader": {
@@ -62,7 +62,7 @@
             "many": "kociaki"
         },
         "kitten_profile": "młody",
-        "adolescent": "młodzieniec",
+        "adolescent": "młodociany",
         "young adult": "młody dorosły",
         "adult": "dorosły",
         "senior adult": "starszy dorosły",
@@ -107,7 +107,7 @@
         "male": "samiec",
         "trans female": "samiczka (trans)",
         "trans male": "samiec (trans)",
-        "nonbinary": "niebinarny",
+        "nonbinary": "niebinarne",
         "is": "jest",
         "are": "są",
         "can_work": "Jest w stanie pracować",
@@ -134,13 +134,25 @@
         "aunt": "ciotka",
         "uncle": "wuj",
         "parents_sibling": "rodzeństwo rodzica",
-        "grandparent": "dziadek/babcia",
-        "grandchild": "wnuk",
+        "grandmother": "babcia",
+        "grandfather": "dziadek",
+        "grandparent": "dziabko",
+        "granddaughter": "wnuczka",
+        "grandson": "wnuk",
+        "grandchild": "wnuczę",
+        "mother": "matka",
+        "father": "ojciec",
         "parent": "rodzic",
+        "daughter": "córka",
+        "son": "syn",
         "child": "dziecko",
+        "sister": "siostra",
+        "brother": "brat",
         "sibling": "rodzeństwo",
-        "sibling_littermate": "rodzeństwo",
-        "cousin": "kuzyn",
+        "sibling_littermate": "%{relation}",
+        "cousin_male": "kuzyn",
+        "cousin_female": "kuzynka",
+        "cousin_nb": "kuzynostwo",
         "starclan": "Klan Gwiazdy",
         "dark_forest": "Mroczna Puszcza",
         "unknown_residence": "Nieznany Pobyt",
@@ -188,8 +200,8 @@
         "has_permanent_condition": "ma niepełnosprawność lub chorobę trwałą",
         "born_with": "wrodzone",
         "had_perm_condition_for": {
-            "one": "%{count} księżyca",
-            "many": "%{count} księżycy"
+            "one": "%{count} księżyc",
+            "many": "%{count} księżyców"
         },
         "had_injury_for": "przez %{moons}",
         "pregnant_for": "w ciąży %{moons}",

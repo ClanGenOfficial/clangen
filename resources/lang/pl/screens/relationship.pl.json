@@ -1,7 +1,7 @@
 {
     "pl": {
-        "heading": "m_c's Relationships",
-        "show_dead_checkbox": "Show Dead",
-        "show_empty_checkbox": "Show Empty"
+        "heading": "Relacje m_c",
+        "show_dead_checkbox": "Pokaż Martwe",
+        "show_empty_checkbox": "Pokaż Puste"
     }
 }

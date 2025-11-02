@@ -1,9 +1,9 @@
 {
     "pl": {
-        "heading": "<b>%{clan_name}Clan Allegiances<\/b>",
+        "heading": "<b>Spis Kotów Klanu %{clan_name}<\/b>",
         "caring_for": {
-            "one": "<i>(caring for %{kitten})<\/i>",
-            "many": "<i>(caring for %{kitten_list} and %{last_kitten})<\/i>"
+            "one": "<i>(opiekuje się %{kitten})<\/i>",
+            "many": "<i>(opiekuje się %{kitten_list} i %{last_kitten})<\/i>"
         }
     }
 }

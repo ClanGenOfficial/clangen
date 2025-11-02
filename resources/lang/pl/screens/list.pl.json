@@ -1,18 +1,18 @@
 {
     "pl": {
-        "favorite_hide_tooltip": "hide favorite cat indicators",
-        "favorite_show_tooltip": "show favorite cat indicators",
-        "view_dead": "view dead",
-        "view_dead_tooltip": "view cats in the afterlife",
-        "view_living": "view living",
-        "view_living_tooltip": "view cats in the living world",
-        "choose_group": "choose group to view:",
-        "filter_label": "sort by:",
-        "filter_age": "age \u2191",
-        "filter_reverse_age": "age \u2193",
-        "filter_death": "death",
-        "filter_exp": "EXP",
+        "favorite_hide_tooltip": "ukryj wskaźniki ulubionych kotów",
+        "favorite_show_tooltip": "pokaż wskaźniki ulubionych kotów",
+        "view_dead": "zobacz martwe",
+        "view_dead_tooltip": "zobacz koty w zaświatach",
+        "view_living": "zobacz żywe",
+        "view_living_tooltip": "zobacz koty w świecie żywych",
+        "choose_group": "wybierz grupę:",
+        "filter_label": "sortuj:",
+        "filter_age": "wiek \u2191",
+        "filter_reverse_age": "wiek \u2193",
+        "filter_death": "śmierć",
+        "filter_exp": "doświadczenie",
         "filter_id": "ID",
-        "filter_rank": "rank"
+        "filter_rank": "ranga"
     }
 }
