@@ -150,9 +150,10 @@
                     "r_c"
                 ],
                 "values": [
-                    "dislike"
+                    "comfort",
+                    "trust"
                 ],
-                "amount": 10,
+                "amount": -5,
                 "mutual": false
             },
             {
@@ -163,11 +164,9 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
-                    "comfort",
-                    "trust"
+                    "like"
                 ],
-                "amount": -5,
+                "amount": -10,
                 "mutual": false
             }
         ]
@@ -379,25 +378,12 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": 30,
-                "mutual": false
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": -30,
                 "mutual": false
             }
         ]
@@ -419,7 +405,7 @@
                 "mediator apprentice"
             ],
             "relationship_status": [
-                "platonic_10"
+                "likes"
             ],
             "trait": [
                 "daring",

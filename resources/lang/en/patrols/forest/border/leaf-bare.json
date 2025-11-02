@@ -176,13 +176,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
                     }
                 ]
             },
@@ -214,13 +207,6 @@
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 10
                     },
                     {
                         "cats_to": ["s_c"],
@@ -556,7 +542,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust", "platonic"],
+                        "values": ["respect", "trust", "like"],
                         "amount": 5
                     }
                 ]
@@ -1328,13 +1314,6 @@
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 30
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -30
                     }
                 ]
             },
@@ -1526,13 +1505,6 @@
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 15
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -15
                     }
                 ]
             },
@@ -1564,13 +1536,6 @@
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 15
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -15
                     }
                 ]
             },
@@ -1602,13 +1567,6 @@
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 15
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -15
                     }
                 ]
             },
@@ -1633,13 +1591,6 @@
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -1675,13 +1626,6 @@
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             }
@@ -1840,7 +1784,7 @@
                 ]
             },
             {
-                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} {VERB/s_c/do/does} best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't arrive at camp.",
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} {VERB/s_c/do/does} best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/don't/doesn't} arrive at camp.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_bord_flashflood",
@@ -1907,7 +1851,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["jealous", "respect"],
+                        "values": ["respect"],
                         "amount": 15
                     },
                     {
@@ -2205,7 +2149,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["app1"],
                         "mutual": false,
-                        "values": ["jealous", "respect"],
+                        "values": ["respect"],
                         "amount": 15
                     },
                     {
@@ -2614,7 +2558,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust", "platonic"],
+                        "values": ["respect", "trust", "like"],
                         "amount": 25
                     }
                 ],
@@ -2832,7 +2776,7 @@
         "biome": ["plains"],
         "season": ["leaf-bare"],
         "types": ["border"],
-        "tags": [],
+        "tags": ["app1_mentored"],
         "patrol_art": "pln_bord_tunnel",
         "min_cats": 1,
         "max_cats": 1,
@@ -2863,7 +2807,7 @@
                 "art": "gen_hunt_huntassessment"
             },
             {
-                "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
+                "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
                 "exp": 20,
                 "weight": 10,
                 "art": "pln_hunt_gonetwolegtrap1",
@@ -2879,7 +2823,7 @@
                 ]
             },
             {
-                "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around eachother rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
+                "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around eachother rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
                 "exp": 20,
                 "weight": 10,
                 "art": "gen_angry_cat_app",
@@ -3169,7 +3113,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust", "platonic"],
+                        "values": ["trust", "like"],
                         "amount": 10
                     }
                 ]
@@ -3186,13 +3130,6 @@
                     "rebellious"
                 ],
                 "relationships": [
-                    {
-                        "cats_to": ["app1"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 15
-                    },
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["patrol"],
@@ -3219,7 +3156,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "trust"],
+                        "values": ["like", "trust"],
                         "amount": 10
                     }
                 ]
@@ -3234,7 +3171,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust", "platonic"],
+                        "values": ["trust", "like"],
                         "amount": 15
                     }
                 ]
@@ -3251,7 +3188,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust", "platonic"],
+                        "values": ["trust", "like"],
                         "amount": 5
                     },
                     {
@@ -3275,13 +3212,6 @@
                     "gloomy"
                 ],
                 "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -10
-                    },
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
@@ -3315,14 +3245,14 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "respect", "trust"],
+                        "values": ["like", "respect", "trust"],
                         "amount": 10
                     },
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 15
                     },
                     {

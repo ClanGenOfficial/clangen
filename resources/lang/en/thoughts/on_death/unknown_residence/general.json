@@ -2,7 +2,33 @@
     {
         "id": "general_death_outside_thoughts",
         "thoughts": [
-            "Is fascinated by the new ghostly world {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} stumbled into"
+            "Is fascinated by the new ghostly world {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} stumbled into",
+            "Can't stand the sight of {PRONOUN/m_c/poss} own dead body"
         ]
+    },
+    {
+        "id": "ur_parent_death_to_newborn",
+        "thoughts": [
+            "Clings to the warmth of {PRONOUN/m_c/poss} litter",
+            "Doesn't want to leave {PRONOUN/m_c/poss} litter behind",
+            "Is happy {PRONOUN/m_c/poss} kits get to grow up even if it is without {PRONOUN/m_c/object}",
+            "Sobs knowing {PRONOUN/m_c/poss} kits won't grow up knowing {PRONOUN/m_c/object}",
+            "Feels at peace knowing {PRONOUN/m_c/poss} kits are taken care of",
+            "Distrusts the Clan cats taking {PRONOUN/m_c/poss} kits"
+        ],
+        "random_age_constraint": ["newborn"],
+        "relationship_constraint": ["parent/child"],
+        "random_living_status": ["living"]
+    },
+    {
+        "id": "ur_parent_death_to_newborn",
+        "thoughts": [
+            "Wishes {PRONOUN/m_c/poss} kits had a chance to grow up",
+            "Is happy to not be seperated from {PRONOUN/m_c/poss} litter",
+            "Wishes someone had found {PRONOUN/m_c/object} in time to save {PRONOUN/m_c/poss} kits"
+        ],
+        "random_age_constraint": ["newborn"],
+        "relationship_constraint": ["parent/child"],
+        "random_living_status": ["unknownresidence"]
     }
 ]

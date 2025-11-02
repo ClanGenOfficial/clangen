@@ -315,6 +315,22 @@
         ]
     },
     {
+        "event_id": "dst_injury_bruisessore_anymultiage2",
+        "location": ["desert"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c took a bad tumble over a rock hidden by the dusty ground.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["bruises", "sore"]
+            }
+        ]
+    },
+    {
         "event_id": "dst_injury_dehydrated_nonleafbare_anymultiage1",
         "location": [
             "desert"
@@ -426,24 +442,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -10
             }
         ]
     },
@@ -500,24 +503,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -10
             }
         ]
     },
@@ -722,7 +712,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "This looks like being sunstruck, like m_c has stared at the noon sun too long. But m_c never did that. Visions of prophecy_list_sight are the last thing {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} seeing.",
+        "event_text": "This looks like being sunstruck, like m_c has stared at the noon sun too long. But m_c never did that. Visions of prophecy_list_sight/m_c are the last thing {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} seeing.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -1054,7 +1044,7 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             },
@@ -1227,22 +1217,9 @@
                     "respect",
                     "trust",
                     "comfort",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 20
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -20
             }
         ]
     },
@@ -1338,7 +1315,6 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "jealous",
                     "trust",
                     "comfort"
                 ],
@@ -1547,7 +1523,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -2268,7 +2244,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2351,7 +2327,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2508,7 +2484,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2752,7 +2728,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2890,7 +2866,7 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -2963,24 +2939,12 @@
                     "r_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": -10
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -3312,6 +3276,27 @@
         ]
     },
     {
+        "event_id": "dst_injury_scrapessmallcuts_appmultitrait1",
+        "location": ["desert"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c dashes off from {PRONOUN/m_c/poss} mentor and tumbles face first into a cactus! Thankfully r_c is able to remove the spines with little difficulty.",
+        "m_c": {
+            "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
+            "trait": ["adventurous", "arrogant", "bold", "childish", "confident", "daring", "oblivious", "playful", "rebellious", "shameless", "troublesome"],
+            "relationship_status": ["app/mentor"]
+        },
+        "r_c": {
+            "status": ["warrior", "mediator", "medicine cat"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["scrapes", "small cut"]
+            }
+        ]
+    },
+    {
         "event_id": "dst_injury_soreapp_clankits",
         "location": [
             "desert"
@@ -3487,6 +3472,30 @@
                 "cats": [
                     "m_c"
                 ],
+                "scar": "m_c was scarred by a snake bite.",
+                "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake.",
+                "lead_death": "after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_snake_any1",
+        "location": ["desert"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "A snake managed to slither into camp and bite m_c.",
+        "m_c": {
+            "age": ["any"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["snake bite"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
                 "scar": "m_c was scarred by a snake bite.",
                 "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake.",
                 "lead_death": "after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake"
@@ -4080,7 +4089,7 @@
                 "mutual": true,
                 "values": [
                     "trust",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 30
             }

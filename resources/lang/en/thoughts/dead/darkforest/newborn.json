@@ -12,7 +12,14 @@
             "Hears menacing whispers around {PRONOUN/m_c/object}",
             "Is clouded in confusion and fear",
             "Feels trapped in the sticky mud",
+            "Nearly drowned in the muck",
+            "Hisses and spits at the scent of another cat approaching",
+            "Is being carried",
+            "Mewls as someone bats {PRONOUN/m_c/object} around",
             "Is feeling incredibly lonely"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     },
     {
@@ -27,6 +34,9 @@
         ],
         "random_living_status": [
             "living"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     }
 ]

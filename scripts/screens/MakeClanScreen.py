@@ -1,6 +1,7 @@
 from random import choice, randrange
 from re import sub
 from typing import Optional
+from uuid import uuid4
 
 import i18n
 import pygame
@@ -13,9 +14,7 @@ from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import image_cache, constants
-from scripts.game_structure.game_essentials import (
-    game,
-)
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISpriteButton,
@@ -24,9 +23,12 @@ from scripts.game_structure.ui_elements import (
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
 from scripts.utility import ui_scale_dimensions
 from .Screens import Screens
+from .enums import GameScreen
+from .screens_core.screens_core import rebuild_den_dropdown
 from ..cat import save_load
 from ..cat.enums import CatRank
 from ..cat.sprites import sprites
+from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.settings import game_setting_set, game_setting_get
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER, screen
@@ -171,7 +173,7 @@ class MakeClanScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.main_menu:
-                self.change_screen("start screen")
+                self.change_screen(GameScreen.START)
             if self.sub_screen == "game mode":
                 self.handle_game_mode_event(event)
             elif self.sub_screen == "name clan":
@@ -201,7 +203,7 @@ class MakeClanScreen(Screens):
             elif self.sub_screen == "saved screen" and (
                 event.key == pygame.K_RETURN or event.key == pygame.K_RIGHT
             ):
-                self.change_screen("start screen")
+                self.change_screen(GameScreen.START)
 
     def handle_game_mode_event(self, event):
         """Handle events for the game mode screen"""
@@ -237,7 +239,7 @@ class MakeClanScreen(Screens):
 
     def handle_game_mode_key(self, event):
         if event.key == pygame.K_ESCAPE:
-            self.change_screen("start screen")
+            self.change_screen(GameScreen.START)
         elif event.key == pygame.K_DOWN:
             if self.game_mode == "classic":
                 self.game_mode = "expanded"
@@ -269,12 +271,6 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
                 self.elements["error"].show()
                 return
-            if new_name.casefold() in (
-                clan.casefold() for clan in switch_get_value(Switch.clan_list)
-            ):
-                self.elements["error"].set_text("A Clan with that name already exists.")
-                self.elements["error"].show()
-                return
             self.clan_name = new_name
             self.open_choose_leader()
         elif event.ui_element == self.elements["previous_step"]:
@@ -283,7 +279,7 @@ class MakeClanScreen(Screens):
 
     def handle_name_clan_key(self, event):
         if event.key == pygame.K_ESCAPE:
-            self.change_screen("start screen")
+            self.change_screen(GameScreen.START)
         elif event.key == pygame.K_LEFT:
             if not self.elements["name_entry"].is_focused:
                 self.clan_name = ""
@@ -297,14 +293,6 @@ class MakeClanScreen(Screens):
                     self.elements["error"].set_text("Your Clan's name cannot be empty")
                     self.elements["error"].show()
                     return
-                if new_name.casefold() in (
-                    clan.casefold() for clan in switch_get_value(Switch.clan_list)
-                ):
-                    self.elements["error"].set_text(
-                        "A Clan with that name already exists."
-                    )
-                    self.elements["error"].show()
-                    return
                 self.clan_name = new_name
                 self.open_choose_leader()
         elif event.key == pygame.K_RETURN:
@@ -313,12 +301,6 @@ class MakeClanScreen(Screens):
             ).strip()
             if not new_name:
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
-                self.elements["error"].show()
-                return
-            if new_name.casefold() in (
-                clan.casefold() for clan in switch_get_value(Switch.clan_list)
-            ):
-                self.elements["error"].set_text("A Clan with that name already exists.")
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
@@ -562,7 +544,7 @@ class MakeClanScreen(Screens):
 
     def handle_saved_clan_event(self, event):
         if event.ui_element == self.elements["continue"]:
-            self.change_screen("camp screen")
+            self.change_screen(GameScreen.CAMP)
 
     def exit_screen(self):
         self.main_menu.kill()
@@ -584,14 +566,6 @@ class MakeClanScreen(Screens):
             elif self.elements["name_entry"].get_text().startswith(" "):
                 self.elements["error"].set_text(
                     "screens.make_clan.error_clan_name_space"
-                )
-                self.elements["error"].show()
-                self.elements["next_step"].disable()
-            elif self.elements["name_entry"].get_text().casefold() in (
-                clan.casefold() for clan in switch_get_value(Switch.clan_list)
-            ):
-                self.elements["error"].set_text(
-                    "screens.make_clan.error_clan_name_duplicate"
                 )
                 self.elements["error"].show()
                 self.elements["next_step"].disable()
@@ -2162,12 +2136,19 @@ class MakeClanScreen(Screens):
     def save_clan(self):
         game.mediated.clear()
         game.patrolled.clear()
-        save_load.cat_to_fade.clear()
+        save_load.faded_ids.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
         convert_camp = {1: "camp1", 2: "camp2", 3: "camp3", 4: "camp4"}
+        displayname = self.clan_name
+        if self._clan_name_exists(self.clan_name):
+            clan_name = self._generate_unique_clan_name(self.clan_name)
+        else:
+            clan_name = self.clan_name
+
         game.clan = Clan(
-            name=self.clan_name,
+            name=clan_name,
+            displayname=displayname,
             leader=self.leader,
             deputy=self.deputy,
             medicine_cat=self.med_cat,
@@ -2185,6 +2166,11 @@ class MakeClanScreen(Screens):
         game.clan.save_herb_supply(game.clan)
         Cat.grief_strings.clear()
         Cat.sort_cats()
+
+        rebuild_den_dropdown(
+            left_align=not get_clan_setting("moons and seasons"),
+            game_mode=game.clan.game_mode,
+        )
 
     def get_camp_art_path(self, campnum) -> Optional[str]:
         if not campnum:
@@ -2237,6 +2223,14 @@ class MakeClanScreen(Screens):
             object_id=get_text_box_theme("#text_box_26_horizcenter"),
             manager=MANAGER,
         )
+
+    def _clan_name_exists(self, new_clan_name: str):
+        return new_clan_name.casefold() in (
+            clan.casefold() for clan in switch_get_value(Switch.clan_list)
+        )
+
+    def _generate_unique_clan_name(self, new_clan_name: str):
+        return f"{new_clan_name}_{uuid4()}"
 
 
 make_clan_screen = MakeClanScreen()

@@ -7,7 +7,8 @@
             "Wonders what is happening in StarClan",
             "Regrets not trying to join a different Clan before {PRONOUN/m_c/subject} died",
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/have/has} a purpose anymore",
-            "Is thinking bitterly about {PRONOUN/m_c/poss} former Clanmates"
+            "Is thinking bitterly about {PRONOUN/m_c/poss} former Clanmates",
+            "Is finding peace in an afterlife outside of Starclan or the Dark Forest"
         ],
         "main_status_constraint": [
             "exiled"

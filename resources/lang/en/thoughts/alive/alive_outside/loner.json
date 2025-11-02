@@ -8,8 +8,6 @@
             "Loves {PRONOUN/m_c/poss} life of freedom",
             "Thinks that Clan cats are stupid",
             "Debates joining a Clan",
-            "Heard a rumor of rogues in the area",
-            "Feels alone",
             "Is recovering from an illness",
             "Is exploring",
             "Caught a particularly large bird",
@@ -20,24 +18,21 @@
             "Heard some strange stories about starry ancestors living in the sky",
             "Shivers in the cold",
             "Wonders if Clan life is the only way to live with others",
-            "Was chased away from the shelter {PRONOUN/m_c/subject} had been staying in",
             "Hopes {PRONOUN/m_c/poss} mild cough won't get worse",
-            "Got invited to spend the night with a group of friendly loners",
-            "Saw a helpless cat get taken in a metal box by Twolegs",
             "Sniffed around a known Clan territory curiously",
-            "Chows down on some food a Twoleg left out for {PRONOUN/m_c/object}",
             "Envies the strong kinship the Clan cats have",
             "Took a stroll through the city",
             "Spies a kittypet through a window, jealous of the protection and food they have",
             "Spies a kittypet and taunts them that they can't enjoy freedom",
-            "Is taking a nap, hoping something exciting would happen to escape {PRONOUN/m_c/poss} boredom",
-            "Was running carelessly across the Thunderpath and was nearly hit by a monster"
+            "Is taking a nap, hoping something exciting will happen to defeat {PRONOUN/m_c/poss} boredom"
         ]
     },
     {
         "id": "loner_kitten_/_adolescent_thoughts",
         "thoughts": [
-            "Is currently trying to figure out how to catch a bird"
+            "Is trying to figure out how to catch a bird",
+            "Is trying to figure out how to catch a mouse",
+            "Is learning the hunters crouch"
         ],
         "main_age_constraint": [
             "kitten",

@@ -11,6 +11,7 @@ from typing import List, Tuple, Optional, Union
 import pygame
 
 from scripts.cat.cats import Cat
+from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank
 from scripts.clan import Clan
 from scripts.clan_package.settings import get_clan_setting
@@ -19,7 +20,7 @@ from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 from scripts.game_structure import localization, constants
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_personality_compatibility,
@@ -248,8 +249,8 @@ class Patrol:
             else:
                 self.patrol_leader = choice(self.patrol_cats)
 
-        if clan.all_clans and len(clan.all_clans) > 0:
-            self.other_clan = choice(clan.all_clans)
+        if clan.all_other_clans and len(clan.all_other_clans) > 0:
+            self.other_clan = choice(clan.all_other_clans)
         else:
             self.other_clan = None
 
@@ -555,24 +556,14 @@ class Patrol:
         else:
             chance_of_romance_patrol += 10
 
-        values = [
-            "romantic",
-            "platonic",
-            "dislike",
-            "admiration",
-            "comfortable",
-            "jealousy",
-            "trust",
-        ]
+        values = [*RelType]
         for val in values:
             value_check = check_relationship_value(love1, love2, val)
-            if (
-                val in ("romantic", "platonic", "admiration", "comfortable", "trust")
-                and value_check >= 20
-            ):
+            if value_check < 0:
                 chance_of_romance_patrol -= 1
-            elif val in ("dislike", "jealousy") and value_check >= 20:
+            elif value_check > 0:
                 chance_of_romance_patrol += 2
+
         if chance_of_romance_patrol <= 0:
             chance_of_romance_patrol = 1
         print("final romance chance:", chance_of_romance_patrol)
@@ -593,6 +584,19 @@ class Patrol:
         if patrol_type == "general":
             patrol_type = random.choice(["hunting", "border", "training"])
 
+        app_number_mentor_checks = {}
+        for i in range(1, 7):
+            app_number_mentor_checks[f"app{i}_mentored"] = (
+                len(self.patrol_apprentices) >= i
+                and self.patrol_apprentices[i - 1].mentor is not None
+            )
+        general_mentor_checks = (
+            all(app.mentor for app in self.patrol_apprentices)
+            if self.patrol_apprentices
+            else False
+        )
+        has_mentor = {"general": general_mentor_checks, **app_number_mentor_checks}
+
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
             if not self._check_constraints(patrol):
@@ -600,9 +604,7 @@ class Patrol:
 
             # Don't check for repeat patrols if ensure_patrol_id is being used.
             if (
-                not isinstance(
-                    constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"], str
-                )
+                constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"] == ""
                 and patrol.patrol_id in self.used_patrols
             ):
                 continue
@@ -630,7 +632,7 @@ class Patrol:
                     )
                 continue
 
-            if not event_for_tags(patrol.tags, Cat):
+            if not event_for_tags(patrol.tags, Cat, mentor_tags_fulfilled=has_mentor):
                 if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
                     print("DEBUG: requested patrol does not meet constraints (tags)")
                 continue
@@ -673,7 +675,7 @@ class Patrol:
                     )
                 continue
 
-            if "romantic" in patrol.tags:
+            if "romance" in patrol.tags:
                 romantic_patrols.append(patrol)
             else:
                 filtered_patrols.append(patrol)
@@ -1005,7 +1007,7 @@ class Patrol:
 
         root_dir = "resources/images/patrol_art/"
 
-        if game_setting_get("gore") and self.patrol_event.patrol_art_clean:
+        if not game_setting_get("gore") and self.patrol_event.patrol_art_clean:
             file_name = self.patrol_event.patrol_art_clean
         else:
             file_name = self.patrol_event.patrol_art
@@ -1040,6 +1042,15 @@ class Patrol:
                 choice(self.random_cat.pronouns),
             ),
         }
+
+        text, senses, list_type, cat_tag = find_special_list_types(text)
+        if list_type:
+            sign_list = get_special_snippet_list(
+                list_type, amount=randint(1, 3), sense_groups=senses
+            )
+            text = text.replace(list_type, str(sign_list))
+            if cat_tag:
+                text = text.replace("cat_tag", cat_tag)
 
         other_cats = [
             i
@@ -1137,7 +1148,7 @@ class Patrol:
 
         text = text.replace("o_c_n", str(other_clan_name) + "Clan")
 
-        clan_name = game.clan.name
+        clan_name = game.clan.displayname
         s = 0
         pos = 0
         for x in range(text.count("c_n")):
@@ -1157,14 +1168,7 @@ class Patrol:
                         text = " ".join(modify)
                         break
 
-        text = text.replace("c_n", str(game.clan.name) + "Clan")
-
-        text, senses, list_type, _ = find_special_list_types(text)
-        if list_type:
-            sign_list = get_special_snippet_list(
-                list_type, amount=randint(1, 3), sense_groups=senses
-            )
-            text = text.replace(list_type, str(sign_list))
+        text = text.replace("c_n", str(game.clan.displayname) + "Clan")
 
         # TODO: check if this can be handled in event_text_adjust
         return text

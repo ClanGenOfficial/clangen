@@ -22,7 +22,7 @@
         "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
         "focus": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}.",
         "blood_loss": "Herbs were used to stop blood loss for %{name}.",
-        "loss_event": "Lost %{herbs} during this moon.",
-        "gain_event": "Gained %{herbs} during this moon."
+        "loss_event": "The Clan lost %{herbs}.",
+        "gain_event": "The Clan gained %{herbs}."
     }
 }

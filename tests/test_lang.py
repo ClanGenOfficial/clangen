@@ -1,8 +1,12 @@
 # Tests for localization
+import os
 import unittest
 
 import i18n
 import ujson
+
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.localization import (
@@ -21,11 +25,16 @@ class TestLocalisation(unittest.TestCase):
         ) as read_file:
             cls.pronouns = ujson.loads(read_file.read())["en"]
 
-        male_cat = Cat(gender="male")
-        female_cat = Cat(gender="female")
+        male_cat = Cat(gender="male", disable_random=True)
+        male_cat.genderalign = "male"
+
+        female_cat = Cat(gender="female", disable_random=True)
+        female_cat.genderalign = "female"
+
         nonbinary_cat = Cat()
         nonbinary_cat.genderalign = "nonbinary"
-        mystery_cat = Cat(gender="potato")
+
+        mystery_cat = Cat(gender="potato", disable_random=True)
         cls.cat_combos_two = {
             "male-male": [[male_cat, male_cat], cls.pronouns["1"]],
             "male-female": [[male_cat, female_cat], cls.pronouns["1"]],
@@ -61,22 +70,24 @@ class TestLocalisation(unittest.TestCase):
         set_lang_config_directory("tests/prereqs/test_lang/plural_pronoun_config.json")
 
         for key, value in self.cat_combos_two.items():
-            input = []
-            for cat in value[0]:
-                input.append(cat.pronouns[0])
+            gender_tag = [cat.pronouns[0] for cat in value[0]]
             with self.subTest("two cat combination", combination=key):
                 self.assertDictEqual(
-                    determine_plural_pronouns(input),
+                    determine_plural_pronouns(gender_tag),
                     value[1],
                 )
 
     def test_insert_singular_pronouns(self):
-        male_cat = Cat(gender="male")
-        female_cat = Cat(gender="female")
-        nb_cat = Cat()
-        nb_cat.genderalign = "nonbinary"
+        male_cat = Cat(gender="male", disable_random=True)
+        male_cat.genderalign = "male"
 
-        for cat in (male_cat, female_cat, nb_cat):
+        female_cat = Cat(gender="female", disable_random=True)
+        female_cat.genderalign = "female"
+
+        nonbinary_cat = Cat()
+        nonbinary_cat.genderalign = "nonbinary"
+
+        for cat in (male_cat, female_cat, nonbinary_cat):
             for pronoun in ("subject", "object", "poss", "inposs", "self"):
                 with self.subTest(
                     "singular pronouns", cat=cat.genderalign, pronoun=pronoun

@@ -1,33 +1,43 @@
 {
     "en": {
-        "romantic_label": {
-            "one": "romantic like:",
-            "many": "romantic love:"
-        },
-        "platonic_label": {
-            "one": "platonic like:",
-            "many": "platonic love:"
-        },
-        "dislike_label": {
-            "one": "dislike:",
-            "many": "hate:"
-        },
-        "admire_label": {
-            "one": "respect:",
-            "many": "admiration:"
-        },
-        "comfortable_label": {
-            "one": "comfortable:",
-            "many": "security:"
-        },
-        "jealous_label": {
-            "one": "jealousy:",
-            "many": "resentment:"
-        },
-        "trust_label": {
-            "one": "trust:",
-            "many": "reliance:"
-        },
+        "neutral": "...",
+        "uninterested": "uninterested",
+        "fancies": "fancies",
+        "adores": "adores",
+        "loves": "loves",
+        "loathes": "loathes",
+        "hates": "hates",
+        "dislikes": "dislikes",
+        "knows_of": "knows of",
+        "likes": "likes",
+        "enjoys": "enjoys",
+        "cherishes": "cherishes",
+        "resents": "resents",
+        "envies": "envies",
+        "begrudges": "begrudges",
+        "acknowledges": "acknowledges",
+        "praises": "praises",
+        "respects": "respects",
+        "admires": "admires",
+        "discredits": "discredits",
+        "distrusts": "distrusts",
+        "doubts": "doubts",
+        "observes": "observes",
+        "listens_to": "listens to",
+        "trusts": "trusts",
+        "confides_in": "confides in",
+        "runs_from": "runs from",
+        "fears": "fears",
+        "avoids": "avoids",
+        "considers": "considers",
+        "relates_to": "relates to",
+        "understands": "understands",
+        "knows_deeply": "knows deeply",
+        "like": "Like (%{count})",
+        "respect": "Respect (%{count})",
+        "comfort": "Comfort (%{count})",
+        "trust": "Trust (%{count})",
+        "romance": "Romance (%{count})",
         "positive_postscript": " (positive effect)",
         "positive_postscript_low": " (low positive effect)",
         "positive_postscript_medium": " (medium positive effect)",

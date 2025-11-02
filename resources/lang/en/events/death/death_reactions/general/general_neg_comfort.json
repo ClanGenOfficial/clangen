@@ -1,0 +1,12 @@
+{
+    "general": {
+        "body": [
+            "r_c can't help but feel grateful that m_c is gone.",
+            "r_c isn't <i>glad</i> m_c is dead, but {PRONOUN/r_c/subject} {VERB/r_c/do/does} feel some relief at the news."
+        ],
+        "no_body": [
+            "r_c can't help but feel grateful that m_c is gone.",
+            "r_c isn't <i>glad</i> m_c is dead, but {PRONOUN/r_c/subject} {VERB/r_c/do/does} feel some relief at the news."
+        ]
+    }
+}

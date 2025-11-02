@@ -29,7 +29,7 @@ from scripts.game_structure.game.switches import (
     switch_append_list_value,
     switch_remove_list_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import (
     get_lang_config,
     get_custom_pronouns,
@@ -41,6 +41,7 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
     UIDropDown,
+    UIModifiedScrollingContainer,
 )
 from scripts.housekeeping.datadir import (
     get_save_dir,
@@ -55,6 +56,7 @@ from scripts.housekeeping.update import (
     get_latest_version_number,
 )
 from scripts.housekeeping.version import get_version_info
+from scripts.screens.enums import GameScreen
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
@@ -76,7 +78,7 @@ if TYPE_CHECKING:
 class SymbolFilterWindow(UIWindow):
     def __init__(self):
         super().__init__(
-            ui_scale(pygame.Rect((250, 175), (300, 450))),
+            ui_scale(pygame.Rect((250, 125), (300, 450))),
             window_display_title="windows.symbol_filters",
             object_id="#filter_window",
         )
@@ -104,12 +106,12 @@ class SymbolFilterWindow(UIWindow):
             object_id="#text_box_40",
             container=self,
         )
-        self.filter_container = pygame_gui.elements.UIScrollingContainer(
-            ui_scale(pygame.Rect((5, 45), (285, 310))),
+        self.filter_container = UIModifiedScrollingContainer(
+            ui_scale(pygame.Rect((5, 45), (285, 400))),
             manager=MANAGER,
             starting_height=1,
-            object_id="#filter_container",
             allow_scroll_x=False,
+            allow_scroll_y=True,
             container=self,
         )
         self.checkbox = {}
@@ -275,9 +277,11 @@ class SaveCheck(UIWindow):
             container=self,
         )
         save_buttons = get_button_dict(ButtonStyles.SQUOVAL, (114, 30))
-        save_buttons["normal"] = image_cache.load_image(
-            "resources/images/buttons/save_clan.png"
+        save_buttons["normal"] = pygame.transform.scale(
+            image_cache.load_image("resources/images/buttons/save_clan.png"),
+            ui_scale_dimensions((114, 30)),
         )
+
         self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 115), (114, 30))),
             "buttons.save_clan",
@@ -334,7 +338,7 @@ class SaveCheck(UIWindow):
                     game.is_close_menu_open = False
                     self.mm_btn.enable()
                     game.last_screen_forupdate = switch_get_value(Switch.cur_screen)
-                    switch_set_value(Switch.cur_screen, "start screen")
+                    switch_set_value(Switch.cur_screen, GameScreen.START)
                     game.switch_screens = True
                     self.kill()
                 else:
@@ -416,7 +420,7 @@ class EditorSaveCheck(UIWindow):
     def modify_file(self, event_list, path):
         event_json = ujson.dumps(event_list, indent=4)
         event_json = event_json.replace(
-            "\/", "/"
+            "\\/", "/"
         )  # ujson tries to escape "/", but doesn't end up doing a good job.
 
         try:
@@ -540,7 +544,7 @@ class DeleteCheck(UIWindow):
                 else:
                     print("No clan.json/txt???? Clan prolly wasnt initalized kekw")
                 self.kill()
-                self.reloadscreen("switch clan screen")
+                self.reloadscreen(GameScreen.SWITCH_CLAN)
 
             elif event.ui_element == self.go_back_button:
                 self.kill()
@@ -559,7 +563,7 @@ class GameOver(UIWindow):
             resizable=False,
         )
         self.set_blocking(True)
-        self.clan_name = str(game.clan.name + "Clan")
+        self.clan_name = str(game.clan.displayname + "Clan")
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
             "windows.game_over_message",
@@ -600,7 +604,7 @@ class GameOver(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
                 game.last_screen_forupdate = switch_get_value(Switch.cur_screen)
-                switch_set_value(Switch.cur_screen, "start screen")
+                switch_set_value(Switch.cur_screen, GameScreen.START)
                 game.switch_screens = True
                 self.kill()
             elif event.ui_element == self.not_yet_button:
@@ -811,8 +815,8 @@ class ChangeCatName(UIWindow):
                 self.suffix_entry_box.rebuild()
                 self.suffix_entry_box.disable()
             elif event.ui_element == self.back_button:
-                game.all_screens["profile screen"].exit_screen()
-                game.all_screens["profile screen"].screen_switches()
+                game.all_screens[GameScreen.PROFILE].exit_screen()
+                game.all_screens[GameScreen.PROFILE].screen_switches()
                 self.kill()
         return super().process_event(event)
 
@@ -1047,8 +1051,8 @@ class PronounCreation(UIWindow):
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                game.all_screens["change gender screen"].exit_screen()
-                game.all_screens["change gender screen"].screen_switches()
+                game.all_screens[GameScreen.CHANGE_GENDER].exit_screen()
+                game.all_screens[GameScreen.CHANGE_GENDER].screen_switches()
                 [item.kill() for item in self.dropdowns.values()]
                 self.kill()
             elif event.ui_element in self.dropdowns["conju"].child_buttons:
@@ -1268,8 +1272,8 @@ class KillCat(UIWindow):
                 self.the_cat.die()
                 self.the_cat.history.add_death(death_message)
                 update_sprite(self.the_cat)
-                game.all_screens["profile screen"].exit_screen()
-                game.all_screens["profile screen"].screen_switches()
+                game.all_screens[GameScreen.PROFILE].exit_screen()
+                game.all_screens[GameScreen.PROFILE].screen_switches()
                 self.kill()
             elif event.ui_element == self.all_lives_check:
                 self.take_all = False
@@ -1280,8 +1284,8 @@ class KillCat(UIWindow):
                 self.all_lives_check.show()
                 self.one_life_check.hide()
             elif event.ui_element == self.back_button:
-                game.all_screens["profile screen"].exit_screen()
-                game.all_screens["profile screen"].screen_switches()
+                game.all_screens[GameScreen.PROFILE].exit_screen()
+                game.all_screens[GameScreen.PROFILE].screen_switches()
                 self.kill()
 
         return super().process_event(event)
@@ -1664,10 +1668,16 @@ class RelationshipLog(UIWindow):
             relationship.opposite_relationship
             and len(relationship.opposite_relationship.log) > 0
         ):
-            opposite_log_string = f"{f'<br>-----------------------------<br>'.join(relationship.opposite_relationship.log)}<br>"
+            opposite_log = relationship.opposite_relationship.log.copy()
+            opposite_log.reverse()
+            opposite_log_string = (
+                f"{f'<br>-----------------------------<br>'.join(opposite_log)}<br>"
+            )
 
+        log = relationship.log.copy()
+        log.reverse()
         log_string = (
-            f"{f'<br>-----------------------------<br>'.join(relationship.log)}<br>"
+            f"{f'<br>-----------------------------<br>'.join(log)}<br>"
             if len(relationship.log) > 0
             else i18n.t("windows.no_relation_logs")
         )
@@ -2059,8 +2069,8 @@ class ChangeCatToggles(UIWindow):
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                game.all_screens["profile screen"].exit_screen()
-                game.all_screens["profile screen"].screen_switches()
+                game.all_screens[GameScreen.PROFILE].exit_screen()
+                game.all_screens[GameScreen.PROFILE].screen_switches()
                 self.kill()
             elif event.ui_element == self.checkboxes["prevent_fading"]:
                 self.the_cat.prevent_fading = not self.the_cat.prevent_fading
@@ -2116,7 +2126,7 @@ class SelectFocusClans(UIWindow):
             container=self,
         )
         n = 0
-        for clan in game.clan.all_clans:
+        for clan in game.clan.all_other_clans:
             self.texts[clan.name] = pygame_gui.elements.UITextBox(
                 clan.name + "clan",
                 ui_scale(pygame.Rect(107, n * 27 + 38, -1, 25)),
@@ -2131,7 +2141,7 @@ class SelectFocusClans(UIWindow):
         self.checkboxes = {}
 
         n = 0
-        for clan in game.clan.all_clans:
+        for clan in game.clan.all_other_clans:
             box_type = "@unchecked_checkbox"
             if clan.name in game.clan.clans_in_focus:
                 box_type = "@checked_checkbox"
@@ -2148,13 +2158,13 @@ class SelectFocusClans(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 game.clan.clans_in_focus = []
-                game.all_screens["warrior den screen"].exit_screen()
-                game.all_screens["warrior den screen"].screen_switches()
+                game.all_screens[GameScreen.WARRIOR_DEN].exit_screen()
+                game.all_screens[GameScreen.WARRIOR_DEN].screen_switches()
                 self.kill()
             if event.ui_element == self.save_button:
-                game.all_screens["warrior den screen"].save_focus()
-                game.all_screens["warrior den screen"].exit_screen()
-                game.all_screens["warrior den screen"].screen_switches()
+                game.all_screens[GameScreen.WARRIOR_DEN].save_focus()
+                game.all_screens[GameScreen.WARRIOR_DEN].exit_screen()
+                game.all_screens[GameScreen.WARRIOR_DEN].screen_switches()
                 self.kill()
             if event.ui_element in self.checkboxes.values():
                 for clan_name, value in self.checkboxes.items():
@@ -2244,7 +2254,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             ui_scale_offset((0, 22)),
             (
                 self.get_container().get_size()[0],
-                self.get_container().get_size()[1] - button_vertical_space,
+                -1,
             ),
         )
         self.text_block = pygame_gui.elements.UITextBox(
@@ -2261,6 +2271,7 @@ class ConfirmDisplayChanges(UIMessageWindow):
             },
             text_kwargs={"count": 10},
         )
+        self.text_block.disable()
         self.text_block.rebuild_from_changed_theme_data()
 
         # make a timeout that will call in 10 seconds - if this window isn't closed,

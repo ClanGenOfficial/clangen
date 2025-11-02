@@ -1,3 +1,13 @@
 [
-    
+{        
+    "id": "med_cat_ur_dead_thoughts",
+    "thoughts": [
+        "Guided an injured loner to a life-saving herb",
+        "Guided an injured, lost kittypet to a life-saving herb"
+    ],
+    "main_status_constraint": [
+        "medicine cat",
+        "medicine cat apprentice"
+    ]
+}
 ]

@@ -128,7 +128,7 @@
             "Was hissed at by r_c for being too noisy",
             "Asks r_c what it is like to be so old",
             "Hopes r_c has a new story to tell {PRONOUN/m_c/object}",
-            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't get as grumpy as r_c when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} old"
+            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} get as grumpy as r_c when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} old"
         ],
         "random_status_constraint": [
             "elder"

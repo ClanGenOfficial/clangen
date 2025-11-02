@@ -58,16 +58,36 @@
             "Is listening attentively as other ghost cats tell tales of their own past lives",
             "Comforts a newly arrived ghost cat that feels lost and bewildered within this afterlife",
             "Feels a sense of melancholy as {PRONOUN/m_c/subject} {VERB/m_c/watch/watches} a living cat struggle with their health"
-
-
-            
-
-
-
-
-            
-
-
+        ]
+    },
+    {
+        "id": "unknown_residence_lost_clancat_",
+        "thoughts": [
+            "Sobs knowing {PRONOUN/m_c/subject} may never join {PRONOUN/m_c/poss} Clanmates in Starclan",
+            "Still wanders around looking for c_n",
+            "Wonders why {PRONOUN/m_c/subject} didn't end up in Starclan",
+            "Begs for Starclan to welcome {PRONOUN/m_c/object} in",
+            "Wonders whether {PRONOUN/m_c/poss} Clanmates wonder what happened to {PRONOUN/m_c/object}",
+            "Wonders if {PRONOUN/m_c/subject}'ll be remembered even if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not in Starclan",
+            "Thought {PRONOUN/m_c/subject} caught a c_n scent but was wrong",
+            "Has forgotten just how long {PRONOUN/m_c/subject}[VERB/m_c/'ve/'s} been wandering, searching for c_n",
+            "Wonders why Starclan wasn't watching over {PRONOUN/m_c/object}",
+            "Feels lost knowing Starclan was not guiding {PRONOUN/m_c/poss} every step home...",
+            "Wonders if Starclan rejected {PRONOUN/m_c/object}, leaving {PRONOUN/m_c/object} here...",
+            "Is at least glad {PRONOUN/m_c/subject} didn't end up in the Dark Forest",
+            "Is convinced Starclan's forgotten about {PRONOUN/m_c/object}...",
+            "Is still looking for c_n"
+],
+         "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
         ]
     }
 ]
