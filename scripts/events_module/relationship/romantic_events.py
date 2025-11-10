@@ -592,7 +592,7 @@ class RomanticEvents:
             if cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_to.previous_mates:
                 mate_string = RomanticEvents.get_mate_string(
                     "makeup_fail", poly, cat_from, cat_to
-            )
+                )
                 cat_from.relationships[cat_to.ID].romance -= 20
                 cat_to.relationships[cat_from.ID].comfort -= 20
                 cat_to.relationships[cat_from.ID].like -= 10
