@@ -589,7 +589,7 @@ class RomanticEvents:
                     "high_romantic", poly, cat_from, cat_to
                 )
         else:
-            if cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_to.previous_mates:
+            if cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates:
                 mate_string = RomanticEvents.get_mate_string(
                     "makeup_fail", poly, cat_from, cat_to
                 )
