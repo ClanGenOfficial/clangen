@@ -599,7 +599,7 @@ class RomanticEvents:
                 cat_to.relationships[cat_from.ID].respect -= 5
             else:
                 mate_string = RomanticEvents.get_mate_string(
-                "rejected", poly, cat_from, cat_to
+                    "rejected", poly, cat_from, cat_to
                 )
                 cat_from.relationships[cat_to.ID].romance -= 10
                 cat_to.relationships[cat_from.ID].comfort -= 10
