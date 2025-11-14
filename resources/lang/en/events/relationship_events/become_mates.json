@@ -73,13 +73,13 @@
 		"m_c and r_c have been seen all lovey-dovey with each other again lately - it seems that they've gotten back together!",
 		"m_c and r_c announced that they have gotten back together! Though the Clan's not really surprised as everyone knew m_c and r_c's love could never truly die.",
 		"Some cats may say it is wrong to get back with your ex-mate, but for m_c and r_c, it feels so right - they have made amends and gotten back together.",
-		"m_c and r_c realized that their reason for breaking up just wasn't worth it. They've made up decided to try again.",
+		"m_c and r_c realized that their reason for breaking up just wasn't worth it. They've made up and decided to try again.",
 		"After discussing their feelings and the reason why they broke up in the first place, m_c and r_c decided to start over and become mates again."
 	],
 	"low_romantic_makeup":[
 		"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c and they've become mates again.",
 		"Despite their prior misgivings, m_c and r_c decided to try their romantic relationship again and got back together.",
-		"m_c and r_c announced that they have made up and gotten back together, much to the Clan's surprise, but they congratulated them anyways.",
+		"m_c and r_c announced that they have made up and gotten back together, much to the Clan's surprise, but they congratulated them anyway.",
 		"Even though they broke up, m_c wants to try to start things over with r_c and asks {PRONOUN/r_c/object} to be {PRONOUN/m_c/poss} mate again. Though r_c was reluctant at first, {PRONOUN/r_c/subject} eventually {VERB/r_c/accept/accepts}."
 	]
 }
