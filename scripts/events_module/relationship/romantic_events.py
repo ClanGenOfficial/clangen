@@ -720,7 +720,7 @@ class RomanticEvents:
                 cat_from.ID in cat_to.previous_mates
                 and cat_to.ID in cat_from.previous_mates
             ):
-                become_mate = True
+                become_mates = True
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic_makeup", poly, cat_from, cat_to
             )
@@ -746,7 +746,7 @@ class RomanticEvents:
                 cat_from.ID in cat_to.previous_mates
                 and cat_to.ID in cat_from.previous_mates
             ):
-                become_mate = True
+                become_mates = True
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic_makeup", poly, cat_from, cat_to
                 ) 
