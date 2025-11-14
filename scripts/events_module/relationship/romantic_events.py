@@ -562,7 +562,8 @@ class RomanticEvents:
 
         if RomanticEvents.relationship_fulfill_condition(rel_to_check, condition):
             if (
-                cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates
+                cat_from.ID in cat_to.previous_mates 
+                and cat_to.ID in cat_from.previous_mates
             ):
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
@@ -581,7 +582,8 @@ class RomanticEvents:
             and rel_to_check.romance >= condition[RelType.ROMANCE] * 1.5
         ):
             if (
-                cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates
+                cat_from.ID in cat_to.previous_mates 
+                and cat_to.ID in cat_from.previous_mates
             ):
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
@@ -594,7 +596,8 @@ class RomanticEvents:
                 )
         else:
             if (
-                cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates
+                cat_from.ID in cat_to.previous_mates 
+                and cat_to.ID in cat_from.previous_mates
             ):
                 mate_string = RomanticEvents.get_mate_string(
                     "makeup_fail", poly, cat_from, cat_to
@@ -714,7 +717,8 @@ class RomanticEvents:
             )
         ):
             if (
-                cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates
+                cat_from.ID in cat_to.previous_mates 
+                and cat_to.ID in cat_from.previous_mates
             ):
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
@@ -739,7 +743,8 @@ class RomanticEvents:
             # anymore, but get back together only because of the like_to_romance chance, plus I'd 
             # imagine the conversations would go about the same if they do make up because of this
             if (
-                cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates
+                cat_from.ID in cat_to.previous_mates 
+                and cat_to.ID in cat_from.previous_mates
             ):
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
