@@ -79,7 +79,7 @@
 	"makeup_fail":{
 		"m_c_mates": [
 			"m_c loves [m_c_mates], but {PRONOUN/m_c/subject} still has feelings for r_c, even after their break up. After a talk with [m_c_mates], m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but got rejected.",
-			"After a talk with {PRONOUN/m_c/poss} (m_c_mate/mates), m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was turned down.",
+			"After a talk with {PRONOUN/m_c/poss} (m_c_mate/mates), m_c confessed {PRONOUN/m_c/poss} feelings to r_c, but was turned down."
 		],
 		"r_c_mates": [
 			"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c. After r_c consulted with {PRONOUN/r_c/poss} (r_c_mate/mates), r_c rejected {PRONOUN/m_c/object}."
