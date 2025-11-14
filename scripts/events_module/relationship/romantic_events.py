@@ -568,12 +568,12 @@ class RomanticEvents:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "high_romantic_makeup", poly, cat_from, cat_to
-                )
+            )
             else:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "high_romantic", poly, cat_from, cat_to
-                )
+            )
         # second acceptance chance if the romantic is high enough
         elif (
             RelType.ROMANCE in condition
@@ -588,12 +588,12 @@ class RomanticEvents:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "high_romantic_makeup", poly, cat_from, cat_to
-                )
+            )
             else:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "high_romantic", poly, cat_from, cat_to
-                )
+            )
         else:
             if (
                 cat_from.ID in cat_to.previous_mates 
@@ -601,7 +601,7 @@ class RomanticEvents:
             ):
                 mate_string = RomanticEvents.get_mate_string(
                     "makeup_fail", poly, cat_from, cat_to
-                )
+            )
                 cat_from.relationships[cat_to.ID].romance -= 20
                 cat_to.relationships[cat_from.ID].comfort -= 20
                 cat_to.relationships[cat_from.ID].like -= 10
@@ -609,7 +609,7 @@ class RomanticEvents:
             else:
                 mate_string = RomanticEvents.get_mate_string(
                     "rejected", poly, cat_from, cat_to
-                )
+            )
                 cat_from.relationships[cat_to.ID].romance -= 10
                 cat_to.relationships[cat_from.ID].comfort -= 10
 
@@ -749,12 +749,12 @@ class RomanticEvents:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic_makeup", poly, cat_from, cat_to
-                ) 
+            ) 
             else:
                 become_mates = True
                 mate_string = RomanticEvents.get_mate_string(
                     "like_to_romance", poly, cat_from, cat_to
-                )
+            )
 
         if not become_mates:
             return False, None
