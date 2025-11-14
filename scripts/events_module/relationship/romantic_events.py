@@ -713,7 +713,9 @@ class RomanticEvents:
                 relationship_to, constants.CONFIG["mates"]["mate_condition"]
             )
         ):
-            if cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates:
+            if (
+                cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates
+            ):
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic_makeup", poly, cat_from, cat_to
@@ -736,7 +738,9 @@ class RomanticEvents:
             # where mates break up and both cats have no pink in their romance bar for each other 
             # anymore, but get back together only because of the like_to_romance chance, plus I'd 
             # imagine the conversations would go about the same if they do make up because of this
-            if cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates:
+            if (
+                cat_from.ID in cat_to.previous_mates and cat_to.ID in cat_from.previous_mates
+            ):
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic_makeup", poly, cat_from, cat_to
