@@ -53,14 +53,14 @@
 	"high_romantic_makeup": {
 		"m_c_mates": [
 			"m_c loves [m_c_mates], but {PRONOUN/m_c/subject} still has feelings for r_c, even after their break up. After a talk with [m_c_mates], m_c confessed {PRONOUN/m_c/poss} feelings to r_c, and they have become mates again.",
-			"After a talk with {PRONOUN/m_c/poss} (m_c_mate/mates), m_c asked r_c if they can become mates again, r_c accepted and they have gotten back together."
+			"After a talk with {PRONOUN/m_c/poss} (m_c_mate/mates), m_c asked r_c if they could become mates again, r_c accepted, and they have gotten back together."
 		],
 		"r_c_mates": [
             "m_c wants to start things over with r_c. After {PRONOUN/r_c/subject} talked with [r_c_mates], m_c and r_c have gotten back together.",
             "m_c told r_c that {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to get back with {PRONOUN/r_c/object}. After r_c talked with {PRONOUN/r_c/poss} (r_c_mate/mates), m_c and r_c have become mates again."
 		],
 		"both_mates": [
-			"m_c and r_c realized they still had feelings for each other and after talking with their mates, they got back together."
+			"m_c and r_c realized they still had feelings for each other, and after talking with their mates, they got back together."
 		]
 	},
 	"low_romantic_makeup":{
@@ -73,7 +73,7 @@
             "After r_c talked with {PRONOUN/r_c/poss} (r_c_mate/mates) about {PRONOUN/r_c/poss} left over feelings for m_c, m_c and r_c have gotten back together."
 		],
 		"both_mates": [
-			"m_c and r_c realized they still had feelings for each other and after talking with their mates, they got back together."
+			"m_c and r_c realized they still had feelings for each other, and after talking with their mates, they got back together."
 		]
 	},
 	"makeup_fail":{
