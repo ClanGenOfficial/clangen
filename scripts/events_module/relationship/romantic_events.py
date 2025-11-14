@@ -582,7 +582,7 @@ class RomanticEvents:
             and rel_to_check.romance >= condition[RelType.ROMANCE] * 1.5
         ):
             if (
-                cat_from.ID in cat_to.previous_mates 
+                cat_from.ID in cat_to.previous_mates
                 and cat_to.ID in cat_from.previous_mates
             ):
                 become_mate = True
@@ -596,7 +596,7 @@ class RomanticEvents:
                 )
         else:
             if (
-                cat_from.ID in cat_to.previous_mates 
+                cat_from.ID in cat_to.previous_mates
                 and cat_to.ID in cat_from.previous_mates
             ):
                 mate_string = RomanticEvents.get_mate_string(
@@ -717,13 +717,13 @@ class RomanticEvents:
             )
         ):
             if (
-                cat_from.ID in cat_to.previous_mates 
+                cat_from.ID in cat_to.previous_mates
                 and cat_to.ID in cat_from.previous_mates
             ):
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic_makeup", poly, cat_from, cat_to
-                )
+            )
             else:
                 become_mates = True
                 mate_string = RomanticEvents.get_mate_string(
@@ -743,7 +743,7 @@ class RomanticEvents:
             # anymore, but get back together only because of the like_to_romance chance, plus I'd 
             # imagine the conversations would go about the same if they do make up because of this
             if (
-                cat_from.ID in cat_to.previous_mates 
+                cat_from.ID in cat_to.previous_mates
                 and cat_to.ID in cat_from.previous_mates
             ):
                 become_mate = True
