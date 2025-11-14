@@ -568,7 +568,7 @@ class RomanticEvents:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "high_romantic_makeup", poly, cat_from, cat_to
-            )
+                )
             else:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
@@ -588,7 +588,7 @@ class RomanticEvents:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "high_romantic_makeup", poly, cat_from, cat_to
-            )
+                )
             else:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
@@ -723,7 +723,7 @@ class RomanticEvents:
                 become_mate = True
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic_makeup", poly, cat_from, cat_to
-            )
+                )
             else:
                 become_mates = True
                 mate_string = RomanticEvents.get_mate_string(
