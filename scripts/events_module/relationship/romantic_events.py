@@ -516,7 +516,7 @@ class RomanticEvents:
         return: bool if event is triggered or not
         """
 
-        # get the highest romantic love relationships
+        # get the highest romantic love relationships and
         rel_list = cat_from.relationships.values()
         highest_romantic_relation = get_highest_romantic_relation(
             rel_list, exclude_mate=True
@@ -544,7 +544,9 @@ class RomanticEvents:
             mate for mate in cat_from.mate if cat_from.status.alive_in_player_clan
         ]
         alive_inclan_to_mates = [
-            mate for mate in cat_to.mate if cat_to.fetch_cat(mate).status.alive_in_player_clan
+            mate
+            for mate in cat_to.mate
+            if cat_to.fetch_cat(mate).status.alive_in_player_clan
         ]
         poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
 
@@ -572,6 +574,7 @@ class RomanticEvents:
                 mate_string = RomanticEvents.get_mate_string(
                     "high_romantic", poly, cat_from, cat_to
                 )
+        # second acceptance chance if the romantic is high enough
         elif (
             RelType.ROMANCE in condition
             and condition[RelType.ROMANCE] != 0
@@ -610,7 +613,9 @@ class RomanticEvents:
                 cat_from.relationships[cat_to.ID].romance -= 10
                 cat_to.relationships[cat_from.ID].comfort -= 10
 
-        mate_string = RomanticEvents.prepare_relationship_string(mate_string, cat_from, cat_to)
+        mate_string = RomanticEvents.prepare_relationship_string(
+            mate_string, cat_from, cat_to
+        )
         game.cur_events_list.append(
             Single_Event(
                 mate_string,
@@ -679,17 +684,23 @@ class RomanticEvents:
         mate_chance = constants.CONFIG["mates"]["chance_fulfilled_condition"]
         hit = int(random.random() * mate_chance)
 
+        # has to be high because every moon this will be checked for each relationship in the game
         friends_to_lovers = constants.CONFIG["mates"]["chance_friends_to_lovers"]
         random_hit = int(random.random() * friends_to_lovers)
 
+        # already return if there is 'no' hit (everything above 0), other checks are not necessary
         if hit > 0 and random_hit > 0:
             return False, None
 
         alive_inclan_from_mates = [
-            mate for mate in cat_from.mate if cat_from.fetch_cat(mate).status.alive_in_player_clan
+            mate
+            for mate in cat_from.mate
+            if cat_from.fetch_cat(mate).status.alive_in_player_clan
         ]
         alive_inclan_to_mates = [
-            mate for mate in cat_to.mate if cat_to.fetch_cat(mate).status.alive_in_player_clan
+            mate
+            for mate in cat_to.mate
+            if cat_to.fetch_cat(mate).status.alive_in_player_clan
         ]
         poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
 
@@ -718,7 +729,6 @@ class RomanticEvents:
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic", poly, cat_from, cat_to
                 )
-
         if (
             not random_hit
             and RomanticEvents.relationship_fulfill_condition(
@@ -728,6 +738,10 @@ class RomanticEvents:
                 relationship_to, constants.CONFIG["mates"]["like_to_romance"]
             )
         ):
+            # had to reuse the low_romantic_makeup thing for here just in case we have a scenario  
+            # where mates break up and both cats have no pink in their romance bar for each other 
+            # anymore, but get back together only because of the like_to_romance chance, plus I'd 
+            # imagine the conversations would go about the same if they do make up because of this
             if (
                 cat_from.ID in cat_to.previous_mates
                 and cat_to.ID in cat_from.previous_mates
@@ -735,7 +749,7 @@ class RomanticEvents:
                 become_mates = True
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic_makeup", poly, cat_from, cat_to
-                )
+                ) 
             else:
                 become_mates = True
                 mate_string = RomanticEvents.get_mate_string(
@@ -750,10 +764,12 @@ class RomanticEvents:
             print(cat_from.mate)
             print(cat_to.mate)
 
-        mate_string = RomanticEvents.prepare_relationship_string(mate_string, cat_from, cat_to)
+        mate_string = RomanticEvents.prepare_relationship_string(
+            mate_string, cat_from, cat_to
+        )
 
         return become_mates, mate_string
-        
+
     @staticmethod
     def relationship_fulfill_condition(relationship, condition):
         """
