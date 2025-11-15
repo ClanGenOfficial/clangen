@@ -745,7 +745,7 @@ class RomanticEvents:
                 become_mates = True
                 mate_string = RomanticEvents.get_mate_string(
                     "low_romantic_makeup", poly, cat_from, cat_to
-                ) 
+                )
             else:
                 become_mates = True
                 mate_string = RomanticEvents.get_mate_string(
