@@ -1576,7 +1576,7 @@ class Cat:
             game_mode = clan.game_mode
             biome = clan.biome
             camp = clan.camp_bg
-            season = clan.season
+            season = clan.current_season
         else:
             game_mode = None
             biome = None
