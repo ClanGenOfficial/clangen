@@ -1555,7 +1555,7 @@ class Cat:
             self.update_mentor()
 
     def thoughts(
-        self, just_died=False, lives_left: int = 0, other_clan_cats: list = None, game_mode = None, biome = None, camp = None
+        self, just_died=False, lives_left: int = 0, other_clan_cats: list = None, clan = game.clan
     ):
         """
         Generates a thought for the cat, which displays on their profile.
@@ -1572,17 +1572,15 @@ class Cat:
             all_cats = self.all_cats_list.copy()
             all_cats.remove(self)
 
-        if game.clan:
-            if game_mode is None:
-                game_mode = game.clan.game_mode
-            if biome is None:
-                biome = game.clan.biome
-            if camp is None:
-                camp = game.clan.camp_bg
-
-        try:
-            season = game.clan.current_season
-        except Exception:
+        if clan:
+            game_mode = clan.game_mode
+            biome = clan.biome
+            camp = clan.camp_bg
+            season = clan.season
+        else:
+            game_mode = None
+            biome = None
+            camp = None
             season = None
 
         # get other cat

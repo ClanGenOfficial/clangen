@@ -243,7 +243,7 @@ class Clan:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE)
-            the_cat.thoughts(game_mode=self.game_mode, biome=self.biome, camp=self.camp_bg)
+            the_cat.thoughts(clan=self)
 
         save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
