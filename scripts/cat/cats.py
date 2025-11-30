@@ -1555,7 +1555,11 @@ class Cat:
             self.update_mentor()
 
     def thoughts(
-        self, just_died=False, lives_left: int = 0, other_clan_cats: list = None, clan = game.clan
+        self,
+        just_died=False,
+        lives_left: int = 0,
+        other_clan_cats: list = None,
+        clan=game.clan,
     ):
         """
         Generates a thought for the cat, which displays on their profile.
