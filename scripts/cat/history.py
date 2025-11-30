@@ -1,9 +1,12 @@
 import random
 
 import i18n
+import os
+import ujson
 
+from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.utility import adjust_list_text
 
 
@@ -11,6 +14,11 @@ class History:
     """
     this class handles the cat's history!
     """
+
+    history_options = {}
+    if os.path.exists("resources/dicts/history_options.json"):
+        with open("resources/dicts/history_options.json", encoding="utf-8") as f:
+            history_options = ujson.load(f)
 
     def __init__(
         self,
@@ -23,6 +31,7 @@ class History:
         scar_events=None,
         murder=None,
         cat=None,
+        afterlife_acceptance=None,
     ):
         self.beginning = beginning if beginning else {}
         self.mentor_influence = (
@@ -35,6 +44,9 @@ class History:
         self.scar_events = scar_events if scar_events else []
         self.murder = murder if murder else {}
         self.cat = cat
+        self.afterlife_acceptance = (
+            afterlife_acceptance if afterlife_acceptance else None
+        )
 
         # fix 'old' history save bugs
         if self.mentor_influence["trait"] is None:
@@ -149,6 +161,7 @@ class History:
             "mentor_influence": self.mentor_influence,
             "app_ceremony": self.app_ceremony,
             "lead_ceremony": self.lead_ceremony,
+            "afterlife_acceptance": self.afterlife_acceptance,
             "possible_history": self.possible_history,
             "died_by": self.died_by,
             "scar_events": self.scar_events,
@@ -409,6 +422,46 @@ class History:
         self.died_by.append(
             {"involved": other_cat, "text": death_text, "moon": game.clan.age}
         )
+
+    def add_afterlife_acceptance(
+        self, guide_afterlife: CatGroup, is_kit=False, contentious=False, rejected=False
+    ):
+        """
+        Adds afterlife acceptance text to the cat's history. If using an optional parameter, should set only one out of
+        `is_kit`, `contentious`, and `rejected` to `True`, since the rest will be ignored.
+
+        :param guide_afterlife: The afterlife of the guide. Do NOT set to the opposite afterlife if rejected is `True`.
+        :param is_kit: `True` if the cat is a kit. Gives kinder acceptance text referring to kits.
+        :param contentious: `True` if the acceptance is supposed to be contentious. Afterlife will seem iffy about the cat.
+        :param rejected: `True` if cat is rejected from `guide_afterlife`. They will go to the opposite one instead.
+        """
+
+        afterlife = None
+        if guide_afterlife == CatGroup.STARCLAN:
+            afterlife = "starclan"
+        elif guide_afterlife == CatGroup.DARK_FOREST:
+            afterlife = "dark_forest"
+
+        if afterlife:
+            afterlife_acceptance_options = History.history_options[
+                "afterlife_acceptance_options"
+            ]
+            if is_kit:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_kit"]
+                )
+            elif contentious:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_contentious"]
+                )
+            elif rejected:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_rejected"]
+                )
+            else:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_default"]
+                )
 
     def add_scar(self, scar_text, condition=None, other_cat=None):
         if not game.clan:

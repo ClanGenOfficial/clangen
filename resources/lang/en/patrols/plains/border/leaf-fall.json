@@ -500,7 +500,7 @@
                     "cats_to": ["p_l"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["respect", "trust", "platonic"],
+                    "values": ["respect", "trust", "like"],
                     "amount": 5
                 }
             ]
@@ -982,13 +982,6 @@
                     "mutual": false,
                     "values": ["respect"],
                     "amount": 30
-                },
-                {
-                    "cats_to": ["s_c"],
-                    "cats_from": ["r_c"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": -30
                 }
             ]
         },
@@ -1630,7 +1623,7 @@
                     "cats_to": ["p_l"],
                     "cats_from": ["s_c"],
                     "mutual": false,
-                    "values": ["platonic"],
+                    "values": ["like"],
                     "amount": 5
                 }
             ]
@@ -1659,13 +1652,13 @@
                     "cats_to": ["p_l"],
                     "cats_from": ["s_c"],
                     "mutual": false,
-                    "values": ["platonic"],
+                    "values": ["like"],
                     "amount": 5
                 }
             ]
         },
         {
-            "text": "s_c shivers, levering {PRONOUN/s_c/self} out of the burrow entrance {PRONOUN/s_c/subject} tripped into. p_l asks if {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to explore it, but s_c shakes {PRONOUN/s_c/poss} head no. {PRONOUN/s_c/subject/CAP} can't explain it, but the tunnel gives {PRONOUN/s_c/object} flashes of clair_list.",
+            "text": "s_c shivers, levering {PRONOUN/s_c/self} out of the burrow entrance {PRONOUN/s_c/subject} tripped into. p_l asks if {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to explore it, but s_c shakes {PRONOUN/s_c/poss} head no. {PRONOUN/s_c/subject/CAP} can't explain it, but the tunnel gives {PRONOUN/s_c/object} flashes of clair_list/s_c.",
             "exp": 40,
             "weight": 30,
             "art": "gen_train_patrolapprenticesessionfail",
@@ -1705,7 +1698,7 @@
                     "cats_to": ["s_c"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["platonic"],
+                    "values": ["like"],
                     "amount": 5
                 }
             ]
@@ -1966,8 +1959,8 @@
                     "cats_to": ["p_l"],
                     "cats_from": ["r_c"],
                     "mutual": false,
-                    "values": ["jealous", "respect"],
-                    "amount": 15
+                    "values": ["respect"],
+                    "amount": -15
                 },
                 {
                     "cats_to": ["p_l"],
@@ -2331,8 +2324,8 @@
                     "cats_to": ["p_l"],
                     "cats_from": ["app1"],
                     "mutual": false,
-                    "values": ["jealous", "respect"],
-                    "amount": 15
+                    "values": ["respect"],
+                    "amount": -15
                 },
                 {
                     "cats_to": ["p_l"],
@@ -2741,7 +2734,7 @@
                     "cats_to": ["app1"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["respect", "trust", "platonic"],
+                    "values": ["respect", "trust", "like"],
                     "amount": 25
                 }
             ],
@@ -2977,7 +2970,7 @@
     "biome": ["plains"],
     "season": ["leaf-fall"],
     "types": ["border"],
-    "tags": [],
+    "tags": ["app1_mentored"],
     "patrol_art": "fst_hunt_fun2",
     "min_cats": 1,
     "max_cats": 1,
@@ -3002,7 +2995,7 @@
             "art": "pln_hunt_gonetwolegtrap1"
         },
         {
-            "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
+            "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
             "exp": 20,
             "weight": 20,
             "art": "pln_hunt_gonetwolegtrap1",
@@ -3018,7 +3011,7 @@
             ]
         },
         {
-            "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around each other rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
+            "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around each other rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
             "exp": 20,
             "weight": 20,
             "art": "gen_scared_cat_app",
@@ -3298,7 +3291,7 @@
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["trust", "platonic"],
+                    "values": ["trust", "like"],
                     "amount": 15
                 }
             ]
@@ -3319,13 +3312,6 @@
                     "cats_to": ["app1"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 15
-                },
-                {
-                    "cats_to": ["app1"],
-                    "cats_from": ["patrol"],
-                    "mutual": false,
                     "values": ["respect"],
                     "amount": -10
                 }
@@ -3341,13 +3327,6 @@
                     "cats_to": ["app1"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["jealous"],
-                    "amount": 15
-                },
-                {
-                    "cats_to": ["app1"],
-                    "cats_from": ["patrol"],
-                    "mutual": false,
                     "values": ["respect"],
                     "amount": 10
                 },
@@ -3355,7 +3334,7 @@
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["platonic", "trust"],
+                    "values": ["like", "trust"],
                     "amount": 10
                 }
             ]
@@ -3370,7 +3349,7 @@
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["trust", "platonic"],
+                    "values": ["trust", "like"],
                     "amount": 15
                 }
             ]
@@ -3387,7 +3366,7 @@
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["trust", "platonic"],
+                    "values": ["trust", "like"],
                     "amount": 5
                 },
                 {
@@ -3410,13 +3389,6 @@
                 "gloomy"
             ],
             "relationships": [
-                {
-                    "cats_to": ["s_c"],
-                    "cats_from": ["patrol"],
-                    "mutual": false,
-                    "values": ["dislike"],
-                    "amount": 10
-                },
                 {
                     "cats_to": ["s_c"],
                     "cats_from": ["patrol"],
@@ -3450,14 +3422,14 @@
                     "cats_to": ["s_c"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["platonic", "respect", "trust"],
+                    "values": ["like", "respect", "trust"],
                     "amount": 10
                 },
                 {
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["platonic"],
+                    "values": ["like"],
                     "amount": 5
                 },
                 {

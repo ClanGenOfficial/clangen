@@ -7,14 +7,23 @@
             "Is watching {PRONOUN/m_c/poss} own vigil",
             "Wants to comfort a Clanmate who is grieving over {PRONOUN/m_c/object}",
             "Is overwhelmed after meeting so many starry cats",
-            "Is regretting leaving {PRONOUN/m_c/poss} Clan without {PRONOUN/m_c/object}" 
+            "Regrets leaving {PRONOUN/m_c/poss} Clan without {PRONOUN/m_c/object}",
+            "Is surprised at the cats who stayed at {PRONOUN/m_c/poss} vigil the longest",
+            "Feels guilty for the grief {PRONOUN/m_c/poss} death brought",
+            "Can't stand the sight of {PRONOUN/m_c/poss} own dead body",
+            "Tried pressing against {PRONOUN/m_c/poss} grieving Clanmates",
+            "Is shocked hearing what {PRONOUN/m_c/poss} Clanmates think of {PRONOUN/m_c/object} at {PRONOUN/m_c/poss} vigil",
+            "Was brought to tears watching {PRONOUN/m_c/poss} Clanmates grieve for {PRONOUN/m_c/object}"
         ]
     },
     {
         "id": "parent_death_to_newborn",
         "thoughts": [
             "Clings to the warmth of {PRONOUN/m_c/poss} litter",
-            "Doesn't want to leave {PRONOUN/m_c/poss} litter behind"
+            "Doesn't want to leave {PRONOUN/m_c/poss} litter behind",
+            "Is happy {PRONOUN/m_c/poss} litter gets to grow up even if it is without {PRONOUN/m_c/object}",
+            "Sobs knowing {PRONOUN/m_c/poss} kits won't grow up knowing {PRONOUN/m_c/object}",
+            "Feels at peace knowing {PRONOUN/m_c/poss} Clanmates will care for {PRONOUN/m_c/poss} kits"
         ],
         "random_age_constraint": ["newborn"],
         "relationship_constraint": ["parent/child"]

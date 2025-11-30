@@ -63,5 +63,9 @@
         "m_c's body couldn't continue on without nourishment, and {PRONOUN/m_c/subject} never woke up from {PRONOUN/m_c/poss} sleep.",
         "m_c finally succumbed to starvation.",
         "Frail and exhausted from the lack of food, m_c died of starvation."
+    ],
+    "tick fever": [
+        "m_c died of tick fever.",
+        "m_c couldn't pull through, and the Clan is harshly reminded how important it is to get every tick."
     ]
 }

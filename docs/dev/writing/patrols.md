@@ -219,6 +219,8 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | "romantic"      | Marks the patrol as a romance patrol. Romance patrols are special, and are filtered to require patrol leader (p_l) and random cat (r_c) to to be potential mates or current mates. If any outcomes have effects on romantic-like, make sure this tag has been added, and the romantic-like is applied to p_l and r_c. |
 | "rom_two_apps" | Does nothing on its own. When "romance" present, check for potential mate or current mate between app1 and app2, rather than p_l and r_c                                                                                                                                                                              |
+| "all_mentored"     | Checks if all apprentices (no matter if medicine cat or warrior) within a patrol has a mentor.                                                                                                                                                                                |
+| "app{index}_mentored"     | First checks if the app number (IE: app1, app2, app3, and so forth) is mentioned in patrol text, then checks if the specific apprentice assigned to the abbreviation has a mentor.                                                                                                                                                                                |
 | "disaster"     | These patrols are only possible when mass extinction is turned ON. Used to mark patrols where the entire patrol can die or become lost.                                                                                                                                                                               |
 | "new_cat"      | Used to mark when a new cat can join during this patrol. Marking these patrols allows for better balancing.                                                                                                                                                                                                           |
 | "halloween"    | Used to mark patrols that should only occur around halloween                                                                                                                                                                                                                                                          |
@@ -510,22 +512,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 ***
 
 #### relationship_constraint: List[str]
->Optional. Only allows the patrol if the cats meet relationship constraints
-
-| relationship          |                                                                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| "siblings"            | All cats on the patrol must be siblings                                                                                           |
-| "mates"               | All cats on the patrol must be mates with each-other                                                                              |
-| "mates_with_pl"       | All cats on the patrol must be mates with p_l, but don't necessarily have to be mates with each-other.                            |
-| "parent/child"        | p_l must be the parent of r_c                                                                                                     |
-| "child/parent"        | r_c must be the parent of p_l                                                                                                     |
-| "romantic_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} romantic-like to all other patrol members. |
-| "platonic_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} platonic-like to all other patrol members. |
-| "dislike_{value}"     | Value is an integer between 0 and 100. Every patrol member must have more than {value} dislike to all other patrol members.       |
-| "comfortable_{value}" | Value is an integer between 0 and 100. Every patrol member must have more than {value} comfort to all other patrol members.       |
-| "jealousy_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} jealousy to all other patrol members.      |
-| "trust_{value}"       | Value is an integer between 0 and 100. Every patrol member must have more than {value} trust to all other patrol members.         |
-
+>Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
 
 ***
 
@@ -634,13 +621,15 @@ What each parameter does, and what the options are for outcomes.
 
 >To override default behavior:
 
-| string         | new behavior                                                                                                                                                                                                                                                 |
+| string      | new behavior                                                                                                                                                                                                                                                 |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | "p_l"       | Patrol leader (p_l) can be stat cat                                                                                                                                                                                                                          |
 | "r_c"       | Random cat can be stat cat                                                                                                                                                                                                                                   |
 | "app1"      | app1 (the first apprentice) can be stat cat                                                                                                                                                                                                                  |
 | "app2"      | app2 (the second apprentice) can be stat cat                                                                                                                                                                                                                 |
 | "not_pl_rc" | Any cat but p_l or r_c can be stat_cat. This is the default behavior for 3 + cat patrols. This allows that requirement to be applied to 2 and 1 cat patrols. Note that, with this constraint, no cats will be allowed to be stat_cat on 1 and 2 cat patrols. |
+| "not_pl"    | Any cat but p_l can be stat cat                                                                                                                                                                                                                              |
+| "not_rc"    | Any cat but r_c can be stat cat                                                                                                                                                                                                                              |
 | "any"       | Any cat can be stat_cat. Still subject to the additional requirement tags below, if present. Be careful with using s_c's name when this is used - it might lead to self-interaction                                                                          |
 
 >To add additional requirements to stat_cat:
@@ -727,14 +716,14 @@ What each parameter does, and what the options are for outcomes.
 
 >**injuries: List[str]:** Pool of injures to draw from
 >
->[Injury List](reference/index.md#__tabbed_1_1)
+>[Injury List](reference/tag-lists.md#__tabbed_1_1)
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
 >Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
 >
->[Scar List](reference/index.md#__tabbed_1_5)
+>[Scar List](reference/tag-lists.md#__tabbed_1_5)
 
 >**no_results: bool:** 
 >Optional. Controls if the injury "got" message shows up in patrol results, as well as potential history text.

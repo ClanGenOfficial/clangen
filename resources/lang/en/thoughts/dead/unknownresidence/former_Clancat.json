@@ -4,7 +4,9 @@
         "Wanders around {PRONOUN/m_c/poss} old territory",
         "Explores places {PRONOUN/m_c/subject} {VERB/m_c/were/was} afraid to go in life",
         "Hunts for prey, despite not feeling hungry",
-        "Watches {PRONOUN/m_c/poss} old Clanmates"
+        "Watches {PRONOUN/m_c/poss} old Clanmates",
+        "Explores outside c_n territory",
+        "Wonders why {PRONOUN/m_c/subject} didn't end up in Starclan"
     ],
     "main_status_constraint": [
         "former Clancat"

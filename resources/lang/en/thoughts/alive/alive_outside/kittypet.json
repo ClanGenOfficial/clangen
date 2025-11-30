@@ -71,7 +71,8 @@
             "Had a weird dream recently and wonders what it means",
             "Was naughty, but {PRONOUN/m_c/poss} housefolk can't stay mad at {PRONOUN/m_c/object}",
             "Is getting yelled at for being naughty",
-            "Doesn't understand why {PRONOUN/m_c/poss} housefolk are mad at {PRONOUN/m_c/object}"
+            "Doesn't understand why {PRONOUN/m_c/poss} housefolk are mad at {PRONOUN/m_c/object}",
+            "Got locked out for the night"
         ]
     },
     {
@@ -110,9 +111,7 @@
             "Was wandering in the backyard when a strange noise scared {PRONOUN/m_c/object} back inside",
             "Left {PRONOUN/m_c/poss} den to go scratch up that tree {PRONOUN/m_c/subject} had been eyeing",
             "Is glad {PRONOUN/m_c/poss} housefolk collar {PRONOUN/m_c/object} on a leash to walk {PRONOUN/m_c/object} outside",
-            "Heard the yowls of a recent battle in the distance",
-            "Is wandering in {PRONOUN/m_c/poss} neighborhood",
-            "Breathes in a sigh of relief when {PRONOUN/m_c/subject} {VERB/m_c/escape/escapes} some dogs"
+            "Is wandering in {PRONOUN/m_c/poss} neighborhood"
         ],
         "main_age_constraint": [
             "young adult",

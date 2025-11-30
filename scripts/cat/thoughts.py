@@ -21,21 +21,24 @@ class Thoughts:
         if not random_cat:
             return False
 
+        constraint = constraint.copy()
+        # No current relationship-value bases tags, so this is commented out.
+        relationship = False
+        if (
+            random_cat.ID in main_cat.relationships
+            and main_cat.ID in random_cat.relationships
+        ):
+            relationship = True
+
+        if "strangers" in constraint and relationship:
+            return False
+        elif "strangers" in constraint:
+            # we remove before further filtering so that filter_relationship_type doesn't scream
+            constraint.remove("strangers")
+
         if not filter_relationship_type(
             group=[main_cat, random_cat],
             filter_types=constraint,
-        ):
-            return False
-
-        # No current relationship-value bases tags, so this is commented out.
-        relationship = None
-        if random_cat.ID in main_cat.relationships:
-            relationship = main_cat.relationships[random_cat.ID]
-
-        if (
-            "strangers" in constraint
-            and relationship
-            and (relationship.platonic_like < 1 or relationship.romantic_love < 1)
         ):
             return False
 

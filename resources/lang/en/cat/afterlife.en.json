@@ -1,0 +1,64 @@
+{
+    "en": {
+        "starclan_default_0": "m_c breathed in deep, {PRONOUN/m_c/poss} spirit settled as {PRONOUN/m_c/subject} finally joined the home waiting for {PRONOUN/m_c/object} in the stars.",
+        "starclan_default_1": "The life m_c lived led to the stars, inevitably.",
+        "starclan_default_2": "m_c joined the ancestors of c_n in the stars, ready to watch over those who lived on.",
+        "starclan_default_3": "There was little fuss or debate. m_c's place in the stars was assured.",
+        "starclan_default_4": "At the close of m_c's life, a new star burned in the night sky and a new spirit padded in StarClan.",
+        "starclan_default_5": "Welcomed into StarClan, m_c took {PRONOUN/m_c/poss} place among the ancestors of the Clans.",
+        "starclan_default_6": "m_c's spirit was bathed in starlight, gently cradled away from the struggles of the living and into the resting place of the spirits.",
+        "starclan_default_7": "StarClan leapt to offer m_c a place among them.",
+        "starclan_default_8": "After a lifetime of service, m_c was welcomed into StarClan for the rest {PRONOUN/m_c/poss} soul needed.",
+
+        "starclan_rejected_0": "No matter how far m_c chased the light, all {PRONOUN/m_c/subject} found was darkness.",
+        "starclan_rejected_1": "m_c knew where {PRONOUN/m_c/subject} {VERB/m_c/were/was} headed when {PRONOUN/m_c/poss} eyes closed for the final time, yet the darkness still frightened {PRONOUN/m_c/object}.",
+        "starclan_rejected_2": "m_c wondered if {PRONOUN/m_c/subject}'d see {PRONOUN/m_c/poss} kin again as {PRONOUN/m_c/subject} woke in the Dark Forest, pondering if {PRONOUN/m_c/subject} {VERB/m_c/were/was} the only one there.",
+        "starclan_rejected_3": "StarClan turned their nose up regarding m_c. They had no desire to allow {PRONOUN/m_c/object} into their ranks.",
+        "starclan_rejected_4": "StarClan knew where m_c's morality lay. {PRONOUN/m_c/subject/CAP} did not belong among the stars.",
+
+        "starclan_contentious_0": "m_c was untrusting of the stars, but quickly learned to accept {PRONOUN/m_c/poss} hesitant welcoming.",
+        "starclan_contentious_1": "As m_c approached the stars in skepticism, the stars were just as wary, though they did not refuse {PRONOUN/m_c/object}.",
+        "starclan_contentious_2": "Though m_c was accepted among the stars, {PRONOUN/m_c/subject} soon found that the judgement of their ancestors is hard to bear.",
+        "starclan_contentious_3": "Despite some very passionate protests, m_c was accepted into StarClan.",
+
+        "starclan_kit_0": "m_c was guided into StarClan, where the life denied to {PRONOUN/m_c/object} by the real world could be played out in paradise as much as possible.",
+        "starclan_kit_1": "m_c's life was too short. It's not fair, but StarClan would make up for the lack as much as they could.",
+        "starclan_kit_2": "StarClan sheltered m_c, certain {PRONOUN/m_c/subject} would see {PRONOUN/m_c/poss} family again one day.",
+        "starclan_kit_3": "StarClan welcomed m_c not with debate, but with the sorrow of a life taken before it could fully flower.",
+        "starclan_kit_4": "m_c will never grow old in the real world, but in the fields of StarClan {PRONOUN/m_c/subject} could act out the shadows of who {PRONOUN/m_c/subject} could have been.",
+        "starclan_kit_5": "StarClan welcomed m_c, though they did not want to welcome {PRONOUN/m_c/object} so soon.",
+        "starclan_kit_6": "The stars reassured m_c that {PRONOUN/m_c/subject} would be cared for.",
+        "starclan_kit_7": "m_c had no deeds to note, no legacy to leave behind, but StarClan welcomed {PRONOUN/m_c/object} to their ranks.",
+
+        "dark_forest_default_0": "Power and authority, confidence and excitement - it had called to m_c, pulled {PRONOUN/m_c/object} like magnets in {PRONOUN/m_c/poss} blood. {PRONOUN/m_c/subject/CAP} soon walked the Dark Forest, raising {PRONOUN/m_c/poss} voice to call to others in turn.",
+        "dark_forest_default_1": "m_c's spirit lay in the endless solitude of the deep woods, {PRONOUN/m_c/poss} soul watching the stars in envy.",
+        "dark_forest_default_2": "The shadows of the deeps woods hid nothing from m_c, who stepped down the path to the Dark Forest with eyes open and tail held high.",
+        "dark_forest_default_3": "m_c's spirit waked in the Dark Forest upon death.",
+        "dark_forest_default_4": "The gnarled branches, the thick silence, the shadowed murk - it suited m_c far better than starlight ever could.",
+        "dark_forest_default_5": "m_c slipped into the Dark Forest the way a stream joined a river, seamlessly and completely.",
+        "dark_forest_default_6": "The stories told, the legacy made, the legend they left behind - all of that mattered to m_c far more than the Dark Forest that greeted {PRONOUN/m_c/poss} spirit at death.",
+        "dark_forest_default_7": "The earthly loam of the forest floor filled m_c's nose upon waking. Even before opening {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} knew where {PRONOUN/m_c/poss} affinity had led {PRONOUN/m_c/poss} soul.",
+
+        "dark_forest_rejected_0": "m_c was not worth investing in. The Dark Forest turned away from {PRONOUN/m_c/poss} spirit, leaving the weakling to be scavenged by StarClan.",
+        "dark_forest_rejected_1": "Power and authority, confidence and excitement - none of that came to mind when presented with m_c. Better for the stars to take the leftovers that the forest does not value.",
+        "dark_forest_rejected_2": "m_c's spirit slipped from the grasping claws of the Dark Forest, rising to StarClan.",
+        "dark_forest_rejected_3": "There was nothing in the Dark Forest that could tempt m_c, and {PRONOUN/m_c/subject} became a star instead.",
+        "dark_forest_rejected_4": "There is worth in scorn, and m_c was proud to be rejected by these ancestors. {PRONOUN/m_c/poss/CAP} path lies in starlight, not darkness.",
+        "dark_forest_rejected_5": "As the life of the living ends, the life of the next world begins - and m_c began {PRONOUN/m_c/inposs} by fleeing, escaping the forest to rise in starlight.",
+        "dark_forest_rejected_6": "Not all see the value in the strength of the deep woods. It is difficult to say - did m_c escape to StarClan, or did the forest let {PRONOUN/m_c/object} go?",
+        "dark_forest_rejected_7": "If the denizens of the Dark Forest catch m_c, they will kill {PRONOUN/m_c/object}. But first, they have to catch {PRONOUN/m_c/object} - and m_c has already escaped to the stars.",
+
+        "dark_forest_contentious_0": "The forest's souls whispered with uncertainty, like wind brushing gently through branches. But m_c was welcomed into the deep woods nonetheless.",
+        "dark_forest_contentious_1": "m_c's spirit twanged, a note out of tune with the whole. Yet in such a silent world as is held in the deep worlds, there is room for such spirits.",
+        "dark_forest_contentious_2": "Though there was the quiver of uncertainty in their soul, exposed and easy to see, m_c still coveted what the forest offered, and stepped into its depths.",
+        "dark_forest_contentious_3": "There was something in m_c worth the trouble {PRONOUN/m_c/poss} spirit was sure to bring with {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} welcomed into the Dark Forest.",
+        "dark_forest_contentious_4": "The Dark Forest called to m_c. Not overwhelmingly, not drowning out all others - but it called nonetheless, and m_c's spirit answered.",
+        "dark_forest_contentious_5": "The path to the Dark Forest was imprinted with the pawprints of m_c's good intentions.",
+
+        "dark_forest_kit_0": "m_c followed the well-worn paths into the darkened woods around {PRONOUN/m_c/object} without question.",
+        "dark_forest_kit_1": "m_c reached a shadowed hollow, still and quiet. {PRONOUN/m_c/subject/CAP} hadn't seen any cat, and didn't know how {PRONOUN/m_c/subject} got so far from camp.",
+        "dark_forest_kit_2": "The wind rustled through the trees, shadowed tangled on the ground, and m_c stepped into an afterlife peaceful, still, and quiet.",
+        "dark_forest_kit_3": "The new world was damp and dark, but not unwelcoming to m_c.",
+        "dark_forest_kit_4": "m_c wandered the Dark Forest, a little confused, but mostly curious."
+    }
+}

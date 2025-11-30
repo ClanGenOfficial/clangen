@@ -10,6 +10,9 @@
             "Tries to practice walking to play with the other cats",
             "Attempts to snarl but can only manage a tiny mewl",
             "Rolls through the starry grass"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     },
     {
@@ -25,6 +28,9 @@
         ],
         "random_living_status": [
             "living"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     },
     {
@@ -37,6 +43,9 @@
         ],
         "random_living_status": [
             "starclan"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     }
 ]

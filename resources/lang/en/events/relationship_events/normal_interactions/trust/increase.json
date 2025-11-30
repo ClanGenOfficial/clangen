@@ -36,7 +36,7 @@
 		],
 		"reaction_random_cat": {
 			"trust": "increase",
-			"admiration": "increase"
+			"respect": "increase"
 		},
 		"main_status_constraint": [
 			"elder"
@@ -297,7 +297,7 @@
 			"m_c and r_c swap secrets with each other."
 		],
 		"relationship_constraint": [
-			"trust_30"
+			"listens_to"
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -312,7 +312,7 @@
 			"m_c asks r_c for help resolving an argument with a friend."
 		],
 		"relationship_constraint": [
-			"trust_30"
+			"listens_to"
 		],
 		"random_status_constraint": [
 			"elder",
@@ -334,7 +334,7 @@
 			"leader"
 		],
 		"relationship_constraint": [
-			"trust_30"
+			"listens_to"
 		],
 		"random_status_constraint": [
 			"elder",
@@ -355,7 +355,7 @@
 			"m_c talks with r_c about difficult decisions."
 		],
 		"relationship_constraint": [
-			"trust_50"
+			"trusts"
 		],
 		"main_status_constraint": [
 			"leader"
@@ -378,7 +378,7 @@
 			"m_c discusses plans to expand the territory with r_c."
 		],
 		"relationship_constraint": [
-			"trust_50"
+			"trusts"
 		],
 		"main_status_constraint": [
 			"leader"

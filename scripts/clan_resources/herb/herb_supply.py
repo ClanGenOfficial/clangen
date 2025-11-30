@@ -8,7 +8,7 @@ from scripts.clan_resources.herb.herb import Herb, HERBS
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.game_structure import constants
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     adjust_list_text,
@@ -118,7 +118,7 @@ class HerbSupply:
         """
         returns the lowest qualifier for a low supply
         """
-        return 1
+        return 0
 
     @property
     def adequate_qualifier(self) -> int:
@@ -277,7 +277,7 @@ class HerbSupply:
         """
         returns the rating of given supply, aka how "full" the supply is compared to clan size
         """
-        if not self.entire_supply:
+        if self.total <= 0:
             return Supply.EMPTY
 
         lowest_herb = self.sorted_by_lowest[0]
@@ -286,7 +286,7 @@ class HerbSupply:
             self.total_of_herb(lowest_herb) + self.total_of_herb(highest_herb)
         ) / 2
 
-        if self.low_qualifier <= average_count <= self.adequate_qualifier:
+        if self.low_qualifier < average_count <= self.adequate_qualifier:
             return Supply.LOW
         if self.adequate_qualifier < average_count <= self.full_qualifier:
             return Supply.ADEQUATE
@@ -370,7 +370,7 @@ class HerbSupply:
         :param herb: herb to remove
         :param num_removed: POSITIVE number of herbs to remove
         """
-        surplus = self._remove_from_storage(herb, num_removed)
+        surplus = self._remove_from_storage(herb, int(num_removed))
 
         if surplus and self.collected.get(herb, []):
             self.collected[herb] -= surplus
@@ -518,7 +518,7 @@ class HerbSupply:
                 == 1
             ):
                 found_herbs[herb] = int(
-                    choices(population=[1, 2, 3], weights=weight, k=1)[0]
+                    choices(population=[3, 4, 5], weights=weight, k=1)[0]
                     * quantity_modifier
                 )
                 amount_of_herbs -= 1
@@ -681,7 +681,7 @@ class HerbSupply:
                 total_herb_amount = self.get_single_herb_total(herb_used)
 
                 amount_used = randint(
-                    1, total_herb_amount if total_herb_amount < 4 else 4
+                    1, total_herb_amount if total_herb_amount < 3 else 3
                 )
                 strength = 1
                 for level, herb_list in source_dict[name]["herbs"].items():
@@ -752,6 +752,8 @@ class HerbSupply:
             con_info = treated_cat.injuries[condition]
         else:
             con_info = treated_cat.permanent_condition[condition]
+            if con_info["born_with"] and con_info["moons_until"] != -2:
+                return
 
         amt_modifier = amount_used
 
@@ -810,7 +812,7 @@ class HerbSupply:
     @staticmethod
     def __apply_lack_of_herb(treatment_cat, condition: str, effect):
         """
-        if the condition is a perm condition, give some consequence for not treated it
+        if the condition is a perm condition or redcough, give some consequence for not treated it
         """
         # TODO: this kinda feels like something that should happen within a theoretical condition class...
 
@@ -821,15 +823,18 @@ class HerbSupply:
             return
 
         # grab the correct condition dict so that we can modify it
-        con_info = treatment_cat.permanent_condition[condition]
+        if condition == "redcough":
+            con_info = treatment_cat.illnesses[condition]
+        else:
+            con_info = treatment_cat.permanent_condition[condition]
 
         if effect == HerbEffect.RISK:
             for risk in con_info[effect]:
-                risk["chance"] -= randint(2, 4)
+                risk["chance"] -= randint(1, 3)
                 if risk["chance"] <= 1:
                     risk["chance"] = 2
         elif effect == HerbEffect.MORTALITY:
-            con_info[effect] -= randint(2, 4)
+            con_info[effect] -= randint(1, 3)
             if con_info[effect] <= 1:
                 con_info[effect] = 2
 

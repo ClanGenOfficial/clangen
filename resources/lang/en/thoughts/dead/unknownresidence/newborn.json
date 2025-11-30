@@ -9,6 +9,9 @@
         ],
         "main_age_constraint": [
             "newborn"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     },
     {
@@ -26,6 +29,9 @@
         ],
         "random_living_status": [
             "living"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     }
 ]

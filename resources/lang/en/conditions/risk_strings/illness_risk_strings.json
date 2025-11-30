@@ -55,6 +55,12 @@
 
         ]
     },
+    "diarrhea": {
+        "dehydrated": [
+            "Diarrhea has been taking a toll on m_c, and r_c is fighting hard to keep {PRONOUN/m_c/object} hydrated.",
+            "m_c feels hollow and dry due to {PRONOUN/m_c/poss} digestion problems."
+        ]
+    },
     "fleas": {
         "torn pelt": [
             "m_c has been scratching incessantly at the fleas infesting {PRONOUN/m_c/poss} pelt. r_c scolds {PRONOUN/m_c/object} for it as {PRONOUN/r_c/subject} gently {VERB/r_c/clean/cleans} the now raw areas of m_c's pelt.",
