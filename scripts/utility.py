@@ -33,7 +33,14 @@ from scripts.game_structure.localization import (
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache, localization, constants
-from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatStanding
+from scripts.cat.enums import (
+    CatAge,
+    CatRank,
+    CatSocial,
+    CatGroup,
+    CatStanding,
+    CatCompatibility,
+)
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
 from scripts.game_structure import game
@@ -1024,10 +1031,10 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
 
 
 def get_personality_compatibility(cat1, cat2):
-    """Returns:
-    True - if personalities have a positive compatibility
-    False - if personalities have a negative compatibility
-    None - if personalities have a neutral compatibility
+    """
+    Returns matching CatCompatibiltiy enum according to personalitiesof given cat objects.
+    :param cat1: Cat object of first cat
+    :param cat2: Cat object of second cat
     """
     personality1 = cat1.personality.trait
     personality2 = cat2.personality.trait
@@ -1056,11 +1063,11 @@ def get_personality_compatibility(cat1, cat2):
             running_total -= 1
 
     if running_total >= 2:
-        return True
+        return CatCompatibility.POSITIVE
     if running_total <= -2:
-        return False
+        return CatCompatibility.NEGATIVE
 
-    return None
+    return CatCompatibility.NEUTRAL
 
 
 def get_cats_of_romantic_interest(cat):
