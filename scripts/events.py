@@ -1780,8 +1780,14 @@ def invite_new_cats(cat):
     """
     new cats
     """
-
     global new_cat_invited
+
+    if constants.CONFIG["event_generation"]["debug_type_override"] == "new_cat":
+        create_short_event(
+            event_type="new_cat",
+            main_cat=cat,
+        )
+        return
 
     chance = 200
 
@@ -1825,13 +1831,6 @@ def invite_new_cats(cat):
 
     chance = max(chance, 1)
 
-    if constants.CONFIG["event_generation"]["debug_type_override"] == "new_cat":
-        create_short_event(
-            event_type="new_cat",
-            main_cat=cat,
-        )
-        return
-
     if (
         not int(random.random() * chance)
         and not cat.age.is_baby()
@@ -1839,10 +1838,10 @@ def invite_new_cats(cat):
     ):
         new_cat_invited = True
 
-        create_short_event(
-            event_type="new_cat",
-            main_cat=cat,
-        )
+    create_short_event(
+        event_type="new_cat",
+        main_cat=cat,
+    )
 
 
 def other_interactions(cat):

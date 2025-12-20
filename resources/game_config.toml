@@ -622,8 +622,8 @@ dev_tools = false
   [clan_resources.herbs]
     # Clan size * required_herbs_per_cat / adequate number will determine adequate supply qualifier.
     # Clan size * required_herbs_per_cat * excess number will determine excess supply qualifier
-    required_herbs_per_cat = 2
-    adequate = 2
+    required_herbs_per_cat = 1
+    adequate = 3
     excess = 2
 
     # amount of herbs types found modifier for medcats with skill SENSE

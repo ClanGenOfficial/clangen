@@ -84,6 +84,7 @@ class ShortEvent:
         self.sub_type = sub_type if sub_type else []
         self.tags = tags if tags else []
         self.text = text
+        self.text_template = text
         self.new_accessory = new_accessory if new_accessory else []
         self.m_c = m_c if m_c else {"age": ["any"]}
         if self.m_c:
@@ -215,6 +216,12 @@ class ShortEvent:
         :param other_clan: the object for the other clan involved in this event
         """
         self.additional_event_text = ""
+        self.text = self.text_template
+        self.all_involved_cat_ids.clear()
+        self.new_cats.clear()
+        self.multi_cat_objects.clear()
+        self.dead_cat_objects.clear()
+
         if other_clan:
             self.other_clan_name = f"{other_clan.name}Clan"
 
@@ -439,7 +446,7 @@ class ShortEvent:
                         )
                 else:
                     Relation_Events.welcome_new_cats([first_cat])
-                self.all_involved_cat_ids.extend(_c)
+                self.all_involved_cat_ids.extend([cat.ID for cat in _c])
 
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed and give the condition
