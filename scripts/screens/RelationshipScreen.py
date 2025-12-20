@@ -193,7 +193,7 @@ class RelationshipScreen(Screens):
                 self.apply_cat_filter()
                 self.update_cat_page()
             elif event.ui_element == self.checkboxes["show_empty"]:
-                switch_clan_setting("show dead relation")
+                switch_clan_setting("show empty relation")
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()
@@ -415,7 +415,7 @@ class RelationshipScreen(Screens):
         if constants.CONFIG["sorting"]["sort_by_rel_total"]:
             self.all_relations = sorted(
                 self.the_cat.relationships.values(),
-                key=lambda x: x.total_relationship_value,
+                key=lambda x: abs(x.total_relationship_value),
                 reverse=True,
             )
         else:

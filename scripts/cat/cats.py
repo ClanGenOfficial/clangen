@@ -501,14 +501,18 @@ class Cat:
 
             game.updated_afterlife_cats.add(self)
 
+            cat_default_afterlife_id = self.status.get_default_afterlife_id()
+            if cat_default_afterlife_id == CatGroup.UNKNOWN_RESIDENCE_ID:
+                pass
+
             # kits are auto-accepted
-            if self.age in (CatAge.KITTEN, CatAge.NEWBORN):
+            elif self.age in (CatAge.KITTEN, CatAge.NEWBORN):
                 self.history.add_afterlife_acceptance(
                     game.clan.instructor.status.group,
                     is_kit=True,
                 )
             else:
-                if game.clan.instructor.status.group == CatGroup.STARCLAN:
+                if cat_default_afterlife_id == CatGroup.STARCLAN_ID:
                     affinity = self.starclan_affinity
                     afterlife_group = CatGroup.STARCLAN
                     rejected_ID = CatGroup.DARK_FOREST_ID
@@ -3362,6 +3366,7 @@ class Cat:
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,
                 "pelt_length": self.pelt.length,
+                "sprite_newborn": self.pelt.cat_sprites["newborn"],
                 "sprite_kitten": self.pelt.cat_sprites["kitten"],
                 "sprite_adolescent": self.pelt.cat_sprites["adolescent"],
                 "sprite_adult": self.pelt.cat_sprites["adult"],

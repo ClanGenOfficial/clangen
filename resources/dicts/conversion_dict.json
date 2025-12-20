@@ -200,6 +200,7 @@
         "PINKNYLON": "NYLON_BELL_pink",
         "PURPLENYLON": "NYLON_BELL_purple",
         "MULTINYLON": "NYLON_BELL_rose",
-        "INDIGONYLON": "NYLON_BELL_indigo"
+        "INDIGONYLON": "NYLON_BELL_indigo",
+        "RAINBOWNYLON": "NYLON_BELL_GRADIENT_rainbow"
     }
 }

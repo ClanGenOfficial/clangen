@@ -518,7 +518,7 @@ class HerbSupply:
                 == 1
             ):
                 found_herbs[herb] = int(
-                    choices(population=[1, 2, 3], weights=weight, k=1)[0]
+                    choices(population=[3, 4, 5], weights=weight, k=1)[0]
                     * quantity_modifier
                 )
                 amount_of_herbs -= 1
@@ -681,7 +681,7 @@ class HerbSupply:
                 total_herb_amount = self.get_single_herb_total(herb_used)
 
                 amount_used = randint(
-                    1, total_herb_amount if total_herb_amount < 4 else 4
+                    1, total_herb_amount if total_herb_amount < 3 else 3
                 )
                 strength = 1
                 for level, herb_list in source_dict[name]["herbs"].items():
@@ -752,6 +752,8 @@ class HerbSupply:
             con_info = treated_cat.injuries[condition]
         else:
             con_info = treated_cat.permanent_condition[condition]
+            if con_info["born_with"] and con_info["moons_until"] != -2:
+                return
 
         amt_modifier = amount_used
 
@@ -828,11 +830,11 @@ class HerbSupply:
 
         if effect == HerbEffect.RISK:
             for risk in con_info[effect]:
-                risk["chance"] -= randint(2, 4)
+                risk["chance"] -= randint(1, 3)
                 if risk["chance"] <= 1:
                     risk["chance"] = 2
         elif effect == HerbEffect.MORTALITY:
-            con_info[effect] -= randint(2, 4)
+            con_info[effect] -= randint(1, 3)
             if con_info[effect] <= 1:
                 con_info[effect] = 2
 

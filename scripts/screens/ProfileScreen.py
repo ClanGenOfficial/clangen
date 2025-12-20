@@ -619,9 +619,11 @@ class ProfileScreen(Screens):
                 ui_scale(pygame.Rect((55, 200), (240, 210))),
                 pygame.transform.scale(
                     sprites.get_platform(
-                        biome=game.clan.override_biome
-                        if game.clan.override_biome
-                        else game.clan.biome,
+                        biome=(
+                            game.clan.override_biome
+                            if game.clan.override_biome
+                            else game.clan.biome
+                        ),
                         season=game.clan.current_season,
                         show_nest=self.the_cat.age == "newborn"
                         or self.the_cat.not_working(),
@@ -1338,11 +1340,13 @@ class ProfileScreen(Screens):
             clan = [
                 clan
                 for clan in game.clan.all_other_clans
-                if clan.group_ID == self.the_cat.status.group
+                if clan.group_ID == self.the_cat.status.get_last_living_group()
             ]
             bs_blurb = i18n.t("cat.backstories.other_clan_cat", clan=clan[0])
         if bs_blurb is not None:
             adjust_text = str(bs_blurb).replace("This cat", str(self.the_cat.name))
+            if self.the_cat.dead:
+                adjust_text = str(adjust_text).replace("is part", "was part")
             text = adjust_text
         else:
             text = i18n.t("cat.backstories.unknown", name=self.the_cat.name)
@@ -1522,6 +1526,8 @@ class ProfileScreen(Screens):
                         )
                     )
 
+            if skill_influence and trait_influence:
+                influence_history += " "
             influence_history += " ".join(skill_influence)
 
         app_ceremony = self.the_cat.history.app_ceremony
