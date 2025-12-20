@@ -65,7 +65,7 @@
 	],
 	"high_romantic_makeup":[
 		"m_c really wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c and they've become mates again.",
-		"Still having lots of love for r_c even after their break up, m_c asked {PRONOUN/r_c/poss} if they can make up and try again, r_c accepts and they've become mates again.",
+		"Still having lots of love for r_c even after their break up, m_c asked {PRONOUN/r_c/object} if they can make up and try again, r_c accepts and they've become mates again.",
 		"Realizing how much they missed being with each other, m_c and r_c have gotten back together.",
 		"Despite their prior misgivings, m_c and r_c decided to try their romantic relationship again and got back together, promising to do better with each other than ever before.",
 		"Even though they broke up, m_c loves r_c too much and wants to start things over with {PRONOUN/r_c/object}. Turns out, r_c feels the same way and they have gotten back together, starting anew.",
