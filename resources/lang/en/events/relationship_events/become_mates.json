@@ -55,7 +55,7 @@
 	"makeup_fail":[
 		"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c but was rejected.",
 		"<i>Seriously?</i> m_c wants to get back with r_c after what they've said to each other? Sorry, but no thanks, r_c rejects {PRONOUN/m_c/object}.",
-		"Even though they broke up, m_c wants to start things over with r_c. Unfortunatley, r_c doesn't feel the same and rejects {PRONOUN/m_c/object}.",
+		"Even though they broke up, m_c wants to start things over with r_c. Unfortunately, r_c doesn't feel the same and rejects {PRONOUN/m_c/object}.",
 		"m_c asked r_c if they could get back together again. r_c sighs and tries to calmly explain that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} already in the process of moving on and that m_c should move on too.",
 		"Realizing how much m_c misses being with r_c, {PRONOUN/m_c/subject} asked {PRONOUN/r_c/poss} if they can get back together again, but unfortunatley r_c said no.",
 		"m_c asked r_c if they could become mates again. The answer is no - they broke up for a reason.",
