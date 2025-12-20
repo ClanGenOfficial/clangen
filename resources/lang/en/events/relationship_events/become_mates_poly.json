@@ -85,7 +85,7 @@
 			"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c. After r_c consulted with {PRONOUN/r_c/poss} (r_c_mate/mates), r_c rejected {PRONOUN/m_c/object}."
 		],
 		"both_mates": [
-			"Even though they broke up and have taken up new mates, m_c still wants to start things over with r_c. Unfortunatley, r_c doesn't feel the same and rejects {PRONOUN/m_c/object}, already content with {PRONOUN/r_c/poss} current (r_c_mate/mates)."
+			"Even though they broke up and have taken up new mates, m_c still wants to start things over with r_c. Unfortunately, r_c doesn't feel the same and rejects {PRONOUN/m_c/object}, already content with {PRONOUN/r_c/poss} current {VERB/r_c/mate/mates}."
 		]
 	}
 }
