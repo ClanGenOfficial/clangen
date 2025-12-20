@@ -53,7 +53,7 @@
 		"m_c's confession of love to r_c could've gone better. Actually, anything would've been better than the rejection {PRONOUN/m_c/subject} got."
 	],
 	"makeup_fail":[
-		"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c but got rejected.",
+		"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c but was rejected.",
 		"<i>Seriously?</i> m_c wants to get back with r_c after what they've said to each other? Sorry, but no thanks, r_c rejects {PRONOUN/m_c/object}.",
 		"Even though they broke up, m_c wants to start things over with r_c. Unfortunatley, r_c doesn't feel the same and rejects {PRONOUN/m_c/object}.",
 		"m_c asked r_c if they could get back together again. r_c sighs and tries to calmly explain that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} already in the process of moving on and that m_c should move on too.",
