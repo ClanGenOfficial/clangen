@@ -1320,10 +1320,10 @@ class Afterlife:
         self._aggress: int = 0
         self._stable: int = 0
 
-        self.total_aggression: int = 0
-        self.total_lawfulness: int = 0
-        self.total_sociability: int = 0
-        self.total_stability: int = 0
+        self._total_aggression: int = 0
+        self._total_lawfulness: int = 0
+        self._total_sociability: int = 0
+        self._total_stability: int = 0
 
     @property
     def aggression(self) -> int:
@@ -1333,8 +1333,10 @@ class Afterlife:
             return self._aggress
 
     @aggression.setter
-    def aggression(self, val):
-        self._aggress = val
+    def aggression(self, value):
+        print(
+            "ERROR: Afterlife aggression cannot be set manually as it is meant to be calculated from the currently dead cats."
+        )
 
     @property
     def sociability(self) -> int:
@@ -1344,8 +1346,10 @@ class Afterlife:
             return self._social
 
     @sociability.setter
-    def sociability(self, val):
-        self._social = val
+    def sociability(self, value):
+        print(
+            "ERROR: Afterlife sociability cannot be set manually as it is meant to be calculated from the currently dead cats."
+        )
 
     @property
     def lawfulness(self) -> int:
@@ -1355,8 +1359,10 @@ class Afterlife:
             return self._law
 
     @lawfulness.setter
-    def lawfulness(self, val):
-        self._law = val
+    def lawfulness(self, value):
+        print(
+            "ERROR: Afterlife lawfulness cannot be set manually as it is meant to be calculated from the currently dead cats."
+        )
 
     @property
     def stability(self) -> int:
@@ -1366,8 +1372,10 @@ class Afterlife:
             return self._stable
 
     @stability.setter
-    def stability(self, val):
-        self._stable = val
+    def stability(self, value):
+        print(
+            "ERROR: Afterlife aggresstabilitysion cannot be set manually as it is meant to be calculated from the currently dead cats."
+        )
 
     @property
     def temperament(self) -> str:
@@ -1379,6 +1387,8 @@ class Afterlife:
         :param cat: The cat object adjust facets by
         :param is_removal: Set True if the cat's facets are being removed from the afterlife's
         """
+        if cat.ID in self.influencing_cats:
+            return
 
         if is_removal:
             self.influencing_cats.remove(cat.ID)
@@ -1388,33 +1398,33 @@ class Afterlife:
         num_of_influencers = len(self.influencing_cats)
 
         if is_removal:
-            self.total_lawfulness -= cat.personality.lawfulness
-            self.total_sociability -= cat.personality.sociability
-            self.total_aggression -= cat.personality.aggression
-            self.total_stability -= cat.personality.stability
+            self._total_lawfulness -= cat.personality.lawfulness
+            self._total_sociability -= cat.personality.sociability
+            self._total_aggression -= cat.personality.aggression
+            self._total_stability -= cat.personality.stability
         else:
-            self.total_lawfulness += cat.personality.lawfulness
-            self.total_sociability += cat.personality.sociability
-            self.total_aggression += cat.personality.aggression
-            self.total_stability += cat.personality.stability
+            self._total_lawfulness += cat.personality.lawfulness
+            self._total_sociability += cat.personality.sociability
+            self._total_aggression += cat.personality.aggression
+            self._total_stability += cat.personality.stability
 
-        self.lawfulness = self._adjust_average(
-            self.total_lawfulness,
+        self._law = self._adjust_average(
+            self._total_lawfulness,
             num_of_influencers,
         )
 
-        self.sociability = self._adjust_average(
-            self.total_sociability,
+        self._social = self._adjust_average(
+            self._total_sociability,
             num_of_influencers,
         )
 
-        self.aggression = self._adjust_average(
-            self.total_aggression,
+        self._aggress = self._adjust_average(
+            self._total_aggression,
             num_of_influencers,
         )
 
-        self.stability = self._adjust_average(
-            self.total_stability,
+        self._stable = self._adjust_average(
+            self._total_stability,
             num_of_influencers,
         )
 
