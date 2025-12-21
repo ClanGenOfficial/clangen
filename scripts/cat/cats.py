@@ -753,7 +753,9 @@ class Cat:
                         high_types.extend(rel_type)
                 elif tier.is_low_pos:
                     high_types.extend(rel_type)
-                elif tier.is_extreme_neg or tier.is_mid_neg:
+                elif tier.is_extreme_neg:
+                    very_low_types.extend(rel_type)
+                elif tier.is_mid_neg and randint(1, 4) == 1:
                     very_low_types.extend(rel_type)
                 continue
 
