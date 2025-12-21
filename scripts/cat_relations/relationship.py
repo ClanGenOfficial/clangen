@@ -352,7 +352,7 @@ class Relationship:
                 continue
 
             amount = self.get_value_change_amount(
-                is_positive=value == "positive", intensity="low"
+                is_positive=value == "increase", intensity="low"
             )
 
             setattr(self, key, getattr(self, key) + amount)
