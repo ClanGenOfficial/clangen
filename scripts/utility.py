@@ -1032,7 +1032,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
 
 def get_personality_compatibility(cat1, cat2):
     """
-    Returns matching CatCompatibiltiy enum according to personalitiesof given cat objects.
+    Returns matching CatCompatibility enum according to personalitiesof given cat objects.
     :param cat1: Cat object of first cat
     :param cat2: Cat object of second cat
     """
@@ -1041,8 +1041,8 @@ def get_personality_compatibility(cat1, cat2):
 
     if personality1 == personality2:
         if personality1 is None:
-            return None
-        return True
+            return CatCompatibility.NEUTRAL
+        return CatCompatibility.POSITIVE
 
     lawfulness_diff = abs(cat1.personality.lawfulness - cat2.personality.lawfulness)
     sociability_diff = abs(cat1.personality.sociability - cat2.personality.sociability)

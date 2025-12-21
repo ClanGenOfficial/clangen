@@ -16,7 +16,7 @@ import ujson  # type: ignore
 
 import scripts.game_structure.localization as pronouns
 from scripts.cat import save_load
-from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
+from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatCompatibility
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -2871,16 +2871,22 @@ class Cat:
             chance = 40
 
         compat = get_personality_compatibility(cat1, cat2)
-        if compat is True:
+        if compat == CatCompatibility.POSITIVE:
             chance += 10
-        elif compat is False:
+        elif compat == CatCompatibility.NEGATIVE:
             chance -= 5
 
         # Cat's compatibility with mediator also has an effect on success chance.
         for cat in (cat1, cat2):
-            if get_personality_compatibility(cat, mediator) is True:
+            if (
+                get_personality_compatibility(cat, mediator)
+                == CatCompatibility.POSITIVE
+            ):
                 chance += 5
-            elif get_personality_compatibility(cat, mediator) is False:
+            elif (
+                get_personality_compatibility(cat, mediator)
+                == CatCompatibility.NEGATIVE
+            ):
                 chance -= 5
 
         # Determine chance to fail, turning sabotage into mediate and mediate into sabotage

@@ -4,6 +4,7 @@ from typing import Optional
 
 import i18n
 
+from scripts.cat.enums import CatCompatibility
 from scripts.game_structure import constants
 from scripts.cat_relations.interaction import (
     cats_fulfill_single_interaction_constraints,
@@ -266,11 +267,9 @@ class Relationship:
 
         # take compatibility into account
         compatibility = get_personality_compatibility(self.cat_from, self.cat_to)
-        if compatibility is None:
-            # neutral compatibility
+        if compatibility == CatCompatibility.NEUTRAL:
             amount = amount
-        elif compatibility:
-            # positive compatibility
+        elif compatibility == CatCompatibility.POSITIVE:
             amount += constants.CONFIG["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
@@ -374,8 +373,8 @@ class Relationship:
 
         # take personality in count
         comp = get_personality_compatibility(self.cat_from, self.cat_to)
-        if comp:
-            bool_ballot.append(comp)
+        if comp == CatCompatibility.POSITIVE:
+            bool_ballot.append(True)
 
         # further influence the partition based on the relationship
         for value in (self.like, self.respect, self.comfort, self.trust):
