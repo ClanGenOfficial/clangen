@@ -38,7 +38,7 @@ jobs:
             itch_channel: win64_10
             api_artifact_name: win10+
             
-          - os: macos-13
+          - os: macos-15-intel
             artifact_name: Clangen_macOS64.dmg
             python_version: "3.11"
             python_arch: "x64"

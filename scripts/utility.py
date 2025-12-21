@@ -336,17 +336,6 @@ def create_new_cat_block(
 
                 give_mates.append(in_event_cats[index])
 
-            try:
-                index = int(index)
-            except ValueError:
-                print(f"mate-index not correct: {index}")
-                continue
-
-            if index >= i:
-                continue
-
-            give_mates.extend(event.new_cats[index])
-
     # determine gender
     if "male" in attribute_list:
         gender = "male"
@@ -1963,7 +1952,7 @@ def history_text_adjust(text, other_clan_name, clan, other_cat_rc=None):
         text = text.replace("o_c_n", str(other_clan_name))
 
     if "c_n" in text:
-        text = text.replace("c_n", clan.displayname)
+        text = text.replace("c_n", clan.displayname + "Clan")
     if "r_c" in text and other_cat_rc:
         text = selective_replace(text, "r_c", str(other_cat_rc.name))
     return text
@@ -2246,9 +2235,18 @@ def event_text_adjust(
 
         # acc_singular (only works for main_cat's acc)
         if "acc_singular" in text:
+            accessory_name = main_cat.pelt.accessory[-1]
+            if sprites.COLLAR_DATA["palette_map"]:
+                potential_collar = "".join(
+                    [x for x in accessory_name if not x.islower()]
+                ).strip("_")
+                for style in main_cat.pelt.collar_styles:
+                    if style == potential_collar:
+                        accessory_name = potential_collar
+                        break
             text = text.replace(
                 "acc_singular",
-                i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
+                i18n.t(f"cat.accessories.{accessory_name}", count=1),
             )
 
         if "given_herb" in text:

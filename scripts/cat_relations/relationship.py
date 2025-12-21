@@ -284,7 +284,7 @@ class Relationship:
 
         Parameters
         ----------
-        is_positive : str
+        is_positive : bool
             if the relationship value is positive
         intensity : str
             the intensity of the affect
@@ -350,7 +350,10 @@ class Relationship:
         for key, value in dictionary.items():
             if value == "neutral":
                 continue
-            amount = self.get_value_change_amount(value, "low")
+
+            amount = self.get_value_change_amount(
+                is_positive=value == "positive", intensity="low"
+            )
 
             setattr(self, key, getattr(self, key) + amount)
 

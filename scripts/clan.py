@@ -801,7 +801,7 @@ class Clan:
                 )
         else:
             if "other_clan_chosen_symbol" not in clan_data:
-                for name, relation, temper, enum in zip(
+                for name, relation, temper in zip(
                     clan_data["other_clans_names"].split(","),
                     clan_data["other_clans_relations"].split(","),
                     clan_data["other_clan_temperament"].split(","),
@@ -810,7 +810,7 @@ class Clan:
                         OtherClan(name, int(relation), temper)
                     )
             else:
-                for name, relation, temper, symbol, enum in zip(
+                for name, relation, temper, symbol in zip(
                     clan_data["other_clans_names"].split(","),
                     clan_data["other_clans_relations"].split(","),
                     clan_data["other_clan_temperament"].split(","),
