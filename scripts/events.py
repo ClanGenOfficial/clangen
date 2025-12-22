@@ -57,6 +57,7 @@ from scripts.utility import (
     unpack_rel_block,
 )
 
+
 all_events = {}
 new_cat_invited = False
 ceremony_accessory = False
@@ -66,11 +67,11 @@ ceremony_lang = None
 war_lang = None
 ceremony_id_by_tag = {}
 
-
 def one_moon():
     """
     Handles the moon skipping of the whole Clan.
     """
+
     global new_cat_invited, disaster_events
 
     game.cur_events_list = []
@@ -297,7 +298,6 @@ def one_moon():
             SaveError(traceback.format_exc())
 
 
-@staticmethod
 def trigger_future_events():
     """
     Handles aging and triggering future events.
@@ -1017,7 +1017,7 @@ def one_moon_cat(cat):
 
 
 def load_war_resources():
-    global war_lang, WAR_TXT
+    global WAR_TXT, war_lang
 
     if war_lang == i18n.config.get("locale"):
         return
@@ -1029,6 +1029,9 @@ def check_war():
     """
     interactions with other clans
     """
+
+    global WAR_TXT
+
     # if there are somehow no other clans, don't proceed
     if not game.clan.all_other_clans:
         return
@@ -1126,12 +1129,12 @@ def perform_ceremonies(cat):
     """
     ceremonies
     """
-    # TODO: hardcoded events, not good, consider how to convert to ShortEvent
-    #  we *do* have a ceremony dict and format, not sure why it isn't being used here
-    # PROMOTE DEPUTY TO LEADER, IF NEEDED -----------------------
 
     global ceremony_accessory
 
+    # TODO: hardcoded events, not good, consider how to convert to ShortEvent
+    #  we *do* have a ceremony dict and format, not sure why it isn't being used here
+    # PROMOTE DEPUTY TO LEADER, IF NEEDED -----------------------
     if game.clan.leader:
         leader_dead = game.clan.leader.dead
         leader_outside = game.clan.leader.status.is_outsider
@@ -1369,7 +1372,7 @@ def load_ceremonies():
     TODO: DOCS
     """
 
-    global ceremony_lang, CEREMONY_TXT, ceremony_id_by_tag
+    global CEREMONY_TXT, ceremony_id_by_tag, ceremony_lang
 
     if ceremony_lang == i18n.config.get("locale"):
         return
@@ -1393,8 +1396,6 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
     promote cats and add to events list
     """
     # ceremony = []
-
-    global ceremony_id_by_tag, CEREMONY_TXT
 
     _ment = (
         Cat.fetch_cat(cat.mentor) if cat.mentor else None
@@ -1780,6 +1781,7 @@ def invite_new_cats(cat):
     """
     new cats
     """
+
     global new_cat_invited
 
     if constants.CONFIG["event_generation"]["debug_type_override"] == "new_cat":
@@ -1838,10 +1840,10 @@ def invite_new_cats(cat):
     ):
         new_cat_invited = True
 
-    create_short_event(
-        event_type="new_cat",
-        main_cat=cat,
-    )
+        create_short_event(
+            event_type="new_cat",
+            main_cat=cat,
+        )
 
 
 def other_interactions(cat):
