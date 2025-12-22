@@ -2283,11 +2283,11 @@ class ConfirmDisplayChanges(UIMessageWindow):
     def revert_changes(self):
         """Revert the changes made to screen scaling"""
         from scripts.game_structure.screen_settings import toggle_fullscreen
-        from scripts.screens.all_screens import AllScreens
+        from scripts.screens import all_screens
 
         toggle_fullscreen(
             None,
-            source_screen=getattr(AllScreens, self.source_screen_name),
+            source_screen=all_screens.get_screen(self.source_screen_name),
             show_confirm_dialog=False,
         )
 

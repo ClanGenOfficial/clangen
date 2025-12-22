@@ -555,7 +555,7 @@ def _get_cats_with_rel_status(
         cat_list = [c for c in cat_list if c.ID in cat.apprentice]
         rel_status_list.remove("mentor/app")
     elif "app/mentor" in rel_status_list:
-        cat_list = [c for c in cat_list if c.ID in cat.mentor]
+        cat_list = [c for c in cat_list if c.ID == cat.mentor]
         rel_status_list.remove("app/mentor")
 
     return cat_list, rel_status_list

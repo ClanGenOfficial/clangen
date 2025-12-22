@@ -524,6 +524,24 @@ class Status:
             new_group_ID=new_group_ID,
         )
 
+    def get_default_afterlife_id(self):
+        """
+        Gets default afterlife id of cat.
+
+        Clancats and former Clancats go to their guide's afterlife, while outsiders
+        go to the unknown residence.
+        """
+        # if we have an outsider who has never been a clancat, they go to the unknown residence
+        if self.is_outsider and (
+            self.is_exiled(CatGroup.PLAYER_CLAN_ID) or not self.is_former_clancat
+        ):
+            return CatGroup.UNKNOWN_RESIDENCE_ID
+
+        # meanwhile clan cats go wherever their guide points them
+        if game.clan:
+            return game.clan.instructor.status.group_ID
+        return CatGroup.STARCLAN_ID
+
     def send_to_afterlife(self, target_ID: str = None):
         """
         Changes a cat's group into the appropriate afterlife
@@ -537,18 +555,7 @@ class Status:
             )
             return
 
-        # if we have an outsider who has never been a clancat, they go to the unknown residence
-        if self.is_outsider and (
-            self.is_exiled(CatGroup.PLAYER_CLAN_ID) or not self.is_former_clancat
-        ):
-            self.add_to_group(new_group_ID=CatGroup.UNKNOWN_RESIDENCE_ID)
-            return
-
-        # meanwhile clan cats go wherever their guide points them
-        if game.clan:
-            self.add_to_group(new_group_ID=game.clan.instructor.status.group_ID)
-        else:
-            self.add_to_group(new_group_ID=CatGroup.STARCLAN_ID)
+        self.add_to_group(new_group_ID=self.get_default_afterlife_id())
 
     def _change_rank(self, new_rank: CatRank):
         """

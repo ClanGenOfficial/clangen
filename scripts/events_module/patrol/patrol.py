@@ -12,7 +12,7 @@ import pygame
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.enums import RelType
-from scripts.cat.enums import CatAge, CatRank
+from scripts.cat.enums import CatAge, CatRank, CatCompatibility
 from scripts.clan import Clan
 from scripts.clan_package.settings import get_clan_setting
 from scripts.events_module.event_filters import event_for_tags
@@ -549,7 +549,7 @@ class Patrol:
         ]
 
         if (
-            get_personality_compatibility(love1, love2) is True
+            get_personality_compatibility(love1, love2) == CatCompatibility.POSITIVE
             or love1.ID in love2.mate
         ):
             chance_of_romance_patrol -= 10
