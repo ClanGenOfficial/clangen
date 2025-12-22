@@ -188,7 +188,7 @@ from scripts.clan import clan_class
 from scripts.game_structure.audio import sound_manager, music_manager
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure import constants
 from scripts.game_structure.game.save_load import read_clans
 from scripts.game_structure.game.settings import game_setting_get
@@ -208,7 +208,7 @@ from scripts.debug_console import debug_mode
 import pygame
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
-from scripts.screens.all_screens import AllScreens
+from scripts.screens import all_screens
 import scripts.game_structure.screen_settings
 
 # P Y G A M E
@@ -327,8 +327,6 @@ def load_game():
     del loading_thread
 
 
-# load spritesheets
-sprites.load_all()
 load_game()
 
 pygame.mixer.pre_init(buffer=44100)
@@ -338,7 +336,7 @@ except pygame.error:
     print("Failed to initialize sound. Sound will be disabled.")
     music_manager.audio_disabled = True
     music_manager.muted = True
-AllScreens.start_screen.screen_switches()
+all_screens.get_screen(GameScreen.START).screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
 
@@ -369,7 +367,7 @@ while 1:
             pass
         else:
             # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
-            getattr(AllScreens, game.current_screen.replace(" ", "_")).handle_event(
+            all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
                 event
             )
 
@@ -413,7 +411,7 @@ while 1:
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
                     source_screen=getattr(
-                        AllScreens,
+                        all_screens,
                         switch_get_value(Switch.cur_screen).replace(" ", "_"),
                     ),
                     show_confirm_dialog=False,
@@ -426,8 +424,10 @@ while 1:
     # update
     game.update_game()
     if game.switch_screens:
-        getattr(AllScreens, game.last_screen_forupdate.replace(" ", "_")).exit_screen()
-        getattr(AllScreens, game.current_screen.replace(" ", "_")).screen_switches()
+        all_screens.get_screen(
+            game.last_screen_forupdate.replace(" ", "_")
+        ).exit_screen()
+        all_screens.get_screen(game.current_screen.replace(" ", "_")).screen_switches()
         game.switch_screens = False
     if (
         not music_manager.audio_disabled

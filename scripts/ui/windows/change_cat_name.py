@@ -2,7 +2,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.names import Name
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,

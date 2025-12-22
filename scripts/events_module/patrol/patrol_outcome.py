@@ -8,15 +8,14 @@ from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
 import i18n
 import pygame
 
+from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.events_module.future.future_event import prep_event
 
 if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
 
-from scripts.cat.history import History
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
@@ -26,10 +25,10 @@ from scripts.utility import (
     gather_cat_objects,
     adjust_list_text,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.cat.skills import SkillPath
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT
-from scripts.cat.enums import CatAge, CatRank
+from scripts.cat.enums import CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import (
@@ -313,7 +312,7 @@ class PatrolOutcome:
         for x, newbie in enumerate(self.new_cat):
             possible_cats[f"n_c:{x}"] = newbie
 
-        prep_event(
+        prep_future_event(
             event=self,
             event_id=patrol.patrol_event.patrol_id,
             possible_cats=possible_cats,
@@ -956,9 +955,7 @@ class PatrolOutcome:
             return None
 
         scar_list = [
-            x
-            for x in scar_list
-            if x in Pelt.scars1 + Pelt.scars2 + Pelt.scars3 and x not in cat.pelt.scars
+            x for x in scar_list if x in Pelt.all_scars and x not in cat.pelt.scars
         ]
 
         if not scar_list:

@@ -152,7 +152,7 @@
         "biome": ["mountainous"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": [],
+        "tags": ["all_mentored"],
         "patrol_art": "gen_hunt_huntassessment",
         "min_cats": 1,
         "max_cats": 1,

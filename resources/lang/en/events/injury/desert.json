@@ -315,6 +315,22 @@
         ]
     },
     {
+        "event_id": "dst_injury_bruisessore_anymultiage2",
+        "location": ["desert"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c took a bad tumble over a rock hidden by the dusty ground.",
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["bruises", "sore"]
+            }
+        ]
+    },
+    {
         "event_id": "dst_injury_dehydrated_nonleafbare_anymultiage1",
         "location": [
             "desert"
@@ -3260,6 +3276,27 @@
         ]
     },
     {
+        "event_id": "dst_injury_scrapessmallcuts_appmultitrait1",
+        "location": ["desert"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "m_c dashes off from {PRONOUN/m_c/poss} mentor and tumbles face first into a cactus! Thankfully r_c is able to remove the spines with little difficulty.",
+        "m_c": {
+            "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
+            "trait": ["adventurous", "arrogant", "bold", "childish", "confident", "daring", "oblivious", "playful", "rebellious", "shameless", "troublesome"],
+            "relationship_status": ["app/mentor"]
+        },
+        "r_c": {
+            "status": ["warrior", "mediator", "medicine cat"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["scrapes", "small cut"]
+            }
+        ]
+    },
+    {
         "event_id": "dst_injury_soreapp_clankits",
         "location": [
             "desert"
@@ -3435,6 +3472,30 @@
                 "cats": [
                     "m_c"
                 ],
+                "scar": "m_c was scarred by a snake bite.",
+                "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake.",
+                "lead_death": "after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake"
+            }
+        ]
+    },
+    {
+        "event_id": "dst_injury_snake_any1",
+        "location": ["desert"],
+        "season": ["any"],
+        "weight": 20,
+        "event_text": "A snake managed to slither into camp and bite m_c.",
+        "m_c": {
+            "age": ["any"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["snake bite"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
                 "scar": "m_c was scarred by a snake bite.",
                 "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake.",
                 "lead_death": "after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake"

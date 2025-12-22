@@ -7,10 +7,11 @@ import i18n
 
 import scripts.cat_relations.interaction as interactions
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatCompatibility
 from scripts.cat_relations.relationship import RelType
 from scripts.event_class import Single_Event
 from scripts.game_structure import constants
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_highest_romantic_relation,
@@ -207,7 +208,7 @@ class RomanticEvents:
         rel_type = RelType.ROMANCE
         relationship.chosen_interaction = chosen_interaction
         relationship.interaction_affect_relationships(
-            value_change, chosen_interaction.intensity, rel_type
+            positive, chosen_interaction.intensity, rel_type
         )
 
         # give cats injuries
@@ -562,9 +563,17 @@ class RomanticEvents:
 
         if RomanticEvents.relationship_fulfill_condition(rel_to_check, condition):
             become_mate = True
-            mate_string = RomanticEvents.get_mate_string(
-                "high_romantic", poly, cat_from, cat_to
-            )
+            if (
+                cat_from.ID in cat_to.previous_mates
+                and cat_to.ID in cat_from.previous_mates
+            ):
+                mate_string = RomanticEvents.get_mate_string(
+                    "high_romantic_makeup", poly, cat_from, cat_to
+                )
+            else:
+                mate_string = RomanticEvents.get_mate_string(
+                    "high_romantic", poly, cat_from, cat_to
+                )
         # second acceptance chance if the romantic is high enough
         elif (
             RelType.ROMANCE in condition
@@ -572,16 +581,36 @@ class RomanticEvents:
             and condition[RelType.ROMANCE] > 0
             and rel_to_check.romance >= condition[RelType.ROMANCE] * 1.5
         ):
-            become_mate = True
-            mate_string = RomanticEvents.get_mate_string(
-                "high_romantic", poly, cat_from, cat_to
-            )
+            become_mates = True
+            if (
+                cat_from.ID in cat_to.previous_mates
+                and cat_to.ID in cat_from.previous_mates
+            ):
+                mate_string = RomanticEvents.get_mate_string(
+                    "high_romantic_makeup", poly, cat_from, cat_to
+                )
+            else:
+                mate_string = RomanticEvents.get_mate_string(
+                    "high_romantic", poly, cat_from, cat_to
+                )
         else:
-            mate_string = RomanticEvents.get_mate_string(
-                "rejected", poly, cat_from, cat_to
-            )
-            cat_from.relationships[cat_to.ID].romance -= 10
-            cat_to.relationships[cat_from.ID].comfort -= 10
+            if (
+                cat_from.ID in cat_to.previous_mates
+                and cat_to.ID in cat_from.previous_mates
+            ):
+                mate_string = RomanticEvents.get_mate_string(
+                    "makeup_fail", poly, cat_from, cat_to
+                )
+                cat_from.relationships[cat_to.ID].romance -= 20
+                cat_to.relationships[cat_from.ID].comfort -= 20
+                cat_to.relationships[cat_from.ID].like -= 10
+                cat_to.relationships[cat_from.ID].respect -= 5
+            else:
+                mate_string = RomanticEvents.get_mate_string(
+                    "rejected", poly, cat_from, cat_to
+                )
+                cat_from.relationships[cat_to.ID].romance -= 10
+                cat_to.relationships[cat_from.ID].comfort -= 10
 
         mate_string = RomanticEvents.prepare_relationship_string(
             mate_string, cat_from, cat_to
@@ -687,9 +716,17 @@ class RomanticEvents:
             )
         ):
             become_mates = True
-            mate_string = RomanticEvents.get_mate_string(
-                "low_romantic", poly, cat_from, cat_to
-            )
+            if (
+                cat_from.ID in cat_to.previous_mates
+                and cat_to.ID in cat_from.previous_mates
+            ):
+                mate_string = RomanticEvents.get_mate_string(
+                    "low_romantic_makeup", poly, cat_from, cat_to
+                )
+            else:
+                mate_string = RomanticEvents.get_mate_string(
+                    "low_romantic", poly, cat_from, cat_to
+                )
         if (
             not random_hit
             and RomanticEvents.relationship_fulfill_condition(
@@ -700,9 +737,17 @@ class RomanticEvents:
             )
         ):
             become_mates = True
-            mate_string = RomanticEvents.get_mate_string(
-                "like_to_romance", poly, cat_from, cat_to
-            )
+            if (
+                cat_from.ID in cat_to.previous_mates
+                and cat_to.ID in cat_from.previous_mates
+            ):
+                mate_string = RomanticEvents.get_mate_string(
+                    "low_romantic_makeup", poly, cat_from, cat_to
+                )
+            else:
+                mate_string = RomanticEvents.get_mate_string(
+                    "like_to_romance", poly, cat_from, cat_to
+                )
 
         if not become_mates:
             return False, None
@@ -913,7 +958,7 @@ class RomanticEvents:
                 poly_key = "r_c_mates"
             if not poly_key:
                 # none of the other involved mates are alive
-                return None
+                return choice(RomanticEvents.MATE_DICTS[key])
             return choice(RomanticEvents.POLY_MATE_DICTS[key][poly_key])
 
     # ---------------------------------------------------------------------------- #
@@ -961,9 +1006,9 @@ class RomanticEvents:
 
         # change the change based on the personality
         get_along = get_personality_compatibility(cat_from, cat_to)
-        if get_along is not None and get_along:
+        if get_along == CatCompatibility.POSITIVE:
             chance_number += 5
-        if get_along is not None and not get_along:
+        if get_along == CatCompatibility.NEGATIVE:
             chance_number -= 10
 
         # Then, at least a 1/5 chance

@@ -7,8 +7,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import image_cache, game
 from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,

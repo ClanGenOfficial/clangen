@@ -971,7 +971,7 @@
       }
     },
     {
-      "text": "r_c turns to flee, but the desert is a terrible place to find cover. It's only by the grace of Starclan that {PRONOUN/r_c/poss} eyes are drawn to a small cave, a rocky refuge as the wolves bark their fury outside. Not all of r_c makes it inside.",
+      "text": "r_c turns to flee and it's only by the grace of Starclan that {PRONOUN/r_c/poss} eyes are drawn to a small cave, a rocky refuge as the wolves bark their fury outside. Not all of r_c makes it inside.",
       "exp": 40,
       "weight": 20,
       "injury": [
@@ -982,7 +982,7 @@
         }
       ],
       "history_text": {
-        "scar": "This cat is missing half their tail from a large wolf biting it off.",
+        "scar": "This cat's tail was mangled by a wolf.",
         "reg_death": "This cat died from the wounds suffered in a confrontation with a large wolf.",
         "lead_death": "died from a confrontation with a large wolf"
       }

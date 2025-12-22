@@ -1005,5 +1005,49 @@
       "gender": ["male"]
     },
     "new_gender": ["trans female", "nonbinary"]
+  },
+  {
+    "event_id": "dst_misc_any_angrylizard",
+    "location": ["desert"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "m_c was nipped on the nose when {PRONOUN/m_c/subject} investigated an odd, lizard-shaped lump in the sand.",
+    "m_c": {
+      "status": ["warrior", "apprentice", "kitten", "elder"]
+    }
+  },
+  {
+    "event_id": "dst_misc_war_anyapps1",
+    "location": ["desert"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "tags": ["clan:apprentice"],
+    "weight": 15,
+    "event_text": "The apprentices of the Clan are taking special training to learn how to blind their enemies with dust from the ground.",
+    "m_c": {
+      "status": ["apprentice"]
+    }
+  },
+  {
+    "event_id": "dst_misc_multiprophecymedcatprophet1",
+    "location": ["desert"],
+    "season": ["newleaf", "greenleaf"],
+    "weight": 20,
+    "event_text": "While out gathering valuable herbs, m_c sees a vision of prophecy_list_sight/m_c.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"],
+      "skill": ["PROPHET,2"]
+    }
+  },
+  {
+    "event_id": "dst_misc_multiomenmedcatomen1",
+    "location": ["desert"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "weight": 20,
+    "event_text": "The things {PRONOUN/m_c/subject} saw in the sand today, omen_list_sight/m_c... {PRONOUN/m_c/subject/CAP} {VERB/m_c/consider/considers} what these omens may entail for c_n.",
+    "m_c": {
+      "status": ["medicine cat", "medicine cat apprentice"],
+      "skill": ["OMEN,2"]
+    }
   }
 ]

@@ -5,7 +5,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.utility import (
     generate_sprite,
@@ -18,6 +18,7 @@ from scripts.utility import ui_scale
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.sprites import sprites
+from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER

@@ -9,9 +9,7 @@ from pygame_gui.core import ObjectID
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_settings_save, game_setting_get
-from scripts.game_structure.game_essentials import (
-    game,
-)
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,

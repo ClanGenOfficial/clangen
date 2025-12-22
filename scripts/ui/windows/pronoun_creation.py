@@ -3,7 +3,7 @@ from collections import namedtuple
 import pygame
 import pygame_gui
 
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import (
     get_custom_pronouns,
     get_lang_config,

@@ -12,7 +12,7 @@ import pygame
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.enums import RelType
-from scripts.cat.enums import CatAge, CatRank
+from scripts.cat.enums import CatAge, CatRank, CatCompatibility
 from scripts.clan import Clan
 from scripts.clan_package.settings import get_clan_setting
 from scripts.events_module.event_filters import event_for_tags
@@ -20,7 +20,7 @@ from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 from scripts.game_structure import localization, constants
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     get_personality_compatibility,
@@ -249,8 +249,8 @@ class Patrol:
             else:
                 self.patrol_leader = choice(self.patrol_cats)
 
-        if clan.all_clans and len(clan.all_clans) > 0:
-            self.other_clan = choice(clan.all_clans)
+        if clan.all_other_clans and len(clan.all_other_clans) > 0:
+            self.other_clan = choice(clan.all_other_clans)
         else:
             self.other_clan = None
 
@@ -549,7 +549,7 @@ class Patrol:
         ]
 
         if (
-            get_personality_compatibility(love1, love2) is True
+            get_personality_compatibility(love1, love2) == CatCompatibility.POSITIVE
             or love1.ID in love2.mate
         ):
             chance_of_romance_patrol -= 10
@@ -583,6 +583,19 @@ class Patrol:
         # chose fix type will make it not depending on the content amount
         if patrol_type == "general":
             patrol_type = random.choice(["hunting", "border", "training"])
+
+        app_number_mentor_checks = {}
+        for i in range(1, 7):
+            app_number_mentor_checks[f"app{i}_mentored"] = (
+                len(self.patrol_apprentices) >= i
+                and self.patrol_apprentices[i - 1].mentor is not None
+            )
+        general_mentor_checks = (
+            all(app.mentor for app in self.patrol_apprentices)
+            if self.patrol_apprentices
+            else False
+        )
+        has_mentor = {"general": general_mentor_checks, **app_number_mentor_checks}
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
@@ -619,7 +632,7 @@ class Patrol:
                     )
                 continue
 
-            if not event_for_tags(patrol.tags, Cat):
+            if not event_for_tags(patrol.tags, Cat, mentor_tags_fulfilled=has_mentor):
                 if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
                     print("DEBUG: requested patrol does not meet constraints (tags)")
                 continue
@@ -994,7 +1007,7 @@ class Patrol:
 
         root_dir = "resources/images/patrol_art/"
 
-        if game_setting_get("gore") and self.patrol_event.patrol_art_clean:
+        if not game_setting_get("gore") and self.patrol_event.patrol_art_clean:
             file_name = self.patrol_event.patrol_art_clean
         else:
             file_name = self.patrol_event.patrol_art

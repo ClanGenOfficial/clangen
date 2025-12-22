@@ -2104,7 +2104,7 @@
         "biome": ["plains"],
         "season": ["any"],
         "types": ["training"],
-        "tags": ["romance", "rom_two_apps"],
+        "tags": ["romance", "rom_two_apps", "app2_mentored"],
         "patrol_art": "gen_med_warappmedapp_herbcontest",
         "min_cats": 2,
         "max_cats": 2,

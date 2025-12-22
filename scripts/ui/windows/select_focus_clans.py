@@ -1,7 +1,7 @@
 import pygame
 import pygame_gui
 
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
@@ -41,7 +41,7 @@ class SelectFocusClans(GameWindow):
             container=self,
         )
         n = 0
-        for clan in game.clan.all_clans:
+        for clan in game.clan.all_other_clans:
             self.texts[clan.name] = pygame_gui.elements.UITextBox(
                 clan.name + "clan",
                 ui_scale(pygame.Rect(107, n * 27 + 38, -1, 25)),
@@ -56,7 +56,7 @@ class SelectFocusClans(GameWindow):
         self.checkboxes = {}
 
         n = 0
-        for clan in game.clan.all_clans:
+        for clan in game.clan.all_other_clans:
             box_type = "@unchecked_checkbox"
             if clan.name in game.clan.clans_in_focus:
                 box_type = "@checked_checkbox"

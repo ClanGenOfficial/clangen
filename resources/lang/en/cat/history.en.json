@@ -14,7 +14,6 @@
         "graduation_normal": "{PRONOUN/m_c/subject/CAP} graduated at %{age} moons old.",
         "graduation_late": "{PRONOUN/m_c/subject/CAP} graduated late at %{age} moons old.",
         "mentored": "{PRONOUN/m_c/subject/CAP} mentored %{apprentices}.",
-
          "comment": "Leader live strings for history text or text where m_c is included in the area its being called to",
         "leader_death_final": "lost {PRONOUN/m_c/poss} final life",
         "leader_death_all": "lost all of {PRONOUN/m_c/poss} lives",

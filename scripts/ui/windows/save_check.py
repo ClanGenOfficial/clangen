@@ -10,7 +10,7 @@ from scripts.game_structure.game.switches import (
     Switch,
     switch_set_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,

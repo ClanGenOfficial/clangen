@@ -5,14 +5,14 @@ from typing import Dict, List, Union, Optional
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial
+from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial, CatCompatibility
 from scripts.cat.names import names, Name
 from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.game_structure import constants
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     create_new_cat,
@@ -398,11 +398,11 @@ class Pregnancy_Events:
         if cat.status.is_outsider:
             for kit in kits:
                 kit.status.generate_new_status(
-                    age=kit.age, social=cat.status.social, group=cat.status.group
+                    age=kit.age, social=cat.status.social, group_ID=cat.status.group_ID
                 )
                 kit.backstory = "outsider1"
 
-                if cat.status.is_exiled(CatGroup.PLAYER_CLAN):
+                if cat.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
                     name = choice(names.names_dict["normal_prefixes"])
                     kit.name = Name(prefix=name, suffix="", cat=kit)
 
@@ -410,7 +410,7 @@ class Pregnancy_Events:
                     kit.backstory = "outsider2"
 
                 if cat.status.is_outsider and not cat.status.is_exiled(
-                    CatGroup.PLAYER_CLAN
+                    CatGroup.PLAYER_CLAN_ID
                 ):
                     kit.backstory = "outsider3"
                 kit.relationships = {}
@@ -714,7 +714,7 @@ class Pregnancy_Events:
                         if not p_rel.opposite_relationship:
                             p_rel.link_relationship()
                         p_rel_opp = p_rel.opposite_relationship
-                        if p_rel_opp.like < -20 and p_rel.like < -20:
+                        if p_rel_opp.like > -20 and p_rel.like > -20:
                             p_affairs.append(p_affair)
             possible_affair_partners = p_affairs
 
@@ -1104,9 +1104,9 @@ class Pregnancy_Events:
         # - decrease / increase depending on the compatibility
         if second_parent:
             comp = get_personality_compatibility(first_parent, second_parent)
-            if comp is not None:
+            if comp != CatCompatibility.NEUTRAL:
                 buff = 0.85
-                if not comp:
+                if comp == CatCompatibility.NEGATIVE:
                     buff += 0.3
                 inverse_chance = int(inverse_chance * buff)
 
@@ -1122,7 +1122,8 @@ class Pregnancy_Events:
                 second_parent_relation = first_parent.create_one_relationship(
                     second_parent
                 )
-
+                if not second_parent_relation.opposite_relationship:
+                    second_parent_relation.link_relationship()
             average_romantic_love = (
                 second_parent_relation.romance
                 + second_parent_relation.opposite_relationship.romance

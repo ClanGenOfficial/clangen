@@ -3,7 +3,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.utility import (
     get_text_box_theme,
