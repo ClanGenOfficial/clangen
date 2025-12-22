@@ -33,6 +33,7 @@ from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure import constants
 from ..game_structure.audio import music_manager, sound_manager
+from ..game_structure.localization import get_additional_lang_list
 from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
@@ -768,10 +769,7 @@ class SettingsScreen(Screens):
                 manager=MANAGER,
             )
             # dict insertion order is guaranteed in python 3.7+
-            additional_langs = {
-                "es": "español",
-                "de": "deustch",
-            }
+            additional_langs = get_additional_lang_list()
             prev_lang_checkbox = self.checkboxes["en"]
 
             # sorry I don't know of a better way to implement this
