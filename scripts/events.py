@@ -72,7 +72,7 @@ def one_moon():
     Handles the moon skipping of the whole Clan.
     """
 
-    global new_cat_invited, disaster_events
+    global new_cat_invited
 
     game.cur_events_list = []
     game.herb_events_list = []
@@ -130,6 +130,7 @@ def one_moon():
             one_moon_outside_cat(cat, other_clan_cats)
 
     # keeping this commented out till disasters are more polished
+    # note: when we actually use this, import scripts.events_module.ongoing.disaster_events
     # disaster_events.handle_disasters()
 
     # Handle grief events.
