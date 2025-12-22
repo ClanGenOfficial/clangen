@@ -67,6 +67,7 @@ ceremony_lang = None
 war_lang = None
 ceremony_id_by_tag = {}
 
+
 def one_moon():
     """
     Handles the moon skipping of the whole Clan.
