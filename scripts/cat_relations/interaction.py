@@ -119,7 +119,7 @@ def cats_fulfill_single_interaction_constraints(
         "status": interaction.main_status_constraint,
         "trait": interaction.main_trait_constraint,
         "backstory": interaction.backstory_constraint.get("m_c"),
-        "skills": interaction.main_skill_constraint,
+        "skill": interaction.main_skill_constraint,
         "relationship_status": interaction.relationship_constraint,
     }
     random_constraint_dict = {
