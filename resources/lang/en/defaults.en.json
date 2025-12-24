@@ -26,7 +26,6 @@
         "warn_no_medcats": "c_n has no medicine cat!",
         "event_dead_outsider": "m_c's ghost now wanders.",
         "event_met_outsider": "The Clan has encountered m_c.",
-        "patrol_regular_death": "m_c died on patrol.",
-        "relationship_log": "These cats recently interacted."
+        "patrol_regular_death": "m_c died on patrol."
     }
 }

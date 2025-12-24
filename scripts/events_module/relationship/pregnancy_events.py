@@ -5,7 +5,7 @@ from typing import Dict, List, Union, Optional
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial
+from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial, CatCompatibility
 from scripts.cat.names import names, Name
 from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.clan_package.settings import get_clan_setting
@@ -1104,9 +1104,9 @@ class Pregnancy_Events:
         # - decrease / increase depending on the compatibility
         if second_parent:
             comp = get_personality_compatibility(first_parent, second_parent)
-            if comp is not None:
+            if comp != CatCompatibility.NEUTRAL:
                 buff = 0.85
-                if not comp:
+                if comp == CatCompatibility.NEGATIVE:
                     buff += 0.3
                 inverse_chance = int(inverse_chance * buff)
 

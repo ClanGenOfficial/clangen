@@ -14,6 +14,8 @@ _directory_changed: bool = False
 
 default_pronouns: Dict[str, Dict[str, Dict[str, Union[str, int]]]] = {}
 
+additional_lang_list: Optional[Dict] = None
+
 
 def get_new_pronouns(genderalign: str) -> List[Dict[str, Union[str, int]]]:
     """
@@ -111,6 +113,18 @@ def get_lang_config() -> Dict:
             lang_config = ujson.loads(lang_file.read())
         _directory_changed = False
     return lang_config
+
+
+def get_additional_lang_list() -> Dict:
+    global additional_lang_list, _directory_changed
+    if additional_lang_list is None:
+        with open(
+            os.path.join("resources", "lang", "additional_lang_list.json"),
+            "r",
+            encoding="utf-8",
+        ) as lang_file:
+            additional_lang_list = ujson.loads(lang_file.read())
+    return additional_lang_list
 
 
 def set_lang_config_directory(directory: str):

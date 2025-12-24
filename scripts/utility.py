@@ -33,7 +33,14 @@ from scripts.game_structure.localization import (
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache, localization, constants
-from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatStanding
+from scripts.cat.enums import (
+    CatAge,
+    CatRank,
+    CatSocial,
+    CatGroup,
+    CatStanding,
+    CatCompatibility,
+)
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
 from scripts.game_structure import game
@@ -1024,18 +1031,18 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
 
 
 def get_personality_compatibility(cat1, cat2):
-    """Returns:
-    True - if personalities have a positive compatibility
-    False - if personalities have a negative compatibility
-    None - if personalities have a neutral compatibility
+    """
+    Returns matching CatCompatibility enum according to personalitiesof given cat objects.
+    :param cat1: Cat object of first cat
+    :param cat2: Cat object of second cat
     """
     personality1 = cat1.personality.trait
     personality2 = cat2.personality.trait
 
     if personality1 == personality2:
         if personality1 is None:
-            return None
-        return True
+            return CatCompatibility.NEUTRAL
+        return CatCompatibility.POSITIVE
 
     lawfulness_diff = abs(cat1.personality.lawfulness - cat2.personality.lawfulness)
     sociability_diff = abs(cat1.personality.sociability - cat2.personality.sociability)
@@ -1056,11 +1063,11 @@ def get_personality_compatibility(cat1, cat2):
             running_total -= 1
 
     if running_total >= 2:
-        return True
+        return CatCompatibility.POSITIVE
     if running_total <= -2:
-        return False
+        return CatCompatibility.NEGATIVE
 
-    return None
+    return CatCompatibility.NEUTRAL
 
 
 def get_cats_of_romantic_interest(cat):
@@ -1516,8 +1523,16 @@ def unpack_rel_block(
         to_log = None
         from_log = None
         if "log" in block:
-            to_log = block["log"].get("cats_to") + effect
-            from_log = block["log"].get("cats_from") + effect
+            to_log = (
+                block["log"].get("cats_to", "") + effect
+                if "cats_to" in block["log"]
+                else None
+            )
+            from_log = (
+                block["log"].get("cats_from", "") + effect
+                if "cats_from" in block["log"]
+                else None
+            )
             if not to_log and not from_log:
                 print(f"something is wrong with relationship log: {block['log']}")
 
@@ -1529,11 +1544,12 @@ def unpack_rel_block(
         )
 
         if block.get("mutual"):
+            # we'll default to the other log if no unique log was written
             change_relationship_values(
                 cats_from_ob,
                 cats_to_ob,
                 **value_changes,
-                log=to_log,
+                log=to_log if to_log else from_log,
             )
 
 
@@ -1605,8 +1621,23 @@ def change_relationship_values(
                   " /Respect: " + str(respect) +
                   " /Comfort: " + str(comfort) +
                   " /Trust: " + str(trust)) if changed else print("No relationship change")"""
-
+            if not log:
+                log = i18n.t("relationships.relationship_log")
             if log and isinstance(log, str):
+                replace_dict = {}
+                if "from_cat" in log:
+                    replace_dict["from_cat"] = (
+                        str(single_cat_from.name),
+                        choice(single_cat_from.pronouns),
+                    )
+                if "to_cat" in log:
+                    replace_dict["to_cat"] = (
+                        str(single_cat_to.name),
+                        choice(single_cat_to.pronouns),
+                    )
+                if replace_dict:
+                    log = process_text(log, replace_dict)
+
                 log_text = log + i18n.t(
                     "relationships.age_postscript",
                     name=str(single_cat_to.name),
@@ -2645,7 +2676,7 @@ def generate_sprite(
     # paralyzed sprites
     elif cat.pelt.paralyzed and age != CatAge.NEWBORN:
         if age in (CatAge.KITTEN, CatAge.ADOLESCENT):
-            cat_sprite = sprite_poses[cat.pelt.cat_sprites["para_young"]]
+            cat_sprite = sprite_poses["para_young0"]
         else:
             cat_sprite = sprite_poses[cat.pelt.cat_sprites["para_adult"]]
 

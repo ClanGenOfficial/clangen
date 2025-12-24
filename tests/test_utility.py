@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatRank, CatCompatibility
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -124,8 +124,12 @@ class TestPersonalityCompatibility(unittest.TestCase):
         cat2 = Cat(disable_random=True)
         cat1.personality.trait = None
         cat2.personality.trait = None
-        self.assertIsNone(get_personality_compatibility(cat1, cat2))
-        self.assertIsNone(get_personality_compatibility(cat2, cat1))
+        self.assertEqual(
+            get_personality_compatibility(cat1, cat2), CatCompatibility.NEUTRAL
+        )
+        self.assertEqual(
+            get_personality_compatibility(cat2, cat1), CatCompatibility.NEUTRAL
+        )
 
 
 class TestCountRelation(unittest.TestCase):
