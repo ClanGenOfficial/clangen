@@ -2027,9 +2027,7 @@ def handle_murder(cat):
         extreme_neg = len(
             [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg]
         )
-        mid_neg = len(
-            [t for t in chosen_target.get_reltype_tiers() if t.is_mid_neg]
-        )
+        mid_neg = len([t for t in chosen_target.get_reltype_tiers() if t.is_mid_neg])
         neg = len([t for t in chosen_target.get_reltype_tiers() if t.is_low_neg])
 
         relation_modifier = (extreme_neg * 20) + (mid_neg * 10) + (neg * 5)
@@ -2078,6 +2076,7 @@ def handle_murder(cat):
                 random_cat=Cat.fetch_cat(chosen_target.cat_to),
                 sub_type=["failed_murder"],
             )
+
 
 def handle_illnesses_or_illness_deaths(cat):
     """
