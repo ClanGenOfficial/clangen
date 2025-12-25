@@ -1334,7 +1334,7 @@ class Afterlife:
 
     @aggression.setter
     def aggression(self, value):
-        print(
+        raise Exception(
             "ERROR: Afterlife aggression cannot be set manually as it is meant to be calculated from the currently dead cats."
         )
 
@@ -1347,7 +1347,7 @@ class Afterlife:
 
     @sociability.setter
     def sociability(self, value):
-        print(
+        raise Exception(
             "ERROR: Afterlife sociability cannot be set manually as it is meant to be calculated from the currently dead cats."
         )
 
@@ -1360,7 +1360,7 @@ class Afterlife:
 
     @lawfulness.setter
     def lawfulness(self, value):
-        print(
+        raise Exception(
             "ERROR: Afterlife lawfulness cannot be set manually as it is meant to be calculated from the currently dead cats."
         )
 
@@ -1373,7 +1373,7 @@ class Afterlife:
 
     @stability.setter
     def stability(self, value):
-        print(
+        raise Exception(
             "ERROR: Afterlife aggresstabilitysion cannot be set manually as it is meant to be calculated from the currently dead cats."
         )
 
@@ -1381,23 +1381,23 @@ class Afterlife:
     def temperament(self) -> str:
         return get_temper_alignment(self.sociability, self.aggression)
 
-    def adjust_facets_by_cat(self, cat: Cat, is_removal: bool = False):
+    def adjust_facets_by_cat(self, cat: Cat, do_removal: bool = False):
         """
         Adjusts the afterlife's facet averages according to the facets of the given cat
         :param cat: The cat object adjust facets by
-        :param is_removal: Set True if the cat's facets are being removed from the afterlife's
+        :param do_removal: Set True if the cat's facets are being removed from the afterlife's
         """
         if cat.ID in self.influencing_cats:
             return
 
-        if is_removal:
+        if do_removal:
             self.influencing_cats.remove(cat.ID)
         else:
             self.influencing_cats.add(cat.ID)
 
         num_of_influencers = len(self.influencing_cats)
 
-        if is_removal:
+        if do_removal:
             self._total_lawfulness -= cat.personality.lawfulness
             self._total_sociability -= cat.personality.sociability
             self._total_aggression -= cat.personality.aggression
@@ -1408,33 +1408,33 @@ class Afterlife:
             self._total_aggression += cat.personality.aggression
             self._total_stability += cat.personality.stability
 
-        self._law = self._adjust_average(
+        self._law = self._get_adjusted_facet_average(
             self._total_lawfulness,
             num_of_influencers,
         )
 
-        self._social = self._adjust_average(
+        self._social = self._get_adjusted_facet_average(
             self._total_sociability,
             num_of_influencers,
         )
 
-        self._aggress = self._adjust_average(
+        self._aggress = self._get_adjusted_facet_average(
             self._total_aggression,
             num_of_influencers,
         )
 
-        self._stable = self._adjust_average(
+        self._stable = self._get_adjusted_facet_average(
             self._total_stability,
             num_of_influencers,
         )
 
     @staticmethod
-    def _adjust_average(
+    def _get_adjusted_facet_average(
         total: int,
         num_of_influencers: int,
     ) -> int:
         """
-        Handles the math for adjust averages.
+        Handles the math for adjust average facets.
         :param total: The facet's total value derived from all influencing cats
         :param num_of_influencers: The number of cats influencing the average
         :return: The adjusted average

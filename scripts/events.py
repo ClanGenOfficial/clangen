@@ -95,43 +95,7 @@ def one_moon():
     # age up the clan, set current season
     game.clan.age += 1
     get_current_season()
-    # update afterlife tempers
-    for c in game.updated_afterlife_cats:
-        if not c.status.joined_group_this_moon:
-            continue
-
-        # only high ranks and guides can influence
-        if (
-            c.status.rank
-            not in (
-                CatRank.LEADER,
-                CatRank.MEDICINE_CAT,
-                CatRank.DEPUTY,
-            )
-            and not game.clan.instructor
-        ):
-            continue
-
-        # first change facets of the group they joined
-        if (
-            c.status.group == CatGroup.STARCLAN
-            and c.ID not in game.starclan.influencing_cats
-        ):
-            game.starclan.adjust_facets_by_cat(c)
-            # then remove them from other afterlife, if they were there
-            if c.ID in game.dark_forest.influencing_cats:
-                game.dark_forest.adjust_facets_by_cat(c, is_removal=True)
-
-        # now do same for DF
-        elif (
-            c.status.group == CatGroup.DARK_FOREST
-            and c.ID not in game.dark_forest.influencing_cats
-        ):
-            game.dark_forest.adjust_facets_by_cat(c)
-            if c.ID in game.starclan.influencing_cats:
-                game.starclan.adjust_facets_by_cat(c, is_removal=True)
-
-    game.updated_afterlife_cats.clear()
+    update_afterlife_temper()
     Pregnancy_Events.handle_pregnancy_age(game.clan)
     check_war()
 
@@ -334,6 +298,48 @@ def one_moon():
             game.save_events()
         except:
             SaveError(traceback.format_exc())
+
+
+def update_afterlife_temper():
+    """
+    Updates the temperaments of the afterlives based off cats who have newly joined an afterlife.
+    """
+    for c in game.updated_afterlife_cats:
+        if not c.status.did_join_group_this_moon:
+            continue
+
+        # only high ranks and guides can influence
+        if (
+                c.status.rank
+                not in (
+                CatRank.LEADER,
+                CatRank.MEDICINE_CAT,
+                CatRank.DEPUTY,
+        )
+                and not game.clan.instructor
+        ):
+            continue
+
+        # first change facets of the group they joined
+        if (
+                c.status.group == CatGroup.STARCLAN
+                and c.ID not in game.starclan.influencing_cats
+        ):
+            game.starclan.adjust_facets_by_cat(c)
+            # then remove them from other afterlife, if they were there
+            if c.ID in game.dark_forest.influencing_cats:
+                game.dark_forest.adjust_facets_by_cat(c, do_removal=True)
+
+        # now do same for DF
+        elif (
+                c.status.group == CatGroup.DARK_FOREST
+                and c.ID not in game.dark_forest.influencing_cats
+        ):
+            game.dark_forest.adjust_facets_by_cat(c)
+            if c.ID in game.starclan.influencing_cats:
+                game.starclan.adjust_facets_by_cat(c, do_removal=True)
+
+    game.updated_afterlife_cats.clear()
 
 
 def trigger_future_events():
