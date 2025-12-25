@@ -310,20 +310,20 @@ def update_afterlife_temper():
 
         # only high ranks and guides can influence
         if (
-                c.status.rank
-                not in (
+            c.status.rank
+            not in (
                 CatRank.LEADER,
                 CatRank.MEDICINE_CAT,
                 CatRank.DEPUTY,
-        )
-                and not game.clan.instructor
+            )
+            and not game.clan.instructor
         ):
             continue
 
         # first change facets of the group they joined
         if (
-                c.status.group == CatGroup.STARCLAN
-                and c.ID not in game.starclan.influencing_cats
+            c.status.group == CatGroup.STARCLAN
+            and c.ID not in game.starclan.influencing_cats
         ):
             game.starclan.adjust_facets_by_cat(c)
             # then remove them from other afterlife, if they were there
@@ -332,8 +332,8 @@ def update_afterlife_temper():
 
         # now do same for DF
         elif (
-                c.status.group == CatGroup.DARK_FOREST
-                and c.ID not in game.dark_forest.influencing_cats
+            c.status.group == CatGroup.DARK_FOREST
+            and c.ID not in game.dark_forest.influencing_cats
         ):
             game.dark_forest.adjust_facets_by_cat(c)
             if c.ID in game.starclan.influencing_cats:
