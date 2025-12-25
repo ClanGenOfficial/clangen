@@ -344,7 +344,7 @@
 	{
 		"id": "platonic_kit_inc_med5",
 		"interactions": [
-			"m_c ask r_c what it's like to be in training.",
+			"m_c asks r_c what it's like to be in training.",
 			"m_c tells r_c {PRONOUN/m_c/subject}'ll be {PRONOUN/r_c/poss} apprentice one day.",
 			"m_c asks r_c endless questions about what {PRONOUN/r_c/subject} learned today.",
 			"r_c enlists m_c's help to quiz {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} assessment."
