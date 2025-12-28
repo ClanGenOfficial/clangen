@@ -5,11 +5,10 @@ from typing import Optional
 import pygame
 import ujson
 
-from scripts.game_structure import constants
+from scripts.game_structure import constants, game
 from scripts.game_structure.audio.timer import AudioTimer
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
 
@@ -44,6 +43,9 @@ class Ambiance:
         self.load_playlists()
 
     def load_playlists(self):
+        """
+        Loads the ambiance playlists
+        """
         # loading playlists
         try:
             with open("resources/audio/ambiance.json", "r", encoding="utf-8") as f:
@@ -59,7 +61,7 @@ class Ambiance:
 
     def check(self):
         """
-        checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
+        Checks if playlist currently playing is appropriate for the given screen and changes the playlist if needed
         """
         self._find_ambiance()
         screen = switch_get_value(Switch.cur_screen)
@@ -268,6 +270,9 @@ class Ambiance:
 
     @staticmethod
     def get_busy() -> bool:
+        """
+        Check if ambiance is playing.
+        """
         return pygame.mixer.music.get_busy()
 
     @property
@@ -300,6 +305,9 @@ class Ambiance:
         self.season_silence_timer.start()
 
     def play_season_overlay(self):
+        """
+        Plays the season overlay and beings its timer.
+        """
         self.season_sound = random.choice(self.season_overlay_playlist)
         self.season_sound.set_volume(self.overlay_volume)
         if pygame.mixer.find_channel():
@@ -309,6 +317,10 @@ class Ambiance:
         # TODO: what happens if no channel found?
 
     def _start_camp_overlay_timer(self, duration):
+        """
+        Starts a timer thread for the given duration. When the thread finishes, the silence timer will begin.
+        :param duration: This should be the duration of the currently playing season overlay sound
+        """
         if self.camp_timer and self.camp_timer.is_alive():
             return
         self.camp_timer = AudioTimer(duration, self._start_camp_overlay_silence_timer)
@@ -316,6 +328,9 @@ class Ambiance:
         self.camp_timer.start()
 
     def _start_camp_overlay_silence_timer(self):
+        """
+        Starts a timer thread for a random amount of silence. When thread finishes, a new season overlay sound will play.
+        """
         if self.camp_silence_timer and self.camp_silence_timer.is_alive():
             return
         self.camp_silence_timer = AudioTimer(
@@ -325,6 +340,9 @@ class Ambiance:
         self.camp_silence_timer.start()
 
     def play_camp_overlay(self):
+        """
+        Plays the camp overlay and beings its timer.
+        """
         self.camp_sound = random.choice(self.camp_overlay_playlist)
         self.camp_sound.set_volume(self.overlay_volume)
         if pygame.mixer.find_channel():

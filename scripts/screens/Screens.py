@@ -193,11 +193,12 @@ class Screens:
     def screen_switches(self):
         """Runs when this screen is switched to."""
         if (
-            game.last_screen_forupdate in ("start screen", "events screen")
-            or switch_get_value(Switch.cur_screen) == "start screen"
+            game.last_screen_forupdate
+            in (GameScreen.START, GameScreen.EVENTS, GameScreen.MAKE_CLAN)
+            or switch_get_value(Switch.cur_screen) == GameScreen.START
         ):
             game.audio.check(
-                fade_out=game.last_screen_forupdate == "start screen"
+                fade_out=game.last_screen_forupdate == GameScreen.START
                 and switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
             )
 

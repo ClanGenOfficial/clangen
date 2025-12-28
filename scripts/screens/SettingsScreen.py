@@ -31,7 +31,6 @@ from scripts.housekeeping.datadir import open_data_dir
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
-from ..game_structure import constants
 from ..game_structure.localization import get_additional_lang_list
 from ..game_structure.screen_settings import (
     MANAGER,

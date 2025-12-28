@@ -5,11 +5,10 @@ import ujson
 import logging
 import pygame
 
-from scripts.game_structure import constants
+from scripts.game_structure import constants, game
 from scripts.game_structure.audio.timer import AudioTimer
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.game_essentials import game
 
 logger = logging.getLogger(__name__)
 
@@ -94,6 +93,7 @@ class Music:
 
         self.loaded_track = pygame.mixer.Sound(chosen_track)
         self.current_track_name = chosen_track
+        print(chosen_track)
 
     def find_playlist(self):
         screen = switch_get_value(Switch.cur_screen)
