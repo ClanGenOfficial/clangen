@@ -6,7 +6,7 @@ import pygame_gui
 import scripts.game_structure.screen_settings
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UISurfaceImageButton, UIImageButton
 from scripts.housekeeping.version import get_version_info

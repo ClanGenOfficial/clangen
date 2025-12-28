@@ -1,0 +1,40 @@
+{
+    "spritesheet": [
+        "lineart",
+        "lineart_df",
+        "lineart_sc",
+        "lineart_ur",
+        "line_sc_overlay",
+        "line_ur_gradient",
+        "line_ur_overlay",
+        "line_ur_underlay",
+        "shader_lighting",
+        "shader_mask"
+    ],
+    "sheet_layout": [3, 8],
+    "poses": {
+        "newborn0": "0",
+        "newborn1": "1",
+        "newborn2": "2",
+        "kitten0": "3",
+        "kitten1": "4",
+        "kitten2": "5",
+        "adolescent0": "6",
+        "adolescent1": "7",
+        "adolescent2": "8",
+        "adult_short0": "9",
+        "adult_short1": "10",
+        "adult_short2": "11",
+        "adult_long0": "12",
+        "adult_long1": "13",
+        "adult_long2": "14",
+        "senior0": "15",
+        "senior1": "16",
+        "senior2": "17",
+        "para_adult_short0": "18",
+        "para_adult_long0": "19",
+        "para_young0": "20",
+        "sick_adult0": "21",
+        "sick_young0": "22"
+    }
+}

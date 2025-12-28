@@ -9,7 +9,7 @@ TODO: Docs
 import logging
 import os
 import re
-from copy import copy
+import traceback
 from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
@@ -21,6 +21,7 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
+from scripts.cat_relations.enums import RelType, RelTier, rel_type_tiers
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure.game.settings import game_settings_save, game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
@@ -32,10 +33,17 @@ from scripts.game_structure.localization import (
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache, localization, constants
-from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatStanding
+from scripts.cat.enums import (
+    CatAge,
+    CatRank,
+    CatSocial,
+    CatGroup,
+    CatStanding,
+    CatCompatibility,
+)
 from scripts.cat.names import names
 from scripts.cat.sprites import sprites
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
 
 if TYPE_CHECKING:
@@ -198,7 +206,7 @@ def get_warring_clan():
     """
     enemy_clan = None
     if game.clan.war.get("at_war", False):
-        for other_clan in game.clan.all_clans:
+        for other_clan in game.clan.all_other_clans:
             if other_clan.name == game.clan.war["enemy"]:
                 enemy_clan = other_clan
 
@@ -249,8 +257,8 @@ def change_clan_relations(other_clan, difference):
     # grab the clan that has been indicated
     other_clan = other_clan
     # grab the relation value for that clan
-    y = game.clan.all_clans.index(other_clan)
-    clan_relations = int(game.clan.all_clans[y].relations)
+    y = game.clan.all_other_clans.index(other_clan)
+    clan_relations = int(game.clan.all_other_clans[y].relations)
     # change the value
     clan_relations += difference
     # making sure it doesn't exceed the bounds
@@ -259,7 +267,7 @@ def change_clan_relations(other_clan, difference):
     elif clan_relations < 0:
         clan_relations = 0
     # setting it in the Clan save
-    game.clan.all_clans[y].relations = clan_relations
+    game.clan.all_other_clans[y].relations = clan_relations
 
 
 def create_new_cat_block(
@@ -334,17 +342,6 @@ def create_new_cat_block(
                     continue
 
                 give_mates.append(in_event_cats[index])
-
-            try:
-                index = int(index)
-            except ValueError:
-                print(f"mate-index not correct: {index}")
-                continue
-
-            if index >= i:
-                continue
-
-            give_mates.extend(event.new_cats[index])
 
     # determine gender
     if "male" in attribute_list:
@@ -435,9 +432,9 @@ def create_new_cat_block(
     elif "clancat" in attribute_list or "former Clancat" in attribute_list:
         cat_social = CatSocial.CLANCAT
         if other_clan:
-            cat_group = other_clan.enum
+            cat_group = other_clan.group_ID
         else:
-            cat_group = choice(game.clan.other_clans)
+            cat_group = choice([x.group_ID for x in game.clan.all_other_clans])
     else:
         cat_social = choice([CatSocial.KITTYPET, CatSocial.LONER, "former Clancat"])
 
@@ -491,22 +488,25 @@ def create_new_cat_block(
             break
     if bs_override:
         chosen_backstory = choice(stor)
-
-        if (
-            chosen_backstory
-            in BACKSTORIES["backstory_categories"]["baby_clancat_backstories"]
+        if chosen_backstory in (
+            BACKSTORIES["backstory_categories"]["baby_clancat_backstories"]
+            + BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
         ):
             cat_social = CatSocial.CLANCAT
-        elif (
-            chosen_backstory
-            in BACKSTORIES["backstory_categories"]["baby_loner_backstories"]
+        elif chosen_backstory in (
+            BACKSTORIES["backstory_categories"]["baby_loner_backstories"]
+            + BACKSTORIES["backstory_categories"]["loner_backstories"]
         ):
             cat_social = CatSocial.LONER
-        elif (
-            chosen_backstory
-            in BACKSTORIES["backstory_categories"]["baby_kittypet_backstories"]
+        elif chosen_backstory in (
+            BACKSTORIES["backstory_categories"]["baby_kittypet_backstories"]
+            + BACKSTORIES["backstory_categories"]["kittypet_backstories"]
         ):
             cat_social = CatSocial.KITTYPET
+        elif (
+            chosen_backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]
+        ):
+            cat_social = CatSocial.ROGUE
 
     # KITTEN THOUGHT
     if rank in (CatRank.KITTEN, CatRank.NEWBORN):
@@ -551,13 +551,15 @@ def create_new_cat_block(
             if not alive:
                 chosen_cat.die()
             elif not outside:
+                if not rank:
+                    rank = chosen_cat.status.get_rank_from_age(chosen_cat.age)
                 chosen_cat.add_to_clan()
                 if chosen_cat.status.rank != rank:
                     chosen_cat.rank_change(new_rank=CatRank(rank), resort=True)
             elif outside:
                 # updates so that the clan is marked as knowing of this cat
                 current_standing = chosen_cat.status.get_standing_with_group(
-                    CatGroup.PLAYER_CLAN
+                    CatGroup.PLAYER_CLAN_ID
                 )
                 if (
                     CatStanding.KNOWN not in current_standing
@@ -579,7 +581,7 @@ def create_new_cat_block(
                     chosen_cat.name.give_suffix(
                         pelt=chosen_cat.pelt,
                         biome=game.clan.biome,
-                        tortiepattern=chosen_cat.pelt.tortiepattern,
+                        tortie_pattern=chosen_cat.pelt.tortie_pattern,
                     )
                 else:  # completely new name
                     chosen_cat.name.give_prefix(
@@ -590,7 +592,7 @@ def create_new_cat_block(
                     chosen_cat.name.give_suffix(
                         pelt=chosen_cat.pelt.colour,
                         biome=game.clan.biome,
-                        tortiepattern=chosen_cat.pelt.tortiepattern,
+                        tortie_pattern=chosen_cat.pelt.tortie_pattern,
                     )
 
             new_cats = [chosen_cat]
@@ -640,10 +642,10 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, inter_cat, False, True)
-                start_relation.platonic_like += 30 + y
-                start_relation.comfortable = 10 + y
-                start_relation.admiration = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 40 + y
+                start_relation.comfort = 40 + y
+                start_relation.respect = 10 + y
+                start_relation.trust = 30 + y
                 n_c.relationships[inter_cat.ID] = start_relation
 
             # BIO PARENTS
@@ -653,18 +655,18 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
-                start_relation.platonic_like += 30 + y
-                start_relation.comfortable = 10 + y
-                start_relation.admiration = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 60 + y
+                start_relation.comfort = 40 + y
+                start_relation.respect = 30 + y
+                start_relation.trust = 30 + y
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
-                start_relation.platonic_like += 30 + y
-                start_relation.comfortable = 10 + y
-                start_relation.admiration = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 40 + y
+                start_relation.comfort = 70 + y
+                start_relation.respect = 30 + y
+                start_relation.trust = 60 + y
                 n_c.relationships[par.ID] = start_relation
 
             # ADOPTIVE PARENTS
@@ -676,18 +678,18 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
-                start_relation.platonic_like += 30 + y
-                start_relation.comfortable = 10 + y
-                start_relation.admiration = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 60 + y
+                start_relation.comfort = 40 + y
+                start_relation.respect = 30 + y
+                start_relation.trust = 30 + y
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
-                start_relation.platonic_like += 30 + y
-                start_relation.comfortable = 10 + y
-                start_relation.admiration = 15 + y
-                start_relation.trust = 10 + y
+                start_relation.like += 40 + y
+                start_relation.comfort = 70 + y
+                start_relation.respect = 30 + y
+                start_relation.trust = 60 + y
                 n_c.relationships[par.ID] = start_relation
 
             # UPDATE INHERITANCE
@@ -700,7 +702,7 @@ def get_other_clan(clan_name):
     """
     returns the clan object of given clan name
     """
-    for clan in game.clan.all_clans:
+    for clan in game.clan.all_other_clans:
         if clan.name == clan_name:
             return clan
 
@@ -711,7 +713,7 @@ def create_new_cat(
     kit: bool = False,
     litter: bool = False,
     backstory: bool = None,
-    rank: CatRank = None,
+    rank: Optional[CatRank] = None,
     original_social: CatSocial = CatSocial.CLANCAT,
     original_group: CatGroup = None,
     moons: int = None,
@@ -755,11 +757,11 @@ def create_new_cat(
         backstory
         in (
             BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
-            or BACKSTORIES["backstory_categories"]["otherclan_categories"]
+            + BACKSTORIES["backstory_categories"]["baby_clancat_backstories"]
         )
-        and not original_group
-    ):
-        original_group = choice(game.clan.other_clans)
+        or original_social == "former Clancat"
+    ) and not original_group:
+        original_group = choice([x.group_ID for x in game.clan.all_other_clans])
 
     created_cats = []
 
@@ -822,7 +824,7 @@ def create_new_cat(
             status_dict={
                 "social": original_social,
                 "age": age,
-                "group": original_group,
+                "group_ID": original_group,
             },
             gender=_gender,
             backstory=backstory,
@@ -850,12 +852,10 @@ def create_new_cat(
         # NAMES and accs
         # clancat adults should have already generated with a clan-ish name, thus they skip all of this re-naming
         # little babies will take a clancat name, we love indoctrination
-        if (kit or litter or moons < 12) and (
-            not original_group or not original_group.is_other_clan_group()
-        ):
+        if (kit or litter or moons < 12) and original_group != CatGroup.OTHER_CLAN:
             # babies change name, in case their initial name isn't clan-ish
             new_cat.change_name()
-        elif not original_group or not original_group.is_other_clan_group():
+        elif original_group != CatGroup.OTHER_CLAN:
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:
                 name = choice(names.names_dict["loner_names"])
@@ -864,7 +864,7 @@ def create_new_cat(
                     # TODO: refactor this entire function to remove this call amongst other things
                     from scripts.cat.pelts import Pelt
 
-                    new_cat.pelt.accessory.append(choice(Pelt.collars))
+                    new_cat.pelt.accessory.append(choice(Pelt.collar_accessories))
 
             # try to give name from full loner name list
             elif original_social in (CatSocial.LONER, CatSocial.ROGUE) and bool(
@@ -988,7 +988,7 @@ def get_highest_romantic_relation(
     max_love_value = 0
     current_max_relationship = None
     for rel in relationships:
-        if rel.romantic_love < 0:
+        if rel.romance < 0:
             continue
         if exclude_mate and rel.cat_from.ID in rel.cat_to.mate:
             continue
@@ -996,9 +996,9 @@ def get_highest_romantic_relation(
             rel.cat_from, for_love_interest=True
         ):
             continue
-        if rel.romantic_love > max_love_value:
+        if rel.romance > max_love_value:
             current_max_relationship = rel
-            max_love_value = rel.romantic_love
+            max_love_value = rel.romance
 
     return current_max_relationship
 
@@ -1009,42 +1009,40 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     :param cat_from: the cat who is having the feelings
     :param cat_to: the cat that the feelings are directed towards
     :param rel_value: the relationship value that you're looking for,
-    options are: romantic, platonic, dislike, admiration, comfortable, jealousy, trust
+    options are: romance, like, respect, comfort, trust
     """
     if cat_to.ID in cat_from.relationships:
         relationship = cat_from.relationships[cat_to.ID]
     else:
         relationship = cat_from.create_one_relationship(cat_to)
 
-    if rel_value == "romantic":
-        return relationship.romantic_love
-    elif rel_value == "platonic":
-        return relationship.platonic_like
-    elif rel_value == "dislike":
-        return relationship.dislike
-    elif rel_value == "admiration":
-        return relationship.admiration
-    elif rel_value == "comfortable":
-        return relationship.comfortable
-    elif rel_value == "jealousy":
-        return relationship.jealousy
-    elif rel_value == "trust":
+    if rel_value == RelType.ROMANCE:
+        return relationship.romance
+    elif rel_value == RelType.LIKE:
+        return relationship.like
+    elif rel_value == RelType.RESPECT:
+        return relationship.respect
+    elif rel_value == RelType.COMFORT:
+        return relationship.comfort
+    elif rel_value == RelType.TRUST:
         return relationship.trust
+
+    return None
 
 
 def get_personality_compatibility(cat1, cat2):
-    """Returns:
-    True - if personalities have a positive compatibility
-    False - if personalities have a negative compatibility
-    None - if personalities have a neutral compatibility
+    """
+    Returns matching CatCompatibility enum according to personalitiesof given cat objects.
+    :param cat1: Cat object of first cat
+    :param cat2: Cat object of second cat
     """
     personality1 = cat1.personality.trait
     personality2 = cat2.personality.trait
 
     if personality1 == personality2:
         if personality1 is None:
-            return None
-        return True
+            return CatCompatibility.NEUTRAL
+        return CatCompatibility.POSITIVE
 
     lawfulness_diff = abs(cat1.personality.lawfulness - cat2.personality.lawfulness)
     sociability_diff = abs(cat1.personality.sociability - cat2.personality.sociability)
@@ -1065,11 +1063,11 @@ def get_personality_compatibility(cat1, cat2):
             running_total -= 1
 
     if running_total >= 2:
-        return True
+        return CatCompatibility.POSITIVE
     if running_total <= -2:
-        return False
+        return CatCompatibility.NEGATIVE
 
-    return None
+    return CatCompatibility.NEUTRAL
 
 
 def get_cats_of_romantic_interest(cat):
@@ -1090,32 +1088,25 @@ def get_cats_of_romantic_interest(cat):
         # Extra check to ensure they are potential mates
         if (
             inter_cat.is_potential_mate(cat, for_love_interest=True)
-            and cat.relationships[inter_cat.ID].romantic_love > 0
+            and cat.relationships[inter_cat.ID].romance > 0
         ):
             cats.append(inter_cat)
     return cats
 
 
-def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
+def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
     """
     Looks how many cats have the certain value
     :param cat: cat in question
-    :param value: value which has to be reached
+    :param amount: amount of relationship value which has to be reached
     :param all_cats: list of cats which has to be checked
     """
 
     # collect all true or false if the value is reached for the cat or not
     # later count or sum can be used to get the amount of cats
     # this will be handled like this, because it is easier / shorter to check
-    relation_dict = {
-        "romantic_love": [],
-        "platonic_like": [],
-        "dislike": [],
-        "admiration": [],
-        "comfortable": [],
-        "jealousy": [],
-        "trust": [],
-    }
+
+    relation_dict = {v: [] for v in [*RelType]}
 
     for inter_cat in all_cats:
         if cat.ID in inter_cat.relationships:
@@ -1123,23 +1114,17 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
         else:
             continue
 
-        relation_dict["romantic_love"].append(relation.romantic_love >= value)
-        relation_dict["platonic_like"].append(relation.platonic_like >= value)
-        relation_dict["dislike"].append(relation.dislike >= value)
-        relation_dict["admiration"].append(relation.admiration >= value)
-        relation_dict["comfortable"].append(relation.comfortable >= value)
-        relation_dict["jealousy"].append(relation.jealousy >= value)
-        relation_dict["trust"].append(relation.trust >= value)
+        for value in [*RelType]:
+            if amount > 0:
+                relation_dict[value].append(
+                    relation.get_amount_of_type(value) >= amount
+                )
+            elif amount < 0:
+                relation_dict[value].append(
+                    relation.get_amount_of_type(value) <= amount
+                )
 
-    return_dict = {
-        "romantic_love": sum(relation_dict["romantic_love"]),
-        "platonic_like": sum(relation_dict["platonic_like"]),
-        "dislike": sum(relation_dict["dislike"]),
-        "admiration": sum(relation_dict["admiration"]),
-        "comfortable": sum(relation_dict["comfortable"]),
-        "jealousy": sum(relation_dict["jealousy"]),
-        "trust": sum(relation_dict["trust"]),
-    }
+    return_dict = {v: sum(relation_dict[v]) for v in [*RelType]}
 
     return return_dict
 
@@ -1149,20 +1134,19 @@ def filter_relationship_type(
 ):
     """
     filters for specific types of relationships between groups of cat objects, returns bool
-    :param list[Cat] group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for
+    :param group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for
     parent/child, the cat being tested as parent must be index 0)
-    :param list[str] filter_types: the relationship types to check for. possible types: "siblings", "mates",
-    "mates_with_pl" (PATROL ONLY), "not_mates", "parent/child", "child/parent", "mentor/app", "app/mentor",
-    (following tags check if value is over given int) "romantic_int", "platonic_int", "dislike_int", "comfortable_int",
-    "jealousy_int", "trust_int"
-    :param str event_id: if the event has an ID, include it here
-    :param Cat patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
+    :param filter_types: the relationship types to check for.
+    :param event_id: if the event has an ID, include it here
+    :param patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
     """
     if not filter_types:
         return True
 
+    filter_list = filter_types.copy()
+
     # keeping this list here just for quick reference of what tags are handled here
-    possible_rel_types = [
+    all_possible_tags = [
         "siblings",
         "not_siblings",
         "littermates",
@@ -1179,51 +1163,53 @@ def filter_relationship_type(
         "app/mentor",
         "not_app",
     ]
-
-    possible_value_types = [
-        "romantic",
-        "platonic",
-        "dislike",
-        "comfortable",
-        "jealousy",
-        "trust",
-        "admiration",
-    ]
+    for tier_list in rel_type_tiers.values():
+        all_possible_tags.extend(tier_list)
+        all_possible_tags.extend([f"{l}_only" for l in tier_list])
+    if not set(filter_list).issubset(set(all_possible_tags)):
+        print(
+            f"WARNING: {[tag for tag in filter_list if tag not in all_possible_tags]} is not a valid relationship_status tag!"
+        )
 
     if patrol_leader:
         if patrol_leader in group:
             group.remove(patrol_leader)
         group.insert(0, patrol_leader)
 
-    if "siblings" in filter_types:
+    if "siblings" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if not all([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("siblings")
 
-    if "not_siblings" in filter_types:
+    if "not_siblings" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if any([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_siblings")
 
-    if "littermates" in filter_types:
+    if "littermates" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if not all([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("littermates")
 
-    if "not_littermates" in filter_types:
+    if "not_littermates" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if any([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             return False
 
-    if "mates" in filter_types:
+        filter_list.remove("not_littermates")
+
+    if "mates" in filter_list:
         # first test if more than one cat
         if len(group) == 1:
             return False
@@ -1232,14 +1218,15 @@ def filter_relationship_type(
         if not all(len(i.mate) >= (len(group) - 1) for i in group):
             return False
 
-        # Now the expensive test.  We have to see if everone is mates with each other
+        # Now the expensive test.  We have to see if everyone is mates with each other
         # Hopefully the cheaper tests mean this is only needed on events with a small number of cats
         for x in combinations(group, 2):
             if x[0].ID not in x[1].mate:
                 return False
+        filter_list.remove("mates")
 
     # check if all cats are mates with p_l (they do not have to be mates with each other)
-    if "mates_with_pl" in filter_types:
+    if "mates_with_pl" in filter_list:
         # First test if there is more than one cat
         if len(group) == 1:
             return False
@@ -1250,174 +1237,148 @@ def filter_relationship_type(
                 continue
             if cat.ID not in patrol_leader.mate:
                 return False
+        filter_list.remove("mates_with_pl")
 
     # Check if all cats are not mates
-    if "not_mates" in filter_types:
+    if "not_mates" in filter_list:
         # opposite of mate check
         for x in combinations(group, 2):
             if x[0].ID in x[1].mate:
                 return False
+        filter_list.remove("not_mates")
 
     # Check if the cats are in a parent/child relationship
-    if "parent/child" in filter_types:
+    if "parent/child" in filter_list:
         # It should be exactly two cats for a "parent/child" event
         if len(group) != 2:
             return False
         # test for parentage
         if not group[0].is_parent(group[1]):
             return False
+        filter_list.remove("parent/child")
 
-    if "not_parent" in filter_types:
+    if "not_parent" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if any([test_cat.is_parent(inter_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_parent")
 
-    if "child/parent" in filter_types:
+    if "child/parent" in filter_list:
         # It should be exactly two cats for a "child/parent" event
         if len(group) != 2:
             return False
         # test for parentage
         if not group[1].is_parent(group[0]):
             return False
+        filter_list.remove("child/parent")
 
-    if "not_child" in filter_types:
+    if "not_child" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if any([inter_cat.is_parent(test_cat) for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_child")
 
-    if "mentor/app" in filter_types:
+    if "mentor/app" in filter_list:
         # It should be exactly two cats for a "mentor/app" event
         if len(group) != 2:
             return False
         # test for parentage
         if not group[1].ID in group[0].apprentice:
             return False
+        filter_list.remove("mentor/app")
 
-    if "not_mentor" in filter_types:
+    if "not_mentor" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if any([inter_cat in test_cat.apprentice for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_mentor")
 
-    if "app/mentor" in filter_types:
+    if "app/mentor" in filter_list:
         # It should be exactly two cats for a "app/mentor" event
         if len(group) != 2:
             return False
         # test for parentage
         if not group[0].ID in group[1].apprentice:
             return False
+        filter_list.remove("app/mentor")
 
-    if "not_app" in filter_types:
+    if "not_app" in filter_list:
         test_cat = group[0]
         testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
         if any([inter_cat in test_cat.mentor for inter_cat in testing_cats]):
             return False
+        filter_list.remove("not_app")
 
     # Filtering relationship values
-    break_loop = False
-    for v_type in possible_value_types:
-        # first get all tags for current value types
-        tags = [constraint for constraint in filter_types if v_type in constraint]
-
-        # If there is not a tag for the current value type, check next one
-        if len(tags) == 0:
-            continue
-
-            # there should be only one value constraint for each value type
-        elif len(tags) > 1:
-            print(
-                f"ERROR: event {event_id} has multiple relationship constraints for the value {v_type}."
-            )
-            break_loop = True
-            break
-
-        # try to extract the value/threshold from the text
-        try:
-            threshold = int(tags[0].split("_")[1])
-        except:
-            print(
-                f"ERROR: event {event_id} with the relationship constraint for the value does not {v_type} follow the formatting guidelines."
-            )
-            break_loop = True
-            break
-
-        if threshold > 100:
-            print(
-                f"ERROR: event {event_id} has a relationship constraint for the value {v_type}, which is higher than the max value of a relationship."
-            )
-            break_loop = True
-            break
-
-        if threshold <= 0:
-            print(
-                f"ERROR: event {event_id} has a relationship constraint for the value {v_type}, which is lower than the min value of a relationship or 0."
-            )
-            break_loop = True
-            break
-
-        # each cat has to have relationships with this relationship value above the threshold
-        fulfilled = True
+    # each cat has to have relationships toward each other matching every level tag
+    for tier in filter_list:
         for inter_cat in group:
-            rel_above_threshold = []
+            if len(group) == 2 and inter_cat == group[1]:
+                # if this is a two cat group, then we only look for the first cat's rel toward the second cat.
+                # groups > 2 will require that all cats feel the same way toward each other.
+                continue
             group_ids = [cat.ID for cat in group]
-            relevant_relationships = list(
-                filter(
-                    lambda rel: rel.cat_to.ID in group_ids
-                    and rel.cat_to.ID != inter_cat.ID,
-                    list(inter_cat.relationships.values()),
-                )
-            )
 
-            # get the relationships depending on the current value type + threshold
-            if v_type == "romantic":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.romantic_love >= threshold
-                ]
-            elif v_type == "platonic":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.platonic_like >= threshold
-                ]
-            elif v_type == "dislike":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.dislike >= threshold
-                ]
-            elif v_type == "comfortable":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.comfortable >= threshold
-                ]
-            elif v_type == "jealousy":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.jealousy >= threshold
-                ]
-            elif v_type == "trust":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.trust >= threshold
-                ]
-            elif v_type == "admiration":
-                rel_above_threshold = [
-                    i for i in relevant_relationships if i.admiration >= threshold
-                ]
+            relevant_relationships = [
+                rel
+                for rel in inter_cat.relationships.values()
+                if rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID
+            ]
 
-            # if the lengths are not equal, one cat has not the relationship value which is needed to another cat of
-            # the event
-            if len(rel_above_threshold) + 1 != len(group):
-                fulfilled = False
-                break
+            # list of every cat's tier list
+            group_lists: list[RelTier] = [
+                rel.get_reltype_tiers() for rel in relevant_relationships
+            ]
 
-        if not fulfilled:
-            break_loop = True
-            break
+            # now test each list to see if the required tag is inside
+            for tier_list in group_lists:
+                # just a quick check to see if we can avoid all the extra hullabaloo
+                if tier in tier_list:
+                    continue
 
-    # if break is used in the loop, the condition are not fulfilled
-    # and this event should not be added to the filtered list
-    if break_loop:
-        return False
+                # if it's limited to *just* the given tier
+                if "_only" in tier:
+                    tier.replace("_only", "")
+                    if tier not in tier_list:
+                        return False
+                # otherwise we allow both the given tier and any greater tiers
+                else:
+                    # finding the matching tier enum
+                    rel_tier: RelTier = RelTier(tier)
+
+                    # find the matching rel_type enum
+                    rel_type: Optional[RelType] = None
+                    for rel_type in rel_type_tiers:
+                        if rel_tier in rel_type_tiers[rel_type]:
+                            rel_type = rel_type
+                            break
+                    if not rel_type:
+                        continue
+
+                    # get the tier's index within the rel_types's list
+                    index = rel_type_tiers[rel_type].index(rel_tier)
+                    allowed_levels = []
+                    # if it's a pos tier, we allow that index and higher
+                    if rel_tier.is_any_pos:
+                        allowed_levels = rel_type_tiers[rel_type][index:]
+                    # if it's a neg tier, we allow that index and lower
+                    elif rel_tier.is_any_neg:
+                        allowed_levels = rel_type_tiers[rel_type][0:index]
+
+                    discard = True
+                    for l in tier_list:
+                        if l in allowed_levels:
+                            discard = False
+                            break
+                    if discard:
+                        return False
 
     return True
 
@@ -1519,15 +1480,7 @@ def unpack_rel_block(
     :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
     """
-    possible_values = (
-        "romantic",
-        "platonic",
-        "dislike",
-        "comfort",
-        "jealous",
-        "trust",
-        "respect",
-    )
+    possible_values = [*RelType]
 
     for block in relationship_effects:
         cats_from = block.get("cats_from", [])
@@ -1553,41 +1506,13 @@ def unpack_rel_block(
         positive = False
 
         # grabbing values
-        romantic_love = 0
-        platonic_like = 0
-        dislike = 0
-        comfortable = 0
-        jealousy = 0
-        admiration = 0
-        trust = 0
-        if "romantic" in values:
-            romantic_love = amount
-            if amount > 0:
-                positive = True
-        if "platonic" in values:
-            platonic_like = amount
-            if amount > 0:
-                positive = True
-        if "dislike" in values:
-            dislike = amount
-            if amount < 0:
-                positive = True
-        if "comfort" in values:
-            comfortable = amount
-            if amount > 0:
-                positive = True
-        if "jealous" in values:
-            jealousy = amount
-            if amount < 0:
-                positive = True
-        if "trust" in values:
-            trust = amount
-            if amount > 0:
-                positive = True
-        if "respect" in values:
-            admiration = amount
-            if amount > 0:
-                positive = True
+        value_changes = {}
+
+        for val in [*RelType]:
+            if val in values:
+                value_changes[val] = amount
+                if amount > 0:
+                    positive = True
 
         if positive:
             effect = i18n.t("relationships.positive_postscript")
@@ -1595,81 +1520,47 @@ def unpack_rel_block(
             effect = i18n.t("relationships.negative_postscript")
 
         # Get log
-        log1 = None
-        log2 = None
-        if block.get("log"):
-            log = block.get("log")
-            if isinstance(log, str):
-                log1 = log
-            elif isinstance(log, list):
-                if len(log) >= 2:
-                    log1 = log[0]
-                    log2 = log[1]
-                elif len(log) == 1:
-                    log1 = log[0]
-            else:
-                print(f"something is wrong with relationship log: {log}")
-
-        if not log1:
-            if hasattr(event, "text"):
-                try:
-                    log1 = event.text + effect
-                except AttributeError:
-                    print(
-                        f"WARNING: event changed relationships but did not create a relationship log"
-                    )
-            else:
-                log1 = i18n.t("defaults.relationship_log") + effect
-        if not log2:
-            if hasattr(event, "text"):
-                try:
-                    log2 = event.text + effect
-                except AttributeError:
-                    print(
-                        f"WARNING: event changed relationships but did not create a relationship log"
-                    )
-            else:
-                log2 = i18n.t("defaults.relationship_log") + effect
+        to_log = None
+        from_log = None
+        if "log" in block:
+            to_log = (
+                block["log"].get("cats_to", "") + effect
+                if "cats_to" in block["log"]
+                else None
+            )
+            from_log = (
+                block["log"].get("cats_from", "") + effect
+                if "cats_from" in block["log"]
+                else None
+            )
+            if not to_log and not from_log:
+                print(f"something is wrong with relationship log: {block['log']}")
 
         change_relationship_values(
             cats_to_ob,
             cats_from_ob,
-            romantic_love,
-            platonic_like,
-            dislike,
-            admiration,
-            comfortable,
-            jealousy,
-            trust,
-            log=log1,
+            **value_changes,
+            log=from_log,
         )
 
         if block.get("mutual"):
+            # we'll default to the other log if no unique log was written
             change_relationship_values(
                 cats_from_ob,
                 cats_to_ob,
-                romantic_love,
-                platonic_like,
-                dislike,
-                admiration,
-                comfortable,
-                jealousy,
-                trust,
-                log=log2,
+                **value_changes,
+                log=to_log if to_log else from_log,
             )
 
 
 def change_relationship_values(
     cats_to: list,
     cats_from: list,
-    romantic_love: int = 0,
-    platonic_like: int = 0,
-    dislike: int = 0,
-    admiration: int = 0,
-    comfortable: int = 0,
-    jealousy: int = 0,
+    romance: int = 0,
+    like: int = 0,
+    respect: int = 0,
+    comfort: int = 0,
     trust: int = 0,
-    auto_romance: bool = False,
     log: str = None,
 ):
     """
@@ -1679,22 +1570,18 @@ def change_relationship_values(
     (e.g. cat_from loses trust in cat_to)
     :param list[Cat] cats_to: list of cats objects who are the target of that rel value
     (e.g. cat_from loses trust in cat_to)
-    :param int romantic_love: amount to change romantic, default 0
-    :param int platonic_like: amount to change platonic, default 0
-    :param int dislike: amount to change dislike, default 0
-    :param int admiration: amount to change admiration (respect), default 0
-    :param int comfortable: amount to change comfort, default 0
-    :param int jealousy: amount to change jealousy, default 0
+    :param int romance: amount to change romantic, default 0
+    :param int like: amount to change platonic, default 0
+    :param int respect: amount to change admiration (respect), default 0
+    :param int comfort: amount to change comfort, default 0
     :param int trust: amount to change trust, default 0
-    :param bool auto_romance: if the cat_from already has romantic value with cat_to, then the platonic_like param value
-    will also be applied to romantic, default False
     :param str log: the string to append to the relationship log of cats involved
     """
 
     # This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
     """changed = False
-    if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
-            comfortable == 0 and jealousy == 0 and trust == 0:
+    if romance == 0 and like == 0 and respect == 0 and \
+            comfort == 0 and trust == 0:
         changed = False
     else:
         changed = True"""
@@ -1717,34 +1604,40 @@ def change_relationship_values(
                 single_cat_from.is_potential_mate(single_cat_to, for_love_interest=True)
                 or single_cat_to.ID in single_cat_from.mate
             ):
-                # if cat already has romantic feelings then automatically increase romantic feelings
-                # when platonic feelings would increase
-                if rel.romantic_love > 0 and auto_romance:
-                    romantic_love = platonic_like
-
                 # now gain the romance
-                rel.romantic_love += romantic_love
+                rel.romance += romance
 
             # gain other rel values
-            rel.platonic_like += platonic_like
-            rel.dislike += dislike
-            rel.admiration += admiration
-            rel.comfortable += comfortable
-            rel.jealousy += jealousy
+            rel.like += like
+            rel.respect += respect
+            rel.comfort += comfort
             rel.trust += trust
 
             # for testing purposes - DON'T DELETE - you can use this to test if relationships are changing
             """
             print(str(single_cat_from.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                  "Romantic: " + str(romantic_love) +
-                  " /Platonic: " + str(platonic_like) +
-                  " /Dislike: " + str(dislike) +
-                  " /Respect: " + str(admiration) +
-                  " /Comfort: " + str(comfortable) +
-                  " /Jealousy: " + str(jealousy) +
+                  "Romance: " + str(romance) +
+                  " /Like: " + str(like) +
+                  " /Respect: " + str(respect) +
+                  " /Comfort: " + str(comfort) +
                   " /Trust: " + str(trust)) if changed else print("No relationship change")"""
-
+            if not log:
+                log = i18n.t("relationships.relationship_log")
             if log and isinstance(log, str):
+                replace_dict = {}
+                if "from_cat" in log:
+                    replace_dict["from_cat"] = (
+                        str(single_cat_from.name),
+                        choice(single_cat_from.pronouns),
+                    )
+                if "to_cat" in log:
+                    replace_dict["to_cat"] = (
+                        str(single_cat_to.name),
+                        choice(single_cat_to.pronouns),
+                    )
+                if replace_dict:
+                    log = process_text(log, replace_dict)
+
                 log_text = log + i18n.t(
                     "relationships.age_postscript",
                     name=str(single_cat_to.name),
@@ -2090,7 +1983,7 @@ def history_text_adjust(text, other_clan_name, clan, other_cat_rc=None):
         text = text.replace("o_c_n", str(other_clan_name))
 
     if "c_n" in text:
-        text = text.replace("c_n", clan.name)
+        text = text.replace("c_n", clan.displayname + "Clan")
     if "r_c" in text and other_cat_rc:
         text = selective_replace(text, "r_c", str(other_cat_rc.name))
     return text
@@ -2140,13 +2033,13 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     if other_clan_name:
         text = text.replace("o_c_n", other_clan_name)
     if clan:
-        clan_name = str(clan.name)
+        clan_name = str(clan.displayname)
     else:
         if game.clan is None:
             # todo can this be Switch.clan_name ?
             clan_name = switch_get_value(Switch.clan_list)[0]
         else:
-            clan_name = str(game.clan.name)
+            clan_name = str(game.clan.displayname)
 
     text = text.replace("c_n", clan_name + "Clan")
 
@@ -2335,7 +2228,7 @@ def event_text_adjust(
     # clan_name
     if "c_n" in text:
         try:
-            clan_name = clan.name
+            clan_name = clan.displayname
         except AttributeError:
             # todo can this be Switch.clan_name ?
             clan_name = switch_get_value(Switch.clan_list)[0]
@@ -2373,9 +2266,18 @@ def event_text_adjust(
 
         # acc_singular (only works for main_cat's acc)
         if "acc_singular" in text:
+            accessory_name = main_cat.pelt.accessory[-1]
+            if sprites.COLLAR_DATA["palette_map"]:
+                potential_collar = "".join(
+                    [x for x in accessory_name if not x.islower()]
+                ).strip("_")
+                for style in main_cat.pelt.collar_styles:
+                    if style == potential_collar:
+                        accessory_name = potential_collar
+                        break
             text = text.replace(
                 "acc_singular",
-                i18n.t(f"cat.accessories.{main_cat.pelt.accessory[-1]}", count=1),
+                i18n.t(f"cat.accessories.{accessory_name}", count=1),
             )
 
         if "given_herb" in text:
@@ -2417,7 +2319,7 @@ def leader_ceremony_text_adjust(
     if extra_lives:
         text = text.replace("[life_num]", str(extra_lives))
 
-    text = text.replace("c_n", str(game.clan.name) + "Clan")
+    text = text.replace("c_n", str(game.clan.displayname) + "Clan")
 
     return text
 
@@ -2434,7 +2336,7 @@ def ceremony_text_adjust(
     living_parents=(),
     dead_parents=(),
 ):
-    clanname = str(game.clan.name + "Clan")
+    clanname = str(game.clan.displayname + "Clan")
 
     random_honor = random_honor
     random_living_parent = None
@@ -2745,11 +2647,12 @@ def generate_sprite(
     :param disable_sick_sprite: If true, never use the not_working lineart.
                     If false, use the cat.not_working() to determine the no_working art.
     """
+    sprite_poses = sprites.POSE_DATA["poses"]
 
     if life_state is not None:
         age = life_state
     else:
-        age = cat.age.value
+        age = cat.age
 
     if always_living:
         dead = False
@@ -2762,33 +2665,27 @@ def generate_sprite(
     if (
         not disable_sick_sprite
         and cat.not_working()
-        and age != "newborn"
+        and age != CatAge.NEWBORN
         and constants.CONFIG["cat_sprites"]["sick_sprites"]
     ):
-        if age in ["kitten", "adolescent"]:
-            cat_sprite = str(19)
+        if age in (CatAge.KITTEN, CatAge.ADOLESCENT):
+            cat_sprite = sprite_poses["sick_young0"]
         else:
-            cat_sprite = str(18)
+            cat_sprite = sprite_poses["sick_adult0"]
 
     # paralyzed sprites
-    elif cat.pelt.paralyzed and age != "newborn":
-        if age in ["kitten", "adolescent"]:
-            cat_sprite = str(17)
+    elif cat.pelt.paralyzed and age != CatAge.NEWBORN:
+        if age in (CatAge.KITTEN, CatAge.ADOLESCENT):
+            cat_sprite = sprite_poses["para_young0"]
         else:
-            if cat.pelt.length == "long":
-                cat_sprite = str(16)
-            else:
-                cat_sprite = str(15)
+            cat_sprite = sprite_poses[cat.pelt.cat_sprites["para_adult"]]
 
     # default sprites
     else:
-        if age == "elder" and not constants.CONFIG["fun"]["all_cats_are_newborn"]:
-            age = "senior"
-
         if constants.CONFIG["fun"]["all_cats_are_newborn"]:
-            cat_sprite = str(cat.pelt.cat_sprites["newborn"])
+            cat_sprite = sprite_poses[cat.pelt.cat_sprites["newborn"]]
         else:
-            cat_sprite = str(cat.pelt.cat_sprites[age])
+            cat_sprite = sprite_poses[cat.pelt.cat_sprites[age]]
 
     new_sprite = pygame.Surface(
         (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA
@@ -2805,22 +2702,25 @@ def generate_sprite(
             )
         else:
             # Base Coat
+            sprite_name = f"colours_{cat.pelt.tortie_base}{cat.pelt.colour}{cat_sprite}"
             new_sprite.blit(
-                sprites.sprites[cat.pelt.tortiebase + cat.pelt.colour + cat_sprite],
+                sprites.sprites[sprite_name],
                 (0, 0),
             )
 
             # Create the patch image
-            if cat.pelt.tortiepattern == "Single":
+            if cat.pelt.tortie_pattern == "Single":
                 tortie_pattern = "SingleColour"
             else:
-                tortie_pattern = cat.pelt.tortiepattern
+                tortie_pattern = cat.pelt.tortie_pattern
 
-            patches = sprites.sprites[
-                tortie_pattern + cat.pelt.tortiecolour + cat_sprite
-            ].copy()
+            sprite_name = (
+                f"colours_{tortie_pattern}{cat.pelt.tortie_colour}{cat_sprite}"
+            )
+            patches = sprites.sprites[sprite_name].copy()
+            sprite_name = f"{sprites.TORTIE_DATA['spritesheet']}{cat.pelt.tortie_marking}{cat_sprite}"
             patches.blit(
-                sprites.sprites["tortiemask" + cat.pelt.pattern + cat_sprite],
+                sprites.sprites[sprite_name],
                 (0, 0),
                 special_flags=pygame.BLEND_RGBA_MULT,
             )
@@ -2830,7 +2730,7 @@ def generate_sprite(
 
         # TINTS
         if (
-            cat.pelt.tint != "none"
+            cat.pelt.tint is not None
             and cat.pelt.tint in sprites.cat_tints["tint_colours"]
         ):
             # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
@@ -2840,7 +2740,7 @@ def generate_sprite(
             tint.fill(tuple(sprites.cat_tints["tint_colours"][cat.pelt.tint]))
             new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
         if (
-            cat.pelt.tint != "none"
+            cat.pelt.tint is not None
             and cat.pelt.tint in sprites.cat_tints["dilute_tint_colours"]
         ):
             tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
@@ -2849,13 +2749,12 @@ def generate_sprite(
 
         # draw white patches
         if cat.pelt.white_patches is not None:
-            white_patches = sprites.sprites[
-                "white" + cat.pelt.white_patches + cat_sprite
-            ].copy()
+            sprite_name = f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.white_patches}{cat_sprite}"
+            white_patches = sprites.sprites[sprite_name].copy()
 
             # Apply tint to white patches.
             if (
-                cat.pelt.white_patches_tint != "none"
+                cat.pelt.white_patches_tint is not None
                 and cat.pelt.white_patches_tint
                 in sprites.white_patches_tints["tint_colours"]
             ):
@@ -2874,9 +2773,13 @@ def generate_sprite(
         # draw vit & points
 
         if cat.pelt.points:
-            points = sprites.sprites["white" + cat.pelt.points + cat_sprite].copy()
+            sprite_name = (
+                f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.points}{cat_sprite}"
+            )
+
+            points = sprites.sprites[sprite_name].copy()
             if (
-                cat.pelt.white_patches_tint != "none"
+                cat.pelt.white_patches_tint is not None
                 and cat.pelt.white_patches_tint
                 in sprites.white_patches_tints["tint_colours"]
             ):
@@ -2892,76 +2795,123 @@ def generate_sprite(
             new_sprite.blit(points, (0, 0))
 
         if cat.pelt.vitiligo:
+            sprite_name = (
+                f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.vitiligo}{cat_sprite}"
+            )
+
             new_sprite.blit(
-                sprites.sprites["white" + cat.pelt.vitiligo + cat_sprite], (0, 0)
+                sprites.sprites[sprite_name],
+                (0, 0),
             )
 
         # draw eyes & scars1
-        eyes = sprites.sprites["eyes" + cat.pelt.eye_colour + cat_sprite].copy()
+        sprite_name = (
+            f"{sprites.EYE_DATA['spritesheet'][0]}{cat.pelt.eye_colour}{cat_sprite}"
+        )
+        eyes = sprites.sprites[sprite_name].copy()
         if cat.pelt.eye_colour2 != None:
+            sprite_name = f"{sprites.EYE_DATA['spritesheet'][1]}{cat.pelt.eye_colour2}{cat_sprite}"
             eyes.blit(
-                sprites.sprites["eyes2" + cat.pelt.eye_colour2 + cat_sprite], (0, 0)
+                sprites.sprites[sprite_name],
+                (0, 0),
             )
         new_sprite.blit(eyes, (0, 0))
 
         if not scars_hidden:
             for scar in cat.pelt.scars:
-                if scar in cat.pelt.scars1:
-                    new_sprite.blit(
-                        sprites.sprites["scars" + scar + cat_sprite], (0, 0)
+                if scar in cat.pelt.general_scars:
+                    sprite_name = (
+                        f"{sprites.SCAR_DATA['spritesheet']}{scar}{cat_sprite}"
                     )
-                if scar in cat.pelt.scars3:
                     new_sprite.blit(
-                        sprites.sprites["scars" + scar + cat_sprite], (0, 0)
+                        sprites.sprites[sprite_name],
+                        (0, 0),
                     )
 
         # setting the lineart color to override on accessories & missing bits
-        lineart_color = pygame.Color(
-            constants.CONFIG["cat_sprites"]["lineart_color_df"]
-            if cat.status.group == CatGroup.DARK_FOREST
-            else constants.CONFIG["cat_sprites"]["lineart_color_sc"]
+        lineart_color = (
+            pygame.Color(
+                constants.CONFIG["cat_sprites"]["lineart_color_sc"]
+                if cat.status.group == CatGroup.STARCLAN
+                else constants.CONFIG["cat_sprites"]["lineart_color_df"]
+            )
+            if cat.status.group != CatGroup.UNKNOWN_RESIDENCE
+            else None
         )
 
-        def _recolor_lineart(sprite, color) -> pygame.Surface:
+        gradient_surface = (
+            sprites.sprites["line_ur_gradient" + cat_sprite]
+            if dead and cat.status.group == CatGroup.UNKNOWN_RESIDENCE
+            else None
+        )
+
+        def _recolor_lineart(
+            sprite, color=None, source: pygame.Surface = None
+        ) -> pygame.Surface:
             """
             Helper function to set the appropriate lineart color for the living status of the cat
             :param sprite: lineart to recolor
-            :param color: color to apply
+            :param color: color to apply to all pixels
+            :param source: source surface of same size as sprite to use instead of color
             :return:
             """
             if not dead:
                 return sprite
+
+            if color is None and source is None:
+                raise ValueError(
+                    "Must provide either `color` or `source` for _recolor_lineart"
+                )
+
             out = sprite.copy()
-            pixel_array = pygame.PixelArray(out)
-            pixel_array.replace((0, 0, 0), color, distance=0)
-            del pixel_array
+            if color:
+                pixel_array = pygame.PixelArray(out)
+                pixel_array.replace((0, 0, 0), color, distance=0)
+                del pixel_array
+                return out
+
+            width, height = sprite.get_size()
+            for x in range(width):
+                for y in range(height):
+                    if sprite.get_at((x, y)) == pygame.Color(0, 0, 0):
+                        color = source.get_at((x, y))
+                        sprite.set_at((x, y), color)
             return out
 
         # draw line art
         if game_setting_get("shaders") and not dead:
             new_sprite.blit(
-                sprites.sprites["shaders" + cat_sprite],
+                sprites.sprites["shader_mask" + cat_sprite],
                 (0, 0),
                 special_flags=pygame.BLEND_RGB_MULT,
             )
-            new_sprite.blit(sprites.sprites["lighting" + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites["shader_lighting" + cat_sprite], (0, 0))
 
         if not dead:
-            new_sprite.blit(sprites.sprites["lines" + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites["lineart" + cat_sprite], (0, 0))
+        elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
+            new_sprite.blit(sprites.sprites["lineart_ur" + cat_sprite], (0, 0))
         elif cat.status.group == CatGroup.DARK_FOREST:
-            new_sprite.blit(sprites.sprites["lineartdf" + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites["lineart_df" + cat_sprite], (0, 0))
         elif dead:
-            new_sprite.blit(sprites.sprites["lineartdead" + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites["lineart_sc" + cat_sprite], (0, 0))
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
-        new_sprite.blit(sprites.sprites["skin" + cat.pelt.skin + cat_sprite], (0, 0))
+        sprite_name = f"{sprites.SKIN_DATA['spritesheet']}{cat.pelt.skin}{cat_sprite}"
+        new_sprite.blit(
+            sprites.sprites[sprite_name],
+            (0, 0),
+        )
 
         if not scars_hidden:
             for scar in cat.pelt.scars:
-                if scar in cat.pelt.scars2:
+                if scar in cat.pelt.missing_part_scars:
+                    sprite_name = f"{sprites.SCAR_MISSING_PART_DATA['spritesheet']}{scar}{cat_sprite}"
                     new_sprite.blit(
                         _recolor_lineart(
-                            sprites.sprites["scars" + scar + cat_sprite], lineart_color
+                            sprites.sprites[sprite_name],
+                            lineart_color,
+                            gradient_surface,
                         ),
                         (0, 0),
                         special_flags=blendmode,
@@ -2973,7 +2923,7 @@ def generate_sprite(
         if not acc_hidden and cat.pelt.accessory:
             cat_accessories = cat.pelt.accessory
             categories = [
-                "collars",
+                "collar_accessories",
                 "tail_accessories",
                 "body_accessories",
                 "head_accessories",
@@ -2982,40 +2932,35 @@ def generate_sprite(
                 for accessory in cat_accessories:
                     if accessory in getattr(Pelt, category):
                         if accessory in cat.pelt.plant_accessories:
+                            sprite_name = f"{sprites.PLANT_DATA['spritesheet']}{accessory}{cat_sprite}"
                             new_sprite.blit(
                                 _recolor_lineart(
-                                    sprites.sprites[
-                                        "acc_herbs" + accessory + cat_sprite
-                                    ],
+                                    sprites.sprites[sprite_name],
                                     lineart_color,
+                                    gradient_surface,
                                 ),
                                 (0, 0),
                             )
                         elif accessory in cat.pelt.wild_accessories:
+                            sprite_name = f"{sprites.WILD_DATA['spritesheet']}{accessory}{cat_sprite}"
                             new_sprite.blit(
                                 _recolor_lineart(
-                                    sprites.sprites[
-                                        "acc_wild" + accessory + cat_sprite
-                                    ],
+                                    sprites.sprites[sprite_name],
                                     lineart_color,
+                                    gradient_surface,
                                 ),
                                 (0, 0),
                             )
-                        elif accessory in cat.pelt.collars:
+                        elif accessory in cat.pelt.collar_accessories:
+                            sprite_name = f"{sprites.COLLAR_DATA['spritesheet']}{accessory}{cat_sprite}"
                             new_sprite.blit(
                                 _recolor_lineart(
-                                    sprites.sprites["collars" + accessory + cat_sprite],
+                                    sprites.sprites[sprite_name],
                                     lineart_color,
+                                    gradient_surface,
                                 ),
                                 (0, 0),
                             )
-
-        # apply experimental sparkle layer
-        if dead and cat.status.group == CatGroup.STARCLAN:
-            new_sprite.blit(
-                sprites.sprites["sc_overlay" + cat_sprite],
-                (0, 0),
-            )
 
         # Apply fading fog
         if (
@@ -3038,20 +2983,67 @@ def generate_sprite(
                 special_flags=pygame.BLEND_RGBA_MULT,
             )
 
-            if cat.status.group == CatGroup.DARK_FOREST:
-                temp = sprites.sprites["fadedf" + stage + cat_sprite].copy()
-                temp.blit(new_sprite, (0, 0))
-                new_sprite = temp
-            else:
+            if cat.status.group == CatGroup.STARCLAN:
                 temp = sprites.sprites["fadestarclan" + stage + cat_sprite].copy()
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
+            elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
+                temp = sprites.sprites["fadeur" + stage + cat_sprite].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+            else:
+                temp = sprites.sprites["fadedf" + stage + cat_sprite].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+
+        # ok! we have the sprite! now, do some layer things if the cat's already dead
+        if dead:
+            temp_sprite = pygame.Surface(
+                (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA
+            )
+
+            if cat.status.group == CatGroup.STARCLAN:
+                # no underlay
+
+                # cat sprite
+                temp_sprite.blit(new_sprite, (0, 0))
+
+                # overlay
+                temp_sprite.blit(
+                    sprites.sprites["line_sc_overlay" + cat_sprite],
+                    (0, 0),
+                )
+            elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
+                # underlay
+                temp_sprite.blit(
+                    sprites.sprites["line_ur_overlay" + cat_sprite],
+                    (0, 0),
+                )
+
+                # cat sprite
+                temp_sprite.blit(new_sprite, (0, 0))
+
+                # overlay
+                temp_sprite.blit(
+                    sprites.sprites["line_ur_overlay" + cat_sprite],
+                    (0, 0),
+                )
+            elif cat.status.group == CatGroup.DARK_FOREST:
+                # no underlay
+
+                # cat sprite
+                temp_sprite.blit(new_sprite, (0, 0))
+
+                # no overlay
+
+            new_sprite = temp_sprite
 
         # reverse, if assigned so
         if cat.pelt.reverse:
             new_sprite = pygame.transform.flip(new_sprite, True, False)
 
     except (TypeError, KeyError):
+        traceback.print_exc()
         logger.exception("Failed to load sprite")
 
         # Placeholder image

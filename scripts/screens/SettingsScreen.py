@@ -20,7 +20,7 @@ from scripts.game_structure.game.settings import (
 
 # please don't do this. we have to.
 import scripts.game_structure.game.settings.settings as all_settings
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
@@ -30,7 +30,10 @@ from scripts.game_structure.ui_elements import (
 from scripts.housekeeping.datadir import open_data_dir
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
 from .Screens import Screens
-from scripts.game_structure.screen_settings import (
+from .enums import GameScreen
+from ..game_structure import constants
+from ..game_structure.localization import get_additional_lang_list
+from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
 )
@@ -147,7 +150,7 @@ class SettingsScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.main_menu_button:
-                self.change_screen("start screen")
+                self.change_screen(GameScreen.START)
                 return
             if event.ui_element == self.fullscreen_toggle:
                 game_setting_toggle("fullscreen")
@@ -180,7 +183,7 @@ class SettingsScreen(Screens):
 
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
-                self.change_screen("start screen")
+                self.change_screen(GameScreen.START)
             elif event.key == pygame.K_RIGHT:
                 if self.sub_menu == "general":
                     self.open_info_screen()
@@ -809,29 +812,37 @@ class SettingsScreen(Screens):
                 object_id="#english_lang_button",
                 manager=MANAGER,
             )
-            self.checkboxes["es"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((310, 0), (180, 37))),
-                "español",
-                get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
-                object_id="@buttonstyles_ladder_middle",
-                manager=MANAGER,
-                anchors={"top_target": self.checkboxes["en"]},
-            )
-            self.checkboxes["de"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((310, 0), (180, 37))),
-                "deutsch",
-                get_button_dict(ButtonStyles.LADDER_BOTTOM, (180, 37)),
-                object_id="@buttonstyles_ladder_bottom",
-                manager=MANAGER,
-                anchors={"top_target": self.checkboxes["es"]},
-            )
+            # dict insertion order is guaranteed in python 3.7+
+            additional_langs = get_additional_lang_list()
+            prev_lang_checkbox = self.checkboxes["en"]
+
+            # sorry I don't know of a better way to implement this
+            if len(additional_langs) > 0:
+                *languages, last_lang = additional_langs.items()
+                for lang, native_name in languages:
+                    self.checkboxes[lang] = UISurfaceImageButton(
+                        ui_scale(pygame.Rect((310, 0), (180, 37))),
+                        native_name,
+                        get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
+                        object_id="@buttonstyles_ladder_middle",
+                        manager=MANAGER,
+                        anchors={"top_target": prev_lang_checkbox},
+                    )
+                    prev_lang_checkbox = self.checkboxes[lang]
+
+                lang, native_name = last_lang
+                self.checkboxes[lang] = UISurfaceImageButton(
+                    ui_scale(pygame.Rect((310, 0), (180, 37))),
+                    native_name,
+                    get_button_dict(ButtonStyles.LADDER_BOTTOM, (180, 37)),
+                    object_id="@buttonstyles_ladder_bottom",
+                    manager=MANAGER,
+                    anchors={"top_target": prev_lang_checkbox},
+                )
+
             language = MANAGER.get_locale()
-            if language == "en":  # English
-                self.checkboxes["en"].disable()
-            elif language == "es":  # Spanish
-                self.checkboxes["es"].disable()
-            elif language == "de":  # German
-                self.checkboxes["de"].disable()
+            if language in self.checkboxes:
+                self.checkboxes[language].disable()
 
         else:
             for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):

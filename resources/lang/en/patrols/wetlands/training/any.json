@@ -71,7 +71,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -85,7 +85,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -100,7 +100,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -122,7 +122,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -138,7 +138,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -162,7 +162,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -181,7 +181,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -212,7 +212,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -226,7 +226,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -241,7 +241,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -263,7 +263,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -279,7 +279,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -303,7 +303,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -322,7 +322,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["platonic", "comfort"],
+                        "values": ["like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -622,7 +622,7 @@
         "biome": ["wetlands"],
         "season": ["any"],
         "types": ["training"],
-        "tags": ["rom_two_apps", "romantic"],
+        "tags": ["rom_two_apps", "romance"],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
@@ -644,7 +644,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -658,7 +658,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -683,7 +683,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -699,7 +699,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -713,7 +713,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -725,7 +725,7 @@
         "biome": ["wetlands"],
         "season": ["any"],
         "types": ["training"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
@@ -736,7 +736,7 @@
         "intro_text": "p_l paddles across a little streamlet on {PRONOUN/p_l/poss} way to a hump of raised ground near camp that's good for training. Upon arrival, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
-        "relationship_constraint": ["dislike_10"],
+        "relationship_constraint": ["dislikes"],
         "success_outcomes": [
             {
                 "text": "r_c shows {PRONOUN/p_l/object} a deft technique {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been working on to judge the depth and danger of quagmires, and p_l can't let {PRONOUN/p_l/self} look bad in comparison, showing off {PRONOUN/p_l/poss} battle backflip with a smug smirk.",
@@ -747,7 +747,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "dislike"],
+                        "values": ["romance"],
                         "amount": 10
                     }
                 ]
@@ -761,7 +761,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "dislike"],
+                        "values": ["romance"],
                         "amount": 10
                     }
                 ]
@@ -777,7 +777,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "dislike"],
+                        "values": ["romance"],
                         "amount": -10
                     }
                 ]
@@ -789,7 +789,7 @@
         "biome": ["wetlands"],
         "season": ["any"],
         "types": ["training"],
-        "tags": ["romantic"],
+        "tags": ["romance"],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
@@ -811,7 +811,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["p_l"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -825,7 +825,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["p_l"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -841,7 +841,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["p_l"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -866,7 +866,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["p_l"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": 5
                     }
                 ]
@@ -882,7 +882,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["p_l"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -896,7 +896,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["p_l"],
                         "mutual": true,
-                        "values": ["romantic", "platonic", "comfort"],
+                        "values": ["romance", "like", "comfort"],
                         "amount": -5
                     }
                 ]
@@ -985,7 +985,7 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": true,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         },
                         {
@@ -1006,7 +1006,7 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": true,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         },
                         {
@@ -1070,22 +1070,22 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["respect", "platonic"],
+                            "values": ["respect", "like"],
                             "amount": 10
                         },
                         {
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["comfort", "trust", "platonic"],
+                            "values": ["comfort", "trust", "like"],
                             "amount": 5
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
+                            "values": ["like"],
+                            "amount": 5
                         }
                     ]
                 }
@@ -1101,22 +1101,22 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["app1"],
                             "mutual": true,
-                            "values": ["respect", "platonic", "comfort"],
+                            "values": ["respect", "like", "comfort"],
                             "amount": -5
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["app1"],
                             "mutual": true,
-                            "values": ["dislike"],
-                            "amount": 15
+                            "values": ["like"],
+                            "amount": -15
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["app1"],
                             "mutual": false,
-                            "values": ["jealous"],
-                            "amount": 5
+                            "values": ["respect"],
+                            "amount": -5
                         }
                     ]
                 },
@@ -1138,22 +1138,22 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["s_c"],
                             "mutual": true,
-                            "values": ["respect", "platonic", "comfort"],
+                            "values": ["respect", "like", "comfort"],
                             "amount": -5
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["s_c"],
                             "mutual": true,
-                            "values": ["dislike"],
-                            "amount": 15
+                            "values": ["like"],
+                            "amount": -15
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["s_c"],
                             "mutual": false,
-                            "values": ["jealous"],
-                            "amount": 5
+                            "values": ["respect"],
+                            "amount": -5
                         }
                     ]
                 }
@@ -1187,22 +1187,22 @@
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["respect", "platonic"],
+                            "values": ["respect", "like"],
                             "amount": 10
                         },
                         {
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["comfort", "trust", "platonic"],
+                            "values": ["comfort", "trust", "like"],
                             "amount": 5
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
+                            "values": ["like"],
+                            "amount": 5
                         }
                     ]
                 }
@@ -1217,7 +1217,7 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["p_l"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": -5
                         }
                     ]
@@ -1262,15 +1262,15 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
+                            "values": ["like"],
+                            "amount": 5
                         }
                     ]
                 },
@@ -1293,15 +1293,15 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
+                            "values": ["like"],
+                            "amount": 5
                         }
                     ]
                 }
@@ -1362,15 +1362,15 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         },
                         {
                             "cats_to": ["s_c"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
+                            "values": ["like"],
+                            "amount": 5
                         }
                     ]
                 },
@@ -1393,15 +1393,15 @@
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["platonic"],
+                            "values": ["like"],
                             "amount": 5
                         },
                         {
                             "cats_to": ["s_c"],
                             "cats_from": ["patrol"],
                             "mutual": false,
-                            "values": ["dislike"],
-                            "amount": -5
+                            "values": ["like"],
+                            "amount": 5
                         }
                     ]
                 }

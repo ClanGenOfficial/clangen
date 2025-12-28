@@ -2832,7 +2832,7 @@
         },
         "weight": 20,
         "chance_of_success": 20,
-        "relationship_constraint": ["dislike_10"],
+        "relationship_constraint": ["dislikes"],
         "intro_text": "p_l can't help but think that app1 has been distracted on this patrol, trailing behind and admiring any aimless distraction nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that app1 could do with a <i>special</i> mission to get {PRONOUN/app1/object} back on track.",
         "decline_text": "After a bit of thought, p_l decides that getting an apprentice to sneak across the border probably isn't the best idea... however irritating {PRONOUN/app1/subject} {VERB/app1/were/was} being.",
         "success_outcomes": [
@@ -2872,8 +2872,8 @@
                             "cats_to": ["app1"],
                             "cats_from": ["s_c"],
                             "mutual": true,
-                            "values": ["dislike"],
-                            "amount": 5
+                            "values": ["like"],
+                            "amount": -5
                         }
                     ]
             },
@@ -2936,13 +2936,13 @@
                             "cats_to": ["app1"],
                             "cats_from": ["s_c"],
                             "mutual": true,
-                            "values": ["dislike"],
-                            "amount": 10
+                            "values": ["like"],
+                            "amount": -10
                         },
                 {
                             "cats_to": ["s_c"],
                             "cats_from": ["app1"],
-                            "values": ["platonic", "trust"],
+                            "values": ["like", "trust"],
                             "amount": -10
                         }
                 ]
@@ -2984,7 +2984,7 @@
                     "cats_to": [ "app1" ],
                     "cats_from": [ "patrol" ],
                     "mutual": false,
-                    "values": [ "platonic", "trust", "respect" ],
+                    "values": [ "like", "trust", "respect" ],
                     "amount": 10
                 }
 				]
@@ -3035,8 +3035,8 @@
                         "cats_to": [ "app1" ],
                         "cats_from": [ "patrol" ],
                         "mutual": false,
-                        "values": [ "dislike" ],
-                        "amount": 5
+                        "values": [ "like" ],
+                        "amount": -5
                     }
                 ]
             },
@@ -3054,8 +3054,8 @@
                         "cats_to": [ "app1" ],
                         "cats_from": [ "s_c" ],
                         "mutual": true,
-                        "values": [ "dislike" ],
-                        "amount": 10
+                        "values": [ "like" ],
+                        "amount": -10
                     }
                 ]
             },
@@ -3088,14 +3088,14 @@
                     {
                         "cats_to": [ "app1" ],
                         "cats_from": [ "r_c" ],
-                        "values": [ "dislike" ],
-                        "amount": 5
+                        "values": [ "like" ],
+                        "amount": -5
                     },
                     {
                         "cats_to": [ "app1" ],
                         "cats_from": [ "patrol" ],
-                        "values": [ "dislike" ],
-                        "amount": 5
+                        "values": [ "like" ],
+                        "amount": -5
                     }
                 ]
             },
@@ -3111,8 +3111,8 @@
                     {
                         "cats_from": [ "patrol" ],
                         "cats_to": [ "s_c" ],
-                        "values": [ "dislike" ],
-                        "amount": 5
+                        "values": [ "like" ],
+                        "amount": -5
                     }
                 ]
             },
@@ -3165,8 +3165,8 @@
                     {
                         "cats_to": [ "app1" ],
                         "cats_from": [ "patrol" ],
-                        "values": [ "dislike" ],
-                        "amount": 10
+                        "values": [ "like" ],
+                        "amount": -10
                     }
                 ]
             },
@@ -3200,8 +3200,8 @@
                     {
                         "cats_to": [ "app1" ],
                         "cats_from": [ "patrol" ],
-                        "values": [ "dislike" ],
-                        "amount": 5
+                        "values": [ "like" ],
+                        "amount": -5
                     }
                 ]
             },
@@ -3521,22 +3521,22 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "platonic"],
+                        "values": ["respect", "like"],
                         "amount": 10
                     },
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust", "platonic"],
+                        "values": ["comfort", "trust", "like"],
                         "amount": 5
                     },
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
+                        "values": ["like"],
+                        "amount": 5
                     }
                 ]
             }

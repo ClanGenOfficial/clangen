@@ -497,7 +497,7 @@
         },
         "weight": 20,
         "chance_of_success": 50,
-        "relationship_constraint": ["dislike_20"],
+        "relationship_constraint": ["dislikes"],
         "intro_text": "p_l and r_c have been bickering non-stop the entire time they've been patrolling.",
         "decline_text": "Unable to work together, the two return to camp.",
         "success_outcomes": [
@@ -557,9 +557,16 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["dislike", "trust", "comfort"],
+                        "values": ["trust", "comfort"],
                         "amount": 5
-                    }	
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": -5
+                    }
                 ]
             },
             {
@@ -574,7 +581,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["platonic"],
+                        "values": ["like"],
                         "amount": 5
                     }	
                 ]
@@ -601,8 +608,8 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 3
+                        "values": ["like"],
+                        "amount": -5
                     }	
                 ]
             },
@@ -625,17 +632,10 @@
                 "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 10
-                    },
-                    {
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["platonic", "respect"],
+                        "values": ["like", "respect"],
                         "amount": -5
                     }		
                 ]
@@ -651,8 +651,8 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["dislike"],
-                        "amount": 5
+                        "values": ["like"],
+                        "amount": -5
                     }	
                 ]
             }

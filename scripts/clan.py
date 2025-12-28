@@ -15,7 +15,7 @@ from random import choice, randint
 import pygame
 import ujson
 
-from scripts.cat.cats import Cat, cat_class
+from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatRank, CatGroup
 from scripts.cat.names import names
 from scripts.cat.save_load import (
@@ -37,7 +37,7 @@ from scripts.game_structure.game.switches import (
     switch_get_value,
     Switch,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import (
@@ -59,9 +59,7 @@ class Clan:
 
     age = 0
     current_season = "Newleaf"
-    all_clans = []
-    other_clans: list[CatGroup] = []
-    """List of other_clan enums currently in use."""
+    all_other_clans = []
 
     def __init__(
         self,
@@ -76,6 +74,7 @@ class Clan:
         starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
+        displayname="",
     ):
         if name == "":
             return
@@ -83,7 +82,14 @@ class Clan:
         if starting_members is None:
             starting_members = []
 
+        # name is the unique id of the clan. i'm sorry if this is confusing...
+        # TODO: change to better name like clan_id
         self.name = name
+        # displayname is the name you should use whenever displaying the clan name in UI
+        if not displayname:
+            self.displayname = name
+        else:
+            self.displayname = displayname
         self.leader = leader
         self.leader_lives = 9
         self.leader_predecessors = 0
@@ -120,7 +126,7 @@ class Clan:
         # and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
         self._reputation = 80
 
-        self.all_clans = []
+        self.all_other_clans = []
 
         self.starting_members = starting_members
         if game_mode in ("expanded", "cruel season"):
@@ -197,13 +203,16 @@ class Clan:
         )
 
         self.instructor = Cat(
-            status_dict={"rank": instructor_rank, "group": CatGroup.STARCLAN},
+            status_dict={"rank": instructor_rank, "group_ID": CatGroup.STARCLAN_ID},
+            backstory=choice(
+                BACKSTORIES["backstory_categories"]["clan_guide_backstories"]
+            ),
         )
 
         self.instructor.dead = True
         self.instructor.dead_for = randint(20, 200)
         self.add_cat(self.instructor)
-        self.all_clans = []
+        self.all_other_clans = []
 
         key_copy = tuple(Cat.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
@@ -225,16 +234,20 @@ class Clan:
 
         # give thoughts,actions and relationships to cats
         for cat_id in Cat.all_cats:
-            Cat.all_cats.get(cat_id).init_all_relationships()
-            Cat.all_cats.get(cat_id).backstory = "clan_founder"
-            if Cat.all_cats.get(cat_id).status.rank == CatRank.APPRENTICE:
-                Cat.all_cats.get(cat_id).rank_change(CatRank.APPRENTICE)
-            Cat.all_cats.get(cat_id).thoughts()
+            the_cat = Cat.all_cats.get(cat_id)
+            the_cat.init_all_relationships()
+            if the_cat != self.instructor:
+                the_cat.backstory = "clan_founder"
+            if the_cat.status.rank == CatRank.APPRENTICE:
+                the_cat.rank_change(CatRank.APPRENTICE)
+            the_cat.thoughts()
 
         save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
-            other_clan_names = [str(i.name) for i in self.all_clans] + [game.clan.name]
+            other_clan_names = [str(i.name) for i in self.all_other_clans] + [
+                game.clan.displayname
+            ]
             other_clan_name = choice(
                 names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
             )
@@ -244,7 +257,7 @@ class Clan:
                     + names.names_dict["clan_prefixes"]
                 )
             other_clan = OtherClan(name=other_clan_name)
-            self.all_clans.append(other_clan)
+            self.all_other_clans.append(other_clan)
 
         # create leader's ceremony
         self.leader.generate_lead_ceremony()
@@ -385,11 +398,13 @@ class Clan:
 
         clan_data = {
             "clanname": self.name,
+            "displayname": self.displayname,
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
             "clan_symbol": self.chosen_symbol,
             "gamemode": self.game_mode,
+            "used_group_IDs": game.used_group_IDs,
             "last_focus_change": self.last_focus_change,
             "clans_in_focus": self.clans_in_focus,
             "instructor": self.instructor.ID,
@@ -437,7 +452,7 @@ class Clan:
         clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
 
         # OTHER CLANS
-        clan_data["other_clans"] = [vars(i) for i in self.all_clans]
+        clan_data["other_clans"] = [vars(i) for i in self.all_other_clans]
 
         clan_data["war"] = self.war
 
@@ -488,12 +503,12 @@ class Clan:
         if not switch_get_value(Switch.clan_list):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
             return
         if switch_get_value(Switch.clan_list)[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
             return
         switch_set_value(
             Switch.error_message, "There was an error loading the clan.txt"
@@ -635,7 +650,7 @@ class Clan:
         if other_clans != [""]:
             for other_clan in other_clans:
                 other_clan_info = other_clan.split(";")
-                self.all_clans.append(
+                self.all_other_clans.append(
                     OtherClan(
                         other_clan_info[0], int(other_clan_info[1]), other_clan_info[2]
                     )
@@ -644,7 +659,7 @@ class Clan:
         else:
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
 
         for cat in members:
             if cat in Cat.all_cats:
@@ -662,16 +677,15 @@ class Clan:
         """
         TODO: DOCS
         """
-        other_clans = []
         if not switch_get_value(Switch.clan_list):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
             return
         if switch_get_value(Switch.clan_list)[0].strip() == "":
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
+                self.all_other_clans.append(OtherClan())
             return
 
         switch_set_value(
@@ -701,8 +715,14 @@ class Clan:
         else:
             med_cat = None
 
+        if "displayname" in clan_data:
+            displayname = clan_data["displayname"]
+        else:
+            displayname = clan_data["clanname"]
+
         game.clan = Clan(
             name=clan_data["clanname"],
+            displayname=displayname,
             leader=leader,
             deputy=deputy,
             medicine_cat=med_cat,
@@ -712,6 +732,11 @@ class Clan:
             self_run_init_functions=False,
         )
         game.clan.post_initialization_functions()
+
+        if clan_data.get("used_group_IDs"):
+            game.used_group_IDs = clan_data["used_group_IDs"]
+            for ID in game.used_group_IDs:
+                game.used_group_IDs[ID] = CatGroup(game.used_group_IDs[ID])
 
         game.clan.reputation = max(0, min(100, int(clan_data["reputation"])))
 
@@ -759,41 +784,39 @@ class Clan:
         else:
             game.clan.chosen_symbol = clan_symbol_sprite(game.clan, return_string=True)
 
-        other_clan_enums = (
-            CatGroup.OTHER_CLAN1,
-            CatGroup.OTHER_CLAN2,
-            CatGroup.OTHER_CLAN3,
-            CatGroup.OTHER_CLAN4,
-            CatGroup.OTHER_CLAN5,
-        )
         if "other_clans" in clan_data:
-            for other_clan, enum in zip(clan_data["other_clans"], other_clan_enums):
-                game.clan.all_clans.append(
+            for other_clan in clan_data["other_clans"]:
+                if not other_clan.get("group_ID"):
+                    ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
+                else:
+                    ID = other_clan["group_ID"]
+                game.clan.all_other_clans.append(
                     OtherClan(
-                        other_clan["name"],
-                        int(other_clan["relations"]),
-                        other_clan["temperament"],
-                        other_clan["chosen_symbol"],
+                        name=other_clan["name"],
+                        relations=int(other_clan["relations"]),
+                        temperament=other_clan["temperament"],
+                        chosen_symbol=other_clan["chosen_symbol"],
+                        ID=ID,
                     )
                 )
         else:
             if "other_clan_chosen_symbol" not in clan_data:
-                for name, relation, temper, enum in zip(
+                for name, relation, temper in zip(
                     clan_data["other_clans_names"].split(","),
                     clan_data["other_clans_relations"].split(","),
                     clan_data["other_clan_temperament"].split(","),
-                    other_clan_enums,
                 ):
-                    game.clan.all_clans.append(OtherClan(name, int(relation), temper))
+                    game.clan.all_other_clans.append(
+                        OtherClan(name, int(relation), temper)
+                    )
             else:
-                for name, relation, temper, symbol, enum in zip(
+                for name, relation, temper, symbol in zip(
                     clan_data["other_clans_names"].split(","),
                     clan_data["other_clans_relations"].split(","),
                     clan_data["other_clan_temperament"].split(","),
                     clan_data["other_clan_chosen_symbol"].split(","),
-                    other_clan_enums,
                 ):
-                    game.clan.all_clans.append(
+                    game.clan.all_other_clans.append(
                         OtherClan(name, int(relation), temper, symbol)
                     )
 
@@ -1258,15 +1281,13 @@ class OtherClan:
         "gracious",
     ]
 
-    other_clan_enums = (
-        CatGroup.OTHER_CLAN1,
-        CatGroup.OTHER_CLAN2,
-        CatGroup.OTHER_CLAN3,
-        CatGroup.OTHER_CLAN4,
-        CatGroup.OTHER_CLAN5,
-    )
+    def __init__(
+        self, name="", relations=0, temperament="", chosen_symbol="", ID: int = 0
+    ):
+        self.group_ID = ID
+        if not self.group_ID:
+            self.group_ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
 
-    def __init__(self, name="", relations=0, temperament="", chosen_symbol=""):
         clan_names = names.names_dict["normal_prefixes"]
         clan_names.extend(names.names_dict["clan_prefixes"])
         self.name = name or choice(clan_names)
@@ -1283,13 +1304,6 @@ class OtherClan:
             if chosen_symbol
             else clan_symbol_sprite(self, return_string=True)
         )
-
-        # assigns next un-used enum
-        for enum in self.other_clan_enums:
-            if enum not in game.clan.other_clans:
-                self.enum = enum
-                game.clan.other_clans.append(enum)
-                break
 
     def __repr__(self):
         return f"{self.name}Clan"

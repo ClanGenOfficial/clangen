@@ -219,6 +219,8 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | "romantic"      | Marks the patrol as a romance patrol. Romance patrols are special, and are filtered to require patrol leader (p_l) and random cat (r_c) to to be potential mates or current mates. If any outcomes have effects on romantic-like, make sure this tag has been added, and the romantic-like is applied to p_l and r_c. |
 | "rom_two_apps" | Does nothing on its own. When "romance" present, check for potential mate or current mate between app1 and app2, rather than p_l and r_c                                                                                                                                                                              |
+| "all_mentored"     | Checks if all apprentices (no matter if medicine cat or warrior) within a patrol has a mentor.                                                                                                                                                                                |
+| "app{index}_mentored"     | First checks if the app number (IE: app1, app2, app3, and so forth) is mentioned in patrol text, then checks if the specific apprentice assigned to the abbreviation has a mentor.                                                                                                                                                                                |
 | "disaster"     | These patrols are only possible when mass extinction is turned ON. Used to mark patrols where the entire patrol can die or become lost.                                                                                                                                                                               |
 | "new_cat"      | Used to mark when a new cat can join during this patrol. Marking these patrols allows for better balancing.                                                                                                                                                                                                           |
 | "halloween"    | Used to mark patrols that should only occur around halloween                                                                                                                                                                                                                                                          |
@@ -510,22 +512,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 ***
 
 #### relationship_constraint: List[str]
->Optional. Only allows the patrol if the cats meet relationship constraints
-
-| relationship          |                                                                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| "siblings"            | All cats on the patrol must be siblings                                                                                           |
-| "mates"               | All cats on the patrol must be mates with each-other                                                                              |
-| "mates_with_pl"       | All cats on the patrol must be mates with p_l, but don't necessarily have to be mates with each-other.                            |
-| "parent/child"        | p_l must be the parent of r_c                                                                                                     |
-| "child/parent"        | r_c must be the parent of p_l                                                                                                     |
-| "romantic_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} romantic-like to all other patrol members. |
-| "platonic_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} platonic-like to all other patrol members. |
-| "dislike_{value}"     | Value is an integer between 0 and 100. Every patrol member must have more than {value} dislike to all other patrol members.       |
-| "comfortable_{value}" | Value is an integer between 0 and 100. Every patrol member must have more than {value} comfort to all other patrol members.       |
-| "jealousy_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} jealousy to all other patrol members.      |
-| "trust_{value}"       | Value is an integer between 0 and 100. Every patrol member must have more than {value} trust to all other patrol members.         |
-
+>Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
 
 ***
 
@@ -729,14 +716,14 @@ What each parameter does, and what the options are for outcomes.
 
 >**injuries: List[str]:** Pool of injures to draw from
 >
->[Injury List](reference/index.md#__tabbed_1_1)
+>[Injury List](reference/tag-lists.md#__tabbed_1_1)
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
 >Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
 >
->[Scar List](reference/index.md#__tabbed_1_5)
+>[Scar List](reference/tag-lists.md#__tabbed_1_5)
 
 >**no_results: bool:** 
 >Optional. Controls if the injury "got" message shows up in patrol results, as well as potential history text.
@@ -770,87 +757,8 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### relationships: List[Dict[str, various]]
->Optional. Indicates effect on cat relationships. You can include as many of the following blocks as you want, in a list
->
->```
->{
->     "cats_from": [],
->   "cats_to": [],
->     "mutual": false
->     "values" [],
->     "amount": 5
->}
->```
->
->Parameter for each:
-
->**cats_from: List[str] :** The cat's whose relationship values are being edited. You are changing how the "cats_from" feels. 
-
-| string        |                                                                     |
-|---------------|---------------------------------------------------------------------|
-| "p_l"         | Patrol leader (p_l)'s feeling are effected                          |
-| "r_c"         | Random cat's feeling are effected                                   |
-| "s_c"         | stat cat (s_c)'s feeling are effected                               |
-| "app1"        | app1 (the first apprentice)'s feeling are effected                  |
-| "app2"        | app2 (the second apprentice)'s feeling are effected                 |
-| "patrol"      | The entire patrol's feeling are effected                            |
-| "clan"        | The entire clan's feeling are effected                              |
-| "n_c:{index}" | The new cat(s) with the index number {index}'s feeling are effected |
-
->**cats_to: List[str] :** The target of the relationship. You can changing how "cats_from" feel about "cats_to"
-
-| string        |                                                                           |
-|---------------|---------------------------------------------------------------------------|
-| "p_l"         | Feelings toward patrol leader (p_l) are effected                          |
-| "r_c"         | Feelings toward random cat's feeling are effected                         |
-| "s_c"         | Feelings toward stat cat (s_c) are effected                               |
-| "app1"        | Feelings toward app1 (the first apprentice) are effected                  |
-| "app2"        | Feelings toward app2 (the second apprentice) are effected                 |
-| "patrol"      | Feelings toward the entire patrol are effected                            |
-| "clan"        | Feelings toward the entire clan are effected                              |
-| "n_c:{index}" | Feelings toward the new cat(s) with the index number {index} are effected |
-
-> Group modifiers: These will modify the cats already being gathered according to the other strings. For example, a block with `"cats_from": ["clan", "low_lawful"]` will gather all the cats in the Clan with a 0-8 lawfulness facet.  These can be combined to get cats with specific ranges of multiple facets.
-
-| modifier     |                                                |
-|--------------|------------------------------------------------|
-| low_lawful   | cats with a 0-8 lawfulness facet are affected  |
-| high_lawful  | cats with a 9-16 lawfulness facet are affected |
-| low_social   | cats with a 0-8 sociable facet are affected    |
-| high_social  | cats with a 9-16 sociable facet are affected   |
-| low_stable   | cats with a 0-8 stability facet are affected   |
-| high_stable  | cats with a 9-16 stability facet are affected  |
-| low_aggress  | cats with a 0-8 aggression facet are affected  |
-| high_aggress | cats with a 9-16 aggression facet are affected |
-
-
->**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions. 
-
-| bool  |                                                                                                                                              |
-|-------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| true  | Relationship effects will be applied in both directions. Equivalent to repeating the relation block with "cats_from" and "cats_to" swapped.  |
-| false | Default. Relationship effects will be applied in a single direction.                                                                         |
-
->**values: bool :** Controls which relationship values are affected.
-
-| string     |                                                                                                                                                                                                                            |
-|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "romantic" | Romantic-like is affected. Be careful with this one! There is no automatic check to ensure the cats are potential mates. See "tags" and ensure that the correct tags are added, and "cats_to" and "cats_from" are correct. |
-| "platonic" | Platonic like is effected                                                                                                                                                                                                  |
-| "dislike"  | Dislike (hate) is effected                                                                                                                                                                                                 |
-| "comfort"  | Comfort (comfortable) is effected                                                                                                                                                                                          |
-| "jealous"  | Jealousy is effected                                                                                                                                                                                                       |
-| "trust"    | Trust (reliance) is effected                                                                                                                                                                                               |
-| "respect"  | Respect (admiration) is affected.                                                                                                                                                                                          |
-
->**amount: int :** Exact amount the relationship value will be affected. Can be positive or negative. 
-
-| int           |                                                                                                                                |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------|
-| {any integer} | The amount the relationship will be affected. 5 is a normal amount, and 15 is a large amount. Try to stay within those bounds. |
-
->
-
+>Optional. Indicates effect on cat relationships. Check [Writing Relationship Changes](reference/index.md#writing-relationship-changes) for full parameters.
+> 
 ***
 
 #### new_cat: List[List[str]]

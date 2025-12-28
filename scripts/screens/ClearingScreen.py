@@ -6,7 +6,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,

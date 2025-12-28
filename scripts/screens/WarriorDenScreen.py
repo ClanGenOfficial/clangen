@@ -13,7 +13,7 @@ from scripts.clan_package.settings.clan_settings import (
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.cat.enums import CatRank
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import SelectFocusClans
