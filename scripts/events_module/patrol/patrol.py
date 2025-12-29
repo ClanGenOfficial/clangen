@@ -15,7 +15,7 @@ from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
 from scripts.clan import Clan
 from scripts.clan_package.settings import get_clan_setting
-from scripts.events_module.event_filters import event_for_tags
+from scripts.events_module.event_filters import event_for_tags, get_frequency
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 from scripts.game_structure import localization, constants
@@ -577,6 +577,8 @@ class Patrol:
         current_season: str,
         patrol_type: str,
     ):
+        chosen_frequency = get_frequency()
+
         filtered_patrols = []
         romantic_patrols = []
         # This make sure general only gets hunting, border, or training patrols
@@ -598,87 +600,104 @@ class Patrol:
         has_mentor = {"general": general_mentor_checks, **app_number_mentor_checks}
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
-        for patrol in possible_patrols:
-            if not self._check_constraints(patrol):
-                continue
-
-            # Don't check for repeat patrols if ensure_patrol_id is being used.
-            if (
-                constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"] == ""
-                and patrol.patrol_id in self.used_patrols
-            ):
-                continue
-
-            if not (patrol.min_cats <= len(self.patrol_cats) <= patrol.max_cats):
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print(
-                        "DEBUG: requested patrol does not meet constraints (min or max cats range)"
-                    )
-                continue
-
-            flag = False
-            for sta, num in patrol.min_max_status.items():
-                if len(num) != 2:
-                    print(f"Issue with status limits: {patrol.patrol_id}")
+        while not filtered_patrols and not romantic_patrols:
+            for patrol in possible_patrols:
+                if patrol.frequency != chosen_frequency:
+                    continue
+                if not self._check_constraints(patrol):
                     continue
 
-                if not (num[0] <= self.patrol_statuses.get(sta, -1) <= num[1]):
-                    flag = True
-                    break
-            if flag:
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print(
-                        "DEBUG: requested patrol does not meet constraints (min max status)"
-                    )
-                continue
+                # Don't check for repeat patrols if ensure_patrol_id is being used.
+                if (
+                    constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]
+                    == ""
+                    and patrol.patrol_id in self.used_patrols
+                ):
+                    continue
 
-            if not event_for_tags(patrol.tags, Cat, mentor_tags_fulfilled=has_mentor):
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print("DEBUG: requested patrol does not meet constraints (tags)")
-                continue
+                if not (patrol.min_cats <= len(self.patrol_cats) <= patrol.max_cats):
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (min or max cats range)"
+                        )
+                    continue
 
-            if biome not in patrol.biome and "any" not in patrol.biome:
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print("DEBUG: requested patrol does not meet constraints (biome)")
-                continue
-            if camp not in patrol.camp and "any" not in patrol.camp:
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print("DEBUG: requested patrol does not meet constraints (camp)")
-                continue
-            if current_season not in patrol.season and "any" not in patrol.season:
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print("DEBUG: requested patrol does not meet constraints (season)")
-                continue
+                flag = False
+                for sta, num in patrol.min_max_status.items():
+                    if len(num) != 2:
+                        print(f"Issue with status limits: {patrol.patrol_id}")
+                        continue
 
-            if "hunting" not in patrol.types and patrol_type == "hunting":
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print(
-                        "DEBUG: requested patrol does not meet constraints (patrol type)"
-                    )
-                continue
-            elif "border" not in patrol.types and patrol_type == "border":
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print(
-                        "DEBUG: requested patrol does not meet constraints (patrol type)"
-                    )
-                continue
-            elif "training" not in patrol.types and patrol_type == "training":
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print(
-                        "DEBUG: requested patrol does not meet constraints (patrol type)"
-                    )
-                continue
-            elif "herb_gathering" not in patrol.types and patrol_type == "med":
-                if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                    print(
-                        "DEBUG: requested patrol does not meet constraints (patrol type)"
-                    )
-                continue
+                    if not (num[0] <= self.patrol_statuses.get(sta, -1) <= num[1]):
+                        flag = True
+                        break
+                if flag:
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (min max status)"
+                        )
+                    continue
 
-            if "romance" in patrol.tags:
-                romantic_patrols.append(patrol)
-            else:
-                filtered_patrols.append(patrol)
+                if not event_for_tags(
+                    patrol.tags, Cat, mentor_tags_fulfilled=has_mentor
+                ):
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (tags)"
+                        )
+                    continue
+
+                if biome not in patrol.biome and "any" not in patrol.biome:
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (biome)"
+                        )
+                    continue
+                if camp not in patrol.camp and "any" not in patrol.camp:
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (camp)"
+                        )
+                    continue
+                if current_season not in patrol.season and "any" not in patrol.season:
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (season)"
+                        )
+                    continue
+
+                if "hunting" not in patrol.types and patrol_type == "hunting":
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (patrol type)"
+                        )
+                    continue
+                elif "border" not in patrol.types and patrol_type == "border":
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (patrol type)"
+                        )
+                    continue
+                elif "training" not in patrol.types and patrol_type == "training":
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (patrol type)"
+                        )
+                    continue
+                elif "herb_gathering" not in patrol.types and patrol_type == "med":
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print(
+                            "DEBUG: requested patrol does not meet constraints (patrol type)"
+                        )
+                    continue
+
+                if "romance" in patrol.tags:
+                    romantic_patrols.append(patrol)
+                else:
+                    filtered_patrols.append(patrol)
+
+            if not filtered_patrols and not romantic_patrols:
+                chosen_frequency += 1 if chosen_frequency != 4 else -3
 
         # make sure the hunting patrols are balanced
         if patrol_type == "hunting":
@@ -751,7 +770,7 @@ class Patrol:
                 camp=patrol.get("camp"),
                 season=patrol.get("season"),
                 tags=patrol.get("tags"),
-                weight=patrol.get("weight", 20),
+                frequency=patrol.get("frequency", 4),
                 types=patrol.get("types"),
                 intro_text=patrol.get("intro_text"),
                 patrol_art=patrol.get("patrol_art"),
@@ -804,17 +823,41 @@ class Patrol:
         )
         fail_outcomes = PatrolOutcome.prepare_allowed_outcomes(fail_outcomes, self)
 
+        chosen_success = None
+        chosen_failure = None
+
         # Choose a success and fail outcome
-        chosen_success = choices(
-            success_outcomes, weights=[x.weight for x in success_outcomes]
-        )[0]
-        chosen_failure = choices(
-            fail_outcomes, weights=[x.weight for x in fail_outcomes]
-        )[0]
+        chosen_frequency = get_frequency()
+        while not chosen_success or not chosen_failure:
+            if not chosen_success:
+                possible_successes = [
+                    x for x in success_outcomes if x.frequency == chosen_frequency
+                ]
+                if possible_successes:
+                    chosen_success = choices(
+                        possible_successes,
+                        weights=[x.weight for x in possible_successes],
+                    )[0]
+            if not chosen_failure:
+                possible_failures = [
+                    x for x in fail_outcomes if x.frequency == chosen_frequency
+                ]
+                if possible_failures:
+                    chosen_failure = choices(
+                        possible_failures, weights=[x.weight for x in possible_failures]
+                    )[0]
+            if not chosen_success or not chosen_failure:
+                chosen_frequency += 1 if chosen_frequency != 4 else -3
 
         final_event, success = self.calculate_success(chosen_success, chosen_failure)
 
         print(f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: {success}")
+        print(
+            f"Patrol Frequency: {self.patrol_event.frequency} | Patrol Weight: {self.patrol_event.weight}"
+        )
+        print(
+            f"Fail Outcome Frequency: {chosen_failure.frequency} | Fail Outcome Weight: {chosen_failure.weight}\nSuccess Outcome Frequency: {chosen_success.frequency} | Success Outcome Weight: {chosen_success.weight}"
+        )
 
         # Run the chosen outcome
         return final_event.execute_outcome(self)
