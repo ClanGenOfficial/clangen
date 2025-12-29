@@ -43,10 +43,10 @@ class PatrolEvent:
 
         self.biome = biome if biome is not None else ["any"]
         if "any" not in self.biome:
-            self.weight += 1
+            self.weight += 4
         self.camp = camp if camp is not None else ["any"]
         if "any" not in self.camp:
-            self.weight += 1
+            self.weight += 4
         self.season = season if season is not None else ["any"]
         if "any" not in self.season:
             self.weight += len(constants.SEASONS) - len(
