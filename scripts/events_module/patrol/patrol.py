@@ -855,9 +855,11 @@ class Patrol:
         print(
             f"Patrol Frequency: {self.patrol_event.frequency} | Patrol Weight: {self.patrol_event.weight}"
         )
-        print(
-            f"Fail Outcome Frequency: {chosen_failure.frequency} | Fail Outcome Weight: {chosen_failure.weight}\nSuccess Outcome Frequency: {chosen_success.frequency} | Success Outcome Weight: {chosen_success.weight}"
-        )
+        if success:
+            print(f"Outcome Frequency: {chosen_success.frequency} | Outcome Weight: {chosen_success.weight}")
+        else:
+            print(f"Outcome Frequency: {chosen_failure.frequency} | Outcome Weight: {chosen_failure.weight}")
+
 
         # Run the chosen outcome
         return final_event.execute_outcome(self)
