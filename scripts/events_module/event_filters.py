@@ -28,6 +28,25 @@ def get_frequency() -> int:
         return 1
 
 
+def find_new_frequency(used_frequencies: set) -> int:
+    """
+    Finds and returns the next most common unused frequency.
+    """
+    possible_frequencies = (1, 2, 3, 4)
+    sorted_f = sorted(list(used_frequencies), reverse=True)
+
+    new_freq = sorted_f[0] + 1
+    if new_freq in possible_frequencies and new_freq not in used_frequencies:
+        return new_freq
+
+    new_freq = sorted_f[-1] - 1
+    if new_freq in possible_frequencies and new_freq not in used_frequencies:
+        return new_freq
+
+    else:
+        return 4
+
+
 def event_for_location(locations: list) -> bool:
     """
     checks if the clan is within the given locations

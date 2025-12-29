@@ -15,7 +15,11 @@ from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
 from scripts.clan import Clan
 from scripts.clan_package.settings import get_clan_setting
-from scripts.events_module.event_filters import event_for_tags, get_frequency
+from scripts.events_module.event_filters import (
+    event_for_tags,
+    get_frequency,
+    find_new_frequency,
+)
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 from scripts.game_structure import localization, constants
@@ -578,6 +582,7 @@ class Patrol:
         patrol_type: str,
     ):
         chosen_frequency = get_frequency()
+        used_frequencies = set()
 
         filtered_patrols = []
         romantic_patrols = []
@@ -697,7 +702,8 @@ class Patrol:
                     filtered_patrols.append(patrol)
 
             if not filtered_patrols and not romantic_patrols:
-                chosen_frequency += 1 if chosen_frequency != 4 else -3
+                used_frequencies.add(chosen_frequency)
+                chosen_frequency = find_new_frequency(used_frequencies)
 
         # make sure the hunting patrols are balanced
         if patrol_type == "hunting":
@@ -828,6 +834,7 @@ class Patrol:
 
         # Choose a success and fail outcome
         chosen_frequency = get_frequency()
+        used_frequencies = set()
         while not chosen_success or not chosen_failure:
             if not chosen_success:
                 possible_successes = [
@@ -847,7 +854,8 @@ class Patrol:
                         possible_failures, weights=[x.weight for x in possible_failures]
                     )[0]
             if not chosen_success or not chosen_failure:
-                chosen_frequency += 1 if chosen_frequency != 4 else -3
+                used_frequencies.add(chosen_frequency)
+                chosen_frequency = find_new_frequency(used_frequencies)
 
         final_event, success = self.calculate_success(chosen_success, chosen_failure)
 
