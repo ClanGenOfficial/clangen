@@ -15,7 +15,7 @@
         "min_cats": 1,
         "max_cats": 4,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The patrol comes across a turtle.",
         "decline_text": "The patrol decides to look for other prey.",
         "chance_of_success": 50,
@@ -56,7 +56,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The patrol approaches a Twoleg nest perched on the beachfront while hunting.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
@@ -105,7 +105,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The patrol approaches a Twoleg nest perched on the beachfront while hunting.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 30,
@@ -538,7 +538,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "r_c heads out along the coast alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
@@ -633,7 +633,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "r_c heads out along the coast alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
@@ -728,7 +728,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "r_c heads out along the coast alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
@@ -7229,7 +7229,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "frequency": 1,
+        "frequency": 4,
         "intro_text": "The patrol glimpses the shadows of fish as they pad past along the coast.",
         "decline_text": "The patrol ignores the fish.",
         "chance_of_success": 50,
@@ -7278,7 +7278,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 1,
+        "frequency": 4,
         "intro_text": "The patrol sees the shadow of a school of fish in the rockpools.",
         "decline_text": "The patrol ignores the fish.",
         "chance_of_success": 40,
