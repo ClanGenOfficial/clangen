@@ -22,8 +22,11 @@
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["like"],
-                    "amount": 5
+                    "values": ["like", "comfort"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat and to_cat played a silly game on patrol together."
+                    }
                 }
             ]
         },
@@ -36,8 +39,11 @@
                     "cats_to": ["patrol"],
                     "cats_from": ["patrol"],
                     "mutual": false,
-                    "values": ["like"],
-                    "amount": 3
+                    "values": ["comfort"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat and to_cat watched goat bucks on patrol together."
+                    }
                 }
             ]
         },
@@ -51,7 +57,10 @@
                     "cats_from": ["patrol"],
                     "mutual": false,
                     "values": ["like"],
-                    "amount": 7
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat and to_cat joked together after seeing goats while on patrol."
+                    }
                 }
             ]
         }
