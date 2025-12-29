@@ -28,7 +28,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! app1 and app2 tear off into the territory near camp, looking to play.",
         "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
         "chance_of_success": 70,
