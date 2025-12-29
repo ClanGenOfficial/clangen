@@ -111,7 +111,8 @@ def create_short_event(
     used_frequencies = set()
 
     chosen_event = None
-    while not chosen_event and frequency < 5:
+    already_reset = False
+    while not chosen_event:
         events = find_needed_events(
             frequency,
             event_type,
@@ -134,10 +135,14 @@ def create_short_event(
             frequency = find_new_frequency(used_frequencies)
 
             # if we've ended up with 4 frequency twice then we're out of events and it's time to reset
-            if (4 in used_frequencies and frequency == 4) and used_events:
+            if 4 in used_frequencies and frequency == 4:
                 used_events.clear()
                 used_frequencies.clear()
                 frequency = 4
+                # already_reset marks if we've already reset the used_events list while trying to find an event
+                if already_reset:
+                    break
+                already_reset = True
 
     if chosen_event:
         used_events.add(chosen_event.event_id)
