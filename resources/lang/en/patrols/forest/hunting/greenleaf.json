@@ -20,7 +20,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!",
         "decline_text": "After a moment's deliberation, r_c decides to move on.",
         "chance_of_success": 60,
@@ -85,7 +85,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 scents a squirrel on the air! Greenleaf has made prey fat and unaware, so surely this will be an easy catch?",
         "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} to move on and ignore the squirrel for now.",
         "chance_of_success": 60,
@@ -143,7 +143,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots - p_l points out a few likely destinations the squirrel may be heading to, then softly asks app1 how {PRONOUN/app1/subject}'d like to proceed.",
         "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 60,
@@ -249,7 +249,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 60,
@@ -552,7 +552,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As p_l walks through the bright foliage of greenleaf, some loud twittering from above catches {PRONOUN/p_l/poss} ear. A bird! Maybe if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} careful, {PRONOUN/p_l/subject} can catch it by surprise...",
         "decline_text": "p_l shakes {PRONOUN/p_l/poss} head and decides to leave the bird alone. It would be too much work to try and catch it from that high up, anyway.",
         "chance_of_success": 45,
@@ -619,7 +619,7 @@
                 1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 nearly thinks {PRONOUN/app1/subject}'ll have to come home empty-pawed when a rustling in the grass alerts {PRONOUN/app1/object} to prey. {PRONOUN/app1/subject/CAP} {VERB/app1/drop/drops} down into a crouch, scenting bird on the air...",
         "decline_text": "...but app1 stands up again just as quickly. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} never hunted bird before, and {VERB/app1/don't/doesn't} feel like walking back to camp with a mouthful of feathers. {PRONOUN/app1/subject/CAP}'ll find easier prey if {PRONOUN/app1/subject} just {VERB/app1/keep/keeps} walking, {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure of it.",
         "chance_of_success": 65,
@@ -674,7 +674,7 @@
                 1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "While on patrol, p_l catches the scent of a feathery fiend and flicks {PRONOUN/p_l/poss} tail to signal 'stop.' This is a perfect opportunity for app1 to practice hunting some harder prey.",
         "decline_text": "app1 complains that {PRONOUN/app1/subject}{VERB/app1/'re/'s} too tired to hunt something difficult and would rather look for a mouse or squirrel instead. p_l sighs, but relents. It's getting late in the day, anyway.",
         "chance_of_success": 75,
@@ -725,7 +725,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "The patrol is brought up short by the sound of aggressive flapping and the cries of a hawk. Approaching cautiously through the bushes, they see a red-tailed hawk, downed with a broken wing, trying in vain to get back into the sky. This could be an opportunity...",
         "decline_text": "Even with a broken wing, a hawk is a formidable adversary, and the patrol agrees not to risk getting injured for some more fresh-kill. There is plenty of prey in the forest, after all, and it's better to be safe than sorry.",
         "chance_of_success": 35,
@@ -939,7 +939,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As p_l searches for prey to hunt, {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a raven pecking in the dirt.",
         "decline_text": "Corvid meat is tough and stringy, and the birds are too clever to make easy prey. p_l decides to hunt juicier, dumber prey today.",
         "chance_of_success": 45,
@@ -985,7 +985,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
         "decline_text": "The patrol ignores the squirrel.",
         "chance_of_success": 50,
@@ -1210,7 +1210,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l hunts near the stream, hoping for an easy hunt to get out of the heat. {PRONOUN/p_l/poss/CAP} eyes lock onto a large rat drinking from the stream.",
         "decline_text": "One rat? p_l could do way better than just a single rat in greenleaf. {PRONOUN/p_l/subject/CAP} {VERB/p_l/continue/continues} on to find more rewarding prey.",
         "chance_of_success": 60,
@@ -1258,7 +1258,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 hides {PRONOUN/app1/self} in a clump of ferns, keeping as far away from the sweltering greenleaf heat as {PRONOUN/app1/subject} can. {PRONOUN/app1/poss/CAP} ears perk at the soft hiss. Seems someone else had the same idea.",
         "decline_text": "app1 decides that one rat isn't worth missing out on some fun! {PRONOUN/app1/subject/CAP} instead {VERB/app1/chase/chases} after leaves for the rest of the hunting patrol.",
         "chance_of_success": 60,
@@ -1308,7 +1308,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "p_l and app1 walk in the patches of shade, eager to leave the greenleaf sun to the plants. p_l's nose twitches at rat scent near the stream-stones, seeing two of them attempt to cross.",
         "decline_text": "Running water is always a threat to cats. p_l takes app1 somewhere else to hunt.",
         "chance_of_success": 60,
@@ -1483,7 +1483,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "A legend has been sighted. Recently, warriors have reported sighting a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
         "decline_text": "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take {PRONOUN/p_l/poss} patrol elsewhere to hunt.",
         "chance_of_success": 30,
@@ -1611,7 +1611,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Something skitters across the grass, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
@@ -1771,7 +1771,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Something skitters across the grass, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
@@ -1860,7 +1860,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The patrol comes across a vole nibbling at a seed.",
         "decline_text": "The patrol decides to look for other prey.",
         "chance_of_success": 50,
@@ -1920,7 +1920,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor.",
         "decline_text": "The patrol decides there's probably easier prey to find elsewhere.",
         "chance_of_success": 50,
@@ -2014,7 +2014,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. p_l debates turning back home.",
         "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
         "chance_of_success": 50,
@@ -5158,7 +5158,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby and drools at the thought of greenleaf fresh-kill. It's a great day for hunting, too; c_n's woods overflow with greenleaf's bounty.",
         "decline_text": "r_c ignores the mouse.",
         "chance_of_success": 60,

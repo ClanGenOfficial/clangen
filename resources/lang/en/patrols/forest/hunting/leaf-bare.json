@@ -15,7 +15,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 50,
@@ -188,7 +188,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
@@ -260,7 +260,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 50,
@@ -440,7 +440,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby, one that would be greatly appreciated for the fresh-kill pile.",
         "decline_text": "r_c ignores the mouse.",
         "chance_of_success": 30,
@@ -505,7 +505,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. But {PRONOUN/app1/subject}{VERB/app1/'re/'s} by {PRONOUN/app1/self}, and the chill of leaf-bare has stripped the forest of its green cloak. Can {PRONOUN/app1/subject} manage the catch?",
         "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 10,
@@ -563,7 +563,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. p_l congratulates {PRONOUN/app1/object} and tries to prepare app1 for the stalk as best {PRONOUN/p_l/subject} can - if app1 can catch this mouse, this is the season where it will be most valuable for the Clan.",
         "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 40,
@@ -662,7 +662,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with {PRONOUN/r_c/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c/poss} paws.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 20,
@@ -849,7 +849,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 40,
@@ -974,7 +974,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, scrounging for nuts near the base of a tree!",
         "decline_text": "After a moment's deliberation, r_c decides to move on.",
         "chance_of_success": 30,
@@ -1039,7 +1039,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 scents a squirrel on the air! Leaf-bare will make this a difficult hunt, and apprehension prickles down {PRONOUN/app1/poss} spine as {PRONOUN/app1/subject} {VERB/app1/weigh/weighs} {PRONOUN/app1/poss} options.",
         "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} to move on and ignore the squirrel for now.",
         "chance_of_success": 10,
@@ -1097,7 +1097,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. Though {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} want app1 to feel pressured, p_l makes sure {PRONOUN/app1/subject} {VERB/app1/know/knows} how valuable a leaf-bare squirrel would be to {PRONOUN/app1/poss} Clanmates before asking what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
         "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 40,
@@ -1203,7 +1203,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 40,
@@ -1612,7 +1612,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "p_l scouts out the frozen trees, spying a skeletal rat underneath a low branch.",
         "decline_text": "p_l is determined <i>not</i> to become an icicle's next victim, and decides to hunt elsewhere.",
         "chance_of_success": 40,
@@ -1658,7 +1658,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 leaps onto a frozen log, listening to the silence surrounding {PRONOUN/app1/object}. {PRONOUN/app1/subject/CAP} caught the scent of a rat near this log, but will it really be that easy?",
         "decline_text": "app1 knows that rats are dangerous, especially with {PRONOUN/app1/object} being on {PRONOUN/app1/poss} own, and decides to hunt for safer prey elsewhere.",
         "chance_of_success": 40,
@@ -1708,7 +1708,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "p_l and app1 stand near the frozen stream, watching two rats fighting for the last bit of seed strewn along the edge.",
         "decline_text": "Rats fighting over food can easily turn into rats fighting cats for a more filling meal. They wisely decide to hunt something else.",
         "chance_of_success": 40,
@@ -1882,7 +1882,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "A legend has been sighted. Recently, warriors have reported sighting a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
         "decline_text": "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take {PRONOUN/p_l/poss} patrol elsewhere to hunt.",
         "chance_of_success": 20,
@@ -2008,7 +2008,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "While hunting through the snow-covered forest, a flash of scarlet catches p_l's eye. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, tail-tip twitching, and scent the air for prey.",
         "decline_text": "A cardinal would be paltry prey; the Clan needs more filling meals. p_l leaves it be, knowing {PRONOUN/p_l/subject} would expend too much precious energy trying to hunt the bird anyway.",
         "chance_of_success": 65,
@@ -2062,7 +2062,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Snow crunches beneath app1's paws as {PRONOUN/app1/subject} {VERB/app1/walk/walks} through the still, cold forest. The scent of bird catches {PRONOUN/app1/poss} attention, and {PRONOUN/app1/subject} {VERB/app1/freeze/freezes} mid-step.",
         "decline_text": "app1 decides not to pursue the bird. {PRONOUN/app1/subject/CAP} {VERB/app1/have/has} never hunted one alone before, and the loud crunching of the snow would surely make {PRONOUN/app1/poss} hunt more difficult than necessary.",
         "chance_of_success": 55,
@@ -2116,7 +2116,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l leads app1 through the snow-covered forest, showing {PRONOUN/app1/object} how to distribute {PRONOUN/app1/poss} weight across {PRONOUN/app1/poss} paws to avoid sinking and to move silently. Suddenly, p_l flicks {PRONOUN/p_l/poss} tail: {PRONOUN/p_l/subject} {VERB/p_l/have/has} spotted a bird up ahead.",
         "decline_text": "app1 shakes {PRONOUN/app1/poss} head when p_l asks if {PRONOUN/app1/subject}'d like to try {PRONOUN/app1/poss} paws at hunting a bird. {PRONOUN/app1/subject/CAP} {VERB/app1/'re/'s} just getting used to navigating in the snow quietly; surely catching a bird will be too difficult at the moment.",
         "chance_of_success": 55,
@@ -2290,7 +2290,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As p_l leads the patrol through the snow-covered forest, the sound of birdcall gives {PRONOUN/p_l/object} pause. Up ahead is an entire flock of songbirds pecking at a patch of exposed ground!",
         "decline_text": "Although the temptation of so many birds in one spot is certainly strong, p_l decides against trying to coordinate the patrol to catch them all at once, opting to search for different prey today.",
         "chance_of_success": 65,
@@ -2409,7 +2409,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/give/gives} up on digging out an escaped mouse from its snowy tunnels, r_c <i>swears</i> {PRONOUN/r_c/subject} can smell something.",
         "decline_text": "Must be the wind, blowing a stale scent back at {PRONOUN/r_c/object}.",
         "chance_of_success": 60,
@@ -2538,7 +2538,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The gentle speckles of snow falling from the sky don't dissuade r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} the canopy of the forest will shelter {PRONOUN/r_c/object} while {PRONOUN/r_c/subject} {VERB/r_c/hunt/hunts}.",
         "decline_text": "...But if the snow gets worse, it'd be a different story - maybe it's better to wait until the weather clears, after all.",
         "chance_of_success": 30,
@@ -2661,7 +2661,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 30,
@@ -2841,7 +2841,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Surely it's not snowing too much to go hunt - app1 wants fresh prey, not the half-frozen stuff on the fresh-kill pile.",
         "decline_text": "...Maybe it'd be better to wait until {PRONOUN/app1/poss} mentor is free to take {PRONOUN/app1/object} on a hunting patrol.",
         "chance_of_success": 30,
@@ -2979,7 +2979,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 30,
@@ -4489,7 +4489,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby, one that would be greatly appreciated for the fresh-kill pile.",
         "decline_text": "r_c ignores the mouse.",
         "chance_of_success": 30,
@@ -4554,7 +4554,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. But {PRONOUN/app1/subject} {VERB/app1/'re/'s} by {PRONOUN/app1/self}, and the chill of leaf-bare has stripped the forest of its green cloak. Can {PRONOUN/app1/subject} manage the catch?",
         "decline_text": "app1 ignores the mouse.",
         "chance_of_success": 10,
@@ -4612,7 +4612,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. p_l congratulates {PRONOUN/app1/object} and tries to prepare app1 for the stalk as best {PRONOUN/app1/subject} can - if app1 can catch this mouse, this is the season where it will be most valuable for the Clan.",
         "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 40,
@@ -4711,7 +4711,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with {PRONOUN/r_c/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c/poss} paws.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 20,
@@ -4903,7 +4903,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 10,
@@ -8745,7 +8745,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "The patrol comes across a large rat. It's too busy digging around in a frozen pile of foul Twoleg crowfood to notice the approaching patrol.",
         "decline_text": "p_l decides to look for other prey, leaving the patrol as desperate for food as the rat.",
         "chance_of_success": 40,
@@ -9010,7 +9010,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "chance_of_success": 40,
         "pl_skill_constraint": [
             "STORY,1",

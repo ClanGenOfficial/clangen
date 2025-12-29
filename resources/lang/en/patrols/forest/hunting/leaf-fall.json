@@ -20,7 +20,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
         "decline_text": "After a moment's deliberation, r_c decides to move on.",
         "chance_of_success": 50,
@@ -85,7 +85,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 scents a squirrel on the air! The dried leaves on the ground make {PRONOUN/app1/object} a little nervous, and {PRONOUN/app1/subject} {VERB/app1/wonder/wonders} if {PRONOUN/app1/subject} can navigate quietly enough to catch it...",
         "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} to move on and ignore the squirrel for now.",
         "chance_of_success": 30,
@@ -143,7 +143,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. Leaf-fall makes hunting a little trickier, and p_l gently prompts app1 to see if {PRONOUN/app1/subject} {VERB/app1/remember/remembers} how to navigate the leaf-litter.",
         "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 50,
@@ -249,7 +249,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 50,
@@ -427,7 +427,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the patrol crunches through the dead leaves littering the woods, r_c explains an idea {PRONOUN/r_c/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
         "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
         "chance_of_success": 60,
@@ -725,7 +725,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l travels through the blustery wind to hunt. In a pile of leaves, {PRONOUN/p_l/subject} {VERB/p_l/swear/swears} {PRONOUN/p_l/subject} could see a rat's tail.",
         "decline_text": "It <i>could</i> be a single rat... or it could be a swarm of them lying in wait. Either way, it's too risky for p_l to pursue.",
         "chance_of_success": 60,
@@ -771,7 +771,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l traverses the windy forest, trying {PRONOUN/p_l/poss} best to focus and not get distracted by the dancing leaves when {PRONOUN/p_l/subject} {VERB/p_l/catch/catches} the scent of a rat nearby.",
         "decline_text": "p_l decides that one rat isn't worth missing out on some fun! {PRONOUN/p_l/subject/CAP} instead {VERB/p_l/chase/chases} after leaves for the rest of the hunting patrol.",
         "chance_of_success": 60,
@@ -821,7 +821,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l and app1 make their way towards a troop of mushrooms, eager to get more prey for the Clan. They hear rats squeaking amongst the fungi, and begin to plot their plan of attack.",
         "decline_text": "p_l eventually decides to lead {PRONOUN/p_l/poss} patrol elsewhere. Who knows what dangerous effect those mushrooms could have on them.",
         "chance_of_success": 60,
@@ -993,7 +993,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "A legend has been sighted. Recently, warriors have reported sighting a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
         "decline_text": "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
         "chance_of_success": 30,
@@ -1115,7 +1115,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
@@ -1275,7 +1275,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
@@ -4216,7 +4216,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby. It'll be fat on the nuts and acorns leaf-fall scatters through the forest, and if r_c can only avoid the leaves crunching under {PRONOUN/r_c/poss} paws it's as good as caught.",
         "decline_text": "r_c ignores the mouse.",
         "chance_of_success": 50,
@@ -4281,7 +4281,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. {PRONOUN/app1/subject/CAP} {VERB/app1/look/looks} at the leaf litter on the ground - {VERB/app1/are/is} {PRONOUN/app1/subject} good enough to stalk without being heard?",
         "decline_text": "app1 ignores the mouse.",
         "chance_of_success": 30,
@@ -4339,7 +4339,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. p_l nods and asks {PRONOUN/app1/object} if app1 remembers {PRONOUN/p_l/poss} tips on stalking on leaf-fall's, well, fallen leaves.",
         "decline_text": "app1 and p_l move on to hunt different prey.",
         "chance_of_success": 50,
@@ -4438,7 +4438,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c seems absolutely unconcerned with {PRONOUN/r_c/poss} duties, ambling along as through the prey is going to waltz into {PRONOUN/r_c/poss} paws.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 20,
@@ -4630,7 +4630,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 10,
@@ -4755,7 +4755,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The air feels tense - r_c is sure that a storm is on its way to pull more leaves from the forest's canopy. If {PRONOUN/r_c/subject} {VERB/r_c/are/is} going to hunt, {PRONOUN/r_c/subject} should do it now.",
         "decline_text": "No, {PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to reinforce the ceiling of the warriors' den instead. r_c doesn't want a wet nest tonight.",
         "chance_of_success": 50,
@@ -4869,7 +4869,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "app1 hears the senior warriors chatting about an incoming storm. {PRONOUN/app1/subject/CAP} could go out for a quick hunt - {PRONOUN/app1/subject} would much rather do that, bring some prey home, and then earn a break from {PRONOUN/app1/poss} chores to wait out the rain.",
         "decline_text": "...Maybe it'd be better to wait until {PRONOUN/app1/poss} mentor is free to take {PRONOUN/app1/object} on a hunting patrol. Even if {PRONOUN/app1/subject} {VERB/app1/get/gets} damp.",
         "chance_of_success": 40,
@@ -4965,7 +4965,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l spots a dappled, feathered back and a bright orange chest nestled amongst some moss on the forest floor.",
         "decline_text": "A brambling would be too paltry of a meal for the Clan. p_l decides to look for larger prey.",
         "chance_of_success": 45,
