@@ -856,10 +856,13 @@ class Patrol:
             f"Patrol Frequency: {self.patrol_event.frequency} | Patrol Weight: {self.patrol_event.weight}"
         )
         if success:
-            print(f"Outcome Frequency: {chosen_success.frequency} | Outcome Weight: {chosen_success.weight}")
+            print(
+                f"Outcome Frequency: {chosen_success.frequency} | Outcome Weight: {chosen_success.weight}"
+            )
         else:
-            print(f"Outcome Frequency: {chosen_failure.frequency} | Outcome Weight: {chosen_failure.weight}")
-
+            print(
+                f"Outcome Frequency: {chosen_failure.frequency} | Outcome Weight: {chosen_failure.weight}"
+            )
 
         # Run the chosen outcome
         return final_event.execute_outcome(self)
@@ -990,27 +993,24 @@ class Patrol:
             else game.clan.override_biome
         )
         season = game.clan.current_season
-        possible_prey_size = []
-        idx = 0
         prey_size = ["very_small", "small", "medium", "large", "huge"]
-        for amount in PATROL_BALANCE[biome][season]:
-            possible_prey_size.extend(repeat(prey_size[idx], amount))
-            idx += 1
-        chosen_prey_size = choice(possible_prey_size)
+
+        chosen_prey_size = choices(prey_size, weights=PATROL_BALANCE[biome][season])[0]
         print(f"chosen filter prey size: {chosen_prey_size}")
 
         # filter all possible patrol depending on the needed prey size
         for patrol in possible_patrols:
             for adaption, needed_weight in PATROL_WEIGHT_ADAPTION.items():
-                if needed_weight[0] <= patrol.weight < needed_weight[1]:
+                if needed_weight == patrol.frequency:
                     # get the amount of class sizes which can be increased
                     increment = int(adaption.split("_")[0])
                     new_idx = prey_size.index(chosen_prey_size) + increment
-                    # check that the increment does not lead to a overflow
+                    # check that the increment does not lead to an overflow
                     new_idx = (
                         new_idx if new_idx < len(prey_size) else len(prey_size) - 1
                     )
                     chosen_prey_size = deepcopy(prey_size[new_idx])
+                    break
 
             # now count the outcomes + prey size
             prey_types = {}
