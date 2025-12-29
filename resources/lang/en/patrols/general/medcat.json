@@ -3108,7 +3108,7 @@
                 1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c trots over to p_l, the two cats grinning at each other with raised tails. p_l wants an escort to gather herbs, and as luck would have it, the only cat free at the moment is {PRONOUN/p_l/poss} sibling, r_c!",
         "decline_text": "... Or so they thought. r_c is called away by the deputy, and {PRONOUN/r_c/subject} {VERB/r_c/rush/rushes} off with an apologetic glance back, leaving p_l by {PRONOUN/p_l/self} with {PRONOUN/p_l/poss} tail sagging to the ground.",
         "chance_of_success": 50,
@@ -4660,7 +4660,7 @@
                 1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm.",
         "decline_text": "The distant call of a Twoleg makes the cats think better of the whole idea.",
         "chance_of_success": 60,
@@ -4722,7 +4722,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm.",
         "decline_text": "The distant call of a Twoleg makes the cats think better of the whole idea.",
         "chance_of_success": 60,
@@ -5853,7 +5853,7 @@
         "relationship_constraint": [
             "child/parent"
         ],
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "It's a rare occasion when r_c gets to actually patrol with {PRONOUN/r_c/poss} kit. Their differing roles mean the pair hardly see each other, and it feels like forever since they were alone together.",
         "decline_text": "Noticing storm clouds above, p_l decides to head back to camp before it starts raining. Their catch-up would have to wait.",
         "chance_of_success": 60,
@@ -6974,7 +6974,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "chance_of_success": 50,
         "intro_text": "app1 and app2 head out to collect herbs together.",
         "decline_text": "A Clanmate calls them back to camp.",
@@ -7879,7 +7879,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "chance_of_success": 50,
         "intro_text": "A patrol of medicine cat apprentices heads out to collect herbs together.",
         "decline_text": "A Clanmate calls them back to camp.",
