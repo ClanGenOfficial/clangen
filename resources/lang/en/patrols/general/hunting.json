@@ -127,7 +127,7 @@
                         "values": ["comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "When cat_from mentioned {PRONOUN/cat_from/poss} dream while on patrol, cat_to's reaction left cat_from feeling uncomfortable."
+                            "cats_from": "When from_cat mentioned {PRONOUN/from_cat/poss} dream while on patrol, to_cat's reaction left from_cat feeling uncomfortable."
                         }
                     },
                     {
@@ -137,7 +137,7 @@
                         "values": ["respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from can't believe <i>cat_to</i> would receive a vision instead of cat_from."
+                            "cats_from": "from_cat can't believe <i>to_cat</i> would receive a vision instead of from_cat."
                         }
                     }
                 ],
@@ -156,7 +156,7 @@
                         "values": ["respect", "like"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from didn't appreciate cat_to's nonsensical input on {PRONOUN/cat_from/poss} dream."
+                            "cats_from": "from_cat didn't appreciate to_cat's nonsensical input on {PRONOUN/from_cat/poss} dream."
                         }
                     }
                 ],
@@ -1732,7 +1732,7 @@
                     "values": ["respect", "trust"],
                     "amount": 5,
                         "log": {
-                            "cats_from": "cat_to's leadership led to a successful hunting patrol."
+                            "cats_from": "to_cat's leadership led to a successful hunting patrol."
                         }
                 }
             ],
@@ -1750,7 +1750,7 @@
                     "values": ["respect", "trust"],
                     "amount": 5,
                         "log": {
-                            "cats_from": "cat_to's leadership led to a successful hunting patrol."
+                            "cats_from": "to_cat's leadership led to a successful hunting patrol."
                         }
                 }
             ],
@@ -1770,7 +1770,7 @@
                     "values": ["respect"],
                     "amount": 5,
                         "log": {
-                            "cats_from": "cat_to's hunting skills impressed cat_from."
+                            "cats_from": "to_cat's hunting skills impressed from_cat."
                         }
                 }
             ],
@@ -2777,7 +2777,7 @@
                     "values": ["respect"],
                     "amount": 10,
                         "log": {
-                            "cats_from": "cat_to makes {PRONOUN/cat_to/self} incredibly irritating while on a hunting patrol with cat_from."
+                            "cats_from": "to_cat makes {PRONOUN/to_cat/self} incredibly irritating while on a hunting patrol with from_cat."
                         }
                 }
             ],
@@ -2908,7 +2908,7 @@
                     "values": ["respect", "like", "comfort"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "cat_to proved {PRONOUN/cat_to/self} a great hunter, and a humble one too, while hunting with cat_from."
+                        "cats_from": "to_cat proved {PRONOUN/to_cat/self} a great hunter, and a humble one too, while hunting with from_cat."
                     }
                 }
 
@@ -2929,7 +2929,7 @@
                     "values": ["like", "respect"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_to proved {PRONOUN/cat_to/self} a mouse-heart while on an adventure with cat_from."
+                        "cats_from": "to_cat proved {PRONOUN/to_cat/self} a mouse-heart while on an adventure with from_cat."
                     }
                 }
             ]
@@ -3040,7 +3040,7 @@
                     "values": ["respect", "trust", "like", "comfort"],
                     "amount": 5,
                         "log": {
-                            "cats_from": "cat_to is really helpful while on a hunting patrol with cat_from."
+                            "cats_from": "to_cat is really helpful while on a hunting patrol with from_cat."
                         }
                 }
             ],
@@ -3394,7 +3394,7 @@
             	"values": ["respect", "like"],
             	"amount": 10,
                 "log": {
-                    "cats_from": "to_cat and cat_from managed to work together nicely while on a hunting patrol."
+                    "cats_from": "to_cat and from_cat managed to work together nicely while on a hunting patrol."
                 }
 		}
 	    ]
@@ -3413,7 +3413,7 @@
             	"values": ["like"],
             	"amount":  5,
                 "log": {
-                    "cats_from": "to_cat and cat_from managed to work together well enough while on a hunting patrol."
+                    "cats_from": "to_cat and from_cat managed to work together well enough while on a hunting patrol."
                 }
 		}
 	    ]
@@ -3431,7 +3431,7 @@
             	"values": ["trust", "respect"],
             	"amount": 10,
                 "log": {
-                    "cats_from": "to_cat and cat_from managed to work together nicely while on a hunting patrol."
+                    "cats_from": "to_cat and from_cat managed to work together nicely while on a hunting patrol."
                 }
 		}
 	    ],
@@ -3454,7 +3454,7 @@
             	"values": ["like"],
             	"amount": -10,
                 "log": {
-                    "cats_from": "to_cat and cat_from couldn't manage to work together on a hunting patrol."
+                    "cats_from": "to_cat and from_cat couldn't manage to work together on a hunting patrol."
                 }
 		}
 	    ]
@@ -3473,7 +3473,7 @@
             	"values": ["like"],
             	"amount": -10,
                 "log": {
-                    "cats_from": "to_cat and cat_from couldn't manage to work together on a hunting patrol."
+                    "cats_from": "to_cat and from_cat couldn't manage to work together on a hunting patrol."
                 }
 		},
             {
@@ -3483,7 +3483,7 @@
             	"values": ["comfort"],
             	"amount": -10,
                 "log": {
-                    "cats_from": "cat_to blew up at cat_from during a hunting patrol."
+                    "cats_from": "to_cat blew up at from_cat during a hunting patrol."
                 }
 		}
 	    ]
@@ -3502,7 +3502,7 @@
             	"values": ["like"],
             	"amount": -15,
                 "log": {
-                    "cats_from": "to_cat and cat_from couldn't manage to work together on a hunting patrol."
+                    "cats_from": "to_cat and from_cat couldn't manage to work together on a hunting patrol."
                 }
 		},
             {
@@ -3512,7 +3512,7 @@
             	"values": ["comfort", "trust"],
             	"amount": -15,
                 "log": {
-                    "cats_from": "cat_to blew up and hurt cat_from during a hunting patrol."
+                    "cats_from": "to_cat blew up and hurt from_cat during a hunting patrol."
                 }
 		}
 	    ],
@@ -3620,7 +3620,7 @@
             	"values": ["respect"],
             	"amount": 5,
                 "log": {
-                    "cats_from": "cat_to proved {PRONOUN/cat_to/self} an adept mediator during a hunting patrol."
+                    "cats_from": "to_cat proved {PRONOUN/to_cat/self} an adept mediator during a hunting patrol."
                 }
 		}
 	    ],
@@ -3639,7 +3639,7 @@
             	"values": ["respect"],
             	"amount": 5,
                 "log": {
-                    "cats_from": "cat_to and cat_from enjoyed some friendly competition while hunting."
+                    "cats_from": "to_cat and from_cat enjoyed some friendly competition while hunting."
                 }
 		}
 	    ],
@@ -3662,7 +3662,7 @@
                         "values": ["respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_to suggested a childish competition while on a hunting patrol with cat_from."
+                            "cats_from": "to_cat suggested a childish competition while on a hunting patrol with from_cat."
                         }
                     },
             {
@@ -3672,7 +3672,7 @@
                         "values": ["comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_to shot down cat_from's idea in a demeaning and embarrassing way."
+                            "cats_from": "to_cat shot down from_cat's idea in a demeaning and embarrassing way."
                         }
                     }
                 ]
@@ -3690,7 +3690,7 @@
                         "values": ["respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_to suggested a childish competition while on a hunting patrol with cat_from."
+                            "cats_from": "to_cat suggested a childish competition while on a hunting patrol with from_cat."
                         }
                     }
                 ]
@@ -3708,7 +3708,7 @@
                         "values": ["like", "respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_to was on a patrol with cat_from where no one could decide on the rules of an impromptu hunting competition."
+                            "cats_from": "to_cat was on a patrol with from_cat where no one could decide on the rules of an impromptu hunting competition."
                         }
                     }
                 ]
@@ -3726,7 +3726,7 @@
                         "values": ["respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_to got too excited during an impromptu hunting competition and ruined it for everyone else, including cat_from."
+                            "cats_from": "to_cat got too excited during an impromptu hunting competition and ruined it for everyone else, including from_cat."
                         }
                     }
                 ]
@@ -3744,7 +3744,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_to got too competitive during an impromptu hunting competition and ruined it for everyone else, including cat_from."
+                            "cats_from": "to_cat got too competitive during an impromptu hunting competition and ruined it for everyone else, including from_cat."
                         }
                     }
                 ]
