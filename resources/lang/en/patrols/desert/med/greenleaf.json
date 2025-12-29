@@ -32,7 +32,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l and r_c head out to look for herbs, discussing the latest news. They tread carefully, searching methodically. Greenleaf has few herbs left for them to gather.",
         "decline_text": "It seems like some mischievous cat has gotten into the herb storage and they have to sort it all over again.",
         "chance_of_success": 20,
@@ -142,7 +142,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
         "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
         "chance_of_success": 20,

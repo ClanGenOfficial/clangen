@@ -32,7 +32,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l and r_c head out to look for herbs, discussing the latest news and taking advantage of the rains of leaf-bare.",
         "decline_text": "It seems like some mischievous cat has gotten into the herb storage and they have to sort it all over again.",
         "chance_of_success": 70,
@@ -142,7 +142,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
         "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
         "chance_of_success": 70,
@@ -262,7 +262,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -354,7 +354,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -494,7 +494,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -587,7 +587,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -694,7 +694,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -779,7 +779,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -871,7 +871,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -969,7 +969,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -1088,7 +1088,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -1193,7 +1193,7 @@
                 5
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without a care in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",
         "decline_text": "p_l takes {PRONOUN/app1/object} down to a stream to clean out {PRONOUN/app1/poss} mouth.",
         "chance_of_success": 30,
@@ -1361,7 +1361,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Listen to the wisdom of the sages, p_l meows. app1 doesn't just need to learn to set bones and clean wounds; being a medicine cat is so much more than blood and bodies.",
         "decline_text": "They're interrupted by a Clanmate who needs them. It halts the lesson, but also reinforces p_l's point.",
         "chance_of_success": 30,

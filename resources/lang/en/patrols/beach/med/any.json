@@ -180,7 +180,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in {PRONOUN/p_l/poss} territory, as well as where and when to burrow into the sand to find the more potent roots {PRONOUN/p_l/subject} {VERB/p_l/tend/tends} to use.",
         "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at app1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when app1 is more focused... and less liable to get sand everywhere, or damage the herbs.",
         "chance_of_success": 65,
@@ -293,7 +293,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "app1 has been sent out onto the beaches to try to find some specific herbs alone.",
         "decline_text": "Nervous and sneezing due to the salty air, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp and try again another day. {PRONOUN/app1/poss/CAP} mentor won't be very pleased, but {PRONOUN/app1/subject} {VERB/app1/rationalize/rationalizes} that it's better to go with confidence than nerves.",
         "chance_of_success": 65,
@@ -362,7 +362,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks {PRONOUN/app1/poss} mentor what they'll do if the rabbits have eaten all of it, and p_l responds that they'll cross that river when they get to it.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave.",
         "chance_of_success": 60,
@@ -426,7 +426,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l pads out of camp, ready to gather some herbs for the Clan. The wind gently rustles through the beach grass as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along.",
         "decline_text": "Before {PRONOUN/p_l/subject} {VERB/p_l/get/gets} more than a few pawsteps away, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} called back to camp. Apparently, something more pressing has come up.",
         "chance_of_success": 50,
@@ -469,7 +469,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs {PRONOUN/p_l/subject} can spot. {PRONOUN/p_l/poss/CAP} whiskers want to twitch with every raindrop that hits {PRONOUN/p_l/object}, but the Clan doesn't have the luxury to sit inside away from the weather.",
         "decline_text": "Someone calls p_l back, and the patrol is forgotten as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} a Clanmate.",
         "chance_of_success": 30,
@@ -577,7 +577,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 80,
@@ -645,7 +645,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 80,
@@ -749,7 +749,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "c_n can never have enough cobwebs, p_l instructs {PRONOUN/p_l/poss} team, leading them out to search for them.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -885,7 +885,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -952,7 +952,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores. app1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind - especially when also bringing {PRONOUN/p_l/poss} apprentice - and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -1099,7 +1099,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Bringing a motley assortment of Clanmates along with {PRONOUN/p_l/object}, p_l heads out on an herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -1206,7 +1206,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/go/goes} to leave. Moss will have to wait.",
         "chance_of_success": 80,
@@ -1265,7 +1265,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as p_l goes to leave. Moss will have to wait.",
         "chance_of_success": 80,
@@ -1346,7 +1346,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as p_l goes to leave. Moss will have to wait.",
         "chance_of_success": 80,
@@ -1427,7 +1427,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as p_l goes to leave. Moss will have to wait.",
         "chance_of_success": 30,
@@ -1516,7 +1516,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along app1 as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence.",
         "decline_text": "Just before the two can leave, a cat calls for their attention.",
         "chance_of_success": 60,
@@ -1594,7 +1594,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along r_c as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence.",
         "decline_text": "Just before the two can leave, a cat calls for their attention.",
         "chance_of_success": 60,
@@ -1681,7 +1681,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "p_l and r_c head inland to look for herbs, discussing the latest news.",
         "decline_text": "It seems like some mischievous cat has gotten into the herb storage, and they have to sort it all over again.",
         "chance_of_success": 50,
@@ -1791,7 +1791,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
         "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
         "chance_of_success": 50,
@@ -1921,7 +1921,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 70,
@@ -2042,7 +2042,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
@@ -2163,7 +2163,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
@@ -2284,7 +2284,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
@@ -2516,7 +2516,7 @@
                 3
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
@@ -2628,7 +2628,7 @@
                 4
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
@@ -2740,7 +2740,7 @@
                 5
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
@@ -2852,7 +2852,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them, plants don't run away!",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 40,
@@ -2974,7 +2974,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "p_l comes up to meet r_c, quietly apologizing about app2 being sent to help p_l collect moss.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 70,
@@ -3100,7 +3100,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the apprentices head out to collect moss, app3 screws up {PRONOUN/app3/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
@@ -3218,7 +3218,7 @@
                 4
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the apprentices head out to collect moss, app3 screws up {PRONOUN/app3/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 10,
@@ -3333,7 +3333,7 @@
                 3
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The apprentices are sent off into the territory to gather moss for the medicine cat den.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,
@@ -3445,7 +3445,7 @@
                 4
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 10,
@@ -3560,7 +3560,7 @@
                 5
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the apprentices head out to collect moss, app3 screws up {PRONOUN/app3/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 10,
@@ -3675,7 +3675,7 @@
                 5
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 10,
@@ -3789,7 +3789,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the apprentices head out to collect moss, app3 screws up {PRONOUN/app3/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 10,
@@ -3900,7 +3900,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 10,
@@ -4012,7 +4012,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "It's been one of the worst storms of the season, leaving p_l in an unavoidably grumpy mood. Herbs strewn about, prey in hiding, it's going to take forever to find anything. r_c attempts to find a way to cheer up the healer.",
         "decline_text": "Before r_c can come up with a plan, a cry from the camp forces p_l to return in a hurry.",
         "chance_of_success": 60,

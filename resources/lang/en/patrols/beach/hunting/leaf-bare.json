@@ -20,7 +20,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, scrounging in the sand for its stashed-away food.",
         "decline_text": "p_l watches it for a moment then turns away and leaves. There's still time before leaf-bare, and if {PRONOUN/p_l/subject} {VERB/p_l/wait/waits} just a bit, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure to catch something even bigger.",
         "chance_of_success": 30,
@@ -85,7 +85,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "app1 has snuck out of camp alone, hoping {PRONOUN/app1/subject}'ll find a nice fat ground squirrel. Running through everything {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been taught in {PRONOUN/app1/poss} head, {PRONOUN/app1/subject} carefully {VERB/app1/scent/scents} the air and {VERB/app1/strain/strains} {PRONOUN/app1/poss} ears, hoping for any hint of the burrowing critters in the stony outcrop they like to nest in.",
         "decline_text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} focusing so hard, {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice a Clanmate is standing silently behind {PRONOUN/app1/object}, waiting for {PRONOUN/app1/object} to notice that {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been caught red-pawed. Oops!",
         "chance_of_success": 10,
@@ -143,7 +143,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l and app1 sit on the beach, near a network of ground squirrel burrows hidden in the stones. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. app1 scents the air as instructed and points out a burrow; sure enough, there's a squirrel's head poking out the entrance!",
         "decline_text": "p_l praises {PRONOUN/app1/object} and smiles but reminds app1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
         "chance_of_success": 40,
@@ -240,7 +240,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once they realize what's making it - there's a rattlesnake, staring down a ground squirrel!",
         "decline_text": "The patrol wastes no time in turning tail and going home, not wanting to risk being on the receiving end of a rattlesnake even if there's a squirrel to be caught.",
         "chance_of_success": 20,
@@ -404,7 +404,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l's patrol strolls leisurely along the coastline, careful to avoid the chilly spray of the waves. One cat raises their tail, signaling for the others to be still; they've scented ground squirrels nearby.",
         "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
         "chance_of_success": 30,
@@ -524,7 +524,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
@@ -689,7 +689,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
@@ -759,7 +759,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
@@ -917,7 +917,7 @@
                 2
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. The ocean might be as full of life as ever, but the extra motivation is really worth it to get over the unpleasantly cold water one has to stick one's paws into.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -1069,7 +1069,7 @@
                 2
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentices' den together, but with their different mentors and focuses and skills - it's not the same as it was back in the nursery as siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -1167,7 +1167,7 @@
                 2
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -1263,7 +1263,7 @@
                 3
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The three siblings head out together, declaring a friendly competition to stock the fresh-kill pile. The ocean might be as full of life as ever, but the extra motivation is really worth it to get over the unpleasantly cold water one has to stick one's paws into.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -1412,7 +1412,7 @@
                 3
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -1510,7 +1510,7 @@
                 3
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} siblings are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -1606,7 +1606,7 @@
                 4
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The four siblings head out together, declaring a friendly competition to stock the fresh-kill pile. The ocean might be as full of life as ever, but the extra motivation is really worth it to get over the unpleasantly cold water one has to stick one's paws into.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -1755,7 +1755,7 @@
                 4
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but with their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -1853,7 +1853,7 @@
                 4
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} siblings are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -1949,7 +1949,7 @@
                 5
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The five siblings head out together, declaring a friendly competition to stock the fresh-kill pile. The ocean might be as full of life as ever, but the extra motivation is really worth it to get over the unpleasantly cold water one has to stick one's paws into.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -2098,7 +2098,7 @@
                 5
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -2196,7 +2196,7 @@
                 5
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The clouds hog the sky, weakly trying to threaten snow the way they've done constantly the last few days. And just like the clouds, app1 and {PRONOUN/app1/poss} siblings are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -2288,7 +2288,7 @@
                 6
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The six siblings head out together, declaring a friendly competition to stock the fresh-kill pile. The ocean might be as full of life as ever, but the extra motivation is really worth it to get over the unpleasantly cold water one has to stick one's paws into.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -2433,7 +2433,7 @@
                 6
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but with their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} siblings. Even the cold sting of the wind whipping up off the sea can't dampen their enthusiasm.",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 30,
@@ -2851,7 +2851,7 @@
                 6
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "app1 bounds out of camp, determined to show off to p_l!",
         "decline_text": "And both are immediately recalled - the camp needs new nesting materials, not more prey.",
         "chance_of_success": 30,
@@ -3077,7 +3077,7 @@
                 6
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "app1 bounds out of camp, determined to show off to {PRONOUN/app1/poss} older siblings!",
         "decline_text": "And everyone is immediately recalled - the camp needs new nesting materials, not more prey.",
         "chance_of_success": 30,
@@ -3191,7 +3191,7 @@
                 -1
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "As the rockpools sheen their edges with frost, and the spray from the ocean tries to leech all the heat from their pelts, p_l is out on a hunting patrol with r_c.",
         "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try a land hunt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/disappear/disappears} into the inland undergrowth.",
         "chance_of_success": 50,
@@ -3334,7 +3334,7 @@
                 -1
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} sibling. Especially when the weather has kept them in camp too often recently!",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
@@ -3451,7 +3451,7 @@
                 -1
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "Sun's out, weakly shining, and r_c has been assigned a moderately tolerable hunting partner - {PRONOUN/r_c/poss} sibling!",
         "decline_text": "Cancel that - a border patrol needs backup.",
         "chance_of_success": 50,
@@ -3594,7 +3594,7 @@
                 -1
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The hunting patrol heads out early, coats fluffed up against the cold.",
         "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
         "chance_of_success": 50,
@@ -3836,7 +3836,7 @@
                 -1
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "As the rockpools sheen their edges with frost, and the spray from the ocean tries to leech all the heat from their pelts, p_l is out on a hunting patrol with {PRONOUN/p_l/poss} siblings.",
         "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try a land hunt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/disappear/disappears} into the inland undergrowth.",
         "chance_of_success": 50,
@@ -3979,7 +3979,7 @@
                 -1
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "r_c muses that sometimes it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially when the weather has kept them in camp too often recently!",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
@@ -4096,7 +4096,7 @@
                 -1
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "Sun's out, weakly shining, and r_c has been assigned a moderately tolerable hunting patrol - {PRONOUN/r_c/poss} siblings!",
         "decline_text": "Cancel that - a border patrol needs backup.",
         "chance_of_success": 50,
@@ -4239,7 +4239,7 @@
                 -1
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The hunting patrol heads out early, coats fluffed up against the cold.",
         "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
         "chance_of_success": 50,

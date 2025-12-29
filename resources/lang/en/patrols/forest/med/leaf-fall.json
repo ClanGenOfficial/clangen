@@ -30,7 +30,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to stock up under the clear leaf-fall skies, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
@@ -181,7 +181,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the ripening harvest available in leaf-fall.",
         "decline_text": "... And they're called back almost immediately, as one of the elders has started hacking something up.",
         "chance_of_success": 60,
@@ -327,7 +327,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from them.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -407,7 +407,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from them, bringing along app1 for an herbcraft lesson.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -550,7 +550,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from them, bringing along a patrol to help {PRONOUN/p_l/object} carry the leaves back to the herb stores.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -686,7 +686,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit, and p_l heads out to take advantage.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -766,7 +766,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit, and p_l heads out to take advantage, bringing app1 along.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -909,7 +909,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit, and p_l heads out to take advantage, bringing along anyone who isn't busy with other work.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -1045,7 +1045,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -1125,7 +1125,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -1268,7 +1268,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -1404,7 +1404,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "{PRONOUN/p_l/subject/CAP}'d better take the opportunity to harvest while they can. p_l doesn't have much time left before many herbs will leave c_n's territory with the cold of leaf-bare.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
@@ -1483,7 +1483,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l waits until they're out of camp to reveal to app1 that they're off to find catmint - a 'helpful' group of 'helpers' can be a little, well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and they need to ensure c_n has stocks for the coming leaf-bare.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
@@ -1629,7 +1629,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As p_l looks at the twitching tails and wide eyes of the patrol set up to 'help' {PRONOUN/p_l/object} gather catmint, {PRONOUN/p_l/poss} heart sinks. These overly excited warriors don't look like they're going to be useful, and p_l only has so much time before the catmint dies off at the end of leaf-fall.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 10,
@@ -1764,7 +1764,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -1844,7 +1844,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l brings app1 along for a lesson.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -1987,7 +1987,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l assembles a little group of warriors to help them carry the herbs.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -2123,7 +2123,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -2203,7 +2203,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in their arsenal.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -2346,7 +2346,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, bringing a group of {PRONOUN/p_l/poss} Clanmates along for the gathering patrol.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -2482,7 +2482,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream they want to check on today.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 60,
@@ -2578,7 +2578,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "With leaf-fall washing the world in rich, warm tones, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stock until newleaf. There's a tree in a dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, and {PRONOUN/p_l/subject} {VERB/p_l/bring/brings} app1 to teach why harvesting from a sheltered plant can be helpful.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 60,
@@ -2755,7 +2755,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, bringing a group of {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object}.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
@@ -2923,7 +2923,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -3003,7 +3003,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores with app1.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -3146,7 +3146,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -3282,7 +3282,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l sniffs the clean fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -3362,7 +3362,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l sniffs the clean fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} app1 to investigate.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -3505,7 +3505,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l sniffs the clean fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a patrol to investigate.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -3649,7 +3649,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. p_l heaves a sigh - the expedition is delayed for another time.",
         "chance_of_success": 30,
@@ -3822,7 +3822,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up on it.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
         "chance_of_success": 30,
@@ -3986,7 +3986,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n won't run out of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave.",
         "chance_of_success": 30,
@@ -4191,7 +4191,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -4271,7 +4271,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores with app1.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -4414,7 +4414,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -4550,7 +4550,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores before the plants wither and die off.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -4630,7 +4630,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with app1 before the plants wither and die off.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -4773,7 +4773,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object} before the plants wither and die off.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -4909,7 +4909,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -4989,7 +4989,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it. p_l explains to app1 how mullein's height makes it easy to spot from a distance.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -5132,7 +5132,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -5268,7 +5268,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a patrol to gather their last green leaves.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -5348,7 +5348,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a patrol to gather their last green leaves, explaining to app1 how the leaves lose their herbal potency with the reds of leaf-fall.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -5491,7 +5491,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a gathering patrol with warriors to gather their last green leaves.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -5627,7 +5627,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -5707,7 +5707,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. app1 asks if they'll really die back in leaf-bare - the plant seems too determined to give up in the cold.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -5850,7 +5850,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. The warriors {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} bringing along seem to regard their task as more path clearing and less herb gathering, but if it gets {PRONOUN/p_l/object} helpers, p_l isn't too fussed about it.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -5986,7 +5986,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from them.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -6066,7 +6066,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from them, bringing along app1 for an herbcraft lesson.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -6209,7 +6209,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from them, bringing along a patrol to help {PRONOUN/p_l/object} carry the leaves back to the herb stores.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -6337,7 +6337,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "While gathering herbs, p_l spots a bush of red berries.",
         "decline_text": "p_l decides not to touch the berries.",
         "chance_of_success": 50,
@@ -6419,7 +6419,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
         "decline_text": "app1 decides not to touch the berries.",
         "chance_of_success": 50,
@@ -6505,7 +6505,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -6585,7 +6585,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with app1, bringing the apprentice for an important herbcraft lesson.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -6728,7 +6728,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with a gathering patrol.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -6864,7 +6864,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The thyme plants are running out of growing time - p_l better go harvest them before leaf-fall is over.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -6944,7 +6944,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The thyme plants are running out of growing time - p_l better take app1 to harvest them before leaf-fall is over.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -7087,7 +7087,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The thyme plants are running out of growing time - p_l better go harvest them before leaf-fall is over. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} a patrol with {PRONOUN/p_l/object} to help.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -7223,7 +7223,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -7303,7 +7303,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l brings along app1, to see if {PRONOUN/app1/subject} can do it.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
@@ -7446,7 +7446,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l leads a gathering patrol to do just that.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
@@ -7650,7 +7650,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -7742,7 +7742,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -7882,7 +7882,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -7975,7 +7975,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -8069,7 +8069,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -8154,7 +8154,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -8246,7 +8246,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -8344,7 +8344,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -8461,7 +8461,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -8566,7 +8566,7 @@
                 5
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without a care in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",
         "decline_text": "p_l takes {PRONOUN/app1/object} down to a stream to clean out {PRONOUN/app1/poss} mouth.",
         "chance_of_success": 30,
@@ -8734,7 +8734,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "Listen to the wisdom of the sages, p_l meows. app1 doesn't just need to learn to set bones and clean wounds; being a medicine cat is so much more than blood and bodies.",
         "decline_text": "They're interrupted by a Clanmate who needs them. It halts the lesson, but also reinforces p_l's point.",
         "chance_of_success": 30,
