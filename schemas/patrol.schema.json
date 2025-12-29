@@ -11,10 +11,10 @@
           "description": "Displayed outcome text.",
           "type": "string"
         },
-        "weight": {
+        "frequency": {
           "description": "Controls how common an outcome is.",
           "type": "integer",
-          "default": 20
+          "default": 4
         },
         "exp": {
           "description": "Base exp gain.",
@@ -229,7 +229,7 @@
           "type": "integer"
         }
       },
-      "required": ["text", "exp", "weight"]
+      "required": ["text", "exp", "frequency"]
     }
   },
   "items": {
