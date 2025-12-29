@@ -1,5 +1,5 @@
 import re
-from random import choice
+from random import choice, randint
 
 from scripts.cat_relations.enums import RelType
 
@@ -10,6 +10,22 @@ from scripts.utility import (
     filter_relationship_type,
 )
 from scripts.game_structure import game
+
+
+def get_frequency() -> int:
+    """
+    Chooses an event frequency and returns it as an int. This is used by short and patrol events to determine what frequency of event to pull.
+    """
+    # think of it as "in a span of 10 moons, in how many moons should this sort of event appear?"
+    frequency_roll = randint(1, 10)
+    if frequency_roll <= 4:
+        return 4
+    elif frequency_roll <= 7:
+        return 3
+    elif frequency_roll <= 9:
+        return 2
+    else:
+        return 1
 
 
 def event_for_location(locations: list) -> bool:

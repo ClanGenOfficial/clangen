@@ -20,6 +20,7 @@ from scripts.events_module.event_filters import (
     event_for_herb_supply,
     event_for_season,
     cat_for_event,
+    get_frequency,
 )
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants, game
@@ -105,16 +106,7 @@ def create_short_event(
         event_type = "injury"
 
     # choosing frequency
-    # think of it as "in a span of 10 moons, in how many moons should this sort of event appear?"
-    frequency_roll = random.randint(1, 10)
-    if frequency_roll <= 4:
-        frequency = 4
-    elif frequency_roll <= 7:
-        frequency = 3
-    elif frequency_roll <= 9:
-        frequency = 2
-    else:
-        frequency = 1
+    frequency = get_frequency()
 
     chosen_event = None
     while not chosen_event and frequency < 5:
