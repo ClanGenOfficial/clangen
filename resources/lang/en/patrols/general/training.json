@@ -20,7 +20,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "While alone, {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} about life. Is r_c really headed where {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to go? Is r_c doing a good job of pursuing what's important to {PRONOUN/r_c/object}?",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused on training instead.",
         "chance_of_success": 60,
@@ -79,7 +79,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "r_c feels a little overwhelmed trying to train by {PRONOUN/r_c/self}.",
         "decline_text": "Instead {PRONOUN/r_c/subject} {VERB/r_c/join/joins} up with an outgoing hunting patrol.",
         "chance_of_success": 60,
@@ -188,7 +188,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "While training, p_l admits that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a good deputy.",
         "decline_text": "The rest of the patrol hastily changes the subject.",
         "chance_of_success": 50,
@@ -465,7 +465,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol finds a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 50,
@@ -686,7 +686,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused instead.",
         "chance_of_success": 60,
@@ -743,7 +743,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l and r_c find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -883,7 +883,7 @@
                 2
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "app1 and app2 find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -1023,7 +1023,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The pair find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -1148,7 +1148,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The pair find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -1304,7 +1304,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l flicks {PRONOUN/p_l/poss} tail thoughtfully. What direction {VERB/p_l/do/does} {PRONOUN/p_l/subject} want to take this training patrol?",
         "decline_text": "The cats decide to go help a hunting patrol carry their prey home instead.",
         "chance_of_success": 40,
@@ -1713,7 +1713,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "It's rare to get the chance to have a full training patrol of warriors.",
         "decline_text": "Rare because something else <i>always</i> comes up. The cats are called away to gather nest materials instead.",
         "chance_of_success": 40,
@@ -2340,7 +2340,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l heads out with a group of {PRONOUN/p_l/poss} Clanmates to go train.",
         "decline_text": "A messenger comes from the border and p_l sighs. The patrol will have to go out without {PRONOUN/p_l/object} - this could be important.",
         "chance_of_success": 50,
@@ -2967,7 +2967,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
         "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
@@ -3193,7 +3193,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "While out training together, app1 starts an argument with p_l about the technique they're working on.",
         "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
@@ -3453,7 +3453,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
         "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
@@ -3815,7 +3815,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject} had a vision from StarClan last night.",
         "decline_text": "The patrol doesn't talk about the vision.",
         "chance_of_success": 70,
@@ -3953,7 +3953,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/head/heads} out to work on {PRONOUN/r_c/poss} skills, r_c thinks about the dream {PRONOUN/r_c/subject} had last night... Was it sent by StarClan?",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/push/pushes} it out of {PRONOUN/r_c/poss} mind.",
         "chance_of_success": 70,
@@ -4011,7 +4011,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As app1 and app2 collect moss for the elders' den, app2 admits that the strange dreams {PRONOUN/app2/subject}{VERB/app2/'ve/'s} been having is why {PRONOUN/app2/subject} kicked app1 in the night.",
         "decline_text": "The apprentices don't talk about the dreams.",
         "chance_of_success": 70,
@@ -4105,7 +4105,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "While app1 and p_l are out walking, app1 seems preoccupied. When p_l brings their patrol to a halt and asks what's wrong, {PRONOUN/app1/subject} {VERB/app1/reveal/reveals} {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been having a hard time sleeping. {PRONOUN/app1/poss/CAP} dreams are filled with shadows and... images.",
         "decline_text": "This is beyond p_l's sphere of teachable subjects, but {PRONOUN/p_l/subject} {VERB/p_l/promise/promises} that there'll be another cat back at camp who can help. app1 should probably talk to a medicine cat.",
         "chance_of_success": 70,
@@ -4289,7 +4289,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol devolves into ghost stories, putting everyone on edge.",
         "decline_text": "p_l quickly silences any talk about ghosts.",
         "chance_of_success": 20,
@@ -4406,7 +4406,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol devolves into ghost stories, putting everyone on edge.",
         "decline_text": "p_l quickly silences any talk about ghosts.",
         "chance_of_success": 20,
@@ -4564,7 +4564,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practice hunting, right? And since it's  <i>technically</i> not a <i>true</i> hunting patrol, it's <i>technically</i> {PRONOUN/app1/inposs}, right...?",
         "decline_text": "app1 decides against breaking the Warrior Code, resisting the temptation.",
         "chance_of_success": 60,
@@ -4755,7 +4755,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 25,
@@ -5164,7 +5164,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5496,7 +5496,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 40,
@@ -5741,7 +5741,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5975,7 +5975,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "As p_l sets the cats up to practice together, app1 and app2 sit in the back, hiding their lashing tails as they plan their prank.",
         "decline_text": "They never get the chance to execute the break, because p_l decides to focus on a different skill instead.",
         "chance_of_success": 20,
@@ -6091,7 +6091,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -6340,7 +6340,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mate.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -6587,7 +6587,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -6807,7 +6807,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -7024,7 +7024,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -7267,7 +7267,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -7594,7 +7594,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -7957,7 +7957,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -8086,7 +8086,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -8207,7 +8207,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -8299,7 +8299,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -8404,7 +8404,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with app1 here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -8508,7 +8508,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -8616,7 +8616,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -8718,7 +8718,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 70,
@@ -8821,7 +8821,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 70,
@@ -8927,7 +8927,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "As they wander aimlessly towards the sparring area for a training session, r_c stops p_l and asks for {PRONOUN/p_l/poss} advice with something.",
         "decline_text": "It's not the right time for this conversation... Maybe once they're back at camp.",
         "chance_of_success": 70,
@@ -9030,7 +9030,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
         "decline_text": "Both of them are interrupted by a request from a Clanmate - this conversation will have to wait.",
         "chance_of_success": 70,
@@ -9139,7 +9139,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "During an odd moment of downtime, r_c asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a good teacher.",
         "decline_text": "They are interrupted by some Clanmates who need help and go off to attend to their duties.",
         "chance_of_success": 70,
@@ -9261,7 +9261,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l gets taken aside by r_c as {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} why {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like StarClan ignores {PRONOUN/r_c/object}.",
         "decline_text": "Neither of them have the time for such a conversation today - it'll have to wait.",
         "chance_of_success": 70,
@@ -9385,7 +9385,7 @@
                 2
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "app1 and app2, while exploring the territory, come across the forbidden tunnels.",
         "decline_text": "They don't want to get into trouble, and they have a lot more territory to explore anyway.",
         "chance_of_success": 50,
@@ -9524,7 +9524,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "app1 isn't acting like {PRONOUN/app1/poss} usual self.",
         "decline_text": "p_l has no time today to get to the bottom of it.",
         "chance_of_success": 60,
@@ -9631,7 +9631,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l takes app1 out of camp to gather moss.",
         "decline_text": "Before they even leave the camp, r_c's expertise is required in another matter.",
         "chance_of_success": 40,
@@ -9732,7 +9732,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "r_c finds p_l out training in r_c's favorite spot - and not only does r_c have to share the spot, but the pounce p_l is practicing looks all wrong!",
         "decline_text": "Nope, nopedy nope, r_c isn't hanging around that mouse-brain!",
         "chance_of_success": 60,
@@ -9814,7 +9814,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "p_l is working on {PRONOUN/p_l/poss} battle moves when r_c sticks {PRONOUN/r_c/poss} head around the corner. Perfect - not only will p_l get a training partner, but battering r_c (with sheathed claws, {PRONOUN/p_l/subject} {VERB/p_l/promise/promises}!) will be just a little more satisfying than putting a paw in any other Clanmate's face.",
         "decline_text": "A sudden rain shower puts a damper on any thoughts of battle training.",
         "chance_of_success": 60,
@@ -9906,7 +9906,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "p_l and r_c find themselves hanging out together. Without any other Clanmates. This is... sure to go well. p_l tries to start up a safe conversation about prey types.",
         "decline_text": "You know what's safer? Not talking.",
         "chance_of_success": 60,
@@ -9968,7 +9968,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "p_l is an annoying furball of a Clanmate, but there's no one else available for training. Another Clanmate spots r_c leading p_l out of camp and makes a <i>comment</i> about romantic sunset walks. r_c burns under {PRONOUN/r_c/poss} fur. Certainly not!",
         "decline_text": "Actually, r_c is headed straight back to camp to find whoever said that and box their ears!",
         "chance_of_success": 60,
@@ -10050,7 +10050,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "p_l spots r_c padding out of camp and makes a beeline to follow {PRONOUN/r_c/object}. Because, of course, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} simply that dedicated to taking every opportunity to train, even with a tick like r_c.",
         "decline_text": "p_l is waylaid by a Clanmate with an actual need for help, disrupting {PRONOUN/p_l/poss} cunning plans.",
         "chance_of_success": 60,
@@ -10142,7 +10142,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "Maybe it's a little immature to be so invested in an argument - ahem, refined conversation about battle strategies.",
         "decline_text": "Yeah, time to take a breather from this conversation, p_l and r_c decide.",
         "chance_of_success": 60,
@@ -10242,7 +10242,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "p_l can't believe that r_c is <i>such</i> a fox-heart that the leader of c_n sent them both out together to work out their problems. Like, what?",
         "decline_text": "Maybe this rivalry has gotten a little... excessive.",
         "chance_of_success": 60,
@@ -10322,7 +10322,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "Out for training with r_c, p_l is reaching the limit of {PRONOUN/p_l/poss} patience.",
         "decline_text": "Time for training to end. Now.",
         "chance_of_success": 60,
@@ -10398,7 +10398,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
         "decline_text": "...Best not to try it.",
         "chance_of_success": 60,
@@ -10494,7 +10494,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
         "decline_text": "...Best not to try it.",
         "chance_of_success": 60,
@@ -10577,7 +10577,7 @@
                 -1
             ]
         },
-        "weight": 100,
+        "frequency": 4,
         "intro_text": "r_c, sick of hearing other cats gossip about how much p_l hates {PRONOUN/r_c/object}, pulls p_l aside to confront {PRONOUN/p_l/object}.",
         "decline_text": "r_c's nerves make {PRONOUN/r_c/object} think better of the idea.",
         "chance_of_success": 60,
@@ -10659,7 +10659,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "r_c wants to push {PRONOUN/r_c/poss} limits in training today, to really improve on {PRONOUN/r_c/poss} stealth skills, and p_l is {PRONOUN/r_c/poss} (somewhat) willing victim. {PRONOUN/r_c/subject/CAP} {VERB/r_c/swear/swears} that it's going to be the difference between prey on the fresh-kill pile and the Clan eating crowfood.",
         "decline_text": "r_c's nerves make {PRONOUN/r_c/object} think better of the idea.",
         "chance_of_success": 60,
@@ -10767,7 +10767,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l leads the patrol towards the borders, wanting to test the apprentices on identifying o_c_n scent. But for some reason the walk seems to be taking longer than usual, and p_l keeps hearing odd yelps and grunts from behind {PRONOUN/p_l/object}.",
         "decline_text": "p_l comments offhandedly that, seeing they seem to have so much energy, both apprentices can help around the camp when they get back instead of resting. The rest of the patrol is spent in sullen silence.",
         "chance_of_success": 60,
@@ -10851,7 +10851,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l and r_c twine around each other in camp, chirping excitedly with the anticipation of getting to go out training together - it's been forever since they've been able to hang out!",
         "decline_text": "Unfortunately, the cats just don't have time to go out training today. They headbutt softly, promising to catch up another time.",
         "chance_of_success": 60,
@@ -11016,7 +11016,7 @@
                 1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "p_l heads out for training with app1 and notes with concern that the apprentice is stiff and nervous following {PRONOUN/p_l/object}. Surely {PRONOUN/app1/poss} kittenhood can't be so far from app1's memory - how in StarClan's name could {PRONOUN/app1/subject} ever feel stressed on a simple training patrol with {PRONOUN/app1/poss} own parent?",
         "decline_text": "p_l calls off the patrol and instead goes out in a bigger group of cats, hoping app1 will be more comfortable that way.",
         "chance_of_success": 60,
@@ -11243,7 +11243,7 @@
                 1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "p_l heads out for training with app1 and notes with concern that the apprentice is stiff and nervous following {PRONOUN/p_l/object}. Surely {PRONOUN/app1/poss} kittenhood can't be so far from app1's memory - how in StarClan's name could {PRONOUN/app1/subject} ever feel stressed on a simple training patrol with {PRONOUN/app1/poss} own parent?",
         "decline_text": "p_l calls off the patrol and instead goes out in a bigger group of cats, hoping app1 will be more comfortable that way.",
         "chance_of_success": 60,
@@ -11466,7 +11466,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "p_l looks down at the group {PRONOUN/p_l/subject} {VERB/p_l/have/has} to try and teach, face doubtful. Camp maintenance isn't a glamourous topic, especially in the eyes of younger cats.",
         "decline_text": "p_l calls off the lesson.",
         "chance_of_success": 60,
@@ -11569,7 +11569,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "p_l is the leader of the training group today and considers {PRONOUN/p_l/self} a good choice for the role. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} skilled at explaining things, which is especially beneficial for apprentices - if {PRONOUN/p_l/subject} can get them to listen, that is.",
         "decline_text": "But today isn't the day for this lesson.",
         "chance_of_success": 60,
@@ -11670,7 +11670,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "Leading the group of cats around {PRONOUN/p_l/object} to a good vantage point, p_l settles down. Has anyone heard the tale of <i>The Cat Who Time Forgot?</i>",
         "decline_text": "The patrol has heard this tale before - better to go for a short hunt instead, and the cats disperse, much to p_l's disappointment.",
         "chance_of_success": 60,
@@ -11774,7 +11774,7 @@
                 5
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",
@@ -12198,7 +12198,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",
@@ -12414,7 +12414,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "LORE,1"
@@ -12510,7 +12510,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "Leading the group of cats around {PRONOUN/p_l/object} to a good vantage point, p_l settles down. As the patrol chats among themselves, something sparks p_l's attention. It reminds {PRONOUN/p_l/object} of charming <i>Casanova</i>, and it occurs to {PRONOUN/p_l/object} that maybe not every cat here knows that history.",
         "decline_text": "It's a lovely day - too lovely to be ruined by mentions of that ancient furball.",
         "chance_of_success": 60,
@@ -12606,7 +12606,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "p_l has a vision for a clever battle move - but {PRONOUN/p_l/subject} {VERB/p_l/need/needs} a couple cats to practice it with.",
         "decline_text": "Today isn't the day for this lesson.",
         "chance_of_success": 60,
@@ -12707,7 +12707,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "As the patrol heads out, p_l spots a set of animal tracks and calls the other cats over to give them a tracking demonstration.",
         "decline_text": "Today isn't the day for this lesson.",
         "chance_of_success": 60,
@@ -12808,7 +12808,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "Gathering together to train, p_l notices that some of the other cats in the training ring are starting without warming up properly. Whoa, whoa, whoa, - everyone stop, let's go back to basics.",
         "decline_text": "Today isn't the day for this lesson.",
         "chance_of_success": 60,
@@ -12910,7 +12910,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "As the training patrol gossips about the last Gathering while they bask, app1 turns and asks p_l how to talk to cats from other Clans without giving away any of c_n's secrets.",
         "decline_text": "Simple - just don't talk to them.",
         "chance_of_success": 60,
@@ -13011,7 +13011,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "As app1 falls over again, still not grasping how to shift {PRONOUN/app1/poss} weight with that move, p_l watches {PRONOUN/app1/object} from the side of the training ring, sitting apart from the rest of the patrol - but not alone.",
         "decline_text": "They remain silent, content to watch. app1 will make their own mistakes.",
         "chance_of_success": 70,
@@ -13113,7 +13113,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "While practicing {PRONOUN/app1/poss} pounce, app1 goes down hard, falling in exactly the wrong way. {PRONOUN/app1/subject/CAP} {VERB/app1/scramble/scrambles} up with a yelp, one paw held off the ground.",
         "decline_text": "It's only a couple minutes before {PRONOUN/app1/subject}{VERB/app1/'re/'s} bouncing around again - apprentices are made of cotton-fluff.",
         "chance_of_success": 60,
@@ -13209,7 +13209,7 @@
                 6
             ]
         },
-        "weight": 50,
+        "frequency": 4,
         "intro_text": "p_l shifts uneasily as {PRONOUN/p_l/subject} {VERB/p_l/bask/basks}. r_c stretches {PRONOUN/r_c/poss} tail across {PRONOUN/p_l/poss} back - what's wrong?",
         "decline_text": "Just a stone digging into p_l's shoulder, nothing serious.",
         "chance_of_success": 60,
@@ -13305,7 +13305,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "Despite theoretically leading this training patrol, p_l hangs back, watching the other cats.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} just fatigued - p_l hasn't been sleeping great recently.",
         "chance_of_success": 60,
@@ -13383,7 +13383,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "As p_l heads out with a group of Clanmates, {PRONOUN/p_l/subject} {VERB/p_l/put/puts} a paw wrong, slipping on to {PRONOUN/p_l/poss} side. {PRONOUN/p_l/poss/CAP} breath whooshes from {PRONOUN/p_l/poss} lungs as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} hit with flashes of clair_list/p_l.",
         "decline_text": "It's nothing - not a vision, and it means <i>nothing</i>, p_l tells {PRONOUN/p_l/self} and gets up.",
         "chance_of_success": 60,
@@ -13431,7 +13431,7 @@
                 6
             ]
         },
-        "weight": 50,
+        "frequency": 4,
         "intro_text": "Among {PRONOUN/p_l/poss} friends and with a little sunshine to brighten {PRONOUN/p_l/poss} dark mood, p_l opens up about what's been shared with {PRONOUN/p_l/object} through the powers of the stars: prophecy_list/p_l.",
         "decline_text": "No one wants to talk about it. p_l doesn't blame them and lets the conversation move on.",
         "chance_of_success": 60,
@@ -13527,7 +13527,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "While the cats are out training, the subject of Twolegs comes up. r_c tells everyone to just not get caught by them. r_c suggests clawing their faces off - or their ankles if any cat has trouble reaching up that high. p_l laughs, and the patrol turns to {PRONOUN/p_l/object}.",
         "decline_text": "Oh, nothing, don't worry about it.",
         "chance_of_success": 60,
@@ -13623,7 +13623,7 @@
                 6
             ]
         },
-        "weight": 30,
+        "frequency": 3,
         "intro_text": "While the cats are out training, the discussion turns to rogues. p_l perks {PRONOUN/p_l/poss} ears up - {PRONOUN/p_l/object} {VERB/p_l/know/knows} all about it.",
         "decline_text": "But {PRONOUN/p_l/object} {VERB/p_l/decide/decides} to listen instead of joining in the conversation.",
         "chance_of_success": 60,
@@ -13720,7 +13720,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",
@@ -13813,7 +13813,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",
@@ -13906,7 +13906,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1"
@@ -13991,7 +13991,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol heads out for some training practice when p_l says {PRONOUN/p_l/subject} {VERB/p_l/see/sees} strange glowing eyes in the distance.",
         "decline_text": "r_c sighs and tells p_l that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just seeing things, there's nothing out there... right?",
         "chance_of_success": 50,
@@ -14095,7 +14095,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "p_l is out alone in c_n's territory when a shiver runs down {PRONOUN/p_l/poss} spine. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops}. {PRONOUN/p_l/subject/CAP} slowly {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} head. On the rosemary bush next to {PRONOUN/p_l/object}, the moth lazily stretches its wings, the Twoleg skull on its back grinning.",
         "decline_text": "It's just a moth, p_l tells {PRONOUN/p_l/self}, and continues on {PRONOUN/p_l/poss} way.",
         "chance_of_success": 70,
@@ -14173,7 +14173,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1's mentor sends {PRONOUN/app1/object} out with other apprentices from the Clan to assess {PRONOUN/app1/poss} hunting skills. {PRONOUN/app1/poss/CAP} group argues about who should really lead this patrol. app2 wants to be in charge, but {PRONOUN/app2/subject} {VERB/app2/are/is}n't the easiest cat to work with. app1 thinks {PRONOUN/app1/subject} should speak up.",
         "decline_text": "app1 confesses to {PRONOUN/app1/poss} mentor that {PRONOUN/app1/subject} {VERB/app1/do/does} not feel ready for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/poss/CAP} mentor looks disappointed but seems to understand and offers to postpone the test until next moon. Part of app1 cannot help but wonder if the other apprentices will think poorly of {PRONOUN/app1/object}.",
         "chance_of_success": 60,
@@ -14393,7 +14393,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
         "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} {VERB/app1/have/has} a stomachache. {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine cat den, wondering how {PRONOUN/app1/subject} {VERB/app1/are/is} going to get away with this fake illness at sunhigh when the Clan shares tongues.",
         "chance_of_success": 60,
@@ -14603,7 +14603,7 @@
                 1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "chance_of_success": 50,
         "intro_text": "p_l is surprised when app1 makes a mistake on a simple move p_l thought {PRONOUN/app1/subject} had mastered. Before p_l can say anything, app1 runs out of the training grounds. When p_l finds {PRONOUN/app1/object} huddled in camp, {PRONOUN/app1/subject} {VERB/app1/sob/sobs} out a confession: {PRONOUN/app1/subject} will never be ready to be a warrior.",
         "decline_text": "It wouldn't help to talk to app1 while {PRONOUN/app1/subject} {VERB/app1/are/is} in this state. p_l tells {PRONOUN/app1/object} {PRONOUN/p_l/subject}'ll leave {PRONOUN/app1/object} alone and to come find {PRONOUN/p_l/object} if {PRONOUN/app1/subject}'d like to keep training today. app1 never does.",
@@ -14899,7 +14899,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 50,
         "intro_text": "Wanting to show off to app2, app1 attempts a difficult battle move while they're training together.",
         "decline_text": "p_l sternly tells app1 that training isn't the time to mess around, and to practice the move {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been taught.",
@@ -15288,7 +15288,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "intro_text": "app1 seems distracted during training, constantly glancing in the direction of the border. Eventually, after p_l presses {PRONOUN/app1/object}, app1 admits that {PRONOUN/app1/subject} had a conversation with a kittypet on patrol yesterday, and didn't know whether being friends with a kittypet was disloyal to c_n.",
         "decline_text": "p_l tells app1 that this was no time to be thinking about such things, and to focus on {PRONOUN/app1/poss} training.",
@@ -15518,7 +15518,7 @@
         "relationship_constraint": [
             "mentor/app"
         ],
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "intro_text": "As p_l leads app1 to a training area, app1 stops {PRONOUN/p_l/object} and asks, with a serious look in {PRONOUN/app1/poss} eye, if p_l will teach {PRONOUN/app1/object} some <i>advanced</i> battle moves.",
         "decline_text": "p_l brushes it off and tells app1 {PRONOUN/p_l/subject} {VERB/p_l/have/has} a different plan in mind for today.",
@@ -16227,7 +16227,7 @@
                 3
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 30,
         "intro_text": "Since they have three cats, p_l suggests they practice two-on-one fighting.",
         "decline_text": "r_c announces {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to practice stalking instead.",
@@ -17189,7 +17189,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l storms out of camp in a huff after being scolded. Mouse-brains! They're all mouse-brains!",
         "decline_text": "Of course, the <i>moment</i> {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves}, someone chases after {PRONOUN/p_l/object} and brings {PRONOUN/p_l/object} straight back to camp. <i>Fox-dung!</i>",
         "chance_of_success": 70,

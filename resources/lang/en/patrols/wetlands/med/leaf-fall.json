@@ -20,7 +20,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -125,7 +125,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -291,7 +291,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -384,7 +384,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -491,7 +491,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -576,7 +576,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -681,7 +681,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -792,7 +792,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -922,7 +922,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "pl_skill_constraint": [
             "LORE,1",
             "STORY,1",
@@ -1040,7 +1040,7 @@
                 5
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without a care in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} {PRONOUN/app1/subject} really <i>should</i> have a care.",
         "decline_text": "p_l takes {PRONOUN/app1/object} down to a stream to clean out {PRONOUN/app1/poss} mouth.",
         "chance_of_success": 30,
@@ -1208,7 +1208,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Listen to the wisdom of the sages, p_l meows. app1 doesn't just need to learn to set bones and clean wounds; being a medicine cat is so much more than blood and bodies.",
         "decline_text": "They're interrupted by a Clanmate who needs them. It halts the lesson, but also reinforces p_l's point.",
         "chance_of_success": 30,
@@ -1299,7 +1299,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time.",
         "chance_of_success": 60,
@@ -1458,7 +1458,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up on it.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
         "chance_of_success": 60,
@@ -1618,7 +1618,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n won't run out of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave.",
         "chance_of_success": 60,
@@ -1820,7 +1820,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to stock up under the clear leaf-fall skies, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
@@ -1959,7 +1959,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the ripening harvest available in leaf-fall.",
         "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
         "chance_of_success": 60,

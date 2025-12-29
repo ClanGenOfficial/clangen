@@ -15,7 +15,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c encounters a porcupine, bristling with quills.",
         "decline_text": "The patrol steers clear of the porcupine.",
         "chance_of_success": 10,
@@ -126,7 +126,7 @@
         "min_cats": 1,
         "max_cats": 2,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c encounters a porcupine, bristling with quills.",
         "decline_text": "The patrol steers clear of the porcupine, they don't have enough cats to confront this creature safely.",
         "chance_of_success": 10,
@@ -226,7 +226,7 @@
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While hunting, r_c comes across a rabbit burrow.",
         "decline_text": "r_c decides to ignore the burrow.",
         "chance_of_success": 50,
@@ -264,7 +264,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
@@ -327,7 +327,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 10,
@@ -390,7 +390,7 @@
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor.",
         "decline_text": "The patrol decides there's probably easier prey to find elsewhere.",
         "chance_of_success": 50,
@@ -487,7 +487,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol finds a small burrow in the ground with a strange scent. p_l hesitates, unsure if this is worth checking.",
         "decline_text": "The patrol decides to avoid the burrow. There's no telling what could await inside.",
         "chance_of_success": 60,
@@ -575,7 +575,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c finds a small burrow in the ground with a strange scent. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hesitate/hesitates}, unsure if this is worth checking.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} decides to avoid the burrow. There's no telling what could await inside.",
         "chance_of_success": 40,
@@ -648,7 +648,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
         "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
         "chance_of_success": 10,
@@ -779,7 +779,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
         "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
         "chance_of_success": 30,
@@ -899,7 +899,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c hears distant howling and wonders whether to investigate the noise.",
         "decline_text": "r_c decides not to investigate the source of the noise. Whatever is making it will not be friendly to {PRONOUN/r_c/object} and {PRONOUN/r_c/subject} {VERB/r_c/are/is} only one cat.",
         "chance_of_success": 10,
@@ -995,7 +995,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
         "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
         "chance_of_success": 10,
@@ -1115,7 +1115,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
         "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
         "chance_of_success": 20,
@@ -1211,7 +1211,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c hears distant howling and wonders whether to investigate the noise.",
         "decline_text": "r_c decides not to investigate the source of the noise. Whatever is making it will not be friendly to {PRONOUN/r_c/object} and {PRONOUN/r_c/subject} {VERB/r_c/are/is} only one cat.",
         "chance_of_success": 10,
@@ -1302,7 +1302,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
         "decline_text": "On second thought, maybe not.",
         "chance_of_success": 50,
@@ -1375,7 +1375,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c looks around for something to disguise their scent while hunting.",
         "decline_text": "On second thought, maybe not.",
         "chance_of_success": 50,
@@ -1447,7 +1447,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c's mentor assesses {PRONOUN/r_c/object} by sending {PRONOUN/r_c/object} on a solo hunt.",
         "decline_text": "r_c asks {PRONOUN/r_c/poss} mentor to do the assessment some other time.",
         "chance_of_success": 40,
@@ -1557,7 +1557,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
@@ -1651,7 +1651,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
@@ -1745,7 +1745,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
@@ -1834,7 +1834,7 @@
         "min_cats": 5,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
         "chance_of_success": 20,
@@ -1925,7 +1925,7 @@
         "min_cats": 2,
         "max_cats": 4,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
         "chance_of_success": 60,
@@ -2026,7 +2026,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol encounters a clearing where a lot of Twolegs linger.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
@@ -2114,7 +2114,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol encounters a clearing where a lot of Twolegs linger.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 10,
@@ -2202,7 +2202,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, {PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to reline {PRONOUN/r_c/poss} nest today instead.",
         "chance_of_success": 40,
@@ -2315,7 +2315,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to reline {PRONOUN/app1/poss} nest today instead.",
         "chance_of_success": 40,
@@ -2410,7 +2410,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "{PRONOUN/r_c/poss/CAP} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 40,
@@ -2634,7 +2634,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "{PRONOUN/app2/poss/CAP} eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "chance_of_success": 30,
@@ -2828,7 +2828,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
         "decline_text": "Turning {PRONOUN/r_c/poss} nose up at the temptation, {PRONOUN/r_c/subject} {VERB/r_c/continue/continues} on {PRONOUN/r_c/poss} way.",
         "chance_of_success": 40,
@@ -2903,7 +2903,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
         "decline_text": "Turning {PRONOUN/r_c/poss} nose up at the temptation, the patrol continues on their way.",
         "chance_of_success": 40,
@@ -2981,7 +2981,7 @@
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol comes across a Thunderpath running through the forest.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 40,
@@ -3095,7 +3095,7 @@
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol comes across a Thunderpath running through the forest.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 30,
@@ -3207,7 +3207,7 @@
         "min_cats": 5,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol comes across a Thunderpath running through the forest.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 10,
@@ -3316,7 +3316,7 @@
         "min_cats": 5,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol comes across a Thunderpath running through the forest.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 10,
@@ -3428,7 +3428,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As r_c tears through the forest, stretching {PRONOUN/r_c/poss} legs on a run, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} movement out of the corner of {PRONOUN/r_c/poss} eye.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/keep/keeps} going, not wanting to slow down.",
         "chance_of_success": 50,
@@ -3493,7 +3493,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As app1 tears through the forest, stretching {PRONOUN/app1/poss} legs on a run, {PRONOUN/app1/subject} {VERB/app1/spot/spots} movement out of the corner of {PRONOUN/app1/poss} eye.",
         "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/keep/keeps} going, not wanting to slow down.",
         "chance_of_success": 50,
@@ -3549,7 +3549,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As r_c tears through the forest with p_l, stretching {PRONOUN/r_c/poss} legs on a run, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} movement out of the corner of {PRONOUN/r_c/poss} eye.",
         "decline_text": "They keep going, not wanting to slow down.",
         "chance_of_success": 50,
@@ -3691,7 +3691,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As app1 tears through the forest with app2, stretching {PRONOUN/app1/poss} legs on a run, {PRONOUN/app1/subject} {VERB/app1/spot/spots} movement out of the corner of {PRONOUN/app1/poss} eye.",
         "decline_text": "They keep going, not wanting to slow down.",
         "chance_of_success": 50,
@@ -3791,7 +3791,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
@@ -3951,7 +3951,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
@@ -4051,7 +4051,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol comes across a vole nibbling at a seed.",
         "decline_text": "The patrol decides to look for other prey.",
         "chance_of_success": 50,
@@ -4126,7 +4126,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "relationship_constraint": [],
         "pl_skill_constraint": [],
@@ -4165,7 +4165,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As r_c is out alone, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} something out of the corner of {PRONOUN/r_c/poss} eye: spindly, long, and partially hidden by the undergrowth of the forest.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/hurry/hurries} back to camp, a little freaked out.",
         "chance_of_success": 40,
@@ -4219,7 +4219,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol catches scent of a mouse nearby.",
         "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 50,
@@ -4277,7 +4277,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol comes across a mouse.",
         "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 50,
@@ -4326,7 +4326,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol comes across a large rat.",
         "decline_text": "The patrol ignores the rat.",
         "chance_of_success": 50,
@@ -4383,7 +4383,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol comes across a bird that's occupied scratching at the ground for insects.",
         "decline_text": "The patrol ignores the bird.",
         "chance_of_success": 50,
@@ -4432,7 +4432,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
         "decline_text": "The patrol ignores the squirrel.",
         "chance_of_success": 50,
@@ -4481,7 +4481,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol glimpses the shadow of a fish as they pad past a stream.",
         "decline_text": "The patrol ignores the fish.",
         "chance_of_success": 50,
@@ -4530,7 +4530,7 @@
         "min_cats": 2,
         "max_cats": 4,
         "min_max_status": {},
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "A rabbit bursts out from cover, startled by the patrol.",
         "decline_text": "They watch it go, just as startled.",
         "chance_of_success": 40,
@@ -4716,7 +4716,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "A rabbit bursts out from cover, startled by r_c.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/watch/watches} it go, just as startled.",
         "chance_of_success": 40,
@@ -4801,7 +4801,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "r_c spots a rabbit up ahead, but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
         "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
         "chance_of_success": 30,
@@ -4924,7 +4924,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol hears a lot of barking and commotion.",
         "decline_text": "p_l makes the decision to go to another part of the territory to hunt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/want/wants} no part of this ruckus.",
         "chance_of_success": 25,
@@ -5023,7 +5023,7 @@
                 4
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 50,
         "pl_skill_constraint": [
             "STORY,1",

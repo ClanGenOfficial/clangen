@@ -22,7 +22,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
@@ -149,7 +149,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
         "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
         "chance_of_success": 60,
@@ -222,7 +222,7 @@
                 4
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
         "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
         "chance_of_success": 60,
@@ -284,7 +284,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
         "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
         "chance_of_success": 60,
@@ -360,7 +360,7 @@
                 4
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
         "decline_text": "app1 reappears soon enough, a bright red leaf plastered to {PRONOUN/app1/poss} forehead.",
         "chance_of_success": 60,
@@ -424,7 +424,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 10,
+        "frequency": 1,
         "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
         "decline_text": "r_c decides not to touch the berries.",
         "chance_of_success": 40,
@@ -500,7 +500,7 @@
                 6
             ]
         },
-        "weight": 10,
+        "frequency": 1,
         "intro_text": "While helping gathering herbs, app1 stumbles upon a bush of red berries.",
         "decline_text": "r_c decides not to touch the berries.",
         "chance_of_success": 20,
@@ -578,7 +578,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1"

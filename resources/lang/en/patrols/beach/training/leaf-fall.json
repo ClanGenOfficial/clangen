@@ -15,7 +15,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l takes the patrol down to the beach to train, but wait, something's odd here...",
         "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
         "chance_of_success": 30,
@@ -178,7 +178,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l decides to go down to the beach by {PRONOUN/p_l/self}. There seems to be something strange here...",
         "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
         "chance_of_success": 30,
@@ -251,7 +251,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 notices app2's absence and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point - look, the chicks are trying to fly!",
         "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
         "chance_of_success": 60,
@@ -366,7 +366,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 notices app2's absence and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in the seven seas is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point - look, the chicks are trying to fly!",
         "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
         "chance_of_success": 60,
@@ -494,7 +494,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 10,
+        "frequency": 1,
         "intro_text": "While helping gather herbs, r_c stumbles upon a bush of red berries.",
         "decline_text": "r_c decides not to touch the berries.",
         "chance_of_success": 40,
@@ -570,7 +570,7 @@
                 6
             ]
         },
-        "weight": 10,
+        "frequency": 1,
         "intro_text": "While helping gathering herbs, app1 stumbles upon a bush of red berries.",
         "decline_text": "r_c decides not to touch the berries.",
         "chance_of_success": 20,
@@ -654,7 +654,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",

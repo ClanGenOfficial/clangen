@@ -28,7 +28,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! app1 and app2 tear off into the territory near camp, looking to play.",
         "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
         "chance_of_success": 70,
@@ -165,7 +165,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls app1 over.",
         "decline_text": "Thinking better of it, the cats try to hunt instead.",
         "chance_of_success": 60,
@@ -273,7 +273,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls app1 over.",
         "decline_text": "Thinking better of it, the cats try to hunt instead.",
         "chance_of_success": 60,
@@ -385,7 +385,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls the apprentices over.",
         "decline_text": "Thinking better of it, the cats try to hunt instead.",
         "chance_of_success": 40,
@@ -497,7 +497,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls the apprentices over.",
         "decline_text": "Thinking better of it, the cats try to hunt instead.",
         "chance_of_success": 40,
@@ -601,7 +601,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",
@@ -946,7 +946,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",
@@ -1053,7 +1053,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "LORE,1"
@@ -1219,7 +1219,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",

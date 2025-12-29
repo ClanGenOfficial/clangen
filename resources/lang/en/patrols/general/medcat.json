@@ -32,7 +32,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The patrol finds a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused.",
         "chance_of_success": 60,
@@ -417,7 +417,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused.",
         "chance_of_success": 60,
@@ -555,7 +555,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "As the medicine cats' patrol pads out into c_n territory, r_c tells p_l about the dream {PRONOUN/r_c/subject} had last night, and what the StarClan vision could mean for c_n.",
         "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
         "chance_of_success": 40,
@@ -1019,7 +1019,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "As {PRONOUN/p_l/subject} {VERB/p_l/head/heads} out to gather cobwebs, p_l thinks about the dream {PRONOUN/p_l/subject} had last night... was it sent by StarClan?",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/push/pushes} it from {PRONOUN/p_l/poss} mind.",
         "chance_of_success": 40,
@@ -1172,7 +1172,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 looks to p_l, wondering if {PRONOUN/app1/subject} should speak to p_l about the dream {PRONOUN/app1/subject} had last night.",
         "decline_text": "app1 decides it wasn't important, and doesn't bother p_l.",
         "chance_of_success": 40,
@@ -1640,7 +1640,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "As p_l pads through c_n territory, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} companion stays with {PRONOUN/p_l/object} as silent support while {PRONOUN/p_l/subject} {VERB/p_l/work/works}.",
         "chance_of_success": 30,
@@ -1785,7 +1785,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "As p_l pads through c_n territory with {PRONOUN/p_l/poss} entourage, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} companion stays with {PRONOUN/p_l/object} as silent support while {PRONOUN/p_l/subject} {VERB/p_l/continue/continues} on.",
         "chance_of_success": 30,
@@ -1991,7 +1991,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "As app1 pads through c_n territory, {PRONOUN/app1/subject} {VERB/app1/feel/feels} a presence join {PRONOUN/app1/object}.",
         "decline_text": "{PRONOUN/app1/poss/CAP} companion stays with {PRONOUN/app1/object} as silent support while {PRONOUN/p_l/subject} {VERB/p_l/work/works}. It's a little unnerving, but app1 thinks they mean well?",
         "chance_of_success": 30,
@@ -2090,7 +2090,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "As app1 pads through c_n territory, {PRONOUN/app1/subject} {VERB/app1/feel/feels} a presence join {PRONOUN/app1/object}.",
         "decline_text": "{PRONOUN/app1/poss/CAP} companion stays with {PRONOUN/app1/object} as silent support while {PRONOUN/app1/subject} {VERB/app1/work/works}.",
         "chance_of_success": 30,
@@ -2283,7 +2283,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "During a patrol looking for herbs, p_l notices that r_c seems more quiet than usual. When prompted, r_c slowly asks if p_l could teach {PRONOUN/r_c/object} more about the nature of StarClan.",
         "decline_text": "p_l opens {PRONOUN/p_l/poss} mouth to answer, but the cry of another patrol looking for {PRONOUN/p_l/object} shuts down the conversation. p_l races away towards the scene, leaving r_c behind.",
         "chance_of_success": 60,
@@ -2434,7 +2434,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "To p_l's concern, {PRONOUN/p_l/poss} warrior escort is unusually quiet. When prompted on {PRONOUN/r_c/poss} troubles, r_c comments that {PRONOUN/r_c/subject} could not help but think of what legacy {PRONOUN/r_c/subject} would leave behind if StarClan called upon {PRONOUN/r_c/object}.",
         "decline_text": "p_l isn't sure how exactly to address such a statement, and quickly attempts to distract r_c with some herb collecting.",
         "chance_of_success": 60,
@@ -2562,7 +2562,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity for all of them to be out like this together, and each cat plans to make the most of it.",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them of a small emergency back at camp that needs their attention. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 20,
@@ -2699,7 +2699,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "The apprentices stroll through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 30,
@@ -2817,7 +2817,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l eyes the warrior chosen to escort {PRONOUN/p_l/object} to fetch herbs, feeling a little bit giddy. Apprentices getting to boss around warriors is something that almost never happens, and p_l is going to make sure {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the most of it.",
         "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead. p_l lashes {PRONOUN/p_l/poss} tail in frustration but doesn't protest, heading back to the medicine cat den alone.",
         "chance_of_success": 50,
@@ -2930,7 +2930,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app2 trots over to p_l, the two apprentices grinning at each other with raised tails. p_l needs an escort to gather herbs, and as luck would have it, the only cat free at the moment is {PRONOUN/p_l/poss} sibling, app2!",
         "decline_text": "... Or so they thought. app2 is called away by {PRONOUN/app2/poss} mentor for training, and {PRONOUN/app2/subject} {VERB/app2/scamper/scampers} off with an apologetic glance back, leaving p_l by {PRONOUN/p_l/self} with {PRONOUN/p_l/poss} tail sagging to the ground.",
         "chance_of_success": 40,
@@ -3108,7 +3108,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c trots over to p_l, the two cats grinning at each other with raised tails. p_l wants an escort to gather herbs, and as luck would have it, the only cat free at the moment is {PRONOUN/p_l/poss} sibling, r_c!",
         "decline_text": "... Or so they thought. r_c is called away by the deputy, and {PRONOUN/r_c/subject} {VERB/r_c/rush/rushes} off with an apologetic glance back, leaving p_l by {PRONOUN/p_l/self} with {PRONOUN/p_l/poss} tail sagging to the ground.",
         "chance_of_success": 50,
@@ -3314,7 +3314,7 @@
                 1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/glance/glances} back and {VERB/p_l/realize/realizes} app1 looks like {PRONOUN/app1/subject} {VERB/app1/want/wants} to ask {PRONOUN/p_l/object} a question.",
         "decline_text": "Just as app1 opens {PRONOUN/app1/poss} mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder and hurries away to help.",
         "chance_of_success": 50,
@@ -3709,7 +3709,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
         "decline_text": "p_l stops, then laughs. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
         "chance_of_success": 50,
@@ -4145,7 +4145,7 @@
                 2
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "In order to spice up their patrol, p_l challenges app2 to an herb-gathering competition.",
         "decline_text": "app2 scoffs at p_l's silliness and stalks off, leaving p_l alone in {PRONOUN/p_l/poss} dismay.",
         "chance_of_success": 60,
@@ -4333,7 +4333,7 @@
                 -1
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l and r_c take a look at their dwindling supply of herbs and decide to combine their efforts into searching for more.",
         "decline_text": "Unfortunately, they are interrupted by a cat claiming that they have an emergency.",
         "chance_of_success": 50,
@@ -4476,7 +4476,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "p_l thinks r_c is a bit of a feather-brain, so when {PRONOUN/r_c/subject} {VERB/r_c/come/comes} up to p_l while p_l is gathering herbs and {VERB/r_c/suggest/suggests} replenishing the Clan's catmint supply with a gleam in {PRONOUN/r_c/poss} eye, p_l hesitates.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is}n't going to go after an herb renowned for the silliness it can cause with a cat {PRONOUN/p_l/subject} {VERB/p_l/dislike/dislikes}. It's simply a bad idea.",
         "chance_of_success": 40,
@@ -4582,7 +4582,7 @@
                 1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "p_l is out alone in c_n's territory when a shiver runs down {PRONOUN/p_l/poss} spine. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops}. {PRONOUN/p_l/subject/CAP} slowly {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} head. On the rosemary bush next to {PRONOUN/p_l/object}, the moth lazily stretches its wings, the Twoleg skull on its back grinning.",
         "decline_text": "It's just a moth, p_l tells {PRONOUN/p_l/self}, and continues on {PRONOUN/p_l/poss} way.",
         "chance_of_success": 70,
@@ -4660,7 +4660,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm.",
         "decline_text": "The distant call of a Twoleg makes the cats think better of the whole idea.",
         "chance_of_success": 60,
@@ -4722,7 +4722,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm.",
         "decline_text": "The distant call of a Twoleg makes the cats think better of the whole idea.",
         "chance_of_success": 60,
@@ -4778,7 +4778,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While out gathering herbs alone at night, r_c notices a faint glow coming from deeper within the Clan's territory. As {PRONOUN/r_c/subject} {VERB/r_c/peer/peers} into the gloom, {PRONOUN/r_c/subject} {VERB/r_c/see/sees} that it slightly resembles a cat.",
         "decline_text": "r_c decides herbs are more important than chasing random glowing figures through the territory.",
         "chance_of_success": 50,
@@ -4845,7 +4845,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As r_c follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c/poss} vision. Was that movement up ahead? r_c spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} amongst the shadows. The stranger's fur is translucent, and it moves as though made from a strange dark mist.",
         "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c/poss} back. This is definitely not a StarClan cat, and {PRONOUN/r_c/subject} quickly {VERB/r_c/turn/turns} the back to camp - herbs can wait until morning.",
         "chance_of_success": 50,
@@ -4906,7 +4906,7 @@
                 5
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol stops by at their usual herb patch, only to be greeted by a mysterious black cat that stares them down, unblinking.",
         "decline_text": "This cat seems a bit too strange and even a touch antagonistic... Purrhaps it would be wise to come back another day, when the raven-furred stranger isn't guarding the herb patch.",
         "chance_of_success": 50,
@@ -4992,7 +4992,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While out collecting herbs with p_l, r_c can't help but notice just how hard the medicine cat is pushing {PRONOUN/p_l/self}.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to keep {PRONOUN/r_c/poss} thoughts to {PRONOUN/r_c/self}.",
         "chance_of_success": 60,
@@ -5173,7 +5173,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While out collecting herbs with p_l, r_c can't help but notice just how hard {PRONOUN/r_c/poss} fellow medicine cat is pushing {PRONOUN/p_l/self}.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to keep {PRONOUN/r_c/poss} thoughts to {PRONOUN/r_c/self}.",
         "chance_of_success": 60,
@@ -5362,7 +5362,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While out collecting herbs with r_c, p_l can't help but notice just how hard {PRONOUN/p_l/poss} companion is pushing {PRONOUN/r_c/self}.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to keep {PRONOUN/p_l/poss} thoughts to {PRONOUN/p_l/self}.",
         "chance_of_success": 60,
@@ -5545,7 +5545,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While out collecting herbs, p_l notices how quiet and dejected app1 is acting. After p_l asks {PRONOUN/app1/object} what's wrong, app1 admits {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} feel cut out to be a medicine cat.",
         "decline_text": "Unsure of what to say, p_l continues the herb patrol as usual, leaving app1 to {PRONOUN/app1/poss} sour mood.",
         "chance_of_success": 60,
@@ -5853,7 +5853,7 @@
         "relationship_constraint": [
             "child/parent"
         ],
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "It's a rare occasion when r_c gets to actually patrol with {PRONOUN/r_c/poss} kit. Their differing roles mean the pair hardly see each other, and it feels like forever since they were alone together.",
         "decline_text": "Noticing storm clouds above, p_l decides to head back to camp before it starts raining. Their catch-up would have to wait.",
         "chance_of_success": 60,
@@ -6094,7 +6094,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "intro_text": "p_l and app2 leave camp together to gather herbs and refresh c_n's stocks of some basic necessities. A short ways out of camp, app2 stops p_l and asks, with a glint in {PRONOUN/app2/poss} eye, if p_l will show {PRONOUN/app2/object} where deathberries grow on c_n's territory.",
         "decline_text": "p_l hastily makes up an excuse to return to camp, and app2's curiosity remains unsatisfied.",
@@ -6547,7 +6547,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "intro_text": "r_c joins p_l to gather juniper berries. {PRONOUN/r_c/subject/CAP} {VERB/r_c/station/stations} {PRONOUN/r_c/self} by the edge of the clearing as p_l gathers from a bush. r_c's fur bushes up when {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a snake slithering closer!",
         "decline_text": "r_c squints and realizes it's actually a curvy stick, rolled along by a breeze.",
@@ -6974,7 +6974,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "intro_text": "app1 and app2 head out to collect herbs together.",
         "decline_text": "A Clanmate calls them back to camp.",
@@ -7879,7 +7879,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "intro_text": "A patrol of medicine cat apprentices heads out to collect herbs together.",
         "decline_text": "A Clanmate calls them back to camp.",

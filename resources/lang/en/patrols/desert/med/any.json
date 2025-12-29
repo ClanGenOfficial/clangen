@@ -32,7 +32,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l sees weird ripples on the water of the underground spring while collecting fresh water.",
         "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
         "chance_of_success": 45,
@@ -147,7 +147,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both above and underground away from the hot sun.",
         "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/see/sees} app1's absent minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day, when app1 is more focused and less liable to get a heatstroke when they go to show {PRONOUN/app1/object} the herbs aboveground",
         "chance_of_success": 65,
@@ -262,7 +262,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 has been sent out into the desert to try to find some specific herbs alone.",
         "decline_text": "Nervous and with the hot sun pounding on {PRONOUN/app1/poss} back, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to go back to camp and try again another day, {PRONOUN/app1/poss} tail dragging behind {PRONOUN/app1/object}.",
         "chance_of_success": 40,
@@ -329,7 +329,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l, fueled by desperation and unable to leave the Clan because of the heat of greenleaf withering c_n, ingests a piece of sacred cacti hoping to trigger a vision.",
         "decline_text": "At that exact moment a cat walks into the medicine cat den looking for p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/put/puts} the piece of cacti back, having to wait for a better time.",
         "chance_of_success": 50,
@@ -498,7 +498,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time.",
         "chance_of_success": 15,
@@ -657,7 +657,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is on a mission to find lungwort now that greenleaf is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
         "chance_of_success": 15,
@@ -817,7 +817,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is on a mission to find lungwort now that greenleaf is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave.",
         "chance_of_success": 15,
@@ -1025,7 +1025,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time.",
         "chance_of_success": 15,
@@ -1184,7 +1184,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up on it.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
         "chance_of_success": 15,
@@ -1344,7 +1344,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-bare is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n won't run out of it. {PRONOUN/p_l/subject/CAP} take along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave.",
         "chance_of_success": 15,
@@ -1552,7 +1552,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time.",
         "chance_of_success": 15,
@@ -1724,7 +1724,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-fall is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
         "chance_of_success": 15,
@@ -1884,7 +1884,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is on a mission to find lungwort now that leaf-fall is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} take along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave.",
         "chance_of_success": 15,
@@ -2090,7 +2090,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
         "chance_of_success": 35,
@@ -2178,7 +2178,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/look/looks} for newleaf's fresh buds, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
@@ -2323,7 +2323,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find the buds of newleaf.",
         "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
         "chance_of_success": 60,
@@ -2464,7 +2464,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look to take advantage of the leaf-bare growing season, and for carrying capacity should they find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
@@ -2609,7 +2609,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of leaf-bare.",
         "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
         "chance_of_success": 60,
@@ -2750,7 +2750,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to stock up under the clear leaf-fall skies, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
@@ -2895,7 +2895,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the first harvests available in leaf-fall.",
         "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
         "chance_of_success": 60,
@@ -3036,7 +3036,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l goes out with a warrior escort, both for safety as they look for sorely needed fresh supplies that have survived greenleaf so far, and for carrying capacity should they find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
@@ -3181,7 +3181,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived greenleaf so far.",
         "decline_text": "...And they're called back almost immediately, as one of the elders starts hacking up something.",
         "chance_of_success": 60,
@@ -3330,7 +3330,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is out to gather a few herbs at the behest of {PRONOUN/p_l/poss} mentor. The wind is gently rustling the scrubby grass as {PRONOUN/p_l/subject} pad along.",
         "decline_text": "Just before the apprentice can leave, {PRONOUN/p_l/poss} mentor calls for {PRONOUN/p_l/poss} attention. Apparently, they have a different task that's more pressing.",
         "chance_of_success": 50,

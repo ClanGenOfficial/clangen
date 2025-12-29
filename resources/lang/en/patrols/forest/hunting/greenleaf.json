@@ -20,7 +20,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!",
         "decline_text": "After a moment's deliberation, r_c decides to move on.",
         "chance_of_success": 60,
@@ -85,7 +85,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 scents a squirrel on the air! Greenleaf has made prey fat and unaware, so surely this will be an easy catch?",
         "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} to move on and ignore the squirrel for now.",
         "chance_of_success": 60,
@@ -143,7 +143,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots - p_l points out a few likely destinations the squirrel may be heading to, then softly asks app1 how {PRONOUN/app1/subject}'d like to proceed.",
         "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 60,
@@ -249,7 +249,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 60,
@@ -431,7 +431,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As the patrol walks through the woods, r_c explains an idea {PRONOUN/r_c/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
         "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
         "chance_of_success": 60,
@@ -552,7 +552,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As p_l walks through the bright foliage of greenleaf, some loud twittering from above catches {PRONOUN/p_l/poss} ear. A bird! Maybe if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} careful, {PRONOUN/p_l/subject} can catch it by surprise...",
         "decline_text": "p_l shakes {PRONOUN/p_l/poss} head and decides to leave the bird alone. It would be too much work to try and catch it from that high up, anyway.",
         "chance_of_success": 45,
@@ -619,7 +619,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 nearly thinks {PRONOUN/app1/subject}'ll have to come home empty-pawed when a rustling in the grass alerts {PRONOUN/app1/object} to prey. {PRONOUN/app1/subject/CAP} {VERB/app1/drop/drops} down into a crouch, scenting bird on the air...",
         "decline_text": "...but app1 stands up again just as quickly. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} never hunted bird before, and {VERB/app1/don't/doesn't} feel like walking back to camp with a mouthful of feathers. {PRONOUN/app1/subject/CAP}'ll find easier prey if {PRONOUN/app1/subject} just {VERB/app1/keep/keeps} walking, {PRONOUN/app1/subject}{VERB/app1/'re/'s} sure of it.",
         "chance_of_success": 65,
@@ -674,7 +674,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While on patrol, p_l catches the scent of a feathery fiend and flicks {PRONOUN/p_l/poss} tail to signal 'stop.' This is a perfect opportunity for app1 to practice hunting some harder prey.",
         "decline_text": "app1 complains that {PRONOUN/app1/subject}{VERB/app1/'re/'s} too tired to hunt something difficult and would rather look for a mouse or squirrel instead. p_l sighs, but relents. It's getting late in the day, anyway.",
         "chance_of_success": 75,
@@ -725,7 +725,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol is brought up short by the sound of aggressive flapping and the cries of a hawk. Approaching cautiously through the bushes, they see a red-tailed hawk, downed with a broken wing, trying in vain to get back into the sky. This could be an opportunity...",
         "decline_text": "Even with a broken wing, a hawk is a formidable adversary, and the patrol agrees not to risk getting injured for some more fresh-kill. There is plenty of prey in the forest, after all, and it's better to be safe than sorry.",
         "chance_of_success": 35,
@@ -939,7 +939,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As p_l searches for prey to hunt, {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a raven pecking in the dirt.",
         "decline_text": "Corvid meat is tough and stringy, and the birds are too clever to make easy prey. p_l decides to hunt juicier, dumber prey today.",
         "chance_of_success": 45,
@@ -985,7 +985,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
         "decline_text": "The patrol ignores the squirrel.",
         "chance_of_success": 50,
@@ -1039,7 +1039,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol heads out, determined to visit a distant clearing, where the grass has set to seed and attracted birds. However, still several fox-length from the clearing, p_l looks around and realizes r_c isn't with the patrol.",
         "decline_text": "r_c eventually catches up.",
         "chance_of_success": 40,
@@ -1210,7 +1210,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l hunts near the stream, hoping for an easy hunt to get out of the heat. {PRONOUN/p_l/poss/CAP} eyes lock onto a large rat drinking from the stream.",
         "decline_text": "One rat? p_l could do way better than just a single rat in greenleaf. {PRONOUN/p_l/subject/CAP} {VERB/p_l/continue/continues} on to find more rewarding prey.",
         "chance_of_success": 60,
@@ -1258,7 +1258,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 hides {PRONOUN/app1/self} in a clump of ferns, keeping as far away from the sweltering greenleaf heat as {PRONOUN/app1/subject} can. {PRONOUN/app1/poss/CAP} ears perk at the soft hiss. Seems someone else had the same idea.",
         "decline_text": "app1 decides that one rat isn't worth missing out on some fun! {PRONOUN/app1/subject/CAP} instead {VERB/app1/chase/chases} after leaves for the rest of the hunting patrol.",
         "chance_of_success": 60,
@@ -1308,7 +1308,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l and app1 walk in the patches of shade, eager to leave the greenleaf sun to the plants. p_l's nose twitches at rat scent near the stream-stones, seeing two of them attempt to cross.",
         "decline_text": "Running water is always a threat to cats. p_l takes app1 somewhere else to hunt.",
         "chance_of_success": 60,
@@ -1349,7 +1349,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the sweltering heat. Perhaps it would be a perfect hunting spot?",
         "decline_text": "The other cats disagree with such a risk and resume their normal hunting patrol.",
         "chance_of_success": 50,
@@ -1483,7 +1483,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "A legend has been sighted. Recently, warriors have reported sighting a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
         "decline_text": "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take {PRONOUN/p_l/poss} patrol elsewhere to hunt.",
         "chance_of_success": 30,
@@ -1611,7 +1611,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Something skitters across the grass, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
@@ -1771,7 +1771,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Something skitters across the grass, catching the patrol's eyes. A little lizard!",
         "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
         "chance_of_success": 60,
@@ -1860,7 +1860,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol comes across a vole nibbling at a seed.",
         "decline_text": "The patrol decides to look for other prey.",
         "chance_of_success": 50,
@@ -1920,7 +1920,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor.",
         "decline_text": "The patrol decides there's probably easier prey to find elsewhere.",
         "chance_of_success": 50,
@@ -2014,7 +2014,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. p_l debates turning back home.",
         "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
         "chance_of_success": 50,
@@ -2086,7 +2086,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol comes across a strange Twoleg object smelling slightly of smoke and prey. Intriguing, but also sort of terrifying. Don't the Twolegs know the danger of fire?",
         "decline_text": "The patrol decides to avoid the Twoleg object.",
         "chance_of_success": 50,
@@ -2148,7 +2148,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
@@ -2389,7 +2389,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
@@ -2671,7 +2671,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} {PRONOUN/r_c/poss} red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
@@ -2911,7 +2911,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 70,
@@ -3169,7 +3169,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
@@ -3388,7 +3388,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
@@ -3636,7 +3636,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
@@ -3938,7 +3938,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 10,
@@ -4217,7 +4217,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 10,
@@ -4422,7 +4422,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 60,
@@ -4673,7 +4673,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
@@ -4925,7 +4925,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c catches the scent of a fox - but is it red, or gray?",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} not to pursue the fox.",
         "chance_of_success": 40,
@@ -5158,7 +5158,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c catches scent of a mouse nearby and drools at the thought of greenleaf fresh-kill. It's a great day for hunting, too; c_n's woods overflow with greenleaf's bounty.",
         "decline_text": "r_c ignores the mouse.",
         "chance_of_success": 60,
@@ -5223,7 +5223,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 catches scent of a mouse nearby. Surely greenleaf is the perfect time to try solo-hunting. Everyone always says this is the season when the prey wanders right into a cat's jaws.",
         "decline_text": "app1 ignores the mouse.",
         "chance_of_success": 60,
@@ -5281,7 +5281,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 catches scent of a mouse nearby. p_l congratulates {PRONOUN/app1/object} and gives {PRONOUN/app1/object} some tips on where the mouse might be headed. With the heat of greenleaf, {PRONOUN/app1/poss} prey will probably seek out the damp gully ahead.",
         "decline_text": "They decide to stay put and keep scenting for prey nearby.",
         "chance_of_success": 60,
@@ -5380,7 +5380,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with {PRONOUN/r_c/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c/poss} paws.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 10,
@@ -5561,7 +5561,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
         "chance_of_success": 10,
@@ -5686,7 +5686,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The light drizzle falling on {PRONOUN/r_c/poss} whiskers is refreshing, after so many days of warmth. r_c wanders out to hunt, making the most of the drop in temperature so {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have to stalk in the full heat of greenleaf.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was}n't dead set on hunting, and r_c allows {PRONOUN/r_c/self} to be distracted by one of {PRONOUN/r_c/poss} Clanmates instead.",
         "chance_of_success": 60,
@@ -5807,7 +5807,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "It's been so hot recently, but today, with the clouds providing a slight drizzle, app1 has the zoomies. {PRONOUN/app1/poss/CAP} mentor wearily suggests that {PRONOUN/app1/subject} should go hunting if {PRONOUN/app1/subject}{VERB/app1/'re/'s} so energetic. Sure!",
         "decline_text": "...Maybe it'd be better to wait until {PRONOUN/app1/poss} mentor is free to take {PRONOUN/app1/object} on a hunting patrol.",
         "chance_of_success": 50,
@@ -5905,7 +5905,7 @@
         "min_cats": 3,
         "max_cats": 4,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The greenleaf air is warm on {PRONOUN/p_l/poss} whiskers as p_l leads {PRONOUN/p_l/poss} patrol out. p_l suddenly motions for a halt. The cats can see a squirrel chewing on a nut beneath a tree. Surely if they try to catch it, it'll just retreat up into the branches. But r_c seems to want to try.",
         "decline_text": "They decide it's not worth the effort and look for other prey.",
         "chance_of_success": 40,
@@ -5995,7 +5995,7 @@
                 2
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Greenleaf has brought abundant birdsong and prey-scent to the forest, and they're going to prove themselves!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -6147,7 +6147,7 @@
                 2
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "It's nice to get the chance to go out hunting with app2. app1 knows they're still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery as littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -6245,7 +6245,7 @@
                 2
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -6341,7 +6341,7 @@
                 3
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The three siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Greenleaf has brought abundant birdsong and prey-scent to the forest, and they're going to prove themselves!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -6490,7 +6490,7 @@
                 3
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -6588,7 +6588,7 @@
                 3
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -6684,7 +6684,7 @@
                 4
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The four siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Greenleaf has brought abundant birdsong and prey-scent to the forest, and they're going to prove themselves!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -6833,7 +6833,7 @@
                 4
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -6931,7 +6931,7 @@
                 4
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -7027,7 +7027,7 @@
                 5
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The five siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Greenleaf has brought abundant birdsong and prey-scent to the forest, and they're going to prove themselves!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -7176,7 +7176,7 @@
                 5
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -7274,7 +7274,7 @@
                 5
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -7370,7 +7370,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The six siblings head out together, declaring a friendly competition to stock the fresh-kill pile. Greenleaf has brought abundant birdsong and prey-scent to the forest, and they're going to prove themselves!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -7519,7 +7519,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "It's nice to get the chance to go out hunting together. app1 knows they're all still in the apprentices' den together, but their different mentors and focuses and skills - it's not the same as it was back in the nursery with {PRONOUN/app1/poss} littermates. And the greenleaf sun is so warm and bright!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -7617,7 +7617,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The clouds are out, making the world murky after all the recent sunny days. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
         "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
@@ -7715,7 +7715,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} {VERB/app1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Greenleaf heat isn't that big of an issue, surely.",
         "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in {PRONOUN/app1/poss} nest.",
         "chance_of_success": 50,
@@ -7819,7 +7819,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "As they wander through the greenleaf-rich forest, nearly being deafened by cicadas, p_l awkwardly asks app1 how {PRONOUN/app1/subject} {VERB/app1/think/thinks} {PRONOUN/app1/poss} training is going.",
         "decline_text": "app1 carefully talks around the subject, telling p_l nothing of importance.",
         "chance_of_success": 50,
@@ -7941,7 +7941,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "app1 bounds out of camp, determined to show off to p_l!",
         "decline_text": "And both are immediately recalled - the camp needs new nesting materials, not more prey.",
         "chance_of_success": 50,
@@ -8063,7 +8063,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "app1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/app1/subject} {VERB/app1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn? Greenleaf heat isn't that big of an issue, surely.",
         "decline_text": "Actually, {PRONOUN/app1/subject}'d really rather be back in {PRONOUN/app1/poss} nest.",
         "chance_of_success": 50,
@@ -8167,7 +8167,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "app1 bounds out of camp, determined to show off to {PRONOUN/app1/poss} older siblings!",
         "decline_text": "And everyone is immediately recalled - the camp needs new nesting materials, not more prey.",
         "chance_of_success": 50,
@@ -8281,7 +8281,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The sun is out (again) the birds are singing (it's been constant lately), there's not a breath of wind (thank god for the shade of the canopy) and p_l is out on a hunting patrol with r_c.",
         "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
@@ -8397,7 +8397,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} sibling. Especially with the forest blooming with plants and prey, perfect for a great hunt together!",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
@@ -8514,7 +8514,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "Sun's out, and r_c has been assigned a moderately tolerable hunting partner - {PRONOUN/r_c/poss} sibling!",
         "decline_text": "Cancel that - a border patrol needs backup.",
         "chance_of_success": 50,
@@ -8649,7 +8649,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The hunting patrol heads out early, before the dew on the forest floor can evaporate.",
         "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
         "chance_of_success": 50,
@@ -8785,7 +8785,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The siblings head out to one of the further hunting grounds of the forest, where the sun can't drench the ground, protected as it is by mature tree cover.",
         "decline_text": "They decide to bask for a bit instead of making the long walk.",
         "chance_of_success": 50,
@@ -8891,7 +8891,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The sun is out (again) the birds are singing (it's been constant lately), there's not a breath of wind (thank god for the shade of the canopy) and p_l is out on a hunting patrol with {PRONOUN/p_l/poss} siblings.",
         "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
@@ -9007,7 +9007,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially with the forest blooming with plants and prey, perfect for a great hunt together!",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
@@ -9124,7 +9124,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "Sun's out, and r_c has been assigned a moderately tolerable hunting patrol - {PRONOUN/r_c/poss} siblings!",
         "decline_text": "Cancel that - a border patrol needs backup.",
         "chance_of_success": 50,
@@ -9259,7 +9259,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The hunting patrol heads out early, before the dew on the forest floor can evaporate.",
         "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
         "chance_of_success": 50,
@@ -9395,7 +9395,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "The siblings head out to one of the further hunting grounds of the forest, where the sun can't drench the ground, protected as it is by mature tree cover.",
         "decline_text": "They decide to bask for a bit instead of making the long walk.",
         "chance_of_success": 50,
@@ -9496,7 +9496,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l finds a patch of herbs that {PRONOUN/p_l/subject} {VERB/p_l/believe/believes} c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely {VERB/p_l/admit/admits} to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't a medicine cat, and {VERB/p_l/ask/asks} {PRONOUN/p_l/poss} companions' advice. What do they know about this part of the forest's herbal properties, especially in the heat of greenleaf?",
         "decline_text": "They decide to focus on hunting and leave the herb collecting to the medicine cats.",
         "chance_of_success": 50,

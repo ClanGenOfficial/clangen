@@ -20,7 +20,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol wants to hold a training session for r_c. They decide to focus on how best hunt and hide while wading through cheek-deep water.",
         "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 50,
@@ -79,7 +79,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Up at the front of the patrol, p_l hears a Twoleg monster zoom past on the water, followed by startled yowling. Turning back, {PRONOUN/p_l/object} {VERB/p_l/spot/spots} r_c being washed away by the wave surging in the monster's wake.",
         "decline_text": "p_l runs back to camp to fetch help.",
         "chance_of_success": 50,
@@ -279,7 +279,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Trailing behind the patrol, r_c hears a roar as a Twoleg monster passes the cats on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking {PRONOUN/r_c/object} into the water.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/s} near the bank and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
@@ -479,7 +479,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Out in the wetlands, training alone, r_c hears a roar as a Twoleg monster passes on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking {PRONOUN/r_c/object} into the water.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/s} near the bank and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
@@ -536,7 +536,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the swamps alone, but maybe an apprentice shouldn't try to do a solo patrol.",
         "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
         "chance_of_success": 30,
@@ -601,7 +601,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
@@ -679,7 +679,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
@@ -757,7 +757,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the swamps alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
@@ -842,7 +842,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Fireflies swarm over the heart of c_n's territory, gleaming, dancing, and flashing around app1 as {PRONOUN/app1/subject} {VERB/app1/wait/waits} for app2.",
         "decline_text": "The apprentices are called back to camp to deal with kitsitting.",
         "chance_of_success": 70,
@@ -997,7 +997,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l paddles across a little streamlet on {PRONOUN/p_l/poss} way to a hump of raised ground near camp that's good for training. Upon arrival, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
@@ -1096,7 +1096,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques, and perhaps training together?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 50,
@@ -1277,7 +1277,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
         "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
         "chance_of_success": 60,
@@ -1350,7 +1350,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1"
@@ -1483,7 +1483,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "LORE,1"
@@ -1673,7 +1673,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "LORE,1",
@@ -1781,7 +1781,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "LORE,1",
@@ -1948,7 +1948,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "LORE,0",

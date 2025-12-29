@@ -32,7 +32,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
         "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
         "chance_of_success": 45,
@@ -147,7 +147,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both on even and uneven ground.",
         "decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to slip and fall off the mountain.",
         "chance_of_success": 65,
@@ -256,7 +256,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 has been sent out into the swamps to try to find herbs alone.",
         "decline_text": "Nervous and with an eerie sound on the wind scaring them, they decide to go back to camp with their tail dragging behind them and try again another day.",
         "chance_of_success": 65,
@@ -315,7 +315,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
         "chance_of_success": 35,
@@ -407,7 +407,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the vegetation as they pad along.",
         "decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently, they have a different task that's more pressing.",
         "chance_of_success": 50,
@@ -459,7 +459,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l and r_c head into the heart of the swamp to look for herbs, discussing the latest news.",
         "decline_text": "It seems like some mischievous cat has gotten into the herb storage and they have to sort it all over again.",
         "chance_of_success": 50,
@@ -569,7 +569,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
         "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
         "chance_of_success": 50,

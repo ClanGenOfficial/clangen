@@ -24,7 +24,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on tree climbing!",
         "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 60,
@@ -111,7 +111,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
         "decline_text": "Surely it must be nothing... Uneasily, r_c continues on.",
         "chance_of_success": 60,
@@ -339,7 +339,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
         "decline_text": "Surely it must be nothing... Uneasily, the patrol continues on.",
         "chance_of_success": 60,
@@ -571,7 +571,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/trail/trails} behind the patrol, there's a mighty crash above r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {PRONOUN/r_c/subject} {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
@@ -979,7 +979,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As r_c trails behind p_l, there's a mighty crash above {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {PRONOUN/r_c/subject} {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
@@ -1288,7 +1288,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As r_c trails behind p_l, there's a mighty crash above {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {PRONOUN/r_c/subject} {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
@@ -1544,7 +1544,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c is training alone out in the forest when suddenly, a mighty crash sounds from above. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
@@ -1633,7 +1633,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, but maybe an apprentice shouldn't try to do a solo patrol.",
         "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
         "chance_of_success": 30,
@@ -1730,7 +1730,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
@@ -1808,7 +1808,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
@@ -1886,7 +1886,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
@@ -1968,7 +1968,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l takes them both out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 60,
@@ -2145,7 +2145,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
         "decline_text": "When they get there, they can't find it, and the lesson fails.",
         "chance_of_success": 60,
@@ -2321,7 +2321,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Off in the woods, app1 waits for app2 underneath the low-hanging branches of a willow. The tip of {PRONOUN/app1/poss} tail twitches in excitement.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty today!",
         "chance_of_success": 60,
@@ -2480,7 +2480,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c approaches p_l, asking if {PRONOUN/p_l/subject} wouldn't mind showing r_c {PRONOUN/p_l/poss} hunting techniques and perhaps doing some training with {PRONOUN/r_c/object}?",
         "decline_text": "p_l declines gently, explaining that {PRONOUN/p_l/subject} {VERB/p_l/have/has} too much work to do.",
         "chance_of_success": 60,
@@ -2660,7 +2660,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As p_l pads through the woods near camp, looking for a good tree to sharpen {PRONOUN/p_l/poss} claws on before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
@@ -2758,7 +2758,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Out in the forest, p_l asks app1 if {PRONOUN/app1/subject} {VERB/app1/know/knows} why c_n chooses to live in the woods under the canopy, rather than any other environment.",
         "decline_text": "app1 seems distracted. p_l shrugs and decides to focus on more active training today instead.",
         "chance_of_success": 60,
@@ -2923,7 +2923,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "relationship_constraint": [],
         "pl_skill_constraint": [],
@@ -2962,7 +2962,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As r_c is out alone, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} something out of the corner of {PRONOUN/r_c/poss} eye; spindly, long, and partially hidden by the undergrowth of the forest.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/hurry/hurries} back to camp, a little freaked out.",
         "chance_of_success": 40,
@@ -3018,7 +3018,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "relationship_constraint": [],
         "pl_skill_constraint": [],
@@ -3064,7 +3064,7 @@
                 4
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 50,
         "pl_skill_constraint": [
             "STORY,1",
@@ -3159,7 +3159,7 @@
                 5
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 50,
         "pl_skill_constraint": [
             "LORE,1"

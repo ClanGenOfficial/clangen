@@ -17,7 +17,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol is on edge after scenting Twolegs in the area. p_l takes charge, keeping watch for any Twolegs that may be on the hunt for cats. Their scent is everywhere, even as the cats carefully remark the area. What's that smell? It's almost like pumpkin, but strange...",
         "decline_text": "p_l knows better than to mess with anything that smells like Twolegs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/skirt/skirts} around the area.",
         "chance_of_success": 40,
@@ -66,7 +66,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. Still, with the grass at it's leaf-fall maximum, the sun isn't going to be able to touch p_l's pelt.",
         "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp - border marking will wait til later.",
         "chance_of_success": 40,
@@ -272,7 +272,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is out at night, enjoying cicada calling just after sunset, when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across the fresh scent of a coyote. Dangerous - not just to p_l, but to all of c_n.",
         "decline_text": "p_l decides not to pursue such a dangerous creature, especially with the knowledge that coyotes often feast on cats.",
         "chance_of_success": 20,
@@ -657,7 +657,7 @@
         "min_cats": 2,
         "max_cats": 4,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Padding along the border, the cats find fresh coyote scat being washed away by the rain. There's a yip in the distance.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 30,
@@ -1173,7 +1173,7 @@
         "min_cats": 5,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings - so recently that it stinks from several fox lengths away, so recently that the canine might be still here, hiding in the misty morning haze.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
         "chance_of_success": 10,
@@ -1876,7 +1876,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Patrolling the border and updating the markings, r_c calls out to the rest of the patrol, making p_l stand up on {PRONOUN/p_l/poss} hind legs to peek over the grass. r_c has found an opening to what seems to be a new set of tunnels.",
         "decline_text": "The patrol decides not to check the tunnels. After all, who knows what might be hiding inside?",
         "chance_of_success": 40,
@@ -2432,7 +2432,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The wind rustles through the grass peacefully. As p_l checks the next border marking, that peace is broken with  a squeak and a muffled thump behind {PRONOUN/p_l/object}.",
         "decline_text": "app1 needs to stop screwing around and focus on the patrol.",
         "chance_of_success": 40,
@@ -2970,7 +2970,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "While on a dawn border patrol, with the sun still hugging the distant horizon, p_l finds an opening to what seems to be a new set of tunnels.",
         "decline_text": "The patrol decides not to check the tunnels. After all, who knows what might be hiding inside?",
         "chance_of_success": 30,
@@ -3507,7 +3507,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Trotting along the track that marks the border with app1, p_l spots the entrance to an unfamiliar hole in the ground.",
         "decline_text": "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?",
         "chance_of_success": 30,
@@ -4324,7 +4324,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border - after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird spash of shadows in a dip in the grass. Is that a burrow entrance?",
         "decline_text": "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?",
         "chance_of_success": 30,
@@ -4599,7 +4599,7 @@
                 1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1's ears swivel back and forth, pressing flat against {PRONOUN/app1/poss} head every so often as {PRONOUN/app1/poss} emotions slip through. With fur bristled out to full puff and freezing at every rustle in the grass, {PRONOUN/app1/subject} nevertheless {VERB/app1/pad/pads} the border alone. A strange mismash of shadows catches {PRONOUN/app1/poss} eye. Is that a tunnel entrance?",
         "decline_text": "app1 decides not to check. After all, who knows what might be hiding inside? No, it's time to go home, before anything bad happens to {PRONOUN/app1/object}.",
         "chance_of_success": 30,
@@ -5007,7 +5007,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The apprentices are at the border - not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?",
         "decline_text": "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway.",
         "chance_of_success": 30,

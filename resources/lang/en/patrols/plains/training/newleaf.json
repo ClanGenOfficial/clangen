@@ -20,7 +20,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
         "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
         "chance_of_success": 60,
@@ -91,7 +91,7 @@
                 -1
             ]
         },
-        "weight": 60,
+        "frequency": 4,
         "intro_text": "p_l sees {PRONOUN/p_l/poss} mates exchanging curious glances as they all pad through the grass towards p_l's promised surprise. {PRONOUN/p_l/poss/CAP} own tail waves like a jaunty reed, twitching a little in {PRONOUN/p_l/poss} excitement and scattering dewdrops whenever it hits the grass.",
         "decline_text": "The warriors get intercepted by a hunting patrol who need extra paws, and the possibility of a romantic afternoon evaporates.",
         "chance_of_success": 60,
@@ -211,7 +211,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "LORE,1",

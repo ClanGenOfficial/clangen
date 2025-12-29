@@ -20,7 +20,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol wants to hold a training session for r_c.  They decide to focus on how best to use gusts of sand or dust to blind prey to your attacks.",
         "decline_text": "They decide to focus on the patrolling the territory instead, training can wait for another day.",
         "chance_of_success": 50,
@@ -79,7 +79,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c wanders past an old badger sett overlooking a dried-up riverbed, only to freeze. There's new scent here, acrid and sour.",
         "decline_text": "Surely it must be nothing... Uneasily, r_c continues on.",
         "chance_of_success": 40,
@@ -168,7 +168,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l wanders past an old badger sett overlooking a dried-up riverbed, only to freeze. There's new scent here, acrid and sour.",
         "decline_text": "Surely it must be nothing... Uneasily, the patrol continues on.",
         "chance_of_success": 40,
@@ -250,7 +250,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Up at the front of the patrol, p_l hears a quiet swish and startled yowling. Turning back, they spot r_c being swallowed by a collapsing sand dune.",
         "decline_text": "p_l runs back to camp to fetch help.",
         "chance_of_success": 50,
@@ -450,7 +450,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Trailing behind the patrol, there's a quiet swish below r_c. They look around wildly, just in time for the world to tip upside-down as the sand dune beneath them collapses.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
@@ -650,7 +650,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Out in the desert training alone, r_c hears a quiet swoosh, and the world disappears as they fall into a collapsing sand dune.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
@@ -707,7 +707,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the desert alone, but maybe an apprentice shouldn't try to do a solo patrol.",
         "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
         "chance_of_success": 30,
@@ -772,7 +772,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
@@ -850,7 +850,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
@@ -928,7 +928,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
@@ -1013,7 +1013,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 runs along in the heat of the desert day, cajoling app2, who's really not keen on this sudden adventure at an unreasonably hot hour.",
         "decline_text": "The apprentices are called back to camp to kitsit.",
         "chance_of_success": 70,
@@ -1170,7 +1170,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Fluffed up against the cold, app1 and app2 walk to an outlook overlooking the sandy scrubland.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
         "chance_of_success": 70,
@@ -1327,7 +1327,7 @@
                 2
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "Playing near the camp at sunset, app1 scuffs their paw over the ground, throwing a pawful of sand at app2.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
         "chance_of_success": 70,
@@ -1479,7 +1479,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
@@ -1617,7 +1617,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l their hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 50,
@@ -1798,7 +1798,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "LORE,1"
@@ -1927,7 +1927,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1"
@@ -2060,7 +2060,7 @@
                 1
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1"
@@ -2219,7 +2219,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",
@@ -2358,7 +2358,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",
@@ -2509,7 +2509,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1",

@@ -15,7 +15,7 @@
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol meets o_c_n, a Clan they consider to be allies, at the border.",
         "decline_text": "You decide not to stop and talk with their patrol.",
         "chance_of_success": 60,
@@ -107,7 +107,7 @@
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol meets o_c_n, a Clan they consider to be allies, at the border.",
         "decline_text": "You decide not to stop and talk with their patrol.",
         "chance_of_success": 60,
@@ -200,7 +200,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on their ally's territory.",
         "decline_text": "It's not worth ruining c_n's relationship with their ally.",
         "chance_of_success": 60,
@@ -326,7 +326,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. Oh! {PRONOUN/p_l/subject/CAP} can smell some raspberries nearby - but it seems that they're just over the border.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that trespassing isn't worth it in this case.",
         "chance_of_success": 60,
@@ -387,7 +387,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
         "decline_text": "p_l decides that it isn't important. After all, o_c_n wouldn't do anything to jeopardize the alliance. Maybe an apprentice simply lost their way.",
         "chance_of_success": 60,
@@ -517,7 +517,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As p_l is checking the border lines, {PRONOUN/p_l/subject} {VERB/p_l/notice/notices} that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
         "decline_text": "p_l decides that it isn't important. After all, o_c_n wouldn't do anything to jeopardize the alliance.  Maybe an apprentice simply lost their way.",
         "chance_of_success": 60,
@@ -644,7 +644,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -731,7 +731,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -840,7 +840,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -958,7 +958,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1035,7 +1035,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1121,7 +1121,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1208,7 +1208,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1317,7 +1317,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1435,7 +1435,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1512,7 +1512,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1598,7 +1598,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1685,7 +1685,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1794,7 +1794,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1912,7 +1912,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -1989,7 +1989,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -2075,7 +2075,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -2162,7 +2162,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -2271,7 +2271,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -2389,7 +2389,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -2466,7 +2466,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "r_c heads out onto the beach alone to check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
         "chance_of_success": 30,
@@ -2556,7 +2556,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "pl_skill_constraint": [
             "LORE,1"
         ],
@@ -2661,7 +2661,7 @@
                 6
             ]
         },
-        "weight": 5,
+        "frequency": 1,
         "intro_text": "Since c_n is on good terms with o_c_n, the patrol is at ease as they patrol along the section of borders, however p_l spots two kits from o_c_n playing close to the border.",
         "decline_text": "It's not {PRONOUN/p_l/poss} problem that those kits are alone and vulnerable. o_c_n should keep a closer eye on their kits.",
         "chance_of_success": 55,

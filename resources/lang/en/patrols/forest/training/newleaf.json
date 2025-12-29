@@ -22,7 +22,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
@@ -151,7 +151,7 @@
                 -1
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c want to come out with {PRONOUN/p_l/object}? {PRONOUN/p_l/subject/CAP} {VERB/p_l/lean/leans} in close - there's a special spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been meaning to show {PRONOUN/r_c/object}.",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before either cat can head out of camp.",
         "chance_of_success": 80,
@@ -248,7 +248,7 @@
                 6
             ]
         },
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
         "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
         "chance_of_success": 60,
@@ -321,7 +321,7 @@
                 6
             ]
         },
-        "weight": 40,
+        "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,0",
@@ -394,7 +394,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
             "STORY,1"
