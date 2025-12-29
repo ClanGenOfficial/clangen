@@ -154,7 +154,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
         "decline_text": "On second thought, maybe not.",
         "chance_of_success": 50,
@@ -332,7 +332,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "app1's mentor assesses {PRONOUN/app1/object} by sending {PRONOUN/app1/object} on a solo hunt.",
         "decline_text": "app1 asks {PRONOUN/app1/poss} mentor to do the assessment some other time.",
         "chance_of_success": 40,
@@ -538,7 +538,7 @@
                 6
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "r_c heads out along the coast alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
@@ -633,7 +633,7 @@
                 6
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "r_c heads out along the coast alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
@@ -728,7 +728,7 @@
                 6
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "r_c heads out along the coast alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
         "chance_of_success": 40,
@@ -1206,97 +1206,6 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
-                "exp": 20,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a hunk of meat in {PRONOUN/r_c/poss} mouth.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters and abruptly tells the patrol they need to leave. Now.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,3"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
-                "exp": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful",
-                    "grumpy"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twoleg box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out. Eventually the Twolegs notice, and r_c is taken by them.",
-                "exp": 0,
-                "lost_cats": [
-                    "r_c"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/s_c/object}. s_c fights desperately, but the Twolegs take {PRONOUN/s_c/object} away in the monster.",
-                "exp": 0,
-                "stat_trait": [
-                    "compassionate",
-                    "faithful",
-                    "loving",
-                    "responsible",
-                    "thoughtful",
-                    "wise",
-                    "lonesome",
-                    "sincere"
-                ],
-                "lost_cats": [
-                    "s_c"
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_hunt_gonetnr3",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "bch_hunt_gonetnr",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "The patrol encounters a sandy beach where a lot of Twolegs linger.",
-        "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
                 "text": "They continue hunting undetected.",
                 "exp": 20,
                 "prey": [
@@ -1305,10 +1214,26 @@
                 "frequency": 4
             },
             {
+                "text": "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
+                "exp": 20,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            },
+            {
                 "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in {PRONOUN/r_c/poss} mouth.",
                 "exp": 20,
                 "prey": [
                     "small"
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a hunk of meat in {PRONOUN/r_c/poss} mouth.",
+                "exp": 20,
+                "prey": [
+                    "large"
                 ],
                 "frequency": 1
             },
@@ -1611,7 +1536,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "{PRONOUN/r_c/poss/CAP} eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
         "decline_text": "On second thought, they decide to recline in their nests today instead.",
         "chance_of_success": 40,
@@ -1816,7 +1741,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "{PRONOUN/app2/poss/CAP} eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens... where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to recline in their nests today instead.",
         "chance_of_success": 30,
@@ -2231,83 +2156,6 @@
                     "lead_death": "{VERB/m_c/were/was} hit by a monster"
                 },
                 "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_hunt_thunderpath2",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "cruel_season"
-        ],
-        "patrol_art": "gen_hunt_thunderpath",
-        "min_cats": 2,
-        "max_cats": 4,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "The patrol comes across a Thunderpath running along the shore.",
-        "decline_text": "The patrol decides it is better not to cross.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
-                "exp": 10,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws but a successful haul of prey nonetheless.",
-                "exp": 10,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
-                "exp": 10,
-                "stat_skill": [
-                    "CLEVER,1"
-                ],
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then {PRONOUN/s_c/subject} {VERB/s_c/trot/trots} across to hunt on the other side.",
-                "exp": 10,
-                "stat_trait": [
-                    "calm",
-                    "careful",
-                    "cunning",
-                    "nervous",
-                    "sneaky",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
-                "exp": 0,
-                "frequency": 4
             },
             {
                 "text": "r_c is crossing the Thunderpath and hears a monster thundering towards {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/freeze/freezes}: the monster swerves to hit {PRONOUN/r_c/object} deliberately, killing {PRONOUN/r_c/object} instantly.",
@@ -2319,35 +2167,12 @@
                     "reg_death": "m_c was hit by a monster and killed.",
                     "lead_death": "{VERB/m_c/were/was} hit by a monster"
                 },
-                "frequency": 3
-            },
-            {
-                "text": "r_c is hit by a monster and seems quite injured but miraculously still alive.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "MANLEG"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c was heavily injured by a monster and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
-                },
-                "frequency": 3
+                "frequency": 1
             }
         ]
     },
     {
-        "patrol_id": "bch_hunt_thunderpath3",
+        "patrol_id": "bch_hunt_thunderpath2",
         "biome": [
             "beach"
         ],
@@ -2425,103 +2250,8 @@
                     "reg_death": "This cat was hit by a monster and killed.",
                     "lead_death": "{VERB/m_c/were/was} hit by a monster"
                 },
-                "frequency": 4
+                "frequency": 2
             },
-            {
-                "text": "r_c is hit by a monster and seems quite injured but miraculously still alive.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "MANLEG"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c was heavily injured by a monster and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_hunt_thunderpath4",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "cruel_season"
-        ],
-        "patrol_art": "gen_hunt_thunderpath",
-        "min_cats": 5,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "The patrol comes across a Thunderpath running along the shore.",
-        "decline_text": "The patrol decides it is better not to cross.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
-                "exp": 10,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws but a successful haul of prey nonetheless.",
-                "exp": 10,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "The patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's both a reminder of the danger of the Thunderpath and a good source of scavenged meat.",
-                "exp": 10,
-                "stat_skill": [
-                    "CLEVER,1"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then {PRONOUN/s_c/subject} {VERB/s_c/trot/trots} across with the patrol to hunt on the other side.",
-                "exp": 10,
-                "stat_trait": [
-                    "calm",
-                    "careful",
-                    "cunning",
-                    "nervous",
-                    "sneaky",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
             {
                 "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
                 "exp": 0,
@@ -2560,7 +2290,7 @@
                     "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
                     "lead_death": "{VERB/m_c/were/was} hit by a monster"
                 },
-                "frequency": 3
+                "frequency": 4
             }
         ]
     },
@@ -2580,7 +2310,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the patrol passes a series of shallow rockpools, they spot a small octopus trapped by the tide.",
         "decline_text": "They move on to find easier prey.",
         "chance_of_success": 60,
@@ -2770,7 +2500,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen - an octopus on land. It's clearly headed for the ocean.",
         "decline_text": "A little impressed and a lot weirded out, the patrol decided to leave the poor creature alone.",
         "chance_of_success": 60,
@@ -2932,7 +2662,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As r_c passes along the sand between the waves and some rockpools, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} one of the oddest things {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} ever seen - an octopus on land. It's clearly headed for the ocean.",
         "decline_text": "A little impressed and a lot weirded out, r_c decided to leave the poor creature alone.",
         "chance_of_success": 60,
@@ -3014,7 +2744,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen - a huge octopus on land. It's clearly headed for the ocean.",
         "decline_text": "A little impressed and a lot weirded out, the patrol decided to leave the poor creature alone.",
         "chance_of_success": 50,
@@ -3478,245 +3208,6 @@
                 "frequency": 4
             },
             {
-                "text": "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty bite out of r_c before the cats retreat.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKCHEEK",
-                            "BEAKLOWER",
-                            "BEAKSIDE"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c died from an eagle bite.",
-                    "lead_death": "died from an eagle bite"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_hunt_eagleswim2",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "cruel_season"
-        ],
-        "patrol_art": "gen_hunt_eagleswim",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 2,
-        "intro_text": "The hunting patrol spots an eagle on the wing overhead and watches as it swoops to dig its talons through the spine of an impressively huge fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
-        "decline_text": "The patrol moves on, ignoring the eagle to focus on their own hunt.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "The patrol uses the eagle as a scout for their own hunt and make several smaller catches from the same area, which cumulatively are just as impressive as the eagle's massive catch.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats' eyes light up with possibility, watching the eagle swimming to shore awkwardly. p_l leads the patrol in yowling threats and insults from the shoreline, making a massive racket. Bewildered, the eagle gives up its catch and takes to the air. The massive fish washes ashore into the paws of the patrol.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "As the rest of the patrol discusses whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
-                "exp": 20,
-                "stat_skill": [
-                    "FIGHTER,3"
-                ],
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "As the rest of the patrol discusses whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
-                "exp": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "fierce",
-                    "bloodthirsty",
-                    "daring",
-                    "competitive"
-                ],
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch. The cats are driven back, forced to give up on the idea of scavenging.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
                 "text": "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey, and a furious haphazard swimming fight ensues. The eagle's talons, wings, and beak flail in an uncoordinated, dangerous tangle that brings r_c below the water. There's no way to be sure whether the talon wounds or the drowning killed {PRONOUN/r_c/object} in the end.",
                 "exp": 0,
                 "dead_cats": [
@@ -3766,6 +3257,24 @@
                     "reg_death": "m_c died from an eagle bite.",
                     "lead_death": "died from an eagle bite"
                 },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5
+                    }
+                ],
+                "prey": [
+                    "very_small"
+                ],
                 "frequency": 3
             }
         ]
@@ -7339,7 +6848,7 @@
                 5
             ]
         },
-        "frequency": 3,
+        "frequency": 4,
         "chance_of_success": 50,
         "pl_skill_constraint": [
             "LORE,1"
