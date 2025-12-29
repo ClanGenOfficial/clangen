@@ -3,7 +3,6 @@
 import logging
 import random
 from copy import deepcopy
-from itertools import repeat
 from os.path import exists as path_exists
 from random import choice, randint, choices
 from typing import List, Tuple, Optional, Union
@@ -375,12 +374,8 @@ class Patrol:
             clan_hostile = True
         elif 7 <= clan_relations <= 17:
             clan_neutral = True
-        # this is just for separating them a bit from the other patrols, it means they can always happen
-        other_clan_chance = 1
         # chance for each kind of loner event to occur
         small_clan = False
-        if not other_clan:
-            other_clan_chance = 0
         if clan_size < 20:
             small_clan = True
         regular_chance = int(random.getrandbits(2))
@@ -434,7 +429,7 @@ class Patrol:
                 )
 
         # other Clan patrols
-        if other_clan_chance == 1:
+        if other_clan:
             if clan_neutral:
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN))
             elif clan_allies:

@@ -350,7 +350,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "The patrol scents a kittypet on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
         "decline_text": "The patrol decides the kittypet isn't worth their time.",
         "chance_of_success": 40,
@@ -467,7 +467,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "p_l scents a kittypet on the territory. {PRONOUN/p_l/subject/CAP} {VERB/p_l/confront/confronts} the cat, who quickly surrenders and begs for shelter.",
         "decline_text": "p_l {VERB/p_l/decide/decides} the kittypet isn't worth {PRONOUN/p_l/poss} time.",
         "chance_of_success": 40,
@@ -589,7 +589,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "r_c finds a wounded cat near the Thunderpath.",
         "decline_text": "They leave the wounded cat alone.",
         "chance_of_success": 40,
@@ -672,7 +672,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "p_l finds a wounded cat near the Thunderpath.",
         "decline_text": "p_l leaves the wounded cat alone.",
         "chance_of_success": 40,
@@ -760,7 +760,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "In the middle of remarking the border, p_l finds a distinct scent trail has crossed it.",
         "decline_text": "p_l makes a note of it, but it'll have to wait till {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} done with this and back at camp.",
         "chance_of_success": 40,
@@ -982,7 +982,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "Padding along the border, p_l checks once - twice - three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
         "decline_text": "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory.",
         "chance_of_success": 40,
@@ -1367,7 +1367,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
         "decline_text": "They decide to leave the kit alone.",
         "chance_of_success": 40,
@@ -1450,7 +1450,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
         "decline_text": "p_l decides to leave the kit alone.",
         "chance_of_success": 40,
@@ -1853,7 +1853,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
         "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
         "chance_of_success": 40,
@@ -2428,7 +2428,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
@@ -2559,7 +2559,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
@@ -2701,7 +2701,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
@@ -2839,7 +2839,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
@@ -2977,7 +2977,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
@@ -3111,7 +3111,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
         "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
         "chance_of_success": 45,
@@ -3237,7 +3237,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "It's a cold day in c_n's territory, and app1 is the only cat stepping out. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} by {PRONOUN/app1/self} when {PRONOUN/app1/subject} {VERB/app1/hear/hears} a cat screaming for help.",
         "decline_text": "Nope, not today, there's no way app1 is running after ghost cats, no thank you.",
         "chance_of_success": 30,
