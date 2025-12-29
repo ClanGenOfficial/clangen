@@ -1172,7 +1172,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 looks to p_l, wondering if {PRONOUN/app1/subject} should speak to p_l about the dream {PRONOUN/app1/subject} had last night.",
         "decline_text": "app1 decides it wasn't important, and doesn't bother p_l.",
         "chance_of_success": 40,
@@ -2930,7 +2930,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app2 trots over to p_l, the two apprentices grinning at each other with raised tails. p_l needs an escort to gather herbs, and as luck would have it, the only cat free at the moment is {PRONOUN/p_l/poss} sibling, app2!",
         "decline_text": "... Or so they thought. app2 is called away by {PRONOUN/app2/poss} mentor for training, and {PRONOUN/app2/subject} {VERB/app2/scamper/scampers} off with an apologetic glance back, leaving p_l by {PRONOUN/p_l/self} with {PRONOUN/p_l/poss} tail sagging to the ground.",
         "chance_of_success": 40,
