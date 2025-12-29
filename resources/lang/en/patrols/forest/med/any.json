@@ -28,7 +28,7 @@
                 -1
             ]
         },
-        "frequency": 4,
+        "frequency": 2,
         "intro_text": "While gathering fresh water, p_l sees strange ripples on the surface of a puddle.",
         "decline_text": "p_l is in too much of a hurry, not sparing the rippling water a second glance.",
         "chance_of_success": 45,
@@ -127,7 +127,7 @@
                 6
             ]
         },
-        "frequency": 4,
+        "frequency": 2,
         "intro_text": "While on a trip to gather herbs, p_l slows to a stop. The random clearing {PRONOUN/p_l/subject} {VERB/p_l/linger/lingers} in doesn't look important, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} suddenly overcome by an otherworldly feeling of clair_list_emotional/p_l. What could this mean?",
         "decline_text": "p_l is in too much of a hurry, {PRONOUN/p_l/subject} {VERB/p_l/shake/shakes} the feeling off and {VERB/p_l/resolve/resolves} to forget the disconcerting experience.",
         "chance_of_success": 45,
@@ -1804,7 +1804,7 @@
                 2
             ]
         },
-        "frequency": 4,
+        "frequency": 3,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "The duo is called back to camp, needed for other chores.",
         "chance_of_success": 70,
@@ -2045,7 +2045,7 @@
                 3
             ]
         },
-        "frequency": 4,
+        "frequency": 3,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "The group is called back to camp, needed for other chores.",
         "chance_of_success": 30,
@@ -2158,7 +2158,7 @@
                 6
             ]
         },
-        "frequency": 4,
+        "frequency": 3,
         "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up {PRONOUN/app2/poss} face into a stupid expression around the stick {PRONOUN/app2/subject} {VERB/app2/hold/holds} in {PRONOUN/app2/poss} mouth.",
         "decline_text": "The group is called back to camp, needed for other chores.",
         "chance_of_success": 40,
@@ -2493,7 +2493,7 @@
                 6
             ]
         },
-        "frequency": 4,
+        "frequency": 3,
         "intro_text": "As the apprentices head out to collect moss, app2 screws up {PRONOUN/app2/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "chance_of_success": 30,

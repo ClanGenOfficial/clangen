@@ -26,7 +26,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "p_l suggests to r_c that it is the perfect weather to go for a swim in the ocean together.",
         "decline_text": "r_c isn't convinced and suggests they should probably focus on the patrol instead.",
         "chance_of_success": 60,
@@ -389,7 +389,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
         "decline_text": "r_c decides not to touch the berries.",
         "chance_of_success": 60,
@@ -548,7 +548,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "Whilst helping to gather herbs, app1 stumbles upon a bush of red berries.",
         "decline_text": "r_c decides not to touch the berries.",
         "chance_of_success": 60,

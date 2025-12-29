@@ -24,7 +24,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to navigate the rocky tide pools.",
         "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
         "chance_of_success": 60,
@@ -1005,7 +1005,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c heads out along the coast alone, but maybe an apprentice shouldn't try to do a solo patrol.",
         "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
         "chance_of_success": 40,
@@ -1102,7 +1102,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
@@ -1180,7 +1180,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
@@ -1258,7 +1258,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 60,
@@ -1847,7 +1847,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
         "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
         "chance_of_success": 60,
@@ -1985,7 +1985,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
         "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
         "chance_of_success": 60,
@@ -2123,7 +2123,7 @@
                 2
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "app1 and app2 wander on a sandy beach near camp.",
         "decline_text": "The apprentices are called back to camp to help watch camp.",
         "chance_of_success": 60,
@@ -2258,7 +2258,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 60,
@@ -2423,7 +2423,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l {PRONOUN/r_c/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 60,
@@ -2588,7 +2588,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As p_l and r_c wander across the beach with only the stars to light their way, they notice sparkles of light where the waves break upon the shore.",
         "decline_text": "A little freaked out, the warriors go to fetch a medicine cat to interpret this omen for them.",
         "chance_of_success": 60,
@@ -2706,7 +2706,7 @@
                 -1
             ]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} {VERB/p_l/round/rounds} a corner and {VERB/p_l/find/finds} r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
         "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c.",
         "chance_of_success": 60,
