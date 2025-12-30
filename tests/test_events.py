@@ -5,7 +5,7 @@ from uuid import uuid4
 from scripts.cat.cats import create_cat, Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites import sprites
-from scripts.clan import Clan
+from scripts.clan import Clan, Afterlife
 from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
 from scripts import events
 from scripts.game_structure import game
@@ -18,6 +18,8 @@ class TestEvents(unittest.TestCase):
         # we have to do this to prevent a crash, even though we won't be displaying anything
         sprites.load_all()
 
+        game.starclan = Afterlife()
+        game.dark_forest = Afterlife()
         game.clan = Clan(
             name=f"{'Test'}_{uuid4()}",
             displayname="Test",

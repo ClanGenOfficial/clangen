@@ -499,9 +499,12 @@ class Cat:
                 )
                 return
 
+            game.updated_afterlife_cats.add(self)
+
             cat_default_afterlife_id = self.status.get_default_afterlife_id()
             if cat_default_afterlife_id == CatGroup.UNKNOWN_RESIDENCE_ID:
                 pass
+
             # kits are auto-accepted
             elif self.age in (CatAge.KITTEN, CatAge.NEWBORN):
                 self.history.add_afterlife_acceptance(

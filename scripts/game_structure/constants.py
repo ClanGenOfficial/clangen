@@ -42,6 +42,9 @@ TEMPERAMENT_DICT = {
     "high_social": ["gracious", "mellow", "logical"],
 }
 
+facet_types = ["lawfulness", "sociability", "aggression", "stability"]
+facet_range = [0, 16]
+
 OUTSIDER_REPS = ("welcoming", "neutral", "hostile")
 OTHER_CLAN_REPS = ("ally", "neutral", "hostile")
 

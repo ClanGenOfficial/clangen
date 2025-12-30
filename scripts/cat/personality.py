@@ -4,12 +4,14 @@ from random import randint, choice, choices
 
 import ujson
 
+from scripts.game_structure import constants
+
 
 class Personality:
     """Hold personality information for a cat, and functions to deal with it"""
 
-    facet_types = ["lawfulness", "sociability", "aggression", "stability"]
-    facet_range = [0, 16]
+    facet_types = constants.facet_types
+    facet_range = constants.facet_range
 
     with open(
         "resources/dicts/traits/trait_ranges.json", "r", encoding="utf-8"

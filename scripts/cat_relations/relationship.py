@@ -543,6 +543,13 @@ class Relationship:
         return any(tier for tier in self.get_reltype_tiers() if tier.is_extreme_neg)
 
     @property
+    def has_mid_negative(self) -> bool:
+        """
+        Returns True if the relationship has a mid negative value.
+        """
+        return any(tier for tier in self.get_reltype_tiers() if tier.is_mid_neg)
+
+    @property
     def has_extreme_positive(self) -> bool:
         """
         Returns True if the relationship has an extreme positive value.

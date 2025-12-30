@@ -357,6 +357,13 @@ class Status:
     def is_leader(self) -> bool:
         return self.rank == CatRank.LEADER
 
+    @property
+    def did_join_group_this_moon(self) -> bool:
+        """
+        Returns True if newest group_history entry has a moons_as of 0
+        """
+        return self.group_history[-1]["moons_as"] == 0
+
     @staticmethod
     def get_rank_from_age(age: CatAge, disable_random=False) -> CatRank:
         """

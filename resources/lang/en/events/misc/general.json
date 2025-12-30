@@ -632,7 +632,9 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "tags": ["clan_wide"],
+        "tags": [
+            "clan_wide"
+        ],
         "frequency": 3,
         "event_text": "c_n is surprised when m_c gathers everyone to say something important. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} decided it's time to make something clear: {PRONOUN/m_c/subject} killed mur_c, but not for the reasons they might think. m_c knew mur_c was planning to do something that would've damaged c_n greatly, and {PRONOUN/m_c/subject} needed to act quickly before it was too late.",
         "m_c": {
@@ -1243,8 +1245,13 @@
             ]
         },
         "r_c": {
-            "age": ["any"],
-            "skill": ["STAR,1", "PROPHET,1"]
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "STAR,1",
+                "PROPHET,1"
+            ]
         },
         "relationships": [
             {
@@ -1289,8 +1296,12 @@
             ]
         },
         "r_c": {
-            "age": ["any"],
-            "skill": ["GHOST,1"]
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "GHOST,1"
+            ]
         },
         "relationships": [
             {
@@ -9546,6 +9557,666 @@
                 "hostile"
             ],
             "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c seemed to be watching r_c closely this moon.",
+        "m_c": {}
+    },
+    {
+        "event_id": "gen_misc_failedmurder2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c couldn't help but feel uneasy around m_c this moon.",
+        "m_c": {},
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurder3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} being followed.",
+        "m_c": {},
+        "exclude_involved": ["m_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder4",
+        "location": [
+            "forest",
+            "mountainous",
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c nearly fell from a cliff and could have <i>sworn</i> another cat pushed {PRONOUN/r_c/object}.",
+        "m_c": {},
+        "r_c": {
+            "age": [
+                "senior",
+                "senior adult",
+                "adult",
+                "young adult",
+                "adolescent"
+            ]
+        },
+        "exclude_involved": ["m_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder5",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c took a moonhigh stroll, but returned to camp when {PRONOUN/r_c/subject} couldn't shake the feeling of someone watching {PRONOUN/r_c/object}.",
+        "m_c": {},
+        "r_c": {
+            "age": [
+                "senior",
+                "senior adult",
+                "adult",
+                "young adult"
+            ]
+        },
+        "exclude_involved": ["m_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder6",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c was on a stroll when {PRONOUN/r_c/subject} realized m_c was following {PRONOUN/r_c/object}. m_c denied the accusation when r_c questioned {PRONOUN/m_c/object}.",
+        "m_c": {},
+        "r_c": {
+            "age": [
+                "senior",
+                "senior adult",
+                "adult",
+                "young adult"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurder7",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c seemed annoyed that r_c practiced swimming while on patrol.",
+        "m_c": {},
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ],
+            "not_skill": ["SWIMMER,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_oblivious1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c cheerfully agreed to patrol the cliffside with m_c, returning later with a dirtied pelt after almost falling.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ],
+            "trait": ["oblivious"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurder_star1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c felt like StarClan was trying to warn {PRONOUN/r_c/object} of something this moon.",
+        "m_c": {},
+        "r_c": {
+            "skill": [
+                "STAR,1"
+            ]
+        },
+        "exclude_involved": ["m_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder_deathberry1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "tags": ["clan:medicine cat"],
+        "frequency": 4,
+        "event_text": "med_name was sure they had more deathberries than that... they must have been thrown out in the previous herb cleaning.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice",
+                "mediator",
+                "mediator apprentice"
+            ],
+            "skill": ["CLEVER,1"]
+        },
+        "exclude_involved": ["m_c", "r_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder_message1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c saw the way the spirits of {PRONOUN/m_c/poss} ancestors sneered at r_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} what {PRONOUN/m_c/subject} must do and it weighs heavy.",
+        "m_c": {},
+        "r_c": {
+            "skill": [
+                "STAR,2",
+                "DARK,2",
+                "DREAM,2",
+                "GHOST,2"
+            ]
+        },
+        "future_event": [
+            {
+                "event_type": "death",
+                "pool": {
+                    "sub_type": "murder"
+                },
+                "moon_delay": [1,3],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "r_c": "m_c"
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurder_message2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreamed of a cat just out of sight warning {PRONOUN/m_c/object} of the danger r_c poses to the Clan. {PRONOUN/m_c/subject/CAP} know what must be done.",
+        "m_c": {},
+        "r_c": {
+            "skill": [
+                "STAR,2",
+                "DARK,2",
+                "DREAM,2"
+            ]
+        },
+        "future_event": [
+            {
+                "event_type": "death",
+                "pool": {
+                    "sub_type": "murder"
+                },
+                "moon_delay": [1,3],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "r_c": "m_c"
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurder_message3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "Not all dreams are freshkill and frolicking. m_c woke with the words of the already-forgotten warrior echoing in {PRONOUN/m_c/poss} head: r_c is a threat to c_n.",
+        "m_c": {
+            "trait": ["righteous"]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_camp1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "A single crow feather appeared in r_c's nest one day. No one knew where it came from.",
+        "r_c": {
+            "skill": ["CAMP,1"]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_clever1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c practices skirmishes with r_c, learning {PRONOUN/r_c/poss} style of fighting.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ],
+            "skill": ["CLEVER,1"]
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_clever2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c watches r_c fight, noticing several weak points in {PRONOUN/r_c/poss} form.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ],
+            "skill": ["CLEVER,1"]
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_ghost1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c doesn't understand why the spirits seem so agitated whenever {PRONOUN/r_c/poss}{VERB/r_c/'re/'s} with m_c.",
+        "m_c": {},
+        "r_c": {
+            "skill": ["GHOST,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_ghost2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "This moon r_c struggled to hear m_c's words over the sibilant whispers of spirits.",
+        "m_c": {},
+        "r_c": {
+            "skill": ["GHOST,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_clair1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c felt unsettled whenever {PRONOUN/r_c/poss} was with m_c, as though a shadow of fear and anger hung over {PRONOUN/m_c/object}.",
+        "m_c": {},
+        "r_c": {
+            "skill": ["CLAIRVOYANT,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_dream1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c seemed terrified of what {PRONOUN/r_c/subject} saw in {PRONOUN/r_c/poss} dreams this moon.",
+        "m_c": {},
+        "r_c": {
+            "skill": ["DREAM,1"]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_dream2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c wished {PRONOUN/m_c/subject} would stop dreaming of r_c shielded by silvery fur.",
+        "m_c": {
+            "skill": ["DREAM,2"]
+        },
+        "r_c": {
+            "skill": ["STAR,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_war1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder",
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c suggested r_c should cross the border with o_c_n to gather information, but r_c didn't think that would be wise.",
+        "m_c": {},
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurder_war2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder",
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "During a battle with o_c_n, a Clanmate saw m_c hesitate to help r_c fight off an enemy warrior.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_war3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder",
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c seems distracted during a fight at the border, {PRONOUN/m_c/poss} eyes constantly on r_c with a strangely calculating gleam.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_war4",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder",
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c is heard muttering strategies under {PRONOUN/m_c/poss} breath for an upcoming skirmish in which r_c features heavily.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ],
+            "skill": ["CLEVER,1"]
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder_war5",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder",
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c teaches r_c an overly-complicated strategy for an upcoming skirmish.",
+        "m_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ],
+            "skill": ["CLEVER,1"]
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy",
+                "warrior",
+                "apprentice"
+            ]
         }
     }
 ]
