@@ -2434,7 +2434,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "To p_l's concern, {PRONOUN/p_l/poss} warrior escort is unusually quiet. When prompted on {PRONOUN/r_c/poss} troubles, r_c comments that {PRONOUN/r_c/subject} could not help but think of what legacy {PRONOUN/r_c/subject} would leave behind if StarClan called upon {PRONOUN/r_c/object}.",
         "decline_text": "p_l isn't sure how exactly to address such a statement, and quickly attempts to distract r_c with some herb collecting.",
         "chance_of_success": 60,
@@ -2562,7 +2562,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 4,
         "intro_text": "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity for all of them to be out like this together, and each cat plans to make the most of it.",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them of a small emergency back at camp that needs their attention. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 20,

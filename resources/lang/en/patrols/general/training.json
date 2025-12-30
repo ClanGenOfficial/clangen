@@ -2967,7 +2967,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
         "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
@@ -12808,7 +12808,7 @@
                 6
             ]
         },
-        "frequency": 2,
+        "frequency": 1,
         "intro_text": "Gathering together to train, p_l notices that some of the other cats in the training ring are starting without warming up properly. Whoa, whoa, whoa, - everyone stop, let's go back to basics.",
         "decline_text": "Today isn't the day for this lesson.",
         "chance_of_success": 60,

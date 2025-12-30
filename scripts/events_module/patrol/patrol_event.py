@@ -63,7 +63,7 @@ class PatrolEvent:
         )  # the narrower this range, the higher weighted we want it
 
         self.min_max_status = min_max_status if min_max_status is not None else {}
-        self.weight += len(self.min_max_status)
+        self.weight += len(self.min_max_status) * 2
 
         self.relationship_constraints = (
             relationship_constraints if relationship_constraints is not None else []
