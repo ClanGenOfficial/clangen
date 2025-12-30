@@ -352,7 +352,7 @@
                         "values": ["trust", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat saw how to_cat put {PRONOUN/to_cat/poss} life on the line in battle against some rogues."
+                            "cats_from": "from_cat heard how to_cat put {PRONOUN/to_cat/poss} life on the line in battle against some rogues."
                         }
                     }
                 ]
