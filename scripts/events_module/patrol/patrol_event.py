@@ -68,7 +68,7 @@ class PatrolEvent:
         self.relationship_constraints = (
             relationship_constraints if relationship_constraints is not None else []
         )
-        self.weight += len(self.relationship_constraints)
+        self.weight += len(self.relationship_constraints) * 3
         self.pl_skill_constraints = (
             pl_skill_constraints if pl_skill_constraints is not None else []
         )
