@@ -44,6 +44,7 @@
                 "stat_skill": [
                     "CLIMBER,1"
                 ],
+                "can_have_stat": ["app1"],
                 "exp": 20,
                 "frequency": 4
             }
