@@ -1199,7 +1199,7 @@
                 "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like", "respect"],
