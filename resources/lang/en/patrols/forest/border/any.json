@@ -1235,7 +1235,7 @@
                         "values": ["like", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat's patrol was attacked by a rogue."
+                            "cats_from": "from_cat and to_cat failed to drive off a rogue and lost confidence in each other."
                         }
                     }
                 ]
@@ -1640,7 +1640,20 @@
                     "daring",
                     "righteous"
                 ],
-                "can_have_stat": ["app"]
+                "can_have_stat": ["app"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["comfort"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat was amused to see to_cat confront a rogue during a patrol."
+                    }
+                }
+            ]
             }
         ]
     },
