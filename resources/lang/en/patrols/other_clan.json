@@ -3795,7 +3795,7 @@
                 "frequency": 4
             },
             {
-                "text": "app1 calls out a greeting to the other apprentice, {PRONOUN/app1/poss} eyes shining and tail raised. The other apprentice glances at their mentor for a cue, and their mentor scowls at app1. Once they've left the border, r_c chides app1, reminding {PRONOUN/app1/object} not to be overly friendly with o_c_n.",
+                "text": "app1 calls out a greeting to the other apprentice, {PRONOUN/app1/poss} eyes shining and tail raised. The other apprentice glances at their mentor for a cue, and their mentor scowls at app1. Once they've left the border, p_l chides app1, reminding {PRONOUN/app1/object} not to be overly friendly with o_c_n.",
                 "exp": 0,
                 "art": "gen_train_argueWA",
                 "stat_trait": [
