@@ -493,13 +493,13 @@ class Clan:
             )
 
         # can't put this in post initialization bc guide isn't made before that func
-        self.load_guide_influence()
+        self.add_guide_influence()
         load_clan_settings()
 
         return version_info
 
     @staticmethod
-    def load_guide_influence():
+    def add_guide_influence():
         """
         Adds guide's facet influences to their current afterlife
         """
