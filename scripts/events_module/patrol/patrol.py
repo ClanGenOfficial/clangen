@@ -697,8 +697,13 @@ class Patrol:
                     filtered_patrols.append(patrol)
 
             if not filtered_patrols:
-                used_frequencies.add(chosen_frequency)
-                chosen_frequency = find_new_frequency(used_frequencies)
+                # if we've circled back around to 4 then we need to reset the used patrols
+                if 4 in used_frequencies and chosen_frequency == 4:
+                    self.used_patrols.clear()
+                    used_frequencies.clear()
+                else:
+                    used_frequencies.add(chosen_frequency)
+                    chosen_frequency = find_new_frequency(used_frequencies)
 
         # make sure the hunting patrols are balanced
         if patrol_type == "hunting":
