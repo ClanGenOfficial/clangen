@@ -37,7 +37,19 @@
             {
                 "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/get/gets} distracted while splashing in the water. r_c swears {PRONOUN/r_c/subject} saw a fish, but it derails {PRONOUN/r_c/poss} border patrol completely, and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} nothing done.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["r_c"],
+                        "values": ["respect"],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat return from patrol with soggy paws and nothing to show for an afternoon of work."
+                        }
+                    }
+                ]
             }
         ]
     }
