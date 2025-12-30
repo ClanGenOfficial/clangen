@@ -600,7 +600,7 @@ class Patrol:
         has_mentor = {"general": general_mentor_checks, **app_number_mentor_checks}
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
-        while not filtered_patrols and not romantic_patrols:
+        while not filtered_patrols:
             for patrol in possible_patrols:
                 if patrol.frequency != chosen_frequency:
                     continue
@@ -696,7 +696,7 @@ class Patrol:
                 else:
                     filtered_patrols.append(patrol)
 
-            if not filtered_patrols and not romantic_patrols:
+            if not filtered_patrols:
                 used_frequencies.add(chosen_frequency)
                 chosen_frequency = find_new_frequency(used_frequencies)
 
