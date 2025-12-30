@@ -5076,7 +5076,7 @@
             {
                 "text": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their cooperation...? Great StarClan, that was a terrible performance.",
@@ -5445,7 +5445,7 @@
             {
                 "text": "Unfortunately, neither cat steps up to teach. It's a little awkward, but they wander back to camp to attend to other duties.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their cooperation...? Great StarClan, that was a terrible performance.",
@@ -5617,7 +5617,7 @@
             {
                 "text": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their cooperation...? Great StarClan, that was a terrible performance.",
@@ -5917,7 +5917,7 @@
                         "amount": -10
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "app1 does a terrible job, but p_l isn't willing to call {PRONOUN/app1/object} out on it. It's the wrong move for a teacher to make, and no cat learns anything from the experience.",
@@ -6291,7 +6291,7 @@
             {
                 "text": "Unfortunately, neither cat steps up to teach. It's a little awkward, but they wander back to camp to attend to other duties.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much the two of them need to work on their cooperation...? Great StarClan, that was a terrible performance.",
@@ -7237,7 +7237,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "The cats practice their hunting dutifully, but no one has anything new to show anyone.",
@@ -7536,7 +7536,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "p_l makes a stupid comment about r_c's favorite technique, and it sours the rest of the training session.",
@@ -7923,7 +7923,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "The cats practice their hunting dutifully, but no one has anything new to show each other.",
@@ -8053,7 +8053,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             }
         ]
     },
@@ -8182,7 +8182,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             }
         ]
     },
@@ -8279,7 +8279,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             }
         ]
     },
@@ -8371,7 +8371,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             }
         ]
     },
@@ -8479,7 +8479,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             }
         ]
     },
@@ -8583,7 +8583,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             }
         ]
     },
@@ -8691,7 +8691,7 @@
                         "amount": -5
                     }
                 ],
-                "frequency": 4
+                "frequency": 1
             }
         ]
     },
@@ -8794,7 +8794,7 @@
             {
                 "text": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 1
             }
         ]
     },
@@ -8900,7 +8900,7 @@
             {
                 "text": "Unfortunately, neither cat steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 1
             }
         ]
     },
