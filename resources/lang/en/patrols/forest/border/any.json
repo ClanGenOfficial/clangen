@@ -145,7 +145,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["trust", "respect"],
                         "amount": 10,
@@ -205,7 +205,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["trust", "respect"],
                         "amount": 5,
@@ -239,10 +239,10 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["trust", "respect"],
-                        "amount": 10,
+                        "amount": 15,
                         "log": {
                             "cats_from": "from_cat heard about to_cat's victory in battle against a gang of rogues."
                         }
@@ -274,7 +274,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_from": ["some_clan", "patrol"],
                         "mutual": false,
                         "values": ["trust", "respect"],
                         "amount": 15,
@@ -292,7 +292,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["trust", "respect"],
                         "amount": 15,
@@ -317,7 +317,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["trust", "respect"],
                         "amount": -10,
@@ -347,7 +347,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust", "respect"],
                         "amount": 10,
@@ -393,7 +393,7 @@
                 "exp": 40,
                 "weight": 20,
                 "relationships": [
-                    {"cats_from": ["clan"],
+                    {"cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -410,7 +410,7 @@
                 "weight": 20,
                 "stat_skill": ["FIGHTER,2"],
                 "relationships": [
-                    {"cats_from": ["clan"],
+                    {"cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -437,7 +437,7 @@
                     "cunning"
                 ],
                 "relationships": [
-                    {"cats_from": ["clan"],
+                    {"cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -471,7 +471,7 @@
                     "vengeful"
                 ],
                 "relationships": [
-                    {"cats_from": ["clan"],
+                    {"cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -510,7 +510,7 @@
                     "lead_death": "{VERB/m_c/were/was} killed by a badger"
                 },
                 "relationships": [
-                    {"cats_from": ["clan"],
+                    {"cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -727,7 +727,7 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "cats_to": ["r_c"],
                         "values": ["trust", "respect"],
                         "mutual": false,
@@ -751,7 +751,7 @@
                 "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "cats_to": ["r_c"],
                         "values": ["trust", "respect"],
                         "mutual": false,
@@ -770,7 +770,7 @@
                 "stat_skill": ["CLEVER,1"],
                 "relationships": [
                     {
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "cats_to": ["r_c"],
                         "values": ["trust", "respect"],
                         "mutual": false,
@@ -804,7 +804,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "cats_to": ["r_c"],
                         "values": ["trust", "respect"],
                         "mutual": false,
@@ -895,7 +895,7 @@
                         "amount": 10,
                         "log":
                         {
-                            "cats_from": "from_cat heard that to_cat drove a rogue off the territory as an apprentice."
+                            "cats_from": "from_cat was impressed to hear to_cat drove a rogue off the territory."
                         }
                     }
                 ]
@@ -2169,7 +2169,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard taht to_cat's patrol failed to lead a dog off the territory."
+                            "cats_from": "from_cat heard that to_cat's patrol failed to lead a dog off the territory."
                         }
                     }
                 ]
@@ -2572,7 +2572,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "values": ["respect"],
                         "mutual": false,
                         "amount": 5,
@@ -2591,7 +2591,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "values": ["respect"],
                         "mutual": false,
                         "amount": -5,
@@ -2639,7 +2639,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "values": ["respect"],
                         "mutual": false,
                         "amount": -5,
