@@ -79,7 +79,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "r_c feels a little overwhelmed trying to train by {PRONOUN/r_c/self}.",
         "decline_text": "Instead {PRONOUN/r_c/subject} {VERB/r_c/join/joins} up with an outgoing hunting patrol.",
         "chance_of_success": 60,
@@ -188,7 +188,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "While training, p_l admits that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a good deputy.",
         "decline_text": "The rest of the patrol hastily changes the subject.",
         "chance_of_success": 50,
@@ -3193,7 +3193,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "While out training together, app1 starts an argument with p_l about the technique they're working on.",
         "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
@@ -3453,7 +3453,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
         "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
@@ -4755,7 +4755,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 25,
@@ -5164,7 +5164,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5496,7 +5496,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 40,
@@ -5741,7 +5741,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5975,7 +5975,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "As p_l sets the cats up to practice together, app1 and app2 sit in the back, hiding their lashing tails as they plan their prank.",
         "decline_text": "They never get the chance to execute the break, because p_l decides to focus on a different skill instead.",
         "chance_of_success": 20,
@@ -6091,7 +6091,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -7024,7 +7024,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -7267,7 +7267,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -7594,7 +7594,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -7957,7 +7957,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -8086,7 +8086,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -8207,7 +8207,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -8299,7 +8299,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -8404,7 +8404,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with app1 here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -8508,7 +8508,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -8616,7 +8616,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -8718,7 +8718,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 70,
@@ -8821,7 +8821,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 70,
@@ -8927,7 +8927,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "As they wander aimlessly towards the sparring area for a training session, r_c stops p_l and asks for {PRONOUN/p_l/poss} advice with something.",
         "decline_text": "It's not the right time for this conversation... Maybe once they're back at camp.",
         "chance_of_success": 70,
@@ -9030,7 +9030,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
         "decline_text": "Both of them are interrupted by a request from a Clanmate - this conversation will have to wait.",
         "chance_of_success": 70,
@@ -9139,7 +9139,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "During an odd moment of downtime, r_c asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a good teacher.",
         "decline_text": "They are interrupted by some Clanmates who need help and go off to attend to their duties.",
         "chance_of_success": 70,
@@ -9261,7 +9261,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "p_l gets taken aside by r_c as {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} why {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like StarClan ignores {PRONOUN/r_c/object}.",
         "decline_text": "Neither of them have the time for such a conversation today - it'll have to wait.",
         "chance_of_success": 70,
@@ -9631,7 +9631,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l takes app1 out of camp to gather moss.",
         "decline_text": "Before they even leave the camp, r_c's expertise is required in another matter.",
         "chance_of_success": 40,
@@ -10767,7 +10767,7 @@
                 6
             ]
         },
-        "frequency": 1,
+        "frequency": 3,
         "intro_text": "p_l leads the patrol towards the borders, wanting to test the apprentices on identifying o_c_n scent. But for some reason the walk seems to be taking longer than usual, and p_l keeps hearing odd yelps and grunts from behind {PRONOUN/p_l/object}.",
         "decline_text": "p_l comments offhandedly that, seeing they seem to have so much energy, both apprentices can help around the camp when they get back instead of resting. The rest of the patrol is spent in sullen silence.",
         "chance_of_success": 60,
@@ -14393,7 +14393,7 @@
                 -1
             ]
         },
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
         "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} {VERB/app1/have/has} a stomachache. {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine cat den, wondering how {PRONOUN/app1/subject} {VERB/app1/are/is} going to get away with this fake illness at sunhigh when the Clan shares tongues.",
         "chance_of_success": 60,
