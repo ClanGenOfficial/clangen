@@ -3493,7 +3493,7 @@
                         "values": ["romance", "like", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had lots of fun hunting just the two fo them."
+                            "cats_from": "from_cat and to_cat had lots of fun hunting just the two of them."
                         }
                     }
                 ]
