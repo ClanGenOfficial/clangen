@@ -121,7 +121,7 @@
                         "values": ["comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat can't help feeling unsettled at how easily to_cat fought off a whole group of rogues."
+                            "cats_from": "from_cat couldn't help feeling unsettled at how easily to_cat fought off a whole group of rogues."
                         }
                     },
                     {
@@ -916,7 +916,7 @@
       ]
     },
     {
-      "text": "s_c bolts back to camp, easily keeping ahead of the beast, {PRONOUN/s_c/subject} {VERB/s_c/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away.",
+      "text": "s_c bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c/subject/CAP} {VERB/s_c/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away.",
       "exp": 40,
       "weight": 20,
       "stat_skill": ["RUNNER,2"],

@@ -84,7 +84,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat's clever thinking lead to a successful hunt."
+                            "cats_from": "to_cat's clever thinking led to a successful hunt."
                         }
                     }
                 ]
@@ -1759,7 +1759,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat brought a sickly rabbit back from a hunt, causing some of the Clan to take ill."
+                            "cats_from": "to_cat brought a sickly rabbit back from a hunt, causing some of the Clan to fall ill."
                         }
                     }
                 ],

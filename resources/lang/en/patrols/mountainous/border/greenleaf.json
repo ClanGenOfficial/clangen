@@ -302,7 +302,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake a dogwood tree for a suspicious smell."
+                            "cats_from": "from_cat saw to_cat mistake the scent of dogwood for something suspicious.."
                         }
                     }
                 ]
@@ -423,7 +423,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake a dogwood tree for a suspicious smell."
+                            "cats_from": "from_cat saw to_cat mistake the scent of dogwood for something suspicious."
                         }
                     }
                 ]
@@ -610,7 +610,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake a dogwood tree for a suspicious smell."
+                            "cats_from": "from_cat saw to_cat mistake the scent of a dogwood for something suspicious."
                         }
                     }
                 ]
@@ -706,7 +706,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake a dogwood tree for a suspicious smell."
+                            "cats_from": "from_cat saw to_cat mistake the scent of a dogwood for something suspicious."
                         }
                     }
                 ]

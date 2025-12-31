@@ -137,7 +137,7 @@
                         "values": ["respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat can't believe <i>to_cat</i> would receive a vision instead of from_cat."
+                            "cats_from": "from_cat couldn't believe <i>to_cat</i> received a vision instead of from_cat."
                         }
                     }
                 ],
@@ -301,7 +301,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat is certain to_cat ate while on a hunting patrol."
+                            "cats_from": "from_cat was certain to_cat ate fresh-kill while on a hunting patrol."
                         }
                     }
                 ],
@@ -374,9 +374,9 @@
                         "cats_from": ["high_lawful"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": -10,
+                        "amount": -5,
                         "log": {
-                            "cats_from": "from_cat is certain to_cat ate while on a hunting patrol."
+                            "cats_from": "from_cat thought to_cat ate fresh-kill while on a hunting patrol."
                         }
                     }
                 ],
@@ -450,9 +450,9 @@
                         "cats_from": ["high_lawful", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": -10,
+                        "amount": -5,
                         "log": {
-                            "cats_from": "from_cat is certain to_cat ate while on a hunting patrol."
+                            "cats_from": "from_cat thought to_cat ate fresh-kill while on a hunting patrol."
                         }
                     }
                 ],
@@ -470,7 +470,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat knows that to_cat broke the warrior code by eating while on a hunting patrol."
+                            "cats_from": "from_cat knew that to_cat ate fresh-kill while on a hunting patrol."
                         }
                     }
                 ],
@@ -534,7 +534,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat knows that to_cat broke the warrior code by eating while on a hunting patrol."
+                            "cats_from": "from_cat knew that to_cat at fresh-kill while on a hunting patrol."
                         }
                     }
                 ],
@@ -599,7 +599,7 @@
                 "values": ["trust", "respect"],
                 "amount": 5,
                 "log": {
-                    "cats_from": "to_cat's knowledge stopped from_cat's patrol from catching a diseased rate."
+                    "cats_from": "to_cat's knowledge stopped from_cat's patrol from catching a diseased rat."
                 }
             }
         ]
@@ -617,7 +617,7 @@
                 "values": ["trust", "respect"],
                 "amount": 5,
                 "log": {
-                    "cats_from": "to_cat's knowledge stopped from_cat's patrol from catching a diseased rate."
+                    "cats_from": "to_cat's knowledge stopped from_cat's patrol from catching a diseased rat."
                 }
             }
         ]
@@ -635,7 +635,7 @@
                 "values": ["trust", "respect"],
                 "amount": 5,
                 "log": {
-                    "cats_from": "to_cat's knowledge stopped from_cat's patrol from catching a diseased rate."
+                    "cats_from": "to_cat's knowledge stopped from_cat's patrol from catching a diseased rat."
                 }
             }
         ]
@@ -1565,7 +1565,7 @@
                     "values": ["trust", "comfort"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "to_cat lends from_cat a helping paw when {PRONOUN/from_cat/subject} {VERB/from_cat/trip/trips} while hunting."
+                        "cats_from": "to_cat lent from_cat a helping paw when {PRONOUN/from_cat/subject} tripped while hunting."
                     }
                 }
             ]
@@ -1601,7 +1601,7 @@
                     "values": ["respect"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat is impressed by to_cat's leadership."
+                        "cats_from": "from_cat was impressed by to_cat's leadership."
                     }
                 }
             ],
@@ -1696,7 +1696,7 @@
                     "values": ["trust", "comfort"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "to_cat lends from_cat a helping paw when {PRONOUN/from_cat/subject} {VERB/from_cat/trip/trips} while hunting."
+                        "cats_from": "to_cat lent from_cat a helping paw when {PRONOUN/from_cat/subject} tripped while hunting."
                     }
                 }
             ]
@@ -1839,7 +1839,7 @@
                     "values": ["trust", "comfort"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "to_cat lends from_cat a helping paw when {PRONOUN/from_cat/subject} {VERB/from_cat/trip/trips} while hunting."
+                        "cats_from": "to_cat lent from_cat a helping paw when {PRONOUN/from_cat/subject} tripped while hunting."
                     }
                 }
             ]
@@ -1992,7 +1992,7 @@
                     "values": ["trust", "comfort"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "to_cat lends from_cat a helping paw when {PRONOUN/from_cat/subject} {VERB/from_cat/trip/trips} while hunting."
+                        "cats_from": "to_cat lent from_cat a helping paw when {PRONOUN/from_cat/subject} tripped while hunting."
                     }
                 }
             ]
@@ -2135,7 +2135,7 @@
                     "values": ["trust", "comfort"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "to_cat lends from_cat a helping paw when {PRONOUN/from_cat/subject} {VERB/from_cat/trip/trips} while hunting."
+                        "cats_from": "to_cat lent from_cat a helping paw when {PRONOUN/from_cat/subject} tripped while hunting."
                     }
                 }
             ]
@@ -2345,7 +2345,7 @@
                     "values": ["respect"],
                     "amount": 5,
                         "log": {
-                            "cats_from": "from_cat is impressed by to_cat's hunting skills."
+                            "cats_from": "from_cat was impressed by to_cat's hunting skills."
                         }
                 }
             ],
@@ -2777,7 +2777,7 @@
                     "values": ["respect"],
                     "amount": 10,
                         "log": {
-                            "cats_from": "to_cat makes {PRONOUN/to_cat/self} incredibly irritating while on a hunting patrol with from_cat."
+                            "cats_from": "to_cat made {PRONOUN/to_cat/self} incredibly irritating while on a hunting patrol with from_cat."
                         }
                 }
             ],
@@ -3040,7 +3040,7 @@
                     "values": ["respect", "trust", "like", "comfort"],
                     "amount": 5,
                         "log": {
-                            "cats_from": "to_cat is really helpful while on a hunting patrol with from_cat."
+                            "cats_from": "to_cat was really helpful while on a hunting patrol with from_cat."
                         }
                 }
             ],
@@ -3782,7 +3782,7 @@
             "values": ["romance", "like", "trust", "respect"],
             "amount": 5,
             "log": {
-                "cats_from": "from_cat and to_cat had a successful hunt together and complimented eachother's skills."
+                "cats_from": "from_cat and to_cat had a successful hunt together and complimented each other's skills."
             }
         }
     ],
@@ -3824,7 +3824,7 @@
             "values": ["respect", "romance", "like"],
             "amount": 5,
             "log": {
-                "cats_from": "from_cat is impressed by s_c's reflexes."
+                "cats_from": "from_cat was impressed by s_c's reflexes."
             }
         }
     ],
@@ -4334,7 +4334,7 @@
                     "amount": -5,
                     "log": {
                         "cats_from": "from_cat didn't appreciate to_cat's offer of a snack while they hunted together.",
-                        "cats_to": "to_cat brought from_cat something to eat during a hunting patrol, as though {PRONOUN/from_cat/subject} can't catch {PRONOUN/from_cat/poss} own prey!"
+                        "cats_to": "to_cat brought from_cat something to eat during a hunting patrol, as though {PRONOUN/from_cat/subject} couldn't catch {PRONOUN/from_cat/poss} own prey!"
                     }
                 }
             ],
@@ -4355,7 +4355,7 @@
             "values": ["romance", "like", "comfort"],
             "amount": 10,
             "log": {
-                "cats_from": "from_cat got a bit too distracted by to_cat's scent while hunting, thankfully they both find it romantic."
+                "cats_from": "from_cat got a bit too distracted by to_cat's scent while hunting. Thankfully, they both find it romantic."
             }
         }
     ],
