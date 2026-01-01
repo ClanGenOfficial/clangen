@@ -2078,7 +2078,8 @@
                             "cats_from": "to_cat was chatting and telling stories instead of focusing on the patrol with from_cat."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             }
         ]
     },
