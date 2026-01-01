@@ -2604,7 +2604,7 @@
                         "values": ["romance", "like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from convinced to_cat to go hunt by the Twoleg dens and found success.",
+                            "cats_from": "cat_from convinced to_cat to hunt by the Twoleg dens and found success.",
                             "cats_to": "to_cat followed from_cat in a risky hunt by the Twoleg dens and found success."
                         }
                     }
