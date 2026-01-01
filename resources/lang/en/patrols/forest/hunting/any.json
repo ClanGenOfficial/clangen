@@ -3066,7 +3066,6 @@
                 "prey": [
                     "small"
                 ],
-                "weight": 20,
                 "can_have_stat": ["p_l"],
                 "relationships": [
                     {
@@ -5633,7 +5632,7 @@
                 {
                     "text": "These Twoleg traps are powerful and dangerous, p_l instructs. Strong enough to hold a rabid fox and with gaps so small not even a plume of fire could escape, no cat should ever wander into their metal jaws. They bring only a little bit of prey home, but the lesson is worth the time it took away from hunting.",
                     "exp": 30,
-                    "weight": 20,
+                    "frequency": 4,
                     "prey": ["small"],
                     "relationships": [
                         {
@@ -5653,7 +5652,7 @@
                 {
                     "text": "p_l has to pull app1 out by the tail, and loudly scolds {PRONOUN/app1/object} all the way back to camp. Twoleg traps aren't cool, and app1 has just proven {PRONOUN/app1/self} an idiot, not a brave warrior.",
                     "exp": 0,
-                    "weight": 20,
+                    "frequency": 4,
                     "relationships": [
                         {
                             "cats_to": ["p_l"],
@@ -5693,7 +5692,7 @@
             "healer cats": [-1, -1],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "frequency": 2,
         "chance_of_success": 50,
         "relationship_constraint": [],
         "pl_skill_constraint": [],
@@ -5703,14 +5702,14 @@
             {
                 "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge, tall pillar - one that blinks down with slow, glowing red eyes.",
                 "exp": 0,
-                "weight": 20
+                "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
                 "text": "app2 gets stuck on a big stone step as the apprentices try to scramble uphill - and by the time they climb up, only the dissipating, strangely scented mist says that anything magical passed through here at all.",
                 "exp": 0,
-                "weight": 20
+                "frequency": 4
             }
         ]
     },
@@ -5724,7 +5723,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As r_c is out alone, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} something out of the corner of {PRONOUN/r_c/poss} eye: spindly, long, and partially hidden by the undergrowth of the forest.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/hurry/hurries} back to camp, a little freaked out.",
         "chance_of_success": 40,
@@ -5732,14 +5731,14 @@
             {
                 "text": "It leaps up onto a fallen log - whatever it is, with its bulbous head; long, spindly limbs; and pale, hairless skin like a skink. r_c hisses, and its echo skitters off into the woods.",
                 "exp": 20,
-                "weight": 20
+                "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
                 "text": "r_c doesn't want to talk about it when {PRONOUN/r_c/subject} {VERB/r_c/come/comes} back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk about anything...",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "injury": [
                     {
                         "cats": ["r_c"],
