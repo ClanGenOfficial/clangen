@@ -28,21 +28,31 @@
                             "cats_from": ["patrol"],
                             "mutual": true,
                             "values": ["like", "comfort"],
-                            "amount": 10
+                            "amount": 10,
+                            "log": {
+                                "cats_from": "to_cat shared the tale of the white mist islands with from_cat.",
+                                "cats_to": "to_cat listened attentively as from_cat shared an old tale."
+                            }
                         },
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["patrol"],
                             "mutual": false,
                             "values": ["respect"],
-                            "amount": 5
+                            "amount": 5,
+                            "log": {
+                                "cats_from": "from_cat was impressed by to_cat's knowledge of the area's myths."
+                            }
                         },
                         {
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
                             "mutual": false,
                             "values": ["comfort"],
-                            "amount": 5
+                            "amount": 5,
+                            "log": {
+                                "cats_from": "These cats enjoyed old stories together while stuck in the den during a storm."
+                            }
                         }
                         ]
                 }
@@ -58,7 +68,10 @@
                             "cats_from": ["patrol"],
                             "mutual": false,
                             "values": ["trust", "comfort"],
-                            "amount": 5
+                            "amount": 5,
+                            "log": {
+                                "cats_from": "These cats spent a stormy day cozied up together in the den."
+                            }
                         }
                     ]
                 }
@@ -91,25 +104,35 @@
                     "can_have_stat": ["p_l"],
                     "relationships": [
                         {
-                            "cats_to": ["p_l"],
+                            "cats_to": ["s_c"],
                             "cats_from": ["patrol"],
                             "mutual": true,
                             "values": ["like", "comfort"],
-                            "amount": 10
+                            "amount": 10,
+                            "log": {
+                                "cats_from": "to_cat shared stories of the sea with from_cat.",
+                                "cats_to": "to_cat listened attentively as from_cat told a story."
+                            }
                         },
                         {
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
-                            "mutual": true,
+                            "mutual": false,
                             "values": ["comfort"],
-                            "amount": 5
+                            "amount": 5,
+                            "log": {
+                                "cats_from": "These cats enjoyed old stories together while stuck in the den."
+                            }
                         },
                         {
-                            "cats_to": ["p_l"],
+                            "cats_to": ["s_c"],
                             "cats_from": ["patrol"],
                             "mutual": false,
                             "values": ["respect"],
-                            "amount": 5
+                            "amount": 5,
+                            "log": {
+                                "cats_from": "from_cat was impressed by to_cat's storytelling abilities."
+                            }
                         }
                         ]
                 },
@@ -122,25 +145,35 @@
                     "can_have_stat": ["p_l"],
                     "relationships": [
                         {
-                            "cats_to": ["p_l"],
+                            "cats_to": ["s_c"],
                             "cats_from": ["patrol"],
                             "mutual": true,
                             "values": ["respect", "comfort"],
-                            "amount": 10
+                            "amount": 10,
+                            "log": {
+                                "cats_from": "to_cat shared tales of heroes and strangers with from_cat.",
+                                "cats_to": "to_cat listened attentively as from_cat spun a tale of heroes and strangers."
+                            }
                         },
                         {
                             "cats_to": ["patrol"],
                             "cats_from": ["patrol"],
-                            "mutual": true,
+                            "mutual": false,
                             "values": ["trust"],
-                            "amount": 5
+                            "amount": 5,
+                            "log": {
+                                "cats_from": "These cats enjoyed fantastical stories together while stuck in the den."
+                            }
                         },
                         {
-                            "cats_to": ["p_l"],
+                            "cats_to": ["s_c"],
                             "cats_from": ["patrol"],
                             "mutual": false,
                             "values": ["respect"],
-                            "amount": 5
+                            "amount": 5,
+                            "log": {
+                                "cats_from": "from_cat was impressed by to_cat's storytelling abilities."
+                            }
                         }
                         ]
                 }
