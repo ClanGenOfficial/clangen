@@ -299,7 +299,7 @@
             {
                 "text": "The scent leads to a trespassing rogue. s_c leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously and {VERB/s_c/escort/escorts} them out of c_n territory.",
                 "exp": 10,
-                "weight": 20,
+                "frequency": 4,
                 "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
