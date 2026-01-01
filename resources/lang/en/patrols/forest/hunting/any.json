@@ -3435,7 +3435,7 @@
                         "values": ["romance", "like", "respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was wowed by to_cat's flashy catch on a hunt together."
+                            "cats_from": "from_cat was wowed by to_cat's flashy catch while on a hunt together."
                         }
                     }
                 ]
