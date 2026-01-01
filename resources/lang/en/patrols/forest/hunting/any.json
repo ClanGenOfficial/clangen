@@ -1505,7 +1505,7 @@
                 "stat_skill": ["CLEVER,2"],
             "relationships": [
                 {
-                    "cats_from": ["some_clan"],
+                    "cats_from": ["high_stable"],
                     "cats_to": ["s_c"],
                     "values": ["comfort"],
                     "mutual": false,
@@ -1674,7 +1674,7 @@
                 "can_have_stat": ["app"],
             "relationships": [
                 {
-                    "cats_from": ["some_clan"],
+                    "cats_from": ["high_lawful"],
                     "cats_to": ["s_c"],
                     "values": ["respect"],
                     "mutual": false,
@@ -2215,7 +2215,7 @@
                 "stat_skill": ["CLEVER,1"],
             "relationships": [
                 {
-                    "cats_from": ["some_clan"],
+                    "cats_from": ["high_social"],
                     "cats_to": ["s_c"],
                     "values": ["like", "respect"],
                     "mutual": false,
@@ -2293,7 +2293,7 @@
                 ],
             "relationships": [
                 {
-                    "cats_from": ["some_clan"],
+                    "cats_from": ["low_lawful"],
                     "cats_to": ["r_c"],
                     "values": ["respect", "like"],
                     "mutual": false,
@@ -2337,7 +2337,7 @@
                 "prey": ["very_small"],
             "relationships": [
                 {
-                    "cats_from": ["some_clan"],
+                    "cats_from": ["high_lawful"],
                     "cats_to": ["app1"],
                     "values": ["respect"],
                     "mutual": false,
@@ -4447,7 +4447,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["some_clan"],
+                        "cats_from": ["high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": -5,
