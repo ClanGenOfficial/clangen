@@ -1636,9 +1636,11 @@ def change_relationship_values(
                         choice(single_cat_to.pronouns),
                     )
                 if replace_dict:
-                    log = process_text(log, replace_dict)
+                    processed_log = process_text(log, replace_dict)
+                else:
+                    processed_log = log
 
-                log_text = log + i18n.t(
+                log_text = processed_log + i18n.t(
                     "relationships.age_postscript",
                     name=str(single_cat_to.name),
                     count=single_cat_to.moons,

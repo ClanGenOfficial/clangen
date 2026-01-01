@@ -29,14 +29,50 @@
                 "bold", 
                 "shameless"
             ],
-            "can_have_stat": ["r_c"]
+            "can_have_stat": ["r_c"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat was impressed by to_cat's boldness in tasting a Twoleg object."
+                    }
+                },
+                {
+                    "cats_from": ["p_l"],
+                    "cats_to": ["s_c"],
+                    "values": ["trust", "like"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log":
+                    {
+                        "cats_from": "Bold or not, from_cat thinks to_cat was mouse-brained to taste the Twoleg object."
+                    }
+                }
+            ]
         }
     ],
     "fail_outcomes": [
         {
             "text": "As p_l creeps closer to get a better look, the sound of crashing and chattering fills the air. p_l freezes and watches a pack of Twolegs stumble through the trees. The cats scatter, leaving behind whatever that weird thing was in the grass.",
             "exp": 0,
-            "weight": 20
+            "weight": 20,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["p_l"],
+                    "values": ["respect", "trust"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log": {
+                        "cats_from": "from_cat watched to_cat freeze up on a patrol {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} leading."
+                    }
+                }
+            ]
         }
     ]
 }]

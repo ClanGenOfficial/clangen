@@ -44,7 +44,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off rogues together."
+                        }
                     }
                 ],
                 "art": "gen_bord_roguerunaway"
@@ -59,7 +62,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off rogues together."
+                        }
                     }
                 ],
                 "art": "gen_bord_roguerunaway"
@@ -71,11 +77,14 @@
                 "stat_skill": ["SPEAKER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                        }
                     }
                 ],
                 "art": "gen_bord_otherclan_allies"
@@ -91,7 +100,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                        }
                     }
                 ],
                 "art": "gen_bord_otherclan_allies"
@@ -107,7 +119,20 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["comfort"],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat couldn't help feeling unsettled at how easily to_cat fought off a whole group of rogues."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat drove rogues off the territory."
+                        }
                     }
                   ],
                 "art": "gen_bord_roguerunaway"
@@ -216,7 +241,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off rogues together."
+                        }
                     }
                 ]
             },
@@ -230,7 +258,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off rogues together."
+                        }
                     }
                 ]
             },
@@ -245,7 +276,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                        }
                     }
                 ]
             },
@@ -260,7 +294,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                        }
                     }
                 ]
             }
@@ -300,7 +337,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat failed to drive away rogues while on patrol with from_cat."
+                        }
                     }
                 ],
                 "art": "gen_bord_otherclan_hostile"
@@ -400,11 +440,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect", "comfort"],
-                        "amount": 10
+                        "values": ["respect", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed listening to to_cat's story on patrol."
+                        }
                     }
                 ]
             },
@@ -415,11 +458,14 @@
                 "stat_skill": ["SPEAKER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect", "comfort"],
-                        "amount": 10
+                        "values": ["respect", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed listening to to_cat's story on patrol."
+                        }
                     }
                 ]
             },
@@ -435,11 +481,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like", "respect", "comfort"],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat spent a patrol laughing and chatting with to_cat."
+                        }
                     }
                 ]
             }
@@ -451,11 +500,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect", "comfort"],
-                        "amount": -10
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat tried to tell a story during a patrol, but couldn't quite keep it going."
+                        }
                     }
                 ],
                 "art": "fst_hunt_heat"
@@ -464,14 +516,18 @@
                 "text": "s_c takes r_c aside and reminds {PRONOUN/r_c/object} coldly to focus on {PRONOUN/r_c/poss} duties.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["cold", "strict", "righteous", "responsible", "thoughtful", "wise"],
+                "stat_trait": ["cold", "strict", "righteous", "responsible"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
-                        "mutual": false,
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["like", "respect", "comfort"],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat tried to waste time during patrol by telling stories.",
+                            "cats_to": "from_cat scolded to_cat for trying to entertain the patrol with a story."
+                        }
                     }
                 ]
             }
@@ -507,15 +563,18 @@
       "exp": 20,
       "weight": 20,
       "stat_skill": ["SWIMMER,3"],
-      "relationships": [
-        {
-          "cats_to": ["s_c"],
-          "cats_from": ["patrol"],
-          "mutual": false,
-          "values": ["respect", "trust"],
-          "amount": 15
-        }
-      ]
+        "relationships": [
+            {
+                "cats_to": ["s_c"],
+                "cats_from": ["patrol"],
+                "mutual": false,
+                "values": ["respect", "trust"],
+                "amount": 15,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from being washed away by a strong river current."
+                }
+            }
+        ]
     },
     {
       "text": "While attempting to cross, the patrol is overcome by a strong rush of water. Without thinking of {PRONOUN/s_c/poss} own safety, s_c focuses on {PRONOUN/s_c/poss} struggling Clanmates. s_c valiantly rescues the entire patrol and collapses from exhaustion on the riverbed. In awe of s_c's selflessness the patrol helps {PRONOUN/s_c/object} back to camp, and thanks to {PRONOUN/s_c/object} each one of them is alive.",
@@ -524,11 +583,14 @@
       "stat_trait": ["daring", "bold", "righteous"],
       "relationships": [
         {
-          "cats_to": ["s_c"],
-          "cats_from": ["patrol"],
-          "mutual": false,
-          "values": ["respect", "trust"],
-          "amount": 15
+            "cats_to": ["s_c"],
+            "cats_from": ["patrol"],
+            "mutual": false,
+            "values": ["respect", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "to_cat saved from_cat from being washed away by a strong river current."
+            }
         }
       ]
     }
@@ -541,15 +603,27 @@
     },
     {
         "text": "As the patrol sets out to cross, s_c stops them. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} what the other cats miss: a dark current ready to pull under any cat that dares to cross. The patrol members cast uneasy glances at each other and unanimously decide to head home without crossing.",
-      "exp": 0,
-      "weight": 20,
+        "exp": 0,
+        "weight": 20,
         "stat_skill": ["SWIMMER,3", "INSIGHT,3", "SENSE,3", "CLEVER,3"]
     },
     {
       "text": "As the patrol sets out to cross, a chill runs down s_c's spine and whispers fill {PRONOUN/s_c/poss} mind. s_c yells out a warning to the patrol to stop, and the cats jump back, startled. Suddenly, a large branch sweeps down the river right where the patrol was crossing. s_c shakily whispers thanks to StarClan for their warning.",
       "exp": 0,
       "weight": 20,
-      "stat_skill": ["STAR,1", "OMEN,1", "CLAIRVOYANT,1"]
+      "stat_skill": ["STAR,1", "OMEN,1", "CLAIRVOYANT,1"],
+      "relationships": [
+        {
+            "cats_to": ["s_c"],
+            "cats_from": ["patrol"],
+            "mutual": false,
+            "values": ["respect", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "to_cat saved from_cat from being washed away by a strong river current."
+            }
+        }
+      ]
     },
     {
       "text": "After some consideration, the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns them with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
@@ -781,7 +855,10 @@
           "cats_from": ["clan"],
           "mutual": false,
           "values": ["trust", "respect"],
-          "amount": 10
+          "amount": 5,
+            "log": {
+                "cats_from": "to_cat brought valuable news of possible wolves back to camp."
+            }
         }
       ]
     },
@@ -795,23 +872,29 @@
           "cats_from": ["clan"],
           "mutual": false,
           "values": ["trust", "respect"],
-          "amount": 10
+          "amount": 5,
+            "log": {
+                "cats_from": "to_cat brought valuable news of possible wolves back to camp."
+            }
         }
       ]
     },
     {
-      "text": "The potential wolf scent makes p_l nervous enough to dance in place - and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake.",
+      "text": "The potential wolf scent makes p_l nervous enough to dance in place - and that's what saves {PRONOUN/p_l/object}, having already started moving when the trap is sprung. The dog-ish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leaves the frustrated wolf howling in {PRONOUN/p_l/poss} wake.",
       "exp": 40,
       "weight": 20,
       "stat_trait": ["insecure", "nervous"],
       "relationships": [
         {
-          "cats_to": ["s_c"],
-          "cats_from": ["clan"],
-          "mutual": false,
-          "values": ["trust", "respect"],
-         "amount": 20
-        }
+            "cats_to": ["s_c"],
+            "cats_from": ["clan"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 20,
+            "log": {
+                "cats_from": "to_cat was able to escape a wolf's clutches, impressing from_cat."
+            }
+            }
       ]
     },
     {
@@ -821,16 +904,19 @@
       "stat_skill": ["INSIGHTFUL,3", "CLEVER,2"],
       "relationships": [
         {
-        "cats_to": ["s_c"],
-         "cats_from": ["clan"],
-        "mutual": false,
-        "values": ["trust", "respect"],
-         "amount": 10
+            "cats_to": ["s_c"],
+            "cats_from": ["clan"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 10,
+            "log": {
+                "cats_from": "to_cat brought valuable news of a wolf in the territory back to camp."
+            }
         }
       ]
     },
     {
-      "text": "s_c bolts back to camp, easily keeping ahead of the beast, {PRONOUN/s_c/subject} burst into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away.",
+      "text": "s_c bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c/subject/CAP} {VERB/s_c/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away.",
       "exp": 40,
       "weight": 20,
       "stat_skill": ["RUNNER,2"],
@@ -840,12 +926,25 @@
           "cats_from": ["clan"],
           "mutual": false,
           "values": ["trust", "respect"],
-          "amount": 20
+          "amount": 20,
+            "log": {
+                "cats_from": "to_cat was quick enough to beat a wolf back to camp, giving the Clan time to prepare for a fight."
+            }
+        },
+          {
+          "cats_to": ["r_c"],
+          "cats_from": ["high_lawful", "low_aggress"],
+          "mutual": false,
+          "values": ["trust", "respect", "comfort"],
+          "amount": -30,
+            "log": {
+                "cats_from": "Though it didn't end in disaster, from_cat doesn't approve of to_cat leading a wolf back to camp."
+            }
         }
       ]
     },
     {
-      "text": "This wolf might be trying to hunt c_n, but s_c is nobody's prey. {PRONOUN/s_c/subject/CAP} follow the fresh scent trail to its conclusion, throwing {PRONOUN/s_c/self} at the unprepared wolf, claws raking through its gray pelt and leaving bloody tracks in their wake, convincing proof that the lone wolf should go elsewhere for an easy meal.",
+      "text": "This wolf might be trying to hunt c_n, but s_c is nobody's prey. {PRONOUN/s_c/subject/CAP} {VERB/s_c/follow/follows} the fresh scent trail to its conclusion, throwing {PRONOUN/s_c/self} at the unprepared wolf, claws raking through its gray pelt and leaving bloody tracks in their wake, convincing proof that the lone wolf should go elsewhere for an easy meal.",
       "exp": 40,
       "weight": 20,
       "stat_skill": ["FIGHTER,3"],
@@ -855,7 +954,10 @@
           "cats_from": ["clan"],
           "mutual": false,
           "values": ["trust", "respect"],
-          "amount": 25
+          "amount": 25,
+            "log": {
+                "cats_from": "to_cat confronted a wolf and won!"
+            }
         }
       ]
     },
@@ -870,7 +972,10 @@
           "cats_from": ["clan"],
           "mutual": false,
           "values": ["trust", "respect"],
-          "amount": 25
+          "amount": 25,
+            "log": {
+                "cats_from": "to_cat confronted a wolf and won!"
+            }
         }
       ]
     }
@@ -891,7 +996,10 @@
           "cats_from": ["clan"],
           "mutual": false,
           "values": ["trust", "respect"],
-          "amount": 15
+          "amount": 15,
+            "log": {
+                "cats_from": "to_cat valiantly sacrificed {PRONOUN/to_cat/poss} life to lead a wolf away from camp."
+            }
         }
       ]
     },
@@ -917,7 +1025,10 @@
           "cats_from": ["clan"],
           "mutual": false,
           "values": ["trust", "respect"],
-          "amount": 30
+          "amount": 30,
+            "log": {
+                "cats_from": "to_cat valiantly risked {PRONOUN/to_cat/poss} life to lead a wolf away from camp."
+            }
         }
       ]
     },
@@ -944,7 +1055,10 @@
           "cats_from": ["clan"],
           "mutual": false,
           "values": ["trust", "respect"],
-          "amount": -5
+          "amount": -5,
+            "log": {
+                "cats_from": "to_cat's pride left {PRONOUN/to_cat/object} injured after confronting a wolf alone."
+            }
         }
       ]
     },

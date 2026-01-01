@@ -231,7 +231,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "comfort", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat successfully drove a rogue away together."
+                        }
                     }
                 ]
             },
@@ -239,7 +242,19 @@
                 "text": "The scent leads to a trespassing rogue. s_c leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously and {VERB/s_c/escort/escorts} them out of c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"]
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat skillfully defeated a rogue."
+                        }
+                    }
+                ]
             },
             {
                 "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
@@ -259,6 +274,18 @@
                     "confident",
                     "daring",
                     "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat skillfully deterred a rogue without bloodshed."
+                        }
+                    }
                 ]
             }
         ],
@@ -266,13 +293,37 @@
             {
                 "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... r_c huffs with embarrassment, suddenly grateful that {PRONOUN/r_c/poss} patrol is so small. Fewer eyes watching that embarrassing moment.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat mistake the scent of dogwood for something suspicious."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat watched as to_cat's trap for a rogue failed miserably."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} would like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
@@ -281,11 +332,14 @@
                 "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": -5
+                        "values": ["respect", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat watched to_cat fail to defeat a rogue."
+                        }
                     }
                 ]
             },
@@ -300,7 +354,19 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": {"scar": "m_c was scarred by an invading rogue."}
+                "history_text": {"scar": "m_c was scarred by an invading rogue."},
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat watched as to_cat was taken off-guard by a rogue."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -330,24 +396,18 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": 5
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off rogues together."
+                        }
                     }
                 ]
             },
             {
                 "text": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
                 "exp": 10,
-                "weight": 5,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
+                "weight": 5
             }
         ],
         "fail_outcomes": [
@@ -357,11 +417,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["app1"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": -5
+                        "values": ["respect", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat mistake the scent of dogwood for something suspicious."
+                        }
                     }
                 ]
             },
@@ -390,11 +453,14 @@
                 "can_have_stat": ["app"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "comfort", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat bravely confronted a rogue while on patrol with from_cat."
+                        }
                     }
                 ]
             },
@@ -412,11 +478,14 @@
                 "history_text": { "scar": "m_c was scarred by an invading rogue." },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["app1"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": -5
+                        "values": ["respect", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat watched as to_cat was taken off-guard by a rogue."
+                        }
                     }
                 ]
             }
@@ -440,7 +509,19 @@
             {
                 "text": "The scent leads to a trespassing rogue. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
                 "exp": 10,
-                "weight": 20
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off rogues together."
+                        }
+                    }
+                ]
             },
             {
                 "text": "r_c follows the scent to a set of pawprints in a muddy gully near the border. It looks like a fox cub must have wandered through this section of the border recently, but it's not a threat.",
@@ -451,7 +532,19 @@
                 "text": "The scent leads to a trespassing rogue. s_c leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously and {VERB/s_c/escort/escorts} them out of c_n territory.",
                 "exp": 10,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,1"]
+                "stat_skill": ["FIGHTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat fought off a rogue alone"
+                        }
+                    }
+                ]
             },
             {
                 "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c's patrol is impressed by {PRONOUN/s_c/poss} cunning.",
@@ -464,12 +557,15 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "comfort", "trust"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat scared a rogue off the territory."
+                        }
                     }
                 ]
             },
             {
-                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
+                "text": "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
@@ -486,6 +582,18 @@
                     "confident",
                     "daring",
                     "righteous"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat skillfully deterred a rogue without bloodshed."
+                        }
+                    }
                 ]
             }
         ],
@@ -493,7 +601,19 @@
             {
                 "text": "The strange scent leads to a stinky dogwood tree, newly in bloom... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat mistake the scent of a dogwood for something suspicious."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue before p_l gives the signal, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} would like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory. s_c scrambles to {PRONOUN/s_c/poss} paws, the judgmental stares of the patrol clinging to {PRONOUN/s_c/poss} pelt.",
@@ -502,11 +622,14 @@
                 "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": -5
+                        "values": ["respect", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat watched to_cat fail to defeat a rogue."
+                        }
                     }
                 ]
             },
@@ -514,7 +637,19 @@
                 "text": "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1"]
+                "stat_skill": ["CLEVER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat watched as to_cat's trap for a rogue failed miserably."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -544,24 +679,18 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": 5
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off rogues together."
+                        }
                     }
                 ]
             },
             {
                 "text": "app1 soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently. In fact... {PRONOUN/app1/subject}{VERB/app1/'re/'s} pretty sure this is {PRONOUN/app1/poss} mentor's scent. And {PRONOUN/app1/poss} mentor has been hinting {PRONOUN/app1/subject}'ll have an assessment soon.",
                 "exp": 10,
-                "weight": 5,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
+                "weight": 5
             }
         ],
         "fail_outcomes": [
@@ -571,11 +700,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["app1"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": -5
+                        "values": ["respect", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat mistake the scent of a dogwood for something suspicious."
+                        }
                     }
                 ]
             },
@@ -604,11 +736,14 @@
                 "can_have_stat": ["app"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort", "trust"],
-                        "amount": 5
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat skillfully deterred a rogue without bloodshed."
+                        }
                     }
                 ]
             }
