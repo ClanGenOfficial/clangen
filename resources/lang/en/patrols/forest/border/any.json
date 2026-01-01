@@ -3066,7 +3066,8 @@
                             "cats_from": "from_cat was impressed by to_cat's battle tactics in a fight with a small dog."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             },
             {
                 "text": "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully.",
