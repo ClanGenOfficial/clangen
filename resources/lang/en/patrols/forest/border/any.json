@@ -558,7 +558,7 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "frequency": 4
+                "frequency": 4,
                 "relationships": [
                     {"cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -3071,7 +3071,6 @@
             {
                 "text": "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully.",
                 "exp": 10,
-                "weight": 5,
                 "relationships": [
                     {
                         "cats_to": [
@@ -3147,14 +3146,14 @@
             {
                 "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge pillar that blinks down with slow, glowing red eyes.",
                 "exp": 0,
-                "weight": 20
+                "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
                 "text": "app2 gets stuck on a big stone step as the apprentices try to scramble uphill. By the time they climb up, only the dissipating, strangely-scented mist says that anything magical passed through here at all.",
                 "exp": 0,
-                "weight": 20
+                "frequency": 4
             }
         ]
     },
@@ -3168,7 +3167,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "As the patrol pads along the border, r_c nearly topples over, falling into a footprint twice as wide and three times as long as {PRONOUN/r_c/subject} {VERB/r_c/are/is}.",
         "decline_text": "r_c scrambles back to {PRONOUN/r_c/poss} paws, ears twitching back in embarrassment. Whatever made these tracks is no cat, so it's not relevant for the border patrol's marking mission.",
         "chance_of_success": 50,
@@ -3205,7 +3204,7 @@
             {
                 "text": "It leaps up onto a fallen log - whatever it is: bulbous head; long, spindly limbs; pale, hairless skin like a skink. r_c hisses, and it echoes in a whisper, skittering off into the woods.",
                 "exp": 20,
-                "weight": 20
+                "frequency": 4
             }
         ],
         "fail_outcomes": [
