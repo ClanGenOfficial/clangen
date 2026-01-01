@@ -137,7 +137,7 @@
             {
                 "text": "No one can make sense of the vision.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -674,7 +674,7 @@
             {
                 "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} so hungry - but this prey is for the Clan, not app1. {PRONOUN/app1/subject/CAP} hold {PRONOUN/app1/poss} head up high and bring {PRONOUN/app1/poss} small catch home to the freshkill pile.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["small"]
             },
             {
@@ -731,7 +731,7 @@
             {
                 "text": "app1 gets away with it, burying the evidence. But {PRONOUN/app1/poss} pelt still prickles with guilt when the patrol brings so little home.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             }
         ]
@@ -5046,7 +5046,7 @@
             "exp": 5,
 	    "prey": ["very_small"],
 	    "stat_trait": ["childish", "oblivious", "troublesome"],
-            "weight": 20,
+            "frequency": 4,
 	    "relationships": [
 		    {
                         "cats_to": ["s_c"],
@@ -5064,7 +5064,6 @@
             "exp": 5,
 	    "prey": ["very_small"],
 	    "stat_trait": ["competitive", "sneaky", "cunning"],
-            "weight": 20,
 	    "relationships": [
 		    {
                         "cats_to": ["s_c"],
