@@ -5024,6 +5024,7 @@
                 "prey": [
                     "very_small"
                 ],
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": [
