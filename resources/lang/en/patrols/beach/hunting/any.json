@@ -5591,7 +5591,7 @@
     {
         "patrol_id": "bch_hunt_random_siblings3applocked3",
         "biome": ["beach"],
-        "season": ["greenleaf"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["all_mentored"],
         "patrol_art": "hunt_general_intro",
