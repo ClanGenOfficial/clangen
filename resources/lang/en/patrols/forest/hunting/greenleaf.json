@@ -1487,7 +1487,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoy their hunt together."
+                            "cats_from": "from_cat and to_cat enjoyed their hunt together."
                         }
                     }
                 ]
@@ -1524,7 +1524,7 @@
                         "values": ["like", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat share a silly hunt together."
+                            "cats_from": "from_cat and to_cat shared a silly hunt together."
                         }
                     }
                 ]
@@ -1543,7 +1543,7 @@
                         "values": ["comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat avoid each other after an embarrassing hunt."
+                            "cats_from": "from_cat and to_cat avoided each other after an embarrassing hunt."
                         }
                     }
                 ],
@@ -1561,7 +1561,7 @@
                         "values": ["like", "comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat avoid each other after an embarrassing hunt."
+                            "cats_from": "from_cat and to_cat avoided each other after an embarrassing hunt."
                         }
                     }
                 ],
@@ -1616,7 +1616,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 5,                        
                         "log": {
-                            "cats_from": "After bonking heads on a hunt, from_cat and to_cat end up growing much closer together."
+                            "cats_from": "After bonking heads on a hunt, from_cat and to_cat ended up growing much closer together."
                         }
                     }
                 ]
