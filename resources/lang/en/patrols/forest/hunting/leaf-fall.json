@@ -868,7 +868,9 @@
                         "cats_from": ["app2"],
                         "mutual": false,
                         "values": ["romance", "like", "comfort"],
-                        "amount": 5
+                        "amount": 5,                        "log": {
+                            "cats_from": "After bonking heads on a hunt, from_cat and to_cat end up growing much closer together."
+                        }
                     }
                 ]
             }
@@ -928,11 +930,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard how to_cat and {PRONOUN/to_cat/poss} patrol drove a fox off from a deer's carcass."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat led from_cat in a fight to drive a fox off from a deer's carcass."
+                        }
                     }
                 ]
             },
@@ -941,22 +956,36 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
+                    "arrogant",
+                    "bloodthirsty",
                     "confident",
+                    "bold",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous"
                 ],
-                "prey": ["large"],
+                "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat gained greater trust in one another after successfully driving a fox off from a deer's carcass."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat's daring bravery in a fight against a fox improved from_cat's opinion of {PRONOUN/to_cat/object}."
+                        }
                     }
                 ]
             }
@@ -968,11 +997,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat lost faith in each other after failing to drive off a fox together."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -1064,11 +1096,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat gained greater trust in one another after successfully driving a fox off from a deer's carcass."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat's daring bravery in a fight against a fox improved from_cat's opinion of {PRONOUN/to_cat/object}."
+                        }
                     }
                 ]
             },
@@ -1077,22 +1122,46 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
+                    "arrogant",
+                    "bloodthirsty",
                     "confident",
+                    "bold",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous"
                 ],
-                "prey": ["large"],
+                "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard the story of how to_cat's patrol killed a fox."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["multi"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat felt uneasy at how viciously to_cat sank {PRONOUN/to_cat/poss} teeth into the fox's throat."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat worked together with to_cat to kill a fox on patrol."
+                        }
                     }
                 ]
             }
@@ -1102,15 +1171,6 @@
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
                 "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
                 "prey": ["very_small"]
             },
             {
@@ -1185,10 +1245,13 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was highly impressed to hear that to_cat drove a fox off from a deer's carcass on {PRONOUN/to_cat/poss} own."
+                        }
                     }
                 ]
             },
@@ -1204,7 +1267,10 @@
                         "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was highly impressed to hear that to_cat drove a fox off from a deer's carcass on {PRONOUN/to_cat/poss} own."
+                        }
                     }
                 ]
             },
@@ -1213,40 +1279,42 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
+                    "arrogant",
+                    "bloodthirsty",
                     "confident",
+                    "bold",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous"
                 ],
-                "prey": ["large"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["bruises", "scrapes"],
+                        "scars": []
+                    }
+                ],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was highly impressed to hear that to_cat drove a fox off from a deer's carcass on {PRONOUN/to_cat/poss} own."
+                        }
                     }
                 ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there are no injuries.",
+                "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
                 "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
                 "prey": ["very_small"]
             },
             {
@@ -1364,11 +1432,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard how to_cat and {PRONOUN/to_cat/poss} patrol drove a fox off from a deer's carcass."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat led from_cat in a fight to drive a fox off from a deer's carcass."
+                        }
                     }
                 ]
             },
@@ -1377,22 +1458,36 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
+                    "arrogant",
+                    "bloodthirsty",
                     "confident",
+                    "bold",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous"
                 ],
-                "prey": ["large"],
+                "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat gained greater trust in one another after successfully driving a fox off from a deer's carcass."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat's daring bravery in a fight against a fox improved from_cat's opinion of {PRONOUN/to_cat/object}."
+                        }
                     }
                 ]
             }
@@ -1404,11 +1499,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat lost faith in each other after failing to drive off a fox together."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -1494,11 +1592,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat gained greater trust in one another after successfully driving a fox off from a deer's carcass."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat's daring bravery in a fight against a fox improved from_cat's opinion of {PRONOUN/to_cat/object}."
+                        }
                     }
                 ]
             },
@@ -1507,22 +1618,46 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
+                    "arrogant",
+                    "bloodthirsty",
                     "confident",
+                    "bold",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous"
                 ],
-                "prey": ["large"],
+                "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard the story of how to_cat's patrol killed a fox."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["multi"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat felt uneasy at how viciously to_cat sank {PRONOUN/to_cat/poss} teeth into the fox's throat."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat worked together with to_cat to kill a fox on patrol."
+                        }
                     }
                 ]
             }
@@ -1532,15 +1667,6 @@
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
                 "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
                 "prey": ["very_small"]
             },
             {
@@ -1585,10 +1711,13 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was highly impressed to hear that to_cat drove a fox off from a deer's carcass on {PRONOUN/to_cat/poss} own."
+                        }
                     }
                 ]
             },
@@ -1604,7 +1733,10 @@
                         "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was highly impressed to hear that to_cat drove a fox off from a deer's carcass on {PRONOUN/to_cat/poss} own."
+                        }
                     }
                 ]
             },
@@ -1613,22 +1745,33 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
+                    "arrogant",
+                    "bloodthirsty",
                     "confident",
+                    "bold",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous"
                 ],
-                "prey": ["large"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["bruises", "scrapes"],
+                        "scars": []
+                    }
+                ],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was highly impressed to hear that to_cat drove a fox off from a deer's carcass on {PRONOUN/to_cat/poss} own."
+                        }
                     }
                 ]
             }
@@ -4626,12 +4769,12 @@
         },
         "weight": 40,
         "intro_text": "As the leaves softly fall around them, an intermittent rain of color, p_l is out on a hunting patrol with r_c.",
-        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
+        "decline_text": "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "A f_mp_s and two f_tp_p is nothing to sniff at, as a hunting success, but stars above, being alone with r_c makes p_l feel like a kitten again. And not in the cute way either; in the chewing on tails, whiny, petty, immature way. Ugh.",
+                "text": "A f_mp_s and two f_tp_p is nothing to sniff at, as a hunting success, but stars above, being alone with r_c makes p_l feel like a kitten again. And not in the cute way either; in the chewing-on-tails, whiny, petty, immature way. Ugh.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -5021,12 +5164,12 @@
         },
         "weight": 40,
         "intro_text": "As the leaves softly fall around them, an intermittent rain of color, p_l is out on a hunting patrol with {PRONOUN/p_l/poss} siblings.",
-        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
+        "decline_text": "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "A f_mp_s, three f_tp_p, and a couple f_mp_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either; in the chewing on tails, whiny, petty, immature way. Ugh.",
+                "text": "A f_mp_s, three f_tp_p, and a couple f_mp_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either; in the chewing-on-tails, whiny, petty, immature way. Ugh.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -5094,7 +5237,7 @@
             "all apprentices": [-1, -1]
         },
         "weight": 40,
-        "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially on a crisp leaf-fall afternoon, the sun still strong enough to provide warmth while they hunt.",
+        "intro_text": "Sometimes, r_c enjoys just hanging out with {PRONOUN/r_c/poss} siblings. Especially on a crisp leaf-fall afternoon, the sun still strong enough to provide warmth while they hunt.",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
