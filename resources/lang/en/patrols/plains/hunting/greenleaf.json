@@ -109,7 +109,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or swift?",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or swift?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -262,161 +262,6 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_greenleaf_redvixen6",
-        "biome": ["plains"],
-        "season": ["greenleaf"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or swift?",
-        "decline_text": "The patrol decides not to pursue the fox.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan.",
-                "exp": 50,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c displays incredible skill, driving the mother red vixen and her brood out of c_n's plains all by {PRONOUN/s_c/self}. Now neither the fox nor her dependent cubs pose a threat to the Clan. {PRONOUN/s_c/subject/CAP} {VERB/s_c/swell/swells} with pride, feeling the confidence of knowing that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} truly one of the best fighters c_n has ever produced.",
-                "exp": 50,
-                "weight": 20,
-                "stat_skill": ["FIGHTER,3"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "A brilliant battle move by s_c at a critical moment knocks the red vixen {PRONOUN/s_c/subject} {VERB/s_c/find/finds} off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in {PRONOUN/s_c/poss} body to do it alone.",
-                "exp": 50,
-                "weight": 20,
-                "stat_trait": [
-                    "adventurous",
-                    "ambitious",
-                    "bloodthirsty",
-                    "bold",
-                    "confident",
-                    "daring",
-                    "fierce",
-                    "responsible",
-                    "righteous",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish and carries off the body to feed her litter.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "scar": "m_c carries a scar from a solo fight with a vixen.",
-                    "reg_death": "m_c fell in a solo battle with a vixen.",
-                    "lead_death": "died in battle with a fox"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "The mother red fox's snapping jaws leave r_c dripping blood onto the grass and barely able to escape further injury.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["SNOUT"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a solo fight with a vixen.",
-                    "reg_death": "m_c fell in a solo battle with a vixen.",
-                    "lead_death": "died in battle with a fox"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges {PRONOUN/s_c/object} no longer a threat and continues on her way.",
-                "exp": 0,
-                "weight": 10,
-                "stat_trait": [
-                    "adventurous",
-                    "ambitious",
-                    "bloodthirsty",
-                    "bold",
-                    "confident",
-                    "daring"
-                ],
-                "injury": [
-                    {
-                        "cats": ["s_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["SNOUT"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a solo fight with a vixen.",
-                    "reg_death": "m_c fell in a solo battle with a vixen.",
-                    "lead_death": "died in battle with a fox"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "patrol_id": "pln_hunt_greenleaf_redvixen4",
         "biome": ["plains"],
         "season": ["greenleaf"],
@@ -427,7 +272,7 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or swift?",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or swift?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -618,7 +463,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or swift?",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or swift?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [

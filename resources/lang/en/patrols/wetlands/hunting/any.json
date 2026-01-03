@@ -2054,7 +2054,7 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -2198,7 +2198,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -2318,7 +2318,7 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -2495,7 +2495,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -2672,7 +2672,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
+        "intro_text": "r_c catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -2849,7 +2849,7 @@
         "max_cats": 3,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -3041,7 +3041,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -3218,7 +3218,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
+        "intro_text": "r_c catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -3391,7 +3391,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
+        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "success_outcomes": [
