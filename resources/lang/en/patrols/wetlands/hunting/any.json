@@ -2136,21 +2136,8 @@
                 "weight": 20,
                 "relationships": [
                     {
-                "prey": ["very_small"]
-            },
-            {
-                "text": "Fiercely, r_c throws themselves at the fox, determined to win the eel prize. But the fox values it just as dearly and manages to get a good grip on r_c, shaking them to pieces and killing them.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "scar": "m_c carries a scar from a solo fox fight.",
-                    "reg_death": "m_c fell in a solo battle with a fox."
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": -5
@@ -2159,24 +2146,14 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c launches into battle but is caught with a nasty bite and retreats to limp back home. The fox doesn't follow, happy enough to eat the eel instead of the foolish cat.",
+                "text": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth, and it's only being yanked back by the tail that saves {PRONOUN/s_c/object} from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord.",
                 "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["bite-wound"],
-                        "scars": ["THREE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a solo fox fight.",
-                    "reg_death": "m_c fell in a solo battle with a fox."
-                },
+                "weight": 20,
+                "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": -5
@@ -2185,7 +2162,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
+                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
@@ -2193,17 +2170,14 @@
                     {
                         "cats": ["s_c"],
                         "injuries": ["bite-wound"],
-                        "scars": ["THREE"]
+                        "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a solo fox fight.",
-                    "reg_death": "m_c fell in a solo battle with a fox."
-                },
+                "history_text": { "scar": "m_c carries a scar from a gray fox fight." },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": -5
@@ -2214,22 +2188,22 @@
         ]
     },
     {
-        "patrol_id": "wtlnd_hunt_redfox_scavenge5",
+        "patrol_id": "wtlnd_hunt_foxgray_scavenge2",
         "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 3,
+        "min_cats": 4,
+        "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
+        "intro_text": "The patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The patrol's cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan, they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+                "text": "While a gray fox is bigger and far stockier than the cats, the delicious stench of whatever it is makes the cats' eyes go wide and silly, and they leap to claim possession of it. Heavily outnumbered and already full of stinky nonsense, the gray fox leaves, scrambling up a tree as the cats give in to instinct and roll around in the glorious smell.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["medium"],
@@ -2244,7 +2218,22 @@
                 ]
             },
             {
-                "text": "s_c shows {PRONOUN/s_c/poss} strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
+                "text": "A gray fox is bigger than them, yes... but only just, and that carcass smells divine. The cats creep up on the fox, using the thick swamp brush for cover, and wait until the fox has its head buried in the carcass to attack. The ambush sends the competing predator fleeing, and leaves the cats to claim the heavenly stinky food.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol", "patrol"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c shows {PRONOUN/s_c/poss} strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a debilitating injury.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
@@ -2260,7 +2249,7 @@
                 ]
             },
             {
-                "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
+                "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. s_c holds on grimly as the rest of the patrol takes the opportunity to bring the fox down for good.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2286,7 +2275,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there are no injuries.",
+                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2301,21 +2290,10 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
-                    }
-                    }
-                ],
                 "text": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth, and it's only being yanked back by the tail that saves {PRONOUN/s_c/object} from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord.",
                 "exp": 0,
+                "weight": 20,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." },
                 "relationships": [
                     {
                         "cats_to": ["patrol", "patrol"],
@@ -2330,12 +2308,14 @@
         ]
     },
     {
+        "patrol_id": "wtlnd_hunt_foxgray_scavenge3",
         "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
+        "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
         "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp.",
