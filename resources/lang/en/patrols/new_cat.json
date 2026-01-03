@@ -4415,7 +4415,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought to {PRONOUN/from_cat/object} c_n."
+                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought to {PRONOUN/from_cat/object} Clan."
                         }
                     }
                 ],
@@ -4444,7 +4444,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought to {PRONOUN/from_cat/object} c_n."
+                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought to {PRONOUN/from_cat/object} Clan."
                         }
                     }
                 ],
