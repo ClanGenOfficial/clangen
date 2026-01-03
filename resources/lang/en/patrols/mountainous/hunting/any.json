@@ -1863,7 +1863,7 @@
     {
         "patrol_id": "mtn_hunt_redfox_scavenge1",
         "biome": ["mountainous"],
-        "season": ["greenleaf", "newleaf", "leaf-fall"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -1999,7 +1999,7 @@
     {
         "patrol_id": "mtn_hunt_redfox_scavenge2",
         "biome": ["mountainous"],
-        "season": ["greenleaf", "leaf-fall", "newleaf"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
