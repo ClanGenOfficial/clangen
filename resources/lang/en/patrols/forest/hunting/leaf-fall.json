@@ -891,7 +891,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_fox_leaf-fallscavenge1",
+        "patrol_id": "fst_hunt_redfox_leaf-fallscavenge1",
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
@@ -1027,7 +1027,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_fox_leaf-fallscavenge2",
+        "patrol_id": "fst_hunt_redfox_leaf-fallscavenge2",
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
@@ -1159,169 +1159,6 @@
                     }
                 ],
                 "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_hunt_fox_leaf-fallscavenge3",
-        "biome": ["forest"],
-        "season": ["leaf-fall"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, {PRONOUN/r_c/subject} find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "r_c may be smaller, alone, and half its weight, but the fox has a prize {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} willing to fight for. With a prayer to StarClan, {PRONOUN/r_c/subject} {VERB/r_c/throw/throws} {PRONOUN/r_c/self} into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
-                "exp": 30,
-                "weight": 20,
-                "prey": ["medium"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c uses every trick in {PRONOUN/s_c/poss} fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, biding {PRONOUN/s_c/poss} time until the perfect opportunity opens up. Then, {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces} onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the forest until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/object} the fawn carcass.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["FIGHTER,2"],
-                "prey": ["medium"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn.",
-                "exp": 30,
-                "weight": 20,
-                "stat_trait": [
-                    "adventurous",
-                    "ambitious",
-                    "confident",
-                    "daring",
-                    "fierce",
-                    "responsible",
-                    "righteous"
-                ],
-                "prey": ["large"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there are no injuries.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "scar": "m_c carries a scar from a solo fox fight.",
-                    "reg_death": "m_c fell in a solo battle with a fox.",
-                    "lead_death": "died while fighting a fox"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "r_c launches into battle but is caught with a nasty bite and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["bite-wound"],
-                        "scars": ["THREE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a solo fox fight.",
-                    "reg_death": "m_c fell in a solo battle with a fox.",
-                    "lead_death": "died while fighting a fox"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the fox settles back down to its meal.",
-                "exp": 0,
-                "weight": 10,
-                "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
-                "injury": [
-                    {
-                        "cats": ["s_c"],
-                        "injuries": ["bite-wound"],
-                        "scars": ["THREE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a solo fox fight.",
-                    "reg_death": "m_c fell in a solo battle with a fox.",
-                    "lead_death": "died while fighting a fox"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
-                    }
-                ]
             }
         ]
     },
