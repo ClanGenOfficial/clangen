@@ -53,6 +53,7 @@
                         }
                     }
                 ],
+                "art": "gen_cat_with_kit_loner",
                 "outsider_rep": 1
             }
         ],
@@ -154,6 +155,7 @@
                         }
                     }
                 ],
+                "art": "gen_cat_with_kit_loner",
                 "outsider_rep": 1
             }
         ],
@@ -410,6 +412,7 @@
                         }
                     }
                 ],
+                "art": "gen_bord_patrolwoundedlonerrescue",
                 "outsider_rep": 1,
                 "injury": [
                     {
@@ -493,6 +496,7 @@
                         }
                     }
                 ],
+                "art": "gen_bord_patrolwoundedlonerrescue",
                 "outsider_rep": 1,
                 "injury": [
                     {
@@ -731,6 +735,7 @@
                         }
                     }
                 ],
+                "art": "gen_bump_heads_warrior_loner",
                 "outsider_rep": 1
             },
             {
@@ -760,6 +765,7 @@
                         }
                     }
                 ],
+                "art": "gen_outsiderwar_mates_headbump",
                 "outsider_rep": 1
             },
             {
@@ -789,6 +795,7 @@
                         }
                     }
                 ],
+                "art": "gen_outsiderwar_mates_headbump",
                 "outsider_rep": 1
             },
             {
@@ -828,6 +835,7 @@
                         }
                     }
                 ],
+                "art": "gen_outsiderwar_mates_headbump",
                 "outsider_rep": 1
             }
         ],
@@ -859,6 +867,7 @@
                         }
                     }
                 ],
+                "art": "gen_flower_date_warrior_loner",
                 "outsider_rep": 0
             },
             {
@@ -1091,7 +1100,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_med_newmed",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1192,7 +1201,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_med_newmed",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -4392,7 +4401,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_rescue",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -4415,7 +4424,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought to {PRONOUN/from_cat/object} Clan."
+                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought {PRONOUN/from_cat/object} to c_n."
                         }
                     }
                 ],
@@ -4444,7 +4453,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought to {PRONOUN/from_cat/object} Clan."
+                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought {PRONOUN/from_cat/object} to c_n."
                         }
                     }
                 ],
