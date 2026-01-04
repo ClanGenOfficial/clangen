@@ -428,7 +428,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's bravery in battle against a vixen."
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
                         }
                     }
                 ]
@@ -598,15 +598,21 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive off a vixen and kill her cubs."
+                        }
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                        }
                     }
                 ]
             },
@@ -619,15 +625,21 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to kill a vixen and her cubs."
+                        }
                     },
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol killed a vixen and her cubs."
+                        }
                     }
                 ]
             },
@@ -639,17 +651,23 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was extremely impressed by to_cat's skill in battle against a vixen."
+                        }
                     },
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
+                        }
                     }
                 ]
             },
@@ -717,15 +735,11 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to drive off a vixen together."
+                        }
                     }
                 ]
             },
@@ -820,12 +834,12 @@
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's small patrol drove out a vixen and killed her cubs."
+                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
                         }
                     }
                 ]
@@ -853,7 +867,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's bravery in battle against a vixen."
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
                         }
                     }
                 ]
@@ -1060,7 +1074,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's bravery in battle against a vixen."
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
                         }
                     }
                 ]
