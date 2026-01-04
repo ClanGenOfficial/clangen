@@ -873,6 +873,23 @@
                 ]
             },
             {
+                "text": "The patrol finds a stocky gray vixen wandering their coast, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
+                "exp": 15,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"],
+                        "scars": ["LEGBITE"]
+                    }
+                ],
+                "history_text": { 
+                    "scar": "m_c carries a scar from a fight with a gray vixen.",
+                    "reg_death": "m_c died after a battle with a gray vixen.",
+                    "lead_death": "died after fighting a gray vixen"
+                }
+            },
+            {
                 "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} bravery and skill.",
                 "exp": 30,
                 "weight": 20,
@@ -892,17 +909,23 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was extremely impressed by to_cat's skill in battle against a vixen."
+                        }
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
+                        }
                     }
                 ]
             }
@@ -917,48 +940,11 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "The patrol finds a stocky gray vixen wandering their coast, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEGBITE"]
-                    }
-                ],
-                "history_text": { 
-                    "scar": "m_c carries a scar from a fight with a gray vixen.",
-                    "reg_death": "m_c died after a battle with a gray vixen.",
-                    "lead_death": "died after fighting a gray vixen"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan", "patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to drive a gray vixen off their territory together."
+                        }
                     }
                 ]
             },
@@ -1080,6 +1066,23 @@
                 ]
             },
             {
+                "text": "The patrol finds a stocky gray vixen wandering their coast, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
+                "exp": 15,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"],
+                        "scars": ["LEGBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from a fight with a gray vixen.",
+                    "reg_death": "m_c died after a battle with a gray vixen.",
+                    "lead_death": "died after fighting a gray vixen" 
+                }
+            },
+            {
                 "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c/object} up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
                 "exp": 30,
                 "weight": 20,
@@ -1123,39 +1126,6 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "The patrol finds a stocky gray vixen wandering their coast, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEGBITE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a fight with a gray vixen.",
-                    "reg_death": "m_c died after a battle with a gray vixen.",
-                    "lead_death": "died after fighting a gray vixen" 
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5

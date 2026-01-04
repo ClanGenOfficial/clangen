@@ -1614,6 +1614,19 @@
                 ]
             },
             {
+                "text": "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
+                "exp": 15,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"],
+                        "scars": ["LEFTEAR"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." }
+            },
+            {
                 "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} bravery and skill.",
                 "exp": 30,
                 "weight": 20,
@@ -1648,11 +1661,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to drive a gray vixen off their territory together."
+                        }
                     }
                 ]
             },
@@ -1671,28 +1687,6 @@
                         "log": {
                             "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
                         }
-                    }
-                ]
-            },
-            {
-                "text": "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEFTEAR"]
-                    }
-                ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
                     }
                 ]
             },
@@ -1796,6 +1790,28 @@
                 ]
             },
             {
+                "text": "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
+                "exp": 15,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"],
+                        "scars": ["RIGHTEAR"]
+                    }
+                ],
+                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "patrol"],
+                        "cats_from": ["patrol", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
                 "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c/object} up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
                 "exp": 30,
                 "weight": 20,
@@ -1853,28 +1869,6 @@
                         "log": {
                             "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
                         }
-                    }
-                ]
-            },
-            {
-                "text": "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["RIGHTEAR"]
-                    }
-                ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
                     }
                 ]
             },
