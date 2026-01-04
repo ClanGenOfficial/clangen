@@ -282,11 +282,24 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive a vixen out of their territory."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's small patrol drove a vixen out of their territory."
+                        }
                     }
                 ]
             },
@@ -468,7 +481,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. Though they don't know where her cubs are hidden, without their mother they won't pose a threat to the Clan.",
+                "text": "The patrol charges the swift fox vixen, and she runs, leaving the scent of milk in the air behind her. Though they don't know where her cubs are hidden, without their mother they won't pose a threat to the Clan.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -476,13 +489,26 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off a swift fox vixen together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a swift fox vixen."
+                        }
                     }
                 ]
             },
             {
-                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den - a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders.",
+                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den - a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a cluster of boulders.",
                 "exp": 30,
                 "weight": 5,
                 "relationships": [
@@ -490,8 +516,21 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off a swift fox vixen together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a swift fox vixen."
+                        }
                     }
                 ]
             },
@@ -499,14 +538,27 @@
                 "text": "s_c holds the patrol back until {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n.",
                 "exp": 30,
                 "weight": 20,
-                "stat_skill": ["CLEVER,1", "FIGHTER,1"],
+                "stat_skill": ["CLEVER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "values": ["respect", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was impressed that to_cat knew to wait and lure out a swift fox vixen's mate so the patrol could drive off both."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off both a swift fox vixen and her mate."
+                        }
                     }
                 ]
             }
@@ -515,16 +567,7 @@
             {
                 "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon with speed that justifies its name.",
                 "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
-                    }
-                ]
+                "weight": 20
             },
             {
                 "text": "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, and once the patrol switches to r_c's defense, the foxes flee into the plains.",
@@ -543,8 +586,11 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to drive off a pair of swift foxes together."
+                        }
                     }
                 ]
             }
