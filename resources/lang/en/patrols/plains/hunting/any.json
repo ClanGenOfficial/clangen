@@ -2562,20 +2562,59 @@
                 "text": "The patrol chases after it, spitting and hissing as the smaller predator tries to run. But a patrol full of cats is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. It's an insignificant amount of fresh-kill, but hopefully a permanent lesson for a fox on stealing from c_n.",
                 "exp": 10,
                 "weight": 20,
-                "prey": ["small"]
+                "prey": ["small"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together to steal prey from a kit fox."
+                    }
+                }
+            ]
             },
             {
                 "text": "The kit fox isn't a hare-brain, and immediately drops the mouse, running for its life from the patrol.",
                 "exp": 10,
                 "weight": 10,
-                "prey": ["small"]
+                "prey": ["small"],
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together to steal prey from a kit fox."
+                    }
+                }
+            ]
             },
             {
                 "text": "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls and yelps for mercy, holding it there until {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} very sure it will never dare sneak across c_n's borders again.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
-                "prey": ["small"]
+                "prey": ["small"],
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat led from_cat in a fight against a kit fox."
+                    }
+                }
+            ]
             },
             {
                 "text": "s_c wanders up to the kit fox, swagger in {PRONOUN/s_c/poss} step as {PRONOUN/s_c/subject} {VERB/s_c/take/takes} the opportunity to be the bigger predator for once in {PRONOUN/s_c/poss} life. The kit fox takes one look at the patrol backing s_c up and decides it's time to be elsewhere as fast as its legs can take it, leaving the single skinny mouse it stole behind.",
@@ -2590,14 +2629,24 @@
                     "daring",
                     "fierce",
                     "loyal",
-                    "playful",
                     "righteous",
                     "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
+                    "troublesome"
                 ],
-                "prey": ["small"]
+                "prey": ["small"],
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat led from_cat in a fight against a kit fox."
+                    }
+                }
+            ]
             }
         ],
         "fail_outcomes": [
@@ -2605,6 +2654,32 @@
                 "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not over a single mouse.",
                 "exp": 0,
                 "weight": 20,
+                "prey": ["very_small"]
+            },
+            {
+                "text": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard-won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["small_bite_injury"],
+                        "scars": ["LEGBITE"]
+                    }
+                ],
+                "history_text": { "scar": "m_c was scarred by a kit fox." },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat doubted to_cat's skill after {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} injured in a fight with a kit fox."
+                        }
+                    }
+                ],
                 "prey": ["very_small"]
             }
         ]
