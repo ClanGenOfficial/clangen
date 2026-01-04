@@ -3673,11 +3673,24 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat's clever plan to gnaw off the leg of a calf carcass impressed from_cat."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol drag a calf's leg back to camp for the fresh-kill pile."
+                        }
                     }
                 ]
             },
@@ -3698,11 +3711,14 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat's keen senses and cautious nature saved from_cat's patrol from a cougar."
+                        }
                     }
                 ]
             }
@@ -3712,15 +3728,6 @@
                 "text": "The swift fox gives up on the kill with a snarl, but a coyote yip in the distance sends both the smaller predator species running, the cats puffed up and unsettled.",
                 "exp": 0,
                 "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
-                    }
-                ],
                 "prey": ["very_small"]
             },
             {
@@ -3728,20 +3735,23 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
+                    "arrogant",
                     "bold",
-                    "childish",
                     "confident",
+                    "competitive",
                     "daring",
-                    "playful",
                     "shameless"
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
+                        "values": ["respect", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat unnecessarily chased after a swift fox and lost from_cat's patrol their scavenged fish."
+                        }
                     }
                 ],
                 "prey": ["very_small"]

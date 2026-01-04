@@ -3622,8 +3622,21 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat stole a fox's prey together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol stole a fox's prey."
+                        }
                     }
                 ]
             },
@@ -3638,8 +3651,21 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat and from_cat stole a fox's prey together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol stole a fox's prey."
+                        }
                     }
                 ]
             },
@@ -3652,7 +3678,7 @@
                     "careful",
                     "cunning",
                     "sneaky",
-                    "strange",
+                    "responsible",
                     "thoughtful",
                     "wise"
                 ],
@@ -3663,7 +3689,20 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like", "respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat's clever plan saved from_cat's patrol from a fight with a fox."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol stole a fox's prey cache."
+                        }
                     }
                 ]
             }
@@ -3678,18 +3717,20 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["trust", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat lost the trail while tracking a fox and argued on the way home."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a red fox and spots that it's holding fresh-kill. s_c bursts from cover without warning, trying to intimidate the fox. At least {PRONOUN/s_c/subject} {VERB/s_c/scare/scares} the fox off - but it takes its catch with it. The other cats aren't particularly pleased with s_c.",
+                "text": "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c bursts from cover without warning, trying to intimidate the fox. At least {PRONOUN/s_c/subject} {VERB/s_c/scare/scares} the fox off - but it takes its catch with it. The other cats aren't particularly pleased with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
                     "arrogant",
                     "bloodthirsty",
@@ -3706,8 +3747,11 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["like", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat's hasty attack scared a fox off - and it took its prey with it. from_cat wasn't happy with to_cat."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -3734,18 +3778,20 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to drive off a fox together."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a red fox and spots that it's holding fresh-kill. s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster when the fox sinks its fangs into s_c. The rest of the patrol rescues their annoying Clanmate while the fox runs off with what could've been their dinner.",
+                "text": "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster when the fox sinks its fangs into s_c. The rest of the patrol rescues their annoying Clanmate while the fox runs off with what could've been their dinner.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
                     "arrogant",
                     "bloodthirsty",
@@ -3774,8 +3820,11 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["like", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat's hasty attack spoiled from_cat's patrol's chance to steal a fox's prey. from_cat wasn't happy with to_cat."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -3804,11 +3853,34 @@
                 "prey": ["small"],
                 "relationships": [
                     {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat's pelt in a fight with a fox."
+                        }
+                    },
+                    {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat worked together to drive off a fox and steal its prey."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol bring back a plump seagull that they won from a fox."
+                        }
                     }
                 ]
             },
@@ -3820,16 +3892,39 @@
                 "prey": ["small"],
                 "relationships": [
                     {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat's patrol was able to steal a fish from a fox thanks to to_cat's skills."
+                        }
+                    },
+                    {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
+                        "values": ["like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to steal a fox's prey."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol stole a fox's prey."
+                        }
                     }
                 ]
             },
             {
-                "text": "s_c reminds the rest of the patrol that things don't always need to end in a fight, using the trail to uncover a food cache of dead fish buried in a dune. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
+                "text": "s_c realizes a fight may be unnecessary and uses the trail to uncover a food cache of dead fish buried in a dune. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -3837,7 +3932,7 @@
                     "careful",
                     "cunning",
                     "sneaky",
-                    "strange",
+                    "responsible",
                     "thoughtful",
                     "wise"
                 ],
@@ -3848,7 +3943,20 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like", "respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat's clever plan saved from_cat's patrol from a fight with a fox."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol stole a fox's prey cache."
+                        }
                     }
                 ]
             }
@@ -3863,18 +3971,20 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["trust", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat lost the trail while tracking a fox and argued on the way home."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a red fox and spots that it's holding fresh-kill. s_c bursts from cover without warning, trying to intimidate the fox. At least {PRONOUN/s_c/subject} {VERB/s_c/scare/scares} the fox off - but it takes its catch with it. The other cats aren't particularly pleased with s_c.",
+                "text": "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c bursts from cover without warning, trying to intimidate the fox. At least {PRONOUN/s_c/subject} {VERB/s_c/scare/scares} the fox off - but it takes its catch with it. The other cats aren't particularly pleased with s_c.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
                     "arrogant",
                     "bloodthirsty",
@@ -3891,8 +4001,11 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["like", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat's hasty attack scared a fox off - and it took its prey with it. from_cat wasn't happy with to_cat."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -3915,21 +4028,23 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["like", "trust"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat's incautious attack against a fox got from_cat injured."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol tracks down a red fox and spots that it's holding fresh-kill. s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster when the fox sinks its fangs into s_c. The rest of the patrol rescues their annoying Clanmate while the fox runs off with what could've been their dinner.",
+                "text": "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster when the fox sinks its fangs into s_c. The rest of the patrol rescues their annoying Clanmate while the fox runs off with what could've been their dinner.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
                     "arrogant",
                     "bloodthirsty",
@@ -3948,18 +4063,17 @@
                         "scars": ["LEGBITE"]
                     }
                 ],
-                "history_text": { 
-                    "scar": "m_c carries a scar from a fight with a red fox.",
-                    "reg_death": "m_c died from a red fox bite.",
-                    "lead_death": "died from a red fox bite"
-            },
+                "history_text": { "scar": "m_c carries a scar from a red fox fight." },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["like", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat's hasty attack spoiled from_cat's patrol's chance to steal a fox's prey. from_cat wasn't happy with to_cat."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -3974,7 +4088,7 @@
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
-        "max_cats": 3,
+        "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
         "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
@@ -3991,13 +4105,16 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to steal a fox's prey."
+                        }
                     }
                 ]
             },
             {
-                "text": "The scent trail leads to where some kind of fox has cached half a fish in a poorly concealed hole. The cats take it as their due and leave the fox to wander on.",
+                "text": "The scent trail leads to where some kind of fox has cached a fish in a poorly concealed hole. The cats take it as their due and leave the fox to wander on.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["small"],
@@ -4006,8 +4123,11 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to steal a fox's prey."
+                        }
                     }
                 ]
             },
@@ -4019,11 +4139,24 @@
                 "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like", "respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's skill in stealing prey from a gray fox."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to steal prey from a gray fox."
+                        }
                     }
                 ]
             },
@@ -4035,10 +4168,10 @@
                     "calm",
                     "careful",
                     "cunning",
-                    "lonesome",
-                    "nervous",
                     "sneaky",
-                    "strange",
+                    "insecure",
+                    "nervous",
+                    "responsible",
                     "thoughtful",
                     "wise"
                 ],
@@ -4049,7 +4182,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like", "respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat's caution and clever thinking helped from_cat's patrol use a gray fox to distract prey during a hunt."
+                        }
                     }
                 ]
             }
@@ -4064,8 +4200,11 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["trust", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat lost the trail while tracking a fox and argued on the way home."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -4093,7 +4232,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like", "respect"],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wasn't pleased with to_cat after {PRONOUN/to_cat/poss} hasty attack on a gray fox wasted a whole afternoon."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -4116,11 +4258,14 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "values": ["like", "trust"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat led an attack against a fox that got from_cat injured."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -4160,208 +4305,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like", "respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_hunt_foxgray_steal2",
-        "biome": ["beach"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
-        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "It's a gray fox, which as far as the cats are concerned means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
-                "exp": 20,
-                "weight": 20,
-                "prey": ["small"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "The scent trail leads to where some kind of fox has cached a wood rat in a poorly concealed hole. The cats take it as their due and leave the fox to wander on.",
-                "exp": 20,
-                "weight": 5,
-                "prey": ["small"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "The trail leads to a gray fox, and s_c makes sure it both relinquishes its poached prey and flees for the border with its tail between its legs. The smaller predator can't stand up to a patrol working together.",
-                "exp": 20,
-                "weight": 20,
-                "stat_skill": ["HUNTER,1", "FIGHTER,2"],
-                "prey": ["small"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "The cats follow the trail, with s_c urging caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
-                "exp": 20,
-                "weight": 20,
-                "stat_trait": [
-                    "calm",
-                    "careful",
-                    "cunning",
-                    "lonesome",
-                    "nervous",
-                    "sneaky",
-                    "strange",
-                    "thoughtful",
-                    "wise"
-                ],
-                "prey": ["small"],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature had figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border, the hasty attack makes the gray fox skitter up a cliff and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and nobody's happy with s_c.",
-                "exp": 0,
-                "weight": 20,
-                "stat_trait": [
-                    "adventurous",
-                    "ambitious",
-                    "arrogant",
-                    "bloodthirsty",
-                    "bold",
-                    "confident",
-                    "competitive",
-                    "daring",
-                    "fierce",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray fox panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it lashes out at r_c.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["LEGBITE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a fight with a gray fox.",
-                    "reg_death": "m_c died from a gray fox bite.",
-                    "lead_death": "died from a gray fox bite"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border, the hasty attack makes the gray fox skitter up a cliff and start yelping. s_c tries to make up for the mistake by following the fox up into the branches, which goes even more poorly and forces the patrol to help {PRONOUN/s_c/object} back to the medicine cat den.",
-                "exp": 0,
-                "weight": 10,
-                "stat_trait": [
-                    "adventurous",
-                    "ambitious",
-                    "arrogant",
-                    "bloodthirsty",
-                    "bold",
-                    "confident",
-                    "competitive",
-                    "daring",
-                    "fierce",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "injury": [
-                    {
-                        "cats": ["s_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["LEGBITE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a fight with a gray fox.",
-                    "reg_death": "m_c died from a gray fox bite.",
-                    "lead_death": "died from a gray fox bite"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wasn't pleased with to_cat after {PRONOUN/to_cat/poss} hasty attack sidetracked a hunting patrol."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
