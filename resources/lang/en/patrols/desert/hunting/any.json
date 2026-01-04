@@ -37,7 +37,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Your cats try to knock over a metal leaf, but there aren't enough of them to force it over.",
+                "text": "The cats try to knock over a metal leaf, but there aren't enough of them to force it over.",
                 "exp": 0,
                 "weight": 20
             }
@@ -860,7 +860,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Outraged, your cats charge the poacher, determined to rip its pelt off. No one steals from c_n! The fox jumps, startled, and streaks for the horizon, but with a full patrol your cats chase it until it drops the hare and crosses the border. Hrumph! Though it's only a small haul of prey for a hunting patrol, at least they've gotten rid of the prey thief.",
+                "text": "Outraged, the cats charge the poacher, determined to rip its pelt off. No one steals from c_n! The fox jumps, startled, and streaks for the horizon, but with a full patrol the cats chase it until it drops the hare and crosses the border. Hrumph! Though it's only a small haul of prey for a hunting patrol, at least they've gotten rid of the prey thief.",
                 "exp": 30,
                 "weight": 20,
                 "prey": ["small"],
@@ -963,7 +963,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
+                "text": "One tiny kit fox against the cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["huge"],
@@ -978,7 +978,7 @@
                 ]
             },
             {
-                "text": "The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as your cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
+                "text": "The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as the cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["huge"],
@@ -1035,7 +1035,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and the patrol wisely backs off as the boar begins to cannibalize its victim.",
+                "text": "One tiny kit fox against the cats? No contest. The cats against the boar coming snuffling back? Also, no contest, and the patrol wisely backs off as the boar begins to cannibalize its victim.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1050,7 +1050,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
+                "text": "One tiny kit fox against the cats? No contest. The cats against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1089,7 +1089,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
+                "text": "One tiny kit fox against the cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["huge"],
@@ -1104,7 +1104,7 @@
                 ]
             },
             {
-                "text": "The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as your cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
+                "text": "The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as the cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["huge"],
@@ -1161,7 +1161,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and the patrol wisely backs off as the boar begins to cannibalize its victim.",
+                "text": "One tiny kit fox against the cats? No contest. The cats against the boar coming snuffling back? Also, no contest, and the patrol wisely backs off as the boar begins to cannibalize its victim.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1176,7 +1176,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
+                "text": "One tiny kit fox against the cats? No contest. The cats against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

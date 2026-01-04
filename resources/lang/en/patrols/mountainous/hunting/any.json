@@ -1244,7 +1244,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The ringing intrigues your cats, leading them to where a buzzard circles, bell tolling the death of the stag wedged by his antlers between a rocky outcrop. An ominous sign for the stag - a bounty for the Clan.",
+                "text": "The ringing intrigues the cats, leading them to where a buzzard circles, bell tolling the death of the stag wedged by his antlers between a rocky outcrop. An ominous sign for the stag - a bounty for the Clan.",
                 "exp": 35,
                 "weight": 20,
                 "prey": ["huge"],

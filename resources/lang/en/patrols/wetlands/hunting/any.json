@@ -2175,11 +2175,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a scavenging fox together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
+                        }
                     }
                 ]
             },
@@ -2190,11 +2203,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a scavenging fox together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
+                        }
                     }
                 ]
             },
@@ -2206,11 +2232,34 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's strength in a fight against a scavenging fox."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off a scavenging fox together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's small patrol drove off a scavenging fox."
+                        }
                     }
                 ]
             },
@@ -2230,11 +2279,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat land the blow on a fox that won the battle."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
+                        }
                     }
                 ]
             }
@@ -2250,9 +2312,9 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
-                        "amount": -5,
+                        "amount": -3,
                         "log": {
-                            "cats_from": "Despite the size of their patrol, from_cat and to_cat were unable to work together to drive off a fox."
+                            "cats_from": "from_cat and to_cat were unable to work together to drive off a fox."
                         }
                     }
                 ],
@@ -2265,11 +2327,14 @@
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
+                        "values": ["respect", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat's overconfident move cost from_cat's patrol the battle against a fox."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -2289,11 +2354,14 @@
                 "history_text": { "scar": "m_c carries a scar from a gray fox fight." },
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
+                        "values": ["respect", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat's overconfident move cost from_cat's patrol the battle against a fox."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -2322,11 +2390,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a scavenging fox together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
+                        }
                     }
                 ]
             },
@@ -2337,11 +2418,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a scavenging fox together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
+                        }
                     }
                 ]
             },
@@ -2353,11 +2447,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat land the blow on a fox that won the battle."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
+                        }
                     }
                 ]
             },
@@ -2377,11 +2484,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat land the blow on a fox that won the battle."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol killed a scavenging fox."
+                        }
                     }
                 ]
             }
@@ -2393,13 +2513,17 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "Despite the size of their patrol, from_cat and to_cat were unable to work together to drive off a fox."
+                        }
                     }
                 ],
+
                 "prey": ["very_small"]
             },
             {
@@ -2409,13 +2533,17 @@
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol", "patrol"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
+                        "values": ["respect", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat's overconfident move cost from_cat's patrol the battle against a fox."
+                        }
                     }
                 ],
+
                 "prey": ["very_small"]
             }
         ]
@@ -2436,7 +2564,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. Your cats bring it home, no fuss, no worries.",
+                "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats bring it home, no fuss, no worries.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],

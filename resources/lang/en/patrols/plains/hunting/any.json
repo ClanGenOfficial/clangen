@@ -3647,8 +3647,21 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a scavenging fox together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
+                        }
                     }
                 ]
             },
