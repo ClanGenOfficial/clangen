@@ -1739,11 +1739,24 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive a vixen out of their territory."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove a vixen out of their territory."
+                        }
                     }
                 ]
             },
@@ -1753,11 +1766,24 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive out a vixen and kill her cubs."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                        }
                     }
                 ]
             },
@@ -1830,11 +1856,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was impressed by how to_cat chased a gray vixen up into a tree."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
+                        }
                     }
                 ]
             }
@@ -1846,11 +1885,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to drive off a vixen together."
+                        }
                     }
                 ]
             },
