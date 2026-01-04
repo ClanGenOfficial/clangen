@@ -1444,7 +1444,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen4",
+        "patrol_id": "fst_hunt_redvixen3",
         "biome": ["forest"],
         "season": ["greenleaf"],
         "types": ["hunting"],
@@ -1506,14 +1506,12 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
                     "confident",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous",
                     "troublesome",
                     "vengeful"
@@ -1638,7 +1636,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen5",
+        "patrol_id": "fst_hunt_redvixen4",
         "biome": ["forest"],
         "season": ["greenleaf"],
         "types": ["hunting"],
@@ -1700,14 +1698,12 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
                     "bloodthirsty",
                     "bold",
                     "confident",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous",
                     "troublesome",
                     "vengeful"
@@ -1809,7 +1805,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen4",
+        "patrol_id": "fst_hunt_grayvixen3",
         "biome": ["forest"],
         "season": ["greenleaf"],
         "types": ["hunting"],
@@ -1970,7 +1966,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen5",
+        "patrol_id": "fst_hunt_grayvixen4",
         "biome": ["forest"],
         "season": ["greenleaf"],
         "types": ["hunting"],

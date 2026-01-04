@@ -99,7 +99,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_greenleaf_redvixen5",
+        "patrol_id": "pln_hunt_greenleaf_redvixen4",
         "biome": ["plains"],
         "season": ["greenleaf"],
         "types": ["hunting"],
@@ -262,7 +262,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_greenleaf_redvixen4",
+        "patrol_id": "pln_hunt_greenleaf_redvixen3",
         "biome": ["plains"],
         "season": ["greenleaf"],
         "types": ["hunting"],
