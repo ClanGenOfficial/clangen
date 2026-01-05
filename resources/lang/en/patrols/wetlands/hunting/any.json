@@ -2464,17 +2464,16 @@
                 "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
                 "exp": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
+                    "arrogant",
+                    "bloodthirsty",
                     "confident",
+                    "bold",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous"
                 ],
-                "prey": [
-                    "large"
-                ],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -2668,17 +2667,16 @@
                 "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. s_c holds on grimly as the rest of the patrol takes the opportunity to bring the fox down for good.",
                 "exp": 20,
                 "stat_trait": [
-                    "adventurous",
                     "ambitious",
+                    "arrogant",
+                    "bloodthirsty",
                     "confident",
+                    "bold",
                     "daring",
                     "fierce",
-                    "responsible",
                     "righteous"
                 ],
-                "prey": [
-                    "large"
-                ],
+                "prey": ["medium"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -2708,27 +2706,8 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
+                "frequency": 4,
+                "prey": ["very_small"]
             },
             {
                 "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den.",

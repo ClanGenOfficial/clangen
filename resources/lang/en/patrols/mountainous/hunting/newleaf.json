@@ -4111,14 +4111,14 @@
         },
         "frequency": 4,
         "intro_text": "Soon the meadows they pad through will be overtaken by the riots of color as the mountain wildflowers go for broke in greenleaf, but it's so nice just to feel grass under their pawpads instead of snow as p_l pads on {PRONOUN/p_l/poss} hunting patrol with r_c.",
-        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
+        "decline_text": "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
         "relationship_constraint": [
             "siblings"
         ],
         "success_outcomes": [
             {
-                "text": "A m_mp_s and two m_tp_p is nothing to sniff at, as a hunting success, but stars above, being alone with r_c makes p_l feel like a kitten again. And not in the cute way either; in the chewing on tails, whiny, petty, immature way. Ugh.",
+                "text": "A m_mp_s and two m_tp_p is nothing to sniff at, as a hunting success, but stars above, being alone with r_c makes p_l feel like a kitten again. And not in the cute way either; in the chewing-on-tails, whiny, petty, immature way. Ugh.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -4721,14 +4721,14 @@
         },
         "frequency": 4,
         "intro_text": "Soon the meadows they pad through will be overtaken by the riots of color as the mountain wildflowers go for broke in greenleaf, but it's so nice just to feel grass under their pawpads instead of snow as p_l pads on {PRONOUN/p_l/poss} hunting patrol with {PRONOUN/p_l/poss} siblings.",
-        "decline_text": "Actually, {PRONOUN/p_l/subject}'d rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
+        "decline_text": "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
         "relationship_constraint": [
             "siblings"
         ],
         "success_outcomes": [
             {
-                "text": "A m_mp_s, three m_tp_p, and a couple m_mp_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either; in the chewing on tails, whiny, petty, immature way. Ugh.",
+                "text": "A m_mp_s, three m_tp_p, and a couple m_mp_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either; in the chewing-on-tails, whiny, petty, immature way. Ugh.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -4835,8 +4835,8 @@
                 -1
             ]
         },
-        "frequency": 4,
-        "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially with the streams burbling, freed from their icy prisons, the sun out and the air filled with birdsong.",
+        "frequency": 3,
+        "intro_text": "Sometimes, r_c enjoys just hanging out with {PRONOUN/r_c/poss} siblings. Especially with the streams burbling, freed from their icy prisons, the sun out and the air filled with birdsong.",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
         "relationship_constraint": [
