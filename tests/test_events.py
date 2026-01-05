@@ -66,7 +66,7 @@ class TestEvents(unittest.TestCase):
         Testing if random_cat is incorrectly reassigned to None when no events are available.
         """
         main_cat = choice(Cat.all_cats_list)
-        random_cat = None
+        random_cat = choice(Cat.all_cats_list)
         while random_cat == main_cat:
             random_cat = choice(Cat.all_cats_list)
 
