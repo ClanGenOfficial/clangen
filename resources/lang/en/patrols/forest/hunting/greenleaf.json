@@ -6050,6 +6050,7 @@
                 "prey": [
                     "medium"
                 ],
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
