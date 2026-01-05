@@ -5058,7 +5058,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw {PRONOUN/from_cat/poss} older sibling to_cat make an amazing catch."
+                            "cats_from": "from_cat saw {PRONOUN/from_cat/poss} older sibling, to_cat, make an amazing catch."
                         }
                     },
                 {
