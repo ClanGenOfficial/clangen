@@ -44,14 +44,10 @@ from scripts.clan_resources.freshkill import (
 class PatrolOutcome:
     """Holds all info on patrol outcomes, and methods to handle that outcome"""
 
-    num_of_traits = len(Personality.trait_ranges["normal_traits"].keys()) + len(
+    NUM_OF_TRAITS = len(Personality.trait_ranges["normal_traits"].keys()) + len(
         Personality.trait_ranges["kit_traits"].keys()
     )
-    num_of_skills = len(SkillPath)
-
-    num_of_ages = len(CatAge)
-
-    num_of_ranks = CatRank.get_num_of_clan_ranks()
+    NUM_OF_SKILLS = len(SkillPath)
 
     def __init__(
         self,
@@ -96,10 +92,10 @@ class PatrolOutcome:
             self.weight += len(relationship_constraints) * 2
         self.stat_trait = stat_trait if stat_trait else []
         if self.stat_trait:
-            self.weight += int((self.num_of_traits - len(self.stat_trait)) / 10)
+            self.weight += int((self.NUM_OF_TRAITS - len(self.stat_trait)) / 10)
         self.stat_skill = stat_skill if stat_skill else []
         if self.stat_skill:
-            self.weight += int((self.num_of_skills - len(self.stat_skill)) / 5)
+            self.weight += int((self.NUM_OF_SKILLS - len(self.stat_skill)) / 5)
         self.can_have_stat = can_have_stat if can_have_stat else []
 
         self.dead_cats = dead_cats if dead_cats else []
