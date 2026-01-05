@@ -1962,7 +1962,7 @@
                     "cats_to": ["p_l"],
                     "values": ["like", "trust"],
                     "mutual": false,
-                    "amount": 5,
+                    "amount": 10,
                     "log":
                     {
                         "cats_from": "to_cat carried from_cat back to camp after {PRONOUN/from_cat/subject} collapsed from the heat."
