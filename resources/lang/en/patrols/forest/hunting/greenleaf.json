@@ -1671,7 +1671,8 @@
                     "scar": "m_c carries a scar from fighting a swarm of rats.",
                     "reg_death": "m_c died from a rat bite."
                 },
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "frequency": 4
             }
         ]
     },
