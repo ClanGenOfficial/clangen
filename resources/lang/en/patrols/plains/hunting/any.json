@@ -5369,7 +5369,8 @@
                         "scar": "m_c was permanently marked by the claws of a hare as an apprentice - but {PRONOUN/m_c/subject} survived.",
                         "reg_death": "m_c died from the claws of a hare encountered on a hunt as a foolish apprentice.",
                         "lead_death": "from the claws of a hare encountered on a hunt as a foolish apprentice"
-                        }
+                        },
+                    "frequency": 4
                 }
             ]
     },
