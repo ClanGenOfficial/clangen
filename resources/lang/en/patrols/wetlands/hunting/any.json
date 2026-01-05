@@ -2526,12 +2526,13 @@
                         }
                     }
                 ],
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "frequency": 4
             },
             {
                 "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -3902,7 +3903,7 @@
             {
                 "text": "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying Clanmate as the fox runs off with what could've been their dinner.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 4,
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
@@ -3949,7 +3950,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
@@ -3957,7 +3958,7 @@
             {
                 "text": "It's a gray fox, which as far as the cats are concerned means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["small"],
                 "relationships": [
                     {
@@ -3975,7 +3976,7 @@
             {
                 "text": "The scent trail leads to where some kind of fox has cached a fish in a poorly concealed hole. The cats take it as their due, and leave the fox to wander on.",
                 "exp": 20,
-                "weight": 5,
+                "frequency": 1,
                 "prey": ["small"],
                 "relationships": [
                     {
@@ -3993,7 +3994,7 @@
             {
                 "text": "The trail leads to a gray fox, and s_c makes sure it both hands over the prey it poached from c_n land and flees for the border, tail between its legs and yelping. The smaller predator can't stand up to a patrol working together.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "stat_skill": ["HUNTER,1", "FIGHTER,2"],
                 "prey": ["small"],
                 "relationships": [
@@ -4022,7 +4023,7 @@
             {
                 "text": "The cats follow the trail, and s_c urges caution. There's no reason to rush into things. Sure enough, they find a gray fox. It's digging at a rotten log, unearthing insects. The patrol uses the presence of the other predator as a distraction to bring down a plump bird, one that was too busy watching the fox to guard from them, and the fox is left unscathed to keep bug hunting.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "stat_trait": [
                     "calm",
                     "careful",
@@ -4053,7 +4054,7 @@
             {
                 "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4071,7 +4072,7 @@
             {
                 "text": "The patrol tracks down a gray fox trespassing on c_n land. s_c runs at it without thinking, and instead of intimidating the fox into fleeing for the border the hasty attack makes the gray fox skitter up a tree and start yelping. It takes all afternoon to wait the fox out and then herd it more carefully away from c_n's hunting grounds, and nobody's happy with s_c.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "stat_trait": [
                     "adventurous",
                     "ambitious",
@@ -4101,7 +4102,7 @@
             {
                 "text": "p_l leads the patrol to the end of the scent trail, where a gray fox sits grooming its fur in the sunshine. With careful signals, the cats set up an ambush, but the small gray panics beyond anything any cat expected, and as it flees, convinced its life is in danger, it lashes out at r_c.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -4890,7 +4891,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
@@ -4898,7 +4899,7 @@
             {
                 "text": "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of it muscle, they meet her eyes squarely, and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
                 "exp": 30,
-                "weight": 20,
+                "frequency": 2,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4925,7 +4926,7 @@
             {
                 "text": "With so many cats working together in tight coordination, they're able to keep the gray vixen they found pinned and distracted as they wear her down. The fox eventually flees for her den, and the patrol follows to take care of the cubs she's raising.",
                 "exp": 30,
-                "weight": 5,
+                "frequency": 1,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4952,7 +4953,7 @@
             {
                 "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
                 "exp": 30,
-                "weight": 20,
+                "frequency": 4,
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
@@ -4980,7 +4981,7 @@
             {
                 "text": "The patrol finds a stocky gray vixen wandering their wetland, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
                 "exp": 15,
-                "weight": 10,
+                "frequency": 2,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -4993,7 +4994,7 @@
             {
                 "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c/object} up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
                 "exp": 30,
-                "weight": 20,
+                "frequency": 4,
                 "stat_trait": [
                     "adventurous",
                     "ambitious",
@@ -5035,7 +5036,7 @@
             {
                 "text": "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up a tree and into the swamp canopy in a move that completely surprises the cats. This round goes to the gray fox.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -5052,7 +5053,7 @@
             {
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply the gray vixen slips past {PRONOUN/s_c/object} and flees into the maze of the many wooded semi-submerged islands of the swamp.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "stat_skill": ["FIGHTER,1"],
                 "relationships": [
                     {
@@ -5070,7 +5071,7 @@
             {
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking {PRONOUN/s_c/object} rump over paws as she flees from the patrol.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 4,
                 "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
