@@ -67,7 +67,7 @@ class TestEvents(unittest.TestCase):
         """
         main_cat = choice(Cat.all_cats_list)
         random_cat = None
-        while random_cat != main_cat:
+        while random_cat == main_cat:
             random_cat = choice(Cat.all_cats_list)
 
         chosen_event, new_random_cat = filter_events(
