@@ -4293,7 +4293,8 @@
                             "cats_from": "from_cat was very impressed by how bravely to_cat fought against a vixen."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             },
             {
                 "text": "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
@@ -4522,7 +4523,8 @@
                             "cats_from": "from_cat was impressed by how to_cat charged a gray fox in a fight."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             },
             {
                 "text": "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
@@ -5545,7 +5547,8 @@
                             "cats_from": "to_cat insulted from_cat by suggesting that {PRONOUN/from_cat/subject} carry {PRONOUN/to_cat/poss} prey after from_cat didn't catch anything."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             },
             {
                 "text": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!",
@@ -6691,7 +6694,8 @@
                             "cats_from": "from_cat had fun hunting with {PRONOUN/from_cat/poss} sibling to_cat."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             },
             {
                 "text": "A f_mp_s and two f_tp_p is nothing to sniff at, as a hunting success, but stars above, being alone with r_c makes p_l feel like a kitten again. And not in the cute way either; in the chewing-on-tails, whiny, petty, immature way. Ugh.",
@@ -7182,7 +7186,7 @@
                 -1
             ]
         },
-        "weight": 40,
+        "frequency": 4,
         "intro_text": "Sometimes, r_c enjoys just hanging out with {PRONOUN/r_c/poss} siblings. Especially with the forest blooming with plants and prey, perfect for a great hunt together!",
         "decline_text": "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
         "chance_of_success": 50,
@@ -7259,7 +7263,8 @@
                             "cats_from": "from_cat was reminded of how talented {PRONOUN/from_cat/poss} sibling to_cat is while hunting together."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             },
             {
                 "text": "A f_mp_s, three f_tp_p, and a couple f_mp_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either; in the chewing-on-tails, whiny, petty, immature way. Ugh.",
