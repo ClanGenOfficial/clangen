@@ -2111,8 +2111,6 @@ def handle_murder(cat):
             )
 
         elif kill_chance <= 20:
-            print(cat.name, "TARGET CHOSEN", Cat.fetch_cat(chosen_target.cat_to).name)
-            print("FAILED")
             create_short_event(
                 event_type="misc",
                 main_cat=cat,
