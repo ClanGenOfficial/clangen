@@ -2644,7 +2644,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -2844,7 +2844,7 @@
             {
                 "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -3308,7 +3308,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -3508,7 +3508,7 @@
             {
                 "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -4010,7 +4010,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -6167,7 +6167,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {

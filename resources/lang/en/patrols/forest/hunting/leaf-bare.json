@@ -3644,7 +3644,7 @@
             {
                 "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
