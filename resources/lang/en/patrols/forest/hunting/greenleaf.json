@@ -5496,7 +5496,7 @@
                         "values": ["comfort"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat avoided {PRONOUN/from_cat/poss} older sibling to_cat for a few days after struggling to catch anything on a hunting patrol together."
+                            "cats_from": "from_cat avoided {PRONOUN/from_cat/poss} older sibling, to_cat, for a few days after struggling to catch anything on a hunting patrol together."
                         }
                     }
                 ],
