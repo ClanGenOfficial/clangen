@@ -20,6 +20,8 @@ from scripts.events_module.event_filters import (
     event_for_herb_supply,
     event_for_season,
     cat_for_event,
+    get_frequency,
+    find_new_frequency,
 )
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants, game
@@ -105,19 +107,12 @@ def create_short_event(
         event_type = "injury"
 
     # choosing frequency
-    # think of it as "in a span of 10 moons, in how many moons should this sort of event appear?"
-    frequency_roll = random.randint(1, 10)
-    if frequency_roll <= 4:
-        frequency = 4
-    elif frequency_roll <= 7:
-        frequency = 3
-    elif frequency_roll <= 9:
-        frequency = 2
-    else:
-        frequency = 1
+    frequency = get_frequency()
+    used_frequencies = set()
 
     chosen_event = None
-    while not chosen_event and frequency < 5:
+    already_reset = False
+    while not chosen_event:
         events = find_needed_events(
             frequency,
             event_type,
@@ -136,12 +131,18 @@ def create_short_event(
         )
         if not chosen_event:
             # we'll see if any more common events are available
-            frequency += 1
-            # if we've hit 5 frequency, then we've probably used all the events.
-            # so we'll reset the used_events list and look for 4 frequency events again
-            if used_events and frequency == 5:
+            used_frequencies.add(frequency)
+            frequency = find_new_frequency(used_frequencies)
+
+            # if we've ended up with 4 frequency twice then we're out of events and it's time to reset
+            if 4 in used_frequencies and frequency == 4:
                 used_events.clear()
+                used_frequencies.clear()
                 frequency = 4
+                # already_reset marks if we've already reset the used_events list while trying to find an event
+                if already_reset:
+                    break
+                already_reset = True
 
     if chosen_event:
         used_events.add(chosen_event.event_id)
@@ -508,7 +509,7 @@ def filter_events(
         final_events.extend([event] * event.weight)
 
     if not final_events:
-        return None, None
+        return None, random_cat
 
     cat_list = [
         c

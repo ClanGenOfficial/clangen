@@ -36,14 +36,14 @@ class ShortEvent:
     - full documentation available on GitHub wiki
     """
 
-    num_of_traits = len(Personality.trait_ranges["normal_traits"].keys()) + len(
+    NUM_OF_TRAITS = len(Personality.trait_ranges["normal_traits"].keys()) + len(
         Personality.trait_ranges["kit_traits"].keys()
     )
-    num_of_skills = len(SkillPath)
+    NUM_OF_SKILLS = len(SkillPath)
 
-    num_of_ages = len(CatAge)
+    NUM_OF_AGES = len(CatAge)
 
-    num_of_ranks = CatRank.get_num_of_clan_ranks()
+    NUM_OF_RANKS = CatRank.get_num_of_clan_ranks()
 
     def __init__(
         self,
@@ -89,11 +89,11 @@ class ShortEvent:
         self.m_c = m_c if m_c else {"age": ["any"]}
         if self.m_c:
             if "age" in self.m_c and "any" not in self.m_c["age"]:
-                self.weight += self.num_of_ages - len(self.m_c["age"])
+                self.weight += self.NUM_OF_AGES - len(self.m_c["age"])
             else:
                 self.m_c["age"] = ["any"]
             if "status" in self.m_c and "any" not in self.m_c["status"]:
-                self.weight += self.num_of_ranks - len(self.m_c["status"])
+                self.weight += self.NUM_OF_RANKS - len(self.m_c["status"])
             else:
                 self.m_c["status"] = ["any"]
             if "relationship_status" in self.m_c:
@@ -101,7 +101,7 @@ class ShortEvent:
             else:
                 self.m_c["relationship_status"] = []
             if "skill" in self.m_c:
-                self.weight += self.num_of_skills - len(self.m_c["skill"])
+                self.weight += self.NUM_OF_SKILLS - len(self.m_c["skill"])
             else:
                 self.m_c["skill"] = []
             if "not_skill" in self.m_c:
@@ -109,7 +109,7 @@ class ShortEvent:
             else:
                 self.m_c["not_skill"] = []
             if "trait" in self.m_c:
-                self.weight += self.num_of_traits - len(self.m_c["trait"])
+                self.weight += self.NUM_OF_TRAITS - len(self.m_c["trait"])
             else:
                 self.m_c["trait"] = []
             if "not_trait" in self.m_c:
@@ -128,11 +128,11 @@ class ShortEvent:
         self.r_c = r_c if r_c else {}
         if self.r_c:
             if "age" in self.r_c and "any" not in self.r_c["age"]:
-                self.weight += self.num_of_ages - len(self.r_c["age"])
+                self.weight += self.NUM_OF_AGES - len(self.r_c["age"])
             else:
                 self.r_c["age"] = ["any"]
             if "status" in self.r_c and "any" not in self.r_c["status"]:
-                self.weight += self.num_of_ranks - len(self.r_c["status"])
+                self.weight += self.NUM_OF_RANKS - len(self.r_c["status"])
             else:
                 self.r_c["status"] = ["any"]
             if "relationship_status" in self.r_c:
@@ -140,7 +140,7 @@ class ShortEvent:
             else:
                 self.r_c["relationship_status"] = []
             if "skill" in self.r_c:
-                self.weight += self.num_of_skills - len(self.r_c["skill"])
+                self.weight += self.NUM_OF_SKILLS - len(self.r_c["skill"])
             else:
                 self.r_c["skill"] = []
             if "not_skill" in self.r_c:
@@ -148,7 +148,7 @@ class ShortEvent:
             else:
                 self.r_c["not_skill"] = []
             if "trait" in self.r_c:
-                self.weight += self.num_of_traits - len(self.r_c["trait"])
+                self.weight += self.NUM_OF_TRAITS - len(self.r_c["trait"])
             else:
                 self.r_c["trait"] = []
             if "not_trait" in self.r_c:
