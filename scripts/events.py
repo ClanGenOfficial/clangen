@@ -2050,8 +2050,7 @@ def handle_murder(cat):
     if random.getrandbits(murder_capable) != 1:
         return
 
-    # If random murder is not triggered, targets can only be those they have some dislike for
-    # If random murder is not triggered, targets can only be those they have extreme negativity for
+    # If random murder is not triggered, targets can only be those they have some mid/extreme neg for
     negative_relation = [
         i
         for i in relationships

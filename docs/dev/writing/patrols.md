@@ -4,7 +4,7 @@
 When considering patrols, keep in mind challenge vs reward. That isn't to say certain patrol events should necessarily be locked behind certain patrol sizes, but try to imagine what a group of cats that size would do in a given situation, and how likely it would be for them to succeed in whatever it is they're trying to do. If making large size and small sized variants of the same patrol, it's encouraged to give different outcomes even if the success chance is the same for both variants. For example, 6 cats have very different options for dealing with an owl than 2 cats do.
 
 !!! todo "TODO"
-    add some guidelines here for success chance and weights, just an idea of number baselines compared to the current patrol spread
+    add some guidelines here for success chanc, just an idea of number baselines compared to the current patrol spread
 
 !!! todo "TODO"
     add guidelines regarding tracking and requests sheets for art
@@ -86,7 +86,7 @@ This is a good starting point for writing your own patrols.
             6
         ]
     },
-    "weight": 20,
+    "frequency": 4,
     "chance_of_success": 50,
     "relationship_constraint": [],
     "pl_skill_constraint": [],
@@ -197,11 +197,11 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 **Differences between the types** 
 > Training patrols are an easy difficulty for [success chance](#chance-of-success-int), but the lowest with regards to [exp reward](#exp-int). They are a relatively safe patrol type of low danger, and the [injuries](#injury-listdictstr-various) cats can obtain on them should either be rare (low weighed outcome), or minor. Training patrols have high [relationship rewards](#relationships-listdictstr-various).
 
-> Hunting patrols are of moderate difficulty for [success chance](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#chance-of-success-int).  Hunting patrols are subject to [extra filtering](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Advanced-documentation#todo-hunting-filtering-in-depth) that effects what patrols are available based on their [prey reward](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#prey-liststr). This filtering ensures that we cannot starve out the player's cats simply by adding too many patrols that give out a certain prey reward. Hunting patrols are of medium danger, and the [injuries](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#injury-listdictstr-various) cats can obtain on them should either be minor and common (high weighed outcome), moderate and of a normal weight, or severe and of a low weight. The same guidelines apply to [killing cats](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#dead_cats-liststr) on this patrol type. Hunting patrols should have only minor [relationship rewards](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationships-listdictstr-various) (less than 5) unless the hunting patrol text focuses on the relationship, e.g a warrior and a apprentice hunting together with the warrior teaching the apprentice.
+> Hunting patrols are of moderate difficulty for [success chance](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#chance-of-success-int).  Hunting patrols are subject to [extra filtering](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Advanced-documentation#todo-hunting-filtering-in-depth) that effects what patrols are available based on their [prey reward](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#prey-liststr). This filtering ensures that we cannot starve out the player's cats simply by adding too many patrols that give out a certain prey reward. Hunting patrols are of medium danger, and the [injuries](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#injury-listdictstr-various) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#dead_cats-liststr) on this patrol type. Hunting patrols should have only minor [relationship rewards](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationships-listdictstr-various) (less than 5) unless the hunting patrol text focuses on the relationship, e.g a warrior and a apprentice hunting together with the warrior teaching the apprentice.
 
 > Border patrols needs to be the hardest and most dangerous, with a high difficulty for [success chance](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#chance-of-success-int).  This is where experienced cats should shine! The [injuries](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#injury-listdictstr-various) cats can obtain on them should be a wide range. Failure outcomes on border patrols that don't cause injury should be rare. You are encouraged to apply minor injuries even on success outcome. The same guidelines apply to [killing cats](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#dead_cats-liststr) on this patrol type, with the exception that you cannot kill cats on any success outcomes. This is by far the mostly likely patrol type to have cats become [lost](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#lost_cats-liststr) on.
 
-> Herb gathering patrols are of moderate difficulty for [success chance](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#chance-of-success-int) (like hunting patrols). Herb gathering patrols are focused on gathering herbs and thus need to have a [herb reward](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#herbs-liststr) under most circumstances. Herb gathering patrols are of medium danger, and the [injuries](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#injury-listdictstr-various) cats can obtain on them should either be minor and common (high weighed outcome), moderate and of a normal weight, or severe and of a low weight. The same guidelines apply to [killing cats](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#dead_cats-liststr) on this patrol type. Herb gathering patrols should be highly seasonal, as not all herbs are available in all seasons, or in the same seasons in different [biomes](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#clangen-biomes). 
+> Herb gathering patrols are of moderate difficulty for [success chance](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#chance-of-success-int) (like hunting patrols). Herb gathering patrols are focused on gathering herbs and thus need to have a [herb reward](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#herbs-liststr) under most circumstances. Herb gathering patrols are of medium danger, and the [injuries](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#injury-listdictstr-various) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#dead_cats-liststr) on this patrol type. Herb gathering patrols should be highly seasonal, as not all herbs are available in all seasons, or in the same seasons in different [biomes](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#clangen-biomes). 
 
 > The subtypes of [new_cat](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#outsider_rep) and [other_clan](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#other_clan_rep) patrols should primarily use the type specific success, danger, injuries, death, and rewards of whatever the primary patrol type is. For example, use the success chance for herd gathering patrols if your medicine cat finds an injured kitten. However, a subtype is more likely to move away from the 'normal' setting for that type of patrol as they are by definition unusual examples of that patrol type. Brainstorm with other developers!
 
@@ -280,17 +280,21 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 ***
 
-#### weight: int
->Controls how common a patrol is. A "normal" patrol would be ~20. A lower number makes the patrol less common, and a higher number make the patrol more common
+#### frequency: int
+>Controls how common a patrol is. This works on a 1-4 scale. 
 
-> Most constrained patrols ([relationship](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationship_constraint-liststr) or [p_l skill](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#pl_skill_constraint-liststr) constraints) have a weight of 40, making them twice as likely to trigger if the conditions to unlock them are met.
-
-> The default weight for patrols in the general training json (that is, training patrols that can be triggered no matter what the biome) that don't have any constraints on the patrol ([relationship](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationship_constraint-liststr) or [p_l skill](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#pl_skill_constraint-liststr) constraints) is 5. This is so that these patrols are four times less likely to be chosen than biome specific content. 
-
-> The general hunting and border jsons have balancing patrols in them. These have very low weights (between 1-5) and aren't very interesting patrols, but they are made so that no matter what biome and season it is, the game has a pool of valid hunting and border patrols to choose from. 
+| int | commonality |
+|-----|-------------|
+| 1   | Very Rare   |
+| 2   | Rare        |
+| 3   | Uncommon    |
+| 4   | Common      |
 
 !!! tip
-    Hunting patrols have an additional level of filtering active above the patrol weights. First the game decides what prey reward the patrol should give (based on chances that change depending on the biome and season), and then, from the patrols that give that prey reward _as a non-stat success_, the acceptable patrols are weighed against each other. This naturally makes patrols that give huge prey rewards rare, no matter how many of those patrols you write. Don't worry about weighing hunting patrols according to their prey reward. Instead make each hunting patrol give roughly the same prey reward for all non-stat successes. The hunting filtering code will make sure the appropriate amount of prey is given. 
+    It's good to consider frequency as relative to that patrol's set up.  While players likely aren't sending out a patrol of 2 apprentices every moon, that doesn't mean a 2-app patrol event should be marked as Rare frequency. Rather, consider it in terms of "in 10 *instances* of this patrol set up, how often should this specific patrol appear?". Seeing this sort of patrol in 4/10 instances would mean it's a common event! Seeing it just once within those 10 instances would mean it's a very rare event.
+
+!!! warning
+    Don't try to boost a patrol's frequency to make up for it being heavily constrained! While we used to do that with our old system, the new code automatically decides how to weight a patrol according to its constraints in a way that is completely divorced from the frequency. We decide event rarities and the code decides if events should be prioritized in specific instances.
 
 
 ***
@@ -300,7 +304,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 > You do not need to adjust the success chance for different patrol sizes.  The success rate for a solo cat patrol should match its full patrol size variation.  Remember that each cat added to a patrol buffs its success chance, we don't need to give them any extra help.
 
-> The rarer the patrol, the more you should feel comfortable differing from these guidelines. Factors that make patrols rarer are [weight](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#weight-int), constraints ([relationship](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationship_constraint-liststr) or [p_l skill](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#pl_skill_constraint-liststr)), [min_max_status](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#min_max_status-dictstr-listint) for example requiring the patrol to have both the leader and deputy on it to unlock, [patrol size](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#min_cats-int), and the subtypes of [new_cat](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#outsider_rep) and [other_clan](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#other_clan_rep) 
+> The rarer the patrol, the more you should feel comfortable differing from these guidelines. Factors that make patrols rarer are [frequency](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#frequency-int), constraints ([relationship](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#relationship_constraint-liststr) or [p_l skill](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#pl_skill_constraint-liststr)), [min_max_status](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#min_max_status-dictstr-listint) for example requiring the patrol to have both the leader and deputy on it to unlock, [patrol size](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#min_cats-int), and the subtypes of [new_cat](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#outsider_rep) and [other_clan](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#other_clan_rep) 
 
 > For medicine cat patrols that involve 'magic', such as ghosts, StarClan, the Dark Forest, or anything else unnatural, you should not automatically use the default medicine success values. Instead, consult an experienced writer for adjusting your chance of success.
 
@@ -543,7 +547,7 @@ This is a good starting point for writing your own outcomes.
 {
     "text": "The raw displayed outcome text.",
     "exp": 0,
-    "weight": 20,
+    "frequency": 4,
     "stat_skill": [],
     "stat_trait": [],
     "can_have_stat": [],
@@ -596,6 +600,25 @@ What each parameter does, and what the options are for outcomes.
 #### exp: int
 >The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given. 
 >
+
+***
+
+#### frequency: int
+>Controls how common an outcome is. This works on a 1-4 scale. 
+
+| int | commonality |
+|-----|-------------|
+| 1   | Very Rare   |
+| 2   | Rare        |
+| 3   | Uncommon    |
+| 4   | Common      |
+
+!!! tip
+    As a baseline, most patrols should contain at least a common success and failure.
+
+!!! warning
+    Don't try to boost an outcome's frequency to make up for it being heavily constrained! While we used to do that with our old system, the new code automatically decides how to weight an outcome according to its constraints in a way that is completely divorced from the frequency. We decide outcome rarities and the code decides if outcomes should be prioritized in specific instances.
+
 
 ***
 
@@ -893,7 +916,7 @@ This is a perfectly good patrol, with the bare minimum features needed!
     "patrol_art": "hunt_general_intro",
     "min_cats": 1,
     "max_cats": 6,
-    "weight": 20,
+    "frequency": 4,
     "chance_of_success": 50,
     "intro_text": "The patrol heads out.",
     "decline_text": "And they head right back!",
@@ -901,14 +924,14 @@ This is a perfectly good patrol, with the bare minimum features needed!
         {
             "text": "Wow! The patrol did great!",
             "exp": 10,
-            "weight": 20
+            "frequency": 4
         }
     ],
     "fail_outcomes": [
         {
             "text": "Oof. The patrol didn't do so hot.",
             "exp": 0,
-            "weight": 20
+            "frequency": 4
         }
     ]
 }
@@ -958,7 +981,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
             -1
         ]
     },
-    "weight": 20,
+    "frequency": 4,
     "chance_of_success": 50,
     "relationship_constraint": [
         "siblings",
@@ -973,7 +996,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
         {
             "text": "Wow! The patrol did great!",
             "exp": 10,
-            "weight": 20,
+            "frequency": 4,
             "relationships": [
                 {
                     "cat_to": [
@@ -1010,7 +1033,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
         {
             "text": "Wow! This is an uncommon outcome, and someone new joined!",
             "exp": 2,
-            "weight": 10,
+            "frequency": 3,
             "new_cat": [
                 [
                     "can_birth",
@@ -1026,7 +1049,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
         {
             "text": "Wow! s_c did extra great!",
             "exp": 10,
-            "weight": 20,
+            "frequency": 4,
             "stat_trait": [
                 "loving",
                 "cold"
@@ -1044,7 +1067,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
         {
             "text": "Oof. The patrol didn't do so hot. They also all died.",
             "exp": 0,
-            "weight": 20,
+            "frequency": 4,
             "dead_cats": [
                 "patrol"
             ],
@@ -1058,7 +1081,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
         {
             "text": "Wow, a fail-stat outcome. Cool.",
             "exp": 0,
-            "weight": 20,
+            "frequency": 4,
             "stat_trait": [
                 "grumpy",
                 "nervous"
@@ -1071,7 +1094,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
         {
             "text": "They didn't die.. , but they got hurt and lost!",
             "exp": 0,
-            "weight": 20,
+            "frequency": 4,
             "lost_cats": [
                 "r_c"
             ],
@@ -1099,7 +1122,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
         {
             "text": "Wow, you did the antagonize!",
             "exp": 0,
-            "weight": 20,
+            "frequency": 4,
             "outsider_rep": -1,
             "other_clan_rep": -2,
             "art": "patrol_outcome_art"
@@ -1109,7 +1132,7 @@ This uses almost all features somewhere. Yes, it is long. Most patrols are not t
         {
             "text": "Wow, you did the antagonize, and failed!",
             "exp": 0,
-            "weight": 20,
+            "frequency": 4,
             "outsider_rep": 0,
             "other_clan_rep": -2
         }
