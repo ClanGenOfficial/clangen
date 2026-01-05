@@ -508,7 +508,7 @@ def filter_events(
         final_events.extend([event] * event.weight)
 
     if not final_events:
-        return None, None
+        return None, random_cat
 
     cat_list = [
         c
