@@ -2407,13 +2407,17 @@
                 "weight": 20,
                 "prey": ["small"],
                 "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
                     }
+                }
                 ]
             },
             {
@@ -2422,13 +2426,17 @@
                 "weight": 5,
                 "prey": ["small"],
                 "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
                     }
+                }
                 ]
             },
             {
@@ -2438,13 +2446,27 @@
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["small"],
                 "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
                     }
+                },
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat admired to_cat's cleverness in hunting down a kit fox's cache and stealing its prey."
+                    }
+                }
                 ]
             },
             {
@@ -2454,12 +2476,11 @@
                 "stat_trait": [
                     "responsible",
                     "thoughtful",
+                    "faithful",
+                    "loyal",
+                    "compassionate",
                     "wise",
-                    "calm",
-                    "careful",
-                    "insecure",
-                    "nervous",
-                    "sneaky"
+                    "calm"
                 ],
                 "prey": ["small"],
                 "relationships": [
@@ -2467,26 +2488,32 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
+                    }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat felt that driving off a kit fox was a waste of effort, but to_cat put a positive spin on things."
+                    }
                     }
                 ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cats. At least that's one less competitor in c_n's hunting grounds?",
+                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... However, the kit fox has spots them and flees. At least that's one less competitor in c_n's hunting grounds?",
                 "exp": 0,
                 "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "comfort"],
-                        "amount": -5
-                    }
-                ],
                 "prey": ["very_small"]
             }
         ]
@@ -2524,21 +2551,34 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
-                "prey": ["medium"]
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_from": ["high_social"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat loved to_cat's crazy story of riding on a kit fox's back."
+                        }
+                    }
+                ]
             },
             {
                 "text": "In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the swamp, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fish.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": [
-                    "responsible",
-                    "thoughtful",
-                    "wise",
-                    "calm",
-                    "careful",
-                    "insecure",
-                    "nervous",
-                    "sneaky"
+                    "adventurous",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "shameless",
+                    "troublesome"
                 ],
                 "prey": ["medium"]
             }
