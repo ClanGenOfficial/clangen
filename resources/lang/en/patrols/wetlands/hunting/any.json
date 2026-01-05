@@ -1866,7 +1866,8 @@
                             "cats_from": "to_cat's daring bravery in a fight against a fox improved from_cat's opinion of {PRONOUN/to_cat/object}."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             }
         ],
         "fail_outcomes": [
@@ -1992,14 +1993,15 @@
                             "cats_from": "from_cat worked together with to_cat to kill a fox on patrol."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -2127,7 +2129,7 @@
             {
                 "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -2445,7 +2447,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -2572,7 +2574,7 @@
             {
                 "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -2903,7 +2905,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -4358,7 +4360,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -4485,7 +4487,7 @@
             {
                 "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -4816,7 +4818,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {

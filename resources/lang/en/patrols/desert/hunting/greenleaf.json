@@ -1873,7 +1873,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "Sometimes, r_c enjoys just hanging out with {PRONOUN/r_c/poss} siblings. Especially with the forest blooming with plants and prey, perfect for a great hunt together!",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,

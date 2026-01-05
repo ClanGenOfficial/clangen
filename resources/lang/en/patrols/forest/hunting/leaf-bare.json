@@ -2205,7 +2205,6 @@
             {
                 "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den.",
                 "exp": 0,
-                "weight": 10,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -2213,17 +2212,17 @@
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { 
+                "history_text": {
                     "scar": "m_c carries a scar from a fight with a red fox.",
                     "reg_death": "m_c died from a red fox bite.",
-                    "lead_death": "died from a red fox bite" 
+                    "lead_death": "died from a red fox bite"
                 },
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "frequency": 3
             },
             {
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, hissing and spitting to ward the fox away from their injured Clanmate.",
                 "exp": 0,
-                "weight": 10,
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
@@ -2240,7 +2239,7 @@
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { 
+                "history_text": {
                     "scar": "m_c carries a scar from a fight with a red fox.",
                     "reg_death": "m_c died from a red fox bite.",
                     "lead_death": "died from a red fox bite"
@@ -2257,7 +2256,8 @@
                         }
                     }
                 ],
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "frequency": 2
             }
         ]
     },
@@ -2386,7 +2386,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -2400,17 +2400,17 @@
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { 
+                "history_text": {
                     "scar": "m_c carries a scar from a fight with a red fox.",
                     "reg_death": "m_c died from a red fox bite.",
-                    "lead_death": "died from a red fox bite" 
+                    "lead_death": "died from a red fox bite"
                 },
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "frequency": 3
             },
             {
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, hissing and spitting to ward the fox away from their injured Clanmate.",
                 "exp": 0,
-                "weight": 10,
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
@@ -2427,7 +2427,7 @@
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { 
+                "history_text": {
                     "scar": "m_c carries a scar from a fight with a red fox.",
                     "reg_death": "m_c died from a red fox bite.",
                     "lead_death": "died from a red fox bite"
@@ -2540,7 +2540,7 @@
             {
                 "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -2551,7 +2551,8 @@
                 "history_text": {
                     "reg_death": "m_c fell in a solo battle with a red fox.",
                     "lead_death": "died while fighting a red fox"
-                }
+                },
+                "frequency": 3
             },
             {
                 "text": "r_c launches into battle but is caught with a nasty bite and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
@@ -2568,12 +2569,12 @@
                     "scar": "m_c carries a scar from a solo fox fight.",
                     "reg_death": "m_c fell in a solo battle with a fox.",
                     "lead_death": "died while fighting a fox"
-                }
+                },
+                "frequency": 3
             },
             {
                 "text": "r_c launches into battle but is caught with a nasty bite and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
                 "exp": 0,
-                "weight": 10,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -2737,7 +2738,6 @@
             {
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, hissing and spitting to ward the fox away from their injured Clanmate.",
                 "exp": 0,
-                "weight": 10,
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
@@ -2754,7 +2754,7 @@
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { 
+                "history_text": {
                     "scar": "m_c carries a scar from a fight with a red fox.",
                     "reg_death": "m_c died from a red fox bite.",
                     "lead_death": "died from a red fox bite"
@@ -2887,7 +2887,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
@@ -5312,7 +5312,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 40,
+        "frequency": 3,
         "intro_text": "Sometimes, r_c enjoys just hanging out with {PRONOUN/r_c/poss} siblings. Especially when the weather has kept them in camp too often recently!",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
