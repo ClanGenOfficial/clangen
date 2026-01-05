@@ -2653,7 +2653,8 @@
                     "reg_death": "m_c died from a red fox bite.",
                     "lead_death": "died from a red fox bite"
                 },
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "frequency": 3
             },
             {
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, hissing and spitting to ward the fox away from their injured Clanmate.",
@@ -2884,7 +2885,8 @@
                     "reg_death": "m_c died from a red fox bite.",
                     "lead_death": "died from a red fox bite"
                 },
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "frequency": 3
             },
             {
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around their injured Clanmate.",
