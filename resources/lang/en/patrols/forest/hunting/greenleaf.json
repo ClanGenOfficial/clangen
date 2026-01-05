@@ -4323,7 +4323,8 @@
                             "cats_from": "from_cat was very impressed by how bravely to_cat fought against a vixen."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             },
             {
                 "text": "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
@@ -4335,8 +4336,7 @@
                         "injuries": ["minor_injury"],
                         "scars": []
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
                 "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} bravery and skill.",
