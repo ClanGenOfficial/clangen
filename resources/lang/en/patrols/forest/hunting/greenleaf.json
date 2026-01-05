@@ -3665,7 +3665,8 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "frequency": 4
             },
             {
                 "text": "r_c launches into battle but is caught with a nasty bite and retreats to limp back home. The gray fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
