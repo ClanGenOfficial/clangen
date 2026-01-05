@@ -5542,7 +5542,7 @@
                         "values": ["like", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat had fun hunting with {PRONOUN/from_cat/poss} sibling to_cat."
+                            "cats_from": "from_cat had fun hunting with {PRONOUN/from_cat/poss} sibling, to_cat."
                         }
                     }
                 ],
