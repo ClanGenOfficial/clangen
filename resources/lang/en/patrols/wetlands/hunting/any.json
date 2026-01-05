@@ -9256,7 +9256,8 @@
                     "history_text": {
                         "reg_death": "m_c died from the water {PRONOUN/m_c/subject} inhaled on a hunt as a foolish apprentice.",
                         "lead_death": "from the water {PRONOUN/m_c/subject} inhaled on a hunt as a foolish apprentice"
-                        }
+                        },
+                    "frequency": 4
                 }
             ]
     },
