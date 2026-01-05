@@ -1,3 +1,4 @@
+from math import ceil
 from typing import Dict
 
 import i18n
@@ -7,7 +8,7 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts import events
 from scripts.events import Single_Event
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import (
     Switch,
@@ -45,6 +46,10 @@ class EventsScreen(Screens):
     current_display = "all events"
     selected_display = "all events"
 
+    current_page = 1
+    current_page_amount = 0
+    page_chunks = []
+
     all_events = ""
     ceremony_events = ""
     birth_death_events = ""
@@ -77,6 +82,7 @@ class EventsScreen(Screens):
         self.full_event_display_container = None
         self.events_frame = None
         self.event_buttons = {}
+        self.page_control = {}
         self.alert = {}
 
         self.event_display = None
@@ -136,14 +142,24 @@ class EventsScreen(Screens):
                     return
                 self.timeskip_button.disable()
                 self.events_thread = self.loading_screen_start_work(events.one_moon)
+            elif element in self.page_control.values():
+                if element == self.page_control["first"]:
+                    self.current_page = 1
+                elif element == self.page_control["previous"]:
+                    self.current_page -= 1
+                elif element == self.page_control["next"]:
+                    self.current_page += 1
+                elif element == self.page_control["last"]:
+                    self.current_page = self.current_page_amount
+                self.update_events_display(is_page_update=True)
             elif element in self.involved_cat_buttons:
                 self.make_cat_buttons(element)
             elif element in self.cat_profile_buttons:
-                self.save_scroll_position()
+                self.save_scroll_and_page_position()
                 switch_set_value(Switch.cat, element.cat_id)
                 self.change_screen(GameScreen.PROFILE)
             else:
-                self.save_scroll_position()
+                self.save_scroll_and_page_position()
                 self.menu_button_pressed(event)
 
         # KEYBIND CONTROLS
@@ -162,9 +178,10 @@ class EventsScreen(Screens):
                 elif event.key == pygame.K_RETURN:
                     self.handle_tab_switch(self.selected_display)
 
-    def save_scroll_position(self):
+    def save_scroll_and_page_position(self):
         """
-        adds current event display vert scroll bar position to switches.saved_scroll_positions dict
+        Adds current event display vert scroll bar position to switches.saved_scroll_positions dict and adds current page to switches.saved_page_positions dict
+
         """
         if self.event_display.vert_scroll_bar:
             position = (
@@ -173,6 +190,10 @@ class EventsScreen(Screens):
             )
             switch_set_dict_value(
                 Switch.saved_scroll_positions, self.current_display, position
+            )
+        if self.page_control:
+            switch_set_dict_value(
+                Switch.saved_page_positions, self.current_display, self.current_page
             )
 
     def handle_tab_select(self, event):
@@ -212,7 +233,7 @@ class EventsScreen(Screens):
         saves current tab scroll position, removes alert, and then switches to the new tab
         """
         if not is_rescale:
-            self.save_scroll_position()
+            self.save_scroll_and_page_position()
 
         self.current_display = display_type
         self.update_list_buttons()
@@ -355,8 +376,107 @@ class EventsScreen(Screens):
         self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_menu_buttons()
 
+    def reset_page_buttons(self, is_page_update=False):
+        """
+        Resets page button and page counter states
+        :param is_page_update: Set True if page buttons do not need to be recreated.
+        """
+        if self.page_control and not is_page_update:
+            for ele in self.page_control.values():
+                ele.kill()
+            self.page_control.clear()
+
+        if self.current_page_amount == 1:
+            # we don't need any page controls if there's only one page
+            return
+
+        if not is_page_update:
+            x_pos = -14
+            self.page_control["first"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((370, x_pos), (34, 34))),
+                Icon.ARROW_DOUBLELEFT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
+                starting_height=1,
+                container=self.event_screen_container,
+                anchors={"top_target": self.events_frame},
+                manager=MANAGER,
+            )
+            self.page_control["previous"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-10, x_pos), (34, 34))),
+                Icon.ARROW_LEFT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
+                starting_height=1,
+                container=self.event_screen_container,
+                anchors={
+                    "top_target": self.events_frame,
+                    "left_target": self.page_control["first"],
+                },
+                manager=MANAGER,
+            )
+
+            # page number
+            self.page_control["number"] = pygame_gui.elements.UITextBox(
+                f"{self.current_page}/{self.current_page_amount}",
+                ui_scale(pygame.Rect((10, x_pos + 2), (-1, -1))),
+                starting_height=1,
+                container=self.event_screen_container,
+                object_id=(
+                    get_text_box_theme("#text_box_30_horizleft")
+                    if not game_setting_get("dark mode")
+                    else "#text_box_30_horizleft_light"
+                ),
+                anchors={
+                    "top_target": self.events_frame,
+                    "left_target": self.page_control["previous"],
+                },
+                manager=MANAGER,
+            )  # Text will be filled in later
+
+            self.page_control["next"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((10, x_pos), (34, 34))),
+                Icon.ARROW_RIGHT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
+                starting_height=2,
+                container=self.event_screen_container,
+                anchors={
+                    "top_target": self.events_frame,
+                    "left_target": self.page_control["number"],
+                },
+                manager=MANAGER,
+            )
+
+            self.page_control["last"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-10, x_pos), (34, 34))),
+                Icon.ARROW_DOUBLERIGHT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
+                starting_height=1,
+                container=self.event_screen_container,
+                anchors={
+                    "top_target": self.events_frame,
+                    "left_target": self.page_control["next"],
+                },
+                manager=MANAGER,
+            )
+        self.page_control["number"].set_text(
+            f"{self.current_page}/{self.current_page_amount}"
+        )
+        self.page_control["first"].enable()
+        self.page_control["previous"].enable()
+        self.page_control["next"].enable()
+        self.page_control["last"].enable()
+        if self.current_page == 1:
+            self.page_control["first"].disable()
+            self.page_control["previous"].disable()
+        elif self.current_page == self.current_page_amount:
+            self.page_control["next"].disable()
+            self.page_control["last"].disable()
+
     def display_change_save(self) -> Dict:
-        self.save_scroll_position()
+        self.save_scroll_and_page_position()
         variable_dict = super().display_change_save()
 
         variable_dict["current_display"] = self.current_display
@@ -379,6 +499,10 @@ class EventsScreen(Screens):
             self.event_display.vert_scroll_bar.set_scroll_from_start_percentage(
                 switch_get_value(Switch.saved_scroll_positions)[self.current_display]
             )
+        if switch_get_value(Switch.saved_page_positions).get(self.current_display):
+            self.current_page = switch_get_value(Switch.saved_page_positions)[
+                self.current_display
+            ]
 
     def make_event_scrolling_container(self):
         """
@@ -562,10 +686,11 @@ class EventsScreen(Screens):
         ]
         self.misc_events = [x for x in game.cur_events_list if "misc" in x.types]
 
-    def update_events_display(self):
+    def update_events_display(self, is_page_update=False):
         """
         Kills and recreates the event display, updates the clan info, sets the event display scroll position if it was
         previously saved
+        :param is_page_update: Set to True if we don't need to recreate the page buttons
         """
 
         # UPDATE CLAN INFO
@@ -576,6 +701,33 @@ class EventsScreen(Screens):
         self.clan_info["age"].set_text(
             "screens.events.age", text_kwargs={"count": game.clan.age}
         )
+
+        # SET UP PAGES
+        if not is_page_update:
+            self.current_page_amount = (
+                int(ceil(len(self.display_events) / constants.EVENTS_PER_PAGE))
+                if len(self.display_events)
+                else 1
+            )
+            if switch_get_value(Switch.saved_page_positions).get(self.current_display):
+                self.current_page = switch_get_value(Switch.saved_page_positions)[
+                    self.current_display
+                ]
+            else:
+                self.current_page = 1
+            if self.current_page > self.current_page_amount:
+                self.current_page = self.current_page_amount
+            elif self.current_page < 1:
+                self.current_page = 1
+
+            self.page_chunks = [
+                self.display_events[x : x + constants.EVENTS_PER_PAGE]
+                for x in range(0, len(self.display_events), constants.EVENTS_PER_PAGE)
+            ]
+        else:
+            switch_set_value(Switch.saved_scroll_positions, {})
+
+        self.reset_page_buttons(is_page_update=is_page_update)
 
         self.make_event_scrolling_container()
 
@@ -597,6 +749,9 @@ class EventsScreen(Screens):
 
         # Stop if Clan is new, so that events from previously loaded Clan don't show up
         if game.clan.age == 0:
+            return
+        # if no events, return early
+        if not self.display_events:
             return
 
         default_rect = pygame.Rect(
@@ -620,7 +775,7 @@ class EventsScreen(Screens):
             else pygame.Color(167, 148, 111)
         )
 
-        for i, event_object in enumerate(self.display_events):
+        for i, event_object in enumerate(self.page_chunks[self.current_page - 1]):
             if not isinstance(event_object.text, str):
                 print(
                     f"Incorrectly Formatted Event: {event_object.text}, {type(event_object)}"
@@ -731,6 +886,7 @@ class EventsScreen(Screens):
         """Various sorting and other tasks that must be done with the timeskip is over."""
 
         switch_set_value(Switch.saved_scroll_positions, {})
+        switch_set_value(Switch.saved_page_positions, {})
 
         if get_living_clan_cat_count(Cat) == 0:
             GameOver(GameScreen.EVENTS)
