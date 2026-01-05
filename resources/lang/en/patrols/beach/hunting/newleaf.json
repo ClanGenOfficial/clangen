@@ -4595,7 +4595,7 @@
         ],
         "success_outcomes": [
             {
-                "text": "A b_mp_a_s and two b_tp_dl_p is nothing to sniff at, as a hunting success, but stars above, being alone with r_c makes p_l feel like a kitten again. And not in the cute way either - in the chewing on tails, whiny, petty, immature way. Ugh.",
+                "text": "A b_mp_a_s and two b_tp_dl_p is nothing to sniff at, as a hunting success, but stars above, being alone with r_c makes p_l feel like a kitten again. And not in the cute way either - in the chewing-on-tails, whiny, petty, immature way. Ugh.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -5190,7 +5190,7 @@
         ],
         "success_outcomes": [
             {
-                "text": "A b_mp_dl_s, three b_tp_dl_p, and a couple b_mp_a_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either - in the chewing on tails, whiny, petty, immature way. Ugh.",
+                "text": "A b_mp_dl_s, three b_tp_dl_p, and a couple b_mp_a_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either - in the chewing-on-tails, whiny, petty, immature way. Ugh.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -5298,7 +5298,7 @@
             ]
         },
         "frequency": 4,
-        "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c/poss} siblings. Especially when the sun's out, warming their backs and making fishing a comfortable sport.",
+        "intro_text": "Sometimes, r_c enjoys just hanging out with {PRONOUN/r_c/poss} siblings. Especially when the sun's out, warming their backs and making fishing a comfortable sport.",
         "decline_text": "But sometimes, you get called back to camp instead. Ah well, another time!",
         "chance_of_success": 50,
         "relationship_constraint": [
