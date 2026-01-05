@@ -4299,7 +4299,6 @@
             {
                 "text": "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
                 "exp": 20,
-                "weight": 10,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -4529,7 +4528,6 @@
             {
                 "text": "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
                 "exp": 20,
-                "weight": 10,
                 "injury": [
                     {
                         "cats": ["r_c"],
