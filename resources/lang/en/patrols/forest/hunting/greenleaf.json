@@ -6077,6 +6077,7 @@
             {
                 "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
+                "frequency": 4,
                 "stat_skill": [
                     "CLIMBER,1",
                     "HUNTER,1",
