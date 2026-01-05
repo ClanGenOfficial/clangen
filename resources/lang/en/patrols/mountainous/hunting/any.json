@@ -2437,7 +2437,8 @@
                         "scar": "m_c was scarred after underestimating a grouse.",
                         "reg_death": "m_c died after underestimating a grouse on a hunt as a foolish apprentice.",
                         "lead_death": "from a grouse encountered on a hunt as a foolish apprentice"
-                        }
+                        },
+                    "frequency": 4
                 }
             ]
     },
