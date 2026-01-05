@@ -5639,7 +5639,7 @@
                         "values": ["like", "respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was reminded of how talented {PRONOUN/from_cat/poss} sibling to_cat is while hunting together."
+                            "cats_from": "from_cat was reminded of how talented {PRONOUN/from_cat/poss} sibling, to_cat, is while hunting together."
                         }
                     }
                 ],
