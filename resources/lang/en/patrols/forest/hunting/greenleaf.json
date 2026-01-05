@@ -4629,7 +4629,7 @@
                         "values": ["respect", "like"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat insulted from_cat by suggesting that {PRONOUN/from_cat/subject} carry {PRONOUN/to_cat/poss} prey after from_cat didn't catch anything."
+                            "cats_from": "to_cat insulted from_cat by suggesting that {PRONOUN/from_cat/subject} carry to_cat's prey after from_cat didn't catch anything."
                         }
                     }
                 ]
