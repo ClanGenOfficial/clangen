@@ -64,6 +64,7 @@ dev_tools = false
   # 1/chance of becoming mates, triggers with friends_to_lover (has to be a high number because many relationships are checked each moon)
   chance_friends_to_lovers = 170
 
+
   # NOTE FOR RELATIONSHIP CONSTRAINTS
   #  0: no condition
   #  positive number: value has to be higher than number
@@ -118,6 +119,43 @@ dev_tools = false
       respect = 0
       comfort = 15
       trust = 20
+
+  # these denote how relationships change upon a breakup
+  [mates.breakup]
+    threshold = 120
+    variability = [-10, 10]
+    [mates.breakup.default_weights]
+      had_fight = 3
+      decided_to_be_friends = 3
+      lost_feelings = 2
+      bad_breakup = 5
+      chill_breakup = 5
+
+    [mates.breakup.reactions.had_fight]
+      romance = -20
+      like = -10
+      trust = -15
+    [mates.breakup.reactions.decided_to_be_friends]
+      romance = -50
+      like = 30
+      trust = 20
+      comfort = 10
+      respect = 10
+    [mates.breakup.reactions.lost_feelings]
+      romance = -30
+      like = -10
+      comfort = -10
+    [mates.breakup.reactions.bad_breakup]
+      romance = -20
+      like = -10
+      trust = -30
+      comfort = -20
+      respect = -10
+    [mates.breakup.reactions.chill_breakup]
+      romance = -20
+      comfort = -10
+      respect = 10
+
 
 [new_cat]
   # number of welcoming events to add when a new cat joins
