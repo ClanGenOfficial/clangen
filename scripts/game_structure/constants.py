@@ -18,6 +18,8 @@ MENU_SCREENS = [
     GameScreen.MAKE_CLAN,
 ]
 
+EVENTS_PER_PAGE = 10
+
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
 SEASONS = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
