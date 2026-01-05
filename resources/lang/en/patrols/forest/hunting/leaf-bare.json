@@ -3658,7 +3658,8 @@
                 "history_text": {
                     "reg_death": "m_c fell in a solo battle with a red fox.",
                     "lead_death": "died while fighting a red fox"
-                }
+                },
+                "frequency": 3
             },
             {
                 "text": "r_c launches into battle but is caught with a nasty bite and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
@@ -3680,7 +3681,8 @@
                     "scar": "m_c carries a scar from a solo fox fight.",
                     "reg_death": "m_c fell in a solo battle with a fox.",
                     "lead_death": "died while fighting a fox"
-                }
+                },
+                "frequency": 3
             },
             {
                 "text": "r_c launches into battle but is caught with a nasty bite and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
