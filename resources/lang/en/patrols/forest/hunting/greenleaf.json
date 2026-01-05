@@ -5130,7 +5130,7 @@
                     "amount": -3,
                     "log":
                     {
-                        "cats_from": "from_cat took {PRONOUN/from_cat/poss} little sibling to_cat hunting, but {PRONOUN/to_cat/subject} didn't take it very seriously."
+                        "cats_from": "from_cat took {PRONOUN/from_cat/poss} little sibling, to_cat, hunting, but {PRONOUN/to_cat/subject} didn't take it very seriously."
                     }
                 }
             ]
