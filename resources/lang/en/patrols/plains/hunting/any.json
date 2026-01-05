@@ -4619,7 +4619,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
@@ -4627,7 +4627,7 @@
             {
                 "text": "The patrol's cats are smaller, but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan, they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["large"],
                 "relationships": [
                     {
@@ -4656,7 +4656,7 @@
             {
                 "text": "s_c shows {PRONOUN/s_c/poss} strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "stat_skill": ["FIGHTER,1"],
                 "prey": ["large"],
                 "relationships": [
@@ -4695,7 +4695,7 @@
             {
                 "text": "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. It's only one bite, but the fox has had enough and flees.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "stat_trait": [
                     "adventurous",
                     "ambitious",
@@ -4744,7 +4744,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4762,7 +4762,7 @@
             {
                 "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -4788,7 +4788,7 @@
             {
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
                 "injury": [
                     {
@@ -4824,7 +4824,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on a pronghorn fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 20,
@@ -4832,7 +4832,7 @@
             {
                 "text": "The patrol's cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan, they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["large"],
                 "relationships": [
                     {
@@ -4860,7 +4860,7 @@
             {
                 "text": "s_c shows {PRONOUN/s_c/poss} strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hind legs. The fox runs, but there's no way it'll live long with such a debilitating injury.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "stat_skill": ["FIGHTER,1"],
                 "prey": ["large"],
                 "relationships": [
@@ -4889,7 +4889,7 @@
             {
                 "text": "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. s_c holds on grimly as the rest of the patrol takes the opportunity to bring the fox down for good.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "stat_trait": [
                     "adventurous",
                     "ambitious",
@@ -4928,7 +4928,7 @@
             {
                 "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there are no injuries.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4946,7 +4946,7 @@
             {
                 "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -4972,7 +4972,7 @@
             {
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
                 "injury": [
                     {
@@ -5008,7 +5008,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "The patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
@@ -5016,7 +5016,7 @@
             {
                 "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats can feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating, the patrol is able to at least drag some of the intestines home to camp.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["large"],
                 "relationships": [
                     {
@@ -5044,7 +5044,7 @@
             {
                 "text": "s_c sits and watches the swift fox as the patrol takes over the kill without a fight. It wanders the area, grabbing pieces of gristle and meat and caching them in little holes, giving s_c an idea. Together the Clan cats gnaw off a leg and take their bony prize back to camp for c_n.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["large"],
                 "relationships": [
@@ -5073,7 +5073,7 @@
             {
                 "text": "While the rest of the patrol feeds on the kill, the swift fox gnawing on the head at the other end in uneasy truce, s_c keeps watch. It turns out to have been a wise move, as {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} a cougar's ears sticking up out of the grass. The kill's original owner is coming back, and the cats vacate with speed.",
                 "exp": 20,
-                "weight": 20,
+                "frequency": 4,
                 "stat_trait": [
                     "responsible",
                     "thoughtful",
@@ -5103,13 +5103,13 @@
             {
                 "text": "The swift fox gives up on the kill with a snarl, but a coyote yip in the distance sends both the smaller predator species running, the cats puffed up and unsettled.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "prey": ["very_small"]
             },
             {
                 "text": "The swift fox gives up the kill, but s_c pursues the fox anyway... up until it turns and threatens {PRONOUN/s_c/object} with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill ravens are circling overhead. The patrol gives it up, knowing bigger predators will arrive soon.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "stat_trait": [
                     "arrogant",
                     "bold",
@@ -5144,7 +5144,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 4,
         "intro_text": "The patrol catches the scent of a fox - but is it red or swift?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
@@ -5152,7 +5152,7 @@
             {
                 "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
                 "exp": 30,
-                "weight": 20,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -5179,7 +5179,7 @@
             {
                 "text": "The patrol drives away the red fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
                 "exp": 30,
-                "weight": 5,
+                "frequency": 1,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -5206,7 +5206,7 @@
             {
                 "text": "s_c displays incredible skill, driving the mother red vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
-                "weight": 20,
+                "frequency": 4,
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
@@ -5234,7 +5234,7 @@
             {
                 "text": "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. {PRONOUN/s_c/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c/poss} praises to make sure the Clan knows it.",
                 "exp": 30,
-                "weight": 20,
+                "frequency": 4,
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
@@ -5264,7 +5264,7 @@
             {
                 "text": "The mother red fox is vicious and determined, and the small patrol is beaten back. But these plains belong to c_n, and they haven't given up. They may have lost this battle, but c_n will win this war.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -5281,7 +5281,7 @@
             {
                 "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
@@ -5314,7 +5314,7 @@
             {
                 "text": "The mother red fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -5343,7 +5343,7 @@
             {
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
@@ -5382,7 +5382,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red or swift?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 10,
@@ -5390,7 +5390,7 @@
             {
                 "text": "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away a red fox vixen, seeking out her den and killing her young cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've posed to c_n in the seasons to come.",
                 "exp": 30,
-                "weight": 20,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -5417,7 +5417,7 @@
             {
                 "text": "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, finding and killing a mother red vixen and ending the threat to the Clan that she and her cubs pose.",
                 "exp": 30,
-                "weight": 5,
+                "frequency": 1,
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -5444,7 +5444,7 @@
             {
                 "text": "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by {PRONOUN/s_c/self}. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
-                "weight": 20,
+                "frequency": 4,
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
@@ -5472,7 +5472,7 @@
             {
                 "text": "The patrol hunts down and overcomes the red vixen they discover, driving her off thanks to a brilliant battle move by s_c at a critical moment. {PRONOUN/s_c/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c/poss} praises to make sure the Clan knows it.",
                 "exp": 30,
-                "weight": 20,
+                "frequency": 4,
                 "stat_trait": [
                     "adventurous",
                     "ambitious",
@@ -5504,7 +5504,7 @@
             {
                 "text": "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
                 "exp": 0,
-                "weight": 20,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["r_c", "patrol", "r_c"],
@@ -5518,7 +5518,7 @@
             {
                 "text": "r_c is left wounded as the patrol and the mother red vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -5543,7 +5543,7 @@
             {
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
-                "weight": 10,
+                "frequency": 2,
                 "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
