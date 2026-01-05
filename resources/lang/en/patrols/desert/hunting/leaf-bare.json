@@ -4026,7 +4026,6 @@
             {
                 "text": "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n.",
                 "exp": 30,
-                "weight": 20,
                 "stat_skill": ["CLEVER,1"],
                 "prey": ["large"],
                 "relationships": [

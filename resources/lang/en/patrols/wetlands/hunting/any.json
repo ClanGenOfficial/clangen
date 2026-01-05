@@ -2558,7 +2558,6 @@
             {
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the wounded s_c.",
                 "exp": 0,
-                "weight": 10,
                 "stat_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
                 "injury": [
                     {
@@ -3284,7 +3283,6 @@
             {
                 "text": "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. The cats bring it home, no fuss, no worries.",
                 "exp": 20,
-                "weight": 20,
                 "prey": ["small"],
                 "relationships": [
                     {
@@ -4191,7 +4189,6 @@
             {
                 "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
                 "exp": 30,
-                "weight": 20,
                 "relationships": [
                     {
                         "cats_to": [
@@ -4223,7 +4220,6 @@
             {
                 "text": "The patrol drives away the red fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
                 "exp": 30,
-                "weight": 5,
                 "relationships": [
                     {
                         "cats_to": [
@@ -4255,7 +4251,6 @@
             {
                 "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
-                "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
@@ -4419,7 +4414,6 @@
             {
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
-                "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
@@ -4529,7 +4523,6 @@
             {
                 "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
                 "exp": 30,
-                "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
@@ -4558,7 +4551,6 @@
             {
                 "text": "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. {PRONOUN/s_c/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c/poss} praises to make sure the Clan knows it.",
                 "exp": 30,
-                "weight": 20,
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
