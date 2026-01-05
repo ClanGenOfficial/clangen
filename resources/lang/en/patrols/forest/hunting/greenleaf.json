@@ -5209,7 +5209,7 @@
                         "values": ["like", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat didn't want to confide {PRONOUN/to_cat/poss} training troubles in {PRONOUN/to_cat/poss} older sibling from_cat."
+                            "cats_from": "to_cat didn't want to confide {PRONOUN/to_cat/poss} training troubles in {PRONOUN/to_cat/poss} older sibling, from_cat."
                         }
                     }
                 ],
