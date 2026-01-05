@@ -354,11 +354,14 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a successful hunt together in leaf-bare."
+                        }
                     }
                 ]
             },
@@ -370,11 +373,24 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat hunted with to_cat during leaf-bare, and to_cat caught a huge amount of prey."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["multi"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat felt a pang of jealousy at to_cat's impressive hunting, even during leaf-bare."
+                        }
                     }
                 ]
             },
@@ -382,15 +398,28 @@
                 "text": "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["compassionate", "faithful", "loving"],
+                "stat_trait": ["compassionate", "faithful", "loving", "wise", "calm", "sincere"],
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat's gentle nature helped from_cat's patrol to a successful leaf-bare hunt."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a successful hunt together in leaf-bare."
+                        }
                     }
                 ]
             }
@@ -405,8 +434,11 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat huddled for warmth after a snowstorm cut their hunting patrol short."
+                        }
                     }
                 ]
             },
@@ -427,8 +459,11 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat huddled for warmth after a snowstorm cut their hunting patrol short."
+                        }
                     }
                 ]
             }
@@ -453,14 +488,38 @@
                 "text": "Despite the snow, r_c manages to hunt successfully, finding the normal number of crabs obliviously scurrying about.",
                 "exp": 10,
                 "weight": 20,
-                "prey": ["small"]
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["r_c"],
+                        "values": ["respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat bring back a good piece of prey during leaf-bare."
+                        }
+                    }
+                ]
             },
             {
                 "text": "s_c really shows {PRONOUN/s_c/poss} talent, bringing a clutch of crabs back to camp for the fresh-kill pile.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
-                "prey": ["small"]
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_from": ["clan"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat was relieved to have to_cat out hunting for the Clan during leaf-bare."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -503,11 +562,14 @@
                 "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["romance", "comfort", "trust"],
-                        "amount": 5
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romance", "like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth during a snowstorm."
+                        }
                     }
                 ]
             },
@@ -519,11 +581,24 @@
                 "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["s_c"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romance", "comfort", "trust"],
-                        "amount": 5
+                        "values": ["romance", "like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth during a snowstorm."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat was there to keep spirits up when a snowstorm struck from_cat's patrol."
+                        }
                     }
                 ]
             },
@@ -535,11 +610,24 @@
                 "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["s_c"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romance", "comfort", "trust"],
-                        "amount": 5
+                        "values": ["romance", "like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth during a snowstorm."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat was there to keep spirits up when a snowstorm struck from_cat's patrol."
+                        }
                     }
                 ]
             }
@@ -559,11 +647,14 @@
                 "history_text": { "scar": "m_c caught a chill while hunting in leaf-bare." },
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romance", "comfort", "trust"],
-                        "amount": -5
+                        "values": ["romance", "like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth during a snowstorm."
+                        }
                     }
                 ],
                 "prey": ["very_small"]

@@ -1068,14 +1068,20 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romance", "respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "...but to_cat undeniably looked good doing it."
+                        }
                     },
                     {
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like"],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was annoyed by to_cat's cocky attitude during a hunting patrol..."
+                        }
                     }
                 ]
             },
@@ -1092,14 +1098,20 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romance", "respect"],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "...but to_cat undeniably looked good doing it."
+                        }
                     },
                     {
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like"],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was annoyed by to_cat's cocky attitude during a hunting patrol..."
+                        }
                     }
                 ]
             },
@@ -1125,14 +1137,20 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romance", "respect"],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "...but to_cat undeniably looked good doing it."
+                        }
                     },
                     {
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like"],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was annoyed by to_cat's cocky attitude during a hunting patrol..."
+                        }
                     }
                 ]
             }
@@ -1147,15 +1165,11 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romance", "respect"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like"],
-                        "amount": -5
+                        "values": ["romance", "respect", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed when to_cat was unable to back up {PRONOUN/to_cat/poss} cocky attitude with any fresh-kill on a hunting patrol."
+                        }
                     }
                 ],
                 "prey": ["very_small"]
@@ -1184,11 +1198,14 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a satisfying hunt together."
+                        }
                     }
                 ]
             },
@@ -1199,11 +1216,14 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat gained a greater respect for to_cat's hunting skills while hunting mice together."
+                        }
                     }
                 ]
             },
@@ -1219,7 +1239,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat gained a greater respect for to_cat's hunting skills while hunting mice together."
+                        }
                     }
                 ]
             }
@@ -1234,8 +1257,11 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "to_cat wasted from_cat's time on a hunting patrol through poor choice of hunting grounds."
+                        }
                     }
                 ],
                 "prey": ["very_small"]

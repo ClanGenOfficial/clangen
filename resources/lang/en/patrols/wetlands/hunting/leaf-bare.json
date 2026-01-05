@@ -2233,11 +2233,14 @@
                 "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a successful hunt together in leaf-bare."
+                        }
                     }
                 ]
             },
@@ -2249,11 +2252,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat hunted with to_cat during leaf-bare, and to_cat caught a huge amount of prey."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["multi"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat felt a pang of jealousy at to_cat's impressive hunting, even during leaf-bare."
+                        }
                     }
                 ]
             },
@@ -2265,11 +2281,24 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "p_l"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat's gentle nature helped from_cat's patrol to a successful leaf-bare hunt."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a successful hunt together in leaf-bare."
+                        }
                     }
                 ]
             }
@@ -2281,11 +2310,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "p_l"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat huddled for warmth after a snowstorm cut their hunting patrol short."
+                        }
                     }
                 ]
             }
@@ -2302,25 +2334,67 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something nice for the fresh-kill pile.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
                 "text": "Despite the snow, r_c manages to hunt successfully, finding the normal birds still out fishing the swamps.",
                 "exp": 10,
                 "weight": 20,
-                "prey": ["medium"]
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["r_c"],
+                        "values": ["respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat bring back a good piece of prey during leaf-bare."
+                        }
+                    }
+                ]
             },
             {
                 "text": "s_c really shows {PRONOUN/s_c/poss} talent, bringing a nice eel back to camp for the fresh-kill pile.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,2"],
-                "prey": ["medium"]
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_from": ["clan"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat was relieved to have to_cat out hunting for the Clan during leaf-bare."
+                        }
+                    }
+                ]
             }
         ],
-        "fail_outcomes": []
+        "fail_outcomes": [
+                        {
+                "text": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/r_c/subject} {VERB/r_c/hide/hides} under a bush, shivering and tightly tucked up against the cold. When {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp, r_c is cold and chilled, {PRONOUN/r_c/poss} paws and tail prickling with the danger of frostbite.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "reg_death": "m_c froze to death after hunting in a storm.",
+                    "lead_death": "froze to death"
+                }
+            }
+        ]
     },
     {
         "patrol_id": "wtlnd_hunt_leafbaresnowstorm3",
@@ -2343,13 +2417,17 @@
                 "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat into a grove of trees and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",
                 "exp": 10,
                 "weight": 20,
+                "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["romance", "comfort", "trust"],
-                        "amount": 5
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romance", "like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth during a snowstorm."
+                        }
                     }
                 ]
             },
@@ -2357,14 +2435,28 @@
                 "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides in an abandoned Twolegs water-monster where the wind can't get them, until everyone is talking, shaky and unhappy, but determined not to lose hope.",
                 "exp": 10,
                 "weight": 20,
+                "prey": ["small"],
                 "stat_skill": ["SPEAKER,2"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["romance", "comfort", "trust"],
-                        "amount": 5
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romance", "like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth during a snowstorm."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat was there to keep spirits up when a snowstorm struck from_cat's patrol."
+                        }
                     }
                 ]
             },
@@ -2372,19 +2464,74 @@
                 "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide from the wind, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it through safely, closer than ever afterwards.",
                 "exp": 10,
                 "weight": 20,
+                "prey": ["small"],
                 "stat_trait": ["compassionate", "faithful", "loving"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": ["romance", "comfort", "trust"],
-                        "amount": 5
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romance", "like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth during a snowstorm."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat was there to keep spirits up when a snowstorm struck from_cat's patrol."
+                        }
                     }
                 ]
             }
         ],
-        "fail_outcomes": []
+        "fail_outcomes": [
+                        {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c has stopped responding. At some point in the storm, {PRONOUN/r_c/poss} life slips away, and {PRONOUN/r_c/poss} distraught Clanmates are left to carry {PRONOUN/r_c/poss} body home.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "reg_death": "m_c froze to death while hunting in a storm.",
+                    "lead_death": "froze to death while hunting"
+                }
+            },
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, but r_c hasn't escaped unscathed, {PRONOUN/r_c/poss} body chilled and refusing to warm up properly.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "reg_death": "m_c froze to death while hunting in a storm.",
+                    "lead_death": "froze to death while hunting"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romance", "like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth during a snowstorm."
+                        }
+                    }
+                ]
+            }
+        ]
     },
     {
         "patrol_id": "wtlnd_hunt_kitfox_scavenge1",
