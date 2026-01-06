@@ -114,7 +114,7 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "from_cat was not impressed by to_cat's hostility and decided not to join {PRONOUN/to_cat/poss} Clan.",
-                            "cats_to": "to_cat was hostile towards from_cat when {PRONOUN/from_cat/subject} asked to join the Clan."
+                            "cats_to": "to_cat couldn't imagine from_cat being a good addition to the Clan; and made that very clear when they met."
                         }
                     }
                 ],
@@ -1922,7 +1922,7 @@
                         "values": ["like", "respect"],
                         "amount": -50,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol <i>rudely</i> stepped over n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hiding with {PRONOUN/n_c:0/poss} kits from Clan cats."
+                            "cats_from": "to_cat was part of the patrol that <i>rudely</i> stepped over n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hiding with {PRONOUN/n_c:0/poss} kits from Clan cats."
                         }
                     },
                     {
