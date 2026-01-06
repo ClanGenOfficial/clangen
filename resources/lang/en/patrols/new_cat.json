@@ -7307,7 +7307,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "Despite losing a fight to to_cat, from_cat can't help but respect the other cat's skills.."
+                            "cats_from": "Despite losing a fight to to_cat, from_cat can't help but respect the other cat's skills."
                         }
                     },
                     {
