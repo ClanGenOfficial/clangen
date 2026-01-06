@@ -191,7 +191,7 @@
                         ],
                         "amount": 55,
                 "log": {
-                    "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat."
+                    "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
                  }
                     },
                     {
@@ -221,7 +221,7 @@
                         ],
                         "amount": 15,
                 "log": {
-                    "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend to_cat, <b>only</b> seeing to_cat as a friend."
+                    "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
                  }
                     },
                     {
@@ -237,7 +237,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                 "log": {
                     "cats_from": "from_cat was grateful for to_cat helping {PRONOUN/from_cat/object} with {PRONOUN/from_cat/poss} relationship conflict."
                  }
@@ -282,7 +282,7 @@
                         ],
                         "amount": 55,
             "log": {
-                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat."
+                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
             }
                     },
                     {
@@ -312,7 +312,7 @@
                         ],
                         "amount": 15,
             "log": {
-                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend to_cat, <b>only</b> seeing to_cat as a friend."
+                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
             }
                     }
                 ],
@@ -361,7 +361,7 @@
                         ],
                         "amount": 55,
                     "log": {
-                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat."
+                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
                     }
                     },
                     {
@@ -396,7 +396,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 20,
+                        "amount": 10,
                     "log": {
                         "cats_from": "from_cat was grateful for to_cat helping {PRONOUN/from_cat/object} resolve {PRONOUN/from_cat/poss} relationship conflict."
                      }
@@ -444,7 +444,7 @@
                         ],
                         "amount": 55,
                 "log": {
-                    "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat."
+                    "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
                 }
                     },
                     {
@@ -479,7 +479,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 20,
+                        "amount": 10,
                 "log": {
                     "cats_from": "from_cat was grateful for to_cat helping {PRONOUN/from_cat/object} resolve {PRONOUN/from_cat/poss} relationship conflict."
                     }
@@ -518,6 +518,22 @@
                         ],
                         "mutual": false,
                         "values": [
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "...but got upset that to_cat shot a flirty wink at one of the Clan cats."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "n_c:1"
+                        ],
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
                             "romance",
                             "like",
                             "trust",
@@ -526,8 +542,8 @@
                         ],
                         "amount": 55,
                     "log": {
-                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat, but was upset that from_cat shot a flirty wink at one of the Clan cats."
-                    }
+                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat..."
+                        }
                     },
                     {
                         "cats_to": [
@@ -543,7 +559,7 @@
                         ],
                         "amount": 15,
                     "log": {
-                        "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend to_cat, <b>only</b> seeing to_cat as a friend."
+                        "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
                     }
                     },
                     {
@@ -560,10 +576,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                     "log": {
                         "cats_from": "from_cat was grateful for to_cat helping {PRONOUN/from_cat/object} with {PRONOUN/from_cat/poss} relationship conflict, and tried hitting on {PRONOUN/to_cat/object}."
-                    }
+                        }
                     },
                     {
                         "cats_to": [
@@ -577,10 +593,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": -15,
+                        "amount": -10,
                     "log": {
-                        "cats_from": "from_cat was jealous that {PRONOUN/from_cat/poss} friend seemed more interested in to_cat than {PRONOUN/from_cat/object}."
-                    }
+                        "cats_from": "from_cat was jealous that n_c:1 seemed more interested in to_cat than {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -622,7 +638,7 @@
                         ],
                         "amount": 55,
             "log": {
-                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat."
+                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
             }
                     },
                     {
@@ -639,7 +655,7 @@
                         ],
                         "amount": 45,
             "log": {
-                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend to_cat, <b>only</b> seeing to_cat as a friend."
+                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
             }
                     },
                     {
@@ -890,7 +906,7 @@
                         ],
                         "amount": 55,
                     "log": {
-                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat."
+                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
                     }
                     },
                     {
@@ -907,7 +923,7 @@
                         ],
                         "amount": 15,
                     "log": {
-                        "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend to_cat, <b>only</b> seeing to_cat as a friend."
+                        "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
                     }
                     }
                 ],
@@ -967,7 +983,7 @@
                         ],
                         "amount": 55,
                             "log": {
-                                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat."
+                                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
                             }
                     },
                     {
@@ -984,7 +1000,7 @@
                         ],
                         "amount": 15,
                             "log": {
-                                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend to_cat, <b>only</b> seeing to_cat as a friend."
+                                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
                             }
                     }
                 ],
@@ -1131,6 +1147,22 @@
                         ],
                         "mutual": false,
                         "values": [
+                            "respect"
+                        ],
+                        "amount": -15,
+            "log": {
+                "cats_from": "...but was upset that to_cat batted {PRONOUN/to_cat/poss} eyes at one of the Clan cats after they insulted {PRONOUN/to_cat/object}."
+            }
+                    },
+                    {
+                        "cats_to": [
+                            "n_c:1"
+                        ],
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
                             "romance",
                             "like",
                             "trust",
@@ -1139,7 +1171,7 @@
                         ],
                         "amount": 55,
             "log": {
-                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat, but was upset that from_cat shot a flirty wink at one of the Clan cats."
+                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat..."
             }
                     },
                     {
