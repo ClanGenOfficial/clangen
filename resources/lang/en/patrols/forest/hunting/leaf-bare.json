@@ -392,7 +392,7 @@
                         "values": ["trust"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat and to_cat's Clanmate died when they failed to keep warm during a snowstorm."
+                            "cats_from": "to_cat and from_cat failed to keep warm during a snowstorm, and from_cat ended up carrying a body home."
                         }
                     },
                     {
@@ -402,7 +402,7 @@
                         "values": ["trust"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "This is a counterweight to the other relationship change. The player should not see this text."
+                            "cats_from": "from_cat carried guilt from to_cat's death when to_cat froze to death while huddling with from_cat."
                         }
                     }
                 ],
