@@ -5011,7 +5011,7 @@
                         ],
                         "amount": 45,
             "log": {
-                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend to_cat, <b>only</b> seeing to_cat as a friend."
+                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
             }
                     },
                     {
