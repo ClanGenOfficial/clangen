@@ -2398,11 +2398,28 @@
                             "p_l"
                         ],
                         "mutual": true,
+                        "values": ["like"],
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "...but n_c:0 had already told to_cat that {PRONOUN/n_c:0/subject} refused to join. to_cat, who was tired of being separated from n_c:0, tried to pressure n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 still refused. It's officially hopeless for the pair now."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort"
                         ],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "The two cats had been discussing whether n_c:0 should finally join c_n or not. They would finally be together for real if {PRONOUN/n_c:0/subject} joined..."
+                        }
                     },
                     {
                         "cats_from": [
@@ -2413,9 +2430,9 @@
                         ],
                         "mutual": true,
                         "values": ["romance"],
-                        "amount": 50,
+                        "amount": 10,
                         "log": {
-                            "cats_from": "to_cat tried to pressure n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 refused."
+                            "cats_from": "to_cat and n_c:0 were mates hiding their relationship from to_cat's Clan."
                         }
                     }
                 ],
