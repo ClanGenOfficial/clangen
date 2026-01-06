@@ -4883,7 +4883,22 @@
                         ],
                         "amount": 55,
                     "log": {
-                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat, but was upset that from_cat shot a flirty wink at one of the Clan cats."
+                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat..."
+                    },
+                    {
+                        "cats_to": [
+                            "n_c:1"
+                        ],
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -15,
+                    "log": {
+                        "cats_from": "...but was upset that to_cat shot a flirty wink at one of the Clan cats."
                     }
                     },
                     {
