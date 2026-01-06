@@ -49,7 +49,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Your cats try to knock over a metal leaf, but there aren't enough of them to force it over.",
+                "text": "The cats try to knock over a metal leaf, but there aren't enough of them to force it over.",
                 "exp": 0,
                 "frequency": 4
             }
@@ -1109,7 +1109,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Outraged, your cats charge the poacher, determined to rip its pelt off. No one steals from c_n! The fox jumps, startled, and streaks for the horizon, but with a full patrol your cats chase it until it drops the hare and crosses the border. Hrumph! Though it's only a small haul of prey for a hunting patrol, at least they've gotten rid of the prey thief.",
+                "text": "Outraged, the cats charge the poacher, determined to rip its pelt off. No one steals from c_n! The fox jumps, startled, and streaks for the horizon, but with a full patrol the cats chase it until it drops the hare and crosses the border. Though it's only a small haul of prey for a hunting patrol, at least they've gotten rid of the prey thief.",
                 "exp": 30,
                 "prey": [
                     "small"
@@ -1123,17 +1123,17 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to chase a poaching swift fox off their territory."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "With many cats, they're able to catch the swift fox, even though it lives up to its name. It might be swift, but it's not much else, and the patrol manages to pull it down and kill the intruder, protecting c_n's lands. Oh, and they also win that hare too.",
+                "text": "The patrol is able to catch the swift fox, even though it lives up to its name. It might be swift, but it's not much else, and the patrol manages to pull it down and kill the intruder, protecting c_n's lands. Oh, and they also win that hare too.",
                 "exp": 30,
                 "prey": [
                     "small"
@@ -1147,12 +1147,23 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to chase a poaching swift fox off their territory."
+                        }
+                    },
+                    {
+                    "cats_from": ["high_aggress"],
+                    "cats_to": ["patrol"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 8,
+                    "log":
+                    {
+                        "cats_from": "from_cat heard that to_cat's patrol chased down and killed a poaching swift fox."
                     }
+                }
                 ],
                 "frequency": 1
             },
@@ -1167,24 +1178,41 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["respect", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat's clever strategy helped from_cat's patrol take down a swift fox."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to chase a poaching swift fox off their territory."
+                        }
+                    },
+                    {
+                    "cats_from": ["high_aggress"],
+                    "cats_to": ["patrol"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 8,
+                    "log":
+                    {
+                        "cats_from": "from_cat heard that to_cat's patrol chased down and killed a poaching swift fox."
                     }
+                }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c leads the charge! Their boldness sends the swift fox running, and though they lose the fox in a tumble of boulders the cats can at least bring the hare home for the fresh-kill pile.",
+                "text": "s_c leads the charge! {PRONOUN/s_c/poss/CAP} boldness sends the swift fox running, and though the patrol loses the fox in a tumble of boulders the cats can at least bring the hare home for the fresh-kill pile.",
                 "exp": 30,
                 "stat_trait": [
                     "bloodthirsty",
@@ -1199,18 +1227,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat led from_cat in a charge against a poaching swift fox."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat stole the prey of a swift fox together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1220,127 +1254,8 @@
             {
                 "text": "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_swiftfox_anysteal2",
-        "biome": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "r_c spots a swift fox in the distance, trotting through the scrubland with a desert hare in its jaws. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
-        "decline_text": "Best not to risk a fight. r_c watches it go.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "r_c charges the fox, puffed up and snarling! The fox turns tail and runs, dropping the hare in the process, and r_c retrieves the poached prey for c_n's fresh-kill pile.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The swift fox is tired from its hunt, and not capable of living up to its name. r_c catches it in a chase, and claims the hare back for c_n, leaving the fox with a bloodied nose. That'll teach it!",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "r_c sneaks up on the fox, approaching through the cover of thornbushes. They burst out, snarling with claws extended, and batter the fox as it screams in surprise, dropping its stolen prey and jumping backwards. Only it flinches back into more thornbushes, and r_c picks up the dropped hare and pads back to camp, leaving the thief to struggle out of the thorns by itself.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,1",
-                    "FIGHTER,1"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It makes r_c's blood boil, watching the fox carry away prey it's stolen from c_n's mouths. They creep between the fox and a ravine, waiting until the perfect moment, until they're able to burst from cover, snatching back the hare as the fox tumbles into the steep gash in the ground.",
-                "exp": 20,
-                "stat_trait": [
-                    "bloodthirsty",
-                    "fierce",
-                    "vengeful",
-                    "bold",
-                    "confident",
-                    "daring"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name.",
-                "exp": 0,
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving its prey up, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from fighting with a swift fox."
-                },
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 3
+                "frequency": 4,
+                "prey": ["very_small"]
             }
         ]
     },
@@ -1358,7 +1273,7 @@
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
-        "max_cats": 3,
+        "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
@@ -1366,52 +1281,44 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
+                "text": "One tiny kit fox against the cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
                 "exp": 20,
                 "prey": [
                     "huge"
                 ],
                 "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
                     }
+                }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as your cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
+                "text": "The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as the cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
                 "exp": 20,
                 "prey": [
                     "huge"
                 ],
                 "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
                     }
+                }
                 ],
                 "frequency": 1
             },
@@ -1426,19 +1333,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat kept from_cat's patrol focused and brought back scavenged peccary for the Clan to enjoy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1447,32 +1349,28 @@
                 "text": "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead, s_c focuses on maintaining a watch for other challengers, and their vigilance means the patrol sees the boar coming to cannibalize its victim from far off, making off with as much of the carcass as they can carry before it spots them.",
                 "exp": 20,
                 "stat_trait": [
-                    "adventurous",
-                    "ambitious",
-                    "confident",
-                    "daring",
-                    "fierce",
                     "responsible",
-                    "righteous"
+                    "thoughtful",
+                    "wise",
+                    "calm",
+                    "careful",
+                    "insecure",
+                    "nervous",
+                    "sneaky"
                 ],
                 "prey": [
                     "huge"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat's cautious nature prevented from_cat's patrol from being ambushed by a predator while scavenging."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1480,32 +1378,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and the patrol wisely backs off as the boar begins to cannibalize its victim.",
+                "text": "One tiny kit fox against the cats? No contest. The cats against the boar coming snuffling back? Also, no contest, and the patrol wisely backs off as the boar begins to cannibalize its victim.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
+                "frequency": 4,
+                "prey": ["very_small"]
             },
             {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
+                "text": "One tiny kit fox against the cats? No contest. The cats against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
                 "exp": 0,
                 "injury": [
                     {
@@ -1518,438 +1397,9 @@
                         "scars": []
                     }
                 ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
+                "prey": ["very_small"],
                 "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_kitfox_scavenge2",
-        "biome": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
-        "decline_text": "The patrol decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
-                "exp": 20,
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as your cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
-                "exp": 20,
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focus on bringing its meat back for the Clan.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,1"
-                ],
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead, s_c focuses on maintaining a watch for other challengers, and their vigilance means the patrol sees the boar coming to cannibalize its victim from far off, making off with as much of the carcass as they can carry before it spots them.",
-                "exp": 20,
-                "stat_trait": [
-                    "adventurous",
-                    "ambitious",
-                    "confident",
-                    "daring",
-                    "fierce",
-                    "responsible",
-                    "righteous"
-                ],
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and the patrol wisely backs off as the boar begins to cannibalize its victim.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "sprain"
-                        ],
-                        "scars": []
-                    }
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_kitfox_scavenge3",
-        "biome": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "r_c catches the scent of a fox. Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
-        "decline_text": "r_c decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "One tiny kit fox? r_c sees it off with a pawswipe, not interested in trying to take the fox as prey when the peccary carcass exists. They try to bring as much of the peccary back to camp as they can possibly carry.",
-                "exp": 30,
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The kit fox gives way to the bigger cat, melting away into the scrubby dry bush as r_c brings as much of the feast as they can back to the Clan. It knows that the cat will leave more than enough scraps behind to fill its belly full of pork.",
-                "exp": 30,
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c is smart enough to stop themselves from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and s_c is focused on bringing its meat back for the Clan.",
-                "exp": 30,
-                "stat_skill": [
-                    "CLEVER,1",
-                    "FIGHTER,1"
-                ],
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead, s_c focuses on maintaining a watch for other challengers, and their vigilance means they see the boar coming to cannibalize its victim from far off, making off with as much of the carcass as they can carry before it spots them.",
-                "exp": 30,
-                "stat_trait": [
-                    "adventurous",
-                    "ambitious",
-                    "confident",
-                    "daring",
-                    "fierce",
-                    "responsible",
-                    "righteous"
-                ],
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol fails to drive away the fox, which keeps possession of the food. However, there are no injuries.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "One tiny kit fox against r_c? No contest. r_c settles in to open the carcass, but is caught unawares by the boar returning to reclaim it, and is killed and eaten by the boar.",
-                "exp": 0,
-                "dead_cats": [
-                    "r_c",
-                    "all_lives"
-                ],
-                "history_text": {
-                    "reg_death": "m_c fell when {PRONOUN/m_c/subject} {VERB/m_c/were/was} surprised by a peccary boar.",
-                    "lead_death": "{VERB/m_c/were/was} gored and eaten by a peccary boar"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
-            },
-            {
-                "text": "One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also, no contest, and as the patrol flees, r_c feels something pull painfully in {PRONOUN/r_c/poss} leg.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "sprain"
-                        ],
-                        "scars": []
-                    }
-                ],
-                "history_text": {
-                    "reg_death": "m_c fell when {PRONOUN/m_c/subject} {VERB/m_c/were/was} surprised by a peccary boar.",
-                    "lead_death": "{VERB/m_c/were/was} gored and eaten by a peccary boar"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
+
             }
         ]
     },
@@ -1967,7 +1417,7 @@
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
-        "max_cats": 4,
+        "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
         "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
@@ -1981,21 +1431,19 @@
                     "medium"
                 ],
                 "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat worked together to steal prey from a kit fox."
                     }
-                ],
-                "frequency": 4
+                }
+            ],
+            "frequency": 4
             },
             {
                 "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But the patrol is faster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
@@ -2012,16 +1460,28 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to hunt down and kill a kit fox for the fresh-kill pile."
+                        }
+                    },
+                    {
+                    "cats_from": ["high_aggress"],
+                    "cats_to": ["patrol"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat's patrol bring a kit fox back to camp for the fresh-kill pile."
                     }
+                }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls, darting in to finish it off without mercy. Kit foxes not only steal prey, for c_n, they are prey.",
+                "text": "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls, darting in to finish it off without mercy. Kit foxes not only steal prey; for c_n, they are prey.",
                 "exp": 15,
                 "stat_skill": [
                     "FIGHTER,1"
@@ -2030,21 +1490,30 @@
                     "medium"
                 ],
                 "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_from": "to_cat led from_cat in a fight to kill a kit fox and bring it back as fresh-kill."
                     }
-                ],
-                "frequency": 4
+                },
+                {
+                    "cats_from": ["high_aggress"],
+                    "cats_to": ["patrol"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat's patrol bring a kit fox back to camp for the fresh-kill pile."
+                    }
+                }
+            ],
+            "frequency": 4
             },
             {
                 "text": "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, and they take the lead hunting down the kit fox, fearless as they win not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile.",
@@ -2058,57 +1527,46 @@
                     "daring",
                     "fierce",
                     "loyal",
-                    "playful",
                     "righteous",
                     "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
+                    "troublesome"
                 ],
                 "prey": [
                     "medium"
                 ],
                 "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_from": "to_cat led from_cat in a fight to kill a kit fox and bring it back as fresh-kill."
                     }
-                ],
-                "frequency": 4
+                },
+                {
+                    "cats_from": ["high_aggress"],
+                    "cats_to": ["patrol"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat's patrol bring a kit fox back to camp for the fresh-kill pile."
+                    }
+                }
+            ],
+            "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
                 "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a head start.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
+                "frequency": 4,
+                "prey": ["very_small"]
             },
             {
                 "text": "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard-won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives.",
@@ -2131,17 +1589,14 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat doubted to_cat's skill after {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} injured in a fight with a kit fox."
+                        }
                     }
                 ],
                 "prey": [
@@ -2173,7 +1628,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The hunter melts into the thorny scrubland and sneaks towards the smaller predator. By the time it scents them, it's too late. While r_c will happily accept the mouse it carried, the fox was the prey they were actually after.",
+                "text": "The hunter melts into the thorny scrubland and sneaks towards the smaller predator. By the time it scents {PRONOUN/r_c/object}, it's too late. While r_c will happily accept the mouse it carried, the fox was the prey {PRONOUN/r_c/subject} {VERB/r_c/were/was} actually after.",
                 "exp": 25,
                 "prey": [
                     "large"
@@ -2181,26 +1636,47 @@
                 "frequency": 4
             },
             {
-                "text": "The kit fox locks eyes with r_c as they emerge from the grass, weighing up its options against the bigger cat. r_c doesn't hesitate, leaps to attack it, and with their skill they're able to bring down the kit fox. It should have run from them - trying to keep its mouse means r_c will be able to add both to the fresh-kill pile.",
+                "text": "The kit fox locks eyes with r_c as {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from the grass, weighing up its options against the bigger cat. r_c doesn't hesitate, leaps to attack it, and with {PRONOUN/r_c/poss} skill {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} able to bring down the kit fox. It should have run from {PRONOUN/r_c/object} - trying to keep its mouse means r_c will be able to add both to the fresh-kill pile.",
                 "exp": 25,
-                "prey": [
-                    "large"
-                ],
+                "prey": ["large"],
+                "relationships": [
+                {
+                    "cats_from": ["high_aggress"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 10,
+                    "log":
+                    {
+                        "cats_from": "from_cat was highly impressed to see to_cat bring back a kit fox on {PRONOUN/to_cat/poss} own for the fresh-kill pile."
+                    }
+                }
+            ],
                 "frequency": 1
+
             },
             {
-                "text": "s_c pounces, snarling, and the fox turns tail with a yelp. But they're prepared for the fox trying to flee, and leap fast and low to the ground, slamming their teeth into the fox's throat. Kit foxes not only steal prey, for c_n, they are prey.",
+                "text": "s_c pounces, snarling, and the fox turns tail with a yelp. But {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} prepared for the fox trying to flee, and leap fast and low to the ground, sinking {PRONOUN/s_c/poss} teeth into the fox's throat. Kit foxes not only steal prey; for c_n, they are prey.",
                 "exp": 25,
-                "stat_skill": [
-                    "FIGHTER,1"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
+                "frequency": 4,
+                "stat_skill": ["FIGHTER,1"],
+                "prey": ["large"],
+                "relationships": [
+                {
+                    "cats_from": ["high_aggress"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 10,
+                    "log":
+                    {
+                        "cats_from": "from_cat was highly impressed to see to_cat bring back a kit fox on {PRONOUN/to_cat/poss} own for the fresh-kill pile."
+                    }
+                }
+            ]
             },
             {
-                "text": "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, fearless as they win not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile.",
+                "text": "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, fearless as {PRONOUN/s_c/subject} {VERB/s_c/win/wins} not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile.",
                 "exp": 25,
                 "stat_trait": [
                     "adventurous",
@@ -2211,22 +1687,30 @@
                     "daring",
                     "fierce",
                     "loyal",
-                    "playful",
                     "righteous",
                     "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
+                    "troublesome"
                 ],
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
+                "prey": ["large"],
+                "relationships": [
+                {
+                    "cats_from": ["high_aggress"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 10,
+                    "log":
+                    {
+                        "cats_from": "from_cat was highly impressed to see to_cat bring back a kit fox on {PRONOUN/to_cat/poss} own for the fresh-kill pile."
+                    }
+                }
+            ],
+                            "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a head start.",
+                "text": "r_c approaches the kit fox, who spots {PRONOUN/r_c/object} and sets off at full speed. It's not worth pursuing, not with the fox having a head start.",
                 "exp": 0,
                 "prey": [
                     "very_small"
@@ -2249,172 +1733,22 @@
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a fight with a kit fox."
-                },
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_kitfox_steal3",
-        "biome": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 5,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
-        "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "The hunters melt into the thorny scrubland and surround the smaller predator. By the time it scents them, it's too late. While the hunters will happily accept the mouse it carried, the fox was the prey they were actually after.",
-                "exp": 15,
-                "prey": [
-                    "small"
-                ],
+                "history_text": { "scar": "m_c carries a scar from a fight with a kit fox." },
+                "prey": ["very_small"],
                 "relationships": [
+                {
+                    "cats_from": ["high_aggress"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_from": "from_cat heard to_cat couldn't beat a kit fox in a fight."
                     }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But the patrol is faster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
-                "exp": 15,
-                "prey": [
-                    "small"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls, darting in to finish it off without mercy. Kit foxes not only steal prey, for c_n, they are prey.",
-                "exp": 15,
-                "stat_skill": [
-                    "FIGHTER,1"
-                ],
-                "prey": [
-                    "small"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, and they take the lead hunting down the kit fox, fearless as they win not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile.",
-                "exp": 15,
-                "stat_trait": [
-                    "adventurous",
-                    "ambitious",
-                    "bloodthirsty",
-                    "bold",
-                    "confident",
-                    "daring",
-                    "fierce",
-                    "loyal",
-                    "playful",
-                    "righteous",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "prey": [
-                    "small"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a head start.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
+                }
+            ],
+            "frequency": 4
             }
         ]
     },
