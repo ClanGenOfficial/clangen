@@ -4401,21 +4401,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "n_c:0"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": ["like"],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "from_cat scared to_cat away."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "n_c:1"
+                            "n_c:0", "n_c:1"
                         ],
                         "cats_from": [
                             "patrol"
