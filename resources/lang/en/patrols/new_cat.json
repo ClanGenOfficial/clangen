@@ -5092,6 +5092,23 @@
                     },
                     {
                         "cats_to": [
+                            "n_c:1",
+                            "n_c:0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                "log": {
+                    "cats_from": "from_cat couldn't stand all this kittypet nonsense by the border any longer and told to_cat and {PRONOUN/to_cat/poss} friend to scram."
+                }
+                    },
+                    {
+                        "cats_to": [
                             "n_c:0"
                         ],
                         "cats_from": [
@@ -5147,6 +5164,23 @@
                     "log": {
                         "cats_from": "to_cat told from_cat and {PRONOUN/from_cat/poss} friend to scram while they were in the middle of an argument."
                     }
+                    },
+                    {
+                        "cats_to": [
+                            "n_c:1",
+                            "n_c:0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                "log": {
+                    "cats_from": "from_cat couldn't stand all this kittypet nonsense by the border any longer and told to_cat and {PRONOUN/to_cat/poss} friend to scram."
+                }
                     },
                     {
                         "cats_to": [
@@ -6484,22 +6518,6 @@
                 "text": "To the cats' horror, they were too late: the bodies of several kits wash ashore. They mutter a prayer before gently picking up the kits. The patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest peacefully within the ocean's embrace.",
                 "exp": 0,
                 "outsider_rep": -1,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": ["like", "comfort"],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat were too late to rescuing a litter of kittens from drowning while on patrol."
-                        }
-                    }
-                ],
                 "frequency": 4
             }
         ],
@@ -6601,22 +6619,6 @@
                 "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems {PRONOUN/n_c:0/subject} attempted to run after {PRONOUN/n_c:0/poss} Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat.",
                 "exp": 0,
                 "outsider_rep": -1,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat couldn't save a kittypet after they got run over by a monster."
-                        }
-                    }
-                ],
                 "frequency": 4
             }
         ],
