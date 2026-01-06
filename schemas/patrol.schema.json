@@ -11,10 +11,10 @@
           "description": "Displayed outcome text.",
           "type": "string"
         },
-        "weight": {
+        "frequency": {
           "description": "Controls how common an outcome is.",
           "type": "integer",
-          "default": 20
+          "default": 4
         },
         "exp": {
           "description": "Base exp gain.",
@@ -229,7 +229,7 @@
           "type": "integer"
         }
       },
-      "required": ["text", "exp", "weight"]
+      "required": ["text", "exp", "frequency"]
     }
   },
   "items": {
@@ -354,10 +354,10 @@
           }
         }
       },
-      "weight": {
-        "description": "Controls how common a patrol is. Normal patrols would be around 20. Lower numbers are less common and higher numbers are more common.",
+      "frequency": {
+        "description": "Controls how common a patrol is. 4 is the most common, 1 is the least.",
         "type": "integer",
-        "default": 20
+        "default": 4
       },
       "chance_of_success": {
         "description": "Controls chance to succeed. Higher number is higher chance to succeed.",
@@ -419,7 +419,7 @@
       "patrol_art",
       "min_cats",
       "max_cats",
-      "weight",
+      "frequency",
       "chance_of_success",
       "intro_text",
       "decline_text",
