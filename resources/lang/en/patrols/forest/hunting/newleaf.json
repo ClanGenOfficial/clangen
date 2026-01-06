@@ -1850,27 +1850,28 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "mutual": false,
+                        "values": ["romance", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "...but to_cat undeniably looked good doing it."
+                        }
                     },
                     {
                         "cats_to": [
                             "r_c"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was annoyed by to_cat's cocky attitude during a hunting patrol..."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1893,27 +1894,28 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "mutual": false,
+                        "values": ["romance", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "...but to_cat undeniably looked good doing it."
+                        }
                     },
                     {
                         "cats_to": [
                             "r_c"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was annoyed by to_cat's cocky attitude during a hunting patrol..."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1943,27 +1945,28 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "mutual": false,
+                        "values": ["romance", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "...but to_cat undeniably looked good doing it."
+                        }
                     },
                     {
                         "cats_to": [
                             "r_c"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was annoyed by to_cat's cocky attitude during a hunting patrol..."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1979,27 +1982,14 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "mutual": false,
+                        "values": ["romance", "respect", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed when to_cat was unable to back up {PRONOUN/to_cat/poss} cocky attitude with any fresh-kill on a hunting patrol."
+                        }
                     }
                 ],
                 "prey": [
