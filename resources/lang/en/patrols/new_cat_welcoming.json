@@ -723,6 +723,23 @@
                     },
                     {
                         "cats_to": [
+                            "n_c:1",
+                            "n_c:0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                "log": {
+                    "cats_from": "from_cat couldn't stand all this kittypet nonsense by the border any longer and told to_cat and {PRONOUN/to_cat/poss} friend to get lost."
+                }
+                    },
+                    {
+                        "cats_to": [
                             "n_c:0"
                         ],
                         "cats_from": [
@@ -778,6 +795,23 @@
                     "log": {
                         "cats_from": "to_cat told from_cat and {PRONOUN/from_cat/poss} friend to scram while they were in the middle of an argument."
                     }
+                    },
+                    {
+                        "cats_to": [
+                            "n_c:1",
+                            "n_c:0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                "log": {
+                    "cats_from": "from_cat couldn't stand all this kittypet nonsense by the border any longer and told to_cat and {PRONOUN/to_cat/poss} friend to scram."
+                }
                     },
                     {
                         "cats_to": [
