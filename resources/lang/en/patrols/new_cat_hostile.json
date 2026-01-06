@@ -2176,6 +2176,7 @@
                         "log": {
                             "cats_from": "from_cat can't believe how selfish Clan cats can be, not only they didn't help {PRONOUN/from_cat/object} escape the dog, they had the audacity to say they don't owe outsiders anything - even if the outsider was in danger.",
                             "cats_to": "to_cat heard about what the loner, from_cat, scowled to the patrol who watched {PRONOUN/from_cat/object} get chased by a dog."
+                        }
                     }
                 ],
                 "frequency": 4
