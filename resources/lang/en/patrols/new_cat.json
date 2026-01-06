@@ -7186,7 +7186,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": ["respect"],
