@@ -1133,7 +1133,7 @@
                         "values": ["respect", "trust"],
                         "amount": -20,
                         "log": {
-                            "cats_from": "Apon n_c:0 joining the Clan, it was found out that to_cat and n_c:0 were in a forbidden relationship. to_cat hid this secret from the rest of the Clan."
+                            "cats_from": "Upon n_c:0 joining the Clan, it was found out that to_cat and n_c:0 were in a forbidden relationship. to_cat hid this secret from the rest of the Clan."
                         }
                     }
                 ],
