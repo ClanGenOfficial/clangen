@@ -885,7 +885,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 30,
                         "log": {
-                            "cats_from": "to_cat tried to meet {PRONOUN/to_cat/poss} mate, n_c:0, by the border, but {PRONOUN/n_c:0/subject} was gone already."
+                            "cats_from": "to_cat tried to meet {PRONOUN/to_cat/poss} mate, n_c:0, by the border, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} gone already."
                         }
                     },
                     {
@@ -4294,7 +4294,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found wandering the mountainside in the cold alone."
+                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found crying in the mountainside in the cold alone."
                         }
                     }
                 ],
@@ -4321,7 +4321,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found wandering the mountainside in the cold alone."
+                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found crying in the mountainside in the cold alone."
                         }
                     }
                 ],
@@ -4349,7 +4349,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found wandering the mountainside in the cold alone."
+                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found crying in the mountainside in the cold alone."
                         }
                     }
                 ],
