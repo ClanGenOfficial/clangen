@@ -4884,6 +4884,7 @@
                         "amount": 55,
                     "log": {
                         "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat..."
+                        }
                     },
                     {
                         "cats_to": [
@@ -4897,9 +4898,9 @@
                             "respect"
                         ],
                         "amount": -15,
-                    "log": {
-                        "cats_from": "...but was upset that to_cat shot a flirty wink at one of the Clan cats."
-                    }
+                        "log": {
+                            "cats_from": "...but was upset that to_cat shot a flirty wink at one of the Clan cats."
+                        }
                     },
                     {
                         "cats_to": [
