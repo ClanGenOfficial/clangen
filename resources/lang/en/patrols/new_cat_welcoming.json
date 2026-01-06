@@ -4061,7 +4061,7 @@
                         "values": ["respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat got into a fight with from_cat and from_cat lost."
+                            "cats_from": "from_cat heard that to_cat got into a fight with a kittypet and lost the fight."
                         }
                     }
                 ],
