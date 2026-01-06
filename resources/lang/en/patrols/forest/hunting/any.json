@@ -5681,7 +5681,7 @@
     {
         "patrol_id": "fst_hunt_redfox_scavenge1",
         "biome": ["forest"],
-        "season": ["greenleaf", "leaf-fall", "newleaf"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "fst_hunt_redfox_greenleafscavenge1",
@@ -5904,7 +5904,7 @@
     {
         "patrol_id": "fst_hunt_redfox_scavenge2",
         "biome": ["forest"],
-        "season": ["greenleaf", "newleaf", "leaf-fall"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
