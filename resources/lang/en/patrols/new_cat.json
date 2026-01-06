@@ -5240,7 +5240,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -45,
+                        "amount": -20,
                     "log": {
                         "cats_from": "to_cat rudely insulted from_cat, calling {PRONOUN/from_cat/object} an ugly mangepelt."
                     }
