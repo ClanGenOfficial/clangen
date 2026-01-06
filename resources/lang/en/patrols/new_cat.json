@@ -6409,12 +6409,12 @@
                         }
                     },
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -6454,12 +6454,12 @@
                         }
                     },
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
                         }
                     }
                 ],
