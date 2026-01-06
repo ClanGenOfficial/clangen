@@ -4944,7 +4944,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 15,
+                        "amount": 5,
                     "log": {
                         "cats_from": "from_cat was grateful for to_cat helping {PRONOUN/from_cat/object} with {PRONOUN/from_cat/poss} relationship conflict, and tried hitting on {PRONOUN/to_cat/object}."
                     }
