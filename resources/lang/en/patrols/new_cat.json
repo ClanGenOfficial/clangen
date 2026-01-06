@@ -1328,7 +1328,18 @@
                             "p_l"
                         ],
                         "mutual": true,
-                        "values": ["like", "romance"],
+                        "values": ["romance"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": ["like"],
                         "amount": -50,
                         "log": {
                             "cats_from": "to_cat tried to pressure n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 refused. to_cat then told {PRONOUN/n_c:0/poss} to leave and never return."
