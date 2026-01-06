@@ -2168,7 +2168,7 @@
                     },
                     {
                         "cats_from": [
-                            "clan"
+                            "high_lawful"
                         ],
                         "cats_to": [
                             "p_l"
@@ -2303,12 +2303,11 @@
                             "p_l"
                         ],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "romance"
-                        ],
-                        "amount": 30
+                        "values": ["like"],
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "...but n_c:0 said {PRONOUN/n_c:0/subject} {VERB/n_c:0/weren't/wasn't} ready to join. to_cat, who was tired of n_c:0's indecision, tried to coerce n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 wasn't having it, sick of to_cat's pressuring."
+                        }
                     },
                     {
                         "cats_from": [
@@ -2318,10 +2317,27 @@
                             "p_l"
                         ],
                         "mutual": true,
-                        "values": ["like"],
-                        "amount": -50,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 30,
                         "log": {
-                            "cats_from": "to_cat tried to coerce n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 wasn't having it, sick of to_cat's pressuring."
+                            "cats_from": "The two cats had been discussing whether n_c:0 should finally join c_n or not. They would finally be together for real if {PRONOUN/n_c:0/subject} joined..."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": ["romance"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat and n_c:0 were mates hiding their relationship from to_cat's Clan."
                         }
                     }
                 ],
@@ -2415,7 +2431,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "n_c:0 was found by to_cat and {PRONOUN/to_cat/poss} patrol and taken into the Clan."
+                            "cats_from": "n_c:0 was found by to_cat and {PRONOUN/to_cat/poss} patrol and taken into the Clan as a kit."
                         }
                     }
                 ],
@@ -2493,7 +2509,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "n_c:0 was found by to_cat and taken into the Clan."
+                            "cats_from": "n_c:0 was found by to_cat and taken into the Clan as a kit."
                         }
                     }
                 ],
@@ -3365,12 +3381,12 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3396,12 +3412,12 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3625,12 +3641,12 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3656,12 +3672,12 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3888,12 +3904,12 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3919,12 +3935,12 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -4013,12 +4029,12 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a kit."
                         }
                     }
                 ],
@@ -4044,12 +4060,12 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a kit."
                         }
                     }
                 ],
@@ -4079,12 +4095,12 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
+                        "cats_from": ["n_c:1"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat's kits after {PRONOUN/from_cat/subject} died."
+                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a kit."
                         }
                     }
                 ],
@@ -5784,7 +5800,7 @@
                         "values": ["respect", "like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "Despite losing a fight to to_cat, from_cat can't help but respect the other cat's skills.."
+                            "cats_from": "Despite losing a fight to to_cat, from_cat can't help but respect the other cat's skills."
                         }
                     },
                     {
@@ -5792,7 +5808,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": ["respect"],
