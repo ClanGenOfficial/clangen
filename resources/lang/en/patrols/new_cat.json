@@ -979,7 +979,11 @@
                         ],
                         "mutual": true,
                         "values": ["like", "trust", "comfort"],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat friend, to_cat, over the border.",
+                            "cats_to": "to_cat met {PRONOUN/to_cat/poss} loner friend, n_c:0, over the border."
+                        }
                     }
                 ],
                 "art": "gen_bump_heads_warrior_loner",
