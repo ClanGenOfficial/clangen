@@ -3337,19 +3337,6 @@
                         "log": {
                             "cats_from": "to_cat met an old friend, from_cat, at the border even though to_cat didn't want to see {PRONOUN/from_cat/object} again."
                         }
-                    },
-                    {
-                        "cats_from": [
-                            "n_c:0"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
                     }
                 ],
                 "frequency": 4
