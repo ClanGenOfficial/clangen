@@ -5195,6 +5195,7 @@
                 "text": "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small - the savior of her Clan, marked with moth wings tucked behind her ear.",
                 "exp": 20,
                 "other_clan_rep": 2,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": [
