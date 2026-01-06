@@ -780,7 +780,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -813,7 +813,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -852,7 +852,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -868,7 +868,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
+                        "values": ["comfort"],
                         "amount": 5,
                         "log": {
                             "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
@@ -901,7 +901,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
+                        "values": ["comfort"],
                         "amount": 5,
                         "log": {
                             "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
