@@ -5506,14 +5506,8 @@
                         "mutual": false,
                         "values": [
                             "romance",
-                            "like",
-                            "comfort",
-                            "trust",
-                            "respect"
-"values": [
-"romance",
-"like",
-],
+                            "like"
+                          ],
                         "amount": 15,
             "log": {
                 "cats_from": "Even though to_cat insulted {PRONOUN/from_cat/object}, from_cat couldn't help but be smitten by to_cat's roughness."
