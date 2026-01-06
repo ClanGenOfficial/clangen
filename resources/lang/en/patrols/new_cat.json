@@ -4963,7 +4963,7 @@
                         ],
                         "amount": -15,
                     "log": {
-                        "cats_from": "from_cat was jealous that {PRONOUN/from_cat/poss} friend seemed more interested in to_cat than {PRONOUN/from_cat/object}."
+                        "cats_from": "from_cat was jealous that n_c:1 seemed more interested in to_cat than {PRONOUN/from_cat/object}."
                     }
                     }
                 ],
