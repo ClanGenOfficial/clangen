@@ -5310,7 +5310,7 @@
                             "cats_from": [ "n_c:1", "n_c:0" ],
                             "mutual": false,
                             "values": [ "like" ],
-                            "amount": -35,
+                            "amount": -25,
                             "log": {
                                 "cats_from": "to_cat rudely insulted n_c:1 calling {PRONOUN/n_c:1/object} a prideful and vain-hearted mouse-brain and neither n_c:0 or n_c:1 seemed appreciative."
                             }
