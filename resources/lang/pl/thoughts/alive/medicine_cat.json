@@ -11,7 +11,7 @@
             "Is feeling stressed taking care of the Clan",
             "Is tending some growing herbs",
             "Is making new nests",
-            "Wishes {PRONOUN\/m_c\/subject} had an extra set of paws",
+            "Wishes {PRONOUN/m_c/subject} had an extra set of paws",
             "Is reciting the names of herbs aloud",
             "Was startled awake in the wee hours by a vivid dream",
             "Is running low on mouse bile",
@@ -20,10 +20,10 @@
             "Is struggling to remember all of the names of herbs",
             "Made a mess of the herbs and is panicking",
             "Has been hearing the voices of StarClan cats...",
-            "Has the foul taste of bitter herbs in {PRONOUN\/m_c\/poss} mouth",
-            "Wonders if {PRONOUN\/m_c\/subject} could borrow some catmint from the other Clans",
-            "Is happy that {PRONOUN\/m_c\/subject} chose life as a medicine cat",
-            "Is proud of {PRONOUN\/m_c\/poss} ability to care for {PRONOUN\/m_c\/poss} Clanmates"
+            "Has the foul taste of bitter herbs in {PRONOUN/m_c/poss} mouth",
+            "Wonders if {PRONOUN/m_c/subject} could borrow some catmint from the other Clans",
+            "Is happy that {PRONOUN/m_c/subject} chose life as a medicine cat",
+            "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates"
         ]
     },
     {
@@ -53,8 +53,8 @@
     {
         "id": "adventurous_medicine_cat_to_lead",
         "thoughts": [
-            "Helps the leader with {PRONOUN\/r_c\/poss} duties",
-            "Begs the leader to give {PRONOUN\/m_c\/object} the bounciest kit as {PRONOUN\/m_c\/poss} apprentice"
+            "Helps the leader with {PRONOUN/r_c/poss} duties",
+            "Begs the leader to give {PRONOUN/m_c/object} the bounciest kit as {PRONOUN/m_c/poss} apprentice"
         ],
         "main_trait_constraint": [
             "adventurous"
@@ -109,16 +109,16 @@
             "Is ripping some leaves to shreds",
             "Debates becoming a warrior",
             "Gives the wrong herbs to a warrior on purpose",
-            "Wishes {PRONOUN\/m_c\/subject} {VERB\/m_c\/weren't\/wasn't} confined to this life",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} confined to this life",
             "Is stocking up on deathberries",
             "Is stocking up on yew berries",
             "Is stocking up on nightshade",
             "Is stocking up on watermint",
             "Put herbs in prey to give cats stomachaches",
             "Refused to treat anyone today",
-            "Is upset that {PRONOUN\/m_c\/subject} can't fight alongside the warriors",
+            "Is upset that {PRONOUN/m_c/subject} can't fight alongside the warriors",
             "Wishes to fight alongside the warriors",
-            "Thinks {PRONOUN\/m_c\/subject}'d be an amazing leader",
+            "Thinks {PRONOUN/m_c/subject}'d be an amazing leader",
             "Ignores the low herb stocks and practices battle moves instead"
         ],
         "main_trait_constraint": [
@@ -158,7 +158,7 @@
     {
         "id": "calm_medicine_cat_apprentice",
         "thoughts": [
-            "Calms down an apprentice who is panicking over {PRONOUN\/r_c\/poss} minor injury"
+            "Calms down an apprentice who is panicking over {PRONOUN/r_c/poss} minor injury"
         ],
         "main_trait_constraint": [
             "calm"
@@ -180,7 +180,7 @@
     {
         "id": "charismatic_medicine_cat",
         "thoughts": [
-            "Is doing {PRONOUN\/m_c\/poss} daily checkup on the elders",
+            "Is doing {PRONOUN/m_c/poss} daily checkup on the elders",
             "Is thinking of just the right way to ask another Clan's medicine cat for herbs"
         ],
         "main_trait_constraint": [
@@ -216,9 +216,9 @@
         ],
         "main_trait_constraint": [
             "compassionate"
-        ]
+      ]
     },
-    {
+  {
         "id": "compassionate_medicine_cat_to_apprentice",
         "thoughts": [
             "Listens to the apprentices complain about their training"
@@ -232,11 +232,12 @@
             "mediator apprentice"
         ]
     },
+
     {
         "id": "confident_medicine_cat",
         "thoughts": [
-            "Is proud of {PRONOUN\/m_c\/poss} ability to care for {PRONOUN\/m_c\/poss} Clanmates",
-            "Does not doubt {PRONOUN\/m_c\/self} while treating a cat"
+            "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates",
+            "Does not doubt {PRONOUN/m_c/self} while treating a cat"
         ],
         "main_trait_constraint": [
             "confident"
@@ -250,7 +251,7 @@
         "main_trait_constraint": [
             "daring"
         ]
-    },
+    },  
     {
         "id": "faithful_medicine_cat",
         "thoughts": [
@@ -272,7 +273,7 @@
     {
         "id": "insecure_medicine_cat",
         "thoughts": [
-            "Thinks that {PRONOUN\/m_c\/subject} {VERB\/m_c\/don't\/doesn't} deserve {PRONOUN\/m_c\/poss} full name"
+            "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} deserve {PRONOUN/m_c/poss} full name"
         ],
         "main_trait_constraint": [
             "insecure"
@@ -281,12 +282,12 @@
     {
         "id": "lonesome_medicine_cat",
         "thoughts": [
-            "Wishes {PRONOUN\/m_c\/poss} Clanmates could understand {PRONOUN\/m_c\/poss} struggles",
+            "Wishes {PRONOUN/m_c/poss} Clanmates could understand {PRONOUN/m_c/poss} struggles",
             "Wishes there were more medicine cats in the Clan",
-            "Wonders why the warriors won't share prey with {PRONOUN\/m_c\/object}",
-            "Wishes {PRONOUN\/m_c\/subject} could make friends with someone",
+            "Wonders why the warriors won't share prey with {PRONOUN/m_c/object}",
+            "Wishes {PRONOUN/m_c/subject} could make friends with someone",
             "Wishes the warriors shared an interest in herbs",
-            "Wishes for an apprentice, as {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} a bit lonely",
+            "Wishes for an apprentice, as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a bit lonely",
             "Hasn't talked to any warriors for a few days"
         ],
         "main_trait_constraint": [
@@ -301,7 +302,7 @@
         "main_trait_constraint": [
             "lonesome"
         ],
-        "random_status_constraint": [
+	"random_status_constraint": [
             "leader"
         ]
     },
@@ -313,7 +314,7 @@
         "main_trait_constraint": [
             "loving"
         ],
-        "random_status_constraint": [
+        "random_status_constraint":[
             "newborn"
         ]
     },
@@ -330,23 +331,23 @@
     {
         "id": "nervous_medicine_cat",
         "thoughts": [
-            "Re-counts the amount of catmint in {PRONOUN\/m_c\/poss} stores"
+            "Re-counts the amount of catmint in {PRONOUN/m_c/poss} stores"
         ],
         "main_trait_constraint": [
             "nervous"
         ]
     },
     {
-        "id": "playful_medicine_cat",
+      "id": "playful_medicine_cat",
         "thoughts": [
-            "Keeps {PRONOUN\/m_c\/poss} patients distracted with silly games while {PRONOUN\/m_c\/subject} {VERB\/m_c\/treat\/treats} them"
+            "Keeps {PRONOUN/m_c/poss} patients distracted with silly games while {PRONOUN/m_c/subject} {VERB/m_c/treat/treats} them"
         ],
         "main_trait_constraint": [
             "playful"
         ]
     },
     {
-        "id": "playful_medicine_cat_to_kits",
+      "id": "playful_medicine_cat_to_kits",
         "thoughts": [
             "Excitedly teaches the kits about basic herbs",
             "Indulges the kits as they play hide and seek around the medicine cat den."
@@ -361,8 +362,8 @@
     {
         "id": "responsible_medicine_cat",
         "thoughts": [
-            "Ensures that all of {PRONOUN\/m_c\/poss} duties are taken care of",
-            "Ignores the rumbling in {PRONOUN\/m_c\/poss} stomach in favor of treating cats"
+            "Ensures that all of {PRONOUN/m_c/poss} duties are taken care of",
+            "Ignores the rumbling in {PRONOUN/m_c/poss} stomach in favor of treating cats"
         ],
         "main_trait_constraint": [
             "responsible"
@@ -380,7 +381,7 @@
     {
         "id": "shameless_medicine_cat",
         "thoughts": [
-            "Refuses to groom {PRONOUN\/m_c\/self}"
+            "Refuses to groom {PRONOUN/m_c/self}"
         ],
         "main_trait_constraint": [
             "shameless"
@@ -389,7 +390,7 @@
     {
         "id": "sneaky_medicine_cat",
         "thoughts": [
-            "Seems to be hiding something in the medicine {PRONOUN\/m_c\/subject} {VERB\/m_c\/give\/gives} to the leader"
+            "Seems to be hiding something in the medicine {PRONOUN/m_c/subject} {VERB/m_c/give/gives} to the leader"
         ],
         "main_trait_constraint": [
             "sneaky"
@@ -405,9 +406,9 @@
         ],
         "main_trait_constraint": [
             "strange"
-        ]
+      ]
     },
-    {
+  {
         "id": "strange_medicine_cat_to_kit",
         "thoughts": [
             "Hisses at the kits randomly"
@@ -423,7 +424,7 @@
     {
         "id": "strict_medicine_cat",
         "thoughts": [
-            "Forbids anyone from disturbing {PRONOUN\/m_c\/object} when working"
+            "Forbids anyone from disturbing {PRONOUN/m_c/object} when working"
         ],
         "main_trait_constraint": [
             "strict"
@@ -450,7 +451,7 @@
     {
         "id": "vengeful_medicine_cat",
         "thoughts": [
-            "Refuses to treat a cat that once bullied {PRONOUN\/m_c\/object}"
+            "Refuses to treat a cat that once bullied {PRONOUN/m_c/object}"
         ],
         "main_trait_constraint": [
             "vengeful"
@@ -468,16 +469,16 @@
     {
         "id": "med_cat_dead_SC_gen",
         "thoughts": [
-            "Wishes {PRONOUN\/m_c\/subject} could visit r_c in StarClan",
+            "Wishes {PRONOUN/m_c/subject} could visit r_c in StarClan",
             "Was given a prophecy by r_c",
             "Was sent an omen by r_c",
-            "Is dreaming about r_c who gives {PRONOUN\/m_c\/object} a message",
+            "Is dreaming about r_c who gives {PRONOUN/m_c/object} a message",
             "Is visited by r_c",
             "Senses r_c is nearby",
-            "Saw r_c in a dream, warning {PRONOUN\/m_c\/object} about... something",
+            "Saw r_c in a dream, warning {PRONOUN/m_c/object} about... something",
             "Is asking for guidance from r_c",
-            "Is wondering desperately why r_c wasn't there when {PRONOUN\/m_c\/subject} needed {PRONOUN\/r_c\/object}",
-            "Is sure that {PRONOUN\/m_c\/subject} saw r_c appear in the forest today... why?"
+            "Is wondering desperately why r_c wasn't there when {PRONOUN/m_c/subject} needed {PRONOUN/r_c/object}",
+            "Is sure that {PRONOUN/m_c/subject} saw r_c appear in the forest today... why?"
         ],
         "main_status_constraint": [
             "medicine cat",
@@ -492,10 +493,10 @@
         "thoughts": [
             "Is visited by r_c",
             "Senses r_c is nearby",
-            "Thought {PRONOUN\/m_c\/subject} heard a low rumbling behind {PRONOUN\/m_c\/object}, but nothing was there",
+            "Thought {PRONOUN/m_c/subject} heard a low rumbling behind {PRONOUN/m_c/object}, but nothing was there",
             "Received an ominous and dark message from r_c",
             "Has been hearing the voices of Dark Forest cats...",
-            "Debates whether or not to ask r_c for guidance, knowing where {PRONOUN\/r_c\/subject} {VERB\/r_c\/are\/is}"
+            "Debates whether or not to ask r_c for guidance, knowing where {PRONOUN/r_c/subject} {VERB/r_c/are/is}"
         ],
         "random_living_status": [
             "darkforest"
@@ -504,11 +505,11 @@
     {
         "id": "former_kittypet_medcat",
         "thoughts": [
-            "Uses knowledge from {PRONOUN\/m_c\/poss} time with Twolegs to improve a healing method",
-            "Wonders what {PRONOUN\/m_c\/poss} old vet would do for greencough",
-            "Is annoyed by Clan gossip surrounding {PRONOUN\/m_c\/poss} past and {PRONOUN\/m_c\/poss} connection to StarClan",
+            "Uses knowledge from {PRONOUN/m_c/poss} time with Twolegs to improve a healing method",
+            "Wonders what {PRONOUN/m_c/poss} old vet would do for greencough",
+            "Is annoyed by Clan gossip surrounding {PRONOUN/m_c/poss} past and {PRONOUN/m_c/poss} connection to StarClan",
             "Knows a great garden in the Twolegplace for gathering catmint",
-            "Wishes {PRONOUN\/m_c\/subject} could get {PRONOUN\/m_c\/poss} paws on the wrappings the vet uses",
+            "Wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} paws on the wrappings the vet uses",
             "Wonders if there's a way to develop an immunizing poultice"
         ],
         "main_backstory_constraint": [
@@ -573,9 +574,9 @@
             "Is working constantly to heal r_c's injury",
             "Prays to StarClan to heal r_c",
             "Watches r_c through the night",
-            "Does {PRONOUN\/m_c\/poss} best to ease r_c's pain",
+            "Does {PRONOUN/m_c/poss} best to ease r_c's pain",
             "Is worried about r_c's injury",
-            "Wonders if there is something new {PRONOUN\/m_c\/subject} could try for r_c's injury"
+            "Wonders if there is something new {PRONOUN/m_c/subject} could try for r_c's injury"
         ],
         "has_injuries": {
             "r_c": [
@@ -595,7 +596,7 @@
         "thoughts": [
             "Keeps a watchful eye on r_c's illness",
             "Is hopeful that r_c will recover soon",
-            "Reassures r_c that {PRONOUN\/r_c\/subject} will overcome {PRONOUN\/r_c\/poss} illness"
+            "Reassures r_c that {PRONOUN/r_c/subject} will overcome {PRONOUN/r_c/poss} illness"
         ],
         "has_injuries": {
             "r_c": [
@@ -631,7 +632,7 @@
             "Begs StarClan to cure r_c",
             "Is keeping r_c away from other cats",
             "Is worried about r_c's cough spreading",
-            "Isn't sure if {PRONOUN\/m_c\/subject} can handle an outbreak",
+            "Isn't sure if {PRONOUN/m_c/subject} can handle an outbreak",
             "Bristles in fear at the sound of a nearby cough"
         ],
         "has_injuries": {
@@ -644,10 +645,10 @@
     {
         "id": "med_cat_to_pregnant_gen",
         "thoughts": [
-            "Is lightly feeling r_c's belly for how many kits {PRONOUN\/r_c\/subject} might have",
+            "Is lightly feeling r_c's belly for how many kits {PRONOUN/r_c/subject} might have",
             "Is preparing for r_c's upcoming kitting",
             "Is checking on r_c again, much to r_c's annoyance",
-            "Makes sure that r_c is not pushing {PRONOUN\/r_c\/self} too far during pregnancy",
+            "Makes sure that r_c is not pushing {PRONOUN/r_c/self} too far during pregnancy",
             "Reminds r_c to take light walks around camp to encourage an easier kitting"
         ],
         "has_injuries": {
@@ -655,5 +656,35 @@
                 "pregnant"
             ]
         }
+    },
+    {
+        "id": "med_cat_to_newborn",
+        "thoughts": [
+            "Checks over r_c",
+            "Checks on the new litter",
+            "Brings soaked moss to the nursery for the new litter"
+        ],
+        "main_status_constraint": [
+            "medicine cat"
+        ],
+        "random_age_constraint": [
+            "newborn"
+        ]
+    },
+    {
+        "id": "med_cat_to_new_parent",
+        "thoughts": [
+            "Checks in on r_c",
+            "Brings r_c raspberry to help {PRONOUN/r_c/poss} recovery",
+            "Sleeps in the nursery after the birth",
+            "Reassures r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing a fine job"
+        ],
+        "main_status_constraint": [
+            "medicine cat"
+        ],
+        "has_injuries": {
+            "r_c": ["recovering from birth"]
+        }
     }
+
 ]

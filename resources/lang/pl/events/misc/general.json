@@ -13,8 +13,8 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 1,
-        "event_text": "m_c can't keep this secret anymore. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/request\/requests} a Clan meeting, where {PRONOUN\/m_c\/subject} {VERB\/m_c\/reveal\/reveals} the terrible secret {PRONOUN\/m_c\/subject}{VERB\/m_c\/'ve\/'s} kept; {PRONOUN\/m_c\/subject} killed mur_c.",
+        "frequency": 4,
+        "event_text": "m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept; {PRONOUN/m_c/subject} killed mur_c.",
         "m_c": {
             "age": [
                 "any"
@@ -41,22 +41,10 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "clan"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             }
@@ -73,8 +61,8 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 2,
-        "event_text": "r_c is stunned when {PRONOUN\/r_c\/subject} {VERB\/r_c\/discover\/discovers} m_c carelessly bragging about killing mur_c to a wandering loner.",
+        "frequency": 3,
+        "event_text": "r_c is stunned when {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} m_c carelessly bragging about killing mur_c to a wandering loner.",
         "m_c": {
             "age": [
                 "any"
@@ -115,8 +103,8 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 2,
-        "event_text": "m_c is truthful when r_c questions {PRONOUN\/m_c\/object} about mur_c's strange death. m_c claims that mur_c deserved to die after what {PRONOUN\/mur_c\/subject} did to m_c.",
+        "frequency": 3,
+        "event_text": "m_c is truthful when r_c questions {PRONOUN/m_c/object} about mur_c's strange death. m_c claims that mur_c deserved to die after what {PRONOUN/mur_c/subject} did to m_c.",
         "m_c": {
             "age": [
                 "any"
@@ -161,8 +149,8 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 1,
-        "event_text": "m_c boldly confesses to the entire Clan that {PRONOUN\/m_c\/subject} killed mur_c. m_c claims that mur_c deserved to pay for what {PRONOUN\/mur_c\/subject} did.",
+        "frequency": 4,
+        "event_text": "m_c boldly confesses to the entire Clan that {PRONOUN/m_c/subject} killed mur_c. m_c claims that mur_c deserved to pay for what {PRONOUN/mur_c/subject} did.",
         "m_c": {
             "age": [
                 "any"
@@ -191,9 +179,12 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
+                    "trust",
+                    "respect",
+                    "comfort",
+                    "like"
                 ],
-                "amount": 30
+                "amount": -15
             },
             {
                 "cats_from": [
@@ -206,7 +197,8 @@
                 "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             }
@@ -226,8 +218,8 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 2,
-        "event_text": "m_c's cold eyes don't blink when {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} accused of murdering mur_c, and only simply states that the Clan is better off without mur_c anyways.",
+        "frequency": 3,
+        "event_text": "m_c's cold eyes don't blink when {PRONOUN/m_c/subject} {VERB/m_c/are/is} accused of murdering mur_c, and only simply states that the Clan is better off without mur_c anyways.",
         "m_c": {
             "age": [
                 "any"
@@ -255,7 +247,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "m_c doesn't change expressions in the slightest when r_c accuses {PRONOUN\/m_c\/object} of murdering mur_c. Who cares?",
+        "event_text": "m_c doesn't change expressions in the slightest when r_c accuses {PRONOUN/m_c/object} of murdering mur_c. Who cares?",
         "m_c": {
             "age": [
                 "any"
@@ -297,8 +289,8 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 1,
-        "event_text": "r_c avoids m_c at all costs after accidentally witnessing mur_c's murder. r_c knows {PRONOUN\/r_c\/subject} can't keep it a secret but is terrified of what m_c might do.",
+        "frequency": 2,
+        "event_text": "r_c avoids m_c at all costs after accidentally witnessing mur_c's murder. r_c knows {PRONOUN/r_c/subject} can't keep it a secret but is terrified of what m_c might do.",
         "m_c": {
             "age": [
                 "any"
@@ -333,22 +325,10 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             }
@@ -366,7 +346,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "r_c gathers all the courage {PRONOUN\/r_c\/subject} {VERB\/r_c\/have\/has} and quietly tells m_c {PRONOUN\/r_c\/subject} {VERB\/r_c\/know\/knows} what {PRONOUN\/m_c\/subject} did to mur_c. m_c glares menacingly and threatens r_c with the same fate if {PRONOUN\/r_c\/subject} {VERB\/r_c\/don't\/doesn't} keep {PRONOUN\/r_c\/poss} mouth shut.",
+        "event_text": "r_c gathers all the courage {PRONOUN/r_c/subject} {VERB/r_c/have/has} and quietly tells m_c {PRONOUN/r_c/subject} {VERB/r_c/know/knows} what {PRONOUN/m_c/subject} did to mur_c. m_c glares menacingly and threatens r_c with the same fate if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} keep {PRONOUN/r_c/poss} mouth shut.",
         "m_c": {
             "age": [
                 "any"
@@ -401,24 +381,35 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "death",
+                "pool": {
+                    "sub_type": [
+                        "murder"
+                    ],
+                    "event_id": [],
+                    "excluded_event_id": [
+                        "gen_death_murder_anydep1",
+                        "gen_death_murder_anydep2"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    10
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "r_c": "m_c"
+                }
             }
         ]
     },
@@ -433,8 +424,8 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 2,
-        "event_text": "m_c laughs menacingly as r_c accuses {PRONOUN\/m_c\/object} of murdering mur_c. So what if {PRONOUN\/m_c\/subject} did? What is r_c going to do about it?",
+        "frequency": 3,
+        "event_text": "m_c laughs menacingly as r_c accuses {PRONOUN/m_c/object} of murdering mur_c. So what if {PRONOUN/m_c/subject} did? What is r_c going to do about it?",
         "m_c": {
             "age": [
                 "any"
@@ -477,7 +468,7 @@
             "murder_reveal"
         ],
         "frequency": 3,
-        "event_text": "m_c can't keep this secret anymore. When {PRONOUN\/m_c\/subject} {VERB\/m_c\/find\/finds} {PRONOUN\/m_c\/self} alone with r_c, {PRONOUN\/m_c\/subject} {VERB\/m_c\/tell\/tells} the story of mur_c's death.",
+        "event_text": "m_c can't keep this secret anymore. When {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} alone with r_c, {PRONOUN/m_c/subject} {VERB/m_c/tell/tells} the story of mur_c's death.",
         "m_c": {
             "age": [
                 "any"
@@ -486,7 +477,7 @@
                 "any"
             ],
             "relationship_status": [
-                "trust_20"
+                "listens_to"
             ]
         },
         "r_c": {
@@ -530,8 +521,8 @@
         "sub_type": [
             "murder_reveal"
         ],
-        "frequency": 1,
-        "event_text": "r_c overheard m_c muttering in {PRONOUN\/m_c\/poss} sleep, claws slashing at the air. {PRONOUN\/m_c\/poss\/CAP} muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death.",
+        "frequency": 2,
+        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death.",
         "m_c": {
             "age": [
                 "any"
@@ -581,7 +572,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "r_c wasn't even suspecting {PRONOUN\/m_c\/object}. But as soon as r_c mentions mur_c's death, m_c breaks down, telling how {PRONOUN\/m_c\/subject} didn't intend to do it, that it was all just an accident. Between wails, m_c desperately begs for r_c to understand {PRONOUN\/m_c\/subject} never wanted mur_c to die.",
+        "event_text": "r_c wasn't even suspecting {PRONOUN/m_c/object}. But as soon as r_c mentions mur_c's death, m_c breaks down, telling how {PRONOUN/m_c/subject} didn't intend to do it, that it was all just an accident. Between wails, m_c desperately begs for r_c to understand {PRONOUN/m_c/subject} never wanted mur_c to die.",
         "m_c": {
             "age": [
                 "any"
@@ -621,22 +612,10 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 15
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -15
             }
@@ -653,8 +632,9 @@
         "sub_type": [
             "murder_reveal"
         ],
+        "tags": ["clan_wide"],
         "frequency": 3,
-        "event_text": "c_n is surprised when m_c gathers everyone to say something important. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/have\/has} decided it's time to make something clear: {PRONOUN\/m_c\/subject} killed mur_c, but not for the reasons they might think. m_c knew mur_c was planning to do something that would've damaged c_n greatly, and {PRONOUN\/m_c\/subject} needed to act quickly before it was too late.",
+        "event_text": "c_n is surprised when m_c gathers everyone to say something important. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} decided it's time to make something clear: {PRONOUN/m_c/subject} killed mur_c, but not for the reasons they might think. m_c knew mur_c was planning to do something that would've damaged c_n greatly, and {PRONOUN/m_c/subject} needed to act quickly before it was too late.",
         "m_c": {
             "age": [
                 "any"
@@ -685,9 +665,9 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 20
+                "amount": -20
             },
             {
                 "cats_from": [
@@ -733,7 +713,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "r_c quietly takes m_c aside and tells {PRONOUN\/m_c\/object} {PRONOUN\/r_c\/subject} {VERB\/r_c\/know\/knows} what {PRONOUN\/m_c\/subject} did to mur_c. Before m_c has time to defend {PRONOUN\/m_c\/self}, r_c eerily smiles and assures {PRONOUN\/m_c\/object} {PRONOUN\/r_c\/subject} won't tell anyone, that {PRONOUN\/r_c\/subject} {VERB\/r_c\/agree\/agrees} with what m_c did. m_c squints {PRONOUN\/m_c\/poss} eyes, not sure if {PRONOUN\/m_c\/subject} should trust r_c's words.",
+        "event_text": "r_c quietly takes m_c aside and tells {PRONOUN/m_c/object} {PRONOUN/r_c/subject} {VERB/r_c/know/knows} what {PRONOUN/m_c/subject} did to mur_c. Before m_c has time to defend {PRONOUN/m_c/self}, r_c eerily smiles and assures {PRONOUN/m_c/object} {PRONOUN/r_c/subject} won't tell anyone, that {PRONOUN/r_c/subject} {VERB/r_c/agree/agrees} with what m_c did. m_c squints {PRONOUN/m_c/poss} eyes, not sure if {PRONOUN/m_c/subject} should trust r_c's words.",
         "m_c": {
             "age": [
                 "any"
@@ -773,22 +753,10 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             }
@@ -806,7 +774,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "One day, when m_c and r_c are alone together, r_c gathers the courage to finally tell m_c what {PRONOUN\/r_c\/subject}{VERB\/r_c\/'ve\/'s} been holding off for so long: {PRONOUN\/r_c\/subject} {VERB\/r_c\/know\/knows} m_c was the one who killed mur_c, and has been waiting for {PRONOUN\/m_c\/object} to do the right thing and confess, but if {PRONOUN\/m_c\/subject} {VERB\/m_c\/don't\/doesn't} do it, then r_c will have to be the one to tell the Clan. m_c is shocked, but also kind of admires r_c's guts to tell {PRONOUN\/m_c\/object} that when they're all alone together.",
+        "event_text": "One day, when m_c and r_c are alone together, r_c gathers the courage to finally tell m_c what {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been holding off for so long: {PRONOUN/r_c/subject} {VERB/r_c/know/knows} m_c was the one who killed mur_c, and has been waiting for {PRONOUN/m_c/object} to do the right thing and confess, but if {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} do it, then r_c will have to be the one to tell the Clan. m_c is shocked, but also kind of admires r_c's guts to tell {PRONOUN/m_c/object} that when they're all alone together.",
         "m_c": {
             "age": [
                 "any"
@@ -846,22 +814,10 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 30
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
                     "respect",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -30
             },
@@ -892,7 +848,7 @@
             "murder_reveal"
         ],
         "frequency": 4,
-        "event_text": "r_c sighs. {PRONOUN\/r_c\/subject\/CAP} {VERB\/r_c\/find\/finds} {PRONOUN\/r_c\/self} unintentionally walking into one of {PRONOUN\/r_c\/poss} Clanmates' dreams again. It could have been just another boring or nonsensical dream, but r_c is horrified to discover this dream is m_c's recollection of murdering mur_c. {PRONOUN\/r_c\/subject\/CAP} {VERB\/r_c\/wake\/wakes} up in shock, wondering what to do with this new knowledge.",
+        "event_text": "r_c sighs. {PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} {PRONOUN/r_c/self} unintentionally walking into one of {PRONOUN/r_c/poss} Clanmates' dreams again. It could have been just another boring or nonsensical dream, but r_c is horrified to discover this dream is m_c's recollection of murdering mur_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/wake/wakes} up in shock, wondering what to do with this new knowledge.",
         "m_c": {
             "age": [
                 "any"
@@ -926,13 +882,81 @@
                 ],
                 "mutual": false,
                 "values": [
+                    "trust",
+                    "respect",
+                    "comfort",
+                    "like"
+                ],
+                "amount": -30
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_medcat1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 4,
+        "event_text": "r_c announces that mur_c's death was no accident. m_c confesses there and then, detailing the act as if mur_c was a piece of fresh-kill.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "trait": [
+                "arrogant",
+                "ambitious",
+                "bloodthirsty",
+                "bold",
+                "childish",
+                "confident",
+                "cunning",
+                "daring",
+                "fierce",
+                "flamboyant",
+                "oblivious",
+                "rebellious",
+                "shameless",
+                "strange",
+                "troublesome",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
                     "dislike"
                 ],
                 "amount": 30
             },
             {
                 "cats_from": [
-                    "r_c"
+                    "clan"
                 ],
                 "cats_to": [
                     "m_c"
@@ -944,6 +968,230 @@
                     "comfort"
                 ],
                 "amount": -30
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_remorse1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "m_c admits quietly to r_c that {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} temper on that terrible, fateful day... r_c's death was at {PRONOUN/m_c/poss} paws.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "careful",
+                "childish",
+                "compassionate",
+                "competitive",
+                "confident",
+                "faithful",
+                "nervous"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_accidentmurderreveal_failuretoact",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "m_c unexpectedly breaks mid-conversation, confessing in a rush that {PRONOUN/m_c/subject} could have saved mur_c... but {PRONOUN/m_c/subject} panicked. In that way, m_c believes, {PRONOUN/m_c/subject} murdered mur_c.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "careful",
+                "childish",
+                "cold",
+                "compassionate",
+                "competitive",
+                "confident",
+                "faithful",
+                "insecure",
+                "lonesome",
+                "loving",
+                "loyal",
+                "nervous",
+                "oblivious",
+                "playful",
+                "rebellious",
+                "responsible",
+                "righteous",
+                "sincere",
+                "strange",
+                "strict",
+                "thoughtful",
+                "wise"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_remorse2",
+        "location": [
+            "plains",
+            "mountainous",
+            "beach",
+            "forest_camp4"
+        ],
+        "season": [
+            "newleaf",
+            "greenleaf",
+            "leaf-fall"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 2,
+        "event_text": "m_c stands in the water for hours on end, but the flow cannot wash away mur_c's blood, nor the guilt coiled heavy in {PRONOUN/m_c/poss} chest.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "careful",
+                "childish",
+                "compassionate",
+                "competitive",
+                "confident",
+                "faithful",
+                "nervous"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hiddenmurderreveal_simple1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 4,
+        "event_text": "Previously believed to be a natural course of events, mur_c's death is now known for what it was: a murder at the paws of m_c.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
             }
         ]
     },
@@ -971,6 +1219,129 @@
         }
     },
     {
+        "event_id": "gen_misc_hiddenmurderreveal_sc_forgives",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "r_c tells m_c that mur_c forgives {PRONOUN/m_c/object}. m_c's tearful admission of guilt finally makes the vision from StarClan make sense.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "age": ["any"],
+            "skill": ["STAR,1", "PROPHET,1"]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_murderreveal_ghostgossip1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "hidden_murder_reveal"
+        ],
+        "tags": [
+            "clan_wide"
+        ],
+        "frequency": 3,
+        "event_text": "r_c yowls in shock, stammering that mur_c just appeared to {PRONOUN/r_c/object} and said {PRONOUN/mur_c/subject} {VERB/mur_c/were/was} murdered by m_c!",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "age": ["any"],
+            "skill": ["GHOST,1"]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort"
+                ],
+                "amount": -20
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "some_clan"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": -5,
+                "log": [
+                    "m_c was discomforted by a reminder of r_c's unnatural powers."
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "multi_misc_any_collar_accessory1",
         "location": [
             "forest",
@@ -984,7 +1355,7 @@
             "accessory"
         ],
         "frequency": 1,
-        "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around {PRONOUN\/m_c\/poss} neck.",
+        "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around {PRONOUN/m_c/poss} neck.",
         "new_accessory": [
             "COLLAR"
         ],
@@ -1066,7 +1437,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c was trying to fluff up {PRONOUN\/m_c\/poss} nest when {PRONOUN\/m_c\/subject} saw a thorn inside of {PRONOUN\/m_c\/poss} bedding. Another prank, but it could not fool {PRONOUN\/m_c\/object}!",
+        "event_text": "m_c was trying to fluff up {PRONOUN/m_c/poss} nest when {PRONOUN/m_c/subject} saw a thorn inside of {PRONOUN/m_c/poss} bedding. Another prank, but it could not fool {PRONOUN/m_c/object}!",
         "m_c": {
             "age": [
                 "any"
@@ -1085,7 +1456,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c wasn't looking where {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} going and tripped over a small trunk, but came out of it with only {PRONOUN\/m_c\/poss} pride bruised.",
+        "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, but came out of it with only {PRONOUN/m_c/poss} pride bruised.",
         "m_c": {
             "age": [
                 "any"
@@ -1104,7 +1475,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c misstepped and slipped from a rock, but landed on {PRONOUN\/m_c\/poss} feet nimbly, {PRONOUN\/m_c\/poss} Clanmates commenting on the show of dexterity.",
+        "event_text": "m_c misstepped and slipped from a rock, but landed on {PRONOUN/m_c/poss} feet nimbly, {PRONOUN/m_c/poss} Clanmates commenting on the show of dexterity.",
         "m_c": {
             "age": [
                 "any"
@@ -1163,7 +1534,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c tries to convince r_c to run away with {PRONOUN\/m_c\/object}.",
+        "event_text": "m_c tries to convince r_c to run away with {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
                 "young adult",
@@ -1196,7 +1567,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c believes {PRONOUN\/m_c\/subject}'{VERB\/m_c\/re\/s} meant for something greater.",
+        "event_text": "m_c believes {PRONOUN/m_c/subject}'{VERB/m_c/re/s} meant for something greater.",
         "m_c": {
             "age": [
                 "any"
@@ -1215,7 +1586,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c believes {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} part of a new prophecy.",
+        "event_text": "m_c believes {PRONOUN/m_c/subject} {VERB/m_c/are/is} part of a new prophecy.",
         "m_c": {
             "age": [
                 "any"
@@ -1279,7 +1650,7 @@
                 "mutual": false,
                 "values": [
                     "respect",
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -1319,7 +1690,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c considers, as {PRONOUN\/m_c\/subject} {VERB\/m_c\/look\/looks} out over the Clan, if perhaps this isn't where {PRONOUN\/m_c\/subject} {VERB\/m_c\/belong\/belongs}.",
+        "event_text": "m_c considers, as {PRONOUN/m_c/subject} {VERB/m_c/look/looks} out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
         "m_c": {
             "age": [
                 "any"
@@ -1344,7 +1715,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "The world around {PRONOUN\/m_c\/object} feels smaller lately; m_c looks out at the horizon and yearns for something unnameable.",
+        "event_text": "The world around {PRONOUN/m_c/object} feels smaller lately; m_c looks out at the horizon and yearns for something unnameable.",
         "m_c": {
             "age": [
                 "any"
@@ -1367,7 +1738,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c's dreams are filled with flashing teeth and blood-scent. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/wake\/wakes} up screaming.",
+        "event_text": "m_c's dreams are filled with flashing teeth and blood-scent. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} up screaming.",
         "m_c": {
             "age": [
                 "any"
@@ -1389,7 +1760,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c thought {PRONOUN\/m_c\/subject} saw a familiar wispy form lingering at the edge of camp, but it disappeared before {PRONOUN\/m_c\/subject} could be sure.",
+        "event_text": "m_c thought {PRONOUN/m_c/subject} saw a familiar wispy form lingering at the edge of camp, but it disappeared before {PRONOUN/m_c/subject} could be sure.",
         "m_c": {
             "age": [
                 "any"
@@ -1467,24 +1838,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
-                    "trust"
+                    "trust",
+                    "like"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -1499,7 +1858,7 @@
             "leaf-bare"
         ],
         "frequency": 3,
-        "event_text": "m_c encourages r_c to play in the snow with {PRONOUN\/m_c\/object} during a patrol.",
+        "event_text": "m_c encourages r_c to play in the snow with {PRONOUN/m_c/object} during a patrol.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -1547,7 +1906,7 @@
             "accessory"
         ],
         "frequency": 2,
-        "event_text": "m_c always seems to have acc_plural stuck in {PRONOUN\/m_c\/poss} fur.",
+        "event_text": "m_c always seems to have acc_plural stuck in {PRONOUN/m_c/poss} fur.",
         "new_accessory": [
             "HERBS",
             "PETALS",
@@ -1617,24 +1976,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
-                    "trust"
+                    "trust",
+                    "like"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -1677,7 +2024,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN\/r_c\/poss} eyes.",
+        "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -1708,7 +2055,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "respect"
                 ],
@@ -1728,7 +2075,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN\/m_c\/object} on {PRONOUN\/m_c\/poss} pelt.",
+        "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -1759,7 +2106,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 5
@@ -1779,7 +2126,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c decides to pick something to adorn {PRONOUN\/m_c\/poss} pelt as celebration.",
+        "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -1806,7 +2153,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c gives m_c something to adorn {PRONOUN\/m_c\/poss} pelt as congratulations.",
+        "event_text": "r_c gives m_c something to adorn {PRONOUN/m_c/poss} pelt as congratulations.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -1837,23 +2184,10 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -1930,7 +2264,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -1950,7 +2284,7 @@
             "clan:kitten"
         ],
         "frequency": 2,
-        "event_text": "m_c listens bashfully as r_c tells the story of how {PRONOUN\/r_c\/subject} fell in love with {PRONOUN\/r_c\/poss} mate to a group of starry-eyed kits.",
+        "event_text": "m_c listens bashfully as r_c tells the story of how {PRONOUN/r_c/subject} fell in love with {PRONOUN/r_c/poss} mate to a group of starry-eyed kits.",
         "m_c": {
             "age": [
                 "any"
@@ -1980,8 +2314,8 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
-                    "platonic",
+                    "romance",
+                    "like",
                     "trust"
                 ],
                 "amount": 10
@@ -2000,7 +2334,7 @@
             "clan:elder"
         ],
         "frequency": 3,
-        "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/feel\/feels} lucky to have such a kind cat as {PRONOUN\/m_c\/poss} mate.",
+        "event_text": "m_c watches r_c give an elder the best piece of prey on the pile. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} lucky to have such a kind cat as {PRONOUN/m_c/poss} mate.",
         "m_c": {
             "age": [
                 "any"
@@ -2093,7 +2427,7 @@
             "any"
         ],
         "tags": [
-            "romantic"
+            "romance"
         ],
         "frequency": 3,
         "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
@@ -2121,7 +2455,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2138,7 +2472,7 @@
             "newleaf"
         ],
         "frequency": 4,
-        "event_text": "m_c sits still as r_c helps remove some leftover leaf-bare fluff from the back of {PRONOUN\/m_c\/poss} neck.",
+        "event_text": "m_c sits still as r_c helps remove some leftover leaf-bare fluff from the back of {PRONOUN/m_c/poss} neck.",
         "m_c": {
             "age": [
                 "young adult",
@@ -2168,7 +2502,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 10
@@ -2214,7 +2548,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2234,7 +2568,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c gives r_c a acc_singular to make up for a bad fight between them.",
+        "event_text": "r_c finds some acc_plural, and gives m_c one to make up for a bad fight between them.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -2268,7 +2602,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2288,7 +2622,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c gifts {PRONOUN\/r_c\/poss} beloved m_c with a acc_singular to wear in {PRONOUN\/m_c\/poss} pelt.",
+        "event_text": "r_c finds some acc_plural and gifts {PRONOUN/r_c/poss} beloved m_c to wear some in {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -2322,7 +2656,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2346,7 +2680,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c and r_c spend the evening chasing cicadas around camp. m_c keeps a trophy of {PRONOUN\/m_c\/poss} catch on {PRONOUN\/m_c\/poss} pelt.",
+        "event_text": "m_c and r_c spend the evening chasing cicadas around camp. m_c keeps a trophy of {PRONOUN/m_c/poss} catch on {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "CICADA WINGS",
             "BLACK CICADA"
@@ -2380,7 +2714,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2401,7 +2735,7 @@
             "accessory"
         ],
         "frequency": 2,
-        "event_text": "r_c gives m_c the prettiest fallen leaf {PRONOUN\/r_c\/subject} can find. m_c wears it with pride.",
+        "event_text": "r_c gives m_c the prettiest fallen leaf {PRONOUN/r_c/subject} can find. m_c wears it with pride.",
         "new_accessory": [
             "MAPLE LEAF"
         ],
@@ -2434,7 +2768,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -2535,7 +2869,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 20
             }
@@ -2575,7 +2909,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2616,7 +2950,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2659,7 +2993,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -2699,7 +3033,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2738,7 +3072,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2781,7 +3115,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "comfort"
                 ],
@@ -2807,7 +3141,7 @@
                 "kitten"
             ],
             "relationship_status": [
-                "child\/parent"
+                "child/parent"
             ]
         },
         "r_c": {
@@ -2875,7 +3209,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c snuck out of camp, and brought back with {PRONOUN\/m_c\/object} some acc_singular from when {PRONOUN\/m_c\/poss} fur got snagged in a bush.",
+        "event_text": "m_c snuck out of camp, and brought back with {PRONOUN/m_c/object} some acc_singular from when {PRONOUN/m_c/poss} fur got snagged in a bush.",
         "new_accessory": [
             "HOLLY",
             "JUNIPER",
@@ -2900,7 +3234,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c caught an insect while sneaking outside of the camp and proudly wears its wings as a trophy of {PRONOUN\/m_c\/poss} journey.",
+        "event_text": "m_c caught an insect while sneaking outside of the camp and proudly wears its wings as a trophy of {PRONOUN/m_c/poss} journey.",
         "new_accessory": [
             "MOTH WINGS",
             "ROSY MOTH WINGS",
@@ -2931,7 +3265,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "As the wind blows many petals in the camp, m_c picks a few to decorate {PRONOUN\/m_c\/self}.",
+        "event_text": "As the wind blows many petals in the camp, m_c picks a few to decorate {PRONOUN/m_c/self}.",
         "new_accessory": [
             "PETALS"
         ],
@@ -2957,7 +3291,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "As the wind brings many fallen leaves in the camp, m_c picks a acc_singular to decorate {PRONOUN\/m_c\/poss} pelt.",
+        "event_text": "As the wind brings many fallen leaves in the camp, m_c picks a acc_singular to decorate {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "OAK LEAVES",
             "MAPLE LEAF"
@@ -2980,7 +3314,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c is just too cute - r_c gives {PRONOUN\/m_c\/object} a pretty acc_singular as a gift.",
+        "event_text": "m_c is just too cute - r_c gives {PRONOUN/m_c/object} a pretty acc_singular as a gift.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -3009,7 +3343,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust",
                     "respect"
@@ -3030,7 +3364,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "r_c gives m_c a pretty acc_singular {PRONOUN\/r_c\/subject} found while playing.",
+        "event_text": "r_c gives m_c a pretty acc_singular {PRONOUN/r_c/subject} found while playing.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -3055,24 +3389,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -10
             }
         ]
     },
@@ -3088,7 +3409,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c starts bringing a pretty acc_singular everywhere {PRONOUN\/m_c\/subject} {VERB\/m_c\/go\/goes}, and r_c loudly complains that {PRONOUN\/r_c\/subject} {VERB\/r_c\/want\/wants} one, too.",
+        "event_text": "m_c starts bringing a pretty acc_singular everywhere {PRONOUN/m_c/subject} {VERB/m_c/go/goes}, and r_c loudly complains that {PRONOUN/r_c/subject} {VERB/r_c/want/wants} one, too.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -3118,24 +3439,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike",
-                    "jealousy"
+                    "like",
+                    "comfort",
+                    "respect"
                 ],
-                "amount": 20
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "platonic",
-                    "comfort"
-                ],
-                "amount": -5
+                "amount": -15
             }
         ]
     },
@@ -3165,7 +3473,7 @@
                 "kitten"
             ],
             "relationship_status": [
-                "child\/parent"
+                "child/parent"
             ]
         },
         "r_c": {
@@ -3189,7 +3497,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c finds some acc_singular to wear in {PRONOUN\/m_c\/poss} fur to impress r_c!",
+        "event_text": "m_c finds some acc_singular to wear in {PRONOUN/m_c/poss} fur to impress r_c!",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -3199,7 +3507,7 @@
                 "kitten"
             ],
             "relationship_status": [
-                "child\/parent"
+                "child/parent"
             ],
             "trait": [
                 "attention-seeker",
@@ -3269,7 +3577,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "respect",
                     "trust"
@@ -3309,7 +3617,7 @@
                 "mutual": true,
                 "values": [
                     "trust",
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             }
@@ -3345,7 +3653,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -3383,7 +3691,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -3427,7 +3735,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3468,7 +3776,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3511,7 +3819,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3550,7 +3858,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3589,7 +3897,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 15
@@ -3614,10 +3922,10 @@
             "accessory"
         ],
         "tags": [
-            "romantic"
+            "romance"
         ],
         "frequency": 4,
-        "event_text": "m_c and r_c were chatting about their day and the chores when r_c mentioned {PRONOUN\/r_c\/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN\/m_c\/poss} pelt, hoping that r_c notices {PRONOUN\/m_c\/object}.",
+        "event_text": "m_c and r_c were chatting about their day and the chores when r_c mentioned {PRONOUN/r_c/subject} liked the smell of wild fruit. m_c decides to wear acc_plural on {PRONOUN/m_c/poss} pelt, hoping that r_c notices {PRONOUN/m_c/object}.",
         "new_accessory": [
             "BLUE BERRIES",
             "HOLLY",
@@ -3649,7 +3957,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust",
                     "respect"
@@ -3674,7 +3982,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c hears r_c complaining about the dry rye stalks underneath {PRONOUN\/r_c\/poss} paws when {PRONOUN\/r_c\/subject} {VERB\/r_c\/finish\/finishes} cleaning the elders' den for the umpteenth time. The next day, m_c adorns {PRONOUN\/m_c\/poss} pelt with acc_plural.",
+        "event_text": "m_c hears r_c complaining about the dry rye stalks underneath {PRONOUN/r_c/poss} paws when {PRONOUN/r_c/subject} {VERB/r_c/finish/finishes} cleaning the elders' den for the umpteenth time. The next day, m_c adorns {PRONOUN/m_c/poss} pelt with acc_plural.",
         "new_accessory": [
             "RYE STALK"
         ],
@@ -3703,7 +4011,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c gets dared to hunt outside in the snow alone, and returns with acc_singular in {PRONOUN\/m_c\/poss} pelt.",
+        "event_text": "m_c gets dared to hunt outside in the snow alone, and returns with acc_singular in {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -3726,7 +4034,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c is nearly blindsided by r_c as {PRONOUN\/m_c\/subject} {VERB\/m_c\/walk\/walks} into camp after a long training day, listening to the kit squeak about a type of feather. r_c leads m_c to the nursery, where {PRONOUN\/r_c\/subject} carefully {VERB\/r_c\/put\/puts} acc_plural in m_c's fur.",
+        "event_text": "m_c is nearly blindsided by r_c as {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} into camp after a long training day, listening to the kit squeak about a type of feather. r_c leads m_c to the nursery, where {PRONOUN/r_c/subject} carefully {VERB/r_c/put/puts} acc_plural in m_c's fur.",
         "new_accessory": [
             "BLUE FEATHERS",
             "GULL FEATHERS",
@@ -3754,7 +4062,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 20
@@ -3773,7 +4081,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c is struggling to cope with the violence and chaos of war surrounding {PRONOUN\/m_c\/object}, finding it difficult to wake up in the morning due to the stress and strain of constant battle training.",
+        "event_text": "m_c is struggling to cope with the violence and chaos of war surrounding {PRONOUN/m_c/object}, finding it difficult to wake up in the morning due to the stress and strain of constant battle training.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -3801,7 +4109,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c feels like {PRONOUN\/m_c\/subject} might be growing up too fast in the midst of war.",
+        "event_text": "m_c feels like {PRONOUN/m_c/subject} might be growing up too fast in the midst of war.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -3854,7 +4162,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             },
@@ -3919,7 +4227,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             },
@@ -3985,7 +4293,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             },
@@ -4051,9 +4359,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 10
+                "amount": -10
             }
         ],
         "outsider": {
@@ -4148,7 +4456,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c found the scent of a stranger near the border, though the cat {PRONOUN\/nc:0\/self} is long gone. Smells like Twolegs.",
+        "event_text": "m_c found the scent of a stranger near the border, though the cat {PRONOUN/n_c:0/self} is long gone. Smells like Twolegs.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -4273,7 +4581,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "Someone has been hunting in c_n territory, a stranger without a Clan scent. c_n doesn't know their face, but they memorise their smell.",
+        "event_text": "Someone has been hunting in c_n territory, a stranger without a Clan scent. c_n doesn't know {PRONOUN/n_c:0/poss} face, but they memorize {PRONOUN/n_c:0/poss} smell.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -4471,7 +4779,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c was seen racing along the border with {PRONOUN\/m_c\/poss} rival from o_c_n.",
+        "event_text": "m_c was seen racing along the border with {PRONOUN/m_c/poss} rival from o_c_n.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -4558,7 +4866,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c sees that o_c_n has been cleaning the border trackways, and adds {PRONOUN\/m_c\/poss} own paws the the effort.",
+        "event_text": "m_c sees that o_c_n has been cleaning the border trackways, and adds {PRONOUN/m_c/poss} own paws the the effort.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -4735,9 +5043,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 15
+                "amount": -15
             }
         ],
         "outsider": {
@@ -4785,7 +5093,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             },
@@ -4939,7 +5247,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 10
             },
@@ -5001,7 +5309,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 15
             },
@@ -5080,9 +5388,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 10
+                "amount": -10
             }
         ]
     },
@@ -5205,7 +5513,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c pulls r_c to the side, quietly asking {PRONOUN\/r_c\/object} about {PRONOUN\/r_c\/poss} crush on a fellow Clanmate.",
+        "event_text": "m_c pulls r_c to the side, quietly asking {PRONOUN/r_c/object} about {PRONOUN/r_c/poss} crush on a fellow Clanmate.",
         "m_c": {
             "status": [
                 "mediator",
@@ -5237,22 +5545,10 @@
                 "mutual": false,
                 "values": [
                     "comfort",
-                    "trust"
+                    "trust",
+                    "like"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -5265,7 +5561,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c spots r_c looking a little bit lonely, and invites {PRONOUN\/r_c\/object} to watch as {PRONOUN\/m_c\/subject} {VERB\/m_c\/perform\/performs} {PRONOUN\/m_c\/poss} duties.",
+        "event_text": "m_c spots r_c looking a little bit lonely, and invites {PRONOUN/r_c/object} to watch as {PRONOUN/m_c/subject} {VERB/m_c/perform/performs} {PRONOUN/m_c/poss} duties.",
         "m_c": {
             "status": [
                 "mediator",
@@ -5287,23 +5583,10 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "trust"
                 ],
                 "amount": 10
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -5326,7 +5609,7 @@
                 "mediator apprentice"
             ],
             "relationship_status": [
-                "dislike_20"
+                "dislikes"
             ],
             "trait": [
                 "cunning"
@@ -5364,21 +5647,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 10
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
                     "trust",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -10
             }
@@ -5607,24 +5878,11 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
                 "amount": 5
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
             }
         ]
     },
@@ -5637,7 +5895,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c speaks to r_c about an omen {PRONOUN\/m_c\/subject} saw while on patrol recently.",
+        "event_text": "m_c speaks to r_c about an omen {PRONOUN/m_c/subject} saw while on patrol recently.",
         "m_c": {
             "age": [
                 "any"
@@ -5691,7 +5949,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c walks into the dreams of {PRONOUN\/m_c\/poss} Clanmates while everyone sleeps.",
+        "event_text": "m_c walks into the dreams of {PRONOUN/m_c/poss} Clanmates while everyone sleeps.",
         "m_c": {
             "status": [
                 "medicine cat"
@@ -5710,7 +5968,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c tosses in {PRONOUN\/m_c\/poss} sleep as {PRONOUN\/m_c\/poss} dreamself pads through the thoughts of {PRONOUN\/m_c\/poss} Clanmates, picking up snippets of dream_list\/m_c. {PRONOUN\/m_c\/subject\/CAP} slowly {VERB\/m_c\/blink\/blinks} awake, wondering whose dreams {PRONOUN\/m_c\/subject} walked in.",
+        "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dreamself pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list/m_c. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
         "m_c": {
             "status": [
                 "medicine cat apprentice",
@@ -5730,7 +5988,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c correctly warns the leader of an ambush, thanks to {PRONOUN\/m_c\/poss} clairvoyant nature.",
+        "event_text": "m_c correctly warns the leader of an ambush, thanks to {PRONOUN/m_c/poss} clairvoyant nature.",
         "m_c": {
             "status": [
                 "medicine cat"
@@ -5749,7 +6007,7 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "m_c spends {PRONOUN\/m_c\/poss} day communing with StarClan, attempting to figure out a recent prophecy.",
+        "event_text": "m_c spends {PRONOUN/m_c/poss} day communing with StarClan, attempting to figure out a recent prophecy.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -5769,7 +6027,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c has been worried that c_n will lose the knowledge r_c has gained through {PRONOUN\/r_c\/poss} long life, but by sitting with r_c and discussing {PRONOUN\/r_c\/poss} experiences, m_c will ensure the lessons learned in the past are never forgotten.",
+        "event_text": "m_c has been worried that c_n will lose the knowledge r_c has gained through {PRONOUN/r_c/poss} long life, but by sitting with r_c and discussing {PRONOUN/r_c/poss} experiences, m_c will ensure the lessons learned in the past are never forgotten.",
         "m_c": {
             "status": [
                 "medicine cat"
@@ -5842,7 +6100,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -5880,7 +6138,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c watches every little thing around {PRONOUN\/m_c\/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
+        "event_text": "m_c watches every little thing around {PRONOUN/m_c/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
         "m_c": {
             "status": [
                 "medicine cat apprentice",
@@ -5926,7 +6184,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN\/m_c\/self} to leave {PRONOUN\/m_c\/poss} patients' side.",
+        "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -5979,7 +6237,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c is getting increasingly annoyed with r_c because {PRONOUN\/r_c\/subject} {VERB\/r_c\/keep\/keeps} bothering {PRONOUN\/m_c\/object} about the most trivial of wounds and aches.",
+        "event_text": "m_c is getting increasingly annoyed with r_c because {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} bothering {PRONOUN/m_c/object} about the most trivial of wounds and aches.",
         "m_c": {
             "age": [
                 "any"
@@ -6006,9 +6264,9 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 10
+                "amount": -10
             }
         ]
     },
@@ -6040,7 +6298,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c awakens with multiple objects stacked on {PRONOUN\/m_c\/object}, and the sound of giggling cats in the distance.",
+        "event_text": "m_c awakens with multiple objects stacked on {PRONOUN/m_c/object}, and the sound of giggling cats in the distance.",
         "m_c": {
             "status": [
                 "elder"
@@ -6156,7 +6414,7 @@
             "clan:apps"
         ],
         "frequency": 4,
-        "event_text": "m_c calls the younger cats to {PRONOUN\/m_c\/poss} den to tell stories of the Clan's past.",
+        "event_text": "m_c calls the younger cats to {PRONOUN/m_c/poss} den to tell stories of the Clan's past.",
         "m_c": {
             "age": [
                 "any"
@@ -6181,7 +6439,7 @@
             "clan:kitten"
         ],
         "frequency": 4,
-        "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN\/m_c\/subject} {VERB\/m_c\/start\/starts} telling the kits a thrilling story of times long past.",
+        "event_text": "m_c calls out to some eager kits, and after they have situated themselves in front of m_c, {PRONOUN/m_c/subject} {VERB/m_c/start/starts} telling the kits a thrilling story of times long past.",
         "m_c": {
             "age": [
                 "senior",
@@ -6294,7 +6552,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "As the deputy, m_c is doing {PRONOUN\/m_c\/poss} best to prepare for leadership in the case the worst happens.",
+        "event_text": "As the deputy, m_c is doing {PRONOUN/m_c/poss} best to prepare for leadership in the case the worst happens.",
         "m_c": {
             "status": [
                 "deputy"
@@ -6316,7 +6574,7 @@
             "low_lives"
         ],
         "frequency": 1,
-        "event_text": "m_c is struggling to accept the fact that {PRONOUN\/m_c\/subject} may have to step up as leader if r_c loses {PRONOUN\/r_c\/poss} last life.",
+        "event_text": "m_c is struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life.",
         "m_c": {
             "age": [
                 "any"
@@ -6354,7 +6612,7 @@
             "low_lives"
         ],
         "frequency": 2,
-        "event_text": "m_c is struggling to accept the fact that {PRONOUN\/m_c\/subject} may have to step up as leader if r_c loses {PRONOUN\/r_c\/poss} last life. How could {PRONOUN\/m_c\/subject} {VERB\/m_c\/go\/goes} on without {PRONOUN\/m_c\/poss} beloved leader? How difficult will it to be to lead in {PRONOUN\/r_c\/poss} stead?",
+        "event_text": "m_c is struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life. How could {PRONOUN/m_c/subject} {VERB/m_c/go/goes} on without {PRONOUN/m_c/poss} beloved leader? How difficult will it to be to lead in {PRONOUN/r_c/poss} stead?",
         "m_c": {
             "status": [
                 "deputy"
@@ -6380,7 +6638,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "respect",
                     "trust"
                 ],
@@ -6471,7 +6729,7 @@
             "low_lives"
         ],
         "frequency": 2,
-        "event_text": "m_c confesses {PRONOUN\/m_c\/subject} {VERB\/m_c\/don't\/doesn't} have many lives left.",
+        "event_text": "m_c confesses {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have many lives left.",
         "m_c": {
             "status": [
                 "leader"
@@ -6487,7 +6745,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c feels as though the responsibility of leadership is crushing {PRONOUN\/m_c\/object}.",
+        "event_text": "m_c feels as though the responsibility of leadership is crushing {PRONOUN/m_c/object}.",
         "m_c": {
             "status": [
                 "leader"
@@ -6522,7 +6780,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c feels burdened with the weight of {PRONOUN\/m_c\/poss} decisions, knowing that every choice {PRONOUN\/m_c\/subject} {VERB\/m_c\/make\/makes} could mean the difference between victory and defeat.",
+        "event_text": "m_c feels burdened with the weight of {PRONOUN/m_c/poss} decisions, knowing that every choice {PRONOUN/m_c/subject} {VERB/m_c/make/makes} could mean the difference between victory and defeat.",
         "m_c": {
             "status": [
                 "leader"
@@ -6541,7 +6799,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c's relationships with {PRONOUN\/m_c\/poss} Clanmates are strained, with some questioning {PRONOUN\/m_c\/poss} decisions and others relying on {PRONOUN\/m_c\/object} more heavily than ever.",
+        "event_text": "m_c's relationships with {PRONOUN/m_c/poss} Clanmates are strained, with some questioning {PRONOUN/m_c/poss} decisions and others relying on {PRONOUN/m_c/object} more heavily than ever.",
         "m_c": {
             "status": [
                 "leader"
@@ -6560,7 +6818,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is forced to be a symbol of strength and unity for {PRONOUN\/m_c\/poss} Clan, even in the face of {PRONOUN\/m_c\/poss} own doubts and fears.",
+        "event_text": "m_c is forced to be a symbol of strength and unity for {PRONOUN/m_c/poss} Clan, even in the face of {PRONOUN/m_c/poss} own doubts and fears.",
         "m_c": {
             "status": [
                 "leader"
@@ -7089,7 +7347,7 @@
         ],
         "tags": [],
         "frequency": 4,
-        "event_text": "While at the Gathering, m_c speaks to the other medicine cats and expresses worry over {PRONOUN\/m_c\/poss} herb stores. The medicine cats offer to bring some extra herbs to c_n later, to help bolster {PRONOUN\/m_c\/poss} supply.",
+        "event_text": "While at the Gathering, m_c speaks to the other medicine cats and expresses worry over {PRONOUN/m_c/poss} herb stores. The medicine cats offer to bring some extra herbs to c_n later, to help bolster {PRONOUN/m_c/poss} supply.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -7121,7 +7379,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7155,7 +7413,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7189,7 +7447,7 @@
         "season": [
             "any"
         ],
-        "subtype": [
+        "sub_type": [
             "war"
         ],
         "tags": [
@@ -7470,7 +7728,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c is so proud of how far {PRONOUN\/r_c\/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations.",
+        "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -7480,7 +7738,7 @@
                 "any"
             ],
             "relationship_status": [
-                "child\/parent"
+                "child/parent"
             ]
         },
         "r_c": {
@@ -7498,7 +7756,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7519,7 +7777,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c is so proud of how far {PRONOUN\/r_c\/poss} kit has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations for becoming an apprentice.",
+        "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} kit has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations for becoming an apprentice.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -7529,7 +7787,7 @@
                 "apprentice"
             ],
             "relationship_status": [
-                "child\/parent"
+                "child/parent"
             ]
         },
         "r_c": {
@@ -7547,7 +7805,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7568,7 +7826,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c is so proud of how far {PRONOUN\/r_c\/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations for becoming a warrior. r_c knew that m_c would do great things for c_n.",
+        "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations for becoming a warrior. r_c knew that m_c would do great things for c_n.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -7578,7 +7836,7 @@
                 "warrior"
             ],
             "relationship_status": [
-                "child\/parent"
+                "child/parent"
             ]
         },
         "r_c": {
@@ -7596,7 +7854,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7617,7 +7875,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c is so proud of how far {PRONOUN\/r_c\/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations. m_c takes it, but as r_c turns away, a complicated expression crosses {PRONOUN\/m_c\/poss} face. Perhaps {PRONOUN\/m_c\/subject} had the wrong idea about r_c.",
+        "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations. m_c takes it, but as r_c turns away, a complicated expression crosses {PRONOUN/m_c/poss} face. Perhaps {PRONOUN/m_c/subject} had the wrong idea about r_c.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -7627,8 +7885,8 @@
                 "any"
             ],
             "relationship_status": [
-                "child\/parent",
-                "dislike_20"
+                "child/parent",
+                "dislikes"
             ]
         },
         "r_c": {
@@ -7646,7 +7904,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7659,11 +7917,11 @@
                 "cats_from": [
                     "r_c"
                 ],
-                "mutual": false,
+                "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": -10
+                "amount": 10
             }
         ]
     },
@@ -7680,7 +7938,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c hands over acc_singular to m_c, telling m_c that {PRONOUN\/m_c\/subject} better not forget about {PRONOUN\/r_c\/object} now that m_c is an apprentice.",
+        "event_text": "r_c hands over acc_singular to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that m_c is an apprentice.",
         "new_accessory": [
             "FORGET ME NOTS"
         ],
@@ -7707,7 +7965,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 10
@@ -7727,7 +7985,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c hands over acc_singular to m_c, telling m_c that {PRONOUN\/m_c\/subject} better not forget about {PRONOUN\/r_c\/object} now that m_c is a warrior.",
+        "event_text": "r_c hands over acc_singular to m_c, telling m_c that {PRONOUN/m_c/subject} better not forget about {PRONOUN/r_c/object} now that m_c is a warrior.",
         "new_accessory": [
             "FORGET ME NOTS"
         ],
@@ -7754,7 +8012,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort"
                 ],
                 "amount": 10
@@ -7774,7 +8032,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c is feeling a bit overwhelmed, now that {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} an apprentice. Luckily, r_c is there with a gift of acc_plural and some comforting words to cheer m_c up.",
+        "event_text": "m_c is feeling a bit overwhelmed, now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} an apprentice. Luckily, r_c is there with a gift of acc_plural and some comforting words to cheer m_c up.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -7806,7 +8064,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7821,7 +8079,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7842,7 +8100,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c feels so lucky to have {PRONOUN\/r_c\/poss} own sibling become a medicine cat apprentice. Knowing how time consuming it is to gather herbs, r_c spends a long time gathering up acc_plural to help out m_c. While m_c appreciates the efforts, none of these are particularly useful. Instead m_c uses the acc_plural to decorate {PRONOUN\/m_c\/poss} pelt.",
+        "event_text": "r_c feels so lucky to have {PRONOUN/r_c/poss} own sibling become a medicine cat apprentice. Knowing how time consuming it is to gather herbs, r_c spends a long time gathering up acc_plural to help out m_c. While m_c appreciates the efforts, none of these are particularly useful. Instead m_c uses the acc_plural to decorate {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "HERBS",
             "DRY HERBS",
@@ -7876,7 +8134,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7910,7 +8168,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c can't help but feel hurt when {PRONOUN\/m_c\/poss} sibling isn't there to congratulate {PRONOUN\/m_c\/object} for becoming a warrior. However, when {PRONOUN\/m_c\/subject} later {VERB\/m_c\/go\/goes} to {PRONOUN\/m_c\/poss} new nest {PRONOUN\/m_c\/subject} {VERB\/m_c\/find\/finds} r_c there waiting for {PRONOUN\/m_c\/object}, with a gift of acc_plural. Together the siblings work on making m_c's new nest feel more comfortable.",
+        "event_text": "m_c can't help but feel hurt when {PRONOUN/m_c/poss} sibling isn't there to congratulate {PRONOUN/m_c/object} for becoming a warrior. However, when {PRONOUN/m_c/subject} later {VERB/m_c/go/goes} to {PRONOUN/m_c/poss} new nest {PRONOUN/m_c/subject} {VERB/m_c/find/finds} r_c there waiting for {PRONOUN/m_c/object}, with a gift of acc_plural. Together the siblings work on making m_c's new nest feel more comfortable.",
         "new_accessory": [
             "WILD"
         ],
@@ -7920,7 +8178,7 @@
             ],
             "relationship_status": [
                 "siblings",
-                "platonic_50"
+                "cherishes"
             ]
         },
         "r_c": {
@@ -7928,7 +8186,7 @@
                 "warrior"
             ],
             "relationship_status": [
-                "platonic_50"
+                "cherishes"
             ]
         },
         "relationships": [
@@ -7941,7 +8199,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -7962,7 +8220,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c has been so excited for {PRONOUN\/m_c\/poss} first lesson with r_c. However, instead of something like hunting or moss gathering, r_c takes {PRONOUN\/m_c\/object} on a tour of the territory. At the end of the lesson, r_c gives m_c acc_plural, saying {PRONOUN\/r_c\/subject} {VERB\/r_c\/are\/is} glad to be m_c's mentor.",
+        "event_text": "m_c has been so excited for {PRONOUN/m_c/poss} first lesson with r_c. However, instead of something like hunting or moss gathering, r_c takes {PRONOUN/m_c/object} on a tour of the territory. At the end of the lesson, r_c gives m_c acc_plural, saying {PRONOUN/r_c/subject} {VERB/r_c/are/is} glad to be m_c's mentor.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -7974,7 +8232,7 @@
                 "mediator apprentice"
             ],
             "relationship_status": [
-                "app\/mentor"
+                "app/mentor"
             ]
         },
         "r_c": {
@@ -7999,7 +8257,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -8014,7 +8272,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -8033,7 +8291,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "As a new mentor, r_c wants to make a good initial impression on {PRONOUN\/r_c\/poss} apprentice, and after some careful consideration {PRONOUN\/r_c\/subject} {VERB\/r_c\/decide\/decides} the best way is a gift. Taking m_c to the side, r_c gives {PRONOUN\/m_c\/object} acc_plural, telling {PRONOUN\/m_c\/object} with a soft voice that if m_c has any sort of issue then {PRONOUN\/m_c\/subject} can come to {PRONOUN\/r_c\/object} for help.",
+        "event_text": "As a new mentor, r_c wants to make a good initial impression on {PRONOUN/r_c/poss} apprentice, and after some careful consideration {PRONOUN/r_c/subject} {VERB/r_c/decide/decides} the best way is a gift. Taking m_c to the side, r_c gives {PRONOUN/m_c/object} acc_plural, telling {PRONOUN/m_c/object} with a soft voice that if m_c has any sort of issue then {PRONOUN/m_c/subject} can come to {PRONOUN/r_c/object} for help.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -8045,7 +8303,7 @@
                 "mediator apprentice"
             ],
             "relationship_status": [
-                "app\/mentor"
+                "app/mentor"
             ]
         },
         "r_c": {
@@ -8066,7 +8324,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic",
+                    "like",
                     "comfort",
                     "trust"
                 ],
@@ -8081,7 +8339,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -8100,7 +8358,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c yowls in shock, claws unsheathing from an unexpected weight pinning {PRONOUN\/m_c\/object}. When {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} able to get up, m_c's surprised and a bit upset to see that it had been {PRONOUN\/m_c\/poss} mentor who attacked {PRONOUN\/m_c\/object}. r_c doesn't seem to notice m_c's discomfort as {PRONOUN\/r_c\/subject} excitedly {VERB\/r_c\/tell\/tells} m_c about the acc_plural that now adorns {PRONOUN\/m_c\/poss} pelt.",
+        "event_text": "m_c yowls in shock, claws unsheathing from an unexpected weight pinning {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to get up, m_c's surprised and a bit upset to see that it had been {PRONOUN/m_c/poss} mentor who attacked {PRONOUN/m_c/object}. r_c doesn't seem to notice m_c's discomfort as {PRONOUN/r_c/subject} excitedly {VERB/r_c/tell/tells} m_c about the acc_plural that now adorns {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -8112,7 +8370,7 @@
                 "mediator apprentice"
             ],
             "relationship_status": [
-                "app\/mentor"
+                "app/mentor"
             ]
         },
         "r_c": {
@@ -8140,21 +8398,9 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "dislike"
-                ],
-                "amount": 5
-            },
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
                     "trust",
-                    "comfort"
+                    "comfort",
+                    "like"
                 ],
                 "amount": -5
             },
@@ -8167,7 +8413,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "platonic"
+                    "like"
                 ],
                 "amount": 5
             }
@@ -8242,14 +8488,14 @@
             "newleaf",
             "greenleaf"
         ],
-        "subtype": [
+        "sub_type": [
             "accessory"
         ],
         "tags": [
-            "romantic"
+            "romance"
         ],
         "frequency": 2,
-        "event_text": "Flowers can be so pretty, even before they bloom, just like m_c. r_c blushes as {PRONOUN\/r_c\/subject} {VERB\/r_c\/see\/sees} m_c wear the acc_singular {PRONOUN\/r_c\/subject} got {PRONOUN\/m_c\/object}.",
+        "event_text": "Flowers can be so pretty, even before they bloom, just like m_c. r_c blushes as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} m_c wear the acc_singular {PRONOUN/r_c/subject} got {PRONOUN/m_c/object}.",
         "new_accessory": [
             "BULB WHITE",
             "BULB YELLOW",
@@ -8262,6 +8508,9 @@
                 "young adult",
                 "adult",
                 "senior adult"
+            ],
+            "relationship_status": [
+                "mates"
             ]
         },
         "r_c": {
@@ -8281,7 +8530,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "romantic",
+                    "romance",
                     "comfort",
                     "trust"
                 ],
@@ -8298,7 +8547,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c thinks StarClan is trying to warn {PRONOUN\/m_c\/object} about r_c.",
+        "event_text": "m_c thinks StarClan is trying to warn {PRONOUN/m_c/object} about r_c.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -8330,9 +8579,9 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "dislike"
+                    "like"
                 ],
-                "amount": 20
+                "amount": -20
             }
         ]
     },
@@ -8348,7 +8597,7 @@
             "accessory"
         ],
         "frequency": 2,
-        "event_text": "A stray acc_singular in its last moments of life leads m_c to a new herb gathering spot {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has} never found before. It gives a final flutter before it gently descends to the ground. Is it a sign from StarClan, or a coincidence? m_c doesn't know, but {PRONOUN\/m_c\/subject} {VERB\/m_c\/decide\/decides} to keep it with {PRONOUN\/m_c\/object} in its honor.",
+        "event_text": "A stray acc_singular in its last moments of life leads m_c to a new herb gathering spot {PRONOUN/m_c/subject} {VERB/m_c/have/has} never found before. It gives a final flutter before it gently descends to the ground. Is it a sign from StarClan, or a coincidence? m_c doesn't know, but {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to keep it with {PRONOUN/m_c/object} in its honor.",
         "new_accessory": [
             "BLACK CICADA",
             "CICADA WINGS",
@@ -8796,8 +9045,8 @@
         "sub_type": [
             "transition"
         ],
-        "frequency": 2,
-        "event_text": "m_c has realized that she-cat doesn't describe how {PRONOUN\/m_c\/subject} {VERB\/m_c\/feel\/feels} anymore.",
+        "frequency": 4,
+        "event_text": "m_c has realized that she-cat doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore.",
         "m_c": {
             "gender": [
                 "female"
@@ -8819,8 +9068,8 @@
         "sub_type": [
             "transition"
         ],
-        "frequency": 2,
-        "event_text": "m_c has realized that tom doesn't describe how {PRONOUN\/m_c\/subject} {VERB\/m_c\/feel\/feels} anymore.",
+        "frequency": 4,
+        "event_text": "m_c has realized that tom doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore.",
         "m_c": {
             "gender": [
                 "male"
@@ -8843,7 +9092,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "A o_c_n warrior is caught in the territory, m_c scruffed in their jaws. The warrior found the kit alone on the border and just wanted to bring {PRONOUN\/m_c\/object} home. No matter what their leader might say about c_n, {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} just an innocent kit. The warrior is escorted off the territory as m_c settles back into camp, only slightly dinged up from {PRONOUN\/m_c\/poss} adventure.",
+        "event_text": "A o_c_n warrior is caught in the territory, m_c scruffed in their jaws. The warrior found the kit alone on the border and just wanted to bring {PRONOUN/m_c/object} home. No matter what their leader might say about c_n, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just an innocent kit. The warrior is escorted off the territory as m_c settles back into camp, only slightly dinged up from {PRONOUN/m_c/poss} adventure.",
         "m_c": {
             "status": [
                 "kitten"
@@ -8878,7 +9127,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "Whilst out collecting herbs, m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Their movements are slow and uncoordinated - without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN\/m_c\/subject} can't. It's just a few pieces of cobweb and a few moments of {PRONOUN\/m_c\/poss} time... nobody has to know.",
+        "event_text": "Whilst out collecting herbs, m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Their movements are slow and uncoordinated - without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN/m_c/subject} can't. It's just a few pieces of cobweb and a few moments of {PRONOUN/m_c/poss} time... nobody has to know.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -8912,7 +9161,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "Whilst out collecting herbs, m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Their movements are slow and uncoordinated - without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN\/m_c\/subject} can't. A few berries placed into their jaws with some soothing words... and that's one less o_c_n cat to deal with.",
+        "event_text": "Whilst out collecting herbs, m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Their movements are slow and uncoordinated - without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN/m_c/subject} can't. A few berries placed into their jaws with some soothing words... and that's one less o_c_n cat to deal with.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -9015,7 +9264,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is discovered gambolling along the border with an apprentice from o_c_n! Despite the reminder that the two Clans are far from allies, m_c loudly declares that {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} not giving up {PRONOUN\/m_c\/poss} friend over some dumb war.",
+        "event_text": "m_c is discovered gambolling along the border with an apprentice from o_c_n! Despite the reminder that the two Clans are far from allies, m_c loudly declares that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not giving up {PRONOUN/m_c/poss} friend over some dumb war.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -9047,11 +9296,10 @@
             ],
             "mutual": false,
             "values": [
-                "platonic",
+                "like",
                 "trust"
             ],
-            "amount": -5,
-            "log": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            "amount": -5
         },
         "other_clan": {
             "changed": 2
@@ -9069,7 +9317,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is discovered gambolling along the border with an apprentice from o_c_n! m_c's tail twitches as {PRONOUN\/m_c\/subject} {VERB\/m_c\/apologize\/apologizes}, plucking up the courage to insist that {PRONOUN\/m_c\/poss} friend isn't like the rest of o_c_n at all! This war sucks.",
+        "event_text": "m_c is discovered gambolling along the border with an apprentice from o_c_n! m_c's tail twitches as {PRONOUN/m_c/subject} {VERB/m_c/apologize/apologizes}, plucking up the courage to insist that {PRONOUN/m_c/poss} friend isn't like the rest of o_c_n at all! This war sucks.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -9097,11 +9345,13 @@
             ],
             "mutual": false,
             "values": [
-                "platonic",
+                "like",
                 "trust"
             ],
             "amount": -5,
-            "log": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            "log": {
+                "cats_from": "Was upset when m_c defied the Clan and maintained a friendship during war."
+            }
         },
         "other_clan": {
             "changed": 2
@@ -9155,7 +9405,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is discovered gambolling along the border with an apprentice from o_c_n! m_c deflates as {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} berated in front of the entire Clan for consorting with the enemy in the middle of a war... but it's clear that nobody really blames m_c for something as innocent as friendship in such difficult times.",
+        "event_text": "m_c is discovered gambolling along the border with an apprentice from o_c_n! m_c deflates as {PRONOUN/m_c/subject} {VERB/m_c/are/is} berated in front of the entire Clan for consorting with the enemy in the middle of a war... but it's clear that nobody really blames m_c for something as innocent as friendship in such difficult times.",
         "m_c": {
             "status": [
                 "apprentice",

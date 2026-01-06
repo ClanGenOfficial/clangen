@@ -1,16 +1,16 @@
 {
     "pl": {
-        "heading": "Change %{name}'s Gender",
-        "description": "<br>You can set this to anything! Gender identity does not affect gameplay.",
-        "add_pronouns": "Add New Pronouns",
-        "current_pronouns": "Current Pronouns",
-        "saved_pronouns": "Saved Pronouns",
-        "demo": "{PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/are\/is} a {ADJ\/m_c\/cat\/tom\/she-cat}.<br>Everyone saw {PRONOUN\/m_c\/object}.<br>{PRONOUN\/m_c\/poss\/CAP} paw slipped.<br>That den is {PRONOUN\/m_c\/inposs}.<br>m_c hunts by {PRONOUN\/m_c\/self}.",
-        "identity_changed_confirmation": "Gender identity changed!",
-        "conju0": "singular",
-        "conju1": "plural",
-        "gender0": "gender-neutral",
-        "gender1": "masculine",
-        "gender2": "feminine"
+        "heading": "Zmień Płeć %{name}",
+        "description": "<br>Możesz to zmienić na co chcesz! Tożsamość kota nie ma wpływu na grę.",
+        "add_pronouns": "Dodaj Zaimki",
+        "current_pronouns": "Bieżące Zaimki",
+        "saved_pronouns": "Zapisane Zaimki",
+        "demo": "{PRONOUN\/m_c\/nominative\/CAP} jest {ADJ\/m_c\/kotem\/kocurem\/kotką}.<br>To legowisko jest {ADJ\/m_c\/je\/je\/}{PRONOUN\/m_c\/genitive}.<br>Kociaki zrobiły {PRONOUN\/m_c\/dative} psikusa.<br>Inni uważają {PRONOUN\/m_c\/accusative} za {ADJ\/m_c\/dobre\/dobrego\/dobrą} {ADJ\/m_c\/przyjacioła\/przyjaciela\/przyjaciółkę}.<br>Pies rzucił {PRONOUN\/m_c\/instrumental} o drzewo.<br>Przywódca myśli o {PRONOUN\/m_c\/locative}.",
+        "identity_changed_confirmation": "Zmieniono płeć!",
+        "conju0": "liczba pojedyńcza",
+        "conju1": "liczba mnoga",
+        "gender0": "rodzaj neutralny",
+        "gender1": "rodzaj męski",
+        "gender2": "rodzaj żeński"
     }
 }

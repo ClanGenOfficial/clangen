@@ -1,0 +1,422 @@
+[
+	{
+		"id": "comfort_inc_low1",
+		"intensity": "low",
+		"interactions": [
+			"m_c finds a bit of fluff that smells like r_c and adds it to {PRONOUN/m_c/poss} nest.",
+			"m_c has a friendly chat with r_c that leaves them both feeling happy.",
+			"r_c's laugh reminds m_c of someone {PRONOUN/m_c/subject} {VERB/m_c/miss/misses}.",
+			"m_c overhears r_c humming a comforting tune.",
+			"r_c brought m_c some dry bedding.",
+			"r_c lets m_c grab a piece of fresh-kill first.",
+			"m_c had a good dream about r_c.",
+			"m_c remembers something nice that r_c did.",
+			"m_c sees a pretty flower in r_c's nest.",
+			"m_c heard a story about something kind r_c did."
+		]
+	},
+	{
+		"id": "comfort_inc_low2",
+		"intensity": "low",
+		"interactions": [
+			"m_c quickly apologizes after bumping into r_c. They have a small laugh about it.",
+			"m_c has been spending time with r_c lately.",
+			"m_c shares a joke about a neighboring Clan with r_c.",
+			"m_c reassures r_c about something that was bothering {PRONOUN/r_c/object}.",
+			"m_c likes to sit near r_c during conversations.",
+			"m_c and r_c often look at each other and smile knowingly about something.",
+			"m_c and r_c enjoy the rain together.",
+			"r_c gives advice to m_c. It's not good advice, but m_c appreciates the effort.",
+			"r_c gives m_c something that {PRONOUN/m_c/subject} dropped.",
+			"m_c learns that r_c is scared of thunder, too.",
+			"m_c and r_c drink from the same puddle.",
+			"m_c and r_c make each other laugh."
+		],
+		"reaction_random_cat": {
+			"comfort": "increase"
+		}
+	},
+	{
+		"id": "comfort_inc_low3",
+		"intensity": "low",
+		"interactions": [
+			"m_c is asking r_c to check {PRONOUN/m_c/object} for ticks.",
+			"m_c tells r_c stories about former Clanmates while being checked for ticks.",
+			"m_c appreciates r_c's diligence when checking {PRONOUN/m_c/object} for ticks.",
+			"r_c knows just the right herb to soothe m_c's aching bones.",
+			"r_c is always so patient when m_c approaches {PRONOUN/r_c/object} with pain.",
+			"m_c is happy to see r_c is the cat who is helping {PRONOUN/m_c/object} today."
+		],
+		"main_status_constraint": [
+			"elder"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"medicine apprentice",
+			"mediator apprentice"
+		]
+	},
+	{
+		"id": "comfort_inc_med1",
+		"interactions": [
+			"r_c helps m_c pick burrs out of {PRONOUN/m_c/poss} fur.",
+			"m_c notices that r_c brought {PRONOUN/m_c/object} a big piece of prey.",
+			"r_c is the only one who gets m_c's joke.",
+			"m_c overhears something about r_c that {PRONOUN/m_c/subject} can relate to.",
+			"m_c calms down when realizing r_c is nearby.",
+			"r_c's advice is more helpful than m_c expected.",
+			"r_c motivates m_c to do something difficult.",
+			"r_c doesn't laugh when m_c does something embarrassing.",
+			"r_c doesn't judge m_c for being anxious about a bad dream.",
+			"When m_c gets hurt, r_c is the first to ask if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} okay.",
+			"An issue becomes benign when m_c remembers r_c's advice."
+		]
+	},
+	{
+		"id": "comfort_inc_med2",
+		"interactions": [
+			"m_c has snuggled up against r_c.",
+			"m_c chats with r_c about {PRONOUN/r_c/poss} day.",
+			"m_c basks in the sun with r_c.",
+			"m_c just told r_c a hilarious joke.",
+			"m_c settles near r_c to eat {PRONOUN/m_c/poss} fresh-kill.",
+			"m_c bumps heads with r_c reassuringly.",
+			"r_c gently woke up m_c this morning.",
+			"m_c does something brave with r_c's support.",
+			"m_c and r_c cuddle during a storm.",
+			"r_c saves the funniest jokes for m_c.",
+			"m_c and r_c perk up happily when they see each other.",
+			"The Clan hears m_c and r_c laughing together across the camp.",
+			"m_c and r_c share little secrets about themselves."
+		],
+		"reaction_random_cat": {
+			"comfort": "increase"
+		}
+	},
+	{
+		"id": "comfort_inc_med3",
+		"interactions": [
+			"m_c is sharing the latest gossip {PRONOUN/m_c/subject} heard over the border with r_c.",
+			"m_c tells r_c {PRONOUN/m_c/subject}'ll save {PRONOUN/r_c/object} a piece of fresh-kill.",
+			"m_c playfully teases r_c for missing a catch.",
+			"m_c gives r_c some feathers from the bird {PRONOUN/m_c/subject} caught to line {PRONOUN/r_c/poss} nest.",
+			"m_c runs to greet r_c when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} from a patrol.",
+			"m_c asks to be on a patrol with r_c.",
+			"m_c and r_c saw something hilarious during a patrol and can't stop giggling about it.",
+			"The Clan notices m_c and r_c share patrols more often.",
+			"During a hunting patrol, m_c and r_c share a piece of prey that is too small to bring back to camp.",
+			"m_c and r_c mark the same spot of the border as a sign of friendship. Gross.",
+			"m_c and r_c get a little giggly off of some mysterious herbs they found on a patrol.",
+			"m_c is delighted to be working with r_c today."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"warrior",
+			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"warrior",
+			"deputy",
+			"leader"
+		],
+		"reaction_random_cat": {
+			"comfort": "increase"
+		}
+	},
+	{
+		"id": "comfort_inc_med4",
+		"interactions": [
+			"r_c is listening to m_c's woes.",
+			"r_c is listening to m_c's troubles.",
+			"r_c always knows what to say to comfort m_c.",
+			"m_c is surprised that r_c is so quick to comfort {PRONOUN/m_c/object}.",
+			"m_c is comforted by how intently r_c listens to {PRONOUN/m_c/object} complaints.",
+			"r_c noticed m_c was struggling, and offered to help {PRONOUN/m_c/object}."
+		],
+		"random_trait_constraint": [
+			"compassionate",
+			"loving",
+			"thoughtful"
+		]
+	},
+	{
+		"id": "comfort_inc_med5",
+		"interactions": [
+			"r_c gave m_c {PRONOUN/m_c/poss} favorite piece of prey.",
+			"r_c is being quite considerate with m_c.",
+			"r_c took time out of {PRONOUN/r_c/poss} day to help m_c with a difficult task.",
+			"r_c saved extra nest bedding for m_c.",
+			"r_c brought m_c and other Clanmates warm bedding for a cold night.",
+			"r_c complimented m_c on something nobody else did.",
+			"r_c took the time to help m_c work through a technique {PRONOUN/m_c/subject} {VERB/m_c/are/is} struggling with."
+		],
+		"random_trait_constraint": [
+			"thoughtful"
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+	},
+	{
+		"id": "comfort_inc_med6",
+		"interactions": [
+			"r_c curled around m_c to share warmth.",
+			"r_c lets m_c have the last piece of fresh-kill.",
+			"r_c is listening to m_c's problems.",
+			"r_c complimented m_c on something nobody else did.",
+			"r_c gives m_c the coziest piece of nest material {PRONOUN/r_c/subject} {VERB/r_c/have/has}.",
+			"m_c likes something r_c has, so r_c tells {PRONOUN/m_c/object} to keep it.",
+			"r_c gives m_c an item {PRONOUN/m_c/subject} may like."
+		],
+		"random_trait_constraint": [
+			"compassionate"
+		]
+	},
+	{
+		"id": "comfort_inc_med7",
+		"interactions": [
+			"m_c is watching the shooting stars with r_c.",
+			"r_c lets m_c cry on {PRONOUN/r_c/subject} for a while.",
+			"r_c stays with m_c until {PRONOUN/m_c/subject} fall asleep.",
+			"As m_c tells r_c a long story, {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} interesting, engaged questions."
+		],
+		"random_trait_constraint": [
+			"calm"
+		]
+	},
+	{
+		"id": "comfort_inc_med8",
+		"interactions": [
+			"r_c calmly explains hunting techniques to m_c again for the fourth time today.",
+			"r_c helps m_c with a tedious task and it makes the whole day a lot easier."
+		],
+		"random_trait_constraint": [
+			"calm"
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+	    "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+	},
+	{
+		"id": "comfortable_kit_inc_med1",
+		"interactions": [
+			"m_c wants to snuggle with r_c.",
+			"m_c lets r_c groom {PRONOUN/m_c/object} messy fur.",
+			"r_c teaches m_c how to eat politely."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+	},
+	{
+		"id": "comfortable_kit_inc_med2",
+		"interactions": [
+			"m_c wants to snuggle with r_c.",
+			"m_c hides somewhere with r_c, giggling together about something.",
+			"r_c lets m_c stalk {PRONOUN/r_c/poss} tail, pretending not to see {PRONOUN/m_c/object}.",
+			"m_c mimics some of the training techniques r_c is doing.",
+			"m_c is hiding under a bush from r_c, but {PRONOUN/m_c/subject} can't stop giggling."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"reaction_random_cat": {
+			"like": "increase"
+		}
+	},
+	{
+		"id": "comfortable_kit_inc_med3",
+		"interactions": [
+			"m_c spent the whole day playing {PRONOUN/m_c/poss} favorite games with r_c.",
+			"m_c had a friendly argument with r_c about which prey tastes the best.",
+			"m_c makes r_c {PRONOUN/m_c/poss} deputy in a game of KittenClan.",
+			"m_c and r_c play a prank on an older cat together.",
+			"The Clan looks all over for m_c and r_c and find out they have a secret hiding place.",
+			"m_c and r_c are playing KittenClan. r_c's dying of a hundred diseases, but m_c is the best medicine cat ever.",
+			"m_c and r_c spend the whole day playing hide-n-seek.",
+			"m_c takes a nap with r_c after a long day playing moss-ball."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"reaction_random_cat": {
+			"like": "increase",
+			"comfort": "increase"
+		},
+		"also_influences": {
+			"like": "increase"
+		}
+	},
+	{
+		"id": "comfortable_kit_odd1",
+		"interactions": [
+			"m_c chomps on r_c's ear.",
+			"m_c won't stop copying everything r_c does.",
+			"m_c asks r_c where kits come from.",
+			"m_c asks r_c innocent but invasive questions.",
+			"m_c is demanding r_c's attention."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"reaction_random_cat": {
+			"like": "decrease:",
+			"comfort": "decrease"
+		}
+	},
+	{
+		"id": "comfort_med_inc_medium1",
+		"interactions": [
+			"m_c thanks r_c for checking when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling alright.",
+			"m_c drops into the medicine den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet.",
+			"m_c brings r_c a piece of fresh-kill after a long day of healing work.",
+			"m_c helps r_c fix nests in the medicine den.",
+			"m_c lets r_c vent to {PRONOUN/m_c/object} about the difficulties as a healer.",
+			"After a rough storm gets into the medicine den, m_c helps r_c pick up herbs."
+		],
+		"main_status_constraint": [
+	    "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+		"random_status_constraint": [
+			"medicine cat",
+			"medicine cat apprentice"
+		],
+		"reaction_random_cat": {
+			"comfort": "increase",
+			"trust": "increase"
+		}
+	},
+	{
+		"id": "comfort_inc_high1",
+		"intensity": "high",
+		"interactions": [
+			"m_c appreciates how r_c always seems to ask how {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing.",
+			"r_c's words of comfort mean more to m_c than {PRONOUN/r_c/subject} {VERB/r_c/know/knows}.",
+			"m_c gets excellent advice from r_c about something {PRONOUN/m_c/subject} had been worrying about.",
+			"r_c says something very sincere and comforting to m_c.",
+			"m_c can tell r_c worries about {PRONOUN/m_c/poss} health and safety.",
+			"m_c overhears r_c saying something nice about {PRONOUN/m_c/object}.",
+			"m_c has had a lot of good dreams about r_c lately.",
+			"Whenever r_c's name is mentioned, m_c relaxes.",
+			"m_c's Clanmates notice that {PRONOUN/m_c/subject} {VERB/m_c/talk/talks} a lot about r_c.",
+			"r_c compliments m_c on something {PRONOUN/m_c/subject} {VERB/m_c/were/was} self-conscious about.",
+			"m_c associates {PRONOUN/m_c/poss} favorite smell with r_c."
+		]
+	},
+	{
+		"id": "comfort_inc_high2",
+		"intensity": "high",
+		"interactions": [
+			"m_c is sharing tongues with r_c.",
+			"m_c offers to groom a hard-to-reach place for r_c, who thanks {PRONOUN/m_c/object} earnestly.",
+			"m_c and r_c spend a few minutes complimenting one another.",
+			"m_c spends the day helping around the camp with r_c.",
+			"m_c and r_c gossip about drama nobody else knows.",
+			"m_c talks to r_c about a mutual friend they have both been worrying about.",
+			"m_c asks r_c to look at a little cut on {PRONOUN/m_c/poss} leg.",
+			"After something happens, m_c and r_c find comfort in one another's company."
+		],
+		"reaction_random_cat": {
+			"comfort": "increase"
+		}
+	},
+	{
+		"id": "comfort_inc_high3",
+		"intensity": "high",
+		"interactions": [
+			"m_c feels most like {PRONOUN/m_c/self} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} around r_c.",
+			"m_c could recognize r_c just by the sound of {PRONOUN/r_c/poss} paw steps.",
+			"m_c finds peace in r_c's company where it can't be found anywhere else.",
+			"When m_c panics about something, {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} of r_c to feel better.",
+			"m_c wakes up r_c every morning so they're up together.",
+			"m_c and r_c share their prey with one another every day.",
+			"m_c and r_c have multiple inside jokes with one another."
+		],
+		"relationship_constraint": [
+			"relates_to"
+		]
+	},
+	{
+		"id": "comfort_inc_high4",
+		"intensity": "high",
+		"interactions": [
+			"m_c helps r_c work through something difficult that happened to {PRONOUN/r_c/object}.",
+			"m_c comforts r_c after a terrible nightmare.",
+			"When r_c gets sick for a few days, m_c brings {PRONOUN/r_c/object} yummy prey and nest bedding.",
+			"r_c knows secrets about m_c that {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} told anyone else.",
+			"m_c always goes to r_c first when {PRONOUN/m_c/subject} needs advice."
+		],
+		"relationship_constraint": [
+			"relates_to"
+		],
+		"reaction_random_cat": {
+			"comfort": "increase",
+			"trust": "increase"
+		}
+	}
+]

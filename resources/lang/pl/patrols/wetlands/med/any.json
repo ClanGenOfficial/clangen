@@ -1,44 +1,24 @@
 [
     {
         "patrol_id": "wtlnd_med_soloripples1",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
         "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
         "chance_of_success": 45,
-        "pl_skill_constraint": [
-            "PROPHET,1"
-        ],
+        "pl_skill_constraint": ["PROPHET,1"],
         "success_outcomes": [
             {
                 "text": "As p_l looks into the puddle they are greeted by an intense vision. They drop what they are doing and race back to the camp to tell and consult with their leader.",
@@ -46,18 +26,10 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["respect", "comfort", "trust"],
                         "amount": 5
                     }
                 ]
@@ -68,18 +40,10 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["respect", "comfort", "trust"],
                         "amount": 5
                     }
                 ]
@@ -92,18 +56,10 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
+                        "values": ["respect", "comfort", "trust"],
                         "amount": -5
                     }
                 ]
@@ -112,40 +68,19 @@
     },
     {
         "patrol_id": "wtlnd_med_herblocation1",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both on even and uneven ground.",
@@ -158,17 +93,10 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
+                        "values": ["respect", "trust"],
                         "amount": 5
                     }
                 ]
@@ -179,17 +107,10 @@
                 "weight": 5,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
+                        "values": ["respect", "trust"],
                         "amount": 5
                     }
                 ]
@@ -202,17 +123,10 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
+                        "values": ["respect", "trust"],
                         "amount": -5
                     }
                 ]
@@ -221,40 +135,19 @@
     },
     {
         "patrol_id": "wtlnd_med_herblocation2",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "app1 has been sent out into the swamps to try to find herbs alone.",
@@ -282,38 +175,18 @@
     },
     {
         "patrol_id": "wtlnd_med_rescue1",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [
-            "new_cat"
-        ],
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
+        "tags": ["new_cat"],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
@@ -321,25 +194,17 @@
         "chance_of_success": 35,
         "success_outcomes": [
             {
-                "text": "p_l, sure that it is a sign of StarClan, follows the sounds and whispers on the wind and finds a queen who lost {PRONOUN\/n_c:0\/poss} life in a harsh kitting, {PRONOUN\/n_c:0\/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN\/p_l\/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
+                "text": "p_l, sure that it is a sign of StarClan, follows the sounds and whispers on the wind and finds a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
                 "exp": 10,
                 "weight": 20
             },
             {
-                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN\/n_c:0\/poss} newborn kits clinging to {PRONOUN\/n_c:0\/object}. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with {PRONOUN\/n_c:0\/poss} kits.",
+                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with {PRONOUN/n_c:0/poss} kits.",
                 "exp": 10,
                 "weight": 5,
                 "new_cat": [
-                    [
-                        "can_birth",
-                        "age:has_kits"
-                    ],
-                    [
-                        "litter",
-                        "parent:0",
-                        "status:newborn",
-                        "backstory:outsider_roots2"
-                    ]
+                    ["can_birth", "age:has_kits"],
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ]
             }
         ],
@@ -352,58 +217,27 @@
             }
         ],
         "antag_fail_outcomes": [
-            {
-                "text": "null, ",
-                "exp": 0,
-                "weight": 20,
-                "outsider_rep": -1
-            }
+            { "text": "null, ", "exp": 0, "weight": 20, "outsider_rep": -1 }
         ],
         "antag_success_outcomes": [
-            {
-                "text": "null, ",
-                "exp": 10,
-                "weight": 20,
-                "outsider_rep": -2
-            }
+            { "text": "null, ", "exp": 10, "weight": 20, "outsider_rep": -2 }
         ]
     },
     {
         "patrol_id": "wtlnd_med_appfirstsign1",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [],
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
+        "tags": ["all_mentored"],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "p_l is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the vegetation as they pad along.",
@@ -411,7 +245,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l is plucking some horsetail when their attention is suddenly grabbed by omen_list_sight\/p_l. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!",
+                "text": "p_l is plucking some horsetail when their attention is suddenly grabbed by omen_list_sight/p_l. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!",
                 "exp": 20,
                 "weight": 20
             }
@@ -426,36 +260,18 @@
     },
     {
         "patrol_id": "wtlnd_med_discussion1",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                -1,
-                -1
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "all apprentices": [-1, -1],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "p_l and r_c head into the heart of the swamp to look for herbs, discussing the latest news.",
@@ -466,23 +282,13 @@
                 "text": "They have a good discussion while foraging under branches drooping with lichen and manage to come up with several ideas to discuss with c_n's leadership.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "random_herbs"
-                ],
+                "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "trust"
-                        ],
+                        "values": ["like", "respect", "trust"],
                         "amount": 5
                     }
                 ]
@@ -491,23 +297,13 @@
                 "text": "Carefully plucking some herbs, they discuss the latest signs from StarClan and ponder what to do about them. They manage to think up some tentative plans and return to camp to discuss them with the leader and deputy.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "random_herbs"
-                ],
+                "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "trust"
-                        ],
+                        "values": ["like", "respect", "trust"],
                         "amount": 5
                     }
                 ]
@@ -520,18 +316,10 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect",
-                            "trust"
-                        ],
+                        "values": ["like", "respect", "trust"],
                         "amount": -5
                     }
                 ]
@@ -540,32 +328,17 @@
     },
     {
         "patrol_id": "wtlnd_med_dwindleherbsgathering1",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
+        "biome": ["wetlands"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "normal adult": [-1, -1]
         },
         "weight": 20,
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
@@ -576,36 +349,14 @@
                 "text": "p_l and r_c decide to search on a little island of drier ground that rises just slightly from the swamp. As the sun sinks towards the horizon, they return with their mouths stuffed full of herbs taken from the little pocket of plenty.",
                 "exp": 10,
                 "weight": 20,
-                "herbs": [
-                    "random_herbs"
-                ],
+                "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["like", "respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
-                        "amount": -5
                     }
                 ]
             },
@@ -613,36 +364,14 @@
                 "text": "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
                 "exp": 10,
                 "weight": 5,
-                "herbs": [
-                    "random_herbs"
-                ],
+                "herbs": ["random_herbs"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["like", "respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
-                        "amount": -5
                     }
                 ]
             }
@@ -654,31 +383,11 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["like", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
-                        "amount": 5
                     }
                 ]
             },
@@ -688,31 +397,11 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "platonic",
-                            "respect"
-                        ],
+                        "values": ["like", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "dislike"
-                        ],
-                        "amount": 5
                     }
                 ]
             }

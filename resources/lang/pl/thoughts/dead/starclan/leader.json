@@ -3,9 +3,9 @@
         "id": "gen_dead_leader",
         "thoughts": [
             "Watches c_n proudly",
-            "Hopes {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has} been a good leader",
-            "Is contemplating {PRONOUN\/m_c\/poss} legacy",
-            "Thinks {PRONOUN\/m_c\/subject} could have made a better decision during {PRONOUN\/m_c\/poss} life"
+            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/have/has} been a good leader",
+            "Is contemplating {PRONOUN/m_c/poss} legacy",
+            "Thinks {PRONOUN/m_c/subject} could have made a better decision during {PRONOUN/m_c/poss} life"
         ]
     },
     {
@@ -14,7 +14,7 @@
             "Approves of r_c's leadership choices",
             "Walks in r_c's dreams to impart wisdom and guidance",
             "Thinks r_c made some bad decisions lately",
-            "Is glad that {PRONOUN\/m_c\/subject} chose r_c as {PRONOUN\/m_c\/poss} successor"
+            "Is glad that {PRONOUN/m_c/subject} chose r_c as {PRONOUN/m_c/poss} successor"
         ],
         "random_status_constraint": [
             "leader"
@@ -28,8 +28,6 @@
         "thoughts": [
             "Is proud of being one of c_n's first leaders"
         ],
-        "main_backstory_constraint": [
-            "clan_founder"
-        ]
+        "main_backstory_constraint": ["clan_founder"]
     }
 ]

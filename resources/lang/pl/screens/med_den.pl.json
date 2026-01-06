@@ -1,6 +1,6 @@
 {
     "pl": {
-        "help_tooltip": "Medycy c_n będą szukać ziół każdego księżyca i na patrolach. Możesz zobaczyć co było zebrane w Logu poniżej! Medycy c_n będą szukać ziół każdego księżyca i na patrolach. Możesz zobaczyć co było zebrane w Logu poniżej! Medycy będą dawać zioła chorym i rannym kotom, przez co wyzdrowieją szybciej. Najedż na obrazek legowiska, by zobaczyć jakie zioła posiada Twój Klan!",
+        "help_tooltip": "Medycy c_n będą szukać ziół każdego księżyca i na patrolach. Możesz zobaczyć co było zebrane w Logu poniżej! Medycy będą dawać zioła chorym i rannym kotom, przez co wyzdrowieją szybciej. Najedż na obrazek legowiska, by zobaczyć jakie zioła posiada Twój Klan!",
         "hurt_sick_title": "Chore i Ranne Koty",
         "hurt_sick_label": " Koty",
         "log_title": "Log Medyka",
@@ -13,13 +13,13 @@
             "many": "Medycy c_n mogą opiekować się Klanem do %{clansize} członków, licząc siebie."
         },
         "expiration": "Niektóre zapasy %{herbs} były już za stare do użytku.",
-        "better_storage": "%{name} did an excellent job storing herbs this moon, %{herbs} will expire slower.",
-        "gather_success": "%{name} collected %{herbs} during this moon.",
-        "gather_fail": "%{name} didn't collect any herbs this moon.",
-        "herb_used": "m_c dano %{herb} dla: %{condition}. %{effect}",
+        "better_storage": "%{name} doskonale sprawdzi{VERB\/m_c\/ło\/ł\/ła\/li\/ły} się w przechowywaniu ziół, %{herbs} zepsują się wolniej.",
+        "gather_success": "%{name} {zebra{VERB\/m_c\/ło\/ł\/ła\/li\/ły} %{herbs} tego księżyca.",
+        "gather_fail": "%{name} nie znal{VERB\/m_c\/azło\/azł\/azła\/eźli\/azły} żadnych ziół.",
+        "herb_used": "m_c dosta{VERB\/m_c\/ło\/ł\/ła\/li\/ły} %{herb} dla: %{condition}. %{effect}",
         "mortality_down": "Ma mniejszą szanse śmierci.",
         "duration_down": "Wyzdrowieje szybciej.",
-        "risks_down": "Zmniejszono ryzyko powikłań lub postępu choroby.",
+        "risks_down": "Zmniejszono ryzyko powikłań lub postępu {PRONOUN\/m_c\/genitive} choroby.",
         "focus": "Ze skupieniem Klanu, udało się zebrać zioła: %{herbs}.",
         "blood_loss": "Użyto ziół by zatrzymać krwotok u %{name}.",
         "loss_event": "Stracono %{herbs} tego księżyca.",

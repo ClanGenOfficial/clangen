@@ -1,5 +1,5 @@
 [
-    {
+   {
         "event_id": "pln_new_cat_litter_deadparent1",
         "location": [
             "plains"
@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c returned to camp carrying a litter of kittens, explaining that {PRONOUN\/m_c\/subject} found them mewling in a patch of grass, near the cooling body of a loner.",
+        "event_text": "m_c returned to camp carrying a litter of kittens, explaining that {PRONOUN/m_c/subject} found them mewling in a patch of grass, near the cooling body of a loner.",
         "m_c": {
             "age": [
                 "young adult",
@@ -21,12 +21,7 @@
             ]
         },
         "new_cat": [
-            [
-                "age:has_kits",
-                "meeting",
-                "loner",
-                "dead"
-            ],
+            ["age:has_kits", "meeting", "loner", "dead"],
             [
                 "new_name",
                 "parent:0",
@@ -34,21 +29,14 @@
                 "litter"
             ]
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "n_c:1"
-                ],
-                "mutual": true,
-                "values": [
-                    "comfort",
-                    "platonic"
-                ],
-                "amount": 5
-            }
+		"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["comfort", "like"],
+            "amount": 5
+          }
         ],
         "outsider": {
             "current_rep": [
@@ -66,7 +54,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c rescued a kittypet hopelessly lost in some tunnels, who is so impressed, {PRONOUN\/n_c:0\/subject} {VERB\/n_c:0\/ask\/asks} to join the Clan!",
+        "event_text": "m_c rescued a kittypet hopelessly lost in some tunnels, who is so impressed, {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join the Clan!",
         "m_c": {
             "age": [
                 "young adult",
@@ -81,37 +69,17 @@
         "new_cat": [
             [
                 "kittypet",
-                "exists"
+		"exists"
             ]
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "n_c:0"
-                ],
-                "mutual": true,
-                "values": [
-                    "comfort",
-                    "platonic"
-                ],
-                "amount": 10
-            },
-            {
-                "cats_from": [
-                    "n_c:0"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": -5
-            }
+		"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort", "like"],
+            "amount": 10
+          }
         ],
         "outsider": {
             "current_rep": [
@@ -120,4 +88,6 @@
             "changed": 1
         }
     }
+
+
 ]

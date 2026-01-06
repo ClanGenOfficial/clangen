@@ -27,7 +27,7 @@
                     "m_c"
                 ],
                 "reg_death": "m_c was crushed by a falling branch.",
-                "lead_death": "{VERB\/m_c\/were\/was} crushed by a falling branch.",
+                "lead_death": "{VERB/m_c/were/was} crushed by a falling branch.",
                 "scar": ""
             }
         ]
@@ -42,7 +42,7 @@
         ],
         "tags": [],
         "frequency": 3,
-        "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around {PRONOUN\/m_c\/object}.",
+        "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around {PRONOUN/m_c/object}.",
         "m_c": {
             "not_skill": [
                 "CLIMBER,2"
@@ -85,7 +85,7 @@
                     "m_c"
                 ],
                 "reg_death": "m_c was crushed by a falling tree.",
-                "lead_death": "{VERB\/m_c\/were\/was} crushed by a falling tree"
+                "lead_death": "{VERB/m_c/were/was} crushed by a falling tree"
             }
         ]
     },
@@ -130,7 +130,7 @@
             "no_body"
         ],
         "frequency": 2,
-        "event_text": "r_c spotted a circling shadow and yowled a warning to m_c. {PRONOUN\/r_c\/subject\/CAP} {VERB\/r_c\/were\/was}n't fast enough to save m_c from the owl.",
+        "event_text": "r_c spotted a circling shadow and yowled a warning to m_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was}n't fast enough to save m_c from the owl.",
         "m_c": {
             "age": [
                 "kitten",

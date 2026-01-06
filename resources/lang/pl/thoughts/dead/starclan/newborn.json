@@ -6,30 +6,36 @@
             "Snoozes peacefully",
             "Wobbles around StarClan happily",
             "Is drinking milk from a StarClan queen",
-            "Tries opening {PRONOUN\/m_c\/poss} eyes to see the 'stars' everyone is talking about",
+            "Tries opening {PRONOUN/m_c/poss} eyes to see the 'stars' everyone is talking about",
             "Tries to practice walking to play with the other cats",
             "Attempts to snarl but can only manage a tiny mewl",
             "Rolls through the starry grass"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     },
     {
         "id": "gen_dead_newborn_to_alive_parent",
-        "thoughts": [
-            "Thinks {PRONOUN\/m_c\/subject} heard r_c's voice",
+        "thoughts":[
+            "Thinks {PRONOUN/m_c/subject} heard r_c's voice",
             "Is mewling for r_c",
             "Searches for r_c's scent",
             "Blindly reaches out for r_c"
         ],
         "relationship_constraint": [
-            "child\/parent"
+            "child/parent"
         ],
         "random_living_status": [
             "living"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     },
     {
         "id": "gen_dead_newborn_to_dead_other",
-        "thoughts": [
+        "thoughts":[
             "Is being watched by r_c",
             "Is being bathed by r_c",
             "Is tucked under r_c's belly",
@@ -37,6 +43,9 @@
         ],
         "random_living_status": [
             "starclan"
+        ],
+        "main_age_constraint": [
+            "newborn"
         ]
     }
 ]

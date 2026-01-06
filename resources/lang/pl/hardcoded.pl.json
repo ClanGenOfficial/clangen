@@ -2,17 +2,17 @@
     "pl": {
         "comment": "at some point, this file should become empty and unnecessary.",
         "event_deaths": {
-            "one": "This past moon, m_c has taken {PRONOUN\/m_c\/poss} place in StarClan. c_n mourns their loss, and {PRONOUN\/m_c\/poss} Clanmates will miss where {PRONOUN\/m_c\/subject} had been in their lives. Moments of {PRONOUN\/m_c\/poss} life are shared in stories around the circle of mourners as those that were closest to {PRONOUN\/m_c\/object} take {PRONOUN\/m_c\/object} to {PRONOUN\/m_c\/poss} final resting place.",
-            "many": "The past moon, %{insert} have taken their place in StarClan. c_n mourns their loss, and their Clanmates will miss where they had been in their lives. Moments of their lives are shared in stories around the circle of mourners as those that were closest to them take them to their final resting place."
+            "one": "Tego księżyca, m_c wstąpi{VERB\/m_c\/ło\/ł\/ła\/li\/ły} w szeregi Klanu Gwiazdy. c_n przechodzi czas żałoby, dzieląc się opowieściami {PRONOUN\/lead_name\/genitive} życia, podczas gdy {PRONOUN\/lead_name\/genitive} najbliżsi niosą {PRONOUN\/lead_name\/genitive} ciało do {PRONOUN\/lead_name\/genitive} ostatecznego łoża.",
+            "many": "Tego księżyca, %{insert} wstąpili w szeregi Klanu Gwiazdy. c_n przechodzi czas żałoby, dzieląc się opowieściami ich życia, podczas gdy ich najbliżsi niosą ich ciała do ich ostatecznego łoża."
         },
         "event_shaken_grief": {
-            "one": "So much grief and death has taken its toll on the cats of c_n. %{insert} is particularly shaken by it.",
-            "many": "So much grief and death has taken its toll on the cats of c_n. %{insert} are particularly shaken by it."
+            "one": "Tyle śmierci i żalu cięży nad c_n, a szczególnie nad %{insert}.",
+            "many": "Tyle śmierci i żalu cięży nad c_n, a szczególnie nad %{insert}."
         },
-        "relations_improved": " (o_c_n relations improved.)",
-        "relations_neutral": " (o_c_n relations unchanged.)",
-        "relations_worsened": " (o_c_n relations worsened.)",
-        "lead_den_killed": "m_c was killed by c_n.",
+        "relations_improved": " (relacje z o_c_n poprawiły się.)",
+        "relations_neutral": " (relacje z o_c_n są niezmienone.)",
+        "relations_worsened": " (relacje z o_c_n pogorszyły się.)",
+        "lead_den_killed": "m_c zosta{VERB\/m_c\/ło\/ł\/ła\/li\/ły} zabi{VERB\/m_c\/te\/ty\/ta\/ci\/te} przez c_n.",
         "condition_retire_adolescent": "m_c decides {PRONOUN\/m_c\/subject}'d rather spend {PRONOUN\/m_c\/poss} time helping around camp and entertaining the kits; {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} warmly welcomed into the elders' den.",
         "condition_retire_adolescent_ceremony": " {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/are\/is} given the name %{newname} in honor of {PRONOUN\/m_c\/poss} contributions to %{clan}Clan.",
         "condition_retire_no_leader": "m_c has decided to retire from normal Clan duty.",
@@ -21,22 +21,22 @@
         "ceremony_leader_1": "%{oldname} has been promoted to the new leader of the Clan. {PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/travel\/travels} to the Moonstone immediately to get {PRONOUN\/lead_name\/poss} nine lives and {VERB\/lead_name\/are\/is} hailed by {PRONOUN\/lead_name\/poss} new name, lead_name.",
         "ceremony_leader_2": "%{oldname} has become the new leader of the Clan. {PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/vow\/vows} to protect the Clan, even at the cost of {PRONOUN\/lead_name\/poss} nine lives.",
         "ceremony_leader_3": "%{oldname} has received {PRONOUN\/m_c\/poss} nine lives and has become the new leader of the Clan. {PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/feel\/feels} like {PRONOUN\/lead_name\/subject} {VERB\/m_c\/are\/is}n't ready for this new responsibility, but will try {PRONOUN\/lead_name\/poss} best to do what is right for the Clan.",
-        "ceremony_closer": "Visit lead_name's profile to see {PRONOUN\/lead_name\/poss} full leader ceremony.",
+        "ceremony_closer": "Przeczytaj profil lead_name żeby zobaczyć całą ceremonię.",
         "ceremony_deputy_bloodthirsty": "m_c has been chosen as the new deputy. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/look\/looks} at the Clan leader with an odd glint in {PRONOUN\/m_c\/poss} eyes.",
-        "ceremony_deputy": "lead_name chooses m_c to take over as deputy. %{previous}",
-        "ceremony_deputy_prev0": "{PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/know\/knows} dep_name would approve.",
-        "ceremony_deputy_prev1": "{PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/hope\/hopes} dep_name would approve.",
-        "ceremony_deputy_prev2": "{PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/don't\/doesn't} know if dep_name would approve, but life must go on.",
-        "ceremony_deputy_nolead_nodep": "Without a leader or deputy, the Clan has been directionless. They all turn to m_c with hope for the future.",
-        "ceremony_deputy_nolead_retireddep": "The Clan is without a leader, but a new deputy must still be named. m_c is chosen as the new deputy. The retired deputy nods {PRONOUN\/dep_name\/poss} approval.",
-        "ceremony_deputy_lead_retireddep0": "m_c has been chosen as the new deputy. The Clan yowls {PRONOUN\/m_c\/poss} name in approval.",
-        "ceremony_deputy_lead_retireddep1": "m_c has been chosen as the new deputy. Some of the older Clan members question the wisdom of this choice.",
-        "ceremony_deputy_lead_retireddep2": "m_c has been chosen as the new deputy. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/hold\/holds} {PRONOUN\/m_c\/poss} head up high and {VERB\/m_c\/promise\/promises} to do {PRONOUN\/m_c\/poss} best for the Clan.",
-        "ceremony_deputy_lead_retireddep3": "lead_name has been thinking deeply all day about who {PRONOUN\/lead_name\/subject} would trust and respect enough to stand at {PRONOUN\/lead_name\/poss} side. At sunhigh, {PRONOUN\/lead_name\/subject} {VERB\/lead_name\/make\/makes} the announcement that m_c will be the Clan's new deputy.",
-        "ceremony_deputy_lead_retireddep4": "m_c has been chosen as the new deputy. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/pray\/prays} to StarClan that {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} the right choice for the Clan.",
-        "ceremony_deputy_lead_retireddep5": "m_c has been chosen as the new deputy. Although {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} nervous, {PRONOUN\/m_c\/subject} {VERB\/m_c\/put\/puts} on a brave face and {VERB\/m_c\/look\/looks} forward to serving the Clan.",
-        "ceremony_deputy_unsuitable": "No cat is truly fit to be deputy, but the position can't remain vacant. m_c is appointed as the new deputy.",
-        "ceremony_deputy_none": "There are no cats fit to become deputy.",
+        "ceremony_deputy": "lead_name wybra{VERB\/lead_name\/ło\/ł\/ła\/li\/ły} m_c jako nowego zastępce. %{previous}",
+        "ceremony_deputy_prev0": "Wie, że dep_name popar{VERB\/dep_name\/ło\/ł\/ła\/li\/ły}by {PRONOUN\/lead_name\/genitive} wybór.",
+        "ceremony_deputy_prev1": "Ma nadzieje, że dep_name zgodzi{VERB\/dep_name\/ło\/ł\/ła\/li\/ły}by się z {PRONOUN\/lead_name\/genitive} wyborem.",
+        "ceremony_deputy_prev2": "Nie wie czy zyska{VERB\/lead_name\/ło\/ł\/ła\/li\/ły}by poparcie dep_name, ale życie musi toczyć się dalej.",
+        "ceremony_deputy_nolead_nodep": "Bez lidera lub zastępcy, Klan upada w bezkierunkowość. Koty c_n zwracają się do m_c z nadzieją na pszyszłość.",
+        "ceremony_deputy_nolead_retireddep": "Klan jest bez lidera, ale nowy zastępca musi być powołany. Wybór m_c dostaje aprobatę poprzedniego zastępcy.",
+        "ceremony_deputy_lead_retireddep0": "m_c zosta{VERB\/m_c\/ło\/ł\/ła\/li\/ły} powołany jako nowy zastępca. {PRONOUN\/lead_name\/genitive} imię brzmi przez obóz w zgodnym krzyku Klanu.",
+        "ceremony_deputy_lead_retireddep1": "m_c zosta{VERB\/m_c\/ło\/ł\/ła\/li\/ły} powołany jako nowy zastępca. Niektórzy starsi członkowie Klanu kwestionują ten wybór.",
+        "ceremony_deputy_lead_retireddep2": "m_c zosta{VERB\/m_c\/ło\/ł\/ła\/li\/ły} powołany jako nowy zastępca. Wznosi swoją głowe wysoko i obiecuje dać z siebie wszystko dla swoich pobratymców.",
+        "ceremony_deputy_lead_retireddep3": "lead_name myśl{VERB\/m_c\/ało\/ał\/ała\/eli\/ały} cały dzień komu ufa{VERB\/dep_name\/ło\/ł\/ła\/li\/ły}by  wystarczająco by stał u {PRONOUN\/lead_name\/genitive} boku. W południe, ogłasza m_c jako nowego zastępcę.",
+        "ceremony_deputy_lead_retireddep4": "m_c zosta{VERB\/m_c\/ło\/ł\/ła\/li\/ły} powołany jako nowy zastępca. Modli się do Klanu Gwiazdy, żeby nie okazało się to błędem dla Klanu.",
+        "ceremony_deputy_lead_retireddep5": "m_c zosta{VERB\/m_c\/ło\/ł\/ła\/li\/ły} powołany jako nowy zastępca. Choć jest niepewny, stara się nie ukazywać zdenerwowania. Cieszy się okazji by służyć Klanu.",
+        "ceremony_deputy_unsuitable": "Nie ma kotów nadających się na role zastępcy, ale ktoś musi przejąć odpowiedzialność. m_c {VERB\/m_c\/jest\/jest\/jest\/są\/są} powołan{VERB\/m_c\/e\/y\/a\/i\/e} jako nowy zastępca.",
+        "ceremony_deputy_none": "Nie ma kotów nadających się na role zastępcy.",
         "adoption_kittens_single": {
             "one": "%{names} found a %{insert} and decides to adopt it.",
             "many": "%{names} found a %{insert} and decides to adopt them."
@@ -45,11 +45,11 @@
             "one": "%{names} found a %{insert} and decide to adopt it.",
             "many": "%{names} found a %{insert} and decide to adopt them."
         },
-        "new_kit_thought": "Snuggles up to the belly of r_c",
+        "new_kit_thought": "{VERB\/m_c\/Jest\/Jest\/Jest\/Są\/Są} wtul{VERB\/m_c\/one\/ony\/ona\/eni\/one} w brzuch r_c",
         "event_mediator_app": "m_c has chosen to use {PRONOUN\/m_c\/poss} skills and experience to help solve the Clan's disagreements. A meeting is called, and {PRONOUN\/m_c\/subject} {VERB\/m_c\/become\/becomes} the Clan's newest mediator.",
         "herbs_found": {
-            "zero": "med_name could not find any herbs this moon.",
-            "many": "med_name gathered %{insert} this moon."
+            "zero": "med_name nie znal{VERB\/med_name\/azło\/azł\/azła\/eźli\/azły} żadnych ziół.",
+            "many": "med_name zebra{VERB\/med_name\/ło\/ł\/ła\/li\/ły} %{insert} tego księżyca."
         },
         "prey_catch_count": {
             "one": "The Clan managed to catch %{count} piece of prey this moon.",
@@ -79,13 +79,13 @@
             "one": "A cat got %{condition} while raiding other Clans for more prey.",
             "many": "Multiple cats got %{condition} while raiding other Clans for more prey."
         },
-        "event_lost1": "After a long journey, m_c has finally returned home to c_n.",
-        "event_lost2": "m_c was found at the border, tired but happy to be home.",
-        "event_lost3": "m_c strides into camp, much to the everyone's surprise. {PRONOUN\/m_c\/subject\/CAP}{VERB\/m_c\/'re\/'s} home!",
-        "event_lost4": "{PRONOUN\/m_c\/subject\/CAP} met so many friends on {PRONOUN\/m_c\/poss} journey, but c_n is where m_c truly belongs. With a tearful goodbye, {PRONOUN\/m_c\/subject} {VERB\/m_c\/return\/returns} home.",
+        "event_lost1": "Po długiej wędrówce m_c w końcu powróci{VERB\/m_c\/ło\/ł\/ła\/li\/ły} do c_n",
+        "event_lost2": "Znaleziono m_c na granicy, zmęczon{VERB\/m_c\/e\/ego\/ą\/ych\/e}, ale szczęśliw{VERB\/m_c\/e\/ego\/ą\/ych\/e} widząc znane {PRONOUN\/m_c\/dative} twarze.",
+        "event_lost3": "m_c paradnie {VERB\/m_c\/weszło\/wszedł\/weszła\/weszli\/weszły} do obozu, do szoku reszty Klanu. Wreszcie w domu!",
+        "event_lost4": "Spotka{VERB\/m_c\/ło\/ł\/ła\/li\/ły} {PRONOUN\/m_c\/nominative} wiele przyjaciół na {PRONOUN\/m_c\/genitive} eskapadzie, ale miejsce m_c jest w c_n. Po łzawym pożegnaniu w końcu wraca do domu.",
         "event_lost_kits": {
-            "one": " {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/bring\/brings} along {PRONOUN\/m_c\/poss} kitten.",
-            "many": " {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/bring\/brings} along {PRONOUN\/m_c\/poss} kittens."
+            "one": " Przyni{VERB\/m_c\/osło\/ósł\/osła\/eśli\/osły} ze sobą swojego kociaka.",
+            "many": " Przyni{VERB\/m_c\/osło\/ósł\/osła\/eśli\/osły} ze sobą swoje kociaki."
         },
         "kittencough_spread": {
             "one": "Kittencough has spread around the nursery. %{kits} is affected.",
@@ -95,22 +95,22 @@
             "two": "Fleas have been hopping from pelt to pelt and now %{cats} are both infested.",
             "many": "Fleas have been hopping from pelt to pelt and now %{cats} are all infested."
         },
-        "illness_spread": "%{illness} has spread around the camp. %{cats} have been infected.",
-        "thought_new_cat": "Is looking around the camp with wonder",
-        "thought_new_kitten": "Is snuggled safe in the nursery",
-        "thought_meeting": "Is wondering about those new cats",
-        "thought_new_dead": "Explores a new, starry world",
+        "illness_spread": "%{illness} rozpostrzenia się w obozie. %{cats} zachorowali.",
+        "thought_new_cat": "Rozgląda się po obozie ze zdumieniem",
+        "thought_new_kitten": "Bezpiecznie leż{VERB\/m_c\/y\/y\/y\/ą\/ą} w żłobku",
+        "thought_meeting": "Myśli o nowo spotkanych kotach", 
+        "thought_new_dead": "Wędruje po nowym, gwiezdym świecie",
         "scar_event0": "m_c's %{injury} has healed, but {PRONOUN\/m_c\/subject}'ll always carry evidence of it on {PRONOUN\/m_c\/poss} pelt.",
         "scar_event1": "m_c healed from {PRONOUN\/m_c\/poss} %{injury} but will forever be marked by a scar.",
         "scar_event2": "m_c's %{injury} has healed, but the injury left {PRONOUN\/m_c\/object} scarred.",
         "move_on_dead_mate": "m_c will always love r_c, but has decided to move on.",
         "expired_prey": {
-            "one": "A piece of freshkill expired and was removed from the freshkill pile.",
-            "many": "%{count} pieces of prey expired and were removed from the freshkill pile."
+            "one": "Jedna porcja zwierzyny zepsuła się i była usunięta ze Stosu Zdobyczy.",
+            "many": "%{count} porcji zwierzyny zepsuło się i było usunięte ze Stosu Zdobyczy."
         },
         "consumed_prey": {
-            "one": "One piece of prey was consumed.",
-            "many": "%{count} pieces of prey were consumed."
+            "one": "Zużyto jedną porcje zwierzyny.",
+            "many": "Zużyto %{count} porcji zwierzyny."
         }
     }
 }
