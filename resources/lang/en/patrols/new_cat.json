@@ -5321,7 +5321,7 @@
                             "values": [ "romance", "like", "trust", "comfort", "respect" ],
                             "amount": 55,
                             "log": {
-                                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat."
+                                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
                             }
                         },
                         {
@@ -5331,7 +5331,7 @@
                             "values": [ "like", "trust" ],
                             "amount": 15,
                             "log": {
-                                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend to_cat, <b>only</b> seeing to_cat as a friend."
+                                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
                             }
                         }
                     ],
@@ -5406,7 +5406,7 @@
                         ],
                         "amount": 25,
                     "log": {
-                        "cats_from": "to_cat and from_cat are friends and were in the middle of an argument before being interrupted."
+                        "cats_from": "to_cat and from_cat are long-time friends."
                     }
                     }
                 ],
@@ -5486,7 +5486,7 @@
                         ],
                         "amount": 55,
             "log": {
-                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend to_cat, but was upset that from_cat shot a flirty wink at one of the Clan cats."
+                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat, but was upset that from_cat shot a flirty wink at one of the Clan cats."
             }
                     },
                     {
@@ -5503,7 +5503,7 @@
                         ],
                         "amount": 15,
             "log": {
-                "cats_from": "to_cat and from_cat are friends and were in the middle of an argument before being interrupted."
+                "cats_from": "to_cat and from_cat are long-time friends."
             }
                     }
                 ],
@@ -6437,7 +6437,7 @@
                         "values": ["like", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat helped rescue a litter of kittens from drowning while on patrol."
+                            "cats_from": "to_cat and from_cat worked together to rescue a litter of kittens from drowning while on patrol."
                         }
                     },
                     {
@@ -6550,7 +6550,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat rescued a sick kittypet from the Thunderpath on patrol."
+                            "cats_from": "to_cat and from_cat worked together to rescue a sick kittypet from the Thunderpath on patrol."
                         }
                     },
                     {
