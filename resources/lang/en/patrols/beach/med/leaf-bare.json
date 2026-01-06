@@ -191,10 +191,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "medicine cat": [
                 1,
                 6

@@ -985,10 +985,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l tastes the air and perks up - there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!",

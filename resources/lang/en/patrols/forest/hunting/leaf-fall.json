@@ -15,10 +15,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
@@ -548,10 +545,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "The rain seems a constant, unceasing beat, punctuating the steps of the hunting patrol as they march towards their hunting ground. But there's one less set of footsteps than there should be. p_l can't see r_c in the watery haze.",
@@ -720,10 +714,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l travels through the blustery wind to hunt. In a pile of leaves, {PRONOUN/p_l/subject} {VERB/p_l/swear/swears} {PRONOUN/p_l/subject} could see a rat's tail.",
@@ -1364,10 +1355,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby. It'll be fat on the nuts and acorns leaf-fall scatters through the forest, and if r_c can only avoid the leaves crunching under {PRONOUN/r_c/poss} paws it's as good as caught.",
@@ -1903,10 +1891,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "The air feels tense - r_c is sure that a storm is on its way to pull more leaves from the forest's canopy. If {PRONOUN/r_c/subject} {VERB/r_c/are/is} going to hunt, {PRONOUN/r_c/subject} should do it now.",

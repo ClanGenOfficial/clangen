@@ -15,10 +15,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling the delicate new plant growth near the base of a tree!",
@@ -593,10 +590,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "As the patrol wanders through a damp, dripping world, their claws clogged with mud, p_l turns around to find r_c is missing.",
@@ -761,10 +755,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l makes {PRONOUN/p_l/poss} way towards a blooming grove of trees. {PRONOUN/p_l/poss/CAP} ears perk at the sound of a soft hiss on the wind.",
@@ -1618,10 +1609,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
@@ -2157,10 +2145,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "As r_c sets off to see what {PRONOUN/r_c/subject} can find for the fresh-kill pile, the newleaf sun feels weak, but the grass is sprouting and the trees of the forest are coated in mangy pelts of not-quite-unfurled leaf buds. Let's see what {PRONOUN/r_c/subject} can rustle up.",
@@ -2725,10 +2710,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "As r_c sharpens {PRONOUN/r_c/poss} claws on a tree root, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a pair of birds furiously chattering to each other above {PRONOUN/r_c/object}, puffing up their feathers and singing in territorial fury. {PRONOUN/r_c/subject/CAP} could go after the birds, of course - but if the fluffy mouthfuls are being protective, then there's something to protect, and it's the season for nest raiding.",
@@ -2803,10 +2785,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "As r_c sharpens {PRONOUN/r_c/poss} claws on a tree root, {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a pair of birds furiously chattering to each other above {PRONOUN/r_c/object}, puffing up their feathers and singing in territorial fury. {PRONOUN/r_c/subject/CAP} could go after the birds, of course - but if the fluffy mouthfuls are being protective, then there's something to protect, and it's the season for nest raiding.",
@@ -2902,10 +2881,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "r_c wakes from a dream of rich yolk, tongue sticking out ready to lap from an eggshell. However, when {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} {PRONOUN/r_c/poss} head out of {PRONOUN/r_c/poss} den to go nest raiding, there's rain pouring down outside. But... {PRONOUN/r_c/subject/CAP} can still taste egg on {PRONOUN/r_c/poss} tongue...",

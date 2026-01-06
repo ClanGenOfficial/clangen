@@ -28,20 +28,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hunted successfully together in the snow."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -57,20 +61,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by how much prey to_cat was able to catch in the snow."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -81,27 +89,35 @@
                 "stat_trait": [
                     "compassionate",
                     "faithful",
-                    "loving"
+                    "loving",
+                    "wise",
+                    "calm",
+                    "thoughtful",
+                    "sincere"
                 ],
                 "prey": [
                     "medium"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat's gentle presence helped to_cat's patrol stay focused during a difficult snowy hunt."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -113,20 +129,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -152,20 +162,14 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -199,6 +203,18 @@
                 "prey": [
                     "small"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a mouse for the fresh-kill pile."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -209,6 +225,18 @@
                 ],
                 "prey": [
                     "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a clutch of mice for the fresh-kill pile."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
@@ -242,23 +270,14 @@
         "biome": [
             "forest"
         ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "romance"
-        ],
+        "season": [ "leaf-bare" ],
+        "types": [ "hunting" ],
+        "tags": [ "romance" ],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
@@ -273,19 +292,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": [ "patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth in a snowstorm."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -301,19 +315,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": [ "patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth in a snowstorm."
+                        }
+                    },
+                    {
+                        "cats_to": [ "s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "While huddling for warmth in a snowstorm, from_cat learned what a great conversationalist to_cat is."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -331,19 +350,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": [ "patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth in a snowstorm."
+                        }
+                    },
+                    {
+                        "cats_to": [ "s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "While huddling for warmth in a snowstorm, from_cat realized what a soothing presence to_cat is."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -362,19 +386,24 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat's Clanmate died when they failed to keep warm during a snowstorm."
+                        }
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "This is a counterweight to the other relationship change. The player should not see this text."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -398,23 +427,6 @@
                     "reg_death": "m_c froze to death while hunting in a storm.",
                     "lead_death": "froze to death while hunting"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -435,10 +447,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby, one that would be greatly appreciated for the fresh-kill pile.",
@@ -649,15 +658,9 @@
         "biome": [
             "forest"
         ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "romance"
-        ],
+        "season": [ "leaf-bare" ],
+        "types": [ "hunting" ],
+        "tags": [ "romance" ],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,
         "max_cats": 6,
@@ -969,10 +972,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, scrounging for nuts near the base of a tree!",
@@ -1508,10 +1508,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "Snow falling around the patrol hushes the world around and between them into a white-tinted haze, and p_l grows increasingly on edge. Something's wrong. Where is r_c?",
@@ -1607,10 +1604,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l scouts out the frozen trees, spying a skeletal rat underneath a low branch.",
@@ -2533,10 +2527,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "The gentle speckles of snow falling from the sky don't dissuade r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} the canopy of the forest will shelter {PRONOUN/r_c/object} while {PRONOUN/r_c/subject} {VERB/r_c/hunt/hunts}.",
@@ -2961,23 +2952,14 @@
         "biome": [
             "forest"
         ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "romance"
-        ],
+        "season": [ "leaf-bare" ],
+        "types": [ "hunting" ],
+        "tags": [ "romance" ],
         "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
@@ -3154,10 +3136,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby, one that would be greatly appreciated for the fresh-kill pile.",
@@ -3368,15 +3347,9 @@
         "biome": [
             "forest"
         ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "romance"
-        ],
+        "season": [ "leaf-bare" ],
+        "types": [ "hunting" ],
+        "tags": [ "romance" ],
         "patrol_art": "fst_hunt_mice_ohnotheyrehot",
         "min_cats": 3,
         "max_cats": 6,

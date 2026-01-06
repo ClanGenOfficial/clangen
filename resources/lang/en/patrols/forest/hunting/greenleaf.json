@@ -15,10 +15,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!",
@@ -864,10 +861,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 1,
         "intro_text": "The patrol is brought up short by the sound of aggressive flapping and the cries of a hawk. Approaching cautiously through the bushes, they see a red-tailed hawk, downed with a broken wing, trying in vain to get back into the sky. This could be an opportunity...",
@@ -1189,10 +1183,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "The patrol heads out, determined to visit a distant clearing, where the grass has set to seed and attracted birds. However, still several fox-length from the clearing, p_l looks around and realizes r_c isn't with the patrol.",
@@ -1361,10 +1352,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l hunts near the stream, hoping for an easy hunt to get out of the heat. {PRONOUN/p_l/poss/CAP} eyes lock onto a large rat drinking from the stream.",
@@ -4640,10 +4628,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby and drools at the thought of greenleaf fresh-kill. It's a great day for hunting, too; c_n's woods overflow with greenleaf's bounty.",
@@ -5155,10 +5140,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "The light drizzle falling on {PRONOUN/r_c/poss} whiskers is refreshing, after so many days of warmth. r_c wanders out to hunt, making the most of the drop in temperature so {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have to stalk in the full heat of greenleaf.",

@@ -444,10 +444,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
@@ -859,10 +856,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "leader": [
                 -1,
                 -1

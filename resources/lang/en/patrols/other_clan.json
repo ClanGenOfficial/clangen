@@ -902,10 +902,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "deputy": [
                 -1,
                 -1
@@ -1891,10 +1888,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",

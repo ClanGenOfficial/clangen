@@ -1635,10 +1635,7 @@
                 1,
                 6
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 1,
         "intro_text": "As p_l pads through c_n territory, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}.",
@@ -2274,10 +2271,7 @@
                 1,
                 6
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "normal adult": [
                 1,
                 6
@@ -2425,10 +2419,7 @@
                 1,
                 6
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "normal adult": [
                 1,
                 6
@@ -3700,10 +3691,7 @@
                 1,
                 6
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "normal adult": [
                 -1,
                 -1
@@ -4467,10 +4455,7 @@
                 1,
                 6
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "normal adult": [
                 1,
                 6
@@ -4647,10 +4632,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "medicine cat": [
                 1,
                 1

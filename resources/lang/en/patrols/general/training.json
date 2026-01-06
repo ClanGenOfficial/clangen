@@ -15,10 +15,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 1,
         "intro_text": "While alone, {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} about life. Is r_c really headed where {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to go? Is r_c doing a good job of pursuing what's important to {PRONOUN/r_c/object}?",
@@ -74,10 +71,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "r_c feels a little overwhelmed trying to train by {PRONOUN/r_c/self}.",
@@ -681,10 +675,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 1,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
@@ -738,10 +729,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 1,
         "intro_text": "p_l and r_c find a nice spot to sun themselves.",
@@ -1299,10 +1287,7 @@
         "min_cats": 5,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l flicks {PRONOUN/p_l/poss} tail thoughtfully. What direction {VERB/p_l/do/does} {PRONOUN/p_l/subject} want to take this training patrol?",
@@ -1700,10 +1685,7 @@
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "deputy": [
                 -1,
                 -1
@@ -4284,10 +4266,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 1,
         "intro_text": "The patrol devolves into ghost stories, putting everyone on edge.",
@@ -4750,10 +4729,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
@@ -5159,10 +5135,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
@@ -6086,10 +6059,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
@@ -6335,10 +6305,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mate.",
@@ -6582,10 +6549,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
@@ -6802,10 +6766,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
@@ -7019,10 +6980,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
@@ -7262,10 +7220,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
@@ -8202,10 +8157,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques.",
@@ -8713,10 +8665,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
@@ -8816,10 +8765,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
@@ -8922,10 +8868,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "As they wander aimlessly towards the sparring area for a training session, r_c stops p_l and asks for {PRONOUN/p_l/poss} advice with something.",
@@ -9025,10 +8968,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
@@ -9134,10 +9074,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "During an odd moment of downtime, r_c asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a good teacher.",
@@ -9256,10 +9193,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "p_l gets taken aside by r_c as {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} why {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like StarClan ignores {PRONOUN/r_c/object}.",
@@ -9727,10 +9661,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c finds p_l out training in r_c's favorite spot - and not only does r_c have to share the spot, but the pounce p_l is practicing looks all wrong!",
@@ -9809,10 +9740,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l is working on {PRONOUN/p_l/poss} battle moves when r_c sticks {PRONOUN/r_c/poss} head around the corner. Perfect - not only will p_l get a training partner, but battering r_c (with sheathed claws, {PRONOUN/p_l/subject} {VERB/p_l/promise/promises}!) will be just a little more satisfying than putting a paw in any other Clanmate's face.",
@@ -9901,10 +9829,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l and r_c find themselves hanging out together. Without any other Clanmates. This is... sure to go well. p_l tries to start up a safe conversation about prey types.",
@@ -9963,10 +9888,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l is an annoying furball of a Clanmate, but there's no one else available for training. Another Clanmate spots r_c leading p_l out of camp and makes a <i>comment</i> about romantic sunset walks. r_c burns under {PRONOUN/r_c/poss} fur. Certainly not!",
@@ -10045,10 +9967,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l spots r_c padding out of camp and makes a beeline to follow {PRONOUN/r_c/object}. Because, of course, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} simply that dedicated to taking every opportunity to train, even with a tick like r_c.",
@@ -10137,10 +10056,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "Maybe it's a little immature to be so invested in an argument - ahem, refined conversation about battle strategies.",
@@ -10237,10 +10153,7 @@
                 -1,
                 -1
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l can't believe that r_c is <i>such</i> a fox-heart that the leader of c_n sent them both out together to work out their problems. Like, what?",
@@ -10317,10 +10230,7 @@
                 1,
                 6
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "Out for training with r_c, p_l is reaching the limit of {PRONOUN/p_l/poss} patience.",
@@ -10393,10 +10303,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
@@ -10489,10 +10396,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "Everyone agrees that p_l and r_c get along like a forest fire, but surely they can hold it together for one afternoon's worth of training?",
@@ -10572,10 +10476,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c, sick of hearing other cats gossip about how much p_l hates {PRONOUN/r_c/object}, pulls p_l aside to confront {PRONOUN/p_l/object}.",
@@ -10654,10 +10555,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c wants to push {PRONOUN/r_c/poss} limits in training today, to really improve on {PRONOUN/r_c/poss} stealth skills, and p_l is {PRONOUN/r_c/poss} (somewhat) willing victim. {PRONOUN/r_c/subject/CAP} {VERB/r_c/swear/swears} that it's going to be the difference between prey on the fresh-kill pile and the Clan eating crowfood.",

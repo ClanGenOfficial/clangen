@@ -15,10 +15,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, scrounging in the sand for its stashed-away food.",
@@ -741,23 +738,14 @@
         "biome": [
             "beach"
         ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "romance"
-        ],
+        "season": [ "leaf-bare" ],
+        "types": [ "hunting" ],
+        "tags": [ "romance" ],
         "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",

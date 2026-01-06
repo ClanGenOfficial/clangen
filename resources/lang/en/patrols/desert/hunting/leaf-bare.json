@@ -304,23 +304,14 @@
         "biome": [
             "desert"
         ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "romance"
-        ],
+        "season": [ "leaf-bare" ],
+        "types": [ "hunting" ],
+        "tags": [ "romance" ],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",

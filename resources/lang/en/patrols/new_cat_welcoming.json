@@ -166,10 +166,7 @@
                 1,
                 6
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "chance_of_success": 50,
@@ -3458,10 +3455,7 @@
                 1,
                 6
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "normal adult": [
                 -1,
                 -1
@@ -3596,10 +3590,7 @@
                 1,
                 6
             ],
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "normal adult": [
                 -1,
                 -1

@@ -14,10 +14,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, fat in preparation for leaf-bare.",
@@ -521,10 +518,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby. The grass here has gone to seed under the leaf-fall sun and could easily fatten a hundred mice for leaf-bare.",
