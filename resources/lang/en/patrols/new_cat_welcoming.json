@@ -2836,13 +2836,21 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["n_c:0"],
-                        "cats_to": ["patrol"],
-                        "values": ["like", "trust", "comfort"],
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
                         "amount": 10,
                         "log": {
                             "cats_from": "to_cat was part of the patrol that saved n_c:0 from a dog."
-
+                        }
                     }
                 ],
                 "outsider_rep": 1,
