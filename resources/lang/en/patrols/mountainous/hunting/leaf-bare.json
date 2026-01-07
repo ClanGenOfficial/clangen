@@ -1432,16 +1432,6 @@
                         "log": {
                             "cats_from": "to_cat and from_cat failed to keep warm during a snowstorm, and from_cat ended up carrying a body home."
                         }
-                    },
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["trust"],
-                        "amount": 8,
-                        "log": {
-                            "cats_from": "from_cat carried guilt from to_cat's death when to_cat froze to death while huddling with from_cat."
-                        }
                     }
                 ],
                 "frequency": 4
