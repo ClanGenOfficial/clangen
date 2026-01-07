@@ -1896,6 +1896,18 @@
                 "prey": [
                     "medium"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a rat for the fresh-kill pile."
+                        }
+                    }
+                ],
                 "frequency": 4
             }
         ],
@@ -1905,6 +1917,18 @@
                 "exp": 0,
                 "prey": [
                     "very_small"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat had to pull to_cat out of a log after {PRONOUN/app1/subject} got stuck while hunting a rat."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
@@ -1946,6 +1970,19 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["p_l"],
+                    "cats_to": ["app1"],
+                    "values": ["trust", "like"],
+                    "mutual": true,
+                    "amount": 10,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together to take down two rats."
+                    }
+                }
+            ],
                 "frequency": 4
             }
         ],
@@ -1956,6 +1993,19 @@
                 "prey": [
                     "very_small"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["p_l"],
+                    "cats_to": ["app1"],
+                    "values": ["trust"],
+                    "mutual": true,
+                    "amount": -5,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat were unable to take down a pair of rats while hunting together."
+                    }
+                }
+            ],
                 "frequency": 4
             }
         ]
