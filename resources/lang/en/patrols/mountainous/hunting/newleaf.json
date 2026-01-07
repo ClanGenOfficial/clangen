@@ -996,7 +996,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust", "like"],
+                        "values": ["comfort", "like"],
                         "amount": 8,
                         "log": {
                             "cats_from": "from_cat's gentle presence helped to_cat's patrol stay focused during a difficult snowy hunt."
