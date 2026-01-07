@@ -116,7 +116,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat had second thoughts on joining c_n, feeling the anxiety {PRONOUN/from_cat/subject} felt while encountering to_cat's patrol."
+                            "cats_from": "from_cat had second thoughts on joining c_n after feeling anxious while encountering to_cat's patrol."
                         }
                     }
                 ],
