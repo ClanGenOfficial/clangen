@@ -7420,7 +7420,7 @@
             {
                 "cats_to": ["r_c"],
                 "cats_from": ["p_l"],
-                "mutual": true,
+                "mutual": false,
                 "values": ["trust"],
                 "amount": -10,
                 "log": {
@@ -7498,7 +7498,7 @@
                 "values": ["trust"],
                 "amount": -10,
                 "log": {
-                    "cats_from": "to_cat acted strangely after becoming separated from from_cat on patrol."
+                    "cats_from": "r_c acted strangely after becoming separated from p_l on patrol."
                 }
             }
             ],
