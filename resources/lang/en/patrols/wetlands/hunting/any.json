@@ -146,6 +146,19 @@
             {
                 "text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun.",
                 "exp": 0,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["p_l"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log":
+                    {
+                        "cats_from": "from_cat was not pleased that to_cat told {PRONOUN/to_cat/poss} patrol to attack Twoleg kits."
+                    }
+                }
+            ],
                 "frequency": 4
             }
         ],
@@ -153,6 +166,19 @@
             {
                 "text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, its blood on their claws.",
                 "exp": 20,
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat had fun antagonizing Twoleg kits on a hunting patrol with to_cat."
+                    }
+                }
+            ],
                 "frequency": 4
             }
         ]
@@ -203,6 +229,30 @@
                 "prey": [
                     "large"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["comfort"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log":
+                    {
+                        "cats_from": "However, that technique involved rolling in rotting muddy grass, so from_cat was not keen to hunt with to_cat again."
+                    }
+                },
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat was impressed by to_cat's clever technique for disguising scents during a hunting patrol."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -214,7 +264,20 @@
                 "prey": [
                     "large"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat was impressed by to_cat's clever technique for disguising one's scent during a hunting patrol."
+                    }
+                }
+            ]
             }
         ],
         "fail_outcomes": [
@@ -268,7 +331,31 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["high_stable"],
+                    "cats_to": ["s_c"],
+                    "values": ["comfort"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "from_cat wondered why to_cat stank of mud and rot after returning from a hunt."
+                    }
+                },
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat was impressed by how much prey to_cat brought back after a hunt."
+                    }
+                }
+            ]
             },
             {
                 "text": "s_c rolls in a patch of garlic to disguise {PRONOUN/s_c/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/s_c/poss} pelt, though.",
@@ -291,7 +378,20 @@
             {
                 "text": "r_c finds no prey; it seems like all the prey was scared off because of their stench!",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect", "comfort"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "to_cat returned from a hunt empty-pawed and stinky. from_cat got an unfortunate noseful."
+                    }
+                }
+            ]
             }
         ]
     },
@@ -329,7 +429,20 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat return from a hunting assessment carrying a juicy piece of fresh-kill."
+                    }
+                }
+            ]
             },
             {
                 "text": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a clear-eyed, focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the sight of the fresh-kill pile stocked with {PRONOUN/r_c/poss} prey - {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} ready to burst with happiness!",
@@ -337,7 +450,20 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 1
+                "frequency": 1,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat return from a hunting assessment buried under all the fresh-kill {PRONOUN/to_cat/subject} caught!"
+                    }
+                }
+            ]
             },
             {
                 "text": "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the right opportunity presents itself, and they pull off a perfect catch!",
@@ -360,7 +486,20 @@
                 "prey": [
                     "large"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat return from a hunting assessment carrying a juicy piece of fresh-kill."
+                    }
+                }
+            ]
             }
         ],
         "fail_outcomes": [
@@ -385,7 +524,20 @@
                 "can_have_stat": [
                     "app"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["high_lawful"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "from_cat heard that to_cat goofed off during a hunting assessment and returned empty-pawed."
+                    }
+                }
+            ]
             }
         ]
     },
@@ -709,7 +861,20 @@
                 "stat_skill": [
                     "CLEVER,3"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["trust", "respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's familiarity with Twoleg behavior saved from_cat on a patrol."
+                    }
+                }
+            ]
             },
             {
                 "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
@@ -794,7 +959,20 @@
                 "stat_skill": [
                     "CLEVER,3"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["trust", "respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's familiarity with Twoleg behavior saved from_cat on a patrol."
+                    }
+                }
+            ]
             },
             {
                 "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
@@ -831,178 +1009,6 @@
                 "exp": 0,
                 "lost_cats": [
                     "r_c"
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "wtlnd_hunt_gonetnr3",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "The patrol encounters a clearing of dry grassy ground where a lot of Twolegs linger.",
-        "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "They continue hunting undetected.",
-                "exp": 20,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in their mouth.",
-                "exp": 20,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,3"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
-                "exp": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster.",
-                "exp": 0,
-                "stat_trait": [
-                    "compassionate",
-                    "faithful",
-                    "loving",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter delicious-smelling mush in little burrows. Some of the patrol investigates, and doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and the trapped cats are taken.",
-                "exp": 0,
-                "lost_cats": [
-                    "multi"
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "wtlnd_hunt_gonetnr4",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "The patrol encounters a clearing of dry grassy ground where a lot of Twolegs linger.",
-        "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a hunk of meat in their mouth.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,3"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
-                "exp": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing all of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster.",
-                "exp": 0,
-                "stat_trait": [
-                    "compassionate",
-                    "faithful",
-                    "loving",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter delicious-smelling mush in little burrows. The whole patrol investigates, and doors slam down behind them. There's nothing they can do to get out - eventually the Twolegs notice, and the trapped cats are taken from c_n.",
-                "exp": 0,
-                "lost_cats": [
-                    "patrol"
                 ],
                 "frequency": 3
             }
