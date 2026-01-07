@@ -7432,6 +7432,7 @@
             [
                 "loner",
                 "female",
+                "age:senior",
                 "meeting",
                 "unknown",
                 "dead"
@@ -7439,6 +7440,7 @@
             [
                 "loner",
                 "female",
+                "age:senior",
                 "meeting",
                 "unknown",
                 "dead"
@@ -7446,6 +7448,7 @@
             [
                 "loner",
                 "female",
+                "age:senior",
                 "meeting",
                 "unknown",
                 "dead"
@@ -7467,14 +7470,16 @@
                 "values": ["like", "trust", "respect"],
                 "amount": -75,
                 "log": {
-                    "cats_from": "from_cat learned from a mysterious loner that {PRONOUN/from_cat/poss} destiny is to replace to_cat."
+                    "cats_from": "from_cat learned from three mysterious loners that {PRONOUN/from_cat/poss} destiny is to replace to_cat."
                 }
             }
             ],
         "new_cat": [
             [
                 "loner",
+                "female",
                 "meeting",
+                "age:senior",
                 "unknown",
                 "dead"
             ],
@@ -7482,12 +7487,14 @@
                 "loner",
                 "female",
                 "meeting",
+                "age:senior",
                 "unknown",
                 "dead"
             ],
             [
                 "loner",
                 "female",
+                "age:senior",
                 "meeting",
                 "unknown",
                 "dead"
@@ -7534,7 +7541,9 @@
         "new_cat": [
             [
                 "loner",
+                "female",
                 "meeting",
+                "age:senior",
                 "unknown",
                 "dead"
             ],
@@ -7542,6 +7551,7 @@
                 "loner",
                 "female",
                 "meeting",
+                "age:senior",
                 "unknown",
                 "dead"
             ],
@@ -7549,6 +7559,7 @@
                 "loner",
                 "female",
                 "meeting",
+                "age:senior",
                 "unknown",
                 "dead"
             ]
@@ -7562,7 +7573,9 @@
             "new_cat": [
             [
                 "loner",
+                "female",
                 "meeting",
+                "age:senior",
                 "unknown",
                 "dead"
             ],
@@ -7570,6 +7583,7 @@
                 "loner",
                 "female",
                 "meeting",
+                "age:senior",
                 "unknown",
                 "dead"
             ],
@@ -7577,13 +7591,55 @@
                 "loner",
                 "female",
                 "meeting",
+                "age:senior",
                 "unknown",
                 "dead"
             ]
             ],
             "art": "friendlyghost_INTRO"
 
-    }
+    },
+    {
+    "text": "r_c follows the voice and finds three mysterious loners, who hail {PRONOUN/r_c/object} as leader of c_n, then vanish into the mist. Unsettled, r_c tracks down p_l - and finds {PRONOUN/p_l/object} trembling in a pool of {PRONOUN/p_l/poss} own blood.",
+    "exp": 0,
+    "frequency": 2,
+    "dead_cats": [
+        "p_l",
+        "some_lives"
+    ],
+    "history_text": {
+        "lead_death": "lost multiple lives after vanishing into the mist"
+    },
+            "new_cat": [
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ]
+            ],
+    "art": "gen_dead_cat_ghost_EXPLICIT",
+    "art_clean": "gen_dead_cat",
+    "future_event": []
+}
     ],
     "antag_success_outcomes": [
         {
@@ -7593,7 +7649,10 @@
         "new_cat": [
             [
                 "loner",
+                "female",
                 "meeting",
+                "age:senior",
+                "dead",
                 "unknown"
             ]
         ],
@@ -7621,6 +7680,8 @@
             [
                 "loner",
                 "meeting",
+                "female",
+                "age:senior",
                 "unknown",
                 "dead"
             ]
