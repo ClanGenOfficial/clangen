@@ -1075,7 +1075,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -1108,7 +1108,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -1134,7 +1134,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust", "like"],
+                        "values": ["comfort", "like"],
                         "amount": 8,
                         "log": {
                             "cats_from": "from_cat's gentle presence helped to_cat's patrol stay focused during a difficult snowy hunt."
@@ -1147,7 +1147,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -1163,7 +1163,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
+                        "values": ["comfort"],
                         "amount": 5,
                         "log": {
                             "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
@@ -1196,7 +1196,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
+                        "values": ["comfort"],
                         "amount": 5,
                         "log": {
                             "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
@@ -1237,7 +1237,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -1260,7 +1260,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 10,
@@ -1430,17 +1430,7 @@
                         "values": ["trust"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat and from_cat failed to keep warm during a snowstorm, and from_cat ended up carrying a body home."
-                        }
-                    },
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["trust"],
-                        "amount": 8,
-                        "log": {
-                            "cats_from": "from_cat carried guilt from to_cat's death when to_cat froze to death while huddling with from_cat."
+                            "cats_from": "from_cat's patrol failed to keep warm during a snowstorm and they ended up carrying r_c's body home."
                         }
                     }
                 ],
@@ -1738,11 +1728,12 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": ["like", "trust"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat and to_cat enjoyed a successful hunt together."
-                        }
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -1762,31 +1753,12 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": ["comfort"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat and to_cat engaged in a friendly hunting competition together."
-                        }
-                    },
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat and to_cat engaged in a friendly hunting competition together."
-                        }
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat enjoyed the little challenge that to_cat set to the patrol when they were hunting together."
-                        }
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5
                     }
                 ],
                 "frequency": 1
@@ -1803,24 +1775,19 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["like"],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "...and thought {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} bragging about it a little more than necessary."
-                        }
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat watched to_cat catch squirrel after squirrel on a hunting patrol..."
-                        }
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -1839,11 +1806,12 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": ["trust"],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "from_cat doubted to_cat's hunting skill after a disappointing hunting patrol."
-                        }
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5
                     }
                 ],
                 "prey": [
@@ -1884,9 +1852,12 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": ["comfort"],
-                        "amount": -5,
-                        "log": "from_cat and to_cat avoided each other after a disastrous squirrel hunting patrol."
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5
                     }
                 ],
                 "prey": [
@@ -1932,12 +1903,10 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5,
-                        "log":
-                        {
-                            "cats_from": "from_cat was impressed by to_cat's idea for baiting squirrels."
-                        }
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -1957,12 +1926,10 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": 8,
-                        "log":
-                        {
-                            "cats_from": "from_cat was impressed by to_cat's clever idea for baiting squirrels."
-                        }
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
                     }
                 ],
                 "frequency": 1
@@ -1971,8 +1938,7 @@
                 "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
                 "exp": 20,
                 "stat_skill": [
-                    "HUNTER,1",
-                    "CLEVER,1"
+                    "HUNTER,1"
                 ],
                 "prey": [
                     "large"
@@ -1986,11 +1952,10 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat was highly impressed by to_cat's genius idea for baiting squirrels."
-                        }
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -2020,11 +1985,10 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "from_cat felt that to_cat wasted a perfectly good hunting patrol with a hare-brained squirrel-baiting scheme."
-                        }
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5
                     }
                 ],
                 "prey": [
