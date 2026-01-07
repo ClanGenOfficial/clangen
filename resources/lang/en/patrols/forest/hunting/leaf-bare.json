@@ -2617,7 +2617,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "The weather is sunny, yet cold, as r_c sets out on {PRONOUN/r_c/poss} hunting patrol, but as the day goes on, a snowstorm blows in. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} lost and shivering, but as {PRONOUN/r_c/subject} {VERB/r_c/strain/strains} through the sound of the wind, {PRONOUN/r_c/subject} can hear a birdcall leading {PRONOUN/r_c/object} on through the trees.",
+        "intro_text": "The weather is sunny yet cold as r_c sets out on {PRONOUN/r_c/poss} hunting patrol, but as the day goes on, a snowstorm blows in. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} lost and shivering, but as {PRONOUN/r_c/subject} {VERB/r_c/strain/strains} through the sound of the wind, {PRONOUN/r_c/subject} can hear a birdcall leading {PRONOUN/r_c/object} on through the trees.",
         "decline_text": "It's probably a trick of the wind. r_c ignores {PRONOUN/r_c/poss} growling belly and tries to retrace {PRONOUN/r_c/poss} pawsteps through the worsening snow. By the grace of StarClan, {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to find {PRONOUN/r_c/poss} way back to camp before nightfall.",
         "chance_of_success": 35,
         "success_outcomes": [
@@ -2627,6 +2627,18 @@
                 "prey": [
                     "medium"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a grouse for the fresh-kill pile."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -2634,6 +2646,18 @@
                 "exp": 25,
                 "prey": [
                     "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a grouse for the fresh-kill pile."
+                        }
+                    }
                 ],
                 "frequency": 1
             }
@@ -2706,19 +2730,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol" ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to catch songbirds."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol" ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat led from_cat in a successful leaf-bare hunt."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2731,19 +2760,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol" ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to catch songbirds."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol" ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat led from_cat in a successful leaf-bare hunt."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2755,19 +2789,24 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol" ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["trust", "like"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to work together to catch songbirds and ended up arguing."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol" ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat couldn't effectively lead a hunting patrol that from_cat was on."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2777,19 +2816,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
+                        "cats_to": ["r_c" ],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": [ "respect", "trust" ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat messed up on from_cat's hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2797,7 +2831,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_leaf-bare_lillizard_leafbare1",
+        "patrol_id": "fst_hunt_leaf-bare_lillizard1",
         "biome": [
             "forest"
         ],
@@ -2832,11 +2866,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat persevered on a difficult hunt and returned to camp with a lizard."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2849,45 +2883,35 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "patrol" ],
+                        "cats_from": [ "patrol" ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hunted lizards together in leaf-bare."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c manages to figure it out - a brumating lizard! If they hadn't all had their faces in the snow already, they'd never have found it, what with it giving off such little scent.",
+                "text": "s_c figures it out - a brumating lizard! If they hadn't all had their faces in the snow already, they'd never have found it, what with it giving off such little scent.",
                 "exp": 15,
-                "stat_skill": [
-                    "HUNTER,1"
-                ],
+                "stat_skill": ["HUNTER,1", "SENSE,1"],
                 "prey": [
                     "medium"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": [ "patrol" ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": [ "trust", "respect" ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat's keen nose helped from_cat's patrol catch lizards in leaf-bare."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2897,25 +2921,6 @@
             {
                 "text": "The patrol is unable to fish out whatever is giving off that prey-scent - maybe it's just the scent left by the mouse?",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
                 "frequency": 4
             }
         ]
