@@ -1352,7 +1352,7 @@
                         ],
                         "mutual": true,
                         "values": ["romance"],
-                        "amount": 10,
+                        "amount": 40,
                         "log": {
                             "cats_from": "to_cat and n_c:0 were mates hiding their relationship from to_cat's Clan."
                         }
