@@ -1032,11 +1032,11 @@
         "min_max_status": {},
         "frequency": 2,
         "intro_text": "r_c decides to hunt out near the Twoleg dens.",
-        "decline_text": "On second thought, they decide to reline their nest today instead.",
+        "decline_text": "On second thought, {PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to reline {PRONOUN/r_c/poss} nest today instead.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
+                "text": "{PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -1044,12 +1044,25 @@
                 "frequency": 4
             },
             {
-                "text": "A friendly Twoleg makes a psspsspss noise, and pours kittypet food on the ground for r_c. They've always wondered what it might taste like... dry, is the answer. Very odd.",
+                "text": "A friendly Twoleg makes a psspsspss noise, and pours kittypet food on the ground for r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} always wondered what it might taste like... dry, is the answer. Very odd.",
                 "exp": 20,
                 "prey": [
                     "very_small"
                 ],
-                "frequency": 1
+                "frequency": 1,
+            "relationships": [
+                {
+                    "cats_from": ["high_lawful"],
+                    "cats_to": ["s_c"],
+                    "values": ["like", "respect"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log":
+                    {
+                        "cats_from": "from_cat caught the scent of kittypet food on to_cat's pelt."
+                    }
+                }
+            ]
             },
             {
                 "text": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c take the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
@@ -1060,7 +1073,20 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["high_social"],
+                    "cats_to": ["s_c"],
+                    "values": ["like", "respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat was pleased to see to_cat bring something soft for the nursery back to camp."
+                    }
+                }
+            ]
             },
             {
                 "text": "Calmly, s_c weaves around the Twoleg dens, picking out the mice from the tunnels and the birds off the strange metal hanging fruit. A successful, sneaky hunt.",
@@ -1078,7 +1104,20 @@
                 "prey": [
                     "large"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["s_c"],
+                    "values": ["like", "respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat was impressed by to_cat's haul from a solo hunt."
+                    }
+                }
+            ]
             }
         ],
         "fail_outcomes": [
@@ -1105,6 +1144,35 @@
                     "r_c"
                 ],
                 "frequency": 3
+            },
+            {
+                "text": "Carelessly, r_c is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} that a broken window is just wide enough to push {PRONOUN/r_c/self} out to safety through, but the glass leaves {PRONOUN/r_c/object} bleeding as {PRONOUN/r_c/subject} {VERB/r_c/run/runs} back to c_n.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "torn pelt"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "frequency": 3,
+            "relationships": [
+                {
+                    "cats_from": ["low_lawful"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat hears about to_cat's daring escape from a Twoleg nest."
+                    }
+                }
+            ]
             }
         ]
     },
@@ -1131,11 +1199,11 @@
         },
         "frequency": 2,
         "intro_text": "app1 decides to hunt out near the Twoleg dens.",
-        "decline_text": "On second thought, they decide to reline their nest today instead.",
+        "decline_text": "On second thought, {PRONOUN/app1/subject} {VERB/app1/decide/decides} to reline {PRONOUN/app1/poss} nest today instead.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall, it works out.",
+                "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} interrupted by Twolegs wandering through the woods a couple times, so {PRONOUN/app1/subject} {VERB/app1/miss/misses} a couple catches, but overall, it works out.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -1143,15 +1211,28 @@
                 "frequency": 4
             },
             {
-                "text": "A friendly Twoleg makes a psspsspss noise, and pours kittypet food on the ground for app1. They've always wondered what it might taste like... dry, is the answer. It's strangely appealing.",
+                "text": "A friendly Twoleg makes a psspsspss noise, and pours kittypet food on the ground for app1. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} always wondered what it might taste like... dry, is the answer. It's strangely appealing.",
                 "exp": 20,
                 "prey": [
                     "very_small"
                 ],
-                "frequency": 1
+                "frequency": 1,
+            "relationships": [
+                {
+                    "cats_from": ["high_lawful"],
+                    "cats_to": ["app1"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "from_cat wasn't impressed to hear to_cat tasted a bit of kittypet food on a solo hunt."
+                    }
+                }
+            ]
             },
             {
-                "text": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. A successful, sneaky hunt.",
+                "text": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. A successful, sneaky hunt.",
                 "exp": 20,
                 "stat_trait": [
                     "calm",
@@ -1166,7 +1247,20 @@
                 "prey": [
                     "large"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["app1"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat was impressed by to_cat's successful solo hunt."
+                    }
+                }
+            ]
             }
         ],
         "fail_outcomes": [
@@ -1226,17 +1320,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "r_c"
                         ],
                         "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from convinced to_cat to go hunt by the Twoleg dens and found great success.",
+                            "cats_to": "to_cat followed from_cat in a risky hunt by the Twoleg dens and found great success."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1250,17 +1348,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
                             "p_l"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
+                        "cats_from": [
+                            "r_c"
                         ],
-                        "amount": 5
+                        "mutual": true,
+                        "values": ["romance", "like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat tasted a little kittypet food together on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1277,17 +1375,18 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
                             "p_l"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
+                        "cats_from": [
+                            "r_c"
                         ],
-                        "amount": 5
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's knowledge of Twolegs.",
+                            "cats_to": "to_cat enjoyed showing off {PRONOUN/to_cat/poss} knowledge of Twolegs in front of from_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1298,10 +1397,8 @@
                 "stat_trait": [
                     "calm",
                     "careful",
-                    "insecure",
                     "lonesome",
                     "loyal",
-                    "nervous",
                     "sneaky",
                     "strange"
                 ],
@@ -1314,17 +1411,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
                             "p_l"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
+                        "cats_from": [
+                            "r_c"
                         ],
-                        "amount": 5
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had an adventure around the Twoleg dens, just the two of them."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1337,17 +1434,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
                             "p_l"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
+                        "cats_from": [
+                            "r_c"
                         ],
-                        "amount": -5
+                        "mutual": true,
+                        "values": ["romance", "like", "comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a frightening experience with a Twoleg den and began to spend less time with each other."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1366,17 +1463,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
                             "p_l"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
+                        "cats_from": [
+                            "r_c"
                         ],
-                        "amount": -5
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat's Twoleg adventure turned out to be less exciting than they'd hoped."
+                        }
                     }
                 ],
                 "prey": [
@@ -1392,18 +1489,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": -5
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was with to_cat when {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} taken by Twolegs and blamed {PRONOUN/from_cat/self}."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -1448,17 +1541,18 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "app1"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "app2"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 5
+                        "mutual": false,
+                        "values": ["romance", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from convinced to_cat to hunt by the Twoleg dens and found success.",
+                            "cats_to": "to_cat followed from_cat in a risky hunt by the Twoleg dens and found success."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1472,17 +1566,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "app1"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "app2"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 5
+                        "mutual": false,
+                        "values": ["romance", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat tasted a little kittypet food together on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1491,14 +1585,10 @@
                 "text": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. app2 tries to be even sneakier, and so app1 ups their game, until they're both probably the most obvious pair of cats in the neighborhood.",
                 "exp": 20,
                 "stat_trait": [
-                    "calm",
-                    "careful",
-                    "insecure",
                     "lonesome",
-                    "loyal",
-                    "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "prey": [
                     "small"
@@ -1509,18 +1599,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat played a silly sneaky game together in a Twolegplace."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1532,18 +1618,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a frightening experience with a Twoleg den and began to spend less time with each other."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1561,18 +1643,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat's Twoleg adventure turned out to be less exciting than they'd hoped."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1585,18 +1663,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": -5
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was with to_cat when {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} taken by Twolegs and blamed {PRONOUN/from_cat/self}."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -1649,13 +1723,29 @@
                     "calm",
                     "careful",
                     "insecure",
-                    "lonesome",
+                    "faithful",
                     "loyal",
                     "nervous",
-                    "sneaky",
-                    "strange"
+                    "responsible",
+                    "righteous",
+                    "strict",
+                    "sincere",
+                    "thoughtful",
+                    "wise"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["s_c"],
+                        "values": ["trust", "respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat was warned of Twoleg traps on the territory by to_cat."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -1699,7 +1789,7 @@
         "min_max_status": {},
         "frequency": 2,
         "intro_text": "The smell of food lures r_c into what looks like a tunnel under some swampgrass.",
-        "decline_text": "Turning their nose up at the temptation, the patrol continues on their way.",
+        "decline_text": "Turning their noses up at the temptation, the patrol continues on their way.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1716,8 +1806,22 @@
                 "text": "Something about this situation sets all of s_c's instincts off. They investigate, carefully, and the patrol helps them strip the cover of the swampgrass away from a Twoleg trap underneath.",
                 "exp": 20,
                 "stat_skill": [
-                    "CLEVER,1"
+                    "CLEVER,1",
+                    "SENSE,1"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's sharp senses saved from_cat from a Twoleg trap."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -1728,12 +1832,26 @@
                     "careful",
                     "insecure",
                     "lonesome",
-                    "loyal",
+                    "wise",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "cunning",
+                    "strict"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's cautious instincts saved from_cat from a Twoleg trap."
+                    }
+                }
+            ]
             }
         ],
         "fail_outcomes": [
@@ -1805,7 +1923,20 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's clever scavenging saved from_cat from having to cross the Thunderpath to hunt."
+                    }
+                }
+            ]
             },
             {
                 "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side.",
@@ -1896,7 +2027,20 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's clever scavenging saved from_cat from having to cross the Thunderpath to hunt."
+                    }
+                }
+            ]
             },
             {
                 "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across to hunt on the other side.",
@@ -1985,7 +2129,20 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's clever scavenging saved from_cat from having to cross the Thunderpath to hunt."
+                    }
+                }
+            ]
             },
             {
                 "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across with the patrol to hunt on the other side.",

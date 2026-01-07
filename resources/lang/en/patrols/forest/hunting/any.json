@@ -2742,7 +2742,20 @@
             {
                 "text": "A friendly Twoleg makes a 'psspsspss' noise and pours kittypet food on the ground for r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} always wondered what it might taste like... Dry, is the answer. Very odd.",
                 "exp": 20,
-                "frequency": 1
+                "frequency": 1,
+            "relationships": [
+                {
+                    "cats_from": ["high_lawful"],
+                    "cats_to": ["s_c"],
+                    "values": ["like", "respect"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log":
+                    {
+                        "cats_from": "from_cat caught the scent of kittypet food on to_cat's pelt."
+                    }
+                }
+            ]
             },
             {
                 "text": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c takes the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
@@ -3089,10 +3102,8 @@
                 "stat_trait": [
                     "calm",
                     "careful",
-                    "insecure",
                     "lonesome",
                     "loyal",
-                    "nervous",
                     "sneaky",
                     "strange"
                 ],
@@ -3244,7 +3255,7 @@
                         ],
                         "mutual": false,
                         "values": ["romance", "like"],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from convinced to_cat to hunt by the Twoleg dens and found success.",
                             "cats_to": "to_cat followed from_cat in a risky hunt by the Twoleg dens and found success."
@@ -3269,7 +3280,7 @@
                         ],
                         "mutual": false,
                         "values": ["romance", "like"],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "from_cat and to_cat tasted a little kittypet food together on patrol."
                         }
@@ -3281,12 +3292,7 @@
                 "text": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. app2 tries to be even sneakier, and so app1 ups {PRONOUN/app1/poss} game, until they're both probably the most obvious pair of cats in the neighborhood.",
                 "exp": 20,
                 "stat_trait": [
-                    "calm",
-                    "careful",
-                    "insecure",
                     "lonesome",
-                    "loyal",
-                    "nervous",
                     "sneaky",
                     "strange",
                     "cunning"
@@ -3370,7 +3376,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["comfort"],
-                        "amount": -5,
+                        "amount": -10,
                         "log": {
                             "cats_from": "from_cat was with to_cat when {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} taken by Twolegs and blamed {PRONOUN/from_cat/self}."
                         }
@@ -3431,11 +3437,15 @@
                     "calm",
                     "careful",
                     "insecure",
-                    "lonesome",
+                    "faithful",
                     "loyal",
                     "nervous",
-                    "sneaky",
-                    "strange"
+                    "responsible",
+                    "righteous",
+                    "strict",
+                    "sincere",
+                    "thoughtful",
+                    "wise"
                 ],
                 "frequency": 4,
                 "relationships": [
@@ -3490,7 +3500,7 @@
         },
         "frequency": 2,
         "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
-        "decline_text": "Turning {PRONOUN/r_c/poss} nose up at the temptation, the patrol continues on their way.",
+        "decline_text": "Turning their noses up at the temptation, the patrol continues on their way.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -3507,7 +3517,8 @@
                 "text": "Something about this situation sets all of s_c's instincts off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/investigate/investigates} carefully. The patrol helps {PRONOUN/s_c/object} strip the cover of the bushes away from a Twoleg trap underneath.",
                 "exp": 20,
                 "stat_skill": [
-                    "CLEVER,1"
+                    "CLEVER,1",
+                    "SENSE,1"
                 ],
                 "frequency": 4,
             "relationships": [
@@ -3532,10 +3543,11 @@
                     "careful",
                     "insecure",
                     "lonesome",
-                    "loyal",
+                    "wise",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "cunning",
+                    "strict"
                 ],
                 "frequency": 4,
             "relationships": [
