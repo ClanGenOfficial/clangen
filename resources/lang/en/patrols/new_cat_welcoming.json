@@ -873,6 +873,22 @@
                             "n_c:0"
                         ],
                         "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                "log": {
+                    "cats_from": "from_cat easily overpowered the foolish, soft-pawed kittypet, to_cat, when {PRONOUN/to_cat/subject} tried to fight {PRONOUN/from_cat/object}."
+                }
+                    },
+                    {
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "cats_from": [
                             "n_c:1"
                         ],
                         "mutual": true,
@@ -1162,10 +1178,7 @@
                         "mutual": false,
                         "values": [
                             "romance",
-                            "like",
-                            "comfort",
-                            "trust",
-                            "respect"
+                            "like"
                         ],
                         "amount": 15,
             "log": {
