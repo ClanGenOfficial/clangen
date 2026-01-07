@@ -756,7 +756,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare.",
+                "text": "The patrol easily catches the distracted rat. p_l meows triumphantly. This is a great catch during leaf-bare.",
                 "exp": 30,
                 "prey": [
                     "medium"
@@ -900,7 +900,7 @@
                 ]
             },
             {
-                "text": "r_c easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill and never recovers.",
+                "text": "r_c easily catches the distracted rat. p_l meows triumphantly. This is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill and never recovers.",
                 "exp": 30,
                 "dead_cats": [
                     "r_c"
@@ -912,7 +912,7 @@
                 "frequency": 2
             },
             {
-                "text": "r_c easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill.",
+                "text": "r_c easily catches the distracted rat. p_l meows triumphantly. This is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill.",
                 "exp": 30,
                 "injury": [
                     {

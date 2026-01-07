@@ -3294,17 +3294,11 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [ 1, 6],
+            "normal adult": [ 1, 6]
         },
         "frequency": 3,
-        "intro_text": "app1 has been acting weird all day, full of too-quick answers and furtive glances. A parent usually knows; p_l has seen that look too often in app1's nursery days. So, when {PRONOUN/app1/subject} {VERB/app1/creep/creeps} out of camp and into the frosty chilled shadows of the forest at night, p_l is there waiting for {PRONOUN/app1/object}. app1 freezes, staring up with wide eyes.",
+        "intro_text": "app1 has been acting weird all day, full of too-quick answers and furtive glances. A parent usually knows; p_l has seen that look too often in app1's nursery days. So, when {PRONOUN/app1/subject} {VERB/app1/creep/creeps} out of camp and into the frosty shadows of the forest at night, p_l is there waiting for {PRONOUN/app1/object}. app1 freezes, staring up with wide eyes.",
         "decline_text": "A stern glance and wide swish of {PRONOUN/p_l/poss} tail is all that's needed to turn app1's nighttime wanderings around and send {PRONOUN/app1/object} back to the apprentices' den. p_l will have a talk with {PRONOUN/app1/object} in the morning - leaf-bare isn't the season to take risks like this.",
         "chance_of_success": 40,
         "relationship_constraint": [
@@ -3312,39 +3306,21 @@
         ],
         "success_outcomes": [
             {
-                "text": "app1 straightens - c_n <i>needs</i> food, and app1 is going to provide. {PRONOUN/app1/subject/CAP} {VERB/app1/stride/strides} forward, tail beckoning p_l as though this is a normal hunt, not an illicit adventure, and helplessly p_l follows, determined to keep app1 safe. WIth app1 in leading {PRONOUN/p_l/object} through the dark and cold, together they bring down a kiwi bird. p_l will cover for app1's shenanigans, just this once.",
+                "text": "app1 straightens - c_n <i>needs</i> food, and app1 is going to provide. {PRONOUN/app1/subject/CAP} {VERB/app1/stride/strides} forward, tail beckoning p_l as though this is a normal hunt, not an illicit adventure, and helplessly p_l follows, determined to keep app1 safe. With app1 in leading {PRONOUN/p_l/object} through the dark and cold, together they bring down a kiwi bird. p_l will cover for app1's shenanigans, just this once.",
                 "exp": 20,
                 "prey": [
                     "large"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
+                        "mutual": true,
+                        "values": [ "trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "After to_cat caught from_cat sneaking out of camp, the two hunted a kiwi together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3357,32 +3333,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
+                        "mutual": true,
+                        "values": [ "trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "After to_cat caught from_cat sneaking out of camp, the two scavenged a kiwi together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3401,32 +3359,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
+                        "mutual": true,
+                        "values": [ "trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "After to_cat caught from_cat sneaking out of camp, the two ambushed a kiwi together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3456,197 +3396,24 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -15
+                            "trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat doubted to_cat's ability to handle {PRONOUN/to_cat/self} after from_cat caught {PRONOUN/to_cat/object} sneaking out of camp and getting into a foolish fight with a kiwi."
+                        }
                     }
                 ],
                 "prey": [
                     "very_small"
                 ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_hunt_leafbare_stinkyrat",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 3,
-        "intro_text": "The patrol comes across a large rat. It's too busy digging around in a frozen pile of foul Twoleg crowfood to notice the approaching patrol.",
-        "decline_text": "p_l decides to look for other prey, leaving the patrol as desperate for food as the rat.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "The patrol easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare.",
-                "exp": 30,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "r_c drops into a hunter's crouch and silently moves closer to make a clean kill. Strangely, the rat turns to r_c and makes a series of pained squeaks. p_l orders a retreat after r_c smells the disgusting scent of crowfood from the rat's breath.",
-                "exp": 30,
-                "frequency": 3
-            },
-            {
-                "text": "s_c drops into the perfect hunter's crouch and slowly creeps closer. {PRONOUN/s_c/subject/CAP} suddenly {VERB/s_c/hiss/hisses} loudly, scaring the rat away and startling {PRONOUN/s_c/poss} Clanmates. s_c explains crossly that the rat was carrying a foul, sickly-sweet scent on its breath. It would have poisoned any cat that bit it.",
-                "exp": 30,
-                "stat_skill": [
-                    "CLEVER,3",
-                    "HUNTER,2",
-                    "SENSE,1"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Before any cat makes a move, s_c stops the patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that rogues and loners are taught at a young age to stay away from rats that touch Twoleg crowfood to avoid the deadly sickness they carry.",
-                "exp": 30,
-                "stat_skill": [
-                    "ROGUE,0",
-                    "LONER,0"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Before any cat makes a move, s_c stops the patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that rats found in Twoleg crowfood often carry a deadly disease found in carrion. It's not worth the risk of catching, no matter how hungry the Clan is this leaf-bare.",
-                "exp": 30,
-                "stat_trait": [
-                    "wise",
-                    "thoughtful",
-                    "careful"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Just as r_c is about to pounce the rat scurries away with an angry squeak. Both the patrol and the rat go home with empty paws.",
-                "exp": 30,
-                "frequency": 4
-            },
-            {
-                "text": "Without thinking, s_c pounces at the rat. The patrol watches completely stunned as s_c misses the rat by several tail lengths and scares it off. The disgruntled patrol heads home and s_c has to explain why {PRONOUN/s_c/subject} missed an easy catch in the middle of leaf-bare.",
-                "exp": 30,
-                "stat_trait": [
-                    "oblivious",
-                    "arrogant",
-                    "confident",
-                    "shameless"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "r_c easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill and never recovers.",
-                "exp": 30,
-                "dead_cats": [
-                    "r_c"
-                ],
-                "history_text": {
-                    "reg_death": "m_c died after tasting a tainted rat.",
-                    "lead_death": "died after tasting a tainted rat"
-                },
-                "frequency": 2
-            },
-            {
-                "text": "r_c easily catches the distracted rat. p_l meows triumphantly, this is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c's mouth begins to sour. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c falls violently ill.",
-                "exp": 30,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "carrionplace disease",
-                            "diarrhea",
-                            "poisoned"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "reg_death": "m_c died after tasting a tainted rat.",
-                    "lead_death": "died after tasting a tainted rat"
-                },
-                "frequency": 4
-            },
-            {
-                "text": "Without thinking, s_c recklessly pounces at the rat. The patrol watches completely stunned as s_c actually catches the rat. While s_c is smugly carrying the fresh-kill home, s_c's mouth begins to sour. {PRONOUN/s_c/subject/CAP} {VERB/s_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c falls violently ill and never recovers.",
-                "exp": 30,
-                "stat_trait": [
-                    "oblivious",
-                    "arrogant",
-                    "confident",
-                    "shameless"
-                ],
-                "dead_cats": [
-                    "s_c"
-                ],
-                "history_text": {
-                    "reg_death": "m_c died after tasting a tainted rat.",
-                    "lead_death": "died after tasting a tainted rat"
-                },
-                "frequency": 4
-            },
-            {
-                "text": "Without thinking, s_c recklessly pounces at the rat. The patrol watches completely stunned as s_c actually catches the rat. While s_c is smugly carrying the fresh-kill home, s_c's mouth begins to sour. {PRONOUN/s_c/subject/CAP} {VERB/s_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c falls violently ill.",
-                "exp": 30,
-                "stat_trait": [
-                    "oblivious",
-                    "arrogant",
-                    "confident",
-                    "shameless"
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "s_c"
-                        ],
-                        "injuries": [
-                            "carrionplace disease",
-                            "diarrhea",
-                            "poisoned"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "reg_death": "m_c died after tasting a tainted rat.",
-                    "lead_death": "died after tasting a tainted rat"
-                },
                 "frequency": 4
             }
         ]
