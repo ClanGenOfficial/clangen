@@ -5827,11 +5827,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
                             "trust",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat to respect {PRONOUN/from_cat/poss} hunts."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5842,22 +5844,6 @@
                 "text": "app1 leaps forward, launching {PRONOUN/app1/self} beautifully and catapulting {PRONOUN/app1/object} and the vole into the water. But under the surface, the vole has the advantage, tearing itself free. app1 inhales water as {PRONOUN/app1/subject} {VERB/app1/try/tries} to regain {PRONOUN/app1/poss} bearings, and surfaces hacking it up out of {PRONOUN/app1/poss} lungs.",
                 "exp": 0,
                 "art": "gen_train_soggykitty_mad_app",
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -10
-                    }
-                ],
                 "injury": [
                     {
                         "cats": [
