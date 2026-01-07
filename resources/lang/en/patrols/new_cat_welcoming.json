@@ -5500,7 +5500,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 20,
                         "log": {
-                            "cats_from": "After talking with to_cat, from_cat is thrilled that to_cat decided to leave {PRONOUN/to_cat/poss} home and experience loner life!",
+                            "cats_from": "After talking with to_cat, from_cat was thrilled that to_cat decided to leave {PRONOUN/to_cat/poss} home and experience loner life!",
                             "cats_to": "Interested in all the stories and experiences from_cat told to_cat about loner life, to_cat ran away from c_n to experience it for {PRONOUN/to_cat/self}, with from_cat to guide {PRONOUN/to_cat/object}."
                         }
                     }
