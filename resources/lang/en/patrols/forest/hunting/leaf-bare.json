@@ -3466,7 +3466,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's wise story about dew drops."
+                        }
                     },
                     {
                         "cats_to": [
@@ -3476,11 +3479,11 @@
                             "r_c"
                         ],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat assuaged from_cat's fears during leaf-bare."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3502,11 +3505,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": [ "like" ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat worried out loud during a leaf-bare patrol, provoking from_cat's own anxieties."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3515,28 +3518,16 @@
     },
     {
         "patrol_id": "fst_hunt_leafbare_kingfisher_storylorehunterclimberteacherlocked1",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
+        "biome": [ "forest" ],
+        "season": [ "leaf-bare" ],
+        "types": [  "hunting" ],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [ 1, 6 ],
+            "normal adult": [ 1, 6 ]
         },
         "frequency": 3,
         "chance_of_success": 40,
@@ -3554,29 +3545,22 @@
                 "text": "s_c explodes from the bushes, just as much of a blur as the bird as it tries to escape, but {PRONOUN/s_c/poss} pounce is too high, {PRONOUN/s_c/poss} claws too quick. app1 tries not to look too impressed, but that's exactly the kind of warrior {PRONOUN/app1/subject} {VERB/app1/want/wants} to be - an astonishing hunter.",
                 "exp": 30,
                 "art": "gen_train_sneakprey",
-                "prey": [
-                    "medium"
-                ],
-                "stat_skill": [
-                    "HUNTER,2"
-                ],
-                "can_have_stat": [
-                    "p_l"
-                ],
+                "prey": ["medium"],
+                "stat_skill": ["HUNTER,2"],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's catch on patrol."
+                        }
                     },
                     {
                         "cats_to": [
@@ -3589,7 +3573,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat idolized to_cat after to_cat caught a kingfisher on a hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3609,18 +3596,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's catch on patrol."
+                        }
                     },
                     {
                         "cats_to": [
@@ -3633,7 +3619,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat idolized to_cat after to_cat caught a kingfisher on a hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3653,32 +3642,27 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat helped from_cat bring down a kingfisher."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 10
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [ "like", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat to hunt a kingfisher."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3698,18 +3682,16 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol" ],
                         "mutual": true,
                         "values": [
-                            "respect",
-                            "trust"
+                            "like", "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about kingfishers while hunting."
+                        }
                     },
                     {
                         "cats_to": [
@@ -3721,9 +3703,22 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort"
+                            "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat helped to_cat take down a kingfisher."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [ "like", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat to hunt a kingfisher."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3743,18 +3738,16 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol" ],
                         "mutual": true,
                         "values": [
-                            "respect",
-                            "trust"
+                            "like", "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's wisdom about kingfishers while hunting."
+                        }
                     },
                     {
                         "cats_to": [
@@ -3766,15 +3759,28 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort"
+                            "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat helped to_cat take down a kingfisher."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [ "like", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat to hunt a kingfisher."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "It's a kingfisher, p_l whispers. Go on, give it a shot. app1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under app1's paw, and the bird flees - but it leaves the frog behind for app1 to take!",
+                "text": "p_l encourages app1 to try {PRONOUN/app1/poss} paw. app1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under app1's paw, and the bird flees - but it leaves the frog behind for app1 to take!",
                 "exp": 30,
                 "art": "gen_train_sneakprey",
                 "prey": [
@@ -3793,7 +3799,20 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat encouraged from_cat to hunt a kingfisher, and while from_cat wasn't able to catch the bird, {PRONOUN/from_cat/subject} caught its prey."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [ "like", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat to hunt a kingfisher."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3815,7 +3834,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was disappointed by to_cat's slow reflexes on a hunt."
+                        }
                     }
                 ],
                 "frequency": 3
