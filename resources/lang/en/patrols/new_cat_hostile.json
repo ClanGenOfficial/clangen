@@ -2207,7 +2207,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat cannot believe how selfish Clan cats can be, not only they didn't help {PRONOUN/from_cat/object} escape the dog, they chased the dog away only <i>after</i> {PRONOUN/from_cat/subject} climbed the tree, and then they had the audacity to spit at {PRONOUN/from_cat/object} to not cross the border!? Incredibly selfish they are."
+                            "cats_from": "from_cat cannot believe how selfish Clan cats can be, not only did they not help {PRONOUN/from_cat/object} escape the dog, but they chased the dog away only <i>after</i> {PRONOUN/from_cat/subject} climbed the tree. Then they had the audacity to spit at {PRONOUN/from_cat/object} to not cross the border!? How incredibly selfish they are."
                         }
                     }
                 ],
