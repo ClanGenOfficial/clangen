@@ -4472,17 +4472,13 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": ["like", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a satisfying hunt together."
+                            "cats_from": "from_cat and to_cat shared a laugh after catching two ends of a lizard."
                         }
                     }
                 ],
