@@ -986,10 +986,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat's risky plan to hunt rats in an abandoned Twoleg nest paid off, and from_cat reaped the benefits."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1009,10 +1010,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat led from_cat in a fight against some rats, and they brought back heaps of prey."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1031,17 +1033,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c" ],
+                        "cats_from": [ "patrol" ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": [ "respect" ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat's hunting skill helped from_cat's patrol bring back a huge haul of rats."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1061,17 +1060,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["trust", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat startled rats into to_cat's claws, and they both felt pleased with each other's efforts."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1090,10 +1086,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat convinced from_cat to search an abandoned Twoleg nest for rats, but it was a waste of time."
+                        }
                     }
                 ],
                 "prey": [
@@ -1118,21 +1115,6 @@
                 "history_text": {
                     "scar": "m_c carries a scar from fighting a swarm of rats."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "prey": [
                     "very_small"
                 ],
