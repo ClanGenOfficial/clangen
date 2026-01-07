@@ -7413,7 +7413,7 @@
     "decline_text": "r_c doubles back to find p_l, ignoring the voice.",
     "success_outcomes": [
         {
-            "text": "r_c follows the voice and finds a mysterious loner, who tells {PRONOUN/r_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/are/is} destined to be leader. When p_l finds r_c again, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} quiet and lost in thought.",
+            "text": "r_c follows the voice and finds three mysterious loners, who tell {PRONOUN/r_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/are/is} destined to be leader. When p_l finds r_c again, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} quiet and lost in thought.",
             "exp": 20,
             "frequency": 4,
             "relationships": [
@@ -7431,6 +7431,21 @@
         "new_cat": [
             [
                 "loner",
+                "female",
+                "meeting",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
                 "meeting",
                 "unknown",
                 "dead"
@@ -7439,7 +7454,7 @@
         "art": "friendlyghost_INTRO"
     },
         {
-            "text": "s_c follows the voice and finds a mysterious loner, who tells {PRONOUN/s_c/object} that {PRONOUN/s_c/subject} {VERB/s_c/are/is} destined to be leader. s_c's eyes gleam. {PRONOUN/s_c/poss/CAP} destiny is before {PRONOUN/s_c/object}, if only {PRONOUN/s_c/subject} {VERB/s_c/have/has} the strength to claim it.",
+            "text": "s_c follows the voice and finds three mysterious loners, who tell {PRONOUN/s_c/object} that {PRONOUN/s_c/subject} {VERB/s_c/are/is} destined to be leader. s_c's eyes gleam. {PRONOUN/s_c/poss/CAP} destiny is before {PRONOUN/s_c/object}, if only {PRONOUN/s_c/subject} {VERB/s_c/have/has} the strength to claim it.",
             "exp": 20,
             "frequency": 4,
             "stat_trait": ["bloodthirsty", "cunning", "cold", "vengeful", "fierce", "rebellious", "ambitious", "arrogant"],
@@ -7459,6 +7474,20 @@
         "new_cat": [
             [
                 "loner",
+                "meeting",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
                 "meeting",
                 "unknown",
                 "dead"
@@ -7487,7 +7516,7 @@
     "art": "cat_running_two"
         },
         {
-            "text": "r_c follows the voice and finds a mysterious loner, but before {PRONOUN/r_c/subject} can find out how this loner knows {PRONOUN/r_c/poss} name, p_l reappears and the loner vanishes. p_l and r_c return to camp, a tension hanging between them.",
+            "text": "r_c follows the voice and finds three mysterious loners, but before {PRONOUN/r_c/subject} can find out how these loners knows {PRONOUN/r_c/poss} name, p_l reappears and the loners vanish. p_l and r_c return to camp, a tension hanging between them.",
             "exp": 20,
             "frequency": 4,
             "relationships": [
@@ -7508,9 +7537,52 @@
                 "meeting",
                 "unknown",
                 "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "unknown",
+                "dead"
             ]
         ],
         "art": "friendlyghost_INTRO"
+    },
+        {
+            "text": "r_c follows the voice and finds three mysterious loners. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} know what all this toil and trouble nonsense is about, but {PRONOUN/r_c/subject} {VERB/aren't/isn't} interested in sticking around to find out.",
+            "exp": 20,
+            "frequency": 4,
+            "new_cat": [
+            [
+                "loner",
+                "meeting",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "unknown",
+                "dead"
+            ]
+            ],
+            "art": "friendlyghost_INTRO"
+
     }
     ],
     "antag_success_outcomes": [
