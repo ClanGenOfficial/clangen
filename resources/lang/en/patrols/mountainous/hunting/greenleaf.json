@@ -1439,10 +1439,12 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log":
+                        {
+                            "cats_from": "from_cat was impressed by to_cat's idea for baiting squirrels."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1462,10 +1464,12 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log":
+                        {
+                            "cats_from": "from_cat was impressed by to_cat's clever idea for baiting squirrels."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1474,7 +1478,8 @@
                 "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
                 "exp": 20,
                 "stat_skill": [
-                    "HUNTER,1"
+                    "HUNTER,1",
+                    "CLEVER,1"
                 ],
                 "prey": [
                     "large"
@@ -1488,10 +1493,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was highly impressed by to_cat's genius idea for baiting squirrels."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1510,10 +1516,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat felt that to_cat wasted a perfectly good hunting patrol with a hare-brained squirrel-baiting scheme."
+                        }
                     }
                 ],
                 "prey": [

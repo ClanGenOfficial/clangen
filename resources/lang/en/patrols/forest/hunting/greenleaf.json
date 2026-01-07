@@ -523,7 +523,7 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat is impressed by to_cat's idea for baiting squirrels."
+                            "cats_from": "from_cat was impressed by to_cat's idea for baiting squirrels."
                         }
                     }
                 ],
@@ -548,7 +548,7 @@
                         "amount": 8,
                         "log":
                         {
-                            "cats_from": "from_cat is impressed by to_cat's clever idea for baiting squirrels."
+                            "cats_from": "from_cat was impressed by to_cat's clever idea for baiting squirrels."
                         }
                     }
                 ],
@@ -576,7 +576,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat is highly impressed by to_cat's genius idea for baiting squirrels."
+                            "cats_from": "from_cat was highly impressed by to_cat's genius idea for baiting squirrels."
                         }
                     }
                 ],
