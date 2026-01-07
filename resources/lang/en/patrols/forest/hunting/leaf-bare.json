@@ -450,6 +450,19 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["trust", "respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat go out to hunt alone in leaf-bare and come back with a mouse."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -458,6 +471,19 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["trust", "respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat go out to hunt alone in leaf-bare and come back with a mouse."
+                    }
+                }
+            ],
                 "frequency": 1
             },
             {
@@ -469,6 +495,19 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["trust", "respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat go out to hunt alone in leaf-bare and come back with a mouse."
+                    }
+                }
+            ],
                 "frequency": 4
             }
         ],
@@ -506,7 +545,7 @@
         },
         "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. But {PRONOUN/app1/subject}{VERB/app1/'re/'s} by {PRONOUN/app1/self}, and the chill of leaf-bare has stripped the forest of its green cloak. Can {PRONOUN/app1/subject} manage the catch?",
-        "decline_text": "The patrol ignores the mouse.",
+        "decline_text": "app1 ignores the mouse.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -515,6 +554,19 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["trust", "respect"],
+                    "mutual": false,
+                    "amount": 8,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat go out to hunt alone in leaf-bare and come back with a mouse."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -523,12 +575,25 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["trust", "respect"],
+                    "mutual": false,
+                    "amount": 8,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat go out to hunt alone in leaf-bare and come back with a mouse."
+                    }
+                }
+            ],
                 "frequency": 1
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol narrowly misses the mouse.",
+                "text": "app1 narrowly misses the mouse.",
                 "exp": 0,
                 "prey": [
                     "very_small"
@@ -575,18 +640,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                        "cats_from": "from_cat helped to_cat catch a mouse."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                        "cats_from": "to_cat helped from_cat catch a mouse."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -599,18 +670,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                        "cats_from": "from_cat helped to_cat catch a mouse."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                        "cats_from": "to_cat helped from_cat catch a mouse."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -622,18 +699,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat felt embarrassed after missing a mouse in front of to_cat."
+                        }
                     }
                 ],
                 "prey": [
@@ -675,11 +748,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "...but to_cat undeniably looked good doing it."
+                        }
                     },
                     {
                         "cats_to": [
@@ -689,10 +762,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was annoyed by to_cat's cocky attitude during a hunting patrol..."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -715,11 +789,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "...but to_cat undeniably looked good doing it."
+                        }
                     },
                     {
                         "cats_to": [
@@ -729,10 +803,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was annoyed by to_cat's cocky attitude during a hunting patrol..."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -763,11 +838,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "...but to_cat undeniably looked good doing it."
+                        }
                     },
                     {
                         "cats_to": [
@@ -777,10 +852,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "values": ["like"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was annoyed by to_cat's cocky attitude during a hunting patrol..."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -799,24 +875,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "respect", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed when to_cat was unable to back up {PRONOUN/to_cat/poss} cocky attitude with any fresh-kill on a hunting patrol."
+                        }
                     }
                 ],
                 "prey": [
