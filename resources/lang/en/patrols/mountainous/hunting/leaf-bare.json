@@ -1430,7 +1430,7 @@
                         "values": ["trust"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat and from_cat failed to keep warm during a snowstorm, and from_cat ended up carrying a body home."
+                            "cats_from": "from_cat's patrol failed to keep warm during a snowstorm and they ended up carrying r_c's body home."
                         }
                     }
                 ],
