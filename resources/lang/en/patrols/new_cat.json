@@ -7556,7 +7556,7 @@
         "art": "friendlyghost_INTRO"
     },
         {
-            "text": "r_c follows the voice and finds three mysterious loners. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} know what all this toil and trouble nonsense is about, but {PRONOUN/r_c/subject} {VERB/aren't/isn't} interested in sticking around to find out.",
+            "text": "r_c follows the voice and finds three mysterious loners. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} know what all this toil and trouble nonsense is about, but {PRONOUN/r_c/subject} {VERB/r_c/aren't/isn't} interested in sticking around to find out.",
             "exp": 20,
             "frequency": 4,
             "new_cat": [
