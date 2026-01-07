@@ -1677,6 +1677,19 @@
                 "prey": [
                     "small"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["r_c"],
+                    "values": ["like"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "from_cat felt slightly frustrated with to_cat after {PRONOUN/to_cat/poss} disappearance in the snow on a hunting patrol."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -1685,6 +1698,19 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["r_c"],
+                    "values": ["like", "respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat was pleased with to_cat when {PRONOUN/to_cat/subject} found rich hunting grounds in leaf-bare."
+                    }
+                }
+            ],
                 "frequency": 1
             },
             {
@@ -1706,6 +1732,19 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["r_c"],
+                    "values": ["like", "respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat was pleased when to_cat found a frozen rabbit on a leaf-bare hunting patrol."
+                    }
+                }
+            ],
                 "frequency": 4
             }
         ],
@@ -1716,6 +1755,19 @@
                 "prey": [
                     "very_small"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["p_l"],
+                    "cats_to": ["r_c"],
+                    "values": ["like", "respect"],
+                    "mutual": false,
+                    "amount": -8,
+                    "log":
+                    {
+                        "cats_from": "from_cat was angry with to_cat for going off on {PRONOUN/to_cat/poss} own during a leaf-bare hunt."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -1740,6 +1792,19 @@
                 "prey": [
                     "very_small"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["r_c"],
+                    "cats_to": ["p_l"],
+                    "values": ["like", "trust"],
+                    "mutual": false,
+                    "amount": 15,
+                    "log":
+                    {
+                        "cats_from": "to_cat saved from_cat's life when {PRONOUN/from_cat/subject} almost frozen to death on patrol."
+                    }
+                }
+            ],
                 "frequency": 3
             }
         ]
@@ -1772,6 +1837,18 @@
                 "exp": 20,
                 "prey": [
                     "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a rat for the fresh-kill pile."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
