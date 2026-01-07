@@ -1075,7 +1075,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -1108,7 +1108,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -1134,7 +1134,7 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust", "like"],
+                        "values": ["comfort", "like"],
                         "amount": 8,
                         "log": {
                             "cats_from": "from_cat's gentle presence helped to_cat's patrol stay focused during a difficult snowy hunt."
@@ -1147,7 +1147,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan in the snow."
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -1163,7 +1163,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
+                        "values": ["comfort"],
                         "amount": 5,
                         "log": {
                             "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
@@ -1196,7 +1196,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
+                        "values": ["comfort"],
                         "amount": 5,
                         "log": {
                             "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
@@ -1237,7 +1237,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -1260,7 +1260,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 10,
@@ -1430,7 +1430,7 @@
                         "values": ["trust"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat and from_cat failed to keep warm during a snowstorm, and from_cat ended up carrying a body home."
+                            "cats_from": "from_cat's patrol failed to keep warm during a snowstorm and they ended up carrying r_c's body home."
                         }
                     }
                 ],
