@@ -3713,7 +3713,7 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["p_l"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [ "like", "comfort"],
                         "amount": 5,
                         "log": {
@@ -3769,7 +3769,7 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["p_l"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [ "like", "comfort"],
                         "amount": 5,
                         "log": {
@@ -3807,7 +3807,7 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["p_l"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [ "like", "comfort"],
                         "amount": 5,
                         "log": {
