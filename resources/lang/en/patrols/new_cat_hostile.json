@@ -1244,7 +1244,7 @@
                         "amount": 50,
                         "log": {
                             "cats_from": "to_cat convinced n_c:0 to join {PRONOUN/to_cat/poss} Clan and stay with {PRONOUN/to_cat/object}, despite knowing how hostile to_cat's Clan is towards outsiders.",
-                            "cats_to": "to_cat convinced {PRONOUN/to_cat/poss} mate, n_c:0, to join the Clan and stay with {PRONOUN/to_cat/object}, even if that means {PRONOUN/to_cat/subject}'d be harshly judged by {PRONOUN/to_cat/poss} clanmates."
+                            "cats_to": "to_cat convinced {PRONOUN/to_cat/poss} mate, n_c:0, to join the Clan and stay with {PRONOUN/to_cat/object}, even if that means {PRONOUN/to_cat/subject}'d be harshly judged by {PRONOUN/to_cat/poss} Clanmates."
                         }
                     },
                     {
