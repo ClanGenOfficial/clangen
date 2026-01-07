@@ -2358,7 +2358,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "frequency": 4,
-        "intro_text": "While hunting through the snow-covered forest, a flash of scarlet catches p_l's eye. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, tail-tip twitching, and scent the air for prey.",
+        "intro_text": "While hunting through the snow-covered forest, a flash of scarlet catches p_l's eye. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, tail-tip twitching, and {VERB/p_l/scent/scents} the air for prey.",
         "decline_text": "A cardinal would be paltry prey; the Clan needs more filling meals. p_l leaves it be, knowing {PRONOUN/p_l/subject} would expend too much precious energy trying to hunt the bird anyway.",
         "chance_of_success": 65,
         "success_outcomes": [
@@ -2368,7 +2368,19 @@
                 "prey": [
                     "small"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a cardinal for the fresh-kill pile."
+                        }
+                    }
+                ]
             },
             {
                 "text": "p_l watches the cardinal, waiting for the right moment to strike, when it suddenly flits off of the low-hanging branch it was perched on. Without thinking, p_l leaps into the air and grabs the cardinal mid-flight with {PRONOUN/p_l/poss} front paws. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pin/pins} it down and {VERB/p_l/kill/kills} it with a quick bite to the neck.",
@@ -2376,7 +2388,19 @@
                 "prey": [
                     "small"
                 ],
-                "frequency": 1
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a cardinal for the fresh-kill pile."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -2422,7 +2446,19 @@
                 "prey": [
                     "small"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a robin for the fresh-kill pile."
+                        }
+                    }
+                ]
             },
             {
                 "text": "app1 falls into a hunting crouch and stealthily approaches an unwary robin pecking at the snow. Suddenly, a noise from above startles the bird into flight, and app1 pounces on instinct, snagging it clean out of the air. What a catch!",
@@ -2430,12 +2466,24 @@
                 "prey": [
                     "small"
                 ],
-                "frequency": 1
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a robin for the fresh-kill pile."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app1 should have paid more attention to {PRONOUN/app1/poss} hunting lessons. {PRONOUN/app1/subject/CAP} {VERB/app1/try/tries} to be quiet, but the snow beneath {PRONOUN/app1/poss} paws is loud, and despite {PRONOUN/app1/poss} best efforts the bird flies away too quickly for {PRONOUN/app1/object} to catch. Oh, well.",
+                "text": "app1 should have paid more attention to {PRONOUN/app1/poss} hunting lessons. {PRONOUN/app1/subject/CAP} {VERB/app1/try/tries} to be quiet, but the snow beneath {PRONOUN/app1/poss} paws is loud, and despite {PRONOUN/app1/poss} best efforts the bird flies away too quickly for {PRONOUN/app1/object} to catch.",
                 "exp": 0,
                 "prey": [
                     "very_small"
@@ -2460,10 +2508,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ]
+            "apprentice": [ 1, 1 ],
+            "warrior": [ 1, 1]
         },
         "frequency": 4,
         "intro_text": "p_l leads app1 through the snow-covered forest, showing {PRONOUN/app1/object} how to distribute {PRONOUN/app1/poss} weight across {PRONOUN/app1/poss} paws to avoid sinking and to move silently. Suddenly, p_l flicks {PRONOUN/p_l/poss} tail: {PRONOUN/p_l/subject} {VERB/p_l/have/has} spotted a bird up ahead.",
@@ -2478,18 +2524,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                        "cats_from": "from_cat showed to_cat how to stalk birds in the snow."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                        "cats_from": "to_cat showed from_cat how to stalk birds in the snow."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2502,18 +2554,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                        "cats_from": "from_cat was amused by to_cat's unconventional bird-hunting technique."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                        "cats_from": "from_cat was eager to prove {PRONOUN/from_cat/self} to to_cat during a leaf-bare hunt."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2525,18 +2583,24 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                        "cats_from": "from_cat was amused by to_cat's unconventional bird-hunting technique."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -5,
+                        "log": {
+                        "cats_from": "from_cat was embarrassed to mess up a hunt in front of to_cat."
+                        }
                     }
                 ],
                 "prey": [
