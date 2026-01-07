@@ -233,7 +233,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["some_clan"],
+                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 10,
