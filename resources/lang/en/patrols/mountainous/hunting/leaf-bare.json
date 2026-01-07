@@ -1237,7 +1237,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -1260,7 +1260,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 10,
