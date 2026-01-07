@@ -2272,7 +2272,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat had to be driven out of c_n territory by to_cat's patrol after {PRONOUN/from_cat/subject} barely attacked p_l."
+                            "cats_from": "from_cat was driven out of c_n territory by to_cat's patrol after {PRONOUN/from_cat/subject} barely attacked p_l."
                         }
                     }
                 ],
