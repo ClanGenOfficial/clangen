@@ -516,7 +516,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 ***
 
 #### relationship_constraint: List[str]
->Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
+>Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers) and [Relationship Types](reference/tag-lists.md#relationship-tiers).
 
 ***
 
@@ -545,6 +545,7 @@ This is a good starting point for writing your own outcomes.
 
 ```json
 {
+    "min_max_status": {},
     "text": "The raw displayed outcome text.",
     "exp": 0,
     "frequency": 4,
@@ -589,6 +590,14 @@ This is a good starting point for writing your own outcomes.
 ### By-Parameter - Outcome
 What each parameter does, and what the options are for outcomes.
 
+***
+
+#### min_max_status: Dict[str, List[int]]
+>Optional. Allows specification of the minimum and maximum number of specific types of cats that are allowed on this outcome. Utlizes the exact same format and options as the overall [min_max_status](#min_max_status-dictstr-listint) parameter.
+
+!!! caution
+    Use this sparingly and always ensure at least one of every outcome type is possible for *any* combination of cats allowed on this patrol. Ideally there should always be outcomes that *do not use* this parameter. If you've utilized this parameter on every outcome, it should be in a simple and easy-to-follow manner (i.e. all outcomes are either for 1-3 warriors or 4-6 warriors) rather than overly convoluted (i.e. every outcome has a different `min_max_status`: some disallow leaders, some allow medicine cats, some disallow all apps except medicine apps, others only allow medicine apps, ect.) ***If it starts to get insane, you are better off separating this patrol into multiple patrols instead of cramming all those outcomes together.***
+ 
 ***
 
 #### text: str
