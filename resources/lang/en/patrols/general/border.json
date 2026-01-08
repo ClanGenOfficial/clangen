@@ -991,7 +991,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 waits until p_l is up ahead, checking a scent, then pounces in the water and sends a huge waver over app2. app2 yowls a battle cry and slams {PRONOUN/app2/poss} front paws down into another puddle, splashing app1 right back. r_c spots the squabbling apprentices and breaks up their argument.",
+                "text": "app1 waits until p_l is up ahead, checking a scent, then pounces in the water and sends a huge wave over app2. app2 yowls a battle cry and slams {PRONOUN/app2/poss} front paws down into another puddle, splashing app1 right back. r_c spots the squabbling apprentices and breaks up their argument.",
                 "exp": 0,
                 "frequency": 4,
                 "relationships": [
