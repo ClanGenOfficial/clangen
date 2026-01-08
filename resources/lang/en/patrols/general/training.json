@@ -10543,9 +10543,12 @@
         "season": ["any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": null,
+        "patrol_art": "gen_speaking_cat_w3",
         "min_cats": 2,
         "max_cats": 2,
+        "min_max_status": {
+            "normal adult": [2, 2]
+        },
         "frequency": 4,
         "relationship_status": ["dislikes"],
         "intro_text": "p_l pulls r_c aside during training to discuss a recent disagreement between the two of them, hoping to clear the air.",
@@ -10564,7 +10567,8 @@
                         "mutual": false,
                         "amount": 12
                     }
-                ]
+                ],
+                "art": "gen_bump_heads_warriors"
             },
             {
                 "text": "p_l leads by example, admitting to {PRONOUN/p_l/poss} mistakes and apologizing. r_c grudgingly agrees to let it go and move on, and the two cats train together.",
@@ -10578,7 +10582,8 @@
                         "mutual": false,
                         "amount": 8
                     }
-                ]
+                ],
+                "art": "gen_bump_heads_warriors"
             },
             {
                 "text": "s_c is patient and hears r_c out before offering {PRONOUN/s_c/poss} own side of the story, careful not to blame r_c or make assumptions. The two cats chat for a while, then agree to put it behind them and train together.",
@@ -10594,7 +10599,8 @@
                         "mutual": false,
                         "amount": 15
                     }
-                ]
+                ],
+                "art": "gen_bump_heads_warriors"
             },
             {
                 "text": "s_c lets r_c vent to {PRONOUN/s_c/object} before s_c responds, apologizing whole-heartedly and taking accountability. r_c feels satisfied, and the two cats agree to put their differences behind them and train together.",
@@ -10610,7 +10616,8 @@
                         "mutual": false,
                         "amount": 10
                     }
-                ]
+                ],
+                "art": "gen_bump_heads_warriors"
             },
             {
                 "text": "r_c's mouth drops open when s_c actually <i>apologizes</i> to {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} never thought {PRONOUN/r_c/subject} would hear the words out of s_c's mouth, but {PRONOUN/r_c/subject} {VERB/r_c/recognize/recognizes} what a big deal this is and agrees to forgive and forget.",
@@ -10626,7 +10633,8 @@
                         "mutual": false,
                         "amount": 10
                     }
-                ]
+                ],
+                "art": "gen_bump_heads_warriors"
             }
         ],
         "fail_outcomes": [
@@ -10642,7 +10650,8 @@
                         "mutual": false,
                         "amount": -5
                     }
-                ]
+                ],
+                "art": "gen_cat_looking_up3"
             },
             {
                 "text": "p_l starts to explain {PRONOUN/p_l/poss} perspective, but r_c cuts {PRONOUN/p_l/object} off and brings up the original dispute again. p_l's attempt to clear the air turns into another argument.",
@@ -10656,7 +10665,8 @@
                         "mutual": false,
                         "amount": -8
                     }
-                ]
+                ],
+                "art": "gen_train_argueWW"
             },
             {
                 "text": "Drawing on {PRONOUN/s_c/poss} skill with younger cats, s_c lays out how {PRONOUN/s_c/poss} feelings were hurt by r_c's actions. r_c doesn't take well to being spoken to like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a kit, and the conversation devolves into a new argument.",
@@ -10671,7 +10681,8 @@
                         "mutual": false,
                         "amount": -10
                     }
-                ]
+                ],
+                "art": "gen_train_argueWW"
             },
             {
                 "text": "s_c struggles {PRONOUN/s_c/poss} way through a half-hearted apology that ends with a defiant claim that s_c didn't really do anything wrong. r_c is outraged that s_c thinks <i>this</i> is going to clear things up between them and storms off.",
@@ -10686,7 +10697,8 @@
                         "mutual": false,
                         "amount": -12
                     }
-                ]
+                ],
+                "art": "gen_train_argueWW"
             }
         ]
     },
