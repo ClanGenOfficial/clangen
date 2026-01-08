@@ -150,28 +150,32 @@ class PatrolOutcome:
                 if not isinstance(outcome.stat_cat, Cat):
                     continue
 
-                if not filter_relationship_type(
-                    group=patrol.patrol_cats,
-                    filter_types=outcome.relationship_constraints,
-                    event_id=patrol.patrol_event.patrol_id,
-                    patrol_leader=patrol.patrol_leader,
+            if not filter_relationship_type(
+                group=patrol.patrol_cats,
+                filter_types=outcome.relationship_constraints,
+                event_id=patrol.patrol_event.patrol_id,
+                patrol_leader=patrol.patrol_leader,
+            ):
+                continue
+
+            allowed = True
+            for status, allowed_range in outcome.min_max_status.items():
+                if len(allowed_range) != 2:
+                    raise Exception(
+                        f'{patrol.patrol_event.patrol_id} has an outcome with status limits that lists limit range incorrectly. Status limits should be formatted: "status_type": [min_value, max_value]'
+                    )
+
+                if not (
+                    allowed_range[0]
+                    <= patrol.patrol_statuses.get(status, -1)
+                    <= allowed_range[1]
                 ):
-                    continue
+                    allowed = False
+                    break
+            if not allowed:
+                continue
 
-                for status, allowed_range in outcome.min_max_status.items():
-                    if len(allowed_range) != 2:
-                        raise Exception(
-                            f'{patrol.patrol_event.patrol_id} has an outcome with status limits that lists limit range incorrectly. Status limits should be formatted: "status_type": [min_value, max_value]'
-                        )
-
-                    if not (
-                        allowed_range[0]
-                        <= patrol.patrol_statuses.get(status, -1)
-                        <= allowed_range[1]
-                    ):
-                        break
-
-                allowed_outcomes.append(outcome)
+            allowed_outcomes.append(outcome)
 
         # If there are somehow no possible outcomes, add a single default
         # outcome. Patrols should be written so this never has to occur
@@ -232,6 +236,7 @@ class PatrolOutcome:
                     outcome_art=_d.get("art"),
                     outcome_art_clean=_d.get("art_clean"),
                     future_event=_d.get("future_event"),
+                    min_max_status=_d.get("min_max_status"),
                 )
             )
 
