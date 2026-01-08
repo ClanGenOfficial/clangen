@@ -10632,7 +10632,7 @@
                 "art": "gen_bump_heads_warriors"
             },
             {
-                "text": "r_c's mouth drops open when s_c actually <i>apologizes</i> to {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} never thought {PRONOUN/r_c/subject} would hear the words out of s_c's mouth, but {PRONOUN/r_c/subject} {VERB/r_c/recognize/recognizes} what a big deal this is and agrees to forgive and forget.",
+                "text": "r_c's mouth drops open when s_c actually <i>apologizes</i> to {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} never thought {PRONOUN/r_c/subject} would hear the words out of s_c's mouth, but {PRONOUN/r_c/subject} {VERB/r_c/recognize/recognizes} what a big deal this is and {VERB/r_c/agree/agrees} to forgive and forget.",
                 "exp": 15,
                 "frequency": 4,
                 "stat_trait": ["arrogant", "bloodthirsty", "bold", "fierce", "shameless", "childish", "competitive", "cold", "grumpy", "insecure", "vengeful", "troublesome", "oblivious" ],
