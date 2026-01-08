@@ -10734,6 +10734,213 @@
         ]
     },
     {
+        "patrol_id": "gen_train_betting",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": null,
+        "min_cats": 4,
+        "max_cats": 4,
+        "min_max_status": {
+            "all apprentices": [2, 2],
+            "normal adult": [2, 2]
+        },
+        "frequency": 4,
+        "intro_text": "As app1 and app2 begin their spar, p_l leans over to r_c and suggests a friendly bet on which apprentice will come out on top.",
+        "decline_text": "r_c declines the offer.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c agrees and bets on app2. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app1 wins! The apprentices catch their breath on the way back to camp, wondering why p_l looks so smug.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "p_l and r_c had a friendly bet on the outcome of a spar between apprentices."
+                        }
+                    },
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "values": ["like", "respect"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "app1 won the spar that p_l was betting on the outcome of.",
+                            "cats_to": "p_l got very invested in app1's spar with app2 and helped {PRONOUN/app1/object} win."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "r_c agrees and bets on app1. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app1 wins! The apprentices catch their breath on the way back to camp, wondering why r_c looks so smug.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "p_l and r_c had a friendly bet on the outcome of a spar between apprentices."
+                        }
+                    },
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "values": ["like", "respect"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "app1 won the spar that r_c was betting on the outcome of.",
+                            "cats_to": "p_l got very invested in app1's spar with app2 and helped {PRONOUN/app1/object} win."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "r_c agrees and bets on app2. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app2 wins! The apprentices catch their breath on the way back to camp, wondering why r_c looks so smug.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "p_l and r_c had a friendly bet on the outcome of a spar between apprentices."
+                        }
+                    },
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "respect"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "app2 won the spar that r_c was betting on the outcome of.",
+                            "cats_to": "r_c got very invested in app2's spar with app1 and helped {PRONOUN/app2/object} win."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "r_c agrees and bets on app1. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app2 wins! The apprentices catch their breath on the way back to camp, wondering why r_c looks so smug.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "p_l and r_c had a friendly bet on the outcome of a spar between apprentices."
+                        }
+                    },
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "respect"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "app2 won the spar that p_l was betting on the outcome of.",
+                            "cats_to": "p_l got very invested in app2's spar with app1 and helped {PRONOUN/app2/object} win."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c agrees and bets on app2. When it looks like app2 will win, p_l interrupts the spar out of a totally legitimate concern about sore muscles and tells the apprentices to start practicing their hunting crouch instead. r_c is unimpressed with p_l's sportsmanship.",
+                "exp": 0,
+                "frequency": 2,
+                "relationships": [
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect", "like"],
+                        "amount": -5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed when to_cat hastily cut a spar short because it looked like {PRONOUN/to_cat/subject} would lose a bet."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "r_c agrees and bets on app2. s_c gets so intense about the competition that app1 asks to stop the spar and practice something else. r_c feels bad for the young cat and the pressure that s_c put on {PRONOUN/app1/object}.",
+                "exp": 0,
+                "frequency": 4,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["competitive", "fierce", "troublesome"],
+                "relationships": [
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": -5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat was disappointed in how to_cat took a friendly competition too far."
+                        }
+                    },
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["s_c"],
+                        "values": ["comfort"],
+                        "amount": -10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat crumbled under all the pressure to_cat put on {PRONOUN/from_cat/object} during a spar."
+                        }
+                    },
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["app1"],
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat felt sympathy for to_cat after s_c put too much pressure on {PRONOUN/to_cat/object} during a spar."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "r_c doesn't feel comfortable betting on apprentice training like that and tells p_l so to {PRONOUN/p_l/poss} face. Sheepish, p_l suggests the apprentices practice their hunting crouches instead.",
+                "exp": 0,
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect", "like"],
+                        "amount": -5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed with to_cat's suggestion of betting on sparring apprentices."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_train_BFFs_platonic502locked1",
         "biome": [
             "any"
