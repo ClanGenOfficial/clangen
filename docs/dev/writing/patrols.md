@@ -549,6 +549,7 @@ This is a good starting point for writing your own outcomes.
     "text": "The raw displayed outcome text.",
     "exp": 0,
     "frequency": 4,
+    "relationship_constraint": [],
     "stat_skill": [],
     "stat_trait": [],
     "can_have_stat": [],
@@ -628,6 +629,11 @@ What each parameter does, and what the options are for outcomes.
 !!! warning
     Don't try to boost an outcome's frequency to make up for it being heavily constrained! While we used to do that with our old system, the new code automatically decides how to weight an outcome according to its constraints in a way that is completely divorced from the frequency. We decide outcome rarities and the code decides if outcomes should be prioritized in specific instances.
 
+
+***
+
+#### relationship_constraint: List[str]
+>Optional. Only allows the outcome if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers) and [Relationship Types](reference/tag-lists.md#relationship-tiers).
 
 ***
 
