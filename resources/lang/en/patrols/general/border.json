@@ -881,7 +881,7 @@
                 "art": "gen_train_soggykitty_happy_app"
             },
             {
-                "text": "The splash-fight quickly escalates into an actual tussle. r_c wants to break it up but, p_l holds {PRONOUN/r_c/object} back, noting how app1 is incorporating a tricky move from {PRONOUN/app1/poss} most recent battle-training.",
+                "text": "The splash-fight quickly escalates into an actual tussle. r_c wants to break it up, but p_l holds {PRONOUN/r_c/object} back, noting how app1 is incorporating a tricky move from {PRONOUN/app1/poss} most recent battle-training.",
                 "exp": 30,
                 "frequency": 2,
                 "relationships": [
