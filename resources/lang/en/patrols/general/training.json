@@ -10930,7 +10930,7 @@
                 "exp": 0,
                 "frequency": 4,
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["competitive", "fierce", "troublesome"],
+                "stat_trait": ["competitive", "fierce", "troublesome", "arrogant", "ambitious"],
                 "relationships": [
                     {
                         "cats_from": ["r_c"],
