@@ -10881,7 +10881,7 @@
                         "amount": 10,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat thinks to_cat is an amazing teacher."
+                            "cats_from": "from_cat thought to_cat's advice during a spar proved {PRONOUN/to_cat/object} a great teacher."
                         }
                     }
                 ],
