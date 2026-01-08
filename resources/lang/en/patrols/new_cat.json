@@ -7393,5 +7393,341 @@
                 "frequency": 2
             }
         ]
-    }
+    },
+    {
+    "patrol_id": "gen_bord_macbeth1",
+    "biome": [ "any" ],
+    "season": [ "any" ],
+    "types": [ "border" ],
+    "tags": [ "new_cat" ],
+    "patrol_art": "gen_found_scent_dangerous",
+    "min_cats": 2,
+    "max_cats": 2,
+    "min_max_status": {
+        "deputy": [ 1, 1 ],
+        "leader": [ 1, 1]
+    },
+    "frequency": 1,
+    "chance_of_success": 50,
+    "intro_text": "p_l and r_c become separated on the way to the border. Out of the mist, a voice calls to r_c by {PRONOUN/r_c/poss} name, only with the -star suffix.",
+    "decline_text": "r_c doubles back to find p_l, ignoring the voice.",
+    "success_outcomes": [
+        {
+            "text": "r_c follows the voice and finds three mysterious loners, who tell {PRONOUN/r_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/are/is} destined to be leader. When p_l finds r_c again, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} quiet and lost in thought.",
+            "exp": 20,
+            "frequency": 4,
+            "relationships": [
+            {
+                "cats_to": ["r_c"],
+                "cats_from": ["p_l"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -10,
+                "log": {
+                    "cats_from": "to_cat acted strangely after becoming separated from from_cat on patrol."
+                }
+            }
+            ],
+        "new_cat": [
+            [
+                "loner",
+                "female",
+                "age:senior",
+                "meeting",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "age:senior",
+                "meeting",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "age:senior",
+                "meeting",
+                "unknown",
+                "dead"
+            ]
+        ],
+        "art": "friendlyghost_INTRO"
+    },
+        {
+            "text": "s_c follows the voice and finds three mysterious loners, who tell {PRONOUN/s_c/object} that {PRONOUN/s_c/subject} {VERB/s_c/are/is} destined to be leader. s_c's eyes gleam. {PRONOUN/s_c/poss/CAP} destiny is before {PRONOUN/s_c/object}, if only {PRONOUN/s_c/subject} {VERB/s_c/have/has} the strength to claim it.",
+            "exp": 20,
+            "frequency": 4,
+            "stat_trait": ["bloodthirsty", "cunning", "cold", "vengeful", "fierce", "rebellious", "ambitious", "arrogant"],
+            "can_have_stat": ["r_c"],
+            "relationships": [
+            {
+                "cats_to": ["p_l"],
+                "cats_from": ["s_c"],
+                "mutual": false,
+                "values": ["like", "trust", "respect"],
+                "amount": -75,
+                "log": {
+                    "cats_from": "from_cat learned from three mysterious loners that {PRONOUN/from_cat/poss} destiny is to replace to_cat."
+                }
+            }
+            ],
+        "new_cat": [
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "age:senior",
+                "meeting",
+                "unknown",
+                "dead"
+            ]
+        ],
+        "art": "friendlyghost_INTRO"
+        }
+    ],
+    "fail_outcomes": [
+{
+    "text": "r_c follows the voice through the mist, but {PRONOUN/r_c/subject} can't catch up to the source. Eventually, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} p_l again, feeling unsettled.",
+    "exp": 0,
+    "frequency": 4,
+    "relationships": [
+        {
+            "cats_to": ["p_l"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["trust"],
+            "amount": -10,
+            "log": {
+                "cats_from": "from_cat and to_cat felt uneasy with each other after being separated in the mist on patrol."
+            }
+        }
+    ],
+    "art": "cat_running_two"
+        },
+        {
+            "text": "r_c follows the voice and finds three mysterious loners, but before {PRONOUN/r_c/subject} can find out how these loners know {PRONOUN/r_c/poss} name, p_l reappears and the loners vanish. p_l and r_c return to camp, a tension hanging between them.",
+            "exp": 20,
+            "frequency": 4,
+            "relationships": [
+            {
+                "cats_to": ["r_c"],
+                "cats_from": ["p_l"],
+                "mutual": true,
+                "values": ["trust"],
+                "amount": -10,
+                "log": {
+                    "cats_from": "r_c acted strangely after becoming separated from p_l on patrol."
+                }
+            }
+            ],
+        "new_cat": [
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ]
+        ],
+        "art": "friendlyghost_INTRO"
+    },
+        {
+            "text": "r_c follows the voice and finds three mysterious loners. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} know what all this toil and trouble nonsense is about, but {PRONOUN/r_c/subject} {VERB/r_c/aren't/isn't} interested in sticking around to find out.",
+            "exp": 20,
+            "frequency": 4,
+            "new_cat": [
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ]
+            ],
+            "art": "friendlyghost_INTRO"
+
+    },
+    {
+    "text": "r_c follows the voice and finds three mysterious loners, who hail {PRONOUN/r_c/object} as leader of c_n, then vanish into the mist. Unsettled, r_c tracks down p_l - and finds {PRONOUN/p_l/object} trembling in a pool of {PRONOUN/p_l/poss} own blood.",
+    "exp": 0,
+    "frequency": 2,
+    "dead_cats": [
+        "p_l",
+        "some_lives"
+    ],
+    "history_text": {
+        "lead_death": "lost multiple lives after vanishing into the mist"
+    },
+            "new_cat": [
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ],
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "unknown",
+                "dead"
+            ]
+            ],
+    "art": "gen_dead_cat_ghost_EXPLICIT",
+    "art_clean": "gen_dead_cat",
+    "future_event": []
+}
+    ],
+    "antag_success_outcomes": [
+        {
+        "text": "Fear and adrenaline racing through {PRONOUN/r_c/poss} veins, r_c leaps through the mist with claws outstretched. The loner vanishes. When p_l finds r_c, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} trembling, {PRONOUN/r_c/poss} fur bushed out.",
+        "exp": 0,
+        "frequency": 4,
+        "new_cat": [
+            [
+                "loner",
+                "female",
+                "meeting",
+                "age:senior",
+                "dead",
+                "unknown"
+            ]
+        ],
+        "art": "scaryghost_INTRO"
+},
+{
+    "text": "Fear and adrenaline racing through {PRONOUN/r_c/poss} veins, r_c leaps through the mist with claws outstretched. When {PRONOUN/r_c/subject} {VERB/r_c/find/finds} the loner, {PRONOUN/r_c/subject} {VERB/r_c/rip/rips} {PRONOUN/n_c:0/poss} throat out without hesitation. p_l finds r_c panting over the body, {PRONOUN/r_c/poss} chest and muzzle stained in blood.",
+    "exp": 0,
+    "frequency": 4,
+    "dead_cats": ["n_c:0"],
+    "outsider_rep": -1,
+    "relationships": [
+        {
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": false,
+            "values": ["trust", "comfort"],
+            "amount": -20,
+            "log": {
+                "cats_from": "from_cat was disturbed when to_cat murdered a loner, seemingly unprovoked."
+            }
+        }
+    ],
+        "new_cat": [
+            [
+                "loner",
+                "meeting",
+                "female",
+                "age:senior",
+                "unknown",
+                "dead"
+            ]
+        ],
+    "art": "gen_dead_cat_outsider_ghost_EXPLICIT",
+    "art_clean": "gen_dead_cat_outsider"
+}
+],
+    "antag_fail_outcomes": [
+        {
+    "text": "No matter how fast r_c chases after the voice, {PRONOUN/r_c/subject} can't find the source. The voice grows increasingly malevolent and taunting, and r_c eventually gives up the pursuit to go find p_l.",
+    "exp": 0,
+    "frequency": 4,
+    "art": "scaryghost_INTRO"
+},
+{
+    "text": "r_c chases the voice, and leaps with outstretched claws at the silhouette of a cat in the mist. p_l lets out a shriek of surprise, and r_c immediately releases {PRONOUN/r_c/poss} leader, helping {PRONOUN/p_l/object} back to camp to treat {PRONOUN/p_l/poss} wound.",
+    "exp": 0,
+    "frequency": 4,
+    "injury": [
+        {
+            "cats": ["p_l"],
+            "injuries": ["claw-wound"],
+            "scars": ["SIDE"],
+            "no_results": false
+        }
+    ],
+    "history_text": {
+        "reg_death": "m_c died from an injury sustained when r_c attacked {PRONOUN/m_c/object} by mistake.",
+        "lead_death": "died from an accidental injury inflicted by r_c",
+        "scars": "m_c was scarred when r_c attacked {PRONOUN/m_c/object} by mistake."
+    },
+    "relationships": [
+        {
+            "cats_to": ["r_c"],
+            "cats_from": ["p_l"],
+            "mutual": false,
+            "values": ["comfort", "trust"],
+            "amount": -10,
+            "log": {
+                "cats_from": "to_cat attacked from_cat on patrol and claimed it was an accident."
+            }
+        }
+    ],
+    "art": "gen_battle_warrior_warrior"
+}
+    ]
+}
 ]

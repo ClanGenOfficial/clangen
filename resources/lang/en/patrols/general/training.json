@@ -10538,6 +10538,203 @@
         ]
     },
     {
+        "patrol_id": "gen_train_clearingtheair_dislikelocked",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_speaking_cat_w3",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "normal adult": [2, 2]
+        },
+        "frequency": 4,
+        "relationship_status": ["dislikes"],
+        "intro_text": "p_l pulls r_c aside during training to discuss a recent disagreement between the two of them, hoping to clear the air.",
+        "decline_text": "r_c cuts the training short, not interested in hearing p_l out.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "Once p_l admits what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} upset about, r_c's mouth drops open. It turns out it was a complete misunderstanding! The two cats train together, feeling much warmer toward each other.",
+                "exp": 15,
+                "frequency": 2,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "mutual": true,
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat and from_cat realized they argued over a misunderstanding."
+                        }
+                    }
+                ],
+                "art": "gen_bump_heads_warriors"
+            },
+            {
+                "text": "p_l leads by example, admitting to {PRONOUN/p_l/poss} mistakes and apologizing. r_c grudgingly agrees to let it go and move on, and the two cats train together.",
+                "exp": 15,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "mutual": true,
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat agreed to put their disagreement behind them."
+                        }
+                    }
+                ],
+                "art": "gen_bump_heads_warriors"
+            },
+            {
+                "text": "s_c is patient and hears r_c out before offering {PRONOUN/s_c/poss} own side of the story, careful not to blame r_c or make assumptions. The two cats chat for a while, then agree to put it behind them and train together.",
+                "exp": 15,
+                "frequency": 4,
+                "stat_skill": ["SPEAKER,2", "MEDIATOR,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "mutual": true,
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat agreed to put their disagreement behind them."
+                        }
+                    }
+                ],
+                "art": "gen_bump_heads_warriors"
+            },
+            {
+                "text": "s_c lets r_c vent to {PRONOUN/s_c/object} before s_c responds, apologizing whole-heartedly and taking accountability. r_c feels satisfied, and the two cats agree to put their differences behind them and train together.",
+                "exp": 15,
+                "frequency": 4,
+                "stat_trait": ["wise", "calm", "thoughtful", "compassionate", "sincere", "faithful", "careful"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "mutual": true,
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat agreed to put their disagreement behind them."
+                        }
+                    }
+                ],
+                "art": "gen_bump_heads_warriors"
+            },
+            {
+                "text": "r_c's mouth drops open when s_c actually <i>apologizes</i> to {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} never thought {PRONOUN/r_c/subject} would hear the words out of s_c's mouth, but {PRONOUN/r_c/subject} {VERB/r_c/recognize/recognizes} what a big deal this is and {VERB/r_c/agree/agrees} to forgive and forget.",
+                "exp": 15,
+                "frequency": 4,
+                "stat_trait": ["arrogant", "bloodthirsty", "bold", "fierce", "shameless", "childish", "competitive", "cold", "grumpy", "insecure", "vengeful", "troublesome", "oblivious" ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "mutual": true,
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat agreed to put their disagreement behind them.",
+                            "cats_to": "r_c was amazed when p_l actually apologized to {PRONOUN/to_cat/object}."
+                        }
+                    }
+                ],
+                "art": "gen_bump_heads_warriors"
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l explains {PRONOUN/p_l/poss} perspective and asks r_c if they can put it behind them, but r_c brushes {PRONOUN/p_l/object} off.",
+                "exp": 0,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "mutual": true,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "r_c ignored p_l's attempt to clear the air between them."
+                        }
+                    }
+                ],
+                "art": "gen_cat_looking_up3"
+            },
+            {
+                "text": "p_l starts to explain {PRONOUN/p_l/poss} perspective, but r_c cuts {PRONOUN/p_l/object} off and brings up the original dispute again. p_l's attempt to clear the air turns into another argument.",
+                "exp": 0,
+                "frequency": 3,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "mutual": true,
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "While trying to clear the air, to_cat and from_cat just started arguing again."
+                        }
+                    }
+                ],
+                "art": "gen_train_argueWW"
+            },
+            {
+                "text": "Drawing on {PRONOUN/s_c/poss} skill with younger cats, s_c lays out how {PRONOUN/s_c/poss} feelings were hurt by r_c's actions. r_c doesn't take well to being spoken to like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a kit, and the conversation devolves into a new argument.",
+                "exp": 0,
+                "frequency": 4,
+                "stat_skill": ["KIT,1", "TEACHER,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "mutual": false,
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "While trying to clear the air, to_cat and from_cat just started arguing again.",
+                            "cats_to": "Though p_l was trying to apologize, r_c felt that {PRONOUn/p_l/subject} was treating {PRONOUN/r_c/object} like a kit."
+                        }
+                    }
+                ],
+                "art": "gen_train_argueWW"
+            },
+            {
+                "text": "s_c struggles {PRONOUN/s_c/poss} way through a half-hearted apology that ends with a defiant claim that s_c didn't really do anything wrong. r_c is outraged that s_c thinks <i>this</i> is going to clear things up between them and storms off.",
+                "exp": 0,
+                "frequency": 4,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["arrogant", "bloodthirsty", "bold", "fierce", "shameless", "childish", "competitive", "cold", "grumpy", "insecure", "vengeful", "troublesome", "rebellious", "flamboyant"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["like", "comfort"],
+                        "mutual": true,
+                        "amount": -12,
+                        "log": {
+                            "cats_from": "r_c stormed off during p_l's perfect and sincere apology.",
+                            "cats_to": "p_l apologized to r_c in an insulting and half-hearted way."
+                        }
+                    }
+                ],
+                "art": "gen_train_argueWW"
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_train_provingyourself_10locked1",
         "biome": [
             "any"
