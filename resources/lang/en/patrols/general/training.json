@@ -10739,7 +10739,7 @@
         "season": ["any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": null,
+        "patrol_art": "gen_train_sunset",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -10777,7 +10777,8 @@
                             "cats_to": "p_l got very invested in app1's spar with app2 and helped {PRONOUN/app1/object} win."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_patrolapprenticesessionsuccess"
             },
             {
                 "text": "r_c agrees and bets on app1. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app1 wins! The apprentices catch their breath on the way back to camp, wondering why r_c looks so smug.",
@@ -10805,7 +10806,8 @@
                             "cats_to": "p_l got very invested in app1's spar with app2 and helped {PRONOUN/app1/object} win."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_patrolapprenticesessionsuccess"
             },
             {
                 "text": "r_c agrees and bets on app2. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app2 wins! The apprentices catch their breath on the way back to camp, wondering why r_c looks so smug.",
@@ -10833,7 +10835,8 @@
                             "cats_to": "r_c got very invested in app2's spar with app1 and helped {PRONOUN/app2/object} win."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_patrolapprenticesessionsuccess"
             },
             {
                 "text": "r_c agrees and bets on app1. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app2 wins! The apprentices catch their breath on the way back to camp, wondering why r_c looks so smug.",
@@ -10861,7 +10864,26 @@
                             "cats_to": "p_l got very invested in app2's spar with app1 and helped {PRONOUN/app2/object} win."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_patrolapprenticesessionsuccess"
+            },
+            {
+                "text": "app1 and app2 overhear this scheme and exchange winks. They both pull out their silliest moves - bellyflops, somersaults, and tail-chomps - until p_l and r_c are forced to call off their bet and get this training back on track.",
+                "exp": 15,
+                "frequency": 2,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "trust"],
+                        "amount": 10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "app1 and app2 foiled p_l and r_c's scheme to bet on their spar by goofing off."
+                        }
+                    }
+                ],
+                "art": "gen_train_playbite_2apps"
             }
         ],
         "fail_outcomes": [
@@ -10880,7 +10902,8 @@
                             "cats_from": "from_cat was unimpressed when to_cat hastily cut a spar short because it looked like {PRONOUN/to_cat/subject} would lose a bet."
                         }
                     }
-                ]
+                ],
+                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1"
             },
             {
                 "text": "r_c agrees and bets on app2. s_c gets so intense about the competition that app1 asks to stop the spar and practice something else. r_c feels bad for the young cat and the pressure that s_c put on {PRONOUN/app1/object}.",
@@ -10919,7 +10942,8 @@
                             "cats_from": "from_cat felt sympathy for to_cat after s_c put too much pressure on {PRONOUN/to_cat/object} during a spar."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_patrolapprenticesessionfail"
             },
             {
                 "text": "r_c doesn't feel comfortable betting on apprentice training like that and tells p_l so to {PRONOUN/p_l/poss} face. Sheepish, p_l suggests the apprentices practice their hunting crouches instead.",
@@ -10936,7 +10960,8 @@
                             "cats_from": "from_cat was unimpressed with to_cat's suggestion of betting on sparring apprentices."
                         }
                     }
-                ]
+                ],
+                "art": "gen_speaking_cat_w3"
             }
         ]
     },
