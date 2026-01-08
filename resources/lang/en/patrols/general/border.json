@@ -850,7 +850,7 @@
         "season": ["greenleaf"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": null,
+        "patrol_art": "running_two_apps",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -877,7 +877,8 @@
                             "cats_from": "from_cat and to_cat had fun splashing each other on a soggy border patrol."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_soggykitty_happy_app"
             },
             {
                 "text": "The splash-fight quickly escalates into an actual tussle. r_c wants to break it up but, p_l holds {PRONOUN/r_c/object} back, noting how app1 is incorporating a tricky move from {PRONOUN/app1/poss} most recent battle-training.",
@@ -904,7 +905,8 @@
                             "cats_from": "from_cat noticed to_cat practicing a tricky battle move in a play-fight with app2."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_playbite_2apps"
             },
             {
                 "text": "app2 has dared to challenge the splash-master, and s_c will not allow such a transgression to go by unpunished. Fortunately, p_l and r_c are in a good mood and allow the apprentices to get out all their energy on the way to the border.",
@@ -923,7 +925,8 @@
                             "cats_from": "from_cat and to_cat had lots of fun splashing each other on a soggy border patrol."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_soggykitty_happy_app"
             },
             {
                 "text": "app1 sends a shower of droplets onto s_c's pelt, but {PRONOUN/app1/subject} didn't realize how comfortable s_c is in the water. s_c trots along, water dripping off {PRONOUN/s_c/poss} pelt, perfectly content on the way to the o_c_n border.",
@@ -942,7 +945,8 @@
                             "cats_from": "from_cat and to_cat had lots of fun splashing each other on a soggy border patrol."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_soggykitty_happy_app"
             },
             {
                 "text": "Watching app1 and app2 splash each other, s_c shoots a mischievous look at p_l. p_l frowns back, shaking {PRONOUN/p_l/poss} head, but it's too late. SPLASH! It's a very wet border patrol.",
@@ -981,7 +985,8 @@
                             "cats_from": "from_cat felt mildly annoyed that to_cat derailed a border patrol by getting into a splash-fight."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_soggykitty_mad_warrior"
             }
         ],
         "fail_outcomes": [
@@ -1000,7 +1005,8 @@
                             "cats_from": "from_cat and to_cat got annoyed with each other while having a splash-fight on a border patrol."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_soggykitty_mad_app"
             },
             {
                 "text": "app2 whines for p_l to make app1 stop splashing {PRONOUN/app2/object}. app1 rolls {PRONOUN/app1/poss} eyes and thinks app2 is acting like a kit.",
@@ -1027,7 +1033,8 @@
                             "cats_from": "to_cat wanted p_l to intervene when from_cat was splashing {PRONOUN/to_cat/object}, and from_cat thought {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} acting like a kit."
                         }
                     }
-                ]
+                ],
+                "art": "app_cat_looking_up"
             },
             {
                 "text": "app2 has dared to challenge the splash-master, and s_c will not allow such a transgression to go by unpunished. Unfortunately, p_l and r_c aren't in a good mood and scold the apprentices to take this patrol seriously.",
@@ -1066,7 +1073,8 @@
                             "cats_from": "from_cat was annoyed when app1 and app2 goofed off during a border patrol."
                         }
                     }
-                ]
+                ],
+                "art": "gen_cat_looking_up3"
             },
             {
                 "text": "s_c isn't going to lose, even in a playful fight, and pounces on app2. Before p_l and r_c can intervene, s_c thrusts app2's head into a rather deep puddle. When app2 resurfaces, {PRONOUN/app2/subject}{VERB/app2/'re/'s} choking and spluttering. s_c is rebuked for taking the game too far",
@@ -1095,7 +1103,8 @@
                 ],
                 "history_text": {
                     "reg_death": "m_c died from water in {PRONOUN/m_c/poss} lungs after s_c took a game way too far on patrol."
-                }
+                },
+                "art": "gen_train_waterdive_app"
             }
         ]
     }
