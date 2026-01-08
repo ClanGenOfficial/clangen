@@ -85,7 +85,7 @@ invalid_records = {
     "location": {
         missing: [],
     },
-    "season": {missing: []},
+    "season": {},
     "sub_type": {},
     "tags": {},
     "new_accessory": {},
@@ -340,7 +340,10 @@ def ea_split(events):
 
         # LOCATION
         if "location" not in event:
-            invalid_records["location"][missing].append(event_id)
+            if invalid_records["location"][missing]:
+                invalid_records["location"][missing].append(event_id)
+            else:
+                invalid_records["location"][missing] = [event_id]
         else:  # event has a location
             ea_add_records_with_subtype(
                 event_id,
@@ -358,7 +361,10 @@ def ea_split(events):
                 invalid_records["season"],
             )
         else:
-            invalid_records["season"][missing].append(event_id)
+            if missing in invalid_records["season"]:
+                invalid_records["season"][missing].append(event_id)
+            else:
+                invalid_records["season"][missing] = [event_id]
 
         # SUB TYPE
         if "sub_type" in event:
