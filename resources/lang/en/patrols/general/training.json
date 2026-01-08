@@ -10868,6 +10868,26 @@
                 "art": "gen_train_patrolapprenticesessionsuccess"
             },
             {
+                "text": "r_c agrees and bets on app1. With s_c to counsel {PRONOUN/s_c/poss} favored apprentice, the match isn't even close.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_skill": ["TEACHER,1"],
+                "can_have_stat": ["p_l", "r_c"],
+                "relationships": [
+                    {
+                        "cats_from": ["app1", "app2"],
+                        "cats_to": ["s_c"],
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat thinks to_cat is an amazing teacher."
+                        }
+                    }
+                ],
+                "art": "gen_train_patrolapprenticesessionsuccess"
+            },
+            {
                 "text": "app1 and app2 overhear this scheme and exchange winks. They both pull out their silliest moves - bellyflops, somersaults, and tail-chomps - until p_l and r_c are forced to call off their bet and get this training back on track.",
                 "exp": 15,
                 "frequency": 2,
