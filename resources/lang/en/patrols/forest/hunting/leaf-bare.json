@@ -229,7 +229,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 10,
@@ -998,7 +998,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat wasted from_cat's time on a hunting patrol through poor choice of hunting grounds."
+                            "cats_from": "to_cat's poor choice of hunting grounds wasted from_cat's time on a hunting patrol."
                         }
                     }
                 ],
@@ -1367,16 +1367,6 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": false,
-                        "values": ["comfort"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat and to_cat engaged in a friendly hunting competition together."
-                        }
-                    },
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["comfort"],
                         "amount": 5,
