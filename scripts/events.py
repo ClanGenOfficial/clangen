@@ -1370,6 +1370,8 @@ def _determine_medcat_eligibility(cat) -> bool:
     num_med_apps = len(
         [cat.status.rank == CatRank.MEDICINE_APPRENTICE for cat in med_cat_list]
     )
+    logger.debug("Current number of medcats: %d", num_medcats - num_med_apps)
+    logger.debug("Current number of medcat apps: %d", num_med_apps)
 
     # check if the Clan has sufficient med cats
     enough_working_meds = medicine_cats_can_cover_clan(
@@ -1433,12 +1435,12 @@ def _determine_medcat_eligibility(cat) -> bool:
     ):
         # These chances apply if enough medicine cats are very old.
         if enough_working_meds:
-            chance = int(chance / 3)
+            chance = chance / 3
         else:
             logger.info("Not enough healthy medicine cats")
-            chance = int(chance / 14)
+            chance = chance / 14
 
-        logger.info("Ancient medicine cats, chance updated to %d", chance)
+        logger.info("Ancient medicine cats, chance updated to %d", round(chance))
     elif (
         senior_med_ratio
         > constants.CONFIG["roles"]["medicine cat apprentice"][
@@ -1448,20 +1450,25 @@ def _determine_medcat_eligibility(cat) -> bool:
     ):
         # These chances apply if enough medicine cats are elders.
         if enough_working_meds:
-            chance = int(chance / 2.22)
+            chance = chance / 2.22
         else:
             logger.info("Not enough healthy medicine cats")
-            chance = int(chance / 14)
+            chance = chance / 14
 
-        logger.info("Senior medicine cats, chance updated to %d", chance)
+        logger.info("Senior medicine cats, chance updated to %d", round(chance))
     else:
         # These chances will only be reached if the
         # Clan has at least one non-elder medicine cat.
         if not enough_working_meds:
-            logger.info("Not enough healthy medicine cats")
-            chance = int(chance / 7.125)  # 5
+            chance = chance / 7.125
+            logger.info(
+                "Not enough healthy medicine cats, chance updated to %d", chance
+            )
         else:
-            chance = int(chance * 2.22)  # 91
+            chance = chance * 2.22
+            logger.info(
+                "Enough healthy young medicine cats, chance updated to %d", chance
+            )
 
     if cat.personality.trait in [
         "careful",
@@ -1470,8 +1477,8 @@ def _determine_medcat_eligibility(cat) -> bool:
         "wise",
         "faithful",
     ]:
-        chance = int(chance / 1.3)
-        logger.info("Suitable trait, chance updated to %d", chance)
+        chance = chance / 1.3
+        logger.info("Suitable trait, chance updated to %d", round(chance))
 
     elif cat.personality.trait in [
         "adventurous",
@@ -1485,8 +1492,8 @@ def _determine_medcat_eligibility(cat) -> bool:
         "sneaky",
         "vengeful",
     ]:
-        chance = int(chance * 2)
-        logger.info("Unsuitable trait, chance updated to %d", chance)
+        chance = chance * 2
+        logger.info("Unsuitable trait, chance updated to %d", round(chance))
 
     beneficial_skills = [
         SkillPath.OMEN,
@@ -1500,21 +1507,27 @@ def _determine_medcat_eligibility(cat) -> bool:
     ]
 
     if cat.skills.primary.path in beneficial_skills:
-        chance = max(1, int(chance / 2))
-        logger.info("beneficial primary skill, chance updated to %d", chance)
+        chance = chance / 2
+        logger.info("beneficial primary skill, chance updated to %d", round(chance))
 
     if cat.skills.secondary and cat.skills.secondary.path in beneficial_skills:
-        chance = max(1, int(chance / 4))
-        logger.info("beneficial secondary skill, chance updated to %d", chance)
+        chance = chance / 4
+        logger.info("beneficial secondary skill, chance updated to %d", round(chance))
 
     if cat.is_disabled():
-        chance = int(chance / 2)
+        chance = chance / 2
 
+    if num_med_apps == 0:
+        # if there are no apprentices at all, make it slightly easier to get one
+        logger.info("No apprentices at all")
+        chance = chance / 1.8
+        logger.info("No medcat apprentices at all, chance updated to %d", chance)
     if num_med_apps > 1:
         # if there's already at least one medcat app, make it harder to get another
-        chance = int(chance * 2)
+        chance = chance * (1 + (0.2 * (num_med_apps - 1)))
+        logger.info("%d medcat apps, chance updated to %d", num_med_apps, chance)
 
-    chance = max(1, chance)
+    chance = max(1, int(chance))
 
     success = not int(random.random() * chance)
     logger.info("%s final chance: %d | SUCCESS: %s", cat.name, chance, success)
