@@ -9579,6 +9579,18 @@
                 "deputy"
             ]
         },
+        "relationships": [
+            {
+                "cats_from": ["high_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "trust"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard about how to_cat killed a o_c_n warrior in battle."
+                }
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -9607,6 +9619,18 @@
                 "apprentice"
             ]
         },
+        "relationships": [
+            {
+                "cats_from": ["high_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "trust"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard about how to_cat killed a o_c_n apprentice in battle."
+                }
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
