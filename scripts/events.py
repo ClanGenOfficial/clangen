@@ -1154,14 +1154,16 @@ def check_war():
 
     available_med = find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)
 
-    if not game.clan.leader or not game.clan.deputy or not available_med:
-        for event in war_events:
-            if not game.clan.leader and "lead_name" in event:
-                war_events.remove(event)
-            if not game.clan.deputy and "dep_name" in event:
-                war_events.remove(event)
-            if not available_med and "med_name" in event:
-                war_events.remove(event)
+    for event in war_events:
+        if not game.clan.leader and "lead_name" in event:
+            war_events.remove(event)
+            continue
+        if not game.clan.deputy and "dep_name" in event:
+            war_events.remove(event)
+            continue
+        if not available_med and "med_name" in event:
+            war_events.remove(event)
+            continue
 
     # grab our war "notice" for this moon
     event = random.choice(war_events)
