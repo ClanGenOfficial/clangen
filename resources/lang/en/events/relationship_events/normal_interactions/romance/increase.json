@@ -184,7 +184,6 @@
 		"interactions": [
 			"m_c thinks r_c is the most beautiful cat in the Clan.",
 			"m_c can't stop thinking about r_c.",
-			"m_c feels giddy about getting on the same patrol as r_c.",
 			"m_c wants r_c to understand how crazy {PRONOUN/m_c/subject} {VERB/m_c/are/is} about {PRONOUN/r_c/object}.",
 			"m_c thinks r_c has a lovely sense of humor.",
 			"If you were to ask m_c, no other cat is anywhere near as fun or interesting as r_c.",
@@ -227,12 +226,19 @@
 		}
 	},
 	{
-		"id": "rom_inc_med9",
+		"id": "rom_inc_med_patrols9",
 		"intensity": "medium",
 		"interactions": [
             		"m_c and r_c played around during patrol and got in a bit of trouble, but still returned to camp smiling.",
             		"m_c just barely missed a mouse, but r_c caught it right after, handing it off to {PRONOUN/m_c/object}.",
-            		"m_c and r_c got so into playing around that they got separated from the rest of the patrol, earning themselves an earful back at camp."
+            		"m_c and r_c got so into playing around that they got separated from the rest of the patrol, earning themselves an earful back at camp.",
+			"m_c feels giddy about getting on the same patrol as r_c."
+		],
+		"m_c":[
+			"warrior",
+			"deputy",
+			"leader",
+			"apprentice"
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
