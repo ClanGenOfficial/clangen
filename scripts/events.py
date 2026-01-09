@@ -5,11 +5,12 @@ TODO: Docs
 
 
 """
-
+import logging
 import random
 
 # pylint: enable=line-too-long
 import traceback
+from math import floor
 
 import i18n
 
@@ -17,6 +18,7 @@ from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
 from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats, add_cat_to_fade_id
+from scripts.cat.skills import SkillPath
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
@@ -55,6 +57,8 @@ from scripts.utility import (
     history_text_adjust,
     unpack_rel_block,
 )
+
+logger = logging.getLogger(__name__)
 
 
 all_events = {}
@@ -1250,74 +1254,7 @@ def perform_ceremonies(cat):
         # apprentice a kitten to either med or warrior
         if cat.moons == cat_class.age_moons[CatAge.ADOLESCENT][0]:
             if cat.status.rank == CatRank.KITTEN:
-                med_cat_list = [
-                    i
-                    for i in Cat.all_cats_list
-                    if i.status.rank.is_any_medicine_rank()
-                    and i.status.alive_in_player_clan
-                ]
-
-                # check if the medicine cat is an elder
-                has_elder_med = [
-                    c
-                    for c in med_cat_list
-                    if c.age == "senior" and c.status.rank == CatRank.MEDICINE_CAT
-                ]
-
-                very_old_med = [
-                    c
-                    for c in med_cat_list
-                    if c.moons >= 150 and c.status.rank == CatRank.MEDICINE_CAT
-                ]
-
-                # check if the Clan has sufficient med cats
-                has_med = medicine_cats_can_cover_clan(
-                    Cat.all_cats.values(),
-                    amount_per_med=get_amount_cat_for_one_medic(game.clan),
-                )
-
-                # check if a med cat app already exists
-                has_med_app = any(
-                    cat.status.rank == CatRank.MEDICINE_APPRENTICE
-                    for cat in med_cat_list
-                )
-
-                # assign chance to become med app depending on current med cat and traits
-                chance = constants.CONFIG["roles"]["base_medicine_app_chance"]
-                if has_elder_med == med_cat_list:
-                    # These chances apply if all the current medicine cats are elders.
-                    if has_med:
-                        chance = int(chance / 2.22)
-                    else:
-                        chance = int(chance / 13.67)
-                elif very_old_med == med_cat_list:
-                    # These chances apply is all the current medicine cats are very old.
-                    if has_med:
-                        chance = int(chance / 3)
-                    else:
-                        chance = int(chance / 14)
-                # These chances will only be reached if the
-                # Clan has at least one non-elder medicine cat.
-                elif not has_med:
-                    chance = int(chance / 7.125)
-                elif has_med:
-                    chance = int(chance * 2.22)
-
-                if cat.personality.trait in [
-                    "careful",
-                    "compassionate",
-                    "loving",
-                    "wise",
-                    "faithful",
-                ]:
-                    chance = int(chance / 1.3)
-                if cat.is_disabled():
-                    chance = int(chance / 2)
-
-                if chance == 0:
-                    chance = 1
-
-                if not has_med_app and not int(random.random() * chance):
+                if _determine_medcat_eligibility(cat):
                     ceremony(cat, CatRank.MEDICINE_APPRENTICE)
                     ceremony_accessory = True
                     gain_accessories(cat)
@@ -1409,6 +1346,179 @@ def perform_ceremonies(cat):
                     ceremony(cat, CatRank.MEDIATOR, preparedness)
                     ceremony_accessory = True
                     gain_accessories(cat)
+
+
+def _determine_medcat_eligibility(cat) -> bool:
+    """
+    Determines whether this cat will become a medicine cat
+    :param cat: A kitten preparing for apprenticeship ceremony
+    :return: True if the kitten should be a medcat, False otherwise
+    """
+    # assign chance to become med app depending on current med cat and traits
+    chance = constants.CONFIG["roles"]["base_medicine_app_chance"]  # 41
+    logger.info("Medcat app %s starting chance: %d", str(cat.name), chance)
+
+    med_cat_list = [
+        i
+        for i in Cat.all_cats_list
+        if i.status.rank.is_any_medicine_rank() and i.status.alive_in_player_clan
+    ]
+
+    num_medcats = len(med_cat_list)
+
+    # get number of medcat apps
+    num_med_apps = len(
+        [cat.status.rank == CatRank.MEDICINE_APPRENTICE for cat in med_cat_list]
+    )
+
+    # check if the Clan has sufficient med cats
+    enough_working_meds = medicine_cats_can_cover_clan(
+        Cat.all_cats.values(),
+        amount_per_med=get_amount_cat_for_one_medic(game.clan),
+    )
+
+    if (
+        floor(num_med_apps / max(1, (len(med_cat_list) - num_med_apps)))
+        > constants.CONFIG["roles"]["medicine cat apprentice"]["max_medcats_to_apps"]
+    ):
+        if enough_working_meds:
+            # early return if the ratio of apps would be too high
+            logger.info("Too many apprentices for medcat population. Aborting.")
+            return False
+        logger.debug(
+            "Too many apprentices for medcat population, but not enough medicine cats for Clan! Continuing."
+        )
+
+    # check if the medicine cats are old
+    senior_med_ratio = (
+        (
+            len(
+                [
+                    c
+                    for c in med_cat_list
+                    if c.age == "senior" and c.status.rank == CatRank.MEDICINE_CAT
+                ]
+            )
+            / num_medcats
+        )
+        if num_medcats != 0
+        else 0
+    )
+
+    ancient_med_ratio = (
+        (
+            len(
+                [
+                    c
+                    for c in med_cat_list
+                    if c.moons
+                    >= constants.CONFIG["roles"]["medicine cat apprentice"][
+                        "threshold_moons_ancient"
+                    ]
+                    and c.status.rank == CatRank.MEDICINE_CAT
+                ]
+            )
+            / num_medcats
+        )
+        if num_medcats != 0
+        else 0
+    )
+
+    if (
+        ancient_med_ratio
+        > constants.CONFIG["roles"]["medicine cat apprentice"][
+            "threshold_percentage_ancient"
+        ]
+        / 100
+    ):
+        # These chances apply if enough medicine cats are very old.
+        if enough_working_meds:
+            chance = int(chance / 3)
+        else:
+            logger.info("Not enough healthy medicine cats")
+            chance = int(chance / 14)
+
+        logger.info("Ancient medicine cats, chance updated to %d", chance)
+    elif (
+        senior_med_ratio
+        > constants.CONFIG["roles"]["medicine cat apprentice"][
+            "threshold_percentage_seniors"
+        ]
+        / 100
+    ):
+        # These chances apply if enough medicine cats are elders.
+        if enough_working_meds:
+            chance = int(chance / 2.22)
+        else:
+            logger.info("Not enough healthy medicine cats")
+            chance = int(chance / 14)
+
+        logger.info("Senior medicine cats, chance updated to %d", chance)
+    else:
+        # These chances will only be reached if the
+        # Clan has at least one non-elder medicine cat.
+        if not enough_working_meds:
+            logger.info("Not enough healthy medicine cats")
+            chance = int(chance / 7.125)  # 5
+        else:
+            chance = int(chance * 2.22)  # 91
+
+    if cat.personality.trait in [
+        "careful",
+        "compassionate",
+        "loving",
+        "wise",
+        "faithful",
+    ]:
+        chance = int(chance / 1.3)
+        logger.info("Suitable trait, chance updated to %d", chance)
+
+    elif cat.personality.trait in [
+        "adventurous",
+        "arrogant",
+        "bold",
+        "bloodthirsty",
+        "cold",
+        "fierce",
+        "rebellious",
+        "troublesome",
+        "sneaky",
+        "vengeful",
+    ]:
+        chance = int(chance * 2)
+        logger.info("Unsuitable trait, chance updated to %d", chance)
+
+    beneficial_skills = [
+        SkillPath.OMEN,
+        SkillPath.PROPHET,
+        SkillPath.HEALER,
+        SkillPath.STAR,
+        SkillPath.DREAM,
+        SkillPath.CLAIRVOYANT,
+        SkillPath.GHOST,
+        SkillPath.CAMP,
+    ]
+
+    if cat.skills.primary.path in beneficial_skills:
+        chance = max(1, int(chance / 2))
+        logger.info("beneficial primary skill, chance updated to %d", chance)
+
+    if cat.skills.secondary and cat.skills.secondary.path in beneficial_skills:
+        chance = max(1, int(chance / 4))
+        logger.info("beneficial secondary skill, chance updated to %d", chance)
+
+    if cat.is_disabled():
+        chance = int(chance / 2)
+
+    if num_med_apps > 1:
+        # if there's already at least one medcat app, make it harder to get another
+        chance = int(chance * 2)
+
+    chance = max(1, chance)
+
+    success = not int(random.random() * chance)
+    logger.info("%s final chance: %d | SUCCESS: %s", cat.name, chance, success)
+    return success
 
 
 def load_ceremonies():

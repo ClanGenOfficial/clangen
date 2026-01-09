@@ -368,6 +368,19 @@ dev_tools = false
   # base 1/chance that a cat will be chosen as a med cat apprentice
   base_medicine_app_chance = 41
 
+[roles."medicine cat apprentice"]
+  # maximum number of medicine cat apprentices to full medicine cats (e.g. 4 adult medcats can have 2 apps total)
+  max_medcats_to_apps = 2
+
+  # minimum percentage of medcat population that are seniors for buff to app chance
+  threshold_percentage_seniors = 30
+
+  # how many moons is considered "very old"
+  threshold_moons_ancient = 150
+
+  # minimum percentage of medcat population that are ancient for buff to app chance
+  threshold_percentage_ancient = 30
+
 [roles.become_mediator_chances]
   # 1/chance that a cat will switch to mediator. rolls every moon, so keep it high.
   warrior = 5000
