@@ -9543,7 +9543,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "A skirmish with o_c_n was interrupted by a dog. The two Clans were forced to work together to drive it off. ",
+        "event_text": "A skirmish with o_c_n was interrupted by a dog. The two Clans were forced to work together to drive it off.",
         "m_c": {
             "status": [
                 "warrior"
@@ -9557,6 +9557,85 @@
                 "hostile"
             ],
             "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_kill",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "In a vicious fight with o_c_n, m_c kills an o_c_n warrior.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "leader",
+                "deputy"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_lawful", "high_social"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "trust"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard about how to_cat killed a o_c_n warrior in battle."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_kill",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "In a vicious fight with o_c_n, m_c kills an o_c_n apprentice.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader",
+                "apprentice"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_lawful", "high_social"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "trust"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard about how to_cat killed a o_c_n apprentice in battle."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -2
         }
     },
     {
