@@ -9574,12 +9574,11 @@
         "event_text": "In a vicious fight with o_c_n, m_c kills an o_c_n warrior.",
         "m_c": {
             "status": [
-                "warrior"
+                "warrior",
+                "leader",
+                "deputy"
             ]
         },
-        "exclude_involved": [
-            "m_c"
-        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -9602,12 +9601,12 @@
         "event_text": "In a vicious fight with o_c_n, m_c kills an o_c_n apprentice.",
         "m_c": {
             "status": [
-                "warrior"
+                "warrior",
+                "deputy",
+                "leader",
+                "apprentice"
             ]
         },
-        "exclude_involved": [
-            "m_c"
-        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
