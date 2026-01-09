@@ -10550,7 +10550,7 @@
             "normal adult": [2, 2]
         },
         "frequency": 4,
-        "relationship_status": ["dislikes"],
+        "relationship_constraint": ["dislikes"],
         "intro_text": "p_l pulls r_c aside during training to discuss a recent disagreement between the two of them, hoping to clear the air.",
         "decline_text": "r_c cuts the training short, not interested in hearing p_l out.",
         "chance_of_success": 40,
