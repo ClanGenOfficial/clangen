@@ -935,7 +935,8 @@
                 "text": "s_c tells the others to flank the house and they go in carefully, quietly. With a flick of the tail to signal, {PRONOUN/s_c/subject} {VERB/s_c/leads/lead} the patrol in cornering the rats and picking them off as they try to flee, collecting quite a feast.",
                 "exp": 30,
                 "stat_skill": [
-                    "HUNTER,2"
+                    "HUNTER,2",
+                    "INSIGHT,2"
                 ],
                 "can_have_stat": [
                     "r_c"
