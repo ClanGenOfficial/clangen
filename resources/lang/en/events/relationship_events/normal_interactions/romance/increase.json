@@ -238,7 +238,9 @@
 			"warrior",
 			"deputy",
 			"leader",
-			"apprentice"
+			"apprentice",
+			"medicine cat apprentice",
+			"medicine cat"
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
@@ -259,14 +261,12 @@
 			"m_c saves a piece of prey for r_c because {PRONOUN/m_c/subject} {VERB/m_c/know/knows} it's {PRONOUN/r_c/poss} favorite.",
 			"m_c brings r_c some fresh-kill, hoping that {PRONOUN/m_c/subject} remembered what r_c's favorite was.",
 			"m_c got stuck in the same tree with r_c for hours and realized how much they have in common.",
-			"m_c asks r_c to help {PRONOUN/m_c/object} freshen up on some battle moves, complementing {PRONOUN/r_c/object} constantly throughout.",
 			"m_c asks r_c to go fishing with {PRONOUN/m_c/object}, but they keep on getting distracted by each other.",
 			"m_c gives r_c a beautiful feather {PRONOUN/m_c/subject} found, and hides behind {PRONOUN/m_c/poss} whiskers when thanked.",
 			"m_c gives r_c a wonderfully colored pebble {PRONOUN/m_c/subject} found, and hides behind {PRONOUN/m_c/poss} whiskers when thanked.",
 			"m_c gives r_c a circular Twoleg object {PRONOUN/m_c/subject} found, and hides behind {PRONOUN/m_c/poss} whiskers when thanked.",
 			"m_c compliments r_c on how well groomed {PRONOUN/r_c/poss} pelt is today.",
-			"m_c compliments r_c on how sharp {PRONOUN/r_c/poss} claws are today.",
-			"m_c compliments r_c on {PRONOUN/r_c/poss} catch during a hunting patrol, which causes {PRONOUN/r_c/object} to purr."
+			"m_c compliments r_c on how sharp {PRONOUN/r_c/poss} claws are today."
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
@@ -319,9 +319,9 @@
 			"m_c was caught enjoying a moonlit stroll with r_c last night...",
 			"m_c sneaks out at night to sleep in r_c's nest.",
 			"m_c and r_c were heard discussing kits.",
-            		"m_c and r_c have been sickeningly lovey-dovey all day.",
-            		"m_c and r_c snuck out of camp together.",
-            		"m_c promises r_c to always be there to protect {PRONOUN/r_c/object} with {PRONOUN/m_c/poss} life."
+            "m_c and r_c have been sickeningly lovey-dovey all day.",
+        	"m_c and r_c snuck out of camp together.",
+            "m_c promises r_c to always be there to protect {PRONOUN/r_c/object} with {PRONOUN/m_c/poss} life."
 		],
 		"relationship_constraint": [
 			"adores",
@@ -338,9 +338,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c purrs for a long time at one of r_c's lame jokes.",
-			"m_c can't stop gushing over r_c.",
-            		"m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} {VERB/r_c/doesn't/didn't} seem to care, nuzzling into m_c's neck, {PRONOUN/r_c/subject} {VERB/r_c/were/was} just happy m_c was back.",
-            		"m_c goes out of {PRONOUN/m_c/poss} way to catch r_c's favorite prey."
+			"m_c can't stop gushing over r_c."
 		],
 		"relationship_constraint": [
 			"mates"
@@ -360,6 +358,28 @@
 		],
 		"main_skill_constraint": [
 			"STORY,3"
+		],
+		"reaction_random_cat": {
+			"romance": "increase",
+			"like": "increase",
+			"comfort": "increase"
+		}
+	},
+	{
+		"id": "rom_inc_high_warrior7",
+		"intensity": "high",
+		"interactions": [
+            "m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} {VERB/r_c/doesn't/didn't} seem to care, nuzzling into m_c's neck.",
+            "m_c goes out of {PRONOUN/m_c/poss} way to catch r_c's favorite prey.",
+			"m_c asks r_c to help {PRONOUN/m_c/object} freshen up on some battle moves, complimenting {PRONOUN/r_c/object} constantly throughout.",
+			"m_c compliments r_c on {PRONOUN/r_c/poss} catch during a hunting patrol, which causes {PRONOUN/r_c/object} to purr."
+		],
+		"relationship_constraint": ["adores"],
+		"m_c": [
+			"apprentice",
+			"deputy",
+			"leader",
+			"warrior"
 		],
 		"reaction_random_cat": {
 			"romance": "increase",
