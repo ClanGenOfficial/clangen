@@ -348,16 +348,6 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["comfort"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat and to_cat engaged in a friendly hunting competition together."
-                        }
-                    },
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
                         "values": ["trust"],
                         "amount": 3,
                         "log": {
@@ -1611,6 +1601,60 @@
                     }
                 ],
                 "frequency": 1
+            },
+            {
+                "text": "s_c tells the others to flank the house and they go in carefully, quietly. With a flick of the tail to signal, {PRONOUN/s_c/subject} {VERB/s_c/leads/lead} the patrol in cornering the rats and picking them off as they try to flee, collecting quite a feast.",
+                "exp": 30,
+                "stat_skill": [
+                    "HUNTER,2",
+                    "INSIGHT,2"
+                ],
+                "can_have_stat": [
+                    "r_c"
+                ],
+                "prey": [
+                    "huge"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c" ],
+                        "cats_from": [ "patrol" ],
+                        "mutual": false,
+                        "values": [ "respect" ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat's hunting skill helped from_cat's patrol bring back a huge haul of rats."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The patrol drives the rats back into the Twoleg nest, each cat guarding an escape route. p_l runs ahead, startling the rats into a scurry where s_c is ready to dispatch them. It's going to take a few trips to get all these rats home.",
+                "exp": 30,
+                "stat_trait": [
+                    "daring",
+                    "adventurous",
+                    "bold",
+                    "troublesome",
+                    "bloodthirsty"
+                ],
+                "prey": [
+                    "huge"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["trust", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat startled rats into to_cat's claws, and they both felt pleased with each other's efforts."
+                        }
+                    }
+                ],
+                "frequency": 4
             }
         ],
         "fail_outcomes": [
