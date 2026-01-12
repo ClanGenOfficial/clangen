@@ -234,7 +234,15 @@
             		"m_c and r_c got so into playing around that they got separated from the rest of the patrol, earning themselves an earful back at camp.",
 			"m_c feels giddy about getting on the same patrol as r_c."
 		],
-		"m_c":[
+		"main_status_constraint":[
+			"warrior",
+			"deputy",
+			"leader",
+			"apprentice",
+			"medicine cat apprentice",
+			"medicine cat"
+		],
+		"random_status_constraint":[
 			"warrior",
 			"deputy",
 			"leader",
@@ -375,7 +383,13 @@
 			"m_c compliments r_c on {PRONOUN/r_c/poss} catch during a hunting patrol, which causes {PRONOUN/r_c/object} to purr."
 		],
 		"relationship_constraint": ["adores"],
-		"m_c": [
+		"main_status_constraint": [
+			"apprentice",
+			"deputy",
+			"leader",
+			"warrior"
+		],
+		"random_status_constraint": [
 			"apprentice",
 			"deputy",
 			"leader",
