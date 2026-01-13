@@ -1640,7 +1640,7 @@
         },
         "frequency": 1,
         "intro_text": "Look, {PRONOUN/app1/subject}{VERB/app1/'re/'s} so close to perfecting {PRONOUN/app1/poss} pounce, app1 can <i>feel</i> it. {PRONOUN/app1/subject/CAP} head out to prove so.",
-        "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
+        "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is canceled.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1735,7 +1735,7 @@
         },
         "frequency": 1,
         "intro_text": "app1 is tired of being treated like {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} know anything - {PRONOUN/app1/subject} {VERB/app1/stalk/stalks} off to hunt alone.",
-        "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
+        "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is canceled.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1830,7 +1830,7 @@
         },
         "frequency": 1,
         "intro_text": "app1 doesn't want to be in the apprentices' den until {PRONOUN/app1/poss} muzzle grays - {PRONOUN/app1/subject} {VERB/app1/need/needs} to prove lead_name should pay attention to {PRONOUN/app1/object}.",
-        "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is cancelled.",
+        "decline_text": "Just as {PRONOUN/app1/subject}{VERB/app1/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/app1/object}. app1 can't refuse, even if {PRONOUN/app1/subject}'d like to, and {PRONOUN/app1/poss} clandestine hunt is canceled.",
         "chance_of_success": 50,
         "success_outcomes": [
             {

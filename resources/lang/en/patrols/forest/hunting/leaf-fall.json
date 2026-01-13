@@ -95,7 +95,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
+                        "cats_to": ["app1"],
                         "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
@@ -115,7 +115,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
+                        "cats_to": ["app1"],
                         "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
@@ -670,7 +670,7 @@
             "relationships": [
                 {
                     "cats_from": ["patrol"],
-                    "cats_to": ["r_c"],
+                    "cats_to": ["s_c"],
                     "values": ["like", "respect"],
                     "mutual": false,
                     "amount": 5,
@@ -1371,11 +1371,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "values": ["like", "comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat avoided each other after an embarrassing hunt."
+                        }
                     }
                 ],
                 "prey": [

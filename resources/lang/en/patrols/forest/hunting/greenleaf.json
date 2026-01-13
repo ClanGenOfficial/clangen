@@ -1273,7 +1273,7 @@
                         ],
                         "mutual": false,
                         "values": ["like"],
-                        "amount": -5,
+                        "amount": -8,
                         "log": {
                             "cats_from": "to_cat wandered off during a hunting patrol, irritating from_cat."
                         }
@@ -1313,7 +1313,7 @@
                         ],
                         "mutual": false,
                         "values": ["trust"],
-                        "amount": -5,
+                        "amount": -8,
                         "log": {
                             "cats_from": "from_cat doubted to_cat's ability to handle {PRONOUN/to_cat/self} on a patrol when {PRONOUN/to_cat/subject} ended up at the bottom of a muddy ditch."
                         }
@@ -1478,12 +1478,12 @@
                 {
                     "cats_from": ["p_l"],
                     "cats_to": ["app1"],
-                    "values": ["trust", "comfort"],
+                    "values": ["trust", "like"],
                     "mutual": true,
                     "amount": 10,
                     "log":
                     {
-                        "cats_from": "from_cat and to_cat worked well together to catch rats on a hunting patrol."
+                        "cats_from": "from_cat and to_cat worked together to take down two rats."
                     }
                 }
             ]
