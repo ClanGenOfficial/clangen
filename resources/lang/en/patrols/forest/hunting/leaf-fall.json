@@ -1429,7 +1429,7 @@
                         "cats_from": [
                             "app2"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["romance", "like", "comfort"],
                         "amount": 5,
                         "log": {
@@ -1450,7 +1450,7 @@
                         "cats_from": [
                             "app2"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["romance", "like", "comfort"],
                         "amount": 5,
                         "log": {
@@ -1473,7 +1473,7 @@
                         "cats_from": [
                             "app2"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["like"],
                         "amount": -5,
                         "log": {
