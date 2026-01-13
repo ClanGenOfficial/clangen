@@ -2623,10 +2623,7 @@
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -2807,9 +2804,7 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                            "patrol"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
