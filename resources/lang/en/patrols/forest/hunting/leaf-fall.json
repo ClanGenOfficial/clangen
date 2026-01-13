@@ -1454,7 +1454,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "After bonking heads on a hunt, from_cat and to_cat end up growing much closer together."
+                            "cats_from": "After bonking heads on a hunt, from_cat and to_cat ended up growing much closer together."
                         }
                     }
                 ],
