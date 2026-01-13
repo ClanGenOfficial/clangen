@@ -3127,7 +3127,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "As they walk, p_l passes on tips and tricks for nest raiding. app1 is far too busy to speak, {PRONOUN/app1/poss} eyes fixed on the trees. {PRONOUN/app1/subject}{VERB/app1/'re/'s} thrilled to be allowed the first shot, sneaking upwards to scoop fragile eggs out of stick piles, trying not to drool over the shells.",
+                "text": "As they walk, p_l passes on tips and tricks for nest raiding. app1 is far too busy to speak, {PRONOUN/app1/poss} eyes fixed on the trees. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} thrilled to be allowed the first shot, sneaking upwards to scoop fragile eggs out of stick piles, trying not to drool over the shells.",
                 "exp": 30,
                 "prey": [
                     "medium"
