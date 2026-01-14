@@ -408,27 +408,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l heads out with app1, deciding that c_n needs more blackberry leaves in their stores.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -862,27 +851,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -1316,27 +1294,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should {PRONOUN/p_l/subject} even try to look? And is bringing app1 a good idea?",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -1770,27 +1737,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If they can get their paws on a plant, the roots will still hold fresh, milky-white sap. Seems it's time for app1 to learn about what resources are still available to gather during leaf-bare.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -2228,27 +2184,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i>problem</i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions might be dangerous and p_l hesitates to bring app1 along, but tells {PRONOUN/p_l/self} it's a learning opportunity.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -2693,27 +2638,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if {PRONOUN/p_l/subject} or app1 can only remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",

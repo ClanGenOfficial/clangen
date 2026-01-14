@@ -345,7 +345,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -443,7 +443,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -1259,15 +1259,15 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
-        "intro_text": "r_c heads out onto the beach alone to check on the border.",
-        "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
+        "intro_text": "p_l heads out onto the beach alone to check on the border.",
+        "decline_text": "p_l reconsiders and turns back to camp, deciding that {PRONOUN/r_c/subject} other duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1355,7 +1355,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -1527,10 +1527,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -1639,7 +1639,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -1745,10 +1745,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -1819,7 +1819,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -1999,10 +1999,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2127,7 +2127,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2249,10 +2249,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2345,7 +2345,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2550,10 +2550,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2662,7 +2662,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2768,10 +2768,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2842,7 +2842,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3013,10 +3013,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3141,7 +3141,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3263,10 +3263,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3359,7 +3359,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
