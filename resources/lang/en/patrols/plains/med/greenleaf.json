@@ -6990,7 +6990,7 @@
         ]
     },
     {
-        "patrol_id": "pln_med_gatheringraspberrysoloapp__greenleaf1",
+        "patrol_id": "pln_med_gatheringraspberrysoloapp_greenleaf1",
         "biome": [
             "plains"
         ],
@@ -7007,17 +7007,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
+                1
             ]
         },
         "frequency": 4,
