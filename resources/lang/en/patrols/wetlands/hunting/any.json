@@ -3567,8 +3567,11 @@
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
-        "max_cats": 3,
-        "min_max_status": {},
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [2, 6],
+            "apprentice": [-1, 2]
+        },
         "frequency": 2,
         "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
@@ -3577,6 +3580,9 @@
             {
                 "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. There aren't many of them, but the fox doesn't need to know that - with a massive explosion of yowls, the cats sound like a full battle patrol, and the fox yips with fear as the cats pounce to take possession of the bird.",
                 "exp": 20,
+                "min_max_status": {
+                    "normal adult": [2, 3]
+                },
                 "prey": [
                     "small"
                 ],
@@ -3611,6 +3617,9 @@
             {
                 "text": "They're a small patrol, but a skilled one, and when they track down the red fox at the end of the scent trail, they have enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
                 "exp": 20,
+                "min_max_status": {
+                    "normal adult": [2, 3]
+                },
                 "stat_skill": [
                     "HUNTER,1",
                     "FIGHTER,1"
@@ -3680,6 +3689,96 @@
                         "amount": 5,
                         "log": {
                             "cats_from": "from_cat heard about how to_cat's patrol stole a fox's prey cache."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. Having more cats makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
+                "exp": 20,
+                "min_max_status": {
+                    "normal adult": [4, 6]
+                },
+                "prey": [
+                    "small"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat's pelt in a fight with a fox."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat worked together to drive off a fox and steal its prey."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol bring back a plump duck that they won from a fox."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "With such a big patrol, and with s_c there, when they track down the red fox at the end of the scent trail, they have more than enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
+                "exp": 20,
+                "min_max_status": {
+                    "normal adult": [4, 6]
+                },
+                "stat_skill": [
+                    "HUNTER,1",
+                    "FIGHTER,1"
+                ],
+                "prey": [
+                    "small"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat's patrol was able to steal a fish from a fox thanks to to_cat's skills."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["like", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to steal a fox's prey."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol stole a fox's prey."
                         }
                     }
                 ],
@@ -3818,272 +3917,6 @@
                     "very_small"
                 ],
                 "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "wtlnd_hunt_redfox_steal2",
-        "biome": ["wetlands"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
-        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. Having more cats makes the patrol far more of a threat to the red fox, and the creature panics when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
-                "exp": 20,
-                "prey": [
-                    "small"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat saved from_cat's pelt in a fight with a fox."
-                        }
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["trust"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat worked together to drive off a fox and steal its prey."
-                        }
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["some_clan"],
-                        "mutual": false,
-                        "values": ["trust"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat saw to_cat's patrol bring back a plump duck that they won from a fox."
-                        }
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "With such a big patrol, and with s_c there, when they track down the red fox at the end of the scent trail, they have more than enough skill and muscle to drive it off from the fish it was gnawing on. The cats gather around it, congratulating each other.",
-                "exp": 20,
-                "stat_skill": [
-                    "HUNTER,1",
-                    "FIGHTER,1"
-                ],
-                "prey": [
-                    "small"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 8,
-                        "log": {
-                            "cats_from": "from_cat's patrol was able to steal a fish from a fox thanks to to_cat's skills."
-                        }
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "trust"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat and to_cat worked together to steal a fox's prey."
-                        }
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["some_clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol stole a fox's prey."
-                        }
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c realizes a fight may be unnecessary and uses the trail to uncover a food cache of dead fish buried under a log. They still don't know what kind of fox left the trail, and they don't need to - these fish will make great additions to the fresh-kill pile back home.",
-                "exp": 20,
-                "stat_trait": [
-                    "calm",
-                    "careful",
-                    "cunning",
-                    "sneaky",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "prey": [
-                    "small"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "respect"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "to_cat's clever plan saved from_cat's patrol from a fight with a fox."
-                        }
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol stole a fox's prey cache."
-                        }
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The fox's trail vanishes just as quickly as it appeared, almost as though the creature has figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": ["trust", "like"],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat lost the trail while tracking a fox and argued on the way home."
-                        }
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. However, s_c bursts from cover without warning, trying to intimidate the fox. At least {PRONOUN/s_c/subject} {VERB/s_c/scare/scares} the fox off - but it takes its catch with it. The other cats aren't particularly pleased with s_c.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "bloodthirsty",
-                    "bold",
-                    "confident",
-                    "competitive",
-                    "daring",
-                    "fierce",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "trust"],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "to_cat's hasty attack scared a fox off - and it took its prey with it. from_cat wasn't happy with to_cat."
-                        }
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush, but they aren't careful enough, and with a snarl the fox takes a bite at r_c as it flees with its dinner.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["LEGBITE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a red fox fight."
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": ["like", "trust"],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "to_cat's incautious attack against a fox resulted in from_cat getting injured."
-                        }
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 3
-            },
-            {
-                "text": "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying Clanmate as the fox runs off with what could've been their dinner.",
-                "exp": 0,
-                "frequency": 4,
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "bloodthirsty",
-                    "bold",
-                    "confident",
-                    "competitive",
-                    "daring",
-                    "fierce",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "injury": [
-                    {
-                        "cats": ["s_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["LEGBITE"]
-                    }
-                ],
-                "history_text": { "scar": "m_c carries a scar from a red fox fight." },
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["like", "trust"],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "to_cat's hasty attack spoiled from_cat's patrol's chance to steal a fox's prey. from_cat wasn't happy with to_cat."
-                        }
-                    }
-                ],
-                "prey": ["very_small"]
             }
         ]
     },
