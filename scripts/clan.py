@@ -1212,35 +1212,35 @@ class Clan:
 
         if (leader or deputy) and all_cats:
             clan_sociability = round(
-                weight
+                (1 - weight)
                 * statistics.mean(
                     [i.personality.sociability for i in (leader, deputy) if i]
                 )
-                + (1 - weight)
+                + weight
                 * statistics.median([i.personality.sociability for i in all_cats])
             )
             clan_aggression = round(
-                weight
+                (1 - weight)
                 * statistics.mean(
                     [i.personality.aggression for i in (leader, deputy) if i]
                 )
-                + (1 - weight)
+                + weight
                 * statistics.median([i.personality.aggression for i in all_cats])
             )
             clan_lawfulness = round(
-                weight
+                (1 - weight)
                 * statistics.mean(
                     [i.personality.lawfulness for i in (leader, deputy) if i]
                 )
-                + (1 - weight)
+                + weight
                 * statistics.median([i.personality.lawfulness for i in all_cats])
             )
             clan_stability = round(
-                weight
+                (1 - weight)
                 * statistics.mean(
                     [i.personality.stability for i in (leader, deputy) if i]
                 )
-                + (1 - weight)
+                + weight
                 * statistics.median([i.personality.stability for i in all_cats])
             )
         elif leader or deputy:
