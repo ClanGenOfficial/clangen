@@ -1184,10 +1184,6 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "leader": [
                 -1,
                 -1
