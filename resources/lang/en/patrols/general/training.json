@@ -14,10 +14,8 @@
         "patrol_art": "train_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
-            "all apprentices": [ -1, -1 ]
-        },
-        "frequency": 1,
+        "min_max_status": {},
+        "frequency": 3,
         "intro_text": "While alone, {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} about life. Is r_c really headed where {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to go? Is r_c doing a good job of pursuing what's important to {PRONOUN/r_c/object}?",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused on training instead.",
         "chance_of_success": 60,
@@ -33,10 +31,25 @@
                 "frequency": 4
             },
             {
-                "text": "Blissfully avoiding any self-reflection, r_c decides {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing a fantastic job and that it's worthless to ever consider otherwise.",
+                "text": "s_c considers {PRONOUN/s_c/poss} current place in the Clan. No, this isn't where {PRONOUN/s_c/subject}'d like to be. {PRONOUN/s_c/subject/CAP} {VERB/s_c/start/starts} planning what {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to do next.",
+                "stat_trait": [
+                    "ambitious",
+                    "rebellious",
+                    "troublesome",
+                    "bold",
+                    "adventurous",
+                    "cunning"
+                ],
+                "exp": 15,
+                "frequency": 4
+            },
+            {
+                "text": "Blissfully avoiding any self-reflection, s_c decides {PRONOUN/s_c/subject}{VERB/r_c/'re/'s} doing a fantastic job and that it's worthless to ever consider otherwise.",
                 "stat_trait": [
                     "oblivious",
-                    "confident"
+                    "confident",
+                    "shameless",
+                    "arrogant"
                 ],
                 "exp": 15,
                 "frequency": 4
@@ -46,7 +59,7 @@
             {
                 "text": "{PRONOUN/r_c/poss/CAP} thoughts are plagued with bad memories and {PRONOUN/r_c/subject} {VERB/r_c/end/ends} up spiraling, unable to reflect on anything constructively and driving {PRONOUN/r_c/self} to misery and despair.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 3
             },
             {
                 "text": "r_c just isn't very good at this 'self-reflection' thing.",
@@ -70,9 +83,7 @@
         "patrol_art": "train_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
-            "all apprentices": [ -1, -1 ]
-        },
+        "min_max_status": {},
         "frequency": 3,
         "intro_text": "r_c feels a little overwhelmed trying to train by {PRONOUN/r_c/self}.",
         "decline_text": "Instead {PRONOUN/r_c/subject} {VERB/r_c/join/joins} up with an outgoing hunting patrol.",
@@ -196,19 +207,6 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
                             "p_l"
                         ],
                         "mutual": false,
@@ -216,7 +214,27 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was relieved to hear to_cat believes in {PRONOUN/from_cat/object}."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "low_social", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat has doubts about {PRONOUN/to_cat/poss} ability as deputy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -225,19 +243,6 @@
                 "text": "r_c reminds p_l of all the advice {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} given r_c that has made such a difference in {PRONOUN/r_c/poss} life. Every cat has their skills, and p_l is vital to the Clan.",
                 "exp": 20,
                 "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
                     {
                         "cats_to": [
                             "r_c"
@@ -250,10 +255,13 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was relieved to hear to_cat believes in {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
-                "frequency": 1
+                "frequency": 3
             },
             {
                 "text": "s_c blinks at p_l compassionately - that sounds like a hard burden to bear alone. With an empathetic ear, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to p_l's current struggles filling the deputy position, and by the end of their training patrol, p_l feels a huge weight off {PRONOUN/p_l/poss} shoulders.",
@@ -271,19 +279,6 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
                             "s_c"
                         ],
                         "cats_from": [
@@ -294,7 +289,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was grateful that to_cat was willing to listen to {PRONOUN/from_cat/poss} woes."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -307,6 +305,23 @@
                 "relationships": [
                     {
                         "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was shaken when to_cat seemed to think that from_cat was failing as deputy."
+                        }
+                    },
+                    {
+                        "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
@@ -315,10 +330,29 @@
                         "mutual": false,
                         "values": [
                             "trust",
-                            "comfort",
                             "respect"
                         ],
-                        "amount": -15
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat found it uncomfortable to hear to_cat's own doubts in {PRONOUN/to_cat/self}."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "low_social", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat has doubts about {PRONOUN/to_cat/poss} ability as deputy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -328,7 +362,9 @@
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
-                    "grumpy"
+                    "grumpy",
+                    "arrogant",
+                    "strict"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -336,18 +372,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
-                            "comfort",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat was shocked when to_cat coldly suggested from_cat give up the deputy position."
+                        }
                     },
                     {
                         "cats_to": [
@@ -360,7 +398,27 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -15
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat found to_cat's self-doubt unhelpful."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "low_social", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat has doubts about {PRONOUN/to_cat/poss} ability as deputy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -369,23 +427,26 @@
                 "text": "Deputies shouldn't show weakness, s_c meows unsympathetically.",
                 "exp": 0,
                 "stat_trait": [
-                    "cold"
+                    "cold",
+                    "strict"
                 ],
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
-                            "comfort",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat was shocked when to_cat responded coldly to from_cat's self-doubt."
+                        }
                     },
                     {
                         "cats_to": [
@@ -398,7 +459,27 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -15
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat found to_cat's self-doubts weak."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "low_social", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat has doubts about {PRONOUN/to_cat/poss} ability as deputy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -407,23 +488,26 @@
                 "text": "Yes, s_c <i>has</i> always thought that {PRONOUN/s_c/subject}'d do a better job, {PRONOUN/s_c/subject} {VERB/s_c/comment/comments} smugly.",
                 "exp": 0,
                 "stat_trait": [
-                    "arrogant"
+                    "arrogant",
+                    "shameless"
                 ],
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
-                            "comfort",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat found to_cat's response to {PRONOUN/from_cat/poss} self-doubt unsettling."
+                        }
                     },
                     {
                         "cats_to": [
@@ -436,7 +520,27 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -15
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard to_cat's self-doubt and couldn't help thinking that {PRONOUN/from_cat/subject} could do better as deputy."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "low_social", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat has doubts about {PRONOUN/to_cat/poss} ability as deputy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -459,7 +563,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "The patrol finds a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 50,
@@ -479,7 +583,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat spent some time sunning together while on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -499,7 +606,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat spent some time sunning together while on patrol and had a great training session."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -518,7 +628,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -527,7 +637,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat was very considerate while on patrol with from_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -541,19 +654,6 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
                             "s_c"
                         ],
                         "cats_from": [
@@ -563,19 +663,11 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed listening to stories from to_cat."
+                        }
                     }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "No one means to, but... well... the group drifts off into a nap. Untethered by normal limitations, s_c's spirit wanders from mindscape to mindscape, picking up dream_list/s_c like burrs on a pelt.",
-                "exp": 30,
-                "can_have_stat": [
-                    "any"
-                ],
-                "stat_skill": [
-                    "DREAM,1"
                 ],
                 "frequency": 4
             },
@@ -588,19 +680,6 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
                             "s_c"
                         ],
                         "cats_from": [
@@ -610,7 +689,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed listening to stories from to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -632,7 +714,39 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat grew irritated at to_cat while on a patrol and couldn't accomplish much."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "No one means to, but... well... the group drifts off into a nap. Untethered by normal limitations, s_c's spirit wanders from mindscape to mindscape, picking up dream_list/s_c like burrs on a pelt.",
+                "exp": 0,
+                "can_have_stat": [
+                    "any"
+                ],
+                "stat_skill": [
+                    "DREAM,1"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's whole patrol fell asleep instead of training."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -652,7 +766,26 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat took a lovely nap together instead of patrolling."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's whole patrol fell asleep instead of training."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -674,9 +807,7 @@
         "patrol_art": "gen_train_sunny",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
-            "all apprentices": [ -1, -1 ]
-        },
+        "min_max_status": {},
         "frequency": 1,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused instead.",
@@ -863,10 +994,6 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
                 2,
                 2
             ]
