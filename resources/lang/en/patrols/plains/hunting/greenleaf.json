@@ -27,6 +27,19 @@
                     "small",
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat powered through a tiring hunt on a hot greenleaf day."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -36,6 +49,19 @@
                     "small",
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together to bring down a hawk on a hot greenleaf day."
+                    }
+                }
+            ],
                 "frequency": 1
             }
         ],
@@ -46,6 +72,19 @@
                 "prey": [
                     "very_small"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat gave up on a hunt because of the weather."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -65,6 +104,19 @@
                 "history_text": {
                     "scar": "This cat got heat exhaustion while on a patrol."
                 },
+            "relationships": [
+                {
+                    "cats_from": ["r_c"],
+                    "cats_to": ["p_l"],
+                    "values": ["like", "trust"],
+                    "mutual": false,
+                    "amount": 10,
+                    "log":
+                    {
+                        "cats_from": "to_cat carried from_cat back to camp after {PRONOUN/from_cat/subject} collapsed from the heat."
+                    }
+                }
+            ],
                 "prey": [
                     "very_small"
                 ],
@@ -1178,27 +1230,15 @@
         "types": [
             "hunting"
         ],
-        "tags": [],
+        "tags": ["clan:leader"],
         "patrol_art": "gen_hunt_burrow",
         "patrol_art_clean": null,
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "deputy": [
-                3,
-                6
-            ],
-            "warrior": [
-                3,
-                6
-            ],
             "leader": [
-                0,
-                0
-            ],
-            "all apprentices": [
-                3,
-                6
+                -1,
+                -1
             ]
         },
         "frequency": 1,

@@ -1160,7 +1160,10 @@
                             "romance",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed and a little flustered by to_cat's skill in hunting pipistrelle bats."
+                        }
                     }
                 ],
                 "prey": [

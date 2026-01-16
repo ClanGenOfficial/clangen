@@ -1370,7 +1370,7 @@ def filter_relationship_type(
                         allowed_levels = rel_type_tiers[rel_type][index:]
                     # if it's a neg tier, we allow that index and lower
                     elif rel_tier.is_any_neg:
-                        allowed_levels = rel_type_tiers[rel_type][0:index]
+                        allowed_levels = rel_type_tiers[rel_type][0 : index + 1]
 
                     discard = True
                     for l in tier_list:
