@@ -21,26 +21,24 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats have what feels like the perfect day, sun and heat and prey dripping from every moment.",
+                "text": "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats have what feels like the perfect day, sun and heat and prey filling every moment.",
                 "exp": 15,
                 "prey": [
                     "large"
                 ],
-                "relationships": [
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust", "like"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat had a fun hunt on a hot greenleaf day."
                     }
-                ],
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -49,21 +47,30 @@
                 "prey": [
                     "large"
                 ],
-                "relationships": [
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust", "like"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat scavenged sheep meat together on a hot greenleaf day."
                     }
-                ],
+                },
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["patrol"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat ate {PRONOUN/from_cat/poss} fill of sheep meat after to_cat's patrol found a trapped mountain sheep."
+                    }
+                }
+            ],
                 "frequency": 1
             }
         ],
@@ -71,21 +78,19 @@
             {
                 "text": "No way, it's too hot for this. They can try to hunt again later.",
                 "exp": 0,
-                "relationships": [
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "cats_from": "from_cat and to_cat gave up on a hunt because of the weather."
                     }
-                ],
+                }
+            ],
                 "prey": [
                     "very_small"
                 ],
