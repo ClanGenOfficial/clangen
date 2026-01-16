@@ -1,6 +1,7 @@
 from math import ceil
 from typing import Union, Dict
 
+import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
@@ -80,6 +81,7 @@ class ListScreen(Screens):
         self.current_group = "your_clan"
         self.full_cat_list = []
         self.current_listed_cats = []
+        self.temper_message = None
 
         self.list_screen_container = None
 
@@ -255,6 +257,14 @@ class ListScreen(Screens):
             starting_height=1,
             manager=MANAGER,
             visible=True,
+        )
+
+        self.temper_message = pygame_gui.elements.UITextBox(
+            "testtestestesttesttest",
+            ui_scale(pygame.Rect((104, 100), (597, 50))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER,
+            container=self.list_screen_container,
         )
 
         # BAR CONTAINER
@@ -677,6 +687,7 @@ class ListScreen(Screens):
         """
         sets the background and heading according to current group
         """
+        self.temper_message.set_text(self.get_group_temper_message())
         if self.current_group == "your_clan":
             self.set_bg(None)
             self.update_heading_text(self.clan_name)
@@ -692,6 +703,35 @@ class ListScreen(Screens):
         elif self.current_group == "dark_forest":
             self.set_bg("dark_forest")
             self.update_heading_text("general.dark_forest")
+
+    def get_group_temper_message(self):
+        # UR and COTC has no alignment and no message
+        if self.current_group in ("unknown_residence", "cotc"):
+            return ""
+
+        if self.current_group == "your_clan":
+            self.temper_message.change_object_id(
+                get_text_box_theme("#text_box_30_horizcenter")
+            )
+            group = self.clan_name
+            temper = i18n.t(f"screens.leader_den.{game.clan.temperament}")
+        else:
+            self.temper_message.change_object_id(
+                ObjectID("#dark", "#text_box_30_horizcenter")
+            )
+            group = i18n.t(f"general.{self.current_group}")
+            if self.current_group == "starclan":
+                if not game.starclan.influencing_cats:
+                    # this means there's probably no cats in starclan, so no temper
+                    return ""
+                temper = i18n.t(f"screens.leader_den.{game.starclan.temperament}")
+            else:
+                if not game.dark_forest.influencing_cats:
+                    # this means there's probably no cats in df, so no temper
+                    return ""
+                temper = i18n.t(f"screens.leader_den.{game.dark_forest.temperament}")
+
+        return i18n.t("screens.list.temper", group=group, temper=temper)
 
     def get_cat_list(self):
         """
