@@ -897,15 +897,14 @@
         "types": [
             "border"
         ],
-        "tags": [],
+        "tags": ["clan:deputy"],
         "patrol_art": "gen_warrior_crouching",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ],
-            "deputy": [
-                -1,
-                -1
+            "normal adult": [
+                1,
+                1
             ]
         },
         "frequency": 4,
@@ -1366,11 +1365,16 @@
         "types": [
             "border"
         ],
-        "tags": [],
+        "tags": ["clan:deputy"],
         "patrol_art": "gen_warrior_crouching",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {},
+        "min_max_status": {
+            "normal adult": [
+                1,
+                1
+            ]
+        },
         "frequency": 4,
         "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
@@ -1829,12 +1833,15 @@
         "types": [
             "border"
         ],
-        "tags": [],
+        "tags": ["clan:deputy"],
         "patrol_art": "gen_warrior_crouching",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "normal adult": [
+                1,
+                1
+            ]
         },
         "frequency": 4,
         "intro_text": "r_c heads out into the forest alone, wanting to make a quick check on the border.",
@@ -2294,7 +2301,7 @@
         "types": [
             "border"
         ],
-        "tags": [],
+        "tags": ["clan:deputy"],
         "patrol_art": "gen_warrior_crouching",
         "min_cats": 1,
         "max_cats": 1,
@@ -2762,11 +2769,16 @@
         "types": [
             "border"
         ],
-        "tags": [],
+        "tags": ["clan:deputy"],
         "patrol_art": "gen_warrior_crouching",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {},
+        "min_max_status": {
+            "normal adult": [
+                1,
+                1
+            ]
+        },
         "frequency": 4,
         "intro_text": "r_c heads out into the grasslands alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",

@@ -516,7 +516,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 ***
 
 #### relationship_constraint: List[str]
->Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers) and [Relationship Types](reference/tag-lists.md#relationship-tiers).
+>Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
 ***
 
@@ -633,7 +633,7 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### relationship_constraint: List[str]
->Optional. Only allows the outcome if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers) and [Relationship Types](reference/tag-lists.md#relationship-tiers).
+>Optional. Only allows the outcome if the cats meet relationship constraints. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
 ***
 
