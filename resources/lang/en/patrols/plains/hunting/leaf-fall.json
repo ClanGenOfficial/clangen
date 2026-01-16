@@ -583,7 +583,7 @@
         },
         "frequency": 4,
         "intro_text": "r_c catches scent of a mouse nearby. The grass here has gone to seed under the leaf-fall sun and could easily fatten a hundred mice for leaf-bare.",
-        "decline_text": "The patrol ignores the mouse.",
+        "decline_text": "r_c ignores the mouse.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -657,6 +657,19 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 8,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat go out to hunt alone and come back with a mouse."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -665,12 +678,25 @@
                 "prey": [
                     "medium"
                 ],
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 8,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat go out to hunt alone and come back with a mouse."
+                    }
+                }
+            ],
                 "frequency": 1
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol narrowly misses the mouse.",
+                "text": "app1 narrowly misses the mouse.",
                 "exp": 0,
                 "prey": [
                     "very_small"
@@ -695,14 +721,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [ 1, 1 ],
+            "normal adult": [ 1, 1]
         },
         "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. p_l knows how more mice will be attracted to this area, drawn in by the grass that has gone to seed under the leaf-fall sun.",
@@ -717,18 +737,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat witnessed first-paw how to_cat's hunting training has paid off."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat felt great when to_cat praised {PRONOUN/from_cat/poss} hunting."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -741,18 +767,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat watched to_cat's hunting improve under {PRONOUN/from_cat/poss} tutelage."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat got great hunting advice from to_cat."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -764,163 +796,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_hunt_leaf-fall_mice_appshowoff1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "rom_two_apps",
-            "romance"
-        ],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "The patrol heads out near dawn, padding into the mists around the grass that droops with the seed it carries. However, app1 seems more concerned with showing off to app2 than taking advantage of the leaf-fall hunting.",
-        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "While p_l was right - app1 definitely cares more about how {PRONOUN/app1/subject} {VERB/app1/look/looks} to app2 than hunting - it turns out fine. The patrol picks up a good haul of mice that were out foraging to fatten for leaf-bare, and p_l indulgently tells app1 {PRONOUN/app1/poss} reaction speed was very good within earshot of app2.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "While the way app1 tries to burst out of a bush on a rabbit is categorically silly, the mice that are startled into the claws of the rest of the hunting patrol make up for it, and all the adults remember being young, dumb, and stupid with the desire to impress a pretty pelt. p_l takes app1 aside for a quiet word about toning it down a little, but the hunting trip goes well.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "There is a time and a place for app1 to try {PRONOUN/app1/poss} luck looking good in front of app2 - and that time is now! {PRONOUN/app1/subject/CAP} {VERB/app1/trot/trots} back to camp at the front of the hunting patrol, carrying the mice {PRONOUN/app1/subject} caught with slightly more than the right amount of pride.",
-                "exp": 20,
-                "stat_trait": [
-                    "bold",
-                    "charismatic",
-                    "confident",
-                    "daring",
-                    "fierce",
-                    "shameless",
-                    "troublesome"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "can_have_stat": [
-                    "app1"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 is so busy watching if app2 is watching <i>{PRONOUN/app1/object}</i> that {PRONOUN/app1/subject} {VERB/app1/forget/forgets} to watch {PRONOUN/app1/poss} own paws - and falling into the cold river impressed nobody.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat avoided to_cat for a bit after messing up in a hunt in front of {PRONOUN/to_cat/object}."
+                        }
                     }
                 ],
                 "prey": [
