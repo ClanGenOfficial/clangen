@@ -1084,8 +1084,7 @@
                 "text": "While p_l was right - app1 definitely cares more about how {PRONOUN/app1/subject} {VERB/app1/look/looks} to app2 than hunting - it turns out fine. The patrol picks up a good haul of mice that were out trying to navigate the recent snowfalls, and p_l indulgently tells app1 {PRONOUN/app1/poss} reaction speed was very good within earshot of app2.",
                 "exp": 20,
                 "prey": [
-                    "medium"
-                ],
+                    "medium" ],
                 "relationships": [
                     {
                         "cats_to": [
@@ -1099,7 +1098,55 @@
                             "romance",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed and a little flustered by to_cat's hunting skills."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app2"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": [ "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat wanted to show off for to_cat on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like", "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was pleased p_l praised {PRONOUN/from_cat/object} in front of {PRONOUN/from_cat/poss} crush, app2."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [ "comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was amused by app1's obvious crush on app2 and acted as a wing-cat by praising app1 in front of {PRONOUN/app2/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1123,7 +1170,55 @@
                             "romance",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed and a little flustered by to_cat's hunting skills."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app2"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": [ "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat wanted to show off for to_cat on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was embarrassed p_l told {PRONOUN/from_cat/object} to tone down {PRONOUN/from_cat/poss} obvious crush on app2."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [ "comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was amused by app1's obvious crush on app2 but took {PRONOUN/app1/object} aside to suggest toning it down."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1159,7 +1254,25 @@
                             "romance",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed and a little flustered by to_cat's hunting skills."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app2"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": [ "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat wanted to show off for to_cat on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1182,7 +1295,10 @@
                             "romance",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat thought to_cat looked like a mouse-brain falling into a river on patrol."
+                        }
                     }
                 ],
                 "prey": [
