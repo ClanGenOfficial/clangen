@@ -2327,11 +2327,11 @@
                 ]
             },
             {
-                "text": "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away a red fox vixen, seeking out her den and killing her young cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've posed to c_n in the seasons to come.",
-                "exp": 30,
                 "min_max_status": {
                     "normal adult": [4, 6]
                 },
+                "text": "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away a red fox vixen, seeking out her den and killing her young cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've posed to c_n in the seasons to come.",
+                "exp": 30,
                 "frequency": 4,
                 "relationships": [
                     {
@@ -2357,11 +2357,11 @@
                 ]
             },
             {
-                "text": "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, finding and killing a mother red vixen and ending the threat to the Clan that she and her cubs pose.",
-                "exp": 30,
                 "min_max_status": {
                     "normal adult": [4, 6]
                 },
+                "text": "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, finding and killing a mother red vixen and ending the threat to the Clan that she and her cubs pose.",
+                "exp": 30,
                 "frequency": 1,
                 "relationships": [
                     {
@@ -2389,11 +2389,11 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The mother red fox is vicious and determined, and the small patrol is beaten back. But these plains belong to c_n, and they haven't given up. They may have lost this battle, but c_n will win this war.",
-                "exp": 0,
                 "min_max_status": {
                     "normal adult": [2, 3]
                 },
+                "text": "The mother red fox is vicious and determined, and the small patrol is beaten back. But these plains belong to c_n, and they haven't given up. They may have lost this battle, but c_n will win this war.",
+                "exp": 0,
                 "frequency": 4,
                 "relationships": [
                     {
@@ -2409,11 +2409,11 @@
                 ]
             },
             {
-                "text": "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
-                "exp": 0,
                 "min_max_status": {
                     "normal adult": [4, 6]
                 },
+                "text": "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
+                "exp": 0,
                 "frequency": 4,
                 "relationships": [
                     {

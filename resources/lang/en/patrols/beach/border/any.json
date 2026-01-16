@@ -1823,13 +1823,12 @@
                     }
                 ]
             },
-            
             {
-                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The coasts will be safe from both the threat the vixen posed this season, and the threat her cubs would've posed to c_n in the seasons to come.",
-                "exp": 30,
                 "min_max_status": {
                     "normal adult": [4, 6]
                 },
+                "text": "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The coasts will be safe from both the threat the vixen posed this season, and the threat her cubs would've posed to c_n in the seasons to come.",
+                "exp": 30,
                 "relationships": [
                     {
                         "cats_to": [
@@ -1859,11 +1858,11 @@
                 "frequency": 4
             },
             {
-                "text": "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the Clan that she and her cubs pose.",
-                "exp": 30,
                 "min_max_status": {
                     "normal adult": [4, 6]
                 },
+                "text": "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the Clan that she and her cubs pose.",
+                "exp": 30,
                 "relationships": [
                     {
                         "cats_to": [
@@ -1895,11 +1894,11 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The mother red fox is vicious and determined, and the small patrol is beaten back. But this coast is c_n's, and they haven't given up. They may have lost this battle, but c_n will win this war.",
-                "exp": 0,
                 "min_max_status": {
                     "normal adult": [2, 3]
                 },
+                "text": "The mother red fox is vicious and determined, and the small patrol is beaten back. But this coast is c_n's, and they haven't given up. They may have lost this battle, but c_n will win this war.",
+                "exp": 0,
                 "frequency": 4,
                 "relationships": [
                     {
@@ -1915,11 +1914,11 @@
                 ]
             },
             {
-                "text": "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
-                "exp": 0,
                 "min_max_status": {
                     "normal adult": [4, 6]
                 },
+                "text": "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
+                "exp": 0,
                 "relationships": [
                     {
                         "cats_to": [
@@ -2220,11 +2219,11 @@
                 ]
             },
             {
-                "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c/object} up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
-                "exp": 30,
                 "min_max_status": {
                     "normal adult": [4, 6]
                 },
+                "text": "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c/object} up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee.",
+                "exp": 30,
                 "frequency": 4,
                 "stat_trait": [
                     "adventurous",
