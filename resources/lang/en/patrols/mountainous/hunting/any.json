@@ -2497,7 +2497,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's small patrol drove off a scavenging fox."
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
                         }
                     }
                 ]
@@ -2536,7 +2536,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's small patrol drove off a scavenging fox."
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
                         }
                     }
                 ]
@@ -2586,7 +2586,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's small patrol drove off a scavenging fox."
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
                         }
                     }
                 ]
