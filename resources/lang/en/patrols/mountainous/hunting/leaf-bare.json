@@ -1675,11 +1675,11 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "comfort"
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were taunted by a blue jay."
+                            "cats_from": "from_cat and to_cat avoided each other for a few days after a failed hunt ended with blue jays taunting them."
                         }
                     },
                     {
