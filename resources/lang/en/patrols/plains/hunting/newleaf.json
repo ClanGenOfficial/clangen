@@ -826,17 +826,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a satisfying hunt together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -856,10 +853,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat picked a good hunting location for from_cat's hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -882,10 +880,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat gained a greater respect for to_cat's hunting skills while hunting mice together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -904,10 +903,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "to_cat's poor choice of hunting grounds wasted from_cat's time on a hunting patrol."
+                        }
                     }
                 ],
                 "prey": [
