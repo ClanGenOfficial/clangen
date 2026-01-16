@@ -2083,7 +2083,7 @@
                 "frequency": 3
             },
             {
-                "text": "p_l waggles {RPONOUN/p_l/poss} haunches and launches {PRONOUN/p_l/self} at the common buzzard. {PRONOUN/p_l/subject/CAP} barely {VERB/p_l/have/has} time to get away as the buzzard spreads {PRONOUN/p_l/poss} wings and snaps at {PRONOUN/p_l/object}, leaving {PRONOUN/p_l/object} with a nasty peck! Ouch!",
+                "text": "p_l waggles {PRONOUN/p_l/poss} haunches and launches {PRONOUN/p_l/self} at the common buzzard. {PRONOUN/p_l/subject/CAP} barely {VERB/p_l/have/has} time to get away as the buzzard spreads {PRONOUN/p_l/poss} wings and snaps at {PRONOUN/p_l/object}, leaving {PRONOUN/p_l/object} with a nasty peck! Ouch!",
                 "exp": 0,
                 "injury": [
                     {
