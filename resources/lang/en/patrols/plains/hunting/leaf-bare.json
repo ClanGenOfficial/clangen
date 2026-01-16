@@ -460,12 +460,12 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
+                        "values": ["like", "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a great time hunting ground squirrels in their burrow."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -485,12 +485,12 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
+                        "values": ["like", "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a great time hunting ground squirrels in their burrow."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -509,12 +509,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to catch any ground squirrels and felt irritated with each other."
+                        }
                     }
                 ],
                 "prey": [
@@ -552,12 +551,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": [ "trust" ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat went hunting ground squirrels and got attacked by their own prey."
+                        }
                     }
                 ],
                 "prey": [
@@ -603,13 +601,25 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to catch ground squirrels."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
                         ],
-                        "amount": 5
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol return from a leaf-bare hunt with ground squirrels."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -629,13 +639,25 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to catch ground squirrels."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
                         ],
-                        "amount": 5
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol return from a leaf-bare hunt with ground squirrels."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -659,13 +681,39 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to catch ground squirrels."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
                         ],
-                        "amount": 5
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol return from a leaf-bare hunt with ground squirrels."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's leadership and quick thinking during a squirrel hunt."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -684,13 +732,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": [ "trust" ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to find any ground squirrels during a hunt."
+                        }
                     }
                 ],
                 "prey": [
