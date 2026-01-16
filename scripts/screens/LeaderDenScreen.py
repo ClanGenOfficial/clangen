@@ -339,7 +339,11 @@ class LeaderDenScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
             text_kwargs={
-                "temper": i18n.t(f"screens.leader_den.{self.clan_temper}"),
+                "temper": i18n.t(
+                    "screens.leader_den.clan_temper",
+                    first_temper=i18n.t(f"screens.leader_den.{self.clan_temper[0]}"),
+                    second_temper=i18n.t(f"screens.leader_den.{self.clan_temper[1]}"),
+                ),
                 "clan": game.clan.displayname,
             },
         )
@@ -483,7 +487,15 @@ class LeaderDenScreen(Screens):
                 f"clan_temper{i}"
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 2), (133, -1))),
-                text=f"screens.leader_den.{other_clan.temperament.strip()}",
+                text=i18n.t(
+                    "screens.leader_den.clan_temper",
+                    first_temper=i18n.t(
+                        f"screens.leader_den.{other_clan.temperament[0]}"
+                    ),
+                    second_temper=i18n.t(
+                        f"screens.leader_den.{other_clan.temperament[1]}"
+                    ),
+                ),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
@@ -631,7 +643,15 @@ class LeaderDenScreen(Screens):
         )
         self.focus_clan_elements["clan_temper"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 5), (215, -1))),
-            text=f"screens.leader_den.{self.focus_clan.temperament.strip()}",
+            text=i18n.t(
+                "screens.leader_den.clan_temper",
+                first_temper=i18n.t(
+                    f"screens.leader_den.{self.focus_clan.temperament[0]}"
+                ),
+                second_temper=i18n.t(
+                    f"screens.leader_den.{self.focus_clan.temperament[1]}"
+                ),
+            ),
             object_id="#text_box_22_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
@@ -743,7 +763,7 @@ class LeaderDenScreen(Screens):
         # base equation for fail chance (temper_int - temper_int) / 10
         fail_chance = (abs(int(player_temper_int - other_temper_int))) / 10
 
-        temper_dict = constants.TEMPERAMENT_DICT
+        temper_dict = constants.TEMPERAMENT_DICTS
         clan_index = 0
         clan_social = None
         other_index = 0
@@ -782,7 +802,7 @@ class LeaderDenScreen(Screens):
         """
         returns int value (social rank + aggression rank) of given temperament
         """
-        temper_dict = constants.TEMPERAMENT_DICT
+        temper_dict = constants.TEMPERAMENT_DICTS
         temper_int = 0
 
         if temper in temper_dict["low_social"]:
@@ -966,7 +986,15 @@ class LeaderDenScreen(Screens):
             self.screen_elements["temper_text"].set_text(
                 "screens.leader_den.temper_text",
                 text_kwargs={
-                    "temper": i18n.t(f"screens.leader_den.{self.clan_temper}")
+                    "temper": i18n.t(
+                        "screens.leader_den.clan_temper",
+                        first_temper=i18n.t(
+                            f"screens.leader_den.{self.clan_temper[0]}"
+                        ),
+                        second_temper=i18n.t(
+                            f"screens.leader_den.{self.clan_temper[1]}"
+                        ),
+                    )
                 },
             )
         else:
