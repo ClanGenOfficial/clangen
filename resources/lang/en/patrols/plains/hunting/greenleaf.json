@@ -1126,16 +1126,16 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [ "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat helped to_cat to the medicine den after an encounter with a rattlesnake on patrol."
+                            "cats_from": "to_cat helped from_cat to the medicine den after an encounter with a rattlesnake on patrol."
                         }
                     }
                 ],
@@ -1166,16 +1166,16 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [ "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat helped to_cat to the medicine den after an encounter with a rattlesnake on patrol."
+                            "cats_from": "to_cat helped from_cat to the medicine den after an encounter with a rattlesnake on patrol."
                         }
                     }
                 ],
