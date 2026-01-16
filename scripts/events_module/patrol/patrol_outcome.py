@@ -25,6 +25,7 @@ from scripts.utility import (
     create_new_cat_block,
     gather_cat_objects,
     adjust_list_text,
+    filter_relationship_type,
 )
 from scripts.game_structure import game
 from scripts.cat.skills import SkillPath
@@ -76,6 +77,7 @@ class PatrolOutcome:
         outcome_art_clean: Union[str, None] = None,
         stat_cat: Cat = None,
         future_event: Dict = None,
+        min_max_status: Dict = None,
     ):
         self.weight = 1
 
@@ -84,6 +86,9 @@ class PatrolOutcome:
         self.text = text if text else ""
         self.frequency = frequency
         self.exp = exp
+
+        self.min_max_status = min_max_status if min_max_status else {}
+        self.weight += len(self.min_max_status) * 2
 
         self.relationship_constraints = (
             relationship_constraints if relationship_constraints else []
@@ -133,47 +138,53 @@ class PatrolOutcome:
 
     @staticmethod
     def prepare_allowed_outcomes(
-        outcomes: List["PatrolOutcome"], patrol: "Patrol"
+        possible_outcomes: List["PatrolOutcome"], patrol: "Patrol"
     ) -> List["PatrolOutcome"]:
-        """Takes a list of patrol outcomes, and returns those which are possible. If "special" events, gated
-        by stat cats or relationships, are possible, this function returns only those. Stat cats are also determined here.
-        """
+        """Takes a list of patrol outcomes, and returns those which are possible"""
 
         # Determine which outcomes are possible
-        reg_outcomes = []
-        special_outcomes = []
-        for out in outcomes:
-            # We want to gather special (ie, gated with stat or relationship constaints)
-            # outcomes seperatly, so we can ensure that those occur if possible.
-            special = False
-
-            if out.stat_skill or out.stat_trait:
-                special = True
-                out._get_stat_cat(patrol)
-                if not isinstance(out.stat_cat, Cat):
+        allowed_outcomes = []
+        for outcome in possible_outcomes:
+            if outcome.stat_skill or outcome.stat_trait:
+                outcome._get_stat_cat(patrol)
+                if not isinstance(outcome.stat_cat, Cat):
                     continue
 
-            # TODO: outcome relationship constraints
-            # if not patrol._satify_relationship_constaints(patrol, out.relationship_constaints):
-            #    continue
-            # elif out.relationship_constaints:
-            #    special = True
+            if not filter_relationship_type(
+                group=patrol.patrol_cats,
+                filter_types=outcome.relationship_constraints,
+                event_id=patrol.patrol_event.patrol_id,
+                patrol_leader=patrol.patrol_leader,
+            ):
+                continue
 
-            if special:
-                special_outcomes.append(out)
-            else:
-                reg_outcomes.append(out)
+            allowed = True
+            for status, allowed_range in outcome.min_max_status.items():
+                if len(allowed_range) != 2:
+                    raise Exception(
+                        f'{patrol.patrol_event.patrol_id} has an outcome with status limits that lists limit range incorrectly. Status limits should be formatted: "status_type": [min_value, max_value]'
+                    )
+
+                if not (
+                    allowed_range[0]
+                    <= patrol.patrol_statuses.get(status, -1)
+                    <= allowed_range[1]
+                ):
+                    allowed = False
+                    break
+            if not allowed:
+                continue
+
+            allowed_outcomes.append(outcome)
 
         # If there are somehow no possible outcomes, add a single default
         # outcome. Patrols should be written so this never has to occur
-        if not (special_outcomes or reg_outcomes):
-            reg_outcomes.append(
-                PatrolOutcome(
-                    text="There's nothing here, and that's a problem. Please report! ",
-                )
+        if not allowed_outcomes:
+            raise Exception(
+                f"{patrol.patrol_event.patrol_id} somehow has no possible outcomes! Ensure at least one unconstrained outcome is present."
             )
 
-        return special_outcomes if special_outcomes else reg_outcomes
+        return allowed_outcomes
 
     @staticmethod
     def generate_from_info(
@@ -225,6 +236,7 @@ class PatrolOutcome:
                     outcome_art=_d.get("art"),
                     outcome_art_clean=_d.get("art_clean"),
                     future_event=_d.get("future_event"),
+                    min_max_status=_d.get("min_max_status"),
                 )
             )
 
@@ -232,7 +244,7 @@ class PatrolOutcome:
 
     def execute_outcome(self, patrol: "Patrol") -> Tuple[str, str, Optional[str]]:
         """
-        Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
+        Executes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
         format: (Outcome text, results text, outcome art (might be None))
         """
         # This must be done before text processing so that the new cat's pronouns are generated first
