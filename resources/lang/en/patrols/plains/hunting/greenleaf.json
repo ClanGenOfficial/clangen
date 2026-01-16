@@ -1230,27 +1230,15 @@
         "types": [
             "hunting"
         ],
-        "tags": [],
+        "tags": ["clan:leader"],
         "patrol_art": "gen_hunt_burrow",
         "patrol_art_clean": null,
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "deputy": [
-                3,
-                6
-            ],
-            "warrior": [
-                3,
-                6
-            ],
             "leader": [
-                0,
-                0
-            ],
-            "all apprentices": [
-                3,
-                6
+                -1,
+                -1
             ]
         },
         "frequency": 1,

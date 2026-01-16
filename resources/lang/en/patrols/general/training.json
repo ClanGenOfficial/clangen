@@ -2319,7 +2319,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3428,7 +3428,7 @@
             ],
             "deputy": [
                 1,
-                6
+                1
             ],
             "leader": [
                 -1,
@@ -10228,7 +10228,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ],
             "all apprentices": [ -1, -1 ]
         },
@@ -11352,7 +11352,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ],
             "apprentice": [
                 1,
@@ -11579,7 +11579,7 @@
         "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ],
             "apprentice": [
                 1,
