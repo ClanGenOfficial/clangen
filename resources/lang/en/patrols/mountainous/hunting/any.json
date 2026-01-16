@@ -4492,5 +4492,421 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_hunt_glnl_eagleswim1",
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf", "newleaf"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "normal adult": [
+                2,
+                3
+            ]
+        },
+        "frequency": 3,
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+                "exp": 20,
+                "prey": [
+                    "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat used an eagle as a scout on a hunting patrol and found success."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+                "exp": 20,
+                "prey": [
+                    "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to scare an eagle off and steal its prey."
+                        }
+                    }
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "stat_skill": [
+                    "FIGHTER,2"
+                ],
+                "stat_trait": [
+                    "ambitious", "bold", "fierce", "daring", "arrogant", "confident", "competitive", "cunning", "rebellious", "vengeful", "troublesome"
+                ],
+                "prey": [
+                    "huge"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was amazed that to_cat brought down both an eagle and its prey on a hunting patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's hunting patrol return with both an eagle and a big fish for the fresh-kill pile."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol dives into the water, keen to make a play to steal the fish. Though the eagle's talons are occupied keeping grip on its prey, its huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to steal an eagle's prey on a hunt."
+                        }
+                    }
+                ],
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey. Though its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "beak_bite"
+                        ],
+                        "scars": [
+                            "BEAKCHEEK"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from an eagle's beak."
+                },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to steal an eagle's prey on a hunt, and it ended in the medicine den."
+                        }
+                    }
+                ],
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_glnl_eagleswim2",
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf", "newleaf"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [
+                4,
+                6
+            ]
+        },
+        "frequency": 3,
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+                "exp": 20,
+                "prey": [
+                    "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat used an eagle as a scout on a hunting patrol and found success."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+                "exp": 20,
+                "prey": [
+                    "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive an eagle off its catch and steal its prey."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat led from_cat in stealing an eagle's catch."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "some_clan"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol return with a huge fish and a story about stealing it from an eagle."
+                        }
+                    }
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
+                "exp": 20,
+                "stat_skill": [
+                    "FIGHTER,2"
+                ],
+                "stat_trait": [
+                    "ambitious", "bold", "fierce", "daring", "arrogant", "confident", "competitive", "cunning", "rebellious", "vengeful", "troublesome"
+                ],
+                "prey": [
+                    "huge"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was amazed that to_cat brought down both an eagle and its prey on a hunting patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's hunting patrol return with both an eagle and a big fish for the fresh-kill pile."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol dives into the water, keen to make a play to steal the fish. Though the eagle's talons are occupied keeping grip on its prey, its huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to steal an eagle's prey on a hunt."
+                        }
+                    }
+                ],
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The patrol decides to fight the eagle in the water for possession of the prey. Though its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "beak_bite"
+                        ],
+                        "scars": [
+                            "BEAKCHEEK"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from an eagle's beak."
+                },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to steal an eagle's prey on a hunt, and it ended in the medicine den."
+                        }
+                    }
+                ],
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 3
+            }
+        ]
     }
 ]
