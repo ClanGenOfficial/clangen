@@ -85,13 +85,45 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence before it moves and r_c shots backwards, sprinting back to camp to warn everyone.",
+                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence before it moves and r_c shoots backwards, sprinting back to camp to warn everyone.",
                 "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's encounter with a badger on a solo patrol."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
                 "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence.  This will be important information to report back at camp.",
                 "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat investigated an old badger sett alone."
+                        }
+                    }
+                ],
                 "frequency": 1
             },
             {
@@ -99,6 +131,22 @@
                 "exp": 30,
                 "stat_skill": [
                     "CLEVER,1"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat scouted the occupancy of a badger sett alone."
+                        }
+                    }
                 ],
                 "frequency": 4
             },
@@ -113,7 +161,24 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat staked out a badger sett alone."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
@@ -176,11 +241,35 @@
             {
                 "text": "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it. p_l comes up with a plan, sweeping the ground in front of the sett entrance clean with their tails. The cats will be able to come back tomorrow, and see if anything has left tracks.",
                 "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat approved of to_cat's plan to check whether a new badger had moved into an old sett."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
                 "text": "This can't be left unknown. The patrol brainstorms ideas, until eventually they have a workable plan. p_l takes the most unpleasant job, carefully moving fallen cacti spikes and thorny scrubs, until the cats gingerly push them down the slope of the badger set. Outraged, pained fizzing confirms the new occupant.",
                 "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "Under the leadership of to_cat, from_cat pushed cacti spikes and thorny scrubs into a badger sett to check its occupancy."
+                        }
+                    }
+                ],
                 "frequency": 1
             },
             {
@@ -188,6 +277,19 @@
                 "exp": 30,
                 "stat_skill": [
                     "CLEVER,1"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol" ],
+                        "mutual": false,
+                        "values": [
+                            "respect" ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's clever idea to look for badger scat instead of looking inside an old sett to check its occupancy."
+                        }
+                    }
                 ],
                 "frequency": 4
             },
@@ -202,7 +304,23 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol" ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "Under to_cat's leadership, from_cat staked out a badger sett on patrol."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
@@ -211,6 +329,18 @@
             {
                 "text": "The cats try to clean the opening to the sett free of tracks, but the ground is slightly too damp and the dirt just ends up clumped oddly to their tails. Before they know it, they're tired, thirsty, and going home with nothing to show for it.",
                 "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to block the opening of a badger sett on patrol."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -229,6 +359,21 @@
                     "shameless",
                     "troublesome",
                     "vengeful"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat had to save to_cat on patrol when {PRONOUN/to_cat/subject} stuck {PRONOUN/to_cat/poss} head in a badger sett."
+                        }
+                    }
                 ],
                 "frequency": 4
             }

@@ -220,14 +220,14 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's encounter with a badger on a solo patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -241,14 +241,14 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat investigated an old badger sett alone."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -265,14 +265,14 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat scouted the occupancy of a badger sett alone."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -288,7 +288,8 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "relationships": [
                     {
@@ -296,14 +297,14 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat staked out a badger sett alone."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -327,22 +328,6 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -356,22 +341,6 @@
                     "reg_death": "m_c lost their life to a badger.",
                     "lead_death": "died to a badger"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    }
-                ],
                 "frequency": 3
             },
             {
@@ -395,22 +364,6 @@
                     "reg_death": "m_c lost their life to a badger.",
                     "lead_death": "died to a badger"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    }
-                ],
                 "frequency": 3
             }
         ]
@@ -441,20 +394,14 @@
                 "exp": 30,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat approved of to_cat's plan to check whether a new badger had moved into an old sett."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -464,20 +411,14 @@
                 "exp": 30,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "Under the leadership of to_cat, from_cat marked the entrance of a badger sett to provoke its occupant."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -490,20 +431,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol" ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                            "respect" ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's clever idea to look for badger scat instead of looking inside an old sett to check its occupancy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -519,24 +455,22 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                            "patrol" ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "Under to_cat's leadership, from_cat staked out a badger sett on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -546,6 +480,18 @@
             {
                 "text": "The cats try to find enough bits of grass to block the opening to the sett, but it won't clump together and hold a shape. Before they know it, they're tired, thirsty, and forced to return home with nothing to show for it.",
                 "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to block the opening of a badger sett on patrol."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -564,6 +510,21 @@
                     "shameless",
                     "troublesome",
                     "vengeful"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat had to save to_cat on patrol when {PRONOUN/to_cat/subject} stuck {PRONOUN/to_cat/poss} head in a badger sett."
+                        }
+                    }
                 ],
                 "frequency": 4
             },
@@ -584,8 +545,22 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred by a badger."
+                    "scar": "This cat was scarred by a badger.",
+                    "reg_death": "This cat died from wounds inflicted by a badger.",
+                    "lead_death": "died from wounds inflicted by a badger"
                 },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat tried to check the occupancy of a badger sett on patrol, and it ended with r_c in the medicine den."
+                        }
+                    }
+                ],
                 "frequency": 3
             }
         ]
