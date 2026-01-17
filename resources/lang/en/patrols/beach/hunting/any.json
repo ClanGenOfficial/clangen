@@ -5010,29 +5010,18 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
                             "trust",
                             "respect",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat warned {PRONOUN/from_cat/object} to be careful around a stingray."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5044,22 +5033,6 @@
                 "exp": 0,
                 "prey": [
                     "medium"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -10
-                    }
                 ],
                 "injury": [
                     {
@@ -5094,8 +5067,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2]
+            "apprentice": [2, 2]
         },
         "frequency": 4,
         "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!",
