@@ -556,12 +556,9 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": [
-                            "patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
+                        "values": ["trust"],
                         "amount": -5,
                         "log": {
                             "cats_from": "from_cat and to_cat tried to check the occupancy of a badger sett on patrol, and it ended with r_c in the medicine den."
@@ -983,7 +980,7 @@
     {
         "patrol_id": "fst_train_stuck2",
         "biome": [
-            "plains"
+            "forest"
         ],
         "season": [
             "any"

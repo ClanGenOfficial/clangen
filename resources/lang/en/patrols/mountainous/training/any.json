@@ -867,7 +867,7 @@
     {
         "patrol_id": "mnt_train_stuck2",
         "biome": [
-            "plains"
+            "mountainous"
         ],
         "season": [
             "any"
@@ -1166,7 +1166,7 @@
     {
         "patrol_id": "mtn_train_stuck3",
         "biome": [
-            "plains"
+            "mountainous"
         ],
         "season": [
             "any"

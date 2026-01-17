@@ -353,7 +353,7 @@
     {
         "patrol_id": "bch_train_stuck2",
         "biome": [
-            "plains"
+            "beach"
         ],
         "season": [
             "any"
@@ -649,7 +649,7 @@
     {
         "patrol_id": "bch_train_stuck3",
         "biome": [
-            "plains"
+            "beach"
         ],
         "season": [
             "any"
