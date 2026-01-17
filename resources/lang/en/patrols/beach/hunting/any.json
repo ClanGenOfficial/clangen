@@ -4656,7 +4656,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat keeping up good relations with the local dolphins."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4682,7 +4685,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat keeping up good relations with the local dolphins."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4695,16 +4701,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat get soaked and embarrassed by some dolphins."
+                        }
                     }
                 ],
                 "prey": [
