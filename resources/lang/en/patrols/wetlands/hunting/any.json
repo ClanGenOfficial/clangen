@@ -2555,7 +2555,7 @@
             "normal adult": [2, 6],
             "apprentice": [-1, 2]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The patrol catches the scent of a red fox. When they track it down, they find it feeding on a gigantic dead eel it's fished from the swamp, although whether the eel was dead before the fox found it is up for debate.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
@@ -2893,7 +2893,7 @@
             "normal adult": [2, 6],
             "apprentice": [-1, 2]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The patrol catches the scent of a fox - but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 70,
@@ -3371,7 +3371,7 @@
             "normal adult": [2, 6],
             "apprentice": [-1, 2]
         },
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
@@ -3729,7 +3729,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The patrol catches the scent of a fox - but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
