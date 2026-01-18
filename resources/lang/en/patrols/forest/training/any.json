@@ -1959,14 +1959,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [ 1, 1 ],
+            "normal adult": [ 1, 1 ]
         },
         "frequency": 2,
         "intro_text": "p_l takes them both out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
@@ -1978,18 +1972,24 @@
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about porcupines."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about porcupines."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1999,18 +1999,24 @@
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about porcupines."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about porcupines."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2027,18 +2033,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about porcupines with a story about an ancient warrior."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about porcupines with a story about an ancient warrior."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2054,18 +2066,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about porcupines and showed {PRONOUN/from_cat/object} how to reinforce camp walls with spines."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about porcupines and showed {PRONOUN/to_cat/object} how to reinforce camp walls with spines."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2084,11 +2102,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["respect", "trust"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got into an argument when p_l tried to teach app1 about how dangerous porcupines can be."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2106,10 +2124,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "app1 didn't take p_l's lesson about porcupines seriously."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2132,18 +2153,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 5],
+            "normal adult": [1, 4]
         },
         "frequency": 2,
         "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
@@ -2156,17 +2167,27 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2", "app3", "app4", "app5"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
+                        "values": ["trust", "respect"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about porcupines."
+                        }
+                    },
+                    {
+                        "cats_to":[
+                            "app1", "app2", "app3", "app4", "app5"
                         ],
-                        "amount": 5
+                        "cats_from": ["p_l"],
+                        "values": ["comfort", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about porcupines."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2177,17 +2198,27 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2", "app3", "app4", "app5"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
+                        "values": ["trust", "respect"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about porcupines."
+                        }
+                    },
+                    {
+                        "cats_to":[
+                            "app1", "app2", "app3", "app4", "app5"
                         ],
-                        "amount": 5
+                        "cats_from": ["p_l"],
+                        "values": ["comfort", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about porcupines."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2204,18 +2235,34 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1", "app2", "app3", "app4", "app5"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about porcupines with a story about an ancient warrior."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about porcupines with a story about an ancient warrior."
+                        }
+                    },
+                    {
+                        "cats_to": ["app2"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat wondered at p_l's story about porcupines together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2231,18 +2278,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1", "app2", "app3", "app4", "app5"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about porcupines and showed {PRONOUN/from_cat/object} how to reinforce camp walls with spines."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about porcupines and showed {PRONOUN/to_cat/object} how to reinforce camp walls with spines."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2255,17 +2308,33 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got into an argument when p_l tried to teach app1 about how dangerous porcupines can be."
+
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app2"
                         ],
-                        "amount": -5
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "app2 sided with p_l when app1 argued with {PRONOUN/p_l/object} about how dangerous porcupines can be."
+
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2276,17 +2345,34 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "app1 didn't take p_l's lesson about porcupines seriously."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat goofed off together during p_l's lesson about porcupines."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2312,14 +2398,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ]
+            "apprentice": [2, 2]
         },
         "frequency": 3,
         "intro_text": "Off in the woods, app1 waits for app2 underneath the low-hanging branches of a willow. The tip of {PRONOUN/app1/poss} tail twitches in excitement.",
