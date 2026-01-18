@@ -10305,13 +10305,13 @@
     "sub_type": ["failed_murder"],
     "tags": [],
     "frequency": 2,
-    "event_text": "r_c was seen speaking to n_c:0 on the border. n_c:0 later attacked m_c's patrol, and though {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} driven off, m_c is injured and can't shake the feeling n_c:0 was targeting {PRONOUN/m_c/object}.",
+    "event_text": "m_c was seen speaking to n_c:0 on the border. n_c:0 later attacked r_c's patrol, and though {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} driven off, r_c is injured and can't shake the feeling n_c:0 was targeting {PRONOUN/r_c/object}.",
     "m_c": {
-        "age": [],
-        "status": ["apprentice", "mediator apprentice", "medicine cat apprentice", "mediator", "medicine cat", "warrior", "deputy"]
+        "age": ["young adult", "adult", "senior adult"]
     },
     "r_c": {
-        "age": ["young adult", "adult", "senior adult"]
+        "age": [],
+        "status": ["apprentice", "mediator apprentice", "medicine cat apprentice", "mediator", "medicine cat", "warrior", "deputy"]
     },
     "new_cat": [
         ["age:adult, youngadult, senioradult", "rogue", "meeting"]
@@ -10324,9 +10324,9 @@
     ],
     "history:": [
         {
-            "cats": ["m_c"],
-            "scar": "m_c was scarred after a rogue targeted {PRONOUN/m_c/object} in a fight.",
-            "reg_death": "m_c died in the wake of a fight with a rogue who seemed to be targeting {PRONOUN/m_c/object}.",
+            "cats": ["r_c"],
+            "scar": "r_c was scarred after a rogue targeted {PRONOUN/r_c/object} in a fight.",
+            "reg_death": "r_c died in the wake of a fight with a rogue who seemed to be targeting {PRONOUN/r_c/object}.",
             "lead_death": "died of wounds inflicted by a rogue in a seemingly-targeted attack"
         }
     ],
@@ -10347,21 +10347,21 @@
     "sub_type": ["failed_murder"],
     "tags": [],
     "frequency": 2,
-    "event_text": "r_c was seen speaking to n_c:0 on the border. n_c:0 later attacks m_c's patrol, but {PRONOUN/n_c:0/subject} underestimated m_c's strength, and m_c, fighting for {PRONOUN/m_c/poss} life, kills {PRONOUN/n_c:0/object}.",
+    "event_text": "m_c was seen speaking to n_c:0 on the border. n_c:0 later attacks r_c's patrol, but {PRONOUN/n_c:0/subject} underestimated r_c's strength, and r_c, fighting for {PRONOUN/r_c/poss} life, kills {PRONOUN/n_c:0/object}.",
     "m_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "r_c": {
         "age": [],
         "status": ["mediator", "medicine cat", "warrior", "deputy"],
         "skill": ["FIGHTER,2"]
-    },
-    "r_c": {
-        "age": ["young adult", "adult", "senior adult"]
     },
     "new_cat": [
         ["age:adult, youngadult, senioradult", "rogue", "meeting", "dead"]
     ],
     "relationships": [
         {
-            "cats_from": ["r_c"],
+            "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
             "mutual": false,
             "values": ["trust"],
