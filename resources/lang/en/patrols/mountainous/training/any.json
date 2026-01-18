@@ -784,7 +784,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_train_stuck3",
+        "patrol_id": "mtn_train_stuck2",
         "biome": [
             "mountainous"
         ],
@@ -983,7 +983,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_train_stuck4",
+        "patrol_id": "mtn_train_stuck3",
         "biome": [
             "mountainous"
         ],
