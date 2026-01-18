@@ -1605,11 +1605,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "normal adult": [2, 2]
         },
         "frequency": 2,
         "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c/subject} wouldn't mind showing p_l their hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
@@ -1627,13 +1623,12 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a romantic evening training together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1649,13 +1644,12 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a romantic evening training together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1677,13 +1671,12 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l was highly appreciative of s_c's hunting prowess during a romantic evening training together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1695,30 +1688,28 @@
                     "adventurous",
                     "bold",
                     "charismatic",
-                    "childish",
                     "confident",
                     "daring",
                     "playful",
-                    "righteous"
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "flamboyant"
                 ],
                 "can_have_stat": [
                     "r_c"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "s_c" ],
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat had so much fun training alone with to_cat that {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} surprised by how late it got.",
+                            "cats_to": "p_l was happy to have s_c all to {PRONOUN/p_l/self} during a romantic evening training session."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1730,19 +1721,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": [ "romance", "like" ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat's romantic evening training session was cut short when tempers flared."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1752,19 +1738,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "values": [ "romance", "like", "comfort" ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat realized to_cat may have had ulterior motives in asking to train alone together."
+                        }
                     }
                 ],
                 "frequency": 4
