@@ -598,25 +598,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat helped rescue from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -630,25 +619,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -659,25 +637,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -691,65 +658,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "art": "fst_train_stuck_outcome",
-                "frequency": 4
-            },
-            {
-                "min_max_status": {
-                    "normal adult": [3, 6]
-                },
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as the patrol carefully works to remove the branches pinning {PRONOUN/r_c/object} down. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
-                "exp": 20,
-                "stat_trait": [
-                    "compassionate",
-                    "faithful",
-                    "loving",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -766,30 +682,16 @@
                     "thoughtful",
                     "wise"
                 ],
-                "can_have_stat": [
-                    "p_l"
-                ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": [ "like", "comfort", "trust" ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat kept from_cat calm when a branch fell on {PRONOUN/r_c/object}."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -802,25 +704,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -841,25 +732,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["like", "comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} for it."
+                        }
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["like", "respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat got stuck on patrol, and from_cat had no patience for it."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -879,29 +769,6 @@
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
             },
@@ -929,29 +796,6 @@
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
             },
@@ -966,29 +810,6 @@
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
             },
@@ -1013,29 +834,6 @@
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
             },
@@ -1063,29 +861,6 @@
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
             },
@@ -1120,29 +895,6 @@
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "art": "gen_warrior_crouching",
                 "frequency": 3
             }
@@ -1176,19 +928,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l rescued r_c when a branch fell on {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} strength."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -1199,19 +946,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l rescued r_c when a branch fell on {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} cleverness."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -1225,19 +967,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l rescued r_c when a branch fell on {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} cleverness."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -1256,19 +993,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romance", "trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l kept r_c calm when a branch fell on {PRONOUN/r_c/object}, and r_c was grateful for {PRONOUN/p_l/poss} presence."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -1281,19 +1013,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -1314,19 +1041,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} for it."
+                        }
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["romance", "like", "respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat got stuck on patrol, and from_cat had no patience for it."
+                        }
                     }
                 ],
                 "art": "fst_train_stuck_outcome",
@@ -1343,23 +1075,6 @@
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
             },
@@ -1384,23 +1099,6 @@
                     "reg_death": "m_c tragically died after being trapped on patrol.",
                     "lead_death": "died after being trapped on patrol"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
             }

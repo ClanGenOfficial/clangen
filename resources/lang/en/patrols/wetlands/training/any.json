@@ -289,18 +289,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "cats_to": ["patrol"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat helped rescue from_cat when {PRONOUN/from_cat/subject} were knocked into the water."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -310,18 +306,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when {PRONOUN/from_cat/subject} were knocked into the water."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -334,18 +326,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when {PRONOUN/from_cat/subject} were knocked into the water."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -363,18 +351,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": [ "like", "comfort", "trust" ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat kept from_cat calm when {PRONOUN/r_c/subject} were knocked into the water."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -386,18 +370,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -417,18 +397,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat fell in the water on patrol, and to_cat chewed {PRONOUN/from_cat/object} for it."
+                        }
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["like", "respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat fell in the water on patrol, and from_cat had no patience for it."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -446,22 +432,6 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "reg_death": "m_c tragically died after being trapped on patrol."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 3
             }
         ]
