@@ -2279,7 +2279,7 @@
                         "values": ["romance", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoyed a romantic evening training together."
+                            "cats_from": "from_cat and to_cat enjoyed a romantic evening training session together."
                         }
                     }
                 ],
@@ -2300,7 +2300,7 @@
                         "values": ["romance", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoyed a romantic evening training together."
+                            "cats_from": "from_cat and to_cat enjoyed a romantic evening training session together."
                         }
                     }
                 ],
@@ -2327,7 +2327,7 @@
                         "values": ["romance", "like"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l was highly appreciative of s_c's hunting prowess during a romantic evening training together."
+                            "cats_from": "p_l was highly appreciative of s_c's hunting prowess during a romantic evening training session together."
                         }
                     }
                 ],
