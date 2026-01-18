@@ -702,10 +702,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ]
+            "apprentice": [1, 1]
         },
         "frequency": 2,
         "intro_text": "r_c heads out into the desert alone, but maybe an apprentice shouldn't try to do a solo patrol.",
@@ -771,14 +768,16 @@
         "patrol_art": "train_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {},
+        "min_max_status": {
+            "normal adult": [1, 1]
+        },
         "frequency": 2,
         "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date.",
+                "text": "r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "frequency": 4
             },
@@ -791,7 +790,8 @@
                 "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf.",
                 "exp": 20,
                 "stat_skill": [
-                    "CLEVER,1"
+                    "CLEVER,1",
+                    "INSIGHTFUL,1"
                 ],
                 "frequency": 4
             },
@@ -826,76 +826,9 @@
                     "nervous"
                 ],
                 "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "desert_train_solo3",
-        "biome": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-                "min_max_status": {
-            "deputy": [
-                1,
-                1
-            ]
-        },
-        "frequency": 2,
-        "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
-        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
-                "exp": 20,
-                "frequency": 4
             },
             {
-                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf; there's a relief to the discovery.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,1"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
-                "exp": 20,
-                "stat_trait": [
-                    "adventurous",
-                    "bold",
-                    "charismatic",
-                    "childish",
-                    "confident",
-                    "daring",
-                    "playful",
-                    "righteous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c gets lost in the territory. Somehow.",
-                "exp": 0,
-                "frequency": 4
-            },
-            {
+                "min_max_status": {"deputy": [1, 1]},
                 "text": "s_c wavers in their decision. They have so much work to do, so many other things pulling on their time... no, definitely not. They turn around and go straight back to camp.",
                 "exp": 0,
                 "stat_trait": [
@@ -904,76 +837,9 @@
                     "nervous"
                 ],
                 "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_train_solo4",
-        "biome": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "leader": [
-                1,
-                1
-            ]
-        },
-        "frequency": 2,
-        "intro_text": "r_c heads out into the desert alone, wanting to explore and have some time to {PRONOUN/r_c/self}.",
-        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} duties have to come first.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
-                "exp": 20,
-                "frequency": 4
             },
             {
-                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, {PRONOUN/r_c/subject} {VERB/r_c/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf; there's a relief to the discovery.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,1"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/s_c/poss} beloved home, ears pricked up curiously whenever {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/s_c/subject} last passed this way.",
-                "exp": 20,
-                "stat_trait": [
-                    "adventurous",
-                    "bold",
-                    "charismatic",
-                    "childish",
-                    "confident",
-                    "daring",
-                    "playful",
-                    "righteous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c gets lost in the territory. Somehow.",
-                "exp": 0,
-                "frequency": 4
-            },
-            {
+                "min_max_status": {"leader": [1, 1]},
                 "text": "s_c wavers in their decision. They have so much work to do, so many other things pulling on their time... no, definitely not. They turn around and go straight back to camp.",
                 "exp": 0,
                 "stat_trait": [
