@@ -821,65 +821,6 @@
                     "lead_death": "died after being trapped on patrol"
                 },
                 "frequency": 3
-            },
-            {
-                "min_max_status": {
-                    "normal adult": [3, 6]
-                },
-                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, the eyes of s_c glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "dead_cats": [
-                    "r_c"
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
-                },
-                "frequency": 3
-            },
-            {
-                "text": "Even though r_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object}, and {VERB/r_c/blame/blames} s_c. s_c denies it and says they should get r_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
-                },
-                "frequency": 3
             }
         ]
     },
