@@ -10297,5 +10297,76 @@
                 "apprentice"
             ]
         }
+    },
+    {
+    "event_id": "gen_misc_hitmanfailedmurder1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["failed_murder"],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "r_c was seen speaking to n_c:0 on the border. n_c:0 later attacked m_c's patrol, and though {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} driven off, m_c is injured and can't shake the feeling n_c:0 was targeting {PRONOUN/m_c/object}.",
+    "m_c": {
+        "age": [],
+        "status": ["apprentice", "mediator apprentice", "medicine cat apprentice", "mediator", "medicine cat", "warrior", "deputy"]
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "new_cat": [
+        ["age:adult, youngadult, senioradult", "rogue", "meeting"]
+    ],
+    "injury": [
+        {
+            "cats": ["r_c"],
+            "injuries": ["cat bite"]
+        }
+    ],
+    "history:": [
+        {
+            "cats": ["m_c"],
+            "scar": "m_c was scarred after a rogue targeted {PRONOUN/m_c/object} in a fight.",
+            "reg_death": "m_c died in the wake of a fight with a rogue who seemed to be targeting {PRONOUN/m_c/object}.",
+            "lead_death": "died of wounds inflicted by a rogue in a seemingly-targeted attack"
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": 10
+        }
+    ]
+    },
+    {
+    "event_id": "gen_misc_hitmanfailedmurder2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["failed_murder"],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "r_c was seen speaking to n_c:0 on the border. n_c:0 later attacks m_c's patrol, but {PRONOUN/n_c:0/subject} underestimated m_c's strength, and m_c, fighting for {PRONOUN/m_c/poss} life, kills {PRONOUN/n_c:0/object}.",
+    "m_c": {
+        "age": [],
+        "status": ["mediator", "medicine cat", "warrior", "deputy"],
+        "skill": ["FIGHTER,2"]
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "new_cat": [
+        ["age:adult, youngadult, senioradult", "rogue", "meeting", "dead"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": 10
+        }
+    ]
     }
 ]
