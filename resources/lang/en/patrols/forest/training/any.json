@@ -582,15 +582,18 @@
         ],
         "tags": [],
         "patrol_art": "fst_train_stuck",
-        "min_cats": 3,
+        "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/trail/trails} behind the patrol, there's a mighty crash above r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
+        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/lag/lags} behind on patrol, there's a mighty crash above r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {PRONOUN/r_c/subject} {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
                 "text": "{PRONOUN/r_c/poss/CAP} Clanmates come running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
                 "exp": 20,
                 "relationships": [
@@ -620,6 +623,38 @@
                 "frequency": 4
             },
             {
+                "min_max_status": {
+                    "normal adult": [2, 2]
+                },
+                "text": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
+                "exp": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5
+                    }
+                ],
+                "art": "fst_train_stuck_outcome",
+                "frequency": 4
+            },
+            {
                 "text": "p_l tugs on just the right branch, lifting the pile off of r_c for long enough for the other cat to scramble free.",
                 "exp": 20,
                 "relationships": [
@@ -681,6 +716,9 @@
                 "frequency": 4
             },
             {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
                 "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as the patrol carefully works to remove the branches pinning {PRONOUN/r_c/object} down. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "stat_trait": [
@@ -690,377 +728,6 @@
                     "responsible",
                     "thoughtful",
                     "wise"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "art": "fst_train_stuck_outcome",
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol works all day to free r_c and gets nothing else done.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "art": "fst_train_stuck_outcome",
-                "frequency": 4
-            },
-            {
-                "text": "As s_c rarely has patience for other cats, s_c tells r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/r_c/subject} {VERB/r_c/pull/pulls} {PRONOUN/r_c/self} out from under the branches.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "art": "fst_train_stuck_outcome",
-                "frequency": 4
-            },
-            {
-                "text": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
-                "exp": 0,
-                "dead_cats": [
-                    "r_c"
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "art": "fst_train_stuck_outcome",
-                "frequency": 3
-            },
-            {
-                "text": "The patrol eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "art": "fst_train_stuck_outcome",
-                "frequency": 3
-            },
-            {
-                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, s_c's glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "dead_cats": [
-                    "r_c"
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "art": "fst_train_stuck_outcome",
-                "frequency": 3
-            },
-            {
-                "text": "Even though r_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object}, and blame s_c. s_c denies it and says they should get r_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "art": "gen_warrior_crouching",
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_train_stuck2",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "fst_train_stuck",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {},
-        "frequency": 1,
-        "intro_text": "As r_c trails behind p_l, there's a mighty crash above {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
-        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and {PRONOUN/r_c/subject} {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "{PRONOUN/r_c/poss/CAP} Clanmate comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "art": "fst_train_stuck_outcome",
-                "frequency": 4
-            },
-            {
-                "text": "p_l tugs on just the right branch, lifting the pile off of r_c for long enough for the other cat to scramble free.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "art": "fst_train_stuck_outcome",
-                "frequency": 1
-            },
-            {
-                "text": "Without letting {PRONOUN/s_c/self} panic, s_c carefully assesses the branches trapping {PRONOUN/s_c/poss} Clanmate, then throws {PRONOUN/s_c/poss} weight onto one. It acts as a lever, forcing the entire pile up and allowing r_c to scrabble free, shaken but grateful.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
                 ],
                 "relationships": [
                     {
@@ -1131,7 +798,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l works all day to free r_c, and the two of them get nothing else done.",
+                "text": "p_l works all day to free r_c, and the patrol gets nothing else done.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -1197,6 +864,96 @@
                 ],
                 "art": "fst_train_stuck_outcome",
                 "frequency": 4
+            },
+            {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
+                "text": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
+                "exp": 0,
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5
+                    }
+                ],
+                "art": "fst_train_stuck_outcome",
+                "frequency": 3
+            },
+            {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
+                "text": "The patrol eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "blunt_force_injury"
+                        ],
+                        "scars": [
+                            "SIDE"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5
+                    }
+                ],
+                "art": "fst_train_stuck_outcome",
+                "frequency": 3
             },
             {
                 "text": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
@@ -1281,11 +1038,118 @@
                 ],
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
+            },
+            {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
+                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, s_c's glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
+                "exp": 0,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5
+                    }
+                ],
+                "art": "fst_train_stuck_outcome",
+                "frequency": 3
+            },
+            {
+                "text": "Even though r_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object} and {VERB/r_c/blame/blames} s_c. s_c denies it and says they should get r_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
+                "exp": 0,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "blunt_force_injury"
+                        ],
+                        "scars": [
+                            "SIDE"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from being trapped on patrol.",
+                    "reg_death": "m_c tragically died after being trapped on patrol.",
+                    "lead_death": "died after being trapped on patrol"
+                },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c",
+                            "p_l",
+                            "p_l",
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol",
+                            "patrol",
+                            "r_c",
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5
+                    }
+                ],
+                "art": "gen_warrior_crouching",
+                "frequency": 3
             }
         ]
     },
     {
-        "patrol_id": "fst_train_stuck3",
+        "patrol_id": "fst_train_stuck2",
         "biome": [
             "forest"
         ],
@@ -1543,7 +1407,7 @@
         ]
     },
     {
-        "patrol_id": "fst_train_stuck4",
+        "patrol_id": "fst_train_stuck3",
         "biome": [
             "forest"
         ],
