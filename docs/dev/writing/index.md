@@ -163,7 +163,7 @@ Try to use phrases from this list when you can instead of using "our" version of
 - For patrols: 
     - Keep in mind that it's absolutely okay and encouraged to make certain animal encounters restricted to certain seasons, but that if it's possible to encounter an animal, it should be possible to encounter it with any size of patrol - i.e if introducing a dangerous predator, make sure it can still be encountered by single cat patrols, even if those patrols are very lethal and difficult.
     - Keep in mind that the size of a patrol should have a major impact on how difficult things are to accomplish. For example, while any size of patrol can encounter the maned wolf in the plains biome, only a full 6 cat patrol can try to fight the maned wolf
-- There is a difference between venom and poison, as stated by the lovely Zabe: venom is if it bites you and you die, while poison is if you bite it and you die! It won't really matter, but if you want to spruce up your writing!
+- There is a difference between venom and poison: venom is if it bites you and you die, while poison is if you bite it and you die. It won't really matter, but if you want to spruce up your writing!
 
 #### Animal Names:
 Some animals have multiple names that can refer to them, we want to keep our writing consistent by only using a single agreed upon name.  
@@ -199,7 +199,7 @@ Some animals have multiple names that can refer to them, we want to keep our wri
         - For singular words that end in S, add an apostrophe to make them possessive. For instance, "the crocus' petals". For a possessive plural of a word that ends in S, add "es" to the end, then apostrophe. Random example sentence: "The actresses' rooms were located across the hall."
         - Basically, anytime there's a possessive, you want an apostrophe in there somewhere. If the word ends in S, plural or singular, the apostrophe goes at the end. If the singular form of the word ends in S and it's a plural possessive, add "es" at the end, then apostrophe.  The exception to this is “it’s’ and “its”, where “its” is the possessive form and has no apostrophe.
 - All ClanGen game text should follow normal grammar rules for capitalizing the first letter of a sentence, and trying to avoid spelling or grammar typos. We all make typos, don't worry! But this is one of the ways beta testing your new content can help you!
-- If you are struggling with remembering or understanding a grammar rule, even one that isn't mentioned in the above list, feel free to contact zabe#1117 on Discord for one on one help. Either DM or ping in the writing contributor thread, please!
+- If you are struggling with remembering or understanding a grammar rule, even one that isn't mentioned in the above list, feel free to message in the writing contributor thread or in other official channels of the Discord server.
 - The only exception to the above rule is Thoughts! Thoughts should be structured in such a way that they read as a full sentence if the cat’s name is read at the beginning.  For example: “Thinks about their past mistakes.” is the correct grammar for a Thought, as you could imagine a name at the beginning of the sentence and it would be grammatically correct.  However, the sentence should still be capitalized normally.
 Event and flavor text should always use Americanized spelling. 
 - Text should always use proper punctuation. Note that we are NOT using double spaces. There should only be a single space after all periods.
@@ -210,7 +210,7 @@ Event and flavor text should always use Americanized spelling.
 - HTML tags for bolding and italicizing are usable. These tags are:
     - `<i>` and `</i>` for italicizing
     - `<b>` and `</b>` for bolding
-- Keeping a change log: as a writer, people are going to be super excited to experience what you write! Make sure to keep a rough record of what that might be, i.e Tiri has no idea how many fox patrols she has added total, but does know how many species are added are in what biomes, so that when she made the PR to merge them into the game she could mention their existence in the changelog for that PR.
+- Keeping a change log: as a writer, people are going to be super excited to experience what you write! Make sure to keep a rough record of what that might be. For example, a writer may have no idea how many fox patrols they are adding total. However, they do know how many species they have added and in what biomes. So, when they make the PR to merge them into the game, they can mention their existence in the changelog for that PR.
     - An easy way to keep track of your additions is with your commit titles and descriptions.  Making commits whenever you reach a ‘milestone’ of sorts and then titling it appropriately will leave you with a nice list of commits to review for your later change log.  When I bugfix, for example, I tend to make a commit every time I fix a bug and then title that commit with a short description of the bug I fixed.
 
 
