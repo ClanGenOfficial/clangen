@@ -8220,7 +8220,10 @@
             "cats_to": ["n_c:0"],
             "mutual": false,
             "values": ["trust"],
-            "amount": 10
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat hired to_cat to kill m_c."
+            }
         }
     ],
     "future_event": [
@@ -8278,29 +8281,25 @@
             "cats_to": ["n_c:0"],
             "mutual": false,
             "values": ["trust"],
-            "amount": 10
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat hired to_cat to kill m_c."
+            }
         }
     ],
     "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
-                    "sub_type": [
-                        "murder_reveal"
-                    ]
+                    "event_id": "gen_misc_murderreveal_leader"
                 },
                 "moon_delay": [
-                    1,
-                    24
+                    1, 1
                 ],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
-                    "r_c": {
-                        "age": [
-                            "any"
-                        ]
-                    }
+                    "r_c": "m_c"
                 }
             }]
 },
@@ -8337,7 +8336,10 @@
             "cats_to": ["n_c:0"],
             "mutual": false,
             "values": ["trust"],
-            "amount": 10
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat hired to_cat to kill m_c."
+            }
         }
     ],
     "future_event": [
@@ -8395,7 +8397,10 @@
             "cats_to": ["n_c:0"],
             "mutual": false,
             "values": ["trust"],
-            "amount": 10
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat promised to_cat a place in the Clan in exchange for killing m_c."
+            }
         }
     ],
     "future_event": [
