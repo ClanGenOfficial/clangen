@@ -60,7 +60,7 @@ class PatrolSchemaItem(BaseModel):
         MISSING,
         description="Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
     )
-    weight: int = Field(
+    frequency: int = Field(
         ...,
         description="Controls how common a patrol is. Normal patrols would be around 20. Lower numbers are less common and higher numbers are more common.",
         json_schema_extra={

@@ -19,6 +19,14 @@ class GatherCatEnum(Enum):
     some_clan = "some_clan"
     patrol = "patrol"
     multi = "multi"
+    high_lawful = "high_lawful"
+    low_lawful = "low_lawful"
+    high_social = "high_social"
+    low_social = "low_social"
+    high_stable = "high_stable"
+    low_stable = "low_stable"
+    high_aggress = "high_aggress"
+    low_aggress = "low_aggress"
 
 
 class GatherCat(RootModel):

@@ -10,6 +10,7 @@ class EventSubtype(Enum):
     mass_death = "mass_death"
     murder_reveal = "murder_reveal"
     hidden_murder_reveal = "hidden_murder_reveal"
+    failed_murder = "failed_murder"
     accessory = "accessory"
     ceremony = "ceremony"
     transition = "transition"

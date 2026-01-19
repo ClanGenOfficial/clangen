@@ -21,7 +21,7 @@ from scripts.models.patrol.relationship import Relationship
 
 class Outcome(BaseModel):
     text: str = Field(..., description="Displayed outcome text.")
-    weight: Annotated[
+    frequency: Annotated[
         int,
         Field(
             description="Controls how common an outcome is.",
