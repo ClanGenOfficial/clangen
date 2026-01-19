@@ -8206,7 +8206,7 @@
         "age": ["young adult", "adult", "senior adult"]
     },
     "new_cat": [
-        ["meeting", "rogue", "age:youngadult, adult, senioradult"]
+        ["meeting", "rogue", "age:adult"]
     ],
     "history:": [
         {
@@ -8251,7 +8251,7 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["murder"],
-    "tags": ["some_lives", "lives_remain"],
+    "tags": ["lives_remain"],
     "frequency": 2,
     "event_text": "On a solo border patrol, m_c is attacked and killed by a rogue named n_c:0. When m_c is revived, n_c:0 lets it slip that r_c didn't say anything about resurrection as {PRONOUN/n_c:0/subject} {VERB/n_c:0/flee/flees}.",
     "m_c": {
@@ -8264,7 +8264,7 @@
         "age": ["young adult", "adult", "senior adult"]
     },
     "new_cat": [
-        ["meeting", "rogue", "age:youngadult, adult, senioradult"]
+        ["meeting", "rogue", "age:adult"]
     ],
     "history:": [
         {
