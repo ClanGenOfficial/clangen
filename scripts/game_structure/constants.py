@@ -18,6 +18,8 @@ MENU_SCREENS = [
     GameScreen.MAKE_CLAN,
 ]
 
+EVENTS_PER_PAGE = 10
+
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
 SEASONS = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
@@ -41,6 +43,9 @@ TEMPERAMENT_DICT = {
     "mid_social": ["amiable", "stoic", "wary"],
     "high_social": ["gracious", "mellow", "logical"],
 }
+
+facet_types = ["lawfulness", "sociability", "aggression", "stability"]
+facet_range = [0, 16]
 
 OUTSIDER_REPS = ("welcoming", "neutral", "hostile")
 OTHER_CLAN_REPS = ("ally", "neutral", "hostile")

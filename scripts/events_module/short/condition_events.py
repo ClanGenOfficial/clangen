@@ -1095,31 +1095,26 @@ class Condition_Events:
                 and risk["name"] not in dictionary
             ):
                 # check if the new risk is a previous stage of a current illness
-                skip = False
                 if risk["name"] in progression:
                     if progression[risk["name"]] in dictionary:
-                        skip = True
-                # if it is, then break instead of giving the risk
-                if skip is True:
-                    break
+                        # if it is, then break instead of giving the risk
+                        break
 
                 new_condition_name = risk["name"]
 
                 # lower risk of getting it again if not a perm condition
-                if dictionary != cat.permanent_condition:
-                    saved_condition = dictionary[condition]["risks"]
-                    for old_risk in saved_condition:
-                        if old_risk["name"] == risk["name"]:
-                            if new_condition_name in [
-                                "an infected wound",
-                                "a festering wound",
-                            ]:
-                                # if it's infection or festering, we're removing the chance completely
-                                # this is both to prevent annoying infection loops
-                                # and bc the illness/injury difference causes problems
-                                old_risk["chance"] = 0
-                            else:
-                                old_risk["chance"] = risk["chance"] + 10
+                for _risk in dictionary[condition]["risks"]:
+                    if _risk["name"] == new_condition_name:
+                        if new_condition_name in [
+                            "an infected wound",
+                            "a festering wound",
+                        ]:
+                            # if it's infection or festering, we're removing the chance completely
+                            # this is both to prevent annoying infection loops
+                            # and bc the illness/injury difference causes problems
+                            _risk["chance"] = 0
+                        else:
+                            _risk["chance"] = risk["chance"] + 20
 
                 med_cat = None
                 removed_condition = False

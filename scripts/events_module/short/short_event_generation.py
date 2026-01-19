@@ -20,6 +20,8 @@ from scripts.events_module.event_filters import (
     event_for_herb_supply,
     event_for_season,
     cat_for_event,
+    get_frequency,
+    find_new_frequency,
 )
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants, game
@@ -105,19 +107,12 @@ def create_short_event(
         event_type = "injury"
 
     # choosing frequency
-    # think of it as "in a span of 10 moons, in how many moons should this sort of event appear?"
-    frequency_roll = random.randint(1, 10)
-    if frequency_roll <= 4:
-        frequency = 4
-    elif frequency_roll <= 7:
-        frequency = 3
-    elif frequency_roll <= 9:
-        frequency = 2
-    else:
-        frequency = 1
+    frequency = get_frequency()
+    used_frequencies = set()
 
     chosen_event = None
-    while not chosen_event and frequency < 5:
+    already_reset = False
+    while not chosen_event:
         events = find_needed_events(
             frequency,
             event_type,
@@ -136,12 +131,18 @@ def create_short_event(
         )
         if not chosen_event:
             # we'll see if any more common events are available
-            frequency += 1
-            # if we've hit 5 frequency, then we've probably used all the events.
-            # so we'll reset the used_events list and look for 4 frequency events again
-            if used_events and frequency == 5:
+            used_frequencies.add(frequency)
+            frequency = find_new_frequency(used_frequencies)
+
+            # if we've ended up with 4 frequency twice then we're out of events and it's time to reset
+            if 4 in used_frequencies and frequency == 4:
                 used_events.clear()
+                used_frequencies.clear()
                 frequency = 4
+                # already_reset marks if we've already reset the used_events list while trying to find an event
+                if already_reset:
+                    break
+                already_reset = True
 
     if chosen_event:
         used_events.add(chosen_event.event_id)
@@ -507,84 +508,86 @@ def filter_events(
 
         final_events.extend([event] * event.weight)
 
-        if not final_events:
-            return None, None
+    if not final_events:
+        return None, random_cat
 
-        cat_list = [
-            c
-            for c in Cat.all_cats.values()
-            if c.status.alive_in_player_clan and c != main_cat
-        ]
-        chosen_cat = None
-        chosen_event = None
+    cat_list = [
+        c
+        for c in Cat.all_cats.values()
+        if c.status.alive_in_player_clan and c != main_cat
+    ]
+    chosen_cat = None
+    chosen_event = None
 
-        if random_cat:
-            chosen_cat = random_cat
-            # if we've got our random cat already, then check if we have to find an ensured event
-            if constants.CONFIG["event_generation"]["debug_ensure_event_id"]:
-                for possible_event in final_events:
-                    if (
-                        possible_event.event_id
-                        == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
-                    ):
-                        chosen_event = possible_event
-                        break
-            # else, pick a random one from the available events
-            else:
-                chosen_event = random.choice(final_events)
-
-        failed_ids = []
-        while final_events and not chosen_cat and not chosen_event:
+    if random_cat:
+        chosen_cat = random_cat
+        # if we've got our random cat already, then check if we have to find an ensured event
+        if constants.CONFIG["event_generation"]["debug_ensure_event_id"]:
+            for possible_event in final_events:
+                if (
+                    possible_event.event_id
+                    == constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+                ):
+                    chosen_event = possible_event
+                    break
+        # else, pick a random one from the available events
+        else:
             chosen_event = random.choice(final_events)
-            if chosen_event.event_id in failed_ids:
-                final_events.remove(chosen_event)
-                chosen_event = None
-                continue
 
-            if (
-                constants.CONFIG["event_generation"]["debug_ensure_event_id"]
-                and constants.CONFIG["event_generation"]["debug_ensure_event_id"]
-                != chosen_event.event_id
-            ):
-                final_events.remove(chosen_event)
-                chosen_event = None
-                continue
+    failed_ids = []
+    while final_events and not chosen_cat and not chosen_event:
+        chosen_event = random.choice(final_events)
+        if chosen_event.event_id in failed_ids:
+            final_events.remove(chosen_event)
+            chosen_event = None
+            continue
 
-            # if this doesn't need a random cat, we stop here and run with it
-            if not chosen_event.r_c:
-                break
+        if (
+            constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+            and constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+            != chosen_event.event_id
+        ):
+            final_events.remove(chosen_event)
+            failed_ids.append(chosen_event.event_id)
+            chosen_event = None
+            continue
 
-            # if we're overriding requirements, don't bother looking for an appropriate cat
-            if constants.CONFIG["event_generation"]["debug_override_requirements"]:
-                chosen_cat = random.choice(cat_list)
-                continue
+        # if this doesn't need a random cat, we stop here and run with it
+        if not chosen_event.r_c:
+            break
 
-            # gotta gather injuries so we can check if the cat can get them
-            r_c_injuries = []
-            for block in chosen_event.injury:
-                r_c_injuries.extend(block["injuries"] if "r_c" in block["cats"] else [])
+        # if we're overriding requirements, don't bother looking for an appropriate cat
+        if constants.CONFIG["event_generation"]["debug_override_requirements"]:
+            chosen_cat = random.choice(cat_list)
+            continue
 
-            chosen_cat = cat_for_event(
-                constraint_dict=chosen_event.r_c,
-                possible_cats=cat_list,
-                comparison_cat=main_cat,
-                comparison_cat_rel_status=chosen_event.m_c.get(
-                    "relationship_status", []
-                ),
-                injuries=r_c_injuries,
-                return_id=False,
-            )
+        # gotta gather injuries so we can check if the cat can get them
+        r_c_injuries = []
+        for block in chosen_event.injury:
+            r_c_injuries.extend(block["injuries"] if "r_c" in block["cats"] else [])
 
-            if not chosen_cat:
-                failed_ids.append(chosen_event.event_id)
-                final_events.remove(chosen_event)
-                chosen_event = None
-            else:
-                break
+        chosen_cat = cat_for_event(
+            constraint_dict=chosen_event.r_c.copy(),
+            possible_cats=cat_list,
+            comparison_cat=main_cat,
+            comparison_cat_rel_status=chosen_event.m_c.get(
+                "relationship_status", []
+            ).copy(),
+            injuries=r_c_injuries,
+            return_id=False,
+        )
 
-        for notice in incorrect_format:
-            print(notice)
+        if not chosen_cat:
+            failed_ids.append(chosen_event.event_id)
+            final_events.remove(chosen_event)
+            chosen_event = None
+        else:
+            break
 
-        return chosen_event, chosen_cat
+    for notice in incorrect_format:
+        print(notice)
 
-    return None, None
+    if not final_events:
+        return None, None
+
+    return chosen_event, chosen_cat

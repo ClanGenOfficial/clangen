@@ -228,7 +228,8 @@
 	{
 		"id": "platonic_to_app_inc_med1",
 		"interactions": [
-			"m_c noticed that r_c is falling behind in training and offered to help {PRONOUN/r_c/object} catch up."
+			"m_c noticed that r_c is falling behind in training and offered to help {PRONOUN/r_c/object} catch up.",
+			"m_c gives r_c advice on an upcoming assessment."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -263,7 +264,15 @@
 			"m_c is pretending to ward off foxes with r_c.",
 			"m_c is pretending to fight off badgers with r_c.",
 			"m_c is racing r_c back and forth across the camp clearing.",
-			"m_c hopes r_c will be {PRONOUN/m_c/poss} friend forever."
+			"m_c hopes r_c will be {PRONOUN/m_c/poss} friend forever.",
+			"m_c and r_c pretend to be elders and tell each other stories.",
+			"m_c and r_c pretend to be elders and complain about their joints together.",
+			"m_c pretends to be a leader getting nine lives, with r_c as {PRONOUN/m_c/poss} medicine cat.",
+			"m_c appoints r_c deputy of {PRONOUN/m_c/poss} new Clan.",
+			"m_c lets r_c be leader during a game.",
+			"m_c and r_c hunt moss balls and sticks for the fresh-kill pile.",
+			"m_c gives r_c a cool nickname.",
+			"r_c comforts m_c after a nightmare."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -276,6 +285,37 @@
 		},
 		"also_influences": {
 			"comfort": "increase"
+		}
+	},
+	{
+		"id": "platonic_kit_inc_high",
+		"intensity": "high",
+		"interactions": [
+			"m_c and r_c agree to be best friends forever.",
+			"m_c and r_c are absolutely inseparable.",
+			"m_c and r_c only ever want to play with each other.",
+			"m_c doesn't want to do anything without r_c.",
+			"m_c wants to stay up all night playing with r_c.",
+			"m_c and r_c develop a secret language together.",
+			"m_c can't wait to be apprentices with r_c."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"relationship_constraint": [
+			"likes"
+		],
+		"reaction_random_cat": {
+			"like": "increase",
+			"comfort": "increase",
+			"trust": "increase"
+		},
+		"also_influences": {
+			"comfort": "increase",
+			"trust": "increase"
 		}
 	},
 	{
@@ -304,7 +344,10 @@
 	{
 		"id": "platonic_kit_inc_med5",
 		"interactions": [
-			"m_c ask r_c what it's like to be in training."
+			"m_c asks r_c what it's like to be in training.",
+			"m_c tells r_c {PRONOUN/m_c/subject}'ll be {PRONOUN/r_c/poss} apprentice one day.",
+			"m_c asks r_c endless questions about what {PRONOUN/r_c/subject} learned today.",
+			"r_c enlists m_c's help to quiz {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} assessment."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -746,10 +789,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c and r_c heckled another Clan at the Gathering together.",
-			"m_c and r_c worked well together on a patrol.",
-			"When they return from a patrol, m_c and r_c seem more at peace with each other than usual.",
-			"m_c and r_c defended their Clan at the Gathering together.",
-			"m_c and r_c had a great time on a patrol."
+			"m_c and r_c defended their Clan at the Gathering together."
 		],
 		"reaction_random_cat": {
 			"like": "increase"
@@ -775,6 +815,34 @@
 			"medicine cat",
 			"deputy",
 			"leader"
+		]
+	},
+	{
+		"id": "dislike_de_high3",
+		"intensity": "high",
+		"interactions": [
+			"m_c and r_c worked well together on a patrol.",
+			"When they return from a patrol, m_c and r_c seem more at peace with each other than usual.",
+			"m_c and r_c had a great time on a patrol."
+		],
+		"reaction_random_cat": {
+			"like": "increase"
+		},
+		"main_status_constraint": [
+			"apprentice",
+			"warrior",
+			"deputy",
+			"leader",
+			"medicine cat apprentice",
+			"medicine cat"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"warrior",
+			"deputy",
+			"leader",
+			"medicine cat apprentice",
+			"medicine cat"
 		]
 	}
 ]

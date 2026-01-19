@@ -120,7 +120,7 @@ def set_display_mode(
         MANAGER.set_offset(offset)
         scripts.screens.screens_core.screens_core.rebuild_bgs()
         if old_scale != screen_scale:
-            from scripts.screens.all_screens import AllScreens
+            from scripts.screens import all_screens
             import scripts.screens.screens_core.screens_core
 
             game_settings_save(currentscreen=source_screen)
@@ -141,7 +141,7 @@ def set_display_mode(
             MANAGER.set_offset(offset)
             pygame.mouse.set_pos(mouse_pos)
 
-            AllScreens.rebuild_all_screens()
+            all_screens.rebuild_all_screens()
 
             scripts.screens.screens_core.screens_core.rebuild_core()
             from scripts import debug_console
@@ -149,15 +149,15 @@ def set_display_mode(
             debug_console.debug_mode.rebuild_console()
 
             screen_name = source_screen.name.replace(" ", "_")
-            new_screen: "Screens" = getattr(AllScreens, screen_name)
+            new_screen: "Screens" = all_screens.get_screen(screen_name)
             new_screen.screen_switches()
             if ingame_switch:
                 new_screen.display_change_load(curr_variable_dict)
     if curr_variable_dict is not None and show_confirm_dialog:
-        from scripts.screens.all_screens import AllScreens
+        from scripts.screens import all_screens
 
-        new_screen: "Screens" = getattr(
-            AllScreens, switch_get_value(Switch.cur_screen).replace(" ", "_")
+        new_screen: "Screens" = all_screens.get_screen(
+            switch_get_value(Switch.cur_screen).replace(" ", "_")
         )
         new_screen.display_change_load(curr_variable_dict)
 
