@@ -146,7 +146,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "reg_death": "m_c lost their life to a badger."
+                    "death": "m_c lost their life to a badger."
                 },
                 "frequency": 3
             }
@@ -412,7 +412,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "relationships": [
                     {
@@ -612,7 +612,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "relationships": [
                     {
@@ -680,7 +680,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             }
@@ -2010,8 +2010,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c got dehydrated trying to outrun the Thunderpath-runner bird.",
-                    "lead_death": "got dehydrated trying to outrun the Thunderpath-runner bird"
+                    "death": "m_c got dehydrated trying to outrun the Thunderpath-runner bird."
                 },
                 "relationships": [
                     {

@@ -171,13 +171,9 @@
           "description": "Controls the history-text for scars and death.",
           "type": "object",
           "properties": {
-            "reg_death": {
+            "death": {
               "type": "string",
-              "description": "Death history text for non-leaders. Whole sentence."
-            },
-            "lead_death": {
-              "type": "string",
-              "description": "Death history text for leaders. Sentence fragment."
+              "description": "Death history text. Whole sentence."
             },
             "scar": {
               "type": "string",

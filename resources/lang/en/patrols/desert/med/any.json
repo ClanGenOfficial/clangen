@@ -420,7 +420,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
+                    "death": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
                 },
                 "relationships": [
                     {

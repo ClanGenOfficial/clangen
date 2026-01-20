@@ -241,7 +241,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "relationships": [
                     {
@@ -441,7 +441,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "relationships": [
                     {
@@ -509,7 +509,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             }

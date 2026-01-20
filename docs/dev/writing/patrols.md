@@ -568,8 +568,7 @@ This is a good starting point for writing your own outcomes.
         }
     ],
     "history_text": {
-        "reg_death": "m_c died while on a patrol.",
-        "lead_death": "died on patrol",
+        "death": "m_c died while on a patrol.",
         "scars": "m_c was scarred on patrol"
     },
     "relationships": [
@@ -778,16 +777,13 @@ What each parameter does, and what the options are for outcomes.
 #### history_text: Dict[str, str]
 >Optional, but it should be included if any death or injury is indicated. Controls the history-text for scars and death. 
 >
->Format:
->
->```
->{text_type}: "custom history message"
+>[History Writing Guidelines](reference/index.md#writing-histories)
+> 
 >```
 
 | text_type    | "custom history message"                            |
 |--------------|-----------------------------------------------------|
-| "reg_death"  | Death history text for non-leaders. Whole sentence. |
-| "lead_death" | Death history text for leaders. Sentence fragment.  |
+| "death"      | Death history text. Whole sentence. |
 | "scar"       | Scar history. Whole sentence.                       |
 
 >

@@ -363,8 +363,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a rattlesnake.",
-                    "reg_death": "m_c succumbed to a rattlesnake bite.",
-                    "lead_death": "succumbed to a rattlesnake bite"
+                    "death": "m_c succumbed to a rattlesnake bite."
                 },
                 "relationships": [
                     {
@@ -584,8 +583,7 @@
                     "app1"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by the poison of a death tree raining down on {PRONOUN/m_c/object}.",
-                    "lead_death": "{VERB/m_c/were/was} killed by the poison of a death tree raining down on {PRONOUN/m_c/object}"
+                    "death": "m_c was killed by the poison of a death tree raining down on {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -624,8 +622,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat was scarred by the poison of the death tree.",
-                    "reg_death": "m_c died from burns caused by the poison of the death tree.",
-                    "lead_death": "died from burns caused by the poison of the death tree"
+                    "death": "m_c died from burns caused by the poison of the death tree."
                 },
                 "relationships": [
                     {
