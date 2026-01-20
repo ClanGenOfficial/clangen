@@ -1942,7 +1942,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c laughs to {PRONOUN/s_c/self} - of course it's vultures! {PRONOUN/s_c/subject/CAP} {VERB/s_c/catch/catches} the common buzzard, which has a feathered head, with ease, brings it home, and {VERB/s_c/are/is} disappointed when {PRONOUN/s_c/subject} {VERB/s_c/have/has} to explain the difference between this bird and the vultures.",
+                "text": "s_c laughs to {PRONOUN/s_c/self} - of course it's vultures! {PRONOUN/s_c/subject/CAP} {VERB/s_c/catch/catches} the common buzzard, which has a feathered head, with ease, {VERB/s_c/bring/brings} it home, and {VERB/s_c/are/is} disappointed when {PRONOUN/s_c/subject} {VERB/s_c/have/has} to explain the difference between this bird and the vultures.",
                 "exp": 40,
                 "stat_skill": [
                     "CLEVER,2",
