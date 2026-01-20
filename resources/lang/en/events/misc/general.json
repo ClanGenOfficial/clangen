@@ -10359,7 +10359,7 @@
         "status": ["apprentice", "mediator apprentice", "medicine cat apprentice", "mediator", "medicine cat", "warrior", "deputy"]
     },
     "new_cat": [
-        ["age:adult, youngadult, senioradult", "rogue", "meeting"]
+        ["age:adult", "rogue", "meeting"]
     ],
     "injury": [
         {
