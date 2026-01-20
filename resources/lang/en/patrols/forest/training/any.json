@@ -2743,14 +2743,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 1,
         "intro_text": "Out in the forest, p_l asks app1 if {PRONOUN/app1/subject} {VERB/app1/know/knows} why c_n chooses to live in the woods under the canopy, rather than any other environment.",
@@ -2763,40 +2757,38 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l told app1 the story of how c_n came to live beneath the canopy."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "p_l shows app1 how the trees protect from wind and rain, and how, like their ancestors have done for generations, c_n has learnt to jump between branches like the squirrels they hunt. app1 nods and points out that plains or beaches wouldn't have those advantages.",
+                "text": "p_l shows app1 how the trees protect from wind and rain, and how, like their ancestors have done for generations, c_n has learned to jump between branches like the squirrels they hunt. app1 nods and points out that plains or beaches wouldn't have those advantages.",
                 "exp": 15,
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["comfort", "trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l showed app1 why c_n chose this forest for their home."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2814,19 +2806,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["comfort", "trust"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l told app1 c_n's myths about their ancestors and the grove of redwood trees where they made their home."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2839,18 +2826,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l was annoyed when {PRONOUN/p_l/subject} tried to tell app1 about c_n's founding and app1 interrupted."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2868,18 +2854,82 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
+                        "mutual": true,
+                        "values": [ "like" ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "app1 stormed off when p_l tried to tell {PRONOUN/app1/object} a story about the Clan's founding."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_train_wareprey_lorelocked1",
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "normal adult": [1, 2],
+            "apprentice": [1, 2]
+        },
+        "frequency": 3,
+        "chance_of_success": 50,
+        "pl_skill_constraint": [
+            "LORE,1"
+        ],
+        "intro_text": "app1 watches the shrew scurry below {PRONOUN/app1/object}, lining up a flawless pounce from the tree branches. {PRONOUN/app1/subject/CAP} {VERB/app1/purr/purrs} with amusement towards {PRONOUN/app1/poss} hapless prey.",
+        "decline_text": "This is too easy - app1 declines to chase it, wanting harder prey.",
+        "success_outcomes": [
+            {
+                "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. app1 isn't just being disrespectful - {PRONOUN/app1/subject}{VERB/app1/'re/'s} being stupid. That's a hero's shrew, it'd be able to hold ten of app1 on its spine without sweating, and inedible besides, like all shrews. app1 nods and apologizes. Every hunt deserves respect.",
+                "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat cautioned from_cat to respect prey during a hunt, and from_cat learned {PRONOUN/from_cat/poss} lesson."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 leaps from on high, claws extended - but when {PRONOUN/app1/subject} {VERB/app1/land/lands} squarely on the shrew, it doesn't even flinch, and up close this prey smells foul and wretched. Maybe this wasn't the best idea...",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": ["respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/to_cat/subject} treated a shrew disrespectfully during a hunt."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2904,18 +2954,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                2,
-                6
-            ],
-            "healer cats": [
-                -1,
-                -1
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [2, 6],
+            "normal adult": [-1, -1 ]
         },
         "frequency": 1,
         "chance_of_success": 50,
@@ -3029,194 +3069,6 @@
             {
                 "text": "Who said that?! How dare they insult c_n's mightiest hunter! app1 yowls threats at the bushes as {PRONOUN/app1/subject} {VERB/app1/search/searches} for {PRONOUN/app1/poss} foe. Above, the crows laugh quietly to each other.",
                 "exp": 0,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_train_risingclangift_storylorelocked1",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "fst_hunt_gonetwolegtrap",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "normal adult": [
-                1,
-                5
-            ],
-            "apprentice": [
-                1,
-                4
-            ]
-        },
-        "frequency": 3,
-        "chance_of_success": 50,
-        "pl_skill_constraint": [
-            "STORY,1",
-            "LORE,1"
-        ],
-        "intro_text": "As they wander, searching for prey, p_l finds something far more dangerous, and calls the rest of the patrol over for a lesson.",
-        "decline_text": "No one wants to get anywhere near the dangerous traps, not even to learn about them.",
-        "success_outcomes": [
-            {
-                "text": "These Twoleg traps are powerful and dangerous, p_l instructs. Strong enough to hold a rabid fox and with gaps so small not even a flickering plume of scorching fire could escape, no cat should ever wander into their metal jaws. The lesson is worth the time it took away from hunting.",
-                "exp": 30,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "p_l has to pull app1 out by the tail, and loudly scolds {PRONOUN/app1/object} all the way back to camp. Twoleg traps aren't cool, and app1 has just proven {PRONOUN/app1/self} an idiot, not a brave warrior.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "trust",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_train_wareprey_lorelocked1",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 3,
-        "min_max_status": {
-            "normal adult": [
-                1,
-                5
-            ],
-            "apprentice": [
-                1,
-                5
-            ]
-        },
-        "frequency": 3,
-        "chance_of_success": 50,
-        "pl_skill_constraint": [
-            "LORE,1"
-        ],
-        "intro_text": "app1 watches the shrew scurry below {PRONOUN/app1/object}, lining up a flawless pounce from the tree branches. {PRONOUN/app1/subject/CAP} {VERB/app1/purr/purrs} with amusement towards {PRONOUN/app1/poss} hapless prey.",
-        "decline_text": "This is too easy - app1 declines to chase it, wanting harder prey.",
-        "success_outcomes": [
-            {
-                "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. app1 isn't just being disrespectful - {PRONOUN/app1/subject}{VERB/app1/'re/'s} being stupid. That's a hero's shrew, it'd be able to hold ten of app1 on its spine without sweating, and inedible besides, like all shrews. app1 nods, and apologies. Every hunt deserves respect.",
-                "exp": 30,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 10
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 leaps from on high, claws extended - but when {PRONOUN/app1/subject} {VERB/app1/land/lands} squarely on the shrew, it doesn't even flinch, and up close this prey smells foul and wretched. Maybe this wasn't the best idea...",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -10
-                    }
-                ],
                 "frequency": 4
             }
         ]
