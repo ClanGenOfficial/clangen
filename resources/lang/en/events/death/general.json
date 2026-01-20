@@ -8211,7 +8211,7 @@
     "history:": [
         {
             "cats": ["m_c"],
-            "reg_death": "m_c was murdered by a rogue named n_c:0, hired by r_c."
+            "death": "m_c was murdered by a rogue named n_c:0, hired by r_c."
         }
     ],
     "relationships": [
