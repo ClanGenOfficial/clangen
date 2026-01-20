@@ -10404,7 +10404,7 @@
         "skill": ["FIGHTER,2"]
     },
     "new_cat": [
-        ["age:adult, youngadult, senioradult", "rogue", "meeting", "dead"]
+        ["age:adult", "rogue", "meeting", "dead"]
     ],
     "relationships": [
         {
