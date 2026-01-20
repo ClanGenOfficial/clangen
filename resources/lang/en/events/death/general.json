@@ -8322,7 +8322,7 @@
         "backstory": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
     },
     "new_cat": [
-        ["meeting", "rogue", "age:adult, senioradult"]
+        ["meeting", "rogue", "age:senior adult"]
     ],
     "history:": [
         {
