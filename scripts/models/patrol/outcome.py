@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from typing import List, Union, Annotated
+from typing import Annotated, Dict, List, Tuple, Union
 
 from pydantic import BaseModel, Field
 from pydantic_core import MISSING
-
 from scripts.models.common.gather_cat import GatherCat
 from scripts.models.common.herb import Herb
+from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.new_cat import NewCat
 from scripts.models.common.skill import Skill
 from scripts.models.common.trait import Trait
@@ -26,7 +26,7 @@ class Outcome(BaseModel):
         Field(
             description="Controls how common an outcome is.",
             json_schema_extra={
-                "default": 20
+                "default": 4
             },  # Necessary so that JSON Schema still shows a default without making the field optional
         ),
     ]
@@ -57,6 +57,10 @@ class Outcome(BaseModel):
     )
     injury: Union[List[InjuryItem], MISSING] = Field(
         MISSING, description="Indicates which cats get injured and how."
+    )
+    min_max_status: Union[Dict[MinMaxStatusDictKey, Tuple[int, int]], MISSING] = Field(
+        MISSING,
+        description="Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
     )
     history_text: Union[HistoryText, MISSING] = Field(
         MISSING, description="Controls the history-text for scars and death."

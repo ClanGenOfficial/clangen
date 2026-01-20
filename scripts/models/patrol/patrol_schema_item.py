@@ -1,30 +1,18 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import List, Union, Optional, Dict, Literal
+from typing import Dict, List, Literal, Optional, Tuple, Union
 
 from pydantic import BaseModel, Field
 from pydantic_core import MISSING
-
 from scripts.models.common.biome import Biome
+from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.relationship_status import RelationshipStatus
 from scripts.models.common.season import Season
 from scripts.models.common.skill import Skill
 from scripts.models.patrol.outcome import Outcome
 from scripts.models.patrol.patrol_tag import PatrolTag
 from scripts.models.patrol.patrol_type import PatrolType
-
-
-class MinMaxStatusDictKey(Enum):
-    medicine_cat = "medicine cat"
-    warrior = "warrior"
-    leader = "leader"
-    deputy = "deputy"
-    apprentice = "apprentice"
-    medicine_cat_apprentice = "medicine cat apprentice"
-    healer_cats = "healer cats"
-    normal_adult = "normal adult"
-    all_apprentices = "all apprentices"
 
 
 class PatrolSchemaItem(BaseModel):
@@ -56,15 +44,15 @@ class PatrolSchemaItem(BaseModel):
     max_cats: int = Field(
         ..., description="Maximum total number of cats for this patrol"
     )
-    min_max_status: Union[Dict[MinMaxStatusDictKey, tuple[int, int]], MISSING] = Field(
+    min_max_status: Union[Dict[MinMaxStatusDictKey, Tuple[int, int]], MISSING] = Field(
         MISSING,
         description="Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
     )
     frequency: int = Field(
         ...,
-        description="Controls how common a patrol is. Normal patrols would be around 20. Lower numbers are less common and higher numbers are more common.",
+        description="Controls how common a patrol is. 4 is the most common, 1 is the least.",
         json_schema_extra={
-            "default": 20
+            "default": 4
         },  # Necessary so that JSON Schema still shows a default without making the field optional
     )
     chance_of_success: int = Field(
