@@ -8272,7 +8272,7 @@
     "history:": [
         {
             "cats": ["m_c"],
-            "lead": "died when a rogue named n_c:0 attacked {PRONOUN/m_c/object} on r_c's orders"
+            "death": "m_c died when a rogue named n_c:0 attacked {PRONOUN/m_c/object} on r_c's orders"
         }
     ],
     "relationships": [
