@@ -10371,8 +10371,7 @@
         {
             "cats": ["r_c"],
             "scar": "r_c was scarred after a rogue targeted {PRONOUN/r_c/object} in a fight.",
-            "reg_death": "r_c died in the wake of a fight with a rogue who seemed to be targeting {PRONOUN/r_c/object}.",
-            "lead_death": "died of wounds inflicted by a rogue in a seemingly-targeted attack"
+            "death": "r_c died in the wake of a fight with a rogue who seemed to be targeting {PRONOUN/r_c/object}."
         }
     ],
     "relationships": [
