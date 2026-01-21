@@ -8094,7 +8094,7 @@
         "age": ["young adult", "adult", "senior adult"]
     },
     "new_cat": [
-        ["meeting", "rogue", "age:adult"]
+        ["meeting", "rogue", "age:adult", "exists"]
     ],
     "history:": [
         {
@@ -8155,7 +8155,7 @@
         "age": ["young adult", "adult", "senior adult"]
     },
     "new_cat": [
-        ["meeting", "rogue", "age:adult"]
+        ["meeting", "rogue", "age:adult", "exists"]
     ],
     "history:": [
         {
@@ -8210,7 +8210,7 @@
         "backstory": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
     },
     "new_cat": [
-        ["meeting", "rogue", "age:senior adult"]
+        ["meeting", "rogue", "age:senior adult", "exists"]
     ],
     "history:": [
         {
@@ -8271,7 +8271,7 @@
         "age": ["young adult", "adult", "senior adult"]
     },
     "new_cat": [
-        ["age:adult", "backstory:disgraced1, ostracized_warrior, disgraced3"]
+        ["age:adult", "backstory:disgraced1, ostracized_warrior, disgraced3", "exists"]
     ],
     "history:": [
         {
