@@ -2972,7 +2972,7 @@
             "Has seen the same strange pair of blue eyes many times",
             "Has seen the same strange pair of amber eyes many times",
             "Feels a shadow fall across {PRONOUN/m_c/object}, cast by nothing",
-            "Glimpses a spectre in the territory"
+            "Glimpses a specter in the territory"
         ],
         "main_skill_constraint": [
             "GHOST,2"
