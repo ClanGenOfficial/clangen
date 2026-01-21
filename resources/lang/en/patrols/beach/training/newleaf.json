@@ -587,8 +587,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from complications caused by inhaling water after falling into a rock pool.",
-                    "lead_death": "complications caused by inhaling water after falling into a rock pool"
+                    "death": "m_c died from complications caused by inhaling water after falling into a rock pool."
                 },
                 "relationships": [
                     {

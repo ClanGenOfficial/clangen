@@ -26,9 +26,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was crushed by a falling branch.",
-                "lead_death": "{VERB/m_c/were/was} crushed by a falling branch.",
-                "scar": ""
+                "death": "m_c was crushed by a falling branch."
             }
         ]
     },
@@ -60,8 +58,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c fell out of a tree while trying to escape from a dog.",
-                "lead_death": "fell out of a tree while trying to escape a dog"
+                "death": "m_c fell out of a tree while trying to escape from a dog."
             }
         ]
     },
@@ -84,8 +81,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was crushed by a falling tree.",
-                "lead_death": "{VERB/m_c/were/was} crushed by a falling tree"
+                "death": "m_c was crushed by a falling tree."
             }
         ]
     },
@@ -114,7 +110,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was carried away by an owl."
+                "death": "m_c was carried away by an owl."
             }
         ]
     },
@@ -159,7 +155,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was grabbed by an owl, never to be seen again."
+                "death": "m_c was grabbed by an owl, never to be seen again."
             }
         ]
     }

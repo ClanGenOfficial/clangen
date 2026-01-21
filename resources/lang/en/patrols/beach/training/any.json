@@ -284,8 +284,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             },
@@ -310,8 +309,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             },
@@ -323,8 +321,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             },
@@ -346,8 +343,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             }
@@ -528,8 +524,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             },
@@ -551,8 +546,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             }
@@ -607,8 +601,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             },
@@ -630,8 +623,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from being trapped on patrol.",
-                    "reg_death": "m_c tragically died after being trapped on patrol.",
-                    "lead_death": "died after being trapped on patrol"
+                    "death": "m_c tragically died after being trapped on patrol."
                 },
                 "frequency": 3
             }
@@ -2714,8 +2706,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a small cut while out training, which has left a scar.",
-                    "reg_death": "m_c died from complications from a small cut.",
-                    "lead_death": "from complications from a small cut"
+                    "death": "m_c died from complications from a small cut."
                 },
                 "relationships": [
                     {

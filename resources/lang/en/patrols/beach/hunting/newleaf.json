@@ -363,8 +363,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a rattlesnake.",
-                    "reg_death": "m_c died after succumbing to a rattlesnake's venom.",
-                    "lead_death": "died after succumbing to a rattlesnake's venom"
+                    "death": "m_c died after succumbing to a rattlesnake's venom."
                 },
                 "relationships": [
                     {

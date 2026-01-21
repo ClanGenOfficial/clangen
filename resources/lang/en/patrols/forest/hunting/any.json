@@ -141,8 +141,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a porcupine while on patrol.",
-                    "reg_death": "m_c was killed by an angry porcupine while on patrol.",
-                    "lead_death": "killed by a porcupine"
+                    "death": "m_c was killed by an angry porcupine while on patrol."
                 },
                 "frequency": 3
             },
@@ -164,8 +163,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a porcupine while on patrol.",
-                    "reg_death": "m_c was killed by an angry porcupine while on patrol.",
-                    "lead_death": "killed by a porcupine"
+                    "death": "m_c was killed by an angry porcupine while on patrol."
                 },
                 "frequency": 3
             }
@@ -289,8 +287,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a porcupine while on patrol.",
-                    "reg_death": "m_c was killed by an angry porcupine while on patrol.",
-                    "lead_death": "killed by a porcupine"
+                    "death": "m_c was killed by an angry porcupine while on patrol."
                 },
                 "frequency": 3
             },
@@ -312,8 +309,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a porcupine while on patrol.",
-                    "reg_death": "m_c was killed by an angry porcupine while on patrol.",
-                    "lead_death": "killed by a porcupine"
+                    "death": "m_c was killed by an angry porcupine while on patrol."
                 },
                 "frequency": 3
             }
@@ -801,8 +797,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after an unfortunate encounter with a wolverine.",
-                    "reg_death": "m_c was killed after an unfortunate experience with a wolverine.",
-                    "lead_death": "killed by a wolverine"
+                    "death": "m_c was killed after an unfortunate experience with a wolverine."
                 },
                 "prey": [
                     "very_small"
@@ -885,8 +880,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed after an unfortunate experience with a wolverine.",
-                    "lead_death": "killed by a wolverine"
+                    "death": "m_c was killed after an unfortunate experience with a wolverine."
                 },
                 "frequency": 3
             }
@@ -1045,8 +1039,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
-                    "reg_death": "m_c was killed by a coyote protecting its scavenged meal.",
-                    "lead_death": "killed by a coyote"
+                    "death": "m_c was killed by a coyote protecting its scavenged meal."
                 },
                 "frequency": 3
             },
@@ -1068,8 +1061,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
-                    "reg_death": "m_c was killed by a coyote protecting its scavenged meal.",
-                    "lead_death": "killed by a coyote"
+                    "death": "m_c was killed by a coyote protecting its scavenged meal."
                 },
                 "frequency": 3
             }
@@ -1204,8 +1196,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
-                    "reg_death": "m_c was killed by a coyote protecting its scavenged meal.",
-                    "lead_death": "killed by a coyote"
+                    "death": "m_c was killed by a coyote protecting its scavenged meal."
                 },
                 "frequency": 3
             },
@@ -1227,8 +1218,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
-                    "reg_death": "m_c was killed by a coyote protecting its scavenged meal.",
-                    "lead_death": "killed by a coyote"
+                    "death": "m_c was killed by a coyote protecting its scavenged meal."
                 },
                 "frequency": 3
             }
@@ -1323,8 +1313,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by a coyote protecting its scavenged meal.",
-                    "lead_death": "killed by a coyote"
+                    "death": "m_c was killed by a coyote protecting its scavenged meal."
                 },
                 "frequency": 3
             }
@@ -1459,8 +1448,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a wolf pack protecting its scavenged meal.",
-                    "reg_death": "m_c was killed by a wolf pack protecting its meal.",
-                    "lead_death": "killed by a wolf pack"
+                    "death": "m_c was killed by a wolf pack protecting its meal."
                 },
                 "frequency": 3
             },
@@ -1482,8 +1470,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a wolf protecting its scavenged meal.",
-                    "reg_death": "m_c was killed by a wolf protecting its meal.",
-                    "lead_death": "killed by a wolf"
+                    "death": "m_c was killed by a wolf protecting its meal."
                 },
                 "frequency": 3
             }
@@ -1617,8 +1604,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by a wolf pack protecting its meal.",
-                    "lead_death": "killed by a wolf pack"
+                    "death": "m_c was killed by a wolf pack protecting its meal."
                 },
                 "frequency": 3
             }
@@ -1713,8 +1699,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by a wolf pack protecting its meal.",
-                    "lead_death": "killed by a wolf pack"
+                    "death": "m_c was killed by a wolf pack protecting its meal."
                 },
                 "frequency": 3
             }
@@ -2094,8 +2079,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured as an apprentice during a hunting assessment.",
-                    "reg_death": "m_c died after a minor injury progressed to something worse.",
-                    "lead_death": "died after a minor injury progressed to something worse"
+                    "death": "m_c died after a minor injury progressed to something worse."
                 },
                 "frequency": 3
             }
@@ -2498,8 +2482,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a fox.",
-                    "reg_death": "m_c died from a fox bite.",
-                    "lead_death": "died from a fox bite"
+                    "death": "m_c died from a fox bite."
                 },
                 "prey": [
                     "very_small"
@@ -3683,8 +3666,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             },
@@ -3706,8 +3688,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             }
@@ -3810,8 +3791,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             },
@@ -3833,8 +3813,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             }
@@ -3930,8 +3909,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "This cat was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "This cat was hit by a monster and killed."
                 },
                 "frequency": 4
             },
@@ -3953,8 +3931,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "This cat was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "This cat was hit by a monster and killed."
                 },
                 "frequency": 4
             }
@@ -4057,8 +4034,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             },
@@ -4080,8 +4056,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             }
@@ -5500,8 +5475,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "This cat died after eating tainted prey.",
-                    "lead_death": "after eating tainted prey"
+                    "death": "This cat died after eating tainted prey."
                 },
                 "frequency": 3
             }
@@ -5958,8 +5932,7 @@
                 ],
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a red fox.",
-                    "reg_death": "m_c died from a red fox bite.",
-                    "lead_death": "died from a red fox bite" 
+                    "death": "m_c died from a red fox bite."
                 },
                 "relationships": [
                     {
@@ -5997,9 +5970,8 @@
                 ],
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a red fox.",
-                    "reg_death": "m_c died from a red fox bite.",
-                    "lead_death": "died from a red fox bite"
-                 },
+                    "death": "m_c died from a red fox bite."
+                },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -6286,10 +6258,9 @@
                         "scars": ["NECKBITE"]
                     }
                 ],
-                "history_text": { 
+                "history_text": {
                     "scar": "m_c carries a scar from a fight with a gray fox.",
-                    "reg_death": "m_c died from a gray fox bite.",
-                    "lead_death": "died from a gray fox bite"
+                    "death": "m_c died from a gray fox bite."
                 },
                 "relationships": [
                     {
@@ -8027,14 +7998,13 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died of shock after {PRONOUN/m_c/poss} encounter with the Dover Demon.",
-                    "lead_death": "died of shock from an encounter with the Dover Demon"
+                    "death": "m_c died of shock after {PRONOUN/m_c/poss} encounter with the Dover Demon."
                 }
             }
         ]
     },
     {
-        "patrol_id": "fst_hunt_herb_warriorgreenleaf1",
+        "patrol_id": "fst_hunt_herb_warrior1",
         "biome": [
             "forest"
         ],

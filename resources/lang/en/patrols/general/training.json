@@ -14481,8 +14481,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died in a terrible training accident, foretold by a Death's Head Moth.",
-                    "lead_death": "died in a terrible training accident, foretold by a Death's Head Moth"
+                    "death": "m_c died in a terrible training accident, foretold by a Death's Head Moth."
                 },
                 "frequency": 4
             }

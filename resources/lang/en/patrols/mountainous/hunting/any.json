@@ -797,8 +797,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a fox.",
-                    "reg_death": "m_c was killed by a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a wolverine"
+                    "death": "m_c was killed by a wolverine."
                 },
                 "frequency": 3
             },
@@ -820,8 +819,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a fox.",
-                    "reg_death": "m_c was killed by a fox.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a fox"
+                    "death": "m_c was killed by a fox."
                 },
                 "frequency": 3
             }
@@ -892,8 +890,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a wolverine.",
-                    "reg_death": "m_c was killed by a wolverine while patrolling alone.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator while patrolling alone"
+                    "death": "m_c was killed by a wolverine while patrolling alone."
                 },
                 "frequency": 3
             },
@@ -915,8 +912,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a fox.",
-                    "reg_death": "m_c was killed by a fox while patrolling alone.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator while patrolling alone"
+                    "death": "m_c was killed by a fox while patrolling alone."
                 },
                 "frequency": 3
             }
@@ -1331,8 +1327,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             },
@@ -1354,8 +1349,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             }
@@ -1457,8 +1451,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             },
@@ -1480,8 +1473,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             }
@@ -1578,8 +1570,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was taken as the Mothman's snack.",
-                    "lead_death": "{VERB/m_c/were/was} taken as the Mothman's snack"
+                    "death": "m_c was taken as the Mothman's snack."
                 },
                 "art": "mothman_OUTCOME",
                 "frequency": 4
@@ -1591,8 +1582,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman",
-                    "lead_death": "{VERB/m_c/were/was} killed by the collapsing mountain slopes after {PRONOUN/m_c/subject} saw the Mothman"
+                    "death": "m_c was killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman"
                 },
                 "art": "mothman_OUTCOME",
                 "frequency": 4
@@ -1647,8 +1637,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from the yellowcough brought to the Clan by the Belled Buzzard.",
-                    "lead_death": "died from the yellowcough brought by the Belled Buzzard"
+                    "death": "m_c died from the yellowcough brought to the Clan by the Belled Buzzard."
                 },
                 "art": "belledbuzzard_OUTCOME",
                 "prey": [
@@ -2327,8 +2316,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "This cat died after eating tainted prey.",
-                    "lead_death": "after eating tainted prey"
+                    "death": "This cat died after eating tainted prey."
                 },
                 "frequency": 3
             }
@@ -2368,7 +2356,7 @@
         "decline_text": "A songbird on a branch overhead sings, and the grouse startle and take flight. Dung.",
         "success_outcomes": [
             {
-                "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember those who've been hurt by grouse - beaks tearing deep, their eyes scratched, limping from sharp-toothed claws. app1 nods, and apologies. Every hunt deserves respect.",
+                "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember those who've been hurt by grouse - beaks tearing deep, their eyes scratched, limping from sharp-toothed claws. app1 nods and apologizes. Every hunt deserves respect.",
                 "exp": 30,
                 "prey": [
                     "medium"
@@ -2435,8 +2423,7 @@
                     ],
                     "history_text": {
                         "scar": "m_c was scarred after underestimating a grouse.",
-                        "reg_death": "m_c died after underestimating a grouse on a hunt as a foolish apprentice.",
-                        "lead_death": "from a grouse encountered on a hunt as a foolish apprentice"
+                        "death": "m_c died after underestimating a grouse on a hunt as a foolish apprentice."
                         },
                         "frequency": 1
                 }

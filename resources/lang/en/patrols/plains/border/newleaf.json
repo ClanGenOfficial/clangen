@@ -198,8 +198,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "reg_death": "This cat was killed after continuing to patrol the far border while injured by a young, inexperienced cougar.",
-                    "lead_death": "by a cougar while patrolling the far border"
+                    "death": "This cat was killed after continuing to patrol the far border while injured by a young, inexperienced cougar."
                 },
                 "frequency": 4
             }
@@ -426,8 +425,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "This cat died to lead a coyote away from c_n.",
-                    "lead_death": "died to lead a coyote away from c_n"
+                    "death": "This cat died to lead a coyote away from c_n."
                 },
                 "relationships": [
                     {
@@ -466,8 +464,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat is scarred from bravely leading a coyote away from the Clan.",
-                    "reg_death": "This cat died from injuries after trying to lead a coyote away from c_n.",
-                    "lead_death": "died from injuries after trying to lead a coyote away from c_n"
+                    "death": "This cat died from injuries after trying to lead a coyote away from c_n."
                 },
                 "relationships": [
                     {
@@ -510,8 +507,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat bears a mangled leg after thinking {PRONOUN/m_c/subject} could take on a coyote by {PRONOUN/m_c/self}",
-                    "reg_death": "This cat died from {PRONOUN/m_c/poss} injuries after trying to take on a coyote alone.",
-                    "lead_death": "died from {PRONOUN/m_c/poss} injuries after trying to take on a coyote alone"
+                    "death": "This cat died from {PRONOUN/m_c/poss} injuries after trying to take on a coyote alone."
                 },
                 "relationships": [
                     {
@@ -544,8 +540,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "reg_death": "This cat died after trying to take on a coyote alone.",
-                    "lead_death": "died after trying to take on a coyote alone"
+                    "death": "This cat died after trying to take on a coyote alone."
                 },
                 "frequency": 3
             },
@@ -562,8 +557,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "reg_death": "This cat died by the jaws of coyote after freezing up.",
-                    "lead_death": "died by the jaws of a coyote after freezing up."
+                    "death": "This cat died by the jaws of coyote after freezing up."
                 },
                 "frequency": 3
             },
@@ -583,8 +577,7 @@
                     "oblivious"
                 ],
                 "history_text": {
-                    "reg_death": "This cat died due to not paying attention to {PRONOUN/m_c/poss} surroundings.",
-                    "lead_death": "died due to not paying attention to {PRONOUN/m_c/poss} surroundings"
+                    "death": "This cat died due to not paying attention to {PRONOUN/m_c/poss} surroundings."
                 },
                 "frequency": 4
             }
@@ -902,8 +895,7 @@
                 ],
                 "history_text": {
                     "scar": "A nursing coyote scarred r_c's pelt.",
-                    "reg_death": "r_c was killed by trying to fight a nursing coyote with a small patrol.",
-                    "lead_death": "trying to fight a nursing coyote with a small patrol"
+                    "death": "r_c was killed by trying to fight a nursing coyote with a small patrol."
                 },
                 "relationships": [
                     {
@@ -949,8 +941,7 @@
                 ],
                 "history_text": {
                     "scar": "Driving off coyotes left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders.",
-                    "lead_death": "from injuries gotten keeping coyotes away from c_n's borders"
+                    "death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
                 },
                 "relationships": [
                     {
@@ -1042,8 +1033,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "reg_death": "This cat died to keep the Clan safe from a large coyote.",
-                    "lead_death": "died to keep c_n safe from a large coyote"
+                    "death": "This cat died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
                     {
@@ -1082,8 +1072,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "reg_death": "This cat died to keep the Clan safe from a large coyote.",
-                    "lead_death": "died to keep c_n safe from a large coyote"
+                    "death": "This cat died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
                     {
@@ -1454,8 +1443,7 @@
                 ],
                 "history_text": {
                     "scar": "A nursing coyote scarred r_c's pelt.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
-                    "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
+                    "death": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
                 },
                 "relationships": [
                     {
@@ -1644,8 +1632,7 @@
                 ],
                 "history_text": {
                     "scar": "A nursing coyote scarred r_c.",
-                    "reg_death": "r_c was killed by trying to fight a nursing coyote with a small patrol.",
-                    "lead_death": "trying to fight a nursing coyote with a small patrol"
+                    "death": "r_c was killed by trying to fight a nursing coyote with a small patrol."
                 },
                 "relationships": [
                     {
@@ -1691,8 +1678,7 @@
                 ],
                 "history_text": {
                     "scar": "Driving off coyotes left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders.",
-                    "lead_death": "from injuries gotten keeping coyotes away from c_n's borders"
+                    "death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
                 },
                 "relationships": [
                     {
@@ -1751,8 +1737,7 @@
                 ],
                 "history_text": {
                     "scar": "Driving off coyotes left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders.",
-                    "lead_death": "from injuries gotten keeping coyotes away from c_n's borders"
+                    "death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
                 },
                 "relationships": [
                     {
@@ -1804,8 +1789,7 @@
                 ],
                 "history_text": {
                     "scar": "A coyote encounter left its scars on r_c.",
-                    "reg_death": "r_c died from injuries sustained keeping coyotes away from c_n's borders.",
-                    "lead_death": "from injuries sustained keeping coyotes away from c_n's borders"
+                    "death": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
                 },
                 "frequency": 4
             },
@@ -1855,8 +1839,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "reg_death": "This cat died to keep the Clan safe from a large coyote.",
-                    "lead_death": "died to keep c_n safe from a large coyote"
+                    "death": "This cat died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
                     {
@@ -1895,8 +1878,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "reg_death": "This cat died to keep the Clan safe from a large coyote.",
-                    "lead_death": "died to keep c_n safe from a large coyote"
+                    "death": "This cat died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
                     {
@@ -2331,8 +2313,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred up by a very indignant burrowing owl.",
-                    "reg_death": "m_c died after injuries {PRONOUN/m_c/subject} got from a burrowing owl progressed to something worse.",
-                    "lead_death": "after injuries {PRONOUN/m_c/subject} got from a burrowing owl progressed to something worse"
+                    "death": "m_c died after injuries {PRONOUN/m_c/subject} got from a burrowing owl progressed to something worse."
                 },
                 "relationships": [
                     {
@@ -2411,8 +2392,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "relationships": [
                     {
@@ -2451,8 +2431,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "relationships": [
                     {
@@ -2871,8 +2850,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred up by a very indignant burrowing owl.",
-                    "reg_death": "m_c died after injuries {PRONOUN/m_c/subject} got from a burrowing owl progressed to something worse.",
-                    "lead_death": "after injuries {PRONOUN/m_c/subject} got from a burrowing owl progressed to something worse"
+                    "death": "m_c died after injuries {PRONOUN/m_c/subject} got from a burrowing owl progressed to something worse."
                 },
                 "relationships": [
                     {
@@ -2959,8 +2937,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c's lungs haven't been the same since {PRONOUN/m_c/subject} fell into a sinkhole and were buried as an apprentice.",
-                    "reg_death": "m_c died after from complications from falling into a sinkhole and being buried as an apprentice.",
-                    "lead_death": "from complications from falling into a sinkhole and being buried as an apprentice"
+                    "death": "m_c died after from complications from falling into a sinkhole and being buried as an apprentice."
                 },
                 "relationships": [
                     {
@@ -2989,8 +2966,7 @@
                     "app1"
                 ],
                 "history_text": {
-                    "reg_death": "This cat was killed as an apprentice after tripping into a sinkhole that contained a predator.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed as an apprentice after tripping into a sinkhole that contained a predator."
                 },
                 "relationships": [
                     {
@@ -3384,8 +3360,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "This cat was killed by the complications following a shocking discovery on patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed by the complications following a shocking discovery"
+                    "death": "This cat was killed by the complications following a shocking discovery on patrol."
                 },
                 "frequency": 2
             },
@@ -3418,8 +3393,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
                 "relationships": [
                     {
@@ -3459,8 +3433,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
                 "relationships": [
                     {
@@ -3518,8 +3491,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "frequency": 2
             },
@@ -3542,8 +3514,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "frequency": 2
             }
@@ -3997,8 +3968,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "This cat was killed by the complications following a shocking discovery on patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed by the complications following a shocking discovery"
+                    "death": "This cat was killed by the complications following a shocking discovery on patrol."
                 },
                 "frequency": 2
             },
@@ -4107,8 +4077,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
                 "relationships": [
                     {
@@ -4188,8 +4157,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
                 "relationships": [
                     {
@@ -4267,8 +4235,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "m_c was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a wolverine hiding in its burrow"
+                    "death": "m_c was killed after an unfortunate meeting with a wolverine."
                 },
                 "frequency": 4
             },
@@ -4339,8 +4306,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed saving an older warrior from a badger as an apprentice.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed saving an older warrior from a badger as an apprentice."
                 },
                 "frequency": 4
             },
@@ -4363,8 +4329,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "frequency": 2
             }
@@ -4500,8 +4465,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "This cat was killed by the complications following a shocking discovery on patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed by the complications following a shocking discovery"
+                    "death": "This cat was killed by the complications following a shocking discovery on patrol."
                 },
                 "frequency": 2
             },
@@ -4564,8 +4528,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
                 "frequency": 4
             },
@@ -4597,8 +4560,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wolverine in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "frequency": 4
             },
@@ -4612,8 +4574,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wolverine in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "frequency": 4
             },
@@ -4636,8 +4597,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
                 "frequency": 4
             }
@@ -4867,8 +4827,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wrathful prairie dog.",
-                    "reg_death": "This cat was killed after wounds given by a prairie dog progressed to something worse.",
-                    "lead_death": "after wounds given by a prairie dog progressed to something worse"
+                    "death": "This cat was killed after wounds given by a prairie dog progressed to something worse."
                 },
                 "frequency": 4
             },
@@ -4898,8 +4857,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wrathful prairie dog.",
-                    "reg_death": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have.",
-                    "lead_death": "patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have"
+                    "death": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have."
                 },
                 "frequency": 4
             },
@@ -4917,8 +4875,7 @@
                 ],
                 "history_text": {
                     "scar": "",
-                    "reg_death": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have.",
-                    "lead_death": "patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have"
+                    "death": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have."
                 },
                 "frequency": 4
             },
@@ -4972,8 +4929,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
                 "frequency": 4
             },
@@ -5003,8 +4959,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wolverine in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "frequency": 4
             },
@@ -5018,8 +4973,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wolverine in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "frequency": 1
             },
@@ -5042,8 +4996,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
                 "frequency": 1
             }
@@ -5382,8 +5335,7 @@
                 ],
                 "history_text": {
                     "scar": "",
-                    "reg_death": "m_c was killed when another apprentice made the wrong judgement call on a border patrol.",
-                    "lead_death": "another apprentice made the wrong judgement call on a border patrol"
+                    "death": "m_c was killed when another apprentice made the wrong judgement call on a border patrol."
                 },
                 "relationships": [
                     {
@@ -5454,8 +5406,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wrathful prairie dog.",
-                    "reg_death": "This cat was killed after wounds given by a prairie dog progressed to something worse.",
-                    "lead_death": "after wounds given by a prairie dog progressed to something worse"
+                    "death": "This cat was killed after wounds given by a prairie dog progressed to something worse."
                 },
                 "frequency": 4
             },
@@ -5488,8 +5439,7 @@
                 ],
                 "history_text": {
                     "scar": "",
-                    "reg_death": "This cat was killed by the shock of watching fellow apprentices be kidnapped by Twolegs.",
-                    "lead_death": "the shock of watching fellow apprentices be kidnapped by Twolegs"
+                    "death": "This cat was killed by the shock of watching fellow apprentices be kidnapped by Twolegs."
                 },
                 "frequency": 3
             },
@@ -5514,8 +5464,7 @@
                 ],
                 "history_text": {
                     "scar": "",
-                    "reg_death": "This cat was killed as an apprentice, patrolling the border and investigating things {PRONOUN/m_c/subject} shouldn't have.",
-                    "lead_death": "patrolling the border and investigating things {PRONOUN/m_c/subject} shouldn't have"
+                    "death": "This cat was killed as an apprentice, patrolling the border and investigating things {PRONOUN/m_c/subject} shouldn't have."
                 },
                 "frequency": 4
             },
@@ -5537,8 +5486,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wolverine in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
                 },
                 "frequency": 4
             },
@@ -5552,8 +5500,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wolverine in its sett.",
-                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
                 "frequency": 4
             },
@@ -5567,8 +5514,7 @@
                 ],
                 "history_text": {
                     "scar": "",
-                    "reg_death": "This cat was killed as an apprentice, after being dared to jump into an unknown burrow.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed as an apprentice, after being dared to jump into an unknown burrow."
                 },
                 "frequency": 4
             },
@@ -5605,8 +5551,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger as an apprentice, after being dared to leap down into an unknown burrow.",
-                    "reg_death": "This cat was killed as an apprentice, after being dared to jump into an unknown burrow.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                    "death": "This cat was killed as an apprentice, after being dared to jump into an unknown burrow."
                 },
                 "frequency": 4
             }

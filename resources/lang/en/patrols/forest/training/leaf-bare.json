@@ -208,8 +208,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
-                    "reg_death": "m_c was soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}.",
-                    "lead_death": "soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}"
+                    "death": "m_c was soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -356,8 +355,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
-                    "reg_death": "m_c was soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}.",
-                    "lead_death": "soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}"
+                    "death": "m_c was soaked in leaf-bare, eventually killing {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {

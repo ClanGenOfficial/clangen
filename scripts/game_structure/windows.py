@@ -1149,99 +1149,29 @@ class KillCat(UIWindow):
             container=self,
         )
 
-        if self.the_cat.status.is_leader:
-            self.done_button = UISurfaceImageButton(
-                ui_scale(pygame.Rect((347, 152), (77, 30))),
-                "buttons.done_lower",
-                get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
-                object_id="@buttonstyles_squoval",
-                manager=MANAGER,
-                container=self,
-            )
+        self.initial = i18n.t("windows.default_death_pronounless")
+        self.prompt = None
 
-            self.prompt = process_text(i18n.t("windows.death_prompt"), cat_dict)
-            self.initial = process_text(i18n.t("windows.default_death"), cat_dict)
-
-            self.all_lives_check.hide()
-            self.life_text = pygame_gui.elements.UITextBox(
-                "windows.all_lives_leader",
-                ui_scale(pygame.Rect((60, 147), (130, -1))),
-                object_id="#text_box_30_horizleft",
-                manager=MANAGER,
-                container=self,
-            )
-            self.beginning_prompt = pygame_gui.elements.UITextBox(
-                self.prompt,
-                ui_scale(pygame.Rect((25, 30), (450, 40))),
-                object_id="#text_box_30_horizleft",
-                manager=MANAGER,
-                container=self,
-            )
-
-            self.death_entry_box = pygame_gui.elements.UITextEntryBox(
-                ui_scale(pygame.Rect((25, 65), (400, 75))),
-                initial_text=self.initial,
-                object_id="text_entry_line",
-                manager=MANAGER,
-                container=self,
-            )
-
-        elif self.the_cat.history.get_death_or_scars(death=True):
-            # This should only occur for retired leaders.
-
-            self.prompt = process_text(i18n.t("windows.death_prompt"), cat_dict)
-            self.initial = process_text(
-                i18n.t("windows.default_leader_death"), cat_dict
-            )
+        if not cat.status.is_leader:
             self.all_lives_check.hide()
             self.one_life_check.hide()
 
-            self.beginning_prompt = pygame_gui.elements.UITextBox(
-                self.prompt,
-                ui_scale(pygame.Rect((25, 30), (200, -1))),
-                object_id="#text_box_30_horizleft",
-                manager=MANAGER,
-                container=self,
-            )
+        self.death_entry_box = pygame_gui.elements.UITextEntryBox(
+            ui_scale(pygame.Rect((25, 55), (400, 75))),
+            initial_text=self.initial,
+            object_id="text_entry_line",
+            manager=MANAGER,
+            container=self,
+        )
 
-            self.death_entry_box = pygame_gui.elements.UITextEntryBox(
-                ui_scale(pygame.Rect((25, 65), (400, 75))),
-                initial_text=self.initial,
-                object_id="text_entry_line",
-                manager=MANAGER,
-                container=self,
-            )
-
-            self.done_button = UISurfaceImageButton(
-                ui_scale(pygame.Rect((186, 152), (77, 30))),
-                "buttons.done_lower",
-                get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
-                object_id="@buttonstyles_squoval",
-                manager=MANAGER,
-                container=self,
-            )
-        else:
-            self.initial = i18n.t("windows.default_death_pronounless")
-            self.prompt = None
-            self.all_lives_check.hide()
-            self.one_life_check.hide()
-
-            self.death_entry_box = pygame_gui.elements.UITextEntryBox(
-                ui_scale(pygame.Rect((25, 55), (400, 75))),
-                initial_text=self.initial,
-                object_id="text_entry_line",
-                manager=MANAGER,
-                container=self,
-            )
-
-            self.done_button = UISurfaceImageButton(
-                ui_scale(pygame.Rect((186, 152), (77, 30))),
-                "buttons.done_lower",
-                get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
-                object_id="@buttonstyles_squoval",
-                manager=MANAGER,
-                container=self,
-            )
+        self.done_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((186, 152), (77, 30))),
+            "buttons.done_lower",
+            get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+            container=self,
+        )
         self.set_blocking(True)
 
     def process_event(self, event):
@@ -1255,15 +1185,6 @@ class KillCat(UIWindow):
                     self.death_entry_box.get_text(),
                 )
                 if self.the_cat.status.is_leader:
-                    if death_message.startswith("was"):
-                        death_message = death_message.replace(
-                            "was", "{VERB/m_c/were/was}", 1
-                        )
-                    elif death_message.startswith("were"):
-                        death_message = death_message.replace(
-                            "were", "{VERB/m_c/were/was}", 1
-                        )
-
                     if self.take_all:
                         game.clan.leader_lives = 0
                     else:
