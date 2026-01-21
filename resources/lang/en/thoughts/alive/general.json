@@ -344,6 +344,16 @@
             "Chats with r_c about what it's like to be a medicine cat",
             "Is worrying about asking r_c for help for something minor"
         ],
+        "main_status_constraint": [
+            "warrior",
+            "apprentice",
+            "deputy",
+            "leader",
+            "mediator apprentice",
+            "mediator",
+            "elder",
+            "kitten"
+        ],
         "random_status_constraint": [
             "medicine cat"
         ]
@@ -898,6 +908,15 @@
         "main_trait_constraint": [
             "careful"
         ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "mediator apprentice",
+            "mediator",
+            "deputy",
+            "leader",
+            "kitten"
+        ],
         "random_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
@@ -1241,7 +1260,8 @@
             "warrior",
             "mediator",
             "deputy",
-            "leader"
+            "leader",
+            "elder"
         ],
         "random_living_status": [
             "living"
@@ -1679,6 +1699,15 @@
         "id": "loving_to_living_apprentices",
         "thoughts": [
             "Is offering any help {PRONOUN/m_c/subject} can to the medicine cat"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder",
+            "mediator apprentice",
+            "mediator"
         ],
         "random_status_constraint": [
             "medicine cat apprentice",
@@ -2292,7 +2321,8 @@
         "main_status_constraint": [
             "warrior",
             "deputy",
-            "leader"
+            "leader",
+            "apprentice"
         ],
         "main_trait_constraint": [
             "thoughtful"
@@ -2338,6 +2368,15 @@
         "thoughts": [
             "Is grumbling as {PRONOUN/m_c/subject} {VERB/m_c/carry/carries} out a task for the medicine cat",
             "Snacks on catmint when r_c isn't looking"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder",
+            "mediator apprentice",
+            "mediator"
         ],
         "random_status_constraint": [
             "medicine cat",
@@ -2402,7 +2441,6 @@
     {
         "id": "wise_gen",
         "thoughts": [
-            "Has a suggestion for the Clan leader",
             "Is grooming {PRONOUN/m_c/self} thoughtfully",
             "Is explaining the truth to a Clanmate that said something incorrect",
             "Solves a problem by thinking back to another time the exact same thing happened",
@@ -2422,6 +2460,29 @@
         ],
         "main_trait_constraint": [
             "wise"
+        ]
+    },
+    {
+        "id": "wise_to_leader",
+        "thoughts": [
+            "Has a suggestion for r_c",
+            "Offers r_c sage advice about leadership"
+        ],
+        "main_trait_constraint": [
+            "wise"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "elder",
+            "mediator apprentice",
+            "mediator",
+            "medicine cat apprentice",
+            "medicine cat"
+        ],
+        "random_status_constraint": [
+            "leader"
         ]
     },
     {
@@ -2556,6 +2617,15 @@
         ],
         "main_skill_constraint": [
             "STAR,1"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder",
+            "mediator apprentice",
+            "mediator"
         ],
         "random_status_constraint": [
             "medicine cat",
@@ -3217,7 +3287,7 @@
         ]
     },
     {
-        "id": "working_adult_to_alive_med_cat",
+        "id": "working_to_alive_med_cat",
         "thoughts": [
             "Recounts the Gathering for r_c and {PRONOUN/r_c/poss} patients",
             "Brought r_c a berry to identify",
@@ -3228,7 +3298,10 @@
         "main_status_constraint": [
             "warrior",
             "deputy",
-            "leader"
+            "leader",
+            "apprentice",
+            "mediator",
+            "mediator apprentice"
         ],
         "random_status_constraint": [
             "medicine cat"
