@@ -840,10 +840,10 @@
                 "frequency": 4
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} s_c harshly that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have time for some mouse-brain who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out from the loose rocks.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/r_c/subject} {VERB/r_c/dig/digs} {PRONOUN/r_c/self} out from the loose rocks.",
                 "exp": 0,
                 "can_have_stat": [
-                    "r_c"
+                    "p_l"
                 ],
                 "stat_trait": [
                     "ambitious",
