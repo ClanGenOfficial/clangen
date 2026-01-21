@@ -167,7 +167,7 @@ class Status:
         Generates initial group history for a cat
         You HAVE to include either an age or a rank for this to work correctly
         :param age: The age of the cat.
-        :param social: The social standing of the cat (rogue, loner, clancat, ect.)
+        :param social: The social standing of the cat (rogue, loner, clancat, etc.)
         :param group_ID: The group_ID for the group this cat belongs to
         :param rank: This cat's rank. If the cat is outside the Clan, this will match it's social.
         :param disable_random: If true, will provide deterministic outputs
@@ -497,7 +497,7 @@ class Status:
         :param age: The current age stage of the cat, required if cat is going into a group that will require a rank
         change
         :param standing_with_past_group: If leaving a group to join the new one, this should be used to indicate how the
-        last group views the cat (exiled, lost, ect.) Defaults to KNOWN if cat was in a group.
+        last group views the cat (exiled, lost, etc.) Defaults to KNOWN if cat was in a group.
         """
         new_group_type = game.used_group_IDs[new_group_ID]
         # if they weren't in a group, they don't need to update standing

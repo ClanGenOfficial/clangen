@@ -152,7 +152,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
             tool_tip_text="screens.leader_den.help_tooltip",
         )
-        # This is here incase the leader comes back
+        # This is here in case the leader comes back
         self.no_leader = False
 
         if not game.clan.leader or not game.clan.leader.status.alive_in_player_clan:

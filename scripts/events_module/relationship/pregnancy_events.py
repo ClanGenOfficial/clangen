@@ -477,7 +477,7 @@ class Pregnancy_Events:
             random.random() * death_chance
         ):  # chance for a cat to die during childbirth
             possible_events = events["birth"]["death"]
-            # just makin sure meds aren't mentioned if they aren't around or if they are a parent
+            # just making sure meds aren't mentioned if they aren't around or if they are a parent
             meds = find_alive_cats_with_rank(
                 Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
             )
@@ -518,7 +518,7 @@ class Pregnancy_Events:
                     )
                 cat.history.add_possible_history("blood loss", death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
-                # just makin sure meds aren't mentioned if they aren't around or if they are a parent
+                # just making sure meds aren't mentioned if they aren't around or if they are a parent
                 meds = find_alive_cats_with_rank(
                     Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE]
                 )
@@ -728,7 +728,7 @@ class Pregnancy_Events:
     def determine_love_affair(cat, mate, mate_relation, samesex):
         """
         Function to handle everything around love affairs.
-        Will return a second parent if a love affair is triggerd, and none otherwise.
+        Will return a second parent if a love affair is triggered, and none otherwise.
         """
 
         highest_romantic_relation = get_highest_romantic_relation(

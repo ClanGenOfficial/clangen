@@ -107,7 +107,7 @@ class _DiscordRPC(threading.Thread):
                     "Failed to get image string, game may not be fully loaded yet. "
                     "Don't worry, it will fix itself. Hopefully."
                 )
-                img_str = "discord"  # fallback incase the game isn't loaded yet
+                img_str = "discord"  # fallback in case the game isn't loaded yet
                 img_text = "Clangen!!"
 
             # Example: beach_greenleaf_camp1_dark

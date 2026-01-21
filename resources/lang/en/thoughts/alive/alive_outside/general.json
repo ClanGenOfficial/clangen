@@ -79,7 +79,7 @@
             "Panics at the idea Starclan may not be watching over {PRONOUN/m_c/object} out here",
             "Asked a loner for directions",
             "Asked a kittypet for directions",
-            "Asked a rouge for directions"
+            "Asked a rogue for directions"
         ],
         "main_status_constraint": [
             "apprentice",

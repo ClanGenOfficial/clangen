@@ -366,7 +366,7 @@ def json_load():
             switch_set_value(Switch.traceback, e)
             raise
 
-        # Save integrety checks
+        # Save integrity checks
         if constants.CONFIG["save_load"]["load_integrity_checks"]:
             save_check()
 
@@ -637,7 +637,7 @@ def save_check():
         # if cat_ob.mate:
         #    _temp_ob = Cat.all_cats.get(cat_ob.mate)
         #    if _temp_ob:
-        #        # Check if the mate's mate feild is set to none
+        #        # Check if the mate's mate field is set to none
         #        if not _temp_ob.mate:
         #            _temp_ob.mate = cat_ob.ID
         #    else:

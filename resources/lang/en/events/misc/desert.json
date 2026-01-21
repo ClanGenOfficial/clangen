@@ -712,7 +712,7 @@
         ],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "m_c faceplants right into the shaded water well in the rocks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} drinking from and is hauled up by r_c, spluttering and embarassed.",
+        "event_text": "m_c faceplants right into the shaded water well in the rocks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} drinking from and is hauled up by r_c, spluttering and embarrassed.",
         "m_c": {
             "age": ["kitten", "adolescent"]
         },

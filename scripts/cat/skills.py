@@ -612,7 +612,7 @@ class CatSkills:
         """
 
         if isinstance(path, str):
-            # Try to conter to Skillpath or HiddenSkillEnum
+            # Try to counter to Skillpath or HiddenSkillEnum
             try:
                 path = SkillPath[path]
             except KeyError:

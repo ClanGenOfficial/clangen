@@ -798,7 +798,7 @@ class ShortEvent:
         """
         handle injury histories
         :param cat: the cat object for cat being injured
-        :param cat_abbr: the abbreviation used for this cat within the event format (i.e. m_c, r_c, ect)
+        :param cat_abbr: the abbreviation used for this cat within the event format (i.e. m_c, r_c, etc)
         :param injury: the injury being given, if in classic then leave this as the default None
         """
         # TODO: problematic as we currently cannot mark who is the r_c and who is the m_c

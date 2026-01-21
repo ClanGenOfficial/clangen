@@ -112,7 +112,7 @@ dev_tools = false
       comfort = 15
       trust = 25
 
-    # which conditions all current mate relationships has to have towards the new possible mate + vise versa
+    # which conditions all current mate relationships has to have towards the new possible mate + vice versa
     [mates.poly.mates_to_each_other]
       romance = 0
       like = 15

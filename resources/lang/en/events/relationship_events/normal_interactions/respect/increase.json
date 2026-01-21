@@ -97,7 +97,7 @@
 	{
 		"id": "admire_inc_medium0",
 		"interactions": [
-			"m_c cant help but appreciate r_c being who {PRONOUN/r_c/subject} {VERB/r_c/are/is}.",
+			"m_c can't help but appreciate r_c being who {PRONOUN/r_c/subject} {VERB/r_c/are/is}.",
 			"m_c thinks r_c is being thoughtful of others.",
 			"m_c admits {PRONOUN/m_c/subject} really {VERB/m_c/admire/admires} r_c's recent efforts.",
 			"m_c is inspired by r_c's passion.",

@@ -481,7 +481,7 @@ class ChangeGenderScreen(Screens):
                 manager=MANAGER,
                 anchors={"centery": "centery", "right": "right"},
             )
-            # though we've made the remove button visible, it needs to be disabled so that the user cannnot remove
+            # though we've made the remove button visible, it needs to be disabled so that the user cannot remove
             # the defaults.  button is only visible here for UI consistency
             if pronounset in self.pronouns_dict:
                 self.deletebuttons[dict_name_core].disable()

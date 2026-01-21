@@ -972,7 +972,7 @@ class PatrolOutcome:
 
             cat.history.add_scar(history_text)
         else:
-            print("WARNING: Scar occured, but scar history is missing")
+            print("WARNING: Scar occurred, but scar history is missing")
 
         return chosen_scar
 

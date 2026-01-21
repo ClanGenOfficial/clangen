@@ -19,7 +19,7 @@ When sketching your BG, remember to keep scale in mind.  You want this BG to mat
 
 _template_
 
-When planning, keep the den positions in mind.  While typical composition rules don’t necessarily apply for this, it is still important to focus on the flow of your BG.  It should feel as natural as possible, which can be difficult when we are constrained to working around set boundaries.  The den positions do not necessarily need to be inside the den, they can be just outside, such as small clearing outside of a den entrance.  Get creative with these!  Fallen trees, woven brambles, caves, tunnels, ect.  Take a look at the current BGs and study how they've integrated their dens.
+When planning, keep the den positions in mind.  While typical composition rules don’t necessarily apply for this, it is still important to focus on the flow of your BG.  It should feel as natural as possible, which can be difficult when we are constrained to working around set boundaries.  The den positions do not necessarily need to be inside the den, they can be just outside, such as small clearing outside of a den entrance.  Get creative with these!  Fallen trees, woven brambles, caves, tunnels, etc.  Take a look at the current BGs and study how they've integrated their dens.
 
 The perspective should be mostly top-down and slight ¾ view.  Perspective rules can be bent a bit for this, it doesn’t need to follow traditional rules as long as it still looks good.  If you observe the style references you can see that I tend to bend the perspective.
 
@@ -65,7 +65,7 @@ Remember, the cat sprites that will lay over top of your BG will not be modified
 ### Seasons
 It’s good to keep in mind what you will be changing throughout the seasons.  This is something you should plan for ahead of time.  I’ve found it easiest to make sure I separate out my layers according to what will be changed.  Grass/plants growing and dying throughout the seasons is an easy and simple indicator.  Adding in small details like med cat herbs or kit toys that change with the season is also a fun touch that people appreciate. 
 
-I also like to adjust the hue and saturation (or even get really specific abt colors with color balance) according to the season.  Leafbare being less saturated and more cool colors, Greenleaf with warmer colors and higher saturation, ect. 
+I also like to adjust the hue and saturation (or even get really specific abt colors with color balance) according to the season.  Leafbare being less saturated and more cool colors, Greenleaf with warmer colors and higher saturation, etc. 
 
 You can reference leafbare BGs that are snow-heavy to get an idea of how snow should look (keep in mind that some climates won’t have a lot of snow.)  I usually use three colors: pure white, a close-to-white blue, and a slightly darker purple.  Snow should drift and collect against objects inside the camp.  If you don’t have personal experience with how snow acts then I’d suggest looking up some reference images to get a feel for it!  It’s also good to consider both where cats would be walking and tracking through the snow as well as the positions that the cat sprites can take on the snow.  Spots where a sprite might be should have tramped down snow or no snow at all in order to prevent the sprites from looking like they are “on top” of the BG instead of within the BG.  Adding in cat tracks on other spots like a path to the camp entrance or paths between dens is also a fun detail.
 

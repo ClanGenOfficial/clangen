@@ -133,7 +133,7 @@ class AllegiancesScreen(Screens):
         return event_text_adjust(Cat, output, main_cat=cat)
 
     def get_allegiances_text(self):
-        """Determine Text. Ouputs list of tuples."""
+        """Determine Text. Outputs list of tuples."""
 
         living_cats = [
             i for i in Cat.all_cats.values() if i.status.alive_in_player_clan

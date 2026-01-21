@@ -107,7 +107,7 @@ These should be flavored as occurring during the Gathering and should specify as
 ***
 
 ## Outsider Events
-These events are flavored as the Clan going out to deliberately interact with the chosen Outside, whether by killing, inviting, searching for, ect.  You could also flavor the event as the chosen Outsider doing something in response to what the Clan is trying to do to them (i.e. leaving the area after hearing the Clan's intentions, joining the Clan after hearing the Clan wants them, journeying closer after hearing reports from other Outsiders, ect.)
+These events are flavored as the Clan going out to deliberately interact with the chosen Outside, whether by killing, inviting, searching for, etc.  You could also flavor the event as the chosen Outsider doing something in response to what the Clan is trying to do to them (i.e. leaving the area after hearing the Clan's intentions, joining the Clan after hearing the Clan wants them, journeying closer after hearing reports from other Outsiders, etc.)
 
 ### Event Format
 ```json

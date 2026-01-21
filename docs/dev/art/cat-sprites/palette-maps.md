@@ -17,7 +17,7 @@ We also utilize the `collar_sprite_data.json` file in `sprites/dicts`. This hold
 ## Utilizing the Spritesheets and Palettes
 Upon viewing the spritesheet, you'll notice that the sprites are mostly greyscale, with some pops of color. The colors used here will not be seen in-game, rather they are a "map" used to tell the code where our palette colors should go. 
 
-This means that colors used in our spritesheet could be anything, but should be selected with a human gaze in mind. While the code can tell the miniscule differences between 5 different dark grays, we will have significantly more trouble. 
+This means that colors used in our spritesheet could be anything, but should be selected with a human gaze in mind. While the code can tell the minuscule differences between 5 different dark grays, we will have significantly more trouble. 
 
 These sprites should generally be a clearly defined grayscale with important features highlighted in bright color. For example, the LEATHER collars are grayscale with red defining the edges of the buckle. This makes it easy for a human viewer to understand that this is an important feature and much easier to identify which palette color is associated with it.
 

@@ -268,7 +268,7 @@ When in doubt, please ask for feedback! We have multiple disabled contributors o
 }
 ```
 - integer [int] - A number.  This cannot be a decimal.
-- parameter - We use a lot of event formats that have multiple sections to fill out.  Each of these sections is referred to as a 'parameter' in coding language. You can think of it as directions that tell the code what the event is allowed to do.  So in the patrol format, you have the tag parameter, the event text parameter, the success outcomes parameter, the fail outcomes parameter, ect.
+- parameter - We use a lot of event formats that have multiple sections to fill out.  Each of these sections is referred to as a 'parameter' in coding language. You can think of it as directions that tell the code what the event is allowed to do.  So in the patrol format, you have the tag parameter, the event text parameter, the success outcomes parameter, the fail outcomes parameter, etc.
 - IDE - A code interpreter. These are programs that allow you to view, run, and edit code, they generally provide shortcuts and point out errors to help speed the process. 
 - json - a file type. We use these files to hold strings and other important game info.  Nearly all of the strings in the game are held in jsons. Some IDEs, like PyCharm or virtual studio code, are able to help you properly format and spot errors in jsons. I’d recommend using one of those IDEs to help streamline your process.
 

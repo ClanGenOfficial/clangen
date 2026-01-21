@@ -881,7 +881,7 @@ class RelationshipScreen(Screens):
         )
         screen.blit(self.list_frame_image, ui_scale_blit((273, 122)))
 
-        # Only update the postions if the search text changes
+        # Only update the positions if the search text changes
         if self.search_bar.get_text() != self.previous_search_text:
             self.apply_cat_filter(self.search_bar.get_text())
             self.update_cat_page()

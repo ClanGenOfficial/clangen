@@ -593,10 +593,10 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### min_max_status: Dict[str, List[int]]
->Optional. Allows specification of the minimum and maximum number of specific types of cats that are allowed on this outcome. Utlizes the exact same format and options as the overall [min_max_status](#min_max_status-dictstr-listint) parameter.
+>Optional. Allows specification of the minimum and maximum number of specific types of cats that are allowed on this outcome. Utilizes the exact same format and options as the overall [min_max_status](#min_max_status-dictstr-listint) parameter.
 
 !!! caution
-    Use this sparingly and always ensure at least one of every outcome type is possible for *any* combination of cats allowed on this patrol. Ideally there should always be outcomes that *do not use* this parameter. If you've utilized this parameter on every outcome, it should be in a simple and easy-to-follow manner (i.e. all outcomes are either for 1-3 warriors or 4-6 warriors) rather than overly convoluted (i.e. every outcome has a different `min_max_status`: some disallow leaders, some allow medicine cats, some disallow all apps except medicine apps, others only allow medicine apps, ect.) ***If it starts to get insane, you are better off separating this patrol into multiple patrols instead of cramming all those outcomes together.***
+    Use this sparingly and always ensure at least one of every outcome type is possible for *any* combination of cats allowed on this patrol. Ideally there should always be outcomes that *do not use* this parameter. If you've utilized this parameter on every outcome, it should be in a simple and easy-to-follow manner (i.e. all outcomes are either for 1-3 warriors or 4-6 warriors) rather than overly convoluted (i.e. every outcome has a different `min_max_status`: some disallow leaders, some allow medicine cats, some disallow all apps except medicine apps, others only allow medicine apps, etc.) ***If it starts to get insane, you are better off separating this patrol into multiple patrols instead of cramming all those outcomes together.***
  
 ***
 
@@ -807,7 +807,7 @@ What each parameter does, and what the options are for outcomes.
 >]
 >```
 >
->You are able to refer to new-cats in several places, including patrol results text (but not patrol intro text!), injuries, relationships, ect. The {index} value  corresponds to their index value on this list. Remember, computers start counting from 0. So the first entry in the list is 0, the second is 1, and so on. 
+>You are able to refer to new-cats in several places, including patrol results text (but not patrol intro text!), injuries, relationships, etc. The {index} value  corresponds to their index value on this list. Remember, computers start counting from 0. So the first entry in the list is 0, the second is 1, and so on. 
 >
 >You can include the following details:
 
@@ -827,7 +827,7 @@ What each parameter does, and what the options are for outcomes.
 | "age:{some_age}"                            | Cats are "newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior". You can also specify "mate" to put them in the same age-category as the first specified mate, or "has_kits" to generate an age between 14 and 120 moons. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together. |
 | "backstory:{some}, {backstories},{another}" | Comma-separated exact backstories to pick from. Overrides "kittypet", "loner", "clancat"                                                                                                                                                                                                                                                                            |
 | "parent:{index},{index}"                    | You can include one or two biological parents. Parents must be created BEFORE children, so the parent details must be listed before the children. If you mark parents, and the child(ren) are young enough, one will be given the "recovering from birth" condition.                                                                                                |
-| "adoptive:{index},{index}"                  | You can include multiple adoptive parents. Parents must be created BEFORE children, so the parent details must be listed before the children. You can denote any cat included in the event as being an adoptive parent by using their abbreviation (`m_c`, `p_l`, ect).  The mates of the adoptive parent will automatically be included as adoptive parents.       |                                                                                              |
+| "adoptive:{index},{index}"                  | You can include multiple adoptive parents. Parents must be created BEFORE children, so the parent details must be listed before the children. You can denote any cat included in the event as being an adoptive parent by using their abbreviation (`m_c`, `p_l`, etc).  The mates of the adoptive parent will automatically be included as adoptive parents.       |                                                                                              |
 | "mate:{index},{index}"                      | Indexes of mates. Mates must be created BEFORE the cat with this tag. You can also specify patrol-cats (p_l, r_c, or s_c)                                                                                                                                                                                                                                           |
 
 >

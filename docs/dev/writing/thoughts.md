@@ -205,4 +205,4 @@ If, while editing or adding thoughts, you notice the thought hasn't appeared onc
 ![image](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/fe6cafee-5204-4c6a-8091-0167a78239b0)
 In a quick 10 moon study with a "simple" thought (this one had one constraints), the thought appeared for most moons. However, when I did the same clan within the same amount of cats and with the same thought just having a single misspelled tag, it didn't occur once.
 
-If you think there is an error with the thought not occuring, you best bet is to thoroughly check all the tags over, as even just a simple misspelling (IE any to ny) can cause the thought to glitch out.
+If you think there is an error with the thought not occurring, you best bet is to thoroughly check all the tags over, as even just a simple misspelling (IE any to ny) can cause the thought to glitch out.

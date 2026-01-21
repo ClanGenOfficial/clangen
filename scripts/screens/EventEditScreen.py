@@ -288,7 +288,7 @@ class EventEditScreen(Screens):
         """Loaded accessory tags"""
         self.acc_categories = Pelt.acc_categories
         self.open_category: str = ""
-        """Currently open acc category (wild, collar, ect.)"""
+        """Currently open acc category (wild, collar, etc.)"""
 
         self.main_cat_editor = {}
         self.random_cat_editor = {}
@@ -4511,7 +4511,7 @@ class EventEditScreen(Screens):
         )
         self.create_involved_cats_editor()
         # we redefine this here because somehow subtypes were fucking it up. i've searched for a couple hours and found
-        # no discernable reason, but this fixes it.
+        # no discernible reason, but this fixes it.
         self.future_template = {
             "event_type": "death",
             "pool": {
@@ -6816,7 +6816,7 @@ class EventEditScreen(Screens):
             anchors={"top_target": editor["intro"]},
             check=self.current_cat_dict["dies"],
         )
-        # this checks if death is requried and locks out user input
+        # this checks if death is required and locks out user input
         if "death" in self.type_info and self.current_editor_tab == "main cat":
             self.death_element["checkbox"].check()
             self.death_element["checkbox"].disable()

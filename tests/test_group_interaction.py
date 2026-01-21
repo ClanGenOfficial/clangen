@@ -414,7 +414,7 @@ class OtherCatsFiltering(unittest.TestCase):
         # summary:
         #    - random1 and random2 are mates
         #    - random2 and main_cat are siblings
-        #    - main_cat has a crush on the siblings mate (random1) + vise versa
+        #    - main_cat has a crush on the siblings mate (random1) + vice versa
         #    - main_cat don't like their sibling because of the crush (random2)
         #    - random2 don't trust their mate (random1) because of sibling (main_cat)
 
@@ -565,7 +565,7 @@ class OtherCatsFiltering(unittest.TestCase):
         # summary:
         #    - random1 and random2 are mates
         #    - random2 and main_cat are siblings
-        #    - main_cat has a crush on the siblings mate (random1) + vise versa
+        #    - main_cat has a crush on the siblings mate (random1) + vice versa
         #    - main_cat don't like their sibling because of the crush (random2)
         #    - random2 don't trust their mate (random1) because of sibling (main_cat)
 

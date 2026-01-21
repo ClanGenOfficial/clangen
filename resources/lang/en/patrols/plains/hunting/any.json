@@ -3804,7 +3804,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Isn't <i>every</i> season rabbit season? The unnecessary confusion starts an equally unecessary argument, and no hunting gets down as the patrol talks in circles.",
+                "text": "Isn't <i>every</i> season rabbit season? The unnecessary confusion starts an equally unnecessary argument, and no hunting gets down as the patrol talks in circles.",
                 "exp": 0,
                 "art": "gen_train_argue",
                 "relationships": [

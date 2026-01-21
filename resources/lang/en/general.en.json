@@ -210,7 +210,7 @@
         "has_permanent_condition": "has a permanent condition",
         "born_with": "born with this condition",
         "had_perm_condition_for": {
-            "one": "has had this condtion for %{count} moon",
+            "one": "has had this condition for %{count} moon",
             "many": "has had this condition for %{count} moons"
         },
         "had_injury_for": "has been hurt for %{moons}",

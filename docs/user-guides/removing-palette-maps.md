@@ -28,7 +28,7 @@ The json should look like this:
             "row 2 collars"
         ],
         [
-            "ect."
+            "etc."
         ]
     ]
 }
@@ -46,7 +46,7 @@ Each list within `sprite_list` corresponds to a row of the spritesheet. Inside, 
             "row 2 collars"
         ],
         [
-            "ect."
+            "etc."
         ]
     ]
 ```

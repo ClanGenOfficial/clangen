@@ -4,7 +4,7 @@
 HOWEVER,
  Please keep the raw python script and the unittest, so it can be run by the tests/pronoun_test GitHub action.
 
-This test checks that pronoun tags are formated correctly, 
+This test checks that pronoun tags are formatted correctly, 
 
 """
 
@@ -96,7 +96,7 @@ def _test():
 
 
 def _test_replacement_failure(path: str, repl_dict: dict) -> bool:
-    """Reads in a file, and finds strings, and runs pronoun replacment on those strings.
+    """Reads in a file, and finds strings, and runs pronoun replacement on those strings.
     Returns False if there were any issues with the pronoun replacement, or if the
     json is incorrectly formatted."""
 

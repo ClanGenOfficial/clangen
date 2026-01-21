@@ -509,7 +509,7 @@ class Screens:
         :return: None
         """
 
-        # intialise the vignette strength
+        # initialise the vignette strength
         vignette = scripts.screens.screens_core.screens_core.vignette
         if vignette_alpha is None:
             vignette_alpha = constants.CONFIG["theme"]["fullscreen_background"][

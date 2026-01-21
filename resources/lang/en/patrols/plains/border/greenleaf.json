@@ -4923,7 +4923,7 @@
                 "frequency": 4
             },
             {
-                "text": "app1 carefully explores the tunnel {PRONOUN/app1/subject} spotted, seeing how a bush noramlly conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/app1/subject} {VERB/app1/know/knows} about is incredibly appealing.",
+                "text": "app1 carefully explores the tunnel {PRONOUN/app1/subject} spotted, seeing how a bush normally conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/app1/subject} {VERB/app1/know/knows} about is incredibly appealing.",
                 "exp": 20,
                 "art": "pln_bord_tunnel",
                 "stat_trait": [
@@ -5857,7 +5857,7 @@
                 "frequency": 3
             },
             {
-                "text": "The apprentices spot a stringy, rangy looking elk calf, busy taking it's first independant adventures away from its mother. What if they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c has the bravery to bound up to it, leaping through the grass. The elk calf snuffles, and touches noses with {PRONOUN/s_c/object}.",
+                "text": "The apprentices spot a stringy, rangy looking elk calf, busy taking it's first independent adventures away from its mother. What if they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c has the bravery to bound up to it, leaping through the grass. The elk calf snuffles, and touches noses with {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "art": "gen_train_soloapp",
                 "can_have_stat": [
@@ -6053,7 +6053,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The apprentices spot a stringy, rangy looking elk calf, busy taking it's first independant adventures away from its mother. What if they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c has the bravery to bound up to it. The calf starles, flinches backwards and stomping with its front hooves.",
+                "text": "The apprentices spot a stringy, rangy looking elk calf, busy taking it's first independent adventures away from its mother. What if they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c has the bravery to bound up to it. The calf starles, flinches backwards and stomping with its front hooves.",
                 "exp": 20,
                 "art": "gen_train_soloapp",
                 "can_have_stat": [
@@ -6344,7 +6344,7 @@
                 "frequency": 3
             },
             {
-                "text": "The apprentices run, fast and free as the wind, all the way along one entire side of c_n's vast borders. It's only when they reach the end and collpase, panting and proud, that it occurs to app4 that there's absolutely no water anywhere near here. By the time they all trudge back to camp, they're dangerously thirsty.",
+                "text": "The apprentices run, fast and free as the wind, all the way along one entire side of c_n's vast borders. It's only when they reach the end and collapse, panting and proud, that it occurs to app4 that there's absolutely no water anywhere near here. By the time they all trudge back to camp, they're dangerously thirsty.",
                 "exp": 20,
                 "art": "gen_hotapps",
                 "injury": [
