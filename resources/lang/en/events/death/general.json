@@ -6557,8 +6557,7 @@
                 "deputy"
             ],
             "not_skill": [
-                "CLEVER,2",
-                "CLEVER,3"
+                "CLEVER,2"
             ],
             "trait": [
                 "vengeful",
