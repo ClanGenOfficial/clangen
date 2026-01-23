@@ -39,13 +39,14 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like"
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat appreciates that from_cat listened to {PRONOUN/to_cat/poss} story."
+                            "cats_from": "from_cat appreciated the story to_cat told on patrol.",
+                            "cats_to": "to_cat appreciated from_cat listening to {PRONOUN/to_cat/poss} story on patrol."
                         }
                     }
                 ],
@@ -59,10 +60,10 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
@@ -72,7 +73,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat refused to believe the story from_cat told could ever be true."
+                            "cats_from": "from_cat refused to believe the story to_cat told could ever be true."
                         }
                     }
                 ],
@@ -90,10 +91,10 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c"
                         ],
                         "mutual": false,
                         "values": [
@@ -103,15 +104,15 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat disliked how from_cat's story depicted cats as powerless to Starclan."
+                            "cats_from": "from_cat disliked how to_cat's story depicted cats as powerless to Starclan."
                         }
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "s_c"
                         ],
                         "mutual": false,
                         "values": [
@@ -120,7 +121,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat disliked how from_cat tolerated a clearly disempowering story."
+                            "cats_from": "from_cat disliked how to_cat tolerated a clearly disempowering story."
                         }
                     }
                 ],
