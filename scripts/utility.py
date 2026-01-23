@@ -12,8 +12,6 @@ from typing import TYPE_CHECKING
 from scripts.cat_relations.enums import RelType
 
 logger = logging.getLogger(__name__)
-from scripts.game_structure import constants
-from scripts.game_structure import game
 
 if TYPE_CHECKING:
     pass
@@ -87,18 +85,3 @@ def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
 
 def chunks(L, n):
     return [L[x : x + n] for x in range(0, len(L), n)]
-
-
-def clamp(value: float, minimum_value: float, maximum_value: float) -> float:
-    """
-    Takes a value and returns it constrained to a certain range
-    :param value: The input value
-    :param minimum_value: Lower bound
-    :param maximum_value: Upper bound
-    :return: Clamped float.
-    """
-    if value < minimum_value:
-        return minimum_value
-    elif value > maximum_value:
-        return maximum_value
-    return value
