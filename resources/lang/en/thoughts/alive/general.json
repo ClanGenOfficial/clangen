@@ -2122,7 +2122,9 @@
             "Rolls around in flowers",
             "Sneezes eleven times in a row",
             "Wonders if StarClan ever gets bored",
-            "Makes a poultice of mud and grass"
+            "Makes a poultice of mud and grass",
+			"Goes missing and comes back smelling like garlic",
+            "Giggles at the thought of a bird trying to swim"
         ],
         "main_trait_constraint": [
             "strange"
@@ -4608,6 +4610,27 @@
             "starclan"
         ]
     },
+	{
+        "id": "gen_former_rogue",
+        "thoughts": [
+            "Wishes that cats would stop gossiping about {PRONOUN/m_c/object}",
+            "Would never wish to return to {PRONOUN/m_c/poss} rogue life"
+        ],
+        "main_age_constraint": [
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": [
+            "rogue1",
+            "rogue2",
+            "rogue3",
+            "refugee4",
+            "tragedy_survivor2",
+            "guided2"
+        ]
+    },
     {
         "id": "gen_former_rogue_apprentices",
         "thoughts": [
@@ -4693,6 +4716,28 @@
         "random_living_status": [
             "living"
         ]
+    },
+	{
+        "id": "gen_former_loner",
+        "thoughts": [
+            "Wishes that cats would stop gossiping about {PRONOUN/m_c/object}",
+            "Would never wish to return to {PRONOUN/m_c/poss} loner life"
+        ],
+        "main_age_constraint": [
+            "young adult",
+            "adult",
+            "senior adult",
+            "senior"
+        ],
+        "main_backstory_constraint": [
+            "loner1",
+            "loner2",
+            "loner3",
+            "loner4",
+            "refugee2",
+            "tragedy_survivor4",
+            "guided3"
+        ],
     },
     {
         "id": "gen_to_dead_gen",
