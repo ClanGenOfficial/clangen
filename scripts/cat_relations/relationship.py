@@ -18,7 +18,7 @@ from scripts.events_module.event_filters import (
     get_personality_compatibility,
 )
 from scripts.game_structure import game
-from scripts.utility import process_text
+from scripts.events_module.text_adjust import process_text
 import scripts.cat_relations.interaction as interactions
 
 

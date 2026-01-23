@@ -18,12 +18,14 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
 )
 from scripts.utility import (
-    event_text_adjust,
-    process_text,
     chunks,
     get_text_box_theme,
-    shorten_text_to_fit,
+)
+from ..events_module.text_adjust import (
+    process_text,
+    event_text_adjust,
     adjust_list_text,
+    shorten_text_to_fit,
 )
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from scripts.cat.pelts import Pelt

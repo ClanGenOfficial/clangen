@@ -14,10 +14,7 @@ from scripts.events_module.short.condition_events import Condition_Events
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
-    event_text_adjust,
-    adjust_list_text,
-)
+from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
 from scripts.events_module.consequences import (
     create_new_cat,
     change_relationship_values,

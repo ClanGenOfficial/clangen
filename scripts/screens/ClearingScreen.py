@@ -17,8 +17,8 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.utility import (
     get_text_box_theme,
-    shorten_text_to_fit,
 )
+from ..events_module.text_adjust import shorten_text_to_fit
 from ..ui.scale import ui_scale
 from .Screens import Screens
 from ..clan_package.settings import get_clan_setting, switch_clan_setting

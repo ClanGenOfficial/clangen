@@ -32,9 +32,9 @@ from scripts.game_structure.game.settings import game_setting_get
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import (
-    shorten_text_to_fit,
     clamp,
 )
+from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 
 

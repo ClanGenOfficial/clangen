@@ -21,8 +21,8 @@ from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.utility import (
     get_text_box_theme,
-    adjust_list_text,
 )
+from scripts.events_module.text_adjust import adjust_list_text
 from scripts.ui.scale import ui_scale
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 

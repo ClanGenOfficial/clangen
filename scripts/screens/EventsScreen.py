@@ -33,8 +33,8 @@ from scripts.ui.icon import Icon
 from scripts.utility import (
     clan_symbol_sprite,
     get_text_box_theme,
-    shorten_text_to_fit,
 )
+from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.ui.scale import (
     ui_scale,
     ui_scale_dimensions,

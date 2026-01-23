@@ -18,8 +18,8 @@ from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.utility import (
     get_text_box_theme,
-    shorten_text_to_fit,
 )
+from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.ui.scale import (
     ui_scale,
     ui_scale_dimensions,

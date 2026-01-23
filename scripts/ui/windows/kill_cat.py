@@ -14,7 +14,8 @@ from scripts.game_structure.ui_elements import (
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.base_window import GameWindow
-from scripts.utility import process_text, update_sprite
+from scripts.utility import update_sprite
+from scripts.events_module.text_adjust import process_text
 from scripts.ui.scale import ui_scale
 
 

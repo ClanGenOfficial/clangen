@@ -27,8 +27,8 @@ from scripts.ui.icon import Icon
 from scripts.utility import (
     get_text_box_theme,
     clan_symbol_sprite,
-    shorten_text_to_fit,
 )
+from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.clan_package.cotc import get_other_clan, get_other_clan_relation
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.clan_package.get_clan_cats import (

@@ -42,11 +42,13 @@ from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.ui.windows.save_error import SaveError
 from scripts.utility import (
-    ceremony_text_adjust,
     get_current_season,
-    adjust_list_text,
+)
+from scripts.events_module.text_adjust import (
     ongoing_event_text_adjust,
     event_text_adjust,
+    ceremony_text_adjust,
+    adjust_list_text,
     history_text_adjust,
 )
 from scripts.events_module.consequences import unpack_rel_block

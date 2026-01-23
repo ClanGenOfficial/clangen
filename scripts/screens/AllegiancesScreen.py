@@ -7,9 +7,8 @@ from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.utility import (
     get_text_box_theme,
-    adjust_list_text,
-    event_text_adjust,
 )
+from ..events_module.text_adjust import event_text_adjust, adjust_list_text
 from ..ui.scale import ui_scale, ui_scale_offset
 from ..clan_package.get_clan_cats import get_alive_clan_queens
 from .Screens import Screens

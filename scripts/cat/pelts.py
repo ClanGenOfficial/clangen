@@ -9,7 +9,7 @@ from scripts.cat.enums import CatAge
 from scripts.cat.sprites import sprites
 from scripts.game_structure import constants
 from scripts.game_structure.localization import get_lang_config
-from scripts.utility import adjust_list_text
+from scripts.events_module.text_adjust import adjust_list_text
 
 
 class Pelt:

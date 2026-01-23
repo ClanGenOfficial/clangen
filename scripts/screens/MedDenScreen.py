@@ -16,9 +16,8 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.utility import (
     get_text_box_theme,
-    shorten_text_to_fit,
-    event_text_adjust,
 )
+from ..events_module.text_adjust import event_text_adjust, shorten_text_to_fit
 from ..ui.scale import ui_scale, ui_scale_offset
 from ..clan_package.get_clan_cats import find_alive_cats_with_rank
 from .Screens import Screens

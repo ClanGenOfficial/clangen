@@ -46,10 +46,12 @@ from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
     clamp,
-    event_text_adjust,
     update_sprite,
-    leader_ceremony_text_adjust,
     update_mask,
+)
+from scripts.events_module.text_adjust import (
+    event_text_adjust,
+    leader_ceremony_text_adjust,
 )
 from scripts.events_module.event_filters import get_personality_compatibility
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank

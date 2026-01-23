@@ -29,11 +29,11 @@ from scripts.game_structure import localization, constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
+from scripts.events_module.text_adjust import (
     process_text,
     adjust_prey_abbr,
-    find_special_list_types,
     get_special_snippet_list,
+    find_special_list_types,
     adjust_list_text,
 )
 
