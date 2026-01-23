@@ -16,7 +16,7 @@ from strenum import StrEnum
 
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.version import get_version_info
-from scripts.utility import quit_game
+from scripts.housekeeping.quit_game import quit_game
 
 use_proxy = False  # Set this to True if you want to use a proxy for the update check. Useful for debugging.
 

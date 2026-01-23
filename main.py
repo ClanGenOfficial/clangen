@@ -199,9 +199,7 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
-from scripts.utility import (
-    quit_game,
-)  # pylint: disable=redefined-builtin
+from scripts.housekeeping.quit_game import quit_game
 
 # from scripts.debug_menu import debugmode
 from scripts.debug_console import debug_mode

@@ -7,13 +7,9 @@ TODO: Docs
 """  # pylint: enable=line-too-long
 
 import logging
-from sys import exit as sys_exit
 from typing import TYPE_CHECKING
 
-import pygame
-
 from scripts.cat_relations.enums import RelType
-from scripts.game_structure.game.settings import game_settings_save
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import constants
@@ -129,18 +125,3 @@ def clamp(value: float, minimum_value: float, maximum_value: float) -> float:
     return value
 
 
-def quit_game(savesettings=False, clearevents=False):
-    """
-    Quits the game, avoids a bunch of repeated lines
-    """
-    if savesettings:
-        game_settings_save(None)
-    if clearevents:
-        game.cur_events_list.clear()
-    game.rpc.close_rpc.set()
-    game.rpc.update_rpc.set()
-    pygame.display.quit()
-    pygame.quit()
-    if game.rpc.is_alive():
-        game.rpc.join(1)
-    sys_exit()
