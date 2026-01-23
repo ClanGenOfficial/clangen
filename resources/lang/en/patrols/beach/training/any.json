@@ -257,7 +257,7 @@
                         "values": ["like", "comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} for it."
+                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} out for it."
                         }
                     },
                     {
@@ -500,7 +500,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} for it."
+                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} out for it."
                         }
                     },
                     {
