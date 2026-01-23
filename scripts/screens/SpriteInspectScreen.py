@@ -10,11 +10,9 @@ from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButt
 from scripts.utility import (
     generate_sprite,
     shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale_offset,
     get_text_box_theme,
 )
-from scripts.utility import ui_scale
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.sprites import sprites

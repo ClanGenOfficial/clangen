@@ -18,11 +18,13 @@ from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.utility import (
     get_text_box_theme,
-    ui_scale,
     shorten_text_to_fit,
+)
+from scripts.ui.scale import (
+    ui_scale,
     ui_scale_dimensions,
-    ui_scale_blit,
     ui_scale_offset,
+    ui_scale_blit,
 )
 from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure.screen_settings import MANAGER, screen

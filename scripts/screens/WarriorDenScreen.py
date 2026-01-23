@@ -20,10 +20,10 @@ from scripts.ui.windows.select_focus_clans import SelectFocusClans
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.utility import (
-    ui_scale,
     get_text_box_theme,
     adjust_list_text,
 )
+from scripts.ui.scale import ui_scale
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:

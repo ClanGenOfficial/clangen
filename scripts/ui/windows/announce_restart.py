@@ -7,7 +7,7 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
 )
 from scripts.ui.windows.base_window import GameWindow
-from scripts.utility import ui_scale
+from scripts.ui.scale import ui_scale
 
 
 class AnnounceRestart(GameWindow):

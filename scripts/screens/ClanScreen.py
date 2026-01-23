@@ -17,11 +17,9 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.ui.windows.save_error import SaveError
 from scripts.utility import (
-    ui_scale,
-    ui_scale_dimensions,
     get_current_season,
-    ui_scale_value,
 )
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.save_load import save_cats

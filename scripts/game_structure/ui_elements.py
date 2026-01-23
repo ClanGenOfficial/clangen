@@ -32,12 +32,10 @@ from scripts.game_structure.game.settings import game_setting_get
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import (
-    ui_scale,
     shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale_value,
     clamp,
 )
+from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 
 
 class UISurfaceImageButton(pygame_gui.elements.UIButton):

@@ -4,7 +4,7 @@ import pygame
 import pygame_gui
 
 from scripts.ui.windows.base_window import GameWindow
-from scripts.utility import ui_scale
+from scripts.ui.scale import ui_scale
 
 
 class EventLoading(GameWindow):

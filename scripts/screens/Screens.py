@@ -31,10 +31,9 @@ from scripts.screens.enums import GameScreen
 from scripts.screens.screens_core.screens_core import rebuild_den_dropdown
 from scripts.utility import (
     update_sprite,
-    ui_scale,
-    ui_scale_blit,
     get_current_season,
 )
+from scripts.ui.scale import ui_scale, ui_scale_blit
 from scripts.game_structure import game
 
 

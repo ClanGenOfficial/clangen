@@ -7,7 +7,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.ui_elements import UISurfaceImageButton
 from scripts.utility import get_text_box_theme
-from scripts.utility import ui_scale
+from ..ui.scale import ui_scale
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.game.settings import game_setting_get

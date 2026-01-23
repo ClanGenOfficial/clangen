@@ -2,7 +2,6 @@ import os.path
 from typing import List, Dict, Union, Optional
 
 import i18n
-import i18n.translations
 import ujson
 
 from scripts.game_structure.game.settings import game_setting_get

@@ -3,7 +3,7 @@ import pygame_gui
 from pygame_gui.elements import UIWindow
 
 from scripts.game_structure.ui_elements import UIImageButton
-from scripts.utility import ui_scale, ui_scale_offset
+from scripts.ui.scale import ui_scale, ui_scale_offset
 
 
 class GameWindow(UIWindow):

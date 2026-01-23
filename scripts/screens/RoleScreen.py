@@ -15,10 +15,9 @@ from scripts.game_structure.ui_elements import (
 from scripts.utility import (
     get_text_box_theme,
     shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale,
     adjust_list_text,
 )
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.game.settings import game_setting_get

@@ -7,7 +7,7 @@ import pygame_gui
 import html
 
 from pygame_gui.elements import UIWindow, UITextBox, UITextEntryLine
-from scripts.utility import ui_scale
+from scripts.ui.scale import ui_scale
 from scripts.debug_commands import commandList
 from scripts.debug_commands.utils import set_debug_class
 from scripts.game_structure import game

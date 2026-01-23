@@ -40,12 +40,11 @@ from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import (
-    ui_scale,
     process_text,
-    ui_scale_dimensions,
     generate_sprite,
     get_text_box_theme,
 )
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
 
 
 class EventEditScreen(Screens):

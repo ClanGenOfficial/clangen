@@ -14,10 +14,8 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.utility import (
     get_text_box_theme,
-    ui_scale,
-    ui_scale_dimensions,
-    ui_scale_offset,
 )
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch

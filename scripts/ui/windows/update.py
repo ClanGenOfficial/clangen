@@ -10,7 +10,7 @@ from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import self_update, UpdateChannel
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.windows.base_window import GameWindow
-from scripts.utility import ui_scale
+from scripts.ui.scale import ui_scale
 
 
 class UpdateWindow(GameWindow):

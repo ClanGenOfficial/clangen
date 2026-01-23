@@ -9,7 +9,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.windows.base_window import GameWindow
-from scripts.utility import ui_scale
+from scripts.ui.scale import ui_scale
 
 
 class RelationshipLog(GameWindow):

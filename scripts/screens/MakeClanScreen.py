@@ -20,8 +20,8 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UISurfaceImageButton,
 )
-from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
-from scripts.utility import ui_scale_dimensions
+from scripts.utility import get_text_box_theme
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_blit
 from .Screens import Screens
 from .enums import GameScreen
 from .screens_core.screens_core import rebuild_den_dropdown

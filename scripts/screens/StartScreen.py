@@ -31,7 +31,8 @@ from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButt
 from scripts.ui.windows.update_available import UpdateAvailablePopup
 from scripts.ui.windows.changelog import ChangelogPopup
 from scripts.housekeeping.datadir import open_data_dir, open_url
-from scripts.utility import ui_scale, quit_game, ui_scale_dimensions
+from scripts.utility import quit_game
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.screen_settings import MANAGER

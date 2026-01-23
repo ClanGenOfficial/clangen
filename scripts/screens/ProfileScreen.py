@@ -19,15 +19,13 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.utility import (
     event_text_adjust,
-    ui_scale,
     process_text,
     chunks,
     get_text_box_theme,
-    ui_scale_dimensions,
     shorten_text_to_fit,
-    ui_scale_offset,
     adjust_list_text,
 )
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from scripts.cat.pelts import Pelt
 from .Screens import Screens
 from .enums import GameScreen
