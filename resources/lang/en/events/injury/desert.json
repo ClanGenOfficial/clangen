@@ -20,7 +20,7 @@
         "location": ["desert"],
         "season": ["any"],
         "weight": 20,
-        "event_text": "m_c dashes off from {PRONOUN/m_c/poss} mentor and tumbles face first into a cactus, thankfully the medicine cat is able to remove the spines with little difficulty.",
+        "event_text": "m_c dashed off from {PRONOUN/m_c/poss} mentor and tumbled face first into a cactus. Thankfully, the medicine cat was able to remove the spines with little difficulty.",
         "m_c": {
             "age": ["adolescent"],
             "trait": ["adventurous", "arrogant", "bold", "childish", "confident", "daring", "oblivious", "playful", "rebellious", "shameless", "troublesome"]
