@@ -4737,9 +4737,9 @@
             "refugee2",
             "tragedy_survivor4",
             "guided3"
-        ],
+        ]
     },
-    {
+  {
         "id": "gen_to_dead_gen",
         "thoughts": [
             "Is listening to stories about r_c",
