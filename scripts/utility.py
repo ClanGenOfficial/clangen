@@ -13,7 +13,6 @@ from sys import exit as sys_exit
 from typing import TYPE_CHECKING
 
 import pygame
-import ujson
 from pygame_gui.core import ObjectID
 
 from scripts.cat_relations.enums import RelType
@@ -193,32 +192,3 @@ def quit_game(savesettings=False, clearevents=False):
     if game.rpc.is_alive():
         game.rpc.join(1)
     sys_exit()
-
-
-resource_directory = "resources/dicts/conditions/"
-with open(
-    os.path.normpath(f"{resource_directory}illnesses.json"), "r", encoding="utf-8"
-) as read_file:
-    ILLNESSES = ujson.loads(read_file.read())
-
-with open(
-    os.path.normpath(f"{resource_directory}injuries.json"), "r", encoding="utf-8"
-) as read_file:
-    INJURIES = ujson.loads(read_file.read())
-
-with open(
-    os.path.normpath(f"{resource_directory}permanent_conditions.json"),
-    "r",
-    encoding="utf-8",
-) as read_file:
-    PERMANENT = ujson.loads(read_file.read())
-
-langs = {"snippet": None, "prey": None}
-
-SNIPPETS = None
-PREY_LISTS = None
-
-with open(
-    os.path.normpath("resources/dicts/backstories.json"), "r", encoding="utf-8"
-) as read_file:
-    BACKSTORIES = ujson.loads(read_file.read())

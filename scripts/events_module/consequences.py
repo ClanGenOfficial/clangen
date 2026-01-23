@@ -10,7 +10,7 @@ from scripts.cat.names import names
 from scripts.cat_relations.enums import RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import game, constants
-from scripts.utility import BACKSTORIES, PERMANENT
+from scripts.cat.constants import BACKSTORIES, PERMANENT
 from scripts.events_module.text_adjust import process_text
 
 

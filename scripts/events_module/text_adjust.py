@@ -19,12 +19,16 @@ from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import localization, game
 from scripts.game_structure.game import switch_get_value, Switch
 from scripts.game_structure.localization import load_lang_resource, get_lang_config
-from scripts.utility import langs
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
 
 logger = logging.getLogger(__name__)
+
+langs = {"snippet": None, "prey": None}
+
+SNIPPETS = None
+PREY_LISTS = None
 
 
 def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
