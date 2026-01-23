@@ -354,7 +354,6 @@ def event_text_adjust(
     :param OtherClan other_clan: OtherClan object for other_clan (o_c_n), if present
     :param str chosen_herb: string of chosen_herb (chosen_herb), if present
     """
-    vowels = ["A", "E", "I", "O", "U"]
     if not patrol_apprentices:
         patrol_apprentices = []
     if not new_cats:
@@ -478,26 +477,13 @@ def event_text_adjust(
 
     # other_clan_name
     if "o_c_n" in text and other_clan:
-        other_clan_name = other_clan.name
-        pos = 0
-        for x in range(text.count("o_c_n")):
-            if "o_c_n" in text:
-                for y in vowels:
-                    if str(other_clan_name).startswith(y):
-                        modify = text.split()
-                        if "o_c_n" in modify:
-                            pos = modify.index("o_c_n")
-                        if "o_c_n's" in modify:
-                            pos = modify.index("o_c_n's")
-                        if "o_c_n." in modify:
-                            pos = modify.index("o_c_n.")
-                        if modify[pos - 1] == "a":
-                            modify.remove("a")
-                            modify.insert(pos - 1, "an")
-                        text = " ".join(modify)
-                        break
-
-        text = text.replace("o_c_n", str(other_clan_name) + "Clan")
+        text = _replace_clan_name(
+            text,
+            "o_c_n",
+            other_clan
+            if isinstance(other_clan, str)
+            else str(other_clan.name) + "Clan",
+        )
 
     # clan_name
     if "c_n" in text:
@@ -507,25 +493,7 @@ def event_text_adjust(
             # todo can this be Switch.clan_name ?
             clan_name = switch_get_value(Switch.clan_list)[0]
 
-        pos = 0
-        for x in range(text.count("c_n")):
-            if "c_n" in text:
-                for y in vowels:
-                    if str(clan_name).startswith(y):
-                        modify = text.split()
-                        if "c_n" in modify:
-                            pos = modify.index("c_n")
-                        if "c_n's" in modify:
-                            pos = modify.index("c_n's")
-                        if "c_n." in modify:
-                            pos = modify.index("c_n.")
-                        if modify[pos - 1] == "a":
-                            modify.remove("a")
-                            modify.insert(pos - 1, "an")
-                        text = " ".join(modify)
-                        break
-
-        text = text.replace("c_n", str(clan_name) + "Clan")
+        text = _replace_clan_name(text, "c_n", str(clan_name) + "Clan")
 
     # prey lists
     text = adjust_prey_abbr(text)
@@ -560,6 +528,30 @@ def event_text_adjust(
             )
 
     return text
+
+
+def _replace_clan_name(text, abbreviation, clan_name):
+    vowels = ["A", "E", "I", "O", "U"]
+
+    pos = 0
+    for x in range(text.count(abbreviation)):
+        if abbreviation in text:
+            for y in vowels:
+                if str(clan_name).startswith(y):
+                    modify = text.split()
+                    if abbreviation in modify:
+                        pos = modify.index(abbreviation)
+                    if f"{abbreviation}'s" in modify:
+                        pos = modify.index(f"{abbreviation}'s")
+                    if f"{abbreviation}." in modify:
+                        pos = modify.index(f"{abbreviation}.")
+                    if modify[pos - 1] == "a":
+                        modify.remove("a")
+                        modify.insert(pos - 1, "an")
+                    text = " ".join(modify)
+                    break
+
+    return text.replace(abbreviation, clan_name)
 
 
 def leader_ceremony_text_adjust(
