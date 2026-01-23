@@ -203,9 +203,6 @@
         "thoughts": [
             "Accidentally assigns the same cat to three patrols",
             "Insists a hunting patrol needs to only bring back mice",
-            "Goes missing and comes back smelling like garlic",
-            "Is making odd noises",
-            "Giggles at the thought of a bird trying to swim",
             "Gives a patrol an oddly specific path to go"
         ],
         "main_trait_constraint": [
@@ -449,8 +446,6 @@
         "id": "former_kittypet_deputy",
         "thoughts": [
             "Is proud of how far {PRONOUN/m_c/subject} {verb/m_c/have/has} come from {PRONOUN/m_c/poss} kittypet life",
-            "Is annoyed to still hear gossip about {PRONOUN/m_c/poss} past",
-            "Would never wish to return to {PRONOUN/m_c/poss} old kittypet life",
             "Wishes other cats would trust in r_c's choice of making {PRONOUN/m_c/object} deputy",
             "Wouldn't mind bragging about {PRONOUN/m_c/poss} position in the Clan to some old kittypet friends",
             "Treats Clanmates fairly regardless of their pasts",
@@ -471,8 +466,6 @@
         "id": "former_loner_deputy",
         "thoughts": [
             "Still feels surprised as to how far {PRONOUN/m_c/subject} has come from {PRONOUN/m_c/poss} loner life",
-            "Wishes that cats would stop gossiping about {PRONOUN/m_c/object}",
-            "Would never wish to return to {PRONOUN/m_c/poss} loner life",
             "Is glad that {PRONOUN/m_c/poss} loner knowledge is useful for creating patrols",
             "Brags about {PRONOUN/m_c/poss} position and new life to some old loner friends",
             "Reassures Clanmates that no matter their past, anycat can achieve great things",
@@ -500,8 +493,6 @@
         "id": "former_rogue_deputy",
         "thoughts": [
             "Is proud of how far {PRONOUN/m_c/subject} has come from {PRONOUN/m_c/poss} rogue life",
-            "Wishes that cats would stop gossiping about {PRONOUN/m_c/object}",
-            "Would never wish to return to {PRONOUN/m_c/poss} rogue life",
             "Is glad that {PRONOUN/m_c/poss} rogue knowledge is useful for creating patrols",
             "Prickles at hearing about a dangerous rogue gang nearby",
             "Informs the border patrols about nearby rogues and loners",
