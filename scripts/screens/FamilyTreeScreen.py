@@ -628,9 +628,6 @@ class FamilyTreeScreen(Screens):
         }
         self.tabs["label"].disable()
 
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
-
     def exit_screen(self):
         for ele in self.cat_elements:
             self.cat_elements[ele].kill()

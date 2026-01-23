@@ -723,9 +723,6 @@ class MedDenScreen(Screens):
         if self.med_cat:
             self.med_cat.kill()
 
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
-
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:
             self.cat_buttons[cat].kill()

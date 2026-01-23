@@ -1242,7 +1242,9 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         # every "unit" is 1/200th of the width of the bar
         pointer_offset = int(scale_position / 200 * bar.width)
         # -15 so it doesn't go past the end of the bar
-        pointer_x = max(0, min(pointer_offset + pointer_origin[0], bar.width-ui_scale_value(15)))
+        pointer_x = max(
+            0, min(pointer_offset + pointer_origin[0], bar.width - ui_scale_value(15))
+        )
 
         pointer_final_position = (
             pointer_x,

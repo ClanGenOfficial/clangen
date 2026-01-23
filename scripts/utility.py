@@ -81,7 +81,3 @@ def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
 # ---------------------------------------------------------------------------- #
 #                                     OTHER                                    #
 # ---------------------------------------------------------------------------- #
-
-
-def chunks(L, n):
-    return [L[x : x + n] for x in range(0, len(L), n)]

@@ -745,3 +745,7 @@ class Screens:
         ) and self.next_cat else self.next_cat_button.disable()
 
     # pragma pylint: enable=no-member
+
+    @staticmethod
+    def chunks(L, n):
+        return [L[x : x + n] for x in range(0, len(L), n)]

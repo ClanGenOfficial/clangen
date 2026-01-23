@@ -17,9 +17,6 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
 )
-from scripts.utility import (
-    chunks,
-)
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import (
     process_text,
@@ -1812,7 +1809,7 @@ class ProfileScreen(Screens):
                     cond[0] = temp
                     break
 
-        all_illness_injuries = chunks(all_illness_injuries, 4)
+        all_illness_injuries = self.chunks(all_illness_injuries, 4)
 
         if not all_illness_injuries:
             self.conditions_page = 0

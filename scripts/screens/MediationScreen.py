@@ -840,9 +840,6 @@ class MediationScreen(Screens):
         self.search_bar.kill()
         del self.search_bar
 
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
-
     def on_use(self):
         super().on_use()
         # Only update the positions if the search text changes

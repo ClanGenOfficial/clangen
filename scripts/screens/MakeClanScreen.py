@@ -2188,9 +2188,6 @@ class MakeClanScreen(Screens):
             f"{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png"
         )
 
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
-
     def draw_art_frame(self):
         if "art_frame" in self.elements:
             return

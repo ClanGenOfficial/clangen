@@ -1415,10 +1415,6 @@ class PatrolScreen(Screens):
         )
 
     @staticmethod
-    def chunks(L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
-
-    @staticmethod
     def get_list_text(patrol_list):
         if not patrol_list:
             return i18n.t("general.none").capitalize()

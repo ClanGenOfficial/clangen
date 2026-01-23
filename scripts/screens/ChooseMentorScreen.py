@@ -716,6 +716,3 @@ class ChooseMentorScreen(Screens):
     def on_use(self):
         # Due to a bug in pygame, any image with buttons over it must be blitted
         super().on_use()
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]

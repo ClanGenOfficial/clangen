@@ -961,6 +961,3 @@ class ChooseAdoptiveParentScreen(Screens):
                 return True
 
         return False
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]

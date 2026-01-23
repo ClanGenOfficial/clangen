@@ -886,6 +886,3 @@ class RelationshipScreen(Screens):
             self.apply_cat_filter(self.search_bar.get_text())
             self.update_cat_page()
         self.previous_search_text = self.search_bar.get_text()
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
