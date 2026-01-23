@@ -276,7 +276,7 @@
       "id": "healer_deputy_to_medcat",
         "thoughts": [
             "Takes a patrol out to gather herbs for the medicine cat den",
-            "Insists that r_c teaches the clan about basic medicinal treatments",
+            "Insists that r_c teaches the Clan about basic medicinal treatments",
             "Explains how to treat a simple battle injury with r_c watching, impressed"
         ],
         "main_skill_constraint": [
@@ -369,7 +369,7 @@
             "deputy"
         ],
         "random_living_status": [
-            "starclan"
+            "starClan"
         ]
     },
     {
@@ -383,7 +383,7 @@
             "leader"
         ],
         "random_living_status": [
-            "starclan"
+            "starClan"
         ]
     },
     {
@@ -398,7 +398,7 @@
             "apprentice"
         ],
         "random_living_status": [
-            "starclan"
+            "starClan"
         ]
     },
     {
@@ -413,7 +413,7 @@
             "medicine cat apprentice"
         ],
         "random_living_status": [
-            "starclan"
+            "starClan"
         ]
     },
     {
@@ -428,7 +428,7 @@
             "mediator apprentice"
         ],
         "random_living_status": [
-            "starclan"
+            "starClan"
         ]
     },
     {
@@ -436,13 +436,13 @@
         "thoughts": [
             "Wonders where r_c might've enjoyed walking in the territory",
             "Feels like {PRONOUN/m_c/subject} saw the ghost of r_c sleeping somewhere in the territory",
-            "Wonders what r_c thinks of the clan's patrols today"
+            "Wonders what r_c thinks of the Clan's patrols today"
         ],
         "random_status_constraint": [
             "elder"
         ],
         "random_living_status": [
-            "starclan"
+            "starClan"
         ]
     },
     {
