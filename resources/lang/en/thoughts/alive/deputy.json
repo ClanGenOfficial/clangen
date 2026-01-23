@@ -376,7 +376,7 @@
         "id": "leader_dead_deputy",
         "thoughts": [
             "Wonders if r_c would approve of {PRONOUN/m_c/object} being deputy",
-            "Wonders if r_C was still leader would {PRONOUN/m_c/subject} have been picked to be deputy",
+            "Wonders if m_c would have been picked to be deputy if r_c was still the leader",
             "Wants to make r_c proud"
         ],
         "random_status_constraint": [
