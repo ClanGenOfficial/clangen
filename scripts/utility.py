@@ -20,6 +20,8 @@ import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
+from scripts.cat import pronouns
+from scripts.cat.pronouns import get_pronouns, determine_plural_pronouns
 from scripts.cat_relations.enums import RelType
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
@@ -27,7 +29,6 @@ from scripts.game_structure.game.settings import game_settings_save, game_settin
 from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.localization import (
     load_lang_resource,
-    determine_plural_pronouns,
     get_lang_config,
 )
 from scripts.ui.scale import ui_scale_dimensions
@@ -182,7 +183,7 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
                     print(
                         f"Could not get pronouns for {inner_details[1]}. Using default."
                     )
-                    d = choice(localization.get_new_pronouns("default"))
+                    d = choice(pronouns.get_new_pronouns("default"))
 
         if inner_details[0].upper() == "PRONOUN":
             out = d[inner_details[2]]
@@ -620,7 +621,7 @@ def event_text_adjust(
     if "n_c" in text:
         for i, cat_list in enumerate(new_cats):
             if len(new_cats) > 1:
-                pronoun = localization.get_new_pronouns("default plural")[0]
+                pronoun = pronouns.get_new_pronouns("default plural")[0]
             else:
                 pronoun = choice(cat_list[0].pronouns)
 
@@ -882,15 +883,6 @@ def ceremony_text_adjust(
     adjust_text = process_text(adjust_text, cat_dict)
 
     return adjust_text, random_living_parent, random_dead_parent
-
-
-def get_pronouns(cat: "Cat"):
-    """Get a cat's pronoun even if the cat has faded to prevent crashes (use gender-neutral pronouns when the cat has faded)"""
-    if not cat.pronouns:
-        # since get_new_pronouns returns a list with length 1
-        return localization.get_new_pronouns("default")[0]
-    else:
-        return choice(cat.pronouns)
 
 
 def shorten_text_to_fit(

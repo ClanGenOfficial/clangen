@@ -18,7 +18,7 @@ import ujson
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.game_structure.localization import get_new_pronouns
+from scripts.cat.pronouns import get_new_pronouns
 from scripts.utility import process_text
 
 

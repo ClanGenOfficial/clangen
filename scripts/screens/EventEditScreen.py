@@ -18,7 +18,7 @@ from scripts.events_module.short.scar_events import Scar_Events
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure import game
-from scripts.game_structure.localization import get_default_pronouns
+from scripts.cat.pronouns import get_default_pronouns
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,

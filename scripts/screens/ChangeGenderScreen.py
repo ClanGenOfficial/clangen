@@ -20,10 +20,10 @@ from scripts.utility import (
     get_text_box_theme,
     shorten_text_to_fit,
 )
+from ..cat import pronouns
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_value
 from .Screens import Screens
 from .enums import GameScreen
-from ..game_structure import localization as pronouns
 from ..game_structure.game.switches import switch_get_value, switch_set_value, Switch
 from ..game_structure.screen_settings import MANAGER
 from ..ui.windows.pronoun_creation import PronounCreation

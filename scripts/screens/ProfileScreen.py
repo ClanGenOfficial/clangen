@@ -35,7 +35,7 @@ from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.save_load import safe_save
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
-from ..game_structure.localization import get_new_pronouns
+from ..cat.pronouns import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
 from ..ui.windows.change_cat_name import ChangeCatName
 from ..ui.windows.kill_cat import KillCat

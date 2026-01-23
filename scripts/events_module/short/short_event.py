@@ -3,6 +3,7 @@ from typing import List, Optional
 
 import i18n
 
+from scripts.cat import pronouns
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
@@ -538,7 +539,7 @@ class ShortEvent:
             new_gender = choice(possible_genders)
             self.main_cat.genderalign = new_gender
 
-            self.main_cat.pronouns = localization.get_new_pronouns(
+            self.main_cat.pronouns = pronouns.get_new_pronouns(
                 self.main_cat.genderalign
             )
 

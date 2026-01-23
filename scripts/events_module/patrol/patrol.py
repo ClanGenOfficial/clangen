@@ -9,6 +9,7 @@ from typing import List, Tuple, Optional, Union
 
 import pygame
 
+from scripts.cat import pronouns
 from scripts.cat.cats import Cat
 from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
@@ -1138,7 +1139,7 @@ class Patrol:
                 pronoun = choice(new_cats[0].pronouns)
             else:
                 names = adjust_list_text([str(cat.name) for cat in new_cats])
-                pronoun = localization.get_new_pronouns("default plural")
+                pronoun = pronouns.get_new_pronouns("default plural")
 
             replace_dict[f"n_c:{i}"] = (names, pronoun)
 

@@ -5,10 +5,9 @@ import pygame_gui
 
 from scripts.game_structure import game
 from scripts.game_structure.localization import (
-    get_custom_pronouns,
     get_lang_config,
-    add_custom_pronouns,
 )
+from scripts.cat.pronouns import get_custom_pronouns, add_custom_pronouns
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
