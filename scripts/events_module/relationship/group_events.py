@@ -21,9 +21,9 @@ from scripts.events_module.event_filters import (
     filter_relationship_type,
 )
 from scripts.utility import (
-    change_relationship_values,
     process_text,
 )
+from scripts.events_module.consequences import change_relationship_values
 from scripts.game_structure.localization import load_lang_resource
 
 

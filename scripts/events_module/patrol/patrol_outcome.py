@@ -18,11 +18,13 @@ if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
 
 from scripts.utility import (
-    unpack_rel_block,
     event_text_adjust,
+    adjust_list_text,
+)
+from scripts.events_module.consequences import (
     create_new_cat_block,
     gather_cat_objects,
-    adjust_list_text,
+    unpack_rel_block,
 )
 from scripts.events_module.event_filters import filter_relationship_type
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations

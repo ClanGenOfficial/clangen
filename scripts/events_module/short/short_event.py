@@ -12,11 +12,13 @@ from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure import localization, game
 from scripts.utility import (
-    create_new_cat_block,
     event_text_adjust,
     get_leader_life_notice,
     history_text_adjust,
     adjust_list_text,
+)
+from scripts.events_module.consequences import (
+    create_new_cat_block,
     unpack_rel_block,
     change_relationship_values,
 )

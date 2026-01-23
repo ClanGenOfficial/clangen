@@ -48,8 +48,8 @@ from scripts.utility import (
     ongoing_event_text_adjust,
     event_text_adjust,
     history_text_adjust,
-    unpack_rel_block,
 )
+from scripts.events_module.consequences import unpack_rel_block
 from scripts.clan_package.cotc import (
     change_clan_reputation,
     change_clan_relations,

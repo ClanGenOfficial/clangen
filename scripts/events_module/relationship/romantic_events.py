@@ -16,8 +16,8 @@ from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     event_text_adjust,
     process_text,
-    change_relationship_values,
 )
+from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
     get_personality_compatibility,
