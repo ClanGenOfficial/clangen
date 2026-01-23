@@ -645,6 +645,8 @@ dev_tools = false
   dark_mode_event_alternate = [87, 76, 55]
   light_mode_event_alternate = [167, 148, 111]
 
+  fade = [23, 20, 15, 192]
+
   [theme.fullscreen_background.light]
     vignette_alpha = 10
     fade_color = [150, 150, 148]
