@@ -11,7 +11,6 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
@@ -25,6 +24,7 @@ from scripts.utility import (
     ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from .enums import GameScreen
 from ..cat import save_load
 from ..clan_package.settings import get_clan_setting, switch_clan_setting
 from ..cat.enums import CatRank, CatGroup
