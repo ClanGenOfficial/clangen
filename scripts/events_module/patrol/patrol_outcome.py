@@ -18,8 +18,6 @@ if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
 
 from scripts.utility import (
-    change_clan_relations,
-    change_clan_reputation,
     unpack_rel_block,
     event_text_adjust,
     create_new_cat_block,
@@ -27,6 +25,7 @@ from scripts.utility import (
     adjust_list_text,
     filter_relationship_type,
 )
+from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
 from scripts.game_structure import game
 from scripts.cat.skills import SkillPath
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT

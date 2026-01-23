@@ -42,16 +42,18 @@ from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.ui.windows.save_error import SaveError
 from scripts.utility import (
-    change_clan_relations,
-    change_clan_reputation,
     ceremony_text_adjust,
     get_current_season,
     adjust_list_text,
     ongoing_event_text_adjust,
     event_text_adjust,
-    get_other_clan,
     history_text_adjust,
     unpack_rel_block,
+)
+from scripts.clan_package.cotc import (
+    change_clan_reputation,
+    change_clan_relations,
+    get_other_clan,
 )
 from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,

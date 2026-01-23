@@ -26,7 +26,7 @@ from scripts.events_module.event_filters import (
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants, game
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.utility import get_warring_clan
+from scripts.clan_package.cotc import get_warring_clan
 from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
 
 loaded_events = {}

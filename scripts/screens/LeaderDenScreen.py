@@ -26,11 +26,10 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import (
     get_text_box_theme,
-    get_other_clan_relation,
-    get_other_clan,
     clan_symbol_sprite,
     shorten_text_to_fit,
 )
+from scripts.clan_package.cotc import get_other_clan, get_other_clan_relation
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,

@@ -19,9 +19,8 @@ from scripts.utility import (
     adjust_list_text,
     unpack_rel_block,
     change_relationship_values,
-    change_clan_reputation,
-    change_clan_relations,
 )
+from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 from scripts.cat.enums import CatAge, CatRank
