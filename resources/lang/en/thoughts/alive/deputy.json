@@ -296,7 +296,7 @@
             "Feels a rush of anticipation at the prospect of a successful hunt",
             "Is out surveying the territory for the best hunting spots to send patrols tomorrow",
             "Wants to send a patrol to an unhunted part of the territory",
-            "Is curious about where the clan has yet to hunt in their territory"
+            "Is curious about where the Clan has yet to hunt in their territory"
         ],
         "main_skill_constraint": [
             "HUNTER,1"
