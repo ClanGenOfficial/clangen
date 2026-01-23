@@ -23,8 +23,8 @@ from scripts.utility import (
     create_new_cat_block,
     gather_cat_objects,
     adjust_list_text,
-    filter_relationship_type,
 )
+from scripts.events_module.event_filters import filter_relationship_type
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
 from scripts.game_structure import game
 from scripts.cat.skills import SkillPath

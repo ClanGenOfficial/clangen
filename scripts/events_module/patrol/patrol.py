@@ -26,12 +26,9 @@ from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
-    get_personality_compatibility,
-    check_relationship_value,
     process_text,
     adjust_prey_abbr,
     find_special_list_types,
-    filter_relationship_type,
     get_special_snippet_list,
     adjust_list_text,
 )

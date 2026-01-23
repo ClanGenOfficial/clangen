@@ -18,11 +18,11 @@ from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
     event_for_cat,
+    filter_relationship_type,
 )
 from scripts.utility import (
     change_relationship_values,
     process_text,
-    filter_relationship_type,
 )
 from scripts.game_structure.localization import load_lang_resource
 
