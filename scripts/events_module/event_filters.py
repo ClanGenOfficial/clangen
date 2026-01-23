@@ -4,7 +4,7 @@ from random import choice, randint
 from typing import List, Optional
 
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
-from scripts.cat.enums import CatRank, CatAge
+from scripts.cat.enums import CatRank, CatAge, CatCompatibility
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import game
@@ -947,3 +947,92 @@ def filter_relationship_type(
                         return False
 
     return True
+
+
+def get_highest_romantic_relation(
+    relationships, exclude_mate=False, potential_mate=False
+):
+    """Returns the relationship with the highest romantic value."""
+    max_love_value = 0
+    current_max_relationship = None
+    for rel in relationships:
+        if rel.romance < 0:
+            continue
+        if exclude_mate and rel.cat_from.ID in rel.cat_to.mate:
+            continue
+        if potential_mate and not rel.cat_to.is_potential_mate(
+            rel.cat_from, for_love_interest=True
+        ):
+            continue
+        if rel.romance > max_love_value:
+            current_max_relationship = rel
+            max_love_value = rel.romance
+
+    return current_max_relationship
+
+
+def check_relationship_value(cat_from, cat_to, rel_value=None):
+    """
+    returns the value of the rel_value param given
+    :param cat_from: the cat who is having the feelings
+    :param cat_to: the cat that the feelings are directed towards
+    :param rel_value: the relationship value that you're looking for,
+    options are: romance, like, respect, comfort, trust
+    """
+    if cat_to.ID in cat_from.relationships:
+        relationship = cat_from.relationships[cat_to.ID]
+    else:
+        relationship = cat_from.create_one_relationship(cat_to)
+
+    if rel_value == RelType.ROMANCE:
+        return relationship.romance
+    elif rel_value == RelType.LIKE:
+        return relationship.like
+    elif rel_value == RelType.RESPECT:
+        return relationship.respect
+    elif rel_value == RelType.COMFORT:
+        return relationship.comfort
+    elif rel_value == RelType.TRUST:
+        return relationship.trust
+
+    return None
+
+
+def get_personality_compatibility(cat1, cat2):
+    """
+    Returns matching CatCompatibility enum according to personalitiesof given cat objects.
+    :param cat1: Cat object of first cat
+    :param cat2: Cat object of second cat
+    """
+    personality1 = cat1.personality.trait
+    personality2 = cat2.personality.trait
+
+    if personality1 == personality2:
+        if personality1 is None:
+            return CatCompatibility.NEUTRAL
+        return CatCompatibility.POSITIVE
+
+    lawfulness_diff = abs(cat1.personality.lawfulness - cat2.personality.lawfulness)
+    sociability_diff = abs(cat1.personality.sociability - cat2.personality.sociability)
+    aggression_diff = abs(cat1.personality.aggression - cat2.personality.aggression)
+    stability_diff = abs(cat1.personality.stability - cat2.personality.stability)
+    list_of_differences = [
+        lawfulness_diff,
+        sociability_diff,
+        aggression_diff,
+        stability_diff,
+    ]
+
+    running_total = 0
+    for x in list_of_differences:
+        if x <= 4:
+            running_total += 1
+        elif x >= 6:
+            running_total -= 1
+
+    if running_total >= 2:
+        return CatCompatibility.POSITIVE
+    if running_total <= -2:
+        return CatCompatibility.NEGATIVE
+
+    return CatCompatibility.NEUTRAL

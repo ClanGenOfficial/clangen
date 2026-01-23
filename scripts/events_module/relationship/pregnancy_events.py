@@ -16,11 +16,13 @@ from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     create_new_cat,
-    get_highest_romantic_relation,
     event_text_adjust,
-    get_personality_compatibility,
     change_relationship_values,
     adjust_list_text,
+)
+from scripts.events_module.event_filters import (
+    get_highest_romantic_relation,
+    get_personality_compatibility,
 )
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 

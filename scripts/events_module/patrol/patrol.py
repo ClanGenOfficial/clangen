@@ -18,6 +18,9 @@ from scripts.events_module.event_filters import (
     event_for_tags,
     get_frequency,
     find_new_frequency,
+    filter_relationship_type,
+    check_relationship_value,
+    get_personality_compatibility,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome

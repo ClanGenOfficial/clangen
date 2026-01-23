@@ -9,9 +9,11 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.utility import (
+    get_num_of_cats_with_relation_amount_towards,
+)
+from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
     get_personality_compatibility,
-    get_num_of_cats_with_relation_amount_towards,
 )
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
