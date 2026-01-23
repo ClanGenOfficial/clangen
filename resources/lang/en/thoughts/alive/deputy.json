@@ -420,7 +420,7 @@
         "id": "mediator_dead_deputy",
         "thoughts": [
             "Wonders what r_c would say to help settle a patrol dispute",
-            "Swore {PRONOUN/m_c/subject} heard the voice of r_c telling {PRONOUN/m_c/object} to not put two cats on a patrol together",
+            "Swore {PRONOUN/m_c/subject} heard the voice of r_c telling {PRONOUN/m_c/object} to not put these two cats on a patrol together",
             "Wonders if r_c would have wanted to go with a border patrol"
         ],
         "random_status_constraint": [
