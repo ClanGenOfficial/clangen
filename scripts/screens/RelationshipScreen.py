@@ -16,9 +16,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.ui.windows.relationship_log import RelationshipLog
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
-from scripts.utility import (
-    get_text_box_theme,
-)
+from scripts.ui.theme import get_text_box_theme
 from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.ui.scale import (
     ui_scale,

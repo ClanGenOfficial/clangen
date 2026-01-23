@@ -7,16 +7,14 @@ TODO: Docs
 """  # pylint: enable=line-too-long
 
 import logging
-import os
 from random import choice
 from sys import exit as sys_exit
 from typing import TYPE_CHECKING
 
 import pygame
-from pygame_gui.core import ObjectID
 
 from scripts.cat_relations.enums import RelType
-from scripts.game_structure.game.settings import game_settings_save, game_setting_get
+from scripts.game_structure.game.settings import game_settings_save
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import constants
@@ -160,21 +158,6 @@ def clamp(value: float, minimum_value: float, maximum_value: float) -> float:
     elif value > maximum_value:
         return maximum_value
     return value
-
-
-def is_iterable(y):
-    try:
-        0 in y
-    except TypeError:
-        return False
-
-
-def get_text_box_theme(theme_name=None):
-    """Updates the name of the theme based on dark or light mode"""
-    if game_setting_get("dark mode"):
-        return ObjectID("#dark", theme_name)
-    else:
-        return theme_name
 
 
 def quit_game(savesettings=False, clearevents=False):

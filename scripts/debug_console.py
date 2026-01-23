@@ -12,7 +12,7 @@ from scripts.debug_commands import commandList
 from scripts.debug_commands.utils import set_debug_class
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER, offset, screen_scale
-from scripts.utility import get_text_box_theme
+from scripts.ui.theme import get_text_box_theme
 
 
 class DebugMenu(UIWindow):

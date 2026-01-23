@@ -18,9 +18,7 @@ from scripts.game_structure.ui_elements import (
     UIModifiedScrollingContainer,
 )
 from scripts.housekeeping.datadir import open_data_dir
-from scripts.utility import (
-    get_text_box_theme,
-)  # pylint: disable=redefined-builtin
+from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
 from .enums import GameScreen

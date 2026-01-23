@@ -19,8 +19,8 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.utility import (
     chunks,
-    get_text_box_theme,
 )
+from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import (
     process_text,
     event_text_adjust,
