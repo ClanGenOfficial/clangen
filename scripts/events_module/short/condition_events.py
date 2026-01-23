@@ -19,8 +19,8 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.short.handle_short_events import handle_short_events
 from scripts.events_module.short.scar_events import Scar_Events
+from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.game_structure import constants
 from scripts.game_structure.game.switches import (
     Switch,
@@ -28,7 +28,7 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
     switch_append_list_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import (
     event_text_adjust,
@@ -176,13 +176,9 @@ class Condition_Events:
 
             event = event_text_adjust(Cat, event.strip(), main_cat=cat)
 
-            if cat.status.is_leader:
-                history_event = history_event.replace("m_c ", "").replace(".", "")
-                cat.history.add_death(
-                    condition="starving", death_text=history_event.strip()
-                )
-            else:
-                cat.history.add_death(condition="starving", death_text=history_event)
+            cat.history.add_death(
+                condition="starving", death_text=history_event.strip()
+            )
 
             cat.die()
 
@@ -368,11 +364,10 @@ class Condition_Events:
             constants.CONFIG["event_generation"]["debug_type_override"] == "injury"
             and random_cat
         ):
-            handle_short_events.handle_event(
+            create_short_event(
                 event_type="health",
                 main_cat=cat,
                 random_cat=random_cat,
-                freshkill_pile=game.clan.freshkill_pile,
             )
 
         # handle if the current cat is already injured
@@ -420,11 +415,10 @@ class Condition_Events:
                     if not int(random.random() * stopping_chance):
                         return False
 
-                handle_short_events.handle_event(
+                create_short_event(
                     event_type="health",
                     main_cat=cat,
                     random_cat=random_cat,
-                    freshkill_pile=game.clan.freshkill_pile,
                 )
 
         # just double-checking that trigger is only returned True if the cat is dead
@@ -587,22 +581,17 @@ class Condition_Events:
                         f"WARNING: {illness} does not have an injury death string, placeholder used."
                     )
                     event = i18n.t("defaults.illness_death_event")
-                    history_event = (
-                        i18n.t("defaults.illness_death_history")
-                        if cat.status.rank != CatRank.LEADER
-                        else i18n.t("defaults.illness_death_history_leader")
-                    )
+                    history_event = i18n.t("defaults.illness_death_history")
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
-
+                # add life loss message
                 if cat.status.is_leader:
                     event = event + " " + get_leader_life_notice()
-                    history_event = history_event.replace("m_c ", "").replace(".", "")
-                    cat.history.add_death(
-                        condition=illness, death_text=history_event.strip()
-                    )
-                else:
-                    cat.history.add_death(condition=illness, death_text=history_event)
+
+                # add death to history
+                cat.history.add_death(
+                    condition=illness, death_text=history_event.strip()
+                )
 
                 # clear event list to get rid of any healed or risk event texts from other illnesses
                 event_list.clear()
@@ -696,23 +685,15 @@ class Condition_Events:
                     )
 
                     event = i18n.t("defaults.injury_death_event")
-                    history_text = (
-                        i18n.t("defaults.injury_death_history")
-                        if cat.status.rank != CatRank.LEADER
-                        else i18n.t("injury_death_history_leader")
-                    )
+                    history_text = i18n.t("defaults.injury_death_history")
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
-
+                # add life loss message
                 if cat.status.is_leader:
                     event = event + " " + get_leader_life_notice()
-                    history_text = history_text.replace("m_c", " ").replace(".", "")
-                    cat.history.add_death(
-                        condition=injury, death_text=history_text.strip()
-                    )
 
-                else:
-                    cat.history.add_death(condition=injury, death_text=history_text)
+                # add death to history
+                cat.history.add_death(condition=injury, death_text=history_text.strip())
 
                 # clear event list first to make sure any heal or risk events from other injuries are not shown
                 event_list.clear()
@@ -720,7 +701,7 @@ class Condition_Events:
                 game.herb_events_list.append(event)
                 break
 
-            elif cat.healed_condition is True:
+            elif cat.healed_condition:
                 switch_append_list_value(Switch.skip_conditions, injury)
                 triggered = True
 
@@ -888,16 +869,11 @@ class Condition_Events:
                     )
                 event_list.append(event)
 
-                if cat.status.rank != CatRank.LEADER:
-                    cat.history.add_death(
-                        death_text=i18n.t("defaults.complications_death_history"),
-                        condition=translated_condition,
-                    )
-                else:
-                    cat.history.add_death(
-                        death_text=i18n.t("defaults.complications_death_history"),
-                        condition=translated_condition,
-                    )
+                # add to death history
+                cat.history.add_death(
+                    death_text=i18n.t("defaults.complications_death_history"),
+                    condition=translated_condition,
+                )
 
                 game.herb_events_list.append(event)
                 break
@@ -1097,31 +1073,26 @@ class Condition_Events:
                 and risk["name"] not in dictionary
             ):
                 # check if the new risk is a previous stage of a current illness
-                skip = False
                 if risk["name"] in progression:
                     if progression[risk["name"]] in dictionary:
-                        skip = True
-                # if it is, then break instead of giving the risk
-                if skip is True:
-                    break
+                        # if it is, then break instead of giving the risk
+                        break
 
                 new_condition_name = risk["name"]
 
                 # lower risk of getting it again if not a perm condition
-                if dictionary != cat.permanent_condition:
-                    saved_condition = dictionary[condition]["risks"]
-                    for old_risk in saved_condition:
-                        if old_risk["name"] == risk["name"]:
-                            if new_condition_name in [
-                                "an infected wound",
-                                "a festering wound",
-                            ]:
-                                # if it's infection or festering, we're removing the chance completely
-                                # this is both to prevent annoying infection loops
-                                # and bc the illness/injury difference causes problems
-                                old_risk["chance"] = 0
-                            else:
-                                old_risk["chance"] = risk["chance"] + 10
+                for _risk in dictionary[condition]["risks"]:
+                    if _risk["name"] == new_condition_name:
+                        if new_condition_name in [
+                            "an infected wound",
+                            "a festering wound",
+                        ]:
+                            # if it's infection or festering, we're removing the chance completely
+                            # this is both to prevent annoying infection loops
+                            # and bc the illness/injury difference causes problems
+                            _risk["chance"] = 0
+                        else:
+                            _risk["chance"] = risk["chance"] + 20
 
                 med_cat = None
                 removed_condition = False

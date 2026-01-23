@@ -3,7 +3,7 @@ from typing import List
 from scripts.cat.cats import Cat
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 
 class AddCatCommand(Command):

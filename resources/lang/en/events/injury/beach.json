@@ -51,8 +51,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died from water-inhalation after nearly drowning.",
-                "lead_death": "died from water-inhalation after nearly drowning"
+                "death": "m_c died from water-inhalation after nearly drowning."
             }
         ],
         "relationships": [
@@ -220,7 +219,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died after swimming through freezing water when dared by r_c."
+                "death": "m_c died after swimming through freezing water when dared by r_c."
             }
         ],
         "relationships": [
@@ -284,7 +283,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died of dehydration after drinking salt water."
+                "death": "m_c died of dehydration after drinking salt water."
             }
         ],
         "relationships": [
@@ -350,7 +349,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred as a kit, when a seagull tried to carry {PRONOUN/m_c/object} off.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a seagull tried to carry {PRONOUN/m_c/object} off."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a seagull tried to carry {PRONOUN/m_c/object} off."
             }
         ],
         "relationships": [
@@ -427,7 +426,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred as a kit when a pelican tried to carry {PRONOUN/m_c/object} off.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a pelican tried to carry {PRONOUN/m_c/object} off."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a pelican tried to carry {PRONOUN/m_c/object} off."
             }
         ],
         "relationships": [
@@ -509,7 +508,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died of water-inhalation, after trying to swim out of camp."
+                "death": "m_c died of water-inhalation, after trying to swim out of camp."
             }
         ],
         "relationships": [
@@ -578,7 +577,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died after swimming through freezing water when dared by r_c."
+                "death": "m_c died after swimming through freezing water when dared by r_c."
             }
         ],
         "relationships": [
@@ -741,7 +740,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred as a kit when a snake bit {PRONOUN/m_c/object}.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a snake bit {PRONOUN/m_c/object}."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a snake bit {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -808,7 +807,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died from water-inhalation after being dragged out to sea."
+                "death": "m_c died from water-inhalation after being dragged out to sea."
             }
         ]
     },
@@ -867,8 +866,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} injuries after saving a drowning enemy warrior.",
-                "lead_death": "died from {PRONOUN/m_c/poss} injuries after saving a drowning enemy warrior",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after saving a drowning enemy warrior.",
                 "scar": "m_c got a scar from a battle with a warring Clan"
             }
         ]

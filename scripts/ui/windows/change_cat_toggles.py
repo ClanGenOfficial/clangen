@@ -1,7 +1,7 @@
 import pygame
 import pygame_gui
 
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
 )

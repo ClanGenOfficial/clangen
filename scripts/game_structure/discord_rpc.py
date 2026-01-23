@@ -13,7 +13,7 @@ from time import time
 
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.screens.enums import GameScreen
 
 status_dict = {

@@ -11,8 +11,8 @@ from scripts.events_module.relationship.romantic_events import RomanticEvents
 class RelationshipConditions(unittest.TestCase):
     def test_main_cat_status_one(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
+        cat1 = Cat(disable_random=True)
+        cat2 = Cat(disable_random=True)
 
         condition = {
             "romance": 0,

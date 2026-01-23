@@ -222,6 +222,23 @@
 		}
 	},
 	{
+		"id": "trust_kit_parent_inc_med",
+		"interactions": [
+			"m_c always listens to r_c's advice.",
+			"m_c knows r_c won't judge {PRONOUN/m_c/object}.",
+			"m_c knows r_c will always have time for {PRONOUN/r_c/poss} kit.",
+			"r_c helps m_c up when {PRONOUN/m_c/subject} {VERB/r_c/trip/trips}.",
+			"r_c answers m_c's silly question honestly.",
+			"r_c takes m_c's bump seriously, even if other cats think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} faking it."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"relationship_constraint": [
+			"child/parent"
+		]
+	},
+	{
 		"id": "trust_inc_high1",
 		"intensity": "high",
 		"interactions": [

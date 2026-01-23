@@ -9,7 +9,7 @@ import pygame_gui
 from pygame_gui.core import ObjectID, UIContainer
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.ui_elements import (
     UIImageButton,

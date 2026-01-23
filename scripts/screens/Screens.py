@@ -17,7 +17,6 @@ from scripts.game_structure.game.switches import (
     switch_get_value,
     Switch,
 )
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.propagating_thread import PropagatingThread
 from scripts.game_structure.screen_settings import (
     screen,
@@ -33,6 +32,7 @@ from scripts.utility import (
     ui_scale_blit,
     get_current_season,
 )
+from scripts.game_structure import game
 
 
 class Screens:
@@ -74,6 +74,7 @@ class Screens:
             GameScreen.RELATIONSHIP,
             GameScreen.MEDIATION,
             GameScreen.CHANGE_GENDER,
+            GameScreen.FAMILY_TREE,
         ]:
             game.last_list_forProfile = None
             self.current_group = "your_clan"

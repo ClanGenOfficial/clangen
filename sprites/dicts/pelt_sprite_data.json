@@ -1,0 +1,90 @@
+{
+    "spritesheet": {
+        "colours_single": ["SingleColour", "TwoColour"],
+        "colours_tabby": ["Tabby"],
+        "colours_marbled": ["Marbled"],
+        "colours_rosette": ["Rosette"],
+        "colours_smoke": ["Smoke"],
+        "colours_ticked": ["Ticked"],
+        "colours_speckled": ["Speckled"],
+        "colours_bengal": ["Bengal"],
+        "colours_mackerel": ["Mackerel"],
+        "colours_classic": ["Classic"],
+        "colours_sokoke": ["Sokoke"],
+        "colours_agouti": ["Agouti"],
+        "colours_singlestripe": ["Singlestripe"],
+        "colours_masked": ["Masked"]
+    },
+    "sprite_list": [
+        {
+            "WHITE": "white",
+            "PALEGREY": "white",
+            "SILVER": "white",
+            "GREY": "black",
+            "DARKGREY": "black",
+            "GHOST": "black",
+            "BLACK": "black"
+        },
+        {
+            "CREAM": "ginger",
+            "PALEGINGER": "ginger",
+            "GOLDEN": "ginger",
+            "GINGER": "ginger",
+            "DARKGINGER": "ginger",
+            "SIENNA": "ginger"
+        },
+        {
+            "LIGHTBROWN": "brown",
+            "LILAC": "brown",
+            "BROWN": "brown",
+            "GOLDEN-BROWN": "brown",
+            "DARKBROWN": "brown",
+            "CHOCOLATE": "brown"
+        }
+    ],
+    "pattern_names": [
+        "single",
+        "tabby",
+        "bengal",
+        "marbled",
+        "ticked",
+        "smoke",
+        "rosette",
+        "speckled",
+        "mackerel",
+        "classic",
+        "sokoke",
+        "agouti",
+        "singlestripe",
+        "masked"
+    ],
+    "pattern_categories": {
+        "tabbies": [
+            "Tabby",
+            "Ticked",
+            "Mackerel",
+            "Classic",
+            "Sokoke",
+            "Agouti"
+        ],
+        "spotted": [
+            "Speckled",
+            "Rosette"
+        ],
+        "plain": [
+            "SingleColour",
+            "TwoColour",
+            "Smoke",
+            "Singlestripe"
+        ],
+        "exotic": [
+            "Bengal",
+            "Marbled",
+            "Masked"
+        ],
+        "torties": [
+            "Tortie",
+            "Calico"
+        ]
+    }
+}
