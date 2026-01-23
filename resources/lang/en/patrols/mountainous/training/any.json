@@ -120,14 +120,14 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's encounter with a badger on a solo patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -141,14 +141,14 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat investigated an old badger sett alone."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -165,14 +165,14 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat scouted the occupancy of a badger sett alone."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -188,7 +188,8 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "relationships": [
                     {
@@ -196,14 +197,14 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat staked out a badger sett alone."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -229,18 +230,22 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "cats_from": ["low_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and was impressed."
+                        }
+                    },
+                    {
+                        "cats_from": ["high_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and thought it was mouse-brained."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -252,25 +257,8 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by a badger.",
                     "death": "m_c lost their life to a badger."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    }
-                ],
                 "frequency": 3
             },
             {
@@ -293,22 +281,6 @@
                     "scar": "m_c was scarred by a badger.",
                     "death": "m_c lost their life to a badger."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    }
-                ],
                 "frequency": 3
             }
         ]
@@ -339,20 +311,14 @@
                 "exp": 30,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat approved of to_cat's plan to check whether a new badger had moved into an old sett."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -362,20 +328,14 @@
                 "exp": 30,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to come up with a plan to bat pebbles into a badger sett to check its occupancy."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -388,20 +348,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol" ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                            "respect" ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's clever idea to look for badger scat instead of looking inside an old sett to check its occupancy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -417,24 +372,22 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                            "patrol" ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat approved of to_cat's plan to stake out a badger sett."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -444,6 +397,18 @@
             {
                 "text": "The cats try to find enough rubble to barricade the opening to the sett, but the area is pretty bare. Before they know it, they're tired, thirsty, and forced to return home with nothing to show for it.",
                 "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to block the opening of a badger sett on patrol."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -462,6 +427,21 @@
                     "shameless",
                     "troublesome",
                     "vengeful"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat had to save to_cat on patrol when {PRONOUN/to_cat/subject} stuck {PRONOUN/to_cat/poss} head in a badger sett."
+                        }
+                    }
                 ],
                 "frequency": 4
             },
@@ -482,8 +462,21 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred by a badger."
+                    "scar": "This cat was scarred by a badger.",
+                    "death": "This cat died from wounds inflicted by a badger."
                 },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat tried to check the occupancy of a badger sett on patrol, and it ended with r_c in the medicine den."
+                        }
+                    }
+                ],
                 "frequency": 3
             }
         ]
@@ -501,37 +494,47 @@
         ],
         "tags": [],
         "patrol_art": "mtn_train_stuck",
-        "min_cats": 3,
+        "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "r_c is trailing behind the patrol when there is a mighty clatter of stones from below {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly, just in time for the world to tip upside-down as the scree slope beneath {PRONOUN/r_c/object} collapses.",
+        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/lag/lags} behind on patrol, there's a mighty clatter of stones from below {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly, just in time for the world to tip upside-down as the scree slope beneath {PRONOUN/r_c/object} collapses.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction, and wriggle {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
                 "text": "{PRONOUN/r_c/poss/CAP} Clanmates come running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat helped rescue from_cat when a scree slope collapsed under {PRONOUN/from_cat/object}."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
+                "exp": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a scree slope collapsed under {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -541,24 +544,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a scree slope collapsed under {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -571,31 +564,20 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a scree slope collapsed under {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as the patrol carefully digs down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
+                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
                 "exp": 20,
                 "stat_trait": [
                     "compassionate",
@@ -607,25 +589,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": [ "like", "comfort", "trust" ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat kept from_cat calm when a scree slope collapsed under {PRONOUN/r_c/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -633,29 +604,18 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol works all day to free r_c and gets nothing else done.",
+                "text": "p_l works all day to free r_c, and the patrol gets nothing else done.",
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a scree slope collapsed under {PRONOUN/r_c/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -678,30 +638,32 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["like", "comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} out for it."
+                        }
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["like", "respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat got stuck on patrol, and from_cat had no patience for it."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
                 "text": "Hurt and wheezing, r_c hears the patrol panicking as {PRONOUN/r_c/subject} drift to StarClan.",
                 "exp": 0,
                 "dead_cats": [
@@ -711,32 +673,12 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 3
             },
             {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
                 "text": "The patrol eventually manages to rescue r_c, but {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to be helped back to camp, battered and injured.",
                 "exp": 0,
                 "injury": [
@@ -756,347 +698,7 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 3
-            },
-            {
-                "text": "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, the eyes of s_c glint malevolently. Was this...? r_c doesn't have a chance to finish {PRONOUN/r_c/poss} last thought.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "dead_cats": [
-                    "r_c"
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
-            },
-            {
-                "text": "Even though r_c made it out, {PRONOUN/r_c/subject} {VERB/r_c/swear/swears} someone pushed {PRONOUN/r_c/object}, and {VERB/r_c/blame/blames} s_c. s_c denies it and says they should get r_c back to camp to get {PRONOUN/r_c/poss} injury looked at.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "mnt_train_stuck2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {},
-        "frequency": 1,
-        "intro_text": "r_c is trailing behind p_l when there is a mighty clatter of stones from below them. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly, just in time for the world to tip upside-down as the scree slope beneath {PRONOUN/r_c/object} collapses.",
-        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "p_l comes running at {PRONOUN/r_c/poss} yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l digs through the loose rocks, helping r_c clear it away enough for the other cat to scramble free.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "Without letting {PRONOUN/s_c/self} panic, s_c carefully assesses the collapsed slope trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/find/finds} a stable path to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping {PRONOUN/r_c/object} calm as {PRONOUN/s_c/subject} carefully {VERB/s_c/dig/digs} down to {PRONOUN/r_c/object}. r_c blinks up at {PRONOUN/s_c/object}, holding on to {PRONOUN/s_c/poss} presence in the scary situation.",
-                "exp": 20,
-                "stat_trait": [
-                    "compassionate",
-                    "faithful",
-                    "loving",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "p_l works all day to free r_c and gets nothing else done.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} s_c harshly that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have time for some mouse-brain who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out from the loose rocks.",
-                "exp": 0,
-                "can_have_stat": [
-                    "r_c"
-                ],
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
             },
             {
                 "text": "Hurt and wheezing, r_c hears p_l panicking as {PRONOUN/r_c/subject} {VERB/r_c/drift/drifts} to StarClan.",
@@ -1108,29 +710,6 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 3
             },
             {
@@ -1153,37 +732,14 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "p_l",
-                            "p_l",
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol",
-                            "r_c",
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 3
             }
         ]
     },
     {
-        "patrol_id": "mtn_train_stuck3",
+        "patrol_id": "mtn_train_stuck2",
         "biome": [
-            "plains"
+            "mountainous"
         ],
         "season": [
             "any"
@@ -1208,19 +764,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l rescued r_c when a scree slope collapsed under {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} strength."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1230,19 +781,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l rescued r_c when a scree slope collapsed under {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} cleverness."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1255,19 +801,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l rescued r_c when a scree slope collapsed under {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} cleverness."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1285,19 +826,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l kept r_c calm when a scree slope collapsed under {PRONOUN/r_c/object}. r_c was grateful for {PRONOUN/p_l/poss} presence."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1309,28 +845,23 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat rescued from_cat when a scree slope collapsed under {PRONOUN/r_c/object}."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "As s_c rarely has patience for other cats, {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} s_c harshly that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have time for some mouse-brain who got stuck, making s_c resentful as {PRONOUN/s_c/subject} {VERB/s_c/dig/digs} {PRONOUN/s_c/self} out from the loose rocks.",
+                "text": "As s_c rarely has patience for other cats, {PRONOUN/s_c/subject} {VERB/s_c/tell/tells} r_c harshly that {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have time for some mouse-brain who got stuck, making r_c resentful as {PRONOUN/r_c/subject} {VERB/r_c/dig/digs} {PRONOUN/r_c/self} out from the loose rocks.",
                 "exp": 0,
                 "can_have_stat": [
-                    "r_c"
+                    "p_l"
                 ],
                 "stat_trait": [
                     "ambitious",
@@ -1344,19 +875,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} out for it."
+                        }
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": ["romance", "like", "respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat got stuck on patrol, and from_cat had no patience for it."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1371,23 +907,6 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 3
             },
             {
@@ -1410,29 +929,12 @@
                     "scar": "m_c carries a scar from being trapped on patrol",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 3
             }
         ]
     },
     {
-        "patrol_id": "mtn_train_stuck4",
+        "patrol_id": "mtn_train_stuck3",
         "biome": [
             "mountainous"
         ],

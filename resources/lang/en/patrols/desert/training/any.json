@@ -85,13 +85,45 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence before it moves and r_c shots backwards, sprinting back to camp to warn everyone.",
+                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence before it moves and r_c shoots backwards, sprinting back to camp to warn everyone.",
                 "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's encounter with a badger on a solo patrol."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
                 "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence.  This will be important information to report back at camp.",
                 "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat investigated an old badger sett alone."
+                        }
+                    }
+                ],
                 "frequency": 1
             },
             {
@@ -99,6 +131,22 @@
                 "exp": 30,
                 "stat_skill": [
                     "CLEVER,1"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat scouted the occupancy of a badger sett alone."
+                        }
+                    }
                 ],
                 "frequency": 4
             },
@@ -113,7 +161,24 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat staked out a badger sett alone."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
@@ -136,6 +201,26 @@
                     "troublesome",
                     "vengeful"
                 ],
+                "relationships": [
+                    {
+                        "cats_from": ["low_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and was impressed."
+                        }
+                    },
+                    {
+                        "cats_from": ["high_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and thought it was mouse-brained."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -145,7 +230,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by a badger.",
                     "death": "m_c lost their life to a badger."
                 },
                 "frequency": 3
@@ -176,11 +260,35 @@
             {
                 "text": "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it. p_l comes up with a plan, sweeping the ground in front of the sett entrance clean with their tails. The cats will be able to come back tomorrow, and see if anything has left tracks.",
                 "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat approved of to_cat's plan to check whether a new badger had moved into an old sett."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
                 "text": "This can't be left unknown. The patrol brainstorms ideas, until eventually they have a workable plan. p_l takes the most unpleasant job, carefully moving fallen cacti spikes and thorny scrubs, until the cats gingerly push them down the slope of the badger set. Outraged, pained fizzing confirms the new occupant.",
                 "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to come up with a plan to push cacti spikes and thorny scrubs into a badger sett to check its occupancy."
+                        }
+                    }
+                ],
                 "frequency": 1
             },
             {
@@ -188,6 +296,19 @@
                 "exp": 30,
                 "stat_skill": [
                     "CLEVER,1"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol" ],
+                        "mutual": false,
+                        "values": [
+                            "respect" ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's clever idea to look for badger scat instead of looking inside an old sett to check its occupancy."
+                        }
+                    }
                 ],
                 "frequency": 4
             },
@@ -202,7 +323,23 @@
                     "careful",
                     "nervous",
                     "sneaky",
-                    "strange"
+                    "strange",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol" ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat approved of to_cat's plan to stake out a badger sett."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
@@ -211,6 +348,18 @@
             {
                 "text": "The cats try to clean the opening to the sett free of tracks, but the ground is slightly too damp and the dirt just ends up clumped oddly to their tails. Before they know it, they're tired, thirsty, and going home with nothing to show for it.",
                 "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to block the opening of a badger sett on patrol."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -229,6 +378,21 @@
                     "shameless",
                     "troublesome",
                     "vengeful"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat had to save to_cat on patrol when {PRONOUN/to_cat/subject} stuck {PRONOUN/to_cat/poss} head in a badger sett."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
@@ -256,7 +420,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l frees their Clanmate, and settles down to groom the sand from their pelt, everyone relieved to have gotten off so lightly.",
+                "text": "p_l frees {PRONOUN/p_l/poss} Clanmate and settles down to groom the sand from {PRONOUN/r_c/poss} pelt, everyone relieved to have gotten off so lightly.",
                 "exp": 20,
                 "relationships": [
                     {
@@ -298,7 +462,7 @@
                 "frequency": 1
             },
             {
-                "text": "Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+                "text": "Not letting {PRONOUN/s_c/self} panic, s_c carefully assesses the collapsed dune trapping {PRONOUN/s_c/poss} Clanmate. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} out a stable path to dig {PRONOUN/r_c/object} out from above, and r_c is recovered, scared but okay.",
                 "exp": 20,
                 "stat_skill": [
                     "CLEVER,2"
@@ -322,7 +486,10 @@
                 "frequency": 4
             },
             {
-                "text": "Creeping in as close as possible, s_c purrs to their Clanmate, keeping them calm as the patrol carefully digs down to them.",
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
+                "text": "Creeping in as close as possible, s_c purrs to {PRONOUN/s_c/poss} Clanmate, keeping {PRONOUN/r_c/object} calm as the patrol carefully digs down to {PRONOUN/r_c/object}.",
                 "exp": 20,
                 "stat_trait": [
                     "compassionate",
@@ -353,7 +520,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol works all day to free their Clanmate and gets nothing else done.",
+                "text": "p_l works all day to free r_c, and the patrol gets nothing else done.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -374,7 +541,7 @@
                 "frequency": 4
             },
             {
-                "text": "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some mouse-brain who got stuck.",
+                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own - this patrol is too important to wait for some mouse-brain who got stuck.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -405,7 +572,10 @@
                 "frequency": 4
             },
             {
-                "text": "p_l works frantically, but r_c is under the sand for too long, and slips away as the patrol tries desperately to free them.",
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
+                "text": "p_l works frantically, but r_c is under the sand for too long, and slips away as the patrol tries desperately to free {PRONOUN/r_c/object}.",
                 "exp": 0,
                 "dead_cats": [
                     "r_c"
@@ -436,206 +606,6 @@
     },
     {
         "patrol_id": "dst_train_stuck2",
-        "biome": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "Trailing behind the patrol, there's a quiet swish below r_c. They look around wildly, just in time for the world to tip upside-down as the sand dune beneath them collapses.",
-        "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s}on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l digs through the sand, lifting it from r_c for long enough for the other cat to scramble free.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as the patrol carefully digs down to them. r_c blinks up at them, holding on to their presence in the scary situation.",
-                "exp": 20,
-                "stat_trait": [
-                    "compassionate",
-                    "faithful",
-                    "loving",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol works all day to free r_c and gets nothing else done.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some mouse-brain who got stuck.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
-                "exp": 0,
-                "dead_cats": [
-                    "r_c"
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_train_stuck3",
         "biome": [
             "desert"
         ],
