@@ -207,9 +207,11 @@ def set_display_mode(
 
     display_change_in_progress = False
     if source_screen is not None and show_confirm_dialog:
-        from scripts.ui.windows.confirm_display_change import ConfirmDisplayChanges
+        from scripts.ui.windows.confirm_display_change import (
+            ConfirmDisplayChangesWindow,
+        )
 
-        ConfirmDisplayChanges(source_screen=source_screen)
+        ConfirmDisplayChangesWindow(source_screen=source_screen)
 
     pygame_gui.core.utility.set_default_manager(MANAGER)
 

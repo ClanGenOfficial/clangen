@@ -27,7 +27,7 @@ from importlib import reload
 from importlib.util import find_spec
 
 from scripts.screens.enums import GameScreen
-from scripts.ui.windows.save_check import SaveCheck
+from scripts.ui.windows.save_check import SaveCheckWindow
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -392,7 +392,7 @@ while 1:
             ):
                 quit(savesettings=False)
             else:
-                SaveCheck(switch_get_value(Switch.cur_screen), False, None)
+                SaveCheckWindow(switch_get_value(Switch.cur_screen), False, None)
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:

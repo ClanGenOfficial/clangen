@@ -10,7 +10,6 @@ from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.utility import (
     ui_scale,
     ui_scale_offset,
-    ui_scale_dimensions,
     ui_scale_value,
 )
 

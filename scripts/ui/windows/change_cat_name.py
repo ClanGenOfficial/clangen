@@ -11,19 +11,17 @@ from scripts.game_structure.ui_elements import (
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale, shorten_text_to_fit
 from re import sub
 
 
-class ChangeCatName(GameWindow):
+class ChangeCatNameWindow(GameWindow):
     """This window allows the user to change the cat's name"""
 
     def __init__(self, cat):
         super().__init__(
             ui_scale(pygame.Rect((300, 215), (400, 185))),
-            window_display_title="Change Cat Name",
-            object_id="#change_cat_name_window",
         )
         self.the_cat = cat
 

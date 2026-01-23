@@ -4,17 +4,15 @@ import pygame
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UITextBoxTweaked
 from scripts.housekeeping.version import get_version_info
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 from re import search as re_search
 
 
-class ChangelogPopup(GameWindow):
+class ChangelogWindow(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((150, 150), (500, 400))),
-            window_display_title="Changelog",
-            object_id="#game_over_window",
         )
 
         self.changelog_popup_title = UITextBoxTweaked(

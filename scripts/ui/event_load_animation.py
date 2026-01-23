@@ -3,11 +3,11 @@ import time
 import pygame
 import pygame_gui
 
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
-class EventLoading(GameWindow):
+class EventLoadingAnimation(GameWindow):
     """Handles the event loading animation"""
 
     def __init__(self, pos):

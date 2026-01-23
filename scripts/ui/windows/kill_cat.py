@@ -13,7 +13,7 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale, process_text, update_sprite
 
 
@@ -23,8 +23,6 @@ class KillCat(GameWindow):
     def __init__(self, cat):
         super().__init__(
             ui_scale(pygame.Rect((300, 200), (450, 200))),
-            window_display_title="Kill Cat",
-            object_id="#kill_cat_window",
         )
 
         self.the_cat = cat

@@ -16,7 +16,7 @@ from scripts.cat.enums import CatRank
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
-from scripts.ui.windows.select_focus_clans import SelectFocusClans
+from scripts.ui.windows.select_focus_clans import SelectFocusClansWindow
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.utility import (
@@ -122,7 +122,7 @@ class WarriorDenScreen(Screens):
 
             elif event.ui_element == self.save_button:
                 if self.active_code in self.other_clan_settings:
-                    SelectFocusClans()
+                    SelectFocusClansWindow()
                 else:
                     game.clan.last_focus_change = game.clan.age
                     self.original_focus_code = self.active_code

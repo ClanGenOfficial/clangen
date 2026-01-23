@@ -1,16 +1,14 @@
 import pygame
 import pygame_gui
 
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
-class SaveError(GameWindow):
+class SaveErrorWindow(GameWindow):
     def __init__(self, error_text):
         super().__init__(
             ui_scale(pygame.Rect((150, 150), (500, 400))),
-            window_display_title="Changelog",
-            object_id="#game_over_window",
         )
         self.changelog_popup_title = pygame_gui.elements.UITextBox(
             "windows.save_failed_title",
