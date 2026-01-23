@@ -330,6 +330,26 @@
                     "troublesome",
                     "vengeful"
                 ],
+                "relationships": [
+                    {
+                        "cats_from": ["low_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and was impressed."
+                        }
+                    },
+                    {
+                        "cats_from": ["high_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and thought it was mouse-brained."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -418,7 +438,7 @@
                         "values": ["respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "Under the leadership of to_cat, from_cat pushed a branch into a badger sett to check its occupancy."
+                            "cats_from": "from_cat approved of to_cat's plan to push a branch into a badger sett to check its occupancy."
                         }
                     }
                 ],
@@ -470,7 +490,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "Under to_cat's leadership, from_cat staked out a badger sett on patrol."
+                            "cats_from": "from_cat approved of to_cat's plan to stake out a badger sett."
                         }
                     }
                 ],
@@ -549,8 +569,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat was scarred by a badger.",
-                    "reg_death": "This cat died from wounds inflicted by a badger.",
-                    "lead_death": "died from wounds inflicted by a badger"
+                    "death": "This cat died from wounds inflicted by a badger."
                 },
                 "relationships": [
                     {
@@ -737,7 +756,7 @@
                         "values": ["like", "comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} for it."
+                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} out for it."
                         }
                     },
                     {
@@ -764,7 +783,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
@@ -803,7 +821,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
@@ -868,7 +885,7 @@
                         "values": ["romance", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l rescued r_c when a branch fell on {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} strength."
+                            "cats_from": "p_l rescued r_c when a branch fell on {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} strength."
                         }
                     }
                 ],
@@ -886,7 +903,7 @@
                         "values": ["romance", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l rescued r_c when a branch fell on {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} cleverness."
+                            "cats_from": "p_l rescued r_c when a branch fell on {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} cleverness."
                         }
                     }
                 ],
@@ -907,7 +924,7 @@
                         "values": ["romance", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l rescued r_c when a branch fell on {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} cleverness."
+                            "cats_from": "p_l rescued r_c when a branch fell on {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} cleverness."
                         }
                     }
                 ],
@@ -933,7 +950,7 @@
                         "values": ["romance", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l kept r_c calm when a branch fell on {PRONOUN/r_c/object}, and r_c was grateful for {PRONOUN/p_l/poss} presence."
+                            "cats_from": "p_l kept r_c calm when a branch fell on {PRONOUN/r_c/object}. r_c was grateful for {PRONOUN/p_l/poss} presence."
                         }
                     }
                 ],
@@ -981,7 +998,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} for it."
+                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} out for it."
                         }
                     },
                     {
@@ -1005,7 +1022,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
@@ -1087,7 +1103,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
                     "death": "m_c tragically died after being trapped on patrol."
                 },
                 "art": "fst_train_stuck_outcome",

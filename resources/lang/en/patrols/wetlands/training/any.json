@@ -295,7 +295,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat helped rescue from_cat when {PRONOUN/from_cat/subject} were knocked into the water."
+                            "cats_from": "to_cat helped rescue from_cat when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} knocked into the water."
                         }
                     }
                 ],
@@ -312,7 +312,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when {PRONOUN/from_cat/subject} were knocked into the water."
+                            "cats_from": "to_cat rescued from_cat when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} knocked into the water."
                         }
                     }
                 ],
@@ -332,7 +332,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when {PRONOUN/from_cat/subject} were knocked into the water."
+                            "cats_from": "to_cat rescued from_cat when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} knocked into the water."
                         }
                     }
                 ],
@@ -357,7 +357,7 @@
                         "values": [ "like", "comfort", "trust" ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat kept from_cat calm when {PRONOUN/r_c/subject} were knocked into the water."
+                            "cats_from": "to_cat kept from_cat calm when {PRONOUN/r_c/subject} {VERB/r_c/were/was} knocked into the water."
                         }
                     }
                 ],
@@ -376,7 +376,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                            "cats_from": "to_cat rescued from_cat when {PRONOUN/r_c/subject} {VERB/r_c/were/was} knocked into the water."
                         }
                     }
                 ],

@@ -201,6 +201,26 @@
                     "troublesome",
                     "vengeful"
                 ],
+                "relationships": [
+                    {
+                        "cats_from": ["low_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and was impressed."
+                        }
+                    },
+                    {
+                        "cats_from": ["high_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and thought it was mouse-brained."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -210,7 +230,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by a badger.",
                     "death": "m_c lost their life to a badger."
                 },
                 "frequency": 3
@@ -260,13 +279,13 @@
                 "exp": 30,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
-                        "amount": 8,
+                        "values": ["trust"],
+                        "amount": 5,
                         "log": {
-                            "cats_from": "Under the leadership of to_cat, from_cat pushed cacti spikes and thorny scrubs into a badger sett to check its occupancy."
+                            "cats_from": "from_cat and to_cat worked together to come up with a plan to push cacti spikes and thorny scrubs into a badger sett to check its occupancy."
                         }
                     }
                 ],
@@ -318,7 +337,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "Under to_cat's leadership, from_cat staked out a badger sett on patrol."
+                            "cats_from": "from_cat approved of to_cat's plan to stake out a badger sett."
                         }
                     }
                 ],

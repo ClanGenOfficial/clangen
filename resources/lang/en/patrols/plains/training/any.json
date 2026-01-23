@@ -328,6 +328,26 @@
                     "troublesome",
                     "vengeful"
                 ],
+                "relationships": [
+                    {
+                        "cats_from": ["low_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and was impressed."
+                        }
+                    },
+                    {
+                        "cats_from": ["high_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to investigate a badger sett on a solo patrol and thought it was mouse-brained."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -337,7 +357,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by a badger.",
                     "death": "m_c lost their life to a badger."
                 },
                 "frequency": 3
@@ -412,10 +431,10 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": ["trust"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "Under the leadership of to_cat, from_cat marked the entrance of a badger sett to provoke its occupant."
+                            "cats_from": "from_cat approved of to_cat's plan to mark the entrance to a badger sett in order to provoke its occupant."
                         }
                     }
                 ],
@@ -467,7 +486,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "Under to_cat's leadership, from_cat staked out a badger sett on patrol."
+                            "cats_from": "from_cat approved of to_cat's plan to stake out a badger sett."
                         }
                     }
                 ],
@@ -544,8 +563,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat was scarred by a badger.",
-                    "reg_death": "This cat died from wounds inflicted by a badger.",
-                    "lead_death": "died from wounds inflicted by a badger"
+                    "death": "This cat died from wounds inflicted by a badger."
                 },
                 "relationships": [
                     {
@@ -852,7 +870,7 @@
                         "values": ["romance", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l rescued r_c when the earth caved in beneath {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} strength."
+                            "cats_from": "p_l rescued r_c when the earth caved in beneath {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} strength."
                         }
                     }
                 ],
@@ -869,7 +887,7 @@
                         "values": ["romance", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l rescued r_c when the earth caved in beneath {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} cleverness."
+                            "cats_from": "p_l rescued r_c when the earth caved in beneath {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} cleverness."
                         }
                     }
                 ],
@@ -889,7 +907,7 @@
                         "values": ["romance", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l rescued r_c when the earth caved in beneath {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} cleverness."
+                            "cats_from": "p_l rescued r_c when the earth caved in beneath {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} cleverness."
                         }
                     }
                 ],

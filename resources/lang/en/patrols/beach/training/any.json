@@ -230,7 +230,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                            "cats_from": "to_cat rescued from_cat when sand caved in under {PRONOUN/from_cat/object}."
                         }
                     }
                 ],
@@ -383,7 +383,7 @@
                         "values": ["romance", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l rescued r_c when sand caved in under {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} strength."
+                            "cats_from": "p_l rescued r_c when sand caved in under {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} strength."
                         }
                     }
                 ],
@@ -400,7 +400,7 @@
                         "values": ["romance", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l rescued r_c when sand caved in under {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} cleverness."
+                            "cats_from": "p_l rescued r_c when sand caved in under {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} cleverness."
                         }
                     }
                 ],
@@ -423,7 +423,7 @@
                         "values": ["romance", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l rescued r_c when sand caved in under {PRONOUN/r_c/object}, and r_c noticed {PRONOUN/p_l/poss} cleverness."
+                            "cats_from": "p_l rescued r_c when sand caved in under {PRONOUN/r_c/object}. r_c noticed {PRONOUN/p_l/poss} cleverness."
                         }
                     }
                 ],
@@ -470,7 +470,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                            "cats_from": "to_cat rescued from_cat when sand caved in under {PRONOUN/from_cat/object}."
                         }
                     }
                 ],
