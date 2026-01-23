@@ -25,6 +25,7 @@ from scripts.utility import (
     ui_scale_offset,
 )  # pylint: disable=redefined-builtin
 from .Screens import Screens
+from .enums import GameScreen
 from .screens_core.screens_core import rebuild_den_dropdown
 from ..cat import save_load
 from ..clan_package.settings import get_clan_setting, switch_clan_setting
@@ -86,6 +87,8 @@ class ClanSettingsScreen(Screens):
             elif event.ui_element == self.open_data_directory_button:
                 open_data_dir()
                 return
+            elif event.ui_element == self.game_settings_button:
+                self.change_screen(GameScreen.SETTINGS)
             elif event.ui_element == self.relation_settings_button:
                 self.open_relation_settings()
                 return
@@ -174,6 +177,15 @@ class ClanSettingsScreen(Screens):
             anchors={"left_target": self.role_settings_button},
         )
 
+        self.game_settings_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 600), (175, 30))),
+            "screens.clan_settings.full_settings",
+            get_button_dict(ButtonStyles.SQUOVAL, (175, 30)),
+            tool_tip_text="screens.clan_settings.full_settings_info",
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+        )
+
         self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 645), (178, 30))),
             "buttons.open_data_directory",
@@ -249,6 +261,8 @@ class ClanSettingsScreen(Screens):
         self.hide_menu_buttons()
         self.fullscreen_toggle.kill()
         del self.fullscreen_toggle
+        self.game_settings_button.kill()
+        del self.game_settings_button
 
     def open_general_settings(self):
         """Opens and draws general_settings"""

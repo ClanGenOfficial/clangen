@@ -58,17 +58,17 @@
         "master": 7
     },
     "patrol_weight_adaption": {
-        "1_class_bigger_prey_allowed": [15,19],
-        "2_class_bigger_prey_allowed": [10,14],
-        "3_class_bigger_prey_allowed": [5,9],
-        "4_class_bigger_prey_allowed": [0,4]
+        "1_prey_class_increase": 4,
+        "2_prey_class_increase": 3,
+        "3_prey_class_increase": 2,
+        "4_prey_class_increase": 1
     },	
     "patrol_balance": {
         "comment": [
         "A season array consist of ['very_small', 'small', 'medium', 'large', 'huge']",
             "Numbers are the ratio how likely such a patrol will be used when hunting in this season.",
             "The sum of all ratio should be between 15 or 16.",
-            "One common (weight:20) success outcome (ignoring skill + traits) must have these prey type types."
+            "One common (frequency: 4) success outcome (ignoring skill + traits) must have these prey type types."
         ],
         "Forest": {
             "Newleaf": [2,5,5,2,1],

@@ -75,7 +75,7 @@
 			"m_c is awed by how much r_c has done for the Clan.",
 			"m_c is really impressed by all of r_c's accomplishments.",
 			"m_c wants to hold an important position like r_c.",
-			"m_c dreams about being like m_c in the future.",
+			"m_c dreams about being like r_c in the future.",
 			"m_c works extra hard after seeing how skilled r_c is.",
 			"m_c tells {PRONOUN/m_c/poss} friend that r_c is {PRONOUN/m_c/poss} hero.",
 			"m_c daydreams about sharing a suffix with r_c."
@@ -286,6 +286,39 @@
 		"reaction_random_cat": {
 			"like": "increase"
 		}
+	},
+	{
+		"id": "admiration_kit_parent_inc_med2",
+		"interactions": [
+			"m_c picks up r_c's mannerisms.",
+			"m_c likes to think {PRONOUN/m_c/subject} {VERB/m_c/look/looks} like r_c.",
+			"m_c quiets down and listens to r_c.",
+			"m_c reconsiders a dangerous game, knowing r_c wouldn't approve.",
+			"m_c knows r_c will always do what's best for {PRONOUN/m_c/object}."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"relationship_constraint": [
+			"child/parent"
+		]
+	},
+	{
+		"id": "admiration_kit_depparent_inc_med3",
+		"interactions": [
+			"m_c insists every cat listen to {PRONOUN/m_c/object} because r_c is {PRONOUN/m_c/poss} parent.",
+			"m_c struts around, pretending to be r_c.",
+			"m_c is proud to be the kit of a deputy as respected as r_c."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"deputy"
+		],
+		"relationship_constraint": [
+			"child/parent"
+		]
 	},
 	{
 		"id": "admire_adult_inc_med1",

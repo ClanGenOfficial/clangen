@@ -3,14 +3,19 @@
   "event": "War",
   "trigger_events": [
     "The war with o_c_n has begun.",
-    "Rising tensions have finally come to a breaking point, a war against o_c_n has been declared.",
+    "Rising tensions have finally come to a breaking point. A war against o_c_n has been declared.",
     "c_n declares war against o_c_n.",
     "After many moons of tensions between o_c_n and c_n, a formal war is declared.",
     "A tension-thick air hangs low over the o_c_n border, until lead_name finally declares a war with o_c_n.",
     "A formal war with o_c_n was been declared, marking a major turning point in the two Clans' relationship.",
     "c_n launches a retaliatory strike against o_c_n, seeking justice for a past act of aggression, resulting in a back and forth war between the two Clans.",
     "Fuelled by a simmering resentment, o_c_n initiates a war with c_n, determined to reclaim their disputed territory.",
-    "Amidst growing tensions, c_n launches a preemptive strike against o_c_n, fearing an imminent threat to their Clan's existence."
+    "Amidst growing tensions, c_n launches a preemptive strike against o_c_n, fearing an imminent threat to their Clan's existence.",
+    "War breaks out between o_c_n and c_n.",
+    "o_c_n's slights cannot go unpunished any longer. c_n declares war.",
+    "After a tense discussion, lead_name and dep_name agree to formally declare war on o_c_n.",
+    "lead_name calls a Clan meeting to inform c_n that o_c_n has declared war.",
+    "All hope for peace has been lost. The only path that lead_name can see is war between c_n and o_c_n."
   ],
   "progress_events": {
     "comment": [
@@ -29,7 +34,14 @@
       "In the midst of conflict, a spark of understanding flickers between c_n and o_c_n cats, hinting at a potential path to peace.",
       "Amidst turmoil, empathy blooms between the c_n and o_c_n leaders, kindling hope for reconciliation beyond the battlefield.",
       "Among the Clans, a yearning for peace emerges, bridging divides and nurturing a shared hope for harmony.",
-      "Hope finally begins to unite the Clanmates of c_n and o_c_n, fostering a shared vision of peace."
+      "Hope finally begins to unite the Clanmates of c_n and o_c_n, fostering a shared vision of peace.",
+      "dep_name seems to doubt lead_name's conviction in the war with o_c_n.",
+      "med_name pressures lead_name to end the war with o_c_n.",
+      "dep_name and med_name confront lead_name together to urge an end to the war with o_c_n.",
+      "The hearts of both o_c_n and c_n no longer seem to be in this war.",
+      "o_c_n and c_n patrols met at a border and parted without unsheathing claws.",
+      "med_name escorts lead_name to o_c_n's camp to parley with o_c_n's leader.",
+      "med_name discusses how to persuade the leaders to choose peace at the half-moon meeting with o_c_n's medicine cat."
     ],
     "neutral": [
       "War continues to rage between c_n and o_c_n.",
@@ -39,14 +51,18 @@
       "c_n cats reinforce the camp walls in anticipation of o_c_n attacks.",
       "c_n warriors evaluate their battle strategies for coming battles against o_c_n.",
       "The war with o_c_n is disrupting the daily lives of c_n, forcing them to adapt to new routines and living situations in order to better defend themselves.",
-      "Nowadays, to adapt with the new war environment, c_n has been sending out extra night patrols to the o_c_n border.",
-      "The cats of both Clans, o_c_n and c_n, don't know when or how to anticipate battles anymore, everything has just been developing into a haywire mess.",
-      "c_n and o_c_n tried to have a calm negotiation about the conflict at the last Gathering, but it lead nowhere except to a waste of time.",
-      "Tension continues to hang thick over the two at-war Clans; o_c_n and c_n.",
+      "To adapt with the new war environment, c_n has been sending out extra night patrols to the o_c_n border.",
+      "The cats of both Clans, o_c_n and c_n, don't know when or how to anticipate battles anymore. Everything has become mayhem.",
+      "c_n and o_c_n tried to have a calm negotiation about the conflict at the last Gathering, but it led nowhere.",
+      "Tension continues to hang thick over the two at-war Clans: o_c_n and c_n.",
       "c_n patrols begin to bristle with hostility and anticipation when patrolling the o_c_n border.",
-      "o_c_n recently lead out a surprise attack to claim c_n territory, but to no avail.",
+      "o_c_n recently led a surprise attack to claim c_n territory, to no avail.",
       "lead_name isn't sure what to think of the whole war situation with o_c_n anymore, as it develops even further.",
-      "The war shows no signs of stopping, the hostility between c_n and o_c_n still going strong."
+      "The war shows no signs of stopping. The hostility between c_n and o_c_n is still going strong.",
+      "c_n's warriors are exhausted from long overnight camp-guarding shifts.",
+      "lead_name is constantly short-tempered and anxious from the war with o_c_n.",
+      "lead_name, dep_name and their senior warriors discuss strategies for the war with o_c_n.",
+      "Skirmishes break out along the o_c_n and c_n border."
     ],
     "rel_down": [
       "o_c_n has taken some of c_n's territory.",
@@ -55,13 +71,17 @@
       "The tension between c_n and o_c_n is palpable, with even the smallest actions potentially leading to violence.",
       "The hostile environment between c_n and o_c_n has been continuing to grow.",
       "Any attempts at peace only seemed to make the whole war situation between c_n and o_c_n worse.",
-      "The cats of o_c_n and c_n are still keen on battle, with no yearn for peace shown between them.",
+      "The cats of o_c_n and c_n are still keen on battle, with no desire for peace shown between them.",
       "lead_name is starting to notice how battles between o_c_n and c_n have been extremely aggressive recently.",
       "Glares of unfriendliness and aggression are passed at most patrol interactions between c_n and o_c_n.",
       "o_c_n's surprise attacks on c_n have been increasing significantly lately.",
       "c_n's surprise attacks on o_c_n have been increasing significantly lately.",
       "Even small sparks of disagreement between o_c_n and c_n can set off a huge battle.",
-      "c_n's cats can't stop themselves from instinctively unsheathing their claws upon encountering a o_c_n cat."
+      "c_n's cats can't stop themselves from instinctively unsheathing their claws upon encountering a o_c_n cat.",
+      "o_c_n violated the truce at the Gathering.",
+      "No cat is eager to volunteer for the Gathering patrol for fear of violence.",
+      "lead_name stands resolute; there can be no peace with o_c_n.",
+      "med_name does not speak to the o_c_n medicine cat at the half-moon meeting."
     ]
   },
   "conclusion_events": [
@@ -78,6 +98,8 @@
     "The cats of both o_c_n and c_n have come to a realization that war isn't the best solution, deciding to end it now.",
     "The piercing war cries of o_c_n and c_n have turned into tired, lifeless mewls... And the cats are glad as the war finally comes to a close.",
     "The leaders of o_c_n and c_n have come to terms about the war, deciding that it would best for all the cats if it was formally settled here.",
-    "Remembering all the blood that was shed in the war, o_c_n and c_n have decided to finally settle it, once and for all."
+    "Remembering all the blood that was shed in the war, o_c_n and c_n have decided to finally settle it, once and for all.",
+    "After a tense parley at a Gathering, lead_name agrees to end the war with o_c_n.",
+    "med_name and o_c_n's medicine cat urge their leaders to find peace, and, grudgingly, they agree. The war has ended."
   ]
 }

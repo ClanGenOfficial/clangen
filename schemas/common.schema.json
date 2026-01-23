@@ -518,7 +518,15 @@
             "clan",
             "some_clan",
             "patrol",
-            "multi"
+            "multi",
+            "high_lawful",
+            "low_lawful",
+            "high_social",
+            "low_social",
+            "high_stable",
+            "low_stable",
+            "high_aggress",
+            "low_aggress"
           ]
         },
         {

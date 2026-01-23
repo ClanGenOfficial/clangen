@@ -1,5 +1,5 @@
 import re
-from random import choice
+from random import choice, randint
 
 from scripts.cat_relations.enums import RelType
 
@@ -10,6 +10,41 @@ from scripts.utility import (
     filter_relationship_type,
 )
 from scripts.game_structure import game
+
+
+def get_frequency() -> int:
+    """
+    Chooses an event frequency and returns it as an int. This is used by short and patrol events to determine what frequency of event to pull.
+    """
+    # think of it as "in a span of 10 moons, in how many moons should this sort of event appear?"
+    frequency_roll = randint(1, 10)
+    if frequency_roll <= 4:
+        return 4
+    elif frequency_roll <= 7:
+        return 3
+    elif frequency_roll <= 9:
+        return 2
+    else:
+        return 1
+
+
+def find_new_frequency(used_frequencies: set) -> int:
+    """
+    Finds and returns the next most common unused frequency.
+    """
+    possible_frequencies = (1, 2, 3, 4)
+    sorted_f = sorted(list(used_frequencies), reverse=True)
+
+    new_freq = sorted_f[0] + 1
+    if new_freq in possible_frequencies and new_freq not in used_frequencies:
+        return new_freq
+
+    new_freq = sorted_f[-1] - 1
+    if new_freq in possible_frequencies and new_freq not in used_frequencies:
+        return new_freq
+
+    else:
+        return 4
 
 
 def event_for_location(locations: list) -> bool:
@@ -50,7 +85,7 @@ def event_for_season(seasons: list) -> bool:
     return False
 
 
-def event_for_tags(tags: list, cat, other_cat=None) -> bool:
+def event_for_tags(tags: list, cat, other_cat=None, mentor_tags_fulfilled=None) -> bool:
     """
     checks if current tags disqualify the event
     """
@@ -134,6 +169,14 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     # filtering for dates
     if contains_special_date_tag(tags):
         if not special_date or special_date.patrol_tag not in tags:
+            return False
+
+    if "all_mentored" in tags:
+        return mentor_tags_fulfilled.get("general", False)
+    for _tag in tags:
+        if re.match(r"app[1-6]_mentored", _tag) and not mentor_tags_fulfilled.get(
+            _tag, False
+        ):
             return False
 
     return True
@@ -222,7 +265,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
 
     herb_supply = game.clan.herb_supply
 
-    if not herb_supply.entire_supply and "empty" in trigger:
+    if herb_supply.total <= 0 and "empty" in trigger:
         return True
 
     if supply_type == "all_herb":
@@ -547,7 +590,7 @@ def _get_cats_with_rel_status(
         cat_list = [c for c in cat_list if c.ID in cat.apprentice]
         rel_status_list.remove("mentor/app")
     elif "app/mentor" in rel_status_list:
-        cat_list = [c for c in cat_list if c.ID in cat.mentor]
+        cat_list = [c for c in cat_list if c.ID == cat.mentor]
         rel_status_list.remove("app/mentor")
 
     return cat_list, rel_status_list

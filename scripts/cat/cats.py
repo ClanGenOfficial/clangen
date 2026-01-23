@@ -16,7 +16,7 @@ import ujson  # type: ignore
 
 import scripts.game_structure.localization as pronouns
 from scripts.cat import save_load
-from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
+from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatCompatibility
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -206,6 +206,8 @@ class Cat:
         self.also_got = False
         self.permanent_condition = {}
         self.experience_level = None
+        self.dark_forest_affinity = 0
+        self.starclan_affinity = 0
 
         # Various behavior toggles
         self.no_kits = False
@@ -496,6 +498,45 @@ class Cat:
                     f"WARNING: Tried to kill {self.name} ID: {self.ID} but this cat is already dead!"
                 )
                 return
+
+            game.updated_afterlife_cats.add(self)
+
+            cat_default_afterlife_id = self.status.get_default_afterlife_id()
+            if cat_default_afterlife_id == CatGroup.UNKNOWN_RESIDENCE_ID:
+                pass
+
+            # kits are auto-accepted
+            elif self.age in (CatAge.KITTEN, CatAge.NEWBORN):
+                self.history.add_afterlife_acceptance(
+                    game.clan.instructor.status.group,
+                    is_kit=True,
+                )
+            else:
+                if cat_default_afterlife_id == CatGroup.STARCLAN_ID:
+                    affinity = self.starclan_affinity
+                    afterlife_group = CatGroup.STARCLAN
+                    rejected_ID = CatGroup.DARK_FOREST_ID
+                else:
+                    affinity = self.dark_forest_affinity
+                    afterlife_group = CatGroup.DARK_FOREST
+                    rejected_ID = CatGroup.STARCLAN_ID
+
+                # afterlife does not like this cat
+                if affinity < 0:
+                    # might send them to the opposite afterlife instead
+                    if random() < abs(affinity / 100):
+                        self.history.add_afterlife_acceptance(
+                            afterlife_group, rejected=True
+                        )
+                        self.status.send_to_afterlife(rejected_ID)
+                        return
+                    # fine, they can go to afterlife, but some cats don't like it
+                    self.history.add_afterlife_acceptance(
+                        afterlife_group, contentious=True
+                    )
+                # afterlife thinks this cat is ok
+                else:
+                    self.history.add_afterlife_acceptance(afterlife_group)
             self.status.send_to_afterlife()
 
     @property
@@ -704,12 +745,20 @@ class Cat:
             # find what tier of rel they had for each type
             tiers: list[RelTier] = rel_with_dead.get_reltype_tiers()
             for tier in tiers:
-                rel_type = [k for k in rel_type_tiers if tier in k]
+                rel_type = [k for k in rel_type_tiers if tier in rel_type_tiers[k]]
                 if tier.is_extreme_pos:
                     very_high_types.extend(rel_type)
+                elif tier.is_mid_pos:
+                    # 50/50 if this will cause major grief
+                    if randint(1, 2) == 1:
+                        very_high_types.extend(rel_type)
+                    else:
+                        high_types.extend(rel_type)
                 elif tier.is_low_pos:
                     high_types.extend(rel_type)
                 elif tier.is_extreme_neg:
+                    very_low_types.extend(rel_type)
+                elif tier.is_mid_neg and randint(1, 4) == 1:
                     very_low_types.extend(rel_type)
                 continue
 
@@ -725,7 +774,7 @@ class Cat:
                 if (
                     body
                     and not body_treated
-                    and "rosemary" in game.clan.herb_supply.entire_supply
+                    and game.clan.herb_supply.entire_supply["rosemary"]
                 ):
                     body_treated = True
                     game.clan.herb_supply.remove_herb("rosemary", -1)
@@ -734,7 +783,7 @@ class Cat:
                     )
 
                 if body_treated:
-                    major_chance -= 1
+                    major_chance += 1
 
             # If major_chance is not 0, there is a chance for major grief
             grief_type = None
@@ -1119,6 +1168,11 @@ class Cat:
                         else []
                     ),
                     murder=history_data["murder"] if "murder" in history_data else {},
+                    afterlife_acceptance=(
+                        history_data["afterlife_acceptance"]
+                        if "afterlife_acceptance" in history_data
+                        else None
+                    ),
                     cat=self,
                 )
         except Exception:
@@ -1982,7 +2036,11 @@ class Cat:
                 )
                 != 0
             ):
-                clan_herbs = set(game.clan.herb_supply.entire_supply.keys())
+                clan_herbs = {
+                    herb
+                    for herb, clan_has_herb in game.clan.herb_supply.entire_supply.items()
+                    if clan_has_herb
+                }
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 usable_herbs = list(needed_herbs.intersection(clan_herbs))
 
@@ -2818,16 +2876,22 @@ class Cat:
             chance = 40
 
         compat = get_personality_compatibility(cat1, cat2)
-        if compat is True:
+        if compat == CatCompatibility.POSITIVE:
             chance += 10
-        elif compat is False:
+        elif compat == CatCompatibility.NEGATIVE:
             chance -= 5
 
         # Cat's compatibility with mediator also has an effect on success chance.
         for cat in (cat1, cat2):
-            if get_personality_compatibility(cat, mediator) is True:
+            if (
+                get_personality_compatibility(cat, mediator)
+                == CatCompatibility.POSITIVE
+            ):
                 chance += 5
-            elif get_personality_compatibility(cat, mediator) is False:
+            elif (
+                get_personality_compatibility(cat, mediator)
+                == CatCompatibility.NEGATIVE
+            ):
                 chance -= 5
 
         # Determine chance to fail, turning sabotage into mediate and mediate into sabotage
@@ -3287,6 +3351,8 @@ class Cat:
                 ),
                 "birth_cooldown": self.birth_cooldown,
                 "status": self.status.get_status_dict(),
+                "dark_forest_affinity": self.dark_forest_affinity,
+                "starclan_affinity": self.starclan_affinity,
                 "backstory": self.backstory or None,
                 "moons": self.moons,
                 "trait": self.personality.trait,
@@ -3308,6 +3374,7 @@ class Cat:
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,
                 "pelt_length": self.pelt.length,
+                "sprite_newborn": self.pelt.cat_sprites["newborn"],
                 "sprite_kitten": self.pelt.cat_sprites["kitten"],
                 "sprite_adolescent": self.pelt.cat_sprites["adolescent"],
                 "sprite_adult": self.pelt.cat_sprites["adult"],

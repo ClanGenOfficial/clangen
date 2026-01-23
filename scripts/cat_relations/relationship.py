@@ -4,6 +4,7 @@ from typing import Optional
 
 import i18n
 
+from scripts.cat.enums import CatCompatibility
 from scripts.game_structure import constants
 from scripts.cat_relations.interaction import (
     cats_fulfill_single_interaction_constraints,
@@ -244,12 +245,12 @@ class Relationship:
 
         return process_text(string, cat_dict)
 
-    def get_value_change_amount(self, value_change: bool, intensity: str) -> int:
+    def get_value_change_amount(self, is_positive: bool, intensity: str) -> int:
         """Finds and returns the int amount that the relationship type will change by according to given intensity and additional modifiers
 
         Parameters
         ----------
-        value_change : bool
+        is_positive : bool
             True if the relationship value is positive, False if negative.
         intensity : str
             the intensity of the affect
@@ -261,16 +262,14 @@ class Relationship:
         """
         # get the normal amount
         amount = constants.CONFIG["relationship"]["value_change_amount"][intensity]
-        if value_change == "decrease":
+        if not is_positive:
             amount = amount * -1
 
         # take compatibility into account
         compatibility = get_personality_compatibility(self.cat_from, self.cat_to)
-        if compatibility is None:
-            # neutral compatibility
+        if compatibility == CatCompatibility.NEUTRAL:
             amount = amount
-        elif compatibility:
-            # positive compatibility
+        elif compatibility == CatCompatibility.POSITIVE:
             amount += constants.CONFIG["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
@@ -278,13 +277,13 @@ class Relationship:
         return amount
 
     def interaction_affect_relationships(
-        self, value_change: bool, intensity: str, rel_type: str
+        self, is_positive: bool, intensity: str, rel_type: str
     ) -> None:
         """Affects the relationship according to the chosen types.
 
         Parameters
         ----------
-        value_change : str
+        is_positive : bool
             if the relationship value is positive
         intensity : str
             the intensity of the affect
@@ -294,9 +293,8 @@ class Relationship:
         Returns
         -------
         """
-        amount = self.get_value_change_amount(value_change, intensity)
+        amount = self.get_value_change_amount(is_positive, intensity)
 
-        buffs = []
         # only high intensity gives passive buffs
         if intensity == "high":
             passive_buff = int(
@@ -308,14 +306,23 @@ class Relationship:
             # so a negative interaction will affect all values to a negative degree
             # and a positive interaction will affect all values to a positive degree
 
+            if rel_type == RelType.ROMANCE:
+                self.romance += amount
+
             for rel_out in (
                 RelType.LIKE,
                 RelType.RESPECT,
                 RelType.TRUST,
                 RelType.COMFORT,
             ):
-                setattr(self, rel_out, choice(buffs) if rel_type != rel_out else amount)
-
+                setattr(
+                    self,
+                    rel_out,
+                    getattr(self, rel_out)
+                    + (choice(buffs) if rel_type != rel_out else amount),
+                )
+        else:
+            setattr(self, rel_type, getattr(self, rel_type) + amount)
         # influence the opposite relationship
         if self.opposite_relationship is None:
             return
@@ -342,7 +349,10 @@ class Relationship:
         for key, value in dictionary.items():
             if value == "neutral":
                 continue
-            amount = self.get_value_change_amount(value, "low")
+
+            amount = self.get_value_change_amount(
+                is_positive=value == "increase", intensity="low"
+            )
 
             setattr(self, key, getattr(self, key) + amount)
 
@@ -363,8 +373,8 @@ class Relationship:
 
         # take personality in count
         comp = get_personality_compatibility(self.cat_from, self.cat_to)
-        if comp:
-            bool_ballot.append(comp)
+        if comp == CatCompatibility.POSITIVE:
+            bool_ballot.append(True)
 
         # further influence the partition based on the relationship
         for value in (self.like, self.respect, self.comfort, self.trust):
@@ -531,6 +541,13 @@ class Relationship:
         Returns True if the relationship has an extreme negative value.
         """
         return any(tier for tier in self.get_reltype_tiers() if tier.is_extreme_neg)
+
+    @property
+    def has_mid_negative(self) -> bool:
+        """
+        Returns True if the relationship has a mid negative value.
+        """
+        return any(tier for tier in self.get_reltype_tiers() if tier.is_mid_neg)
 
     @property
     def has_extreme_positive(self) -> bool:

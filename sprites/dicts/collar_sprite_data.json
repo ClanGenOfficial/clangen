@@ -1,0 +1,137 @@
+{
+    "spritesheet": "acc_collars",
+    "palette_map": true,
+    "style_data": [
+        {
+            "BOW": [
+                "crimson",
+                "blue",
+                "yellow",
+                "cyan",
+                "orange",
+                "lime",
+                "white",
+                "black",
+                "green",
+                "pink",
+                "purple",
+                "rose",
+                "indigo"
+            ],
+            "BOW_FOIL": [
+                "black_gold"
+            ],
+            "BOW_GRADIENT": [
+                "rainbow"
+            ]
+        },
+        {
+            "LEATHER": [
+                "crimson",
+                "blue",
+                "yellow",
+                "cyan",
+                "orange",
+                "lime",
+                "white",
+                "black",
+                "green",
+                "pink",
+                "purple",
+                "rose",
+                "indigo"
+            ],
+            "LEATHER_SPIKE": [
+                "crimson_gold",
+                "blue_gold",
+                "yellow_silver",
+                "cyan_gold",
+                "orange_silver",
+                "lime_silver",
+                "white_gold",
+                "black_gold",
+                "green_silver",
+                "pink_gold",
+                "purple_gold",
+                "rose_gold",
+                "indigo_gold"
+            ],
+            "LEATHER_GRADIENT": [
+                "rainbow"
+            ],
+            "LEATHER_BELL": [
+                "crimson",
+                "blue",
+                "yellow",
+                "cyan",
+                "orange",
+                "lime",
+                "white",
+                "black",
+                "green",
+                "pink",
+                "purple",
+                "rose",
+                "indigo"
+            ],
+            "LEATHER_BELL_SPIKE": [
+                "crimson_gold",
+                "blue_gold",
+                "yellow_silver",
+                "cyan_gold",
+                "orange_silver",
+                "lime_silver",
+                "white_gold",
+                "black_gold",
+                "green_silver",
+                "pink_gold",
+                "purple_gold",
+                "rose_gold",
+                "indigo_gold"
+            ],
+            "LEATHER_BELL_GRADIENT": [
+                "rainbow"
+            ]
+        },
+        {
+            "NYLON": [
+                "crimson",
+                "blue",
+                "yellow",
+                "cyan",
+                "orange",
+                "lime",
+                "white",
+                "black",
+                "black_gold",
+                "green",
+                "pink",
+                "purple",
+                "rose",
+                "indigo"
+            ],
+            "NYLON_GRADIENT": [
+                "rainbow"
+            ],
+            "NYLON_BELL": [
+                "crimson",
+                "blue",
+                "yellow",
+                "cyan",
+                "orange",
+                "lime",
+                "white",
+                "black",
+                "black_gold",
+                "green",
+                "pink",
+                "purple",
+                "rose",
+                "indigo"
+            ],
+            "NYLON_BELL_GRADIENT": [
+                "rainbow"
+            ]
+        }
+    ]
+}

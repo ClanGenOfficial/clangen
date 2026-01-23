@@ -20,6 +20,8 @@ from scripts.utility import (
     shorten_text_to_fit,
 )
 from .Screens import Screens
+from .enums import GameScreen
+from ..cat.enums import CatCompatibility
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
@@ -106,7 +108,7 @@ class ChooseMateScreen(Screens):
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.toggle_mate:
                 if self.work_thread is not None and self.work_thread.is_alive():
                     return
@@ -185,7 +187,7 @@ class ChooseMateScreen(Screens):
                     return
 
                 switch_set_value(Switch.cat, event.ui_element.cat_object.ID)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
@@ -1091,22 +1093,20 @@ class ChooseMateScreen(Screens):
 
     def draw_compatible_line_affection(self):
         """Draws the heart-line based on capability, and draws the hearts based on romantic love."""
+        compatibility = get_personality_compatibility(self.the_cat, self.selected_cat)
+
+        if compatibility == CatCompatibility.POSITIVE:
+            line = "resources/images/line_compatible.png"
+        elif compatibility == CatCompatibility.NEGATIVE:
+            line = "resources/images/line_incompatible.png"
+        else:
+            line = "resources/images/line_neutral.png"
 
         # Set the lines
         self.selected_cat_elements["compat_line"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, 190), (200, 78))),
             pygame.transform.scale(
-                image_cache.load_image(
-                    "resources/images/line_compatible.png"
-                    if get_personality_compatibility(self.the_cat, self.selected_cat)
-                    else (
-                        "resources/images/line_incompatible.png"
-                        if not get_personality_compatibility(
-                            self.the_cat, self.selected_cat
-                        )
-                        else "resources/images/line_neutral.png"
-                    )
-                ).convert_alpha(),
+                image_cache.load_image(line).convert_alpha(),
                 ui_scale_dimensions((200, 78)),
             ),
             anchors={"centerx": "centerx"},

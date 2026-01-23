@@ -14,13 +14,13 @@ from . import save_load, settings, switches
 from .save_load import safe_save
 from .settings import game_setting_get
 from .switches import switch_get_value, Switch
+from ...screens.enums import GameScreen
 from ...cat.enums import CatGroup
 
 pygame.init()
 
 if TYPE_CHECKING:
-    from scripts.clan import Clan
-
+    from scripts.clan import Clan, Afterlife
 
 event_editing = False
 max_name_length = 10
@@ -39,8 +39,8 @@ herb_events_list = []
 freshkill_event_list = []
 
 # Keeping track of various last screen for various purposes
-last_screen_forupdate = "start screen"
-last_screen_forProfile = "list screen"
+last_screen_forupdate = GameScreen.START
+last_screen_forProfile = GameScreen.LIST
 last_list_forProfile = None
 
 choose_cats = {}
@@ -61,6 +61,7 @@ choose_cats = {}
 }"""
 
 patrol_cats = {}
+updated_afterlife_cats = set()
 patrolled = []
 
 used_group_IDs: dict = {
@@ -84,6 +85,9 @@ debug_settings = {
 
 # CLAN
 clan: Optional["Clan"] = None
+starclan: Optional["Afterlife"] = None
+dark_forest: Optional["Afterlife"] = None
+
 cat_class = None
 with open(f"resources/prey_config.json", "r", encoding="utf-8") as read_file:
     prey_config = ujson.loads(read_file.read())
@@ -93,7 +97,7 @@ rpc = None
 is_close_menu_open = False
 
 
-current_screen = "start screen"
+current_screen = GameScreen.START
 clicked = False
 keyspressed = []
 switch_screens = False

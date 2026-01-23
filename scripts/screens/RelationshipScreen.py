@@ -13,8 +13,9 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIRelationDisplay,
 )
-from scripts.game_structure.windows import RelationshipLog
+from scripts.ui.windows.relationship_log import RelationshipLog
 from scripts.screens.Screens import Screens
+from scripts.screens.enums import GameScreen
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -83,13 +84,13 @@ class RelationshipScreen(Screens):
                 self.inspect_cat = event.ui_element.return_cat_object()
                 self.update_inspected_relation()
             elif event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.switch_focus_button:
                 switch_set_value(Switch.cat, self.inspect_cat.ID)
                 self.update_focus_cat()
             elif event.ui_element == self.view_profile_button:
                 switch_set_value(Switch.cat, self.inspect_cat.ID)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     switch_set_value(Switch.cat, self.next_cat)
@@ -192,7 +193,7 @@ class RelationshipScreen(Screens):
                 self.apply_cat_filter()
                 self.update_cat_page()
             elif event.ui_element == self.checkboxes["show_empty"]:
-                switch_clan_setting("show dead relation")
+                switch_clan_setting("show empty relation")
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()
@@ -414,7 +415,7 @@ class RelationshipScreen(Screens):
         if constants.CONFIG["sorting"]["sort_by_rel_total"]:
             self.all_relations = sorted(
                 self.the_cat.relationships.values(),
-                key=lambda x: x.total_relationship_value,
+                key=lambda x: abs(x.total_relationship_value),
                 reverse=True,
             )
         else:

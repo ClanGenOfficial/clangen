@@ -33,8 +33,11 @@ nav:
         - dev/writing/localization.md
         - dev/writing/advanced-documentation.md
     - Art:
+        - Cat Sprites:
+            - dev/art/cat-sprites/cat-sprites.md
+            - dev/art/cat-sprites/adding-new-sprites.md
+            - dev/art/cat-sprites/palette-maps.md
         - dev/art/index.md
-        - dev/art/cat-sprites.md
         - dev/art/patrol-sprites.md
         - dev/art/clan-symbols.md
         - dev/art/camp-backgrounds.md
@@ -42,6 +45,7 @@ nav:
         - dev/audio/index.md
   - User Guides:
     - user-guides/index.md
+    - user-guides/removing-palette-maps.md
   - Contributing to the Wiki:
       - contributing/index.md
       - contributing/documentation-resources.md

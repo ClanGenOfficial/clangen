@@ -36,7 +36,8 @@
             "accessory",
             "ceremony",
             "transition",
-            "mediator"
+            "mediator",
+            "failed_murder"
           ]  
         }
       },
@@ -407,12 +408,8 @@
               ]
             }
           },
-          "reg_death": {
-            "description": "Death history text for non-leaders. Whole sentence. Must be included if the cat is dead or injured.",
-            "type": "string"
-          },
-          "lead_death": {
-            "description": "Death history text for leaders. Sentence fragment. Must be included if the dead or injured cat could be the leader.",
+          "death": {
+            "description": "Death history text. Whole sentence. Must be included if the cat is dead or injured.",
             "type": "string"
           },
           "scar": {
