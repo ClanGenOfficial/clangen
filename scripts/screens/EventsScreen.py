@@ -24,7 +24,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     CatButton,
 )
-from scripts.game_structure.windows import GameOver
+from scripts.ui.windows.game_over import GameOver
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_box import BoxStyles, get_box

@@ -10,7 +10,7 @@ import scripts.game_structure.screen_settings
 from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
-from scripts.game_structure.windows import DeleteCheck
+from scripts.ui.windows.delete_check import DeleteCheck
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
