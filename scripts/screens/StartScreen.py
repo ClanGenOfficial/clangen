@@ -31,7 +31,7 @@ from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButt
 from scripts.ui.windows.update_available import UpdateAvailablePopup
 from scripts.ui.windows.changelog import ChangelogPopup
 from scripts.housekeeping.datadir import open_data_dir, open_url
-from scripts.utility import ui_scale, quit, ui_scale_dimensions
+from scripts.utility import ui_scale, quit_game, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.screen_settings import MANAGER
@@ -93,7 +93,7 @@ class StartScreen(Screens):
             elif event.ui_element == self.update_button:
                 UpdateAvailablePopup()
             elif event.ui_element == self.quit:
-                quit(savesettings=False, clearevents=False)
+                quit_game(savesettings=False, clearevents=False)
             elif event.ui_element == self.event_edit:
                 self.change_screen(GameScreen.EVENT_EDIT)
             elif event.ui_element == self.social_buttons["discord_button"]:

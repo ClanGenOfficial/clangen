@@ -200,7 +200,7 @@ from scripts.game_structure.game.switches import (
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.utility import (
-    quit,
+    quit_game,
 )  # pylint: disable=redefined-builtin
 
 # from scripts.debug_menu import debugmode
@@ -299,7 +299,7 @@ def loading_animation(scale: float = 1):
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                quit(savesettings=False)
+                quit_game(savesettings=False)
 
         pygame.display.update()
 
@@ -390,7 +390,7 @@ while 1:
                 )
                 or not game.clan
             ):
-                quit(savesettings=False)
+                quit_game(savesettings=False)
             else:
                 SaveCheck(switch_get_value(Switch.cur_screen), False, None)
 
