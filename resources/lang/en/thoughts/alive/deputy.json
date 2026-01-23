@@ -274,7 +274,7 @@
         "thoughts": [
             "Takes a patrol out to gather herbs for the medicine cat den",
             "Insists that r_c teaches the Clan about basic medicinal treatments",
-            "Explains how to treat a simple battle injury with r_c watching, impressed"
+            "Explains how to treat a simple battle injury while r_c watches, impressed"
         ],
         "main_skill_constraint": [
             "HEALER,1"
