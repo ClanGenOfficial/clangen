@@ -104,10 +104,10 @@
             "Is judging two Clanmates for their foolish argument",
             "Wishes to break up a sickeningly lovey-dovey couple",
             "Is sitting back and watching an argument take place",
-            "Coldly tells two clanmates to stop fighting",
+            "Coldly tells two Clanmates to stop fighting",
             "Snaps at somecat after a rough argument",
             "Growls an insult under {PRONOUN/m_c/poss} breath whilst solving a fight",
-            "Questions the intellegence of {PRONOUN/m_c/poss} fellow clanmates after solving a mouse-brained argument"
+            "Questions the intellegence of {PRONOUN/m_c/poss} fellow Clanmates after solving a mouse-brained argument"
         ],
         "main_trait_constraint": [
             "cold"
@@ -118,8 +118,8 @@
         "thoughts": [
             "Feels bad for a parent who can't seem to get along with their child",
             "Wonders why everyone can't just get along",
-            "Can see {PRONOUN/m_c/self} in a clanmate whilst solving an argument",
-            "Comforts a clanmate after an especially rough day",
+            "Can see {PRONOUN/m_c/self} in a Clanmate whilst solving an argument",
+            "Comforts a Clanmate after an especially rough day",
             "Feels proud after a moon with little fighting",
             "Wishes that other cats would be more empathetic"
         ],
@@ -132,9 +132,9 @@
         "thoughts": [
             "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong",
             "Is fighting the urge to shake some sense into a Clanmate",
-            "Is biting {PRONOUN/m_c/poss} tongue after a clanmate brings a mouse-brained problem to {PRONOUN/m_c/object}",
-            "Defends a clanmate after seeing them struggle in a similar way to {PRONOUN/m_c/self}",
-            "Has to keep {PRONOUN/m_c/poss} claws sheathed after a clanmate made an awful comment to another cat"
+            "Is biting {PRONOUN/m_c/poss} tongue after a Clanmate brings a mouse-brained problem to {PRONOUN/m_c/object}",
+            "Defends a Clanmate after seeing them struggle in a similar way to {PRONOUN/m_c/self}",
+            "Has to keep {PRONOUN/m_c/poss} claws sheathed after a Clanmate made an awful comment to another cat"
         ],
         "main_trait_constraint": [
             "fierce"
@@ -145,8 +145,8 @@
         "thoughts": [
             "Finds mediating emotionally draining",
             "Is worried {PRONOUN/m_c/subject} may have made things worse",
-            "Wonders if the clan deserves a better mediator than {PRONOUN/m_c/object}",
-            "Is surprised when a clanmate thanks {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} help",
+            "Wonders if the Clan deserves a better mediator than {PRONOUN/m_c/object}",
+            "Is surprised when a Clanmate thanks {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} help",
             "Overthinks something that {PRONOUN/m_c/subject} said when solving a fight",
             "Struggles to get a word in when solving a heated fight"
         ],
@@ -159,11 +159,11 @@
         "thoughts": [
             "Wonders why everyone can't just get along",
             "Sees all sides of the argument",
-            "Reassures clanmates anytime they seem down",
+            "Reassures Clanmates anytime they seem down",
             "Offers all cats a safe place to talk",
-            "Purrs at being able to comfort a clanmate",
+            "Purrs at being able to comfort a Clanmate",
             "Wishes that cats would be less cruel during disagreements",
-            "Feels hurt after a clanmate denies {PRONOUN/m_c/poss} help"
+            "Feels hurt after a Clanmate denies {PRONOUN/m_c/poss} help"
         ],
         "main_trait_constraint": [
             "loving"
@@ -176,7 +176,7 @@
             "Is feeling worried with all the high tension lately",
             "Stumbles over {PRONOUN/m_c/poss} words when defusing a fight",
             "Hopes that {PRONOUN/m_c/poss} nerves don't show when solving disputes",
-            "Is able to give personal experience to a clanmate who is struggling to stay calm",
+            "Is able to give personal experience to a Clanmate who is struggling to stay calm",
             "Has to take a walk after solving a tense fight"
         ],
         "main_trait_constraint": [
@@ -233,7 +233,7 @@
             "mediator"
         ],
         "random_living_status": [
-            "starclan"
+            "starClan"
         ]
     },
     {
