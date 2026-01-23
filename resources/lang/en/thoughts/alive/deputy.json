@@ -18,7 +18,7 @@
         "id": "deputy_alive_leader",
         "thoughts": [
             "Is doing {PRONOUN/m_c/poss} best to honor {PRONOUN/m_c/poss} Clan and {PRONOUN/m_c/poss} leader",
-            "Must speak with the leader soon about something {PRONOUN/m_c/subject} found while out on patrol"
+            "Must speak with r_c soon about something {PRONOUN/m_c/subject} found while out on patrol"
         ],
         "random_status_constraint": [
             "leader"
@@ -53,8 +53,8 @@
     {
         "id": "ambitious_teacher_deputy_to_leader",
         "thoughts": [
-            "Is planning a new training curriculum to impress the leader",
-            "Organizes patrols in advance to impress the leader"
+            "Is planning a new training curriculum to impress r_c",
+            "Organizes patrols in advance to impress r_c"
         ],
         "random_status_constraint": [
             "leader"
@@ -83,8 +83,8 @@
     {
       "id": "bloodthirsty_deputy_to_leader",
         "thoughts": [
-            "Thinks about killing the leader and staging it as an accident",
-            "Encourages the leader to start a war"
+            "Thinks about killing r_c and staging it as an accident",
+            "Encourages r_c to start a war"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -124,8 +124,8 @@
     {
       "id": "insecure_deputy_to_leader",
         "thoughts": [
-            "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} organizing sound right",
-            "Is being reassured by the leader that {PRONOUN/m_c/subject} {VERB/m_c/are/is} more capable than {PRONOUN/m_c/subject} {VERB/m_c/think/thinks}"
+            "Keeps confirming with r_c that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} organizing sound right",
+            "Is being reassured by r_c that {PRONOUN/m_c/subject} {VERB/m_c/are/is} more capable than {PRONOUN/m_c/subject} {VERB/m_c/think/thinks}"
         ],
         "main_trait_constraint":[
             "insecure"
@@ -185,8 +185,8 @@
     {
         "id": "rebellious_deputy_to_leader",
         "thoughts": [
-            "Feels an urge to challenge the leader's decision for the betterment of the Clan",
-            "Decides to change patrol routes on {PRONOUN/m_c/poss} own, hoping the leader will see the benefits"
+            "Feels an urge to challenge r_c's decision for the betterment of the Clan",
+            "Decides to change patrol routes on {PRONOUN/m_c/poss} own, hoping r_c will see the benefits"
         ],
         "main_trait_constraint": [
             "rebellious"
@@ -451,7 +451,7 @@
             "Is proud of how far {PRONOUN/m_c/subject} {verb/m_c/have/has} come from {PRONOUN/m_c/poss} kittypet life",
             "Is annoyed to still hear gossip about {PRONOUN/m_c/poss} past",
             "Would never wish to return to {PRONOUN/m_c/poss} old kittypet life",
-            "Wishes other cats would trust in the leader's choice of making {PRONOUN/m_c/object} deputy",
+            "Wishes other cats would trust in r_c's choice of making {PRONOUN/m_c/object} deputy",
             "Wouldn't mind bragging about {PRONOUN/m_c/poss} position in the Clan to some old kittypet friends",
             "Treats Clanmates fairly regardless of their pasts",
             "Informs a patrol about the best routes through {PRONOUN/m_c/poss} former Twolegplace"
