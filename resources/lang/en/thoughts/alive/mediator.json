@@ -215,7 +215,7 @@
             "Is wondering if {PRONOUN/m_c/subject} should sabotage a relationship that is going a bit too well",
             "Wishes to break up a sickeningly lovey-dovey couple",
             "Is sitting back and watching an argument take place",
-            "Intentionally avoids helping a rude clanmate",
+            "Intentionally avoids helping a rude Clanmate",
             "Decides to sabatoge a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like"
         ],
         "main_trait_constraint": [
