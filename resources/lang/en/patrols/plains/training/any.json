@@ -714,7 +714,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                            "cats_from": "to_cat rescued from_cat when the earth caved in beneath {PRONOUN/r_c/object}."
                         }
                     }
                 ],
@@ -951,7 +951,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when a branch fell on {PRONOUN/from_cat/object}."
+                            "cats_from": "to_cat rescued from_cat when the earth caved in beneath {PRONOUN/r_c/object}."
                         }
                     }
                 ],
