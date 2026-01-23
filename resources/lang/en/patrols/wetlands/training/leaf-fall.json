@@ -41,10 +41,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat appreciates that from_cat listened to {PRONOUN/to_cat/poss} story."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -65,9 +67,13 @@
                         "mutual": false,
                         "values": [
                             "respect",
+                            "comfort",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat refused to believe the story from_cat told could ever be true."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -95,7 +101,10 @@
                             "trust",
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat disliked how from_cat's story depicted cats as powerless to Starclan."
+                        }
                     },
                     {
                         "cats_to": [
@@ -106,10 +115,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "like",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat disliked how from_cat tolerated a clearly disempowering story."
+                        }
                     }
                 ],
                 "frequency": 4
