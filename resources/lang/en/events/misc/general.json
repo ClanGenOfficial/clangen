@@ -5121,7 +5121,10 @@
                 "values": [
                     "like"
                 ],
-                "amount": -15
+                "amount": -15,
+                "log": {
+                    "cats_from": "from_cat and to_cat got into an argument that nearly escalated into a fight."
+                }
             }
         ],
         "outsider": {
@@ -5171,13 +5174,14 @@
                 "values": [
                     "like"
                 ],
-                "amount": 15
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat and to_cat touched noses."
+                }
             },
             {
                 "cats_from": [
-                    "clan",
-                    "high_lawful",
-                    "high_stable"
+                    "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -5187,7 +5191,10 @@
                     "respect",
                     "trust"
                 ],
-                "amount": -5
+                "amount": -5,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat touched noses with a loner."
+                }
             }
         ],
         "outsider": {},
@@ -5238,7 +5245,27 @@
                     "respect",
                     "trust"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "from_cat and to_cat had a calm chat with each other."
+                }
+            },
+            {
+                "cats_from": [
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "trust"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat was seen chatting with a loner."
+                }
             }
         ]
     },
@@ -5267,9 +5294,7 @@
         "relationships": [
             {
                 "cats_from": [
-                    "clan",
-                    "high_lawful",
-                    "high_stable"
+                    "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -5277,10 +5302,12 @@
                 "mutual": false,
                 "values": [
                     "respect",
-                    "trust",
-                    "comfort"
+                    "trust"
                 ],
-                "amount": -10
+                "amount": -10,
+                "log": {
+                    "cats_from": "from_cat was not happy to hear that to_cat took food from a Twoleg."
+                }
             }
         ]
     },
@@ -5325,13 +5352,14 @@
                 "values": [
                     "like"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat and to_cat shared prey together before a patrol chased n_c:0 off."
+                }
             },
             {
                 "cats_from": [
-                    "clan",
-                    "high_lawful",
-                    "high_stable"
+                    "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -5341,7 +5369,10 @@
                     "respect",
                     "trust"
                 ],
-                "amount": -5
+                "amount": -5,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat shared prey with a rogue."
+                }
             }
         ],
         "outsider": {},
@@ -5387,13 +5418,14 @@
                 "values": [
                     "like"
                 ],
-                "amount": 15
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat and to_cat touched noses."
+                }
             },
             {
                 "cats_from": [
-                    "clan",
-                    "high_lawful",
-                    "high_stable"
+                    "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -5403,7 +5435,10 @@
                     "respect",
                     "trust"
                 ],
-                "amount": -5
+                "amount": -5,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat touched noses with a rogue."
+                }
             }
         ],
         "outsider": {},
@@ -5466,7 +5501,27 @@
                 "values": [
                     "like"
                 ],
-                "amount": -10
+                "amount": -10,
+                "log": {
+                    "cats_from": "m_c chased n_c:0 off the territory."
+                }
+            },
+            {
+                "cats_from": [
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "trust"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat chased a rogue off the territory."
+                }
             }
         ]
     },
@@ -5482,7 +5537,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c goes to o_c_n in an attempt to ease the tension of war between the Clans: it goes well, and o_c_n begins to draw back from c_n's territory!",
+        "event_text": "m_c goes to o_c_n in an attempt to ease the tension of war between the Clans. It goes well, and o_c_n begins to draw back from c_n's territory.",
         "m_c": {
             "age": [
                 "any"
@@ -5497,7 +5552,19 @@
         },
         "other_clan": {
             "changed": 4
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_social"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat approved of how to_cat persuaded o_c_n to withdraw from c_n's territory."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_wartraitmediator2",
@@ -5540,7 +5607,7 @@
         "relationships": [
             {
                 "cats_from": [
-                    "clan"
+                    "some_clan"
                 ],
                 "cats_to": [
                     "m_c"
@@ -5548,9 +5615,12 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "trust"
+                    "comfort"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "from_cat appreciated to_cat checking in on {PRONOUN/from_cat/object} in the midst of the war."
+                }
             }
         ]
     },
@@ -5566,7 +5636,7 @@
             "war"
         ],
         "frequency": 3,
-        "event_text": "m_c goes to o_c_n in an attempt to ease the tension of war between the Clans: it doesn't go well, and o_c_n further advances in c_n's territory.",
+        "event_text": "m_c goes to o_c_n in an attempt to ease the tension of war between the Clans. It doesn't go well, and o_c_n further advances in c_n's territory.",
         "m_c": {
             "age": [
                 "any"
@@ -5578,7 +5648,19 @@
         },
         "other_clan": {
             "changed": -2
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat thought to_cat's mediation efforts in the war with o_c_n were a waste of time."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_mediatortoadult",
@@ -5600,9 +5682,7 @@
             "age": [
                 "adolescent",
                 "young adult",
-                "adult",
-                "senior adult",
-                "senior"
+                "adult"
             ],
             "trait": [
                 "nervous",
@@ -5621,10 +5701,12 @@
                 "mutual": false,
                 "values": [
                     "comfort",
-                    "trust",
-                    "like"
+                    "trust"
                 ],
-                "amount": 5
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat was embarrassed but grateful that to_cat helped {PRONOUN/from_cat/object} sort our {PRONOUN/from_cat/poss} feelings for a Clanmate."
+                }
             }
         ]
     },
@@ -5637,7 +5719,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c spots r_c looking a little bit lonely, and invites {PRONOUN/r_c/object} to watch as {PRONOUN/m_c/subject} {VERB/m_c/perform/performs} {PRONOUN/m_c/poss} duties.",
+        "event_text": "m_c spots r_c looking lonely and invites {PRONOUN/r_c/object} to watch as {PRONOUN/m_c/subject} {VERB/m_c/perform/performs} {PRONOUN/m_c/poss} duties.",
         "m_c": {
             "status": [
                 "mediator",
@@ -5662,7 +5744,10 @@
                     "like",
                     "trust"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat was grateful that to_cat let {PRONOUN/from_cat/object} tag along and watch {PRONOUN/to_cat/object} do {PRONOUN/to_cat/poss} duties."
+                }
             }
         ]
     },
@@ -5723,11 +5808,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "trust",
-                    "comfort",
-                    "like"
+                    "trust"
                 ],
-                "amount": -10
+                "amount": -20,
+                "log": {
+                    "cats_from": "from_cat suspected that to_cat intentionally gave {PRONOUN/from_cat/object} bad advice about an ongoing war."
+                }
             }
         ]
     },
@@ -5783,7 +5869,10 @@
                 "values": [
                     "trust"
                 ],
-                "amount": 5
+                "amount": 20,
+                "log": {
+                    "cats_from": "from_cat consulted to_cat about how to end the war with o_c_n."
+                }
             }
         ]
     },
@@ -5799,7 +5888,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c is conversing with r_c about ways to potentially end this war- but not without bloodshed.",
+        "event_text": "m_c is conversing with r_c about ways to potentially end this war - though not without bloodshed.",
         "m_c": {
             "status": [
                 "mediator",
@@ -5840,7 +5929,10 @@
                 "values": [
                     "trust"
                 ],
-                "amount": -5
+                "amount": 20,
+                "log": {
+                    "cats_from": "from_cat consulted to_cat about how to end the war with o_c_n."
+                }
             }
         ]
     },
@@ -5954,11 +6046,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "like",
-                    "comfort",
-                    "trust"
+                    "like"
                 ],
-                "amount": 5
+                "amount": 15,
+                "log": {
+                    "cats_from": "r_c gave m_c a gift for {PRONOUN/m_c/poss} ceremony, and m_c has worn it on {PRONOUN/m_c/poss} pelt ever since."
+                }
             }
         ]
     },
@@ -5987,7 +6080,19 @@
             "status": [
                 "leader"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["trust"],
+                "amount": 20,
+                "mutual": true,
+                "log": {
+                    "cats_from": "m_c consulted r_c about an omen {PRONOUN/m_c/subject} saw on patrol."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_medicinecatmedcatomen1",
@@ -6014,7 +6119,19 @@
             "status": [
                 "medicine cat"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["trust"],
+                "amount": 20,
+                "mutual": true,
+                "log": {
+                    "cats_from": "from_cat and to_cat discussed an omen's potential meaning."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_medicinecatdream1",
@@ -6044,7 +6161,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dreamself pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list/m_c. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
+        "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dream-self pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list/m_c. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
         "m_c": {
             "status": [
                 "medicine cat apprentice",
@@ -6072,7 +6189,24 @@
             "skill": [
                 "CLAIRVOYANT,2"
             ]
-        }
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["like", "respect"],
+                "amount": 30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from an ambush, using {PRONOUN/to_cat/poss} clairvoyancy."
+                } 
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_medicinecatprophet1",
@@ -6103,7 +6237,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c has been worried that c_n will lose the knowledge r_c has gained through {PRONOUN/r_c/poss} long life, but by sitting with r_c and discussing {PRONOUN/r_c/poss} experiences, m_c will ensure the lessons learned in the past are never forgotten.",
+        "event_text": "m_c has been worried that c_n will lose the knowledge r_c has gained through {PRONOUN/r_c/poss} long life. m_c sits with r_c to discuss {PRONOUN/r_c/poss} experiences, ensuring the lessons learned in the past are never forgotten.",
         "m_c": {
             "status": [
                 "medicine cat"
@@ -6119,7 +6253,29 @@
             "status": [
                 "elder"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["respect"],
+                "amount": 20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat enjoyed sitting with to_cat and learning from {PRONOUN/to_cat/object}."
+                }
+            },
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["like", "comfort"],
+                "amount": 20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat appreciated that to_cat took the time to sit with {PRONOUN/from_cat/object} and listen to {PRONOUN/to_cat/poss} experiences."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_medicinecatscandolous1",
@@ -6176,9 +6332,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "like"
+                    "like", "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "from_cat and to_cat discussed something when they met each other on the border."
+                }
             }
         ]
     },
@@ -6194,7 +6353,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c's knowledge of herbs and healing is being put to the test, with injuries becoming more severe in the midst of war.",
+        "event_text": "m_c's knowledge of herbs and healing is put to the test by the severe injuries sustained in the war.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -6246,7 +6405,19 @@
                 "medicine cat apprentice",
                 "medicine cat"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "trust"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat appreciated to_cat's foresight in preparing small bundles of herbs for use during battle."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_medcatwar4",
@@ -6260,7 +6431,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "c_n is in a badly need of herbs, and m_c knows it, but can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side.",
+        "event_text": "c_n is in a badly need of herbs, and m_c knows it, but {PRONOUN/m_c/subject} can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -6284,7 +6455,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c hopes to find the herbs that c_n needs in the war, and goes to look for them even in this leaf-bare's harsh weather.",
+        "event_text": "m_c hopes to find the herbs that c_n needs in the war and goes to look for them even in this leaf-bare's harsh weather.",
         "m_c": {
             "age": [
                 "any"
@@ -6340,9 +6511,13 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "like"
+                    "like",
+                    "respect"
                 ],
-                "amount": -10
+                "amount": -10,
+                "log": {
+                    "cats_from": "from_cat was unhappy with to_cat for bothering {PRONOUN/from_cat/object} with trivialities."
+                }
             }
         ]
     },
@@ -6390,7 +6565,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c speaks to r_c about how to better defend the camp.",
+        "event_text": "m_c speaks to r_c about how to better fortify the camp.",
         "m_c": {
             "age": [
                 "any"
@@ -6410,7 +6585,19 @@
             "status": [
                 "leader"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat took to_cat's advice on how best to fortify the camp."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_campelder1",
@@ -6432,7 +6619,19 @@
             "skill": [
                 "CAMP,2"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat appreciated that to_cat reinforced the dens in camp."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_campelder2",
@@ -6454,7 +6653,19 @@
             "skill": [
                 "CAMP,2"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_social"],
+                "cats_to": ["m_c"],
+                "values": ["like"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat appreciated that to_cat reinforced the dens in camp."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_campelder3",
@@ -6476,7 +6687,19 @@
             "skill": [
                 "CAMP,3"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat appreciated that to_cat kept an eye on the camp."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_storyelder1",
@@ -6501,7 +6724,26 @@
             "skill": [
                 "STORY,1"
             ]
-        }
+        },
+        "r_c": {
+            "status": [
+                "apprentice",
+                "mediator apprentice",
+                "medicine cat apprentice"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "like"],
+                "amount": 15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat loved to_cat's stories of the Clan's past."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_storyelder2",
@@ -6529,10 +6771,15 @@
                 "LORE,2"
             ]
         },
+        "r_c": {
+            "age": [
+                "kitten"
+            ]
+        },
         "relationships": [
             {
                 "cats_from": [
-                    "clan"
+                    "some_clan"
                 ],
                 "cats_to": [
                     "m_c"
@@ -6542,7 +6789,26 @@
                     "comfort",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat saw to_cat telling stories to the kits."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like", "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat loved to_cat's stories of the Clan's past."
+                }
             }
         ]
     },
@@ -6714,11 +6980,13 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "like",
                     "respect",
                     "trust"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "Knowing the war might take to_cat away from {PRONOUN/from_cat/object}, from_cat realized what an incredible leader to_cat is."
+                }
             }
         ]
     },
@@ -6732,6 +7000,9 @@
         ],
         "sub_type": [
             "war"
+        ],
+        "tags": [
+            "clan:elder"
         ],
         "frequency": 2,
         "event_text": "m_c is heavily relying on the tactical advice and experience of the elders, namely r_c.",
@@ -6765,12 +7036,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "respect",
                     "trust"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "During a war, from_cat relied heavily on the wisdom of to_cat."
+                }
             }
         ]
     },
@@ -6880,7 +7154,27 @@
             "status": [
                 "leader"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_stable"],
+                "cats_to": ["m_c"],
+                "values": ["trust", "respect"],
+                "amount": 20,
+                "log": {
+                    "cats_from": "During a war, from_cat put all {PRONOUN/from_cat/poss} faith in m_c."
+                }
+            },
+            {
+                "cats_from": ["low_stable"],
+                "cats_to": ["m_c"],
+                "values": ["trust", "respect"],
+                "amount": -20,
+                "log": {
+                    "cats_from": "During a war, from_cat seriously reconsidered whether to_cat was the right cat to lead the Clan."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_warleader3",
@@ -6899,7 +7193,19 @@
             "status": [
                 "leader"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_social"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat recognized how much effort m_c put into appearing as a symbol of strength and unity for c_n during a war."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_leaderapprentice1",
@@ -7048,7 +7354,7 @@
             "clan_wide"
         ],
         "frequency": 2,
-        "event_text": "The o_c_n medicine cat comes asking if c_n have any given_herb to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
+        "event_text": "The o_c_n medicine cat comes asking if c_n have any given_herb to spare. Graciously, the Clan decides to aid their allies and share the herbs.",
         "supplies": [
             {
                 "type": "any_herb",
@@ -7077,7 +7383,7 @@
             "clan_wide"
         ],
         "frequency": 2,
-        "event_text": "The medicine cat apprentice from o_c_n comes asking for given_herb. They refuse to say why their Clan needs them but c_n still provides them with what they need.",
+        "event_text": "The medicine cat apprentice from o_c_n comes asking for given_herb. They refuse to say why their Clan needs them, but c_n still provides them with what they need.",
         "supplies": [
             {
                 "type": "any_herb",
@@ -7136,7 +7442,7 @@
             "clan_wide"
         ],
         "frequency": 2,
-        "event_text": "The medicine cat apprentice from o_c_n comes asking for herbs. They refuse to say why their Clan needs them and c_n decides not to share their precious few given_herb.",
+        "event_text": "The medicine cat apprentice from o_c_n comes asking for herbs. They refuse to say why their Clan needs them, and c_n decides not to share their precious few given_herb.",
         "supplies": [
             {
                 "type": "any_herb",
@@ -7195,7 +7501,7 @@
             "clan_wide"
         ],
         "frequency": 2,
-        "event_text": "A medicine cat from o_c_n comes to c_n, asking for lungwort to heal a case of yellowcough. c_n has some extra, and so decides to share with their allies.",
+        "event_text": "A medicine cat from o_c_n comes to c_n, asking for lungwort to heal a case of yellowcough. c_n has some extra and so decides to share with their allies.",
         "supplies": [
             {
                 "type": "lungwort",
@@ -7567,7 +7873,19 @@
                 "hostile"
             ],
             "changed": -2
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_stable"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat thought it was fox-hearted of to_cat to order {PRONOUN/from_cat/object} to steal from o_c_n's herb stores."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_herb_anydestruction1",
@@ -7606,7 +7924,7 @@
             "clan_wide"
         ],
         "frequency": 1,
-        "event_text": "Abnormally strong winds blew through the camp last night and scattered the herb store into a useless state. The Clan manages to recover some of the herbs, but the resulting supply is much smaller than before.",
+        "event_text": "Strong winds blew through the camp last night and scattered the herb store into a useless state. The Clan manages to recover some of the herbs, but the resulting supply is much smaller than before.",
         "supplies": [
             {
                 "type": "all_herb",
@@ -7656,7 +7974,7 @@
             "clan_wide"
         ],
         "frequency": 1,
-        "event_text": "Freezing temperatures have not just affected the cats. It's also frostbitten the stored herbs. Many of them are useless now and will have to be replaced.",
+        "event_text": "Freezing temperatures have not just affected the cats; they've also frostbitten the stored herbs. Many of them are useless now and will have to be replaced.",
         "supplies": [
             {
                 "type": "all_herb",
@@ -7836,7 +8154,10 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c presented r_c with a gift to celebrate {PRONOUN/r_c/poss} ceremony, and r_c has worn them on {PRONOUN/r_c/poss} pelt ever since."
+                }
             }
         ]
     },
@@ -7885,7 +8206,10 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c presented r_c with a gift to celebrate {PRONOUN/r_c/poss} apprentice ceremony, and r_c has worn them on {PRONOUN/r_c/poss} pelt ever since."
+                }
             }
         ]
     },
@@ -7934,7 +8258,10 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c presented r_c with a gift to celebrate {PRONOUN/r_c/poss} warrior ceremony, and r_c has worn them on {PRONOUN/r_c/poss} pelt ever since."
+                }
             }
         ]
     },
@@ -7984,20 +8311,11 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 5
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "like"
-                ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c presented r_c with a gift to celebrate {PRONOUN/r_c/poss} ceremony, and r_c has worn them on {PRONOUN/r_c/poss} pelt ever since.",
+                    "cats_to": "r_c decided to give m_c another chance after {PRONOUN/m_c/subject} gave {PRONOUN/r_c/object} a gift for {PRONOUN/r_c/poss} ceremony."
+                }
             }
         ]
     },
@@ -8044,7 +8362,10 @@
                     "like",
                     "comfort"
                 ],
-                "amount": 10
+                "amount": 20,
+                "log": {
+                    "cats_from": "m_c presented r_c with forget-me-nots to celebrate {PRONOUN/r_c/poss} ceremony, and r_c has worn them on {PRONOUN/r_c/poss} pelt ever since."
+                }
             }
         ]
     },
@@ -8091,7 +8412,10 @@
                     "like",
                     "comfort"
                 ],
-                "amount": 10
+                "amount": 20,
+                "log": {
+                    "cats_from": "m_c presented r_c with forget-me-nots to celebrate {PRONOUN/r_c/poss} ceremony, and r_c has worn them on {PRONOUN/r_c/poss} pelt ever since."
+                }
             }
         ]
     },
@@ -8144,22 +8468,10 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 5
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "like",
-                    "comfort",
-                    "trust"
-                ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c presented r_c with a gift to celebrate {PRONOUN/r_c/poss} apprentice ceremony, and r_c has worn them on {PRONOUN/r_c/poss} pelt ever since."
+                }
             }
         ]
     },
@@ -8214,20 +8526,10 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 5
-            },
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "respect"
-                ],
-                "amount": 5
+                "amount": 15,
+                "log": {
+                    "cats_from": "r_c tried to bring m_c some herbs, but they weren't usable. m_c has worn them on {PRONOUN/m_c/poss} pelt ever since."
+                }
             }
         ]
     },
@@ -8244,7 +8546,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c can't help but feel hurt when {PRONOUN/m_c/poss} sibling isn't there to congratulate {PRONOUN/m_c/object} for becoming a warrior. However, when {PRONOUN/m_c/subject} later {VERB/m_c/go/goes} to {PRONOUN/m_c/poss} new nest {PRONOUN/m_c/subject} {VERB/m_c/find/finds} r_c there waiting for {PRONOUN/m_c/object}, with a gift of acc_plural. Together the siblings work on making m_c's new nest feel more comfortable.",
+        "event_text": "m_c feels hurt when {PRONOUN/m_c/poss} sibling isn't there to congratulate {PRONOUN/m_c/object} for becoming a warrior. When {PRONOUN/m_c/subject} {VERB/m_c/go/goes} to {PRONOUN/m_c/poss} new nest, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} r_c waiting for {PRONOUN/m_c/object}, with a gift of acc_plural. Together, the siblings work on making m_c's new nest feel more comfortable.",
         "new_accessory": [
             "WILD"
         ],
@@ -8279,7 +8581,10 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c surprised r_c with a gift to celebrate {PRONOUN/r_c/poss} warrior ceremony, and r_c has worn them on {PRONOUN/r_c/poss} pelt ever since."
+                }
             }
         ]
     },
@@ -8337,20 +8642,10 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 15
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "like"
-                ],
-                "amount": 5
+                "amount": 20,
+                "log": {
+                    "cats_from": "To celebrate m_c's apprenticeship and r_c's role as {PRONOUN/m_c/poss} mentor, r_c presented {PRONOUN/m_c/object} with a gift that m_c can wear on {PRONOUN/m_c/poss} pelt."
+                }
             }
         ]
     },
@@ -8404,20 +8699,10 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 15
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "like"
-                ],
-                "amount": 5
+                "amount": 20,
+                "log": {
+                    "cats_from": "To celebrate m_c's apprenticeship and r_c's role as {PRONOUN/m_c/poss} mentor, r_c presented {PRONOUN/m_c/object} with a gift that m_c can wear on {PRONOUN/m_c/poss} pelt."
+                }
             }
         ]
     },
@@ -8434,7 +8719,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c yowls in shock, claws unsheathing from an unexpected weight pinning {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to get up, m_c's surprised and a bit upset to see that it had been {PRONOUN/m_c/poss} mentor who attacked {PRONOUN/m_c/object}. r_c doesn't seem to notice m_c's discomfort as {PRONOUN/r_c/subject} excitedly {VERB/r_c/tell/tells} m_c about the acc_plural that now adorns {PRONOUN/m_c/poss} pelt.",
+        "event_text": "r_c pounces on m_c, startling {PRONOUN/m_c/object}. r_c doesn't notice m_c's discomfort as {PRONOUN/r_c/subject} excitedly {VERB/r_c/point/point} out the acc_plural that now adorns m_c's pelt.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -8474,11 +8759,12 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "trust",
-                    "comfort",
-                    "like"
+                    "comfort"
                 ],
-                "amount": -5
+                "amount": -5,
+                "log": {
+                    "cats_from": "from_cat wished to_cat that {PRONOUN/from_cat/poss} mentor had give {PRONOUN/from_cat/object} an accessory normally instead of ambushing PPRONOUN/from_cat/object}."
+                }
             },
             {
                 "cats_to": [
@@ -8487,11 +8773,14 @@
                 "cats_from": [
                     "r_c"
                 ],
-                "mutual": false,
+                "mutual": true,
                 "values": [
                     "like"
                 ],
-                "amount": 5
+                "amount": 15,
+                "log": {
+                    "cats_from": "To celebrate m_c's apprenticeship and r_c's role as {PRONOUN/m_c/poss} mentor, r_c presents {PRONOUN/m_c/object} with a gift that m_c can wear on {PRONOUN/m_c/poss} pelt."
+                }
             }
         ]
     },
@@ -8549,7 +8838,12 @@
                 "senior adult",
                 "senior"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": [""]
+            }
+        ]
     },
     {
         "event_id": "multi_misc_mate_accessory_bud",
