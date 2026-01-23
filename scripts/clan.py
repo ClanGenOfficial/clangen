@@ -43,8 +43,8 @@ from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import (
     get_current_season,
-    clan_symbol_sprite,
 )  # pylint: disable=redefined-builtin
+from scripts.clan_package.clan_symbols import clan_symbol_sprite
 from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
 
 
