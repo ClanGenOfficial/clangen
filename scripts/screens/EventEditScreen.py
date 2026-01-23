@@ -40,9 +40,9 @@ from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.utility import (
-    generate_sprite,
     get_text_box_theme,
 )
+from scripts.cat.sprites import generate_sprite
 from scripts.events_module.text_adjust import process_text
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 

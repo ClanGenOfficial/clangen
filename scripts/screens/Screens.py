@@ -30,7 +30,6 @@ from scripts.ui.windows.event_loading import EventLoading
 from scripts.screens.enums import GameScreen
 from scripts.screens.screens_core.screens_core import rebuild_den_dropdown
 from scripts.utility import (
-    update_sprite,
     get_current_season,
 )
 from scripts.ui.scale import ui_scale, ui_scale_blit
@@ -749,12 +748,3 @@ class Screens:
         ) and self.next_cat else self.next_cat_button.disable()
 
     # pragma pylint: enable=no-member
-
-
-# CAT PROFILES
-def cat_profiles():
-    """Updates every cat's sprites"""
-    game.choose_cats.clear()
-
-    for x in Cat.all_cats:
-        update_sprite(Cat.all_cats[x])
