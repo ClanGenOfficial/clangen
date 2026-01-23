@@ -16,7 +16,7 @@
     "sub_type": ["war"],
     "tags": ["clan:apprentice"],
     "weight": 15,
-    "event_text": "The apprentices of the Clan are taking special training to learn how to blind their enemies with dust from the ground.",
+    "event_text": "The apprentices of the Clan are taking special training to learn how to blind their enemies by kicking up dust.",
     "m_c": {
       "status": ["apprentice"]
     }
