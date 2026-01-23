@@ -1,6 +1,7 @@
-from typing import Union, Type
+from typing import Union, Type, TYPE_CHECKING
 
-from scripts.cat.cats import Cat
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 
 def get_alive_clan_queens(living_cats):
