@@ -309,7 +309,7 @@
             "Feels inspired to craft a new legend based on recent events",
             "Uses the stories of old to help guide {PRONOUN/m_c/self} decisions",
             "Inspires a patrol with a story",
-            "Warns a patrol to avoid a certain area with a story"
+            "Uses a story to warn a patrol to away from a certain area"
         ],
         "main_skill_constraint": [
             "STORY,1"
