@@ -129,7 +129,7 @@ def get_cats_same_age(Cat, cat, age_range=10):
     return cats
 
 
-def get_free_possible_mates(cat):
+def get_free_possible_mates(cat, existing_romance=False):
     """Returns a list of available cats, which are possible mates for the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
@@ -145,5 +145,8 @@ def get_free_possible_mates(cat):
             continue
 
         if inter_cat.is_potential_mate(cat, for_love_interest=True):
-            cats.append(inter_cat)
+            if not existing_romance or (
+                existing_romance and cat.relationships[inter_cat.ID].romance > 0
+            ):
+                cats.append(inter_cat)
     return cats

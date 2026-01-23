@@ -78,7 +78,7 @@ class Relation_Events:
 
         # get the cats which are relevant for romantic interactions
         free_possible_mates = get_free_possible_mates(cat)
-        other_love_interest = get_cats_of_romantic_interest(cat)
+        other_love_interest = get_free_possible_mates(cat, existing_romance=True)
         possible_cats = free_possible_mates
         if 0 < len(other_love_interest) < 3:
             possible_cats.extend(other_love_interest)

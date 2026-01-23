@@ -873,30 +873,6 @@ def get_personality_compatibility(cat1, cat2):
     return CatCompatibility.NEUTRAL
 
 
-def get_cats_of_romantic_interest(cat):
-    """Returns a list of cats, those cats are love interest of the given cat"""
-    cats = []
-    for inter_cat in cat.all_cats.values():
-        if not inter_cat.status.alive_in_player_clan:
-            continue
-        if inter_cat.ID == cat.ID:
-            continue
-
-        if inter_cat.ID not in cat.relationships:
-            cat.create_one_relationship(inter_cat)
-            if cat.ID not in inter_cat.relationships:
-                inter_cat.create_one_relationship(cat)
-            continue
-
-        # Extra check to ensure they are potential mates
-        if (
-            inter_cat.is_potential_mate(cat, for_love_interest=True)
-            and cat.relationships[inter_cat.ID].romance > 0
-        ):
-            cats.append(inter_cat)
-    return cats
-
-
 def get_num_of_cats_with_relation_amount_towards(cat, amount, all_cats):
     """
     Looks how many cats have the certain value
