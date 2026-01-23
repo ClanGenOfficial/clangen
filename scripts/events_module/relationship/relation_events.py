@@ -11,10 +11,12 @@ from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.utility import (
-    get_cats_same_age,
     get_cats_of_romantic_interest,
-    get_free_possible_mates,
     filter_relationship_type,
+)
+from scripts.clan_package.get_clan_cats import (
+    get_cats_same_age,
+    get_free_possible_mates,
 )
 
 

@@ -46,13 +46,13 @@ from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
     clamp,
-    find_alive_cats_with_rank,
     get_personality_compatibility,
     event_text_adjust,
     update_sprite,
     leader_ceremony_text_adjust,
     update_mask,
 )
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 import scripts.game_structure.screen_settings
 

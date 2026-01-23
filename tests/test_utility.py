@@ -12,8 +12,8 @@ from scripts.utility import (
     get_highest_romantic_relation,
     get_personality_compatibility,
     get_num_of_cats_with_relation_amount_towards,
-    get_alive_clan_queens,
 )
+from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
 
 class TestPersonalityCompatibility(unittest.TestCase):

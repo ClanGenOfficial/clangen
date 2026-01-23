@@ -21,10 +21,10 @@ from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.utility import (
     ui_scale,
-    find_alive_cats_with_rank,
     get_text_box_theme,
     adjust_list_text,
 )
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
     settings_dict = ujson.load(f)

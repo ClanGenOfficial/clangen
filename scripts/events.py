@@ -44,8 +44,6 @@ from scripts.game_structure.windows import SaveError
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
-    find_alive_cats_with_rank,
-    get_living_clan_cat_count,
     ceremony_text_adjust,
     get_current_season,
     adjust_list_text,
@@ -55,7 +53,10 @@ from scripts.utility import (
     history_text_adjust,
     unpack_rel_block,
 )
-
+from scripts.clan_package.get_clan_cats import (
+    find_alive_cats_with_rank,
+    get_living_clan_cat_count,
+)
 
 all_events = {}
 new_cat_invited = False

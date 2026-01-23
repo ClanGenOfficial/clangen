@@ -17,11 +17,11 @@ from scripts.game_structure.ui_elements import (
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
-    find_alive_cats_with_rank,
     shorten_text_to_fit,
     event_text_adjust,
     ui_scale_offset,
 )
+from ..clan_package.get_clan_cats import find_alive_cats_with_rank
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.enums import CatRank

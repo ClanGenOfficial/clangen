@@ -18,11 +18,11 @@ from scripts.utility import (
     history_text_adjust,
     adjust_list_text,
     unpack_rel_block,
-    find_alive_cats_with_rank,
     change_relationship_values,
     change_clan_reputation,
     change_clan_relations,
 )
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.personality import Personality

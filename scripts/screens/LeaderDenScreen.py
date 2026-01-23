@@ -31,9 +31,11 @@ from scripts.utility import (
     get_other_clan,
     clan_symbol_sprite,
     shorten_text_to_fit,
+    ui_scale_dimensions,
+)
+from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
     get_living_clan_cat_count,
-    ui_scale_dimensions,
 )
 
 

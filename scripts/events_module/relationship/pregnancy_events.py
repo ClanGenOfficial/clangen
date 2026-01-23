@@ -20,9 +20,9 @@ from scripts.utility import (
     event_text_adjust,
     get_personality_compatibility,
     change_relationship_values,
-    find_alive_cats_with_rank,
     adjust_list_text,
 )
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 
 class Pregnancy_Events:

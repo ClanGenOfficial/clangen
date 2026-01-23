@@ -35,11 +35,11 @@ from scripts.utility import (
     clan_symbol_sprite,
     get_text_box_theme,
     shorten_text_to_fit,
-    get_living_clan_cat_count,
     ui_scale_dimensions,
     ui_scale_value,
     ui_scale_offset,
 )
+from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
 
 
 class EventsScreen(Screens):
