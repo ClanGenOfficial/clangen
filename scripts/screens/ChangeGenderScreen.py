@@ -29,7 +29,7 @@ from .enums import GameScreen
 from ..game_structure import localization as pronouns
 from ..game_structure.game.switches import switch_get_value, switch_set_value, Switch
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.windows import PronounCreation
+from ..ui.windows.pronoun_creation import PronounCreation
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 

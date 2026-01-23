@@ -18,10 +18,11 @@ from scripts.utility import ui_scale
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.sprites import sprites
+from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.windows import SaveAsImage
+from ..ui.windows.save_as_image import SaveAsImage
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 

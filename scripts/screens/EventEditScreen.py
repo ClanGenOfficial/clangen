@@ -31,7 +31,8 @@ from scripts.game_structure.ui_elements import (
     UICollapsibleContainer,
     UIScrollingDropDown,
 )
-from scripts.game_structure.windows import EditorSaveCheck, EditorMissingInfo
+from scripts.ui.windows.editor_save_check import EditorSaveCheck
+from scripts.ui.windows.editor_missing_info import EditorMissingInfo
 from scripts.screens.RelationshipScreen import RelationshipScreen
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen

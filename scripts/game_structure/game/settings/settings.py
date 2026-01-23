@@ -26,7 +26,7 @@ def game_settings_save(currentscreen=None):
     try:
         safe_save(settings_path, settings)
     except RuntimeError:
-        from scripts.game_structure.windows import SaveError
+        from scripts.ui.windows.save_error import SaveError
 
         SaveError(traceback.format_exc())
         if currentscreen is not None:

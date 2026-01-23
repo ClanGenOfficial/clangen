@@ -27,6 +27,7 @@ from importlib import reload
 from importlib.util import find_spec
 
 from scripts.screens.enums import GameScreen
+from scripts.ui.windows.save_check import SaveCheck
 
 if not getattr(sys, "frozen", False):
     requiredModules = [
@@ -186,7 +187,6 @@ for module_name, module in list(sys.modules.items()):
 from scripts.clan import clan_class, Afterlife
 from scripts.game_structure.audio import sound_manager, music_manager
 from scripts.game_structure.load_cat import load_cats, version_convert
-from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
 from scripts.game_structure import game
 from scripts.game_structure import constants

@@ -40,7 +40,7 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.game_structure.windows import SaveError
+from scripts.ui.windows.save_error import SaveError
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,

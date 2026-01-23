@@ -13,7 +13,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIRelationDisplay,
 )
-from scripts.game_structure.windows import RelationshipLog
+from scripts.ui.windows.relationship_log import RelationshipLog
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.utility import (

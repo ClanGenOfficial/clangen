@@ -15,7 +15,7 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
 )
-from scripts.game_structure.windows import SaveError
+from scripts.ui.windows.save_error import SaveError
 from scripts.utility import (
     ui_scale,
     ui_scale_dimensions,
