@@ -41,9 +41,6 @@ from scripts.game_structure.game.switches import (
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.ui.windows.save_error import SaveError
-from scripts.utility import (
-    get_current_season,
-)
 from scripts.events_module.text_adjust import (
     ongoing_event_text_adjust,
     event_text_adjust,
@@ -99,7 +96,6 @@ def one_moon():
 
     # age up the clan, set current season
     game.clan.age += 1
-    get_current_season()
     update_afterlife_temper()
     Pregnancy_Events.handle_pregnancy_age(game.clan)
     check_war()

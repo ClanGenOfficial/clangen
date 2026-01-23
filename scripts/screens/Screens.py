@@ -29,9 +29,6 @@ from scripts.ui.windows.save_check import SaveCheck
 from scripts.ui.windows.event_loading import EventLoading
 from scripts.screens.enums import GameScreen
 from scripts.screens.screens_core.screens_core import rebuild_den_dropdown
-from scripts.utility import (
-    get_current_season,
-)
 from scripts.ui.scale import ui_scale, ui_scale_blit
 from scripts.game_structure import game
 
@@ -593,7 +590,7 @@ class Screens:
 
         # make the right string to pull the correct camp image
         try:
-            season = get_current_season()
+            season = game.clan.current_season
             season_bg = (
                 scripts.screens.screens_core.screens_core.default_fullscreen_bgs[theme][
                     season

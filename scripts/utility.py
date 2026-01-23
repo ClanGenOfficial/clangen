@@ -29,27 +29,6 @@ if TYPE_CHECKING:
 # ---------------------------------------------------------------------------- #
 
 
-def get_current_season():
-    """
-    function to handle the math for finding the Clan's current season
-    :return: the Clan's current season
-    """
-
-    if constants.CONFIG["lock_season"]:
-        game.clan.current_season = game.clan.starting_season
-        return game.clan.starting_season
-
-    modifiers = {"Newleaf": 0, "Greenleaf": 3, "Leaf-fall": 6, "Leaf-bare": 9}
-    index = game.clan.age % 12 + modifiers[game.clan.starting_season]
-
-    if index > 11:
-        index = index - 12
-
-    game.clan.current_season = constants.SEASON_CALENDAR[index]
-
-    return game.clan.current_season
-
-
 # ---------------------------------------------------------------------------- #
 #                             Cat Relationships                                #
 # ---------------------------------------------------------------------------- #
@@ -123,5 +102,3 @@ def clamp(value: float, minimum_value: float, maximum_value: float) -> float:
     elif value > maximum_value:
         return maximum_value
     return value
-
-
