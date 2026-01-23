@@ -47,7 +47,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a relaxing time in the water after a dreadfully hot patrol."
+                        }
                     },
                     {
                         "cats_to": [
@@ -60,7 +63,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a fun water fight after a dreadfully hot patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -70,6 +76,23 @@
                 "exp": 20,
                 "art": "fst_train_newleafmatesonadates_70locked1",
                 "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a relaxing time in the water after a dreadfully hot patrol."
+                        }
+                    },
                     {
                         "cats_to": [
                             "p_l"
@@ -83,7 +106,10 @@
                             "comfort",
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a fun water fight after a dreadfully hot patrol."
+                        }
                     }
                 ],
                 "frequency": 4
