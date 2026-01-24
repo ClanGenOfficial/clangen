@@ -1,4 +1,4 @@
-from typing import Union, Type, TYPE_CHECKING
+from typing import Union, Type, TYPE_CHECKING, Tuple, List
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -129,9 +129,15 @@ def get_cats_same_age(Cat, cat, age_range=10):
     return cats
 
 
-def get_free_possible_mates(cat, existing_romance=False):
-    """Returns a list of available cats, which are possible mates for the given cat."""
-    cats = []
+def get_possible_mates(cat) -> Tuple[List["Cat"], List["Cat"]]:
+    """
+    Returns a list of available cats which are possible mates for the given cat,
+    and a second list of cats that are possible mates with pre-existing romantic interest.
+    :param cat: The cat
+    :return: possible mates and possible mates with existing romantic interest
+    """
+    possible_mates = []
+    existing_romance_mates = []
     for inter_cat in cat.all_cats.values():
         if not inter_cat.status.alive_in_player_clan:
             continue
@@ -145,8 +151,7 @@ def get_free_possible_mates(cat, existing_romance=False):
             continue
 
         if inter_cat.is_potential_mate(cat, for_love_interest=True):
-            if not existing_romance or (
-                existing_romance and cat.relationships[inter_cat.ID].romance > 0
-            ):
-                cats.append(inter_cat)
-    return cats
+            if cat.relationships[inter_cat.ID].romance > 0:
+                existing_romance_mates.append(inter_cat)
+            possible_mates.append(inter_cat)
+    return possible_mates, existing_romance_mates

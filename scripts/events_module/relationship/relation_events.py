@@ -13,7 +13,7 @@ from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.event_filters import filter_relationship_type
 from scripts.clan_package.get_clan_cats import (
     get_cats_same_age,
-    get_free_possible_mates,
+    get_possible_mates,
 )
 
 
@@ -77,8 +77,7 @@ class Relation_Events:
             return
 
         # get the cats which are relevant for romantic interactions
-        free_possible_mates = get_free_possible_mates(cat)
-        other_love_interest = get_free_possible_mates(cat, existing_romance=True)
+        free_possible_mates, other_love_interest = get_possible_mates(cat)
         possible_cats = free_possible_mates
         if 0 < len(other_love_interest) < 3:
             possible_cats.extend(other_love_interest)
