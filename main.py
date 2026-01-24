@@ -12,7 +12,6 @@ import scripts.game_structure.screen_settings
 from scripts.cat.sprites import sprites
 from scripts.clan import Afterlife, clan_class
 
-# from scripts.debug_menu import debugmode
 from scripts.debug_console import debug_mode
 from scripts.game_structure import constants, game
 from scripts.game_structure.audio import music_manager, sound_manager
@@ -30,7 +29,7 @@ from scripts.game_structure.screen_settings import MANAGER, screen, screen_scale
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens import all_screens
 from scripts.screens.enums import GameScreen
-from scripts.ui.windows.save_check import SaveCheck
+from scripts.ui.windows.save_check import SaveCheckWindow
 from scripts.utility import (
     quit,
 )  # pylint: disable=redefined-builtin
