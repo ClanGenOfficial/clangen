@@ -16,42 +16,6 @@ import shutil
 import sys
 import time
 from importlib import reload
-from importlib.util import find_spec
-
-if not getattr(sys, "frozen", False):
-    requiredModules = [
-        "ujson",
-        "pygame",
-        "pygame_gui",
-        "platformdirs",
-        "pgpy",
-        "requests",
-        "strenum",
-    ]
-
-    isMissing = False
-
-    for module in requiredModules:
-        if find_spec(module) is None:
-            isMissing = True
-            break
-
-    if isMissing:
-        print(
-            """You are missing some requirements to run clangen!
-
-                Please look at the "README.md" file for instructions on how to install them.
-                """
-        )
-
-        print(
-            "If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen"
-        )
-        sys.exit(1)
-
-    del requiredModules
-    del isMissing
-del find_spec
 
 from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
 from scripts.housekeeping.log_cleanup import prune_logs
