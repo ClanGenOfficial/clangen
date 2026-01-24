@@ -2025,18 +2025,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 2],
+            "normal adult": [1, 4]
         },
         "frequency": 2,
         "intro_text": "p_l sees a pod of dolphins swimming in the distance and considers it a good learning opportunity for the apprentices.",
@@ -2059,7 +2049,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was touched by to_cat's story of how dolphins saved a tiny white and red cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2080,7 +2073,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was touched by to_cat's story of how dolphins saved a tiny white and red cat."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2230,20 +2226,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about how sea otters came to be."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2280,7 +2266,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated that to_cat promised to wait to tell {PRONOUN/to_cat/poss} story until from_cat was able to listen."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2300,17 +2289,11 @@
         ],
         "tags": [],
         "patrol_art": "gen_bord_story",
-        "min_cats": 4,
+        "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                2,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 5],
+            "normal adult": [1, 4]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -2334,25 +2317,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
                             "comfort",
-                            "trust",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the Fox Warrior."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2365,16 +2336,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "app1"
                         ],
                         "cats_from": [
-                            "app1"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
-                            "respect"
+                            "like", "comfort"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "p_l indulged app1 and let {PRONOUN/app1/object} run off during training."
+                        }
                     }
                 ],
                 "frequency": 4
