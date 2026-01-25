@@ -342,8 +342,9 @@ class FreshkillPile:
         fed_kits, pregnant_cats, relevant_queens = self.evaluate_queen_kit_pregnant(
             living_cats
         )
-
-        for feeding_status in FEEDING_ORDER.reverse():
+        feed_order = FEEDING_ORDER.copy()
+        feed_order.reverse()
+        for feeding_status in feed_order:
             if feeding_status == CatRank.NEWBORN:
                 relevant_group = [
                     cat
