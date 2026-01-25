@@ -227,10 +227,14 @@ class FreshkillPile:
         # NOTE: the tactics should have their own function for testing purposes
         if get_clan_setting("youngest_first"):
             self.tactic_youngest_first(living_cats, additional_food_round)
+        elif get_clan_setting("oldest_first"):
+            self.tactic_oldest_first(living_cats, additional_food_round)
         elif get_clan_setting("hungriest_first"):
             self.tactic_hungry_first(living_cats, additional_food_round)
         elif get_clan_setting("experience_first"):
             self.tactic_experience_first(living_cats, additional_food_round)
+        elif get_clan_setting("high_rank"):
+            self.tactic_high_rank(living_cats, additional_food_round)
         else:  # only remaining tactic is low_rank, this is our default!
             self.tactic_low_rank(living_cats, additional_food_round)
 
