@@ -86,6 +86,9 @@ def rebuild_core(*, should_rebuild_bgs=True):
 
 
 def rebuild_top_menu_buttons():
+    """
+    Rebuilds the top menu UI
+    """
     global menu_buttons
 
     if game.clan:
@@ -249,6 +252,11 @@ def rebuild_top_menu_buttons():
 
 
 def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = False):
+    """
+    Rebuilds the UI elements for moons and seasons. This should be run on timeskip.
+    :param change_moon: Set True if the moon phase image should be changed.
+    :param visible: Set True if the UI elements should be created visible. If set to False, they will be created invisibly and will need to be manually made visible.
+    """
     if game.clan:
         season = game.clan.current_season.casefold().replace("-", "")
         clan_age = game.clan.age

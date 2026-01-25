@@ -22,8 +22,8 @@ from scripts.game_structure.screen_settings import (
     screen,
 )
 from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
-from scripts.ui.windows.freshkill import FreshkillManagement
-from scripts.ui.windows.herbs import HerbManagement
+from scripts.ui.windows.freshkill import FreshkillManagementWindow
+from scripts.ui.windows.herbs import HerbManagementWindow
 from scripts.ui.windows.save_check import SaveCheckWindow
 from scripts.ui.event_load_animation import EventLoadingAnimation
 from scripts.screens.enums import GameScreen
@@ -277,16 +277,20 @@ class Screens:
     def menu_button_pressed(self, event):
         """This is a short-up to deal with menu button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
+
+        # VIEW EVENTS
         if event.ui_element == Screens.menu_buttons["events"]:
+            Screens.menu_buttons["supplies"].close()
+            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.EVENTS)
-        # supply dropdown
+        # SUPPLY DROPDOWN
         elif (
             Screens.menu_buttons.get("supplies")
             and event.ui_element == Screens.menu_buttons["supplies"].parent_button
         ):
             if Screens.menu_buttons["dens"].is_open:
                 Screens.menu_buttons["dens"].close()
-        # freshkill popup
+        # OPEN FRESHKILL
         elif (
             Screens.menu_buttons.get("supplies")
             and event.ui_element
@@ -294,21 +298,22 @@ class Screens:
                 "screens.core.freshkill"
             ]
         ):
-            FreshkillManagement()
-        # herb popup
+            FreshkillManagementWindow()
+        # OPEN HERB
         elif (
             Screens.menu_buttons.get("supplies")
             and event.ui_element
             == Screens.menu_buttons["supplies"].child_button_dicts["screens.core.herbs"]
         ):
-            HerbManagement()
-        # den dropdown
+            HerbManagementWindow()
+        # DEN DROPDOWN
         elif (
             Screens.menu_buttons.get("supplies")
             and event.ui_element == Screens.menu_buttons["dens"].parent_button
         ):
             if Screens.menu_buttons["supplies"].is_open:
                 Screens.menu_buttons["supplies"].close()
+        # OPEN LEADER
         elif (
             event.ui_element
             == Screens.menu_buttons["dens"].child_button_dicts[
@@ -317,6 +322,7 @@ class Screens:
         ):
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.LEADER_DEN)
+        # OPEN MEDICINE
         elif (
             event.ui_element
             == Screens.menu_buttons["dens"].child_button_dicts[
@@ -325,6 +331,7 @@ class Screens:
         ):
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.MED_DEN)
+        # OPEN WARRIOR
         elif (
             event.ui_element
             == Screens.menu_buttons["dens"].child_button_dicts[
@@ -333,30 +340,47 @@ class Screens:
         ):
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.WARRIOR_DEN)
+        # OPEN CLEARING/MEDIATOR
         elif (
             event.ui_element
             == Screens.menu_buttons["dens"].child_button_dicts["screens.core.clearing"]
         ):
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.MEDIATION)
+        # GO TO CAMP
         elif event.ui_element in (
             Screens.menu_buttons["camp"],
             Screens.menu_buttons["heading"],
         ):
+            Screens.menu_buttons["supplies"].close()
+            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.CAMP)
+        # VIEW CATS
         elif event.ui_element == Screens.menu_buttons["cats"]:
+            Screens.menu_buttons["supplies"].close()
+            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.LIST)
+        # PATROL
         elif event.ui_element == Screens.menu_buttons["patrols"]:
+            Screens.menu_buttons["supplies"].close()
+            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.PATROL)
+        # MAIN MENU
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
             SaveCheckWindow(
                 switch_get_value(Switch.cur_screen),
                 True,
                 Screens.menu_buttons["main_menu"],
             )
+        # ALLEGIANCES
         elif event.ui_element == Screens.menu_buttons["allegiances"]:
+            Screens.menu_buttons["supplies"].close()
+            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.ALLEGIANCES)
+        # CLAN SETTINGS
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
+            Screens.menu_buttons["supplies"].close()
+            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.CLAN_SETTINGS)
 
     @classmethod

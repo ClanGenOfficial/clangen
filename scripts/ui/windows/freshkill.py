@@ -5,12 +5,12 @@ import i18n
 import pygame
 import pygame_gui.elements
 
+from scripts.game_structure import game
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import (
     get_clan_setting,
     switch_clan_setting,
 )
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
@@ -22,11 +22,11 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale, ui_scale_offset, ui_scale_value
 
 
-class FreshkillManagement(GameWindow):
+class FreshkillManagementWindow(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((125, 150), (550, 400))),

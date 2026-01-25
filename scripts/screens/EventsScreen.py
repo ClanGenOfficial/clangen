@@ -143,6 +143,7 @@ class EventsScreen(Screens):
                     return
                 self.timeskip_button.disable()
                 self.events_thread = self.loading_screen_start_work(events.one_moon)
+                rebuild_moon_n_season_indicator(change_moon=True, visible=True)
             elif element in self.page_control.values():
                 if element == self.page_control["first"]:
                     self.current_page = 1
