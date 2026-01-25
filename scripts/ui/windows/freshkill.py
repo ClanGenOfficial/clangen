@@ -29,9 +29,13 @@ from scripts.utility import ui_scale, ui_scale_offset, ui_scale_value
 class FreshkillManagementWindow(GameWindow):
     def __init__(self):
         super().__init__(
-            ui_scale(pygame.Rect((125, 150), (550, 400))),
+            ui_scale(pygame.Rect((125, 150), (550, 420))),
             window_display_title="Freshkill Management",
         )
+        # this needs to be here to prevent a crash
+        # don't ask me WHY it crashes, i couldn't figure it out. i think it's a pygui issue.
+        # setting this to false has no adverse consequences, it just prevents the crash
+        self.bring_to_front_on_focused = False
 
         self.open_view = None
         self.log = None
@@ -181,7 +185,7 @@ class FreshkillManagementWindow(GameWindow):
             container=self,
         )
         self.feed_view_elements["ration_prey"] = UICheckbox(
-            (15, 345),
+            (15, 365),
             container=self,
             manager=MANAGER,
             check=get_clan_setting("ration_prey"),
@@ -245,7 +249,7 @@ class FreshkillManagementWindow(GameWindow):
         needed_amount = math.ceil(game.clan.freshkill_pile.amount_food_needed())
 
         scale_rect = ui_scale(pygame.Rect((0, 0), (450, -1)))
-        scale_rect.bottomleft = ui_scale_offset((0, -100))
+        scale_rect.bottomleft = ui_scale_offset((0, -90))
         self.feed_view_elements["status_text"] = UITextBoxTweaked(
             i18n.t(
                 "windows.freshkill_pile_tooltip",
@@ -370,7 +374,7 @@ class FreshkillManagementWindow(GameWindow):
             prev_element = self.tactic_view_elements[priority]
 
         self.feed_view_elements["auto_feed"] = UICheckbox(
-            (80, 345),
+            (80, 365),
             container=self,
             manager=MANAGER,
             check=get_clan_setting("auto_feed"),
@@ -491,6 +495,12 @@ class FreshkillManagementWindow(GameWindow):
             self.setting_switch(
                 self.feed_view_elements.get("ration_prey"), "ration_prey"
             )
+        elif event.ui_element == self.feed_view_elements["next_page_button"]:
+            self.current_page += 1
+            self.update_cats_list()
+        elif event.ui_element == self.feed_view_elements["previous_page_button"]:
+            self.current_page -= 1
+            self.update_cats_list()
 
     @staticmethod
     def handle_feeding(cats_to_feed):

@@ -83,6 +83,7 @@ class FreshkillPile:
                 "expires_in_1": 0,
             }
             self.total_amount = game.prey_config["start_amount"]
+        self.timeskip_feed = False
         self.nutrition_info = {}
         self.living_cats = []
         self.already_fed = []
@@ -196,7 +197,6 @@ class FreshkillPile:
         self.timeskip_feed = True
         self.already_fed = []
         self.feed_cats(living_cats)
-        self.already_fed = []
         self.timeskip_feed = False
         value_diff -= sum(self.pile.values())
         event_list.append(i18n.t("hardcoded.consumed_prey", count=value_diff))
