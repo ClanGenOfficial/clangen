@@ -915,7 +915,8 @@
             "mediator",
             "deputy",
             "leader",
-            "kitten"
+            "kitten",
+            "medicine cat apprentice"
         ],
         "random_status_constraint": [
             "medicine cat",
@@ -2376,7 +2377,8 @@
             "leader",
             "elder",
             "mediator apprentice",
-            "mediator"
+            "mediator",
+            "medicine cat apprentice"
         ],
         "random_status_constraint": [
             "medicine cat",
