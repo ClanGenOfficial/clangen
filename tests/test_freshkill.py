@@ -244,7 +244,8 @@ class FreshkillPileTest(unittest.TestCase):
             self.freshkill_pile.nutrition_info[key].percentage = 100
 
         # then set up the pile with enough to feed the oldest and that's all
-        current_amount = self.prey_requirement["elder"]
+        oldest = sorted(Cat.all_cats_list, key=lambda x: x.moons, reverse=True)[0]
+        current_amount = self.prey_requirement[oldest.status.rank]
         self.freshkill_pile.pile["expires_in_4"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
@@ -255,12 +256,10 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.feed_cats(Cat.all_cats_list)
 
         # check that elder is full
-        self.assertEqual(
-            self.freshkill_pile.nutrition_info[self.elder.ID].percentage, 100
-        )
+        self.assertEqual(self.freshkill_pile.nutrition_info[oldest.ID].percentage, 100)
         # check that everyone else is hungry
         for cat in Cat.all_cats_list:
-            if cat == self.elder:
+            if cat == oldest:
                 continue
             self.assertNotEqual(
                 self.freshkill_pile.nutrition_info[cat.ID].percentage, 100
