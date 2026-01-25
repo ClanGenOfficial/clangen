@@ -89,6 +89,8 @@ class FreshkillPile:
         self.already_fed = []
         self.needed_prey = 0
 
+        self.fed_kits = []
+        self.queens = []
         self.is_manual_feeding = False
 
     def add_freshkill(self, amount) -> None:
@@ -216,6 +218,9 @@ class FreshkillPile:
         self.update_nutrition(cats_to_feed)
         if is_manual_feeding:
             self.is_manual_feeding = True
+
+        self.fed_kits, self.queens = self._find_queen_kit_pregnant(cats_to_feed)
+
         # NOTE: this is for testing purposes
         if not game.clan:
             self._feed_by_low_rank(cats_to_feed)
@@ -242,6 +247,8 @@ class FreshkillPile:
             self._feed_by_low_rank(cats_to_feed)
 
         self.is_manual_feeding = False
+        self.fed_kits.clear()
+        self.queens.clear()
 
     def amount_food_needed(self):
         """Get the amount of freshkill the clan needs.
@@ -266,7 +273,7 @@ class FreshkillPile:
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def _find_queen_kit_pregnant(cats_to_feed) -> tuple[list, list, list]:
+    def _find_queen_kit_pregnant(cats_to_feed) -> tuple[list, list]:
         """
         Helper to find queens, fed kittens, and pregnant cats.
         """
@@ -289,40 +296,35 @@ class FreshkillPile:
             for cat in cats_to_feed
             if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()
         ]
-
-        return fed_kits, pregnant_cats, relevant_queens
+        relevant_queens.extend(pregnant_cats)
+        return fed_kits, relevant_queens
 
     def _feed_by_low_rank(self, cats_to_feed: List[Cat]) -> None:
         """Feed cats in order of low rank to high, resolving ties with age.
 
         :param list cats_to_feed: Cats to feed
         """
-        fed_kits, pregnant_cats, relevant_queens = self._find_queen_kit_pregnant(
-            cats_to_feed
-        )
 
         for feeding_status in FEEDING_ORDER:
             if feeding_status == CatRank.NEWBORN:
                 relevant_group = [
                     cat
                     for cat in cats_to_feed
-                    if cat.status.rank == CatRank.NEWBORN and cat not in fed_kits
+                    if cat.status.rank == CatRank.NEWBORN and cat not in self.fed_kits
                 ]
             elif feeding_status == CatRank.KITTEN:
                 relevant_group = [
                     cat
                     for cat in cats_to_feed
-                    if cat.status.rank == CatRank.KITTEN and cat not in fed_kits
+                    if cat.status.rank == CatRank.KITTEN and cat not in self.fed_kits
                 ]
             elif feeding_status == "queen/pregnant":
-                relevant_group = relevant_queens + pregnant_cats
+                relevant_group = self.queens
             else:
                 relevant_group = [
                     cat
                     for cat in cats_to_feed
-                    if str(cat.status.rank) == feeding_status
-                    and cat not in relevant_queens
-                    and cat not in pregnant_cats
+                    if str(cat.status.rank) == feeding_status and cat not in self.queens
                 ]
 
             if len(relevant_group) == 0:
@@ -336,9 +338,6 @@ class FreshkillPile:
 
         :param list cats_to_feed: Cats to feed
         """
-        fed_kits, pregnant_cats, relevant_queens = self._find_queen_kit_pregnant(
-            cats_to_feed
-        )
         feed_order = FEEDING_ORDER.copy()
         feed_order.reverse()
         for feeding_status in feed_order:
@@ -346,16 +345,16 @@ class FreshkillPile:
                 relevant_group = [
                     cat
                     for cat in cats_to_feed
-                    if cat.status.rank == CatRank.NEWBORN and cat not in fed_kits
+                    if cat.status.rank == CatRank.NEWBORN and cat not in self.fed_kits
                 ]
             elif feeding_status == CatRank.KITTEN:
                 relevant_group = [
                     cat
                     for cat in cats_to_feed
-                    if cat.status.rank == CatRank.KITTEN and cat not in fed_kits
+                    if cat.status.rank == CatRank.KITTEN and cat not in self.fed_kits
                 ]
             elif feeding_status == "queen/pregnant":
-                relevant_group = relevant_queens + pregnant_cats
+                relevant_group = self.queens
             else:
                 relevant_group = [
                     cat
@@ -364,9 +363,7 @@ class FreshkillPile:
                 ]
                 # remove all cats, which are also queens / pregnant
                 relevant_group = [
-                    cat
-                    for cat in relevant_group
-                    if cat not in relevant_queens and cat not in pregnant_cats
+                    cat for cat in relevant_group if cat not in self.queens
                 ]
 
             if len(relevant_group) == 0:
@@ -479,8 +476,6 @@ class FreshkillPile:
 
         ration_prey = get_clan_setting("ration_prey")
 
-        fed_kits, pregnant_cats, relevant_queens = self._find_queen_kit_pregnant(group)
-
         for cat in group:
             # if already fed, get'em outta here
             if cat in self.already_fed:
@@ -489,12 +484,12 @@ class FreshkillPile:
             rank = cat.status.rank
 
             # check if this is a kit: if so, check if they were fed by the mother
-            if rank.is_baby() and cat in fed_kits:
+            if rank.is_baby() and cat in self.fed_kits:
                 # SKIP they're already fed
                 continue
 
             # check for queens/pregnant
-            if cat in relevant_queens or cat in pregnant_cats:
+            if cat in self.queens:
                 rank = "queen/pregnant"
 
             prey_required = PREY_REQUIREMENT[rank]
