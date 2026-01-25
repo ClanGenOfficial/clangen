@@ -8,7 +8,6 @@ import ujson
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
-from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import constants
 from scripts.cat.enums import CatGroup
 from scripts.game_structure.audio import music_manager
@@ -25,7 +24,6 @@ from scripts.game_structure.screen_settings import (
 from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
 from scripts.ui.windows.freshkill import FreshkillManagement
 from scripts.ui.windows.herbs import HerbManagement
-from scripts.game_structure.ui_elements import UIImageButton
 from scripts.ui.windows.save_check import SaveCheckWindow
 from scripts.ui.event_load_animation import EventLoadingAnimation
 from scripts.screens.enums import GameScreen
