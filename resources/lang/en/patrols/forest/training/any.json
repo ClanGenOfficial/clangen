@@ -2515,8 +2515,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "reg_death": "m_c mistook deathberries for something edible."
                 },
                 "relationships": [
                     {
@@ -2596,8 +2595,7 @@
                     "app1"
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "reg_death": "m_c mistook deathberries for something edible."
                 },
                 "frequency": 3
             },
@@ -2616,8 +2614,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "reg_death": "m_c mistook deathberries for something edible."
                 },
                 "frequency": 3
             }

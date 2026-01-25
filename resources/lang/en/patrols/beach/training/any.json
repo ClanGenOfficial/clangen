@@ -2856,7 +2856,7 @@
                         "amount": 10,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat was very impressed that to_cat recognized cranberries on a training patrol and brought them back for the medicine cat."
+                            "cats_from": "from_cat was very impressed that to_cat recognized raspberries on a training patrol and brought them back for the medicine cat."
                         }
                     }
                 ],
@@ -2884,8 +2884,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "reg_death": "m_c mistook deathberries for something edible."
                 },
                 "relationships": [
                     {
@@ -2968,8 +2967,7 @@
                     "app1"
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "reg_death": "m_c mistook deathberries for something edible."
                 },
                 "frequency": 3
             },
@@ -2988,8 +2986,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "reg_death": "m_c mistook deathberries for something edible."
                 },
                 "frequency": 3
             }
