@@ -49,21 +49,6 @@
                 "death": "m_c was secretly murdered by r_c."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "from_cat was secretly murdered by to_cat."
-                }
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -136,21 +121,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "from_cat was murdered by to_cat."
-                }
             }
         ],
         "future_event": [
@@ -228,21 +198,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "from_cat was murdered by to_cat."
-                }
             }
         ],
         "future_event": [
@@ -323,21 +278,6 @@
                 "death": "m_c was secretly murdered by r_c, who made the death look accidental."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "from_cat was secretly murdered by to_cat, who made it look like an accident."
-                }
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -408,21 +348,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} deathberries."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "from_cat was poisoned by to_cat."
-                }
             }
         ],
         "future_event": [
@@ -500,21 +425,6 @@
                 "death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} foxglove seeds."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "from_cat was poisoned by to_cat."
-                }
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -588,21 +498,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} nightshade berries."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "from_cat was poisoned by to_cat."
-                }
             }
         ],
         "future_event": [
@@ -682,21 +577,6 @@
                 "death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} water hemlock."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "from_cat was poisoned by to_cat."
-                }
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -770,21 +650,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c, who purposefully fed {PRONOUN/m_c/object} the wrong herbs."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "from_cat was poisoned by to_cat."
-                }
             }
         ],
         "future_event": [
@@ -3433,24 +3298,6 @@
                     "m_c"
                 ],
                 "death": "m_c was pushed off a cliff by r_c."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -50,
-                "log": {
-                    "cats_from": "to_cat pushed from_cat off a cliff onto sharp rocks."
-                }
             }
         ],
         "future_event": [
@@ -6407,25 +6254,6 @@
                     "m_c"
                 ],
                 "death": "m_c was pushed under a monster by r_c."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "like",
-                    "trust"
-                ],
-                "amount": -30,
-                "mutual": false,
-                "log": {
-                    "cats_from": "from_cat was pushed under a monster by to_cat."
-                }
             }
         ],
         "future_event": [
