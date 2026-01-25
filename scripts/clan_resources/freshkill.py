@@ -404,9 +404,9 @@ class FreshkillPile:
         satisfied_cats = []
         for cat in cats_to_feed:
             if self.nutrition_info[cat.ID].percentage < 100:
-                hungry_cats.append(cat.ID)
+                hungry_cats.append(cat)
             else:
-                satisfied_cats.append(cat.ID)
+                satisfied_cats.append(cat)
 
         # if there are no low nutrition cats, default to rank tactic
         if not hungry_cats:
@@ -415,12 +415,12 @@ class FreshkillPile:
 
         # sort the hungry
         hungry_cats_sorted = sorted(
-            list(hungry_cats), key=lambda x: self.nutrition_info[x]
+            list(hungry_cats), key=lambda x: self.nutrition_info[x.ID]
         )
 
         self._feed_group(hungry_cats_sorted)
         # feed the rest according to their status
-        self._feed_by_low_rank(cats_to_feed)
+        self._feed_by_low_rank(satisfied_cats)
 
     def _feed_by_experience_first(self, cats_to_feed: List[Cat]) -> None:
         """Feed cats in order of experience, highest first.
