@@ -15,7 +15,7 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
 )
-from scripts.game_structure.windows import SaveError
+from scripts.ui.windows.save_error import SaveErrorWindow
 from scripts.utility import (
     ui_scale,
     ui_scale_dimensions,
@@ -75,7 +75,7 @@ class ClanScreen(Screens):
                     switch_set_value(Switch.saved_clan, True)
                     self.update_buttons_and_text()
                 except RuntimeError:
-                    SaveError(traceback.format_exc())
+                    SaveErrorWindow(traceback.format_exc())
                     self.change_screen(GameScreen.START)
             if event.ui_element in self.cat_buttons:
                 switch_set_value(Switch.cat, event.ui_element.return_cat_id())

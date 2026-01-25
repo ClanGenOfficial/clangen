@@ -10,7 +10,7 @@ import scripts.game_structure.screen_settings
 from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
-from scripts.game_structure.windows import DeleteCheck
+from scripts.ui.windows.delete_check import CheckDeletionWindow
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,
@@ -52,7 +52,7 @@ class SwitchClanScreen(Screens):
             else:
                 for page in self.delete_buttons:
                     if event.ui_element in page:
-                        DeleteCheck(
+                        CheckDeletionWindow(
                             self.change_screen,
                             self.clan_name[self.page][page.index(event.ui_element)],
                         )
