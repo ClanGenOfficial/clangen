@@ -485,13 +485,13 @@ class FreshkillManagementWindow(GameWindow):
         """
         if event.ui_element == self.feed_view_elements.get("feed_all"):
             self.handle_feeding(self.low_nutrition_cats)
-            self.feed_view_elements["cat_list"].clear_cache()
+            self.feed_view_elements["cat_list"].cache_clear()
             self.update_cats_list()
         elif event.ui_element == self.feed_view_elements.get("feed_selected"):
             self.handle_feeding(
                 [Cat.fetch_cat(i) for i in self.feed_view_elements["cat_list"].selected]
             )
-            self.feed_view_elements["cat_list"].clear_cache()
+            self.feed_view_elements["cat_list"].cache_clear()
             self.update_cats_list()
         # RATION AND AUTOFEED
         elif event.ui_element == self.feed_view_elements.get("ration_prey"):
@@ -526,5 +526,5 @@ class FreshkillManagementWindow(GameWindow):
         switch_clan_setting(setting)
 
     def kill(self):
-        self.feed_view_elements["cat_list"].clear_cache()
+        self.feed_view_elements["cat_list"].cache_clear()
         super().kill()

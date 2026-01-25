@@ -15,7 +15,7 @@ from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
-class NoMediators(GameWindow):
+class NoMediatorsWindow(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((300, 200), (200, 150))),

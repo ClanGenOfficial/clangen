@@ -128,7 +128,7 @@ class ClanScreen(Screens):
         self.set_disabled_menu_buttons(["camp_screen"])
         self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_menu_buttons()
-        Screens.menu_buttons["camp"].hide()
+        Screens.menu_buttons["back_to_camp"].hide()
 
         # Creates and places the cat sprites.
         self.cat_buttons = []  # To contain all the buttons.
@@ -348,7 +348,7 @@ class ClanScreen(Screens):
 
         # reset save status
         switch_set_value(Switch.saved_clan, False)
-        Screens.menu_buttons["camp"].show()
+        Screens.menu_buttons["back_to_camp"].show()
 
     def update_camp_bg(self):
         light_dark = "dark" if game_setting_get("dark mode") else "light"

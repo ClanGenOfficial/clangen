@@ -192,7 +192,7 @@ def rebuild_top_menu_buttons():
         object_id="@buttonstyles_squoval",
         starting_height=5,
     )
-    menu_buttons["camp"] = UISurfaceImageButton(
+    menu_buttons["back_to_camp"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 5), (123, 30))),
         "screens.core.camp",
         get_button_dict(ButtonStyles.SQUOVAL, (123, 30)),
@@ -242,7 +242,7 @@ def rebuild_top_menu_buttons():
         starting_height=5,
         anchors={
             "bottom": "bottom",
-            "bottom_target": menu_buttons["camp"],
+            "bottom_target": menu_buttons["back_to_camp"],
             "centerx": "centerx",
         },
     )

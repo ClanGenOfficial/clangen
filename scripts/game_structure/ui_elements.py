@@ -1678,7 +1678,7 @@ class UICatListDisplay(UIContainer):
             box.set_container(self)
             box.rebuild()
 
-    def clear_cache(self):
+    def cache_clear(self):
         """
         Clears the cached grid. This is only necessary for cat lists being displayed on popup windows. I'm not sure *why*, but the cache starts causing crashes. I recommend that we try to keep cat list displays on popup windows to a minimum to avoid lag and, when possible, hide & show the list instead of killing and recreating.
         """
@@ -1792,9 +1792,9 @@ class UICatListDisplay(UIContainer):
             condition_list = []
             if kitty.illnesses:
                 if "starving" in kitty.illnesses.keys():
-                    condition_list.append("starving")
+                    condition_list.append(i18n.t("conditions.illnesses.starving"))
                 elif "malnourished" in kitty.illnesses.keys():
-                    condition_list.append("malnourished")
+                    condition_list.append(i18n.t("conditions.illnesses.malnourished"))
             nutrition_info = game.clan.freshkill_pile.nutrition_info
             if kitty.ID in nutrition_info:
                 full_text = i18n.t(
@@ -1886,7 +1886,11 @@ class UICatListDisplay(UIContainer):
                 self.last_button.enable()
 
     def process_event(self, event: pygame.event.Event) -> bool:
-        if self.allow_selection:
+        if self.allow_selection and event.type in (
+            pygame_gui.UI_BUTTON_ON_HOVERED,
+            pygame_gui.UI_BUTTON_ON_UNHOVERED,
+            pygame_gui.UI_BUTTON_START_PRESS,
+        ):
             for sprite, button in self.cat_sprites.items():
                 cat_id = button.return_cat_id()
                 if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:

@@ -349,7 +349,7 @@ class Screens:
             self.change_screen(GameScreen.MEDIATION)
         # GO TO CAMP
         elif event.ui_element in (
-            Screens.menu_buttons["camp"],
+            Screens.menu_buttons["back_to_camp"],
             Screens.menu_buttons["heading"],
         ):
             Screens.menu_buttons["supplies"].close()
