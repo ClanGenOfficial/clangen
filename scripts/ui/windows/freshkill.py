@@ -509,7 +509,7 @@ class FreshkillManagementWindow(GameWindow):
         :param cats_to_feed: list of cats to feed
         """
         game.clan.freshkill_pile.already_fed = []
-        game.clan.freshkill_pile.feed_cats(cats_to_feed, True)
+        game.clan.freshkill_pile.feed_cats(cats_to_feed, is_manual_feeding=True)
         game.clan.freshkill_pile.already_fed = []
 
     @staticmethod

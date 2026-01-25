@@ -446,7 +446,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(
             [mother.ID], list(get_alive_clan_queens(living_cats)[0].keys())
         )
-        freshkill_pile.tactic_low_rank(living_cats)
+        freshkill_pile._feed_by_low_rank(living_cats)
 
         # then
         self.assertEqual(freshkill_pile.nutrition_info[kid.ID].percentage, 100)
