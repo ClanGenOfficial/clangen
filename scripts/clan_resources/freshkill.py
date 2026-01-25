@@ -618,14 +618,14 @@ class FreshkillPile:
     #                              nutrition relevant                              #
     # ---------------------------------------------------------------------------- #
 
-    def update_nutrition(self, living_cats: list) -> None:
+    def update_nutrition(self, cats_to_feed: list) -> None:
         """
         Handles increasing or decreasing the max score of their nutrition
         depending on their age. Automatically removes irrelevant cats.
 
             Parameters
             ----------
-            living_cats : list
+            cats_to_feed : list
                 the list of the current living cats, where the nutrition should be stored
         """
         queen_dict, kits = get_alive_clan_queens(self.living_cats)
@@ -640,7 +640,7 @@ class FreshkillPile:
             self.nutrition_info.pop(cat_id)
 
         # update remaining cat's max scores
-        for cat in living_cats:
+        for cat in cats_to_feed:
             if str(cat.status.rank) not in PREY_REQUIREMENT:
                 continue
             # update the nutrition_info

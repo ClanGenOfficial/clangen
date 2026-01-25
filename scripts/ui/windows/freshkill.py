@@ -215,6 +215,9 @@ class FreshkillManagementWindow(GameWindow):
             for cat_id, nutrient in game.clan.freshkill_pile.nutrition_info.items()
             if nutrient.percentage <= 90
         ]
+        self.low_nutrition_cats = [
+            c for c in self.low_nutrition_cats if c.status.alive_in_player_clan
+        ]
 
         if "cat_list" in self.feed_view_elements:
             self.feed_view_elements["cat_list"].kill()
