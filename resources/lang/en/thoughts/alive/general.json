@@ -2488,10 +2488,18 @@
         "thoughts": [
             "Breaks something complicated down into easy steps",
             "Shares {PRONOUN/m_c/poss} secret tips with r_c",
-            "Takes the lead in a training patrol",
             "Helps r_c understand something confusing",
             "Helps r_c work on something",
             "Offers {PRONOUN/m_c/poss} advice to r_c for working on a particular skill"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ]
+    },
+    {
+        "id": "teacher_skill_normaladult_gen",
+        "thoughts": [
+            "Takes the lead in a training patrol"
         ],
         "main_skill_constraint": [
             "TEACHER,1"
@@ -2601,7 +2609,7 @@
             "Prides {PRONOUN/m_c/self} on being easy to talk to",
             "Likes sharing tongues and hearing gossip",
             "Finds it easy to talk to other Clans' warriors",
-            "Worries one day about losing {PRONOUN/m_c/poss} voice"
+            "Worries about losing {PRONOUN/m_c/poss} voice one day"
         ],
         "main_skill_constraint": [
             "SPEAKER,1"
@@ -2690,6 +2698,15 @@
         ],
         "main_skill_constraint": [
             "SENSE,1"
+        ]
+    },
+    {
+        "id": "sense3_skill_gen",
+        "thoughts": [
+            "Leaves camp, overwhelmed by the sounds and smells of other cats"
+        ],
+        "main_skill_constraint": [
+            "SENSE,3"
         ]
     },
     {
@@ -2868,13 +2885,29 @@
         ]
     },
     {
+        "id": "rc_dark_skill_gen",
+        "thoughts": [
+            "Notices r_c casts more than one shadow",
+            "Feels uneasy around r_c",
+            "Wonders how r_c learned a particular battle move"
+        ],
+        "main_skill_constraint": [
+            "DARK,1"
+        ]
+    },
+    {
         "id": "omen_skill_gen",
         "thoughts": [
             "Finds a strange piece of prey",
             "Finds a fasciated flower and wonders what it might mean",
             "Suspects there is a deeper meaning to the weather today",
             "Looks for answers in the breeze and soil",
-            "Spends the day in a clover patch, looking for something"
+            "Spends the day in a clover patch, looking for something",
+            "Wonders if omen_list_sight/m_c {PRONOUN/m_c/subject} saw is an omen",
+            "Wonders if omen_list_sound/m_c {PRONOUN/m_c/subject} heard is an omen",
+            "Wonders if omen_list_smell/m_c {PRONOUN/m_c/subject} scented is an omen",
+            "Wonders if omen_list_emotional/m_c {PRONOUN/m_c/subject} felt is an omen",
+            "Wonders if omen_list_touch/m_c {PRONOUN/m_c/subject} felt is an omen"
         ],
         "main_skill_constraint": [
             "OMEN,1"
@@ -2885,10 +2918,13 @@
         "thoughts": [
             "Feels a strange chill in {PRONOUN/m_c/poss} dream",
             "Feels a comforting warmth in {PRONOUN/m_c/poss} dream",
+            "Has a dream full of dream_list",
+            "Wonders what all the dream_list in {PRONOUN/m_c/poss} dreams lately means",
             "Has a dream full of strange shapes and colors",
             "Wakes with a lingering bitter taste on {PRONOUN/m_c/poss} tongue}",
             "Wakes with a lingering acrid smell in {PRONOUN/m_c/poss} nose",
             "Wakes with a lingering sweet smell in {PRONOUN/m_c/poss} nose",
+            "Wakes with the feeling of dream_list in {PRONOUN/m_c/poss} heart",
             "Remembers a dream so clearly it feels real",
             "Has a strange dream but forgets it immediately upon waking",
             "Feels tired even after a full night's sleep"
@@ -2904,6 +2940,7 @@
             "Keeps stumbling into r_c's recurring dream and is bored of it",
             "Loves wandering into r_c's dreams in particular",
             "Realizes something about r_c when {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} in {PRONOUN/r_c/poss} dream",
+            "Wonders why r_c's dreams are full of dream_list",
             "Wakes {PRONOUN/m_c/self} up after intruding on r_c's embarrassing dream"
         ],
         "main_skill_constraint": [
@@ -2916,7 +2953,12 @@
             "Feels a tingle of premonition",
             "Gets a wave of deja vu",
             "Pre-empts r_c when {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} {PRONOUN/m_c/object}",
-            "Guesses what r_c has planned today"
+            "Guesses what r_c has planned today",
+            "Suddenly thinks of clair_list_emotional/m_c",
+            "Suddenly scents clair_list_smell/m_c",
+            "Suddenly hears clair_list_sound/m_c",
+            "Has the sudden sensation of clair_list_touch/m_c",
+            "Suddenly tastes clair_list_taste/m_c"
         ],
         "main_skill_constraint": [
             "CLAIRVOYANT,1"
@@ -2945,7 +2987,12 @@
             "Notices a pattern of events beginning to emerge",
             "Feels the burden of the gift of prophecy",
             "Wonders if r_c is involved in a prophecy",
-            "Hopes r_c isn't involved in a prophecy"
+            "Hopes r_c isn't involved in a prophecy",
+            "Closes {PRONOUN/m_c/poss} eyes and sees prophecy_list_sight/m_c",
+            "Suddenly hears prophecy_list_sound/m_c",
+            "Suddenly scents prophecy_list_smell/m_c",
+            "Suddenly feels prophecy_list_emotional/m_c",
+            "Suddenly feels prophecy_list_touch/m_c"
         ],
         "main_skill_constraint": [
             "PROPHET,1"

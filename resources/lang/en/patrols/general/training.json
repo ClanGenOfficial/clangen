@@ -13661,7 +13661,7 @@
         ],
         "success_outcomes": [
             {
-                "text": "{PRONOUN/p_l/poss/CAP} dreams haunt {PRONOUN/p_l/object}. p_l has been seeing dream_list_emotional/p_l, but doesn't know from whom. Has one of the cats here had such intense thoughts?",
+                "text": "{PRONOUN/p_l/poss/CAP} dreams haunt {PRONOUN/p_l/object}. p_l has sensed dream_list/p_l, but doesn't know from whom. Has one of the cats here had such intense thoughts?",
                 "exp": 30,
                 "relationships": [
                     {
@@ -13681,7 +13681,7 @@
                 "frequency": 4
             },
             {
-                "text": "The gift of dreamwalking is no gift at all, not when all it causes is this vague confusion. p_l recalls the dream_list_emotional/p_l {PRONOUN/p_l/subject} felt while asleep and tries to match the feelings {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} picked up on with any of {PRONOUN/p_l/poss} training companions.",
+                "text": "The gift of dreamwalking is no gift at all, not when all it causes is this vague confusion. p_l recalls the dream_list/p_l {PRONOUN/p_l/subject} felt while asleep and tries to match the feelings {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} picked up on with any of {PRONOUN/p_l/poss} training companions.",
                 "exp": 30,
                 "relationships": [
                     {
