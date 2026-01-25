@@ -18,10 +18,11 @@ from scripts.utility import ui_scale
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.sprites import sprites
+from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.windows import SaveAsImage
+from ..ui.windows.save_as_image import SaveAsImageWindow
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 
@@ -80,7 +81,7 @@ class SpriteInspectScreen(Screens):
                 self.update_disabled_buttons()
                 self.make_cat_image()
             elif event.ui_element == self.save_image_button:
-                SaveAsImage(self.generate_image_to_save(), str(self.the_cat.name))
+                SaveAsImageWindow(self.generate_image_to_save(), str(self.the_cat.name))
             elif event.ui_element == self.previous_life_stage:
                 self.displayed_life_stage = max(self.displayed_life_stage - 1, 0)
                 self.update_disabled_buttons()

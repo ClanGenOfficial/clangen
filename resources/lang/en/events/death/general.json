@@ -8075,5 +8075,243 @@
                 }
             }
         ]
+    },
+    {
+    "event_id": "gen_death_hitmanmurder1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["murder"],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "r_c meets with a rogue named n_c:0 on the border. A quarter-moon later, m_c turns up dead along the border, n_c:0's scent on {PRONOUN/m_c/poss} cold body.",
+    "m_c": {
+        "age": [],
+        "status": ["apprentice", "mediator apprentice", "medicine cat apprentice", "mediator", "medicine cat", "warrior", "deputy"],
+        "not_skill": ["FIGHTER,2"],
+        "dies": true
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "new_cat": [
+        ["meeting", "rogue", "age:adult", "exists"]
+    ],
+    "history:": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c was murdered by a rogue named n_c:0, hired by r_c."
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat hired to_cat to kill m_c."
+            }
+        }
+    ],
+    "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    24
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }]
+    },
+    {
+    "event_id": "gen_death_hitmanmurder2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["murder"],
+    "tags": ["lives_remain"],
+    "frequency": 2,
+    "event_text": "On a solo border patrol, m_c is attacked and killed by a rogue named n_c:0. When m_c is revived, n_c:0 lets it slip that r_c didn't say anything about resurrection as {PRONOUN/n_c:0/subject} {VERB/n_c:0/flee/flees}.",
+    "m_c": {
+        "age": [],
+        "status": ["leader"],
+        "not_skill": ["FIGHTER,2"],
+        "dies": true
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "new_cat": [
+        ["meeting", "rogue", "age:adult", "exists"]
+    ],
+    "history:": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c died when a rogue named n_c:0 attacked {PRONOUN/m_c/object} on r_c's orders"
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat hired to_cat to kill m_c."
+            }
+        }
+    ],
+    "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "event_id": "gen_misc_murderreveal_leader"
+                },
+                "moon_delay": [
+                    1, 1
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": "m_c"
+                }
+            }]
+},
+    {
+    "event_id": "gen_death_hitmanmurder3",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["murder"],
+    "tags": [],
+    "frequency": 4,
+    "event_text": "r_c meets with a notorious rogue from {PRONOUN/r_c/poss} past, n_c:0, on the border. A quarter-moon later, m_c turns up dead along the border, n_c:0's scent on {PRONOUN/m_c/poss} cold body.",
+    "m_c": {
+        "age": [],
+        "status": ["apprentice", "mediator apprentice", "medicine cat apprentice", "mediator", "medicine cat", "warrior", "deputy"],
+        "not_skill": ["FIGHTER,3"],
+        "dies": true
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"],
+        "backstory": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
+    },
+    "new_cat": [
+        ["meeting", "rogue", "age:senior adult", "exists"]
+    ],
+    "history:": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c was murdered by a rogue named n_c:0, hired by r_c."
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat hired to_cat to kill m_c."
+            }
+        }
+    ],
+    "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    24
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }]
+    },
+    {
+    "event_id": "gen_death_hitmanmurder4",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["murder"],
+    "tags": [],
+    "frequency": 4,
+    "event_text": "r_c promises n_c:0 a new beginning in c_n... at a price paid in blood. Within the moon, m_c is dead and r_c vouches for n_c:0 to join c_n.",
+    "m_c": {
+        "age": [],
+        "status": ["apprentice", "mediator apprentice", "medicine cat apprentice", "mediator", "medicine cat", "warrior", "deputy"],
+        "not_skill": ["FIGHTER,2"],
+        "dies": true
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "new_cat": [
+        ["age:adult", "backstory:disgraced1, ostracized_warrior, disgraced3", "exists"]
+    ],
+    "history:": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c was murdered by a rogue named n_c:0, hired by r_c in exchange for a place in the Clan."
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat promised to_cat a place in the Clan in exchange for killing m_c."
+            }
+        }
+    ],
+    "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    24
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }]
     }
 ]
