@@ -8,7 +8,7 @@ import ujson
 from scripts.cat import save_load
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites import sprites
-from scripts.clan_package.settings import switch_clan_setting
+from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
 from scripts.game_structure import game
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
@@ -187,6 +187,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to high rank
+        set_clan_setting("low_rank", False)
         switch_clan_setting("high_rank")
 
         # feed them
@@ -218,6 +219,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to youngest
+        set_clan_setting("low_rank", False)
         switch_clan_setting("youngest_first")
 
         # feed them
@@ -250,6 +252,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to youngest
+        set_clan_setting("low_rank", False)
         switch_clan_setting("oldest_first")
 
         # feed them
@@ -284,6 +287,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to experienced
+        set_clan_setting("low_rank", False)
         switch_clan_setting("experience_first")
 
         # feed them
@@ -318,6 +322,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to experienced
+        set_clan_setting("low_rank", False)
         switch_clan_setting("hungriest_first")
 
         # feed them
@@ -350,11 +355,9 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.pile["expires_in_4"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
-        # set the tactic to youngest
-        switch_clan_setting("youngest_first")
         # set priority to hunter
         switch_clan_setting("hunter_first")
-        # what we SHOULD see is the hunter being fed before the youngest (so leader before kitten)
+        # what we SHOULD see is the hunter being fed before the low rank (so leader before kitten)
 
         # feed them
         self.freshkill_pile.feed_cats(Cat.all_cats_list)
@@ -384,11 +387,9 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.pile["expires_in_4"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
-        # set the tactic to youngest
-        switch_clan_setting("youngest_first")
         # set priority to injured
         switch_clan_setting("sick_injured_first")
-        # what we SHOULD see is the injured being fed before the youngest (so dep before kitten)
+        # what we SHOULD see is the injured being fed before the low rank (so dep before kitten)
 
         # feed them
         self.freshkill_pile.feed_cats(Cat.all_cats_list)
