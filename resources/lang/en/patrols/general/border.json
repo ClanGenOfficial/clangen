@@ -621,7 +621,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/r_c/poss} injuries after a fight with a rogue.",
+                    "death": "m_c died from {PRONOUN/r_c/poss} injuries after a fight with a rogue.",
                     "scar": "m_c was scarred in a fight with a rogue."
                 },
                 "relationships": [
@@ -769,8 +769,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c succumbed to injury after being ambushed by a rogue and abandoned on patrol.",
-                    "lead_death": "succumbed to injury after being ambushed and abandoned"
+                    "death": "m_c succumbed to injury after being ambushed by a rogue and abandoned on patrol."
                 },
                 "frequency": 2
             },
@@ -1102,7 +1101,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from water in {PRONOUN/m_c/poss} lungs after s_c took a game way too far on patrol."
+                    "death": "m_c died from water in {PRONOUN/m_c/poss} lungs after s_c took a game way too far on patrol."
                 },
                 "art": "gen_train_waterdive_app"
             }

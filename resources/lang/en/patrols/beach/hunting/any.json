@@ -826,8 +826,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a fox.",
-                    "reg_death": "m_c died from a fox bite.",
-                    "lead_death": "died from a fox bite"
+                    "death": "m_c died from a fox bite."
                 },
                 "prey": [
                     "very_small"
@@ -841,8 +840,29 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by a dog.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a dog"
+                    "death": "m_c was killed by a dog."
+                },
+                "frequency": 3
+            },
+            {
+                "text": "r_c takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c/subject} {VERB/r_c/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c/object} before the rest of the patrol can back {PRONOUN/r_c/object} up.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "big_bite_injury"
+                        ],
+                        "scars": [
+                            "NECKBITE"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c gained a scar from a fox.",
+                    "death": "m_c died from a fox bite."
                 },
                 "frequency": 3
             }
@@ -916,8 +936,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by a dog while patrolling alone.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a dog while patrolling alone"
+                    "death": "m_c was killed by a dog while patrolling alone."
                 },
                 "frequency": 3
             },
@@ -939,8 +958,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a fox.",
-                    "reg_death": "m_c died from a fox bite.",
-                    "lead_death": "died from a fox bite"
+                    "death": "m_c died from a fox bite."
                 },
                 "frequency": 3
             }
@@ -1207,8 +1225,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c bled out after escaping from a Twoleg den.",
-                    "lead_death": "bled out after escaping from a Twoleg den"
+                    "death": "m_c bled out after escaping from a Twoleg den."
                 },
                 "frequency": 3,
             "relationships": [
@@ -1349,7 +1366,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c bled out after escaping from a Twoleg den."
+                    "death": "m_c bled out after escaping from a Twoleg den."
                 },
                 "frequency": 3
             }
@@ -2002,8 +2019,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             },
@@ -2025,8 +2041,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries."
                 },
                 "frequency": 3
             },
@@ -2037,8 +2052,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 1
             }
@@ -2133,8 +2147,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster and carries the scars from it.",
-                    "reg_death": "This cat was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "This cat was hit by a monster and killed."
                 },
                 "frequency": 2
             },
@@ -2150,8 +2163,7 @@
                     "multi"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             },
@@ -2173,8 +2185,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries."
                 },
                 "frequency": 4
             }
@@ -2820,8 +2831,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an octopus.",
-                    "reg_death": "m_c died from an octopus bite.",
-                    "lead_death": "died from an octopus bite"
+                    "death": "m_c died from an octopus bite."
                 },
                 "relationships": [
                     {
@@ -2874,8 +2884,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an octopus.",
-                    "reg_death": "m_c died from an octopus bite.",
-                    "lead_death": "died from an octopus bite"
+                    "death": "m_c died from an octopus bite."
                 },
                 "relationships": [
                     {
@@ -3104,8 +3113,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
+                    "death": "m_c was killed by an eagle, scrapping over food."
                 },
                 "relationships": [
                     {
@@ -3144,8 +3152,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c died from an eagle bite.",
-                    "lead_death": "died from an eagle bite"
+                    "death": "m_c died from an eagle bite."
                 },
                 "relationships": [
                     {
@@ -3475,8 +3482,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red fox.",
-                    "reg_death": "m_c died from a red fox bite.",
-                    "lead_death": "died from a red fox bite"
+                    "death": "m_c died from a red fox bite."
                 },
                 "relationships": [
                     {
@@ -3525,9 +3531,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from a fight with a red fox.",
-                    "reg_death": "m_c died from a red fox bite.",
-                    "lead_death": "died from a red fox bite"
+                    "scar": "m_c carries a scar from fight with a red fox.",
+                    "death": "m_c died from a red fox bite."
                 },
                 "relationships": [
                     {
@@ -3892,8 +3897,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a gray fox.",
-                    "reg_death": "m_c died from a gray fox bite.",
-                    "lead_death": "died from a gray fox bite"
+                    "death": "m_c died from a gray fox bite."
                 },
                 "relationships": [
                     {
@@ -4009,7 +4013,7 @@
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -4233,8 +4237,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red fox.",
-                    "reg_death": "m_c died from a red fox bite.",
-                    "lead_death": "died from a red fox bite"
+                    "death": "m_c died from a red fox bite."
                 },
                 "relationships": [
                     {
@@ -4287,8 +4290,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red fox.",
-                    "reg_death": "m_c died from a red fox bite.",
-                    "lead_death": "died from a red fox bite"
+                    "death": "m_c died from a red fox bite."
                 },
                 "relationships": [
                     {
@@ -4532,8 +4534,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a gray fox.",
-                    "reg_death": "m_c died from a gray fox bite.",
-                    "lead_death": "died from a gray fox bite"
+                    "death": "m_c died from a gray fox bite."
                 },
                 "relationships": [
                     {
@@ -4583,8 +4584,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a gray fox.",
-                    "reg_death": "m_c died from a gray fox bite.",
-                    "lead_death": "died from a gray fox bite"
+                    "death": "m_c died from a gray fox bite."
                 },
                 "relationships": [
                     {
@@ -4807,8 +4807,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by the poison in the Bishop-fish's flesh.",
-                    "lead_death": "{VERB/m_c/were/was} poisoned by consuming Bishop-fish's flesh"
+                    "death": "m_c was killed by the poison in the Bishop-fish's flesh."
                 },
                 "frequency": 4
             }
@@ -5051,7 +5050,7 @@
                     ],
                     "history_text": {
                         "scar": "m_c was permanently marked by the barb of a stingray as an apprentice - but {PRONOUN/m_c/subject} survived.",
-                        "reg_death": "m_c died from the strike of a stingray encountered on a hunt as a foolish apprentice."
+                        "death": "m_c died from the strike of a stingray encountered on a hunt as a foolish apprentice."
                         },
                     "frequency": 4
                 }

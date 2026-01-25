@@ -837,8 +837,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows.",
-                    "lead_death": "from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows"
+                    "death": "m_c died from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows."
                 },
                 "frequency": 4
             },
@@ -1020,8 +1019,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died as a consequence of poor den construction, getting too cold in leaf-bare.",
-                    "lead_death": "as a consequence of poor den construction, getting too cold in leaf-bare"
+                    "death": "m_c died as a consequence of poor den construction, getting too cold in leaf-bare."
                 },
                 "frequency": 4
             },
@@ -1554,8 +1552,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from the bite of the cold of an avalanche, though {PRONOUN/m_c/subject} escaped with {PRONOUN/m_c/poss} life.",
-                    "reg_death": "The view point c_n thought was safe from avalanches... was not.",
-                    "lead_death": "chose the wrong spot to teach the apprentices about avalanches"
+                    "death": "The view point c_n thought was safe from avalanches... was not."
                 },
                 "frequency": 1
             }

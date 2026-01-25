@@ -315,8 +315,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "death": "m_c mistook deathberries for something edible."
                 },
                 "relationships": [
                     {
@@ -391,8 +390,7 @@
                     "app1"
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "death": "m_c mistook deathberries for something edible."
                 },
                 "frequency": 3
             },
@@ -411,8 +409,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "death": "m_c mistook deathberries for something edible."
                 },
                 "frequency": 3
             }
@@ -612,8 +609,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "The hot greenleaf sun is more dangerous than m_c realized, and its heat killed m_c.",
-                    "lead_death": "got dehydrated and couldn't recover"
+                    "death": "The hot greenleaf sun is more dangerous than m_c realized, and its heat killed m_c."
                 },
                 "frequency": 4
             },

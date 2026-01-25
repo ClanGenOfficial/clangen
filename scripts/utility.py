@@ -2050,7 +2050,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
 
 def event_text_adjust(
     Cat: Type["Cat"],
-    text,
+    text: str,
     *,
     patrol_leader=None,
     main_cat=None,

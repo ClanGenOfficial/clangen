@@ -989,8 +989,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             }
@@ -1080,8 +1079,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and killed.",
-                    "lead_death": "{VERB/m_c/were/was} hit by a monster"
+                    "death": "m_c was hit by a monster and killed."
                 },
                 "frequency": 3
             }
@@ -2298,8 +2296,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "This cat died after eating tainted prey.",
-                    "lead_death": "after eating tainted prey"
+                    "death": "This cat died after eating tainted prey."
                 },
                 "frequency": 4
             }
@@ -2770,8 +2767,7 @@
                     ],
                     "history_text": {
                         "scar": "m_c was permanently marked by the bite of a gila monster as an apprentice - but {PRONOUN/m_c/subject} survived.",
-                        "reg_death": "m_c died from the bite of a gila monster encountered on a hunt as a foolish apprentice.",
-                        "lead_death": "from the bite of a gila monster encountered on a hunt as a foolish apprentice"
+                        "death": "m_c died from the bite of a gila monster encountered on a hunt as a foolish apprentice."
                         },
                     "frequency": 4
                 }

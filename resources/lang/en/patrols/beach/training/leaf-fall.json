@@ -542,8 +542,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "death": "m_c mistook deathberries for something edible."
                 },
                 "frequency": 3
             }
@@ -602,8 +601,7 @@
                     "app1"
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "death": "m_c mistook deathberries for something edible."
                 },
                 "frequency": 3
             },
@@ -622,8 +620,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
+                    "death": "m_c mistook deathberries for something edible."
                 },
                 "frequency": 3
             }
@@ -869,8 +866,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from the bite of the cold rock pool {PRONOUN/m_c/subject} swam in as an apprentice.",
-                    "reg_death": "Falling into a cold rock pool gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death.",
-                    "lead_death": "falling into a cold rock pool gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death"
+                    "death": "Falling into a cold rock pool gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death."
                 },
                 "frequency": 4
             }
