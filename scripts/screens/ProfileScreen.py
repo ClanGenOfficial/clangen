@@ -39,9 +39,9 @@ from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
-from ..ui.windows.change_cat_name import ChangeCatName
+from ..ui.windows.change_cat_name import ChangeCatNameWindow
 from ..ui.windows.kill_cat import KillCat
-from ..ui.windows.change_cat_toggles import ChangeCatToggles
+from ..ui.windows.change_cat_toggles import CatToggleWindow
 from ..housekeeping.datadir import get_save_dir
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
@@ -252,7 +252,7 @@ class ProfileScreen(Screens):
         # Personal Tab
         elif self.open_tab == "personal":
             if event.ui_element == self.change_name_button:
-                ChangeCatName(self.the_cat)
+                ChangeCatNameWindow(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
                 self.change_screen(GameScreen.CHANGE_GENDER)
             # when button is pressed...
@@ -296,7 +296,7 @@ class ProfileScreen(Screens):
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.cat_toggles_button:
-                ChangeCatToggles(self.the_cat)
+                CatToggleWindow(self.the_cat)
         # Dangerous Tab
         elif self.open_tab == "dangerous":
             if event.ui_element == self.kill_cat_button:

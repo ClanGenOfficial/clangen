@@ -9,15 +9,14 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.housekeeping.datadir import get_saved_images_dir, open_data_dir
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
-class SaveAsImage(GameWindow):
+class SaveAsImageWindow(GameWindow):
     def __init__(self, image_to_save, file_name):
         super().__init__(
             ui_scale(pygame.Rect((200, 175), (400, 250))),
-            object_id="#game_over_window",
         )
 
         self.image_to_save = image_to_save
