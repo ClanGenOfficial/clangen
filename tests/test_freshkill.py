@@ -321,15 +321,15 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.pile["expires_in_4"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
-        # set the tactic to experienced
+        # set the tactic to hungry
         set_clan_setting("low_rank", False)
         switch_clan_setting("hungriest_first")
 
         # feed them
         self.freshkill_pile.feed_cats(Cat.all_cats_list)
 
-        # check that deputy has eaten (it won't be 100, since we lowered the starting nutrition, but it'll still be higher than the rest
-        self.assertEqual(
+        # check that deputy has eaten (it won't be 100, since we lowered the starting nutrition, but it'll still be higher than we began with
+        self.assertGreater(
             self.freshkill_pile.nutrition_info[game.clan.deputy.ID].percentage, 90
         )
         # check that everyone else is hungry
