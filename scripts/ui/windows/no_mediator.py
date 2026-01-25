@@ -1,6 +1,7 @@
 import pygame
 import pygame_gui
 
+from scripts.game_structure import game
 from scripts.game_structure.game.switches import (
     switch_set_value,
     Switch,
