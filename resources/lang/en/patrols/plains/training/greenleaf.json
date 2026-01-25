@@ -312,7 +312,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "The hot greenleaf sun is more dangerous than m_c realized, and its heat killed m_c."
+                    "death": "The hot greenleaf sun is more dangerous than m_c realized, and its heat killed m_c."
                 },
                 "frequency": 4
             },
