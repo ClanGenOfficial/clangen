@@ -6,14 +6,14 @@ import pygame_gui
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale, ui_scale_offset
 
 if TYPE_CHECKING:
     from scripts.screens.Screens import Screens
 
 
-class ConfirmDisplayChanges(GameWindow):
+class ConfirmDisplayChangesWindow(GameWindow):
     def __init__(self, source_screen: "Screens"):
         super().__init__(
             ui_scale(pygame.Rect((275, 270), (250, 160))),

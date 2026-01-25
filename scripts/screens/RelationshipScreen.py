@@ -13,7 +13,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIRelationDisplay,
 )
-from scripts.ui.windows.relationship_log import RelationshipLog
+from scripts.ui.windows.relationship_log import RelationshipLogWindow
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.utility import (
@@ -113,7 +113,7 @@ class RelationshipScreen(Screens):
                 if self.inspect_cat.ID not in self.the_cat.relationships:
                     return
                 if self.next_cat == 0 and self.previous_cat == 0:
-                    RelationshipLog(
+                    RelationshipLogWindow(
                         self.the_cat.relationships[self.inspect_cat.ID],
                         [
                             self.view_profile_button,
@@ -132,7 +132,7 @@ class RelationshipScreen(Screens):
                         ],
                     )
                 elif self.next_cat == 0:
-                    RelationshipLog(
+                    RelationshipLogWindow(
                         self.the_cat.relationships[self.inspect_cat.ID],
                         [
                             self.view_profile_button,
@@ -150,7 +150,7 @@ class RelationshipScreen(Screens):
                         ],
                     )
                 elif self.previous_cat == 0:
-                    RelationshipLog(
+                    RelationshipLogWindow(
                         self.the_cat.relationships[self.inspect_cat.ID],
                         [
                             self.view_profile_button,
@@ -168,7 +168,7 @@ class RelationshipScreen(Screens):
                         ],
                     )
                 else:
-                    RelationshipLog(
+                    RelationshipLogWindow(
                         self.the_cat.relationships[self.inspect_cat.ID],
                         [
                             self.view_profile_button,

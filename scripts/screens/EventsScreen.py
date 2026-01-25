@@ -25,7 +25,7 @@ from scripts.game_structure.ui_elements import (
     CatButton,
 )
 from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
-from scripts.ui.windows.game_over import GameOver
+from scripts.ui.windows.game_over import GameOverWindow
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_box import BoxStyles, get_box
@@ -890,7 +890,7 @@ class EventsScreen(Screens):
         switch_set_value(Switch.saved_page_positions, {})
 
         if get_living_clan_cat_count(Cat) == 0:
-            GameOver(GameScreen.EVENTS)
+            GameOverWindow(GameScreen.EVENTS)
 
         self.update_display_events_lists()
 
