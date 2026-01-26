@@ -25,6 +25,7 @@ from scripts.game_structure.ui_elements import (
     CatButton,
 )
 from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
+from scripts.ui.elements.save_button import UISaveButton
 from scripts.ui.windows.game_over import GameOverWindow
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
@@ -144,6 +145,9 @@ class EventsScreen(Screens):
                 self.timeskip_button.disable()
                 self.events_thread = self.loading_screen_start_work(events.one_moon)
                 rebuild_moon_n_season_indicator(change_moon=True, visible=True)
+                self.save_button.reset_save()
+            elif event.ui_element == self.save_button.unsaved_state:
+                self.save_button.save_game(current_screen=self)
             elif element in self.page_control.values():
                 if element == self.page_control["first"]:
                     self.current_page = 1
@@ -177,8 +181,12 @@ class EventsScreen(Screens):
                 # DOWN AND UP ARROW
                 elif event.key == pygame.K_DOWN or event.key == pygame.K_UP:
                     self.handle_tab_select(event.key)
+                # RETURN
                 elif event.key == pygame.K_RETURN:
                     self.handle_tab_switch(self.selected_display)
+                # SPACE
+                elif event.key == pygame.K_SPACE:
+                    self.save_button.save_game(current_screen=self)
 
     def save_scroll_and_page_position(self):
         """
@@ -314,7 +322,7 @@ class EventsScreen(Screens):
         )
 
         self.timeskip_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((310, 218), (180, 30))),
+            ui_scale(pygame.Rect((248, 223), (180, 30))),
             "screens.events.timeskip_button",
             get_button_dict(ButtonStyles.SQUOVAL, (180, 30)),
             object_id="@buttonstyles_squoval",
@@ -322,6 +330,10 @@ class EventsScreen(Screens):
             container=self.event_screen_container,
             manager=MANAGER,
             sound_id="timeskip",
+        )
+        self.save_button = UISaveButton(
+            position=(438, 223),
+            container=self.event_screen_container,
         )
 
         self.full_event_display_container = pygame_gui.core.UIContainer(
