@@ -301,7 +301,7 @@ class FreshkillPile:
         :param list cats_to_feed: Cats to feed
         :param feed_high_rank_first: If True, feeds from high rank to low. If False, the reverse.
         """
-        feed_order = FEEDING_ORDER
+        feed_order = FEEDING_ORDER.copy()
         if feed_high_rank_first:
             feed_order.reverse()
 
