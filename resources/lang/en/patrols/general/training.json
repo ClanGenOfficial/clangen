@@ -18081,7 +18081,7 @@
             ],
             "history_text": {
                 "death": "m_c died from wounds sustained in a training accident.",
-                "scars": "m_c was scarred from an injury in a training exercise"
+                "scar": "m_c was scarred from an injury in a training exercise"
             },
             "relationships": [
                 {
