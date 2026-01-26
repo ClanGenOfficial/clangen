@@ -17710,6 +17710,45 @@
             ],
             "art": "gen_happy_cat2"
         },
+        {
+            "min_max_status": {"apprentice": [3, 3]},
+            "text": "Three apprentices is a pawful, but p_l convinces app1 to pretend to be a fox for app2 and app3 to learn to fight larger predators. app1 gets into it, yipping and bushing {PRONOUN/app1/poss} tail out. p_l teaches app2 and app3 how to avoid the snapping jaws of the \"fox\".",
+            "exp": 20,
+            "frequency": 1,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["app1", "app2", "app3"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat enjoyed learning to fight big predators from p_l."
+                    }
+                },
+                {
+                    "cats_to": ["app1"],
+                    "cats_from": ["p_l"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "p_l was amused by how app1 committed to the role of fox {PRONOUN/app1/subject} played in a training exercise."
+                    }
+                },
+                {
+                    "cats_to": ["app3"],
+                    "cats_from": ["app2"],
+                    "mutual": true,
+                    "values": ["like", "trust"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "from_cat and to_cat gained greater trust in each other by fighting off a \"fox\" named app1."
+                    }
+                }
+            ],
+            "art": "gen_happy_cat2"
+        },
         {   
             "min_max_status": {"apprentice": [4, 4]},
             "text": "With four apprentices to handle, p_l has a stroke of inspiration. Pair-fighting is an important skill for any c_n warrior to learn, and more importantly, it keeps four apprentices busy at once. app1 and app3 decisively win against app2 and app4.",
@@ -17925,6 +17964,16 @@
                     "log": {
                         "cats_from": "from_cat had a lot of fun playing a training game with s_c."
                     }
+                },
+                {
+                    "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat was flattered to discover that to_cat and some other apprentices think {PRONOUN/from_cat/subject}{VERB/from_cat/'re/'s} cool."
+                    }
                 }
             ],
             "art": "pln_med_herblocation2"
@@ -17972,7 +18021,7 @@
                     "values": ["like"],
                     "amount": -8,
                     "log": {
-                        "cats_from": "s_c had an extremely aggravating training patrol trying to teach battle moves to_cat and a gang of apprentices who wouldn't shut up about {PRONOUN/s_c/poss} \"secret hunting tricks\"."
+                        "cats_from": "s_c had an aggravating training patrol trying to teach battle moves to to_cat and a gang of apprentices who wouldn't shut up about {PRONOUN/s_c/poss} \"secret hunting tricks\"."
                     }
                 }
             ],
@@ -17993,6 +18042,16 @@
                     "amount": -8,
                     "log": {
                         "cats_from": "from_cat didn't learn much when p_l took {PRONOUN/from_cat/object} out for training."
+                    }
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol", "high_lawful"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": -12,
+                    "log": {
+                        "cats_from": "from_cat was annoyed that to_cat kept showing off during battle training."
                     }
                 }
             ],
