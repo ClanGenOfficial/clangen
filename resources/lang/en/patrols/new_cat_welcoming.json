@@ -1088,7 +1088,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from injuries inflicted by a kittypet.",
+                    "death": "m_c died from injuries inflicted by a kittypet.",
                     "scar": "m_c was scarred from a fight with a kittypet."
                 },
                 "relationships": [
@@ -2998,8 +2998,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
-                    "reg_death": "m_c died after a loner attacked {PRONOUN/m_c/object}.",
-                    "lead_death": "{VERB/m_c/were/was} attacked by a loner"
+                    "death": "m_c died after a loner attacked {PRONOUN/m_c/object}."
                 },
                 "outsider_rep": 0,
                 "new_cat": [
@@ -3233,8 +3232,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar after tussling with a rogue.",
-                    "reg_death": "m_c died from injuries sustained in a fight with a rogue.",
-                    "lead_death": "died from injuries sustained in a fight with a rogue"
+                    "death": "m_c died from injuries sustained in a fight with a rogue."
                 },
                 "outsider_rep": -1,
                 "frequency": 3

@@ -63,8 +63,7 @@ class PatrolOutcome:
         dead_cats: List[str] = None,
         lost_cats: List[str] = None,
         injury: List[Dict] = None,
-        history_reg_death: str = None,
-        history_leader_death: str = None,
+        history_death: str = None,
         history_scar: str = None,
         new_cat: List[List[str]] = None,
         herbs: List[str] = None,
@@ -107,14 +106,7 @@ class PatrolOutcome:
         self.lost_cats = lost_cats if lost_cats else []
         self.injury = injury if injury else []
 
-        self.history_reg_death = (
-            history_reg_death if history_reg_death else "m_c died on patrol."
-        )
-        self.history_leader_death = (
-            history_leader_death
-            if history_leader_death is not None
-            else "died on patrol."
-        )
+        self.history_death = history_death if history_death else "m_c died on patrol."
         self.history_scar = (
             history_scar if history_scar is not None else "m_c was scarred on patrol."
         )
@@ -211,21 +203,8 @@ class PatrolOutcome:
                     dead_cats=_d.get("dead_cats"),
                     lost_cats=_d.get("lost_cats"),
                     injury=_d.get("injury"),
-                    history_leader_death=(
-                        _d["history_text"].get("lead_death")
-                        if isinstance(_d.get("history_text"), dict)
-                        else None
-                    ),
-                    history_reg_death=(
-                        _d["history_text"].get("reg_death")
-                        if isinstance(_d.get("history_text"), dict)
-                        else None
-                    ),
-                    history_scar=(
-                        _d["history_text"].get("scar")
-                        if isinstance(_d.get("history_text"), dict)
-                        else None
-                    ),
+                    history_death=_d.get("history_text", {}).get("death"),
+                    history_scar=_d.get("history_text", {}).get("scar"),
                     new_cat=_d.get("new_cat"),
                     herbs=_d.get("herbs"),
                     prey=_d.get("prey"),
@@ -690,7 +669,7 @@ class PatrolOutcome:
                 else:
                     # If no results are shown, assume the cat didn't get the patrol history. Default override.
                     self.__handle_condition_history(
-                        _cat, give_injury, patrol, default_overide=True
+                        _cat, give_injury, patrol, default_override=True
                     )
 
         return " ".join(results)
@@ -930,7 +909,7 @@ class PatrolOutcome:
         return " ".join(results)
 
     def _handle_mentor_app(self, patrol: "Patrol") -> str:
-        """Handles mentor inflence on apprentices"""
+        """Handles mentor influence on apprentices"""
 
         for cat in patrol.patrol_cats:
             if Cat.fetch_cat(cat.mentor) in patrol.patrol_cats:
@@ -955,12 +934,6 @@ class PatrolOutcome:
     # ---------------------------------------------------------------------------- #
     #                                   HELPERS                                    #
     # ---------------------------------------------------------------------------- #
-
-    def _add_death_history(self, cat: Cat):
-        """Adds death history for a cat"""
-
-    def _add_potential_history(self, cat: Cat, condition):
-        """Add potential history for a condition"""
 
     def __handle_scarring(self, cat: Cat, scar_list: str, patrol: "Patrol"):
         """Add scar and scar history. Returns scar given"""
@@ -1004,25 +977,19 @@ class PatrolOutcome:
         return chosen_scar
 
     def __handle_condition_history(
-        self, cat: Cat, condition: str, patrol: "Patrol", default_overide=False
+        self, cat: Cat, condition: str, patrol: "Patrol", default_override=False
     ) -> None:
-        """Handles adding potentional history to a cat. default_overide will use the default text for the condition."""
+        """Handles adding potential history to a cat. default_override will use the default text for the condition."""
 
-        if not (
-            self.history_leader_death and self.history_reg_death and self.history_scar
-        ):
-            print("WARNING: Injury occured, but some death or scar history is missing.")
+        if not (self.history_death and self.history_scar):
+            print(
+                "WARNING: Injury occurred, but some death or scar history is missing."
+            )
 
-        final_death_history = None
-        if cat.status.is_leader:
-            if self.history_leader_death:
-                final_death_history = self.history_leader_death
-        else:
-            final_death_history = self.history_reg_death
-
+        final_death_history = self.history_death
         history_scar = self.history_scar
 
-        if default_overide:
+        if default_override:
             final_death_history = None
             history_scar = None
 
@@ -1047,17 +1014,12 @@ class PatrolOutcome:
         )
 
     def __handle_death_history(self, cat: Cat, patrol: "Patrol") -> None:
-        """Handles adding death history, for dead cats."""
+        """Handles adding death history for dead cats."""
 
-        if not (self.history_leader_death and self.history_reg_death):
-            print("WARNING: Death occured, but some death history is missing.")
+        if not self.history_death:
+            print("WARNING: Death occurred, but some death history is missing.")
 
-        final_death_history = None
-        if cat.status.is_leader:
-            if self.history_leader_death:
-                final_death_history = self.history_leader_death
-        else:
-            final_death_history = self.history_reg_death
+        final_death_history = self.history_death
 
         if not final_death_history:
             final_death_history = i18n.t("defaults.patrol_regular_death")

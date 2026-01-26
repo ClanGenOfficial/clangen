@@ -179,7 +179,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost their life in an ambush on the border."
+                    "death": "m_c lost their life in an ambush on the border."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -279,7 +279,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "lost a life in an ambush on the border"
+                    "death": "lost a life in an ambush on the border"
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -944,7 +944,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan."
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1044,7 +1044,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan."
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1067,7 +1067,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan."
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1167,7 +1167,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1190,7 +1190,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1274,7 +1274,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan."
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1358,7 +1358,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan."
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1450,7 +1450,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "reg_death": "This cat died from being ambushed by rogues."
+                    "death": "This cat died from being ambushed by rogues."
                 },
                 "outsider_rep": -1,
                 "frequency": 4
@@ -1518,7 +1518,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "reg_death": "This cat died from being ambushed by rogues while on a solo patrol."
+                    "death": "This cat died from being ambushed by rogues while on a solo patrol."
                 },
                 "outsider_rep": -1,
                 "frequency": 4
@@ -1647,7 +1647,7 @@
                     "multi"
                 ],
                 "history_text": {
-                    "reg_death": "This cat was drowned by floodwaters."
+                    "death": "This cat was drowned by floodwaters."
                 },
                 "relationships": [
                     {
@@ -1791,7 +1791,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was drowned by floodwaters."
+                    "death": "m_c was drowned by floodwaters."
                 },
                 "relationships": [
                     {
@@ -1871,7 +1871,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was drowned by floodwaters."
+                    "death": "m_c was drowned by floodwaters."
                 },
                 "frequency": 4
             }
@@ -1939,7 +1939,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed by a flood."
+                    "death": "m_c was killed by a flood."
                 },
                 "frequency": 4
             }
@@ -2030,7 +2030,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue."
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -2121,7 +2121,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue."
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -2206,7 +2206,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue."
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             }

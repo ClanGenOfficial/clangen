@@ -61,8 +61,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was swept out to sea by a flood.",
-                    "lead_death": "{VERB/m_c/were/was} swept out to sea by a flood"
+                    "death": "m_c was swept out to sea by a flood."
                 },
                 "frequency": 4
             }

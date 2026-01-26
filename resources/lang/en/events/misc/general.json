@@ -839,6 +839,71 @@
         ]
     },
     {
+        "event_id": "gen_misc_murderreveal_leader",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder_reveal"
+        ],
+        "tags": ["clan:leader"],
+        "frequency": 2,
+        "event_text": "m_c calls a Clan meeting and reveals that r_c was responsible for taking mur_c's life. With the Clan leader against {PRONOUN/r_c/object}, r_c's place in the Clan is thrown into jeopardy.",
+        "m_c": {
+            "status": [
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "any"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort",
+                    "like"
+                ],
+                "amount": -30,
+                "log": {
+                    "cats_from": "m_c discovered r_c's crimes and revealed them to the Clan."
+                }
+            },
+            {
+                "cats_from": [
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust",
+                    "respect",
+                    "comfort",
+                    "like"
+                ],
+                "amount": -20,
+                "log": {
+                    "cats_from": "lead_name revealed to_cat's crimes to the Clan, and from_cat was disgusted and horrified."
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_misc_murderreveal_dream1",
         "location": [
             "any"
@@ -10297,5 +10362,81 @@
                 "apprentice"
             ]
         }
+    },
+    {
+    "event_id": "gen_misc_hitmanfailedmurder1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["failed_murder"],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c was seen speaking to n_c:0 on the border. n_c:0 later attacked r_c's patrol, and though {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} driven off, r_c was injured and can't shake the feeling n_c:0 was targeting {PRONOUN/r_c/object}.",
+    "m_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "r_c": {
+        "age": [],
+        "status": ["apprentice", "mediator apprentice", "medicine cat apprentice", "mediator", "medicine cat", "warrior", "deputy"]
+    },
+    "new_cat": [
+        ["age:adult", "rogue", "meeting", "exists"]
+    ],
+    "injury": [
+        {
+            "cats": ["r_c"],
+            "injuries": ["cat bite"]
+        }
+    ],
+    "history:": [
+        {
+            "cats": ["r_c"],
+            "scar": "r_c was scarred after a rogue targeted {PRONOUN/r_c/object} in a fight.",
+            "death": "r_c died in the wake of a fight with a rogue who seemed to be targeting {PRONOUN/r_c/object}."
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat hired to_cat to kill r_c."
+            }
+        }
+    ]
+    },
+    {
+    "event_id": "gen_misc_hitmanfailedmurder2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["failed_murder"],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c was seen speaking to n_c:0 on the border. n_c:0 later attacks r_c's patrol, but {PRONOUN/n_c:0/subject} underestimated r_c's strength, and r_c, fighting for {PRONOUN/r_c/poss} life, kills {PRONOUN/n_c:0/object}.",
+    "m_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "r_c": {
+        "age": [],
+        "status": ["mediator", "medicine cat", "warrior", "deputy"],
+        "skill": ["FIGHTER,2"]
+    },
+    "new_cat": [
+        ["age:adult", "rogue", "meeting", "dead", "exists"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": 10,
+            "log": {
+                "cats_from": "from_cat hired to_cat to kill r_c."
+            }
+        }
+    ]
     }
 ]

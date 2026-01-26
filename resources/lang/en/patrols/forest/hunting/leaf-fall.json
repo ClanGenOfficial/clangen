@@ -436,7 +436,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat was scarred after falling from a tree.",
-                    "reg_death": "m_c died after falling from a tree while hunting."
+                    "death": "m_c died after falling from a tree while hunting."
                 },
                 "relationships": [
                     {
@@ -1234,8 +1234,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King.",
-                    "lead_death": "fought a Rat King"
+                    "death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
                 },
                 "frequency": 3
             }
