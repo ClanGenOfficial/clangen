@@ -130,7 +130,7 @@
           "type": "string"
         },
         "frequency": {
-          "default": 20,
+          "default": 4,
           "description": "Controls how common an outcome is.",
           "title": "Frequency",
           "type": "integer"
@@ -217,6 +217,27 @@
           },
           "title": "Injury",
           "type": "array"
+        },
+        "min_max_status": {
+          "additionalProperties": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "description": "Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
+          "propertyNames": {
+            "$ref": "#/$defs/MinMaxStatusDictKey"
+          },
+          "title": "Min Max Status",
+          "type": "object"
         },
         "history_text": {
           "$ref": "#/$defs/HistoryText",
@@ -380,8 +401,8 @@
           "type": "object"
         },
         "frequency": {
-          "default": 20,
-          "description": "Controls how common a patrol is. Normal patrols would be around 20. Lower numbers are less common and higher numbers are more common.",
+          "default": 4,
+          "description": "Controls how common a patrol is. 4 is the most common, 1 is the least.",
           "title": "Frequency",
           "type": "integer"
         },
