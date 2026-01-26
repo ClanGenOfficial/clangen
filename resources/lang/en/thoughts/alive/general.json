@@ -2689,7 +2689,6 @@
     {
         "id": "sense_skill_gen",
         "thoughts": [
-            "Leaves camp, overwhelmed by the sounds and smells of other cats",
             "Turns {PRONOUN/m_c/poss} head sharply at a flit of movement",
             "Practices navigating the camp without one of {PRONOUN/m_c/poss} senses",
             "Volunteers to guard the camp, knowing {PRONOUN/m_c/subject}'ll sense any threats",
@@ -2891,7 +2890,7 @@
             "Feels uneasy around r_c",
             "Wonders how r_c learned a particular battle move"
         ],
-        "main_skill_constraint": [
+        "random_skill_constraint": [
             "DARK,1"
         ]
     },
