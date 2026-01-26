@@ -288,10 +288,6 @@ class ClanSettingsScreen(Screens):
             self.checkboxes_text[code].disable()
             n += 1
 
-        self.checkboxes_text["container_general"].set_scrollable_area_dimensions(
-            ui_scale_dimensions((780, n * 39 + 40))
-        )
-
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
             "screens.clan_settings.general_info",
             ui_scale(pygame.Rect((100, 185), (600, 50))),

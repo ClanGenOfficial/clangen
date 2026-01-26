@@ -54,11 +54,6 @@
             "Enable Clan page background",
             "Even with this off, the camp you choose will still affect the events you encounter.",
             true
-        ],
-        "moons and seasons": [
-            "Show moons and seasons widget",
-            "Displays Clan age and current Clan season on several pages.",
-            false
         ]
     },
     "role": {
