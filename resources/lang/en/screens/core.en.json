@@ -2,6 +2,7 @@
     "en": {
         "events": "Events",
         "camp": "⬅┐ To Camp",
+        "header_tooltip": "return to camp",
         "cat_list": "Cats",
         "patrol": "Patrols",
         "allegiances": "Clan Allegiances",

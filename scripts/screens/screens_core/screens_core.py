@@ -245,6 +245,7 @@ def rebuild_top_menu_buttons():
             "bottom_target": menu_buttons["back_to_camp"],
             "centerx": "centerx",
         },
+        tool_tip_text="screens.core.header_tooltip",
     )
     del heading_rect
 
