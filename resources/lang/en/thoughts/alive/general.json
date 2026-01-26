@@ -1262,7 +1262,8 @@
             "mediator",
             "deputy",
             "leader",
-            "elder"
+            "elder",
+            "medicine cat apprentice"
         ],
         "random_living_status": [
             "living"
