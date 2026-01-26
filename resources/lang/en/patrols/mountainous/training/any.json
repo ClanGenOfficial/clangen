@@ -2536,9 +2536,8 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was not happy with to_cat when {PRONOUN/to_cat/subject} interrupted from_cat's story about Sharptooth.."
-                        }
-                    }
+                            "cats_from": "from_cat was not happy with to_cat when {PRONOUN/to_cat/subject} interrupted from_cat's story about Sharptooth."
+                        }                    }
                 ],
                 "frequency": 4
             }
