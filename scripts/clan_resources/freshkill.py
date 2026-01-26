@@ -1,5 +1,4 @@
 import random
-from copy import deepcopy
 from typing import List
 
 import i18n
@@ -362,7 +361,7 @@ class FreshkillPile:
 
         # if there are no low nutrition cats, default to rank tactic
         if not hungry_cats:
-            self._feed_by_low_rank(cats_to_feed)
+            self._feed_by_rank(cats_to_feed)
             return
 
         # sort the hungry
