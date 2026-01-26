@@ -211,20 +211,14 @@ class FreshkillPile:
         """
         Takes given cats and feeds them according to chosen tactics.
 
-            Parameters
-            ----------
-            :param list cats_to_feed: list of living cats which should be fed
+        :param cats_to_feed: List of cat objects to feed
+        :param is_manual_feeding: If True, cats will only have nutrition added, not removed as they would on timeskip
         """
         self.update_nutrition(cats_to_feed)
-        if is_manual_feeding:
-            self.is_manual_feeding = True
 
-        self.fed_kits, self.queens = self._find_queen_kit_pregnant(cats_to_feed)
+        self.is_manual_feeding = is_manual_feeding
 
-        # NOTE: this is for testing purposes
-        if not game.clan:
-            self._feed_by_low_rank(cats_to_feed)
-            return
+        self.fed_kits, self.queens = self._find_kitten_and_queen(cats_to_feed)
 
         # PRIORITIES
         if get_clan_setting("sick_injured_first"):
@@ -232,19 +226,18 @@ class FreshkillPile:
         elif get_clan_setting("hunter_first"):
             self._feed_hunters(cats_to_feed)
 
-        # NOTE: the tactics should have their own function for testing purposes
         if get_clan_setting("youngest_first"):
-            self._feed_by_youngest_first(cats_to_feed)
+            self._feed_by_age(cats_to_feed)
         elif get_clan_setting("oldest_first"):
-            self._feed_by_oldest_first(cats_to_feed)
+            self._feed_by_age(cats_to_feed, feed_oldest_first=True)
         elif get_clan_setting("hungriest_first"):
             self._feed_by_hungry_first(cats_to_feed)
         elif get_clan_setting("experience_first"):
             self._feed_by_experience_first(cats_to_feed)
         elif get_clan_setting("high_rank"):
-            self._feed_by_high_rank(cats_to_feed)
+            self._feed_by_rank(cats_to_feed, feed_high_rank_first=True)
         else:  # only remaining tactic is low_rank, this is our default!
-            self._feed_by_low_rank(cats_to_feed)
+            self._feed_by_rank(cats_to_feed)
 
         self.is_manual_feeding = False
         self.fed_kits.clear()
@@ -273,9 +266,11 @@ class FreshkillPile:
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def _find_queen_kit_pregnant(cats_to_feed) -> tuple[list, list]:
+    def _find_kitten_and_queen(cats_to_feed) -> tuple[list, list]:
         """
         Helper to find queens, fed kittens, and pregnant cats.
+        :param cats_to_feed: List of cat objects to search through
+        :return: List of kittens who have been fed by a queen and list of queens/pregnant cats
         """
         fed_kits = []
         relevant_queens = []
@@ -299,71 +294,34 @@ class FreshkillPile:
         relevant_queens.extend(pregnant_cats)
         return fed_kits, relevant_queens
 
-    def _feed_by_low_rank(self, cats_to_feed: List[Cat]) -> None:
-        """Feed cats in order of low rank to high, resolving ties with age.
+    def _feed_by_rank(
+        self, cats_to_feed: List[Cat], feed_high_rank_first: bool = False
+    ) -> None:
+        """Feed cats in order of rank, resolving ties by age.
 
         :param list cats_to_feed: Cats to feed
+        :param feed_high_rank_first: If True, feeds from high rank to low. If False, the reverse.
         """
+        feed_order = FEEDING_ORDER
+        if feed_high_rank_first:
+            feed_order = FEEDING_ORDER.reverse()
 
-        for feeding_status in FEEDING_ORDER:
-            if feeding_status == CatRank.NEWBORN:
-                relevant_group = [
-                    cat
-                    for cat in cats_to_feed
-                    if cat.status.rank == CatRank.NEWBORN and cat not in self.fed_kits
-                ]
-            elif feeding_status == CatRank.KITTEN:
-                relevant_group = [
-                    cat
-                    for cat in cats_to_feed
-                    if cat.status.rank == CatRank.KITTEN and cat not in self.fed_kits
-                ]
-            elif feeding_status == "queen/pregnant":
-                relevant_group = self.queens
-            else:
-                relevant_group = [
-                    cat
-                    for cat in cats_to_feed
-                    if str(cat.status.rank) == feeding_status and cat not in self.queens
-                ]
-
-            if len(relevant_group) == 0:
-                continue
-
-            sorted_group = sorted(relevant_group, key=lambda x: x.moons)
-            self._feed_group(sorted_group)
-
-    def _feed_by_high_rank(self, cats_to_feed: List[Cat]) -> None:
-        """Feed cats in order of high rank to low, resolving ties with age.
-
-        :param list cats_to_feed: Cats to feed
-        """
-        feed_order = FEEDING_ORDER.copy()
-        feed_order.reverse()
         for feeding_status in feed_order:
-            if feeding_status == CatRank.NEWBORN:
-                relevant_group = [
-                    cat
-                    for cat in cats_to_feed
-                    if cat.status.rank == CatRank.NEWBORN and cat not in self.fed_kits
-                ]
-            elif feeding_status == CatRank.KITTEN:
-                relevant_group = [
-                    cat
-                    for cat in cats_to_feed
-                    if cat.status.rank == CatRank.KITTEN and cat not in self.fed_kits
-                ]
-            elif feeding_status == "queen/pregnant":
+            if feeding_status == "queen/pregnant":
                 relevant_group = self.queens
+
+            elif CatRank(feeding_status).is_baby():
+                relevant_group = [
+                    cat
+                    for cat in cats_to_feed
+                    if cat.status.rank == feeding_status and cat not in self.fed_kits
+                ]
+
             else:
                 relevant_group = [
                     cat
                     for cat in cats_to_feed
-                    if str(cat.status.rank) == feeding_status
-                ]
-                # remove all cats, which are also queens / pregnant
-                relevant_group = [
-                    cat for cat in relevant_group if cat not in self.queens
+                    if cat.status.rank == feeding_status and cat not in self.queens
                 ]
 
             if len(relevant_group) == 0:
@@ -372,20 +330,17 @@ class FreshkillPile:
             sorted_group = sorted(relevant_group, key=lambda x: x.moons)
             self._feed_group(sorted_group)
 
-    def _feed_by_youngest_first(self, cats_to_feed: List[Cat]) -> None:
+    def _feed_by_age(
+        self, cats_to_feed: List[Cat], feed_oldest_first: bool = False
+    ) -> None:
         """Feed cats in order of age, youngest first.
 
         :param list cats_to_feed: Cats to feed
+        :param feed_oldest_first: If True, feeds from oldest to youngest. If False, the reverse.
         """
-        sorted_cats = sorted(cats_to_feed, key=lambda x: x.moons)
-        self._feed_group(sorted_cats)
-
-    def _feed_by_oldest_first(self, cats_to_feed: List[Cat]) -> None:
-        """Feed cats in order of age, oldest first.
-
-        :param list cats_to_feed: Cats to feed
-        """
-        sorted_cats = sorted(cats_to_feed, key=lambda x: x.moons, reverse=True)
+        sorted_cats = sorted(
+            cats_to_feed, key=lambda x: x.moons, reverse=feed_oldest_first
+        )
         self._feed_group(sorted_cats)
 
     def _feed_by_hungry_first(self, cats_to_feed: List[Cat]) -> None:
@@ -498,7 +453,7 @@ class FreshkillPile:
             total_required_food_for_clan = self.amount_food_needed()
 
             # if rationing, halve the amount we give them
-            if ration_prey:
+            if ration_prey and rank != CatRank.NEWBORN:
                 amount_allowed = amount_allowed / 2
             # otherwise, they can receive bonus amounts if the current total prey the Clan possesses is more than what they need
             elif (
