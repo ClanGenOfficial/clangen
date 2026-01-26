@@ -304,7 +304,7 @@ class FreshkillPile:
         """
         feed_order = FEEDING_ORDER
         if feed_high_rank_first:
-            feed_order = FEEDING_ORDER.reverse()
+            feed_order.reverse()
 
         for feeding_status in feed_order:
             if feeding_status == "queen/pregnant":
@@ -372,7 +372,7 @@ class FreshkillPile:
 
         self._feed_group(hungry_cats_sorted)
         # feed the rest according to their status
-        self._feed_by_low_rank(satisfied_cats)
+        self._feed_by_rank(satisfied_cats)
 
     def _feed_by_experience_first(self, cats_to_feed: List[Cat]) -> None:
         """Feed cats in order of experience, highest first.
