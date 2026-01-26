@@ -18043,7 +18043,7 @@
             "exp": 0,
             "frequency": 4,
             "can_have_stat": ["adult"],
-            "stat_trait": ["calm", "careful", "compassionate", "faithful", "gloomy", "grumpy", "lonesome", "responsible", "righteous", "sincere", "strict", "thoughtful", "wise"],
+            "stat_trait": ["calm", "careful", "compassionate", "faithful", "gloomy", "grumpy", "lonesome", "responsible", "righteous", "sincere", "strict", "thoughtful", "wise", "cold"],
             "relationships": [
                 {
                     "cats_to": ["s_c"],
