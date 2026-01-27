@@ -402,27 +402,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l wanders off into the territory, keeping an eye out for the purple flowers that grow on betony. app1 leads the way, {PRONOUN/app1/poss} tail up and waving jauntily.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and decide to go another day.",
@@ -763,27 +752,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "The blackberry brambles will be at their peak leaf growth soon, if they aren't there already. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -1120,27 +1098,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "With the full sun of greenleaf fueling plant growth everywhere, it's the perfect time to hunt for burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -1476,27 +1443,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l waits until they're out of camp to reveal to app1 that they're off to find catmint - a 'helpful' group of 'helpers' can be a little... well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and p_l wants to take advantage of the peak greenleaf growing season.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -1829,27 +1785,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "The heat of greenleaf warms {PRONOUN/p_l/poss} pelt as p_l wanders, aimlessly searching for daisies to harvest their leaves, bringing app1 along for a lesson.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -2194,27 +2139,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "Greenleaf's bounty means that finding dandelions - and hopefully other plants, like wild garlic - shouldn't be any trouble.  p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in the medicine cat arsenal.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -3617,27 +3551,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. p_l heaves a sigh - the expedition is delayed for another time.",
@@ -6696,17 +6619,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -6741,7 +6656,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died before completing {PRONOUN/m_c/poss} medicine cat training, from accidentally eating deathberries."
+                    "death": "m_c died before completing {PRONOUN/m_c/poss} medicine cat training, from accidentally eating deathberries."
                 },
                 "frequency": 3
             },
@@ -6760,7 +6675,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died before completing {PRONOUN/m_c/poss} medicine cat training, from accidentally eating deathberries."
+                    "death": "m_c died before completing {PRONOUN/m_c/poss} medicine cat training, from accidentally eating deathberries."
                 },
                 "frequency": 3
             }
@@ -8714,8 +8629,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from bramble thorns on a herb gathering patrol.",
-                    "reg_death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}.",
-                    "lead_death": "bramble thorns scratched up m_c and the wounds eventually festered and killed {PRONOUN/m_c/object}."
+                    "death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -8832,8 +8746,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice.",
-                    "lead_death": "after collecting excessive amounts of tansy as an apprentice"
+                    "death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice."
                 },
                 "relationships": [
                     {
@@ -8877,8 +8790,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice.",
-                    "lead_death": "after collecting excessive amounts of tansy as an apprentice"
+                    "death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice."
                 },
                 "relationships": [
                     {

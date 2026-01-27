@@ -989,8 +989,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from bramble thorns on a herb gathering patrol.",
-                    "reg_death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}.",
-                    "lead_death": "bramble thorns scratched up m_c and the wounds eventually festered and killed {PRONOUN/m_c/object}."
+                    "death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -1107,8 +1106,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice.",
-                    "lead_death": "after collecting excessive amounts of tansy as an apprentice"
+                    "death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice."
                 },
                 "relationships": [
                     {
@@ -1152,8 +1150,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice.",
-                    "lead_death": "after collecting excessive amounts of tansy as an apprentice"
+                    "death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice."
                 },
                 "relationships": [
                     {
@@ -1278,27 +1275,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l and app1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time.",

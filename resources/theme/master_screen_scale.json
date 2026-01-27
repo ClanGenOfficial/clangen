@@ -234,28 +234,10 @@
     "@buttonstyles_ladder_multiline": {"prototype": "buttonstyles_prototype", "misc": {"padding": "7, 9", "text_vert_alignment": "center"}},
     "#window_base_theme": {
         "misc": {
-            "shape": "rounded_rectangle",
-            "shape_corner_radius": "8",
-            "border_width": "3",
-            "shadow_width": "0",
             "enable_title_bar": "0"
         },
-        "colours": {"normal_border": "#2F2918", "dark_bg": "#AC9D72"}
+        "colours": {"normal_border": "#00000000", "dark_bg": "#00000000"}
     },
-    "#game_over_window": {"prototype": "#window_base_theme"},
-    "#save_check_window": {"prototype": "#window_base_theme"},
-    "#editor_save_check_window": {"prototype": "#window_base_theme"},
-    "#editor_missing_info_window": {"prototype": "#window_base_theme"},
-    "#notif_window": {"prototype": "#window_base_theme"},
-    "#filter_window": {"prototype": "#window_base_theme"},
-    "#delete_check_window": {"prototype": "#window_base_theme"},
-    "#change_cat_name_window": {"prototype": "#window_base_theme"},
-    "#change_cat_gender_window": {"prototype": "#window_base_theme"},
-    "#change_cat_pronouns_window": {"prototype": "#window_base_theme"},
-    "#test_pronouns_window": {"prototype": "#window_base_theme"},
-    "#relationship_log_window": {"prototype": "#window_base_theme"},
-    "#kill_cat_window": {"prototype": "#window_base_theme"},
-    "#confirm_display_changes_window": {"prototype": "#window_base_theme"},
     "text_entry_line": {
         "font": {"size": "15", "name": "notosans"},
         "colours": {

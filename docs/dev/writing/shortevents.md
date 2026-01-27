@@ -58,8 +58,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         {
             "cats": [],
             "scar": "",
-            "reg_death": "",
-            "lead_death": ""
+            "death": ""
         }
     ],
     "relationships": [
@@ -258,7 +257,7 @@ lowercase season names + "any"
 
     However, remember the wide range of ages and statuses we have and how they can overlap with each other.  It's possible to have warriors who graduate early and are still adolescent age.  It's also possible for apps to train longer than usual and become young adults without becoming warriors.  Elders, likewise, can be both young and old cats as it's possible for cats to retire to the elder den at any age.
 
->**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
+>**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
 >**skill[list]** : m_c must possess at least one skill from this list. if they can be anything, use "any"
 >
@@ -283,7 +282,7 @@ lowercase season names + "any"
 >
 >**status:[list]** : a list of statuses r_c can be. if they can be anything, use "any"
 >
->**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels).
+>**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers).
 > 
 >**skill[list]** : r_c must possess at least one skill from this list. if they can be anything, remove parameter or leave list empty.
 >
@@ -349,12 +348,7 @@ lowercase season names + "any"
 >    {
 >      "cats": [],
 >      "injuries": [],
->      "scars": [],
->      "history:": {
->        "scar": "",
->        "reg_death": "",
->        "lead_death": ""
->      }
+>      "scars": []
 >    }
 >```
 >
@@ -398,16 +392,14 @@ lowercase season names + "any"
 >    {
 >        "cats": [],
 >        "scar": "",
->        "reg_death": "",
->        "lead_death": ""
+>        "death": ""
 >    }
 >```
 
-| text_type    | "custom history message"                                                                                    |
-|--------------|-------------------------------------------------------------------------------------------------------------|
-| "reg_death"  | Death history text for non-leaders. Whole sentence.  must include if cat is dead or injured                 |
-| "lead_death" | Death history text for leaders. Sentence fragment. must include if dead or injured cat could be the leader. |
-| "scar"       | Scar history. Whole sentence.  must include if cat gets injured                                             |
+| text_type | "custom history message"                                                    |
+|-----------|-----------------------------------------------------------------------------|
+| "death"   | Death history text. Whole sentence.  must include if cat is dead or injured |
+| "scar"    | Scar history. Whole sentence.  must include if cat gets injured             |
 
 ***
 

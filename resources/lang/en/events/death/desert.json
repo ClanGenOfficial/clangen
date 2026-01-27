@@ -13,8 +13,7 @@
           "history": [
               {
               "cats": ["m_c"],
-              "reg_death": "m_c was killed by a rattlesnake.",
-              "lead_death": "{VERB/m_c/were/was} killed by a rattlesnake."
+              "death": "m_c was killed by a rattlesnake."
               }
           ]
   },
@@ -32,8 +31,7 @@
           "history": [
               {
               "cats": ["m_c"],
-              "reg_death": "m_c was killed by a rattlesnake.",
-              "lead_death": "{VERB/m_c/were/was} killed by a rattlesnake."
+              "death": "m_c was killed by a rattlesnake."
               }
           ]
   },
@@ -51,8 +49,7 @@
           "history": [
               {
               "cats": ["m_c"],
-              "reg_death": "m_c was killed by a rattlesnake.",
-              "lead_death": "{VERB/m_c/were/was} killed by a rattlesnake."
+              "death": "m_c was killed by a rattlesnake."
               }
           ]
   },
@@ -70,8 +67,7 @@
           "history": [
               {
               "cats": ["m_c"],
-              "reg_death": "m_c was mislead by a mirage, thinking it was water.",
-              "lead_death": "{VERB/m_c/were/was} mislead by a mirage, thinking it was water."
+              "death": "m_c was mislead by a mirage, thinking it was water."
               }
           ]
   },
@@ -89,8 +85,7 @@
           "history": [
               {
               "cats": ["m_c"],
-              "reg_death": "m_c was killed by a scorpion.",
-              "lead_death": "{VERB/m_c/were/was} killed by a scorpion."
+              "death": "m_c was killed by a scorpion."
               }
           ]
   },
@@ -109,8 +104,7 @@
           "history": [
               {
               "cats": ["m_c"],
-              "reg_death": "m_c was killed by a scorpion.",
-              "lead_death": "{VERB/m_c/were/was} killed by a scorpion."
+              "death": "m_c was killed by a scorpion."
               }
           ]
   }

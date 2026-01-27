@@ -6990,7 +6990,7 @@
         ]
     },
     {
-        "patrol_id": "pln_med_gatheringraspberrysoloapp__greenleaf1",
+        "patrol_id": "pln_med_gatheringraspberrysoloapp_greenleaf1",
         "biome": [
             "plains"
         ],
@@ -7007,17 +7007,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -7052,7 +7044,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died before completing their medicine cat training, from accidentally eating deathberries."
+                    "death": "m_c died before completing their medicine cat training, from accidentally eating deathberries."
                 },
                 "frequency": 3
             },
@@ -7071,7 +7063,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died before completing their medicine cat training, from accidentally eating deathberries."
+                    "death": "m_c died before completing their medicine cat training, from accidentally eating deathberries."
                 },
                 "frequency": 3
             }
@@ -8220,8 +8212,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was permanently marked by raspberry bramble thorns.",
-                    "reg_death": "m_c died from complications from a small cut, proof that even tiny wounds can progress to dangerous levels.",
-                    "lead_death": "from complications from a small cut, proof that even tiny wounds can progress to dangerous levels"
+                    "death": "m_c died from complications from a small cut, proof that even tiny wounds can progress to dangerous levels."
                 },
                 "frequency": 4
             }
@@ -9152,8 +9143,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from bramble thorns on a herb gathering patrol.",
-                    "reg_death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}.",
-                    "lead_death": "bramble thorns scratched up m_c and the wounds eventually festered and killed {PRONOUN/m_c/object}."
+                    "death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -9270,8 +9260,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice.",
-                    "lead_death": "after collecting excessive amounts of tansy as an apprentice"
+                    "death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice."
                 },
                 "relationships": [
                     {
@@ -9315,8 +9304,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice.",
-                    "lead_death": "after collecting excessive amounts of tansy as an apprentice"
+                    "death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice."
                 },
                 "relationships": [
                     {

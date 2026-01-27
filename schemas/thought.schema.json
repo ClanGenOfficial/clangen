@@ -1,251 +1,345 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
-  "title": "Clangen Thought Schema",
-  "description": "Thoughts in Clan Generator.",
-  "type": "array",
-  "definitions": {
-    "perm_condition_any": {
-      "anyOf": [
-        {
-          "$ref": "common.schema.json#/definitions/perm_condition"
-        },
-        {
-          "const": "any"
-        }
-      ]
+  "$defs": {
+    "Biome": {
+      "enum": [
+        "mountainous",
+        "plains",
+        "forest",
+        "beach",
+        "wetlands",
+        "desert"
+      ],
+      "title": "Biome",
+      "type": "string"
     },
-    "illness_injury_any": {
-      "anyOf": [
-        {
-          "$ref": "common.schema.json#/definitions/illness"
+    "BornWith": {
+      "properties": {
+        "m_c": {
+          "title": "M C",
+          "type": "boolean"
         },
-        {
-          "$ref": "common.schema.json#/definitions/injury"
-        },
-        {
-          "const": "any"
+        "r_c": {
+          "title": "R C",
+          "type": "boolean"
         }
-      ]
+      },
+      "title": "BornWith",
+      "type": "object"
     },
-    "status_any": {
+    "Camp": {
+      "enum": [
+        "camp1",
+        "camp2",
+        "camp3",
+        "camp4"
+      ],
+      "title": "Camp",
+      "type": "string"
+    },
+    "CatAge": {
+      "enum": [
+        "newborn",
+        "kitten",
+        "adolescent",
+        "young adult",
+        "adult",
+        "senior adult",
+        "senior"
+      ],
+      "title": "CatAge",
+      "type": "string"
+    },
+    "HasInjuries": {
+      "properties": {
+        "m_c": {
+          "items": {
+            "$ref": "#/$defs/IllnessInjuryAny"
+          },
+          "title": "M C",
+          "type": "array"
+        },
+        "r_c": {
+          "items": {
+            "$ref": "#/$defs/IllnessInjuryAny"
+          },
+          "title": "R C",
+          "type": "array"
+        }
+      },
+      "title": "HasInjuries",
+      "type": "object"
+    },
+    "IllnessInjuryAny": {
       "anyOf": [
         {
-          "$ref": "common.schema.json#/definitions/status"
+          "$ref": "common.schema.json#/$defs/Illness"
         },
         {
-          "const": "any"
-        }
-      ]
-    }
-  },
-  "items": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "description": "Separates the thoughts into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
-        "type": "string"
-      },
-      "biome": {
-        "description": "Constrains the thought to only occur if a player chooses a specific biome.",
-        "type": "array",
-        "items": {
-          "enum": [
-            "mountainous",
-            "plains",
-            "forest",
-            "beach",
-            "wetlands",
-            "desert"
-          ]
-        }
-      },
-      "season": {
-        "description": "Constrains the thought to only occur once the Clan is in a specific season.",
-        "type": "array",
-        "items": {
-          "enum": ["Greenleaf", "Leaf-fall", "Leaf-bare", "Newleaf"]
-        }
-      },
-      "camp": {
-        "description": "Constrains the thought to only occur if a specific camp type is chosen.",
-        "type": "array",
-        "items": {
-          "enum": ["camp1", "camp2", "camp3", "camp4"]
-        }
-      },
-      "thoughts": {
-        "description": "List of the text that will be displayed in-game as thoughts.",
-        "type": "array",
-        "items": {
+          "$ref": "common.schema.json#/$defs/Injury"
+        },
+        {
+          "const": "any",
           "type": "string"
         }
-      },
-      "has_injuries": {
-        "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury). Can also use \"any\" to allow the thought to occur if the cat has any illness or injury.",
-        "type": "object",
-        "properties": {
-          "m_c": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/illness_injury_any"
-            }
-          },
-          "r_c": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/illness_injury_any"
-            }
-          }
-        }
-      },
-      "perm_conditions": {
-        "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain permanent condition. Can also use \"any\" to allow the thought to occur if the cat has any permanent condition.",
-        "type": "object",
-        "properties": {
-          "m_c": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/perm_condition_any"
-            }
-          },
-          "r_c": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/perm_condition_any"
-            }
-          },
-          "born_with": {
-            "description": "Used to determine whether or not the given cat has this condition from birth. Only use if the cat must have it from birth, or must not have it from birth (omit value if either is suitable).",
-            "type": "object",
-            "properties": {
-              "m_c": {
-                "type": "boolean"
-              },
-              "r_c": {
-                "type": "boolean"
-              }
-            }
-          }
-        }
-      },
-      "relationship_constraint": {
-        "description": "Constrains the thought to only occur if m_c and r_c fulfill the tag requirements.",
-        "type": "array",
-        "items": {
-          "enum": [
-            "siblings",
-            "not_siblings",
-            "littermates",
-            "not_littermates",
-            "mates",
-            "mates_with_pl",
-            "not_mates",
-            "parent/child",
-            "not_parent",
-            "child/parent",
-            "not_child",
-            "mentor/app",
-            "not_mentor",
-            "app/mentor",
-            "not_app",
-            "strangers"
-          ]
-        }
-      },
-      "main_backstory_constraint": {
-        "description": "Constrains the thought to only occur if m_c has a certain backstory.",
-        "type": "array",
-        "items": {
-          "$ref": "common.schema.json#/definitions/backstory"
-        }
-      },
-      "random_backstory_constraint": {
-        "description": "Constrains the thought to only occur if r_c has a certain backstory.",
-        "type": "array",
-        "items": {
-          "$ref": "common.schema.json#/definitions/backstory"
-        }
-      },
-      "main_status_constraint": {
-        "description": "Constrains the thought to only happen if m_c is in a certain role.",
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/status_any"
-        }
-      },
-      "random_status_constraint": {
-        "description": "Constrains the thought to only happen if r_c is in a certain role.",
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/status_any"
-        }
-      },
-      "main_age_constraint": {
-        "description": "Constrains the thought to only happen if m_c is within a certain age group.",
-        "type": "array",
-        "items": {
-          "$ref": "common.schema.json#/definitions/age"
-        }
-      },
-      "random_age_constraint": {
-        "description": "Constrains the thought to only happen if r_c is within a certain age group.",
-        "type": "array",
-        "items": {
-          "$ref": "common.schema.json#/definitions/age"
-        }
-      },
-      "main_trait_constraint": {
-        "description": "Constrains the thought to only happen if m_c has a specific trait.",
-        "type": "array",
-        "items": {
-          "$ref": "common.schema.json#/definitions/all_trait"
-        }
-      },
-      "random_trait_constraint": {
-        "description": "Constrains the thought to only happen if r_c has a specific trait.",
-        "type": "array",
-        "items": {
-          "$ref": "common.schema.json#/definitions/all_trait"
-        }
-      },
-      "main_skill_constraint": {
-        "description": "Constrains the thought to only happen if m_c has a specific skill.",
-        "type": "array",
-        "items": {
-          "$ref": "common.schema.json#/definitions/skill"
-        }
-      },
-      "random_skill_constraint": {
-        "description": "Constrains the thought to only happen if r_c has a specific skill.",
-        "type": "array",
-        "items": {
-          "$ref": "common.schema.json#/definitions/skill"
-        }
-      },
-      "random_living_status": {
-        "description": "Constrains the thought if r_c has a specific place of death.",
-        "type": "array",
-        "items": {
-          "enum": [
-            "living",
-            "darkforest",
-            "starclan",
-            "unknownresidence"
-          ]
-        }
-      },
-      "random_outside_status": {
-        "description": "Constrains the thought if r_c has a specific outside role.",
-        "type": "array",
-        "items": {
-          "enum": [
-            "lost",
-            "outside",
-            "clancat"
-          ]
-        }
-      }
+      ],
+      "title": "IllnessInjuryAny"
     },
-    "required": ["id", "thoughts"]
-  }
+    "PermConditionAny": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/PermCondition"
+        },
+        {
+          "const": "any",
+          "type": "string"
+        }
+      ],
+      "title": "PermConditionAny"
+    },
+    "PermConditions": {
+      "properties": {
+        "m_c": {
+          "items": {
+            "$ref": "#/$defs/PermConditionAny"
+          },
+          "title": "M C",
+          "type": "array"
+        },
+        "r_c": {
+          "items": {
+            "$ref": "#/$defs/PermConditionAny"
+          },
+          "title": "R C",
+          "type": "array"
+        },
+        "born_with": {
+          "$ref": "#/$defs/BornWith",
+          "description": "Used to determine whether or not the given cat has this condition from birth. Only use if the cat must have it from birth, or must not have it from birth (omit value if either is suitable).",
+          "title": "Born With"
+        }
+      },
+      "title": "PermConditions",
+      "type": "object"
+    },
+    "RandomLivingStatus": {
+      "enum": [
+        "living",
+        "darkforest",
+        "starclan",
+        "unknownresidence"
+      ],
+      "title": "RandomLivingStatus",
+      "type": "string"
+    },
+    "RandomOutsideStatus": {
+      "enum": [
+        "lost",
+        "outside",
+        "clancat"
+      ],
+      "title": "RandomOutsideStatus",
+      "type": "string"
+    },
+    "RelationshipConstraint": {
+      "enum": [
+        "siblings",
+        "not_siblings",
+        "littermates",
+        "not_littermates",
+        "mates",
+        "mates_with_pl",
+        "not_mates",
+        "parent/child",
+        "not_parent",
+        "child/parent",
+        "not_child",
+        "mentor/app",
+        "not_mentor",
+        "app/mentor",
+        "not_app",
+        "strangers"
+      ],
+      "title": "RelationshipConstraint",
+      "type": "string"
+    },
+    "StatusAny": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/Status"
+        },
+        {
+          "const": "any",
+          "type": "string"
+        }
+      ],
+      "title": "StatusAny"
+    },
+    "ThoughtSchemaItem": {
+      "properties": {
+        "id": {
+          "description": "Separates the thoughts into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
+          "title": "Id",
+          "type": "string"
+        },
+        "biome": {
+          "description": "Constrains the thought to only occur if a player chooses a specific biome.",
+          "items": {
+            "$ref": "#/$defs/Biome"
+          },
+          "title": "Biome",
+          "type": "array"
+        },
+        "season": {
+          "description": "Constrains the thought to only occur once the Clan is in a specific season.",
+          "items": {
+            "$ref": "common.schema.json#/$defs/Season"
+          },
+          "title": "Season",
+          "type": "array"
+        },
+        "camp": {
+          "description": "Constrains the thought to only occur if a specific camp type is chosen.",
+          "items": {
+            "$ref": "#/$defs/Camp"
+          },
+          "title": "Camp",
+          "type": "array"
+        },
+        "thoughts": {
+          "description": "List of the text that will be displayed in-game as thoughts.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Thoughts",
+          "type": "array"
+        },
+        "has_injuries": {
+          "$ref": "#/$defs/HasInjuries",
+          "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury). Can also use \"any\" to allow the thought to occur if the cat has any illness or injury.",
+          "title": "Has Injuries"
+        },
+        "perm_conditions": {
+          "$ref": "#/$defs/PermConditions",
+          "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain permanent condition. Can also use \"any\" to allow the thought to occur if the cat has any permanent condition.",
+          "title": "Perm Conditions"
+        },
+        "relationship_constraint": {
+          "description": "Constrains the thought to only occur if m_c and r_c fulfill the tag requirements.",
+          "items": {
+            "$ref": "#/$defs/RelationshipConstraint"
+          },
+          "title": "Relationship Constraint",
+          "type": "array"
+        },
+        "main_backstory_constraint": {
+          "description": "Constrains the thought to only occur if m_c has a certain backstory.",
+          "items": {
+            "$ref": "common.schema.json#/$defs/Backstory"
+          },
+          "title": "Main Backstory Constraint",
+          "type": "array"
+        },
+        "random_backstory_constraint": {
+          "description": "Constrains the thought to only occur if r_c has a certain backstory.",
+          "items": {
+            "$ref": "common.schema.json#/$defs/Backstory"
+          },
+          "title": "Random Backstory Constraint",
+          "type": "array"
+        },
+        "main_status_constraint": {
+          "description": "Constrains the thought to only happen if m_c is in a certain role.",
+          "items": {
+            "$ref": "#/$defs/StatusAny"
+          },
+          "title": "Main Status Constraint",
+          "type": "array"
+        },
+        "random_status_constraint": {
+          "description": "Constrains the thought to only happen if r_c is in a certain role.",
+          "items": {
+            "$ref": "#/$defs/StatusAny"
+          },
+          "title": "Random Status Constraint",
+          "type": "array"
+        },
+        "main_age_constraint": {
+          "description": "Constrains the thought to only happen if m_c is within a certain age group.",
+          "items": {
+            "$ref": "#/$defs/CatAge"
+          },
+          "title": "Main Age Constraint",
+          "type": "array"
+        },
+        "random_age_constraint": {
+          "description": "Constrains the thought to only happen if r_c is within a certain age group.",
+          "items": {
+            "$ref": "#/$defs/CatAge"
+          },
+          "title": "Random Age Constraint",
+          "type": "array"
+        },
+        "main_trait_constraint": {
+          "description": "Constrains the thought to only happen if m_c has a specific trait.",
+          "items": {
+            "$ref": "common.schema.json#/$defs/AllTrait"
+          },
+          "title": "Main Trait Constraint",
+          "type": "array"
+        },
+        "random_trait_constraint": {
+          "description": "Constrains the thought to only happen if r_c has a specific trait.",
+          "items": {
+            "$ref": "common.schema.json#/$defs/AllTrait"
+          },
+          "title": "Random Trait Constraint",
+          "type": "array"
+        },
+        "main_skill_constraint": {
+          "description": "Constrains the thought to only happen if m_c has a specific skill.",
+          "items": {
+            "$ref": "common.schema.json#/$defs/Skill"
+          },
+          "title": "Main Skill Constraint",
+          "type": "array"
+        },
+        "random_skill_constraint": {
+          "description": "Constrains the thought to only happen if r_c has a specific skill.",
+          "items": {
+            "$ref": "common.schema.json#/$defs/Skill"
+          },
+          "title": "Random Skill Constraint",
+          "type": "array"
+        },
+        "random_living_status": {
+          "description": "Constrains the thought if r_c has a specific place of death.",
+          "items": {
+            "$ref": "#/$defs/RandomLivingStatus"
+          },
+          "title": "Random Living Status",
+          "type": "array"
+        },
+        "random_outside_status": {
+          "description": "Constrains the thought if r_c has a specific outside role.",
+          "items": {
+            "$ref": "#/$defs/RandomOutsideStatus"
+          },
+          "title": "Random Outside Status",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "thoughts"
+      ],
+      "title": "ThoughtSchemaItem",
+      "type": "object"
+    }
+  },
+  "description": "Thoughts in Clan Generator.",
+  "items": {
+    "$ref": "#/$defs/ThoughtSchemaItem"
+  },
+  "title": "ThoughtSchema",
+  "type": "array"
 }

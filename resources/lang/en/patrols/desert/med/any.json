@@ -241,25 +241,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
         "frequency": 4,
@@ -436,7 +420,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
+                    "death": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
                 },
                 "relationships": [
                     {
@@ -3288,31 +3272,15 @@
             "herb_gathering"
         ],
         "tags": [
-            "all_mentored"
+            "app1_mentored"
         ],
         "patrol_art": "med_general_intro",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
         "frequency": 4,

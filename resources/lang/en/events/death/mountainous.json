@@ -15,8 +15,7 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "reg_death": "m_c was buried alive in an avalanche.",
-                "lead_death": "{VERB/m_c/were/was} buried alive in an avalanche"
+                "death": "m_c was buried alive in an avalanche."
             }
         ]
     },
@@ -35,7 +34,7 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "reg_death": "m_c was eaten by a mountain weasel when {PRONOUN/m_c/subject} tried to sneak out of camp."
+                "death": "m_c was eaten by a mountain weasel when {PRONOUN/m_c/subject} tried to sneak out of camp."
             }
         ]
     }
