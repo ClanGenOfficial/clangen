@@ -1237,7 +1237,7 @@
                     "amount": 3,
                     "log":
                     {
-                        "cats_from": "from_cat hears about to_cat's daring escape from a Twoleg nest."
+                        "cats_from": "from_cat heard about to_cat's daring escape from a Twoleg nest."
                     }
                 }
             ]
