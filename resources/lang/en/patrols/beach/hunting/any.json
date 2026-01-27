@@ -1573,7 +1573,7 @@
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": ["comfort"],
-                        "amount": -5,
+                        "amount": -15,
                         "log": {
                             "cats_from": "from_cat was with to_cat when {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} taken by Twolegs and blamed {PRONOUN/from_cat/self}."
                         }
