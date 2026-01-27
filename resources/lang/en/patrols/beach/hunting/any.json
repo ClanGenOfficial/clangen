@@ -1237,7 +1237,7 @@
                     "amount": 3,
                     "log":
                     {
-                        "cats_from": "from_cat hears about to_cat's daring escape from a Twoleg nest."
+                        "cats_from": "from_cat heard about to_cat's daring escape from a Twoleg nest."
                     }
                 }
             ]
@@ -1573,7 +1573,7 @@
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": ["comfort"],
-                        "amount": -5,
+                        "amount": -15,
                         "log": {
                             "cats_from": "from_cat was with to_cat when {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} taken by Twolegs and blamed {PRONOUN/from_cat/self}."
                         }
@@ -1742,7 +1742,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["comfort"],
-                        "amount": -10,
+                        "amount": -15,
                         "log": {
                             "cats_from": "from_cat was with to_cat when {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} taken by Twolegs and blamed {PRONOUN/from_cat/self}."
                         }
