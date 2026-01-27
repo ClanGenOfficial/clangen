@@ -104,7 +104,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c tries to hide within the water, but {PRONOUN/r_c/object} can't quite make {PRONOUN/r_c/self} still and quiet enough to avoid detection.",
+                "text": "r_c tries to hide within the water, but {PRONOUN/r_c/subject} can't quite make {PRONOUN/r_c/self} still and quiet enough to avoid detection.",
                 "exp": 0,
                 "frequency": 4
             },
