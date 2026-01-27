@@ -87,7 +87,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c nods, and pads beside r_c as they hunt. {PRONOUN/s_c/subject/CAP} don't know if it was a vision from StarClan, but {PRONOUN/s_c/subject} felt flashes of r_c's dreams, dream_list, and s_c isn't going to leave r_c alone to figure it out {PRONOUN/r_c/self}.",
+                "text": "s_c nods, and pads beside r_c as they hunt. {PRONOUN/s_c/subject/CAP} don't know if it was a vision from StarClan, but {PRONOUN/s_c/subject} felt flashes of r_c's dreams - a feeling of dream_list - and s_c isn't going to leave r_c alone to figure it out {PRONOUN/r_c/self}.",
                 "exp": 20,
                 "stat_skill": [
                     "DREAM,1"
