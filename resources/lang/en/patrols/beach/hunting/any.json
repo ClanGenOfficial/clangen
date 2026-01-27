@@ -4556,10 +4556,10 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -4868,13 +4868,44 @@
                         ],
                         "mutual": false,
                         "values": [
+                            "comfort"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was embarrassed when to_cat had to scold {PRONOUN/from_cat/object} into taking a stingray seriously."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": false,
+                        "values": [
                             "trust",
-                            "respect",
-                            "like"
+                            "respect"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "from_cat appreciated to_cat warned {PRONOUN/from_cat/object} to be careful around a stingray."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat wasn't happy with to_cat for mocking a stingray."
                         }
                     }
                 ],
