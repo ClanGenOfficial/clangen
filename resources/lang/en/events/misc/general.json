@@ -10370,7 +10370,7 @@
     "sub_type": ["failed_murder"],
     "tags": [],
     "frequency": 2,
-    "event_text": "m_c was seen speaking to n_c:0 on the border. n_c:0 later attacked r_c's patrol, and though {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} driven off, r_c was injured and can't shake the feeling n_c:0 was targeting {PRONOUN/r_c/object}.",
+    "event_text": "m_c was seen speaking to n_c:0 on the border. n_c:0 later attacked r_c's patrol, and though {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} driven off, r_c was injured and couldn't shake the feeling n_c:0 was targeting {PRONOUN/r_c/object}.",
     "m_c": {
         "age": ["young adult", "adult", "senior adult"]
     },
@@ -10387,7 +10387,7 @@
             "injuries": ["cat bite"]
         }
     ],
-    "history:": [
+    "history": [
         {
             "cats": ["r_c"],
             "scar": "r_c was scarred after a rogue targeted {PRONOUN/r_c/object} in a fight.",
@@ -10403,6 +10403,16 @@
             "amount": 10,
             "log": {
                 "cats_from": "from_cat hired to_cat to kill r_c."
+            }
+        },
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like"],
+            "amount": -20,
+            "log": {
+                "cats_from": "to_cat seemed to be targeting from_cat in an attack on a c_n patrol."
             }
         }
     ]
