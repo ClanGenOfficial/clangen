@@ -2514,7 +2514,7 @@
         "success_outcomes": [
             {
                 "min_max_status": {
-                    "normal adult": [4, 6]
+                    "normal adult": [3, 6]
                 },
                 "text": "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
                 "exp": 20,
@@ -2524,10 +2524,11 @@
                 "frequency": 4
             },
             {
-                "text": "They continue hunting undetected.",
+                "min_max_status": {"normal adult": [2, 2]},
+                "text": "p_l stands guard while r_c hunts. When p_l sees a Twoleg edging toward r_c, {PRONOUN/p_l/subject} {VERB/p_l/signal/signals} to r_c and {VERB/p_l/leads/leads} the patrol back to camp.",
                 "exp": 20,
                 "prey": [
-                    "medium"
+                    "small"
                 ],
                 "frequency": 4
             },

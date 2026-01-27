@@ -987,7 +987,7 @@
         "success_outcomes": [
             {
                 "min_max_status": {
-                    "normal adult": [4, 6]
+                    "normal adult": [3, 6]
                 },
                 "text": "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
                 "exp": 20,
@@ -997,7 +997,8 @@
                 "frequency": 4
             },
             {
-                "text": "They continue hunting undetected.",
+                "min_max_status": {"normal adult": [2, 2]},
+                "text": "p_l stands guard while r_c hunts. When p_l sees a Twoleg edging toward r_c, {PRONOUN/p_l/subject} {VERB/p_l/signal/signals} to r_c and {VERB/p_l/leads/leads} the patrol back to camp.",
                 "exp": 20,
                 "prey": [
                     "small"
@@ -1859,9 +1860,6 @@
         "patrol_art": "bch_hunt_gonetwolegtrap",
         "min_cats": 2,
         "max_cats": 6,
-        "min_max_status": {
-            "deputy": [-1, -1]
-        },
         "frequency": 2,
         "intro_text": "The smell of food lures r_c into what looks like a tunnel under some recently disturbed sand.",
         "decline_text": "Turning their nose up at the temptation, the patrol continues on their way.",
@@ -1886,6 +1884,7 @@
                 "frequency": 4
             },
             {
+                "min_max_status": {"deputy": [-1, -1]},
                 "text": "Something isn't right. Nervously pawing at the sand, s_c thinks that the smell is too good to be true. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} it, convincing the patrol to return to camp and report it to the deputy instead.",
                 "exp": 20,
                 "stat_trait": [
