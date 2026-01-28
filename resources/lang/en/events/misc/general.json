@@ -207,7 +207,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "to_cat questioned from_cat about mur_c's death, and from_cat addmitted the truth. {PRONOUN/from_cat/subject/CAP} feared what to_cat might do with the information."
+                    "cats_from": "to_cat questioned from_cat about mur_c's death, and from_cat admitted the truth. {PRONOUN/from_cat/subject/CAP} feared what to_cat might do with the information."
                 }
             }
         ]
@@ -414,7 +414,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "to_cat was the one to accuse from_cat of mur_c's murder."
+                    "cats_from": "to_cat accused from_cat of mur_c's murder."
                 }
             }
         ]
@@ -747,7 +747,7 @@
                 ],
                 "amount": -40,
                 "log": {
-                    "cats_from": "from_cat overheard to_cat reliving {PRONOUN/to_cat/poss} murder of mur_c in PPRONOUN/to_cat/poss} dream."
+                    "cats_from": "from_cat overheard to_cat reliving {PRONOUN/to_cat/poss} murder of mur_c in {PRONOUN/to_cat/poss} dream."
                 }
             }
         ]
@@ -1902,7 +1902,7 @@
                 "amount": 3,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was lightly impressed by to_cat's dexterity when {PRONOUN/to_cat/object} slipped."
+                    "cats_from": "from_cat noticed to_cat's dexterity when {PRONOUN/to_cat/object} slipped."
                 }
             }
         ]
