@@ -528,7 +528,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             }
         ]
@@ -597,7 +597,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             }
         ]
@@ -632,7 +632,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             }
         ]
@@ -737,7 +737,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             }
         ]
@@ -772,7 +772,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             }
         ]
@@ -876,7 +876,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             }
         ]
@@ -952,7 +952,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             },
             {
@@ -998,7 +998,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             },
             {
@@ -1044,7 +1044,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             },
             {
@@ -1092,7 +1092,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "m_c found n_c:0 and was the one to bring {PRONOUN/n_c:0/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             },
             {
