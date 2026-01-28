@@ -2418,8 +2418,7 @@
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
-                    "reg_death": "m_c fell in battle with a fox.",
-                    "lead_death": "died in battle with a fox"
+                    "death": "m_c fell in battle with a fox."
                 },
                 "relationships": [
                     {
@@ -2457,8 +2456,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
-                    "reg_death": "m_c fell in battle with a fox.",
-                    "lead_death": "died in battle with a fox"
+                    "death": "m_c fell in battle with a fox."
                 },
                 "relationships": [
                     {
@@ -2487,8 +2485,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
-                    "reg_death": "m_c fell in battle with a fox.",
-                    "lead_death": "died in battle with a fox"
+                    "death": "m_c fell in battle with a fox."
                 },
                 "relationships": [
                     {
