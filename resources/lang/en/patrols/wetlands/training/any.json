@@ -311,7 +311,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was angry when to_cat blamed {PRONOUN/from_cat/object} for falling into the water on patrol when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} knocked in by a Twoleg's wake."
+                            "cats_from": "from_cat was angry that to_cat blamed {PRONOUN/from_cat/object} for falling into the water on patrol when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} knocked in by a Twoleg's wake."
                         }
                     },
                     {
