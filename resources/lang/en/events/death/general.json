@@ -49,20 +49,6 @@
                 "death": "m_c was secretly murdered by r_c."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -135,20 +121,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -226,20 +198,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -320,20 +278,6 @@
                 "death": "m_c was secretly murdered by r_c, who made the death look accidental."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -404,21 +348,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} deathberries."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "comfort"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -496,21 +425,6 @@
                 "death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} foxglove seeds."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "comfort"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -584,21 +498,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} nightshade berries."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "comfort"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -678,21 +577,6 @@
                 "death": "m_c was murdered by r_c, who fed {PRONOUN/m_c/object} water hemlock."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "comfort"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -766,21 +650,6 @@
                     "m_c"
                 ],
                 "death": "m_c was murdered by r_c, who purposefully fed {PRONOUN/m_c/object} the wrong herbs."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "comfort"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -928,6 +797,21 @@
                     "m_c"
                 ],
                 "death": "m_c was killed by a snake while saving a kit."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect"
+                ],
+                "amount": 40,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from a snake but was bitten in the process."
+                }
             }
         ]
     },
@@ -1078,29 +962,17 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
                 "values": [
                     "like",
                     "respect"
                 ],
-                "amount": 15
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "trust"
-                ],
-                "amount": 25
+                "amount": 40,
+                "log": {
+                    "cats_from": "to_cat died protecting from_cat from enemy warriors in the nursery."
+                }
             }
         ],
         "other_clan": {
@@ -1120,7 +992,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c was burnt alive while trying to save r_c from a fire.",
+        "event_text": "m_c was burned alive while trying to save r_c from a fire.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -1164,18 +1036,17 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
                 "values": [
                     "like",
-                    "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 40,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from a fire but was burned alive in the process."
+                }
             }
         ]
     },
@@ -1581,18 +1452,17 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
                 "values": [
                     "like",
-                    "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 40,
+                "log": {
+                    "cats_from": "to_cat sacrificed {PRONOUN/to_cat/poss} life for from_cat in a battle against o_c_n."
+                }
             }
         ],
         "other_clan": {
@@ -1643,18 +1513,17 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
                 "values": [
                     "like",
-                    "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 40,
+                "log": {
+                    "cats_from": "to_cat sacrificed {PRONOUN/to_cat/poss} life for from_cat in a battle against o_c_n."
+                }
             }
         ],
         "other_clan": {
@@ -1705,18 +1574,17 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
                 "values": [
                     "like",
-                    "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 40,
+                "log": {
+                    "cats_from": "to_cat sacrificed {PRONOUN/to_cat/poss} life for from_cat in a battle against o_c_n."
+                }
             }
         ],
         "other_clan": {
@@ -1770,18 +1638,17 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
                 "values": [
                     "like",
-                    "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 40,
+                "log": {
+                    "cats_from": "to_cat sacrificed {PRONOUN/to_cat/poss} life for from_cat in a o_c_n ambush."
+                }
             }
         ],
         "other_clan": {
@@ -2116,6 +1983,18 @@
                 ],
                 "death": "This cat died from old age."
             }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["high_social"],
+                "cats_to": ["r_c", "m_c"],
+                "values": ["like", "comfort"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was touched by how deeply r_c and m_c loved each other."
+                }
+            }
         ]
     },
     {
@@ -2201,22 +2080,6 @@
                 "death": "m_c was murdered by r_c."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -2292,22 +2155,6 @@
                 "death": "m_c was secretly murdered by r_c."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -2370,22 +2217,6 @@
                     "m_c"
                 ],
                 "death": "m_c {VERB/m_c/were/was} pushed into a ravine by r_c."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -2467,22 +2298,6 @@
                     "m_c"
                 ],
                 "death": "m_c was lured onto thin ice by r_c, resulting in {PRONOUN/m_c/poss} death."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -2912,16 +2727,20 @@
         "relationships": [
             {
                 "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
                     "m_c"
                 ],
-                "values": [
-                    "trust"
+                "cats_to": [
+                    "r_c"
                 ],
-                "amount": -15,
-                "mutual": false
+                "values": [
+                    "trust",
+                    "like"
+                ],
+                "amount": -30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was accidentally killed by to_cat in battle."
+                }
             },
             {
                 "cats_from": [
@@ -2932,10 +2751,12 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "trust",
-                    "comfort"
+                    "trust"
                 ],
-                "amount": -10
+                "amount": -15,
+                "log": {
+                    "cats_from": "from_cat became suspicious of to_cat when {PRONOUN/to_cat/subject} claimed to have killed m_c in battle by accident."
+                }
             }
         ],
         "other_clan": {
@@ -2998,7 +2819,19 @@
                 "ally"
             ],
             "changed": 5
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat died trying to save o_c_n's medicine cat."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_death_ockill_any1",
@@ -3467,22 +3300,6 @@
                 "death": "m_c was pushed off a cliff by r_c."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -3585,6 +3402,20 @@
                 "RUNNER,2"
             ]
         },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "from_cat failed to save to_cat from a hawk."
+                }
+            }
+        ],
         "history": [
             {
                 "cats": [
@@ -3663,7 +3494,10 @@
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat died defending from_cat from a hawk."
+                }
             }
         ]
     },
@@ -4151,22 +3985,6 @@
                 "death": "m_c was killed in battle training with r_c."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -4231,22 +4049,6 @@
                     "m_c"
                 ],
                 "death": "m_c ate deathberries and succumbed to the poison."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -4318,22 +4120,6 @@
                     "m_c"
                 ],
                 "death": "m_c drowned in a stream while r_c watched."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -4530,8 +4316,11 @@
                     "trust",
                     "respect"
                 ],
-                "amount": 15,
-                "mutual": false
+                "amount": 30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat was killed by o_c_n while trying to drag from_cat out of battle, and from_cat will always remember {PRONOUN/to_cat/poss} sacrifice."
+                }
             }
         ],
         "other_clan": {
@@ -4577,6 +4366,18 @@
                     "m_c"
                 ],
                 "death": "m_c died of greencough."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["high_stable"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat will always remember that to_cat gave {PRONOUN/to_cat/poss} life to care for {PRONOUN/to_cat/poss} Clanmates during a greencough outbreak."
+                }
             }
         ]
     },
@@ -4916,6 +4717,18 @@
                 ],
                 "death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} struck by lightning."
             }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["low_stable"],
+                "cats_to": ["m_c"],
+                "values": ["trust", "comfort"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat suspects that to_cat was struck down by a higher power."
+                }
+            }
         ]
     },
     {
@@ -5220,11 +5033,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat died defending from_cat from a dog, and from_cat will always remember {PRONOUN/to_cat/poss} sacrifice."
+                }
             }
         ]
     },
@@ -5291,11 +5106,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat died defending from_cat from a badger, and from_cat will always remember {PRONOUN/to_cat/poss} sacrifice."
+                }
             }
         ]
     },
@@ -5363,11 +5180,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat died defending from_cat from a fox, and from_cat will always remember {PRONOUN/to_cat/poss} sacrifice."
+                }
             }
         ]
     },
@@ -5429,11 +5248,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat died saving from_cat from drowning, and from_cat will always remember {PRONOUN/to_cat/poss} sacrifice."
+                }
             }
         ]
     },
@@ -5495,11 +5316,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat died saving from_cat from a monster, and from_cat will always remember {PRONOUN/to_cat/poss} sacrifice."
+                }
             }
         ]
     },
@@ -5563,11 +5386,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat died saving from_cat from a snake, and from_cat will always remember {PRONOUN/to_cat/poss} sacrifice."
+                }
             }
         ]
     },
@@ -5578,6 +5403,9 @@
         ],
         "season": [
             "any"
+        ],
+        "tags": [
+            "clan:kits"
         ],
         "frequency": 4,
         "event_text": "m_c was killed defending the kits during a o_c_n raid.",
@@ -5621,7 +5449,19 @@
                 "hostile"
             ],
             "changed": -5
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_stable"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat will always remember that to_cat gave {PRONOUN/to_cat/poss} life to save kits from o_c_n warriors."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_death_ockill_anylead2",
@@ -5695,11 +5535,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat died defending from_cat from o_c_n warriors, and from_cat will always remember {PRONOUN/to_cat/poss} sacrifice."
+                }
             }
         ],
         "other_clan": {
@@ -5880,7 +5722,7 @@
             "all_lives"
         ],
         "frequency": 2,
-        "event_text": "m_c was brutally attacked by a rogue, and lost all of {PRONOUN/m_c/poss} lives.",
+        "event_text": "m_c was brutally attacked by a rogue and lost all of {PRONOUN/m_c/poss} lives.",
         "m_c": {
             "status": [
                 "leader"
@@ -5943,7 +5785,7 @@
             "no_body"
         ],
         "frequency": 4,
-        "event_text": "m_c was burnt alive while trying to save {PRONOUN/m_c/poss} Clanmates from a fire.",
+        "event_text": "m_c was burned alive while trying to save {PRONOUN/m_c/poss} Clanmates from a fire.",
         "m_c": {
             "status": [
                 "leader"
@@ -5967,6 +5809,23 @@
                     "m_c"
                 ],
                 "death": "m_c was killed in a fire trying to save {PRONOUN/m_c/poss} Clanmates."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["high_stable"],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "like",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 30,
+                "log": {
+                    "cats_from": "from_cat will always remember how to_cat gave every last life to save {PRONOUN/to_cat/poss} Clanmates from a fire."
+                }
             }
         ]
     },
@@ -6397,22 +6256,6 @@
                 "death": "m_c was pushed under a monster by r_c."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "like",
-                    "comfort",
-                    "trust"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -6487,20 +6330,6 @@
                 "death": "m_c was murdered by r_c."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -6556,8 +6385,7 @@
                 "deputy"
             ],
             "not_skill": [
-                "CLEVER,2",
-                "CLEVER,3"
+                "CLEVER,2"
             ],
             "trait": [
                 "vengeful",
@@ -6595,9 +6423,13 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect"
+                    "respect",
+                    "comfort"
                 ],
-                "amount": -15
+                "amount": -70,
+                "log": {
+                    "cats_from": "to_cat attempted to take all of from_cat's lives and take {PRONOUN/from_cat/poss} place as leader."
+                }
             }
         ],
         "future_event": [
@@ -6667,22 +6499,6 @@
                 "death": "m_c was indirectly murdered by r_c in a fatal dog attack."
             }
         ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "respect"
-                ],
-                "amount": -15
-            }
-        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -6728,7 +6544,7 @@
             "kit_manipulated"
         ],
         "frequency": 4,
-        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterwards, but no one notices.",
+        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterwards, but no one noticed.",
         "m_c": {
             "age": [
                 "young adult",
@@ -6908,7 +6724,19 @@
                 "hostile"
             ],
             "changed": -3
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust", "respect"],
+                "amount": 30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat gave one of {PRONOUN/to_cat/poss} lives to defend from_cat from enemy warriors in the nursery."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_death_train_any1",
@@ -7108,20 +6936,6 @@
                     "m_c"
                 ],
                 "death": "m_c was killed in battle training with r_c."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like"
-                ],
-                "amount": -15
             }
         ],
         "future_event": [
@@ -7730,16 +7544,19 @@
         "relationships": [
             {
                 "cats_from": [
-                    "clan"
+                    "some_clan"
                 ],
                 "cats_to": [
                     "r_c"
                 ],
                 "mutual": false,
                 "values": [
-                    "like"
+                    "trust"
                 ],
-                "amount": -10
+                "amount": -15,
+                "log": {
+                    "cats_from": "from_cat became suspicious of to_cat when {PRONOUN/to_cat/subject} claimed to have killed m_c in battle by accident."
+                }
             }
         ],
         "other_clan": {
@@ -7821,6 +7638,18 @@
             ],
             "changed": -1
         },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["trust", "like", "comfort"],
+                "amount": -30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat stood by and watched as o_c_n's deputy killed from_cat."
+                }
+            }
+        ],
         "future_event": [
             {
                 "event_type": "misc",
@@ -8072,6 +7901,18 @@
                             "any"
                         ]
                     }
+                }
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["trust", "like", "comfort"],
+                "amount": -30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat attempted to take all of from_cat's lives, but from_cat had forewarning."
                 }
             }
         ]

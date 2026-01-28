@@ -157,6 +157,17 @@
                 ],
                 "death": "m_c was grabbed by an owl, never to be seen again."
             }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort"],
+                "amount": -10,
+                "log": {
+                    "cats_from": "from_cat was too slow to save to_cat from an owl."
+                }
+            }
         ]
     }
 ]
