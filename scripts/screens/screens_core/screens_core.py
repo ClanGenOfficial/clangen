@@ -348,7 +348,7 @@ def run_moon_animation():
     global chosen_moon_phase
     start = chosen_moon_phase
     frames = []
-    for i in range(0, 6):
+    for i in range(0, 6 + randint(0, 3)):
         i += start
         if i > 7:
             i -= 8
