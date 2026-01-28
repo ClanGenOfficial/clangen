@@ -356,8 +356,13 @@ def run_moon_animation():
     global chosen_moon_phase
     start = chosen_moon_phase
     frames = []
-    for i in range(0, 6 + randint(0, 3)):
+    # this collects the indexes for phases used as frames
+    # we run a 5 frame cycle, the num of frames can be randomly increased for variation
+    for i in range(0, 5 + randint(0, 3)):
+        # we set it to the current moon phase so that the animation appears seamless instead of resetting the moon phase back to frame 0
         i += start
+        # this allows the frames to loop
+        # we only have 8 frames (index 7 is last frame) so subtracting 8 brings us back to a valid frame index
         if i > 7:
             i -= 8
         frames.append(i)
@@ -371,6 +376,7 @@ def run_moon_animation():
         )
         time.sleep(0.125)
 
+    # set current phase to the last frame
     chosen_moon_phase = frames[-1]
 
 
