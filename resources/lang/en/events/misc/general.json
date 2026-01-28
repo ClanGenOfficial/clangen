@@ -9761,7 +9761,7 @@
         "relationships": [
             {
             "cats_from": [
-                "high_lawful"
+                "high_lawful", "low_social"
             ],
             "cats_to": [
                 "m_c"
@@ -9770,14 +9770,14 @@
             "values": [
                 "respect", "trust"
             ],
-            "amount": -5,
+            "amount": -10,
             "log": {
                 "cats_from": "from_cat disapproved of to_cat clinging to {PRONOUN/to_cat/poss} friendship with a o_c_n apprentice during the war."
             }
             },
             {
             "cats_from": [
-                "low_lawful"
+                "low_lawful", "high_social"
             ],
             "cats_to": [
                 "m_c"
@@ -9786,7 +9786,7 @@
             "values": [
                 "respect", "like"
             ],
-            "amount": -5,
+            "amount": -10,
             "log": {
                 "cats_from": "from_cat was touched that to_cat kept {PRONOUN/to_cat/poss} friendship with a o_c_n apprentice during the war."
             }
@@ -9830,7 +9830,7 @@
         "relationships": [
             {
                 "cats_from": [
-                "high_lawful"
+                "high_lawful", "low_social"
             ],
                 "cats_to": [
                 "m_c"
@@ -9839,14 +9839,14 @@
                 "values": [
                 "respect", "trust"
             ],
-                "amount": -5,
+                "amount": -10,
                 "log": {
                 "cats_from": "from_cat disapproved of to_cat clinging to {PRONOUN/to_cat/poss} friendship with a o_c_n apprentice during the war."
             }
             },
             {
             "cats_from": [
-                "low_lawful"
+                "low_lawful", "high_social"
             ],
             "cats_to": [
                 "m_c"
@@ -9855,7 +9855,7 @@
             "values": [
                 "respect", "like"
             ],
-            "amount": -5,
+            "amount": 10,
             "log": {
                 "cats_from": "from_cat was touched that to_cat kept {PRONOUN/to_cat/poss} friendship with a o_c_n apprentice during the war."
             }
@@ -9927,7 +9927,7 @@
         "relationships": [
             {
             "cats_from": [
-                "high_lawful"
+                "high_lawful", "low_social"
             ],
             "cats_to": [
                 "m_c"
@@ -9936,14 +9936,14 @@
             "values": [
                 "respect", "trust"
             ],
-            "amount": -5,
+            "amount": -10,
             "log": {
                 "cats_from": "from_cat disapproved of to_cat clinging to {PRONOUN/to_cat/poss} friendship with a o_c_n apprentice during the war."
             }
             },
             {
             "cats_from": [
-                "low_lawful"
+                "low_lawful", "high_social"
             ],
             "cats_to": [
                 "m_c"
@@ -9952,7 +9952,7 @@
             "values": [
                 "respect", "like"
             ],
-            "amount": -5,
+            "amount": 10,
             "log": {
                 "cats_from": "from_cat was touched that to_cat kept {PRONOUN/to_cat/poss} friendship with a o_c_n apprentice during the war."
             }
