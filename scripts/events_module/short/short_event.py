@@ -275,7 +275,7 @@ class ShortEvent:
                 for group in change.get("log", []):
                     change["log"][group] = event_text_adjust(
                         Cat,
-                        group,
+                        change["log"][group],
                         main_cat=self.main_cat,
                         random_cat=self.random_cat,
                         victim_cat=self.victim_cat,
