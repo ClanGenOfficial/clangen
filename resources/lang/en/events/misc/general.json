@@ -5705,7 +5705,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat was embarrassed but grateful that to_cat helped {PRONOUN/from_cat/object} sort our {PRONOUN/from_cat/poss} feelings for a Clanmate."
+                    "cats_from": "from_cat was embarrassed but grateful that to_cat helped {PRONOUN/from_cat/object} sort out {PRONOUN/from_cat/poss} feelings for a Clanmate."
                 }
             }
         ]
@@ -6203,7 +6203,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from an ambush, using {PRONOUN/to_cat/poss} clairvoyancy."
+                    "cats_from": "to_cat's clairvoyance saved from_cat from an ambush."
                 } 
             }
         ]
@@ -7202,7 +7202,7 @@
                 "amount": 20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat recognized how much effort m_c put into appearing as a symbol of strength and unity for c_n during a war."
+                    "cats_from": "from_cat recognized how hard m_c worked to be a symbol of strength and unity for c_n during a war."
                 }
             }
         ]
