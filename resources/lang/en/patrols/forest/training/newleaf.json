@@ -110,7 +110,7 @@
                         "values": ["romance"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "p_l felt embarrassed and stung when r_c rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
+                            "cats_from": "p_l felt embarrassed when r_c rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
                         }
                     },
                     {
