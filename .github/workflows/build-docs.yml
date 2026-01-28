@@ -11,6 +11,7 @@ on:
       - "mkdocs.yml"
       - "pyproject.toml"
       - "uv.lock"
+      - "README.md" # Necessary because of hatchling
 
 jobs:
   build:
