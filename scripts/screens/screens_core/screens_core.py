@@ -36,6 +36,7 @@ dropshadow: Optional[pygame.Surface] = None
 fade: Optional[pygame.Surface] = None
 
 menu_buttons = dict()
+moon_phases = list()
 
 default_game_bgs = None
 default_fullscreen_bgs = None
@@ -130,7 +131,7 @@ def rebuild_top_menu_buttons():
     )
     if mode != "classic":
         menu_buttons["supplies"] = UIDropDown(
-            relative_rect=ui_scale(pygame.Rect((0, 60), (88, 30))),
+            relative_rect=pygame.Rect((0, 60), (88, 30)),
             parent_text="screens.core.supplies",
             item_list=["screens.core.freshkill", "screens.core.herbs"],
             parent_style=ButtonStyles.MENU_MIDDLE,
@@ -145,7 +146,7 @@ def rebuild_top_menu_buttons():
         prev_element = menu_buttons["events"]
 
     menu_buttons["dens"] = UIDropDown(
-        ui_scale(pygame.Rect((0, 60), (58, 30))),
+        pygame.Rect((0, 60), (58, 30)),
         "screens.core.dens",
         item_list=[
             "screens.core.leader_den",
@@ -258,6 +259,9 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
     :param change_moon: Set True if the moon phase image should be changed.
     :param visible: Set True if the UI elements should be created visible. If set to False, they will be created invisibly and will need to be manually made visible.
     """
+    if not moon_phases:
+        load_moon_phases()
+
     if game.clan:
         season = game.clan.current_season.casefold().replace("-", "")
         clan_age = game.clan.age
@@ -310,6 +314,19 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
         starting_height=5,
     )
     menu_buttons["season_indicator"].disable()
+
+
+def load_moon_phases():
+    global moon_phases
+
+    for i in range(1, 9):
+        moon_phases.append(
+            pygame.image.load(f"resources/images/moon_phase{i}.png").convert_alpha()
+        )
+
+
+def run_moon_animation():
+    pass
 
 
 def rebuild_mute(location: str):
