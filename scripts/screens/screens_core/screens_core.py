@@ -1,4 +1,7 @@
-from random import randint
+import threading
+import time
+from random import randint, choice
+from threading import Thread
 from typing import Optional, Tuple
 
 import i18n
@@ -37,6 +40,8 @@ fade: Optional[pygame.Surface] = None
 
 menu_buttons = dict()
 moon_phases = list()
+chosen_moon_phase = int()
+moon_animation_thread: Optional[Thread] = None
 
 default_game_bgs = None
 default_fullscreen_bgs = None
@@ -259,9 +264,6 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
     :param change_moon: Set True if the moon phase image should be changed.
     :param visible: Set True if the UI elements should be created visible. If set to False, they will be created invisibly and will need to be manually made visible.
     """
-    if not moon_phases:
-        load_moon_phases()
-
     if game.clan:
         season = game.clan.current_season.casefold().replace("-", "")
         clan_age = game.clan.age
@@ -269,21 +271,23 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
         season = "greenleaf"
         clan_age = 0
 
+    if not moon_phases:
+        load_moon_phases()
+
     scale_rect = ui_scale(pygame.Rect((0, 0), (22, 26)))
     scale_rect.bottomright = ui_scale_offset((0, 2))
 
-    if "moon_indicator" in menu_buttons and change_moon:
-        menu_buttons["moon_indicator"].kill()
     if "season_indicator" in menu_buttons:
         menu_buttons["season_indicator"].kill()
 
-    if change_moon or "moon_indicator" not in menu_buttons:
+    if "moon_indicator" not in menu_buttons:
+        global chosen_moon_phase
+        chosen_moon_phase = randint(0, 7)
+
         menu_buttons["moon_indicator"] = pygame_gui.elements.UIImage(
             scale_rect,
             pygame.transform.scale(
-                pygame.image.load(
-                    f"resources/images/moon_phase{randint(1, 8)}.png"
-                ).convert_alpha(),
+                moon_phases[chosen_moon_phase],
                 (22, 26),
             ),
             visible=visible,
@@ -297,6 +301,9 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
             },
             object_id="#moon_indicator",
         )
+
+    if change_moon:
+        start_moon_animation()
 
     menu_buttons["moon_indicator"].set_tooltip(
         i18n.t("general.moon_date", moon=clan_age)
@@ -319,14 +326,44 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
 def load_moon_phases():
     global moon_phases
 
-    for i in range(1, 9):
+    for i in range(0, 8):
         moon_phases.append(
             pygame.image.load(f"resources/images/moon_phase{i}.png").convert_alpha()
         )
 
 
+def start_moon_animation():
+    global moon_animation_thread
+
+    if moon_animation_thread and moon_animation_thread.is_alive():
+        return
+
+    moon_animation_thread = threading.Thread(target=run_moon_animation)
+    moon_animation_thread.daemon = True
+    moon_animation_thread.start()
+
+
 def run_moon_animation():
-    pass
+    """Loops over the moon frames and displays the animation"""
+    global chosen_moon_phase
+    start = chosen_moon_phase
+    frames = []
+    for i in range(0, 6):
+        i += start
+        if i > 7:
+            i -= 8
+        frames.append(i)
+
+    for frame in frames:
+        menu_buttons["moon_indicator"].set_image(
+            pygame.transform.scale(
+                moon_phases[frame],
+                (22, 26),
+            )
+        )
+        time.sleep(0.125)
+
+    chosen_moon_phase = frames[-1]
 
 
 def rebuild_mute(location: str):
