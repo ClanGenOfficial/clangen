@@ -10751,7 +10751,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat's gut feeling warned {PRONOUN/from_cat/object} that to_cat had bad intentions."
+                    "cats_from": "from_cat's gut warned {PRONOUN/from_cat/object} that to_cat had bad intentions."
                 }
             }
         ]
