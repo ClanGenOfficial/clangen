@@ -877,18 +877,17 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": false,
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat bet on which eaglet would take to the wing first."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -898,18 +897,17 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": false,
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat cheered on eaglets together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -919,7 +917,19 @@
             {
                 "text": "It's not app1's thing, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} happy to bask a couple tail lengths away until app2 is done eagle watching.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat learned that to_cat enjoys eagle-watching."
+                        }
+                    }
+                ]
             },
             {
                 "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip. Sudden pain sparks down {PRONOUN/s_c/poss} flank when the other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, though not {PRONOUN/s_c/poss} pelt.",
@@ -951,7 +961,19 @@
                 "history_text": {
                     "scar": "r_c was scarred when another apprentice (violently) saved {PRONOUN/r_c/poss} life from a cliff fall during a youthful adventure."
                 },
-                "frequency": 3
+                "frequency": 3,
+                "relationships": [
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat when {PRONOUN/from_cat/subject} almost fell off a cliff."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -980,31 +1002,17 @@
                 "exp": 30,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1016,50 +1024,21 @@
                     "not_pl_rc"
                 ],
                 "stat_trait": [
-                    "childish",
-                    "playful",
-                    "flamboyant"
+                    "thoughtful", "sincere", "responsible", "calm", "wise", "insecure", "righteous"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1073,48 +1052,38 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "sincere"
+                    "sincere",
+                    "thoughtful",
+                    "careful",
+                    "wise",
+                    "righteous",
+                    "strict"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "comfort", "like"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was touched by to_cat's sympathy for a character in {PRONOUN/from_cat/poss} story."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1128,48 +1097,36 @@
                 "stat_trait": [
                     "bloodthirsty",
                     "arrogant",
-                    "rebellious"
+                    "rebellious",
+                    "vengeful",
+                    "fierce",
+                    "shameless",
+                    "bold",
+                    "daring"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["low_lawful", "patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "values": ["respect", "trust"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat gained a lot of respect for to_cat after hearing {PRONOUN/to_cat/subject} wouldn't hesitate to rebel against an unjust leader."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1182,35 +1139,24 @@
                 ],
                 "stat_trait": [
                     "grumpy",
-                    "gloomy"
+                    "gloomy",
+                    "strict",
+                    "responsible",
+                    "troublesome"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                        }
                     },
                     {
                         "cats_to": [
@@ -1223,7 +1169,22 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "Even though from_cat initially protested the idea of hearing a story on patrol, {PRONOUN/from_cat/subject} enjoyed how to_cat told it."
+                        }
+                    },
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated that to_cat lightened up and was willing to listen to {PRONOUN/from_cat/poss} story on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1237,48 +1198,35 @@
                 "stat_trait": [
                     "fierce",
                     "daring",
-                    "righteous"
+                    "righteous",
+                    "rebellious",
+                    "bloodthirsty",
+                    "ambitious",
+                    "vengeful"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["low_lawful", "patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "values": ["respect", "trust"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat gained a lot of respect for to_cat after hearing {PRONOUN/to_cat/subject} wouldn't hesitate to rebel against an unjust leader."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1292,48 +1240,33 @@
                 "stat_trait": [
                     "thoughtful",
                     "strange",
-                    "calm"
+                    "calm",
+                    "wise",
+                    "sincere"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "values": ["like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was flattered that to_cat took such an interest in {PRONOUN/from_cat/poss} stories."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1367,7 +1300,9 @@
                 "stat_trait": [
                     "troublesome",
                     "oblivious",
-                    "shameless"
+                    "shameless",
+                    "childish",
+                    "bold"
                 ],
                 "relationships": [
                     {
@@ -1382,7 +1317,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was disappointed that to_cat ruined {PRONOUN/from_cat/poss} story by yawning and walking off in the middle of it."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1396,6 +1334,10 @@
                 "stat_trait": [
                     "cold",
                     "bloodthirsty",
+                    "arrogant",
+                    "shameless",
+                    "bold",
+                    "competitive",
                     "arrogant"
                 ],
                 "relationships": [
@@ -1408,9 +1350,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "like",
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was disappointed that to_cat didn't want to hear {PRONOUN/from_cat/poss} story."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1422,7 +1368,7 @@
                     "not_pl_rc"
                 ],
                 "stat_trait": [
-                    "loving",
+                    "compassionate",
                     "faithful",
                     "sincere",
                     "nervous",
@@ -1440,7 +1386,10 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was grateful that to_cat changed the subject after starting to tell an unhappy story."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1468,7 +1417,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was disappointed that to_cat left while {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} telling a story."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1482,7 +1434,8 @@
                 "stat_trait": [
                     "flamboyant",
                     "oblivious",
-                    "shameless"
+                    "shameless",
+                    "bold"
                 ],
                 "relationships": [
                     {
@@ -1497,7 +1450,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was annoyed that to_cat interrupted to finish {PRONOUN/from_cat/poss} story for {PRONOUN/from_cat/object}."
+                        }
                     },
                     {
                         "cats_to": [
@@ -1510,7 +1466,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat loved to_cat's story so much that {PRONOUN/from_cat/subject} couldn't help filling in the ending."
+                        }
                     }
                 ],
                 "frequency": 4
