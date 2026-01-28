@@ -22,18 +22,29 @@
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about how hummingbirds nest in the shadows of eagles' nests."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about how hummingbirds nest in the shadows of eagles' nests."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -43,18 +54,29 @@
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about how hummingbirds nest in the shadows of eagles' nests."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about how hummingbirds nest in the shadows of eagles' nests."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -70,18 +92,29 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how to tell seasons by the hummingbirds' arrival."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how to tell seasons by the hummingbirds' arrival."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -99,18 +132,29 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -122,18 +166,16 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/subject/to_cat} refused to go near an eagle nest."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -143,18 +185,16 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/subject/to_cat} wouldn't take a training session seriously."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -184,18 +224,29 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1", "app2" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about how hummingbirds nest in the shadows of eagles' nests."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1", "app2" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about how hummingbirds nest in the shadows of eagles' nests."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -205,18 +256,29 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1", "app2" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about how hummingbirds nest in the shadows of eagles' nests."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1", "app2" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about how hummingbirds nest in the shadows of eagles' nests."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -232,18 +294,29 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1", "app2" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how to tell seasons by the hummingbirds' arrival."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1", "app2" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how to tell seasons by the hummingbirds' arrival."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -261,18 +334,29 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1", "app2" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1", "app2" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -284,18 +368,28 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/subject/to_cat} refused to go near an eagle nest."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "app2" ],
+                        "mutual": true,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "app2 tried to comfort app1 when {PRONOUN/app1/subject} thought it was unsafe to go near an eagle nest."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -305,18 +399,16 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "app1", "app2" ],
+                        "cats_from": [ "p_l" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/subject/to_cat} wouldn't take a training session seriously."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -346,18 +438,29 @@
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat showed from_cat the greenleaf hummingbirds."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat showed to_cat the greenleaf hummingbirds."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -367,18 +470,29 @@
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how hummingbirds can lead cats to good hunting grounds."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how hummingbirds can lead cats to good hunting grounds."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -394,18 +508,29 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat told from_cat about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat told to_cat about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -423,18 +548,29 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat told from_cat the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat told from_cat the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -446,18 +582,17 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "like",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat was too busy chasing after hummingbirds to listen to from_cat's lesson."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -474,18 +609,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 2],
+            "normal adult": [1, 4]
         },
         "frequency": 4,
         "intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
@@ -497,18 +622,29 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1", "app2" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat showed from_cat the greenleaf hummingbirds."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1", "app2" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat showed to_cat the greenleaf hummingbirds."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -518,18 +654,29 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1", "app2" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how hummingbirds can lead cats to good hunting grounds."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1", "app2" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how hummingbirds can lead cats to good hunting grounds."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -545,18 +692,29 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1", "app2" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat told from_cat about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1", "app2" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat told to_cat about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -574,18 +732,29 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1", "app2" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat told from_cat the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1", "app2" ],
+                        "cats_from": [ "p_l" ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat told from_cat the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -597,18 +766,17 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": [ "app1" ],
+                        "cats_from": [ "p_l", "app1" ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "like",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat was too busy chasing after hummingbirds to listen to p_l's lesson and spoiled the training session."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -625,10 +793,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ]
+            "apprentice": [1, 1]
         },
         "frequency": 4,
         "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
@@ -672,6 +837,18 @@
                             "stomachache"
                         ],
                         "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["high_social"],
+                        "cats_to": ["app1"],
+                        "values": ["like"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat was amused to hear that to_cat hunted and ate a beetle, then got a stomachache from it."
+                        }
                     }
                 ],
                 "frequency": 3
