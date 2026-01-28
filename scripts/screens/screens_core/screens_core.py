@@ -122,9 +122,9 @@ def rebuild_top_menu_buttons():
     menu_buttons = dict()
     # they have to be added individually as some of them rely on others in anchors
     if mode != "classic":
-        x_pos = 217
+        x_pos = 214
     else:
-        x_pos = 261
+        x_pos = 258
     menu_buttons["events"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((x_pos, 60), (82, 30))),
         "screens.core.events",
@@ -150,6 +150,16 @@ def rebuild_top_menu_buttons():
     else:
         prev_element = menu_buttons["events"]
 
+    menu_buttons["cats"] = UISurfaceImageButton(
+        ui_scale(pygame.Rect((0, 60), (58, 30))),
+        "screens.core.cat_list",
+        get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
+        visible=False,
+        object_id="@buttonstyles_menu_middle",
+        starting_height=7,
+        anchors={"left": "left", "left_target": prev_element},
+    )
+
     menu_buttons["dens"] = UIDropDown(
         pygame.Rect((0, 60), (58, 30)),
         "screens.core.dens",
@@ -166,28 +176,20 @@ def rebuild_top_menu_buttons():
         manager=MANAGER,
         object_id="@buttonstyles_menu_middle",
         starting_height=6,
-        anchors={"left": "left", "left_target": prev_element},
+        anchors={"left": "left", "left_target": menu_buttons["cats"]},
         disable_selection=False,
     )
-    menu_buttons["events"].change_layer(menu_buttons["dens"].get_starting_height() + 5)
-    menu_buttons["cats"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((-46, 60), (58, 30))),
-        "screens.core.cat_list",
-        get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
-        visible=False,
-        object_id="@buttonstyles_menu_middle",
-        starting_height=6,
-        anchors={"left": "left", "left_target": menu_buttons["dens"]},
-    )
+    # menu_buttons["events"].change_layer(menu_buttons["dens"].get_starting_height() + 5)
+
     menu_buttons["patrols"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((0, 60), (80, 30))),
+        ui_scale(pygame.Rect((-46, 60), (86, 30))),
         "screens.core.patrol",
-        get_button_dict(ButtonStyles.MENU_RIGHT, (80, 30)),
+        get_button_dict(ButtonStyles.MENU_RIGHT, (86, 30)),
         visible=False,
         manager=MANAGER,
         object_id="#patrol_button",
         starting_height=6,
-        anchors={"left": "left", "left_target": menu_buttons["cats"]},
+        anchors={"left": "left", "left_target": menu_buttons["dens"]},
     )
     menu_buttons["main_menu"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 25), (153, 30))),
@@ -248,7 +250,7 @@ def rebuild_top_menu_buttons():
         starting_height=5,
         anchors={
             "bottom": "bottom",
-            "bottom_target": menu_buttons["back_to_camp"],
+            "bottom_target": menu_buttons["patrols"],
             "centerx": "centerx",
         },
         tool_tip_text="screens.core.header_tooltip",

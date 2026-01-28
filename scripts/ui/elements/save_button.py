@@ -19,11 +19,7 @@ from scripts.utility import ui_scale_dimensions, ui_scale
 
 class UISaveButton:
     DIMENSIONS = (114, 30)
-    SAVE_BUTTONS = get_button_dict(ButtonStyles.SQUOVAL, DIMENSIONS)
-    SAVE_BUTTONS["normal"] = pygame.transform.scale(
-        image_cache.load_image("resources/images/buttons/save_clan.png"),
-        ui_scale_dimensions(DIMENSIONS),
-    )
+    unsaved_state_dict = get_button_dict(ButtonStyles.SQUOVAL, DIMENSIONS)
 
     def __init__(
         self,
@@ -41,10 +37,16 @@ class UISaveButton:
         :param anchors: The anchor dictionary.
         :param visible: The visible state of the button.
         """
+        # this needs to be here to that the scaling is updated properly
+        self.unsaved_state_dict["normal"] = pygame.transform.scale(
+            image_cache.load_image("resources/images/buttons/save_clan.png"),
+            ui_scale_dimensions(self.DIMENSIONS),
+        )
+
         self.unsaved_state = UISurfaceImageButton(
             ui_scale(pygame.Rect(position, self.DIMENSIONS)),
             "buttons.save_clan",
-            self.SAVE_BUTTONS,
+            self.unsaved_state_dict,
             object_id="@buttonstyles_squoval",
             sound_id="save",
             container=container,
