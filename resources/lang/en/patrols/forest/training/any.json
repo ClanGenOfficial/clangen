@@ -360,8 +360,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "reg_death": "m_c lost their life to a badger.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a badger"
+                    "death": "m_c lost their life to a badger."
                 }, 
                 "frequency": 3
             },
