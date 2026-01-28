@@ -127,7 +127,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "from_cat was impressed with the fine warrior {PRONOUN/from_cat/poss} kit to_cat grew into."
+                    "cats_from": "from_cat was impressed by the fine warrior {PRONOUN/from_cat/poss} kit to_cat grew into."
                 }
             }
         ]

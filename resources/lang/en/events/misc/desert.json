@@ -167,7 +167,7 @@
         "values": ["respect", "like"],
         "amount": 3,
         "log": {
-          "cats_from": "from_cat listened to to_cat's stories of far off Clans."
+          "cats_from": "from_cat enjoyed to_cat's stories of far off Clans."
         }
       }
     ]
@@ -195,7 +195,7 @@
         "values": ["respect", "like"],
         "amount": 3,
         "log": {
-          "cats_from": "from_cat listened to to_cat's stories of The Dreaming."
+          "cats_from": "from_cat enjoyed to_cat's stories of The Dreaming."
         }
       }
     ]
@@ -554,7 +554,7 @@
         "values": ["respect", "like"],
         "amount": 3,
         "log": {
-          "cats_from": "from_cat listened to to_cat's stories of The Dreaming."
+          "cats_from": "from_cat enjoyed to_cat's stories of The Dreaming."
         }
       }
     ]
@@ -578,7 +578,7 @@
         "values": ["respect", "like"],
         "amount": 3,
         "log": {
-          "cats_from": "from_cat listened to to_cat's stories of The Dreaming."
+          "cats_from": "from_cat enjoyed to_cat's stories of The Dreaming."
         }
       }
     ]
@@ -913,8 +913,8 @@
         "cats_from": ["m_c"],
         "cats_to": ["n_c:0"],
         "mutual": true,
-        "values": ["respect"],
-        "amount": -10,
+        "values": ["like"],
+        "amount": -5,
         "log": {
           "cats_from": "from_cat found to_cat's scent on a shrub by the border."
         }
