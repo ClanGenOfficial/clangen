@@ -9598,7 +9598,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "Whilst out collecting herbs, m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Their movements are slow and uncoordinated: without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN/m_c/subject} can't. It's just a few pieces of cobweb and a few moments of {PRONOUN/m_c/poss} time... Nobody has to know.",
+        "event_text": "m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN/m_c/subject} can't. It's just a bit of cobweb and a moment of {PRONOUN/m_c/poss} time... Nobody has to know.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -9632,7 +9632,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "Whilst out collecting herbs, m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Their movements are slow and uncoordinated - without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN/m_c/subject} can't. A few berries placed into their jaws with some soothing words... and that's one less o_c_n cat to deal with.",
+        "event_text": "m_c stumbles upon a o_c_n warrior attempting to pack a wound with leaves. Without help, they'll soon be hunting with their ancestors. It would be so easy to just... walk past. But {PRONOUN/m_c/subject} can't. A few berries placed into their jaws with some soothing words... and that's one less o_c_n cat to deal with.",
         "m_c": {
             "status": [
                 "medicine cat",
