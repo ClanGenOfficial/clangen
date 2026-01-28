@@ -280,7 +280,8 @@ class Screens:
 
         # VIEW EVENTS
         if event.ui_element == Screens.menu_buttons["events"]:
-            Screens.menu_buttons["supplies"].close()
+            if Screens.menu_buttons.get("supplies"):
+                Screens.menu_buttons["supplies"].close()
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.EVENTS)
         # SUPPLY DROPDOWN
@@ -311,7 +312,10 @@ class Screens:
             Screens.menu_buttons.get("supplies")
             and event.ui_element == Screens.menu_buttons["dens"].parent_button
         ):
-            if Screens.menu_buttons["supplies"].is_open:
+            if (
+                Screens.menu_buttons.get("supplies")
+                and Screens.menu_buttons["supplies"].is_open
+            ):
                 Screens.menu_buttons["supplies"].close()
         # OPEN LEADER
         elif (
@@ -352,17 +356,20 @@ class Screens:
             Screens.menu_buttons["back_to_camp"],
             Screens.menu_buttons["heading"],
         ):
-            Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
+            if Screens.menu_buttons.get("supplies"):
+                Screens.menu_buttons["supplies"].close()
+                Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.CAMP)
         # VIEW CATS
         elif event.ui_element == Screens.menu_buttons["cats"]:
-            Screens.menu_buttons["supplies"].close()
+            if Screens.menu_buttons.get("supplies"):
+                Screens.menu_buttons["supplies"].close()
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.LIST)
         # PATROL
         elif event.ui_element == Screens.menu_buttons["patrols"]:
-            Screens.menu_buttons["supplies"].close()
+            if Screens.menu_buttons.get("supplies"):
+                Screens.menu_buttons["supplies"].close()
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.PATROL)
         # MAIN MENU
@@ -374,12 +381,14 @@ class Screens:
             )
         # ALLEGIANCES
         elif event.ui_element == Screens.menu_buttons["allegiances"]:
-            Screens.menu_buttons["supplies"].close()
+            if Screens.menu_buttons.get("supplies"):
+                Screens.menu_buttons["supplies"].close()
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.ALLEGIANCES)
         # CLAN SETTINGS
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
-            Screens.menu_buttons["supplies"].close()
+            if Screens.menu_buttons.get("supplies"):
+                Screens.menu_buttons["supplies"].close()
             Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.CLAN_SETTINGS)
 
