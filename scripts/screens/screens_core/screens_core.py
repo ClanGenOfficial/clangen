@@ -326,6 +326,9 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
 
 
 def load_moon_phases():
+    """
+    Loads the images for the moon phases into the moon_phases list
+    """
     global moon_phases
 
     for i in range(0, 8):
@@ -335,6 +338,9 @@ def load_moon_phases():
 
 
 def start_moon_animation():
+    """
+    Starts the moon animation thread. If the thread is already alive, returns without starting a new one.
+    """
     global moon_animation_thread
 
     if moon_animation_thread and moon_animation_thread.is_alive():
