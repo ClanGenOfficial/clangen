@@ -20,6 +20,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from .enums import GameScreen
+from .screens_core.screens_core import rebuild_top_menu_buttons, rebuild_core
 from ..game_structure.game.save_load import read_clans
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.screen_settings import MANAGER
@@ -66,6 +67,8 @@ class SwitchClanScreen(Screens):
                             self.clan_name[self.page][page.index(event.ui_element)],
                             False,
                         )
+                        # rebuild to update menu scheme differences between game modes
+                        rebuild_core()
 
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
