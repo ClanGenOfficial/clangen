@@ -2052,7 +2052,7 @@
                 "exp": 30,
                 "stat_skill": [
                     "HUNTER,2",
-                    "INSIGHT,2"
+                    "INSIGHTFUL,2"
                 ],
                 "can_have_stat": [
                     "r_c"

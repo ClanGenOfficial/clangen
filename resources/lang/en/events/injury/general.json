@@ -59,6 +59,18 @@
                     "bruises"
                 ]
             }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["low_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "like"],
+                "amount": 15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was amused and impressed that m_c managed to sneak out of camp."
+                }
+            }
         ]
     },
     {
@@ -154,6 +166,18 @@
                 "injuries": [
                     "scrapes"
                 ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["low_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "like"],
+                "amount": 15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was amused and impressed that m_c managed to sneak out of camp."
+                }
             }
         ]
     },
@@ -332,7 +356,10 @@
                     "trust",
                     "comfort"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "from_cat had lots of fun play-fighting with to_cat."
+                }
             }
         ]
     },
@@ -432,7 +459,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c spent the day tending to the dens, and might have worked a bit too hard - {PRONOUN/m_c/poss} joints are now quite sore.",
+        "event_text": "m_c spent the day tending to the dens and might have worked a bit too hard - {PRONOUN/m_c/poss} joints are now quite sore.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -479,9 +506,6 @@
             ],
             "status": [
                 "any"
-            ],
-            "skill": [
-                "CAMP,2"
             ]
         },
         "injury": [
@@ -746,7 +770,10 @@
                     "comfort",
                     "like"
                 ],
-                "amount": -20
+                "amount": -20,
+                "log": {
+                    "cats_from": "from_cat tried to break up to_cat's argument with a Clanmate and got a clawed pelt for {PRONOUN/from_cat/poss} trouble."
+                }
             }
         ]
     },
@@ -824,11 +851,12 @@
                 "mutual": false,
                 "values": [
                     "respect",
-                    "trust",
-                    "comfort",
-                    "like"
+                    "trust"
                 ],
-                "amount": 20
+                "amount": 25,
+                "log": {
+                    "cats_from": "to_cat leaped to from_cat's defense when {PRONOUN/to_cat/subject} saw a rogue attacking {PRONOUN/from_cat/object}."
+                }
             },
             {
                 "cats_from": [
@@ -842,7 +870,10 @@
                 "values": [
                     "like"
                 ],
-                "amount": -10
+                "amount": -10,
+                "log": {
+                    "cats_from": "n_c:0 attacked r_c but was fought off by m_c."
+                }
             }
         ],
         "new_cat": [
@@ -929,11 +960,12 @@
                 "mutual": false,
                 "values": [
                     "respect",
-                    "trust",
-                    "comfort",
-                    "like"
+                    "trust"
                 ],
-                "amount": 20
+                "amount": 25,
+                "log": {
+                    "cats_from": "to_cat leaped to from_cat's defense when {PRONOUN/to_cat/subject} saw a dog attacking {PRONOUN/from_cat/object}."
+                }
             }
         ]
     },
@@ -1138,7 +1170,18 @@
                 "hostile"
             ],
             "changed": -3
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_stable", "high_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": -5,
+                "log": {
+                    "cats_from": "from_cat was unimpressed to hear that to_cat impulsively attacked a o_c_n patrol."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_clawwound_anyclankitsmultistatus1",
@@ -1161,7 +1204,6 @@
                 "adolescent",
                 "young adult",
                 "adult",
-                "senior adult",
                 "senior adult"
             ],
             "status": [
@@ -1192,7 +1234,18 @@
                 "hostile"
             ],
             "changed": -3
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_social"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "trust"],
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat saw how fiercely to_cat defended the nursery in a battle with o_c_n."
+                }
+            }
+        ]
     },
     {
         "event_id": "multi_injury_anysprain2",
@@ -1324,12 +1377,13 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat saved from_cat's life when an eagle tried to carry {PRONOUN/from_cat/object} off."
+                }
             }
         ]
     },
@@ -1607,7 +1661,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c had a bad fall while taking a walk through the territory, and comes back to camp quite sore.",
+        "event_text": "m_c had a bad fall while taking a walk through the territory and comes back to camp quite sore.",
         "m_c": {
             "age": [
                 "senior",
@@ -1830,7 +1884,24 @@
                 "values": [
                     "like"
                 ],
-                "amount": -5
+                "amount": -10,
+                "log": {
+                    "cats_from": "from_cat and to_cat got into a fight."
+                }
+            },
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a rogue with only a few bruises."
+                }
             }
         ]
     },
@@ -1852,7 +1923,7 @@
                 "leader"
             ],
             "skill": [
-                "FIGHTER,2"
+                "FIGHTER,3"
             ],
             "trait": [
                 "adventurous",
@@ -1872,6 +1943,22 @@
                 "injuries": [
                     "bruises"
                 ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a fox with only a few bruises."
+                }
             }
         ]
     },
@@ -1913,6 +2000,22 @@
                 "injuries": [
                     "bruises"
                 ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a dog with only a few bruises."
+                }
             }
         ]
     },
@@ -1982,13 +2085,14 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "respect",
+                    "trust"
                 ],
-                "amount": 5,
-                "mutual": false
+                "amount": 25,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from an enemy warrior, and both of them made it out without a scratch."
+                }
             }
         ]
     },
@@ -2056,12 +2160,14 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "respect",
+                    "trust"
                 ],
-                "amount": 10
+                "amount": 25,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from a dog, and both of them made it out without a scratch."
+                }
             }
         ]
     },
@@ -2160,7 +2266,24 @@
                 "values": [
                     "like"
                 ],
-                "amount": -5
+                "amount": -10,
+                "log": {
+                    "cats_from": "from_cat and to_cat got into a fight."
+                }
+            },
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a rogue with only a few scrapes."
+                }
             }
         ]
     },
@@ -2182,7 +2305,7 @@
                 "leader"
             ],
             "skill": [
-                "FIGHTER,2"
+                "FIGHTER,3"
             ],
             "trait": [
                 "adventurous",
@@ -2202,6 +2325,22 @@
                 "injuries": [
                     "scrapes"
                 ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a fox with only a few scrapes."
+                }
             }
         ]
     },
@@ -2269,12 +2408,14 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "respect",
+                    "trust"
                 ],
-                "amount": 5
+                "amount": 25,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from a fox, and both of them made it out with just a few scrapes."
+                }
             }
         ]
     },
@@ -2377,7 +2518,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c saved r_c from a fox, but was hurt.",
+        "event_text": "m_c saved r_c from a fox but was hurt.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -2445,12 +2586,13 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from a fox."
+                }
             }
         ]
     },
@@ -2524,13 +2666,144 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from a fox."
+                }
+            },
+            {
+                "cats_from": [
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat gained a greater respect for to_cat's loyalty when {PRONOUN/to_cat/subject} saved r_c from a fox."
+                }
             }
+        ]
+    },
+    {
+        "event_id": "gen_injury_clawwound_anymultiagemultistatusnotfightermultitraitothercatleader1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c was hurt while protecting the leader, r_c, from a rogue.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy"
+            ],
+            "not_skill": [
+                "FIGHTER,2"
+            ],
+            "trait": [
+                "compassionate",
+                "loving",
+                "responsible",
+                "loyal",
+                "adventurous",
+                "ambitious",
+                "bloodthirsty",
+                "bold",
+                "daring",
+                "fierce",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "claw-wound"
+                ],
+                "scars": [
+                    "SNOUT"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred by a rogue while protecting r_c.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after protecting r_c from a rogue."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "to_cat protected from_cat from a rogue."
+                }
+            },
+            {
+                "cats_from": [
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat gained a greater respect for to_cat's loyalty when {PRONOUN/to_cat/subject} protected r_c from a rogue."
+                }
+            },
+            {
+                "cats_from": [
+                    "n_c:0"
+                ],
+                "cats_to": [
+                    "m_c", "r_c"
+                ],
+                "values": [ "like" ],
+                "amount": 10,
+                "mutual": true,
+                "log": {
+                    "cats_from": "n_c:0 attacked r_c, but m_c fought {PRONOUN/n_c:0/object} off."
+                }
+            }
+        ],
+        "new_cat": [
+            [
+                "meeting",
+                "rogue"
+            ]
         ]
     },
     {
@@ -2604,7 +2877,10 @@
                 "values": [
                     "like"
                 ],
-                "amount": -10
+                "amount": -10,
+                "log": {
+                    "cats_from": "from_cat and to_cat got into a fight."
+                }
             }
         ]
     },
@@ -2741,12 +3017,13 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 20,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from a big dog."
+                }
             }
         ]
     },
@@ -2812,7 +3089,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c saved r_c from a hawk, but was hurt.",
+        "event_text": "m_c saved r_c from a hawk but was hurt.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -2875,111 +3152,16 @@
                 "cats_to": [
                     "m_c"
                 ],
+                "mutual": false,
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 5
+                "amount": 15,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from a hawk."
+                }
             }
-        ]
-    },
-    {
-        "event_id": "gen_injury_clawwound_anymultiagemultistatusnotfightermultitraitothercatleader1",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "frequency": 4,
-        "event_text": "m_c was hurt while protecting the leader, r_c, from a rogue.",
-        "m_c": {
-            "status": [
-                "warrior",
-                "deputy"
-            ],
-            "not_skill": [
-                "FIGHTER,2"
-            ],
-            "trait": [
-                "compassionate",
-                "loving",
-                "responsible",
-                "loyal",
-                "adventurous",
-                "ambitious",
-                "bloodthirsty",
-                "bold",
-                "daring",
-                "fierce",
-                "vengeful"
-            ]
-        },
-        "r_c": {
-            "status": [
-                "leader"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "claw-wound"
-                ],
-                "scars": [
-                    "SNOUT"
-                ]
-            }
-        ],
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "scar": "m_c was scarred by a rogue while protecting r_c.",
-                "death": "m_c died from {PRONOUN/m_c/poss} wounds after protecting r_c from a rogue."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like",
-                    "comfort",
-                    "trust",
-                    "respect"
-                ],
-                "amount": 10
-            },
-            {
-                "cats_from": [
-                    "n_c:0"
-                ],
-                "cats_to": [
-                    "m_c",
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "like"
-                ],
-                "amount": -5
-            }
-        ],
-        "new_cat": [
-            [
-                "meeting",
-                "rogue"
-            ]
         ]
     },
     {
@@ -3047,11 +3229,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was injured during a harsh training exercise led by r_c."
+                }
             }
         ]
     },
@@ -3125,11 +3309,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -15
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was injured by a o_c_n warrior when r_c ordered {PRONOUN/from_cat/object} to cross the border."
+                }
             }
         ],
         "other_clan": {
@@ -3218,11 +3404,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat encouraged a fight between from_cat and a Clanmate, and from_cat ended up injured."
+                }
             }
         ]
     },
@@ -3301,11 +3489,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "While trying to follow r_c's orders, from_cat was injured by a fox."
+                }
             }
         ]
     },
@@ -3382,11 +3572,13 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "While trying to follow r_c's orders, from_cat was injured by a dog."
+                }
             }
         ]
     },
@@ -3618,11 +3810,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -5
+                "amount": -10,
+                "log": {
+                    "cats_from": "to_cat encouraged an unnecessary fight between from_cat and n_c:0, and from_cat was hurt."
+                }
             },
             {
                 "cats_from": [
@@ -3636,7 +3829,10 @@
                 "values": [
                     "like"
                 ],
-                "amount": -15
+                "amount": -15,
+                "log": {
+                    "cats_from": "n_c:0 was attacked by m_c and r_c."
+                }
             }
         ],
         "new_cat": [
@@ -3722,11 +3918,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -5
+                "amount": -10,
+                "log": {
+                    "cats_from": "to_cat encouraged an unnecessary fight between from_cat and an enemy warrior, and from_cat was hurt."
+                }
             }
         ],
         "other_clan": {
@@ -3811,11 +4008,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -5
+                "amount": -10,
+                "log": {
+                    "cats_from": "to_cat encouraged from_cat to attack a dog, and from_cat was hurt."
+                }
             }
         ]
     },
@@ -3894,11 +4092,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -5
+                "amount": -10,
+                "log": {
+                    "cats_from": "to_cat encouraged from_cat to attack a fox, and from_cat was hurt."
+                }
             }
         ]
     },
@@ -3911,7 +4110,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c could not handle r_c's harsh training, and was injured as a result.",
+        "event_text": "m_c could not handle r_c's harsh training and was injured as a result.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -3984,11 +4183,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -5
+                "amount": -10,
+                "log": {
+                    "cats_from": "to_cat's harsh training left from_cat injured."
+                }
             }
         ]
     },
@@ -4032,6 +4232,18 @@
                 "injuries": [
                     "bruises"
                 ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "like"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was impressed by to_cat's hard work as of late but wished it hadn't cost to_cat some bruises."
+                }
             }
         ]
     },
@@ -4199,6 +4411,18 @@
                     "sprain"
                 ]
             }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "like"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was impressed by to_cat's hard work as of late but wished it hadn't cost to_cat a sprained paw."
+                }
+            }
         ]
     },
     {
@@ -4348,6 +4572,18 @@
                     "cracked pads"
                 ]
             }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "like"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was impressed by to_cat's hard work as of late but wished it hadn't cost to_cat cracked pads."
+                }
+            }
         ]
     },
     {
@@ -4391,6 +4627,18 @@
                     "sore"
                 ]
             }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "like"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was impressed by to_cat's hard work as of late but wished it hadn't cost to_cat strained and sore muscles."
+                }
+            }
         ]
     },
     {
@@ -4414,7 +4662,12 @@
                 "insecure",
                 "nervous",
                 "careful",
-                "loving"
+                "loving",
+                "calm",
+                "gloomy",
+                "oblivious",
+                "lonesome",
+                "thoughtful"
             ]
         },
         "r_c": {
@@ -4469,11 +4722,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -15
+                "amount": -15,
+                "log": {
+                    "cats_from": "to_cat hurt from_cat for not defending the territory well enough."
+                }
             }
         ]
     },
@@ -4547,11 +4801,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -15,
+                "log": {
+                    "cats_from": "to_cat hurt from_cat for accidentally wandering over the border."
+                }
             }
         ]
     },
@@ -4637,16 +4892,17 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -15,
+                "log": {
+                    "cats_from": "to_cat hurt from_cat for messing with a Twoleg object."
+                }
             }
         ]
     },
     {
-        "event_id": "gen_injury_clawwound_anyapprenticemultitraitappmentorothercatskillfighter",
+        "event_id": "gen_injury_clawwound_appmentorclawsout",
         "location": [
             "any"
         ],
@@ -4720,11 +4976,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -15,
+                "log": {
+                    "cats_from": "from_cat got hurt in training after to_cat insisted they train with their claws out."
+                }
             }
         ]
     },
@@ -4805,11 +5062,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -15,
+                "log": {
+                    "cats_from": "to_cat hurt from_cat as punishment for disobedience."
+                }
             }
         ]
     },
@@ -4888,16 +5146,18 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat and from_cat got into a fight, and from_cat got hurt."
+                }
             }
         ]
     },
     {
-        "event_id": "gen_injury_clawwound_anyapprenticemultitraitappmentorothercat1",
+        "event_id": "gen_injury_clawwound_appmentorharshtraining",
         "location": [
             "any"
         ],
@@ -4978,11 +5238,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -15,
+                "log": {
+                    "cats_from": "from_cat got hurt during r_c's harsh training session."
+                }
             }
         ]
     },
@@ -5055,11 +5316,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -10,
+                "log": {
+                    "cats_from": "from_cat got hurt by a Twoleg trap that to_cat used for training."
+                }
             }
         ]
     },
@@ -5472,7 +5734,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c helped to strengthen the camp walls, but scraped up {PRONOUN/m_c/poss} paw pads in the process.",
+        "event_text": "m_c helped to strengthen the camp walls but scraped up {PRONOUN/m_c/poss} paw pads in the process.",
         "m_c": {
             "age": [
                 "senior",
@@ -5516,7 +5778,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c overexerted {PRONOUN/m_c/self}, and is feeling extremely sore.",
+        "event_text": "m_c overexerted {PRONOUN/m_c/self} and is feeling extremely sore.",
         "m_c": {
             "age": [
                 "senior",
@@ -5675,7 +5937,10 @@
                 "values": [
                     "like"
                 ],
-                "amount": -30
+                "amount": -20,
+                "log": {
+                    "cats_from": "from_cat and to_cat got into a vicious fight."
+                }
             }
         ],
         "injury": [
@@ -5823,11 +6088,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -15
+                "amount": -25,
+                "log": {
+                    "cats_from": "from_cat was maimed by to_cat for questioning {PRONOUN/to_cat/poss} leadership."
+                }
             }
         ]
     },
@@ -5945,7 +6211,9 @@
             ],
             "not_trait": [
                 "loyal",
-                "ambitious"
+                "ambitious",
+                "faithful",
+                "careful"
             ]
         },
         "r_c": {
@@ -5994,14 +6262,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -15
+                "amount": -25,
+                "log": {
+                    "cats_from": "from_cat was hurt by to_cat for disobeying orders."
+                }
             }
         ]
     },
@@ -6074,14 +6343,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -15
+                "amount": -25,
+                "log": {
+                    "cats_from": "from_cat was hurt by to_cat for speaking out against {PRONOUN/to_cat/object}."
+                }
             }
         ]
     },
@@ -6152,14 +6422,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -20
+                "amount": -25,
+                "log": {
+                    "cats_from": "from_cat was hurt by to_cat to make an example of {PRONOUN/from_cat/object}."
+                }
             }
         ]
     },
@@ -6506,7 +6777,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c woke up with a mild headache, but went about {PRONOUN/m_c/poss} day anyway, trying to ignore the nagging pain.",
+        "event_text": "m_c woke up with a mild headache but went about {PRONOUN/m_c/poss} day anyway, trying to ignore the nagging pain.",
         "m_c": {
             "age": [
                 "any"
@@ -6535,7 +6806,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c woke up with a splitting headache, and couldn't get out of {PRONOUN/m_c/poss} nest. {PRONOUN/m_c/subject/CAP} spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
+        "event_text": "m_c woke up with a splitting headache and couldn't get out of {PRONOUN/m_c/poss} nest. {PRONOUN/m_c/subject/CAP} spent the entire day curled up, trying to avoid light and noise so that the throbbing pain could subside.",
         "m_c": {
             "age": [
                 "any"
@@ -6681,12 +6952,15 @@
                 "cats_to": [
                     "m_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 15,
+                "log": {
+                    "cats_from": "to_cat took a blow meant for from_cat in a fight with o_c_n."
+                }
             }
         ],
         "other_clan": {
@@ -6752,6 +7026,26 @@
                 ],
                 "adjust": "reduce_eighth"
             }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["trust", "like"],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c called for help from r_c when {PRONOUN/r_c/subject} found rats in camp, and the cats fought the rats off together."
+                }
+            },
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": ["m_c", "r_c"],
+                "values": ["respect"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "from_cat saw to_cat defend the fresh-kill pile from a horde of rats."
+                }
+            }
         ]
     },
     {
@@ -6799,6 +7093,17 @@
                     "excess"
                 ],
                 "adjust": "reduce_eighth"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "from_cat saw to_cat defend the fresh-kill pile from a horde of rats."
+                }
             }
         ]
     },
@@ -6919,7 +7224,29 @@
                 "hostile"
             ],
             "changed": 2
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_social"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat tried to bring herbs to o_c_n, even during a war."
+                }
+            },
+            {
+                "cats_from": ["low_social", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["trust", "respect"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat wasn't happy to hear that to_cat tried to bring herbs to o_c_n, even during a war."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_war_medcat_assist2_low",
@@ -6978,7 +7305,29 @@
                 "hostile"
             ],
             "changed": 4
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_social"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat tried to bring herbs to o_c_n, even during a war."
+                }
+            },
+            {
+                "cats_from": ["low_social"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "trust"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat tried to bring herbs to o_c_n, even though c_n's own herb stores were low."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_injury_war_showmercy1",
@@ -7190,6 +7539,18 @@
                 "hostile",
                 "neutral"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat saved an enemy warrior during a fight."
+                }
+            }
+        ]
     }
 ]
