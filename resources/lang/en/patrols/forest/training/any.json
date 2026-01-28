@@ -262,23 +262,7 @@
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
                     "death": "m_c lost their life to a badger."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
+                }, 
                 "frequency": 3
             },
             {
