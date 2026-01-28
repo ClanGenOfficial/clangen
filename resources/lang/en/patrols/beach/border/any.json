@@ -1936,8 +1936,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a vixen.",
-                    "reg_death": "m_c fell in a battle with a vixen.",
-                    "lead_death": "died in battle with a fox"
+                    "death": "m_c fell in a battle with a vixen."
                 },
                 "relationships": [
                     {
@@ -1959,8 +1958,7 @@
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red vixen.",
-                    "reg_death": "m_c fell in battle with a red fox.",
-                    "lead_death": "died while fighting a red vixen"
+                    "death": "m_c fell in battle with a red fox."
                 },
                 "relationships": [
                     {
@@ -1998,8 +1996,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red vixen.",
-                    "reg_death": "m_c fell in battle with a red fox.",
-                    "lead_death": "died while fighting a red vixen"
+                    "death": "m_c fell in battle with a red fox."
                 },
                 "relationships": [
                     {
@@ -2129,8 +2126,7 @@
                 ],
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a gray vixen.",
-                    "reg_death": "m_c died after a battle with a gray vixen.",
-                    "lead_death": "died after fighting a gray vixen"
+                    "death": "m_c died after a battle with a gray vixen."
                 }
             },
             {
@@ -2278,8 +2274,7 @@
                 ],
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a gray vixen.",
-                    "reg_death": "m_c died after a battle with a gray vixen.",
-                    "lead_death": "died after fighting a gray vixen" 
+                    "death": "m_c died after a battle with a gray vixen."
                 },
                 "relationships": [
                     {
