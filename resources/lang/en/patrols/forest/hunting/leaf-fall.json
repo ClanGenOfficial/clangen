@@ -271,7 +271,7 @@
         "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ],
             "leader": [
                 -1,
@@ -436,7 +436,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat was scarred after falling from a tree.",
-                    "reg_death": "m_c died after falling from a tree while hunting."
+                    "death": "m_c died after falling from a tree while hunting."
                 },
                 "relationships": [
                     {
@@ -983,7 +983,7 @@
                 "exp": 30,
                 "stat_skill": [
                     "HUNTER,2",
-                    "INSIGHT,2"
+                    "INSIGHTFUL,2"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -1234,8 +1234,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King.",
-                    "lead_death": "fought a Rat King"
+                    "death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
                 },
                 "frequency": 3
             }

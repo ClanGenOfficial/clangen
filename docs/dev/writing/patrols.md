@@ -516,7 +516,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 ***
 
 #### relationship_constraint: List[str]
->Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
+>Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
 ***
 
@@ -545,9 +545,11 @@ This is a good starting point for writing your own outcomes.
 
 ```json
 {
+    "min_max_status": {},
     "text": "The raw displayed outcome text.",
     "exp": 0,
     "frequency": 4,
+    "relationship_constraint": [],
     "stat_skill": [],
     "stat_trait": [],
     "can_have_stat": [],
@@ -566,8 +568,7 @@ This is a good starting point for writing your own outcomes.
         }
     ],
     "history_text": {
-        "reg_death": "m_c died while on a patrol.",
-        "lead_death": "died on patrol",
+        "death": "m_c died while on a patrol.",
         "scars": "m_c was scarred on patrol"
     },
     "relationships": [
@@ -589,6 +590,14 @@ This is a good starting point for writing your own outcomes.
 ### By-Parameter - Outcome
 What each parameter does, and what the options are for outcomes.
 
+***
+
+#### min_max_status: Dict[str, List[int]]
+>Optional. Allows specification of the minimum and maximum number of specific types of cats that are allowed on this outcome. Utlizes the exact same format and options as the overall [min_max_status](#min_max_status-dictstr-listint) parameter.
+
+!!! caution
+    Use this sparingly and always ensure at least one of every outcome type is possible for *any* combination of cats allowed on this patrol. Ideally there should always be outcomes that *do not use* this parameter. If you've utilized this parameter on every outcome, it should be in a simple and easy-to-follow manner (i.e. all outcomes are either for 1-3 warriors or 4-6 warriors) rather than overly convoluted (i.e. every outcome has a different `min_max_status`: some disallow leaders, some allow medicine cats, some disallow all apps except medicine apps, others only allow medicine apps, ect.) ***If it starts to get insane, you are better off separating this patrol into multiple patrols instead of cramming all those outcomes together.***
+ 
 ***
 
 #### text: str
@@ -619,6 +628,11 @@ What each parameter does, and what the options are for outcomes.
 !!! warning
     Don't try to boost an outcome's frequency to make up for it being heavily constrained! While we used to do that with our old system, the new code automatically decides how to weight an outcome according to its constraints in a way that is completely divorced from the frequency. We decide outcome rarities and the code decides if outcomes should be prioritized in specific instances.
 
+
+***
+
+#### relationship_constraint: List[str]
+>Optional. Only allows the outcome if the cats meet relationship constraints. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
 ***
 
@@ -763,16 +777,13 @@ What each parameter does, and what the options are for outcomes.
 #### history_text: Dict[str, str]
 >Optional, but it should be included if any death or injury is indicated. Controls the history-text for scars and death. 
 >
->Format:
->
->```
->{text_type}: "custom history message"
+>[History Writing Guidelines](reference/index.md#writing-histories)
+> 
 >```
 
 | text_type    | "custom history message"                            |
 |--------------|-----------------------------------------------------|
-| "reg_death"  | Death history text for non-leaders. Whole sentence. |
-| "lead_death" | Death history text for leaders. Sentence fragment.  |
+| "death"      | Death history text. Whole sentence. |
 | "scar"       | Scar history. Whole sentence.                       |
 
 >

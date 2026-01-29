@@ -28,8 +28,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was washed out to sea.",
-                "lead_death": "{VERB/m_c/were/was} washed out to sea"
+                "death": "m_c was washed out to sea."
             }
         ]
     },
@@ -52,8 +51,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was killed by a poisonous sea creature.",
-                "lead_death": "{VERB/m_c/were/was} killed by a poisonous sea creature"
+                "death": "m_c was killed by a poisonous sea creature."
             }
         ]
     },
@@ -115,8 +113,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was lost to the sea while trying to save r_c.",
-                "lead_death": "{VERB/m_c/were/was} washed out to sea while trying to save r_c"
+                "death": "m_c was lost to the sea while trying to save r_c."
             }
         ],
         "relationships": [
@@ -132,19 +129,10 @@
                     "trust",
                     "respect"
                 ],
-                "amount": 15
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "like"
-                ],
-                "amount": 15
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat drowned trying to save r_c's life."
+                }
             }
         ]
     },
@@ -176,8 +164,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was taken by a sea creature.",
-                "lead_death": "{VERB/m_c/were/was} taken by a sea creature"
+                "death": "m_c was taken by a sea creature."
             }
         ]
     },
@@ -213,8 +200,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was pushed out to sea by enemy warriors.",
-                "lead_death": "{VERB/m_c/were/was} pushed out to sea by enemy warriors"
+                "death": "m_c was pushed out to sea by enemy warriors."
             }
         ],
         "other_clan": {
@@ -251,7 +237,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c succumbed to dehydration and overheating."
+                "death": "m_c succumbed to dehydration and overheating."
             }
         ]
     },
@@ -291,7 +277,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died due to dehydration and heat exhaustion."
+                "death": "m_c died due to dehydration and heat exhaustion."
             }
         ]
     },
@@ -320,7 +306,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was claimed by dehydration and heat exhaustion."
+                "death": "m_c was claimed by dehydration and heat exhaustion."
             }
         ]
     },
@@ -360,7 +346,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was claimed by dehydration and heat exhaustion."
+                "death": "m_c was claimed by dehydration and heat exhaustion."
             }
         ]
     },
@@ -436,8 +422,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c",
-                "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c"
+                "death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c"
             }
         ],
         "relationships": [
@@ -448,12 +433,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "trust",
                     "like"
                 ],
-                "amount": -25
+                "amount": -50,
+                "log": {
+                    "cats_from": "from_cat was shoved off a cliff by to_cat."
+                }
             }
         ],
         "future_event": [
@@ -544,8 +532,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c",
-                "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c"
+                "death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c"
             }
         ],
         "relationships": [
@@ -556,12 +543,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "trust",
                     "like"
                 ],
-                "amount": -25
+                "amount": -50,
+                "log": {
+                    "cats_from": "from_cat was shoved off a cliff by to_cat, who made the death look like an accident."
+                }
             }
         ],
         "future_event": [
@@ -640,7 +630,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "lead_death": "{VERB/m_c/were/was} trapped in the tides by r_c"
+                "death": "m_c died after being trapped in the tides by r_c"
             }
         ],
         "relationships": [
@@ -651,12 +641,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "trust",
                     "like"
                 ],
-                "amount": -25
+                "amount": -50,
+                "log": {
+                    "cats_from": "from_cat drowned in the tides as to_cat stood by and watched."
+                }
             }
         ],
         "future_event": [

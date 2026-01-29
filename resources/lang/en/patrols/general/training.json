@@ -2319,7 +2319,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3428,7 +3428,7 @@
             ],
             "deputy": [
                 1,
-                6
+                1
             ],
             "leader": [
                 -1,
@@ -10228,7 +10228,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ],
             "all apprentices": [ -1, -1 ]
         },
@@ -11036,7 +11036,7 @@
                 "art": "gen_train_patrolapprenticesessionsuccess"
             },
             {
-                "text": "r_c agrees and bets on app1. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app2 wins! The apprentices catch their breath on the way back to camp, wondering why r_c looks so smug.",
+                "text": "r_c agrees and bets on app1. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app2 wins! The apprentices catch their breath on the way back to camp, wondering why p_l looks so smug.",
                 "exp": 30,
                 "frequency": 4,
                 "relationships": [
@@ -11352,7 +11352,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ],
             "apprentice": [
                 1,
@@ -11579,7 +11579,7 @@
         "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ],
             "apprentice": [
                 1,
@@ -13661,7 +13661,7 @@
         ],
         "success_outcomes": [
             {
-                "text": "{PRONOUN/p_l/poss/CAP} dreams haunt {PRONOUN/p_l/object}. p_l has been seeing dream_list_emotional/p_l, but doesn't know from whom. Has one of the cats here had such intense thoughts?",
+                "text": "{PRONOUN/p_l/poss/CAP} dreams haunt {PRONOUN/p_l/object}. p_l has sensed dream_list/p_l, but doesn't know from whom. Has one of the cats here had such intense thoughts?",
                 "exp": 30,
                 "relationships": [
                     {
@@ -13681,7 +13681,7 @@
                 "frequency": 4
             },
             {
-                "text": "The gift of dreamwalking is no gift at all, not when all it causes is this vague confusion. p_l recalls the dream_list_emotional/p_l {PRONOUN/p_l/subject} felt while asleep and tries to match the feelings {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} picked up on with any of {PRONOUN/p_l/poss} training companions.",
+                "text": "The gift of dreamwalking is no gift at all, not when all it causes is this vague confusion. p_l recalls the dream_list/p_l {PRONOUN/p_l/subject} felt while asleep and tries to match the feelings {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} picked up on with any of {PRONOUN/p_l/poss} training companions.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -14481,8 +14481,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died in a terrible training accident, foretold by a Death's Head Moth.",
-                    "lead_death": "died in a terrible training accident, foretold by a Death's Head Moth"
+                    "death": "m_c died in a terrible training accident, foretold by a Death's Head Moth."
                 },
                 "frequency": 4
             }
@@ -17662,6 +17661,728 @@
                     }
                 ],
                 "frequency": 4
+            }
+        ]
+    },
+    {
+    "patrol_id": "gen_train_adultapps_swarmedbykids",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["training"],
+    "tags": [],
+    "patrol_art": "gen_cat_looking_up3",
+    "min_cats": 4,
+    "max_cats": 6,
+    "min_max_status": {
+        "apprentice": [3, 5],
+        "normal adult": [1, 1]
+    },
+    "frequency": 3,
+    "chance_of_success": 40,
+    "intro_text": "p_l can barely hear {PRONOUN/p_l/self} think over the sound of apprentices chattering, gossiping, arguing, competing, and joking. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} supposed to teach all these young cats a battle move or two, without completely losing {PRONOUN/p_l/poss} wits.",
+    "decline_text": "No chance of that, with this many apprentices. p_l suggests they all head back to camp and refresh the moss of the elders' den and nursery.",
+    "success_outcomes": [
+        {
+            "text": "The apprentices are surprisingly attentive. p_l is relieved to be able to demonstrate the move a couple times and then run drills. By the end of the afternoon, app2 has nearly mastered it.",
+            "exp": 20,
+            "frequency": 1,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat enjoyed learning a new battle move from p_l."
+                    }
+                },
+                {
+                    "cats_to": ["app2"],
+                    "cats_from": ["p_l"],
+                    "mutual": false,
+                    "values": ["respect", "comfort"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "p_l noticed how quickly app2 picked up a battle move {PRONOUN/p_l/subject} taught {PRONOUN/app2/object}."
+                    }
+                }
+            ],
+            "art": "gen_happy_cat2"
+        },
+        {
+            "min_max_status": {"apprentice": [3, 3]},
+            "text": "Three apprentices is a pawful, but p_l convinces app1 to pretend to be a fox for app2 and app3 to learn to fight larger predators. app1 gets into it, yipping and bushing {PRONOUN/app1/poss} tail out. p_l teaches app2 and app3 how to avoid the snapping jaws of the \"fox\".",
+            "exp": 20,
+            "frequency": 1,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["app1", "app2", "app3"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat enjoyed learning to fight big predators from p_l."
+                    }
+                },
+                {
+                    "cats_to": ["app1"],
+                    "cats_from": ["p_l"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "p_l was amused by how app1 committed to the role of fox {PRONOUN/app1/subject} played in a training exercise."
+                    }
+                },
+                {
+                    "cats_to": ["app3"],
+                    "cats_from": ["app2"],
+                    "mutual": true,
+                    "values": ["like", "trust"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "from_cat and to_cat gained greater trust in each other by fighting off a \"fox\" named app1."
+                    }
+                }
+            ],
+            "art": "gen_happy_cat2"
+        },
+        {   
+            "min_max_status": {"apprentice": [4, 4]},
+            "text": "With four apprentices to handle, p_l has a stroke of inspiration. Pair-fighting is an important skill for any c_n warrior to learn, and more importantly, it keeps four apprentices busy at once. app1 and app3 decisively win against app2 and app4.",
+            "exp": 20,
+            "frequency": 4,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat enjoyed learning a new battle move from p_l."
+                    }
+                },
+                {
+                    "cats_to": ["app2"],
+                    "cats_from": ["app4"],
+                    "mutual": true,
+                    "values": ["trust"],
+                    "amount": -6,
+                    "log": {
+                        "cats_from": "from_cat and to_cat doubted each other after losing in a spar while practicing pair-fighting."
+                    }
+                },
+                {
+                    "cats_to": ["app1"],
+                    "cats_from": ["app3"],
+                    "mutual": true,
+                    "values": ["trust"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat and to_cat developed greater trust in each other after winning a spar as a pair."
+                    }
+                }
+            ],
+            "art": "gen_battle_app_app"
+        },
+        {
+            "text": "s_c busts out {PRONOUN/s_c/poss} flashiest battle move, a surefire crowd-pleaser. The apprentices are wowed by s_c's skills and listen attentively in hopes of becoming more like {PRONOUN/s_c/object}.",
+            "exp": 20,
+            "frequency": 4,
+            "can_have_stat": ["adult"],
+            "stat_skill": ["FIGHTER,1"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 15,
+                    "log": {
+                        "cats_from": "from_cat was impressed by s_c's battle moves in a training session and wanted to learn to fight like {PRONOUN/s_c/object}."
+                    }
+                },
+                {
+                    "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["comfort"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "s_c enjoyed showing off in front of to_cat and the other apprentices."
+                    }
+                }
+            ],
+            "art": "gen_train_sunny5"
+        },
+        {
+            "text": "As p_l begins to take charge, s_c pipes up to help out. p_l is surprised by {PRONOUN/s_c/poss} good idea and implements it into the training exercise. After the training session, p_l comments to s_c that {PRONOUN/s_c/subject}'ll make a wonderful mentor one day.",
+            "exp": 20,
+            "frequency": 4,
+            "can_have_stat": ["app"],
+            "stat_skill": ["TEACHER,0", "INSIGHTFUL,0"],
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat enjoyed learning a new battle move from p_l."
+                    }
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["comfort", "trust"],
+                    "amount": 15,
+                    "log": {
+                        "cats_from": "s_c felt pleased when p_l told {PRONOUN/s_c/object} {PRONOUN/s_c/subject}'d make a wonderful mentor."
+                    }
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["p_l"],
+                    "mutual": false,
+                    "values": ["comfort", "respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "p_l was impressed by how helpful s_c was during a training session."
+                    }
+                }
+            ],
+            "art": "gen_train_talkingWA"
+        },
+        {
+            "text": "s_c knows {PRONOUN/s_c/poss} abilities as a teacher, but this is a challenge, even for {PRONOUN/s_c/object}. With a bit of cooperation from the apprentices, s_c is able to set up spars and drills for every cat to participate in.",
+            "exp": 20,
+            "frequency": 3,
+            "can_have_stat": ["adult"],
+            "stat_skill": ["TEACHER,1"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 15,
+                    "log": {
+                        "cats_from": "from_cat really enjoyed learning a new battle move from p_l."
+                    }
+                }
+            ],
+            "art": "gen_hunt_mentor_app"
+        },
+        {
+            "text": "Even this number of apprentices is no sweat for s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/know/knows} exactly how to challenge and encourage each apprentice best. By the end of the session, app1's chest is puffed up with pride, and app2 and app3 are exchanging eager scenarios of future battles where they'll use this new move.",
+            "exp": 30,
+            "frequency": 4,
+            "can_have_stat": ["adult"],
+            "stat_skill": ["TEACHER,3"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 18,
+                    "log": {
+                        "cats_from": "from_cat really enjoyed learning a new battle move from p_l."
+                    }
+                },
+                {
+                    "cats_to": ["app3"],
+                    "cats_from": ["app2"],
+                    "mutual": true,
+                    "values": ["like", "comfort"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat and to_cat got excited at the thought of using a new battle move in a future fight together."
+                    }
+                }
+            ],
+            "art": "gen_med_warappmedapp_herbcontest"
+        },
+        {
+            "text": "s_c takes one look at the apprentices bouncing around and decides no cat is learning anything until they get some energy out. A challenge is issued: beat s_c in a race and get the first pick of the fresh-kill pile. No apprentice is faster than s_c, but they do give it their all. After, s_c is able to run a proper training exercise with the now-panting apprentices.",
+            "exp": 20,
+            "frequency": 4,
+            "can_have_stat": ["adult"],
+            "stat_skill": ["RUNNER,1"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 15,
+                    "log": {
+                        "cats_from": "from_cat enjoyed racing s_c and then learning a new battle move from {PRONOUN/s_c/object}."
+                    }
+                }
+            ],
+            "art": "fst_hunt_fun4"
+        },
+        {
+            "text": "Apprentices aren't so different from kits, when it comes down to it. s_c organizes a big game of capture-the-bush and shows the apprentices a few moves along the way.",
+            "exp": 20,
+            "frequency": 4,
+            "can_have_stat": ["adult"],
+            "stat_skill": ["KIT,1"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 15,
+                    "log": {
+                        "cats_from": "from_cat had a lot of fun playing a training game with s_c."
+                    }
+                }
+            ],
+            "art": "gen_train_playbite_2apps"
+        },
+        {
+            "text": "As it turns out, the apprentices seem to think s_c is quite <i>cool</i>. Flattered, s_c soaks up their attention and then indulges them by showing them a few more advanced tricks.",
+            "exp": 20,
+            "frequency": 4,
+            "can_have_stat": ["adult"],
+            "stat_trait": ["charismatic", "playful", "adventurous", "arrogant", "ambitious", "competitive", "confident", "daring", "bold", "fierce", "rebellious", "shameless", "sneaky", "troublesome"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 15,
+                    "log": {
+                        "cats_from": "from_cat had a lot of fun playing a training game with s_c."
+                    }
+                },
+                {
+                    "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat was flattered to discover that to_cat and some other apprentices think {PRONOUN/from_cat/subject}{VERB/from_cat/'re/'s} cool."
+                    }
+                }
+            ],
+            "art": "pln_med_herblocation2"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l gives it {PRONOUN/p_l/poss} best shot, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} far outnumbered. The apprentices return to camp not having learned much. p_l's just glad it's over.",
+            "exp": 0,
+            "frequency": 2,
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat didn't learn much when p_l took {PRONOUN/from_cat/object} out for training."
+                    }
+                }
+            ]
+        },
+        {
+            "text": "Unfortunately for s_c, the apprentices are far more interested in {PRONOUN/s_c/poss} hunting skills and pester {PRONOUN/s_c/object} to reveal {PRONOUN/s_c/poss} secret tricks. s_c's pleas to focus on battle moves are drowned out by a chorus of young voices.",
+            "exp": 0,
+            "frequency": 4,
+            "can_have_stat": ["adult"],
+            "stat_skill": ["HUNTER,2"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat pestered s_c about {PRONOUN/s_c/poss} secret hunting tricks, but {PRONOUN/s_c/subject} wouldn't let them slip, which means they must be extra-secret and very cool..."
+                    }
+                },
+                {
+                    "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "s_c had an aggravating training patrol trying to teach battle moves to to_cat and a gang of apprentices who wouldn't shut up about {PRONOUN/s_c/poss} \"secret hunting tricks\"."
+                    }
+                }
+            ],
+            "art": "gen_happy_cat2"
+        },
+        {
+            "text": "The only apprentice in the group that seems at all interested in battle training is s_c, and {PRONOUN/s_c/subject} {VERB/s_c/seem/seems} more interested in showing off than learning anything.",
+            "exp": 0,
+            "frequency": 4,
+            "can_have_stat": ["app"],
+            "stat_skill": ["FIGHTER,0"],
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat didn't learn much when p_l took {PRONOUN/from_cat/object} out for training."
+                    }
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol", "high_lawful"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": -12,
+                    "log": {
+                        "cats_from": "from_cat was annoyed that to_cat kept showing off during battle training."
+                    }
+                }
+            ],
+            "art": "gen_train_patrolapprenticesessionsuccess"
+        },
+        {
+            "text": "s_c knows exactly what will make these apprentices focus: a good story. But just as {PRONOUN/s_c/subject} {VERB/s_c/settle/settles} down to tell the apprentices of story_list, app3 goes haring off into the bushes after app2, yowling about a game of catch-the-tail. s_c's story falls on deaf ears.",
+            "exp": 0,
+            "frequency": 4,
+            "can_have_stat": ["adult"],
+            "stat_skill": ["STORY,1"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat didn't learn much when p_l took {PRONOUN/from_cat/object} out for training."
+                    }
+                },
+                {
+                    "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat was frustrated when to_cat wouldn't listen to {PRONOUN/from_cat/poss} story during a training patrol."
+                    }
+                },
+                {
+                    "cats_to": ["app2"],
+                    "cats_from": ["app3"],
+                    "mutual": true,
+                    "values": ["like"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat and to_cat enjoyed a game of catch-the-tail when they were supposed to be training."
+                    }
+                }
+            ],
+            "art": "gen_train_playbite_2apps"
+        },
+        {
+            "text": "As s_c settles down to instruct the apprentices, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} offended to see the apprentices exchanging mock-yawns and eye-rolls. Apparently, s_c has a reputation for being a boring, stuffy warrior, and the apprentices have no interest in learning from {PRONOUN/s_c/object}.",
+            "exp": 0,
+            "frequency": 4,
+            "can_have_stat": ["adult"],
+            "stat_trait": ["calm", "careful", "compassionate", "faithful", "gloomy", "grumpy", "lonesome", "responsible", "righteous", "sincere", "strict", "thoughtful", "wise", "cold"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["app1", "app2", "app3", "app4", "app5"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat didn't learn much when p_l took {PRONOUN/from_cat/object} out for training."
+                    }
+                },
+                {
+                    "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat was offended to discover to_cat and other apprentices think {PRONOUN/from_cat/subject}{VERB/from_cat/'re/'s} boring."
+                    }
+                }
+            ],
+            "art": "app_cat_looking_up"
+        },
+        {
+            "text": "p_l can't keep an eye on every cat at once. When {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} back to check on app2, app3 squeals with pain. app1 freezes, looking guilty, with blood glimmering on {PRONOUN/app1/poss} claws. p_l orders every cat back to camp so app3 can seek treatment for {PRONOUN/app3/poss} badly bleeding ear.",
+            "exp": 0,
+            "frequency": 2,
+            "injury": [
+                {
+                    "cats": ["app3"],
+                    "injuries": ["claw-wound"],
+                    "scars": ["RIGHTEAR"]
+                }
+            ],
+            "history_text": {
+                "death": "m_c died from wounds sustained in a training accident.",
+                "scar": "m_c was scarred from an injury in a training exercise"
+            },
+            "relationships": [
+                {
+                    "cats_to": ["app3"],
+                    "cats_from": ["p_l"],
+                    "mutual": false,
+                    "values": ["comfort"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat held {PRONOUN/from_cat/self} responsible for to_cat getting hurt in a badly-supervised training exercise."
+                    }
+                },
+                {
+                    "cats_to": ["app3"],
+                    "cats_from": ["app1"],
+                    "mutual": false,
+                    "values": ["comfort"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat felt guilty for accidentally clawing to_cat during a training exercise."
+                    }
+                },
+                {
+                    "cats_to": ["app1"],
+                    "cats_from": ["app3"],
+                    "mutual": false,
+                    "values": ["like", "respect"],
+                    "amount": 12,
+                    "log": {
+                        "cats_from": "from_cat was thrilled when to_cat accidentally clawed {PRONOUN/from_cat/object} in a training exercise and hoped it would leave a cool scar."
+                    }
+                }
+            ],
+            "art": "running_app_warrior"
+        }
+    ]
+},
+{
+        "patrol_id": "gen_train_gllf_berrybush1",
+        "biome": [
+            "plains", "forest", "beach", "mountainous"
+        ],
+        "season": [
+            "greenleaf", "leaf-fall"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 1,
+        "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
+        "decline_text": "r_c decides not to touch the berries.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a heads-up about the potentially dangerous bush.",
+                "exp": 20,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["r_c"],
+                        "values": ["respect", "trust"],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat appreciated that to_cat gave {PRONOUN/from_cat/object} a heads-up about deathberries on patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
+                "exp": 20,
+                "herbs": [
+                    "raspberry"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["r_c"],
+                        "values": ["respect"],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat was impressed that to_cat recognized raspberries on a training patrol and brought them back for the medicine cat."
+                        }
+                    }
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
+                "exp": 20,
+                "stat_skill": [
+                    "CLEVER,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["r_c"],
+                        "values": ["respect"],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat was very impressed that to_cat recognized cranberries on a training patrol and brought them back for the medicine cat."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "While plucking them from the bush, r_c finds them tasty and eats a few. When p_l notices what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} eating, {PRONOUN/p_l/subject} {VERB/p_l/rush/rushes} r_c back to camp.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "poisoned"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "death": "m_c mistook deathberries for something edible."
+                },
+                "relationships": [
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["p_l"],
+                        "values": ["trust"],
+                        "amount": 15,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "to_cat rushed from_cat back to camp when from_cat ate deathberries on patrol."
+                        }
+                    }
+                ],
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_gllf_berrybush2",
+        "biome": [
+            "plains", "forest", "beach", "mountainous"
+        ],
+        "season": [
+            "greenleaf", "leaf-fall"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [
+                1,
+                6
+            ]
+        },
+        "frequency": 1,
+        "intro_text": "While helping gathering herbs, app1 stumbles upon a bush of red berries.",
+        "decline_text": "r_c decides not to touch the berries.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
+                "exp": 20,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["r_c"],
+                        "values": ["respect", "trust"],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat appreciated that to_cat gave {PRONOUN/from_cat/object} a heads-up about deathberries on patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries.",
+                "exp": 20,
+                "herbs": [
+                    "raspberry"
+                ],
+                "frequency": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, who failed to identify deathberries before eating them.",
+                "exp": 0,
+                "dead_cats": [
+                    "app1"
+                ],
+                "history_text": {
+                    "death": "m_c mistook deathberries for something edible."
+                },
+                "frequency": 3
+            },
+            {
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/app1/object} from deathberry poisoning.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "poisoned"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "death": "m_c mistook deathberries for something edible."
+                },
+                "frequency": 3
             }
         ]
     }

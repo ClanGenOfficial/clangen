@@ -105,8 +105,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}.",
-                    "lead_death": "got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}"
+                    "death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}."
                 },
                 "frequency": 4
             }

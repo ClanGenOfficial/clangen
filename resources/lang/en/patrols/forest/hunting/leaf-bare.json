@@ -157,8 +157,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "reg_death": "m_c froze to death after hunting in a storm.",
-                    "lead_death": "froze to death"
+                    "death": "m_c froze to death after hunting in a storm."
                 },
                 "relationships": [
                     {
@@ -258,8 +257,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "reg_death": "m_c froze to death after hunting in a storm.",
-                    "lead_death": "froze to death"
+                    "death": "m_c froze to death after hunting in a storm."
                 },
                 "frequency": 4
             }
@@ -381,8 +379,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death while hunting in a storm.",
-                    "lead_death": "froze to death while hunting"
+                    "death": "m_c froze to death while hunting in a storm."
                 },
                 "relationships": [
                     {
@@ -414,8 +411,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "reg_death": "m_c froze to death while hunting in a storm.",
-                    "lead_death": "froze to death while hunting"
+                    "death": "m_c froze to death while hunting in a storm."
                 },
                 "frequency": 4
             }
@@ -901,7 +897,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_mice",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1125,7 +1121,7 @@
         "min_max_status": {
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -1317,7 +1313,7 @@
         "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ],
             "leader": [
                 -1,
@@ -1463,7 +1459,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat was scarred after falling from a tree.",
-                    "reg_death": "m_c died after falling from a tree while hunting."
+                    "death": "m_c died after falling from a tree while hunting."
                 },
                 "relationships": [
                     {
@@ -1602,8 +1598,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "This cat froze to death.",
-                    "lead_death": "froze to death"
+                    "death": "This cat froze to death."
                 },
                 "relationships": [
                     {
@@ -1766,8 +1761,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "reg_death": "m_c froze to death after hunting in leaf-bare.",
-                    "lead_death": "froze to death while hunting"
+                    "death": "m_c froze to death after hunting in leaf-bare."
                 },
                 "prey": [
                     "very_small"
@@ -2058,7 +2052,7 @@
                 "exp": 30,
                 "stat_skill": [
                     "HUNTER,2",
-                    "INSIGHT,2"
+                    "INSIGHTFUL,2"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -2149,8 +2143,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from fighting a swarm of rats.",
-                    "reg_death": "m_c died after fighting a swarm of rats.",
-                    "lead_death": "fought a swarm of rats"
+                    "death": "m_c died after fighting a swarm of rats."
                 },
                 "prey": [
                     "very_small"
@@ -2275,8 +2268,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from fighting a Rat King.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King.",
-                    "lead_death": "fought a Rat King"
+                    "death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
                 },
                 "prey": [
                     "very_small"
@@ -2302,8 +2294,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from fighting a Rat King.",
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King.",
-                    "lead_death": "fought a Rat King"
+                    "death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
                 },
                 "prey": [
                     "very_small"
@@ -2333,8 +2324,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King.",
-                    "lead_death": "fought a Rat King"
+                    "death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
                 },
                 "frequency": 3
             }
@@ -2679,8 +2669,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death.",
-                    "lead_death": "froze to death"
+                    "death": "m_c froze to death."
                 },
                 "frequency": 4
             },
@@ -2703,8 +2692,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare.",
-                    "reg_death": "m_c died of frostbite.",
-                    "lead_death": "died to frostbite"
+                    "death": "m_c died of frostbite."
                 },
                 "frequency": 4
             }
@@ -3075,8 +3063,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare.",
-                    "reg_death": "m_c died of frostbite.",
-                    "lead_death": "died to frostbite"
+                    "death": "m_c died of frostbite."
                 },
                 "frequency": 3
             },
@@ -3103,8 +3090,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare.",
-                    "reg_death": "m_c died of frostbite.",
-                    "lead_death": "died to frostbite"
+                    "death": "m_c died of frostbite."
                 },
                 "frequency": 3
             }
@@ -3216,7 +3202,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death, caught in a snowstorm while hunting by themselves."
+                    "death": "m_c froze to death, caught in a snowstorm while hunting by themselves."
                 },
                 "frequency": 4
             },
@@ -3239,7 +3225,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
-                    "reg_death": "m_c froze to death, caught in a snowstorm while hunting by themselves."
+                    "death": "m_c froze to death, caught in a snowstorm while hunting by themselves."
                 },
                 "frequency": 4
             },
@@ -3254,7 +3240,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death, caught in a snowstorm while hunting by {PRONOUN/app1/self}."
+                    "death": "m_c froze to death, caught in a snowstorm while hunting by {PRONOUN/app1/self}."
                 },
                 "frequency": 4
             },
@@ -3281,7 +3267,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
-                    "reg_death": "m_c froze to death, caught in a snowstorm while hunting by {PRONOUN/app1/self}."
+                    "death": "m_c froze to death, caught in a snowstorm while hunting by {PRONOUN/app1/self}."
                 },
                 "frequency": 4
             }
@@ -3686,126 +3672,6 @@
                         "mutual": false,
                         "values": [
                             "like"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_hunt_mice4",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "fst_hunt_mice",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 3,
-        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice.",
-        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "As they arrive, the patrol startles two mice, and r_c reacts quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
-                "exp": 20,
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - {PRONOUN/s_c/subject} really {VERB/s_c/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice.",
-                "exp": 20,
-                "stat_skill": [
-                    "HUNTER,1"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c/object} for it.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
                         ],
                         "amount": -5
                     }
@@ -4397,8 +4263,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
-                    "reg_death": "The viewpoint c_n thought was safe from avalanches... was not.",
-                    "lead_death": "the viewpoint c_n thought was safe from avalanches... was not"
+                    "death": "The viewpoint c_n thought was safe from avalanches... was not."
                 },
                 "frequency": 4
             }

@@ -1867,8 +1867,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
-                    "reg_death": "m_c died after a loner attacked {PRONOUN/m_c/object}.",
-                    "lead_death": "{VERB/m_c/were/was} attacked by a loner"
+                    "death": "m_c died after a loner attacked {PRONOUN/m_c/object}."
                 },
                 "outsider_rep": -1,
                 "new_cat": [
@@ -2828,8 +2827,7 @@
                     "some_lives"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died in an ambush set by rogues.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                    "death": "m_c died in an ambush set by rogues."
                 },
                 "outsider_rep": -1,
                 "frequency": 4
@@ -3041,8 +3039,7 @@
                     "multi"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died in an ambush set by rogues.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                    "death": "m_c died in an ambush set by rogues."
                 },
                 "outsider_rep": -1,
                 "new_cat": [
@@ -3304,8 +3301,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar after tussling with a rogue.",
-                    "reg_death": "m_c died from injuries sustained in a fight with a rogue.",
-                    "lead_death": "died from injuries sustained in a fight with a rogue"
+                    "death": "m_c died from injuries sustained in a fight with a rogue."
                 },
                 "outsider_rep": -1,
                 "frequency": 3
@@ -3502,8 +3498,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from being ambushed by rogues.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                    "death": "m_c died from being ambushed by rogues."
                 },
                 "outsider_rep": -1,
                 "frequency": 4
@@ -3711,8 +3706,7 @@
                     "some_lives"
                 ],
                 "history_text": {
-                    "reg_death": "This cat died from being ambushed by rogues while on a solo patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush while on a solo patrol"
+                    "death": "This cat died from being ambushed by rogues while on a solo patrol."
                 },
                 "outsider_rep": -1,
                 "frequency": 4
@@ -4140,8 +4134,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from injuries given by a particularly vicious kittypet.",
-                    "lead_death": "died from injuries given by a particularly vicious kittypet",
+                    "death": "m_c died from injuries given by a particularly vicious kittypet.",
                     "scar": "m_c was scarred after a kittypet took them by surprise, though {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} everyone it was a bloodthirsty rogue."
                 },
                 "frequency": 3
@@ -4244,8 +4237,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from injuries given by a particularly vicious kittypet.",
-                    "lead_death": "died from injuries given by a particularly vicious kittypet",
+                    "death": "m_c died from injuries given by a particularly vicious kittypet.",
                     "scar": "m_c was scarred when a kittypet took {PRONOUN/m_c/object} by surprise, though {PRONOUN/m_c/subject} {VERB/m_c/tell/tells} everyone it was a bloodthirsty rogue."
                 },
                 "frequency": 4
@@ -4490,7 +4482,7 @@
                     "cats": [
                         "p_l"
                     ],
-                    "reg_death": "m_c died when {PRONOUN/m_c/subject} picked a fight {PRONOUN/m_c/subject} couldn't win."
+                    "death": "m_c died when {PRONOUN/m_c/subject} picked a fight {PRONOUN/m_c/subject} couldn't win."
                 },
                 "outsider_rep": -1,
                 "frequency": 3
@@ -4516,8 +4508,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from frostbite due to an unpredictable snowstorm.",
-                    "lead_death": "died from frostbite due to an unpredictable snowstorm",
+                    "death": "m_c died from frostbite due to an unpredictable snowstorm.",
                     "scar": "m_c was scarred after getting frostbite from a snowstorm."
                 },
                 "outsider_rep": -1,
@@ -5426,7 +5417,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from injuries inflicted by a kittypet.",
+                    "death": "m_c died from injuries inflicted by a kittypet.",
                     "scar": "m_c was scarred from a fight with a kittypet."
                 },
                 "relationships": [
@@ -7608,7 +7599,7 @@
         "some_lives"
     ],
     "history_text": {
-        "lead_death": "lost multiple lives after vanishing into the mist"
+        "death": "m_c lost multiple lives after vanishing into the mist."
     },
             "new_cat": [
             [
@@ -7710,8 +7701,7 @@
         }
     ],
     "history_text": {
-        "reg_death": "m_c died from an injury sustained when r_c attacked {PRONOUN/m_c/object} by mistake.",
-        "lead_death": "died from an accidental injury inflicted by r_c",
+        "death": "m_c died from an injury sustained when r_c attacked {PRONOUN/m_c/object} by mistake.",
         "scars": "m_c was scarred when r_c attacked {PRONOUN/m_c/object} by mistake."
     },
     "relationships": [

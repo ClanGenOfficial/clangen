@@ -34,19 +34,51 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l",
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive an eagle off its catch and steal its prey."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat led from_cat in stealing an eagle's catch."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "some_clan"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol return with a huge fish and a story about stealing it from an eagle."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -55,7 +87,10 @@
                 "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
                 "exp": 20,
                 "stat_skill": [
-                    "FIGHTER,3"
+                    "FIGHTER,2"
+                ],
+                "stat_trait": [
+                    "ambitious", "bold", "fierce", "daring", "arrogant", "confident", "competitive", "cunning", "rebellious", "vengeful", "troublesome"
                 ],
                 "prey": [
                     "medium"
@@ -63,51 +98,29 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l",
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
-                "exp": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "fierce",
-                    "confident",
-                    "arrogant"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was amazed that to_cat brought down both an eagle and its prey on a hunting patrol."
+                        }
+                    },
                     {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's hunting patrol return with both an eagle and a big fish for the fresh-kill pile."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -119,20 +132,18 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
+                        "cats_to": ["patrol"
                         ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
+                        "cats_from": ["patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat waited to scavenge an eagle's catch but had nothing to show for it in the end."
+                        }
                     }
                 ],
                 "prey": [
@@ -148,25 +159,24 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
+                    "death": "m_c was killed by an eagle, scrapping over food."
                 },
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l",
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat attacked an eagle, but the fight ended in r_c's death."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -189,25 +199,24 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
+                    "death": "m_c was killed by an eagle, scrapping over food."
                 },
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l",
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to steal an eagle's prey on a hunt, and it ended in the medicine den."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -231,7 +240,7 @@
         "max_cats": 6,
         "min_max_status": {
             "normal adult": [
-                1,
+                4,
                 6
             ]
         },
@@ -249,19 +258,51 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l",
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive an eagle off its catch and steal its prey."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat led from_cat in stealing an eagle's catch."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "some_clan"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol return with a huge fish and a story about stealing it from an eagle."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -275,11 +316,9 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l",
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
@@ -287,7 +326,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat fought off an eagle and stole its prey."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -296,7 +338,10 @@
                 "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
                 "exp": 20,
                 "stat_skill": [
-                    "FIGHTER,3"
+                    "FIGHTER,2"
+                ],
+                "stat_trait": [
+                    "ambitious", "bold", "fierce", "daring", "arrogant", "confident", "competitive", "cunning", "rebellious", "vengeful", "troublesome"
                 ],
                 "prey": [
                     "large"
@@ -304,553 +349,29 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
-                "exp": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "fierce",
-                    "confident",
-                    "arrogant"
-                ],
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol waits around, keen to try scavenge from the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKLOWER"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_hunt_leafbare_eagleice3",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "cruel_season"
-        ],
-        "patrol_art": "mtn_hunt_leafbare_eagleice",
-        "min_cats": 2,
-        "max_cats": 3,
-        "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch.",
-        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "The cats' eyes light up with possibility. p_l leads the patrol yowling threats and insults as they charge across the ice with claws extended, making a massive racket. Bewildered, the eagle takes to the air. The massive fish is c_n's, invaluable in the harsh prey scarcity of leaf-bare.",
-                "exp": 20,
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
-                "exp": 20,
-                "stat_skill": [
-                    "FIGHTER,3"
-                ],
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
-                "exp": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "fierce",
-                    "arrogant",
-                    "confident"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol waits around, keen to try scavenge from the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Far too keen to try and prove {PRONOUN/s_c/self} against the king of the skies, s_c leaps for the eagle and startles it into flight with its massive catch, and the opportunity is lost.",
-                "exp": 0,
-                "stat_trait": [
-                    "bloodthirsty",
-                    "arrogant",
-                    "confident",
-                    "ambitious"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol decides to fight the eagle for possession of the prey, but the massive aerial predator is too much for the starving c_n cats, and it kills r_c in the battle.",
-                "exp": 0,
-                "dead_cats": [
-                    "r_c"
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
-            },
-            {
-                "text": "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKLOWER"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
-            },
-            {
-                "text": "Keen to prove {PRONOUN/s_c/self}, s_c sprints across the ice and leaps for the eagle. Instead, what {PRONOUN/s_c/subject} {VERB/s_c/get/gets} is a damp, cold trip in the leaf-bare, and the patrol rushes {PRONOUN/s_c/object} home to get treated for chills and frostbite.",
-                "exp": 0,
-                "stat_trait": [
-                    "bloodthirsty",
-                    "ambitious",
-                    "arrogant",
-                    "confident"
-                ],
-                "injury": [
-                    {
-                        "cats": [
                             "s_c"
                         ],
-                        "injuries": [
-                            "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKLOWER"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c",
-                            "patrol"
-                        ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_hunt_leafbare_eagleice4",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [
-            "cruel_season"
-        ],
-        "patrol_art": "mtn_hunt_leafbare_eagleice",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch",
-        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "The cats' eyes light up with possibility. p_l leads the patrol yowling threats and insults as they charge across the ice with claws extended, making a massive racket. Bewildered, the eagle takes to the air. The massive fish is c_n's, invaluable in the harsh prey scarcity of leaf-bare.",
-                "exp": 20,
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was amazed that to_cat brought down both an eagle and its prey on a hunting patrol."
+                        }
+                    },
                     {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats mob the bird, using their numbers to intimidate it and protect each other, and the skirmish ends with the eagle flapping indignantly off as c_n claims possession of the large half-eaten fish.",
-                "exp": 20,
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
-                "exp": 20,
-                "stat_skill": [
-                    "FIGHTER,3"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of {PRONOUN/s_c/poss} mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
-                "exp": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "fierce",
-                    "arrogant",
-                    "confident"
-                ],
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's hunting patrol return with both an eagle and a big fish for the fresh-kill pile."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -862,83 +383,21 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
+                        "cats_to": ["patrol"
                         ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
+                        "cats_from": ["patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat waited to scavenge an eagle's catch but had nothing to show for it in the end."
+                        }
                     }
                 ],
                 "frequency": 4
-            },
-            {
-                "text": "Far too keen to try and prove {PRONOUN/s_c/self} against the king of the skies, s_c leaps for the eagle and startles it into flight with its massive catch, and the opportunity is lost.",
-                "exp": 0,
-                "stat_trait": [
-                    "bloodthirsty",
-                    "ambitious",
-                    "confident",
-                    "arrogant"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol decides to fight the eagle for possession of the prey, but the massive aerial predator is too much for the starving c_n cats, and it kills r_c in the battle.",
-                "exp": 0,
-                "dead_cats": [
-                    "r_c"
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
             },
             {
                 "text": "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
@@ -952,78 +411,30 @@
                             "beak_bite"
                         ],
                         "scars": [
-                            "BEAKCHEEK"
+                            "BEAKLOWER"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
+                    "death": "m_c was killed by an eagle, scrapping over food."
                 },
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l",
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 3
-            },
-            {
-                "text": "Keen to prove {PRONOUN/s_c/self}, s_c sprints across the ice and leaps for the eagle. Instead, what {PRONOUN/s_c/subject} {VERB/s_c/get/gets} is a damp, cold trip in the leaf-bare, and the patrol rushes {PRONOUN/s_c/object} home to get treated for chills and frostbite.",
-                "exp": 0,
-                "stat_trait": [
-                    "bloodthirsty",
-                    "ambitious",
-                    "arrogant",
-                    "confident"
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "s_c"
-                        ],
-                        "injuries": [
-                            "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKCHEEK"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from an eagle's beak.",
-                    "reg_death": "m_c was killed by an eagle, scrapping over food.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an eagle"
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to steal an eagle's prey on a hunt, and it ended in the medicine den."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -1281,8 +692,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "reg_death": "m_c died trying to provide for c_n during leaf-bare.",
-                    "lead_death": "died while hunting in the cold of leaf-bare"
+                    "death": "m_c died trying to provide for c_n during leaf-bare."
                 },
                 "frequency": 4
             },
@@ -1304,8 +714,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "reg_death": "m_c died trying to provide for c_n during leaf-bare.",
-                    "lead_death": "died while hunting in the cold of leaf-bare"
+                    "death": "m_c died trying to provide for c_n during leaf-bare."
                 },
                 "frequency": 4
             }
@@ -1419,8 +828,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "reg_death": "m_c froze to death while hunting in a storm.",
-                    "lead_death": "died while hunting in the cold of leaf-bare"
+                    "death": "m_c froze to death while hunting in a storm."
                 },
                 "relationships": [
                     {
@@ -1454,8 +862,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "reg_death": "m_c froze to death while hunting in a storm.",
-                    "lead_death": "died while hunting in the cold of leaf-bare"
+                    "death": "m_c froze to death while hunting in a storm."
                 },
                 "frequency": 4
             }
@@ -1490,6 +897,18 @@
                 "prey": [
                     "medium"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -1497,6 +916,18 @@
                 "exp": 10,
                 "prey": [
                     "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                        }
+                    }
                 ],
                 "frequency": 1
             },
@@ -1508,6 +939,18 @@
                 ],
                 "prey": [
                     "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
@@ -1541,7 +984,7 @@
         "min_max_status": {
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -1555,6 +998,18 @@
                 "prey": [
                     "medium"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -1562,6 +1017,18 @@
                 "exp": 40,
                 "prey": [
                     "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                        }
+                    }
                 ],
                 "frequency": 1
             }
@@ -1615,18 +1082,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                        "cats_from": "from_cat helped to_cat catch a squirrel."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                        "cats_from": "to_cat helped from_cat catch a squirrel."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1639,18 +1112,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                        "cats_from": "from_cat gave to_cat hunting tips."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                        "cats_from": "to_cat gave from_cat hunting tips."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1662,18 +1141,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was embarrassed to miss a squirrel in front of to_cat, especially during leaf-bare."
+                        }
                     }
                 ],
                 "prey": [
@@ -1701,7 +1176,7 @@
         "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ],
             "leader": [
                 -1,
@@ -1841,20 +1316,13 @@
                         ],
                         "injuries": [
                             "broken bone"
-                        ],
-                        "history_text": [
-                            {
-                                "reg_death": "m_c died after falling out of a tree on a hunt."
-                            },
-                            {
-                                "lead_death": "died after falling out of a tree"
-                            },
-                            {
-                                "scar": "m_c was scarred after falling out of a tree on a hunt."
-                            }
                         ]
                     }
                 ],
+                "history_text": {
+                    "death": "m_c died after falling out of a tree on a hunt.",
+                    "scar": "m_c was scarred after falling out of a tree on a hunt."
+                },
                 "relationships": [
                     {
                         "cats_to": [
@@ -2044,16 +1512,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat bring a blue jay back for the fresh-kill pile in leaf-bare."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2076,19 +1547,22 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat bring a blue jay back for the fresh-kill pile in leaf-bare."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c holds the patrol off from pouncing right away, and they're rewarded by a second blue jay joining the first! They catch both and s_c explains that blue jays travel in groups of five or more.",
+                "text": "s_c holds the patrol off from pouncing right away, and they're rewarded by a second blue jay joining the first! They catch both, and s_c explains that blue jays travel in groups of five or more.",
                 "exp": 20,
                 "stat_skill": [
                     "HUNTER,1",
                     "CLEVER,2",
                     "LORE,2",
-                    "INSIGHT,2"
+                    "INSIGHTFUL,2"
                 ],
                 "can_have_stat": [
                     "adult"
@@ -2108,7 +1582,20 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat bring a blue jay back for the fresh-kill pile in leaf-bare."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": [ "respect" ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's knowledge of blue jays' behavior."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2117,11 +1604,11 @@
                 "text": "They catch the blue jay, and s_c quickly bites up the blood-riddled snow, then lingers behind to wait. {PRONOUN/s_c/subject/CAP} {VERB/s_c/come/comes} back with two more mice! {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} the blue jay was eating something mice also liked, and {VERB/s_c/was/were} hoping {PRONOUN/s_c/subject} might catch some with the same bait.",
                 "exp": 20,
                 "stat_trait": [
-                    "responsible",
-                    "confident",
                     "wise",
                     "sneaky",
-                    "careful"
+                    "cunning",
+                    "thoughtful",
+                    "strange"
                 ],
                 "can_have_stat": [
                     "adult"
@@ -2141,7 +1628,20 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat bring a blue jay back for the fresh-kill pile in leaf-bare."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": [ "respect" ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's observance on a hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2157,13 +1657,26 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat avoided each other for a few days after a failed hunt ended with blue jays taunting them."
+                        }
+                    },
+                    {
+                        "cats_from": ["low_stable"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat being laughed at by a blue jay."
+                        }
                     }
                 ],
                 "prey": [
@@ -2188,16 +1701,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": -5
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "to_cat's hasty pounce ruined from_cat's hunt."
+                        }
                     }
                 ],
                 "prey": [
@@ -2227,16 +1743,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wasn't impressed by to_cat's inability to fight off blue jays."
+                        }
                     }
                 ],
                 "prey": [
@@ -2277,16 +1796,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect", "like"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat's patrol got mobbed by blue jays because of to_cat's impulsivity"
+                        }
                     }
                 ],
                 "prey": [
@@ -2313,8 +1835,7 @@
         "max_cats": 1,
         "min_max_status": {
             "normal adult": [
-                1,
-                6
+                1, 1
             ]
         },
         "frequency": 2,
@@ -2334,13 +1855,32 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat thought {PRONOUN/from_cat/subject} saw to_cat dragging a vulture back to camp and felt unsettled."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "high_stable"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed to_cat brought a common buzzard back to camp."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2357,26 +1897,44 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat thought {PRONOUN/from_cat/subject} saw to_cat dragging a vulture back to camp and felt unsettled."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "high_stable"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed to_cat brought a common buzzard back to camp."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c laughs to {PRONOUN/s_c/self} = of course it's vultures! {PRONOUN/s_c/subject/CAP} {VERB/s_c/catch/catches} the common buzzard, which has a feathered head, with ease, bring it home, and {VERB/s_c/are/is} disappointed when {PRONOUN/s_c/subject} {VERB/s_c/have/has} to explain the difference between this bird and the vultures.",
+                "text": "s_c laughs to {PRONOUN/s_c/self} - of course it's vultures! {PRONOUN/s_c/subject/CAP} {VERB/s_c/catch/catches} the common buzzard, which has a feathered head, with ease, {VERB/s_c/bring/brings} it home, and {VERB/s_c/are/is} disappointed when {PRONOUN/s_c/subject} {VERB/s_c/have/has} to explain the difference between this bird and the vultures.",
                 "exp": 40,
                 "stat_skill": [
                     "CLEVER,2",
                     "HUNTER,3",
-                    "STAR,2",
-                    "LORE,2",
-                    "SENSE,2"
+                    "LORE,1",
+                    "STAR,3"
                 ],
                 "can_have_stat": [
                     "adult"
@@ -2390,13 +1948,32 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat thought {PRONOUN/from_cat/subject} saw to_cat dragging a vulture back to camp and felt unsettled."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "high_stable"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed to_cat brought a common buzzard back to camp."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2405,12 +1982,13 @@
                 "text": "s_c knows the difference between a common buzzard and a vulture! Unfortunately, {PRONOUN/s_c/subject} {VERB/s_c/end/ends} up having to explain the difference to the Clan anyway. It seems some outcomes are unavoidable.",
                 "exp": 40,
                 "stat_trait": [
-                    "faithful",
+                    "thoughtful",
                     "careful",
                     "righteous",
                     "responsible",
                     "strange",
-                    "shameless"
+                    "strict",
+                    "wise"
                 ],
                 "can_have_stat": [
                     "adult"
@@ -2424,13 +2002,32 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat thought {PRONOUN/from_cat/subject} saw to_cat dragging a vulture back to camp and felt unsettled."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "high_stable"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed to_cat brought a common buzzard back to camp."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2466,13 +2063,12 @@
                 ],
                 "history_text": {
                     "scar": "m_c mistook a buzzard for a vulture and got pecked",
-                    "reg_death": "m_c was scared off a cliff by a large bird.",
-                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
+                    "death": "m_c was scared off a cliff by a large bird."
                 },
                 "frequency": 3
             },
             {
-                "text": "p_l does a little butt wiggle and launches {PRONOUN/p_l/self} at the common buzzard. {PRONOUN/p_l/subject/CAP} barely {VERB/p_l/have/has} time to get away as the buzzard spreads {PRONOUN/p_l/poss} wings and snaps at {PRONOUN/p_l/object}, leaving {PRONOUN/p_l/object} with a nasty peck! Ouch!",
+                "text": "p_l waggles {PRONOUN/p_l/poss} haunches and launches {PRONOUN/p_l/self} at the common buzzard. {PRONOUN/p_l/subject/CAP} barely {VERB/p_l/have/has} time to get away as the buzzard spreads {PRONOUN/p_l/poss} wings and snaps at {PRONOUN/p_l/object}, leaving {PRONOUN/p_l/object} with a nasty peck! Ouch!",
                 "exp": 0,
                 "injury": [
                     {
@@ -2489,13 +2085,12 @@
                 ],
                 "history_text": {
                     "scar": "m_c mistook a buzzard for a vulture and got pecked",
-                    "reg_death": "m_c was scared off a cliff by a large bird.",
-                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
+                    "death": "m_c was scared off a cliff by a large bird."
                 },
                 "frequency": 3
             },
             {
-                "text": "It doesn't matter if it's a buzzard or a vulture! It's about to be fresh-kill! s_c lunges for the bird - but the bird flies off, and the cat slips on the cold, icy cliff and is never seen again.",
+                "text": "It doesn't matter if it's a buzzard or a vulture! It's about to be fresh-kill! s_c lunges for the bird - but the bird flies off, and s_c slips on the cold, icy cliff, never to be seen again.",
                 "exp": 0,
                 "stat_trait": [
                     "childish",
@@ -2513,8 +2108,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c mistook a buzzard for a vulture and got pecked",
-                    "reg_death": "m_c was scared off a cliff by a large bird.",
-                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
+                    "death": "m_c was scared off a cliff by a large bird."
                 },
                 "frequency": 3
             },
@@ -2546,8 +2140,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c mistook a buzzard for a vulture and got pecked",
-                    "reg_death": "m_c was scared off a cliff by a large bird.",
-                    "lead_death": "fell to {PRONOUN/m_c/poss} death off of a high cliff after a run in with a large bird of prey"
+                    "death": "m_c was scared off a cliff by a large bird."
                 },
                 "frequency": 3
             }
@@ -2568,12 +2161,7 @@
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ]
-        },
+        "min_max_status": {},
         "frequency": 4,
         "intro_text": "It's a cold day in c_n's territory, and p_l is the only cat stepping out. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self} when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a cat screaming for help.",
         "decline_text": "Nope, not today, there's no way p_l is running after ghost cats, no thank you.",
@@ -2608,6 +2196,18 @@
                 "prey": [
                     "medium"
                 ],
+                "relationships": [
+                    {
+                        "cats_from": ["low_stable"],
+                        "cats_to": ["s_c"],
+                        "values": ["trust", "comfort"],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat return to camp with a rabbit that looked like it was killed by a bird, not a cat, and felt unsettled."
+                        }
+                    }
+                ],
                 "frequency": 4
             }
         ],
@@ -2632,13 +2232,13 @@
                 "frequency": 4
             },
             {
-                "text": "p_l looks around the rocks, only to spy something flying above {PRONOUN/p_l/object}, hearing the cat from up there. Oh. It's a star-blasted raven. The raven swoops and sinks its talons into p_l, who shrieks and thrashes as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} carried into the air. {PRONOUN/p_l/subject/CAP} {VERB/p_l/struggle/struggles} to free {PRONOUN/p_l/self} as the raven drops {PRONOUN/p_l/object} into the jaws of wolves.",
+                "text": "p_l looks around the rocks, only to spy something flying above {PRONOUN/p_l/object}, hearing the cat from up there. Oh. It's a StarClan-forsaken raven. The raven swoops and sinks its talons into p_l, who shrieks and thrashes as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} carried into the air. {PRONOUN/p_l/subject/CAP} {VERB/p_l/struggle/struggles} to free {PRONOUN/p_l/self} as the raven drops {PRONOUN/p_l/object} into the jaws of wolves.",
                 "exp": 0,
                 "dead_cats": [
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "This cat found out why c_n despises ravens."
+                    "death": "This cat found out why c_n despises ravens."
                 },
                 "frequency": 3
             },
@@ -2655,7 +2255,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "reg_death": "This cat found out why c_n despises ravens."
+                    "death": "This cat found out why c_n despises ravens."
                 },
                 "frequency": 3
             }
@@ -2716,32 +2316,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
+                        "mutual": true,
+                        "values": [ "trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "After to_cat caught from_cat sneaking out of camp, the two hunted a kea bird together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2754,32 +2336,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
+                        "mutual": true,
+                        "values": [ "trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "After to_cat caught from_cat sneaking out of camp, the two scavenged a kea bird together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2798,32 +2362,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
+                        "cats_to": [ "p_l" ],
+                        "cats_from": [ "app1" ],
+                        "mutual": true,
+                        "values": [ "trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "After to_cat caught from_cat sneaking out of camp, the two ambushed a kea bird together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2853,31 +2399,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -15
+                            "trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat doubted to_cat's ability to handle {PRONOUN/to_cat/self} after from_cat caught {PRONOUN/to_cat/object} sneaking out of camp and getting into a foolish fight with a kiwi."
+                        }
                     }
                 ],
                 "prey": [

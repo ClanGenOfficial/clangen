@@ -40,12 +40,11 @@
                             "r_c"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat took a romantic stroll and listened to bird song."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -62,12 +61,11 @@
                             "r_c"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat took a romantic stroll among budding flowers."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -80,6 +78,7 @@
                     "MEDIATOR,1",
                     "INSIGHTFUL,1"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": [
@@ -89,12 +88,11 @@
                             "r_c"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 13,
+                        "log": {
+                            "cats_from": "s_c's social adeptness made {PRONOUN/s_c/poss} romantic newleaf stroll with r_c all the better."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -106,19 +104,24 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["romance"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l felt embarrassed when r_c rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "values": ["comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "r_c felt awkward when p_l asked {PRONOUN/r_c/object} out on a romantic stroll, and r_c rejected the offer."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -166,11 +169,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["like", "comfort", "romance"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l showed r_c {PRONOUN/p_l/poss} favorite spot in the territory in newleaf, and they passed a romantic day together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -187,11 +190,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["like", "comfort", "romance"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l showed r_c {PRONOUN/p_l/poss} favorite spot in the territory in newleaf, and they passed a romantic day together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -210,83 +213,14 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "values": ["comfort", "romance"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l wanted to show r_c {PRONOUN/p_l/poss} favorite spot in the territory in newleaf, but r_c rejected the offer."
+                        }
                     }
                 ],
                 "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_train_newleaf_beetlesoloapp1",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ]
-        },
-        "frequency": 4,
-        "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
-        "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
-                "exp": 20,
-                "stat_skill": [
-                    "HUNTER,0"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "While app1 is wiggling {PRONOUN/app1/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww.",
-                "exp": 0,
-                "frequency": 4
-            },
-            {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "stomachache"
-                        ],
-                        "scars": []
-                    }
-                ],
-                "frequency": 3
             }
         ]
     },
@@ -336,12 +270,25 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust",
-                            "like"
+                        "values": ["comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "...a story so scary that from_cat still sometimes has nightmares."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
                         ],
-                        "amount": 10
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": ["respect", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat told from_cat a really cool scary story..."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -354,18 +301,31 @@
                 "relationships": [
                     {
                         "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat's feelings were hurt when to_cat didn't want to listen to {PRONOUN/from_cat/poss} story."
+                        }
+                    },
+                    {
+                        "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust",
-                            "like"
-                        ],
-                        "amount": -10
+                        "values": ["respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was bored and annoyed when to_cat tried to scare {PRONOUN/from_cat/object} with an old nursery tale."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -373,7 +333,7 @@
         ]
     },
     {
-        "patrol_id": "fst_train_newleaf_crowrock_storylocked1",
+        "patrol_id": "fst_train_newleaf_crowrock_storylorelocked1",
         "biome": [
             "forest"
         ],
@@ -391,7 +351,8 @@
         "frequency": 2,
         "chance_of_success": 60,
         "pl_skill_constraint": [
-            "STORY,1"
+            "STORY,1",
+            "LORE,1"
         ],
         "intro_text": "There's a saying, about crows in newleaf...",
         "decline_text": "Cats say many things. Doesn't mean it's worth listening to.",
@@ -401,31 +362,26 @@
                 "exp": 30,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "like"
-                        ],
-                        "amount": 5
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat told from_cat how to befriend crows."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed telling to_cat an old saying about crows."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -438,16 +394,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "comfort", "like"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was embarrassed and hurt that to_cat wasn't interested in hearing {PRONOUN/from_cat/poss} knowledge of crows."
+                        }
                     }
                 ],
                 "frequency": 4

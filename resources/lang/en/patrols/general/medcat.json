@@ -2066,27 +2066,16 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 1,
         "intro_text": "As app1 pads through c_n territory, {PRONOUN/app1/subject} {VERB/app1/feel/feels} a presence join {PRONOUN/app1/object}.",
         "decline_text": "{PRONOUN/app1/poss/CAP} companion stays with {PRONOUN/app1/object} as silent support while {PRONOUN/app1/subject} {VERB/app1/work/works}.",
@@ -4606,8 +4595,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died in a terrible training accident, foretold by a Death's Head Moth.",
-                    "lead_death": "died in a terrible training accident, foretold by a Death's Head Moth"
+                    "death": "m_c died in a terrible training accident, foretold by a Death's Head Moth."
                 },
                 "frequency": 4
             }
@@ -6487,8 +6475,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after tasting deathberries out of curiosity.",
-                    "lead_death": "died after tasting deathberries"
+                    "death": "m_c died after tasting deathberries out of curiosity."
                 },
                 "frequency": 1
             }
@@ -6819,8 +6806,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after being bitten by a snake on patrol.",
-                    "lead_death": "died from a snake bite",
+                    "death": "m_c died after being bitten by a snake on patrol.",
                     "scars": "m_c was scarred after being bitten by a snake on patrol"
                 },
                 "relationships": [
@@ -6865,8 +6851,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died to save the medicine cat from a snake.",
-                    "lead_death": "died to save the medicine cat from a snake"
+                    "death": "m_c died to save the medicine cat from a snake."
                 },
                 "relationships": [
                     {
@@ -6905,7 +6890,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from a snake bite while gathering herbs.",
+                    "death": "m_c died from a snake bite while gathering herbs.",
                     "scars": "m_c was scarred after being bitten by a snake on patrol"
                 },
                 "relationships": [
