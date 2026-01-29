@@ -344,6 +344,16 @@
             "Chats with r_c about what it's like to be a medicine cat",
             "Is worrying about asking r_c for help for something minor"
         ],
+        "main_status_constraint": [
+            "warrior",
+            "apprentice",
+            "deputy",
+            "leader",
+            "mediator apprentice",
+            "mediator",
+            "elder",
+            "kitten"
+        ],
         "random_status_constraint": [
             "medicine cat"
         ]
@@ -898,6 +908,16 @@
         "main_trait_constraint": [
             "careful"
         ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "mediator apprentice",
+            "mediator",
+            "deputy",
+            "leader",
+            "kitten",
+            "medicine cat apprentice"
+        ],
         "random_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
@@ -1241,7 +1261,9 @@
             "warrior",
             "mediator",
             "deputy",
-            "leader"
+            "leader",
+            "elder",
+            "medicine cat apprentice"
         ],
         "random_living_status": [
             "living"
@@ -1679,6 +1701,15 @@
         "id": "loving_to_living_apprentices",
         "thoughts": [
             "Is offering any help {PRONOUN/m_c/subject} can to the medicine cat"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder",
+            "mediator apprentice",
+            "mediator"
         ],
         "random_status_constraint": [
             "medicine cat apprentice",
@@ -2292,7 +2323,8 @@
         "main_status_constraint": [
             "warrior",
             "deputy",
-            "leader"
+            "leader",
+            "apprentice"
         ],
         "main_trait_constraint": [
             "thoughtful"
@@ -2338,6 +2370,16 @@
         "thoughts": [
             "Is grumbling as {PRONOUN/m_c/subject} {VERB/m_c/carry/carries} out a task for the medicine cat",
             "Snacks on catmint when r_c isn't looking"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder",
+            "mediator apprentice",
+            "mediator",
+            "medicine cat apprentice"
         ],
         "random_status_constraint": [
             "medicine cat",
@@ -2402,7 +2444,6 @@
     {
         "id": "wise_gen",
         "thoughts": [
-            "Has a suggestion for the Clan leader",
             "Is grooming {PRONOUN/m_c/self} thoughtfully",
             "Is explaining the truth to a Clanmate that said something incorrect",
             "Solves a problem by thinking back to another time the exact same thing happened",
@@ -2422,6 +2463,29 @@
         ],
         "main_trait_constraint": [
             "wise"
+        ]
+    },
+    {
+        "id": "wise_to_leader",
+        "thoughts": [
+            "Has a suggestion for r_c",
+            "Offers r_c sage advice about leadership"
+        ],
+        "main_trait_constraint": [
+            "wise"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "elder",
+            "mediator apprentice",
+            "mediator",
+            "medicine cat apprentice",
+            "medicine cat"
+        ],
+        "random_status_constraint": [
+            "leader"
         ]
     },
     {
@@ -2484,7 +2548,299 @@
         ]
     },
     {
-        "id": "campkeeper_gen",
+        "id": "teacher_skill_gen",
+        "thoughts": [
+            "Breaks something complicated down into easy steps",
+            "Shares {PRONOUN/m_c/poss} secret tips with r_c",
+            "Helps r_c understand something confusing",
+            "Helps r_c work on something",
+            "Offers {PRONOUN/m_c/poss} advice to r_c for working on a particular skill"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ]
+    },
+    {
+        "id": "teacher_skill_normaladult_gen",
+        "thoughts": [
+            "Takes the lead in a training patrol"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ],
+        "main_status_constraint": [
+            "warrior",
+            "deputy",
+            "leader"
+        ]
+    },
+    {
+        "id": "hunter_skill_gen",
+        "thoughts": [
+            "Keeps {PRONOUN/m_c/poss} reflexes sharp with some exercises",
+            "Practices pouncing",
+            "Feels secure knowing the Clan counts on {PRONOUN/m_c/object} to hunt for them",
+            "Feels nervous knowing the Clan counts on {PRONOUN/m_c/object} to hunt for them",
+            "Can't wait for the next hunting patrol",
+            "Volunteers to lead a hunting patrol",
+            "Goes out for a quick solo-hunt",
+            "Debates whether land prey or water prey is easier to hunt",
+            "Lines {PRONOUN/m_c/poss} nest with trophies from {PRONOUN/m_c/poss} best hunts"
+        ],
+        "main_skill_constraint": [
+            "HUNTER,1"
+        ],
+        "main_status_constraint": [
+            "warrior",
+            "deputy",
+            "leader"
+        ]
+    },
+    {
+        "id": "fighter_skill_gen",
+        "thoughts": [
+            "Keeps {PRONOUN/m_c/poss} claws sharp",
+            "Enjoys sparring with any Clanmate",
+            "Practices a complicated battle move until {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} perfected it",
+            "Hopes {PRONOUN/m_c/poss} Clanmates can count on {PRONOUN/m_c/object} in battle",
+            "Can't find a partner for sparring",
+            "Stretches before and after sparring",
+            "Appreciates the simplicity of a leap-and-hold in battle",
+            "Thinks {PRONOUN/m_c/poss} belly-rake is one of the best in the Clan",
+            "Worries about future border scraps, despite {PRONOUN/m_c/poss} skill",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} better at solving problems with words instead of claws",
+            "Wonders if others are intimidated by {PRONOUN/m_c/poss} fighting abilities",
+            "Invents a new battle move"
+        ],
+        "main_skill_constraint": [
+            "FIGHTER,1"
+        ],
+        "main_status_constraint": [
+            "warrior",
+            "deputy",
+            "leader"
+        ]
+    },
+    {
+        "id": "runner_skill_gen",
+        "thoughts": [
+            "Stretches before and after a run",
+            "Runs sprints, counting heartbeats in {PRONOUN/m_c/poss} head",
+            "Secretly hopes some cat will challenge {PRONOUN/m_c/object} to a race",
+            "Estimates how long it would take {PRONOUN/m_c/object} to run from one border to the other",
+            "Gets up early to run across the territory before the sun is up",
+            "Enjoys the wind whistling through {PRONOUN/m_c/poss} whiskers"
+        ],
+        "main_skill_constraint": [
+            "RUNNER,1"
+        ]
+    },
+    {
+        "id": "climber_skill_gen",
+        "thoughts": [
+            "Finds a perch high up in camp",
+            "Leaps from log to log",
+            "Loves the view from high above",
+            "Doesn't understand other cats' fear of heights",
+            "Knows {PRONOUN/m_c/subject}'ll always land on {PRONOUN/m_c/poss} feet",
+            "Always finds it easier getting up high than getting back down...",
+            "Knows all the best views in the territory"
+        ],
+        "main_skill_constraint": [
+            "CLIMBER,1"
+        ]
+    },
+    {
+        "id": "swimmer_skill_gen",
+        "thoughts": [
+            "Eats fish to keep {PRONOUN/m_c/poss} pelt sleek",
+            "Stretches on land before a swim",
+            "Offers to help r_c learn to get {PRONOUN/r_c/poss} paws wet",
+            "Thinks rinsing off in running water is much more efficient than grooming",
+            "Doesn't understand other cats' aversion to water",
+            "Shakes {PRONOUN/m_c/poss} pelt out after a swim and sprays r_c by accident",
+            "Imagines how much faster {PRONOUN/m_c/subject} would be with fins"
+        ],
+        "main_skill_constraint": [
+            "SWIMMER,1"
+        ]
+    },
+    {
+        "id": "speaker_skill_gen",
+        "thoughts": [
+            "Uses a word that r_c has never heard of",
+            "Practices giving a speech in a puddle",
+            "Prides {PRONOUN/m_c/self} on being easy to talk to",
+            "Likes sharing tongues and hearing gossip",
+            "Finds it easy to talk to other Clans' warriors",
+            "Worries about losing {PRONOUN/m_c/poss} voice one day"
+        ],
+        "main_skill_constraint": [
+            "SPEAKER,1"
+        ]
+    },
+    {
+        "id": "mediator_skill_gen",
+        "thoughts": [
+            "Reminds r_c to think before acting",
+            "Considers r_c's perspective",
+            "Admits to r_c something that's been bothering {PRONOUN/m_c/object}",
+            "Stops to chat with a Clanmate {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} always get along with",
+            "Realizes two Clanmates are having a misunderstanding",
+            "Reminds r_c not to think the worst of a Clanmate",
+            "Intervenes in an argument between Clanmates",
+            "Smooths over a spat between Clanmates",
+            "Advises r_c on {PRONOUN/r_c/poss} love life",
+            "Tries to give {PRONOUN/m_c/self} the same advice {PRONOUN/m_c/subject}'d give a friend"
+        ],
+        "main_skill_constraint": [
+            "MEDIATOR,1"
+        ]
+    },
+    {
+        "id": "mediator_skillnotrole_gen",
+        "thoughts": [
+            "Wonders if it's too late to become a mediator",
+            "Wonders if {PRONOUN/m_c/subject} would be better as a mediator instead",
+            "Wouldn't give up {PRONOUN/m_c/poss} role to be a mediator"
+        ],
+        "main_skill_constraint": [
+            "MEDIATOR,1"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "warrior",
+            "medicine cat",
+            "deputy",
+            "leader",
+            "elder"
+        ]
+    },
+    {
+        "id": "clever_skill_gen",
+        "thoughts": [
+            "Studies r_c intently",
+            "Listens much more than {PRONOUN/m_c/subject} {VERB/m_c/talk/talks}",
+            "Surprises r_c with a sharp observation",
+            "Always has a witty remark ready",
+            "Remembers something that r_c thought {PRONOUN/m_c/subject} had forgotten",
+            "Thinks about why trees shed their leaves in leaf-fall",
+            "Wonders how bumblebees' wings are strong enough to lift their bodies",
+            "Uses a small stick as a tool",
+            "Draws designs in some sand with {PRONOUN/m_c/poss} claw"
+        ],
+        "main_skill_constraint": [
+            "CLEVER,1"
+        ]
+    },
+    {
+        "id": "insight_skill_gen",
+        "thoughts": [
+            "Notes the underlying causes behind r_c's behavior",
+            "Considers the future of the Clan",
+            "Games out future scenarios in {PRONOUN/m_c/poss} head",
+            "Offers a helpful word of advice to r_c",
+            "Realizes how much something from kithood still influences {PRONOUN/m_c/object}",
+            "Soaks up the day-to-day happenings of the Clan",
+            "Wonders what is at the root of current Clan drama",
+            "Considers explanations for r_c's recent strange behavior"
+        ],
+        "main_skill_constraint": [
+            "INSIGHTFUL,1"
+        ]
+    },
+    {
+        "id": "sense_skill_gen",
+        "thoughts": [
+            "Turns {PRONOUN/m_c/poss} head sharply at a flit of movement",
+            "Practices navigating the camp without one of {PRONOUN/m_c/poss} senses",
+            "Volunteers to guard the camp, knowing {PRONOUN/m_c/subject}'ll sense any threats",
+            "Keeps getting woken up in the middle of the night",
+            "Follows {PRONOUN/m_c/poss} nose"
+        ],
+        "main_skill_constraint": [
+            "SENSE,1"
+        ]
+    },
+    {
+        "id": "sense3_skill_gen",
+        "thoughts": [
+            "Leaves camp, overwhelmed by the sounds and smells of other cats"
+        ],
+        "main_skill_constraint": [
+            "SENSE,3"
+        ]
+    },
+    {
+        "id": "kitsitter_skill_gen",
+        "thoughts": [
+            "Brings fresh moss to the nursery in anticipation of new kits",
+            "Converses easily with younger cats",
+            "Appreciates the perspective of young cats"
+        ],
+        "main_skill_constraint": [
+            "KIT,1"
+        ]
+    },
+    {
+        "id": "kitsitter_to_kit",
+        "thoughts": [
+            "Rolls up moss-balls for kits to play with",
+            "Brings r_c a cool feather to play with",
+            "Makes r_c purr by pulling silly faces",
+            "Helps r_c express {PRONOUN/r_c/poss} feelings",
+            "Does crafts with r_c using twigs and moss",
+            "Catches r_c trying to sneak out and distracts {PRONOUN/r_c/object} with a game",
+            "Consoles r_c when {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} upset",
+            "Calms r_c down during a tantrum",
+            "Buries seeds with r_c to start a little garden by the nursery",
+            "Takes r_c seriously in conversation",
+            "Is in charge of the nursery today",
+            "Takes r_c out of camp on a small supervised excursion",
+            "Teaches r_c a valuable lesson about using {PRONOUN/r_c/poss} words",
+            "Offers the best badger rides to the kits",
+            "Helps r_c catch a butterfly",
+            "Learns about r_c's interests"
+        ],
+        "main_skill_constraint": [
+            "KIT,1"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "story_skill_gen",
+        "thoughts": [
+            "Thinks of the perfect ending to a story",
+            "Revises old elements of a myth",
+            "Tells r_c about an ancestor",
+            "Wonders what mysteries could be explained by forgotten myths",
+            "Comes up with a fanciful explanation for something simple",
+            "Explains that it's not <i>lying</i>, it's <i>storytelling</i>"
+        ],
+        "main_skill_constraint": [
+            "STORY,1"
+        ]
+    },
+    {
+        "id": "lore_skill_gen",
+        "thoughts": [
+            "Lists the constellations to r_c",
+            "Remembers old names for prey that no cat uses anymore",
+            "Thinks of old remedies and purrs at their senselessness",
+            "Imparts an old bit of wisdom to r_c",
+            "Recalls a shameful piece of c_n history",
+            "Recalls an inspiring piece of c_n history",
+            "Tries to bring back an old c_n tradition"
+        ],
+        "main_skill_constraint": [
+            "LORE,1"
+        ]
+    },
+    {
+        "id": "camp_skill_gen",
         "thoughts": [
             "Is padding back and forth across the camp",
             "Is helping to reinforce the nursery walls",
@@ -2505,31 +2861,21 @@
         ]
     },
     {
-        "id": "mediator_skill_gen",
+        "id": "healer_skill_gen",
         "thoughts": [
-            "Wonders if it's too late to become a mediator",
-            "Wonders if {PRONOUN/m_c/subject} would be better as a mediator instead",
-            "Intervenes in an argument between Clanmates",
-            "Smooths over a spat between Clanmates",
-            "Advises r_c on {PRONOUN/r_c/poss} love life",
-            "Wouldn't give up {PRONOUN/m_c/poss} role to be a mediator",
-            "Tries to give {PRONOUN/m_c/self} the same advice {PRONOUN/m_c/subject}'d give a friend"
+            "Pulls a thorn out of r_c's paw",
+            "Keeps an eye out for cobwebs",
+            "Brings a spider back to camp in hopes it'll spin a web",
+            "Finds the scent of bitter herbs strangely comforting",
+            "Encourages r_c not to dismiss a health concern",
+            "Reminds r_c to drink water"
         ],
         "main_skill_constraint": [
-            "MEDIATOR,1"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "warrior",
-            "medicine cat",
-            "deputy",
-            "leader",
-            "elder"
+            "HEALER,1"
         ]
     },
     {
-        "id": "starclan_skill_gen",
+        "id": "star_skill_gen",
         "thoughts": [
             "Gives thanks to StarClan",
             "Thinks {PRONOUN/m_c/subject} saw a glimmer of stardust out of the corner of {PRONOUN/m_c/poss} eye",
@@ -2557,6 +2903,15 @@
         "main_skill_constraint": [
             "STAR,1"
         ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader",
+            "elder",
+            "mediator apprentice",
+            "mediator"
+        ],
         "random_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
@@ -2566,19 +2921,196 @@
         ]
     },
     {
-        "id": "starclan_df_skill_2_to_kit",
+        "id": "starclan_df_ghost_skill_to_kit",
         "thoughts": [
             "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real"
         ],
         "main_skill_constraint": [
             "STAR,2",
-            "DARK,2"
+            "DARK,2",
+            "GHOST,1"
         ],
         "random_status_constraint": [
             "kitten"
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+    {
+        "id": "dark_skill_gen",
+        "thoughts": [
+            "Feels an ominous presence behind {PRONOUN/m_c/object}",
+            "Notices r_c casts more than one shadow",
+            "Catches the scent of crowfood",
+            "Senses something watching from the darkness",
+            "Tastes blood for a heartbeat",
+            "Remembers stories of {PRONOUN/m_c/poss} most frightening ancestors",
+            "Wakes from a dream in a cold sweat",
+            "Seems to be avoiding {PRONOUN/m_c/poss} nest",
+            "Turns around suddenly, but no cat is there",
+            "Dreams of teeth",
+            "Remembers disturbing things that never happened to {PRONOUN/m_c/object}"
+        ],
+        "main_skill_constraint": [
+            "DARK,1"
+        ]
+    },
+    {
+        "id": "rc_dark_skill_gen",
+        "thoughts": [
+            "Notices r_c casts more than one shadow",
+            "Feels uneasy around r_c",
+            "Wonders how r_c learned a particular battle move"
+        ],
+        "random_skill_constraint": [
+            "DARK,1"
+        ]
+    },
+    {
+        "id": "omen_skill_gen",
+        "thoughts": [
+            "Finds a strange piece of prey",
+            "Finds a fasciated flower and wonders what it might mean",
+            "Suspects there is a deeper meaning to the weather today",
+            "Looks for answers in the breeze and soil",
+            "Spends the day in a clover patch, looking for something",
+            "Wonders if omen_list_sight/m_c {PRONOUN/m_c/subject} saw is an omen",
+            "Wonders if omen_list_sound/m_c {PRONOUN/m_c/subject} heard is an omen",
+            "Wonders if omen_list_smell/m_c {PRONOUN/m_c/subject} scented is an omen",
+            "Wonders if omen_list_emotional/m_c {PRONOUN/m_c/subject} felt is an omen",
+            "Wonders if omen_list_touch/m_c {PRONOUN/m_c/subject} felt is an omen"
+        ],
+        "main_skill_constraint": [
+            "OMEN,1"
+        ]
+    },
+    {
+        "id": "dream_skill_gen",
+        "thoughts": [
+            "Feels a strange chill in {PRONOUN/m_c/poss} dream",
+            "Feels a comforting warmth in {PRONOUN/m_c/poss} dream",
+            "Has a dream full of dream_list",
+            "Wonders what all the dream_list in {PRONOUN/m_c/poss} dreams lately means",
+            "Has a dream full of strange shapes and colors",
+            "Wakes with a lingering bitter taste on {PRONOUN/m_c/poss} tongue}",
+            "Wakes with a lingering acrid smell in {PRONOUN/m_c/poss} nose",
+            "Wakes with a lingering sweet smell in {PRONOUN/m_c/poss} nose",
+            "Wakes with the feeling of dream_list in {PRONOUN/m_c/poss} heart",
+            "Remembers a dream so clearly it feels real",
+            "Has a strange dream but forgets it immediately upon waking",
+            "Feels tired even after a full night's sleep"
+        ],
+        "main_skill_constraint": [
+            "DREAM,1"
+        ]
+    },
+    {
+        "id": "dream2_skill_gen",
+        "thoughts": [
+            "Sleeps outside of camp to avoid {PRONOUN/m_c/poss} Clanmates' dreams",
+            "Keeps stumbling into r_c's recurring dream and is bored of it",
+            "Loves wandering into r_c's dreams in particular",
+            "Realizes something about r_c when {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} in {PRONOUN/r_c/poss} dream",
+            "Wonders why r_c's dreams are full of dream_list",
+            "Wakes {PRONOUN/m_c/self} up after intruding on r_c's embarrassing dream"
+        ],
+        "main_skill_constraint": [
+            "DREAM,2"
+        ]
+    },
+    {
+        "id": "clairvoyant_gen",
+        "thoughts": [
+            "Feels a tingle of premonition",
+            "Gets a wave of deja vu",
+            "Pre-empts r_c when {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} {PRONOUN/m_c/object}",
+            "Guesses what r_c has planned today",
+            "Suddenly thinks of clair_list_emotional/m_c",
+            "Suddenly scents clair_list_smell/m_c",
+            "Suddenly hears clair_list_sound/m_c",
+            "Has the sudden sensation of clair_list_touch/m_c",
+            "Suddenly tastes clair_list_taste/m_c"
+        ],
+        "main_skill_constraint": [
+            "CLAIRVOYANT,1"
+        ]
+    },
+    {
+        "id": "clairvoyant_skill_working_gen",
+        "thoughts": [
+            "Already knows which patrol {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} on today",
+            "Anticipates the best hunting ground for today's patrol"
+        ],
+        "main_skill_constraint": [
+            "CLAIRVOYANT,1"
+        ],
+        "main_status_constraint": [
+            "apprentice",
+            "warrior",
+            "leader"
+        ]
+    },
+    {
+        "id": "prophet_skill_gen",
+        "thoughts": [
+            "Hears a strange string of words echo in {PRONOUN/m_c/poss} ears",
+            "Keeps having the same dream and is starting to worry",
+            "Notices a pattern of events beginning to emerge",
+            "Feels the burden of the gift of prophecy",
+            "Wonders if r_c is involved in a prophecy",
+            "Hopes r_c isn't involved in a prophecy",
+            "Closes {PRONOUN/m_c/poss} eyes and sees prophecy_list_sight/m_c",
+            "Suddenly hears prophecy_list_sound/m_c",
+            "Suddenly scents prophecy_list_smell/m_c",
+            "Suddenly feels prophecy_list_emotional/m_c",
+            "Suddenly feels prophecy_list_touch/m_c"
+        ],
+        "main_skill_constraint": [
+            "PROPHET,1"
+        ]
+    },
+    {
+        "id": "ghost_skill_gen",
+        "thoughts": [
+            "Notes a cold spot in camp",
+            "Hears an unearthly humming",
+            "Never feels completely alone",
+            "Feels a strange tickle run over {PRONOUN/m_c/poss} spine"
+        ],
+        "main_skill_constraint": [
+            "GHOST,1"
+        ]
+    },
+    {
+        "id": "ghost2_skill_gen",
+        "thoughts": [
+            "Notices a white blur at the edge of camp... but it's just cotton fluff",
+            "Spots a silhouette in the distance",
+            "Has seen the same strange pair of green eyes many times",
+            "Has seen the same strange pair of blue eyes many times",
+            "Has seen the same strange pair of amber eyes many times",
+            "Feels a shadow fall across {PRONOUN/m_c/object}, cast by nothing",
+            "Glimpses a specter in the territory"
+        ],
+        "main_skill_constraint": [
+            "GHOST,2"
+        ]
+    },
+    {
+        "id": "ghost3_skill_gen",
+        "thoughts": [
+            "Hears a cat crying for help, but finds no cat there",
+            "Exchanges pleasantries with a long-dead cat",
+            "Discusses the Clan's past with a long-dead ancestor",
+            "Spends time with the ghosts hanging around camp",
+            "Feels sad {PRONOUN/m_c/subject} can't introduce {PRONOUN/m_c/poss} live friends to {PRONOUN/m_c/poss} dead ones",
+            "Feels unsettled by a ghost's description of dying",
+            "Stops to chat with a kittypet on the border, then realizes they died long ago",
+            "Has to apologize to a loner after incorrectly assuming they were a ghost"
+        ],
+        "main_skill_constraint": [
+            "GHOST,3"
         ]
     },
     {
@@ -3217,7 +3749,7 @@
         ]
     },
     {
-        "id": "working_adult_to_alive_med_cat",
+        "id": "working_to_alive_med_cat",
         "thoughts": [
             "Recounts the Gathering for r_c and {PRONOUN/r_c/poss} patients",
             "Brought r_c a berry to identify",
@@ -3228,7 +3760,10 @@
         "main_status_constraint": [
             "warrior",
             "deputy",
-            "leader"
+            "leader",
+            "apprentice",
+            "mediator",
+            "mediator apprentice"
         ],
         "random_status_constraint": [
             "medicine cat"

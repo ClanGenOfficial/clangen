@@ -8,18 +8,16 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
-class RelationshipLog(GameWindow):
+class RelationshipLogWindow(GameWindow):
     """This window allows the user to see the relationship log of a certain relationship."""
 
     def __init__(self, relationship, disable_button_list, hide_button_list):
         super().__init__(
             ui_scale(pygame.Rect((273, 122), (505, 550))),
-            window_display_title="Relationship Log",
-            object_id="#relationship_log_window",
         )
         self.set_blocking(False)
         self.hide_button_list = hide_button_list

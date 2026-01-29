@@ -16,18 +16,16 @@ from scripts.housekeeping.datadir import get_cache_dir
 from scripts.housekeeping.update import get_latest_version_number
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.windows.announce_restart import AnnounceRestart
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.announce_restart import RestartAnnouncementWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.windows.update import UpdateWindow
 from scripts.utility import ui_scale
 
 
-class UpdateAvailablePopup(GameWindow):
+class UpdateAvailableWindow(GameWindow):
     def __init__(self, show_checkbox: bool = False):
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 230))),
-            window_display_title="Update available",
-            object_id="#game_over_window",
         )
 
         self.begin_update_title = UIImageButton(
@@ -142,5 +140,5 @@ class UpdateAvailablePopup(GameWindow):
 
     def announce_restart_callback(self):
         self.x.kill()
-        y = AnnounceRestart(switch_get_value(Switch.cur_screen))
+        y = RestartAnnouncementWindow(switch_get_value(Switch.cur_screen))
         y.update(1)

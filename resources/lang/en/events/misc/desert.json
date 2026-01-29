@@ -161,11 +161,14 @@
     },
     "relationships": [
       {
-        "cats_from": ["clan"],
+        "cats_from": ["some_clan"],
         "cats_to": ["m_c"],
         "mutual": false,
-        "values": ["respect"],
-        "amount": 3
+        "values": ["respect", "like"],
+        "amount": 3,
+        "log": {
+          "cats_from": "from_cat enjoyed to_cat's stories of far off Clans."
+        }
       }
     ]
   },
@@ -186,11 +189,14 @@
     },
     "relationships": [
       {
-        "cats_from": ["clan"],
+        "cats_from": ["some_clan"],
         "cats_to": ["m_c"],
         "mutual": false,
-        "values": ["respect"],
-        "amount": 3
+        "values": ["respect", "like"],
+        "amount": 3,
+        "log": {
+          "cats_from": "from_cat enjoyed to_cat's stories of The Dreaming."
+        }
       }
     ]
   },
@@ -224,7 +230,7 @@
     "relationships": [
       {
           "cats_from": [
-              "clan"
+              "high_lawful"
           ],
           "cats_to": [
               "m_c"
@@ -232,7 +238,10 @@
           "values": [
               "respect"
           ],
-          "amount": 2
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat appreciated that to_cat stood guard over the camp in the pouring rain."
+          }
       }
   ]
   },
@@ -255,7 +264,7 @@
     "relationships": [
       {
           "cats_from": [
-              "clan"
+              "high_lawful"
           ],
           "cats_to": [
               "m_c"
@@ -263,7 +272,10 @@
           "values": [
               "respect"
           ],
-          "amount": 2
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat appreciated that to_cat stood guard over the camp in the scorching heat."
+          }
       }
   ]
   },
@@ -282,7 +294,7 @@
     "relationships": [
       {
           "cats_from": [
-              "clan"
+              "some_clan"
           ],
           "cats_to": [
               "m_c"
@@ -290,7 +302,10 @@
           "values": [
               "respect"
           ],
-          "amount": 2
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat appreciated that to_cat raised the alarm about a monitor lizard close to camp."
+          }
       }
   ]
   },
@@ -309,7 +324,7 @@
     "relationships": [
       {
           "cats_from": [
-              "clan"
+              "some_clan"
           ],
           "cats_to": [
               "m_c"
@@ -317,7 +332,10 @@
           "values": [
               "respect"
           ],
-          "amount": 2
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat appreciated that to_cat tracked a dingo to make sure it left c_n territory."
+          }
       }
   ]
   },
@@ -336,7 +354,7 @@
     "relationships": [
       {
           "cats_from": [
-              "clan"
+              "some_clan"
           ],
           "cats_to": [
               "m_c"
@@ -344,7 +362,10 @@
           "values": [
               "respect"
           ],
-          "amount": 2
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat appreciated that to_cat scared a red-bellied black snake away from camp."
+          }
       }
   ]
   },
@@ -376,7 +397,7 @@
     "relationships": [
       {
           "cats_from": [
-              "clan"
+              "high_lawful"
           ],
           "cats_to": [
               "m_c"
@@ -384,7 +405,10 @@
           "values": [
               "respect"
           ],
-          "amount": 2
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat appreciated that to_cat raised the alarm about a hawk passing over the camp."
+          }
       }
   ]
   },
@@ -403,7 +427,7 @@
     "relationships": [
       {
           "cats_from": [
-              "clan"
+              "high_lawful"
           ],
           "cats_to": [
               "m_c"
@@ -411,7 +435,10 @@
           "values": [
               "respect"
           ],
-          "amount": 2
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat appreciated that to_cat guarded camp when a hyena was prowling nearby."
+          }
       }
   ]
   },
@@ -424,7 +451,18 @@
     "m_c": {
         "age": ["adolescent", "young adult","adult","senior","senior adult"],
         "status": ["any"]
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["low_stable"],
+        "cats_to": ["m_c"],
+        "values": ["trust", "comfort"],
+        "amount": -5,
+        "log": {
+          "cats_from": "from_cat was unsettled to see to_cat's fur stained bright red."
+        }
+      }
+    ]
   },
   {
     "event_id": "dst_misc_any_traitmisc1",
@@ -448,7 +486,18 @@
       "age": ["any"],
       "status": ["any"],
       "trait": ["cold", "gloomy", "grumpy", "strange"]
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["high_social"],
+        "cats_to": ["m_c"],
+        "values": ["comfort", "like"],
+        "amount": -5,
+        "log": {
+          "cats_from": "from_cat noticed that to_cat was in a foul mood."
+        }
+      }
+    ]
   },
   {
     "event_id": "dst_misc_any_dreaming1",
@@ -499,18 +548,16 @@
     },
     "relationships": [
       {
-          "cats_from": [
-              "clan"
-          ],
-          "cats_to": [
-              "m_c"
-          ],
-          "values": [
-              "respect"
-          ],
-          "amount": 5
+        "cats_from": ["some_clan"],
+        "cats_to": ["m_c"],
+        "mutual": false,
+        "values": ["respect", "like"],
+        "amount": 3,
+        "log": {
+          "cats_from": "from_cat enjoyed to_cat's stories of The Dreaming."
+        }
       }
-  ]
+    ]
   },
   {
     "event_id": "dst_misc_any_dreaming5",
@@ -525,18 +572,16 @@
     },
     "relationships": [
       {
-          "cats_from": [
-              "clan"
-          ],
-          "cats_to": [
-              "m_c"
-          ],
-          "values": [
-              "respect"
-          ],
-          "amount": 5
+        "cats_from": ["some_clan"],
+        "cats_to": ["m_c"],
+        "mutual": false,
+        "values": ["respect", "like"],
+        "amount": 3,
+        "log": {
+          "cats_from": "from_cat enjoyed to_cat's stories of The Dreaming."
+        }
       }
-  ]
+    ]
   },
   {
     "event_id": "dst_misc_any_ancestors1",
@@ -604,8 +649,11 @@
             "cats_from": ["m_c"],
             "cats_to": ["r_c"],
             "mutual": true,
-            "values": ["like"],
-            "amount": 20
+            "values": ["like", "comfort"],
+            "amount": 20,
+            "log": {
+              "cats_from": "from_cat and to_cat had lots of fun playing predator-and-warrior."
+            }
           }
         ]
     },
@@ -629,7 +677,10 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["like", "trust", "comfort"],
-            "amount": 15
+            "amount": 15,
+            "log": {
+              "cats_from": "from_cat and to_cat did their best to climb the rocks around camp together."
+            }
           }
         ]
     },
@@ -639,7 +690,7 @@
         "season": ["greenleaf"],
         "tags": ["clan:warrior"],
         "frequency": 4,
-        "event_text": "m_c and r_c emerge from the nursury as the cool of the night takes over, their bouncy energy contrasting the tired warriors napping on the sun-warmed rocks.",
+        "event_text": "m_c and r_c emerge from the nursery as the cool of the night takes over, their bouncy energy contrasting the tired warriors napping on the sun-warmed rocks.",
         "m_c": {
             "status": ["kitten"]
         },
@@ -651,8 +702,11 @@
             "cats_from": ["m_c"],
             "cats_to": ["r_c"],
             "mutual": true,
-            "values": ["like", "trust", "comfort"],
-            "amount": 10
+            "values": ["like", "comfort"],
+            "amount": 20,
+            "log": {
+              "cats_from": "from_cat and to_cat had lots of fun playing in the cool night air together."
+            }
           }
         ]
     },
@@ -677,7 +731,10 @@
             "cats_from": ["r_c"],
             "mutual": true,
             "values": ["like", "comfort", "trust"],
-            "amount": 15
+            "amount": 15,
+            "log": {
+              "cats_from": "from_cat and to_cat agree that thunder is scary."
+            }
           }
         ]
     },
@@ -700,8 +757,11 @@
             "cats_to": ["m_c"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["like", "trust", "comfort"],
-            "amount": 15
+            "values": ["like", "comfort"],
+            "amount": 20,
+            "log": {
+              "cats_from": "from_cat and to_cat have lots of fun playing on the icy camp floor."
+            }
           }
         ]
       },
@@ -712,7 +772,7 @@
         ],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "m_c faceplants right into the shaded water well in the rocks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} drinking from and is hauled up by r_c, spluttering and embarassed.",
+        "event_text": "m_c faceplants right into the shaded water well in the rocks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} drinking from and is hauled up by r_c, spluttering and embarrassed.",
         "m_c": {
             "age": ["kitten", "adolescent"]
         },
@@ -724,8 +784,11 @@
             "cats_to": ["m_c"],
             "cats_from": ["r_c"],
             "mutual": false,
-            "values": ["like", "comfort", "respect", "trust"],
-            "amount": 15
+            "values": ["like", "trust"],
+            "amount": 10,
+            "log": {
+              "cats_from": "to_cat pulled from_cat out of a pool of water when from_cat fell in while drinking."
+            }
           }
         ]
     },
@@ -747,7 +810,10 @@
               "cats_from": ["r_c"],
               "mutual": true,
               "values": ["trust", "like"],
-              "amount": 15
+              "amount": 20,
+              "log": {
+                "cats_from": "from_cat and to_cat snuck out of camp and went for a run in the night together."
+              }
           }
       ]
   },
@@ -763,15 +829,18 @@
     "r_c": {
         "age": ["adolescent"]
     },
-    "relationships": [
-        {
-            "cats_to": ["m_c"],
-            "cats_from": ["r_c"],
-            "mutual": true,
-            "values": ["like", "comfort", "trust"],
-            "amount": 15
-        }
-    ]
+      "relationships": [
+          {
+              "cats_to": ["m_c"],
+              "cats_from": ["r_c"],
+              "mutual": true,
+              "values": ["trust", "like"],
+              "amount": 20,
+              "log": {
+                "cats_from": "from_cat and to_cat snuck out of camp to watch the sunrise together."
+              }
+          }
+      ]
   },
   {
     "event_id": "dst_misc_any_apprentice3",
@@ -785,15 +854,18 @@
     "r_c": {
       "age": ["adolescent"]
     },
-    "relationships": [
-        {
-          "cats_to": ["m_c"],
-          "cats_from": ["r_c"],
-          "mutual": true,
-          "values": ["like", "comfort", "trust"],
-          "amount": 15
-        }
-    ]
+      "relationships": [
+          {
+              "cats_to": ["m_c"],
+              "cats_from": ["r_c"],
+              "mutual": true,
+              "values": ["trust", "like"],
+              "amount": 20,
+              "log": {
+                "cats_from": "from_cat and to_cat snuck out of camp together."
+              }
+          }
+      ]
   },
   {
     "event_id": "dst_misc_any_apprentice4",
@@ -814,8 +886,11 @@
           "cats_to": ["m_c"],
             "cats_from": ["r_c"],
             "mutual": true,
-            "values": ["like", "trust"],
-          "amount": 15
+            "values": ["like", "comfort"],
+          "amount": 15,
+          "log": {
+            "cats_from": "from_cat and to_cat bonded over hating mouse bile."
+          }
         }
     ]
   },
@@ -838,8 +913,11 @@
         "cats_from": ["m_c"],
         "cats_to": ["n_c:0"],
         "mutual": true,
-        "values": ["respect"],
-        "amount": -10
+        "values": ["like"],
+        "amount": -5,
+        "log": {
+          "cats_from": "from_cat found to_cat's scent on a shrub by the border."
+        }
       }
     ],
     "outsider": {
@@ -855,7 +933,7 @@
     ],
     "season": ["any"],
     "frequency": 2,
-    "event_text": "m_c hasn't seen a o_c_n cat for, stars, almost the entire moon. Wonder how they're doing.",
+    "event_text": "m_c hasn't seen a o_c_n cat for, stars, almost the entire moon. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wonder/wonders} how they're doing.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
@@ -1000,7 +1078,7 @@
     "season": ["any"],
     "sub_type": ["transition"],
     "frequency": 2,
-    "event_text": "The nature of things is ever changing, like sand blown on the wind. 'Tom' is no longer accurate for m_c.",
+    "event_text": "The nature of things is ever changing, like sand blown on the wind. \"Tom\" is no longer accurate for m_c.",
     "m_c": {
       "gender": ["male"]
     },

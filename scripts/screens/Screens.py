@@ -10,7 +10,7 @@ import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
-from scripts.game_structure import image_cache, constants
+from scripts.game_structure import constants
 from scripts.cat.enums import CatGroup
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game.settings import game_setting_get
@@ -25,8 +25,8 @@ from scripts.game_structure.screen_settings import (
     screen,
 )
 from scripts.game_structure.ui_elements import UIImageButton
-from scripts.ui.windows.save_check import SaveCheck
-from scripts.ui.windows.event_loading import EventLoading
+from scripts.ui.windows.save_check import SaveCheckWindow
+from scripts.ui.event_load_animation import EventLoadingAnimation
 from scripts.screens.enums import GameScreen
 from scripts.screens.screens_core.screens_core import rebuild_den_dropdown
 from scripts.utility import (
@@ -169,7 +169,9 @@ class Screens:
             and work_thread.is_alive()
             and work_thread.get_time_from_start() > delay
         ):
-            self.loading_window[work_thread.name] = EventLoading(loading_screen_pos)
+            self.loading_window[work_thread.name] = EventLoadingAnimation(
+                loading_screen_pos
+            )
         elif self.loading_window.get(work_thread.name) and not work_thread.is_alive():
             self.loading_window[work_thread.name].kill()
             self.loading_window.pop(work_thread.name)
@@ -306,7 +308,7 @@ class Screens:
         elif event.ui_element == Screens.menu_buttons["patrol_screen"]:
             self.change_screen(GameScreen.PATROL)
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
-            SaveCheck(
+            SaveCheckWindow(
                 switch_get_value(Switch.cur_screen),
                 True,
                 Screens.menu_buttons["main_menu"],

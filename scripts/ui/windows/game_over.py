@@ -13,16 +13,14 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
-class GameOver(GameWindow):
+class GameOverWindow(GameWindow):
     def __init__(self, last_screen):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 180))),
-            window_display_title="Game Over",
-            object_id="#game_over_window",
         )
         self.clan_name = str(game.clan.displayname + "Clan")
         self.last_screen = last_screen

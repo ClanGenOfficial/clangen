@@ -11,16 +11,14 @@ from scripts.game_structure.ui_elements import (
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
-class DeleteCheck(GameWindow):
+class CheckDeletionWindow(GameWindow):
     def __init__(self, reloadscreen, clan_name):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 180))),
-            window_display_title="Delete Check",
-            object_id="#delete_check_window",
         )
         self.clan_name = clan_name
         self.reloadscreen = reloadscreen
