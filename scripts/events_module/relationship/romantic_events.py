@@ -13,12 +13,11 @@ from scripts.event_class import Single_Event
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
+from scripts.events_module.text_adjust import process_text, event_text_adjust
+from scripts.events_module.consequences import change_relationship_values
+from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
-    event_text_adjust,
     get_personality_compatibility,
-    process_text,
-    change_relationship_values,
 )
 
 

@@ -16,13 +16,13 @@ from scripts.game_structure.ui_elements import (
 from scripts.ui.windows.relationship_log import RelationshipLogWindow
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
-from scripts.utility import (
-    get_text_box_theme,
+from scripts.ui.theme import get_text_box_theme
+from scripts.events_module.text_adjust import shorten_text_to_fit
+from scripts.ui.scale import (
     ui_scale,
-    shorten_text_to_fit,
     ui_scale_dimensions,
-    ui_scale_blit,
     ui_scale_offset,
+    ui_scale_blit,
 )
 from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure.screen_settings import MANAGER, screen
@@ -886,6 +886,3 @@ class RelationshipScreen(Screens):
             self.apply_cat_filter(self.search_bar.get_text())
             self.update_cat_page()
         self.previous_search_text = self.search_bar.get_text()
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]

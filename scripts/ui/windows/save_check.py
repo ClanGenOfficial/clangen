@@ -19,7 +19,8 @@ from scripts.game_structure.ui_elements import (
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow
-from scripts.utility import ui_scale, ui_scale_dimensions, quit
+from scripts.housekeeping.quit_game import quit_game
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
 
 
 class SaveCheckWindow(GameWindow):
@@ -126,7 +127,7 @@ class SaveCheckWindow(GameWindow):
                     self.kill()
                 else:
                     game.is_close_menu_open = False
-                    quit(savesettings=False, clearevents=False)
+                    quit_game(savesettings=False, clearevents=False)
             elif event.ui_element == self.save_button:
                 if game.clan is not None:
                     self.save_button_saving_state.show()

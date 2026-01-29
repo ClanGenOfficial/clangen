@@ -30,11 +30,8 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
-    event_text_adjust,
-    find_alive_cats_with_rank,
-    get_leader_life_notice,
-)
+from scripts.events_module.text_adjust import event_text_adjust, get_leader_life_notice
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 
 # ---------------------------------------------------------------------------- #

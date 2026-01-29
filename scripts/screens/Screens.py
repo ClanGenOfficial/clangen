@@ -29,12 +29,7 @@ from scripts.ui.windows.save_check import SaveCheckWindow
 from scripts.ui.event_load_animation import EventLoadingAnimation
 from scripts.screens.enums import GameScreen
 from scripts.screens.screens_core.screens_core import rebuild_den_dropdown
-from scripts.utility import (
-    update_sprite,
-    ui_scale,
-    ui_scale_blit,
-    get_current_season,
-)
+from scripts.ui.scale import ui_scale, ui_scale_blit
 from scripts.game_structure import game
 
 
@@ -597,7 +592,7 @@ class Screens:
 
         # make the right string to pull the correct camp image
         try:
-            season = get_current_season()
+            season = game.clan.current_season
             season_bg = (
                 scripts.screens.screens_core.screens_core.default_fullscreen_bgs[theme][
                     season
@@ -753,11 +748,6 @@ class Screens:
 
     # pragma pylint: enable=no-member
 
-
-# CAT PROFILES
-def cat_profiles():
-    """Updates every cat's sprites"""
-    game.choose_cats.clear()
-
-    for x in Cat.all_cats:
-        update_sprite(Cat.all_cats[x])
+    @staticmethod
+    def chunks(L, n):
+        return [L[x : x + n] for x in range(0, len(L), n)]
