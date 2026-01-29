@@ -6,6 +6,7 @@ ARG GIT_COMMITTERS_ENABLED=true
 
 COPY pyproject.toml .
 COPY uv.lock .
+COPY README.md . # Dirty workaround :/
 
 RUN apt-get update && apt-get install -y git && \
     uv sync --no-default-groups --group docs
@@ -26,4 +27,4 @@ COPY --from=0 /docs/site /usr/share/nginx/html
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"] 
+CMD ["nginx", "-g", "daemon off;"]
