@@ -1076,7 +1076,7 @@
                 "art": "gen_cat_looking_up3"
             },
             {
-                "text": "s_c isn't going to lose, even in a playful fight, and pounces on app2. Before p_l and r_c can intervene, s_c thrusts app2's head into a rather deep puddle. When app2 resurfaces, {PRONOUN/app2/subject}{VERB/app2/'re/'s} choking and spluttering. s_c is rebuked for taking the game too far",
+                "text": "s_c isn't going to lose, even in a playful fight, and pounces on app2. Before p_l and r_c can intervene, s_c thrusts app2's head into a rather deep puddle. When app2 resurfaces, {PRONOUN/app2/subject}{VERB/app2/'re/'s} choking and spluttering. s_c is rebuked for taking the game too far.",
                 "exp": 0,
                 "frequency": 4,
                 "stat_trait": ["bold", "fierce", "daring", "competitive", "vengeful", "troublesome", "shameless"],
@@ -1087,7 +1087,7 @@
                         "cats_to": ["s_c"],
                         "values": ["like", "trust"],
                         "amount": -15,
-                        "mutual": true,
+                        "mutual": false,
                         "log": {
                             "cats_from": "to_cat took a game way too far and from_cat got hurt."
                         }
