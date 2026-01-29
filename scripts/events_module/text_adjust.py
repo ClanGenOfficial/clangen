@@ -14,7 +14,7 @@ from scripts.cat.pronouns import (
     get_pronouns,
     get_new_pronouns,
 )
-from scripts.cat.sprites import sprites
+from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import localization, game
 from scripts.game_structure.game import switch_get_value, Switch

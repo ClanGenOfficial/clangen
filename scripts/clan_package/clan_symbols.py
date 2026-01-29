@@ -1,6 +1,6 @@
 from random import choice
 
-from scripts.cat.sprites import sprites
+from scripts.cat.sprites.load_sprites import sprites
 
 
 def clan_symbol_sprite(clan, return_string=False, force_light=False):

@@ -29,7 +29,7 @@ from scripts.cat.pelts import Pelt
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.enums import CatAge, CatRank, CatGroup
-from ..cat.sprites import sprites
+from ..cat.sprites.load_sprites import sprites
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.save_load import safe_save
 from ..game_structure.game.settings import game_setting_get

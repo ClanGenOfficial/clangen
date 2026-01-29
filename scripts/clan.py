@@ -24,7 +24,7 @@ from scripts.cat.save_load import (
     get_faded_ids,
     load_faded_cat_ids,
 )
-from scripts.cat.sprites import sprites
+from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition

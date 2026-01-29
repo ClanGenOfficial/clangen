@@ -5,7 +5,7 @@ from uuid import uuid4
 from scripts.cat import save_load
 from scripts.cat.cats import create_cat, Cat
 from scripts.cat.enums import CatRank
-from scripts.cat.sprites import sprites
+from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Clan, Afterlife
 from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
 from scripts import events

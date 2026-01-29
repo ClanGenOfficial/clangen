@@ -6,7 +6,7 @@ import i18n
 
 import scripts.game_structure.screen_settings
 from scripts.cat.enums import CatAge
-from scripts.cat.sprites import sprites
+from scripts.cat.sprites.load_sprites import sprites
 from scripts.game_structure import constants
 from scripts.game_structure.localization import get_lang_config
 from scripts.events_module.text_adjust import adjust_list_text

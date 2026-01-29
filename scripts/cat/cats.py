@@ -44,7 +44,7 @@ from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
-from scripts.cat.sprites import update_sprite, update_mask
+from scripts.cat.sprites.display_sprites import update_sprite, update_mask
 from scripts.events_module.text_adjust import (
     event_text_adjust,
     leader_ceremony_text_adjust,
