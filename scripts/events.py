@@ -40,7 +40,7 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.ui.windows.save_error import SaveError
+from scripts.ui.windows.save_error import SaveErrorWindow
 from scripts.events_module.text_adjust import (
     ongoing_event_text_adjust,
     event_text_adjust,
@@ -298,7 +298,7 @@ def one_moon():
             game.clan.save_pregnancy(game.clan)
             game.save_events()
         except:
-            SaveError(traceback.format_exc())
+            SaveErrorWindow(traceback.format_exc())
 
 
 def update_afterlife_temper():

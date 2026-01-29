@@ -50,7 +50,7 @@ jobs:
       - name: Check json validity
         run: uv run tests/test_json.py
       - name: Check json schemas
-        run: uv run tests/test_json_schemas.py
+        run: uv run pytest tests/test_json_model_compliance.py
   pronoun_test:
       runs-on: ubuntu-latest
       steps:

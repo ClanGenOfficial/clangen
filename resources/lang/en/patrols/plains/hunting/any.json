@@ -118,7 +118,7 @@
                     "any"
                 ],
                 "stat_skill": [
-                    "RUNNER,0"
+                    "RUNNER,1"
                 ],
                 "relationships": [
                     {
@@ -209,8 +209,8 @@
                     "any"
                 ],
                 "stat_skill": [
-                    "CLEVER,0",
-                    "INSIGHT,1"
+                    "CLEVER,1",
+                    "INSIGHTFUL,1"
                 ],
                 "relationships": [
                     {
@@ -457,7 +457,7 @@
                 ],
                 "stat_skill": [
                     "CLEVER,0",
-                    "INSIGHT,1"
+                    "INSIGHTFUL,0"
                 ],
                 "relationships": [
                     {

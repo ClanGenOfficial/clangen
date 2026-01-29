@@ -82,7 +82,7 @@
             "clan:kitten"
         ],
         "frequency": 4,
-        "event_text": "Through the long, cold night, m_c brings the young cats of the Clan with {PRONOUN/m_c/object} down the tunnels. {PRONOUN/m_c/poss/CAP} words paint an enchanting picture of the ancestors of c_n as {PRONOUN/m_c/subject} {VERB/m_c/point/points} out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
+        "event_text": "Through the long, cold night, m_c brings the young cats of the Clan with {PRONOUN/m_c/object} down the tunnels. {PRONOUN/m_c/subject/CAP} {VERB/m_c/point/points} out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
         "m_c": {
             "age": [
                 "any"
@@ -94,7 +94,22 @@
             "skill": [
                 "LORE,1"
             ]
-        }
+        },
+        "r_c": {
+            "age": ["kitten"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["like", "respect"],
+                "amount": 15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat listened raptly to to_cat's stories of c_n's ancestors."
+                }
+            }
+        ]
     },
     {
         "event_id": "mtn_misc_any_patch_accessory",
@@ -120,7 +135,8 @@
         "r_c": {
             "age": [
                 "any"
-            ],
+            ]
+        },
             "relationships": [
                 {
                     "cats_to": [
@@ -135,10 +151,10 @@
                         "trust",
                         "like"
                     ],
-                    "amount": 5
+                    "amount": 5,
+                    "log": "r_c gave a gift to m_c that {PRONOUN/m_c/subject} {VERB/m_c/have/has} worn on {PRONOUN/m_c/poss} pelt ever since."
                 }
             ]
-        }
     },
     {
         "event_id": "mtn_misc_war_leadercontemplates",

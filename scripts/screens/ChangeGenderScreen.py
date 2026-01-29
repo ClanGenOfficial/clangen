@@ -24,7 +24,7 @@ from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.game.switches import switch_get_value, switch_set_value, Switch
 from ..game_structure.screen_settings import MANAGER
-from ..ui.windows.pronoun_creation import PronounCreation
+from ..ui.windows.pronoun_creation import PronounCreationWindow
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 
@@ -92,7 +92,7 @@ class ChangeGenderScreen(Screens):
                     )
 
             elif event.ui_element == self.buttons["add_pronouns"]:
-                PronounCreation(self.the_cat)
+                PronounCreationWindow(self.the_cat)
                 self.previous_cat_button.disable()
                 self.next_cat_button.disable()
                 self.back_button.disable()

@@ -37,8 +37,7 @@
                 "prey": ["medium"],
                 "relationships": [
                 {
-                    "cats_from": [ "some_clan"
-                    ],
+                    "cats_from": [ "some_clan" ],
                     "cats_to": ["r_c"],
                     "values": [ "respect" ],
                     "mutual": false,
@@ -116,8 +115,7 @@
                 "prey": ["medium"],
                 "relationships": [
                 {
-                    "cats_from": [ "some_clan"
-                    ],
+                    "cats_from": [ "some_clan" ],
                     "cats_to": ["app1"],
                     "values": [ "respect" ],
                     "mutual": false,
@@ -1607,7 +1605,7 @@
                 "exp": 30,
                 "stat_skill": [
                     "HUNTER,2",
-                    "INSIGHT,2"
+                    "INSIGHTFUL,2"
                 ],
                 "can_have_stat": [
                     "r_c"
