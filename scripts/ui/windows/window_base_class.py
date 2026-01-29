@@ -7,11 +7,7 @@ from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton
 from scripts.ui.generate_box import get_box, BoxStyles
-from scripts.utility import (
-    ui_scale,
-    ui_scale_offset,
-    ui_scale_value,
-)
+from scripts.ui.scale import ui_scale_value, ui_scale, ui_scale_offset
 
 
 class GameWindow(UIWindow):
