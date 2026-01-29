@@ -149,21 +149,27 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": -5,
-                "mutual": false
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was badly injured when to_cat dared {PRONOUN/from_cat/object} to climb a tree and {PRONOUN/from_cat/subject} fell."
+                }
             },
             {
                 "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
                     "r_c"
                 ],
-                "values": [
-                    "like"
+                "cats_to": [
+                    "m_c"
                 ],
-                "amount": -10,
-                "mutual": false
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was impressed by to_cat's bravery when from_cat dared {PRONOUN/to_cat/object} to climb a tree, even though things ended in the medicine den."
+                }
             }
         ]
     },
@@ -371,13 +377,14 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
                 "amount": 30,
-                "mutual": false
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was rescued from a burning nursery by to_cat, even at the expense of to_cat's pelt."
+                }
             }
         ]
     },
@@ -468,8 +475,11 @@
                     "trust",
                     "respect"
                 ],
-                "amount": 5,
-                "mutual": false
+                "amount": 30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from drowning in a frozen pond."
+                }
             }
         ]
     },

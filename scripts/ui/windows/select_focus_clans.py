@@ -8,18 +8,16 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
-class SelectFocusClans(GameWindow):
+class SelectFocusClansWindow(GameWindow):
     """This window allows the user to select the clans to be sabotaged, aided or raided in the focus setting."""
 
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((250, 120), (300, 225))),
-            window_display_title="Change Cat Name",
-            object_id="#change_cat_name_window",
         )
         self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((80, 180), (139, 30))),

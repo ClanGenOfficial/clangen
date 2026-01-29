@@ -7,7 +7,7 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
 )
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
@@ -15,8 +15,6 @@ class EditorSaveCheck(GameWindow):
     def __init__(self, path, old_path, editor_save, event_list, old_event_list):
         super().__init__(
             ui_scale(pygame.Rect((200, 200), (400, 200))),
-            window_display_title="Editor Save Check",
-            object_id="#editor_save_check_window",
         )
         self.path = path
         self.old_path = old_path

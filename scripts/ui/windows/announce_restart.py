@@ -6,16 +6,14 @@ import pygame
 from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
 )
-from scripts.ui.windows.base_window import GameWindow
+from scripts.ui.windows.window_base_class import GameWindow
 from scripts.utility import ui_scale
 
 
-class AnnounceRestart(GameWindow):
+class RestartAnnouncementWindow(GameWindow):
     def __init__(self, last_screen):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 90))),
-            window_display_title="Game Over",
-            object_id="#game_over_window",
             back_button=False,
         )
         self.last_screen = last_screen
