@@ -6,7 +6,7 @@ ARG GIT_COMMITTERS_ENABLED=true
 
 COPY pyproject.toml .
 COPY uv.lock .
-COPY README.md . # Dirty workaround :/
+COPY README.md .
 
 RUN apt-get update && apt-get install -y git && \
     uv sync --no-default-groups --group docs
