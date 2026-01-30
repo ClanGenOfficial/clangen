@@ -11,13 +11,8 @@ from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.ui.windows.delete_check import CheckDeletionWindow
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    ui_scale_dimensions,
-    ui_scale_value,
-    ui_scale_offset,
-)
+from ..ui.theme import get_text_box_theme
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_value
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.game.save_load import read_clans

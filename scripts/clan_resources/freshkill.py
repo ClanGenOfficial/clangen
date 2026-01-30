@@ -9,7 +9,7 @@ from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import game
 from scripts.clan_package.settings import get_clan_setting
-from scripts.utility import get_alive_clan_queens
+from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
 
 class Nutrition:
