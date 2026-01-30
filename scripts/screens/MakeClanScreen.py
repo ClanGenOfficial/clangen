@@ -27,7 +27,6 @@ from .enums import GameScreen
 from ..cat import save_load
 from ..cat.enums import CatRank
 from ..cat.sprites.load_sprites import sprites
-from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.settings import game_setting_set, game_setting_get
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER, screen
