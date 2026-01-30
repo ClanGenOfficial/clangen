@@ -3,13 +3,13 @@
     "pronouns": {
         "sets": {
             "-&-sets comment-&-": "These are used to determine what pronouns a cat is assigned when they are generated (or this language is swapped to for the first time). This allows languages with pronoun sets that don't match English 1:1 to display correctly.",
-            "nonbinary": "0",
-            "male": "1",
-            "trans male": "1",
-            "female": "2",
-            "trans female": "2",
-            "default": "0",
-            "plural default": "4",
+            "nonbinary": "2",
+            "male": "0",
+            "trans male": "0",
+            "female": "1",
+            "trans female": "1",
+            "default": "2",
+            "plural default": "3",
             "plural male": "3",
             "plural female": "4",
             "plural nonbinary": "4",
@@ -19,12 +19,12 @@
         "gender_count": 3,
         "plural_rules": {
             "order": {
-                "0": "plural nonbinary",
-                "2": "plural female",
-                "1": "plural male"
+                "0": "plural male",
+                "1": "plural female",
+                "2": "plural nonbinary"
             }
         },
-        "adj_default": 1,
+        "adj_default": 2,
         "adj_default_comment": "This determines which section of an ADJ label is used if the matching cat is not supplied (e.g., as a general use of the word). Example: ADJ\/XXX\/potato\/potatoes\/potat with an adj_default of 1 would return 'potato'."
     },
     "description": {

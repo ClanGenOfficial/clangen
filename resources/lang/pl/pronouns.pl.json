@@ -1,24 +1,24 @@
 {
     "pl": {
         "0": {
-            "nominative": "ono",
+            "nominative": "on",
             "genitive": "go",
             "dative": "mu",
-            "accusative": "je",
+            "accusative": "go",
             "instrumental": "nim",
             "locative": "nim",
             "conju": 1,
             "gender": 0
         },
         "1": {
-            "nominative": "ono",
+            "nominative": "ona",
             "genitive": "jej",
             "dative": "jej",
-            "accusative": "je",
+            "accusative": "ją",
             "instrumental": "nią",
             "locative": "niej",
-            "conju": 1,
-            "gender": 0
+            "conju": 2,
+            "gender": 1
         },
         "2": {
             "nominative": "ono",
@@ -27,30 +27,10 @@
             "accusative": "je",
             "instrumental": "niem",
             "locative": "niem",
-            "conju": 1,
-            "gender": 0
-        },
-        "3": {
-            "nominative": "on",
-            "genitive": "go",
-            "dative": "mu",
-            "accusative": "go",
-            "instrumental": "nim",
-            "locative": "nim",
-            "conju": 2,
-            "gender": 1
-        },
-        "4": {
-            "nominative": "ona",
-            "genitive": "jej",
-            "dative": "jej",
-            "accusative": "ją",
-            "instrumental": "nią",
-            "locative": "niej",
             "conju": 3,
             "gender": 2
         },
-        "5": {
+        "3": {
             "nominative": "oni",
             "genitive": "ich",
             "dative": "im",
@@ -60,7 +40,7 @@
             "conju": 4,
             "gender": 3
         },
-        "6": {
+        "4": {
             "nominative": "one",
             "genitive": "ich",
             "dative": "im",

@@ -5,12 +5,15 @@
         "add_pronouns": "Dodaj Zaimki",
         "current_pronouns": "Bieżące Zaimki",
         "saved_pronouns": "Zapisane Zaimki",
-        "demo": "{PRONOUN\/m_c\/nominative\/CAP} jest {ADJ\/m_c\/kotem\/kocurem\/kotką}.<br>To legowisko jest {ADJ\/m_c\/je\/je\/}{PRONOUN\/m_c\/genitive}.<br>Kociaki zrobiły {PRONOUN\/m_c\/dative} psikusa.<br>Inni uważają {PRONOUN\/m_c\/accusative} za {ADJ\/m_c\/dobre\/dobrego\/dobrą} {ADJ\/m_c\/przyjacioła\/przyjaciela\/przyjaciółkę}.<br>Pies rzucił {PRONOUN\/m_c\/instrumental} o drzewo.<br>Przywódca myśli o {PRONOUN\/m_c\/locative}.",
+        "demo": "{PRONOUN\/m_c\/nominative\/CAP} jest {ADJ\/m_c\/kocurem\/kotką\/kotem}.<br>To legowisko jest {PRONOUN\/m_c\/genitive}.<br>Kociaki zrobiły {PRONOUN\/m_c\/dative} psikusa.<br>Inni uważają {PRONOUN\/m_c\/accusative} za {ADJ\/m_c\/dobrego\/dobrą\/dobre} {ADJ\/m_c\/przyjaciela\/przyjaciółkę\/przyjacioła}.<br>Pies rzucił {PRONOUN\/m_c\/instrumental} o drzewo.<br>Przywódca myśli o {PRONOUN\/m_c\/locative}.",
         "identity_changed_confirmation": "Zmieniono płeć!",
-        "conju0": "liczba pojedyńcza",
-        "conju1": "liczba mnoga",
-        "gender0": "rodzaj neutralny",
-        "gender1": "rodzaj męski",
-        "gender2": "rodzaj żeński"
+        "conju0": "koniugacja - męski",
+        "conju1": "koniugacja - żeński",
+        "conju2": "koniugacja - neutralny",
+        "conju3": "koniugacja - męskoosobowy",
+        "conju4": "koniugacja - niemęskoosobowy",
+        "gender0": "rodzaj męski",
+        "gender1": "rodzaj żeński",
+        "gender2": "rodzaj neutralny"
     }
 }
