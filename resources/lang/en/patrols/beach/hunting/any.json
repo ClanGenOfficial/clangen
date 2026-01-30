@@ -416,7 +416,7 @@
                 ],
             "relationships": [
                 {
-                    "cats_from": ["high_lawful"],
+                    "cats_from": ["clan", "high_lawful"],
                     "cats_to": ["s_c"],
                     "values": ["respect"],
                     "mutual": false,
@@ -961,7 +961,7 @@
                 "frequency": 1,
             "relationships": [
                 {
-                    "cats_from": ["high_lawful"],
+                    "cats_from": ["clan", "high_lawful"],
                     "cats_to": ["s_c"],
                     "values": ["like", "respect"],
                     "mutual": false,
@@ -982,7 +982,7 @@
                 "frequency": 4,
             "relationships": [
                 {
-                    "cats_from": ["high_social"],
+                    "cats_from": ["clan", "high_social"],
                     "cats_to": ["s_c"],
                     "values": ["like", "respect"],
                     "mutual": false,
@@ -1072,7 +1072,7 @@
                 "frequency": 3,
             "relationships": [
                 {
-                    "cats_from": ["low_lawful"],
+                    "cats_from": ["clan", "low_lawful"],
                     "cats_to": ["r_c"],
                     "values": ["respect", "like"],
                     "mutual": false,
@@ -1126,7 +1126,7 @@
                 "frequency": 1,
             "relationships": [
                 {
-                    "cats_from": ["high_lawful"],
+                    "cats_from": ["clan", "high_lawful"],
                     "cats_to": ["app1"],
                     "values": ["respect"],
                     "mutual": false,
@@ -3267,7 +3267,7 @@
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -3640,7 +3640,7 @@
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,

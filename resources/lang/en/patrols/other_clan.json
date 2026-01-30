@@ -1113,7 +1113,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -1235,7 +1235,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
@@ -1582,7 +1582,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -1704,7 +1704,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
@@ -2050,7 +2050,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -2172,7 +2172,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
@@ -2519,7 +2519,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -2641,7 +2641,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
@@ -2987,7 +2987,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -3109,7 +3109,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],

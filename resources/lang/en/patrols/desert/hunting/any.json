@@ -1152,7 +1152,7 @@
                         }
                     },
                     {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["patrol"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1196,7 +1196,7 @@
                         }
                     },
                     {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["patrol"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1465,7 +1465,7 @@
                         }
                     },
                     {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["patrol"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1500,7 +1500,7 @@
                     }
                 },
                 {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["patrol"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1545,7 +1545,7 @@
                     }
                 },
                 {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["patrol"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1639,7 +1639,7 @@
                 "prey": ["large"],
                 "relationships": [
                 {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1661,7 +1661,7 @@
                 "prey": ["large"],
                 "relationships": [
                 {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["s_c"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1692,7 +1692,7 @@
                 "prey": ["large"],
                 "relationships": [
                 {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["s_c"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1735,7 +1735,7 @@
                 "prey": ["very_small"],
                 "relationships": [
                 {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "values": ["respect"],
                     "mutual": false,

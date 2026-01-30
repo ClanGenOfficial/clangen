@@ -4822,7 +4822,7 @@
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,

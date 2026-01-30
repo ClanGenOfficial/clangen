@@ -940,7 +940,7 @@
                 ],
             "relationships": [
                 {
-                    "cats_from": ["high_lawful"],
+                    "cats_from": ["clan", "high_lawful"],
                     "cats_to": ["app1"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1385,7 +1385,7 @@
                 },
             "relationships": [
                 {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["s_c"],
                     "values": ["respect"],
                     "mutual": false,
@@ -2440,7 +2440,7 @@
                 ],
             "relationships": [
                 {
-                    "cats_from": ["high_social"],
+                    "cats_from": ["clan", "high_social"],
                     "cats_to": ["app1"],
                     "values": ["like"],
                     "mutual": false,
