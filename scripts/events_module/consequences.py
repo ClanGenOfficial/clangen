@@ -797,7 +797,7 @@ def gather_cat_objects(
 
 def unpack_rel_block(
     Cat, relationship_effects: List[dict], event=None, stat_cat=None, extra_cat=None
-):
+) -> list:
     """
     Unpacks the info from the relationship effect block used in patrol and moon events, then adjusts rel values
     accordingly.
@@ -807,8 +807,11 @@ def unpack_rel_block(
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
     :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
+    :returns: List of all created rel logs for this rel block.
     """
     possible_values = [*RelType]
+
+    created_rel_logs: list = []
 
     for block in relationship_effects:
         cats_from = block.get("cats_from", [])
@@ -870,6 +873,7 @@ def unpack_rel_block(
             **value_changes,
             log=from_log,
         )
+        created_rel_logs.append(from_log)
 
         if block.get("mutual"):
             # we'll default to the other log if no unique log was written
@@ -879,6 +883,9 @@ def unpack_rel_block(
                 **value_changes,
                 log=to_log if to_log else from_log,
             )
+            if to_log:
+                created_rel_logs.append(to_log)
+    return created_rel_logs
 
 
 def change_relationship_values(

@@ -148,7 +148,7 @@ class Patrol:
 
         return self.process_text(self.patrol_event.intro_text, None)
 
-    def proceed_patrol(self, path: str = "proceed") -> Tuple[str, str, Optional[str]]:
+    def proceed_patrol(self, path: str = "proceed") -> Tuple[str, str, list, Optional[str]]:
         """Proceed the patrol to the next step.
         path can be: "proceed", "antag", or "decline" """
 
@@ -808,7 +808,7 @@ class Patrol:
 
         return all_patrol_events
 
-    def determine_outcome(self, antagonize=False) -> Tuple[str, str, Optional[str]]:
+    def determine_outcome(self, antagonize=False) -> Tuple[str, str, list, Optional[str]]:
         if self.patrol_event is None:
             raise Exception("No patrol event supplied")
 

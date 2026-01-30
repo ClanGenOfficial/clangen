@@ -66,6 +66,7 @@ class PatrolScreen(Screens):
         self.current_patrol = None
         self.display_text = ""
         self.results_text = ""
+        self.rel_results = []
         self.start_patrol_thread: Optional[PropagatingThread] = None
         self.proceed_patrol_thread: Optional[PropagatingThread] = None
         self.outcome_art = None
@@ -872,7 +873,7 @@ class PatrolScreen(Screens):
 
         # Draw Patrol Cats
         pos_x = 400
-        pos_y = 475
+        pos_y = 488
         for u in range(6):
             if u < len(self.patrol_obj.patrol_cats):
                 self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(
@@ -920,18 +921,21 @@ class PatrolScreen(Screens):
             (
                 self.display_text,
                 self.results_text,
+                self.rel_results,
                 self.outcome_art,
             ) = self.patrol_obj.proceed_patrol("decline")
         elif user_input in ["antag", "antagonize"]:
             (
                 self.display_text,
                 self.results_text,
+                self.rel_results,
                 self.outcome_art,
             ) = self.patrol_obj.proceed_patrol("antag")
         else:
             (
                 self.display_text,
                 self.results_text,
+                self.rel_results,
                 self.outcome_art,
             ) = self.patrol_obj.proceed_patrol("proceed")
 
@@ -968,6 +972,16 @@ class PatrolScreen(Screens):
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
+
+        self.elements["rel_detail"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((500, -2), (36, 36))),
+            Icon.MAGNIFY,
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+            anchors={"top_target": self.elements["event_bg"]},
+        )
+
         self.elements["patrol_results"].set_text(self.results_text)
 
         self.elements["patrol_text"].set_text(self.display_text)
