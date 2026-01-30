@@ -1472,7 +1472,9 @@
                         "mutual": false,
                         "values": ["comfort"],
                         "amount": -5,
-                        "log": "from_cat and to_cat avoided each other after a disastrous squirrel hunting patrol."
+                        "log": {
+                            "cats_from": "from_cat and to_cat avoided each other after a disastrous squirrel hunting patrol."
+                        }
                     }
                 ],
                 "prey": [
