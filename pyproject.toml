@@ -19,6 +19,7 @@ dependencies = [
     "cryptography~=42.0",
     "pgpy~=0.6",
     "platformdirs~=3.3",
+    "pydantic>=2.12.0",
     "pygame-ce~=2.2",
     "pygame-gui~=0.6",
     "requests~=2.28",
@@ -35,6 +36,7 @@ build = [
     "wheel~=0.40",
 ]
 dev = [
+    "hatchling>=1.27.0",
     "pytest~=8.2",
 ]
 docs = [
@@ -44,7 +46,6 @@ docs = [
     "mkdocs-material>=9.5.49",
 ]
 test = [
-    "jsonschema>=4.23.0",
     "pylint>=2.17.3",
 ]
 
@@ -57,3 +58,13 @@ discord = [
 pythonpath = [
   "."
 ]
+
+[project.scripts]
+dump_model_schemas = "scripts.dump_model_schemas:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts/"]

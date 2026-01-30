@@ -409,14 +409,14 @@ class Sprites:
 
             y_pos += 1
 
-    def get_symbol(self, symbol: str, force_light=False):
+    def get_symbol(self, symbol_str: str, force_light=False):
         """Change the color of the symbol to match the requested theme, then return it
-        :param Surface symbol: The clan symbol to convert
+        :param Surface symbol_str: The clan symbol to convert
         :param force_light: Use to ignore dark mode and always display the light mode color
         """
-        symbol = self.sprites.get(symbol)
+        symbol = self.sprites.get("symbol" + symbol_str)
         if symbol is None:
-            logger.warning("%s is not a known Clan symbol! Using default.")
+            logger.warning("%s is not a known Clan symbol! Using default.", symbol_str)
             symbol = self.sprites[self.clan_symbols[0]]
 
         recolored_symbol = copy(symbol)

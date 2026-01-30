@@ -87,7 +87,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c nods, and pads beside r_c as they hunt. {PRONOUN/s_c/subject/CAP} don't know if it was a vision from StarClan, but {PRONOUN/s_c/subject} felt flashes of r_c's dreams, dream_list, and s_c isn't going to leave r_c alone to figure it out {PRONOUN/r_c/self}.",
+                "text": "s_c nods, and pads beside r_c as they hunt. {PRONOUN/s_c/subject/CAP} don't know if it was a vision from StarClan, but {PRONOUN/s_c/subject} felt flashes of r_c's dreams - a feeling of dream_list - and s_c isn't going to leave r_c alone to figure it out {PRONOUN/r_c/self}.",
                 "exp": 20,
                 "stat_skill": [
                     "DREAM,1"
@@ -906,8 +906,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after tasting a tainted rat.",
-                    "lead_death": "died after tasting a tainted rat"
+                    "death": "m_c died after tasting a tainted rat."
                 },
                 "frequency": 2
             },
@@ -927,8 +926,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after tasting a tainted rat.",
-                    "lead_death": "died after tasting a tainted rat"
+                    "death": "m_c died after tasting a tainted rat."
                 },
                 "frequency": 4
             },
@@ -945,8 +943,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after tasting a tainted rat.",
-                    "lead_death": "died after tasting a tainted rat"
+                    "death": "m_c died after tasting a tainted rat."
                 },
                 "frequency": 4
             },
@@ -972,8 +969,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after tasting a tainted rat.",
-                    "lead_death": "died after tasting a tainted rat"
+                    "death": "m_c died after tasting a tainted rat."
                 },
                 "frequency": 4
             }
@@ -1061,8 +1057,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after a running nose progressed to something worse.",
-                    "lead_death": "died after a running nose progressed to something worse"
+                    "death": "m_c died after a running nose progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -1153,8 +1148,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after a running nose progressed to something worse.",
-                    "lead_death": "died after a running nose progressed to something worse"
+                    "death": "m_c died after a running nose progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -1315,8 +1309,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after a running nose progressed to something worse.",
-                    "lead_death": "died after a running nose progressed to something worse"
+                    "death": "m_c died after a running nose progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -1415,8 +1408,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after a running nose progressed to something worse.",
-                    "lead_death": "died after a running nose progressed to something worse"
+                    "death": "m_c died after a running nose progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -1515,8 +1507,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died after a running nose progressed to something worse.",
-                    "lead_death": "died after a running nose progressed to something worse"
+                    "death": "m_c died after a running nose progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -1610,8 +1601,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -1705,8 +1695,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -1800,8 +1789,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -1895,8 +1883,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -1990,8 +1977,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -3639,8 +3625,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -3810,8 +3795,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -3991,8 +3975,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -4160,8 +4143,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -4329,8 +4311,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }
@@ -4773,8 +4754,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred when a Clanmate lashed out at {PRONOUN/m_c/object} while they were bickering on patrol.",
-                    "reg_death": "m_c died after a small injury progressed to something worse.",
-                    "lead_death": "died after a small injury progressed to something worse"
+                    "death": "m_c died after a small injury progressed to something worse."
                 },
                 "frequency": 4
             }

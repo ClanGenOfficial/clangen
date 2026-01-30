@@ -2610,7 +2610,7 @@
                     "p_l"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died when {PRONOUN/m_c/subject} fell out of a tree, snapping {PRONOUN/m_c/poss} neck."
+                    "death": "m_c died when {PRONOUN/m_c/subject} fell out of a tree, snapping {PRONOUN/m_c/poss} neck."
                 },
                 "frequency": 3
             },
@@ -2808,7 +2808,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died when {PRONOUN/m_c/subject} fell out of a tree, snapping {PRONOUN/m_c/poss} neck."
+                    "death": "m_c died when {PRONOUN/m_c/subject} fell out of a tree, snapping {PRONOUN/m_c/poss} neck."
                 },
                 "frequency": 3
             }
@@ -2951,7 +2951,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c died when {PRONOUN/m_c/subject} fell out of a tree, snapping {PRONOUN/m_c/poss} neck."
+                    "death": "m_c died when {PRONOUN/m_c/subject} fell out of a tree, snapping {PRONOUN/m_c/poss} neck."
                 },
                 "frequency": 3
             },
@@ -7605,8 +7605,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from bramble thorns on a herb gathering patrol.",
-                    "reg_death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}.",
-                    "lead_death": "bramble thorns scratched up m_c and the wounds eventually festered and killed {PRONOUN/m_c/object}."
+                    "death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -8082,8 +8081,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice.",
-                    "lead_death": "after collecting excessive amounts of tansy as an apprentice"
+                    "death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice."
                 },
                 "relationships": [
                     {
@@ -8127,8 +8125,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice.",
-                    "lead_death": "after collecting excessive amounts of tansy as an apprentice"
+                    "death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice."
                 },
                 "relationships": [
                     {

@@ -1,0 +1,28 @@
+from enum import Enum
+
+
+class Status(Enum):
+    newborn = "newborn"
+    kitten = "kitten"
+    apprentice = "apprentice"
+    mediator_apprentice = "mediator apprentice"
+    medicine_cat_apprentice = "medicine cat apprentice"
+    warrior = "warrior"
+    mediator = "mediator"
+    medicine_cat = "medicine cat"
+    deputy = "deputy"
+    leader = "leader"
+    elder = "elder"
+    any = "any"
+    living = "living"
+    starclan = "starclan"
+    darkforest = "darkforest"
+    unknownresidence = "unknownresidence"
+    kittypet = "kittypet"
+    loner = "loner"
+    rogue = "rogue"
+    former_Clancat = "former Clancat"
+    exiled = "exiled"
+    lost = "lost"
+    outside_cat = "outside cat"
+    clancat = "clancat"

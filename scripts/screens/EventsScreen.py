@@ -24,22 +24,22 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     CatButton,
 )
-from scripts.game_structure.windows import GameOver
+from scripts.ui.windows.game_over import GameOverWindow
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import (
+from scripts.clan_package.clan_symbols import clan_symbol_sprite
+from scripts.ui.theme import get_text_box_theme
+from scripts.events_module.text_adjust import shorten_text_to_fit
+from scripts.ui.scale import (
     ui_scale,
-    clan_symbol_sprite,
-    get_text_box_theme,
-    shorten_text_to_fit,
-    get_living_clan_cat_count,
     ui_scale_dimensions,
-    ui_scale_value,
     ui_scale_offset,
+    ui_scale_value,
 )
+from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
 
 
 class EventsScreen(Screens):
@@ -889,7 +889,7 @@ class EventsScreen(Screens):
         switch_set_value(Switch.saved_page_positions, {})
 
         if get_living_clan_cat_count(Cat) == 0:
-            GameOver(GameScreen.EVENTS)
+            GameOverWindow(GameScreen.EVENTS)
 
         self.update_display_events_lists()
 
