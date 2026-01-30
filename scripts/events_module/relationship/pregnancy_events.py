@@ -14,15 +14,16 @@ from scripts.events_module.short.condition_events import Condition_Events
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
+from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
+from scripts.events_module.consequences import (
     create_new_cat,
-    get_highest_romantic_relation,
-    event_text_adjust,
-    get_personality_compatibility,
     change_relationship_values,
-    find_alive_cats_with_rank,
-    adjust_list_text,
 )
+from scripts.events_module.event_filters import (
+    get_highest_romantic_relation,
+    get_personality_compatibility,
+)
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 
 class Pregnancy_Events:

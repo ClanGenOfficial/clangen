@@ -7,7 +7,7 @@ from typing import Tuple, Dict, Union, Optional
 import pygame
 
 import scripts.game_structure.screen_settings
-from scripts.utility import ui_scale_value, ui_scale_dimensions
+from scripts.ui.scale import ui_scale_dimensions, ui_scale_value
 
 
 @dataclass(unsafe_hash=True)

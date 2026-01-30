@@ -41,21 +41,23 @@ from scripts.game_structure.game.switches import (
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.ui.windows.save_error import SaveErrorWindow
-from scripts.utility import (
-    change_clan_relations,
-    change_clan_reputation,
-    find_alive_cats_with_rank,
-    get_living_clan_cat_count,
-    ceremony_text_adjust,
-    get_current_season,
-    adjust_list_text,
+from scripts.events_module.text_adjust import (
     ongoing_event_text_adjust,
     event_text_adjust,
-    get_other_clan,
+    ceremony_text_adjust,
+    adjust_list_text,
     history_text_adjust,
-    unpack_rel_block,
 )
-
+from scripts.events_module.consequences import unpack_rel_block
+from scripts.clan_package.cotc import (
+    change_clan_reputation,
+    change_clan_relations,
+    get_other_clan,
+)
+from scripts.clan_package.get_clan_cats import (
+    find_alive_cats_with_rank,
+    get_living_clan_cat_count,
+)
 
 all_events = {}
 new_cat_invited = False
@@ -94,7 +96,6 @@ def one_moon():
 
     # age up the clan, set current season
     game.clan.age += 1
-    get_current_season()
     update_afterlife_temper()
     Pregnancy_Events.handle_pregnancy_age(game.clan)
     check_war()

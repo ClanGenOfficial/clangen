@@ -1,14 +1,12 @@
 import re
+from itertools import combinations
 from random import choice, randint
+from typing import List, Optional
 
-from scripts.cat_relations.enums import RelType
-
-from scripts.cat.enums import CatRank, CatAge
+from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
+from scripts.cat.enums import CatRank, CatAge, CatCompatibility
 from scripts.special_dates import get_special_date, contains_special_date_tag
-from scripts.utility import (
-    find_alive_cats_with_rank,
-    filter_relationship_type,
-)
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import game
 
 
@@ -695,3 +693,346 @@ def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:
         return cat_list
 
     return [kitty for kitty in cat_list if kitty.backstory in backstories]
+
+
+def filter_relationship_type(
+    group: list, filter_types: List[str], event_id: str = None, patrol_leader=None
+):
+    """
+    filters for specific types of relationships between groups of cat objects, returns bool
+    :param group: the group of cats to be tested (make sure they're in the correct order (i.e. if testing for
+    parent/child, the cat being tested as parent must be index 0)
+    :param filter_types: the relationship types to check for.
+    :param event_id: if the event has an ID, include it here
+    :param patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
+    """
+    if not filter_types:
+        return True
+
+    filter_list = filter_types.copy()
+
+    # keeping this list here just for quick reference of what tags are handled here
+    all_possible_tags = [
+        "siblings",
+        "not_siblings",
+        "littermates",
+        "not_littermates",
+        "mates",
+        "mates_with_pl",
+        "not_mates",
+        "parent/child",
+        "not_parent",
+        "child/parent",
+        "not_child",
+        "mentor/app",
+        "not_mentor",
+        "app/mentor",
+        "not_app",
+    ]
+    for tier_list in rel_type_tiers.values():
+        all_possible_tags.extend(tier_list)
+        all_possible_tags.extend([f"{l}_only" for l in tier_list])
+    if not set(filter_list).issubset(set(all_possible_tags)):
+        print(
+            f"WARNING: {[tag for tag in filter_list if tag not in all_possible_tags]} is not a valid relationship_status tag!"
+        )
+
+    if patrol_leader:
+        if patrol_leader in group:
+            group.remove(patrol_leader)
+        group.insert(0, patrol_leader)
+
+    if "siblings" in filter_list:
+        test_cat = group[0]
+        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+
+        if not all([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
+            return False
+        filter_list.remove("siblings")
+
+    if "not_siblings" in filter_list:
+        test_cat = group[0]
+        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+
+        if any([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
+            return False
+        filter_list.remove("not_siblings")
+
+    if "littermates" in filter_list:
+        test_cat = group[0]
+        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+
+        if not all([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
+            return False
+        filter_list.remove("littermates")
+
+    if "not_littermates" in filter_list:
+        test_cat = group[0]
+        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+
+        if any([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
+            return False
+
+        filter_list.remove("not_littermates")
+
+    if "mates" in filter_list:
+        # first test if more than one cat
+        if len(group) == 1:
+            return False
+
+        # then if cats don't have the needed number of mates
+        if not all(len(i.mate) >= (len(group) - 1) for i in group):
+            return False
+
+        # Now the expensive test.  We have to see if everyone is mates with each other
+        # Hopefully the cheaper tests mean this is only needed on events with a small number of cats
+        for x in combinations(group, 2):
+            if x[0].ID not in x[1].mate:
+                return False
+        filter_list.remove("mates")
+
+    # check if all cats are mates with p_l (they do not have to be mates with each other)
+    if "mates_with_pl" in filter_list:
+        # First test if there is more than one cat
+        if len(group) == 1:
+            return False
+
+        # Check each cat to see if it is mates with the patrol leader
+        for cat in group:
+            if cat.ID == patrol_leader.ID:
+                continue
+            if cat.ID not in patrol_leader.mate:
+                return False
+        filter_list.remove("mates_with_pl")
+
+    # Check if all cats are not mates
+    if "not_mates" in filter_list:
+        # opposite of mate check
+        for x in combinations(group, 2):
+            if x[0].ID in x[1].mate:
+                return False
+        filter_list.remove("not_mates")
+
+    # Check if the cats are in a parent/child relationship
+    if "parent/child" in filter_list:
+        # It should be exactly two cats for a "parent/child" event
+        if len(group) != 2:
+            return False
+        # test for parentage
+        if not group[0].is_parent(group[1]):
+            return False
+        filter_list.remove("parent/child")
+
+    if "not_parent" in filter_list:
+        test_cat = group[0]
+        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+
+        if any([test_cat.is_parent(inter_cat) for inter_cat in testing_cats]):
+            return False
+        filter_list.remove("not_parent")
+
+    if "child/parent" in filter_list:
+        # It should be exactly two cats for a "child/parent" event
+        if len(group) != 2:
+            return False
+        # test for parentage
+        if not group[1].is_parent(group[0]):
+            return False
+        filter_list.remove("child/parent")
+
+    if "not_child" in filter_list:
+        test_cat = group[0]
+        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+
+        if any([inter_cat.is_parent(test_cat) for inter_cat in testing_cats]):
+            return False
+        filter_list.remove("not_child")
+
+    if "mentor/app" in filter_list:
+        # It should be exactly two cats for a "mentor/app" event
+        if len(group) != 2:
+            return False
+        # test for parentage
+        if not group[1].ID in group[0].apprentice:
+            return False
+        filter_list.remove("mentor/app")
+
+    if "not_mentor" in filter_list:
+        test_cat = group[0]
+        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+
+        if any([inter_cat in test_cat.apprentice for inter_cat in testing_cats]):
+            return False
+        filter_list.remove("not_mentor")
+
+    if "app/mentor" in filter_list:
+        # It should be exactly two cats for a "app/mentor" event
+        if len(group) != 2:
+            return False
+        # test for parentage
+        if not group[0].ID in group[1].apprentice:
+            return False
+        filter_list.remove("app/mentor")
+
+    if "not_app" in filter_list:
+        test_cat = group[0]
+        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+
+        if any([inter_cat in test_cat.mentor for inter_cat in testing_cats]):
+            return False
+        filter_list.remove("not_app")
+
+    # Filtering relationship values
+    # each cat has to have relationships toward each other matching every level tag
+    for tier in filter_list:
+        for inter_cat in group:
+            if len(group) == 2 and inter_cat == group[1]:
+                # if this is a two cat group, then we only look for the first cat's rel toward the second cat.
+                # groups > 2 will require that all cats feel the same way toward each other.
+                continue
+            group_ids = [cat.ID for cat in group]
+
+            relevant_relationships = [
+                rel
+                for rel in inter_cat.relationships.values()
+                if rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID
+            ]
+
+            # list of every cat's tier list
+            group_lists: list[RelTier] = [
+                rel.get_reltype_tiers() for rel in relevant_relationships
+            ]
+
+            # now test each list to see if the required tag is inside
+            for tier_list in group_lists:
+                # just a quick check to see if we can avoid all the extra hullabaloo
+                if tier in tier_list:
+                    continue
+
+                # if it's limited to *just* the given tier
+                if "_only" in tier:
+                    tier.replace("_only", "")
+                    if tier not in tier_list:
+                        return False
+                # otherwise we allow both the given tier and any greater tiers
+                else:
+                    # finding the matching tier enum
+                    rel_tier: RelTier = RelTier(tier)
+
+                    # find the matching rel_type enum
+                    rel_type: Optional[RelType] = None
+                    for rel_type in rel_type_tiers:
+                        if rel_tier in rel_type_tiers[rel_type]:
+                            rel_type = rel_type
+                            break
+                    if not rel_type:
+                        continue
+
+                    # get the tier's index within the rel_types's list
+                    index = rel_type_tiers[rel_type].index(rel_tier)
+                    allowed_levels = []
+                    # if it's a pos tier, we allow that index and higher
+                    if rel_tier.is_any_pos:
+                        allowed_levels = rel_type_tiers[rel_type][index:]
+                    # if it's a neg tier, we allow that index and lower
+                    elif rel_tier.is_any_neg:
+                        allowed_levels = rel_type_tiers[rel_type][0 : index + 1]
+
+                    discard = True
+                    for l in tier_list:
+                        if l in allowed_levels:
+                            discard = False
+                            break
+                    if discard:
+                        return False
+
+    return True
+
+
+def get_highest_romantic_relation(
+    relationships, exclude_mate=False, potential_mate=False
+):
+    """Returns the relationship with the highest romantic value."""
+    max_love_value = 0
+    current_max_relationship = None
+    for rel in relationships:
+        if rel.romance < 0:
+            continue
+        if exclude_mate and rel.cat_from.ID in rel.cat_to.mate:
+            continue
+        if potential_mate and not rel.cat_to.is_potential_mate(
+            rel.cat_from, for_love_interest=True
+        ):
+            continue
+        if rel.romance > max_love_value:
+            current_max_relationship = rel
+            max_love_value = rel.romance
+
+    return current_max_relationship
+
+
+def check_relationship_value(cat_from, cat_to, rel_value=None):
+    """
+    returns the value of the rel_value param given
+    :param cat_from: the cat who is having the feelings
+    :param cat_to: the cat that the feelings are directed towards
+    :param rel_value: the relationship value that you're looking for,
+    options are: romance, like, respect, comfort, trust
+    """
+    if cat_to.ID in cat_from.relationships:
+        relationship = cat_from.relationships[cat_to.ID]
+    else:
+        relationship = cat_from.create_one_relationship(cat_to)
+
+    if rel_value == RelType.ROMANCE:
+        return relationship.romance
+    elif rel_value == RelType.LIKE:
+        return relationship.like
+    elif rel_value == RelType.RESPECT:
+        return relationship.respect
+    elif rel_value == RelType.COMFORT:
+        return relationship.comfort
+    elif rel_value == RelType.TRUST:
+        return relationship.trust
+
+    return None
+
+
+def get_personality_compatibility(cat1, cat2):
+    """
+    Returns matching CatCompatibility enum according to personalitiesof given cat objects.
+    :param cat1: Cat object of first cat
+    :param cat2: Cat object of second cat
+    """
+    personality1 = cat1.personality.trait
+    personality2 = cat2.personality.trait
+
+    if personality1 == personality2:
+        if personality1 is None:
+            return CatCompatibility.NEUTRAL
+        return CatCompatibility.POSITIVE
+
+    lawfulness_diff = abs(cat1.personality.lawfulness - cat2.personality.lawfulness)
+    sociability_diff = abs(cat1.personality.sociability - cat2.personality.sociability)
+    aggression_diff = abs(cat1.personality.aggression - cat2.personality.aggression)
+    stability_diff = abs(cat1.personality.stability - cat2.personality.stability)
+    list_of_differences = [
+        lawfulness_diff,
+        sociability_diff,
+        aggression_diff,
+        stability_diff,
+    ]
+
+    running_total = 0
+    for x in list_of_differences:
+        if x <= 4:
+            running_total += 1
+        elif x >= 6:
+            running_total -= 1
+
+    if running_total >= 2:
+        return CatCompatibility.POSITIVE
+    if running_total <= -2:
+        return CatCompatibility.NEGATIVE
+
+    return CatCompatibility.NEUTRAL

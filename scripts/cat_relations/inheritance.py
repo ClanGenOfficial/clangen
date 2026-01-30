@@ -11,7 +11,7 @@ while mating and for the display of the family tree screen.
 import i18n
 from strenum import StrEnum  # pylint: disable=no-name-in-module
 
-from scripts.utility import adjust_list_text
+from scripts.events_module.text_adjust import adjust_list_text
 
 
 class RelationType(StrEnum):

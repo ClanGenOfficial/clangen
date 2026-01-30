@@ -32,13 +32,8 @@ from scripts.game_structure.game.settings import game_setting_get
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import (
-    ui_scale,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale_value,
-    clamp,
-)
+from scripts.events_module.text_adjust import shorten_text_to_fit
+from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 
 
 class UISurfaceImageButton(pygame_gui.elements.UIButton):
@@ -1248,10 +1243,12 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         # every "unit" is 1/200th of the width of the bar
         pointer_offset = int(scale_position / 200 * bar.width)
         # -15 so it doesn't go past the end of the bar
+        pointer_x = max(
+            0, min(pointer_offset + pointer_origin[0], bar.width - ui_scale_value(15))
+        )
+
         pointer_final_position = (
-            clamp(
-                pointer_offset + pointer_origin[0], 0, bar.width - ui_scale_value(15)
-            ),
+            pointer_x,
             pointer_origin[1],
         )
         pointer_size = ui_scale_dimensions((14, 12))

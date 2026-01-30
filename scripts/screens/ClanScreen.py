@@ -15,12 +15,8 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
 )
-from scripts.utility import (
-    ui_scale,
-    ui_scale_dimensions,
-    get_current_season,
-    ui_scale_value,
-)
+from scripts.ui.windows.save_error import SaveErrorWindow
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 from .Screens import Screens
 from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
@@ -345,7 +341,7 @@ class ClanScreen(Screens):
             },
         )
 
-        self.set_bg(get_current_season())
+        self.set_bg(game.clan.current_season)
 
     def choose_nonoverlapping_positions(self, first_choices, dens, weights=None):
         if not weights:

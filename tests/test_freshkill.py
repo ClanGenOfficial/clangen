@@ -18,7 +18,7 @@ from scripts.cat.cats import Cat, create_cat
 from scripts.cat.skills import Skill, SkillPath
 from scripts.clan import Clan, Afterlife
 from scripts.clan_resources.freshkill import FreshkillPile
-from scripts.utility import get_alive_clan_queens
+from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
 
 class FreshkillPileTest(unittest.TestCase):
