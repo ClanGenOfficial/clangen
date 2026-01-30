@@ -32,8 +32,7 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -51,8 +50,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_lawful"
+                "cats_from": ["clan", "low_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -300,8 +298,7 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -319,8 +316,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_lawful"
+                "cats_from": ["clan", "low_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -851,8 +847,7 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -870,8 +865,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_lawful"
+                "cats_from": ["clan", "low_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1217,8 +1211,7 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1236,8 +1229,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_lawful"
+                "cats_from": ["clan", "low_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1316,8 +1308,7 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1335,8 +1326,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_lawful"
+                "cats_from": ["clan", "low_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1405,8 +1395,7 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1424,8 +1413,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_lawful"
+                "cats_from": ["clan", "low_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1484,8 +1472,7 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1503,8 +1490,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_lawful"
+                "cats_from": ["clan", "low_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1549,8 +1535,7 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1568,8 +1553,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_lawful"
+                "cats_from": ["clan", "low_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1690,8 +1674,7 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1709,8 +1692,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_lawful"
+                "cats_from": ["clan", "low_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1728,8 +1710,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "high_stable"
+                "cats_from": ["clan", "high_stable"
                 ],
                 "cats_to": [
                     "r_c"
@@ -1744,8 +1725,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "low_stable"
+                "cats_from": ["clan", "low_stable"
                 ],
                 "cats_to": [
                     "r_c"
@@ -1813,7 +1793,7 @@
             ]
         },
         "relationships": {
-            "cats_from": ["high_lawful"],
+            "cats_from": ["clan", "high_lawful"],
             "cats_to": ["m_c"],
             "values": ["respect"],
             "amount": -10,
@@ -1853,7 +1833,7 @@
             "changed": -1
         },
         "relationships": {
-            "cats_from": ["high_lawful"],
+            "cats_from": ["clan", "high_lawful"],
             "cats_to": ["m_c"],
             "values": ["respect"],
             "amount": -5,
@@ -1892,7 +1872,7 @@
             ]
         },
         "relationships": {
-            "cats_from": ["high_social"],
+            "cats_from": ["clan", "high_social"],
             "cats_to": ["m_c"],
             "values": ["respect", "like"],
             "amount": 5,
@@ -2113,7 +2093,7 @@
         },
         "relationships": [
             {
-                "cats_from": ["high_lawful"],
+                "cats_from": ["clan", "high_lawful"],
                 "cats_to": ["m_c"],
                 "values": ["trust"],
                 "amount": -10,
@@ -2148,7 +2128,7 @@
         },
         "relationships": [
             {
-                "cats_from": ["high_lawful"],
+                "cats_from": ["clan", "high_lawful"],
                 "cats_to": [
                     "m_c"
                 ],
@@ -2189,7 +2169,7 @@
         },
         "relationships": [
             {
-                "cats_from": ["high_lawful"],
+                "cats_from": ["clan", "high_lawful"],
                 "cats_to": [
                     "m_c"
                 ],
@@ -3853,7 +3833,7 @@
         },
         "relationships": [
             {
-                "cats_from": ["low_lawful"],
+                "cats_from": ["clan", "low_lawful"],
                 "cats_to": ["m_c"],
                 "values": ["respect", "like"],
                 "amount": 10,
@@ -4173,7 +4153,7 @@
         },
         "relationships": [
             {
-                "cats_from": ["low_lawful"],
+                "cats_from": ["clan", "low_lawful"],
                 "cats_to": ["m_c"],
                 "values": ["respect", "like"],
                 "amount": 10,
@@ -4233,8 +4213,7 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "cats_from": [
-                    "high_social"
+                "cats_from": ["clan", "high_social"
                 ],
                 "mutual": false,
                 "values": [
@@ -4859,8 +4838,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -4928,8 +4906,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -4998,8 +4975,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -5068,8 +5044,7 @@
                 }
             },
             {
-                "cats_from": [
-                    "high_lawful"
+                "cats_from": ["clan", "high_lawful"
                 ],
                 "cats_to": [
                     "m_c"
@@ -5138,7 +5113,7 @@
                 }
             },
             {
-                "cats_from": ["high_lawful"],
+                "cats_from": ["clan", "high_lawful"],
                 "cats_to": ["m_c"],
                 "mutual": false,
                 "values": ["trust"],
