@@ -23,6 +23,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.windows.window_base_class import GameWindow
+from scripts.ui.scale import ui_scale, ui_scale_offset, ui_scale_value
 
 
 class FreshkillManagementWindow(GameWindow):

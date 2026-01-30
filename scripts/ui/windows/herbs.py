@@ -4,6 +4,7 @@ import i18n
 import pygame
 import pygame_gui.elements
 
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import game
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
@@ -21,6 +22,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow
+from scripts.ui.scale import ui_scale, ui_scale_offset
 
 
 class HerbManagementWindow(GameWindow):
