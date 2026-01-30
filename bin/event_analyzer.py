@@ -14,6 +14,34 @@ dupe_ids = []
 
 event_flat = {}
 
+skills = {
+    "TEACHER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "HUNTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "FIGHTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "RUNNER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "CLIMBER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "SWIMMER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "SPEAKER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "MEDIATOR": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "CLEVER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "INSIGHTFUL": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "SENSE": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "KIT": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "STORY": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "LORE": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "CAMP": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "HEALER": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "STAR": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "DUSK": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "OMEN": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "DREAM": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "CLAIRVOYANT": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "PROPHET": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "GHOST": {"0": [], "1": [], "2": [], "3": [], "4": []},
+    "DARK": {"0": [], "1": [], "2": [], "3": [], "4": []},
+}
+
+
 valid_records = {
     "location": {
         "any": [],
@@ -24,453 +52,31 @@ valid_records = {
         "plains": {},
         "wetlands": {},
     },
-    "weight": {},
-    "season": {
-        "any": [],
-        "newleaf": [],
-        "greenleaf": [],
-        "leaf-fall": [],
-        "leaf-bare": [],
-    },
-    "sub_type": {
-        "war": [],
-        "romance": [],
-        "murder": [],
-        "old_age": [],
-        "mass_death": [],
-        "adoption": [],
-        "murder_reveal": [],
-        "accessory": [],
-        "ceremony": [],
-    },
-    "tags": {
-        "classic": [],
-        "cruel_season": [],
-        "clan": {},
-        "no_body": [],
-        "skill_trait_required": [],
-        "clan_wide": [],
-        "all_lives": [],
-        "some_lives": [],
-        "lives_remain": [],
-        "high_lives": [],
-        "mid_lives": [],
-        "low_lives": [],
-    },
+    "season": {},
+    "sub_type": {},
+    "tags": {"clan": {}},
+    "frequency": {4: [], 3: [], 2: [], 1: []},
     "new_accessory": {},
     "injury": {"cats": {"m_c": [], "r_c": [], "n_c": []}, "injuries": {}, "scars": {}},
     "m_c": {
-        "age": {
-            "any": [],
-            "newborn": [],
-            "kitten": [],
-            "adolescent": [],
-            "young adult": [],
-            "adult": [],
-            "senior adult": [],
-            "senior": [],
-        },
-        "status": {
-            "any": [],
-            "newborn": [],
-            "kitten": [],
-            "apprentice": [],
-            "warrior": [],
-            "medicine cat apprentice": [],
-            "medicine cat": [],
-            "mediator apprentice": [],
-            "mediator": [],
-            "elder": [],
-            "deputy": [],
-            "leader": [],
-        },
-        "relationship_status": {
-            "siblings": [],
-            "mates": [],
-            "not_mates": [],
-            "parent/child": [],
-            "child/parent": [],
-            "app/mentor": [],
-            "mentor/app": [],
-            "romantic": [],
-            "platonic": [],
-            "dislike": [],
-            "comfortable": [],
-            "jealousy": [],
-            "admiration": [],
-            "trust": [],
-        },
-        "skill": {
-            "TEACHER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "HUNTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "FIGHTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "RUNNER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "CLIMBER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "SWIMMER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "SPEAKER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "MEDIATOR": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "CLEVER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "INSIGHTFUL": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "SENSE": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "KIT": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "STORY": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "LORE": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "CAMP": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "HEALER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "STAR": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "DUSK": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "OMEN": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "DREAM": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "CLAIRVOYANT": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "PROPHET": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "GHOST": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "DARK": {"0": [], "1": [], "2": [], "3": [], "4": []},
-        },
-        "not_skill": {
-            "TEACHER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "HUNTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "FIGHTER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "RUNNER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "CLIMBER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "SWIMMER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "SPEAKER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "MEDIATOR": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "CLEVER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "INSIGHTFUL": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "SENSE": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "KIT": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "STORY": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "LORE": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "CAMP": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "HEALER": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "STAR": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "DUSK": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "OMEN": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "DREAM": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "CLAIRVOYANT": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "PROPHET": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "GHOST": {"0": [], "1": [], "2": [], "3": [], "4": []},
-            "DARK": {"0": [], "1": [], "2": [], "3": [], "4": []},
-        },
-        "trait": {
-            "troublesome": [],
-            "lonesome": [],
-            "fierce": [],
-            "bloodthirsty": [],
-            "cold": [],
-            "childish": [],
-            "playful": [],
-            "charismatic": [],
-            "bold": [],
-            "daring": [],
-            "nervous": [],
-            "righteous": [],
-            "insecure": [],
-            "strict": [],
-            "compassionate": [],
-            "thoughtful": [],
-            "ambitious": [],
-            "confident": [],
-            "adventurous": [],
-            "calm": [],
-            "gloomy": [],
-            "faithful": [],
-            "loving": [],
-            "loyal": [],
-            "responsible": [],
-            "shameless": [],
-            "sneaky": [],
-            "strange": [],
-            "vengeful": [],
-            "wise": [],
-            "arrogant": [],
-            "competitive": [],
-            "grumpy": [],
-            "cunning": [],
-            "oblivious": [],
-            "flamboyant": [],
-            "rebellious": [],
-            "sincere": [],
-            "careful": [],
-            # kit traits
-            "unruly": [],
-            "shy": [],
-            "impulsive": [],
-            "bullying": [],
-            "attention-seeker": [],
-            "charming": [],
-            "self-conscious": [],
-            "noisy": [],
-            "skittish": [],
-            "daydreamer": [],
-            "fearless": [],
-            "sweet": [],
-            "know-it-all": [],
-            "polite": [],
-            "bossy": [],
-            "bouncy": [],
-        },
-        "not_trait": {
-            "troublesome": [],
-            "lonesome": [],
-            "fierce": [],
-            "bloodthirsty": [],
-            "cold": [],
-            "childish": [],
-            "playful": [],
-            "charismatic": [],
-            "bold": [],
-            "daring": [],
-            "nervous": [],
-            "righteous": [],
-            "insecure": [],
-            "strict": [],
-            "compassionate": [],
-            "thoughtful": [],
-            "ambitious": [],
-            "confident": [],
-            "adventurous": [],
-            "calm": [],
-            "gloomy": [],
-            "faithful": [],
-            "loving": [],
-            "loyal": [],
-            "responsible": [],
-            "shameless": [],
-            "sneaky": [],
-            "strange": [],
-            "vengeful": [],
-            "wise": [],
-            "arrogant": [],
-            "competitive": [],
-            "grumpy": [],
-            "cunning": [],
-            "oblivious": [],
-            "flamboyant": [],
-            "rebellious": [],
-            "sincere": [],
-            "careful": [],
-            # kit traits
-            "unruly": [],
-            "shy": [],
-            "impulsive": [],
-            "bullying": [],
-            "attention-seeker": [],
-            "charming": [],
-            "self-conscious": [],
-            "noisy": [],
-            "skittish": [],
-            "daydreamer": [],
-            "fearless": [],
-            "sweet": [],
-            "know-it-all": [],
-            "polite": [],
-            "bossy": [],
-            "bouncy": [],
-        },
+        "age": {"any": []},
+        "status": {"any": []},
+        "relationship_status": {},
+        "skill": skills.copy(),
+        "not_skill": skills.copy(),
+        "trait": {},
+        "not_trait": {},
         "backstory": {},
         "dies": {"True": []},
     },
     "r_c": {
-        "age": {
-            "any": [],
-            "newborn": [],
-            "kitten": [],
-            "adolescent": [],
-            "young adult": [],
-            "adult": [],
-            "senior adult": [],
-            "senior": [],
-        },
-        "status": {
-            "any": [],
-            "newborn": [],
-            "kitten": [],
-            "apprentice": [],
-            "warrior": [],
-            "medicine cat apprentice": [],
-            "medicine cat": [],
-            "mediator apprentice": [],
-            "mediator": [],
-            "elder": [],
-            "deputy": [],
-            "leader": [],
-        },
-        "relationship_status": {
-            "romantic": [],
-            "platonic": [],
-            "dislike": [],
-            "comfortable": [],
-            "jealousy": [],
-            "admiration": [],
-            "trust": [],
-        },
-        "skill": {
-            "TEACHER": {"1": [], "2": [], "3": [], "4": []},
-            "HUNTER": {"1": [], "2": [], "3": [], "4": []},
-            "FIGHTER": {"1": [], "2": [], "3": [], "4": []},
-            "RUNNER": {"1": [], "2": [], "3": [], "4": []},
-            "CLIMBER": {"1": [], "2": [], "3": [], "4": []},
-            "SWIMMER": {"1": [], "2": [], "3": [], "4": []},
-            "SPEAKER": {"1": [], "2": [], "3": [], "4": []},
-            "MEDIATOR": {"1": [], "2": [], "3": [], "4": []},
-            "CLEVER": {"1": [], "2": [], "3": [], "4": []},
-            "INSIGHTFUL": {"1": [], "2": [], "3": [], "4": []},
-            "SENSE": {"1": [], "2": [], "3": [], "4": []},
-            "KIT": {"1": [], "2": [], "3": [], "4": []},
-            "STORY": {"1": [], "2": [], "3": [], "4": []},
-            "LORE": {"1": [], "2": [], "3": [], "4": []},
-            "CAMP": {"1": [], "2": [], "3": [], "4": []},
-            "HEALER": {"1": [], "2": [], "3": [], "4": []},
-            "STAR": {"1": [], "2": [], "3": [], "4": []},
-            "DUSK": {"1": [], "2": [], "3": [], "4": []},
-            "OMEN": {"1": [], "2": [], "3": [], "4": []},
-            "DREAM": {"1": [], "2": [], "3": [], "4": []},
-            "CLAIRVOYANT": {"1": [], "2": [], "3": [], "4": []},
-            "PROPHET": {"1": [], "2": [], "3": [], "4": []},
-            "GHOST": {"1": [], "2": [], "3": [], "4": []},
-        },
-        "not_skill": {
-            "TEACHER": {"1": [], "2": [], "3": [], "4": []},
-            "HUNTER": {"1": [], "2": [], "3": [], "4": []},
-            "FIGHTER": {"1": [], "2": [], "3": [], "4": []},
-            "RUNNER": {"1": [], "2": [], "3": [], "4": []},
-            "CLIMBER": {"1": [], "2": [], "3": [], "4": []},
-            "SWIMMER": {"1": [], "2": [], "3": [], "4": []},
-            "SPEAKER": {"1": [], "2": [], "3": [], "4": []},
-            "MEDIATOR": {"1": [], "2": [], "3": [], "4": []},
-            "CLEVER": {"1": [], "2": [], "3": [], "4": []},
-            "INSIGHTFUL": {"1": [], "2": [], "3": [], "4": []},
-            "SENSE": {"1": [], "2": [], "3": [], "4": []},
-            "KIT": {"1": [], "2": [], "3": [], "4": []},
-            "STORY": {"1": [], "2": [], "3": [], "4": []},
-            "LORE": {"1": [], "2": [], "3": [], "4": []},
-            "CAMP": {"1": [], "2": [], "3": [], "4": []},
-            "HEALER": {"1": [], "2": [], "3": [], "4": []},
-            "STAR": {"1": [], "2": [], "3": [], "4": []},
-            "DUSK": {"1": [], "2": [], "3": [], "4": []},
-            "OMEN": {"1": [], "2": [], "3": [], "4": []},
-            "DREAM": {"1": [], "2": [], "3": [], "4": []},
-            "CLAIRVOYANT": {"1": [], "2": [], "3": [], "4": []},
-            "PROPHET": {"1": [], "2": [], "3": [], "4": []},
-            "GHOST": {"1": [], "2": [], "3": [], "4": []},
-        },
-        "trait": {
-            "troublesome": [],
-            "lonesome": [],
-            "fierce": [],
-            "bloodthirsty": [],
-            "cold": [],
-            "childish": [],
-            "playful": [],
-            "charismatic": [],
-            "bold": [],
-            "daring": [],
-            "nervous": [],
-            "righteous": [],
-            "insecure": [],
-            "strict": [],
-            "compassionate": [],
-            "thoughtful": [],
-            "ambitious": [],
-            "confident": [],
-            "adventurous": [],
-            "calm": [],
-            "gloomy": [],
-            "faithful": [],
-            "loving": [],
-            "loyal": [],
-            "responsible": [],
-            "shameless": [],
-            "sneaky": [],
-            "strange": [],
-            "vengeful": [],
-            "wise": [],
-            "arrogant": [],
-            "competitive": [],
-            "grumpy": [],
-            "cunning": [],
-            "oblivious": [],
-            "flamboyant": [],
-            "rebellious": [],
-            "sincere": [],
-            "careful": [],
-            # kit traits
-            "unruly": [],
-            "shy": [],
-            "impulsive": [],
-            "bullying": [],
-            "attention-seeker": [],
-            "charming": [],
-            "self-conscious": [],
-            "noisy": [],
-            "skittish": [],
-            "daydreamer": [],
-            "fearless": [],
-            "sweet": [],
-            "know-it-all": [],
-            "polite": [],
-            "bossy": [],
-            "bouncy": [],
-        },
-        "not_trait": {
-            "troublesome": [],
-            "lonesome": [],
-            "fierce": [],
-            "bloodthirsty": [],
-            "cold": [],
-            "childish": [],
-            "playful": [],
-            "charismatic": [],
-            "bold": [],
-            "daring": [],
-            "nervous": [],
-            "righteous": [],
-            "insecure": [],
-            "strict": [],
-            "compassionate": [],
-            "thoughtful": [],
-            "ambitious": [],
-            "confident": [],
-            "adventurous": [],
-            "calm": [],
-            "gloomy": [],
-            "faithful": [],
-            "loving": [],
-            "loyal": [],
-            "responsible": [],
-            "shameless": [],
-            "sneaky": [],
-            "strange": [],
-            "vengeful": [],
-            "wise": [],
-            "arrogant": [],
-            "competitive": [],
-            "grumpy": [],
-            "cunning": [],
-            "oblivious": [],
-            "flamboyant": [],
-            "rebellious": [],
-            "sincere": [],
-            "careful": [],
-            # kit traits
-            "unruly": [],
-            "shy": [],
-            "impulsive": [],
-            "bullying": [],
-            "attention-seeker": [],
-            "charming": [],
-            "self-conscious": [],
-            "noisy": [],
-            "skittish": [],
-            "daydreamer": [],
-            "fearless": [],
-            "sweet": [],
-            "know-it-all": [],
-            "polite": [],
-            "bossy": [],
-            "bouncy": [],
-        },
+        "age": {"any": []},
+        "status": {"any": []},
+        "relationship_status": {},
+        "skill": skills.copy(),
+        "not_skill": skills.copy(),
+        "trait": {},
+        "not_trait": {},
         "backstory": {},
         "dies": {"True": []},
     },
@@ -479,16 +85,16 @@ invalid_records = {
     "location": {
         missing: [],
     },
-    "season": {missing: []},
+    "season": {},
     "sub_type": {},
     "tags": {},
     "new_accessory": {},
-    "weight": [],
+    "frequency": [],
     "injury": {"cats": {}, "injuries": {}, "scars": {}, "history": {missing: []}},
     "m_c": {
         "age": {},
         "status": {},
-        "relationship_status": {"invalid block": []},
+        "relationship_status": {},
         "skill": {},
         "not_skill": {},
         "trait": {},
@@ -499,7 +105,7 @@ invalid_records = {
     "r_c": {
         "age": {},
         "status": {},
-        "relationship_status": {"invalid block": []},
+        "relationship_status": {},
         "skill": {},
         "not_skill": {},
         "trait": {},
@@ -508,6 +114,55 @@ invalid_records = {
         "dies": {},
     },
 }
+
+
+with open("../schemas/common.schema.json", "r", encoding="utf-8") as f:
+    schema_common = ujson.load(f)
+
+with open("../schemas/shortevent.schema.json", "r", encoding="utf-8") as f:
+    schema_short = ujson.load(f)
+
+for i in schema_short["items"]["properties"]["season"]["items"]["enum"]:
+    valid_records["season"][i] = []
+
+for i in schema_short["items"]["properties"]["sub_type"]["items"]["enum"]:
+    valid_records["sub_type"][i] = []
+
+for i in schema_short["items"]["properties"]["tags"]["items"]["anyOf"][0]["enum"]:
+    valid_records["tags"][i] = []
+
+# eurgh
+for i in schema_short["items"]["properties"]["r_c"]["properties"][
+    "relationship_status"
+]["items"]["anyOf"][0]["enum"]:
+    valid_records["r_c"]["relationship_status"][i] = []
+
+for i in schema_common["definitions"]["age"]["enum"]:
+    valid_records["m_c"]["age"][i] = []
+    valid_records["r_c"]["age"][i] = []
+
+for i in schema_common["definitions"]["status"]["enum"]:
+    valid_records["m_c"]["status"][i] = []
+    valid_records["r_c"]["status"][i] = []
+
+for i in schema_common["definitions"]["relationship_status"]["anyOf"][0]["enum"]:
+    valid_records["m_c"]["relationship_status"][i] = []
+
+for i in schema_common["definitions"]["trait"]["enum"]:
+    valid_records["m_c"]["trait"][i] = []
+    valid_records["r_c"]["trait"][i] = []
+    valid_records["m_c"]["not_trait"][i] = []
+    valid_records["r_c"]["not_trait"][i] = []
+
+for i in schema_common["definitions"]["kit_trait"]["enum"]:
+    valid_records["m_c"]["trait"][i] = []
+    valid_records["r_c"]["trait"][i] = []
+    valid_records["m_c"]["not_trait"][i] = []
+    valid_records["r_c"]["not_trait"][i] = []
+
+for i in schema_common["definitions"]["backstory"]["enum"]:
+    valid_records["m_c"]["backstory"][i] = []
+    valid_records["r_c"]["backstory"][i] = []
 
 history_scarrable = [
     "bite-wound",
@@ -535,7 +190,16 @@ type_subtype = {
     "death": ["war", "murder", "old_age", "mass_death", "romance"],
     "injury": ["war", "romance"],
     "new": ["war", "adoption", "romance"],
-    "misc": ["war", "murder_reveal", "accessory", "ceremony", "romance"],
+    "misc": [
+        "war",
+        "murder_reveal",
+        "failed_murder",
+        "hidden_murder_reveal",
+        "transition",
+        "accessory",
+        "ceremony",
+        "romance",
+    ],
 }
 
 
@@ -547,17 +211,19 @@ def event_analysis(directory: str = None, blacklist: list[str] = None):
         trailing_newline=False,
     )
     if directory is None:
-        directory = "../resources/dicts/events/"
+        directory = "../resources/lang/en/events/"
 
     if blacklist is None:
         blacklist = [
             "ceremonies",
+            "lead_ceremony",
             "death\\death_reactions",
             "death\\murder",
             "disaster",
             "leader_den",
             "nutrition",
             "war.json",
+            "relationship_events",
         ]
 
     events = ea_init(directory, blacklist)
@@ -674,7 +340,10 @@ def ea_split(events):
 
         # LOCATION
         if "location" not in event:
-            invalid_records["location"][missing].append(event_id)
+            if invalid_records["location"][missing]:
+                invalid_records["location"][missing].append(event_id)
+            else:
+                invalid_records["location"][missing] = [event_id]
         else:  # event has a location
             ea_add_records_with_subtype(
                 event_id,
@@ -692,18 +361,28 @@ def ea_split(events):
                 invalid_records["season"],
             )
         else:
-            invalid_records["season"][missing].append(event_id)
+            if missing in invalid_records["season"]:
+                invalid_records["season"][missing].append(event_id)
+            else:
+                invalid_records["season"][missing] = [event_id]
 
         # SUB TYPE
         if "sub_type" in event:
             event_type = event_id.split("_")[1]
             for genre in event["sub_type"]:
-                if genre not in type_subtype[event_type]:
-                    ea_invalid_record(
-                        event_id,
-                        event["sub_type"] + " in " + genre,
-                        invalid_records["sub_type"],
-                    )
+                if genre not in type_subtype.get(event_type, []):
+                    try:
+                        ea_invalid_record(
+                            event_id,
+                            event["sub_type"] + " in " + genre,
+                            invalid_records["sub_type"],
+                        )
+                    except TypeError:
+                        ea_invalid_record(
+                            event_id,
+                            "invalid naming convention (missing event type in second position)",
+                            invalid_records["sub_type"],
+                        )
             ea_add_records(
                 event_id,
                 event["sub_type"],
@@ -755,15 +434,15 @@ def ea_split(events):
                 ignore_categories=True,
             )
 
-        # WEIGHT - only care if it's missing
-        if "weight" not in event:
-            invalid_records["weight"].append(event_id)
+        # FREQUENCY - only care if it's missing
+        if "frequency" not in event:
+            invalid_records["frequency"].append(event_id)
         else:
             ea_add_record(
                 event_id,
-                event["weight"],
-                valid_records["weight"],
-                invalid_records["weight"],
+                event["frequency"],
+                valid_records["frequency"],
+                invalid_records["frequency"],
                 ignore_categories=True,
             )
 
@@ -964,7 +643,10 @@ def ea_handle_cat(event_id, cat, valid_log, error_log, rel_valid=True):
                 validation,
             )
         else:
-            error_log["relationship_status"]["invalid block"].append(event_id)
+            if error_log["relationship_status"]["invalid block"]:
+                error_log["relationship_status"]["invalid block"].append(event_id)
+            else:
+                error_log["relationship_status"]["invalid block"] = [event_id]
 
     # SKILL
     if "skill" in cat:
@@ -1044,9 +726,9 @@ def ea_problems():
         ea_dump_records(invalid_records["tags"])
         no_errors = False
 
-    if invalid_records["weight"]:
-        ea_header("Events missing a weighting")
-        ea_dump_records(invalid_records["sub_type"])
+    if invalid_records["frequency"]:
+        ea_header("Events missing a frequency")
+        ea_dump_records(invalid_records["frequency"])
         no_errors = False
 
     if invalid_records["new_accessory"]:

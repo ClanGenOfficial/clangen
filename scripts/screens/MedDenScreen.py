@@ -14,14 +14,10 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIModifiedImage,
 )
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    find_alive_cats_with_rank,
-    shorten_text_to_fit,
-    event_text_adjust,
-    ui_scale_offset,
-)
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import event_text_adjust, shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_offset
+from ..clan_package.get_clan_cats import find_alive_cats_with_rank
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.enums import CatRank
@@ -726,9 +722,6 @@ class MedDenScreen(Screens):
             self.log_box.kill()
         if self.med_cat:
             self.med_cat.kill()
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
 
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:

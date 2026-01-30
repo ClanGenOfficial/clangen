@@ -28,7 +28,8 @@ from scripts.game_structure.ui_elements import (
     UIModifiedScrollingContainer,
 )
 from scripts.housekeeping.datadir import open_data_dir
-from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
+from ..ui.theme import get_text_box_theme
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.localization import get_additional_lang_list
@@ -148,8 +149,8 @@ class SettingsScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
 
-            if event.ui_element == self.main_menu_button:
-                self.change_screen(GameScreen.START)
+            if event.ui_element == self.back_button:
+                self.change_screen(game.last_screen_forupdate)
                 return
             if event.ui_element == self.fullscreen_toggle:
                 game_setting_toggle("fullscreen")
@@ -324,10 +325,10 @@ class SettingsScreen(Screens):
             self.open_data_directory_button.hide()
 
         self.update_save_button()
-        self.main_menu_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((25, 25), (152, 30))),
-            "buttons.main_menu",
-            get_button_dict(ButtonStyles.SQUOVAL, (152, 30)),
+        self.back_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 25), (105, 30))),
+            "buttons.back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
             starting_height=1,
@@ -367,8 +368,8 @@ class SettingsScreen(Screens):
         del self.language_button
         self.save_settings_button.kill()
         del self.save_settings_button
-        self.main_menu_button.kill()
-        del self.main_menu_button
+        self.back_button.kill()
+        del self.back_button
         self.fullscreen_toggle.kill()
         del self.fullscreen_toggle
         self.open_data_directory_button.kill()

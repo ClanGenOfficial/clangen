@@ -36,4 +36,11 @@ If you find a bug, please report it on our [issues page](https://github.com/Clan
 ### Solving an Issue
 When solving an issue, please link it in your Pull Request.
 
+## Regenerating JSON Schemas
+If you modify any Pydantic models in `scripts/models/`, you'll need to regenerate the JSON schemas:
+```sh
+uv run dump_model_schemas
+```
+
+## Getting Started
 If you do not know where to get started, check the [good first issue tag](https://github.com/ClanGenOfficial/clangen/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22). These issues have been marked as “good first issues” because they are non-urgent improvements that do not require a great familiarity with the larger codebase. Solving these issues is a great way to better understand the codebase.

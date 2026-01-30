@@ -1,216 +1,17 @@
 {
-  "definitions": {
-    "new_cat": {
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "enum": [
-              "male",
-              "female",
-              "can_birth",
-              "new_name",
-              "old_name",
-              "kittypet",
-              "loner",
-              "rogue",
-              "clancat",
-              "meeting",
-              "exists",
-              "unknown",
-              "litter",
-              "dead"
-            ]
-          },
-          {
-            "type": "string",
-            "pattern": "^status:(.+)$"
-          },
-          {
-            "type": "string",
-            "pattern": "^age:(.+)$"
-          },
-          {
-            "type": "string",
-            "pattern": "^backstory:(.+)$"
-          },
-          {
-            "type": "string",
-            "pattern": "^parent:([,0-9]+)$"
-          },
-          {
-            "type": "string",
-            "pattern": "^adoptive:([_,0-9a-zA-Z]+)$"
-          },
-          {
-            "type": "string",
-            "pattern": "^mate:([_,0-9a-zA-Z]+)$"
-          }
-        ]
-      }
+  "$defs": {
+    "AllTrait": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Trait"
+        },
+        {
+          "$ref": "#/$defs/KitTrait"
+        }
+      ],
+      "title": "AllTrait"
     },
-    "illness": {
-      "enum": [
-        "seizure",
-        "diarrhea",
-        "fleas",
-        "greencough",
-        "kittencough",
-        "an infected wound",
-        "carrionplace disease",
-        "redcough",
-        "running nose",
-        "whitecough",
-        "yellowcough",
-        "a festering wound",
-        "heat stroke",
-        "heat exhaustion",
-        "stomachache",
-        "constant nightmares",
-        "grief stricken",
-        "malnourished",
-        "starving"
-      ]
-    },
-    "injury": {
-      "enum": [
-        "claw-wound",
-        "bite-wound",
-        "cat bite",
-        "beak bite",
-        "snake bite",
-        "rat bite",
-        "tick bites",
-        "blood loss",
-        "broken jaw",
-        "broken bone",
-        "mangled leg",
-        "dislocated joint",
-        "joint pain",
-        "sprain",
-        "mangled tail",
-        "bruises",
-        "cracked pads",
-        "sore",
-        "phantom pain",
-        "scrapes",
-        "small cut",
-        "torn pelt",
-        "torn ear",
-        "frostbite",
-        "recovering from birth",
-        "water in their lungs",
-        "burn",
-        "severe burn",
-        "shock",
-        "lingering shock",
-        "shivering",
-        "dehydrated",
-        "head damage",
-        "damaged eyes",
-        "quilled by a porcupine",
-        "broken back",
-        "poisoned",
-        "bee sting",
-        "headache",
-        "severe headache",
-        "pregnant",
-        "battle_injury",
-        "minor_injury",
-        "blunt_force_injury",
-        "hot_injury",
-        "cold_injury",
-        "big_bite_injury",
-        "small_bite_injury",
-        "beak_bite",
-        "rat_bite",
-        "sickness"
-      ]
-    },
-    "perm_condition": {
-      "enum": [
-        "crooked jaw",
-        "lost a leg",
-        "born without a leg",
-        "weak leg",
-        "twisted leg",
-        "lost their tail",
-        "born without a tail",
-        "paralyzed",
-        "raspy lungs",
-        "wasting disease",
-        "blind",
-        "one bad eye",
-        "failing eyesight",
-        "partial hearing loss",
-        "deaf",
-        "constant joint pain",
-        "seizure prone",
-        "allergies",
-        "constantly dizzy",
-        "recurring shock",
-        "lasting grief",
-        "persistent headaches"
-      ]
-    },
-    "scar": {
-      "enum": [
-        "ONE",
-        "TWO",
-        "THREE",
-        "TAILSCAR",
-        "SNOUT",
-        "CHEEK",
-        "SIDE",
-        "THROAT",
-        "TAILBASE",
-        "BELLY",
-        "LEGBITE",
-        "NECKBITE",
-        "FACE",
-        "MANLEG",
-        "BRIGHTHEART",
-        "MANTAIL",
-        "BRIDGE",
-        "RIGHTBLIND",
-        "LEFTBLIND",
-        "BOTHBLIND",
-        "BEAKCHEEK",
-        "BEAKLOWER",
-        "CATBITE",
-        "RATBITE",
-        "QUILLCHUNK",
-        "QUILLSCRATCH",
-        "HINDLEG",
-        "BACK",
-        "QUILLSIDE",
-        "SCRATCHSIDE",
-        "BEAKSIDE",
-        "CATBITETWO",
-        "FOUR",
-        "LEFTEAR",
-        "RIGHTEAR",
-        "NOTAIL",
-        "HALFTAIL",
-        "NOPAW",
-        "NOLEFTEAR",
-        "NORIGHTEAR",
-        "NOEAR",
-        "SNAKE",
-        "TOETRAP",
-        "BURNPAWS",
-        "BURNTAIL",
-        "BURNBELLY",
-        "BURNRUMP",
-        "FROSTFACE",
-        "FROSTTAIL",
-        "FROSTMITT",
-        "FROSTSOCK",
-        "TOE",
-        "SNAKETWO"
-      ]
-    },
-    "backstory": {
+    "Backstory": {
       "enum": [
         "clan_founder",
         "clanborn",
@@ -268,9 +69,428 @@
         "outsider1",
         "outsider2",
         "outsider3"
-      ]
+      ],
+      "title": "Backstory",
+      "type": "string"
     },
-    "status": {
+    "GatherCat": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GatherCatEnum"
+        },
+        {
+          "pattern": "^n_c:[0-9]+$",
+          "type": "string"
+        }
+      ],
+      "title": "GatherCat"
+    },
+    "GatherCatEnum": {
+      "enum": [
+        "m_c",
+        "r_c",
+        "p_l",
+        "s_c",
+        "app1",
+        "app2",
+        "app3",
+        "app4",
+        "app5",
+        "app6",
+        "clan",
+        "some_clan",
+        "patrol",
+        "multi",
+        "high_lawful",
+        "low_lawful",
+        "high_social",
+        "low_social",
+        "high_stable",
+        "low_stable",
+        "high_aggress",
+        "low_aggress"
+      ],
+      "title": "GatherCatEnum",
+      "type": "string"
+    },
+    "Herb": {
+      "enum": [
+        "elder_leaves",
+        "cobwebs",
+        "daisy",
+        "horsetail",
+        "juniper",
+        "lungwort",
+        "mallow",
+        "marigold",
+        "moss",
+        "oak_leaves",
+        "ragwort",
+        "raspberry",
+        "tansy",
+        "thyme",
+        "wild_garlic",
+        "dandelion",
+        "mullein",
+        "rosemary",
+        "burdock",
+        "blackberry",
+        "betony",
+        "goldenrod",
+        "poppy",
+        "plantain",
+        "catmint"
+      ],
+      "title": "Herb",
+      "type": "string"
+    },
+    "Illness": {
+      "enum": [
+        "seizure",
+        "diarrhea",
+        "fleas",
+        "greencough",
+        "kittencough",
+        "an infected wound",
+        "carrionplace disease",
+        "redcough",
+        "running nose",
+        "whitecough",
+        "yellowcough",
+        "a festering wound",
+        "heat stroke",
+        "heat exhaustion",
+        "stomachache",
+        "constant nightmares",
+        "grief stricken",
+        "malnourished",
+        "starving"
+      ],
+      "title": "Illness",
+      "type": "string"
+    },
+    "Injury": {
+      "enum": [
+        "claw-wound",
+        "bite-wound",
+        "cat bite",
+        "beak bite",
+        "snake bite",
+        "rat bite",
+        "tick bites",
+        "blood loss",
+        "broken jaw",
+        "broken bone",
+        "mangled leg",
+        "dislocated joint",
+        "joint pain",
+        "sprain",
+        "mangled tail",
+        "bruises",
+        "cracked pads",
+        "sore",
+        "phantom pain",
+        "scrapes",
+        "small cut",
+        "torn pelt",
+        "torn ear",
+        "frostbite",
+        "recovering from birth",
+        "water in their lungs",
+        "burn",
+        "severe burn",
+        "shock",
+        "lingering shock",
+        "shivering",
+        "dehydrated",
+        "head damage",
+        "damaged eyes",
+        "quilled by a porcupine",
+        "broken back",
+        "poisoned",
+        "bee sting",
+        "headache",
+        "severe headache",
+        "pregnant",
+        "battle_injury",
+        "minor_injury",
+        "blunt_force_injury",
+        "hot_injury",
+        "cold_injury",
+        "big_bite_injury",
+        "small_bite_injury",
+        "beak_bite",
+        "rat_bite",
+        "sickness"
+      ],
+      "title": "Injury",
+      "type": "string"
+    },
+    "KitTrait": {
+      "enum": [
+        "bouncy",
+        "unruly",
+        "shy",
+        "impulsive",
+        "bullying",
+        "attention-seeker",
+        "daydreamer",
+        "charming",
+        "fearless",
+        "skittish",
+        "quiet",
+        "self-conscious",
+        "know-it-all",
+        "sweet",
+        "polite",
+        "bossy",
+        "noisy"
+      ],
+      "title": "KitTrait",
+      "type": "string"
+    },
+    "NewCat": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/NewCatTag"
+          },
+          {
+            "pattern": "^status:(.+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^age:(.+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^backstory:(.+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^parent:([,0-9]+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^adoptive:([_,0-9a-zA-Z]+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^mate:([_,0-9a-zA-Z]+)$",
+            "type": "string"
+          }
+        ]
+      },
+      "title": "NewCat",
+      "type": "array"
+    },
+    "NewCatTag": {
+      "enum": [
+        "male",
+        "female",
+        "can_birth",
+        "new_name",
+        "old_name",
+        "kittypet",
+        "loner",
+        "rogue",
+        "clancat",
+        "meeting",
+        "exists",
+        "unknown",
+        "litter",
+        "dead"
+      ],
+      "title": "NewCatTag",
+      "type": "string"
+    },
+    "PermCondition": {
+      "enum": [
+        "crooked jaw",
+        "lost a leg",
+        "born without a leg",
+        "weak leg",
+        "twisted leg",
+        "lost their tail",
+        "born without a tail",
+        "paralyzed",
+        "raspy lungs",
+        "wasting disease",
+        "blind",
+        "one bad eye",
+        "failing eyesight",
+        "partial hearing loss",
+        "deaf",
+        "constant joint pain",
+        "seizure prone",
+        "allergies",
+        "constantly dizzy",
+        "recurring shock",
+        "lasting grief",
+        "persistent headaches"
+      ],
+      "title": "PermCondition",
+      "type": "string"
+    },
+    "RelationshipStatus": {
+      "enum": [
+        "siblings",
+        "not_siblings",
+        "littermates",
+        "not_littermates",
+        "mates",
+        "mates_with_pl",
+        "not_mates",
+        "parent/child",
+        "not_parent",
+        "child/parent",
+        "not_child",
+        "mentor/app",
+        "not_mentor",
+        "app/mentor",
+        "not_app",
+        "fancies",
+        "adores",
+        "loves",
+        "loathes",
+        "hates",
+        "dislikes",
+        "knows_of",
+        "likes",
+        "enjoys",
+        "cherishes",
+        "resents",
+        "envies",
+        "begrudges",
+        "acknowledges",
+        "praises",
+        "respects",
+        "admires",
+        "discredits",
+        "distrusts",
+        "doubts",
+        "observes",
+        "listens_to",
+        "trusts",
+        "confides_in",
+        "runs_from",
+        "fears",
+        "avoids",
+        "considers",
+        "relates_to",
+        "understands",
+        "knows_deeply",
+        "fancies_only",
+        "adores_only",
+        "delights_in_only",
+        "abhors_only",
+        "hates_only",
+        "dislikes_only",
+        "knows_of_only",
+        "likes_only",
+        "enjoys_only",
+        "loves_only",
+        "resents_only",
+        "envies_only",
+        "begrudges_only",
+        "acknowledges_only",
+        "praises_only",
+        "respects_only",
+        "admires_only",
+        "discredits_only",
+        "distrusts_only",
+        "doubts_only",
+        "observes_only",
+        "listens_to_only",
+        "trusts_only",
+        "confides_in_only",
+        "runs_from_only",
+        "fears_only",
+        "avoids_only",
+        "considers_only",
+        "seeks_out_only",
+        "prefers_only",
+        "relies_on_only"
+      ],
+      "title": "RelationshipStatus",
+      "type": "string"
+    },
+    "Scar": {
+      "enum": [
+        "ONE",
+        "TWO",
+        "THREE",
+        "TAILSCAR",
+        "SNOUT",
+        "CHEEK",
+        "SIDE",
+        "THROAT",
+        "TAILBASE",
+        "BELLY",
+        "LEGBITE",
+        "NECKBITE",
+        "FACE",
+        "MANLEG",
+        "BRIGHTHEART",
+        "MANTAIL",
+        "BRIDGE",
+        "RIGHTBLIND",
+        "LEFTBLIND",
+        "BOTHBLIND",
+        "BEAKCHEEK",
+        "BEAKLOWER",
+        "CATBITE",
+        "RATBITE",
+        "QUILLCHUNK",
+        "QUILLSCRATCH",
+        "HINDLEG",
+        "BACK",
+        "QUILLSIDE",
+        "SCRATCHSIDE",
+        "BEAKSIDE",
+        "CATBITETWO",
+        "FOUR",
+        "LEFTEAR",
+        "RIGHTEAR",
+        "NOTAIL",
+        "HALFTAIL",
+        "NOPAW",
+        "NOLEFTEAR",
+        "NORIGHTEAR",
+        "NOEAR",
+        "SNAKE",
+        "TOETRAP",
+        "BURNPAWS",
+        "BURNTAIL",
+        "BURNBELLY",
+        "BURNRUMP",
+        "FROSTFACE",
+        "FROSTTAIL",
+        "FROSTMITT",
+        "FROSTSOCK",
+        "TOE",
+        "SNAKETWO"
+      ],
+      "title": "Scar",
+      "type": "string"
+    },
+    "Season": {
+      "enum": [
+        "greenleaf",
+        "leaf-fall",
+        "leaf-bare",
+        "newleaf",
+        "any"
+      ],
+      "title": "Season",
+      "type": "string"
+    },
+    "Skill": {
+      "pattern": "^[A-Z]+,\\s*[0-4]$",
+      "title": "Skill",
+      "type": "string"
+    },
+    "Status": {
       "enum": [
         "newborn",
         "kitten",
@@ -296,20 +516,11 @@
         "lost",
         "outside cat",
         "clancat"
-      ]
+      ],
+      "title": "Status",
+      "type": "string"
     },
-    "age": {
-      "enum": [
-        "newborn",
-        "kitten",
-        "adolescent",
-        "young adult",
-        "adult",
-        "senior adult",
-        "senior"
-      ]
-    },
-    "trait": {
+    "Trait": {
       "enum": [
         "troublesome",
         "lonesome",
@@ -350,181 +561,9 @@
         "sincere",
         "flamboyant",
         "rebellious"
-      ]
-    },
-    "kit_trait": {
-      "enum": [
-        "bouncy",
-        "unruly",
-        "shy",
-        "impulsive",
-        "bullying",
-        "attention-seeker",
-        "daydreamer",
-        "charming",
-        "fearless",
-        "skittish",
-        "quiet",
-        "self-conscious",
-        "know-it-all",
-        "sweet",
-        "polite",
-        "bossy",
-        "noisy"
-      ]
-    },
-    "all_trait": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/trait"
-        },
-        {
-          "$ref": "#/definitions/kit_trait"
-        }
-      ]
-    },
-    "skill": {
-      "type": "string",
-      "pattern": "^[A-Z]+,\\s*[0-4]$"
-    },
-    "herb": {
-      "enum": [
-        "elder_leaves",
-        "cobwebs",
-        "daisy",
-        "horsetail",
-        "juniper",
-        "lungwort",
-        "mallow",
-        "marigold",
-        "moss",
-        "oak_leaves",
-        "ragwort",
-        "raspberry",
-        "tansy",
-        "thyme",
-        "wild_garlic",
-        "dandelion",
-        "mullein",
-        "rosemary",
-        "burdock",
-        "blackberry",
-        "betony",
-        "goldenrod",
-        "poppy",
-        "plantain",
-        "catmint"
-      ]
-    },
-    "relationship_status": {
-      "anyOf": [
-        {
-          "enum": [
-              "siblings",
-              "not_siblings",
-              "littermates",
-              "not_littermates",
-              "mates",
-              "mates_with_pl",
-              "not_mates",
-              "parent/child",
-              "not_parent",
-              "child/parent",
-              "not_child",
-              "mentor/app",
-              "not_mentor",
-              "app/mentor",
-              "not_app",
-              "fancies",
-              "adores",
-              "loves",
-              "loathes",
-              "hates",
-              "dislikes",
-              "knows_of",
-              "likes",
-              "enjoys",
-              "cherishes",
-              "resents",
-              "envies",
-              "begrudges",
-              "acknowledges",
-              "praises",
-              "respects",
-              "admires",
-              "discredits",
-              "distrusts",
-              "doubts",
-              "observes",
-              "listens_to",
-              "trusts",
-              "confides_in",
-              "runs_from",
-              "fears",
-              "avoids",
-              "considers",
-              "relates_to",
-              "understands",
-              "knows_deeply",
-              "fancies_only",
-              "adores_only",
-              "delights_in_only",
-              "abhors_only",
-              "hates_only",
-              "dislikes_only",
-              "knows_of_only",
-              "likes_only",
-              "enjoys_only",
-              "loves_only",
-              "resents_only",
-              "envies_only",
-              "begrudges_only",
-              "acknowledges_only",
-              "praises_only",
-              "respects_only",
-              "admires_only",
-              "discredits_only",
-              "distrusts_only",
-              "doubts_only",
-              "observes_only",
-              "listens_to_only",
-              "trusts_only",
-              "confides_in_only",
-              "runs_from_only",
-              "fears_only",
-              "avoids_only",
-              "considers_only",
-              "seeks_out_only",
-              "prefers_only",
-              "relies_on_only"
-        ]
-        }
-      ]
-    },
-    "gather_cat": {
-      "anyOf": [
-        {
-          "enum": [
-            "m_c",
-            "r_c",
-            "p_l",
-            "s_c",
-            "app1",
-            "app2",
-            "app3",
-            "app4",
-            "app5",
-            "app6",
-            "clan",
-            "some_clan",
-            "patrol",
-            "multi"
-          ]
-        },
-        {
-          "pattern": "^n_c:[0-9]+$"
-        }
-      ]
+      ],
+      "title": "Trait",
+      "type": "string"
     }
   }
 }

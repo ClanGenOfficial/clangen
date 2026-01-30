@@ -37,8 +37,7 @@
         {
         "cats": ["n_c:0"],
         "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
-        "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
-        "lead_death": "died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle"
+        "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
         }
         ],
 	"relationships": [

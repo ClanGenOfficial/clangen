@@ -13,7 +13,6 @@ import traceback
 
 import i18n
 
-from scripts.cat import save_load
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
 from scripts.cat.names import Name
@@ -41,22 +40,24 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.game_structure.windows import SaveError
-from scripts.utility import (
-    change_clan_relations,
-    change_clan_reputation,
-    find_alive_cats_with_rank,
-    get_living_clan_cat_count,
-    ceremony_text_adjust,
-    get_current_season,
-    adjust_list_text,
+from scripts.ui.windows.save_error import SaveErrorWindow
+from scripts.events_module.text_adjust import (
     ongoing_event_text_adjust,
     event_text_adjust,
-    get_other_clan,
+    ceremony_text_adjust,
+    adjust_list_text,
     history_text_adjust,
-    unpack_rel_block,
 )
-
+from scripts.events_module.consequences import unpack_rel_block
+from scripts.clan_package.cotc import (
+    change_clan_reputation,
+    change_clan_relations,
+    get_other_clan,
+)
+from scripts.clan_package.get_clan_cats import (
+    find_alive_cats_with_rank,
+    get_living_clan_cat_count,
+)
 
 all_events = {}
 new_cat_invited = False
@@ -95,7 +96,7 @@ def one_moon():
 
     # age up the clan, set current season
     game.clan.age += 1
-    get_current_season()
+    update_afterlife_temper()
     Pregnancy_Events.handle_pregnancy_age(game.clan)
     check_war()
 
@@ -297,7 +298,49 @@ def one_moon():
             game.clan.save_pregnancy(game.clan)
             game.save_events()
         except:
-            SaveError(traceback.format_exc())
+            SaveErrorWindow(traceback.format_exc())
+
+
+def update_afterlife_temper():
+    """
+    Updates the temperaments of the afterlives based off cats who have newly joined an afterlife.
+    """
+    for c in game.updated_afterlife_cats:
+        if not c.status.did_join_group_this_moon:
+            continue
+
+        # only high ranks and guides can influence
+        if (
+            c.status.rank
+            not in (
+                CatRank.LEADER,
+                CatRank.MEDICINE_CAT,
+                CatRank.DEPUTY,
+            )
+            and not game.clan.instructor
+        ):
+            continue
+
+        # first change facets of the group they joined
+        if (
+            c.status.group == CatGroup.STARCLAN
+            and c.ID not in game.starclan.influencing_cats
+        ):
+            game.starclan.adjust_facets_by_cat(c)
+            # then remove them from other afterlife, if they were there
+            if c.ID in game.dark_forest.influencing_cats:
+                game.dark_forest.adjust_facets_by_cat(c, do_removal=True)
+
+        # now do same for DF
+        elif (
+            c.status.group == CatGroup.DARK_FOREST
+            and c.ID not in game.dark_forest.influencing_cats
+        ):
+            game.dark_forest.adjust_facets_by_cat(c)
+            if c.ID in game.starclan.influencing_cats:
+                game.starclan.adjust_facets_by_cat(c, do_removal=True)
+
+    game.updated_afterlife_cats.clear()
 
 
 def trigger_future_events():
@@ -1110,14 +1153,18 @@ def check_war():
     if not war_events or not enemy_clan:
         return
 
-    if not game.clan.leader or not game.clan.deputy or not game.clan.medicine_cat:
-        for event in war_events:
-            if not game.clan.leader and "lead_name" in event:
-                war_events.remove(event)
-            if not game.clan.deputy and "dep_name" in event:
-                war_events.remove(event)
-            if not game.clan.medicine_cat and "med_name" in event:
-                war_events.remove(event)
+    available_med = find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)
+
+    for event in war_events:
+        if not game.clan.leader and "lead_name" in event:
+            war_events.remove(event)
+            continue
+        if not game.clan.deputy and "dep_name" in event:
+            war_events.remove(event)
+            continue
+        if not available_med and "med_name" in event:
+            war_events.remove(event)
+            continue
 
     # grab our war "notice" for this moon
     event = random.choice(war_events)
@@ -2008,12 +2055,11 @@ def handle_murder(cat):
     if random.getrandbits(murder_capable) != 1:
         return
 
-    # If random murder is not triggered, targets can only be those they have some dislike for
-    # If random murder is not triggered, targets can only be those they have extreme negativity for
+    # If random murder is not triggered, targets can only be those they have some mid/extreme neg for
     negative_relation = [
         i
         for i in relationships
-        if i.has_extreme_negative
+        if (i.has_mid_negative or i.has_extreme_negative)
         and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
     ]
     targets.extend(negative_relation)
@@ -2027,15 +2073,10 @@ def handle_murder(cat):
         extreme_neg = len(
             [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg]
         )
-        neg = len(
-            [
-                l
-                for l in chosen_target.get_reltype_tiers()
-                if (l.is_low_neg or l.is_mid_neg)
-            ]
-        )
+        mid_neg = len([t for t in chosen_target.get_reltype_tiers() if t.is_mid_neg])
+        neg = len([t for t in chosen_target.get_reltype_tiers() if t.is_low_neg])
 
-        relation_modifier = (extreme_neg * 10) + (neg * 5)
+        relation_modifier = (extreme_neg * 20) + (mid_neg * 10) + (neg * 5)
 
         kill_chance -= relation_modifier
 
@@ -2043,13 +2084,13 @@ def handle_murder(cat):
             len(chosen_target.log) > 0
             and "(high negative effect)" in chosen_target.log[-1]
         ):
-            kill_chance -= 50
+            kill_chance -= 20
 
         if (
             len(chosen_target.log) > 0
             and "(medium negative effect)" in chosen_target.log[-1]
         ):
-            kill_chance -= 20
+            kill_chance -= 10
 
         # little easter egg just for fun
         if (
@@ -2058,6 +2099,9 @@ def handle_murder(cat):
         ):
             kill_chance -= 10
 
+        kill_chance -= cat.personality.aggression
+        kill_chance -= 16 - cat.personality.stability
+        kill_chance -= 16 - cat.personality.lawfulness
         kill_chance = max(1, int(kill_chance))
 
         if not int(random.random() * kill_chance):
@@ -2069,6 +2113,14 @@ def handle_murder(cat):
                 main_cat=Cat.fetch_cat(chosen_target.cat_to),
                 random_cat=cat,
                 sub_type=["murder"],
+            )
+
+        elif kill_chance <= 20:
+            create_short_event(
+                event_type="misc",
+                main_cat=cat,
+                random_cat=Cat.fetch_cat(chosen_target.cat_to),
+                sub_type=["failed_murder"],
             )
 
 

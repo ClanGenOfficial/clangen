@@ -20,19 +20,19 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UISurfaceImageButton,
 )
-from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
-from scripts.utility import ui_scale_dimensions
+from ..ui.theme import get_text_box_theme
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_blit
 from .Screens import Screens
 from .enums import GameScreen
 from .screens_core.screens_core import rebuild_den_dropdown
 from ..cat import save_load
 from ..cat.enums import CatRank
-from ..cat.sprites import sprites
+from ..cat.sprites.load_sprites import sprites
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.settings import game_setting_set, game_setting_get
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER, screen
-from ..game_structure.windows import SymbolFilterWindow
+from ..ui.windows.symbol_filter import SymbolFilterWindow
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.icon import Icon
@@ -2187,9 +2187,6 @@ class MakeClanScreen(Screens):
         return (
             f"{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png"
         )
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
 
     def draw_art_frame(self):
         if "art_frame" in self.elements:

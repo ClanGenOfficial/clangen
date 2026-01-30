@@ -7,7 +7,7 @@ import pygame
 
 import scripts.game_structure.screen_settings
 from scripts.ui.generate_box import BoxData, get_box
-from scripts.utility import ui_scale_dimensions
+from scripts.ui.scale import ui_scale_dimensions
 
 
 class ButtonStyles(Enum):

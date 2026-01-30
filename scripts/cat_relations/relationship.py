@@ -12,9 +12,13 @@ from scripts.cat_relations.interaction import (
 )
 from scripts.cat_relations.enums import RelTier, RelType
 from scripts.event_class import Single_Event
-from scripts.events_module.event_filters import event_for_location, event_for_season
+from scripts.events_module.event_filters import (
+    event_for_location,
+    event_for_season,
+    get_personality_compatibility,
+)
 from scripts.game_structure import game
-from scripts.utility import get_personality_compatibility, process_text
+from scripts.events_module.text_adjust import process_text
 import scripts.cat_relations.interaction as interactions
 
 
@@ -541,6 +545,13 @@ class Relationship:
         Returns True if the relationship has an extreme negative value.
         """
         return any(tier for tier in self.get_reltype_tiers() if tier.is_extreme_neg)
+
+    @property
+    def has_mid_negative(self) -> bool:
+        """
+        Returns True if the relationship has a mid negative value.
+        """
+        return any(tier for tier in self.get_reltype_tiers() if tier.is_mid_neg)
 
     @property
     def has_extreme_positive(self) -> bool:

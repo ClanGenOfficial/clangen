@@ -15,7 +15,7 @@ import i18n
 import ujson  # type: ignore
 
 import scripts.game_structure.localization as pronouns
-from scripts.cat import save_load
+from scripts.cat import save_load, pronouns
 from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatCompatibility
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -44,15 +44,13 @@ from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
-from scripts.utility import (
-    clamp,
-    find_alive_cats_with_rank,
-    get_personality_compatibility,
+from scripts.cat.sprites.display_sprites import update_sprite, update_mask
+from scripts.events_module.text_adjust import (
     event_text_adjust,
-    update_sprite,
     leader_ceremony_text_adjust,
-    update_mask,
 )
+from scripts.events_module.event_filters import get_personality_compatibility
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 import scripts.game_structure.screen_settings
 
@@ -499,9 +497,12 @@ class Cat:
                 )
                 return
 
+            game.updated_afterlife_cats.add(self)
+
             cat_default_afterlife_id = self.status.get_default_afterlife_id()
             if cat_default_afterlife_id == CatGroup.UNKNOWN_RESIDENCE_ID:
                 pass
+
             # kits are auto-accepted
             elif self.age in (CatAge.KITTEN, CatAge.NEWBORN):
                 self.history.add_afterlife_acceptance(
