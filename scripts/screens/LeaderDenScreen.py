@@ -24,16 +24,14 @@ from scripts.screens.Screens import Screens
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import (
-    ui_scale,
-    get_text_box_theme,
-    get_other_clan_relation,
-    get_other_clan,
-    clan_symbol_sprite,
-    shorten_text_to_fit,
+from scripts.clan_package.clan_symbols import clan_symbol_sprite
+from scripts.ui.theme import get_text_box_theme
+from scripts.events_module.text_adjust import shorten_text_to_fit
+from scripts.clan_package.cotc import get_other_clan, get_other_clan_relation
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
+from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
     get_living_clan_cat_count,
-    ui_scale_dimensions,
 )
 
 
@@ -1111,6 +1109,3 @@ class LeaderDenScreen(Screens):
                 "success": success,
             },
         )
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]

@@ -15,7 +15,7 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
     Switch,
 )
-from scripts.game_structure.localization import get_new_pronouns
+from ..cat.pronouns import get_new_pronouns
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.game_structure import constants
 from scripts.game_structure import game

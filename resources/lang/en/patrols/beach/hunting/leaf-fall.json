@@ -423,9 +423,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat successfully hunted ground squirrels together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -446,9 +449,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat trusted to_cat to block ground squirrels' burrows so the patrol could trap them."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -457,24 +463,26 @@
                 "text": "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, with not a single squirrel left behind.",
                 "exp": 20,
                 "stat_skill": [
-                    "HUNTER,1"
+                    "HUNTER,1",
+                    "TEACHER,1",
+                    "INSIGHTFUL,1",
+                    "CLEVER,1"
                 ],
                 "prey": [
                     "large"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat approved of to_cat's plan to pick off ground squirrels and enjoyed a successful hunt."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -490,13 +498,16 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "multi"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat silently blamed to_cat for alerting squirrels to the patrol's presence and spoiling a hunt."
+                        }
                     }
                 ],
                 "prey": [
@@ -641,105 +652,6 @@
                     }
                 ],
                 "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_hunt_herb_warriorleaffall1",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "p_l finds a patch of herbs that {PRONOUN/p_l/subject} {VERB/p_l/believe/believes} c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely {VERB/p_l/admit/admits} to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't a medicine cat and {VERB/p_l/ask/asks} {PRONOUN/p_l/poss} companions' advice. What do they know about the herbs available inland from the coast here, especially in the harvest season of leaf-fall?",
-        "decline_text": "They decide to focus on hunting and leave the herb collecting to the medicine cats.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "It's not their normal task, but they're all smart enough to value supporting the Clan's medicine cat den. The patrol brings the herbs back to camp, and they are put to good use.",
-                "exp": 10,
-                "herbs": [
-                    "random_herbs"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c carefully plucks some of the herbs and takes them back to the camp to be identified before the patrol goes to the trouble of collecting them, smartly deciding to get an informed opinion before committing the patrol.",
-                "exp": 10,
-                "stat_skill": [
-                    "CLEVER,0",
-                    "INSIGHTFUL,0",
-                    "SENSE,0",
-                    "HEALER,0",
-                    "STORY,0",
-                    "LORE,0"
-                ],
-                "herbs": [
-                    "random_herbs"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their fresh-kill.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
             }
         ]
     }

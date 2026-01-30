@@ -17,16 +17,14 @@ from scripts.game_structure.game.settings import game_setting_get
 if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
 
-from scripts.utility import (
-    change_clan_relations,
-    change_clan_reputation,
-    unpack_rel_block,
-    event_text_adjust,
+from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
+from scripts.events_module.consequences import (
     create_new_cat_block,
     gather_cat_objects,
-    adjust_list_text,
-    filter_relationship_type,
+    unpack_rel_block,
 )
+from scripts.events_module.event_filters import filter_relationship_type
+from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
 from scripts.game_structure import game
 from scripts.cat.skills import SkillPath
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT

@@ -10,11 +10,10 @@ from scripts.cat.enums import CatRank
 from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
-from scripts.utility import (
+from scripts.events_module.event_filters import filter_relationship_type
+from scripts.clan_package.get_clan_cats import (
     get_cats_same_age,
-    get_cats_of_romantic_interest,
-    get_free_possible_mates,
-    filter_relationship_type,
+    get_possible_mates,
 )
 
 
@@ -78,8 +77,7 @@ class Relation_Events:
             return
 
         # get the cats which are relevant for romantic interactions
-        free_possible_mates = get_free_possible_mates(cat)
-        other_love_interest = get_cats_of_romantic_interest(cat)
+        free_possible_mates, other_love_interest = get_possible_mates(cat)
         possible_cats = free_possible_mates
         if 0 < len(other_love_interest) < 3:
             possible_cats.extend(other_love_interest)

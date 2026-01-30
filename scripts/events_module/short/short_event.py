@@ -3,6 +3,7 @@ from typing import List, Optional
 
 import i18n
 
+from scripts.cat import pronouns
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
@@ -11,18 +12,19 @@ from scripts.event_class import Single_Event
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure import localization, game
-from scripts.utility import (
-    create_new_cat_block,
+from scripts.events_module.text_adjust import (
     event_text_adjust,
     get_leader_life_notice,
-    history_text_adjust,
     adjust_list_text,
-    unpack_rel_block,
-    find_alive_cats_with_rank,
-    change_relationship_values,
-    change_clan_reputation,
-    change_clan_relations,
+    history_text_adjust,
 )
+from scripts.events_module.consequences import (
+    create_new_cat_block,
+    unpack_rel_block,
+    change_relationship_values,
+)
+from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.personality import Personality
@@ -270,6 +272,7 @@ class ShortEvent:
                 victim_cat=self.victim_cat,
                 new_cats=self.new_cats,
                 clan=game.clan,
+                other_clan=self.other_clan_name,
             )
             for change in self.relationships:
                 for group in change.get("log", []):
@@ -537,7 +540,7 @@ class ShortEvent:
             new_gender = choice(possible_genders)
             self.main_cat.genderalign = new_gender
 
-            self.main_cat.pronouns = localization.get_new_pronouns(
+            self.main_cat.pronouns = pronouns.get_new_pronouns(
                 self.main_cat.genderalign
             )
 
