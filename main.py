@@ -14,7 +14,7 @@ from scripts.clan import Afterlife, clan_class
 
 from scripts.debug_console import debug_mode
 from scripts.game_structure import constants, game
-from scripts.game_structure.audio import music_manager, sound_manager
+from scripts.game_structure.audio.audio_manager import AudioManager
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game.save_load import read_clans
 from scripts.game_structure.game.settings import game_setting_get
