@@ -4,6 +4,7 @@ from typing import Optional
 
 import i18n
 
+from scripts.cat.enums import CatCompatibility
 from scripts.game_structure import constants
 from scripts.cat_relations.interaction import (
     cats_fulfill_single_interaction_constraints,
@@ -11,9 +12,13 @@ from scripts.cat_relations.interaction import (
 )
 from scripts.cat_relations.enums import RelTier, RelType
 from scripts.event_class import Single_Event
-from scripts.events_module.event_filters import event_for_location, event_for_season
+from scripts.events_module.event_filters import (
+    event_for_location,
+    event_for_season,
+    get_personality_compatibility,
+)
 from scripts.game_structure import game
-from scripts.utility import get_personality_compatibility, process_text
+from scripts.events_module.text_adjust import process_text
 import scripts.cat_relations.interaction as interactions
 
 
@@ -266,11 +271,9 @@ class Relationship:
 
         # take compatibility into account
         compatibility = get_personality_compatibility(self.cat_from, self.cat_to)
-        if compatibility is None:
-            # neutral compatibility
+        if compatibility == CatCompatibility.NEUTRAL:
             amount = amount
-        elif compatibility:
-            # positive compatibility
+        elif compatibility == CatCompatibility.POSITIVE:
             amount += constants.CONFIG["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
@@ -352,7 +355,7 @@ class Relationship:
                 continue
 
             amount = self.get_value_change_amount(
-                is_positive=value == "positive", intensity="low"
+                is_positive=value == "increase", intensity="low"
             )
 
             setattr(self, key, getattr(self, key) + amount)
@@ -374,8 +377,8 @@ class Relationship:
 
         # take personality in count
         comp = get_personality_compatibility(self.cat_from, self.cat_to)
-        if comp:
-            bool_ballot.append(comp)
+        if comp == CatCompatibility.POSITIVE:
+            bool_ballot.append(True)
 
         # further influence the partition based on the relationship
         for value in (self.like, self.respect, self.comfort, self.trust):
@@ -542,6 +545,13 @@ class Relationship:
         Returns True if the relationship has an extreme negative value.
         """
         return any(tier for tier in self.get_reltype_tiers() if tier.is_extreme_neg)
+
+    @property
+    def has_mid_negative(self) -> bool:
+        """
+        Returns True if the relationship has a mid negative value.
+        """
+        return any(tier for tier in self.get_reltype_tiers() if tier.is_mid_neg)
 
     @property
     def has_extreme_positive(self) -> bool:

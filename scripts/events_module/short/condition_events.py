@@ -30,11 +30,8 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
-    event_text_adjust,
-    find_alive_cats_with_rank,
-    get_leader_life_notice,
-)
+from scripts.events_module.text_adjust import event_text_adjust, get_leader_life_notice
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 
 # ---------------------------------------------------------------------------- #
@@ -176,13 +173,9 @@ class Condition_Events:
 
             event = event_text_adjust(Cat, event.strip(), main_cat=cat)
 
-            if cat.status.is_leader:
-                history_event = history_event.replace("m_c ", "").replace(".", "")
-                cat.history.add_death(
-                    condition="starving", death_text=history_event.strip()
-                )
-            else:
-                cat.history.add_death(condition="starving", death_text=history_event)
+            cat.history.add_death(
+                condition="starving", death_text=history_event.strip()
+            )
 
             cat.die()
 
@@ -585,22 +578,17 @@ class Condition_Events:
                         f"WARNING: {illness} does not have an injury death string, placeholder used."
                     )
                     event = i18n.t("defaults.illness_death_event")
-                    history_event = (
-                        i18n.t("defaults.illness_death_history")
-                        if cat.status.rank != CatRank.LEADER
-                        else i18n.t("defaults.illness_death_history_leader")
-                    )
+                    history_event = i18n.t("defaults.illness_death_history")
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
-
+                # add life loss message
                 if cat.status.is_leader:
                     event = event + " " + get_leader_life_notice()
-                    history_event = history_event.replace("m_c ", "").replace(".", "")
-                    cat.history.add_death(
-                        condition=illness, death_text=history_event.strip()
-                    )
-                else:
-                    cat.history.add_death(condition=illness, death_text=history_event)
+
+                # add death to history
+                cat.history.add_death(
+                    condition=illness, death_text=history_event.strip()
+                )
 
                 # clear event list to get rid of any healed or risk event texts from other illnesses
                 event_list.clear()
@@ -694,23 +682,15 @@ class Condition_Events:
                     )
 
                     event = i18n.t("defaults.injury_death_event")
-                    history_text = (
-                        i18n.t("defaults.injury_death_history")
-                        if cat.status.rank != CatRank.LEADER
-                        else i18n.t("injury_death_history_leader")
-                    )
+                    history_text = i18n.t("defaults.injury_death_history")
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
-
+                # add life loss message
                 if cat.status.is_leader:
                     event = event + " " + get_leader_life_notice()
-                    history_text = history_text.replace("m_c", " ").replace(".", "")
-                    cat.history.add_death(
-                        condition=injury, death_text=history_text.strip()
-                    )
 
-                else:
-                    cat.history.add_death(condition=injury, death_text=history_text)
+                # add death to history
+                cat.history.add_death(condition=injury, death_text=history_text.strip())
 
                 # clear event list first to make sure any heal or risk events from other injuries are not shown
                 event_list.clear()
@@ -718,7 +698,7 @@ class Condition_Events:
                 game.herb_events_list.append(event)
                 break
 
-            elif cat.healed_condition is True:
+            elif cat.healed_condition:
                 switch_append_list_value(Switch.skip_conditions, injury)
                 triggered = True
 
@@ -886,16 +866,11 @@ class Condition_Events:
                     )
                 event_list.append(event)
 
-                if cat.status.rank != CatRank.LEADER:
-                    cat.history.add_death(
-                        death_text=i18n.t("defaults.complications_death_history"),
-                        condition=translated_condition,
-                    )
-                else:
-                    cat.history.add_death(
-                        death_text=i18n.t("defaults.complications_death_history"),
-                        condition=translated_condition,
-                    )
+                # add to death history
+                cat.history.add_death(
+                    death_text=i18n.t("defaults.complications_death_history"),
+                    condition=translated_condition,
+                )
 
                 game.herb_events_list.append(event)
                 break

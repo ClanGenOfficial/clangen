@@ -109,7 +109,10 @@
                     "comfort",
                     "trust"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "r_c presented m_c with a maple seed to celebrate {PRONOUN/m_c/poss} warrior ceremony."
+                }
             },
             {
                 "cats_to": [
@@ -122,7 +125,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "from_cat was impressed by the fine warrior {PRONOUN/from_cat/poss} kit, to_cat, grew into."
+                }
             }
         ]
     },
@@ -189,6 +195,20 @@
         ],
         "frequency": 4,
         "event_text": "m_c has been bolstering the edges of camp with new brambles.",
-        "m_c": {}
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 5,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat approved of how to_cat bolstered the camp walls with brambles."
+                }
+            }
+        ]
     }
 ]

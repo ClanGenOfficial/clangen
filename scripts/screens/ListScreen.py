@@ -30,7 +30,8 @@ from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
-from scripts.utility import ui_scale, get_text_box_theme, ui_scale_value
+from scripts.ui.theme import get_text_box_theme
+from scripts.ui.scale import ui_scale, ui_scale_value
 
 
 class ListScreen(Screens):

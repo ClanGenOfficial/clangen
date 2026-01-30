@@ -13,13 +13,13 @@ from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import (
+from scripts.ui.theme import get_text_box_theme
+from scripts.ui.scale import (
     ui_scale,
-    ui_scale_offset,
     ui_scale_dimensions,
-    ui_scale_blit,
-    get_text_box_theme,
+    ui_scale_offset,
     ui_scale_value,
+    ui_scale_blit,
 )
 
 game_frame: Optional[pygame.Surface] = None

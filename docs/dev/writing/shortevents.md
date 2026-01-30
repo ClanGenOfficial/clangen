@@ -18,7 +18,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
     "season": [],
     "sub_type": [],
     "tags": [],
-    "frequency": 0,
+    "frequency": 4,
     "event_text": "event text here",
     "new_accessory": [],
     "m_c": {
@@ -58,8 +58,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         {
             "cats": [],
             "scar": "",
-            "reg_death": "",
-            "lead_death": ""
+            "death": ""
         }
     ],
     "relationships": [
@@ -258,7 +257,7 @@ lowercase season names + "any"
 
     However, remember the wide range of ages and statuses we have and how they can overlap with each other.  It's possible to have warriors who graduate early and are still adolescent age.  It's also possible for apps to train longer than usual and become young adults without becoming warriors.  Elders, likewise, can be both young and old cats as it's possible for cats to retire to the elder den at any age.
 
->**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
+>**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
 >**skill[list]** : m_c must possess at least one skill from this list. if they can be anything, use "any"
 >
@@ -283,7 +282,7 @@ lowercase season names + "any"
 >
 >**status:[list]** : a list of statuses r_c can be. if they can be anything, use "any"
 >
->**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels).
+>**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers).
 > 
 >**skill[list]** : r_c must possess at least one skill from this list. if they can be anything, remove parameter or leave list empty.
 >
@@ -349,12 +348,7 @@ lowercase season names + "any"
 >    {
 >      "cats": [],
 >      "injuries": [],
->      "scars": [],
->      "history:": {
->        "scar": "",
->        "reg_death": "",
->        "lead_death": ""
->      }
+>      "scars": []
 >    }
 >```
 >
@@ -398,91 +392,19 @@ lowercase season names + "any"
 >    {
 >        "cats": [],
 >        "scar": "",
->        "reg_death": "",
->        "lead_death": ""
+>        "death": ""
 >    }
 >```
 
-| text_type    | "custom history message"                                                                                    |
-|--------------|-------------------------------------------------------------------------------------------------------------|
-| "reg_death"  | Death history text for non-leaders. Whole sentence.  must include if cat is dead or injured                 |
-| "lead_death" | Death history text for leaders. Sentence fragment. must include if dead or injured cat could be the leader. |
-| "scar"       | Scar history. Whole sentence.  must include if cat gets injured                                             |
+| text_type | "custom history message"                                                    |
+|-----------|-----------------------------------------------------------------------------|
+| "death"   | Death history text. Whole sentence.  must include if cat is dead or injured |
+| "scar"    | Scar history. Whole sentence.  must include if cat gets injured             |
 
 ***
 
 ### relationships:list[dict[str, various]]
->Optional. Indicates effect on cat relationships. You can include as many of the following blocks as you want, in a list
->
->```
->{
->    "cats_from": [],
->    "cats_to": [],
->    "mutual": false,
->    "values" [],
->    "amount": 5
->}
->```
->
->Parameter for each:
-
->**cats_from: List[str] :** The cat's whose relationship values are being edited. You are changing how the "cats_from" feels. 
-
-| string      |                                                                                                            |
-|-------------|------------------------------------------------------------------------------------------------------------|
-| m_c         | main cat's feelings are affected                                                                           |
-| r_c         | other cat's feelings are affected                                                                          |
-| n_c:{index} | new cat's feelings are affected                                                                            |
-| clan        | the clan's feelings are affected (experimental, unsupported in old format and not sure if i can make work) |
-
-
->**cats_to: List[str] :** The target of the relationship. You can changing how "cats_from" feel about "cats_to"
-
-| string      |                                                                                                                 |
-|-------------|-----------------------------------------------------------------------------------------------------------------|
-| m_c         | feelings toward the main cat are affected                                                                       |
-| r_c         | feelings toward the other_cat are affected                                                                      |
-| n_c:{index} | feelings toward the new cat are affected                                                                        |
-| clan        | feelings toward the clan are affected (experimental, unsupported in old format and not sure if i can make work) |
-
-> Group modifiers: These will modify the cats already being gathered according to the other strings. For example, a block with `"cats_from": ["clan", "low_lawful"]` will gather all the cats in the Clan with a 0-8 lawfulness facet.  These can be combined to get cats with specific ranges of multiple facets.
-
-| modifier     |                                                |
-|--------------|------------------------------------------------|
-| low_lawful   | cats with a 0-8 lawfulness facet are affected  |
-| high_lawful  | cats with a 9-16 lawfulness facet are affected |
-| low_social   | cats with a 0-8 sociable facet are affected    |
-| high_social  | cats with a 9-16 sociable facet are affected   |
-| low_stable   | cats with a 0-8 stability facet are affected   |
-| high_stable  | cats with a 9-16 stability facet are affected  |
-| low_aggress  | cats with a 0-8 aggression facet are affected  |
-| high_aggress | cats with a 9-16 aggression facet are affected |
-
->**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions. 
-
-| bool  |                                                                                                                                              |
-|-------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| true  | Relationship effects will be applied in both directions. Equivalent to repeating the relation block with "cats_from" and "cats_to" swapped.  |
-| false | Default. Relationship effects will be applied in a single direction.                                                                         |
-
->**values: bool :** Controls which relationship values are affected.
-
-| string     |                                                                                                                                                                                                                            |
-|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "romantic" | Romantic-like is affected. Be careful with this one! There is no automatic check to ensure the cats are potential mates. See "tags" and ensure that the correct tags are added, and "cats_to" and "cats_from" are correct. |
-| "platonic" | Platonic like is effected                                                                                                                                                                                                  |
-| "dislike"  | Dislike (hate) is effected                                                                                                                                                                                                 |
-| "comfort"  | Comfort (comfortable) is effected                                                                                                                                                                                          |
-| "jealous"  | Jealousy is effected                                                                                                                                                                                                       |
-| "trust"    | Trust (reliance) is effected                                                                                                                                                                                               |
-| "respect"  | Respect (admiration) is affected.                                                                                                                                                                                          |
-
->**amount: int :** Exact amount the relationship value will be affected. Can be positive or negative. 
-
-| int           |                                                                                                                                |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------|
-| {any integer} | The amount the relationship will be affected. 5 is a normal amount, and 15 is a large amount. Try to stay within those bounds. |
-
+>Optional. Indicates effect on cat relationships. Check [Writing Relationship Changes](reference/index.md#writing-relationship-changes) for full parameters.
 ***
 
 ### outsider:dict[str, various]

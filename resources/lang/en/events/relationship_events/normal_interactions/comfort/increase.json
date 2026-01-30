@@ -322,6 +322,40 @@
 		}
 	},
 	{
+		"id": "comfortable_kit_parent_inc_high",
+		"intensity": "high",
+		"interactions": [
+			"m_c stays snuggled up with r_c all morning.",
+			"m_c never wants to leave r_c's side.",
+			"r_c is the first cat that m_c tells anything.",
+			"m_c knows r_c will always love {PRONOUN/m_c/object}, no matter what.",
+			"m_c confides all {PRONOUN/m_c/poss} hopes and dreams in r_c."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"relationship_constraint": [
+			"child/parent"
+		]
+	},
+	{
+		"id": "comfortable_kit_parent_inc_med_dec_trust",
+		"interactions": [
+			"m_c realizes even though r_c is {PRONOUN/m_c/poss} parent, {PRONOUN/r_c/subject} {VERB/r_c/have/has} some of the same problems.",
+			"m_c tells r_c all {PRONOUN/m_c/poss} problems, even though r_c never knows how to help.",
+			"m_c and r_c act more like siblings than kit and parent, sometimes."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"relationship_constraint": [
+			"child/parent"
+		],
+		"also_influences": {
+			"trust": "decrease"
+		}
+	},
+	{
 		"id": "comfort_med_inc_medium1",
 		"interactions": [
 			"m_c thanks r_c for checking when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling alright.",

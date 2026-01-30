@@ -75,6 +75,26 @@
 		]
 	},
 	{
+		"id": "comfort_de_kit_parent_inc_med_respect_inc",
+		"interactions": [
+			"r_c scolds m_c for doing something dangerous.",
+			"r_c scolds m_c for being rude to a Clanmate.",
+			"r_c enforces m_c's bedtime.",
+			"r_c won't let m_c have an extra piece of prey today.",
+			"m_c thinks r_c is the strictest parent in the Clan.",
+			"m_c sulks after r_c prohibits a dangerous game."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"relationship_constraint": [
+			"child/parent"
+		],
+		"also_influences": {
+			"respect": "increase"
+		}
+	},
+	{
 		"id": "comfort_de_med2",
 		"interactions": [
 			"m_c called r_c the wrong name.",

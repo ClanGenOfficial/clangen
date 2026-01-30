@@ -5,7 +5,7 @@ from typing import Dict, List, Union, Optional
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial
+from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial, CatCompatibility
 from scripts.cat.names import names, Name
 from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.clan_package.settings import get_clan_setting
@@ -14,15 +14,16 @@ from scripts.events_module.short.condition_events import Condition_Events
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
+from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
+from scripts.events_module.consequences import (
     create_new_cat,
-    get_highest_romantic_relation,
-    event_text_adjust,
-    get_personality_compatibility,
     change_relationship_values,
-    find_alive_cats_with_rank,
-    adjust_list_text,
 )
+from scripts.events_module.event_filters import (
+    get_highest_romantic_relation,
+    get_personality_compatibility,
+)
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 
 class Pregnancy_Events:
@@ -1104,9 +1105,9 @@ class Pregnancy_Events:
         # - decrease / increase depending on the compatibility
         if second_parent:
             comp = get_personality_compatibility(first_parent, second_parent)
-            if comp is not None:
+            if comp != CatCompatibility.NEUTRAL:
                 buff = 0.85
-                if not comp:
+                if comp == CatCompatibility.NEGATIVE:
                     buff += 0.3
                 inverse_chance = int(inverse_chance * buff)
 

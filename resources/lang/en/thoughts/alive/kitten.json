@@ -135,6 +135,9 @@
         ],
         "random_living_status": [
             "living"
+        ],
+        "random_age_constraint": [
+            "senior"
         ]
     },
     {
