@@ -13,8 +13,8 @@ from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.ui_elements import UISurfaceImageButton
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from scripts.ui.scale import ui_scale_dimensions, ui_scale
 from scripts.ui.windows.save_error import SaveErrorWindow
-from scripts.utility import ui_scale_dimensions, ui_scale
 
 
 class UISaveButton:

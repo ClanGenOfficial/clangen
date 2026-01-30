@@ -1,13 +1,12 @@
 import os
 import unittest
-from random import choice
 from uuid import uuid4
 
 import ujson
 
 from scripts.cat import save_load
 from scripts.cat.enums import CatRank
-from scripts.cat.sprites import sprites
+from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
 from scripts.game_structure import game
 
