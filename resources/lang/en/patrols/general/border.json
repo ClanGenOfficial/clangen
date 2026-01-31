@@ -32,7 +32,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l scents some prey, catching it p_l has a quick snack.",
+                "text": "p_l scents some prey and catches it. After {PRONOUN/p_l/poss} snack, {PRONOUN/p_l/subject} {VERB/p_l/mark/marks} the border.",
                 "exp": 5,
                 "frequency": 4
             },
