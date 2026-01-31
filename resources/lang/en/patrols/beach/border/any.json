@@ -241,7 +241,7 @@
                         "values": ["trust", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's heroic death in battle against a rogue ambush."
+                            "cats_from": "from_cat honored to_cat's heroic death in battle against a rogue ambush."
                         }
                     }
                 ],
