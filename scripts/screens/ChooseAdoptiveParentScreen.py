@@ -12,13 +12,10 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UISurfaceImageButton,
 )
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    ui_scale_dimensions,
-    ui_scale_offset,
-)
+from ..ui.theme import get_text_box_theme
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
+from .enums import GameScreen
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
@@ -99,7 +96,7 @@ class ChooseAdoptiveParentScreen(Screens):
             # Cat buttons list
             if event.ui_element == self.back_button:
                 self.selected_mate_index = 0
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.toggle_adoptive_parent:
                 if self.work_thread is not None and self.work_thread.is_alive():
                     return
@@ -159,7 +156,7 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element in self.birth_parents_buttons.values():
                 switch_set_value(Switch.cat, event.ui_element.cat_object.ID)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
@@ -914,8 +911,8 @@ class ChooseAdoptiveParentScreen(Screens):
         valid_parents = [
             inter_cat
             for inter_cat in Cat.all_cats_list
-            if inter_cat.status.group
-            == self.the_cat.status.group  # Adoptive parents must be part of the same group
+            if inter_cat.status.group_ID
+            == self.the_cat.status.group_ID  # Adoptive parents must be part of the same group
             and inter_cat.ID != self.the_cat.ID  # Can't be your own adoptive parent
             and inter_cat.moons - self.the_cat.moons
             >= 14  # Adoptive parent must be at least 14 moons older. -> own child can't adopt you
@@ -964,6 +961,3 @@ class ChooseAdoptiveParentScreen(Screens):
                 return True
 
         return False
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]

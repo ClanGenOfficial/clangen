@@ -6,7 +6,7 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.clan_resources.herb.herb_supply import MESSAGES
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
@@ -14,15 +14,12 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIModifiedImage,
 )
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    find_alive_cats_with_rank,
-    shorten_text_to_fit,
-    event_text_adjust,
-    ui_scale_offset,
-)
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import event_text_adjust, shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_offset
+from ..clan_package.get_clan_cats import find_alive_cats_with_rank
 from .Screens import Screens
+from .enums import GameScreen
 from ..cat.enums import CatRank
 from ..conditions import get_amount_cat_for_one_medic, amount_clanmembers_covered
 from ..game_structure.game.switches import switch_set_value, Switch
@@ -114,11 +111,11 @@ class MedDenScreen(Screens):
             elif event.ui_element in self.cat_buttons.values():
                 cat = event.ui_element.return_cat_object()
                 switch_set_value(Switch.cat, cat.ID)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.med_cat:
                 cat = event.ui_element.return_cat_object()
                 switch_set_value(Switch.cat, cat.ID)
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.cats_tab:
                 self.open_tab = "cats"
                 self.cats_tab.disable()
@@ -592,7 +589,7 @@ class MedDenScreen(Screens):
         herb_list = []
         herb_supply = game.clan.herb_supply
 
-        if not herb_supply.total:
+        if herb_supply.total <= 0:
             herb_list = ["Empty"]
 
         elif game.clan.game_mode != "classic":
@@ -725,9 +722,6 @@ class MedDenScreen(Screens):
             self.log_box.kill()
         if self.med_cat:
             self.med_cat.kill()
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
 
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:

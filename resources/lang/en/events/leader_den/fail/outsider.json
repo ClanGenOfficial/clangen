@@ -11,8 +11,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -29,8 +29,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -47,8 +47,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -65,8 +65,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -83,8 +83,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -101,8 +101,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -120,15 +120,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 15
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["platonic"],
-          "amount": -5
+          "values": ["like"],
+          "amount": -20
         }
       ]
     }
@@ -146,8 +139,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 20
+          "values": ["like"],
+          "amount": -20
         }
       ]
     }
@@ -165,14 +158,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 20
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -10
         }
       ]
@@ -192,15 +178,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": 5
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["dislike"],
-          "amount": -10
         }
       ]
     }
@@ -219,7 +198,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
+          "values": ["like"],
           "amount": -50
         }
       ]
@@ -237,8 +216,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 5
+          "values": ["like"],
+          "amount": -5
         }
       ]
     }
@@ -255,8 +234,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 5
+          "values": ["like"],
+          "amount": -5
         }
       ]
     }
@@ -284,8 +263,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 5
+          "values": ["like"],
+          "amount": -5
         }
       ]
     }
@@ -302,8 +281,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -320,8 +299,8 @@
         {
           "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -339,8 +318,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 5
+          "values": ["like"],
+          "amount": -5
         }
       ]
     }
@@ -398,14 +377,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": 5
         }
       ]
@@ -425,14 +397,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 10
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -5
         }
       ]
@@ -471,14 +436,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": 5
         }
       ]
@@ -567,14 +525,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 5
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -5
         }
       ]
@@ -593,14 +544,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 5
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -5
         }
       ]
@@ -620,14 +564,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 5
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": -5
         }
       ]
@@ -646,14 +583,7 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": -5
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["platonic"],
+          "values": ["like"],
           "amount": 5
         }
       ]
@@ -673,13 +603,6 @@
       "new_thought": "Is feeling rather proud of {PRONOUN/m_c/self}",
       "relationships": [
         {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["dislike"],
-          "amount": 5
-        },
-        {
           "cats_from": ["clan"],
           "cats_to": ["m_c"],
           "mutual": false,
@@ -703,13 +626,6 @@
       "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
       "relationships": [
         {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": true,
-          "values": ["dislike"],
-          "amount": 5
-        },
-        {
           "cats_from": ["clan"],
           "cats_to": ["m_c"],
           "mutual": false,
@@ -732,13 +648,6 @@
       ],
       "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
       "relationships": [
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": true,
-          "values": ["dislike"],
-          "amount": 5
-        },
         {
           "cats_from": ["clan"],
           "cats_to": ["m_c"],
@@ -766,8 +675,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": true,
-          "values": ["dislike"],
-          "amount": 5
+          "values": ["like"],
+          "amount": -5
         }
       ]
     }
@@ -789,8 +698,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 5
+          "values": ["like"],
+          "amount": -5
         },
         {
           "cats_from": ["clan"],
@@ -819,8 +728,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": true,
-          "values": ["dislike"],
-          "amount": 5
+          "values": ["like"],
+          "amount": -5
         },
         {
           "cats_from": ["clan"],
@@ -849,8 +758,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": true,
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         },
         {
           "cats_from": ["clan"],
@@ -875,8 +784,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": true,
-          "values": ["dislike"],
-          "amount": 10
+          "values": ["like"],
+          "amount": -10
         }
       ]
     }
@@ -894,8 +803,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": true,
-          "values": ["dislike"],
-          "amount": 10
+          "values": ["like"],
+          "amount": -10
         }
       ]
     }
@@ -983,8 +892,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -1002,8 +911,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -1051,8 +960,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }
@@ -1070,8 +979,8 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["dislike"],
-          "amount": 15
+          "values": ["like"],
+          "amount": -15
         }
       ]
     }

@@ -24,17 +24,17 @@ from pygame_gui.core import ObjectID
 from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache, constants
+from scripts.game_structure import image_cache, game, constants
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game.settings import game_settings_load, game_setting_get
-from scripts.game_structure.game_essentials import (
-    game,
-)
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
-from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
+from scripts.ui.windows.update_available import UpdateAvailableWindow
+from scripts.ui.windows.changelog import ChangelogWindow
 from scripts.housekeeping.datadir import open_data_dir, open_url
-from scripts.utility import ui_scale, quit, ui_scale_dimensions
+from ..housekeeping.quit_game import quit_game
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
+from .enums import GameScreen
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
@@ -74,10 +74,10 @@ class StartScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
             screens = {
-                self.continue_button: "camp screen",
-                self.switch_clan_button: "switch clan screen",
-                self.new_clan_button: "make clan screen",
-                self.settings_button: "settings screen",
+                self.continue_button: GameScreen.CAMP,
+                self.switch_clan_button: GameScreen.SWITCH_CLAN,
+                self.new_clan_button: GameScreen.MAKE_CLAN,
+                self.settings_button: GameScreen.SETTINGS,
             }
             if event.ui_element in screens and not self.error_open:
                 self.change_screen(screens[event.ui_element])
@@ -92,11 +92,11 @@ class StartScreen(Screens):
                 self.open_data_directory_button.kill()
                 self.error_open = False
             elif event.ui_element == self.update_button:
-                UpdateAvailablePopup()
+                UpdateAvailableWindow()
             elif event.ui_element == self.quit:
-                quit(savesettings=False, clearevents=False)
+                quit_game(savesettings=False, clearevents=False)
             elif event.ui_element == self.event_edit:
-                self.change_screen("event edit screen")
+                self.change_screen(GameScreen.EVENT_EDIT)
             elif event.ui_element == self.social_buttons["discord_button"]:
                 open_url("https://discord.gg/clangen")
             elif event.ui_element == self.social_buttons["tumblr_button"]:
@@ -107,7 +107,7 @@ class StartScreen(Screens):
             if (
                 event.key == pygame.K_RETURN or event.key == pygame.K_SPACE
             ) and self.continue_button.is_enabled:
-                self.change_screen("camp screen")
+                self.change_screen(GameScreen.CAMP)
 
     # def on_use(self):
     #     """
@@ -145,7 +145,7 @@ class StartScreen(Screens):
 
         # start menu music if it isn't already playing
         # this is the only screen that has to check its own music, other screens handle that in the screen change
-        music_manager.check_music("start screen")
+        music_manager.check_music(GameScreen.START)
 
         bg = pygame.image.load("resources/images/menu.png").convert()
         if game_setting_get("dark mode"):
@@ -327,7 +327,7 @@ class StartScreen(Screens):
                                 show_popup = False
 
                     if show_popup:
-                        UpdateAvailablePopup(show_checkbox=True)
+                        UpdateAvailableWindow(show_checkbox=True)
 
                 has_checked_for_update = True
 
@@ -349,7 +349,7 @@ class StartScreen(Screens):
                         show_changelog = False
 
             if show_changelog:
-                ChangelogPopup()
+                ChangelogWindow()
                 with open(
                     f"{get_cache_dir()}/changelog_popup_shown", "w", encoding="utf-8"
                 ) as write_file:

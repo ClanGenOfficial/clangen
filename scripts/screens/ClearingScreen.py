@@ -6,7 +6,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game, constants
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
@@ -15,11 +15,9 @@ from scripts.game_structure.ui_elements import (
     UIModifiedImage,
     UIModifiedScrollingContainer,
 )
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    shorten_text_to_fit,
-)
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import shorten_text_to_fit
+from ..ui.scale import ui_scale
 from .Screens import Screens
 from ..clan_package.settings import get_clan_setting, switch_clan_setting
 from scripts.events_module.short.condition_events import Condition_Events
@@ -621,7 +619,7 @@ class ClearingScreen(Screens):
 
         current_prey_amount = game.clan.freshkill_pile.total_amount
         needed_amount = game.clan.freshkill_pile.amount_food_needed()
-        warrior_need = game.prey_config["prey_requirement"][CatRank.WARRIOR]
+        warrior_need = constants.PREY_CONFIG["prey_requirement"][CatRank.WARRIOR]
         warrior_amount = int(current_prey_amount / warrior_need)
         general_text = i18n.t(
             "screens.clearing.prey_amount_info", warrior_amount=warrior_amount
@@ -703,9 +701,6 @@ class ClearingScreen(Screens):
         if self.focus_cat:
             self.focus_cat.kill()
 
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
-
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:
             self.cat_buttons[cat].kill()
@@ -777,8 +772,8 @@ class ClearingScreen(Screens):
             manager=MANAGER,
         )
 
-        prey_requirement = game.prey_config["prey_requirement"]
-        feeding_order = game.prey_config["feeding_order"]
+        prey_requirement = constants.PREY_CONFIG["prey_requirement"]
+        feeding_order = constants.PREY_CONFIG["feeding_order"]
         for rank in feeding_order:
             amount = prey_requirement[rank]
             self.additional_text[

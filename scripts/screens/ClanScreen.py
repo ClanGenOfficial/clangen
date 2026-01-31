@@ -9,22 +9,16 @@ from pygame_gui.core import ObjectID
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_settings_save, game_setting_get
-from scripts.game_structure.game_essentials import (
-    game,
-)
+from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
     UISurfaceImageButton,
 )
-from scripts.game_structure.windows import SaveError
-from scripts.utility import (
-    ui_scale,
-    ui_scale_dimensions,
-    get_current_season,
-    ui_scale_value,
-)
+from scripts.ui.windows.save_error import SaveErrorWindow
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 from .Screens import Screens
+from .enums import GameScreen
 from ..cat.save_load import save_cats
 from ..clan_package.settings import get_clan_setting
 from ..clan_package.settings.clan_settings import switch_clan_setting
@@ -76,30 +70,30 @@ class ClanScreen(Screens):
                     switch_set_value(Switch.saved_clan, True)
                     self.update_buttons_and_text()
                 except RuntimeError:
-                    SaveError(traceback.format_exc())
-                    self.change_screen("start screen")
+                    SaveErrorWindow(traceback.format_exc())
+                    self.change_screen(GameScreen.START)
             if event.ui_element in self.cat_buttons:
                 switch_set_value(Switch.cat, event.ui_element.return_cat_id())
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             if event.ui_element == self.label_toggle:
                 switch_clan_setting("den labels")
                 self.update_buttons_and_text()
             if event.ui_element == self.med_den_label:
-                self.change_screen("med den screen")
+                self.change_screen(GameScreen.MED_DEN)
             if event.ui_element == self.clearing_label:
-                self.change_screen("clearing screen")
+                self.change_screen(GameScreen.CLEARING)
             if event.ui_element == self.warrior_den_label:
-                self.change_screen("warrior den screen")
+                self.change_screen(GameScreen.WARRIOR_DEN)
             if event.ui_element == self.leader_den_label:
-                self.change_screen("leader den screen")
+                self.change_screen(GameScreen.LEADER_DEN)
             else:
                 self.menu_button_pressed(event)
 
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_RIGHT:
-                self.change_screen("list screen")
+                self.change_screen(GameScreen.LIST)
             elif event.key == pygame.K_LEFT:
-                self.change_screen("events screen")
+                self.change_screen(GameScreen.EVENTS)
             elif event.key == pygame.K_SPACE:
                 self.save_button_saving_state.show()
                 self.save_button.disable()
@@ -127,7 +121,7 @@ class ClanScreen(Screens):
         self.choose_cat_positions()
 
         self.set_disabled_menu_buttons(["camp_screen"])
-        self.update_heading_text(f"{game.clan.name}Clan")
+        self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_menu_buttons()
 
         # Creates and places the cat sprites.
@@ -403,7 +397,7 @@ class ClanScreen(Screens):
             },
         )
 
-        self.set_bg(get_current_season())
+        self.set_bg(game.clan.current_season)
 
     def choose_nonoverlapping_positions(self, first_choices, dens, weights=None):
         if not weights:

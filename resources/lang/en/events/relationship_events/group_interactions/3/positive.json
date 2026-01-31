@@ -11,23 +11,81 @@
 			"m_c": ["charismatic", "loyal", "charming"]
 		},
 		"relationship_constraint": {
-			"m_c_to_r_c2": ["platonic_20"],
-			"r_c1_to_r_c2": ["dislike_20"]
+			"m_c_to_r_c2": ["likes"],
+			"r_c1_to_r_c2": ["dislikes"]
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"platonic": "increase",
-				"comfortable": "increase",
+				"like": "increase",
+				"comfort": "increase",
 				"trust": "increase"
 			},
 			"m_c_to_r_c2": {
-				"platonic": "increase",
-				"comfortable": "increase",
+				"like": "increase",
+				"comfort": "increase",
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
-				"dislike": "decrease"
+				"like": "increase"
 			}
+		}
+	},
+	{
+		"id": "group_3_neutral_talk",
+		"cat_amount": 3,
+		"intensity": "low",
+		"interactions": [
+			"m_c confesses to r_c1 that {PRONOUN/m_c/subject} {VERB/m_c/have/has} feelings for r_c2.",
+			"While m_c and r_c1 are talking, m_c gets the feeling that {PRONOUN/m_c/subject} can trust r_c1, and confesses that {PRONOUN/m_c/subject} {VERB/m_c/like/likes} r_c2."
+		],
+		"status_constraint": {
+			"m_c": [
+				"leader",
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator"
+			],
+			"r_c1": [
+				"leader",
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator"
+			],
+			"r_c2": [
+				"leader",
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator"
+			]
+		},
+		"relationship_constraint": {
+			"m_c_to_r_c1": ["listens_to"],
+			"m_c_to_r_c2": ["fancies","not_mates"]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"comfort": "increase",
+				"trust": "increase"
+			},
+			"r_c1_to_m_c": {
+				"trust": "increase"
+			}
+		}
+	},
+	{
+		"id": "group_3_neutral_talk2",
+		"cat_amount": 3,
+		"intensity": "low",
+		"interactions": [
+			"m_c, r_c1, and r_c2 had a nice talk, while eating.",
+			"m_c, r_c1, and r_c2 took a sunbath and had a little small talk."
+		],
+		"general_reaction": {
+			"comfort": "increase",
+			"like": "increase"
 		}
 	}
 ]
