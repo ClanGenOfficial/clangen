@@ -230,7 +230,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["low_stable"],
+                        "cats_from": ["clan", "low_stable"],
                         "cats_to": ["s_c"],
                         "values": ["respect", "like"],
                         "amount": 3,
@@ -239,7 +239,7 @@
                         }
                     },
                     {
-                        "cats_from": ["high_stable"],
+                        "cats_from": ["clan", "high_stable"],
                         "cats_to": ["s_c"],
                         "values": ["respect", "like"],
                         "amount": 3,

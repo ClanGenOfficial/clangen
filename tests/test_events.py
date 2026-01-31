@@ -5,7 +5,7 @@ from uuid import uuid4
 from scripts.cat import save_load
 from scripts.cat.cats import create_cat, Cat
 from scripts.cat.enums import CatRank
-from scripts.cat.sprites import sprites
+from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Clan, Afterlife
 from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
 from scripts import events
@@ -14,7 +14,7 @@ from scripts.events_module.short.short_event_generation import (
     filter_events,
 )
 from scripts.game_structure import game
-from scripts.utility import get_living_cat_count
+from scripts.clan_package.get_clan_cats import get_living_cat_count
 
 
 class TestEvents(unittest.TestCase):
@@ -93,4 +93,5 @@ class TestEvents(unittest.TestCase):
             for _ in range(500):
                 events.one_moon()
                 if not _ % 100:
+                    # todo: why use this function? this also counts COTC, which is useless for telling if the clan is dead
                     print(f"CATS ALIVE: {get_living_cat_count(Cat)}")

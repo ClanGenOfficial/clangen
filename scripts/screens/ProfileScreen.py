@@ -17,27 +17,24 @@ from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
 )
-from scripts.utility import (
-    event_text_adjust,
-    ui_scale,
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import (
     process_text,
-    chunks,
-    get_text_box_theme,
-    ui_scale_dimensions,
-    shorten_text_to_fit,
-    ui_scale_offset,
+    event_text_adjust,
     adjust_list_text,
+    shorten_text_to_fit,
 )
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from scripts.cat.pelts import Pelt
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.enums import CatAge, CatRank, CatGroup
-from ..cat.sprites import sprites
+from ..cat.sprites.load_sprites import sprites
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.save_load import safe_save
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
-from ..game_structure.localization import get_new_pronouns
+from ..cat.pronouns import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
 from ..ui.windows.change_cat_name import ChangeCatNameWindow
 from ..ui.windows.kill_cat import KillCat
@@ -1812,7 +1809,7 @@ class ProfileScreen(Screens):
                     cond[0] = temp
                     break
 
-        all_illness_injuries = chunks(all_illness_injuries, 4)
+        all_illness_injuries = self.chunks(all_illness_injuries, 4)
 
         if not all_illness_injuries:
             self.conditions_page = 0
