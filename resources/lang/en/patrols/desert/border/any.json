@@ -1284,7 +1284,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "to_cat questions from_cat's judgement after leading {PRONOUN/from_cat/poss} patrol towards a dog pack."
+                            "cats_from": "to_cat questions from_cat's judgment after leading {PRONOUN/from_cat/poss} patrol towards a dog pack."
                         }
                     }
                 ],
