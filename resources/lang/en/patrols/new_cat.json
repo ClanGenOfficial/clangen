@@ -5663,7 +5663,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, it turns tail and makes a hasty getaway. At least it's off the territory now.",
+                "text": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, {PRONOUN/n_c:0/subject} {VERB/n_c:0/turn/turns} tail and makes a hasty getaway. At least {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} off the territory now.",
                 "exp": 0,
                 "outsider_rep": -1,
                 "new_cat": [

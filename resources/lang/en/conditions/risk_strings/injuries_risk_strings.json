@@ -131,7 +131,7 @@
     "burn": {
         "an infected wound": [
             "The flesh of m_c's burn is far too warm. r_c applies a salve to try and help fight off the developing infection.",
-            "m_c has been feeling feverish. {PRONOUN/m_c/poss/CAP} burn looks a bit discolored, it must be developing an infection."
+            "m_c has been feeling feverish, and {PRONOUN/m_c/poss} burn looks a bit discolored. It must be developing an infection."
         ]
     },
     "severe burn": {
