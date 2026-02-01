@@ -26,7 +26,7 @@ class TestEvents(unittest.TestCase):
         game.starclan = Afterlife()
         game.dark_forest = Afterlife()
         game.clan = Clan(
-            uuid=f"{'Test'}_{uuid4()}",
+            save_id=f"{'Test'}_{uuid4()}",
             name="Test",
             leader=create_cat(CatRank.LEADER),
             deputy=create_cat(CatRank.DEPUTY),

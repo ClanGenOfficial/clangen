@@ -61,7 +61,7 @@ class Clan:
 
     def __init__(
         self,
-        uuid="",
+        save_id="",
         leader=None,
         deputy=None,
         medicine_cat=None,
@@ -74,18 +74,15 @@ class Clan:
         self_run_init_functions=True,
         name="",
     ):
-        if uuid == "":
+        if save_id == "":
             return
 
         if starting_members is None:
             starting_members = []
 
-        # name is the unique id of the clan. i'm sorry if this is confusing...
-        # TODO: change to better name like clan_id
-        self.name = uuid
-        # displayname is the name you should use whenever displaying the clan name in UI
+        self.save_id = save_id
         if not name:
-            self.name = uuid
+            self.name = save_id
         else:
             self.name = name
         self.leader = leader
@@ -574,7 +571,7 @@ class Clan:
             elif general[8] == "None":
                 general[8] = 50
             game.clan = Clan(
-                uuid=general[0],
+                save_id=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
                 medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
@@ -593,7 +590,7 @@ class Clan:
             elif general[7] == "None":
                 general[7] = "classic"
             game.clan = Clan(
-                uuid=general[0],
+                save_id=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
                 medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
@@ -609,7 +606,7 @@ class Clan:
             elif general[3] == "None":
                 general[3] = "camp1"
             game.clan = Clan(
-                uuid=general[0],
+                save_id=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
                 medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
@@ -620,7 +617,7 @@ class Clan:
             game.clan.post_initialization_functions()
         elif len(general) == 3:
             game.clan = Clan(
-                uuid=general[0],
+                save_id=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
                 medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
@@ -736,7 +733,7 @@ class Clan:
             displayname = clan_data["clanname"]
 
         game.clan = Clan(
-            uuid=clan_data["clanname"],
+            save_id=clan_data["clanname"],
             name=displayname,
             leader=leader,
             deputy=deputy,
