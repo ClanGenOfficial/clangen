@@ -1,0 +1,15 @@
+[
+    {
+        "id": "newly_joined",
+        "thoughts": [
+            "Is looking around the camp with wonder"
+        ]
+    },
+    {
+        "id": "newly_joined_kit",
+        "thoughts": [
+            "Is snuggled safe in the nursery"
+        ],
+        "main_status_constraint": ["kitten", "newborn"]
+    }
+]
