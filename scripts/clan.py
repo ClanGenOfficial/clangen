@@ -88,6 +88,13 @@ class Clan:
             self.displayname = name
         else:
             self.displayname = displayname
+        
+        # clearer aliases
+        # self.name and self.displayname are preserved for save compatibility
+        # uuid and ui_name are clearer aliases and can be used for internal use
+        self.uuid = self.name
+        self.ui_name = self.displayname
+
         self.leader = leader
         self.leader_lives = 9
         self.leader_predecessors = 0
