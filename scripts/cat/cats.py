@@ -918,6 +918,8 @@ class Cat:
 
         self.update_mentor()
 
+        self.get_new_thought(CatThought.ON_LOST)
+
         for x in self.apprentice:
             Cat.fetch_cat(x).update_mentor()
 
