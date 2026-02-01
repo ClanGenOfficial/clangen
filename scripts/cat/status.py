@@ -416,17 +416,19 @@ class Status:
         new_rank: CatRank,
         standing_with_past_group: CatStanding = None,
         new_group_ID: str = None,
+        forced_old_group_ID: str = None,
     ):
         """
         Changes group status for a cat. They can be entering, leaving, or switching their group.
         :param new_group_ID: the ID of the new group they will be joining, default None
+        :param forced_old_group_ID: Only use if you're trying to modify a cat's place in a group they're no longer part of. Generally don't do this. It's just here for special cases (like when lost clancats have kittens while lost, and those kittens need to be considered lost from a group they weren't part of)
         :param new_rank: Indicate what rank the cat should take, if they aren't joining a new group then this should
         match their social.
         :param standing_with_past_group: Indicate what standing the cat should have with their old group, leave None if
         they didn't have a group
         """
         if standing_with_past_group:
-            self.change_standing(standing_with_past_group)
+            self.change_standing(standing_with_past_group, forced_old_group_ID)
 
         self.group_history.append(
             {"group": new_group_ID, "rank": new_rank, "moons_as": 0}
@@ -460,16 +462,35 @@ class Status:
             {"group": group_ID, "standing": [new_standing], "near": True}
         )
 
-    def become_lost(self, new_social_status: CatSocial = CatSocial.KITTYPET):
+    def make_standing_unknown(self, group_ID: str):
+        """
+        Erases standing with a group and replaces it with UNKNOWN. Best used when generating a new cat.
+        """
+        record = [r for r in self.standing_history if r["group"] == group_ID]
+        if not record:
+            self.change_standing(new_standing=CatStanding.UNKNOWN, group_ID=group_ID)
+        else:
+            record[0]["standing"] = [CatStanding.UNKNOWN]
+
+    def become_lost(
+        self,
+        new_social_status: CatSocial = CatSocial.KITTYPET,
+        specific_group: str = None,
+    ):
         """
         Removes from previous group and sets standing with that group to Lost.
         :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by
         Twolegs and are now a kittypet)
+        :param specific_group: If you want to make this cat "lost" from a group they aren't currently part of, include the group here
         """
         # find matching rank enum
         rank = CatRank(new_social_status)
 
-        self._modify_group(rank, standing_with_past_group=CatStanding.LOST)
+        self._modify_group(
+            rank,
+            standing_with_past_group=CatStanding.LOST,
+            forced_old_group_ID=specific_group,
+        )
 
     def exile_from_group(self):
         """

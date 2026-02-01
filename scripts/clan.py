@@ -74,6 +74,10 @@ class Clan:
         self_run_init_functions=True,
         displayname="",
     ):
+        """
+        :param name: The save file name for the Clan, this should not be used for player-facing text beyond the save file screen
+        :param displayname: The display name for the Clan, this is what should appear while the playing the game.
+        """
         if name == "":
             return
 
