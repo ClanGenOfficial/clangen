@@ -137,15 +137,15 @@ class CatCompatibility(Enum):
 
 
 class CatThought(StrEnum):
-    IS_GUIDE = auto()
-    WHILE_DEAD = auto()
-    WHILE_ALIVE = auto()
-    ON_DEATH = auto()
-    ON_GRIEF_TOWARD_BODY = auto()
-    ON_GRIEF_TOWARD_MISSING = auto()
-    ON_BIRTH = auto()
-    ON_MEETING = auto()
-    ON_JOIN = auto()
-    ON_EXILE = auto()
-    ON_LOST = auto()
-    ON_AFTERLIFE_CHANGE = auto()
+    IS_GUIDE = "is_guide"
+    WHILE_DEAD = "while_dead"
+    WHILE_ALIVE = "while_alive"
+    ON_DEATH = "on_death"
+    ON_GRIEF_TOWARD_BODY = "on_grief_toward_body"
+    ON_GRIEF_TOWARD_MISSING = "on_grief_toward_missing"
+    ON_BIRTH = "on_birth"
+    ON_MEETING = "on_meeting"
+    ON_JOIN = "on_join"
+    ON_EXILE = "on_exile"
+    ON_LOST = "on_lost"
+    ON_AFTERLIFE_CHANGE = "on_afterlife_change"
