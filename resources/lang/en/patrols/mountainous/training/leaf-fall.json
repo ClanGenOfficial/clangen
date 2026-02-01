@@ -32,14 +32,34 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about spotted towhees."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about spotted towhees."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -53,20 +73,40 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about spotted towhees."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about spotted towhees."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
+                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes s_c for an explanation. An ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
                 "exp": 15,
                 "stat_skill": [
                     "SPEAKER,2",
@@ -82,14 +122,34 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat told to_cat the story of how a towhee stole a StarClan cat's voice."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat told from_cat the story of how a towhee stole a StarClan cat's voice."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -109,14 +169,34 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about how spotted towhees imitate cats' meows."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about how spotted towhees imitate cats' meows."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -124,9 +204,21 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird, and argues with p_l all the way back to camp.",
+                "text": "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird and argues with p_l all the way back to camp.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "app1 argued with p_l about whether towhee birds can imitate cats' cries."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -163,14 +255,34 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about spotted towhees."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about spotted towhees."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -184,14 +296,34 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about spotted towhees."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about spotted towhees."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -213,14 +345,34 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat told to_cat the story of how a towhee stole a StarClan cat's voice."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat told from_cat the story of how a towhee stole a StarClan cat's voice."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -240,14 +392,34 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about how spotted towhees imitate cats' meows."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about how spotted towhees imitate cats' meows."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -255,122 +427,21 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird, and argues with p_l and app2 all the way back to camp.",
+                "text": "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird and argues with p_l and app2 all the way back to camp.",
                 "exp": 0,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_train_eagle_leaffalldappledfeather1",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ]
-        },
-        "frequency": 2,
-        "intro_text": "app1 notices app2's absence, and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What on all the ranges is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
-        "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled juveniles squabble, beating their wings frantically, gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the eaglet makes it to the next tree over.",
-                "exp": 20,
+                "frequency": 4,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "cats_from": ["p_l", "app2"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "app1 argued with p_l and app2 about whether towhee birds can imitate cats' cries."
+                        }
                     }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!!",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "It's not app1's thing, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} happy to bask a couple tail lengths away until app2 is done eagle watching.",
-                "exp": 0,
-                "frequency": 4
-            },
-            {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} heart jumping with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, though not {PRONOUN/s_c/poss} pelt.",
-                "exp": 0,
-                "stat_trait": [
-                    "bold",
-                    "daring",
-                    "confident",
-                    "adventurous",
-                    "arrogant",
-                    "competitive"
-                ],
-                "can_have_stat": [
-                    "app"
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "s_c"
-                        ],
-                        "injuries": [
-                            "cat bite"
-                        ],
-                        "scars": [
-                            "TAILBASE"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "r_c was scarred when another apprentice (violently) saved {PRONOUN/r_c/poss} life from a cliff fall during a youthful adventure."
-                },
-                "frequency": 3
+                ]
             }
         ]
     }
