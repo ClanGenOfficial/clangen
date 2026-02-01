@@ -260,9 +260,14 @@ def create_new_cat_block(
         ):
             cat_social = CatSocial.ROGUE
 
+    # KITTEN THOUGHT
+    if rank in (CatRank.KITTEN, CatRank.NEWBORN):
+        thought = CatThought.ON_JOIN
+
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
     outside = False
     if "meeting" in attribute_list:
+        thought = CatThought.ON_MEETING
         outside = True
         rank = None
         new_name = False
@@ -272,6 +277,7 @@ def create_new_cat_block(
     # IS THE CAT DEAD?
     alive = True
     if "dead" in attribute_list:
+        thought = CatThought.ON_DEATH
         alive = False
 
     # check if we can use an existing cat here
@@ -355,6 +361,7 @@ def create_new_cat_block(
             litter=litter,
             backstory=chosen_backstory,
             rank=rank,
+            thought = thought
             original_social=cat_social,
             original_group=cat_group,
             moons=age,
@@ -463,7 +470,8 @@ def create_new_cat(
     rank: Optional[CatRank] = None,
     original_social: CatSocial = CatSocial.CLANCAT,
     original_group: CatGroup = None,
-    moons: int = None,
+        thought: Optional[CatThought] = None,
+        moons: int = None,
     gender: str = None,
     alive: bool = True,
     outside: bool = False,
@@ -483,6 +491,7 @@ def create_new_cat(
     :param original_social: set as the cat's old social - default: None (cat will not be given any past social, it will
     appear that they have always been a clancat)
     :param original_group: set as the cat's old group - default: None (cat will not be given any past group)
+    :param str thought: if you need to give a custom thought, set it here
     :param bool outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
     :param int moons: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param str gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
@@ -491,6 +500,7 @@ def create_new_cat(
     :param str parent2: Cat ID to set as the biological parent2
     :param list adoptive_parents: Cat IDs to set as adoptive parents
     """
+    thought = CatThought.ON_JOIN
 
     if isinstance(backstory, list):
         backstory = choice(backstory)
@@ -701,12 +711,14 @@ def create_new_cat(
                 elif chosen_condition in ("lost their tail", "born without a tail"):
                     new_cat.pelt.scars.append("NOTAIL")
 
-        # newbie thought
-        new_cat.get_new_thought(CatThought.ON_JOIN)
+
 
         # KILL >:D only if we're sposed to tho
         if not alive:
             new_cat.die()
+
+        # newbie thought
+        new_cat.get_new_thought(thought)
 
         # and they exist now
         created_cats.append(new_cat)
