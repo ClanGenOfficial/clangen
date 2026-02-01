@@ -102,6 +102,7 @@ class CatStanding(StrEnum):
     LOST = "lost"
     EXILED = "exiled"
     KNOWN = "known"
+    UNKNOWN = "unknown"
 
 
 class CatGroup(StrEnum):
