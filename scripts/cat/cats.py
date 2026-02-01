@@ -1547,6 +1547,8 @@ class Cat:
             self.get_new_thought(CatThought.WHILE_DEAD)
             return
 
+        self.get_new_thought(CatThought.WHILE_ALIVE)
+
         if old_age != self.age:
             # Things to do if the age changes
             self.personality.facet_wobble(facet_max=2)

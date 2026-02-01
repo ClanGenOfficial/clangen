@@ -5,7 +5,14 @@ from typing import Optional, List, Union, Type
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank, CatAge, CatSocial, CatGroup, CatStanding
+from scripts.cat.enums import (
+    CatRank,
+    CatAge,
+    CatSocial,
+    CatGroup,
+    CatStanding,
+    CatThought,
+)
 from scripts.cat.names import names
 from scripts.cat_relations.enums import RelType
 from scripts.clan_package.settings import get_clan_setting
@@ -33,7 +40,6 @@ def create_new_cat_block(
     :param list[str] attribute_list: attribute list contained within the block
     """
 
-    thought = i18n.t("hardcoded.thought_new_cat")
     new_cats = None
 
     # gather parents
@@ -254,17 +260,12 @@ def create_new_cat_block(
         ):
             cat_social = CatSocial.ROGUE
 
-    # KITTEN THOUGHT
-    if rank in (CatRank.KITTEN, CatRank.NEWBORN):
-        thought = i18n.t("hardcoded.thought_new_kitten")
-
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
     outside = False
     if "meeting" in attribute_list:
         outside = True
         rank = None
         new_name = False
-        thought = i18n.t("hardcoded.thought_meeting")
         if age is not None and age <= 6 and not bs_override:
             chosen_backstory = "outsider1"
 
@@ -272,7 +273,6 @@ def create_new_cat_block(
     alive = True
     if "dead" in attribute_list:
         alive = False
-        thought = i18n.t("hardcoded.thought_new_dead")
 
     # check if we can use an existing cat here
     chosen_cat: Optional["Cat"] = None
@@ -359,7 +359,6 @@ def create_new_cat_block(
             original_group=cat_group,
             moons=age,
             gender=gender,
-            thought=thought,
             alive=alive,
             outside=outside,
             parent1=parent1.ID if parent1 else None,
@@ -466,7 +465,6 @@ def create_new_cat(
     original_group: CatGroup = None,
     moons: int = None,
     gender: str = None,
-    thought: str = None,
     alive: bool = True,
     outside: bool = False,
     parent1: str = None,
@@ -488,15 +486,11 @@ def create_new_cat(
     :param bool outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
     :param int moons: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param str gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
-    :param str thought: if you need to give a custom "welcome" thought, set it here
     :param bool alive: set this as False to generate the cat as already dead - default: True (alive)
     :param str parent1: Cat ID to set as the biological parent1
     :param str parent2: Cat ID to set as the biological parent2
     :param list adoptive_parents: Cat IDs to set as adoptive parents
     """
-
-    if thought is None:
-        thought = i18n.t("hardcoded.thought_new_cat")
 
     if isinstance(backstory, list):
         backstory = choice(backstory)
@@ -707,12 +701,12 @@ def create_new_cat(
                 elif chosen_condition in ("lost their tail", "born without a tail"):
                     new_cat.pelt.scars.append("NOTAIL")
 
+        # newbie thought
+        new_cat.get_new_thought(CatThought.ON_JOIN)
+
         # KILL >:D only if we're sposed to tho
         if not alive:
             new_cat.die()
-
-        # newbie thought
-        new_cat.thought = thought
 
         # and they exist now
         created_cats.append(new_cat)

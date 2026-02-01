@@ -1014,7 +1014,6 @@ def one_moon_cat(cat):
     # newborns don't do much
     if cat.status.rank == CatRank.NEWBORN:
         cat.relationship_interaction()
-        cat.get_new_thought(CatThought.WHILE_ALIVE)
         return
 
     handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
@@ -1035,7 +1034,6 @@ def one_moon_cat(cat):
         return
 
     cat.relationship_interaction()
-    cat.get_new_thought(CatThought.WHILE_ALIVE)
 
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:

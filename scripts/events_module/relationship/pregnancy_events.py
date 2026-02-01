@@ -5,7 +5,14 @@ from typing import Dict, List, Union, Optional
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial, CatCompatibility
+from scripts.cat.enums import (
+    CatAge,
+    CatGroup,
+    CatRank,
+    CatSocial,
+    CatCompatibility,
+    CatThought,
+)
 from scripts.cat.names import names, Name
 from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.clan_package.settings import get_clan_setting
@@ -192,7 +199,7 @@ class Pregnancy_Events:
         if other_cat:
             cats_involved["r_c"] = other_cat
         for kit in kits:
-            kit.thought = "hardcoded.new_kit_thought"
+            kit.get_new_thought(CatThought.ON_JOIN)
             kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
 
         # Normally, birth cooldown is only applied to cat who gave birth
@@ -824,7 +831,6 @@ class Pregnancy_Events:
                             (CatSocial.LONER, CatSocial.KITTYPET)
                         ),
                         alive=False,
-                        thought=thought,
                         moons=randint(15, 120),
                         outside=True,
                     )[0]
@@ -836,13 +842,19 @@ class Pregnancy_Events:
                 # Two parents provided
                 # The cat that gave birth is always parent1 so there is no need to check gender
                 kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
-                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
-                kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
+                kit.get_new_thought()
+
+                if not adoptive_parents:
+                    cat.get_new_thought(CatThought.ON_BIRTH)
+                    other_cat.get_new_thought(CatThought.ON_BIRTH)
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
                 kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
                 kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
+
+                if not adoptive_parents:
+                    cat.get_new_thought(CatThought.ON_BIRTH)
 
             # Prevent duplicate prefixes in the same litter
             while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:
