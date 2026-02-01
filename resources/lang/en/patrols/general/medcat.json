@@ -569,7 +569,7 @@
                 "frequency": 2
             },
             {
-                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list/r_c. p_l reassures r_c but is inwardly worried about what it could mean.",
+                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list/r_c. p_l reassures r_c but inwardly worries about what it could mean.",
                 "exp": 20,
                 "herbs": [
                     "random_herbs"
@@ -1121,31 +1121,27 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["app1"],
-                        "mutual": true,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat confided in to_cat about a dream that {PRONOUN/from_cat/subject} suspected was a vision."
+                        }
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
                         "values": [
-                            "respect"
+                            "like", "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat trusted {PRONOUN/from_cat/object} enough to confide in {PRONOUN/from_cat/object} about a vision."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1161,12 +1157,27 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["app1"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat confided in to_cat about a dream that {PRONOUN/from_cat/subject} suspected was a vision."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat trusted {PRONOUN/from_cat/object} enough to confide in {PRONOUN/from_cat/object} about a vision."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1191,13 +1202,28 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat confided in to_cat about a dream that {PRONOUN/from_cat/subject} suspected was a vision."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat trusted {PRONOUN/from_cat/object} enough to confide in {PRONOUN/from_cat/object} about a vision."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "p_l and app1 have an in-depth conversation about app1's vision as they walk. p_l listens to app1's dream of clair_list/app1. p_l reassures app1, but inwardly is left worried over what it could mean. p_l knows that {PRONOUN/p_l/subject} can't shield app1 forever, but for now, p_l will take this burden for {PRONOUN/p_l/self}.",
+                "text": "p_l and app1 have an in-depth conversation about app1's vision as they walk. p_l listens to app1's dream of clair_list/app1. p_l reassures app1 but inwardly worries about what it could mean. p_l knows that {PRONOUN/p_l/subject} can't shield app1 forever, but for now, p_l will take this burden for {PRONOUN/p_l/self}.",
                 "exp": 20,
                 "herbs": [
                     "random_herbs"
@@ -1211,22 +1237,37 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat confided in to_cat about a dream that {PRONOUN/from_cat/subject} suspected was a vision."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat trusted {PRONOUN/from_cat/object} enough to confide in {PRONOUN/from_cat/object} about a vision and wanted to shelter {PRONOUN/to_cat/object} from the burden."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c chooses to pad pelt-to-pelt with app1, the more experienced medicine cat gently guiding the conversation. app1 feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws. It also proves to be a valuable learning experience.",
+                "text": "s_c chooses to pad pelt-to-pelt with app1, the more experienced medicine cat guiding the conversation. app1 feels deeply privileged and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws. It also proves to be a valuable learning experience.",
                 "exp": 20,
                 "art": "gen_train_talkingMA",
                 "herbs": [
                     "random_herbs"
                 ],
                 "stat_trait": [
-                    "loving",
                     "wise",
                     "compassionate",
+                    "faithful",
                     "thoughtful"
                 ],
                 "can_have_stat": [
@@ -1239,9 +1280,25 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust"
+                            "trust",
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was deeply grateful for to_cat's help interpreting a vision."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat trusted {PRONOUN/from_cat/object} enough to confide in {PRONOUN/from_cat/object} about a vision."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1273,13 +1330,28 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat confided in to_cat about a dream that {PRONOUN/from_cat/subject} suspected was a vision."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat trusted {PRONOUN/from_cat/object} enough to confide in {PRONOUN/from_cat/object} about a vision."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "At first app1 doesn't speak up. But p_l notices the apprentice is distracted, and gently asks what's wrong. app1 admits to the vision, and the two have a discussion of the clair_list app1 experienced in the dream, leaving app1 feeling relieved.",
+                "text": "At first app1 doesn't speak up. But p_l notices the apprentice is distracted and asks what's wrong. app1 admits to the vision, and the two have a discussion of the clair_list app1 experienced in the dream, leaving app1 feeling relieved.",
                 "exp": 20,
                 "herbs": [
                     "random_herbs"
@@ -1288,12 +1360,27 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["app1"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat admitted to to_cat that {PRONOUN/from_cat/subject} had a dream that {PRONOUN/from_cat/subject} suspected was a vision."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was glad to soothe to_cat's worries about a vision {PRONOUN/to_cat/subject} had."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1307,12 +1394,15 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["app1"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat confided in to_cat about a vision in hopes that to_cat could help, but {PRONOUN/to_cat/subject} couldn't."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1320,7 +1410,21 @@
             {
                 "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/app1/self}. p_l doesn't need to know that app1 saw flashes of prophecy_list_sight/app1... right?",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat decided not to tell to_cat about a vision."
+                        }
+                    }
+                ]
             },
             {
                 "text": "When app1 tries to tell p_l about the dream, it's dismissed as unimportant without p_l actually listening to what app1 has to say.",
@@ -1331,10 +1435,13 @@
                         "cats_from": ["app1"],
                         "mutual": true,
                         "values": [
-                            "respect",
+                            "trust",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat confided in to_cat about a vision, but to_cat dismissed it completely without listening."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1348,10 +1455,13 @@
                         "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat confided in to_cat about a vision, but to_cat told {PRONOUN/from_cat/object} that it was just a normal dream."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1379,11 +1489,12 @@
                         "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "respect",
-                            "trust"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was disturbed when to_cat told {PRONOUN/from_cat/object} that {PRONOUN/from_cat/poss} dream was foretelling death and destruction."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1394,7 +1505,8 @@
                 "stat_trait": [
                     "ambitious",
                     "insecure",
-                    "vengeful"
+                    "arrogant",
+                    "competitive"
                 ],
                 "relationships": [
                     {
@@ -1402,12 +1514,13 @@
                         "cats_from": ["app1"],
                         "mutual": true,
                         "values": [
-                            "respect",
                             "trust",
-                            "comfort",
-                            "like"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat could tell that to_cat was angry that from_cat received a vision instead of {PRONOUN/to_cat/object}."
+                        }
                     },
                     {
                         "cats_to": ["app1"],
@@ -1416,7 +1529,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat felt jealous that to_cat was sent a vision instead of {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1442,34 +1558,61 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["app1"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "respect",
                             "trust",
-                            "comfort",
-                            "like"
+                            "comfort"
                         ],
-                        "amount": -10
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat felt embarrassed and chastened when to_cat dismissed {PRONOUN/from_cat/poss} vision and told {PRONOUN/from_cat/object} {PRONOUN/from_cat/subject} {VERB/from_cat/weren't/wasn't} the sort of cat to receive visions."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat wasted from_cat's time with talk of some dream. As if an apprentice would receive a vision!"
+                        }
                     }
                 ],
                 "frequency": 3
             },
             {
-                "text": "At first app1 doesn't speak up, however p_l notices the apprentice is distracted, and gently asks what's wrong. Instead of opening up though, app1 shuts down, refusing to talk about what was bothering {PRONOUN/app1/object} and just says that they should focus on gathering herbs.",
+                "text": "At first app1 doesn't speak up, but p_l notices the apprentice is distracted and asks what's wrong. Instead of opening up, app1 shuts down, refusing to talk about what was bothering {PRONOUN/app1/object} and just says that they should focus on gathering herbs.",
                 "exp": 0,
                 "herbs": [
                     "random_herbs"
                 ],
                 "relationships": [
                     {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat didn't want to confide in to_cat about {PRONOUN/from_cat/poss} vision."
+                        }
+                    },
+                    {
                         "cats_to": ["app1"],
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "trust",
-                            "comfort"
+                            "trust"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat could tell to_cat was hiding something from {PRONOUN/from_cat/object} on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1492,9 +1635,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [ -1, -1 ]
+            "medicine cat": [1, 1]
         },
         "frequency": 1,
         "intro_text": "As p_l pads through c_n territory, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}.",
@@ -1521,7 +1662,7 @@
                 "text": "With the familiarity brought by {PRONOUN/s_c/poss} connection to StarClan, s_c turns to the ghost haunting {PRONOUN/s_c/poss} path, meeting {PRONOUN/s_c/poss} star-walking ancestor with a purr and quiet confidence.",
                 "exp": 30,
                 "stat_skill": [
-                    "CLAIRVOYANT,2",
+                    "GHOST,2",
                     "STAR,2"
                 ],
                 "herbs": [
@@ -1563,7 +1704,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l sits to greet the presence, but it vanishes, leaving the medicine cat to wonder if {PRONOUN/p_l/subject} {VERB/p_l/have/has} done something wrong.",
+                "text": "p_l sits to greet the presence, but it vanishes, leaving the medicine cat to wonder if {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} done something wrong.",
                 "exp": 0,
                 "frequency": 4
             },
@@ -1581,7 +1722,7 @@
                 "frequency": 4
             },
             {
-                "text": "The connection wavers, and as quickly as the feeling of company appears, it vanishes. p_l let out a small sigh, gaze turning upwards, did StarClan not want to speak with {PRONOUN/p_l/object}?",
+                "text": "The connection wavers, and as quickly as the feeling of company appears, it vanishes. p_l let out a small sigh, gaze turning upwards. Did StarClan not want to speak with {PRONOUN/p_l/object}?",
                 "exp": 0,
                 "art": "med_cat_looking_up",
                 "frequency": 3
@@ -1589,13 +1730,25 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. But when {PRONOUN/r_c/subject} {VERB/r_c/turn/turns} around, there's only a rather upset looking Clanmate, there to fetch {PRONOUN/r_c/object} to camp to help with an emergency.",
+                "text": "r_c feels hounded, never given a moment's peace. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. But when {PRONOUN/r_c/subject} {VERB/r_c/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/r_c/object} to camp to help with an emergency.",
                 "exp": 0,
                 "art": "gen_angry_cat_med",
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat hissed at a Clanmate for no reason."
+                        }
+                    }
+                ]
             },
             {
-                "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval, but vanishes.",
+                "text": "r_c feels hounded, never given a moment's peace. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval but vanishes.",
                 "exp": 0,
                 "art": "gen_angry_cat_med",
                 "frequency": 4
@@ -1603,7 +1756,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
+                "text": "r_c feels hounded, never given a moment's peace. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
                 "exp": 30,
                 "art": "gen_angry_cat_med",
                 "frequency": 4
@@ -1641,7 +1794,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l softly alerts the rest of the patrol of their visitor. With respectful nods, the patrol pauses, tucks their paws together neatly, and sit to converse with the StarClan cat.",
+                "text": "p_l softly alerts the rest of the patrol of their visitor. With respectful nods, the patrol pauses, tucks their paws together neatly, and sits to converse with the StarClan cat.",
                 "exp": 30,
                 "herbs": [
                     "random_herbs"
@@ -1652,10 +1805,12 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was amazed to encounter a ghost while patrolling with to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1672,10 +1827,12 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was amazed to encounter a ghost while patrolling with to_cat."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1684,7 +1841,7 @@
                 "text": "With the familiarity brought by {PRONOUN/s_c/poss} connection to StarClan, s_c turns to the ghost haunting {PRONOUN/s_c/poss} path, meeting {PRONOUN/s_c/poss} star-walking ancestor with a purr and quiet confidence.",
                 "exp": 30,
                 "stat_skill": [
-                    "CLAIRVOYANT,2",
+                    "GHOST,1",
                     "STAR,2"
                 ],
                 "herbs": [
@@ -1692,14 +1849,16 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was amazed by to_cat's confidence when the patrol encountered the spirit of a StarClan cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1709,18 +1868,6 @@
             {
                 "text": "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -1733,8 +1880,57 @@
                 "stat_trait": [
                     "bloodthirsty",
                     "vengeful",
-                    "sneaky"
+                    "cunning",
+                    "cold", 
+                    "arrogant"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "from_cat lost faith in to_cat when {PRONOUN/from_cat/subject} saw {PRONOUN/to_cat/object} be rebuked by a StarClan spirit."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. But when {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/p_l/object} to camp to help with an emergency.",
+                "exp": 0,
+                "art": "gen_angry_cat_med",
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat hissed at a Clanmate for no reason."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "r_c feels hounded, never given a moment's peace. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval, but vanishes.",
+                "exp": 0,
+                "art": "gen_angry_cat_med",
+                "frequency": 4
+            },
+            {
+                "text": "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. But when {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around, there's only the rest of the patrol staring at p_l disappointedly.",
+                "exp": 0,
+                "art": "gen_angry_cat_med",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1744,38 +1940,10 @@
                             "respect",
                             "comfort"
                         ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "text": "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. But when {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around, there's only a rather upset looking Clanmate, there to fetch {PRONOUN/p_l/object} to camp to help with an emergency.",
-                "exp": 0,
-                "art": "gen_angry_cat_med",
-                "frequency": 4
-            },
-            {
-                "text": "r_c feels hounded, never given a moment's peace.  {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval, but vanishes.",
-                "exp": 0,
-                "art": "gen_angry_cat_med",
-                "frequency": 4
-            },
-            {
-                "text": "p_l feels hounded, never given a moment's peace.  {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. But when {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around, there's only the rest of the patrol staring at p_l disappointedly.",
-                "exp": 0,
-                "art": "gen_angry_cat_med",
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was unsettled that to_cat hissed at a StarClan spirit."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1783,7 +1951,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "p_l feels hounded, never given a moment's peace.  {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
+                "text": "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
                 "exp": 30,
                 "art": "gen_angry_cat_med",
                 "frequency": 4
@@ -1848,17 +2016,31 @@
                 "stat_trait": [
                     "bloodthirsty",
                     "vengeful",
-                    "sneaky"
+                    "cunning",
+                    "cold",
+                    "arrogant"
                 ],
                 "frequency": 4
             }
         ],
         "antag_fail_outcomes": [
             {
-                "text": "app1 feels hounded, never given a moment's peace, and {PRONOUN/app1/subject} {VERB/app1/hiss/hisses} at the StarClan cat. But when {PRONOUN/app1/subject} {VERB/app1/turn/turns} around, there's only a rather upset looking Clanmate, there to fetch {PRONOUN/app1/object} to camp to help with an emergency.",
+                "text": "app1 feels hounded, never given a moment's peace, and {PRONOUN/app1/subject} {VERB/app1/hiss/hisses} at the StarClan cat. But when {PRONOUN/app1/subject} {VERB/app1/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/app1/object} to camp to help with an emergency.",
                 "exp": 0,
                 "art": "gen_angry_cat_app",
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat hissed at a Clanmate for no reason."
+                        }
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1892,14 +2074,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 1,
@@ -1915,20 +2091,22 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["app1"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by how calmly to_cat conversed with a StarClan spirit encountered on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The scent of a familiar pelt reaches app1's nose - {PRONOUN/app1/subject} {VERB/app1/know/knows} this cat! {PRONOUN/app1/subject/CAP} {VERB/app1/wheel/wheels} around and {VERB/app1/bury/buries} {PRONOUN/app1/poss} face in sparkling fur, purring frantically.",
+                "text": "The scent of a familiar pelt reaches app1's nose - {PRONOUN/app1/subject} {VERB/app1/know/knows} this cat! {PRONOUN/app1/subject/CAP} {VERB/app1/wheel/wheels} around and {VERB/app1/bury/buries} {PRONOUN/app1/poss} face in sparkling fur, purring.",
                 "exp": 30,
                 "herbs": [
                     "random_herbs"
@@ -1940,9 +2118,12 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was touched to see to_cat joyfully reunite with a StarClan spirit encountered on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1951,7 +2132,8 @@
                 "text": "With the familiarity brought by {PRONOUN/s_c/poss} connection to StarClan, s_c turns to the ghost haunting {PRONOUN/s_c/poss} path, meeting {PRONOUN/s_c/poss} star-walking ancestor with a purr and quiet confidence. app1 watches with eyes as round and dark as the new moon.",
                 "exp": 30,
                 "stat_skill": [
-                    "CLAIRVOYANT,2"
+                    "GHOST,1",
+                    "STAR,2"
                 ],
                 "can_have_stat": [
                     "adult"
@@ -1961,14 +2143,16 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was astonished by how confidently to_cat interacted with a StarClan spirit encountered on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1978,18 +2162,6 @@
             {
                 "text": "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -1999,21 +2171,26 @@
                 "stat_trait": [
                     "bloodthirsty",
                     "vengeful",
-                    "sneaky"
+                    "cunning",
+                    "cold",
+                    "arrogant"
                 ],
                 "can_have_stat": [
-                    "adult"
+                    "app"
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["app1"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort"
+                            "trust"
                         ],
-                        "amount": -5
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "from_cat lost faith in to_cat when {PRONOUN/from_cat/subject} saw {PRONOUN/to_cat/object} be rebuked by a StarClan spirit."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2021,10 +2198,22 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "app1 feels hounded, never given a moment's peace, and {PRONOUN/app1/subject} {VERB/app1/hiss/hisses} at the StarClan cat. But when {PRONOUN/app1/subject} {VERB/app1/turn/turns} around, there's only a rather upset looking Clanmate, there to fetch {PRONOUN/app1/object} to camp to help with an emergency.",
+                "text": "app1 feels hounded, never given a moment's peace, and {PRONOUN/app1/subject} {VERB/app1/hiss/hisses} at the StarClan cat. But when {PRONOUN/app1/subject} {VERB/app1/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/app1/object} to camp to help with an emergency.",
                 "exp": 0,
                 "art": "gen_angry_cat_app",
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat hissed at a Clanmate for no reason."
+                        }
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -2058,10 +2247,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "all apprentices": [ -1, -1 ],
-            "normal adult": [1, 6]
+            "medicine cat": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 1,
         "intro_text": "During a patrol looking for herbs, p_l notices that r_c seems more quiet than usual. When prompted, r_c slowly asks if p_l could teach {PRONOUN/r_c/object} more about the nature of StarClan.",
