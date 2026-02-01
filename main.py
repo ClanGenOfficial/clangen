@@ -9,7 +9,7 @@ import threading
 import pygame
 
 import scripts.game_structure.screen_settings
-from scripts.cat.sprites import sprites
+from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Afterlife, clan_class
 
 from scripts.debug_console import debug_mode
@@ -30,9 +30,7 @@ from scripts.game_structure.screen_settings import MANAGER, screen, screen_scale
 from scripts.screens import all_screens
 from scripts.screens.enums import GameScreen
 from scripts.ui.windows.save_check import SaveCheckWindow
-from scripts.utility import (
-    quit,
-)  # pylint: disable=redefined-builtin
+from scripts.housekeeping.quit_game import quit_game
 
 # P Y G A M E
 clock = pygame.time.Clock()
@@ -122,7 +120,7 @@ def loading_animation(scale: float = 1):
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                quit(savesettings=False)
+                quit_game(savesettings=False)
 
         pygame.display.update()
 
@@ -213,7 +211,7 @@ while 1:
                 )
                 or not game.clan
             ):
-                quit(savesettings=False)
+                quit_game(savesettings=False)
             else:
                 SaveCheckWindow(switch_get_value(Switch.cur_screen), False, None)
 

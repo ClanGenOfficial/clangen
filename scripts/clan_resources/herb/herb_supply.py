@@ -10,13 +10,8 @@ from scripts.clan_resources.supply import Supply
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
-    adjust_list_text,
-    event_text_adjust,
-    PERMANENT,
-    ILLNESSES,
-    INJURIES,
-)
+from scripts.cat.constants import ILLNESSES, INJURIES, PERMANENT
+from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
 from collections import defaultdict
 
 

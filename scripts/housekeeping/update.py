@@ -16,7 +16,7 @@ from strenum import StrEnum
 
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.version import get_version_info
-from scripts.utility import quit
+from scripts.housekeeping.quit_game import quit_game
 
 use_proxy = False  # Set this to True if you want to use a proxy for the update check. Useful for debugging.
 
@@ -257,7 +257,7 @@ def self_update(
         announce_restart_callback()
         time.sleep(3)
         os.execv("/Applications/Clangen.app/Contents/MacOS/Clangen", sys.argv)
-        quit()
+        quit_game()
 
     elif platform.system() == "Linux":
         current_folder = os.getcwd()
@@ -269,4 +269,4 @@ def self_update(
         shutil.move("../clangen_update", current_folder)
         os.chmod(current_folder + "/Clangen", 0o755)
         os.execv(current_folder + "/Clangen", sys.argv)
-        quit()
+        quit_game()

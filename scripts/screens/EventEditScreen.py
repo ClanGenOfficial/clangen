@@ -18,7 +18,7 @@ from scripts.events_module.short.scar_events import Scar_Events
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure import game
-from scripts.game_structure.localization import get_default_pronouns
+from scripts.cat.pronouns import get_default_pronouns
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
@@ -39,13 +39,10 @@ from scripts.screens.enums import GameScreen
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import (
-    ui_scale,
-    process_text,
-    ui_scale_dimensions,
-    generate_sprite,
-    get_text_box_theme,
-)
+from scripts.ui.theme import get_text_box_theme
+from scripts.cat.sprites.display_sprites import generate_sprite
+from scripts.events_module.text_adjust import process_text
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
 
 
 class EventEditScreen(Screens):
