@@ -1533,6 +1533,11 @@ class Cat:
             self.status._change_rank(CatRank.KITTEN)
         self.in_camp = 1
 
+        if old_age != self.age:
+            # Things to do if the age changes
+            self.personality.facet_wobble(facet_max=2)
+            self.pelt.rebuild_sprite = True
+
         if not self.status.alive_in_player_clan:
             # this is handled in events.py
             self.personality.set_kit(self.age.is_baby())
@@ -1542,11 +1547,6 @@ class Cat:
         if self.dead and not self.faded:
             self.get_new_thought()
             return
-
-        if old_age != self.age:
-            # Things to do if the age changes
-            self.personality.facet_wobble(facet_max=2)
-            self.pelt.rebuild_sprite = True
 
         # Set personality to correct type
         self.personality.set_kit(self.age.is_baby())

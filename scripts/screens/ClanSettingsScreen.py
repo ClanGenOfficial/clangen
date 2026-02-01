@@ -15,6 +15,7 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
     UIModifiedScrollingContainer,
+    UICheckbox,
 )
 from scripts.housekeeping.datadir import open_data_dir
 from ..ui.theme import get_text_box_theme
@@ -107,6 +108,10 @@ class ClanSettingsScreen(Screens):
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
                     switch_clan_setting(key)
+                    if value.checked:
+                        value.uncheck()
+                    else:
+                        value.check()
                     self.settings_changed = True
                     # self.update_save_button()
 
@@ -465,11 +470,6 @@ class ClanSettingsScreen(Screens):
 
         n = 0
         for code, desc in settings_dict[self.sub_menu].items():
-            if get_clan_setting(code):
-                box_type = "@checked_checkbox"
-            else:
-                box_type = "@unchecked_checkbox"
-
             # Handle nested
             disabled = False
             x_val = 170
@@ -479,12 +479,12 @@ class ClanSettingsScreen(Screens):
                     get_clan_setting(desc[3][0], default=not desc[3][1]) != desc[3][1]
                 )
 
-            self.checkboxes[code] = UIImageButton(
-                ui_scale(pygame.Rect((x_val, n * 39), (34, 34))),
-                "",
-                object_id=box_type,
+            self.checkboxes[code] = UICheckbox(
+                position=(x_val, n * 39),
                 container=self.checkboxes_text["container_" + self.sub_menu],
                 tool_tip_text=f"settings.{code}_tooltip",
+                check=get_clan_setting(code),
+                manager=MANAGER,
             )
 
             if disabled:
