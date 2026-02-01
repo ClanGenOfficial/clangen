@@ -144,8 +144,14 @@ def _load_group(
         else:
             thoughts = load_lang_resource(f"{new_path}/outsider.json")
 
-    # ON JOINING
-    elif thought_type in (CatThought.ON_JOIN, CatThought.ON_EXILE, CatThought.ON_LOST):
+    # thought types with just a general path
+    elif thought_type in (
+        CatThought.ON_JOIN,
+        CatThought.ON_EXILE,
+        CatThought.ON_LOST,
+        CatThought.ON_GRIEF_TOWARD_BODY,
+        CatThought.ON_GRIEF_TOWARD_MISSING,
+    ):
         thoughts = load_lang_resource(f"{new_path}/general.json")
 
     # ON CHANGING AFTERLIFE
@@ -202,6 +208,7 @@ def new_thought(
             chosen_thought_group = choice(
                 _load_group(thought_type, main_cat, other_cat, biome, season, camp)
             )
+
             chosen_thought = choice(chosen_thought_group["thoughts"])
     except IndexError:
         traceback.print_exc()

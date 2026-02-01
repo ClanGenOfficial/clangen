@@ -140,6 +140,8 @@ class CatThought(StrEnum):
     WHILE_DEAD = auto()
     WHILE_ALIVE = auto()
     ON_DEATH = auto()
+    ON_GRIEF_TOWARD_BODY = auto()
+    ON_GRIEF_TOWARD_MISSING = auto()
     ON_BIRTH = auto()
     ON_MEETING = auto()
     ON_JOIN = auto()

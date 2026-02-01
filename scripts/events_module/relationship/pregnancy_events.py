@@ -836,6 +836,9 @@ class Pregnancy_Events:
                         moons=randint(15, 120),
                         outside=True,
                     )[0]
+                    thought = event_text_adjust(
+                        Cat, text=thought, main_cat=blood_parent
+                    )
                     blood_parent.thought = thought
 
                 kit = Cat(parent1=blood_parent.ID, moons=0, backstory=backstory)

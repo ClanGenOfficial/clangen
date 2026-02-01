@@ -260,6 +260,7 @@ def create_new_cat_block(
         ):
             cat_social = CatSocial.ROGUE
 
+    thought = None
     # KITTEN THOUGHT
     if rank in (CatRank.KITTEN, CatRank.NEWBORN):
         thought = CatThought.ON_JOIN
@@ -361,7 +362,7 @@ def create_new_cat_block(
             litter=litter,
             backstory=chosen_backstory,
             rank=rank,
-            thought = thought
+            thought=thought,
             original_social=cat_social,
             original_group=cat_group,
             moons=age,
@@ -470,8 +471,8 @@ def create_new_cat(
     rank: Optional[CatRank] = None,
     original_social: CatSocial = CatSocial.CLANCAT,
     original_group: CatGroup = None,
-        thought: Optional[CatThought] = None,
-        moons: int = None,
+    thought: Optional[CatThought] = None,
+    moons: int = None,
     gender: str = None,
     alive: bool = True,
     outside: bool = False,
@@ -500,7 +501,8 @@ def create_new_cat(
     :param str parent2: Cat ID to set as the biological parent2
     :param list adoptive_parents: Cat IDs to set as adoptive parents
     """
-    thought = CatThought.ON_JOIN
+    if not thought:
+        thought = CatThought.ON_JOIN
 
     if isinstance(backstory, list):
         backstory = choice(backstory)
@@ -710,8 +712,6 @@ def create_new_cat(
                     new_cat.pelt.scars.append("NOPAW")
                 elif chosen_condition in ("lost their tail", "born without a tail"):
                     new_cat.pelt.scars.append("NOTAIL")
-
-
 
         # KILL >:D only if we're sposed to tho
         if not alive:
