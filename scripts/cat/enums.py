@@ -135,7 +135,9 @@ class CatGroup(StrEnum):
 
 class CatThought(StrEnum):
     NORMAL = auto()
-    GUIDE = auto()
+    IS_GUIDE = auto()
+    WHILE_DEAD = auto()
+    WHILE_ALIVE = auto()
     ON_DEATH = auto()
     ON_BIRTH = auto()
     ON_MEETING = auto()
