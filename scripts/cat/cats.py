@@ -16,7 +16,7 @@ import ujson  # type: ignore
 
 import scripts.game_structure.localization as pronouns
 from scripts.cat import save_load
-from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
+from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatThought
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -614,19 +614,16 @@ class Cat:
 
         # Deal with leader death
         if self.status.is_leader:
-            if game.clan.leader_lives > 0:
-                lives_left = game.clan.leader_lives
-                self.get_new_thought(just_died=True, lives_left=lives_left)
-                return
-            elif game.clan.leader_lives <= 0:
+            if game.clan.leader_lives <= 0:
                 self.dead = True
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
-                self.get_new_thought(just_died=True, lives_left=0)
+
         else:
             self.dead = True
             game.just_died.append(self.ID)
-            self.get_new_thought(just_died=True)
+
+        self.get_new_thought(CatThought.ON_DEATH)
 
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
@@ -1493,7 +1490,7 @@ class Cat:
             return
 
         if self.dead and not self.faded:
-            self.get_new_thought()
+            self.get_new_thought(CatThought.WHILE_DEAD)
             return
 
         if old_age != self.age:
@@ -1509,13 +1506,21 @@ class Cat:
             self.update_mentor()
 
     def get_new_thought(
-        self, just_died=False, lives_left: int = 0, other_clan_cats: list = None
+        self,
+        thought_type: CatThought = None,
+        other_clan_cats: list = None,
     ):
         """
         Generates a thought for the cat, which displays on their profile.
-        :param just_died: Set True if the cat is generating a death thought
-        :param lives_left: If a leader is generating a death thought, include their lives left here
+        :param thought_type: Indicate what type of thought should be generated
         """
+        # default thought type
+        if not thought_type:
+            if self.dead:
+                thought_type = CatThought.WHILE_DEAD
+            else:
+                thought_type = CatThought.WHILE_ALIVE
+
         if self.status.is_other_clancat:
             cat_list = other_clan_cats.copy() if other_clan_cats else []
         else:
@@ -1534,17 +1539,7 @@ class Cat:
             season = None
 
         # get chosen thought
-        if just_died:
-            afterlife = (
-                self.status.group
-                if self.status.group and self.status.group.is_afterlife()
-                else game.clan.instructor.status.group
-            )
-            chosen_thought = new_death_thought(
-                self, other_cat, biome, season, camp, afterlife, lives_left
-            )
-        else:
-            chosen_thought = new_thought(self, other_cat, biome, season, camp)
+        chosen_thought = new_thought(thought_type, self, other_cat, biome, season, camp)
 
         chosen_thought = event_text_adjust(
             self.__class__,

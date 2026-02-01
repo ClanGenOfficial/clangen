@@ -15,7 +15,14 @@ import i18n
 
 from scripts.cat import save_load
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
-from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
+from scripts.cat.enums import (
+    CatAge,
+    CatRank,
+    CatGroup,
+    CatStanding,
+    CatSocial,
+    CatThought,
+)
 from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats, add_cat_to_fade_id
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
@@ -911,7 +918,7 @@ class Events:
         cat.status.increase_current_moons_as()
 
         if cat.dead:
-            cat.get_new_thought()
+            cat.get_new_thought(CatThought.WHILE_DEAD)
             if cat.ID in game.just_died:
                 cat.moons += 1
             self.handle_fading(cat)  # Deal with fading.
@@ -971,7 +978,7 @@ class Events:
         # newborns don't do much
         if cat.status.rank == CatRank.NEWBORN:
             cat.relationship_interaction()
-            cat.get_new_thought()
+            cat.get_new_thought(CatThought.WHILE_ALIVE)
             return
 
         self.handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
@@ -992,7 +999,7 @@ class Events:
             return
 
         cat.relationship_interaction()
-        cat.get_new_thought()
+        cat.get_new_thought(CatThought.WHILE_ALIVE)
 
         # relationships have to be handled separately, because of the ceremony name change
         if cat.status.alive_in_player_clan:
