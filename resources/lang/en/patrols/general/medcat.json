@@ -15,22 +15,10 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 1,
         "intro_text": "The patrol finds a nice spot to sun themselves.",
@@ -546,10 +534,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
+            "medicine cat": [1, 6],
             "healer cats": [
                 1,
                 6
@@ -1163,14 +1148,8 @@
                 1,
                 1
             ],
-            "warrior": [
-                -1,
-                -1
-            ],
-            "apprentice": [
-                -1,
-                -1
-            ]
+            "warrior": [-1, -1],
+            "apprentice": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "app1 looks to p_l, wondering if {PRONOUN/app1/subject} should speak to p_l about the dream {PRONOUN/app1/subject} had last night.",
@@ -1627,14 +1606,8 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
             "all apprentices": [ -1, -1 ]
         },
         "frequency": 1,
@@ -1773,10 +1746,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
+            "healer cats": [1, 6],
             "normal adult": [
                 1,
                 6
@@ -2252,14 +2222,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
             "all apprentices": [ -1, -1 ],
             "normal adult": [
                 1,
@@ -2400,14 +2364,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
             "all apprentices": [ -1, -1 ],
             "normal adult": [
                 1,
@@ -2525,22 +2483,10 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity for all of them to be out like this together, and each cat plans to make the most of it.",
@@ -2658,26 +2604,14 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
+            "apprentice": [-1, -1],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
             "all apprentices": [
                 3,
                 6
             ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "normal adult": [-1, -1]
         },
         "frequency": 1,
         "intro_text": "The apprentices stroll through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
@@ -2784,14 +2718,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
             "normal adult": [
                 1,
                 6
@@ -3676,15 +3604,9 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
+            "medicine cat": [1, 6],
             "all apprentices": [ -1, -1 ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "normal adult": [-1, -1]
         },
         "frequency": 1,
         "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
@@ -4109,14 +4031,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
+            "apprentice": [1, 6],
+            "medicine cat apprentice": [1, 6],
             "all apprentices": [
                 2,
                 2
@@ -4297,18 +4213,9 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 1,
         "intro_text": "p_l and r_c take a look at their dwindling supply of herbs and decide to combine their efforts into searching for more.",
@@ -4436,14 +4343,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
             "all apprentices": [ -1, -1 ],
             "normal adult": [
                 1,
@@ -4802,18 +4703,9 @@
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 2,
         "intro_text": "As r_c follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c/poss} vision. Was that movement up ahead? r_c spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet {PRONOUN/r_c/object} as {PRONOUN/r_c/subject} {VERB/r_c/walk/walks} amongst the shadows. The stranger's fur is translucent, and it moves as though made from a strange dark mist.",
@@ -4863,10 +4755,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
+            "healer cats": [1, 6],
             "normal adult": [
                 0,
                 5
@@ -4949,14 +4838,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                -1,
-                -1
-            ],
+            "apprentice": [-1, -1],
+            "medicine cat apprentice": [-1, -1],
             "medicine cat": [
                 1,
                 1
@@ -5319,14 +5202,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                -1,
-                -1
-            ],
+            "apprentice": [-1, -1],
+            "medicine cat apprentice": [-1, -1],
             "medicine cat": [
                 1,
                 1
@@ -6499,14 +6376,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                -1,
-                -1
-            ],
+            "apprentice": [-1, -1],
+            "medicine cat apprentice": [-1, -1],
             "medicine cat": [
                 1,
                 1
@@ -7833,18 +7704,9 @@
                 3,
                 6
             ],
-            "medicine cat": [
-                -1,
-                -1
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ],
-            "apprentice": [
-                -1,
-                -1
-            ]
+            "medicine cat": [-1, -1],
+            "normal adult": [-1, -1],
+            "apprentice": [-1, -1]
         },
         "frequency": 4,
         "chance_of_success": 50,
