@@ -715,15 +715,9 @@ class ListScreen(Screens):
         self.temper_message.show()
 
         if self.current_group == "your_clan":
-            self.temper_message.change_object_id(
-                get_text_box_theme("#text_box_30_horizcenter")
-            )
             group = self.clan_name
             temper = i18n.t(f"screens.leader_den.{game.clan.temperament}")
         else:
-            self.temper_message.change_object_id(
-                ObjectID("#dark", "#text_box_30_horizcenter")
-            )
             if self.current_group == "dark_forest":
                 group = i18n.t(f"general.the_dark_forest")
             else:
