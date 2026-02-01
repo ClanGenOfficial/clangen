@@ -849,16 +849,10 @@ class Pregnancy_Events:
                 kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
                 kit.get_new_thought()
 
-                if not adoptive_parents:
-                    cat.get_new_thought(CatThought.ON_BIRTH)
-                    other_cat.get_new_thought(CatThought.ON_BIRTH)
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
                 kit.get_new_thought()
-
-                if not adoptive_parents:
-                    cat.get_new_thought(CatThought.ON_BIRTH)
 
             # Prevent duplicate prefixes in the same litter
             while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:
@@ -941,8 +935,13 @@ class Pregnancy_Events:
         # add them as adoptive parents if not
         final_adoptive_parents = []
         for adoptive_p in all_adoptive_parents:
+            Cat.fetch_cat(adoptive_p).get_new_thought(CatThought.ON_BIRTH)
             if adoptive_p not in all_kitten[0].inheritance.all_involved:
                 final_adoptive_parents.append(adoptive_p)
+        if not adoptive_parents:
+            cat.get_new_thought(CatThought.ON_BIRTH)
+            if other_cat:
+                cat.get_new_thought(CatThought.ON_BIRTH)
 
         # Add the adoptive parents.
         for kit in all_kitten:
