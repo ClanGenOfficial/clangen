@@ -7938,7 +7938,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [1, 5],
+            "normal adult": [3, 5],
             "medicine cat": [1, 1]
         },
         "frequency": 3,
@@ -7958,11 +7958,13 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "comfort",
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat and {PRONOUN/from_cat/poss} training patrol from possible disaster after being warned by a Death's Head Moth."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8024,62 +8026,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The two trot towards the field, tails raised nonchalantly. Suddenly, p_l hears a shriek and manages to duck out of the way as a crow swoops close. Angry caws ring across the field. r_c calls for retreat as more crows converge on them. The two cats run away from the field, fur fluffed in both terror and embarrassment.",
-                "exp": 0,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_med_pumpkinpatch2",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [
-            "romance",
-            "halloween"
-        ],
-        "patrol_art": "gen_med_pumpkinpatch2",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "medicine cat": [2, 2]
-        },
-        "frequency": 4,
-        "intro_text": "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm.",
-        "decline_text": "The distant call of a Twoleg makes the cats think better of the whole idea.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c instead gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} ever seen. r_c slyly shoots back: yes, second only to p_l.",
-                "exp": 20,
-                "herbs": [
-                    "rosemary"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat flirted and played with pumpkins on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8122,7 +8072,7 @@
                 "frequency": 4
             },
             {
-                "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in {PRONOUN/r_c/poss} fur. But it doesn't seem malicious either. The ghost waves its tail as if to say 'hello'. r_c nods back at it and continues {PRONOUN/r_c/poss} herb gathering with the friendly ghost flitting about.",
+                "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in {PRONOUN/r_c/poss} fur. But it doesn't seem malicious either. The ghost waves its tail as if to say hello. r_c nods back at it and continues {PRONOUN/r_c/poss} herb gathering with the friendly ghost flitting about.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -8167,7 +8117,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c approaches the strange cat, thinking that they might be a wandering spirit in need of help. The dark silhouette seems to flicker in and out of view as {PRONOUN/r_c/subject} {VERB/r_c/move/moves} toward it, gradually reappearing further and further away. r_c stops, watching the stranger in the distance with confusion. Glowing, haunted eyes watch {PRONOUN/r_c/object} back from the shadows. r_c shivers and decides to hunt for herbs someplace else.",
+                "text": "r_c approaches the strange cat, thinking that they might be a wandering spirit in need of help. The dark silhouette seems to flicker in and out of view as {PRONOUN/r_c/subject} {VERB/r_c/move/moves} toward it, gradually reappearing further and further away. r_c stops, watching the stranger in the distance with confusion. Glowing, haunted eyes return {PRONOUN/r_c/poss} gaze from the shadows. r_c shivers and decides to hunt for herbs someplace else.",
                 "exp": 10,
                 "frequency": 4
             }
@@ -8230,7 +8180,7 @@
                 "frequency": 3
             },
             {
-                "text": "Sensing the black cat's strong aura, s_c urges it to speak, and listens carefully as it imparts a bone-chilling omen, omen_list/s_c.",
+                "text": "Sensing the black cat's strong aura, s_c urges it to speak, and listens carefully as it imparts a message of dream_list.",
                 "exp": 30,
                 "stat_skill": [
                     "INSIGHTFUL,2",
