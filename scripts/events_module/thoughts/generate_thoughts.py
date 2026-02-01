@@ -145,12 +145,8 @@ def _load_group(
             thoughts = load_lang_resource(f"{new_path}/outsider.json")
 
     # ON JOINING
-    elif thought_type == CatThought.ON_JOIN:
+    elif thought_type in (CatThought.ON_JOIN, CatThought.ON_EXILE):
         thoughts = load_lang_resource(f"{new_path}/general.json")
-
-    # ON BEING EXILED
-    elif thought_type == CatThought.ON_EXILE:
-        pass
 
     # ON BEING LOST
     elif thought_type == CatThought.ON_LOST:

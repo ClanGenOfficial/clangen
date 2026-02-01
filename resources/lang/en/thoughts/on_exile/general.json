@@ -1,0 +1,15 @@
+[
+    {
+        "id": "general_exiled",
+        "thoughts": [
+            "Is shocked that they have been exiled"
+        ]
+    },
+    {
+        "id": "general_exiled_revenge",
+        "thoughts": [
+            "Swears their revenge for being exiled"
+        ],
+        "main_trait_constraint": ["vengeful", "bloodthirsty"]
+    }
+]

@@ -708,11 +708,8 @@ class Cat:
         """This is used to send a cat into exile."""
 
         self.status.exile_from_group()
+        self.get_new_thought(CatThought.ON_EXILE)
 
-        if self.personality.trait == "vengeful":
-            self.thought = "Swears their revenge for being exiled"
-        else:
-            self.thought = "Is shocked that they have been exiled"
         for app in self.apprentice:
             fetched_cat = Cat.fetch_cat(app)
             if fetched_cat:

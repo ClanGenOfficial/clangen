@@ -850,8 +850,7 @@ class Pregnancy_Events:
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
-                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
-                kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
+                kit.get_new_thought()
 
                 if not adoptive_parents:
                     cat.get_new_thought(CatThought.ON_BIRTH)
