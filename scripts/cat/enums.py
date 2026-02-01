@@ -142,7 +142,7 @@ class CatThought(StrEnum):
     WHILE_ALIVE = "while_alive"
     ON_DEATH = "on_death"
     ON_GRIEF_TOWARD_BODY = "on_grief_toward_body"
-    ON_GRIEF_TOWARD_MISSING = "on_grief_toward_missing"
+    ON_GRIEF_NO_BODY = "on_grief_no_body"
     ON_BIRTH = "on_birth"
     ON_MEETING = "on_meeting"
     ON_JOIN = "on_join"

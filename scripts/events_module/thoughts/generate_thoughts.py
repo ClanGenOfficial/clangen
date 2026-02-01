@@ -150,7 +150,7 @@ def _load_group(
         CatThought.ON_EXILE,
         CatThought.ON_LOST,
         CatThought.ON_GRIEF_TOWARD_BODY,
-        CatThought.ON_GRIEF_TOWARD_MISSING,
+        CatThought.ON_GRIEF_NO_BODY,
     ):
         thoughts = load_lang_resource(f"{new_path}/general.json")
 
