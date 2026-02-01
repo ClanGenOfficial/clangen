@@ -1531,7 +1531,9 @@ class Cat:
         """
         # default thought type
         if not thought_type:
-            thought_type = CatThought.WHILE_DEAD if self.dead else CatThought.WHILE_ALIVE
+            thought_type = (
+                CatThought.WHILE_DEAD if self.dead else CatThought.WHILE_ALIVE
+            )
 
         if self.status.is_other_clancat and not self.dead:
             cat_list = other_clan_cats.copy() if other_clan_cats else []
