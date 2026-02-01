@@ -52,7 +52,7 @@
     },
     "broken jaw": {
         "an infected wound": [
-            "A meat paste for getting food and water into m_c's stomach, a herb paste to fight the infection growing in {PRONOUN/m_c/poss} broken jaw... r_c wracks {PRONOUN/r_c/poss} brain for anything else that might help {PRONOUN/r_c/poss} patient.",
+            "A meat paste for getting food and water into m_c's stomach, an herb paste to fight the infection growing in {PRONOUN/m_c/poss} broken jaw... r_c wracks {PRONOUN/r_c/poss} brain for anything else that might help {PRONOUN/r_c/poss} patient.",
             "m_c drifts in and out of consciousness as an infection grows in {PRONOUN/m_c/poss} broken jaw."
         ]
     },

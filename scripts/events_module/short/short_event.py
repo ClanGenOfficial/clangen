@@ -344,7 +344,7 @@ class ShortEvent:
                     self.types.append("misc")
                 if block["type"] == "freshkill":
                     self.handle_freshkill_supply(block)
-                else:  # if freshkill isn't being adjusted, then it must be a herb supply
+                else:  # if freshkill isn't being adjusted, then it must be an herb supply
                     self.handle_herb_supply(block)
 
         # adjust text again to account for info that wasn't available when we do rel changes
