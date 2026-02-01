@@ -154,6 +154,7 @@ def _load_group(
 
     # ON CHANGING AFTERLIFE
     elif thought_type == CatThought.ON_AFTERLIFE_CHANGE:
+        thoughts = load_lang_resource(f"{new_path}/{main_cat.status.group}.json")
         pass
 
     final_thoughts = _filter_list(thoughts, main_cat, other_cat, biome, season, camp)
