@@ -33,13 +33,15 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "comfort"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a romp in the snow together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -51,13 +53,15 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "comfort"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat built a snow den together"
+                        }
                     }
                 ],
                 "frequency": 1
@@ -80,13 +84,16 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
                             "like",
-                            "comfort"
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat played in the snow, and when app1 got cold, app2 dug {PRONOUN/app1/object} a hollow to get cozy and warm in."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -96,12 +103,46 @@
             {
                 "text": "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but they now have to clean it up <i>and</i> hide the fact that they disturbed it in the first place! It leaves the both of them irritated and stressed.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got frustrated when they went out in the snow to play and accidentally dug up a gross old dirtplace trench."
+                        }
+                    }
+                ]
             },
             {
                 "text": "As they play in the snow, app1 falls over {PRONOUN/app1/self} embarrassingly, and suddenly decides {PRONOUN/app1/subject} {VERB/app1/remember/remembers} that {PRONOUN/app1/subject} {VERB/app1/have/has} other things {PRONOUN/app1/subject} should be doing.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat avoided to_cat after embarrassing {PRONOUN/from_cat/self} in front of {PRONOUN/to_cat/object}."
+                        }
+                    },
+                    {
+                        "cats_from": ["app2"],
+                        "cats_to": ["app1"],
+                        "mutual": false,
+                        "values": ["romance"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat embarrass {PRONOUN/to_cat/self} on patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "Both apprentices are back at camp in time for a normal day of training, but app1 has to confess {PRONOUN/app1/poss} predawn adventure when {PRONOUN/app1/subject} {VERB/app1/go/goes} to medicine cat den with a running nose.",
@@ -113,6 +154,18 @@
                             "shivering"
                         ],
                         "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed playing in the snow together, even though app1 ended up with a running nose."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -148,31 +201,65 @@
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about wolf behavior."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust", 
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about wolf behavior."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
+                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, p_l and app1 watch silently, a grim reminder of what wolf packs are capable of.",
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about wolf behavior."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust", 
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about wolf behavior."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -181,21 +268,80 @@
                 "text": "s_c wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky.",
                 "exp": 15,
                 "stat_skill": [
-                    "SPEAKER,1"
+                    "SPEAKER,2",
+                    "LORE,1",
+                    "STORY,1"
                 ],
                 "can_have_stat": [
                     "adult"
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about the history between ravens and wolves."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust", 
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about the history between ravens and wolves."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c shows app1 that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works. Something to keep in mind for app1 if {PRONOUN/app1/subject}{VERB/app1/'re/'s} ever part of a hunting patrol targeting large prey.",
+                "exp": 15,
+                "stat_skill": [
+                    "TEACHER,1"
+                ],
+                "can_have_stat": [
+                    "adult"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how wolves wear down large prey to kill it."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust", 
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how wolves wear down large prey to kill it."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -211,96 +357,6 @@
     },
     {
         "patrol_id": "mtn_train_wolfravens2",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "mtn_train_wolfravens",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [1, 1],
-            "normal adult": [1, 1]
-        },
-        "frequency": 2,
-        "intro_text": "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls app1 over.",
-        "decline_text": "Thinking better of it, the cats try to hunt instead.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "It's a good opportunity to observe the dangerous predators from afar. app1 is surprised to watch them play, taking turns chasing and running from each other in a way that reminds them of the games they play with the other apprentices.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The wolves seem sleepy and full of what used to be an adult elk, massive and spread out in bits across the valley. A coyote approaches and steals a bite. When the wolves notice and run the scavenger down, wagging their tails as they tear it apart, the patrol watches silently, a grim reminder of what wolf packs are capable of.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c shows app1 that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works, and to keep it in mind for app1 if they're ever part of a hunting patrol targeting large prey.",
-                "exp": 15,
-                "stat_skill": [
-                    "TEACHER,1"
-                ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more.",
-                "exp": 0,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_train_wolfravens3",
         "biome": [
             "mountainous"
         ],
