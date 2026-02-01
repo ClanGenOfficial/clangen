@@ -271,8 +271,8 @@ class ShortEvent:
                 random_cat=self.random_cat,
                 victim_cat=self.victim_cat,
                 new_cats=self.new_cats,
+                other_clan=other_clan,
                 clan=game.clan,
-                other_clan=self.other_clan_name,
             )
             for change in self.relationships:
                 for group in change.get("log", []):
@@ -410,43 +410,47 @@ class ShortEvent:
         extra_text = None
 
         in_event_cats = {"m_c": self.main_cat}
-
         if self.random_cat:
             in_event_cats["r_c"] = self.random_cat
+
         for i, attribute_list in enumerate(self.new_cat_attributes):
             self.new_cats.append(
                 create_new_cat_block(
                     Cat, Relationship, self, in_event_cats, i, attribute_list
                 )
             )
+            in_event_cats[f"n_c:{i}"] = self.new_cats[i][0]
 
-            # check if we want to add some extra info to the event text and if we need to welcome
-            for _c in self.new_cats:
-                if not isinstance(_c, list):
-                    continue
-                first_cat = _c[0]
-                if first_cat.dead:
+        # check if we want to add some extra info to the event text and if we need to welcome
+        for cat_list, attribute_list in zip(self.new_cats, self.new_cat_attributes):
+            if not isinstance(cat_list, list):
+                continue
+            first_cat = cat_list[0]
+            if first_cat.dead:
+                extra_text = event_text_adjust(
+                    Cat,
+                    i18n.t("defaults.event_dead_outsider"),
+                    main_cat=first_cat,
+                )
+            elif first_cat.status.is_outsider:
+                n_c_index = self.new_cats.index(cat_list)
+                if (
+                    f"n_c:{n_c_index}" in self.exclude_involved
+                    or "unknown" in attribute_list
+                ):
+                    extra_text = ""
+                else:
                     extra_text = event_text_adjust(
                         Cat,
-                        i18n.t("defaults.event_dead_outsider"),
+                        i18n.t("defaults.event_met_outsider"),
                         main_cat=first_cat,
                     )
-                elif first_cat.status.is_outsider:
-                    n_c_index = self.new_cats.index(_c)
-                    if (
-                        f"n_c:{n_c_index}" in self.exclude_involved
-                        or "unknown" in attribute_list
-                    ):
-                        extra_text = ""
-                    else:
-                        extra_text = event_text_adjust(
-                            Cat,
-                            i18n.t("defaults.event_met_outsider"),
-                            main_cat=first_cat,
-                        )
-                else:
-                    Relation_Events.welcome_new_cats([first_cat])
-                self.all_involved_cat_ids.extend([cat.ID for cat in _c])
+            else:
+                Relation_Events.welcome_new_cats([first_cat])
+            self.all_involved_cat_ids.extend([cat.ID for cat in cat_list])
+
+            if extra_text:
+                self.text = self.text + " " + extra_text
 
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed and give the condition
@@ -470,9 +474,6 @@ class ShortEvent:
                         first_cat.get_injured("recovering from birth")
                         # only one parent gives birth, so we break
                         break
-
-        if extra_text and extra_text not in self.text:
-            self.text = self.text + " " + extra_text
 
     def handle_accessories(self):
         """
