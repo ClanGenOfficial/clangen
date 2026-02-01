@@ -316,20 +316,13 @@ class ProfileScreen(Screens):
                             self.the_cat.status.add_to_group(
                                 new_group_ID=CatGroup.STARCLAN_ID
                             )
-                            self.the_cat.thought = i18n.t(
-                                "screens.profile.guide_thought_sc",
-                                clan=game.clan.displayname,
-                            )
                         # SC -> DF
                         else:
                             self.the_cat.status.add_to_group(
                                 new_group_ID=CatGroup.DARK_FOREST_ID
                             )
 
-                            self.the_cat.thought = i18n.t(
-                                "screens.profile.guide_thought_df",
-                                clan=game.clan.displayname,
-                            )
+                        self.the_cat.get_new_thought(CatThought.IS_GUIDE)
                         self.the_cat.pelt.rebuild_sprite = True
                     else:
                         # DF -> UR
@@ -564,14 +557,7 @@ class ProfileScreen(Screens):
 
         # Instructor thoughts
         if self.the_cat.dead and game.clan.instructor is self.the_cat:
-            if self.the_cat.status.group == CatGroup.STARCLAN:  # StarClan
-                self.the_cat.thought = i18n.t(
-                    "screens.profile.guide_thought_sc", clan=game.clan.displayname
-                )
-            elif self.the_cat.status.group == CatGroup.DARK_FOREST:  # Dark Forest
-                self.the_cat.thought = i18n.t(
-                    "screens.profile.guide_thought_df", clan=game.clan.displayname
-                )
+            self.the_cat.get_new_thought(CatThought.IS_GUIDE)
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
