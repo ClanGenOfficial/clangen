@@ -11,7 +11,6 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UISurfaceImageButton,
@@ -22,7 +21,6 @@ from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
 from .enums import GameScreen
-from .screens_core.screens_core import rebuild_den_dropdown
 from ..cat import save_load
 from ..clan_package.settings import get_clan_setting, switch_clan_setting
 from ..cat.enums import CatRank, CatGroup
@@ -239,10 +237,6 @@ class ClanSettingsScreen(Screens):
         """
         TODO: DOCS
         """
-        rebuild_den_dropdown(
-            left_align=not get_clan_setting("moons and seasons"),
-            game_mode=game.clan.game_mode,
-        )
         self.clear_sub_settings_buttons_and_text()
         self.general_settings_button.kill()
         del self.general_settings_button
@@ -289,10 +283,6 @@ class ClanSettingsScreen(Screens):
             )
             self.checkboxes_text[code].disable()
             n += 1
-
-        self.checkboxes_text["container_general"].set_scrollable_area_dimensions(
-            ui_scale_dimensions((780, n * 39 + 40))
-        )
 
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
             "screens.clan_settings.general_info",

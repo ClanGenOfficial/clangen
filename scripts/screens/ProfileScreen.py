@@ -8,6 +8,7 @@ import i18n
 import pygame
 import pygame_gui
 import ujson
+from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
@@ -652,15 +653,29 @@ class ProfileScreen(Screens):
             object_id="@buttonstyles_rounded_rect",
             manager=MANAGER,
             starting_height=2,
+            visible=False,
         )
-        if not self.the_cat.status.alive_in_player_clan and (
+        self.profile_elements["mediation"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((130, 380), (81, 28))),
+            "screens.core.clearing",
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
+            object_id="@buttonstyles_rounded_rect",
+            visible=False,
+            manager=MANAGER,
+            starting_height=2,
+        )
+
+        if self.the_cat.status.alive_in_player_clan and (
             self.the_cat.status.rank.is_any_medicine_rank()
             or self.the_cat.is_ill()
             or self.the_cat.is_injured()
         ):
             self.profile_elements["med_den"].show()
-        else:
-            self.profile_elements["med_den"].hide()
+        elif (
+            self.the_cat.status.alive_in_player_clan
+            and self.the_cat.status.rank.is_any_mediator_rank()
+        ):
+            self.profile_elements["mediation"].show()
 
         favorite_button_rect = ui_scale(pygame.Rect((0, 0), (28, 28)))
         favorite_button_rect.topright = ui_scale_offset((-5, 146))
@@ -703,15 +718,6 @@ class ProfileScreen(Screens):
                 tool_tip_text="screens.profile.leader_ceremony",
                 manager=MANAGER,
             )
-        elif self.the_cat.status.rank.is_any_mediator_rank():
-            self.profile_elements["mediation"] = UIImageButton(
-                ui_scale(pygame.Rect((383, 110), (34, 34))),
-                "",
-                object_id="#mediation_button",
-                manager=MANAGER,
-            )
-            if not self.the_cat.status.alive_in_player_clan:
-                self.profile_elements["mediation"].disable()
 
     def generate_column1(self, the_cat):
         """Generate the left column information"""
@@ -1044,7 +1050,7 @@ class ProfileScreen(Screens):
                     game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
                     nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
                 output += i18n.t(
-                    "screens.clearing.nutrition_text",
+                    "screens.profile.nutrition_text",
                     nutrition_text=nutr.nutrition_text,
                 )
                 if get_clan_setting("showxp"):

@@ -92,6 +92,8 @@
     "@checked_checkbox_smalltooltip.tool_tip": {"misc": {"rect_width": "100"}},
     "@unchecked_checkbox_smalltooltip.tool_tip": {"misc": {"rect_width": "100"}},
     "#clan_screen_cat_tooltip": {"misc": {"rect_width": "120", "text_horiz_alignment": "center"}},
+    "#moon_indicator.tool_tip": {"misc": {"rect_width": "120"}},
+    "#moon_indicator.tool_tip.text_box": {"misc": {"text_horiz_alignment": "center"}},
     "#clan_screen_cat_tooltip.text_box": {"misc": {"text_horiz_alignment": "center"}},
     "@checked_checkbox.tool_tip": {"misc": {"rect_width": "200"}},
     "@unchecked_checkbox.tool_tip": {"misc": {"rect_width": "200"}},
@@ -108,6 +110,7 @@
     "#blank_button_small.tool_tip": {"misc": {"rect_width": "250"}},
     "@mns_image.#moon.tool_tip": {"misc": {"rect_width": "100"}},
     "@mns_image.tool_tip": {"misc": {"rect_width": "100"}},
+    "@buttonstyles_clan_header.tool_tip": {"misc": {"rect_width": "120"}},
     "#dev_watermark": {
         "font": {"name": "notosans", "size": "19", "bold": "1"},
         "colours": {
@@ -169,6 +172,13 @@
             "normal_text": "#EFE5CE",
             "hovered_text": "#EFE5CE",
             "disabled_text": "#EFE5CE"
+        }
+    },
+        "@buttonstyles_clan_header": {
+        "prototype": "@buttonstyles_mainmenu",
+        "misc": {
+            "text_vert_alignment": "bottom",
+            "text_vert_alignment_padding": "2"
         }
     },
     "@buttonstyles_rounded_rect": {"prototype": "buttonstyles_prototype"},
@@ -564,11 +574,15 @@
         "misc": {"border_width": "0", "shadow_width": "0"}
     },
     "#debug_console": {
-        "prototype": "#window_base_theme", 
         "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "8",
+            "border_width": "3",
+            "shadow_width": "0",
             "enable_title_bar": "1",
             "enable_close_button": "0"
-        }
+        },
+        "colours": {"normal_border": "#2F2918", "dark_bg": "#AC9D72"}
     },
     "window.#title_bar": {
         "colours": {
@@ -1371,122 +1385,6 @@
             "disabled_image": {
                 "path": "resources\/images\/buttons\/patrol_again_unavailable.png"
             }
-        }
-    },
-    "#arrow_mns_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/arrow_mns.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/arrow_mns.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_unavailable.png"
-            }
-        }
-    },
-    "#arrow_mns_closed_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_closed.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_closed_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_closed.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/arrow_mns_closed_unavailable.png"
-            }
-        }
-    },
-    "#mns_bg": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/moons_n_seasons.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/moons_n_seasons.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/moons_n_seasons.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/moons_n_seasons.png"
-            }
-        }
-    },
-    "#mns_bg_closed": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/moons_n_seasons_closed.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/moons_n_seasons_closed.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/moons_n_seasons_closed.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/moons_n_seasons_closed.png"
-            }
-        }
-    },
-    "#mns_image_moon": {
-        "images": {
-            "normal_image": {"path": "resources\/images\/icon_moon.png"},
-            "hovered_image": {"path": "resources\/images\/icon_moon.png"},
-            "selected_image": {"path": "resources\/images\/icon_moon.png"},
-            "disabled_image": {"path": "resources\/images\/icon_moon.png"}
-        }
-    },
-    "#mns_image_newleaf": {
-        "images": {
-            "normal_image": {"path": "resources\/images\/icon_newleaf.png"},
-            "hovered_image": {"path": "resources\/images\/icon_newleaf.png"},
-            "selected_image": {"path": "resources\/images\/icon_newleaf.png"},
-            "disabled_image": {"path": "resources\/images\/icon_newleaf.png"}
-        }
-    },
-    "#mns_image_greenleaf": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/icon_greenleaf.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/icon_greenleaf.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/icon_greenleaf.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/icon_greenleaf.png"
-            }
-        }
-    },
-    "#mns_image_leafbare": {
-        "images": {
-            "normal_image": {"path": "resources\/images\/icon_leafbare.png"},
-            "hovered_image": {"path": "resources\/images\/icon_leafbare.png"},
-            "selected_image": {
-                "path": "resources\/images\/icon_leafbare.png"
-            },
-            "disabled_image": {"path": "resources\/images\/icon_leafbare.png"}
-        }
-    },
-    "#mns_image_leaffall": {
-        "images": {
-            "normal_image": {"path": "resources\/images\/icon_leaffall.png"},
-            "hovered_image": {"path": "resources\/images\/icon_leaffall.png"},
-            "selected_image": {
-                "path": "resources\/images\/icon_leaffall.png"
-            },
-            "disabled_image": {"path": "resources\/images\/icon_leaffall.png"}
         }
     },
     "#new_update_button": {

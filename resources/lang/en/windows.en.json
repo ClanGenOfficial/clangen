@@ -90,6 +90,24 @@
         "confirm_changes": "Confirm changes",
         "revert": "Revert",
         "display_change_confirm": "Do you want to keep these changes? Display changes will be reverted in %{count} seconds.",
-        "editor_missing_info": "Uh oh! There's something missing. Have you added an event text, ID, type, and weight?"
+        "editor_missing_info": "Uh oh! There's something missing. Have you added an event text, ID, type, and weight?",
+        "feed_cats": "Feed Cats",
+        "log": "Log",
+        "log_empty": "Nothing to report.",
+        "change_tactics": "Change Tactics",
+        "prey_count": {
+            "one": "%{amount} piece",
+            "many": "%{amount} pieces"
+        },
+        "feed_all": "feed all",
+        "feed_selected": "feed selected",
+        "auto_feed": "auto feed",
+        "feeding_order": "<b>Feeding Order</b>",
+        "priority": "<b>Prioritize</b>",
+        "freshkill_help_tooltip": "The Clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most important source of freshkill. Freshkill can't be stored endlessly: after four moons, prey will rot and will be discarded. Cats under 3 moons with a parent (queen) taking care of them won't need food. Cats will only display here if their hunger status is less than stuffed!<br><br>Ranks are fed in the following order, from lowest to highest. Each rank lists how much prey they will need for a moon.",
+        "nutrition_text": "nutrition: %{nutrition_text}",
+        "freshkill_pile_tooltip": "<b>Current amount:</b> %{current_prey_amount} pieces  -  <b>Needed amount:</b> %{needed_amount} pieces",
+        "herb_help_tooltip": "The medicine cats will gather herbs each timeskip and treat their patients. Older herbs may expire during timeskip and will be cleared out of the supply. <br><br>Gathered, used, and expired herbs will be reported in this log. To see more information about the Clan's herb supply and sick/injured cats, check the medicine cat den.",
+        "no_mediators": "The Clan has no mediators!"
     }
 }
