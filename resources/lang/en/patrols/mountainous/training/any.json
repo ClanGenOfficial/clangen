@@ -2755,12 +2755,12 @@
         ]
     },
     {
-        "patrol_id": "mtn_train_snowcrunching2",
+        "patrol_id": "mtn_train_lblfnl_snowcrunching2",
         "biome": [
             "mountainous"
         ],
         "season": [
-            "leaf-bare", "leaf-fall"
+            "leaf-bare", "leaf-fall", "newleaf"
         ],
         "types": [
             "training"
