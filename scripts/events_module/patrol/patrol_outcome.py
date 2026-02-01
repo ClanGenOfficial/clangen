@@ -265,7 +265,7 @@ class PatrolOutcome:
                         other_clan=patrol.other_clan,
                     )
 
-        rel_results.append(
+        rel_results.extend(
             unpack_rel_block(
                 Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat
             )

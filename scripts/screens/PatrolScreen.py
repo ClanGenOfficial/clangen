@@ -27,6 +27,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
+from ..ui.windows.rel_change_details import RelChangeDetailWindow
 
 
 class PatrolScreen(Screens):
@@ -292,6 +293,8 @@ class PatrolScreen(Screens):
         elif event.ui_element == self.elements["clan_return"]:
             self.in_progress_data = None
             self.change_screen(GameScreen.CAMP)
+        elif event.ui_element == self.elements["rel_detail"]:
+            RelChangeDetailWindow(self.rel_results)
 
     def screen_switches(self):
         super().screen_switches()
@@ -973,14 +976,16 @@ class PatrolScreen(Screens):
             manager=MANAGER,
         )
 
-        self.elements["rel_detail"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((500, -2), (36, 36))),
-            Icon.MAGNIFY,
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
-            object_id="@buttonstyles_squoval",
-            manager=MANAGER,
-            anchors={"top_target": self.elements["event_bg"]},
-        )
+        if self.rel_results:
+            self.elements["rel_detail"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((500, -2), (36, 36))),
+                Icon.MAGNIFY,
+                get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+                object_id="@buttonstyles_squoval",
+                manager=MANAGER,
+                anchors={"top_target": self.elements["event_bg"]},
+                tool_tip_text="see relationship changes",
+            )
 
         self.elements["patrol_results"].set_text(self.results_text)
 
@@ -1403,6 +1408,7 @@ class PatrolScreen(Screens):
         for ele in self.elements:
             self.elements[ele].kill()
         self.elements = {}
+        self.rel_results.clear()
 
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:

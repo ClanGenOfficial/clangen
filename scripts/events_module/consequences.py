@@ -867,24 +867,26 @@ def unpack_rel_block(
             if not to_log and not from_log:
                 print(f"something is wrong with relationship log: {block['log']}")
 
-        change_relationship_values(
-            cats_to_ob,
-            cats_from_ob,
-            **value_changes,
-            log=from_log,
+        created_rel_logs.extend(
+            change_relationship_values(
+                cats_to_ob,
+                cats_from_ob,
+                **value_changes,
+                log=from_log,
+            )
         )
-        created_rel_logs.append(from_log)
 
         if block.get("mutual"):
             # we'll default to the other log if no unique log was written
-            change_relationship_values(
-                cats_from_ob,
-                cats_to_ob,
-                **value_changes,
-                log=to_log if to_log else from_log,
+            created_rel_logs.extend(
+                change_relationship_values(
+                    cats_from_ob,
+                    cats_to_ob,
+                    **value_changes,
+                    log=to_log if to_log else from_log,
+                )
             )
-            if to_log:
-                created_rel_logs.append(to_log)
+
     return created_rel_logs
 
 
@@ -897,7 +899,7 @@ def change_relationship_values(
     comfort: int = 0,
     trust: int = 0,
     log: str = None,
-):
+) -> list:
     """
     changes relationship values according to the parameters.
 
@@ -921,6 +923,7 @@ def change_relationship_values(
     else:
         changed = True"""
 
+    created_rel_logs = []
     # pick out the correct cats
     for single_cat_from in cats_from:
         for single_cat_to in cats_to:
@@ -982,3 +985,6 @@ def change_relationship_values(
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)
+                    created_rel_logs.append(log_text)
+
+    return created_rel_logs
