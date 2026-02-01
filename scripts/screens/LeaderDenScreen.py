@@ -6,7 +6,7 @@ import pygame_gui
 from pygame_gui.core import UIContainer
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank, CatGroup
+from scripts.cat.enums import CatRank, CatGroup, CatStanding
 from scripts.clan import OtherClan
 from scripts.game_structure import game
 from scripts.clan_package.settings.clan_settings import (
@@ -995,6 +995,12 @@ class LeaderDenScreen(Screens):
             if not i.dead
             and i.status.is_outsider
             and i.status.is_near(CatGroup.PLAYER_CLAN_ID)
+            and (
+                CatStanding.KNOWN
+                in i.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID)
+                or CatStanding.MEMBER
+                in i.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID)
+            )
         ]
 
         # separate them into chunks for the pages
