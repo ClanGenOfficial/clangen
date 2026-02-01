@@ -1334,7 +1334,7 @@
                         "mutual": false,
                         "values": ["comfort"],
                         "amount": -5,
-                        "log": "from_cat and to_cat avoided each other after a disastrous squirrel hunting patrol."
+                        "log": {"cats_from": "from_cat and to_cat avoided each other after a disastrous squirrel hunting patrol."}
                     }
                 ],
                 "prey": [
@@ -1669,7 +1669,7 @@
                         }
                     },
                     {
-                        "cats_from": ["low_stable"],
+                        "cats_from": ["clan", "low_stable"],
                         "cats_to": ["patrol"],
                         "mutual": false,
                         "values": ["respect"],
@@ -2198,7 +2198,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["low_stable"],
+                        "cats_from": ["clan", "low_stable"],
                         "cats_to": ["s_c"],
                         "values": ["trust", "comfort"],
                         "mutual": false,

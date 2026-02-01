@@ -6,7 +6,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
-from scripts.game_structure import game
+from scripts.game_structure import game, constants
 from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
@@ -46,7 +46,7 @@ class Nutrition:
             value = 0
         self._current_score = value
         self.percentage = self._current_score / self.max_score * 100
-        text_config = game.prey_config["text_nutrition"]
+        text_config = constants.PREY_CONFIG["text_nutrition"]
         self.nutrition_text = text_config["text"][0]
         for index in range(len(text_config["lower_range"])):
             if self.percentage >= text_config["lower_range"][index]:
@@ -76,12 +76,12 @@ class FreshkillPile:
             self.total_amount = total
         else:
             self.pile = {
-                "expires_in_4": game.prey_config["start_amount"],
+                "expires_in_4": constants.PREY_CONFIG["start_amount"],
                 "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = game.prey_config["start_amount"]
+            self.total_amount = constants.PREY_CONFIG["start_amount"]
         self.timeskip_feed = False
         self.nutrition_info = {}
         self.living_cats = []
@@ -654,16 +654,15 @@ class FreshkillPile:
 # ---------------------------------------------------------------------------- #
 
 
-ADDITIONAL_PREY = game.prey_config["additional_prey"]
-PREY_REQUIREMENT = game.prey_config["prey_requirement"]
-CONDITION_INCREASE = game.prey_config["condition_increase"]
-FEEDING_ORDER = game.prey_config["feeding_order"]
-HUNTER_BONUS = game.prey_config["hunter_bonus"]
-HUNTER_EXP_BONUS = game.prey_config["hunter_exp_bonus"]
-FRESHKILL_EVENT_TRIGGER_FACTOR = game.prey_config["base_event_trigger_factor"]
-EVENT_WEIGHT_TYPE = game.prey_config["events_weights"]
-MAL_PERCENTAGE = game.prey_config["nutrition_malnourished_percentage"]
-STARV_PERCENTAGE = game.prey_config["nutrition_starving_percentage"]
+ADDITIONAL_PREY = constants.PREY_CONFIG["additional_prey"]
+PREY_REQUIREMENT = constants.PREY_CONFIG["prey_requirement"]
+CONDITION_INCREASE = constants.PREY_CONFIG["condition_increase"]
+FEEDING_ORDER = constants.PREY_CONFIG["feeding_order"]
+HUNTER_BONUS = constants.PREY_CONFIG["hunter_bonus"]
+HUNTER_EXP_BONUS = constants.PREY_CONFIG["hunter_exp_bonus"]
+FRESHKILL_EVENT_TRIGGER_FACTOR = constants.PREY_CONFIG["base_event_trigger_factor"]
+MAL_PERCENTAGE = constants.PREY_CONFIG["nutrition_malnourished_percentage"]
+STARV_PERCENTAGE = constants.PREY_CONFIG["nutrition_starving_percentage"]
 
-FRESHKILL_ACTIVE = game.prey_config["activate_death"]
-FRESHKILL_EVENT_ACTIVE = game.prey_config["activate_events"]
+FRESHKILL_ACTIVE = constants.PREY_CONFIG["activate_death"]
+FRESHKILL_EVENT_ACTIVE = constants.PREY_CONFIG["activate_events"]

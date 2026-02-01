@@ -173,14 +173,16 @@ def create_new_cat_block(
         cat_social = CatSocial.ROGUE
     elif "loner" in attribute_list:
         cat_social = CatSocial.LONER
-    elif "clancat" in attribute_list or "former Clancat" in attribute_list:
+    elif "clancat" in attribute_list or "former clancat" in attribute_list:
         cat_social = CatSocial.CLANCAT
+        if "former clancat" in attribute_list:
+            cat_social = "former clancat"
         if other_clan:
             cat_group = other_clan.group_ID
         else:
             cat_group = choice([x.group_ID for x in game.clan.all_other_clans])
     else:
-        cat_social = choice([CatSocial.KITTYPET, CatSocial.LONER, "former Clancat"])
+        cat_social = choice([CatSocial.KITTYPET, CatSocial.LONER, "former clancat"])
 
     # LITTER
     litter = False
@@ -282,7 +284,9 @@ def create_new_cat_block(
         for cat in existing_outsiders:
             if stor and cat.backstory not in stor:
                 continue
-            if cat_social != cat.status.social:
+            if cat_social != cat.status.social or (
+                cat_social == "former clancat" and not cat.status.is_former_clancat
+            ):
                 continue
             if gender and gender != cat.gender:
                 continue
@@ -442,6 +446,15 @@ def create_new_cat_block(
     return new_cats
 
 
+def get_other_clan(clan_name):
+    """
+    returns the clan object of given clan name
+    """
+    for clan in game.clan.all_other_clans:
+        if clan.name == clan_name:
+            return clan
+
+
 def create_new_cat(
     Cat: Union["Cat", Type["Cat"]],
     new_name: bool = False,
@@ -494,7 +507,7 @@ def create_new_cat(
             BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
             + BACKSTORIES["backstory_categories"]["baby_clancat_backstories"]
         )
-        or original_social == "former Clancat"
+        or original_social == "former clancat"
     ) and not original_group:
         original_group = choice([x.group_ID for x in game.clan.all_other_clans])
 
@@ -570,6 +583,8 @@ def create_new_cat(
         # this simulates a "history" as whomever they used to be
         new_cat.status.change_current_moons_as(moons)
 
+        if original_social == "former clancat":
+            new_cat.status.become_lost(CatSocial.LONER)
         # now we actually add them to the clan, if they should be joining
         if not outside and alive:
             new_cat.add_to_clan()
@@ -587,10 +602,12 @@ def create_new_cat(
         # NAMES and accs
         # clancat adults should have already generated with a clan-ish name, thus they skip all of this re-naming
         # little babies will take a clancat name, we love indoctrination
-        if (kit or litter or moons < 12) and original_group != CatGroup.OTHER_CLAN:
+        if (
+            kit or litter or moons < 12
+        ) and original_group not in game.clan.other_clan_IDs:
             # babies change name, in case their initial name isn't clan-ish
             new_cat.change_name()
-        elif original_group != CatGroup.OTHER_CLAN:
+        elif original_group not in game.clan.other_clan_IDs:
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:
                 name = choice(names.names_dict["loner_names"])
@@ -825,11 +842,6 @@ def unpack_rel_block(
             cats_from_ob.remove(None)
         if None in cats_to_ob:
             cats_to_ob.remove(None)
-
-        # Check to see if value block
-        if not (cats_to_ob and cats_from_ob and values and isinstance(amount, int)):
-            print(f"Relationship block incorrectly formatted: {block}")
-            continue
 
         positive = False
 
