@@ -720,7 +720,10 @@ class ListScreen(Screens):
             self.temper_message.change_object_id(
                 ObjectID("#dark", "#text_box_30_horizcenter")
             )
-            group = i18n.t(f"general.{self.current_group}")
+            if self.current_group == "dark_forest":
+                group = i18n.t(f"general.the_dark_forest")
+            else:
+                group = i18n.t(f"general.{self.current_group}")
             if self.current_group == "starclan":
                 if not game.starclan.influencing_cats:
                     # this means there's probably no cats in starclan, so no temper
