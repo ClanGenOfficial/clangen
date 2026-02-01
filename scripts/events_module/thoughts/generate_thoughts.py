@@ -6,6 +6,7 @@ import i18n
 
 from scripts.cat.enums import CatGroup, CatThought, CatRank
 from scripts.events_module.event_filters import event_for_cat
+from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.events_module.event_filters import filter_relationship_type
 
@@ -98,8 +99,8 @@ def _load_group(
     elif thought_type == CatThought.WHILE_DEAD:
         new_path = f"{start_path}/{main_cat.status.group}"
         thoughts = load_lang_resource(f"{new_path}/{rank}.json")
-        thoughts.append(_load_exiled_and_former(main_cat, new_path))
-        thoughts.append(_load_general(main_cat, new_path))
+        thoughts.extend(_load_exiled_and_former(main_cat, new_path))
+        thoughts.extend(_load_general(main_cat, new_path))
 
     # LIVING CATS
     elif thought_type == CatThought.WHILE_ALIVE:
@@ -107,17 +108,20 @@ def _load_group(
 
         # make sure lost thoughts are included
         if main_cat.status.is_lost(CatGroup.PLAYER_CLAN):
-            thoughts.append(load_lang_resource(f"{start_path}/while_lost/{rank}.json"))
+            thoughts.extend(load_lang_resource(f"{start_path}/while_lost/{rank}.json"))
 
-        thoughts.append(_load_exiled_and_former(main_cat, new_path))
-        thoughts.append(_load_general(main_cat, new_path))
+        thoughts.extend(_load_exiled_and_former(main_cat, new_path))
+        thoughts.extend(_load_general(main_cat, new_path))
 
     # CATS WHO JUST DIED
     elif thought_type == CatThought.ON_DEATH:
         is_leader = main_cat.status.is_leader
         leader_death = main_cat.dead
 
-        new_path = f"{start_path}/{main_cat.status.group}"
+        if is_leader and not leader_death:
+            new_path = f"{new_path}/{game.clan.instructor.status.group}"
+        else:
+            new_path = f"{start_path}/{main_cat.status.group}"
 
         if not is_leader:
             thoughts = load_lang_resource(f"{new_path}/general.json")
@@ -164,11 +168,11 @@ def _load_exiled_and_former(main_cat: "Cat", path) -> list:
     thoughts = []
     # make sure exiled thoughts are included
     if main_cat.status.is_exiled(CatGroup.PLAYER_CLAN):
-        thoughts.append(load_lang_resource(f"{path}/exiled.json"))
+        thoughts.extend(load_lang_resource(f"{path}/exiled.json"))
 
     # former clancat thoughts
     if main_cat.status.is_former_clancat:
-        thoughts.append(load_lang_resource(f"{path}/former_clancat.json"))
+        thoughts.extend(load_lang_resource(f"{path}/former_clancat.json"))
 
     return thoughts
 
