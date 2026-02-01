@@ -55,8 +55,8 @@ class FreshkillPileTest(unittest.TestCase):
         members.extend(self.apprentices)
 
         game.clan = Clan(
-            name=f"{'Test'}_{uuid4()}",
-            displayname="Test",
+            uuid=f"{'Test'}_{uuid4()}",
+            name="Test",
             leader=create_cat(CatRank.LEADER),
             deputy=create_cat(CatRank.DEPUTY),
             medicine_cat=create_cat(CatRank.MEDICINE_CAT),

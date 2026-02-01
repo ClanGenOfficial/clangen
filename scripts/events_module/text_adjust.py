@@ -313,7 +313,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
             # todo can this be Switch.clan_name ?
             clan_name = switch_get_value(Switch.clan_list)[0]
         else:
-            clan_name = str(game.clan.displayname)
+            clan_name = str(game.clan.name)
 
     text = text.replace("c_n", clan_name + "Clan")
 
@@ -585,7 +585,7 @@ def leader_ceremony_text_adjust(
     if extra_lives:
         text = text.replace("[life_num]", str(extra_lives))
 
-    text = text.replace("c_n", str(game.clan.displayname) + "Clan")
+    text = text.replace("c_n", str(game.clan.name) + "Clan")
 
     return text
 
@@ -602,7 +602,7 @@ def ceremony_text_adjust(
     living_parents=(),
     dead_parents=(),
 ):
-    clanname = str(game.clan.displayname + "Clan")
+    clanname = str(game.clan.name + "Clan")
 
     random_honor = random_honor
     random_living_parent = None

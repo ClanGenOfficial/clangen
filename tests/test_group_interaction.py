@@ -18,7 +18,7 @@ from scripts.events_module.relationship.group_events import (
 
 class MainCatFiltering(unittest.TestCase):
     test_clan = Clan(
-        name="Test",
+        uuid="Test",
         leader=None,
         deputy=None,
         medicine_cat=None,

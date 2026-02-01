@@ -2144,8 +2144,8 @@ class MakeClanScreen(Screens):
             clan_name = self.clan_name
 
         game.clan = Clan(
-            name=clan_name,
-            displayname=displayname,
+            uuid=clan_name,
+            name=displayname,
             leader=self.leader,
             deputy=self.deputy,
             medicine_cat=self.med_cat,
