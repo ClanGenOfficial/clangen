@@ -199,7 +199,7 @@ class Pregnancy_Events:
         cat.get_new_thought(CatThought.ON_BIRTH)
         if other_cat:
             cats_involved["r_c"] = other_cat
-            other_cat(CatThought.ON_BIRTH)
+            other_cat.get_new_thought(CatThought.ON_BIRTH)
 
         for kit in kits:
             kit.get_new_thought()
