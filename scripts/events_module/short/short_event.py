@@ -347,9 +347,6 @@ class ShortEvent:
                 else:  # if freshkill isn't being adjusted, then it must be a herb supply
                     self.handle_herb_supply(block)
 
-        if "clan_wide" in self.tags:
-            self.all_involved_cat_ids.clear()
-
         # adjust text again to account for info that wasn't available when we do rel changes
         self.text = event_text_adjust(
             Cat,

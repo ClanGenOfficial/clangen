@@ -1077,7 +1077,8 @@
                     }
                 ],
                 "history_text": {
-                    "death": "m_c died from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows."
+                    "reg_death": "m_c died from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows.",
+                    "lead_death": "from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows"
                 },
                 "frequency": 4
             },

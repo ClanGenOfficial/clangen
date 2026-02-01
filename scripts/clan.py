@@ -43,6 +43,7 @@ from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
 from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
+from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 
 
 class Clan:
@@ -123,6 +124,7 @@ class Clan:
         self._reputation = 80
 
         self.all_other_clans = []
+        self.other_clan_IDs = []
 
         self.starting_members = starting_members
         if game_mode in ("expanded", "cruel season"):
@@ -143,6 +145,8 @@ class Clan:
 
         if self_run_init_functions:
             self.post_initialization_functions()
+
+        rebuild_top_menu_buttons()
 
     @property
     def current_season(self):
@@ -247,7 +251,7 @@ class Clan:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE)
-            the_cat.thoughts()
+            the_cat.get_new_thought()
 
         save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
@@ -1281,6 +1285,7 @@ class OtherClan:
         self.group_ID = ID
         if not self.group_ID:
             self.group_ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
+        game.clan.other_clan_IDs.append(self.group_ID)
 
         clan_names = names.names_dict["normal_prefixes"]
         clan_names.extend(names.names_dict["clan_prefixes"])
