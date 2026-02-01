@@ -259,14 +259,15 @@ class ListScreen(Screens):
             manager=MANAGER,
             visible=True,
         )
-
-        self.temper_message = pygame_gui.elements.UITextBox(
+        self.temper_message = UISurfaceImageButton(
+            ui_scale(pygame.Rect((200, 104), (400, 35))),
             "testtestestesttesttest",
-            ui_scale(pygame.Rect((104, 100), (597, 50))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (400, 35)),
+            object_id="@buttonstyles_horizontal_tab",
             manager=MANAGER,
             container=self.list_screen_container,
         )
+        self.temper_message.disable()
 
         # BAR CONTAINER
         self.cat_list_bar = pygame_gui.core.UIContainer(
@@ -708,7 +709,10 @@ class ListScreen(Screens):
     def get_group_temper_message(self):
         # UR and COTC has no alignment and no message
         if self.current_group in ("unknown_residence", "cotc"):
+            self.temper_message.hide()
             return ""
+
+        self.temper_message.show()
 
         if self.current_group == "your_clan":
             self.temper_message.change_object_id(
@@ -726,11 +730,14 @@ class ListScreen(Screens):
                 group = i18n.t(f"general.{self.current_group}")
             if self.current_group == "starclan":
                 if not game.starclan.influencing_cats:
+                    self.temper_message.hide()
+
                     # this means there's probably no cats in starclan, so no temper
                     return ""
                 temper = i18n.t(f"screens.leader_den.{game.starclan.temperament}")
             else:
                 if not game.dark_forest.influencing_cats:
+                    self.temper_message.hide()
                     # this means there's probably no cats in df, so no temper
                     return ""
                 temper = i18n.t(f"screens.leader_den.{game.dark_forest.temperament}")
