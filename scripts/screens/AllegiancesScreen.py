@@ -3,16 +3,12 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    get_alive_clan_queens,
-    ui_scale_offset,
-    adjust_list_text,
-    event_text_adjust,
-)
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import event_text_adjust, adjust_list_text
+from ..ui.scale import ui_scale, ui_scale_offset
+from ..clan_package.get_clan_cats import get_alive_clan_queens
 from .Screens import Screens
 from ..cat.enums import CatRank
 from ..game_structure.ui_elements import UIModifiedScrollingContainer
@@ -42,7 +38,7 @@ class AllegiancesScreen(Screens):
         self.heading = pygame_gui.elements.UITextBox(
             "screens.allegiances.heading",
             ui_scale(pygame.Rect((0, 115), (400, 40))),
-            text_kwargs={"clan_name": game.clan.name},
+            text_kwargs={"clan_name": game.clan.displayname},
             object_id=get_text_box_theme("#text_box_34_horizcenter_vertcenter"),
             manager=MANAGER,
             anchors={"centerx": "centerx"},
@@ -52,7 +48,7 @@ class AllegiancesScreen(Screens):
         self.show_menu_buttons()
         self.show_mute_buttons()
         self.set_disabled_menu_buttons(["allegiances"])
-        self.update_heading_text(f"{game.clan.name}Clan")
+        self.update_heading_text(f"{game.clan.displayname}Clan")
         allegiance_list = self.get_allegiances_text()
 
         self.scroll_container = UIModifiedScrollingContainer(

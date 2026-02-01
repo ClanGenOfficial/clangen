@@ -7,7 +7,7 @@ import i18n
 from scripts.cat.enums import CatGroup, CatThought, CatRank
 from scripts.events_module.event_filters import event_for_cat
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import filter_relationship_type
+from scripts.events_module.event_filters import filter_relationship_type
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -41,7 +41,7 @@ def get_other_cat_for_thought(
     thinking_of_dead_cat = getrandbits(4) == 1
 
     # dead cats think of anyone
-    if main_cat.status.group and main_cat.status.group.is_afterlife():
+    if main_cat.status.group.is_afterlife():
         return other_cat
 
     else:

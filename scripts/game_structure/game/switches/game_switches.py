@@ -3,6 +3,8 @@ from typing import Tuple, Any, Union, Dict, Generator
 
 from strenum import StrEnum
 
+from scripts.screens.enums import GameScreen
+
 
 # TO ADD A NEW SWITCH:
 # 1. Add the name to the Enum class (so it can be autocompleted in calls)
@@ -29,6 +31,7 @@ class Switch(StrEnum):
     war_rel_change_type = auto()
     disallowed_symbol_tags = auto()
     saved_scroll_positions = auto()
+    saved_page_positions = auto()
     moon_and_seasons_open = auto()
     sort_type = auto()
     no_able_left = auto()
@@ -39,7 +42,7 @@ class Switch(StrEnum):
 _switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
     "cat": "",
     "clan_name": "",
-    "cur_screen": "start screen",
+    "cur_screen": GameScreen.START,
     "saved_clan": False,
     "clan_list": [],
     "error_message": "",
@@ -55,6 +58,7 @@ _switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
     "war_rel_change_type": "neutral",
     "disallowed_symbol_tags": [],
     "saved_scroll_positions": {},
+    "saved_page_positions": {},
     "moon_and_seasons_open": False,
     "sort_type": "rank",
     "no_able_left": False,

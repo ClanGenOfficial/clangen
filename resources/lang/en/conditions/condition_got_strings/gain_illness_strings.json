@@ -40,5 +40,10 @@
     ],
     "starving": [
         "m_c is starving."
+    ],
+    "tick illness": [
+        "r_c worries over m_c, looking for any tick-heads an apprentice might have left, but {PRONOUN/r_c/subject} can only find a distinctive rash. m_c knows what it means- tick illness.",
+        "m_c's heart sinks as {PRONOUN/m_c/poss} fur starts falling out. The apprentices must have missed a tick- r_c confirms it's tick illness.",
+        "m_c complains about a new rash, going silent when r_c finds a tick-head. {PRONOUN/m_c/subject/CAP} has tick illness."
     ]
-}
+    }

@@ -10,7 +10,7 @@ from scripts.game_structure.game.switches import (
     Switch,
     switch_get_value,
 )
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 
 
 class ReloadClanCommand(Command):

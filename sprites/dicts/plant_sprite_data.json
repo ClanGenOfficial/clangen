@@ -1,0 +1,61 @@
+{
+    "spritesheet": "acc_plants",
+    "sprite_list": [
+        {
+            "MAPLE LEAF": "head",
+            "HOLLY": "head",
+            "BLUE BERRIES": "head",
+            "FORGET ME NOTS": "head",
+            "RYE STALK": "head",
+            "CATTAIL": "head",
+            "POPPY": "head",
+            "ORANGE POPPY": "head",
+            "CYAN POPPY": "head",
+            "WHITE POPPY": "head",
+            "PINK POPPY": "head"
+        },
+        {
+            "BLUEBELLS": "head",
+            "LILY OF THE VALLEY": "head",
+            "SNAPDRAGON": "head",
+            "HERBS": "body",
+            "PETALS": "body",
+            "NETTLE": "head",
+            "HEATHER": "head",
+            "GORSE": "head",
+            "JUNIPER": "head",
+            "RASPBERRY": "head",
+            "LAVENDER": "head"
+        },
+        {
+            "OAK LEAVES": "head",
+            "CATMINT": "head",
+            "MAPLE SEED": "head",
+            "LAUREL": "head",
+            "BULB WHITE": "head",
+            "BULB YELLOW": "head",
+            "BULB ORANGE": "head",
+            "BULB PINK": "head",
+            "BULB BLUE": "head",
+            "CLOVER": "tail",
+            "DAISY": "tail"
+        },
+        {
+            "WISTERIA": "tail",
+            "ROSE MALLOW": "head",
+            "PICKLEWEED": "head",
+            "GOLDEN CREEPING JENNY": "tail",
+            "DESERT WILLOW": "head",
+            "CACTUS FLOWER": "head",
+            "PRAIRIE FIRE": "head",
+            "VERBENA EAR": "head",
+            "VERBENA PELT": "body"
+        },
+        {
+            "DRY HERBS": "body",
+            "DRY CATMINT": "head",
+            "DRY NETTLES": "head",
+            "DRY LAURELS": "head"
+        }
+    ]
+}
