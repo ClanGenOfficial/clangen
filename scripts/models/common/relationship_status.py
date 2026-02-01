@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class RelationshipStatus(Enum):
+    strangers = "strangers"
     siblings = "siblings"
     not_siblings = "not_siblings"
     littermates = "littermates"
