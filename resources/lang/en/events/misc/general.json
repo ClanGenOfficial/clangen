@@ -1708,7 +1708,7 @@
                 }
             },
             {
-                "cats_from": ["clan", "high_stable"
+                "cats_from": ["clan", "low_stable"
                 ],
                 "cats_to": [
                     "r_c"
@@ -1723,7 +1723,7 @@
                 }
             },
             {
-                "cats_from": ["clan", "low_stable"
+                "cats_from": ["clan", "high_stable"
                 ],
                 "cats_to": [
                     "r_c"
