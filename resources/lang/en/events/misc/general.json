@@ -1831,7 +1831,8 @@
             ],
             "changed": -1
         },
-        "relationships": {
+        "relationships": [
+            {
             "cats_from": ["clan", "high_lawful"],
             "cats_to": ["m_c"],
             "values": ["respect"],
@@ -1841,6 +1842,7 @@
                 "cats_from": "from_cat heard that to_cat trespassed on o_c_n's territory."
             }
         }
+        ]
     },
     {
         "event_id": "gen_misc_any_misc4",
