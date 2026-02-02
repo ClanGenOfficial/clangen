@@ -1495,7 +1495,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_story",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1509,21 +1509,14 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed a story told by to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1532,25 +1525,20 @@
                 "text": "s_c spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
                 "exp": 20,
                 "stat_skill": [
-                    "SPEAKER,1"
+                    "SPEAKER,1",
+                    "STORY,1"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort"],
+                        "amount": 10,
+                        "log":
+                        {
+                            "cats_from": "from_cat really enjoyed a story told by to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1560,27 +1548,30 @@
                 "exp": 20,
                 "stat_trait": [
                     "charismatic",
-                    "childish",
+                    "confident",
                     "playful",
                     "loving"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 10
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat chatted on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat discovers to_cat is lots of fun to patrol with."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1592,21 +1583,17 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat tried to tell a story on patrol, but to_cat seemed uninterested."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1624,21 +1611,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c",
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol",
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": -10
+                        "values": ["like", "comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was rebuked by to_cat on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat was chatting and telling stories instead of focusing on the patrol with from_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1745,12 +1735,15 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat felt lucky after seeing two moons on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1808,7 +1801,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the first coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1838,7 +1834,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story of the first coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1868,7 +1867,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story of the first coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1884,7 +1886,10 @@
                     "compassionate",
                     "faithful",
                     "loving",
-                    "responsible"
+                    "responsible",
+                    "righteous",
+                    "strict",
+                    "loyal"
                 ],
                 "relationships": [
                     {
@@ -1899,7 +1904,26 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story of StarClan cursing a cruel tom."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat noticed how principled to_cat is on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1921,7 +1945,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was disappointed that no cat wanted to hear {PRONOUN/from_cat/poss} story on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
