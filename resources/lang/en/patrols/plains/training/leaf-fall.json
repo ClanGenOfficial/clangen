@@ -15,10 +15,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
+            "normal adult": [1, 6]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -49,22 +46,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect", "like"
                         ],
-                        "amount": 15
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the locust swarm that blotted out the sun."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -89,22 +76,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect", "like"
                         ],
-                        "amount": 15
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the scarab who rolls the sun into hiding for leaf-bare."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -123,11 +100,14 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat flicked a bug away from from_cat."
+                        }
                     }
                 ],
                 "frequency": 4
