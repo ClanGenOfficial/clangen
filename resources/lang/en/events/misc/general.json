@@ -1407,7 +1407,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "from_cat was disturbed by to_cat's confession that {PRONOUN/to_cat/subject} could have saved mur_c but didn't."
+                    "cats_from": "from_cat was disturbed by to_cat's confession that {PRONOUN/to_cat/subject} could have saved mur_c, but didn't."
                 }
             },
             {
@@ -1425,7 +1425,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "from_cat felt uneasy about to_cat's confession that {PRONOUN/to_cat/subject} could have saved mur_c but didn't."
+                    "cats_from": "from_cat felt uneasy about to_cat's confession that {PRONOUN/to_cat/subject} could have saved mur_c, but didn't."
                 }
             }
         ]
@@ -1719,7 +1719,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "from_cat felt uneasy at the remember of to_cat's unearthly powers."
+                    "cats_from": "from_cat felt uneasy at the reminder of to_cat's unearthly powers."
                 }
             },
             {
