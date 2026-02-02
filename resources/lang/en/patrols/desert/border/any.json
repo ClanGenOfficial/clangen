@@ -598,7 +598,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat failed to save {PRONOUN/to_cat/poss} Clanmate on a patrol with a dog."
+                            "cats_from": "from_cat heard that to_cat failed to save r_c on a patrol with a dog."
                         }
                     }
                 ],
