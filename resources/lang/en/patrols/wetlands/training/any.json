@@ -1220,7 +1220,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["high_social"],
+                        "cats_from": ["clan", "high_social"],
                         "cats_to": ["app1"],
                         "values": ["like"],
                         "amount": 5,
@@ -1770,7 +1770,7 @@
                             "trust"
                         ],
                         "amount": 15,
-                        "log": "from_cat and to_cat snuck out of camp to investigate a glow. to_cat told from_cat about how it was a gift from passing spirits."
+                        "log": {"cats_from": "from_cat and to_cat snuck out of camp to investigate a glow. to_cat told from_cat about how it was a gift from passing spirits."}
                     },
                     {
                         "cats_to": [
@@ -1784,7 +1784,7 @@
                             "like", "comfort"
                         ],
                         "amount": 15,
-                        "log": "from_cat and to_cat snuck out of camp to investigate a glow. from_cat told to_cat about how it was a gift from passing spirits."
+                        "log": {"cats_from": "from_cat and to_cat snuck out of camp to investigate a glow. from_cat told to_cat about how it was a gift from passing spirits."}
                     }
                 ],
                 "frequency": 4
@@ -1813,7 +1813,7 @@
                             "trust"
                         ],
                         "amount": 15,
-                        "log": "from_cat and to_cat snuck out of camp to investigate a glow. to_cat told from_cat how StarClan once used it to guide their ancestors."
+                        "log": {"cats_from": "from_cat and to_cat snuck out of camp to investigate a glow. to_cat told from_cat how StarClan once used it to guide their ancestors."}
                     },
                     {
                         "cats_to": [
@@ -1827,7 +1827,7 @@
                             "like", "comfort"
                         ],
                         "amount": 15,
-                        "log": "from_cat and to_cat snuck out of camp to investigate a glow. from_cat told to_cat how StarClan once used it to guide their ancestors."
+                        "log": {"cats_from": "from_cat and to_cat snuck out of camp to investigate a glow. from_cat told to_cat how StarClan once used it to guide their ancestors."}
                     }
                 ],
                 "frequency": 4

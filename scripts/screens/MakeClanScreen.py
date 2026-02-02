@@ -24,11 +24,9 @@ from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_blit
 from .Screens import Screens
 from .enums import GameScreen
-from .screens_core.screens_core import rebuild_den_dropdown
 from ..cat import save_load
 from ..cat.enums import CatRank
 from ..cat.sprites.load_sprites import sprites
-from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.settings import game_setting_set, game_setting_get
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER, screen
@@ -164,7 +162,6 @@ class MakeClanScreen(Screens):
             starting_height=1,
         )
         create_example_cats()
-        # self.worldseed = randrange(10000)
         self.open_game_mode()
 
     def handle_event(self, event):
@@ -2166,11 +2163,6 @@ class MakeClanScreen(Screens):
         game.clan.save_herb_supply(game.clan)
         Cat.grief_strings.clear()
         Cat.sort_cats()
-
-        rebuild_den_dropdown(
-            left_align=not get_clan_setting("moons and seasons"),
-            game_mode=game.clan.game_mode,
-        )
 
     def get_camp_art_path(self, campnum) -> Optional[str]:
         if not campnum:

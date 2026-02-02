@@ -330,7 +330,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["low_stable"],
+                        "cats_from": ["clan", "low_stable"],
                         "cats_to": ["s_c"],
                         "values": ["respect", "like"],
                         "amount": 3,
@@ -339,7 +339,7 @@
                         }
                     },
                     {
-                        "cats_from": ["high_stable"],
+                        "cats_from": ["clan", "high_stable"],
                         "cats_to": ["s_c"],
                         "values": ["respect", "like"],
                         "amount": 3,
@@ -4067,7 +4067,7 @@
                         "amount": 8,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat was impressed that to_cat recognized raspberries on a training patrol and brought them back for the medicine cat."
+                            "cats_from": "from_cat was impressed that to_cat recognized raspberries on a training patrol and brought them back for the herb stores."
                         }
                     }
                 ],
@@ -4087,7 +4087,7 @@
                         "amount": 10,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat was very impressed that to_cat recognized cranberries on a training patrol and brought them back for the medicine cat."
+                            "cats_from": "from_cat was very impressed that to_cat recognized cranberries on a training patrol and brought them back for the herb stores."
                         }
                     }
                 ],
@@ -4287,7 +4287,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": ["high_social"],
+                        "cats_from": ["clan", "high_social"],
                         "cats_to": ["app1"],
                         "values": ["like"],
                         "amount": 5,
