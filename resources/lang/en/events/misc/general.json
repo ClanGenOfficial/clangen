@@ -2022,13 +2022,43 @@
         },
         "relationships": [
             {
-                "cats_from": ["r_c"],
+                "cats_from": ["high_lawful", "high_stable", "r_c"],
                 "cats_to": ["m_c"],
-                "values": ["comfort"],
-                "amount": -5,
+                "values": ["comfort", "respect"],
+                "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was uncertain about to_cat's desire to run away together."
+                    "cats_from": "from_cat was appalled by to_cat's suggestion that they run away together."
+                }
+            },
+            {
+                "cats_from": ["high_lawful", "low_stable", "r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "respect"],
+                "amount": -8,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was unhappy with to_cat for suggesting they run away together."
+                }
+            },
+            {
+                "cats_from": ["low_lawful", "high_stable", "r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "trust"],
+                "amount": 8,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat was touched by to_cat's desire to run away together, but talked to_cat out of it."
+                }
+            },
+            {
+                "cats_from": ["low_lawful", "low_stable", "r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "trust"],
+                "amount": 15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat seriously considered to_cat's suggestion that they run away together."
                 }
             }
         ]
