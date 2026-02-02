@@ -4345,7 +4345,10 @@
                             "romance",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a romantic day in the clover fields, where p_l professed that {PRONOUN/p_l/poss} mates are {PRONOUN/p_l/poss} luck."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4366,7 +4369,10 @@
                             "romance",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a romantic day in the clover fields, where p_l professed that {PRONOUN/p_l/poss} mates are {PRONOUN/p_l/poss} luck."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4394,7 +4400,10 @@
                             "romance",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a romantic day in the clover fields, and p_l cracked silly jokes about {PRONOUN/p_l/poss} love for {PRONOUN/p_l/poss} mates."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4407,7 +4416,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l leads {PRONOUN/p_l/poss} mates into a field of clover. This is... nice? r_c looks about in confusion, apparently waiting for more. What, did p_l miss a step?",
+                "text": "p_l leads {PRONOUN/p_l/poss} mates into a field of clover. This is... nice? s_c looks about in confusion, apparently waiting for more. What, did p_l miss a step?",
                 "exp": 0,
                 "stat_trait": [
                     "cold",
@@ -4416,7 +4425,20 @@
                     "grumpy",
                     "lonesome"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["p_l"],
+                        "values": ["romance", "trust"],
+                        "amount": -10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "s_c was underwhelmed by p_l's supposed surprise when it turned out to be nothing more than a field of clover.",
+                            "cats_to": "p_l was disappointed that s_c didn't care for {PRONOUN/p_l/poss} surprise."
+                        }
+                    }
+                ]
             }
         ]
     }
