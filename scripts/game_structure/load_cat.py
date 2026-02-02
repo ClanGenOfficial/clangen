@@ -15,7 +15,7 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
     Switch,
 )
-from scripts.game_structure.localization import get_new_pronouns
+from ..cat.pronouns import get_new_pronouns
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.game_structure import constants
 from scripts.game_structure import game
@@ -354,7 +354,7 @@ def json_load():
 
         try:
             # initialization of thoughts
-            cat.thoughts(other_clan_cats=other_clan_cats)
+            cat.get_new_thought(other_clan_cats=other_clan_cats)
         except Exception as e:
             logger.exception(
                 f"There was an error when thoughts for cat #{cat} are created."
