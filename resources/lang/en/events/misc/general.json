@@ -9383,7 +9383,8 @@
                 "rebellious"
             ]
         },
-        "relationships": {
+        "relationships": [
+            {
             "cats_from": [
                 "some_clan"
             ],
@@ -9396,7 +9397,8 @@
                 "trust"
             ],
             "amount": -5
-        },
+        }
+    ],
         "other_clan": {
             "changed": 2
         }
@@ -9432,7 +9434,8 @@
                 "oblivious"
             ]
         },
-        "relationships": {
+        "relationships": [
+        {
             "cats_from": [
                 "some_clan"
             ],
@@ -9448,7 +9451,8 @@
             "log": {
                 "cats_from": "Was upset when m_c defied the Clan and maintained a friendship during war."
             }
-        },
+        }
+    ],
         "other_clan": {
             "changed": 2
         }
